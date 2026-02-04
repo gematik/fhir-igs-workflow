@@ -1,0 +1,51 @@
+@startuml
+left to right direction
+allowmixing
+
+object "QES" as qes
+
+package "Mapping-Bundle" {
+
+  object GEM_Task {
+    identifier: E-Rezept-ID
+  }
+
+  object KBV_Prescription
+  object KBV_Medication
+
+  object GEM_MedicationDispense
+  object GEM_Medication
+
+  package VZD_SearchSet_Bundle {
+    object VZD_Organisation
+    object VZD_HealthcareService
+    object VZD_Location
+  }
+}
+
+package "BfArM Parameters" {
+  card "E-Rezept-ID" as erpid
+  card "Signaturzeitpunkt" as sigTime
+
+  object "MedicationRequest" as BfArM_MedicationRequest
+  object "Prescribed Medication" as P_BfArM_Medication
+  object "Dispensed Medication" as D_BfArM_Medication
+  object "MedicationDispense" as BfArM_MedicationDispense
+  object "Organisation" as BfArM_Organisation
+}
+
+' Mapping arrows
+qes --> sigTime
+GEM_Task --> erpid
+
+KBV_Prescription --> BfArM_MedicationRequest 
+KBV_Medication --> P_BfArM_Medication 
+
+GEM_MedicationDispense --> BfArM_MedicationDispense 
+GEM_Medication --> D_BfArM_Medication 
+
+VZD_Organisation --> BfArM_Organisation 
+VZD_HealthcareService --> BfArM_Organisation 
+VZD_Location --> BfArM_Organisation 
+
+@enduml

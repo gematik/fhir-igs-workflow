@@ -1,0 +1,90 @@
+canonical:  https://gematik.de/fhir/erp-eu/
+fhirVersion: 4.0.1
+applyExtensionMetadataToRoot: false
+version: 1.1.2
+id: de.gematik.erezept.eu
+name: E-Rezept Workflow EU
+title: "E-Rezept Workflow EU"
+description: Dieser IG Beschreibt Datenmodelle für den E-Rezept-Fachdienst mit dem NCPeH Deutschland
+status: active # draft | active | retired | unknown
+copyrightYear: 2025+
+releaseLabel: release # ci-build, ballot, release
+jurisdiction: urn:iso:std:iso:3166#DE "Germany" # https://www.hl7.org/fhir/valueset-jurisdiction.html
+publisher:
+  name: gematik GmbH
+  url: https://gematik.de
+  email: erp-umsetzung@gematik.de
+
+dependencies:
+  de.basisprofil.r4: 1.5.4
+  de.gematik.fhir.directory: 1.0.0
+  de.gematik.epa.medication: 1.3.0
+  de.gematik.terminology: 1.0.8
+  de.gematik.ti: 1.2.0
+
+menu:
+  Start: index.html
+  Fachlichkeit:
+    Überblick: menu-fachlichkeit-ueberblick.html
+    Szenario EU: menu-fachlichkeit-szenario-eu.html
+    Anwendungsfälle: menu-fachlichkeit-anwendungsfaelle.html
+  Technische Umsetzung:
+    Systemüberblick: menu-technische-umsetzung-systemueberblick.html
+    Anwendungsfälle: menu-technische-umsetzung-anwendungsfaelle.html
+    Verarbeitungsregeln: menu-technische-umsetzung-verarbeitungsregeln.html
+  Schnittstellen:
+    Generelle Prinzipien: menu-schnittstellen-generelle-prinzipien.html
+    Datenschutz und Sicherheit: menu-schnittstellen-datenschutz-und-sicherheit.html
+    Query API: menu-schnittstellen-query-api.html
+    Operation API:
+      Überblick: menu-schnittstellen-operation-api.html
+    Additional API: menu-schnittstellen-additional-api.html
+  FHIR-Artefakte: artifacts.html
+  Anhänge:
+    Referenzen: referenced.html
+    Downloads: downloads.html
+    Release Notes: release-notes.html
+    Spec Sheet: spec-sheet.html
+    Lizenz: license.html
+
+pages:
+  index.md:
+    title: "EU Zugriff E-Rezept"
+  menu-fachlichkeit-ueberblick.md:
+    title: "Fachlichkeit - Überblick"
+  menu-fachlichkeit-szenario-eu.md:
+    title: "Fachlichkeit - Szenario EU"
+  menu-fachlichkeit-anwendungsfaelle.md:
+    title: "Fachlichkeit - Anwendungsfälle"
+  menu-technische-umsetzung-systemueberblick.md:
+    title: "Technische Umsetzung - Systemüberblick"
+  menu-technische-umsetzung-anwendungsfaelle.md:
+    title: "Technische Umsetzung - Anwendungsfälle"
+  menu-technische-umsetzung-verarbeitungsregeln.md:
+    title: "Technische Umsetzung - Verarbeitungsregeln"
+  menu-schnittstellen-generelle-prinzipien.md:
+    title: "Schnittstellen - Generelle Prinzipien"
+  menu-schnittstellen-datenschutz-und-sicherheit.md:
+    title: "Schnittstellen - Datenschutz und Sicherheit"
+  menu-schnittstellen-query-api.md:
+    title: "Schnittstellen - Query API"
+  menu-schnittstellen-operation-api.md:
+    title: "Schnittstellen - Operation API"
+  menu-schnittstellen-additional-api.md:
+    title: "Schnittstellen - Additional API"
+  artifacts.md:
+    title: "FHIR-Artefakte"
+  referenced.md:
+    title: "Referenzierte Dokumente und Abkürzungen"
+  downloads.md:
+    title: "Downloads"
+  release-notes.md:
+    title: "Release Notes"
+  spec-sheet.md:
+    title: "Spec Sheet"
+  license.md:
+    title: "Lizenz"
+
+parameters:
+  path-pages:
+    - input/pagecontent

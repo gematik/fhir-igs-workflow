@@ -1,0 +1,36 @@
+Logical: ERP_TPrescription_CarbonCopy_Logical
+Id: erp-tprescription-carbon-copy-logical
+Title: "Logisches Modell digitaler Durchschlag E-T-Rezept"
+Description: "Logical Model zur Abbildung der im digitalen Durchschlag E-T-Rezept erforderlichen fachlichen Informationen."
+
+* datumSignatur 1..1 instant "Zeitpunkt der Signatur"
+  * ^comment = "Dieses Datum wird aus der QES Signatur 1.2.840.113549.1.9.5 signingTime herangezogen und muss in ein FHIR Instant Datenformat überführt werden."
+* rezeptID 1..1 Identifier "E-Rezept-ID"
+
+* rxVerordnung 1..1 BackboneElement "Angaben zum verordneten Medikament"
+  * bezeichnung 0..1 CodeableConcept "Bezeichnung Fertigarzneimittel/Wirkstoff ODER Rezeptur (verordnet). Je nach dem welcher Rezepttyp angewandt wurde liegt diese Angabe als Freitext oder strukturiert vor."
+  * wirkstaerke 0..1 Ratio "Wirkstärke (verordnetes Arzneimittel)"
+  * darreichungsform 0..1 Coding "Darreichungsform (verordnetes Arzneimittel)"
+  * menge 0..1 Ratio "Menge (verordnetes Arzneimittel)"
+  * dosierung 0..1 Dosage "Dosierung (verordnetes Arzneimittel)"
+  * reichdauer 1..1 string "Reichdauer (verordnetes Arzneimittel)"
+  * rxTRezeptBestaetigungen 1..1 BackboneElement "Bestätigungen des Arztes nach §3a Abs. 2, 5 AMVV"
+    * bestaetigungSicherheitsmassnahmen 1..1 boolean "Bestätigung Sicherheitsmaßnahmen (T-Rezept)"
+    * aushaendigungInformationsmaterialien 1..1 boolean "Aushändigung Informationsmaterialien (T-Rezept)"
+    * offLabelUse 1..1 boolean "Behandlung außerhalb der zugelassenen Anwendungsgebiete (Off-Label)"
+    * gebaerfaehigeFrau 1..1 boolean "Verschreibung für gebärfähige Frau"
+    * erklaerungSachkenntnis 1..1 boolean "Bestätigung der Sachkenntnis"
+
+* rxAbgabe 1..1 BackboneElement "Angaben zum abgegeben Medikament"
+  * bezeichnung 1..1 CodeableConcept "Bezeichnung Fertigarzneimittel/Wirkstoff ODER Rezeptur (abgegeben). Diese Angabe kann als Freitext oder strukturiert vorliegen."
+  * wirkstaerke 0..1 Ratio "Wirkstärke (abgegebenes Arzneimittel)"
+  * darreichungsform 0..1 string "Darreichungsform (abgegebenes Arzneimittel)"
+  * menge 0..1 Ratio "Menge (abgegebenes Arzneimittel)"
+  * dosierung 0..1 Dosage "Dosierung (abgegebenes Arzneimittel)"
+  * datumAbgabe 1..1 date "Datum der Abgabe im Format YYYY-MM-DD"
+
+* AngabeAbgebendeApotheke 1..1 BackboneElement "Angaben zur Abgebenden Apotheke"
+  * telematikIDApotheke 1..1 string "Telematik-ID der Apotheke"
+  * nameApotheke 0..1 string "Name der Apotheke"
+  * anschriftApotheke 0..1 Address "Anschrift der Apotheke"
+  * telefonnummerApotheke 0..1 ContactPoint "Telefonnummer der Apotheke"
