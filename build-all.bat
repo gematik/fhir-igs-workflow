@@ -30,6 +30,10 @@ if %HAS_FILTER%==0 (
     if exist "%%~fG\_genonce.sh" (
       echo Building %%~nxG
       pushd "%%~fG" >nul
+      if exist "%ROOT_DIR%input-cache\publisher.jar" (
+        if not exist "%%~fG\input-cache" mkdir "%%~fG\input-cache" >nul 2>&1
+        if not exist "%%~fG\input-cache\publisher.jar" copy /Y "%ROOT_DIR%input-cache\publisher.jar" "%%~fG\input-cache\publisher.jar" >nul
+      )
       call "%%~fG\_genonce.sh"
       popd >nul
     )
@@ -46,6 +50,10 @@ for %%I in (!IG_FILTER!) do (
   if exist "!IG_DIR!\_genonce.sh" (
     echo Building eflow-%%I
     pushd "!IG_DIR!" >nul
+    if exist "%ROOT_DIR%input-cache\publisher.jar" (
+      if not exist "!IG_DIR!\input-cache" mkdir "!IG_DIR!\input-cache" >nul 2>&1
+      if not exist "!IG_DIR!\input-cache\publisher.jar" copy /Y "%ROOT_DIR%input-cache\publisher.jar" "!IG_DIR!\input-cache\publisher.jar" >nul
+    )
     call "!IG_DIR!\_genonce.sh"
     popd >nul
   )

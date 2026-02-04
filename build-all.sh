@@ -77,6 +77,14 @@ run_ig() {
   fi
 
   if [[ -x "$ROOT_DIR/_genonce.sh" ]]; then
+    local publisher_src="$ROOT_DIR/input-cache/publisher.jar"
+    local publisher_dest_dir="$ig_dir/input-cache"
+    if [[ -f "$publisher_src" ]]; then
+      mkdir -p "$publisher_dest_dir"
+      if [[ ! -f "$publisher_dest_dir/publisher.jar" ]]; then
+        cp "$publisher_src" "$publisher_dest_dir/publisher.jar"
+      fi
+    fi
     if [[ ${#GENONCE_ARGS[@]:-0} -gt 0 ]]; then
       (cd "$ig_dir" && "$ROOT_DIR/_genonce.sh" "${GENONCE_ARGS[@]}")
     else
