@@ -15,4 +15,11 @@ angegeben (Abbildungen 10–13).
 
 Der Ablauf setzt voraus, dass Versicherte die erforderlichen Einwilligungen
 erteilt und Zugriffsberechtigungen für die Einlösung im europäischen Ausland
-konfiguriert haben.
+konfiguriert haben. Zusätzlich müssen E‑Rezepte durch Versicherte für die
+Einlösung im EU‑Ausland markiert sein.
+
+## Rollen
+
+- Versicherter (Einwilligung, Zugriffsberechtigung, Markierung)
+- NCPeH‑FD (Deutschland) als Vermittler zur eHDSI
+- LE‑EU als ausländischer Leistungserbringer

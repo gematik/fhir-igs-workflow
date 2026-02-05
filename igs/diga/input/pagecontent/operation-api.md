@@ -1,0 +1,9 @@
+Operationen
+
+Diese Seite bietet einen Einstieg in die Operationen des DiGA-Workflows. Die
+Operationen entsprechen dem Basis-Workflow des E-Rezept-Fachdienstes.
+
+## Operationen
+- [$accept](./op-accept.html)
+- [$reject](./op-reject.html)
+- [$close](./op-close.html)

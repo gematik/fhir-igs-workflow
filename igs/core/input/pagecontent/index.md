@@ -1,3 +1,28 @@
-# eFlow Core IG
+# Implementation Guide E-Rezept-Workflow Core
 
-This IG contains cross-cutting definitions used by all eFlow modules and the umbrella server IG.
+Dieser IG beschreibt die zentralen, IG-uebergreifenden Anforderungen an den
+E-Rezept-Fachdienst. Er fasst grundlegende Sicherheits-, Protokollierungs- und
+Validierungsvorgaben zusammen, die in allen nachgelagerten IGs wiederverwendet
+werden.
+
+## Zweck und Geltungsbereich
+
+Der Core-IG fokussiert auf die technische Basisschicht des Fachdienstes:
+
+- Zugriffs- und Systemprotokollierung (AuditEvent)
+- Datenschutz und Sicherheit, insbesondere Anforderungen an die VAU
+- Validierung von FHIR-Ressourcen und Bundles
+- Loeschfristen und automatisches Loeschen
+
+## Aufbau
+
+- [Zugriffsprotokollierung](./audit-service.html)
+- [Datenschutz und Sicherheit](./data-security.html)
+- [FHIR-Validierung](./fhir-validate.html)
+- [Loeschfristen](./ttl.html)
+- [FHIR-Artefakte](./artifacts.html)
+
+## Bezug zu weiteren IGs
+
+Dieser IG enthaelt nur die gemeinsamen Vorgaben. Fachliche und
+prozessspezifische Details werden in den jeweiligen IGs dokumentiert.

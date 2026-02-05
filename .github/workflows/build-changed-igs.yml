@@ -1,0 +1,95 @@
+name: Build changed IGs
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      BUILD_USE_IGTOOLS: "false"
+      BUILD_GENERATE_DRAWIO_IMAGES: "false"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install tooling
+        run: |
+          npm install -g fsh-sushi
+          sudo wget -q https://github.com/mikefarah/yq/releases/download/v4.44.1/yq_linux_amd64 -O /usr/local/bin/yq
+          sudo chmod +x /usr/local/bin/yq
+
+      - name: Determine IGs to build
+        id: igs
+        shell: bash
+        run: |
+          set -euo pipefail
+          base_sha="${{ github.event.before }}"
+          head_sha="${{ github.sha }}"
+
+          if [[ "$base_sha" == "0000000000000000000000000000000000000000" ]]; then
+            base_sha=$(git rev-list --max-parents=0 "$head_sha")
+          fi
+
+          mapfile -t files < <(git diff --name-only "$base_sha" "$head_sha")
+
+          declare -A igs=()
+
+          for f in "${files[@]}"; do
+            if [[ "$f" =~ ^igs/([^/]+)/ ]]; then
+              igs["${BASH_REMATCH[1]}"]=1
+            fi
+          done
+
+          ig_list=("${!igs[@]}")
+
+          if [[ ${#ig_list[@]} -eq 0 ]]; then
+            echo "ig_list=" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          ig_list_sorted=$(printf "%s\n" "${ig_list[@]}" | sort -u | tr '\n' ' ' | xargs)
+          echo "ig_list=$ig_list_sorted" >> "$GITHUB_OUTPUT"
+
+      - name: Download IG Publisher
+        if: steps.igs.outputs.ig_list != ''
+        run: ./update-publisher.sh -y
+
+      - name: Build IGs
+        if: steps.igs.outputs.ig_list != ''
+        run: ./build-all.sh --ig ${{ steps.igs.outputs.ig_list }}
+
+      - name: Report deploy count
+        if: steps.igs.outputs.ig_list != ''
+        shell: bash
+        run: |
+          set -euo pipefail
+          total=0
+          for ig in ${{ steps.igs.outputs.ig_list }}; do
+            out_dir="igs/$ig/output"
+            if [[ -d "$out_dir" ]]; then
+              count=$(find "$out_dir" -type f | wc -l | tr -d ' ')
+              total=$((total + count))
+            fi
+          done
+          echo "deploying $total files"
+
+      - name: No IG changes
+        if: steps.igs.outputs.ig_list == ''
+        run: echo "No IG changes detected; skipping build."

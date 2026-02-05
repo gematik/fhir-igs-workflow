@@ -1,3 +1,3 @@
-# Artifacts
+# FHIR-Artefakte
 
-This page will list generated artifacts for the eFlow DiGA IG.
+Diese Seite listet die generierten FHIR-Artefakte des DiGA-IG.

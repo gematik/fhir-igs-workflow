@@ -1,8 +1,95 @@
-id: eflow.diga
-canonical: https://example.org/fhir/eflow/diga
-name: eflow_diga
-title: eFlow DiGA IG
-status: draft
-version: 0.1.0
+canonical: https://gematik.de/fhir/erp-diga
 fhirVersion: 4.0.1
-FSHOnly: true
+applyExtensionMetadataToRoot: false
+id: de.gematik.erezept-diga.r4
+name: E-Rezept DiGA #TODO Name muss von Team Polarion vorgegeben werden gemIG...
+title: "E-Rezept fuer Digitale Gesundheitsanwendungen (DiGA)"
+status: draft # draft | active | retired | unknown
+version: "2.0.0-draft"
+copyrightYear: 2026+
+releaseLabel: ci-build # ci-build, ballot, release
+jurisdiction: urn:iso:std:iso:3166#DE "Germany" # https://www.hl7.org/fhir/valueset-jurisdiction.html
+publisher:
+  name: gematik GmbH
+  url: https://gematik.de
+  email: erp-umsetzung@gematik.de
+
+dependencies:
+  de.basisprofil.r4: 1.5.2
+  de.gematik.ti: 1.2.0
+
+menu:
+  Start: index.html
+  Fachlichkeit:
+    Ueberblick: menu-fachlichkeit-ueberblick.html
+    Szenario DiGA: menu-fachlichkeit-szenario-diga.html
+    Anwendungsfaelle: menu-fachlichkeit-anwendungsfaelle.html
+  Technische Umsetzung:
+    Systemueberblick: menu-technische-umsetzung-systemueberblick.html
+    Technische Anwendungsfaelle: menu-technische-umsetzung-anwendungsfaelle.html
+    Verarbeitungsregeln: menu-technische-umsetzung-verarbeitungsregeln.html
+  Schnittstellen:
+    Generelle Prinzipien: menu-schnittstellen-generelle-prinzipien.html
+    Datenschutz und Sicherheit: menu-schnittstellen-datenschutz-und-sicherheit.html
+    Query API: query-api.html
+    Operationen: operation-api.html
+  Anhaenge:
+    Referenzen: referenced.html
+    Downloads: downloads.html
+    Release Notes: release-notes.html
+    Steckbriefe: spec-sheet.html
+    Lizenz: license.html
+  FHIR-Artefakte: artifacts.html
+
+pages:
+  index.md:
+    title: "Implementation Guide E-Rezept-DiGA"
+  menu-fachlichkeit-ueberblick.md:
+    title: "Ueberblick zur Verordnung von DiGAs"
+    menu-fachlichkeit-szenario-diga.md:
+      title: "Szenario: E-Rezept fuer DiGA"
+    menu-fachlichkeit-anwendungsfaelle.md:
+      title: "Anwendungsfaelle im DiGA-Workflow"
+  menu-technische-umsetzung-systemueberblick.md:
+    title: "Systemueberblick"
+    menu-technische-umsetzung-anwendungsfaelle.md:
+      title: "Technische Anwendungsfaelle"
+    menu-technische-umsetzung-verarbeitungsregeln.md:
+      title: "Verarbeitungsregeln fuer den E-Rezept-Fachdienst"
+  menu-schnittstellen-generelle-prinzipien.md:
+    title: "Generelle Prinzipien"
+  menu-schnittstellen-datenschutz-und-sicherheit.md:
+    title: "Datenschutz und Sicherheit"
+  query-api.md:
+    title: "Query API"
+    query-api-task.md:
+      title: "Query API: Task"
+    query-api-communication.md:
+      title: "Query API: Communication"
+    query-api-medicationdispense.md:
+      title: "Query API: MedicationDispense"
+  operation-api.md:
+    title: "Operationen"
+    op-accept.md:
+      title: "Operation: $accept"
+    op-reject.md:
+      title: "Operation: $reject"
+    op-close.md:
+      title: "Operation: $close"
+  artifacts.md:
+    title: "FHIR-Artefakte"
+  referenced.md:
+    title: "Referenzen"
+  downloads.md:
+    title: "Downloads"
+  release-notes.md:
+    title: "Release Notes"
+  spec-sheet.md:
+    title: "Steckbriefe"
+  license.md:
+    title: "Apache Licence"
+
+parameters:
+  path-pages:
+    - input/pagecontent
+    - input/content

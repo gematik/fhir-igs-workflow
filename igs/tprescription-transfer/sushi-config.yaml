@@ -13,6 +13,7 @@ description: Dieser IG Beschreibt Schnittstellen und Profile für den
 status: active # draft | active | retired | unknown
 version: 1.1.0
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
+applyExtensionMetadataToRoot: false
 copyrightYear: 2025+
 releaseLabel: release # ci-build, ballot, release
 # license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
@@ -73,11 +74,65 @@ dependencies:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Start: index.html
-  Inhaltsverzeichnis: toc.html
-  Datenmodell: datamodel.html
-  Übertragung für E-T-Rezept: trezept.html
+  Fachlichkeit:
+    Ueberblick: menu-fachlichkeit-ueberblick.html
+    Szenario T-Rezept: trezept.html
+    Anwendungsfaelle: menu-fachlichkeit-anwendungsfaelle.html
+  Technische Umsetzung:
+    Systemueberblick: menu-technische-umsetzung-systemueberblick.html
+    Technische Anwendungsfaelle: menu-technische-umsetzung-anwendungsfaelle.html
+    Verarbeitungsregeln: menu-technische-umsetzung-verarbeitungsregeln.html
+  Schnittstellen:
+    Generelle Prinzipien: menu-schnittstellen-generelle-prinzipien.html
+    Datenschutz und Sicherheit: menu-schnittstellen-datenschutz-und-sicherheit.html
+    Query API: menu-schnittstellen-query-api.html
+    Operationen: menu-schnittstellen-operation-api.html
+  Anhaenge:
+    Referenzen: referenced.html
+    Downloads: downloads.html
+    Release Notes: release-notes.html
+    Steckbriefe: spec-sheet.html
+    Lizenz: license.html
   FHIR-Artefakte: artifacts.html
   Beispiele: tests.html
+
+pages:
+  index.md:
+    title: "Implementation Guide E-T-Rezept"
+  menu-fachlichkeit-ueberblick.md:
+    title: "Fachlichkeit - Ueberblick"
+    trezept.md:
+      title: "Fachlichkeit - Szenario T-Rezept"
+    menu-fachlichkeit-anwendungsfaelle.md:
+      title: "Fachlichkeit - Anwendungsfaelle"
+  menu-technische-umsetzung-systemueberblick.md:
+    title: "Technische Umsetzung - Systemueberblick"
+    menu-technische-umsetzung-anwendungsfaelle.md:
+      title: "Technische Umsetzung - Anwendungsfaelle"
+    menu-technische-umsetzung-verarbeitungsregeln.md:
+      title: "Technische Umsetzung - Verarbeitungsregeln"
+  menu-schnittstellen-generelle-prinzipien.md:
+    title: "Schnittstellen - Generelle Prinzipien"
+  menu-schnittstellen-datenschutz-und-sicherheit.md:
+    title: "Schnittstellen - Datenschutz und Sicherheit"
+  menu-schnittstellen-query-api.md:
+    title: "Schnittstellen - Query API"
+  menu-schnittstellen-operation-api.md:
+    title: "Schnittstellen - Operationen"
+  artifacts.md:
+    title: "FHIR-Artefakte"
+  tests.md:
+    title: "Beispiele"
+  referenced.md:
+    title: "Referenzen"
+  downloads.md:
+    title: "Downloads"
+  release-notes.md:
+    title: "Release Notes"
+  spec-sheet.md:
+    title: "Steckbriefe"
+  license.md:
+    title: "Lizenz"
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │
@@ -225,4 +280,5 @@ parameters:
     - MedicationRequest/*
     - Bundle/*
   path-pages:
+    - input/pagecontent
     - input/content

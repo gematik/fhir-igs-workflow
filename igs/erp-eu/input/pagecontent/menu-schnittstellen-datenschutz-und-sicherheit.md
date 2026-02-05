@@ -14,6 +14,11 @@ auf E‑Rezepte.
 * Clientsysteme müssen sich beim IDP‑Dienst registrieren und eine client_id nutzen.
 * Das Discovery Document ist regelmäßig einzulesen und signaturgeprüft auszuwerten.
 
+## Einwilligung und Zugriff
+
+* Zugriff durch LE‑EU erfordert Einwilligung (EUDISPCONS) und gültigen Zugriffscode.
+* Zugriffscode ist zeitlich befristet und wird nach Ablauf gelöscht.
+
 ## Token‑Handling
 
 * ACCESS_TOKEN, ID_TOKEN und AUTHORIZATION_CODE sind sicher zu speichern und

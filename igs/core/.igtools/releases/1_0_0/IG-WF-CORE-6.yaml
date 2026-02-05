@@ -1,0 +1,86 @@
+actor: []
+conformance: SHALL
+content_hash: 7235fc02d279f7174a7942abbe5a565d895c87325e0d8ceb81c6295cf689b2aa
+created: '2026-02-05T08:18:41.907114'
+date: '2026-02-05T08:18:41.907117'
+key: IG-WF-CORE-6
+modified: '2026-02-05T08:18:41.907116'
+release_status: NEW
+source: input/pagecontent/audit-service.md
+status: ACTIVE
+test_procedures: {}
+text: "Der E-Rezept-Fachdienst MUSS jeden Aufruf der folgenden Operationen protokollieren:\n\
+  \n\t| Operation | Rolle des zugreifenden Nutzers | Beschreibung (Vorschlag fuer\
+  \ lesbaren Protokolleintrag) |\n\t| --- | --- | --- |\n\t| http GET /Task/<id> |\
+  \ Versicherter, Vertreter | Patient/Versicherter/Vertreter hat das E-Rezept heruntergeladen\
+  \ |\n\t| http GET /Task/<id> | Apotheker | Apotheke hat die E-Rezept-Quittung heruntergeladen\
+  \ |\n\t| http GET /Task | Apotheker | im Erfolgsfall bei passendem AcceptPN3VSDMxx=false:\
+  \ Apotheke hat mit Ihrer eGK die Liste der offenen E-Rezepte abgerufen.<br>im Erfolgsfall\
+  \ bei PN3 und passendem AcceptPN3VSDMxx=true: Apotheke hat mit Ihrer eGK die Liste\
+  \ der offenen E-Rezepte abgerufen. (Offline-Check wurde akzeptiert)<br>im Fehlerfall\
+  \ PN3 und passendem AcceptPN3VSDMxx=false: Apotheke konnte aufgrund eines Fehlerfalls\
+  \ nicht die Liste der offenen E-Rezepte mit Ihrer eGK abrufen. (Offline-Check wurde\
+  \ nicht akzeptiert)<br>im sonstigen Fehlerfall: Apotheke konnte aufgrund eines Fehlerfalls\
+  \ nicht die Liste der offenen E-Rezepte mit Ihrer eGK abrufen. |\n\t| http GET /Task\
+  \ | Kostentraeger | Krankenkasse hat die Liste der offenen E-Rezepte (DiGA-Verordnungen)\
+  \ abgerufen. |\n\t| http POST /Task $activate | Arzt-/Zahnarztpraxis/Krankenhaus/Psychotherapeut\
+  \ | Arzt-/Zahnarztpraxis/Krankenhaus/Psychotherapeut hat das E-Rezept bereitgestellt\
+  \ |\n\t| http POST /Task $accept | Apotheke | Apotheke hat das E-Rezept heruntergeladen\
+  \ |\n\t| http POST /Task $accept | Kostentraeger | Krankenkasse hat das E-Rezept\
+  \ heruntergeladen |\n\t| http POST /Task $reject | Apotheke | Apotheke hat das E-Rezept\
+  \ zurueckgegeben |\n\t| http POST /Task $reject | Kostentraeger | Krankenkasse hat\
+  \ das E-Rezept zurueckgegeben |\n\t| http POST /Task $dispense | Apotheke | Apotheke\
+  \ hat das E-Rezept beliefert |\n\t| http POST /Task $close | Apotheke | Apotheke\
+  \ hat das E-Rezept abgeschlossen |\n\t| http POST /Task $close | Kostentraeger |\
+  \ Krankenkasse hat das E-Rezept abgeschlossen |\n\t| http POST /Task $eu-close |\
+  \ NCPeH-FD | Der Parameters.parameter:requestData.part:practitionerRole / practitionerName\
+  \ hat in Parameters.parameter:requestData.part:healthcare-facility-type / pointOfCare\
+  \ in Land B (Klartext aus Parameters.parameter:requestData.part:countryCode) Ihr\
+  \ E-Rezept eingeloest. |\n\t| http POST /Task $abort | Versicherter, Vertreter |\
+  \ Patient/Versicherter/Vertreter hat das E-Rezept geloescht |\n\t| http POST /Task\
+  \ $abort | Arzt-/Zahnarztpraxis/Krankenhaus/Psychotherapeut | Arzt-/Zahnarztpraxis/Krankenhaus/Psychotherapeut\
+  \ hat das E-Rezept geloescht |\n\t| http POST /Task $abort | Apotheke | Apotheke\
+  \ hat das E-Rezept geloescht |\n\t| http PATCH /Task/<id> | Versicherter | Versicherter\
+  \ hat Markierung zu Einloesung im EU-Ausland gespeichert |\n\t| GET /MedicationDispense?<parameter>=...\
+  \ | Versicherter, Vertreter | Patient/Versicherter hat Medikament-Informationen\
+  \ heruntergeladen |\n\t| http DELETE /ChargeItem/<id> | Versicherter | Versicherter\
+  \ hat Abrechnungsinformation geloescht |\n\t| http GET /ChargeItem/<id> | Versicherter\
+  \ | Versicherter hat Abrechnungsinformation gelesen |\n\t| http GET /ChargeItem/<id>\
+  \ | Apotheke | Apotheke hat Abrechnungsinformation gelesen |\n\t| http POST /ChargeItem\
+  \ | Apotheke | Apotheke hat Abrechnungsinformation bereitgestellt |\n\t| http PATCH\
+  \ /ChargeItem/<id> | Versicherter | Versicherter hat Markierung zu Abrechnungsinformation\
+  \ gespeichert |\n\t| http PUT /ChargeItem/<id> | Apotheke | Apotheke hat PKV-Abgabedatensatz\
+  \ gespeichert |\n\t| http POST /Consent | Versicherter | Versicherter hat Einwilligung\
+  \ fuer \"Beschreibung fuer Consent.category.coding.code\" erteilt. |\n\t| http DELETE\
+  \ /Consent | Versicherter | Versicherter hat Einwilligung fuer \"Beschreibung fuer\
+  \ Consent.category.coding.code\" widerrufen. |\n\t| http POST /$grant-eu-access-permission\
+  \ | Versicherter | Sie haben eine Zugriffsberechtigung zum Einloesen von E-Rezepten\
+  \ fuer das Land \"Land B\" erteilt. |\n\t| http DELETE /$revoke-eu-access-permission\
+  \ | Versicherter | Sie haben die Zugriffsberechtigung zum Einloesen von E-Rezepten\
+  \ fuer das Land \"Land B\" geloescht. |\n\t| POST /$get-eu-prescriptions (requesttype=demographics)\
+  \ | NCPeH-FD | Der Parameters.parameter:requestData.part:practitionerRole / practitionerName\
+  \ hat in Parameters.parameter:requestData.part:healthcare-facility-type / pointOfCare\
+  \ in Land B (Klartext aus Parameters.parameter:requestData.part:countryCode) Ihre\
+  \ Patientendaten abgerufen. |\n\t| POST /$get-eu-prescriptions (requesttype=e-prescriptions-list)\
+  \ | NCPeH-FD | Der Parameters.parameter:requestData.part:practitionerRole / practitionerName\
+  \ hat in Parameters.parameter:requestData.part:healthcare-facility-type / pointOfCare\
+  \ in Land B (Klartext aus Parameters.parameter:requestData.part:countryCode) Ihre\
+  \ offenen E-Rezepte abgerufen. |\n\t| POST /$get-eu-prescriptions (requesttype=e-prescriptions-retrieval)\
+  \ | NCPeH-FD | Der Parameters.parameter:requestData.part:practitionerRole / practitionerName\
+  \ hat in Parameters.parameter:requestData.part:healthcare-facility-type / pointOfCare\
+  \ in Land B (Klartext aus Parameters.parameter:requestData.part:countryCode) Ihre\
+  \ einzuloesenden E-Rezepte abgerufen. |\n\t| POST /pushers/set (kind=null) | Versicherter\
+  \ | Versicherter hat das Geraet \"device_display_name\" fuer Push-Nachrichten deregistriert.\
+  \ |\n\t| POST /pushers/set (kind=http) | Versicherter | Versicherter hat das Geraet\
+  \ \"device_display_name\" fuer Push-Nachrichten registriert. |\n\t| Automatisches\
+  \ Loeschen: Task | E-Rezept-Fachdienst | Veraltete E-Rezepte vom Fachdienst automatisch\
+  \ geloescht |\n\t| Automatisches Loeschen: MedicationDispense | E-Rezept-Fachdienst\
+  \ | Veraltete Medikament-Informationen vom Fachdienst automatisch geloescht |\n\t\
+  | Automatisches Loeschen: Communication | E-Rezept-Fachdienst | Veraltete Nachrichten\
+  \ vom Fachdienst automatisch geloescht |\n\t| Automatisches Loeschen: ChargeItem\
+  \ | E-Rezept-Fachdienst | Veraltete Abrechnungsinformation vom E-Rezept-Fachdienst\
+  \ automatisch geloescht |\n\n\tDer E-Rezept-Fachdienst MUSS die gelesene bzw. geschriebene\
+  \ Ressource im\n\tProtokolleintrag als Referenz in AuditEvent.entity.what hinzufuegen\
+  \ sowie die KVNR\n\tdes betroffenen Versicherten in AuditEvent.entity.name speichern."
+title: E-Rezept-Fachdienst - Versichertenprotokoll zu Operationen (A_19284-12)
+version: 0

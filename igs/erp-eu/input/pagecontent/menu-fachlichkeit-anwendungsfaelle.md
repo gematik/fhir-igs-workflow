@@ -5,16 +5,16 @@ und Zugriffsberechtigungen sowie zur Einlösung von E‑Rezepten im EU‑Ausland
 
 ## Übersicht
 
-| Bereich | Anwendungsfall | Kurzbeschreibung |
+| Bereich | Anwendungsfall (ID) | Kurzbeschreibung |
 | --- | --- | --- |
-| Einwilligung | Einwilligung erteilen | Versicherter erteilt Einwilligung zur Nutzung des EU‑Zugriffs. |
-| Einwilligung | Einwilligung widerrufen | Versicherter widerruft die Einwilligung. |
-| Einwilligung | Einwilligungen einsehen | Versicherter liest bestehende Einwilligungen. |
-| Zugriffsberechtigung | Zugriffsberechtigung erstellen | Versicherter erteilt Zugriff für das EU‑Einlösen. |
-| Zugriffsberechtigung | Zugriffsberechtigung löschen | Versicherter entzieht den Zugriff. |
-| Zugriffsberechtigung | Zugriffsberechtigung einsehen | Versicherter prüft bestehende Berechtigungen. |
-| E‑Rezept | E‑Rezept markieren | Versicherter markiert E‑Rezepte für EU‑Einlösung. |
-| EU‑Belieferung | Demographische Daten abrufen | LE‑EU ruft demographische Daten ab. |
-| EU‑Belieferung | Liste einlösbarer E‑Rezepte abrufen | LE‑EU erhält die Liste einlösbarer Rezepte. |
-| EU‑Belieferung | Liste ausgewählter E‑Rezepte abrufen | LE‑EU ruft konkrete Rezepte ab. |
-| EU‑Belieferung | Abgabe im EU‑Ausland | Abgabe/Schließen des Rezepts im EU‑Ausland. |
+| Einwilligung | Einwilligung erteilen (AF_10084-01) | Versicherter erteilt Einwilligung zum EU‑Einlösen. |
+| Einwilligung | Einwilligung widerrufen (AF_10085-01) | Versicherter widerruft die Einwilligung. |
+| Einwilligung | Einwilligungen einsehen (AF_10086-01) | Versicherter liest bestehende Einwilligungen. |
+| Zugriffsberechtigung | Zugriff erstellen (AF_10395) | Versicherter erstellt Zugriffscode und Land. |
+| Zugriffsberechtigung | Zugriff löschen (AF_10405) | Versicherter entzieht den Zugriff. |
+| Zugriffsberechtigung | Zugriff einsehen (AF_10406) | Versicherter prüft Zugriffscode und Gueltigkeit. |
+| E‑Rezept | E‑Rezept markieren (AF_10408) | Versicherter markiert E‑Rezepte fuer EU‑Einloesung. |
+| EU‑Belieferung | Demographische Daten abrufen (AF_10396) | LE‑EU/NCPeH‑FD ruft Patientendaten ab. |
+| EU‑Belieferung | Liste einlösbarer E‑Rezepte abrufen (AF_10397) | Liste der einlösbaren E‑Rezepte. |
+| EU‑Belieferung | Liste ausgewählter E‑Rezepte abrufen (AF_10398) | Abruf konkreter E‑Rezepte. |
+| EU‑Belieferung | Abgabe im EU‑Ausland (AF_10399) | Abgabe/Schliessen im EU‑Ausland. |

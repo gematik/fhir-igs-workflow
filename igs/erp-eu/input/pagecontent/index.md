@@ -6,8 +6,8 @@ Ergänzungen an den workflowspezifischen Schnittstellen des E-Rezept-Fachdienste
 sowie die Use Cases für Versicherte zur Verwaltung von Einwilligung und
 Zugriffsberechtigung.
 
-Die Inhalte basieren auf der Spezifikation „EU Zugriff E‑Rezept“, Version 1.0.0
-(Stand: 12.03.2025).
+Die Inhalte basieren auf der Spezifikation „EU Zugriff E‑Rezept“, Version 1.0.1
+(Stand: 10.04.2025).
 
 ## Ziel und Umfang
 

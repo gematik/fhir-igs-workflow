@@ -1,5 +1,6 @@
 canonical: https://gematik.de/fhir/workflow/core
 fhirVersion: 4.0.1
+applyExtensionMetadataToRoot: false
 id: de.gematik.workflow.core
 name: E-Rezept Workflow Core #TODO Name muss von Team Polarion vorgegeben werden gemIG...
 title: "Implementation Guide E-Rezept-Workflow Core"
@@ -16,3 +17,31 @@ publisher:
 
 dependencies:
   de.gematik.ti: 1.2.0
+
+menu:
+  Start: index.html
+  Grundlagen:
+    Zugriffsprotokollierung: audit-service.html
+    Datenschutz und Sicherheit: data-security.html
+    FHIR-Validierung: fhir-validate.html
+    Loeschfristen: ttl.html
+  FHIR-Artefakte: artifacts.html
+
+pages:
+  index.md:
+    title: "Implementation Guide E-Rezept-Workflow Core"
+  audit-service.md:
+    title: "Zugriffsprotokollierung"
+  data-security.md:
+    title: "Datenschutz und Sicherheit"
+  fhir-validate.md:
+    title: "FHIR-Ressource validieren"
+  ttl.md:
+    title: "Loeschfristen"
+  artifacts.md:
+    title: "FHIR-Artefakte"
+
+parameters:
+  path-pages:
+    - input/pagecontent
+    - input/content

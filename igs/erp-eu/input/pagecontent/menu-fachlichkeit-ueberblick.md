@@ -32,7 +32,15 @@ normativ mit eindeutigen IDs und RFC‑2119‑Schlüsselwörtern beschrieben.
 Das Feature erweitert den Workflow, damit Versicherte E‑Rezepte für die Einlösung
 im europäischen Ausland bereitstellen können.
 
+Einlösbar sind nur E‑Rezepte mit Workflow 160 oder 200, PZN‑Verordnung und gültigem
+Gültigkeitszeitraum im Status "offen". Betäubungsmittel, Rezepturen sowie
+nicht-industriell hergestellte Arzneimittel sind ausgeschlossen.
+
 ### Autorisierung
 
 * Autorisierung des LE‑EU für den Zugriff auf die Anwendung E‑Rezept.
 * Autorisierung des LE‑EU für den Zugriff auf Daten eines Versicherten.
+
+Die Autorisierung durch den Versicherten erfolgt über einen länderspezifischen
+Zugriffscode. Der Zugriffscode ist 6‑stellig, alphanumerisch und wird im E‑Rezept‑
+FdV erzeugt, registriert und zeitlich befristet angezeigt.

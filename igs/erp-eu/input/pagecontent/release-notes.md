@@ -4,6 +4,6 @@
 
 | Version | Stand | Änderung |
 | --- | --- | --- |
-| 1.0.0 | 12.03.2025 | Initiale Erstellung |
+| 1.0.1 | 10.04.2025 | Aktualisierung der Spezifikation |
 
 Revision: 1175180
