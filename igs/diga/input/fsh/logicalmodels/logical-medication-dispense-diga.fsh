@@ -2,13 +2,13 @@ Logical: GEM_ERP_LOG_MedicationDispense_DiGA
 Parent: Element
 Id: GEM-ERP-LOG-MedicationDispense-DiGA
 Title: "Logical DiGA Medication Dispense"
-Description: "Fachliches Modell zur Beschreibung der Informationen, die bei $close und $dispense in der MedicationDispense-Ressource für DiGAs übermittelt werden."
+Description: "Fachliches Modell zur Beschreibung der Informationen, die bei $close und $dispense in der MedicationDispense-Ressource fuer DiGAs uebermittelt werden."
 * insert Versioning
 * prescriptionId 1..1 string "ID des E-Rezepts"
 * status 1..1 code "Status fixedValue: #completed"
 * patientKVNR 1..1 string "KVNR des Patienten"
 * angabeAbgebendeInstutition 1..1 Identifier "Telematik-ID der abgebenden Institution"
-* freischaltCode 0..1 string "Freischaltcode für die DiGA"
+* freischaltCode 0..1 string "Freischaltcode fuer die DiGA"
   * ^definition = "Optional, da die Kasse die Bereitstellung eines Freischaltcodes ablehnen kann."
 * deepLink 0..1 string "Universeller Deep Link, der vom DiGA Hersteller bereitgestellt wird"
 * angabenZurDiGA 0..1 BackboneElement "Angaben zur DiGA. Zwingend anzugeben, wenn ein Freischaltcode bereitgestellt wird."

@@ -4,7 +4,6 @@ Diese Seite dient als Einstiegspunkt in alle fachlichen Szenarien rund um das E-
 ## Unterstützte Szenarien
 
 - [Verordnung von apothekenpflichtigen Arzneimitteln](./menu-fachlichkeit-szenarien-e-rezept.html): beschreibt den Standard-Workflow von der Verordnung im Primärsystem über die Bereitstellung im Fachdienst bis zur Einlösung in der Apotheke.
-- [Verordnung von Digitalen Gesundheitsanwendungen (DiGA)](./menu-fachlichkeit-szenarien-diga.html): erläutert Flowtype 162 vom Ausstellen der DiGA-Verordnung über die Zuweisung an Kostenträger bis zur Bereitstellung des Freischaltcodes.
 - [Verordnung von T-Rezepten](./menu-fachlichkeit-szenarien-t-rezept.html): beschreibt die Verschreibung, Verwaltung und Bereitstellung hochpreisiger oder besonders sensibler Arzneimittel inklusive ergänzender Apothekenprozesse.
 
 

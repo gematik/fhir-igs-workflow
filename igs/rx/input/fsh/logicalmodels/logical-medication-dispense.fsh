@@ -97,9 +97,6 @@ Description: "Fachliches Modell zur Beschreibung der Informationen, die bei $clo
       * chargennummer 0..1 string "Chargennummer"
       * ablaufdatum 0..1 dateTime "Ablaufdatum der Charge"
     * darreichungsform 0..1 Coding "Darreichungsform"
-  * medicationDiGA 0..1 Reference "Angabe der Medikation bei DiGA Verordnung"
-    * display 1..1 string "Name der verordneten DiGA"
-
 * patientKVNR 1..1 string "KVNR des Patienten"
 * angabeAbgebendeInstutition 1..1 identifier "Telematik-ID der abgebenden Institution"
 * menge 0..1 Quantity "Abgegebene Menge des Arzneimittels."

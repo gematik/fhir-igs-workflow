@@ -6,7 +6,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$activate` gesendet und enthä
 
 ### Auslösung
 
-Das Primärsystem (PVS/KIS) ruft `$activate` unmittelbar nach der QES-Erzeugung auf. Grundlage ist die zuvor erhaltene PrescriptionID. Vor dem Versand MUSS das System sicherstellen, dass alle Pflichtangaben (u.a. KVNR, Coverage, Medication, Flowtype, PerformerType) vollständig sind und der Workflow zum Ziel (Apotheke, Kostenträger, DiGA) passt.
+Das Primärsystem (PVS/KIS) ruft `$activate` unmittelbar nach der QES-Erzeugung auf. Grundlage ist die zuvor erhaltene PrescriptionID. Vor dem Versand MUSS das System sicherstellen, dass alle Pflichtangaben (u.a. KVNR, Coverage, Medication, Flowtype, PerformerType) vollständig sind und der Workflow zum Ziel passt.
 
 ### FHIR Operation API
 
@@ -214,24 +214,6 @@ Das Primärsystem (PVS/KIS) ruft `$activate` unmittelbar nach der QES-Erzeugung 
   Der E-Rezept-Fachdienst MUSS bei Flowtype 166 sicherstellen, dass das Bundle eine <i>MedicationRequest</i> plus eine <i>Medication</i> mit Kategorie 02 enthält; andernfalls ist HTTP 400 mit dem entsprechenden Fehlertext zu liefern.
 </requirement>
 
-##### Flowtype 162: DiGA-spezifische Prüfungen
-
-<requirement conformance="SHALL" key="IG-ERP-84" title="E-Rezept-Fachdienst - Task aktivieren - DiGA-spezifische Payload-Prüfung" version="0">
-  <meta lockversion="false"/>
-  <actor name="E-Rezept-Fachdienst">
-    <testProcedure id="Produkttest"/>
-  </actor>
-  Der E-Rezept-Fachdienst MUSS für Flowtype 162 eine <i>DeviceRequest</i>-Ressource sowie <i>Composition.type = e16D</i> verlangen und bei Abweichungen mit HTTP 400 abbrechen.
-</requirement>
-
-<requirement conformance="SHALL" key="IG-ERP-85" title="E-Rezept-Fachdienst - Task aktivieren - PZN in KBV_PR_EVDGA_HealthAppRequest validieren" version="0">
-  <meta lockversion="false"/>
-  <actor name="E-Rezept-Fachdienst">
-    <testProcedure id="Produkttest"/>
-  </actor>
-  Der E-Rezept-Fachdienst MUSS für Flowtype 162 die PZN in <i>KBV_PR_EVDGA_HealthAppRequest.code</i> gemäß den Technischen Hinweisen prüfen; Fehler führen zu HTTP 400.
-</requirement>
-
 ##### Coverage-Type: GKV- und PKV-Workflows
 
 <requirement conformance="SHALL" key="IG-ERP-86" title="E-Rezept-Fachdienst - Task aktivieren - Coverage-Type für GKV-Workflows" version="0">
@@ -258,14 +240,6 @@ Das Primärsystem (PVS/KIS) ruft `$activate` unmittelbar nach der QES-Erzeugung 
     <testProcedure id="Produkttest"/>
   </actor>
   Der E-Rezept-Fachdienst MUSS `$activate` mit dem Fehler „BTM nicht zulässig“ abbrechen, wenn das Bundle <i>Medication.extension:KBV_EX_ERP_Medication_Category = 01</i> enthält.
-</requirement>
-
-<requirement conformance="SHALL" key="IG-ERP-89" title="E-Rezept-Fachdienst - Task aktivieren - Alternative IK für Flowtype 162 verbieten" version="0">
-  <meta lockversion="false"/>
-  <actor name="E-Rezept-Fachdienst">
-    <testProcedure id="Produkttest"/>
-  </actor>
-  Der E-Rezept-Fachdienst MUSS Verordnungen des Flowtype 162 mit <i>Coverage.payor.identifier.extension:alternativeID</i> mit HTTP 400 abweisen, um Unfallkassen auszuschließen.
 </requirement>
 
 ##### Ableitungen aus Flowtype (EU-Einlösbarkeit)
@@ -411,7 +385,7 @@ Das Primärsystem (PVS/KIS) ruft `$activate` unmittelbar nach der QES-Erzeugung 
 Die Aktivierung folgt einem streng sequenziellen Prüfpfad:
 
 1. **Authentisierung und Statusprüfung:** AccessCode, optional Secret und Taskstatus `draft` bilden die Eintrittskriterien. Verletzungen führen zu 403.
-2. **Identitäts- und Attributvalidierungen:** IKNR, alternative Kostenträger-IDs, KVNR (Patient), LANR/ZANR (Performer) und PZN werden mit den jeweiligen Prüfziffern kontrolliert. Zusätzlich gelten Flowtype-spezifische Constraints (Coverage-Typ, DiGA DeviceRequest, T-Rezept Medication category).
+2. **Identitäts- und Attributvalidierungen:** IKNR, alternative Kostenträger-IDs, KVNR (Patient), LANR/ZANR (Performer) und PZN werden mit den jeweiligen Prüfziffern kontrolliert. Zusätzlich gelten Flowtype-spezifische Constraints (Coverage-Typ, T-Rezept Medication category).
 3. **Mehrfachverordnungslogik:** Für Kennzeichnung `Mehrfachverordnung=true` prüft der Fachdienst Numerator/Denominator, Datumsfenster und Rechtsgrundlage. Entlass-/Ersatzrezepte sowie unvollständige Zeiträume werden abgewiesen.
 4. **QES- und Schemaprüfung:** Der PKCS#7-Datensatz wird gegen ETSI/QES-Regeln validiert; das eingebettete Bundle muss KBV-konform sein. OCSP-Fehler resultieren in HTTP 512.
 5. **Persistenz und Ableitungen:** Bei Erfolg speichert der Fachdienst QES und serversigniertes Bundle, übernimmt KVNR und performerType in den Task, setzt `Task.status = ready`, ermittelt EU-Einlösbarkeit und stellt Daten für den ePA Medication Service bereit ([A_25925]).

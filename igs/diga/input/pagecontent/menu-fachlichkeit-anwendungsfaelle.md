@@ -1,25 +1,21 @@
-Uebersicht der fachlichen Anwendungsfaelle im DiGA-Workflow.
+### Fachliche Anwendungsfaelle
 
-## Verordnung
-- UC 2.1 E-Rezept erzeugen
-- UC 2.3 E-Rezept einstellen
-- UC 2.5 E-Rezept durch Verordnenden loeschen
+{% assign use_cases = site.data['use-cases'] %}
+{% assign roles = site.data['roles'] %}
 
-## Verwaltung durch Versicherte
-- UC 3.1 E-Rezepte durch Versicherten abrufen
-- UC 3.2 E-Rezept durch Versicherten loeschen
-- UC 3.3 Nachricht durch Versicherten uebermitteln
-- UC 3.4 Nachrichten durch Versicherten empfangen
-- UC 3.5 Protokolldaten abrufen
-- UC 3.8 Nachricht durch Versicherten loeschen
+Die folgenden fachlichen Anwendungsfaelle beschreiben die Schritte zur Verordnung und Bereitstellung eines DiGA-E-Rezepts.
 
-## Einloesen durch Kostentraeger
-- UC 4.1 E-Rezept durch Abgebenden abrufen
-- UC 4.2 E-Rezept durch Abgebenden zurueckgeben
-- UC 4.4 Quittung abrufen
-- UC 4.6 Nachrichten durch Abgebenden empfangen
-- UC 4.7 Nachricht durch Abgebenden uebermitteln
-- UC 4.18 E-Rezepte durch Kostentraeger abrufen
+#### Uebergreifende Vorbedingungen
 
-Details zu den Anwendungsfaellen sind in den Basis-Spezifikationen beschrieben
-und werden hier nur DiGA-spezifisch ergaenzt.
+- Der Leistungserbringer ist gegenueber der TI authentisiert (Institutionsidentitaet via SMC-B ueber IdP/Konnektor).
+- Fuer die QES steht ein freigeschalteter HBA zur Verfuegung.
+- Der Verordnungsdatensatz wird als KBV-konformes FHIR-Bundle im Primaersystem gefuehrt.
+
+{% for use_case in use_cases %}
+
+<a id="{{ use_case.anchor }}"></a>
+#### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% endfor %}

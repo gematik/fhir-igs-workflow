@@ -38,7 +38,7 @@ Usage: #definition
     * name = #medication
     * type = #Medication
     * use = #in
-    * min = 0 // optional durch DiGA
+    * min = 0
     * max = "1"
 
 // out

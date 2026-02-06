@@ -45,7 +45,7 @@ Description: "Example of a Medication Dispense for DiGAs which has no redeem cod
 * performer.actor.identifier.system = $identifier-telematik-id
 * performer.actor.identifier.value = "8-SMC-B-Testkarte-883110000095957"
 * insert Date(whenHandedOver)
-* note.text = "Freischaltcode für DiGA konnte nicht erstellt werden"
+* note.text = "Freischaltcode fuer DiGA konnte nicht erstellt werden"
 * medicationReference.extension[data-absent-reason].valueCode = #asked-declined
 
 /*
@@ -90,7 +90,7 @@ Description: "A DataAbsentReason needs to be provided if no redeem code is provi
 * performer.actor.identifier.system = $identifier-telematik-id
 * performer.actor.identifier.value = "8-SMC-B-Testkarte-883110000095957"
 * insert Date(whenHandedOver)
-* note.text = "Freischaltcode für DiGA konnte nicht erstellt werden"
+* note.text = "Freischaltcode fuer DiGA konnte nicht erstellt werden"
 * medicationReference.display = "whitespace"
 
 Instance: INVALID-Example-MedicationDispense-Missing-DiGA-Name

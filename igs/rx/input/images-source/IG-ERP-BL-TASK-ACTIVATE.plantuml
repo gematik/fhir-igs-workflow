@@ -11,7 +11,7 @@ else (no)
 	stop
 endif
 if (Validate IKNR, KVNR, LANR/ZANR, PZN?) then (ok)
-	:Check Flowtype constraints (Coverage type, DiGA DeviceRequest, BtM exclusion);
+	:Check Flowtype constraints (Coverage type, BtM exclusion);
 else (error)
 	:Return OperationOutcome 400 (identifier failure);
 	stop

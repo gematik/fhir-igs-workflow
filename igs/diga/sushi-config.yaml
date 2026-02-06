@@ -15,14 +15,16 @@ publisher:
   email: erp-umsetzung@gematik.de
 
 dependencies:
+  de.gematik.erezept-workflow.r4: 1.6.1
   de.basisprofil.r4: 1.5.2
+  de.gematik.epa.medication: 1.3.0
   de.gematik.ti: 1.2.0
 
 menu:
   Start: index.html
   Fachlichkeit:
     Ueberblick: menu-fachlichkeit-ueberblick.html
-    Szenario DiGA: menu-fachlichkeit-szenario-diga.html
+    Szenarien: menu-fachlichkeit-szenarien.html
     Anwendungsfaelle: menu-fachlichkeit-anwendungsfaelle.html
   Technische Umsetzung:
     Systemueberblick: menu-technische-umsetzung-systemueberblick.html
@@ -46,6 +48,8 @@ pages:
     title: "Implementation Guide E-Rezept-DiGA"
   menu-fachlichkeit-ueberblick.md:
     title: "Ueberblick zur Verordnung von DiGAs"
+  menu-fachlichkeit-szenarien.md:
+    title: "Szenarien fuer den DiGA-Workflow"
     menu-fachlichkeit-szenario-diga.md:
       title: "Szenario: E-Rezept fuer DiGA"
     menu-fachlichkeit-anwendungsfaelle.md:
@@ -70,6 +74,8 @@ pages:
       title: "Query API: MedicationDispense"
   operation-api.md:
     title: "Operationen"
+    op-activate.md:
+      title: "Operation: $activate"
     op-accept.md:
       title: "Operation: $accept"
     op-reject.md:
