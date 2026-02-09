@@ -6,8 +6,6 @@ RUN apt-get update \
        curl \
        jq \
        wget \
-         python3 \
-         python3-venv \
    apt-transport-https \
    ca-certificates \
    gnupg \
@@ -30,8 +28,6 @@ RUN apt-get update \
        libxshmfence1 \
         libxcb-dri3-0 \
    && rm -rf /var/lib/apt/lists/*
-
-RUN ln -s /usr/bin/python3 /usr/local/bin/python
 
 RUN wget -q https://github.com/mikefarah/yq/releases/download/v4.44.1/yq_linux_amd64 -O /usr/local/bin/yq \
    && chmod +x /usr/local/bin/yq
