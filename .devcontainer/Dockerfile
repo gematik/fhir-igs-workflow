@@ -6,6 +6,11 @@ RUN apt-get update \
        curl \
        jq \
        wget \
+         python3 \
+         python3-venv \
+   apt-transport-https \
+   ca-certificates \
+   gnupg \
        xvfb \
        libgtk-3-0 \
        libnotify4 \
@@ -23,24 +28,29 @@ RUN apt-get update \
        libgbm1 \
        libdrm2 \
        libxshmfence1 \
-       libxcb-dri3-0 \
+        libxcb-dri3-0 \
    && rm -rf /var/lib/apt/lists/*
+
+RUN ln -s /usr/bin/python3 /usr/local/bin/python
 
 RUN wget -q https://github.com/mikefarah/yq/releases/download/v4.44.1/yq_linux_amd64 -O /usr/local/bin/yq \
    && chmod +x /usr/local/bin/yq
 
-RUN apt-get update \
-   && apt-get install -y --no-install-recommends \
-       apt-transport-https \
-       ca-certificates \
-       gnupg \
-   && echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" \
+RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" \
        > /etc/apt/sources.list.d/google-cloud-sdk.list \
    && curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg \
        | gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg \
    && apt-get update \
    && apt-get install -y --no-install-recommends google-cloud-cli \
    && rm -rf /var/lib/apt/lists/*
+
+RUN curl -fsSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh \
+   && chmod +x /tmp/dotnet-install.sh \
+   && /tmp/dotnet-install.sh --channel 8.0 --install-dir /usr/share/dotnet \
+   && ln -s /usr/share/dotnet/dotnet /usr/local/bin/dotnet \
+   && rm /tmp/dotnet-install.sh
+
+RUN dotnet tool install --tool-path /usr/local/bin Firely.Terminal
 
 RUN set -e; \
    drawio_url=$(curl -s https://api.github.com/repos/jgraph/drawio-desktop/releases/latest \

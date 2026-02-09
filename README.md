@@ -48,7 +48,7 @@ Steps:
 
 Notes:
 
-- The container installs Java, `yq`, `fsh-sushi`, `igtools`, draw.io (headless), and Google Cloud CLI.
+- The container installs Java, `yq`, `fsh-sushi`, `igtools`, draw.io (headless), Google Cloud CLI, and Firely Terminal.
 - Optional steps are enabled by default inside the container:
 	- `BUILD_USE_IGTOOLS=true`
 	- `BUILD_GENERATE_DRAWIO_IMAGES=true`
