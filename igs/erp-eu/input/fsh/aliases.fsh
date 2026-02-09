@@ -1,5 +1,6 @@
 Alias: $cs-iso-3166 = urn:iso:std:iso:3166
 Alias: $cs-consent-scope = http://terminology.hl7.org/CodeSystem/consentscope
+Alias: $capabilitystatement-expectation = http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation
 
 //VZD
 Alias: $cs-organization-profession-oid = https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID

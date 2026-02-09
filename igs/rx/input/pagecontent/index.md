@@ -1,45 +1,38 @@
-Diese Spezifikation beschreibt die Datenmodelle des E-Rezept Workflow.
+# Implementation Guide E-Rezept-Workflow
 
-Die Fachanwendung E-Rezept ermöglicht die Übermittlung von ärztlichen bzw. zahnärztlichen Verordnungen in elektronischer Form. In der ersten Stufe sind dies Verordnungen für apothekenpflichtige Arzneimittel. In weiteren Ausbaustufen wird die Anwendung um weitere Verordnungen wie Betäubungsmittel (BtM), T-Rezepte sowie Heil- und Hilfsmittel erweitert.
+Dieser Implementation Guide beschreibt die Datenmodelle und Basis-Workflows des
+E-Rezept-Fachdienstes. Er bildet das Fundament fuer die fachlichen Szenarien und
+die technischen Schnittstellen im E-Rezept-Workflow.
 
-Die erstellten FHIR Profile richten sich an die Implementierer und Nutzer der Schnittstellen der Fachanwendung E-Rezept. Die Profile bilden dabei das technische Grundgerüst der Informationsobjekte zur Umsetzung des Projektes E-Rezept. Sie stehen in Verbindung mit den von der KBV definierten fachlichen Informationsobjekten (https://simplifier.net/eRezept/~introduction). 
+## Zweck und Geltungsbereich
 
-Folgende Dokumente gelten über die Datenmodelle hinaus:
+- Grundlegende Workflows fuer E-Rezepte (Flowtypes 160/169/200/209)
+- Basis-Profile, Operationen und Validierungsregeln
+- Referenz fuer modulare IGs (z. B. PKV, EU, T-Rezept, DiGA)
 
-- Die Spezifikation für den E-Rezept-Fachdienst findet sich unter [gemSpec_FD_eRp](https://gemspec.gematik.de/docs/gemSpec/gemSpec_FD_eRp/latest/)
-- Spezifikation E-Rezept-Frontend des Versicherten [gemSpec_eRp_FdV](https://gemspec.gematik.de/docs/gemSpec/gemSpec_eRp_FdV/latest/)
+## Nicht im Scope
 
-Das Repository, was diesem Projekt zugrundeliegt und auch die FSH-Files enthält findet sich hier: https://github.com/gematik/fhir-profiles-erp
+- Modul-spezifische Sonderfaelle, die in eigenen IGs beschrieben sind
+- Produkttyp-spezifische Implementierungsdetails ausserhalb des Fachdienstes
 
 ## Wie dieser IG zu lesen ist
 
-Dieser Implementation Guide (IG) ist in mehrere Kapitel gegliedert siehe [Inhaltsverzeichnis](./toc.html).
+Die Kapitel folgen der Struktur Fachlichkeit, Technische Umsetzung und
+Schnittstellen. Szenarien und Anwendungsfaelle verweisen auf die zugehoerigen
+technischen Kapitel und Profile.
 
-tbd...
-
-Zuerst Szenarien und Anwendungsfälle, dann technische Umsetzung, Profile, Beispiele, Abhängigkeiten, Kontakt und rechtliche Hinweise.
-
-### Weitere abhängige IGs
-Dieser FHIR-IG enthält die grundlegenden Spezifikationen und Profile für das E-Rezept. Darüber hinaus sind weitere IGs relevant, um den E-Rezept-Fachdienst vollständig zu beschreiben und zu implementieren.
-
-Diese FHIR-IGs haben jeweils ein eigenes FHIR Package, da es sich um abgegrenzte Module handelt. Die folgenden IGs sind für die vollständige Implementierung des E-Rezepts relevant:
-
-- [gemIG_eRp_ChargeInformation]
-- [gemIG_eRp_TPrescription_Transfer]
-- [gemIG_eRp_EU]
-
-## Abhängigkeiten
+## Abhaengigkeiten
 
 {% include dependency-table.xhtml %}
 
 ## Kontakt und Feedback
 
-Für Fragen und Feedback wenden Sie sich bitte an [erp-umsetzung@gematik.de](mailto:erp-umsetzung@gematik.de) oder nutzen Sie das [GitHub-Repository](https://github.com/gematik/fhir-profiles-erp/issues).
+Fuer Fragen und Feedback wenden Sie sich bitte an
+[erp-umsetzung@gematik.de](mailto:erp-umsetzung@gematik.de).
 
 ## Rechtliche Hinweise
 
-Dieser IG wird von der [gematik GmbH](https://www.gematik.de/) erstellt und verwaltet.
-
 Copyright ©2026+ gematik GmbH
 
-HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health Level Seven International, eingetragen beim United States Patent and Trademark Office.
+HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von
+Health Level Seven International.

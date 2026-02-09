@@ -19,4 +19,20 @@ Usage: #definition
 * extension[baseUrl].valueString = "http://todo"
 
 * insert CapSupportResource(Task, #SHALL)
+* insert CapSupportResourceOperation(createOperation, CreateOperation, #SHALL)
+* insert CapSupportResourceOperation(activateOperation, ActivateOperation, #SHALL)
+* insert CapSupportResourceOperation(abortOperation, AbortOperation, #SHALL)
+* insert CapSupportResourceOperation(acceptOperation, AcceptOperation, #SHALL)
+* insert CapSupportResourceOperation(closeOperation, CloseOperation, #SHALL)
+* insert CapSupportResourceOperation(dispenseOperation, DispenseOperation, #SHALL)
+* insert CapSupportResourceOperation(rejectOperation, RejectOperation, #SHALL)
+
+* insert MedicationInteraction(#SHALL)
+* insert MedicationRequestInteraction(#SHALL)
+* insert MedicationDispenseInteraction(#SHALL)
+* insert MedicationStatementInteraction(#SHALL)
+* insert OrganizationInteraction(#SHALL)
+* insert PractitionerInteraction(#SHALL)
+* insert PractitionerRoleInteraction(#SHALL)
+* insert ProvenanceInteraction(#SHALL)
 

@@ -18,11 +18,5 @@ Usage: #definition
 * rest.mode = #server
 * extension[baseUrl].valueString = "http://todo"
 * insert Error423Locked
-
-* insert MedicationDispenseInteraction(#SHALL)
-
-* insert CapSupportResource(Task, #SHALL)
-* insert CapSupportResourceOperation(createOperation, CreateOperation, #SHALL)
-* insert CapSupportResourceOperation(activateOperation, ActivateOperation, #SHALL)
-* insert CapSupportResourceOperation(abortOperation, AbortOperation, #SHALL)
+* insert ImportCapabilityStatment("https://gematik.de/fhir/workflow/core/CapabilityStatement/erp-fachdienst-server", #SHALL)
 

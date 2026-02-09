@@ -1,38 +1,40 @@
-Dieser Implementation Guide beschreibt das Feature zur Übermittlung von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel für PKV-Versicherte und die Bereitstellung der Abrechnungsinformationen für den Kostenträger. Es umfasst die Definition der Prozessparameter, Ergänzungen der workflowspezifischen Anforderungen an die Schnittstellen des E-Rezept-Fachdienstes sowie die Darstellung der Use Cases für Leistungserbringer und Versicherte.
+# Implementation Guide E-Rezept Patientenrechnung (PKV)
 
-Die Fachanwendung E-Rezept ermöglicht die Übermittlung von ärztlichen bzw. zahnärztlichen Verordnungen in elektronischer Form. In der ersten Stufe sind dies Verordnungen für apothekenpflichtige Arzneimittel. In weiteren Ausbaustufen wird die Anwendung um weitere Verordnungen wie Betäubungsmittel (BtM), T-Rezepte sowie Heil- und Hilfsmittel erweitert.
+Dieser Implementation Guide beschreibt die Uebermittlung von Verordnungen fuer
+PKV-Versicherte sowie die Bereitstellung der Abrechnungsinformationen fuer den
+Kostentraeger. Er ergaenzt die workflowspezifischen Anforderungen des
+E-Rezept-Fachdienstes und beschreibt die relevanten Use Cases.
 
-Die erstellten FHIR Profile richten sich an die Implementierer und Nutzer der Schnittstellen der Fachanwendung E-Rezept. Die Profile bilden dabei das technische Grundgerüst der Informationsobjekte zur Umsetzung des Projektes E-Rezept. Sie stehen in Verbindung mit den von der KBV definierten fachlichen Informationsobjekten (https://simplifier.net/eRezept/~introduction). 
+## Zweck und Geltungsbereich
 
-Für eine Übersicht der in diesem IG referenzierten Dokumente siehe [Referenzen](./referenced.html).
+- E-Rezepte fuer PKV-Versicherte (Flowtypes 200/209)
+- Abrechnungsinformationen fuer den Kostentraeger
+- PKV-spezifische Anforderungen an Schnittstellen und Datenmodelle
 
-Das Repository, was diesem Projekt zugrundeliegt und auch die FSH-Files enthält findet sich hier: https://github.com/gematik/fhir-profiles-erpchrg
+## Nicht im Scope
+
+- GKV-spezifische Workflows
+- Nicht apothekenpflichtige Verordnungen
+- Abrechnung ausserhalb des E-Rezept-Fachdienstes
 
 ## Wie dieser IG zu lesen ist
 
-Dieser Implementation Guide (IG) ist in mehrere Kapitel gegliedert siehe [Inhaltsverzeichnis](./toc.html).
+Die Kapitel folgen der Struktur Fachlichkeit, Technische Umsetzung und
+Schnittstellen. Szenarien und Anwendungsfaelle verweisen auf die zugehoerigen
+technischen Kapitel und Profile.
 
-//TODO: tbd...
-
-Zuerst Szenarien und Anwendungsfälle, dann technische Umsetzung, Profile, Beispiele, Abhängigkeiten, Kontakt und rechtliche Hinweise.
-
-### Abhängiger IG
-Dieser FHIR-IG basiert auf dem FHIR-IG [gemIG_eRp_Prescription], welcher die Grundlage für die Implementierung des E-Rezept-Fachdienst und der Anwendungsfälle basiert. Alle dort beschriebenen Anforderungen und Datenmodelle gelten auch für diesen IG.
-
-Schnittstellen und Spezifikationen, die in anderen Anwendungsfällen des E-Rezept-Fachdienst bereits beschrieben sind, werden hier nicht wiederholt. Entsprechende Anforderungen sind in [gemIG_eRp_Prescription] dokumentiert und werden aus diesem IG referenziert.
-
-## Abhängigkeiten
+## Abhaengigkeiten
 
 {% include dependency-table.xhtml %}
 
 ## Kontakt und Feedback
 
-Für Fragen und Feedback wenden Sie sich bitte an [erp-umsetzung@gematik.de](mailto:erp-umsetzung@gematik.de) oder nutzen Sie das [GitHub-Repository](https://github.com/gematik/fhir-profiles-erp/issues).
+Fuer Fragen und Feedback wenden Sie sich bitte an
+[erp-umsetzung@gematik.de](mailto:erp-umsetzung@gematik.de).
 
 ## Rechtliche Hinweise
 
-Dieser IG wird von der [gematik GmbH](https://www.gematik.de/) erstellt und verwaltet.
-
 Copyright ©2026+ gematik GmbH
 
-HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health Level Seven International, eingetragen beim United States Patent and Trademark Office.
+HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von
+Health Level Seven International.

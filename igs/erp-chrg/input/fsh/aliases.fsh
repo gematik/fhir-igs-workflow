@@ -13,6 +13,6 @@ Alias: $KBV_PR_ERP_Bundle = https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_B
 Alias: $cs-consent-scope = http://terminology.hl7.org/CodeSystem/consentscope
 
 Alias: $capabilitystatement-expectation = http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation
-Alias: $cap-erp-fd = https://gematik.de/fhir/erp/CapabilityStatement/erp-fachdienst-server
+Alias: $cap-erp-fd = https://gematik.de/fhir/workflow/core/CapabilityStatement/erp-fachdienst-server
 Alias: $erp-base-url = erp.zentral.erp.splitdns.ti-dienste.de
 Alias: $erp-task = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task
