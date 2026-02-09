@@ -31,6 +31,29 @@ Example:
 ./build-all.sh
 ```
 
+## Devcontainer (Windows-friendly)
+
+This repo includes a VS Code devcontainer so Windows users can build without local installs.
+
+Steps:
+
+1) Install Docker Desktop and VS Code.
+2) Install the VS Code "Dev Containers" extension.
+3) Open this repo in VS Code and choose "Reopen in Container".
+4) Build an IG inside the container:
+
+```shell
+./build-all.sh --ig rx
+```
+
+Notes:
+
+- The container installs Java, `yq`, `fsh-sushi`, `igtools`, draw.io (headless), and Google Cloud CLI.
+- Optional steps are enabled by default inside the container:
+	- `BUILD_USE_IGTOOLS=true`
+	- `BUILD_GENERATE_DRAWIO_IMAGES=true`
+- draw.io runs via `xvfb` and uses `DRAWIO_APP=/usr/local/bin/drawio`.
+
 ## Notes
 
 - The publisher JAR is shared under tools/publisher/ and downloaded on first build.

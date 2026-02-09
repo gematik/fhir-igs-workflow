@@ -1,0 +1,12 @@
+{
+  "name": "FHIR IG Builder",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "postCreateCommand": "npm install -g fsh-sushi",
+  "containerEnv": {
+    "BUILD_USE_IGTOOLS": "true",
+    "BUILD_GENERATE_DRAWIO_IMAGES": "true",
+    "DRAWIO_APP": "/usr/local/bin/drawio"
+  }
+}
