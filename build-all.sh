@@ -44,6 +44,18 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
+ensure_ig_deps() {
+  local deps_script="$ROOT_DIR/scripts/collect-sushi-deps.sh"
+
+  if [[ -x "$deps_script" ]]; then
+    "$deps_script"
+  elif [[ -f "$deps_script" ]]; then
+    bash "$deps_script"
+  else
+    echo "Warning: collect-sushi-deps.sh not found; skipping dependency check"
+  fi
+}
+
 run_ig() {
   local ig_short="$1"
 
@@ -135,6 +147,8 @@ run_igs_macos_terminal() {
     osascript -e "tell application \"Terminal\" to do script \"cd '$repo_dir' && ./build-all.sh --ig '$ig_short'\""
   done
 }
+
+ensure_ig_deps
 
 if [[ ${#IG_FILTER[@]} -eq 0 ]]; then
   declare -a all_igs=()

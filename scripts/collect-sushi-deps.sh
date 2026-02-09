@@ -84,8 +84,8 @@ if [[ -n "$missing_list" ]]; then
       [[ -z "$line" ]] && continue
       pkg="${line%% *}"
       ver="${line#* }"
-      echo "Installing ${pkg}#${ver}..."
-      fhirpkg install "${pkg}#${ver}"
+      echo "Installing ${pkg} ${ver}..."
+      fhir install "${pkg}" "${ver}"
     done <<< "$missing_list"
   else
     echo "Skipping install."
