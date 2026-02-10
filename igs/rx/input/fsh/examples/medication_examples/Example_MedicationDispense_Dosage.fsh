@@ -1,5 +1,5 @@
 Instance: Example-MedicationDispense-Dosage-tageszeit
-InstanceOf: GEM_ERP_PR_MedicationDispense
+InstanceOf: EFlowRxMedicationDispense
 Usage: #example
 Title: "Beispiel Medikamentenabgabe mit Dosierung nach 4er Schema"
 Description: "Beispiel für eine Medikamentenabgabe mit vollständigen Angaben und Dosierung nach 4er Schema"
@@ -33,7 +33,7 @@ Description: "Beispiel für eine Medikamentenabgabe mit vollständigen Angaben u
   * doseAndRate.doseQuantity = 1 $kbv-dosiereinheit#1 "Stück"
 
 Instance: Example-MedicationDispense-Dosage-uhrzeit
-InstanceOf: GEM_ERP_PR_MedicationDispense
+InstanceOf: EFlowRxMedicationDispense
 Usage: #example
 Title: "Beispiel Medikamentenabgabe mit Dosierung nach Uhrzeitbezug"
 Description: "Beispiel für eine Medikamentenabgabe mit vollständigen Angaben und Dosierung nach Uhrzeitbezug"
@@ -60,7 +60,7 @@ Description: "Beispiel für eine Medikamentenabgabe mit vollständigen Angaben u
   * doseAndRate.doseQuantity = 1 $kbv-dosiereinheit#1 "Stück"
 
 Instance: Example-MedicationDispense-Dosage-interval
-InstanceOf: GEM_ERP_PR_MedicationDispense
+InstanceOf: EFlowRxMedicationDispense
 Usage: #example
 Title: "Beispiel Medikamentenabgabe mit Dosierung nach Interval"
 Description: "Beispiel für eine Medikamentenabgabe mit vollständigen Angaben und Dosierung nach Interval"
@@ -85,7 +85,7 @@ Description: "Beispiel für eine Medikamentenabgabe mit vollständigen Angaben u
   * doseAndRate.doseQuantity = 1 $kbv-dosiereinheit#1 "Stück"
 
 Instance: Example-MedicationDispense-Dosage-weekday
-InstanceOf: GEM_ERP_PR_MedicationDispense
+InstanceOf: EFlowRxMedicationDispense
 Usage: #example
 Title: "Beispiel Medikamentenabgabe mit Dosierung nach Wochentagsbezug"
 Description: "Beispiel für eine Medikamentenabgabe mit vollständigen Angaben und Dosierung nach Wochentagsbezug"
@@ -113,7 +113,7 @@ Description: "Beispiel für eine Medikamentenabgabe mit vollständigen Angaben u
   * doseAndRate.doseQuantity = 2 $kbv-dosiereinheit#1 "Stück"
 
 Instance: Example-MedicationDispense-Dosage-comb-interval
-InstanceOf: GEM_ERP_PR_MedicationDispense
+InstanceOf: EFlowRxMedicationDispense
 Usage: #example
 Title: "Beispiel Medikamentenabgabe mit Dosierung nach Kombination des Intervals"
 Description: "Beispiel für eine Medikamentenabgabe mit vollständigen Angaben und Dosierung nach Kombination des Intervals"
@@ -147,7 +147,7 @@ Description: "Beispiel für eine Medikamentenabgabe mit vollständigen Angaben u
   * doseAndRate.doseQuantity = 2 $kbv-dosiereinheit#1 "Stück"
 
 Instance: Example-MedicationDispense-Dosage-comb-dayofweek
-InstanceOf: GEM_ERP_PR_MedicationDispense
+InstanceOf: EFlowRxMedicationDispense
 Usage: #example
 Title: "Beispiel Medikamentenabgabe mit Dosierung nach Kombination des Wochentags"
 Description: "Beispiel für eine Medikamentenabgabe mit vollständigen Angaben und Dosierung nach Kombination des Wochentags"

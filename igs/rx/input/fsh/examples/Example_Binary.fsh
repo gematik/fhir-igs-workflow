@@ -7,7 +7,7 @@ Usage: #inline
 * data = "dGhpcyBibG9iIGlzIHNuaXBwZWQ="
 
 Instance: PrescriptionBinaryWithMeta
-InstanceOf: GEM_ERP_PR_Binary
+InstanceOf: EFlowRxBinary
 Title: "Binary einer Verschreibung (QES) mit Metadaten"
 Description: "Beispiel für binäre Daten einer elektronischen Verschreibung mit erweiterten Metadaten"
 Usage: #inline

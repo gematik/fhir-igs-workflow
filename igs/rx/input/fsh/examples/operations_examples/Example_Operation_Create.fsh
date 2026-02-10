@@ -4,7 +4,7 @@ Title: "Beispiel für $create Operation Parameter"
 Description: "Beispiel für Eingabeparameter der $create Operation zur Erstellung einer neuen Aufgabe"
 Usage: #example
 * parameter[+].name = "workflowType"
-* parameter[=].valueCoding = GEM_ERP_CS_FlowType#160
+* parameter[=].valueCoding = EFlowRxFlowTypeCS#160
 
 Instance: ExampleOperationCreateError
 InstanceOf: OperationOutcome
@@ -17,9 +17,9 @@ Usage: #example
   * details.text = "FHIR-Validation error"
   * diagnostics = """
     Parameters.parameter[0].valueCoding: error: Code 140 is not part of CodeSystem 
-    https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType (from profile: 
+    https://gematik.de/fhir/eflow-rx/CodeSystem/EFlowRxFlowType (from profile: 
     http://hl7.org/fhir/StructureDefinition/Parameters|4.0.1); 
     Parameters.parameter[0].valueCoding: error: Code 140 is not part of CodeSystem 
-    https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType (from profile: 
+    https://gematik.de/fhir/eflow-rx/CodeSystem/EFlowRxFlowType (from profile: 
     http://hl7.org/fhir/StructureDefinition/Coding|4.0.1);
     """

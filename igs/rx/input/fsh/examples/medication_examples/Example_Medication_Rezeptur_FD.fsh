@@ -1,6 +1,6 @@
 // Rezeptur
 Instance: Medication-Rezeptur-FD
-InstanceOf: GEM_ERP_PR_Medication
+InstanceOf: EFlowRxMedication
 Title: "Medication-Rezeptur-FD"
 Usage: #example
 * contained[+] = MedicationHydrocortison-FD

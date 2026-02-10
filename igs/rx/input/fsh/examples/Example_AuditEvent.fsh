@@ -1,6 +1,6 @@
 
 Instance: AuditEventSample
-InstanceOf: GEM_ERP_PR_AuditEvent
+InstanceOf: EFlowRxAuditEvent
 Title: "AuditEvent-Eintrag vom E-Rezept-Fachdienst"
 Description: "Beispiel für einen AuditEvent-Eintrag, der vom E-Rezept-Fachdienst beim Zugriff auf Patientendaten generiert wird"
 Usage: #example

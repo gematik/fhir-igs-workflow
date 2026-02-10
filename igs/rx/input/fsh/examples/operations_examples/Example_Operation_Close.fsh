@@ -18,7 +18,7 @@ Usage: #example
     [http://terminology.hl7.org/CodeSystem/medicationdispense-status]preparation, 
     [http://terminology.hl7.org/CodeSystem/medicationdispense-status]stopped, 
     [http://terminology.hl7.org/CodeSystem/medicationdispense-status]unknown 
-    (from profile: https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|1.2); 
+    (from profile: https://gematik.de/fhir/eflow-rx/StructureDefinition/EFlowRxMedicationDispense|1.2); 
     MedicationDispense.status: error: Value closed not allowed for ValueSet binding, allowed are 
     [http://terminology.hl7.org/CodeSystem/medicationdispense-status]cancelled, 
     [http://terminology.hl7.org/CodeSystem/medicationdispense-status]completed, 
@@ -31,5 +31,5 @@ Usage: #example
     [http://terminology.hl7.org/CodeSystem/medicationdispense-status]unknown 
     (from profile: http://hl7.org/fhir/StructureDefinition/MedicationDispense|4.0.1); 
     MedicationDispense.status: error: value must match fixed value: "completed" (but is "closed") 
-    (from profile: https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|1.2);
+    (from profile: https://gematik.de/fhir/eflow-rx/StructureDefinition/EFlowRxMedicationDispense|1.2);
     """

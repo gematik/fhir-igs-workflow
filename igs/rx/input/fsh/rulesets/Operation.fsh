@@ -1,6 +1,6 @@
 RuleSet: Operation(name)
 * insert OperationVersioning
-* url = "https://gematik.de/fhir/erp/OperationDefinition/{name}OperationDefinition"
+* url = "https://gematik.de/fhir/eflow-rx/OperationDefinition/{name}OperationDefinition"
 * name = "{name}"
 * kind = #operation
 * affectsState = true

@@ -1,6 +1,6 @@
 // Rezeptur
 Instance: Medication-Rezeptur
-InstanceOf: GEM_ERP_PR_Medication
+InstanceOf: EFlowRxMedication
 Title: "Medikament-Rezeptur"
 Description: "Beispiel für eine Rezeptur mit mehreren Wirkstoffen als zusammengesetztes Medikament"
 Usage: #example

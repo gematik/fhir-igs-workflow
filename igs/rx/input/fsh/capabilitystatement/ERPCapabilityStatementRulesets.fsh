@@ -73,7 +73,7 @@ RuleSet: MedicationRequestInteraction(expectation)
 
 RuleSet: MedicationDispenseInteraction(expectation)
 * insert CapSupportResource(MedicationDispense, #SHALL)
-* insert CapSupportProfile(GEM_ERP_PR_MedicationDispense, #SHALL)
+* insert CapSupportProfile(EFlowRxMedicationDispense, #SHALL)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
 * insert SearchTypeInteractionStatusCodes
