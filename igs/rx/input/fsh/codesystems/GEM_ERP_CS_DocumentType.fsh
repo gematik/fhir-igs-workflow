@@ -1,5 +1,5 @@
-CodeSystem: GEM_ERP_CS_DocumentType
-Id: GEM-ERP-CS-DocumentType
+CodeSystem: EFlowRxDocumentTypeCS
+Id: eflow-rx-documenttype
 Title: "CodeSystem der Dokumententypen"
 Description: "Dokumententyp abhängig vom Empfänger des Bundles."
 * insert CodeSystem(GEM_ERP_CS_DocumentType)

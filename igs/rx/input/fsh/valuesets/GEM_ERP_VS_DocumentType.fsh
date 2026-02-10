@@ -1,5 +1,5 @@
-ValueSet: GEM_ERP_VS_DocumentType
-Id: GEM-ERP-VS-DocumentType
+ValueSet: EFlowRxDocumentTypeVS
+Id: eflow-rx-documenttype
 Title: "ValueSet der Dokumenttyp-Codes"
 Description: "Art der Dokumente je nach Empfänger."
 * insert Versioning

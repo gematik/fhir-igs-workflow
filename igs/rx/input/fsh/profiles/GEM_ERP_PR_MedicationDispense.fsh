@@ -1,6 +1,6 @@
-Profile: GEM_ERP_PR_MedicationDispense
+Profile: EFlowRxMedicationDispense
 Parent: EPAMedicationDispense
-Id: GEM-ERP-PR-MedicationDispense
+Id: eflow-rx-medicationdispense
 Title: "GEM ERP PR MedicationDispense"
 Description: "Dispensierung eines E-Rezepts"
 * insert Versioning

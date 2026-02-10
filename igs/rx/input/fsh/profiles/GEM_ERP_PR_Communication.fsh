@@ -1,6 +1,6 @@
-Profile: GEM_ERP_PR_Communication
+Profile: EFlowRxCommunication
 Parent: Communication
-Id: GEM-ERP-PR-Communication
+Id: eflow-rx-communication
 Title: "GEM ERP PR Communication"
 Description: "Generische Workflow-Communication"
 * insert Versioning

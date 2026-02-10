@@ -1,5 +1,5 @@
-Extension: GEM_ERP_EX_SupplyOptionsType
-Id: GEM-ERP-EX-SupplyOptionsType
+Extension: EFlowRxSupplyOptionsTypeExtension
+Id: eflow-rx-supplyoptionstype-extension
 Title: "GEM ERP EX SupplyOptionsType"
 Description: "Extension zur Angabe des bevorzugten Versorgungskanals"
 * insert Versioning

@@ -1,6 +1,6 @@
-Profile: GEM_ERP_PR_Communication_Reply
+Profile: EFlowRxCommunicationReply
 Parent: GEM_ERP_PR_Communication
-Id: GEM-ERP-PR-Communication-Reply
+Id: eflow-rx-communication-reply
 Title: "GEM ERP PR Communication Reply"
 Description: "Antwort vom Leistungserbringer an den Patienten"
 * insert Versioning

@@ -1,6 +1,6 @@
-Profile: GEM_ERP_PR_Medication
+Profile: EFlowRxMedication
 Parent: EPAMedication
-Id: GEM-ERP-PR-Medication
+Id: eflow-rx-medication
 Title: "GEM ERP PR Medication"
 Description: "Medikament zur Ausgabe des Rezepts"
 * insert Versioning

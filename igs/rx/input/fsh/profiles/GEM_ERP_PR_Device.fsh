@@ -1,6 +1,6 @@
-Profile: GEM_ERP_PR_Device
+Profile: EFlowRxDevice
 Parent: Device
-Id: GEM-ERP-PR-Device
+Id: eflow-rx-device
 Title: "GEM ERP PR Device"
 Description: "Statische Informationen auf dem E-Rezept-Fachdienst"
 * insert Versioning

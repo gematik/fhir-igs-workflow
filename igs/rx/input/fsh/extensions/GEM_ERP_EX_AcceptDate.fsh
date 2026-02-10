@@ -1,5 +1,5 @@
-Extension: GEM_ERP_EX_AcceptDate
-Id: GEM-ERP-EX-AcceptDate
+Extension: EFlowRxAcceptDateExtension
+Id: eflow-rx-acceptdate-extension
 Title: "GEM ERP EX AcceptDate"
 Description: "Diese Extension sollte in der Task-Ressource verwendet werden. Sie speichert das Datum, bis zu dem eine Krankenkasse die Verschreibung akzeptiert und bezahlt."
 * insert Versioning

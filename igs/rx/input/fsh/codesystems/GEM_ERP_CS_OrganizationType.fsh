@@ -1,5 +1,5 @@
-CodeSystem: GEM_ERP_CS_OrganizationType
-Id: GEM-ERP-CS-OrganizationType
+CodeSystem: EFlowRxOrganizationTypeCS
+Id: eflow-rx-organizationtype
 Title: "CodeSystem der Organisationstyp-Codes"
 Description: "Typ der Organisation, bei der E-Rezepte eingelöst werden können."
 * insert CodeSystem(GEM_ERP_CS_OrganizationType)

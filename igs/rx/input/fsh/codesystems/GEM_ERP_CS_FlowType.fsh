@@ -1,5 +1,5 @@
-CodeSystem: GEM_ERP_CS_FlowType
-Id: GEM-ERP-CS-FlowType
+CodeSystem: EFlowRxFlowTypeCS
+Id: eflow-rx-flowtype
 Title: "CodeSystem der Flowtypen"
 Description: """
 Zeigt die verschiedenen Typen des E-Rezept Workflows entsprechend der Verordnungsformulare.

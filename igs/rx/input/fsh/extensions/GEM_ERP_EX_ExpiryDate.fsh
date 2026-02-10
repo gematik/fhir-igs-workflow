@@ -1,5 +1,5 @@
-Extension: GEM_ERP_EX_ExpiryDate
-Id: GEM-ERP-EX-ExpiryDate
+Extension: EFlowRxExpiryDateExtension
+Id: eflow-rx-expirydate-extension
 Title: "GEM ERP EX ExpiryDate"
 Description: "Diese Erweiterung sollte in der Task-Ressource verwendet werden. Sie zeigt das Ablaufdatum des Rezepts an."
 * insert Versioning

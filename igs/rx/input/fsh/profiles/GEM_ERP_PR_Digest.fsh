@@ -1,6 +1,6 @@
-Profile: GEM_ERP_PR_Digest
+Profile: EFlowRxDigest
 Parent: Binary
-Id: GEM-ERP-PR-Digest
+Id: eflow-rx-digest
 Title: "GEM ERP PR Digest"
 Description: "QES-Digest in Binary"
 * insert Versioning

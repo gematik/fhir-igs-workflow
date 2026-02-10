@@ -1,6 +1,6 @@
-Profile: GEM_ERP_PR_AuditEvent
+Profile: EFlowRxAuditEvent
 Parent: AuditEvent
-Id: GEM-ERP-PR-AuditEvent
+Id: eflow-rx-auditevent
 Title: "GEM ERP PR AuditEvent"
 Description: "AuditEvent für die Protokollierung des Zugriffs auf eRezepte"
 * insert Versioning

@@ -1,6 +1,6 @@
-Profile: GEM_ERP_PR_PAR_AcceptOperation_Output
+Profile: EFlowRxPARAcceptOperationOutput
 Parent: Parameters
-Id: GEM-ERP-PR-PAR-Accept-Operation-Output
+Id: eflow-rx-par-accept-operation-output
 Title: "GEM ERP PR AcceptOperation Output"
 Description: "Dieses Profil definiert die Parameter für die Annahme eines Medikaments von AVS zum E-Rezept-Fachdienst. Dies kann für die $accept-Operation verwendet werden."
 * insert Versioning

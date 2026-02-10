@@ -1,6 +1,6 @@
-Profile: GEM_ERP_PR_Communication_Representative
+Profile: EFlowRxCommunicationRepresentative
 Parent: Communication
-Id: GEM-ERP-PR-Communication-Representative
+Id: eflow-rx-communication-representative
 Title: "GEM ERP PR Communication Representative"
 Description: "Kommunikation zwischen Patient und Vertreter"
 * insert Versioning

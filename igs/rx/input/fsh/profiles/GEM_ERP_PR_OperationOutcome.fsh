@@ -1,6 +1,6 @@
-Profile: GEM_ERP_PR_OperationOutcome
+Profile: EFlowRxOperationOutcome
 Parent: OperationOutcome
-Id: GEM-ERP-PR-OperationOutcome
+Id: eflow-rx-operationoutcome
 Title: "GEM ERP PR OperationOutcome"
 Description: "OperationOutcome für Angabe von Fehlermeldungen vom E-Rezept-Fachdienst"
 * insert Versioning

@@ -1,6 +1,6 @@
-Profile: GEM_ERP_PR_PAR_CloseOperation_Output
+Profile: EFlowRxPARCloseOperationOutput
 Parent: Parameters
-Id: GEM-ERP-PR-PAR-Close-Operation-Output
+Id: eflow-rx-par-close-operation-output
 Title: "GEM ERP PR CloseOperation Output"
 Description: "Dieses Profil definiert die Parameter für die Ausgabe eines Medikaments von AVS an den E-Rezept-Fachdienst. Dies kann für die $close-Operation verwendet werden."
 * insert Versioning

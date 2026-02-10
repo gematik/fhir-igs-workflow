@@ -1,6 +1,6 @@
-Profile: GEM_ERP_PR_Composition
+Profile: EFlowRxComposition
 Parent: Composition
-Id: GEM-ERP-PR-Composition
+Id: eflow-rx-composition
 Title: "GEM ERP PR Composition"
 Description: "Quittung für die Einlösung eines E-Rezepts"
 * insert Versioning

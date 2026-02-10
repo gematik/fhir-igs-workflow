@@ -1,6 +1,6 @@
-Profile: GEM_ERP_PR_Bundle
+Profile: EFlowRxBundle
 Parent: Bundle
-Id: GEM-ERP-PR-Bundle
+Id: eflow-rx-bundle
 Title: "GEM ERP PR Bundle"
 Description: "Dokumentenbündel für Quittung"
 * insert Versioning

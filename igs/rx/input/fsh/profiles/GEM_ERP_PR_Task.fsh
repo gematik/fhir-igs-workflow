@@ -1,6 +1,6 @@
-Profile: GEM_ERP_PR_Task
+Profile: EFlowRxTask
 Parent: Task
-Id: GEM-ERP-PR-Task
+Id: eflow-rx-task
 Title: "GEM ERP PR Task"
 Description: "Task für die Verwaltung des E-Rezept-Workflows"
 * insert Versioning

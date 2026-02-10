@@ -1,6 +1,6 @@
-Profile: GEM_ERP_PR_PAR_ActivateOperation_Output
+Profile: EFlowRxPARActivateOperationOutput
 Parent: Parameters
-Id: GEM-ERP-PR-PAR-Activate-Operation-Output
+Id: eflow-rx-par-activate-operation-output
 Title: "GEM ERP PR ActivateOperation Output"
 Description: "Dieses Profil definiert die Parameter für die Aktivierung einer Aufgabe von PVS zum E-Rezept-Fachdienst. Dies kann für die $activate-Operation verwendet werden."
 * insert Versioning

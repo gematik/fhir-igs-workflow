@@ -1,6 +1,6 @@
-Profile: GEM_ERP_PR_AccessCode
+Profile: EFlowRxAccessCode
 Parent: Identifier
-Id: GEM-ERP-PR-AccessCode
+Id: eflow-rx-accesscode
 Title: "GEM ERP PR AccessCode"
 Description: "Der AccessCode ist ein generiertes Geheimnis, das Zugriff auf eine E-Rezept-Ressource gewährt, z. B. Task."
 * insert Versioning

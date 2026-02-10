@@ -1,5 +1,5 @@
-Extension: GEM_ERP_EX_LastMedicationDispense
-Id: GEM-ERP-EX-LastMedicationDispense
+Extension: EFlowRxLastMedicationDispenseExtension
+Id: eflow-rx-lastmedicationdispense-extension
 Title: "GEM ERP EX LastMedicationDispense"
 Description: "Diese Erweiterung sollte in der Task-Ressource verwendet werden. Sie zeigt den Zeitstempel der letzten Ausgabe an."
 * insert Versioning

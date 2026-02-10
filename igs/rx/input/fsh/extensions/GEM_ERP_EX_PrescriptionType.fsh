@@ -1,5 +1,5 @@
-Extension: GEM_ERP_EX_PrescriptionType
-Id: GEM-ERP-EX-PrescriptionType
+Extension: EFlowRxPrescriptionTypeExtension
+Id: eflow-rx-prescriptiontype-extension
 Title: "GEM ERP EX PrescriptionType"
 Description: "Definiert den Typ eines Rezepts."
 * insert Versioning

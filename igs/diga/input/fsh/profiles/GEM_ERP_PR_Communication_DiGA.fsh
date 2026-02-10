@@ -1,6 +1,6 @@
-Profile: GEM_ERP_PR_Communication_DiGA
+Profile: EFlowRxCommunicationDiGA
 Parent: GEM_ERP_PR_Communication
-Id: GEM-ERP-PR-Communication-DiGA
+Id: eflow-rx-communication-diga
 Title: "GEM ERP PR Communication DiGA"
 Description: "Antwort des Leistungserbringers an den Patienten"
 * insert Versioning

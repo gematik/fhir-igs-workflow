@@ -1,6 +1,6 @@
-Profile: GEM_ERP_PR_Bundle_OP_Accept
+Profile: EFlowRxBundleOPAccept
 Parent: Bundle
-Id: GEM-ERP-PR-Bundle-OP-Accept
+Id: eflow-rx-bundle-op-accept
 Title: "GEM ERP PR Bundle OP Accept"
 Description: "Antwort des E-Rezept-Fachdienst auf die $accept-Operation"
 * insert Versioning

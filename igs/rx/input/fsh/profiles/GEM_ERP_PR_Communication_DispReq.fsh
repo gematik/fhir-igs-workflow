@@ -1,6 +1,6 @@
-Profile: GEM_ERP_PR_Communication_DispReq
+Profile: EFlowRxCommunicationDispReq
 Parent: Communication
-Id: GEM-ERP-PR-Communication-DispReq
+Id: eflow-rx-communication-dispreq
 Title: "GEM ERP PR Communication DispReq"
 Description: "Anfrage zur Einlösung des E-Rezepts"
 * insert Versioning

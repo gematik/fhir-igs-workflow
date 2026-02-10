@@ -1,5 +1,5 @@
-Extension: GEM_ERP_EX_EU_IS_REDEEMABLE_BY_PATIENT_AUTHORIZATION
-Id: GEM-ERP-EX-EU-IS-REDEEMABLE-BY-PATIENT-AUTHORIZATION
+Extension: EFlowRxEUISREDEEMABLEBYPATIENTAUTHORIZATIONExtension
+Id: eflow-rx-eu-is-redeemable-by-patient-authorization-extension
 Title: "GEM ERP EX EU IS REDEEMABLE BY PATIENT AUTHORIZATION"
 Description: "Extension zur Angabe des Nutzers, ob das E-Rezept in der EU zur Einlösung verfügbar sein soll oder nicht."
 Context: Task, Extension

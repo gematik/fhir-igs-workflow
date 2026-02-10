@@ -1,6 +1,6 @@
-Profile: GEM_ERP_PR_Secret
+Profile: EFlowRxSecret
 Parent: Identifier
-Id: GEM-ERP-PR-Secret
+Id: eflow-rx-secret
 Title: "GEM ERP PR Secret"
 Description: "Das Secret ist ein generiertes Geheimnis, das Zugriff auf eine E-Rezept-Ressource gewährt, z. B. Task."
 * insert Versioning

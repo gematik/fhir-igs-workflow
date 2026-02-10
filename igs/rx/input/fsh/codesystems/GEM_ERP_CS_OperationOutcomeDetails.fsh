@@ -1,5 +1,5 @@
-CodeSystem: GEM_ERP_CS_OperationOutcomeDetails
-Id: GEM-ERP-CS-OperationOutcomeDetails
+CodeSystem: EFlowRxOperationOutcomeDetailsCS
+Id: eflow-rx-operationoutcomedetails
 Title: "GEM ERP CS OperationOutcomeDetails"
 Description: "Fachliche Fehlercodes des E-Rezept-Fachdienst"
 * insert CodeSystem(GEM_ERP_CS_OperationOutcomeDetails)

@@ -1,6 +1,6 @@
-Profile: GEM_ERP_PR_Binary
+Profile: EFlowRxBinary
 Parent: Binary
-Id: GEM-ERP-PR-Binary
+Id: eflow-rx-binary
 Title: "GEM ERP PR Binary"
 Description: "PKCS7 signiertes Bundle im enveloping style"
 * insert Versioning

@@ -1,5 +1,5 @@
-Extension: GEM_ERP_EX_AvailabilityState
-Id: GEM-ERP-EX-AvailabilityState
+Extension: EFlowRxAvailabilityStateExtension
+Id: eflow-rx-availabilitystate-extension
 Title: "GEM ERP EX AvailabilityState"
 Description: "Extension zur Angabe von Typ des Verfügbarkeitsstatus für die Anfrage zur Medikamentenverfügbarkeit."
 * insert Versioning

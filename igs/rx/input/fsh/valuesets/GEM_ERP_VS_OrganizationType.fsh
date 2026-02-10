@@ -1,5 +1,5 @@
-ValueSet: GEM_ERP_VS_OrganizationType
-Id: GEM-ERP-VS-OrganizationType
+ValueSet: EFlowRxOrganizationTypeVS
+Id: eflow-rx-organizationtype
 Title: "ValueSet der Organisationstyp-Codes"
 Description: "Art der Organisation"
 * insert ValueSet(GEM_ERP_VS_OrganizationType)

@@ -1,5 +1,5 @@
-Extension: GEM_ERP_EX_InsuranceProvider
-Id: GEM-ERP-EX-InsuranceProvider
+Extension: EFlowRxInsuranceProviderExtension
+Id: eflow-rx-insuranceprovider-extension
 Title: "GEM ERP EX InsuranceProvider"
 Description: "IK-Nummer (Institutionskennzeichen) des Versicherungsträgers, der das angeforderte Medikament abdeckt"
 * insert Versioning

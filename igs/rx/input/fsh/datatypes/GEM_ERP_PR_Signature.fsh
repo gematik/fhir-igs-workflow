@@ -1,6 +1,6 @@
-Profile: GEM_ERP_PR_Signature
+Profile: EFlowRxSignature
 Parent: Signature
-Id: GEM-ERP-PR-Signature
+Id: eflow-rx-signature
 Title: "GEM_ERP_PR_Signature"
 Description: "Profil für die Signatur von Bundles im E-Rezept-Kontext"
 * insert Versioning

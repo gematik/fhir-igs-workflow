@@ -1,5 +1,5 @@
-ValueSet: GEM_ERP_VS_OperationOutcomeDetails
-Id: GEM-ERP-VS-OperationOutcomeDetails
+ValueSet: EFlowRxOperationOutcomeDetailsVS
+Id: eflow-rx-operationoutcomedetails
 Title: "GEM ERP VS OperationOutcomeDetails"
 Description: "Fachliche Fehlercodes des E-Rezept-Fachdienst"
 * insert ValueSet(GEM_ERP_VS_OperationOutcomeDetails)
