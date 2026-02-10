@@ -1,15 +1,15 @@
-### Fachliche Anwendungsfaelle
+### Fachliche Anwendungsfälle
 
 {% assign use_cases = site.data['use-cases'] %}
 {% assign roles = site.data['roles'] %}
 
-Die folgenden fachlichen Anwendungsfaelle beschreiben die Schritte zur Verordnung und Bereitstellung eines DiGA-E-Rezepts.
+Die folgenden fachlichen Anwendungsfälle beschreiben die Schritte zur Verordnung und Bereitstellung einer DiGA-Verordnung.
 
-#### Uebergreifende Vorbedingungen
+#### Übergreifende Vorbedingungen
 
-- Der Leistungserbringer ist gegenueber der TI authentisiert (Institutionsidentitaet via SMC-B ueber IdP/Konnektor).
-- Fuer die QES steht ein freigeschalteter HBA zur Verfuegung.
-- Der Verordnungsdatensatz wird als KBV-konformes FHIR-Bundle im Primaersystem gefuehrt.
+- Der Leistungserbringer ist gegenüber der TI authentisiert (Institutionsidentitaet via SMC-B über IdP/Konnektor).
+- Für die QES steht ein freigeschalteter HBA zur Verfuegung.
+- Der Verordnungsdatensatz wird als KBV-konformes FHIR-Bundle im Primaersystem geführt.
 
 {% for use_case in use_cases %}
 
