@@ -1,7 +1,7 @@
-Das Feature "E-Rezept für DiGA" erweitert den bestehenden E-Rezept-Workflow um
+Das Feature "Elektronische Verordnung von DiGAs" erweitert die bestehenden Workflows um
 Verordnungen für Digitale Gesundheitsanwendungen (DiGA). Es beschreibt die
-zusätzlichen Prozessparameter, Rollen und fachlichen Anforderungen für den
-E-Rezept-Fachdienst und beteiligte Clientsysteme.
+Prozessparameter, Rollen und fachlichen Anforderungen für den
+Fachdienst und beteiligte Clientsysteme.
 
 ## Zielsetzung
 Die Beschreibung des Funktionsumfangs als Feature erleichtert das Verständnis
@@ -10,8 +10,8 @@ Umsetzung. Hersteller sollen damit den zusätzlichen Funktionsumfang ihrer
 Komponenten bewerten und umsetzen können.
 
 ## Zielgruppe
-Hersteller und Anbieter des Produkttyps E-Rezept-Fachdienst sowie Hersteller von
-Clientsystemen für den Zugriff auf den E-Rezept-Fachdienst.
+Hersteller und Anbieter des Produkttyps Fachdienst sowie Hersteller von
+Clientsystemen für den Zugriff auf den Workflow-Fachdienst.
 
 ## Abgrenzungen
 Folgende Aspekte sind nicht Gegenstand dieses IG:
