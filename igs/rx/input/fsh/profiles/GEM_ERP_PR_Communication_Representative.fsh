@@ -3,7 +3,7 @@ Parent: Communication
 Id: GEM-ERP-PR-Communication-Representative
 Title: "GEM ERP PR Communication Representative"
 Description: "Kommunikation zwischen Patient und Vertreter"
-* insert Profile(GEM_ERP_PR_Communication_Representative)
+* insert Versioning
 
 * recipient 1..1
 * recipient.identifier 1..

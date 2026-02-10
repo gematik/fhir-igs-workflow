@@ -3,7 +3,7 @@ Parent: Parameters
 Id: gem-erpeu-pr-par-get-prescription-output
 Title: "GEM ERPEU PR PAR GET Prescription Output"
 Description: "This profile defines the output parameters for the Get Prescription Operation"
-* insert Profile(GEM_ERPEU_PR_PAR_GET_Prescription_Output)
+* insert Versioning
 
 * parameter 0..1
 

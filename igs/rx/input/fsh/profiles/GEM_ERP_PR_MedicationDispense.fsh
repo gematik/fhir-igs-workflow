@@ -3,7 +3,7 @@ Parent: EPAMedicationDispense
 Id: GEM-ERP-PR-MedicationDispense
 Title: "GEM ERP PR MedicationDispense"
 Description: "Dispensierung eines E-Rezepts"
-* insert Profile(GEM_ERP_PR_MedicationDispense)
+* insert Versioning
 * obeys workflow-dosageExtensionBeiDosierung
 
 * identifier contains prescriptionID 1..1

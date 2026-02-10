@@ -3,7 +3,7 @@ Parent: EPAMedicationRequest
 Id: erp-tprescription-medication-request
 Title: "E-T-Rezept Medication Request"
 Description: "Informationen zu einer Verordnung, die ein Arzt im E-T-Rezept angegeben hat."
-* insert Profile(erp-tprescription-medication-request)
+* insert Versioning
 
 // Default FHIR Elements with 1..1 cardinality
 * status = #completed (exactly)

@@ -3,7 +3,7 @@ Parent: Task
 Id: GEM-ERP-PR-Task
 Title: "GEM ERP PR Task"
 Description: "Task für die Verwaltung des E-Rezept-Workflows"
-* insert Profile(GEM_ERP_PR_Task)
+* insert Versioning
 
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"

@@ -3,7 +3,7 @@ Parent: Element
 Id: logical-eu-dispense-data
 Title: "Dispense Data from EU"
 Description: "Logical Information that is Provided in the dispensation document by the NCPeH of country B for Dispensing Medication"
-* insert StructureDefinition(GEM_ERPEU_LOG_DispenseData)
+* insert Versioning
 
 * PatientData 1..1 BackboneElement "Patient Data"
   * RegionalNationalHealthIdentifier 1..1 Identifier "Regional/National Health Identifier (KVNR)"

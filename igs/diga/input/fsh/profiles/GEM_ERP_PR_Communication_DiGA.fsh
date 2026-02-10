@@ -3,7 +3,7 @@ Parent: GEM_ERP_PR_Communication
 Id: GEM-ERP-PR-Communication-DiGA
 Title: "GEM ERP PR Communication DiGA"
 Description: "Antwort des Leistungserbringers an den Patienten"
-* insert Profile(GEM_ERP_PR_Communication_DiGA)
+* insert Versioning
 
 * recipient 1..1
 

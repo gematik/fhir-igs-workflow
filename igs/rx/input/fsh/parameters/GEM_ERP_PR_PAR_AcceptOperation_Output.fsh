@@ -3,7 +3,7 @@ Parent: Parameters
 Id: GEM-ERP-PR-PAR-Accept-Operation-Output
 Title: "GEM ERP PR AcceptOperation Output"
 Description: "Dieses Profil definiert die Parameter für die Annahme eines Medikaments von AVS zum E-Rezept-Fachdienst. Dies kann für die $accept-Operation verwendet werden."
-* insert Profile(GEM_ERP_PR_PAR_AcceptOperation_Output)
+* insert Versioning
 
 * parameter 1..1
 
