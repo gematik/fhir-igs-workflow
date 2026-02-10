@@ -1,20 +1,20 @@
 # Implementation Guide E-Rezept-DiGA
 
 Dieser Implementation Guide beschreibt das Feature zur elektronischen Verordnung
-von Digitalen Gesundheitsanwendungen (DiGA). Er ergaenzt den E-Rezept-Workflow um
-DiGA-spezifische Anforderungen und Use Cases fuer Verordnende, Kostentraeger und
+von Digitalen Gesundheitsanwendungen (DiGA). Er beschreibt
+DiGA-spezifische Anforderungen und Use Cases fuer Verordnende, Kostenträger und
 Versicherte.
 
 ## Zweck und Geltungsbereich
 
 - Elektronische Verordnung von DiGAs als E-Rezept (Workflow 162)
-- Zuweisung der Verordnung durch Versicherte an den Kostentraeger
-- Bereitstellung des Freischaltcodes als Abgabeinformation
+- Zuweisung der Verordnung durch Versicherte an den Kostenträger
+- Bereitstellung eines Freischaltcodes als Abgabeinformation durch den Kostenträger an den Versicherten
 
 ## Nicht im Scope
 
-- Verordnungen fuer Privatversicherte
-- Beantragung einer DiGA ohne aerztliche oder psychotherapeutische Verordnung
+- DiGA Verordnungen fuer Privatversicherte
+- Beantragung einer DiGA ohne ärztliche oder psychotherapeutische Verordnung
 
 ## Wie dieser IG zu lesen ist
 
