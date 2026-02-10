@@ -87,8 +87,14 @@ run_ig() {
     fi
   fi
 
-  if [[ "${BUILD_GENERATE_DRAWIO_IMAGES:-}" == "true" && -x "$ig_dir/scripts/generate-drawio-images.sh" ]]; then
-    (cd "$ig_dir" && "$ig_dir/scripts/generate-drawio-images.sh")
+  if [[ "${BUILD_GENERATE_DRAWIO_IMAGES:-}" == "true" ]]; then
+    if [[ -x "$ROOT_DIR/scripts/generate-drawio-images.sh" ]]; then
+      "$ROOT_DIR/scripts/generate-drawio-images.sh" "$ig_short"
+    elif [[ -x "$ig_dir/scripts/generate-drawio-images.sh" ]]; then
+      (cd "$ig_dir" && "$ig_dir/scripts/generate-drawio-images.sh")
+    else
+      echo "Warning: draw.io export script not found for $ig_short; skipping"
+    fi
   fi
 
   if [[ -x "$ig_dir/scripts/build-ig.sh" ]]; then

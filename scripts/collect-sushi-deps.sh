@@ -8,7 +8,11 @@ if ! command -v yq >/dev/null 2>&1; then
   exit 1
 fi
 
-mapfile -t sushi_files < <(find "$repo_root/igs" -name sushi-config.yaml -print)
+sushi_files=()
+while IFS= read -r cfg; do
+  [[ -z "$cfg" ]] && continue
+  sushi_files+=("$cfg")
+done < <(find "$repo_root/igs" -name sushi-config.yaml -print)
 if [[ ${#sushi_files[@]} -eq 0 ]]; then
   echo "No sushi-config.yaml files found under $repo_root/igs." >&2
   exit 1
@@ -28,26 +32,23 @@ done
 
 sort -u -o "$all_deps_file" "$all_deps_file"
 
-python - <<'PY' "$repo_root" "$installed_deps_file"
-import json
-import pathlib
-import sys
-
-root = pathlib.Path(sys.argv[1])
-out_path = pathlib.Path(sys.argv[2])
-pairs = set()
-
-for path in root.rglob("fhirpkg.lock.json"):
-    try:
-        data = json.loads(path.read_text())
-    except Exception:
-        continue
-    deps = data.get("dependencies") or {}
-    for key, value in deps.items():
-        pairs.add(f"{key} {value}")
-
-out_path.write_text("\n".join(sorted(pairs)) + ("\n" if pairs else ""))
-PY
+package_cache_dir="${FHIR_PACKAGE_CACHE_DIR:-$HOME/.fhir/packages}"
+if [[ ! -d "$package_cache_dir" ]]; then
+  echo "Warning: package cache directory not found: $package_cache_dir" >&2
+  : > "$installed_deps_file"
+else
+  : > "$installed_deps_file"
+  for pkg_dir in "$package_cache_dir"/*; do
+    [[ -d "$pkg_dir" ]] || continue
+    pkg_version="$(basename "$pkg_dir")"
+    pkg="${pkg_version%%#*}"
+    ver="${pkg_version#*#}"
+    if [[ -z "$pkg" || -z "$ver" || "$pkg" == "$pkg_version" ]]; then
+      continue
+    fi
+    echo "$pkg $ver" >> "$installed_deps_file"
+  done
+fi
 
 sort -u -o "$installed_deps_file" "$installed_deps_file"
 
