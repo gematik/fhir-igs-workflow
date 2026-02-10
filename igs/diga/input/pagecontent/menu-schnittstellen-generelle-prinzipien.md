@@ -1,14 +1,14 @@
 Generelle Prinzipien
 
 ## Authentisierung
-Die Authentisierung am E-Rezept-Fachdienst erfolgt ueber ACCESS_TOKEN. Fuer
-Kostentraeger wird das Token ueber den zentralen IDP-Dienst ausgestellt. Das
-IK des Kostentraegers wird im Token bereitgestellt und dient der Zuweisung.
+Die Authentisierung am Workflow-Fachdienst erfolgt über ACCESS_TOKEN. Für
+Kostenträger wird das Token über den zentralen IDP-Dienst ausgestellt. Das
+IK des Kostenträgers wird im Token bereitgestellt und dient der Zuweisung.
 
 ## FHIR-VZD
-Zur Aufloesung der Telematik-ID auf IKNR nutzt der E-Rezept-Fachdienst das
-FHIR-VZD. Der Zugriff erfolgt ueber die FHIRDirectorySearchAPI.
+Zur Auflösung der Telematik-ID auf IKNR nutzt der Workflow-Fachdienst den
+FHIR-VZD. Der Zugriff erfolgt über die FHIRDirectorySearchAPI.
 
 ## Kommunikation
-Die Zuweisung einer DiGA-Verordnung erfolgt per Communication. Fuer DiGA kann
+Die Zuweisung einer DiGA-Verordnung erfolgt per Communication. Für DiGA kann
 Communication.payload entfallen (Kardinalitaet 0..1).
