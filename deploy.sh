@@ -5,13 +5,17 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$ROOT_DIR/scripts/ig-common.sh"
 
 usage() {
-  echo "Usage: $0 --ig <name> [--build] [--env DEV|BALLOT|PROD]"
-  echo "Example: $0 --build --ig erpchrg --env DEV"
+  echo "Usage: $0 --ig <name> [--env DEV|BALLOT|PROD] [--bucket DEV|BALLOT|PROD] [--build]"
+  echo "Example: $0 --ig erpchrg --env DEV"
+  echo "         $0 --ig erpchrg --env DEV --build"
+  echo "         $0 --ig erpchrg --env DEV --bucket DEV"
 }
 
 IG_SHORT=""
+IG_COUNT=0
 DO_BUILD=false
 ENVIRONMENT="${ENVIRONMENT:-}"
+BUCKET_ENV="PROD"
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -23,6 +27,7 @@ while [[ $# -gt 0 ]]; do
         usage
         exit 1
       fi
+      IG_COUNT=$((IG_COUNT + 1))
       shift
       ;;
     --build)
@@ -34,6 +39,16 @@ while [[ $# -gt 0 ]]; do
       ENVIRONMENT="${1:-}"
       if [[ -z "$ENVIRONMENT" ]]; then
         echo "Error: --env requires a value" >&2
+        usage
+        exit 1
+      fi
+      shift
+      ;;
+    --bucket)
+      shift
+      BUCKET_ENV="${1:-}"
+      if [[ -z "$BUCKET_ENV" ]]; then
+        echo "Error: --bucket requires a value" >&2
         usage
         exit 1
       fi
@@ -56,12 +71,21 @@ if [[ -z "$IG_SHORT" ]]; then
   exit 1
 fi
 
+if [[ "$IG_COUNT" -gt 1 ]]; then
+  echo "Error: --ig can only be specified once." >&2
+  usage
+  exit 1
+fi
+
 load_ig_config "$IG_SHORT"
 
 if [[ -z "$ENVIRONMENT" ]]; then
   echo "Error: ENVIRONMENT not set. Use --env DEV|BALLOT|PROD or set ENVIRONMENT." >&2
   exit 1
 fi
+
+ENVIRONMENT="$(printf '%s' "$ENVIRONMENT" | tr '[:lower:]' '[:upper:]')"
+BUCKET_ENV="$(printf '%s' "$BUCKET_ENV" | tr '[:lower:]' '[:upper:]')"
 
 require_command gcloud
 require_command gsutil
@@ -73,16 +97,19 @@ if ! gcloud auth list --filter=status:ACTIVE --format="value(account)" | grep -q
 fi
 
 if ! gcloud projects list --limit=1 >/dev/null 2>&1; then
-  echo "Error: gcloud authentication failed." >&2
-  exit 1
+  echo "No accessible projects found. Trying authentication..."
+  gcloud auth login
+  if ! gcloud projects list --limit=1 >/dev/null 2>&1; then
+    echo "Error: gcloud authentication failed or no project access." >&2
+    echo "Hint: ensure your account has access to a GCP project." >&2
+    exit 1
+  fi
 fi
 
 BUCKET_NAME=""
 BUCKET_PATH=""
 
 if [[ "$ENVIRONMENT" == "DEV" ]]; then
-  BUCKET_NAME="$DEV_BUCKET"
-  BUCKET_PATH="$DEV_BUCKET_PATH"
   if [[ "$LABEL" != "ci-build" ]]; then
     echo "Error: For ENVIRONMENT 'DEV', releaseLabel must be 'ci-build'." >&2
     exit 1
@@ -92,8 +119,6 @@ if [[ "$ENVIRONMENT" == "DEV" ]]; then
     exit 1
   fi
 elif [[ "$ENVIRONMENT" == "BALLOT" ]]; then
-  BUCKET_NAME="$BALLOT_BUCKET"
-  BUCKET_PATH="$BALLOT_BUCKET_PATH"
   if [[ "$LABEL" != "ballot" ]]; then
     echo "Error: For ENVIRONMENT 'BALLOT', releaseLabel must be 'ballot'." >&2
     exit 1
@@ -103,8 +128,6 @@ elif [[ "$ENVIRONMENT" == "BALLOT" ]]; then
     exit 1
   fi
 elif [[ "$ENVIRONMENT" == "PROD" ]]; then
-  BUCKET_NAME="$PROD_BUCKET"
-  BUCKET_PATH="$PROD_BUCKET_PATH"
   if [[ "$LABEL" != "release" ]]; then
     echo "Error: For ENVIRONMENT 'PROD', releaseLabel must be 'release'." >&2
     exit 1
@@ -118,8 +141,24 @@ else
   exit 1
 fi
 
+if [[ "$BUCKET_ENV" == "DEV" ]]; then
+  BUCKET_NAME="$DEV_BUCKET"
+  BUCKET_PATH="$DEV_BUCKET_PATH"
+elif [[ "$BUCKET_ENV" == "BALLOT" ]]; then
+  BUCKET_NAME="$BALLOT_BUCKET"
+  BUCKET_PATH="$BALLOT_BUCKET_PATH"
+elif [[ "$BUCKET_ENV" == "PROD" ]]; then
+  BUCKET_NAME="$PROD_BUCKET"
+  BUCKET_PATH="$PROD_BUCKET_PATH"
+else
+  echo "Error: --bucket must be DEV, BALLOT, or PROD." >&2
+  exit 1
+fi
+
+echo "Using bucket: ${BUCKET_ENV} (gs://${BUCKET_NAME}${BUCKET_PATH})"
+
 if $DO_BUILD; then
-  "$ROOT_DIR/build-ig.sh" --ig "$IG_SHORT"
+  "$ROOT_DIR/build-all.sh" --ig "$IG_SHORT"
 else
   echo "Skipping build step (use --build to run build)."
 fi
