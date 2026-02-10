@@ -7,7 +7,7 @@ Versicherte.
 
 ## Zweck und Geltungsbereich
 
-- Elektronische Verordnung von DiGAs als E-Rezept (Workflow 162)
+- Erstellen einer elektronische Verordnung von DiGAs (Workflow 162)
 - Zuweisung der Verordnung durch Versicherte an den Kostenträger
 - Bereitstellung eines Freischaltcodes als Abgabeinformation durch den Kostenträger an den Versicherten
 
