@@ -21,6 +21,7 @@ Folgende Aspekte sind nicht Gegenstand dieses IG:
 - Abrechnungsschnittstellen zwischen DiGA-Herstellern und Krankenkassen.
 
 ## Methodik
+### Anforderungen / Anwendungsfälle
 Anforderungen und Anwendungsfälle werden durch eine eindeutige ID sowie die
 Schluesselworte MUSS, DARF NICHT, SOLL, SOLL NICHT, KANN gemaess RFC 2119
 gekennzeichnet.
