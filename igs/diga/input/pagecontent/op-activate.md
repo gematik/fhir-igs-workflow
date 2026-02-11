@@ -1,15 +1,22 @@
 Operation: $activate
 
-Die FHIR-Operation `$activate` ueberfuehrt einen im Status `draft` befindlichen `Task` in den Status `ready`, nachdem das Primaersystem den qualifiziert elektronisch signierten Verordnungsdatensatz (QES) uebermittelt hat. Fuer DiGA (Flowtype 162) gelten zusaetzliche Payload-Pruefungen. Die allgemeinen Anforderungen des Basis-Workflows gelten unveraendert.
+Die FHIR-Operation `$activate` überführt einen im Status `draft` befindlichen `Task` in den Status `ready`, nachdem das Primärsystem den qualifiziert elektronisch signierten Verordnungsdatensatz (QES) übermittelt hat. Für DiGA Verordnungen (Flowtype 162) gelten zusätzliche Payload-Prüfungen. Die allgemeinen Anforderungen des Basis-Workflows gelten unverändert.
 
-## DiGA-spezifische Pruefungen (Flowtype 162)
+## DiGA-spezifische Prüfungen (Flowtype 162)
 
-<requirement conformance="SHALL" key="IG-ERP-84" title="E-Rezept-Fachdienst - Task aktivieren - DiGA-spezifische Payload-Pruefung" version="0">
+<!-- A_25990 - E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - QES durch berechtigte Berufsgruppe -->
+<!-- A_25991 - E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Verordnung von DiGAs -->
+<!-- A_23443-01 - E-Rezept-Fachdienst – Task aktivieren – Flowtype 160/162/169 - Prüfung Coverage Type -->
+<!-- Splitten wir solche Afos auf, wenn sie in unterschiedlichen IGs landen? Erscheint mir sinnvoll -->
+
+<!--  -->
+
+<requirement conformance="SHALL" key="IG-ERP-84" title="E-Rezept-Fachdienst - Task aktivieren - DiGA-spezifische Payload-Prüfung" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
   </actor>
-  Der E-Rezept-Fachdienst MUSS fuer Flowtype 162 eine <i>DeviceRequest</i>-Ressource sowie <i>Composition.type = e16D</i> verlangen und bei Abweichungen mit HTTP 400 abbrechen.
+  Der E-Rezept-Fachdienst MUSS für Flowtype 162 eine <i>DeviceRequest</i>-Ressource sowie <i>Composition.type = e16D</i> verlangen und bei Abweichungen mit HTTP 400 abbrechen.
 </requirement>
 
 <requirement conformance="SHALL" key="IG-ERP-85" title="E-Rezept-Fachdienst - Task aktivieren - PZN in KBV_PR_EVDGA_HealthAppRequest validieren" version="0">
@@ -17,10 +24,10 @@ Die FHIR-Operation `$activate` ueberfuehrt einen im Status `draft` befindlichen 
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
   </actor>
-  Der E-Rezept-Fachdienst MUSS fuer Flowtype 162 die PZN in <i>KBV_PR_EVDGA_HealthAppRequest.code</i> gemaess den Technischen Hinweisen pruefen; Fehler fuehren zu HTTP 400.
+  Der E-Rezept-Fachdienst MUSS für Flowtype 162 die PZN in <i>KBV_PR_EVDGA_HealthAppRequest.code</i> gemäss den Technischen Hinweisen prüfen; Fehler führen zu HTTP 400.
 </requirement>
 
-<requirement conformance="SHALL" key="IG-ERP-89" title="E-Rezept-Fachdienst - Task aktivieren - Alternative IK fuer Flowtype 162 verbieten" version="0">
+<requirement conformance="SHALL" key="IG-ERP-89" title="E-Rezept-Fachdienst - Task aktivieren - Alternative IK für Flowtype 162 verbieten" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
