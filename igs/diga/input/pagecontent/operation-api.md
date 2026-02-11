@@ -1,5 +1,7 @@
 Operationen
 
+Frage: Was ist mit create?
+
 Diese Seite bietet einen Einstieg in die Operationen des DiGA-Workflows. Die
 Operationen entsprechen dem Basis-Workflow des E-Rezept-Fachdienstes.
 
