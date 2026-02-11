@@ -1,1 +1,1 @@
-Diese Seite beschreibt zusaetzliche APIs fuer den DiGA-Workflow. Derzeit sind keine weiteren APIs ueber die Query und Operation API hinaus definiert.
+Diese Seite beschreibt zusätzliche APIs für den DiGA-Workflow. Derzeit sind keine weiteren APIs über die Query und Operation API hinaus definiert.
