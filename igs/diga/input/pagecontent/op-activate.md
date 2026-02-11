@@ -9,7 +9,7 @@ A_25990 - E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - QES durch berec
 A_23443-01 - E-Rezept-Fachdienst – Task aktivieren – Flowtype 160/162/169 - Prüfung Coverage Type
 Splitten wir solche Afos auf, wenn sie in unterschiedlichen IGs landen? Erscheint mir sinnvoll
 
-Warum ghat diese Seite ein anderes Layout als die Seiten der anderen Operationen (op- Seiten)?
+Warum hat diese Seite ein anderes Layout als die Seiten der anderen Operationen (op- Seiten)?
 
 
 Wie funktioniert ein Zeilenumbruch? (zwischen den unteren Afos)
@@ -26,6 +26,7 @@ Wie funktioniert ein Zeilenumbruch? (zwischen den unteren Afos)
   Der E-Rezept-Fachdienst MUSS für Flowtype 162 eine <i>DeviceRequest</i>-Ressource sowie <i>Composition.type = e16D</i> verlangen und bei Abweichungen mit HTTP 400 abbrechen.
   <!-- Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mit Flowtype 162 mittels $activate prüfen, dass im Bundle eine <i>DeviceRequest</i>-Ressource und in der </i>Composition.type.coding.code=e16D</i> enthalten ist. Der E-Rezept-Fachdienst MUSS andernfalls mit dem HTTP-Fehlercode 400 abbrechen und in der <i>OperationOutcome</i> den Fehlertext "Für diesen Workflowtypen sind nur Verordnungen für Digitale Gesundheitsanwendungen zulässig" ausgeben. -->
 </requirement>
+
 
 
 <!-- A_25992 - E-Rezept-Fachdienst - Task aktivieren – Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest -->
