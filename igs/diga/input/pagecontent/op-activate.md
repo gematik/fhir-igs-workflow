@@ -4,10 +4,12 @@ Die FHIR-Operation `$activate` überführt einen im Status `draft` befindlichen 
 
 ## DiGA-spezifische Prüfungen (Flowtype 162)
 
-<!-- A_25990 - E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - QES durch berechtigte Berufsgruppe -->
-<!-- A_23443-01 - E-Rezept-Fachdienst – Task aktivieren – Flowtype 160/162/169 - Prüfung Coverage Type -->
-<!-- Splitten wir solche Afos auf, wenn sie in unterschiedlichen IGs landen? Erscheint mir sinnvoll -->
+Frage: Was ist mit den folgenden Afos?
+A_25990 - E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - QES durch berechtigte Berufsgruppe
+A_23443-01 - E-Rezept-Fachdienst – Task aktivieren – Flowtype 160/162/169 - Prüfung Coverage Type
+Splitten wir solche Afos auf, wenn sie in unterschiedlichen IGs landen? Erscheint mir sinnvoll
 
+Wie funktioniert ein Zeilenumbruch? zwischen den unteren Afos
 
 <!--  -->
 
