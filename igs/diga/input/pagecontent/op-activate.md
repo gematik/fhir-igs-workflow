@@ -19,6 +19,7 @@ Die FHIR-Operation `$activate` überführt einen im Status `draft` befindlichen 
   Der E-Rezept-Fachdienst MUSS für Flowtype 162 eine <i>DeviceRequest</i>-Ressource sowie <i>Composition.type = e16D</i> verlangen und bei Abweichungen mit HTTP 400 abbrechen.
 </requirement>
 
+
 <requirement conformance="SHALL" key="IG-ERP-85" title="E-Rezept-Fachdienst - Task aktivieren - PZN in KBV_PR_EVDGA_HealthAppRequest validieren" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
@@ -26,6 +27,7 @@ Die FHIR-Operation `$activate` überführt einen im Status `draft` befindlichen 
   </actor>
   Der E-Rezept-Fachdienst MUSS für Flowtype 162 die PZN in <i>KBV_PR_EVDGA_HealthAppRequest.code</i> gemäss den Technischen Hinweisen prüfen; Fehler führen zu HTTP 400.
 </requirement>
+
 
 <requirement conformance="SHALL" key="IG-ERP-89" title="E-Rezept-Fachdienst - Task aktivieren - Alternative IK für Flowtype 162 verbieten" version="0">
   <meta lockversion="false"/>
