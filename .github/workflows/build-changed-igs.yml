@@ -41,6 +41,8 @@ jobs:
 
       - name: Install tooling
         run: |
+          sudo apt-get update
+          sudo apt-get install -y zsh
           npm install -g fsh-sushi
           sudo wget -q https://github.com/mikefarah/yq/releases/download/v4.44.1/yq_linux_amd64 -O /usr/local/bin/yq
           sudo chmod +x /usr/local/bin/yq
