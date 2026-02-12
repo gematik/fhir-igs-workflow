@@ -17,9 +17,9 @@ Usage: #example
   * details.text = "FHIR-Validation error"
   * diagnostics = """
     Parameters.parameter[0].valueCoding: error: Code 140 is not part of CodeSystem 
-    https://gematik.de/fhir/eflow-rx/CodeSystem/EFlowRxFlowType (from profile: 
+    https://gematik.de/fhir/erp/CodeSystem/EFlowRxFlowType (from profile: 
     http://hl7.org/fhir/StructureDefinition/Parameters|4.0.1); 
     Parameters.parameter[0].valueCoding: error: Code 140 is not part of CodeSystem 
-    https://gematik.de/fhir/eflow-rx/CodeSystem/EFlowRxFlowType (from profile: 
+    https://gematik.de/fhir/erp/CodeSystem/EFlowRxFlowType (from profile: 
     http://hl7.org/fhir/StructureDefinition/Coding|4.0.1);
     """

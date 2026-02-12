@@ -27,4 +27,4 @@ Description: "Anfrage zur Einlösung des E-Rezepts"
 Invariant: workflow-communication-payload-1
 Description: "Payload muss angegeben werden, wenn eine Zuweisung für ein Arzneimittel vorgenommen wird"
 * severity = #error
-* expression = "(extension.where(url = 'https://gematik.de/fhir/eflow-rx/StructureDefinition/EFlowRxPrescriptionTypeExtension').value.code = '162' implies payload.exists().not()) and (extension.where(url = 'https://gematik.de/fhir/eflow-rx/StructureDefinition/EFlowRxPrescriptionTypeExtension').value.code != '162' implies payload.exists() and payload.empty().not())"
+* expression = "(extension.where(url = 'https://gematik.de/fhir/erp/StructureDefinition/EFlowRxPrescriptionTypeExtension').value.code = '162' implies payload.exists().not()) and (extension.where(url = 'https://gematik.de/fhir/erp/StructureDefinition/EFlowRxPrescriptionTypeExtension').value.code != '162' implies payload.exists() and payload.empty().not())"

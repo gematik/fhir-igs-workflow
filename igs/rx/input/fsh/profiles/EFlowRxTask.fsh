@@ -33,7 +33,7 @@ and EFlowRxEuIsRedeemableByPatientAuthorizationExtension named eu-isRedeemableBy
   * ^short = "AccessCode Identifier"
   * ^definition = "Generiert vom E-Rezept Fachdienst. Dieser Identifikator muss in jeder Anfrage zur Task Ressource übertragen werden."
   * system 1..
-  * system = "https://gematik.de/fhir/eflow-rx/NamingSystem/GEM_ERP_NS_AccessCode" (exactly)
+  * system = "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode" (exactly)
   * value 1..
 * identifier[Secret] only EFlowRxSecret
 * identifier[Secret] 
