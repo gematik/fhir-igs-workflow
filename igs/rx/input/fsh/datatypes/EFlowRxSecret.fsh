@@ -3,7 +3,7 @@ Parent: Identifier
 Id: eflow-rx-secret
 Title: "GEM ERP PR Secret"
 Description: "Das Secret ist ein generiertes Geheimnis, das Zugriff auf eine E-Rezept-Ressource gewährt, z. B. Task."
-* insert Versioning
+* insert Meta
 * use = #official (exactly)
 * system 1.. MS
 * system = "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret" (exactly)

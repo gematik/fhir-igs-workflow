@@ -3,7 +3,7 @@ Parent: Bundle
 Id: eflow-rx-bundle
 Title: "GEM ERP PR Bundle"
 Description: "Dokumentenbündel für Quittung"
-* insert Versioning
+* insert Meta
 * id 1..1
 * identifier 1.. MS
 * identifier only EPrescriptionId

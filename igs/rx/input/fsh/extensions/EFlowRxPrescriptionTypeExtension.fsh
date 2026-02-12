@@ -2,7 +2,7 @@ Extension: EFlowRxPrescriptionTypeExtension
 Id: eflow-rx-prescriptiontype-extension
 Title: "GEM ERP EX PrescriptionType"
 Description: "Definiert den Typ eines Rezepts."
-* insert Versioning
+* insert Meta
 * . ^short = "Art der Verschreibung"
 * . ^definition = "Definiert den Typ des Rezepts. Das Codesystem enthält alle unterstützten Formulare."
 * ^context[0].type = #element

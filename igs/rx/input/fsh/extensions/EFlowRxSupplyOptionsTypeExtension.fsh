@@ -2,7 +2,7 @@ Extension: EFlowRxSupplyOptionsTypeExtension
 Id: eflow-rx-supplyoptionstype-extension
 Title: "GEM ERP EX SupplyOptionsType"
 Description: "Extension zur Angabe des bevorzugten Versorgungskanals"
-* insert Versioning
+* insert Meta
 * ^context.type = #element
 * ^context.expression = "Communication.payload"
 * . ^short = "Optionen für bevorzugte oder angebotene Versorgungskanäle"

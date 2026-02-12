@@ -1,5 +1,5 @@
 RuleSet: Operation(name)
-* insert OperationVersioning
+* insert Meta-Instance
 * name = "{name}"
 * kind = #operation
 * affectsState = true

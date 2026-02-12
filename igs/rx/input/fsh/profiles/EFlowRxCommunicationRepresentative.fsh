@@ -3,7 +3,7 @@ Parent: Communication
 Id: eflow-rx-communication-representative
 Title: "GEM ERP PR Communication Representative"
 Description: "Kommunikation zwischen Patient und Vertreter"
-* insert Versioning
+* insert Meta
 
 * recipient 1..1
 * recipient.identifier 1..

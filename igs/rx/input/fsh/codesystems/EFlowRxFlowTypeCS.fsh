@@ -6,7 +6,7 @@ Zeigt die verschiedenen Typen des E-Rezept Workflows entsprechend der Verordnung
 
 WICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheken wie z.B. Pharmazeutische Dienstleistungen!
 """
-* insert CodeSystem
+* insert Meta-CS
 * ^content = #complete
 * #160 "Flowtype für Apothekenpflichtige Arzneimittel"
 * #162 "Flowtype für Digitale Gesundheitsanwendungen"

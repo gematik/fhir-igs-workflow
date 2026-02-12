@@ -3,7 +3,7 @@ Parent: Signature
 Id: eflow-rx-signature
 Title: "EFlowRxSignature"
 Description: "Profil für die Signatur von Bundles im E-Rezept-Kontext"
-* insert Versioning
+* insert Meta
 * type ..1 MS
 * type ^slicing.discriminator.type = #value
 * type ^slicing.discriminator.path = "code"

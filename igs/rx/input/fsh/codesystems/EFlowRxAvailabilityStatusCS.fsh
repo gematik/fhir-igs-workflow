@@ -2,7 +2,7 @@ CodeSystem: EFlowRxAvailabilityStatusCS
 Id: eflow-rx-availabilitystatus
 Title: "CodeSystem des Verfügbarkeitsstatus"
 Description: "Typ des Verfügbarkeitsstatus für die Anfrage zur Medikamentenverfügbarkeit."
-* insert CodeSystem
+* insert Meta-CS
 * ^content = #complete
 * #10 "sofort verfügbar"
 * #20 "noch Heute verfügbar"

@@ -3,7 +3,7 @@ Parent: Parameters
 Id: eflow-rx-dispense-operation-input-parameters
 Title: "GEM ERP PR DispenseOperation Input"
 Description: "Dieses Profil definiert die Parameter für die Abgabe eines Medikaments von AVS an den E-Rezept-Fachdienst. Dies kann für die $dispense-Operation verwendet werden."
-* insert Versioning
+* insert Meta
 
 * parameter 1..*
 

@@ -3,7 +3,7 @@ Parent: Task
 Id: eflow-rx-task
 Title: "GEM ERP PR Task"
 Description: "Task für die Verwaltung des E-Rezept-Workflows"
-* insert Versioning
+* insert Meta
 
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"

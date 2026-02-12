@@ -2,7 +2,7 @@ ValueSet: EFlowRxOperationOutcomeDetailsVS
 Id: eflow-rx-operationoutcomedetails
 Title: "GEM ERP VS OperationOutcomeDetails"
 Description: "Fachliche Fehlercodes des E-Rezept-Fachdienst"
-* insert ValueSet
+* insert Meta-VS
 
 // Include all from this Repository
 * include codes from system EFlowRxOperationOutcomeDetailsCS

@@ -3,7 +3,7 @@ Parent: EPAMedication
 Id: eflow-rx-medication
 Title: "GEM ERP PR Medication"
 Description: "Medikament zur Ausgabe des Rezepts"
-* insert Versioning
+* insert Meta
  
 * contained MS
 

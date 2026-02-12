@@ -3,7 +3,7 @@ Parent: Composition
 Id: eflow-rx-composition
 Title: "GEM ERP PR Composition"
 Description: "Quittung für die Einlösung eines E-Rezepts"
-* insert Versioning
+* insert Meta
 
 // extensions
 * extension ^slicing.discriminator.type = #value

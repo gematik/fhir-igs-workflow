@@ -3,7 +3,7 @@ Parent: Parameters
 Id: eflow-rx-accept-operation-output-parameters
 Title: "GEM ERP PR AcceptOperation Output"
 Description: "Dieses Profil definiert die Parameter für die Annahme eines Medikaments von AVS zum E-Rezept-Fachdienst. Dies kann für die $accept-Operation verwendet werden."
-* insert Versioning
+* insert Meta
 
 * parameter 1..1
 

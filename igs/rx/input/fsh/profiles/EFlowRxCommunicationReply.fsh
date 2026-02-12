@@ -3,7 +3,7 @@ Parent: EFlowRxCommunication
 Id: eflow-rx-communication-reply
 Title: "GEM ERP PR Communication Reply"
 Description: "Antwort vom Leistungserbringer an den Patienten"
-* insert Versioning
+* insert Meta
 
 * recipient 1..1
   * identifier 1..1

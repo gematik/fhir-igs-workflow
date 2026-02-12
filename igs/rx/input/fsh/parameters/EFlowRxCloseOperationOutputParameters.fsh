@@ -3,7 +3,7 @@ Parent: Parameters
 Id: eflow-rx-close-operation-output-parameters
 Title: "GEM ERP PR CloseOperation Output"
 Description: "Dieses Profil definiert die Parameter für die Ausgabe eines Medikaments von AVS an den E-Rezept-Fachdienst. Dies kann für die $close-Operation verwendet werden."
-* insert Versioning
+* insert Meta
 
 * parameter 1..1
 

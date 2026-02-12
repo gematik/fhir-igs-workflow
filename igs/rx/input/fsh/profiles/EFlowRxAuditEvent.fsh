@@ -3,7 +3,7 @@ Parent: AuditEvent
 Id: eflow-rx-auditevent
 Title: "GEM ERP PR AuditEvent"
 Description: "AuditEvent für die Protokollierung des Zugriffs auf eRezepte"
-* insert Versioning
+* insert Meta
 
 * type MS
   * system 1..1

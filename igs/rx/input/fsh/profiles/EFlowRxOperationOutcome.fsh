@@ -3,7 +3,7 @@ Parent: OperationOutcome
 Id: eflow-rx-operationoutcome
 Title: "GEM ERP PR OperationOutcome"
 Description: "OperationOutcome für Angabe von Fehlermeldungen vom E-Rezept-Fachdienst"
-* insert Versioning
+* insert Meta
 
 * issue.severity MS
 * issue.code MS

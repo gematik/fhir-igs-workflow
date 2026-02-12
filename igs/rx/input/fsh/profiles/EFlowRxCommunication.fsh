@@ -3,7 +3,7 @@ Parent: Communication
 Id: eflow-rx-communication
 Title: "GEM ERP PR Communication"
 Description: "Generische Workflow-Communication"
-* insert Versioning
+* insert Meta
 * ^abstract = true
 
 * basedOn 1..1 MS

@@ -2,7 +2,7 @@ CodeSystem: EFlowRxOperationOutcomeDetailsCS
 Id: eflow-rx-operationoutcomedetails
 Title: "GEM ERP CS OperationOutcomeDetails"
 Description: "Fachliche Fehlercodes des E-Rezept-Fachdienst"
-* insert CodeSystem
+* insert Meta-CS
 
 * #ERPFD_NO_VALID_STRUCTURE "Invalid Data Structure in ePrescription Service"
 * #ERPFD_PRESCRIPTION_NO_EXIST "Prescription Not Found in ePrescription Service"

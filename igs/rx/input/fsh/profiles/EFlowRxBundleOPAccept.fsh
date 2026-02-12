@@ -3,7 +3,7 @@ Parent: Bundle
 Id: eflow-rx-bundle-op-accept
 Title: "GEM ERP PR Bundle OP Accept"
 Description: "Antwort des E-Rezept-Fachdienst auf die $accept-Operation"
-* insert Versioning
+* insert Meta
 
 * type = #collection (exactly)
 * entry 2..2
