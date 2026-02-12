@@ -6,7 +6,7 @@ Description: "Binäre Digest-Daten für ein E-Rezept-Quittungs-Bundle"
 Usage: #inline
 * id = "b939a82a-9c23-4b6d-a139-f468d1b9d652"
 * contentType = #application/octet-stream
-* data = "tJg8c5ZtdhzEEhJ0ZpAsUVFsx5dKuYgQFs5oKgthi17M="
+* data = "tJg8c5ZtdhzEEhJ0ZpAsUVFx5dKuYgQFs5oKgthi17M="
 
 Instance: ReceiptBundleQuittung
 InstanceOf: EFlowRxBundle
