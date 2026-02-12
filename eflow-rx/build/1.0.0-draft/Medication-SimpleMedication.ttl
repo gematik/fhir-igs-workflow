@@ -1,0 +1,32 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/erp/Medication/SimpleMedication> a fhir:Medication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "SimpleMedication"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-medication"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-medication>
+     ] )
+  ] ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://fhir.de/CodeSystem/ifa/pzn"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/CodeSystem/ifa/pzn>
+       ] ;
+       fhir:code [ fhir:v "06313728" ]
+     ] )
+  ] ; # 
+  fhir:batch [
+     fhir:lotNumber [ fhir:v "1234567890" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

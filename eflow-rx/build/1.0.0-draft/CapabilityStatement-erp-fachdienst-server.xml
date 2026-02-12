@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CapabilityStatement xmlns="http://hl7.org/fhir">
+  <id value="erp-fachdienst-server"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"/>
+  </meta>
+  <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-base-url">
+    <valueString value="http://todo"/>
+  </extension>
+  <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+    <extension url="statusCode">
+      <valueString value="423"/>
+    </extension>
+    <extension url="description">
+      <valueString value="If the insurant objected to the medication process or objected to the submission of prescription and dispensation data into the ePA system, the Medication Service is locked."/>
+    </extension>
+    <extension url="responseType">
+      <valueString value="application/json"/>
+    </extension>
+    <extension url="errorCode">
+      <valueString value="locked"/>
+    </extension>
+  </extension>
+  <url value="https://gematik.de/fhir/erp/CapabilityStatement/erp-fachdienst-server"/>
+  <version value="1.0.0-draft"/>
+  <name value="ERPFachdienstServer"/>
+  <title value="ERP CapabilityStatement für den E-Rezept-Fachdienst"/>
+  <status value="draft"/>
+  <date value="2025-12-15"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="erp-umsetzung@gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="ERP CapabilityStatement für den E-Rezept-Fachdienst"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <kind value="requirements"/>
+  <fhirVersion value="4.0.1"/>
+  <format value="application/fhir+json"/>
+  <format value="application/fhir+xml"/>
+  <rest>
+    <mode value="server"/>
+  </rest>
+</CapabilityStatement>

@@ -1,0 +1,227 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/erp/Medication/Medication-Rezeptur-FD> a fhir:Medication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Medication-Rezeptur-FD"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-medication"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-medication>
+     ] )
+  ] ; # 
+  fhir:contained ( [
+     a fhir:Medication ;
+     fhir:id [ fhir:v "MedicationHydrocortison-FD" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-pzn-ingredient"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-pzn-ingredient>
+       ] )
+     ] ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-type-extension"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-type-extension>
+       ] ;
+       fhir:value [
+         a fhir:Coding, sct:781405001 ;
+         fhir:system [
+           fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+           fhir:l <http://snomed.info/sct>
+         ] ;
+         fhir:code [ fhir:v "781405001" ] ;
+         fhir:display [ fhir:v "Medicinal product package (product)" ]
+       ]
+     ] ) ;
+     fhir:code [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://fhir.de/CodeSystem/ifa/pzn"^^xsd:anyURI ;
+           fhir:l <http://fhir.de/CodeSystem/ifa/pzn>
+         ] ;
+         fhir:code [ fhir:v "03424249" ] ;
+         fhir:display [ fhir:v "Hydrocortison 1% Creme" ]
+       ] ) ;
+       fhir:text [ fhir:v "Hydrocortison 1% Creme" ]
+     ]
+  ] [
+     a fhir:Medication ;
+     fhir:id [ fhir:v "MedicationDexpanthenol-FD" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-pzn-ingredient"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-pzn-ingredient>
+       ] )
+     ] ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-type-extension"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-type-extension>
+       ] ;
+       fhir:value [
+         a fhir:Coding, sct:781405001 ;
+         fhir:system [
+           fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+           fhir:l <http://snomed.info/sct>
+         ] ;
+         fhir:code [ fhir:v "781405001" ] ;
+         fhir:display [ fhir:v "Medicinal product package (product)" ]
+       ]
+     ] ) ;
+     fhir:code [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://fhir.de/CodeSystem/ifa/pzn"^^xsd:anyURI ;
+           fhir:l <http://fhir.de/CodeSystem/ifa/pzn>
+         ] ;
+         fhir:code [ fhir:v "16667195" ] ;
+         fhir:display [ fhir:v "Dexpanthenol 5% Creme" ]
+       ] ) ;
+       fhir:text [ fhir:v "Dexpanthenol 5% Creme" ]
+     ]
+  ] ) ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension>
+     ] ;
+     fhir:value [
+       a fhir:Coding ;
+       fhir:system [
+         fhir:v "https://gematik.de/fhir/epa-medication/CodeSystem/epa-drug-category-cs"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/epa-medication/CodeSystem/epa-drug-category-cs>
+       ] ;
+       fhir:code [ fhir:v "00" ]
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-manufacturing-instructions-extension"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/medication-manufacturing-instructions-extension>
+     ] ;
+     fhir:value [
+       a fhir:String ;
+       fhir:v "Bitte kühl zubereiten und lagern."
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-formulation-packaging-extension"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/medication-formulation-packaging-extension>
+     ] ;
+     fhir:value [
+       a fhir:String ;
+       fhir:v "Tube"
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension>
+     ] ;
+     fhir:value [
+       a fhir:Boolean ;
+       fhir:v false
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-type-extension"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-type-extension>
+     ] ;
+     fhir:value [
+       a fhir:Coding, sct:1208954007 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "1208954007" ] ;
+       fhir:display [ fhir:v "Extemporaneous preparation (product)" ]
+     ]
+  ] ) ; # 
+  fhir:code [
+     fhir:text [ fhir:v "Hydrocortison-Dexpanthenol-Salbe" ]
+  ] ; # 
+  fhir:form [
+     fhir:text [ fhir:v "Salbe" ]
+  ] ; # 
+  fhir:amount [
+     fhir:numerator [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-total-quantity-formulation-extension"^^xsd:anyURI ;
+           fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/medication-total-quantity-formulation-extension>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "100"
+         ]
+       ] ) ;
+       fhir:value [ fhir:v "20"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "ml" ]
+     ] ;
+     fhir:denominator [
+       fhir:value [ fhir:v "1"^^xsd:decimal ]
+     ]
+  ] ; # 
+  fhir:ingredient ( [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-ingredient-darreichungsform-extension"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/medication-ingredient-darreichungsform-extension>
+       ] ;
+       fhir:value [
+         a fhir:String ;
+         fhir:v "Salbe"
+       ]
+     ] ) ;
+     fhir:item [
+       a fhir:Reference ;
+       fhir:l <#MedicationHydrocortison-FD> ;
+       fhir:reference [ fhir:v "#MedicationHydrocortison-FD" ]
+     ] ;
+     fhir:isActive [ fhir:v true ] ;
+     fhir:strength [
+       fhir:numerator [
+         fhir:value [ fhir:v "50"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "g" ]
+       ] ;
+       fhir:denominator [
+         fhir:value [ fhir:v "100"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "g" ]
+       ]
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-ingredient-darreichungsform-extension"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/medication-ingredient-darreichungsform-extension>
+       ] ;
+       fhir:value [
+         a fhir:String ;
+         fhir:v "Salbe"
+       ]
+     ] ) ;
+     fhir:item [
+       a fhir:Reference ;
+       fhir:l <#MedicationDexpanthenol-FD> ;
+       fhir:reference [ fhir:v "#MedicationDexpanthenol-FD" ]
+     ] ;
+     fhir:isActive [ fhir:v true ] ;
+     fhir:strength [
+       fhir:numerator [
+         fhir:value [ fhir:v "50"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "g" ]
+       ] ;
+       fhir:denominator [
+         fhir:value [ fhir:v "100"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "g" ]
+       ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

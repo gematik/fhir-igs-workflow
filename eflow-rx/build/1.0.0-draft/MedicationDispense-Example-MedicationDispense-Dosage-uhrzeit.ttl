@@ -1,0 +1,110 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/erp/MedicationDispense/Example-MedicationDispense-Dosage-uhrzeit> a fhir:MedicationDispense ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Example-MedicationDispense-Dosage-uhrzeit"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-medicationdispense"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-medicationdispense>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.renderedDosageInstruction"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.renderedDosageInstruction>
+     ] ;
+     fhir:value [
+       a fhir:Markdown ;
+       fhir:v "täglich: 08:00 Uhr — je 1 Stück"
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "algorithmVersion"^^xsd:anyURI ;
+         fhir:l fhir:algorithmVersion
+       ] ;
+       fhir:value [
+         a fhir:String ;
+         fhir:v "1.0.0"
+       ]
+     ] [
+       fhir:url [
+         fhir:v "language"^^xsd:anyURI ;
+         fhir:l fhir:language
+       ] ;
+       fhir:value [
+         a fhir:Code ;
+         fhir:v "de-DE"
+       ]
+     ] ) ;
+     fhir:url [
+       fhir:v "http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta"^^xsd:anyURI ;
+       fhir:l <http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta>
+     ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:system [
+       fhir:v "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId>
+     ] ;
+     fhir:value [ fhir:v "160.000.033.491.280.78" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:medication [
+     a fhir:Reference ;
+     fhir:l <https://gematik.de/fhir/erp/Medication/SumatripanMedication> ;
+     fhir:reference [ fhir:v "Medication/SumatripanMedication" ]
+  ] ; # 
+  fhir:subject [
+     fhir:identifier [
+       fhir:system [
+         fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/sid/gkv/kvid-10>
+       ] ;
+       fhir:value [ fhir:v "X123456789" ]
+     ]
+  ] ; # 
+  fhir:performer ( [
+     fhir:actor [
+       fhir:identifier [
+         fhir:system [
+           fhir:v "https://gematik.de/fhir/sid/telematik-id"^^xsd:anyURI ;
+           fhir:l <https://gematik.de/fhir/sid/telematik-id>
+         ] ;
+         fhir:value [ fhir:v "3-SMC-B-Testkarte-883110000095957" ]
+       ]
+     ]
+  ] ) ; # 
+  fhir:whenHandedOver [ fhir:v "2026-07-01"^^xsd:date] ; # 
+  fhir:dosageInstruction ( [
+     fhir:timing [
+       fhir:repeat [
+         fhir:frequency [ fhir:v "1"^^xsd:positiveInteger ] ;
+         fhir:period [ fhir:v "1"^^xsd:decimal ] ;
+         fhir:periodUnit [ fhir:v "d" ] ;
+         fhir:timeOfDay ( [ fhir:v "08:00:00"^^xsd:time ] )
+       ]
+     ] ;
+     fhir:doseAndRate ( [
+       fhir:dose [
+         a fhir:Quantity ;
+         fhir:value [ fhir:v "1"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "Stück" ] ;
+         fhir:system [
+           fhir:v "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BMP_DOSIEREINHEIT"^^xsd:anyURI ;
+           fhir:l <https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BMP_DOSIEREINHEIT>
+         ] ;
+         fhir:code [ fhir:v "1" ]
+       ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

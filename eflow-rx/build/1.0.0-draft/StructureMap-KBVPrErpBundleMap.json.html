@@ -1,0 +1,1235 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>KBVPrErpBundleMap - JSON Representation - E-Rezept für Arzneimittel v1.0.0-draft</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        height: 280px;
+        background-color: #2a6496;
+        background: url('./e-rezept-img.png') no-repeat;
+        background-position: 650px -150px;
+        background-size: 45% auto;
+    }
+    .bubble-link {
+        display: none;
+        transition: opacity 0.2s;
+        }
+
+        h1:hover .bubble-link,
+        h2:hover .bubble-link,
+        h3:hover .bubble-link,
+        h4:hover .bubble-link,
+        h5:hover .bubble-link,
+        h6:hover .bubble-link {
+        display: inline;
+        }
+</style>
+
+<script type="text/javascript" src="assets/js/heading-links.js"> </script>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"10.57"}
+    h3,h4,h5,h6{--heading-prefix:"10.57"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Start</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Fachlichkeit
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-fachlichkeit-ueberblick.html">Überblick</a>
+      </li>
+      <li>
+        <a href="menu-fachlichkeit-szenarien.html">Szenarien</a>
+      </li>
+      <li>
+        <a href="menu-fachlichkeit-anwendungsfaelle.html">Anwendungsfälle</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Technische Umsetzung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-technische-umsetzung-systemueberblick.html">Systemüberblick</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-anwendungsfaelle.html">Technische Anwendungsfälle</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-verarbeitungsregeln.html">Verarbeitungsregeln</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-dosierung.html">Validierung von Dosierinformationen</a>
+      </li>
+      <li>
+        <a href="mapping.html">Mappings</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Schnittstellen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-query-api.html">Query API</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-operation-api.html">Operation API</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-additional-api.html">Additional APIs</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="referenced.html">Referenzen</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="erp-openapi.html">OpenAPI</a>
+      </li>
+      <li>
+        <a href="release-notes.html">Release Notes</a>
+      </li>
+      <li>
+        <a href="spec-sheet.html">Steckbriefe</a>
+      </li>
+      <li>
+        <a href="comparisons.html">Versionsvergleiche</a>
+      </li>
+      <li>
+        <a href="license.html">Lizenz</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+E-Rezept für Arzneimittel
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 1.0.0-draft - ci-build
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>FHIR-Artefakte</b></a></li><li><b>KBVPrErpBundleMap</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<div style="counter-reset: section 8" class="col-12">
+  
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="StructureMap-KBVPrErpBundleMap.html">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="StructureMap-KBVPrErpBundleMap.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li class="active">
+      <a href="#">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="StructureMap-KBVPrErpBundleMap.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+
+<a name="root"> </a>
+
+
+<h2 id="root">: KBVPrErpBundleMap - JSON Representation</h2>
+
+  <table class="colsd">
+    <tr>
+
+      <td colspan="2">
+        
+          Draft
+          
+            as of 2026-02-02
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+<p><a href="StructureMap-KBVPrErpBundleMap.json" no-download="true">Raw json</a> | <a href="StructureMap-KBVPrErpBundleMap.json" download>Download</a></p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <pre class="json" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code style="white-space: pre; text-wrap: nowrap;">{
+  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap">resourceType</a>" : "StructureMap",
+  "<a href="http://hl7.org/fhir/R4/resource.html#StructureMap.id">id</a>" : "KBVPrErpBundleMap",
+  "<a href="http://hl7.org/fhir/R4/domainresource.html#StructureMap.text">text</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: StructureMap KBVPrErpBundleMap&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;KBVPrErpBundleMap\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcKBVPrErpBundleMap\&quot;&gt; &lt;/a&gt;&lt;pre class=\&quot;fml\&quot;&gt;\r\n&lt;b&gt;map&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; &amp;quot;&lt;/span&gt;https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpBundleMap&lt;span style=\&quot;color: navy\&quot;&gt;&amp;quot; = &amp;quot;&lt;/span&gt;KBVPrErpBundleMap&lt;span style=\&quot;color: navy\&quot;&gt;&amp;quot;\r\n\r\n&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Auto-generated StructureMap for transformation KBV_PR_ERP_Bundle|1.4.0 -&amp;gt; EPAOpProvidePrescriptionERPInputParameters|1.3.0&lt;/span&gt;\r\n\r\n&lt;b&gt;uses&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; &amp;quot;&lt;/span&gt;https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle&lt;span style=\&quot;color: navy\&quot;&gt;&amp;quot; &lt;/span&gt;&lt;b&gt;alias &lt;/b&gt;KBVPRERPBundle &lt;b&gt;as &lt;/b&gt;&lt;b&gt;source&lt;/b&gt;\r\n&lt;b&gt;uses&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; &amp;quot;&lt;/span&gt;&lt;a href=\&quot;https://simplifier.net/resolve?scope=de.gematik.epa.medication@1.3.0&amp;amp;canonical=https://gematik.de/fhir/epa-medication/StructureDefinition/epa-op-provide-prescription-erp-input-parameters\&quot; title=\&quot;EPA Operation ProvidePrescription ERP Input-Parameters\&quot;&gt;https://gematik.de/fhir/epa-medication/StructureDefinition/epa-op-provide-prescription-erp-input-parameters&lt;/a&gt;&lt;span style=\&quot;color: navy\&quot;&gt;&amp;quot; &lt;/span&gt;&lt;b&gt;alias &lt;/b&gt;EPAOpProvidePrescriptionERPInputParameters &lt;b&gt;as &lt;/b&gt;&lt;b&gt;target&lt;/b&gt;\r\n\r\n&lt;b&gt;imports&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; &amp;quot;&lt;/span&gt;&lt;a href=\&quot;StructureMap-KBVPrErpMedicationCompoundingMap.html\&quot; title=\&quot;KBVPrErpMedicationCompoundingMap\&quot;&gt;https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationCompoundingMap&lt;/a&gt;&lt;span style=\&quot;color: navy\&quot;&gt;&amp;quot;\r\n&lt;/span&gt;&lt;b&gt;imports&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; &amp;quot;&lt;/span&gt;&lt;a href=\&quot;StructureMap-KBVPrErpMedicationFreetextMap.html\&quot; title=\&quot;KBVPrErpMedicationFreetextMap\&quot;&gt;https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationFreetextMap&lt;/a&gt;&lt;span style=\&quot;color: navy\&quot;&gt;&amp;quot;\r\n&lt;/span&gt;&lt;b&gt;imports&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; &amp;quot;&lt;/span&gt;&lt;a href=\&quot;StructureMap-KBVPrErpMedicationIngredientMap.html\&quot; title=\&quot;KBVPrErpMedicationIngredientMap\&quot;&gt;https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationIngredientMap&lt;/a&gt;&lt;span style=\&quot;color: navy\&quot;&gt;&amp;quot;\r\n&lt;/span&gt;&lt;b&gt;imports&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; &amp;quot;&lt;/span&gt;&lt;a href=\&quot;StructureMap-KBVPrErpMedicationPznMap.html\&quot; title=\&quot;KBVPrErpMedicationPznMap\&quot;&gt;https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationPznMap&lt;/a&gt;&lt;span style=\&quot;color: navy\&quot;&gt;&amp;quot;\r\n&lt;/span&gt;&lt;b&gt;imports&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; &amp;quot;&lt;/span&gt;&lt;a href=\&quot;StructureMap-KBVPrErpPrescriptionMap.html\&quot; title=\&quot;KBVPrErpPrescriptionMap\&quot;&gt;https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpPrescriptionMap&lt;/a&gt;&lt;span style=\&quot;color: navy\&quot;&gt;&amp;quot;\r\n&lt;/span&gt;&lt;b&gt;imports&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; &amp;quot;&lt;/span&gt;&lt;a href=\&quot;StructureMap-KBVPrForOrganizationMap.html\&quot; title=\&quot;KBVPrForOrganizationMap\&quot;&gt;https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrForOrganizationMap&lt;/a&gt;&lt;span style=\&quot;color: navy\&quot;&gt;&amp;quot;\r\n&lt;/span&gt;&lt;b&gt;imports&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; &amp;quot;&lt;/span&gt;&lt;a href=\&quot;StructureMap-KBVPrForPractitionerMap.html\&quot; title=\&quot;KBVPrForPractitionerMap\&quot;&gt;https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrForPractitionerMap&lt;/a&gt;&lt;span style=\&quot;color: navy\&quot;&gt;&amp;quot;\r\n&lt;/span&gt;\r\n&lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Transformation generated for KBV_PR_ERP_Bundle|1.4.0 -&amp;gt; EPAOpProvidePrescriptionERPInputParameters|1.3.0&lt;/span&gt;\r\n&lt;b&gt;group &lt;/b&gt;KBVPrErpBundleMap&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;&lt;b&gt;source&lt;/b&gt; &lt;span style=\&quot;color: maroon\&quot;&gt;KBVPRERPBundle&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt; : &lt;/span&gt;KBVPRERPBundle, &lt;b&gt;target&lt;/b&gt; &lt;span style=\&quot;color: maroon\&quot;&gt;EPAOpProvidePrescriptionERPInputParameters&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt; : &lt;/span&gt;EPAOpProvidePrescriptionERPInputParameters&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt;&lt;b&gt; &amp;lt;&amp;lt;types&amp;gt;&amp;gt;&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {\r\n&lt;/span&gt;  KBVPRERPBundle&lt;span style=\&quot;color: navy\&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;EPAOpProvidePrescriptionERPInputParameters.parameter&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;targetParameterRxprescriptionParameter77d85b46&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {\r\n&lt;/span&gt;    KBVPRERPBundle&lt;span style=\&quot;color: navy\&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;targetParameterRxprescriptionParameter77d85b46.name = &lt;span style=\&quot;color: blue\&quot;&gt;'rxPrescription'&lt;/span&gt; &lt;i&gt;&amp;quot;SetParameterRxprescriptionName&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;\r\n    KBVPRERPBundle&lt;span style=\&quot;color: navy\&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;targetParameterRxprescriptionParameter77d85b46.part&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;targetPartAuthoredonPartb106c48f&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {\r\n&lt;/span&gt;      KBVPRERPBundle&lt;span style=\&quot;color: navy\&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;targetPartAuthoredonPartb106c48f.name = &lt;span style=\&quot;color: blue\&quot;&gt;'authoredOn'&lt;/span&gt; &lt;i&gt;&amp;quot;SetPartAuthoredonName&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;\r\n      KBVPRERPBundle.entry&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;inlinesourceParametersParameterRxprescriptionPartAuthoredonValue&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;resource.meta.profile.where($this.contains('https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription')).exists()&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {\r\n&lt;/span&gt;        inlinesourceParametersParameterRxprescriptionPartAuthoredonValue.resource&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;inlinesourceParametersParameterRxprescriptionPartAuthoredonValue&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {\r\n&lt;/span&gt;          inlinesourceParametersParameterRxprescriptionPartAuthoredonValue.authoredOn&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;inlinesourceParametersParameterRxprescriptionPartAuthoredonValue&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;targetPartAuthoredonPartb106c48f.value = &lt;span style=\&quot;color: maroon\&quot;&gt;inlinesourceParametersParameterRxprescriptionPartAuthoredonValue&lt;/span&gt;&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;inlinetargetParametersParameterRxprescriptionPartAuthoredonValue&lt;/span&gt; &lt;i&gt;&amp;quot;InlineParametersParameterRxprescriptionPartAuthoredonValueX1c6fc&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;\r\n        &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;InlineParametersParameterRxprescriptionPartAuthoredonValueX1c6fc&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;\r\n      &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;InlineParametersParameterRxprescriptionPartAuthoredonValueX1c6fc&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Automatic copy&lt;/span&gt;\r\n    &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;PartAuthoredonPartContainer&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Creates part:authoredOn part container aggregating 1 child rule(s)&lt;/span&gt;\r\n    KBVPRERPBundle&lt;span style=\&quot;color: navy\&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;targetParameterRxprescriptionParameter77d85b46.part&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;targetPartMedicationPart88f31ec4&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {\r\n&lt;/span&gt;      KBVPRERPBundle&lt;span style=\&quot;color: navy\&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;targetPartMedicationPart88f31ec4.name = &lt;span style=\&quot;color: blue\&quot;&gt;'medication'&lt;/span&gt; &lt;i&gt;&amp;quot;SetPartMedicationName&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;\r\n      KBVPRERPBundle.entry&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;sourceBundleEntryRezeptierdatenpznverordnungResource0Entry4c4ad0&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;resource is Medication&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {\r\n&lt;/span&gt;        sourceBundleEntryRezeptierdatenpznverordnungResource0Entry4c4ad0.resource&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;sourceBundleEntryRezeptierdatenpznverordnungResource1Resource3bd&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {\r\n&lt;/span&gt;          sourceBundleEntryRezeptierdatenpznverordnungResource1Resource3bd&lt;span style=\&quot;color: navy\&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;targetPartMedicationPart88f31ec4.resource = &lt;b&gt;create&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;&lt;span style=\&quot;color: blue\&quot;&gt;'https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication'&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt;&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;targetParameterRxprescriptionPartMedicationResourceResource38c62&lt;/span&gt;&lt;b&gt; then &lt;/b&gt;KBVPrErpMedicationPznMap&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;sourceBundleEntryRezeptierdatenpznverordnungResource1Resource3bd&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;, &lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;targetParameterRxprescriptionPartMedicationResourceResource38c62&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt; &lt;i&gt;&amp;quot;CallKbvprerpmedicationpznmap&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;\r\n        &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;BundleEntryRezeptierdatenpznverordnungResource7400f329&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;\r\n      &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;BundleEntryRezeptierdatenpznverordnungResource7400f329&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Bundle.entry:RezeptierdatenPZNVerordnung.resource -&amp;gt; .parameter:rxPrescription.part:medication.resource using KBV_PR_ERP_Medication_PZN|1.4.0 -&amp;gt; EPAMedication|1.3.0&lt;/span&gt;\r\n      KBVPRERPBundle.entry&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;sourceBundleEntryRezeptierdatenwirkstoffverordnungResource0Ent6b&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;resource is Medication&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {\r\n&lt;/span&gt;        sourceBundleEntryRezeptierdatenwirkstoffverordnungResource0Ent6b.resource&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;sourceBundleEntryRezeptierdatenwirkstoffverordnungResource1Res9f&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {\r\n&lt;/span&gt;          sourceBundleEntryRezeptierdatenwirkstoffverordnungResource1Res9f&lt;span style=\&quot;color: navy\&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;targetPartMedicationPart88f31ec4.resource = &lt;b&gt;create&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;&lt;span style=\&quot;color: blue\&quot;&gt;'https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication'&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt;&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;targetParameterRxprescriptionPartMedicationResourceResource38c62&lt;/span&gt;&lt;b&gt; then &lt;/b&gt;KBVPrErpMedicationIngredientMap&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;sourceBundleEntryRezeptierdatenwirkstoffverordnungResource1Res9f&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;, &lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;targetParameterRxprescriptionPartMedicationResourceResource38c62&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt; &lt;i&gt;&amp;quot;CallKbvprerpmedicationingredientmap&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;\r\n        &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;BundleEntryRezeptierdatenwirkstoffverordnungResource7400f329&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;\r\n      &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;BundleEntryRezeptierdatenwirkstoffverordnungResource7400f329&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Bundle.entry:RezeptierdatenWirkstoffverordnung.resource -&amp;gt; .parameter:rxPrescription.part:medication.resource using KBV_PR_ERP_Medication_Ingredient|1.4.0 -&amp;gt; EPAMedication|1.3.0&lt;/span&gt;\r\n      KBVPRERPBundle.entry&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;sourceBundleEntryRezeptierdatenrezepturverordnungResource0Entr83&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;resource is Medication&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {\r\n&lt;/span&gt;        sourceBundleEntryRezeptierdatenrezepturverordnungResource0Entr83.resource&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;sourceBundleEntryRezeptierdatenrezepturverordnungResource1Resocd&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {\r\n&lt;/span&gt;          sourceBundleEntryRezeptierdatenrezepturverordnungResource1Resocd&lt;span style=\&quot;color: navy\&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;targetPartMedicationPart88f31ec4.resource = &lt;b&gt;create&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;&lt;span style=\&quot;color: blue\&quot;&gt;'https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication'&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt;&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;targetParameterRxprescriptionPartMedicationResourceResource38c62&lt;/span&gt;&lt;b&gt; then &lt;/b&gt;KBVPrErpMedicationCompoundingMap&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;sourceBundleEntryRezeptierdatenrezepturverordnungResource1Resocd&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;, &lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;targetParameterRxprescriptionPartMedicationResourceResource38c62&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt; &lt;i&gt;&amp;quot;CallKbvprerpmedicationcompoundingmap&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;\r\n        &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;BundleEntryRezeptierdatenrezepturverordnungResource7400f329&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;\r\n      &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;BundleEntryRezeptierdatenrezepturverordnungResource7400f329&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Bundle.entry:RezeptierdatenRezepturverordnung.resource -&amp;gt; .parameter:rxPrescription.part:medication.resource using KBV_PR_ERP_Medication_Compounding|1.4.0 -&amp;gt; EPAMedication|1.3.0&lt;/span&gt;\r\n      KBVPRERPBundle.entry&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;sourceBundleEntryRezeptierdatenfreitextverordnungResource0Entrb4&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;resource is Medication&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {\r\n&lt;/span&gt;        sourceBundleEntryRezeptierdatenfreitextverordnungResource0Entrb4.resource&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;sourceBundleEntryRezeptierdatenfreitextverordnungResource1Resob3&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {\r\n&lt;/span&gt;          sourceBundleEntryRezeptierdatenfreitextverordnungResource1Resob3&lt;span style=\&quot;color: navy\&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;targetPartMedicationPart88f31ec4.resource = &lt;b&gt;create&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;&lt;span style=\&quot;color: blue\&quot;&gt;'https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication'&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt;&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;targetParameterRxprescriptionPartMedicationResourceResource38c62&lt;/span&gt;&lt;b&gt; then &lt;/b&gt;KBVPrErpMedicationFreetextMap&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;sourceBundleEntryRezeptierdatenfreitextverordnungResource1Resob3&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;, &lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;targetParameterRxprescriptionPartMedicationResourceResource38c62&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt; &lt;i&gt;&amp;quot;CallKbvprerpmedicationfreetextmap&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;\r\n        &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;BundleEntryRezeptierdatenfreitextverordnungResource7400f329&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;\r\n      &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;BundleEntryRezeptierdatenfreitextverordnungResource7400f329&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Bundle.entry:RezeptierdatenFreitextverordnung.resource -&amp;gt; .parameter:rxPrescription.part:medication.resource using KBV_PR_ERP_Medication_FreeText|1.4.0 -&amp;gt; EPAMedication|1.3.0&lt;/span&gt;\r\n    &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;PartMedicationPartContainer&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Creates part:medication part container aggregating 4 child rule(s)&lt;/span&gt;\r\n    KBVPRERPBundle&lt;span style=\&quot;color: navy\&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;targetParameterRxprescriptionParameter77d85b46.part&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;targetPartMedicationrequestPart3ea10d80&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {\r\n&lt;/span&gt;      KBVPRERPBundle&lt;span style=\&quot;color: navy\&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;targetPartMedicationrequestPart3ea10d80.name = &lt;span style=\&quot;color: blue\&quot;&gt;'medicationRequest'&lt;/span&gt; &lt;i&gt;&amp;quot;SetPartMedicationrequestName&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;\r\n      KBVPRERPBundle.entry&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;sourceBundleEntryVerordnungarzneimittelResource0Entry3c6c2e1b&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;resource is MedicationRequest&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {\r\n&lt;/span&gt;        sourceBundleEntryVerordnungarzneimittelResource0Entry3c6c2e1b.resource&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;sourceBundleEntryVerordnungarzneimittelResource1Resource61f06fbc&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {\r\n&lt;/span&gt;          sourceBundleEntryVerordnungarzneimittelResource1Resource61f06fbc&lt;span style=\&quot;color: navy\&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;targetPartMedicationrequestPart3ea10d80.resource = &lt;b&gt;create&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;&lt;span style=\&quot;color: blue\&quot;&gt;'https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-request'&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt;&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;targetParameterRxprescriptionPartMedicationrequestResourceReso52&lt;/span&gt;&lt;b&gt; then &lt;/b&gt;KBVPrErpPrescriptionMap&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;sourceBundleEntryVerordnungarzneimittelResource1Resource61f06fbc&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;, &lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;targetParameterRxprescriptionPartMedicationrequestResourceReso52&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt; &lt;i&gt;&amp;quot;CallKbvprerpprescriptionmap&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;\r\n        &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;BundleEntryVerordnungarzneimittelResource890c831b&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;\r\n      &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;BundleEntryVerordnungarzneimittelResource890c831b&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Bundle.entry:VerordnungArzneimittel.resource -&amp;gt; .parameter:rxPrescription.part:medicationRequest.resource using KBV_PR_ERP_Prescription|1.4.0 -&amp;gt; EPAMedicationRequest|1.3.0&lt;/span&gt;\r\n    &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;PartMedicationrequestPartContainer&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Creates part:medicationRequest part container aggregating 1 child rule(s)&lt;/span&gt;\r\n    KBVPRERPBundle&lt;span style=\&quot;color: navy\&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;targetParameterRxprescriptionParameter77d85b46.part&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;targetPartOrganizationPart5252e12d&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {\r\n&lt;/span&gt;      KBVPRERPBundle&lt;span style=\&quot;color: navy\&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;targetPartOrganizationPart5252e12d.name = &lt;span style=\&quot;color: blue\&quot;&gt;'organization'&lt;/span&gt; &lt;i&gt;&amp;quot;SetPartOrganizationName&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;\r\n      KBVPRERPBundle.entry&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;sourceBundleEntryEinrichtungResource0Entry6bfa77fa&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;resource is Organization&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {\r\n&lt;/span&gt;        sourceBundleEntryEinrichtungResource0Entry6bfa77fa.resource&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;sourceBundleEntryEinrichtungResource1Resource45328e4f&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {\r\n&lt;/span&gt;          sourceBundleEntryEinrichtungResource1Resource45328e4f&lt;span style=\&quot;color: navy\&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;targetPartOrganizationPart5252e12d.resource = &lt;b&gt;create&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;&lt;span style=\&quot;color: blue\&quot;&gt;'https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory'&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt;&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;targetParameterRxprescriptionPartOrganizationResourceResource43b&lt;/span&gt;&lt;b&gt; then &lt;/b&gt;KBVPrForOrganizationMap&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;sourceBundleEntryEinrichtungResource1Resource45328e4f&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;, &lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;targetParameterRxprescriptionPartOrganizationResourceResource43b&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt; &lt;i&gt;&amp;quot;CallKbvprfororganizationmap&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;\r\n        &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;BundleEntryEinrichtungResourceB36f36fb&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;\r\n      &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;BundleEntryEinrichtungResourceB36f36fb&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Bundle.entry:Einrichtung.resource -&amp;gt; .parameter:rxPrescription.part:organization.resource using KBV_PR_FOR_Organization|1.3.0 -&amp;gt; OrganizationDirectory|1.0.0&lt;/span&gt;\r\n    &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;PartOrganizationPartContainer&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Creates part:organization part container aggregating 1 child rule(s)&lt;/span&gt;\r\n    KBVPRERPBundle&lt;span style=\&quot;color: navy\&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;targetParameterRxprescriptionParameter77d85b46.part&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;targetPartPractitionerParte111e9d1&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {\r\n&lt;/span&gt;      KBVPRERPBundle&lt;span style=\&quot;color: navy\&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;targetPartPractitionerParte111e9d1.name = &lt;span style=\&quot;color: blue\&quot;&gt;'practitioner'&lt;/span&gt; &lt;i&gt;&amp;quot;SetPartPractitionerName&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;\r\n      KBVPRERPBundle.entry&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;sourceBundleEntryAusstellendeverschreibendeverantwortlichepersb5&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;resource is Practitioner&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {\r\n&lt;/span&gt;        sourceBundleEntryAusstellendeverschreibendeverantwortlichepersb5.resource&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;sourceBundleEntryAusstellendeverschreibendeverantwortlicheperse9&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {\r\n&lt;/span&gt;          sourceBundleEntryAusstellendeverschreibendeverantwortlicheperse9&lt;span style=\&quot;color: navy\&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;targetPartPractitionerParte111e9d1.resource = &lt;b&gt;create&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;&lt;span style=\&quot;color: blue\&quot;&gt;'https://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory'&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt;&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;targetParameterRxprescriptionPartPractitionerResourceResource62d&lt;/span&gt;&lt;b&gt; then &lt;/b&gt;KBVPrForPractitionerMap&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;sourceBundleEntryAusstellendeverschreibendeverantwortlicheperse9&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;, &lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;targetParameterRxprescriptionPartPractitionerResourceResource62d&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt; &lt;i&gt;&amp;quot;CallKbvprforpractitionermap&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;\r\n        &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;BundleEntryAusstellendeverschreibendeverantwortlichepersonResour&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;\r\n      &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;BundleEntryAusstellendeverschreibendeverantwortlichepersonResour&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Bundle.entry:AusstellendeVerschreibendeVerantwortlichePerson.resource -&amp;gt; .parameter:rxPrescription.part:practitioner.resource using KBV_PR_FOR_Practitioner|1.3.0 -&amp;gt; PractitionerDirectory|1.0.0&lt;/span&gt;\r\n    &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;PartPractitionerPartContainer&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Creates part:practitioner part container aggregating 1 child rule(s)&lt;/span&gt;\r\n    KBVPRERPBundle&lt;span style=\&quot;color: navy\&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;targetParameterRxprescriptionParameter77d85b46.part&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;targetPartPrescriptionidPartee663288&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {\r\n&lt;/span&gt;      KBVPRERPBundle&lt;span style=\&quot;color: navy\&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;targetPartPrescriptionidPartee663288.name = &lt;span style=\&quot;color: blue\&quot;&gt;'prescriptionId'&lt;/span&gt; &lt;i&gt;&amp;quot;SetPartPrescriptionidName&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;\r\n      KBVPRERPBundle.identifier&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;inlinesourceParametersParameterRxprescriptionPartPrescriptionidV&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {\r\n&lt;/span&gt;        inlinesourceParametersParameterRxprescriptionPartPrescriptionidV.value&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;inlinesourceParametersParameterRxprescriptionPartPrescriptionidV&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;targetPartPrescriptionidPartee663288.value = &lt;span style=\&quot;color: maroon\&quot;&gt;inlinesourceParametersParameterRxprescriptionPartPrescriptionidV&lt;/span&gt;&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;inlinetargetParametersParameterRxprescriptionPartPrescriptionidV&lt;/span&gt; &lt;i&gt;&amp;quot;InlineParametersParameterRxprescriptionPartPrescriptionidValueX9&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;\r\n      &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;InlineParametersParameterRxprescriptionPartPrescriptionidValueX9&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Automatic copy&lt;/span&gt;\r\n    &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;PartPrescriptionidPartContainer&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Creates part:prescriptionId part container aggregating 1 child rule(s)&lt;/span&gt;\r\n  &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;ParameterRxprescriptionContainer&amp;quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Creates parameter:rxPrescription parameter container aggregating 6 part(s)&lt;/span&gt;\r\n&lt;span style=\&quot;color: navy\&quot;&gt;}\r\n\r\n&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;"
+  },
+  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.url">url</a>" : "https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpBundleMap",
+  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.version">version</a>" : "1.0.0-draft",
+  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.name">name</a>" : "KBVPrErpBundleMap",
+  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.status">status</a>" : "draft",
+  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.date">date</a>" : "2026-02-02",
+  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.publisher">publisher</a>" : "gematik GmbH",
+  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.contact">contact</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">name</a>" : "gematik GmbH",
+      "<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a>" : "url",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a>" : "https://gematik.de"
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a>" : "email",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a>" : "erp-umsetzung@gematik.de"
+        }
+      ]
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.description">description</a>" : "Auto-generated StructureMap for transformation KBV_PR_ERP_Bundle|1.4.0 -&gt; EPAOpProvidePrescriptionERPInputParameters|1.3.0",
+  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.jurisdiction">jurisdiction</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "urn:iso:std:iso:3166",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "DE",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Germany"
+        }
+      ]
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.structure">structure</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.structure.url">url</a>" : "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle",
+      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.structure.mode">mode</a>" : "source",
+      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.structure.alias">alias</a>" : "KBVPRERPBundle"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.structure.url">url</a>" : "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-op-provide-prescription-erp-input-parameters",
+      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.structure.mode">mode</a>" : "target",
+      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.structure.alias">alias</a>" : "EPAOpProvidePrescriptionERPInputParameters"
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.import">import</a>" : [
+    <a href="StructureMap-KBVPrErpMedicationCompoundingMap.html" style="color: Maroon">&#x1F517;</a> "https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationCompoundingMap"<a href="StructureMap-KBVPrErpMedicationFreetextMap.html" style="color: Maroon">&#x1F517;</a> ,
+    "https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationFreetextMap"<a href="StructureMap-KBVPrErpMedicationIngredientMap.html" style="color: Maroon">&#x1F517;</a> ,
+    "https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationIngredientMap"<a href="StructureMap-KBVPrErpMedicationPznMap.html" style="color: Maroon">&#x1F517;</a> ,
+    "https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationPznMap"<a href="StructureMap-KBVPrErpPrescriptionMap.html" style="color: Maroon">&#x1F517;</a> ,
+    "https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpPrescriptionMap"<a href="StructureMap-KBVPrForOrganizationMap.html" style="color: Maroon">&#x1F517;</a> ,
+    "https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrForOrganizationMap"<a href="StructureMap-KBVPrForPractitionerMap.html" style="color: Maroon">&#x1F517;</a> ,
+    "https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrForPractitionerMap"
+  ],
+  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group">group</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.name">name</a>" : "KBVPrErpBundleMap",
+      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.typeMode">typeMode</a>" : "types",
+      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.documentation">documentation</a>" : "Transformation generated for KBV_PR_ERP_Bundle|1.4.0 -&gt; EPAOpProvidePrescriptionERPInputParameters|1.3.0",
+      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.input">input</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.input.name">name</a>" : "KBVPRERPBundle",
+          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.input.type">type</a>" : "KBVPRERPBundle",
+          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.input.mode">mode</a>" : "source"
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.input.name">name</a>" : "EPAOpProvidePrescriptionERPInputParameters",
+          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.input.type">type</a>" : "EPAOpProvidePrescriptionERPInputParameters",
+          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.input.mode">mode</a>" : "target"
+        }
+      ],
+      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule">rule</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "ParameterRxprescriptionContainer",
+          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "KBVPRERPBundle"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.context">context</a>" : "EPAOpProvidePrescriptionERPInputParameters",
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.contextType">contextType</a>" : "variable",
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.element">element</a>" : "parameter",
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.variable">variable</a>" : "targetParameterRxprescriptionParameter77d85b46"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "SetParameterRxprescriptionName",
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "KBVPRERPBundle"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.context">context</a>" : "targetParameterRxprescriptionParameter77d85b46",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.contextType">contextType</a>" : "variable",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.element">element</a>" : "name",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.transform">transform</a>" : "copy",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter">parameter</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter.value_x_">valueString</a>" : "rxPrescription"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "PartAuthoredonPartContainer",
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "KBVPRERPBundle"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.context">context</a>" : "targetParameterRxprescriptionParameter77d85b46",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.contextType">contextType</a>" : "variable",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.element">element</a>" : "part",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.variable">variable</a>" : "targetPartAuthoredonPartb106c48f"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "SetPartAuthoredonName",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "KBVPRERPBundle"
+                    }
+                  ],
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.context">context</a>" : "targetPartAuthoredonPartb106c48f",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.contextType">contextType</a>" : "variable",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.element">element</a>" : "name",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.transform">transform</a>" : "copy",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter">parameter</a>" : [
+                        {
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter.value_x_">valueString</a>" : "authoredOn"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "InlineParametersParameterRxprescriptionPartAuthoredonValueX1c6fc",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "KBVPRERPBundle",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.element">element</a>" : "entry",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">variable</a>" : "inlinesourceParametersParameterRxprescriptionPartAuthoredonValue",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.condition">condition</a>" : "resource.meta.profile.where($this.contains('https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription')).exists()"
+                    }
+                  ],
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "InlineParametersParameterRxprescriptionPartAuthoredonValueX1c6fc",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                        {
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "inlinesourceParametersParameterRxprescriptionPartAuthoredonValue",
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.element">element</a>" : "resource",
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">variable</a>" : "inlinesourceParametersParameterRxprescriptionPartAuthoredonValue"
+                        }
+                      ],
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>" : [
+                        {
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "InlineParametersParameterRxprescriptionPartAuthoredonValueX1c6fc",
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                            {
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "inlinesourceParametersParameterRxprescriptionPartAuthoredonValue",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.element">element</a>" : "authoredOn",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">variable</a>" : "inlinesourceParametersParameterRxprescriptionPartAuthoredonValue"
+                            }
+                          ],
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>" : [
+                            {
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.context">context</a>" : "targetPartAuthoredonPartb106c48f",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.contextType">contextType</a>" : "variable",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.element">element</a>" : "value",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.variable">variable</a>" : "inlinetargetParametersParameterRxprescriptionPartAuthoredonValue",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.transform">transform</a>" : "copy",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter">parameter</a>" : [
+                                {
+                                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter.value_x_">valueId</a>" : "inlinesourceParametersParameterRxprescriptionPartAuthoredonValue"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a>" : "Automatic copy"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a>" : "Creates part:authoredOn part container aggregating 1 child rule(s)"
+            },
+            {
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "PartMedicationPartContainer",
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "KBVPRERPBundle"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.context">context</a>" : "targetParameterRxprescriptionParameter77d85b46",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.contextType">contextType</a>" : "variable",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.element">element</a>" : "part",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.variable">variable</a>" : "targetPartMedicationPart88f31ec4"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "SetPartMedicationName",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "KBVPRERPBundle"
+                    }
+                  ],
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.context">context</a>" : "targetPartMedicationPart88f31ec4",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.contextType">contextType</a>" : "variable",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.element">element</a>" : "name",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.transform">transform</a>" : "copy",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter">parameter</a>" : [
+                        {
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter.value_x_">valueString</a>" : "medication"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "BundleEntryRezeptierdatenpznverordnungResource7400f329",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "KBVPRERPBundle",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.element">element</a>" : "entry",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">variable</a>" : "sourceBundleEntryRezeptierdatenpznverordnungResource0Entry4c4ad0",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.condition">condition</a>" : "resource is Medication"
+                    }
+                  ],
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "BundleEntryRezeptierdatenpznverordnungResource7400f329",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                        {
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "sourceBundleEntryRezeptierdatenpznverordnungResource0Entry4c4ad0",
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.element">element</a>" : "resource",
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">variable</a>" : "sourceBundleEntryRezeptierdatenpznverordnungResource1Resource3bd"
+                        }
+                      ],
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>" : [
+                        {
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "CallKbvprerpmedicationpznmap",
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                            {
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "sourceBundleEntryRezeptierdatenpznverordnungResource1Resource3bd"
+                            }
+                          ],
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>" : [
+                            {
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.context">context</a>" : "targetPartMedicationPart88f31ec4",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.contextType">contextType</a>" : "variable",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.element">element</a>" : "resource",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.variable">variable</a>" : "targetParameterRxprescriptionPartMedicationResourceResource38c62",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.transform">transform</a>" : "create",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter">parameter</a>" : [
+                                {
+                                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter.value_x_">valueString</a>" : "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication"
+                                }
+                              ]
+                            }
+                          ],
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent">dependent</a>" : [
+                            {
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.name">name</a>" : "KBVPrErpMedicationPznMap",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.variable">variable</a>" : [
+                                "sourceBundleEntryRezeptierdatenpznverordnungResource1Resource3bd",
+                                "targetParameterRxprescriptionPartMedicationResourceResource38c62"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a>" : "Bundle.entry:RezeptierdatenPZNVerordnung.resource -&gt; .parameter:rxPrescription.part:medication.resource using KBV_PR_ERP_Medication_PZN|1.4.0 -&gt; EPAMedication|1.3.0"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "BundleEntryRezeptierdatenwirkstoffverordnungResource7400f329",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "KBVPRERPBundle",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.element">element</a>" : "entry",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">variable</a>" : "sourceBundleEntryRezeptierdatenwirkstoffverordnungResource0Ent6b",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.condition">condition</a>" : "resource is Medication"
+                    }
+                  ],
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "BundleEntryRezeptierdatenwirkstoffverordnungResource7400f329",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                        {
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "sourceBundleEntryRezeptierdatenwirkstoffverordnungResource0Ent6b",
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.element">element</a>" : "resource",
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">variable</a>" : "sourceBundleEntryRezeptierdatenwirkstoffverordnungResource1Res9f"
+                        }
+                      ],
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>" : [
+                        {
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "CallKbvprerpmedicationingredientmap",
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                            {
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "sourceBundleEntryRezeptierdatenwirkstoffverordnungResource1Res9f"
+                            }
+                          ],
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>" : [
+                            {
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.context">context</a>" : "targetPartMedicationPart88f31ec4",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.contextType">contextType</a>" : "variable",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.element">element</a>" : "resource",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.variable">variable</a>" : "targetParameterRxprescriptionPartMedicationResourceResource38c62",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.transform">transform</a>" : "create",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter">parameter</a>" : [
+                                {
+                                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter.value_x_">valueString</a>" : "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication"
+                                }
+                              ]
+                            }
+                          ],
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent">dependent</a>" : [
+                            {
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.name">name</a>" : "KBVPrErpMedicationIngredientMap",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.variable">variable</a>" : [
+                                "sourceBundleEntryRezeptierdatenwirkstoffverordnungResource1Res9f",
+                                "targetParameterRxprescriptionPartMedicationResourceResource38c62"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a>" : "Bundle.entry:RezeptierdatenWirkstoffverordnung.resource -&gt; .parameter:rxPrescription.part:medication.resource using KBV_PR_ERP_Medication_Ingredient|1.4.0 -&gt; EPAMedication|1.3.0"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "BundleEntryRezeptierdatenrezepturverordnungResource7400f329",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "KBVPRERPBundle",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.element">element</a>" : "entry",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">variable</a>" : "sourceBundleEntryRezeptierdatenrezepturverordnungResource0Entr83",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.condition">condition</a>" : "resource is Medication"
+                    }
+                  ],
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "BundleEntryRezeptierdatenrezepturverordnungResource7400f329",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                        {
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "sourceBundleEntryRezeptierdatenrezepturverordnungResource0Entr83",
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.element">element</a>" : "resource",
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">variable</a>" : "sourceBundleEntryRezeptierdatenrezepturverordnungResource1Resocd"
+                        }
+                      ],
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>" : [
+                        {
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "CallKbvprerpmedicationcompoundingmap",
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                            {
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "sourceBundleEntryRezeptierdatenrezepturverordnungResource1Resocd"
+                            }
+                          ],
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>" : [
+                            {
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.context">context</a>" : "targetPartMedicationPart88f31ec4",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.contextType">contextType</a>" : "variable",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.element">element</a>" : "resource",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.variable">variable</a>" : "targetParameterRxprescriptionPartMedicationResourceResource38c62",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.transform">transform</a>" : "create",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter">parameter</a>" : [
+                                {
+                                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter.value_x_">valueString</a>" : "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication"
+                                }
+                              ]
+                            }
+                          ],
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent">dependent</a>" : [
+                            {
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.name">name</a>" : "KBVPrErpMedicationCompoundingMap",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.variable">variable</a>" : [
+                                "sourceBundleEntryRezeptierdatenrezepturverordnungResource1Resocd",
+                                "targetParameterRxprescriptionPartMedicationResourceResource38c62"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a>" : "Bundle.entry:RezeptierdatenRezepturverordnung.resource -&gt; .parameter:rxPrescription.part:medication.resource using KBV_PR_ERP_Medication_Compounding|1.4.0 -&gt; EPAMedication|1.3.0"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "BundleEntryRezeptierdatenfreitextverordnungResource7400f329",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "KBVPRERPBundle",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.element">element</a>" : "entry",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">variable</a>" : "sourceBundleEntryRezeptierdatenfreitextverordnungResource0Entrb4",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.condition">condition</a>" : "resource is Medication"
+                    }
+                  ],
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "BundleEntryRezeptierdatenfreitextverordnungResource7400f329",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                        {
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "sourceBundleEntryRezeptierdatenfreitextverordnungResource0Entrb4",
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.element">element</a>" : "resource",
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">variable</a>" : "sourceBundleEntryRezeptierdatenfreitextverordnungResource1Resob3"
+                        }
+                      ],
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>" : [
+                        {
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "CallKbvprerpmedicationfreetextmap",
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                            {
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "sourceBundleEntryRezeptierdatenfreitextverordnungResource1Resob3"
+                            }
+                          ],
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>" : [
+                            {
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.context">context</a>" : "targetPartMedicationPart88f31ec4",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.contextType">contextType</a>" : "variable",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.element">element</a>" : "resource",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.variable">variable</a>" : "targetParameterRxprescriptionPartMedicationResourceResource38c62",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.transform">transform</a>" : "create",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter">parameter</a>" : [
+                                {
+                                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter.value_x_">valueString</a>" : "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication"
+                                }
+                              ]
+                            }
+                          ],
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent">dependent</a>" : [
+                            {
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.name">name</a>" : "KBVPrErpMedicationFreetextMap",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.variable">variable</a>" : [
+                                "sourceBundleEntryRezeptierdatenfreitextverordnungResource1Resob3",
+                                "targetParameterRxprescriptionPartMedicationResourceResource38c62"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a>" : "Bundle.entry:RezeptierdatenFreitextverordnung.resource -&gt; .parameter:rxPrescription.part:medication.resource using KBV_PR_ERP_Medication_FreeText|1.4.0 -&gt; EPAMedication|1.3.0"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a>" : "Creates part:medication part container aggregating 4 child rule(s)"
+            },
+            {
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "PartMedicationrequestPartContainer",
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "KBVPRERPBundle"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.context">context</a>" : "targetParameterRxprescriptionParameter77d85b46",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.contextType">contextType</a>" : "variable",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.element">element</a>" : "part",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.variable">variable</a>" : "targetPartMedicationrequestPart3ea10d80"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "SetPartMedicationrequestName",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "KBVPRERPBundle"
+                    }
+                  ],
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.context">context</a>" : "targetPartMedicationrequestPart3ea10d80",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.contextType">contextType</a>" : "variable",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.element">element</a>" : "name",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.transform">transform</a>" : "copy",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter">parameter</a>" : [
+                        {
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter.value_x_">valueString</a>" : "medicationRequest"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "BundleEntryVerordnungarzneimittelResource890c831b",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "KBVPRERPBundle",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.element">element</a>" : "entry",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">variable</a>" : "sourceBundleEntryVerordnungarzneimittelResource0Entry3c6c2e1b",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.condition">condition</a>" : "resource is MedicationRequest"
+                    }
+                  ],
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "BundleEntryVerordnungarzneimittelResource890c831b",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                        {
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "sourceBundleEntryVerordnungarzneimittelResource0Entry3c6c2e1b",
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.element">element</a>" : "resource",
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">variable</a>" : "sourceBundleEntryVerordnungarzneimittelResource1Resource61f06fbc"
+                        }
+                      ],
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>" : [
+                        {
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "CallKbvprerpprescriptionmap",
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                            {
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "sourceBundleEntryVerordnungarzneimittelResource1Resource61f06fbc"
+                            }
+                          ],
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>" : [
+                            {
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.context">context</a>" : "targetPartMedicationrequestPart3ea10d80",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.contextType">contextType</a>" : "variable",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.element">element</a>" : "resource",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.variable">variable</a>" : "targetParameterRxprescriptionPartMedicationrequestResourceReso52",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.transform">transform</a>" : "create",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter">parameter</a>" : [
+                                {
+                                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter.value_x_">valueString</a>" : "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-request"
+                                }
+                              ]
+                            }
+                          ],
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent">dependent</a>" : [
+                            {
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.name">name</a>" : "KBVPrErpPrescriptionMap",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.variable">variable</a>" : [
+                                "sourceBundleEntryVerordnungarzneimittelResource1Resource61f06fbc",
+                                "targetParameterRxprescriptionPartMedicationrequestResourceReso52"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a>" : "Bundle.entry:VerordnungArzneimittel.resource -&gt; .parameter:rxPrescription.part:medicationRequest.resource using KBV_PR_ERP_Prescription|1.4.0 -&gt; EPAMedicationRequest|1.3.0"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a>" : "Creates part:medicationRequest part container aggregating 1 child rule(s)"
+            },
+            {
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "PartOrganizationPartContainer",
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "KBVPRERPBundle"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.context">context</a>" : "targetParameterRxprescriptionParameter77d85b46",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.contextType">contextType</a>" : "variable",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.element">element</a>" : "part",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.variable">variable</a>" : "targetPartOrganizationPart5252e12d"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "SetPartOrganizationName",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "KBVPRERPBundle"
+                    }
+                  ],
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.context">context</a>" : "targetPartOrganizationPart5252e12d",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.contextType">contextType</a>" : "variable",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.element">element</a>" : "name",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.transform">transform</a>" : "copy",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter">parameter</a>" : [
+                        {
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter.value_x_">valueString</a>" : "organization"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "BundleEntryEinrichtungResourceB36f36fb",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "KBVPRERPBundle",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.element">element</a>" : "entry",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">variable</a>" : "sourceBundleEntryEinrichtungResource0Entry6bfa77fa",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.condition">condition</a>" : "resource is Organization"
+                    }
+                  ],
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "BundleEntryEinrichtungResourceB36f36fb",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                        {
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "sourceBundleEntryEinrichtungResource0Entry6bfa77fa",
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.element">element</a>" : "resource",
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">variable</a>" : "sourceBundleEntryEinrichtungResource1Resource45328e4f"
+                        }
+                      ],
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>" : [
+                        {
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "CallKbvprfororganizationmap",
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                            {
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "sourceBundleEntryEinrichtungResource1Resource45328e4f"
+                            }
+                          ],
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>" : [
+                            {
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.context">context</a>" : "targetPartOrganizationPart5252e12d",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.contextType">contextType</a>" : "variable",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.element">element</a>" : "resource",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.variable">variable</a>" : "targetParameterRxprescriptionPartOrganizationResourceResource43b",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.transform">transform</a>" : "create",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter">parameter</a>" : [
+                                {
+                                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter.value_x_">valueString</a>" : "https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory"
+                                }
+                              ]
+                            }
+                          ],
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent">dependent</a>" : [
+                            {
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.name">name</a>" : "KBVPrForOrganizationMap",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.variable">variable</a>" : [
+                                "sourceBundleEntryEinrichtungResource1Resource45328e4f",
+                                "targetParameterRxprescriptionPartOrganizationResourceResource43b"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a>" : "Bundle.entry:Einrichtung.resource -&gt; .parameter:rxPrescription.part:organization.resource using KBV_PR_FOR_Organization|1.3.0 -&gt; OrganizationDirectory|1.0.0"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a>" : "Creates part:organization part container aggregating 1 child rule(s)"
+            },
+            {
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "PartPractitionerPartContainer",
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "KBVPRERPBundle"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.context">context</a>" : "targetParameterRxprescriptionParameter77d85b46",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.contextType">contextType</a>" : "variable",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.element">element</a>" : "part",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.variable">variable</a>" : "targetPartPractitionerParte111e9d1"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "SetPartPractitionerName",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "KBVPRERPBundle"
+                    }
+                  ],
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.context">context</a>" : "targetPartPractitionerParte111e9d1",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.contextType">contextType</a>" : "variable",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.element">element</a>" : "name",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.transform">transform</a>" : "copy",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter">parameter</a>" : [
+                        {
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter.value_x_">valueString</a>" : "practitioner"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "BundleEntryAusstellendeverschreibendeverantwortlichepersonResour",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "KBVPRERPBundle",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.element">element</a>" : "entry",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">variable</a>" : "sourceBundleEntryAusstellendeverschreibendeverantwortlichepersb5",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.condition">condition</a>" : "resource is Practitioner"
+                    }
+                  ],
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "BundleEntryAusstellendeverschreibendeverantwortlichepersonResour",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                        {
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "sourceBundleEntryAusstellendeverschreibendeverantwortlichepersb5",
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.element">element</a>" : "resource",
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">variable</a>" : "sourceBundleEntryAusstellendeverschreibendeverantwortlicheperse9"
+                        }
+                      ],
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>" : [
+                        {
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "CallKbvprforpractitionermap",
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                            {
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "sourceBundleEntryAusstellendeverschreibendeverantwortlicheperse9"
+                            }
+                          ],
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>" : [
+                            {
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.context">context</a>" : "targetPartPractitionerParte111e9d1",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.contextType">contextType</a>" : "variable",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.element">element</a>" : "resource",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.variable">variable</a>" : "targetParameterRxprescriptionPartPractitionerResourceResource62d",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.transform">transform</a>" : "create",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter">parameter</a>" : [
+                                {
+                                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter.value_x_">valueString</a>" : "https://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory"
+                                }
+                              ]
+                            }
+                          ],
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent">dependent</a>" : [
+                            {
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.name">name</a>" : "KBVPrForPractitionerMap",
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.variable">variable</a>" : [
+                                "sourceBundleEntryAusstellendeverschreibendeverantwortlicheperse9",
+                                "targetParameterRxprescriptionPartPractitionerResourceResource62d"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a>" : "Bundle.entry:AusstellendeVerschreibendeVerantwortlichePerson.resource -&gt; .parameter:rxPrescription.part:practitioner.resource using KBV_PR_FOR_Practitioner|1.3.0 -&gt; PractitionerDirectory|1.0.0"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a>" : "Creates part:practitioner part container aggregating 1 child rule(s)"
+            },
+            {
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "PartPrescriptionidPartContainer",
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "KBVPRERPBundle"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.context">context</a>" : "targetParameterRxprescriptionParameter77d85b46",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.contextType">contextType</a>" : "variable",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.element">element</a>" : "part",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.variable">variable</a>" : "targetPartPrescriptionidPartee663288"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "SetPartPrescriptionidName",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "KBVPRERPBundle"
+                    }
+                  ],
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.context">context</a>" : "targetPartPrescriptionidPartee663288",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.contextType">contextType</a>" : "variable",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.element">element</a>" : "name",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.transform">transform</a>" : "copy",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter">parameter</a>" : [
+                        {
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter.value_x_">valueString</a>" : "prescriptionId"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "InlineParametersParameterRxprescriptionPartPrescriptionidValueX9",
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "KBVPRERPBundle",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.element">element</a>" : "identifier",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">variable</a>" : "inlinesourceParametersParameterRxprescriptionPartPrescriptionidV"
+                    }
+                  ],
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a>" : "InlineParametersParameterRxprescriptionPartPrescriptionidValueX9",
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>" : [
+                        {
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a>" : "inlinesourceParametersParameterRxprescriptionPartPrescriptionidV",
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.element">element</a>" : "value",
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">variable</a>" : "inlinesourceParametersParameterRxprescriptionPartPrescriptionidV"
+                        }
+                      ],
+                      "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>" : [
+                        {
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.context">context</a>" : "targetPartPrescriptionidPartee663288",
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.contextType">contextType</a>" : "variable",
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.element">element</a>" : "value",
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.variable">variable</a>" : "inlinetargetParametersParameterRxprescriptionPartPrescriptionidV",
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.transform">transform</a>" : "copy",
+                          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter">parameter</a>" : [
+                            {
+                              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter.value_x_">valueId</a>" : "inlinesourceParametersParameterRxprescriptionPartPrescriptionidV"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a>" : "Automatic copy"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a>" : "Creates part:prescriptionId part container aggregating 1 child rule(s)"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a>" : "Creates parameter:rxPrescription parameter container aggregating 6 part(s)"
+        }
+      ]
+    }
+  ]
+}</code></pre>
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Feb 12, 2026 06:52+0000">2026-02-12</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

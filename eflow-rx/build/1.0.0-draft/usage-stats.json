@@ -1,0 +1,460 @@
+{
+  "package": "de.gematik.eflow-rx",
+  "version": "1.0.0-draft",
+  "fhirVersion": "4.0.1",
+  "jurisdiction": "DE",
+  "extensions": [
+    {
+      "url": "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-acceptdate-extension",
+      "title": "GEM ERP EX AcceptDate",
+      "types": [
+        "date"
+      ]
+    },
+    {
+      "url": "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-availabilitystate-extension",
+      "title": "GEM ERP EX AvailabilityState",
+      "types": [
+        "Coding",
+        "string",
+        "Extension",
+        "uri",
+        "string",
+        "code",
+        "string",
+        "boolean"
+      ]
+    },
+    {
+      "url": "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-beneficiary-extension",
+      "title": "GEM ERP EX Beneficiary",
+      "types": [
+        "Identifier"
+      ]
+    },
+    {
+      "url": "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-eu-is-redeemable-by-patient-authorization-extension",
+      "title": "GEM ERP EX EU IS REDEEMABLE BY PATIENT AUTHORIZATION",
+      "types": [
+        "boolean"
+      ]
+    },
+    {
+      "url": "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-eu-is-redeemable-by-properties-extension",
+      "title": "GEM ERP EX EU IS REDEEMABLE BY PROPERTIES",
+      "types": [
+        "boolean"
+      ]
+    },
+    {
+      "url": "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-expirydate-extension",
+      "title": "GEM ERP EX ExpiryDate",
+      "types": [
+        "date"
+      ]
+    },
+    {
+      "url": "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-insuranceprovider-extension",
+      "title": "GEM ERP EX InsuranceProvider",
+      "types": [
+        "Identifier"
+      ]
+    },
+    {
+      "url": "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-lastmedicationdispense-extension",
+      "title": "GEM ERP EX LastMedicationDispense",
+      "types": [
+        "instant"
+      ]
+    },
+    {
+      "url": "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-prescriptiontype-extension",
+      "title": "GEM ERP EX PrescriptionType",
+      "types": [
+        "Coding",
+        "string",
+        "Extension",
+        "uri",
+        "string",
+        "code",
+        "string",
+        "boolean"
+      ]
+    },
+    {
+      "url": "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-supplyoptionstype-extension",
+      "title": "GEM ERP EX SupplyOptionsType",
+      "types": [
+        "boolean",
+        "boolean",
+        "boolean",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
+      ]
+    }
+  ],
+  "profiles": {
+    "Parameters": [
+      {
+        "url": "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-dispense-operation-input-parameters",
+        "title": "GEM ERP PR DispenseOperation Input"
+      }
+    ],
+    "AuditEvent": [
+      {
+        "url": "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-auditevent",
+        "title": "GEM ERP PR AuditEvent"
+      }
+    ],
+    "Binary": [
+      {
+        "url": "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-digest",
+        "title": "GEM ERP PR Digest"
+      }
+    ],
+    "Bundle": [
+      {
+        "url": "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-bundle",
+        "title": "GEM ERP PR Bundle"
+      },
+      {
+        "url": "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-bundle-op-accept",
+        "title": "GEM ERP PR Bundle OP Accept"
+      }
+    ],
+    "Communication": [
+      {
+        "url": "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-communication",
+        "title": "GEM ERP PR Communication"
+      },
+      {
+        "url": "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-communication-dispreq",
+        "title": "GEM ERP PR Communication DispReq"
+      },
+      {
+        "url": "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-communication-reply",
+        "title": "GEM ERP PR Communication Reply"
+      },
+      {
+        "url": "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-communication-representative",
+        "title": "GEM ERP PR Communication Representative"
+      }
+    ],
+    "Composition": [
+      {
+        "url": "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-composition",
+        "title": "GEM ERP PR Composition"
+      }
+    ],
+    "Device": [
+      {
+        "url": "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-device",
+        "title": "GEM ERP PR Device"
+      }
+    ],
+    "Medication": [
+      {
+        "url": "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-medication",
+        "title": "GEM ERP PR Medication"
+      }
+    ],
+    "MedicationDispense": [
+      {
+        "url": "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-medicationdispense",
+        "title": "GEM ERP PR MedicationDispense"
+      }
+    ],
+    "OperationOutcome": [
+      {
+        "url": "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-operationoutcome",
+        "title": "GEM ERP PR OperationOutcome"
+      }
+    ],
+    "Task": [
+      {
+        "url": "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-task",
+        "title": "GEM ERP PR Task"
+      }
+    ]
+  },
+  "usage": {
+    "http://fhir.de/StructureDefinition/gkv/besondere-personengruppe": [
+      "Bundle.entry.resource"
+    ],
+    "http://fhir.de/StructureDefinition/gkv/dmp-kennzeichen": [
+      "Bundle.entry.resource"
+    ],
+    "http://fhir.de/StructureDefinition/gkv/versichertenart": [
+      "Bundle.entry.resource"
+    ],
+    "http://fhir.de/StructureDefinition/gkv/wop": [
+      "Bundle.entry.resource"
+    ],
+    "http://fhir.de/StructureDefinition/humanname-namenszusatz": [
+      "Bundle.entry.resource.name.family",
+      "Parameters.parameter.part.resource.name.family"
+    ],
+    "http://fhir.de/StructureDefinition/normgroesse": [
+      "Bundle.entry.resource",
+      "Medication",
+      "Parameters.parameter.part.resource"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.renderedDosageInstruction": [
+      "MedicationDispense"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction": [
+      "Bundle.entry.resource",
+      "Parameters.parameter.part.resource"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation": [
+      "CapabilityStatement.rest.resource",
+      "CapabilityStatement.rest.resource.interaction",
+      "CapabilityStatement.rest.resource.operation",
+      "CapabilityStatement.rest.resource.searchParam",
+      "CapabilityStatement.rest.resource.supportedProfile"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/data-absent-reason": [
+      "Medication.ingredient.strength.numerator.code",
+      "Medication.ingredient.strength.numerator.system",
+      "Medication.ingredient.strength.numerator.value"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice-explanation": [
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName": [
+      "StructureDefinition.differential.element.binding",
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-identifier": [
+      "GEM-ERP-LOG-MedicationDispense"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/humanname-own-name": [
+      "Bundle.entry.resource.name.family",
+      "Parameters.parameter.part.resource.name.family"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/humanname-own-prefix": [
+      "Bundle.entry.resource.name.family",
+      "Parameters.parameter.part.resource.name.family"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator": [
+      "Bundle.entry.resource.address.line",
+      "Parameters.parameter.part.resource.address.line"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber": [
+      "Bundle.entry.resource.address.line",
+      "Parameters.parameter.part.resource.address.line"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName": [
+      "Bundle.entry.resource.address.line",
+      "Parameters.parameter.part.resource.address.line"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier": [
+      "Bundle.entry.resource.name.prefix",
+      "Parameters.parameter.part.resource.name.prefix"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name": [
+      "ImplementationGuide.definition.page",
+      "ImplementationGuide.definition.page.page",
+      "ImplementationGuide.definition.page.page.page",
+      "ImplementationGuide.definition.page.page.page.page",
+      "ImplementationGuide.definition.page.page.page.page.page"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment": [
+      "ImplementationGuide.dependsOn"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
+      "ImplementationGuide.definition.resource"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version": [
+      "StructureDefinition.snapshot"
+    ],
+    "http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta": [
+      "Bundle.entry.resource",
+      "MedicationDispense",
+      "Parameters.parameter.part.resource"
+    ],
+    "https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type": [
+      "Bundle.entry.resource"
+    ],
+    "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_DosageFlag": [
+      "Bundle.entry.resource",
+      "Bundle.entry.resource.dosageInstruction",
+      "Parameters.parameter.part.resource.dosageInstruction"
+    ],
+    "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_EmergencyServicesFee": [
+      "Bundle.entry.resource"
+    ],
+    "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Category": [
+      "Bundle.entry.resource"
+    ],
+    "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Ingredient_Amount": [
+      "Bundle.entry.resource.ingredient.strength"
+    ],
+    "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_PackagingSize": [
+      "Bundle.entry.resource.amount.numerator"
+    ],
+    "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine": [
+      "Bundle.entry.resource"
+    ],
+    "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Multiple_Prescription": [
+      "Bundle.entry.resource"
+    ],
+    "https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis": [
+      "Bundle.entry.resource"
+    ],
+    "https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_SER": [
+      "Bundle.entry.resource"
+    ],
+    "https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_StatusCoPayment": [
+      "Bundle.entry.resource"
+    ],
+    "https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension": [
+      "Medication",
+      "Parameters.parameter.part.resource"
+    ],
+    "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-type-extension": [
+      "Medication",
+      "Medication.contained",
+      "Parameters.parameter.part.resource",
+      "Parameters.parameter.part.resource.contained"
+    ],
+    "https://gematik.de/fhir/epa-medication/StructureDefinition/indicator-ser-extension": [
+      "Parameters.parameter.part.resource"
+    ],
+    "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-formulation-packaging-extension": [
+      "Medication"
+    ],
+    "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension": [
+      "Medication",
+      "Parameters.parameter.part.resource"
+    ],
+    "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-ingredient-amount-extension": [
+      "Medication.ingredient.strength"
+    ],
+    "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-ingredient-darreichungsform-extension": [
+      "Medication.ingredient"
+    ],
+    "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-manufacturing-instructions-extension": [
+      "Medication"
+    ],
+    "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-packaging-size-extension": [
+      "Medication.amount.numerator"
+    ],
+    "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-total-quantity-formulation-extension": [
+      "Medication.amount.numerator",
+      "Parameters.parameter.part.resource.amount.numerator"
+    ],
+    "https://gematik.de/fhir/epa-medication/StructureDefinition/multiple-prescription-extension": [
+      "Parameters.parameter.part.resource"
+    ],
+    "https://gematik.de/fhir/epa-medication/StructureDefinition/rx-prescription-process-identifier-extension": [
+      "Medication",
+      "MedicationDispense"
+    ],
+    "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-acceptdate-extension": [
+      "Bundle.entry.resource",
+      "Task"
+    ],
+    "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-availabilitystate-extension": [
+      "Communication.payload"
+    ],
+    "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-beneficiary-extension": [
+      "Bundle.entry.resource",
+      "Composition"
+    ],
+    "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-eu-is-redeemable-by-patient-authorization-extension": [
+      "Task"
+    ],
+    "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-eu-is-redeemable-by-properties-extension": [
+      "Task"
+    ],
+    "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-expirydate-extension": [
+      "Bundle.entry.resource",
+      "Task"
+    ],
+    "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-lastmedicationdispense-extension": [
+      "Task"
+    ],
+    "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-prescriptiontype-extension": [
+      "Bundle.entry.resource",
+      "Communication",
+      "Task"
+    ],
+    "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-supplyoptionstype-extension": [
+      "Communication.payload"
+    ],
+    "https://gematik.de/fhir/ti/StructureDefinition/extension-base-url": [
+      "CapabilityStatement"
+    ],
+    "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info": [
+      "CapabilityStatement",
+      "CapabilityStatement.rest.resource.interaction"
+    ]
+  }
+}

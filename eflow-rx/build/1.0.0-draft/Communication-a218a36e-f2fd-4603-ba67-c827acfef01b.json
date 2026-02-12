@@ -1,0 +1,45 @@
+{
+  "resourceType" : "Communication",
+  "id" : "a218a36e-f2fd-4603-ba67-c827acfef01b",
+  "meta" : {
+    "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-communication-dispreq"],
+    "tag" : [{
+      "display" : "Dispense Request from Patient to Pharmacy"
+    },
+    {
+      "display" : "Communication message sent by patient to pharmacy to request the dispensation of medicine by providing the AccessCode"
+    }]
+  },
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Communication a218a36e-f2fd-4603-ba67-c827acfef01b</b></p><a name=\"a218a36e-f2fd-4603-ba67-c827acfef01b\"> </a><a name=\"hca218a36e-f2fd-4603-ba67-c827acfef01b\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-eflow-rx-communication-dispreq.html\">GEM ERP PR Communication DispReq</a></p><p style=\"margin-bottom: 0px\">Tags: Dispense Request from Patient to Pharmacy (Details: [not stated] code null = 'Dispense Request from Patient to Pharmacy'), Communication message sent by patient to pharmacy to request the dispensation of medicine by providing the AccessCode (Details: [not stated] code null = 'Communication message sent by patient to pharmacy to request the dispensation of medicine by providing the AccessCode')</p></div><p><b>GEM ERP EX PrescriptionType</b>: EFlowRxFlowType: 160 (Flowtype für Apothekenpflichtige Arzneimittel)</p><p><b>basedOn</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Task/160.000.033.491.280.78/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea\">Task/160.000.033.491.280.78/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea</a></p><p><b>status</b>: Unknown</p><p><b>sent</b>: 2026-07-01 15:29:00+0000</p><p><b>recipient</b>: Identifier: <code>https://gematik.de/fhir/sid/telematik-id</code>/3-SMC-B-Testkarte-883110000123465</p><p><b>sender</b>: Identifier: NamingSystemKVID/X234567890</p><h3>Payloads</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Content[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>{ &quot;version&quot;: &quot;1&quot;, &quot;supplyOptionsType&quot;: &quot;delivery&quot;, &quot;name&quot;: &quot;Dr. Maximilian von Muster&quot;, &quot;address&quot;: [ &quot;wohnhaft bei Emilia Fischer&quot;, &quot;Bundesallee 312&quot;, &quot;123. OG&quot;, &quot;12345 Berlin&quot; ], &quot;hint&quot;: &quot;Bitte im Morsecode klingeln: -.-.&quot;, &quot;phone&quot;: &quot;004916094858168&quot; }</td></tr></table></div>"
+  },
+  "extension" : [{
+    "url" : "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-prescriptiontype-extension",
+    "valueCoding" : {
+      "system" : "https://gematik.de/fhir/erp/CodeSystem/EFlowRxFlowType",
+      "code" : "160",
+      "display" : "Flowtype für Apothekenpflichtige Arzneimittel"
+    }
+  }],
+  "basedOn" : [{
+    "reference" : "Task/160.000.033.491.280.78/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
+  }],
+  "status" : "unknown",
+  "sent" : "2026-07-01T15:29:00.434+00:00",
+  "recipient" : [{
+    "identifier" : {
+      "system" : "https://gematik.de/fhir/sid/telematik-id",
+      "value" : "3-SMC-B-Testkarte-883110000123465"
+    }
+  }],
+  "sender" : {
+    "identifier" : {
+      "system" : "http://fhir.de/sid/gkv/kvid-10",
+      "value" : "X234567890"
+    }
+  },
+  "payload" : [{
+    "contentString" : "{ \"version\": \"1\", \"supplyOptionsType\": \"delivery\", \"name\": \"Dr. Maximilian von Muster\", \"address\": [ \"wohnhaft bei Emilia Fischer\", \"Bundesallee 312\", \"123. OG\", \"12345 Berlin\" ], \"hint\": \"Bitte im Morsecode klingeln: -.-.\", \"phone\": \"004916094858168\" }"
+  }]
+}

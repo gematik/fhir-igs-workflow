@@ -1,0 +1,283 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/erp/Parameters/Parameters-output-example-4> a fhir:Parameters ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Parameters-output-example-4"] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "rxPrescription" ] ;
+     fhir:part ( [
+       fhir:name [ fhir:v "authoredOn" ] ;
+       fhir:value [
+         a fhir:DateTime ;
+         fhir:v "2024-05-20"^^xsd:date
+       ]
+     ] [
+       fhir:name [ fhir:v "medication" ] ;
+       fhir:Parameters.parameter.resource ( [
+         a fhir:Medication ;
+         fhir:meta [
+           fhir:profile ( [
+             fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication"^^xsd:anyURI ;
+             fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication>
+           ] )
+         ] ;
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension"^^xsd:anyURI ;
+             fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension>
+           ] ;
+           fhir:value [
+             a fhir:Coding ;
+             fhir:code [ fhir:v "00" ]
+           ]
+         ] [
+           fhir:url [
+             fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension"^^xsd:anyURI ;
+             fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension>
+           ] ;
+           fhir:value [
+             a fhir:Boolean ;
+             fhir:v false
+           ]
+         ] ) ;
+         fhir:code [
+           fhir:coding ( [
+             fhir:system [
+               fhir:v "http://fhir.de/CodeSystem/ifa/pzn"^^xsd:anyURI ;
+               fhir:l <http://fhir.de/CodeSystem/ifa/pzn>
+             ] ;
+             fhir:code [ fhir:v "00814665" ]
+           ] ) ;
+           fhir:text [ fhir:v "Januvia® 50 mg 28 Filmtabletten N1" ]
+         ] ;
+         fhir:form [
+           fhir:coding ( [
+             fhir:system [
+               fhir:v "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM"^^xsd:anyURI ;
+               fhir:l <https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM>
+             ] ;
+             fhir:code [ fhir:v "FTA" ]
+           ] )
+         ]
+       ] )
+     ] [
+       fhir:name [ fhir:v "medicationRequest" ] ;
+       fhir:Parameters.parameter.resource ( [
+         a fhir:MedicationRequest ;
+         fhir:meta [
+           fhir:profile ( [
+             fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-request"^^xsd:anyURI ;
+             fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-request>
+           ] )
+         ] ;
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/indicator-ser-extension"^^xsd:anyURI ;
+             fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/indicator-ser-extension>
+           ] ;
+           fhir:value [
+             a fhir:Boolean ;
+             fhir:v false
+           ]
+         ] [
+           fhir:extension ( [
+             fhir:url [
+               fhir:v "indicator"^^xsd:anyURI ;
+               fhir:l fhir:indicator
+             ] ;
+             fhir:value [
+               a fhir:Boolean ;
+               fhir:v false
+             ]
+           ] ) ;
+           fhir:url [
+             fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/multiple-prescription-extension"^^xsd:anyURI ;
+             fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/multiple-prescription-extension>
+           ]
+         ] ) ;
+         fhir:status [ fhir:v "active" ] ;
+         fhir:intent [ fhir:v "order" ] ;
+         fhir:medication [
+           a fhir:Reference ;
+           fhir:l <urn:uuid:47076fb4-dc5c-4f75-85f6-b200033b3280> ;
+           fhir:reference [ fhir:v "urn:uuid:47076fb4-dc5c-4f75-85f6-b200033b3280" ]
+         ] ;
+         fhir:authoredOn [ fhir:v "2024-05-20"^^xsd:date ] ;
+         fhir:requester [
+           fhir:l <urn:uuid:bc329f24-3d65-4286-bf06-b54dd6cad655> ;
+           fhir:reference [ fhir:v "urn:uuid:bc329f24-3d65-4286-bf06-b54dd6cad655" ]
+         ] ;
+         fhir:basedOn ( [
+           fhir:identifier [
+             fhir:system [
+               fhir:v "https://gematik.de/fhir/sid/emp-identifier"^^xsd:anyURI ;
+               fhir:l <https://gematik.de/fhir/sid/emp-identifier>
+             ] ;
+             fhir:value [ fhir:v "8cc8e04b-6df7-43b5-b847-508268e95ba7" ]
+           ]
+         ] ) ;
+         fhir:dispenseRequest [
+           fhir:quantity [
+             fhir:value [ fhir:v "1"^^xsd:decimal ] ;
+             fhir:unit [ fhir:v "Packung" ]
+           ]
+         ] ;
+         fhir:substitution [
+           fhir:allowed [
+             a fhir:Boolean ;
+             fhir:v true
+           ]
+         ]
+       ] )
+     ] [
+       fhir:name [ fhir:v "organization" ] ;
+       fhir:Parameters.parameter.resource ( [
+         a fhir:Organization ;
+         fhir:meta [
+           fhir:profile ( [
+             fhir:v "https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory"^^xsd:anyURI ;
+             fhir:l <https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory>
+           ] )
+         ] ;
+         fhir:telecom ( [
+           fhir:system [ fhir:v "phone" ] ;
+           fhir:value [ fhir:v "0301234567" ]
+         ] [
+           fhir:system [ fhir:v "fax" ] ;
+           fhir:value [ fhir:v "030123456789" ]
+         ] [
+           fhir:system [ fhir:v "email" ] ;
+           fhir:value [ fhir:v "mvz@e-mail.de" ]
+         ] ) ;
+         fhir:address ( [
+           fhir:type [ fhir:v "both" ] ;
+           fhir:line ( [
+             fhir:v "Herbert-Lewin-Platz 2" ;
+             fhir:extension ( [
+               fhir:url [
+                 fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"^^xsd:anyURI ;
+                 fhir:l <http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber>
+               ] ;
+               fhir:value [
+                 a fhir:String ;
+                 fhir:v "2"
+               ]
+             ] [
+               fhir:url [
+                 fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"^^xsd:anyURI ;
+                 fhir:l <http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName>
+               ] ;
+               fhir:value [
+                 a fhir:String ;
+                 fhir:v "Herbert-Lewin-Platz"
+               ]
+             ] )
+           ] ) ;
+           fhir:city [ fhir:v "Berlin" ] ;
+           fhir:postalCode [ fhir:v "10623" ] ;
+           fhir:country [ fhir:v "D" ]
+         ] [
+           fhir:type [ fhir:v "both" ] ;
+           fhir:line ( [
+             fhir:v "Herbert-Lewin-Platz 2" ;
+             fhir:extension ( [
+               fhir:url [
+                 fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"^^xsd:anyURI ;
+                 fhir:l <http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber>
+               ] ;
+               fhir:value [
+                 a fhir:String ;
+                 fhir:v "2"
+               ]
+             ] [
+               fhir:url [
+                 fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"^^xsd:anyURI ;
+                 fhir:l <http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName>
+               ] ;
+               fhir:value [
+                 a fhir:String ;
+                 fhir:v "Herbert-Lewin-Platz"
+               ]
+             ] )
+           ] ) ;
+           fhir:city [ fhir:v "Berlin" ] ;
+           fhir:postalCode [ fhir:v "10623" ] ;
+           fhir:country [ fhir:v "D" ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "practitioner" ] ;
+       fhir:Parameters.parameter.resource ( [
+         a fhir:Practitioner ;
+         fhir:meta [
+           fhir:profile ( [
+             fhir:v "https://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory"^^xsd:anyURI ;
+             fhir:l <https://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory>
+           ] )
+         ] ;
+         fhir:name ( [
+           fhir:use [ fhir:v "official" ] ;
+           fhir:family [
+             fhir:v "Freiherr von Müller" ;
+             fhir:extension ( [
+               fhir:url [
+                 fhir:v "http://hl7.org/fhir/StructureDefinition/humanname-own-prefix"^^xsd:anyURI ;
+                 fhir:l <http://hl7.org/fhir/StructureDefinition/humanname-own-prefix>
+               ] ;
+               fhir:value [
+                 a fhir:String ;
+                 fhir:v "von"
+               ]
+             ] [
+               fhir:url [
+                 fhir:v "http://fhir.de/StructureDefinition/humanname-namenszusatz"^^xsd:anyURI ;
+                 fhir:l <http://fhir.de/StructureDefinition/humanname-namenszusatz>
+               ] ;
+               fhir:value [
+                 a fhir:String ;
+                 fhir:v "Freiherr"
+               ]
+             ] [
+               fhir:url [
+                 fhir:v "http://hl7.org/fhir/StructureDefinition/humanname-own-name"^^xsd:anyURI ;
+                 fhir:l <http://hl7.org/fhir/StructureDefinition/humanname-own-name>
+               ] ;
+               fhir:value [
+                 a fhir:String ;
+                 fhir:v "Müller"
+               ]
+             ] )
+           ] ;
+           fhir:given ( [ fhir:v "Paul" ] ) ;
+           fhir:prefix ( [
+             fhir:v "Dr. med." ;
+             fhir:extension ( [
+               fhir:url [
+                 fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier"^^xsd:anyURI ;
+                 fhir:l <http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier>
+               ] ;
+               fhir:value [
+                 a fhir:Code ;
+                 fhir:v "AC"
+               ]
+             ] )
+           ] )
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "prescriptionId" ] ;
+       fhir:value [
+         a fhir:String ;
+         fhir:v "160.100.000.000.006.24"
+       ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

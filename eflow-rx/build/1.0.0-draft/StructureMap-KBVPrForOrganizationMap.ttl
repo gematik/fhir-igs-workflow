@@ -1,0 +1,2131 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/erp/StructureMap/KBVPrForOrganizationMap> a fhir:StructureMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "KBVPrForOrganizationMap"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap KBVPrForOrganizationMap</b></p><a name=\"KBVPrForOrganizationMap\"> </a><a name=\"hcKBVPrForOrganizationMap\"> </a><pre class=\"fml\">#xD;\n<b>map</b><span style=\"color: navy\"> \"</span>https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrForOrganizationMap<span style=\"color: navy\">\" = \"</span>KBVPrForOrganizationMap<span style=\"color: navy\">\"#xD;\n#xD;\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">Auto-generated StructureMap for KBV_PR_FOR_Organization|1.3.0 -&gt; OrganizationDirectory|1.0.0</span>#xD;\n#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span>https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization<span style=\"color: navy\">\" </span><b>alias </b>KBVPRFOROrganization <b>as </b><b>source</b>#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"https://simplifier.net/resolve?scope=de.gematik.epa.medication@1.3.0&amp;canonical=https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory\" title=\"Organization in gematik Directory\">https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory</a><span style=\"color: navy\">\" </span><b>alias </b>OrganizationDirectory <b>as </b><b>target</b>#xD;\n#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">Mapping generated for KBV_PR_FOR_Organization|1.3.0 -&gt; OrganizationDirectory|1.0.0</span>#xD;\n<b>group </b>KBVPrForOrganizationMap<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">KBVPRFOROrganization</span><span style=\"color: navy\"> : </span>KBVPRFOROrganization, <b>target</b> <span style=\"color: maroon\">OrganizationDirectory</span><span style=\"color: navy\"> : </span>OrganizationDirectory<span style=\"color: navy\">)</span><b> &lt;&lt;types&gt;&gt;</b><span style=\"color: navy\"> {#xD;\n</span>  KBVPRFOROrganization.address<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationAddressb2458a6a</span><span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.address = <span style=\"color: maroon\">srcKBVPRFOROrganizationAddressb2458a6a</span><b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryAddress56874d06</span> <i>\"OrganizationAddress042e251f\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied to 'Organization.address'</span>#xD;\n  KBVPRFOROrganization.address<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationAddressStrassenanschrift5396a3a6</span><span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.address = <span style=\"color: maroon\">srcKBVPRFOROrganizationAddressStrassenanschrift5396a3a6</span><b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryAddressStrassenanschrift31dcd382</span> <i>\"OrganizationAddressStrassenanschrift1974a97e\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied to 'Organization.address:Strassenanschrift'</span>#xD;\n  KBVPRFOROrganization.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifier520cdc39</span><b> where </b>(use = 'official' and system = 'https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR') != true and (system = 'http://fhir.de/sid/arge-ik/iknr') != true and (use = 'official' and system = 'http://fhir.de/sid/kzbv/kzvabrechnungsnummer') != true<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier = <span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifier520cdc39</span><b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierb9fb6742</span> <i>\"OrganizationIdentifiercd09dff1\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Automatic copy</span>#xD;\n  KBVPRFOROrganization.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierBetriebsstaettennummer10bcc9e5</span><b> where </b>use = 'official' and system = 'https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR'<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier = <span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierBetriebsstaettennummer10bcc9e5</span><b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierBsnr5530a72d</span> <i>\"OrganizationIdentifierBetriebsstaettennummerd282829b\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied to 'Organization.identifier:BSNR'</span>#xD;\n  KBVPRFOROrganization.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierInstitutionskennzeichenf4e9068e</span><b> where </b>system = 'http://fhir.de/sid/arge-ik/iknr'<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier = <span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierInstitutionskennzeichenf4e9068e</span><b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierIknr272d4c4d</span> <i>\"OrganizationIdentifierInstitutionskennzeichen298c285b\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied to 'Organization.identifier:IKNR'</span>#xD;\n  KBVPRFOROrganization.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierKzvAbrechnungsnummerd991d7ce</span><b> where </b>use = 'official' and system = 'http://fhir.de/sid/kzbv/kzvabrechnungsnummer'<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier = <span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierKzvAbrechnungsnummerd991d7ce</span><b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierKzvac903ff4f</span> <i>\"OrganizationIdentifierKzvAbrechnungsnummer18ca9fd4\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied to 'Organization.identifier:KZVA'</span>#xD;\n  KBVPRFOROrganization.identifier<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier <i>\"OrganizationIdentifierStandortnummer5b1a4e6e\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Quelle: Organization.identifier:Standortnummer</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization<b> as </b><span style=\"color: maroon\">manualsrcOrganizationIdentifierStandortnummerAssigner4321e73a</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.assigner<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummerAssignerbae64834</span> <i>\"OrganizationIdentifierStandortnummerAssigner4321e73a\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.assigner</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerAssigner4321e73a\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8.extension<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.extension <i>\"OrganizationIdentifierStandortnummerExtensionbcc5027e\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.extension</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerExtensionbcc5027e\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerExtensionbcc5027e\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8.id<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.id <i>\"OrganizationIdentifierStandortnummerId30b93b83\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.id</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerId30b93b83\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerId30b93b83\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization<b> as </b><span style=\"color: maroon\">manualsrcOrganizationIdentifierStandortnummerPeriode5f4a5c3</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.period<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummerPeriodfe5df42e</span> <i>\"OrganizationIdentifierStandortnummerPeriode5f4a5c3\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.period</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerPeriode5f4a5c3\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8.system<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.system <i>\"OrganizationIdentifierStandortnummerSystem4da271c8\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.system</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerSystem4da271c8\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerSystem4da271c8\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8.type<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.type <i>\"OrganizationIdentifierStandortnummerTypef34af24e\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.type</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypef34af24e\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypef34af24e\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.type<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      KBVPRFOROrganization.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8.type<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>          srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea.coding<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8.coding <i>\"OrganizationIdentifierStandortnummerTypeCoding3a469898\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type | Quelle: Organization.identifier:Standortnummer.type.coding</span>#xD;\n        <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCoding3a469898\"</i><span style=\"color: navy\">;</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCoding3a469898\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCoding3a469898\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCoding3a469898\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.type<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8.coding<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        KBVPRFOROrganization.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>          srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8.type<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>            srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea.coding<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>              srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb.code<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9.code <i>\"OrganizationIdentifierStandortnummerTypeCodingCode0dc5e8b4\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type.coding | Quelle: Organization.identifier:Standortnummer.type.coding.code</span>#xD;\n            <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingCode0dc5e8b4\"</i><span style=\"color: navy\">;</span>#xD;\n          <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingCode0dc5e8b4\"</i><span style=\"color: navy\">;</span>#xD;\n        <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingCode0dc5e8b4\"</i><span style=\"color: navy\">;</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingCode0dc5e8b4\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingCode0dc5e8b4\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingCode0dc5e8b4\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.type<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8.coding<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        KBVPRFOROrganization<b> as </b><span style=\"color: maroon\">manualsrcOrganizationIdentifierStandortnummerTypeCodingDisplay7e</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9.display<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummerTypeCodingD0eaa5</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingDisplay7e1af387\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type.coding | Quelle: Organization.identifier:Standortnummer.type.coding.display</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingDisplay7e1af387\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingDisplay7e1af387\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingDisplay7e1af387\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.type<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8.coding<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        KBVPRFOROrganization.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>          srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8.type<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>            srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea.coding<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>              srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb.extension<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9.extension <i>\"OrganizationIdentifierStandortnummerTypeCodingExtension99005b70\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type.coding | Quelle: Organization.identifier:Standortnummer.type.coding.extension</span>#xD;\n            <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingExtension99005b70\"</i><span style=\"color: navy\">;</span>#xD;\n          <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingExtension99005b70\"</i><span style=\"color: navy\">;</span>#xD;\n        <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingExtension99005b70\"</i><span style=\"color: navy\">;</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingExtension99005b70\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingExtension99005b70\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingExtension99005b70\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.type<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8.coding<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        KBVPRFOROrganization.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>          srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8.type<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>            srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea.coding<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>              srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb.id<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9.id <i>\"OrganizationIdentifierStandortnummerTypeCodingId258779ca\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type.coding | Quelle: Organization.identifier:Standortnummer.type.coding.id</span>#xD;\n            <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingId258779ca\"</i><span style=\"color: navy\">;</span>#xD;\n          <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingId258779ca\"</i><span style=\"color: navy\">;</span>#xD;\n        <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingId258779ca\"</i><span style=\"color: navy\">;</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingId258779ca\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingId258779ca\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingId258779ca\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.type<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8.coding<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        KBVPRFOROrganization.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>          srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8.type<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>            srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea.coding<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>              srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb.system<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9.system <i>\"OrganizationIdentifierStandortnummerTypeCodingSystem6e23c9e2\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type.coding | Quelle: Organization.identifier:Standortnummer.type.coding.system</span>#xD;\n            <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingSystem6e23c9e2\"</i><span style=\"color: navy\">;</span>#xD;\n          <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingSystem6e23c9e2\"</i><span style=\"color: navy\">;</span>#xD;\n        <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingSystem6e23c9e2\"</i><span style=\"color: navy\">;</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingSystem6e23c9e2\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingSystem6e23c9e2\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingSystem6e23c9e2\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.type<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8.coding<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        KBVPRFOROrganization<b> as </b><span style=\"color: maroon\">manualsrcOrganizationIdentifierStandortnummerTypeCodingUserselec</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9.userSelected<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummerTypeCodingU8892f</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingUserselect6d28848a\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type.coding | Quelle: Organization.identifier:Standortnummer.type.coding.userSelected</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingUserselect6d28848a\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingUserselect6d28848a\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingUserselect6d28848a\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.type<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8.coding<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        KBVPRFOROrganization<b> as </b><span style=\"color: maroon\">manualsrcOrganizationIdentifierStandortnummerTypeCodingVersion7f</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9.version<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummerTypeCodingV7ff49</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingVersion7f7b6fac\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type.coding | Quelle: Organization.identifier:Standortnummer.type.coding.version</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingVersion7f7b6fac\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingVersion7f7b6fac\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeCodingVersion7f7b6fac\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.type<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      KBVPRFOROrganization.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8.type<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>          srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea.extension<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8.extension <i>\"OrganizationIdentifierStandortnummerTypeExtension49394714\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type | Quelle: Organization.identifier:Standortnummer.type.extension</span>#xD;\n        <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeExtension49394714\"</i><span style=\"color: navy\">;</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeExtension49394714\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeExtension49394714\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeExtension49394714\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.type<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      KBVPRFOROrganization.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8.type<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>          srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea.id<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8.id <i>\"OrganizationIdentifierStandortnummerTypeId8b0e3128\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type | Quelle: Organization.identifier:Standortnummer.type.id</span>#xD;\n        <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeId8b0e3128\"</i><span style=\"color: navy\">;</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeId8b0e3128\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeId8b0e3128\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeId8b0e3128\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.type<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      KBVPRFOROrganization<b> as </b><span style=\"color: maroon\">manualsrcOrganizationIdentifierStandortnummerTypeTextf9fa5866</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8.text<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummerTypeText0ddc5778</span> <i>\"OrganizationIdentifierStandortnummerTypeTextf9fa5866\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type | Quelle: Organization.identifier:Standortnummer.type.text</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeTextf9fa5866\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerTypeTextf9fa5866\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8.use<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.use <i>\"OrganizationIdentifierStandortnummerUsef813ffc0\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.use</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerUsef813ffc0\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerUsef813ffc0\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8.value<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.value <i>\"OrganizationIdentifierStandortnummerValue889a3ec2\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.value</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerValue889a3ec2\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierStandortnummerValue889a3ec2\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization.identifier<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier <i>\"OrganizationIdentifierTelematikId0039d930\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Quelle: Organization.identifier:Telematik-ID</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization<b> as </b><span style=\"color: maroon\">manualsrcOrganizationIdentifierTelematikIdAssigneraf75e132</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.assigner<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdAssigner0b759bdc</span> <i>\"OrganizationIdentifierTelematikIdAssigneraf75e132\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.assigner</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdAssigneraf75e132\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62.extension<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.extension <i>\"OrganizationIdentifierTelematikIdExtension3ccd9ff9\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.extension</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdExtension3ccd9ff9\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdExtension3ccd9ff9\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62.id<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.id <i>\"OrganizationIdentifierTelematikIdId448056d2\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.id</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdId448056d2\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdId448056d2\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization<b> as </b><span style=\"color: maroon\">manualsrcOrganizationIdentifierTelematikIdPeriod85f499e3</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.period<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdPeriod9c1bc68d</span> <i>\"OrganizationIdentifierTelematikIdPeriod85f499e3\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.period</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdPeriod85f499e3\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62.system<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.system <i>\"OrganizationIdentifierTelematikIdSystemda3650e1\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.system</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdSystemda3650e1\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdSystemda3650e1\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62.type<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.type <i>\"OrganizationIdentifierTelematikIdTyped07f8b5e\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.type</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTyped07f8b5e\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTyped07f8b5e\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.type<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      KBVPRFOROrganization.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62.type<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>          srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f.coding<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d.coding <i>\"OrganizationIdentifierTelematikIdTypeCoding064be19f\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type | Quelle: Organization.identifier:Telematik-ID.type.coding</span>#xD;\n        <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCoding064be19f\"</i><span style=\"color: navy\">;</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCoding064be19f\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCoding064be19f\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCoding064be19f\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.type<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d.coding<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        KBVPRFOROrganization.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>          srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62.type<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>            srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f.coding<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>              srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62.code<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f.code <i>\"OrganizationIdentifierTelematikIdTypeCodingCode7d531fea\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type.coding | Quelle: Organization.identifier:Telematik-ID.type.coding.code</span>#xD;\n            <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingCode7d531fea\"</i><span style=\"color: navy\">;</span>#xD;\n          <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingCode7d531fea\"</i><span style=\"color: navy\">;</span>#xD;\n        <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingCode7d531fea\"</i><span style=\"color: navy\">;</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingCode7d531fea\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingCode7d531fea\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingCode7d531fea\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.type<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d.coding<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        KBVPRFOROrganization<b> as </b><span style=\"color: maroon\">manualsrcOrganizationIdentifierTelematikIdTypeCodingDisplaycfad8</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f.display<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdTypeCodingDispae203</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingDisplaycfad8e3a\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type.coding | Quelle: Organization.identifier:Telematik-ID.type.coding.display</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingDisplaycfad8e3a\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingDisplaycfad8e3a\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingDisplaycfad8e3a\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.type<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d.coding<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        KBVPRFOROrganization.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>          srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62.type<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>            srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f.coding<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>              srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62.extension<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f.extension <i>\"OrganizationIdentifierTelematikIdTypeCodingExtensiona4ee2a5a\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type.coding | Quelle: Organization.identifier:Telematik-ID.type.coding.extension</span>#xD;\n            <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingExtensiona4ee2a5a\"</i><span style=\"color: navy\">;</span>#xD;\n          <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingExtensiona4ee2a5a\"</i><span style=\"color: navy\">;</span>#xD;\n        <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingExtensiona4ee2a5a\"</i><span style=\"color: navy\">;</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingExtensiona4ee2a5a\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingExtensiona4ee2a5a\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingExtensiona4ee2a5a\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.type<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d.coding<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        KBVPRFOROrganization.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>          srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62.type<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>            srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f.coding<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>              srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62.id<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f.id <i>\"OrganizationIdentifierTelematikIdTypeCodingIdeab4d854\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type.coding | Quelle: Organization.identifier:Telematik-ID.type.coding.id</span>#xD;\n            <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingIdeab4d854\"</i><span style=\"color: navy\">;</span>#xD;\n          <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingIdeab4d854\"</i><span style=\"color: navy\">;</span>#xD;\n        <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingIdeab4d854\"</i><span style=\"color: navy\">;</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingIdeab4d854\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingIdeab4d854\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingIdeab4d854\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.type<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d.coding<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        KBVPRFOROrganization.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>          srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62.type<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>            srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f.coding<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>              srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62.system<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f.system <i>\"OrganizationIdentifierTelematikIdTypeCodingSystem558e0af7\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type.coding | Quelle: Organization.identifier:Telematik-ID.type.coding.system</span>#xD;\n            <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingSystem558e0af7\"</i><span style=\"color: navy\">;</span>#xD;\n          <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingSystem558e0af7\"</i><span style=\"color: navy\">;</span>#xD;\n        <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingSystem558e0af7\"</i><span style=\"color: navy\">;</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingSystem558e0af7\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingSystem558e0af7\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingSystem558e0af7\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.type<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d.coding<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        KBVPRFOROrganization<b> as </b><span style=\"color: maroon\">manualsrcOrganizationIdentifierTelematikIdTypeCodingUserselected</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f.userSelected<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdTypeCodingUser76985</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingUserselectede5c50e18\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type.coding | Quelle: Organization.identifier:Telematik-ID.type.coding.userSelected</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingUserselectede5c50e18\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingUserselectede5c50e18\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingUserselectede5c50e18\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.type<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d.coding<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        KBVPRFOROrganization<b> as </b><span style=\"color: maroon\">manualsrcOrganizationIdentifierTelematikIdTypeCodingVersionfc1c4</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f.version<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdTypeCodingVersc7e1b</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingVersionfc1c4789\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type.coding | Quelle: Organization.identifier:Telematik-ID.type.coding.version</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingVersionfc1c4789\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingVersionfc1c4789\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeCodingVersionfc1c4789\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.type<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      KBVPRFOROrganization.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62.type<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>          srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f.extension<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d.extension <i>\"OrganizationIdentifierTelematikIdTypeExtensionf49ab2a4\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type | Quelle: Organization.identifier:Telematik-ID.type.extension</span>#xD;\n        <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeExtensionf49ab2a4\"</i><span style=\"color: navy\">;</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeExtensionf49ab2a4\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeExtensionf49ab2a4\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeExtensionf49ab2a4\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.type<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      KBVPRFOROrganization.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62.type<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>          srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f.id<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d.id <i>\"OrganizationIdentifierTelematikIdTypeId0e9359b5\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type | Quelle: Organization.identifier:Telematik-ID.type.id</span>#xD;\n        <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeId0e9359b5\"</i><span style=\"color: navy\">;</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeId0e9359b5\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeId0e9359b5\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeId0e9359b5\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.type<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      KBVPRFOROrganization<b> as </b><span style=\"color: maroon\">manualsrcOrganizationIdentifierTelematikIdTypeText7ab931be</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d.text<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdTypeTextc866c291</span> <i>\"OrganizationIdentifierTelematikIdTypeText7ab931be\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type | Quelle: Organization.identifier:Telematik-ID.type.text</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeText7ab931be\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdTypeText7ab931be\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62.use<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.use <i>\"OrganizationIdentifierTelematikIdUsed61478ae\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.use</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdUsed61478ae\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdUsed61478ae\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRFOROrganization.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62.value<span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.value <i>\"OrganizationIdentifierTelematikIdValue69222509\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.value</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdValue69222509\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationIdentifierTelematikIdValue69222509\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRFOROrganization<b> as </b><span style=\"color: maroon\">manualsrcOrganizationIdentifierTelematikidd2cf7b80</span><span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryIdentifierTelematikidc36ffe12</span> <i>\"OrganizationIdentifierTelematikidd2cf7b80\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Manual action required | Telematik-ID wird aus idNummer → aus dem ACCESS_TOKEN der Anfrage bezogen | Quelle: Organization.identifier:TelematikID</span>#xD;\n  KBVPRFOROrganization.meta<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationMeta25dbc5a5</span><span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.meta = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Meta'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryMetacbe6e64f</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    srcKBVPRFOROrganizationMeta25dbc5a5<b> as </b><span style=\"color: maroon\">srcOrganizationMetaProfile4d6334ac</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtOrganizationDirectoryMetacbe6e64f.profile = <span style=\"color: blue\">'https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory'</span><b> as </b><span style=\"color: maroon\">tgtOrganizationMetaProfile4d6334ac</span> <i>\"OrganizationMetaProfile4d6334ac\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Fixed value 'https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory'</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"OrganizationMeta89bf012b\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Automatic copy</span>#xD;\n  KBVPRFOROrganization.name<span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.name <i>\"OrganizationName61d5a4f1\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Manual action required | organizationName → aus dem ACCESS_TOKEN der Anfrage beziehen | Quelle: Organization.name</span>#xD;\n  KBVPRFOROrganization.telecom<b> as </b><span style=\"color: maroon\">srcKBVPRFOROrganizationTelecomca093d46</span><span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.telecom = <span style=\"color: maroon\">srcKBVPRFOROrganizationTelecomca093d46</span><b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryTelecom22bcd8ec</span> <i>\"OrganizationTelecomb3f55102\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Automatic copy</span>#xD;\n  KBVPRFOROrganization<b> as </b><span style=\"color: maroon\">manualsrcOrganizationTypeProfession6b535de2</span><span style=\"color: navy\"><b> -&gt; </b></span>OrganizationDirectory.type<b> as </b><span style=\"color: maroon\">tgtOrganizationDirectoryTypeProfessionf2d05bbb</span> <i>\"OrganizationTypeProfession6b535de2\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Manual action required | professionOID → aus dem ACCESS_TOKEN der Anfrage | Quelle: Organization.type:profession</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span></pre></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrForOrganizationMap"^^xsd:anyURI ;
+     fhir:l <https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrForOrganizationMap>
+  ] ; # 
+  fhir:version [ fhir:v "1.0.0-draft"] ; # 
+  fhir:name [ fhir:v "KBVPrForOrganizationMap"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2026-02-02"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "gematik GmbH"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "gematik GmbH" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://gematik.de" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "erp-umsetzung@gematik.de" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Auto-generated StructureMap for KBV_PR_FOR_Organization|1.3.0 -> OrganizationDirectory|1.0.0"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "DE" ] ;
+       fhir:display [ fhir:v "Germany" ]
+     ] )
+  ] ) ; # 
+  fhir:structure ( [
+     fhir:url [
+       fhir:v "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization"^^xsd:anyURI ;
+       fhir:l <https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization>
+     ] ;
+     fhir:mode [ fhir:v "source" ] ;
+     fhir:alias [ fhir:v "KBVPRFOROrganization" ]
+  ] [
+     fhir:url [
+       fhir:v "https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory>
+     ] ;
+     fhir:mode [ fhir:v "target" ] ;
+     fhir:alias [ fhir:v "OrganizationDirectory" ]
+  ] ) ; # 
+  fhir:group ( [
+     fhir:name [ fhir:v "KBVPrForOrganizationMap" ] ;
+     fhir:typeMode [ fhir:v "types" ] ;
+     fhir:documentation [ fhir:v "Mapping generated for KBV_PR_FOR_Organization|1.3.0 -> OrganizationDirectory|1.0.0" ] ;
+     fhir:input ( [
+       fhir:name [ fhir:v "KBVPRFOROrganization" ] ;
+       fhir:type [ fhir:v "KBVPRFOROrganization" ] ;
+       fhir:mode [ fhir:v "source" ]
+     ] [
+       fhir:name [ fhir:v "OrganizationDirectory" ] ;
+       fhir:type [ fhir:v "OrganizationDirectory" ] ;
+       fhir:mode [ fhir:v "target" ]
+     ] ) ;
+     fhir:rule ( [
+       fhir:name [ fhir:v "OrganizationAddress042e251f" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+         fhir:element [ fhir:v "address" ] ;
+         fhir:variable [ fhir:v "srcKBVPRFOROrganizationAddressb2458a6a" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "address" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryAddress56874d06" ] ;
+         fhir:transform [ fhir:v "copy" ] ;
+         fhir:parameter ( [
+           fhir:value [
+             a fhir:Id ;
+             fhir:v "srcKBVPRFOROrganizationAddressb2458a6a"
+           ]
+         ] )
+       ] ) ;
+       fhir:documentation [ fhir:v "Copied to 'Organization.address'" ]
+     ] [
+       fhir:name [ fhir:v "OrganizationAddressStrassenanschrift1974a97e" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+         fhir:element [ fhir:v "address" ] ;
+         fhir:variable [ fhir:v "srcKBVPRFOROrganizationAddressStrassenanschrift5396a3a6" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "address" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryAddressStrassenanschrift31dcd382" ] ;
+         fhir:transform [ fhir:v "copy" ] ;
+         fhir:parameter ( [
+           fhir:value [
+             a fhir:Id ;
+             fhir:v "srcKBVPRFOROrganizationAddressStrassenanschrift5396a3a6"
+           ]
+         ] )
+       ] ) ;
+       fhir:documentation [ fhir:v "Copied to 'Organization.address:Strassenanschrift'" ]
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifiercd09dff1" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifier520cdc39" ] ;
+         fhir:condition [ fhir:v "(use = 'official' and system = 'https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR') != true and (system = 'http://fhir.de/sid/arge-ik/iknr') != true and (use = 'official' and system = 'http://fhir.de/sid/kzbv/kzvabrechnungsnummer') != true" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierb9fb6742" ] ;
+         fhir:transform [ fhir:v "copy" ] ;
+         fhir:parameter ( [
+           fhir:value [
+             a fhir:Id ;
+             fhir:v "srcKBVPRFOROrganizationIdentifier520cdc39"
+           ]
+         ] )
+       ] ) ;
+       fhir:documentation [ fhir:v "Automatic copy" ]
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierBetriebsstaettennummerd282829b" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierBetriebsstaettennummer10bcc9e5" ] ;
+         fhir:condition [ fhir:v "use = 'official' and system = 'https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR'" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierBsnr5530a72d" ] ;
+         fhir:transform [ fhir:v "copy" ] ;
+         fhir:parameter ( [
+           fhir:value [
+             a fhir:Id ;
+             fhir:v "srcKBVPRFOROrganizationIdentifierBetriebsstaettennummer10bcc9e5"
+           ]
+         ] )
+       ] ) ;
+       fhir:documentation [ fhir:v "Copied to 'Organization.identifier:BSNR'" ]
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierInstitutionskennzeichen298c285b" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierInstitutionskennzeichenf4e9068e" ] ;
+         fhir:condition [ fhir:v "system = 'http://fhir.de/sid/arge-ik/iknr'" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierIknr272d4c4d" ] ;
+         fhir:transform [ fhir:v "copy" ] ;
+         fhir:parameter ( [
+           fhir:value [
+             a fhir:Id ;
+             fhir:v "srcKBVPRFOROrganizationIdentifierInstitutionskennzeichenf4e9068e"
+           ]
+         ] )
+       ] ) ;
+       fhir:documentation [ fhir:v "Copied to 'Organization.identifier:IKNR'" ]
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierKzvAbrechnungsnummer18ca9fd4" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierKzvAbrechnungsnummerd991d7ce" ] ;
+         fhir:condition [ fhir:v "use = 'official' and system = 'http://fhir.de/sid/kzbv/kzvabrechnungsnummer'" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierKzvac903ff4f" ] ;
+         fhir:transform [ fhir:v "copy" ] ;
+         fhir:parameter ( [
+           fhir:value [
+             a fhir:Id ;
+             fhir:v "srcKBVPRFOROrganizationIdentifierKzvAbrechnungsnummerd991d7ce"
+           ]
+         ] )
+       ] ) ;
+       fhir:documentation [ fhir:v "Copied to 'Organization.identifier:KZVA'" ]
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierStandortnummer5b1a4e6e" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ]
+       ] ) ;
+       fhir:documentation [ fhir:v "Feld wird nicht gemappt | Quelle: Organization.identifier:Standortnummer" ]
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierStandortnummerAssigner4321e73a" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierStandortnummerAssigner4321e73a" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+           fhir:variable [ fhir:v "manualsrcOrganizationIdentifierStandortnummerAssigner4321e73a" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "assigner" ] ;
+           fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerAssignerbae64834" ]
+         ] ) ;
+         fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.assigner" ]
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierStandortnummerExtensionbcc5027e" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierStandortnummerExtensionbcc5027e" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+           fhir:element [ fhir:v "identifier" ] ;
+           fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierStandortnummerExtensionbcc5027e" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8" ] ;
+             fhir:element [ fhir:v "extension" ] ;
+             fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerExtensiona2bb7c3a" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "extension" ] ;
+             fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerExtensiond638433" ]
+           ] ) ;
+           fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.extension" ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierStandortnummerId30b93b83" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierStandortnummerId30b93b83" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+           fhir:element [ fhir:v "identifier" ] ;
+           fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierStandortnummerId30b93b83" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8" ] ;
+             fhir:element [ fhir:v "id" ] ;
+             fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerIdc88d62ac" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "id" ] ;
+             fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerId6d88c635" ]
+           ] ) ;
+           fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.id" ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierStandortnummerPeriode5f4a5c3" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierStandortnummerPeriode5f4a5c3" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+           fhir:variable [ fhir:v "manualsrcOrganizationIdentifierStandortnummerPeriode5f4a5c3" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "period" ] ;
+           fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerPeriodfe5df42e" ]
+         ] ) ;
+         fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.period" ]
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierStandortnummerSystem4da271c8" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierStandortnummerSystem4da271c8" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+           fhir:element [ fhir:v "identifier" ] ;
+           fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierStandortnummerSystem4da271c8" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8" ] ;
+             fhir:element [ fhir:v "system" ] ;
+             fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerSystem24012027" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "system" ] ;
+             fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerSystem8c059a81" ]
+           ] ) ;
+           fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.system" ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypef34af24e" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypef34af24e" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+           fhir:element [ fhir:v "identifier" ] ;
+           fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypef34af24e" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8" ] ;
+             fhir:element [ fhir:v "type" ] ;
+             fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "type" ] ;
+             fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8" ]
+           ] ) ;
+           fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.type" ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCoding3a469898" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCoding3a469898" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "type" ] ;
+           fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCoding3a469898" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+             fhir:element [ fhir:v "identifier" ] ;
+             fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8" ]
+           ] ) ;
+           fhir:rule ( [
+             fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCoding3a469898" ] ;
+             fhir:source ( [
+               fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8" ] ;
+               fhir:element [ fhir:v "type" ] ;
+               fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea" ]
+             ] ) ;
+             fhir:rule ( [
+               fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCoding3a469898" ] ;
+               fhir:source ( [
+                 fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea" ] ;
+                 fhir:element [ fhir:v "coding" ] ;
+                 fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb" ]
+               ] ) ;
+               fhir:target ( [
+                 fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8" ] ;
+                 fhir:contextType [ fhir:v "variable" ] ;
+                 fhir:element [ fhir:v "coding" ] ;
+                 fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9" ]
+               ] ) ;
+               fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type | Quelle: Organization.identifier:Standortnummer.type.coding" ]
+             ] )
+           ] )
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingCode0dc5e8b4" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingCode0dc5e8b4" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "type" ] ;
+           fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingCode0dc5e8b4" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "KBVPRFOROrganization" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "coding" ] ;
+             fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9" ]
+           ] ) ;
+           fhir:rule ( [
+             fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingCode0dc5e8b4" ] ;
+             fhir:source ( [
+               fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+               fhir:element [ fhir:v "identifier" ] ;
+               fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8" ]
+             ] ) ;
+             fhir:rule ( [
+               fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingCode0dc5e8b4" ] ;
+               fhir:source ( [
+                 fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8" ] ;
+                 fhir:element [ fhir:v "type" ] ;
+                 fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea" ]
+               ] ) ;
+               fhir:rule ( [
+                 fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingCode0dc5e8b4" ] ;
+                 fhir:source ( [
+                   fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea" ] ;
+                   fhir:element [ fhir:v "coding" ] ;
+                   fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb" ]
+                 ] ) ;
+                 fhir:rule ( [
+                   fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingCode0dc5e8b4" ] ;
+                   fhir:source ( [
+                     fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb" ] ;
+                     fhir:element [ fhir:v "code" ] ;
+                     fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerTypeCodingCo0b67c" ]
+                   ] ) ;
+                   fhir:target ( [
+                     fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9" ] ;
+                     fhir:contextType [ fhir:v "variable" ] ;
+                     fhir:element [ fhir:v "code" ] ;
+                     fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypeCodingCe532d" ]
+                   ] ) ;
+                   fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type.coding | Quelle: Organization.identifier:Standortnummer.type.coding.code" ]
+                 ] )
+               ] )
+             ] )
+           ] )
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingDisplay7e1af387" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingDisplay7e1af387" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "type" ] ;
+           fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingDisplay7e1af387" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "KBVPRFOROrganization" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "coding" ] ;
+             fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9" ]
+           ] ) ;
+           fhir:rule ( [
+             fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingDisplay7e1af387" ] ;
+             fhir:source ( [
+               fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+               fhir:variable [ fhir:v "manualsrcOrganizationIdentifierStandortnummerTypeCodingDisplay7e" ]
+             ] ) ;
+             fhir:target ( [
+               fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9" ] ;
+               fhir:contextType [ fhir:v "variable" ] ;
+               fhir:element [ fhir:v "display" ] ;
+               fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypeCodingD0eaa5" ]
+             ] ) ;
+             fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type.coding | Quelle: Organization.identifier:Standortnummer.type.coding.display" ]
+           ] )
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingExtension99005b70" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingExtension99005b70" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "type" ] ;
+           fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingExtension99005b70" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "KBVPRFOROrganization" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "coding" ] ;
+             fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9" ]
+           ] ) ;
+           fhir:rule ( [
+             fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingExtension99005b70" ] ;
+             fhir:source ( [
+               fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+               fhir:element [ fhir:v "identifier" ] ;
+               fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8" ]
+             ] ) ;
+             fhir:rule ( [
+               fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingExtension99005b70" ] ;
+               fhir:source ( [
+                 fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8" ] ;
+                 fhir:element [ fhir:v "type" ] ;
+                 fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea" ]
+               ] ) ;
+               fhir:rule ( [
+                 fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingExtension99005b70" ] ;
+                 fhir:source ( [
+                   fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea" ] ;
+                   fhir:element [ fhir:v "coding" ] ;
+                   fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb" ]
+                 ] ) ;
+                 fhir:rule ( [
+                   fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingExtension99005b70" ] ;
+                   fhir:source ( [
+                     fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb" ] ;
+                     fhir:element [ fhir:v "extension" ] ;
+                     fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerTypeCodingEx0b591" ]
+                   ] ) ;
+                   fhir:target ( [
+                     fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9" ] ;
+                     fhir:contextType [ fhir:v "variable" ] ;
+                     fhir:element [ fhir:v "extension" ] ;
+                     fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypeCodingEcd883" ]
+                   ] ) ;
+                   fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type.coding | Quelle: Organization.identifier:Standortnummer.type.coding.extension" ]
+                 ] )
+               ] )
+             ] )
+           ] )
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingId258779ca" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingId258779ca" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "type" ] ;
+           fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingId258779ca" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "KBVPRFOROrganization" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "coding" ] ;
+             fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9" ]
+           ] ) ;
+           fhir:rule ( [
+             fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingId258779ca" ] ;
+             fhir:source ( [
+               fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+               fhir:element [ fhir:v "identifier" ] ;
+               fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8" ]
+             ] ) ;
+             fhir:rule ( [
+               fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingId258779ca" ] ;
+               fhir:source ( [
+                 fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8" ] ;
+                 fhir:element [ fhir:v "type" ] ;
+                 fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea" ]
+               ] ) ;
+               fhir:rule ( [
+                 fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingId258779ca" ] ;
+                 fhir:source ( [
+                   fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea" ] ;
+                   fhir:element [ fhir:v "coding" ] ;
+                   fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb" ]
+                 ] ) ;
+                 fhir:rule ( [
+                   fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingId258779ca" ] ;
+                   fhir:source ( [
+                     fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb" ] ;
+                     fhir:element [ fhir:v "id" ] ;
+                     fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerTypeCodingId6d05c" ]
+                   ] ) ;
+                   fhir:target ( [
+                     fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9" ] ;
+                     fhir:contextType [ fhir:v "variable" ] ;
+                     fhir:element [ fhir:v "id" ] ;
+                     fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypeCodingIee6c2" ]
+                   ] ) ;
+                   fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type.coding | Quelle: Organization.identifier:Standortnummer.type.coding.id" ]
+                 ] )
+               ] )
+             ] )
+           ] )
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingSystem6e23c9e2" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingSystem6e23c9e2" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "type" ] ;
+           fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingSystem6e23c9e2" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "KBVPRFOROrganization" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "coding" ] ;
+             fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9" ]
+           ] ) ;
+           fhir:rule ( [
+             fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingSystem6e23c9e2" ] ;
+             fhir:source ( [
+               fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+               fhir:element [ fhir:v "identifier" ] ;
+               fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8" ]
+             ] ) ;
+             fhir:rule ( [
+               fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingSystem6e23c9e2" ] ;
+               fhir:source ( [
+                 fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8" ] ;
+                 fhir:element [ fhir:v "type" ] ;
+                 fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea" ]
+               ] ) ;
+               fhir:rule ( [
+                 fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingSystem6e23c9e2" ] ;
+                 fhir:source ( [
+                   fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea" ] ;
+                   fhir:element [ fhir:v "coding" ] ;
+                   fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb" ]
+                 ] ) ;
+                 fhir:rule ( [
+                   fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingSystem6e23c9e2" ] ;
+                   fhir:source ( [
+                     fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb" ] ;
+                     fhir:element [ fhir:v "system" ] ;
+                     fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerTypeCodingSy15c60" ]
+                   ] ) ;
+                   fhir:target ( [
+                     fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9" ] ;
+                     fhir:contextType [ fhir:v "variable" ] ;
+                     fhir:element [ fhir:v "system" ] ;
+                     fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypeCodingS08961" ]
+                   ] ) ;
+                   fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type.coding | Quelle: Organization.identifier:Standortnummer.type.coding.system" ]
+                 ] )
+               ] )
+             ] )
+           ] )
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingUserselect6d28848a" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingUserselect6d28848a" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "type" ] ;
+           fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingUserselect6d28848a" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "KBVPRFOROrganization" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "coding" ] ;
+             fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9" ]
+           ] ) ;
+           fhir:rule ( [
+             fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingUserselect6d28848a" ] ;
+             fhir:source ( [
+               fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+               fhir:variable [ fhir:v "manualsrcOrganizationIdentifierStandortnummerTypeCodingUserselec" ]
+             ] ) ;
+             fhir:target ( [
+               fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9" ] ;
+               fhir:contextType [ fhir:v "variable" ] ;
+               fhir:element [ fhir:v "userSelected" ] ;
+               fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypeCodingU8892f" ]
+             ] ) ;
+             fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type.coding | Quelle: Organization.identifier:Standortnummer.type.coding.userSelected" ]
+           ] )
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingVersion7f7b6fac" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingVersion7f7b6fac" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "type" ] ;
+           fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingVersion7f7b6fac" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "KBVPRFOROrganization" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "coding" ] ;
+             fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9" ]
+           ] ) ;
+           fhir:rule ( [
+             fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeCodingVersion7f7b6fac" ] ;
+             fhir:source ( [
+               fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+               fhir:variable [ fhir:v "manualsrcOrganizationIdentifierStandortnummerTypeCodingVersion7f" ]
+             ] ) ;
+             fhir:target ( [
+               fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9" ] ;
+               fhir:contextType [ fhir:v "variable" ] ;
+               fhir:element [ fhir:v "version" ] ;
+               fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypeCodingV7ff49" ]
+             ] ) ;
+             fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type.coding | Quelle: Organization.identifier:Standortnummer.type.coding.version" ]
+           ] )
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeExtension49394714" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeExtension49394714" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "type" ] ;
+           fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeExtension49394714" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+             fhir:element [ fhir:v "identifier" ] ;
+             fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8" ]
+           ] ) ;
+           fhir:rule ( [
+             fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeExtension49394714" ] ;
+             fhir:source ( [
+               fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8" ] ;
+               fhir:element [ fhir:v "type" ] ;
+               fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea" ]
+             ] ) ;
+             fhir:rule ( [
+               fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeExtension49394714" ] ;
+               fhir:source ( [
+                 fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea" ] ;
+                 fhir:element [ fhir:v "extension" ] ;
+                 fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerTypeExtensiode8e7" ]
+               ] ) ;
+               fhir:target ( [
+                 fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8" ] ;
+                 fhir:contextType [ fhir:v "variable" ] ;
+                 fhir:element [ fhir:v "extension" ] ;
+                 fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypeExtensibf32c" ]
+               ] ) ;
+               fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type | Quelle: Organization.identifier:Standortnummer.type.extension" ]
+             ] )
+           ] )
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeId8b0e3128" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeId8b0e3128" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "type" ] ;
+           fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeId8b0e3128" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+             fhir:element [ fhir:v "identifier" ] ;
+             fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8" ]
+           ] ) ;
+           fhir:rule ( [
+             fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeId8b0e3128" ] ;
+             fhir:source ( [
+               fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8" ] ;
+               fhir:element [ fhir:v "type" ] ;
+               fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea" ]
+             ] ) ;
+             fhir:rule ( [
+               fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeId8b0e3128" ] ;
+               fhir:source ( [
+                 fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea" ] ;
+                 fhir:element [ fhir:v "id" ] ;
+                 fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerTypeId113a0138" ]
+               ] ) ;
+               fhir:target ( [
+                 fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8" ] ;
+                 fhir:contextType [ fhir:v "variable" ] ;
+                 fhir:element [ fhir:v "id" ] ;
+                 fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypeId43ddbb1f" ]
+               ] ) ;
+               fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type | Quelle: Organization.identifier:Standortnummer.type.id" ]
+             ] )
+           ] )
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeTextf9fa5866" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeTextf9fa5866" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "type" ] ;
+           fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierStandortnummerTypeTextf9fa5866" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+             fhir:variable [ fhir:v "manualsrcOrganizationIdentifierStandortnummerTypeTextf9fa5866" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "text" ] ;
+             fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerTypeText0ddc5778" ]
+           ] ) ;
+           fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type | Quelle: Organization.identifier:Standortnummer.type.text" ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierStandortnummerUsef813ffc0" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierStandortnummerUsef813ffc0" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+           fhir:element [ fhir:v "identifier" ] ;
+           fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierStandortnummerUsef813ffc0" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8" ] ;
+             fhir:element [ fhir:v "use" ] ;
+             fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerUse36cd7c94" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "use" ] ;
+             fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerUse6fcb2e71" ]
+           ] ) ;
+           fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.use" ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierStandortnummerValue889a3ec2" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierStandortnummerValue889a3ec2" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+           fhir:element [ fhir:v "identifier" ] ;
+           fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierStandortnummerValue889a3ec2" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8" ] ;
+             fhir:element [ fhir:v "value" ] ;
+             fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierStandortnummerValue2d1e069b" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummer24d4148f" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "value" ] ;
+             fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierStandortnummerValuec6b2531d" ]
+           ] ) ;
+           fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.value" ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierTelematikId0039d930" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ]
+       ] ) ;
+       fhir:documentation [ fhir:v "Feld wird nicht gemappt | Quelle: Organization.identifier:Telematik-ID" ]
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierTelematikIdAssigneraf75e132" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierTelematikIdAssigneraf75e132" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+           fhir:variable [ fhir:v "manualsrcOrganizationIdentifierTelematikIdAssigneraf75e132" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "assigner" ] ;
+           fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdAssigner0b759bdc" ]
+         ] ) ;
+         fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.assigner" ]
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierTelematikIdExtension3ccd9ff9" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierTelematikIdExtension3ccd9ff9" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+           fhir:element [ fhir:v "identifier" ] ;
+           fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierTelematikIdExtension3ccd9ff9" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62" ] ;
+             fhir:element [ fhir:v "extension" ] ;
+             fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdExtensione7226697" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "extension" ] ;
+             fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdExtension48ed1390" ]
+           ] ) ;
+           fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.extension" ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierTelematikIdId448056d2" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierTelematikIdId448056d2" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+           fhir:element [ fhir:v "identifier" ] ;
+           fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierTelematikIdId448056d2" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62" ] ;
+             fhir:element [ fhir:v "id" ] ;
+             fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdIdc0d647c7" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "id" ] ;
+             fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdId34c19804" ]
+           ] ) ;
+           fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.id" ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierTelematikIdPeriod85f499e3" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierTelematikIdPeriod85f499e3" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+           fhir:variable [ fhir:v "manualsrcOrganizationIdentifierTelematikIdPeriod85f499e3" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "period" ] ;
+           fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdPeriod9c1bc68d" ]
+         ] ) ;
+         fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.period" ]
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierTelematikIdSystemda3650e1" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierTelematikIdSystemda3650e1" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+           fhir:element [ fhir:v "identifier" ] ;
+           fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierTelematikIdSystemda3650e1" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62" ] ;
+             fhir:element [ fhir:v "system" ] ;
+             fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdSystema0016342" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "system" ] ;
+             fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdSystema23e36d6" ]
+           ] ) ;
+           fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.system" ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTyped07f8b5e" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTyped07f8b5e" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+           fhir:element [ fhir:v "identifier" ] ;
+           fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTyped07f8b5e" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62" ] ;
+             fhir:element [ fhir:v "type" ] ;
+             fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "type" ] ;
+             fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d" ]
+           ] ) ;
+           fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.type" ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCoding064be19f" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCoding064be19f" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "type" ] ;
+           fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCoding064be19f" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+             fhir:element [ fhir:v "identifier" ] ;
+             fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62" ]
+           ] ) ;
+           fhir:rule ( [
+             fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCoding064be19f" ] ;
+             fhir:source ( [
+               fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62" ] ;
+               fhir:element [ fhir:v "type" ] ;
+               fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f" ]
+             ] ) ;
+             fhir:rule ( [
+               fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCoding064be19f" ] ;
+               fhir:source ( [
+                 fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f" ] ;
+                 fhir:element [ fhir:v "coding" ] ;
+                 fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62" ]
+               ] ) ;
+               fhir:target ( [
+                 fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d" ] ;
+                 fhir:contextType [ fhir:v "variable" ] ;
+                 fhir:element [ fhir:v "coding" ] ;
+                 fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f" ]
+               ] ) ;
+               fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type | Quelle: Organization.identifier:Telematik-ID.type.coding" ]
+             ] )
+           ] )
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingCode7d531fea" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingCode7d531fea" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "type" ] ;
+           fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingCode7d531fea" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "KBVPRFOROrganization" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "coding" ] ;
+             fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f" ]
+           ] ) ;
+           fhir:rule ( [
+             fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingCode7d531fea" ] ;
+             fhir:source ( [
+               fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+               fhir:element [ fhir:v "identifier" ] ;
+               fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62" ]
+             ] ) ;
+             fhir:rule ( [
+               fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingCode7d531fea" ] ;
+               fhir:source ( [
+                 fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62" ] ;
+                 fhir:element [ fhir:v "type" ] ;
+                 fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f" ]
+               ] ) ;
+               fhir:rule ( [
+                 fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingCode7d531fea" ] ;
+                 fhir:source ( [
+                   fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f" ] ;
+                   fhir:element [ fhir:v "coding" ] ;
+                   fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62" ]
+                 ] ) ;
+                 fhir:rule ( [
+                   fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingCode7d531fea" ] ;
+                   fhir:source ( [
+                     fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62" ] ;
+                     fhir:element [ fhir:v "code" ] ;
+                     fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingCodeca298d" ]
+                   ] ) ;
+                   fhir:target ( [
+                     fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f" ] ;
+                     fhir:contextType [ fhir:v "variable" ] ;
+                     fhir:element [ fhir:v "code" ] ;
+                     fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdTypeCodingCode3835b" ]
+                   ] ) ;
+                   fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type.coding | Quelle: Organization.identifier:Telematik-ID.type.coding.code" ]
+                 ] )
+               ] )
+             ] )
+           ] )
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingDisplaycfad8e3a" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingDisplaycfad8e3a" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "type" ] ;
+           fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingDisplaycfad8e3a" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "KBVPRFOROrganization" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "coding" ] ;
+             fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f" ]
+           ] ) ;
+           fhir:rule ( [
+             fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingDisplaycfad8e3a" ] ;
+             fhir:source ( [
+               fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+               fhir:variable [ fhir:v "manualsrcOrganizationIdentifierTelematikIdTypeCodingDisplaycfad8" ]
+             ] ) ;
+             fhir:target ( [
+               fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f" ] ;
+               fhir:contextType [ fhir:v "variable" ] ;
+               fhir:element [ fhir:v "display" ] ;
+               fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdTypeCodingDispae203" ]
+             ] ) ;
+             fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type.coding | Quelle: Organization.identifier:Telematik-ID.type.coding.display" ]
+           ] )
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingExtensiona4ee2a5a" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingExtensiona4ee2a5a" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "type" ] ;
+           fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingExtensiona4ee2a5a" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "KBVPRFOROrganization" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "coding" ] ;
+             fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f" ]
+           ] ) ;
+           fhir:rule ( [
+             fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingExtensiona4ee2a5a" ] ;
+             fhir:source ( [
+               fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+               fhir:element [ fhir:v "identifier" ] ;
+               fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62" ]
+             ] ) ;
+             fhir:rule ( [
+               fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingExtensiona4ee2a5a" ] ;
+               fhir:source ( [
+                 fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62" ] ;
+                 fhir:element [ fhir:v "type" ] ;
+                 fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f" ]
+               ] ) ;
+               fhir:rule ( [
+                 fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingExtensiona4ee2a5a" ] ;
+                 fhir:source ( [
+                   fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f" ] ;
+                   fhir:element [ fhir:v "coding" ] ;
+                   fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62" ]
+                 ] ) ;
+                 fhir:rule ( [
+                   fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingExtensiona4ee2a5a" ] ;
+                   fhir:source ( [
+                     fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62" ] ;
+                     fhir:element [ fhir:v "extension" ] ;
+                     fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingExtenbfcca" ]
+                   ] ) ;
+                   fhir:target ( [
+                     fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f" ] ;
+                     fhir:contextType [ fhir:v "variable" ] ;
+                     fhir:element [ fhir:v "extension" ] ;
+                     fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdTypeCodingExtecaf9c" ]
+                   ] ) ;
+                   fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type.coding | Quelle: Organization.identifier:Telematik-ID.type.coding.extension" ]
+                 ] )
+               ] )
+             ] )
+           ] )
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingIdeab4d854" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingIdeab4d854" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "type" ] ;
+           fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingIdeab4d854" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "KBVPRFOROrganization" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "coding" ] ;
+             fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f" ]
+           ] ) ;
+           fhir:rule ( [
+             fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingIdeab4d854" ] ;
+             fhir:source ( [
+               fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+               fhir:element [ fhir:v "identifier" ] ;
+               fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62" ]
+             ] ) ;
+             fhir:rule ( [
+               fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingIdeab4d854" ] ;
+               fhir:source ( [
+                 fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62" ] ;
+                 fhir:element [ fhir:v "type" ] ;
+                 fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f" ]
+               ] ) ;
+               fhir:rule ( [
+                 fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingIdeab4d854" ] ;
+                 fhir:source ( [
+                   fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f" ] ;
+                   fhir:element [ fhir:v "coding" ] ;
+                   fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62" ]
+                 ] ) ;
+                 fhir:rule ( [
+                   fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingIdeab4d854" ] ;
+                   fhir:source ( [
+                     fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62" ] ;
+                     fhir:element [ fhir:v "id" ] ;
+                     fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingIda991e5fb" ]
+                   ] ) ;
+                   fhir:target ( [
+                     fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f" ] ;
+                     fhir:contextType [ fhir:v "variable" ] ;
+                     fhir:element [ fhir:v "id" ] ;
+                     fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdTypeCodingId722b81d" ]
+                   ] ) ;
+                   fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type.coding | Quelle: Organization.identifier:Telematik-ID.type.coding.id" ]
+                 ] )
+               ] )
+             ] )
+           ] )
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingSystem558e0af7" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingSystem558e0af7" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "type" ] ;
+           fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingSystem558e0af7" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "KBVPRFOROrganization" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "coding" ] ;
+             fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f" ]
+           ] ) ;
+           fhir:rule ( [
+             fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingSystem558e0af7" ] ;
+             fhir:source ( [
+               fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+               fhir:element [ fhir:v "identifier" ] ;
+               fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62" ]
+             ] ) ;
+             fhir:rule ( [
+               fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingSystem558e0af7" ] ;
+               fhir:source ( [
+                 fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62" ] ;
+                 fhir:element [ fhir:v "type" ] ;
+                 fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f" ]
+               ] ) ;
+               fhir:rule ( [
+                 fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingSystem558e0af7" ] ;
+                 fhir:source ( [
+                   fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f" ] ;
+                   fhir:element [ fhir:v "coding" ] ;
+                   fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62" ]
+                 ] ) ;
+                 fhir:rule ( [
+                   fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingSystem558e0af7" ] ;
+                   fhir:source ( [
+                     fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62" ] ;
+                     fhir:element [ fhir:v "system" ] ;
+                     fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingSyste8713f" ]
+                   ] ) ;
+                   fhir:target ( [
+                     fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f" ] ;
+                     fhir:contextType [ fhir:v "variable" ] ;
+                     fhir:element [ fhir:v "system" ] ;
+                     fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdTypeCodingSyst18578" ]
+                   ] ) ;
+                   fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type.coding | Quelle: Organization.identifier:Telematik-ID.type.coding.system" ]
+                 ] )
+               ] )
+             ] )
+           ] )
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingUserselectede5c50e18" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingUserselectede5c50e18" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "type" ] ;
+           fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingUserselectede5c50e18" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "KBVPRFOROrganization" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "coding" ] ;
+             fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f" ]
+           ] ) ;
+           fhir:rule ( [
+             fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingUserselectede5c50e18" ] ;
+             fhir:source ( [
+               fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+               fhir:variable [ fhir:v "manualsrcOrganizationIdentifierTelematikIdTypeCodingUserselected" ]
+             ] ) ;
+             fhir:target ( [
+               fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f" ] ;
+               fhir:contextType [ fhir:v "variable" ] ;
+               fhir:element [ fhir:v "userSelected" ] ;
+               fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdTypeCodingUser76985" ]
+             ] ) ;
+             fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type.coding | Quelle: Organization.identifier:Telematik-ID.type.coding.userSelected" ]
+           ] )
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingVersionfc1c4789" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingVersionfc1c4789" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "type" ] ;
+           fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingVersionfc1c4789" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "KBVPRFOROrganization" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "coding" ] ;
+             fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f" ]
+           ] ) ;
+           fhir:rule ( [
+             fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeCodingVersionfc1c4789" ] ;
+             fhir:source ( [
+               fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+               fhir:variable [ fhir:v "manualsrcOrganizationIdentifierTelematikIdTypeCodingVersionfc1c4" ]
+             ] ) ;
+             fhir:target ( [
+               fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f" ] ;
+               fhir:contextType [ fhir:v "variable" ] ;
+               fhir:element [ fhir:v "version" ] ;
+               fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdTypeCodingVersc7e1b" ]
+             ] ) ;
+             fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type.coding | Quelle: Organization.identifier:Telematik-ID.type.coding.version" ]
+           ] )
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeExtensionf49ab2a4" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeExtensionf49ab2a4" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "type" ] ;
+           fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeExtensionf49ab2a4" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+             fhir:element [ fhir:v "identifier" ] ;
+             fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62" ]
+           ] ) ;
+           fhir:rule ( [
+             fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeExtensionf49ab2a4" ] ;
+             fhir:source ( [
+               fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62" ] ;
+               fhir:element [ fhir:v "type" ] ;
+               fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f" ]
+             ] ) ;
+             fhir:rule ( [
+               fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeExtensionf49ab2a4" ] ;
+               fhir:source ( [
+                 fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f" ] ;
+                 fhir:element [ fhir:v "extension" ] ;
+                 fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdTypeExtensionedc9dcb" ]
+               ] ) ;
+               fhir:target ( [
+                 fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d" ] ;
+                 fhir:contextType [ fhir:v "variable" ] ;
+                 fhir:element [ fhir:v "extension" ] ;
+                 fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdTypeExtensionf2a71c" ]
+               ] ) ;
+               fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type | Quelle: Organization.identifier:Telematik-ID.type.extension" ]
+             ] )
+           ] )
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeId0e9359b5" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeId0e9359b5" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "type" ] ;
+           fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeId0e9359b5" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+             fhir:element [ fhir:v "identifier" ] ;
+             fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62" ]
+           ] ) ;
+           fhir:rule ( [
+             fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeId0e9359b5" ] ;
+             fhir:source ( [
+               fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62" ] ;
+               fhir:element [ fhir:v "type" ] ;
+               fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f" ]
+             ] ) ;
+             fhir:rule ( [
+               fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeId0e9359b5" ] ;
+               fhir:source ( [
+                 fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f" ] ;
+                 fhir:element [ fhir:v "id" ] ;
+                 fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdTypeId017ce1dc" ]
+               ] ) ;
+               fhir:target ( [
+                 fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d" ] ;
+                 fhir:contextType [ fhir:v "variable" ] ;
+                 fhir:element [ fhir:v "id" ] ;
+                 fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdTypeIdf2382f56" ]
+               ] ) ;
+               fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type | Quelle: Organization.identifier:Telematik-ID.type.id" ]
+             ] )
+           ] )
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeText7ab931be" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeText7ab931be" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "type" ] ;
+           fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierTelematikIdTypeText7ab931be" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+             fhir:variable [ fhir:v "manualsrcOrganizationIdentifierTelematikIdTypeText7ab931be" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "text" ] ;
+             fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdTypeTextc866c291" ]
+           ] ) ;
+           fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type | Quelle: Organization.identifier:Telematik-ID.type.text" ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierTelematikIdUsed61478ae" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierTelematikIdUsed61478ae" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+           fhir:element [ fhir:v "identifier" ] ;
+           fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierTelematikIdUsed61478ae" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62" ] ;
+             fhir:element [ fhir:v "use" ] ;
+             fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdUsec137ced5" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "use" ] ;
+             fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdUsec8fa2ac8" ]
+           ] ) ;
+           fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.use" ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierTelematikIdValue69222509" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationIdentifierTelematikIdValue69222509" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+           fhir:element [ fhir:v "identifier" ] ;
+           fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "OrganizationIdentifierTelematikIdValue69222509" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62" ] ;
+             fhir:element [ fhir:v "value" ] ;
+             fhir:variable [ fhir:v "srcKBVPRFOROrganizationIdentifierTelematikIdValue56895608" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdfbd99394" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "value" ] ;
+             fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikIdValue0aaf50e9" ]
+           ] ) ;
+           fhir:documentation [ fhir:v "Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.value" ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "OrganizationIdentifierTelematikidd2cf7b80" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+         fhir:variable [ fhir:v "manualsrcOrganizationIdentifierTelematikidd2cf7b80" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryIdentifierTelematikidc36ffe12" ]
+       ] ) ;
+       fhir:documentation [ fhir:v "Manual action required | Telematik-ID wird aus idNummer → aus dem ACCESS_TOKEN der Anfrage bezogen | Quelle: Organization.identifier:TelematikID" ]
+     ] [
+       fhir:name [ fhir:v "OrganizationMeta89bf012b" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+         fhir:element [ fhir:v "meta" ] ;
+         fhir:variable [ fhir:v "srcKBVPRFOROrganizationMeta25dbc5a5" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "meta" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryMetacbe6e64f" ] ;
+         fhir:transform [ fhir:v "create" ] ;
+         fhir:parameter ( [
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Meta"
+           ]
+         ] )
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "OrganizationMetaProfile4d6334ac" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "srcKBVPRFOROrganizationMeta25dbc5a5" ] ;
+           fhir:variable [ fhir:v "srcOrganizationMetaProfile4d6334ac" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgtOrganizationDirectoryMetacbe6e64f" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "profile" ] ;
+           fhir:variable [ fhir:v "tgtOrganizationMetaProfile4d6334ac" ] ;
+           fhir:transform [ fhir:v "copy" ] ;
+           fhir:parameter ( [
+             fhir:value [
+               a fhir:String ;
+               fhir:v "https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory"
+             ]
+           ] )
+         ] ) ;
+         fhir:documentation [ fhir:v "Fixed value 'https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory'" ]
+       ] ) ;
+       fhir:documentation [ fhir:v "Automatic copy" ]
+     ] [
+       fhir:name [ fhir:v "OrganizationName61d5a4f1" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+         fhir:element [ fhir:v "name" ] ;
+         fhir:variable [ fhir:v "srcKBVPRFOROrganizationNameabbbdc85" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "name" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryName0e007323" ]
+       ] ) ;
+       fhir:documentation [ fhir:v "Manual action required | organizationName → aus dem ACCESS_TOKEN der Anfrage beziehen | Quelle: Organization.name" ]
+     ] [
+       fhir:name [ fhir:v "OrganizationTelecomb3f55102" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+         fhir:element [ fhir:v "telecom" ] ;
+         fhir:variable [ fhir:v "srcKBVPRFOROrganizationTelecomca093d46" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "telecom" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryTelecom22bcd8ec" ] ;
+         fhir:transform [ fhir:v "copy" ] ;
+         fhir:parameter ( [
+           fhir:value [
+             a fhir:Id ;
+             fhir:v "srcKBVPRFOROrganizationTelecomca093d46"
+           ]
+         ] )
+       ] ) ;
+       fhir:documentation [ fhir:v "Automatic copy" ]
+     ] [
+       fhir:name [ fhir:v "OrganizationTypeProfession6b535de2" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "KBVPRFOROrganization" ] ;
+         fhir:variable [ fhir:v "manualsrcOrganizationTypeProfession6b535de2" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "OrganizationDirectory" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "type" ] ;
+         fhir:variable [ fhir:v "tgtOrganizationDirectoryTypeProfessionf2d05bbb" ]
+       ] ) ;
+       fhir:documentation [ fhir:v "Manual action required | professionOID → aus dem ACCESS_TOKEN der Anfrage | Quelle: Organization.type:profession" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

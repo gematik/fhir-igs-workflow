@@ -1,0 +1,6048 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>FHIR-Artefakte - E-Rezept für Arzneimittel v1.0.0-draft</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        height: 280px;
+        background-color: #2a6496;
+        background: url('./e-rezept-img.png') no-repeat;
+        background-position: 650px -150px;
+        background-size: 45% auto;
+    }
+    .bubble-link {
+        display: none;
+        transition: opacity 0.2s;
+        }
+
+        h1:hover .bubble-link,
+        h2:hover .bubble-link,
+        h3:hover .bubble-link,
+        h4:hover .bubble-link,
+        h5:hover .bubble-link,
+        h6:hover .bubble-link {
+        display: inline;
+        }
+</style>
+
+<script type="text/javascript" src="assets/js/heading-links.js"> </script>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"10"}
+    h3,h4,h5,h6{--heading-prefix:"10.0"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Start</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Fachlichkeit
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-fachlichkeit-ueberblick.html">Überblick</a>
+      </li>
+      <li>
+        <a href="menu-fachlichkeit-szenarien.html">Szenarien</a>
+      </li>
+      <li>
+        <a href="menu-fachlichkeit-anwendungsfaelle.html">Anwendungsfälle</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Technische Umsetzung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-technische-umsetzung-systemueberblick.html">Systemüberblick</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-anwendungsfaelle.html">Technische Anwendungsfälle</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-verarbeitungsregeln.html">Verarbeitungsregeln</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-dosierung.html">Validierung von Dosierinformationen</a>
+      </li>
+      <li>
+        <a href="mapping.html">Mappings</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Schnittstellen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-query-api.html">Query API</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-operation-api.html">Operation API</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-additional-api.html">Additional APIs</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="referenced.html">Referenzen</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="erp-openapi.html">OpenAPI</a>
+      </li>
+      <li>
+        <a href="release-notes.html">Release Notes</a>
+      </li>
+      <li>
+        <a href="spec-sheet.html">Steckbriefe</a>
+      </li>
+      <li>
+        <a href="comparisons.html">Versionsvergleiche</a>
+      </li>
+      <li>
+        <a href="license.html">Lizenz</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+E-Rezept für Arzneimittel
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 1.0.0-draft - ci-build
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>FHIR-Artefakte</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>FHIR-Artefakte</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#terminologien-value-sets" id="markdown-toc-terminologien-value-sets">Terminologien: Value Sets</a></li>
+  <li><a href="#terminologien-code-systems" id="markdown-toc-terminologien-code-systems">Terminologien: Code Systems</a></li>
+  <li><a href="#systemverhalten" id="markdown-toc-systemverhalten">Systemverhalten</a></li>
+  <li><a href="#parameterprofile-für-operationen" id="markdown-toc-parameterprofile-für-operationen">Parameterprofile für Operationen</a></li>
+  <li><a href="#ressourcenprofile" id="markdown-toc-ressourcenprofile">Ressourcenprofile</a></li>
+  <li><a href="#datentypen" id="markdown-toc-datentypen">Datentypen</a></li>
+  <li><a href="#erweiterungen-extension-definitions" id="markdown-toc-erweiterungen-extension-definitions">Erweiterungen (Extension) Definitions</a></li>
+  <li><a href="#mapping-definitions-structuremaps" id="markdown-toc-mapping-definitions-structuremaps">Mapping Definitions (StructureMaps)</a></li>
+  <li><a href="#nutzung-von-cross-version-extensions" id="markdown-toc-nutzung-von-cross-version-extensions">Nutzung von Cross-Version-Extensions</a></li>
+  <li><a href="#beispielinstanzen" id="markdown-toc-beispielinstanzen">Beispielinstanzen</a></li>
+</ul>
+
+</div>
+<p>Diese Seite enthält eine Übersicht aller FHIR-Artefakte, die im Rahmen dieses Implementation Guide für den E-Rezept-Fachdienst definiert werden. Sie bilden die Grundlage für die strukturierte Abbildung und Verarbeitung von Medikationsdaten innerhalb des E-Rezept-Fachdienst. Dazu gehören Profile zur Spezifizierung von Ressourcen, ein <em>Capability Statement</em> zur Beschreibung der unterstützten Funktionen sowie <em>Operation Definitions</em>, die spezielle FHIR-Operationen für den Abruf und die Verwaltung von Medikationsdaten festlegen.</p>
+
+<h3 id="terminologien-value-sets">Terminologien: Value Sets</h3>
+
+<p>Die folgenden Value Sets sind für die FHIR-Data-Service-Funktionalitäten festgelegt.</p>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Value Sets</figcaption></div>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-eflow-rx-availabilitystatus.html" title="ValueSet/eflow-rx-availabilitystatus">
+                
+                    ValueSet der Verfügbarkeitsstatus-Codes
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Art des Verfügbarkeitsstatus für die Verfügbarkeitsanfrage von Medikamenten</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-eflow-rx-documenttype.html" title="ValueSet/eflow-rx-documenttype">
+                
+                    ValueSet der Dokumenttyp-Codes
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Art der Dokumente je nach Empfänger.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-eflow-rx-flowtype.html" title="ValueSet/eflow-rx-flowtype">
+                
+                    ValueSet der FlowType-Codes
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Zeigt die verschiedenen Arten des E-Rezepts entsprechend den Verschreibungsformularen.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-eflow-rx-operationoutcomedetails.html" title="ValueSet/eflow-rx-operationoutcomedetails">
+                
+                    GEM ERP VS OperationOutcomeDetails
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Fachliche Fehlercodes des E-Rezept-Fachdienst</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-eflow-rx-organizationtype.html" title="ValueSet/eflow-rx-organizationtype">
+                
+                    ValueSet der Organisationstyp-Codes
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Art der Organisation</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+    </tbody>
+</table>
+
+<h3 id="terminologien-code-systems">Terminologien: Code Systems</h3>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Code Systems</figcaption></div>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="CodeSystem-eflow-rx-availabilitystatus.html" title="CodeSystem/eflow-rx-availabilitystatus">
+                
+                    CodeSystem des Verfügbarkeitsstatus
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Typ des Verfügbarkeitsstatus für die Anfrage zur Medikamentenverfügbarkeit.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="CodeSystem-eflow-rx-documenttype.html" title="CodeSystem/eflow-rx-documenttype">
+                
+                    CodeSystem der Dokumententypen
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dokumententyp abhängig vom Empfänger des Bundles.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="CodeSystem-eflow-rx-flowtype.html" title="CodeSystem/eflow-rx-flowtype">
+                
+                    CodeSystem der Flowtypen
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Zeigt die verschiedenen Typen des E-Rezept Workflows entsprechend der Verordnungsformulare.
+
+WICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheken wie z.B. Pharmazeutische Dienstleistungen!</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="CodeSystem-eflow-rx-operationoutcomedetails.html" title="CodeSystem/eflow-rx-operationoutcomedetails">
+                
+                    GEM ERP CS OperationOutcomeDetails
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Fachliche Fehlercodes des E-Rezept-Fachdienst</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="CodeSystem-eflow-rx-organizationtype.html" title="CodeSystem/eflow-rx-organizationtype">
+                
+                    CodeSystem der Organisationstyp-Codes
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Typ der Organisation, bei der E-Rezepte eingelöst werden können.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+    </tbody>
+</table>
+
+<h3 id="systemverhalten">Systemverhalten</h3>
+
+<h4 id="capability-statements">Capability Statements</h4>
+
+<p>Das <em>Capability</em> <em>Statement</em> beschreibt die Anforderungen und Fähigkeiten, die ein Server für die konforme Implementierung des E-Rezept-Fachdienst umsetzen muss. Es handelt sich um eine Konformitätserklärung, die spezifiziert, welche Ressourcen, Interaktionen und Suchparameter das ePA-Aktensystem für den E-Rezept-Fachdienst unterstützen muss.</p>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="CapabilityStatement-erp-fachdienst-client.html" title="CapabilityStatement/erp-fachdienst-client">
+                
+                    ERP Capability Statement für Clients des E-Rezept-Fachdienst
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses Capability Statement legt die Anforderungen an Clients des E-Rezept-Fachdienst fest. Es definiert die unterstützten Interaktionen, erforderliche HTTP Header sowie erwartete Status Codes.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="CapabilityStatement-erp-fachdienst-server.html" title="CapabilityStatement/erp-fachdienst-server">
+                
+                    ERP CapabilityStatement für den E-Rezept-Fachdienst
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>ERP CapabilityStatement für den E-Rezept-Fachdienst</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Capability Statements</figcaption></div>
+
+<h4 id="operation-definitions">Operation Definitions</h4>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="OperationDefinition-AbortOperation.html" title="OperationDefinition/AbortOperation">
+                
+                    Abort
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Diese Operation bricht den Workflow eines E-Rezepts ab und löscht alle Daten, die mit dieser Aufgabe zusammenhängen.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="OperationDefinition-AcceptOperation.html" title="OperationDefinition/AcceptOperation">
+                
+                    Accept
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Mit der $accept-Operation beansprucht eine Apotheke ein E-Rezept. Der Status der referenzierten Aufgabe ändert sich in 'in-progress'.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="OperationDefinition-ActivateOperation.html" title="OperationDefinition/ActivateOperation">
+                
+                    Activate
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Diese Operation aktiviert die erstellte Aufgabe für das Rezept. Der Eingabeparameter muss das qualifizierte signierte Bundle des Rezepts enthalten. Der E-Rezept-Fachdienst validiert das Rezept, aktualisiert die Task-ressource und startet den Workflow.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="OperationDefinition-CloseOperation.html" title="OperationDefinition/CloseOperation">
+                
+                    Close
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Die $close-Operation beendet den E-Rezept-Workflow und erstellt eine Quittung. Das Ergebnis dieses Vorgangs ist ein signiertes Bundle, das für weitere finanzielle Verarbeitung verwendet wird. Der Status der Aufgabe ändert sich anschließend in #completed.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="OperationDefinition-CreateOperation.html" title="OperationDefinition/CreateOperation">
+                
+                    Create
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Diese Operation erstellt eine Aufgabe für die Verschreibung eines bestimmten Flowtypes.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="OperationDefinition-DispenseOperation.html" title="OperationDefinition/DispenseOperation">
+                
+                    Dispense
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Die Operation $dispense ermöglicht es der Apotheke, eine Ausgabe für ein Medikament durchzuführen, ohne den Status der Aufgabe zu ändern. Diese Aktion erlaubt es einem Frontend anzuzeigen, dass ein Medikament ausgegeben wurde, bevor es von der Apotheke abgeschlossen wird.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="OperationDefinition-RejectOperation.html" title="OperationDefinition/RejectOperation">
+                
+                    Reject
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Lehnt die Ausgabe eines eRezepts ab. Die Aufgabe wird in einen aktiven Zustand zurückgesetzt, das secret wird gelöscht, und der Task wird für jeden anderen Apotheker zugänglich oder kann vom Patienten gelöscht werden.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Operation Definitions</figcaption></div>
+
+<h3 id="parameterprofile-für-operationen">Parameterprofile für Operationen</h3>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-eflow-rx-accept-operation-output-parameters.html" title="eflow-rx-accept-operation-output-parameters">
+                
+                    GEM ERP PR AcceptOperation Output
+                
+                </a>
+            </td>
+            <td>
+                <p>Dieses Profil definiert die Parameter für die Annahme eines Medikaments von AVS zum E-Rezept-Fachdienst. Dies kann für die $accept-Operation verwendet werden.</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-eflow-rx-activate-operation-output-parameters.html" title="eflow-rx-activate-operation-output-parameters">
+                
+                    GEM ERP PR ActivateOperation Output
+                
+                </a>
+            </td>
+            <td>
+                <p>Dieses Profil definiert die Parameter für die Aktivierung einer Aufgabe von PVS zum E-Rezept-Fachdienst. Dies kann für die $activate-Operation verwendet werden.</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-eflow-rx-close-operation-input-parameters.html" title="eflow-rx-close-operation-input-parameters">
+                
+                    GEM ERP PR CloseOperation Input
+                
+                </a>
+            </td>
+            <td>
+                <p>Dieses Profil definiert die Parameter für das Schließen eines Workflows für ein Rezept vom AVS zum E-Rezept-Fachdienst. Dies kann für die Operationen $close und $dispense verwendet werden.</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-eflow-rx-close-operation-output-parameters.html" title="eflow-rx-close-operation-output-parameters">
+                
+                    GEM ERP PR CloseOperation Output
+                
+                </a>
+            </td>
+            <td>
+                <p>Dieses Profil definiert die Parameter für die Ausgabe eines Medikaments von AVS an den E-Rezept-Fachdienst. Dies kann für die $close-Operation verwendet werden.</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-eflow-rx-create-operation-output-parameters.html" title="eflow-rx-create-operation-output-parameters">
+                
+                    GEM ERP PR CreateOperation Output
+                
+                </a>
+            </td>
+            <td>
+                <p>Dieses Profil definiert die Parameter für die Erstellung einer Aufgabe von PVS zum E-Rezept-Fachdienst. Dies kann für die $create-Operation verwendet werden.</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-eflow-rx-dispense-operation-input-parameters.html" title="eflow-rx-dispense-operation-input-parameters">
+                
+                    GEM ERP PR DispenseOperation Input
+                
+                </a>
+            </td>
+            <td>
+                <p>Dieses Profil definiert die Parameter für die Abgabe eines Medikaments von AVS an den E-Rezept-Fachdienst. Dies kann für die $dispense-Operation verwendet werden.</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Parameterprofile</figcaption></div>
+
+<h3 id="ressourcenprofile">Ressourcenprofile</h3>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Ressourcenprofile</figcaption></div>
+
+<h3 id="datentypen">Datentypen</h3>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Datentypen</figcaption></div>
+
+<h3 id="erweiterungen-extension-definitions">Erweiterungen (Extension) Definitions</h3>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-eflow-rx-acceptdate-extension.html" title="eflow-rx-acceptdate-extension">
+                
+                    GEM ERP EX AcceptDate
+                
+                </a>
+            </td>
+            <td>
+                <p>Diese Extension sollte in der Task-Ressource verwendet werden. Sie speichert das Datum, bis zu dem eine Krankenkasse die Verschreibung akzeptiert und bezahlt.</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-eflow-rx-availabilitystate-extension.html" title="eflow-rx-availabilitystate-extension">
+                
+                    GEM ERP EX AvailabilityState
+                
+                </a>
+            </td>
+            <td>
+                <p>Extension zur Angabe von Typ des Verfügbarkeitsstatus für die Anfrage zur Medikamentenverfügbarkeit.</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-eflow-rx-beneficiary-extension.html" title="eflow-rx-beneficiary-extension">
+                
+                    GEM ERP EX Beneficiary
+                
+                </a>
+            </td>
+            <td>
+                <p>Der Begünstigte (z. B. Apotheke) des E-Rezept-Beleg, der erstellt wird, wenn der E-Rezept-Workflow abgeschlossen ist.</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-eflow-rx-eu-is-redeemable-by-patient-authorization-extension.html" title="eflow-rx-eu-is-redeemable-by-patient-authorization-extension">
+                
+                    GEM ERP EX EU IS REDEEMABLE BY PATIENT AUTHORIZATION
+                
+                </a>
+            </td>
+            <td>
+                <p>Extension zur Angabe des Nutzers, ob das E-Rezept in der EU zur Einlösung verfügbar sein soll oder nicht.</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-eflow-rx-eu-is-redeemable-by-properties-extension.html" title="eflow-rx-eu-is-redeemable-by-properties-extension">
+                
+                    GEM ERP EX EU IS REDEEMABLE BY PROPERTIES
+                
+                </a>
+            </td>
+            <td>
+                <p>Extension zur vom E-Rezept-Fachdienst ermittelten Angabe, ob das E-Rezept in der EU zur Einlösung verfügbar sein soll oder nicht.</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-eflow-rx-expirydate-extension.html" title="eflow-rx-expirydate-extension">
+                
+                    GEM ERP EX ExpiryDate
+                
+                </a>
+            </td>
+            <td>
+                <p>Diese Erweiterung sollte in der Task-Ressource verwendet werden. Sie zeigt das Ablaufdatum des Rezepts an.</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-eflow-rx-insuranceprovider-extension.html" title="eflow-rx-insuranceprovider-extension">
+                
+                    GEM ERP EX InsuranceProvider
+                
+                </a>
+            </td>
+            <td>
+                <p>IK-Nummer (Institutionskennzeichen) des Versicherungsträgers, der das angeforderte Medikament abdeckt</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-eflow-rx-lastmedicationdispense-extension.html" title="eflow-rx-lastmedicationdispense-extension">
+                
+                    GEM ERP EX LastMedicationDispense
+                
+                </a>
+            </td>
+            <td>
+                <p>Diese Erweiterung sollte in der Task-Ressource verwendet werden. Sie zeigt den Zeitstempel der letzten Ausgabe an.</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-eflow-rx-prescriptiontype-extension.html" title="eflow-rx-prescriptiontype-extension">
+                
+                    GEM ERP EX PrescriptionType
+                
+                </a>
+            </td>
+            <td>
+                <p>Definiert den Typ eines Rezepts.</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-eflow-rx-supplyoptionstype-extension.html" title="eflow-rx-supplyoptionstype-extension">
+                
+                    GEM ERP EX SupplyOptionsType
+                
+                </a>
+            </td>
+            <td>
+                <p>Extension zur Angabe des bevorzugten Versorgungskanals</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Extension Definitions</figcaption></div>
+
+<h3 id="mapping-definitions-structuremaps">Mapping Definitions (StructureMaps)</h3>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureMap-GEMErpPrMedicationMap.html" title="StructureMap/GEMErpPrMedicationMap">
+                
+                    GEMErpPrMedicationMap
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Auto-generated StructureMap for GEM_ERP_PR_Medication|1.6.1 -&gt; EPAMedication|1.3.0</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureMap-GEMErpPrMedicationdispenseMap.html" title="StructureMap/GEMErpPrMedicationdispenseMap">
+                
+                    GEMErpPrMedicationdispenseMap
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Auto-generated StructureMap for GEM_ERP_PR_MedicationDispense|1.6.1 -&gt; EPAMedicationDispense|1.3.0</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureMap-KBVPrErpBundleMap.html" title="StructureMap/KBVPrErpBundleMap">
+                
+                    KBVPrErpBundleMap
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Auto-generated StructureMap for transformation KBV_PR_ERP_Bundle|1.4.0 -&gt; EPAOpProvidePrescriptionERPInputParameters|1.3.0</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureMap-KBVPrErpMedicationCompoundingMap.html" title="StructureMap/KBVPrErpMedicationCompoundingMap">
+                
+                    KBVPrErpMedicationCompoundingMap
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Auto-generated StructureMap for KBV_PR_ERP_Medication_Compounding|1.4.0 -&gt; EPAMedication|1.3.0</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureMap-KBVPrErpMedicationFreetextMap.html" title="StructureMap/KBVPrErpMedicationFreetextMap">
+                
+                    KBVPrErpMedicationFreetextMap
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Auto-generated StructureMap for KBV_PR_ERP_Medication_FreeText|1.4.0 -&gt; EPAMedication|1.3.0</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureMap-KBVPrErpMedicationIngredientMap.html" title="StructureMap/KBVPrErpMedicationIngredientMap">
+                
+                    KBVPrErpMedicationIngredientMap
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Auto-generated StructureMap for KBV_PR_ERP_Medication_Ingredient|1.4.0 -&gt; EPAMedication|1.3.0</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureMap-KBVPrErpMedicationPznMap.html" title="StructureMap/KBVPrErpMedicationPznMap">
+                
+                    KBVPrErpMedicationPznMap
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Auto-generated StructureMap for KBV_PR_ERP_Medication_PZN|1.4.0 -&gt; EPAMedication|1.3.0</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureMap-KBVPrErpPrescriptionMap.html" title="StructureMap/KBVPrErpPrescriptionMap">
+                
+                    KBVPrErpPrescriptionMap
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Auto-generated StructureMap for KBV_PR_ERP_Prescription|1.4.0 -&gt; EPAMedicationRequest|1.3.0</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureMap-KBVPrForOrganizationMap.html" title="StructureMap/KBVPrForOrganizationMap">
+                
+                    KBVPrForOrganizationMap
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Auto-generated StructureMap for KBV_PR_FOR_Organization|1.3.0 -&gt; OrganizationDirectory|1.0.0</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureMap-KBVPrForPractitionerMap.html" title="StructureMap/KBVPrForPractitionerMap">
+                
+                    KBVPrForPractitionerMap
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Auto-generated StructureMap for KBV_PR_FOR_Practitioner|1.3.0 -&gt; PractitionerDirectory|1.0.0</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> StructureMap</figcaption></div>
+
+<h3 id="nutzung-von-cross-version-extensions">Nutzung von Cross-Version-Extensions</h3>
+
+<p>Für die Profile der Ressourcen <i>MedicationRequest</i>, <i>MedicationDispense</i> und <i>MedicationStatement</i> werden die Backport-FHIR-Extensions <code class="language-plaintext highlighter-rouge">.renderedDosageInstruction</code> und <code class="language-plaintext highlighter-rouge">.effectiveDosePeriod</code> verwendet.
+Diese Elemente stammen aus FHIR R5 und wurden über den von der <a href="https://hl7.org/fhir/versions.html#extensions">FHIR-Spezifikation definierten Cross-Version-Mechanismus</a> nach R4 zurückportiert. Dieser Mechanismus wird u. a. bereits vom <a href="https://confluence.hl7.org/spaces/FHIR/pages/35718580/Using+the+FHIR+Validator">HL7 Java FHIR Validator</a> unterstützt; andere Validatoren müssen gegebenenfalls das entsprechende Cross-Version-Paket nachladen.</p>
+
+<p>Das offizielle Cross-Version-Paket war zum Releasezeitpunkt dieses Implementation Guides noch nicht final in der FHIR-Registry verfügbar. Die Package-ID lautet:
+<code class="language-plaintext highlighter-rouge">hl7.fhir.uv.xver-r5.r4</code>. Bis zur offiziellen Veröffentlichung kann der Inhalt des folgenden Snapshot-Releases verwendet werden: <a href="https://hl7.org/fhir/uv/xver-r5.r4/0.0.1-snapshot-2/">https://hl7.org/fhir/uv/xver-r5.r4/0.0.1-snapshot-2/</a></p>
+
+<p>In diesem Paket sind die benötigten cross-version Extensions enthalten:</p>
+<ul>
+  <li><a href="https://hl7.org/fhir/uv/xver-r5.r4/0.0.1-snapshot-2/StructureDefinition-ext-R5-MedicationDispense.renderedDosageInstruction.html">MedicationDispense.renderedDosageInstruction</a></li>
+</ul>
+
+<h3 id="beispielinstanzen">Beispielinstanzen</h3>
+
+<p><b>AuditEvent</b></p>
+
+<ul>
+          <li><a href="AuditEvent-9361863d-fec0-4ba9-8776-6905cf1a0cfa.html">AuditEvent-Eintrag vom E-Rezept-Fachdienst</a></li>
+      </ul>
+
+<p><b>Bundle</b></p>
+
+<ul>
+          <li><a href="Bundle-Bundle-AcceptOperation.html">Beispiel Accept-Bundle</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Bundle-dffbfd6a-5712-4798-bdc8-07201eb77ab8.html">Quittungs-Bundle für abgeschlossene Rezeptabgabe</a></li>
+      </ul>
+
+<p><b>Communication</b></p>
+
+<ul>
+          <li><a href="Communication-7977a4ab-97a9-4d95-afb3-6c4c1e2ac596.html">Antwort-Nachricht der Apotheke an den Patienten</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Communication-a218a36e-f2fd-4603-ba67-c827acfef01b.html">Zuweisung des Patienten an die Apotheke</a></li>
+      </ul>
+
+<p><b>Device</b></p>
+
+<ul>
+          <li><a href="Device-1.html">Gerät für Quittungs-Bundle</a></li>
+      </ul>
+
+<p><b>Medication</b></p>
+
+<ul>
+          <li><a href="Medication-ExampleUnitMedication.html">Beispiel-Medikament mit Einheiten</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Medication-Medication-Kombipackung.html">Medikament-Kombipackung</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Medication-Medication-Rezeptur-FD.html">Medication-Rezeptur-FD</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Medication-Medication-Rezeptur.html">Medikament-Rezeptur</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Medication-Medication-Without-Strength-Code.html">Medikament ohne Stärke-Code</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Medication-Medication-Without-Strength-Numerator.html">Medikament ohne Stärke-Numerator</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Medication-SimpleMedication.html">Einfaches Beispiel-Medikament</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Medication-SumatripanMedication.html">Beispiel-Medikament Sumatriptan</a></li>
+      </ul>
+
+<p><b>MedicationDispense</b></p>
+
+<ul>
+          <li><a href="MedicationDispense-Example-MedicationDispense-2.html">Zweites Beispiel Medikamentenabgabe</a></li>
+      </ul>
+
+<ul>
+          <li><a href="MedicationDispense-Example-MedicationDispense-Dosage-comb-dayofweek.html">Beispiel Medikamentenabgabe mit Dosierung nach Kombination des Wochentags</a></li>
+      </ul>
+
+<ul>
+          <li><a href="MedicationDispense-Example-MedicationDispense-Dosage-comb-interval.html">Beispiel Medikamentenabgabe mit Dosierung nach Kombination des Intervals</a></li>
+      </ul>
+
+<ul>
+          <li><a href="MedicationDispense-Example-MedicationDispense-Dosage-interval.html">Beispiel Medikamentenabgabe mit Dosierung nach Interval</a></li>
+      </ul>
+
+<ul>
+          <li><a href="MedicationDispense-Example-MedicationDispense-Dosage-tageszeit.html">Beispiel Medikamentenabgabe mit Dosierung nach 4er Schema</a></li>
+      </ul>
+
+<ul>
+          <li><a href="MedicationDispense-Example-MedicationDispense-Dosage-uhrzeit.html">Beispiel Medikamentenabgabe mit Dosierung nach Uhrzeitbezug</a></li>
+      </ul>
+
+<ul>
+          <li><a href="MedicationDispense-Example-MedicationDispense-Dosage-weekday.html">Beispiel Medikamentenabgabe mit Dosierung nach Wochentagsbezug</a></li>
+      </ul>
+
+<ul>
+          <li><a href="MedicationDispense-Example-MedicationDispense-Kombipackung.html">Beispiel Kombipackung Medikamentenabgabe</a></li>
+      </ul>
+
+<ul>
+          <li><a href="MedicationDispense-Example-MedicationDispense-Rezeptur.html">Example Rezeptur Medication Dispense</a></li>
+      </ul>
+
+<ul>
+          <li><a href="MedicationDispense-Example-MedicationDispense-Without-Medication.html">Beispiel Medikamentenabgabe ohne Medikament</a></li>
+      </ul>
+
+<ul>
+          <li><a href="MedicationDispense-Example-MedicationDispense.html">Beispiel Medikamentenabgabe</a></li>
+      </ul>
+
+<p><b>OperationOutcome</b></p>
+
+<ul>
+          <li><a href="OperationOutcome-ExampleOperationAbortErrorAVS.html">Beispiel für Abort-Operation Fehlerantwort (AVS)</a></li>
+      </ul>
+
+<ul>
+          <li><a href="OperationOutcome-ExampleOperationAbortErrorPVS.html">Beispiel für Abort-Operation Fehlerantwort (PVS)</a></li>
+      </ul>
+
+<ul>
+          <li><a href="OperationOutcome-ExampleOperationAcceptError.html">Beispiel für Accept-Operation Fehlerantwort</a></li>
+      </ul>
+
+<ul>
+          <li><a href="OperationOutcome-ExampleOperationActivateError.html">Example Activate operation error response</a></li>
+      </ul>
+
+<ul>
+          <li><a href="OperationOutcome-ExampleOperationCloseError.html">Beispiel für Close-Operation Fehlerantwort</a></li>
+      </ul>
+
+<ul>
+          <li><a href="OperationOutcome-ExampleOperationCreateError.html">Beispiel für Create-Operation Fehlerantwort</a></li>
+      </ul>
+
+<ul>
+          <li><a href="OperationOutcome-ExampleOperationRejectError.html">Beispiel für Reject-Operation Fehlerantwort</a></li>
+      </ul>
+
+<p><b>Parameters</b></p>
+
+<ul>
+          <li><a href="Parameters-ExampleCloseInputParameters.html">Beispiel Close-Parameter</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Parameters-ExampleCloseInputParametersKombipackung.html">Beispiel Close-Parameter für Kombipackung</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Parameters-ExampleCloseInputParametersMultipleMedicationDispenses.html">Beispiel Close-Parameter mit mehreren MedicationDispenses</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Parameters-ExampleCloseInputParametersRezeptur.html">Example Close Parameters</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Parameters-ExampleDispenseInputParameters.html">Example Dispense Parameters</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Parameters-ExampleDispenseInputParametersKombipackung.html">Example Dispense Parameters</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Parameters-ExampleDispenseInputParametersMultipleMedicationDispenses.html">Example Dispense Parameters</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Parameters-ExampleOperationActivateParametersInput.html">Example Activate operation input parameters</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Parameters-OperationCreateParametersInputExample.html">Beispiel für $create Operation Parameter</a></li>
+      </ul>
+
+<p><b>Task</b></p>
+
+<ul>
+          <li><a href="Task-09330307-16ce-4cdc-810a-ca24ef80dde3.html">Task abgeschlossen durch Apotheke via $close Operation</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Task-607255ed-ce41-47fc-aad3-cfce1c39963f.html">Task aktiviert durch (Z)PVS/KIS via $activate Operation</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Task-9b48f82c-9c11-4a57-aa72-a805f9537a82.html">Task angenommen und abgegeben via $dispense Operation</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Task-b12eb5f7-91ce-4887-93c7-800454601377.html">Task erstellt durch Fachdienst via $create Operation</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Task-d70932d1-9e1c-483c-b2d4-b7dced09b35e.html">Task angenommen durch Apotheke via $accept Operation</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Task-f5c21409-b84b-4125-8649-5630a00906b1.html">Task mit mehreren MedicationDispenses</a></li>
+      </ul>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Feb 12, 2026 06:52+0000">2026-02-12</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

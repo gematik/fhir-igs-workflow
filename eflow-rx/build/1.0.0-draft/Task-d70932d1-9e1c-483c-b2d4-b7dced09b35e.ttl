@@ -1,0 +1,113 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/erp/Task/d70932d1-9e1c-483c-b2d4-b7dced09b35e> a fhir:Task ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "d70932d1-9e1c-483c-b2d4-b7dced09b35e"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-task"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-task>
+     ] ) ;
+     fhir:tag ( [
+       fhir:display [ fhir:v "Task in IN-PROGRESS state claimed by pharmacy via $accept operation" ]
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Task d70932d1-9e1c-483c-b2d4-b7dced09b35e</b></p><a name=\"d70932d1-9e1c-483c-b2d4-b7dced09b35e\"> </a><a name=\"hcd70932d1-9e1c-483c-b2d4-b7dced09b35e\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-eflow-rx-task.html\">GEM ERP PR Task</a></p><p style=\"margin-bottom: 0px\">Tag: Task in IN-PROGRESS state claimed by pharmacy via $accept operation (Details: [not stated] code null = 'Task in IN-PROGRESS state claimed by pharmacy via $accept operation')</p></div><p><b>GEM ERP EX PrescriptionType</b>: EFlowRxFlowType: 160 (Flowtype für Apothekenpflichtige Arzneimittel)</p><p><b>GEM ERP EX AcceptDate</b>: 2026-07-01</p><p><b>GEM ERP EX ExpiryDate</b>: 2026-07-01</p><p><b>identifier</b>: <code>https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId</code>/160.000.033.491.280.78, <code>https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode</code>/777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea</p><p><b>status</b>: In Progress</p><p><b>intent</b>: order</p><p><b>for</b>: Identifier: NamingSystemKVID/X123456789</p><p><b>authoredOn</b>: 2026-07-01 15:29:00+0000</p><p><b>lastModified</b>: 2026-07-01 16:44:00+0000</p><p><b>performerType</b>: <span title=\"Codes:{https://gematik.de/fhir/erp/CodeSystem/EFlowRxOrganizationType urn:oid:1.2.276.0.76.4.54}\">Öffentliche Apotheke</span></p><h3>Inputs</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Type</b></td><td><b>Value[x]</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{https://gematik.de/fhir/erp/CodeSystem/EFlowRxDocumentType 1}\">Health Care Provider Prescription</span></td><td><a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Binary/PrescriptionBinary\">Binary/PrescriptionBinary</a></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-prescriptiontype-extension"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-prescriptiontype-extension>
+     ] ;
+     fhir:value [
+       a fhir:Coding ;
+       fhir:system [
+         fhir:v "https://gematik.de/fhir/erp/CodeSystem/EFlowRxFlowType"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/erp/CodeSystem/EFlowRxFlowType>
+       ] ;
+       fhir:code [ fhir:v "160" ] ;
+       fhir:display [ fhir:v "Flowtype für Apothekenpflichtige Arzneimittel" ]
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-acceptdate-extension"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-acceptdate-extension>
+     ] ;
+     fhir:value [
+       a fhir:Date ;
+       fhir:v "2026-07-01"^^xsd:date
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-expirydate-extension"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-expirydate-extension>
+     ] ;
+     fhir:value [
+       a fhir:Date ;
+       fhir:v "2026-07-01"^^xsd:date
+     ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:system [
+       fhir:v "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId>
+     ] ;
+     fhir:value [ fhir:v "160.000.033.491.280.78" ]
+  ] [
+     fhir:system [
+       fhir:v "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode>
+     ] ;
+     fhir:value [ fhir:v "777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "in-progress"] ; # 
+  fhir:intent [ fhir:v "order"] ; # 
+  fhir:for [
+     fhir:identifier [
+       fhir:system [
+         fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/sid/gkv/kvid-10>
+       ] ;
+       fhir:value [ fhir:v "X123456789" ]
+     ]
+  ] ; # 
+  fhir:authoredOn [ fhir:v "2026-07-01T15:29:00+00:00"^^xsd:dateTime] ; # 
+  fhir:lastModified [ fhir:v "2026-07-01T16:44:00.434+00:00"^^xsd:dateTime] ; # 
+  fhir:performerType ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://gematik.de/fhir/erp/CodeSystem/EFlowRxOrganizationType"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/erp/CodeSystem/EFlowRxOrganizationType>
+       ] ;
+       fhir:code [ fhir:v "urn:oid:1.2.276.0.76.4.54" ] ;
+       fhir:display [ fhir:v "Öffentliche Apotheke" ]
+     ] )
+  ] ) ; # 
+  fhir:input ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://gematik.de/fhir/erp/CodeSystem/EFlowRxDocumentType"^^xsd:anyURI ;
+           fhir:l <https://gematik.de/fhir/erp/CodeSystem/EFlowRxDocumentType>
+         ] ;
+         fhir:code [ fhir:v "1" ] ;
+         fhir:display [ fhir:v "Health Care Provider Prescription" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Reference ;
+       fhir:l <https://gematik.de/fhir/erp/Binary/PrescriptionBinary> ;
+       fhir:reference [ fhir:v "Binary/PrescriptionBinary" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

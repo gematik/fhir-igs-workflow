@@ -1,0 +1,155 @@
+# Quittungs-Bundle für abgeschlossene Rezeptabgabe - E-Rezept für Arzneimittel v1.0.0-draft
+
+E-Rezept für Arzneimittel
+
+Version 1.0.0-draft - ci-build 
+
+* [**Table of Contents**](toc.md)
+* [**FHIR-Artefakte**](artifacts.md)
+* **Quittungs-Bundle für abgeschlossene Rezeptabgabe**
+
+## Example Bundle: Quittungs-Bundle für abgeschlossene Rezeptabgabe
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Bundle",
+  "id" : "dffbfd6a-5712-4798-bdc8-07201eb77ab8",
+  "meta" : {
+    "profile" : [
+      "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-bundle"
+    ],
+    "tag" : [
+      {
+        "display" : "Receipt Bundle 'Quittung' for completed dispensation of a prescription"
+      }
+    ]
+  },
+  "identifier" : {
+    "system" : "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
+    "value" : "160.000.033.491.280.78"
+  },
+  "type" : "document",
+  "timestamp" : "2026-07-01T15:29:00+00:00",
+  "entry" : [
+    {
+      "fullUrl" : "urn:uuid:c624cf47-e235-4624-af71-0a09dc9254dc",
+      "resource" : {
+        "resourceType" : "Composition",
+        "id" : "c624cf47-e235-4624-af71-0a09dc9254dc",
+        "meta" : {
+          "profile" : [
+            "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-composition"
+          ]
+        },
+        "extension" : [
+          {
+            "url" : "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-beneficiary-extension",
+            "valueIdentifier" : {
+              "system" : "https://gematik.de/fhir/sid/telematik-id",
+              "value" : "3-SMC-B-Testkarte-883110000129070"
+            }
+          }
+        ],
+        "status" : "final",
+        "type" : {
+          "coding" : [
+            {
+              "system" : "https://gematik.de/fhir/erp/CodeSystem/eflow-rx-documenttype",
+              "code" : "3",
+              "display" : "Receipt"
+            }
+          ]
+        },
+        "date" : "2026-07-01T15:29:00+00:00",
+        "author" : [
+          {
+            "reference" : "urn:uuid:1413b38d-81a6-432a-a801-98d7307a422b"
+          }
+        ],
+        "title" : "Quittung",
+        "event" : [
+          {
+            "period" : {
+              "start" : "2026-07-01T15:29:00+00:00",
+              "end" : "2026-07-01T15:29:00+00:00"
+            }
+          }
+        ],
+        "section" : [
+          {
+            "entry" : [
+              {
+                "reference" : "urn:uuid:b939a82a-9c23-4b6d-a139-f468d1b9d652"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl" : "urn:uuid:1413b38d-81a6-432a-a801-98d7307a422b",
+      "resource" : {
+        "resourceType" : "Device",
+        "id" : "1",
+        "meta" : {
+          "profile" : [
+            "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-device"
+          ]
+        },
+        "status" : "active",
+        "serialNumber" : "1.14.0",
+        "deviceName" : [
+          {
+            "name" : "E-Rezept-Fachdienst",
+            "type" : "user-friendly-name"
+          }
+        ],
+        "version" : [
+          {
+            "value" : "1.14.0"
+          }
+        ],
+        "contact" : [
+          {
+            "system" : "email",
+            "value" : "betrieb@gematik.de"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl" : "urn:uuid:b939a82a-9c23-4b6d-a139-f468d1b9d652",
+      "resource" : {
+        "resourceType" : "Binary",
+        "id" : "b939a82a-9c23-4b6d-a139-f468d1b9d652",
+        "meta" : {
+          "profile" : [
+            "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-digest"
+          ]
+        },
+        "contentType" : "application/octet-stream",
+        "data" : "tJg8c5ZtdhzEEhJ0ZpAsUVFx5dKuYgQFs5oKgthi17M="
+      }
+    }
+  ],
+  "signature" : {
+    "type" : [
+      {
+        "system" : "urn:iso-astm:E1762-95:2013",
+        "code" : "1.2.840.10065.1.12.1.1"
+      }
+    ],
+    "when" : "2026-07-01T15:29:00+00:00",
+    "who" : {
+      "reference" : "urn:uuid:1413b38d-81a6-432a-a801-98d7307a422b"
+    },
+    "sigFormat" : "application/pkcs7-mime",
+    "data" : "dGhpcyBibG9iIGlzIHNuaXBwZWQ="
+  }
+}
+
+```

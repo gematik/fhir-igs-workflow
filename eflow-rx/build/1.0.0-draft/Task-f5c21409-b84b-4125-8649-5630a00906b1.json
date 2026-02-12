@@ -1,0 +1,83 @@
+{
+  "resourceType" : "Task",
+  "id" : "f5c21409-b84b-4125-8649-5630a00906b1",
+  "meta" : {
+    "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-task"],
+    "tag" : [{
+      "display" : "Task in IN-PROGRESS state claimed by pharmacy via $accept operation"
+    }]
+  },
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Task f5c21409-b84b-4125-8649-5630a00906b1</b></p><a name=\"f5c21409-b84b-4125-8649-5630a00906b1\"> </a><a name=\"hcf5c21409-b84b-4125-8649-5630a00906b1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-eflow-rx-task.html\">GEM ERP PR Task</a></p><p style=\"margin-bottom: 0px\">Tag: Task in IN-PROGRESS state claimed by pharmacy via $accept operation (Details: [not stated] code null = 'Task in IN-PROGRESS state claimed by pharmacy via $accept operation')</p></div><p><b>GEM ERP EX PrescriptionType</b>: EFlowRxFlowType: 160 (Flowtype für Apothekenpflichtige Arzneimittel)</p><p><b>GEM ERP EX AcceptDate</b>: 2026-07-01</p><p><b>GEM ERP EX ExpiryDate</b>: 2026-07-01</p><p><b>GEM ERP EX LastMedicationDispense</b>: 2026-07-01 16:44:00+0000</p><p><b>identifier</b>: <code>https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId</code>/160.000.033.491.280.78, <code>https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode</code>/777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea</p><p><b>status</b>: In Progress</p><p><b>intent</b>: order</p><p><b>for</b>: Identifier: NamingSystemKVID/X123456789</p><p><b>authoredOn</b>: 2026-07-01 15:29:00+0000</p><p><b>lastModified</b>: 2026-07-01 16:44:00+0000</p><p><b>performerType</b>: <span title=\"Codes:{https://gematik.de/fhir/erp/CodeSystem/EFlowRxOrganizationType urn:oid:1.2.276.0.76.4.54}\">Öffentliche Apotheke</span></p><blockquote><p><b>input</b></p><p><b>type</b>: <span title=\"Codes:{https://gematik.de/fhir/erp/CodeSystem/EFlowRxDocumentType 1}\">Health Care Provider Prescription</span></p><p><b>value</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/281a985c-f25b-4aae-91a6-41ad744080b0\">281a985c-f25b-4aae-91a6-41ad744080b0</a></p></blockquote><blockquote><p><b>input</b></p><p><b>type</b>: <span title=\"Codes:{https://gematik.de/fhir/erp/CodeSystem/EFlowRxDocumentType 2}\">Patient Confirmation</span></p><p><b>value</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/f8c2298f-7c00-4a68-af29-8a2862d55d43\">f8c2298f-7c00-4a68-af29-8a2862d55d43</a></p></blockquote></div>"
+  },
+  "extension" : [{
+    "url" : "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-prescriptiontype-extension",
+    "valueCoding" : {
+      "system" : "https://gematik.de/fhir/erp/CodeSystem/EFlowRxFlowType",
+      "code" : "160",
+      "display" : "Flowtype für Apothekenpflichtige Arzneimittel"
+    }
+  },
+  {
+    "url" : "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-acceptdate-extension",
+    "valueDate" : "2026-07-01"
+  },
+  {
+    "url" : "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-expirydate-extension",
+    "valueDate" : "2026-07-01"
+  },
+  {
+    "url" : "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-lastmedicationdispense-extension",
+    "valueInstant" : "2026-07-01T16:44:00.434+00:00"
+  }],
+  "identifier" : [{
+    "system" : "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
+    "value" : "160.000.033.491.280.78"
+  },
+  {
+    "system" : "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode",
+    "value" : "777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
+  }],
+  "status" : "in-progress",
+  "intent" : "order",
+  "for" : {
+    "identifier" : {
+      "system" : "http://fhir.de/sid/gkv/kvid-10",
+      "value" : "X123456789"
+    }
+  },
+  "authoredOn" : "2026-07-01T15:29:00+00:00",
+  "lastModified" : "2026-07-01T16:44:00.434+00:00",
+  "performerType" : [{
+    "coding" : [{
+      "system" : "https://gematik.de/fhir/erp/CodeSystem/EFlowRxOrganizationType",
+      "code" : "urn:oid:1.2.276.0.76.4.54",
+      "display" : "Öffentliche Apotheke"
+    }]
+  }],
+  "input" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "https://gematik.de/fhir/erp/CodeSystem/EFlowRxDocumentType",
+        "code" : "1",
+        "display" : "Health Care Provider Prescription"
+      }]
+    },
+    "valueReference" : {
+      "reference" : "281a985c-f25b-4aae-91a6-41ad744080b0"
+    }
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "https://gematik.de/fhir/erp/CodeSystem/EFlowRxDocumentType",
+        "code" : "2",
+        "display" : "Patient Confirmation"
+      }]
+    },
+    "valueReference" : {
+      "reference" : "f8c2298f-7c00-4a68-af29-8a2862d55d43"
+    }
+  }]
+}

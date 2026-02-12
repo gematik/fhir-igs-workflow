@@ -1,0 +1,48 @@
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "RejectOperation",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition RejectOperation</b></p><a name=\"RejectOperation\"> </a><a name=\"hcRejectOperation\"> </a><p>URL: [base]/Task/[id]/$reject</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>secret</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td><div><p>Der secret Parameter, der einer Apotheke den exklusiven Zugriff auf den Task als URL-Parameter ?secret ermöglicht.</p>\n</div></td></tr></table></div>"
+  },
+  "url" : "https://gematik.de/fhir/erp/OperationDefinition/RejectOperation",
+  "version" : "1.0.0-draft",
+  "name" : "Reject",
+  "status" : "draft",
+  "kind" : "operation",
+  "date" : "2025-12-15",
+  "publisher" : "gematik GmbH",
+  "contact" : [{
+    "name" : "gematik GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://gematik.de"
+    },
+    {
+      "system" : "email",
+      "value" : "erp-umsetzung@gematik.de"
+    }]
+  }],
+  "description" : "Lehnt die Ausgabe eines eRezepts ab. Die Aufgabe wird in einen aktiven Zustand zurückgesetzt, das secret wird gelöscht, und der Task wird für jeden anderen Apotheker zugänglich oder kann vom Patienten gelöscht werden.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "affectsState" : true,
+  "code" : "reject",
+  "resource" : ["Task"],
+  "system" : false,
+  "type" : false,
+  "instance" : true,
+  "parameter" : [{
+    "name" : "secret",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der secret Parameter, der einer Apotheke den exklusiven Zugriff auf den Task als URL-Parameter ?secret ermöglicht.",
+    "type" : "string"
+  }]
+}

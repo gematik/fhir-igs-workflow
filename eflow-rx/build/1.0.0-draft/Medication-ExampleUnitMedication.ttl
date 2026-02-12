@@ -1,0 +1,69 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/erp/Medication/ExampleUnitMedication> a fhir:Medication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ExampleUnitMedication"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-medication"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-medication>
+     ] )
+  ] ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://fhir.de/CodeSystem/ifa/pzn"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/CodeSystem/ifa/pzn>
+       ] ;
+       fhir:code [ fhir:v "08585997" ]
+     ] ) ;
+     fhir:text [ fhir:v "Prospan® Hustensaft 100ml N1" ]
+  ] ; # 
+  fhir:amount [
+     fhir:numerator [
+       fhir:value [ fhir:v "1"^^xsd:decimal ] ;
+       fhir:system [
+         fhir:v "http://bfarm.de/DimensionsloseEinheiten"^^xsd:anyURI ;
+         fhir:l <http://bfarm.de/DimensionsloseEinheiten>
+       ] ;
+       fhir:code [ fhir:v "Packungen" ]
+     ] ;
+     fhir:denominator [
+       fhir:value [ fhir:v "1"^^xsd:decimal ]
+     ]
+  ] ; # 
+  fhir:ingredient ( [
+     fhir:item [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://fhir.de/CodeSystem/ask"^^xsd:anyURI ;
+           fhir:l <http://fhir.de/CodeSystem/ask>
+         ] ;
+         fhir:code [ fhir:v "11704" ]
+       ] ) ;
+       fhir:text [ fhir:v "Efeublätter, TE mit Ethanol/Ethanol-Wasser" ]
+     ] ;
+     fhir:strength [
+       fhir:numerator [
+         fhir:value [ fhir:v "7"^^xsd:decimal ] ;
+         fhir:system [
+           fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+           fhir:l <http://unitsofmeasure.org>
+         ] ;
+         fhir:code [ fhir:v "ml" ]
+       ] ;
+       fhir:denominator [
+         fhir:value [ fhir:v "1"^^xsd:decimal ]
+       ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

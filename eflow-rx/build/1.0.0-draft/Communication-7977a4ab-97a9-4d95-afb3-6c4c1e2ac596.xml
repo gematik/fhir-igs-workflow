@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Communication xmlns="http://hl7.org/fhir">
+  <id value="7977a4ab-97a9-4d95-afb3-6c4c1e2ac596"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-communication-reply"/>
+    <tag>
+      <display value="Reply from Pharmacy to Patient"/>
+    </tag>
+    <tag>
+      <display value="Communication message sent by pharmacy to patient in response to a previous Task-related message"/>
+    </tag>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Communication 7977a4ab-97a9-4d95-afb3-6c4c1e2ac596</b></p><a name="7977a4ab-97a9-4d95-afb3-6c4c1e2ac596"> </a><a name="hc7977a4ab-97a9-4d95-afb3-6c4c1e2ac596"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-eflow-rx-communication-reply.html">GEM ERP PR Communication Reply</a></p><p style="margin-bottom: 0px">Tags: Reply from Pharmacy to Patient (Details: [not stated] code null = 'Reply from Pharmacy to Patient'), Communication message sent by pharmacy to patient in response to a previous Task-related message (Details: [not stated] code null = 'Communication message sent by pharmacy to patient in response to a previous Task-related message')</p></div><p><b>basedOn</b>: <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Task/160.000.033.491.280.78">Task/160.000.033.491.280.78</a></p><p><b>status</b>: Unknown</p><p><b>sent</b>: 2026-07-01 15:29:00+0000</p><p><b>recipient</b>: Identifier: NamingSystemKVID/X234567890</p><p><b>sender</b>: Identifier: <code>https://gematik.de/fhir/sid/telematik-id</code>/3-SMC-B-Testkarte-883110000123465</p><blockquote><p><b>payload</b></p><p><b>GEM ERP EX AvailabilityState</b>: <a href="CodeSystem-eflow-rx-availabilitystatus.html#eflow-rx-availabilitystatus-20">CodeSystem des Verfügbarkeitsstatus: 20</a> (noch Heute verfügbar)</p><blockquote><p><b>GEM ERP EX SupplyOptionsType</b></p><ul><li>delivery: true</li><li>onPremise: true</li><li>shipment: false</li></ul></blockquote><p><b>content</b>: Eisern</p></blockquote></div>
+  </text>
+  <basedOn>
+    <reference value="Task/160.000.033.491.280.78"/>
+  </basedOn>
+  <status value="unknown"/>
+  <sent value="2026-07-01T15:29:00.434+00:00"/>
+  <recipient>
+    <identifier>
+      <system value="http://fhir.de/sid/gkv/kvid-10"/>
+      <value value="X234567890"/>
+    </identifier>
+  </recipient>
+  <sender>
+    <identifier>
+      <system value="https://gematik.de/fhir/sid/telematik-id"/>
+      <value value="3-SMC-B-Testkarte-883110000123465"/>
+    </identifier>
+  </sender>
+  <payload>
+    <extension url="https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-availabilitystate-extension">
+      <valueCoding>
+        <system value="https://gematik.de/fhir/erp/CodeSystem/eflow-rx-availabilitystatus"/>
+        <code value="20"/>
+      </valueCoding>
+    </extension>
+    <extension url="https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-supplyoptionstype-extension">
+      <extension url="delivery">
+        <valueBoolean value="true"/>
+      </extension>
+      <extension url="onPremise">
+        <valueBoolean value="true"/>
+      </extension>
+      <extension url="shipment">
+        <valueBoolean value="false"/>
+      </extension>
+    </extension>
+    <contentString value="Eisern"/>
+  </payload>
+</Communication>

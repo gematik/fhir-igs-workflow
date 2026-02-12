@@ -1,0 +1,212 @@
+# de.gematik.eflow-rx#1.0.0-draft: E-Rezept für Arzneimittel
+
+## Pages
+
+* [Implementation Guide E-Rezept-Fachdienst](index.md)
+* [Anbindung an den ePA MedicationService](menu-technische-umsetzung-anbindung-epa-ms.md)
+* [OpenAPI: E-Rezept Produkttypen](erp-openapi.md)
+* [Operation $abort (Task abbrechen)](op-abort.md)
+* [Vorgaben zum Mapping von FHIR-Instanzen](mapping.md)
+* [Verordnung von E-T-Rezepten](menu-fachlichkeit-szenarien-t-rezept.md)
+* [Systemüberblick](menu-technische-umsetzung-systemueberblick.md)
+* [Mapping einer Wirkstoff Medikation](mapping-prescription-medication-ingredient.md)
+* [Zusätzliche APIs](menu-schnittstellen-additional-api.md)
+* [Überblick zur Verordnung und Belieferung von Arzneimitteln](menu-fachlichkeit-ueberblick.md)
+* [Mapping der Arzneimitteldaten für Verordnungsdaten](mapping-prescription-medication.md)
+* [Versionsvergleiche](comparisons.md)
+* [Anbindung an den BfArM Webdienst](menu-technische-umsetzung-anbindung-bfarm.md)
+* [Operation $create (Task erzeugen)](op-create.md)
+* [Mapping von Verordnungsdaten](mapping-prescription.md)
+* [FHIR-Artefakte](artifacts.md)
+* [Generelle Prinzipien](menu-schnittstellen-generelle-prinzipien.md)
+* [Verarbeitungsregeln für den E-Rezept-Fachdienst](menu-technische-umsetzung-verarbeitungsregeln.md)
+* [Query API](menu-schnittstellen-query-api.md)
+* [Anwendungsfälle für den Medikationsprozess](menu-fachlichkeit-anwendungsfaelle.md)
+* [Beispiel für eine Transformation einer Rezepturverordnung](comparison-Bundle-input-example-4.md)
+* [Operation API](menu-schnittstellen-operation-api.md)
+* [Technische Anwendungsfälle](menu-technische-umsetzung-anwendungsfaelle.md)
+* [Beispiel für eine Transformation einer PZN](comparison-Bundle-input-example-1.md)
+* [Release Notes](release-notes.md)
+* [Referenzen](referenced.md)
+* [Operation $activate (Task aktivieren)](op-activate.md)
+* [Mapping einer Rezeptur Medikation](mapping-prescription-medication-compounding.md)
+* [Beispiel für eine Transformation einer Freitextverordnung](comparison-Bundle-input-example-3.md)
+* [Szenarien für den Verordnungsprozess](menu-fachlichkeit-szenarien.md)
+* [Apache Licence](license.md)
+* [Beispiel für eine Transformation einer Verordnung mit absoluter Referenzierung](comparison-Bundle-input-example-5.md)
+* [Mapping von Dispensierinformationen](mapping-dispensation.md)
+* [Beispiel für eine Transformation einer Wirkstoffverordnung](comparison-Bundle-input-example-2.md)
+* [Mapping der Verschreibung für Verordnungsdaten](mapping-prescription-medicationrequest.md)
+* [Datenschutz und Sicherheit](menu-schnittstellen-datenschutz-und-sicherheit.md)
+* [Mapping einer PZN Medikation](mapping-prescription-medication-pzn.md)
+* [Steckbriefe](spec-sheet.md)
+* [Mapping des Verordnenden für Verordnungsdaten](mapping-prescription-practitioner.md)
+* [Anbindung an den FHIR-VZD](menu-technische-umsetzung-anbindung-fvzd.md)
+* [Mapping einer Freitext Medikation](mapping-prescription-medication-freetext.md)
+* [Downloads](downloads.md)
+* [Validierung von Dosierungsinformationen](menu-technische-umsetzung-dosierung.md)
+* [Mapping der Organization für Verordnungsdaten](mapping-prescription-organization.md)
+* [Mapping des Bundles zu Parameters für Verordnungsdaten](mapping-prescription-bundle-parameters.md)
+
+## Resources
+
+### CodeSystems
+
+* [CodeSystem des Verfügbarkeitsstatus](CodeSystem-eflow-rx-availabilitystatus.md)
+* [CodeSystem der Dokumententypen](CodeSystem-eflow-rx-documenttype.md)
+* [CodeSystem der Flowtypen](CodeSystem-eflow-rx-flowtype.md)
+* [GEM ERP CS OperationOutcomeDetails](CodeSystem-eflow-rx-operationoutcomedetails.md)
+* [CodeSystem der Organisationstyp-Codes](CodeSystem-eflow-rx-organizationtype.md)
+
+### ValueSets
+
+* [ValueSet der Verfügbarkeitsstatus-Codes](ValueSet-eflow-rx-availabilitystatus.md)
+* [ValueSet der Dokumenttyp-Codes](ValueSet-eflow-rx-documenttype.md)
+* [ValueSet der FlowType-Codes](ValueSet-eflow-rx-flowtype.md)
+* [GEM ERP VS OperationOutcomeDetails](ValueSet-eflow-rx-operationoutcomedetails.md)
+* [ValueSet der Organisationstyp-Codes](ValueSet-eflow-rx-organizationtype.md)
+
+### Logicals
+
+* [Logical Medication Dispense](StructureDefinition-GEM-ERP-LOG-MedicationDispense.md)
+
+### Complex-type Profiles
+
+* [GEM ERP PR AccessCode](StructureDefinition-eflow-rx-accesscode.md)
+* [GEM ERP PR Secret](StructureDefinition-eflow-rx-secret.md)
+* [EFlowRxSignature](StructureDefinition-eflow-rx-signature.md)
+
+### Resource Profiles
+
+* [GEM ERP PR AcceptOperation Output](StructureDefinition-eflow-rx-accept-operation-output-parameters.md)
+* [GEM ERP PR ActivateOperation Output](StructureDefinition-eflow-rx-activate-operation-output-parameters.md)
+* [GEM ERP PR AuditEvent](StructureDefinition-eflow-rx-auditevent.md)
+* [GEM ERP PR Binary](StructureDefinition-eflow-rx-binary.md)
+* [GEM ERP PR Bundle OP Accept](StructureDefinition-eflow-rx-bundle-op-accept.md)
+* [GEM ERP PR Bundle](StructureDefinition-eflow-rx-bundle.md)
+* [GEM ERP PR CloseOperation Input](StructureDefinition-eflow-rx-close-operation-input-parameters.md)
+* [GEM ERP PR CloseOperation Output](StructureDefinition-eflow-rx-close-operation-output-parameters.md)
+* [GEM ERP PR Communication DispReq](StructureDefinition-eflow-rx-communication-dispreq.md)
+* [GEM ERP PR Communication Reply](StructureDefinition-eflow-rx-communication-reply.md)
+* [GEM ERP PR Communication Representative](StructureDefinition-eflow-rx-communication-representative.md)
+* [GEM ERP PR Communication](StructureDefinition-eflow-rx-communication.md)
+* [GEM ERP PR Composition](StructureDefinition-eflow-rx-composition.md)
+* [GEM ERP PR CreateOperation Output](StructureDefinition-eflow-rx-create-operation-output-parameters.md)
+* [GEM ERP PR Device](StructureDefinition-eflow-rx-device.md)
+* [GEM ERP PR Digest](StructureDefinition-eflow-rx-digest.md)
+* [GEM ERP PR DispenseOperation Input](StructureDefinition-eflow-rx-dispense-operation-input-parameters.md)
+* [GEM ERP PR Medication](StructureDefinition-eflow-rx-medication.md)
+* [GEM ERP PR MedicationDispense](StructureDefinition-eflow-rx-medicationdispense.md)
+* [GEM ERP PR OperationOutcome](StructureDefinition-eflow-rx-operationoutcome.md)
+* [GEM ERP PR Task](StructureDefinition-eflow-rx-task.md)
+
+### Extensions
+
+* [GEM ERP EX AcceptDate](StructureDefinition-eflow-rx-acceptdate-extension.md)
+* [GEM ERP EX AvailabilityState](StructureDefinition-eflow-rx-availabilitystate-extension.md)
+* [GEM ERP EX Beneficiary](StructureDefinition-eflow-rx-beneficiary-extension.md)
+* [GEM ERP EX EU IS REDEEMABLE BY PATIENT AUTHORIZATION](StructureDefinition-eflow-rx-eu-is-redeemable-by-patient-authorization-extension.md)
+* [GEM ERP EX EU IS REDEEMABLE BY PROPERTIES](StructureDefinition-eflow-rx-eu-is-redeemable-by-properties-extension.md)
+* [GEM ERP EX ExpiryDate](StructureDefinition-eflow-rx-expirydate-extension.md)
+* [GEM ERP EX InsuranceProvider](StructureDefinition-eflow-rx-insuranceprovider-extension.md)
+* [GEM ERP EX LastMedicationDispense](StructureDefinition-eflow-rx-lastmedicationdispense-extension.md)
+* [GEM ERP EX PrescriptionType](StructureDefinition-eflow-rx-prescriptiontype-extension.md)
+* [GEM ERP EX SupplyOptionsType](StructureDefinition-eflow-rx-supplyoptionstype-extension.md)
+
+### Bundles
+
+* [1f339db0-9e55-4946-9dfa-f1b30953be9b](Bundle-1f339db0-9e55-4946-9dfa-f1b30953be9b.md)
+* [44420ed9-7388-4be5-acc5-9c124fad9f34](Bundle-44420ed9-7388-4be5-acc5-9c124fad9f34.md)
+* [4863d1fb-dc26-4680-bb35-018610d1749d](Bundle-4863d1fb-dc26-4680-bb35-018610d1749d.md)
+* [9581ce65-b118-4751-9073-19c091b341e0](Bundle-9581ce65-b118-4751-9073-19c091b341e0.md)
+* [9c85a2a5-92ee-4a57-83cb-ba90a0df2a21](Bundle-9c85a2a5-92ee-4a57-83cb-ba90a0df2a21.md)
+
+### CapabilityStatements
+
+* [ERP Capability Statement für Clients des E-Rezept-Fachdienst](CapabilityStatement-erp-fachdienst-client.md)
+* [ERP CapabilityStatement für den E-Rezept-Fachdienst](CapabilityStatement-erp-fachdienst-server.md)
+
+### ImplementationGuides
+
+* [E-Rezept für Arzneimittel](index.md)
+
+### OperationDefinitions
+
+* [Abort](OperationDefinition-AbortOperation.md)
+* [Accept](OperationDefinition-AcceptOperation.md)
+* [Activate](OperationDefinition-ActivateOperation.md)
+* [Close](OperationDefinition-CloseOperation.md)
+* [Create](OperationDefinition-CreateOperation.md)
+* [Dispense](OperationDefinition-DispenseOperation.md)
+* [Reject](OperationDefinition-RejectOperation.md)
+
+### Parameters
+
+* [Parameters-output-example-1](Parameters-Parameters-output-example-1.md)
+* [Parameters-output-example-2](Parameters-Parameters-output-example-2.md)
+* [Parameters-output-example-3](Parameters-Parameters-output-example-3.md)
+* [Parameters-output-example-4](Parameters-Parameters-output-example-4.md)
+* [Parameters-output-example-5](Parameters-Parameters-output-example-5.md)
+
+### StructureMaps
+
+* [GEMErpPrMedicationMap](StructureMap-GEMErpPrMedicationMap.md)
+* [GEMErpPrMedicationdispenseMap](StructureMap-GEMErpPrMedicationdispenseMap.md)
+* [KBVPrErpBundleMap](StructureMap-KBVPrErpBundleMap.md)
+* [KBVPrErpMedicationCompoundingMap](StructureMap-KBVPrErpMedicationCompoundingMap.md)
+* [KBVPrErpMedicationFreetextMap](StructureMap-KBVPrErpMedicationFreetextMap.md)
+* [KBVPrErpMedicationIngredientMap](StructureMap-KBVPrErpMedicationIngredientMap.md)
+* [KBVPrErpMedicationPznMap](StructureMap-KBVPrErpMedicationPznMap.md)
+* [KBVPrErpPrescriptionMap](StructureMap-KBVPrErpPrescriptionMap.md)
+* [KBVPrForOrganizationMap](StructureMap-KBVPrForOrganizationMap.md)
+* [KBVPrForPractitionerMap](StructureMap-KBVPrForPractitionerMap.md)
+
+### Examples
+
+* [9361863d-fec0-4ba9-8776-6905cf1a0cfa (AuditEvent)](AuditEvent-9361863d-fec0-4ba9-8776-6905cf1a0cfa.md)
+* [Bundle-AcceptOperation (Bundle)](Bundle-Bundle-AcceptOperation.md)
+* [dffbfd6a-5712-4798-bdc8-07201eb77ab8 (Bundle)](Bundle-dffbfd6a-5712-4798-bdc8-07201eb77ab8.md)
+* [7977a4ab-97a9-4d95-afb3-6c4c1e2ac596 (Communication)](Communication-7977a4ab-97a9-4d95-afb3-6c4c1e2ac596.md)
+* [a218a36e-f2fd-4603-ba67-c827acfef01b (Communication)](Communication-a218a36e-f2fd-4603-ba67-c827acfef01b.md)
+* [1 (Device)](Device-1.md)
+* [ExampleUnitMedication (Medication)](Medication-ExampleUnitMedication.md)
+* [Medication-Kombipackung (Medication)](Medication-Medication-Kombipackung.md)
+* [Medication-Rezeptur-FD (Medication)](Medication-Medication-Rezeptur-FD.md)
+* [Medication-Rezeptur (Medication)](Medication-Medication-Rezeptur.md)
+* [Medication-Without-Strength-Code (Medication)](Medication-Medication-Without-Strength-Code.md)
+* [Medication-Without-Strength-Numerator (Medication)](Medication-Medication-Without-Strength-Numerator.md)
+* [SimpleMedication (Medication)](Medication-SimpleMedication.md)
+* [SumatripanMedication (Medication)](Medication-SumatripanMedication.md)
+* [Example-MedicationDispense-2 (MedicationDispense)](MedicationDispense-Example-MedicationDispense-2.md)
+* [Example-MedicationDispense-Dosage-comb-dayofweek (MedicationDispense)](MedicationDispense-Example-MedicationDispense-Dosage-comb-dayofweek.md)
+* [Example-MedicationDispense-Dosage-comb-interval (MedicationDispense)](MedicationDispense-Example-MedicationDispense-Dosage-comb-interval.md)
+* [Example-MedicationDispense-Dosage-interval (MedicationDispense)](MedicationDispense-Example-MedicationDispense-Dosage-interval.md)
+* [Example-MedicationDispense-Dosage-tageszeit (MedicationDispense)](MedicationDispense-Example-MedicationDispense-Dosage-tageszeit.md)
+* [Example-MedicationDispense-Dosage-uhrzeit (MedicationDispense)](MedicationDispense-Example-MedicationDispense-Dosage-uhrzeit.md)
+* [Example-MedicationDispense-Dosage-weekday (MedicationDispense)](MedicationDispense-Example-MedicationDispense-Dosage-weekday.md)
+* [Example-MedicationDispense-Kombipackung (MedicationDispense)](MedicationDispense-Example-MedicationDispense-Kombipackung.md)
+* [Example-MedicationDispense-Rezeptur (MedicationDispense)](MedicationDispense-Example-MedicationDispense-Rezeptur.md)
+* [Example-MedicationDispense-Without-Medication (MedicationDispense)](MedicationDispense-Example-MedicationDispense-Without-Medication.md)
+* [Example-MedicationDispense (MedicationDispense)](MedicationDispense-Example-MedicationDispense.md)
+* [ExampleOperationAbortErrorAVS (OperationOutcome)](OperationOutcome-ExampleOperationAbortErrorAVS.md)
+* [ExampleOperationAbortErrorPVS (OperationOutcome)](OperationOutcome-ExampleOperationAbortErrorPVS.md)
+* [ExampleOperationAcceptError (OperationOutcome)](OperationOutcome-ExampleOperationAcceptError.md)
+* [ExampleOperationActivateError (OperationOutcome)](OperationOutcome-ExampleOperationActivateError.md)
+* [ExampleOperationCloseError (OperationOutcome)](OperationOutcome-ExampleOperationCloseError.md)
+* [ExampleOperationCreateError (OperationOutcome)](OperationOutcome-ExampleOperationCreateError.md)
+* [ExampleOperationRejectError (OperationOutcome)](OperationOutcome-ExampleOperationRejectError.md)
+* [ExampleCloseInputParameters (Parameters)](Parameters-ExampleCloseInputParameters.md)
+* [ExampleCloseInputParametersKombipackung (Parameters)](Parameters-ExampleCloseInputParametersKombipackung.md)
+* [ExampleCloseInputParametersMultipleMedicationDispenses (Parameters)](Parameters-ExampleCloseInputParametersMultipleMedicationDispenses.md)
+* [ExampleCloseInputParametersRezeptur (Parameters)](Parameters-ExampleCloseInputParametersRezeptur.md)
+* [ExampleDispenseInputParameters (Parameters)](Parameters-ExampleDispenseInputParameters.md)
+* [ExampleDispenseInputParametersKombipackung (Parameters)](Parameters-ExampleDispenseInputParametersKombipackung.md)
+* [ExampleDispenseInputParametersMultipleMedicationDispenses (Parameters)](Parameters-ExampleDispenseInputParametersMultipleMedicationDispenses.md)
+* [ExampleOperationActivateParametersInput (Parameters)](Parameters-ExampleOperationActivateParametersInput.md)
+* [OperationCreateParametersInputExample (Parameters)](Parameters-OperationCreateParametersInputExample.md)
+* [09330307-16ce-4cdc-810a-ca24ef80dde3 (Task)](Task-09330307-16ce-4cdc-810a-ca24ef80dde3.md)
+* [607255ed-ce41-47fc-aad3-cfce1c39963f (Task)](Task-607255ed-ce41-47fc-aad3-cfce1c39963f.md)
+* [9b48f82c-9c11-4a57-aa72-a805f9537a82 (Task)](Task-9b48f82c-9c11-4a57-aa72-a805f9537a82.md)
+* [b12eb5f7-91ce-4887-93c7-800454601377 (Task)](Task-b12eb5f7-91ce-4887-93c7-800454601377.md)
+* [d70932d1-9e1c-483c-b2d4-b7dced09b35e (Task)](Task-d70932d1-9e1c-483c-b2d4-b7dced09b35e.md)
+* [f5c21409-b84b-4125-8649-5630a00906b1 (Task)](Task-f5c21409-b84b-4125-8649-5630a00906b1.md)

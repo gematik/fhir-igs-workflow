@@ -1,0 +1,2444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureMap xmlns="http://hl7.org/fhir">
+  <id value="KBVPrForOrganizationMap"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: StructureMap KBVPrForOrganizationMap</b></p><a name="KBVPrForOrganizationMap"> </a><a name="hcKBVPrForOrganizationMap"> </a><pre class="fml">
+<b>map</b><span style="color: navy"> &quot;</span>https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrForOrganizationMap<span style="color: navy">&quot; = &quot;</span>KBVPrForOrganizationMap<span style="color: navy">&quot;
+
+</span><span style="color: navy">// </span><span style="color: green">Auto-generated StructureMap for KBV_PR_FOR_Organization|1.3.0 -&gt; OrganizationDirectory|1.0.0</span>
+
+<b>uses</b><span style="color: navy"> &quot;</span>https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization<span style="color: navy">&quot; </span><b>alias </b>KBVPRFOROrganization <b>as </b><b>source</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="https://simplifier.net/resolve?scope=de.gematik.epa.medication@1.3.0&amp;canonical=https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory" title="Organization in gematik Directory">https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory</a><span style="color: navy">&quot; </span><b>alias </b>OrganizationDirectory <b>as </b><b>target</b>
+
+<span style="color: navy">// </span><span style="color: green">Mapping generated for KBV_PR_FOR_Organization|1.3.0 -&gt; OrganizationDirectory|1.0.0</span>
+<b>group </b>KBVPrForOrganizationMap<span style="color: navy">(</span><b>source</b> <span style="color: maroon">KBVPRFOROrganization</span><span style="color: navy"> : </span>KBVPRFOROrganization, <b>target</b> <span style="color: maroon">OrganizationDirectory</span><span style="color: navy"> : </span>OrganizationDirectory<span style="color: navy">)</span><b> &lt;&lt;types&gt;&gt;</b><span style="color: navy"> {
+</span>  KBVPRFOROrganization.address<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationAddressb2458a6a</span><span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.address = <span style="color: maroon">srcKBVPRFOROrganizationAddressb2458a6a</span><b> as </b><span style="color: maroon">tgtOrganizationDirectoryAddress56874d06</span> <i>&quot;OrganizationAddress042e251f&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Copied to 'Organization.address'</span>
+  KBVPRFOROrganization.address<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationAddressStrassenanschrift5396a3a6</span><span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.address = <span style="color: maroon">srcKBVPRFOROrganizationAddressStrassenanschrift5396a3a6</span><b> as </b><span style="color: maroon">tgtOrganizationDirectoryAddressStrassenanschrift31dcd382</span> <i>&quot;OrganizationAddressStrassenanschrift1974a97e&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Copied to 'Organization.address:Strassenanschrift'</span>
+  KBVPRFOROrganization.identifier<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifier520cdc39</span><b> where </b>(use = 'official' and system = 'https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR') != true and (system = 'http://fhir.de/sid/arge-ik/iknr') != true and (use = 'official' and system = 'http://fhir.de/sid/kzbv/kzvabrechnungsnummer') != true<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier = <span style="color: maroon">srcKBVPRFOROrganizationIdentifier520cdc39</span><b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierb9fb6742</span> <i>&quot;OrganizationIdentifiercd09dff1&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Automatic copy</span>
+  KBVPRFOROrganization.identifier<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierBetriebsstaettennummer10bcc9e5</span><b> where </b>use = 'official' and system = 'https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR'<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier = <span style="color: maroon">srcKBVPRFOROrganizationIdentifierBetriebsstaettennummer10bcc9e5</span><b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierBsnr5530a72d</span> <i>&quot;OrganizationIdentifierBetriebsstaettennummerd282829b&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Copied to 'Organization.identifier:BSNR'</span>
+  KBVPRFOROrganization.identifier<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierInstitutionskennzeichenf4e9068e</span><b> where </b>system = 'http://fhir.de/sid/arge-ik/iknr'<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier = <span style="color: maroon">srcKBVPRFOROrganizationIdentifierInstitutionskennzeichenf4e9068e</span><b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierIknr272d4c4d</span> <i>&quot;OrganizationIdentifierInstitutionskennzeichen298c285b&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Copied to 'Organization.identifier:IKNR'</span>
+  KBVPRFOROrganization.identifier<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierKzvAbrechnungsnummerd991d7ce</span><b> where </b>use = 'official' and system = 'http://fhir.de/sid/kzbv/kzvabrechnungsnummer'<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier = <span style="color: maroon">srcKBVPRFOROrganizationIdentifierKzvAbrechnungsnummerd991d7ce</span><b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierKzvac903ff4f</span> <i>&quot;OrganizationIdentifierKzvAbrechnungsnummer18ca9fd4&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Copied to 'Organization.identifier:KZVA'</span>
+  KBVPRFOROrganization.identifier<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier <i>&quot;OrganizationIdentifierStandortnummer5b1a4e6e&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Quelle: Organization.identifier:Standortnummer</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization<b> as </b><span style="color: maroon">manualsrcOrganizationIdentifierStandortnummerAssigner4321e73a</span><span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.assigner<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummerAssignerbae64834</span> <i>&quot;OrganizationIdentifierStandortnummerAssigner4321e73a&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.assigner</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerAssigner4321e73a&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization.identifier<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8</span><b> then</b><span style="color: navy"> {
+</span>      srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8.extension<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.extension <i>&quot;OrganizationIdentifierStandortnummerExtensionbcc5027e&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.extension</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerExtensionbcc5027e&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerExtensionbcc5027e&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization.identifier<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8</span><b> then</b><span style="color: navy"> {
+</span>      srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8.id<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.id <i>&quot;OrganizationIdentifierStandortnummerId30b93b83&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.id</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerId30b93b83&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerId30b93b83&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization<b> as </b><span style="color: maroon">manualsrcOrganizationIdentifierStandortnummerPeriode5f4a5c3</span><span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.period<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummerPeriodfe5df42e</span> <i>&quot;OrganizationIdentifierStandortnummerPeriode5f4a5c3&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.period</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerPeriode5f4a5c3&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization.identifier<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8</span><b> then</b><span style="color: navy"> {
+</span>      srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8.system<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.system <i>&quot;OrganizationIdentifierStandortnummerSystem4da271c8&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.system</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerSystem4da271c8&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerSystem4da271c8&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization.identifier<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8</span><b> then</b><span style="color: navy"> {
+</span>      srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8.type<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.type <i>&quot;OrganizationIdentifierStandortnummerTypef34af24e&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.type</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypef34af24e&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypef34af24e&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.type<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8</span><b> then</b><span style="color: navy"> {
+</span>      KBVPRFOROrganization.identifier<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8</span><b> then</b><span style="color: navy"> {
+</span>        srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8.type<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea</span><b> then</b><span style="color: navy"> {
+</span>          srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea.coding<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8.coding <i>&quot;OrganizationIdentifierStandortnummerTypeCoding3a469898&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type | Quelle: Organization.identifier:Standortnummer.type.coding</span>
+        <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCoding3a469898&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCoding3a469898&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCoding3a469898&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCoding3a469898&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.type<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8</span><b> then</b><span style="color: navy"> {
+</span>      KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8.coding<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9</span><b> then</b><span style="color: navy"> {
+</span>        KBVPRFOROrganization.identifier<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8</span><b> then</b><span style="color: navy"> {
+</span>          srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8.type<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea</span><b> then</b><span style="color: navy"> {
+</span>            srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea.coding<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb</span><b> then</b><span style="color: navy"> {
+</span>              srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb.code<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9.code <i>&quot;OrganizationIdentifierStandortnummerTypeCodingCode0dc5e8b4&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type.coding | Quelle: Organization.identifier:Standortnummer.type.coding.code</span>
+            <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingCode0dc5e8b4&quot;</i><span style="color: navy">;</span>
+          <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingCode0dc5e8b4&quot;</i><span style="color: navy">;</span>
+        <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingCode0dc5e8b4&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingCode0dc5e8b4&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingCode0dc5e8b4&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingCode0dc5e8b4&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.type<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8</span><b> then</b><span style="color: navy"> {
+</span>      KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8.coding<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9</span><b> then</b><span style="color: navy"> {
+</span>        KBVPRFOROrganization<b> as </b><span style="color: maroon">manualsrcOrganizationIdentifierStandortnummerTypeCodingDisplay7e</span><span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9.display<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummerTypeCodingD0eaa5</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingDisplay7e1af387&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type.coding | Quelle: Organization.identifier:Standortnummer.type.coding.display</span>
+      <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingDisplay7e1af387&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingDisplay7e1af387&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingDisplay7e1af387&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.type<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8</span><b> then</b><span style="color: navy"> {
+</span>      KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8.coding<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9</span><b> then</b><span style="color: navy"> {
+</span>        KBVPRFOROrganization.identifier<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8</span><b> then</b><span style="color: navy"> {
+</span>          srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8.type<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea</span><b> then</b><span style="color: navy"> {
+</span>            srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea.coding<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb</span><b> then</b><span style="color: navy"> {
+</span>              srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb.extension<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9.extension <i>&quot;OrganizationIdentifierStandortnummerTypeCodingExtension99005b70&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type.coding | Quelle: Organization.identifier:Standortnummer.type.coding.extension</span>
+            <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingExtension99005b70&quot;</i><span style="color: navy">;</span>
+          <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingExtension99005b70&quot;</i><span style="color: navy">;</span>
+        <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingExtension99005b70&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingExtension99005b70&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingExtension99005b70&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingExtension99005b70&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.type<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8</span><b> then</b><span style="color: navy"> {
+</span>      KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8.coding<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9</span><b> then</b><span style="color: navy"> {
+</span>        KBVPRFOROrganization.identifier<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8</span><b> then</b><span style="color: navy"> {
+</span>          srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8.type<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea</span><b> then</b><span style="color: navy"> {
+</span>            srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea.coding<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb</span><b> then</b><span style="color: navy"> {
+</span>              srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb.id<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9.id <i>&quot;OrganizationIdentifierStandortnummerTypeCodingId258779ca&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type.coding | Quelle: Organization.identifier:Standortnummer.type.coding.id</span>
+            <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingId258779ca&quot;</i><span style="color: navy">;</span>
+          <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingId258779ca&quot;</i><span style="color: navy">;</span>
+        <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingId258779ca&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingId258779ca&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingId258779ca&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingId258779ca&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.type<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8</span><b> then</b><span style="color: navy"> {
+</span>      KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8.coding<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9</span><b> then</b><span style="color: navy"> {
+</span>        KBVPRFOROrganization.identifier<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8</span><b> then</b><span style="color: navy"> {
+</span>          srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8.type<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea</span><b> then</b><span style="color: navy"> {
+</span>            srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea.coding<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb</span><b> then</b><span style="color: navy"> {
+</span>              srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb.system<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9.system <i>&quot;OrganizationIdentifierStandortnummerTypeCodingSystem6e23c9e2&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type.coding | Quelle: Organization.identifier:Standortnummer.type.coding.system</span>
+            <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingSystem6e23c9e2&quot;</i><span style="color: navy">;</span>
+          <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingSystem6e23c9e2&quot;</i><span style="color: navy">;</span>
+        <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingSystem6e23c9e2&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingSystem6e23c9e2&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingSystem6e23c9e2&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingSystem6e23c9e2&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.type<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8</span><b> then</b><span style="color: navy"> {
+</span>      KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8.coding<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9</span><b> then</b><span style="color: navy"> {
+</span>        KBVPRFOROrganization<b> as </b><span style="color: maroon">manualsrcOrganizationIdentifierStandortnummerTypeCodingUserselec</span><span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9.userSelected<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummerTypeCodingU8892f</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingUserselect6d28848a&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type.coding | Quelle: Organization.identifier:Standortnummer.type.coding.userSelected</span>
+      <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingUserselect6d28848a&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingUserselect6d28848a&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingUserselect6d28848a&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.type<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8</span><b> then</b><span style="color: navy"> {
+</span>      KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8.coding<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9</span><b> then</b><span style="color: navy"> {
+</span>        KBVPRFOROrganization<b> as </b><span style="color: maroon">manualsrcOrganizationIdentifierStandortnummerTypeCodingVersion7f</span><span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9.version<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummerTypeCodingV7ff49</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingVersion7f7b6fac&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type.coding | Quelle: Organization.identifier:Standortnummer.type.coding.version</span>
+      <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingVersion7f7b6fac&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingVersion7f7b6fac&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeCodingVersion7f7b6fac&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.type<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8</span><b> then</b><span style="color: navy"> {
+</span>      KBVPRFOROrganization.identifier<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8</span><b> then</b><span style="color: navy"> {
+</span>        srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8.type<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea</span><b> then</b><span style="color: navy"> {
+</span>          srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea.extension<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8.extension <i>&quot;OrganizationIdentifierStandortnummerTypeExtension49394714&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type | Quelle: Organization.identifier:Standortnummer.type.extension</span>
+        <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeExtension49394714&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeExtension49394714&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeExtension49394714&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeExtension49394714&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.type<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8</span><b> then</b><span style="color: navy"> {
+</span>      KBVPRFOROrganization.identifier<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8</span><b> then</b><span style="color: navy"> {
+</span>        srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8.type<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea</span><b> then</b><span style="color: navy"> {
+</span>          srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea.id<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8.id <i>&quot;OrganizationIdentifierStandortnummerTypeId8b0e3128&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type | Quelle: Organization.identifier:Standortnummer.type.id</span>
+        <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeId8b0e3128&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeId8b0e3128&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeId8b0e3128&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeId8b0e3128&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.type<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8</span><b> then</b><span style="color: navy"> {
+</span>      KBVPRFOROrganization<b> as </b><span style="color: maroon">manualsrcOrganizationIdentifierStandortnummerTypeTextf9fa5866</span><span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8.text<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummerTypeText0ddc5778</span> <i>&quot;OrganizationIdentifierStandortnummerTypeTextf9fa5866&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type | Quelle: Organization.identifier:Standortnummer.type.text</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeTextf9fa5866&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerTypeTextf9fa5866&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization.identifier<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8</span><b> then</b><span style="color: navy"> {
+</span>      srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8.use<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.use <i>&quot;OrganizationIdentifierStandortnummerUsef813ffc0&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.use</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerUsef813ffc0&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerUsef813ffc0&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierStandortnummer24d4148f</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization.identifier<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8</span><b> then</b><span style="color: navy"> {
+</span>      srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8.value<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierStandortnummer24d4148f.value <i>&quot;OrganizationIdentifierStandortnummerValue889a3ec2&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.value</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerValue889a3ec2&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierStandortnummerValue889a3ec2&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization.identifier<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier <i>&quot;OrganizationIdentifierTelematikId0039d930&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Quelle: Organization.identifier:Telematik-ID</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization<b> as </b><span style="color: maroon">manualsrcOrganizationIdentifierTelematikIdAssigneraf75e132</span><span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.assigner<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdAssigner0b759bdc</span> <i>&quot;OrganizationIdentifierTelematikIdAssigneraf75e132&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.assigner</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdAssigneraf75e132&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization.identifier<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62</span><b> then</b><span style="color: navy"> {
+</span>      srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62.extension<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.extension <i>&quot;OrganizationIdentifierTelematikIdExtension3ccd9ff9&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.extension</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdExtension3ccd9ff9&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdExtension3ccd9ff9&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization.identifier<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62</span><b> then</b><span style="color: navy"> {
+</span>      srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62.id<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.id <i>&quot;OrganizationIdentifierTelematikIdId448056d2&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.id</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdId448056d2&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdId448056d2&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization<b> as </b><span style="color: maroon">manualsrcOrganizationIdentifierTelematikIdPeriod85f499e3</span><span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.period<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdPeriod9c1bc68d</span> <i>&quot;OrganizationIdentifierTelematikIdPeriod85f499e3&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.period</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdPeriod85f499e3&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization.identifier<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62</span><b> then</b><span style="color: navy"> {
+</span>      srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62.system<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.system <i>&quot;OrganizationIdentifierTelematikIdSystemda3650e1&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.system</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdSystemda3650e1&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdSystemda3650e1&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization.identifier<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62</span><b> then</b><span style="color: navy"> {
+</span>      srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62.type<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.type <i>&quot;OrganizationIdentifierTelematikIdTyped07f8b5e&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.type</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTyped07f8b5e&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTyped07f8b5e&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.type<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d</span><b> then</b><span style="color: navy"> {
+</span>      KBVPRFOROrganization.identifier<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62</span><b> then</b><span style="color: navy"> {
+</span>        srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62.type<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f</span><b> then</b><span style="color: navy"> {
+</span>          srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f.coding<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d.coding <i>&quot;OrganizationIdentifierTelematikIdTypeCoding064be19f&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type | Quelle: Organization.identifier:Telematik-ID.type.coding</span>
+        <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCoding064be19f&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCoding064be19f&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCoding064be19f&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCoding064be19f&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.type<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d</span><b> then</b><span style="color: navy"> {
+</span>      KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d.coding<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f</span><b> then</b><span style="color: navy"> {
+</span>        KBVPRFOROrganization.identifier<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62</span><b> then</b><span style="color: navy"> {
+</span>          srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62.type<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f</span><b> then</b><span style="color: navy"> {
+</span>            srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f.coding<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62</span><b> then</b><span style="color: navy"> {
+</span>              srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62.code<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f.code <i>&quot;OrganizationIdentifierTelematikIdTypeCodingCode7d531fea&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type.coding | Quelle: Organization.identifier:Telematik-ID.type.coding.code</span>
+            <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingCode7d531fea&quot;</i><span style="color: navy">;</span>
+          <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingCode7d531fea&quot;</i><span style="color: navy">;</span>
+        <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingCode7d531fea&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingCode7d531fea&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingCode7d531fea&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingCode7d531fea&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.type<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d</span><b> then</b><span style="color: navy"> {
+</span>      KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d.coding<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f</span><b> then</b><span style="color: navy"> {
+</span>        KBVPRFOROrganization<b> as </b><span style="color: maroon">manualsrcOrganizationIdentifierTelematikIdTypeCodingDisplaycfad8</span><span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f.display<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdTypeCodingDispae203</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingDisplaycfad8e3a&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type.coding | Quelle: Organization.identifier:Telematik-ID.type.coding.display</span>
+      <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingDisplaycfad8e3a&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingDisplaycfad8e3a&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingDisplaycfad8e3a&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.type<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d</span><b> then</b><span style="color: navy"> {
+</span>      KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d.coding<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f</span><b> then</b><span style="color: navy"> {
+</span>        KBVPRFOROrganization.identifier<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62</span><b> then</b><span style="color: navy"> {
+</span>          srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62.type<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f</span><b> then</b><span style="color: navy"> {
+</span>            srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f.coding<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62</span><b> then</b><span style="color: navy"> {
+</span>              srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62.extension<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f.extension <i>&quot;OrganizationIdentifierTelematikIdTypeCodingExtensiona4ee2a5a&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type.coding | Quelle: Organization.identifier:Telematik-ID.type.coding.extension</span>
+            <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingExtensiona4ee2a5a&quot;</i><span style="color: navy">;</span>
+          <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingExtensiona4ee2a5a&quot;</i><span style="color: navy">;</span>
+        <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingExtensiona4ee2a5a&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingExtensiona4ee2a5a&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingExtensiona4ee2a5a&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingExtensiona4ee2a5a&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.type<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d</span><b> then</b><span style="color: navy"> {
+</span>      KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d.coding<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f</span><b> then</b><span style="color: navy"> {
+</span>        KBVPRFOROrganization.identifier<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62</span><b> then</b><span style="color: navy"> {
+</span>          srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62.type<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f</span><b> then</b><span style="color: navy"> {
+</span>            srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f.coding<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62</span><b> then</b><span style="color: navy"> {
+</span>              srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62.id<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f.id <i>&quot;OrganizationIdentifierTelematikIdTypeCodingIdeab4d854&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type.coding | Quelle: Organization.identifier:Telematik-ID.type.coding.id</span>
+            <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingIdeab4d854&quot;</i><span style="color: navy">;</span>
+          <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingIdeab4d854&quot;</i><span style="color: navy">;</span>
+        <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingIdeab4d854&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingIdeab4d854&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingIdeab4d854&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingIdeab4d854&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.type<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d</span><b> then</b><span style="color: navy"> {
+</span>      KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d.coding<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f</span><b> then</b><span style="color: navy"> {
+</span>        KBVPRFOROrganization.identifier<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62</span><b> then</b><span style="color: navy"> {
+</span>          srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62.type<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f</span><b> then</b><span style="color: navy"> {
+</span>            srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f.coding<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62</span><b> then</b><span style="color: navy"> {
+</span>              srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62.system<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f.system <i>&quot;OrganizationIdentifierTelematikIdTypeCodingSystem558e0af7&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type.coding | Quelle: Organization.identifier:Telematik-ID.type.coding.system</span>
+            <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingSystem558e0af7&quot;</i><span style="color: navy">;</span>
+          <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingSystem558e0af7&quot;</i><span style="color: navy">;</span>
+        <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingSystem558e0af7&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingSystem558e0af7&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingSystem558e0af7&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingSystem558e0af7&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.type<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d</span><b> then</b><span style="color: navy"> {
+</span>      KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d.coding<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f</span><b> then</b><span style="color: navy"> {
+</span>        KBVPRFOROrganization<b> as </b><span style="color: maroon">manualsrcOrganizationIdentifierTelematikIdTypeCodingUserselected</span><span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f.userSelected<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdTypeCodingUser76985</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingUserselectede5c50e18&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type.coding | Quelle: Organization.identifier:Telematik-ID.type.coding.userSelected</span>
+      <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingUserselectede5c50e18&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingUserselectede5c50e18&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingUserselectede5c50e18&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.type<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d</span><b> then</b><span style="color: navy"> {
+</span>      KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d.coding<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f</span><b> then</b><span style="color: navy"> {
+</span>        KBVPRFOROrganization<b> as </b><span style="color: maroon">manualsrcOrganizationIdentifierTelematikIdTypeCodingVersionfc1c4</span><span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f.version<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdTypeCodingVersc7e1b</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingVersionfc1c4789&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type.coding | Quelle: Organization.identifier:Telematik-ID.type.coding.version</span>
+      <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingVersionfc1c4789&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingVersionfc1c4789&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeCodingVersionfc1c4789&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.type<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d</span><b> then</b><span style="color: navy"> {
+</span>      KBVPRFOROrganization.identifier<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62</span><b> then</b><span style="color: navy"> {
+</span>        srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62.type<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f</span><b> then</b><span style="color: navy"> {
+</span>          srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f.extension<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d.extension <i>&quot;OrganizationIdentifierTelematikIdTypeExtensionf49ab2a4&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type | Quelle: Organization.identifier:Telematik-ID.type.extension</span>
+        <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeExtensionf49ab2a4&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeExtensionf49ab2a4&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeExtensionf49ab2a4&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeExtensionf49ab2a4&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.type<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d</span><b> then</b><span style="color: navy"> {
+</span>      KBVPRFOROrganization.identifier<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62</span><b> then</b><span style="color: navy"> {
+</span>        srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62.type<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f</span><b> then</b><span style="color: navy"> {
+</span>          srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f.id<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d.id <i>&quot;OrganizationIdentifierTelematikIdTypeId0e9359b5&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type | Quelle: Organization.identifier:Telematik-ID.type.id</span>
+        <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeId0e9359b5&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeId0e9359b5&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeId0e9359b5&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeId0e9359b5&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.type<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d</span><b> then</b><span style="color: navy"> {
+</span>      KBVPRFOROrganization<b> as </b><span style="color: maroon">manualsrcOrganizationIdentifierTelematikIdTypeText7ab931be</span><span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d.text<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdTypeTextc866c291</span> <i>&quot;OrganizationIdentifierTelematikIdTypeText7ab931be&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type | Quelle: Organization.identifier:Telematik-ID.type.text</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeText7ab931be&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdTypeText7ab931be&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization.identifier<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62</span><b> then</b><span style="color: navy"> {
+</span>      srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62.use<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.use <i>&quot;OrganizationIdentifierTelematikIdUsed61478ae&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.use</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdUsed61478ae&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdUsed61478ae&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikIdfbd99394</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRFOROrganization.identifier<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62</span><b> then</b><span style="color: navy"> {
+</span>      srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62.value<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.value <i>&quot;OrganizationIdentifierTelematikIdValue69222509&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.value</span>
+    <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdValue69222509&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdValue69222509&quot;</i><span style="color: navy">;</span>
+  KBVPRFOROrganization<b> as </b><span style="color: maroon">manualsrcOrganizationIdentifierTelematikidd2cf7b80</span><span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikidc36ffe12</span> <i>&quot;OrganizationIdentifierTelematikidd2cf7b80&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Manual action required | Telematik-ID wird aus idNummer → aus dem ACCESS_TOKEN der Anfrage bezogen | Quelle: Organization.identifier:TelematikID</span>
+  KBVPRFOROrganization.meta<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationMeta25dbc5a5</span><span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.meta = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Meta'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">tgtOrganizationDirectoryMetacbe6e64f</span><b> then</b><span style="color: navy"> {
+</span>    srcKBVPRFOROrganizationMeta25dbc5a5<b> as </b><span style="color: maroon">srcOrganizationMetaProfile4d6334ac</span><span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryMetacbe6e64f.profile = <span style="color: blue">'https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory'</span><b> as </b><span style="color: maroon">tgtOrganizationMetaProfile4d6334ac</span> <i>&quot;OrganizationMetaProfile4d6334ac&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Fixed value 'https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory'</span>
+  <span style="color: navy">}</span> <i>&quot;OrganizationMeta89bf012b&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Automatic copy</span>
+  KBVPRFOROrganization.name<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.name <i>&quot;OrganizationName61d5a4f1&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Manual action required | organizationName → aus dem ACCESS_TOKEN der Anfrage beziehen | Quelle: Organization.name</span>
+  KBVPRFOROrganization.telecom<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationTelecomca093d46</span><span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.telecom = <span style="color: maroon">srcKBVPRFOROrganizationTelecomca093d46</span><b> as </b><span style="color: maroon">tgtOrganizationDirectoryTelecom22bcd8ec</span> <i>&quot;OrganizationTelecomb3f55102&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Automatic copy</span>
+  KBVPRFOROrganization<b> as </b><span style="color: maroon">manualsrcOrganizationTypeProfession6b535de2</span><span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.type<b> as </b><span style="color: maroon">tgtOrganizationDirectoryTypeProfessionf2d05bbb</span> <i>&quot;OrganizationTypeProfession6b535de2&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Manual action required | professionOID → aus dem ACCESS_TOKEN der Anfrage | Quelle: Organization.type:profession</span>
+<span style="color: navy">}
+
+</span></pre></div>
+  </text>
+  <url value="https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrForOrganizationMap"/>
+  <version value="1.0.0-draft"/>
+  <name value="KBVPrForOrganizationMap"/>
+  <status value="active"/>
+  <date value="2026-02-02"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="erp-umsetzung@gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="Auto-generated StructureMap for KBV_PR_FOR_Organization|1.3.0 -&gt; OrganizationDirectory|1.0.0"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <structure>
+    <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization"/>
+    <mode value="source"/>
+    <alias value="KBVPRFOROrganization"/>
+  </structure>
+  <structure>
+    <url value="https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory"/>
+    <mode value="target"/>
+    <alias value="OrganizationDirectory"/>
+  </structure>
+  <group>
+    <name value="KBVPrForOrganizationMap"/>
+    <typeMode value="types"/>
+    <documentation value="Mapping generated for KBV_PR_FOR_Organization|1.3.0 -&gt; OrganizationDirectory|1.0.0"/>
+    <input>
+      <name value="KBVPRFOROrganization"/>
+      <type value="KBVPRFOROrganization"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="OrganizationDirectory"/>
+      <type value="OrganizationDirectory"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="OrganizationAddress042e251f"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+        <element value="address"/>
+        <variable value="srcKBVPRFOROrganizationAddressb2458a6a"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="address"/>
+        <variable value="tgtOrganizationDirectoryAddress56874d06"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="srcKBVPRFOROrganizationAddressb2458a6a"/>
+        </parameter>
+      </target>
+      <documentation value="Copied to 'Organization.address'"/>
+    </rule>
+    <rule>
+      <name value="OrganizationAddressStrassenanschrift1974a97e"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+        <element value="address"/>
+        <variable value="srcKBVPRFOROrganizationAddressStrassenanschrift5396a3a6"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="address"/>
+        <variable value="tgtOrganizationDirectoryAddressStrassenanschrift31dcd382"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="srcKBVPRFOROrganizationAddressStrassenanschrift5396a3a6"/>
+        </parameter>
+      </target>
+      <documentation value="Copied to 'Organization.address:Strassenanschrift'"/>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifiercd09dff1"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+        <element value="identifier"/>
+        <variable value="srcKBVPRFOROrganizationIdentifier520cdc39"/>
+        <condition value="(use = 'official' and system = 'https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR') != true and (system = 'http://fhir.de/sid/arge-ik/iknr') != true and (use = 'official' and system = 'http://fhir.de/sid/kzbv/kzvabrechnungsnummer') != true"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierb9fb6742"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="srcKBVPRFOROrganizationIdentifier520cdc39"/>
+        </parameter>
+      </target>
+      <documentation value="Automatic copy"/>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierBetriebsstaettennummerd282829b"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+        <element value="identifier"/>
+        <variable value="srcKBVPRFOROrganizationIdentifierBetriebsstaettennummer10bcc9e5"/>
+        <condition value="use = 'official' and system = 'https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR'"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierBsnr5530a72d"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="srcKBVPRFOROrganizationIdentifierBetriebsstaettennummer10bcc9e5"/>
+        </parameter>
+      </target>
+      <documentation value="Copied to 'Organization.identifier:BSNR'"/>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierInstitutionskennzeichen298c285b"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+        <element value="identifier"/>
+        <variable value="srcKBVPRFOROrganizationIdentifierInstitutionskennzeichenf4e9068e"/>
+        <condition value="system = 'http://fhir.de/sid/arge-ik/iknr'"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierIknr272d4c4d"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="srcKBVPRFOROrganizationIdentifierInstitutionskennzeichenf4e9068e"/>
+        </parameter>
+      </target>
+      <documentation value="Copied to 'Organization.identifier:IKNR'"/>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierKzvAbrechnungsnummer18ca9fd4"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+        <element value="identifier"/>
+        <variable value="srcKBVPRFOROrganizationIdentifierKzvAbrechnungsnummerd991d7ce"/>
+        <condition value="use = 'official' and system = 'http://fhir.de/sid/kzbv/kzvabrechnungsnummer'"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierKzvac903ff4f"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="srcKBVPRFOROrganizationIdentifierKzvAbrechnungsnummerd991d7ce"/>
+        </parameter>
+      </target>
+      <documentation value="Copied to 'Organization.identifier:KZVA'"/>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierStandortnummer5b1a4e6e"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+        <element value="identifier"/>
+        <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+      </target>
+      <documentation value="Feld wird nicht gemappt | Quelle: Organization.identifier:Standortnummer"/>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierStandortnummerAssigner4321e73a"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierStandortnummerAssigner4321e73a"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+          <variable value="manualsrcOrganizationIdentifierStandortnummerAssigner4321e73a"/>
+        </source>
+        <target>
+          <context value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+          <contextType value="variable"/>
+          <element value="assigner"/>
+          <variable value="tgtOrganizationDirectoryIdentifierStandortnummerAssignerbae64834"/>
+        </target>
+        <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.assigner"/>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierStandortnummerExtensionbcc5027e"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierStandortnummerExtensionbcc5027e"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+          <element value="identifier"/>
+          <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8"/>
+        </source>
+        <rule>
+          <name value="OrganizationIdentifierStandortnummerExtensionbcc5027e"/>
+          <source>
+            <context value="srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8"/>
+            <element value="extension"/>
+            <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerExtensiona2bb7c3a"/>
+          </source>
+          <target>
+            <context value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+            <contextType value="variable"/>
+            <element value="extension"/>
+            <variable value="tgtOrganizationDirectoryIdentifierStandortnummerExtensiond638433"/>
+          </target>
+          <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.extension"/>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierStandortnummerId30b93b83"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierStandortnummerId30b93b83"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+          <element value="identifier"/>
+          <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8"/>
+        </source>
+        <rule>
+          <name value="OrganizationIdentifierStandortnummerId30b93b83"/>
+          <source>
+            <context value="srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8"/>
+            <element value="id"/>
+            <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerIdc88d62ac"/>
+          </source>
+          <target>
+            <context value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+            <contextType value="variable"/>
+            <element value="id"/>
+            <variable value="tgtOrganizationDirectoryIdentifierStandortnummerId6d88c635"/>
+          </target>
+          <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.id"/>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierStandortnummerPeriode5f4a5c3"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierStandortnummerPeriode5f4a5c3"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+          <variable value="manualsrcOrganizationIdentifierStandortnummerPeriode5f4a5c3"/>
+        </source>
+        <target>
+          <context value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+          <contextType value="variable"/>
+          <element value="period"/>
+          <variable value="tgtOrganizationDirectoryIdentifierStandortnummerPeriodfe5df42e"/>
+        </target>
+        <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.period"/>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierStandortnummerSystem4da271c8"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierStandortnummerSystem4da271c8"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+          <element value="identifier"/>
+          <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8"/>
+        </source>
+        <rule>
+          <name value="OrganizationIdentifierStandortnummerSystem4da271c8"/>
+          <source>
+            <context value="srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8"/>
+            <element value="system"/>
+            <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerSystem24012027"/>
+          </source>
+          <target>
+            <context value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <variable value="tgtOrganizationDirectoryIdentifierStandortnummerSystem8c059a81"/>
+          </target>
+          <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.system"/>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierStandortnummerTypef34af24e"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierStandortnummerTypef34af24e"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+          <element value="identifier"/>
+          <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8"/>
+        </source>
+        <rule>
+          <name value="OrganizationIdentifierStandortnummerTypef34af24e"/>
+          <source>
+            <context value="srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8"/>
+            <element value="type"/>
+            <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea"/>
+          </source>
+          <target>
+            <context value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+            <contextType value="variable"/>
+            <element value="type"/>
+            <variable value="tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8"/>
+          </target>
+          <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.type"/>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierStandortnummerTypeCoding3a469898"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierStandortnummerTypeCoding3a469898"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+        </source>
+        <target>
+          <context value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+          <contextType value="variable"/>
+          <element value="type"/>
+          <variable value="tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8"/>
+        </target>
+        <rule>
+          <name value="OrganizationIdentifierStandortnummerTypeCoding3a469898"/>
+          <source>
+            <context value="KBVPRFOROrganization"/>
+            <element value="identifier"/>
+            <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8"/>
+          </source>
+          <rule>
+            <name value="OrganizationIdentifierStandortnummerTypeCoding3a469898"/>
+            <source>
+              <context value="srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8"/>
+              <element value="type"/>
+              <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea"/>
+            </source>
+            <rule>
+              <name value="OrganizationIdentifierStandortnummerTypeCoding3a469898"/>
+              <source>
+                <context value="srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea"/>
+                <element value="coding"/>
+                <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb"/>
+              </source>
+              <target>
+                <context value="tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8"/>
+                <contextType value="variable"/>
+                <element value="coding"/>
+                <variable value="tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9"/>
+              </target>
+              <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type | Quelle: Organization.identifier:Standortnummer.type.coding"/>
+            </rule>
+          </rule>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierStandortnummerTypeCodingCode0dc5e8b4"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierStandortnummerTypeCodingCode0dc5e8b4"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+        </source>
+        <target>
+          <context value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+          <contextType value="variable"/>
+          <element value="type"/>
+          <variable value="tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8"/>
+        </target>
+        <rule>
+          <name value="OrganizationIdentifierStandortnummerTypeCodingCode0dc5e8b4"/>
+          <source>
+            <context value="KBVPRFOROrganization"/>
+          </source>
+          <target>
+            <context value="tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8"/>
+            <contextType value="variable"/>
+            <element value="coding"/>
+            <variable value="tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9"/>
+          </target>
+          <rule>
+            <name value="OrganizationIdentifierStandortnummerTypeCodingCode0dc5e8b4"/>
+            <source>
+              <context value="KBVPRFOROrganization"/>
+              <element value="identifier"/>
+              <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8"/>
+            </source>
+            <rule>
+              <name value="OrganizationIdentifierStandortnummerTypeCodingCode0dc5e8b4"/>
+              <source>
+                <context value="srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8"/>
+                <element value="type"/>
+                <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea"/>
+              </source>
+              <rule>
+                <name value="OrganizationIdentifierStandortnummerTypeCodingCode0dc5e8b4"/>
+                <source>
+                  <context value="srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea"/>
+                  <element value="coding"/>
+                  <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb"/>
+                </source>
+                <rule>
+                  <name value="OrganizationIdentifierStandortnummerTypeCodingCode0dc5e8b4"/>
+                  <source>
+                    <context value="srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb"/>
+                    <element value="code"/>
+                    <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerTypeCodingCo0b67c"/>
+                  </source>
+                  <target>
+                    <context value="tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9"/>
+                    <contextType value="variable"/>
+                    <element value="code"/>
+                    <variable value="tgtOrganizationDirectoryIdentifierStandortnummerTypeCodingCe532d"/>
+                  </target>
+                  <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type.coding | Quelle: Organization.identifier:Standortnummer.type.coding.code"/>
+                </rule>
+              </rule>
+            </rule>
+          </rule>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierStandortnummerTypeCodingDisplay7e1af387"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierStandortnummerTypeCodingDisplay7e1af387"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+        </source>
+        <target>
+          <context value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+          <contextType value="variable"/>
+          <element value="type"/>
+          <variable value="tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8"/>
+        </target>
+        <rule>
+          <name value="OrganizationIdentifierStandortnummerTypeCodingDisplay7e1af387"/>
+          <source>
+            <context value="KBVPRFOROrganization"/>
+          </source>
+          <target>
+            <context value="tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8"/>
+            <contextType value="variable"/>
+            <element value="coding"/>
+            <variable value="tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9"/>
+          </target>
+          <rule>
+            <name value="OrganizationIdentifierStandortnummerTypeCodingDisplay7e1af387"/>
+            <source>
+              <context value="KBVPRFOROrganization"/>
+              <variable value="manualsrcOrganizationIdentifierStandortnummerTypeCodingDisplay7e"/>
+            </source>
+            <target>
+              <context value="tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9"/>
+              <contextType value="variable"/>
+              <element value="display"/>
+              <variable value="tgtOrganizationDirectoryIdentifierStandortnummerTypeCodingD0eaa5"/>
+            </target>
+            <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type.coding | Quelle: Organization.identifier:Standortnummer.type.coding.display"/>
+          </rule>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierStandortnummerTypeCodingExtension99005b70"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierStandortnummerTypeCodingExtension99005b70"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+        </source>
+        <target>
+          <context value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+          <contextType value="variable"/>
+          <element value="type"/>
+          <variable value="tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8"/>
+        </target>
+        <rule>
+          <name value="OrganizationIdentifierStandortnummerTypeCodingExtension99005b70"/>
+          <source>
+            <context value="KBVPRFOROrganization"/>
+          </source>
+          <target>
+            <context value="tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8"/>
+            <contextType value="variable"/>
+            <element value="coding"/>
+            <variable value="tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9"/>
+          </target>
+          <rule>
+            <name value="OrganizationIdentifierStandortnummerTypeCodingExtension99005b70"/>
+            <source>
+              <context value="KBVPRFOROrganization"/>
+              <element value="identifier"/>
+              <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8"/>
+            </source>
+            <rule>
+              <name value="OrganizationIdentifierStandortnummerTypeCodingExtension99005b70"/>
+              <source>
+                <context value="srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8"/>
+                <element value="type"/>
+                <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea"/>
+              </source>
+              <rule>
+                <name value="OrganizationIdentifierStandortnummerTypeCodingExtension99005b70"/>
+                <source>
+                  <context value="srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea"/>
+                  <element value="coding"/>
+                  <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb"/>
+                </source>
+                <rule>
+                  <name value="OrganizationIdentifierStandortnummerTypeCodingExtension99005b70"/>
+                  <source>
+                    <context value="srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb"/>
+                    <element value="extension"/>
+                    <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerTypeCodingEx0b591"/>
+                  </source>
+                  <target>
+                    <context value="tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9"/>
+                    <contextType value="variable"/>
+                    <element value="extension"/>
+                    <variable value="tgtOrganizationDirectoryIdentifierStandortnummerTypeCodingEcd883"/>
+                  </target>
+                  <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type.coding | Quelle: Organization.identifier:Standortnummer.type.coding.extension"/>
+                </rule>
+              </rule>
+            </rule>
+          </rule>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierStandortnummerTypeCodingId258779ca"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierStandortnummerTypeCodingId258779ca"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+        </source>
+        <target>
+          <context value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+          <contextType value="variable"/>
+          <element value="type"/>
+          <variable value="tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8"/>
+        </target>
+        <rule>
+          <name value="OrganizationIdentifierStandortnummerTypeCodingId258779ca"/>
+          <source>
+            <context value="KBVPRFOROrganization"/>
+          </source>
+          <target>
+            <context value="tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8"/>
+            <contextType value="variable"/>
+            <element value="coding"/>
+            <variable value="tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9"/>
+          </target>
+          <rule>
+            <name value="OrganizationIdentifierStandortnummerTypeCodingId258779ca"/>
+            <source>
+              <context value="KBVPRFOROrganization"/>
+              <element value="identifier"/>
+              <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8"/>
+            </source>
+            <rule>
+              <name value="OrganizationIdentifierStandortnummerTypeCodingId258779ca"/>
+              <source>
+                <context value="srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8"/>
+                <element value="type"/>
+                <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea"/>
+              </source>
+              <rule>
+                <name value="OrganizationIdentifierStandortnummerTypeCodingId258779ca"/>
+                <source>
+                  <context value="srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea"/>
+                  <element value="coding"/>
+                  <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb"/>
+                </source>
+                <rule>
+                  <name value="OrganizationIdentifierStandortnummerTypeCodingId258779ca"/>
+                  <source>
+                    <context value="srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb"/>
+                    <element value="id"/>
+                    <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerTypeCodingId6d05c"/>
+                  </source>
+                  <target>
+                    <context value="tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9"/>
+                    <contextType value="variable"/>
+                    <element value="id"/>
+                    <variable value="tgtOrganizationDirectoryIdentifierStandortnummerTypeCodingIee6c2"/>
+                  </target>
+                  <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type.coding | Quelle: Organization.identifier:Standortnummer.type.coding.id"/>
+                </rule>
+              </rule>
+            </rule>
+          </rule>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierStandortnummerTypeCodingSystem6e23c9e2"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierStandortnummerTypeCodingSystem6e23c9e2"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+        </source>
+        <target>
+          <context value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+          <contextType value="variable"/>
+          <element value="type"/>
+          <variable value="tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8"/>
+        </target>
+        <rule>
+          <name value="OrganizationIdentifierStandortnummerTypeCodingSystem6e23c9e2"/>
+          <source>
+            <context value="KBVPRFOROrganization"/>
+          </source>
+          <target>
+            <context value="tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8"/>
+            <contextType value="variable"/>
+            <element value="coding"/>
+            <variable value="tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9"/>
+          </target>
+          <rule>
+            <name value="OrganizationIdentifierStandortnummerTypeCodingSystem6e23c9e2"/>
+            <source>
+              <context value="KBVPRFOROrganization"/>
+              <element value="identifier"/>
+              <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8"/>
+            </source>
+            <rule>
+              <name value="OrganizationIdentifierStandortnummerTypeCodingSystem6e23c9e2"/>
+              <source>
+                <context value="srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8"/>
+                <element value="type"/>
+                <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea"/>
+              </source>
+              <rule>
+                <name value="OrganizationIdentifierStandortnummerTypeCodingSystem6e23c9e2"/>
+                <source>
+                  <context value="srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea"/>
+                  <element value="coding"/>
+                  <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb"/>
+                </source>
+                <rule>
+                  <name value="OrganizationIdentifierStandortnummerTypeCodingSystem6e23c9e2"/>
+                  <source>
+                    <context value="srcKBVPRFOROrganizationIdentifierStandortnummerTypeCoding310c9fb"/>
+                    <element value="system"/>
+                    <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerTypeCodingSy15c60"/>
+                  </source>
+                  <target>
+                    <context value="tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9"/>
+                    <contextType value="variable"/>
+                    <element value="system"/>
+                    <variable value="tgtOrganizationDirectoryIdentifierStandortnummerTypeCodingS08961"/>
+                  </target>
+                  <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type.coding | Quelle: Organization.identifier:Standortnummer.type.coding.system"/>
+                </rule>
+              </rule>
+            </rule>
+          </rule>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierStandortnummerTypeCodingUserselect6d28848a"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierStandortnummerTypeCodingUserselect6d28848a"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+        </source>
+        <target>
+          <context value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+          <contextType value="variable"/>
+          <element value="type"/>
+          <variable value="tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8"/>
+        </target>
+        <rule>
+          <name value="OrganizationIdentifierStandortnummerTypeCodingUserselect6d28848a"/>
+          <source>
+            <context value="KBVPRFOROrganization"/>
+          </source>
+          <target>
+            <context value="tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8"/>
+            <contextType value="variable"/>
+            <element value="coding"/>
+            <variable value="tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9"/>
+          </target>
+          <rule>
+            <name value="OrganizationIdentifierStandortnummerTypeCodingUserselect6d28848a"/>
+            <source>
+              <context value="KBVPRFOROrganization"/>
+              <variable value="manualsrcOrganizationIdentifierStandortnummerTypeCodingUserselec"/>
+            </source>
+            <target>
+              <context value="tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9"/>
+              <contextType value="variable"/>
+              <element value="userSelected"/>
+              <variable value="tgtOrganizationDirectoryIdentifierStandortnummerTypeCodingU8892f"/>
+            </target>
+            <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type.coding | Quelle: Organization.identifier:Standortnummer.type.coding.userSelected"/>
+          </rule>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierStandortnummerTypeCodingVersion7f7b6fac"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierStandortnummerTypeCodingVersion7f7b6fac"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+        </source>
+        <target>
+          <context value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+          <contextType value="variable"/>
+          <element value="type"/>
+          <variable value="tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8"/>
+        </target>
+        <rule>
+          <name value="OrganizationIdentifierStandortnummerTypeCodingVersion7f7b6fac"/>
+          <source>
+            <context value="KBVPRFOROrganization"/>
+          </source>
+          <target>
+            <context value="tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8"/>
+            <contextType value="variable"/>
+            <element value="coding"/>
+            <variable value="tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9"/>
+          </target>
+          <rule>
+            <name value="OrganizationIdentifierStandortnummerTypeCodingVersion7f7b6fac"/>
+            <source>
+              <context value="KBVPRFOROrganization"/>
+              <variable value="manualsrcOrganizationIdentifierStandortnummerTypeCodingVersion7f"/>
+            </source>
+            <target>
+              <context value="tgtOrganizationDirectoryIdentifierStandortnummerTypeCoding3499c9"/>
+              <contextType value="variable"/>
+              <element value="version"/>
+              <variable value="tgtOrganizationDirectoryIdentifierStandortnummerTypeCodingV7ff49"/>
+            </target>
+            <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type.coding | Quelle: Organization.identifier:Standortnummer.type.coding.version"/>
+          </rule>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierStandortnummerTypeExtension49394714"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierStandortnummerTypeExtension49394714"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+        </source>
+        <target>
+          <context value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+          <contextType value="variable"/>
+          <element value="type"/>
+          <variable value="tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8"/>
+        </target>
+        <rule>
+          <name value="OrganizationIdentifierStandortnummerTypeExtension49394714"/>
+          <source>
+            <context value="KBVPRFOROrganization"/>
+            <element value="identifier"/>
+            <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8"/>
+          </source>
+          <rule>
+            <name value="OrganizationIdentifierStandortnummerTypeExtension49394714"/>
+            <source>
+              <context value="srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8"/>
+              <element value="type"/>
+              <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea"/>
+            </source>
+            <rule>
+              <name value="OrganizationIdentifierStandortnummerTypeExtension49394714"/>
+              <source>
+                <context value="srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea"/>
+                <element value="extension"/>
+                <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerTypeExtensiode8e7"/>
+              </source>
+              <target>
+                <context value="tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8"/>
+                <contextType value="variable"/>
+                <element value="extension"/>
+                <variable value="tgtOrganizationDirectoryIdentifierStandortnummerTypeExtensibf32c"/>
+              </target>
+              <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type | Quelle: Organization.identifier:Standortnummer.type.extension"/>
+            </rule>
+          </rule>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierStandortnummerTypeId8b0e3128"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierStandortnummerTypeId8b0e3128"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+        </source>
+        <target>
+          <context value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+          <contextType value="variable"/>
+          <element value="type"/>
+          <variable value="tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8"/>
+        </target>
+        <rule>
+          <name value="OrganizationIdentifierStandortnummerTypeId8b0e3128"/>
+          <source>
+            <context value="KBVPRFOROrganization"/>
+            <element value="identifier"/>
+            <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8"/>
+          </source>
+          <rule>
+            <name value="OrganizationIdentifierStandortnummerTypeId8b0e3128"/>
+            <source>
+              <context value="srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8"/>
+              <element value="type"/>
+              <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea"/>
+            </source>
+            <rule>
+              <name value="OrganizationIdentifierStandortnummerTypeId8b0e3128"/>
+              <source>
+                <context value="srcKBVPRFOROrganizationIdentifierStandortnummerTypef8863bea"/>
+                <element value="id"/>
+                <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerTypeId113a0138"/>
+              </source>
+              <target>
+                <context value="tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8"/>
+                <contextType value="variable"/>
+                <element value="id"/>
+                <variable value="tgtOrganizationDirectoryIdentifierStandortnummerTypeId43ddbb1f"/>
+              </target>
+              <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type | Quelle: Organization.identifier:Standortnummer.type.id"/>
+            </rule>
+          </rule>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierStandortnummerTypeTextf9fa5866"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierStandortnummerTypeTextf9fa5866"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+        </source>
+        <target>
+          <context value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+          <contextType value="variable"/>
+          <element value="type"/>
+          <variable value="tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8"/>
+        </target>
+        <rule>
+          <name value="OrganizationIdentifierStandortnummerTypeTextf9fa5866"/>
+          <source>
+            <context value="KBVPRFOROrganization"/>
+            <variable value="manualsrcOrganizationIdentifierStandortnummerTypeTextf9fa5866"/>
+          </source>
+          <target>
+            <context value="tgtOrganizationDirectoryIdentifierStandortnummerTypef5d213b8"/>
+            <contextType value="variable"/>
+            <element value="text"/>
+            <variable value="tgtOrganizationDirectoryIdentifierStandortnummerTypeText0ddc5778"/>
+          </target>
+          <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer.type | Quelle: Organization.identifier:Standortnummer.type.text"/>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierStandortnummerUsef813ffc0"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierStandortnummerUsef813ffc0"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+          <element value="identifier"/>
+          <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8"/>
+        </source>
+        <rule>
+          <name value="OrganizationIdentifierStandortnummerUsef813ffc0"/>
+          <source>
+            <context value="srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8"/>
+            <element value="use"/>
+            <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerUse36cd7c94"/>
+          </source>
+          <target>
+            <context value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+            <contextType value="variable"/>
+            <element value="use"/>
+            <variable value="tgtOrganizationDirectoryIdentifierStandortnummerUse6fcb2e71"/>
+          </target>
+          <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.use"/>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierStandortnummerValue889a3ec2"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierStandortnummerValue889a3ec2"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+          <element value="identifier"/>
+          <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8"/>
+        </source>
+        <rule>
+          <name value="OrganizationIdentifierStandortnummerValue889a3ec2"/>
+          <source>
+            <context value="srcKBVPRFOROrganizationIdentifierStandortnummerfcd383b8"/>
+            <element value="value"/>
+            <variable value="srcKBVPRFOROrganizationIdentifierStandortnummerValue2d1e069b"/>
+          </source>
+          <target>
+            <context value="tgtOrganizationDirectoryIdentifierStandortnummer24d4148f"/>
+            <contextType value="variable"/>
+            <element value="value"/>
+            <variable value="tgtOrganizationDirectoryIdentifierStandortnummerValuec6b2531d"/>
+          </target>
+          <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Standortnummer | Quelle: Organization.identifier:Standortnummer.value"/>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierTelematikId0039d930"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+        <element value="identifier"/>
+        <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+      </target>
+      <documentation value="Feld wird nicht gemappt | Quelle: Organization.identifier:Telematik-ID"/>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierTelematikIdAssigneraf75e132"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierTelematikIdAssigneraf75e132"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+          <variable value="manualsrcOrganizationIdentifierTelematikIdAssigneraf75e132"/>
+        </source>
+        <target>
+          <context value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+          <contextType value="variable"/>
+          <element value="assigner"/>
+          <variable value="tgtOrganizationDirectoryIdentifierTelematikIdAssigner0b759bdc"/>
+        </target>
+        <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.assigner"/>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierTelematikIdExtension3ccd9ff9"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierTelematikIdExtension3ccd9ff9"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+          <element value="identifier"/>
+          <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62"/>
+        </source>
+        <rule>
+          <name value="OrganizationIdentifierTelematikIdExtension3ccd9ff9"/>
+          <source>
+            <context value="srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62"/>
+            <element value="extension"/>
+            <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdExtensione7226697"/>
+          </source>
+          <target>
+            <context value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+            <contextType value="variable"/>
+            <element value="extension"/>
+            <variable value="tgtOrganizationDirectoryIdentifierTelematikIdExtension48ed1390"/>
+          </target>
+          <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.extension"/>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierTelematikIdId448056d2"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierTelematikIdId448056d2"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+          <element value="identifier"/>
+          <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62"/>
+        </source>
+        <rule>
+          <name value="OrganizationIdentifierTelematikIdId448056d2"/>
+          <source>
+            <context value="srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62"/>
+            <element value="id"/>
+            <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdIdc0d647c7"/>
+          </source>
+          <target>
+            <context value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+            <contextType value="variable"/>
+            <element value="id"/>
+            <variable value="tgtOrganizationDirectoryIdentifierTelematikIdId34c19804"/>
+          </target>
+          <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.id"/>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierTelematikIdPeriod85f499e3"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierTelematikIdPeriod85f499e3"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+          <variable value="manualsrcOrganizationIdentifierTelematikIdPeriod85f499e3"/>
+        </source>
+        <target>
+          <context value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+          <contextType value="variable"/>
+          <element value="period"/>
+          <variable value="tgtOrganizationDirectoryIdentifierTelematikIdPeriod9c1bc68d"/>
+        </target>
+        <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.period"/>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierTelematikIdSystemda3650e1"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierTelematikIdSystemda3650e1"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+          <element value="identifier"/>
+          <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62"/>
+        </source>
+        <rule>
+          <name value="OrganizationIdentifierTelematikIdSystemda3650e1"/>
+          <source>
+            <context value="srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62"/>
+            <element value="system"/>
+            <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdSystema0016342"/>
+          </source>
+          <target>
+            <context value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <variable value="tgtOrganizationDirectoryIdentifierTelematikIdSystema23e36d6"/>
+          </target>
+          <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.system"/>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierTelematikIdTyped07f8b5e"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierTelematikIdTyped07f8b5e"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+          <element value="identifier"/>
+          <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62"/>
+        </source>
+        <rule>
+          <name value="OrganizationIdentifierTelematikIdTyped07f8b5e"/>
+          <source>
+            <context value="srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62"/>
+            <element value="type"/>
+            <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f"/>
+          </source>
+          <target>
+            <context value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+            <contextType value="variable"/>
+            <element value="type"/>
+            <variable value="tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d"/>
+          </target>
+          <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.type"/>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierTelematikIdTypeCoding064be19f"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierTelematikIdTypeCoding064be19f"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+        </source>
+        <target>
+          <context value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+          <contextType value="variable"/>
+          <element value="type"/>
+          <variable value="tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d"/>
+        </target>
+        <rule>
+          <name value="OrganizationIdentifierTelematikIdTypeCoding064be19f"/>
+          <source>
+            <context value="KBVPRFOROrganization"/>
+            <element value="identifier"/>
+            <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62"/>
+          </source>
+          <rule>
+            <name value="OrganizationIdentifierTelematikIdTypeCoding064be19f"/>
+            <source>
+              <context value="srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62"/>
+              <element value="type"/>
+              <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f"/>
+            </source>
+            <rule>
+              <name value="OrganizationIdentifierTelematikIdTypeCoding064be19f"/>
+              <source>
+                <context value="srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f"/>
+                <element value="coding"/>
+                <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62"/>
+              </source>
+              <target>
+                <context value="tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d"/>
+                <contextType value="variable"/>
+                <element value="coding"/>
+                <variable value="tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f"/>
+              </target>
+              <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type | Quelle: Organization.identifier:Telematik-ID.type.coding"/>
+            </rule>
+          </rule>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierTelematikIdTypeCodingCode7d531fea"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierTelematikIdTypeCodingCode7d531fea"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+        </source>
+        <target>
+          <context value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+          <contextType value="variable"/>
+          <element value="type"/>
+          <variable value="tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d"/>
+        </target>
+        <rule>
+          <name value="OrganizationIdentifierTelematikIdTypeCodingCode7d531fea"/>
+          <source>
+            <context value="KBVPRFOROrganization"/>
+          </source>
+          <target>
+            <context value="tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d"/>
+            <contextType value="variable"/>
+            <element value="coding"/>
+            <variable value="tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f"/>
+          </target>
+          <rule>
+            <name value="OrganizationIdentifierTelematikIdTypeCodingCode7d531fea"/>
+            <source>
+              <context value="KBVPRFOROrganization"/>
+              <element value="identifier"/>
+              <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62"/>
+            </source>
+            <rule>
+              <name value="OrganizationIdentifierTelematikIdTypeCodingCode7d531fea"/>
+              <source>
+                <context value="srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62"/>
+                <element value="type"/>
+                <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f"/>
+              </source>
+              <rule>
+                <name value="OrganizationIdentifierTelematikIdTypeCodingCode7d531fea"/>
+                <source>
+                  <context value="srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f"/>
+                  <element value="coding"/>
+                  <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62"/>
+                </source>
+                <rule>
+                  <name value="OrganizationIdentifierTelematikIdTypeCodingCode7d531fea"/>
+                  <source>
+                    <context value="srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62"/>
+                    <element value="code"/>
+                    <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingCodeca298d"/>
+                  </source>
+                  <target>
+                    <context value="tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f"/>
+                    <contextType value="variable"/>
+                    <element value="code"/>
+                    <variable value="tgtOrganizationDirectoryIdentifierTelematikIdTypeCodingCode3835b"/>
+                  </target>
+                  <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type.coding | Quelle: Organization.identifier:Telematik-ID.type.coding.code"/>
+                </rule>
+              </rule>
+            </rule>
+          </rule>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierTelematikIdTypeCodingDisplaycfad8e3a"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierTelematikIdTypeCodingDisplaycfad8e3a"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+        </source>
+        <target>
+          <context value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+          <contextType value="variable"/>
+          <element value="type"/>
+          <variable value="tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d"/>
+        </target>
+        <rule>
+          <name value="OrganizationIdentifierTelematikIdTypeCodingDisplaycfad8e3a"/>
+          <source>
+            <context value="KBVPRFOROrganization"/>
+          </source>
+          <target>
+            <context value="tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d"/>
+            <contextType value="variable"/>
+            <element value="coding"/>
+            <variable value="tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f"/>
+          </target>
+          <rule>
+            <name value="OrganizationIdentifierTelematikIdTypeCodingDisplaycfad8e3a"/>
+            <source>
+              <context value="KBVPRFOROrganization"/>
+              <variable value="manualsrcOrganizationIdentifierTelematikIdTypeCodingDisplaycfad8"/>
+            </source>
+            <target>
+              <context value="tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f"/>
+              <contextType value="variable"/>
+              <element value="display"/>
+              <variable value="tgtOrganizationDirectoryIdentifierTelematikIdTypeCodingDispae203"/>
+            </target>
+            <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type.coding | Quelle: Organization.identifier:Telematik-ID.type.coding.display"/>
+          </rule>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierTelematikIdTypeCodingExtensiona4ee2a5a"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierTelematikIdTypeCodingExtensiona4ee2a5a"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+        </source>
+        <target>
+          <context value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+          <contextType value="variable"/>
+          <element value="type"/>
+          <variable value="tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d"/>
+        </target>
+        <rule>
+          <name value="OrganizationIdentifierTelematikIdTypeCodingExtensiona4ee2a5a"/>
+          <source>
+            <context value="KBVPRFOROrganization"/>
+          </source>
+          <target>
+            <context value="tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d"/>
+            <contextType value="variable"/>
+            <element value="coding"/>
+            <variable value="tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f"/>
+          </target>
+          <rule>
+            <name value="OrganizationIdentifierTelematikIdTypeCodingExtensiona4ee2a5a"/>
+            <source>
+              <context value="KBVPRFOROrganization"/>
+              <element value="identifier"/>
+              <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62"/>
+            </source>
+            <rule>
+              <name value="OrganizationIdentifierTelematikIdTypeCodingExtensiona4ee2a5a"/>
+              <source>
+                <context value="srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62"/>
+                <element value="type"/>
+                <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f"/>
+              </source>
+              <rule>
+                <name value="OrganizationIdentifierTelematikIdTypeCodingExtensiona4ee2a5a"/>
+                <source>
+                  <context value="srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f"/>
+                  <element value="coding"/>
+                  <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62"/>
+                </source>
+                <rule>
+                  <name value="OrganizationIdentifierTelematikIdTypeCodingExtensiona4ee2a5a"/>
+                  <source>
+                    <context value="srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62"/>
+                    <element value="extension"/>
+                    <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingExtenbfcca"/>
+                  </source>
+                  <target>
+                    <context value="tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f"/>
+                    <contextType value="variable"/>
+                    <element value="extension"/>
+                    <variable value="tgtOrganizationDirectoryIdentifierTelematikIdTypeCodingExtecaf9c"/>
+                  </target>
+                  <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type.coding | Quelle: Organization.identifier:Telematik-ID.type.coding.extension"/>
+                </rule>
+              </rule>
+            </rule>
+          </rule>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierTelematikIdTypeCodingIdeab4d854"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierTelematikIdTypeCodingIdeab4d854"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+        </source>
+        <target>
+          <context value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+          <contextType value="variable"/>
+          <element value="type"/>
+          <variable value="tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d"/>
+        </target>
+        <rule>
+          <name value="OrganizationIdentifierTelematikIdTypeCodingIdeab4d854"/>
+          <source>
+            <context value="KBVPRFOROrganization"/>
+          </source>
+          <target>
+            <context value="tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d"/>
+            <contextType value="variable"/>
+            <element value="coding"/>
+            <variable value="tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f"/>
+          </target>
+          <rule>
+            <name value="OrganizationIdentifierTelematikIdTypeCodingIdeab4d854"/>
+            <source>
+              <context value="KBVPRFOROrganization"/>
+              <element value="identifier"/>
+              <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62"/>
+            </source>
+            <rule>
+              <name value="OrganizationIdentifierTelematikIdTypeCodingIdeab4d854"/>
+              <source>
+                <context value="srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62"/>
+                <element value="type"/>
+                <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f"/>
+              </source>
+              <rule>
+                <name value="OrganizationIdentifierTelematikIdTypeCodingIdeab4d854"/>
+                <source>
+                  <context value="srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f"/>
+                  <element value="coding"/>
+                  <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62"/>
+                </source>
+                <rule>
+                  <name value="OrganizationIdentifierTelematikIdTypeCodingIdeab4d854"/>
+                  <source>
+                    <context value="srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62"/>
+                    <element value="id"/>
+                    <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingIda991e5fb"/>
+                  </source>
+                  <target>
+                    <context value="tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f"/>
+                    <contextType value="variable"/>
+                    <element value="id"/>
+                    <variable value="tgtOrganizationDirectoryIdentifierTelematikIdTypeCodingId722b81d"/>
+                  </target>
+                  <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type.coding | Quelle: Organization.identifier:Telematik-ID.type.coding.id"/>
+                </rule>
+              </rule>
+            </rule>
+          </rule>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierTelematikIdTypeCodingSystem558e0af7"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierTelematikIdTypeCodingSystem558e0af7"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+        </source>
+        <target>
+          <context value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+          <contextType value="variable"/>
+          <element value="type"/>
+          <variable value="tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d"/>
+        </target>
+        <rule>
+          <name value="OrganizationIdentifierTelematikIdTypeCodingSystem558e0af7"/>
+          <source>
+            <context value="KBVPRFOROrganization"/>
+          </source>
+          <target>
+            <context value="tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d"/>
+            <contextType value="variable"/>
+            <element value="coding"/>
+            <variable value="tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f"/>
+          </target>
+          <rule>
+            <name value="OrganizationIdentifierTelematikIdTypeCodingSystem558e0af7"/>
+            <source>
+              <context value="KBVPRFOROrganization"/>
+              <element value="identifier"/>
+              <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62"/>
+            </source>
+            <rule>
+              <name value="OrganizationIdentifierTelematikIdTypeCodingSystem558e0af7"/>
+              <source>
+                <context value="srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62"/>
+                <element value="type"/>
+                <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f"/>
+              </source>
+              <rule>
+                <name value="OrganizationIdentifierTelematikIdTypeCodingSystem558e0af7"/>
+                <source>
+                  <context value="srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f"/>
+                  <element value="coding"/>
+                  <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62"/>
+                </source>
+                <rule>
+                  <name value="OrganizationIdentifierTelematikIdTypeCodingSystem558e0af7"/>
+                  <source>
+                    <context value="srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingca297e62"/>
+                    <element value="system"/>
+                    <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdTypeCodingSyste8713f"/>
+                  </source>
+                  <target>
+                    <context value="tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f"/>
+                    <contextType value="variable"/>
+                    <element value="system"/>
+                    <variable value="tgtOrganizationDirectoryIdentifierTelematikIdTypeCodingSyst18578"/>
+                  </target>
+                  <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type.coding | Quelle: Organization.identifier:Telematik-ID.type.coding.system"/>
+                </rule>
+              </rule>
+            </rule>
+          </rule>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierTelematikIdTypeCodingUserselectede5c50e18"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierTelematikIdTypeCodingUserselectede5c50e18"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+        </source>
+        <target>
+          <context value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+          <contextType value="variable"/>
+          <element value="type"/>
+          <variable value="tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d"/>
+        </target>
+        <rule>
+          <name value="OrganizationIdentifierTelematikIdTypeCodingUserselectede5c50e18"/>
+          <source>
+            <context value="KBVPRFOROrganization"/>
+          </source>
+          <target>
+            <context value="tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d"/>
+            <contextType value="variable"/>
+            <element value="coding"/>
+            <variable value="tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f"/>
+          </target>
+          <rule>
+            <name value="OrganizationIdentifierTelematikIdTypeCodingUserselectede5c50e18"/>
+            <source>
+              <context value="KBVPRFOROrganization"/>
+              <variable value="manualsrcOrganizationIdentifierTelematikIdTypeCodingUserselected"/>
+            </source>
+            <target>
+              <context value="tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f"/>
+              <contextType value="variable"/>
+              <element value="userSelected"/>
+              <variable value="tgtOrganizationDirectoryIdentifierTelematikIdTypeCodingUser76985"/>
+            </target>
+            <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type.coding | Quelle: Organization.identifier:Telematik-ID.type.coding.userSelected"/>
+          </rule>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierTelematikIdTypeCodingVersionfc1c4789"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierTelematikIdTypeCodingVersionfc1c4789"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+        </source>
+        <target>
+          <context value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+          <contextType value="variable"/>
+          <element value="type"/>
+          <variable value="tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d"/>
+        </target>
+        <rule>
+          <name value="OrganizationIdentifierTelematikIdTypeCodingVersionfc1c4789"/>
+          <source>
+            <context value="KBVPRFOROrganization"/>
+          </source>
+          <target>
+            <context value="tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d"/>
+            <contextType value="variable"/>
+            <element value="coding"/>
+            <variable value="tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f"/>
+          </target>
+          <rule>
+            <name value="OrganizationIdentifierTelematikIdTypeCodingVersionfc1c4789"/>
+            <source>
+              <context value="KBVPRFOROrganization"/>
+              <variable value="manualsrcOrganizationIdentifierTelematikIdTypeCodingVersionfc1c4"/>
+            </source>
+            <target>
+              <context value="tgtOrganizationDirectoryIdentifierTelematikIdTypeCoding03aa2b3f"/>
+              <contextType value="variable"/>
+              <element value="version"/>
+              <variable value="tgtOrganizationDirectoryIdentifierTelematikIdTypeCodingVersc7e1b"/>
+            </target>
+            <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type.coding | Quelle: Organization.identifier:Telematik-ID.type.coding.version"/>
+          </rule>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierTelematikIdTypeExtensionf49ab2a4"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierTelematikIdTypeExtensionf49ab2a4"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+        </source>
+        <target>
+          <context value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+          <contextType value="variable"/>
+          <element value="type"/>
+          <variable value="tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d"/>
+        </target>
+        <rule>
+          <name value="OrganizationIdentifierTelematikIdTypeExtensionf49ab2a4"/>
+          <source>
+            <context value="KBVPRFOROrganization"/>
+            <element value="identifier"/>
+            <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62"/>
+          </source>
+          <rule>
+            <name value="OrganizationIdentifierTelematikIdTypeExtensionf49ab2a4"/>
+            <source>
+              <context value="srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62"/>
+              <element value="type"/>
+              <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f"/>
+            </source>
+            <rule>
+              <name value="OrganizationIdentifierTelematikIdTypeExtensionf49ab2a4"/>
+              <source>
+                <context value="srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f"/>
+                <element value="extension"/>
+                <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdTypeExtensionedc9dcb"/>
+              </source>
+              <target>
+                <context value="tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d"/>
+                <contextType value="variable"/>
+                <element value="extension"/>
+                <variable value="tgtOrganizationDirectoryIdentifierTelematikIdTypeExtensionf2a71c"/>
+              </target>
+              <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type | Quelle: Organization.identifier:Telematik-ID.type.extension"/>
+            </rule>
+          </rule>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierTelematikIdTypeId0e9359b5"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierTelematikIdTypeId0e9359b5"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+        </source>
+        <target>
+          <context value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+          <contextType value="variable"/>
+          <element value="type"/>
+          <variable value="tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d"/>
+        </target>
+        <rule>
+          <name value="OrganizationIdentifierTelematikIdTypeId0e9359b5"/>
+          <source>
+            <context value="KBVPRFOROrganization"/>
+            <element value="identifier"/>
+            <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62"/>
+          </source>
+          <rule>
+            <name value="OrganizationIdentifierTelematikIdTypeId0e9359b5"/>
+            <source>
+              <context value="srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62"/>
+              <element value="type"/>
+              <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f"/>
+            </source>
+            <rule>
+              <name value="OrganizationIdentifierTelematikIdTypeId0e9359b5"/>
+              <source>
+                <context value="srcKBVPRFOROrganizationIdentifierTelematikIdType4886f86f"/>
+                <element value="id"/>
+                <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdTypeId017ce1dc"/>
+              </source>
+              <target>
+                <context value="tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d"/>
+                <contextType value="variable"/>
+                <element value="id"/>
+                <variable value="tgtOrganizationDirectoryIdentifierTelematikIdTypeIdf2382f56"/>
+              </target>
+              <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type | Quelle: Organization.identifier:Telematik-ID.type.id"/>
+            </rule>
+          </rule>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierTelematikIdTypeText7ab931be"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierTelematikIdTypeText7ab931be"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+        </source>
+        <target>
+          <context value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+          <contextType value="variable"/>
+          <element value="type"/>
+          <variable value="tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d"/>
+        </target>
+        <rule>
+          <name value="OrganizationIdentifierTelematikIdTypeText7ab931be"/>
+          <source>
+            <context value="KBVPRFOROrganization"/>
+            <variable value="manualsrcOrganizationIdentifierTelematikIdTypeText7ab931be"/>
+          </source>
+          <target>
+            <context value="tgtOrganizationDirectoryIdentifierTelematikIdType31a4505d"/>
+            <contextType value="variable"/>
+            <element value="text"/>
+            <variable value="tgtOrganizationDirectoryIdentifierTelematikIdTypeTextc866c291"/>
+          </target>
+          <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type | Quelle: Organization.identifier:Telematik-ID.type.text"/>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierTelematikIdUsed61478ae"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierTelematikIdUsed61478ae"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+          <element value="identifier"/>
+          <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62"/>
+        </source>
+        <rule>
+          <name value="OrganizationIdentifierTelematikIdUsed61478ae"/>
+          <source>
+            <context value="srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62"/>
+            <element value="use"/>
+            <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdUsec137ced5"/>
+          </source>
+          <target>
+            <context value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+            <contextType value="variable"/>
+            <element value="use"/>
+            <variable value="tgtOrganizationDirectoryIdentifierTelematikIdUsec8fa2ac8"/>
+          </target>
+          <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.use"/>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierTelematikIdValue69222509"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+      </target>
+      <rule>
+        <name value="OrganizationIdentifierTelematikIdValue69222509"/>
+        <source>
+          <context value="KBVPRFOROrganization"/>
+          <element value="identifier"/>
+          <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62"/>
+        </source>
+        <rule>
+          <name value="OrganizationIdentifierTelematikIdValue69222509"/>
+          <source>
+            <context value="srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62"/>
+            <element value="value"/>
+            <variable value="srcKBVPRFOROrganizationIdentifierTelematikIdValue56895608"/>
+          </source>
+          <target>
+            <context value="tgtOrganizationDirectoryIdentifierTelematikIdfbd99394"/>
+            <contextType value="variable"/>
+            <element value="value"/>
+            <variable value="tgtOrganizationDirectoryIdentifierTelematikIdValue0aaf50e9"/>
+          </target>
+          <documentation value="Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.value"/>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="OrganizationIdentifierTelematikidd2cf7b80"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+        <variable value="manualsrcOrganizationIdentifierTelematikidd2cf7b80"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtOrganizationDirectoryIdentifierTelematikidc36ffe12"/>
+      </target>
+      <documentation value="Manual action required | Telematik-ID wird aus idNummer → aus dem ACCESS_TOKEN der Anfrage bezogen | Quelle: Organization.identifier:TelematikID"/>
+    </rule>
+    <rule>
+      <name value="OrganizationMeta89bf012b"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+        <element value="meta"/>
+        <variable value="srcKBVPRFOROrganizationMeta25dbc5a5"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="meta"/>
+        <variable value="tgtOrganizationDirectoryMetacbe6e64f"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Meta"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="OrganizationMetaProfile4d6334ac"/>
+        <source>
+          <context value="srcKBVPRFOROrganizationMeta25dbc5a5"/>
+          <variable value="srcOrganizationMetaProfile4d6334ac"/>
+        </source>
+        <target>
+          <context value="tgtOrganizationDirectoryMetacbe6e64f"/>
+          <contextType value="variable"/>
+          <element value="profile"/>
+          <variable value="tgtOrganizationMetaProfile4d6334ac"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory"/>
+          </parameter>
+        </target>
+        <documentation value="Fixed value 'https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory'"/>
+      </rule>
+      <documentation value="Automatic copy"/>
+    </rule>
+    <rule>
+      <name value="OrganizationName61d5a4f1"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+        <element value="name"/>
+        <variable value="srcKBVPRFOROrganizationNameabbbdc85"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="name"/>
+        <variable value="tgtOrganizationDirectoryName0e007323"/>
+      </target>
+      <documentation value="Manual action required | organizationName → aus dem ACCESS_TOKEN der Anfrage beziehen | Quelle: Organization.name"/>
+    </rule>
+    <rule>
+      <name value="OrganizationTelecomb3f55102"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+        <element value="telecom"/>
+        <variable value="srcKBVPRFOROrganizationTelecomca093d46"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="telecom"/>
+        <variable value="tgtOrganizationDirectoryTelecom22bcd8ec"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="srcKBVPRFOROrganizationTelecomca093d46"/>
+        </parameter>
+      </target>
+      <documentation value="Automatic copy"/>
+    </rule>
+    <rule>
+      <name value="OrganizationTypeProfession6b535de2"/>
+      <source>
+        <context value="KBVPRFOROrganization"/>
+        <variable value="manualsrcOrganizationTypeProfession6b535de2"/>
+      </source>
+      <target>
+        <context value="OrganizationDirectory"/>
+        <contextType value="variable"/>
+        <element value="type"/>
+        <variable value="tgtOrganizationDirectoryTypeProfessionf2d05bbb"/>
+      </target>
+      <documentation value="Manual action required | professionOID → aus dem ACCESS_TOKEN der Anfrage | Quelle: Organization.type:profession"/>
+    </rule>
+  </group>
+</StructureMap>

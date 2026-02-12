@@ -1,0 +1,109 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/erp/CapabilityStatement/erp-fachdienst-server> a fhir:CapabilityStatement ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "erp-fachdienst-server"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "https://gematik.de/fhir/ti/StructureDefinition/extension-base-url"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/ti/StructureDefinition/extension-base-url>
+     ] ;
+     fhir:value [
+       a fhir:String ;
+       fhir:v "http://todo"
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "statusCode"^^xsd:anyURI ;
+         fhir:l fhir:statusCode
+       ] ;
+       fhir:value [
+         a fhir:String ;
+         fhir:v "423"
+       ]
+     ] [
+       fhir:url [
+         fhir:v "description"^^xsd:anyURI ;
+         fhir:l fhir:description
+       ] ;
+       fhir:value [
+         a fhir:String ;
+         fhir:v "If the insurant objected to the medication process or objected to the submission of prescription and dispensation data into the ePA system, the Medication Service is locked."
+       ]
+     ] [
+       fhir:url [
+         fhir:v "responseType"^^xsd:anyURI ;
+         fhir:l fhir:responseType
+       ] ;
+       fhir:value [
+         a fhir:String ;
+         fhir:v "application/json"
+       ]
+     ] [
+       fhir:url [
+         fhir:v "errorCode"^^xsd:anyURI ;
+         fhir:l fhir:errorCode
+       ] ;
+       fhir:value [
+         a fhir:String ;
+         fhir:v "locked"
+       ]
+     ] ) ;
+     fhir:url [
+       fhir:v "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info>
+     ]
+  ] ) ; # 
+  fhir:url [
+     fhir:v "https://gematik.de/fhir/erp/CapabilityStatement/erp-fachdienst-server"^^xsd:anyURI ;
+     fhir:l <https://gematik.de/fhir/erp/CapabilityStatement/erp-fachdienst-server>
+  ] ; # 
+  fhir:version [ fhir:v "1.0.0-draft"] ; # 
+  fhir:name [ fhir:v "ERPFachdienstServer"] ; # 
+  fhir:title [ fhir:v "ERP CapabilityStatement für den E-Rezept-Fachdienst"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2025-12-15"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "gematik GmbH"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "gematik GmbH" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://gematik.de" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "erp-umsetzung@gematik.de" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "ERP CapabilityStatement für den E-Rezept-Fachdienst"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "DE" ] ;
+       fhir:display [ fhir:v "Germany" ]
+     ] )
+  ] ) ; # 
+  fhir:kind [ fhir:v "requirements"] ; # 
+  fhir:fhirVersion [ fhir:v "4.0.1"] ; # 
+  fhir:format ( [ fhir:v "application/fhir+json"] [ fhir:v "application/fhir+xml"] ) ; # 
+  fhir:rest ( [
+     fhir:mode [ fhir:v "server" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CapabilityStatement xmlns="http://hl7.org/fhir">
+  <id value="erp-fachdienst-client"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"/>
+  </meta>
+  <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-base-url">
+    <valueString value="http://todo"/>
+  </extension>
+  <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+    <extension url="statusCode">
+      <valueString value="423"/>
+    </extension>
+    <extension url="description">
+      <valueString value="If the insurant objected to the medication process or objected to the submission of prescription and dispensation data into the ePA system, the Medication Service is locked."/>
+    </extension>
+    <extension url="responseType">
+      <valueString value="application/json"/>
+    </extension>
+    <extension url="errorCode">
+      <valueString value="locked"/>
+    </extension>
+  </extension>
+  <url value="https://gematik.de/fhir/erp/CapabilityStatement/erp-fachdienst-client"/>
+  <version value="1.0.0-draft"/>
+  <name value="ERPFachdienstClient"/>
+  <title value="ERP Capability Statement für Clients des E-Rezept-Fachdienst"/>
+  <status value="draft"/>
+  <date value="2025-12-15"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="erp-umsetzung@gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="Dieses Capability Statement legt die Anforderungen an Clients des E-Rezept-Fachdienst fest. Es definiert die unterstützten Interaktionen, erforderliche HTTP Header sowie erwartete Status Codes."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <kind value="requirements"/>
+  <fhirVersion value="4.0.1"/>
+  <format value="application/fhir+json"/>
+  <format value="application/fhir+xml"/>
+  <rest>
+    <mode value="client"/>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+        <valueCode value="SHALL"/>
+      </extension>
+      <type value="MedicationDispense"/>
+      <supportedProfile value="https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-medicationdispense">
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+      </supportedProfile>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <extension url="statusCode">
+            <valueString value="200"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Successful operation"/>
+          </extension>
+          <valueCode value="SHALL"/>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown search parameter"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_PARAM_UNKNOWN"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Invalid query parameter(s)"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_BAD_SYNTAX"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown resource type"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_UNKNOWN_TYPE"/>
+          </extension>
+        </extension>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <extension url="statusCode">
+            <valueString value="200"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Successful operation"/>
+          </extension>
+          <valueCode value="SHALL"/>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Invalid request"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_BAD_FORMAT"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown resource type"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_UNKNOWN_TYPE"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Resource is not known"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_RESOURCE_ID_FAIL"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="410"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Resource was deleted"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_DELETED"/>
+          </extension>
+        </extension>
+        <code value="read"/>
+      </interaction>
+      <versioning value="versioned-update"/>
+      <readHistory value="true"/>
+      <searchInclude value="MedicationDispense:medication"/>
+      <searchInclude value="MedicationDispense:performer"/>
+      <searchInclude value="MedicationDispense:prescription"/>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+        <name value="_id"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-id"/>
+        <type value="token"/>
+        <documentation value="Resource.id"/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+        <name value="_lastUpdated"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-lastUpdated"/>
+        <type value="date"/>
+        <documentation value="Resource.meta.lastUpdated"/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+        <name value="_has"/>
+        <type value="string"/>
+        <documentation value="Return resources linked to by the given target"/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+        <name value="identifier"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/clinical-identifier"/>
+        <type value="token"/>
+        <documentation value="MedicationDispense.identifier"/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+        <name value="whenhandedover"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/MedicationDispense-whenhandedover"/>
+        <type value="date"/>
+        <documentation value="MedicationDispense.whenHandedOver"/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+        <name value="prescription"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/medications-prescription"/>
+        <type value="reference"/>
+        <documentation value="MedicationDispense.authorizingPrescription"/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+        <name value="performer"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/MedicationDispense-performer"/>
+        <type value="reference"/>
+        <documentation value="MedicationDispense.performer.actor"/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+        <name value="status"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/medications-status"/>
+        <type value="token"/>
+        <documentation value="MedicationDispense.status"/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+        <name value="medication"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/medications-medication"/>
+        <type value="reference"/>
+        <documentation value="MedicationDispense.medication as Reference"/>
+      </searchParam>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+        <valueCode value="MAY"/>
+      </extension>
+      <type value="Task"/>
+      <versioning value="versioned-update"/>
+      <readHistory value="true"/>
+      <operation>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="createOperation"/>
+        <definition value="https://gematik.de/fhir/erp/OperationDefinition/CreateOperation"/>
+      </operation>
+      <operation>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="activateOperation"/>
+        <definition value="https://gematik.de/fhir/erp/OperationDefinition/ActivateOperation"/>
+      </operation>
+      <operation>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="abortOperation"/>
+        <definition value="https://gematik.de/fhir/erp/OperationDefinition/AbortOperation"/>
+      </operation>
+    </resource>
+  </rest>
+</CapabilityStatement>

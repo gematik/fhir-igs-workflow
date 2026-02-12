@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Parameters xmlns="http://hl7.org/fhir">
+  <id value="Parameters-output-example-5"/>
+  <parameter>
+    <name value="rxPrescription"/>
+    <part>
+      <name value="authoredOn"/>
+      <valueDateTime value="2025-05-20"/>
+    </part>
+    <part>
+      <name value="medication"/>
+      <resource>
+        <Medication>
+          <meta>
+            <profile value="https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication"/>
+          </meta>
+          <extension url="https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension">
+            <valueCoding>
+              <code value="00"/>
+            </valueCoding>
+          </extension>
+          <extension url="https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension">
+            <valueBoolean value="false"/>
+          </extension>
+          <code>
+            <coding>
+              <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Type"/>
+              <code value="rezeptur"/>
+            </coding>
+          </code>
+          <form>
+            <text value="Lösung"/>
+          </form>
+        </Medication>
+      </resource>
+    </part>
+    <part>
+      <name value="medicationRequest"/>
+      <resource>
+        <MedicationRequest>
+          <meta>
+            <profile value="https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-request"/>
+          </meta>
+          <extension url="http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta">
+            <extension url="algorithmVersion">
+              <valueString value="1.0.0"/>
+            </extension>
+            <extension url="language">
+              <valueCode value="de-DE"/>
+            </extension>
+          </extension>
+          <extension url="https://gematik.de/fhir/epa-medication/StructureDefinition/indicator-ser-extension">
+            <valueBoolean value="false"/>
+          </extension>
+          <extension url="https://gematik.de/fhir/epa-medication/StructureDefinition/multiple-prescription-extension">
+            <extension url="indicator">
+              <valueBoolean value="false"/>
+            </extension>
+          </extension>
+          <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction">
+            <valueMarkdown value="1–3mal/Tag auf die erkrankten Hautstellen auftragen"/>
+          </extension>
+          <status value="active"/>
+          <intent value="order"/>
+          <medicationReference>
+            <reference value="Medication/5cd916fc-2ae2-4148-b016-911ec5f4c0a5"/>
+          </medicationReference>
+          <authoredOn value="2025-05-20"/>
+          <requester>
+            <reference value="Practitioner/ec5b4fcf-9739-4055-b23c-a5b3a65beb66"/>
+          </requester>
+          <dosageInstruction>
+            <text value="1–3mal/Tag auf die erkrankten Hautstellen auftragen"/>
+          </dosageInstruction>
+          <dispenseRequest>
+            <quantity>
+              <value value="1"/>
+              <unit value="Packung"/>
+            </quantity>
+          </dispenseRequest>
+          <substitution>
+            <allowedBoolean value="true"/>
+          </substitution>
+        </MedicationRequest>
+      </resource>
+    </part>
+    <part>
+      <name value="organization"/>
+      <resource>
+        <Organization>
+          <meta>
+            <profile value="https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory"/>
+          </meta>
+          <telecom>
+            <system value="phone"/>
+            <value value="0301234567"/>
+          </telecom>
+          <telecom>
+            <system value="fax"/>
+            <value value="030123456789"/>
+          </telecom>
+          <telecom>
+            <system value="email"/>
+            <value value="mvz@e-mail.de"/>
+          </telecom>
+          <address>
+            <type value="both"/>
+            <line value="Herbert-Lewin-Platz 2">
+              <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+                <valueString value="2"/>
+              </extension>
+              <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+                <valueString value="Herbert-Lewin-Platz"/>
+              </extension>
+            </line>
+            <city value="Berlin"/>
+            <postalCode value="10623"/>
+            <country value="D"/>
+          </address>
+          <address>
+            <type value="both"/>
+            <line value="Herbert-Lewin-Platz 2">
+              <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+                <valueString value="2"/>
+              </extension>
+              <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+                <valueString value="Herbert-Lewin-Platz"/>
+              </extension>
+            </line>
+            <city value="Berlin"/>
+            <postalCode value="10623"/>
+            <country value="D"/>
+          </address>
+        </Organization>
+      </resource>
+    </part>
+    <part>
+      <name value="practitioner"/>
+      <resource>
+        <Practitioner>
+          <meta>
+            <profile value="https://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory"/>
+          </meta>
+          <name>
+            <use value="official"/>
+            <family value="Schmidt">
+              <extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+                <valueString value="Schmidt"/>
+              </extension>
+            </family>
+            <given value="Hanna"/>
+            <prefix value="Dr.">
+              <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier">
+                <valueCode value="AC"/>
+              </extension>
+            </prefix>
+          </name>
+        </Practitioner>
+      </resource>
+    </part>
+    <part>
+      <name value="prescriptionId"/>
+      <valueString value="160.100.000.000.024.67"/>
+    </part>
+  </parameter>
+</Parameters>

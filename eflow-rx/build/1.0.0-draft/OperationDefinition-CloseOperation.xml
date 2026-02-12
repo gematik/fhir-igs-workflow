@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="CloseOperation"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition CloseOperation</b></p><a name="CloseOperation"> </a><a name="hcCloseOperation"> </a><p>URL: [base]/Task/[id]/$close</p><p>Input parameters Profile:<a href="StructureDefinition-eflow-rx-close-operation-input-parameters.html">GEM ERP PR CloseOperation Input</a></p><p>Output parameters Profile:<a href="StructureDefinition-eflow-rx-close-operation-output-parameters.html">GEM ERP PR CloseOperation Output</a></p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>secret</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td/><td><div><p>Der secret Parameter, der einer Apotheke den exklusiven Zugriff auf die Aufgabe als Teil der URL ermöglicht. Dieser Parameter muss dem Wert entsprechen, der in Task.identifier:Secret gespeichert ist. Andernfalls wird der Vorgang mit einem Fehler abgebrochen.</p>
+</div></td></tr><tr><td>IN</td><td>rxDispensation</td><td/><td>0..*</td><td/><td/><td><div><p>Informationen zu abgegebenen Medikament(en)</p>
+</div></td></tr><tr><td>IN</td><td>rxDispensation.medicationDispense</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/medicationdispense.html">MedicationDispense</a></td><td/><td/></tr><tr><td>IN</td><td>rxDispensation.medication</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/medication.html">Medication</a></td><td/><td/></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/bundle.html">Bundle</a></td><td/><td><div><p>Das Quittungs Bundle, das Angaben zum signierenden Fachdienst, die Telematik-ID der Apotheke und die Signatur enthält.</p>
+</div></td></tr></table></div>
+  </text>
+  <url value="https://gematik.de/fhir/erp/OperationDefinition/CloseOperation"/>
+  <version value="1.0.0-draft"/>
+  <name value="Close"/>
+  <status value="draft"/>
+  <kind value="operation"/>
+  <date value="2025-12-15"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="erp-umsetzung@gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="Die $close-Operation beendet den E-Rezept-Workflow und erstellt eine Quittung. Das Ergebnis dieses Vorgangs ist ein signiertes Bundle, das für weitere finanzielle Verarbeitung verwendet wird. Der Status der Aufgabe ändert sich anschließend in #completed."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <affectsState value="true"/>
+  <code value="close"/>
+  <resource value="Task"/>
+  <system value="false"/>
+  <type value="false"/>
+  <instance value="true"/>
+  <inputProfile value="https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-close-operation-input-parameters"/>
+  <outputProfile value="https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-close-operation-output-parameters"/>
+  <parameter>
+    <name value="secret"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Der secret Parameter, der einer Apotheke den exklusiven Zugriff auf die Aufgabe als Teil der URL ermöglicht. Dieser Parameter muss dem Wert entsprechen, der in Task.identifier:Secret gespeichert ist. Andernfalls wird der Vorgang mit einem Fehler abgebrochen."/>
+    <type value="string"/>
+  </parameter>
+  <parameter>
+    <name value="rxDispensation"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="Informationen zu abgegebenen Medikament(en)"/>
+    <part>
+      <name value="medicationDispense"/>
+      <use value="in"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type value="MedicationDispense"/>
+    </part>
+    <part>
+      <name value="medication"/>
+      <use value="in"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type value="Medication"/>
+    </part>
+  </parameter>
+  <parameter>
+    <name value="return"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Das Quittungs Bundle, das Angaben zum signierenden Fachdienst, die Telematik-ID der Apotheke und die Signatur enthält."/>
+    <type value="Bundle"/>
+  </parameter>
+</OperationDefinition>

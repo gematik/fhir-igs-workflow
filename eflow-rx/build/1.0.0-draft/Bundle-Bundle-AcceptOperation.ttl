@@ -1,0 +1,150 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/erp/Bundle/Bundle-AcceptOperation> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Bundle-AcceptOperation"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-bundle-op-accept"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-bundle-op-accept>
+     ] )
+  ] ; # 
+  fhir:type [ fhir:v "collection"] ; # 
+  fhir:link ( [
+     fhir:relation [ fhir:v "self" ] ;
+     fhir:url [
+       fhir:v "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/160.000.033.491.280.78/$accept/"^^xsd:anyURI ;
+       fhir:l <https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/160.000.033.491.280.78/$accept/>
+     ]
+  ] ) ; # 
+  fhir:entry ( [
+     fhir:fullUrl [
+       fhir:v "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/d70932d1-9e1c-483c-b2d4-b7dced09b35e"^^xsd:anyURI ;
+       fhir:l <https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/d70932d1-9e1c-483c-b2d4-b7dced09b35e>
+     ] ;
+     fhir:resource ( <https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/d70932d1-9e1c-483c-b2d4-b7dced09b35e> )
+  ] [
+     fhir:fullUrl [
+       fhir:v "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Binary/PrescriptionBinaryWithMeta"^^xsd:anyURI ;
+       fhir:l <https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Binary/PrescriptionBinaryWithMeta>
+     ] ;
+     fhir:resource ( <https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Binary/PrescriptionBinaryWithMeta> )
+  ] ) . # 
+
+<https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/d70932d1-9e1c-483c-b2d4-b7dced09b35e> a fhir:Task ;
+  fhir:id [ fhir:v "d70932d1-9e1c-483c-b2d4-b7dced09b35e"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-task"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-task>
+     ] ) ;
+     fhir:tag ( [
+       fhir:display [ fhir:v "Task in IN-PROGRESS state claimed by pharmacy via $accept operation" ]
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-prescriptiontype-extension"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-prescriptiontype-extension>
+     ] ;
+     fhir:value [
+       a fhir:Coding ;
+       fhir:system [
+         fhir:v "https://gematik.de/fhir/erp/CodeSystem/EFlowRxFlowType"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/erp/CodeSystem/EFlowRxFlowType>
+       ] ;
+       fhir:code [ fhir:v "160" ] ;
+       fhir:display [ fhir:v "Flowtype für Apothekenpflichtige Arzneimittel" ]
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-acceptdate-extension"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-acceptdate-extension>
+     ] ;
+     fhir:value [
+       a fhir:Date ;
+       fhir:v "2026-07-01"^^xsd:date
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-expirydate-extension"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-expirydate-extension>
+     ] ;
+     fhir:value [
+       a fhir:Date ;
+       fhir:v "2026-07-01"^^xsd:date
+     ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:system [
+       fhir:v "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId>
+     ] ;
+     fhir:value [ fhir:v "160.000.033.491.280.78" ]
+  ] [
+     fhir:system [
+       fhir:v "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode>
+     ] ;
+     fhir:value [ fhir:v "777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "in-progress"] ; # 
+  fhir:intent [ fhir:v "order"] ; # 
+  fhir:for [
+     fhir:identifier [
+       fhir:system [
+         fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/sid/gkv/kvid-10>
+       ] ;
+       fhir:value [ fhir:v "X123456789" ]
+     ]
+  ] ; # 
+  fhir:authoredOn [ fhir:v "2026-07-01T15:29:00+00:00"^^xsd:dateTime] ; # 
+  fhir:lastModified [ fhir:v "2026-07-01T16:44:00.434+00:00"^^xsd:dateTime] ; # 
+  fhir:performerType ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://gematik.de/fhir/erp/CodeSystem/EFlowRxOrganizationType"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/erp/CodeSystem/EFlowRxOrganizationType>
+       ] ;
+       fhir:code [ fhir:v "urn:oid:1.2.276.0.76.4.54" ] ;
+       fhir:display [ fhir:v "Öffentliche Apotheke" ]
+     ] )
+  ] ) ; # 
+  fhir:input ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://gematik.de/fhir/erp/CodeSystem/EFlowRxDocumentType"^^xsd:anyURI ;
+           fhir:l <https://gematik.de/fhir/erp/CodeSystem/EFlowRxDocumentType>
+         ] ;
+         fhir:code [ fhir:v "1" ] ;
+         fhir:display [ fhir:v "Health Care Provider Prescription" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Reference ;
+       fhir:l <https://gematik.de/fhir/erp/Binary/PrescriptionBinary> ;
+       fhir:reference [ fhir:v "Binary/PrescriptionBinary" ]
+     ]
+  ] ) . # 
+
+<https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Binary/PrescriptionBinaryWithMeta> a fhir:Binary ;
+  fhir:id [ fhir:v "PrescriptionBinaryWithMeta"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-binary"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-binary>
+     ] )
+  ] ; # 
+  fhir:contentType [ fhir:v "application/pkcs7-mime"] ; # 
+  fhir:data [ fhir:v "dGhpcyBibG9iIGlzIHNuaXBwZWQ="^^xsd:base64Binary] . # 
+
+# -------------------------------------------------------------------------------------
+

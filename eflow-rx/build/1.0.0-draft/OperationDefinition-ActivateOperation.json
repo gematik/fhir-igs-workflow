@@ -1,0 +1,58 @@
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "ActivateOperation",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition ActivateOperation</b></p><a name=\"ActivateOperation\"> </a><a name=\"hcActivateOperation\"> </a><p>URL: [base]/Task/[id]/$activate</p><p>Input parameters Profile:<a href=\"http://hl7.org/fhir/R4/parameters.html\">Parameters</a></p><p>Output parameters Profile:<a href=\"StructureDefinition-eflow-rx-activate-operation-output-parameters.html\">GEM ERP PR ActivateOperation Output</a></p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>ePrescription</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/binary.html\">Binary</a></td><td/><td><div><p>Das qualifizierte unterzeichnete Verordnung (QES) zur Aktivierung des E-Rezept-Workflows.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/task.html\">Task</a></td><td/><td><div><p>Geben Sie die aktualisierte und aktivierte Aufgabe zurück.</p>\n</div></td></tr></table></div>"
+  },
+  "url" : "https://gematik.de/fhir/erp/OperationDefinition/ActivateOperation",
+  "version" : "1.0.0-draft",
+  "name" : "Activate",
+  "status" : "draft",
+  "kind" : "operation",
+  "date" : "2025-12-15",
+  "publisher" : "gematik GmbH",
+  "contact" : [{
+    "name" : "gematik GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://gematik.de"
+    },
+    {
+      "system" : "email",
+      "value" : "erp-umsetzung@gematik.de"
+    }]
+  }],
+  "description" : "Diese Operation aktiviert die erstellte Aufgabe für das Rezept. Der Eingabeparameter muss das qualifizierte signierte Bundle des Rezepts enthalten. Der E-Rezept-Fachdienst validiert das Rezept, aktualisiert die Task-ressource und startet den Workflow.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "affectsState" : true,
+  "code" : "activate",
+  "resource" : ["Task"],
+  "system" : false,
+  "type" : false,
+  "instance" : true,
+  "inputProfile" : "http://hl7.org/fhir/StructureDefinition/Parameters",
+  "outputProfile" : "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-activate-operation-output-parameters",
+  "parameter" : [{
+    "name" : "ePrescription",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Das qualifizierte unterzeichnete Verordnung (QES) zur Aktivierung des E-Rezept-Workflows.",
+    "type" : "Binary"
+  },
+  {
+    "name" : "return",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Geben Sie die aktualisierte und aktivierte Aufgabe zurück.",
+    "type" : "Task"
+  }]
+}

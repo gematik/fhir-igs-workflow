@@ -1,0 +1,890 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>Anwendungsfälle für den Medikationsprozess - E-Rezept für Arzneimittel v1.0.0-draft</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+  	<link rel="stylesheet" href="assets/css/cqf.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+<link rel="stylesheet" href="assets/css/ig.gematik.css"/>
+<script src="assets/js/ig.gematik.min.js" type="text/javascript"> </script>
+<link rel="stylesheet" href="assets/css/edge-dark.min.css"/>
+<script src="assets/js/ig.api.doc.gematik.min.js" type="text/javascript"> </script>
+<link rel="stylesheet" href="assets/css/ig.req.gematik.css"/>
+<script src="assets/js/ig.req.gematik.min.js" type="text/javascript"> </script>
+
+<script src="assets/js/ig.bibliography.gematik.js" type="text/javascript"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        height: 280px;
+        background-color: #2a6496;
+        background: url('./e-rezept-img.png') no-repeat;
+        background-position: 650px -150px;
+        background-size: 45% auto;
+    }
+    .bubble-link {
+        display: none;
+        transition: opacity 0.2s;
+        }
+
+        h1:hover .bubble-link,
+        h2:hover .bubble-link,
+        h3:hover .bubble-link,
+        h4:hover .bubble-link,
+        h5:hover .bubble-link,
+        h6:hover .bubble-link {
+        display: inline;
+        }
+</style>
+
+<script src="assets/js/heading-links.js" type="text/javascript"> </script>
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="fhir-logo" href="assets/ico/icon-fhir-144.png"/>
+    <link sizes="114x114" rel="fhir-logo" href="assets/ico/icon-fhir-114.png"/>
+    <link sizes="72x72" rel="fhir-logo" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+    <style type="text/css">h2{--heading-prefix:"2.2"}
+    h3,h4,h5,h6{--heading-prefix:"2.2"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+
+          <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a no-external="true" id="gem-ig-logo" href="./index.html">
+        <img src="assets/images/gem-logo.png" alt="Home" height="50"/>
+    </a>
+</div>
+
+
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Start</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Fachlichkeit
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-fachlichkeit-ueberblick.html">Überblick</a>
+      </li>
+      <li>
+        <a href="menu-fachlichkeit-szenarien.html">Szenarien</a>
+      </li>
+      <li>
+        <a href="menu-fachlichkeit-anwendungsfaelle.html">Anwendungsfälle</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Technische Umsetzung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-technische-umsetzung-systemueberblick.html">Systemüberblick</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-anwendungsfaelle.html">Technische Anwendungsfälle</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-verarbeitungsregeln.html">Verarbeitungsregeln</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-dosierung.html">Validierung von Dosierinformationen</a>
+      </li>
+      <li>
+        <a href="mapping.html">Mappings</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Schnittstellen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-query-api.html">Query API</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-operation-api.html">Operation API</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-additional-api.html">Additional APIs</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="referenced.html">Referenzen</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="erp-openapi.html">OpenAPI</a>
+      </li>
+      <li>
+        <a href="release-notes.html">Release Notes</a>
+      </li>
+      <li>
+        <a href="spec-sheet.html">Steckbriefe</a>
+      </li>
+      <li>
+        <a href="comparisons.html">Versionsvergleiche</a>
+      </li>
+      <li>
+        <a href="license.html">Lizenz</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+E-Rezept für Arzneimittel
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 1.0.0-draft - ci-build
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="menu-fachlichkeit-ueberblick.html"><b>Überblick zur Verordnung und Belieferung von Arzneimitteln</b></a></li><li><b>Anwendungsfälle für den Medikationsprozess</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Anwendungsfälle für den Medikationsprozess</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div>
+  <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown. -->
+</div>
+<h3 id="fachliche-anwendungsfälle">Fachliche Anwendungsfälle</h3>
+
+<p>Die folgenden fachlichen Anwendungsfälle beschreiben – aus Sicht des verordnenden Leistungserbringers – die Schritte zur Verordnung und Bereitstellung eines E-Rezepts.</p>
+
+<h4 id="übergreifende-vorbedingungen">Übergreifende Vorbedingungen</h4>
+
+<ul>
+  <li>Der Leistungserbringer ist gegenüber der TI authentisiert (Institutionsidentität via SMC-B über IdP/Konnektor).</li>
+  <li>Für die QES steht ein freigeschalteter HBA zur Verfügung.</li>
+  <li>Der Verordnungsdatensatz wird als KBV-konformes FHIR-Bundle im Primärsystem geführt.</li>
+</ul>
+
+<p><a id="e-rezept-erstellen"></a></p>
+<h4 id="e-rezept-erstellen">E-Rezept erstellen</h4>
+
+<figure style="width: auto;">
+  <table style="width: auto; border: 1px solid #dcdcdc;">
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Beschreibung</th>
+      <td style="padding: 5px;"><p>Ein E-Rezept wird im Primärsystem (PVS/KIS) als Verordnungsdatensatz erstellt.
+Für die Bereitstellung auf dem E-Rezept-Fachdienst wird ein Task angelegt, über den eine Rezept-ID (PrescriptionID)
+vergeben und ein AccessCode erzeugt wird.</p>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Der Leistungserbringer ist gegenüber der TI authentisiert (Institutionsidentität via SMC-B über IdP/Konnektor).</li>
+  <li>Der Verordnungsdatensatz liegt lokal als KBV-konformes FHIR-Bundle vor.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Das Primärsystem legt im E-Rezept-Fachdienst einen Task an.</li>
+  <li>Der E-Rezept-Fachdienst vergibt eine Rezept-ID (PrescriptionID) und generiert einen AccessCode.</li>
+  <li>Das Primärsystem übernimmt die Rezept-ID in den lokalen Verordnungsdatensatz.</li>
+</ul>
+</td>
+
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Task liegt im Status <code class="language-plaintext highlighter-rouge">draft</code> vor.</li>
+  <li>Rezept-ID und AccessCode sind im Primärsystem verfügbar.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Technische Anwendungsfälle des E-Rezept-Fachdienst</th>
+      <td style="padding: 5px;"><ul>
+  <li><a href="./menu-technische-umsetzung-anwendungsfaelle.html#e-rezept-erstellen">E-Rezept erstellen</a></li>
+</ul>
+
+</td>
+    </tr>
+    
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Relevante(r) Sektor(en)</th>
+      <td style="padding: 5px;">
+        
+          
+        
+          
+            <span class="badge gem-ig-badge 
+gem-ig-badge-bg-grey">
+              (ZAHN-)ARZT
+            </span>
+          
+        
+          
+        
+          
+        
+      </td>
+    </tr>
+  </table>
+  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall E-Rezept erstellen</figcaption>
+</figure>
+
+<p><a id="e-rezept-qualifiziert-signieren"></a></p>
+<h4 id="e-rezept-qualifiziert-signieren">E-Rezept qualifiziert signieren</h4>
+
+<figure style="width: auto;">
+  <table style="width: auto; border: 1px solid #dcdcdc;">
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Beschreibung</th>
+      <td style="padding: 5px;"><p>Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES).
+Vorbereitende Tätigkeiten im Primärsystem können organisatorisch delegiert werden, die QES selbst jedoch nicht.</p>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Rezept-ID (PrescriptionID) ist im Verordnungsdatensatz enthalten.</li>
+  <li>Ein freigeschalteter HBA steht zur Verfügung.</li>
+  <li>Konsistenz: <code class="language-plaintext highlighter-rouge">authoredOn</code> im Verordnungsdatensatz entspricht dem Datum der QES.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Das Primärsystem startet die QES-Erstellung über den Konnektor.</li>
+  <li>Der (Zahn-)Arzt signiert den Verordnungsdatensatz mit dem HBA.</li>
+  <li>Das Primärsystem erhält den QES-signierten Datensatz zur weiteren Verarbeitung.</li>
+</ul>
+</td>
+
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>QES-signierter Verordnungsdatensatz liegt im Primärsystem vor.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Technische Anwendungsfälle des E-Rezept-Fachdienst</th>
+      <td style="padding: 5px;"><ul>
+  <li><a href="./menu-technische-umsetzung-anwendungsfaelle.html#e-rezept-qualifiziert-signieren">E-Rezept qualifiziert signieren</a></li>
+</ul>
+</td>
+    </tr>
+    
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Relevante(r) Sektor(en)</th>
+      <td style="padding: 5px;">
+        
+          
+        
+          
+            <span class="badge gem-ig-badge 
+gem-ig-badge-bg-grey">
+              (ZAHN-)ARZT
+            </span>
+          
+        
+          
+        
+          
+        
+      </td>
+    </tr>
+  </table>
+  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall E-Rezept qualifiziert signieren</figcaption>
+</figure>
+
+<p><a id="e-rezept-vervollstaendigen-und-task-aktivieren"></a></p>
+<h4 id="e-rezept-vervollständigen-und-task-aktivieren">E-Rezept vervollständigen und Task aktivieren</h4>
+
+<figure style="width: auto;">
+  <table style="width: auto; border: 1px solid #dcdcdc;">
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Beschreibung</th>
+      <td style="padding: 5px;"><p>Der (Zahn-)Arzt finalisiert eine bereits erstellte Verordnung und stellt sie qualifiziert signiert für den Versicherten bereit.
+Mit der Bereitstellung startet der Einlöse-Workflow: Die Verordnung wird im E-Rezept-Fachdienst geprüft und anschließend so veröffentlicht,
+dass sie im vorgesehenen Prozess (z. B. Einlösung in der Apotheke oder Bearbeitung durch den Kostenträger) genutzt werden kann.</p>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Das E-Rezept wurde zuvor erstellt und befindet sich noch in der Vorbereitungsphase.</li>
+  <li>Der qualifiziert signierte Verordnungsdatensatz (QES) liegt im Primärsystem vor.</li>
+  <li>Ein Berechtigungsmerkmal zur geschützten Bereitstellung liegt vor (z. B. AccessCode).</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Das Primärsystem stellt den qualifiziert signierten Verordnungsdatensatz beim E-Rezept-Fachdienst bereit.</li>
+  <li>Der E-Rezept-Fachdienst prüft Berechtigung, Signatur und fachliche Konsistenz der Verordnung.</li>
+  <li>Bei erfolgreicher Prüfung wird die Verordnung für die weitere Verarbeitung (Einlösung/Bearbeitung) freigeschaltet.</li>
+</ul>
+</td>
+
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Das E-Rezept ist bereitgestellt und kann im weiteren Prozess eingelöst bzw. bearbeitet werden.</li>
+  <li>Der Status des Workflows entspricht der bereitgestellten Verordnung.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Technische Anwendungsfälle des E-Rezept-Fachdienst</th>
+      <td style="padding: 5px;"><ul>
+  <li><a href="./menu-technische-umsetzung-anwendungsfaelle.html#e-rezept-vervollständigen-und-task-aktivieren">E-Rezept vervollständigen und Task aktivieren</a></li>
+</ul>
+</td>
+    </tr>
+    
+      <tr>
+        <th style="padding: 5px; width: 23rem;">Folgeaktionen des E-Rezept-Fachdienst</th>
+        <td style="padding: 5px;"><ul>
+  <li><a href="./mapping-prescription.html">Mapping von Verordnungsdaten</a></li>
+  <li><a href="./menu-technische-umsetzung-anbindung-epa-ms.html">Übertragung von Verordnungsdaten an den ePA MedicationService</a></li>
+</ul>
+</td>
+      </tr>
+    
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Relevante(r) Sektor(en)</th>
+      <td style="padding: 5px;">
+        
+          
+        
+          
+            <span class="badge gem-ig-badge 
+gem-ig-badge-bg-grey">
+              (ZAHN-)ARZT
+            </span>
+          
+        
+          
+        
+          
+        
+      </td>
+    </tr>
+  </table>
+  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall E-Rezept vervollständigen und Task aktivieren</figcaption>
+</figure>
+
+<p><a id="e-rezept-loeschen"></a></p>
+<h4 id="e-rezept-löschen">E-Rezept löschen</h4>
+
+<figure style="width: auto;">
+  <table style="width: auto; border: 1px solid #dcdcdc;">
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Beschreibung</th>
+      <td style="padding: 5px;"><p>Ein E-Rezept kann durch den verordnenden Leistungserbringer widerrufen/gelöscht werden,
+um den Patienten vor dem Bezug und der Einnahme eines fälschlich verordneten Medikaments zu schützen.</p>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>AccessCode ist dem Primärsystem bekannt.</li>
+  <li>Das E-Rezept befindet sich nicht bereits in Belieferung (ansonsten ist das Löschen nicht zulässig).</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Das Primärsystem fordert das Löschen/Widerrufen des E-Rezepts beim E-Rezept-Fachdienst an.</li>
+  <li>Der E-Rezept-Fachdienst prüft die Berechtigung und löscht den referenzierten Task.</li>
+</ul>
+</td>
+
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Der referenzierte Task ist gelöscht; es werden keine Nutzdaten zurückgegeben.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Technische Anwendungsfälle des E-Rezept-Fachdienst</th>
+      <td style="padding: 5px;"><ul>
+  <li><a href="./menu-technische-umsetzung-anwendungsfaelle.html#e-rezept-löschen">E-Rezept löschen</a></li>
+</ul>
+</td>
+    </tr>
+    
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Relevante(r) Sektor(en)</th>
+      <td style="padding: 5px;">
+        
+          
+        
+          
+            <span class="badge gem-ig-badge 
+gem-ig-badge-bg-grey">
+              (ZAHN-)ARZT
+            </span>
+          
+        
+          
+        
+          
+            <span class="badge gem-ig-badge 
+gem-ig-badge-bg-blue">
+              VERSICHERTER
+            </span>
+          
+        
+      </td>
+    </tr>
+  </table>
+  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall E-Rezept löschen</figcaption>
+</figure>
+
+<p><a id="e-rezept-abrufen-apotheke"></a></p>
+<h4 id="e-rezept-abrufen-apotheke">E-Rezept abrufen (Apotheke)</h4>
+
+<figure style="width: auto;">
+  <table style="width: auto; border: 1px solid #dcdcdc;">
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Beschreibung</th>
+      <td style="padding: 5px;"><p>Nach Übergabe von Task-ID und AccessCode durch den Versicherten ruft das Apothekenverwaltungssystem (AVS)
+das E-Rezept mittels FHIR-Operation $accept ab. Der E-Rezept-Fachdienst liefert den Task, das
+QES-signierte Verordnungsbundle und ein Secret zurück, das die Apotheke für weitere Schritte benötigt.</p>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Task-ID und AccessCode wurden durch den Versicherten bereitgestellt (z. B. 2D-Code, CardLink, Nachricht).</li>
+  <li>Das AVS ist gegenüber der TI authentisiert und verfügt über ein gültiges Access Token.</li>
+  <li>Der referenzierte Task befindet sich in einem abrufbaren Status (ready) und ist noch keiner anderen Apotheke zugeordnet.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Das AVS sendet einen POST-Request auf /Task/{id}/$accept mit dem AccessCode.</li>
+  <li>Der Fachdienst validiert Berechtigung und liefert Task, Binary (PKCS#7) und das Secret.</li>
+  <li>Das AVS speichert Task, Secret, Binary und löst optional die lokale QES-Prüfung an.</li>
+</ul>
+</td>
+
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Das Secret ist bekannt und belegt die Apotheke als aktuelle Bearbeiterin.</li>
+  <li>Task-Status wechselt auf <code class="language-plaintext highlighter-rouge">in-progress</code>; Verordnungsdaten liegen im AVS vor.</li>
+  <li>Falls Flowtype 200/209 mit Consent, liegt zusätzlich ein Consent-Resource vor.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Technische Anwendungsfälle des E-Rezept-Fachdienst</th>
+      <td style="padding: 5px;"><ul>
+  <li><a name="l1007">​</a><a href="./menu-technische-umsetzung-anwendungsfaelle.html#e-rezept-abrufen">E-Rezept abrufen</a></li>
+</ul>
+</td>
+    </tr>
+    
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Relevante(r) Sektor(en)</th>
+      <td style="padding: 5px;">
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </td>
+    </tr>
+  </table>
+  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall E-Rezept abrufen (Apotheke)</figcaption>
+</figure>
+
+<p><a id="e-rezept-secret-wiederherstellen"></a></p>
+<h4 id="e-rezept-erneut-abrufen">E-Rezept erneut abrufen</h4>
+
+<figure style="width: auto;">
+  <table style="width: auto; border: 1px solid #dcdcdc;">
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Beschreibung</th>
+      <td style="padding: 5px;"><p>Geht das beim ersten Abruf erhaltene Secret verloren, kann die gleiche Apotheke das E-Rezept
+nochmals abrufen, um das Secret und den Verordnungsdatensatz erneut zu erhalten.</p>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Die Apotheke hat das E-Rezept zuvor erfolgreich abgerufen; der Task ist der Apotheke zugeordnet.</li>
+  <li>Task-ID und AccessCode liegen weiterhin vor.</li>
+  <li>Gleiches AVS / gleiche Telematik-ID wie beim Erstabruf (sonst HTTP 412 Precondition Failed).</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Das AVS ruft /Task/{id}?ac=… mit HTTP GET auf.</li>
+  <li>Der Fachdienst stellt Task, Binary und Secret erneut bereit.</li>
+  <li>Das AVS ersetzt das verlorene Secret und setzt die Bearbeitung fort.</li>
+</ul>
+</td>
+
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Secret und Verordnungsdaten stehen wieder zur Verfügung.</li>
+  <li>Task-Status verbleibt bei <code class="language-plaintext highlighter-rouge">in-progress</code> und bleibt der Apotheke zugeordnet.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Technische Anwendungsfälle des E-Rezept-Fachdienst</th>
+      <td style="padding: 5px;"><ul>
+  <li><a name="l1119">​</a><a href="./menu-technische-umsetzung-anwendungsfaelle.html#e-rezept-erneut-abrufen">E-Rezept erneut abrufen</a></li>
+</ul>
+</td>
+    </tr>
+    
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Relevante(r) Sektor(en)</th>
+      <td style="padding: 5px;">
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </td>
+    </tr>
+  </table>
+  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall E-Rezept erneut abrufen</figcaption>
+</figure>
+
+<p><a id="e-rezept-abgabe-dokumentieren"></a></p>
+<h4 id="e-rezept-abgabe-zeitnah-dokumentieren">E-Rezept-Abgabe zeitnah dokumentieren</h4>
+
+<figure style="width: auto;">
+  <table style="width: auto; border: 1px solid #dcdcdc;">
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Beschreibung</th>
+      <td style="padding: 5px;"><p>Vor Abschluss des Workflows kann die Apotheke über $dispense Dispensierinformationen einstellen,
+damit Versicherte und FdV zeitnah über die erfolgte Abgabe informiert werden, ohne eine Quittung auszulösen.</p>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Die Apotheke besitzt das Secret aus dem vorherigen Abruf.</li>
+  <li>Das Rezept wurde beliefert, aber der Workflow ist noch nicht abgeschlossen.</li>
+  <li>Dispensierdaten (MedicationDispense + Medication) liegen im AVS vor und bleiben unterhalb der Größenlimits.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Das AVS ruft /Task/{id}/$dispense?secret=… via POST auf und übermittelt die Abgabeinformationen in einer Parameters-Ressource.</li>
+  <li>Der Fachdienst plausibilisiert die Daten und speichert sie ohne Statuswechsel des Tasks.</li>
+</ul>
+</td>
+
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Dispensierinformationen stehen dem Versicherten im E-Rezept-FdV zur Verfügung.</li>
+  <li>Task behält Status <code class="language-plaintext highlighter-rouge">in-progress</code>; keine Quittung wurde erzeugt.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Technische Anwendungsfälle des E-Rezept-Fachdienst</th>
+      <td style="padding: 5px;"><ul>
+  <li><a name="l1228">​</a><a href="./menu-technische-umsetzung-anwendungsfaelle.html#e-rezept-dispense">$dispense nutzen</a></li>
+</ul>
+</td>
+    </tr>
+    
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Relevante(r) Sektor(en)</th>
+      <td style="padding: 5px;">
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </td>
+    </tr>
+  </table>
+  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall E-Rezept-Abgabe zeitnah dokumentieren</figcaption>
+</figure>
+
+<p><a id="e-rezept-abgabe-abschliessen"></a></p>
+<h4 id="e-rezept-abgabe-vollziehen">E-Rezept-Abgabe vollziehen</h4>
+
+<figure style="width: auto;">
+  <table style="width: auto; border: 1px solid #dcdcdc;">
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Beschreibung</th>
+      <td style="padding: 5px;"><p>Nach erfolgter Belieferung schließt die Apotheke den Workflow mit $close ab, übermittelt die finalen
+Dispensierinformationen (oder verweist auf zuvor gesendete Daten) und erhält ein serverseitig signiertes Quittungs-Bundle.</p>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Secret liegt vor und die Apotheke ist weiterhin berechtigt.</li>
+  <li>Vollständige Dispensierinformationen stehen bereit (entweder frisch oder über vorheriges $dispense).</li>
+  <li>Bei Flowtype 200 muss sichergestellt sein, dass dem Versicherten eine Quittung für private Abrechnung ausgehändigt wird.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Das AVS ruft /Task/{id}/$close?secret=… via POST auf und sendet die Dispensierinformationen (falls noch nicht vorhanden).</li>
+  <li>Der Fachdienst validiert die Daten, erstellt das Quittungs-Bundle und setzt den Task auf <code class="language-plaintext highlighter-rouge">completed</code>.</li>
+</ul>
+</td>
+
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Der Workflow ist abgeschlossen; Quittung liegt im AVS vor und kann an Rechenzentrum/Kostenträger weitergegeben werden.</li>
+  <li>Versicherte sehen den Abschluss im FdV; ggf. erfolgt eine Übermittlung an BfArM bzw. ePA gemäß Flowtype.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Technische Anwendungsfälle des E-Rezept-Fachdienst</th>
+      <td style="padding: 5px;"><ul>
+  <li><a name="l1337">​</a><a href="./menu-technische-umsetzung-anwendungsfaelle.html#e-rezept-close">E-Rezept-Abgabe vollziehen</a></li>
+</ul>
+</td>
+    </tr>
+    
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Relevante(r) Sektor(en)</th>
+      <td style="padding: 5px;">
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </td>
+    </tr>
+  </table>
+  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall E-Rezept-Abgabe vollziehen</figcaption>
+</figure>
+
+
+
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+  <script src="assets/js/window-hash.js" type="text/javascript"> </script>
+  <a name="bottom"> </a>
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Feb 12, 2026 06:52+0000">2026-02-12</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>

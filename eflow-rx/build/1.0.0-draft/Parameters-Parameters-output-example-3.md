@@ -1,0 +1,220 @@
+#  - E-Rezept für Arzneimittel v1.0.0-draft
+
+E-Rezept für Arzneimittel
+
+Version 1.0.0-draft - ci-build 
+
+* [**Table of Contents**](toc.md)
+* [**FHIR-Artefakte**](artifacts.md)
+* ****
+
+## Parameters: 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Parameters",
+  "id" : "Parameters-output-example-3",
+  "parameter" : [
+    {
+      "name" : "rxPrescription",
+      "part" : [
+        {
+          "name" : "authoredOn",
+          "valueDateTime" : "2024-05-20"
+        },
+        {
+          "name" : "medication",
+          "resource" : {
+            "resourceType" : "Medication",
+            "meta" : {
+              "profile" : [
+                "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication"
+              ]
+            },
+            "extension" : [
+              {
+                "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension",
+                "valueCoding" : {
+                  "code" : "00"
+                }
+              },
+              {
+                "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension",
+                "valueBoolean" : false
+              }
+            ],
+            "code" : {
+              "coding" : [
+                {
+                  "system" : "https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Type",
+                  "code" : "freitext"
+                }
+              ],
+              "text" : "Metformin 850mg Tabletten N3"
+            }
+          }
+        },
+        {
+          "name" : "medicationRequest",
+          "resource" : {
+            "resourceType" : "MedicationRequest",
+            "meta" : {
+              "profile" : [
+                "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-request"
+              ]
+            },
+            "extension" : [
+              {
+                "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/indicator-ser-extension",
+                "valueBoolean" : false
+              },
+              {
+                "extension" : [
+                  {
+                    "url" : "indicator",
+                    "valueBoolean" : false
+                  }
+                ],
+                "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/multiple-prescription-extension"
+              }
+            ],
+            "status" : "active",
+            "intent" : "order",
+            "medicationReference" : {
+              "reference" : "Medication/0d93504e-c6a7-47c1-8ad5-b0c5cf1b8920"
+            },
+            "authoredOn" : "2024-05-20",
+            "requester" : {
+              "reference" : "Practitioner/667ffd79-42a3-4002-b7ca-6b9098f20ccb"
+            },
+            "dispenseRequest" : {
+              "quantity" : {
+                "value" : 1,
+                "unit" : "Packung"
+              }
+            },
+            "substitution" : {
+              "allowedBoolean" : true
+            }
+          }
+        },
+        {
+          "name" : "organization",
+          "resource" : {
+            "resourceType" : "Organization",
+            "meta" : {
+              "profile" : [
+                "https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory"
+              ]
+            },
+            "telecom" : [
+              {
+                "system" : "phone",
+                "value" : "0301234567"
+              },
+              {
+                "system" : "fax",
+                "value" : "030123456789"
+              },
+              {
+                "system" : "email",
+                "value" : "mvz@e-mail.de"
+              }
+            ],
+            "address" : [
+              {
+                "type" : "both",
+                "line" : ["Herbert-Lewin-Platz 2"],
+                "_line" : [
+                  {
+                    "extension" : [
+                      {
+                        "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                        "valueString" : "2"
+                      },
+                      {
+                        "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                        "valueString" : "Herbert-Lewin-Platz"
+                      }
+                    ]
+                  }
+                ],
+                "city" : "Berlin",
+                "postalCode" : "10623",
+                "country" : "D"
+              },
+              {
+                "type" : "both",
+                "line" : ["Herbert-Lewin-Platz 2"],
+                "_line" : [
+                  {
+                    "extension" : [
+                      {
+                        "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                        "valueString" : "2"
+                      },
+                      {
+                        "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                        "valueString" : "Herbert-Lewin-Platz"
+                      }
+                    ]
+                  }
+                ],
+                "city" : "Berlin",
+                "postalCode" : "10623",
+                "country" : "D"
+              }
+            ]
+          }
+        },
+        {
+          "name" : "practitioner",
+          "resource" : {
+            "resourceType" : "Practitioner",
+            "meta" : {
+              "profile" : [
+                "https://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory"
+              ]
+            },
+            "name" : [
+              {
+                "use" : "official",
+                "family" : "Schneider",
+                "_family" : {
+                  "extension" : [
+                    {
+                      "url" : "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                      "valueString" : "Schneider"
+                    }
+                  ]
+                },
+                "given" : ["Emma"],
+                "prefix" : ["Dr. med."],
+                "_prefix" : [
+                  {
+                    "extension" : [
+                      {
+                        "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier",
+                        "valueCode" : "AC"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name" : "prescriptionId",
+          "valueString" : "160.100.000.000.023.70"
+        }
+      ]
+    }
+  ]
+}
+
+```

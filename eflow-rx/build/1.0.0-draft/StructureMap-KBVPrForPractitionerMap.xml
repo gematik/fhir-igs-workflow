@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureMap xmlns="http://hl7.org/fhir">
+  <id value="KBVPrForPractitionerMap"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: StructureMap KBVPrForPractitionerMap</b></p><a name="KBVPrForPractitionerMap"> </a><a name="hcKBVPrForPractitionerMap"> </a><pre class="fml">
+<b>map</b><span style="color: navy"> &quot;</span>https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrForPractitionerMap<span style="color: navy">&quot; = &quot;</span>KBVPrForPractitionerMap<span style="color: navy">&quot;
+
+</span><span style="color: navy">// </span><span style="color: green">Auto-generated StructureMap for KBV_PR_FOR_Practitioner|1.3.0 -&gt; PractitionerDirectory|1.0.0</span>
+
+<b>uses</b><span style="color: navy"> &quot;</span>https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner<span style="color: navy">&quot; </span><b>alias </b>KBVPRFORPractitioner <b>as </b><b>source</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="https://simplifier.net/resolve?scope=de.gematik.epa.medication@1.3.0&amp;canonical=https://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory" title="Practitioner in gematik Directory">https://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory</a><span style="color: navy">&quot; </span><b>alias </b>PractitionerDirectory <b>as </b><b>target</b>
+
+<span style="color: navy">// </span><span style="color: green">Mapping generated for KBV_PR_FOR_Practitioner|1.3.0 -&gt; PractitionerDirectory|1.0.0</span>
+<b>group </b>KBVPrForPractitionerMap<span style="color: navy">(</span><b>source</b> <span style="color: maroon">KBVPRFORPractitioner</span><span style="color: navy"> : </span>KBVPRFORPractitioner, <b>target</b> <span style="color: maroon">PractitionerDirectory</span><span style="color: navy"> : </span>PractitionerDirectory<span style="color: navy">)</span><b> &lt;&lt;types&gt;&gt;</b><span style="color: navy"> {
+</span>  KBVPRFORPractitioner.identifier<b> as </b><span style="color: maroon">srcKBVPRFORPractitionerIdentifierd46d78b7</span><b> where </b>(use = 'official' and system = 'https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR') != true and (use = 'official' and system = 'http://fhir.de/sid/kzbv/zahnarztnummer') != true<span style="color: navy"><b> -&gt; </b></span>PractitionerDirectory.identifier = <span style="color: maroon">srcKBVPRFORPractitionerIdentifierd46d78b7</span><b> as </b><span style="color: maroon">tgtPractitionerDirectoryIdentifierbcb1f07a</span> <i>&quot;PractitionerIdentifierdd7a4a22&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Automatic copy</span>
+  KBVPRFORPractitioner.identifier<b> as </b><span style="color: maroon">srcKBVPRFORPractitionerIdentifierAnr3c836155</span><b> where </b>use = 'official' and system = 'https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR'<span style="color: navy"><b> -&gt; </b></span>PractitionerDirectory.identifier = <span style="color: maroon">srcKBVPRFORPractitionerIdentifierAnr3c836155</span><b> as </b><span style="color: maroon">tgtPractitionerDirectoryIdentifierLanrc79324c3</span> <i>&quot;PractitionerIdentifierAnr071fb4ee&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Copied to 'Practitioner.identifier:LANR'</span>
+  KBVPRFORPractitioner.identifier<b> as </b><span style="color: maroon">srcKBVPRFORPractitionerIdentifierTelematikId908b03d1</span><b> where </b>system = 'https://gematik.de/fhir/sid/telematik-id'<span style="color: navy"><b> -&gt; </b></span>PractitionerDirectory.identifier = <span style="color: maroon">srcKBVPRFORPractitionerIdentifierTelematikId908b03d1</span><b> as </b><span style="color: maroon">tgtPractitionerDirectoryIdentifierTelematikid34e15dac</span> <i>&quot;PractitionerIdentifierTelematikId649b0852&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Copied to 'Practitioner.identifier:TelematikID'</span>
+  KBVPRFORPractitioner.meta<b> as </b><span style="color: maroon">srcKBVPRFORPractitionerMeta0287aadd</span><span style="color: navy"><b> -&gt; </b></span>PractitionerDirectory.meta = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Meta'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">tgtPractitionerDirectoryMeta2975339a</span><b> then</b><span style="color: navy"> {
+</span>    srcKBVPRFORPractitionerMeta0287aadd<b> as </b><span style="color: maroon">srcPractitionerMetaProfile969fe928</span><span style="color: navy"><b> -&gt; </b></span>tgtPractitionerDirectoryMeta2975339a.profile = <span style="color: blue">'https://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory'</span><b> as </b><span style="color: maroon">tgtPractitionerMetaProfile969fe928</span> <i>&quot;PractitionerMetaProfile969fe928&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Fixed value 'https://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory'</span>
+  <span style="color: navy">}</span> <i>&quot;PractitionerMeta472c1c84&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Automatic copy</span>
+  KBVPRFORPractitioner.name<b> as </b><span style="color: maroon">srcKBVPRFORPractitionerNamef7e47166</span><span style="color: navy"><b> -&gt; </b></span>PractitionerDirectory.name = <span style="color: maroon">srcKBVPRFORPractitionerNamef7e47166</span><b> as </b><span style="color: maroon">tgtPractitionerDirectoryName0e536837</span><b> then</b><span style="color: navy"> {
+</span>    srcKBVPRFORPractitionerNamef7e47166<b> as </b><span style="color: maroon">manualsrcPractitionerNameText82d0e3bd</span><span style="color: navy"><b> -&gt; </b></span>tgtPractitionerDirectoryName0e536837<b> as </b><span style="color: maroon">manualtgtPractitionerNameText82d0e3bd</span> <i>&quot;PractitionerNameText82d0e3bd&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Manual action required | Zum Erzeugen von name.text siehe Transformationsregel F_011 | Quelle: Practitioner.name.text</span>
+  <span style="color: navy">}</span> <i>&quot;PractitionerName9470411e&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Automatic copy</span>
+  KBVPRFORPractitioner.qualification<span style="color: navy"><b> -&gt; </b></span>PractitionerDirectory.qualification <i>&quot;PractitionerQualificationAsvFachgruppennummer7aa26f1b&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Quelle: Practitioner.qualification:ASV-Fachgruppennummer</span>
+  KBVPRFORPractitioner.qualification<span style="color: navy"><b> -&gt; </b></span>PractitionerDirectory.qualification <i>&quot;PractitionerQualificationBerufsbezeichnung7f1bb5ba&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Quelle: Practitioner.qualification:Berufsbezeichnung</span>
+  KBVPRFORPractitioner.qualification<span style="color: navy"><b> -&gt; </b></span>PractitionerDirectory.qualification <i>&quot;PractitionerQualificationTyp5a2d4c78&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Quelle: Practitioner.qualification:Typ</span>
+<span style="color: navy">}
+
+</span></pre></div>
+  </text>
+  <url value="https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrForPractitionerMap"/>
+  <version value="1.0.0-draft"/>
+  <name value="KBVPrForPractitionerMap"/>
+  <status value="active"/>
+  <date value="2026-02-02"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="erp-umsetzung@gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="Auto-generated StructureMap for KBV_PR_FOR_Practitioner|1.3.0 -&gt; PractitionerDirectory|1.0.0"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <structure>
+    <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner"/>
+    <mode value="source"/>
+    <alias value="KBVPRFORPractitioner"/>
+  </structure>
+  <structure>
+    <url value="https://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory"/>
+    <mode value="target"/>
+    <alias value="PractitionerDirectory"/>
+  </structure>
+  <group>
+    <name value="KBVPrForPractitionerMap"/>
+    <typeMode value="types"/>
+    <documentation value="Mapping generated for KBV_PR_FOR_Practitioner|1.3.0 -&gt; PractitionerDirectory|1.0.0"/>
+    <input>
+      <name value="KBVPRFORPractitioner"/>
+      <type value="KBVPRFORPractitioner"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="PractitionerDirectory"/>
+      <type value="PractitionerDirectory"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="PractitionerIdentifierdd7a4a22"/>
+      <source>
+        <context value="KBVPRFORPractitioner"/>
+        <element value="identifier"/>
+        <variable value="srcKBVPRFORPractitionerIdentifierd46d78b7"/>
+        <condition value="(use = 'official' and system = 'https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR') != true and (use = 'official' and system = 'http://fhir.de/sid/kzbv/zahnarztnummer') != true"/>
+      </source>
+      <target>
+        <context value="PractitionerDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtPractitionerDirectoryIdentifierbcb1f07a"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="srcKBVPRFORPractitionerIdentifierd46d78b7"/>
+        </parameter>
+      </target>
+      <documentation value="Automatic copy"/>
+    </rule>
+    <rule>
+      <name value="PractitionerIdentifierAnr071fb4ee"/>
+      <source>
+        <context value="KBVPRFORPractitioner"/>
+        <element value="identifier"/>
+        <variable value="srcKBVPRFORPractitionerIdentifierAnr3c836155"/>
+        <condition value="use = 'official' and system = 'https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR'"/>
+      </source>
+      <target>
+        <context value="PractitionerDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtPractitionerDirectoryIdentifierLanrc79324c3"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="srcKBVPRFORPractitionerIdentifierAnr3c836155"/>
+        </parameter>
+      </target>
+      <documentation value="Copied to 'Practitioner.identifier:LANR'"/>
+    </rule>
+    <rule>
+      <name value="PractitionerIdentifierTelematikId649b0852"/>
+      <source>
+        <context value="KBVPRFORPractitioner"/>
+        <element value="identifier"/>
+        <variable value="srcKBVPRFORPractitionerIdentifierTelematikId908b03d1"/>
+        <condition value="system = 'https://gematik.de/fhir/sid/telematik-id'"/>
+      </source>
+      <target>
+        <context value="PractitionerDirectory"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="tgtPractitionerDirectoryIdentifierTelematikid34e15dac"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="srcKBVPRFORPractitionerIdentifierTelematikId908b03d1"/>
+        </parameter>
+      </target>
+      <documentation value="Copied to 'Practitioner.identifier:TelematikID'"/>
+    </rule>
+    <rule>
+      <name value="PractitionerMeta472c1c84"/>
+      <source>
+        <context value="KBVPRFORPractitioner"/>
+        <element value="meta"/>
+        <variable value="srcKBVPRFORPractitionerMeta0287aadd"/>
+      </source>
+      <target>
+        <context value="PractitionerDirectory"/>
+        <contextType value="variable"/>
+        <element value="meta"/>
+        <variable value="tgtPractitionerDirectoryMeta2975339a"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Meta"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="PractitionerMetaProfile969fe928"/>
+        <source>
+          <context value="srcKBVPRFORPractitionerMeta0287aadd"/>
+          <variable value="srcPractitionerMetaProfile969fe928"/>
+        </source>
+        <target>
+          <context value="tgtPractitionerDirectoryMeta2975339a"/>
+          <contextType value="variable"/>
+          <element value="profile"/>
+          <variable value="tgtPractitionerMetaProfile969fe928"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="https://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory"/>
+          </parameter>
+        </target>
+        <documentation value="Fixed value 'https://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory'"/>
+      </rule>
+      <documentation value="Automatic copy"/>
+    </rule>
+    <rule>
+      <name value="PractitionerName9470411e"/>
+      <source>
+        <context value="KBVPRFORPractitioner"/>
+        <element value="name"/>
+        <variable value="srcKBVPRFORPractitionerNamef7e47166"/>
+      </source>
+      <target>
+        <context value="PractitionerDirectory"/>
+        <contextType value="variable"/>
+        <element value="name"/>
+        <variable value="tgtPractitionerDirectoryName0e536837"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="srcKBVPRFORPractitionerNamef7e47166"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="PractitionerNameText82d0e3bd"/>
+        <source>
+          <context value="srcKBVPRFORPractitionerNamef7e47166"/>
+          <variable value="manualsrcPractitionerNameText82d0e3bd"/>
+        </source>
+        <target>
+          <context value="tgtPractitionerDirectoryName0e536837"/>
+          <contextType value="variable"/>
+          <variable value="manualtgtPractitionerNameText82d0e3bd"/>
+        </target>
+        <documentation value="Manual action required | Zum Erzeugen von name.text siehe Transformationsregel F_011 | Quelle: Practitioner.name.text"/>
+      </rule>
+      <documentation value="Automatic copy"/>
+    </rule>
+    <rule>
+      <name value="PractitionerQualificationAsvFachgruppennummer7aa26f1b"/>
+      <source>
+        <context value="KBVPRFORPractitioner"/>
+        <element value="qualification"/>
+        <variable value="srcKBVPRFORPractitionerQualificationAsvFachgruppennummerb1380ba4"/>
+      </source>
+      <target>
+        <context value="PractitionerDirectory"/>
+        <contextType value="variable"/>
+        <element value="qualification"/>
+        <variable value="tgtPractitionerDirectoryQualificationAsvFachgruppennummer4a060b7"/>
+      </target>
+      <documentation value="Feld wird nicht gemappt | Quelle: Practitioner.qualification:ASV-Fachgruppennummer"/>
+    </rule>
+    <rule>
+      <name value="PractitionerQualificationBerufsbezeichnung7f1bb5ba"/>
+      <source>
+        <context value="KBVPRFORPractitioner"/>
+        <element value="qualification"/>
+        <variable value="srcKBVPRFORPractitionerQualificationBerufsbezeichnung73ee1d30"/>
+      </source>
+      <target>
+        <context value="PractitionerDirectory"/>
+        <contextType value="variable"/>
+        <element value="qualification"/>
+        <variable value="tgtPractitionerDirectoryQualificationBerufsbezeichnunge66b35f5"/>
+      </target>
+      <documentation value="Feld wird nicht gemappt | Quelle: Practitioner.qualification:Berufsbezeichnung"/>
+    </rule>
+    <rule>
+      <name value="PractitionerQualificationTyp5a2d4c78"/>
+      <source>
+        <context value="KBVPRFORPractitioner"/>
+        <element value="qualification"/>
+        <variable value="srcKBVPRFORPractitionerQualificationTypb285cc3e"/>
+      </source>
+      <target>
+        <context value="PractitionerDirectory"/>
+        <contextType value="variable"/>
+        <element value="qualification"/>
+        <variable value="tgtPractitionerDirectoryQualificationTypcf13b062"/>
+      </target>
+      <documentation value="Feld wird nicht gemappt | Quelle: Practitioner.qualification:Typ"/>
+    </rule>
+  </group>
+</StructureMap>

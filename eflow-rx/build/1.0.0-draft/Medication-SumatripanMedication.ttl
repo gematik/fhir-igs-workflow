@@ -1,0 +1,93 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/erp/Medication/SumatripanMedication> a fhir:Medication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "SumatripanMedication"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-medication"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-medication>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension>
+     ] ;
+     fhir:value [
+       a fhir:Coding ;
+       fhir:system [
+         fhir:v "https://gematik.de/fhir/epa-medication/CodeSystem/epa-drug-category-cs"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/epa-medication/CodeSystem/epa-drug-category-cs>
+       ] ;
+       fhir:code [ fhir:v "00" ]
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension>
+     ] ;
+     fhir:value [
+       a fhir:Boolean ;
+       fhir:v false
+     ]
+  ] [
+     fhir:url [
+       fhir:v "http://fhir.de/StructureDefinition/normgroesse"^^xsd:anyURI ;
+       fhir:l <http://fhir.de/StructureDefinition/normgroesse>
+     ] ;
+     fhir:value [
+       a fhir:Code ;
+       fhir:v "N1"
+     ]
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://fhir.de/CodeSystem/ifa/pzn"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/CodeSystem/ifa/pzn>
+       ] ;
+       fhir:code [ fhir:v "06313728" ]
+     ] ) ;
+     fhir:text [ fhir:v "Sumatriptan-1a Pharma 100 mg Tabletten" ]
+  ] ; # 
+  fhir:form [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM"^^xsd:anyURI ;
+         fhir:l <https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM>
+       ] ;
+       fhir:code [ fhir:v "TAB" ]
+     ] )
+  ] ; # 
+  fhir:amount [
+     fhir:numerator [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-total-quantity-formulation-extension"^^xsd:anyURI ;
+           fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/medication-total-quantity-formulation-extension>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "20"
+         ]
+       ] ) ;
+       fhir:value [ fhir:v "20"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "St" ]
+     ] ;
+     fhir:denominator [
+       fhir:value [ fhir:v "1"^^xsd:decimal ]
+     ]
+  ] ; # 
+  fhir:batch [
+     fhir:lotNumber [ fhir:v "1234567890" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

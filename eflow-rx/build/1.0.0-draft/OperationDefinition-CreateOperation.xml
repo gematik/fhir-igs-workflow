@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="CreateOperation"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition CreateOperation</b></p><a name="CreateOperation"> </a><a name="hcCreateOperation"> </a><p>URL: [base]/Task/$create</p><p>Input parameters Profile:<a href="http://hl7.org/fhir/R4/parameters.html">Parameters</a></p><p>Output parameters Profile:<a href="StructureDefinition-eflow-rx-create-operation-output-parameters.html">GEM ERP PR CreateOperation Output</a></p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>workflowType</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a></td><td><a href="ValueSet-eflow-rx-flowtype.html">ValueSet der FlowType-Codes</a> (Required)</td><td><div><p>Dieser Parameter fordert die Erstellung eines Tasks mit bestimmten Flowtype an.</p>
+</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/task.html">Task</a></td><td/><td><div><p>Der erstellte Task mit einer flowType-spezifischen Rezept-ID</p>
+</div></td></tr></table></div>
+  </text>
+  <url value="https://gematik.de/fhir/erp/OperationDefinition/CreateOperation"/>
+  <version value="1.0.0-draft"/>
+  <name value="Create"/>
+  <status value="draft"/>
+  <kind value="operation"/>
+  <date value="2025-12-15"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="erp-umsetzung@gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="Diese Operation erstellt eine Aufgabe für die Verschreibung eines bestimmten Flowtypes."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <affectsState value="true"/>
+  <code value="create"/>
+  <resource value="Task"/>
+  <system value="false"/>
+  <type value="true"/>
+  <instance value="false"/>
+  <inputProfile value="http://hl7.org/fhir/StructureDefinition/Parameters"/>
+  <outputProfile value="https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-create-operation-output-parameters"/>
+  <parameter>
+    <name value="workflowType"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Dieser Parameter fordert die Erstellung eines Tasks mit bestimmten Flowtype an."/>
+    <type value="Coding"/>
+    <binding>
+      <strength value="required"/>
+      <valueSet value="https://gematik.de/fhir/erp/ValueSet/eflow-rx-flowtype"/>
+    </binding>
+  </parameter>
+  <parameter>
+    <name value="return"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Der erstellte Task mit einer flowType-spezifischen Rezept-ID"/>
+    <type value="Task"/>
+  </parameter>
+</OperationDefinition>

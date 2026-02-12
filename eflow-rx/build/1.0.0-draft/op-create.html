@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Operation $create (Task erzeugen) - E-Rezept für Arzneimittel v1.0.0-draft</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        height: 280px;
+        background-color: #2a6496;
+        background: url('./e-rezept-img.png') no-repeat;
+        background-position: 650px -150px;
+        background-size: 45% auto;
+    }
+    .bubble-link {
+        display: none;
+        transition: opacity 0.2s;
+        }
+
+        h1:hover .bubble-link,
+        h2:hover .bubble-link,
+        h3:hover .bubble-link,
+        h4:hover .bubble-link,
+        h5:hover .bubble-link,
+        h6:hover .bubble-link {
+        display: inline;
+        }
+</style>
+
+<script type="text/javascript" src="assets/js/heading-links.js"> </script>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"8.1"}
+    h3,h4,h5,h6{--heading-prefix:"8.1"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Start</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Fachlichkeit
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-fachlichkeit-ueberblick.html">Überblick</a>
+      </li>
+      <li>
+        <a href="menu-fachlichkeit-szenarien.html">Szenarien</a>
+      </li>
+      <li>
+        <a href="menu-fachlichkeit-anwendungsfaelle.html">Anwendungsfälle</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Technische Umsetzung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-technische-umsetzung-systemueberblick.html">Systemüberblick</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-anwendungsfaelle.html">Technische Anwendungsfälle</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-verarbeitungsregeln.html">Verarbeitungsregeln</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-dosierung.html">Validierung von Dosierinformationen</a>
+      </li>
+      <li>
+        <a href="mapping.html">Mappings</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Schnittstellen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-query-api.html">Query API</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-operation-api.html">Operation API</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-additional-api.html">Additional APIs</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="referenced.html">Referenzen</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="erp-openapi.html">OpenAPI</a>
+      </li>
+      <li>
+        <a href="release-notes.html">Release Notes</a>
+      </li>
+      <li>
+        <a href="spec-sheet.html">Steckbriefe</a>
+      </li>
+      <li>
+        <a href="comparisons.html">Versionsvergleiche</a>
+      </li>
+      <li>
+        <a href="license.html">Lizenz</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+E-Rezept für Arzneimittel
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 1.0.0-draft - ci-build
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-operation-api.html'><b>Operation API</b></a></li><li><b>Operation $create (Task erzeugen)</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Operation $create (Task erzeugen)</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#task-erzeugen-create" id="markdown-toc-task-erzeugen-create">Task erzeugen ($create)</a></li>
+  <li><a href="#nachricht" id="markdown-toc-nachricht">Nachricht</a></li>
+  <li><a href="#geschäftslogik" id="markdown-toc-geschäftslogik">Geschäftslogik</a></li>
+  <li><a href="#sicherheitsanforderungen" id="markdown-toc-sicherheitsanforderungen">Sicherheitsanforderungen</a></li>
+</ul>
+
+</div>
+<h3 id="task-erzeugen-create">Task erzeugen ($create)</h3>
+
+<p>Die FHIR-Operation <code class="language-plaintext highlighter-rouge">$create</code> erzeugt einen neuen <code class="language-plaintext highlighter-rouge">Task</code> für ein E-Rezept.
+Die Operation steht ausschließlich verordnenden Leistungserbringern zur Verfügung.</p>
+
+<h3 id="nachricht">Nachricht</h3>
+
+<p>Die Nachricht wird als HTTP <code class="language-plaintext highlighter-rouge">POST</code> an <code class="language-plaintext highlighter-rouge">/Task/$create</code> gesendet.</p>
+
+<h4 id="auslösung">Auslösung</h4>
+
+<p>Das Primärsystem (PVS/KIS) ruft <code class="language-plaintext highlighter-rouge">$create</code> auf, um eine Rezept-ID (PrescriptionID) sowie einen AccessCode zu erhalten.</p>
+
+<h4 id="fhir-operation-api">FHIR Operation API</h4>
+
+<requirement conformance="SHALL" key="IG-ERP-101" title="E-Rezept-Fachdienst - Task erzeugen - Rollenprüfung" version="0">
+  <meta lockversion="false" />
+  <actor name="eRp_FD">
+    <testProcedure id="Produkttest" />
+  </actor>
+  Der E-Rezept-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation die Rolle <i>professionOID</i> des Aufrufenden im ACCESS_TOKEN im HTTP-RequestHeader <i>Authorization</i> feststellen und sicherstellen, dass ausschließlich verordnende Leistungserbringer die Operation aufrufen dürfen.
+  <ul>
+    <li>oid_praxis_arzt</li>
+    <li>oid_zahnarztpraxis</li>
+    <li>oid_praxis_psychotherapeut</li>
+    <li>oid_krankenhaus</li>
+    <li>oid_institution-vorsorge-reha</li>
+  </ul>
+</requirement>
+
+<requirement conformance="SHALL" key="IG-ERP-102" title="E-Rezept-Fachdienst - Task erzeugen - Schemavalidierung Rezept anlegen" version="0">
+  <meta lockversion="false" />
+  <actor name="eRp_FD">
+    <testProcedure id="Produkttest" />
+  </actor>
+  Der E-Rezept-Fachdienst MUSS die im Body der HTTP-POST-Operation auf die Ressource Task übertragenen Parameter gegen das Schema <i>http://gematik.de/fhir/erp/OperationDefinition/CreateOperationDefinition</i> prüfen und bei Nicht-Konformität das Anlegen der Ressource im Fachdienst mit dem HTTP-Status-Code <i>400</i> beantworten.
+</requirement>
+
+<requirement conformance="SHALL" key="IG-ERP-103" title="E-Rezept-Fachdienst - Parametrierung Task für Workflow-Typ" version="0">
+  <meta lockversion="false" />
+  <actor name="eRp_FD">
+    <testProcedure id="Produkttest" />
+  </actor>
+  Der E-Rezept-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation den Parameter <i>workflowType</i> (Rezepttyp) aus dem HTTP-Body des POST-Requests entnehmen, als Attribut <i>Task.extension:flowType</i> des zu erstellenden Tasks verwenden und bei Fehlen bzw. Nicht-Konformität des Parameters den Request als unzulässig abweisen.
+</requirement>
+
+<requirement conformance="SHALL" key="IG-ERP-104" title="E-Rezept-Fachdienst - Ergänzung Performer-Typ für Einlöseinstitutstyp" version="0">
+  <meta lockversion="false" />
+  <actor name="eRp_FD">
+    <testProcedure id="Produkttest" />
+  </actor>
+  Der E-Rezept-Fachdienst MUSS beim Erzeugen eines Tasks das Feld <i>Task.performerType</i> aus dem übergebenen, gültigen Parameter <i>Task.extension:flowType</i> gemäß der Prozessparameter übernehmen.
+</requirement>
+
+<requirement conformance="SHALL" key="IG-ERP-105" title="E-Rezept-Fachdienst - Task erzeugen - Generierung Rezept-ID" version="0">
+  <meta lockversion="false" />
+  <actor name="eRp_FD">
+    <testProcedure id="Produkttest" />
+  </actor>
+  Der E-Rezept-Fachdienst MUSS beim Anlegen eines neuen Tasks eine Rezept-ID gemäß der Bildungsregel generieren, als Identifier mit Namingsystem <i>https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId</i> dem Task hinzufügen und sicherstellen, dass diese Rezept-ID innerhalb von 11 Jahren nach ihrer Erzeugung nicht erneut vergeben wird.
+</requirement>
+
+<requirement conformance="SHALL" key="IG-ERP-106" title="E-Rezept-Fachdienst - Task erzeugen - Task-ID=Rezept-ID" version="0">
+  <meta lockversion="false" />
+  <actor name="eRp_FD">
+    <testProcedure id="Produkttest" />
+  </actor>
+  Der E-Rezept-Fachdienst MUSS beim Erzeugen eines neuen Tasks die Rezept-ID, welche mit Task an das verordnende Primärsystem übermittelt wird, als Task-ID verwenden.
+</requirement>
+
+<requirement conformance="SHALL" key="IG-ERP-107" title="E-Rezept-Fachdienst - Task erzeugen - Generierung AccessCode" version="0">
+  <meta lockversion="false" />
+  <actor name="eRp_FD">
+    <testProcedure id="Produkttest" />
+  </actor>
+  Der E-Rezept-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation eine 256 Bit Zufallszahl (hexadezimal kodiert, <i>[0-9a-f]{64}</i>) erzeugen und diese im zu speichernden Task als externe ID in <i>Task.identifier:AccessCode</i> hinzufügen.
+</requirement>
+
+<requirement conformance="SHALL" key="IG-ERP-108" title="E-Rezept-Fachdienst - Status draft" version="0">
+  <meta lockversion="false" />
+  <actor name="eRp_FD">
+    <testProcedure id="Produkttest" />
+  </actor>
+  Der E-Rezept-Fachdienst MUSS die zulässige Anlage eines Tasks mittels HTTP-POST/$create-Operation im Status <i>Task.status = draft</i> vollziehen und beim erfolgreichen Abschluss der Operation die angelegte Ressource Task im HTTP-Body der HTTP-Response zurückgeben.
+</requirement>
+
+<div class="gematik-api" data-api-type="FHIROperation" data-api-fhir-invoke-level="type" data-api-operation-id="createOperation">
+  <div id="CapabilityStatement">
+    <pre>
+      {"resourceType":"CapabilityStatement","id":"erp-fachdienst-server","meta":{"profile":["https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"]},"extension":[{"url":"https://gematik.de/fhir/ti/StructureDefinition/extension-base-url","valueString":"http://todo"},{"extension":[{"url":"statusCode","valueString":"423"},{"url":"description","valueString":"If the insurant objected to the medication process or objected to the submission of prescription and dispensation data into the ePA system, the Medication Service is locked."},{"url":"responseType","valueString":"application/json"},{"url":"errorCode","valueString":"locked"}],"url":"https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"}],"url":"https://gematik.de/fhir/erp/CapabilityStatement/erp-fachdienst-server","version":"1.0.0-draft","name":"ERPFachdienstServer","title":"ERP CapabilityStatement für den E-Rezept-Fachdienst","status":"draft","date":"2025-12-15","publisher":"gematik GmbH","contact":[{"name":"gematik GmbH","telecom":[{"system":"url","value":"https://gematik.de"},{"system":"email","value":"erp-umsetzung@gematik.de"}]}],"description":"ERP CapabilityStatement für den E-Rezept-Fachdienst","jurisdiction":[{"coding":[{"system":"urn:iso:std:iso:3166","code":"DE","display":"Germany"}]}],"kind":"requirements","fhirVersion":"4.0.1","format":["application/fhir+json","application/fhir+xml"],"rest":[{"mode":"server"}]}
+    </pre>
+  </div>
+  <div id="OperationDefinition">
+    <pre>
+      {"resourceType":"OperationDefinition","id":"CreateOperation","text":{"status":"generated","div":"&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p class=\"res-header-id\"&gt;<b>Generated Narrative: OperationDefinition CreateOperation</b>&lt;/p&gt;&lt;a name=\"CreateOperation\"&gt; &lt;/a&gt;&lt;a name=\"hcCreateOperation\"&gt; &lt;/a&gt;<p>URL: [base]/Task/$create</p><p>Input parameters Profile:&lt;a href=\"http://hl7.org/fhir/R4/parameters.html\"&gt;Parameters&lt;/a&gt;</p><p>Output parameters Profile:&lt;a href=\"StructureDefinition-eflow-rx-create-operation-output-parameters.html\"&gt;GEM ERP PR CreateOperation Output&lt;/a&gt;</p><h3>Parameters</h3>&lt;table class=\"grid\"&gt;<tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>workflowType</td><td /><td>1..1</td><td>&lt;a href=\"http://hl7.org/fhir/R4/datatypes.html#Coding\"&gt;Coding&lt;/a&gt;</td><td>&lt;a href=\"ValueSet-eflow-rx-flowtype.html\"&gt;ValueSet der FlowType-Codes&lt;/a&gt; (Required)</td><td><div><p>Dieser Parameter fordert die Erstellung eines Tasks mit bestimmten Flowtype an.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td /><td>1..1</td><td>&lt;a href=\"http://hl7.org/fhir/R4/task.html\"&gt;Task&lt;/a&gt;</td><td /><td><div><p>Der erstellte Task mit einer flowType-spezifischen Rezept-ID</p>\n</div></td></tr>&lt;/table&gt;&lt;/div&gt;"},"url":"https://gematik.de/fhir/erp/OperationDefinition/CreateOperation","version":"1.0.0-draft","name":"Create","status":"draft","kind":"operation","date":"2025-12-15","publisher":"gematik GmbH","contact":[{"name":"gematik GmbH","telecom":[{"system":"url","value":"https://gematik.de"},{"system":"email","value":"erp-umsetzung@gematik.de"}]}],"description":"Diese Operation erstellt eine Aufgabe für die Verschreibung eines bestimmten Flowtypes.","jurisdiction":[{"coding":[{"system":"urn:iso:std:iso:3166","code":"DE","display":"Germany"}]}],"affectsState":true,"code":"create","resource":["Task"],"system":false,"type":true,"instance":false,"inputProfile":"http://hl7.org/fhir/StructureDefinition/Parameters","outputProfile":"https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-create-operation-output-parameters","parameter":[{"name":"workflowType","use":"in","min":1,"max":"1","documentation":"Dieser Parameter fordert die Erstellung eines Tasks mit bestimmten Flowtype an.","type":"Coding","binding":{"strength":"required","valueSet":"https://gematik.de/fhir/erp/ValueSet/eflow-rx-flowtype"}},{"name":"return","use":"out","min":1,"max":"1","documentation":"Der erstellte Task mit einer flowType-spezifischen Rezept-ID","type":"Task"}]}
+    </pre>
+  </div>
+  <div id="Request-Examples">
+    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+      <pre class="xml" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-xml" style="white-space: pre; text-wrap: nowrap;">
+&lt;<a href="http://hl7.org/fhir/R4/parameters.html#Parameters">Parameters</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/resource.html#Parameters.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;OperationCreateParametersInputExample&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter">parameter</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;workflowType&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.value_x_">valueCoding</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+              <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://gematik.de/fhir/erp/CodeSystem/eflow-rx-flowtype&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;160&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.value_x_">valueCoding</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter">parameter</a>&gt;
+&lt;/<a href="http://hl7.org/fhir/R4/parameters.html#Parameters">Parameters</a>&gt;</code></pre>
+
+    </div>
+  </div>
+  <div id="Response-Examples">
+    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+      <pre class="xml" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-xml" style="white-space: pre; text-wrap: nowrap;">
+&lt;<a href="http://hl7.org/fhir/R4/task.html#Task">Task</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/resource.html#Task.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;b12eb5f7-91ce-4887-93c7-800454601377&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/resource.html#Task.meta">meta</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-task&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.tag">tag</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>
+               <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Task in DRAFT state just created by Fachdienst via $create operation&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.tag">tag</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/resource.html#Task.meta">meta</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Task.text">text</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;extensions&quot;/&gt;
+    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;p class=&quot;res-header-id&quot;&gt;&lt;b&gt;Generated Narrative: Task b12eb5f7-91ce-4887-93c7-800454601377&lt;/b&gt;&lt;/p&gt;&lt;a name=&quot;b12eb5f7-91ce-4887-93c7-800454601377&quot;&gt; &lt;/a&gt;&lt;a name=&quot;hcb12eb5f7-91ce-4887-93c7-800454601377&quot;&gt; &lt;/a&gt;&lt;div style=&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%&quot;&gt;&lt;p style=&quot;margin-bottom: 0px&quot;/&gt;&lt;p style=&quot;margin-bottom: 0px&quot;&gt;Profile: &lt;a href=&quot;StructureDefinition-eflow-rx-task.html&quot;&gt;GEM ERP PR Task&lt;/a&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px&quot;&gt;Tag: Task in DRAFT state just created by Fachdienst via $create operation (Details: [not stated] code null = 'Task in DRAFT state just created by Fachdienst via $create operation')&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;GEM ERP EX PrescriptionType&lt;/b&gt;: &lt;a href=&quot;CodeSystem-eflow-rx-flowtype.html#eflow-rx-flowtype-160&quot;&gt;CodeSystem der Flowtypen: 160&lt;/a&gt; (Flowtype für Apothekenpflichtige Arzneimittel)&lt;/p&gt;&lt;p&gt;&lt;b&gt;GEM ERP EX AcceptDate&lt;/b&gt;: 2026-07-01&lt;/p&gt;&lt;p&gt;&lt;b&gt;GEM ERP EX ExpiryDate&lt;/b&gt;: 2026-07-01&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: &lt;code&gt;https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId&lt;/code&gt;/160.000.033.491.280.78, &lt;code&gt;https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode&lt;/code&gt;/777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: Draft&lt;/p&gt;&lt;p&gt;&lt;b&gt;intent&lt;/b&gt;: order&lt;/p&gt;&lt;p&gt;&lt;b&gt;authoredOn&lt;/b&gt;: 2026-07-01 15:29:00+0000&lt;/p&gt;&lt;p&gt;&lt;b&gt;performerType&lt;/b&gt;: &lt;span title=&quot;Codes:{https://gematik.de/fhir/erp/CodeSystem/EFlowRxOrganizationType urn:oid:1.2.276.0.76.4.54}&quot;&gt;Öffentliche Apotheke&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;<a name="end-xhtml"></a>
+  &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Task.text">text</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Task.extension">extension</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-prescriptiontype-extension&quot;&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueCoding</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+              <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://gematik.de/fhir/erp/CodeSystem/eflow-rx-flowtype&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;160&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Flowtype für Apothekenpflichtige Arzneimittel&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueCoding</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Task.extension">extension</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Task.extension">extension</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-acceptdate-extension&quot;&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueDate</a> <a href="http://hl7.org/fhir/R4/datatypes.html#date">value</a>=&quot;2026-07-01&quot;/&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Task.extension">extension</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Task.extension">extension</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-expirydate-extension&quot;&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueDate</a> <a href="http://hl7.org/fhir/R4/datatypes.html#date">value</a>=&quot;2026-07-01&quot;/&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Task.extension">extension</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/task.html#Task.identifier">identifier</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>
+            <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;160.000.033.491.280.78&quot;/&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/task.html#Task.identifier">identifier</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/task.html#Task.identifier">identifier</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>
+            <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>
+           <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea&quot;/&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/task.html#Task.identifier">identifier</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/task.html#Task.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;draft&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/task.html#Task.intent">intent</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;order&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/task.html#Task.authoredOn">authoredOn</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2026-07-01T15:29:00+00:00&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/task.html#Task.performerType">performerType</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+              <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://gematik.de/fhir/erp/CodeSystem/EFlowRxOrganizationType&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;urn:oid:1.2.276.0.76.4.54&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Öffentliche Apotheke&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/task.html#Task.performerType">performerType</a>&gt;
+&lt;/<a href="http://hl7.org/fhir/R4/task.html#Task">Task</a>&gt;</code></pre>
+
+    </div>
+    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+      <pre class="xml" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-xml" style="white-space: pre; text-wrap: nowrap;">
+&lt;<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome">OperationOutcome</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/resource.html#OperationOutcome.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;ExampleOperationCreateError&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue">issue</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.severity">severity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;error&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;invalid&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.details">details</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;FHIR-Validation error&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.details">details</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.diagnostics">diagnostics</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Parameters.parameter[0].valueCoding: error: Code 140 is not part of CodeSystem 
+https://gematik.de/fhir/erp/CodeSystem/EFlowRxFlowType (from profile: 
+http://hl7.org/fhir/StructureDefinition/Parameters|4.0.1); 
+Parameters.parameter[0].valueCoding: error: Code 140 is not part of CodeSystem 
+https://gematik.de/fhir/erp/CodeSystem/EFlowRxFlowType (from profile: 
+http://hl7.org/fhir/StructureDefinition/Coding|4.0.1);&quot;/&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue">issue</a>&gt;
+&lt;/<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome">OperationOutcome</a>&gt;</code></pre>
+
+    </div>
+  </div>
+</div>
+
+<h3 id="geschäftslogik">Geschäftslogik</h3>
+
+<p>Das folgende Aktivitätsdiagramm illustriert die Geschäftslogik der Operation <code class="language-plaintext highlighter-rouge">$create</code>.</p>
+
+<p>&lt;?xml version=”1.0” encoding=”us-ascii” standalone=”no”?&gt;<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1360px" preserveAspectRatio="none" style="width:408px;height:1360px;background:#FFFFFF;" version="1.1" viewBox="0 0 408 1360" width="408px" zoomAndPan="magnify"><defs></defs><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="190" x="107.5" y="32.9951">IG-ERP-BL-TASK-CREATE</text><ellipse cx="204" cy="57.2969" fill="#222222" rx="10" ry="10" style="stroke:#222222;stroke-width:1.0;"></ellipse><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="381" x="13.5" y="87.2969"></rect><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="361" x="23.5" y="108.4355">Extract professionOID from ACCESS_TOKEN (Authorization)</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="199" x="104.5" y="189.668"></rect><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="179" x="114.5" y="210.8066">Return HTTP 403 (forbidden)</text><ellipse cx="204" cy="263.1523" fill="none" rx="11" ry="11" style="stroke:#222222;stroke-width:1.0;"></ellipse><ellipse cx="204" cy="263.1523" fill="#222222" rx="6" ry="6" style="stroke:#111111;stroke-width:1.0;"></ellipse><polygon fill="#F1F1F1" points="130,141.2656,278,141.2656,290,153.2656,278,165.2656,130,165.2656,118,153.2656,130,141.2656" style="stroke:#181818;stroke-width:0.5;"></polygon><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="14" x="208" y="175.4761">no</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="148" x="130" y="157.0737">professionOID is allowed?</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="20" x="290" y="150.6714">yes</text><rect fill="#F1F1F1" height="47.9375" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="236" x="86" y="316.1523"></rect><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="189" x="96" y="337.291">Validate request body against</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="216" x="96" y="351.2598">CreateOperationDefinition schema</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="216" x="96" y="432.4922"></rect><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="196" x="106" y="453.6309">Return HTTP 400 (bad request)</text><ellipse cx="204" cy="505.9766" fill="none" rx="11" ry="11" style="stroke:#222222;stroke-width:1.0;"></ellipse><ellipse cx="204" cy="505.9766" fill="#222222" rx="6" ry="6" style="stroke:#111111;stroke-width:1.0;"></ellipse><polygon fill="#F1F1F1" points="163.5,384.0898,244.5,384.0898,256.5,396.0898,244.5,408.0898,163.5,408.0898,151.5,396.0898,163.5,384.0898" style="stroke:#181818;stroke-width:0.5;"></polygon><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="14" x="208" y="418.3003">no</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="81" x="163.5" y="399.8979">schema valid?</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="20" x="256.5" y="393.4956">yes</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="247" x="80.5" y="558.9766"></rect><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="227" x="90.5" y="580.1152">Read workflowType from Parameters</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="216" x="96" y="661.3477"></rect><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="196" x="106" y="682.4863">Return HTTP 400 (bad request)</text><ellipse cx="204" cy="734.832" fill="none" rx="11" ry="11" style="stroke:#222222;stroke-width:1.0;"></ellipse><ellipse cx="204" cy="734.832" fill="#222222" rx="6" ry="6" style="stroke:#111111;stroke-width:1.0;"></ellipse><polygon fill="#F1F1F1" points="111,612.9453,297,612.9453,309,624.9453,297,636.9453,111,636.9453,99,624.9453,111,612.9453" style="stroke:#181818;stroke-width:0.5;"></polygon><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="14" x="208" y="647.1558">no</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="186" x="111" y="628.7534">workflowType present and valid?</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="20" x="309" y="622.3511">yes</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="95" x="156.5" y="787.832"></rect><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="75" x="166.5" y="808.9707">Create Task</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="277" x="65.5" y="841.8008"></rect><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="257" x="75.5" y="862.9395">Task.extension[flowType] = workflowType</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="386" x="11" y="895.7695"></rect><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="366" x="21" y="916.9082">Task.performerType = derived from flowType (todo details)</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="170" x="119" y="949.7383"></rect><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="150" x="129" y="970.877">Generate PrescriptionID</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="309" x="49.5" y="1003.707"></rect><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="289" x="59.5" y="1024.8457">Task.identifier[PrescriptionId] = PrescriptionID</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="169" x="119.5" y="1057.6758"></rect><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="149" x="129.5" y="1078.8145">Task.id = PrescriptionID</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="299" x="54.5" y="1111.6445"></rect><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="279" x="64.5" y="1132.7832">Generate AccessCode (256 bit random, hex)</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="288" x="60" y="1165.6133"></rect><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="268" x="70" y="1186.752">Task.identifier[AccessCode] = AccessCode</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="141" x="133.5" y="1219.582"></rect><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="121" x="143.5" y="1240.7207">Task.status = draft</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="92" x="158" y="1273.5508"></rect><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="72" x="168" y="1294.6895">return Task</text><ellipse cx="204" cy="1338.5195" fill="none" rx="11" ry="11" style="stroke:#222222;stroke-width:1.0;"></ellipse><ellipse cx="204" cy="1338.5195" fill="#222222" rx="6" ry="6" style="stroke:#111111;stroke-width:1.0;"></ellipse><line style="stroke:#181818;stroke-width:1.0;" x1="204" x2="204" y1="67.2969" y2="87.2969"></line><polygon fill="#181818" points="200,77.2969,204,87.2969,208,77.2969,204,81.2969" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="204" x2="204" y1="223.6367" y2="252.1523"></line><polygon fill="#181818" points="200,242.1523,204,252.1523,208,242.1523,204,246.1523" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="204" x2="204" y1="165.2656" y2="189.668"></line><polygon fill="#181818" points="200,179.668,204,189.668,208,179.668,204,183.668" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="290" x2="313.5" y1="153.2656" y2="153.2656"></line><polygon fill="#181818" points="309.5,222.1523,313.5,232.1523,317.5,222.1523,313.5,226.1523" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="313.5" x2="313.5" y1="153.2656" y2="296.1523"></line><line style="stroke:#181818;stroke-width:1.0;" x1="313.5" x2="204" y1="296.1523" y2="296.1523"></line><line style="stroke:#181818;stroke-width:1.0;" x1="204" x2="204" y1="296.1523" y2="316.1523"></line><polygon fill="#181818" points="200,306.1523,204,316.1523,208,306.1523,204,310.1523" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="204" x2="204" y1="121.2656" y2="141.2656"></line><polygon fill="#181818" points="200,131.2656,204,141.2656,208,131.2656,204,135.2656" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="204" x2="204" y1="466.4609" y2="494.9766"></line><polygon fill="#181818" points="200,484.9766,204,494.9766,208,484.9766,204,488.9766" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="204" x2="204" y1="408.0898" y2="432.4922"></line><polygon fill="#181818" points="200,422.4922,204,432.4922,208,422.4922,204,426.4922" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="256.5" x2="322" y1="396.0898" y2="396.0898"></line><polygon fill="#181818" points="318,464.9766,322,474.9766,326,464.9766,322,468.9766" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="322" x2="322" y1="396.0898" y2="538.9766"></line><line style="stroke:#181818;stroke-width:1.0;" x1="322" x2="204" y1="538.9766" y2="538.9766"></line><line style="stroke:#181818;stroke-width:1.0;" x1="204" x2="204" y1="538.9766" y2="558.9766"></line><polygon fill="#181818" points="200,548.9766,204,558.9766,208,548.9766,204,552.9766" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="204" x2="204" y1="364.0898" y2="384.0898"></line><polygon fill="#181818" points="200,374.0898,204,384.0898,208,374.0898,204,378.0898" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="204" x2="204" y1="695.3164" y2="723.832"></line><polygon fill="#181818" points="200,713.832,204,723.832,208,713.832,204,717.832" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="204" x2="204" y1="636.9453" y2="661.3477"></line><polygon fill="#181818" points="200,651.3477,204,661.3477,208,651.3477,204,655.3477" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="309" x2="322" y1="624.9453" y2="624.9453"></line><polygon fill="#181818" points="318,693.832,322,703.832,326,693.832,322,697.832" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="322" x2="322" y1="624.9453" y2="767.832"></line><line style="stroke:#181818;stroke-width:1.0;" x1="322" x2="204" y1="767.832" y2="767.832"></line><line style="stroke:#181818;stroke-width:1.0;" x1="204" x2="204" y1="767.832" y2="787.832"></line><polygon fill="#181818" points="200,777.832,204,787.832,208,777.832,204,781.832" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="204" x2="204" y1="592.9453" y2="612.9453"></line><polygon fill="#181818" points="200,602.9453,204,612.9453,208,602.9453,204,606.9453" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="204" x2="204" y1="821.8008" y2="841.8008"></line><polygon fill="#181818" points="200,831.8008,204,841.8008,208,831.8008,204,835.8008" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="204" x2="204" y1="875.7695" y2="895.7695"></line><polygon fill="#181818" points="200,885.7695,204,895.7695,208,885.7695,204,889.7695" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="204" x2="204" y1="929.7383" y2="949.7383"></line><polygon fill="#181818" points="200,939.7383,204,949.7383,208,939.7383,204,943.7383" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="204" x2="204" y1="983.707" y2="1003.707"></line><polygon fill="#181818" points="200,993.707,204,1003.707,208,993.707,204,997.707" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="204" x2="204" y1="1037.6758" y2="1057.6758"></line><polygon fill="#181818" points="200,1047.6758,204,1057.6758,208,1047.6758,204,1051.6758" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="204" x2="204" y1="1091.6445" y2="1111.6445"></line><polygon fill="#181818" points="200,1101.6445,204,1111.6445,208,1101.6445,204,1105.6445" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="204" x2="204" y1="1145.6133" y2="1165.6133"></line><polygon fill="#181818" points="200,1155.6133,204,1165.6133,208,1155.6133,204,1159.6133" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="204" x2="204" y1="1199.582" y2="1219.582"></line><polygon fill="#181818" points="200,1209.582,204,1219.582,208,1209.582,204,1213.582" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="204" x2="204" y1="1253.5508" y2="1273.5508"></line><polygon fill="#181818" points="200,1263.5508,204,1273.5508,208,1263.5508,204,1267.5508" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="204" x2="204" y1="1307.5195" y2="1327.5195"></line><polygon fill="#181818" points="200,1317.5195,204,1327.5195,208,1317.5195,204,1321.5195" style="stroke:#181818;stroke-width:1.0;"></polygon></g></svg></p>
+
+<h3 id="sicherheitsanforderungen">Sicherheitsanforderungen</h3>
+
+<p>Generelle Sicherheitsanforderungen werden <a href="./menu-schnittstellen-datenschutz-und-sicherheit.html">hier</a> festgehalten.</p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Feb 12, 2026 06:52+0000">2026-02-12</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+
