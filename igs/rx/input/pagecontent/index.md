@@ -1,33 +1,29 @@
-# Implementation Guide E-Rezept-Workflow
-
-Dieser Implementation Guide beschreibt die Datenmodelle und Basis-Workflows des
-E-Rezept-Fachdienstes. Er bildet das Fundament fuer die fachlichen Szenarien und
-die technischen Schnittstellen im E-Rezept-Workflow.
+Dieser Implementation Guide beschreibt die Datenmodelle und Prozesse des E-Rezept-Fachdienstes für den Anwendungsfall von "Arzneimittelverordnung". Er bildet das Fundament für die fachlichen Szenarien und die technischen Schnittstellen im E-Rezept-Workflow für dieses Szenario.
 
 ## Zweck und Geltungsbereich
 
-- Grundlegende Workflows fuer E-Rezepte (Flowtypes 160/169/200/209)
-- Basis-Profile, Operationen und Validierungsregeln
-- Referenz fuer modulare IGs (z. B. PKV, EU, T-Rezept, DiGA)
+- Grundlegende Workflows für E-Rezepte zur Arzneimittelversorgung (Flowtypes 160/169/200/209)
+- Profile, Operationen und Validierungsregeln
 
 ## Nicht im Scope
 
-- Modul-spezifische Sonderfaelle, die in eigenen IGs beschrieben sind
-- Produkttyp-spezifische Implementierungsdetails ausserhalb des Fachdienstes
+- Modul-spezifische Sonderfälle, die in eigenen IGs beschrieben sind
+- Produkttyp-spezifische Implementierungsdetails außerhalb des Fachdienstes
+- Beschreibung und Definition von Pro
 
 ## Wie dieser IG zu lesen ist
 
 Die Kapitel folgen der Struktur Fachlichkeit, Technische Umsetzung und
-Schnittstellen. Szenarien und Anwendungsfaelle verweisen auf die zugehoerigen
+Schnittstellen. Szenarien und Anwendungsfälle verweisen auf die zugehörigen
 technischen Kapitel und Profile.
 
-## Abhaengigkeiten
+## Abhängigkeiten
 
 {% include dependency-table.xhtml %}
 
 ## Kontakt und Feedback
 
-Fuer Fragen und Feedback wenden Sie sich bitte an
+Für Fragen und Feedback wenden Sie sich bitte an
 [erp-umsetzung@gematik.de](mailto:erp-umsetzung@gematik.de).
 
 ## Rechtliche Hinweise
