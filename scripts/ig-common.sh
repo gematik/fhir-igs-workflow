@@ -63,10 +63,12 @@ load_ig_config() {
 
   PREV=""
 
-  BUILD_GENERATE_HEADING_LINKS=true
-  BUILD_GENERATE_DRAWIO_IMAGES=true
-  BUILD_USE_IGTOOLS=true
-  GENONCE_ARGS=("-no-sushi")
+  : "${BUILD_GENERATE_HEADING_LINKS:=true}"
+  : "${BUILD_GENERATE_DRAWIO_IMAGES:=true}"
+  : "${BUILD_USE_IGTOOLS:=true}"
+  if [[ ${#GENONCE_ARGS[@]:-0} -eq 0 ]]; then
+    GENONCE_ARGS=("-no-sushi")
+  fi
 
   IG_CONFIG_FILE="$ROOT_DIR/scripts/ig-configs/$IG_SHORT.sh"
   if [[ -f "$IG_CONFIG_FILE" ]]; then
