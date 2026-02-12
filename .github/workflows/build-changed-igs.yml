@@ -16,6 +16,7 @@ jobs:
       BUILD_USE_IGTOOLS: "false"
       BUILD_GENERATE_DRAWIO_IMAGES: "false"
       INSTALL_SUSHI_DEPS: "skip"
+      DRAWIO_APP: "/usr/local/bin/drawio"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,11 +34,39 @@ jobs:
         with:
           node-version: "20"
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
       - name: Install tooling
         run: |
           npm install -g fsh-sushi
           sudo wget -q https://github.com/mikefarah/yq/releases/download/v4.44.1/yq_linux_amd64 -O /usr/local/bin/yq
           sudo chmod +x /usr/local/bin/yq
+
+      - name: Install igtools
+        run: |
+          python -m pip install --upgrade pipx
+          python -m pipx install git+https://github.com/onyg/req-tooling.git
+
+      - name: Install draw.io (headless)
+        if: env.BUILD_GENERATE_DRAWIO_IMAGES == 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq xvfb
+          drawio_url=$(curl -s https://api.github.com/repos/jgraph/drawio-desktop/releases/latest \
+            | jq -r '.assets[] | select(.name | endswith(".AppImage")) | .browser_download_url' \
+            | head -n 1)
+          echo "Downloading draw.io from $drawio_url"
+          sudo curl -L "$drawio_url" -o /usr/local/bin/drawio.appimage
+          sudo chmod +x /usr/local/bin/drawio.appimage
+          printf '%s\n' \
+            '#!/usr/bin/env bash' \
+            'set -euo pipefail' \
+            'exec xvfb-run -a /usr/local/bin/drawio.appimage "$@"' \
+            | sudo tee /usr/local/bin/drawio >/dev/null
+          sudo chmod +x /usr/local/bin/drawio
 
       - name: Determine IGs to build
         id: igs
