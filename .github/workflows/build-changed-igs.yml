@@ -39,6 +39,11 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+
       - name: Install tooling
         run: |
           sudo apt-get update
@@ -46,6 +51,10 @@ jobs:
           npm install -g fsh-sushi
           sudo wget -q https://github.com/mikefarah/yq/releases/download/v4.44.1/yq_linux_amd64 -O /usr/local/bin/yq
           sudo chmod +x /usr/local/bin/yq
+
+      - name: Install Jekyll
+        run: |
+          gem install jekyll bundler
 
       - name: Install igtools
         run: |
