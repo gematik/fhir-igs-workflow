@@ -27,7 +27,7 @@ Wie funktioniert ein Zeilenumbruch? (zwischen den unteren Afos)
   <!-- Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mit Flowtype 162 mittels $activate prüfen, dass im Bundle eine <i>DeviceRequest</i>-Ressource und in der </i>Composition.type.coding.code=e16D</i> enthalten ist. Der E-Rezept-Fachdienst MUSS andernfalls mit dem HTTP-Fehlercode 400 abbrechen und in der <i>OperationOutcome</i> den Fehlertext "Für diesen Workflowtypen sind nur Verordnungen für Digitale Gesundheitsanwendungen zulässig" ausgeben. -->
 </requirement>
 
-
+</br>
 
 <!-- A_25992 - E-Rezept-Fachdienst - Task aktivieren – Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest -->
 <requirement conformance="SHALL" key="IG-ERP-85" title="E-Rezept-Fachdienst - Task aktivieren - PZN in KBV_PR_EVDGA_HealthAppRequest validieren" version="0">
