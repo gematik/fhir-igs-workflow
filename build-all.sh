@@ -110,7 +110,7 @@ run_ig() {
         cp "$publisher_src" "$publisher_dest_dir/publisher.jar"
       fi
     fi
-    if [[ ${#GENONCE_ARGS[@]:-0} -gt 0 ]]; then
+    if [[ "${GENONCE_ARGS+x}" == "x" && ${#GENONCE_ARGS[@]} -gt 0 ]]; then
       (cd "$ig_dir" && "$ROOT_DIR/_genonce.sh" "${GENONCE_ARGS[@]}")
     else
       (cd "$ig_dir" && "$ROOT_DIR/_genonce.sh")
