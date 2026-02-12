@@ -48,6 +48,11 @@ jobs:
         with:
           node-version: "20"
 
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -65,6 +70,10 @@ jobs:
           npm install -g fsh-sushi
           sudo wget -q https://github.com/mikefarah/yq/releases/download/v4.44.1/yq_linux_amd64 -O /usr/local/bin/yq
           sudo chmod +x /usr/local/bin/yq
+
+      - name: Install Firely Terminal (fhir)
+        run: |
+          dotnet tool install --tool-path /usr/local/bin Firely.Terminal
 
       - name: Install Jekyll
         run: |
@@ -129,6 +138,29 @@ jobs:
 
           ig_list_sorted=$(printf "%s\n" "${ig_list[@]}" | sort -u | tr '\n' ' ' | xargs)
           echo "ig_list=$ig_list_sorted" >> "$GITHUB_OUTPUT"
+
+      - name: Install and inflate FHIR packages
+        if: steps.igs.outputs.ig_list != ''
+        shell: bash
+        run: |
+          set -euo pipefail
+          cache_dir="${FHIR_PACKAGE_CACHE_DIR:-$HOME/.fhir/packages}"
+          mkdir -p "$cache_dir"
+          for ig in ${{ steps.igs.outputs.ig_list }}; do
+            cfg="igs/$ig/sushi-config.yaml"
+            [[ -f "$cfg" ]] || continue
+            mapfile -t deps < <(yq eval '.dependencies // {} | to_entries | .[] | "\(.key) \(.value)"' "$cfg")
+            for dep in "${deps[@]}"; do
+              pkg="${dep%% *}"
+              ver="${dep#* }"
+              [[ -z "$pkg" || -z "$ver" ]] && continue
+              fhir install "$pkg" "$ver"
+              pkg_dir="$cache_dir/${pkg}#${ver}/package"
+              if [[ -d "$pkg_dir" ]]; then
+                (cd "$pkg_dir" && fhir inflate --here)
+              fi
+            done
+          done
 
       - name: Download IG Publisher
         if: steps.igs.outputs.ig_list != ''
