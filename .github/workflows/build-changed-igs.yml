@@ -8,10 +8,14 @@ on:
 
 jobs:
   build:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     env:
       BUILD_USE_IGTOOLS: "false"
       BUILD_GENERATE_DRAWIO_IMAGES: "false"
+      INSTALL_SUSHI_DEPS: "skip"
+      DRAWIO_APP: "/usr/local/bin/drawio"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -29,11 +33,50 @@ jobs:
         with:
           node-version: "20"
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+
       - name: Install tooling
         run: |
+          sudo apt-get update
+          sudo apt-get install -y zsh
           npm install -g fsh-sushi
           sudo wget -q https://github.com/mikefarah/yq/releases/download/v4.44.1/yq_linux_amd64 -O /usr/local/bin/yq
           sudo chmod +x /usr/local/bin/yq
+
+      - name: Install Jekyll
+        run: |
+          gem install jekyll bundler
+
+      - name: Install igtools
+        run: |
+          python -m pip install --upgrade pipx
+          python -m pipx install git+https://github.com/onyg/req-tooling.git
+
+      - name: Install draw.io (headless)
+        if: env.BUILD_GENERATE_DRAWIO_IMAGES == 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq xvfb
+          drawio_url=$(curl -s https://api.github.com/repos/jgraph/drawio-desktop/releases/latest \
+            | jq -r '.assets[] | select(.name | endswith(".AppImage")) | .browser_download_url' \
+            | head -n 1)
+          echo "Downloading draw.io from $drawio_url"
+          sudo curl -L "$drawio_url" -o /usr/local/bin/drawio.appimage
+          sudo chmod +x /usr/local/bin/drawio.appimage
+          printf '%s\n' \
+            '#!/usr/bin/env bash' \
+            'set -euo pipefail' \
+            'exec xvfb-run -a /usr/local/bin/drawio.appimage "$@"' \
+            | sudo tee /usr/local/bin/drawio >/dev/null
+          sudo chmod +x /usr/local/bin/drawio
 
       - name: Determine IGs to build
         id: igs
@@ -103,6 +146,44 @@ jobs:
             echo "deploy target: gs://gematik_gemspec_fhir_prod-0/$prefix"
           done
           echo "deploying $total files"
+
+      - name: Prepare GitHub Pages content
+        if: steps.igs.outputs.ig_list != ''
+        shell: bash
+        run: |
+          set -euo pipefail
+          pages_dir="pages"
+          ref_name="${GITHUB_REF_NAME}"
+          rm -rf "$pages_dir"
+          mkdir -p "$pages_dir"
+
+          for ig in ${{ steps.igs.outputs.ig_list }}; do
+            out_dir="igs/$ig/output"
+            if [[ -d "$out_dir" ]]; then
+              id=$(yq -r '.id // ""' "igs/$ig/sushi-config.yaml")
+              version=$(yq -r '.version // ""' "igs/$ig/sushi-config.yaml")
+              id=${id#de.gematik.}
+              id=${id//./-}
+
+              if [[ "$ref_name" == "main" ]]; then
+                target_dir="$pages_dir/$id/$version"
+              else
+                target_dir="$pages_dir/$id/build/$version"
+              fi
+
+              mkdir -p "$target_dir"
+              cp -R "$out_dir"/. "$target_dir"/
+            fi
+          done
+
+      - name: Publish to GitHub Pages
+        if: steps.igs.outputs.ig_list != ''
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./pages
+          publish_branch: gh-pages
+          keep_files: true
 
       - name: No IG changes
         if: steps.igs.outputs.ig_list == ''
