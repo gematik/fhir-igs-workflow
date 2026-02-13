@@ -1,5 +1,5 @@
-## close operation
-Operation: $close
+## Operation: $close
+
 
 
 
@@ -17,7 +17,7 @@ ToDo: link zu übergreifenden Anforderungen
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
   </actor>
-  Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks für ein E-Rezept mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/<id> mit Flowtype 162 die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Institutionen in der Rolle
+  Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks für eine Verordnung mit Flowtype 162 mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/<id>  die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Institutionen in der Rolle
   •	oid_kostentraeger
   die Operation am Fachdienst aufrufen, damit der Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.
 </requirement>
