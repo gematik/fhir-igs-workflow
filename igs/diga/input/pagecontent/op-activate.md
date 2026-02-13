@@ -1,9 +1,9 @@
+## activate operation
 Operation: $activate
 
 Die FHIR-Operation `$activate` überführt einen im Status `draft` befindlichen `Task` in den Status `ready`, nachdem das Primärsystem den qualifiziert elektronisch signierten Verordnungsdatensatz (QES) übermittelt hat. Für DiGA Verordnungen (Flowtype 162) gelten zusätzliche Payload-Prüfungen. Die allgemeinen Anforderungen des Basis-Workflows gelten unverändert.
 
-## DiGA-spezifische Prüfungen (Flowtype 162)
-
+### Anforderungen an Schnittstelle
 
 <!-- folgende Anforderungen gelten für den FD und können auf eine andere Seite ausgelagert und hier verlinkt werden. --> 
 
