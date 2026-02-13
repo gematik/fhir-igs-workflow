@@ -1,0 +1,20 @@
+actor: []
+conformance: SHALL
+content_hash: 3cd0dace0027265b92cf9dee1af7b11ed970a13b7d39968c62db90c2503672fa
+created: '2026-02-13T08:21:27.889702'
+date: '2026-02-13T08:21:27.889704'
+key: IG-ERP-RX-602
+modified: '2026-02-13T08:21:27.889704'
+release_status: NEW
+source: input/pagecontent/op-close-fd-requirements.md
+status: ACTIVE
+test_procedures: {}
+text: Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation
+  ueber /Task/&lt;id&gt;/$close das im URL-Parameter "?secret=..." uebertragene Secret
+  gegen das im referenzierten Task gespeicherte Secret Task.identifier:Secret als
+  https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret und auf Task.status =
+  in-progress pruefen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation
+  mit dem HTTP-Fehlercode 403 abbrechen, damit der Zugriff auf diesen Datensatz nur
+  durch den Berechtigten in Kenntnis des Secrets erfolgt.
+title: E-Rezept-Fachdienst - Task schliessen - Pruefung Secret (A_19231-02)
+version: 0

@@ -1,0 +1,20 @@
+actor: []
+conformance: SHALL
+content_hash: 4f850146bf52d3dede7b2cbe8f4473d5b6c34c4b430468c9eb847e104691ce52
+created: '2026-02-13T08:21:27.885186'
+date: '2026-02-13T08:21:27.885189'
+key: IG-ERP-RX-204
+modified: '2026-02-13T08:21:27.885188'
+release_status: NEW
+source: input/pagecontent/op-activate-fd-requirements.md
+status: ACTIVE
+test_procedures: {}
+text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mit Workflowtyp 166
+  mittels $activate pruefen, dass im Bundle eine MedicationRequest-Ressource und eine
+  Medication mit Medication.extension:Arzneimittelkategorie = 02 enthalten ist. Der
+  E-Rezept-Fachdienst MUSS andernfalls mit dem HTTP-Fehlercode 400 abbrechen und in
+  der OperationOutcome den Fehlertext "Fuer diesen Workflowtypen sind nur T-Rezept
+  Verordnungen zulaessig" ausgeben.
+title: E-Rezept-Fachdienst - Task aktivieren - Flowtype 166 - Pruefung Arzneimittelverordnung
+  (A_27813)
+version: 0

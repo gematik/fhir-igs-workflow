@@ -1,0 +1,20 @@
+actor: []
+conformance: SHALL
+content_hash: 78ac1cfc65e3e90c6b03d1bd8c01ecd7a03a0e66aeefab98f086ee6598babdda
+created: '2026-02-13T08:21:27.886864'
+date: '2026-02-13T08:21:27.886866'
+key: IG-ERP-RX-301
+modified: '2026-02-13T08:21:27.886865'
+release_status: NEW
+source: input/pagecontent/op-abort-fd-requirements.md
+status: ACTIVE
+test_procedures: {}
+text: Der E-Rezept-Fachdienst MUSS das Loeschen eines E-Rezepts mit dem Flowtype 169
+  oder 209 ueber den mittels der &lt;id&gt; adressierten /Task/&lt;id&gt;/$abort verhindern
+  und die Operation mit dem HTTP-Fehlercode 403 abweisen, wenn der Status des adressierten
+  Tasks ungleich "completed" ist und die Rolle des aufrufenden Nutzers oid_versicherter
+  entspricht, damit kein Versicherter ein E-Rezept aus einem Workflow mit Workflowsteuerung
+  durch Leistungserbringer (169, 209) loescht, das nicht bereits beliefert wurde.
+title: E-Rezept-Fachdienst - E-Rezept loeschen - Flowtype 169 / 209 - Versicherter
+  - Statuspruefung (A_22102-01)
+version: 0

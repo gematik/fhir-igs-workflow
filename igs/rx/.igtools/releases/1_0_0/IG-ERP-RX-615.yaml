@@ -1,0 +1,30 @@
+actor: []
+conformance: SHALL
+content_hash: da48bc21edc589b7a2f01e434146b77488db9cb3d94e32b366537654fab32ff8
+created: '2026-02-13T08:21:27.890823'
+date: '2026-02-13T08:21:27.890825'
+key: IG-ERP-RX-615
+modified: '2026-02-13T08:21:27.890824'
+release_status: NEW
+source: input/pagecontent/op-close-fd-requirements.md
+status: ACTIVE
+test_procedures: {}
+text: 'Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels /Task/&lt;id&gt;/$close
+  ein Quittungsbundle gemaess des FHIR-Profils https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle
+  mit folgenden Informationen erstellen: Telematik-ID der aufrufenden Apotheke als
+  Beneficiary in die erxComposition, Zeitstempel des Statuswechsel des Tasks "in-progress"
+  in event.period.start, aktueller Zeitstempel in event.period.end, Identifier PrescriptionID
+  des Task als identifier des Quittungs-Bundle, Device-Ressource mit Fachdienstinformationen
+  als Autor der Signatur, Base64Binary-Ressource mit Binary.data = &lt;base64-codierter
+  Hashwert aus der QES-Signatur des dem Task zugrunde liegenden Verordnungsdatensatzes&gt;
+  und contentType = "application/octet-stream". Dieses Quittungs-Bundle MUSS mit der
+  Signaturidentitaet des Fachdienstes ID.FD.OSIG gemaess RFC5652 mit Profil CAdES-BES
+  im Enveloping signiert werden. In die Signatur wird die letzte OCSP-Antwort der
+  regelmaessigen Statuspruefung des Signaturzertifikats C.FD.OSIG eingebettet. Das
+  Signatur-Ergebnis wird als dss:Base64Signature-Objekt in Bundle.signature eingebettet
+  und dieses Quittungs-Bundle mit Referenz in Task.output mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType
+  = 3 gespeichert sowie als Response des HTTP-Requests an den Aufrufer zurueckgegeben,
+  damit der Apotheker einen Nachweis ueber den ordnungsgemaessen Abschluss des E-Rezept-Workflows
+  als Quittung erhaelt.'
+title: E-Rezept-Fachdienst - Task schliessen - Quittung erstellen (A_19233-05)
+version: 0

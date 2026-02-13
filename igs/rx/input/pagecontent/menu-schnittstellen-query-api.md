@@ -10,8 +10,13 @@ Diese Seite bietet den Einstieg in die lesenden RX-Schnittstellen.
 ## Ressourcen
 
 - [Task](./query-api-task.html)
+- [MedicationDispense](./query-api-medicationdispense.html)
 
 Auch in der Query API werden FD- und Client-Anforderungen jeweils in eigene Unterseiten getrennt.
 
 Die Task-Seite umfasst die Varianten `GET /Task`, `GET /Task/{id}`, `GET /Task/{id}?ac=...` und `GET /Task/{id}?secret=...`.
-Weitere Ressourcen (Communication, MedicationDispense, AuditEvent) werden schrittweise als eigene Query-Seiten ausgepraegt.
+
+Moduluebergreifende Query-Ressourcen sind im Core IG beschrieben:
+
+- [AuditEvent (Core)](https://gemspec.gematik.de/ig/fhir/eflow-core/latest/query-api-auditevent.html)
+- [Device (Core)](https://gemspec.gematik.de/ig/fhir/eflow-core/latest/query-api-device.html)
