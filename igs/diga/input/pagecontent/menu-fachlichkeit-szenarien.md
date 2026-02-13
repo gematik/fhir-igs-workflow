@@ -2,7 +2,7 @@ Diese Seite dient als Einstiegspunkt in alle fachlichen Szenarien für den DiGA-
 
 ## Unterstützte Szenarien
 
-- [E-Rezept für Digitale Gesundheitsanwendungen (DiGA)](./menu-fachlichkeit-szenario-diga.html): erläutert Flowtype 162 vom Ausstellen der DiGA-Verordnung über die Zuweisung an Kostenträger bis zur Bereitstellung des Freischaltcodes.
+- [Verordnungen für Digitale Gesundheitsanwendungen (DiGA)](./menu-fachlichkeit-szenario-diga.html): erläutert Flowtype 162 vom Ausstellen der DiGA-Verordnung über die Zuweisung an Kostenträger bis zur Bereitstellung des Freischaltcodes.
 
 Weitere Szenarien werden sukzessive ergänzt. Neue Inhalte sollten den Aufbau der bestehenden Detailseiten übernehmen, damit Leserinnen und Leser erwartbare Orientierungspunkte finden.
 

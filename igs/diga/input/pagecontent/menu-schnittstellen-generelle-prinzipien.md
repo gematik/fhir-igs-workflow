@@ -10,5 +10,5 @@ Zur Auflösung der Telematik-ID auf IKNR nutzt der Workflow-Fachdienst den
 FHIR-VZD. Der Zugriff erfolgt über die FHIRDirectorySearchAPI.
 
 ## Kommunikation
-Die Zuweisung einer DiGA-Verordnung erfolgt per Communication. Für DiGA kann
+Die Zuweisung einer DiGA-Verordnung durc einen Versicherten an den Kostenträger erfolgt per Communication im E-Rezept-FdV. Beim Zuweisen von DiGA-Verordnungen kann
 Communication.payload entfallen (Kardinalitaet 0..1).

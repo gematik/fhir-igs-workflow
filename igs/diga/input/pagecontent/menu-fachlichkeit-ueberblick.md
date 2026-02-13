@@ -3,11 +3,11 @@ Verordnungen für Digitale Gesundheitsanwendungen (DiGA). DiGAs sind zertifizier
 Das Feature beschreibt die Prozessparameter, Rollen und fachlichen Anforderungen für den Workflow-Fachdienst und beteiligte Clientsysteme.
 
 ## Zielgruppe
-Hersteller und Anbieter des Produkttyps Workflow-Fachdienst sowie Hersteller von Clientsystemen für den Zugriff auf den Workflow-Fachdienst.
+Hersteller und Anbieter des Produkttyps TI-Flow-Fachdienst sowie Hersteller von Clientsystemen für den Zugriff auf den Workflow-Fachdienst.
 
 ## Abgrenzungen
 Folgende Aspekte sind nicht Gegenstand dieses IG:
-- Beantragung einer DiGA ohne ärztliche oder psychotherapeutische Verordnung.
+- Beantragung einer DiGA durch den Versicherten ohne ärztliche oder psychotherapeutische Verordnung.
 - Verordnungen für Privatversicherte und sonstige Kostenträger.
 - Abrechnungsschnittstellen zwischen DiGA-Herstellern und Krankenkassen.
 

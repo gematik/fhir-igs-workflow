@@ -25,7 +25,7 @@ ToDo: link zu übergreifenden Anforderungen
 </br>
 
 <!-- Quelle: A_26003-01 -E-Rezept-Fachdienst - Task schließen - Flowtype 162 - Profilprüfung MedicationDispense -->
-<requirement conformance="SHALL" key="IG-ERP-Neu" title="E-Rezept-Fachdienst - Task schließen - Flowtype 162 - Profilprüfung MedicationDispense" version="0">
+<requirement conformance="MUST" key="IG-ERP-Neu" title="E-Rezept-Fachdienst - Task schließen - Flowtype 162 - Profilprüfung MedicationDispense" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>

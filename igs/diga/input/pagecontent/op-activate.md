@@ -6,8 +6,11 @@ Die FHIR-Operation `$activate` überführt einen im Status `draft` befindlichen 
 
 <!-- folgende Anforderungen gelten für den FD und können auf eine andere Seite ausgelagert und hier verlinkt werden. --> 
 
+
+
+
 <!-- Quelle: A_25990 - E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - QES durch berechtigte Berufsgruppe -->
-<requirement conformance="SHALL" key="IG-ERP-84" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - QES durch berechtigte Berufsgruppe" version="0">
+<requirement conformance="MUST" key="IG-ERP-84" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - QES durch berechtigte Berufsgruppe" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
@@ -24,7 +27,7 @@ Die FHIR-Operation `$activate` überführt einen im Status `draft` befindlichen 
 </br>
 
 <!-- Quelle: A_25991 - E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Verordnung von DiGAs -->
-<requirement conformance="SHALL" key="IG-ERP-84" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Verordnung von DiGAs" version="0">
+<requirement conformance="MUST" key="IG-ERP-84" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Verordnung von DiGAs" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
@@ -35,7 +38,7 @@ Die FHIR-Operation `$activate` überführt einen im Status `draft` befindlichen 
 </br>
 
 <!-- Quelle: A_25992 - E-Rezept-Fachdienst - Task aktivieren – Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest -->
-<requirement conformance="SHALL" key="IG-ERP-85" title="E-Rezept-Fachdienst - Task aktivieren – Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest" version="0">
+<requirement conformance="MUST" key="IG-ERP-85" title="E-Rezept-Fachdienst - Task aktivieren – Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
@@ -47,7 +50,7 @@ Die FHIR-Operation `$activate` überführt einen im Status `draft` befindlichen 
 </br>
 
 <!-- Quelle: A_23443-01 - E-Rezept-Fachdienst – Task aktivieren – Flowtype 160/162/169 - Prüfung Coverage Type -->
-<requirement conformance="SHALL" key="IG-ERP-84" title="E-Rezept-Fachdienst – Task aktivieren – Flowtype 162 - Prüfung Coverage Type" version="0">
+<requirement conformance="MUST" key="IG-ERP-84" title="E-Rezept-Fachdienst – Task aktivieren – Flowtype 162 - Prüfung Coverage Type" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
@@ -58,10 +61,12 @@ Die FHIR-Operation `$activate` überführt einen im Status `draft` befindlichen 
 </br>
 
 <!-- Quelle: A_26372 - E-Rezept-Fachdienst – Task aktivieren – Flowtype 162 - Prüfung Coverage Alternative IK  -->
-<requirement conformance="SHALL" key="IG-ERP-89" title="E-Rezept-Fachdienst – Task aktivieren – Flowtype 162 - Prüfung Coverage Alternative IK" version="0">
+<requirement conformance="MUST" key="IG-ERP-89" title="E-Rezept-Fachdienst – Task aktivieren – Flowtype 162 - Prüfung Coverage Alternative IK" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Task des Flowtype Task.extension:flowType = 162 mittels HTTP-POST-Operation über /Task/<id>/$activate prüfen, ob die Extension Coverage.payor.identifier.extension:alternativeID vorhanden ist und in diesem Fall die Operation mit Http-Fehlercode 400 abbrechen, um sicherzustellen, dass dieser Workflow nicht für Verordnungen genutzt wird, die zu Lasten von Unfallkassen oder Berufsgenossenschaften gehen.
 </requirement>
+
+Dieser Ausschluss erfolgt temporär. In einer späteren Version können Unfallkassen das Verordnen von DiGAs explizit unterstützen. Die konkreten Festlegungen dazu werden in einem Folgerelease getroffen.

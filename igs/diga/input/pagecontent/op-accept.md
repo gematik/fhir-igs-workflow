@@ -14,7 +14,7 @@ ToDo: link zu übergreifenden Anforderungen
 Frage: was ist mit A_25993 - E-Rezept-Fachdienst - Task akzeptieren - Flowtype 162 - Rollenprüfung ? Kommt die Afo hierhin?
 
 <!-- Quelle: A_25993 - E-Rezept-Fachdienst - Task akzeptieren - Flowtype 162 - Rollenprüfung -->
-<requirement conformance="SHALL" key="IG-ERP-Neu" title="E-Rezept-Fachdienst - Task akzeptieren - Flowtype 162 - Rollenprüfung" version="0">
+<requirement conformance="MUST" key="IG-ERP-Neu" title="E-Rezept-Fachdienst - Task akzeptieren - Flowtype 162 - Rollenprüfung" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
