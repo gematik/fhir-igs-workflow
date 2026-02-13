@@ -1,10 +1,10 @@
-tbd
+### Ueberblick zur Verordnung und Belieferung von Arzneimitteln
 
-mögliche Inhalte:
-- fachlicher Überblick über Verordnungsprozesse im E-Rezept-Fachdienst 
-- Einordnung des E-Rezept-Fachdienst im dgMP
-- Aufgaben des E-Rezept-Fachdienst und Abgrenzung zur ePA 
-- Rolle der Task-ID im E-Rezept-Workflow
-- Beschreibung der Flowtypes (z.B. 160, 161, 162)
-- Rechtliche Grundlagen und Regelungen (SGB V, BMG-Vorgaben, BfArM-Richtlinien)
+Der RX-Workflow ist aus fachlicher Sicht von links nach rechts zu lesen:
 
+1. **Fachliche Uebersicht**: Rollen, Ziele, Prozessgrenzen
+2. **Fachliche Anwendungsfaelle**: was fachlich passieren soll
+3. **Technische Anwendungsfaelle**: wie die Interaktion ueber FHIR stattfindet
+4. **Schnittstellen (Query/Operation API)**: konkrete Requests, Responses und Anforderungen
+
+So entsteht ein durchgaengiger Pfad von der Prozesssicht bis zur implementierbaren API-Regel.

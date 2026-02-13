@@ -1,0 +1,19 @@
+# FD-Anforderungen: Operation `$abort`
+
+Diese Seite enthaelt die normativen Anforderungen an den E-Rezept-Fachdienst fuer die Operation `$abort`.
+
+<requirement conformance="SHALL" key="IG-ERP-RX-301" title="E-Rezept-Fachdienst - E-Rezept loeschen - Flowtype 169 / 209 - Versicherter - Statuspruefung (A_22102-01)" version="0">
+  <meta lockversion="false"/>
+  Der E-Rezept-Fachdienst MUSS das Loeschen eines E-Rezepts mit dem Flowtype 169 oder 209 ueber den mittels der &lt;id&gt; adressierten /Task/&lt;id&gt;/$abort verhindern und die Operation mit dem HTTP-Fehlercode 403 abweisen, wenn der Status des adressierten Tasks ungleich "completed" ist und die Rolle des aufrufenden Nutzers oid_versicherter entspricht, damit kein Versicherter ein E-Rezept aus einem Workflow mit Workflowsteuerung durch Leistungserbringer (169, 209) loescht, das nicht bereits beliefert wurde.
+</requirement>
+
+<requirement conformance="SHALL" key="IG-ERP-RX-302" title="E-Rezept-Fachdienst - E-Rezept loeschen - Loeschinformation ePA Medication Service bereitstellen (Verordnungsdatensatz) - Leistungserbringerinstitution (A_25930)" version="0">
+  <meta lockversion="false"/>
+  Der E-Rezept-Fachdienst MUSS beim Loeschen eines E-Rezepts mittels POST /Task/{id}/$abort durch eine verordnende oder abgebende Leistungserbringerinstitution die Daten fuer die Loeschinformation des Verordnungsdatensatzes in den ePA Medication Service bereitstellen.
+</requirement>
+
+<requirement conformance="SHALL" key="IG-ERP-RX-303" title="E-Rezept-Fachdienst - E-Rezept loeschen - Loeschinformation ePA Medication Service bereitstellen (Verordnungsdatensatz) - Versicherter (A_25931)" version="0">
+  <meta lockversion="false"/>
+  Der E-Rezept-Fachdienst MUSS beim Loeschen eines E-Rezepts mittels POST /Task/$abort durch einen Versicherten, wenn Task.status = ready, die Daten fuer die Loeschinformation des Verordnungsdatensatzes fuer die Uebermittlung in den ePA Medication Service bereitstellen.
+</requirement>
+

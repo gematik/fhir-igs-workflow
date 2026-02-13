@@ -13,6 +13,7 @@ Der Core-IG fokussiert auf die technische Basisschicht des Fachdienstes:
 - Datenschutz und Sicherheit, insbesondere Anforderungen an die VAU
 - Validierung von FHIR-Ressourcen und Bundles
 - Loeschfristen und automatisches Loeschen
+- Moduluebergreifende Operationen auf Task ($create, $activate, $abort)
 
 ## Aufbau
 
@@ -20,6 +21,7 @@ Der Core-IG fokussiert auf die technische Basisschicht des Fachdienstes:
 - [Datenschutz und Sicherheit](./data-security.html)
 - [FHIR-Validierung](./fhir-validate.html)
 - [Loeschfristen](./ttl.html)
+- [Operation API (moduluebergreifend)](./operation-api.html)
 - [FHIR-Artefakte](./artifacts.html)
 
 ## Bezug zu weiteren IGs
