@@ -10,7 +10,7 @@ E-Rezept-Fachdienst zu.
 ## Akteure und Rollen
 - Verordnende Leistungserbringer (Arzt/Zahnarzt/Psychotherapeut)
 - Versicherte
-- Kostentraeger (Rolle oid_kostentraeger)
+- Kostenträger (Rolle oid_kostentraeger)
 
 ## Fachliches Konzept
 Die Verordnung wird als E-Rezept eingestellt und vom Kostenträger eingelöst.
