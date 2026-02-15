@@ -1,6 +1,10 @@
 ## Operation: $activate
 
-Die FHIR-Operation `$activate` überführt einen im Status `draft` befindlichen `Task` in den Status `ready`, nachdem das Primärsystem den qualifiziert elektronisch signierten Verordnungsdatensatz (QES) übermittelt hat. Für DiGA Verordnungen (Flowtype 162) gelten zusätzliche Payload-Prüfungen. Die allgemeinen Anforderungen des Basis-Workflows gelten unverändert.
+Die FHIR-Operation `$activate` überführt einen im Status `draft` befindlichen `Task` in den Status `ready`, wenn das Primärsystem den qualifiziert elektronisch signierten Verordnungsdatensatz (QES) übermittelt. 
+Für DiGA-Verordnungen (Flowtype 162) gelten zusätzliche Payload-Prüfungen. Die allgemeinen Anforderungen des Basis-Workflows gelten unverändert.
+
+### Nachricht
+Die Operation $activate wird als HTTP POST auf /Task/<id>/$activate ausgeführt.
 
 ### Anforderungen an Schnittstelle
 
@@ -16,11 +20,11 @@ Die FHIR-Operation `$activate` überführt einen im Status `draft` befindlichen 
     <testProcedure id="Produkttest"/>
   </actor>
   Der E-Rezept-Fachdienst MUSS die Aktivierung eines Tasks mit Flowtype 162 mit dem HTTP-Status-Code 400 abbrechen, wenn die QES gemäß der professionOID des Signaturzertifikats des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die der folgenden professionOID entspricht:
-  •	oid_arzt
-  •	oid_zahnarzt
-  •	oid_psychotherapeut
-  •	oid_ps_psychotherapeut
-  •	oid_kuj_psychotherapeut
+  -	oid_arzt
+  -	oid_zahnarzt
+  -	oid_psychotherapeut
+  -	oid_ps_psychotherapeut
+  -	oid_kuj_psychotherapeut
   damit nur solche Leistungserbringer ein signiertes E-Rezept einstellen, die zur Verordnung von DiGAs ermächtigt sind.
 </requirement>
 
@@ -70,3 +74,21 @@ Die FHIR-Operation `$activate` überführt einen im Status `draft` befindlichen 
 </requirement>
 
 Dieser Ausschluss erfolgt temporär. In einer späteren Version können Unfallkassen das Verordnen von DiGAs explizit unterstützen. Die konkreten Festlegungen dazu werden in einem Folgerelease getroffen.
+
+<!-- Quelle: A_27845 -FHIR FLOWTYPE für Prozessparameter - Flowtype 162  -->
+<requirement conformance="MUST" key="IG-ERP-89" title="E-Rezept-Fachdienst – Task aktivieren – Flowtype 162 - Prozessparameter" version="0">
+  <meta lockversion="false"/>
+  <actor name="E-Rezept-Fachdienst">
+    <testProcedure id="Produkttest"/>
+  </actor>
+  Der E-Rezept-Fachdienst MUSS bei einem Task mit Task.flowType = 162 die Attribute in Task in Abhängigkeit des in der http-POST-Operation /Task/<id>/$activate übergebenen gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_005 belegen.
+  *TAB_eRpDM_005 Prozessparameter Flowtype 162*
+  | Feld in Task | Feldbelegung |
+  |:-------------------|:--------------------------------|
+  | Task.performerType.coding.system | "https://gematik.de/fhir/erp/CodeSystemGEM_ERP_CS_OrganizationType" |
+  | Task.performerType.coding.code | "1.2.276.0.76.4.59" |
+  | Task.performerType.coding.diplay | "Kostenträger" |
+  | Task.PrescriptionType.valueCoding.display | "Flowtype für Digitale Gesundheitsanwendungen" |
+  | Task.ExpiryDate | <Datum der QES.Erstellung im Signaturobjekt> + 3 Kalendermonate |
+  | Task.AcceptDate | <Datum der QES.Erstellung im Signaturobjekt> + 3 Kalendermonate |
+</requirement>

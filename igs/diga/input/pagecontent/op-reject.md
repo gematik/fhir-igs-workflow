@@ -1,6 +1,6 @@
 ## Operation: $reject
 
-Die FHIR-Operation `$reject` überführt einen im Status `in-progress` befindlichen `Task` in den Status `ready`, nachdem der Kostenträger die Verordnung an den Versicherten zurückgegeben hat, wenn eine fehlerhafte Zuweisung vorliegt, d.h. der Kostenträger nicht zuständig ist.
+Die FHIR-Operation `$reject` überführt einen im Status `in-progress` befindlichen `Task` in den Status `ready`, wenn der Kostenträger die Verordnung an den Versicherten zurückgibt, weil eine fehlerhafte Zuweisung vorliegt, d.h. der Kostenträger nicht zuständig ist.
  
 Diese Operation basiert auf der $abort Operation des Basis-Workflow für E-Rezepte.
 

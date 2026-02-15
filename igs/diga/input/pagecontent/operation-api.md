@@ -9,4 +9,4 @@ Operationen entsprechen dem Basis-Workflow des E-Rezept-Fachdienstes.
 - [$accept](./op-accept.html)
 - [$reject](./op-reject.html)
 - [$close](./op-close.html)
-- [$close](./op-abort.html)
+- [$abort](./op-abort.html)

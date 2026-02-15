@@ -6,14 +6,14 @@ Die FHIR-Operation `$abort` überführt einen im Status `ready` oder `completed`
 Diese Operation basiert auf der $abort Operation des Basis-Workflow für E-Rezepte.
 
 ### Nachricht
-Die Operation $abort wird als HTTP POST auf /Task/$abort ausgeführt.
+Die Operation $abort wird als HTTP POST auf /Task/<id>/$abort ausgeführt.
 
 ### Anforderungen an Schnittstelle
 
 Es gelten die übergreifenden Anforderungen an die $abort Operation.
 ToDo: link zu übergreifenden Anforderungen 
 
-Es gibt keine workflow-spezifischen Anforderungen für den Fachdienst.
+Es gibt keine workflow-spezifischen Anforderungen für den E-Rezept-Fachdienst.
 
 link: AFO FD - Der E-Rezept-Fachdienst MUSS
 link AFO CS - PS der Verordnungen LEI
