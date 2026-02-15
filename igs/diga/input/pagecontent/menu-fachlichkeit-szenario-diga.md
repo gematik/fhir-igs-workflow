@@ -15,7 +15,7 @@ PVS/KIS greifen auf das BfArM-DiGA-Verzeichnis zu, wählen die passende PZN (ink
 
 > Offener Punkt: Das BMG und die KBV stimmen ab, ob die PZN dauerhaft als Identifier genutzt wird. Das Datenmodell wird an das Ergebnis angepasst.
 
-**Beteiligte Systeme:** PVS/KIS (inkl. Psychotherapeutinnen-Systeme), Konnektor, Workflow-Fachdienst
+**Beteiligte Systeme:** PVS/KIS (inkl. Psychotherapeutinnen-Systeme), Konnektor, Fachdienst
 
 **Fachliche Anwendungsfälle**
 
@@ -25,7 +25,7 @@ PVS/KIS greifen auf das BfArM-DiGA-Verzeichnis zu, wählen die passende PZN (ink
 
 ## DiGA zuweisen und Freischaltcode anfordern
 
-Versicherte sehen eine neue DiGA-Verordnung in der Versicherten-App (FdV) (oder erhalten einen Ausdruck) und weisen sie ihrem Kostenträger zu. Das FdV ermittelt - idealerweise automatisch - die Telematik-ID der Krankenkasse über das FHIR-VZD, erstellt eine `Communication_DispReq` und übermittelt den E-Rezept-Token. Alternativ können Versicherte den Ausdruck per Post, Servicecenter oder Krankenkassen-App einreichen; der Kostenträger startet daraufhin selbst den Abruf. Status- und Protokolleinträge im FdV machen den Fortschritt (Freischaltcode angefordert, in Prüfung, erledigt) sichtbar.
+Versicherte sehen eine neue DiGA-Verordnung im E-Rezept-FdV (oder erhalten einen Ausdruck) und weisen sie ihrem Kostenträger zu. Das E-Rezept-FdV ermittelt - idealerweise automatisch - die Telematik-ID der Krankenkasse über den FHIR-VZD, erstellt eine `Communication_DispReq` und übermittelt darin Verordnungs-ID und AccessCode. Alternativ können Versicherte den Ausdruck per Post, Servicecenter oder Service-App der Krankenkasse einreichen. Der Kostenträger startet daraufhin den Abruf. Status- und Protokolleinträge im E-Rezept-FdV machen den Fortschritt (Freischaltcode angefordert, in Prüfung, erledigt) sichtbar.
 
 **Beteiligte Systeme:** E-Rezept-FdV nach Section 360 Abs. 10 SGB V, Krankenkassen-App, Kostenträger-Backend, Workflow-Fachdienst
 
@@ -37,12 +37,12 @@ Versicherte sehen eine neue DiGA-Verordnung in der Versicherten-App (FdV) (oder 
 
 ## Prüfung durch Kostenträger und Bereitstellung des Freischaltcodes
 
-Kostenträger authentisieren sich über ihren Basis-Consumer, rufen die Verordnung mit `$accept` ab und prüfen Anspruch, Indikation sowie ggf. ergänzende Unterlagen. Nach erfolgreicher Prüfung erzeugen sie den Freischaltcode, legen ihn als Abgabeinformation via `$dispense` oder `$close` im Workflow-Fachdienst ab und schliessen den Workflow mit einer Quittung ab. Falls kein Freischaltcode ausgegeben werden kann, hinterlegen sie eine versichertenfreundliche Begründung, damit Versicherte den Ausgang im FdV nachvollziehen können. 
+Kostenträger authentisieren sich über ihren Basis-Consumer, rufen die Verordnung mit `$accept` ab und prüfen Anspruch, Indikation sowie ggf. ergänzende Unterlagen. Nach erfolgreicher Prüfung erzeugen sie den Freischaltcode, legen ihn als Abgabeinformation via `$close` im Fachdienst ab und schliessen den Workflow mit einer Quittung ab. Falls kein Freischaltcode ausgegeben werden kann, hinterlegen sie eine versichertenfreundliche Begründung, damit Versicherte den Ausgang im E-Rezept-FdV nachvollziehen können. 
 
-**Beteiligte Systeme:** Kostenträger-Backend inkl. Basis-Consumer, Workflow-Fachdienst, interne Freischaltcode-Services
+**Beteiligte Systeme:** Kostenträger-Backend inkl. Basis-Consumer, e-Rezept-Fachdienst, interne Freischaltcode-Services
 
 **Fachliche Anwendungsfälle**
 
 {% assign scenario_use_cases = "DiGA_E_Rezept_abrufen_kostentraeger, DiGA_Freischaltcode_bereitstellen" | split: ", " %}
 
-{% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Fachliche Anwendungsfälle mit Bezug zu Szenario <i>Freischaltcode-Bereitstellung durch Kostentraeger</i>" %}
+{% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Fachliche Anwendungsfälle mit Bezug zu Szenario <i>Freischaltcode-Bereitstellung durch Kostenträger</i>" %}
