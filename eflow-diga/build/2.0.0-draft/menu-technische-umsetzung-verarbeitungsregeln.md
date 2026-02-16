@@ -1,14 +1,14 @@
-# Verarbeitungsregeln fuer den E-Rezept-Fachdienst - E-Rezept fuer Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
+# Verarbeitungsregeln für den E-Rezept-Fachdienst - Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
 
-E-Rezept fuer Digitale Gesundheitsanwendungen (DiGA)
+Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA)
 
 Version 2.0.0-draft - ci-build 
 
 * [**Table of Contents**](toc.md)
-* [**Systemueberblick**](menu-technische-umsetzung-systemueberblick.md)
-* **Verarbeitungsregeln fuer den E-Rezept-Fachdienst**
+* [**Systemüberblick**](menu-technische-umsetzung-systemueberblick.md)
+* **Verarbeitungsregeln für den E-Rezept-Fachdienst**
 
-## Verarbeitungsregeln fuer den E-Rezept-Fachdienst
+## Verarbeitungsregeln für den E-Rezept-Fachdienst
 
 ## Verordnen durch Psychotherapeuten
 

@@ -1,6 +1,6 @@
-# GEM ERP PR MedicationDispense DiGA - E-Rezept fuer Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
+# GEM ERP PR MedicationDispense DiGA - Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
 
-E-Rezept fuer Digitale Gesundheitsanwendungen (DiGA)
+Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA)
 
 Version 2.0.0-draft - ci-build 
 

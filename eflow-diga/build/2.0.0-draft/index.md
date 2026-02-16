@@ -1,6 +1,6 @@
-# Implementation Guide E-Rezept-DiGA - E-Rezept fuer Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
+# Implementation Guide E-Rezept-DiGA - Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
 
-E-Rezept fuer Digitale Gesundheitsanwendungen (DiGA)
+Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA)
 
 Version 2.0.0-draft - ci-build 
 
@@ -14,9 +14,11 @@ Version 2.0.0-draft - ci-build
 | *Official URL*:https://gematik.de/fhir/erp-diga/ImplementationGuide/de.gematik.eflow-diga | *Version*:2.0.0-draft |
 | Draft as of 2026-02-16 | *Computable Name*:ERezeptDiGA |
 
-# Implementation Guide E-Rezept-DiGA
-
 Dieser Implementation Guide beschreibt das Feature zur elektronischen Verordnung von Digitalen Gesundheitsanwendungen (DiGA). Er beschreibt DiGA-spezifische Anforderungen und Use Cases für Verordnende, Kostenträger und Versicherte.
+
+## Zielgruppe
+
+Hersteller und Anbieter des Produkttyps TI-Flow-Fachdienst sowie Hersteller von Clientsystemen für den Zugriff auf den Workflow-Fachdienst.
 
 ## Zweck und Geltungsbereich
 
@@ -24,14 +26,41 @@ Dieser Implementation Guide beschreibt das Feature zur elektronischen Verordnung
 * Zuweisung der Verordnung durch den Versicherten an den Kostenträger
 * Bereitstellung eines Freischaltcodes als Abgabeinformation durch den Kostenträger an den Versicherten
 
-## Nicht im Scope
-
-* DiGA Verordnungen für Privatversicherte
-* Beantragung einer DiGA ohne ärztliche oder psychotherapeutische Verordnung
-
 ## Wie dieser IG zu lesen ist
 
 Die Inhalte sind in Fachlichkeit, Technische Umsetzung und Schnittstellen strukturiert. Ein durchgängendes Szenario beschreibt den Prozess vom Verordnen bis zum Einlösen.
+
+## Methodik
+
+### Apps
+
+In diesem Dokument IG verschiedene Apps betrachtet.
+
+**App nach § 360 Abs. 10 SGB V**
+
+Eine App nach § 360 Abs. 10 SGB V kann dem Versicherten durch seine Krankenkasse oder die gematik zur Verfügung gestellt werden. Sie wird als E-Rezept-FdV bezeichnet.
+
+**Service-App der Krankenkasse**
+
+Eine Krankenkassen-App ist eine App, die dem Versicherten Services seiner Krankenkasse zur Verfügung stellt und nicht den Regelungen nach § 360 Abs. 10 SGB V unterliegt.
+
+**DiGA-App**
+
+Die DiGA-Apps sind die im BfArM Verzeichnis gelisteten Einträge, welche dem Versicherten verordnet werden können.
+
+### Rolle Verordnender (Arzt/Zahnarzt/Psychotherapeut)
+
+Wenn im Dokument der Arzt in der Rolle Verordnender benannt wird, dann umfasst diese sowohl die Ärzte, Zahnärzte als auch Psychotherapeuten, sofern Zahnärzte und Psychotherapeuten nicht explizit ausgeschlossen werden.
+
+Wenn im Dokument Psychotherapeuten benannt werden, dann umfasst diese Bezeichnung Psychotherapeuten, psychologische Psychotherapeuten sowie Kinder- und Jugendpsychotherapeuten.
+
+### Dispensieren/Dispensierinformation
+
+Im Kontext der Verordnung einer DiGA wird unter Dispensieren die Bereitstellung der Dispensierinformation für den Versicherten durch die Krankenkasse verstanden. Die Dispensierinformationen beinhalten die Information zur verordneten DiGA und den Freischaltcode. Falls kein Freischaltcode bereitgestellt werden kann, wird ein Hinweis auf den Grund dafür übermittelt.
+
+### Anforderungen / Anwendungsfälle
+
+Anforderungen und Anwendungsfälle werden durch eine eindeutige ID sowie die Schlüsselworte MUSS, DARF NICHT, SOLL, SOLL NICHT, KANN gemäss RFC 2119 gekennzeichnet.
 
 ## Abhängigkeiten
 
@@ -67,9 +96,9 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "url" : "https://gematik.de/fhir/erp-diga/ImplementationGuide/de.gematik.eflow-diga",
   "version" : "2.0.0-draft",
   "name" : "ERezeptDiGA",
-  "title" : "E-Rezept fuer Digitale Gesundheitsanwendungen (DiGA)",
+  "title" : "Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA)",
   "status" : "draft",
-  "date" : "2026-02-16T07:52:31+00:00",
+  "date" : "2026-02-16T12:36:51+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [
     {
@@ -1000,7 +1029,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
             }
           ],
           "nameUrl" : "menu-fachlichkeit-ueberblick.html",
-          "title" : "Ueberblick zur Verordnung von DiGAs",
+          "title" : "Überblick zur Verordnung von DiGAs",
           "generation" : "markdown",
           "page" : [
             {
@@ -1011,7 +1040,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
                 }
               ],
               "nameUrl" : "menu-fachlichkeit-szenarien.html",
-              "title" : "Szenarien fuer den DiGA-Workflow",
+              "title" : "Szenarien für den DiGA-Workflow",
               "generation" : "markdown",
               "page" : [
                 {
@@ -1022,7 +1051,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
                     }
                   ],
                   "nameUrl" : "menu-fachlichkeit-szenario-diga.html",
-                  "title" : "Szenario: E-Rezept fuer DiGA",
+                  "title" : "Szenario: Verordnungen für DiGA",
                   "generation" : "markdown"
                 }
               ]
@@ -1035,7 +1064,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
                 }
               ],
               "nameUrl" : "menu-fachlichkeit-anwendungsfaelle.html",
-              "title" : "Anwendungsfaelle im DiGA-Workflow",
+              "title" : "Anwendungsfälle im DiGA-Workflow",
               "generation" : "markdown"
             }
           ]
@@ -1048,7 +1077,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
             }
           ],
           "nameUrl" : "menu-technische-umsetzung-systemueberblick.html",
-          "title" : "Systemueberblick",
+          "title" : "Systemüberblick",
           "generation" : "markdown",
           "page" : [
             {
@@ -1059,7 +1088,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
                 }
               ],
               "nameUrl" : "menu-technische-umsetzung-anwendungsfaelle.html",
-              "title" : "Technische Anwendungsfaelle",
+              "title" : "Technische Anwendungsfälle",
               "generation" : "markdown"
             },
             {
@@ -1070,7 +1099,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
                 }
               ],
               "nameUrl" : "menu-technische-umsetzung-verarbeitungsregeln.html",
-              "title" : "Verarbeitungsregeln fuer den E-Rezept-Fachdienst",
+              "title" : "Verarbeitungsregeln für den E-Rezept-Fachdienst",
               "generation" : "markdown"
             }
           ]
@@ -1163,7 +1192,31 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
               ],
               "nameUrl" : "op-activate.html",
               "title" : "Operation: $activate",
-              "generation" : "markdown"
+              "generation" : "markdown",
+              "page" : [
+                {
+                  "extension" : [
+                    {
+                      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                      "valueUrl" : "op-activate-req-server.html"
+                    }
+                  ],
+                  "nameUrl" : "op-activate-req-server.html",
+                  "title" : "Anforderungen an den E-Rezept-Fachdienst für die $activate-Operation",
+                  "generation" : "markdown"
+                },
+                {
+                  "extension" : [
+                    {
+                      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                      "valueUrl" : "op-activate-req-client.html"
+                    }
+                  ],
+                  "nameUrl" : "op-activate-req-client.html",
+                  "title" : "Anforderungen an den verordnende Primärsystem für die $activate-Operation",
+                  "generation" : "markdown"
+                }
+              ]
             },
             {
               "extension" : [

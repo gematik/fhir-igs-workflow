@@ -1,6 +1,6 @@
-# Additional APIs - E-Rezept fuer Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
+# Additional APIs - Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
 
-E-Rezept fuer Digitale Gesundheitsanwendungen (DiGA)
+Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA)
 
 Version 2.0.0-draft - ci-build 
 

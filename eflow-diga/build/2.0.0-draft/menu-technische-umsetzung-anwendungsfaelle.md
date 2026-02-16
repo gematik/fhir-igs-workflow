@@ -1,14 +1,14 @@
-# Technische Anwendungsfaelle - E-Rezept fuer Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
+# Technische Anwendungsfälle - Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
 
-E-Rezept fuer Digitale Gesundheitsanwendungen (DiGA)
+Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA)
 
 Version 2.0.0-draft - ci-build 
 
 * [**Table of Contents**](toc.md)
-* [**Systemueberblick**](menu-technische-umsetzung-systemueberblick.md)
-* **Technische Anwendungsfaelle**
+* [**Systemüberblick**](menu-technische-umsetzung-systemueberblick.md)
+* **Technische Anwendungsfälle**
 
-## Technische Anwendungsfaelle
+## Technische Anwendungsfälle
 
 ### Technische Anwendungsfälle
 

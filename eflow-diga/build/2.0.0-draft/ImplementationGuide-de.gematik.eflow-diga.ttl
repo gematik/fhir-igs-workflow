@@ -19,9 +19,9 @@
   ] ; # 
   fhir:version [ fhir:v "2.0.0-draft"] ; # 
   fhir:name [ fhir:v "ERezeptDiGA"] ; # 
-  fhir:title [ fhir:v "E-Rezept fuer Digitale Gesundheitsanwendungen (DiGA)"] ; # 
+  fhir:title [ fhir:v "Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-02-16T07:52:31+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-02-16T12:36:51+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "gematik GmbH"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "gematik GmbH" ] ;
@@ -1630,7 +1630,7 @@
            fhir:v "menu-fachlichkeit-ueberblick.html"^^xsd:anyURI ;
            fhir:l fhir:menu-fachlichkeit-ueberblick.html
          ] ;
-         fhir:title [ fhir:v "Ueberblick zur Verordnung von DiGAs" ] ;
+         fhir:title [ fhir:v "Überblick zur Verordnung von DiGAs" ] ;
          fhir:generation [ fhir:v "markdown" ] ;
          fhir:page ( [
            fhir:extension ( [
@@ -1649,7 +1649,7 @@
              fhir:v "menu-fachlichkeit-szenarien.html"^^xsd:anyURI ;
              fhir:l fhir:menu-fachlichkeit-szenarien.html
            ] ;
-           fhir:title [ fhir:v "Szenarien fuer den DiGA-Workflow" ] ;
+           fhir:title [ fhir:v "Szenarien für den DiGA-Workflow" ] ;
            fhir:generation [ fhir:v "markdown" ] ;
            fhir:page ( [
              fhir:extension ( [
@@ -1668,7 +1668,7 @@
                fhir:v "menu-fachlichkeit-szenario-diga.html"^^xsd:anyURI ;
                fhir:l fhir:menu-fachlichkeit-szenario-diga.html
              ] ;
-             fhir:title [ fhir:v "Szenario: E-Rezept fuer DiGA" ] ;
+             fhir:title [ fhir:v "Szenario: Verordnungen für DiGA" ] ;
              fhir:generation [ fhir:v "markdown" ]
            ] )
          ] [
@@ -1688,7 +1688,7 @@
              fhir:v "menu-fachlichkeit-anwendungsfaelle.html"^^xsd:anyURI ;
              fhir:l fhir:menu-fachlichkeit-anwendungsfaelle.html
            ] ;
-           fhir:title [ fhir:v "Anwendungsfaelle im DiGA-Workflow" ] ;
+           fhir:title [ fhir:v "Anwendungsfälle im DiGA-Workflow" ] ;
            fhir:generation [ fhir:v "markdown" ]
          ] )
        ] [
@@ -1708,7 +1708,7 @@
            fhir:v "menu-technische-umsetzung-systemueberblick.html"^^xsd:anyURI ;
            fhir:l fhir:menu-technische-umsetzung-systemueberblick.html
          ] ;
-         fhir:title [ fhir:v "Systemueberblick" ] ;
+         fhir:title [ fhir:v "Systemüberblick" ] ;
          fhir:generation [ fhir:v "markdown" ] ;
          fhir:page ( [
            fhir:extension ( [
@@ -1727,7 +1727,7 @@
              fhir:v "menu-technische-umsetzung-anwendungsfaelle.html"^^xsd:anyURI ;
              fhir:l fhir:menu-technische-umsetzung-anwendungsfaelle.html
            ] ;
-           fhir:title [ fhir:v "Technische Anwendungsfaelle" ] ;
+           fhir:title [ fhir:v "Technische Anwendungsfälle" ] ;
            fhir:generation [ fhir:v "markdown" ]
          ] [
            fhir:extension ( [
@@ -1746,7 +1746,7 @@
              fhir:v "menu-technische-umsetzung-verarbeitungsregeln.html"^^xsd:anyURI ;
              fhir:l fhir:menu-technische-umsetzung-verarbeitungsregeln.html
            ] ;
-           fhir:title [ fhir:v "Verarbeitungsregeln fuer den E-Rezept-Fachdienst" ] ;
+           fhir:title [ fhir:v "Verarbeitungsregeln für den E-Rezept-Fachdienst" ] ;
            fhir:generation [ fhir:v "markdown" ]
          ] )
        ] [
@@ -1901,7 +1901,46 @@
              fhir:l fhir:op-activate.html
            ] ;
            fhir:title [ fhir:v "Operation: $activate" ] ;
-           fhir:generation [ fhir:v "markdown" ]
+           fhir:generation [ fhir:v "markdown" ] ;
+           fhir:page ( [
+             fhir:extension ( [
+               fhir:url [
+                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+               ] ;
+               fhir:value [
+                 a fhir:Url ;
+                 fhir:v "op-activate-req-server.html"^^xsd:anyURI ;
+                 fhir:l fhir:op-activate-req-server.html
+               ]
+             ] ) ;
+             fhir:name [
+               a fhir:Url ;
+               fhir:v "op-activate-req-server.html"^^xsd:anyURI ;
+               fhir:l fhir:op-activate-req-server.html
+             ] ;
+             fhir:title [ fhir:v "Anforderungen an den E-Rezept-Fachdienst für die $activate-Operation" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] [
+             fhir:extension ( [
+               fhir:url [
+                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+               ] ;
+               fhir:value [
+                 a fhir:Url ;
+                 fhir:v "op-activate-req-client.html"^^xsd:anyURI ;
+                 fhir:l fhir:op-activate-req-client.html
+               ]
+             ] ) ;
+             fhir:name [
+               a fhir:Url ;
+               fhir:v "op-activate-req-client.html"^^xsd:anyURI ;
+               fhir:l fhir:op-activate-req-client.html
+             ] ;
+             fhir:title [ fhir:v "Anforderungen an den verordnende Primärsystem für die $activate-Operation" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] )
          ] [
            fhir:extension ( [
              fhir:url [

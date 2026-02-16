@@ -1,15 +1,15 @@
-# Szenario: E-Rezept fuer DiGA - E-Rezept fuer Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
+# Szenario: Verordnungen für DiGA - Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
 
-E-Rezept fuer Digitale Gesundheitsanwendungen (DiGA)
+Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA)
 
 Version 2.0.0-draft - ci-build 
 
 * [**Table of Contents**](toc.md)
-* [**Ueberblick zur Verordnung von DiGAs**](menu-fachlichkeit-ueberblick.md)
-* [**Szenarien fuer den DiGA-Workflow**](menu-fachlichkeit-szenarien.md)
-* **Szenario: E-Rezept fuer DiGA**
+* [**Überblick zur Verordnung von DiGAs**](menu-fachlichkeit-ueberblick.md)
+* [**Szenarien für den DiGA-Workflow**](menu-fachlichkeit-szenarien.md)
+* **Szenario: Verordnungen für DiGA**
 
-## Szenario: E-Rezept fuer DiGA
+## Szenario: Verordnungen für DiGA
 
 Die elektronische Verordnung für Digitale Gesundheitsanwendungen (DiGA) ersetzt das Muster-16-Verfahren und sorgt dafür, dass zertifizierte DiGAs medienbruchfrei, sicher und nachvollziehbar verordnet, die Verordnung an Kostenträger übermittelt und der Freischaltcode übermittelt an den Versicherten werden können. Es ergänzt die bestehenden Abläufe des E-Rezepts, erweitert sie um Psychotherapeutinnen und Psychotherapeuten sowie Kostenträger und ermöglicht eine vollständig digitale Bereitstellung der Freischaltcodes.
 
@@ -40,7 +40,7 @@ PVS/KIS greifen auf das BfArM-DiGA-Verzeichnis zu, wählen die passende PZN (ink
 
 Versicherte sehen eine neue DiGA-Verordnung im E-Rezept-FdV (oder erhalten einen Ausdruck) und weisen sie ihrem Kostenträger zu. Das E-Rezept-FdV ermittelt - idealerweise automatisch - die Telematik-ID der Krankenkasse über den FHIR-VZD, erstellt eine `Communication_DispReq` und übermittelt darin Verordnungs-ID und AccessCode. Alternativ können Versicherte den Ausdruck per Post, Servicecenter oder Service-App der Krankenkasse einreichen. Der Kostenträger startet daraufhin den Abruf. Status- und Protokolleinträge im E-Rezept-FdV machen den Fortschritt (Freischaltcode angefordert, in Prüfung, erledigt) sichtbar.
 
-**Beteiligte Systeme:** E-Rezept-FdV nach Section 360 Abs. 10 SGB V, Krankenkassen-App, Kostenträger-Backend, Workflow-Fachdienst
+**Beteiligte Systeme:** E-Rezept-FdV nach Section 360 Abs. 10 SGB V, Krankenkassen-App, Kostenträger-Backend, E-Rezept-Fachdienst
 
 **Fachliche Anwendungsfälle**
 

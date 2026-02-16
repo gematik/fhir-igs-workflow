@@ -1,14 +1,14 @@
-# Anwendungsfaelle im DiGA-Workflow - E-Rezept fuer Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
+# Anwendungsfälle im DiGA-Workflow - Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
 
-E-Rezept fuer Digitale Gesundheitsanwendungen (DiGA)
+Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA)
 
 Version 2.0.0-draft - ci-build 
 
 * [**Table of Contents**](toc.md)
-* [**Ueberblick zur Verordnung von DiGAs**](menu-fachlichkeit-ueberblick.md)
-* **Anwendungsfaelle im DiGA-Workflow**
+* [**Überblick zur Verordnung von DiGAs**](menu-fachlichkeit-ueberblick.md)
+* **Anwendungsfälle im DiGA-Workflow**
 
-## Anwendungsfaelle im DiGA-Workflow
+## Anwendungsfälle im DiGA-Workflow
 
 ### Fachliche Anwendungsfälle
 

@@ -1,6 +1,6 @@
-# Operation: $activate - E-Rezept fuer Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
+# Operation: $activate - Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
 
-E-Rezept fuer Digitale Gesundheitsanwendungen (DiGA)
+Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA)
 
 Version 2.0.0-draft - ci-build 
 
@@ -10,15 +10,15 @@ Version 2.0.0-draft - ci-build
 
 ## Operation: $activate
 
-## Operation: $activate
-
 Die FHIR-Operation `$activate` überführt einen im Status `draft` befindlichen `Task` in den Status `ready`, wenn das Primärsystem den qualifiziert elektronisch signierten Verordnungsdatensatz (QES) übermittelt. Für DiGA-Verordnungen (Flowtype 162) gelten zusätzliche Payload-Prüfungen. Die allgemeinen Anforderungen des Basis-Workflows gelten unverändert.
 
-### Nachricht
+## Nachricht
 
 Die Operation $activate wird als HTTP POST auf /Task//$activate ausgeführt.
 
-### Anforderungen an Schnittstelle
+## Anforderungen an Schnittstelle
+
+[Anforderungen für den E-Rezept-Fachdienst](./op-activate-req-server.md) [Anforderungen für das verordnende Primärsystem](./op-activate-req-client.md)
 
 Der E-Rezept-Fachdienst MUSS die Aktivierung eines Tasks mit Flowtype 162 mit dem HTTP-Status-Code 400 abbrechen, wenn die QES gemäß der professionOID des Signaturzertifikats des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die der folgenden professionOID entspricht: - oid_arzt - oid_zahnarzt - oid_psychotherapeut - oid_ps_psychotherapeut - oid_kuj_psychotherapeut damit nur solche Leistungserbringer ein signiertes E-Rezept einstellen, die zur Verordnung von DiGAs ermächtigt sind.
 </br>

@@ -1,13 +1,13 @@
-# Systemueberblick - E-Rezept fuer Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
+# Systemüberblick - Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
 
-E-Rezept fuer Digitale Gesundheitsanwendungen (DiGA)
+Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA)
 
 Version 2.0.0-draft - ci-build 
 
 * [**Table of Contents**](toc.md)
-* **Systemueberblick**
+* **Systemüberblick**
 
-## Systemueberblick
+## Systemüberblick
 
 ## Einordnung in die Telematikinfrastruktur
 
