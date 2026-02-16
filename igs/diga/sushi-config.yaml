@@ -3,7 +3,7 @@ fhirVersion: 4.0.1
 applyExtensionMetadataToRoot: false
 id: de.gematik.eflow-diga
 name: E-Rezept DiGA #TODO Name muss von Team Polarion vorgegeben werden gemIG...
-title: "E-Rezept fuer Digitale Gesundheitsanwendungen (DiGA)"
+title: "Verordnungen für Digitale Gesundheitsanwendungen (DiGA)"
 status: draft # draft | active | retired | unknown
 version: "2.0.0-draft"
 copyrightYear: 2026+
@@ -22,12 +22,14 @@ dependencies:
 menu:
   Start: index.html
   Fachlichkeit:
-    Ueberblick: menu-fachlichkeit-ueberblick.html
+    Überblick: menu-fachlichkeit-ueberblick.html
+    Epic: menu-fachlichkeit-epic.html
+    Use Cases: menu-fachlichkeit-usecases.html
     Szenarien: menu-fachlichkeit-szenarien.html
-    Anwendungsfaelle: menu-fachlichkeit-anwendungsfaelle.html
+    Anwendungsfälle: menu-fachlichkeit-anwendungsfaelle.html
   Technische Umsetzung:
-    Systemueberblick: menu-technische-umsetzung-systemueberblick.html
-    Technische Anwendungsfaelle: menu-technische-umsetzung-anwendungsfaelle.html
+    Systemüberblick: menu-technische-umsetzung-systemueberblick.html
+    Technische Anwendungsfälle: menu-technische-umsetzung-anwendungsfaelle.html
     Verarbeitungsregeln: menu-technische-umsetzung-verarbeitungsregeln.html
   Schnittstellen:
     Generelle Prinzipien: menu-schnittstellen-generelle-prinzipien.html
@@ -35,7 +37,7 @@ menu:
     Query API: query-api.html
     Operation API: operation-api.html
     Additional APIs: menu-schnittstellen-additional-api.html
-  Anhaenge:
+  Anhänge:
     Referenzen: referenced.html
     Downloads: downloads.html
     Release Notes: release-notes.html
@@ -47,19 +49,23 @@ pages:
   index.md:
     title: "Implementation Guide E-Rezept-DiGA"
   menu-fachlichkeit-ueberblick.md:
-    title: "Ueberblick zur Verordnung von DiGAs"
+    title: "Überblick zur Verordnung von DiGAs"
+    menu-fachlichkeit-epic.md:
+      title: "Epic"
+    menu-fachlichkeit-usecases.md:
+      title: "Use Cases"
     menu-fachlichkeit-szenarien.md:
-      title: "Szenarien fuer den DiGA-Workflow"
+      title: "Szenarien für den DiGA-Workflow"
       menu-fachlichkeit-szenario-diga.md:
-        title: "Szenario: E-Rezept fuer DiGA"
+        title: "Szenario: Verordnungen für DiGA"
     menu-fachlichkeit-anwendungsfaelle.md:
-      title: "Anwendungsfaelle im DiGA-Workflow"
+      title: "Anwendungsfälle im DiGA-Workflow"
   menu-technische-umsetzung-systemueberblick.md:
-    title: "Systemueberblick"
+    title: "Systemüberblick"
     menu-technische-umsetzung-anwendungsfaelle.md:
-      title: "Technische Anwendungsfaelle"
+      title: "Technische Anwendungsfälle"
     menu-technische-umsetzung-verarbeitungsregeln.md:
-      title: "Verarbeitungsregeln fuer den E-Rezept-Fachdienst"
+      title: "Verarbeitungsregeln für den E-Rezept-Fachdienst"
   menu-schnittstellen-generelle-prinzipien.md:
     title: "Generelle Prinzipien"
   menu-schnittstellen-datenschutz-und-sicherheit.md:
