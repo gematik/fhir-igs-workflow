@@ -7,6 +7,11 @@
     text
 </requirement>
 
+### Tags in Anforderungen
+
+Für Tags in Anforderungen muss die folgende Syntax verwendet werden:
+<id> ->  `&#60;id&#62;`
+
 ## Bild einfügen
 
 1. Bild in den Ordner input/images legen
@@ -22,3 +27,12 @@
 
 ## PUML einfügen
 
+1. PlantUML Code in die `.plantuml` Datei im Ordner `input/images-source` einfügen
+2. In der Markdowndatei mit folgendem Code auf die .svg Datei verlinken:
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+    {% include <Dateiname>.svg %}
+    </div>
+    <figcaption><strong>Abbildung: </strong>todo</figcaption>
+</figure>

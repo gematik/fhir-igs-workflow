@@ -1,5 +1,3 @@
-# Implementation Guide E-Rezept-DiGA
-
 Dieser Implementation Guide beschreibt das Feature zur elektronischen Verordnung
 von Digitalen Gesundheitsanwendungen (DiGA). Er beschreibt
 DiGA-spezifische Anforderungen und Use Cases für Verordnende, Kostenträger und
