@@ -1,4 +1,5 @@
 ## Anforderung definieren
+
 <requirement conformance="SHALL" title="E-Rezept-Fachdienst – title">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
@@ -6,6 +7,8 @@
     </actor>
     text
 </requirement>
+
+Eine Nummer/key muss nicht vergeben werden, da diese automatisch generiert wird.
 
 ### Tags in Anforderungen
 
@@ -28,11 +31,11 @@ Für Tags in Anforderungen muss die folgende Syntax verwendet werden:
 ## PUML einfügen
 
 1. PlantUML Code in die `.plantuml` Datei im Ordner `input/images-source` einfügen
-2. In der Markdowndatei mit folgendem Code auf die .svg Datei verlinken:
+2. In der Markdowndatei mit folgendem Code auf die `.svg` Datei verlinken:
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-    {% include <Dateiname>.svg %}
+    {% include todo.svg %}
     </div>
     <figcaption><strong>Abbildung: </strong>todo</figcaption>
 </figure>
