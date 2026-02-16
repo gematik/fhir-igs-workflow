@@ -1,0 +1,112 @@
+{
+  "package": "de.gematik.eflow-diga",
+  "version": "2.0.0-draft",
+  "fhirVersion": "4.0.1",
+  "jurisdiction": "DE",
+  "extensions": [
+    {
+      "url": "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_EX_DeepLink",
+      "title": "GEM ERP EX DeepLink",
+      "types": [
+        "url"
+      ]
+    },
+    {
+      "url": "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_EX_RedeemCode",
+      "title": "GEM ERP EX RedeemCode",
+      "types": [
+        "string"
+      ]
+    }
+  ],
+  "profiles": {
+    "Communication": [
+      {
+        "url": "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_PR_Communication_DiGA",
+        "title": "GEM ERP PR Communication DiGA"
+      }
+    ],
+    "MedicationDispense": [
+      {
+        "url": "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA",
+        "title": "GEM ERP PR MedicationDispense DiGA"
+      }
+    ],
+    "Parameters": [
+      {
+        "url": "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_PR_PAR_CloseOperation_Input",
+        "title": "GEM ERP PR CloseOperation Input"
+      }
+    ]
+  },
+  "usage": {
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.renderedDosageInstruction": [
+      "MedicationDispense"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/data-absent-reason": [
+      "MedicationDispense.medicationReference",
+      "MedicationDispense.medication[x]"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice-explanation": [
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name": [
+      "ImplementationGuide.definition.page",
+      "ImplementationGuide.definition.page.page",
+      "ImplementationGuide.definition.page.page.page",
+      "ImplementationGuide.definition.page.page.page.page"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment": [
+      "ImplementationGuide.dependsOn"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
+      "ImplementationGuide.definition.resource"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version": [
+      "StructureDefinition.snapshot"
+    ],
+    "http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta": [
+      "MedicationDispense"
+    ],
+    "https://gematik.de/fhir/epa-medication/StructureDefinition/rx-prescription-process-identifier-extension": [
+      "MedicationDispense"
+    ],
+    "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_EX_DeepLink": [
+      "MedicationDispense"
+    ],
+    "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_EX_RedeemCode": [
+      "MedicationDispense",
+      "Parameters.parameter.part.resource"
+    ],
+    "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_PrescriptionType": [
+      "Communication"
+    ]
+  }
+}

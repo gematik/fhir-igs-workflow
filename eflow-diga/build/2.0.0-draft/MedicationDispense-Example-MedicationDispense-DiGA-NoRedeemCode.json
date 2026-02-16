@@ -1,0 +1,40 @@
+{
+  "resourceType" : "MedicationDispense",
+  "id" : "Example-MedicationDispense-DiGA-NoRedeemCode",
+  "meta" : {
+    "profile" : ["https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA|2.0"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: MedicationDispense Example-MedicationDispense-DiGA-NoRedeemCode</b></p><a name=\"Example-MedicationDispense-DiGA-NoRedeemCode\"> </a><a name=\"hcExample-MedicationDispense-DiGA-NoRedeemCode\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-GEM-ERP-PR-MedicationDispense-DiGA.html\">GEM ERP PR MedicationDispense DiGAversion: null2.0.0-draft)</a></p></div><p><b>identifier</b>: <code>https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId</code>/162.000.033.491.280.78</p><p><b>status</b>: Completed</p><p><b>medication</b>: ?rref?</p><p><b>subject</b>: Identifier: NamingSystemKVID/X123456789</p><h3>Performers</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Actor</b></td></tr><tr><td style=\"display: none\">*</td><td>Identifier: <code>https://gematik.de/fhir/sid/telematik-id</code>/8-SMC-B-Testkarte-883110000095957</td></tr></table><p><b>whenHandedOver</b>: 2026-02-06</p><p><b>note</b>: </p><blockquote><div><p>Freischaltcode fuer DiGA konnte nicht erstellt werden</p>\n</div></blockquote></div>"
+  },
+  "identifier" : [{
+    "system" : "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
+    "value" : "162.000.033.491.280.78"
+  }],
+  "status" : "completed",
+  "medicationReference" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+      "valueCode" : "asked-declined"
+    }]
+  },
+  "subject" : {
+    "identifier" : {
+      "system" : "http://fhir.de/sid/gkv/kvid-10",
+      "value" : "X123456789"
+    }
+  },
+  "performer" : [{
+    "actor" : {
+      "identifier" : {
+        "system" : "https://gematik.de/fhir/sid/telematik-id",
+        "value" : "8-SMC-B-Testkarte-883110000095957"
+      }
+    }
+  }],
+  "whenHandedOver" : "2026-02-06",
+  "note" : [{
+    "text" : "Freischaltcode fuer DiGA konnte nicht erstellt werden"
+  }]
+}

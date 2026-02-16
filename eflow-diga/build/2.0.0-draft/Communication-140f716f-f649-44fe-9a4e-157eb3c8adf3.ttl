@@ -1,0 +1,54 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/erp-diga/Communication/140f716f-f649-44fe-9a4e-157eb3c8adf3> a fhir:Communication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "140f716f-f649-44fe-9a4e-157eb3c8adf3"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_PR_Communication_DiGA|2.0"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_PR_Communication_DiGA?version=2.0>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Communication 140f716f-f649-44fe-9a4e-157eb3c8adf3</b></p><a name=\"140f716f-f649-44fe-9a4e-157eb3c8adf3\"> </a><a name=\"hc140f716f-f649-44fe-9a4e-157eb3c8adf3\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-GEM-ERP-PR-Communication-DiGA.html\">GEM ERP PR Communication DiGAversion: null2.0.0-draft)</a></p></div><p><b>basedOn</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Task/162.000.000.000.000.01\">Task/162.000.000.000.000.01</a></p><p><b>status</b>: Unknown</p><p><b>sent</b>: 2026-02-06 15:29:00+0000</p><p><b>recipient</b>: Identifier: NamingSystemKVID/X234567890</p><p><b>sender</b>: Identifier: <code>https://gematik.de/fhir/sid/telematik-id</code>/8-SMC-B-Testkarte-783498105628375</p><h3>Payloads</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Content[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>Nachrichteninhalt für den Versicherten</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:basedOn ( [
+     fhir:l <https://gematik.de/fhir/erp-diga/Task/162.000.000.000.000.01> ;
+     fhir:reference [ fhir:v "Task/162.000.000.000.000.01" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "unknown"] ; # 
+  fhir:sent [ fhir:v "2026-02-06T15:29:00.434+00:00"^^xsd:dateTime] ; # 
+  fhir:recipient ( [
+     fhir:identifier [
+       fhir:system [
+         fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/sid/gkv/kvid-10>
+       ] ;
+       fhir:value [ fhir:v "X234567890" ]
+     ]
+  ] ) ; # 
+  fhir:sender [
+     fhir:identifier [
+       fhir:system [
+         fhir:v "https://gematik.de/fhir/sid/telematik-id"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/sid/telematik-id>
+       ] ;
+       fhir:value [ fhir:v "8-SMC-B-Testkarte-783498105628375" ]
+     ]
+  ] ; # 
+  fhir:payload ( [
+     fhir:content [
+       a fhir:String ;
+       fhir:v "Nachrichteninhalt für den Versicherten"
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
