@@ -1,5 +1,4 @@
-Query API
-
+<!-- Query API -->
 Diese Seite bietet einen Einstieg in die Query-API-Seiten der einzelnen
 FHIR-Ressourcen.
 

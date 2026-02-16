@@ -1,5 +1,4 @@
-Datenschutz und Sicherheit
-
+<!-- Datenschutz und Sicherheit -->
 Mit dem DiGA-Workflow erhalten zwei neue Akteure Zugriff auf den
 E-Rezept-Fachdienst: Kostenträger und Psychotherapeuten. Der Zugang der
 Kostenträger erfolgt über das zentrale Netz der TI, der Zugang der

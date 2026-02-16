@@ -1,4 +1,4 @@
-Verarbeitungsregeln für den E-Rezept-Fachdienst
+<!-- Verarbeitungsregeln für den E-Rezept-Fachdienst -->
 
 ## Verordnen durch Psychotherapeuten
 Für die Verordnung von DiGAs durch Psychotherapeuten gelten die gleichen technischen

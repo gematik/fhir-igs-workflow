@@ -1,4 +1,4 @@
-Systemueberblick
+<!-- Systemueberblick -->
 
 ## Einordnung in die Telematikinfrastruktur
 Die Verordnung von DiGAs setzt auf der bestehenden E-Rezept-Infrastruktur auf.

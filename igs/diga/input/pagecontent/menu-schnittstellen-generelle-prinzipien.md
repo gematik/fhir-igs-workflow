@@ -1,4 +1,4 @@
-Generelle Prinzipien
+<!-- Generelle Prinzipien -->
 
 ## Authentisierung
 Die Authentisierung am E-Rezept-Fachdienst erfolgt über ACCESS_TOKEN. Für
