@@ -25,7 +25,7 @@ Der Versicherte weist die Verordnung dem Kostenträger zu. Dazu wird eine Commun
 <a id="diga-e-rezept-abrufen"></a>
 #### DiGA-E-Rezept abrufen (Kostenträger)
 
-<requirement conformance="MUST" key="IG-WF-DiGA-5" title="Anwendungsfall E-Rezept durch Abgebenden abrufen (A_18511-01)" version="0">
+<requirement conformance="MUST" key="IG-TIFlow-DiGA-18" title="Anwendungsfall E-Rezept durch Abgebenden abrufen (A_18511-01)" version="0">
     <meta lockversion="false"/>
     Der Kostenträger MUSS ein E-Rezept mit Rezept-ID und AccessCode abrufen können. Der E-Rezept-Fachdienst setzt den Status auf "in Abgabe (gesperrt)" und liefert ein Geheimnis zur Statusänderung.
 </requirement>
@@ -33,26 +33,26 @@ Der Versicherte weist die Verordnung dem Kostenträger zu. Dazu wird eine Commun
 <a id="diga-freischaltcode-bereitstellen"></a>
 #### Freischaltcode bereitstellen oder Rückmeldung geben
 
-<requirement conformance="MUST" key="IG-WF-DiGA-7" title="Anwendungsfall Quittung abrufen (A_18514-02)" version="0">
+<requirement conformance="MUST" key="IG-TIFlow-DiGA-19" title="Anwendungsfall Quittung abrufen (A_18514-02)" version="0">
     <meta lockversion="false"/>
     Der Kostenträger MUSS Abgabeinformationen übermitteln und eine Quittung erhalten können. Der E-Rezept-Fachdienst setzt den Status auf "quittiert" und stellt die Abgabeinformation dem Versicherten bereit.
 </requirement>
 
 #### Rückgabe bei fehlerhafter Zuweisung
 
-<requirement conformance="MUST" key="IG-WF-DiGA-6" title="Anwendungsfall E-Rezept durch Abgebenden zurückgeben (A_18512-01)" version="0">
+<requirement conformance="MUST" key="IG-TIFlow-DiGA-20" title="Anwendungsfall E-Rezept durch Abgebenden zurückgeben (A_18512-01)" version="0">
     <meta lockversion="false"/>
     Der Kostenträger MUSS eine abgerufene Verordnung zurückgeben können, sodass der Status wieder "offen" ist und der Zugriff protokolliert wird.
 </requirement>
 
 #### Nachrichten zwischen Versicherten und Kostenträger
 
-<requirement conformance="MUST" key="IG-WF-DiGA-2" title="Anwendungsfall Nachrichten durch Abgebenden empfangen (A_18617-01)" version="0">
+<requirement conformance="MUST" key="IG-TIFlow-DiGA-21" title="Anwendungsfall Nachrichten durch Abgebenden empfangen (A_18617-01)" version="0">
     <meta lockversion="false"/>
     Der Kostenträger MUSS Nachrichten zum Zuweisen vom E-Rezept-Fachdienst abrufen können. In der Nachricht ist der E-Rezept-Token enthalten, der den Abruf der Verordnung legitimiert.
 </requirement>
 
-<requirement conformance="MUST" key="IG-WF-DiGA-3" title="Anwendungsfall Nachricht durch Abgebenden übermitteln (A_19013-01)" version="0">
+<requirement conformance="MUST" key="IG-TIFlow-DiGA-22" title="Anwendungsfall Nachricht durch Abgebenden übermitteln (A_19013-01)" version="0">
     <meta lockversion="false"/>
     Der Kostenträger MUSS eine Antwortnachricht an den Versicherten einstellen können. Der Versand erfolgt über den E-Rezept-Fachdienst an den Absender der ursprünglichen Nachricht.
 </requirement>

@@ -14,7 +14,7 @@ Die Operation $activate wird als HTTP POST auf /Task/<id>/$activate ausgeführt.
 
 
 <!-- Quelle: A_25990 - E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - QES durch berechtigte Berufsgruppe -->
-<requirement conformance="MUST" key="IG-ERP-84" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - QES durch berechtigte Berufsgruppe" version="0">
+<requirement conformance="MUST" key="IG-TIFlow-DiGA-24" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - QES durch berechtigte Berufsgruppe" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
@@ -31,7 +31,7 @@ Die Operation $activate wird als HTTP POST auf /Task/<id>/$activate ausgeführt.
 </br>
 
 <!-- Quelle: A_25991 - E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Verordnung von DiGAs -->
-<requirement conformance="MUST" key="IG-ERP-84" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Verordnung von DiGAs" version="0">
+<requirement conformance="MUST" key="IG-TIFlow-DiGA-25" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Verordnung von DiGAs" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
@@ -42,7 +42,7 @@ Die Operation $activate wird als HTTP POST auf /Task/<id>/$activate ausgeführt.
 </br>
 
 <!-- Quelle: A_25992 - E-Rezept-Fachdienst - Task aktivieren – Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest -->
-<requirement conformance="MUST" key="IG-ERP-85" title="E-Rezept-Fachdienst - Task aktivieren – Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest" version="0">
+<requirement conformance="MUST" key="IG-TIFlow-DiGA-26" title="E-Rezept-Fachdienst - Task aktivieren – Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
@@ -54,7 +54,7 @@ Die Operation $activate wird als HTTP POST auf /Task/<id>/$activate ausgeführt.
 </br>
 
 <!-- Quelle: A_23443-01 - E-Rezept-Fachdienst – Task aktivieren – Flowtype 160/162/169 - Prüfung Coverage Type -->
-<requirement conformance="MUST" key="IG-ERP-84" title="E-Rezept-Fachdienst – Task aktivieren – Flowtype 162 - Prüfung Coverage Type" version="0">
+<requirement conformance="MUST" key="IG-TIFlow-DiGA-27" title="E-Rezept-Fachdienst – Task aktivieren – Flowtype 162 - Prüfung Coverage Type" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
@@ -65,7 +65,7 @@ Die Operation $activate wird als HTTP POST auf /Task/<id>/$activate ausgeführt.
 </br>
 
 <!-- Quelle: A_26372 - E-Rezept-Fachdienst – Task aktivieren – Flowtype 162 - Prüfung Coverage Alternative IK  -->
-<requirement conformance="MUST" key="IG-ERP-89" title="E-Rezept-Fachdienst – Task aktivieren – Flowtype 162 - Prüfung Coverage Alternative IK" version="0">
+<requirement conformance="MUST" key="IG-TIFlow-DiGA-28" title="E-Rezept-Fachdienst – Task aktivieren – Flowtype 162 - Prüfung Coverage Alternative IK" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
@@ -76,7 +76,7 @@ Die Operation $activate wird als HTTP POST auf /Task/<id>/$activate ausgeführt.
 Dieser Ausschluss erfolgt temporär. In einer späteren Version können Unfallkassen das Verordnen von DiGAs explizit unterstützen. Die konkreten Festlegungen dazu werden in einem Folgerelease getroffen.
 
 <!-- Quelle: A_27845 -FHIR FLOWTYPE für Prozessparameter - Flowtype 162  -->
-<requirement conformance="MUST" key="IG-ERP-89" title="E-Rezept-Fachdienst – Task aktivieren – Flowtype 162 - Prozessparameter" version="0">
+<requirement conformance="MUST" key="IG-TIFlow-DiGA-29" title="E-Rezept-Fachdienst – Task aktivieren – Flowtype 162 - Prozessparameter" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>

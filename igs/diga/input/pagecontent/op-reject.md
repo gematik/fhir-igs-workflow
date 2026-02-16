@@ -13,7 +13,7 @@ Es gelten die übergreifenden Anforderungen an die $reject Operation.
 ToDo: link zu übergreifenden Anforderungen 
 
 <!-- Quelle: A_19170-02 - E-Rezept-Fachdienst - Task zurückweisen - Rollenprüfung -->
-<requirement conformance="MUST" key="IG-ERP-Neu" title="E-Rezept-Fachdienst - Task zurückweisen - Flowtype 162 - Rollenprüfung" version="0">
+<requirement conformance="MUST" key="IG-TIFlow-DiGA-23" title="E-Rezept-Fachdienst - Task zurückweisen - Flowtype 162 - Rollenprüfung" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>

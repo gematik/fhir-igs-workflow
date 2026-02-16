@@ -1,0 +1,26 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: MUST
+content_hash: 0c78b0a3429898950e1160dd870577703bcd056fcecb289e56dc83ed1427b203
+created: '2026-02-16T08:14:25.039190'
+date: '2026-02-16T08:14:25.039192'
+key: IG-TIFlow-DiGA-29
+modified: '2026-02-16T08:14:25.039191'
+release_status: NEW
+source: input/pagecontent/op-activate.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: "Der E-Rezept-Fachdienst MUSS bei einem Task mit Task.flowType = 162 die Attribute\
+  \ in Task in Abhängigkeit des in der http-POST-Operation /Task/<id>/$activate übergebenen\
+  \ gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_005 belegen.\n  *TAB_eRpDM_005\
+  \ Prozessparameter Flowtype 162*\n  | Feld in Task | Feldbelegung |\n  |:-------------------|:--------------------------------|\n\
+  \  | Task.performerType.coding.system | \"https://gematik.de/fhir/erp/CodeSystemGEM_ERP_CS_OrganizationType\"\
+  \ |\n  | Task.performerType.coding.code | \"1.2.276.0.76.4.59\" |\n  | Task.performerType.coding.diplay\
+  \ | \"Kostenträger\" |\n  | Task.PrescriptionType.valueCoding.display | \"Flowtype\
+  \ für Digitale Gesundheitsanwendungen\" |\n  | Task.ExpiryDate | <Datum der QES.Erstellung\
+  \ im Signaturobjekt> + 3 Kalendermonate |\n  | Task.AcceptDate | <Datum der QES.Erstellung\
+  \ im Signaturobjekt> + 3 Kalendermonate |"
+title: E-Rezept-Fachdienst – Task aktivieren – Flowtype 162 - Prozessparameter
+version: 0

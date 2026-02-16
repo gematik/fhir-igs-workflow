@@ -12,7 +12,7 @@ Es gelten die übergreifenden Anforderungen an die $close Operation.
 ToDo: link zu übergreifenden Anforderungen
 
 <!-- Quelle: A_19230-01 -E-Rezept-Fachdienst - Task schließen - Rollenprüfung -->
-<requirement conformance="SHALL" key="IG-ERP-Neu" title="E-Rezept-Fachdienst - Task schliessen - Flowtype 162 - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-DiGA-15" title="E-Rezept-Fachdienst - Task schliessen - Flowtype 162 - Rollenprüfung" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
@@ -25,7 +25,7 @@ ToDo: link zu übergreifenden Anforderungen
 </br>
 
 <!-- Quelle: A_26003-01 -E-Rezept-Fachdienst - Task schließen - Flowtype 162 - Profilprüfung MedicationDispense -->
-<requirement conformance="MUST" key="IG-ERP-Neu" title="E-Rezept-Fachdienst - Task schließen - Flowtype 162 - Profilprüfung MedicationDispense" version="0">
+<requirement conformance="MUST" key="IG-TIFlow-DiGA-16" title="E-Rezept-Fachdienst - Task schließen - Flowtype 162 - Profilprüfung MedicationDispense" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
