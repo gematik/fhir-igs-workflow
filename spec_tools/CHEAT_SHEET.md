@@ -39,3 +39,17 @@ Für Tags in Anforderungen muss die folgende Syntax verwendet werden:
     </div>
     <figcaption><strong>Abbildung: </strong>todo</figcaption>
 </figure>
+
+## Tabellen
+
+| Spalte 1 | Spalte 2 | Spalte 3 |
+| --- | --- | --- |
+| Inhalt 1 | Inhalt 2 | Inhalt 3 |
+
+## Links
+[Linktext](https://www.example.com)
+
+## Anlegen einer Seite
+
+1. Neue Markdown-Datei im Ordner `input/pagecontent` anlegen
+2. in der sushi-config.yaml die Seite unter dem Element `pages` hinzufügen und Titel vergeben.
