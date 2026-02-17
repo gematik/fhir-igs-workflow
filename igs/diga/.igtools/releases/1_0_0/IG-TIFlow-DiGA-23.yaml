@@ -1,22 +1,22 @@
 actor:
 - E-Rezept-Fachdienst
-conformance: MUST
-content_hash: 08cf726a1b093d4cdd6e195726be68f4c77132bbe41a95d9cf38b7064fa82977
+conformance: SHALL
+content_hash: 00cafc3121755b719d6e3962ad838231eb1580a1fdd1570e9f73fada3c7c5eaa
 created: '2026-02-16T08:14:25.038141'
-date: '2026-02-16T08:14:25.038144'
+date: '2026-02-17T16:07:12.696713'
 key: IG-TIFlow-DiGA-23
-modified: '2026-02-16T08:14:25.038143'
+modified: '2026-02-17T16:07:12.696713'
 release_status: NEW
-source: input/pagecontent/op-reject.md
+source: input/pagecontent/op-reject-req-server.md
 status: ACTIVE
 test_procedures:
   E-Rezept-Fachdienst:
   - Produkttest
 text: "Der E-Rezept-Fachdienst MUSS beim Zurückweisen eines Tasks für eine Verordnung\
-  \ mit Flowtype 162 mittels HTTP-POST/$reject-Operation auf den in der URL referenzierten/Task/<id>\
+  \ mit Flowtype 162 mittels HTTP-POST/$reject-Operation auf den in der URL referenzierten/Task/&#60;id&#62;\
   \ die Rolle \"professionOID\" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader\
   \ \"Authorization\" feststellen und sicherstellen, dass ausschließlich Institutionen\
-  \ in der Rolle\n  •\toid_kostentraeger\n  die Operation am Fachdienst aufrufen,\
-  \ damit die Verordnung nicht durch einen Unberechtigten zurückgewiesen werden kann."
+  \ in der Rolle\n -\toid_kostentraeger\n die Operation am Fachdienst aufrufen, damit\
+  \ die Verordnung nicht durch einen Unberechtigten zurückgewiesen werden kann."
 title: E-Rezept-Fachdienst - Task zurückweisen - Flowtype 162 - Rollenprüfung
 version: 0

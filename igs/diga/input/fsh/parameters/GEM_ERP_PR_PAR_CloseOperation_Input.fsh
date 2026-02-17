@@ -1,6 +1,6 @@
-Profile: EFlowRxPARCloseOperationInput
+Profile: GEM_ERP_PR_PAR_CloseOperation_Input
 Parent: Parameters
-Id: eflow-rx-par-close-operation-input
+Id: GEM-ERP-PR-PAR-CloseOperation-Input
 Title: "GEM ERP PR CloseOperation Input"
 Description: "Dieses Profil definiert die Parameter fuer das Schliessen eines Workflows fuer ein Rezept vom AVS zum E-Rezept-Fachdienst. Dies kann fuer die Operationen $close und $dispense verwendet werden."
 * insert Versioning
