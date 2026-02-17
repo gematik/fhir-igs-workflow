@@ -75,6 +75,6 @@ Dieser Ausschluss erfolgt temporär. In einer späteren Version können Unfallka
   | Task.performerType.coding.code | "1.2.276.0.76.4.59" |
   | Task.performerType.coding.diplay | "Kostenträger" |
   | Task.PrescriptionType.valueCoding.display | "Flowtype für Digitale Gesundheitsanwendungen" |
-  | Task.ExpiryDate | <Datum der QES.Erstellung im Signaturobjekt> + 3 Kalendermonate |
-  | Task.AcceptDate | <Datum der QES.Erstellung im Signaturobjekt> + 3 Kalendermonate |
+  | Task.ExpiryDate | &#60;Datum der QES.Erstellung im Signaturobjekt&#62; + 3 Kalendermonate |
+  | Task.AcceptDate | &#60;Datum der QES.Erstellung im Signaturobjekt&#62; + 3 Kalendermonate |
 </requirement>
