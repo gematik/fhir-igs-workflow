@@ -1,7 +1,7 @@
 Die FHIR-Operation `$acsept` überführt einen im Status `ready` befindlichen `Task` in den Status `in-progress`, nachdem der Kostenträger die Verordnung vom Fachdienst abgerufen hat.
 
 ### Nachricht
-Die Operation $accept wird als HTTP POST auf /Task/<id>/$accept ausgeführt.
+Die Operation $accept wird als HTTP POST auf /Task/&#60;id&#62;/$accept ausgeführt.
 
 ### Anforderungen an Schnittstelle
 

@@ -1,8 +1,9 @@
 Die FHIR-Operation `$activate` überführt einen im Status `draft` befindlichen `Task` in den Status `ready`, wenn das Primärsystem den qualifiziert elektronisch signierten Verordnungsdatensatz (QES) übermittelt. 
-Für DiGA-Verordnungen (Flowtype 162) gelten zusätzliche Payload-Prüfungen. Die allgemeinen Anforderungen des Basis-Workflows gelten unverändert.
+
+Diese Operation basiert auf der $activate Operation des Basis-Workflow für E-Rezepte. Für DiGA-Verordnungen (Flowtype 162) gelten zusätzliche Payload-Prüfungen. 
 
 ### Nachricht
-Die Operation $activate wird als HTTP POST auf /Task/<id>/$activate ausgeführt.
+Die Operation $activate wird als HTTP POST auf /Task/&#60;id&#62;/$activate ausgeführt.
 
 ### Anforderungen an Schnittstelle
 

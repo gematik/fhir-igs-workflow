@@ -3,7 +3,7 @@ Die FHIR-Operation `$reject` überführt einen im Status `in-progress` befindlic
 Diese Operation basiert auf der $abort Operation des Basis-Workflow für E-Rezepte.
 
 ### Nachricht
-Die Operation $reject wird als HTTP POST auf /Task/<id>/$reject ausgeführt.
+Die Operation $reject wird als HTTP POST auf /Task/&#60;id&#62;/$reject ausgeführt.
 
 ### Anforderungen an Schnittstelle
 
