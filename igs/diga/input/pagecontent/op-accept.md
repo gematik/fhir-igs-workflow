@@ -11,10 +11,5 @@ ToDo: link zu übergreifenden Anforderungen
 [Workflow-spezifische Anforderungen für den E-Rezept-Fachdienst](./op-accept-req-server.html)
 
 
-
-
-
-
-
 ### Hinweis
 Es gelten die Vorgaben des Basis-Workflows für E-Rezepte.

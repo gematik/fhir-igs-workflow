@@ -1,4 +1,4 @@
-## Versicherte
+### Versicherte
 
 Als Patient möchte ich 
 - ... DiGA-Verordnungen unmittelbar/sofort elektronisch empfangen können, so dass ich die DiGA, die mir verschrieben wurde, auch medienbruchfrei beziehen kann.
@@ -16,7 +16,7 @@ Als Patient möchte ich
 - ..., dass ich einfach auf die beim BfArM hinterlegte Informationsseite der DiGA sowie die Gebrauchsanweisung per Link aus dem E-Rezept-FdV zugreifen kann, so dass ich mich schnell informieren kann.
 - ..., dass ich einfach die Mindestanforderungen der verordneten DiGA-App aus dem Verzeichnis des BfArM per E-Rezept-FdV finden kann, so dass ich in der Lage bin die Mindestanforderungen an mein Endgerät zu prüfen. Im E-Rezept-FdV wird ein Hinweis ausgespielt (z.B.: "Auf diesem Gerät kann die DiGA ggf. nicht verwendet werden").
 
-## Verordnende
+### Verordnende
 Als verordnender Arzt möchte ich, ...
 - ... dass der DiGA-Verordnungsprozess nahtlos in meine Prozesse integriert ist, so dass die Prozesskosten/Aufwand beim Verordnen niedrig ist/bleibt.
 - ... dass durch den DiGA-Verordnungsprozess keine zusätzlichen Aufwände in der täglichen Arbeit entstehen, so dass ich nicht noch mehr Zeit für Bürokratie aufbringen muss. Es sollen möglichst wenig Papierausdrucke erstellen.
@@ -24,7 +24,7 @@ Als verordnender Arzt möchte ich, ...
 - ... dass meine Patienten gut darüber informiert sind, was DiGAs sind. Als Arzt möchte ich möglichst wenig Aufklärung über administrative Prozesse der Krankenkasse zum Erhalt des Freischaltcodes übernehmen.
 - ... dass ein Ersatzverfahren existiert (vergleichbar heutiger Prozess Muster 16), so dass ich auch bei Internetausfall (de/zentrale Verbindungsprobleme mit/ohne TI) eine DiGA verordnen kann.
 
-## Kostenträger
+### Kostenträger
 Als Kostenträger möchte ich ...
 - ..., dass der Abrechnungsprozess einfach ist, so dass die Prozesskosten niedrig sind.
 - ..., dass nur die versicherte Person die verordnete Leistung in Anspruch nehmen kann, so dass missbräuchliche Nutzung bestmöglich vermieden wird.
@@ -41,7 +41,7 @@ Als Kostenträger möchte ich ...
 - ..., dass alle Prozesse und auch die Prüfbarkeit so gestaltet sind, dass eine einfache maschinelle Verarbeitung möglich ist, so dass ich automatisieren und damit die Prozesskosten niedrig halten kann.
 - ... nach Übergabe des E-Rezept-Tokens des Versicherten die elektronischen Verordnungsdaten direkt vom E-Rezept-Fachdienst abholen.
 
-## DiGA Hersteller
+### DiGA Hersteller
 DiGA Hersteller sind zunächst nicht in den Verordnungsvorgang und nicht bei Übergabe der elektronischen Verordnung vom Versicherten an die Krankenkasse involviert. Die User Stories aus Sicht der DiGA Hersteller, sollen dennoch als Perspektive zum Verständnis der Rolle der Hersteller und derer Anforderungen hier genannt werden.
 
 Als DiGA Hersteller möchte ich 

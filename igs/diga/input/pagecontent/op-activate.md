@@ -10,5 +10,6 @@ Es gelten die übergreifenden Anforderungen an die $activate Operation.
 ToDo: link zu übergreifenden Anforderungen 
 
 [Workflow-spezifische Anforderungen für den E-Rezept-Fachdienst](./op-activate-req-server.html)
+
 [Workflowspezifische Anforderungen für das verordnende Primärsystem](./op-activate-req-client.html)
 

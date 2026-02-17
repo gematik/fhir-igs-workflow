@@ -1,6 +1,6 @@
 <!-- Verarbeitungsregeln für den E-Rezept-Fachdienst -->
 
-## Verordnen durch Psychotherapeuten
+### Verordnen durch Psychotherapeuten
 Für die Verordnung von DiGAs durch Psychotherapeuten gelten die gleichen technischen
 Voraussetzungen wie für Ärzte und Zahnärzte. Der Psychotherapeut muss die Verordnung
 mit seinem Heilberufsausweis (HBA) qualifiziert elektronisch signieren. Es muss ein HBA
@@ -20,7 +20,7 @@ Für die Authentisierung nutzt die Psychotherapeuten Praxis ihre SMC-B mit der
 Rolle oid_praxis_psychotherapeut, bzw. in einer Gemeinschaftspraxis mit Ärzten die Rolle
 oid_praxis_arzt.
 
-## Authentisierung Kostenträger
+### Authentisierung Kostenträger
 Das Primärsystem des Kostenträgers ist über den Basis-Consumer des Kostenträger an
 das zentrale Netz der TI angebunden und greift über das zentrale Netz der TI auf den
 zentralen IdP-Dienst und den E-Rezept-Fachdienst zu.
@@ -30,21 +30,21 @@ welche die Identität des Nutzers attestieren. Eine Nutzung sektoraler IdP-Diens
 vorgesehen.
 Für die Authentisierung nutzt der Kostenträger seine SM-B KTR mit der Rolle oid_kostentraeger.
 
-## Workflow 162
+### Workflow 162
 Für Übermittlungen von DiGA Verordnungen wird der **Flowtype 162** verwendet.
 
 Der Flowtype 162 verwendet dasselbe Statusmodell wie Flowtype 160. 
 
 Der Statusübergang von "in Abgabe (gesperrt)" zu "gelöscht" über "UC 4.3 - E-Rezept durch Abgebenden löschen" ist für DiGA Verordnungen nicht vorgesehen.
 
-## Löschfristen
+### Löschfristen
 Die Löschfristen für Workflows mit Verordnungen des Flowtype 162 entsprechen denen des Flowtype 160.
 
-## Zugriff auf FHIR-VZD
+### Zugriff auf FHIR-VZD
 Zur Prüfung der IKNR muss der E-Rezept-Fachdienst die Telematik-ID des
 Kostenträgers auflösen. Das Mapping zwischen IKNR und Telematik-ID erfolgt über das FHIR-VZD und kann bis zu 24 Stunden gecacht werden.
 
-## eVDGA FHIR Profile
+### eVDGA FHIR Profile
 Zur Verordnung von DiGA werden die KBV-Profile der elektronischen Verordnung
 Digitaler Gesundheitsanwendungen verwendet (https://simplifier.net/evdga). Die
 Workflowprofile des E-Rezept-Workflows werden um diese Profile ergänzt.
