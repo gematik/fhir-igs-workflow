@@ -1,35 +1,71 @@
-## Mehrfachverordnung (MVO) im E-Rezept-Workflow
+{% assign use_cases = site.data['use-cases'] %}
 
-Die Mehrfachverordnung ermöglicht die Ausstellung von mehreren, inhaltlich zusammengehörenden Teilverordnungen für ein Arzneimittel innerhalb eines einzigen Verordnungsvorgangs. Grundlage ist § 31 Abs. 1b SGB V (sowie § 4 Abs. 3 AMVV i.V.m. § 2 Abs. 1 Nr. 6a AMVV). Jede Teilverordnung ist ein vollwertiges E-Rezept mit eigener QES, eigenem Token und eigenem Workflow (Task) und kann unabhängig eingelöst werden.
+Dieses Kapitel beschreibt den fachlichen Normalfall von der Verordnung bis zur Belieferung in der Apotheke.
+Im Fokus stehen die Handlungen der Beteiligten (Arzt, Versicherter, Apotheke) sowie die fachlichen Schritte.
 
-### Fachliche Einordnung
+Das Szenario umfasst die Versorgung gesetzlich (GKV) und privat (PKV) Versicherter.
 
-- **Anzahl der Teilverordnungen:** mindestens 2, maximal 4.
-- **Eigenständige Einlösung:** Jede Teilverordnung kann in derselben oder in unterschiedlichen Apotheken eingelöst werden.
-- **Gültigkeitszeitraum:** Der Beginn der Einlösefrist wird vom Verordnenden festgelegt; das Ende kann optional gesetzt werden. Ohne Enddatum gilt die Teilverordnung bis 365 Tage nach Ausstellungsdatum.
-- **Kein Ersatzverfahren:** Mehrfachverordnungen existieren ausschließlich elektronisch (kein Muster 16, keine Ersatzverordnung).
-- **Ausschlüsse:** Keine Mehrfachverordnung für Entlassrezepte, BTM- und T-Rezepte.
+### Epic
 
-### Beteiligte Rollen und Nutzen
+Ein Versicherter soll ein apothekenpflichtiges Arzneimittel sicher und nachvollziehbar erhalten.
+Der Verordner erstellt eine Verordnung, der Versicherte kann sie einlösen, die Apotheke beliefert und dokumentiert die Abgabe.
 
-**Versicherte** profitieren davon, dass Teilverordnungen getrennt einlösbar sind, Einlösezeiträume transparent werden und die App auf Gültigkeiten hinweisen kann.  
-**Verordnende** können mehrere Teilverordnungen in einem Vorgang ausstellen und Einlösefristen automatisiert berechnen.  
-**Apotheken** erkennen MVO-Rezepte, sehen Nummerierung und Gültigkeitszeitraum und bearbeiten Teilverordnungen separat.
+### User Stories (fachlich)
 
-### Prozessüberblick
+- Als verordnender Leistungserbringer möchte ich ein E-Rezept ausstellen und bereitstellen, damit der Versicherte das Arzneimittel beziehen kann.
+- Als Versicherter möchte ich mein E-Rezept einlösen können, damit ich das Arzneimittel in der Apotheke erhalte.
+- Als Apotheke möchte ich ein E-Rezept annehmen, beliefern und abschließen, damit die Abgabe korrekt dokumentiert ist.
 
-1. **Verordnung**: Im Primärsystem werden die Teilverordnungen erzeugt und als Mehrfachverordnung gekennzeichnet.
-2. **Signatur & Aktivierung**: Jede Teilverordnung wird separat qualifiziert signiert und anschließend als eigener Task aktiviert.
-3. **Einlösung**: Teilverordnungen werden erst ab Beginn der Einlösefrist durch Apotheken abrufbar und belieferbar.
-4. **Löschung**: Für Teilverordnungen gelten die gleichen Löschfristen wie für Einzelrezepte (automatisch 10 Tage nach Gültigkeit bzw. 100 Tage nach Dispensierung).
+## Verordnung apothekenpflichtiger Arzneimittel (GKV/PKV)
 
-### Einschränkungen und Besonderheiten
+Ein verordnender Leistungserbringer erstellt im Primärsystem (PVS/KIS) den Verordnungsdatensatz, signiert diesen qualifiziert und stellt das E-Rezept im E-Rezept-Fachdienst bereit.
 
-- Eine Mehrfachverordnung ist nur für apothekenpflichtige Arzneimittel zulässig.
-- Teilverordnungen sind **keine** Ersatzverordnungen und **keine** Entlassrezepte.
-- Ein Ausdruck kann mehrere Teilverordnungen enthalten; Tokens mit zukünftiger Gültigkeit dürfen bei Scan nicht automatisch gespeichert werden.
+### Fachlicher Ablauf
 
-### Weiterführende Abschnitte
+1. Der Verordner wählt den Verordnungsdatensatz aus und bestätigt die Ausstellung des E-Rezepts.
+2. Die Verordnung wird qualifiziert signiert.
+3. Das E-Rezept wird für den Versicherten bereitgestellt.
+4. Der Versicherte kann das bereitgestellte E-Rezept in einer Apotheke einlösen.
 
-- Technische Anwendungsfälle: [menu-technische-umsetzung-anwendungsfaelle.html](./menu-technische-umsetzung-anwendungsfaelle.html)
-- Operation API (Aktivierung & Abruf): [menu-schnittstellen-operation-api.html](./menu-schnittstellen-operation-api.html)
+### Fachliche Unterschiede zwischen GKV und PKV
+
+- Für PKV-Versicherte können zusätzliche Schritte zur Bereitstellung PKV-relevanter Versichertendaten erforderlich sein (z. B. Online Check-in).
+- Beide Gruppen durchlaufen für apothekenpflichtige Arzneimittel den regulären Einlöseprozess in der öffentlichen Apotheke.
+
+**Beteiligte Systeme:** PVS/KIS, E-Rezept-Fachdienst
+
+**Technische Anwendungsfälle (User Stories)**
+
+{% assign scenario_use_cases = "E_Rezept_erstellen, E_Rezept_qualifiziert_signieren, E_Rezept_vervollstaendigen_und_Task_aktivieren, E_Rezept_loeschen" | split: ", " %}
+
+{% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Technische Anwendungsfälle mit Bezug zu Anwendungsfall <i>Verordnung apothekenpflichtiger Arzneimittel (160/200)</i>" %}
+
+## Belieferung in der Apotheke (GKV/PKV)
+
+Nach Übergabe von Task-ID und AccessCode (z. B. 2D-Code oder Nachricht) ruft die Apotheke das E-Rezept im Fachdienst ab, beliefert den Versicherten und schließt den Workflow ab.
+
+### Fachlicher Ablauf
+
+1. Die Apotheke nimmt das E-Rezept an und ruft die Verordnungsdaten ab.
+2. Falls erforderlich, dokumentiert die Apotheke die Abgabeinformationen während der Belieferung.
+3. Nach der Abgabe wird der Vorgang abgeschlossen und eine Quittung bereitgestellt.
+4. Falls die Quittung nicht vorliegt, kann sie erneut bereitgestellt werden.
+
+### Fachliche Unterschiede zwischen GKV und PKV
+
+- Bei PKV-Versicherten kann zusätzlich eine Einwilligung zur Bereitstellung von Abrechnungsinformationen vorliegen.
+- Bei PKV muss dem Versicherten nach Abschluss der Abgabe eine ausgedruckte Quittung für die private Abrechnung bereitgestellt werden.
+
+**Beteiligte Systeme:** AVS, E-Rezept-Fachdienst
+
+**Technische Anwendungsfälle (User Stories)**
+
+{% assign scenario_use_cases = "E_Rezept_abrufen_apotheke, E_Rezept_abgabe_dokumentieren, E_Rezept_abgabe_abschliessen, E_Rezept_loeschen, E_Rezept_secret_wiederherstellen" | split: ", " %}
+
+{% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Technische Anwendungsfälle mit Bezug zu Anwendungsfall <i>Belieferung apothekenpflichtiger Arzneimittel (160/200)</i>" %}
+
+## Übergang in technische Umsetzung
+
+Die fachlichen Anwendungsfälle werden in den technischen Anwendungsfällen konkretisiert:
+
+- [Technische Anwendungsfälle](./menu-technische-umsetzung-anwendungsfaelle.html)

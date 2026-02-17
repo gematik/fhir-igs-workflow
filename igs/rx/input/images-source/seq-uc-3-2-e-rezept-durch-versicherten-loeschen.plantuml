@@ -1,0 +1,27 @@
+@startuml
+title UC 3.2 - E-Rezept durch Versicherten loeschen
+
+actor "Versicherter" as V
+participant "FdV" as FdV
+participant "Identity Provider" as IDP
+participant "E-Rezept Fachdienst" as FD
+
+V -> FdV: E-Rezept loeschen()
+activate FdV
+
+opt kein gueltiger AuthN-Token
+  ref over FdV, IDP: AuthN-Token anfordern
+end
+
+FdV -> FD: POST /Task/{id}/$abort (AuthN-Token, AccessCode)
+activate FD
+FD -> FD: Status auf "geloescht" setzen()
+FD -> FD: Daten loeschen()
+FD --> FdV: Status
+deactivate FD
+
+FdV -> FdV: Token loeschen()
+FdV --> V: Status
+deactivate FdV
+
+@enduml

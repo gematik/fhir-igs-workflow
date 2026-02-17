@@ -1,0 +1,28 @@
+@startuml
+!include style.iuml
+
+title RX Operation $dispense
+
+start
+:Client ruft POST /Task/{id}/$dispense auf;
+:FD prueft Rolle, Secret und Task.status=in-progress;
+if (ok?) then (ja)
+else (nein)
+  :HTTP 403;
+  stop
+endif
+
+:FD validiert Dispense-Parameters und MedicationDispense;
+if (valid?) then (ja)
+else (nein)
+  :HTTP 400;
+  stop
+endif
+
+:FD ueberschreibt vorhandene Dispensierinformationen;
+:FD speichert MedicationDispense/Medication + Zeitstempel;
+:FD belaesst Task.status unveraendert;
+:FD triggert Push/ePA-Folgeverarbeitung;
+stop
+
+@enduml

@@ -1,5 +1,5 @@
-Extension: GEM_ERP_EX_DeepLink
-Id: GEM-ERP-EX-DeepLink
+Extension: EFlowRxDeepLinkExtension
+Id: eflow-rx-deeplink-extension
 Title: "GEM ERP EX DeepLink"
 Description: "Enthält Informationen zum Deep Link für eine DiGA."
 Context: MedicationDispense

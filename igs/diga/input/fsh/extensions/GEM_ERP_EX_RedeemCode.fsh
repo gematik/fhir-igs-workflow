@@ -1,5 +1,5 @@
-Extension: GEM_ERP_EX_RedeemCode
-Id: GEM-ERP-EX-RedeemCode
+Extension: EFlowRxRedeemCodeExtension
+Id: eflow-rx-redeemcode-extension
 Title: "GEM ERP EX RedeemCode"
 Description: "Gibt den Einlösecode für eine DiGA an."
 * insert StructureDefinition(GEM_ERP_EX_RedeemCode)

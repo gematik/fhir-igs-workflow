@@ -155,6 +155,10 @@ jobs:
               ver="${dep#* }"
               [[ -z "$pkg" || -z "$ver" ]] && continue
               fhir install "$pkg" "$ver"
+              pkg_dir="$cache_dir/${pkg}#${ver}/package"
+              if [[ -d "$pkg_dir" ]]; then
+                (cd "$pkg_dir" && fhir inflate --here)
+              fi
             done
           done
 

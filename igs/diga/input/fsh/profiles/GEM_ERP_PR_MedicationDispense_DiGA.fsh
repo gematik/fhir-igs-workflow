@@ -1,9 +1,9 @@
-Profile: GEM_ERP_PR_MedicationDispense_DiGA
+Profile: EFlowRxMedicationDispenseDiGA
 Parent: EPAMedicationDispense
-Id: GEM-ERP-PR-MedicationDispense-DiGA
+Id: eflow-rx-medicationdispense-diga
 Title: "GEM ERP PR MedicationDispense DiGA"
 Description: "Dispensierung einer DiGA-Verordnung"
-* insert Profile(GEM_ERP_PR_MedicationDispense_DiGA)
+* insert Versioning
 * obeys workflow-medicationdispense-redeemcode-1
 * obeys workflow-medicationdispense-redeemcode-2
 * obeys workflow-medicationdispense-redeemcode-3

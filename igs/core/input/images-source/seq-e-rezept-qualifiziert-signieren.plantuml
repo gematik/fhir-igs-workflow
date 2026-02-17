@@ -1,0 +1,20 @@
+@startuml
+title E-Rezept qualifiziert signieren
+
+actor "Verordnender" as V
+participant "Primaersystem" as PS
+participant "Konnektor" as K
+
+V -> PS: QES ausloesen()
+activate PS
+
+PS -> K: sign_Document_QES(Verordnungsdaten)
+activate K
+K --> PS: QES-Signatur
+deactivate K
+
+PS -> PS: Signierte Verordnungsdaten speichern()
+PS --> V: QES abgeschlossen
+deactivate PS
+
+@enduml

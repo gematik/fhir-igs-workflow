@@ -3,7 +3,7 @@ Parent: TIOrganization
 Id: GEM-ERPEU-PR-Organization
 Title: "Organization Information Received from the EU"
 Description: "This Organization Profile is sent by the NCPeH when redeeming a Prescription in the EU"
-* insert Profile(GEM_ERPEU_PR_Organization)
+* insert Versioning
 
 * identifier 1..* MS
   * ^short = "Organization Identifier"

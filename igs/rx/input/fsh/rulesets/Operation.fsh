@@ -1,6 +1,5 @@
 RuleSet: Operation(name)
-* insert OperationVersioning
-* url = "https://gematik.de/fhir/erp/OperationDefinition/{name}OperationDefinition"
+* insert Meta-Instance
 * name = "{name}"
 * kind = #operation
 * affectsState = true

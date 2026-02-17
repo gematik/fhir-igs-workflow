@@ -1,10 +1,10 @@
 canonical: https://gematik.de/fhir/erp
 fhirVersion: 4.0.1
-id: de.gematik.erezept-workflow.r4
-name: E-Rezept Workflow #TODO Name muss von Team Polarion vorgegeben werden gemIG...
-title: "Implementation Guide E-Rezept-Fachdienst"
+id: de.gematik.eflow-rx
+name: gemIG_TIFlow_rx
+title: "E-Rezept für Arzneimittel"
 status: draft # draft | active | retired | unknown
-version: 1.6.1-draft
+version: 1.0.0-draft
 copyrightYear: 2025+
 releaseLabel: ci-build # ci-build, ballot, release
 jurisdiction: urn:iso:std:iso:3166#DE "Germany" # https://www.hl7.org/fhir/valueset-jurisdiction.html
@@ -18,15 +18,18 @@ dependencies:
   de.gematik.epa.medication: 1.3.0
   de.gematik.terminology: 1.0.8
   de.gematik.ti: 1.2.0
+  hl7.fhir.uv.xver-r5.r4: 0.0.1-snapshot-2
 
 applyExtensionMetadataToRoot: false
 
 menu:
   Start: index.html
   Fachlichkeit:
-    Überblick: menu-fachlichkeit-ueberblick.html
     Szenarien: menu-fachlichkeit-szenarien.html
-    Anwendungsfälle: menu-fachlichkeit-anwendungsfaelle.html
+    Arzneimittel: menu-fachlichkeit-szenarien-e-rezept.html
+    Teratogene Arzneimittel: menu-fachlichkeit-szenarien-t-rezept.html
+    Mehrfachverordnungen: menu-fachlichkeit-szenarien-e-rezept-mvo.html
+    Workflow-Steuerung durch LE: menu-fachlichkeit-szenarien-e-rezept-wf-le.html
   Technische Umsetzung:
     Systemüberblick: menu-technische-umsetzung-systemueberblick.html
     Technische Anwendungsfälle: menu-technische-umsetzung-anwendungsfaelle.html
@@ -52,14 +55,16 @@ menu:
 pages:
   index.md:
     title: "Implementation Guide E-Rezept-Fachdienst"
-  menu-fachlichkeit-ueberblick.md:
-    title: "Überblick zur Verordnung und Belieferung von Arzneimitteln"
-    menu-fachlichkeit-szenarien.md:
-      title: "Szenarien für den Verordnungsprozess"
-      menu-fachlichkeit-szenarien-t-rezept.md:
-        title: "Verordnung von E-T-Rezepten"
-    menu-fachlichkeit-anwendungsfaelle.md:
-      title: "Anwendungsfälle für den Medikationsprozess"
+  menu-fachlichkeit-szenarien.md:
+    title: "Szenarien für den Verordnungsprozess von Arzneimitteln"
+    menu-fachlichkeit-szenarien-e-rezept.md:
+      title: "Verordnung von apothekenpflichtigen Arzneimitteln"
+    menu-fachlichkeit-szenarien-e-rezept-wf-le.md:
+      title: "Verordnung mit Steuerung durch Leistungserbringer"
+    menu-fachlichkeit-szenarien-e-rezept-mvo.md:
+      title: "Verordnung von Mehrfachverordnungen (MVO)"
+    menu-fachlichkeit-szenarien-t-rezept.md:
+      title: "Verordnung von E-T-Rezepten"
   menu-technische-umsetzung-systemueberblick.md:
     title: "Systemüberblick"
     menu-technische-umsetzung-anwendungsfaelle.md:
@@ -114,14 +119,62 @@ pages:
     title: "Datenschutz und Sicherheit"
   menu-schnittstellen-query-api.md:
     title: "Query API"
+    query-api-task.md:
+      title: "Query API: Task"
+      query-api-task-fd-requirements.md:
+        title: "FD-Anforderungen: Task-Query"
+      query-api-task-client-requirements.md:
+        title: "Client-Anforderungen: Task-Query"
+    query-api-medicationdispense.md:
+      title: "Query API: MedicationDispense"
+      query-api-medicationdispense-fd-requirements.md:
+        title: "FD-Anforderungen: MedicationDispense-Query"
+      query-api-medicationdispense-client-requirements.md:
+        title: "Client-Anforderungen: MedicationDispense-Query"
   menu-schnittstellen-operation-api.md:
     title: "Operation API"
     op-create.md:
       title: "Operation $create (Task erzeugen)"
+      op-create-fd-requirements.md:
+        title: "FD-Anforderungen $create"
+      op-create-client-requirements.md:
+        title: "Client-Anforderungen $create"
     op-activate.md:
       title: "Operation $activate (Task aktivieren)"
+      op-activate-fd-requirements.md:
+        title: "FD-Anforderungen $activate"
+      op-activate-client-requirements.md:
+        title: "Client-Anforderungen $activate"
+    op-accept.md:
+      title: "Operation $accept (Task akzeptieren)"
+      op-accept-fd-requirements.md:
+        title: "FD-Anforderungen $accept"
+      op-accept-client-requirements.md:
+        title: "Client-Anforderungen $accept"
+    op-reject.md:
+      title: "Operation $reject (Task zurückweisen)"
+      op-reject-fd-requirements.md:
+        title: "FD-Anforderungen $reject"
+      op-reject-client-requirements.md:
+        title: "Client-Anforderungen $reject"
+    op-dispense.md:
+      title: "Operation $dispense (Dispensierinformationen bereitstellen)"
+      op-dispense-fd-requirements.md:
+        title: "FD-Anforderungen $dispense"
+      op-dispense-client-requirements.md:
+        title: "Client-Anforderungen $dispense"
+    op-close.md:
+      title: "Operation $close (Task schließen)"
+      op-close-fd-requirements.md:
+        title: "FD-Anforderungen $close"
+      op-close-client-requirements.md:
+        title: "Client-Anforderungen $close"
     op-abort.md:
       title: "Operation $abort (Task abbrechen)"
+      op-abort-fd-requirements.md:
+        title: "FD-Anforderungen $abort"
+      op-abort-client-requirements.md:
+        title: "Client-Anforderungen $abort"
   menu-schnittstellen-additional-api.md:
     title: "Zusätzliche APIs"
   artifacts.md:

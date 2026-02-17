@@ -1,0 +1,18 @@
+actor: []
+conformance: SHALL
+content_hash: 4ead9f9138abc64165a8bb6243d351ecb1de0fbf268eb6d39ccc65504f36f50c
+created: '2026-02-17T06:28:49.343830'
+date: '2026-02-17T06:28:49.343832'
+key: IG-TIFlow-RX-106
+modified: '2026-02-17T06:28:49.343831'
+release_status: NEW
+source: input/pagecontent/op-activate-fd-requirements.md
+status: ACTIVE
+test_procedures: {}
+text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
+  ueber /Task/{id}/$activate die Operation mit dem Fehlercode 400 und einem Hinweis
+  auf den Ausschluss von Betaeubungsmittel ("BTM nicht zulaessig" im OperationOutcome)
+  abbrechen, wenn der uebergebene QES-Datensatz als Betaeubungsmittel-Verordnung (Bundle.Medication.extension:KBV_EX_ERP_Medication_Category:code
+  gleich "01") gekennzeichnet ist.
+title: E-Rezept-Fachdienst - Task aktivieren - Ausschluss Betaeubungsmittel (A_22231-01)
+version: 0
