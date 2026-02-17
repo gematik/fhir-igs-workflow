@@ -60,8 +60,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"7.1"}
-    h3,h4,h5,h6{--heading-prefix:"7.1.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"7.2"}
+    h3,h4,h5,h6{--heading-prefix:"7.2.0"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -263,11 +263,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </ul>
 
 </div>
-<p>Die FHIR-Operation <code class="language-plaintext highlighter-rouge">$activate</code> überführt einen im Status <code class="language-plaintext highlighter-rouge">draft</code> befindlichen <code class="language-plaintext highlighter-rouge">Task</code> in den Status <code class="language-plaintext highlighter-rouge">ready</code>, wenn das Primärsystem den qualifiziert elektronisch signierten Verordnungsdatensatz (QES) übermittelt. 
-Für DiGA-Verordnungen (Flowtype 162) gelten zusätzliche Payload-Prüfungen. Die allgemeinen Anforderungen des Basis-Workflows gelten unverändert.</p>
+<p>Die FHIR-Operation <code class="language-plaintext highlighter-rouge">$activate</code> überführt einen im Status <code class="language-plaintext highlighter-rouge">draft</code> befindlichen <code class="language-plaintext highlighter-rouge">Task</code> in den Status <code class="language-plaintext highlighter-rouge">ready</code>, wenn das Primärsystem den qualifiziert elektronisch signierten Verordnungsdatensatz (QES) übermittelt.</p>
+
+<p>Diese Operation basiert auf der $activate Operation des Basis-Workflow für E-Rezepte. Für DiGA-Verordnungen (Flowtype 162) gelten zusätzliche Payload-Prüfungen.</p>
 
 <h3 id="nachricht">Nachricht</h3>
-<p>Die Operation $activate wird als HTTP POST auf /Task/<id>/$activate ausgeführt.</id></p>
+<p>Die Operation $activate wird als HTTP POST auf /Task/&#60;id&#62;/$activate ausgeführt.</p>
 
 <h3 id="anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</h3>
 
@@ -297,7 +298,7 @@ ToDo: link zu übergreifenden Anforderungen</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Feb 17, 2026 10:10+0000">2026-02-17</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Feb 17, 2026 10:50+0000">2026-02-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -14,7 +14,7 @@ Die FHIR-Operation `$close` überführt einen im Status `in-progress` befindlich
 
 ### Nachricht
 
-Die Operation $close wird als HTTP POST auf /Task//$close ausgeführt.
+Die Operation $close wird als HTTP POST auf /Task/<id>/$close ausgeführt.
 
 ### Anforderungen an Schnittstelle
 
@@ -23,10 +23,6 @@ Es gelten die übergreifenden Anforderungen an die $close Operation. ToDo: link 
 [Workflow-spezifische Anforderungen für den E-Rezept-Fachdienst](./op-close-req-server.md)
 
 [Workflow-spezifische Anforderungen für das Clientsystem des Kostenträgers](./op-close-req-client.md)
-
-### Auslöser
-
-Der Kostenträger übermittelt die Abgabeinformation (Freischaltcode) und schliesst den Vorgang ab.
 
 ### Hinweis
 

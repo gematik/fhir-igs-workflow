@@ -14,7 +14,7 @@ Die FHIR-Operation `$acsept` überführt einen im Status `ready` befindlichen `T
 
 ### Nachricht
 
-Die Operation $accept wird als HTTP POST auf /Task//$accept ausgeführt.
+Die Operation $accept wird als HTTP POST auf /Task/<id>/$accept ausgeführt.
 
 ### Anforderungen an Schnittstelle
 

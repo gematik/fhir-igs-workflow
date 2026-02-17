@@ -16,7 +16,7 @@ Diese Operation basiert auf der $abort Operation des Basis-Workflow für E-Rezep
 
 ### Nachricht
 
-Die Operation $reject wird als HTTP POST auf /Task//$reject ausgeführt.
+Die Operation $reject wird als HTTP POST auf /Task/<id>/$reject ausgeführt.
 
 ### Anforderungen an Schnittstelle
 

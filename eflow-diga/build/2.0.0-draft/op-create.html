@@ -1,13 +1,9 @@
-<!-- get modelType -->
-
-
-
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE HTML>
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>GEM ERP PR CloseOperation Input - Testing - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft</title>
+    <title>Operation: $create - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -64,8 +60,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"8.2"}
-    h3,h4,h5,h6{--heading-prefix:"8.2"}</style>
+    <style type="text/css">h2{--heading-prefix:"7.1"}
+    h3,h4,h5,h6{--heading-prefix:"7.1"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -223,7 +219,7 @@ Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>FHIR-Artefakte</b></a></li><li><b>GEM ERP PR CloseOperation Input</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='operation-api.html'><b>Operation API</b></a></li><li><b>Operation: $create</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -234,38 +230,16 @@ Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
       <div class="container">  <!-- container -->
         <div class="row">
           <div class="inner-wrapper">
-<div style="counter-reset: section 6" class="col-12">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
   
-  
-
-
-
-
-
-
-
-
-
-
-
-<ul class="nav nav-tabs">
-
-  <li>
-    <a href="StructureDefinition-GEM-ERP-PR-PAR-Close-Operation-Input.html">Content</a>
-  </li>
-
-
-
-  <li>
-    <a href="StructureDefinition-GEM-ERP-PR-PAR-Close-Operation-Input-definitions.html">Detailed Descriptions</a>
-  </li>
-
-
-
-  
-    <li>
-      <a href="StructureDefinition-GEM-ERP-PR-PAR-Close-Operation-Input-mappings.html">Mappings</a>
-    </li>
+  <h2>Operation: $create</h2>
   
 
 
@@ -273,84 +247,51 @@ Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
 
 
-  
-    
-      <li>
-        <a href="StructureDefinition-GEM-ERP-PR-PAR-Close-Operation-Input-examples.html">Examples</a>
-      </li>
-    
-  
 
 
 
 
-  
-    <li>
-      <a href="StructureDefinition-GEM-ERP-PR-PAR-Close-Operation-Input.profile.xml.html">XML</a>
-    </li>
-  
 
 
-  
-    <li>
-      <a href="StructureDefinition-GEM-ERP-PR-PAR-Close-Operation-Input.profile.json.html">JSON</a>
-    </li>
-  
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
 
-
-  
-    <li>
-      <a href="StructureDefinition-GEM-ERP-PR-PAR-Close-Operation-Input.profile.ttl.html">TTL</a>
-    </li>
-  
-
-
+<ul id="markdown-toc">
+  <li><a href="#nachricht" id="markdown-toc-nachricht">Nachricht</a></li>
+  <li><a href="#anforderungen-an-schnittstelle" id="markdown-toc-anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</a></li>
+  <li><a href="#hinweis" id="markdown-toc-hinweis">Hinweis</a></li>
+  <li><a href="#geschäftslogik" id="markdown-toc-geschäftslogik">Geschäftslogik</a></li>
 </ul>
 
+</div>
+<p>Die FHIR-Operation <code class="language-plaintext highlighter-rouge">$create</code> erstellt einen Workflow im E-Rezept-Fachdienst.</p>
 
-  <a name="root"> </a>
-  <h2 id="root">Resource Profile: GEM_ERP_PR_PAR_CloseOperation_Input - Testing</h2>
+<p>Diese Operation basiert auf der $create Operation des Basis-Workflow für E-Rezepte.</p>
 
-  <table class="colsd">
-    <tr>
+<h3 id="nachricht">Nachricht</h3>
+<p>Die Operation $create wird als HTTP POST auf /Task/$create ausgeführt.</p>
 
-      <td colspan="2">
-        
-          Draft
-          
-            as of 2026-02-06
-          
-        
-      </td>
+<h3 id="anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</h3>
 
-    </tr>
-  </table>
+<p>Es gelten die übergreifenden Anforderungen an die $create Operation.
+ToDo: link zu übergreifenden Anforderungen</p>
 
+<p>Es gibt keine workflow-spezifischen Anforderungen für den E-Rezept-Fachdienst.</p>
 
+<p>link AFO CS - PS der Verordnungen LEI</p>
 
+<p>-API BEschreibung aus Cap Statement</p>
 
-<!-- insert intro if present -->
+<h3 id="hinweis">Hinweis</h3>
+<p>ToDo: Warnungen aus API, z.B. $create nicht auf Vorrat</p>
 
-
-
-
-<h3>Test Plans</h3>
-
-  <p><b>No test plans are currently available for the  Profile.</b></p>
-
-
-<h3>Test Scripts</h3>
-
-  <p><b>No test scripts are currently available for the  Profile.</b></p>
-
-
-<!-- insert notes if present -->
-
+<h3 id="geschäftslogik">Geschäftslogik</h3>
+<p>ToDo: Diagram zum Ablauf</p>
 
 
 
 </div>
-
         </div>  <!-- /inner-wrapper -->
       </div>  <!-- /row -->
     </div>  <!-- /container -->
@@ -358,8 +299,6 @@ Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
   <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
   <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
-
-  <script type="text/javascript" src="assets/js/tabs.js"> </script>
 
   <script type="text/javascript" src="assets/js/window-hash.js"> </script>
   <a name="bottom"> </a>
