@@ -1,0 +1,26 @@
+@startuml
+title UC 4.5 - Abgabedatensatz durch Abgebenden signieren
+
+actor "Mitarbeiter Apotheke" as MA
+participant "AVS" as AVS
+participant "Konnektor" as K
+
+MA -> AVS: Abgabedatensatz signieren()
+activate AVS
+
+alt Abgabe ohne Aenderung
+  AVS -> K: fortgeschritten signieren(Abgabedatensatz)
+  activate K
+  K --> AVS: Signatur
+  deactivate K
+else Abgabe mit Aenderung
+  AVS -> K: QES signieren(Dispensierdatensatz)
+  activate K
+  K --> AVS: QES-Signatur
+  deactivate K
+end
+
+AVS --> MA: Signierter Datensatz
+deactivate AVS
+
+@enduml

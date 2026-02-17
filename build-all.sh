@@ -64,6 +64,10 @@ run_ig() {
 
   echo "Building $ig_short"
 
+  if [[ -x "$ROOT_DIR/scripts/merge-use-cases.sh" ]]; then
+    "$ROOT_DIR/scripts/merge-use-cases.sh" "$ig_short"
+  fi
+
   if command -v sushi >/dev/null 2>&1; then
     (cd "$ig_dir" && sushi .)
   else

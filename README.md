@@ -58,3 +58,26 @@ Notes:
 
 - The publisher JAR is shared under tools/publisher/ and downloaded on first build.
 - All IGs target FHIR R4 (4.0.1).
+
+## Use Case Management
+
+Use cases are maintained centrally in the core IG and merged into module IGs at build time.
+
+- Core source of truth: [igs/core/input/data/use-cases.yaml](igs/core/input/data/use-cases.yaml)
+- Module selection and overrides: `igs/<module>/input/data/use-cases-get.yaml`
+- Generated module file (do not edit by hand): `igs/<module>/input/data/use-cases.yaml`
+- Merge script (runs from root): [scripts/merge-use-cases.sh](scripts/merge-use-cases.sh)
+
+Example module entry:
+
+```yaml
+- id: rx-erstellen
+	core-uc: UC_2_1_E_Rezepte_erzeugen
+	interface:
+		- [Operation API: E-Rezept erstellen](./op-create.html)
+	roles: ["(Zahn-)Arzt", "Psychotherapeut"]
+```
+
+Diagrams are referenced via `diagram` in the core use case and copied into the module's
+`input/images-source` during the merge if missing. You can override `diagram` in the module
+entry if a module-specific diagram is needed.

@@ -1,0 +1,27 @@
+@startuml
+title E-Rezept-Abgabe vollziehen
+
+actor "Mitarbeiter Apotheke" as MA
+participant "AVS" as AVS
+participant "Identity Provider" as IDP
+participant "E-Rezept Fachdienst" as FD
+
+MA -> AVS: Abgabe abschliessen()
+activate AVS
+
+opt kein gueltiger AuthN-Token
+  ref over AVS, IDP: AuthN-Token anfordern
+end
+
+AVS -> FD: POST /Task/{id}/$close?secret=... (AuthN-Token, Parameters)
+activate FD
+FD -> FD: Dispensierdaten validieren()
+FD -> FD: Quittung erstellen()
+FD -> FD: Task abschliessen()
+FD --> AVS: Quittung, Status
+deactivate FD
+
+AVS --> MA: Quittung und Status
+deactivate AVS
+
+@enduml

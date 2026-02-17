@@ -15,14 +15,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 {% include use-case-details-table.html use_case=use_case roles=roles %}
 
-**Sequenzdiagramm:**
-
-<figure>
-	<div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-uc-2-1-e-rezepte-erzeugen.svg %}
-	</div>
-	<figcaption><strong>Abbildung: </strong>UC 2.1 - E-Rezepte erzeugen</figcaption>
-</figure>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- UC 2.3 - E-Rezept einstellen -->
 {% assign use_case = use_cases | where: "title", "UC 2.3 - E-Rezept einstellen" | first %}
@@ -32,14 +25,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 {% include use-case-details-table.html use_case=use_case roles=roles %}
 
-**Sequenzdiagramm:**
-
-<figure>
-	<div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-uc-2-3-e-rezept-einstellen.svg %}
-	</div>
-	<figcaption><strong>Abbildung: </strong>UC 2.3 - E-Rezept einstellen</figcaption>
-</figure>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- UC 2.5 - E-Rezept durch Verordnenden loeschen -->
 {% assign use_case = use_cases | where: "title", "UC 2.5 - E-Rezept durch Verordnenden loeschen" | first %}
@@ -49,14 +35,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 {% include use-case-details-table.html use_case=use_case roles=roles %}
 
-**Sequenzdiagramm:**
-
-<figure>
-	<div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-uc-2-5-e-rezept-durch-verordnenden-loeschen.svg %}
-	</div>
-	<figcaption><strong>Abbildung: </strong>UC 2.5 - E-Rezept durch Verordnenden loeschen</figcaption>
-</figure>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- UC 3.1 - E-Rezepte durch Versicherten abrufen -->
 {% assign use_case = use_cases | where: "title", "UC 3.1 - E-Rezepte durch Versicherten abrufen" | first %}
@@ -66,14 +45,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 {% include use-case-details-table.html use_case=use_case roles=roles %}
 
-**Sequenzdiagramm:**
-
-<figure>
-	<div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-uc-3-1-e-rezepte-durch-versicherten-abrufen.svg %}
-	</div>
-	<figcaption><strong>Abbildung: </strong>UC 3.1 - E-Rezepte durch Versicherten abrufen</figcaption>
-</figure>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- UC 3.2 - E-Rezept durch Versicherten loeschen -->
 {% assign use_case = use_cases | where: "title", "UC 3.2 - E-Rezept durch Versicherten loeschen" | first %}
@@ -83,14 +55,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 {% include use-case-details-table.html use_case=use_case roles=roles %}
 
-**Sequenzdiagramm:**
-
-<figure>
-	<div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-uc-3-2-e-rezept-durch-versicherten-loeschen.svg %}
-	</div>
-	<figcaption><strong>Abbildung: </strong>UC 3.2 - E-Rezept durch Versicherten loeschen</figcaption>
-</figure>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- UC 3.3 - Nachricht durch Versicherten uebermitteln -->
 {% assign use_case = use_cases | where: "title", "UC 3.3 - Nachricht durch Versicherten uebermitteln" | first %}
@@ -100,14 +65,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 {% include use-case-details-table.html use_case=use_case roles=roles %}
 
-**Sequenzdiagramm:**
-
-<figure>
-	<div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-uc-3-3-nachricht-durch-versicherten-uebermitteln.svg %}
-	</div>
-	<figcaption><strong>Abbildung: </strong>UC 3.3 - Nachricht durch Versicherten uebermitteln</figcaption>
-</figure>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- UC 3.4 - Nachrichten durch Versicherten empfangen -->
 {% assign use_case = use_cases | where: "title", "UC 3.4 - Nachrichten durch Versicherten empfangen" | first %}
@@ -117,14 +75,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 {% include use-case-details-table.html use_case=use_case roles=roles %}
 
-**Sequenzdiagramm:**
-
-<figure>
-	<div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-uc-3-4-nachrichten-durch-versicherten-empfangen.svg %}
-	</div>
-	<figcaption><strong>Abbildung: </strong>UC 3.4 - Nachrichten durch Versicherten empfangen</figcaption>
-</figure>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- UC 3.8 - Nachricht durch Versicherten loeschen -->
 {% assign use_case = use_cases | where: "title", "UC 3.8 - Nachricht durch Versicherten loeschen" | first %}
@@ -134,14 +85,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 {% include use-case-details-table.html use_case=use_case roles=roles %}
 
-**Sequenzdiagramm:**
-
-<figure>
-	<div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-uc-3-8-nachricht-durch-versicherten-loeschen.svg %}
-	</div>
-	<figcaption><strong>Abbildung: </strong>UC 3.8 - Nachricht durch Versicherten loeschen</figcaption>
-</figure>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- UC 4.6 - Nachrichten durch Abgebenden empfangen -->
 {% assign use_case = use_cases | where: "title", "UC 4.6 - Nachrichten durch Abgebenden empfangen" | first %}
@@ -151,14 +95,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 {% include use-case-details-table.html use_case=use_case roles=roles %}
 
-**Sequenzdiagramm:**
-
-<figure>
-	<div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-uc-4-6-nachrichten-durch-abgebenden-empfangen.svg %}
-	</div>
-	<figcaption><strong>Abbildung: </strong>UC 4.6 - Nachrichten durch Abgebenden empfangen</figcaption>
-</figure>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- UC 4.1 - E-Rezept durch Abgebenden abrufen -->
 {% assign use_case = use_cases | where: "title", "UC 4.1 - E-Rezept durch Abgebenden abrufen" | first %}
@@ -168,14 +105,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 {% include use-case-details-table.html use_case=use_case roles=roles %}
 
-**Sequenzdiagramm:**
-
-<figure>
-	<div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-uc-4-1-e-rezept-durch-abgebenden-abrufen.svg %}
-	</div>
-	<figcaption><strong>Abbildung: </strong>UC 4.1 - E-Rezept durch Abgebenden abrufen</figcaption>
-</figure>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- UC 4.2 - E-Rezept durch Abgebenden zurueckgeben -->
 {% assign use_case = use_cases | where: "title", "UC 4.2 - E-Rezept durch Abgebenden zurueckgeben" | first %}
@@ -185,14 +115,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 {% include use-case-details-table.html use_case=use_case roles=roles %}
 
-**Sequenzdiagramm:**
-
-<figure>
-	<div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-uc-4-2-e-rezept-durch-abgebenden-zurueckgeben.svg %}
-	</div>
-	<figcaption><strong>Abbildung: </strong>UC 4.2 - E-Rezept durch Abgebenden zurueckgeben</figcaption>
-</figure>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- UC 4.3 - E-Rezept durch Abgebenden loeschen -->
 {% assign use_case = use_cases | where: "title", "UC 4.3 - E-Rezept durch Abgebenden loeschen" | first %}
@@ -202,14 +125,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 {% include use-case-details-table.html use_case=use_case roles=roles %}
 
-**Sequenzdiagramm:**
-
-<figure>
-	<div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-uc-4-3-e-rezept-durch-abgebenden-loeschen.svg %}
-	</div>
-	<figcaption><strong>Abbildung: </strong>UC 4.3 - E-Rezept durch Abgebenden loeschen</figcaption>
-</figure>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- UC 4.4 - Quittung abrufen -->
 {% assign use_case = use_cases | where: "title", "UC 4.4 - Quittung abrufen" | first %}
@@ -219,14 +135,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 {% include use-case-details-table.html use_case=use_case roles=roles %}
 
-**Sequenzdiagramm:**
-
-<figure>
-	<div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-uc-4-4-quittung-abrufen.svg %}
-	</div>
-	<figcaption><strong>Abbildung: </strong>UC 4.4 - Quittung abrufen</figcaption>
-</figure>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- UC 4.5 - Abgabedatensatz durch Abgebenden signieren -->
 {% assign use_case = use_cases | where: "title", "UC 4.5 - Abgabedatensatz durch Abgebenden signieren" | first %}
@@ -236,14 +145,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 {% include use-case-details-table.html use_case=use_case roles=roles %}
 
-**Sequenzdiagramm:**
-
-<figure>
-	<div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-uc-4-5-abgabedatensatz-signieren.svg %}
-	</div>
-	<figcaption><strong>Abbildung: </strong>UC 4.5 - Abgabedatensatz durch Abgebenden signieren</figcaption>
-</figure>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- UC 4.8 - Quittung erneut abrufen -->
 {% assign use_case = use_cases | where: "title", "UC 4.8 - Quittung erneut abrufen" | first %}
@@ -253,14 +155,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 {% include use-case-details-table.html use_case=use_case roles=roles %}
 
-**Sequenzdiagramm:**
-
-<figure>
-	<div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-uc-4-8-quittung-erneut-abrufen.svg %}
-	</div>
-	<figcaption><strong>Abbildung: </strong>UC 4.8 - Quittung erneut abrufen</figcaption>
-</figure>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- UC 4.7 - Nachricht durch Abgebenden uebermitteln -->
 {% assign use_case = use_cases | where: "title", "UC 4.7 - Nachricht durch Abgebenden uebermitteln" | first %}
@@ -270,14 +165,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 {% include use-case-details-table.html use_case=use_case roles=roles %}
 
-**Sequenzdiagramm:**
-
-<figure>
-	<div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-uc-4-7-nachricht-durch-abgebenden-uebermitteln.svg %}
-	</div>
-	<figcaption><strong>Abbildung: </strong>UC 4.7 - Nachricht durch Abgebenden uebermitteln</figcaption>
-</figure>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- UC 4.9 - Nachricht durch Abgebenden loeschen -->
 {% assign use_case = use_cases | where: "title", "UC 4.9 - Nachricht durch Abgebenden loeschen" | first %}
@@ -287,14 +175,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 {% include use-case-details-table.html use_case=use_case roles=roles %}
 
-**Sequenzdiagramm:**
-
-<figure>
-	<div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-uc-4-9-nachricht-durch-abgebenden-loeschen.svg %}
-	</div>
-	<figcaption><strong>Abbildung: </strong>UC 4.9 - Nachricht durch Abgebenden loeschen</figcaption>
-</figure>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- E-Rezept erstellen -->
 {% assign use_case = use_cases | where: "title", "E-Rezept erstellen" | first %}
@@ -304,14 +185,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 {% include use-case-details-table.html use_case=use_case roles=roles %}
 
-**Sequenzdiagramm:**
-
-<figure>
-	<div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-e-rezept-erstellen.svg %}
-	</div>
-	<figcaption><strong>Abbildung: </strong>E-Rezept erstellen</figcaption>
-</figure>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- E-Rezept qualifiziert signieren -->
 {% assign use_case = use_cases | where: "title", "E-Rezept qualifiziert signieren" | first %}
@@ -323,14 +197,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 - Die QES-Erstellung erfolgt im Primaersystem (HBA/Konnektor) vor dem Aufruf von `$activate`.
 
-**Sequenzdiagramm:**
-
-<figure>
-	<div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-e-rezept-qualifiziert-signieren.svg %}
-	</div>
-	<figcaption><strong>Abbildung: </strong>E-Rezept qualifiziert signieren</figcaption>
-</figure>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- E-Rezept vervollständigen und Task aktivieren -->
 {% assign use_case = use_cases | where: "title", "E-Rezept vervollständigen und Task aktivieren" | first %}
@@ -340,14 +207,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 {% include use-case-details-table.html use_case=use_case roles=roles %}
 
-**Sequenzdiagramm:**
-
-<figure>
-	<div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-e-rezept-vervollstaendigen-aktivieren.svg %}
-	</div>
-	<figcaption><strong>Abbildung: </strong>E-Rezept vervollständigen und Task aktivieren</figcaption>
-</figure>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- E-Rezept abrufen (Apotheke) -->
 {% assign use_case = use_cases | where: "title", "E-Rezept abrufen (Apotheke)" | first %}
@@ -357,14 +217,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 {% include use-case-details-table.html use_case=use_case roles=roles %}
 
-**Sequenzdiagramm:**
-
-<figure>
-	<div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-e-rezept-in-abgabe-nehmen.svg %}
-	</div>
-	<figcaption><strong>Abbildung: </strong>E-Rezept abrufen (Apotheke)</figcaption>
-</figure>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- E-Rezept erneut abrufen -->
 {% assign use_case = use_cases | where: "title", "E-Rezept erneut abrufen" | first %}
@@ -374,14 +227,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 {% include use-case-details-table.html use_case=use_case roles=roles %}
 
-**Sequenzdiagramm:**
-
-<figure>
-	<div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-e-rezept-erneut-abrufen.svg %}
-	</div>
-	<figcaption><strong>Abbildung: </strong>E-Rezept erneut abrufen</figcaption>
-</figure>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- E-Rezept-Abgabe zeitnah dokumentieren -->
 {% assign use_case = use_cases | where: "title", "E-Rezept-Abgabe zeitnah dokumentieren" | first %}
@@ -391,14 +237,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 {% include use-case-details-table.html use_case=use_case roles=roles %}
 
-**Sequenzdiagramm:**
-
-<figure>
-	<div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-e-rezept-abgabe-zeitnah-dokumentieren.svg %}
-	</div>
-	<figcaption><strong>Abbildung: </strong>E-Rezept-Abgabe zeitnah dokumentieren</figcaption>
-</figure>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- E-Rezept-Abgabe vollziehen -->
 {% assign use_case = use_cases | where: "title", "E-Rezept-Abgabe vollziehen" | first %}
@@ -408,14 +247,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 {% include use-case-details-table.html use_case=use_case roles=roles %}
 
-**Sequenzdiagramm:**
-
-<figure>
-	<div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-e-rezept-abgabe-vollziehen.svg %}
-	</div>
-	<figcaption><strong>Abbildung: </strong>E-Rezept-Abgabe vollziehen</figcaption>
-</figure>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- E-Rezept loeschen -->
 {% assign use_case = use_cases | where: "title", "E-Rezept löschen" | first %}
@@ -425,11 +257,4 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 {% include use-case-details-table.html use_case=use_case roles=roles %}
 
-**Sequenzdiagramm:**
-
-<figure>
-	<div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-e-rezept-loeschen.svg %}
-	</div>
-	<figcaption><strong>Abbildung: </strong>E-Rezept löschen</figcaption>
-</figure>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
