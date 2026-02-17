@@ -1,6 +1,6 @@
-# GEM ERP PR Communication DiGA - Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
+# GEM ERP PR Communication DiGA - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
 
-Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA)
+Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
 Version 2.0.0-draft - ci-build 
 

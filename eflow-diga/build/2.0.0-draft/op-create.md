@@ -1,5 +1,5 @@
-## Operation: $create
- 
+Die FHIR-Operation `$create` erstellt einen Workflow im E-Rezept-Fachdienst.
+
 Diese Operation basiert auf der $create Operation des Basis-Workflow für E-Rezepte.
 
 ### Nachricht
@@ -12,7 +12,6 @@ ToDo: link zu übergreifenden Anforderungen
 
 Es gibt keine workflow-spezifischen Anforderungen für den E-Rezept-Fachdienst.
 
-link: AFO FD - Der E-Rezept-Fachdienst MUSS
 link AFO CS - PS der Verordnungen LEI
  
 -API BEschreibung aus Cap Statement

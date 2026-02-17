@@ -1,6 +1,6 @@
-# DiGA-Nachricht eines Kostenträgers an den Patienten - Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
+# DiGA-Nachricht eines Kostenträgers an den Patienten - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
 
-Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA)
+Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
 Version 2.0.0-draft - ci-build 
 

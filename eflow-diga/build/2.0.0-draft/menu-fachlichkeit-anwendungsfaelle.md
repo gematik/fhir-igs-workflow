@@ -1,6 +1,6 @@
-# Anwendungsfälle im DiGA-Workflow - Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
+# Anwendungsfälle im DiGA-Workflow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
 
-Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA)
+Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
 Version 2.0.0-draft - ci-build 
 
@@ -12,89 +12,15 @@ Version 2.0.0-draft - ci-build
 
 ### Fachliche Anwendungsfälle
 
-Die folgenden fachlichen Anwendungsfälle beschreiben die Schritte zur Verordnung und Bereitstellung einer DiGA-Verordnung.
+#### Verschreiben
 
-#### Übergreifende Vorbedingungen
+Der technische Ablauf zum Verschreiben einer Verordnung für eine DiGA erfolgtanalog zu einer Verordnung für apothekenpflichtige Arzneimittel. Verordnungen von DiGAs können Ärzten, Zahnärzten und Psychotherapeuten vornehmen. Der Arzt oder medizinischer Fachangestellter (MFA) erstellt eine elektronische Verordnung für eine DiGA. Über das Primärsystem der LEI wird vom E-Rezept-Fachdienst eine Rezept-ID angefragt und in der Verordnung ergänzt. Der Arzt prüft die Verordnung und führt eine qualifizierte elektronische Signatur (QES) der Verordnung durch. Anschließend wird die signierte Verordnung (E-Rezept) an den E-Rezept-Fachdienst übermittelt, wo die formale Korrektheit der Verordnung gemäß dem Datenmodell und die QES validiert werden. Das E-Rezept liegt auf dem E-Rezept-Fachdienst zum Abruf durch den Versicherten bereit.
 
-* Der Leistungserbringer ist gegenüber der TI authentisiert (Institutionsidentitaet via SMC-B über IdP/Konnektor).
-* Für die QES steht ein freigeschalteter HBA zur Verfuegung.
-* Der Verordnungsdatensatz wird als KBV-konformes FHIR-Bundle im Primaersystem geführt.
+#### Zuweisen durch den Versicherten
 
-#### E-Rezept erstellen
+Der Versicherte sieht in seinem E-Rezept-FdV, dass ein E-Rezept für eine DiGA erstellt wurde. Diese kann er einsehen und seinem Kostenträger zuweisen, damit er einen Freischaltcode zur Nutzung der DiGA erhält. Das E-Rezept-FdV bietet dem Versicherten dazu die Möglichkeit den E-Rezept-Token der Verordnung an den Kostenträger zu übertragen. Das Ermitteln des Kostenträgers erfolgt möglichst automatisch, kann aber auch manuell erfolgen. Wenn der Versicherte kein E-Rezept-FdV nutzt, hat er die Möglichkeit den Patientenausdruck an seine Krankenkasse zu übermitteln. Dies kann durch Funktionalität in der Krankenkassen-App unterstützt werden.
 
-* Beschreibung: Vorbedingungen
-  * Ein E-Rezept wird im Primaersystem (PVS/KIS) als Verordnungsdatensatz erstellt. Fuer die Bereitstellung auf dem E-Rezept-Fachdienst wird ein Task angelegt, ueber den eine Rezept-ID (PrescriptionID) vergeben und ein AccessCode erzeugt wird.: 
-* Beschreibung: Durchzuführende Aktionen
-  * Ein E-Rezept wird im Primaersystem (PVS/KIS) als Verordnungsdatensatz erstellt. Fuer die Bereitstellung auf dem E-Rezept-Fachdienst wird ein Task angelegt, ueber den eine Rezept-ID (PrescriptionID) vergeben und ein AccessCode erzeugt wird.: - Das Primaersystem legt im E-Rezept-Fachdienst einen Task an. - Der E-Rezept-Fachdienst vergibt eine Rezept-ID (PrescriptionID) und generiert einen AccessCode. - Das Primaersystem uebernimmt die Rezept-ID in den lokalen Verordnungsdatensatz.
-* Beschreibung: Nachbedingungen
-  * Ein E-Rezept wird im Primaersystem (PVS/KIS) als Verordnungsdatensatz erstellt. Fuer die Bereitstellung auf dem E-Rezept-Fachdienst wird ein Task angelegt, ueber den eine Rezept-ID (PrescriptionID) vergeben und ein AccessCode erzeugt wird.: - Task liegt im Status `draft` vor. - Rezept-ID und AccessCode sind im Primaersystem verfuegbar.
-* Beschreibung: Unterstützende Schnittstelle(n) des Medication Service
-  * Ein E-Rezept wird im Primaersystem (PVS/KIS) als Verordnungsdatensatz erstellt. Fuer die Bereitstellung auf dem E-Rezept-Fachdienst wird ein Task angelegt, ueber den eine Rezept-ID (PrescriptionID) vergeben und ein AccessCode erzeugt wird.: 
-* Beschreibung: Relevante(r) Sektor(en)
-  * Ein E-Rezept wird im Primaersystem (PVS/KIS) als Verordnungsdatensatz erstellt. Fuer die Bereitstellung auf dem E-Rezept-Fachdienst wird ein Task angelegt, ueber den eine Rezept-ID (PrescriptionID) vergeben und ein AccessCode erzeugt wird.:  (ZAHN-)ARZT 
+#### Einlösen
 
-#### E-Rezept qualifiziert signieren
-
-* Beschreibung: Vorbedingungen
-  * Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES). Vorbereitende Taetigkeiten im Primaersystem koennen organisatorisch delegiert werden, die QES selbst jedoch nicht.: 
-* Beschreibung: Durchzuführende Aktionen
-  * Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES). Vorbereitende Taetigkeiten im Primaersystem koennen organisatorisch delegiert werden, die QES selbst jedoch nicht.: - Das Primaersystem startet die QES-Erstellung ueber den Konnektor. - Der (Zahn-)Arzt signiert den Verordnungsdatensatz mit dem HBA. - Das Primaersystem erhaelt den QES-signierten Datensatz zur weiteren Verarbeitung.
-* Beschreibung: Nachbedingungen
-  * Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES). Vorbereitende Taetigkeiten im Primaersystem koennen organisatorisch delegiert werden, die QES selbst jedoch nicht.: - QES-signierter Verordnungsdatensatz liegt im Primaersystem vor.
-* Beschreibung: Unterstützende Schnittstelle(n) des Medication Service
-  * Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES). Vorbereitende Taetigkeiten im Primaersystem koennen organisatorisch delegiert werden, die QES selbst jedoch nicht.: 
-* Beschreibung: Relevante(r) Sektor(en)
-  * Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES). Vorbereitende Taetigkeiten im Primaersystem koennen organisatorisch delegiert werden, die QES selbst jedoch nicht.:  (ZAHN-)ARZT 
-
-#### E-Rezept vervollstaendigen und Task aktivieren
-
-* Beschreibung: Vorbedingungen
-  * Der (Zahn-)Arzt finalisiert eine bereits erstellte Verordnung und stellt sie qualifiziert signiert fuer den Versicherten bereit. Mit der Bereitstellung startet der Einloese-Workflow: Die Verordnung wird im E-Rezept-Fachdienst geprueft und anschliessend so veroeffentlicht, dass sie im vorgesehenen Prozess (z. B. Einloesung in der Apotheke oder Bearbeitung durch den Kostentraeger) genutzt werden kann.: 
-* Beschreibung: Durchzuführende Aktionen
-  * Der (Zahn-)Arzt finalisiert eine bereits erstellte Verordnung und stellt sie qualifiziert signiert fuer den Versicherten bereit. Mit der Bereitstellung startet der Einloese-Workflow: Die Verordnung wird im E-Rezept-Fachdienst geprueft und anschliessend so veroeffentlicht, dass sie im vorgesehenen Prozess (z. B. Einloesung in der Apotheke oder Bearbeitung durch den Kostentraeger) genutzt werden kann.: - Das Primaersystem stellt den qualifiziert signierten Verordnungsdatensatz beim E-Rezept-Fachdienst bereit. - Der E-Rezept-Fachdienst prueft Berechtigung, Signatur und fachliche Konsistenz der Verordnung. - Bei erfolgreicher Pruefung wird die Verordnung fuer die weitere Verarbeitung (Einloesung/Bearbeitung) freigeschaltet.
-* Beschreibung: Nachbedingungen
-  * Der (Zahn-)Arzt finalisiert eine bereits erstellte Verordnung und stellt sie qualifiziert signiert fuer den Versicherten bereit. Mit der Bereitstellung startet der Einloese-Workflow: Die Verordnung wird im E-Rezept-Fachdienst geprueft und anschliessend so veroeffentlicht, dass sie im vorgesehenen Prozess (z. B. Einloesung in der Apotheke oder Bearbeitung durch den Kostentraeger) genutzt werden kann.: - Das E-Rezept ist bereitgestellt und kann im weiteren Prozess eingeloest bzw. bearbeitet werden. - Der Status des Workflows entspricht der bereitgestellten Verordnung.
-* Beschreibung: Unterstützende Schnittstelle(n) des Medication Service
-  * Der (Zahn-)Arzt finalisiert eine bereits erstellte Verordnung und stellt sie qualifiziert signiert fuer den Versicherten bereit. Mit der Bereitstellung startet der Einloese-Workflow: Die Verordnung wird im E-Rezept-Fachdienst geprueft und anschliessend so veroeffentlicht, dass sie im vorgesehenen Prozess (z. B. Einloesung in der Apotheke oder Bearbeitung durch den Kostentraeger) genutzt werden kann.: 
-* Beschreibung: Relevante(r) Sektor(en)
-  * Der (Zahn-)Arzt finalisiert eine bereits erstellte Verordnung und stellt sie qualifiziert signiert fuer den Versicherten bereit. Mit der Bereitstellung startet der Einloese-Workflow: Die Verordnung wird im E-Rezept-Fachdienst geprueft und anschliessend so veroeffentlicht, dass sie im vorgesehenen Prozess (z. B. Einloesung in der Apotheke oder Bearbeitung durch den Kostentraeger) genutzt werden kann.:  (ZAHN-)ARZT 
-
-#### DiGA-Verordnung einem Kostentraeger zuweisen
-
-* Beschreibung: Vorbedingungen
-  * Versicherte leiten ihr E-Rezept fuer eine DiGA an den zustaendigen Kostentraeger weiter - entweder per E-Rezept-FdV nach Section 360 Abs. 10 SGB V oder ueber einen Ausdruck nach Section 360 Abs. 9 SGB V. Ziel ist es, den Freischaltcode anzufordern und den Status des Antrags transparent zu halten.: 
-* Beschreibung: Durchzuführende Aktionen
-  * Versicherte leiten ihr E-Rezept fuer eine DiGA an den zustaendigen Kostentraeger weiter - entweder per E-Rezept-FdV nach Section 360 Abs. 10 SGB V oder ueber einen Ausdruck nach Section 360 Abs. 9 SGB V. Ziel ist es, den Freischaltcode anzufordern und den Status des Antrags transparent zu halten.: - Das E-Rezept-FdV ermittelt die Telematik-ID des Kostentraegers ueber das FHIR-VZD oder bietet eine manuelle Auswahl an. - Das System erstellt eine `Communication` (DispReq) mit dem E-Rezept-Token und adressiert diese an den Kostentraeger. - Alternativ uebermittelt der Versicherte den Ausdruck an den Kostentraeger, der daraufhin den Abrufprozess startet.
-* Beschreibung: Nachbedingungen
-  * Versicherte leiten ihr E-Rezept fuer eine DiGA an den zustaendigen Kostentraeger weiter - entweder per E-Rezept-FdV nach Section 360 Abs. 10 SGB V oder ueber einen Ausdruck nach Section 360 Abs. 9 SGB V. Ziel ist es, den Freischaltcode anzufordern und den Status des Antrags transparent zu halten.: - Der Kostentraeger verfuegt ueber das E-Rezept-Token und kann das DiGA-E-Rezept abrufen. - Der Versicherte sieht im Protokoll den Versandzeitpunkt und kann den Status nachverfolgen.
-* Beschreibung: Unterstützende Schnittstelle(n) des Medication Service
-  * Versicherte leiten ihr E-Rezept fuer eine DiGA an den zustaendigen Kostentraeger weiter - entweder per E-Rezept-FdV nach Section 360 Abs. 10 SGB V oder ueber einen Ausdruck nach Section 360 Abs. 9 SGB V. Ziel ist es, den Freischaltcode anzufordern und den Status des Antrags transparent zu halten.: 
-* Beschreibung: Relevante(r) Sektor(en)
-  * Versicherte leiten ihr E-Rezept fuer eine DiGA an den zustaendigen Kostentraeger weiter - entweder per E-Rezept-FdV nach Section 360 Abs. 10 SGB V oder ueber einen Ausdruck nach Section 360 Abs. 9 SGB V. Ziel ist es, den Freischaltcode anzufordern und den Status des Antrags transparent zu halten.:  VERSICHERTER 
-
-#### DiGA-E-Rezept abrufen (Kostentraeger)
-
-* Beschreibung: Vorbedingungen
-  * Der Kostentraeger ruft mit Hilfe des erhaltenen E-Rezept-Tokens die DiGA-Verordnung vom E-Rezept-Fachdienst ab, prueft Leistungsanspruch und bereitet die Freischaltcode-Erstellung vor.: 
-* Beschreibung: Durchzuführende Aktionen
-  * Der Kostentraeger ruft mit Hilfe des erhaltenen E-Rezept-Tokens die DiGA-Verordnung vom E-Rezept-Fachdienst ab, prueft Leistungsanspruch und bereitet die Freischaltcode-Erstellung vor.: - Das Kostentraegersystem ruft /Task/{id}/$accept mit AccessCode auf und erhaelt Task, Binary und Secret. - Die Verordnung wird im Backend persistiert, fachlich geprueft und mit dem Freischaltprozess verknuepft. - Status- und Protokolleintraege werden im eigenen System und gegenueber dem Versicherten gepflegt.
-* Beschreibung: Nachbedingungen
-  * Der Kostentraeger ruft mit Hilfe des erhaltenen E-Rezept-Tokens die DiGA-Verordnung vom E-Rezept-Fachdienst ab, prueft Leistungsanspruch und bereitet die Freischaltcode-Erstellung vor.: - Das Secret liegt vor und belegt den Kostentraeger als Bearbeiter; Task-Status wechselt auf `in-progress`. - Pruef- und Abrechnungsdaten stehen strukturiert zur Verfuegung; der Versicherte sieht eine Statusaenderung.
-* Beschreibung: Unterstützende Schnittstelle(n) des Medication Service
-  * Der Kostentraeger ruft mit Hilfe des erhaltenen E-Rezept-Tokens die DiGA-Verordnung vom E-Rezept-Fachdienst ab, prueft Leistungsanspruch und bereitet die Freischaltcode-Erstellung vor.: 
-* Beschreibung: Relevante(r) Sektor(en)
-  * Der Kostentraeger ruft mit Hilfe des erhaltenen E-Rezept-Tokens die DiGA-Verordnung vom E-Rezept-Fachdienst ab, prueft Leistungsanspruch und bereitet die Freischaltcode-Erstellung vor.:  KOSTENTRAEGER 
-
-#### Freischaltcode bereitstellen oder Rueckmeldung geben
-
-* Beschreibung: Vorbedingungen
-  * Nach erfolgreicher Pruefung stellt der Kostentraeger den Freischaltcode als Abgabeinformation im E-Rezept-Fachdienst bereit oder dokumentiert, aus welchem Grund kein Code erzeugt werden kann.: 
-* Beschreibung: Durchzuführende Aktionen
-  * Nach erfolgreicher Pruefung stellt der Kostentraeger den Freischaltcode als Abgabeinformation im E-Rezept-Fachdienst bereit oder dokumentiert, aus welchem Grund kein Code erzeugt werden kann.: - Das Kostentraegersystem uebermittelt ueber `$dispense` oder `$close` eine Parameters-Ressource mit dem Freischaltcode bzw. einer versichertenfreundlichen Rueckmeldung. - Der E-Rezept-Fachdienst persistiert die Abgabeinformation und beendet bei `$close` den Workflow mit Quittung.
-* Beschreibung: Nachbedingungen
-  * Nach erfolgreicher Pruefung stellt der Kostentraeger den Freischaltcode als Abgabeinformation im E-Rezept-Fachdienst bereit oder dokumentiert, aus welchem Grund kein Code erzeugt werden kann.: - Der Versicherte sieht im E-Rezept-FdV (oder erhaelt per Krankenkasse) den Freischaltcode oder die Begruendung. - Der Workflow ist abgeschlossen; der Kostentraeger erhaelt eine Quittung fuer die Dokumentation.
-* Beschreibung: Unterstützende Schnittstelle(n) des Medication Service
-  * Nach erfolgreicher Pruefung stellt der Kostentraeger den Freischaltcode als Abgabeinformation im E-Rezept-Fachdienst bereit oder dokumentiert, aus welchem Grund kein Code erzeugt werden kann.: 
-* Beschreibung: Relevante(r) Sektor(en)
-  * Nach erfolgreicher Pruefung stellt der Kostentraeger den Freischaltcode als Abgabeinformation im E-Rezept-Fachdienst bereit oder dokumentiert, aus welchem Grund kein Code erzeugt werden kann.:  KOSTENTRAEGER 
+Der Kostenträger kann mit den Informationen aus dem E-Rezept-Token die Verordnung vom E-Rezept-Fachdienst herunterladen und den Vorgang prüfen. Sobald ein Freischaltcode generiert wurde, wird dem Versicherten dieser über Abgabeinformationen der Verordnung bereitgestellt. Dadurch wird der Vorgang der Verordnung abgeschlossen und der Versicherte hat den Freischaltcode für die DiGA in seinem E-Rezept-FdV vorliegen. Sollte die fachliche Prüfung des Kostenträgers ergeben, dass kein Leistungsanspruch für diese Verordnung besteht, kann der E-Rezept-Workflow auch ohne die Übermittlung eines Freischaltcodes abgeschlossen werden. In diesem Fall enthält die Abgabeinformation einen Hinweis auf die Begründung (versichertenfreundlicher Formulierung mit Verweis auf das Schreiben der Krankenkasse), warum kein Freischaltcode bereitgestellt wurde. Über entsprechende Protokolleinträge ist der Versicherte darüber informiert, dass der Kostenträger den Vorgang bearbeitet. Der Kostenträger erhält analog zum Abschluss von Arzneimittelverordnungen eine Quittung des Fachdienstes, was dem Kostenträger quittiert, dass der Vorgang erfolgreich abgeschlossen wurde. Die Quittung wird nicht für Abrechnungszwecke benötigt, da die Abwicklung des Vorgangs direkt mit dem Kostenträger erfolgt. input.
 

@@ -1,14 +1,12 @@
-# Operation: $accept - Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
+# Operation: $accept - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
 
-Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA)
+Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
 Version 2.0.0-draft - ci-build 
 
 * [**Table of Contents**](toc.md)
 * [**Operation API**](operation-api.md)
 * **Operation: $accept**
-
-## Operation: $accept
 
 ## Operation: $accept
 
@@ -20,10 +18,11 @@ Die Operation $accept wird als HTTP POST auf /Task//$accept ausgeführt.
 
 ### Anforderungen an Schnittstelle
 
-Es gelten die übergreifenden Anforderungen an die $abort Operation. ToDo: link zu übergreifenden Anforderungen
+Es gelten die übergreifenden Anforderungen an die $accept Operation. ToDo: link zu übergreifenden Anforderungen
 
-Frage: was ist mit A_25993 - E-Rezept-Fachdienst - Task akzeptieren - Flowtype 162 - Rollenprüfung ? Kommt die Afo hierhin?
+[Workflow-spezifische Anforderungen für den E-Rezept-Fachdienst](./op-accept-req-server.md)
 
-Der E-Rezept-Fachdienst MUSS beim Abrufen eines Tasks für eine Verordnung mit Flowtype 162 mittels HTTP-POST/$accept-Operation auf den in der URL referenzierten/Task/
-die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Institutionen in der Rolle - oid_kostentraeger die Operation am Fachdienst aufrufen, damit die Verordnung nicht durch einen Unberechtigten abgerufen werden kann. </requirement> ### Hinweis Es gelten die Vorgaben des Basis-Workflows für E-Rezepte.
+### Hinweis
+
+Es gelten die Vorgaben des Basis-Workflows für E-Rezepte.
 

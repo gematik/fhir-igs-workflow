@@ -1,6 +1,6 @@
-# Operation: $activate - Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
+# Operation: $activate - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
 
-Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA)
+Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
 Version 2.0.0-draft - ci-build 
 
@@ -12,33 +12,13 @@ Version 2.0.0-draft - ci-build
 
 Die FHIR-Operation `$activate` überführt einen im Status `draft` befindlichen `Task` in den Status `ready`, wenn das Primärsystem den qualifiziert elektronisch signierten Verordnungsdatensatz (QES) übermittelt. Für DiGA-Verordnungen (Flowtype 162) gelten zusätzliche Payload-Prüfungen. Die allgemeinen Anforderungen des Basis-Workflows gelten unverändert.
 
-## Nachricht
+### Nachricht
 
 Die Operation $activate wird als HTTP POST auf /Task//$activate ausgeführt.
 
-## Anforderungen an Schnittstelle
+### Anforderungen an Schnittstelle
 
-[Anforderungen für den E-Rezept-Fachdienst](./op-activate-req-server.md) [Anforderungen für das verordnende Primärsystem](./op-activate-req-client.md)
+Es gelten die übergreifenden Anforderungen an die $activate Operation. ToDo: link zu übergreifenden Anforderungen
 
-Der E-Rezept-Fachdienst MUSS die Aktivierung eines Tasks mit Flowtype 162 mit dem HTTP-Status-Code 400 abbrechen, wenn die QES gemäß der professionOID des Signaturzertifikats des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die der folgenden professionOID entspricht: - oid_arzt - oid_zahnarzt - oid_psychotherapeut - oid_ps_psychotherapeut - oid_kuj_psychotherapeut damit nur solche Leistungserbringer ein signiertes E-Rezept einstellen, die zur Verordnung von DiGAs ermächtigt sind.
-</br>
-
-Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mit Flowtype 162 mittels $activate prüfen, dass im Bundle eine
-*DeviceRequest*-Ressource und in der </i>Composition.type.coding.code=e16D</i> enthalten ist. Der E-Rezept-Fachdienst MUSS andernfalls mit dem HTTP-Fehlercode 400 abbrechen und in der
-*OperationOutcome*den Fehlertext "Für diesen Workflowtypen sind nur Verordnungen für Digitale Gesundheitsanwendungen zulässig" ausgeben.
-</br>
-
-Der E-Rezept-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/
-/$activate den im FHIR Profil KBV_PR_EVDGA_HealthAppRequest gespeicherten Wert für .code[x]:codeCodeableConcept.coding.code gemäß den "Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI" beschriebenen Prüfalgorithmus validieren. Der E-Rezept-Fachdienst MUSS bei einer fehlerhaften Prüfung mit einem Http-Fehler 400 (Bad Request) abbrechen, sowie die Fehlermeldung "Ungültige PZN: Die übergebene Pharmazentralnummer entspricht nicht den vorgeschriebenen Prüfziffer-Validierungsregeln." in Form eines OperationOutcome ausliefern. </requirement> </br>
-
-Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Task des Flowtype Task.extension:flowType = 162 mittels HTTP-POST-Operation über /Task/
-/$activate prüfen, obCoverage.type.coding.code nicht mit dem Wert "PKV" belegt ist und im Fehlerfall die Operation mit Http-Fehlercode 400 abbrechen, um sicherzustellen, dass diese Workflows nicht für E-Rezepte für PKV-Versicherte genutzt werden. </requirement> </br>
-
-Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Task des Flowtype Task.extension:flowType = 162 mittels HTTP-POST-Operation über /Task/
-/$activate prüfen, ob die Extension Coverage.payor.identifier.extension:alternativeID vorhanden ist und in diesem Fall die Operation mit Http-Fehlercode 400 abbrechen, um sicherzustellen, dass dieser Workflow nicht für Verordnungen genutzt wird, die zu Lasten von Unfallkassen oder Berufsgenossenschaften gehen. </requirement> Dieser Ausschluss erfolgt temporär. In einer späteren Version können Unfallkassen das Verordnen von DiGAs explizit unterstützen. Die konkreten Festlegungen dazu werden in einem Folgerelease getroffen.
-
-Der E-Rezept-Fachdienst MUSS bei einem Task mit Task.flowType = 162 die Attribute in Task in Abhängigkeit des in der http-POST-Operation /Task/
-/$activate übergebenen gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_005 belegen. *TAB_eRpDM_005 Prozessparameter Flowtype 162* | Feld in Task | Feldbelegung | |:-------------------|:--------------------------------| | Task.performerType.coding.system | "https://gematik.de/fhir/erp/CodeSystemGEM_ERP_CS_OrganizationType" | | Task.performerType.coding.code | "1.2.276.0.76.4.59" | | Task.performerType.coding.diplay | "Kostenträger" | | Task.PrescriptionType.valueCoding.display | "Flowtype für Digitale Gesundheitsanwendungen" | | Task.ExpiryDate |
-+ 3 Kalendermonate | | Task.AcceptDate |
-+ 3 Kalendermonate | </requirement>
+[Workflow-spezifische Anforderungen für den E-Rezept-Fachdienst](./op-activate-req-server.md) [Workflowspezifische Anforderungen für das verordnende Primärsystem](./op-activate-req-client.md)
 

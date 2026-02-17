@@ -1,6 +1,6 @@
-# Medication Dispense DiGA with a deep link. - Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
+# Medication Dispense DiGA with a deep link. - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
 
-Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA)
+Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
 Version 2.0.0-draft - ci-build 
 

@@ -1,6 +1,6 @@
-# Implementation Guide E-Rezept-DiGA - Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
+# Implementation Guide E-Rezept-DiGA - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
 
-Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA)
+Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
 Version 2.0.0-draft - ci-build 
 
@@ -12,7 +12,7 @@ Version 2.0.0-draft - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/erp-diga/ImplementationGuide/de.gematik.eflow-diga | *Version*:2.0.0-draft |
-| Draft as of 2026-02-16 | *Computable Name*:ERezeptDiGA |
+| Draft as of 2026-02-17 | *Computable Name*:ERezeptDiGA |
 
 Dieser Implementation Guide beschreibt das Feature zur elektronischen Verordnung von Digitalen Gesundheitsanwendungen (DiGA). Er beschreibt DiGA-spezifische Anforderungen und Use Cases für Verordnende, Kostenträger und Versicherte.
 
@@ -96,9 +96,9 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "url" : "https://gematik.de/fhir/erp-diga/ImplementationGuide/de.gematik.eflow-diga",
   "version" : "2.0.0-draft",
   "name" : "ERezeptDiGA",
-  "title" : "Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA)",
+  "title" : "Verordnungen für Digitale Gesundheitsanwendungen (DiGA)",
   "status" : "draft",
-  "date" : "2026-02-16T12:36:51+00:00",
+  "date" : "2026-02-17T07:46:48+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [
     {
@@ -1036,6 +1036,28 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
               "extension" : [
                 {
                   "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                  "valueUrl" : "menu-fachlichkeit-epic.html"
+                }
+              ],
+              "nameUrl" : "menu-fachlichkeit-epic.html",
+              "title" : "Epic",
+              "generation" : "markdown"
+            },
+            {
+              "extension" : [
+                {
+                  "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                  "valueUrl" : "menu-fachlichkeit-userstories.html"
+                }
+              ],
+              "nameUrl" : "menu-fachlichkeit-userstories.html",
+              "title" : "User Stories",
+              "generation" : "markdown"
+            },
+            {
+              "extension" : [
+                {
+                  "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
                   "valueUrl" : "menu-fachlichkeit-szenarien.html"
                 }
               ],
@@ -1119,11 +1141,11 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "menu-schnittstellen-datenschutz-und-sicherheit.html"
+              "valueUrl" : "menu-datenschutz-und-sicherheit.html"
             }
           ],
-          "nameUrl" : "menu-schnittstellen-datenschutz-und-sicherheit.html",
-          "title" : "Datenschutz und Sicherheit",
+          "nameUrl" : "menu-datenschutz-und-sicherheit.html",
+          "title" : "Datenschutz und Informationssicherheit",
           "generation" : "markdown"
         },
         {

@@ -1,6 +1,6 @@
-# Anforderungen an den verordnende Primärsystem für die $activate-Operation - Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
+# Anforderungen an den verordnende Primärsystem für die $activate-Operation - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
 
-Verordnungen fuer Digitale Gesundheitsanwendungen (DiGA)
+Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
 Version 2.0.0-draft - ci-build 
 
@@ -11,7 +11,5 @@ Version 2.0.0-draft - ci-build
 
 ## Anforderungen an den verordnende Primärsystem für die $activate-Operation
 
-lskdhfladshf
-
-AFOs Server
+client Afos
 
