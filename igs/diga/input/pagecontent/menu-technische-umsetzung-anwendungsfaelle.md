@@ -2,7 +2,7 @@
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-    {% include ablaufdiagramm-diga.svg %}
+    {% include diga-ablaufdiagramm.svg %}
     </div>
     <figcaption><strong>Abbildung: </strong>Ablaufdiagramm DiGA-Verordnung</figcaption>
 </figure>
@@ -36,6 +36,7 @@ Folgende Anwendungsfälle werden genutzt:
 - UC 3.4 - Nachrichten durch Versicherten empfangen
 - UC 3.8 - Nachricht durch Versicherten löschen
 - UC 3.5 - Protokolldaten abrufen
+- Kostenträger suchen
 
 Für das Übermitteln der Verordnung wird als Adressat der Kostenträger ausgewählt. Bei
 der Umsetzung im E-Rezept-FdV kann die Auswahl automatisiert erfolgen.

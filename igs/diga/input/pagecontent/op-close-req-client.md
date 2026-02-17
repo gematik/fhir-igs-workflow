@@ -1,5 +1,5 @@
-<!-- Quelle: A_26004 - PS Kostenträger: Quittung abrufen - Flowtype 162 - MedicationDispense erstellen -->
-<requirement conformance="SHALL" key="IG-TIFlow-DiGA-NEU" title="PS Kostenträger: Quittung abrufen - Flowtype 162 - MedicationDispense erstellen" version="0">
+<!-- Quelle: A_26004-01 - CS Kostenträger: Dispensierinformationen - Flowtype 162 - MedicationDispense erstellen -->
+<requirement conformance="SHALL" key="IG-TIFlow-DiGA-NEU" title="CS Kostenträger: Dispensierinformationen - Flowtype 162 - MedicationDispense erstellen" version="0">
   <meta lockversion="false"/>
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Konformitätsbestätigung"/>
