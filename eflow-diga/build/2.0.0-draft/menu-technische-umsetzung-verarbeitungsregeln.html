@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Verarbeitungsregeln für den E-Rezept-Fachdienst - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft</title>
+    <title>Verarbeitungsregeln - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -219,7 +219,7 @@ Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-technische-umsetzung-systemueberblick.html'><b>Systemüberblick</b></a></li><li><b>Verarbeitungsregeln für den E-Rezept-Fachdienst</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-technische-umsetzung-systemueberblick.html'><b>Systemüberblick</b></a></li><li><b>Verarbeitungsregeln</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -239,7 +239,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   
-  <h2>Verarbeitungsregeln für den E-Rezept-Fachdienst</h2>
+  <h2>Verarbeitungsregeln</h2>
   
 
 
@@ -254,12 +254,22 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
-</div>
-<!-- Verarbeitungsregeln für den E-Rezept-Fachdienst -->
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
 
-<h2 id="verordnen-durch-psychotherapeuten">Verordnen durch Psychotherapeuten</h2>
+<ul id="markdown-toc">
+  <li><a href="#verordnen-durch-psychotherapeuten" id="markdown-toc-verordnen-durch-psychotherapeuten">Verordnen durch Psychotherapeuten</a></li>
+  <li><a href="#authentisierung-kostenträger" id="markdown-toc-authentisierung-kostenträger">Authentisierung Kostenträger</a></li>
+  <li><a href="#workflow-162" id="markdown-toc-workflow-162">Workflow 162</a></li>
+  <li><a href="#löschfristen" id="markdown-toc-löschfristen">Löschfristen</a></li>
+  <li><a href="#zugriff-auf-fhir-vzd" id="markdown-toc-zugriff-auf-fhir-vzd">Zugriff auf FHIR-VZD</a></li>
+  <li><a href="#evdga-fhir-profile" id="markdown-toc-evdga-fhir-profile">eVDGA FHIR Profile</a></li>
+</ul>
+
+</div>
+<!-- Verarbeitungsregeln -->
+
+<h3 id="verordnen-durch-psychotherapeuten">Verordnen durch Psychotherapeuten</h3>
 <p>Für die Verordnung von DiGAs durch Psychotherapeuten gelten die gleichen technischen
 Voraussetzungen wie für Ärzte und Zahnärzte. Der Psychotherapeut muss die Verordnung
 mit seinem Heilberufsausweis (HBA) qualifiziert elektronisch signieren. Es muss ein HBA
@@ -272,40 +282,44 @@ verwendet werden, welcher einer der folgenden Berufsgruppe zugeordnet ist:</p>
 
 <p>Das Primärsystem der Psychotherapeuten Praxis ist über einen Konnektor an das zentrale
 Netz der TI angebunden und greift über das zentrale Netz der TI auf den zentralen IdP-Dienst
-und den E-Rezept-Fachdienst zu.
-Die Authentisierung des Primärsystem einer Psychotherapeuten Praxis am E-Rezept-Fachdienst
+und den E-Rezept-Fachdienst zu.</p>
+
+<p>Die Authentisierung des Primärsystem einer Psychotherapeuten Praxis am E-Rezept-Fachdienst
 erfolgt mittels eines ACCESS_TOKEN. Diese werden durch den zentralen IDP-Dienst
 ausgestellt, welche die Identität des Nutzers attestieren. Eine Nutzung sektoraler IdPDienste
-ist nicht vorgesehen.
-Für die Authentisierung nutzt die Psychotherapeuten Praxis ihre SMC-B mit der
+ist nicht vorgesehen.</p>
+
+<p>Für die Authentisierung nutzt die Psychotherapeuten Praxis ihre SMC-B mit der
 Rolle oid_praxis_psychotherapeut, bzw. in einer Gemeinschaftspraxis mit Ärzten die Rolle
 oid_praxis_arzt.</p>
 
-<h2 id="authentisierung-kostenträger">Authentisierung Kostenträger</h2>
+<h3 id="authentisierung-kostenträger">Authentisierung Kostenträger</h3>
 <p>Das Primärsystem des Kostenträgers ist über den Basis-Consumer des Kostenträger an
 das zentrale Netz der TI angebunden und greift über das zentrale Netz der TI auf den
-zentralen IdP-Dienst und den E-Rezept-Fachdienst zu.
-Die Authentisierung des Clientsystem eines Kostenträgers am E-Rezept-Fachdienst erfolgt
+zentralen IdP-Dienst und den E-Rezept-Fachdienst zu.</p>
+
+<p>Die Authentisierung des Clientsystem eines Kostenträgers am E-Rezept-Fachdienst erfolgt
 mittels eines ACCESS_TOKEN. Diese werden durch den zentralen IDP-Dienst ausgestellt,
 welche die Identität des Nutzers attestieren. Eine Nutzung sektoraler IdP-Dienste ist nicht
-vorgesehen.
-Für die Authentisierung nutzt der Kostenträger seine SM-B KTR mit der Rolle oid_kostentraeger.</p>
+vorgesehen.</p>
 
-<h2 id="workflow-162">Workflow 162</h2>
+<p>Für die Authentisierung nutzt der Kostenträger seine SM-B KTR mit der Rolle oid_kostentraeger.</p>
+
+<h3 id="workflow-162">Workflow 162</h3>
 <p>Für Übermittlungen von DiGA Verordnungen wird der <strong>Flowtype 162</strong> verwendet.</p>
 
 <p>Der Flowtype 162 verwendet dasselbe Statusmodell wie Flowtype 160.</p>
 
 <p>Der Statusübergang von “in Abgabe (gesperrt)” zu “gelöscht” über “UC 4.3 - E-Rezept durch Abgebenden löschen” ist für DiGA Verordnungen nicht vorgesehen.</p>
 
-<h2 id="löschfristen">Löschfristen</h2>
+<h3 id="löschfristen">Löschfristen</h3>
 <p>Die Löschfristen für Workflows mit Verordnungen des Flowtype 162 entsprechen denen des Flowtype 160.</p>
 
-<h2 id="zugriff-auf-fhir-vzd">Zugriff auf FHIR-VZD</h2>
+<h3 id="zugriff-auf-fhir-vzd">Zugriff auf FHIR-VZD</h3>
 <p>Zur Prüfung der IKNR muss der E-Rezept-Fachdienst die Telematik-ID des
 Kostenträgers auflösen. Das Mapping zwischen IKNR und Telematik-ID erfolgt über das FHIR-VZD und kann bis zu 24 Stunden gecacht werden.</p>
 
-<h2 id="evdga-fhir-profile">eVDGA FHIR Profile</h2>
+<h3 id="evdga-fhir-profile">eVDGA FHIR Profile</h3>
 <p>Zur Verordnung von DiGA werden die KBV-Profile der elektronischen Verordnung
 Digitaler Gesundheitsanwendungen verwendet (https://simplifier.net/evdga). Die
 Workflowprofile des E-Rezept-Workflows werden um diese Profile ergänzt.</p>
@@ -329,7 +343,7 @@ Workflowprofile des E-Rezept-Workflows werden um diese Profile ergänzt.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Feb 17, 2026 07:46+0000">2026-02-17</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Feb 17, 2026 10:10+0000">2026-02-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

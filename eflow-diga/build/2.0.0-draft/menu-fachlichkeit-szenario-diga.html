@@ -254,13 +254,21 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p>  <!-- white space is critical inside of capture --></p>
-<div>
-  <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown. -->
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#vorteile-durch-das-elektronische-verordnen-von-digas" id="markdown-toc-vorteile-durch-das-elektronische-verordnen-von-digas">Vorteile durch das elektronische Verordnen von DiGAs</a></li>
+  <li><a href="#diga-verordnung-erstellen" id="markdown-toc-diga-verordnung-erstellen">DiGA-Verordnung erstellen</a></li>
+  <li><a href="#diga-zuweisen-und-freischaltcode-anfordern" id="markdown-toc-diga-zuweisen-und-freischaltcode-anfordern">DiGA zuweisen und Freischaltcode anfordern</a></li>
+  <li><a href="#prüfung-durch-kostenträger-und-bereitstellung-des-freischaltcodes" id="markdown-toc-prüfung-durch-kostenträger-und-bereitstellung-des-freischaltcodes">Prüfung durch Kostenträger und Bereitstellung des Freischaltcodes</a></li>
+</ul>
+
 </div>
 
 <p>Die elektronische Verordnung für Digitale Gesundheitsanwendungen (DiGA) ersetzt das Muster-16-Verfahren und sorgt dafür, dass zertifizierte DiGAs medienbruchfrei, sicher und nachvollziehbar verordnet, die Verordnung an Kostenträger übermittelt und der Freischaltcode übermittelt an den Versicherten werden können. Es ergänzt die bestehenden Abläufe des E-Rezepts, erweitert sie um Psychotherapeutinnen und Psychotherapeuten sowie Kostenträger und ermöglicht eine vollständig digitale Bereitstellung der Freischaltcodes.</p>
 
-<h2 id="vorteile-durch-das-elektronische-verordnen-von-digas">Vorteile durch das elektronische Verordnen von DiGAs</h2>
+<h3 id="vorteile-durch-das-elektronische-verordnen-von-digas">Vorteile durch das elektronische Verordnen von DiGAs</h3>
 
 <ul>
   <li>Versicherte müssen Anträge und Muster-16-Vordrucke nicht mehr postalisch einreichen, sondern erhalten Verordnungen sofort in der Versicherten-App (FdV) oder optional als Ausdruck (Section 360 Abs. 9 SGB V).</li>
@@ -269,7 +277,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Der Workflow-Fachdienst dokumentiert Bereitstellung und Nutzung des Freischaltcodes transparent, was Missbrauch erschwert und revisionssichere Nachweise liefert.</li>
 </ul>
 
-<h2 id="diga-verordnung-erstellen">DiGA-Verordnung erstellen</h2>
+<h3 id="diga-verordnung-erstellen">DiGA-Verordnung erstellen</h3>
 
 <p>PVS/KIS greifen auf das BfArM-DiGA-Verzeichnis zu, wählen die passende PZN (inklusive indikations- oder laufzeitbezogener Varianten) und erzeugen eine elektronische Verordnung. Nach Vergabe der PrescriptionID wird die Verordnung qualifiziert elektronisch signiert, an den Workflow-Fachdienst übermittelt und dort als Flowtype 162 geprüft. Ärztinnen, Zahnärzte und Psychotherapeutinnen folgen damit den gleichen QES- und Aktivierungsabläufen wie bei Arzneimitteln. Bei TI-Störungen steht das Muster 16 weiterhin als Ersatzverfahren bereit.</p>
 
@@ -292,26 +300,26 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     
       
       <tr>
-        <td><a name="l479">​</a><a href="menu-fachlichkeit-anwendungsfaelle.html#e-rezept-erstellen">E-Rezept erstellen</a></td>
+        <td><a name="l499">​</a><a href="menu-fachlichkeit-anwendungsfaelle.html#e-rezept-erstellen">E-Rezept erstellen</a></td>
         
       </tr>
     
       
       <tr>
-        <td><a name="l486">​</a><a href="menu-fachlichkeit-anwendungsfaelle.html#e-rezept-qualifiziert-signieren">E-Rezept qualifiziert signieren</a></td>
+        <td><a name="l506">​</a><a href="menu-fachlichkeit-anwendungsfaelle.html#e-rezept-qualifiziert-signieren">E-Rezept qualifiziert signieren</a></td>
         
       </tr>
     
       
       <tr>
-        <td><a name="l493">​</a><a href="menu-fachlichkeit-anwendungsfaelle.html#e-rezept-vervollstaendigen-und-task-aktivieren">E-Rezept vervollstaendigen und Task aktivieren</a></td>
+        <td><a name="l513">​</a><a href="menu-fachlichkeit-anwendungsfaelle.html#e-rezept-vervollstaendigen-und-task-aktivieren">E-Rezept vervollstaendigen und Task aktivieren</a></td>
         
       </tr>
     
   </tbody>
 </table>
 
-<h2 id="diga-zuweisen-und-freischaltcode-anfordern">DiGA zuweisen und Freischaltcode anfordern</h2>
+<h3 id="diga-zuweisen-und-freischaltcode-anfordern">DiGA zuweisen und Freischaltcode anfordern</h3>
 
 <p>Versicherte sehen eine neue DiGA-Verordnung im E-Rezept-FdV (oder erhalten einen Ausdruck) und weisen sie ihrem Kostenträger zu. Das E-Rezept-FdV ermittelt - idealerweise automatisch - die Telematik-ID der Krankenkasse über den FHIR-VZD, erstellt eine <code class="language-plaintext highlighter-rouge">Communication_DispReq</code> und übermittelt darin Verordnungs-ID und AccessCode. Alternativ können Versicherte den Ausdruck per Post, Servicecenter oder Service-App der Krankenkasse einreichen. Der Kostenträger startet daraufhin den Abruf. Status- und Protokolleinträge im E-Rezept-FdV machen den Fortschritt (Freischaltcode angefordert, in Prüfung, erledigt) sichtbar.</p>
 
@@ -330,14 +338,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     
       
       <tr>
-        <td><a name="l533">​</a><a href="menu-fachlichkeit-anwendungsfaelle.html#diga-e-rezept-zuweisen">DiGA-Verordnung einem Kostentraeger zuweisen</a></td>
+        <td><a name="l553">​</a><a href="menu-fachlichkeit-anwendungsfaelle.html#diga-e-rezept-zuweisen">DiGA-Verordnung einem Kostentraeger zuweisen</a></td>
         
       </tr>
     
   </tbody>
 </table>
 
-<h2 id="prüfung-durch-kostenträger-und-bereitstellung-des-freischaltcodes">Prüfung durch Kostenträger und Bereitstellung des Freischaltcodes</h2>
+<h3 id="prüfung-durch-kostenträger-und-bereitstellung-des-freischaltcodes">Prüfung durch Kostenträger und Bereitstellung des Freischaltcodes</h3>
 
 <p>Kostenträger authentisieren sich über ihren Basis-Consumer, rufen die Verordnung mit <code class="language-plaintext highlighter-rouge">$accept</code> ab und prüfen Anspruch, Indikation sowie ggf. ergänzende Unterlagen. Nach erfolgreicher Prüfung erzeugen sie den Freischaltcode, legen ihn als Abgabeinformation via <code class="language-plaintext highlighter-rouge">$close</code> im Fachdienst ab und schliessen den Workflow mit einer Quittung ab. Falls kein Freischaltcode ausgegeben werden kann, hinterlegen sie eine versichertenfreundliche Begründung, damit Versicherte den Ausgang im E-Rezept-FdV nachvollziehen können.</p>
 
@@ -356,13 +364,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     
       
       <tr>
-        <td><a name="l576">​</a><a href="menu-fachlichkeit-anwendungsfaelle.html#diga-e-rezept-abrufen-kostentraeger">DiGA-E-Rezept abrufen (Kostentraeger)</a></td>
+        <td><a name="l596">​</a><a href="menu-fachlichkeit-anwendungsfaelle.html#diga-e-rezept-abrufen-kostentraeger">DiGA-E-Rezept abrufen (Kostentraeger)</a></td>
         
       </tr>
     
       
       <tr>
-        <td><a name="l583">​</a><a href="menu-fachlichkeit-anwendungsfaelle.html#diga-freischaltcode-bereitstellen">Freischaltcode bereitstellen oder Rueckmeldung geben</a></td>
+        <td><a name="l603">​</a><a href="menu-fachlichkeit-anwendungsfaelle.html#diga-freischaltcode-bereitstellen">Freischaltcode bereitstellen oder Rueckmeldung geben</a></td>
         
       </tr>
     
@@ -388,7 +396,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Feb 17, 2026 07:46+0000">2026-02-17</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Feb 17, 2026 10:10+0000">2026-02-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -20,5 +20,7 @@ Die Operation $activate wird als HTTP POST auf /Task//$activate ausgeführt.
 
 Es gelten die übergreifenden Anforderungen an die $activate Operation. ToDo: link zu übergreifenden Anforderungen
 
-[Workflow-spezifische Anforderungen für den E-Rezept-Fachdienst](./op-activate-req-server.md) [Workflowspezifische Anforderungen für das verordnende Primärsystem](./op-activate-req-client.md)
+[Workflow-spezifische Anforderungen für den E-Rezept-Fachdienst](./op-activate-req-server.md)
+
+[Workflowspezifische Anforderungen für das verordnende Primärsystem](./op-activate-req-client.md)
 

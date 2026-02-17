@@ -11,7 +11,7 @@ Version 2.0.0-draft - ci-build
 
 Das Feature “Elektronische Verordnung von DiGAs” erweitert die bestehenden Workflows um Verordnungen für Digitale Gesundheitsanwendungen (DiGA). DiGAs sind zertifizierte Apps oder Webanwendungen, die Patienten bei der Erkennung, Überwachung und Behandlung von Erkrankungen unterstützen. Das Feature beschreibt die Prozessparameter, Rollen und fachlichen Anforderungen für den Workflow-Fachdienst und beteiligte Clientsysteme.
 
-## Abgrenzungen
+### Abgrenzungen
 
 Folgende Aspekte sind nicht Gegenstand dieses IG:
 

@@ -10,6 +10,9 @@ Version 2.0.0-draft - ci-build
 
 ## Technische Anwendungsfälle
 
+### Ablaufdiagramm
+
+**Abbildung: Ablaufdiagramm DiGA-Verordnung**ablaufdiagramm-diga
 ### Technische Anwendungsfälle
 
 Diese Seite beschreibt die technischen Anwendungsfälle für den DiGA-Workflow. Sie ergänzt die Basis-Anwendungsfälle des E-Rezept-Workflows und fokussiert DiGA-spezifische Besonderheiten.

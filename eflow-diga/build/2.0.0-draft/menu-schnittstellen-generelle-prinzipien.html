@@ -254,20 +254,27 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#authentisierung" id="markdown-toc-authentisierung">Authentisierung</a></li>
+  <li><a href="#fhir-vzd" id="markdown-toc-fhir-vzd">FHIR-VZD</a></li>
+  <li><a href="#kommunikation" id="markdown-toc-kommunikation">Kommunikation</a></li>
+</ul>
+
 </div>
 <!-- Generelle Prinzipien -->
 
-<h2 id="authentisierung">Authentisierung</h2>
+<h3 id="authentisierung">Authentisierung</h3>
 <p>Die Authentisierung am E-Rezept-Fachdienst erfolgt über ACCESS_TOKEN. Für
 Kostenträger wird das Token über den zentralen IDP-Dienst ausgestellt.</p>
 
-<h2 id="fhir-vzd">FHIR-VZD</h2>
+<h3 id="fhir-vzd">FHIR-VZD</h3>
 <p>Zum Ermitteln der Telematik-ID aus der IKNR des Kostenträgers nutzt der das E-Rezept-FdV den
 FHIR-VZD. Der Zugriff erfolgt über die FHIRDirectorySearchAPI.</p>
 
-<h2 id="kommunikation">Kommunikation</h2>
+<h3 id="kommunikation">Kommunikation</h3>
 <p>Die Zuweisung einer DiGA-Verordnung durch einen Versicherten an den Kostenträger erfolgt per Communication im E-Rezept-FdV. 
 Die Adressierung der Communication erfolgt über die Telematik-ID des Kostenträgers. Der ACCESS_TOKEN des Versicherten beinhaltet die IKNR des Kostenträgers. Auf Basis der IKNR wird die Telematik-ID ermittelt. 
 Beim Zuweisen einer DiGA-Verordnungen kann Communication.payload entfallen (Kardinalitaet 0..1).</p>
@@ -291,7 +298,7 @@ Beim Zuweisen einer DiGA-Verordnungen kann Communication.payload entfallen (Kard
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Feb 17, 2026 07:46+0000">2026-02-17</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Feb 17, 2026 10:10+0000">2026-02-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
