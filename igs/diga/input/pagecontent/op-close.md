@@ -1,7 +1,4 @@
-## Operation: $close
-
 Die FHIR-Operation `$close` überführt einen im Status `in-progress` befindlichen `Task` in den Status `completed`, wenn der Kostenträger des Workflow abschliesst.
-
 
 ### Nachricht
 Die Operation $close wird als HTTP POST auf /Task/<id>/$close ausgeführt.

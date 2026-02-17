@@ -1,3 +1,2 @@
-lskdhfladshf
+client Afos
 
-AFOs Server

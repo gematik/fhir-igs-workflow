@@ -1,5 +1,3 @@
-## Operation: $accept
-
 Die FHIR-Operation `$acsept` überführt einen im Status `ready` befindlichen `Task` in den Status `in-progress`, nachdem der Kostenträger die Verordnung vom Fachdienst abgerufen hat.
 
 ### Nachricht
