@@ -1,7 +1,7 @@
 canonical: https://gematik.de/fhir/erp
 fhirVersion: 4.0.1
 id: de.gematik.eflow-rx
-name: gemIG_eRp_Prescription
+name: gemIG_TIFlow_rx
 title: "E-Rezept für Arzneimittel"
 status: draft # draft | active | retired | unknown
 version: 1.0.0-draft
@@ -25,9 +25,11 @@ applyExtensionMetadataToRoot: false
 menu:
   Start: index.html
   Fachlichkeit:
-    Überblick: menu-fachlichkeit-ueberblick.html
     Szenarien: menu-fachlichkeit-szenarien.html
-    Anwendungsfälle: menu-fachlichkeit-anwendungsfaelle.html
+    Arzneimittel: menu-fachlichkeit-szenarien-e-rezept.html
+    Teratogene Arzneimittel: menu-fachlichkeit-szenarien-t-rezept.html
+    Mehrfachverordnungen: menu-fachlichkeit-szenarien-e-rezept-mvo.html
+    Workflow-Steuerung durch LE: menu-fachlichkeit-szenarien-e-rezept-wf-le.html
   Technische Umsetzung:
     Systemüberblick: menu-technische-umsetzung-systemueberblick.html
     Technische Anwendungsfälle: menu-technische-umsetzung-anwendungsfaelle.html
@@ -53,14 +55,16 @@ menu:
 pages:
   index.md:
     title: "Implementation Guide E-Rezept-Fachdienst"
-  menu-fachlichkeit-ueberblick.md:
-    title: "Überblick zur Verordnung und Belieferung von Arzneimitteln"
-    menu-fachlichkeit-szenarien.md:
-      title: "Szenarien für den Verordnungsprozess"
-      menu-fachlichkeit-szenarien-t-rezept.md:
-        title: "Verordnung von E-T-Rezepten"
-    menu-fachlichkeit-anwendungsfaelle.md:
-      title: "Anwendungsfälle für den Medikationsprozess"
+  menu-fachlichkeit-szenarien.md:
+    title: "Szenarien für den Verordnungsprozess von Arzneimitteln"
+    menu-fachlichkeit-szenarien-e-rezept.md:
+      title: "Verordnung von apothekenpflichtigen Arzneimitteln"
+    menu-fachlichkeit-szenarien-e-rezept-wf-le.md:
+      title: "Verordnung mit Steuerung durch Leistungserbringer"
+    menu-fachlichkeit-szenarien-e-rezept-mvo.md:
+      title: "Verordnung von Mehrfachverordnungen (MVO)"
+    menu-fachlichkeit-szenarien-t-rezept.md:
+      title: "Verordnung von E-T-Rezepten"
   menu-technische-umsetzung-systemueberblick.md:
     title: "Systemüberblick"
     menu-technische-umsetzung-anwendungsfaelle.md:

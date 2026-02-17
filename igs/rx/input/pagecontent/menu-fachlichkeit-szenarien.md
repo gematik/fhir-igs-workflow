@@ -1,13 +1,13 @@
 
-Diese Seite dient als Einstiegspunkt in alle fachlichen Szenarien rund um das E-Rezept. Jedes Szenario beschreibt einen abgeschlossenen Versorgungszusammenhang, benennt die beteiligten Rollen und referenziert die relevanten Anwendungsfälle.
+Diese Seite dient als Einstiegspunkt in alle fachlichen Szenarien rund um das E-Rezept für Arzneimittel. Jedes Szenario beschreibt einen abgeschlossenen Versorgungszusammenhang, benennt die beteiligten Rollen und referenziert die relevanten Anwendungsfälle.
 
 ## Unterstützte Szenarien
 
-- [Verordnung von apothekenpflichtigen Arzneimitteln](./menu-fachlichkeit-szenarien-e-rezept.html): beschreibt den Standard-Workflow von der Verordnung im Primärsystem über die Bereitstellung im Fachdienst bis zur Einlösung in der Apotheke.
-- [Verordnung von T-Rezepten](./menu-fachlichkeit-szenarien-t-rezept.html): beschreibt die Verschreibung, Verwaltung und Bereitstellung hochpreisiger oder besonders sensibler Arzneimittel inklusive ergänzender Apothekenprozesse.
+- [Verordnung von apothekenpflichtigen Arzneimitteln](./menu-fachlichkeit-szenarien-e-rezept.html): beschreibt den Standard-Workflow von der Verordnung im Primärsystem über die Bereitstellung im Fachdienst bis zur Einlösung in der Apotheke für GKV und PKV Versicherte.
+- [Verordnung von apothekenpflichtigen Arzneimitteln mit Steuerung durch Leistungserbringer](./menu-fachlichkeit-szenarien-e-rezept-wf-le.html): beschreibt den Workflow von der Verordnung von apothekenpflichtigen Arzneimitteln mit Steuerung durch den Leistungserbringer.
+- [Verordnung von Mehrfachverordnungen (MVO)](./menu-fachlichkeit-szenarien-e-rezept-mvo.html): beschreibt den Workflow von der Verordnung von Mehrfachverordnungen (MVO) für apothekenpflichtige Arzneimittel.
+- [Verordnung von T-Rezepten](./menu-fachlichkeit-szenarien-t-rezept.html): beschreibt die Verschreibung, Verwaltung und Bereitstellung von E-Rezepten mit teratogenen Wirkstoffen (T-Rezepten).
 
-
-Weitere Szenarien werden sukzessive ergänzt. Neue Inhalte sollten den Aufbau der bestehenden Detailseiten übernehmen, damit Leserinnen und Leser erwartbare Orientierungspunkte finden.
 
 ## Aufbau der Szenariobeschreibungen
 

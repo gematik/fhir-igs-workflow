@@ -1,0 +1,25 @@
+@startuml
+title E-Rezept loeschen (Abbruch)
+
+actor "Verordnender" as V
+participant "Primaersystem" as PS
+participant "Identity Provider" as IDP
+participant "E-Rezept Fachdienst" as FD
+
+V -> PS: E-Rezept abbrechen()
+activate PS
+
+opt kein gueltiger AuthN-Token
+  ref over PS, IDP: AuthN-Token anfordern
+end
+
+PS -> FD: POST /Task/{id}/$abort (AuthN-Token)
+activate FD
+FD -> FD: Task abbrechen()
+FD --> PS: Status
+deactivate FD
+
+PS --> V: Status
+deactivate PS
+
+@enduml

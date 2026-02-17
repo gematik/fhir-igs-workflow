@@ -1,35 +1,72 @@
-## Mehrfachverordnung (MVO) im E-Rezept-Workflow
+{% assign use_cases = site.data['use-cases'] %}
 
-Die Mehrfachverordnung ermöglicht die Ausstellung von mehreren, inhaltlich zusammengehörenden Teilverordnungen für ein Arzneimittel innerhalb eines einzigen Verordnungsvorgangs. Grundlage ist § 31 Abs. 1b SGB V (sowie § 4 Abs. 3 AMVV i.V.m. § 2 Abs. 1 Nr. 6a AMVV). Jede Teilverordnung ist ein vollwertiges E-Rezept mit eigener QES, eigenem Token und eigenem Workflow (Task) und kann unabhängig eingelöst werden.
+Das Szenario beschreibt den Normalfall für apothekenpflichtige Arzneimittel von der Verordnung bis zur Belieferung in der Apotheke.
+Es umfasst die Workflows `160` und `200`:
 
-### Fachliche Einordnung
+- `160`: Muster 16 (apothekenpflichtige Arzneimittel) für gesetzlich Versicherte (GKV)
+- `200`: PKV (apothekenpflichtige Arzneimittel) für privat Versicherte (PKV)
 
-- **Anzahl der Teilverordnungen:** mindestens 2, maximal 4.
-- **Eigenständige Einlösung:** Jede Teilverordnung kann in derselben oder in unterschiedlichen Apotheken eingelöst werden.
-- **Gültigkeitszeitraum:** Der Beginn der Einlösefrist wird vom Verordnenden festgelegt; das Ende kann optional gesetzt werden. Ohne Enddatum gilt die Teilverordnung bis 365 Tage nach Ausstellungsdatum.
-- **Kein Ersatzverfahren:** Mehrfachverordnungen existieren ausschließlich elektronisch (kein Muster 16, keine Ersatzverordnung).
-- **Ausschlüsse:** Keine Mehrfachverordnung für Entlassrezepte, BTM- und T-Rezepte.
+## Verordnung apothekenpflichtiger Arzneimittel (Workflow 160/200)
 
-### Beteiligte Rollen und Nutzen
+Ein verordnender Leistungserbringer erstellt im Primärsystem (PVS/KIS) den Verordnungsdatensatz, signiert diesen qualifiziert und stellt das E-Rezept im E-Rezept-Fachdienst bereit.
 
-**Versicherte** profitieren davon, dass Teilverordnungen getrennt einlösbar sind, Einlösezeiträume transparent werden und die App auf Gültigkeiten hinweisen kann.  
-**Verordnende** können mehrere Teilverordnungen in einem Vorgang ausstellen und Einlösefristen automatisiert berechnen.  
-**Apotheken** erkennen MVO-Rezepte, sehen Nummerierung und Gültigkeitszeitraum und bearbeiten Teilverordnungen separat.
+### Fachlicher Ablauf
 
-### Prozessüberblick
+1. Das Primärsystem erstellt mit `POST /Task/$create` einen Task für das E-Rezept und erhält Rezept-ID sowie AccessCode.
+2. Der Leistungserbringer signiert den Verordnungsdatensatz mit QES (HBA/Konnektor).
+3. Das Primärsystem übermittelt den QES-Datensatz mit `POST /Task/{id}/$activate`; der Task wird auf `ready` gesetzt.
+4. Der Versicherte kann das bereitgestellte E-Rezept anschließend in einer Apotheke einlösen.
 
-1. **Verordnung**: Im Primärsystem werden die Teilverordnungen erzeugt und als Mehrfachverordnung gekennzeichnet.
-2. **Signatur & Aktivierung**: Jede Teilverordnung wird separat qualifiziert signiert und anschließend als eigener Task aktiviert.
-3. **Einlösung**: Teilverordnungen werden erst ab Beginn der Einlösefrist durch Apotheken abrufbar und belieferbar.
-4. **Löschung**: Für Teilverordnungen gelten die gleichen Löschfristen wie für Einzelrezepte (automatisch 10 Tage nach Gültigkeit bzw. 100 Tage nach Dispensierung).
+### Fachliche Unterschiede zwischen 160 und 200
 
-### Einschränkungen und Besonderheiten
+- Der Flowtype wird bereits bei `$create` festgelegt (`160` oder `200`) und bestimmt den Rezepttyp.
+- Workflow `200` setzt für die digitale Bereitstellung PKV-relevanter Versichertendaten den vorgesehenen Prozess voraus (Online Check-in).
+- Beide Workflows führen für apothekenpflichtige Arzneimittel in den regulären Einlöseprozess in der öffentlichen Apotheke.
 
-- Eine Mehrfachverordnung ist nur für apothekenpflichtige Arzneimittel zulässig.
-- Teilverordnungen sind **keine** Ersatzverordnungen und **keine** Entlassrezepte.
-- Ein Ausdruck kann mehrere Teilverordnungen enthalten; Tokens mit zukünftiger Gültigkeit dürfen bei Scan nicht automatisch gespeichert werden.
+**Beteiligte Systeme:** PVS/KIS, E-Rezept-Fachdienst
 
-### Weiterführende Abschnitte
+**Fachliche Anwendungsfälle (User Stories)**
 
-- Technische Anwendungsfälle: [menu-technische-umsetzung-anwendungsfaelle.html](./menu-technische-umsetzung-anwendungsfaelle.html)
-- Operation API (Aktivierung & Abruf): [menu-schnittstellen-operation-api.html](./menu-schnittstellen-operation-api.html)
+{% assign scenario_use_cases = "E_Rezept_erstellen, E_Rezept_qualifiziert_signieren, E_Rezept_vervollstaendigen_und_Task_aktivieren, E_Rezept_loeschen" | split: ", " %}
+
+{% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Fachliche Anwendungsfälle mit Bezug zu Szenario <i>Verordnung apothekenpflichtiger Arzneimittel (160/200)</i>" %}
+
+## Belieferung in der Apotheke (Workflow 160/200)
+
+Nach Übergabe von Task-ID und AccessCode (z. B. 2D-Code oder Nachricht) ruft die Apotheke das E-Rezept im Fachdienst ab, beliefert den Versicherten und schließt den Workflow ab.
+
+### Fachlicher Ablauf
+
+1. Das AVS ruft mit `POST /Task/{id}/$accept?ac=...` das E-Rezept ab und erhält Task, QES-Datensatz sowie ein apothekenspezifisches Secret.
+2. Optional kann das AVS Dispensierinformationen vorab mit `POST /Task/{id}/$dispense?secret=...` speichern (Status bleibt `in-progress`).
+3. Mit `POST /Task/{id}/$close?secret=...` wird die Abgabe abgeschlossen und ein signiertes Quittungs-Bundle zurückgegeben.
+4. Bei Bedarf kann die Apotheke die Quittung später erneut abrufen.
+
+### Fachliche Unterschiede zwischen 160 und 200
+
+- Bei Rezepten mit Flowtype `200` kann beim Abruf zusätzlich ein Consent bereitgestellt werden (wenn die Einwilligung zur Bereitstellung von Abrechnungsinformationen vorliegt).
+- Bei `200` muss dem Versicherten nach Abschluss der Abgabe eine ausgedruckte Quittung für die private Abrechnung bereitgestellt werden.
+
+**Beteiligte Systeme:** AVS, E-Rezept-Fachdienst
+
+**Fachliche Anwendungsfälle (User Stories)**
+
+{% assign scenario_use_cases = "E_Rezept_abrufen_apotheke, E_Rezept_abgabe_dokumentieren, E_Rezept_abgabe_abschliessen, E_Rezept_loeschen, E_Rezept_secret_wiederherstellen" | split: ", " %}
+
+{% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Fachliche Anwendungsfälle mit Bezug zu Szenario <i>Belieferung apothekenpflichtiger Arzneimittel (160/200)</i>" %}
+
+## Übergang in technische Umsetzung und Schnittstellen
+
+Für die Umsetzung wird aus den fachlichen Anwendungsfällen in die technischen Anwendungsfälle verzweigt:
+
+- [Technische Anwendungsfälle](./menu-technische-umsetzung-anwendungsfaelle.html)
+
+Die zugehörigen Schnittstellen für den Normalfall sind insbesondere:
+
+- [Operation API: $create](./op-create.html)
+- [Operation API: $activate](./op-activate.html)
+- [Operation API: $accept](./op-accept.html)
+- [Operation API: $dispense](./op-dispense.html)
+- [Operation API: $close](./op-close.html)
+- [Query API: Task](./query-api-task.html)
+- [Query API: MedicationDispense](./query-api-medicationdispense.html)
