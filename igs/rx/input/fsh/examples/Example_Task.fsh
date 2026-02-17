@@ -1,12 +1,12 @@
 
 Instance: TaskInCreatedState
-InstanceOf: EFlowRxTask
+InstanceOf: GEM_ERP_PR_Task
 Title: "Task erstellt durch Fachdienst via $create Operation"
 Description: "Beispiel für einen Task, der vom Fachdienst über die $create Operation erstellt wurde"
 Usage: #example
 * id = "b12eb5f7-91ce-4887-93c7-800454601377"
 * meta.tag.display = "Task in DRAFT state just created by Fachdienst via $create operation"
-* extension[flowType].valueCoding = EFlowRxFlowTypeCS#160 "Flowtype für Apothekenpflichtige Arzneimittel"
+* extension[flowType].valueCoding = GEM_ERP_CS_FlowType#160 "Flowtype für Apothekenpflichtige Arzneimittel"
 * insert Date(extension[acceptDate].valueDate)
 * insert Date(extension[expiryDate].valueDate)
 * identifier[PrescriptionID].system = "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"
@@ -19,7 +19,7 @@ Usage: #example
 * performerType[+].coding = https://gematik.de/fhir/erp/CodeSystem/EFlowRxOrganizationType#urn:oid:1.2.276.0.76.4.54 "Öffentliche Apotheke"
 
 Instance: TaskInReadyState
-InstanceOf: EFlowRxTask
+InstanceOf: GEM_ERP_PR_Task
 Title: "Task aktiviert durch (Z)PVS/KIS via $activate Operation"
 Description: "Beispiel für einen Task, der durch (Z)PVS/KIS über die $activate Operation aktiviert wurde und ein einlösbares E-Rezept trägt"
 Usage: #example
@@ -45,7 +45,7 @@ Usage: #example
 * input[patientReceipt].valueReference.reference = "f8c2298f-7c00-4a68-af29-8a2862d55d43"
 
 Instance: TaskIn-ProgressState
-InstanceOf: EFlowRxTask
+InstanceOf: GEM_ERP_PR_Task
 Title: "Task angenommen durch Apotheke via $accept Operation"
 Description: "Beispiel für einen Task, der von einer Apotheke über die $accept Operation angenommen wurde"
 Usage: #example
@@ -69,7 +69,7 @@ Usage: #example
 * input[ePrescription].valueReference = Reference(PrescriptionBinary)
 
 Instance: TaskIn-ProgressState-Dispensed
-InstanceOf: EFlowRxTask
+InstanceOf: GEM_ERP_PR_Task
 Title: "Task angenommen und abgegeben via $dispense Operation"
 Description: "Beispiel für einen Task, der von einer Apotheke angenommen und dann über die $dispense Operation abgegeben wurde"
 Usage: #example
@@ -96,7 +96,7 @@ Usage: #example
 * input[patientReceipt].valueReference.reference = "f8c2298f-7c00-4a68-af29-8a2862d55d43"
 
 Instance: TaskIn-ProgressState-Dispensed-Multiple-MedicationDispenses
-InstanceOf: EFlowRxTask
+InstanceOf: GEM_ERP_PR_Task
 Title: "Task mit mehreren MedicationDispenses"
 Description: "Beispiel für einen Task, der von einer Apotheke angenommen und dann über die $dispense Operation mit mehreren MedicationDispenses abgegeben wurde"
 Usage: #example
@@ -123,7 +123,7 @@ Usage: #example
 * input[patientReceipt].valueReference.reference = "f8c2298f-7c00-4a68-af29-8a2862d55d43"
 
 Instance: TaskInClosedState
-InstanceOf: EFlowRxTask
+InstanceOf: GEM_ERP_PR_Task
 Title: "Task abgeschlossen durch Apotheke via $close Operation"
 Description: "Beispiel für einen Task, der von einer Apotheke über die $close Operation abgeschlossen wurde"
 Usage: #example

@@ -18,7 +18,7 @@ Usage: #definition
   * documentation = "Dieser Parameter fordert die Erstellung eines Tasks mit bestimmten Flowtype an."
   * type = #Coding
   * binding.strength = #required
-  * binding.valueSet = Canonical(EFlowRxFlowTypeVS)
+  * binding.valueSet = Canonical(GEM_ERP_VS_FlowType)
 // out
 * parameter[+]
   * name = #return

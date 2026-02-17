@@ -1,6 +1,6 @@
 
 Instance: ReceiptBundleBinary
-InstanceOf: EFlowRxDigest
+InstanceOf: GEM_ERP_PR_Digest
 Title: "Quittungs-Hash Binärdaten"
 Description: "Binäre Digest-Daten für ein E-Rezept-Quittungs-Bundle"
 Usage: #inline
@@ -9,7 +9,7 @@ Usage: #inline
 * data = "tJg8c5ZtdhzEEhJ0ZpAsUVFx5dKuYgQFs5oKgthi17M="
 
 Instance: ReceiptBundleQuittung
-InstanceOf: EFlowRxBundle
+InstanceOf: GEM_ERP_PR_Bundle
 Title: "Quittungs-Bundle für abgeschlossene Rezeptabgabe"
 Description: "Beispiel für ein Quittungs-Bundle nach erfolgter Abgabe eines E-Rezepts"
 Usage: #example
@@ -33,7 +33,7 @@ Usage: #example
 * signature.data = "dGhpcyBibG9iIGlzIHNuaXBwZWQ="
 
 Instance: Bundle-AcceptOperation
-InstanceOf: EFlowRxBundleOPAccept
+InstanceOf: GEM_ERP_PR_Bundle_OP_Accept
 Usage: #example
 Title: "Beispiel Accept-Bundle"
 Description: "Dieses Bundle enthält den Task und das qualifiziert signierte E-Rezept für die Accept-Operation"

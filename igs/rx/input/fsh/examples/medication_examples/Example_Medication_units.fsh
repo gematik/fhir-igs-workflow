@@ -1,5 +1,5 @@
 Instance: ExampleUnitMedication
-InstanceOf: EFlowRxMedication
+InstanceOf: GEM_ERP_PR_Medication
 Title: "Beispiel-Medikament mit Einheiten"
 Description: "Beispiel für ein Medikament mit spezifischen Maßeinheiten und Wirkstoffangaben"
 Usage: #example

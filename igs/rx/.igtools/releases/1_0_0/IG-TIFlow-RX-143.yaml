@@ -1,0 +1,20 @@
+actor: []
+conformance: SHALL
+content_hash: 2998a843bea00c898800ad0f9a323731286006259d19a6fe509c7bd9b884f551
+created: '2026-02-17T06:28:49.348083'
+date: '2026-02-17T06:28:49.348087'
+key: IG-TIFlow-RX-143
+modified: '2026-02-17T06:28:49.348086'
+release_status: NEW
+source: input/pagecontent/op-close-fd-requirements.md
+status: ACTIVE
+test_procedures: {}
+text: Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks fuer ein E-Rezept mittels
+  HTTP-POST/$close-Operation auf den in der URL referenzierten /Task/&lt;id&gt; sicherstellen,
+  dass ausschliesslich abgebende Institutionen in der Rolle oid_oeffentliche_apotheke,
+  oid_krankenhausapotheke, oid_kostentraeger die Operation am Fachdienst aufrufen
+  duerfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader
+  "Authorization" feststellen, damit der E-Rezept-Workflow nicht durch einen Unberechtigten
+  abgeschlossen werden kann.
+title: E-Rezept-Fachdienst - Task schliessen - Rollenpruefung (A_19230-01)
+version: 0

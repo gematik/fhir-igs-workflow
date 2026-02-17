@@ -1,5 +1,5 @@
 Instance: Communication_Reply_Pharmacy
-InstanceOf: EFlowRxCommunicationReply
+InstanceOf: GEM_ERP_PR_Communication_Reply
 Title: "Antwort-Nachricht der Apotheke an den Patienten"
 Description: "Beispiel für eine Antwort-Nachricht, die von der Apotheke an den Patienten als Antwort auf eine vorherige Task-bezogene Nachricht gesendet wird"
 Usage: #example
@@ -14,7 +14,7 @@ Usage: #example
 * recipient.identifier.value = "X234567890"
 * insert DateTimeStamp(sent)
 * payload.extension[AvailabilityStatus]
-  * valueCoding.system = Canonical(EFlowRxAvailabilityStatusCS)
+  * valueCoding.system = Canonical(GEM_ERP_CS_AvailabilityStatus)
   * valueCoding.code = #20
 * payload.extension[OfferedSupplyOptions]
   * extension[onPremise].valueBoolean = true

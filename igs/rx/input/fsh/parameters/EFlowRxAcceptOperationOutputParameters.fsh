@@ -18,5 +18,5 @@ Description: "Dieses Profil definiert die Parameter für die Annahme eines Medik
   * name = "return"
   * value[x] 0..0
   * resource 1..1
-  * resource only EFlowRxBundleOPAccept
+  * resource only GEM_ERP_PR_Bundle_OP_Accept
   * part 0..0

@@ -1,5 +1,5 @@
 Instance: Example-MedicationDispense
-InstanceOf: EFlowRxMedicationDispense
+InstanceOf: GEM_ERP_PR_MedicationDispense
 Usage: #example
 Title: "Beispiel Medikamentenabgabe"
 Description: "Beispiel für eine Medikamentenabgabe mit vollständigen Angaben"
@@ -12,7 +12,7 @@ Description: "Beispiel für eine Medikamentenabgabe mit vollständigen Angaben"
 * medicationReference = Reference(SumatripanMedication)
 
 Instance: Example-MedicationDispense-ToID
-InstanceOf: EFlowRxMedicationDispense
+InstanceOf: GEM_ERP_PR_MedicationDispense
 Usage: #inline
 Title: "Beispiel Medikamentenabgabe mit ID"
 Description: "Beispiel für eine Medikamentenabgabe mit spezifischer ID zur Referenzierung"
@@ -26,7 +26,7 @@ Description: "Beispiel für eine Medikamentenabgabe mit spezifischer ID zur Refe
 * medicationReference = Reference(30e0e53f-275c-46f5-9e59-04d55735dabb)
 
 Instance: Example-MedicationDispense-Without-Medication
-InstanceOf: EFlowRxMedicationDispense
+InstanceOf: GEM_ERP_PR_MedicationDispense
 Usage: #example
 Title: "Beispiel Medikamentenabgabe ohne Medikament"
 Description: "Beispiel für eine Medikamentenabgabe ohne Medikamentenreferenz"
@@ -39,7 +39,7 @@ Description: "Beispiel für eine Medikamentenabgabe ohne Medikamentenreferenz"
 * medicationReference = Reference(SumatripanMedication)
 
 Instance: Example-MedicationDispense-2
-InstanceOf: EFlowRxMedicationDispense
+InstanceOf: GEM_ERP_PR_MedicationDispense
 Usage: #example
 Title: "Zweites Beispiel Medikamentenabgabe"
 Description: "Zweites Beispiel für eine Medikamentenabgabe mit anderen Eigenschaften"
@@ -52,7 +52,7 @@ Description: "Zweites Beispiel für eine Medikamentenabgabe mit anderen Eigensch
 * medicationReference = Reference(SimpleMedication)
 
 Instance: Example-MedicationDispense-Kombipackung
-InstanceOf: EFlowRxMedicationDispense
+InstanceOf: GEM_ERP_PR_MedicationDispense
 Usage: #example
 Title: "Beispiel Kombipackung Medikamentenabgabe"
 Description: "Beispiel für eine Medikamentenabgabe einer Kombipackung"
@@ -65,7 +65,7 @@ Description: "Beispiel für eine Medikamentenabgabe einer Kombipackung"
 * medicationReference = Reference(Medication-Kombipackung)
 
 Instance: Example-MedicationDispense-Rezeptur
-InstanceOf: EFlowRxMedicationDispense
+InstanceOf: GEM_ERP_PR_MedicationDispense
 Usage: #example
 Title: "Example Rezeptur Medication Dispense"
 Description: "Example of a Rezeptur Medication Dispense."
@@ -80,7 +80,7 @@ Description: "Example of a Rezeptur Medication Dispense."
 /*
 
 Instance: INVALID-DATE-Example-MedicationDispense-1
-InstanceOf: EFlowRxMedicationDispense
+InstanceOf: GEM_ERP_PR_MedicationDispense
 Usage: #example
 Title: "Example-Medication Dispense"
 Description: "Example of a Medication Dispense."
@@ -94,7 +94,7 @@ Description: "Example of a Medication Dispense."
 * medicationReference = Reference(SumatripanMedication)
 
 Instance: INVALID-DATE-Example-MedicationDispense-2
-InstanceOf: EFlowRxMedicationDispense
+InstanceOf: GEM_ERP_PR_MedicationDispense
 Usage: #example
 Title: "Example-Medication Dispense"
 Description: "Example of a Medication Dispense."
@@ -108,7 +108,7 @@ Description: "Example of a Medication Dispense."
 * medicationReference = Reference(SumatripanMedication)
 
 Instance: INVALID-DATE-Example-MedicationDispense-3
-InstanceOf: EFlowRxMedicationDispense
+InstanceOf: GEM_ERP_PR_MedicationDispense
 Usage: #example
 Title: "Example-Medication Dispense"
 Description: "Example of a Medication Dispense."
@@ -122,7 +122,7 @@ Description: "Example of a Medication Dispense."
 * medicationReference = Reference(SumatripanMedication)
 
 Instance: INVALID-DATE-Example-MedicationDispense-4
-InstanceOf: EFlowRxMedicationDispense
+InstanceOf: GEM_ERP_PR_MedicationDispense
 Usage: #example
 Title: "Example-Medication Dispense"
 Description: "Example of a Medication Dispense."

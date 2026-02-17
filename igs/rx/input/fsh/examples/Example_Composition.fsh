@@ -1,6 +1,6 @@
 
 Instance: ReceiptBundleComposition
-InstanceOf: EFlowRxComposition
+InstanceOf: GEM_ERP_PR_Composition
 Title: "Zusammenstellung für Quittungs-Bundle"
 Description: "Beispiel für eine Zusammenstellung (Composition) für ein E-Rezept-Quittungs-Bundle"
 Usage: #inline
@@ -8,7 +8,7 @@ Usage: #inline
 * extension[Beneficiary].valueIdentifier.system = $identifier-telematik-id
 * extension[Beneficiary].valueIdentifier.value = "3-SMC-B-Testkarte-883110000129070"
 * status = #final
-* type.coding = EFlowRxDocumentTypeCS#3 "Receipt"
+* type.coding = GEM_ERP_CS_DocumentType#3 "Receipt"
 * insert DateTime(date)
 * insert DateTime(event.period.start)
 * insert DateTime(event.period.end)

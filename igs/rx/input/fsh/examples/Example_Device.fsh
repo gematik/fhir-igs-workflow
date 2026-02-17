@@ -1,5 +1,5 @@
 Instance: ReceiptBundleDevice
-InstanceOf: EFlowRxDevice
+InstanceOf: GEM_ERP_PR_Device
 Title: "Gerät für Quittungs-Bundle"
 Description: "Beispiel für ein Gerät, das für die Erstellung von E-Rezept-Quittungen verwendet wird"
 Usage: #example

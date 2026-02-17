@@ -1,0 +1,20 @@
+actor: []
+conformance: SHALL
+content_hash: eaa9f4ac9d7c089daca2ea3aeb8a09ae443255afaa8ceeeb5597aa75fd62b8c5
+created: '2026-02-17T06:28:49.337769'
+date: '2026-02-17T06:28:49.337777'
+key: IG-TIFlow-RX-61
+modified: '2026-02-17T06:28:49.337776'
+release_status: NEW
+source: input/pagecontent/op-reject-fd-requirements.md
+status: ACTIVE
+test_procedures: {}
+text: Der E-Rezept-Fachdienst MUSS beim Zurueckweisen eines Tasks fuer ein E-Rezept
+  mittels HTTP-POST/$reject-Operation auf den in der URL referenzierten /Task/&lt;id&gt;
+  sicherstellen, dass ausschliesslich abgebende Institutionen in der Rolle oid_oeffentliche_apotheke,
+  oid_krankenhausapotheke, oid_kostentraeger die Operation am Fachdienst aufrufen
+  duerfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader
+  "Authorization" feststellen, damit das E-Rezept nicht durch einen Unberechtigten
+  zurueckgewiesen werden kann.
+title: E-Rezept-Fachdienst - Task zurueckweisen - Rollenpruefung (A_19170-02)
+version: 0

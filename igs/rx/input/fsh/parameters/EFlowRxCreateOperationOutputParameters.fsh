@@ -18,5 +18,5 @@ Description: "Dieses Profil definiert die Parameter für die Erstellung einer Au
   * name = "return"
   * value[x] 0..0
   * resource 1..1
-  * resource only EFlowRxTask
+  * resource only GEM_ERP_PR_Task
   * part 0..0

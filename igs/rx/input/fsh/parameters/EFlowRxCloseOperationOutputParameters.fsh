@@ -18,5 +18,5 @@ Description: "Dieses Profil definiert die Parameter für die Ausgabe eines Medik
   * name = "return"
   * value[x] 0..0
   * resource 1..1
-  * resource only EFlowRxBundle
+  * resource only GEM_ERP_PR_Bundle
   * part 0..0

@@ -32,14 +32,14 @@ Description: "Dieses Profil definiert die Parameter für das Schließen eines Wo
     * name = "medicationDispense"
     * value[x] 0..0
     * resource 1..1
-    * resource only EFlowRxMedicationDispense
+    * resource only GEM_ERP_PR_MedicationDispense
     * part 0..0
   * part[medication]
     * name MS
     * name = "medication"
     * value[x] 0..0
     * resource 1..1
-    * resource only EFlowRxMedication
+    * resource only GEM_ERP_PR_Medication
     * part 0..0
 
 Invariant: workflow-parameters-close-medication-exists

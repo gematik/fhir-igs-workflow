@@ -1,6 +1,6 @@
 // Kombipackung
 Instance: Medication-Kombipackung
-InstanceOf: EFlowRxMedication
+InstanceOf: GEM_ERP_PR_Medication
 Title: "Medikament-Kombipackung"
 Description: "Beispiel für eine Kombipackung mit mehreren Einzelpräparaten"
 Usage: #example

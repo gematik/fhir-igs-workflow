@@ -1,6 +1,6 @@
 // Single Medication
 Instance: SumatripanMedication
-InstanceOf: EFlowRxMedication
+InstanceOf: GEM_ERP_PR_Medication
 Title: "Beispiel-Medikament Sumatriptan"
 Description: "Beispiel für ein Sumatriptan-Medikament mit vollständigen Eigenschaften"
 Usage: #example
@@ -28,7 +28,7 @@ Usage: #example
 
 // Single Medication
 Instance: SumatripanMedicationWithID
-InstanceOf: EFlowRxMedication
+InstanceOf: GEM_ERP_PR_Medication
 Title: "Beispiel-Medikament Sumatriptan with ID"
 Description: "Beispiel für ein Sumatriptan-Medikament mit spezifischer ID für Referenzierung"
 Usage: #inline
@@ -56,7 +56,7 @@ Usage: #inline
 * amount.denominator.value = 1
 
 Instance: SimpleMedication
-InstanceOf: EFlowRxMedication
+InstanceOf: GEM_ERP_PR_Medication
 Title: "Einfaches Beispiel-Medikament"
 Description: "Beispiel für ein einfaches Medikament mit minimalen Eigenschaften"
 Usage: #example
@@ -69,7 +69,7 @@ Usage: #example
 
 // Medication without system and code for ingredient.strengh.numerator/denominator
 Instance: Medication-Without-Strength-Code
-InstanceOf: EFlowRxMedication
+InstanceOf: GEM_ERP_PR_Medication
 Title: "Medikament ohne Stärke-Code"
 Description: "Beispiel für ein Medikament ohne System und Code für die Wirkstoffstärke"
 Usage: #example
@@ -85,7 +85,7 @@ Usage: #example
   * strength.denominator.unit = "Milliliter"
 
 Instance: Medication-Without-Strength-Numerator
-InstanceOf: EFlowRxMedication
+InstanceOf: GEM_ERP_PR_Medication
 Title: "Medikament ohne Stärke-Numerator"
 Description: "Beispiel für ein Medikament ohne Code oder System für die Stärkenangabe im Numerator"
 Usage: #example

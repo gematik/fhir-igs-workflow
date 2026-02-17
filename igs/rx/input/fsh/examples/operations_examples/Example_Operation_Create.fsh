@@ -4,7 +4,7 @@ Title: "Beispiel für $create Operation Parameter"
 Description: "Beispiel für Eingabeparameter der $create Operation zur Erstellung einer neuen Aufgabe"
 Usage: #example
 * parameter[+].name = "workflowType"
-* parameter[=].valueCoding = EFlowRxFlowTypeCS#160
+* parameter[=].valueCoding = GEM_ERP_CS_FlowType#160
 
 Instance: ExampleOperationCreateError
 InstanceOf: OperationOutcome
