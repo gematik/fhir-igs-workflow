@@ -1,3 +1,13 @@
+### Ablaufdiagramm
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+    {% include ablaufdiagramm-diga.svg %}
+    </div>
+    <figcaption><strong>Abbildung: Ablaufdiagramm DiGA-Verordnung</strong>ablaufdiagramm-diga</figcaption>
+</figure>
+
+
 ### Technische Anwendungsfälle
 
 Diese Seite beschreibt die technischen Anwendungsfälle für den DiGA-Workflow. Sie ergänzt die Basis-Anwendungsfälle des E-Rezept-Workflows und fokussiert DiGA-spezifische Besonderheiten.

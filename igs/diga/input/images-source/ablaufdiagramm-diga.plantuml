@@ -1,0 +1,51 @@
+@startuml 
+title Ablaufdiagramm Verordnung von DiGA
+hide footbox
+autonumber "<b>[0]"
+actor "PVS" as PVS
+participant "E-Rezept-FdV" as FDV
+participant "E-Rezept-Fachdienst" as FD
+database "FHIR Verzeichnisdienst" as VZD
+participant "Kostenträger" as AVS
+participant "IDP-Dienst" as IDP
+ 
+
+
+    PVS -> FD: Workflow erstellen\nmit $Create (Workflow 162)
+
+    PVS -> PVS: Verordnungsdatensatz\nerstellen
+    PVS -> PVS: Verordnungsdatensatz\nmit QES signieren 
+	PVS -> FD: Einstellen der \nVerordnung mit $activate
+    FD -> FD: QES und FHIR prüfen
+    FDV -> FD: Abruf der Verordnungen\nmit GET /Task
+
+
+	FDV <-> VZD: Falls nicht bekannt: Zieladresse für Zuweisung durch Lookup der\nTelematik-ID des Kostenträgers  ermitteln\n(auf Basis Authentisierungsinformationen des Nutzers)
+    FDV -> FDV: Communication Ressource\nfür Zuweisen erstellen
+    FDV -> FD: POST /Communication 
+
+
+	AVS <-> IDP: Bezug Token mit OID\n1.2.276.0.76.4.59\n(Betriebsstätte KTR)
+
+	AVS <- FD: WebSocket-Signal neue Communication\nmit "Zuweisung DiGA-Verordnung"
+
+
+    AVS -> FD: GET /Communication 	
+    AVS -> FD: Abruf der Verordnung mit $accept\n(Task-ID und AccessCode\naus Communication)
+ 
+alt Erfolgreiche Bearbeitung des E-Rezepts
+    AVS -> AVS: Freischaltcode erzeugen
+	
+	AVS -> FD: $close (Freischaltcode \nin Dispensierinformation enthalten)
+    FDV <- FD: Abruf Dispensierinformation
+    FDV -> FDV: Verwendung Freischaltcode\nmit DiGA
+
+    AVS -> AVS: die weitere Verarbeitung\ninklusiver Abrechnung\nerfolgt in Kassenhoheit\nmit den DiGA-Anbietern
+else E-Rezept wird zurückgegeben
+    AVS -> AVS: Prüfung ergibt Rückgabe des E-Rezeptes
+    AVS -> FD: $reject (Rückgabe der Verordnung an den E-Rezept-Fachdienst)
+	
+	AVS -> FD: POST /Communication mit Rückgabegrund als Freitext
+    FDV -> FDV: Darstellung des Rückgabegrundes an den Versicherten
+end
+@enduml  

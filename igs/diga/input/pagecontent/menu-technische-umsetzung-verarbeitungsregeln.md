@@ -1,4 +1,4 @@
-<!-- Verarbeitungsregeln für den E-Rezept-Fachdienst -->
+<!-- Verarbeitungsregeln -->
 
 ### Verordnen durch Psychotherapeuten
 Für die Verordnung von DiGAs durch Psychotherapeuten gelten die gleichen technischen
@@ -12,10 +12,12 @@ verwendet werden, welcher einer der folgenden Berufsgruppe zugeordnet ist:
 Das Primärsystem der Psychotherapeuten Praxis ist über einen Konnektor an das zentrale
 Netz der TI angebunden und greift über das zentrale Netz der TI auf den zentralen IdP-Dienst
 und den E-Rezept-Fachdienst zu.
+
 Die Authentisierung des Primärsystem einer Psychotherapeuten Praxis am E-Rezept-Fachdienst
 erfolgt mittels eines ACCESS_TOKEN. Diese werden durch den zentralen IDP-Dienst
 ausgestellt, welche die Identität des Nutzers attestieren. Eine Nutzung sektoraler IdPDienste
 ist nicht vorgesehen.
+
 Für die Authentisierung nutzt die Psychotherapeuten Praxis ihre SMC-B mit der
 Rolle oid_praxis_psychotherapeut, bzw. in einer Gemeinschaftspraxis mit Ärzten die Rolle
 oid_praxis_arzt.
@@ -24,10 +26,12 @@ oid_praxis_arzt.
 Das Primärsystem des Kostenträgers ist über den Basis-Consumer des Kostenträger an
 das zentrale Netz der TI angebunden und greift über das zentrale Netz der TI auf den
 zentralen IdP-Dienst und den E-Rezept-Fachdienst zu.
+
 Die Authentisierung des Clientsystem eines Kostenträgers am E-Rezept-Fachdienst erfolgt
 mittels eines ACCESS_TOKEN. Diese werden durch den zentralen IDP-Dienst ausgestellt,
 welche die Identität des Nutzers attestieren. Eine Nutzung sektoraler IdP-Dienste ist nicht
 vorgesehen.
+
 Für die Authentisierung nutzt der Kostenträger seine SM-B KTR mit der Rolle oid_kostentraeger.
 
 ### Workflow 162
