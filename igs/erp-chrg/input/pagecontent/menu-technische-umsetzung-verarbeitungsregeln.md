@@ -12,7 +12,7 @@ Der E-Rezept-Fachdienst MUSS ein ChargeItem innerhalb eines Monats nach Ablauf v
 </requirement>
 
 ## Protokollierung
-
+TODO: Fix
 <requirement conformance="SHALL" key="IG-ERP-CHRG-284" title="E-Rezept-Fachdienst – Versichertenprotokoll zu Operationen" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">

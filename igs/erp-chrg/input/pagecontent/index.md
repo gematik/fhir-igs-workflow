@@ -1,13 +1,11 @@
 # Implementation Guide E-Rezept Patientenrechnung (PKV)
 
-Dieser Implementation Guide beschreibt die Uebermittlung von Verordnungen fuer
-PKV-Versicherte sowie die Bereitstellung der Abrechnungsinformationen fuer den
+Dieser Implementation Guide beschreibt die Bereitstellung der Abrechnungsinformationen fuer den
 Kostentraeger. Er ergaenzt die workflowspezifischen Anforderungen des
 E-Rezept-Fachdienstes und beschreibt die relevanten Use Cases.
 
 ## Zweck und Geltungsbereich
 
-- E-Rezepte fuer PKV-Versicherte (Flowtypes 200/209)
 - Abrechnungsinformationen fuer den Kostentraeger
 - PKV-spezifische Anforderungen an Schnittstellen und Datenmodelle
 
