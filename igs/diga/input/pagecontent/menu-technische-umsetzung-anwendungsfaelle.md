@@ -51,8 +51,7 @@ Das E-Rezept-FdV benötigt das Haupt-Institutionskennzeichen (IK) des Kostenträ
 Dieses IK wird über die Authentifizierungsmethoden des E-Rezept-FdV bereitgestellt.
 Das E-Rezept-FdV erhält sowohl bei der Authentifizierung mittels eGK, wie auch mittels
 sektoralem IDP (GesundheitsID) einen ACCESS_TOKEN vom E-Rezept Authorization Server
-(Teil des IDP-Dienstes) ausgestellt. Dieser ACCESS_TOKEN wird erweitert, sodass das IK
-des Kostenträgers dort enthalten ist.
+(Teil des IDP-Dienstes) ausgestellt. Dieser ACCESS_TOKEN enthält das IK des Kostenträgers.
 
 Sobald dem E-Rezept-FdV das IK vorliegt, sucht es im FHIR-VZD nach der Telematik-ID
 des Kostenträgers mithilfe des IK.
