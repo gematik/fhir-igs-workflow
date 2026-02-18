@@ -1,0 +1,20 @@
+actor: []
+conformance: SHALL
+content_hash: 8fe0297c4bbeeace39edcaa5bea0a0a26713cf053420d117f0daa38da41392aa
+created: '2026-02-17T06:28:49.339415'
+date: '2026-02-17T06:28:49.339417'
+key: IG-TIFlow-RX-72
+modified: '2026-02-17T06:28:49.339416'
+release_status: NEW
+source: input/pagecontent/op-accept-fd-requirements.md
+status: ACTIVE
+test_procedures: {}
+text: 'Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
+  ueber /Task/&lt;id&gt;/$accept die Operation mit dem Fehlercode 403 abbrechen, wenn
+  das Ende der Einloesefrist (Task.ExpiryDate) zu einem frueherem Zeitpunkt als das
+  aktuelle Datum liegt, da Verordnungen nur bis Ende der Einloesefrist abgerufen werden
+  duerfen. Im Falle dieses Fehlers ist im OperationOutcome des Response das Ende der
+  Einloesefrist wie folgt anzugeben: "Verordnung bis &lt;Datum&gt; einloesbar.", wobei
+  &lt;Datum&gt; der Wert Task.ExpiryDate im Format "dd.mm.yyyy" ist.'
+title: E-Rezept-Fachdienst - Task akzeptieren - Ende Einloesefrist pruefen (A_23539-01)
+version: 0

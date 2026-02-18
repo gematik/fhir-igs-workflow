@@ -3,7 +3,7 @@ Parent: Consent
 Id: GEM-ERPEU-PR-Consent
 Title: "Consent for ePrescriptions"
 Description: "Records the consent of the patient for an operation in the context of ePrescription."
-* insert Profile(GEM_ERPEU_PR_Consent)
+* insert Versioning
 
 * status = #active (exactly)
 * scope.coding 1..1

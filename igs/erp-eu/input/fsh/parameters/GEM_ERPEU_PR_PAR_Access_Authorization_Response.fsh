@@ -3,7 +3,7 @@ Parent: Parameters
 Id: GEM-ERPEU-PR-PAR-AccessAuthorization-Response
 Title: "GEM ERPEU PR PAR Access Authorization Response"
 Description: "Displays Response Parameters for EU Access Authorization"
-* insert Profile(GEM_ERPEU_PR_PAR_Access_Authorization_Response)
+* insert Versioning
 
 * parameter 4..4
 * parameter ^slicing.discriminator.type = #pattern

@@ -1,5 +1,5 @@
 Instance: ExampleCloseInputParameters
-InstanceOf: GEM_ERP_PR_PAR_CloseOperation_Input
+InstanceOf: EFlowRxCloseOperationInputParameters
 Usage: #example
 Title: "Beispiel Close-Parameter"
 Description: "Beispiel für Eingabeparameter der Close-Operation mit einfacher Medikamentenabgabe"
@@ -13,7 +13,7 @@ Description: "Beispiel für Eingabeparameter der Close-Operation mit einfacher M
     * resource = SumatripanMedication
 
 Instance: ExampleCloseInputParametersMultipleMedicationDispenses
-InstanceOf: GEM_ERP_PR_PAR_CloseOperation_Input
+InstanceOf: EFlowRxCloseOperationInputParameters
 Title: "Beispiel Close-Parameter mit mehreren MedicationDispenses"
 Description: "Beispiel für Eingabeparameter der Close-Operation mit mehreren Medikamentenabgaben"
 Usage: #example
@@ -35,7 +35,7 @@ Usage: #example
     * resource = SimpleMedication
 
 Instance: ExampleCloseInputParametersKombipackung
-InstanceOf: GEM_ERP_PR_PAR_CloseOperation_Input
+InstanceOf: EFlowRxCloseOperationInputParameters
 Usage: #example
 Title: "Beispiel Close-Parameter für Kombipackung"
 Description: "Beispiel für Eingabeparameter der Close-Operation für eine Kombipackung"
@@ -49,7 +49,7 @@ Description: "Beispiel für Eingabeparameter der Close-Operation für eine Kombi
     * resource = Medication-Kombipackung
 
 Instance: ExampleCloseInputParametersRezeptur
-InstanceOf: GEM_ERP_PR_PAR_CloseOperation_Input
+InstanceOf: EFlowRxCloseOperationInputParameters
 Usage: #example
 Title: "Example Close Parameters"
 * parameter[rxDispensation]
@@ -63,7 +63,7 @@ Title: "Example Close Parameters"
 
 /*
 Instance: INVALID-ExampleCloseInputParametersWithoutMedication
-InstanceOf: GEM_ERP_PR_PAR_CloseOperation_Input
+InstanceOf: EFlowRxCloseOperationInputParameters
 Usage: #example
 Title: "Example Close Parameters"
 * parameter[rxDispensation]
@@ -73,7 +73,7 @@ Title: "Example Close Parameters"
     * resource = Example-MedicationDispense-Without-Medication
 
 Instance: INVALID-ExampleCloseInputParametersWithoutMedicationDispense
-InstanceOf: GEM_ERP_PR_PAR_CloseOperation_Input
+InstanceOf: EFlowRxCloseOperationInputParameters
 Usage: #example
 Title: "Example Close Parameters"
 * parameter[rxDispensation]
@@ -83,14 +83,14 @@ Title: "Example Close Parameters"
     * resource = SimpleMedication
 
 Instance: INVALID-ExampleCloseInputParametersNoParts
-InstanceOf: GEM_ERP_PR_PAR_CloseOperation_Input
+InstanceOf: EFlowRxCloseOperationInputParameters
 Usage: #example
 Title: "Example Close Parameters"
 * parameter[rxDispensation]
   * name = "rxDispensation"
 
 Instance: INVALID-ExampleCloseInputParametersReferenceWrong
-InstanceOf: GEM_ERP_PR_PAR_CloseOperation_Input
+InstanceOf: EFlowRxCloseOperationInputParameters
 Usage: #example
 Title: "Example Close Parameters"
 * parameter[rxDispensation]
@@ -103,7 +103,7 @@ Title: "Example Close Parameters"
     * resource = SimpleMedication
 
 Instance: INVALID-ExampleCloseInputParametersReferenceWrongMultiple
-InstanceOf: GEM_ERP_PR_PAR_CloseOperation_Input
+InstanceOf: EFlowRxCloseOperationInputParameters
 Usage: #example
 Title: "Example Close Parameters"
 * parameter[rxDispensation][+]

@@ -1,0 +1,21 @@
+actor: []
+conformance: SHALL
+content_hash: 14eefd137a7e6d98ef73d12035d7a14949e6766d5db19bd8041616452b4195b3
+created: '2026-02-17T06:28:49.346146'
+date: '2026-02-17T06:28:49.346148'
+key: IG-TIFlow-RX-128
+modified: '2026-02-17T06:28:49.346147'
+release_status: NEW
+source: input/pagecontent/op-dispense-fd-requirements.md
+status: ACTIVE
+test_procedures: {}
+text: Der E-Rezept-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen
+  mittels POST /Task/&lt;id&gt;/$dispense das im URL-Parameter "?secret=..." uebertragene
+  Secret gegen das im referenzierten Task gespeicherte Secret Task.identifier:Secret
+  als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret pruefen und bei Ungleichheit
+  oder Fehlen des URL-Parameters die Operation mit dem HTTP-Fehlercode 403 abbrechen,
+  damit der Zugriff auf diesen Datensatz nur durch den Berechtigten in Kenntnis des
+  Secrets erfolgt.
+title: E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Pruefung Secret
+  (A_24280)
+version: 0

@@ -1,0 +1,33 @@
+@startuml
+title UC 4.1 - E-Rezept durch Abgebenden abrufen
+
+actor "Mitarbeiter Apotheke" as MA
+participant "AVS" as AVS
+participant "Identity Provider" as IDP
+participant "E-Rezept Fachdienst" as FD
+participant "Konnektor" as K
+
+MA -> AVS: E-Rezept abrufen()
+activate AVS
+AVS -> AVS: Rezept-ID und AccessCode aus Token ermitteln()
+
+opt kein gueltiger AuthN-Token
+  ref over AVS, IDP: AuthN-Token anfordern
+end
+
+AVS -> FD: POST /Task/{id}/$accept (AuthN-Token, AccessCode)
+activate FD
+FD -> FD: Status auf "in Abgabe (gesperrt)" setzen()
+FD -> FD: Geheimnis erzeugen()
+FD --> AVS: Task, Binary, Geheimnis
+deactivate FD
+
+AVS -> K: QES pruefen(Binary)
+activate K
+K --> AVS: Ergebnis
+deactivate K
+
+AVS --> MA: Status und Verordnungsdaten
+deactivate AVS
+
+@enduml

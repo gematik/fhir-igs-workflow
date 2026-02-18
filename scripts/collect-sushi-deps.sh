@@ -55,6 +55,13 @@ sort -u -o "$installed_deps_file" "$installed_deps_file"
 installed_list=$(comm -12 "$all_deps_file" "$installed_deps_file" || true)
 missing_list=$(comm -23 "$all_deps_file" "$installed_deps_file" || true)
 
+install_mode="${INSTALL_SUSHI_DEPS:-prompt}"
+if [[ -n "${CI:-}" || ! -t 0 ]]; then
+  if [[ "${install_mode}" == "prompt" ]]; then
+    install_mode="skip"
+  fi
+fi
+
 format_list() {
   local input="$1"
   if [[ -z "$input" ]]; then
@@ -79,18 +86,42 @@ format_list "$missing_list"
 
 if [[ -n "$missing_list" ]]; then
   echo
-  read -r -p "Install now (y/n)? " answer
-  if [[ "$answer" == "y" || "$answer" == "Y" ]]; then
-    while IFS= read -r line; do
-      [[ -z "$line" ]] && continue
-      pkg="${line%% *}"
-      ver="${line#* }"
-      echo "Installing ${pkg} ${ver}..."
-      fhir install "${pkg}" "${ver}"
-    done <<< "$missing_list"
-  else
-    echo "Skipping install."
-  fi
+  case "$install_mode" in
+    auto)
+      if ! command -v fhir >/dev/null 2>&1; then
+        echo "Warning: fhir CLI not found; skipping install." >&2
+        exit 0
+      fi
+      while IFS= read -r line; do
+        [[ -z "$line" ]] && continue
+        pkg="${line%% *}"
+        ver="${line#* }"
+        echo "Installing ${pkg} ${ver}..."
+        fhir install "${pkg}" "${ver}"
+      done <<< "$missing_list"
+      ;;
+    skip)
+      echo "Skipping install."
+      ;;
+    *)
+      read -r -p "Install now (y/n)? " answer
+      if [[ "$answer" == "y" || "$answer" == "Y" ]]; then
+        if ! command -v fhir >/dev/null 2>&1; then
+          echo "Error: fhir CLI not found; cannot install." >&2
+          exit 1
+        fi
+        while IFS= read -r line; do
+          [[ -z "$line" ]] && continue
+          pkg="${line%% *}"
+          ver="${line#* }"
+          echo "Installing ${pkg} ${ver}..."
+          fhir install "${pkg}" "${ver}"
+        done <<< "$missing_list"
+      else
+        echo "Skipping install."
+      fi
+      ;;
+  esac
 else
   echo
   echo "No packages to install."

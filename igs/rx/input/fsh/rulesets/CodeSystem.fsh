@@ -1,5 +1,4 @@
-RuleSet: CodeSystem(name)
-* ^url = "https://gematik.de/fhir/erp/CodeSystem/{name}"
+RuleSet: CodeSystem
 * insert Versioning
 * ^publisher = "gematik GmbH"
 * ^contact.telecom.system = #url

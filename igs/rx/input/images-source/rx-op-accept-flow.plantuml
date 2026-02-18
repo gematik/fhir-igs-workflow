@@ -1,0 +1,28 @@
+@startuml
+!include style.iuml
+
+title RX Operation $accept
+
+start
+:Client ruft POST /Task/{id}/$accept auf;
+:FD prueft Rolle, AccessCode und Task-Status;
+if (ok?) then (ja)
+else (nein)
+  :HTTP 403/409/410;
+  stop
+endif
+
+:FD prueft Einloesefrist (inkl. MVO-Startdatum);
+if (einloesbar?) then (ja)
+else (nein)
+  :HTTP 403;
+  stop
+endif
+
+:FD setzt Task.status = in-progress;
+:FD erzeugt Secret und speichert Task.owner;
+:FD liefert Task + QES-Binary;
+:FD triggert Push an Versicherten;
+stop
+
+@enduml

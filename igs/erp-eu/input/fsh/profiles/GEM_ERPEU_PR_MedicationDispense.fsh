@@ -3,7 +3,7 @@ Parent: EPAMedicationDispense
 Id: GEM-ERPEU-PR-MedicationDispense
 Title: "Dispensation of the Prescription from the EU"
 Description: "Handles information about the redeem of the prescription and the submited medication from the EU."
-* insert Profile(GEM_ERPEU_PR_MedicationDispense)
+* insert Versioning
 
 * identifier contains prescriptionID 1..1
 * identifier[prescriptionID] only EPrescriptionId

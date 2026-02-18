@@ -1,0 +1,35 @@
+@startuml
+!include style.iuml
+
+title RX Operation $activate
+
+start
+:Client ruft POST /Task/{id}/$activate auf;
+:FD prueft AccessCode und Status=draft;
+if (ok?) then (ja)
+else (nein)
+  :HTTP 403;
+  stop
+endif
+
+:FD prueft PKCS#7 / QES / FHIR-Struktur;
+if (valid?) then (ja)
+else (nein)
+  :HTTP 400;
+  stop
+endif
+
+:FD fuehrt Flowtype- und Fachregeln aus (inkl. MVO);
+if (Regeln erfuellt?) then (ja)
+else (nein)
+  :HTTP 400;
+  stop
+endif
+
+:FD speichert Verordnungsdaten und signiertes Bundle;
+:FD setzt Task.status = ready;
+:FD triggert Folgeverarbeitung (ePA/Push);
+:FD gibt Task zurueck;
+stop
+
+@enduml
