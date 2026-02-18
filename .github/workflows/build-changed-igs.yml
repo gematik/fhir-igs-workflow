@@ -139,7 +139,7 @@ jobs:
           ig_list_sorted=$(printf "%s\n" "${ig_list[@]}" | sort -u | tr '\n' ' ' | xargs)
           echo "ig_list=$ig_list_sorted" >> "$GITHUB_OUTPUT"
 
-      - name: Install and inflate FHIR packages
+      - name: Install FHIR packages
         if: steps.igs.outputs.ig_list != ''
         shell: bash
         run: |
@@ -155,10 +155,6 @@ jobs:
               ver="${dep#* }"
               [[ -z "$pkg" || -z "$ver" ]] && continue
               fhir install "$pkg" "$ver"
-              pkg_dir="$cache_dir/${pkg}#${ver}/package"
-              if [[ -d "$pkg_dir" ]]; then
-                (cd "$pkg_dir" && fhir inflate --here)
-              fi
             done
           done
 
