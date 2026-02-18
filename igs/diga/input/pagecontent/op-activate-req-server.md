@@ -69,12 +69,34 @@ Dieser Ausschluss erfolgt temporär. In einer späteren Version können Unfallka
   </actor>
   Der E-Rezept-Fachdienst MUSS bei einem Task mit Task.flowType = 162 die Attribute in Task in Abhängigkeit des in der http-POST-Operation /Task/&#60;id&#62;/$activate übergebenen gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_005 belegen.
   *TAB_eRpDM_005 Prozessparameter Flowtype 162*
-  | Feld in Task | Feldbelegung |
-  |:-------------------|:--------------------------------|
-  | Task.performerType.coding.system | "https://gematik.de/fhir/erp/CodeSystemGEM_ERP_CS_OrganizationType" |
-  | Task.performerType.coding.code | "1.2.276.0.76.4.59" |
-  | Task.performerType.coding.diplay | "Kostenträger" |
-  | Task.PrescriptionType.valueCoding.display | "Flowtype für Digitale Gesundheitsanwendungen" |
-  | Task.ExpiryDate | &#60;Datum der QES.Erstellung im Signaturobjekt&#62; + 3 Kalendermonate |
-  | Task.AcceptDate | &#60;Datum der QES.Erstellung im Signaturobjekt&#62; + 3 Kalendermonate |
+  <table>
+    <tr> 
+      <th>Feld in Task</th>
+      <th>Feldbelegung</th>
+    </tr>
+    <tr> 
+      <td>Task.performerType.coding.system</td>
+      <td>"https://gematik.de/fhir/erp/CodeSystemGEM_ERP_CS_OrganizationType"</td>
+    </tr>
+    <tr> 
+      <td>Task.performerType.coding.code</td>
+      <td>"1.2.276.0.76.4.59"</td>
+    </tr>
+     <tr> 
+      <td>Task.performerType.coding.diplay</td>
+      <td>"Kostenträger"</td>
+    </tr>
+    <tr> 
+      <td>Task.PrescriptionType.valueCoding.display</td>
+      <td>"Flowtype für Digitale Gesundheitsanwendungen"</td>
+    </tr>
+    <tr> 
+      <td>Task.ExpiryDate</td>
+      <td>&#60;Datum der QES.Erstellung im Signaturobjekt&#62; + 3 Kalendermonate</td>
+    </tr>
+    <tr> 
+      <td>Task.AcceptDate</td>
+      <td>&#60;Datum der QES.Erstellung im Signaturobjekt&#62; + 3 Kalendermonate</td>
+    </tr>
+  </table>
 </requirement>

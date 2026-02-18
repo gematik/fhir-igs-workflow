@@ -72,13 +72,10 @@ Krankenkasse aus, bei der er versichert ist und kann so die Einlösung vornehmen
 
 ##### Zuweisen der Verordnung durch den Versicherten
 
-Sobald die Telematik-ID im E-Rezept-FdV vorliegt, kann der Versicherte das E-Rezept
+Sobald die Telematik-ID im E-Rezept-FdV vorliegt, kann der Versicherte die Verordnung
 seinem Kostenträger zuweisen. Hierzu wird eine Communication
-(GEM_ERP_PR_Communication_DispReq) erstellt und der E-Rezept-Token eingebettet. Das
-FHIR-Profil wird dahingehend angepasst, dass Communication.payload eine Kardinalität
-von 0..1 hat, da beim Zuweisen im Rahmen einer DiGA-Verordnung kein Payload mit
-Zusatzinformationen wie bspw. Kontaktdaten und Belieferungsoptionen übertragen
-werden muss.
+(GEM_ERP_PR_Communication_DispReq) erstellt und der E-Rezept-Token eingebettet. 
+Beim Zuweisen im Rahmen einer DiGA-Verordnung wird kein Payload mit Zusatzinformationen wie bspw. Kontaktdaten und Belieferungsoptionen übertragen.
 
 #### Anwändungsfälle im Rahmen des Einlösens durch Kostenträger
 
