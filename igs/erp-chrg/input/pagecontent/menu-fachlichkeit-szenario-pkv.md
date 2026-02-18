@@ -19,6 +19,18 @@ Die digitale Abrechnungsinformation besteht aus den folgenden Datensätzen:
 - PKV-Abgabedatensatz
 - Quittungsdatensatz
 
+### TODO: Die Einwilligung zum Speichern der Abrechungsinformationen
+...
+
+**Beteiligte Akteure:** 
+- PKV-Versicherter
+
+**Fachliche Anwendungsfälle**
+
+{% assign scenario_use_cases = "AF_10084, AF_10086" | split: ", " %}
+
+{% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Fachliche Anwendungsfälle mit Bezug zu Szenario <i>Verordnungen für PKV-Versicherte</i>" %}
+
 ### Verordnungen für PKV-Versicherte
 Die Verordnung erfolgt analog zu den bestehenden E-Rezept-Workflows. Für PKV-Versicherte werden die Flowtypes 200 und 209 genutzt. Der Verordnungsdatensatz basiert auf dem KBV-Modell [eRezept-Profile].
 

@@ -1,8 +1,8 @@
-Datenschutz und Sicherheit
-
 PKV-Versicherte erhalten Abrechnungsinformationen, die sie bei ihrer privaten Krankenversicherung zur Kostenerstattung einreichen. Der PKV-Abgabedatensatz wird nur gespeichert, wenn eine einmalige Einwilligung des Versicherten vorliegt. Die Abrechnungsinformationen werden bis zu 10 Jahre gespeichert und können anschließend durch den Versicherten abgerufen, weitergeleitet oder ausgedruckt werden.
 
 Um zu vermeiden, dass der Anbieter des E-Rezept-Fachdienstes ein Profil über alle PKV-Versicherten mit Einwilligung erhält, wird die Information über die Einwilligung in der VAU verarbeitet und verschlüsselt gespeichert. Die Nichtabstreitbarkeit der Einwilligung ist technisch sicherzustellen.
+
+TODO: Sollen wir die Hinweise mit aufnehmen?
 
 <requirement conformance="SHALL" key="IG-ERP-CHRG-229" title="Einwilligung in Verarbeitung von Abrechnungsinformationen nur für PKV-Versicherte" version="0">
     <meta lockversion="false"/>
@@ -12,6 +12,7 @@ Um zu vermeiden, dass der Anbieter des E-Rezept-Fachdienstes ein Profil über al
 Die Fachanwendung E-Rezept MUSS sicherstellen, dass eine Einwilligung in die Verarbeitung von Abrechnungsinformationen nur für PKV-Versicherte möglich ist.
 </requirement>
 
+Für den E-Rezept-Fachdienst heißt dies:
 <requirement conformance="SHALL" key="IG-ERP-CHRG-230" title="Verarbeitung von Abrechnungsinformationen nur nach Einwilligung" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">

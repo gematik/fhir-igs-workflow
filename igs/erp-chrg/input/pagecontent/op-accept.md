@@ -1,5 +1,3 @@
-Operation: $accept
-
 ## Nachricht
 Die Operation $accept wird als HTTP POST auf `/Task/<id>/$accept` ausgeführt.
 
