@@ -339,13 +339,10 @@ Krankenkasse aus, bei der er versichert ist und kann so die Einlösung vornehmen
 
 <h5 id="zuweisen-der-verordnung-durch-den-versicherten">Zuweisen der Verordnung durch den Versicherten</h5>
 
-<p>Sobald die Telematik-ID im E-Rezept-FdV vorliegt, kann der Versicherte das E-Rezept
+<p>Sobald die Telematik-ID im E-Rezept-FdV vorliegt, kann der Versicherte die Verordnung
 seinem Kostenträger zuweisen. Hierzu wird eine Communication
-(GEM_ERP_PR_Communication_DispReq) erstellt und der E-Rezept-Token eingebettet. Das
-FHIR-Profil wird dahingehend angepasst, dass Communication.payload eine Kardinalität
-von 0..1 hat, da beim Zuweisen im Rahmen einer DiGA-Verordnung kein Payload mit
-Zusatzinformationen wie bspw. Kontaktdaten und Belieferungsoptionen übertragen
-werden muss.</p>
+(GEM_ERP_PR_Communication_DispReq) erstellt und der E-Rezept-Token eingebettet. 
+Beim Zuweisen im Rahmen einer DiGA-Verordnung wird kein Payload mit Zusatzinformationen wie bspw. Kontaktdaten und Belieferungsoptionen übertragen.</p>
 
 <h4 id="anwändungsfälle-im-rahmen-des-einlösens-durch-kostenträger">Anwändungsfälle im Rahmen des Einlösens durch Kostenträger</h4>
 
@@ -443,7 +440,7 @@ Der Versicherte weist die Verordnung dem Kostenträger zu. Dazu wird eine Commun
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Feb 18, 2026 12:12+0000">2026-02-18</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Feb 18, 2026 15:20+0000">2026-02-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

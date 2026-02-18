@@ -11,7 +11,7 @@ Version 2.0.0-draft - ci-build
 
 Diese Seite bietet einen Einstieg in die Query-API-Seiten der einzelnen FHIR-Ressourcen.
 
-## Ressourcen
+### Ressourcen
 
 * [Task](./query-api-task.md)
 * [Communication](./query-api-communication.md)

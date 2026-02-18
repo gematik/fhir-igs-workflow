@@ -28,5 +28,18 @@ Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Task des Flowtype Task.extens
 Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Task des Flowtype Task.extension:flowType = 162 mittels HTTP-POST-Operation über /Task/<id>/$activate prüfen, ob die Extension Coverage.payor.identifier.extension:alternativeID vorhanden ist und in diesem Fall die Operation mit Http-Fehlercode 400 abbrechen, um sicherzustellen, dass dieser Workflow nicht für Verordnungen genutzt wird, die zu Lasten von Unfallkassen oder Berufsgenossenschaften gehen.
 Dieser Ausschluss erfolgt temporär. In einer späteren Version können Unfallkassen das Verordnen von DiGAs explizit unterstützen. Die konkreten Festlegungen dazu werden in einem Folgerelease getroffen.
 
-Der E-Rezept-Fachdienst MUSS bei einem Task mit Task.flowType = 162 die Attribute in Task in Abhängigkeit des in der http-POST-Operation /Task/<id>/$activate übergebenen gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_005 belegen. *TAB_eRpDM_005 Prozessparameter Flowtype 162* | Feld in Task | Feldbelegung | |:-------------------|:--------------------------------| | Task.performerType.coding.system | "https://gematik.de/fhir/erp/CodeSystemGEM_ERP_CS_OrganizationType" | | Task.performerType.coding.code | "1.2.276.0.76.4.59" | | Task.performerType.coding.diplay | "Kostenträger" | | Task.PrescriptionType.valueCoding.display | "Flowtype für Digitale Gesundheitsanwendungen" | | Task.ExpiryDate | <Datum der QES.Erstellung im Signaturobjekt> + 3 Kalendermonate | | Task.AcceptDate | <Datum der QES.Erstellung im Signaturobjekt> + 3 Kalendermonate |
+Der E-Rezept-Fachdienst MUSS bei einem Task mit Task.flowType = 162 die Attribute in Task in Abhängigkeit des in der http-POST-Operation /Task/<id>/$activate übergebenen gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_005 belegen. *TAB_eRpDM_005 Prozessparameter Flowtype 162*
+
+* Feld in Task: Task.performerType.coding.system
+  * Feldbelegung: "https://gematik.de/fhir/erp/CodeSystemGEM_ERP_CS_OrganizationType"
+* Feld in Task: Task.performerType.coding.code
+  * Feldbelegung: "1.2.276.0.76.4.59"
+* Feld in Task: Task.performerType.coding.diplay
+  * Feldbelegung: "Kostenträger"
+* Feld in Task: Task.PrescriptionType.valueCoding.display
+  * Feldbelegung: "Flowtype für Digitale Gesundheitsanwendungen"
+* Feld in Task: Task.ExpiryDate
+  * Feldbelegung: <Datum der QES.Erstellung im Signaturobjekt> + 3 Kalendermonate
+* Feld in Task: Task.AcceptDate
+  * Feldbelegung: <Datum der QES.Erstellung im Signaturobjekt> + 3 Kalendermonate
 

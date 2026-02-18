@@ -98,7 +98,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "ERezeptDiGA",
   "title" : "Verordnungen für Digitale Gesundheitsanwendungen (DiGA)",
   "status" : "draft",
-  "date" : "2026-02-18T12:12:52+00:00",
+  "date" : "2026-02-18T15:20:33+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [
     {
@@ -1179,7 +1179,31 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
               ],
               "nameUrl" : "query-api-communication.html",
               "title" : "Query API: Communication",
-              "generation" : "markdown"
+              "generation" : "markdown",
+              "page" : [
+                {
+                  "extension" : [
+                    {
+                      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                      "valueUrl" : "query-api-communication-req-fdv.html"
+                    }
+                  ],
+                  "nameUrl" : "query-api-communication-req-fdv.html",
+                  "title" : "Anforderungen an das E-Rezept-FdV für Communication API",
+                  "generation" : "markdown"
+                },
+                {
+                  "extension" : [
+                    {
+                      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                      "valueUrl" : "query-api-communication-req-ktr.html"
+                    }
+                  ],
+                  "nameUrl" : "query-api-communication-req-ktr.html",
+                  "title" : "Anforderungen an das Clientsystem des Kostenträgers für Communication API",
+                  "generation" : "markdown"
+                }
+              ]
             },
             {
               "extension" : [
@@ -1214,7 +1238,20 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
               ],
               "nameUrl" : "op-create.html",
               "title" : "Operation: $create",
-              "generation" : "markdown"
+              "generation" : "markdown",
+              "page" : [
+                {
+                  "extension" : [
+                    {
+                      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                      "valueUrl" : "op-create-req-client.html"
+                    }
+                  ],
+                  "nameUrl" : "op-create-req-client.html",
+                  "title" : "Anforderungen an den verordnende Primärsystem für die $create-Operation",
+                  "generation" : "markdown"
+                }
+              ]
             },
             {
               "extension" : [
