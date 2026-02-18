@@ -20,7 +20,7 @@ Version 2.0.0-draft - ci-build
   "id" : "ExampleCloseInputParametersDiGA",
   "meta" : {
     "profile" : [
-      "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_PR_PAR_CloseOperation_Input|2.0"
+      "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM-ERP-PR-PAR-CloseOperation-Input"
     ]
   },
   "parameter" : [
@@ -34,7 +34,7 @@ Version 2.0.0-draft - ci-build
             "id" : "Example-MedicationDispense-DiGA-Name-And-PZN",
             "meta" : {
               "profile" : [
-                "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA|2.0"
+                "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM-ERP-PR-MedicationDispense-DiGA"
               ]
             },
             "extension" : [

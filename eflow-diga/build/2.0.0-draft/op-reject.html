@@ -284,8 +284,14 @@ ToDo: link zu übergreifenden Anforderungen</p>
 <p>-API BEschreibung aus Cap Statement</p>
 
 <h3 id="hinweis">Hinweis</h3>
-<p>Es gelten die Vorgaben des Basis-Workflows für E-Rezepte.
-ToDo: Warnungen aus API, z.B. $create nicht auf Vorrat</p>
+<p>Falls es bei der Verarbeitung einer Zuweisung einer digitalen Gesundheitsanwendung zu
+einem Fehler kommt, bspw. wenn der Nutzer nicht beim Kostenträger versichert ist, muss
+das Clientsystem den Nutzer informieren und das E-Rezept zur weiteren Nutzung
+zurückgeben.</p>
+
+<p>Hierzu führt der Kostenträger die E-Rezept-Fachdienst Operation “$reject” aus und
+übermittelt dem Nutzer eine Communication GEM_ERP_PR_Communication_DiGA in der der Kostenträger
+angeben kann, warum die Verordnung nicht bearbeitet werden kann.</p>
 
 <h3 id="geschäftslogik">Geschäftslogik</h3>
 <p>ToDo: Diagram zum Ablauf</p>
@@ -309,7 +315,7 @@ ToDo: Warnungen aus API, z.B. $create nicht auf Vorrat</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Feb 17, 2026 10:50+0000">2026-02-17</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Feb 18, 2026 12:12+0000">2026-02-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

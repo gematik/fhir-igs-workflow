@@ -12,22 +12,12 @@
   <sch:pattern>
     <sch:title>f:Communication</sch:title>
     <sch:rule context="f:Communication">
-      <sch:assert test="count(f:meta) &gt;= 1">meta: minimum cardinality of 'meta' is 1</sch:assert>
       <sch:assert test="count(f:basedOn) &gt;= 1">basedOn: minimum cardinality of 'basedOn' is 1</sch:assert>
       <sch:assert test="count(f:basedOn) &lt;= 1">basedOn: maximum cardinality of 'basedOn' is 1</sch:assert>
       <sch:assert test="count(f:recipient) &gt;= 1">recipient: minimum cardinality of 'recipient' is 1</sch:assert>
       <sch:assert test="count(f:recipient) &lt;= 1">recipient: maximum cardinality of 'recipient' is 1</sch:assert>
       <sch:assert test="count(f:payload) &gt;= 1">payload: minimum cardinality of 'payload' is 1</sch:assert>
       <sch:assert test="count(f:payload) &lt;= 1">payload: maximum cardinality of 'payload' is 1</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:title>f:Communication/f:meta</sch:title>
-    <sch:rule context="f:Communication/f:meta">
-      <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
-      <sch:assert test="count(f:versionId) &lt;= 1">versionId: maximum cardinality of 'versionId' is 1</sch:assert>
-      <sch:assert test="count(f:lastUpdated) &lt;= 1">lastUpdated: maximum cardinality of 'lastUpdated' is 1</sch:assert>
-      <sch:assert test="count(f:source) &lt;= 1">source: maximum cardinality of 'source' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>

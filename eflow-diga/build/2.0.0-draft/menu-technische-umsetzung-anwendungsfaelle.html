@@ -302,6 +302,7 @@ zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel konzipiert wu
   <li>UC 3.4 - Nachrichten durch Versicherten empfangen</li>
   <li>UC 3.8 - Nachricht durch Versicherten löschen</li>
   <li>UC 3.5 - Protokolldaten abrufen</li>
+  <li>Kostenträger suchen</li>
 </ul>
 
 <p>Für das Übermitteln der Verordnung wird als Adressat der Kostenträger ausgewählt. Bei
@@ -317,8 +318,7 @@ Empfängeradresse der Nachricht ermitteln.</p>
 Dieses IK wird über die Authentifizierungsmethoden des E-Rezept-FdV bereitgestellt.
 Das E-Rezept-FdV erhält sowohl bei der Authentifizierung mittels eGK, wie auch mittels
 sektoralem IDP (GesundheitsID) einen ACCESS_TOKEN vom E-Rezept Authorization Server
-(Teil des IDP-Dienstes) ausgestellt. Dieser ACCESS_TOKEN wird erweitert, sodass das IK
-des Kostenträgers dort enthalten ist.</p>
+(Teil des IDP-Dienstes) ausgestellt. Dieser ACCESS_TOKEN enthält das IK des Kostenträgers.</p>
 
 <p>Sobald dem E-Rezept-FdV das IK vorliegt, sucht es im FHIR-VZD nach der Telematik-ID
 des Kostenträgers mithilfe des IK.</p>
@@ -443,7 +443,7 @@ Der Versicherte weist die Verordnung dem Kostenträger zu. Dazu wird eine Commun
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Feb 17, 2026 10:50+0000">2026-02-17</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Feb 18, 2026 12:12+0000">2026-02-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

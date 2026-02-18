@@ -32,9 +32,9 @@ PVS/KIS greifen auf das BfArM-DiGA-Verzeichnis zu, wählen die passende PZN (ink
 
 | |
 | :--- |
-| [E-Rezept erstellen](menu-fachlichkeit-anwendungsfaelle.md#e-rezept-erstellen) |
-| [E-Rezept qualifiziert signieren](menu-fachlichkeit-anwendungsfaelle.md#e-rezept-qualifiziert-signieren) |
-| [E-Rezept vervollstaendigen und Task aktivieren](menu-fachlichkeit-anwendungsfaelle.md#e-rezept-vervollstaendigen-und-task-aktivieren) |
+|  |
+| [E-Rezept qualifiziert signieren](menu-technische-umsetzung-anwendungsfaelle.md#e-rezept-qualifiziert-signieren) |
+|  |
 
 ### DiGA zuweisen und Freischaltcode anfordern
 
@@ -46,7 +46,7 @@ Versicherte sehen eine neue DiGA-Verordnung im E-Rezept-FdV (oder erhalten einen
 
 | |
 | :--- |
-| [DiGA-Verordnung einem Kostentraeger zuweisen](menu-fachlichkeit-anwendungsfaelle.md#diga-e-rezept-zuweisen) |
+|  |
 
 ### Prüfung durch Kostenträger und Bereitstellung des Freischaltcodes
 
@@ -58,6 +58,6 @@ Kostenträger authentisieren sich über ihren Basis-Consumer, rufen die Verordnu
 
 | |
 | :--- |
-| [DiGA-E-Rezept abrufen (Kostentraeger)](menu-fachlichkeit-anwendungsfaelle.md#diga-e-rezept-abrufen-kostentraeger) |
-| [Freischaltcode bereitstellen oder Rueckmeldung geben](menu-fachlichkeit-anwendungsfaelle.md#diga-freischaltcode-bereitstellen) |
+|  |
+|  |
 

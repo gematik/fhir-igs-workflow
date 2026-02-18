@@ -12,7 +12,7 @@ Version 2.0.0-draft - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/erp-diga/ImplementationGuide/de.gematik.eflow-diga | *Version*:2.0.0-draft |
-| Draft as of 2026-02-17 | *Computable Name*:ERezeptDiGA |
+| Draft as of 2026-02-18 | *Computable Name*:ERezeptDiGA |
 
 Dieser Implementation Guide beschreibt das Feature zur elektronischen Verordnung von Digitalen Gesundheitsanwendungen (DiGA). Er beschreibt DiGA-spezifische Anforderungen und Use Cases für Verordnende, Kostenträger und Versicherte.
 
@@ -98,7 +98,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "ERezeptDiGA",
   "title" : "Verordnungen für Digitale Gesundheitsanwendungen (DiGA)",
   "status" : "draft",
-  "date" : "2026-02-17T10:50:58+00:00",
+  "date" : "2026-02-18T12:12:52+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [
     {
@@ -843,7 +843,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
         },
         "name" : "DiGA-Nachricht eines Kostenträgers an den Patienten",
         "description" : "Beispiel für eine DiGA-bezogene Nachricht, die vom Kostenträger an den Patienten gesendet wird",
-        "exampleCanonical" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_PR_Communication_DiGA"
+        "exampleCanonical" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM-ERP-PR-Communication-DiGA"
       },
       {
         "extension" : [
@@ -870,7 +870,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
           "reference" : "Parameters/ExampleCloseInputParametersDiGA"
         },
         "name" : "Example Close Parameters",
-        "exampleCanonical" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_PR_PAR_CloseOperation_Input"
+        "exampleCanonical" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM-ERP-PR-PAR-CloseOperation-Input"
       },
       {
         "extension" : [
@@ -908,7 +908,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
           }
         ],
         "reference" : {
-          "reference" : "StructureDefinition/GEM-ERP-PR-PAR-Close-Operation-Input"
+          "reference" : "StructureDefinition/GEM-ERP-PR-PAR-CloseOperation-Input"
         },
         "name" : "GEM ERP PR CloseOperation Input",
         "description" : "Dieses Profil definiert die Parameter fuer das Schliessen eines Workflows fuer ein Rezept vom AVS zum E-Rezept-Fachdienst. Dies kann fuer die Operationen $close und $dispense verwendet werden.",
@@ -968,7 +968,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
         },
         "name" : "Medication Dispense DiGA with a deep link.",
         "description" : "Example of a Medication Dispense for DiGAs which states a deep link.",
-        "exampleCanonical" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA"
+        "exampleCanonical" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM-ERP-PR-MedicationDispense-DiGA"
       },
       {
         "extension" : [
@@ -982,7 +982,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
         },
         "name" : "Medication Dispense DiGA without a redeem code",
         "description" : "Example of a Medication Dispense for DiGAs which has no redeem code.",
-        "exampleCanonical" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA"
+        "exampleCanonical" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM-ERP-PR-MedicationDispense-DiGA"
       },
       {
         "extension" : [
@@ -996,7 +996,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
         },
         "name" : "Medication Dispense DiGA, Name and PZN",
         "description" : "Example of a Medication Dispense for DiGAs only stating the name of the DiGA.",
-        "exampleCanonical" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA"
+        "exampleCanonical" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM-ERP-PR-MedicationDispense-DiGA"
       }
     ],
     "page" : {
@@ -1306,7 +1306,20 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
           ],
           "nameUrl" : "menu-schnittstellen-additional-api.html",
           "title" : "Additional APIs",
-          "generation" : "markdown"
+          "generation" : "markdown",
+          "page" : [
+            {
+              "extension" : [
+                {
+                  "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                  "valueUrl" : "api-add-fhirvzd.html"
+                }
+              ],
+              "nameUrl" : "api-add-fhirvzd.html",
+              "title" : "API FHIR-VZD",
+              "generation" : "markdown"
+            }
+          ]
         },
         {
           "extension" : [

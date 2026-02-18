@@ -13,13 +13,15 @@ ToDo: link zu übergreifenden Anforderungen
 
 Es gibt keine workflow-spezifischen Anforderungen für den E-Rezept-Fachdienst.
 
-link: AFO FD - Der E-Rezept-Fachdienst MUSS
-link AFO CS - PS der Verordnungen LEI
+Es gibt keine workflow-spezifischen Anforderungen für das PS der verordnenden LEI.
+
+Es gibt keine workflow-spezifischen Anforderungen für das E-Rezept-FdV.
+
  
 -API BEschreibung aus Cap Statement
  
 ### Hinweis
-ToDo: Warnungen aus API, z.B. $create nicht auf Vorrat
+keine
  
 ### Geschäftslogik
 ToDo: Diagram zum Ablauf

@@ -10,7 +10,7 @@ Version 2.0.0-draft - ci-build
 
 ## Example MedicationDispense: Medication Dispense DiGA without a redeem code
 
-Profile: [GEM ERP PR MedicationDispense DiGAversion: null2.0.0-draft)](StructureDefinition-GEM-ERP-PR-MedicationDispense-DiGA.md)
+Profile: [GEM ERP PR MedicationDispense DiGA](StructureDefinition-GEM-ERP-PR-MedicationDispense-DiGA.md)
 
 **identifier**: `https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId`/162.000.033.491.280.78
 
@@ -46,7 +46,7 @@ Freischaltcode fuer DiGA konnte nicht erstellt werden
   "id" : "Example-MedicationDispense-DiGA-NoRedeemCode",
   "meta" : {
     "profile" : [
-      "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA|2.0"
+      "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM-ERP-PR-MedicationDispense-DiGA"
     ]
   },
   "identifier" : [

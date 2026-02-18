@@ -257,7 +257,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div>
 <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
-<p>Query API: Communication</p>
 
 <p>Communication wird für die Kommunikation zwischen Versicherten und Kostenträger verwendet.</p>
 
@@ -268,6 +267,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </ul>
 
 <p>ToDo: Afo für FD zum Prüfen des Payload ? Afo für FdV für Profilauswahl</p>
+
+<requirement conformance="SHALL" key="IG-TIFlow-DiGA-NEU" title="CS Kostenträger: Nachricht versenden - Flowtype 162 - Communication erstellen" version="0">
+  <meta lockversion="false" />
+  <actor name="CS_E-Rezept_KTR">
+    <testProcedure id="Konformitätsbestätigung" />
+  </actor>
+  Das Clientsystem des Kostenträgers MUSS im Anwendungsfall "Nachricht an Versicherten versenden" eine FHIR-Ressource mit dem Profil GEM_ERP_PR_Communication_DiGA erstellen.
+</requirement>
 
 <p>-API Beschreibung aus Cap Statement</p>
 
@@ -298,7 +305,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Feb 17, 2026 10:50+0000">2026-02-17</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Feb 18, 2026 12:12+0000">2026-02-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -24,13 +24,13 @@ Es gelten die übergreifenden Anforderungen an die $create Operation. ToDo: link
 
 Es gibt keine workflow-spezifischen Anforderungen für den E-Rezept-Fachdienst.
 
-link AFO CS - PS der Verordnungen LEI
+[Workflow-spezifische Anforderungen für das PS der verordnenden LEI](./op-create-req-client.md)
 
 -API BEschreibung aus Cap Statement
 
 ### Hinweis
 
-ToDo: Warnungen aus API, z.B. $create nicht auf Vorrat
+Es ist nicht zulässig Verordnungs-IDs “auf Vorrat” am E-Rezept-Fachdienst abzufragen.
 
 ### Geschäftslogik
 

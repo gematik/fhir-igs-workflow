@@ -12,7 +12,7 @@ Version 2.0.0-draft - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA | *Version*:2.0.0-draft |
+| *Official URL*:https://gematik.de/fhir/erp-diga/StructureDefinition/GEM-ERP-PR-MedicationDispense-DiGA | *Version*:2.0.0-draft |
 | Draft as of 2026-02-06 | *Computable Name*:GEM_ERP_PR_MedicationDispense_DiGA |
 
  
@@ -20,7 +20,7 @@ Dispensierung einer DiGA-Verordnung
 
 **Usages:**
 
-* Use this Profile: [GEM ERP PR CloseOperation Input](StructureDefinition-GEM-ERP-PR-PAR-Close-Operation-Input.md)
+* Use this Profile: [GEM ERP PR CloseOperation Input](StructureDefinition-GEM-ERP-PR-PAR-CloseOperation-Input.md)
 * Examples for this Profile: [MedicationDispense/Example-MedicationDispense-DiGA-DeepLink](MedicationDispense-Example-MedicationDispense-DiGA-DeepLink.md), [MedicationDispense/Example-MedicationDispense-DiGA-Name-And-PZN](MedicationDispense-Example-MedicationDispense-DiGA-Name-And-PZN.md) and [MedicationDispense/Example-MedicationDispense-DiGA-NoRedeemCode](MedicationDispense-Example-MedicationDispense-DiGA-NoRedeemCode.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.eflow-diga|current/StructureDefinition/GEM-ERP-PR-MedicationDispense-DiGA)
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Medicatio
 {
   "resourceType" : "StructureDefinition",
   "id" : "GEM-ERP-PR-MedicationDispense-DiGA",
-  "url" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA",
+  "url" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM-ERP-PR-MedicationDispense-DiGA",
   "version" : "2.0.0-draft",
   "name" : "GEM_ERP_PR_MedicationDispense_DiGA",
   "title" : "GEM ERP PR MedicationDispense DiGA",
@@ -119,55 +119,23 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Medicatio
             "severity" : "error",
             "human" : "Eine Notiz wurde nicht gefunden, ist jedoch obligatorisch, wenn kein Einloesecode angegeben wird.",
             "expression" : "extension.where(url = 'https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_EX_RedeemCode').empty() implies note.exists()",
-            "source" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA"
+            "source" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM-ERP-PR-MedicationDispense-DiGA"
           },
           {
             "key" : "workflow-medicationdispense-redeemcode-2",
             "severity" : "error",
             "human" : "Der Grund fuer fehlende Daten wurde nicht gefunden, ist jedoch obligatorisch, wenn kein Einloesecode angegeben wird.",
             "expression" : "extension.where(url = 'https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_EX_RedeemCode').empty() implies medication.extension.where(url = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason').exists()",
-            "source" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA"
+            "source" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM-ERP-PR-MedicationDispense-DiGA"
           },
           {
             "key" : "workflow-medicationdispense-redeemcode-3",
             "severity" : "error",
             "human" : "Name und Kennung der DiGA wurden nicht gefunden, sind jedoch obligatorisch, wenn ein Einloesecode angegeben wird.",
             "expression" : "extension.where(url = 'https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_EX_RedeemCode').exists() implies (medication.display.exists() and medication.identifier.exists())",
-            "source" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA"
+            "source" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM-ERP-PR-MedicationDispense-DiGA"
           }
         ]
-      },
-      {
-        "id" : "MedicationDispense.meta",
-        "path" : "MedicationDispense.meta",
-        "min" : 1
-      },
-      {
-        "id" : "MedicationDispense.meta.profile",
-        "path" : "MedicationDispense.meta.profile",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "value",
-              "path" : "$this"
-            }
-          ],
-          "description" : "Slicing fuer meta profile",
-          "ordered" : false,
-          "rules" : "closed"
-        },
-        "min" : 1,
-        "max" : "1",
-        "mustSupport" : true
-      },
-      {
-        "id" : "MedicationDispense.meta.profile:workflowProfile",
-        "path" : "MedicationDispense.meta.profile",
-        "sliceName" : "workflowProfile",
-        "min" : 1,
-        "max" : "1",
-        "fixedCanonical" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA|2.0",
-        "mustSupport" : true
       },
       {
         "id" : "MedicationDispense.extension:redeemCode",
@@ -303,7 +271,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Medicatio
             "severity" : "error",
             "human" : "Wert muss ein Datum in der Form: YYYY-MM-DD sein.",
             "expression" : "toString().length()=10",
-            "source" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA"
+            "source" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM-ERP-PR-MedicationDispense-DiGA"
           }
         ]
       },

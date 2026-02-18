@@ -37,6 +37,7 @@ Folgende Anwendungsfälle werden genutzt:
 * UC 3.4 - Nachrichten durch Versicherten empfangen
 * UC 3.8 - Nachricht durch Versicherten löschen
 * UC 3.5 - Protokolldaten abrufen
+* Kostenträger suchen
 
 Für das Übermitteln der Verordnung wird als Adressat der Kostenträger ausgewählt. Bei der Umsetzung im E-Rezept-FdV kann die Auswahl automatisiert erfolgen.
 
@@ -44,7 +45,7 @@ Für das Übermitteln der Verordnung wird als Adressat der Kostenträger ausgew�
 
 Damit das E-Rezept-FdV der gematik “UC 3.3 - Nachricht durch Versicherten übermitteln” ausführen kann, muss es zunächst die Telematik-ID des Kostenträgers als Empfängeradresse der Nachricht ermitteln.
 
-Das E-Rezept-FdV benötigt das Haupt-Institutionskennzeichen (IK) des Kostenträgers. Dieses IK wird über die Authentifizierungsmethoden des E-Rezept-FdV bereitgestellt. Das E-Rezept-FdV erhält sowohl bei der Authentifizierung mittels eGK, wie auch mittels sektoralem IDP (GesundheitsID) einen ACCESS_TOKEN vom E-Rezept Authorization Server (Teil des IDP-Dienstes) ausgestellt. Dieser ACCESS_TOKEN wird erweitert, sodass das IK des Kostenträgers dort enthalten ist.
+Das E-Rezept-FdV benötigt das Haupt-Institutionskennzeichen (IK) des Kostenträgers. Dieses IK wird über die Authentifizierungsmethoden des E-Rezept-FdV bereitgestellt. Das E-Rezept-FdV erhält sowohl bei der Authentifizierung mittels eGK, wie auch mittels sektoralem IDP (GesundheitsID) einen ACCESS_TOKEN vom E-Rezept Authorization Server (Teil des IDP-Dienstes) ausgestellt. Dieser ACCESS_TOKEN enthält das IK des Kostenträgers.
 
 Sobald dem E-Rezept-FdV das IK vorliegt, sucht es im FHIR-VZD nach der Telematik-ID des Kostenträgers mithilfe des IK.
 

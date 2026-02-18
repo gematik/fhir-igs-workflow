@@ -17,7 +17,7 @@ Diese Seite enthält eine Übersicht aller FHIR-Artefakte, die im Rahmen des DiG
 
 | | |
 | :--- | :--- |
-| [ GEM ERP PR CloseOperation Input ](StructureDefinition-GEM-ERP-PR-PAR-Close-Operation-Input.md) | Dieses Profil definiert die Parameter fuer das Schliessen eines Workflows fuer ein Rezept vom AVS zum E-Rezept-Fachdienst. Dies kann fuer die Operationen $close und $dispense verwendet werden. |
+| [ GEM ERP PR CloseOperation Input ](StructureDefinition-GEM-ERP-PR-PAR-CloseOperation-Input.md) | Dieses Profil definiert die Parameter fuer das Schliessen eines Workflows fuer ein Rezept vom AVS zum E-Rezept-Fachdienst. Dies kann fuer die Operationen $close und $dispense verwendet werden. |
 
 **Tabelle:**Parameterprofile
 

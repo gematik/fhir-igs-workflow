@@ -10,7 +10,7 @@ Version 2.0.0-draft - ci-build
 
 ## Example Communication: DiGA-Nachricht eines Kostenträgers an den Patienten
 
-Profile: [GEM ERP PR Communication DiGAversion: null2.0.0-draft)](StructureDefinition-GEM-ERP-PR-Communication-DiGA.md)
+Profile: [GEM ERP PR Communication DiGA](StructureDefinition-GEM-ERP-PR-Communication-DiGA.md)
 
 **basedOn**: [Task/162.000.000.000.000.01](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.org/packages/de.basisprofil.r4/Task/162.000.000.000.000.01)
 
@@ -39,7 +39,7 @@ Profile: [GEM ERP PR Communication DiGAversion: null2.0.0-draft)](StructureDefin
   "id" : "140f716f-f649-44fe-9a4e-157eb3c8adf3",
   "meta" : {
     "profile" : [
-      "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_PR_Communication_DiGA|2.0"
+      "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM-ERP-PR-Communication-DiGA"
     ]
   },
   "basedOn" : [

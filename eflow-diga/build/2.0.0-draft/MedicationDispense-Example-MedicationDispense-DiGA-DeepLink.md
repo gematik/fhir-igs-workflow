@@ -10,7 +10,7 @@ Version 2.0.0-draft - ci-build
 
 ## Example MedicationDispense: Medication Dispense DiGA with a deep link.
 
-Profile: [GEM ERP PR MedicationDispense DiGAversion: null2.0.0-draft)](StructureDefinition-GEM-ERP-PR-MedicationDispense-DiGA.md)
+Profile: [GEM ERP PR MedicationDispense DiGA](StructureDefinition-GEM-ERP-PR-MedicationDispense-DiGA.md)
 
 **GEM ERP EX RedeemCode**: DE12345678901234
 
@@ -43,7 +43,7 @@ Profile: [GEM ERP PR MedicationDispense DiGAversion: null2.0.0-draft)](Structure
   "id" : "Example-MedicationDispense-DiGA-DeepLink",
   "meta" : {
     "profile" : [
-      "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA|2.0"
+      "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM-ERP-PR-MedicationDispense-DiGA"
     ]
   },
   "extension" : [

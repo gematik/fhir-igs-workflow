@@ -12,7 +12,7 @@ Version 2.0.0-draft - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_PR_Communication_DiGA | *Version*:2.0.0-draft |
+| *Official URL*:https://gematik.de/fhir/erp-diga/StructureDefinition/GEM-ERP-PR-Communication-DiGA | *Version*:2.0.0-draft |
 | Draft as of 2026-02-06 | *Computable Name*:GEM_ERP_PR_Communication_DiGA |
 
  
@@ -40,7 +40,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Communica
 {
   "resourceType" : "StructureDefinition",
   "id" : "GEM-ERP-PR-Communication-DiGA",
-  "url" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_PR_Communication_DiGA",
+  "url" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM-ERP-PR-Communication-DiGA",
   "version" : "2.0.0-draft",
   "name" : "GEM_ERP_PR_Communication_DiGA",
   "title" : "GEM ERP PR Communication DiGA",
@@ -102,39 +102,6 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Communica
       {
         "id" : "Communication",
         "path" : "Communication"
-      },
-      {
-        "id" : "Communication.meta",
-        "path" : "Communication.meta",
-        "min" : 1,
-        "mustSupport" : true
-      },
-      {
-        "id" : "Communication.meta.profile",
-        "path" : "Communication.meta.profile",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "value",
-              "path" : "$this"
-            }
-          ],
-          "description" : "Slicing fuer meta profile",
-          "ordered" : false,
-          "rules" : "closed"
-        },
-        "min" : 1,
-        "max" : "1",
-        "mustSupport" : true
-      },
-      {
-        "id" : "Communication.meta.profile:workflowProfile",
-        "path" : "Communication.meta.profile",
-        "sliceName" : "workflowProfile",
-        "min" : 1,
-        "max" : "1",
-        "fixedCanonical" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_PR_Communication_DiGA|2.0",
-        "mustSupport" : true
       },
       {
         "id" : "Communication.basedOn",

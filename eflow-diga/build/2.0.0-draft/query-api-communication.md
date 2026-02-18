@@ -10,8 +10,6 @@ Version 2.0.0-draft - ci-build
 
 ## Query API: Communication
 
-Query API: Communication
-
 Communication wird für die Kommunikation zwischen Versicherten und Kostenträger verwendet.
 
 ## POST /Communication
@@ -21,6 +19,7 @@ Communication wird für die Kommunikation zwischen Versicherten und Kostenträge
 
 ToDo: Afo für FD zum Prüfen des Payload ? Afo für FdV für Profilauswahl
 
+Das Clientsystem des Kostenträgers MUSS im Anwendungsfall "Nachricht an Versicherten versenden" eine FHIR-Ressource mit dem Profil GEM_ERP_PR_Communication_DiGA erstellen.
 -API Beschreibung aus Cap Statement
 
 ## GET /Communication

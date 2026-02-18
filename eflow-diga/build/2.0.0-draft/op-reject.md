@@ -30,7 +30,9 @@ link AFO CS - PS der Verordnungen LEI
 
 ### Hinweis
 
-Es gelten die Vorgaben des Basis-Workflows für E-Rezepte. ToDo: Warnungen aus API, z.B. $create nicht auf Vorrat
+Falls es bei der Verarbeitung einer Zuweisung einer digitalen Gesundheitsanwendung zu einem Fehler kommt, bspw. wenn der Nutzer nicht beim Kostenträger versichert ist, muss das Clientsystem den Nutzer informieren und das E-Rezept zur weiteren Nutzung zurückgeben.
+
+Hierzu führt der Kostenträger die E-Rezept-Fachdienst Operation “$reject” aus und übermittelt dem Nutzer eine Communication GEM_ERP_PR_Communication_DiGA in der der Kostenträger angeben kann, warum die Verordnung nicht bearbeitet werden kann.
 
 ### Geschäftslogik
 
