@@ -59,31 +59,39 @@ core_img_dir = Path(core_img_dir)
 module_img_dir = Path(module_img_dir)
 
 for entry in module_items:
-    if not isinstance(entry, dict):
+  if not isinstance(entry, dict):
+    continue
+  has_core_uc = "core-uc" in entry
+  if has_core_uc:
+    core_id = entry.get("core-uc")
+    if core_id not in core_map:
+      raise SystemExit(f"Unknown core-uc: {core_id}")
+    base = deepcopy(core_map[core_id])
+    merged_entry = base
+    for key, value in entry.items():
+      if key == "core-uc":
         continue
-    if "core-uc" in entry:
-        core_id = entry.get("core-uc")
-        if core_id not in core_map:
-            raise SystemExit(f"Unknown core-uc: {core_id}")
-        base = deepcopy(core_map[core_id])
-        merged_entry = base
-        for key, value in entry.items():
-            if key == "core-uc":
-                continue
-            merged_entry[key] = value
-    else:
-        merged_entry = deepcopy(entry)
+      merged_entry[key] = value
+  else:
+    merged_entry = deepcopy(entry)
 
-    merged.append(merged_entry)
+  merged.append(merged_entry)
 
-    diagram = merged_entry.get("diagram")
-    if diagram:
-      src = core_img_dir / f"{diagram}.plantuml"
-      dst = module_img_dir / f"{diagram}.plantuml"
-      if not src.exists():
-        raise SystemExit(f"Missing PlantUML in core: {src}")
-      if not dst.exists():
-        shutil.copy2(src, dst)
+  diagram = merged_entry.get("diagram")
+  if not diagram:
+    continue
+
+  if has_core_uc:
+    src = core_img_dir / f"{diagram}.plantuml"
+    dst = module_img_dir / f"{diagram}.plantuml"
+    if not src.exists():
+      raise SystemExit(f"Missing PlantUML in core: {src}")
+    if not dst.exists():
+      shutil.copy2(src, dst)
+  else:
+    dst = module_img_dir / f"{diagram}.plantuml"
+    if not dst.exists():
+      raise SystemExit(f"Missing PlantUML in module: {dst}")
 
 print(json.dumps(merged, ensure_ascii=True))
 PY
