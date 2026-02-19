@@ -6,15 +6,21 @@
     <testProcedure id="Produkttest"/>
   </actor>
   Der E-Rezept-Fachdienst MUSS die Aktivierung eines Tasks mit Flowtype 162 mit dem HTTP-Status-Code 400 abbrechen, wenn die QES gemäß der professionOID des Signaturzertifikats des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die der folgenden professionOID entspricht:
+
   -	oid_arzt
+
   -	oid_zahnarzt
+
   -	oid_psychotherapeut
+
   -	oid_ps_psychotherapeut
+  
   -	oid_kuj_psychotherapeut
+
   damit nur solche Leistungserbringer ein signiertes E-Rezept einstellen, die zur Verordnung von DiGAs ermächtigt sind.
 </requirement>
 
-</br>
+<br>
 
 <!-- Quelle: A_25991 - E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Verordnung von DiGAs -->
 <requirement conformance="SHALL" key="IG-TIFlow-DiGA-25" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Verordnung von DiGAs" version="0">
@@ -25,7 +31,7 @@
   Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mit Flowtype 162 mittels $activate prüfen, dass im Bundle eine <i>DeviceRequest</i>-Ressource und in der </i>Composition.type.coding.code=e16D</i> enthalten ist. Der E-Rezept-Fachdienst MUSS andernfalls mit dem HTTP-Fehlercode 400 abbrechen und in der <i>OperationOutcome</i> den Fehlertext "Für diesen Workflowtypen sind nur Verordnungen für Digitale Gesundheitsanwendungen zulässig" ausgeben.
 </requirement>
 
-</br>
+<br>
 
 <!-- Quelle: A_25992 - E-Rezept-Fachdienst - Task aktivieren – Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest -->
 <requirement conformance="SHALL" key="IG-TIFlow-DiGA-26" title="E-Rezept-Fachdienst - Task aktivieren – Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest" version="0">
@@ -37,7 +43,7 @@
   Der E-Rezept-Fachdienst MUSS bei einer fehlerhaften Prüfung mit einem Http-Fehler 400 (Bad Request) abbrechen, sowie die Fehlermeldung "Ungültige PZN: Die übergebene Pharmazentralnummer entspricht nicht den vorgeschriebenen Prüfziffer-Validierungsregeln." in Form eines OperationOutcome ausliefern.
 </requirement>
 
-</br>
+<br>
 
 <!-- Quelle: A_23443-01 - E-Rezept-Fachdienst – Task aktivieren – Flowtype 160/162/169 - Prüfung Coverage Type -->
 <requirement conformance="SHALL" key="IG-TIFlow-DiGA-27" title="E-Rezept-Fachdienst – Task aktivieren – Flowtype 162 - Prüfung Coverage Type" version="0">
@@ -48,7 +54,7 @@
   Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Task des Flowtype Task.extension:flowType = 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate prüfen, obCoverage.type.coding.code nicht mit dem Wert "PKV" belegt ist und im Fehlerfall die Operation mit Http-Fehlercode 400 abbrechen, um sicherzustellen, dass diese Workflows nicht für E-Rezepte für PKV-Versicherte genutzt werden.
 </requirement>
 
-</br>
+<br>
 
 <!-- Quelle: A_26372 - E-Rezept-Fachdienst – Task aktivieren – Flowtype 162 - Prüfung Coverage Alternative IK  -->
 <requirement conformance="SHALL" key="IG-TIFlow-DiGA-28" title="E-Rezept-Fachdienst – Task aktivieren – Flowtype 162 - Prüfung Coverage Alternative IK" version="0">
@@ -68,7 +74,9 @@ Dieser Ausschluss erfolgt temporär. In einer späteren Version können Unfallka
     <testProcedure id="Produkttest"/>
   </actor>
   Der E-Rezept-Fachdienst MUSS bei einem Task mit Task.flowType = 162 die Attribute in Task in Abhängigkeit des in der http-POST-Operation /Task/&#60;id&#62;/$activate übergebenen gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_005 belegen.
-  *TAB_eRpDM_005 Prozessparameter Flowtype 162*
+
+  <b>TAB_eRpDM_005 Prozessparameter Flowtype 162</b>
+  
   <table>
     <tr> 
       <th>Feld in Task</th>
