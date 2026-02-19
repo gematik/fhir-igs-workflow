@@ -1,0 +1,26 @@
+@startuml
+title sd E-Rezept-Token an Apotheker übermitteln
+
+actor "Mitarbeiter\nverordnende LEI" as MA
+participant "Primärsystem\nverordnende LEI" as PVS_V
+participant "Kommunikation im\nMedizinwesen (KIM)" as KIM
+participant "Primärsystem\nabgebende LEI\n(Apotheke, …)" as PVS_A
+
+MA -> PVS_V : E-Rezept-Token an Apotheker übermitteln()
+
+activate PVS_V
+PVS_V -> PVS_V : E-Rezept-Token zu E-Rezept auswählen\n(Task/<id>/$accept?ac=AccessCode)
+PVS_V -> PVS_V : Nachricht erzeugen()
+PVS_V -> KIM : Nachricht senden()
+
+activate KIM
+KIM -> PVS_A : Nachricht empfangen()
+deactivate KIM
+
+activate PVS_A
+PVS_A -> PVS_A : E-Rezept-Token aus Nachricht extrahieren()
+deactivate PVS_A
+
+deactivate PVS_V
+
+@enduml

@@ -1,55 +1,57 @@
 {% assign use_cases = site.data['use-cases'] %}
 
-Das Szenario beschreibt die Workflow-Steuerung durch Leistungserbringer (WF-LE) fuer apothekenpflichtige Arzneimittel.
-Im Unterschied zum Standardprozess steuert hier nicht der Versicherte, sondern die verordnende LEI die Zuweisung an die Apotheke.
+In diesem Abschnitt wird das Feature fachlich motiviert und der Mehrwert für Nutzer vorgestellt. Aus diesen Epics und User Stories wird anschließend ein technisches Konzept abgeleitet.
 
-## Kontext und Zielbild
+### Epic Direkte Zuweisung des E-Rezepts durch den Verordnenden
 
-WF-LE adressiert besondere Versorgungssituationen, in denen ein E-Rezept direkt von der verordnenden LEI an eine abgebende Apotheke zugewiesen wird.
-Der technische Prozess baut auf dem bekannten E-Rezept-Prozess auf und fuehrt fuer die direkte Zuweisung den Flowtype `169` ein.
+Dieses Epic beschreibt besondere Versorgungssituationen, in denen, abweichend vom Regelprozess des E-Rezepts mit Verordnung erstellen → QES → Übergabe an Versicherten → Zuweisung an Apotheke → Dispensierung an Versicherten /Vertreter, ein E-Rezept direkt vom verordnenden Leistungserbringer an die abgebende Apotheke zugewiesen und übermittelt wird. Grundlage für die Anwendung dieses Workflows sind die Regelungen für anwendungsfertige Zytostatikazubereitungen in § 11 Absatz 2 Apothekengesetz (ApoG) und für die Arzneimittelversorgung durch krankenhausversorgende Apotheken und Krankenhausapotheken im Rahmen von § 14 Absätze 7 und 8 des Apothekengesetzes (ApoG).
 
-## Fachlicher Ablauf
+Für die hier dargestellten Verordnungen existiert ein direkter Patientenbezug, sie sind daher abzugrenzen von Verordnungen für Sprechstundenbedarf.
 
-1. Die verordnende LEI erstellt das E-Rezept (inkl. Rezept-ID, QES und Aktivierung) fuer den Flowtype `169`.
-2. Das Primaersystem erzeugt den E-Rezept-Token (Task-ID + AccessCode).
-3. Die verordnende LEI uebermittelt den Token direkt an die ausgewaehlte Apotheke ueber ein geeignetes sicheres Uebermittlungsverfahren.
-4. Die Apotheke ruft das E-Rezept wie im Standardprozess ab und fuehrt Belieferung, Dispensierinformation und Abschluss aus.
+Das Epic beschreibt die Zuweisung und Übermittlung eines E-Rezepts an eine Apotheke durch die verordnenden Leistungserbringer sowie die Abgabe in der Apotheke. Prozesse der Herstellung von Arzneimitteln sowie der Dokumentation der Herstellung als Voraussetzung für die Abrechnung finden außerhalb der TI statt und werden daher hier nicht beschrieben. Da insbesondere im Bereich der Zytostatikazubereitungen zwischen abgebender und herstellender Apotheke unterschieden wird, wird in den folgenden User Stories von der abgebenden Apotheke gesprochen, um diese Prozessabgrenzung zu verdeutlichen.
 
-Der Abruf- und Belieferungsprozess in der Apotheke unterscheidet sich fachlich nicht vom Standardprozess.
+### User Stories
+Voraussetzung jeder nachfolgenden User Story ist, dass die gesetzlichen Grundlagen in § 11 Absatz 2 und § 14 Absätze 7 und 8 des ApoG erfüllt sind.
 
-## Fachliche Unterschiede zum Standard-Workflow 160
+#### Arzt
+- Als Arzt möchte ich für bestimmte Medikamentenverordnungen ein E-Rezept unkompliziert einer Apotheke im gesetzlichen Rahmen direkt zuweisen können.
+- Als Arzt möchte ich für bestimmte Medikamentenverordnungen nicht, dass der Patient diese Verordnungen löscht.
+- Als Arzt möchte ich für bestimmte Medikamentenverordnungen nicht, dass der Patient diese Verordnungen einer Apotheke zuweisen kann.
+- Als Arzt möchte ich für bestimmte Medikamentenverordnungen den von mir gewohnten Standard für die Übermittlung des E-Rezept-Tokens an die Apotheke nutzen, so dass ich ihn beliebig teilen kann (z.B. Ausdruck oder Weiterleiten mit sicherem Übermittlungsverfahren).
+- Als Arzt möchte ich für bestimmte Medikamentenverordnungen E-Rezepte bestimmten, von mir einstellbaren Apotheken zuweisen können.
+- Als Arzt möchte ich für bestimmte Medikamentenverordnungen E-Rezepte automatisch an meine herstellende Apotheke zuweisen können, wenn ich die herstellende Apotheke vorher festgelegt und die automatische Zuweisung eingerichtet habe, so dass ich mir zusätzliche und sich wiederholende Arbeitsschritte sparen kann.
+- Als Arzt möchte ich für bestimmte Medikamentenverordnungen die Zuweisung eines E-Rezepts an eine Apotheke auch an meine Mitarbeiter delegieren können, so dass ich nicht alles selber machen muss.
+- Als Arzt möchte ich einstellen können, dass ich für bestimmte Medikamentenverordnungen benachrichtigt werde, wenn ein E-Rezept in der Apotheke nicht beliefert werden kann und daher zurückgegeben wird oder wenn es gelöscht wird, oder wenn das Medikament abgegeben worden ist, so dass ich immer über den aktuellen Status informiert bin und wenn notwendig handeln kann.
 
-- Die Steuerungshoheit fuer die Zuweisung liegt bei der verordnenden LEI.
-- Der Versicherte kann das E-Rezept einsehen, aber keine Einloeseinformationen weitergeben und den Workflow nicht steuern.
-- AccessCode wird dem Versicherten bei diesem Rezepttyp nicht bereitgestellt.
-- Der Versicherte hat fuer Flowtype `169` eingeschraenkte Verwaltungsmoeglichkeiten im FdV.
+#### Abgebende Apotheke
 
-## Kommunikation und Rollen
+- Als abgebende Apotheke möchte ich, dass sich die Zuweisung von E-Rezepten für alle Medikamentenverordnungen aus meiner Sicht nicht unterscheidet, unabhängig davon, um welche Medikamentenverordnungen es sich handelt und wer die Zuweisung vorgenommen hat.
+- Als abgebende Apotheke möchte ich bei den durch einen Verordnenden zugewiesenen Medikamentenverordnungen nicht mit dem Patienten kommunizieren, weil die Kommunikation, falls notwendig, mit dem Verordnenden erfolgt.
+- Als abgebende Apotheke möchte ich die unterschiedlichen Typen von Medikamentenverordnungen unterscheiden können.
+- Als abgebende Apotheke möchte ich unabhängig davon, wer mir ein E-Rezept zugewiesen hat, ein Medikament schnell liefern können.
+- Als abgebende Apotheke möchte ich dem verordnenden Arzt auf dem gleichen Übermittlungsweg, über den er mir das ERezept zugewiesen hat, antworten können, um mit ihm direkt und unkompliziert zur Belieferung eines E-Rezepts kommunizieren zu können.
 
-- Die direkte Token-Uebergabe erfolgt von der verordnenden LEI an die Apotheke.
-- Die Kommunikation zur Belieferung erfolgt primaer zwischen Verordnender und Apotheke.
-- Fuer die Verarbeitung werden keine neuen Produkttypen eingefuehrt; es werden die bestehenden E-Rezept-Komponenten genutzt.
+#### Versicherter
 
-**Beteiligte Systeme:** PVS/KIS, AVS, E-Rezept-Fachdienst, E-Rezept-FdV
+- Als Versicherter möchte ich auch Medikamentenverordnungen, die mein Arzt direkt einer Apotheke zuweist, in meiner ERezept-App einsehen können, so dass ich volle Transparenz über alle meine Verordnungen habe.
+- Als Versicherter möchte ich für bestimmte Medikamentenverordnungen in meiner E-Rezept-App den Status des E-Rezepts einsehen können.
+- Als Versicherter möchte ich für bestimmte Medikamentenverordnungen Einsicht in die Zugriffsprotokolle haben.
+- Als Versicherter möchte ich für bestimmte Medikamentenverordnungen nicht benachrichtigt werden, wenn ein E-Rezept in der Apotheke nicht beliefert werden kann und daher zurückgegeben wird oder wenn es gelöscht wird, oder wenn das Medikament abgegeben worden ist.
+- Als Versicherter möchte ich für bestimmte Medikamentenverordnungen keine Nachrichten an die Apotheke senden und auch keine Nachrichten von der Apotheke erhalten.
 
-**Fachliche Anwendungsfaelle (Verordnung und Zuweisung)**
 
-{% assign scenario_use_cases = "E_Rezept_erstellen, E_Rezept_qualifiziert_signieren, E_Rezept_vervollstaendigen_und_Task_aktivieren" | split: ", " %}
+### Anwendungsfälle
 
-{% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Fachliche Anwendungsfaelle mit Bezug zu Szenario <i>WF-LE - Verordnung und direkte Zuweisung</i>" %}
+**Beteiligte Systeme:** PVS/KIS, AVS, E-Rezept-Fachdienst
 
-**Fachliche Anwendungsfaelle (Belieferung)**
+#### Technische Anwendungsfälle der Verordnung
 
-{% assign scenario_use_cases = "E_Rezept_abrufen_apotheke, E_Rezept_abgabe_dokumentieren, E_Rezept_abgabe_abschliessen, E_Rezept_loeschen, E_Rezept_secret_wiederherstellen" | split: ", " %}
+{% assign scenario_use_cases = "169_e_rezept_erzeugen, E_Rezept_qualifiziert_signieren, UC_2_3_E_Rezept_einstellen, 169_e_rezept_token_uebermitteln, UC_2_5_E_Rezept_durch_Verordnenden_loeschen" | split: ", " %}
 
-{% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Fachliche Anwendungsfaelle mit Bezug zu Szenario <i>WF-LE - Belieferung</i>" %}
+{% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Technische Anwendungsfälle mit Bezug zu Anwendungsfall <i>Verordnung von Verordnungen mit Workflowsteuerung durch LE</i>" %}
 
-## Uebergang in technische Umsetzung und Schnittstellen
+#### Technische Anwendungsfälle für die Belieferung
 
-- [Technische Anwendungsfaelle](./menu-technische-umsetzung-anwendungsfaelle.html)
-- [Operation API: $create](./op-create.html)
-- [Operation API: $activate](./op-activate.html)
-- [Operation API: $accept](./op-accept.html)
-- [Operation API: $dispense](./op-dispense.html)
-- [Operation API: $close](./op-close.html)
-- [Operation API: $reject](./op-reject.html)
+{% assign scenario_use_cases = "UC_4_1_E_Rezept_durch_Abgebenden_abrufen, UC_4_2_E_Rezept_durch_Abgebenden_zurueckgeben, UC_4_3_E_Rezept_durch_Abgebenden_loeschen, UC_4_4_Quittung_abrufen, UC_4_5_Abgabedatensatz_signieren, UC_4_8_Quittung_erneut_abrufen, UC_4_16_Dispensierinformationen_bereitstellen" | split: ", " %}
+
+{% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Technische Anwendungsfälle mit Bezug zu Anwendungsfall <i>Belieferung von Verordnungen mit Workflowsteuerung durch LE</i>" %}

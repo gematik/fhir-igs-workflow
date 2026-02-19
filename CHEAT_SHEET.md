@@ -22,3 +22,24 @@
 
 ## PUML einfügen
 
+## Vorlage für Anwendungsfälle in use-cases-get.yaml
+
+```yaml
+- id: E_Rezept_qualifiziert_signieren
+  anchor: e-rezept-qualifiziert-signieren
+  link: menu-technische-umsetzung-anwendungsfaelle.html#e-rezept-qualifiziert-signieren
+  title: title
+  roles:
+    - (Zahn-)Arzt
+  description: |
+    ...
+  preconditions: |
+    - 
+  actions: |
+    - 
+  postconditions: |
+    - 
+  interface: |
+    - 
+  diagram: seq-
+```

@@ -1,0 +1,50 @@
+@startuml
+title E-Rezepte erzeugen für Workflow 169
+
+actor "Leistungserbringer" as LE
+participant "Primärsystem\nverordnender LEI" as PS
+participant "Konnektor" as KON
+participant "E-Rezept-\nFachdienst" as FD
+participant "Identity Provider" as IDP
+
+LE -> PS : E-Rezepte erzeugen()
+
+activate PS
+
+PS -> PS : Verordnungsdatensätze auswählen()
+
+opt kein gültiger AuthN-Token
+  ref over PS,IDP
+    UC 5.2 – AuthN-Token durch LEI anfordern
+  end ref
+end opt
+
+loop für jeden Verordnungsdatensatz
+  PS -> FD : POST /Task/$create\n(AuthN-Token, Leistungserbringer-Typ, Worfklow-Typ 169)
+  activate FD
+  FD -> FD : Ressource erstellen
+  FD --> PS : Rezept-ID, AccessCode
+  deactivate FD
+
+  PS -> PS : Rezept-ID in Verordnungsdatensatz ergänzen()
+  PS -> PS : AccessCode speichern()
+  PS -> PS : Vollständigkeit und Korrektheit prüfen()
+end loop
+
+PS -> KON : I_SAK_Operation: sign_Document_QES\n(Verordnungsdatensätze)
+activate KON
+note right of KON
+Einzel-, Stapel- oder\nKomfortsignatur
+end note
+KON --> PS : E-Rezept-Signatur
+deactivate KON
+
+loop für jedes E-Rezept
+  ref over PS
+    UC 6.1 – Dokument empfängerbezogen verschlüsseln\n(eRezept für Versicherten-ID)
+  end ref
+end loop
+
+deactivate PS
+
+@enduml
