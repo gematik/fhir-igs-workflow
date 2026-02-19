@@ -42,26 +42,3 @@
   core-uc: UC_4_8_Quittung_erneut_abrufen
 - id: UC_4_16_Dispensierinformationen_bereitstellen
   core-uc: UC_4_16_Dispensierinformationen_bereitstellen
-- id: UC_4_16_Dispensierinformationen_bereitstellen
-  anchor: uc-4-16-dispensierinformationen-bereitstellen
-  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-4-16-dispensierinformationen-bereitstellen
-  title: UC 4.Neu - Dispensierinformationen bereitstellen
-  roles:
-    - Apotheke
-  description: |
-    Ein Mitarbeiter der abgebenden LEI hat ein E-Rezept dispensiert. Er markiert das E-Rezept über das PS als abgegeben und bestätigt es. Das PS übermittelt beim Aufruf des E-Rezept-Fachdienstes die Rezept-ID, den AccessCode und das Geheimnis zur Bereitstellung der Dispensierinformationen. Im Aufruf ist die Dispensierinformation enthalten.
-  preconditions: |
-    - Ein Mitarbeiter der abgebenden LEI hat den Anwendungsfall "UC 4.1 - E-Rezept durch Abgebenden abrufen" durchgeführt.- Das Primärsystem hat die QES des E-Rezepts erfolgreich geprüft. Die QES des E-Rezepts ist gültig.
-    - Die Rezept-ID, der AccessCode und das Geheimnis zur Statusänderung "in Abgabe (gesperrt)" des E-Rezepts sind im PS bekannt.
-    - Das E-Rezept im E-Rezept-Fachdienst hat den Status "in Abgabe (gesperrt)".
-  actions: |
-    - Abgebender wählt ein beliefertes E-Rezept zur Bereitstellung von Dispensierinformationen aus.
-    - Das PS übermittelt die Dispensierinformationen an den E-Rezept-Fachdienst.
-  postconditions: |
-    - Das E-Rezept im E-Rezept-Fachdienst hat den Status "in Abgabe (gesperrt)".
-    - Die Information zur Abgabe liegen im E-Rezept-Fachdienst.
-    - Das Bereitstellen der Dispensierinformationen ist im E-Rezept-Fachdienst protokolliert.
-    - Das PS erhält eine Bestätigung, dass die Dispensierinformationen bereitgestellt wurden.
-  interface: |
-    - [Operation API: Dispensierinformationen bereitstellen](./op-dispense.html)
-  diagram: seq-uc-4-16-dispensierinformationen-bereitstellen

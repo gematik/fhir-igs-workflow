@@ -2,7 +2,7 @@
 Zur Verordnung von DiGAs werden die DiGA-FHIR-Profile der KBV genutzt: https://simplifier.net/evdga.
 
 <!-- Quelle: A_26373 - PS verordnende LEI: keine elektronische Verordnung einer DiGA zu Lasten BG/UK -->
-<requirement conformance="SHALL NOT" key="IG-TIFlow-DiGA-NEU" title="PS verordnende LEI: keine elektronische Verordnung einer DiGA zu Lasten BG/UK" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFlow-DiGA-36" title="PS verordnende LEI: keine elektronische Verordnung einer DiGA zu Lasten BG/UK" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Herstellererklärung"/>

@@ -3,7 +3,7 @@ muss diese zur Laufzeit bestimmt werden. Hierfür nutzt das E-Rezept-FdV das IKN
 KTR, wodurch es dann in der Lage ist nach der Telematik-ID im FHIRVZD zu suchen.
 
 <!-- Quelle: A_26009 -E-Rezept-FdV: optional: Kostenträger suchen -->
-<requirement conformance="MAY" key="IG-TIFlow-DiGA-NEU" title="E-Rezept-FdV: optional: Kostenträger suchen" version="0">
+<requirement conformance="MAY" key="IG-TIFlow-DiGA-32" title="E-Rezept-FdV: optional: Kostenträger suchen" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-FdV">
     <testProcedure id="Herstellererklärung"/>
@@ -12,7 +12,7 @@ KTR, wodurch es dann in der Lage ist nach der Telematik-ID im FHIRVZD zu suchen.
 </requirement>
 
 <!-- Quelle: A_26010 - E-Rezept-FdV: Kostenträger suchen - IKNR aus ACCESS_TOKEN beziehen -->
-<requirement conformance="MAY" key="IG-TIFlow-DiGA-NEU" title="E-Rezept-FdV: Kostenträger suchen - IKNR aus ACCESS_TOKEN beziehen" version="0">
+<requirement conformance="MAY" key="IG-TIFlow-DiGA-33" title="E-Rezept-FdV: Kostenträger suchen - IKNR aus ACCESS_TOKEN beziehen" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-FdV">
     <testProcedure id="Herstellererklärung"/>
@@ -22,7 +22,7 @@ KTR, wodurch es dann in der Lage ist nach der Telematik-ID im FHIRVZD zu suchen.
 
 <!-- Quelle: A_26011 -E-Rezept-FdV: Kostenträger suchen - Telematik-ID im
 Verzeichnisdienst suchen -->
-<requirement conformance="SHOULD" key="IG-TIFlow-DiGA-NEU" title="E-Rezept-FdV: Kostenträger suchen - Telematik-ID im Verzeichnisdienst suchen" version="0">
+<requirement conformance="SHOULD" key="IG-TIFlow-DiGA-34" title="E-Rezept-FdV: Kostenträger suchen - Telematik-ID im Verzeichnisdienst suchen" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-FdV">
     <testProcedure id="Herstellererklärung"/>
@@ -46,7 +46,7 @@ Kostenträger manuell zu bestimmen.
 Der Nutzer soll eine Liste aller Kostenträger, denen eine DiGA zugewiesen werden kann, zur Auswahl angezeigt bekommen.
 
 <!-- Quelle: A_26012 - E-Rezept-FdV: Kostenträger Suchen - Liste verfügbarer Kostenträger ermitteln -->
-<requirement conformance="SHOULD" key="IG-TIFlow-DiGA-NEU" title="E-Rezept-FdV: Kostenträger Suchen - Liste verfügbarer Kostenträger ermitteln" version="0">
+<requirement conformance="SHOULD" key="IG-TIFlow-DiGA-35" title="E-Rezept-FdV: Kostenträger Suchen - Liste verfügbarer Kostenträger ermitteln" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-FdV">
     <testProcedure id="Herstellererklärung"/>
