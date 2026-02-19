@@ -1,25 +1,3 @@
-- id: E_Rezept_qualifiziert_signieren
-  anchor: e-rezept-qualifiziert-signieren
-  link: menu-technische-umsetzung-anwendungsfaelle.html#e-rezept-qualifiziert-signieren
-  title: E-Rezept qualifiziert signieren
-  roles:
-    - (Zahn-)Arzt
-  description: |
-    Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES).
-    Vorbereitende Tätigkeiten im Primärsystem können organisatorisch delegiert werden, die QES selbst jedoch nicht.
-  preconditions: |
-    - Rezept-ID (PrescriptionID) ist im Verordnungsdatensatz enthalten.
-    - Ein freigeschalteter HBA steht zur Verfügung.
-    - Konsistenz: `authoredOn` im Verordnungsdatensatz entspricht dem Datum der QES.
-  actions: |
-    - Das Primärsystem startet die QES-Erstellung über den Konnektor.
-    - Der (Zahn-)Arzt signiert den Verordnungsdatensatz mit dem HBA.
-    - Das Primärsystem erhält den QES-signierten Datensatz zur weiteren Verarbeitung.
-  postconditions: |
-    - QES-signierter Verordnungsdatensatz liegt im Primärsystem vor.
-  interface: |
-    - Keine (QES im Primaersystem)
-  diagram: seq-e-rezept-qualifiziert-signieren
 - id: UC_2_1_E_Rezepte_erzeugen
   anchor: uc-2-1-e-rezepte-erzeugen
   link: menu-technische-umsetzung-anwendungsfaelle.html#uc-2-1-e-rezepte-erzeugen
@@ -47,6 +25,28 @@
     - [Operation API: E-Rezept erstellen](./op-create.html)
     - QES im Primaersystem (Konnektor)
   diagram: seq-uc-2-1-e-rezepte-erzeugen
+- id: E_Rezept_qualifiziert_signieren
+  anchor: e-rezept-qualifiziert-signieren
+  link: menu-technische-umsetzung-anwendungsfaelle.html#e-rezept-qualifiziert-signieren
+  title: E-Rezept qualifiziert signieren
+  roles:
+    - (Zahn-)Arzt
+  description: |
+    Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES).
+    Vorbereitende Tätigkeiten im Primärsystem können organisatorisch delegiert werden, die QES selbst jedoch nicht.
+  preconditions: |
+    - Rezept-ID (PrescriptionID) ist im Verordnungsdatensatz enthalten.
+    - Ein freigeschalteter HBA steht zur Verfügung.
+    - Konsistenz: `authoredOn` im Verordnungsdatensatz entspricht dem Datum der QES.
+  actions: |
+    - Das Primärsystem startet die QES-Erstellung über den Konnektor.
+    - Der (Zahn-)Arzt signiert den Verordnungsdatensatz mit dem HBA.
+    - Das Primärsystem erhält den QES-signierten Datensatz zur weiteren Verarbeitung.
+  postconditions: |
+    - QES-signierter Verordnungsdatensatz liegt im Primärsystem vor.
+  interface: |
+    - Keine (QES im Primaersystem)
+  diagram: seq-e-rezept-qualifiziert-signieren
 - id: UC_2_3_E_Rezept_einstellen
   anchor: uc-2-3-e-rezept-einstellen
   link: menu-technische-umsetzung-anwendungsfaelle.html#uc-2-3-e-rezept-einstellen
@@ -198,64 +198,26 @@
   interface: |
     - FHIR REST: Communication (E-Rezept-Nachricht löschen)
   diagram: seq-uc-3-8-nachricht-durch-versicherten-loeschen
-- id: UC_4_6_Nachrichten_durch_Abgebenden_empfangen
-  anchor: uc-4-6-nachrichten-durch-abgebenden-empfangen
-  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-4-6-nachrichten-durch-abgebenden-empfangen
-  title: UC 4.6 - Nachrichten durch Abgebenden empfangen
+- id: UC_3_9_Dispensierinformationen_durch_Versicherten_abrufen
+  anchor: uc-3-9-dispensierinformationen-durch-versicherten-abrufen
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-3-9-dispensierinformationen-durch-versicherten-abrufen
+  title: UC 3.9 - Dispensierinformationen durch Versicherten abrufen
   roles:
-    - Apotheke
+    - Versicherter
   description: |
-    Eine abgebende LEI empfaengt E-Rezept-Token über die TI oder optisch als 2D-Code.
+    Ein Versicherter ruft im FdV alle seine im E-Rezept-Fachdienst eingestellten Dispensierinformationenen ab.
   preconditions: |
-    - UC 3.3 wurde ausgeführt oder der 2D-Code wurde präsentiert.
+    - Dispensierinformationen wurden durch eine abgebende LEI bereitgestellt.
   actions: |
-    - Das PS wählt den Empfangsweg (TI oder 2D-Code).
-    - Bei TI: PS fragt beim E-Rezept-Fachdienst neue Nachrichten für die Telematik-ID ab und lädt sie herunter.
-    - Bei 2D-Code: PS wandelt den Code in die Token-Textform um.
+    - Das FdV fordert Dispensierinformationenen beim E-Rezept-Fachdienst an.
+    - Der E-Rezept-Fachdienst identifiziert Dispensierinformationenen über die Versicherten-ID.
+    - Der E-Rezept-Fachdienst liefert Dispensierinformationenen an das FdV aus.
   postconditions: |
-    - E-Rezept-Token liegt im PS der abgebenden LEI vor.
+    - Dispensierinformationen stehen im FdV zur Anzeige bereit.
+    - Der Abruf ist protokolliert.
   interface: |
-    - FHIR REST: Communication (E-Rezept-Nachrichten abrufen)
-  diagram: seq-uc-4-6-nachrichten-durch-abgebenden-empfangen
-- id: UC_4_7_Nachricht_durch_Abgebenden_uebermitteln
-  anchor: uc-4-7-nachricht-durch-abgebenden-uebermitteln
-  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-4-7-nachricht-durch-abgebenden-uebermitteln
-  title: UC 4.7 - Nachricht durch Abgebenden übermitteln
-  roles:
-    - Apotheke
-  description: |
-    Die abgebende LEI antwortet auf eine Nachricht eines Versicherten oder Vertreters.
-  preconditions: |
-    - UC 3.3 wurde ausgeführt.
-    - UC 4.6 wurde ausgeführt.
-  actions: |
-    - Ein Mitarbeiter wählt die Nachricht zu einem E-Rezept und erstellt eine Antwort.
-    - Das PS stellt die Antwortnachricht im E-Rezept-Fachdienst ein.
-  postconditions: |
-    - Nachricht liegt im E-Rezept-Fachdienst und kann asynchron empfangen werden.
-  interface: |
-    - FHIR REST: Communication (E-Rezept-Nachricht einstellen)
-  diagram: seq-uc-4-7-nachricht-durch-abgebenden-uebermitteln
-- id: UC_4_9_Nachricht_durch_Abgebenden_loeschen
-  anchor: uc-4-9-nachricht-durch-abgebenden-loeschen
-  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-4-9-nachricht-durch-abgebenden-loeschen
-  title: UC 4.9 - Nachricht durch Abgebenden löschen
-  roles:
-    - Apotheke
-  description: |
-    Der Abgebende loescht von ihm übermittelte Nachrichten an Versicherte.
-  preconditions: |
-    - UC 4.7 wurde ausgeführt.
-  actions: |
-    - Der Abgebende wählt Nachrichten zum Löschen aus und bestätigt.
-    - Das PS überträgt Loeschanforderungen an den E-Rezept-Fachdienst.
-    - Der E-Rezept-Fachdienst loescht Nachrichten und liefert ggf. Warnung bei bereits erfolgtem Abruf.
-    - Nachrichten werden im PS gelöscht.
-  postconditions: |
-    - Nachrichten sind im E-Rezept-Fachdienst und im PS gelöscht.
-  interface: |
-    - FHIR REST: Communication (E-Rezept-Nachricht löschen)
-  diagram: seq-uc-4-9-nachricht-durch-abgebenden-loeschen
+    - [Query API: MedicationDispense](./query-api-medicationdispense.html)
+  diagram: seq-uc-3-9-dispensierinformationen-durch-versicherten-abrufen
 - id: UC_4_1_E_Rezept_durch_Abgebenden_abrufen
   anchor: uc-4-1-e-rezept-durch-abgebenden-abrufen
   link: menu-technische-umsetzung-anwendungsfaelle.html#uc-4-1-e-rezept-durch-abgebenden-abrufen
@@ -401,7 +363,68 @@
     - Abgebender wählt ein beliefertes E-Rezept zur Bereitstellung von Dispensierinformationen aus.
     - Das PS übermittelt die Dispensierinformationen an den E-Rezept-Fachdienst.
   postconditions: |
-    - Die Dispensierinformationen zum E-Rezept liegen im E-Rezept-Fachdienst vor.
+    - Das E-Rezept im E-Rezept-Fachdienst hat den Status "in Abgabe (gesperrt)".
+    - Die Information zur Abgabe liegen im E-Rezept-Fachdienst.
+    - Das Bereitstellen der Dispensierinformationen ist im E-Rezept-Fachdienst protokolliert.
+    - Das PS erhält eine Bestätigung, dass die Dispensierinformationen bereitgestellt wurden.
   interface: |
     - [Operation API: Dispensierinformationen bereitstellen](./op-dispense.html)
   diagram: seq-uc-4-16-dispensierinformationen-bereitstellen
+- id: UC_4_6_Nachrichten_durch_Abgebenden_empfangen
+  anchor: uc-4-6-nachrichten-durch-abgebenden-empfangen
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-4-6-nachrichten-durch-abgebenden-empfangen
+  title: UC 4.6 - Nachrichten durch Abgebenden empfangen
+  roles:
+    - Apotheke
+  description: |
+    Eine abgebende LEI empfaengt E-Rezept-Token über die TI oder optisch als 2D-Code.
+  preconditions: |
+    - UC 3.3 wurde ausgeführt oder der 2D-Code wurde präsentiert.
+  actions: |
+    - Das PS wählt den Empfangsweg (TI oder 2D-Code).
+    - Bei TI: PS fragt beim E-Rezept-Fachdienst neue Nachrichten für die Telematik-ID ab und lädt sie herunter.
+    - Bei 2D-Code: PS wandelt den Code in die Token-Textform um.
+  postconditions: |
+    - E-Rezept-Token liegt im PS der abgebenden LEI vor.
+  interface: |
+    - FHIR REST: Communication (E-Rezept-Nachrichten abrufen)
+  diagram: seq-uc-4-6-nachrichten-durch-abgebenden-empfangen
+- id: UC_4_7_Nachricht_durch_Abgebenden_uebermitteln
+  anchor: uc-4-7-nachricht-durch-abgebenden-uebermitteln
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-4-7-nachricht-durch-abgebenden-uebermitteln
+  title: UC 4.7 - Nachricht durch Abgebenden übermitteln
+  roles:
+    - Apotheke
+  description: |
+    Die abgebende LEI antwortet auf eine Nachricht eines Versicherten oder Vertreters.
+  preconditions: |
+    - UC 3.3 wurde ausgeführt.
+    - UC 4.6 wurde ausgeführt.
+  actions: |
+    - Ein Mitarbeiter wählt die Nachricht zu einem E-Rezept und erstellt eine Antwort.
+    - Das PS stellt die Antwortnachricht im E-Rezept-Fachdienst ein.
+  postconditions: |
+    - Nachricht liegt im E-Rezept-Fachdienst und kann asynchron empfangen werden.
+  interface: |
+    - FHIR REST: Communication (E-Rezept-Nachricht einstellen)
+  diagram: seq-uc-4-7-nachricht-durch-abgebenden-uebermitteln
+- id: UC_4_9_Nachricht_durch_Abgebenden_loeschen
+  anchor: uc-4-9-nachricht-durch-abgebenden-loeschen
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-4-9-nachricht-durch-abgebenden-loeschen
+  title: UC 4.9 - Nachricht durch Abgebenden löschen
+  roles:
+    - Apotheke
+  description: |
+    Der Abgebende loescht von ihm übermittelte Nachrichten an Versicherte.
+  preconditions: |
+    - UC 4.7 wurde ausgeführt.
+  actions: |
+    - Der Abgebende wählt Nachrichten zum Löschen aus und bestätigt.
+    - Das PS überträgt Loeschanforderungen an den E-Rezept-Fachdienst.
+    - Der E-Rezept-Fachdienst loescht Nachrichten und liefert ggf. Warnung bei bereits erfolgtem Abruf.
+    - Nachrichten werden im PS gelöscht.
+  postconditions: |
+    - Nachrichten sind im E-Rezept-Fachdienst und im PS gelöscht.
+  interface: |
+    - FHIR REST: Communication (E-Rezept-Nachricht löschen)
+  diagram: seq-uc-4-9-nachricht-durch-abgebenden-loeschen
