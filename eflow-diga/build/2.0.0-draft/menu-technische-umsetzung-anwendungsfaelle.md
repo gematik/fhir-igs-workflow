@@ -48,6 +48,87 @@ Die Prozesse des verordnenden Leistungserbringers, welche für die Übermittlung
 **Sequenzdiagramm:**
 
 **Abbildung: **UC 2.1 - E-Rezepte erzeugen
+
+#### E-Rezept qualifiziert signieren
+
+* Beschreibung: Vorbedingungen
+  * Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES). Vorbereitende Tätigkeiten im Primärsystem können organisatorisch delegiert werden, die QES selbst jedoch nicht.: * Rezept-ID (PrescriptionID) ist im Verordnungsdatensatz enthalten.
+* Ein freigeschalteter HBA steht zur Verfügung.
+* Konsistenz: `authoredOn` im Verordnungsdatensatz entspricht dem Datum der QES.
+
+* Beschreibung: Durchzuführende Aktionen
+  * Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES). Vorbereitende Tätigkeiten im Primärsystem können organisatorisch delegiert werden, die QES selbst jedoch nicht.: * Das Primärsystem startet die QES-Erstellung über den Konnektor.
+* Der (Zahn-)Arzt signiert den Verordnungsdatensatz mit dem HBA.
+* Das Primärsystem erhält den QES-signierten Datensatz zur weiteren Verarbeitung.
+
+* Beschreibung: Nachbedingungen
+  * Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES). Vorbereitende Tätigkeiten im Primärsystem können organisatorisch delegiert werden, die QES selbst jedoch nicht.: * QES-signierter Verordnungsdatensatz liegt im Primärsystem vor.
+
+* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+  * Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES). Vorbereitende Tätigkeiten im Primärsystem können organisatorisch delegiert werden, die QES selbst jedoch nicht.: * Keine (QES im Primaersystem)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES). Vorbereitende Tätigkeiten im Primärsystem können organisatorisch delegiert werden, die QES selbst jedoch nicht.:  (ZAHN-)ARZT 
+
+**Tabelle:**Fachlicher Anwendungsfall E-Rezept qualifiziert signieren
+**Sequenzdiagramm:**
+
+**Abbildung: **E-Rezept qualifiziert signieren
+
+#### UC 2.3 - E-Rezept einstellen
+
+* Beschreibung: Vorbedingungen
+  * Ein E-Rezept wird vom Primaersystem beim E-Rezept-Fachdienst eingestellt und ein E-Rezept-Token erzeugt.: * UC 2.1 wurde ausgeführt; E-Rezept und Signatur liegen im Primaersystem vor.
+* Rezept-ID und AccessCode sind bekannt.
+* Status im E-Rezept-Fachdienst ist “initialisiert”.
+
+* Beschreibung: Durchzuführende Aktionen
+  * Ein E-Rezept wird vom Primaersystem beim E-Rezept-Fachdienst eingestellt und ein E-Rezept-Token erzeugt.: * Der Leistungserbringer wählt ein E-Rezept zum Einstellen aus.
+* Das Primaersystem aktualisiert das E-Rezept im E-Rezept-Fachdienst.
+* Das Primaersystem erstellt einen E-Rezept-Token und speichert ihn.
+
+* Beschreibung: Nachbedingungen
+  * Ein E-Rezept wird vom Primaersystem beim E-Rezept-Fachdienst eingestellt und ein E-Rezept-Token erzeugt.: * E-Rezept ist im E-Rezept-Fachdienst gespeichert und hat Status “offen”.
+* Das Einstellen ist im E-Rezept-Fachdienst protokolliert.
+
+* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+  * Ein E-Rezept wird vom Primaersystem beim E-Rezept-Fachdienst eingestellt und ein E-Rezept-Token erzeugt.: * [Operation API: E-Rezept aktivieren](./op-activate.md)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Ein E-Rezept wird vom Primaersystem beim E-Rezept-Fachdienst eingestellt und ein E-Rezept-Token erzeugt.:  (ZAHN-)ARZT 
+
+**Tabelle:**Fachlicher Anwendungsfall UC 2.3 - E-Rezept einstellen
+**Sequenzdiagramm:**
+
+**Abbildung: **UC 2.3 - E-Rezept einstellen
+
+#### UC 2.5 - E-Rezept durch Verordnenden löschen
+
+* Beschreibung: Vorbedingungen
+  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im E-Rezept-Fachdienst auf “gelöscht” gesetzt.: * UC 2.3 wurde ausgeführt.
+* Rezept-ID und AccessCode sind bekannt.
+* Status im E-Rezept-Fachdienst ist “offen”.
+
+* Beschreibung: Durchzuführende Aktionen
+  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im E-Rezept-Fachdienst auf “gelöscht” gesetzt.: * Ein Mitarbeiter der verordnenden LEI markiert das E-Rezept zum Löschen und bestätigt den Vorgang.
+* Das Primaersystem ruft den E-Rezept-Fachdienst mit Rezept-ID und AccessCode auf.
+* Der Status wird auf “gelöscht” gesetzt und medizinische Daten werden gelöscht.
+* Der AccessCode wird im Primaersystem gelöscht.
+
+* Beschreibung: Nachbedingungen
+  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im E-Rezept-Fachdienst auf “gelöscht” gesetzt.: * Status ist “gelöscht”; personenbezogene und medizinische Daten sind entfernt.
+* Statuswechsel ist protokolliert.
+
+* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im E-Rezept-Fachdienst auf “gelöscht” gesetzt.: * [Operation API: E-Rezept löschen](./op-abort.md)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im E-Rezept-Fachdienst auf “gelöscht” gesetzt.:  (ZAHN-)ARZT 
+
+**Tabelle:**Fachlicher Anwendungsfall UC 2.5 - E-Rezept durch Verordnenden löschen
+**Sequenzdiagramm:**
+
+**Abbildung: **UC 2.5 - E-Rezept durch Verordnenden löschen
 Folgende Anwendungsfälle werden genutzt:
 
 * UC 2.1 - E-Rezepte erzeugen

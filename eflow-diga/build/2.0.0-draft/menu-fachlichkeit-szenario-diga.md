@@ -5,7 +5,7 @@ Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 Version 2.0.0-draft - ci-build 
 
 * [**Table of Contents**](toc.md)
-* [**Überblick zur Verordnung von DiGAs**](menu-fachlichkeit-ueberblick.md)
+* [**Elektronische Verordnung von DiGAs**](menu-fachlichkeit-diga.md)
 * [**Szenarien für den DiGA-Workflow**](menu-fachlichkeit-szenarien.md)
 * **Szenario: Verordnungen für DiGA**
 
