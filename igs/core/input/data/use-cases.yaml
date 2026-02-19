@@ -220,6 +220,26 @@
   interface: |
     - FHIR REST: Communication (E-Rezept-Nachricht löschen)
   diagram: seq-uc-3-8-nachricht-durch-versicherten-loeschen
+- id: UC_3_9_Dispensierinformationen_durch_Versicherten_abrufen
+  anchor: uc-3-9-dispensierinformationen-durch-versicherten-abrufen
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-3-9-dispensierinformationen-durch-versicherten-abrufen
+  title: UC 3.9 - Dispensierinformationen durch Versicherten abrufen
+  roles:
+    - Versicherter
+  description: |
+    Ein Versicherter ruft im FdV alle seine im E-Rezept-Fachdienst eingestellten Dispensierinformationenen ab.
+  preconditions: |
+    - Dispensierinformationen wurden durch eine abgebende LEI bereitgestellt.
+  actions: |
+    - Das FdV fordert Dispensierinformationenen beim E-Rezept-Fachdienst an.
+    - Der E-Rezept-Fachdienst identifiziert Dispensierinformationenen über die Versicherten-ID.
+    - Der E-Rezept-Fachdienst liefert Dispensierinformationenen an das FdV aus.
+  postconditions: |
+    - Dispensierinformationen stehen im FdV zur Anzeige bereit.
+    - Der Abruf ist protokolliert.
+  interface: |
+    - [Query API: MedicationDispense](./query-api-medicationdispense.html)
+  diagram: seq-uc-3-9-dispensierinformationen-durch-versicherten-abrufen
 - id: UC_4_6_Nachrichten_durch_Abgebenden_empfangen
   anchor: uc-4-6-nachrichten-durch-abgebenden-empfangen
   link: menu-technische-umsetzung-anwendungsfaelle.html#uc-4-6-nachrichten-durch-abgebenden-empfangen
