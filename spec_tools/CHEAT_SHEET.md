@@ -46,8 +46,51 @@ Für Tags in Anforderungen muss die folgende Syntax verwendet werden:
 | --- | --- | --- |
 | Inhalt 1 | Inhalt 2 | Inhalt 3 |
 
+<div><figcaption><strong>Tabelle: </strong>title</figcaption></div>
+
 ## Links
 [Linktext](https://www.example.com)
+
+
+## Vorlage für Anwendungsfälle in use-cases-get.yaml
+
+### Bestehenden Anwendungsfall aus Core ziehen
+
+```yaml
+- id: UC_2_1_E_Rezepte_erzeugen
+  core-uc: UC_2_1_E_Rezepte_erzeugen
+```
+
+### Bestehenden Anwendungsfall aus Core ziehen und anpassen
+
+```yaml
+- id: UC_2_1_E_Rezepte_erzeugen
+  core-uc: UC_2_1_E_Rezepte_erzeugen
+  description: |
+    Andere Beschreibung
+```
+
+### Neuen Anwendungsfall anlegen
+
+```yaml
+- id: E_Rezept_qualifiziert_signieren
+  anchor: e-rezept-qualifiziert-signieren
+  link: menu-technische-umsetzung-anwendungsfaelle.html#e-rezept-qualifiziert-signieren
+  title: title
+  roles:
+    - (Zahn-)Arzt
+  description: |
+    ...
+  preconditions: |
+    - 
+  actions: |
+    - 
+  postconditions: |
+    - 
+  interface: |
+    - 
+  diagram: seq-
+```
 
 ## Anlegen einer Seite
 
