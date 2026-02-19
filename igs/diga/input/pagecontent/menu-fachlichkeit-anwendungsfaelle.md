@@ -14,6 +14,10 @@ QES validiert werden.
 Das E-Rezept liegt auf dem E-Rezept-Fachdienst zum Abruf durch den Versicherten
 bereit.
 
+{% assign scenario_use_cases = "UC_2_1_E_Rezepte_erzeugen, E_Rezept_qualifiziert_signieren, UC_2_3_E_Rezept_einstellen, UC_2_5_E_Rezept_durch_Verordnenden_loeschen" | split: ", " %}
+
+{% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Technische Anwendungsfälle mit Bezug zu Anwendungsfall <i>Verordnung von digitalen Gesundheitsanwendungen (162)</i>" %}
+
 #### Zuweisen durch den Versicherten
 Der Versicherte sieht in seinem E-Rezept-FdV, dass ein E-Rezept für eine DiGA erstellt
 wurde. Diese kann er einsehen und seinem Kostenträger zuweisen, damit er einen

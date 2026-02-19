@@ -1,3 +1,6 @@
+{% assign use_cases = site.data['use-cases'] %}
+{% assign roles = site.data['roles'] %}
+
 ### Ablaufdiagramm
 
 <figure>
@@ -15,6 +18,16 @@
 Die Prozesse des verordnenden Leistungserbringers, welche für die Übermittlung von
 ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel
 konzipiert wurden, werden ebenso für die Verordnung von DiGAs genutzt.
+
+<!-- UC 2.1 - E-Rezepte erzeugen -->
+{% assign use_case = use_cases | where: "title", "UC 2.1 - E-Rezepte erzeugen" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+#### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 Folgende Anwendungsfälle werden genutzt:
 - UC 2.1 - E-Rezepte erzeugen
