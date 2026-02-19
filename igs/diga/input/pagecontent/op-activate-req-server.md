@@ -6,17 +6,13 @@
     <testProcedure id="Produkttest"/>
   </actor>
   Der E-Rezept-Fachdienst MUSS die Aktivierung eines Tasks mit Flowtype 162 mit dem HTTP-Status-Code 400 abbrechen, wenn die QES gemäß der professionOID des Signaturzertifikats des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die der folgenden professionOID entspricht:
-
-  -	oid_arzt
-
-  -	oid_zahnarzt
-
-  -	oid_psychotherapeut
-
-  -	oid_ps_psychotherapeut
-  
-  -	oid_kuj_psychotherapeut
-
+  <ul>
+    <li>oid_arzt</li>
+    <li>oid_zahnarzt</li>
+    <li>oid_psychotherapeut</li>
+    <li>oid_ps_psychotherapeut</li>
+    <li>oid_kuj_psychotherapeut</li>
+  </ul>
   damit nur solche Leistungserbringer ein signiertes E-Rezept einstellen, die zur Verordnung von DiGAs ermächtigt sind.
 </requirement>
 
@@ -39,7 +35,7 @@
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
   </actor>
-  Der E-Rezept-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&#60;id&#62;/$activate den im FHIR Profil KBV_PR_EVDGA_HealthAppRequest gespeicherten Wert für .code[x]:codeCodeableConcept.coding.code gemäß den "Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI" beschriebenen Prüfalgorithmus validieren.
+  Der E-Rezept-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&#60;id&#62;/$activate den im FHIR Profil KBV_PR_EVDGA_HealthAppRequest gespeicherten Wert für .code[x]:codeCodeableConcept.coding.code gemäß den "Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI" beschriebenen Prüfalgorithmus validieren.<br>
   Der E-Rezept-Fachdienst MUSS bei einer fehlerhaften Prüfung mit einem Http-Fehler 400 (Bad Request) abbrechen, sowie die Fehlermeldung "Ungültige PZN: Die übergebene Pharmazentralnummer entspricht nicht den vorgeschriebenen Prüfziffer-Validierungsregeln." in Form eines OperationOutcome ausliefern.
 </requirement>
 
@@ -73,7 +69,7 @@ Dieser Ausschluss erfolgt temporär. In einer späteren Version können Unfallka
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
   </actor>
-  Der E-Rezept-Fachdienst MUSS bei einem Task mit Task.flowType = 162 die Attribute in Task in Abhängigkeit des in der http-POST-Operation /Task/&#60;id&#62;/$activate übergebenen gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_005 belegen.
+  Der E-Rezept-Fachdienst MUSS bei einem Task mit Task.flowType = 162 die Attribute in Task in Abhängigkeit des in der http-POST-Operation /Task/&#60;id&#62;/$activate übergebenen gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_005 belegen.<br>
 
   <b>TAB_eRpDM_005 Prozessparameter Flowtype 162</b>
   
