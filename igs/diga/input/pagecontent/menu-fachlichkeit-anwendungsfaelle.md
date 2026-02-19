@@ -1,6 +1,7 @@
-### Fachliche Anwendungsfälle
+{% assign use_cases = site.data['use-cases'] %}
+{% assign roles = site.data['roles'] %}
 
-#### Verschreiben
+### Verschreiben
 Der technische Ablauf zum Verschreiben einer Verordnung für eine DiGA erfolgtanalog zu
 einer Verordnung für apothekenpflichtige Arzneimittel.
 Verordnungen von DiGAs können Ärzten, Zahnärzten und Psychotherapeuten vornehmen.
@@ -18,7 +19,7 @@ bereit.
 
 {% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Technische Anwendungsfälle mit Bezug zu Anwendungsfall <i>Verordnung von digitalen Gesundheitsanwendungen (162)</i>" %}
 
-#### Zuweisen durch den Versicherten
+### Zuweisen durch den Versicherten
 Der Versicherte sieht in seinem E-Rezept-FdV, dass ein E-Rezept für eine DiGA erstellt
 wurde. Diese kann er einsehen und seinem Kostenträger zuweisen, damit er einen
 Freischaltcode zur Nutzung der DiGA erhält.
@@ -29,7 +30,7 @@ Wenn der Versicherte kein E-Rezept-FdV nutzt, hat er die Möglichkeit den
 Patientenausdruck an seine Krankenkasse zu übermitteln. Dies kann durch Funktionalität
 in der Krankenkassen-App unterstützt werden.
 
-#### Einlösen
+### Einlösen
 Der Kostenträger kann mit den Informationen aus dem E-Rezept-Token die Verordnung
 vom E-Rezept-Fachdienst herunterladen und den Vorgang prüfen. Sobald ein
 Freischaltcode generiert wurde, wird dem Versicherten dieser über Abgabeinformationen
