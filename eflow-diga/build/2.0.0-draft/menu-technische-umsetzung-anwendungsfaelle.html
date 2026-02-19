@@ -35,10 +35,28 @@
         -moz-background-size: 100% auto;
         -o-background-size: 100% auto;
         background-size: 100% auto;
-        background: url('assets/images/gem-headline.png') no-repeat;
-        background-position: 90% -136px;
+        height: 280px;
+        background-color: #2a6496;
+        background: url('./e-rezept-img.png') no-repeat;
+        background-position: 650px -150px;
+        background-size: 45% auto;
     }
+    .bubble-link {
+        display: none;
+        transition: opacity 0.2s;
+        }
+
+        h1:hover .bubble-link,
+        h2:hover .bubble-link,
+        h3:hover .bubble-link,
+        h4:hover .bubble-link,
+        h5:hover .bubble-link,
+        h6:hover .bubble-link {
+        display: inline;
+        }
 </style>
+
+<script type="text/javascript" src="assets/js/heading-links.js"> </script>
 
     <script type="text/javascript" src="fhir-table-scripts.js"> </script>
 
@@ -107,13 +125,13 @@
         <a href="menu-fachlichkeit-ueberblick.html">Überblick</a>
       </li>
       <li>
+        <a href="menu-fachlichkeit-szenarien.html">Szenarien</a>
+      </li>
+      <li>
         <a href="menu-fachlichkeit-epic.html">Epic</a>
       </li>
       <li>
         <a href="menu-fachlichkeit-userstories.html">User Stories</a>
-      </li>
-      <li>
-        <a href="menu-fachlichkeit-szenarien.html">Szenarien</a>
       </li>
       <li>
         <a href="menu-fachlichkeit-anwendungsfaelle.html">Anwendungsfälle</a>
@@ -263,6 +281,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </ul>
 
 </div>
+
 <h3 id="ablaufdiagramm">Ablaufdiagramm</h3>
 
 <figure>
@@ -279,6 +298,94 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Die Prozesse des verordnenden Leistungserbringers, welche für die Übermittlung von
 ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel
 konzipiert wurden, werden ebenso für die Verordnung von DiGAs genutzt.</p>
+
+<!-- UC 2.1 - E-Rezepte erzeugen -->
+
+<p><a id="uc-2-1-e-rezepte-erzeugen"></a></p>
+<h4 id="uc-21---e-rezepte-erzeugen">UC 2.1 - E-Rezepte erzeugen</h4>
+
+<figure style="width: auto;">
+  <table style="width: auto; border: 1px solid #dcdcdc;">
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Beschreibung</th>
+      <td style="padding: 5px;"><p>Der verordnende Leistungserbringer erzeugt ein oder mehrere E-Rezepte im Primaersystem.
+Für jedes E-Rezept wird eine Rezept-ID aus dem E-Rezept-Fachdienst bezogen und der Datensatz
+anschließend qualifiziert elektronisch signiert (QES).</p>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Der oder die Versicherten sind der LEI bekannt.</li>
+  <li>Ein oder mehrere Verordnungsdatensätze liegen im Primaersystem vor.</li>
+  <li>HBA ist gesteckt und für die QES freigeschaltet.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Der Leistungserbringer wählt Verordnungsdatensätze und ein Signaturverfahren aus.</li>
+  <li>Das Primaersystem ruft pro E-Rezept eine Rezept-ID beim E-Rezept-Fachdienst ab und ergänzt sie im Datensatz.</li>
+  <li>Die E-Rezepte werden über den Konnektor mit QES signiert (Einzel-, Stapel- oder Komfortsignatur).</li>
+  <li>AccessCodes werden im Primaersystem gespeichert.</li>
+</ul>
+</td>
+
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>E-Rezepte enthalten Rezept-ID und QES.</li>
+  <li>AccessCode je E-Rezept ist im Primaersystem gespeichert.</li>
+  <li>E-Rezepte sind im E-Rezept-Fachdienst im Status “initialisiert” angelegt.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Schnittstelle des E-Rezept-Fachdienst</th>
+      <td style="padding: 5px;"><ul>
+  <li><a href="./op-create.html">Operation API: E-Rezept erstellen</a></li>
+  <li>QES im Primaersystem (Konnektor)</li>
+</ul>
+</td>
+    </tr>
+    
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Relevante(r) Sektor(en)</th>
+      <td style="padding: 5px;">
+        
+          
+        
+          
+            <span class="badge gem-ig-badge 
+gem-ig-badge-bg-grey">
+              (ZAHN-)ARZT
+            </span>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </td>
+    </tr>
+  </table>
+  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall UC 2.1 - E-Rezepte erzeugen</figcaption>
+</figure>
+
+<p><strong>Sequenzdiagramm:</strong></p>
+
+<figure>
+	<div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+		<?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="637px" preserveAspectRatio="none" style="width:950px;height:637px;background:#FFFFFF;" version="1.1" viewBox="0 0 950 637" width="950px" zoomAndPan="magnify"><defs /><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="229" x="359.5" y="27.9951">UC 2.1 - E-Rezepte erzeugen</text><rect fill="#FFFFFF" height="389.4297" style="stroke:#181818;stroke-width:1.0;" width="10" x="317" y="149.7266" /><rect fill="#FFFFFF" height="113.3984" style="stroke:#181818;stroke-width:1.0;" width="10" x="720" y="254.0938" /><rect fill="#FFFFFF" height="29.1328" style="stroke:#181818;stroke-width:1.0;" width="10" x="896" y="396.625" /><rect fill="none" height="61.2344" style="stroke:#000000;stroke-width:1.5;" width="392" x="254" y="164.7266" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="47" x2="47" y1="118.5938" y2="557.1563" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="322" x2="322" y1="118.5938" y2="557.1563" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="574" x2="574" y1="118.5938" y2="557.1563" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="725" x2="725" y1="118.5938" y2="557.1563" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="901" x2="901" y1="118.5938" y2="557.1563" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="5" y="115.292">(Zahn-)Arzt</text><ellipse cx="47" cy="50.7969" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M47,58.7969 L47,85.7969 M34,66.7969 L60,66.7969 M47,85.7969 L34,100.7969 M47,85.7969 L60,100.7969 " fill="none" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="5" y="569.1514">(Zahn-)Arzt</text><ellipse cx="47" cy="580.9531" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M47,588.9531 L47,615.9531 M34,596.9531 L60,596.9531 M47,615.9531 L34,630.9531 M47,615.9531 L60,630.9531 " fill="none" style="stroke:#181818;stroke-width:0.5;" /><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="116" x="264" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="102" x="271" y="107.292">Primaersystem</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="116" x="264" y="556.1563" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="102" x="271" y="576.1514">Primaersystem</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="124" x="512" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="519" y="107.292">Identity Provider</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="124" x="512" y="556.1563" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="519" y="576.1514">Identity Provider</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="158" x="646" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="144" x="653" y="107.292">E-Rezept Fachdienst</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="158" x="646" y="556.1563" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="144" x="653" y="576.1514">E-Rezept Fachdienst</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="86" x="858" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="72" x="865" y="107.292">Konnektor</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="86" x="858" y="556.1563" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="72" x="865" y="576.1514">Konnektor</text><rect fill="#FFFFFF" height="389.4297" style="stroke:#181818;stroke-width:1.0;" width="10" x="317" y="149.7266" /><rect fill="#FFFFFF" height="113.3984" style="stroke:#181818;stroke-width:1.0;" width="10" x="720" y="254.0938" /><rect fill="#FFFFFF" height="29.1328" style="stroke:#181818;stroke-width:1.0;" width="10" x="896" y="396.625" /><polygon fill="#181818" points="305,145.7266,315,149.7266,305,153.7266,309,149.7266" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="47" x2="311" y1="149.7266" y2="149.7266" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="251" x="54" y="144.6606">Verordnungsdatensaetze auswaehlen()</text><path d="M254,164.7266 L324,164.7266 L324,171.8594 L314,181.8594 L254,181.8594 L254,164.7266 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;" /><rect fill="none" height="61.2344" style="stroke:#000000;stroke-width:1.5;" width="392" x="254" y="164.7266" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="25" x="269" y="177.7935">opt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="185" x="339" y="176.937">[kein gueltiger AuthN-Token]</text><rect fill="none" height="39.1016" style="stroke:#000000;stroke-width:1.5;" width="378" x="261" y="181.8594" /><path d="M261,181.8594 L327,181.8594 L327,188.8594 L317,198.8594 L261,198.8594 L261,181.8594 " fill="#EEEEEE" style="stroke:#000000;stroke-width:2.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="274" y="195.9263">ref</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="146" x="377" y="213.998">AuthN-Token anfordern</text><polygon fill="#181818" points="708,250.0938,718,254.0938,708,258.0938,712,254.0938" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="327" x2="714" y1="254.0938" y2="254.0938" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="348" x="334" y="249.0278">POST /Task/$create (AuthN-Token, Verordnungsdaten)</text><line style="stroke:#181818;stroke-width:1.0;" x1="730" x2="772" y1="283.2266" y2="283.2266" /><line style="stroke:#181818;stroke-width:1.0;" x1="772" x2="772" y1="283.2266" y2="296.2266" /><line style="stroke:#181818;stroke-width:1.0;" x1="731" x2="772" y1="296.2266" y2="296.2266" /><polygon fill="#181818" points="741,292.2266,731,296.2266,741,300.2266,737,296.2266" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="136" x="737" y="278.1606">Rezept-ID erzeugen()</text><line style="stroke:#181818;stroke-width:1.0;" x1="730" x2="772" y1="325.3594" y2="325.3594" /><line style="stroke:#181818;stroke-width:1.0;" x1="772" x2="772" y1="325.3594" y2="338.3594" /><line style="stroke:#181818;stroke-width:1.0;" x1="731" x2="772" y1="338.3594" y2="338.3594" /><polygon fill="#181818" points="741,334.3594,731,338.3594,741,342.3594,737,338.3594" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="152" x="737" y="320.2935">AccessCode erzeugen()</text><polygon fill="#181818" points="338,363.4922,328,367.4922,338,371.4922,334,367.4922" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="332" x2="724" y1="367.4922" y2="367.4922" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="185" x="344" y="362.4263">Task, Rezept-ID, AccessCode</text><polygon fill="#181818" points="884,392.625,894,396.625,884,400.625,888,396.625" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="327" x2="890" y1="396.625" y2="396.625" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="218" x="334" y="391.5591">QES signieren(Verordnungsdaten)</text><polygon fill="#181818" points="338,421.7578,328,425.7578,338,429.7578,334,425.7578" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="332" x2="900" y1="425.7578" y2="425.7578" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="86" x="344" y="420.6919">QES-Signatur</text><line style="stroke:#181818;stroke-width:1.0;" x1="327" x2="369" y1="454.8906" y2="454.8906" /><line style="stroke:#181818;stroke-width:1.0;" x1="369" x2="369" y1="454.8906" y2="467.8906" /><line style="stroke:#181818;stroke-width:1.0;" x1="328" x2="369" y1="467.8906" y2="467.8906" /><polygon fill="#181818" points="338,463.8906,328,467.8906,338,471.8906,334,467.8906" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="228" x="334" y="449.8247">Rezept-ID im Datensatz speichern()</text><line style="stroke:#181818;stroke-width:1.0;" x1="327" x2="369" y1="497.0234" y2="497.0234" /><line style="stroke:#181818;stroke-width:1.0;" x1="369" x2="369" y1="497.0234" y2="510.0234" /><line style="stroke:#181818;stroke-width:1.0;" x1="328" x2="369" y1="510.0234" y2="510.0234" /><polygon fill="#181818" points="338,506.0234,328,510.0234,338,514.0234,334,510.0234" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="154" x="334" y="491.9575">AccessCode speichern()</text><polygon fill="#181818" points="58,535.1563,48,539.1563,58,543.1563,54,539.1563" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="52" x2="321" y1="539.1563" y2="539.1563" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="126" x="64" y="534.0903">Signierte E-Rezepte</text></g></svg>
+	</div>
+	<figcaption><strong>Abbildung: </strong>UC 2.1 - E-Rezepte erzeugen</figcaption>
+</figure>
 
 <p>Folgende Anwendungsfälle werden genutzt:</p>
 <ul>
@@ -440,7 +547,7 @@ Der Versicherte weist die Verordnung dem Kostenträger zu. Dazu wird eine Commun
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Feb 18, 2026 15:20+0000">2026-02-18</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Feb 19, 2026 14:22+0000">2026-02-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

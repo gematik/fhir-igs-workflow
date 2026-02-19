@@ -1,18 +1,18 @@
-# Implementation Guide E-Rezept-DiGA - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
+# Implementation Guide elektronische Verordnung von DiGAs - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
 
 Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
 Version 2.0.0-draft - ci-build 
 
 * [**Table of Contents**](toc.md)
-* **Implementation Guide E-Rezept-DiGA**
+* **Implementation Guide elektronische Verordnung von DiGAs**
 
-## Implementation Guide E-Rezept-DiGA
+## Implementation Guide elektronische Verordnung von DiGAs
 
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/erp-diga/ImplementationGuide/de.gematik.eflow-diga | *Version*:2.0.0-draft |
-| Draft as of 2026-02-18 | *Computable Name*:ERezeptDiGA |
+| Draft as of 2026-02-19 | *Computable Name*:ERezeptDiGA |
 
 Dieser Implementation Guide beschreibt das Feature zur elektronischen Verordnung von Digitalen Gesundheitsanwendungen (DiGA). Er beschreibt DiGA-spezifische Anforderungen und Use Cases für Verordnende, Kostenträger und Versicherte.
 
@@ -98,7 +98,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "ERezeptDiGA",
   "title" : "Verordnungen für Digitale Gesundheitsanwendungen (DiGA)",
   "status" : "draft",
-  "date" : "2026-02-18T15:20:33+00:00",
+  "date" : "2026-02-19T14:22:01+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [
     {
@@ -1018,7 +1018,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
             }
           ],
           "nameUrl" : "index.html",
-          "title" : "Implementation Guide E-Rezept-DiGA",
+          "title" : "Implementation Guide elektronische Verordnung von DiGAs",
           "generation" : "markdown"
         },
         {
@@ -1273,17 +1273,6 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
                   ],
                   "nameUrl" : "op-activate-req-server.html",
                   "title" : "Anforderungen an den E-Rezept-Fachdienst für die $activate-Operation",
-                  "generation" : "markdown"
-                },
-                {
-                  "extension" : [
-                    {
-                      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-                      "valueUrl" : "op-activate-req-client.html"
-                    }
-                  ],
-                  "nameUrl" : "op-activate-req-client.html",
-                  "title" : "Anforderungen an den verordnende Primärsystem für die $activate-Operation",
                   "generation" : "markdown"
                 }
               ]

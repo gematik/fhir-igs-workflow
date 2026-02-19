@@ -19,6 +19,35 @@ Version 2.0.0-draft - ci-build
 
 Die Prozesse des verordnenden Leistungserbringers, welche für die Übermittlung von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel konzipiert wurden, werden ebenso für die Verordnung von DiGAs genutzt.
 
+#### UC 2.1 - E-Rezepte erzeugen
+
+* Beschreibung: Vorbedingungen
+  * Der verordnende Leistungserbringer erzeugt ein oder mehrere E-Rezepte im Primaersystem. Für jedes E-Rezept wird eine Rezept-ID aus dem E-Rezept-Fachdienst bezogen und der Datensatz anschließend qualifiziert elektronisch signiert (QES).: * Der oder die Versicherten sind der LEI bekannt.
+* Ein oder mehrere Verordnungsdatensätze liegen im Primaersystem vor.
+* HBA ist gesteckt und für die QES freigeschaltet.
+
+* Beschreibung: Durchzuführende Aktionen
+  * Der verordnende Leistungserbringer erzeugt ein oder mehrere E-Rezepte im Primaersystem. Für jedes E-Rezept wird eine Rezept-ID aus dem E-Rezept-Fachdienst bezogen und der Datensatz anschließend qualifiziert elektronisch signiert (QES).: * Der Leistungserbringer wählt Verordnungsdatensätze und ein Signaturverfahren aus.
+* Das Primaersystem ruft pro E-Rezept eine Rezept-ID beim E-Rezept-Fachdienst ab und ergänzt sie im Datensatz.
+* Die E-Rezepte werden über den Konnektor mit QES signiert (Einzel-, Stapel- oder Komfortsignatur).
+* AccessCodes werden im Primaersystem gespeichert.
+
+* Beschreibung: Nachbedingungen
+  * Der verordnende Leistungserbringer erzeugt ein oder mehrere E-Rezepte im Primaersystem. Für jedes E-Rezept wird eine Rezept-ID aus dem E-Rezept-Fachdienst bezogen und der Datensatz anschließend qualifiziert elektronisch signiert (QES).: * E-Rezepte enthalten Rezept-ID und QES.
+* AccessCode je E-Rezept ist im Primaersystem gespeichert.
+* E-Rezepte sind im E-Rezept-Fachdienst im Status “initialisiert” angelegt.
+
+* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+  * Der verordnende Leistungserbringer erzeugt ein oder mehrere E-Rezepte im Primaersystem. Für jedes E-Rezept wird eine Rezept-ID aus dem E-Rezept-Fachdienst bezogen und der Datensatz anschließend qualifiziert elektronisch signiert (QES).: * [Operation API: E-Rezept erstellen](./op-create.md)
+* QES im Primaersystem (Konnektor)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Der verordnende Leistungserbringer erzeugt ein oder mehrere E-Rezepte im Primaersystem. Für jedes E-Rezept wird eine Rezept-ID aus dem E-Rezept-Fachdienst bezogen und der Datensatz anschließend qualifiziert elektronisch signiert (QES).:  (ZAHN-)ARZT 
+
+**Tabelle:**Fachlicher Anwendungsfall UC 2.1 - E-Rezepte erzeugen
+**Sequenzdiagramm:**
+
+**Abbildung: **UC 2.1 - E-Rezepte erzeugen
 Folgende Anwendungsfälle werden genutzt:
 
 * UC 2.1 - E-Rezepte erzeugen

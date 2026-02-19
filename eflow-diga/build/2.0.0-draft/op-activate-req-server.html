@@ -35,10 +35,28 @@
         -moz-background-size: 100% auto;
         -o-background-size: 100% auto;
         background-size: 100% auto;
-        background: url('assets/images/gem-headline.png') no-repeat;
-        background-position: 90% -136px;
+        height: 280px;
+        background-color: #2a6496;
+        background: url('./e-rezept-img.png') no-repeat;
+        background-position: 650px -150px;
+        background-size: 45% auto;
     }
+    .bubble-link {
+        display: none;
+        transition: opacity 0.2s;
+        }
+
+        h1:hover .bubble-link,
+        h2:hover .bubble-link,
+        h3:hover .bubble-link,
+        h4:hover .bubble-link,
+        h5:hover .bubble-link,
+        h6:hover .bubble-link {
+        display: inline;
+        }
 </style>
+
+<script type="text/javascript" src="assets/js/heading-links.js"> </script>
 
     <script type="text/javascript" src="fhir-table-scripts.js"> </script>
 
@@ -107,13 +125,13 @@
         <a href="menu-fachlichkeit-ueberblick.html">Überblick</a>
       </li>
       <li>
+        <a href="menu-fachlichkeit-szenarien.html">Szenarien</a>
+      </li>
+      <li>
         <a href="menu-fachlichkeit-epic.html">Epic</a>
       </li>
       <li>
         <a href="menu-fachlichkeit-userstories.html">User Stories</a>
-      </li>
-      <li>
-        <a href="menu-fachlichkeit-szenarien.html">Szenarien</a>
       </li>
       <li>
         <a href="menu-fachlichkeit-anwendungsfaelle.html">Anwendungsfälle</a>
@@ -265,15 +283,21 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <testProcedure id="Produkttest" />
   </actor>
   Der E-Rezept-Fachdienst MUSS die Aktivierung eines Tasks mit Flowtype 162 mit dem HTTP-Status-Code 400 abbrechen, wenn die QES gemäß der professionOID des Signaturzertifikats des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die der folgenden professionOID entspricht:
+
   -	oid_arzt
+
   -	oid_zahnarzt
+
   -	oid_psychotherapeut
+
   -	oid_ps_psychotherapeut
+  
   -	oid_kuj_psychotherapeut
+
   damit nur solche Leistungserbringer ein signiertes E-Rezept einstellen, die zur Verordnung von DiGAs ermächtigt sind.
 </requirement>
 
-<p>&lt;/br&gt;</p>
+<p><br /></p>
 
 <!-- Quelle: A_25991 - E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Verordnung von DiGAs -->
 <requirement conformance="SHALL" key="IG-TIFlow-DiGA-25" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Verordnung von DiGAs" version="0">
@@ -284,7 +308,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mit Flowtype 162 mittels $activate prüfen, dass im Bundle eine <i>DeviceRequest</i>-Ressource und in der &lt;/i&gt;Composition.type.coding.code=e16D&lt;/i&gt; enthalten ist. Der E-Rezept-Fachdienst MUSS andernfalls mit dem HTTP-Fehlercode 400 abbrechen und in der <i>OperationOutcome</i> den Fehlertext "Für diesen Workflowtypen sind nur Verordnungen für Digitale Gesundheitsanwendungen zulässig" ausgeben.
 </requirement>
 
-<p>&lt;/br&gt;</p>
+<p><br /></p>
 
 <!-- Quelle: A_25992 - E-Rezept-Fachdienst - Task aktivieren – Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest -->
 <requirement conformance="SHALL" key="IG-TIFlow-DiGA-26" title="E-Rezept-Fachdienst - Task aktivieren – Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest" version="0">
@@ -296,7 +320,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   Der E-Rezept-Fachdienst MUSS bei einer fehlerhaften Prüfung mit einem Http-Fehler 400 (Bad Request) abbrechen, sowie die Fehlermeldung "Ungültige PZN: Die übergebene Pharmazentralnummer entspricht nicht den vorgeschriebenen Prüfziffer-Validierungsregeln." in Form eines OperationOutcome ausliefern.
 </requirement>
 
-<p>&lt;/br&gt;</p>
+<p><br /></p>
 
 <!-- Quelle: A_23443-01 - E-Rezept-Fachdienst – Task aktivieren – Flowtype 160/162/169 - Prüfung Coverage Type -->
 <requirement conformance="SHALL" key="IG-TIFlow-DiGA-27" title="E-Rezept-Fachdienst – Task aktivieren – Flowtype 162 - Prüfung Coverage Type" version="0">
@@ -307,7 +331,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Task des Flowtype Task.extension:flowType = 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate prüfen, obCoverage.type.coding.code nicht mit dem Wert "PKV" belegt ist und im Fehlerfall die Operation mit Http-Fehlercode 400 abbrechen, um sicherzustellen, dass diese Workflows nicht für E-Rezepte für PKV-Versicherte genutzt werden.
 </requirement>
 
-<p>&lt;/br&gt;</p>
+<p><br /></p>
 
 <!-- Quelle: A_26372 - E-Rezept-Fachdienst – Task aktivieren – Flowtype 162 - Prüfung Coverage Alternative IK  -->
 <requirement conformance="SHALL" key="IG-TIFlow-DiGA-28" title="E-Rezept-Fachdienst – Task aktivieren – Flowtype 162 - Prüfung Coverage Alternative IK" version="0">
@@ -327,7 +351,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <testProcedure id="Produkttest" />
   </actor>
   Der E-Rezept-Fachdienst MUSS bei einem Task mit Task.flowType = 162 die Attribute in Task in Abhängigkeit des in der http-POST-Operation /Task/&#60;id&#62;/$activate übergebenen gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_005 belegen.
-  *TAB_eRpDM_005 Prozessparameter Flowtype 162*
+
+  <b>TAB_eRpDM_005 Prozessparameter Flowtype 162</b>
+  
   <table>
     <tr> 
       <th>Feld in Task</th>
@@ -378,7 +404,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Feb 18, 2026 15:20+0000">2026-02-18</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Feb 19, 2026 14:22+0000">2026-02-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -35,10 +35,28 @@
         -moz-background-size: 100% auto;
         -o-background-size: 100% auto;
         background-size: 100% auto;
-        background: url('assets/images/gem-headline.png') no-repeat;
-        background-position: 90% -136px;
+        height: 280px;
+        background-color: #2a6496;
+        background: url('./e-rezept-img.png') no-repeat;
+        background-position: 650px -150px;
+        background-size: 45% auto;
     }
+    .bubble-link {
+        display: none;
+        transition: opacity 0.2s;
+        }
+
+        h1:hover .bubble-link,
+        h2:hover .bubble-link,
+        h3:hover .bubble-link,
+        h4:hover .bubble-link,
+        h5:hover .bubble-link,
+        h6:hover .bubble-link {
+        display: inline;
+        }
 </style>
+
+<script type="text/javascript" src="assets/js/heading-links.js"> </script>
 
     <script type="text/javascript" src="fhir-table-scripts.js"> </script>
 
@@ -107,13 +125,13 @@
         <a href="menu-fachlichkeit-ueberblick.html">Überblick</a>
       </li>
       <li>
+        <a href="menu-fachlichkeit-szenarien.html">Szenarien</a>
+      </li>
+      <li>
         <a href="menu-fachlichkeit-epic.html">Epic</a>
       </li>
       <li>
         <a href="menu-fachlichkeit-userstories.html">User Stories</a>
-      </li>
-      <li>
-        <a href="menu-fachlichkeit-szenarien.html">Szenarien</a>
       </li>
       <li>
         <a href="menu-fachlichkeit-anwendungsfaelle.html">Anwendungsfälle</a>
@@ -438,7 +456,7 @@ Summary
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">1</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Gibt den Einlösecode für eine DiGA an.</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 9fc64624-d2f3-4090-9680-26dfdf20ac73
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 90d26137-ecc0-4464-a3ac-fbbe7bb7c5e0
 document.getElementById('cbGEM-ERP-EX-RedeemCodeD-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('GEM-ERP-EX-RedeemCodeD'), 'binding', document.getElementById('cbGEM-ERP-EX-RedeemCodeD-binding').checked, document.getElementById('ppGEM-ERP-EX-RedeemCodeD'));
 document.getElementById('cbGEM-ERP-EX-RedeemCodeD-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -479,7 +497,7 @@ filterDesc(document.getElementById('GEM-ERP-EX-RedeemCodeD'), 'obligation', docu
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Gibt den Einlösecode für eine DiGA an.</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 9fc64624-d2f3-4090-9680-26dfdf20ac73
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 90d26137-ecc0-4464-a3ac-fbbe7bb7c5e0
 document.getElementById('cbGEM-ERP-EX-RedeemCodeS-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('GEM-ERP-EX-RedeemCodeS'), 'binding', document.getElementById('cbGEM-ERP-EX-RedeemCodeS-binding').checked, document.getElementById('ppGEM-ERP-EX-RedeemCodeS'));
 document.getElementById('cbGEM-ERP-EX-RedeemCodeS-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -569,7 +587,7 @@ Summary
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">1</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Gibt den Einlösecode für eine DiGA an.</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 9fc64624-d2f3-4090-9680-26dfdf20ac73
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 90d26137-ecc0-4464-a3ac-fbbe7bb7c5e0
 document.getElementById('cbGEM-ERP-EX-RedeemCodeDA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('GEM-ERP-EX-RedeemCodeDA'), 'binding', document.getElementById('cbGEM-ERP-EX-RedeemCodeDA-binding').checked, document.getElementById('ppGEM-ERP-EX-RedeemCodeDA'));
 document.getElementById('cbGEM-ERP-EX-RedeemCodeDA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -610,7 +628,7 @@ filterDesc(document.getElementById('GEM-ERP-EX-RedeemCodeDA'), 'obligation', doc
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Gibt den Einlösecode für eine DiGA an.</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 9fc64624-d2f3-4090-9680-26dfdf20ac73
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 90d26137-ecc0-4464-a3ac-fbbe7bb7c5e0
 document.getElementById('cbGEM-ERP-EX-RedeemCodeSA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('GEM-ERP-EX-RedeemCodeSA'), 'binding', document.getElementById('cbGEM-ERP-EX-RedeemCodeSA-binding').checked, document.getElementById('ppGEM-ERP-EX-RedeemCodeSA'));
 document.getElementById('cbGEM-ERP-EX-RedeemCodeSA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -741,7 +759,7 @@ filterDesc(document.getElementById('GEM-ERP-EX-RedeemCodeSA'), 'obligation', doc
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Feb 18, 2026 15:20+0000">2026-02-18</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Feb 19, 2026 14:22+0000">2026-02-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

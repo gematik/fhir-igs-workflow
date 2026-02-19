@@ -36,6 +36,8 @@ PVS/KIS greifen auf das BfArM-DiGA-Verzeichnis zu, wählen die passende PZN (ink
 | [E-Rezept qualifiziert signieren](menu-technische-umsetzung-anwendungsfaelle.md#e-rezept-qualifiziert-signieren) |
 |  |
 
+**Tabelle:**Fachliche Anwendungsfälle mit Bezug zu Szenario
+*DiGA*
 ### DiGA zuweisen und Freischaltcode anfordern
 
 Versicherte sehen eine neue DiGA-Verordnung im E-Rezept-FdV (oder erhalten einen Ausdruck) und weisen sie ihrem Kostenträger zu. Das E-Rezept-FdV ermittelt - idealerweise automatisch - die Telematik-ID der Krankenkasse über den FHIR-VZD, erstellt eine `Communication_DispReq` und übermittelt darin Verordnungs-ID und AccessCode. Alternativ können Versicherte den Ausdruck per Post, Servicecenter oder Service-App der Krankenkasse einreichen. Der Kostenträger startet daraufhin den Abruf. Status- und Protokolleinträge im E-Rezept-FdV machen den Fortschritt (Freischaltcode angefordert, in Prüfung, erledigt) sichtbar.
@@ -48,6 +50,8 @@ Versicherte sehen eine neue DiGA-Verordnung im E-Rezept-FdV (oder erhalten einen
 | :--- |
 |  |
 
+**Tabelle:**Fachliche Anwendungsfälle mit Bezug zu Szenario
+*Zuweisung der DiGA-Verordnung*
 ### Prüfung durch Kostenträger und Bereitstellung des Freischaltcodes
 
 Kostenträger authentisieren sich über ihren Basis-Consumer, rufen die Verordnung mit `$accept` ab und prüfen Anspruch, Indikation sowie ggf. ergänzende Unterlagen. Nach erfolgreicher Prüfung erzeugen sie den Freischaltcode, legen ihn als Abgabeinformation via `$close` im Fachdienst ab und schliessen den Workflow mit einer Quittung ab. Falls kein Freischaltcode ausgegeben werden kann, hinterlegen sie eine versichertenfreundliche Begründung, damit Versicherte den Ausgang im E-Rezept-FdV nachvollziehen können.
@@ -60,4 +64,7 @@ Kostenträger authentisieren sich über ihren Basis-Consumer, rufen die Verordnu
 | :--- |
 |  |
 |  |
+
+**Tabelle:**Fachliche Anwendungsfälle mit Bezug zu Szenario
+*Freischaltcode-Bereitstellung durch Kostenträger*
 
