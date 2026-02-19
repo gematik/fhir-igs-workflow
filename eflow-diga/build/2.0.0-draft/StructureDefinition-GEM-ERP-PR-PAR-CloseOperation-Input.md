@@ -47,166 +47,142 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-PAR-Close
   "status" : "draft",
   "date" : "2026-02-06",
   "publisher" : "gematik GmbH",
-  "contact" : [
-    {
-      "name" : "gematik GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://gematik.de"
-        },
-        {
-          "system" : "email",
-          "value" : "erp-umsetzung@gematik.de"
-        }
-      ]
-    }
-  ],
-  "description" : "Dieses Profil definiert die Parameter fuer das Schliessen eines Workflows fuer ein Rezept vom AVS zum E-Rezept-Fachdienst. Dies kann fuer die Operationen $close und $dispense verwendet werden.",
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "DE",
-          "display" : "Germany"
-        }
-      ]
-    }
-  ],
-  "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "v2",
-      "uri" : "http://hl7.org/v2",
-      "name" : "HL7 v2 Mapping"
+  "contact" : [{
+    "name" : "gematik GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://gematik.de"
     },
     {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    }
-  ],
+      "system" : "email",
+      "value" : "erp-umsetzung@gematik.de"
+    }]
+  }],
+  "description" : "Dieses Profil definiert die Parameter fuer das Schliessen eines Workflows fuer ein Rezept vom AVS zum E-Rezept-Fachdienst. Dies kann fuer die Operationen $close und $dispense verwendet werden.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "fhirVersion" : "4.0.1",
+  "mapping" : [{
+    "identity" : "v2",
+    "uri" : "http://hl7.org/v2",
+    "name" : "HL7 v2 Mapping"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Parameters",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Parameters",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Parameters",
-        "path" : "Parameters"
-      },
-      {
-        "id" : "Parameters.parameter",
-        "path" : "Parameters.parameter",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "pattern",
-              "path" : "name"
-            }
-          ],
-          "rules" : "closed"
-        }
-      },
-      {
-        "id" : "Parameters.parameter:rxDispensation",
-        "path" : "Parameters.parameter",
-        "sliceName" : "rxDispensation",
-        "min" : 0,
-        "max" : "*",
-        "constraint" : [
-          {
-            "key" : "workflow-parameters-close-medication-exists",
-            "severity" : "error",
-            "human" : "If a reference from a MedicationDispense to a Medication exists, a Medication resource must exist.",
-            "expression" : "part.where(name = 'medicationDispense').resource.medication.ofType(Reference).reference.exists() implies part.where(name = 'medication').exists()",
-            "source" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM-ERP-PR-PAR-CloseOperation-Input"
-          },
-          {
-            "key" : "workflow-parameters-close-dispense-medication-references",
-            "severity" : "error",
-            "human" : "If a reference from a MedicationDispense to a Medication exists, the reference must resolve to the Medication.",
-            "expression" : "part.where(name = 'medicationDispense').resource.medication.ofType(Reference).reference.exists() implies ((part.where(name = 'medicationDispense').resource.medication.reference.split('/').last().split(':').last()) = (part.where(name = 'medication').resource.id))",
-            "source" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM-ERP-PR-PAR-CloseOperation-Input"
-          }
-        ]
-      },
-      {
-        "id" : "Parameters.parameter:rxDispensation.name",
-        "path" : "Parameters.parameter.name",
-        "patternString" : "rxDispensation",
-        "mustSupport" : true
-      },
-      {
-        "id" : "Parameters.parameter:rxDispensation.value[x]",
-        "path" : "Parameters.parameter.value[x]",
-        "max" : "0"
-      },
-      {
-        "id" : "Parameters.parameter:rxDispensation.resource",
-        "path" : "Parameters.parameter.resource",
-        "max" : "0"
-      },
-      {
-        "id" : "Parameters.parameter:rxDispensation.part",
-        "path" : "Parameters.parameter.part",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "pattern",
-              "path" : "name"
-            }
-          ],
-          "rules" : "closed"
-        },
-        "min" : 1,
-        "mustSupport" : true
-      },
-      {
-        "id" : "Parameters.parameter:rxDispensation.part:medicationDispense",
-        "path" : "Parameters.parameter.part",
-        "sliceName" : "medicationDispense",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "BackboneElement"
-          }
-        ]
-      },
-      {
-        "id" : "Parameters.parameter:rxDispensation.part:medicationDispense.name",
-        "path" : "Parameters.parameter.part.name",
-        "patternString" : "medicationDispense",
-        "mustSupport" : true
-      },
-      {
-        "id" : "Parameters.parameter:rxDispensation.part:medicationDispense.value[x]",
-        "path" : "Parameters.parameter.part.value[x]",
-        "max" : "0"
-      },
-      {
-        "id" : "Parameters.parameter:rxDispensation.part:medicationDispense.resource",
-        "path" : "Parameters.parameter.part.resource",
-        "min" : 1,
-        "type" : [
-          {
-            "code" : "MedicationDispense",
-            "profile" : [
-              "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM-ERP-PR-MedicationDispense-DiGA"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Parameters.parameter:rxDispensation.part:medicationDispense.part",
-        "path" : "Parameters.parameter.part.part",
-        "max" : "0"
+    "element" : [{
+      "id" : "Parameters",
+      "path" : "Parameters"
+    },
+    {
+      "id" : "Parameters.parameter",
+      "path" : "Parameters.parameter",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "name"
+        }],
+        "rules" : "closed"
       }
-    ]
+    },
+    {
+      "id" : "Parameters.parameter:rxDispensation",
+      "path" : "Parameters.parameter",
+      "sliceName" : "rxDispensation",
+      "min" : 0,
+      "max" : "*",
+      "constraint" : [{
+        "key" : "workflow-parameters-close-medication-exists",
+        "severity" : "error",
+        "human" : "If a reference from a MedicationDispense to a Medication exists, a Medication resource must exist.",
+        "expression" : "part.where(name = 'medicationDispense').resource.medication.ofType(Reference).reference.exists() implies part.where(name = 'medication').exists()",
+        "source" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM-ERP-PR-PAR-CloseOperation-Input"
+      },
+      {
+        "key" : "workflow-parameters-close-dispense-medication-references",
+        "severity" : "error",
+        "human" : "If a reference from a MedicationDispense to a Medication exists, the reference must resolve to the Medication.",
+        "expression" : "part.where(name = 'medicationDispense').resource.medication.ofType(Reference).reference.exists() implies ((part.where(name = 'medicationDispense').resource.medication.reference.split('/').last().split(':').last()) = (part.where(name = 'medication').resource.id))",
+        "source" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM-ERP-PR-PAR-CloseOperation-Input"
+      }]
+    },
+    {
+      "id" : "Parameters.parameter:rxDispensation.name",
+      "path" : "Parameters.parameter.name",
+      "patternString" : "rxDispensation",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Parameters.parameter:rxDispensation.value[x]",
+      "path" : "Parameters.parameter.value[x]",
+      "max" : "0"
+    },
+    {
+      "id" : "Parameters.parameter:rxDispensation.resource",
+      "path" : "Parameters.parameter.resource",
+      "max" : "0"
+    },
+    {
+      "id" : "Parameters.parameter:rxDispensation.part",
+      "path" : "Parameters.parameter.part",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "name"
+        }],
+        "rules" : "closed"
+      },
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Parameters.parameter:rxDispensation.part:medicationDispense",
+      "path" : "Parameters.parameter.part",
+      "sliceName" : "medicationDispense",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "Parameters.parameter:rxDispensation.part:medicationDispense.name",
+      "path" : "Parameters.parameter.part.name",
+      "patternString" : "medicationDispense",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Parameters.parameter:rxDispensation.part:medicationDispense.value[x]",
+      "path" : "Parameters.parameter.part.value[x]",
+      "max" : "0"
+    },
+    {
+      "id" : "Parameters.parameter:rxDispensation.part:medicationDispense.resource",
+      "path" : "Parameters.parameter.part.resource",
+      "min" : 1,
+      "type" : [{
+        "code" : "MedicationDispense",
+        "profile" : ["https://gematik.de/fhir/erp-diga/StructureDefinition/GEM-ERP-PR-MedicationDispense-DiGA"]
+      }]
+    },
+    {
+      "id" : "Parameters.parameter:rxDispensation.part:medicationDispense.part",
+      "path" : "Parameters.parameter.part.part",
+      "max" : "0"
+    }]
   }
 }
 

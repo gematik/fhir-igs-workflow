@@ -57,79 +57,63 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-EX-RedeemCod
   "status" : "draft",
   "date" : "2026-02-06",
   "publisher" : "gematik GmbH",
-  "contact" : [
+  "contact" : [{
+    "name" : "gematik GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://gematik.de"
+    },
     {
-      "name" : "gematik GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://gematik.de"
-        },
-        {
-          "system" : "email",
-          "value" : "erp-umsetzung@gematik.de"
-        }
-      ]
-    }
-  ],
+      "system" : "email",
+      "value" : "erp-umsetzung@gematik.de"
+    }]
+  }],
   "description" : "Gibt den Einlösecode für eine DiGA an.",
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "DE",
-          "display" : "Germany"
-        }
-      ]
-    }
-  ],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
   "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  }],
   "kind" : "complex-type",
   "abstract" : false,
-  "context" : [
-    {
-      "type" : "element",
-      "expression" : "MedicationDispense"
-    }
-  ],
+  "context" : [{
+    "type" : "element",
+    "expression" : "MedicationDispense"
+  }],
   "type" : "Extension",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Extension",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Extension",
-        "path" : "Extension"
-      },
-      {
-        "id" : "Extension.extension",
-        "path" : "Extension.extension",
-        "max" : "0"
-      },
-      {
-        "id" : "Extension.url",
-        "path" : "Extension.url",
-        "fixedUri" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_EX_RedeemCode"
-      },
-      {
-        "id" : "Extension.value[x]",
-        "path" : "Extension.value[x]",
-        "short" : "Gibt den Einlösecode für eine DiGA an.",
-        "type" : [
-          {
-            "code" : "string"
-          }
-        ]
-      }
-    ]
+    "element" : [{
+      "id" : "Extension",
+      "path" : "Extension"
+    },
+    {
+      "id" : "Extension.extension",
+      "path" : "Extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "Extension.url",
+      "path" : "Extension.url",
+      "fixedUri" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_EX_RedeemCode"
+    },
+    {
+      "id" : "Extension.value[x]",
+      "path" : "Extension.value[x]",
+      "short" : "Gibt den Einlösecode für eine DiGA an.",
+      "type" : [{
+        "code" : "string"
+      }]
+    }]
   }
 }
 

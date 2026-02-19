@@ -33,40 +33,32 @@ Tags: Dispense Request from Patient to Health Care Provider (Details: [not state
   "resourceType" : "Communication",
   "id" : "2be1c6ac-5d10-47f6-84ee-8318b2c22c76",
   "meta" : {
-    "tag" : [
-      {
-        "display" : "Dispense Request from Patient to Health Care Provider"
-      },
-      {
-        "display" : "Communication message sent by patient to Health Care Provider to request the redeemCode for a DiGA"
-      }
-    ]
+    "tag" : [{
+      "display" : "Dispense Request from Patient to Health Care Provider"
+    },
+    {
+      "display" : "Communication message sent by patient to Health Care Provider to request the redeemCode for a DiGA"
+    }]
   },
-  "extension" : [
-    {
-      "url" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_PrescriptionType",
-      "valueCoding" : {
-        "system" : "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType",
-        "code" : "162",
-        "display" : "Flowtype für Digitale Gesundheitsanwendungen"
-      }
+  "extension" : [{
+    "url" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_PrescriptionType",
+    "valueCoding" : {
+      "system" : "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType",
+      "code" : "162",
+      "display" : "Flowtype für Digitale Gesundheitsanwendungen"
     }
-  ],
-  "basedOn" : [
-    {
-      "reference" : "Task/162.000.033.491.280.78/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
-    }
-  ],
+  }],
+  "basedOn" : [{
+    "reference" : "Task/162.000.033.491.280.78/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
+  }],
   "status" : "unknown",
   "sent" : "2026-02-06T15:29:00.434+00:00",
-  "recipient" : [
-    {
-      "identifier" : {
-        "system" : "https://gematik.de/fhir/sid/telematik-id",
-        "value" : "8-SMC-B-Testkarte-883110000123465"
-      }
+  "recipient" : [{
+    "identifier" : {
+      "system" : "https://gematik.de/fhir/sid/telematik-id",
+      "value" : "8-SMC-B-Testkarte-883110000123465"
     }
-  ],
+  }],
   "sender" : {
     "identifier" : {
       "system" : "http://fhir.de/sid/gkv/kvid-10",

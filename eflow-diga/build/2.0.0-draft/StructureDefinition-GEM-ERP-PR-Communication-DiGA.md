@@ -47,166 +47,146 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Communica
   "status" : "draft",
   "date" : "2026-02-06",
   "publisher" : "gematik GmbH",
-  "contact" : [
+  "contact" : [{
+    "name" : "gematik GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://gematik.de"
+    },
     {
-      "name" : "gematik GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://gematik.de"
-        },
-        {
-          "system" : "email",
-          "value" : "erp-umsetzung@gematik.de"
-        }
-      ]
-    }
-  ],
+      "system" : "email",
+      "value" : "erp-umsetzung@gematik.de"
+    }]
+  }],
   "description" : "Antwort des Leistungserbringers an den Patienten",
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "DE",
-          "display" : "Germany"
-        }
-      ]
-    }
-  ],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
   "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "workflow",
-      "uri" : "http://hl7.org/fhir/workflow",
-      "name" : "Workflow Pattern"
-    },
-    {
-      "identity" : "w5",
-      "uri" : "http://hl7.org/fhir/fivews",
-      "name" : "FiveWs Pattern Mapping"
-    },
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "workflow",
+    "uri" : "http://hl7.org/fhir/workflow",
+    "name" : "Workflow Pattern"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Communication",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Communication",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Communication",
-        "path" : "Communication"
-      },
-      {
-        "id" : "Communication.basedOn",
-        "path" : "Communication.basedOn",
-        "short" : "Gibt das E-Rezept-Token gemäß gemSpec_DM_eRp an.",
-        "comment" : "Hat die Form 'Task/{{PrescriptionID}}'",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Task"],
-            "aggregation" : ["referenced"]
-          }
-        ],
-        "mustSupport" : true
-      },
-      {
-        "id" : "Communication.basedOn.reference",
-        "path" : "Communication.basedOn.reference",
-        "short" : "Gibt das E-Rezept-Token gemäß gemSpec_DM_eRp an.",
-        "comment" : "Hat die Form 'Task/{{PrescriptionID}}'",
-        "min" : 1,
-        "mustSupport" : true
-      },
-      {
-        "id" : "Communication.status",
-        "path" : "Communication.status",
-        "comment" : "Muss standardmäßig laut FHIR Core Specification angegeben werden, wird jedoch während des Lebenszyklus der Ressource nicht verändert.",
-        "fixedCode" : "unknown",
-        "mustSupport" : true
-      },
-      {
-        "id" : "Communication.sent",
-        "path" : "Communication.sent",
-        "short" : "Der Zeitpunkt, zu dem diese Kommunikation gesendet wurde.",
-        "comment" : "Wird vom E-Rezept-Server gesetzt. Ein Client hat diesen Wert daher immer verfügbar.",
-        "mustSupport" : true
-      },
-      {
-        "id" : "Communication.received",
-        "path" : "Communication.received",
-        "short" : "Der Zeitpunkt, zu dem diese Kommunikation empfangen wurde.",
-        "comment" : "Wird vom E-Rezept-Server gesetzt. Ein Client hat diesen Wert daher immer verfügbar.",
-        "mustSupport" : true
-      },
-      {
-        "id" : "Communication.recipient",
-        "path" : "Communication.recipient",
-        "short" : "Die Entität (z. B. Person, Organisation), die Ziel der Kommunikation war.",
-        "comment" : "Muss vom Absender der Kommunikation gesetzt werden, um das Ziel festzulegen.",
-        "min" : 1,
-        "max" : "1",
-        "mustSupport" : true
-      },
-      {
-        "id" : "Communication.recipient.identifier",
-        "path" : "Communication.recipient.identifier",
-        "min" : 1,
-        "type" : [
-          {
-            "code" : "Identifier",
-            "profile" : ["http://fhir.de/StructureDefinition/identifier-kvid-10"]
-          }
-        ]
-      },
-      {
-        "id" : "Communication.sender",
-        "path" : "Communication.sender",
-        "short" : "Die Entität (z. B. Person, Organisation), die Quelle der Kommunikation war.",
-        "definition" : "Nachrichtenabsender — wird vom E-Rezept-Server unter Verwendung der AuthN-Credential des Clients gesetzt.\r\nDie Entität (z. B. Person, Organisation), die Quelle der Kommunikation war.",
-        "comment" : "Wird vom E-Rezept-Server unter Verwendung der AuthN-Credential des Clients gesetzt.",
-        "mustSupport" : true
-      },
-      {
-        "id" : "Communication.sender.identifier",
-        "path" : "Communication.sender.identifier",
-        "min" : 1,
-        "type" : [
-          {
-            "code" : "Identifier",
-            "profile" : ["http://fhir.de/StructureDefinition/identifier-telematik-id"]
-          }
-        ]
-      },
-      {
-        "id" : "Communication.payload",
-        "path" : "Communication.payload",
-        "min" : 1,
-        "max" : "1",
-        "mustSupport" : true
-      },
-      {
-        "id" : "Communication.payload.content[x]",
-        "path" : "Communication.payload.content[x]",
-        "short" : "Der tatsächliche Inhalt der Nachricht",
-        "comment" : "Dieser Inhalt muss ein JSON gemäß gemSpec_DM_eRp sein.",
-        "type" : [
-          {
-            "code" : "string"
-          }
-        ],
-        "mustSupport" : true
-      }
-    ]
+    "element" : [{
+      "id" : "Communication",
+      "path" : "Communication"
+    },
+    {
+      "id" : "Communication.basedOn",
+      "path" : "Communication.basedOn",
+      "short" : "Gibt das E-Rezept-Token gemäß gemSpec_DM_eRp an.",
+      "comment" : "Hat die Form 'Task/{{PrescriptionID}}'",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Task"],
+        "aggregation" : ["referenced"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Communication.basedOn.reference",
+      "path" : "Communication.basedOn.reference",
+      "short" : "Gibt das E-Rezept-Token gemäß gemSpec_DM_eRp an.",
+      "comment" : "Hat die Form 'Task/{{PrescriptionID}}'",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Communication.status",
+      "path" : "Communication.status",
+      "comment" : "Muss standardmäßig laut FHIR Core Specification angegeben werden, wird jedoch während des Lebenszyklus der Ressource nicht verändert.",
+      "fixedCode" : "unknown",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Communication.sent",
+      "path" : "Communication.sent",
+      "short" : "Der Zeitpunkt, zu dem diese Kommunikation gesendet wurde.",
+      "comment" : "Wird vom E-Rezept-Server gesetzt. Ein Client hat diesen Wert daher immer verfügbar.",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Communication.received",
+      "path" : "Communication.received",
+      "short" : "Der Zeitpunkt, zu dem diese Kommunikation empfangen wurde.",
+      "comment" : "Wird vom E-Rezept-Server gesetzt. Ein Client hat diesen Wert daher immer verfügbar.",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Communication.recipient",
+      "path" : "Communication.recipient",
+      "short" : "Die Entität (z. B. Person, Organisation), die Ziel der Kommunikation war.",
+      "comment" : "Muss vom Absender der Kommunikation gesetzt werden, um das Ziel festzulegen.",
+      "min" : 1,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Communication.recipient.identifier",
+      "path" : "Communication.recipient.identifier",
+      "min" : 1,
+      "type" : [{
+        "code" : "Identifier",
+        "profile" : ["http://fhir.de/StructureDefinition/identifier-kvid-10"]
+      }]
+    },
+    {
+      "id" : "Communication.sender",
+      "path" : "Communication.sender",
+      "short" : "Die Entität (z. B. Person, Organisation), die Quelle der Kommunikation war.",
+      "definition" : "Nachrichtenabsender — wird vom E-Rezept-Server unter Verwendung der AuthN-Credential des Clients gesetzt.\r\nDie Entität (z. B. Person, Organisation), die Quelle der Kommunikation war.",
+      "comment" : "Wird vom E-Rezept-Server unter Verwendung der AuthN-Credential des Clients gesetzt.",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Communication.sender.identifier",
+      "path" : "Communication.sender.identifier",
+      "min" : 1,
+      "type" : [{
+        "code" : "Identifier",
+        "profile" : ["http://fhir.de/StructureDefinition/identifier-telematik-id"]
+      }]
+    },
+    {
+      "id" : "Communication.payload",
+      "path" : "Communication.payload",
+      "min" : 1,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Communication.payload.content[x]",
+      "path" : "Communication.payload.content[x]",
+      "short" : "Der tatsächliche Inhalt der Nachricht",
+      "comment" : "Dieser Inhalt muss ein JSON gemäß gemSpec_DM_eRp sein.",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mustSupport" : true
+    }]
   }
 }
 

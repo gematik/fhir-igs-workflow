@@ -38,36 +38,28 @@ Profile: [GEM ERP PR Communication DiGA](StructureDefinition-GEM-ERP-PR-Communic
   "resourceType" : "Communication",
   "id" : "140f716f-f649-44fe-9a4e-157eb3c8adf3",
   "meta" : {
-    "profile" : [
-      "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM-ERP-PR-Communication-DiGA"
-    ]
+    "profile" : ["https://gematik.de/fhir/erp-diga/StructureDefinition/GEM-ERP-PR-Communication-DiGA"]
   },
-  "basedOn" : [
-    {
-      "reference" : "Task/162.000.000.000.000.01"
-    }
-  ],
+  "basedOn" : [{
+    "reference" : "Task/162.000.000.000.000.01"
+  }],
   "status" : "unknown",
   "sent" : "2026-02-06T15:29:00.434+00:00",
-  "recipient" : [
-    {
-      "identifier" : {
-        "system" : "http://fhir.de/sid/gkv/kvid-10",
-        "value" : "X234567890"
-      }
+  "recipient" : [{
+    "identifier" : {
+      "system" : "http://fhir.de/sid/gkv/kvid-10",
+      "value" : "X234567890"
     }
-  ],
+  }],
   "sender" : {
     "identifier" : {
       "system" : "https://gematik.de/fhir/sid/telematik-id",
       "value" : "8-SMC-B-Testkarte-783498105628375"
     }
   },
-  "payload" : [
-    {
-      "contentString" : "Nachrichteninhalt für den Versicherten"
-    }
-  ]
+  "payload" : [{
+    "contentString" : "Nachrichteninhalt für den Versicherten"
+  }]
 }
 
 ```
