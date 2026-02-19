@@ -29,6 +29,40 @@ konzipiert wurden, werden ebenso für die Verordnung von DiGAs genutzt.
 
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
+
+<!-- E-Rezept qualifiziert signieren -->
+{% assign use_case = use_cases | where: "title", "E-Rezept qualifiziert signieren" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+#### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
+
+<!-- UC 2.3 - E-Rezept einstellen -->
+{% assign use_case = use_cases | where: "title", "UC 2.3 - E-Rezept einstellen" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+#### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
+
+<!-- UC 2.5 - E-Rezept durch Verordnenden löschen -->
+{% assign use_case = use_cases | where: "title", "UC 2.5 - E-Rezept durch Verordnenden löschen" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+#### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
+
 Folgende Anwendungsfälle werden genutzt:
 - UC 2.1 - E-Rezepte erzeugen
 - UC 2.3 - E-Rezept einstellen
