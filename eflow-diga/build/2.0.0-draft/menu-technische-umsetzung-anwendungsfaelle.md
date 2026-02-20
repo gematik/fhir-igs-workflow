@@ -49,7 +49,7 @@ Folgende Anwendungsfälle werden genutzt:
 * QES im Primaersystem (Konnektor)
 
 * Beschreibung: Relevante(r) Sektor(en)
-  * Der verordnende Leistungserbringer erzeugt ein oder mehrere E-Rezepte im Primaersystem. Für jedes E-Rezept wird eine Rezept-ID aus dem E-Rezept-Fachdienst bezogen und der Datensatz anschließend qualifiziert elektronisch signiert (QES).: 
+  * Der verordnende Leistungserbringer erzeugt ein oder mehrere E-Rezepte im Primaersystem. Für jedes E-Rezept wird eine Rezept-ID aus dem E-Rezept-Fachdienst bezogen und der Datensatz anschließend qualifiziert elektronisch signiert (QES).:  (ZAHN-)ARZT  PSYCHOTHERAPEUT 
 
 **Tabelle:**Fachlicher Anwendungsfall UC 2.1 - E-Rezepte erzeugen
 **Sequenzdiagramm:**
@@ -185,4 +185,52 @@ Folgende Anwendungsfälle werden genutzt:
 * UC 4.4 - Quittung abrufen
 * Recovery Secret
 * Quittung erneut abrufen
+
+#### UC 4.6 - Nachrichten durch Abgebenden empfangen
+
+* Beschreibung: Vorbedingungen
+  * Eine abgebende LEI empfaengt E-Rezept-Token über die TI oder optisch als 2D-Code.: * UC 3.3 wurde ausgeführt oder der 2D-Code wurde präsentiert.
+
+* Beschreibung: Durchzuführende Aktionen
+  * Eine abgebende LEI empfaengt E-Rezept-Token über die TI oder optisch als 2D-Code.: * Das PS wählt den Empfangsweg (TI oder 2D-Code).
+* Bei TI: PS fragt beim E-Rezept-Fachdienst neue Nachrichten für die Telematik-ID ab und lädt sie herunter.
+* Bei 2D-Code: PS wandelt den Code in die Token-Textform um.
+
+* Beschreibung: Nachbedingungen
+  * Eine abgebende LEI empfaengt E-Rezept-Token über die TI oder optisch als 2D-Code.: * E-Rezept-Token liegt im PS der abgebenden LEI vor.
+
+* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+  * Eine abgebende LEI empfaengt E-Rezept-Token über die TI oder optisch als 2D-Code.: * FHIR REST: Communication (E-Rezept-Nachrichten abrufen)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Eine abgebende LEI empfaengt E-Rezept-Token über die TI oder optisch als 2D-Code.: 
+
+**Tabelle:**Fachlicher Anwendungsfall UC 4.6 - Nachrichten durch Abgebenden empfangen
+**Sequenzdiagramm:**
+
+**Abbildung: **UC 4.6 - Nachrichten durch Abgebenden empfangen
+
+#### UC 4.7 - Nachricht durch Abgebenden übermitteln
+
+* Beschreibung: Vorbedingungen
+  * Die abgebende LEI antwortet auf eine Nachricht eines Versicherten oder Vertreters.: * UC 3.3 wurde ausgeführt.
+* UC 4.6 wurde ausgeführt.
+
+* Beschreibung: Durchzuführende Aktionen
+  * Die abgebende LEI antwortet auf eine Nachricht eines Versicherten oder Vertreters.: * Ein Mitarbeiter wählt die Nachricht zu einem E-Rezept und erstellt eine Antwort.
+* Das PS stellt die Antwortnachricht im E-Rezept-Fachdienst ein.
+
+* Beschreibung: Nachbedingungen
+  * Die abgebende LEI antwortet auf eine Nachricht eines Versicherten oder Vertreters.: * Nachricht liegt im E-Rezept-Fachdienst und kann asynchron empfangen werden.
+
+* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+  * Die abgebende LEI antwortet auf eine Nachricht eines Versicherten oder Vertreters.: * FHIR REST: Communication (E-Rezept-Nachricht einstellen)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Die abgebende LEI antwortet auf eine Nachricht eines Versicherten oder Vertreters.: 
+
+**Tabelle:**Fachlicher Anwendungsfall UC 4.7 - Nachricht durch Abgebenden übermitteln
+**Sequenzdiagramm:**
+
+**Abbildung: **UC 4.7 - Nachricht durch Abgebenden übermitteln
 
