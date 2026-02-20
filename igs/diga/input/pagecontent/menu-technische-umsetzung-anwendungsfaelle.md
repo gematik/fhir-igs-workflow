@@ -19,6 +19,12 @@ Die Prozesse des verordnenden Leistungserbringers, welche für die Übermittlung
 ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel
 konzipiert wurden, werden ebenso für die Verordnung von DiGAs genutzt.
 
+Folgende Anwendungsfälle werden genutzt:
+- UC 2.1 - E-Rezepte erzeugen
+- E-Rezept qualifiziert signieren
+- UC 2.3 - E-Rezept einstellen
+- UC 2.5 - E-Rezept durch Verordnenden löschen
+
 <!-- UC 2.1 - E-Rezepte erzeugen -->
 {% assign use_case = use_cases | where: "title", "UC 2.1 - E-Rezepte erzeugen" | first %}
 
@@ -63,10 +69,7 @@ konzipiert wurden, werden ebenso für die Verordnung von DiGAs genutzt.
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 
-Folgende Anwendungsfälle werden genutzt:
-- UC 2.1 - E-Rezepte erzeugen
-- UC 2.3 - E-Rezept einstellen
-- UC 2.5 - E-Rezept durch Verordnenden löschen
+
 
 
 #### Anwendungsfälle im Rahmen der Verwaltung durch den Versicherten
