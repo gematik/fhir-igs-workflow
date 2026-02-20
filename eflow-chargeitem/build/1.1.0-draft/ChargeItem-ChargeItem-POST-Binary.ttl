@@ -1,0 +1,77 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/erpchrg/ChargeItem/ChargeItem-POST-Binary> a fhir:ChargeItem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ChargeItem-POST-Binary"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_ChargeItem|1.1"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_ChargeItem?version=1.1>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ChargeItem ChargeItem-POST-Binary</b></p><a name=\"ChargeItem-POST-Binary\"> </a><a name=\"hcChargeItem-POST-Binary\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-GEM-ERPCHRG-PR-ChargeItem.html\">GEM_ERPCHRG_PR_ChargeItemversion: null1.1.0-draft)</a></p></div><p><b>identifier</b>: <code>https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId</code>/200.000.000.000.000.01, <code>https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode</code>/777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea</p><p><b>status</b>: Billable</p><p><b>code</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/data-absent-reason not-applicable}\">Not Applicable</span></p><p><b>subject</b>: Identifier: NamingSystemKVID/P987654321</p><p><b>enterer</b>: Identifier: <code>https://gematik.de/fhir/sid/telematik-id</code>/3-2-APO-XanthippeVeilchenblau01</p><p><b>enteredDate</b>: 2025-10-01 15:29:00+0000</p><p><b>supportingInformation</b>: <a href=\"#hcChargeItem-POST-Binary/c8720f99-6641-432d-94be-d49eaa164755\">Binary</a></p><hr/><blockquote><p class=\"res-header-id\"><b>Generated Narrative: Binary #c8720f99-6641-432d-94be-d49eaa164755</b></p><a name=\"ChargeItem-POST-Binary/c8720f99-6641-432d-94be-d49eaa164755\"> </a><a name=\"hcChargeItem-POST-Binary/c8720f99-6641-432d-94be-d49eaa164755\"> </a><p><b>contentType</b>: application/pkcs7-mime</p><p><b>data</b>: <code>bWVycnkgY2hyaXN0bWFz</code></p></blockquote></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:contained ( [
+     a fhir:Binary ;
+     fhir:id [ fhir:v "c8720f99-6641-432d-94be-d49eaa164755" ] ;
+     fhir:contentType [ fhir:v "application/pkcs7-mime" ] ;
+     fhir:data [ fhir:v "bWVycnkgY2hyaXN0bWFz"^^xsd:base64Binary ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:system [
+       fhir:v "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId>
+     ] ;
+     fhir:value [ fhir:v "200.000.000.000.000.01" ]
+  ] [
+     fhir:system [
+       fhir:v "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode>
+     ] ;
+     fhir:value [ fhir:v "777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "billable"] ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/data-absent-reason"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/data-absent-reason>
+       ] ;
+       fhir:code [ fhir:v "not-applicable" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:identifier [
+       fhir:system [
+         fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/sid/gkv/kvid-10>
+       ] ;
+       fhir:value [ fhir:v "P987654321" ]
+     ]
+  ] ; # 
+  fhir:enterer [
+     fhir:identifier [
+       fhir:system [
+         fhir:v "https://gematik.de/fhir/sid/telematik-id"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/sid/telematik-id>
+       ] ;
+       fhir:value [ fhir:v "3-2-APO-XanthippeVeilchenblau01" ]
+     ]
+  ] ; # 
+  fhir:enteredDate [ fhir:v "2025-10-01T15:29:00.434+00:00"^^xsd:dateTime] ; # 
+  fhir:supportingInformation ( [
+     fhir:l <#c8720f99-6641-432d-94be-d49eaa164755> ;
+     fhir:reference [ fhir:v "#c8720f99-6641-432d-94be-d49eaa164755" ] ;
+     fhir:display [ fhir:v "Binary" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

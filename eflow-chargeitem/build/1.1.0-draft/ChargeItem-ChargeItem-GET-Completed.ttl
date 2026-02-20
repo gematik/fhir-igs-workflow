@@ -1,0 +1,113 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/erpchrg/ChargeItem/ChargeItem-GET-Completed> a fhir:ChargeItem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ChargeItem-GET-Completed"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_ChargeItem|1.1"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_ChargeItem?version=1.1>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ChargeItem ChargeItem-GET-Completed</b></p><a name=\"ChargeItem-GET-Completed\"> </a><a name=\"hcChargeItem-GET-Completed\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-GEM-ERPCHRG-PR-ChargeItem.html\">GEM_ERPCHRG_PR_ChargeItemversion: null1.1.0-draft)</a></p></div><blockquote><p><b>GEM_ERPCHRG_EX_MarkingFlag</b></p><ul><li>insuranceProvider: false</li><li>subsidy: false</li><li>taxOffice: false</li></ul></blockquote><p><b>identifier</b>: <code>https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId</code>/200.000.000.000.000.01, <code>https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode</code>/777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea</p><p><b>status</b>: Billable</p><p><b>code</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/data-absent-reason not-applicable}\">Not Applicable</span></p><p><b>subject</b>: Identifier: NamingSystemKVID/P987654321</p><p><b>enterer</b>: Identifier: <code>https://gematik.de/fhir/sid/telematik-id</code>/3-2-APO-XanthippeVeilchenblau01</p><p><b>enteredDate</b>: 2025-10-01 15:29:00+0000</p><p><b>supportingInformation</b>: </p><ul><li><a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.2&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Bundle/72bd741c-7ad8-41d8-97c3-9aabbdd0f5b4\">http://fhir.abda.de/eRezeptAbgabedaten/StructureDefinition/DAV-PKV-PR-ERP-AbgabedatenBundle</a></li><li><a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.2&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Bundle/200.000.000.000.000.01\">https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle</a></li><li><a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.2&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Bundle/0428d416-149e-48a4-977c-394887b3d85c\">https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle</a></li></ul></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "insuranceProvider"^^xsd:anyURI ;
+         fhir:l fhir:insuranceProvider
+       ] ;
+       fhir:value [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [
+         fhir:v "subsidy"^^xsd:anyURI ;
+         fhir:l fhir:subsidy
+       ] ;
+       fhir:value [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [
+         fhir:v "taxOffice"^^xsd:anyURI ;
+         fhir:l fhir:taxOffice
+       ] ;
+       fhir:value [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] ) ;
+     fhir:url [
+       fhir:v "https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_EX_MarkingFlag"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_EX_MarkingFlag>
+     ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:system [
+       fhir:v "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId>
+     ] ;
+     fhir:value [ fhir:v "200.000.000.000.000.01" ]
+  ] [
+     fhir:system [
+       fhir:v "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode>
+     ] ;
+     fhir:value [ fhir:v "777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "billable"] ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/data-absent-reason"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/data-absent-reason>
+       ] ;
+       fhir:code [ fhir:v "not-applicable" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:identifier [
+       fhir:system [
+         fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/sid/gkv/kvid-10>
+       ] ;
+       fhir:value [ fhir:v "P987654321" ]
+     ]
+  ] ; # 
+  fhir:enterer [
+     fhir:identifier [
+       fhir:system [
+         fhir:v "https://gematik.de/fhir/sid/telematik-id"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/sid/telematik-id>
+       ] ;
+       fhir:value [ fhir:v "3-2-APO-XanthippeVeilchenblau01" ]
+     ]
+  ] ; # 
+  fhir:enteredDate [ fhir:v "2025-10-01T15:29:00.434+00:00"^^xsd:dateTime] ; # 
+  fhir:supportingInformation ( [
+     fhir:l <https://gematik.de/fhir/erpchrg/Bundle/72bd741c-7ad8-41d8-97c3-9aabbdd0f5b4> ;
+     fhir:reference [ fhir:v "Bundle/72bd741c-7ad8-41d8-97c3-9aabbdd0f5b4" ] ;
+     fhir:display [ fhir:v "http://fhir.abda.de/eRezeptAbgabedaten/StructureDefinition/DAV-PKV-PR-ERP-AbgabedatenBundle" ]
+  ] [
+     fhir:l <https://gematik.de/fhir/erpchrg/Bundle/200.000.000.000.000.01> ;
+     fhir:reference [ fhir:v "Bundle/200.000.000.000.000.01" ] ;
+     fhir:display [ fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle" ]
+  ] [
+     fhir:l <https://gematik.de/fhir/erpchrg/Bundle/0428d416-149e-48a4-977c-394887b3d85c> ;
+     fhir:reference [ fhir:v "Bundle/0428d416-149e-48a4-977c-394887b3d85c" ] ;
+     fhir:display [ fhir:v "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

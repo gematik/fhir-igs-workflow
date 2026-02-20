@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CapabilityStatement xmlns="http://hl7.org/fhir">
+  <id value="erp-fachdienst-client"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"/>
+  </meta>
+  <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-base-url">
+    <valueString value="https://gematik.de/fhir/erpchrg"/>
+  </extension>
+  <url value="https://gematik.de/fhir/erpchrg/OperationDefinition/ERPFachdienstClientChrgOperationDefinition"/>
+  <version value="1.1.0-draft"/>
+  <name value="ERPFachdienstClientChrg"/>
+  <title value="ERPCHRG CapabilityStatement für Clients des E-Rezept-Fachdienst"/>
+  <status value="draft"/>
+  <date value="2025-04-10"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="erp-umsetzung@gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="Dieses CapabilityStatement legt die Anforderungen an Clients des E-Rezept-Fachdienst für PKV-Abrechnungsinformationen fest."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <kind value="requirements"/>
+  <fhirVersion value="4.0.1"/>
+  <format value="application/fhir+json"/>
+  <format value="application/fhir+xml"/>
+  <rest>
+    <mode value="client"/>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+        <valueCode value="MAY"/>
+      </extension>
+      <type value="Task"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+        <code value="search-type"/>
+      </interaction>
+      <versioning value="versioned-update"/>
+      <readHistory value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+        <valueCode value="MAY"/>
+      </extension>
+      <type value="ChargeItem"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+        <code value="create"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+        <code value="update"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+        <code value="patch"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+        <code value="delete"/>
+      </interaction>
+      <versioning value="versioned-update"/>
+      <readHistory value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+        <valueCode value="MAY"/>
+      </extension>
+      <type value="Consent"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+        <code value="create"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+        <code value="delete"/>
+      </interaction>
+      <versioning value="versioned-update"/>
+      <readHistory value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+        <valueCode value="MAY"/>
+      </extension>
+      <type value="Communication"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+        <code value="create"/>
+      </interaction>
+      <versioning value="versioned-update"/>
+      <readHistory value="true"/>
+    </resource>
+  </rest>
+</CapabilityStatement>

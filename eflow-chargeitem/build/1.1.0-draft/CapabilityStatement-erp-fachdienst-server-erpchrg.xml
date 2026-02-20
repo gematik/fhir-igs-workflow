@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CapabilityStatement xmlns="http://hl7.org/fhir">
+  <id value="erp-fachdienst-server-erpchrg"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"/>
+  </meta>
+  <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-base-url">
+    <valueString value="erp.zentral.erp.splitdns.ti-dienste.de"/>
+  </extension>
+  <url value="https://gematik.de/fhir/erpchrg/OperationDefinition/ERPFachdienstServerChrgOperationDefinition"/>
+  <version value="1.1.0-draft"/>
+  <name value="ERPFachdienstServerChrg"/>
+  <title value="ERPCHRG CapabilityStatement für den E-Rezept-Fachdienst"/>
+  <status value="draft"/>
+  <date value="2025-04-10"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="erp-umsetzung@gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <kind value="requirements"/>
+  <imports value="https://gematik.de/fhir/workflow/core/CapabilityStatement/erp-fachdienst-server">
+    <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+      <valueCode value="SHALL"/>
+    </extension>
+  </imports>
+  <fhirVersion value="4.0.1"/>
+  <format value="application/fhir+json"/>
+  <format value="application/fhir+xml"/>
+  <rest>
+    <mode value="server"/>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+        <valueCode value="SHALL"/>
+      </extension>
+      <type value="Task"/>
+      <supportedProfile value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task">
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+      </supportedProfile>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <extension url="statusCode">
+            <valueString value="200"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Successful operation"/>
+          </extension>
+          <valueCode value="SHALL"/>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown search parameter"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_PARAM_UNKNOWN"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Invalid query parameter(s)"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_BAD_SYNTAX"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown resource type"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_UNKNOWN_TYPE"/>
+          </extension>
+        </extension>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <extension url="statusCode">
+            <valueString value="200"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Successful operation"/>
+          </extension>
+          <valueCode value="SHALL"/>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Invalid request"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_BAD_FORMAT"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown resource type"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_UNKNOWN_TYPE"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Resource is not known"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_RESOURCE_ID_FAIL"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="410"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Resource was deleted"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_DELETED"/>
+          </extension>
+        </extension>
+        <code value="read"/>
+      </interaction>
+      <versioning value="versioned-update"/>
+      <readHistory value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+        <valueCode value="SHALL"/>
+      </extension>
+      <type value="ChargeItem"/>
+      <supportedProfile value="https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_ChargeItem">
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+      </supportedProfile>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <extension url="statusCode">
+            <valueString value="200"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Successful operation"/>
+          </extension>
+          <valueCode value="SHALL"/>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown search parameter"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_PARAM_UNKNOWN"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Invalid query parameter(s)"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_BAD_SYNTAX"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown resource type"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_UNKNOWN_TYPE"/>
+          </extension>
+        </extension>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <extension url="statusCode">
+            <valueString value="200"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Successful operation"/>
+          </extension>
+          <valueCode value="SHALL"/>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Invalid request"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_BAD_FORMAT"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown resource type"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_UNKNOWN_TYPE"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Resource is not known"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_RESOURCE_ID_FAIL"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="410"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Resource was deleted"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_DELETED"/>
+          </extension>
+        </extension>
+        <code value="read"/>
+      </interaction>
+      <versioning value="versioned-update"/>
+      <readHistory value="true"/>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="_lastUpdated"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-lastUpdated"/>
+        <type value="date"/>
+        <documentation value="Resource.meta.lastUpdated"/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="identifier"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/ChargeItem-enteredDate"/>
+        <type value="token"/>
+        <documentation value="ChargeItem.identifier"/>
+      </searchParam>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+        <valueCode value="SHALL"/>
+      </extension>
+      <type value="Consent"/>
+      <supportedProfile value="https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Consent">
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+      </supportedProfile>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <extension url="statusCode">
+            <valueString value="200"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Successful operation"/>
+          </extension>
+          <valueCode value="SHALL"/>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown search parameter"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_PARAM_UNKNOWN"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Invalid query parameter(s)"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_BAD_SYNTAX"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown resource type"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_UNKNOWN_TYPE"/>
+          </extension>
+        </extension>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <extension url="statusCode">
+            <valueString value="200"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Successful operation"/>
+          </extension>
+          <valueCode value="SHALL"/>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Invalid request"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_BAD_FORMAT"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown resource type"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_UNKNOWN_TYPE"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Resource is not known"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_RESOURCE_ID_FAIL"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="410"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Resource was deleted"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_DELETED"/>
+          </extension>
+        </extension>
+        <code value="read"/>
+      </interaction>
+      <versioning value="versioned-update"/>
+      <readHistory value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+        <valueCode value="SHALL"/>
+      </extension>
+      <type value="Communication"/>
+      <supportedProfile value="https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReq">
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+      </supportedProfile>
+      <supportedProfile value="https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReply">
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+      </supportedProfile>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <extension url="statusCode">
+            <valueString value="200"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Successful operation"/>
+          </extension>
+          <valueCode value="SHALL"/>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown search parameter"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_PARAM_UNKNOWN"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Invalid query parameter(s)"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_BAD_SYNTAX"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown resource type"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_UNKNOWN_TYPE"/>
+          </extension>
+        </extension>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <extension url="statusCode">
+            <valueString value="200"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Successful operation"/>
+          </extension>
+          <valueCode value="SHALL"/>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Invalid request"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_BAD_FORMAT"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown resource type"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_UNKNOWN_TYPE"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Resource is not known"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_RESOURCE_ID_FAIL"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="410"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Resource was deleted"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="EPAMSOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_DELETED"/>
+          </extension>
+        </extension>
+        <code value="read"/>
+      </interaction>
+      <versioning value="versioned-update"/>
+      <readHistory value="true"/>
+    </resource>
+  </rest>
+</CapabilityStatement>

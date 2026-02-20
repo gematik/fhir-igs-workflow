@@ -1,0 +1,57 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/erpchrg/Communication/b4cf7f71-3ade-40ab-97a9-929f95af29f2> a fhir:Communication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "b4cf7f71-3ade-40ab-97a9-929f95af29f2"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReq|1.1"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReq?version=1.1>
+     ] ) ;
+     fhir:tag ( [
+       fhir:display [ fhir:v "Communication message sent by patient to pharmacy to request the change of an existing ChargeItem by providing the AccessCode" ]
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Communication b4cf7f71-3ade-40ab-97a9-929f95af29f2</b></p><a name=\"b4cf7f71-3ade-40ab-97a9-929f95af29f2\"> </a><a name=\"hcb4cf7f71-3ade-40ab-97a9-929f95af29f2\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-GEM-ERPCHRG-PR-Communication-ChargChangeReq.html\">Request for Modification on ChargeItemversion: null1.1.0-draft)</a></p><p style=\"margin-bottom: 0px\">Tag: Communication message sent by patient to pharmacy to request the change of an existing ChargeItem by providing the AccessCode (Details: [not stated] code null = 'Communication message sent by patient to pharmacy to request the change of an existing ChargeItem by providing the AccessCode')</p></div><p><b>basedOn</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.2&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/ChargeItem/a51520ec-0899-404f-bb97-fe7d461f90a8?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea\">ChargeItem/a51520ec-0899-404f-bb97-fe7d461f90a8?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea</a></p><p><b>status</b>: Unknown</p><p><b>sent</b>: 2025-10-01 15:29:00+0000</p><p><b>recipient</b>: Identifier: <code>https://gematik.de/fhir/sid/telematik-id</code>/3-2-APO-XanthippeVeilchenblau01</p><p><b>sender</b>: Identifier: NamingSystemKVID/P987654321</p><h3>Payloads</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Content[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>Bitte meinen Namen in Günther ändern, Waltraud ist falsch.</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:basedOn ( [
+     fhir:l <https://gematik.de/fhir/erpchrg/ChargeItem/a51520ec-0899-404f-bb97-fe7d461f90a8?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea> ;
+     fhir:reference [ fhir:v "ChargeItem/a51520ec-0899-404f-bb97-fe7d461f90a8?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "unknown"] ; # 
+  fhir:sent [ fhir:v "2025-10-01T15:29:00.434+00:00"^^xsd:dateTime] ; # 
+  fhir:recipient ( [
+     fhir:identifier [
+       fhir:system [
+         fhir:v "https://gematik.de/fhir/sid/telematik-id"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/sid/telematik-id>
+       ] ;
+       fhir:value [ fhir:v "3-2-APO-XanthippeVeilchenblau01" ]
+     ]
+  ] ) ; # 
+  fhir:sender [
+     fhir:identifier [
+       fhir:system [
+         fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/sid/gkv/kvid-10>
+       ] ;
+       fhir:value [ fhir:v "P987654321" ]
+     ]
+  ] ; # 
+  fhir:payload ( [
+     fhir:content [
+       a fhir:String ;
+       fhir:v "Bitte meinen Namen in Günther ändern, Waltraud ist falsch."
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

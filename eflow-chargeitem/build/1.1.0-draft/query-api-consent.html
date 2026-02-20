@@ -1,0 +1,1123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Query API: Consent - Abrechnungsinformationen des E-Rezepte für PKV-Versicherte v1.1.0-draft</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        background: url('assets/images/gem-headline.png') no-repeat;
+        background-position: 90% -136px;
+    }
+</style>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"6.2"}
+    h3,h4,h5,h6{--heading-prefix:"6.2"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Start</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Fachlichkeit
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-fachlichkeit-ueberblick.html">Überblick</a>
+      </li>
+      <li>
+        <a href="menu-fachlichkeit-szenario-pkv.html">Szenarien</a>
+      </li>
+      <li>
+        <a href="menu-fachlichkeit-anwendungsfaelle.html">Anwendungsfälle</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Technische Umsetzung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-technische-umsetzung-systemueberblick.html">Systemüberblick</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-anwendungsfaelle.html">Technische Anwendungsfälle</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-verarbeitungsregeln.html">Verarbeitungsregeln</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Schnittstellen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
+      </li>
+      <li>
+        <a href="query-api.html">Query API</a>
+      </li>
+      <li>
+        <a href="operation-api.html">Operation API</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-additional-api.html">Additional APIs</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="referenced.html">Referenzen</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="release-notes.html">Release Notes</a>
+      </li>
+      <li>
+        <a href="spec-sheet.html">Steckbriefe</a>
+      </li>
+      <li>
+        <a href="license.html">Lizenz</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+Abrechnungsinformationen des E-Rezepte für PKV-Versicherte
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 1.1.0-draft - ci-build
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='query-api.html'><b>Query API</b></a></li><li><b>Query API: Consent</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Query API: Consent</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#profilierung" id="markdown-toc-profilierung">Profilierung</a></li>
+  <li><a href="#unzulässige-operationen" id="markdown-toc-unzulässige-operationen">Unzulässige Operationen</a></li>
+  <li><a href="#post-consent-einwilligung-erteilen" id="markdown-toc-post-consent-einwilligung-erteilen">POST /Consent (Einwilligung erteilen)</a>    <ul>
+      <li><a href="#nachricht" id="markdown-toc-nachricht">Nachricht</a></li>
+      <li><a href="#auslösung" id="markdown-toc-auslösung">Auslösung</a></li>
+      <li><a href="#resource-api" id="markdown-toc-resource-api">Resource API</a></li>
+      <li><a href="#verarbeitung" id="markdown-toc-verarbeitung">Verarbeitung</a></li>
+    </ul>
+  </li>
+  <li><a href="#get-consent-einwilligung-einsehen" id="markdown-toc-get-consent-einwilligung-einsehen">GET /Consent (Einwilligung einsehen)</a>    <ul>
+      <li><a href="#nachricht-1" id="markdown-toc-nachricht-1">Nachricht</a></li>
+      <li><a href="#auslösung-1" id="markdown-toc-auslösung-1">Auslösung</a></li>
+      <li><a href="#resource-api-1" id="markdown-toc-resource-api-1">Resource API</a></li>
+      <li><a href="#verarbeitung-1" id="markdown-toc-verarbeitung-1">Verarbeitung</a></li>
+    </ul>
+  </li>
+  <li><a href="#delete-consent-einwilligung-widerrufen" id="markdown-toc-delete-consent-einwilligung-widerrufen">DELETE /Consent (Einwilligung widerrufen)</a>    <ul>
+      <li><a href="#nachricht-2" id="markdown-toc-nachricht-2">Nachricht</a></li>
+      <li><a href="#auslösung-2" id="markdown-toc-auslösung-2">Auslösung</a></li>
+      <li><a href="#resource-api-2" id="markdown-toc-resource-api-2">Resource API</a></li>
+      <li><a href="#verarbeitung-2" id="markdown-toc-verarbeitung-2">Verarbeitung</a></li>
+    </ul>
+  </li>
+  <li><a href="#sicherheitsanforderungen" id="markdown-toc-sicherheitsanforderungen">Sicherheitsanforderungen</a></li>
+</ul>
+
+</div>
+<p>Query API: Consent</p>
+
+<p>Die Query API für Consent ermöglicht das Erteilen, Einsehen und Widerrufen der Einwilligung zur Speicherung von Abrechnungsinformationen.</p>
+
+<h2 id="profilierung">Profilierung</h2>
+<p>Die Profilierung der Ressource Consent ist hier dokumentiert: https://simplifier.net/erezept-patientenrechnung/gem_erpchrg_pr_consent</p>
+
+<h2 id="unzulässige-operationen">Unzulässige Operationen</h2>
+<requirement conformance="SHALL" key="IG-ERP-CHRG-211" title="E-Rezept-Fachdienst – unzulässige Operationen Consent" version="0">
+    <meta lockversion="false" />
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest" />
+    </actor>
+Der E-Rezept-Fachdienst MUSS alle Zugriffe auf die Ressource Consent mittels der HTTP-Operationen PUT, PATCH oder HEAD unterbinden, damit keine unzulässigen Operationen auf die Informationen zur Einwilligung ausgeführt werden können.
+</requirement>
+
+<h2 id="post-consent-einwilligung-erteilen">POST /Consent (Einwilligung erteilen)</h2>
+
+<h3 id="nachricht">Nachricht</h3>
+<p>Der Versicherte erteilt die Einwilligung durch das Erstellen einer Consent‑Ressource (CHARGCONS). Die KVNR wird in Consent.patient.identifier angegeben.</p>
+
+<p><strong>Beispiel-URI:</strong> <code class="language-plaintext highlighter-rouge">https://prescriptionserver.telematik/Consent</code></p>
+
+<h3 id="auslösung">Auslösung</h3>
+<p>Die Operation wird im FdV/AdV ausgelöst, wenn der Versicherte der Speicherung zustimmt.</p>
+
+<h3 id="resource-api">Resource API</h3>
+<div class="gematik-apidoc" data-api-type="FHIRResource" data-api-fhir-resource-type="Consent" data-api-fhir-interaction="create" data-api-operation-id="createConsent">
+  <div id="CapabilityStatement">
+    <pre>
+      {
+  "resourceType": "CapabilityStatement",
+  "id": "erp-fachdienst-server-erpchrg",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"
+    ]
+  },
+  "url": "https://gematik.de/fhir/erpchrg/OperationDefinition/ERPFachdienstServerChrgOperationDefinition",
+  "extension": [
+    {
+      "url": "https://gematik.de/fhir/ti/StructureDefinition/extension-base-url",
+      "valueString": "https://gematik.de/fhir/erpchrg"
+    }
+  ],
+  "name": "ERPFachdienstServerChrg",
+  "status": "draft",
+  "version": "1.1.0",
+  "date": "2025-04-10",
+  "title": "ERPCHRG CapabilityStatement für den E-Rezept-Fachdienst",
+  "description": "CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.gematik.de"
+        }
+      ]
+    }
+  ],
+  "kind": "requirements",
+  "fhirVersion": "4.0.1",
+  "format": [
+    "application/fhir+json",
+    "application/fhir+xml"
+  ],
+  "rest": [
+    {
+      "mode": "server",
+      "resource": [
+        {
+          "type": "Task",
+          "versioning": "versioned-update",
+          "readHistory": true,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "SHALL"
+            }
+          ],
+          "interaction": [
+            {
+              "code": "read",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "search-type",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ChargeItem",
+          "versioning": "versioned-update",
+          "readHistory": true,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "SHALL"
+            }
+          ],
+          "interaction": [
+            {
+              "code": "read",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "search-type",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "create",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "update",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "patch",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "delete",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Consent",
+          "versioning": "versioned-update",
+          "readHistory": true,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "SHALL"
+            }
+          ],
+          "interaction": [
+            {
+              "code": "read",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "create",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "delete",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Communication",
+          "versioning": "versioned-update",
+          "readHistory": true,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "SHALL"
+            }
+          ],
+          "interaction": [
+            {
+              "code": "create",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+    </pre>
+  </div>
+</div>
+
+<h3 id="verarbeitung">Verarbeitung</h3>
+<requirement conformance="SHALL" key="IG-ERP-CHRG-219" title="E-Rezept-Fachdienst – Consent schreiben – Rollenprüfung Versicherter" version="0">
+    <meta lockversion="false" />
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest" />
+    </actor>
+Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am E-Rezept-Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit eine Einwilligung nicht durch Unberechtigte erteilt werden kann.
+</requirement>
+
+<requirement conformance="SHALL" key="IG-ERP-CHRG-220" title="E-Rezept-Fachdienst – Consent schreiben – Prüfung KVNR" version="0">
+    <meta lockversion="false" />
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest" />
+    </actor>
+Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent sicherstellen, dass die KVNR im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests und die KVNR in Consent.patient.identifier übereinstimmen, damit eine Einwilligung für einen Versicherten nicht durch Dritte erteilt werden kann. Im Fehlerfall muss der Http-Request mit dem Http-Fehlercode 403 abgewiesen werden.
+</requirement>
+
+<requirement conformance="SHALL" key="IG-ERP-CHRG-221" title="E-Rezept-Fachdienst – Consent schreiben – FHIR-Validierung" version="0">
+    <meta lockversion="false" />
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest" />
+    </actor>
+Der E-Rezept-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource Consent übertragene Consent-Ressource gegen das FHIR-Profil Consent prüfen und bei Nicht-Konformität das Anlegen der Ressource im E-Rezept-Fachdienst mit dem http-Status-Code 400 ablehnen, damit nur FHIR-valide Ressourcen in den E-Rezept-Fachdienst hochgeladen werden.
+</requirement>
+
+<requirement conformance="SHALL" key="IG-ERP-CHRG-222" title="E-Rezept-Fachdienst – Consent schreiben – nur eine Einwilligung CHARGCONS pro KVNR" version="0">
+    <meta lockversion="false" />
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest" />
+    </actor>
+Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent sicherstellen, dass noch keine Consent-Ressource für die KVNR im ACCESS_TOKEN und Consent.category.coding.code = CHARGCONS gespeichert ist, um maximal eine Einwilligung für den Versicherten zu speichern. Im Fehlerfall muss der Http-Request mit dem Http-Fehlercode 409 abgewiesen werden.
+</requirement>
+
+<requirement conformance="SHALL" key="IG-ERP-CHRG-223" title="E-Rezept-Fachdienst – Consent schreiben – Persistieren" version="0">
+    <meta lockversion="false" />
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest" />
+    </actor>
+Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent – falls bei den Prüfungen keine Fehler aufgetreten sind, welche zum Abbruch der Operation führen – die übermittelte Ressource persistieren.
+</requirement>
+
+<h2 id="get-consent-einwilligung-einsehen">GET /Consent (Einwilligung einsehen)</h2>
+
+<h3 id="nachricht-1">Nachricht</h3>
+<p>Der Versicherte liest die gespeicherte Einwilligung aus. Die Antwort ist ein Bundle mit den Consent‑Ressourcen des Versicherten.</p>
+
+<p><strong>Beispiel-URI:</strong> <code class="language-plaintext highlighter-rouge">https://prescriptionserver.telematik/Consent</code></p>
+
+<h3 id="auslösung-1">Auslösung</h3>
+<p>Die Operation wird im FdV/AdV ausgelöst, um den Einwilligungsstatus anzuzeigen.</p>
+
+<h3 id="resource-api-1">Resource API</h3>
+<div class="gematik-apidoc" data-api-type="FHIRResource" data-api-fhir-resource-type="Consent" data-api-fhir-interaction="read" data-api-operation-id="readConsent">
+  <div id="CapabilityStatement">
+    <pre>
+      {
+  "resourceType": "CapabilityStatement",
+  "id": "erp-fachdienst-server-erpchrg",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"
+    ]
+  },
+  "url": "https://gematik.de/fhir/erpchrg/OperationDefinition/ERPFachdienstServerChrgOperationDefinition",
+  "extension": [
+    {
+      "url": "https://gematik.de/fhir/ti/StructureDefinition/extension-base-url",
+      "valueString": "https://gematik.de/fhir/erpchrg"
+    }
+  ],
+  "name": "ERPFachdienstServerChrg",
+  "status": "draft",
+  "version": "1.1.0",
+  "date": "2025-04-10",
+  "title": "ERPCHRG CapabilityStatement für den E-Rezept-Fachdienst",
+  "description": "CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.gematik.de"
+        }
+      ]
+    }
+  ],
+  "kind": "requirements",
+  "fhirVersion": "4.0.1",
+  "format": [
+    "application/fhir+json",
+    "application/fhir+xml"
+  ],
+  "rest": [
+    {
+      "mode": "server",
+      "resource": [
+        {
+          "type": "Task",
+          "versioning": "versioned-update",
+          "readHistory": true,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "SHALL"
+            }
+          ],
+          "interaction": [
+            {
+              "code": "read",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "search-type",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ChargeItem",
+          "versioning": "versioned-update",
+          "readHistory": true,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "SHALL"
+            }
+          ],
+          "interaction": [
+            {
+              "code": "read",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "search-type",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "create",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "update",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "patch",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "delete",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Consent",
+          "versioning": "versioned-update",
+          "readHistory": true,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "SHALL"
+            }
+          ],
+          "interaction": [
+            {
+              "code": "read",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "create",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "delete",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Communication",
+          "versioning": "versioned-update",
+          "readHistory": true,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "SHALL"
+            }
+          ],
+          "interaction": [
+            {
+              "code": "create",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+    </pre>
+  </div>
+</div>
+
+<h3 id="verarbeitung-1">Verarbeitung</h3>
+<requirement conformance="SHALL" key="IG-ERP-CHRG-217" title="E-Rezept-Fachdienst – Consent lesen – Rollenprüfung Versicherter" version="0">
+    <meta lockversion="false" />
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest" />
+    </actor>
+Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Consent sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am E-Rezept-Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit die Information zur Einwilligung nicht durch Unberechtigte ausgelesen werden kann.
+</requirement>
+
+<requirement conformance="SHALL" key="IG-ERP-CHRG-218" title="E-Rezept-Fachdienst – Consent lesen – Filter Consent auf KVNR des Versicherten" version="0">
+    <meta lockversion="false" />
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest" />
+    </actor>
+Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Consent die dem Versicherten zugeordneten Consent-Ressourcen anhand der KVNR des Versicherten im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren und in den Response aufnehmen, die in Consent.patient.identifier die entsprechende KVNR des begünstigten Versicherten referenziert haben, damit ausschließlich Versicherte ihre eigenen Informationen zu Einwilligungen einsehen können.
+</requirement>
+
+<h2 id="delete-consent-einwilligung-widerrufen">DELETE /Consent (Einwilligung widerrufen)</h2>
+
+<h3 id="nachricht-2">Nachricht</h3>
+<p>Der Versicherte widerruft die Einwilligung. Der Widerruf löscht die Consent‑Ressource und alle zugehörigen Abrechnungsinformationen.</p>
+
+<p><strong>Beispiel-URI:</strong> <code class="language-plaintext highlighter-rouge">https://prescriptionserver.telematik/Consent?category=CHARGCONS</code></p>
+
+<h3 id="auslösung-2">Auslösung</h3>
+<p>Die Operation wird im FdV/AdV ausgelöst, wenn der Versicherte die Einwilligung zurückzieht.</p>
+
+<h3 id="resource-api-2">Resource API</h3>
+<div class="gematik-apidoc" data-api-type="FHIRResource" data-api-fhir-resource-type="Consent" data-api-fhir-interaction="delete" data-api-operation-id="deleteConsent">
+  <div id="CapabilityStatement">
+    <pre>
+      {
+  "resourceType": "CapabilityStatement",
+  "id": "erp-fachdienst-server-erpchrg",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"
+    ]
+  },
+  "url": "https://gematik.de/fhir/erpchrg/OperationDefinition/ERPFachdienstServerChrgOperationDefinition",
+  "extension": [
+    {
+      "url": "https://gematik.de/fhir/ti/StructureDefinition/extension-base-url",
+      "valueString": "https://gematik.de/fhir/erpchrg"
+    }
+  ],
+  "name": "ERPFachdienstServerChrg",
+  "status": "draft",
+  "version": "1.1.0",
+  "date": "2025-04-10",
+  "title": "ERPCHRG CapabilityStatement für den E-Rezept-Fachdienst",
+  "description": "CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.gematik.de"
+        }
+      ]
+    }
+  ],
+  "kind": "requirements",
+  "fhirVersion": "4.0.1",
+  "format": [
+    "application/fhir+json",
+    "application/fhir+xml"
+  ],
+  "rest": [
+    {
+      "mode": "server",
+      "resource": [
+        {
+          "type": "Task",
+          "versioning": "versioned-update",
+          "readHistory": true,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "SHALL"
+            }
+          ],
+          "interaction": [
+            {
+              "code": "read",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "search-type",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ChargeItem",
+          "versioning": "versioned-update",
+          "readHistory": true,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "SHALL"
+            }
+          ],
+          "interaction": [
+            {
+              "code": "read",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "search-type",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "create",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "update",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "patch",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "delete",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Consent",
+          "versioning": "versioned-update",
+          "readHistory": true,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "SHALL"
+            }
+          ],
+          "interaction": [
+            {
+              "code": "read",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "create",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "delete",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Communication",
+          "versioning": "versioned-update",
+          "readHistory": true,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "SHALL"
+            }
+          ],
+          "interaction": [
+            {
+              "code": "create",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+    </pre>
+  </div>
+</div>
+
+<h3 id="verarbeitung-2">Verarbeitung</h3>
+<requirement conformance="SHALL" key="IG-ERP-CHRG-212" title="E-Rezept-Fachdienst – Consent löschen – alles Löschen verbieten" version="0">
+    <meta lockversion="false" />
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest" />
+    </actor>
+Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt /Consent ohne Angabe ?category mit dem HTTP-Fehlercode 405 ablehnen, um das Löschen mehrerer Ressourcen über einen Request zu verhindern.
+</requirement>
+
+<requirement conformance="SHALL" key="IG-ERP-CHRG-213" title="E-Rezept-Fachdienst – Consent löschen – Rollenprüfung Versicherter" version="0">
+    <meta lockversion="false" />
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest" />
+    </actor>
+Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt /Consent die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am E-Rezept-Fachdienst aufrufen dürfen, damit die Information zur Einwilligung nicht durch Unberechtigte gelöscht werden kann.
+</requirement>
+
+<requirement conformance="SHALL" key="IG-ERP-CHRG-214" title="E-Rezept-Fachdienst – Consent löschen – Prüfung category" version="0">
+    <meta lockversion="false" />
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest" />
+    </actor>
+Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt /Consent prüfen, dass der für ?category angegebene Wert im System https://gematik.de/fhir/erpchrg/CodeSystem/GEM_ERPCHRG_CS_ConsentType enthalten ist und bei fehlerhafter Prüfung den Request mit dem Fehler 400 abbrechen, damit nur Löschrequests für definierte Consent-Typen ausgeführt werden.
+</requirement>
+
+<requirement conformance="SHALL" key="IG-ERP-CHRG-215" title="E-Rezept-Fachdienst – Consent löschen – Löschen der bestehenden Abrechnungsinformationen" version="0">
+    <meta lockversion="false" />
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest" />
+    </actor>
+Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt /Consent mit ?category=CHARGCONS alle dem Versicherten zugeordneten ChargeItem-Ressourcen (ChargeItem.subject.identifier) anhand der KVNR des Versicherten im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren und löschen.
+</requirement>
+
+<requirement conformance="SHALL" key="IG-ERP-CHRG-216" title="E-Rezept-Fachdienst – Consent löschen – Löschen der Consent" version="0">
+    <meta lockversion="false" />
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest" />
+    </actor>
+Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt /Consent die Ressource löschen, bei der Consent.patient.identifier der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests sowie Consent.category.coding.code dem in ?category übermittelten Wert entspricht.
+</requirement>
+
+<h2 id="sicherheitsanforderungen">Sicherheitsanforderungen</h2>
+<p>Generelle Sicherheitsanforderungen werden <a href="./menu-schnittstellen-datenschutz-und-sicherheit.html">hier</a> festgehalten.</p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Feb 20, 2026 13:40+0000">2026-02-20</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Consent xmlns="http://hl7.org/fhir">
+  <id value="ChargeItemConsent-Request"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Consent|1.1"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Consent ChargeItemConsent-Request</b></p><a name="ChargeItemConsent-Request"> </a><a name="hcChargeItemConsent-Request"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-GEM-ERPCHRG-PR-Consent.html">GEM_ERPCHRG_PR_Consentversion: null1.1.0-draft)</a></p></div><h2>Participants</h2><table class="grid"><tr><td><b>Role</b></td><td><b>Details</b></td></tr><tr><td><title>Who the consent applies to</title>Patient</td><td>Identifier: NamingSystemKVID/P987654321</td></tr></table><p>This consent is made under the regulation <span title="Codes:{http://terminology.hl7.org/CodeSystem/v3-ActCode OPTIN}">opt-in</span> .</p><p>The subject has given their consent.</p></div>
+  </text>
+  <status value="active"/>
+  <scope>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/consentscope"/>
+      <code value="patient-privacy"/>
+      <display value="Privacy Consent"/>
+    </coding>
+  </scope>
+  <category>
+    <coding>
+      <system value="https://gematik.de/fhir/erpchrg/CodeSystem/GEM_ERPCHRG_CS_ConsentType"/>
+      <code value="CHARGCONS"/>
+      <display value="Consent for saving electronic charge item"/>
+    </coding>
+  </category>
+  <patient>
+    <identifier>
+      <system value="http://fhir.de/sid/gkv/kvid-10"/>
+      <value value="P987654321"/>
+      <assigner>
+        <identifier>
+          <system value="http://fhir.de/sid/arge-ik/iknr"/>
+          <value value="168140950"/>
+        </identifier>
+      </assigner>
+    </identifier>
+  </patient>
+  <policyRule>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+      <code value="OPTIN"/>
+    </coding>
+  </policyRule>
+</Consent>

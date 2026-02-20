@@ -1,0 +1,73 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/erpchrg/Consent/0dcc5d4c-bf24-4c06-b02e-be5bc24587e2> a fhir:Consent ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "0dcc5d4c-bf24-4c06-b02e-be5bc24587e2"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Consent|1.1"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Consent?version=1.1>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Consent 0dcc5d4c-bf24-4c06-b02e-be5bc24587e2</b></p><a name=\"0dcc5d4c-bf24-4c06-b02e-be5bc24587e2\"> </a><a name=\"hc0dcc5d4c-bf24-4c06-b02e-be5bc24587e2\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-GEM-ERPCHRG-PR-Consent.html\">GEM_ERPCHRG_PR_Consentversion: null1.1.0-draft)</a></p></div><h2>Participants</h2><table class=\"grid\"><tr><td><b>Role</b></td><td><b>Details</b></td></tr><tr><td><title>Who the consent applies to</title>Patient</td><td>Identifier: NamingSystemKVID/P987654321</td></tr></table><p>This consent is made under the regulation <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ActCode OPTIN}\">opt-in</span> .</p><p>The subject has given their consent.</p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:scope [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/consentscope"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/consentscope>
+       ] ;
+       fhir:code [ fhir:v "patient-privacy" ] ;
+       fhir:display [ fhir:v "Privacy Consent" ]
+     ] )
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://gematik.de/fhir/erpchrg/CodeSystem/GEM_ERPCHRG_CS_ConsentType"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/erpchrg/CodeSystem/GEM_ERPCHRG_CS_ConsentType>
+       ] ;
+       fhir:code [ fhir:v "CHARGCONS" ] ;
+       fhir:display [ fhir:v "Consent for saving electronic charge item" ]
+     ] )
+  ] ) ; # 
+  fhir:patient [
+     fhir:identifier [
+       fhir:system [
+         fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/sid/gkv/kvid-10>
+       ] ;
+       fhir:value [ fhir:v "P987654321" ] ;
+       fhir:assigner [
+         fhir:identifier [
+           fhir:system [
+             fhir:v "http://fhir.de/sid/arge-ik/iknr"^^xsd:anyURI ;
+             fhir:l <http://fhir.de/sid/arge-ik/iknr>
+           ] ;
+           fhir:value [ fhir:v "168140950" ]
+         ]
+       ]
+     ]
+  ] ; # 
+  fhir:dateTime [ fhir:v "2025-10-01T15:29:00.434+00:00"^^xsd:dateTime] ; # 
+  fhir:policyRule [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActCode"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/v3-ActCode>
+       ] ;
+       fhir:code [ fhir:v "OPTIN" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
