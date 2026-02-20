@@ -33,6 +33,8 @@ Für dieses Mapping muss für die Parameters Struktur keine Transformation der S
 | medication | Medication | Wird aus den close-Operation-Parameters extrahiert und übertragen |
 | organization | - | Organization wird neu erzeugt und nach Transformationsregeln befüllt |
 
+**Tabelle:**Übersicht Mappingvorgehen für Parameterwerte
+
 ## Transformationsregeln für Dispensierinformationen
 
 Einige Daten müssen zusätzlich durch Transformationsregeln angepasst oder ergänzt werden. Die folgenden Transformationsregeln werden für das Mapping von **Dispensierinformationen** verwendet:
