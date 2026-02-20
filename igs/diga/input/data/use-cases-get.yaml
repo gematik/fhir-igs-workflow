@@ -1,5 +1,8 @@
 - id: E_Rezept_qualifiziert_signieren
   core-uc: E_Rezept_qualifiziert_signieren
+  roles:
+    - (Zahn-)Arzt
+    - Psychotherapeut
 - id: UC_2_1_E_Rezepte_erzeugen
   core-uc: UC_2_1_E_Rezepte_erzeugen
   roles:
@@ -7,8 +10,14 @@
     - Psychotherapeut
 - id: UC_2_3_E_Rezept_einstellen
   core-uc: UC_2_3_E_Rezept_einstellen
+  roles:
+    - (Zahn-)Arzt
+    - Psychotherapeut
 - id: UC_2_5_E_Rezept_durch_Verordnenden_loeschen
   core-uc: UC_2_5_E_Rezept_durch_Verordnenden_loeschen
+  roles:
+    - (Zahn-)Arzt
+    - Psychotherapeut
 
 # Versicherte
 - id: UC_3_1_E_Rezepte_durch_Versicherten_abrufen
@@ -35,13 +44,19 @@
     - Kostenträger
 - id: UC_4_2_E_Rezept_durch_Abgebenden_zurueckgeben
   core-uc: UC_4_2_E_Rezept_durch_Abgebenden_zurueckgeben
+  roles:
+    - Kostenträger
 - id: UC_4_3_E_Rezept_durch_Abgebenden_loeschen
   core-uc: UC_4_3_E_Rezept_durch_Abgebenden_loeschen
 - id: UC_4_4_Quittung_abrufen
   core-uc: UC_4_4_Quittung_abrufen
+  roles:
+    - Kostenträger
 - id: UC_4_5_Abgabedatensatz_signieren
   core-uc: UC_4_5_Abgabedatensatz_signieren
 - id: UC_4_8_Quittung_erneut_abrufen
   core-uc: UC_4_8_Quittung_erneut_abrufen
+  roles:
+    - Kostenträger
 - id: UC_4_16_Dispensierinformationen_bereitstellen
   core-uc: UC_4_16_Dispensierinformationen_bereitstellen

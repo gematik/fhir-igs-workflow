@@ -70,9 +70,7 @@ Dieser Ausschluss erfolgt temporär. In einer späteren Version können Unfallka
     <testProcedure id="Produkttest"/>
   </actor>
   Der E-Rezept-Fachdienst MUSS bei einem Task mit Task.flowType = 162 die Attribute in Task in Abhängigkeit des in der http-POST-Operation /Task/&#60;id&#62;/$activate übergebenen gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_005 belegen.<br>
-
-  <b>TAB_eRpDM_005 Prozessparameter Flowtype 162</b>
-  
+ 
   <table>
     <tr> 
       <th>Feld in Task</th>
@@ -103,4 +101,5 @@ Dieser Ausschluss erfolgt temporär. In einer späteren Version können Unfallka
       <td>&#60;Datum der QES.Erstellung im Signaturobjekt&#62; + 3 Kalendermonate</td>
     </tr>
   </table>
+   <div><figcaption><strong>Tabelle: </strong>TAB_eRpDM_005 Prozessparameter Flowtype 162</figcaption></div>
 </requirement>
