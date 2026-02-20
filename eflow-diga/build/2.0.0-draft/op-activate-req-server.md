@@ -38,8 +38,6 @@ Dieser Ausschluss erfolgt temporär. In einer späteren Version können Unfallka
 
 Der E-Rezept-Fachdienst MUSS bei einem Task mit Task.flowType = 162 die Attribute in Task in Abhängigkeit des in der http-POST-Operation /Task/<id>/$activate übergebenen gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_005 belegen.
 
-**TAB_eRpDM_005 Prozessparameter Flowtype 162**
-
 * Feld in Task: Task.performerType.coding.system
   * Feldbelegung: "https://gematik.de/fhir/erp/CodeSystemGEM_ERP_CS_OrganizationType"
 * Feld in Task: Task.performerType.coding.code
@@ -52,4 +50,6 @@ Der E-Rezept-Fachdienst MUSS bei einem Task mit Task.flowType = 162 die Attribut
   * Feldbelegung: <Datum der QES.Erstellung im Signaturobjekt> + 3 Kalendermonate
 * Feld in Task: Task.AcceptDate
   * Feldbelegung: <Datum der QES.Erstellung im Signaturobjekt> + 3 Kalendermonate
+
+**Tabelle: **TAB_eRpDM_005 Prozessparameter Flowtype 162
 
