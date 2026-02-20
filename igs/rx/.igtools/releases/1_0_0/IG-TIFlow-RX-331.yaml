@@ -1,0 +1,25 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: 41163762823b336c1d85d3e3b12ad3cbf36ac5a255c4d742a1ca8df41c6e33bb
+created: '2026-02-20T14:15:41.687770'
+date: '2026-02-20T14:15:41.687773'
+key: IG-TIFlow-RX-331
+modified: '2026-02-20T14:15:41.687771'
+release_status: NEW
+source: input/pagecontent/op-close-fd-requirements.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: "<Beschreibung>\n        Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks\
+  \ für ein E-Rezept mittels HTTP-POST/$close-Operation auf den in der URL referenzierten\
+  \ /Task/&lt;id&gt; mit Flowtype 160, 166, 169, 200, oder 209 sicherstellen, dass\
+  \ das in GEM_ERP_PR_PAR_CloseOperation_Input enthaltene MedicationDispense-Objekt\
+  \ dem Profil GEM_ERP_PR_MedicationDispense entspricht. Andernfalls ist die Operation\
+  \ mit einem Fehler abzubrechen, und im OperationOutcome muss der Text \"Unzulässige\
+  \ Abgabeinformationen: Für diesen Workflow sind nur Abgabeinformationen für Arzneimittel\
+  \ zulässig.\" zurückgegeben werden.\n    </Beschreibung>\n    <!-- A_26002-02 -->"
+title: E-Rezept-Fachdienst - Task schließen - Flowtype 160/166/169/200/209 - Profilprüfung
+  MedicationDispense
+version: 0

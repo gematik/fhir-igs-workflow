@@ -6,8 +6,8 @@ Die Nachricht zum Abruf von E-Rezepten wird als HTTP GET-Anfrage an den E-Rezept
 
 ### Anforderungen an Schnittstelle
 
-- [FD-Anforderungen zur Task-Query](./query-api-task-client-requirements.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
-- [Client-Anforderungen zur Task-Query](./query-api-task-server-requirements.html): Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.
+- [Ergänzende Server-Anforderungen zur Task-Query](./query-api-task-client-requirements.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [Ergänzende Client-Anforderungen zur Task-Query](./query-api-task-server-requirements.html): Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.
 
 ### Resource API
 

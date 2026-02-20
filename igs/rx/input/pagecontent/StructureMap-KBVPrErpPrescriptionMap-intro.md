@@ -26,7 +26,7 @@ Bedingung: url = `https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_EmergencySe
 
 | Quelle (Eingangsdaten) | Ziel (Ausgabedaten) | Aktion | Transformation & Beschreibung |
 |------------------------|---------------------|--------|-------------------------------|
-| `KBVPRERPPrescription.extension`<br>`[Bedingung: url = 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_EmergencyServicesFee']` | `EPAMedicationRequest.extension` | Nicht Übertragen | Feld wird nicht gemappt \| Quelle: MedicationRequest.extension:Notdienstgebühr |
+| `KBVPRERPPrescription.extension`<br>`[Bedingung: url = 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_EmergencyServicesFee']` | `EPAMedicationRequest.extension` | Nicht Übertragen | Feld wird nicht gemappt \| Quelle: MedicationRequest.extension:Notdienstgebuehr |
 
 #### Extension: KBV_EX_FOR_Accident
 Bedingung: url = `https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Accident`
@@ -87,7 +87,7 @@ Bedingung: url = `https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Narcotic`
 |------------------------|---------------------|--------|-------------------------------|
 | `KBVPRERPPrescription.extension`<br>`[Bedingung: url = 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Narcotic']` | `EPAMedicationRequest.extension.url` | Fester Wert | setzt festen Wert: `https://gematik.de/fhir/epa-medication/StructureDefinition/narcotics-extension` |
 
-#### Extension: ErgänzendeAngabenSubstitutionsmittel
+#### Extension: ErgaenzendeAngabenSubstitutionsmittel
 
 | Quelle (Eingangsdaten) | Ziel (Ausgabedaten) | Aktion | Transformation & Beschreibung |
 |------------------------|---------------------|--------|-------------------------------|
@@ -139,7 +139,7 @@ Bedingung: url = `https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Teratogenic
 |------------------------|---------------------|--------|-------------------------------|
 | `KBVPRERPPrescription.extension.extension`<br>`[Bedingung: url = 'ErklaerungSachkenntnis']` | `EPAMedicationRequest.extension.extension.url` | Fester Wert | setzt festen Wert: `declaration-of-expertise` |
 
-#### Extension: AushändigungInformationsmaterialien
+#### Extension: AushaendigungInformationsmaterialien
 
 | Quelle (Eingangsdaten) | Ziel (Ausgabedaten) | Aktion | Transformation & Beschreibung |
 |------------------------|---------------------|--------|-------------------------------|
