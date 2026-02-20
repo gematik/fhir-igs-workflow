@@ -1,7 +1,5 @@
-### OpenAPI: E-Rezept Produkttypen
+<div class="dragon">
+    Die bereitgestellte OpenAPI-Definition dient <b>ausschließlich</b> als Hilfestellung bei der Implementierung. Sie enthält nicht alle möglichen Fehlercodes oder Rückgabewerte und kann daher nicht als normativ betrachtet werden. Für eine vollständige und korrekte Implementierung sind die offiziellen Spezifikationen und begleitenden Dokumentationen maßgeblich.
+</div>
 
-Die OpenAPI-Artefakte dienen als **Implementierungshilfe**.
-Die normative Definition der Anforderungen bleibt in den Spezifikationen und Requirement-Blöcken dieses IG.
-
-- [OpenAPI JSON des eRp Fachdienst Servers](erp-fachdienst-server.openapi.json)
-- [OpenAPI JSON des eRp Fachdienst Clients](erp-fachdienst-client.openapi.json)
+{% include openapi.html openapiurl="erp-fachdienst-server.openapi.yaml" %}
