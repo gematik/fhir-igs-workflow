@@ -4,7 +4,7 @@
 ### Ablaufdiagramm
 
 <figure>
-    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+    <div class="gem-ig-img-container" style="--box-width: 400px; margin-bottom: 30px;">
     {% include diga-ablaufdiagramm.svg %}
     </div>
     <figcaption><strong>Abbildung: </strong>Ablaufdiagramm DiGA-Verordnung</figcaption>
