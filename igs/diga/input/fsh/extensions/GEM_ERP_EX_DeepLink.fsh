@@ -1,8 +1,8 @@
-Extension: EFlowRxDeepLinkExtension
-Id: eflow-rx-deeplink-extension
+Extension: GEM_ERP_EX_DeepLink
+Id: GEM-ERP-EX-DeepLink
 Title: "GEM ERP EX DeepLink"
-Description: "Enthaelt Informationen zum Deep Link fuer eine DiGA."
+Description: "Enthält Informationen zum Deep Link für eine DiGA."
 Context: MedicationDispense
-* insert Versioning
-* . ^short = "Angabe eines Deep Links, der zum Oeffnen der DiGA verwendet werden kann."
+* insert StructureDefinition(GEM_ERP_EX_DeepLink)
+* . ^short = "Angabe eines Deep Links, der zum Öffnen der DiGA verwendet werden kann."
 * value[x] only url

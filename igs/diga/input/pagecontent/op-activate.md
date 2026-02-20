@@ -1,29 +1,16 @@
-Operation: $activate
+Die FHIR-Operation `$activate` überführt einen im Status `draft` befindlichen `Task` in den Status `ready`, wenn das Primärsystem den qualifiziert elektronisch signierten Verordnungsdatensatz (QES) übermittelt. 
 
-Die FHIR-Operation `$activate` ueberfuehrt einen im Status `draft` befindlichen `Task` in den Status `ready`, nachdem das Primaersystem den qualifiziert elektronisch signierten Verordnungsdatensatz (QES) uebermittelt hat. Fuer DiGA (Flowtype 162) gelten zusaetzliche Payload-Pruefungen. Die allgemeinen Anforderungen des Basis-Workflows gelten unveraendert.
+Diese Operation basiert auf der $activate Operation des Basis-Workflow für E-Rezepte. Für DiGA-Verordnungen (Flowtype 162) gelten zusätzliche Payload-Prüfungen. 
 
-## DiGA-spezifische Pruefungen (Flowtype 162)
+### Nachricht
+Die Operation $activate wird als HTTP POST auf /Task/&#60;id&#62;/$activate ausgeführt.
 
-<requirement conformance="SHALL" key="IG-ERP-84" title="E-Rezept-Fachdienst - Task aktivieren - DiGA-spezifische Payload-Pruefung" version="0">
-  <meta lockversion="false"/>
-  <actor name="E-Rezept-Fachdienst">
-    <testProcedure id="Produkttest"/>
-  </actor>
-  Der E-Rezept-Fachdienst MUSS fuer Flowtype 162 eine <i>DeviceRequest</i>-Ressource sowie <i>Composition.type = e16D</i> verlangen und bei Abweichungen mit HTTP 400 abbrechen.
-</requirement>
+### Anforderungen an Schnittstelle
 
-<requirement conformance="SHALL" key="IG-ERP-85" title="E-Rezept-Fachdienst - Task aktivieren - PZN in KBV_PR_EVDGA_HealthAppRequest validieren" version="0">
-  <meta lockversion="false"/>
-  <actor name="E-Rezept-Fachdienst">
-    <testProcedure id="Produkttest"/>
-  </actor>
-  Der E-Rezept-Fachdienst MUSS fuer Flowtype 162 die PZN in <i>KBV_PR_EVDGA_HealthAppRequest.code</i> gemaess den Technischen Hinweisen pruefen; Fehler fuehren zu HTTP 400.
-</requirement>
+Es gelten die übergreifenden Anforderungen an die $activate Operation.
+ToDo: link zu übergreifenden Anforderungen 
 
-<requirement conformance="SHALL" key="IG-ERP-89" title="E-Rezept-Fachdienst - Task aktivieren - Alternative IK fuer Flowtype 162 verbieten" version="0">
-  <meta lockversion="false"/>
-  <actor name="E-Rezept-Fachdienst">
-    <testProcedure id="Produkttest"/>
-  </actor>
-  Der E-Rezept-Fachdienst MUSS Verordnungen des Flowtype 162 mit <i>Coverage.payor.identifier.extension:alternativeID</i> mit HTTP 400 abweisen, um Unfallkassen auszuschliessen.
-</requirement>
+[Workflow-spezifische Anforderungen für den E-Rezept-Fachdienst](./op-activate-req-server.html)
+
+Es gibt keine workflow-spezifischen Anforderungen für das verordnende Primärsystem.
+

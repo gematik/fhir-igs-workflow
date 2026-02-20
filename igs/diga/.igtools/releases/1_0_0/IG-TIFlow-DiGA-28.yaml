@@ -1,0 +1,23 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: efd2bc44722afe38d0c49293ef1497d981f89f17e275405542fbf2f45c559c74
+created: '2026-02-16T08:14:25.039021'
+date: '2026-02-17T16:07:12.699000'
+key: IG-TIFlow-DiGA-28
+modified: '2026-02-17T16:07:12.699000'
+release_status: NEW
+source: input/pagecontent/op-activate-req-server.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Task des Flowtype Task.extension:flowType
+  = 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate prüfen, ob die
+  Extension Coverage.payor.identifier.extension:alternativeID vorhanden ist und in
+  diesem Fall die Operation mit Http-Fehlercode 400 abbrechen, um sicherzustellen,
+  dass dieser Workflow nicht für Verordnungen genutzt wird, die zu Lasten von Unfallkassen
+  oder Berufsgenossenschaften gehen.
+title: E-Rezept-Fachdienst – Task aktivieren – Flowtype 162 - Prüfung Coverage Alternative
+  IK
+version: 0

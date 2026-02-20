@@ -1,0 +1,32 @@
+@startuml
+title UC 3.3 - Nachricht durch Versicherten uebermitteln
+
+actor "Versicherter/Vertreter" as V
+participant "FdV" as FdV
+participant "Identity Provider" as IDP
+participant "Verzeichnisdienst" as VZD
+participant "E-Rezept Fachdienst" as FD
+
+V -> FdV: Nachricht mit Token senden()
+activate FdV
+
+alt Versand ueber TI
+  opt kein gueltiger AuthN-Token
+    ref over FdV, IDP: AuthN-Token anfordern
+  end
+  FdV -> VZD: Apotheke suchen()
+  VZD --> FdV: Empfaengerdaten
+  FdV -> FD: POST /Communication (AuthN-Token, Token, Text)
+  activate FD
+  FD -> FD: Nachricht speichern()
+  FD --> FdV: Status
+  deactivate FD
+else 2D-Code
+  FdV -> FdV: Token als 2D-Code erzeugen()
+  FdV --> V: 2D-Code anzeigen/ausdrucken
+end
+
+FdV --> V: Bestaetigung
+deactivate FdV
+
+@enduml

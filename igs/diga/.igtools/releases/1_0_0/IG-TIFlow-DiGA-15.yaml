@@ -1,0 +1,22 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: c39409047a2f284192a62dab39805225dcd869a85fcecf76ab5dc11470edadb5
+created: '2026-02-16T08:14:25.036687'
+date: '2026-02-17T16:07:12.699825'
+key: IG-TIFlow-DiGA-15
+modified: '2026-02-17T16:07:12.699825'
+release_status: NEW
+source: input/pagecontent/op-close-req-server.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: "Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks für eine Verordnung mit\
+  \ Flowtype 162 mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/&#60;id&#60;\
+  \ die Rolle \"professionOID\" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader\
+  \ \"Authorization\" feststellen und sicherstellen, dass ausschließlich Institutionen\
+  \ in der Rolle\n -\toid_kostentraeger\n die Operation am Fachdienst aufrufen, damit\
+  \ der Workflow nicht durch einen Unberechtigten abgeschlossen werden kann."
+title: E-Rezept-Fachdienst - Task schliessen - Flowtype 162 - Rollenprüfung
+version: 0

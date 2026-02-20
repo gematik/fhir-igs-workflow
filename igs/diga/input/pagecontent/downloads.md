@@ -1,3 +1,3 @@
 Downloads
 
-Derzeit sind keine zusaetzlichen Downloads fuer den DiGA-IG vorgesehen.
+Derzeit sind keine zusätzlichen Downloads für den DiGA-IG vorgesehen.

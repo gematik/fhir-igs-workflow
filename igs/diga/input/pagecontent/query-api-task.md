@@ -1,13 +1,22 @@
-Query API: Task
 
-Die Query API fuer Task beschreibt den lesenden Zugriff auf Tasks. Der
-Kostentraeger ermittelt E-Rezepte des Flowtype 162 und ruft Tasks mit
-Rezept-ID und AccessCode ab.
+Die Query API für Task beschreibt den lesenden Zugriff auf Tasks.
+Der Versicherte ruft die Liste aller seiner Verordnungen inklusive DiGA-Verordnungen ab.
+Der Versicherte kann mit Referenz auf eine Task-ID eine einzelne Verordnung abrufen.
 
-## GET /Task (Suche)
-- Rueckgabe der E-Rezepte eines Versicherten mit Flowtype 162
-- Filterung auf Status "offen" fuer den Abruf durch Kostentraeger
+Der Kostenträger kann unter Angabe der Task-ID und des ACCESS_CODE die Daten einer einzelnen Verordnung abrufen und somit insbesondere den Anwendungfall "Recovery Secret" umsetzen.
 
-## GET /Task/<id> (Details)
-- Abruf eines konkreten E-Rezepts mit Rezept-ID und AccessCode
-- Statusuebergang auf "in Abgabe (gesperrt)" gem. Basis-Workflow
+Der Kostenträger kann unter Angabe der Task-ID und des Secrets die Daten einer einzelnen Verordnung abrufen und somit insbesondere den Anwendungfall "Quittung erneut abrufen" umsetzen.
+
+### GET /Task (Suche)
+- Der Aufruf basiert auf dem GET /Task Aufruf des Basis-Workflow für E-Rezepte.
+
+Es gibt keine workflow-spezifischen Anforderungen für den E-Rezept-Fachdienst.
+
+Es gibt keine workflow-spezifischen Anforderungen für das E-Rezept-FdV.
+
+### GET /Task/<id> (Details)
+- Der Aufruf basiert auf dem GET /Task/&#60;id&#62; Aufruf des Basis-Workflow für E-Rezepte.
+
+Es gibt keine workflow-spezifischen Anforderungen für das E-Rezept-FdV.
+
+Es gibt keine workflow-spezifischen Anforderungen für den Kostenträger.

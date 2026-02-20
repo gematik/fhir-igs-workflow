@@ -1,0 +1,23 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: 0d46674374d826276f662ac300338bf2220bba3c2214be1fd9e83ed6b2f4e2a9
+created: '2026-02-16T08:14:25.038569'
+date: '2026-02-17T16:07:12.698350'
+key: IG-TIFlow-DiGA-25
+modified: '2026-02-17T16:07:12.698350'
+release_status: NEW
+source: input/pagecontent/op-activate-req-server.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mit Flowtype 162 mittels
+  $activate prüfen, dass im Bundle eine <i>DeviceRequest</i>-Ressource und in der
+  </i>Composition.type.coding.code=e16D</i> enthalten ist. Der E-Rezept-Fachdienst
+  MUSS andernfalls mit dem HTTP-Fehlercode 400 abbrechen und in der <i>OperationOutcome</i>
+  den Fehlertext "Für diesen Workflowtypen sind nur Verordnungen für Digitale Gesundheitsanwendungen
+  zulässig" ausgeben.
+title: E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Verordnung von
+  DiGAs
+version: 0
