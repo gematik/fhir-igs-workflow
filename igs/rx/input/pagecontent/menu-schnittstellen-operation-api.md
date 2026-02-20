@@ -3,7 +3,7 @@ Die folgenden Operation APIs stellt der E-Rezept-Fachdienst im RX-Modul bereit.
 ## Lesereihenfolge
 
 1. Zuerst die modulübergreifende Basis in eFlow Core:
-   - [Core: Operation API](https://gemspec.gematik.de/ig/fhir/eflow-core/latest/operation-api.html)
+   - [Core: Operation API](https://gemspec.gematik.de/ig/fhir/{{ site.data.constants.tiflow_core_version }}operation-api.html)
 2. Danach die RX-spezifischen Ergänzungen in diesem Modul.
 3. Pro Operation gilt die gleiche Seitenstruktur:
    - Nachricht

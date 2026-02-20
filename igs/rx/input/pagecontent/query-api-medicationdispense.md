@@ -1,4 +1,4 @@
-Diese Seite beschreibt den Einstieg in die MedicationDispense-Query-Schnittstelle.
+Diese Seite basiert auf der gleichnamigen Schnittstelle in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/{{ site.data.constants.tiflow_core_version }}query-api-medicationdispense.html) und beschreibt den Einstieg in die MedicationDispense-Query-Schnittstelle.
 
 ### Nachricht
 
@@ -17,28 +17,26 @@ Anfragen an die <i>MedicationDispense</i>-Ressource können über die RESTful AP
 
 #### API Beschreibung
 
+- [API-ERP: Abgabeinformationen abrufen](https://github.com/gematik/api-erp/blob/master/docs/erp_versicherte.adoc#abgabeinformationen-abrufen)
 
-- [API-ERP: E-Rezept-Abgabe vollziehen](https://github.com/gematik/api-erp/blob/master/docs/erp_abrufen.adoc#e-rezept-abgabe-vollziehen)
+#### Hinweise
+
+- Im Anwendungsfall "Abgabeinformationen abrufen" wird die Suche per `identifier` auf die PrescriptionID genutzt.
+- Die Rückgabe erfolgt als Bundle und kann ein oder mehrere `MedicationDispense`-Objekte enthalten.
 
 
 ### Instance API
 
+Um spezifische Details zu einem einzelnen _MedicationDispense_ mittels der RESTful API zu erhalten, wird die _MedicationDispense Instance API_ verwendet, indem eine HTTP GET-Anfrage an den Endpunkt <i>/MedicationDispense/[id]</i> gestellt wird.
 
-#### GET /MedicationDispense
+#### API Beschreibung
 
-<div class="gematik-apidoc"
-  data-api-type="FHIRResource"
-  data-api-fhir-resource-type="MedicationDispense"
-  data-api-fhir-interaction="search-type"
-  data-api-operation-id="searchMedicationDispense">
-  <div id="CapabilityStatement">
-    <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
-    </pre>
-  </div>
-</div>
+- [API-ERP: Abgabeinformationen zu einem E-Rezept abrufen](https://github.com/gematik/api-erp/blob/master/docs/erp_versicherte.adoc#abgabeinformationen-zu-einem-e-rezept-abrufen)
 
-### Hinweis
+#### Hinweise
 
-- Im Anwendungsfall "Abgabeinformationen abrufen" wird die Suche per `identifier` auf die PrescriptionID genutzt.
-- Die Rückgabe erfolgt als Bundle und kann ein oder mehrere `MedicationDispense`-Objekte enthalten.
+- ...Hinweise
+
+### Sicherheitsanforderungen
+
+Generelle Sicherheitsanforderungen werden [hier](./menu-schnittstellen-datenschutz-und-sicherheit.html) festgehalten.

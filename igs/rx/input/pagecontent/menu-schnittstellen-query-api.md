@@ -18,5 +18,5 @@ Die Task-Seite umfasst die Varianten `GET /Task`, `GET /Task/{id}`, `GET /Task/{
 
 Modulübergreifende Query-Ressourcen sind im Core IG beschrieben:
 
-- [AuditEvent (Core)](https://gemspec.gematik.de/ig/fhir/eflow-core/latest/query-api-auditevent.html)
-- [Device (Core)](https://gemspec.gematik.de/ig/fhir/eflow-core/latest/query-api-device.html)
+- [AuditEvent (Core)](https://gemspec.gematik.de/ig/fhir/{{ site.data.constants.tiflow_core_version }}query-api-auditevent.html)
+- [Device (Core)](https://gemspec.gematik.de/ig/fhir/{{ site.data.constants.tiflow_core_version }}query-api-device.html)
