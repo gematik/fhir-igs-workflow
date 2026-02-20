@@ -12,141 +12,249 @@ Version 1.1.0-draft - ci-build
 
 Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rezepte für PKV‑Versicherte“. Im Fokus steht, was im E‑Rezept‑Fachdienst und in den beteiligten Clients (FdV/AdV, Primärsysteme, AVS) passiert, wenn die fachlichen Anwendungsfälle ausgeführt werden.
 
-## Bereitstellen der Abrechnungsinformation durch die abgebende LEI (AF_10082)
+### Abrechnungsinformation durch Abgebenden bereitstellen
 
-Die abgebende LEI stellt die Abrechnungsinformation zu einem E‑Rezept im E‑Rezept‑Fachdienst bereit. Technisch wird dafür ein ChargeItem mit eingebettetem PKV‑Abgabedatensatz angelegt, ergänzt um Verordnungsdatensatz und Quittung aus dem Workflow.
+* Beschreibung: Vorbedingungen
+  * Mit der Belieferung des E-Rezepts übermittelt die abgebende LEI den PKV-Abgabedatensatz an den E-Rezept-Fachdienst und stellt damit die Abrechnungsinformation digital bereit. Voraussetzung ist die Einwilligung des Versicherten zum Speichern der Abrechnungsinformationen.: * Ein Mitarbeiter der abgebenden LEI hat „Quittung abrufen“ durchgeführt.
+* Task-ID und Secret zur Statusänderung „in Abgabe (gesperrt)“ sind bekannt.
+* Das E-Rezept hat den Status „quittiert“.
+* Einwilligung des Versicherten liegt vor.
 
-* Das AVS erstellt den PKV‑Abgabedatensatz (QES‑signiert bei Änderungen, andernfalls fortgeschritten signiert).
-* Das AVS sendet den ChargeItem‑Datensatz an den E‑Rezept‑Fachdienst.
-* Der E‑Rezept‑Fachdienst validiert den ChargeItem, prüft Einwilligung (Consent) und Signaturen.
-* Der E‑Rezept‑Fachdienst erzeugt einen AccessCode und speichert die Abrechnungsinformation.
+* Beschreibung: Durchzuführende Aktionen
+  * Mit der Belieferung des E-Rezepts übermittelt die abgebende LEI den PKV-Abgabedatensatz an den E-Rezept-Fachdienst und stellt damit die Abrechnungsinformation digital bereit. Voraussetzung ist die Einwilligung des Versicherten zum Speichern der Abrechnungsinformationen.: * PKV-Abgabedatensatz erstellen und signieren.
+* ChargeItem mit PrescriptionID und Pflichtfeldern erzeugen.
+* ChargeItem, Secret und Abgabedaten an den E-Rezept-Fachdienst senden.
+* Fachdienst prüft Einwilligung, Signatur und FHIR-Validität; übernimmt Verordnungsdatensatz und Quittung.
+* Fachdienst erzeugt AccessCode zum Ändern.
 
-**Schnittstelle:** *[query-api-chargeitem](./query-api-chargeitem.md)*
+* Beschreibung: Nachbedingungen
+  * Mit der Belieferung des E-Rezepts übermittelt die abgebende LEI den PKV-Abgabedatensatz an den E-Rezept-Fachdienst und stellt damit die Abrechnungsinformation digital bereit. Voraussetzung ist die Einwilligung des Versicherten zum Speichern der Abrechnungsinformationen.: * Abrechnungsinformation ist gespeichert und protokolliert.
 
+* Beschreibung: Technische Anwendungsfälle des E-Rezept-Fachdienst
+  * Mit der Belieferung des E-Rezepts übermittelt die abgebende LEI den PKV-Abgabedatensatz an den E-Rezept-Fachdienst und stellt damit die Abrechnungsinformation digital bereit. Voraussetzung ist die Einwilligung des Versicherten zum Speichern der Abrechnungsinformationen.: * [Abrechnungsinformation bereitstellen](./menu-technische-umsetzung-anwendungsfaelle.md#bereitstellen-abgebende-lei)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Mit der Belieferung des E-Rezepts übermittelt die abgebende LEI den PKV-Abgabedatensatz an den E-Rezept-Fachdienst und stellt damit die Abrechnungsinformation digital bereit. Voraussetzung ist die Einwilligung des Versicherten zum Speichern der Abrechnungsinformationen.:  APOTHEKER 
+
+**Tabelle:**Fachlicher Anwendungsfall Abrechnungsinformation durch Abgebenden bereitstellen
 **Sequenzdiagramm:**
 
-**Abbildung: **SD Abrechnungsinformation durch Abgebenden bereitstellen
+**Abbildung: **Abrechnungsinformation durch Abgebenden bereitstellen
 
-## Abrufen der Abrechnungsinformation durch die abgebende LEI (AF_10081)
+### Abrechnungsinformation durch Abgebenden abrufen
 
-Für Korrekturen kann die abgebende LEI eine zuvor bereitgestellte Abrechnungsinformation abrufen. Voraussetzung ist die Prescription‑ID und der AccessCode.
+* Beschreibung: Vorbedingungen
+  * Die Apotheke ruft eine zuvor von ihr bereitgestellte Abrechnungsinformation ab, wenn sie die Daten im Primärsystem nicht mehr vorliegen hat und der AccessCode bekannt ist.: * Rezept-ID und AccessCode zum Ändern sind bekannt.
 
-* Das AVS ruft die Abrechnungsinformation im E‑Rezept‑Fachdienst ab.
-* Der E‑Rezept‑Fachdienst prüft die Rolle, die Prescription‑ID und den AccessCode.
-* Der E‑Rezept‑Fachdienst liefert das ChargeItem inkl. PKV‑Abgabedatensatz zurück.
+* Beschreibung: Durchzuführende Aktionen
+  * Die Apotheke ruft eine zuvor von ihr bereitgestellte Abrechnungsinformation ab, wenn sie die Daten im Primärsystem nicht mehr vorliegen hat und der AccessCode bekannt ist.: * Aufruf des E-Rezept-Fachdienstes mit Rezept-ID und AccessCode.
+* Fachdienst prüft AccessCode und Berechtigung.
+* Fachdienst liefert Verordnungs- und PKV-Abgabedatensatz.
 
-**Schnittstelle:** *[query-api-chargeitem](./query-api-chargeitem.md)*
+* Beschreibung: Nachbedingungen
+  * Die Apotheke ruft eine zuvor von ihr bereitgestellte Abrechnungsinformation ab, wenn sie die Daten im Primärsystem nicht mehr vorliegen hat und der AccessCode bekannt ist.: * Datensätze liegen im Primärsystem vor; Zugriff ist protokolliert.
 
+* Beschreibung: Technische Anwendungsfälle des E-Rezept-Fachdienst
+  * Die Apotheke ruft eine zuvor von ihr bereitgestellte Abrechnungsinformation ab, wenn sie die Daten im Primärsystem nicht mehr vorliegen hat und der AccessCode bekannt ist.: * [Abrechnungsinformation abrufen](./menu-technische-umsetzung-anwendungsfaelle.md#abrufen-abgebende-lei)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Die Apotheke ruft eine zuvor von ihr bereitgestellte Abrechnungsinformation ab, wenn sie die Daten im Primärsystem nicht mehr vorliegen hat und der AccessCode bekannt ist.:  APOTHEKER 
+
+**Tabelle:**Fachlicher Anwendungsfall Abrechnungsinformation durch Abgebenden abrufen
 **Sequenzdiagramm:**
 
-**Abbildung: **SD Abrechnungsinformation durch Abgebenden abrufen
+**Abbildung: **Abrechnungsinformation durch Abgebenden abrufen
 
+### PKV-Abgabedatensatz durch Abgebenden ändern
 
-## Ändern des PKV‑Abgabedatensatzes durch die abgebende LEI (AF_10083)
+* Beschreibung: Vorbedingungen
+  * Die abgebende LEI ändert auf Wunsch des Versicherten den PKV-Abgabedatensatz. Der zuvor gespeicherte Datensatz wird überschrieben.: * Abrechnungsinformation wurde zuvor bereitgestellt.
+* Rezept-ID und AccessCode zum Ändern sind bekannt.
 
-Wenn eine Korrektur erforderlich ist, kann die abgebende LEI den PKV‑Abgabedatensatz überschreiben. Ältere Versionen werden nicht gespeichert.
+* Beschreibung: Durchzuführende Aktionen
+  * Die abgebende LEI ändert auf Wunsch des Versicherten den PKV-Abgabedatensatz. Der zuvor gespeicherte Datensatz wird überschrieben.: * Neuer PKV-Abgabedatensatz wird erzeugt.
+* Rezept-ID, AccessCode und Datensatz werden an den Fachdienst übermittelt.
+* Fachdienst prüft AccessCode, Berechtigung, Signatur und FHIR-Validität.
+* Datensatz wird überschrieben; neuer AccessCode wird erzeugt.
 
-* Der Versicherte berechtigt die abgebende LEI über den AccessCode.
-* Das AVS sendet den geänderten PKV‑Abgabedatensatz an den E‑Rezept‑Fachdienst.
-* Der E‑Rezept‑Fachdienst validiert den Datensatz, überschreibt die gespeicherten Daten und erzeugt einen neuen AccessCode.
+* Beschreibung: Nachbedingungen
+  * Die abgebende LEI ändert auf Wunsch des Versicherten den PKV-Abgabedatensatz. Der zuvor gespeicherte Datensatz wird überschrieben.: * Änderung ist protokolliert; neuer AccessCode liegt vor.
 
-**Schnittstelle:** *[query-api-chargeitem](./query-api-chargeitem.md)*
+* Beschreibung: Technische Anwendungsfälle des E-Rezept-Fachdienst
+  * Die abgebende LEI ändert auf Wunsch des Versicherten den PKV-Abgabedatensatz. Der zuvor gespeicherte Datensatz wird überschrieben.: * [PKV-Abgabedatensatz ändern](./menu-technische-umsetzung-anwendungsfaelle.md#pkv-abgabedatensatz-aendern)
 
+* Beschreibung: Relevante(r) Sektor(en)
+  * Die abgebende LEI ändert auf Wunsch des Versicherten den PKV-Abgabedatensatz. Der zuvor gespeicherte Datensatz wird überschrieben.:  APOTHEKER 
+
+**Tabelle:**Fachlicher Anwendungsfall PKV-Abgabedatensatz durch Abgebenden ändern
 **Sequenzdiagramm:**
 
-**Abbildung: **SD PKV-Abgabedatensatz durch Abgebenden ändern
+**Abbildung: **PKV-Abgabedatensatz durch Abgebenden ändern
 
-## Einwilligung zum Speichern erteilen (AF_10084)
+### Einwilligung zum Speichern der Abrechnungsinformationen erteilen
 
-Der Versicherte erteilt die Einwilligung zum Speichern der Abrechnungsinformationen im E‑Rezept‑Fachdienst.
+* Beschreibung: Vorbedingungen
+  * Der Versicherte erteilt die Einwilligung zur Speicherung von Abrechnungsinformationen im E-Rezept-Fachdienst. Die Einwilligung ist unbefristet.: * Der Nutzer ist als PKV-Versicherter identifiziert.
 
-* Das FdV/AdV zeigt den Einwilligungstext an und holt die Bestätigung ein.
-* Das FdV/AdV erstellt eine Consent‑Ressource (CHARGCONS) und speichert sie im E‑Rezept‑Fachdienst.
+* Beschreibung: Durchzuführende Aktionen
+  * Der Versicherte erteilt die Einwilligung zur Speicherung von Abrechnungsinformationen im E-Rezept-Fachdienst. Die Einwilligung ist unbefristet.: * Einwilligung im FdV erfassen.
+* Consent-Ressource erstellen und an den Fachdienst übertragen.
 
-**Schnittstelle:** *[query-api-consent](./query-api-consent.md)*
+* Beschreibung: Nachbedingungen
+  * Der Versicherte erteilt die Einwilligung zur Speicherung von Abrechnungsinformationen im E-Rezept-Fachdienst. Die Einwilligung ist unbefristet.: * Einwilligung ist gespeichert und protokolliert.
 
+* Beschreibung: Technische Anwendungsfälle des E-Rezept-Fachdienst
+  * Der Versicherte erteilt die Einwilligung zur Speicherung von Abrechnungsinformationen im E-Rezept-Fachdienst. Die Einwilligung ist unbefristet.: * [Einwilligung erteilen](./menu-technische-umsetzung-anwendungsfaelle.md#einwilligung-erteilen)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Der Versicherte erteilt die Einwilligung zur Speicherung von Abrechnungsinformationen im E-Rezept-Fachdienst. Die Einwilligung ist unbefristet.:  VERSICHERTER 
+
+**Tabelle:**Fachlicher Anwendungsfall Einwilligung zum Speichern der Abrechnungsinformationen erteilen
 **Sequenzdiagramm:**
 
-**Abbildung: **SD Einwilligung zum Speichern der Abrechnungsinformationen durch Versicherten erteilen
+**Abbildung: **Einwilligung zum Speichern der Abrechnungsinformationen erteilen
 
-## Einwilligung widerrufen (AF_10085)
+### Einwilligung zum Speichern der Abrechnungsinformationen widerrufen
 
-Der Versicherte kann die Einwilligung jederzeit widerrufen. Mit dem Widerruf werden alle gespeicherten Abrechnungsinformationen gelöscht.
+* Beschreibung: Vorbedingungen
+  * Der Versicherte widerruft die Einwilligung. Dadurch werden alle Abrechnungsinformationen im E-Rezept-Fachdienst gelöscht.: * Einwilligung wurde zuvor erteilt und ist abrufbar.
 
-* Das FdV/AdV lässt den Widerruf bestätigen und übermittelt die Löschanforderung.
-* Der E‑Rezept‑Fachdienst löscht die Consent‑Ressource und alle zugehörigen Abrechnungsinformationen.
+* Beschreibung: Durchzuführende Aktionen
+  * Der Versicherte widerruft die Einwilligung. Dadurch werden alle Abrechnungsinformationen im E-Rezept-Fachdienst gelöscht.: * Widerruf im FdV bestätigen.
+* DELETE /Consent?category=CHARGCONS ausführen.
 
-**Schnittstelle:** *[query-api-consent](./query-api-consent.md)*
+* Beschreibung: Nachbedingungen
+  * Der Versicherte widerruft die Einwilligung. Dadurch werden alle Abrechnungsinformationen im E-Rezept-Fachdienst gelöscht.: * Einwilligung und Abrechnungsinformationen sind gelöscht; Vorgang ist protokolliert.
 
+* Beschreibung: Technische Anwendungsfälle des E-Rezept-Fachdienst
+  * Der Versicherte widerruft die Einwilligung. Dadurch werden alle Abrechnungsinformationen im E-Rezept-Fachdienst gelöscht.: * [Einwilligung widerrufen](./menu-technische-umsetzung-anwendungsfaelle.md#einwilligung-widerrufen)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Der Versicherte widerruft die Einwilligung. Dadurch werden alle Abrechnungsinformationen im E-Rezept-Fachdienst gelöscht.:  VERSICHERTER 
+
+**Tabelle:**Fachlicher Anwendungsfall Einwilligung zum Speichern der Abrechnungsinformationen widerrufen
 **Sequenzdiagramm:**
 
-**Abbildung: **SD Einwilligung zum Speichern der Abrechnungsinformationen durch Versicherten widerrufen
+**Abbildung: **Einwilligung zum Speichern der Abrechnungsinformationen widerrufen
 
-## Einwilligung einsehen (AF_10086)
+### Einwilligung zum Speichern der Abrechnungsinformationen einsehen
 
-Der Versicherte kann prüfen, ob eine Einwilligung vorliegt.
+* Beschreibung: Vorbedingungen
+  * Der Versicherte sieht ein, ob eine Einwilligung im E-Rezept-Fachdienst vorliegt.: * Keine.
 
-* Das FdV/AdV ruft die Consent‑Information im E‑Rezept‑Fachdienst ab.
-* Der E‑Rezept‑Fachdienst liefert die Consent‑Ressource zurück; das FdV/AdV zeigt den Status an.
+* Beschreibung: Durchzuführende Aktionen
+  * Der Versicherte sieht ein, ob eine Einwilligung im E-Rezept-Fachdienst vorliegt.: * GET /Consent ausführen.
+* Consent-Ressource mit CHARGCONS auswerten.
 
-**Schnittstelle:** *[query-api-consent](./query-api-consent.md)*
+* Beschreibung: Nachbedingungen
+  * Der Versicherte sieht ein, ob eine Einwilligung im E-Rezept-Fachdienst vorliegt.: * Einwilligungsstatus liegt zur Anzeige im FdV vor.
 
+* Beschreibung: Technische Anwendungsfälle des E-Rezept-Fachdienst
+  * Der Versicherte sieht ein, ob eine Einwilligung im E-Rezept-Fachdienst vorliegt.: * [Einwilligung einsehen](./menu-technische-umsetzung-anwendungsfaelle.md#einwilligung-einsehen)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Der Versicherte sieht ein, ob eine Einwilligung im E-Rezept-Fachdienst vorliegt.:  VERSICHERTER 
+
+**Tabelle:**Fachlicher Anwendungsfall Einwilligung zum Speichern der Abrechnungsinformationen einsehen
 **Sequenzdiagramm:**
 
-**Abbildung: **SD Einwilligung zum Speichern der Abrechnungsinformationen durch Versicherten einsehen
+**Abbildung: **Einwilligung zum Speichern der Abrechnungsinformationen einsehen
 
-## Abrechnungsinformation abrufen (AF_10087)
+### Abrechnungsinformationen durch den Versicherten abrufen
 
-Der Versicherte ruft eine Liste und die Details seiner Abrechnungsinformationen im FdV/AdV ab.
+* Beschreibung: Vorbedingungen
+  * Der Versicherte ruft die Abrechnungsinformationen aus dem E-Rezept-Fachdienst ab und kann sie anzeigen, exportieren oder weiterleiten.: * Einwilligung liegt vor.
+* Abrechnungsinformationen wurden durch eine Apotheke bereitgestellt.
 
-* Das FdV/AdV ruft die Liste der ChargeItems ab.
-* Für den Detailabruf fordert das FdV/AdV die Datensätze zu einer Prescription‑ID an.
-* Der E‑Rezept‑Fachdienst signiert die Datensätze beim Abruf mit seinem Signaturzertifikat (C.FD.OSIG) und liefert sie zurück.
-* Die Abrechnungsinformationen stehen zur Anzeige und für Export/Weitergabe bereit.
+* Beschreibung: Durchzuführende Aktionen
+  * Der Versicherte ruft die Abrechnungsinformationen aus dem E-Rezept-Fachdienst ab und kann sie anzeigen, exportieren oder weiterleiten.: * Liste per GET /ChargeItem abrufen.
+* Detailabruf via GET /ChargeItem/ durchführen.
+* Fachdienst signiert Datensätze beim Detailabruf.
 
-**Schnittstelle:** *[query-api-chargeitem](./query-api-chargeitem.md)*
+* Beschreibung: Nachbedingungen
+  * Der Versicherte ruft die Abrechnungsinformationen aus dem E-Rezept-Fachdienst ab und kann sie anzeigen, exportieren oder weiterleiten.: * Daten stehen im FdV zur Anzeige und zum Export bereit; Abruf ist protokolliert.
 
+* Beschreibung: Technische Anwendungsfälle des E-Rezept-Fachdienst
+  * Der Versicherte ruft die Abrechnungsinformationen aus dem E-Rezept-Fachdienst ab und kann sie anzeigen, exportieren oder weiterleiten.: * [Abrechnungsinformation abrufen](./menu-technische-umsetzung-anwendungsfaelle.md#abrechnungsinformation-abrufen-versicherter)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Der Versicherte ruft die Abrechnungsinformationen aus dem E-Rezept-Fachdienst ab und kann sie anzeigen, exportieren oder weiterleiten.:  VERSICHERTER 
+
+**Tabelle:**Fachlicher Anwendungsfall Abrechnungsinformationen durch den Versicherten abrufen
 **Sequenzdiagramm:**
 
-**Abbildung: **SD Abrechnungsinformation durch den Versicherten abrufen
+**Abbildung: **Abrechnungsinformationen durch den Versicherten abrufen
 
-## Abrechnungsinformation weitergeben (AF_10088)
+### Abrechnungsinformationen durch den Versicherten weitergeben
 
-Der Versicherte gibt die Abrechnungsinformation aus dem FdV/AdV heraus an eine Ziel‑App weiter (z. B. PKV‑App, Beihilfe) oder exportiert sie als PDF/A.
+* Beschreibung: Vorbedingungen
+  * Der Versicherte gibt die Abrechnungsinformation aus dem FdV/AdV heraus an eine Ziel-App weiter (z. B. PKV-App, Beihilfe) oder exportiert sie als PDF/A.: * Der Versicherte hat über das FdV (E-Rezept-FdV) die Abrechnungsinformation vom E-Rezept-Fachdienst abgerufen.
 
-* Das FdV/AdV erstellt ein PDF/A mit den relevanten Datensätzen.
-* Das FdV/AdV übergibt das Dokument an die Ziel‑App oder ermöglicht Download/Versand.
+* Beschreibung: Durchzuführende Aktionen
+  * Der Versicherte gibt die Abrechnungsinformation aus dem FdV/AdV heraus an eine Ziel-App weiter (z. B. PKV-App, Beihilfe) oder exportiert sie als PDF/A.: * Das FdV erstellt eine PDF/A-Datei mit der eingebetteten Abrechnungsinformation.
+* Das FdV übergibt die PDF/A-Datei an die Ziel-App oder bietet sie zum Download an.
 
-**Schnittstelle:** *[query-api-chargeitem](./query-api-chargeitem.md)*
+* Beschreibung: Nachbedingungen
+  * Der Versicherte gibt die Abrechnungsinformation aus dem FdV/AdV heraus an eine Ziel-App weiter (z. B. PKV-App, Beihilfe) oder exportiert sie als PDF/A.: * Die Abrechnungsinformation ist in der Ziel-App übertragen.
 
+* Beschreibung: Technische Anwendungsfälle des E-Rezept-Fachdienst
+  * Der Versicherte gibt die Abrechnungsinformation aus dem FdV/AdV heraus an eine Ziel-App weiter (z. B. PKV-App, Beihilfe) oder exportiert sie als PDF/A.: * [Abrechnungsinformation abrufen](./menu-technische-umsetzung-anwendungsfaelle.md#abrechnungsinformationen-weitergeben)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Der Versicherte gibt die Abrechnungsinformation aus dem FdV/AdV heraus an eine Ziel-App weiter (z. B. PKV-App, Beihilfe) oder exportiert sie als PDF/A.:  VERSICHERTER 
+
+**Tabelle:**Fachlicher Anwendungsfall Abrechnungsinformationen durch den Versicherten weitergeben
 **Sequenzdiagramm:**
 
-**Abbildung: **SD Abrechnungsinformation durch den Versicherten weitergeben
+**Abbildung: **Abrechnungsinformationen durch den Versicherten weitergeben
 
-## Abrechnungsinformation markieren
+### Abrechnungsinformationen durch den Versicherten markieren
 
-Der Versicherte kann Abrechnungsinformationen im FdV/AdV markieren (z. B. für Abrechnung, Beihilfe, Finanzamt). Die Markierungen werden im E‑Rezept‑Fachdienst gespeichert.
+* Beschreibung: Vorbedingungen
+  * Der Versicherte markiert die Abrechnungsinformation im FdV/AdV, um sie für bestimmte Aktionen zu kennzeichnen. Der E-Rezept-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.: * Eine LEI hat den Anwendungsfall “Abrechnungsinformation durch Abgebenden bereitstellen” für das E-Rezept durchgeführt. Die Abrechnungsinformation ist auf dem E-Rezept-Fachdienst gespeichert.
+* Der Versicherte hat sich über den Anwendungsfall “Abrufen der Abrechnungsinformation durch den Versicherten” die zu markierende Abrechnungsinformation herausgesucht.
 
-* Das FdV/AdV setzt die Markierung und speichert sie am ChargeItem.
+* Beschreibung: Durchzuführende Aktionen
+  * Der Versicherte markiert die Abrechnungsinformation im FdV/AdV, um sie für bestimmte Aktionen zu kennzeichnen. Der E-Rezept-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.: * Ein Versicherter wählt im FdV (E-Rezept-FdV) die zu markierende Abrechnungsinformation sowie die zu Optionen für die Markierung aus.
+* Der E-Rezept-Fachdienst speichert die Information.
 
-**Schnittstelle:** *[query-api-chargeitem](./query-api-chargeitem.md)*
+* Beschreibung: Nachbedingungen
+  * Der Versicherte markiert die Abrechnungsinformation im FdV/AdV, um sie für bestimmte Aktionen zu kennzeichnen. Der E-Rezept-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.: * Die Information zur Markierung ist im E-Rezept-Fachdienst gespeichert. Der Datenzugriff ist im E-Rezept-Fachdienst protokolliert.
 
+* Beschreibung: Technische Anwendungsfälle des E-Rezept-Fachdienst
+  * Der Versicherte markiert die Abrechnungsinformation im FdV/AdV, um sie für bestimmte Aktionen zu kennzeichnen. Der E-Rezept-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.: * [Abrechnungsinformation abrufen](./menu-technische-umsetzung-anwendungsfaelle.md#abrechnungsinformationen-markieren)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Der Versicherte markiert die Abrechnungsinformation im FdV/AdV, um sie für bestimmte Aktionen zu kennzeichnen. Der E-Rezept-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.:  VERSICHERTER 
+
+**Tabelle:**Fachlicher Anwendungsfall Abrechnungsinformationen durch den Versicherten markieren
 **Sequenzdiagramm:**
 
-**Abbildung: **SD Abrechnungsinformation durch den Versicherten markieren
+**Abbildung: **Abrechnungsinformationen durch den Versicherten markieren
 
-## Abrechnungsinformation löschen
+### Abrechnungsinformationen durch den Versicherten löschen
 
-Der Versicherte kann eine Abrechnungsinformation aktiv löschen. Die Löschung ist unwiederbringlich.
+* Beschreibung: Vorbedingungen
+  * Ein Versicherter wählt im FdV (E-Rezept-FdV, E-Rezept-AdV) die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der E-Rezept-Fachdienst löscht die Abrechnungsinformation: * Eine LEI hat den Anwendungsfall “Abrechnungsinformation durch Abgebenden bereitstellen” für das E-Rezept durchgeführt.
+* Der Versicherte hat sich über den Anwendungsfall “Abrufen der Abrechnungsinformation durch den Versicherten” die Abrechnungsinformation auf sein FdV heruntergeladen.
 
-* Das FdV/AdV sendet die Löschanforderung für das ChargeItem.
-* Der E‑Rezept‑Fachdienst löscht die Abrechnungsinformation und protokolliert den Vorgang.
+* Beschreibung: Durchzuführende Aktionen
+  * Ein Versicherter wählt im FdV (E-Rezept-FdV, E-Rezept-AdV) die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der E-Rezept-Fachdienst löscht die Abrechnungsinformation: * Ein Versicherter wählt im FdV (E-Rezept-FdV) die zu löschende Abrechnungsinformation sowie die zu Optionen für die Löschung aus.
+* Der E-Rezept-Fachdienst löscht die Abrechnungsinformation.
 
-**Schnittstelle:** *[query-api-chargeitem](./query-api-chargeitem.md)*
+* Beschreibung: Nachbedingungen
+  * Ein Versicherter wählt im FdV (E-Rezept-FdV, E-Rezept-AdV) die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der E-Rezept-Fachdienst löscht die Abrechnungsinformation: * Die Abrechnungsinformation sind auf dem E-Rezept-Fachdienst gelöscht. Das Löschen ist im E-Rezept-Fachdienst protokolliert.
 
+* Beschreibung: Technische Anwendungsfälle des E-Rezept-Fachdienst
+  * Ein Versicherter wählt im FdV (E-Rezept-FdV, E-Rezept-AdV) die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der E-Rezept-Fachdienst löscht die Abrechnungsinformation: * [Abrechnungsinformation löschen](./menu-technische-umsetzung-anwendungsfaelle.md#abrechnungsinformationen-loeschen)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Ein Versicherter wählt im FdV (E-Rezept-FdV, E-Rezept-AdV) die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der E-Rezept-Fachdienst löscht die Abrechnungsinformation:  VERSICHERTER 
+
+**Tabelle:**Fachlicher Anwendungsfall Abrechnungsinformationen durch den Versicherten löschen
 **Sequenzdiagramm:**
 
-**Abbildung: **SD Abrechnungsinformation durch den Versicherten löschen
+**Abbildung: **Abrechnungsinformationen durch den Versicherten löschen
 
 ## Berechtigen der Apotheke zum Ändern des PKV‑Abgabedatensatzes
 

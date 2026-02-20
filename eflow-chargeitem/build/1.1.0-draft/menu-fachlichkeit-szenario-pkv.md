@@ -1,4 +1,4 @@
-# Szenarien für den PKV-Workflow - Abrechnungsinformationen des E-Rezepte für PKV-Versicherte v1.1.0-draft
+# Abrechnungsinformationen des E-Rezepts für PKV-Versicherte - Abrechnungsinformationen des E-Rezepte für PKV-Versicherte v1.1.0-draft
 
 Abrechnungsinformationen des E-Rezepte für PKV-Versicherte
 
@@ -6,9 +6,9 @@ Version 1.1.0-draft - ci-build
 
 * [**Table of Contents**](toc.md)
 * [**Überblick zur Verordnung und Belieferung von Arzneimitteln**](menu-fachlichkeit-ueberblick.md)
-* **Szenarien für den PKV-Workflow**
+* **Abrechnungsinformationen des E-Rezepts für PKV-Versicherte**
 
-## Szenarien für den PKV-Workflow
+## Abrechnungsinformationen des E-Rezepts für PKV-Versicherte
 
 Szenarioübersicht zur digitalen Bereitstellung von Abrechnungsinformationen für PKV‑Versicherte.
 
@@ -29,44 +29,25 @@ Die digitale Abrechnungsinformation besteht aus den folgenden Datensätzen:
 * PKV-Abgabedatensatz
 * Quittungsdatensatz
 
-### TODO: Die Einwilligung zum Speichern der Abrechungsinformationen
+### Die Einwilligung zum Speichern der Abrechungsinformationen
 
-…
+Das Speichern der Abrechnungsinformationen erfolgt nur mit Einwilligung des Versicherten. Diese Einwilligung kann der Versicherte speichern, einsehen und jederzeit widerrufen. Sie wird unbefristet erteilt, und mit dem Widerruf der Einwilligung werden bereits gespeicherte Abrechnungsinformationen gelöscht.
 
 **Beteiligte Akteure:**
 
 * PKV-Versicherter
 
-**Fachliche Anwendungsfälle**
+**Technische Anwendungsfälle**
 
 | |
 | :--- |
-| [Einwilligung zum Speichern der Abrechnungsinformationen erteilen](menu-fachlichkeit-anwendungsfaelle.md#einwilligung-erteilen) |
-| [Einwilligung zum Speichern der Abrechnungsinformationen einsehen](menu-fachlichkeit-anwendungsfaelle.md#einwilligung-einsehen) |
+| [Einwilligung zum Speichern der Abrechnungsinformationen erteilen](menu-technische-umsetzung-anwendungsfaelle.md#einwilligung-erteilen) |
+| [Einwilligung zum Speichern der Abrechnungsinformationen einsehen](menu-technische-umsetzung-anwendungsfaelle.md#einwilligung-einsehen) |
+| [Einwilligung zum Speichern der Abrechnungsinformationen widerrufen](menu-technische-umsetzung-anwendungsfaelle.md#einwilligung-widerrufen) |
 
 **Tabelle:**Fachliche Anwendungsfälle mit Bezug zu Szenario
 *Verordnungen für PKV-Versicherte*
-### Verordnungen für PKV-Versicherte
-
-Die Verordnung erfolgt analog zu den bestehenden E-Rezept-Workflows. Für PKV-Versicherte werden die Flowtypes 200 und 209 genutzt. Der Verordnungsdatensatz basiert auf dem KBV-Modell [eRezept-Profile].
-
-Der Verordnungsdatensatz wird durch den Arzt/Zahnarzt erstellt, mit einer Qualifizierten Elektronischen Signatur (QES) versehen und auf dem E-Rezept-Fachdienst eingestellt. Für den Abrechnungsprozess wird der Verordnungsdatensatz ohne QES übermittelt, um das Risiko von Mehrfacheinlösungen zu vermeiden. Statt der QES wird der Verordnungsdatensatz durch den E-Rezept-Fachdienst fortgeschritten signiert, um die Integrität des Datensatzes für den Abrechnungsprozess sicherzustellen.
-
-**Beteiligte Akteure:**
-
-* verordnender Leistungserbringer (Arzt/Zahnarzt)
-* PKV-Versicherter
-
-**Fachliche Anwendungsfälle**
-
-| |
-| :--- |
-| [Einwilligung zum Speichern der Abrechnungsinformationen erteilen](menu-fachlichkeit-anwendungsfaelle.md#einwilligung-erteilen) |
-| [Einwilligung zum Speichern der Abrechnungsinformationen einsehen](menu-fachlichkeit-anwendungsfaelle.md#einwilligung-einsehen) |
-
-**Tabelle:**Fachliche Anwendungsfälle mit Bezug zu Szenario
-*Verordnungen für PKV-Versicherte*
-### Belieferung durch die Apotheke
+### Belieferung der Abrechnungsinformation durch die Apotheke
 
 Nach der Einlösung kann die Apotheke die Abrechnungsinformation digital bereitstellen, sofern eine Einwilligung vorliegt.
 
@@ -79,13 +60,13 @@ Der E-Rezept-Fachdienst erzeugt einen AccessCode, der für spätere Korrekturen 
 * abgebender Leistungserbringer (Apotheke)
 * PKV-Versicherter
 
-**Fachliche Anwendungsfälle**
+**Technische Anwendungsfälle**
 
 | |
 | :--- |
-| [Abrechnungsinformation durch Abgebenden bereitstellen](menu-fachlichkeit-anwendungsfaelle.md#abrechnungsinformation-bereitstellen) |
-| [Abrechnungsinformation durch Abgebenden abrufen](menu-fachlichkeit-anwendungsfaelle.md#abrechnungsinformation-abrufen) |
-| [PKV-Abgabedatensatz durch Abgebenden ändern](menu-fachlichkeit-anwendungsfaelle.md#pkv-abgabedatensatz-aendern) |
+| [Abrechnungsinformation durch Abgebenden bereitstellen](menu-technische-umsetzung-anwendungsfaelle.md#abrechnungsinformation-bereitstellen) |
+| [Abrechnungsinformation durch Abgebenden abrufen](menu-technische-umsetzung-anwendungsfaelle.md#abrechnungsinformation-abrufen) |
+| [PKV-Abgabedatensatz durch Abgebenden ändern](menu-technische-umsetzung-anwendungsfaelle.md#pkv-abgabedatensatz-aendern) |
 
 **Tabelle:**Fachliche Anwendungsfälle mit Bezug zu Szenario
 *Belieferung durch die Apotheke*
@@ -99,19 +80,21 @@ Der PKV-Versicherte hat die Möglichkeit, die Abrechnung in einem Zeitraum von b
 
 Eine Langzeitarchivierung der Abrechnungsinformation im E-Rezept-Fachdienst ist nicht vorgesehen. Hierfür kann der Versicherte beispielsweise die elektronische Patientenakte (ePA) nutzen.
 
-Die Löschfristen für das E-Rezept mit den in Beziehung stehenden Daten, wie Dispensierinformationen und Kommunikationen zum E-Rezept, werden unabhängig von der zugehörigen Abrechnungsinformation durchgesetzt. Siehe [gemSysL_eRp]#A_18525.
+Die Löschfristen für das E-Rezept mit den in Beziehung stehenden Daten, wie Dispensierinformationen und Kommunikationen zum E-Rezept, werden unabhängig von der zugehörigen Abrechnungsinformation durchgesetzt. Siehe TODO [gemSysL_eRp]#A_18525.
 
 **Beteiligte Akteure:**
 
 * PKV-Versicherter
 * Kostenträger
 
-**Fachliche Anwendungsfälle**
+**Technische Anwendungsfälle**
 
 | |
 | :--- |
-| [Abrechnungsinformationen durch den Versicherten abrufen](menu-fachlichkeit-anwendungsfaelle.md#abrechnungsinformationen-abrufen) |
-| [Einwilligung zum Speichern der Abrechnungsinformationen widerrufen](menu-fachlichkeit-anwendungsfaelle.md#einwilligung-widerrufen) |
+| [Abrechnungsinformationen durch den Versicherten abrufen](menu-technische-umsetzung-anwendungsfaelle.md#abrechnungsinformationen-abrufen) |
+| [Abrechnungsinformationen durch den Versicherten weitergeben](menu-technische-umsetzung-anwendungsfaelle.md#abrechnungsinformationen-weitergeben) |
+| [Abrechnungsinformationen durch den Versicherten markieren](menu-technische-umsetzung-anwendungsfaelle.md#abrechnungsinformationen-markieren) |
+| [Abrechnungsinformationen durch den Versicherten löschen](menu-technische-umsetzung-anwendungsfaelle.md#abrechnungsinformationen-loeschen) |
 
 **Tabelle:**Fachliche Anwendungsfälle mit Bezug zu Szenario
 *Abrechnung durch den Versicherten*

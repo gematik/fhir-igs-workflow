@@ -109,9 +109,6 @@
       <li>
         <a href="menu-fachlichkeit-szenario-pkv.html">Szenarien</a>
       </li>
-      <li>
-        <a href="menu-fachlichkeit-anwendungsfaelle.html">Anwendungsfälle</a>
-      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -281,10 +278,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Anforderungen werden durch eine eindeutige ID (IG-ERP-CHRG-*) und die Schlüsselworte MUSS, DARF NICHT, SOLL, SOLL NICHT, KANN gemäß RFC 2119 gekennzeichnet. Die Schlüsselworte werden bei Bedarf um Pronomen ergänzt.</p>
 
 <h2 id="epic-e-rezept-für-pkv-versicherte">Epic: E-Rezept für PKV-Versicherte</h2>
-<p>Der Ablauf orientiert sich an der Verordnung für GKV-Versicherte. Die Abrechnung erfolgt gegenüber dem Versicherten, sofern keine Direktabrechnung vereinbart wurde. Der Prozess wird um Aspekte zur Bereitstellung von Informationen für die Erstattung der Kosten erweitert.</p>
+<p>Der Ablauf für die Übermittlung von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel für PKV-Versicherte orientiert sich an der Verordnung von apothekenpflichtige Arzneimittel für GKV-Versicherte. Die Abrechnung der Apotheke erfolgt gegenüber dem Versicherten, sofern keine Direktabrechnung mit einer Krankenversicherung vereinbart wurde. Stattdessen wird der Prozess um Aspekte für die Bereitstellung von Informationen für die Erstattung der Kosten für den Versicherten erweitert.</p>
 
-<p><strong>Ablauf (Kurzfassung):</strong>
-Der (Zahn-)Arzt verschreibt ein E-Rezept und übermittelt es an den E-Rezept-Fachdienst. Der Versicherte erhält einen E-Rezept-Token (E-Rezept-FdV oder Ausdruck), übermittelt ihn an eine Apotheke und erhält die Abrechnungsinformation digital oder analog. Die Abrechnungsinformation kann für die Erstattung weitergeleitet oder ausgedruckt werden.</p>
+<p><strong>Ablauf</strong>
+Der (Zahn-)Arzt verschreibt ein E-Rezept. Das E-Rezept wird auf den E-Rezept-Fachdienst übertragen. Der Versicherte erhält einen E-Rezept-Token im E-Rezept-FdV oder auf einem Tokenausdruck. Der Versicherte übermittelt den E-Rezept-Token an eine Apotheke seiner Wahl. Die Apotheke ruft das E-Rezept vom E-Rezept-Fachdienst ab und dispensiert es. Die Apotheke stellt, sofern das E-Rezept nicht dem Sachleistungsprinzip unterliegt, auf Wunsch des Versicherten die Abrechnungsinformation zum E-Rezept im E-Rezept-Fachdienst bereit. Dort werden sie mit Einwilligung des Versicherten bis zu 10 Jahren gespeichert. Alternativ übergibt der Apotheker dem Versicherten im Ersatzverfahren einen Papierbeleg mit den abrechnungsrelevanten Informationen für die Abrechnung. Der Versicherte lädt die digital bereitgestellte Abrechnungsinformation mit dem E-Rezept-FdV vom E-Rezept-Fachdienst herunter. Der Versicherte kann für die Abrechnung die Abrechnungsinformation an eine App seiner PKV / der Beihilfe weiterleiten, in einem Portal des Kostenträgers hochladen oder ausdrucken.</p>
+
+<p>Der Ablauf für die Übermittlung von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel mit Steuerung durch den Leistungserbringer für PKV-Versicherte orientiert sich an der Verordnung von apothekenpflichtige Arzneimittel mit Steuerung durch den Leistungserbringer für GKV-Versicherte (Workflow-Typ “169”).</p>
 
 <h2 id="user-stories">User Stories</h2>
 
@@ -342,7 +341,7 @@ Der (Zahn-)Arzt verschreibt ein E-Rezept und übermittelt es an den E-Rezept-Fac
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Feb 20, 2026 13:40+0000">2026-02-20</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Feb 20, 2026 14:43+0000">2026-02-20</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

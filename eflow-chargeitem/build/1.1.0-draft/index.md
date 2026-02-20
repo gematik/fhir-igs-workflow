@@ -65,7 +65,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "gemIG_eRp_ChargeItem",
   "title" : "Abrechnungsinformationen des E-Rezepte für PKV-Versicherte",
   "status" : "draft",
-  "date" : "2026-02-20T13:40:45+00:00",
+  "date" : "2026-02-20T14:43:32+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -1109,16 +1109,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
             "valueUrl" : "menu-fachlichkeit-szenario-pkv.html"
           }],
           "nameUrl" : "menu-fachlichkeit-szenario-pkv.html",
-          "title" : "Szenarien für den PKV-Workflow",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "menu-fachlichkeit-anwendungsfaelle.html"
-          }],
-          "nameUrl" : "menu-fachlichkeit-anwendungsfaelle.html",
-          "title" : "Anwendungsfälle für den Abrechnungsinformationen des E-Rezepts für PKV-Versicherte",
+          "title" : "Abrechnungsinformationen des E-Rezepts für PKV-Versicherte",
           "generation" : "markdown"
         }]
       },
