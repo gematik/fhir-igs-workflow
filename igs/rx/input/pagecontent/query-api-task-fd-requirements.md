@@ -1,6 +1,6 @@
 # FD-Anforderungen: Query API Task
 
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Task abrufen - Rollenprüfung Versicherter oder Apotheke liest Rezepte" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-336" title="E-Rezept-Fachdienst - Task abrufen - Rollenprüfung Versicherter oder Apotheke liest Rezepte" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -11,7 +11,7 @@
     <!-- A_21558-02 -->
 </requirement>
 
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Task abrufen - Filter Tasks auf KVNR des Versicherten" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-337" title="E-Rezept-Fachdienst - Task abrufen - Filter Tasks auf KVNR des Versicherten" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -22,7 +22,7 @@
     <!-- A_19115-01 -->
 </requirement>
 
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Rückgabe Tasks im Bundle Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-338" title="E-Rezept-Fachdienst - Rückgabe Tasks im Bundle Versicherter" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -33,7 +33,7 @@
     <!-- A_19129-01 -->
 </requirement>
 
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Task abrufen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-339" title="E-Rezept-Fachdienst - Task abrufen - Rollenprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -44,7 +44,7 @@
     <!-- A_19113-02 -->
 </requirement>
 
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Task abrufen - Prüfung AccessCode bei KVNR-Missmatch" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-340" title="E-Rezept-Fachdienst - Task abrufen - Prüfung AccessCode bei KVNR-Missmatch" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -55,7 +55,7 @@
     <!-- A_19116-01 -->
 </requirement>
 
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Task abrufen - Flowtype 169/209 - Nicht verfügbar bei KVNR-Mismatch" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-341" title="E-Rezept-Fachdienst - Task abrufen - Flowtype 169/209 - Nicht verfügbar bei KVNR-Mismatch" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -66,7 +66,7 @@
     <!-- A_26148 -->
 </requirement>
 
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Task abrufen - Rückgabe Task inkl. Bundles Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-342" title="E-Rezept-Fachdienst - Task abrufen - Rückgabe Task inkl. Bundles Versicherter" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -77,7 +77,7 @@
     <!-- A_21375-02 -->
 </requirement>
 
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Task abrufen - Kein Secret für Versicherte" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-343" title="E-Rezept-Fachdienst - Task abrufen - Kein Secret für Versicherte" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -88,7 +88,7 @@
     <!-- A_21532-02 -->
 </requirement>
 
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Task abrufen - Keine Einlöseinformationen in unbekannten Clients" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-344" title="E-Rezept-Fachdienst - Task abrufen - Keine Einlöseinformationen in unbekannten Clients" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -99,7 +99,7 @@
     <!-- A_20702-03 -->
 </requirement>
 
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Task abrufen - Flowtype 169 / 209 - keine Einlöseinformationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-345" title="E-Rezept-Fachdienst - Task abrufen - Flowtype 169 / 209 - keine Einlöseinformationen" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -110,7 +110,7 @@
     <!-- A_21360-01 -->
 </requirement>
 
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Task abrufen - Apotheke - Verordnung abrufen - Prüfung Telematik-ID" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-346" title="E-Rezept-Fachdienst - Task abrufen - Apotheke - Verordnung abrufen - Prüfung Telematik-ID" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -121,7 +121,7 @@
     <!-- A_24176 -->
 </requirement>
 
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Task abrufen - Apotheke - Verordnung abrufen - Prüfung AccessCode" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-347" title="E-Rezept-Fachdienst - Task abrufen - Apotheke - Verordnung abrufen - Prüfung AccessCode" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -132,7 +132,7 @@
     <!-- A_24177 -->
 </requirement>
 
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Task abrufen - Apotheke - Verordnung abrufen - Prüfung Status in-progress" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-348" title="E-Rezept-Fachdienst - Task abrufen - Apotheke - Verordnung abrufen - Prüfung Status in-progress" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -143,7 +143,7 @@
     <!-- A_24178 -->
 </requirement>
 
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Task abrufen - Apotheke - Verordnung abrufen - erneuter Abruf Verordnung" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-349" title="E-Rezept-Fachdienst - Task abrufen - Apotheke - Verordnung abrufen - erneuter Abruf Verordnung" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -154,7 +154,7 @@
     <!-- A_24179 -->
 </requirement>
 
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Task abrufen - Rückgabe Task inkl. Bundle im Bundle Apotheker" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-350" title="E-Rezept-Fachdienst - Task abrufen - Rückgabe Task inkl. Bundle im Bundle Apotheker" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -165,7 +165,7 @@
     <!-- A_19226-01 -->
 </requirement>
 
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Task abrufen - Vertreter - Push Notification Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-351" title="E-Rezept-Fachdienst - Task abrufen - Vertreter - Push Notification Versicherter" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>

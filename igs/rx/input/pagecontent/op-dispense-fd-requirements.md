@@ -1,6 +1,6 @@
 Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für die Operation `$dispense`.
 
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Rollenprüfung Abgebender stellt Dispensierinformationen bereit" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-375" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Rollenprüfung Abgebender stellt Dispensierinformationen bereit" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -11,7 +11,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <!-- A_24279 -->
 </requirement>
 
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Prüfung Secret" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-376" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Prüfung Secret" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -22,7 +22,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <!-- A_24280 -->
 </requirement>
 
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Prüfung Status" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-377" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Prüfung Status" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -33,7 +33,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <!-- A_24298 -->
 </requirement>
 
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Schemaprüfung MedicationDispense" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-378" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Schemaprüfung MedicationDispense" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -44,7 +44,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <!-- A_24281-02 -->
 </requirement>
 
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Überschreiben vorheriger MedicationDispenses" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-379" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Überschreiben vorheriger MedicationDispenses" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -55,7 +55,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <!-- A_26482 -->
 </requirement>
 
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - MedicationDispense speichern" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-380" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - MedicationDispense speichern" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -66,7 +66,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <!-- A_27052 -->
 </requirement>
 
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Speicherung mehrerer MedicationDispenses" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-381" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Speicherung mehrerer MedicationDispenses" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -77,7 +77,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <!-- A_24283-02 -->
 </requirement>
 
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Daten Medikationsliste bereitstellen (Dispensierinformationen)" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-382" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Daten Medikationsliste bereitstellen (Dispensierinformationen)" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -88,7 +88,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <!-- A_25933 -->
 </requirement>
 
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Zeitstempel MedicationDispense" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-383" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Zeitstempel MedicationDispense" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -99,7 +99,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <!-- A_24285-01 -->
 </requirement>
 
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Push Notification Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-384" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Push Notification Versicherter" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -110,7 +110,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <!-- A_28130 -->
 </requirement>
 
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Keine Statusänderung" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-385" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Keine Statusänderung" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>

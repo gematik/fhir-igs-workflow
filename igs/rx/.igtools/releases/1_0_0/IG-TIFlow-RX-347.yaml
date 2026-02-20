@@ -1,0 +1,24 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: e0689681d25bd1dd4be1afe9691007e858d6609eac910b29ac557ee5a1c641cd
+created: '2026-02-20T14:36:58.389594'
+date: '2026-02-20T14:36:58.389597'
+key: IG-TIFlow-RX-347
+modified: '2026-02-20T14:36:58.389596'
+release_status: NEW
+source: input/pagecontent/query-api-task-fd-requirements.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: "<Beschreibung>\n        Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation\
+  \ auf einen einzelnen Task mittels \"/Task/&lt;id&gt;?ac=...\" durch eine abgebende\
+  \ LEI den im URL-Parameter \"?ac=...\" übertragenen AccessCode gegen den im referenzierten\
+  \ Task gespeicherten AccessCode Task.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode\
+  \ prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem\
+  \ HTTP-Fehlercode 403 abbrechen, damit Zugriffe auf diesen Datensatz nur durch Berechtigte\
+  \ in Kenntnis des AccessCode erfolgen.\n    </Beschreibung>\n    <!-- A_24177 -->"
+title: E-Rezept-Fachdienst - Task abrufen - Apotheke - Verordnung abrufen - Prüfung
+  AccessCode
+version: 0

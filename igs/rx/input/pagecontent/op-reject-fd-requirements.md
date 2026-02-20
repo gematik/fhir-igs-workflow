@@ -1,6 +1,6 @@
 Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für die Operation `$reject`.
 
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Task zurückweisen - Löschmarkierungen Medikationsliste bereitstellen (Dispensierinformationen)" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-333" title="E-Rezept-Fachdienst - Task zurückweisen - Löschmarkierungen Medikationsliste bereitstellen (Dispensierinformationen)" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>

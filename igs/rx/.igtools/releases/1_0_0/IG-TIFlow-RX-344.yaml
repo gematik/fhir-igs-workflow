@@ -1,0 +1,23 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: ffe063cfb8d12968ae2a386d4c4019eee0a9b02053530beace1599bce7e8ea61
+created: '2026-02-20T14:36:58.389088'
+date: '2026-02-20T14:36:58.389091'
+key: IG-TIFlow-RX-344
+modified: '2026-02-20T14:36:58.389090'
+release_status: NEW
+source: input/pagecontent/query-api-task-fd-requirements.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: "<Beschreibung>\n        Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation\
+  \ auf den Endpunkt /Task/&lt;id&gt; ausschließlich solchen Clients die AccessCode\
+  \ Information (Task.identifier mit system=\"https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode\"\
+  \ ) in den Task-Ressourcen zurückgeben, welche anhand der mitgeteilten, gültigen\
+  \ Produktidentifikation als hierfür zulässige Clients erkannt werden.\n    </Beschreibung>\n\
+  \    <!-- A_20702-03 -->"
+title: E-Rezept-Fachdienst - Task abrufen - Keine Einlöseinformationen in unbekannten
+  Clients
+version: 0

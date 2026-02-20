@@ -1,6 +1,6 @@
 Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für die Operation `$abort`.
 
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - E-Rezept löschen - Flowtype 169 / 209 - Versicherter - Statusprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-372" title="E-Rezept-Fachdienst - E-Rezept löschen - Flowtype 169 / 209 - Versicherter - Statusprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -11,7 +11,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <!-- A_22102-01 -->
 </requirement>
 
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - E-Rezept löschen - Löschinformation ePA Medication Service bereitstellen (Verordnungsdatensatz) - Leistungserbringerinstitution" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-373" title="E-Rezept-Fachdienst - E-Rezept löschen - Löschinformation ePA Medication Service bereitstellen (Verordnungsdatensatz) - Leistungserbringerinstitution" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -22,7 +22,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <!-- A_25930 -->
 </requirement>
 
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - E-Rezept löschen - Löschinformation ePA Medication Service bereitstellen (Verordnungsdatensatz) - Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-374" title="E-Rezept-Fachdienst - E-Rezept löschen - Löschinformation ePA Medication Service bereitstellen (Verordnungsdatensatz) - Versicherter" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>

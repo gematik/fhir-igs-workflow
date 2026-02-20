@@ -1,0 +1,28 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: 56b6a5b5869f74976dc700eaeb7b1d6852c00bfa93c7d554c6d5edf35c1ea385
+created: '2026-02-20T14:36:58.387133'
+date: '2026-02-20T14:36:58.387137'
+key: IG-TIFlow-RX-335
+modified: '2026-02-20T14:36:58.387136'
+release_status: NEW
+source: input/pagecontent/op-accept-fd-requirements.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: "<Beschreibung>\n        Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen\
+  \ Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept die Operation mit\
+  \ dem Fehlercode 403 abbrechen, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen\
+  \ = true) gekennzeichnet ist und und der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start)\
+  \ zu einem späteren Zeitpunkt als das aktuelle Datum liegt, da Teilverordnungen\
+  \ von Mehrfachverordnungen erst ab Beginn der Einlösefrist abgerufen werden dürfen.\
+  \ Im Falle dieses Fehlers ist im OperationOutcome des Response der Beginn der Einlösefrist\
+  \ wie folgt anzugeben: „Teilverordnung zur Mehrfachverordnung &lt;MVO Referenz&gt;\
+  \ ist ab &lt;Datum&gt; einlösbar.“, wobei &lt;MVO Referenz&gt; der Wert MedicationRequest.extension:Mehrfachverordnung.extension:ID.value[x]:valueIdentifier.value\
+  \ sowie &lt;Datum&gt; der Wert MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start\
+  \ im Format \"dd.mm.yyyy\" ist.\n    </Beschreibung>\n    <!-- A_22635-02 -->"
+title: E-Rezept-Fachdienst - Task akzeptieren - Mehrfachverordnung - Beginn Einlösefrist
+  prüfen
+version: 0

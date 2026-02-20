@@ -1,0 +1,25 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: 65e67a2a2a33d172c35e1bc6cd2ac37a5128d2c9367f4a0d3c89629237cc108f
+created: '2026-02-20T14:36:58.395350'
+date: '2026-02-20T14:36:58.395354'
+key: IG-TIFlow-RX-372
+modified: '2026-02-20T14:36:58.395353'
+release_status: NEW
+source: input/pagecontent/op-abort-fd-requirements.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: "<Beschreibung>\n        Der E-Rezept-Fachdienst MUSS das Löschen eines E-Rezepts\
+  \ mit dem Flowtype 169 oder 209 über den mittels der &lt;id&gt; adressierten /Task/&lt;id&gt;/$abort\
+  \ verhindern und die Operation mit dem HTTP-Fehlercode 403 abweisen, wenn der Status\
+  \ des adressierten Tasks ungleich \"completed\" ist und die Rolle des aufrufenden\
+  \ Nutzers der folgenden Rollen entspricht: oid_versicherter damit kein Versicherter\
+  \ ein E-Rezept aus einem Workflow mit Workflowsteuerung durch Leistungserbringer\
+  \ (169, 209) löscht, das nicht bereits beliefert wurde.\n    </Beschreibung>\n \
+  \   <!-- A_22102-01 -->"
+title: E-Rezept-Fachdienst - E-Rezept löschen - Flowtype 169 / 209 - Versicherter
+  - Statusprüfung
+version: 0

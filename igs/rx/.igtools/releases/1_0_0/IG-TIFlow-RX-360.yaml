@@ -1,0 +1,23 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: bc24d227adfa81a19a9669890892906d3a0c38d6dba113d6c050bbfedf571dcf
+created: '2026-02-20T14:36:58.392858'
+date: '2026-02-20T14:36:58.392861'
+key: IG-TIFlow-RX-360
+modified: '2026-02-20T14:36:58.392860'
+release_status: NEW
+source: input/pagecontent/op-activate-fd-requirements.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: "<Beschreibung>\n        Der E-Rezept-Fachdienst MUSS beim Aktivieren eines\
+  \ Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die Operation\
+  \ mit dem Fehlercode 400 abbrechen, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen\
+  \ = true) gekennzeichnet und der Flowtype ungleich 160, 169, 200 oder 209 ist, weil\
+  \ Mehrfachverordnungen nur für die Verordnungen von apothekenpflichtigen Arzneimittel\
+  \ (kein BtM, kein T-Rezept) zulässig sind.\n    </Beschreibung>\n    <!-- A_22627-01\
+  \ -->"
+title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - zulässige Flowtype
+version: 0

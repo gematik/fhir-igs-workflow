@@ -1,0 +1,25 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: b57d6a89f5e2a8d08a149de2c8efb17259fe732a7f0069dd894c62b301577301
+created: '2026-02-20T14:36:58.396687'
+date: '2026-02-20T14:36:58.396696'
+key: IG-TIFlow-RX-375
+modified: '2026-02-20T14:36:58.396695'
+release_status: NEW
+source: input/pagecontent/op-dispense-fd-requirements.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: "<Beschreibung>\n        Der E-Rezept-Fachdienst MUSS bei der Bereitstellung\
+  \ von Dispensierinformationen mittels POST /Task/&lt;id&gt;/$dispense auf den in\
+  \ der URL referenzierten /Task/&lt;id&gt; sicherstellen, dass ausschließlich abgebende\
+  \ Leistungserbringer in der Rolle oid_oeffentliche_apotheke oid_krankenhausapotheke\
+  \ die Operation am Fachdienst aufrufen dürfen und die Rolle \"professionOID\" des\
+  \ Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen,\
+  \ damit Dispensierinformationen nicht durch einen Unberechtigten eingestellt werden\
+  \ kann.\n    </Beschreibung>\n    <!-- A_24279 -->"
+title: E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Rollenprüfung
+  Abgebender stellt Dispensierinformationen bereit
+version: 0

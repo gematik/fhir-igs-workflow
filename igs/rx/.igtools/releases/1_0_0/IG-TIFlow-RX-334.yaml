@@ -1,0 +1,24 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: bf2a3483564c8328ac214e09100ed0503d393b1d180cbb9f965bb14d49dcdc3d
+created: '2026-02-20T14:36:58.386913'
+date: '2026-02-20T14:36:58.386918'
+key: IG-TIFlow-RX-334
+modified: '2026-02-20T14:36:58.386917'
+release_status: NEW
+source: input/pagecontent/op-accept-fd-requirements.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: "<Beschreibung>\n        Der E-Rezept-Fachdienst MUSS beim Abrufen eines Tasks\
+  \ mit Flowtype 160, 166, 169, 200 oder 209 mittels HTTP-POST/$accept-Operation auf\
+  \ den in der URL referenzierten /Task/&lt;id&gt; sicherstellen, dass ausschließlich\
+  \ abgebende Institutionen in der Rolle oid_oeffentliche_apotheke oid_krankenhausapotheke\
+  \ die Operation am Fachdienst aufrufen dürfen und die Rolle \"professionOID\" des\
+  \ Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen,\
+  \ damit E-Rezepte nicht durch Unberechtigte abgerufen werden können.\n    </Beschreibung>\n\
+  \    <!-- A_19166-02 -->"
+title: E-Rezept-Fachdienst - Task akzeptieren - Flowtype 160/166/169/200/209 - Rollenprüfung
+version: 0
