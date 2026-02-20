@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script src="assets/js/mermaid.js" type="text/javascript"></script>
     <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
-    <style type="text/css">h2{--heading-prefix:"7.2"}
-    h3,h4,h5,h6{--heading-prefix:"7.2.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"5.3"}
+    h3,h4,h5,h6{--heading-prefix:"5.3.0"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
 
@@ -140,17 +140,14 @@
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
-      <li><a name="l206">​</a>
-        <a href="menu-technische-umsetzung-systemueberblick.html">Systemüberblick</a>
-      </li>
       <li>
         <a href="menu-technische-umsetzung-anwendungsfaelle.html">Technische Anwendungsfälle</a>
       </li>
-      <li><a name="l218">​</a>
-        <a href="menu-technische-umsetzung-verarbeitungsregeln.html">Verarbeitungsregeln</a>
+      <li>
+        <a href="menu-technische-umsetzung-dosierung.html">Strukturierte Dosierungen</a>
       </li>
       <li>
-        <a href="mapping.html">Mappings</a>
+        <a href="menu-technische-umsetzung-mapping.html">Mappings</a>
       </li>
     </ul>
   </li>
@@ -159,12 +156,6 @@
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
-      <li>
-        <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
-      </li>
-      <li>
-        <a href="menu-schnittstellen-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
-      </li>
       <li>
         <a href="menu-schnittstellen-query-api.html">Query API</a>
       </li>
@@ -282,50 +273,66 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <p>Seiteninhalt:</p>
 
 <ul id="markdown-toc">
-  <li><a href="#query-api-medicationdispense" id="markdown-toc-query-api-medicationdispense">Query API: MedicationDispense</a>    <ul>
-      <li><a href="#nachricht" id="markdown-toc-nachricht">Nachricht</a></li>
-      <li><a href="#anforderungen-an-schnittstelle" id="markdown-toc-anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</a></li>
-      <li><a href="#api-beschreibung" id="markdown-toc-api-beschreibung">API Beschreibung</a></li>
-      <li><a href="#hinweis" id="markdown-toc-hinweis">Hinweis</a></li>
-    </ul>
-  </li>
+  <li><a href="#nachricht" id="markdown-toc-nachricht">Nachricht</a></li>
+  <li><a href="#anforderungen-an-schnittstelle" id="markdown-toc-anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</a></li>
+  <li><a href="#resource-api" id="markdown-toc-resource-api">Resource API</a></li>
+  <li><a href="#instance-api" id="markdown-toc-instance-api">Instance API</a></li>
+  <li><a href="#sicherheitsanforderungen" id="markdown-toc-sicherheitsanforderungen">Sicherheitsanforderungen</a></li>
 </ul>
 
 </div>
-<h1 id="query-api-medicationdispense">Query API: MedicationDispense</h1>
-
-<p>Diese Seite beschreibt den Einstieg in die MedicationDispense-Query-Schnittstelle des RX-Moduls.</p>
+<p>Diese Seite basiert auf der gleichnamigen Schnittstelle in der <a href="https://gemspec.gematik.de/ig/fhir/1.0.0query-api-medicationdispense.html">Core-Spezifikation</a> und beschreibt den Einstieg in die MedicationDispense-Query-Schnittstelle.</p>
 
 <h3 id="nachricht">Nachricht</h3>
 
-<p>Die MedicationDispense-Query wird ueber HTTP <code class="language-plaintext highlighter-rouge">GET</code> auf <code class="language-plaintext highlighter-rouge">/MedicationDispense</code> aufgerufen.</p>
+<p>Die Nachricht zum Abruf von Dipensierdaten wird als HTTP GET-Anfrage an den  gesendet, um eine Liste der hinterlegten <em>MedicationDispense</em>-Instanzen abzurufen.</p>
 
 <h3 id="anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</h3>
 
 <ul>
-  <li><a href="./query-api-medicationdispense-fd-requirements.html">FD-Anforderungen zur MedicationDispense-Query</a>: Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.</li>
-  <li><a href="./query-api-medicationdispense-client-requirements.html">Client-Anforderungen zur MedicationDispense-Query</a>: Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.</li>
+  <li><a href="./query-api-medicationdispense-client-requirements.html">Ergänzende Client-Anforderungen zur MedicationDispense-Query</a>: Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.</li>
 </ul>
 
-<h3 id="api-beschreibung">API Beschreibung</h3>
+<h3 id="resource-api">Resource API</h3>
 
-<h4 id="get-medicationdispense">GET /MedicationDispense</h4>
+<p>Anfragen an die <i>MedicationDispense</i>-Ressource können über die RESTful API mittels HTTP GET-Anfragen durchgeführt werden. Dabei können spezifische Suchparameter genutzt werden, um die Anfragen zu verfeinern. Zum Beispiel:</p>
 
-<div data-api-operation-id="searchMedicationDispense" data-api-type="FHIRResource" data-api-fhir-interaction="search-type" data-api-fhir-resource-type="MedicationDispense" class="gematik-apidoc">
-  <div id="CapabilityStatement">
-    <pre>
-      {"resourceType":"CapabilityStatement","id":"erp-fachdienst-server","meta":{"profile":["https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"]},"extension":[{"url":"https://gematik.de/fhir/ti/StructureDefinition/extension-base-url","valueString":"http://todo"},{"extension":[{"url":"statusCode","valueString":"423"},{"url":"description","valueString":"If the insurant objected to the medication process or objected to the submission of prescription and dispensation data into the ePA system, the Medication Service is locked."},{"url":"responseType","valueString":"application/json"},{"url":"errorCode","valueString":"locked"}],"url":"https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"}],"url":"https://gematik.de/fhir/erp/CapabilityStatement/erp-fachdienst-server","version":"1.0.0-draft","name":"ERPFachdienstServer","title":"ERP CapabilityStatement für den E-Rezept-Fachdienst","status":"draft","date":"2025-12-15","publisher":"gematik GmbH","contact":[{"name":"gematik GmbH","telecom":[{"system":"url","value":"https://gematik.de"},{"system":"email","value":"erp-umsetzung@gematik.de"}]}],"description":"ERP CapabilityStatement für den E-Rezept-Fachdienst","jurisdiction":[{"coding":[{"system":"urn:iso:std:iso:3166","code":"DE","display":"Germany"}]}],"kind":"requirements","fhirVersion":"4.0.1","format":["application/fhir+json","application/fhir+xml"],"rest":[{"mode":"server"}]}
-    </pre>
-  </div>
-</div>
+<ul>
+  <li>Suche nach Medikamentenabgaben, die an einem bestimmten Tag erfolgten: <code class="language-plaintext highlighter-rouge">?whenHandedOver=2025-02-14</code></li>
+</ul>
 
-<h3 id="hinweis">Hinweis</h3>
+<h4 id="api-beschreibung">API Beschreibung</h4>
+
+<ul>
+  <li><a href="https://github.com/gematik/api-erp/blob/master/docs/erp_versicherte.adoc#abgabeinformationen-abrufen">API-ERP: Abgabeinformationen abrufen</a></li>
+</ul>
+
+<h4 id="hinweise">Hinweise</h4>
 
 <ul>
   <li>Im Anwendungsfall “Abgabeinformationen abrufen” wird die Suche per <code class="language-plaintext highlighter-rouge">identifier</code> auf die PrescriptionID genutzt.</li>
-  <li>Die Rueckgabe erfolgt als Bundle und kann ein oder mehrere <code class="language-plaintext highlighter-rouge">MedicationDispense</code>-Objekte enthalten.</li>
+  <li>Die Rückgabe erfolgt als Bundle und kann ein oder mehrere <code class="language-plaintext highlighter-rouge">MedicationDispense</code>-Objekte enthalten.</li>
 </ul>
 
+<h3 id="instance-api">Instance API</h3>
+
+<p>Um spezifische Details zu einem einzelnen <em>MedicationDispense</em> mittels der RESTful API zu erhalten, wird die <em>MedicationDispense Instance API</em> verwendet, indem eine HTTP GET-Anfrage an den Endpunkt <i>/MedicationDispense/[id]</i> gestellt wird.</p>
+
+<h4 id="api-beschreibung-1">API Beschreibung</h4>
+
+<ul>
+  <li><a href="https://github.com/gematik/api-erp/blob/master/docs/erp_versicherte.adoc#abgabeinformationen-zu-einem-e-rezept-abrufen">API-ERP: Abgabeinformationen zu einem E-Rezept abrufen</a></li>
+</ul>
+
+<h4 id="hinweise-1">Hinweise</h4>
+
+<ul>
+  <li>…Hinweise</li>
+</ul>
+
+<h3 id="sicherheitsanforderungen">Sicherheitsanforderungen</h3>
+
+<p><a name="l547">​</a>Generelle Sicherheitsanforderungen werden <a href="./menu-schnittstellen-datenschutz-und-sicherheit.html">hier</a> festgehalten.</p>
 
 
 
@@ -345,7 +352,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Feb 20, 2026 09:22+0000">2026-02-20</span>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Feb 20, 2026 13:59+0000">2026-02-20</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

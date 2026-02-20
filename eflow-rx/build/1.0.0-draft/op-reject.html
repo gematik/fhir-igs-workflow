@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script src="assets/js/mermaid.js" type="text/javascript"></script>
     <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
-    <style type="text/css">h2{--heading-prefix:"8.4"}
-    h3,h4,h5,h6{--heading-prefix:"8.4.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"6.4"}
+    h3,h4,h5,h6{--heading-prefix:"6.4.0"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
 
@@ -140,17 +140,14 @@
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
-      <li><a name="l206">​</a>
-        <a href="menu-technische-umsetzung-systemueberblick.html">Systemüberblick</a>
-      </li>
       <li>
         <a href="menu-technische-umsetzung-anwendungsfaelle.html">Technische Anwendungsfälle</a>
       </li>
-      <li><a name="l218">​</a>
-        <a href="menu-technische-umsetzung-verarbeitungsregeln.html">Verarbeitungsregeln</a>
+      <li>
+        <a href="menu-technische-umsetzung-dosierung.html">Strukturierte Dosierungen</a>
       </li>
       <li>
-        <a href="mapping.html">Mappings</a>
+        <a href="menu-technische-umsetzung-mapping.html">Mappings</a>
       </li>
     </ul>
   </li>
@@ -159,12 +156,6 @@
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
-      <li>
-        <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
-      </li>
-      <li>
-        <a href="menu-schnittstellen-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
-      </li>
       <li>
         <a href="menu-schnittstellen-query-api.html">Query API</a>
       </li>
@@ -282,17 +273,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <p>Seiteninhalt:</p>
 
 <ul id="markdown-toc">
-  <li><a href="#task-zurueckweisen-reject" id="markdown-toc-task-zurueckweisen-reject">Task zurueckweisen ($reject)</a></li>
   <li><a href="#nachricht" id="markdown-toc-nachricht">Nachricht</a></li>
   <li><a href="#anforderungen-an-schnittstelle" id="markdown-toc-anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</a></li>
   <li><a href="#api-beschreibung" id="markdown-toc-api-beschreibung">API Beschreibung</a></li>
   <li><a href="#hinweis" id="markdown-toc-hinweis">Hinweis</a></li>
-  <li><a href="#geschaeftslogik" id="markdown-toc-geschaeftslogik">Geschaeftslogik</a></li>
   <li><a href="#sicherheitsanforderungen" id="markdown-toc-sicherheitsanforderungen">Sicherheitsanforderungen</a></li>
 </ul>
 
 </div>
-<h3 id="task-zurueckweisen-reject">Task zurueckweisen ($reject)</h3>
+<p>Diese Operation basiert auf der gleichnamigen Operation in der <a href="https://gemspec.gematik.de/ig/fhir/1.0.0op-reject.html">Core-Spezifikation</a>.</p>
 
 <h3 id="nachricht">Nachricht</h3>
 
@@ -301,122 +290,27 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</h3>
 
 <ul>
-  <li><a href="./op-reject-fd-requirements.html">FD-Anforderungen zu <code class="language-plaintext highlighter-rouge">$reject</code></a>: Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.</li>
-  <li><a href="./op-reject-client-requirements.html">Client-Anforderungen zu <code class="language-plaintext highlighter-rouge">$reject</code></a>: Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.</li>
+  <li><a href="./op-reject-fd-requirements.html">Ergänzende Server-Anforderungen zu <code class="language-plaintext highlighter-rouge">$reject</code></a>: Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.</li>
+  <li><a href="./op-reject-client-requirements.html">Ergänzende Client-Anforderungen zu <code class="language-plaintext highlighter-rouge">$reject</code></a>: Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.</li>
 </ul>
 
 <h3 id="api-beschreibung">API Beschreibung</h3>
 
-<div data-api-operation-id="rejectTask" data-api-type="FHIROperation" data-api-fhir-invoke-level="instance" class="gematik-api">
-  <div id="CapabilityStatement">
-    <pre>
-      {"resourceType":"CapabilityStatement","id":"erp-fachdienst-server","meta":{"profile":["https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"]},"extension":[{"url":"https://gematik.de/fhir/ti/StructureDefinition/extension-base-url","valueString":"http://todo"},{"extension":[{"url":"statusCode","valueString":"423"},{"url":"description","valueString":"If the insurant objected to the medication process or objected to the submission of prescription and dispensation data into the ePA system, the Medication Service is locked."},{"url":"responseType","valueString":"application/json"},{"url":"errorCode","valueString":"locked"}],"url":"https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"}],"url":"https://gematik.de/fhir/erp/CapabilityStatement/erp-fachdienst-server","version":"1.0.0-draft","name":"ERPFachdienstServer","title":"ERP CapabilityStatement für den E-Rezept-Fachdienst","status":"draft","date":"2025-12-15","publisher":"gematik GmbH","contact":[{"name":"gematik GmbH","telecom":[{"system":"url","value":"https://gematik.de"},{"system":"email","value":"erp-umsetzung@gematik.de"}]}],"description":"ERP CapabilityStatement für den E-Rezept-Fachdienst","jurisdiction":[{"coding":[{"system":"urn:iso:std:iso:3166","code":"DE","display":"Germany"}]}],"kind":"requirements","fhirVersion":"4.0.1","format":["application/fhir+json","application/fhir+xml"],"rest":[{"mode":"server"}]}
-    </pre>
-  </div>
-  <div id="OperationDefinition">
-    <div data-render="ig-Fragment" data-type="JSON" data-name="application/fhir+json">
-      <pre style="white-space: pre; text-wrap: nowrap; width: auto;" class="json" data-fhir="generated"><code style="white-space: pre; text-wrap: nowrap;" class="language-json">{
-  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition">resourceType</a>" : "OperationDefinition",
-  "<a href="http://hl7.org/fhir/R4/resource.html#OperationDefinition.id">id</a>" : "RejectOperation",
-  "<a href="http://hl7.org/fhir/R4/domainresource.html#OperationDefinition.text">text</a>" : {
-    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
-    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p class=\"res-header-id\"&gt;&lt;b&gt;Generated Narrative: OperationDefinition RejectOperation&lt;/b&gt;&lt;/p&gt;&lt;a name=\"RejectOperation\"&gt; &lt;/a&gt;&lt;a name=\"hcRejectOperation\"&gt; &lt;/a&gt;&lt;p&gt;URL: [base]/Task/[id]/$reject&lt;/p&gt;&lt;h3&gt;Parameters&lt;/h3&gt;&lt;table class=\"grid\"&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Use&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Name&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Scope&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Cardinality&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Binding&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Documentation&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;secret&lt;/td&gt;&lt;td/&gt;&lt;td&gt;1..1&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R4/datatypes.html#string\"&gt;string&lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Der secret Parameter, der einer Apotheke den exklusiven Zugriff auf den Task als URL-Parameter ?secret ermöglicht.&lt;/p&gt;\n&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"
-  },
-  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.url">url</a>" : "https://gematik.de/fhir/erp/OperationDefinition/RejectOperation",
-  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.version">version</a>" : "1.0.0-draft",
-  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.name">name</a>" : "Reject",
-  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.status">status</a>" : "draft",
-  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.kind">kind</a>" : "operation",
-  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.date">date</a>" : "2025-12-15",
-  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.publisher">publisher</a>" : "gematik GmbH",
-  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.contact">contact</a>" : [
-    {
-      "<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">name</a>" : "gematik GmbH",
-      "<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>" : [
-        {
-          "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a>" : "url",
-          "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a>" : "https://gematik.de"
-        },
-        {
-          "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a>" : "email",
-          "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a>" : "erp-umsetzung@gematik.de"
-        }
-      ]
-    }
-  ],
-  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.description">description</a>" : "Lehnt die Ausgabe eines eRezepts ab. Die Aufgabe wird in einen aktiven Zustand zurückgesetzt, das secret wird gelöscht, und der Task wird für jeden anderen Apotheker zugänglich oder kann vom Patienten gelöscht werden.",
-  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.jurisdiction">jurisdiction</a>" : [
-    {
-      "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-        {
-          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "urn:iso:std:iso:3166",
-          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "DE",
-          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Germany"
-        }
-      ]
-    }
-  ],
-  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.affectsState">affectsState</a>" : true,
-  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.code">code</a>" : "reject",
-  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.resource">resource</a>" : [
-    "Task"
-  ],
-  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.system">system</a>" : false,
-  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.type">type</a>" : false,
-  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.instance">instance</a>" : true,
-  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter">parameter</a>" : [
-    {
-      "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.name">name</a>" : "secret",
-      "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.use">use</a>" : "in",
-      "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.min">min</a>" : 1,
-      "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.max">max</a>" : "1",
-      "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>" : "Der secret Parameter, der einer Apotheke den exklusiven Zugriff auf den Task als URL-Parameter ?secret ermöglicht.",
-      "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.type">type</a>" : "string"
-    }
-  ]
-}</code></pre>
-
-    </div>
-  </div>
-  <div id="Response-Examples">
-    <div data-render="ig-Fragment" data-type="JSON" data-name="application/fhir+json">
-      <pre style="white-space: pre; text-wrap: nowrap; width: auto;" class="json" data-fhir="generated"><code style="white-space: pre; text-wrap: nowrap;" class="language-json">{
-  "<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome">resourceType</a>" : "OperationOutcome",
-  "<a href="http://hl7.org/fhir/R4/resource.html#OperationOutcome.id">id</a>" : "ExampleOperationRejectError",
-  "<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue">issue</a>" : [
-    {
-      "<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.severity">severity</a>" : "error",
-      "<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.code">code</a>" : "forbidden",
-      "<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.details">details</a>" : {
-        "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a>" : "Task not in status in progress, is: ready"
-      }
-    }
-  ]
-}</code></pre>
-
-    </div>
-  </div>
-</div>
+<p>Die API-Beschreibung für den Aufruf der Operation findet sich auf:</p>
+<ul>
+  <li><a href="https://github.com/gematik/api-erp/blob/master/docs/erp_abrufen.adoc#e-rezept-zur%C3%BCckweisen">API-ERP: E-Rezept zurückweisen</a></li>
+</ul>
 
 <h3 id="hinweis">Hinweis</h3>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">reject</code> und direktes erneutes <code class="language-plaintext highlighter-rouge">accept</code> sollen nicht als Uebergabemechanismus zwischen Apotheken verwendet werden.</li>
-  <li>Diese Folge erzeugt fuer Versicherte schwer nachvollziehbare Protokollierung/Notifications.</li>
+  <li><code class="language-plaintext highlighter-rouge">reject</code> und direktes erneutes <code class="language-plaintext highlighter-rouge">accept</code> sollen nicht als Übergabemechanismus zwischen Apotheken verwendet werden.</li>
+  <li>Diese Folge erzeugt für Versicherte schwer nachvollziehbare Protokollierung/Notifications.</li>
 </ul>
-
-<h3 id="geschaeftslogik">Geschaeftslogik</h3>
-
-<figure>
-  <div style="--box-width: 900px; margin-bottom: 30px;" class="gem-ig-img-container">
-  <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 395 619" zoomAndPan="magnify" preserveAspectRatio="none" width="395px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:395px;height:619px;background:#FFFFFF;" version="1.1" height="619px"><defs></defs><g><text font-weight="bold" lengthAdjust="spacing" x="114" font-size="14" textLength="164" y="32.9951" font-family="Arial" fill="#000000">RX Operation $reject</text><ellipse cx="197.5" cy="57.2969" rx="10" ry="10" style="stroke:#222222;stroke-width:1.0;" fill="#222222"></ellipse><rect rx="4" ry="4" width="257" x="69" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="33.9688"></rect><text lengthAdjust="spacing" x="79" font-size="12" textLength="237" y="108.4355" font-family="Arial" fill="#000000">Client ruft POST /Task/{id}/$reject auf</text><rect rx="4" ry="4" width="347" x="24" y="141.2656" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="33.9688"></rect><text lengthAdjust="spacing" x="34" font-size="12" textLength="327" y="162.4043" font-family="Arial" fill="#000000">FD prueft Rolle, Secret und Task.status=in-progress</text><rect rx="4" ry="4" width="79" x="158" y="244.2188" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="33.9688"></rect><text lengthAdjust="spacing" x="168" font-size="12" textLength="59" y="265.3574" font-family="Arial" fill="#000000">HTTP 403</text><ellipse cx="197.5" cy="317.7031" rx="11" ry="11" style="stroke:#222222;stroke-width:1.0;" fill="none"></ellipse><ellipse cx="197.5" cy="317.7031" rx="6" ry="6" style="stroke:#111111;stroke-width:1.0;" fill="#222222"></ellipse><polygon style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" points="185.5,195.2344,209.5,195.2344,221.5,207.2344,209.5,219.2344,185.5,219.2344,173.5,207.2344,185.5,195.2344"></polygon><text lengthAdjust="spacing" x="201.5" font-size="12" textLength="27" y="230.373" font-family="Arial" fill="#000000">nein</text><text lengthAdjust="spacing" x="187" font-size="12" textLength="21" y="211.3887" font-family="Arial" fill="#000000">ok?</text><text lengthAdjust="spacing" x="221.5" font-size="12" textLength="11" y="204.4043" font-family="Arial" fill="#000000">ja</text><rect rx="4" ry="4" width="373" x="11" y="370.7031" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="33.9688"></rect><text lengthAdjust="spacing" x="21" font-size="12" textLength="353" y="391.8418" font-family="Arial" fill="#000000">FD loescht Secret, Task.owner und ggf. Dispensierdaten</text><rect rx="4" ry="4" width="200" x="97.5" y="424.6719" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="33.9688"></rect><text lengthAdjust="spacing" x="107.5" font-size="12" textLength="180" y="445.8105" font-family="Arial" fill="#000000">FD setzt Task.status = ready</text><rect rx="4" ry="4" width="304" x="45.5" y="478.6406" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="33.9688"></rect><text lengthAdjust="spacing" x="55.5" font-size="12" textLength="284" y="499.7793" font-family="Arial" fill="#000000">FD bereitet ggf. ePA-Loeschmarkierungen vor</text><rect rx="4" ry="4" width="226" x="84.5" y="532.6094" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="33.9688"></rect><text lengthAdjust="spacing" x="94.5" font-size="12" textLength="206" y="553.748" font-family="Arial" fill="#000000">FD triggert Push an Versicherten</text><ellipse cx="197.5" cy="597.5781" rx="11" ry="11" style="stroke:#222222;stroke-width:1.0;" fill="none"></ellipse><ellipse cx="197.5" cy="597.5781" rx="6" ry="6" style="stroke:#111111;stroke-width:1.0;" fill="#222222"></ellipse><line y1="67.2969" x1="197.5" y2="87.2969" style="stroke:#2F4F4F;stroke-width:1.0;" x2="197.5"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="193.5,77.2969,197.5,87.2969,201.5,77.2969,197.5,81.2969"></polygon><line y1="121.2656" x1="197.5" y2="141.2656" style="stroke:#2F4F4F;stroke-width:1.0;" x2="197.5"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="193.5,131.2656,197.5,141.2656,201.5,131.2656,197.5,135.2656"></polygon><line y1="278.1875" x1="197.5" y2="306.7031" style="stroke:#2F4F4F;stroke-width:1.0;" x2="197.5"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="193.5,296.7031,197.5,306.7031,201.5,296.7031,197.5,300.7031"></polygon><line y1="219.2344" x1="197.5" y2="244.2188" style="stroke:#2F4F4F;stroke-width:1.0;" x2="197.5"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="193.5,234.2188,197.5,244.2188,201.5,234.2188,197.5,238.2188"></polygon><line y1="207.2344" x1="221.5" y2="207.2344" style="stroke:#2F4F4F;stroke-width:1.0;" x2="247"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="243,276.7031,247,286.7031,251,276.7031,247,280.7031"></polygon><line y1="207.2344" x1="247" y2="350.7031" style="stroke:#2F4F4F;stroke-width:1.0;" x2="247"></line><line y1="350.7031" x1="247" y2="350.7031" style="stroke:#2F4F4F;stroke-width:1.0;" x2="197.5"></line><line y1="350.7031" x1="197.5" y2="370.7031" style="stroke:#2F4F4F;stroke-width:1.0;" x2="197.5"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="193.5,360.7031,197.5,370.7031,201.5,360.7031,197.5,364.7031"></polygon><line y1="175.2344" x1="197.5" y2="195.2344" style="stroke:#2F4F4F;stroke-width:1.0;" x2="197.5"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="193.5,185.2344,197.5,195.2344,201.5,185.2344,197.5,189.2344"></polygon><line y1="404.6719" x1="197.5" y2="424.6719" style="stroke:#2F4F4F;stroke-width:1.0;" x2="197.5"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="193.5,414.6719,197.5,424.6719,201.5,414.6719,197.5,418.6719"></polygon><line y1="458.6406" x1="197.5" y2="478.6406" style="stroke:#2F4F4F;stroke-width:1.0;" x2="197.5"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="193.5,468.6406,197.5,478.6406,201.5,468.6406,197.5,472.6406"></polygon><line y1="512.6094" x1="197.5" y2="532.6094" style="stroke:#2F4F4F;stroke-width:1.0;" x2="197.5"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="193.5,522.6094,197.5,532.6094,201.5,522.6094,197.5,526.6094"></polygon><line y1="566.5781" x1="197.5" y2="586.5781" style="stroke:#2F4F4F;stroke-width:1.0;" x2="197.5"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="193.5,576.5781,197.5,586.5781,201.5,576.5781,197.5,580.5781"></polygon></g></svg>
-  </div>
-  <figcaption><strong>Abbildung: </strong>Ablauf Operation `$reject`</figcaption>
-</figure>
 
 <h3 id="sicherheitsanforderungen">Sicherheitsanforderungen</h3>
 
-<p>Generelle Sicherheitsanforderungen werden <a href="./menu-schnittstellen-datenschutz-und-sicherheit.html">hier</a> festgehalten.</p>
+<p><a name="l510">​</a>Generelle Sicherheitsanforderungen werden <a href="./menu-schnittstellen-datenschutz-und-sicherheit.html">hier</a> festgehalten.</p>
 
 
 
@@ -437,7 +331,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Feb 20, 2026 09:22+0000">2026-02-20</span>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Feb 20, 2026 13:59+0000">2026-02-20</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

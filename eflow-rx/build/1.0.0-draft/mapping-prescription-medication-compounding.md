@@ -5,7 +5,7 @@ E-Rezept für Arzneimittel
 Version 1.0.0-draft - ci-build 
 
 * [**Table of Contents**](toc.md)
-* [**Vorgaben zum Mapping von FHIR-Instanzen**](mapping.md)
+* [**Vorgaben zum Mapping von FHIR-Instanzen**](menu-technische-umsetzung-mapping.md)
 * [**Mapping von Verordnungsdaten**](mapping-prescription.md)
 * [**Mapping der Arzneimitteldaten für Verordnungsdaten**](mapping-prescription-medication.md)
 * **Mapping einer Rezeptur Medikation**

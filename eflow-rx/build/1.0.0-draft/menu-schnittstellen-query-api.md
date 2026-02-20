@@ -15,7 +15,7 @@ Diese Seite bietet den Einstieg in die lesenden RX-Schnittstellen.
 
 ## Lesereihenfolge
 
-1. Moduluebergreifende Regeln aus eFlow Core
+1. Modulübergreifende Regeln aus eFlow Core
 1. RX-spezifische Query-Regeln in den folgenden Seiten
 
 ## Ressourcen
@@ -27,8 +27,8 @@ Auch in der Query API werden FD- und Client-Anforderungen jeweils in eigene Unte
 
 Die Task-Seite umfasst die Varianten `GET /Task`, `GET /Task/{id}`, `GET /Task/{id}?ac=...` und `GET /Task/{id}?secret=...`.
 
-Moduluebergreifende Query-Ressourcen sind im Core IG beschrieben:
+Modulübergreifende Query-Ressourcen sind im Core IG beschrieben:
 
-* [AuditEvent (Core)](https://gemspec.gematik.de/ig/fhir/eflow-core/latest/query-api-auditevent.html)
-* [Device (Core)](https://gemspec.gematik.de/ig/fhir/eflow-core/latest/query-api-device.html)
+* [AuditEvent (Core)](https://gemspec.gematik.de/ig/fhir/1.0.0query-api-auditevent.html)
+* [Device (Core)](https://gemspec.gematik.de/ig/fhir/1.0.0query-api-device.html)
 

@@ -11,6 +11,6 @@ Version 1.0.0-draft - ci-build
 
 Dieser IG beschreibt folgende technischen Aspekte für die Arzneimittelverordnung:
 
-* [Technische Anwendungsfälle](./menu-technische-umsetzung-anwendungsfaelle.md)
+* [Technische Anwendungsfälle](./menu-technische-umsetzung-anwendungsfälle.md)
 * [Validierung von Dosierinformationen](./menu-technische-umsetzung-dosierung.md)
 

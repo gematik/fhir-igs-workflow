@@ -10,31 +10,44 @@ Version 1.0.0-draft - ci-build
 
 ## Query API: MedicationDispense
 
-# Query API: MedicationDispense
-
-Diese Seite beschreibt den Einstieg in die MedicationDispense-Query-Schnittstelle des RX-Moduls.
+Diese Seite basiert auf der gleichnamigen Schnittstelle in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/1.0.0query-api-medicationdispense.html) und beschreibt den Einstieg in die MedicationDispense-Query-Schnittstelle.
 
 ### Nachricht
 
-Die MedicationDispense-Query wird ueber HTTP `GET` auf `/MedicationDispense` aufgerufen.
+Die Nachricht zum Abruf von Dipensierdaten wird als HTTP GET-Anfrage an den gesendet, um eine Liste der hinterlegten **MedicationDispense**-Instanzen abzurufen.
 
 ### Anforderungen an Schnittstelle
 
-* [FD-Anforderungen zur MedicationDispense-Query](./query-api-medicationdispense-fd-requirements.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
-* [Client-Anforderungen zur MedicationDispense-Query](./query-api-medicationdispense-client-requirements.md): Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.
+* [Ergänzende Client-Anforderungen zur MedicationDispense-Query](./query-api-medicationdispense-client-requirements.md): Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.
 
-### API Beschreibung
+### Resource API
 
-#### GET /MedicationDispense
+Anfragen an die *MedicationDispense*-Ressource können über die RESTful API mittels HTTP GET-Anfragen durchgeführt werden. Dabei können spezifische Suchparameter genutzt werden, um die Anfragen zu verfeinern. Zum Beispiel:
 
-```
+* Suche nach Medikamentenabgaben, die an einem bestimmten Tag erfolgten: `?whenHandedOver=2025-02-14`
 
-      {"resourceType":"CapabilityStatement","id":"erp-fachdienst-server","meta":{"profile":["https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"]},"extension":[{"url":"https://gematik.de/fhir/ti/StructureDefinition/extension-base-url","valueString":"http://todo"},{"extension":[{"url":"statusCode","valueString":"423"},{"url":"description","valueString":"If the insurant objected to the medication process or objected to the submission of prescription and dispensation data into the ePA system, the Medication Service is locked."},{"url":"responseType","valueString":"application/json"},{"url":"errorCode","valueString":"locked"}],"url":"https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"}],"url":"https://gematik.de/fhir/erp/CapabilityStatement/erp-fachdienst-server","version":"1.0.0-draft","name":"ERPFachdienstServer","title":"ERP CapabilityStatement für den E-Rezept-Fachdienst","status":"draft","date":"2025-12-15","publisher":"gematik GmbH","contact":[{"name":"gematik GmbH","telecom":[{"system":"url","value":"https://gematik.de"},{"system":"email","value":"erp-umsetzung@gematik.de"}]}],"description":"ERP CapabilityStatement für den E-Rezept-Fachdienst","jurisdiction":[{"coding":[{"system":"urn:iso:std:iso:3166","code":"DE","display":"Germany"}]}],"kind":"requirements","fhirVersion":"4.0.1","format":["application/fhir+json","application/fhir+xml"],"rest":[{"mode":"server"}]}
-    
-```
+#### API Beschreibung
 
-### Hinweis
+* [API-ERP: Abgabeinformationen abrufen](https://github.com/gematik/api-erp/blob/master/docs/erp_versicherte.adoc#abgabeinformationen-abrufen)
+
+#### Hinweise
 
 * Im Anwendungsfall “Abgabeinformationen abrufen” wird die Suche per `identifier` auf die PrescriptionID genutzt.
-* Die Rueckgabe erfolgt als Bundle und kann ein oder mehrere `MedicationDispense`-Objekte enthalten.
+* Die Rückgabe erfolgt als Bundle und kann ein oder mehrere `MedicationDispense`-Objekte enthalten.
+
+### Instance API
+
+Um spezifische Details zu einem einzelnen **MedicationDispense** mittels der RESTful API zu erhalten, wird die **MedicationDispense Instance API** verwendet, indem eine HTTP GET-Anfrage an den Endpunkt */MedicationDispense/[id]* gestellt wird.
+
+#### API Beschreibung
+
+* [API-ERP: Abgabeinformationen zu einem E-Rezept abrufen](https://github.com/gematik/api-erp/blob/master/docs/erp_versicherte.adoc#abgabeinformationen-zu-einem-e-rezept-abrufen)
+
+#### Hinweise
+
+* …Hinweise
+
+### Sicherheitsanforderungen
+
+Generelle Sicherheitsanforderungen werden [hier](./menu-schnittstellen-datenschutz-und-sicherheit.md) festgehalten.
 

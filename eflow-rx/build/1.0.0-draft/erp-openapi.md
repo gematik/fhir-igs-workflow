@@ -9,10 +9,6 @@ Version 1.0.0-draft - ci-build
 
 ## OpenAPI: E-Rezept Produkttypen
 
-### OpenAPI: E-Rezept Produkttypen
-
-Die OpenAPI-Artefakte dienen als **Implementierungshilfe**. Die normative Definition der Anforderungen bleibt in den Spezifikationen und Requirement-Bloecken dieses IG.
-
-* [OpenAPI JSON des eRp Fachdienst Servers](erp-fachdienst-server.openapi.json)
-* [OpenAPI JSON des eRp Fachdienst Clients](erp-fachdienst-client.openapi.json)
+Die bereitgestellte OpenAPI-Definition dient
+**ausschließlich**als Hilfestellung bei der Implementierung. Sie enthält nicht alle möglichen Fehlercodes oder Rückgabewerte und kann daher nicht als normativ betrachtet werden. Für eine vollständige und korrekte Implementierung sind die offiziellen Spezifikationen und begleitenden Dokumentationen maßgeblich.
 

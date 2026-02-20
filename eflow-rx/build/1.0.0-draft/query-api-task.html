@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script src="assets/js/mermaid.js" type="text/javascript"></script>
     <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
-    <style type="text/css">h2{--heading-prefix:"7.1"}
-    h3,h4,h5,h6{--heading-prefix:"7.1.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"5.1"}
+    h3,h4,h5,h6{--heading-prefix:"5.1.0"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
 
@@ -140,17 +140,14 @@
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
-      <li><a name="l206">​</a>
-        <a href="menu-technische-umsetzung-systemueberblick.html">Systemüberblick</a>
-      </li>
       <li>
         <a href="menu-technische-umsetzung-anwendungsfaelle.html">Technische Anwendungsfälle</a>
       </li>
-      <li><a name="l218">​</a>
-        <a href="menu-technische-umsetzung-verarbeitungsregeln.html">Verarbeitungsregeln</a>
+      <li>
+        <a href="menu-technische-umsetzung-dosierung.html">Strukturierte Dosierungen</a>
       </li>
       <li>
-        <a href="mapping.html">Mappings</a>
+        <a href="menu-technische-umsetzung-mapping.html">Mappings</a>
       </li>
     </ul>
   </li>
@@ -159,12 +156,6 @@
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
-      <li>
-        <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
-      </li>
-      <li>
-        <a href="menu-schnittstellen-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
-      </li>
       <li>
         <a href="menu-schnittstellen-query-api.html">Query API</a>
       </li>
@@ -282,60 +273,70 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <p>Seiteninhalt:</p>
 
 <ul id="markdown-toc">
-  <li><a href="#query-api-task" id="markdown-toc-query-api-task">Query API: Task</a>    <ul>
-      <li><a href="#nachricht" id="markdown-toc-nachricht">Nachricht</a></li>
-      <li><a href="#anforderungen-an-schnittstelle" id="markdown-toc-anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</a></li>
-      <li><a href="#api-beschreibung" id="markdown-toc-api-beschreibung">API Beschreibung</a></li>
-      <li><a href="#hinweis" id="markdown-toc-hinweis">Hinweis</a></li>
-    </ul>
-  </li>
+  <li><a href="#nachricht" id="markdown-toc-nachricht">Nachricht</a></li>
+  <li><a href="#anforderungen-an-schnittstelle" id="markdown-toc-anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</a></li>
+  <li><a href="#resource-api" id="markdown-toc-resource-api">Resource API</a></li>
+  <li><a href="#instance-api" id="markdown-toc-instance-api">Instance API</a></li>
+  <li><a href="#sicherheitsanforderungen" id="markdown-toc-sicherheitsanforderungen">Sicherheitsanforderungen</a></li>
 </ul>
 
 </div>
-<h1 id="query-api-task">Query API: Task</h1>
-
-<p>Diese Seite beschreibt den Einstieg in die Task-Query-Schnittstellen des RX-Moduls.</p>
+<p>Diese Seite basiert auf der gleichnamigen Schnittstelle in der <a href="https://gemspec.gematik.de/ig/fhir/1.0.0query-api-task.html">Core-Spezifikation</a> und beschreibt den Einstieg in die Task-Query-Schnittstelle.</p>
 
 <h3 id="nachricht">Nachricht</h3>
 
-<p>Die Task-Query wird ueber HTTP <code class="language-plaintext highlighter-rouge">GET</code> auf <code class="language-plaintext highlighter-rouge">/Task</code> und <code class="language-plaintext highlighter-rouge">/Task/{id}</code> aufgerufen.</p>
+<p>Die Nachricht zum Abruf von E-Rezepten wird als HTTP GET-Anfrage an den E-Rezept-Fachdienst gesendet, um eine Liste der hinterlegten <em>Task</em>-Instanzen abzurufen.</p>
 
 <h3 id="anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</h3>
 
 <ul>
-  <li><a href="./query-api-task-fd-requirements.html">FD-Anforderungen zur Task-Query</a>: Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.</li>
-  <li><a href="./query-api-task-client-requirements.html">Client-Anforderungen zur Task-Query</a>: Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.</li>
+  <li><a href="./query-api-task-client-requirements.html">Ergänzende Server-Anforderungen zur Task-Query</a>: Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.</li>
+  <li><a name="l464">​</a><a href="./query-api-task-server-requirements.html">Ergänzende Client-Anforderungen zur Task-Query</a>: Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.</li>
 </ul>
 
-<h3 id="api-beschreibung">API Beschreibung</h3>
+<h3 id="resource-api">Resource API</h3>
 
-<h4 id="get-task">GET /Task</h4>
+<p>Anfragen an die <i>Task</i>-Ressource können über die RESTful API mittels HTTP GET-Anfragen durchgeführt werden.</p>
 
-<div data-api-operation-id="searchTask" data-api-type="FHIRResource" data-api-fhir-interaction="search-type" data-api-fhir-resource-type="Task" class="gematik-apidoc">
-  <div id="CapabilityStatement">
-    <pre>
-      {"resourceType":"CapabilityStatement","id":"erp-fachdienst-server","meta":{"profile":["https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"]},"extension":[{"url":"https://gematik.de/fhir/ti/StructureDefinition/extension-base-url","valueString":"http://todo"},{"extension":[{"url":"statusCode","valueString":"423"},{"url":"description","valueString":"If the insurant objected to the medication process or objected to the submission of prescription and dispensation data into the ePA system, the Medication Service is locked."},{"url":"responseType","valueString":"application/json"},{"url":"errorCode","valueString":"locked"}],"url":"https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"}],"url":"https://gematik.de/fhir/erp/CapabilityStatement/erp-fachdienst-server","version":"1.0.0-draft","name":"ERPFachdienstServer","title":"ERP CapabilityStatement für den E-Rezept-Fachdienst","status":"draft","date":"2025-12-15","publisher":"gematik GmbH","contact":[{"name":"gematik GmbH","telecom":[{"system":"url","value":"https://gematik.de"},{"system":"email","value":"erp-umsetzung@gematik.de"}]}],"description":"ERP CapabilityStatement für den E-Rezept-Fachdienst","jurisdiction":[{"coding":[{"system":"urn:iso:std:iso:3166","code":"DE","display":"Germany"}]}],"kind":"requirements","fhirVersion":"4.0.1","format":["application/fhir+json","application/fhir+xml"],"rest":[{"mode":"server"}]}
-    </pre>
-  </div>
-</div>
-
-<h4 id="get-taskid">GET /Task/{id}</h4>
-
-<div data-api-operation-id="readTask" data-api-type="FHIRResource" data-api-fhir-interaction="read" data-api-fhir-resource-type="Task" class="gematik-apidoc">
-  <div id="CapabilityStatement">
-    <pre>
-      {"resourceType":"CapabilityStatement","id":"erp-fachdienst-server","meta":{"profile":["https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"]},"extension":[{"url":"https://gematik.de/fhir/ti/StructureDefinition/extension-base-url","valueString":"http://todo"},{"extension":[{"url":"statusCode","valueString":"423"},{"url":"description","valueString":"If the insurant objected to the medication process or objected to the submission of prescription and dispensation data into the ePA system, the Medication Service is locked."},{"url":"responseType","valueString":"application/json"},{"url":"errorCode","valueString":"locked"}],"url":"https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"}],"url":"https://gematik.de/fhir/erp/CapabilityStatement/erp-fachdienst-server","version":"1.0.0-draft","name":"ERPFachdienstServer","title":"ERP CapabilityStatement für den E-Rezept-Fachdienst","status":"draft","date":"2025-12-15","publisher":"gematik GmbH","contact":[{"name":"gematik GmbH","telecom":[{"system":"url","value":"https://gematik.de"},{"system":"email","value":"erp-umsetzung@gematik.de"}]}],"description":"ERP CapabilityStatement für den E-Rezept-Fachdienst","jurisdiction":[{"coding":[{"system":"urn:iso:std:iso:3166","code":"DE","display":"Germany"}]}],"kind":"requirements","fhirVersion":"4.0.1","format":["application/fhir+json","application/fhir+xml"],"rest":[{"mode":"server"}]}
-    </pre>
-  </div>
-</div>
-
-<h3 id="hinweis">Hinweis</h3>
+<h4 id="api-beschreibung">API Beschreibung</h4>
 
 <ul>
-  <li>Die Varianten <code class="language-plaintext highlighter-rouge">GET /Task/{id}?ac=...</code> und <code class="language-plaintext highlighter-rouge">GET /Task/{id}?secret=...</code> sind Teil der Task-Query und in den FD-Anforderungen spezifiziert.</li>
-  <li>AccessCode/Secret duerfen nur in zugelassenen Clients verarbeitet und nicht offengelegt werden.</li>
+  <li><a href="https://github.com/gematik/api-erp/blob/master/docs/erp_versicherte.adoc#alle-e-rezepte-ansehen">API-ERP: Alle E-Rezepte ansehen</a></li>
+  <li><a href="https://github.com/gematik/api-erp/blob/master/docs/erp_abrufen.adoc#e-rezept-erneut-abrufen">API-ERP: E-Rezept erneut abrufen abgebend</a></li>
 </ul>
 
+<h4 id="hinweis">Hinweis</h4>
+
+<ul>
+  <li>Mit dem AccessCode <code class="language-plaintext highlighter-rouge">GEM_ERP_NS_AccessCode</code> wird der Zugriff für Vertreter und Apotheker gesteuert, in dem der Versicherte diesen AccessCode z.B. als QR-Code weitergibt</li>
+  <li>Der Prozesstyp referenziert die Workflow-Definition, in diesem Fall den Prozess für apothekenpflichtige Arzneimittel mit <code class="language-plaintext highlighter-rouge">"url":"https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_PrescriptionType"</code></li>
+  <li>Mit der Angabe <code class="language-plaintext highlighter-rouge">"display":"Öffentliche Apotheke"</code> kann dem Versicherten ein Hinweis angezeigt werden, wo er das E-Rezept einlösen kann (bspw. Apotheke oder Sanitätshaus).</li>
+  <li>Wenn ein Task sich im Status “in-progress” befindet und das Feld Task.extension:lastMedicationDispense befüllt ist, stehen dem Task auch Abgabeinformationen zur Verfügung und beschreibt den Zeitpunkt, an dem der Versicherte sein Arzneimittel übergeben bekommen hat. Das E-Rezept-FdV kann dem Versicherten dann darstellen, dass das E-Rezept beliefert wurde bevor der Vorgang mit Aufruf der $close-Operation abgeschlossen wurde. Bis der Task nicht abgeschlossen ist, können die Abgabeinformationen gelöscht oder geändert werden. Dabei wird das Feld lastMedicationDispense aktualisiert. Wenn das AVS den Workflow mittels der $close-Operation abschließt, wird der Status auf “complete” gesetzt, und eine Änderung der Abgabeinformationen ist nicht mehr möglich.</li>
+</ul>
+
+<h3 id="instance-api">Instance API</h3>
+
+<p>Um spezifische Details zu einem einzelnen <em>Task</em> mittels der RESTful API zu erhalten, wird die <em>Task Instance API</em> verwendet, indem eine HTTP GET-Anfrage an den Endpunkt <i>/Task/[id]</i> gestellt wird.</p>
+
+<h4 id="api-beschreibung-1">API Beschreibung</h4>
+
+<ul>
+  <li><a href="https://github.com/gematik/api-erp/blob/master/docs/erp_versicherte.adoc#ein-einzelnes-e-rezept-abrufen-und-in-der-apotheke-einl%C3%B6sen">API-ERP: Ein einzelnes E-Rezept abrufen und in der Apotheke einlösen</a></li>
+</ul>
+
+<h4 id="hinweise">Hinweise</h4>
+
+<ul>
+  <li>Mit dem AccessCode in <code class="language-plaintext highlighter-rouge">GEM_ERP_NS_AccessCode</code> wird der Zugriff für Vertreter und Apotheker gesteuert, in dem der Versicherte diesen AccessCode z.B. als QR-Code weitergibt.</li>
+  <li>Bei <code class="language-plaintext highlighter-rouge">"value":"X123456789"</code> ist die KVNR des Versicherten enthalten, nach welcher die Rezept-Tasks gefiltert wurden. Im Ergebnis wurde nur ein einzelnes E-Rezept gefunden.</li>
+  <li>Der Prozesstyp in <code class="language-plaintext highlighter-rouge">GEM_ERP_EX_PrescriptionType</code> referenziert die Workflow-Definition, in diesem Fall den Prozess für apothekenpflichtige Arzneimittel.</li>
+  <li>Mit der Angabe ` “display”:”Öffentliche Apotheke”` kann dem Versicherten ein Hinweis angezeigt werden, wo er das E-Rezept einlösen kann (bspw. Apotheke oder Sanitätshaus).</li>
+  <li>Bei der Rückgabe der Verordnung an den Versicherten wird eine vom E-Rezept-Fachdienst erstellte Signatur des E-Rezept-Bundles übertragen. Diese muss vom E-Rezept-FdV nicht validiert werden.</li>
+</ul>
+
+<h3 id="sicherheitsanforderungen">Sicherheitsanforderungen</h3>
+
+<p><a name="l577">​</a>Generelle Sicherheitsanforderungen werden <a href="./menu-schnittstellen-datenschutz-und-sicherheit.html">hier</a> festgehalten.</p>
 
 
 
@@ -355,7 +356,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Feb 20, 2026 09:22+0000">2026-02-20</span>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Feb 20, 2026 13:59+0000">2026-02-20</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

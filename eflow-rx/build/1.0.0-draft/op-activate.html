@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script src="assets/js/mermaid.js" type="text/javascript"></script>
     <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
-    <style type="text/css">h2{--heading-prefix:"8.2"}
-    h3,h4,h5,h6{--heading-prefix:"8.2.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"6.2"}
+    h3,h4,h5,h6{--heading-prefix:"6.2.0"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
 
@@ -140,17 +140,14 @@
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
-      <li><a name="l206">​</a>
-        <a href="menu-technische-umsetzung-systemueberblick.html">Systemüberblick</a>
-      </li>
       <li>
         <a href="menu-technische-umsetzung-anwendungsfaelle.html">Technische Anwendungsfälle</a>
       </li>
-      <li><a name="l218">​</a>
-        <a href="menu-technische-umsetzung-verarbeitungsregeln.html">Verarbeitungsregeln</a>
+      <li>
+        <a href="menu-technische-umsetzung-dosierung.html">Strukturierte Dosierungen</a>
       </li>
       <li>
-        <a href="mapping.html">Mappings</a>
+        <a href="menu-technische-umsetzung-mapping.html">Mappings</a>
       </li>
     </ul>
   </li>
@@ -159,12 +156,6 @@
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
-      <li>
-        <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
-      </li>
-      <li>
-        <a href="menu-schnittstellen-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
-      </li>
       <li>
         <a href="menu-schnittstellen-query-api.html">Query API</a>
       </li>
@@ -282,19 +273,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <p>Seiteninhalt:</p>
 
 <ul id="markdown-toc">
-  <li><a href="#task-aktivieren-activate" id="markdown-toc-task-aktivieren-activate">Task aktivieren ($activate)</a></li>
   <li><a href="#nachricht" id="markdown-toc-nachricht">Nachricht</a></li>
   <li><a href="#anforderungen-an-schnittstelle" id="markdown-toc-anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</a></li>
   <li><a href="#api-beschreibung" id="markdown-toc-api-beschreibung">API Beschreibung</a></li>
   <li><a href="#hinweis" id="markdown-toc-hinweis">Hinweis</a></li>
-  <li><a href="#geschaeftslogik" id="markdown-toc-geschaeftslogik">Geschaeftslogik</a></li>
   <li><a href="#sicherheitsanforderungen" id="markdown-toc-sicherheitsanforderungen">Sicherheitsanforderungen</a></li>
 </ul>
 
 </div>
-<h3 id="task-aktivieren-activate">Task aktivieren ($activate)</h3>
-
-<p>Diese Operation basiert auf der gleichnamigen Operation in der <a href="https://gemspec.gematik.de/ig/fhir/eflow-core/latest/op-activate.html">Core-Spezifikation</a>.</p>
+<p>Diese Operation basiert auf der gleichnamigen Operation in der <a href="https://gemspec.gematik.de/ig/fhir/1.0.0op-activate.html">Core-Spezifikation</a>.</p>
 
 <h3 id="nachricht">Nachricht</h3>
 
@@ -303,270 +290,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</h3>
 
 <ul>
-  <li><a href="./op-activate-fd-requirements.html">FD-Anforderungen zu <code class="language-plaintext highlighter-rouge">$activate</code></a>: Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.</li>
-  <li><a href="./op-activate-client-requirements.html">Client-Anforderungen zu <code class="language-plaintext highlighter-rouge">$activate</code></a>: Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.</li>
+  <li><a href="./op-activate-fd-requirements.html">Ergänzende Server-Anforderungen zu <code class="language-plaintext highlighter-rouge">$activate</code></a>: Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.</li>
+  <li><a href="./op-activate-client-requirements.html">Ergänzende Client-Anforderungen zu <code class="language-plaintext highlighter-rouge">$activate</code></a>: Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.</li>
 </ul>
 
 <h3 id="api-beschreibung">API Beschreibung</h3>
 
-<div data-api-operation-id="activateTask" data-api-type="FHIROperation" data-api-fhir-invoke-level="instance" class="gematik-api">
-  <div id="CapabilityStatement">
-    <pre>
-      {"resourceType":"CapabilityStatement","id":"erp-fachdienst-server","meta":{"profile":["https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"]},"extension":[{"url":"https://gematik.de/fhir/ti/StructureDefinition/extension-base-url","valueString":"http://todo"},{"extension":[{"url":"statusCode","valueString":"423"},{"url":"description","valueString":"If the insurant objected to the medication process or objected to the submission of prescription and dispensation data into the ePA system, the Medication Service is locked."},{"url":"responseType","valueString":"application/json"},{"url":"errorCode","valueString":"locked"}],"url":"https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"}],"url":"https://gematik.de/fhir/erp/CapabilityStatement/erp-fachdienst-server","version":"1.0.0-draft","name":"ERPFachdienstServer","title":"ERP CapabilityStatement für den E-Rezept-Fachdienst","status":"draft","date":"2025-12-15","publisher":"gematik GmbH","contact":[{"name":"gematik GmbH","telecom":[{"system":"url","value":"https://gematik.de"},{"system":"email","value":"erp-umsetzung@gematik.de"}]}],"description":"ERP CapabilityStatement für den E-Rezept-Fachdienst","jurisdiction":[{"coding":[{"system":"urn:iso:std:iso:3166","code":"DE","display":"Germany"}]}],"kind":"requirements","fhirVersion":"4.0.1","format":["application/fhir+json","application/fhir+xml"],"rest":[{"mode":"server"}]}
-    </pre>
-  </div>
-  <div id="OperationDefinition">
-    <pre>
-      {"resourceType":"OperationDefinition","id":"ActivateOperation","text":{"status":"generated","div":"&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p class=\"res-header-id\"&gt;<b>Generated Narrative: OperationDefinition ActivateOperation</b>&lt;/p&gt;&lt;a name=\"ActivateOperation\"&gt; &lt;/a&gt;&lt;a name=\"hcActivateOperation\"&gt; &lt;/a&gt;<p>URL: [base]/Task/[id]/$activate</p><p>Input parameters Profile:&lt;a href=\"http://hl7.org/fhir/R4/parameters.html\"&gt;Parameters&lt;/a&gt;</p><p>Output parameters Profile:&lt;a href=\"StructureDefinition-eflow-rx-activate-operation-output-parameters.html\"&gt;GEM ERP PR ActivateOperation Output&lt;/a&gt;</p><h3>Parameters</h3>&lt;table class=\"grid\"&gt;<tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>ePrescription</td><td></td><td>1..1</td><td>&lt;a href=\"http://hl7.org/fhir/R4/binary.html\"&gt;Binary&lt;/a&gt;</td><td></td><td><div><p>Das qualifizierte unterzeichnete Verordnung (QES) zur Aktivierung des E-Rezept-Workflows.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td></td><td>1..1</td><td>&lt;a href=\"http://hl7.org/fhir/R4/task.html\"&gt;Task&lt;/a&gt;</td><td></td><td><div><p>Geben Sie die aktualisierte und aktivierte Aufgabe zurück.</p>\n</div></td></tr>&lt;/table&gt;&lt;/div&gt;"},"url":"https://gematik.de/fhir/erp/OperationDefinition/ActivateOperation","version":"1.0.0-draft","name":"Activate","status":"draft","kind":"operation","date":"2025-12-15","publisher":"gematik GmbH","contact":[{"name":"gematik GmbH","telecom":[{"system":"url","value":"https://gematik.de"},{"system":"email","value":"erp-umsetzung@gematik.de"}]}],"description":"Diese Operation aktiviert die erstellte Aufgabe für das Rezept. Der Eingabeparameter muss das qualifizierte signierte Bundle des Rezepts enthalten. Der E-Rezept-Fachdienst validiert das Rezept, aktualisiert die Task-ressource und startet den Workflow.","jurisdiction":[{"coding":[{"system":"urn:iso:std:iso:3166","code":"DE","display":"Germany"}]}],"affectsState":true,"code":"activate","resource":["Task"],"system":false,"type":false,"instance":true,"inputProfile":"http://hl7.org/fhir/StructureDefinition/Parameters","outputProfile":"https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-activate-operation-output-parameters","parameter":[{"name":"ePrescription","use":"in","min":1,"max":"1","documentation":"Das qualifizierte unterzeichnete Verordnung (QES) zur Aktivierung des E-Rezept-Workflows.","type":"Binary"},{"name":"return","use":"out","min":1,"max":"1","documentation":"Geben Sie die aktualisierte und aktivierte Aufgabe zurück.","type":"Task"}]}
-    </pre>
-  </div>
-  <div id="Request-Examples">
-    <div data-render="ig-Fragment" data-type="JSON" data-name="application/fhir+json">
-      <pre style="white-space: pre; text-wrap: nowrap; width: auto;" class="json" data-fhir="generated"><code style="white-space: pre; text-wrap: nowrap;" class="language-json">{
-  "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters">resourceType</a>" : "Parameters",
-  "<a href="http://hl7.org/fhir/R4/resource.html#Parameters.id">id</a>" : "ExampleOperationActivateParametersInput",
-  "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter">parameter</a>" : [
-    {
-      "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a>" : "ePrescription",
-      "<a href="http://hl7.org/fhir/R4/binary.html#Binary">resource</a>" : {
-        "<a href="http://hl7.org/fhir/R4/binary.html">resourceType</a>" : "Binary",
-        "<a href="http://hl7.org/fhir/R4/resource.html#Binary.id">id</a>" : "PrescriptionBinary",
-        "<a href="http://hl7.org/fhir/R4/binary.html#Binary.contentType">contentType</a>" : "application/pkcs7-mime",
-        "<a href="http://hl7.org/fhir/R4/binary.html#Binary.data">data</a>" : "dGhpcyBibG9iIGlzIHNuaXBwZWQ="
-      }
-    }
-  ]
-}</code></pre>
-
-    </div>
-    <div data-render="ig-Fragment" data-type="XML" data-name="application/fhir+xml">
-      <pre style="white-space: pre; text-wrap: nowrap; width: auto;" class="xml" data-fhir="generated"><code style="white-space: pre; text-wrap: nowrap;" class="language-xml">
-&lt;<a href="http://hl7.org/fhir/R4/parameters.html#Parameters">Parameters</a> xmlns="http://hl7.org/fhir"&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/resource.html#Parameters.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>="ExampleOperationActivateParametersInput"/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter">parameter</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="ePrescription"/&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/binary.html#Binary">resource</a>&gt;
-      &lt;<a href="http://hl7.org/fhir/R4/binary.html#Binary">Binary</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/resource.html#Binary.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>="PrescriptionBinary"/&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/binary.html#Binary.contentType">contentType</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="application/pkcs7-mime"/&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/binary.html#Binary.data">data</a> <a href="http://hl7.org/fhir/R4/datatypes.html#base64Binary">value</a>="dGhpcyBibG9iIGlzIHNuaXBwZWQ="/&gt;
-      &lt;/<a href="http://hl7.org/fhir/R4/binary.html#Binary">Binary</a>&gt;
-    &lt;/resource&gt;
-  &lt;/<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter">parameter</a>&gt;
-&lt;/<a href="http://hl7.org/fhir/R4/parameters.html#Parameters">Parameters</a>&gt;</code></pre>
-
-    </div>
-  </div>
-  <div id="Response-Examples">
-    <div data-render="ig-Fragment" data-type="JSON" data-name="application/fhir+json">
-      <pre style="white-space: pre; text-wrap: nowrap; width: auto;" class="json" data-fhir="generated"><code style="white-space: pre; text-wrap: nowrap;" class="language-json">{
-  "<a href="http://hl7.org/fhir/R4/task.html#Task">resourceType</a>" : "Task",
-  "<a href="http://hl7.org/fhir/R4/resource.html#Task.id">id</a>" : "607255ed-ce41-47fc-aad3-cfce1c39963f",
-  "<a href="http://hl7.org/fhir/R4/resource.html#Task.meta">meta</a>" : {
-    "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
-      <a style="color: Maroon" href="StructureDefinition-GEM-ERP-PR-Task.html">&#x1F517;</a> "https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-PR-Task"
-    ],
-    "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.tag">tag</a>" : [
-      {
-        "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Task in READY state activated by (Z)PVS/KIS via $activate operation"
-      }
-    ]
-  },
-  "<a href="http://hl7.org/fhir/R4/domainresource.html#Task.text">text</a>" : {
-    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "extensions",
-    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p class=\"res-header-id\"&gt;&lt;b&gt;Generated Narrative: Task 607255ed-ce41-47fc-aad3-cfce1c39963f&lt;/b&gt;&lt;/p&gt;&lt;a name=\"607255ed-ce41-47fc-aad3-cfce1c39963f\"&gt; &lt;/a&gt;&lt;a name=\"hc607255ed-ce41-47fc-aad3-cfce1c39963f\"&gt; &lt;/a&gt;&lt;div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"&gt;&lt;p style=\"margin-bottom: 0px\"/&gt;&lt;p style=\"margin-bottom: 0px\"&gt;Profile: &lt;a href=\"StructureDefinition-GEM-ERP-PR-Task.html\"&gt;GEM ERP PR Task&lt;/a&gt;&lt;/p&gt;&lt;p style=\"margin-bottom: 0px\"&gt;Tag: Task in READY state activated by (Z)PVS/KIS via $activate operation (Details: [not stated] code null = 'Task in READY state activated by (Z)PVS/KIS via $activate operation')&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;GEM ERP EX PrescriptionType&lt;/b&gt;: EFlowRxFlowType: 160 (Flowtype für Apothekenpflichtige Arzneimittel)&lt;/p&gt;&lt;p&gt;&lt;b&gt;GEM ERP EX AcceptDate&lt;/b&gt;: 2026-07-01&lt;/p&gt;&lt;p&gt;&lt;b&gt;GEM ERP EX ExpiryDate&lt;/b&gt;: 2026-07-01&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: &lt;code&gt;https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId&lt;/code&gt;/160.000.033.491.280.78, &lt;code&gt;https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode&lt;/code&gt;/777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: Ready&lt;/p&gt;&lt;p&gt;&lt;b&gt;intent&lt;/b&gt;: order&lt;/p&gt;&lt;p&gt;&lt;b&gt;for&lt;/b&gt;: Identifier: NamingSystemKVID/X123456789&lt;/p&gt;&lt;p&gt;&lt;b&gt;authoredOn&lt;/b&gt;: 2026-07-01 15:29:00+0000&lt;/p&gt;&lt;p&gt;&lt;b&gt;lastModified&lt;/b&gt;: 2026-07-01 16:44:00+0000&lt;/p&gt;&lt;p&gt;&lt;b&gt;performerType&lt;/b&gt;: &lt;span title=\"Codes:{https://gematik.de/fhir/erp/CodeSystem/EFlowRxOrganizationType urn:oid:1.2.276.0.76.4.54}\"&gt;Öffentliche Apotheke&lt;/span&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;input&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title=\"Codes:{https://gematik.de/fhir/erp/CodeSystem/EFlowRxDocumentType 1}\"&gt;Health Care Provider Prescription&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: &lt;a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;amp;canonical=http://fhir.org/packages/de.basisprofil.r4/281a985c-f25b-4aae-91a6-41ad744080b0\"&gt;281a985c-f25b-4aae-91a6-41ad744080b0&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;input&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title=\"Codes:{https://gematik.de/fhir/erp/CodeSystem/EFlowRxDocumentType 2}\"&gt;Patient Confirmation&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: &lt;a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;amp;canonical=http://fhir.org/packages/de.basisprofil.r4/f8c2298f-7c00-4a68-af29-8a2862d55d43\"&gt;f8c2298f-7c00-4a68-af29-8a2862d55d43&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;"
-  },
-  "<a href="http://hl7.org/fhir/R4/domainresource.html#Task.extension">extension</a>" : [
-    {
-      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-EX-PrescriptionType",
-      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueCoding</a>" : {
-        "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://gematik.de/fhir/erp/CodeSystem/EFlowRxFlowType",
-        "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "160",
-        "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Flowtype für Apothekenpflichtige Arzneimittel"
-      }
-    },
-    {
-      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-EX-AcceptDate",
-      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueDate</a>" : "2026-07-01"
-    },
-    {
-      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-EX-ExpiryDate",
-      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueDate</a>" : "2026-07-01"
-    }
-  ],
-  "<a href="http://hl7.org/fhir/R4/task.html#Task.identifier">identifier</a>" : [
-    {
-      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
-      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "160.000.033.491.280.78"
-    },
-    {
-      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode",
-      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
-    }
-  ],
-  "<a href="http://hl7.org/fhir/R4/task.html#Task.status">status</a>" : "ready",
-  "<a href="http://hl7.org/fhir/R4/task.html#Task.intent">intent</a>" : "order",
-  "<a href="http://hl7.org/fhir/R4/task.html#Task.for">for</a>" : {
-    "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>" : {
-      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "http://fhir.de/sid/gkv/kvid-10",
-      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "X123456789"
-    }
-  },
-  "<a href="http://hl7.org/fhir/R4/task.html#Task.authoredOn">authoredOn</a>" : "2026-07-01T15:29:00+00:00",
-  "<a href="http://hl7.org/fhir/R4/task.html#Task.lastModified">lastModified</a>" : "2026-07-01T16:44:00.434+00:00",
-  "<a href="http://hl7.org/fhir/R4/task.html#Task.performerType">performerType</a>" : [
-    {
-      "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-        {
-          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://gematik.de/fhir/erp/CodeSystem/EFlowRxOrganizationType",
-          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "urn:oid:1.2.276.0.76.4.54",
-          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Öffentliche Apotheke"
-        }
-      ]
-    }
-  ],
-  "<a href="http://hl7.org/fhir/R4/task.html#Task.input">input</a>" : [
-    {
-      "<a href="http://hl7.org/fhir/R4/task.html#Task.input.type">type</a>" : {
-        "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-          {
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://gematik.de/fhir/erp/CodeSystem/EFlowRxDocumentType",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "1",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Health Care Provider Prescription"
-          }
-        ]
-      },
-      "<a href="http://hl7.org/fhir/R4/task.html#Task.input.value_x_">valueReference</a>" : {
-        "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "281a985c-f25b-4aae-91a6-41ad744080b0"
-      }
-    },
-    {
-      "<a href="http://hl7.org/fhir/R4/task.html#Task.input.type">type</a>" : {
-        "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-          {
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://gematik.de/fhir/erp/CodeSystem/EFlowRxDocumentType",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "2",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Patient Confirmation"
-          }
-        ]
-      },
-      "<a href="http://hl7.org/fhir/R4/task.html#Task.input.value_x_">valueReference</a>" : {
-        "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "f8c2298f-7c00-4a68-af29-8a2862d55d43"
-      }
-    }
-  ]
-}</code></pre>
-
-    </div>
-    <div data-render="ig-Fragment" data-type="XML" data-name="application/fhir+xml">
-      <pre style="white-space: pre; text-wrap: nowrap; width: auto;" class="xml" data-fhir="generated"><code style="white-space: pre; text-wrap: nowrap;" class="language-xml">
-&lt;<a href="http://hl7.org/fhir/R4/task.html#Task">Task</a> xmlns="http://hl7.org/fhir"&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/resource.html#Task.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>="607255ed-ce41-47fc-aad3-cfce1c39963f"/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/resource.html#Task.meta">meta</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>="https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-PR-Task"/&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.tag">tag</a>&gt;
-      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>
-               <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="Task in READY state activated by (Z)PVS/KIS via $activate operation"/&gt;
-    &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.tag">tag</a>&gt;
-  &lt;/<a href="http://hl7.org/fhir/R4/resource.html#Task.meta">meta</a>&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Task.text">text</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="extensions"/&gt;
-    &lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;&lt;p class="res-header-id"&gt;&lt;b&gt;Generated Narrative: Task 607255ed-ce41-47fc-aad3-cfce1c39963f&lt;/b&gt;&lt;/p&gt;&lt;a name="607255ed-ce41-47fc-aad3-cfce1c39963f"&gt; &lt;/a&gt;&lt;a name="hc607255ed-ce41-47fc-aad3-cfce1c39963f"&gt; &lt;/a&gt;&lt;div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"&gt;&lt;p style="margin-bottom: 0px"/&gt;&lt;p style="margin-bottom: 0px"&gt;Profile: &lt;a href="StructureDefinition-GEM-ERP-PR-Task.html"&gt;GEM ERP PR Task&lt;/a&gt;&lt;/p&gt;&lt;p style="margin-bottom: 0px"&gt;Tag: Task in READY state activated by (Z)PVS/KIS via $activate operation (Details: [not stated] code null = 'Task in READY state activated by (Z)PVS/KIS via $activate operation')&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;GEM ERP EX PrescriptionType&lt;/b&gt;: EFlowRxFlowType: 160 (Flowtype für Apothekenpflichtige Arzneimittel)&lt;/p&gt;&lt;p&gt;&lt;b&gt;GEM ERP EX AcceptDate&lt;/b&gt;: 2026-07-01&lt;/p&gt;&lt;p&gt;&lt;b&gt;GEM ERP EX ExpiryDate&lt;/b&gt;: 2026-07-01&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: &lt;code&gt;https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId&lt;/code&gt;/160.000.033.491.280.78, &lt;code&gt;https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode&lt;/code&gt;/777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: Ready&lt;/p&gt;&lt;p&gt;&lt;b&gt;intent&lt;/b&gt;: order&lt;/p&gt;&lt;p&gt;&lt;b&gt;for&lt;/b&gt;: Identifier: NamingSystemKVID/X123456789&lt;/p&gt;&lt;p&gt;&lt;b&gt;authoredOn&lt;/b&gt;: 2026-07-01 15:29:00+0000&lt;/p&gt;&lt;p&gt;&lt;b&gt;lastModified&lt;/b&gt;: 2026-07-01 16:44:00+0000&lt;/p&gt;&lt;p&gt;&lt;b&gt;performerType&lt;/b&gt;: &lt;span title="Codes:{https://gematik.de/fhir/erp/CodeSystem/EFlowRxOrganizationType urn:oid:1.2.276.0.76.4.54}"&gt;Öffentliche Apotheke&lt;/span&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;input&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title="Codes:{https://gematik.de/fhir/erp/CodeSystem/EFlowRxDocumentType 1}"&gt;Health Care Provider Prescription&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: &lt;a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;amp;canonical=http://fhir.org/packages/de.basisprofil.r4/281a985c-f25b-4aae-91a6-41ad744080b0"&gt;281a985c-f25b-4aae-91a6-41ad744080b0&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;input&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title="Codes:{https://gematik.de/fhir/erp/CodeSystem/EFlowRxDocumentType 2}"&gt;Patient Confirmation&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: &lt;a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;amp;canonical=http://fhir.org/packages/de.basisprofil.r4/f8c2298f-7c00-4a68-af29-8a2862d55d43"&gt;f8c2298f-7c00-4a68-af29-8a2862d55d43&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;<a name="end-xhtml"></a>
-  &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Task.text">text</a>&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Task.extension">extension</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>="https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-EX-PrescriptionType"&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueCoding</a>&gt;
-      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="https://gematik.de/fhir/erp/CodeSystem/EFlowRxFlowType"/&gt;
-      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="160"/&gt;
-      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="Flowtype für Apothekenpflichtige Arzneimittel"/&gt;
-    &lt;/<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueCoding</a>&gt;
-  &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Task.extension">extension</a>&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Task.extension">extension</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>="https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-EX-AcceptDate"&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueDate</a> <a href="http://hl7.org/fhir/R4/datatypes.html#date">value</a>="2026-07-01"/&gt;
-  &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Task.extension">extension</a>&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Task.extension">extension</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>="https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-EX-ExpiryDate"&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueDate</a> <a href="http://hl7.org/fhir/R4/datatypes.html#date">value</a>="2026-07-01"/&gt;
-  &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Task.extension">extension</a>&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/task.html#Task.identifier">identifier</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>
-            <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"/&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="160.000.033.491.280.78"/&gt;
-  &lt;/<a href="http://hl7.org/fhir/R4/task.html#Task.identifier">identifier</a>&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/task.html#Task.identifier">identifier</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>
-            <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode"/&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>
-           <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"/&gt;
-  &lt;/<a href="http://hl7.org/fhir/R4/task.html#Task.identifier">identifier</a>&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/task.html#Task.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="ready"/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/task.html#Task.intent">intent</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="order"/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/task.html#Task.for">for</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>&gt;
-      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="http://fhir.de/sid/gkv/kvid-10"/&gt;
-      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="X123456789"/&gt;
-    &lt;/<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>&gt;
-  &lt;/<a href="http://hl7.org/fhir/R4/task.html#Task.for">for</a>&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/task.html#Task.authoredOn">authoredOn</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>="2026-07-01T15:29:00+00:00"/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/task.html#Task.lastModified">lastModified</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>="2026-07-01T16:44:00.434+00:00"/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/task.html#Task.performerType">performerType</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
-              <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="https://gematik.de/fhir/erp/CodeSystem/EFlowRxOrganizationType"/&gt;
-      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="urn:oid:1.2.276.0.76.4.54"/&gt;
-      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="Öffentliche Apotheke"/&gt;
-    &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-  &lt;/<a href="http://hl7.org/fhir/R4/task.html#Task.performerType">performerType</a>&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/task.html#Task.input">input</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/task.html#Task.input.type">type</a>&gt;
-      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
-                <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="https://gematik.de/fhir/erp/CodeSystem/EFlowRxDocumentType"/&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="1"/&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="Health Care Provider Prescription"/&gt;
-      &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-    &lt;/<a href="http://hl7.org/fhir/R4/task.html#Task.input.type">type</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/task.html#Task.input.value_x_">valueReference</a>&gt;
-      &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="281a985c-f25b-4aae-91a6-41ad744080b0"/&gt;
-    &lt;/<a href="http://hl7.org/fhir/R4/task.html#Task.input.value_x_">valueReference</a>&gt;
-  &lt;/<a href="http://hl7.org/fhir/R4/task.html#Task.input">input</a>&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/task.html#Task.input">input</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/task.html#Task.input.type">type</a>&gt;
-      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
-                <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="https://gematik.de/fhir/erp/CodeSystem/EFlowRxDocumentType"/&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="2"/&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="Patient Confirmation"/&gt;
-      &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-    &lt;/<a href="http://hl7.org/fhir/R4/task.html#Task.input.type">type</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/task.html#Task.input.value_x_">valueReference</a>&gt;
-      &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="f8c2298f-7c00-4a68-af29-8a2862d55d43"/&gt;
-    &lt;/<a href="http://hl7.org/fhir/R4/task.html#Task.input.value_x_">valueReference</a>&gt;
-  &lt;/<a href="http://hl7.org/fhir/R4/task.html#Task.input">input</a>&gt;
-&lt;/<a href="http://hl7.org/fhir/R4/task.html#Task">Task</a>&gt;</code></pre>
-
-    </div>
-    <div data-render="ig-Fragment" data-type="JSON" data-name="application/fhir+json">
-      <pre style="white-space: pre; text-wrap: nowrap; width: auto;" class="json" data-fhir="generated"><code style="white-space: pre; text-wrap: nowrap;" class="language-json">{
-  "<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome">resourceType</a>" : "OperationOutcome",
-  "<a href="http://hl7.org/fhir/R4/resource.html#OperationOutcome.id">id</a>" : "ExampleOperationActivateError",
-  "<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue">issue</a>" : [
-    {
-      "<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.severity">severity</a>" : "error",
-      "<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.code">code</a>" : "invalid",
-      "<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.details">details</a>" : {
-        "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a>" : "unknown or unexpected profile"
-      },
-      "<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.diagnostics">diagnostics</a>" : "Unable to determine profile type from name: https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle"
-    }
-  ]
-}</code></pre>
-
-    </div>
-  </div>
-</div>
+<p>Die API-Beschreibung für den Aufruf der Operation findet sich auf:</p>
+<ul>
+  <li><a href="https://github.com/gematik/api-erp/blob/master/docs/erp_bereitstellen.adoc#e-rezept-vervollst%C3%A4ndigen-und-task-aktivieren">API-ERP: E-Rezept vervollständigen und Task aktivieren</a></li>
+</ul>
 
 <h3 id="hinweis">Hinweis</h3>
 
@@ -575,18 +308,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Wenn ein wiederholter Aufruf mit <code class="language-plaintext highlighter-rouge">403</code> und “Task not in status draft but in status ready” antwortet, war ein vorheriger Aufruf bereits erfolgreich.</li>
 </ul>
 
-<h3 id="geschaeftslogik">Geschaeftslogik</h3>
-
-<figure>
-  <div style="--box-width: 900px; margin-bottom: 30px;" class="gem-ig-img-container">
-  <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 384 1078" zoomAndPan="magnify" preserveAspectRatio="none" width="384px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:384px;height:1078px;background:#FFFFFF;" version="1.1" height="1078px"><defs></defs><g><text font-weight="bold" lengthAdjust="spacing" x="100.5" font-size="14" textLength="180" y="32.9951" font-family="Arial" fill="#000000">RX Operation $activate</text><ellipse cx="192" cy="57.2969" rx="10" ry="10" style="stroke:#222222;stroke-width:1.0;" fill="#222222"></ellipse><rect rx="4" ry="4" width="271" x="56.5" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="33.9688"></rect><text lengthAdjust="spacing" x="66.5" font-size="12" textLength="251" y="108.4355" font-family="Arial" fill="#000000">Client ruft POST /Task/{id}/$activate auf</text><rect rx="4" ry="4" width="271" x="56.5" y="141.2656" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="33.9688"></rect><text lengthAdjust="spacing" x="66.5" font-size="12" textLength="251" y="162.4043" font-family="Arial" fill="#000000">FD prueft AccessCode und Status=draft</text><rect rx="4" ry="4" width="79" x="152.5" y="244.2188" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="33.9688"></rect><text lengthAdjust="spacing" x="162.5" font-size="12" textLength="59" y="265.3574" font-family="Arial" fill="#000000">HTTP 403</text><ellipse cx="192" cy="317.7031" rx="11" ry="11" style="stroke:#222222;stroke-width:1.0;" fill="none"></ellipse><ellipse cx="192" cy="317.7031" rx="6" ry="6" style="stroke:#111111;stroke-width:1.0;" fill="#222222"></ellipse><polygon style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" points="180,195.2344,204,195.2344,216,207.2344,204,219.2344,180,219.2344,168,207.2344,180,195.2344"></polygon><text lengthAdjust="spacing" x="196" font-size="12" textLength="27" y="230.373" font-family="Arial" fill="#000000">nein</text><text lengthAdjust="spacing" x="181.5" font-size="12" textLength="21" y="211.3887" font-family="Arial" fill="#000000">ok?</text><text lengthAdjust="spacing" x="216" font-size="12" textLength="11" y="204.4043" font-family="Arial" fill="#000000">ja</text><rect rx="4" ry="4" width="262" x="61" y="370.7031" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="33.9688"></rect><text lengthAdjust="spacing" x="71" font-size="12" textLength="242" y="391.8418" font-family="Arial" fill="#000000">FD prueft PKCS#7 / QES / FHIR-Struktur</text><rect rx="4" ry="4" width="79" x="152.5" y="473.6563" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="33.9688"></rect><text lengthAdjust="spacing" x="162.5" font-size="12" textLength="59" y="494.7949" font-family="Arial" fill="#000000">HTTP 400</text><ellipse cx="192" cy="547.1406" rx="11" ry="11" style="stroke:#222222;stroke-width:1.0;" fill="none"></ellipse><ellipse cx="192" cy="547.1406" rx="6" ry="6" style="stroke:#111111;stroke-width:1.0;" fill="#222222"></ellipse><polygon style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" points="175,424.6719,209,424.6719,221,436.6719,209,448.6719,175,448.6719,163,436.6719,175,424.6719"></polygon><text lengthAdjust="spacing" x="196" font-size="12" textLength="27" y="459.8105" font-family="Arial" fill="#000000">nein</text><text lengthAdjust="spacing" x="175" font-size="12" textLength="34" y="440.8262" font-family="Arial" fill="#000000">valid?</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="11" y="433.8418" font-family="Arial" fill="#000000">ja</text><rect rx="4" ry="4" width="339" x="22.5" y="600.1406" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="33.9688"></rect><text lengthAdjust="spacing" x="32.5" font-size="12" textLength="319" y="621.2793" font-family="Arial" fill="#000000">FD fuehrt Flowtype- und Fachregeln aus (inkl. MVO)</text><rect rx="4" ry="4" width="79" x="152.5" y="703.0938" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="33.9688"></rect><text lengthAdjust="spacing" x="162.5" font-size="12" textLength="59" y="724.2324" font-family="Arial" fill="#000000">HTTP 400</text><ellipse cx="192" cy="776.5781" rx="11" ry="11" style="stroke:#222222;stroke-width:1.0;" fill="none"></ellipse><ellipse cx="192" cy="776.5781" rx="6" ry="6" style="stroke:#111111;stroke-width:1.0;" fill="#222222"></ellipse><polygon style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" points="143.5,654.1094,240.5,654.1094,252.5,666.1094,240.5,678.1094,143.5,678.1094,131.5,666.1094,143.5,654.1094"></polygon><text lengthAdjust="spacing" x="196" font-size="12" textLength="27" y="689.248" font-family="Arial" fill="#000000">nein</text><text lengthAdjust="spacing" x="143.5" font-size="12" textLength="97" y="670.2637" font-family="Arial" fill="#000000">Regeln erfuellt?</text><text lengthAdjust="spacing" x="252.5" font-size="12" textLength="11" y="663.2793" font-family="Arial" fill="#000000">ja</text><rect rx="4" ry="4" width="362" x="11" y="829.5781" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="33.9688"></rect><text lengthAdjust="spacing" x="21" font-size="12" textLength="342" y="850.7168" font-family="Arial" fill="#000000">FD speichert Verordnungsdaten und signiertes Bundle</text><rect rx="4" ry="4" width="200" x="92" y="883.5469" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="33.9688"></rect><text lengthAdjust="spacing" x="102" font-size="12" textLength="180" y="904.6855" font-family="Arial" fill="#000000">FD setzt Task.status = ready</text><rect rx="4" ry="4" width="278" x="53" y="937.5156" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="33.9688"></rect><text lengthAdjust="spacing" x="63" font-size="12" textLength="258" y="958.6543" font-family="Arial" fill="#000000">FD triggert Folgeverarbeitung (ePA/Push)</text><rect rx="4" ry="4" width="149" x="117.5" y="991.4844" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="33.9688"></rect><text lengthAdjust="spacing" x="127.5" font-size="12" textLength="129" y="1012.623" font-family="Arial" fill="#000000">FD gibt Task zurueck</text><ellipse cx="192" cy="1056.4531" rx="11" ry="11" style="stroke:#222222;stroke-width:1.0;" fill="none"></ellipse><ellipse cx="192" cy="1056.4531" rx="6" ry="6" style="stroke:#111111;stroke-width:1.0;" fill="#222222"></ellipse><line y1="67.2969" x1="192" y2="87.2969" style="stroke:#2F4F4F;stroke-width:1.0;" x2="192"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="188,77.2969,192,87.2969,196,77.2969,192,81.2969"></polygon><line y1="121.2656" x1="192" y2="141.2656" style="stroke:#2F4F4F;stroke-width:1.0;" x2="192"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="188,131.2656,192,141.2656,196,131.2656,192,135.2656"></polygon><line y1="278.1875" x1="192" y2="306.7031" style="stroke:#2F4F4F;stroke-width:1.0;" x2="192"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="188,296.7031,192,306.7031,196,296.7031,192,300.7031"></polygon><line y1="219.2344" x1="192" y2="244.2188" style="stroke:#2F4F4F;stroke-width:1.0;" x2="192"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="188,234.2188,192,244.2188,196,234.2188,192,238.2188"></polygon><line y1="207.2344" x1="216" y2="207.2344" style="stroke:#2F4F4F;stroke-width:1.0;" x2="241.5"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="237.5,276.7031,241.5,286.7031,245.5,276.7031,241.5,280.7031"></polygon><line y1="207.2344" x1="241.5" y2="350.7031" style="stroke:#2F4F4F;stroke-width:1.0;" x2="241.5"></line><line y1="350.7031" x1="241.5" y2="350.7031" style="stroke:#2F4F4F;stroke-width:1.0;" x2="192"></line><line y1="350.7031" x1="192" y2="370.7031" style="stroke:#2F4F4F;stroke-width:1.0;" x2="192"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="188,360.7031,192,370.7031,196,360.7031,192,364.7031"></polygon><line y1="175.2344" x1="192" y2="195.2344" style="stroke:#2F4F4F;stroke-width:1.0;" x2="192"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="188,185.2344,192,195.2344,196,185.2344,192,189.2344"></polygon><line y1="507.625" x1="192" y2="536.1406" style="stroke:#2F4F4F;stroke-width:1.0;" x2="192"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="188,526.1406,192,536.1406,196,526.1406,192,530.1406"></polygon><line y1="448.6719" x1="192" y2="473.6563" style="stroke:#2F4F4F;stroke-width:1.0;" x2="192"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="188,463.6563,192,473.6563,196,463.6563,192,467.6563"></polygon><line y1="436.6719" x1="221" y2="436.6719" style="stroke:#2F4F4F;stroke-width:1.0;" x2="241.5"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="237.5,506.1406,241.5,516.1406,245.5,506.1406,241.5,510.1406"></polygon><line y1="436.6719" x1="241.5" y2="580.1406" style="stroke:#2F4F4F;stroke-width:1.0;" x2="241.5"></line><line y1="580.1406" x1="241.5" y2="580.1406" style="stroke:#2F4F4F;stroke-width:1.0;" x2="192"></line><line y1="580.1406" x1="192" y2="600.1406" style="stroke:#2F4F4F;stroke-width:1.0;" x2="192"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="188,590.1406,192,600.1406,196,590.1406,192,594.1406"></polygon><line y1="404.6719" x1="192" y2="424.6719" style="stroke:#2F4F4F;stroke-width:1.0;" x2="192"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="188,414.6719,192,424.6719,196,414.6719,192,418.6719"></polygon><line y1="737.0625" x1="192" y2="765.5781" style="stroke:#2F4F4F;stroke-width:1.0;" x2="192"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="188,755.5781,192,765.5781,196,755.5781,192,759.5781"></polygon><line y1="678.1094" x1="192" y2="703.0938" style="stroke:#2F4F4F;stroke-width:1.0;" x2="192"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="188,693.0938,192,703.0938,196,693.0938,192,697.0938"></polygon><line y1="666.1094" x1="252.5" y2="666.1094" style="stroke:#2F4F4F;stroke-width:1.0;" x2="264.5"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="260.5,735.5781,264.5,745.5781,268.5,735.5781,264.5,739.5781"></polygon><line y1="666.1094" x1="264.5" y2="809.5781" style="stroke:#2F4F4F;stroke-width:1.0;" x2="264.5"></line><line y1="809.5781" x1="264.5" y2="809.5781" style="stroke:#2F4F4F;stroke-width:1.0;" x2="192"></line><line y1="809.5781" x1="192" y2="829.5781" style="stroke:#2F4F4F;stroke-width:1.0;" x2="192"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="188,819.5781,192,829.5781,196,819.5781,192,823.5781"></polygon><line y1="634.1094" x1="192" y2="654.1094" style="stroke:#2F4F4F;stroke-width:1.0;" x2="192"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="188,644.1094,192,654.1094,196,644.1094,192,648.1094"></polygon><line y1="863.5469" x1="192" y2="883.5469" style="stroke:#2F4F4F;stroke-width:1.0;" x2="192"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="188,873.5469,192,883.5469,196,873.5469,192,877.5469"></polygon><line y1="917.5156" x1="192" y2="937.5156" style="stroke:#2F4F4F;stroke-width:1.0;" x2="192"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="188,927.5156,192,937.5156,196,927.5156,192,931.5156"></polygon><line y1="971.4844" x1="192" y2="991.4844" style="stroke:#2F4F4F;stroke-width:1.0;" x2="192"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="188,981.4844,192,991.4844,196,981.4844,192,985.4844"></polygon><line y1="1025.4531" x1="192" y2="1045.4531" style="stroke:#2F4F4F;stroke-width:1.0;" x2="192"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="188,1035.4531,192,1045.4531,196,1035.4531,192,1039.4531"></polygon></g></svg>
-  </div>
-  <figcaption><strong>Abbildung: </strong>Ablauf Operation `$activate`</figcaption>
-</figure>
-
 <h3 id="sicherheitsanforderungen">Sicherheitsanforderungen</h3>
 
-<p>Generelle Sicherheitsanforderungen werden <a href="./menu-schnittstellen-datenschutz-und-sicherheit.html">hier</a> festgehalten.</p>
+<p><a name="l508">​</a>Generelle Sicherheitsanforderungen werden <a href="./menu-schnittstellen-datenschutz-und-sicherheit.html">hier</a> festgehalten.</p>
 
 
 
@@ -607,7 +331,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Feb 20, 2026 09:22+0000">2026-02-20</span>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Feb 20, 2026 13:59+0000">2026-02-20</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

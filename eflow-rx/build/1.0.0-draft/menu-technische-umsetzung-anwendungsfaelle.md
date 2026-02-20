@@ -410,7 +410,7 @@ Jede Teilverordnung einer Mehrfachverordnung wird im E-Rezept-Fachdienst mit ein
   * Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES). Vorbereitende Tätigkeiten im Primärsystem können organisatorisch delegiert werden, die QES selbst jedoch nicht.:  (ZAHN-)ARZT 
 
 **Tabelle:**Fachlicher Anwendungsfall E-Rezept qualifiziert signieren
-* Die QES-Erstellung erfolgt im Primaersystem (HBA/Konnektor) vor dem Aufruf von `$activate`.
+* Die QES-Erstellung erfolgt im Primärsystem (HBA/Konnektor) vor dem Aufruf von `$activate`.
 
 **Sequenzdiagramm:**
 
