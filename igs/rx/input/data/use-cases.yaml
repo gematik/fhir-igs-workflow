@@ -428,3 +428,36 @@
   interface: |
     - FHIR REST: Communication (E-Rezept-Nachricht löschen)
   diagram: seq-uc-4-9-nachricht-durch-abgebenden-loeschen
+- id: 169_e_rezept_erzeugen
+  anchor: 169-e-rezept-erzeugen
+  link: menu-technische-umsetzung-anwendungsfaelle.html#169-e-rezept-erzeugen
+  title: E-Rezept für Workflow 169 durch Verordnenden erzeugen
+  roles:
+    - (Zahn-)Arzt
+  description: |
+    Mit diesem Anwendungsfall erstellt ein Leistungserbringer einen Verordnungsdatensatz mit workflowspezifischen Parametern. Der Verordnungsdatensatz erhält von dem E-Rezept-Fachdienst eine Rezept-ID und wird von dem Leistungserbringer qualifiziert signiert. Der Leistungserbringer muss in seinem Primärsystem den workflowspezifischen Parameter für die direkte Zuweisung an eine Apotheke auswählen.
+  preconditions: "- Der oder die Versicherten sind der LEI bekannt. \n- Der HBA ist für die QES gesteckt und freigeschaltet.  \n- Die gesetzlichen Grundlagen aus § 11 ApoG sind erfüllt.\n"
+  actions: "- Der verordnende Leistungserbringer wählt im Primärsystem einen Verordnungsdatensatz zum Signieren aus. \n- Der Leistungserbringer wählt das Signaturverfahren aus. \n- Der Leistungserbringer wählt im Primärsystem den Rezept-Typ \"Workflow-Steuerung durch Leistungserbringer\" aus. \n- Das Primärsystem ruft für das E-Rezept vom E-Rezept-Fachdienst eine Rezept-ID ab (rote Markierung im Sequenzdiagramm) und ergänzt diese im Verordnungsdatensatz. \n- Anschließend wird das E-Rezept mittels Konnektor mit einer QES signiert. \n- Es kann die Einzel-, Stapel- oder Komfortsignatur genutzt werden.\n"
+  postconditions: "- Die erzeugten E-Rezepte beinhalten eine eineindeutige Rezept-ID und haben eine QES. \n- Der AccessCode für jedes E-Rezept ist im Primärsystem gespeichert. \n- Die E-Rezepte sind im E-Rezept-Fachdienst angelegt und haben den Status \"initialisiert\".\n"
+  interface: |
+    - [$create-Operation](./op-create.html)
+  diagram: seq-169-e-rezept-erzeugen
+- id: 169_e_rezept_token_uebermitteln
+  anchor: 169-e-rezept-token-uebermitteln
+  link: menu-technische-umsetzung-anwendungsfaelle.html#169-e-rezept-token-uebermitteln
+  title: E-Rezept-Token an Apotheker übermitteln
+  roles:
+    - (Zahn-)Arzt
+  description: |
+    In diesem Anwendungsfall übermittelt die verordnende LEI die Einlöseinformationen (Task-ID und AccessCode) eines E-Rezepts direkt an eine Apotheke. Der Abruf des E-Rezepts in der Apotheke unterscheidet sich nicht vom Standard-Workflow und wird hier daher nicht beschrieben.
+  preconditions: |
+    - In der verordnenden LEI wurde der Anwendungsfall "UC 2.3 - E-Rezept einstellen" ausgeführt
+  actions: |
+    - Die verordnende LEI bestimmt die Adressatinformationen der intendierten Apotheke (z.B. mittels VZD) und wählt das E-Rezept-Token des direkt zuzuweisenden E-Rezepts aus.
+    - Das Primärsystem der verordnenden LEI erstellt eine Nachricht, bettet das E-Rezept-Token in die Nachricht ein (z.B. als URL) und sendet die Nachricht an die abgebende Apotheke.
+    - Das Primärsystem der abgebenden LEI empfängt die Nachricht und extrahiert das E-Rezept-Token.
+  postconditions: |
+    - Die abgebende LEI ist in der Lage, das E-Rezept einzusehen und zu beliefern
+  interface: |
+    - Übermitteln einer KIM Nachricht
+  diagram: seq-169_e_rezept_token_uebermitteln
