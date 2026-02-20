@@ -142,6 +142,26 @@ Folgende Anwendungsfälle werden genutzt:
 - Recovery Secret
 - Quittung erneut abrufen
 
+<!-- UC 4.6 - Nachrichten durch Abgebenden empfangen -->
+{% assign use_case = use_cases | where: "title", "UC 4.6 - Nachrichten durch Abgebenden empfangen" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+#### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
+
+<!-- UC 4.7 - Nachricht durch Abgebenden übermitteln -->
+{% assign use_case = use_cases | where: "title", "UC 4.7 - Nachricht durch Abgebenden übermitteln" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+#### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!---
 
