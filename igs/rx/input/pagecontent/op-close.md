@@ -1,4 +1,4 @@
-### Task schliessen ($close)
+### Task schließen ($close)
 
 ### Nachricht
 
@@ -11,55 +11,15 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$close` gesendet.
 
 ### API Beschreibung
 
-<div class="gematik-api"
-  data-api-type="FHIROperation"
-  data-api-fhir-invoke-level="instance"
-  data-api-operation-id="closeTask">
-  <div id="CapabilityStatement">
-    <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
-    </pre>
-  </div>
-  <div id="OperationDefinition">
-    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-      {% fragment OperationDefinition/CloseOperation JSON %}
-    </div>
-  </div>
-  <div id="Request-Examples">
-    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-      {% fragment Parameters/ExampleCloseInputParameters JSON %}
-    </div>
-    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-      {% fragment Parameters/ExampleCloseInputParametersMultipleMedicationDispenses JSON %}
-    </div>
-  </div>
-  <div id="Response-Examples">
-    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-      {% fragment Task/09330307-16ce-4cdc-810a-ca24ef80dde3 JSON %}
-    </div>
-    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-      {% fragment Bundle/dffbfd6a-5712-4798-bdc8-07201eb77ab8 JSON %}
-    </div>
-    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-      {% fragment OperationOutcome/ExampleOperationCloseError JSON %}
-    </div>
-  </div>
-</div>
+Die API-Beschreibung für den Aufruf der Operation findet sich auf:
+- [API-ERP: E-Rezept-Abgabe vollziehen](https://github.com/gematik/api-erp/blob/master/docs/erp_abrufen.adoc#e-rezept-abgabe-vollziehen)
 
 ### Hinweis
 
-- `$close` beendet den Workflow verbindlich; danach ist keine weitere inhaltliche Aenderung der Dispensierdaten moeglich.
-- Falls ohne MedicationDispense aufgerufen wird, muss bereits eine gueltige `$dispense`-Information gespeichert sein.
+- `$close` beendet den Workflow verbindlich; danach ist keine weitere inhaltliche Änderung der Dispensierdaten möglich.
+- Falls ohne MedicationDispense aufgerufen wird, muss bereits eine gültige `$dispense`-Information gespeichert sein.
 - Bei Stapelverarbeitung sind Lastverteilungsregeln einzuhalten.
-
-### Geschaeftslogik
-
-<figure>
-  <div class="gem-ig-img-container" style="--box-width: 900px; margin-bottom: 30px;">
-{% include rx-op-close-flow.svg %}
-  </div>
-  <figcaption><strong>Abbildung: </strong>Ablauf Operation `$close`</figcaption>
-</figure>
+- Die maximale Dateigröße für die Kommunikation am E-Rezept-Fachdienst beträgt derzeit 1MB. Dies meint den kompletten Request, daher muss der innere VAU-Request etwas kleiner als 1MB sein. Für Verordnungen, die mehrere Abgaben erfordern ist darauf zu achten, dass für mehrere Abgaben einer Charge nur eine MedicationDispense erstellt wird.
 
 ### Sicherheitsanforderungen
 

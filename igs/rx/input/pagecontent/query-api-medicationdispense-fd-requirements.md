@@ -1,6 +1,6 @@
 # FD-Anforderungen: Query API MedicationDispense
 
-Diese Seite enthaelt die normativen Anforderungen an den E-Rezept-Fachdienst fuer die MedicationDispense-Query-Endpunkte.
+Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für die MedicationDispense-Query-Endpunkte.
 
 <requirement conformance="SHALL" key="IG-TIFlow-RX-95" title="E-Rezept-Fachdienst - unzulässige Operationen MedicationDispense (A_19400)" version="0">
   <meta lockversion="false"/>

@@ -76,7 +76,7 @@ Kürzere Belieferungsfristen nach § 12 Absatz 1 Nummer 1 Buchstabe c BtMVV und 
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-        <img src="./mvo-gueltigkeit.png" alt="Übersicht Gültigkeit von Teilverordnungen" style="width: 100%;">
+        <img src="./mvo-gültigkeit.png" alt="Übersicht Gültigkeit von Teilverordnungen" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung: </strong>Übersicht Gültigkeit von Teilverordnungen</figcaption>
 </figure>

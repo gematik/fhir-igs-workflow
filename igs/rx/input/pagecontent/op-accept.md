@@ -11,36 +11,15 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$accept` gesendet.
 
 ### API Beschreibung
 
-<div class="gematik-api"
-  data-api-type="FHIROperation"
-  data-api-fhir-invoke-level="instance"
-  data-api-operation-id="acceptTask">
-  <div id="CapabilityStatement">
-    <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
-    </pre>
-  </div>
-  <div id="OperationDefinition">
-    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-      {% fragment OperationDefinition/AcceptOperation JSON %}
-    </div>
-  </div>
-  <div id="Response-Examples">
-    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-      {% fragment Bundle/Bundle-AcceptOperation JSON %}
-    </div>
-    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-      {% fragment OperationOutcome/ExampleOperationAcceptError JSON %}
-    </div>
-  </div>
-</div>
+Die API-Beschreibung für den Aufruf der Operation findet sich auf:
+- [API-ERP: E-Rezept abrufen](https://github.com/gematik/api-erp/blob/master/docs/erp_abrufen.adoc#e-rezept-abrufen)
 
 ### Hinweis
 
-- Die Rueckgabe kann bei Mehrfachverordnung mit `403` scheitern, wenn die Einloesefrist noch nicht begonnen hat.
+- Die Rückgabe kann bei Mehrfachverordnung mit `403` scheitern, wenn die Einlösefrist noch nicht begonnen hat.
 - AccessCode und insbesondere `secret` sind als hochsensible Daten zu behandeln.
 
-### Geschaeftslogik
+### Geschäftslogik
 
 <figure>
   <div class="gem-ig-img-container" style="--box-width: 900px; margin-bottom: 30px;">

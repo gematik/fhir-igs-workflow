@@ -10,5 +10,5 @@ Diese Seite beschreibt die Anforderungen an Clients zur Nutzung von `$accept`.
 
 ## Hinweise zur Nutzung
 
-- Bei Mehrfachverordnungen kann ein Abruf vor Beginn der Einloesefrist mit `403` fehlschlagen; das Datumsfeld aus `OperationOutcome` ist dem Nutzer anzuzeigen.
-- Fuer Flowtype 200/209 kann im Response zusaetzlich eine `Consent`-Information enthalten sein.
+- Bei Mehrfachverordnungen kann ein Abruf vor Beginn der Einlösefrist mit `403` fehlschlagen; das Datumsfeld aus `OperationOutcome` ist dem Nutzer anzuzeigen.
+- Für Flowtype 200/209 kann im Response zusätzlich eine `Consent`-Information enthalten sein.

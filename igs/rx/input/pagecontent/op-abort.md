@@ -13,43 +13,16 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$abort` gesendet.
 
 ### API Beschreibung
 
-<div class="gematik-api"
-  data-api-type="FHIROperation"
-  data-api-fhir-invoke-level="instance"
-  data-api-operation-id="abortTask">
-  <div id="CapabilityStatement">
-    <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
-    </pre>
-  </div>
-  <div id="OperationDefinition">
-    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-      {% fragment OperationDefinition/AbortOperation JSON %}
-    </div>
-  </div>
-  <div id="Response-Examples">
-    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-      {% fragment OperationOutcome/ExampleOperationAbortErrorPVS JSON %}
-    </div>
-    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-      {% fragment OperationOutcome/ExampleOperationAbortErrorAVS JSON %}
-    </div>
-  </div>
-</div>
+Die API-Beschreibung für den Aufruf der Operation findet sich auf:
+- [API-ERP: E-Rezept löschen verordnend](https://github.com/gematik/api-erp/blob/master/docs/erp_bereitstellen.adoc#ein-e-rezept-l%C3%B6schen)
+- [API-ERP: E-Rezept löschen abgebend](https://github.com/gematik/api-erp/blob/master/docs/erp_abrufen.adoc#e-rezept-l%C3%B6schen)
+- [API-ERP: E-Rezept löschen Versicherter](https://github.com/gematik/api-erp/blob/master/docs/erp_versicherte.adoc#ein-e-rezept-l%C3%B6schen)
+
 
 ### Hinweis
 
-- Nach erfolgreichem `$abort` sind lokale Einloeseinformationen (`secret`, Token-Bezug) im Client zu bereinigen.
+- Nach erfolgreichem `$abort` sind lokale Einlöseinformationen (`secret`, Token-Bezug) im Client zu bereinigen.
 - Fehlercodes und OperationOutcome-Hinweise sollen dem Nutzer mit klarem Bezug zum Task-Status angezeigt werden.
-
-### Geschaeftslogik
-
-<figure>
-  <div class="gem-ig-img-container" style="--box-width: 900px; margin-bottom: 30px;">
-{% include rx-op-abort-flow.svg %}
-  </div>
-  <figcaption><strong>Abbildung: </strong>Ablauf Operation `$abort`</figcaption>
-</figure>
 
 ### Sicherheitsanforderungen
 

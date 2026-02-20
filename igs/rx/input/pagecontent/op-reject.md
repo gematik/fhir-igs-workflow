@@ -1,4 +1,4 @@
-### Task zurueckweisen ($reject)
+### Task zurückweisen ($reject)
 
 ### Nachricht
 
@@ -11,40 +11,14 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$reject` gesendet.
 
 ### API Beschreibung
 
-<div class="gematik-api"
-  data-api-type="FHIROperation"
-  data-api-fhir-invoke-level="instance"
-  data-api-operation-id="rejectTask">
-  <div id="CapabilityStatement">
-    <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
-    </pre>
-  </div>
-  <div id="OperationDefinition">
-    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-      {% fragment OperationDefinition/RejectOperation JSON %}
-    </div>
-  </div>
-  <div id="Response-Examples">
-    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-      {% fragment OperationOutcome/ExampleOperationRejectError JSON %}
-    </div>
-  </div>
-</div>
+Die API-Beschreibung für den Aufruf der Operation findet sich auf:
+- [API-ERP: E-Rezept zurückweisen](https://github.com/gematik/api-erp/blob/master/docs/erp_abrufen.adoc#e-rezept-zur%C3%BCckweisen)
 
 ### Hinweis
 
-- `reject` und direktes erneutes `accept` sollen nicht als Uebergabemechanismus zwischen Apotheken verwendet werden.
-- Diese Folge erzeugt fuer Versicherte schwer nachvollziehbare Protokollierung/Notifications.
+- `reject` und direktes erneutes `accept` sollen nicht als Übergabemechanismus zwischen Apotheken verwendet werden.
+- Diese Folge erzeugt für Versicherte schwer nachvollziehbare Protokollierung/Notifications.
 
-### Geschaeftslogik
-
-<figure>
-  <div class="gem-ig-img-container" style="--box-width: 900px; margin-bottom: 30px;">
-{% include rx-op-reject-flow.svg %}
-  </div>
-  <figcaption><strong>Abbildung: </strong>Ablauf Operation `$reject`</figcaption>
-</figure>
 
 ### Sicherheitsanforderungen
 

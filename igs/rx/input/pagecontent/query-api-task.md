@@ -4,7 +4,7 @@ Diese Seite beschreibt den Einstieg in die Task-Query-Schnittstellen des RX-Modu
 
 ### Nachricht
 
-Die Task-Query wird ueber HTTP `GET` auf `/Task` und `/Task/{id}` aufgerufen.
+Die Task-Query wird über HTTP `GET` auf `/Task` und `/Task/{id}` aufgerufen.
 
 ### Anforderungen an Schnittstelle
 
@@ -44,4 +44,4 @@ Die Task-Query wird ueber HTTP `GET` auf `/Task` und `/Task/{id}` aufgerufen.
 ### Hinweis
 
 - Die Varianten `GET /Task/{id}?ac=...` und `GET /Task/{id}?secret=...` sind Teil der Task-Query und in den FD-Anforderungen spezifiziert.
-- AccessCode/Secret duerfen nur in zugelassenen Clients verarbeitet und nicht offengelegt werden.
+- AccessCode/Secret dürfen nur in zugelassenen Clients verarbeitet und nicht offengelegt werden.

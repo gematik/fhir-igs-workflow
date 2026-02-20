@@ -11,48 +11,13 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$dispense` gesendet.
 
 ### API Beschreibung
 
-<div class="gematik-api"
-  data-api-type="FHIROperation"
-  data-api-fhir-invoke-level="instance"
-  data-api-operation-id="dispenseTask">
-  <div id="CapabilityStatement">
-    <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
-    </pre>
-  </div>
-  <div id="OperationDefinition">
-    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-      {% fragment OperationDefinition/DispenseOperation JSON %}
-    </div>
-  </div>
-  <div id="Request-Examples">
-    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-      {% fragment Parameters/ExampleDispenseInputParameters JSON %}
-    </div>
-    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-      {% fragment Parameters/ExampleDispenseInputParametersMultipleMedicationDispenses JSON %}
-    </div>
-  </div>
-  <div id="Response-Examples">
-    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-      {% fragment Task/f5c21409-b84b-4125-8649-5630a00906b1 JSON %}
-    </div>
-  </div>
-</div>
+Die API-Beschreibung für den Aufruf der Operation findet sich auf:
+- [API-ERP: E-Rezept Abgabe zeitnah dokumentieren](https://github.com/gematik/api-erp/blob/master/docs/erp_abrufen.adoc#e-rezept-abgabe-vollziehen)
 
 ### Hinweis
 
-- Wiederholte Aufrufe von `$dispense` ueberschreiben die bisher gespeicherten Dispensierinformationen.
-- Deshalb muss immer die vollstaendige, aktuelle MedicationDispense uebermittelt werden.
-
-### Geschaeftslogik
-
-<figure>
-  <div class="gem-ig-img-container" style="--box-width: 900px; margin-bottom: 30px;">
-{% include rx-op-dispense-flow.svg %}
-  </div>
-  <figcaption><strong>Abbildung: </strong>Ablauf Operation `$dispense`</figcaption>
-</figure>
+- Wiederholte Aufrufe von `$dispense` überschreiben die bisher gespeicherten Dispensierinformationen.
+- Deshalb muss immer die vollständige, aktuelle MedicationDispense übermittelt werden.
 
 ### Sicherheitsanforderungen
 
