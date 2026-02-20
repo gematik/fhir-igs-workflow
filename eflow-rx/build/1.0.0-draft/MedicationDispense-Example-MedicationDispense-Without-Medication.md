@@ -19,16 +19,12 @@ Version 1.0.0-draft - ci-build
   "resourceType" : "MedicationDispense",
   "id" : "Example-MedicationDispense-Without-Medication",
   "meta" : {
-    "profile" : [
-      "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-medicationdispense"
-    ]
+    "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-PR-MedicationDispense"]
   },
-  "identifier" : [
-    {
-      "system" : "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
-      "value" : "160.000.033.491.280.78"
-    }
-  ],
+  "identifier" : [{
+    "system" : "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
+    "value" : "160.000.033.491.280.78"
+  }],
   "status" : "completed",
   "medicationReference" : {
     "reference" : "Medication/SumatripanMedication"
@@ -39,16 +35,14 @@ Version 1.0.0-draft - ci-build
       "value" : "X123456789"
     }
   },
-  "performer" : [
-    {
-      "actor" : {
-        "identifier" : {
-          "system" : "https://gematik.de/fhir/sid/telematik-id",
-          "value" : "3-SMC-B-Testkarte-883110000095957"
-        }
+  "performer" : [{
+    "actor" : {
+      "identifier" : {
+        "system" : "https://gematik.de/fhir/sid/telematik-id",
+        "value" : "3-SMC-B-Testkarte-883110000095957"
       }
     }
-  ],
+  }],
   "whenHandedOver" : "2026-07-01"
 }
 

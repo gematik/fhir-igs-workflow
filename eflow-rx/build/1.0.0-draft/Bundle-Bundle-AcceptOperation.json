@@ -2,7 +2,7 @@
   "resourceType" : "Bundle",
   "id" : "Bundle-AcceptOperation",
   "meta" : {
-    "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-bundle-op-accept"]
+    "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-PR-Bundle-OP-Accept"]
   },
   "type" : "collection",
   "link" : [{
@@ -15,13 +15,13 @@
       "resourceType" : "Task",
       "id" : "d70932d1-9e1c-483c-b2d4-b7dced09b35e",
       "meta" : {
-        "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-task"],
+        "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-PR-Task"],
         "tag" : [{
           "display" : "Task in IN-PROGRESS state claimed by pharmacy via $accept operation"
         }]
       },
       "extension" : [{
-        "url" : "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-prescriptiontype-extension",
+        "url" : "https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-EX-PrescriptionType",
         "valueCoding" : {
           "system" : "https://gematik.de/fhir/erp/CodeSystem/EFlowRxFlowType",
           "code" : "160",
@@ -29,11 +29,11 @@
         }
       },
       {
-        "url" : "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-acceptdate-extension",
+        "url" : "https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-EX-AcceptDate",
         "valueDate" : "2026-07-01"
       },
       {
-        "url" : "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-expirydate-extension",
+        "url" : "https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-EX-ExpiryDate",
         "valueDate" : "2026-07-01"
       }],
       "identifier" : [{
@@ -81,7 +81,7 @@
       "resourceType" : "Binary",
       "id" : "PrescriptionBinaryWithMeta",
       "meta" : {
-        "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-binary"]
+        "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-PR-Binary"]
       },
       "contentType" : "application/pkcs7-mime",
       "data" : "dGhpcyBibG9iIGlzIHNuaXBwZWQ="

@@ -2,7 +2,7 @@
   "resourceType" : "Bundle",
   "id" : "dffbfd6a-5712-4798-bdc8-07201eb77ab8",
   "meta" : {
-    "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-bundle"],
+    "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-PR-Bundle"],
     "tag" : [{
       "display" : "Receipt Bundle 'Quittung' for completed dispensation of a prescription"
     }]
@@ -19,10 +19,10 @@
       "resourceType" : "Composition",
       "id" : "c624cf47-e235-4624-af71-0a09dc9254dc",
       "meta" : {
-        "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-composition"]
+        "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-PR-Composition"]
       },
       "extension" : [{
-        "url" : "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-beneficiary-extension",
+        "url" : "https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-EX-Beneficiary",
         "valueIdentifier" : {
           "system" : "https://gematik.de/fhir/sid/telematik-id",
           "value" : "3-SMC-B-Testkarte-883110000129070"
@@ -31,7 +31,7 @@
       "status" : "final",
       "type" : {
         "coding" : [{
-          "system" : "https://gematik.de/fhir/erp/CodeSystem/eflow-rx-documenttype",
+          "system" : "https://gematik.de/fhir/erp/CodeSystem/GEM-ERP-CS-DocumentType",
           "code" : "3",
           "display" : "Receipt"
         }]
@@ -60,7 +60,7 @@
       "resourceType" : "Device",
       "id" : "1",
       "meta" : {
-        "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-device"]
+        "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-PR-Device"]
       },
       "status" : "active",
       "serialNumber" : "1.14.0",
@@ -83,7 +83,7 @@
       "resourceType" : "Binary",
       "id" : "b939a82a-9c23-4b6d-a139-f468d1b9d652",
       "meta" : {
-        "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-digest"]
+        "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-PR-Digest"]
       },
       "contentType" : "application/octet-stream",
       "data" : "tJg8c5ZtdhzEEhJ0ZpAsUVFx5dKuYgQFs5oKgthi17M="

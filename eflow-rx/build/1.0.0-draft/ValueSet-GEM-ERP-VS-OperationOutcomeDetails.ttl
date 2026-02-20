@@ -1,0 +1,78 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/erp/ValueSet/GEM-ERP-VS-OperationOutcomeDetails> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "GEM-ERP-VS-OperationOutcomeDetails"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet GEM-ERP-VS-OperationOutcomeDetails</b></p><a name=\"GEM-ERP-VS-OperationOutcomeDetails\"> </a><a name=\"hcGEM-ERP-VS-OperationOutcomeDetails\"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include all codes defined in <a href=\"CodeSystem-GEM-ERP-CS-OperationOutcomeDetails.html\"><code>https://gematik.de/fhir/erp/CodeSystem/GEM-ERP-CS-OperationOutcomeDetails</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version ?1.0.0-draft</span></li><li>Include these codes as defined in <a href=\"http://terminology.hl7.org/7.0.1/CodeSystem-operation-outcome.html\"><code>http://terminology.hl7.org/CodeSystem/operation-outcome</code></a><span title=\"Version is not explicitly stated, which means it is fixed to 3.0.0, the version found through the package references\"> version ?3.0.0</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"http://terminology.hl7.org/7.0.1/CodeSystem-operation-outcome.html#operation-outcome-MSG_AUTH_REQUIRED\">MSG_AUTH_REQUIRED</a></td><td>You must authenticate before you can use this service</td></tr></table></li><li>Include these codes as defined in <a href=\"https://simplifier.net/resolve?scope=de.gematik.epa.medication@1.3.0&amp;canonical=https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes\"><code>https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes</code></a><span title=\"Version is not explicitly stated, which means it is fixed to 1.1.1, the version found through the package references\"> version ?1.1.1</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"https://simplifier.net/resolve?scope=de.gematik.epa.medication@1.3.0&amp;canonical=https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes#operation-outcome-details-codes-SVC_INACTIVE_CODE\">SVC_INACTIVE_CODE</a></td><td>Use of inactive code not permitted</td></tr></table></li></ul></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://gematik.de/fhir/erp/ValueSet/GEM-ERP-VS-OperationOutcomeDetails"^^xsd:anyURI ;
+     fhir:l <https://gematik.de/fhir/erp/ValueSet/GEM-ERP-VS-OperationOutcomeDetails>
+  ] ; # 
+  fhir:version [ fhir:v "1.0.0-draft"] ; # 
+  fhir:name [ fhir:v "GEM_ERP_VS_OperationOutcomeDetails"] ; # 
+  fhir:title [ fhir:v "GEM ERP VS OperationOutcomeDetails"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-12-15"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "gematik GmbH"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "gematik GmbH" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://gematik.de" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "erp-umsetzung@gematik.de" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Fachliche Fehlercodes des E-Rezept-Fachdienst"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "DE" ] ;
+       fhir:display [ fhir:v "Germany" ]
+     ] )
+  ] ) ; # 
+  fhir:immutable [ fhir:v false] ; # 
+  fhir:copyright [ fhir:v "gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.html), Version 2.0."] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [
+         fhir:v "https://gematik.de/fhir/erp/CodeSystem/GEM-ERP-CS-OperationOutcomeDetails"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/erp/CodeSystem/GEM-ERP-CS-OperationOutcomeDetails>
+       ]
+     ] [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/operation-outcome"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/operation-outcome>
+       ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "MSG_AUTH_REQUIRED" ] ;
+         fhir:display [ fhir:v "You must authenticate before you can use this service" ]
+       ] )
+     ] [
+       fhir:system [
+         fhir:v "https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes>
+       ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "SVC_INACTIVE_CODE" ] ;
+         fhir:display [ fhir:v "Use of inactive code not permitted" ]
+       ] )
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -10,7 +10,7 @@ Version 1.0.0-draft - ci-build
 
 ## Example Device: Gerät für Quittungs-Bundle
 
-Profile: [GEM ERP PR Device](StructureDefinition-eflow-rx-device.md)
+Profile: [GEM ERP PR Device](StructureDefinition-GEM-ERP-PR-Device.md)
 
 **status**: Active
 
@@ -41,29 +41,21 @@ Profile: [GEM ERP PR Device](StructureDefinition-eflow-rx-device.md)
   "resourceType" : "Device",
   "id" : "1",
   "meta" : {
-    "profile" : [
-      "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-device"
-    ]
+    "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-PR-Device"]
   },
   "status" : "active",
   "serialNumber" : "1.14.0",
-  "deviceName" : [
-    {
-      "name" : "E-Rezept-Fachdienst",
-      "type" : "user-friendly-name"
-    }
-  ],
-  "version" : [
-    {
-      "value" : "1.14.0"
-    }
-  ],
-  "contact" : [
-    {
-      "system" : "email",
-      "value" : "betrieb@gematik.de"
-    }
-  ]
+  "deviceName" : [{
+    "name" : "E-Rezept-Fachdienst",
+    "type" : "user-friendly-name"
+  }],
+  "version" : [{
+    "value" : "1.14.0"
+  }],
+  "contact" : [{
+    "system" : "email",
+    "value" : "betrieb@gematik.de"
+  }]
 }
 
 ```

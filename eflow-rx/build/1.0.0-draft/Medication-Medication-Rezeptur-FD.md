@@ -19,99 +19,81 @@ Version 1.0.0-draft - ci-build
   "resourceType" : "Medication",
   "id" : "Medication-Rezeptur-FD",
   "meta" : {
-    "profile" : [
-      "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-medication"
-    ]
+    "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-PR-Medication"]
   },
-  "contained" : [
-    {
-      "resourceType" : "Medication",
-      "id" : "MedicationHydrocortison-FD",
-      "meta" : {
-        "profile" : [
-          "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-pzn-ingredient"
-        ]
-      },
-      "extension" : [
-        {
-          "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-type-extension",
-          "valueCoding" : {
-            "system" : "http://snomed.info/sct",
-            "code" : "781405001",
-            "display" : "Medicinal product package (product)"
-          }
-        }
-      ],
-      "code" : {
-        "coding" : [
-          {
-            "system" : "http://fhir.de/CodeSystem/ifa/pzn",
-            "code" : "03424249",
-            "display" : "Hydrocortison 1% Creme"
-          }
-        ],
-        "text" : "Hydrocortison 1% Creme"
-      }
+  "contained" : [{
+    "resourceType" : "Medication",
+    "id" : "MedicationHydrocortison-FD",
+    "meta" : {
+      "profile" : ["https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-pzn-ingredient"]
     },
-    {
-      "resourceType" : "Medication",
-      "id" : "MedicationDexpanthenol-FD",
-      "meta" : {
-        "profile" : [
-          "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-pzn-ingredient"
-        ]
-      },
-      "extension" : [
-        {
-          "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-type-extension",
-          "valueCoding" : {
-            "system" : "http://snomed.info/sct",
-            "code" : "781405001",
-            "display" : "Medicinal product package (product)"
-          }
-        }
-      ],
-      "code" : {
-        "coding" : [
-          {
-            "system" : "http://fhir.de/CodeSystem/ifa/pzn",
-            "code" : "16667195",
-            "display" : "Dexpanthenol 5% Creme"
-          }
-        ],
-        "text" : "Dexpanthenol 5% Creme"
-      }
-    }
-  ],
-  "extension" : [
-    {
-      "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension",
-      "valueCoding" : {
-        "system" : "https://gematik.de/fhir/epa-medication/CodeSystem/epa-drug-category-cs",
-        "code" : "00"
-      }
-    },
-    {
-      "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-manufacturing-instructions-extension",
-      "valueString" : "Bitte kühl zubereiten und lagern."
-    },
-    {
-      "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-formulation-packaging-extension",
-      "valueString" : "Tube"
-    },
-    {
-      "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension",
-      "valueBoolean" : false
-    },
-    {
+    "extension" : [{
       "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-type-extension",
       "valueCoding" : {
         "system" : "http://snomed.info/sct",
-        "code" : "1208954007",
-        "display" : "Extemporaneous preparation (product)"
+        "code" : "781405001",
+        "display" : "Medicinal product package (product)"
       }
+    }],
+    "code" : {
+      "coding" : [{
+        "system" : "http://fhir.de/CodeSystem/ifa/pzn",
+        "code" : "03424249",
+        "display" : "Hydrocortison 1% Creme"
+      }],
+      "text" : "Hydrocortison 1% Creme"
     }
-  ],
+  },
+  {
+    "resourceType" : "Medication",
+    "id" : "MedicationDexpanthenol-FD",
+    "meta" : {
+      "profile" : ["https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-pzn-ingredient"]
+    },
+    "extension" : [{
+      "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-type-extension",
+      "valueCoding" : {
+        "system" : "http://snomed.info/sct",
+        "code" : "781405001",
+        "display" : "Medicinal product package (product)"
+      }
+    }],
+    "code" : {
+      "coding" : [{
+        "system" : "http://fhir.de/CodeSystem/ifa/pzn",
+        "code" : "16667195",
+        "display" : "Dexpanthenol 5% Creme"
+      }],
+      "text" : "Dexpanthenol 5% Creme"
+    }
+  }],
+  "extension" : [{
+    "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension",
+    "valueCoding" : {
+      "system" : "https://gematik.de/fhir/epa-medication/CodeSystem/epa-drug-category-cs",
+      "code" : "00"
+    }
+  },
+  {
+    "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-manufacturing-instructions-extension",
+    "valueString" : "Bitte kühl zubereiten und lagern."
+  },
+  {
+    "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-formulation-packaging-extension",
+    "valueString" : "Tube"
+  },
+  {
+    "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension",
+    "valueBoolean" : false
+  },
+  {
+    "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-type-extension",
+    "valueCoding" : {
+      "system" : "http://snomed.info/sct",
+      "code" : "1208954007",
+      "display" : "Extemporaneous preparation (product)"
+    }
+  }],
   "code" : {
     "text" : "Hydrocortison-Dexpanthenol-Salbe"
   },
@@ -120,12 +102,10 @@ Version 1.0.0-draft - ci-build
   },
   "amount" : {
     "numerator" : {
-      "extension" : [
-        {
-          "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-total-quantity-formulation-extension",
-          "valueString" : "100"
-        }
-      ],
+      "extension" : [{
+        "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-total-quantity-formulation-extension",
+        "valueString" : "100"
+      }],
       "value" : 20,
       "unit" : "ml"
     },
@@ -133,52 +113,46 @@ Version 1.0.0-draft - ci-build
       "value" : 1
     }
   },
-  "ingredient" : [
-    {
-      "extension" : [
-        {
-          "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-ingredient-darreichungsform-extension",
-          "valueString" : "Salbe"
-        }
-      ],
-      "itemReference" : {
-        "reference" : "#MedicationHydrocortison-FD"
-      },
-      "isActive" : true,
-      "strength" : {
-        "numerator" : {
-          "value" : 50,
-          "unit" : "g"
-        },
-        "denominator" : {
-          "value" : 100,
-          "unit" : "g"
-        }
-      }
+  "ingredient" : [{
+    "extension" : [{
+      "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-ingredient-darreichungsform-extension",
+      "valueString" : "Salbe"
+    }],
+    "itemReference" : {
+      "reference" : "#MedicationHydrocortison-FD"
     },
-    {
-      "extension" : [
-        {
-          "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-ingredient-darreichungsform-extension",
-          "valueString" : "Salbe"
-        }
-      ],
-      "itemReference" : {
-        "reference" : "#MedicationDexpanthenol-FD"
+    "isActive" : true,
+    "strength" : {
+      "numerator" : {
+        "value" : 50,
+        "unit" : "g"
       },
-      "isActive" : true,
-      "strength" : {
-        "numerator" : {
-          "value" : 50,
-          "unit" : "g"
-        },
-        "denominator" : {
-          "value" : 100,
-          "unit" : "g"
-        }
+      "denominator" : {
+        "value" : 100,
+        "unit" : "g"
       }
     }
-  ]
+  },
+  {
+    "extension" : [{
+      "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-ingredient-darreichungsform-extension",
+      "valueString" : "Salbe"
+    }],
+    "itemReference" : {
+      "reference" : "#MedicationDexpanthenol-FD"
+    },
+    "isActive" : true,
+    "strength" : {
+      "numerator" : {
+        "value" : 50,
+        "unit" : "g"
+      },
+      "denominator" : {
+        "value" : 100,
+        "unit" : "g"
+      }
+    }
+  }]
 }
 
 ```

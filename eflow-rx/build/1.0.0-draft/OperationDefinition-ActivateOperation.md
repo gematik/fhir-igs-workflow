@@ -33,33 +33,25 @@ Diese Operation aktiviert die erstellte Aufgabe für das Rezept. Der Eingabepara
   "kind" : "operation",
   "date" : "2025-12-15",
   "publisher" : "gematik GmbH",
-  "contact" : [
+  "contact" : [{
+    "name" : "gematik GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://gematik.de"
+    },
     {
-      "name" : "gematik GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://gematik.de"
-        },
-        {
-          "system" : "email",
-          "value" : "erp-umsetzung@gematik.de"
-        }
-      ]
-    }
-  ],
+      "system" : "email",
+      "value" : "erp-umsetzung@gematik.de"
+    }]
+  }],
   "description" : "Diese Operation aktiviert die erstellte Aufgabe für das Rezept. Der Eingabeparameter muss das qualifizierte signierte Bundle des Rezepts enthalten. Der E-Rezept-Fachdienst validiert das Rezept, aktualisiert die Task-ressource und startet den Workflow.",
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "DE",
-          "display" : "Germany"
-        }
-      ]
-    }
-  ],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
   "affectsState" : true,
   "code" : "activate",
   "resource" : ["Task"],
@@ -68,24 +60,22 @@ Diese Operation aktiviert die erstellte Aufgabe für das Rezept. Der Eingabepara
   "instance" : true,
   "inputProfile" : "http://hl7.org/fhir/StructureDefinition/Parameters",
   "outputProfile" : "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-activate-operation-output-parameters",
-  "parameter" : [
-    {
-      "name" : "ePrescription",
-      "use" : "in",
-      "min" : 1,
-      "max" : "1",
-      "documentation" : "Das qualifizierte unterzeichnete Verordnung (QES) zur Aktivierung des E-Rezept-Workflows.",
-      "type" : "Binary"
-    },
-    {
-      "name" : "return",
-      "use" : "out",
-      "min" : 1,
-      "max" : "1",
-      "documentation" : "Geben Sie die aktualisierte und aktivierte Aufgabe zurück.",
-      "type" : "Task"
-    }
-  ]
+  "parameter" : [{
+    "name" : "ePrescription",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Das qualifizierte unterzeichnete Verordnung (QES) zur Aktivierung des E-Rezept-Workflows.",
+    "type" : "Binary"
+  },
+  {
+    "name" : "return",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Geben Sie die aktualisierte und aktivierte Aufgabe zurück.",
+    "type" : "Task"
+  }]
 }
 
 ```

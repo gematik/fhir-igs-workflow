@@ -10,7 +10,7 @@ Version 1.0.0-draft - ci-build
 
 ## Example Task: Task aktiviert durch (Z)PVS/KIS via $activate Operation
 
-Profile: [GEM ERP PR Task](StructureDefinition-eflow-rx-task.md)
+Profile: [GEM ERP PR Task](StructureDefinition-GEM-ERP-PR-Task.md)
 
 Tag: Task in READY state activated by (Z)PVS/KIS via $activate operation (Details: [not stated] code null = 'Task in READY state activated by (Z)PVS/KIS via $activate operation')
 
@@ -47,43 +47,35 @@ Tag: Task in READY state activated by (Z)PVS/KIS via $activate operation (Detail
   "resourceType" : "Task",
   "id" : "607255ed-ce41-47fc-aad3-cfce1c39963f",
   "meta" : {
-    "profile" : [
-      "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-task"
-    ],
-    "tag" : [
-      {
-        "display" : "Task in READY state activated by (Z)PVS/KIS via $activate operation"
-      }
-    ]
+    "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-PR-Task"],
+    "tag" : [{
+      "display" : "Task in READY state activated by (Z)PVS/KIS via $activate operation"
+    }]
   },
-  "extension" : [
-    {
-      "url" : "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-prescriptiontype-extension",
-      "valueCoding" : {
-        "system" : "https://gematik.de/fhir/erp/CodeSystem/EFlowRxFlowType",
-        "code" : "160",
-        "display" : "Flowtype für Apothekenpflichtige Arzneimittel"
-      }
-    },
-    {
-      "url" : "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-acceptdate-extension",
-      "valueDate" : "2026-07-01"
-    },
-    {
-      "url" : "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-expirydate-extension",
-      "valueDate" : "2026-07-01"
+  "extension" : [{
+    "url" : "https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-EX-PrescriptionType",
+    "valueCoding" : {
+      "system" : "https://gematik.de/fhir/erp/CodeSystem/EFlowRxFlowType",
+      "code" : "160",
+      "display" : "Flowtype für Apothekenpflichtige Arzneimittel"
     }
-  ],
-  "identifier" : [
-    {
-      "system" : "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
-      "value" : "160.000.033.491.280.78"
-    },
-    {
-      "system" : "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode",
-      "value" : "777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
-    }
-  ],
+  },
+  {
+    "url" : "https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-EX-AcceptDate",
+    "valueDate" : "2026-07-01"
+  },
+  {
+    "url" : "https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-EX-ExpiryDate",
+    "valueDate" : "2026-07-01"
+  }],
+  "identifier" : [{
+    "system" : "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
+    "value" : "160.000.033.491.280.78"
+  },
+  {
+    "system" : "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode",
+    "value" : "777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
+  }],
   "status" : "ready",
   "intent" : "order",
   "for" : {
@@ -94,47 +86,37 @@ Tag: Task in READY state activated by (Z)PVS/KIS via $activate operation (Detail
   },
   "authoredOn" : "2026-07-01T15:29:00+00:00",
   "lastModified" : "2026-07-01T16:44:00.434+00:00",
-  "performerType" : [
-    {
-      "coding" : [
-        {
-          "system" : "https://gematik.de/fhir/erp/CodeSystem/EFlowRxOrganizationType",
-          "code" : "urn:oid:1.2.276.0.76.4.54",
-          "display" : "Öffentliche Apotheke"
-        }
-      ]
-    }
-  ],
-  "input" : [
-    {
-      "type" : {
-        "coding" : [
-          {
-            "system" : "https://gematik.de/fhir/erp/CodeSystem/EFlowRxDocumentType",
-            "code" : "1",
-            "display" : "Health Care Provider Prescription"
-          }
-        ]
-      },
-      "valueReference" : {
-        "reference" : "281a985c-f25b-4aae-91a6-41ad744080b0"
-      }
+  "performerType" : [{
+    "coding" : [{
+      "system" : "https://gematik.de/fhir/erp/CodeSystem/EFlowRxOrganizationType",
+      "code" : "urn:oid:1.2.276.0.76.4.54",
+      "display" : "Öffentliche Apotheke"
+    }]
+  }],
+  "input" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "https://gematik.de/fhir/erp/CodeSystem/EFlowRxDocumentType",
+        "code" : "1",
+        "display" : "Health Care Provider Prescription"
+      }]
     },
-    {
-      "type" : {
-        "coding" : [
-          {
-            "system" : "https://gematik.de/fhir/erp/CodeSystem/EFlowRxDocumentType",
-            "code" : "2",
-            "display" : "Patient Confirmation"
-          }
-        ]
-      },
-      "valueReference" : {
-        "reference" : "f8c2298f-7c00-4a68-af29-8a2862d55d43"
-      }
+    "valueReference" : {
+      "reference" : "281a985c-f25b-4aae-91a6-41ad744080b0"
     }
-  ]
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "https://gematik.de/fhir/erp/CodeSystem/EFlowRxDocumentType",
+        "code" : "2",
+        "display" : "Patient Confirmation"
+      }]
+    },
+    "valueReference" : {
+      "reference" : "f8c2298f-7c00-4a68-af29-8a2862d55d43"
+    }
+  }]
 }
 
 ```

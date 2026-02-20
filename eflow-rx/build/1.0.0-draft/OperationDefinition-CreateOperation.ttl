@@ -11,7 +11,7 @@
   fhir:id [ fhir:v "CreateOperation"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition CreateOperation</b></p><a name=\"CreateOperation\"> </a><a name=\"hcCreateOperation\"> </a><p>URL: [base]/Task/$create</p><p>Input parameters Profile:<a href=\"http://hl7.org/fhir/R4/parameters.html\">Parameters</a></p><p>Output parameters Profile:<a href=\"StructureDefinition-eflow-rx-create-operation-output-parameters.html\">GEM ERP PR CreateOperation Output</a></p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>workflowType</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Coding\">Coding</a></td><td><a href=\"ValueSet-eflow-rx-flowtype.html\">ValueSet der FlowType-Codes</a> (Required)</td><td><div><p>Dieser Parameter fordert die Erstellung eines Tasks mit bestimmten Flowtype an.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/task.html\">Task</a></td><td/><td><div><p>Der erstellte Task mit einer flowType-spezifischen Rezept-ID</p>\n</div></td></tr></table></div>"^^rdf:XMLLiteral ]
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition CreateOperation</b></p><a name=\"CreateOperation\"> </a><a name=\"hcCreateOperation\"> </a><p>URL: [base]/Task/$create</p><p>Input parameters Profile:<a href=\"http://hl7.org/fhir/R4/parameters.html\">Parameters</a></p><p>Output parameters Profile:<a href=\"StructureDefinition-eflow-rx-create-operation-output-parameters.html\">GEM ERP PR CreateOperation Output</a></p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>workflowType</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Coding\">Coding</a></td><td><a href=\"ValueSet-GEM-ERP-VS-FlowType.html\">ValueSet der FlowType-Codes</a> (Required)</td><td><div><p>Dieser Parameter fordert die Erstellung eines Tasks mit bestimmten Flowtype an.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/task.html\">Task</a></td><td/><td><div><p>Der erstellte Task mit einer flowType-spezifischen Rezept-ID</p>\n</div></td></tr></table></div>"^^rdf:XMLLiteral ]
   ] ; # 
   fhir:url [
      fhir:v "https://gematik.de/fhir/erp/OperationDefinition/CreateOperation"^^xsd:anyURI ;
@@ -68,8 +68,8 @@
      fhir:binding [
        fhir:strength [ fhir:v "required" ] ;
        fhir:valueSet [
-         fhir:v "https://gematik.de/fhir/erp/ValueSet/eflow-rx-flowtype"^^xsd:anyURI ;
-         fhir:l <https://gematik.de/fhir/erp/ValueSet/eflow-rx-flowtype>
+         fhir:v "https://gematik.de/fhir/erp/ValueSet/GEM-ERP-VS-FlowType"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/erp/ValueSet/GEM-ERP-VS-FlowType>
        ]
      ]
   ] [

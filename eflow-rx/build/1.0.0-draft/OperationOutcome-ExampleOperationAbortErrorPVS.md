@@ -18,15 +18,13 @@ Version 1.0.0-draft - ci-build
 {
   "resourceType" : "OperationOutcome",
   "id" : "ExampleOperationAbortErrorPVS",
-  "issue" : [
-    {
-      "severity" : "error",
-      "code" : "forbidden",
-      "details" : {
-        "text" : "Task must not be in progress for users other than pharmacy, but is: in-progress"
-      }
+  "issue" : [{
+    "severity" : "error",
+    "code" : "forbidden",
+    "details" : {
+      "text" : "Task must not be in progress for users other than pharmacy, but is: in-progress"
     }
-  ]
+  }]
 }
 
 ```

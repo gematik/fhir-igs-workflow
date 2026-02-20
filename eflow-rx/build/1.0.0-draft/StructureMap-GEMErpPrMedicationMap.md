@@ -39,64 +39,50 @@ Version 1.0.0-draft - ci-build
   "status" : "active",
   "date" : "2026-02-02",
   "publisher" : "gematik GmbH",
-  "contact" : [
-    {
-      "name" : "gematik GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://gematik.de"
-        },
-        {
-          "system" : "email",
-          "value" : "erp-umsetzung@gematik.de"
-        }
-      ]
-    }
-  ],
-  "description" : "Auto-generated StructureMap for GEM_ERP_PR_Medication|1.6.1 -> EPAMedication|1.3.0",
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "DE",
-          "display" : "Germany"
-        }
-      ]
-    }
-  ],
-  "structure" : [
-    {
-      "url" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication",
-      "mode" : "source",
-      "alias" : "GEMERPPRMedication"
+  "contact" : [{
+    "name" : "gematik GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://gematik.de"
     },
     {
-      "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication",
-      "mode" : "target",
-      "alias" : "EPAMedication"
-    }
-  ],
-  "group" : [
+      "system" : "email",
+      "value" : "erp-umsetzung@gematik.de"
+    }]
+  }],
+  "description" : "Auto-generated StructureMap for GEM_ERP_PR_Medication|1.6.1 -> EPAMedication|1.3.0",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "structure" : [{
+    "url" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication",
+    "mode" : "source",
+    "alias" : "GEMERPPRMedication"
+  },
+  {
+    "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication",
+    "mode" : "target",
+    "alias" : "EPAMedication"
+  }],
+  "group" : [{
+    "name" : "GEMErpPrMedicationMap",
+    "typeMode" : "types",
+    "documentation" : "Mapping generated for GEM_ERP_PR_Medication|1.6.1 -> EPAMedication|1.3.0",
+    "input" : [{
+      "name" : "GEMERPPRMedication",
+      "type" : "GEMERPPRMedication",
+      "mode" : "source"
+    },
     {
-      "name" : "GEMErpPrMedicationMap",
-      "typeMode" : "types",
-      "documentation" : "Mapping generated for GEM_ERP_PR_Medication|1.6.1 -> EPAMedication|1.3.0",
-      "input" : [
-        {
-          "name" : "GEMERPPRMedication",
-          "type" : "GEMERPPRMedication",
-          "mode" : "source"
-        },
-        {
-          "name" : "EPAMedication",
-          "type" : "EPAMedication",
-          "mode" : "target"
-        }
-      ]
-    }
-  ]
+      "name" : "EPAMedication",
+      "type" : "EPAMedication",
+      "mode" : "target"
+    }]
+  }]
 }
 
 ```

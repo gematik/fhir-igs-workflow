@@ -3,7 +3,7 @@
 <Bundle xmlns="http://hl7.org/fhir">
   <id value="Bundle-AcceptOperation"/>
   <meta>
-    <profile value="https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-bundle-op-accept"/>
+    <profile value="https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-PR-Bundle-OP-Accept"/>
   </meta>
   <type value="collection"/>
   <link>
@@ -16,22 +16,22 @@
       <Task>
         <id value="d70932d1-9e1c-483c-b2d4-b7dced09b35e"/>
         <meta>
-          <profile value="https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-task"/>
+          <profile value="https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-PR-Task"/>
           <tag>
             <display value="Task in IN-PROGRESS state claimed by pharmacy via $accept operation"/>
           </tag>
         </meta>
-        <extension url="https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-prescriptiontype-extension">
+        <extension url="https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-EX-PrescriptionType">
           <valueCoding>
             <system value="https://gematik.de/fhir/erp/CodeSystem/EFlowRxFlowType"/>
             <code value="160"/>
             <display value="Flowtype für Apothekenpflichtige Arzneimittel"/>
           </valueCoding>
         </extension>
-        <extension url="https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-acceptdate-extension">
+        <extension url="https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-EX-AcceptDate">
           <valueDate value="2026-07-01"/>
         </extension>
-        <extension url="https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-expirydate-extension">
+        <extension url="https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-EX-ExpiryDate">
           <valueDate value="2026-07-01"/>
         </extension>
         <identifier>
@@ -80,7 +80,7 @@
       <Binary>
         <id value="PrescriptionBinaryWithMeta"/>
         <meta>
-          <profile value="https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-binary"/>
+          <profile value="https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-PR-Binary"/>
         </meta>
         <contentType value="application/pkcs7-mime"/>
         <data value="dGhpcyBibG9iIGlzIHNuaXBwZWQ="/>

@@ -19,17 +19,13 @@ Version 1.0.0-draft - ci-build
   "resourceType" : "Medication",
   "id" : "SimpleMedication",
   "meta" : {
-    "profile" : [
-      "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-medication"
-    ]
+    "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-PR-Medication"]
   },
   "code" : {
-    "coding" : [
-      {
-        "system" : "http://fhir.de/CodeSystem/ifa/pzn",
-        "code" : "06313728"
-      }
-    ]
+    "coding" : [{
+      "system" : "http://fhir.de/CodeSystem/ifa/pzn",
+      "code" : "06313728"
+    }]
   },
   "batch" : {
     "lotNumber" : "1234567890"

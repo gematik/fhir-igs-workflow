@@ -8,13 +8,6 @@ const literatureData = [
     },
     
     {
-        key: "gemIG_eRp_TPrescription_Transfer",
-        link: "https://gemspec.gematik.de/ig/fhir/erp-t-prescription/1.1.0",
-        title: "T-Rezept Schnittstelle des E-Rezept-Fachdienst zum BfArM",
-        author: "gematik"
-    },
-    
-    {
         key: "gemIG_eRp_EU",
         link: "https://gemspec.gematik.de/ig/fhir/erezept-eu/1.0.0",
         title: "EU Schnittstelle des E-Rezept-Fachdienst zum NCPeH Deutschland",
@@ -67,6 +60,27 @@ const literatureData = [
         key: "gemSysL_eRp",
         link: "https://gemspec.gematik.de/docs/gemSpec/gemSysL_eRp/latest/",
         title: "Systemlösung E-Rezept",
+        author: "gematik"
+    },
+    
+    {
+        key: "Medication IG DE",
+        link: "https://ig.fhir.de/igs/medication/1.0.3/",
+        title: "FHIR Implementation Guide für medikationsbezogene Anwendungsfälle im deutschen Gesundheitswesen",
+        author: "HL7 Deutschland"
+    },
+    
+    {
+        key: "dgMP-DosageTextgenerierung-Skript",
+        link: "https://github.com/hl7germany/dgMP-DosageTextgenerierung-Skript",
+        title: "dgMP-DosageTextgenerierung-Skript",
+        author: "HL7 Deutschland"
+    },
+    
+    {
+        key: "gemIG_TIFlow_t-register",
+        link: "https://gemspec.gematik.de/ig/fhir/erp-t-prescription/1.1.0",
+        title: "Übertragung digitaler Durchschlag zum E-T-Rezept",
         author: "gematik"
     }
     

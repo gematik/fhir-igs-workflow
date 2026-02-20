@@ -49,202 +49,172 @@ Other representations of profile: [CSV](StructureDefinition-eflow-rx-dispense-op
   "experimental" : false,
   "date" : "2025-12-15",
   "publisher" : "gematik GmbH",
-  "contact" : [
-    {
-      "name" : "gematik GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://gematik.de"
-        },
-        {
-          "system" : "email",
-          "value" : "erp-umsetzung@gematik.de"
-        }
-      ]
-    }
-  ],
-  "description" : "Dieses Profil definiert die Parameter für die Abgabe eines Medikaments von AVS an den E-Rezept-Fachdienst. Dies kann für die $dispense-Operation verwendet werden.",
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "DE",
-          "display" : "Germany"
-        }
-      ]
-    }
-  ],
-  "copyright" : "gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.html), Version 2.0.",
-  "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "v2",
-      "uri" : "http://hl7.org/v2",
-      "name" : "HL7 v2 Mapping"
+  "contact" : [{
+    "name" : "gematik GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://gematik.de"
     },
     {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    }
-  ],
+      "system" : "email",
+      "value" : "erp-umsetzung@gematik.de"
+    }]
+  }],
+  "description" : "Dieses Profil definiert die Parameter für die Abgabe eines Medikaments von AVS an den E-Rezept-Fachdienst. Dies kann für die $dispense-Operation verwendet werden.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "copyright" : "gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.html), Version 2.0.",
+  "fhirVersion" : "4.0.1",
+  "mapping" : [{
+    "identity" : "v2",
+    "uri" : "http://hl7.org/v2",
+    "name" : "HL7 v2 Mapping"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Parameters",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Parameters",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Parameters",
-        "path" : "Parameters"
+    "element" : [{
+      "id" : "Parameters",
+      "path" : "Parameters"
+    },
+    {
+      "id" : "Parameters.parameter",
+      "path" : "Parameters.parameter",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "name"
+        }],
+        "rules" : "closed"
       },
-      {
-        "id" : "Parameters.parameter",
-        "path" : "Parameters.parameter",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "pattern",
-              "path" : "name"
-            }
-          ],
-          "rules" : "closed"
-        },
-        "min" : 1
+      "min" : 1
+    },
+    {
+      "id" : "Parameters.parameter:rxDispensation",
+      "path" : "Parameters.parameter",
+      "sliceName" : "rxDispensation",
+      "min" : 1,
+      "max" : "*",
+      "constraint" : [{
+        "key" : "workflow-parameters-close-dispense-medication-references",
+        "severity" : "error",
+        "human" : "If a reference from a MedicationDispense to a Medication exists, the reference must resolve to the Medication.",
+        "expression" : "part.where(name = 'medicationDispense').resource.medication.ofType(Reference).reference.exists() implies ((part.where(name = 'medicationDispense').resource.medication.reference.split('/').last().split(':').last()) = (part.where(name = 'medication').resource.id))",
+        "source" : "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-dispense-operation-input-parameters"
+      }]
+    },
+    {
+      "id" : "Parameters.parameter:rxDispensation.name",
+      "path" : "Parameters.parameter.name",
+      "patternString" : "rxDispensation",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Parameters.parameter:rxDispensation.value[x]",
+      "path" : "Parameters.parameter.value[x]",
+      "max" : "0"
+    },
+    {
+      "id" : "Parameters.parameter:rxDispensation.resource",
+      "path" : "Parameters.parameter.resource",
+      "max" : "0"
+    },
+    {
+      "id" : "Parameters.parameter:rxDispensation.part",
+      "path" : "Parameters.parameter.part",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "name"
+        }],
+        "rules" : "closed"
       },
-      {
-        "id" : "Parameters.parameter:rxDispensation",
-        "path" : "Parameters.parameter",
-        "sliceName" : "rxDispensation",
-        "min" : 1,
-        "max" : "*",
-        "constraint" : [
-          {
-            "key" : "workflow-parameters-close-dispense-medication-references",
-            "severity" : "error",
-            "human" : "If a reference from a MedicationDispense to a Medication exists, the reference must resolve to the Medication.",
-            "expression" : "part.where(name = 'medicationDispense').resource.medication.ofType(Reference).reference.exists() implies ((part.where(name = 'medicationDispense').resource.medication.reference.split('/').last().split(':').last()) = (part.where(name = 'medication').resource.id))",
-            "source" : "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-dispense-operation-input-parameters"
-          }
-        ]
-      },
-      {
-        "id" : "Parameters.parameter:rxDispensation.name",
-        "path" : "Parameters.parameter.name",
-        "patternString" : "rxDispensation",
-        "mustSupport" : true
-      },
-      {
-        "id" : "Parameters.parameter:rxDispensation.value[x]",
-        "path" : "Parameters.parameter.value[x]",
-        "max" : "0"
-      },
-      {
-        "id" : "Parameters.parameter:rxDispensation.resource",
-        "path" : "Parameters.parameter.resource",
-        "max" : "0"
-      },
-      {
-        "id" : "Parameters.parameter:rxDispensation.part",
-        "path" : "Parameters.parameter.part",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "pattern",
-              "path" : "name"
-            }
-          ],
-          "rules" : "closed"
-        },
-        "min" : 2,
-        "mustSupport" : true
-      },
-      {
-        "id" : "Parameters.parameter:rxDispensation.part:medicationDispense",
-        "path" : "Parameters.parameter.part",
-        "sliceName" : "medicationDispense",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "BackboneElement"
-          }
-        ]
-      },
-      {
-        "id" : "Parameters.parameter:rxDispensation.part:medicationDispense.name",
-        "path" : "Parameters.parameter.part.name",
-        "patternString" : "medicationDispense",
-        "mustSupport" : true
-      },
-      {
-        "id" : "Parameters.parameter:rxDispensation.part:medicationDispense.value[x]",
-        "path" : "Parameters.parameter.part.value[x]",
-        "max" : "0"
-      },
-      {
-        "id" : "Parameters.parameter:rxDispensation.part:medicationDispense.resource",
-        "path" : "Parameters.parameter.part.resource",
-        "min" : 1,
-        "type" : [
-          {
-            "code" : "MedicationDispense",
-            "profile" : [
-              "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-medicationdispense"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Parameters.parameter:rxDispensation.part:medicationDispense.part",
-        "path" : "Parameters.parameter.part.part",
-        "max" : "0"
-      },
-      {
-        "id" : "Parameters.parameter:rxDispensation.part:medication",
-        "path" : "Parameters.parameter.part",
-        "sliceName" : "medication",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "BackboneElement"
-          }
-        ]
-      },
-      {
-        "id" : "Parameters.parameter:rxDispensation.part:medication.name",
-        "path" : "Parameters.parameter.part.name",
-        "patternString" : "medication",
-        "mustSupport" : true
-      },
-      {
-        "id" : "Parameters.parameter:rxDispensation.part:medication.value[x]",
-        "path" : "Parameters.parameter.part.value[x]",
-        "max" : "0"
-      },
-      {
-        "id" : "Parameters.parameter:rxDispensation.part:medication.resource",
-        "path" : "Parameters.parameter.part.resource",
-        "min" : 1,
-        "type" : [
-          {
-            "code" : "Medication",
-            "profile" : [
-              "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-medication"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Parameters.parameter:rxDispensation.part:medication.part",
-        "path" : "Parameters.parameter.part.part",
-        "max" : "0"
-      }
-    ]
+      "min" : 2,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Parameters.parameter:rxDispensation.part:medicationDispense",
+      "path" : "Parameters.parameter.part",
+      "sliceName" : "medicationDispense",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "Parameters.parameter:rxDispensation.part:medicationDispense.name",
+      "path" : "Parameters.parameter.part.name",
+      "patternString" : "medicationDispense",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Parameters.parameter:rxDispensation.part:medicationDispense.value[x]",
+      "path" : "Parameters.parameter.part.value[x]",
+      "max" : "0"
+    },
+    {
+      "id" : "Parameters.parameter:rxDispensation.part:medicationDispense.resource",
+      "path" : "Parameters.parameter.part.resource",
+      "min" : 1,
+      "type" : [{
+        "code" : "MedicationDispense",
+        "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-PR-MedicationDispense"]
+      }]
+    },
+    {
+      "id" : "Parameters.parameter:rxDispensation.part:medicationDispense.part",
+      "path" : "Parameters.parameter.part.part",
+      "max" : "0"
+    },
+    {
+      "id" : "Parameters.parameter:rxDispensation.part:medication",
+      "path" : "Parameters.parameter.part",
+      "sliceName" : "medication",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "BackboneElement"
+      }]
+    },
+    {
+      "id" : "Parameters.parameter:rxDispensation.part:medication.name",
+      "path" : "Parameters.parameter.part.name",
+      "patternString" : "medication",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Parameters.parameter:rxDispensation.part:medication.value[x]",
+      "path" : "Parameters.parameter.part.value[x]",
+      "max" : "0"
+    },
+    {
+      "id" : "Parameters.parameter:rxDispensation.part:medication.resource",
+      "path" : "Parameters.parameter.part.resource",
+      "min" : 1,
+      "type" : [{
+        "code" : "Medication",
+        "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-PR-Medication"]
+      }]
+    },
+    {
+      "id" : "Parameters.parameter:rxDispensation.part:medication.part",
+      "path" : "Parameters.parameter.part.part",
+      "max" : "0"
+    }]
   }
 }
 

@@ -18,15 +18,13 @@ Version 1.0.0-draft - ci-build
 {
   "resourceType" : "OperationOutcome",
   "id" : "ExampleOperationRejectError",
-  "issue" : [
-    {
-      "severity" : "error",
-      "code" : "forbidden",
-      "details" : {
-        "text" : "Task not in status in progress, is: ready"
-      }
+  "issue" : [{
+    "severity" : "error",
+    "code" : "forbidden",
+    "details" : {
+      "text" : "Task not in status in progress, is: ready"
     }
-  ]
+  }]
 }
 
 ```

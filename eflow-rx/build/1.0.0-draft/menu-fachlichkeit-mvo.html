@@ -1,0 +1,540 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>Verordnung von Mehrfachverordnungen (MVO) - E-Rezept für Arzneimittel v1.0.0-draft</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+  	<link rel="stylesheet" href="assets/css/cqf.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+<link rel="stylesheet" href="assets/css/ig.gematik.css"/>
+<script src="assets/js/ig.gematik.min.js" type="text/javascript"> </script>
+<link rel="stylesheet" href="assets/css/edge-dark.min.css"/>
+<script src="assets/js/ig.api.doc.gematik.min.js" type="text/javascript"> </script>
+<link rel="stylesheet" href="assets/css/ig.req.gematik.css"/>
+<script src="assets/js/ig.req.gematik.min.js" type="text/javascript"> </script>
+
+<script src="assets/js/ig.bibliography.gematik.js" type="text/javascript"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        height: 280px;
+        background-color: #2a6496;
+        background: url('./e-rezept-img.png') no-repeat;
+        background-position: 650px -150px;
+        background-size: 45% auto;
+    }
+    .bubble-link {
+        display: none;
+        transition: opacity 0.2s;
+        }
+
+        h1:hover .bubble-link,
+        h2:hover .bubble-link,
+        h3:hover .bubble-link,
+        h4:hover .bubble-link,
+        h5:hover .bubble-link,
+        h6:hover .bubble-link {
+        display: inline;
+        }
+</style>
+
+<script src="assets/js/heading-links.js" type="text/javascript"> </script>
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="fhir-logo" href="assets/ico/icon-fhir-144.png"/>
+    <link sizes="114x114" rel="fhir-logo" href="assets/ico/icon-fhir-114.png"/>
+    <link sizes="72x72" rel="fhir-logo" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+    <style type="text/css">h2{--heading-prefix:"2.3"}
+    h3,h4,h5,h6{--heading-prefix:"2.3"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+
+          <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a no-external="true" id="gem-ig-logo" href="./index.html">
+        <img src="assets/images/gem-logo.png" alt="Home" height="50"/>
+    </a>
+</div>
+
+
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Start</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Fachlichkeit
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-fachlichkeit-e-rezept.html">Arzneimittel</a>
+      </li>
+      <li>
+        <a href="menu-fachlichkeit-t-rezept.html">Teratogene Arzneimittel</a>
+      </li>
+      <li>
+        <a href="menu-fachlichkeit-mvo.html">Mehrfachverordnungen</a>
+      </li>
+      <li>
+        <a href="menu-fachlichkeit-wf-le.html">Workflow-Steuerung durch LE</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Technische Umsetzung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a name="l206">​</a>
+        <a href="menu-technische-umsetzung-systemueberblick.html">Systemüberblick</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-anwendungsfaelle.html">Technische Anwendungsfälle</a>
+      </li>
+      <li><a name="l218">​</a>
+        <a href="menu-technische-umsetzung-verarbeitungsregeln.html">Verarbeitungsregeln</a>
+      </li>
+      <li>
+        <a href="mapping.html">Mappings</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Schnittstellen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-query-api.html">Query API</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-operation-api.html">Operation API</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-additional-api.html">Additional APIs</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="referenced.html">Referenzen</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="erp-openapi.html">OpenAPI</a>
+      </li>
+      <li>
+        <a href="release-notes.html">Release Notes</a>
+      </li>
+      <li>
+        <a href="spec-sheet.html">Steckbriefe</a>
+      </li>
+      <li>
+        <a href="comparisons.html">Versionsvergleiche</a>
+      </li>
+      <li>
+        <a href="license.html">Lizenz</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+E-Rezept für Arzneimittel
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 1.0.0-draft - ci-build
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="menu-fachlichkeit.html"><b>Fachliche Aspekte zur Arzneimittelverordnung</b></a></li><li><b>Verordnung von Mehrfachverordnungen (MVO)</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Verordnung von Mehrfachverordnungen (MVO)</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#kontext" id="markdown-toc-kontext">Kontext</a></li>
+  <li><a href="#user-stories" id="markdown-toc-user-stories">User Stories</a></li>
+  <li><a href="#fachliches-konzept" id="markdown-toc-fachliches-konzept">Fachliches Konzept</a></li>
+  <li><a href="#flowtypes-und-verarbeitung" id="markdown-toc-flowtypes-und-verarbeitung">Flowtypes und Verarbeitung</a></li>
+  <li><a href="#anwendungsfälle" id="markdown-toc-anwendungsfälle">Anwendungsfälle</a></li>
+</ul>
+
+</div>
+
+<p>Das Szenario beschreibt die Mehrfachverordnung (MVO) fuer apothekenpflichtige Arzneimittel.
+Eine MVO besteht aus mehreren Teilverordnungen, die jeweils als eigenes E-Rezept verarbeitet werden.</p>
+
+<h3 id="kontext">Kontext</h3>
+
+<p>Mehrfachverordnungen sollen die Versorgung mit Arzneimittel für chronisch Kranke erleichtern. Hierfür wurde in &sect; 31 Absatz 1b SGB V die Grundlage geschaffen: „Für Versicherte, die eine kontinuierliche Versorgung mit einem bestimmten Arzneimittel benötigen, können Vertragsärzte Verordnungen ausstellen, nach denen eine nach der Erstabgabe bis zu dreimal sich wiederholende Abgabe erlaubt ist. Die Verordnungen sind besonders zu kennzeichnen. Sie dürfen bis zu einem Jahr nach Ausstellungsdatum zu Lasten der gesetzlichen Krankenkasse durch Apotheken beliefert werden.”</p>
+
+<p>Neben <span class="fhir-conformance"> 31 Absatz 1b SGB V regelt </span><span class="fhir-conformance"> 31 Absatz 1b SGB V regelt </span></p>
+
+<p>Aus der Mehrfachverordnung ergeben sich Vorteile für Patienten und die Abläufe in Arztpraxen, da die Rezepte für Dauermedikationen im Voraus ausgestellt werden können und somit Wege zur Arztpraxis zum Rezepte abholen entfallen.</p>
+
+<h3 id="user-stories">User Stories</h3>
+
+<p>Die User Stories beschreiben die Erwartungen der Nutzer für die neuen digitalen Prozesse mit Bezug zur Mehrfachverordnung.</p>
+
+<h4 id="versicherte">Versicherte</h4>
+
+<p>Als Versicherter möchte ich:</p>
+<ul>
+  <li>für jedes einzelne E-Rezept aus meiner Mehrfachverordnung eine Apotheke frei auswählen können, damit ich wählen kann, ob ich die einzelnen Rezepte in der gleichen oder in unterschiedlichen Apotheken einlöse.</li>
+  <li>erkennen können, dass ein Rezept Bestandteil einer Mehrfachverordnung ist, um meine Abläufe (d.h. Gänge zum Arzt für Abholung Rezepte und Gänge zur Apotheke für Einlösung Rezepte) besser organisieren zu können.</li>
+  <li>erkennen können, um das wievielte Rezept einer Mehrfachverordnung es sich handelt, damit ich meine Medikamenteneinnahme sowie die Termine beim Arzt und Apotheker einplanen kann.</li>
+  <li>sehen können, wie viele E-Rezepte aus meiner Mehrfachverordnung ich bereits eingelöst habe.</li>
+  <li>sehen können, wann ich mein einzelnes E-Rezept aus der Mehrfachverordnung einlösen kann, das heißt den Beginn der Einlösefrist.</li>
+  <li>genau sehen können, wie lange jede einzelne Verordnung gültig ist, das heißt das Ende der Einlösefrist.</li>
+  <li>dass ich meine E-Rezepte darüber hinaus wie alle meine anderen Rezepte in meiner E-Rezept-App verwalten kann, um mich nicht mit neuen Abläufen in meiner E-Rezept App oder mit dem Arzt und 
+Apotheker herumschlagen zu müssen.</li>
+  <li>dass meine E-Rezept-App mich dabei unterstützt, dass ich das richtige E-Rezept in der Apotheke einlöse, damit ich in der Apotheke keine Zeit damit verschwende, einen ungültigen Token vorzuzeigen z.B. wenn ein E-Rezept erst in der Zukunft eingelöst werden kann.</li>
+  <li>dass meine E-Rezept-App mich dabei unterstützt, dass ich auf den ersten Blick erkenne, dass der Beginn der Einlösefrist eines E-Rezeptes erst in der Zukunft liegt.</li>
+  <li>erinnert werden, dass eine Teilverordnung gültig geworden ist, damit ich nicht vergesse, das 
+Rezept einzulösen.</li>
+  <li>jedes einzelne E-Rezept einer Mehrfachverordnung löschen können.</li>
+</ul>
+
+<h4 id="verordnende">Verordnende</h4>
+
+<p>Als Verordnender möchte ich:</p>
+
+<ul>
+  <li>dass mein Primärsystem mich dabei unterstützt, eine Mehrfachverordnung auszustellen, so dass ich identische Felder nur einmal ausfülle und mich auf das Ausfüllen der Unterschiede (z.B. Anzahl der einzelnen Rezepte) konzentrieren kann.</li>
+  <li>dass mein Primärsystem mich dabei unterstützt, die Einlösefristen für die einzelnen E-Rezepte automatisch zu berechnen und auszufüllen, so dass ich nicht mühsam Termine berechnen muss.</li>
+  <li>alle einzelnen E-Rezepte einer Mehrfachverordnung in einem Schritt löschen können, damit ich eventuell auftretende Fehler schnell und unkompliziert korrigieren kann.</li>
+  <li>dass mein Primärsystem mich dabei unterstützt, die einzelnen Teilverordnungen einfach und unkompliziert in einem Arbeitsschritt zu signieren.</li>
+</ul>
+
+<h4 id="apotheker">Apotheker</h4>
+
+<p>Als Apotheker möchte ich:</p>
+
+<ul>
+  <li>erkennen können, dass ein Rezept Bestandteil einer Mehrfachverordnung ist. sehen können, um das wievielte Rezept einer Mehrfachverordnung es sich handelt.</li>
+  <li>jedes E-Rezept einer Mehrfachverordnung einzeln abrufen, beliefern und abrechnen können.</li>
+  <li>ein E-Rezept einer Mehrfachverordnung, das mir zugewiesen worden ist, löschen können.</li>
+  <li>erkennen können, wenn der Beginn des Einlösezeitraumes einer Verordnung noch nicht erreicht wurde, sodass ich keine unnötige Arbeit mit noch nicht gültigen Rezepten habe.</li>
+  <li>wenn mein Patient es sich wünscht, die Zugangsinformationen und den Gültigkeitszeitraum zum Rezept speichern und später (wenn sie gültig werden) abrufen können.</li>
+</ul>
+
+<h3 id="fachliches-konzept">Fachliches Konzept</h3>
+
+<p>Eine Mehrfachverordnung besteht aus mindestens 2 bis maximal 4 Teilverordnungen. Jede Teilverordnung einer Mehrfachverordnung ist ein vollständiges E-Rezept mit QES-signierten Verordnungsdatensatz und E-Rezept-Token. Das bedeutet, dass jede der Teilverordnungen durch den eigenen E-Rezept-Token auch einzeln durch den Versicherten, ggf. in verschiedenen Apotheken, eingelöst werden kann.</p>
+
+<p>Das Statusmodell für E-Rezepte wird für die Teilverordnungen nicht geändert. Der Versicherte erhält nach der Abgabe für jede Teilverordnung eine eigene Information zur Abgabe (MedicationDispense). Auch die Abrechnung der Apotheke bzw. der Versicherten gegenüber dem Kostenträger erfolgt auf Basis der Teilverordnungen.</p>
+
+<p>Es gibt kein Ersatzverfahren (Muster 16), da Mehrfachverordnungen nur in elektronischer Form vorhanden sind.</p>
+
+<p>Für Mehrfachverordnungen gibt es keine Ersatzverordnungen. Bei Verlust muss ein Einzelrezept für die verlorene Teilverordnung ausgestellt werden.</p>
+
+<p>Die Mehrfachverordnung ist unabhängig vom Versichertenverhältnis, d.h. anwendbar für GKV- und PKV-Versicherte.</p>
+
+<h4 id="gültigkeit-der-teilverordnungen-einer-mehrfachverordnung">Gültigkeit der Teilverordnungen einer Mehrfachverordnung</h4>
+
+<p>Der Verordnende legt den Beginn des Gültigkeitszeitraumes für jede Teilverordnung im Verordnungsdatensatz fest. Der Verordnende kann das Ende der Gültigkeitszeitraumes einer Teilverordnung festlegen. Falls das Ende nicht durch den Verordnenden festgelegt wird, dann gilt die Teilverordnung bis 365 Tage nach dem Ausstellungsdatum der Mehrfachverordnung.</p>
+
+<p>Die Abrechnungsmöglichkeit gegenüber den Kostenträgern ist bestimmt durch die Arzneimittel-Richtlinie des G-BA und die Regelungen der ergänzenden Verträge nach &sect; 129 Absatz 5 SGB V in denen der Zeitraum, in dem eine Abrechnung zu Lasten der Krankenkassen möglich ist, festgelegt ist. Bei den Teilverordnungen ist eine Abrechnung gegenüber dem Kostenträger möglich, wenn das E-Rezept innerhalb des Gültigkeitszeitraum beliefert und quittiert wird.</p>
+
+<p>Bis zum Erreichen des Gültigkeitszeitraums ist keine Einsicht für die Apotheke in das E-Rezept möglich. Der Versicherte kann mittels E-Rezept-FdV oder E-Rezept-AdV die E-Rezepte einsehen.
+Kürzere Belieferungsfristen nach <span class="fhir-conformance"> 12 Absatz 1 Nummer 1 Buchstabe c BtMVV und den </span><span class="fhir-conformance"> 12 Absatz 1 Nummer 1 Buchstabe c BtMVV und den </span></p>
+
+<figure>
+    <div style="--box-width: 700px; margin-bottom: 30px;" class="gem-ig-img-container">
+        <img src="./mvo-gueltigkeit.png" alt="Übersicht Gültigkeit von Teilverordnungen" style="width: 100%;"/>
+    </div>
+    <figcaption><strong>Abbildung: </strong>Übersicht Gültigkeit von Teilverordnungen</figcaption>
+</figure>
+
+<p><br/></p>
+
+<h4 id="löschen-und-löschfristen-für-teilverordnungen-einer-mehrfachverordnung">Löschen und Löschfristen für Teilverordnungen einer Mehrfachverordnung</h4>
+
+<p>Es besteht beim Löschen kein Unterschied zu Einzelrezepten. Wenn eine Teilverordnung noch nicht eingelöst wurde, dann kann sie von Arzt, Patient oder Apotheker gelöscht werden.</p>
+
+<p>Für die Teilverordnungen gelten die gleichen Löschfristen wie für Einzelrezepte. D.h. Teilverordnungen werden automatisch 10 Tage nach Ablauf der Gültigkeit oder 100 Tage nach Dispensierung gelöscht.</p>
+
+<h4 id="ausdruck-für-den-versicherten">Ausdruck für den Versicherten</h4>
+
+<p>Der Versicherte kann einen Ausdruck für die Teilverordnungen durch den Verordnenden erhalten.
+Regelungen für das Erstellen des Ausdrucks für die Teilverordnungen einer Mehrfachverordnung sind in der , Technischen Anlage zur elektronischen Arzneimittelverordnung (E16A)” [KBV ITA_VGEX TECHNISCHE ANLAGE_ ERP] getroffen.</p>
+
+<p>Wenn ein Ausdruck die Daten zu mehrere Teilverordnungen einer Mehrfachverordnung beinhaltet und diese eingescannt werden, dann dürfen die E-Rezept-Token der Teilverordnungen, welche noch nicht ihren Gültigkeitszeitraum erreicht haben, nicht automatisch im AVS gespeichert werden, da der Versicherte das Recht hat, für diese ggf. eine andere Apotheke für das Einlösen auszuwählen. Das Speichern kann auf Wunsch des Versicherten erfolgen.</p>
+
+<h3 id="flowtypes-und-verarbeitung">Flowtypes und Verarbeitung</h3>
+
+<p>Der Unterschied gegenüber den in der bisherigen Prozessdefinition für den Workflowtype 160 bzw. 200 ausgestellten Verordnungsdaten besteht in der Verschreibung mehrerer Einzelrezepte auf einmal.</p>
+
+<p>Unabhängig vom Flowtype bleibt die fachliche Regel gleich: jede Teilverordnung ist ein eigener, separater Workflow.</p>
+
+<h3 id="anwendungsfälle">Anwendungsfälle</h3>
+
+<p><strong>Beteiligte Systeme:</strong> PVS/KIS, AVS, E-Rezept-Fachdienst, E-Rezept-FdV</p>
+
+<h4 id="technische-anwendungsfälle-der-verordnung">Technische Anwendungsfälle der Verordnung</h4>
+
+<figure style="width: 45em;">
+  <table>
+    <thead>
+      <tr>
+        <th>Anwendungsfall</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        
+        <tr>
+          <td><a href="menu-technische-umsetzung-anwendungsfaelle.html#uc-2-1-e-rezepte-erzeugen">UC 2.1 - E-Rezepte erzeugen</a></td>
+        </tr>
+      
+        
+        <tr>
+          <td><a href="menu-technische-umsetzung-anwendungsfaelle.html#e-rezept-qualifiziert-signieren">E-Rezept qualifiziert signieren</a></td>
+        </tr>
+      
+        
+        <tr>
+          <td><a href="menu-technische-umsetzung-anwendungsfaelle.html#uc-2-3-e-rezept-einstellen">UC 2.3 - E-Rezept einstellen</a></td>
+        </tr>
+      
+        
+        <tr>
+          <td><a name="l695">​</a><a href="menu-technische-umsetzung-anwendungsfaelle.html#uc-2-5-e-rezept-durch-verordnenden-loeschen">UC 2.5 - E-Rezept durch Verordnenden löschen</a></td>
+        </tr>
+      
+    </tbody>
+  </table>
+  <figcaption><strong>Tabelle:</strong> Technische Anwendungsfälle mit Bezug zu Anwendungsfall <i>Verordnung von Mehrfachverordnungen</i></figcaption>
+</figure>
+
+<h4 id="technische-anwendungsfälle-für-die-belieferung">Technische Anwendungsfälle für die Belieferung</h4>
+
+<figure style="width: 45em;">
+  <table>
+    <thead>
+      <tr>
+        <th>Anwendungsfall</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        
+        <tr>
+          <td><a href="menu-technische-umsetzung-anwendungsfaelle.html#uc-4-1-e-rezept-durch-abgebenden-abrufen">UC 4.1 - E-Rezept durch Abgebenden abrufen</a></td>
+        </tr>
+      
+        
+        <tr>
+          <td><a name="l737">​</a><a href="menu-technische-umsetzung-anwendungsfaelle.html#uc-4-2-e-rezept-durch-abgebenden-zurueckgeben">UC 4.2 - E-Rezept durch Abgebenden zurückgeben</a></td>
+        </tr>
+      
+        
+        <tr>
+          <td><a name="l744">​</a><a href="menu-technische-umsetzung-anwendungsfaelle.html#uc-4-3-e-rezept-durch-abgebenden-loeschen">UC 4.3 - E-Rezept durch Abgebenden löschen</a></td>
+        </tr>
+      
+        
+        <tr>
+          <td><a href="menu-technische-umsetzung-anwendungsfaelle.html#uc-4-4-quittung-abrufen">UC 4.4 - Quittung abrufen</a></td>
+        </tr>
+      
+        
+        <tr>
+          <td><a href="menu-technische-umsetzung-anwendungsfaelle.html#uc-4-5-abgabedatensatz-signieren">UC 4.5 - Abgabedatensatz durch Abgebenden signieren</a></td>
+        </tr>
+      
+        
+        <tr>
+          <td><a href="menu-technische-umsetzung-anwendungsfaelle.html#uc-4-8-quittung-erneut-abrufen">UC 4.8 - Quittung erneut abrufen</a></td>
+        </tr>
+      
+        
+        <tr>
+          <td><a name="l772">​</a><a href="menu-technische-umsetzung-anwendungsfaelle.html#uc-4-16-dispensierinformationen-bereitstellen">UC 4.16 - Dispensierinformationen bereitstellen</a></td>
+        </tr>
+      
+    </tbody>
+  </table>
+  <figcaption><strong>Tabelle:</strong> Technische Anwendungsfälle mit Bezug zu Anwendungsfall <i>Belieferung von Mehrfachverordnungen</i></figcaption>
+</figure>
+
+
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+  <script src="assets/js/window-hash.js" type="text/javascript"> </script>
+  <a name="bottom"> </a>
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Feb 20, 2026 06:43+0000">2026-02-20</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>

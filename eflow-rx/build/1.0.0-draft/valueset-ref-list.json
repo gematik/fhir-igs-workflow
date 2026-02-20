@@ -1,90 +1,80 @@
 {
-  "codeSystems" : [
-    {
-      "url" : "http://hl7.org/fhir/ValueSet/signature-type",
-      "version" : "4.0.1",
-      "status" : "draft",
-      "name" : "SignatureTypeCodes",
-      "title" : "Signature Type Codes",
-      "description" : "The Digital Signature Purposes, an indication of the reason an entity signs a document. This is included in the signed information and can be used when determining accountability for various actions concerning the document. Examples include: author, transcriptionist/recorder, and witness.",
-      "systems" : ["urn:iso-astm:E1762-95:2013"],
-      "oids" : ["1.2.840.10065.1.12"],
-      "sources" : ["1.2.840.10065.1.12"],
-      "uses" : {
-      },
-      "StructureDefinition-eflow-rx-signature.html" : "EFlowRxSignature"
+  "codeSystems" : [{
+    "url" : "http://hl7.org/fhir/ValueSet/signature-type",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SignatureTypeCodes",
+    "title" : "Signature Type Codes",
+    "description" : "The Digital Signature Purposes, an indication of the reason an entity signs a document. This is included in the signed information and can be used when determining accountability for various actions concerning the document. Examples include: author, transcriptionist/recorder, and witness.",
+    "systems" : ["urn:iso-astm:E1762-95:2013"],
+    "oids" : ["1.2.840.10065.1.12"],
+    "sources" : ["1.2.840.10065.1.12"],
+    "uses" : {
     },
-    {
-      "url" : "https://gematik.de/fhir/erp/ValueSet/eflow-rx-availabilitystatus",
-      "version" : "1.0.0-draft",
-      "status" : "draft",
-      "name" : "EFlowRxAvailabilityStatusVS",
-      "title" : "ValueSet der Verfügbarkeitsstatus-Codes",
-      "description" : "Art des Verfügbarkeitsstatus für die Verfügbarkeitsanfrage von Medikamenten",
-      "systems" : [
-        "https://gematik.de/fhir/erp/CodeSystem/eflow-rx-availabilitystatus"
-      ],
-      "uses" : {
-      },
-      "StructureDefinition-eflow-rx-availabilitystate-extension.html" : "GEM ERP EX AvailabilityState"
+    "StructureDefinition-GEM-ERP-PR-Signature.html" : "GEM_ERP_PR_Signature"
+  },
+  {
+    "url" : "https://gematik.de/fhir/erp/ValueSet/GEM-ERP-VS-AvailabilityStatus",
+    "version" : "1.0.0-draft",
+    "status" : "draft",
+    "name" : "GEM_ERP_VS_AvailabilityStatus",
+    "title" : "ValueSet der Verfügbarkeitsstatus-Codes",
+    "description" : "Art des Verfügbarkeitsstatus für die Verfügbarkeitsanfrage von Medikamenten",
+    "systems" : ["https://gematik.de/fhir/erp/CodeSystem/GEM-ERP-CS-AvailabilityStatus"],
+    "uses" : {
     },
-    {
-      "url" : "https://gematik.de/fhir/erp/ValueSet/eflow-rx-documenttype",
-      "version" : "1.0.0-draft",
-      "status" : "draft",
-      "name" : "EFlowRxDocumentTypeVS",
-      "title" : "ValueSet der Dokumenttyp-Codes",
-      "description" : "Art der Dokumente je nach Empfänger.",
-      "systems" : [
-        "https://gematik.de/fhir/erp/CodeSystem/eflow-rx-documenttype"
-      ],
-      "uses" : {
-      },
-      "StructureDefinition-eflow-rx-task.html" : "GEM ERP PR Task",
-      "StructureDefinition-eflow-rx-composition.html" : "GEM ERP PR Composition"
+    "StructureDefinition-GEM-ERP-EX-AvailabilityState.html" : "GEM ERP EX AvailabilityState"
+  },
+  {
+    "url" : "https://gematik.de/fhir/erp/ValueSet/GEM-ERP-VS-DocumentType",
+    "version" : "1.0.0-draft",
+    "status" : "draft",
+    "name" : "GEM_ERP_VS_DocumentType",
+    "title" : "ValueSet der Dokumenttyp-Codes",
+    "description" : "Art der Dokumente je nach Empfänger.",
+    "systems" : ["https://gematik.de/fhir/erp/CodeSystem/GEM-ERP-CS-DocumentType"],
+    "uses" : {
     },
-    {
-      "url" : "https://gematik.de/fhir/erp/ValueSet/eflow-rx-flowtype",
-      "version" : "1.0.0-draft",
-      "status" : "draft",
-      "name" : "EFlowRxFlowTypeVS",
-      "title" : "ValueSet der FlowType-Codes",
-      "description" : "Zeigt die verschiedenen Arten des E-Rezepts entsprechend den Verschreibungsformularen.",
-      "systems" : ["https://gematik.de/fhir/erp/CodeSystem/eflow-rx-flowtype"],
-      "uses" : {
-      },
-      "StructureDefinition-eflow-rx-prescriptiontype-extension.html" : "GEM ERP EX PrescriptionType",
-      "OperationDefinition-CreateOperation.html" : "Create"
+    "StructureDefinition-GEM-ERP-PR-Task.html" : "GEM ERP PR Task",
+    "StructureDefinition-GEM-ERP-PR-Composition.html" : "GEM ERP PR Composition"
+  },
+  {
+    "url" : "https://gematik.de/fhir/erp/ValueSet/GEM-ERP-VS-FlowType",
+    "version" : "1.0.0-draft",
+    "status" : "draft",
+    "name" : "GEM_ERP_VS_FlowType",
+    "title" : "ValueSet der FlowType-Codes",
+    "description" : "Zeigt die verschiedenen Arten des E-Rezepts entsprechend den Verschreibungsformularen.",
+    "systems" : ["https://gematik.de/fhir/erp/CodeSystem/GEM-ERP-CS-FlowType"],
+    "uses" : {
     },
-    {
-      "url" : "https://gematik.de/fhir/erp/ValueSet/eflow-rx-operationoutcomedetails",
-      "version" : "1.0.0-draft",
-      "status" : "draft",
-      "name" : "EFlowRxOperationOutcomeDetailsVS",
-      "title" : "GEM ERP VS OperationOutcomeDetails",
-      "description" : "Fachliche Fehlercodes des E-Rezept-Fachdienst",
-      "systems" : [
-        "http://terminology.hl7.org/CodeSystem/operation-outcome",
-        "https://gematik.de/fhir/erp/CodeSystem/eflow-rx-operationoutcomedetails",
-        "https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes"
-      ],
-      "uses" : {
-      },
-      "StructureDefinition-eflow-rx-operationoutcome.html" : "GEM ERP PR OperationOutcome"
+    "StructureDefinition-GEM-ERP-EX-PrescriptionType.html" : "GEM ERP EX PrescriptionType",
+    "OperationDefinition-CreateOperation.html" : "Create"
+  },
+  {
+    "url" : "https://gematik.de/fhir/erp/ValueSet/GEM-ERP-VS-OperationOutcomeDetails",
+    "version" : "1.0.0-draft",
+    "status" : "draft",
+    "name" : "GEM_ERP_VS_OperationOutcomeDetails",
+    "title" : "GEM ERP VS OperationOutcomeDetails",
+    "description" : "Fachliche Fehlercodes des E-Rezept-Fachdienst",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/operation-outcome",
+    "https://gematik.de/fhir/erp/CodeSystem/GEM-ERP-CS-OperationOutcomeDetails",
+    "https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes"],
+    "uses" : {
     },
-    {
-      "url" : "https://gematik.de/fhir/erp/ValueSet/eflow-rx-organizationtype",
-      "version" : "1.0.0-draft",
-      "status" : "draft",
-      "name" : "EFlowRxOrganizationTypeVS",
-      "title" : "ValueSet der Organisationstyp-Codes",
-      "description" : "Art der Organisation",
-      "systems" : [
-        "https://gematik.de/fhir/erp/CodeSystem/eflow-rx-organizationtype"
-      ],
-      "uses" : {
-      },
-      "StructureDefinition-eflow-rx-task.html" : "GEM ERP PR Task"
-    }
-  ]
+    "StructureDefinition-GEM-ERP-PR-OperationOutcome.html" : "GEM ERP PR OperationOutcome"
+  },
+  {
+    "url" : "https://gematik.de/fhir/erp/ValueSet/GEM-ERP-VS-OrganizationType",
+    "version" : "1.0.0-draft",
+    "status" : "draft",
+    "name" : "GEM_ERP_VS_OrganizationType",
+    "title" : "ValueSet der Organisationstyp-Codes",
+    "description" : "Art der Organisation",
+    "systems" : ["https://gematik.de/fhir/erp/CodeSystem/GEM-ERP-CS-OrganizationType"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERP-PR-Task.html" : "GEM ERP PR Task"
+  }]
 }

@@ -1,0 +1,597 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>Operation $accept (Task akzeptieren) - E-Rezept für Arzneimittel v1.0.0-draft</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+  	<link rel="stylesheet" href="assets/css/cqf.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+<link rel="stylesheet" href="assets/css/ig.gematik.css"/>
+<script src="assets/js/ig.gematik.min.js" type="text/javascript"> </script>
+<link rel="stylesheet" href="assets/css/edge-dark.min.css"/>
+<script src="assets/js/ig.api.doc.gematik.min.js" type="text/javascript"> </script>
+<link rel="stylesheet" href="assets/css/ig.req.gematik.css"/>
+<script src="assets/js/ig.req.gematik.min.js" type="text/javascript"> </script>
+
+<script src="assets/js/ig.bibliography.gematik.js" type="text/javascript"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        height: 280px;
+        background-color: #2a6496;
+        background: url('./e-rezept-img.png') no-repeat;
+        background-position: 650px -150px;
+        background-size: 45% auto;
+    }
+    .bubble-link {
+        display: none;
+        transition: opacity 0.2s;
+        }
+
+        h1:hover .bubble-link,
+        h2:hover .bubble-link,
+        h3:hover .bubble-link,
+        h4:hover .bubble-link,
+        h5:hover .bubble-link,
+        h6:hover .bubble-link {
+        display: inline;
+        }
+</style>
+
+<script src="assets/js/heading-links.js" type="text/javascript"> </script>
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="fhir-logo" href="assets/ico/icon-fhir-144.png"/>
+    <link sizes="114x114" rel="fhir-logo" href="assets/ico/icon-fhir-114.png"/>
+    <link sizes="72x72" rel="fhir-logo" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+    <style type="text/css">h2{--heading-prefix:"8.3"}
+    h3,h4,h5,h6{--heading-prefix:"8.3.0"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+
+          <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a no-external="true" id="gem-ig-logo" href="./index.html">
+        <img src="assets/images/gem-logo.png" alt="Home" height="50"/>
+    </a>
+</div>
+
+
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Start</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Fachlichkeit
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-fachlichkeit-e-rezept.html">Arzneimittel</a>
+      </li>
+      <li>
+        <a href="menu-fachlichkeit-t-rezept.html">Teratogene Arzneimittel</a>
+      </li>
+      <li>
+        <a href="menu-fachlichkeit-mvo.html">Mehrfachverordnungen</a>
+      </li>
+      <li>
+        <a href="menu-fachlichkeit-wf-le.html">Workflow-Steuerung durch LE</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Technische Umsetzung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a name="l206">​</a>
+        <a href="menu-technische-umsetzung-systemueberblick.html">Systemüberblick</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-anwendungsfaelle.html">Technische Anwendungsfälle</a>
+      </li>
+      <li><a name="l218">​</a>
+        <a href="menu-technische-umsetzung-verarbeitungsregeln.html">Verarbeitungsregeln</a>
+      </li>
+      <li>
+        <a href="mapping.html">Mappings</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Schnittstellen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-query-api.html">Query API</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-operation-api.html">Operation API</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-additional-api.html">Additional APIs</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="referenced.html">Referenzen</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="erp-openapi.html">OpenAPI</a>
+      </li>
+      <li>
+        <a href="release-notes.html">Release Notes</a>
+      </li>
+      <li>
+        <a href="spec-sheet.html">Steckbriefe</a>
+      </li>
+      <li>
+        <a href="comparisons.html">Versionsvergleiche</a>
+      </li>
+      <li>
+        <a href="license.html">Lizenz</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+E-Rezept für Arzneimittel
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 1.0.0-draft - ci-build
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="menu-schnittstellen-operation-api.html"><b>Operation API</b></a></li><li><b>Operation $accept (Task akzeptieren)</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Operation $accept (Task akzeptieren)</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#task-akzeptieren-accept" id="markdown-toc-task-akzeptieren-accept">Task akzeptieren ($accept)</a></li>
+  <li><a href="#nachricht" id="markdown-toc-nachricht">Nachricht</a></li>
+  <li><a href="#anforderungen-an-schnittstelle" id="markdown-toc-anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</a></li>
+  <li><a href="#api-beschreibung" id="markdown-toc-api-beschreibung">API Beschreibung</a></li>
+  <li><a href="#hinweis" id="markdown-toc-hinweis">Hinweis</a></li>
+  <li><a href="#geschaeftslogik" id="markdown-toc-geschaeftslogik">Geschaeftslogik</a></li>
+  <li><a href="#sicherheitsanforderungen" id="markdown-toc-sicherheitsanforderungen">Sicherheitsanforderungen</a></li>
+</ul>
+
+</div>
+<h3 id="task-akzeptieren-accept">Task akzeptieren ($accept)</h3>
+
+<h3 id="nachricht">Nachricht</h3>
+
+<p>Die Nachricht wird als HTTP <code class="language-plaintext highlighter-rouge">POST</code> an <code class="language-plaintext highlighter-rouge">/Task/{id}/$accept</code> gesendet.</p>
+
+<h3 id="anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</h3>
+
+<ul>
+  <li><a href="./op-accept-fd-requirements.html">FD-Anforderungen zu <code class="language-plaintext highlighter-rouge">$accept</code></a>: Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.</li>
+  <li><a href="./op-accept-client-requirements.html">Client-Anforderungen zu <code class="language-plaintext highlighter-rouge">$accept</code></a>: Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.</li>
+</ul>
+
+<h3 id="api-beschreibung">API Beschreibung</h3>
+
+<div data-api-operation-id="acceptTask" data-api-type="FHIROperation" data-api-fhir-invoke-level="instance" class="gematik-api">
+  <div id="CapabilityStatement">
+    <pre>
+      {"resourceType":"CapabilityStatement","id":"erp-fachdienst-server","meta":{"profile":["https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"]},"extension":[{"url":"https://gematik.de/fhir/ti/StructureDefinition/extension-base-url","valueString":"http://todo"},{"extension":[{"url":"statusCode","valueString":"423"},{"url":"description","valueString":"If the insurant objected to the medication process or objected to the submission of prescription and dispensation data into the ePA system, the Medication Service is locked."},{"url":"responseType","valueString":"application/json"},{"url":"errorCode","valueString":"locked"}],"url":"https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"}],"url":"https://gematik.de/fhir/erp/CapabilityStatement/erp-fachdienst-server","version":"1.0.0-draft","name":"ERPFachdienstServer","title":"ERP CapabilityStatement für den E-Rezept-Fachdienst","status":"draft","date":"2025-12-15","publisher":"gematik GmbH","contact":[{"name":"gematik GmbH","telecom":[{"system":"url","value":"https://gematik.de"},{"system":"email","value":"erp-umsetzung@gematik.de"}]}],"description":"ERP CapabilityStatement für den E-Rezept-Fachdienst","jurisdiction":[{"coding":[{"system":"urn:iso:std:iso:3166","code":"DE","display":"Germany"}]}],"kind":"requirements","fhirVersion":"4.0.1","format":["application/fhir+json","application/fhir+xml"],"rest":[{"mode":"server"}]}
+    </pre>
+  </div>
+  <div id="OperationDefinition">
+    <div data-render="ig-Fragment" data-type="JSON" data-name="application/fhir+json">
+      <pre style="white-space: pre; text-wrap: nowrap; width: auto;" class="json" data-fhir="generated"><code style="white-space: pre; text-wrap: nowrap;" class="language-json">{
+  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition">resourceType</a>" : "OperationDefinition",
+  "<a href="http://hl7.org/fhir/R4/resource.html#OperationDefinition.id">id</a>" : "AcceptOperation",
+  "<a href="http://hl7.org/fhir/R4/domainresource.html#OperationDefinition.text">text</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p class=\"res-header-id\"&gt;&lt;b&gt;Generated Narrative: OperationDefinition AcceptOperation&lt;/b&gt;&lt;/p&gt;&lt;a name=\"AcceptOperation\"&gt; &lt;/a&gt;&lt;a name=\"hcAcceptOperation\"&gt; &lt;/a&gt;&lt;p&gt;URL: [base]/Task/[id]/$accept&lt;/p&gt;&lt;p&gt;Output parameters Profile:&lt;a href=\"StructureDefinition-eflow-rx-accept-operation-output-parameters.html\"&gt;GEM ERP PR AcceptOperation Output&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;Parameters&lt;/h3&gt;&lt;table class=\"grid\"&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Use&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Name&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Scope&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Cardinality&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Binding&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Documentation&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;ac&lt;/td&gt;&lt;td/&gt;&lt;td&gt;1..1&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R4/datatypes.html#string\"&gt;string&lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Der Secret-Parameter, der es Benutzern ermöglicht, exklusiv über die URL und den Parameter ?ac auf die Aufgabe zuzugreifen.&lt;/p&gt;\n&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;OUT&lt;/td&gt;&lt;td&gt;return&lt;/td&gt;&lt;td/&gt;&lt;td&gt;1..1&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R4/bundle.html\"&gt;Bundle&lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Sammlung von Ressourcen (Task und Binary), damit eine Apotheke ein eRezept verarbeiten kann, das Folgendes enthält: 1. die aktualisierte Task (einschließlich eines Geheimnisses, das einer Apotheke exklusiven Zugriff auf die Task gewährt) und 2. eine base64Binary des qualifiziert signierten eRezepts. Der Status der Task ändert sich in 'in-progress'. Der Rezeptserver erstellt ein secret und speichert sie in Task.identifier:Secret.&lt;/p&gt;\n&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"
+  },
+  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.url">url</a>" : "https://gematik.de/fhir/erp/OperationDefinition/AcceptOperation",
+  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.version">version</a>" : "1.0.0-draft",
+  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.name">name</a>" : "Accept",
+  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.status">status</a>" : "draft",
+  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.kind">kind</a>" : "operation",
+  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.date">date</a>" : "2025-12-15",
+  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.publisher">publisher</a>" : "gematik GmbH",
+  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.contact">contact</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">name</a>" : "gematik GmbH",
+      "<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a>" : "url",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a>" : "https://gematik.de"
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a>" : "email",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a>" : "erp-umsetzung@gematik.de"
+        }
+      ]
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.description">description</a>" : "Mit der $accept-Operation beansprucht eine Apotheke ein E-Rezept. Der Status der referenzierten Aufgabe ändert sich in 'in-progress'.",
+  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.jurisdiction">jurisdiction</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "urn:iso:std:iso:3166",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "DE",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Germany"
+        }
+      ]
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.affectsState">affectsState</a>" : true,
+  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.code">code</a>" : "accept",
+  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.resource">resource</a>" : [
+    "Task"
+  ],
+  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.system">system</a>" : false,
+  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.type">type</a>" : false,
+  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.instance">instance</a>" : true,
+  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.outputProfile">outputProfile</a>" : "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-accept-operation-output-parameters",
+  "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter">parameter</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.name">name</a>" : "ac",
+      "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.use">use</a>" : "in",
+      "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.min">min</a>" : 1,
+      "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.max">max</a>" : "1",
+      "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>" : "Der Secret-Parameter, der es Benutzern ermöglicht, exklusiv über die URL und den Parameter ?ac auf die Aufgabe zuzugreifen.",
+      "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.type">type</a>" : "string"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.name">name</a>" : "return",
+      "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.use">use</a>" : "out",
+      "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.min">min</a>" : 1,
+      "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.max">max</a>" : "1",
+      "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>" : "Sammlung von Ressourcen (Task und Binary), damit eine Apotheke ein eRezept verarbeiten kann, das Folgendes enthält: 1. die aktualisierte Task (einschließlich eines Geheimnisses, das einer Apotheke exklusiven Zugriff auf die Task gewährt) und 2. eine base64Binary des qualifiziert signierten eRezepts. Der Status der Task ändert sich in 'in-progress'. Der Rezeptserver erstellt ein secret und speichert sie in Task.identifier:Secret.",
+      "<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.type">type</a>" : "Bundle"
+    }
+  ]
+}</code></pre>
+
+    </div>
+  </div>
+  <div id="Response-Examples">
+    <div data-render="ig-Fragment" data-type="JSON" data-name="application/fhir+json">
+      <pre style="white-space: pre; text-wrap: nowrap; width: auto;" class="json" data-fhir="generated"><code style="white-space: pre; text-wrap: nowrap;" class="language-json">{
+  "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle">resourceType</a>" : "Bundle",
+  "<a href="http://hl7.org/fhir/R4/resource.html#Bundle.id">id</a>" : "Bundle-AcceptOperation",
+  "<a href="http://hl7.org/fhir/R4/resource.html#Bundle.meta">meta</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
+      <a style="color: Maroon" href="StructureDefinition-GEM-ERP-PR-Bundle-OP-Accept.html">&#x1F517;</a> "https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-PR-Bundle-OP-Accept"
+    ]
+  },
+  "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.type">type</a>" : "collection",
+  "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.link">link</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.link.relation">relation</a>" : "self",
+      "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.link.url">url</a>" : "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/160.000.033.491.280.78/$accept/"
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry">entry</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>" : "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/d70932d1-9e1c-483c-b2d4-b7dced09b35e",
+      "<a href="http://hl7.org/fhir/R4/task.html#Task">resource</a>" : {
+        "<a href="http://hl7.org/fhir/R4/task.html">resourceType</a>" : "Task",
+        "<a href="http://hl7.org/fhir/R4/resource.html#Task.id">id</a>" : "d70932d1-9e1c-483c-b2d4-b7dced09b35e",
+        "<a href="http://hl7.org/fhir/R4/resource.html#Task.meta">meta</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
+            <a style="color: Maroon" href="StructureDefinition-GEM-ERP-PR-Task.html">&#x1F517;</a> "https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-PR-Task"
+          ],
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.tag">tag</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Task in IN-PROGRESS state claimed by pharmacy via $accept operation"
+            }
+          ]
+        },
+        "<a href="http://hl7.org/fhir/R4/domainresource.html#Task.extension">extension</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-EX-PrescriptionType",
+            "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueCoding</a>" : {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://gematik.de/fhir/erp/CodeSystem/EFlowRxFlowType",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "160",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Flowtype für Apothekenpflichtige Arzneimittel"
+            }
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-EX-AcceptDate",
+            "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueDate</a>" : "2026-07-01"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-EX-ExpiryDate",
+            "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueDate</a>" : "2026-07-01"
+          }
+        ],
+        "<a href="http://hl7.org/fhir/R4/task.html#Task.identifier">identifier</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "160.000.033.491.280.78"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
+          }
+        ],
+        "<a href="http://hl7.org/fhir/R4/task.html#Task.status">status</a>" : "in-progress",
+        "<a href="http://hl7.org/fhir/R4/task.html#Task.intent">intent</a>" : "order",
+        "<a href="http://hl7.org/fhir/R4/task.html#Task.for">for</a>" : {
+          "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>" : {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "http://fhir.de/sid/gkv/kvid-10",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "X123456789"
+          }
+        },
+        "<a href="http://hl7.org/fhir/R4/task.html#Task.authoredOn">authoredOn</a>" : "2026-07-01T15:29:00+00:00",
+        "<a href="http://hl7.org/fhir/R4/task.html#Task.lastModified">lastModified</a>" : "2026-07-01T16:44:00.434+00:00",
+        "<a href="http://hl7.org/fhir/R4/task.html#Task.performerType">performerType</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://gematik.de/fhir/erp/CodeSystem/EFlowRxOrganizationType",
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "urn:oid:1.2.276.0.76.4.54",
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Öffentliche Apotheke"
+              }
+            ]
+          }
+        ],
+        "<a href="http://hl7.org/fhir/R4/task.html#Task.input">input</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/task.html#Task.input.type">type</a>" : {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://gematik.de/fhir/erp/CodeSystem/EFlowRxDocumentType",
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "1",
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Health Care Provider Prescription"
+                }
+              ]
+            },
+            "<a href="http://hl7.org/fhir/R4/task.html#Task.input.value_x_">valueReference</a>" : {
+              "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Binary/PrescriptionBinary"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>" : "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Binary/PrescriptionBinaryWithMeta",
+      "<a href="http://hl7.org/fhir/R4/binary.html#Binary">resource</a>" : {
+        "<a href="http://hl7.org/fhir/R4/binary.html">resourceType</a>" : "Binary",
+        "<a href="http://hl7.org/fhir/R4/resource.html#Binary.id">id</a>" : "PrescriptionBinaryWithMeta",
+        "<a href="http://hl7.org/fhir/R4/resource.html#Binary.meta">meta</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
+            <a style="color: Maroon" href="StructureDefinition-GEM-ERP-PR-Binary.html">&#x1F517;</a> "https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-PR-Binary"
+          ]
+        },
+        "<a href="http://hl7.org/fhir/R4/binary.html#Binary.contentType">contentType</a>" : "application/pkcs7-mime",
+        "<a href="http://hl7.org/fhir/R4/binary.html#Binary.data">data</a>" : "dGhpcyBibG9iIGlzIHNuaXBwZWQ="
+      }
+    }
+  ]
+}</code></pre>
+
+    </div>
+    <div data-render="ig-Fragment" data-type="JSON" data-name="application/fhir+json">
+      <pre style="white-space: pre; text-wrap: nowrap; width: auto;" class="json" data-fhir="generated"><code style="white-space: pre; text-wrap: nowrap;" class="language-json">{
+  "<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome">resourceType</a>" : "OperationOutcome",
+  "<a href="http://hl7.org/fhir/R4/resource.html#OperationOutcome.id">id</a>" : "ExampleOperationAcceptError",
+  "<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue">issue</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.severity">severity</a>" : "error",
+      "<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.code">code</a>" : "conflict",
+      "<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.details">details</a>" : {
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a>" : "Task has invalid status draft"
+      }
+    }
+  ]
+}</code></pre>
+
+    </div>
+  </div>
+</div>
+
+<h3 id="hinweis">Hinweis</h3>
+
+<ul>
+  <li>Die Rueckgabe kann bei Mehrfachverordnung mit <code class="language-plaintext highlighter-rouge">403</code> scheitern, wenn die Einloesefrist noch nicht begonnen hat.</li>
+  <li>AccessCode und insbesondere <code class="language-plaintext highlighter-rouge">secret</code> sind als hochsensible Daten zu behandeln.</li>
+</ul>
+
+<h3 id="geschaeftslogik">Geschaeftslogik</h3>
+
+<figure>
+  <div style="--box-width: 900px; margin-bottom: 30px;" class="gem-ig-img-container">
+  <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 326 849" zoomAndPan="magnify" preserveAspectRatio="none" width="326px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:326px;height:849px;background:#FFFFFF;" version="1.1" height="849px"><defs></defs><g><text font-weight="bold" lengthAdjust="spacing" x="76" font-size="14" textLength="171" y="32.9951" font-family="Arial" fill="#000000">RX Operation $accept</text><ellipse cx="163" cy="57.2969" rx="10" ry="10" style="stroke:#222222;stroke-width:1.0;" fill="#222222"></ellipse><rect rx="4" ry="4" width="264" x="31" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="33.9688"></rect><text lengthAdjust="spacing" x="41" font-size="12" textLength="244" y="108.4355" font-family="Arial" fill="#000000">Client ruft POST /Task/{id}/$accept auf</text><rect rx="4" ry="4" width="302" x="12" y="141.2656" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="33.9688"></rect><text lengthAdjust="spacing" x="22" font-size="12" textLength="282" y="162.4043" font-family="Arial" fill="#000000">FD prueft Rolle, AccessCode und Task-Status</text><rect rx="4" ry="4" width="135" x="95.5" y="244.2188" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="33.9688"></rect><text lengthAdjust="spacing" x="105.5" font-size="12" textLength="115" y="265.3574" font-family="Arial" fill="#000000">HTTP 403/409/410</text><ellipse cx="163" cy="317.7031" rx="11" ry="11" style="stroke:#222222;stroke-width:1.0;" fill="none"></ellipse><ellipse cx="163" cy="317.7031" rx="6" ry="6" style="stroke:#111111;stroke-width:1.0;" fill="#222222"></ellipse><polygon style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" points="151,195.2344,175,195.2344,187,207.2344,175,219.2344,151,219.2344,139,207.2344,151,195.2344"></polygon><text lengthAdjust="spacing" x="167" font-size="12" textLength="27" y="230.373" font-family="Arial" fill="#000000">nein</text><text lengthAdjust="spacing" x="152.5" font-size="12" textLength="21" y="211.3887" font-family="Arial" fill="#000000">ok?</text><text lengthAdjust="spacing" x="187" font-size="12" textLength="11" y="204.4043" font-family="Arial" fill="#000000">ja</text><rect rx="4" ry="4" width="304" x="11" y="370.7031" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="33.9688"></rect><text lengthAdjust="spacing" x="21" font-size="12" textLength="284" y="391.8418" font-family="Arial" fill="#000000">FD prueft Einloesefrist (inkl. MVO-Startdatum)</text><rect rx="4" ry="4" width="79" x="123.5" y="473.6563" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="33.9688"></rect><text lengthAdjust="spacing" x="133.5" font-size="12" textLength="59" y="494.7949" font-family="Arial" fill="#000000">HTTP 403</text><ellipse cx="163" cy="547.1406" rx="11" ry="11" style="stroke:#222222;stroke-width:1.0;" fill="none"></ellipse><ellipse cx="163" cy="547.1406" rx="6" ry="6" style="stroke:#111111;stroke-width:1.0;" fill="#222222"></ellipse><polygon style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" points="127,424.6719,199,424.6719,211,436.6719,199,448.6719,127,448.6719,115,436.6719,127,424.6719"></polygon><text lengthAdjust="spacing" x="167" font-size="12" textLength="27" y="459.8105" font-family="Arial" fill="#000000">nein</text><text lengthAdjust="spacing" x="127" font-size="12" textLength="72" y="440.8262" font-family="Arial" fill="#000000">einloesbar?</text><text lengthAdjust="spacing" x="211" font-size="12" textLength="11" y="433.8418" font-family="Arial" fill="#000000">ja</text><rect rx="4" ry="4" width="236" x="45" y="600.1406" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="33.9688"></rect><text lengthAdjust="spacing" x="55" font-size="12" textLength="216" y="621.2793" font-family="Arial" fill="#000000">FD setzt Task.status = in-progress</text><rect rx="4" ry="4" width="298" x="14" y="654.1094" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="33.9688"></rect><text lengthAdjust="spacing" x="24" font-size="12" textLength="278" y="675.248" font-family="Arial" fill="#000000">FD erzeugt Secret und speichert Task.owner</text><rect rx="4" ry="4" width="194" x="66" y="708.0781" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="33.9688"></rect><text lengthAdjust="spacing" x="76" font-size="12" textLength="174" y="729.2168" font-family="Arial" fill="#000000">FD liefert Task + QES-Binary</text><rect rx="4" ry="4" width="226" x="50" y="762.0469" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="33.9688"></rect><text lengthAdjust="spacing" x="60" font-size="12" textLength="206" y="783.1855" font-family="Arial" fill="#000000">FD triggert Push an Versicherten</text><ellipse cx="163" cy="827.0156" rx="11" ry="11" style="stroke:#222222;stroke-width:1.0;" fill="none"></ellipse><ellipse cx="163" cy="827.0156" rx="6" ry="6" style="stroke:#111111;stroke-width:1.0;" fill="#222222"></ellipse><line y1="67.2969" x1="163" y2="87.2969" style="stroke:#2F4F4F;stroke-width:1.0;" x2="163"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="159,77.2969,163,87.2969,167,77.2969,163,81.2969"></polygon><line y1="121.2656" x1="163" y2="141.2656" style="stroke:#2F4F4F;stroke-width:1.0;" x2="163"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="159,131.2656,163,141.2656,167,131.2656,163,135.2656"></polygon><line y1="278.1875" x1="163" y2="306.7031" style="stroke:#2F4F4F;stroke-width:1.0;" x2="163"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="159,296.7031,163,306.7031,167,296.7031,163,300.7031"></polygon><line y1="219.2344" x1="163" y2="244.2188" style="stroke:#2F4F4F;stroke-width:1.0;" x2="163"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="159,234.2188,163,244.2188,167,234.2188,163,238.2188"></polygon><line y1="207.2344" x1="187" y2="207.2344" style="stroke:#2F4F4F;stroke-width:1.0;" x2="240.5"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="236.5,276.7031,240.5,286.7031,244.5,276.7031,240.5,280.7031"></polygon><line y1="207.2344" x1="240.5" y2="350.7031" style="stroke:#2F4F4F;stroke-width:1.0;" x2="240.5"></line><line y1="350.7031" x1="240.5" y2="350.7031" style="stroke:#2F4F4F;stroke-width:1.0;" x2="163"></line><line y1="350.7031" x1="163" y2="370.7031" style="stroke:#2F4F4F;stroke-width:1.0;" x2="163"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="159,360.7031,163,370.7031,167,360.7031,163,364.7031"></polygon><line y1="175.2344" x1="163" y2="195.2344" style="stroke:#2F4F4F;stroke-width:1.0;" x2="163"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="159,185.2344,163,195.2344,167,185.2344,163,189.2344"></polygon><line y1="507.625" x1="163" y2="536.1406" style="stroke:#2F4F4F;stroke-width:1.0;" x2="163"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="159,526.1406,163,536.1406,167,526.1406,163,530.1406"></polygon><line y1="448.6719" x1="163" y2="473.6563" style="stroke:#2F4F4F;stroke-width:1.0;" x2="163"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="159,463.6563,163,473.6563,167,463.6563,163,467.6563"></polygon><line y1="436.6719" x1="211" y2="436.6719" style="stroke:#2F4F4F;stroke-width:1.0;" x2="223"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="219,506.1406,223,516.1406,227,506.1406,223,510.1406"></polygon><line y1="436.6719" x1="223" y2="580.1406" style="stroke:#2F4F4F;stroke-width:1.0;" x2="223"></line><line y1="580.1406" x1="223" y2="580.1406" style="stroke:#2F4F4F;stroke-width:1.0;" x2="163"></line><line y1="580.1406" x1="163" y2="600.1406" style="stroke:#2F4F4F;stroke-width:1.0;" x2="163"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="159,590.1406,163,600.1406,167,590.1406,163,594.1406"></polygon><line y1="404.6719" x1="163" y2="424.6719" style="stroke:#2F4F4F;stroke-width:1.0;" x2="163"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="159,414.6719,163,424.6719,167,414.6719,163,418.6719"></polygon><line y1="634.1094" x1="163" y2="654.1094" style="stroke:#2F4F4F;stroke-width:1.0;" x2="163"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="159,644.1094,163,654.1094,167,644.1094,163,648.1094"></polygon><line y1="688.0781" x1="163" y2="708.0781" style="stroke:#2F4F4F;stroke-width:1.0;" x2="163"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="159,698.0781,163,708.0781,167,698.0781,163,702.0781"></polygon><line y1="742.0469" x1="163" y2="762.0469" style="stroke:#2F4F4F;stroke-width:1.0;" x2="163"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="159,752.0469,163,762.0469,167,752.0469,163,756.0469"></polygon><line y1="796.0156" x1="163" y2="816.0156" style="stroke:#2F4F4F;stroke-width:1.0;" x2="163"></line><polygon style="stroke:#2F4F4F;stroke-width:1.0;" fill="#2F4F4F" points="159,806.0156,163,816.0156,167,806.0156,163,810.0156"></polygon></g></svg>
+  </div>
+  <figcaption><strong>Abbildung: </strong>Ablauf Operation `$accept`</figcaption>
+</figure>
+
+<h3 id="sicherheitsanforderungen">Sicherheitsanforderungen</h3>
+
+<p>Generelle Sicherheitsanforderungen werden <a href="./menu-schnittstellen-datenschutz-und-sicherheit.html">hier</a> festgehalten.</p>
+
+
+
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+  <script src="assets/js/window-hash.js" type="text/javascript"> </script>
+  <a name="bottom"> </a>
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Feb 20, 2026 06:43+0000">2026-02-20</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>

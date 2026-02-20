@@ -19,115 +19,91 @@ Version 1.0.0-draft - ci-build
   "resourceType" : "Bundle",
   "id" : "Bundle-AcceptOperation",
   "meta" : {
-    "profile" : [
-      "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-bundle-op-accept"
-    ]
+    "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-PR-Bundle-OP-Accept"]
   },
   "type" : "collection",
-  "link" : [
-    {
-      "relation" : "self",
-      "url" : "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/160.000.033.491.280.78/$accept/"
+  "link" : [{
+    "relation" : "self",
+    "url" : "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/160.000.033.491.280.78/$accept/"
+  }],
+  "entry" : [{
+    "fullUrl" : "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/d70932d1-9e1c-483c-b2d4-b7dced09b35e",
+    "resource" : {
+      "resourceType" : "Task",
+      "id" : "d70932d1-9e1c-483c-b2d4-b7dced09b35e",
+      "meta" : {
+        "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-PR-Task"],
+        "tag" : [{
+          "display" : "Task in IN-PROGRESS state claimed by pharmacy via $accept operation"
+        }]
+      },
+      "extension" : [{
+        "url" : "https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-EX-PrescriptionType",
+        "valueCoding" : {
+          "system" : "https://gematik.de/fhir/erp/CodeSystem/EFlowRxFlowType",
+          "code" : "160",
+          "display" : "Flowtype für Apothekenpflichtige Arzneimittel"
+        }
+      },
+      {
+        "url" : "https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-EX-AcceptDate",
+        "valueDate" : "2026-07-01"
+      },
+      {
+        "url" : "https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-EX-ExpiryDate",
+        "valueDate" : "2026-07-01"
+      }],
+      "identifier" : [{
+        "system" : "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
+        "value" : "160.000.033.491.280.78"
+      },
+      {
+        "system" : "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode",
+        "value" : "777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
+      }],
+      "status" : "in-progress",
+      "intent" : "order",
+      "for" : {
+        "identifier" : {
+          "system" : "http://fhir.de/sid/gkv/kvid-10",
+          "value" : "X123456789"
+        }
+      },
+      "authoredOn" : "2026-07-01T15:29:00+00:00",
+      "lastModified" : "2026-07-01T16:44:00.434+00:00",
+      "performerType" : [{
+        "coding" : [{
+          "system" : "https://gematik.de/fhir/erp/CodeSystem/EFlowRxOrganizationType",
+          "code" : "urn:oid:1.2.276.0.76.4.54",
+          "display" : "Öffentliche Apotheke"
+        }]
+      }],
+      "input" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "https://gematik.de/fhir/erp/CodeSystem/EFlowRxDocumentType",
+            "code" : "1",
+            "display" : "Health Care Provider Prescription"
+          }]
+        },
+        "valueReference" : {
+          "reference" : "Binary/PrescriptionBinary"
+        }
+      }]
     }
-  ],
-  "entry" : [
-    {
-      "fullUrl" : "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/d70932d1-9e1c-483c-b2d4-b7dced09b35e",
-      "resource" : {
-        "resourceType" : "Task",
-        "id" : "d70932d1-9e1c-483c-b2d4-b7dced09b35e",
-        "meta" : {
-          "profile" : [
-            "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-task"
-          ],
-          "tag" : [
-            {
-              "display" : "Task in IN-PROGRESS state claimed by pharmacy via $accept operation"
-            }
-          ]
-        },
-        "extension" : [
-          {
-            "url" : "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-prescriptiontype-extension",
-            "valueCoding" : {
-              "system" : "https://gematik.de/fhir/erp/CodeSystem/EFlowRxFlowType",
-              "code" : "160",
-              "display" : "Flowtype für Apothekenpflichtige Arzneimittel"
-            }
-          },
-          {
-            "url" : "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-acceptdate-extension",
-            "valueDate" : "2026-07-01"
-          },
-          {
-            "url" : "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-expirydate-extension",
-            "valueDate" : "2026-07-01"
-          }
-        ],
-        "identifier" : [
-          {
-            "system" : "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
-            "value" : "160.000.033.491.280.78"
-          },
-          {
-            "system" : "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode",
-            "value" : "777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
-          }
-        ],
-        "status" : "in-progress",
-        "intent" : "order",
-        "for" : {
-          "identifier" : {
-            "system" : "http://fhir.de/sid/gkv/kvid-10",
-            "value" : "X123456789"
-          }
-        },
-        "authoredOn" : "2026-07-01T15:29:00+00:00",
-        "lastModified" : "2026-07-01T16:44:00.434+00:00",
-        "performerType" : [
-          {
-            "coding" : [
-              {
-                "system" : "https://gematik.de/fhir/erp/CodeSystem/EFlowRxOrganizationType",
-                "code" : "urn:oid:1.2.276.0.76.4.54",
-                "display" : "Öffentliche Apotheke"
-              }
-            ]
-          }
-        ],
-        "input" : [
-          {
-            "type" : {
-              "coding" : [
-                {
-                  "system" : "https://gematik.de/fhir/erp/CodeSystem/EFlowRxDocumentType",
-                  "code" : "1",
-                  "display" : "Health Care Provider Prescription"
-                }
-              ]
-            },
-            "valueReference" : {
-              "reference" : "Binary/PrescriptionBinary"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl" : "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Binary/PrescriptionBinaryWithMeta",
-      "resource" : {
-        "resourceType" : "Binary",
-        "id" : "PrescriptionBinaryWithMeta",
-        "meta" : {
-          "profile" : [
-            "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-binary"
-          ]
-        },
-        "contentType" : "application/pkcs7-mime",
-        "data" : "dGhpcyBibG9iIGlzIHNuaXBwZWQ="
-      }
+  },
+  {
+    "fullUrl" : "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Binary/PrescriptionBinaryWithMeta",
+    "resource" : {
+      "resourceType" : "Binary",
+      "id" : "PrescriptionBinaryWithMeta",
+      "meta" : {
+        "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-PR-Binary"]
+      },
+      "contentType" : "application/pkcs7-mime",
+      "data" : "dGhpcyBibG9iIGlzIHNuaXBwZWQ="
     }
-  ]
+  }]
 }
 
 ```

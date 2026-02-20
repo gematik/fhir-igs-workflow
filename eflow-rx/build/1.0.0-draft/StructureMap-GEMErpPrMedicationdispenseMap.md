@@ -39,64 +39,50 @@ Version 1.0.0-draft - ci-build
   "status" : "active",
   "date" : "2026-02-02",
   "publisher" : "gematik GmbH",
-  "contact" : [
-    {
-      "name" : "gematik GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://gematik.de"
-        },
-        {
-          "system" : "email",
-          "value" : "erp-umsetzung@gematik.de"
-        }
-      ]
-    }
-  ],
-  "description" : "Auto-generated StructureMap for GEM_ERP_PR_MedicationDispense|1.6.1 -> EPAMedicationDispense|1.3.0",
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "DE",
-          "display" : "Germany"
-        }
-      ]
-    }
-  ],
-  "structure" : [
-    {
-      "url" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense",
-      "mode" : "source",
-      "alias" : "GEMERPPRMedicationDispense"
+  "contact" : [{
+    "name" : "gematik GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://gematik.de"
     },
     {
-      "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-dispense",
-      "mode" : "target",
-      "alias" : "EPAMedicationDispense"
-    }
-  ],
-  "group" : [
+      "system" : "email",
+      "value" : "erp-umsetzung@gematik.de"
+    }]
+  }],
+  "description" : "Auto-generated StructureMap for GEM_ERP_PR_MedicationDispense|1.6.1 -> EPAMedicationDispense|1.3.0",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "structure" : [{
+    "url" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense",
+    "mode" : "source",
+    "alias" : "GEMERPPRMedicationDispense"
+  },
+  {
+    "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-dispense",
+    "mode" : "target",
+    "alias" : "EPAMedicationDispense"
+  }],
+  "group" : [{
+    "name" : "GEMErpPrMedicationdispenseMap",
+    "typeMode" : "types",
+    "documentation" : "Mapping generated for GEM_ERP_PR_MedicationDispense|1.6.1 -> EPAMedicationDispense|1.3.0",
+    "input" : [{
+      "name" : "GEMERPPRMedicationDispense",
+      "type" : "GEMERPPRMedicationDispense",
+      "mode" : "source"
+    },
     {
-      "name" : "GEMErpPrMedicationdispenseMap",
-      "typeMode" : "types",
-      "documentation" : "Mapping generated for GEM_ERP_PR_MedicationDispense|1.6.1 -> EPAMedicationDispense|1.3.0",
-      "input" : [
-        {
-          "name" : "GEMERPPRMedicationDispense",
-          "type" : "GEMERPPRMedicationDispense",
-          "mode" : "source"
-        },
-        {
-          "name" : "EPAMedicationDispense",
-          "type" : "EPAMedicationDispense",
-          "mode" : "target"
-        }
-      ]
-    }
-  ]
+      "name" : "EPAMedicationDispense",
+      "type" : "EPAMedicationDispense",
+      "mode" : "target"
+    }]
+  }]
 }
 
 ```

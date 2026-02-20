@@ -22,11 +22,11 @@ Die folgenden Value Sets sind für die FHIR-Data-Service-Funktionalitäten festg
 
 | | |
 | :--- | :--- |
-| [ ValueSet der Verfügbarkeitsstatus-Codes ](ValueSet-eflow-rx-availabilitystatus.md) | Art des Verfügbarkeitsstatus für die Verfügbarkeitsanfrage von Medikamenten |
-| [ ValueSet der Dokumenttyp-Codes ](ValueSet-eflow-rx-documenttype.md) | Art der Dokumente je nach Empfänger. |
-| [ ValueSet der FlowType-Codes ](ValueSet-eflow-rx-flowtype.md) | Zeigt die verschiedenen Arten des E-Rezepts entsprechend den Verschreibungsformularen. |
-| [ GEM ERP VS OperationOutcomeDetails ](ValueSet-eflow-rx-operationoutcomedetails.md) | Fachliche Fehlercodes des E-Rezept-Fachdienst |
-| [ ValueSet der Organisationstyp-Codes ](ValueSet-eflow-rx-organizationtype.md) | Art der Organisation |
+| [ ValueSet der Verfügbarkeitsstatus-Codes ](ValueSet-GEM-ERP-VS-AvailabilityStatus.md) | Art des Verfügbarkeitsstatus für die Verfügbarkeitsanfrage von Medikamenten |
+| [ ValueSet der Dokumenttyp-Codes ](ValueSet-GEM-ERP-VS-DocumentType.md) | Art der Dokumente je nach Empfänger. |
+| [ ValueSet der FlowType-Codes ](ValueSet-GEM-ERP-VS-FlowType.md) | Zeigt die verschiedenen Arten des E-Rezepts entsprechend den Verschreibungsformularen. |
+| [ GEM ERP VS OperationOutcomeDetails ](ValueSet-GEM-ERP-VS-OperationOutcomeDetails.md) | Fachliche Fehlercodes des E-Rezept-Fachdienst |
+| [ ValueSet der Organisationstyp-Codes ](ValueSet-GEM-ERP-VS-OrganizationType.md) | Art der Organisation |
 
 ### Terminologien: Code Systems
 
@@ -37,11 +37,11 @@ Die folgenden Value Sets sind für die FHIR-Data-Service-Funktionalitäten festg
 
 | | |
 | :--- | :--- |
-| [ CodeSystem des Verfügbarkeitsstatus ](CodeSystem-eflow-rx-availabilitystatus.md) | Typ des Verfügbarkeitsstatus für die Anfrage zur Medikamentenverfügbarkeit. |
-| [ CodeSystem der Dokumententypen ](CodeSystem-eflow-rx-documenttype.md) | Dokumententyp abhängig vom Empfänger des Bundles. |
-| [ CodeSystem der Flowtypen ](CodeSystem-eflow-rx-flowtype.md) | Zeigt die verschiedenen Typen des E-Rezept Workflows entsprechend der Verordnungsformulare. WICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheken wie z.B. Pharmazeutische Dienstleistungen! |
-| [ GEM ERP CS OperationOutcomeDetails ](CodeSystem-eflow-rx-operationoutcomedetails.md) | Fachliche Fehlercodes des E-Rezept-Fachdienst |
-| [ CodeSystem der Organisationstyp-Codes ](CodeSystem-eflow-rx-organizationtype.md) | Typ der Organisation, bei der E-Rezepte eingelöst werden können. |
+| [ CodeSystem des Verfügbarkeitsstatus ](CodeSystem-GEM-ERP-CS-AvailabilityStatus.md) | Typ des Verfügbarkeitsstatus für die Anfrage zur Medikamentenverfügbarkeit. |
+| [ CodeSystem der Dokumententypen ](CodeSystem-GEM-ERP-CS-DocumentType.md) | Dokumententyp abhängig vom Empfänger des Bundles. |
+| [ CodeSystem der Flowtypen ](CodeSystem-GEM-ERP-CS-FlowType.md) | Zeigt die verschiedenen Typen des E-Rezept Workflows entsprechend der Verordnungsformulare. WICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheken wie z.B. Pharmazeutische Dienstleistungen! |
+| [ GEM ERP CS OperationOutcomeDetails ](CodeSystem-GEM-ERP-CS-OperationOutcomeDetails.md) | Fachliche Fehlercodes des E-Rezept-Fachdienst |
+| [ CodeSystem der Organisationstyp-Codes ](CodeSystem-GEM-ERP-CS-OrganizationType.md) | Typ der Organisation, bei der E-Rezepte eingelöst werden können. |
 
 ### Systemverhalten
 
@@ -85,15 +85,32 @@ Das **Capability** **Statement** beschreibt die Anforderungen und Fähigkeiten, 
 
 ### Ressourcenprofile
 
-|
-|
+| | |
+| :--- | :--- |
+| [ GEM ERP PR AuditEvent ](StructureDefinition-GEM-ERP-PR-AuditEvent.md) | AuditEvent für die Protokollierung des Zugriffs auf eRezepte |
+| [ GEM ERP PR Binary ](StructureDefinition-GEM-ERP-PR-Binary.md) | PKCS7 signiertes Bundle im enveloping style |
+| [ GEM ERP PR Bundle OP Accept ](StructureDefinition-GEM-ERP-PR-Bundle-OP-Accept.md) | Antwort des E-Rezept-Fachdienst auf die $accept-Operation |
+| [ GEM ERP PR Bundle ](StructureDefinition-GEM-ERP-PR-Bundle.md) | Dokumentenbündel für Quittung |
+| [ GEM ERP PR Communication DispReq ](StructureDefinition-GEM-ERP-PR-Communication-DispReq.md) | Anfrage zur Einlösung des E-Rezepts |
+| [ GEM ERP PR Communication Reply ](StructureDefinition-GEM-ERP-PR-Communication-Reply.md) | Antwort vom Leistungserbringer an den Patienten |
+| [ GEM ERP PR Communication Representative ](StructureDefinition-GEM-ERP-PR-Communication-Representative.md) | Kommunikation zwischen Patient und Vertreter |
+| [ GEM ERP PR Communication ](StructureDefinition-GEM-ERP-PR-Communication.md) | Generische Workflow-Communication |
+| [ GEM ERP PR Composition ](StructureDefinition-GEM-ERP-PR-Composition.md) | Quittung für die Einlösung eines E-Rezepts |
+| [ GEM ERP PR Device ](StructureDefinition-GEM-ERP-PR-Device.md) | Statische Informationen auf dem E-Rezept-Fachdienst |
+| [ GEM ERP PR Digest ](StructureDefinition-GEM-ERP-PR-Digest.md) | QES-Digest in Binary |
+| [ GEM ERP PR Medication ](StructureDefinition-GEM-ERP-PR-Medication.md) | Medikament zur Ausgabe des Rezepts |
+| [ GEM ERP PR MedicationDispense ](StructureDefinition-GEM-ERP-PR-MedicationDispense.md) | Dispensierung eines E-Rezepts |
+| [ GEM ERP PR Task ](StructureDefinition-GEM-ERP-PR-Task.md) | Task für die Verwaltung des E-Rezept-Workflows |
 
 **Tabelle:**Ressourcenprofile
 
 ### Datentypen
 
-|
-|
+| | |
+| :--- | :--- |
+| [ GEM ERP PR AccessCode ](StructureDefinition-GEM-ERP-PR-AccessCode.md) | Der AccessCode ist ein generiertes Geheimnis, das Zugriff auf eine E-Rezept-Ressource gewährt, z. B. Task. |
+| [ GEM ERP PR Secret ](StructureDefinition-GEM-ERP-PR-Secret.md) | Das Secret ist ein generiertes Geheimnis, das Zugriff auf eine E-Rezept-Ressource gewährt, z. B. Task. |
+| [ GEM_ERP_PR_Signature ](StructureDefinition-GEM-ERP-PR-Signature.md) | Profil für die Signatur von Bundles im E-Rezept-Kontext |
 
 **Tabelle:**Datentypen
 
@@ -101,16 +118,16 @@ Das **Capability** **Statement** beschreibt die Anforderungen und Fähigkeiten, 
 
 | | |
 | :--- | :--- |
-| [ GEM ERP EX AcceptDate ](StructureDefinition-eflow-rx-acceptdate-extension.md) | Diese Extension sollte in der Task-Ressource verwendet werden. Sie speichert das Datum, bis zu dem eine Krankenkasse die Verschreibung akzeptiert und bezahlt. |
-| [ GEM ERP EX AvailabilityState ](StructureDefinition-eflow-rx-availabilitystate-extension.md) | Extension zur Angabe von Typ des Verfügbarkeitsstatus für die Anfrage zur Medikamentenverfügbarkeit. |
-| [ GEM ERP EX Beneficiary ](StructureDefinition-eflow-rx-beneficiary-extension.md) | Der Begünstigte (z. B. Apotheke) des E-Rezept-Beleg, der erstellt wird, wenn der E-Rezept-Workflow abgeschlossen ist. |
+| [ GEM ERP EX AcceptDate ](StructureDefinition-GEM-ERP-EX-AcceptDate.md) | Diese Extension sollte in der Task-Ressource verwendet werden. Sie speichert das Datum, bis zu dem eine Krankenkasse die Verschreibung akzeptiert und bezahlt. |
+| [ GEM ERP EX AvailabilityState ](StructureDefinition-GEM-ERP-EX-AvailabilityState.md) | Extension zur Angabe von Typ des Verfügbarkeitsstatus für die Anfrage zur Medikamentenverfügbarkeit. |
+| [ GEM ERP EX Beneficiary ](StructureDefinition-GEM-ERP-EX-Beneficiary.md) | Der Begünstigte (z. B. Apotheke) des E-Rezept-Beleg, der erstellt wird, wenn der E-Rezept-Workflow abgeschlossen ist. |
+| [ GEM ERP EX ExpiryDate ](StructureDefinition-GEM-ERP-EX-ExpiryDate.md) | Diese Erweiterung sollte in der Task-Ressource verwendet werden. Sie zeigt das Ablaufdatum des Rezepts an. |
+| [ GEM ERP EX InsuranceProvider ](StructureDefinition-GEM-ERP-EX-InsuranceProvider.md) | IK-Nummer (Institutionskennzeichen) des Versicherungsträgers, der das angeforderte Medikament abdeckt |
+| [ GEM ERP EX LastMedicationDispense ](StructureDefinition-GEM-ERP-EX-LastMedicationDispense.md) | Diese Erweiterung sollte in der Task-Ressource verwendet werden. Sie zeigt den Zeitstempel der letzten Ausgabe an. |
+| [ GEM ERP EX PrescriptionType ](StructureDefinition-GEM-ERP-EX-PrescriptionType.md) | Definiert den Typ eines Rezepts. |
+| [ GEM ERP EX SupplyOptionsType ](StructureDefinition-GEM-ERP-EX-SupplyOptionsType.md) | Extension zur Angabe des bevorzugten Versorgungskanals |
 | [ GEM ERP EX EU IS REDEEMABLE BY PATIENT AUTHORIZATION ](StructureDefinition-eflow-rx-eu-is-redeemable-by-patient-authorization-extension.md) | Extension zur Angabe des Nutzers, ob das E-Rezept in der EU zur Einlösung verfügbar sein soll oder nicht. |
 | [ GEM ERP EX EU IS REDEEMABLE BY PROPERTIES ](StructureDefinition-eflow-rx-eu-is-redeemable-by-properties-extension.md) | Extension zur vom E-Rezept-Fachdienst ermittelten Angabe, ob das E-Rezept in der EU zur Einlösung verfügbar sein soll oder nicht. |
-| [ GEM ERP EX ExpiryDate ](StructureDefinition-eflow-rx-expirydate-extension.md) | Diese Erweiterung sollte in der Task-Ressource verwendet werden. Sie zeigt das Ablaufdatum des Rezepts an. |
-| [ GEM ERP EX InsuranceProvider ](StructureDefinition-eflow-rx-insuranceprovider-extension.md) | IK-Nummer (Institutionskennzeichen) des Versicherungsträgers, der das angeforderte Medikament abdeckt |
-| [ GEM ERP EX LastMedicationDispense ](StructureDefinition-eflow-rx-lastmedicationdispense-extension.md) | Diese Erweiterung sollte in der Task-Ressource verwendet werden. Sie zeigt den Zeitstempel der letzten Ausgabe an. |
-| [ GEM ERP EX PrescriptionType ](StructureDefinition-eflow-rx-prescriptiontype-extension.md) | Definiert den Typ eines Rezepts. |
-| [ GEM ERP EX SupplyOptionsType ](StructureDefinition-eflow-rx-supplyoptionstype-extension.md) | Extension zur Angabe des bevorzugten Versorgungskanals |
 
 **Tabelle:**Extension Definitions
 

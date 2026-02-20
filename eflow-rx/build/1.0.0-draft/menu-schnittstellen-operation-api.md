@@ -9,33 +9,35 @@ Version 1.0.0-draft - ci-build
 
 ## Operation API
 
-Die folgenden Operation APIs stellt der E-Rezept-Fachdienst dem **Primärsystem eRp** sowie dem **eRp-FdV** zur Verfügung.
+Die folgenden Operation APIs stellt der E-Rezept-Fachdienst im RX-Modul bereit.
+
+## Lesereihenfolge
+
+1. Zuerst die moduluebergreifende Basis in eFlow Core:
+* [Core: Operation API](https://gemspec.gematik.de/ig/fhir/eflow-core/latest/operation-api.html)
+
+1. Danach die RX-spezifischen Ergaenzungen in diesem Modul.
+1. Pro Operation gilt die gleiche Seitenstruktur:
+* Nachricht
+* Anforderungen an Schnittstelle (FD + Client als Unterseiten)
+* API Beschreibung aus CapabilityStatement/OperationDefinition
+* Hinweis
+* Geschaeftslogik (Ablaufdiagramm)
 
 ### E-Rezepte bereitstellen
 
-* Primärsystem: [Operation API: E-Rezept erstellen](./op-create.md)
-* Primärsystem: [Operation API: E-Rezept aktivieren](./op-activate.md)
-* Primärsystem: [Operation API: E-Rezept löschen](./op-abort.md)
+* Primaersystem: [Operation API: E-Rezept erstellen](./op-create.md)
+* Primaersystem: [Operation API: E-Rezept aktivieren](./op-activate.md)
+* Primaersystem / Versicherter / Apotheke: [Operation API: E-Rezept loeschen](./op-abort.md)
 
 ### E-Rezepte beliefern
 
-tbd
+* Abgebende LEI / Kostentraeger: [Operation API: Task akzeptieren](./op-accept.md)
+* Abgebende LEI / Kostentraeger: [Operation API: Task zurueckweisen](./op-reject.md)
+* Abgebende LEI: [Operation API: Dispensierinformationen bereitstellen](./op-dispense.md)
+* Abgebende LEI / Kostentraeger: [Operation API: Task schliessen](./op-close.md)
 
-### Mehrfachverordnung (MVO) – API-relevante Besonderheiten
+### Mehrfachverordnung (MVO)
 
-Für die Mehrfachverordnung gelten zusätzliche Regeln auf den bestehenden Operationen (keine neuen Endpunkte):
-
-**$activate (Task aktivieren)**
-
-* Nur zulässig für Flowtype 160, 169, 200, 209.
-* `Numerator` und `Denominator` müssen die Teilverordnungen 2..4 abbilden, mit `1 ≤ Numerator ≤ Denominator ≤ 4`.
-* MVO-Daten dürfen **nur** gesetzt sein, wenn das MVO-Kennzeichen = true ist.
-* Keine Kombination mit Entlassrezepten oder Ersatzverordnungen.
-* `valuePeriod.start` ist Pflicht; `valuePeriod.end` optional (sonst Standard: Ausstellungsdatum + 365 Tage).
-
-**$accept (Task abrufen)**
-
-* Liegt der Beginn der Einlösefrist in der Zukunft, MUSS der Fachdienst mit HTTP 403 antworten und im `OperationOutcome` den Beginn der Einlösefrist nennen.
-
-Die Detailanforderungen sind in der Operation [op-activate.html](./op-activate.md) dokumentiert.
+Die MVO-Regeln werden ueber die bestehende Operation `$activate` erzwungen und sind auf der Seite [Operation API: E-Rezept aktivieren](./op-activate.md) dokumentiert.
 

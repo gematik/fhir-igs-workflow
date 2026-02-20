@@ -1,0 +1,73 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/erp/CodeSystem/GEM-ERP-CS-AvailabilityStatus> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "GEM-ERP-CS-AvailabilityStatus"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem GEM-ERP-CS-AvailabilityStatus</b></p><a name=\"GEM-ERP-CS-AvailabilityStatus\"> </a><a name=\"hcGEM-ERP-CS-AvailabilityStatus\"> </a><p>This case-sensitive code system <code>https://gematik.de/fhir/erp/CodeSystem/GEM-ERP-CS-AvailabilityStatus</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">10<a name=\"GEM-ERP-CS-AvailabilityStatus-10\"> </a></td><td>sofort verfügbar</td></tr><tr><td style=\"white-space:nowrap\">20<a name=\"GEM-ERP-CS-AvailabilityStatus-20\"> </a></td><td>noch Heute verfügbar</td></tr><tr><td style=\"white-space:nowrap\">30<a name=\"GEM-ERP-CS-AvailabilityStatus-30\"> </a></td><td>am nächsten Werktag - vormittags</td></tr><tr><td style=\"white-space:nowrap\">40<a name=\"GEM-ERP-CS-AvailabilityStatus-40\"> </a></td><td>am nächsten Werktag- nachmittags</td></tr><tr><td style=\"white-space:nowrap\">50<a name=\"GEM-ERP-CS-AvailabilityStatus-50\"> </a></td><td>nicht verfügbar</td></tr><tr><td style=\"white-space:nowrap\">90<a name=\"GEM-ERP-CS-AvailabilityStatus-90\"> </a></td><td>unbekannt</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://gematik.de/fhir/erp/CodeSystem/GEM-ERP-CS-AvailabilityStatus"^^xsd:anyURI ;
+     fhir:l <https://gematik.de/fhir/erp/CodeSystem/GEM-ERP-CS-AvailabilityStatus>
+  ] ; # 
+  fhir:version [ fhir:v "1.0.0-draft"] ; # 
+  fhir:name [ fhir:v "GEM_ERP_CS_AvailabilityStatus"] ; # 
+  fhir:title [ fhir:v "CodeSystem des Verfügbarkeitsstatus"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-12-15"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "gematik GmbH"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "gematik GmbH" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://gematik.de" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "erp-umsetzung@gematik.de" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Typ des Verfügbarkeitsstatus für die Anfrage zur Medikamentenverfügbarkeit."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "DE" ] ;
+       fhir:display [ fhir:v "Germany" ]
+     ] )
+  ] ) ; # 
+  fhir:copyright [ fhir:v "gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.html), Version 2.0."] ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "6"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "10" ] ;
+     fhir:display [ fhir:v "sofort verfügbar" ]
+  ] [
+     fhir:code [ fhir:v "20" ] ;
+     fhir:display [ fhir:v "noch Heute verfügbar" ]
+  ] [
+     fhir:code [ fhir:v "30" ] ;
+     fhir:display [ fhir:v "am nächsten Werktag - vormittags" ]
+  ] [
+     fhir:code [ fhir:v "40" ] ;
+     fhir:display [ fhir:v "am nächsten Werktag- nachmittags" ]
+  ] [
+     fhir:code [ fhir:v "50" ] ;
+     fhir:display [ fhir:v "nicht verfügbar" ]
+  ] [
+     fhir:code [ fhir:v "90" ] ;
+     fhir:display [ fhir:v "unbekannt" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -18,15 +18,13 @@ Version 1.0.0-draft - ci-build
 {
   "resourceType" : "OperationOutcome",
   "id" : "ExampleOperationAcceptError",
-  "issue" : [
-    {
-      "severity" : "error",
-      "code" : "conflict",
-      "details" : {
-        "text" : "Task has invalid status draft"
-      }
+  "issue" : [{
+    "severity" : "error",
+    "code" : "conflict",
+    "details" : {
+      "text" : "Task has invalid status draft"
     }
-  ]
+  }]
 }
 
 ```

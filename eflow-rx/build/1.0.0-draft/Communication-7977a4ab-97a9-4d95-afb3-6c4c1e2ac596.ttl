@@ -11,8 +11,8 @@
   fhir:id [ fhir:v "7977a4ab-97a9-4d95-afb3-6c4c1e2ac596"] ; # 
   fhir:meta [
      fhir:profile ( [
-       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-communication-reply"^^xsd:anyURI ;
-       fhir:l <https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-communication-reply>
+       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-PR-Communication-Reply"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-PR-Communication-Reply>
      ] ) ;
      fhir:tag ( [
        fhir:display [ fhir:v "Reply from Pharmacy to Patient" ]
@@ -22,7 +22,7 @@
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "extensions" ] ;
-     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Communication 7977a4ab-97a9-4d95-afb3-6c4c1e2ac596</b></p><a name=\"7977a4ab-97a9-4d95-afb3-6c4c1e2ac596\"> </a><a name=\"hc7977a4ab-97a9-4d95-afb3-6c4c1e2ac596\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-eflow-rx-communication-reply.html\">GEM ERP PR Communication Reply</a></p><p style=\"margin-bottom: 0px\">Tags: Reply from Pharmacy to Patient (Details: [not stated] code null = 'Reply from Pharmacy to Patient'), Communication message sent by pharmacy to patient in response to a previous Task-related message (Details: [not stated] code null = 'Communication message sent by pharmacy to patient in response to a previous Task-related message')</p></div><p><b>basedOn</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Task/160.000.033.491.280.78\">Task/160.000.033.491.280.78</a></p><p><b>status</b>: Unknown</p><p><b>sent</b>: 2026-07-01 15:29:00+0000</p><p><b>recipient</b>: Identifier: NamingSystemKVID/X234567890</p><p><b>sender</b>: Identifier: <code>https://gematik.de/fhir/sid/telematik-id</code>/3-SMC-B-Testkarte-883110000123465</p><blockquote><p><b>payload</b></p><p><b>GEM ERP EX AvailabilityState</b>: <a href=\"CodeSystem-eflow-rx-availabilitystatus.html#eflow-rx-availabilitystatus-20\">CodeSystem des Verfügbarkeitsstatus: 20</a> (noch Heute verfügbar)</p><blockquote><p><b>GEM ERP EX SupplyOptionsType</b></p><ul><li>delivery: true</li><li>onPremise: true</li><li>shipment: false</li></ul></blockquote><p><b>content</b>: Eisern</p></blockquote></div>"^^rdf:XMLLiteral ]
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Communication 7977a4ab-97a9-4d95-afb3-6c4c1e2ac596</b></p><a name=\"7977a4ab-97a9-4d95-afb3-6c4c1e2ac596\"> </a><a name=\"hc7977a4ab-97a9-4d95-afb3-6c4c1e2ac596\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-GEM-ERP-PR-Communication-Reply.html\">GEM ERP PR Communication Reply</a></p><p style=\"margin-bottom: 0px\">Tags: Reply from Pharmacy to Patient (Details: [not stated] code null = 'Reply from Pharmacy to Patient'), Communication message sent by pharmacy to patient in response to a previous Task-related message (Details: [not stated] code null = 'Communication message sent by pharmacy to patient in response to a previous Task-related message')</p></div><p><b>basedOn</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Task/160.000.033.491.280.78\">Task/160.000.033.491.280.78</a></p><p><b>status</b>: Unknown</p><p><b>sent</b>: 2026-07-01 15:29:00+0000</p><p><b>recipient</b>: Identifier: NamingSystemKVID/X234567890</p><p><b>sender</b>: Identifier: <code>https://gematik.de/fhir/sid/telematik-id</code>/3-SMC-B-Testkarte-883110000123465</p><blockquote><p><b>payload</b></p><p><b>GEM ERP EX AvailabilityState</b>: <a href=\"CodeSystem-GEM-ERP-CS-AvailabilityStatus.html#GEM-ERP-CS-AvailabilityStatus-20\">CodeSystem des Verfügbarkeitsstatus: 20</a> (noch Heute verfügbar)</p><blockquote><p><b>GEM ERP EX SupplyOptionsType</b></p><ul><li>delivery: true</li><li>onPremise: true</li><li>shipment: false</li></ul></blockquote><p><b>content</b>: Eisern</p></blockquote></div>"^^rdf:XMLLiteral ]
   ] ; # 
   fhir:basedOn ( [
      fhir:l <https://gematik.de/fhir/erp/Task/160.000.033.491.280.78> ;
@@ -51,14 +51,14 @@
   fhir:payload ( [
      fhir:extension ( [
        fhir:url [
-         fhir:v "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-availabilitystate-extension"^^xsd:anyURI ;
-         fhir:l <https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-availabilitystate-extension>
+         fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-EX-AvailabilityState"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-EX-AvailabilityState>
        ] ;
        fhir:value [
          a fhir:Coding ;
          fhir:system [
-           fhir:v "https://gematik.de/fhir/erp/CodeSystem/eflow-rx-availabilitystatus"^^xsd:anyURI ;
-           fhir:l <https://gematik.de/fhir/erp/CodeSystem/eflow-rx-availabilitystatus>
+           fhir:v "https://gematik.de/fhir/erp/CodeSystem/GEM-ERP-CS-AvailabilityStatus"^^xsd:anyURI ;
+           fhir:l <https://gematik.de/fhir/erp/CodeSystem/GEM-ERP-CS-AvailabilityStatus>
          ] ;
          fhir:code [ fhir:v "20" ]
        ]
@@ -92,8 +92,8 @@
          ]
        ] ) ;
        fhir:url [
-         fhir:v "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-supplyoptionstype-extension"^^xsd:anyURI ;
-         fhir:l <https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-supplyoptionstype-extension>
+         fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-EX-SupplyOptionsType"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-EX-SupplyOptionsType>
        ]
      ] ) ;
      fhir:content [

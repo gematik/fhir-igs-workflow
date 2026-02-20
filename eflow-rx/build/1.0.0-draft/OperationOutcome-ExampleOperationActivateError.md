@@ -18,16 +18,14 @@ Version 1.0.0-draft - ci-build
 {
   "resourceType" : "OperationOutcome",
   "id" : "ExampleOperationActivateError",
-  "issue" : [
-    {
-      "severity" : "error",
-      "code" : "invalid",
-      "details" : {
-        "text" : "unknown or unexpected profile"
-      },
-      "diagnostics" : "Unable to determine profile type from name: https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle"
-    }
-  ]
+  "issue" : [{
+    "severity" : "error",
+    "code" : "invalid",
+    "details" : {
+      "text" : "unknown or unexpected profile"
+    },
+    "diagnostics" : "Unable to determine profile type from name: https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle"
+  }]
 }
 
 ```

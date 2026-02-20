@@ -18,227 +18,183 @@ Version 1.0.0-draft - ci-build
 {
   "resourceType" : "Parameters",
   "id" : "Parameters-output-example-5",
-  "parameter" : [
+  "parameter" : [{
+    "name" : "rxPrescription",
+    "part" : [{
+      "name" : "authoredOn",
+      "valueDateTime" : "2025-05-20"
+    },
     {
-      "name" : "rxPrescription",
-      "part" : [
-        {
-          "name" : "authoredOn",
-          "valueDateTime" : "2025-05-20"
+      "name" : "medication",
+      "resource" : {
+        "resourceType" : "Medication",
+        "meta" : {
+          "profile" : ["https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication"]
         },
-        {
-          "name" : "medication",
-          "resource" : {
-            "resourceType" : "Medication",
-            "meta" : {
-              "profile" : [
-                "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication"
-              ]
-            },
-            "extension" : [
-              {
-                "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension",
-                "valueCoding" : {
-                  "code" : "00"
-                }
-              },
-              {
-                "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension",
-                "valueBoolean" : false
-              }
-            ],
-            "code" : {
-              "coding" : [
-                {
-                  "system" : "https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Type",
-                  "code" : "rezeptur"
-                }
-              ]
-            },
-            "form" : {
-              "text" : "Lösung"
-            }
+        "extension" : [{
+          "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension",
+          "valueCoding" : {
+            "code" : "00"
           }
         },
         {
-          "name" : "medicationRequest",
-          "resource" : {
-            "resourceType" : "MedicationRequest",
-            "meta" : {
-              "profile" : [
-                "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-request"
-              ]
-            },
-            "extension" : [
-              {
-                "extension" : [
-                  {
-                    "url" : "algorithmVersion",
-                    "valueString" : "1.0.0"
-                  },
-                  {
-                    "url" : "language",
-                    "valueCode" : "de-DE"
-                  }
-                ],
-                "url" : "http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta"
-              },
-              {
-                "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/indicator-ser-extension",
-                "valueBoolean" : false
-              },
-              {
-                "extension" : [
-                  {
-                    "url" : "indicator",
-                    "valueBoolean" : false
-                  }
-                ],
-                "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/multiple-prescription-extension"
-              },
-              {
-                "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
-                "valueMarkdown" : "1–3mal/Tag auf die erkrankten Hautstellen auftragen"
-              }
-            ],
-            "status" : "active",
-            "intent" : "order",
-            "medicationReference" : {
-              "reference" : "Medication/5cd916fc-2ae2-4148-b016-911ec5f4c0a5"
-            },
-            "authoredOn" : "2025-05-20",
-            "requester" : {
-              "reference" : "Practitioner/ec5b4fcf-9739-4055-b23c-a5b3a65beb66"
-            },
-            "dosageInstruction" : [
-              {
-                "text" : "1–3mal/Tag auf die erkrankten Hautstellen auftragen"
-              }
-            ],
-            "dispenseRequest" : {
-              "quantity" : {
-                "value" : 1,
-                "unit" : "Packung"
-              }
-            },
-            "substitution" : {
-              "allowedBoolean" : true
-            }
-          }
+          "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension",
+          "valueBoolean" : false
+        }],
+        "code" : {
+          "coding" : [{
+            "system" : "https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Type",
+            "code" : "rezeptur"
+          }]
         },
-        {
-          "name" : "organization",
-          "resource" : {
-            "resourceType" : "Organization",
-            "meta" : {
-              "profile" : [
-                "https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory"
-              ]
-            },
-            "telecom" : [
-              {
-                "system" : "phone",
-                "value" : "0301234567"
-              },
-              {
-                "system" : "fax",
-                "value" : "030123456789"
-              },
-              {
-                "system" : "email",
-                "value" : "mvz@e-mail.de"
-              }
-            ],
-            "address" : [
-              {
-                "type" : "both",
-                "line" : ["Herbert-Lewin-Platz 2"],
-                "_line" : [
-                  {
-                    "extension" : [
-                      {
-                        "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                        "valueString" : "2"
-                      },
-                      {
-                        "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                        "valueString" : "Herbert-Lewin-Platz"
-                      }
-                    ]
-                  }
-                ],
-                "city" : "Berlin",
-                "postalCode" : "10623",
-                "country" : "D"
-              },
-              {
-                "type" : "both",
-                "line" : ["Herbert-Lewin-Platz 2"],
-                "_line" : [
-                  {
-                    "extension" : [
-                      {
-                        "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                        "valueString" : "2"
-                      },
-                      {
-                        "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                        "valueString" : "Herbert-Lewin-Platz"
-                      }
-                    ]
-                  }
-                ],
-                "city" : "Berlin",
-                "postalCode" : "10623",
-                "country" : "D"
-              }
-            ]
-          }
-        },
-        {
-          "name" : "practitioner",
-          "resource" : {
-            "resourceType" : "Practitioner",
-            "meta" : {
-              "profile" : [
-                "https://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory"
-              ]
-            },
-            "name" : [
-              {
-                "use" : "official",
-                "family" : "Schmidt",
-                "_family" : {
-                  "extension" : [
-                    {
-                      "url" : "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
-                      "valueString" : "Schmidt"
-                    }
-                  ]
-                },
-                "given" : ["Hanna"],
-                "prefix" : ["Dr."],
-                "_prefix" : [
-                  {
-                    "extension" : [
-                      {
-                        "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier",
-                        "valueCode" : "AC"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        },
-        {
-          "name" : "prescriptionId",
-          "valueString" : "160.100.000.000.024.67"
+        "form" : {
+          "text" : "Lösung"
         }
-      ]
-    }
-  ]
+      }
+    },
+    {
+      "name" : "medicationRequest",
+      "resource" : {
+        "resourceType" : "MedicationRequest",
+        "meta" : {
+          "profile" : ["https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-request"]
+        },
+        "extension" : [{
+          "extension" : [{
+            "url" : "algorithmVersion",
+            "valueString" : "1.0.0"
+          },
+          {
+            "url" : "language",
+            "valueCode" : "de-DE"
+          }],
+          "url" : "http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta"
+        },
+        {
+          "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/indicator-ser-extension",
+          "valueBoolean" : false
+        },
+        {
+          "extension" : [{
+            "url" : "indicator",
+            "valueBoolean" : false
+          }],
+          "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/multiple-prescription-extension"
+        },
+        {
+          "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
+          "valueMarkdown" : "1–3mal/Tag auf die erkrankten Hautstellen auftragen"
+        }],
+        "status" : "active",
+        "intent" : "order",
+        "medicationReference" : {
+          "reference" : "Medication/5cd916fc-2ae2-4148-b016-911ec5f4c0a5"
+        },
+        "authoredOn" : "2025-05-20",
+        "requester" : {
+          "reference" : "Practitioner/ec5b4fcf-9739-4055-b23c-a5b3a65beb66"
+        },
+        "dosageInstruction" : [{
+          "text" : "1–3mal/Tag auf die erkrankten Hautstellen auftragen"
+        }],
+        "dispenseRequest" : {
+          "quantity" : {
+            "value" : 1,
+            "unit" : "Packung"
+          }
+        },
+        "substitution" : {
+          "allowedBoolean" : true
+        }
+      }
+    },
+    {
+      "name" : "organization",
+      "resource" : {
+        "resourceType" : "Organization",
+        "meta" : {
+          "profile" : ["https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory"]
+        },
+        "telecom" : [{
+          "system" : "phone",
+          "value" : "0301234567"
+        },
+        {
+          "system" : "fax",
+          "value" : "030123456789"
+        },
+        {
+          "system" : "email",
+          "value" : "mvz@e-mail.de"
+        }],
+        "address" : [{
+          "type" : "both",
+          "line" : ["Herbert-Lewin-Platz 2"],
+          "_line" : [{
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+              "valueString" : "2"
+            },
+            {
+              "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+              "valueString" : "Herbert-Lewin-Platz"
+            }]
+          }],
+          "city" : "Berlin",
+          "postalCode" : "10623",
+          "country" : "D"
+        },
+        {
+          "type" : "both",
+          "line" : ["Herbert-Lewin-Platz 2"],
+          "_line" : [{
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+              "valueString" : "2"
+            },
+            {
+              "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+              "valueString" : "Herbert-Lewin-Platz"
+            }]
+          }],
+          "city" : "Berlin",
+          "postalCode" : "10623",
+          "country" : "D"
+        }]
+      }
+    },
+    {
+      "name" : "practitioner",
+      "resource" : {
+        "resourceType" : "Practitioner",
+        "meta" : {
+          "profile" : ["https://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory"]
+        },
+        "name" : [{
+          "use" : "official",
+          "family" : "Schmidt",
+          "_family" : {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+              "valueString" : "Schmidt"
+            }]
+          },
+          "given" : ["Hanna"],
+          "prefix" : ["Dr."],
+          "_prefix" : [{
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier",
+              "valueCode" : "AC"
+            }]
+          }]
+        }]
+      }
+    },
+    {
+      "name" : "prescriptionId",
+      "valueString" : "160.100.000.000.024.67"
+    }]
+  }]
 }
 
 ```

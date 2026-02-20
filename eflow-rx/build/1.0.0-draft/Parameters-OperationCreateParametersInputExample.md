@@ -18,15 +18,13 @@ Version 1.0.0-draft - ci-build
 {
   "resourceType" : "Parameters",
   "id" : "OperationCreateParametersInputExample",
-  "parameter" : [
-    {
-      "name" : "workflowType",
-      "valueCoding" : {
-        "system" : "https://gematik.de/fhir/erp/CodeSystem/eflow-rx-flowtype",
-        "code" : "160"
-      }
+  "parameter" : [{
+    "name" : "workflowType",
+    "valueCoding" : {
+      "system" : "https://gematik.de/fhir/erp/CodeSystem/GEM-ERP-CS-FlowType",
+      "code" : "160"
     }
-  ]
+  }]
 }
 
 ```

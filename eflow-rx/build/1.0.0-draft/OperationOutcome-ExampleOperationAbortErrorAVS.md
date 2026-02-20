@@ -18,15 +18,13 @@ Version 1.0.0-draft - ci-build
 {
   "resourceType" : "OperationOutcome",
   "id" : "ExampleOperationAbortErrorAVS",
-  "issue" : [
-    {
-      "severity" : "error",
-      "code" : "forbidden",
-      "details" : {
-        "text" : "Abort not expected for newly created Task"
-      }
+  "issue" : [{
+    "severity" : "error",
+    "code" : "forbidden",
+    "details" : {
+      "text" : "Abort not expected for newly created Task"
     }
-  ]
+  }]
 }
 
 ```

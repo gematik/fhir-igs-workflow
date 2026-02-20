@@ -19,35 +19,27 @@ Version 1.0.0-draft - ci-build
   "resourceType" : "MedicationDispense",
   "id" : "Example-MedicationDispense-Dosage-comb-dayofweek",
   "meta" : {
-    "profile" : [
-      "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-medicationdispense"
-    ]
+    "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-PR-MedicationDispense"]
   },
-  "extension" : [
-    {
-      "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.renderedDosageInstruction",
-      "valueMarkdown" : "montags 1-0-1-0, freitags 1-0-1-0 Stück"
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.renderedDosageInstruction",
+    "valueMarkdown" : "montags 1-0-1-0, freitags 1-0-1-0 Stück"
+  },
+  {
+    "extension" : [{
+      "url" : "algorithmVersion",
+      "valueString" : "1.0.0"
     },
     {
-      "extension" : [
-        {
-          "url" : "algorithmVersion",
-          "valueString" : "1.0.0"
-        },
-        {
-          "url" : "language",
-          "valueCode" : "de-DE"
-        }
-      ],
-      "url" : "http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta"
-    }
-  ],
-  "identifier" : [
-    {
-      "system" : "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
-      "value" : "160.000.033.491.280.78"
-    }
-  ],
+      "url" : "language",
+      "valueCode" : "de-DE"
+    }],
+    "url" : "http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta"
+  }],
+  "identifier" : [{
+    "system" : "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
+    "value" : "160.000.033.491.280.78"
+  }],
   "status" : "completed",
   "medicationReference" : {
     "reference" : "Medication/SumatripanMedication"
@@ -58,40 +50,34 @@ Version 1.0.0-draft - ci-build
       "value" : "X123456789"
     }
   },
-  "performer" : [
-    {
-      "actor" : {
-        "identifier" : {
-          "system" : "https://gematik.de/fhir/sid/telematik-id",
-          "value" : "3-SMC-B-Testkarte-883110000095957"
-        }
+  "performer" : [{
+    "actor" : {
+      "identifier" : {
+        "system" : "https://gematik.de/fhir/sid/telematik-id",
+        "value" : "3-SMC-B-Testkarte-883110000095957"
       }
     }
-  ],
+  }],
   "whenHandedOver" : "2026-07-01",
-  "dosageInstruction" : [
-    {
-      "timing" : {
-        "repeat" : {
-          "frequency" : 4,
-          "period" : 1,
-          "periodUnit" : "wk",
-          "dayOfWeek" : ["mon", "fri"],
-          "when" : ["MORN", "EVE"]
-        }
-      },
-      "doseAndRate" : [
-        {
-          "doseQuantity" : {
-            "value" : 1,
-            "unit" : "Stück",
-            "system" : "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BMP_DOSIEREINHEIT",
-            "code" : "1"
-          }
-        }
-      ]
-    }
-  ]
+  "dosageInstruction" : [{
+    "timing" : {
+      "repeat" : {
+        "frequency" : 4,
+        "period" : 1,
+        "periodUnit" : "wk",
+        "dayOfWeek" : ["mon", "fri"],
+        "when" : ["MORN", "EVE"]
+      }
+    },
+    "doseAndRate" : [{
+      "doseQuantity" : {
+        "value" : 1,
+        "unit" : "Stück",
+        "system" : "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BMP_DOSIEREINHEIT",
+        "code" : "1"
+      }
+    }]
+  }]
 }
 
 ```

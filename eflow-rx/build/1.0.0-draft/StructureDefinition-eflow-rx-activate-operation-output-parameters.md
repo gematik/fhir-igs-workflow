@@ -49,110 +49,92 @@ Other representations of profile: [CSV](StructureDefinition-eflow-rx-activate-op
   "experimental" : false,
   "date" : "2025-12-15",
   "publisher" : "gematik GmbH",
-  "contact" : [
-    {
-      "name" : "gematik GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://gematik.de"
-        },
-        {
-          "system" : "email",
-          "value" : "erp-umsetzung@gematik.de"
-        }
-      ]
-    }
-  ],
-  "description" : "Dieses Profil definiert die Parameter für die Aktivierung einer Aufgabe von PVS zum E-Rezept-Fachdienst. Dies kann für die $activate-Operation verwendet werden.",
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "DE",
-          "display" : "Germany"
-        }
-      ]
-    }
-  ],
-  "copyright" : "gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.html), Version 2.0.",
-  "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "v2",
-      "uri" : "http://hl7.org/v2",
-      "name" : "HL7 v2 Mapping"
+  "contact" : [{
+    "name" : "gematik GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://gematik.de"
     },
     {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    }
-  ],
+      "system" : "email",
+      "value" : "erp-umsetzung@gematik.de"
+    }]
+  }],
+  "description" : "Dieses Profil definiert die Parameter für die Aktivierung einer Aufgabe von PVS zum E-Rezept-Fachdienst. Dies kann für die $activate-Operation verwendet werden.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "copyright" : "gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.html), Version 2.0.",
+  "fhirVersion" : "4.0.1",
+  "mapping" : [{
+    "identity" : "v2",
+    "uri" : "http://hl7.org/v2",
+    "name" : "HL7 v2 Mapping"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Parameters",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Parameters",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Parameters",
-        "path" : "Parameters"
+    "element" : [{
+      "id" : "Parameters",
+      "path" : "Parameters"
+    },
+    {
+      "id" : "Parameters.parameter",
+      "path" : "Parameters.parameter",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "name"
+        }],
+        "rules" : "closed"
       },
-      {
-        "id" : "Parameters.parameter",
-        "path" : "Parameters.parameter",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "pattern",
-              "path" : "name"
-            }
-          ],
-          "rules" : "closed"
-        },
-        "min" : 1,
-        "max" : "1"
-      },
-      {
-        "id" : "Parameters.parameter:return",
-        "path" : "Parameters.parameter",
-        "sliceName" : "return",
-        "min" : 1,
-        "max" : "1"
-      },
-      {
-        "id" : "Parameters.parameter:return.name",
-        "path" : "Parameters.parameter.name",
-        "patternString" : "return",
-        "mustSupport" : true
-      },
-      {
-        "id" : "Parameters.parameter:return.value[x]",
-        "path" : "Parameters.parameter.value[x]",
-        "max" : "0"
-      },
-      {
-        "id" : "Parameters.parameter:return.resource",
-        "path" : "Parameters.parameter.resource",
-        "min" : 1,
-        "type" : [
-          {
-            "code" : "Task",
-            "profile" : [
-              "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-task"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Parameters.parameter:return.part",
-        "path" : "Parameters.parameter.part",
-        "max" : "0"
-      }
-    ]
+      "min" : 1,
+      "max" : "1"
+    },
+    {
+      "id" : "Parameters.parameter:return",
+      "path" : "Parameters.parameter",
+      "sliceName" : "return",
+      "min" : 1,
+      "max" : "1"
+    },
+    {
+      "id" : "Parameters.parameter:return.name",
+      "path" : "Parameters.parameter.name",
+      "patternString" : "return",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Parameters.parameter:return.value[x]",
+      "path" : "Parameters.parameter.value[x]",
+      "max" : "0"
+    },
+    {
+      "id" : "Parameters.parameter:return.resource",
+      "path" : "Parameters.parameter.resource",
+      "min" : 1,
+      "type" : [{
+        "code" : "Task",
+        "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM-ERP-PR-Task"]
+      }]
+    },
+    {
+      "id" : "Parameters.parameter:return.part",
+      "path" : "Parameters.parameter.part",
+      "max" : "0"
+    }]
   }
 }
 
