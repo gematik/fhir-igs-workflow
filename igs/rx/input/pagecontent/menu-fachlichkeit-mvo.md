@@ -1,6 +1,6 @@
 {% assign use_cases = site.data['use-cases'] %}
 
-Das Szenario beschreibt die Mehrfachverordnung (MVO) fuer apothekenpflichtige Arzneimittel.
+Das Szenario beschreibt die Mehrfachverordnung (MVO) für apothekenpflichtige Arzneimittel.
 Eine MVO besteht aus mehreren Teilverordnungen, die jeweils als eigenes E-Rezept verarbeitet werden.
 
 ### Kontext
@@ -72,7 +72,7 @@ Der Verordnende legt den Beginn des Gültigkeitszeitraumes für jede Teilverordn
 Die Abrechnungsmöglichkeit gegenüber den Kostenträgern ist bestimmt durch die Arzneimittel-Richtlinie des G-BA und die Regelungen der ergänzenden Verträge nach § 129 Absatz 5 SGB V in denen der Zeitraum, in dem eine Abrechnung zu Lasten der Krankenkassen möglich ist, festgelegt ist. Bei den Teilverordnungen ist eine Abrechnung gegenüber dem Kostenträger möglich, wenn das E-Rezept innerhalb des Gültigkeitszeitraum beliefert und quittiert wird.
 
 Bis zum Erreichen des Gültigkeitszeitraums ist keine Einsicht für die Apotheke in das E-Rezept möglich. Der Versicherte kann mittels E-Rezept-FdV oder E-Rezept-AdV die E-Rezepte einsehen.
-Kürzere Belieferungsfristen nach § 12 Absatz 1 Nummer 1 Buchstabe c BtMVV und den §§ 3a Absatz 4 und 3b Absatz 2 AMVV bleiben unberührt. mDas bedeutet, es gibt keine Mehrfachverordnung für Entlassrezepte, BTM-Rezepte und T-Rezepte.
+Kürzere Belieferungsfristen nach § 12 Absatz 1 Nummer 1 Buchstabe c BtMVV und den § 3a Absatz 4 und 3b Absatz 2 AMVV bleiben unberührt. mDas bedeutet, es gibt keine Mehrfachverordnung für Entlassrezepte, BTM-Rezepte und T-Rezepte.
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
