@@ -13,10 +13,12 @@ Die Festlegungen des Standard-Workflows für apothekenpflichtige Arzneimittel si
 Anforderungen werden durch eine eindeutige ID (IG-ERP-CHRG-*) und die Schlüsselworte MUSS, DARF NICHT, SOLL, SOLL NICHT, KANN gemäß RFC 2119 gekennzeichnet. Die Schlüsselworte werden bei Bedarf um Pronomen ergänzt.
 
 ## Epic: E-Rezept für PKV-Versicherte
-Der Ablauf orientiert sich an der Verordnung für GKV-Versicherte. Die Abrechnung erfolgt gegenüber dem Versicherten, sofern keine Direktabrechnung vereinbart wurde. Der Prozess wird um Aspekte zur Bereitstellung von Informationen für die Erstattung der Kosten erweitert.
+Der Ablauf für die Übermittlung von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel für PKV-Versicherte orientiert sich an der Verordnung von apothekenpflichtige Arzneimittel für GKV-Versicherte. Die Abrechnung der Apotheke erfolgt gegenüber dem Versicherten, sofern keine Direktabrechnung mit einer Krankenversicherung vereinbart wurde. Stattdessen wird der Prozess um Aspekte für die Bereitstellung von Informationen für die Erstattung der Kosten für den Versicherten erweitert. 
 
-**Ablauf (Kurzfassung):**
-Der (Zahn-)Arzt verschreibt ein E-Rezept und übermittelt es an den E-Rezept-Fachdienst. Der Versicherte erhält einen E-Rezept-Token (E-Rezept-FdV oder Ausdruck), übermittelt ihn an eine Apotheke und erhält die Abrechnungsinformation digital oder analog. Die Abrechnungsinformation kann für die Erstattung weitergeleitet oder ausgedruckt werden.
+**Ablauf**
+Der (Zahn-)Arzt verschreibt ein E-Rezept. Das E-Rezept wird auf den E-Rezept-Fachdienst übertragen. Der Versicherte erhält einen E-Rezept-Token im E-Rezept-FdV oder auf einem Tokenausdruck. Der Versicherte übermittelt den E-Rezept-Token an eine Apotheke seiner Wahl. Die Apotheke ruft das E-Rezept vom E-Rezept-Fachdienst ab und dispensiert es. Die Apotheke stellt, sofern das E-Rezept nicht dem Sachleistungsprinzip unterliegt, auf Wunsch des Versicherten die Abrechnungsinformation zum E-Rezept im E-Rezept-Fachdienst bereit. Dort werden sie mit Einwilligung des Versicherten bis zu 10 Jahren gespeichert. Alternativ übergibt der Apotheker dem Versicherten im Ersatzverfahren einen Papierbeleg mit den abrechnungsrelevanten Informationen für die Abrechnung. Der Versicherte lädt die digital bereitgestellte Abrechnungsinformation mit dem E-Rezept-FdV vom E-Rezept-Fachdienst herunter. Der Versicherte kann für die Abrechnung die Abrechnungsinformation an eine App seiner PKV / der Beihilfe weiterleiten, in einem Portal des Kostenträgers hochladen oder ausdrucken.
+
+Der Ablauf für die Übermittlung von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel mit Steuerung durch den Leistungserbringer für PKV-Versicherte orientiert sich an der Verordnung von apothekenpflichtige Arzneimittel mit Steuerung durch den Leistungserbringer für GKV-Versicherte (Workflow-Typ "169").
 
 ## User Stories
 

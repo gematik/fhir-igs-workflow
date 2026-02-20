@@ -1,191 +1,96 @@
+{% assign use_cases = site.data['use-cases'] %} {% assign roles = site.data['roles'] %}
+
 Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rezepte für PKV‑Versicherte“. Im Fokus steht, was im E‑Rezept‑Fachdienst und in den beteiligten Clients (FdV/AdV, Primärsysteme, AVS) passiert, wenn die fachlichen Anwendungsfälle ausgeführt werden.
 
-<a id="bereitstellen-abgebende-lei"></a>
-## Bereitstellen der Abrechnungsinformation durch die abgebende LEI (AF_10082)
-Die abgebende LEI stellt die Abrechnungsinformation zu einem E‑Rezept im E‑Rezept‑Fachdienst bereit. Technisch wird dafür ein ChargeItem mit eingebettetem PKV‑Abgabedatensatz angelegt, ergänzt um Verordnungsdatensatz und Quittung aus dem Workflow.
+<!-- AF_10082 - Abrechnungsinformation durch Abgebenden bereitstellen -->
+{% assign use_case = use_cases | where: "title", "Abrechnungsinformation durch Abgebenden bereitstellen" | first %}
+<a id="{{ use_case.anchor }}"></a>
+### {{ use_case.title }}
 
-- Das AVS erstellt den PKV‑Abgabedatensatz (QES‑signiert bei Änderungen, andernfalls fortgeschritten signiert).
-- Das AVS sendet den ChargeItem‑Datensatz an den E‑Rezept‑Fachdienst.
-- Der E‑Rezept‑Fachdienst validiert den ChargeItem, prüft Einwilligung (Consent) und Signaturen.
-- Der E‑Rezept‑Fachdienst erzeugt einen AccessCode und speichert die Abrechnungsinformation.
+{% include use-case-details-table.html use_case=use_case roles=roles %}
 
-<em>Schnittstelle:</em> <i><a href="./query-api-chargeitem.html">query-api-chargeitem</a></i>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
-**Sequenzdiagramm:**
+<!-- AF_10081 - Abrechnungsinformation durch Abgebenden abrufen -->
+{% assign use_case = use_cases | where: "title", "Abrechnungsinformation durch Abgebenden abrufen" | first %}
+<a id="{{ use_case.anchor }}"></a>
+### {{ use_case.title }}
 
-<figure>
-    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-abrechnungsinformation-bereitstellen.svg %}
-    </div>
-    <figcaption><strong>Abbildung: </strong>SD Abrechnungsinformation durch Abgebenden bereitstellen</figcaption>
-</figure>
+{% include use-case-details-table.html use_case=use_case roles=roles %}
 
-<a id="abrufen-abgebende-lei"></a>
-## Abrufen der Abrechnungsinformation durch die abgebende LEI (AF_10081)
-Für Korrekturen kann die abgebende LEI eine zuvor bereitgestellte Abrechnungsinformation abrufen. Voraussetzung ist die Prescription‑ID und der AccessCode.
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
-- Das AVS ruft die Abrechnungsinformation im E‑Rezept‑Fachdienst ab.
-- Der E‑Rezept‑Fachdienst prüft die Rolle, die Prescription‑ID und den AccessCode.
-- Der E‑Rezept‑Fachdienst liefert das ChargeItem inkl. PKV‑Abgabedatensatz zurück.
+<!-- AF_10083 - PKV-Abgabedatensatz durch Abgebenden ändern -->
+{% assign use_case = use_cases | where: "title", "PKV-Abgabedatensatz durch Abgebenden ändern" | first %}
+<a id="{{ use_case.anchor }}"></a>
+### {{ use_case.title }}
 
-<em>Schnittstelle:</em> <i><a href="./query-api-chargeitem.html">query-api-chargeitem</a></i>
+{% include use-case-details-table.html use_case=use_case roles=roles %}
 
-**Sequenzdiagramm:**
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
-<figure>
-    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-abrechnungsinformation-abrufen-abgebender.svg %}
-    </div>
-    <figcaption><strong>Abbildung: </strong>SD Abrechnungsinformation durch Abgebenden abrufen</figcaption>
-</figure>
+<!-- AF_10084 - Einwilligung zum Speichern der Abrechnungsinformationen erteilen -->
+{% assign use_case = use_cases | where: "title", "Einwilligung zum Speichern der Abrechnungsinformationen erteilen" | first %}
+<a id="{{ use_case.anchor }}"></a>
+### {{ use_case.title }}
 
-<br>
+{% include use-case-details-table.html use_case=use_case roles=roles %}
 
-<a id="pkv-abgabedatensatz-aendern"></a>
-## Ändern des PKV‑Abgabedatensatzes durch die abgebende LEI (AF_10083)
-Wenn eine Korrektur erforderlich ist, kann die abgebende LEI den PKV‑Abgabedatensatz überschreiben. Ältere Versionen werden nicht gespeichert.
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
-- Der Versicherte berechtigt die abgebende LEI über den AccessCode.
-- Das AVS sendet den geänderten PKV‑Abgabedatensatz an den E‑Rezept‑Fachdienst.
-- Der E‑Rezept‑Fachdienst validiert den Datensatz, überschreibt die gespeicherten Daten und erzeugt einen neuen AccessCode.
+<!-- AF_10085 - Einwilligung zum Speichern der Abrechnungsinformationen widerrufen -->
+{% assign use_case = use_cases | where: "title", "Einwilligung zum Speichern der Abrechnungsinformationen widerrufen" | first %}
+<a id="{{ use_case.anchor }}"></a>
+### {{ use_case.title }}
 
-<em>Schnittstelle:</em> <i><a href="./query-api-chargeitem.html">query-api-chargeitem</a></i>
+{% include use-case-details-table.html use_case=use_case roles=roles %}
 
-**Sequenzdiagramm:**
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
-<figure>
-    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-abrechnungsinformation-aendern.svg %}
-    </div>
-    <figcaption><strong>Abbildung: </strong>SD PKV-Abgabedatensatz durch Abgebenden ändern</figcaption>
-</figure>
+<!-- AF_10086 - Einwilligung zum Speichern der Abrechnungsinformationen einsehen -->
+{% assign use_case = use_cases | where: "title", "Einwilligung zum Speichern der Abrechnungsinformationen einsehen" | first %}
+<a id="{{ use_case.anchor }}"></a>
+### {{ use_case.title }}
 
-<a id="einwilligung-erteilen"></a>
-## Einwilligung zum Speichern erteilen (AF_10084)
-Der Versicherte erteilt die Einwilligung zum Speichern der Abrechnungsinformationen im E‑Rezept‑Fachdienst.
+{% include use-case-details-table.html use_case=use_case roles=roles %}
 
-- Das FdV/AdV zeigt den Einwilligungstext an und holt die Bestätigung ein.
-- Das FdV/AdV erstellt eine Consent‑Ressource (CHARGCONS) und speichert sie im E‑Rezept‑Fachdienst.
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
-<em>Schnittstelle:</em> <i><a href="./query-api-consent.html">query-api-consent</a></i>
+<!-- AF_10087 - Abrechnungsinformationen durch den Versicherten abrufen -->
+{% assign use_case = use_cases | where: "title", "Abrechnungsinformationen durch den Versicherten abrufen" | first %}
+<a id="{{ use_case.anchor }}"></a>
+### {{ use_case.title }}
 
-**Sequenzdiagramm:**
+{% include use-case-details-table.html use_case=use_case roles=roles %}
 
-<figure>
-    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-einwilligung-erteilen.svg %}
-    </div>
-    <figcaption><strong>Abbildung: </strong>SD Einwilligung zum Speichern der Abrechnungsinformationen durch Versicherten erteilen</figcaption>
-</figure>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
-<a id="einwilligung-widerrufen"></a>
-## Einwilligung widerrufen (AF_10085)
-Der Versicherte kann die Einwilligung jederzeit widerrufen. Mit dem Widerruf werden alle gespeicherten Abrechnungsinformationen gelöscht.
+<!-- AF_10088 - Abrechnungsinformationen durch den Versicherten weitergeben -->
+{% assign use_case = use_cases | where: "title", "Abrechnungsinformationen durch den Versicherten weitergeben" | first %}
+<a id="{{ use_case.anchor }}"></a>
+### {{ use_case.title }}
 
-- Das FdV/AdV lässt den Widerruf bestätigen und übermittelt die Löschanforderung.
-- Der E‑Rezept‑Fachdienst löscht die Consent‑Ressource und alle zugehörigen Abrechnungsinformationen.
+{% include use-case-details-table.html use_case=use_case roles=roles %}
 
-<em>Schnittstelle:</em> <i><a href="./query-api-consent.html">query-api-consent</a></i>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
-**Sequenzdiagramm:**
+<!-- AF_10089 - Abrechnungsinformationen durch den Versicherten markieren -->
+{% assign use_case = use_cases | where: "title", "Abrechnungsinformationen durch den Versicherten markieren" | first %}
+<a id="{{ use_case.anchor }}"></a>
+### {{ use_case.title }}
 
-<figure>
-    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-einwilligung-widerrufen.svg %}
-    </div>
-    <figcaption><strong>Abbildung: </strong>SD Einwilligung zum Speichern der Abrechnungsinformationen durch Versicherten widerrufen</figcaption>
-</figure>
+{% include use-case-details-table.html use_case=use_case roles=roles %}
 
-<a id="einwilligung-einsehen"></a>
-## Einwilligung einsehen (AF_10086)
-Der Versicherte kann prüfen, ob eine Einwilligung vorliegt.
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
-- Das FdV/AdV ruft die Consent‑Information im E‑Rezept‑Fachdienst ab.
-- Der E‑Rezept‑Fachdienst liefert die Consent‑Ressource zurück; das FdV/AdV zeigt den Status an.
+<!-- AF_10090 - Abrechnungsinformationen durch den Versicherten löschen -->
+{% assign use_case = use_cases | where: "title", "Abrechnungsinformationen durch den Versicherten löschen" | first %}
+<a id="{{ use_case.anchor }}"></a>
+### {{ use_case.title }}
 
-<em>Schnittstelle:</em> <i><a href="./query-api-consent.html">query-api-consent</a></i>
+{% include use-case-details-table.html use_case=use_case roles=roles %}
 
-**Sequenzdiagramm:**
-
-<figure>
-    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-einwilligung-einsehen.svg %}
-    </div>
-    <figcaption><strong>Abbildung: </strong>SD Einwilligung zum Speichern der Abrechnungsinformationen durch Versicherten einsehen</figcaption>
-</figure>
-
-<a id="abrechnungsinformation-abrufen-versicherter"></a>
-## Abrechnungsinformation abrufen (AF_10087)
-Der Versicherte ruft eine Liste und die Details seiner Abrechnungsinformationen im FdV/AdV ab.
-
-- Das FdV/AdV ruft die Liste der ChargeItems ab.
-- Für den Detailabruf fordert das FdV/AdV die Datensätze zu einer Prescription‑ID an.
-- Der E‑Rezept‑Fachdienst signiert die Datensätze beim Abruf mit seinem Signaturzertifikat (C.FD.OSIG) und liefert sie zurück.
-- Die Abrechnungsinformationen stehen zur Anzeige und für Export/Weitergabe bereit.
-
-<em>Schnittstelle:</em> <i><a href="./query-api-chargeitem.html">query-api-chargeitem</a></i>
-
-**Sequenzdiagramm:**
-
-<figure>
-    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-abrechnungsinformation-abrufen-versicherter.svg %}
-    </div>
-    <figcaption><strong>Abbildung: </strong>SD Abrechnungsinformation durch den Versicherten abrufen</figcaption>
-</figure>
-
-<a id="abrechnungsinformation-weitergeben"></a>
-## Abrechnungsinformation weitergeben (AF_10088)
-Der Versicherte gibt die Abrechnungsinformation aus dem FdV/AdV heraus an eine Ziel‑App weiter (z. B. PKV‑App, Beihilfe) oder exportiert sie als PDF/A.
-
-- Das FdV/AdV erstellt ein PDF/A mit den relevanten Datensätzen.
-- Das FdV/AdV übergibt das Dokument an die Ziel‑App oder ermöglicht Download/Versand.
-
-<em>Schnittstelle:</em> <i><a href="./query-api-chargeitem.html">query-api-chargeitem</a></i>
-
-**Sequenzdiagramm:**
-
-<figure>
-    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-abrechnungsinformation-weitergeben.svg %}
-    </div>
-    <figcaption><strong>Abbildung: </strong>SD Abrechnungsinformation durch den Versicherten weitergeben</figcaption>
-</figure>
-
-<a id="abrechnungsinformation-markieren"></a>
-## Abrechnungsinformation markieren
-Der Versicherte kann Abrechnungsinformationen im FdV/AdV markieren (z. B. für Abrechnung, Beihilfe, Finanzamt). Die Markierungen werden im E‑Rezept‑Fachdienst gespeichert.
-
-- Das FdV/AdV setzt die Markierung und speichert sie am ChargeItem.
-
-<em>Schnittstelle:</em> <i><a href="./query-api-chargeitem.html">query-api-chargeitem</a></i>
-
-**Sequenzdiagramm:**
-
-<figure>
-    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-abrechnungsinformation-markieren.svg %}
-    </div>
-    <figcaption><strong>Abbildung: </strong>SD Abrechnungsinformation durch den Versicherten markieren</figcaption>
-</figure>
-
-<a id="abrechnungsinformation-loeschen"></a>
-## Abrechnungsinformation löschen
-Der Versicherte kann eine Abrechnungsinformation aktiv löschen. Die Löschung ist unwiederbringlich.
-
-- Das FdV/AdV sendet die Löschanforderung für das ChargeItem.
-- Der E‑Rezept‑Fachdienst löscht die Abrechnungsinformation und protokolliert den Vorgang.
-
-<em>Schnittstelle:</em> <i><a href="./query-api-chargeitem.html">query-api-chargeitem</a></i>
-
-**Sequenzdiagramm:**
-
-<figure>
-    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-{% include seq-abrechnungsinformation-loeschen.svg %}
-    </div>
-    <figcaption><strong>Abbildung: </strong>SD Abrechnungsinformation durch den Versicherten löschen</figcaption>
-</figure>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <a id="accesscode-an-apotheke-uebermitteln"></a>
 ## Berechtigen der Apotheke zum Ändern des PKV‑Abgabedatensatzes
