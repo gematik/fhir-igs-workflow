@@ -19,6 +19,13 @@ Version 2.0.0-draft - ci-build
 
 Die Prozesse des verordnenden Leistungserbringers, welche für die Übermittlung von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel konzipiert wurden, werden ebenso für die Verordnung von DiGAs genutzt.
 
+Folgende Anwendungsfälle werden genutzt:
+
+* UC 2.1 - E-Rezepte erzeugen
+* E-Rezept qualifiziert signieren
+* UC 2.3 - E-Rezept einstellen
+* UC 2.5 - E-Rezept durch Verordnenden löschen
+
 #### UC 2.1 - E-Rezepte erzeugen
 
 * Beschreibung: Vorbedingungen
@@ -42,7 +49,7 @@ Die Prozesse des verordnenden Leistungserbringers, welche für die Übermittlung
 * QES im Primaersystem (Konnektor)
 
 * Beschreibung: Relevante(r) Sektor(en)
-  * Der verordnende Leistungserbringer erzeugt ein oder mehrere E-Rezepte im Primaersystem. Für jedes E-Rezept wird eine Rezept-ID aus dem E-Rezept-Fachdienst bezogen und der Datensatz anschließend qualifiziert elektronisch signiert (QES).:  (ZAHN-)ARZT 
+  * Der verordnende Leistungserbringer erzeugt ein oder mehrere E-Rezepte im Primaersystem. Für jedes E-Rezept wird eine Rezept-ID aus dem E-Rezept-Fachdienst bezogen und der Datensatz anschließend qualifiziert elektronisch signiert (QES).: 
 
 **Tabelle:**Fachlicher Anwendungsfall UC 2.1 - E-Rezepte erzeugen
 **Sequenzdiagramm:**
@@ -129,12 +136,6 @@ Die Prozesse des verordnenden Leistungserbringers, welche für die Übermittlung
 **Sequenzdiagramm:**
 
 **Abbildung: **UC 2.5 - E-Rezept durch Verordnenden löschen
-Folgende Anwendungsfälle werden genutzt:
-
-* UC 2.1 - E-Rezepte erzeugen
-* UC 2.3 - E-Rezept einstellen
-* UC 2.5 - E-Rezept durch Verordnenden löschen
-
 #### Anwendungsfälle im Rahmen der Verwaltung durch den Versicherten
 
 Die Prozesse des Versicherten für die Einsichtnahme in die Verordnungen, das Übermitteln der Verordnung an den Kostenträger und die Kommunikation mit dem Kostenträger, entsprechen denen welche für die Übermittlung von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel konzipiert wurden.
