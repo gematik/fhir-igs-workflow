@@ -4,12 +4,12 @@ title UC 4.7 - Nachricht durch Abgebenden uebermitteln
 actor "Mitarbeiter Apotheke" as MA
 participant "AVS" as AVS
 participant "Identity Provider" as IDP
-participant "E-Rezept Fachdienst" as FD
+participant "E-Rezept-Fachdienst" as FD
 
 MA -> AVS: Antwortnachricht erstellen()
 activate AVS
 
-opt kein gueltiger AuthN-Token
+opt kein gültiger AuthN-Token
   ref over AVS, IDP: AuthN-Token anfordern
 end
 
@@ -19,7 +19,7 @@ FD -> FD: Nachricht speichern()
 FD --> AVS: Status
 deactivate FD
 
-AVS --> MA: Bestaetigung
+AVS --> MA: Status
 deactivate AVS
 
 @enduml

@@ -8,12 +8,12 @@ participant "Konnektor" as K
 MA -> AVS: Abgabedatensatz signieren()
 activate AVS
 
-alt Abgabe ohne Aenderung
+alt Abgabe ohne Änderung
   AVS -> K: fortgeschritten signieren(Abgabedatensatz)
   activate K
   K --> AVS: Signatur
   deactivate K
-else Abgabe mit Aenderung
+else Abgabe mit Änderung
   AVS -> K: QES signieren(Dispensierdatensatz)
   activate K
   K --> AVS: QES-Signatur

@@ -1,26 +1,27 @@
 @startuml
-title UC 3.2 - E-Rezept durch Versicherten loeschen
+title UC 3.2 - E-Rezept durch Versicherten löschen
 
 actor "Versicherter" as V
 participant "FdV" as FdV
 participant "Identity Provider" as IDP
-participant "E-Rezept Fachdienst" as FD
+participant "E-Rezept-Fachdienst" as FD
 
-V -> FdV: E-Rezept loeschen()
+V -> FdV: E-Rezept löschen()
 activate FdV
 
-opt kein gueltiger AuthN-Token
+opt kein gültiger AuthN-Token
   ref over FdV, IDP: AuthN-Token anfordern
 end
 
 FdV -> FD: POST /Task/{id}/$abort (AuthN-Token, AccessCode)
 activate FD
-FD -> FD: Status auf "geloescht" setzen()
-FD -> FD: Daten loeschen()
+FD -> FD: Status auf "gelöscht" setzen()
+FD -> FD: Daten löschen()
 FD --> FdV: Status
+FD -> FD : Datenzugriff protokollieren()
 deactivate FD
 
-FdV -> FdV: Token loeschen()
+FdV -> FdV: Token löschen()
 FdV --> V: Status
 deactivate FdV
 

@@ -4,26 +4,26 @@ title UC 4.6 - Nachrichten durch Abgebenden empfangen
 actor "Mitarbeiter Apotheke" as MA
 participant "AVS" as AVS
 participant "Identity Provider" as IDP
-participant "E-Rezept Fachdienst" as FD
+participant "E-Rezept-Fachdienst" as FD
 
 MA -> AVS: E-Rezept-Token empfangen()
 activate AVS
 
-alt Empfang ueber TI
-  opt kein gueltiger AuthN-Token
+alt Empfang über TI
+  opt kein gültiger AuthN-Token
     ref over AVS, IDP: AuthN-Token anfordern
   end
   AVS -> FD: GET /Communication?recipient=Telematik-ID (AuthN-Token)
   activate FD
   FD -> FD: Nachrichten ermitteln()
-  FD --> AVS: E-Rezept-Token
+  FD --> AVS: E-Rezept-Token, Payload
   deactivate FD
 else 2D-Code
   AVS -> AVS: 2D-Code scannen()
   AVS -> AVS: Token extrahieren()
 end
 
-AVS --> MA: Token verfuegbar
+AVS --> MA: Token verfügbar
 deactivate AVS
 
 @enduml

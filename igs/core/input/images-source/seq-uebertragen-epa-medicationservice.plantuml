@@ -1,11 +1,11 @@
 @startuml
-title Uebertragen an den ePA MedicationService
+title Übertragen an den ePA MedicationService
 
-participant "E-Rezept Fachdienst" as FD
+participant "E-Rezept-Fachdienst" as FD
 participant "ePA MedicationService" as EPA
 
-FD -> FD: Ereignis nach $activate/$dispense/$close/$abort
-FD -> EPA: Uebertragung von Medikationsdaten
+FD -> FD: Ereignis nach $activate/$close/$abort
+FD -> EPA: Übertragung von Medikationsdaten
 activate EPA
 EPA --> FD: Status
 deactivate EPA

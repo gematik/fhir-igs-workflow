@@ -4,9 +4,9 @@ title UC 4.4 - Quittung abrufen
 actor "Mitarbeiter Apotheke" as MA
 participant "AVS" as AVS
 participant "Identity Provider" as IDP
-participant "E-Rezept Fachdienst" as FD
+participant "E-Rezept-Fachdienst" as FD
 
-MA -> AVS: Abgabe bestaetigen()
+MA -> AVS: Abgabe bestätigen()
 activate AVS
 
 opt kein gueltiger AuthN-Token
@@ -17,10 +17,11 @@ AVS -> FD: POST /Task/{id}/$close?secret=... (AuthN-Token, Abgabeinfos)
 activate FD
 FD -> FD: Status auf "quittiert" setzen()
 FD -> FD: Quittung erstellen und signieren()
+FD -> FD : Datenzugriff protokollieren()
 FD --> AVS: Quittung, Status
 deactivate FD
 
-AVS --> MA: Quittung
+AVS --> MA: Status
 deactivate AVS
 
 @enduml

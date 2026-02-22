@@ -1,25 +1,25 @@
 @startuml
-title UC 3.8 - Nachricht durch Versicherten loeschen
+title UC 3.8 - Nachricht durch Versicherten löschen
 
 actor "Versicherter" as V
 participant "FdV" as FdV
 participant "Identity Provider" as IDP
-participant "E-Rezept Fachdienst" as FD
+participant "E-Rezept-Fachdienst" as FD
 
-V -> FdV: Nachricht loeschen()
+V -> FdV: Nachricht löschen()
 activate FdV
 
-opt kein gueltiger AuthN-Token
+opt kein gültiger AuthN-Token
   ref over FdV, IDP: AuthN-Token anfordern
 end
 
 FdV -> FD: DELETE /Communication/{id} (AuthN-Token)
 activate FD
-FD -> FD: Nachricht loeschen()
+FD -> FD: Nachricht löschen()
 FD --> FdV: Status (ggf. Warning)
 deactivate FD
 
-FdV -> FdV: Nachricht lokal loeschen()
+FdV -> FdV: Nachricht lokal löschen()
 FdV --> V: Status
 deactivate FdV
 
