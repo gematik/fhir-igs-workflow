@@ -5,7 +5,9 @@
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
     </actor>
-    text
+    <description>
+      text
+    </description>
 </requirement>
 
 Eine Nummer/key muss nicht vergeben werden, da diese automatisch generiert wird.
