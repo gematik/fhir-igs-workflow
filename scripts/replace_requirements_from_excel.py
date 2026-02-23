@@ -67,9 +67,7 @@ def build_block(req_id: str, req: Dict[str, str], actor: str, test_procedure: st
         f"    <actor name=\"{actor}\">\n"
         f"        <testProcedure id=\"{test_procedure}\"/>\n"
         "    </actor>\n"
-        "    <description>\n"
-        f"        {description}\n"
-        "    </description>\n"
+        f"     {description}\n"
         f"    <!-- {req_id} -->\n"
         "</requirement>\n"
     )
