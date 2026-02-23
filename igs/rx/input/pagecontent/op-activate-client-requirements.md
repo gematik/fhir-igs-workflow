@@ -2,7 +2,7 @@ Diese Seite enthält die normativen Anforderungen an den Client des E-Rezept-Fac
 Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/{{ site.data.constants.tiflow_core_version }}/op-activate-client-requirements.html).
 
 ### Anforderungen im Rahmen des Moduls Arzneimittel
-<requirement conformance="SHALL" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-398" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="Client des E-Rezept-Fachdienstes">
         <testProcedure id="Produkttest"/>
@@ -14,7 +14,7 @@ Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemsp
 </requirement>
 
 ### Anforderungen Workflow 200, 209
-<requirement conformance="SHALL" title="PS verordnende LEI: E-Rezept erstellen – Flowtype 200/209 – KVNR als Identifier" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-399" title="PS verordnende LEI: E-Rezept erstellen – Flowtype 200/209 – KVNR als Identifier" version="0">
     <meta lockversion="false"/>
     <actor name="Client des E-Rezept-Fachdienstes">
         <testProcedure id="Produkttest"/>
@@ -24,7 +24,7 @@ Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemsp
     </description>
     <!-- A_22541-01 -->
 </requirement>
-<requirement conformance="SHALL" title="PS verordnende LEI: E-Rezept erstellen – Flowtype 200/209 – Versicherungstyp PKV" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-400" title="PS verordnende LEI: E-Rezept erstellen – Flowtype 200/209 – Versicherungstyp PKV" version="0">
     <meta lockversion="false"/>
     <actor name="Client des E-Rezept-Fachdienstes">
         <testProcedure id="Produkttest"/>
@@ -36,7 +36,7 @@ Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemsp
 </requirement>
 
 ### Anforderungen für Mehrfachverordnung
-<requirement conformance="SHALL" title="PS verordnende LEI: E-Rezept erstellen - Mehrfachverordnung - Beginn Einlösefrist" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-401" title="PS verordnende LEI: E-Rezept erstellen - Mehrfachverordnung - Beginn Einlösefrist" version="0">
     <meta lockversion="false"/>
     <actor name="Client des E-Rezept-Fachdienstes">
         <testProcedure id="Produkttest"/>
@@ -48,7 +48,7 @@ Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemsp
 </requirement>
 
 ### Anforderungen Workflow 166
-<requirement conformance="SHALL" title="PS verordnende LEI: E-Rezept erstellen – Flowtype 166 – zulässige Signatur Arzt" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-402" title="PS verordnende LEI: E-Rezept erstellen – Flowtype 166 – zulässige Signatur Arzt" version="0">
     <meta lockversion="false"/>
     <actor name="Client des E-Rezept-Fachdienstes">
         <testProcedure id="Produkttest"/>
@@ -58,7 +58,7 @@ Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemsp
     </description>
     <!-- A_27834 -->
 </requirement>
-<requirement conformance="SHALL" title="PS verordnende LEI: E-Rezept erstellen – Flowtype 166 – Reichdauer nach Vorgaben" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-403" title="PS verordnende LEI: E-Rezept erstellen – Flowtype 166 – Reichdauer nach Vorgaben" version="0">
     <meta lockversion="false"/>
     <actor name="Client des E-Rezept-Fachdienstes">
         <testProcedure id="Produkttest"/>
@@ -68,7 +68,7 @@ Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemsp
     </description>
     <!-- A_27835 -->
 </requirement>
-<requirement conformance="SHALL" title="PS verordnende LEI: E-Rezept erstellen – Flowtype 166 – Bestätigungen nach §3a Abs. 2, 5 AMVV" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-404" title="PS verordnende LEI: E-Rezept erstellen – Flowtype 166 – Bestätigungen nach §3a Abs. 2, 5 AMVV" version="0">
     <meta lockversion="false"/>
     <actor name="Client des E-Rezept-Fachdienstes">
         <testProcedure id="Produkttest"/>
@@ -115,7 +115,7 @@ Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemsp
 </requirement>
 
 ### Anforderungen Workflow 169
-<requirement conformance="SHALL" title="PS verordnende LEI: Übergabe E-Rezept-Token an Apotheke" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-405" title="PS verordnende LEI: Übergabe E-Rezept-Token an Apotheke" version="0">
     <meta lockversion="false"/>
     <actor name="Client des E-Rezept-Fachdienstes">
         <testProcedure id="Produkttest"/>
@@ -125,7 +125,7 @@ Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemsp
     </description>
     <!-- A_21400 -->
 </requirement>
-<requirement conformance="SHALL" title="PS: Schutz des E-Rezept-Tokens bei Übertragung" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-406" title="PS: Schutz des E-Rezept-Tokens bei Übertragung" version="0">
     <meta lockversion="false"/>
     <actor name="Client des E-Rezept-Fachdienstes">
         <testProcedure id="Produkttest"/>
@@ -135,7 +135,7 @@ Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemsp
     </description>
     <!-- A_21349 -->
 </requirement>
-<requirement conformance="MAY" title="PS verordnende LEI: Herstellende Apotheke für Übermittlungsverfahren" version="0">
+<requirement conformance="MAY" key="IG-TIFlow-RX-407" title="PS verordnende LEI: Herstellende Apotheke für Übermittlungsverfahren" version="0">
     <meta lockversion="false"/>
     <actor name="Client des E-Rezept-Fachdienstes">
         <testProcedure id="Produkttest"/>

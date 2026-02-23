@@ -2,7 +2,7 @@
 // === AUTO-GENERATED FILE ===
 // Do not edit by hand; edit scripts/generate-heading-links-js.sh instead.
 
-const newIssueGithubLink = "https://github.com/gematik/fhir-profiles-erpchrg/issues/new?template=3-BUG-IG-REPORT.yml";
+const newIssueGithubLink = "https://github.com/gematik/fhir-igs-workflow/issues/new?template=3-BUG-IG-REPORT.yml";
 const linkParameter = "page-link";
 const igTagParameter = "ig-tag";
 const igTagValue = "core";

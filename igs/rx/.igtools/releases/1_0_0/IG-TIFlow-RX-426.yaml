@@ -1,0 +1,21 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: 826cc0a6276650431e3132e87a31dca0887529fa44032e9f6d4e1da0d45a8015
+created: '2026-02-23T10:24:20.367807'
+date: '2026-02-23T10:24:20.367809'
+key: IG-TIFlow-RX-426
+modified: '2026-02-23T10:24:20.367808'
+release_status: NEW
+source: input/pagecontent/query-api-task-fd-requirements.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: "<description>\n        Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation\
+  \ GET /Task/&lt;id&gt; durch einen Versicherten mit der Rolle oid_versicherter,\
+  \ sofern die KVNR des Aufrufenden ungleich der KVNR in Task.for ist, den Push Notification\
+  \ Prozess für den Trigger mit der ChannelId \"erp.task.vertreter\" und den Versicherten\
+  \ mit der KVNR = Task.for initiieren.\n    </description>\n    <!-- A_28125 -->"
+title: E-Rezept-Fachdienst - Task abrufen - Vertreter - Push Notification Versicherter
+version: 0
