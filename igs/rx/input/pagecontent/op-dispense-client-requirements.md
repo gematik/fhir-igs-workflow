@@ -1,15 +1,10 @@
-# Client-Anforderungen: Operation `$dispense`
+Diese Seite enthält die normativen Anforderungen an den Client des E-Rezept-Fachdienst für die Operation `$dispense`.
 
-Diese Seite beschreibt die Anforderungen an Clients zur Nutzung von `$dispense`.
+Mit diesem Anwendungsfall stellt das PS der abgebenden LEI Dispensierinformationen für den Versicherten bereit, die dann vom Versicherten auf seinem E-Rezept-FdV heruntergeladen werden können. Das E-Rezept-FdV kann dem Versicherten außerdem darstellen, dass das E-Rezept beliefert wurde bevor der Workflow des E-Rezepts durch den Anwendungsfall "Quittung abrufen" beendet wird.
 
-## Normative Client-Anforderungen (Auszug)
+Dieser Anwendungsfall kann so lange wiederholt werden, so lange sich der Task zum E-Rezept im Status "in Abgabe (gesperrt)" befindet. Bei der wiederholten Übermittlung wird die zuvor übermittelte Dispensierinformation überschrieben. D.h. es muss immer die vollständige Dispensierinformation übermittelt werden.
 
-- A_24289: Das AVS MUSS ein E-Rezept für die Bereitstellung von Dispensierinformationen auswaehlbar machen.
-- A_24290: Das AVS MUSS den Anwendungsfall "Dispensierinformationen bereitstellen" gemäß ILF umsetzen.
-- A_24291-01: Das AVS MUSS Dispensierinformationen profilkonform erstellen.
-- A_26346: Das AVS MUSS `POST /Task/<id>/$dispense` mit `Authorization`, `Task-ID`, `secret` und `MedicationDispense` ausführen.
-
-## Hinweise zur Nutzung
-
-- Wiederholte `$dispense`-Aufrufe überschreiben vorherige Dispensierinformationen; deshalb stets die vollständige, aktuelle Fassung senden.
-- Für die Dosierung sind die Flowtype-spezifischen Vorgaben einzuhalten.
+A_24289
+A_24290
+A_24291-01
+A_26346
