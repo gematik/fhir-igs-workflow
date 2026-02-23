@@ -1,6 +1,6 @@
 Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für die Operation `$activate`.
 
-<requirement conformance="SHALL" key="IG-TIFlow-RX-427" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 160/169/200/209 - QES durch berechtigte Berufsgruppe" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-30" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 160/169/200/209 - QES durch berechtigte Berufsgruppe" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -11,7 +11,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <!-- A_19225-02 -->
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFlow-RX-428" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 166 - QES durch berechtigte Berufsgruppe" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-31" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 166 - QES durch berechtigte Berufsgruppe" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -22,7 +22,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <!-- A_27812 -->
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFlow-RX-429" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 160/169/200/209 - Prüfung Arzneimittelverordnung" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-32" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 160/169/200/209 - Prüfung Arzneimittelverordnung" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -33,7 +33,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <!-- A_25642 -->
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFlow-RX-430" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 166 - Prüfung Arzneimittelverordnung" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-33" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 166 - Prüfung Arzneimittelverordnung" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -44,7 +44,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <!-- A_27813 -->
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFlow-RX-431" title="E-Rezept-Fachdienst – Task aktivieren – Flowtype 160/169 - Prüfung Coverage Type" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-34" title="E-Rezept-Fachdienst – Task aktivieren – Flowtype 160/169 - Prüfung Coverage Type" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -55,7 +55,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <!-- A_23443-01 -->
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFlow-RX-432" title="E-Rezept-Fachdienst – Task aktivieren – Flowtype 200/209 - Prüfung Coverage Type" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-35" title="E-Rezept-Fachdienst – Task aktivieren – Flowtype 200/209 - Prüfung Coverage Type" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -66,7 +66,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <!-- A_22347-01 -->
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFlow-RX-433" title="E-Rezept-Fachdienst - Task aktivieren - Ausschluss Betäubungsmittel" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-36" title="E-Rezept-Fachdienst - Task aktivieren - Ausschluss Betäubungsmittel" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -77,7 +77,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <!-- A_22231-01 -->
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFlow-RX-434" title="E-Rezept-Fachdienst - Task aktivieren - Daten ePA Medication Service bereitstellen (Verordnungsdatensatz)" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-37" title="E-Rezept-Fachdienst - Task aktivieren - Daten ePA Medication Service bereitstellen (Verordnungsdatensatz)" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -88,7 +88,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <!-- A_25925 -->
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFlow-RX-435" title="E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - zulässige Flowtype" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-38" title="E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - zulässige Flowtype" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -99,7 +99,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <!-- A_22627-01 -->
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFlow-RX-436" title="E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator-Denominator kleiner 5" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-39" title="E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator-Denominator kleiner 5" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -110,7 +110,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <!-- A_22628 -->
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFlow-RX-437" title="E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator größer 0" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-40" title="E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator größer 0" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -121,7 +121,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <!-- A_22704 -->
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFlow-RX-438" title="E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Denominator größer  1" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-41" title="E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Denominator größer  1" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -132,7 +132,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <!-- A_22629 -->
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFlow-RX-439" title="E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator kleiner / gleich Denominator" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-42" title="E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator kleiner / gleich Denominator" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -143,7 +143,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <!-- A_22630 -->
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFlow-RX-440" title="E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Unzulässige Angaben" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-43" title="E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Unzulässige Angaben" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -154,7 +154,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <!-- A_22631 -->
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFlow-RX-441" title="E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - kein Entlassrezept" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-44" title="E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - kein Entlassrezept" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -165,7 +165,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <!-- A_22632 -->
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFlow-RX-442" title="E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - keine Ersatzverordnung" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-45" title="E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - keine Ersatzverordnung" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -176,7 +176,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <!-- A_22633 -->
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFlow-RX-443" title="E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Beginn Einlösefrist-Pflicht" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-46" title="E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Beginn Einlösefrist-Pflicht" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -187,7 +187,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <!-- A_22634 -->
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFlow-RX-444" title="E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Startdatum nicht vor Ausstellungsdatum" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-47" title="E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Startdatum nicht vor Ausstellungsdatum" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -198,7 +198,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <!-- A_23537 -->
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFlow-RX-445" title="E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Endedatum nicht vor Startdatum" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-48" title="E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Endedatum nicht vor Startdatum" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -209,7 +209,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <!-- A_23164 -->
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFlow-RX-446" title="E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Schema ID" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-49" title="E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Schema ID" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
