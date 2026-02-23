@@ -1,4 +1,4 @@
-Diese Seite enthält die workflowtyp-spezifischen normativen Anforderungen an den E-Rezept-Fachdienst für die Operation `$reject`.
+Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an den E-Rezept-Fachdienst für die Operation `$reject`.
 
 Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch. 
 
