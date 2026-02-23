@@ -15,7 +15,7 @@ und den E-Rezept-Fachdienst zu.
 
 Die Authentisierung des Primärsystem einer Psychotherapeuten Praxis am E-Rezept-Fachdienst
 erfolgt mittels eines ACCESS_TOKEN. Diese werden durch den zentralen IDP-Dienst
-ausgestellt, welche die Identität des Nutzers attestieren. Eine Nutzung sektoraler IdPDienste
+ausgestellt, welche die Identität des Nutzers attestieren. Eine Nutzung sektoraler IdP-Dienste
 ist nicht vorgesehen.
 
 Für die Authentisierung nutzt die Psychotherapeuten Praxis ihre SMC-B mit der
@@ -34,19 +34,18 @@ vorgesehen.
 
 Für die Authentisierung nutzt der Kostenträger seine SM-B KTR mit der Rolle oid_kostentraeger.
 
-### Workflow 162
+### Workflow mit Flowtype 162
 Für Übermittlungen von DiGA Verordnungen wird der **Flowtype 162** verwendet.
 
-Der Flowtype 162 verwendet dasselbe Statusmodell wie Flowtype 160. 
+Der Workflow mit Flowtype 162 verwendet dasselbe Statusmodell wie der Workflow mit Flowtype 160. 
 
-Der Statusübergang von "in Abgabe (gesperrt)" zu "gelöscht" über "UC 4.3 - E-Rezept durch Abgebenden löschen" ist für DiGA Verordnungen nicht vorgesehen.
+Der Statusübergang von "in-progress" zu "cancelled" durch den Kostenträger über "UC 4.3 - E-Rezept durch Abgebenden löschen" ist für DiGA Verordnungen nicht vorgesehen.
 
 ### Löschfristen
-Die Löschfristen für Workflows mit Verordnungen des Flowtype 162 entsprechen denen des Flowtype 160.
+Die Löschfristen für Workflows mit Flowtype 162 entsprechen denen des Workflows mit Flowtype 160.
 
 ### Zugriff auf FHIR-VZD
-Zur Prüfung der IKNR muss der E-Rezept-Fachdienst die Telematik-ID des
-Kostenträgers auflösen. Das Mapping zwischen IKNR und Telematik-ID erfolgt über das FHIR-VZD und kann bis zu 24 Stunden gecacht werden.
+Zur Prüfung der IKNR muss der E-Rezept-Fachdienst die Telematik-ID des Kostenträgers auflösen. Das Mapping zwischen IKNR und Telematik-ID erfolgt über das FHIR-VZD und kann bis zu 24 Stunden gecacht werden.
 
 ### eVDGA FHIR Profile
 Zur Verordnung von DiGA werden die KBV-Profile der elektronischen Verordnung

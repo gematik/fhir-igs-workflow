@@ -1,26 +1,27 @@
 @startuml
-title UC 2.5 - E-Rezept durch Verordnenden loeschen
+title UC 2.5 - E-Rezept durch Verordnenden löschen
 
 actor "Mitarbeiter LEI" as MA
-participant "Primaersystem" as PS
+participant "Primärsystem" as PS
 participant "Identity Provider" as IDP
-participant "E-Rezept Fachdienst" as FD
+participant "E-Rezept-Fachdienst" as FD
 
-MA -> PS: E-Rezept zum Loeschen markieren()
+MA -> PS: E-Rezept zum Löschen markieren()
 activate PS
 
-opt kein gueltiger AuthN-Token
+opt kein gültiger AuthN-Token
   ref over PS, IDP: AuthN-Token anfordern
 end
 
 PS -> FD: POST /Task/{id}/$abort (AuthN-Token, AccessCode)
 activate FD
-FD -> FD: Status auf "geloescht" setzen()
-FD -> FD: Personenbezogene Daten loeschen()
+FD -> FD: Status auf "gelöscht" setzen()
+FD -> FD: Daten löschen()
+FD -> FD : Datenzugriff protokollieren()
 FD --> PS: Status
 deactivate FD
 
-PS -> PS: AccessCode loeschen()
+PS -> PS: AccessCode löschen()
 PS --> MA: Status
 deactivate PS
 
