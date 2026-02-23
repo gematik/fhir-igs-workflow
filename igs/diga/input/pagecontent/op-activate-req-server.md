@@ -4,7 +4,7 @@
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
   </actor>
-  <Beschreibung>
+  <description>
     Der E-Rezept-Fachdienst MUSS die Aktivierung eines Tasks mit Flowtype 162 mit dem HTTP-Status-Code 400 abbrechen, wenn die QES gemäß der professionOID des Signaturzertifikats des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die der folgenden professionOID entspricht:
     <ul>
       <li>oid_arzt</li>
@@ -14,7 +14,7 @@
       <li>oid_kuj_psychotherapeut</li>
     </ul>
     damit nur solche Leistungserbringer ein signiertes E-Rezept einstellen, die zur Verordnung von DiGAs ermächtigt sind.
-  </Beschreibung>
+  </description>
   <!-- A_25990 -->
 </requirement>
 
@@ -25,9 +25,9 @@
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
   </actor>
-  <Beschreibung>
+  <description>
     Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mit Flowtype 162 mittels $activate prüfen, dass im Bundle eine <i>DeviceRequest</i>-Ressource und in der <i>Composition.type.coding.code=e16D</i> enthalten ist. Der E-Rezept-Fachdienst MUSS andernfalls mit dem HTTP-Fehlercode 400 abbrechen und in der <i>OperationOutcome</i> den Fehlertext "Für diesen Workflowtypen sind nur Verordnungen für Digitale Gesundheitsanwendungen zulässig" ausgeben.
-  </Beschreibung>
+  </description>
   <!-- A_25991 -->
 </requirement>
 
@@ -38,10 +38,10 @@
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
   </actor>
-  <Beschreibung>
+  <description>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&#60;id&#62;/$activate den im FHIR Profil KBV_PR_EVDGA_HealthAppRequest gespeicherten Wert für .code[x]:codeCodeableConcept.coding.code gemäß den "Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI" beschriebenen Prüfalgorithmus validieren.<br>
     Der E-Rezept-Fachdienst MUSS bei einer fehlerhaften Prüfung mit einem Http-Fehler 400 (Bad Request) abbrechen, sowie die Fehlermeldung "Ungültige PZN: Die übergebene Pharmazentralnummer entspricht nicht den vorgeschriebenen Prüfziffer-Validierungsregeln." in Form eines OperationOutcome ausliefern.
-  </Beschreibung>
+  </description>
   <!-- A_25992 -->
 </requirement>
 
@@ -52,9 +52,9 @@
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
   </actor>
-  <Beschreibung>
+  <description>
     Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Task des Flowtype Task.extension:flowType = 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate prüfen, obCoverage.type.coding.code nicht mit dem Wert "PKV" belegt ist und im Fehlerfall die Operation mit Http-Fehlercode 400 abbrechen, um sicherzustellen, dass diese Workflows nicht für E-Rezepte für PKV-Versicherte genutzt werden.
-  </Beschreibung>
+  </description>
   <!-- A_23443-01 -->
 </requirement>
 
@@ -65,9 +65,9 @@
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
   </actor>
-  <Beschreibung>
+  <description>
     Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Task des Flowtype Task.extension:flowType = 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate prüfen, ob die Extension Coverage.payor.identifier.extension:alternativeID vorhanden ist und in diesem Fall die Operation mit Http-Fehlercode 400 abbrechen, um sicherzustellen, dass dieser Workflow nicht für Verordnungen genutzt wird, die zu Lasten von Unfallkassen oder Berufsgenossenschaften gehen.
-  </Beschreibung>
+  </description>
   <!-- A_26372 -->
 </requirement>
 
@@ -78,7 +78,7 @@ Dieser Ausschluss erfolgt temporär. In einer späteren Version können Unfallka
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
   </actor>
-  <Beschreibung>
+  <description>
     Der E-Rezept-Fachdienst MUSS bei einem Task mit Task.flowType = 162 die Attribute in Task in Abhängigkeit des in der http-POST-Operation /Task/&#60;id&#62;/$activate übergebenen gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_005 belegen.<br>
   
     <table>
@@ -112,6 +112,6 @@ Dieser Ausschluss erfolgt temporär. In einer späteren Version können Unfallka
       </tr>
     </table>
     <div><figcaption><strong>Tabelle: </strong>TAB_eRpDM_005 Prozessparameter Flowtype 162</figcaption></div>
-  </Beschreibung>
+  </description>
   <!-- A_27845 -->
 </requirement>

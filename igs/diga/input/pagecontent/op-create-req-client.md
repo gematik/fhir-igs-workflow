@@ -6,9 +6,9 @@ Zur Verordnung von DiGAs werden die DiGA-FHIR-Profile der KBV genutzt: https://s
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Herstellererklärung"/>
   </actor>
-  <Beschreibung>
+  <description>
     Das PS der verordnenden LEI DARF bei der Verordnung einer DiGA zu Lasten einer Berufsgenossenschaft oder Unfallkasse NICHT die elektronische Verordnung nutzen.
-  </Beschreibung>
+  </description>
   <!-- A_26373 -->
 </requirement>
 

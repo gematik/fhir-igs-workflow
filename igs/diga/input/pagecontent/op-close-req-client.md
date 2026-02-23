@@ -4,9 +4,9 @@
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Konformitätsbestätigung"/>
   </actor>
-  <Beschreibung>
+  <description>
     Das Clientsystem des Kostenträgers MUSS im Anwendungsfall "Quittung abrufen" eine FHIR-Ressource mit dem Profil GEM_ERP_PR_MedicationDispense_DiGA erstellen.
-  </Beschreibung>
+  </description>
   <!-- A_26004-01 -->
 </requirement>
 
