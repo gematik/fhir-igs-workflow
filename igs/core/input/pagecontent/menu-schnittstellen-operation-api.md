@@ -1,12 +1,6 @@
-# Operation API (moduluebergreifend)
+TODO
 
-Dieses Kapitel beschreibt die moduluebergreifenden Basisanforderungen fuer FHIR-Operationen auf `Task`.
-
-Die fachmodulspezifischen Erweiterungen sind in den jeweiligen Fach-IGs dokumentiert:
-
-- E-Rezept RX
-- DiGA
-- weitere Fachmodule
+Die fachmodulspezifischen Erweiterungen sind in den jeweiligen Fach-IGs dokumentiert.
 
 ## Shared Operations
 
