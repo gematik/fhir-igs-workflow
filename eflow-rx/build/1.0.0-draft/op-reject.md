@@ -10,7 +10,7 @@ Version 1.0.0-draft - ci-build
 
 ## Operation $reject (Task zurückweisen)
 
-Diese Operation basiert auf der gleichnamigen Operation in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/1.0.0op-reject.html).
+Diese Operation basiert auf der gleichnamigen Operation in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/1.0.0/op-reject.html).
 
 ### Nachricht
 

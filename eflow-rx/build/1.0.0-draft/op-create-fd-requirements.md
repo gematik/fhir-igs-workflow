@@ -15,7 +15,7 @@ Version 1.0.0-draft - ci-build
 
 Die Operation `$create` baut für die normativen Basisanforderungen auf der Core-Spezifikation auf.
 
-* [Core: Operation `$create`](https://gemspec.gematik.de/ig/fhir/1.0.0op-create.html)
+* [Core: Operation `$create`](https://gemspec.gematik.de/ig/fhir/1.0.0/op-create.html)
 
 RX-spezifische Zusatzanforderungen gegenüber Core sind für `$create` derzeit nicht festgelegt.
 

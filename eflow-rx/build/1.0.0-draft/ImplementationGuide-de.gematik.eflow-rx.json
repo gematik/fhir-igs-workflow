@@ -10,7 +10,7 @@
   "name" : "gemIG_TIFlow_rx",
   "title" : "E-Rezept für Arzneimittel",
   "status" : "draft",
-  "date" : "2026-02-20T13:59:16+00:00",
+  "date" : "2026-02-23T13:43:56+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -103,6 +103,17 @@
       {
         "url" : "value",
         "valueString" : "ci-build"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "shownav"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -481,6 +492,17 @@
       {
         "url" : "value",
         "valueString" : "ci-build"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "shownav"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -2348,159 +2370,168 @@
           "nameUrl" : "menu-technische-umsetzung-dosierung.html",
           "title" : "Validierung von Dosierungsinformationen",
           "generation" : "markdown"
-        }]
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "menu-technische-umsetzung-mapping.html"
-        }],
-        "nameUrl" : "menu-technische-umsetzung-mapping.html",
-        "title" : "Vorgaben zum Mapping von FHIR-Instanzen",
-        "generation" : "markdown",
-        "page" : [{
+        },
+        {
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "mapping-prescription.html"
+            "valueUrl" : "menu-technische-umsetzung-dispensierinformationen.html"
           }],
-          "nameUrl" : "mapping-prescription.html",
-          "title" : "Mapping von Verordnungsdaten",
+          "nameUrl" : "menu-technische-umsetzung-dispensierinformationen.html",
+          "title" : "Erstellen von Dispensierinformationen",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "menu-technische-umsetzung-mapping.html"
+          }],
+          "nameUrl" : "menu-technische-umsetzung-mapping.html",
+          "title" : "Vorgaben zum Mapping von FHIR-Instanzen",
           "generation" : "markdown",
           "page" : [{
             "extension" : [{
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "mapping-prescription-bundle-parameters.html"
+              "valueUrl" : "mapping-prescription.html"
             }],
-            "nameUrl" : "mapping-prescription-bundle-parameters.html",
-            "title" : "Mapping des Bundles zu Parameters für Verordnungsdaten",
-            "generation" : "markdown"
-          },
-          {
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "mapping-prescription-practitioner.html"
-            }],
-            "nameUrl" : "mapping-prescription-practitioner.html",
-            "title" : "Mapping des Verordnenden für Verordnungsdaten",
-            "generation" : "markdown"
-          },
-          {
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "mapping-prescription-organization.html"
-            }],
-            "nameUrl" : "mapping-prescription-organization.html",
-            "title" : "Mapping der Organization für Verordnungsdaten",
-            "generation" : "markdown"
-          },
-          {
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "mapping-prescription-medicationrequest.html"
-            }],
-            "nameUrl" : "mapping-prescription-medicationrequest.html",
-            "title" : "Mapping der Verschreibung für Verordnungsdaten",
-            "generation" : "markdown"
-          },
-          {
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "mapping-prescription-medication.html"
-            }],
-            "nameUrl" : "mapping-prescription-medication.html",
-            "title" : "Mapping der Arzneimitteldaten für Verordnungsdaten",
+            "nameUrl" : "mapping-prescription.html",
+            "title" : "Mapping von Verordnungsdaten",
             "generation" : "markdown",
             "page" : [{
               "extension" : [{
                 "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-                "valueUrl" : "mapping-prescription-medication-compounding.html"
+                "valueUrl" : "mapping-prescription-bundle-parameters.html"
               }],
-              "nameUrl" : "mapping-prescription-medication-compounding.html",
-              "title" : "Mapping einer Rezeptur Medikation",
+              "nameUrl" : "mapping-prescription-bundle-parameters.html",
+              "title" : "Mapping des Bundles zu Parameters für Verordnungsdaten",
               "generation" : "markdown"
             },
             {
               "extension" : [{
                 "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-                "valueUrl" : "mapping-prescription-medication-freetext.html"
+                "valueUrl" : "mapping-prescription-practitioner.html"
               }],
-              "nameUrl" : "mapping-prescription-medication-freetext.html",
-              "title" : "Mapping einer Freitext Medikation",
+              "nameUrl" : "mapping-prescription-practitioner.html",
+              "title" : "Mapping des Verordnenden für Verordnungsdaten",
               "generation" : "markdown"
             },
             {
               "extension" : [{
                 "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-                "valueUrl" : "mapping-prescription-medication-ingredient.html"
+                "valueUrl" : "mapping-prescription-organization.html"
               }],
-              "nameUrl" : "mapping-prescription-medication-ingredient.html",
-              "title" : "Mapping einer Wirkstoff Medikation",
+              "nameUrl" : "mapping-prescription-organization.html",
+              "title" : "Mapping der Organization für Verordnungsdaten",
               "generation" : "markdown"
             },
             {
               "extension" : [{
                 "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-                "valueUrl" : "mapping-prescription-medication-pzn.html"
+                "valueUrl" : "mapping-prescription-medicationrequest.html"
               }],
-              "nameUrl" : "mapping-prescription-medication-pzn.html",
-              "title" : "Mapping einer PZN Medikation",
+              "nameUrl" : "mapping-prescription-medicationrequest.html",
+              "title" : "Mapping der Verschreibung für Verordnungsdaten",
               "generation" : "markdown"
+            },
+            {
+              "extension" : [{
+                "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                "valueUrl" : "mapping-prescription-medication.html"
+              }],
+              "nameUrl" : "mapping-prescription-medication.html",
+              "title" : "Mapping der Arzneimitteldaten für Verordnungsdaten",
+              "generation" : "markdown",
+              "page" : [{
+                "extension" : [{
+                  "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                  "valueUrl" : "mapping-prescription-medication-compounding.html"
+                }],
+                "nameUrl" : "mapping-prescription-medication-compounding.html",
+                "title" : "Mapping einer Rezeptur Medikation",
+                "generation" : "markdown"
+              },
+              {
+                "extension" : [{
+                  "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                  "valueUrl" : "mapping-prescription-medication-freetext.html"
+                }],
+                "nameUrl" : "mapping-prescription-medication-freetext.html",
+                "title" : "Mapping einer Freitext Medikation",
+                "generation" : "markdown"
+              },
+              {
+                "extension" : [{
+                  "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                  "valueUrl" : "mapping-prescription-medication-ingredient.html"
+                }],
+                "nameUrl" : "mapping-prescription-medication-ingredient.html",
+                "title" : "Mapping einer Wirkstoff Medikation",
+                "generation" : "markdown"
+              },
+              {
+                "extension" : [{
+                  "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                  "valueUrl" : "mapping-prescription-medication-pzn.html"
+                }],
+                "nameUrl" : "mapping-prescription-medication-pzn.html",
+                "title" : "Mapping einer PZN Medikation",
+                "generation" : "markdown"
+              }]
             }]
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "mapping-dispensation.html"
+            }],
+            "nameUrl" : "mapping-dispensation.html",
+            "title" : "Mapping von Dispensierinformationen",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "comparison-Bundle-input-example-1.html"
+            }],
+            "nameUrl" : "comparison-Bundle-input-example-1.html",
+            "title" : "Beispiel für eine Transformation einer PZN",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "comparison-Bundle-input-example-2.html"
+            }],
+            "nameUrl" : "comparison-Bundle-input-example-2.html",
+            "title" : "Beispiel für eine Transformation einer Wirkstoffverordnung",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "comparison-Bundle-input-example-3.html"
+            }],
+            "nameUrl" : "comparison-Bundle-input-example-3.html",
+            "title" : "Beispiel für eine Transformation einer Freitextverordnung",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "comparison-Bundle-input-example-4.html"
+            }],
+            "nameUrl" : "comparison-Bundle-input-example-4.html",
+            "title" : "Beispiel für eine Transformation einer Rezepturverordnung",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "comparison-Bundle-input-example-5.html"
+            }],
+            "nameUrl" : "comparison-Bundle-input-example-5.html",
+            "title" : "Beispiel für eine Transformation einer Verordnung mit absoluter Referenzierung",
+            "generation" : "markdown"
           }]
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "mapping-dispensation.html"
-          }],
-          "nameUrl" : "mapping-dispensation.html",
-          "title" : "Mapping von Dispensierinformationen",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "comparison-Bundle-input-example-1.html"
-          }],
-          "nameUrl" : "comparison-Bundle-input-example-1.html",
-          "title" : "Beispiel für eine Transformation einer PZN",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "comparison-Bundle-input-example-2.html"
-          }],
-          "nameUrl" : "comparison-Bundle-input-example-2.html",
-          "title" : "Beispiel für eine Transformation einer Wirkstoffverordnung",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "comparison-Bundle-input-example-3.html"
-          }],
-          "nameUrl" : "comparison-Bundle-input-example-3.html",
-          "title" : "Beispiel für eine Transformation einer Freitextverordnung",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "comparison-Bundle-input-example-4.html"
-          }],
-          "nameUrl" : "comparison-Bundle-input-example-4.html",
-          "title" : "Beispiel für eine Transformation einer Rezepturverordnung",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "comparison-Bundle-input-example-5.html"
-          }],
-          "nameUrl" : "comparison-Bundle-input-example-5.html",
-          "title" : "Beispiel für eine Transformation einer Verordnung mit absoluter Referenzierung",
-          "generation" : "markdown"
         }]
       },
       {

@@ -10,7 +10,7 @@ Version 1.0.0-draft - ci-build
 
 ## Operation $abort (Task abbrechen)
 
-Diese Operation basiert auf der gleichnamigen Operation in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/1.0.0op-abort.html).
+Diese Operation basiert auf der gleichnamigen Operation in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/1.0.0/op-abort.html).
 
 ### Nachricht
 

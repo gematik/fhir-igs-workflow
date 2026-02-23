@@ -10,7 +10,7 @@ Version 1.0.0-draft - ci-build
 
 ## Operation $create (Task erzeugen)
 
-Diese Operation basiert auf der gleichnamigen Operation in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/1.0.0op-create.html).
+Diese Operation basiert auf der gleichnamigen Operation in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/1.0.0/op-create.html).
 
 ### Nachricht
 

@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"6.2.2"}
-    h3,h4,h5,h6{--heading-prefix:"6.2.2"}</style>
+    <style type="text/css">h2{--heading-prefix:"5.2.2"}
+    h3,h4,h5,h6{--heading-prefix:"5.2.2"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -145,6 +145,9 @@
       </li>
       <li>
         <a href="menu-technische-umsetzung-dosierung.html">Strukturierte Dosierungen</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-dispensierinformationen.html">Dispensierinformationen</a>
       </li>
       <li>
         <a href="menu-technische-umsetzung-mapping.html">Mappings</a>
@@ -236,6 +239,16 @@ E-Rezept für Arzneimittel
         <ul class="breadcrumb">
           <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-operation-api.html'><b>Operation API</b></a></li><li><a href='op-activate.html'><b>Operation $activate (Task aktivieren)</b></a></li><li><b>Client-Anforderungen $activate</b></li>
 
+          <span style="float:right;">
+
+            <a href="op-activate-fd-requirements.html">&lt;vorherige</a> | 
+
+            <a href="#bottom">unten</a>
+
+          | <a href="op-accept.html">nächste&gt;</a>
+
+          </span>
+
         </ul>
       </div>  <!-- /container -->
     </div>  <!-- /segment-breadcrumb -->
@@ -269,28 +282,165 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#anforderungen-im-rahmen-des-moduls-arzneimittel" id="markdown-toc-anforderungen-im-rahmen-des-moduls-arzneimittel">Anforderungen im Rahmen des Moduls Arzneimittel</a></li>
+  <li><a href="#anforderungen-workflow-200-209" id="markdown-toc-anforderungen-workflow-200-209">Anforderungen Workflow 200, 209</a></li>
+  <li><a href="#anforderungen-für-mehrfachverordnung" id="markdown-toc-anforderungen-für-mehrfachverordnung">Anforderungen für Mehrfachverordnung</a></li>
+  <li><a href="#anforderungen-workflow-166" id="markdown-toc-anforderungen-workflow-166">Anforderungen Workflow 166</a></li>
+  <li><a href="#anforderungen-workflow-169" id="markdown-toc-anforderungen-workflow-169">Anforderungen Workflow 169</a></li>
+</ul>
+
 </div>
-<h1 id="client-anforderungen-operation-activate">Client-Anforderungen: Operation <code class="language-plaintext highlighter-rouge">$activate</code></h1>
+<p>Diese Seite enthält die normativen Anforderungen an den Client des E-Rezept-Fachdienst für die Operation <code class="language-plaintext highlighter-rouge">$activate</code>.
+Es gelten weiterhin die Anforderungen aus der <a href="https://gemspec.gematik.de/ig/fhir/1.0.0/op-activate-client-requirements.html">Core-Spezifikation</a>.</p>
 
-<p>Diese Seite beschreibt die Anforderungen an Clients zur Nutzung von <code class="language-plaintext highlighter-rouge">$activate</code>.</p>
+<h3 id="anforderungen-im-rahmen-des-moduls-arzneimittel">Anforderungen im Rahmen des Moduls Arzneimittel</h3>
+<requirement conformance="SHALL" key="IG-TIFlow-RX-1" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle erstellen" version="0">
+    <meta lockversion="false" />
+    <actor name="Client des E-Rezept-Fachdienstes">
+        <testProcedure id="Produkttest" />
+    </actor>
+    <description>
+        Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" eine Bundle-FHIR-Ressource gemäß Profilierung https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle Rezept-ID aus der Task-Ressource als Identifier erstellen.
+    </description>
+    <!-- A_19275 -->
+</requirement>
 
-<h2 id="normative-client-anforderungen-auszug">Normative Client-Anforderungen (Auszug)</h2>
+<h3 id="anforderungen-workflow-200-209">Anforderungen Workflow 200, 209</h3>
+<requirement conformance="SHALL" key="IG-TIFlow-RX-2" title="PS verordnende LEI: E-Rezept erstellen – Flowtype 200/209 – KVNR als Identifier" version="0">
+    <meta lockversion="false" />
+    <actor name="Client des E-Rezept-Fachdienstes">
+        <testProcedure id="Produkttest" />
+    </actor>
+    <description>
+        Das PS der verordnenden LEI MUSS im Verordnungsdatensatz für ein E-Rezept des Flowtype 200 oder 209 als Identifier des Patienten in Patient.identifer.value die KVNR des Versicherten verwenden.
+    </description>
+    <!-- A_22541-01 -->
+</requirement>
+<requirement conformance="SHALL" key="IG-TIFlow-RX-3" title="PS verordnende LEI: E-Rezept erstellen – Flowtype 200/209 – Versicherungstyp PKV" version="0">
+    <meta lockversion="false" />
+    <actor name="Client des E-Rezept-Fachdienstes">
+        <testProcedure id="Produkttest" />
+    </actor>
+    <description>
+        Das PS der verordnenden LEI MUSS im Verordnungsdatensatz für ein E-Rezept des Flowtype 200 oder 209 für Coverage.type.coding.code den Wert "PKV" verwenden.
+    </description>
+    <!-- A_22542-01 -->
+</requirement>
 
-<ul>
-  <li>A_19273-01: Das Primärsystem MUSS <code class="language-plaintext highlighter-rouge">POST /Task/&lt;id&gt;/$activate</code> mit <code class="language-plaintext highlighter-rouge">Authorization</code>, <code class="language-plaintext highlighter-rouge">Task-ID</code>, <code class="language-plaintext highlighter-rouge">AccessCode</code> und QES-signiertem Payload ausführen.</li>
-  <li>A_19279: Das Primärsystem MUSS bei Ausdruckbedarf einen E-Rezept-Token erzeugen.</li>
-  <li>A_19280: Das Primärsystem MUSS bei Ausdruckbedarf den Datamatrix-Code samt Zusatzinformationen ausgeben.</li>
-</ul>
+<h3 id="anforderungen-für-mehrfachverordnung">Anforderungen für Mehrfachverordnung</h3>
+<requirement conformance="SHALL" key="IG-TIFlow-RX-4" title="PS verordnende LEI: E-Rezept erstellen - Mehrfachverordnung - Beginn Einlösefrist" version="0">
+    <meta lockversion="false" />
+    <actor name="Client des E-Rezept-Fachdienstes">
+        <testProcedure id="Produkttest" />
+    </actor>
+    <description>
+        Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" beim Erstellen des E-Rezept-Bundles für die Teilverordnung einer Mehrfachverordnung den Beginn der Einlösefrist der Teilverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start) angeben.
+    </description>
+    <!-- A_22636 -->
+</requirement>
 
-<h2 id="hinweise-zur-nutzung">Hinweise zur Nutzung</h2>
+<h3 id="anforderungen-workflow-166">Anforderungen Workflow 166</h3>
+<requirement conformance="SHALL" key="IG-TIFlow-RX-5" title="PS verordnende LEI: E-Rezept erstellen – Flowtype 166 – zulässige Signatur Arzt" version="0">
+    <meta lockversion="false" />
+    <actor name="Client des E-Rezept-Fachdienstes">
+        <testProcedure id="Produkttest" />
+    </actor>
+    <description>
+        Das PS der verordnenden LEI MUSS sicherstellen, dass ein Verordnungsdatensatz für ein E-Rezept des Flowtype 166 nur mit einem HBA mit der zulässigen ProfessionOID oid_arzt signiert werden kann.
+    </description>
+    <!-- A_27834 -->
+</requirement>
+<requirement conformance="SHALL" key="IG-TIFlow-RX-6" title="PS verordnende LEI: E-Rezept erstellen – Flowtype 166 – Reichdauer nach Vorgaben" version="0">
+    <meta lockversion="false" />
+    <actor name="Client des E-Rezept-Fachdienstes">
+        <testProcedure id="Produkttest" />
+    </actor>
+    <description>
+        Das PS der verordnenden LEI MUSS im Verordnungsdatensatz für ein E-Rezept des Flowtype 166 sicherstellen, dass die maximale Reichdauer entsprechend den gesetzlichen Vorgaben nicht überschritten wird.
+    </description>
+    <!-- A_27835 -->
+</requirement>
+<requirement conformance="SHALL" key="IG-TIFlow-RX-7" title="PS verordnende LEI: E-Rezept erstellen – Flowtype 166 – Bestätigungen nach §3a Abs. 2, 5 AMVV" version="0">
+    <meta lockversion="false" />
+    <actor name="Client des E-Rezept-Fachdienstes">
+        <testProcedure id="Produkttest" />
+    </actor>
+    <description>
+<table>
+  <thead>
+    <tr>
+      <th>Anzeige der fachlichen Bestätigung*</th>
+      <th>Häufigkeit der Abfrage des Nutzers</th>
+      <th>Zulässigkeit der Vorbefüllung durch das PS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Alle Sicherheitsbestimmungen gemäß der Fachinformation entsprechender Fertigarzneimittel werden eingehalten</td>
+      <td>Bei jedem Verordnungsvorgang</td>
+      <td>"nein" ist zulässig, "ja" ist nicht zulässig</td>
+    </tr>
+    <tr>
+      <td>Ich verfüge über ausreichende Sachkenntnisse zur Verschreibung von Arzneimitteln nach § 3a AMVV</td>
+      <td>Einmalig aktiv abfragen, danach darf das Feld im Verordnungsvorgang angezeigt, aber vorbefüllt werden.</td>
+      <td>"nein" ist zulässig, "ja" ist ab der zweiten Verordnung zulässig</td>
+    </tr>
+    <tr>
+      <td>Der Patientin bzw. dem Patienten wurde vor Beginn der Behandlung medizinisches Informationsmaterial gemäß den Anforderungen der Fachinformation entsprechender Arzneimittel ausgehändigt.</td>
+      <td>Bei jedem Verordnungsvorgang</td>
+      <td>"nein" ist zulässig, "ja" ist nicht zulässig</td>
+    </tr>
+    <tr>
+      <td>Behandlung erfolgt außerhalb der zugelassenen Anwendungsgebiete (Off-Label)</td>
+      <td>Bei jedem Verordnungsvorgang</td>
+      <td>"nein" ist zulässig, "ja" ist nicht zulässig</td>
+    </tr>
+    <tr>
+      <td>Bei der Patientin handelt es sich um eine gebärfähige Frau</td>
+      <td>Bei jedem Verordnungsvorgang</td>
+      <td>"nein" und "ja" sind zulässig</td>
+    </tr>
+  </tbody>
+</table>
+    </description>
+    <!-- A_27836 -->
+</requirement>
 
-<ul>
-  <li>Wenn beim ersten <code class="language-plaintext highlighter-rouge">$activate</code>-Aufruf keine Response eintrifft, soll der Client den Aufruf wiederholen.</li>
-  <li>Liefert der zweite Aufruf <code class="language-plaintext highlighter-rouge">403</code> mit “Task not in status draft but in status ready”, war der erste Aufruf bereits erfolgreich.</li>
-  <li>Der Client soll <code class="language-plaintext highlighter-rouge">OperationOutcome</code>-Hinweise nutzerverständlich ausgeben.</li>
-</ul>
+<h3 id="anforderungen-workflow-169">Anforderungen Workflow 169</h3>
+<requirement conformance="SHALL" key="IG-TIFlow-RX-8" title="PS verordnende LEI: Übergabe E-Rezept-Token an Apotheke" version="0">
+    <meta lockversion="false" />
+    <actor name="Client des E-Rezept-Fachdienstes">
+        <testProcedure id="Produkttest" />
+    </actor>
+    <description>
+        Das PS der verordnenden LEI MUSS es dem Nutzer ermöglichen, die Einlöseinformationen (Task.id und AccessCode) als E-Rezept-Token über ein geeignetes Übermittlungsverfahren an eine Apotheke der Wahl zu schicken.
+    </description>
+    <!-- A_21400 -->
+</requirement>
+<requirement conformance="SHALL" key="IG-TIFlow-RX-9" title="PS: Schutz des E-Rezept-Tokens bei Übertragung" version="0">
+    <meta lockversion="false" />
+    <actor name="Client des E-Rezept-Fachdienstes">
+        <testProcedure id="Produkttest" />
+    </actor>
+    <description>
+        Das Primärsystem MUSS für die Übertragung von E-Rezept-Token ein Verfahren nutzen, dass die sehr hohe Vertraulichkeit des E-Rezept-Tokens und seine Integrität schützt.
+    </description>
+    <!-- A_21349 -->
+</requirement>
+<requirement conformance="MAY" key="IG-TIFlow-RX-10" title="PS verordnende LEI: Herstellende Apotheke für Übermittlungsverfahren" version="0">
+    <meta lockversion="false" />
+    <actor name="Client des E-Rezept-Fachdienstes">
+        <testProcedure id="Produkttest" />
+    </actor>
+    <description>
+        Das PS der verordnenden LEI KANN die Auswahl und Verwaltung von herstellenden Apotheken für die Übermittlung der E-Rezept-Einlöseinformationen ermöglichen.
+    </description>
+    <!-- A_21453 -->
+</requirement>
 
 
 
@@ -309,9 +459,31 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
     <div class="container">  <!-- container -->
 
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="op-activate-fd-requirements.html">&lt;vorherige</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">oben</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="op-accept.html">nächste&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Feb 20, 2026 13:59+0000">2026-02-20</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Feb 23, 2026 13:43+0000">2026-02-23</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

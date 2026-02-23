@@ -11,19 +11,38 @@ Version 1.0.0-draft - ci-build
 
 ## Client-Anforderungen $activate
 
-# Client-Anforderungen: Operation $activate
+Diese Seite enthält die normativen Anforderungen an den Client des E-Rezept-Fachdienst für die Operation `$activate`. Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/1.0.0/op-activate-client-requirements.html).
 
-Diese Seite beschreibt die Anforderungen an Clients zur Nutzung von `$activate`.
+### Anforderungen im Rahmen des Moduls Arzneimittel
 
-## Normative Client-Anforderungen (Auszug)
+Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" eine Bundle-FHIR-Ressource gemäß Profilierung https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle Rezept-ID aus der Task-Ressource als Identifier erstellen.
+### Anforderungen Workflow 200, 209
 
-* A_19273-01: Das Primärsystem MUSS `POST /Task/<id>/$activate` mit `Authorization`, `Task-ID`, `AccessCode` und QES-signiertem Payload ausführen.
-* A_19279: Das Primärsystem MUSS bei Ausdruckbedarf einen E-Rezept-Token erzeugen.
-* A_19280: Das Primärsystem MUSS bei Ausdruckbedarf den Datamatrix-Code samt Zusatzinformationen ausgeben.
+Das PS der verordnenden LEI MUSS im Verordnungsdatensatz für ein E-Rezept des Flowtype 200 oder 209 als Identifier des Patienten in Patient.identifer.value die KVNR des Versicherten verwenden.
 
-## Hinweise zur Nutzung
+Das PS der verordnenden LEI MUSS im Verordnungsdatensatz für ein E-Rezept des Flowtype 200 oder 209 für Coverage.type.coding.code den Wert "PKV" verwenden.
+### Anforderungen für Mehrfachverordnung
 
-* Wenn beim ersten `$activate`-Aufruf keine Response eintrifft, soll der Client den Aufruf wiederholen.
-* Liefert der zweite Aufruf `403` mit “Task not in status draft but in status ready”, war der erste Aufruf bereits erfolgreich.
-* Der Client soll `OperationOutcome`-Hinweise nutzerverständlich ausgeben.
+Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" beim Erstellen des E-Rezept-Bundles für die Teilverordnung einer Mehrfachverordnung den Beginn der Einlösefrist der Teilverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start) angeben.
+### Anforderungen Workflow 166
+
+Das PS der verordnenden LEI MUSS sicherstellen, dass ein Verordnungsdatensatz für ein E-Rezept des Flowtype 166 nur mit einem HBA mit der zulässigen ProfessionOID oid_arzt signiert werden kann.
+
+Das PS der verordnenden LEI MUSS im Verordnungsdatensatz für ein E-Rezept des Flowtype 166 sicherstellen, dass die maximale Reichdauer entsprechend den gesetzlichen Vorgaben nicht überschritten wird.
+
+| | | |
+| :--- | :--- | :--- |
+| Alle Sicherheitsbestimmungen gemäß der Fachinformation entsprechender Fertigarzneimittel werden eingehalten | Bei jedem Verordnungsvorgang | "nein" ist zulässig, "ja" ist nicht zulässig |
+| Ich verfüge über ausreichende Sachkenntnisse zur Verschreibung von Arzneimitteln nach § 3a AMVV | Einmalig aktiv abfragen, danach darf das Feld im Verordnungsvorgang angezeigt, aber vorbefüllt werden. | "nein" ist zulässig, "ja" ist ab der zweiten Verordnung zulässig |
+| Der Patientin bzw. dem Patienten wurde vor Beginn der Behandlung medizinisches Informationsmaterial gemäß den Anforderungen der Fachinformation entsprechender Arzneimittel ausgehändigt. | Bei jedem Verordnungsvorgang | "nein" ist zulässig, "ja" ist nicht zulässig |
+| Behandlung erfolgt außerhalb der zugelassenen Anwendungsgebiete (Off-Label) | Bei jedem Verordnungsvorgang | "nein" ist zulässig, "ja" ist nicht zulässig |
+| Bei der Patientin handelt es sich um eine gebärfähige Frau | Bei jedem Verordnungsvorgang | "nein" und "ja" sind zulässig |
+
+### Anforderungen Workflow 169
+
+Das PS der verordnenden LEI MUSS es dem Nutzer ermöglichen, die Einlöseinformationen (Task.id und AccessCode) als E-Rezept-Token über ein geeignetes Übermittlungsverfahren an eine Apotheke der Wahl zu schicken.
+
+Das Primärsystem MUSS für die Übertragung von E-Rezept-Token ein Verfahren nutzen, dass die sehr hohe Vertraulichkeit des E-Rezept-Tokens und seine Integrität schützt.
+
+Das PS der verordnenden LEI KANN die Auswahl und Verwaltung von herstellenden Apotheken für die Übermittlung der E-Rezept-Einlöseinformationen ermöglichen.
 

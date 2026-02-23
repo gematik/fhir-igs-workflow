@@ -10,7 +10,7 @@
   <name value="gemIG_TIFlow_rx"/>
   <title value="E-Rezept für Arzneimittel"/>
   <status value="draft"/>
-  <date value="2026-02-20T13:59:16+00:00"/>
+  <date value="2026-02-23T13:43:56+00:00"/>
   <publisher value="gematik GmbH"/>
   <contact>
     <name value="gematik GmbH"/>
@@ -89,6 +89,14 @@
       </extension>
       <extension url="value">
         <valueString value="ci-build"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="shownav"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -364,6 +372,14 @@
       </extension>
       <extension url="value">
         <valueString value="ci-build"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="shownav"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -2004,141 +2020,149 @@
           <title value="Validierung von Dosierungsinformationen"/>
           <generation value="markdown"/>
         </page>
-      </page>
-      <page>
-        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="menu-technische-umsetzung-mapping.html"/>
-        </extension>
-        <nameUrl value="menu-technische-umsetzung-mapping.html"/>
-        <title value="Vorgaben zum Mapping von FHIR-Instanzen"/>
-        <generation value="markdown"/>
         <page>
           <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="mapping-prescription.html"/>
+            <valueUrl value="menu-technische-umsetzung-dispensierinformationen.html"/>
           </extension>
-          <nameUrl value="mapping-prescription.html"/>
-          <title value="Mapping von Verordnungsdaten"/>
+          <nameUrl value="menu-technische-umsetzung-dispensierinformationen.html"/>
+          <title value="Erstellen von Dispensierinformationen"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="menu-technische-umsetzung-mapping.html"/>
+          </extension>
+          <nameUrl value="menu-technische-umsetzung-mapping.html"/>
+          <title value="Vorgaben zum Mapping von FHIR-Instanzen"/>
           <generation value="markdown"/>
           <page>
             <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-              <valueUrl value="mapping-prescription-bundle-parameters.html"/>
+              <valueUrl value="mapping-prescription.html"/>
             </extension>
-            <nameUrl value="mapping-prescription-bundle-parameters.html"/>
-            <title value="Mapping des Bundles zu Parameters für Verordnungsdaten"/>
-            <generation value="markdown"/>
-          </page>
-          <page>
-            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-              <valueUrl value="mapping-prescription-practitioner.html"/>
-            </extension>
-            <nameUrl value="mapping-prescription-practitioner.html"/>
-            <title value="Mapping des Verordnenden für Verordnungsdaten"/>
-            <generation value="markdown"/>
-          </page>
-          <page>
-            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-              <valueUrl value="mapping-prescription-organization.html"/>
-            </extension>
-            <nameUrl value="mapping-prescription-organization.html"/>
-            <title value="Mapping der Organization für Verordnungsdaten"/>
-            <generation value="markdown"/>
-          </page>
-          <page>
-            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-              <valueUrl value="mapping-prescription-medicationrequest.html"/>
-            </extension>
-            <nameUrl value="mapping-prescription-medicationrequest.html"/>
-            <title value="Mapping der Verschreibung für Verordnungsdaten"/>
-            <generation value="markdown"/>
-          </page>
-          <page>
-            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-              <valueUrl value="mapping-prescription-medication.html"/>
-            </extension>
-            <nameUrl value="mapping-prescription-medication.html"/>
-            <title value="Mapping der Arzneimitteldaten für Verordnungsdaten"/>
+            <nameUrl value="mapping-prescription.html"/>
+            <title value="Mapping von Verordnungsdaten"/>
             <generation value="markdown"/>
             <page>
               <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-                <valueUrl value="mapping-prescription-medication-compounding.html"/>
+                <valueUrl value="mapping-prescription-bundle-parameters.html"/>
               </extension>
-              <nameUrl value="mapping-prescription-medication-compounding.html"/>
-              <title value="Mapping einer Rezeptur Medikation"/>
+              <nameUrl value="mapping-prescription-bundle-parameters.html"/>
+              <title value="Mapping des Bundles zu Parameters für Verordnungsdaten"/>
               <generation value="markdown"/>
             </page>
             <page>
               <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-                <valueUrl value="mapping-prescription-medication-freetext.html"/>
+                <valueUrl value="mapping-prescription-practitioner.html"/>
               </extension>
-              <nameUrl value="mapping-prescription-medication-freetext.html"/>
-              <title value="Mapping einer Freitext Medikation"/>
+              <nameUrl value="mapping-prescription-practitioner.html"/>
+              <title value="Mapping des Verordnenden für Verordnungsdaten"/>
               <generation value="markdown"/>
             </page>
             <page>
               <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-                <valueUrl value="mapping-prescription-medication-ingredient.html"/>
+                <valueUrl value="mapping-prescription-organization.html"/>
               </extension>
-              <nameUrl value="mapping-prescription-medication-ingredient.html"/>
-              <title value="Mapping einer Wirkstoff Medikation"/>
+              <nameUrl value="mapping-prescription-organization.html"/>
+              <title value="Mapping der Organization für Verordnungsdaten"/>
               <generation value="markdown"/>
             </page>
             <page>
               <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-                <valueUrl value="mapping-prescription-medication-pzn.html"/>
+                <valueUrl value="mapping-prescription-medicationrequest.html"/>
               </extension>
-              <nameUrl value="mapping-prescription-medication-pzn.html"/>
-              <title value="Mapping einer PZN Medikation"/>
+              <nameUrl value="mapping-prescription-medicationrequest.html"/>
+              <title value="Mapping der Verschreibung für Verordnungsdaten"/>
               <generation value="markdown"/>
+            </page>
+            <page>
+              <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+                <valueUrl value="mapping-prescription-medication.html"/>
+              </extension>
+              <nameUrl value="mapping-prescription-medication.html"/>
+              <title value="Mapping der Arzneimitteldaten für Verordnungsdaten"/>
+              <generation value="markdown"/>
+              <page>
+                <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+                  <valueUrl value="mapping-prescription-medication-compounding.html"/>
+                </extension>
+                <nameUrl value="mapping-prescription-medication-compounding.html"/>
+                <title value="Mapping einer Rezeptur Medikation"/>
+                <generation value="markdown"/>
+              </page>
+              <page>
+                <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+                  <valueUrl value="mapping-prescription-medication-freetext.html"/>
+                </extension>
+                <nameUrl value="mapping-prescription-medication-freetext.html"/>
+                <title value="Mapping einer Freitext Medikation"/>
+                <generation value="markdown"/>
+              </page>
+              <page>
+                <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+                  <valueUrl value="mapping-prescription-medication-ingredient.html"/>
+                </extension>
+                <nameUrl value="mapping-prescription-medication-ingredient.html"/>
+                <title value="Mapping einer Wirkstoff Medikation"/>
+                <generation value="markdown"/>
+              </page>
+              <page>
+                <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+                  <valueUrl value="mapping-prescription-medication-pzn.html"/>
+                </extension>
+                <nameUrl value="mapping-prescription-medication-pzn.html"/>
+                <title value="Mapping einer PZN Medikation"/>
+                <generation value="markdown"/>
+              </page>
             </page>
           </page>
-        </page>
-        <page>
-          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="mapping-dispensation.html"/>
-          </extension>
-          <nameUrl value="mapping-dispensation.html"/>
-          <title value="Mapping von Dispensierinformationen"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="comparison-Bundle-input-example-1.html"/>
-          </extension>
-          <nameUrl value="comparison-Bundle-input-example-1.html"/>
-          <title value="Beispiel für eine Transformation einer PZN"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="comparison-Bundle-input-example-2.html"/>
-          </extension>
-          <nameUrl value="comparison-Bundle-input-example-2.html"/>
-          <title value="Beispiel für eine Transformation einer Wirkstoffverordnung"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="comparison-Bundle-input-example-3.html"/>
-          </extension>
-          <nameUrl value="comparison-Bundle-input-example-3.html"/>
-          <title value="Beispiel für eine Transformation einer Freitextverordnung"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="comparison-Bundle-input-example-4.html"/>
-          </extension>
-          <nameUrl value="comparison-Bundle-input-example-4.html"/>
-          <title value="Beispiel für eine Transformation einer Rezepturverordnung"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="comparison-Bundle-input-example-5.html"/>
-          </extension>
-          <nameUrl value="comparison-Bundle-input-example-5.html"/>
-          <title value="Beispiel für eine Transformation einer Verordnung mit absoluter Referenzierung"/>
-          <generation value="markdown"/>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="mapping-dispensation.html"/>
+            </extension>
+            <nameUrl value="mapping-dispensation.html"/>
+            <title value="Mapping von Dispensierinformationen"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="comparison-Bundle-input-example-1.html"/>
+            </extension>
+            <nameUrl value="comparison-Bundle-input-example-1.html"/>
+            <title value="Beispiel für eine Transformation einer PZN"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="comparison-Bundle-input-example-2.html"/>
+            </extension>
+            <nameUrl value="comparison-Bundle-input-example-2.html"/>
+            <title value="Beispiel für eine Transformation einer Wirkstoffverordnung"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="comparison-Bundle-input-example-3.html"/>
+            </extension>
+            <nameUrl value="comparison-Bundle-input-example-3.html"/>
+            <title value="Beispiel für eine Transformation einer Freitextverordnung"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="comparison-Bundle-input-example-4.html"/>
+            </extension>
+            <nameUrl value="comparison-Bundle-input-example-4.html"/>
+            <title value="Beispiel für eine Transformation einer Rezepturverordnung"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="comparison-Bundle-input-example-5.html"/>
+            </extension>
+            <nameUrl value="comparison-Bundle-input-example-5.html"/>
+            <title value="Beispiel für eine Transformation einer Verordnung mit absoluter Referenzierung"/>
+            <generation value="markdown"/>
+          </page>
         </page>
       </page>
       <page>

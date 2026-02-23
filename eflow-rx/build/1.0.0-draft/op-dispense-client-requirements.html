@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"6.5.2"}
-    h3,h4,h5,h6{--heading-prefix:"6.5.2"}</style>
+    <style type="text/css">h2{--heading-prefix:"5.5.2"}
+    h3,h4,h5,h6{--heading-prefix:"5.5.2"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -145,6 +145,9 @@
       </li>
       <li>
         <a href="menu-technische-umsetzung-dosierung.html">Strukturierte Dosierungen</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-dispensierinformationen.html">Dispensierinformationen</a>
       </li>
       <li>
         <a href="menu-technische-umsetzung-mapping.html">Mappings</a>
@@ -236,6 +239,16 @@ E-Rezept für Arzneimittel
         <ul class="breadcrumb">
           <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-operation-api.html'><b>Operation API</b></a></li><li><a href='op-dispense.html'><b>Operation $dispense (Dispensierinformationen bereitstellen)</b></a></li><li><b>Client-Anforderungen $dispense</b></li>
 
+          <span style="float:right;">
+
+            <a href="op-dispense-fd-requirements.html">&lt;vorherige</a> | 
+
+            <a href="#bottom">unten</a>
+
+          | <a href="op-close.html">nächste&gt;</a>
+
+          </span>
+
         </ul>
       </div>  <!-- /container -->
     </div>  <!-- /segment-breadcrumb -->
@@ -272,26 +285,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div>
 <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
-<h1 id="client-anforderungen-operation-dispense">Client-Anforderungen: Operation <code class="language-plaintext highlighter-rouge">$dispense</code></h1>
+<p>Diese Seite enthält die normativen Anforderungen an den Client des E-Rezept-Fachdienst für die Operation <code class="language-plaintext highlighter-rouge">$dispense</code>.</p>
 
-<p>Diese Seite beschreibt die Anforderungen an Clients zur Nutzung von <code class="language-plaintext highlighter-rouge">$dispense</code>.</p>
+<p>Mit diesem Anwendungsfall stellt das PS der abgebenden LEI Dispensierinformationen für den Versicherten bereit, die dann vom Versicherten auf seinem E-Rezept-FdV heruntergeladen werden können. Das E-Rezept-FdV kann dem Versicherten außerdem darstellen, dass das E-Rezept beliefert wurde bevor der Workflow des E-Rezepts durch den Anwendungsfall “Quittung abrufen” beendet wird.</p>
 
-<h2 id="normative-client-anforderungen-auszug">Normative Client-Anforderungen (Auszug)</h2>
+<p>Dieser Anwendungsfall kann so lange wiederholt werden, so lange sich der Task zum E-Rezept im Status “in Abgabe (gesperrt)” befindet. Bei der wiederholten Übermittlung wird die zuvor übermittelte Dispensierinformation überschrieben. D.h. es muss immer die vollständige Dispensierinformation übermittelt werden.</p>
 
-<ul>
-  <li>A_24289: Das AVS MUSS ein E-Rezept für die Bereitstellung von Dispensierinformationen auswaehlbar machen.</li>
-  <li>A_24290: Das AVS MUSS den Anwendungsfall “Dispensierinformationen bereitstellen” gemäß ILF umsetzen.</li>
-  <li>A_24291-01: Das AVS MUSS Dispensierinformationen profilkonform erstellen.</li>
-  <li>A_26346: Das AVS MUSS <code class="language-plaintext highlighter-rouge">POST /Task/&lt;id&gt;/$dispense</code> mit <code class="language-plaintext highlighter-rouge">Authorization</code>, <code class="language-plaintext highlighter-rouge">Task-ID</code>, <code class="language-plaintext highlighter-rouge">secret</code> und <code class="language-plaintext highlighter-rouge">MedicationDispense</code> ausführen.</li>
-</ul>
-
-<h2 id="hinweise-zur-nutzung">Hinweise zur Nutzung</h2>
-
-<ul>
-  <li>Wiederholte <code class="language-plaintext highlighter-rouge">$dispense</code>-Aufrufe überschreiben vorherige Dispensierinformationen; deshalb stets die vollständige, aktuelle Fassung senden.</li>
-  <li>Für die Dosierung sind die Flowtype-spezifischen Vorgaben einzuhalten.</li>
-</ul>
-
+<p>A_24289
+A_24290
+A_24291-01
+A_26346</p>
 
 
 
@@ -309,9 +312,31 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
     <div class="container">  <!-- container -->
 
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="op-dispense-fd-requirements.html">&lt;vorherige</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">oben</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="op-close.html">nächste&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Feb 20, 2026 13:59+0000">2026-02-20</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Feb 23, 2026 13:43+0000">2026-02-23</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

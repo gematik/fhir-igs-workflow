@@ -10,7 +10,7 @@ Version 1.0.0-draft - ci-build
 
 ## Operation $activate (Task aktivieren)
 
-Diese Operation basiert auf der gleichnamigen Operation in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/1.0.0op-activate.html).
+Diese Operation basiert auf der gleichnamigen Operation in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/1.0.0/op-activate.html).
 
 ### Nachricht
 

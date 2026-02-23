@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "gemIG_TIFlow_rx"] ; # 
   fhir:title [ fhir:v "E-Rezept für Arzneimittel"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-02-20T13:59:16+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-02-23T13:43:56+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "gematik GmbH"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "gematik GmbH" ] ;
@@ -166,6 +166,30 @@
          fhir:value [
            a fhir:String ;
            fhir:v "ci-build"
+         ]
+       ] ) ;
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "code"^^xsd:anyURI ;
+           fhir:l fhir:code
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "shownav"
+         ]
+       ] [
+         fhir:url [
+           fhir:v "value"^^xsd:anyURI ;
+           fhir:l fhir:value
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "true"
          ]
        ] ) ;
        fhir:url [
@@ -991,6 +1015,30 @@
          fhir:value [
            a fhir:String ;
            fhir:v "ci-build"
+         ]
+       ] ) ;
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "code"^^xsd:anyURI ;
+           fhir:l fhir:code
+         ] ;
+         fhir:value [
+           a fhir:Code ;
+           fhir:v "shownav"
+         ]
+       ] [
+         fhir:url [
+           fhir:v "value"^^xsd:anyURI ;
+           fhir:l fhir:value
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "true"
          ]
        ] ) ;
        fhir:url [
@@ -4495,27 +4543,7 @@
            ] ;
            fhir:title [ fhir:v "Validierung von Dosierungsinformationen" ] ;
            fhir:generation [ fhir:v "markdown" ]
-         ] )
-       ] [
-         fhir:extension ( [
-           fhir:url [
-             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-           ] ;
-           fhir:value [
-             a fhir:Url ;
-             fhir:v "menu-technische-umsetzung-mapping.html"^^xsd:anyURI ;
-             fhir:l fhir:menu-technische-umsetzung-mapping.html
-           ]
-         ] ) ;
-         fhir:name [
-           a fhir:Url ;
-           fhir:v "menu-technische-umsetzung-mapping.html"^^xsd:anyURI ;
-           fhir:l fhir:menu-technische-umsetzung-mapping.html
-         ] ;
-         fhir:title [ fhir:v "Vorgaben zum Mapping von FHIR-Instanzen" ] ;
-         fhir:generation [ fhir:v "markdown" ] ;
-         fhir:page ( [
+         ] [
            fhir:extension ( [
              fhir:url [
                fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
@@ -4523,16 +4551,35 @@
              ] ;
              fhir:value [
                a fhir:Url ;
-               fhir:v "mapping-prescription.html"^^xsd:anyURI ;
-               fhir:l fhir:mapping-prescription.html
+               fhir:v "menu-technische-umsetzung-dispensierinformationen.html"^^xsd:anyURI ;
+               fhir:l fhir:menu-technische-umsetzung-dispensierinformationen.html
              ]
            ] ) ;
            fhir:name [
              a fhir:Url ;
-             fhir:v "mapping-prescription.html"^^xsd:anyURI ;
-             fhir:l fhir:mapping-prescription.html
+             fhir:v "menu-technische-umsetzung-dispensierinformationen.html"^^xsd:anyURI ;
+             fhir:l fhir:menu-technische-umsetzung-dispensierinformationen.html
            ] ;
-           fhir:title [ fhir:v "Mapping von Verordnungsdaten" ] ;
+           fhir:title [ fhir:v "Erstellen von Dispensierinformationen" ] ;
+           fhir:generation [ fhir:v "markdown" ]
+         ] [
+           fhir:extension ( [
+             fhir:url [
+               fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+               fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+             ] ;
+             fhir:value [
+               a fhir:Url ;
+               fhir:v "menu-technische-umsetzung-mapping.html"^^xsd:anyURI ;
+               fhir:l fhir:menu-technische-umsetzung-mapping.html
+             ]
+           ] ) ;
+           fhir:name [
+             a fhir:Url ;
+             fhir:v "menu-technische-umsetzung-mapping.html"^^xsd:anyURI ;
+             fhir:l fhir:menu-technische-umsetzung-mapping.html
+           ] ;
+           fhir:title [ fhir:v "Vorgaben zum Mapping von FHIR-Instanzen" ] ;
            fhir:generation [ fhir:v "markdown" ] ;
            fhir:page ( [
              fhir:extension ( [
@@ -4542,92 +4589,16 @@
                ] ;
                fhir:value [
                  a fhir:Url ;
-                 fhir:v "mapping-prescription-bundle-parameters.html"^^xsd:anyURI ;
-                 fhir:l fhir:mapping-prescription-bundle-parameters.html
+                 fhir:v "mapping-prescription.html"^^xsd:anyURI ;
+                 fhir:l fhir:mapping-prescription.html
                ]
              ] ) ;
              fhir:name [
                a fhir:Url ;
-               fhir:v "mapping-prescription-bundle-parameters.html"^^xsd:anyURI ;
-               fhir:l fhir:mapping-prescription-bundle-parameters.html
+               fhir:v "mapping-prescription.html"^^xsd:anyURI ;
+               fhir:l fhir:mapping-prescription.html
              ] ;
-             fhir:title [ fhir:v "Mapping des Bundles zu Parameters für Verordnungsdaten" ] ;
-             fhir:generation [ fhir:v "markdown" ]
-           ] [
-             fhir:extension ( [
-               fhir:url [
-                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-               ] ;
-               fhir:value [
-                 a fhir:Url ;
-                 fhir:v "mapping-prescription-practitioner.html"^^xsd:anyURI ;
-                 fhir:l fhir:mapping-prescription-practitioner.html
-               ]
-             ] ) ;
-             fhir:name [
-               a fhir:Url ;
-               fhir:v "mapping-prescription-practitioner.html"^^xsd:anyURI ;
-               fhir:l fhir:mapping-prescription-practitioner.html
-             ] ;
-             fhir:title [ fhir:v "Mapping des Verordnenden für Verordnungsdaten" ] ;
-             fhir:generation [ fhir:v "markdown" ]
-           ] [
-             fhir:extension ( [
-               fhir:url [
-                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-               ] ;
-               fhir:value [
-                 a fhir:Url ;
-                 fhir:v "mapping-prescription-organization.html"^^xsd:anyURI ;
-                 fhir:l fhir:mapping-prescription-organization.html
-               ]
-             ] ) ;
-             fhir:name [
-               a fhir:Url ;
-               fhir:v "mapping-prescription-organization.html"^^xsd:anyURI ;
-               fhir:l fhir:mapping-prescription-organization.html
-             ] ;
-             fhir:title [ fhir:v "Mapping der Organization für Verordnungsdaten" ] ;
-             fhir:generation [ fhir:v "markdown" ]
-           ] [
-             fhir:extension ( [
-               fhir:url [
-                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-               ] ;
-               fhir:value [
-                 a fhir:Url ;
-                 fhir:v "mapping-prescription-medicationrequest.html"^^xsd:anyURI ;
-                 fhir:l fhir:mapping-prescription-medicationrequest.html
-               ]
-             ] ) ;
-             fhir:name [
-               a fhir:Url ;
-               fhir:v "mapping-prescription-medicationrequest.html"^^xsd:anyURI ;
-               fhir:l fhir:mapping-prescription-medicationrequest.html
-             ] ;
-             fhir:title [ fhir:v "Mapping der Verschreibung für Verordnungsdaten" ] ;
-             fhir:generation [ fhir:v "markdown" ]
-           ] [
-             fhir:extension ( [
-               fhir:url [
-                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-               ] ;
-               fhir:value [
-                 a fhir:Url ;
-                 fhir:v "mapping-prescription-medication.html"^^xsd:anyURI ;
-                 fhir:l fhir:mapping-prescription-medication.html
-               ]
-             ] ) ;
-             fhir:name [
-               a fhir:Url ;
-               fhir:v "mapping-prescription-medication.html"^^xsd:anyURI ;
-               fhir:l fhir:mapping-prescription-medication.html
-             ] ;
-             fhir:title [ fhir:v "Mapping der Arzneimitteldaten für Verordnungsdaten" ] ;
+             fhir:title [ fhir:v "Mapping von Verordnungsdaten" ] ;
              fhir:generation [ fhir:v "markdown" ] ;
              fhir:page ( [
                fhir:extension ( [
@@ -4637,16 +4608,16 @@
                  ] ;
                  fhir:value [
                    a fhir:Url ;
-                   fhir:v "mapping-prescription-medication-compounding.html"^^xsd:anyURI ;
-                   fhir:l fhir:mapping-prescription-medication-compounding.html
+                   fhir:v "mapping-prescription-bundle-parameters.html"^^xsd:anyURI ;
+                   fhir:l fhir:mapping-prescription-bundle-parameters.html
                  ]
                ] ) ;
                fhir:name [
                  a fhir:Url ;
-                 fhir:v "mapping-prescription-medication-compounding.html"^^xsd:anyURI ;
-                 fhir:l fhir:mapping-prescription-medication-compounding.html
+                 fhir:v "mapping-prescription-bundle-parameters.html"^^xsd:anyURI ;
+                 fhir:l fhir:mapping-prescription-bundle-parameters.html
                ] ;
-               fhir:title [ fhir:v "Mapping einer Rezeptur Medikation" ] ;
+               fhir:title [ fhir:v "Mapping des Bundles zu Parameters für Verordnungsdaten" ] ;
                fhir:generation [ fhir:v "markdown" ]
              ] [
                fhir:extension ( [
@@ -4655,172 +4626,268 @@
                    fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
                  ] ;
                  fhir:value [
+                   a fhir:Url ;
+                   fhir:v "mapping-prescription-practitioner.html"^^xsd:anyURI ;
+                   fhir:l fhir:mapping-prescription-practitioner.html
+                 ]
+               ] ) ;
+               fhir:name [
+                 a fhir:Url ;
+                 fhir:v "mapping-prescription-practitioner.html"^^xsd:anyURI ;
+                 fhir:l fhir:mapping-prescription-practitioner.html
+               ] ;
+               fhir:title [ fhir:v "Mapping des Verordnenden für Verordnungsdaten" ] ;
+               fhir:generation [ fhir:v "markdown" ]
+             ] [
+               fhir:extension ( [
+                 fhir:url [
+                   fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+                   fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+                 ] ;
+                 fhir:value [
+                   a fhir:Url ;
+                   fhir:v "mapping-prescription-organization.html"^^xsd:anyURI ;
+                   fhir:l fhir:mapping-prescription-organization.html
+                 ]
+               ] ) ;
+               fhir:name [
+                 a fhir:Url ;
+                 fhir:v "mapping-prescription-organization.html"^^xsd:anyURI ;
+                 fhir:l fhir:mapping-prescription-organization.html
+               ] ;
+               fhir:title [ fhir:v "Mapping der Organization für Verordnungsdaten" ] ;
+               fhir:generation [ fhir:v "markdown" ]
+             ] [
+               fhir:extension ( [
+                 fhir:url [
+                   fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+                   fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+                 ] ;
+                 fhir:value [
+                   a fhir:Url ;
+                   fhir:v "mapping-prescription-medicationrequest.html"^^xsd:anyURI ;
+                   fhir:l fhir:mapping-prescription-medicationrequest.html
+                 ]
+               ] ) ;
+               fhir:name [
+                 a fhir:Url ;
+                 fhir:v "mapping-prescription-medicationrequest.html"^^xsd:anyURI ;
+                 fhir:l fhir:mapping-prescription-medicationrequest.html
+               ] ;
+               fhir:title [ fhir:v "Mapping der Verschreibung für Verordnungsdaten" ] ;
+               fhir:generation [ fhir:v "markdown" ]
+             ] [
+               fhir:extension ( [
+                 fhir:url [
+                   fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+                   fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+                 ] ;
+                 fhir:value [
+                   a fhir:Url ;
+                   fhir:v "mapping-prescription-medication.html"^^xsd:anyURI ;
+                   fhir:l fhir:mapping-prescription-medication.html
+                 ]
+               ] ) ;
+               fhir:name [
+                 a fhir:Url ;
+                 fhir:v "mapping-prescription-medication.html"^^xsd:anyURI ;
+                 fhir:l fhir:mapping-prescription-medication.html
+               ] ;
+               fhir:title [ fhir:v "Mapping der Arzneimitteldaten für Verordnungsdaten" ] ;
+               fhir:generation [ fhir:v "markdown" ] ;
+               fhir:page ( [
+                 fhir:extension ( [
+                   fhir:url [
+                     fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+                     fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+                   ] ;
+                   fhir:value [
+                     a fhir:Url ;
+                     fhir:v "mapping-prescription-medication-compounding.html"^^xsd:anyURI ;
+                     fhir:l fhir:mapping-prescription-medication-compounding.html
+                   ]
+                 ] ) ;
+                 fhir:name [
+                   a fhir:Url ;
+                   fhir:v "mapping-prescription-medication-compounding.html"^^xsd:anyURI ;
+                   fhir:l fhir:mapping-prescription-medication-compounding.html
+                 ] ;
+                 fhir:title [ fhir:v "Mapping einer Rezeptur Medikation" ] ;
+                 fhir:generation [ fhir:v "markdown" ]
+               ] [
+                 fhir:extension ( [
+                   fhir:url [
+                     fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+                     fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+                   ] ;
+                   fhir:value [
+                     a fhir:Url ;
+                     fhir:v "mapping-prescription-medication-freetext.html"^^xsd:anyURI ;
+                     fhir:l fhir:mapping-prescription-medication-freetext.html
+                   ]
+                 ] ) ;
+                 fhir:name [
                    a fhir:Url ;
                    fhir:v "mapping-prescription-medication-freetext.html"^^xsd:anyURI ;
                    fhir:l fhir:mapping-prescription-medication-freetext.html
-                 ]
-               ] ) ;
-               fhir:name [
-                 a fhir:Url ;
-                 fhir:v "mapping-prescription-medication-freetext.html"^^xsd:anyURI ;
-                 fhir:l fhir:mapping-prescription-medication-freetext.html
-               ] ;
-               fhir:title [ fhir:v "Mapping einer Freitext Medikation" ] ;
-               fhir:generation [ fhir:v "markdown" ]
-             ] [
-               fhir:extension ( [
-                 fhir:url [
-                   fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-                   fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
                  ] ;
-                 fhir:value [
+                 fhir:title [ fhir:v "Mapping einer Freitext Medikation" ] ;
+                 fhir:generation [ fhir:v "markdown" ]
+               ] [
+                 fhir:extension ( [
+                   fhir:url [
+                     fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+                     fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+                   ] ;
+                   fhir:value [
+                     a fhir:Url ;
+                     fhir:v "mapping-prescription-medication-ingredient.html"^^xsd:anyURI ;
+                     fhir:l fhir:mapping-prescription-medication-ingredient.html
+                   ]
+                 ] ) ;
+                 fhir:name [
                    a fhir:Url ;
                    fhir:v "mapping-prescription-medication-ingredient.html"^^xsd:anyURI ;
                    fhir:l fhir:mapping-prescription-medication-ingredient.html
-                 ]
-               ] ) ;
-               fhir:name [
-                 a fhir:Url ;
-                 fhir:v "mapping-prescription-medication-ingredient.html"^^xsd:anyURI ;
-                 fhir:l fhir:mapping-prescription-medication-ingredient.html
-               ] ;
-               fhir:title [ fhir:v "Mapping einer Wirkstoff Medikation" ] ;
-               fhir:generation [ fhir:v "markdown" ]
-             ] [
-               fhir:extension ( [
-                 fhir:url [
-                   fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-                   fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
                  ] ;
-                 fhir:value [
+                 fhir:title [ fhir:v "Mapping einer Wirkstoff Medikation" ] ;
+                 fhir:generation [ fhir:v "markdown" ]
+               ] [
+                 fhir:extension ( [
+                   fhir:url [
+                     fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+                     fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+                   ] ;
+                   fhir:value [
+                     a fhir:Url ;
+                     fhir:v "mapping-prescription-medication-pzn.html"^^xsd:anyURI ;
+                     fhir:l fhir:mapping-prescription-medication-pzn.html
+                   ]
+                 ] ) ;
+                 fhir:name [
                    a fhir:Url ;
                    fhir:v "mapping-prescription-medication-pzn.html"^^xsd:anyURI ;
                    fhir:l fhir:mapping-prescription-medication-pzn.html
-                 ]
-               ] ) ;
-               fhir:name [
-                 a fhir:Url ;
-                 fhir:v "mapping-prescription-medication-pzn.html"^^xsd:anyURI ;
-                 fhir:l fhir:mapping-prescription-medication-pzn.html
-               ] ;
-               fhir:title [ fhir:v "Mapping einer PZN Medikation" ] ;
-               fhir:generation [ fhir:v "markdown" ]
+                 ] ;
+                 fhir:title [ fhir:v "Mapping einer PZN Medikation" ] ;
+                 fhir:generation [ fhir:v "markdown" ]
+               ] )
              ] )
-           ] )
-         ] [
-           fhir:extension ( [
-             fhir:url [
-               fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-               fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-             ] ;
-             fhir:value [
+           ] [
+             fhir:extension ( [
+               fhir:url [
+                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+               ] ;
+               fhir:value [
+                 a fhir:Url ;
+                 fhir:v "mapping-dispensation.html"^^xsd:anyURI ;
+                 fhir:l fhir:mapping-dispensation.html
+               ]
+             ] ) ;
+             fhir:name [
                a fhir:Url ;
                fhir:v "mapping-dispensation.html"^^xsd:anyURI ;
                fhir:l fhir:mapping-dispensation.html
-             ]
-           ] ) ;
-           fhir:name [
-             a fhir:Url ;
-             fhir:v "mapping-dispensation.html"^^xsd:anyURI ;
-             fhir:l fhir:mapping-dispensation.html
-           ] ;
-           fhir:title [ fhir:v "Mapping von Dispensierinformationen" ] ;
-           fhir:generation [ fhir:v "markdown" ]
-         ] [
-           fhir:extension ( [
-             fhir:url [
-               fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-               fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
              ] ;
-             fhir:value [
+             fhir:title [ fhir:v "Mapping von Dispensierinformationen" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] [
+             fhir:extension ( [
+               fhir:url [
+                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+               ] ;
+               fhir:value [
+                 a fhir:Url ;
+                 fhir:v "comparison-Bundle-input-example-1.html"^^xsd:anyURI ;
+                 fhir:l fhir:comparison-Bundle-input-example-1.html
+               ]
+             ] ) ;
+             fhir:name [
                a fhir:Url ;
                fhir:v "comparison-Bundle-input-example-1.html"^^xsd:anyURI ;
                fhir:l fhir:comparison-Bundle-input-example-1.html
-             ]
-           ] ) ;
-           fhir:name [
-             a fhir:Url ;
-             fhir:v "comparison-Bundle-input-example-1.html"^^xsd:anyURI ;
-             fhir:l fhir:comparison-Bundle-input-example-1.html
-           ] ;
-           fhir:title [ fhir:v "Beispiel für eine Transformation einer PZN" ] ;
-           fhir:generation [ fhir:v "markdown" ]
-         ] [
-           fhir:extension ( [
-             fhir:url [
-               fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-               fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
              ] ;
-             fhir:value [
+             fhir:title [ fhir:v "Beispiel für eine Transformation einer PZN" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] [
+             fhir:extension ( [
+               fhir:url [
+                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+               ] ;
+               fhir:value [
+                 a fhir:Url ;
+                 fhir:v "comparison-Bundle-input-example-2.html"^^xsd:anyURI ;
+                 fhir:l fhir:comparison-Bundle-input-example-2.html
+               ]
+             ] ) ;
+             fhir:name [
                a fhir:Url ;
                fhir:v "comparison-Bundle-input-example-2.html"^^xsd:anyURI ;
                fhir:l fhir:comparison-Bundle-input-example-2.html
-             ]
-           ] ) ;
-           fhir:name [
-             a fhir:Url ;
-             fhir:v "comparison-Bundle-input-example-2.html"^^xsd:anyURI ;
-             fhir:l fhir:comparison-Bundle-input-example-2.html
-           ] ;
-           fhir:title [ fhir:v "Beispiel für eine Transformation einer Wirkstoffverordnung" ] ;
-           fhir:generation [ fhir:v "markdown" ]
-         ] [
-           fhir:extension ( [
-             fhir:url [
-               fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-               fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
              ] ;
-             fhir:value [
+             fhir:title [ fhir:v "Beispiel für eine Transformation einer Wirkstoffverordnung" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] [
+             fhir:extension ( [
+               fhir:url [
+                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+               ] ;
+               fhir:value [
+                 a fhir:Url ;
+                 fhir:v "comparison-Bundle-input-example-3.html"^^xsd:anyURI ;
+                 fhir:l fhir:comparison-Bundle-input-example-3.html
+               ]
+             ] ) ;
+             fhir:name [
                a fhir:Url ;
                fhir:v "comparison-Bundle-input-example-3.html"^^xsd:anyURI ;
                fhir:l fhir:comparison-Bundle-input-example-3.html
-             ]
-           ] ) ;
-           fhir:name [
-             a fhir:Url ;
-             fhir:v "comparison-Bundle-input-example-3.html"^^xsd:anyURI ;
-             fhir:l fhir:comparison-Bundle-input-example-3.html
-           ] ;
-           fhir:title [ fhir:v "Beispiel für eine Transformation einer Freitextverordnung" ] ;
-           fhir:generation [ fhir:v "markdown" ]
-         ] [
-           fhir:extension ( [
-             fhir:url [
-               fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-               fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
              ] ;
-             fhir:value [
+             fhir:title [ fhir:v "Beispiel für eine Transformation einer Freitextverordnung" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] [
+             fhir:extension ( [
+               fhir:url [
+                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+               ] ;
+               fhir:value [
+                 a fhir:Url ;
+                 fhir:v "comparison-Bundle-input-example-4.html"^^xsd:anyURI ;
+                 fhir:l fhir:comparison-Bundle-input-example-4.html
+               ]
+             ] ) ;
+             fhir:name [
                a fhir:Url ;
                fhir:v "comparison-Bundle-input-example-4.html"^^xsd:anyURI ;
                fhir:l fhir:comparison-Bundle-input-example-4.html
-             ]
-           ] ) ;
-           fhir:name [
-             a fhir:Url ;
-             fhir:v "comparison-Bundle-input-example-4.html"^^xsd:anyURI ;
-             fhir:l fhir:comparison-Bundle-input-example-4.html
-           ] ;
-           fhir:title [ fhir:v "Beispiel für eine Transformation einer Rezepturverordnung" ] ;
-           fhir:generation [ fhir:v "markdown" ]
-         ] [
-           fhir:extension ( [
-             fhir:url [
-               fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-               fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
              ] ;
-             fhir:value [
+             fhir:title [ fhir:v "Beispiel für eine Transformation einer Rezepturverordnung" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] [
+             fhir:extension ( [
+               fhir:url [
+                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+               ] ;
+               fhir:value [
+                 a fhir:Url ;
+                 fhir:v "comparison-Bundle-input-example-5.html"^^xsd:anyURI ;
+                 fhir:l fhir:comparison-Bundle-input-example-5.html
+               ]
+             ] ) ;
+             fhir:name [
                a fhir:Url ;
                fhir:v "comparison-Bundle-input-example-5.html"^^xsd:anyURI ;
                fhir:l fhir:comparison-Bundle-input-example-5.html
-             ]
-           ] ) ;
-           fhir:name [
-             a fhir:Url ;
-             fhir:v "comparison-Bundle-input-example-5.html"^^xsd:anyURI ;
-             fhir:l fhir:comparison-Bundle-input-example-5.html
-           ] ;
-           fhir:title [ fhir:v "Beispiel für eine Transformation einer Verordnung mit absoluter Referenzierung" ] ;
-           fhir:generation [ fhir:v "markdown" ]
+             ] ;
+             fhir:title [ fhir:v "Beispiel für eine Transformation einer Verordnung mit absoluter Referenzierung" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] )
          ] )
        ] [
          fhir:extension ( [
