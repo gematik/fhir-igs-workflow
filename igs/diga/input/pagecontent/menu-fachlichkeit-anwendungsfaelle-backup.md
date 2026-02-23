@@ -1,6 +1,6 @@
 ### Fachliche Anwendungsfälle
 
-{% assign use_cases = site.data['use-cases'] %}
+{% assign use_cases = site.data['gen-use-cases'] %}
 {% assign roles = site.data['roles'] %}
 
 Die folgenden fachlichen Anwendungsfälle beschreiben die Schritte zur Verordnung und Bereitstellung einer DiGA-Verordnung.

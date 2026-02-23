@@ -1,4 +1,4 @@
-{% assign use_cases = site.data['use-cases'] %}
+{% assign use_cases = site.data['gen-use-cases'] %}
 
 In diesem Abschnitt wird das Feature fachlich motiviert und der Mehrwert für Nutzer vorgestellt. Aus diesen Epics und User Stories wird anschließend ein technisches Konzept abgeleitet.
 
