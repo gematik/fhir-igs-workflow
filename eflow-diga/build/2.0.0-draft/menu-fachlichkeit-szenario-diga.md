@@ -1,24 +1,13 @@
-# Szenario: Verordnungen für DiGA - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft
-
-Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
-
-Version 2.0.0-draft - ci-build 
-
-* [**Table of Contents**](toc.md)
-* [**Elektronische Verordnung von DiGAs**](menu-fachlichkeit-diga.md)
-* [**Szenarien für den DiGA-Workflow**](menu-fachlichkeit-szenarien.md)
-* **Szenario: Verordnungen für DiGA**
-
-## Szenario: Verordnungen für DiGA
+{% assign use_cases = site.data.use-cases %}
 
 Die elektronische Verordnung für Digitale Gesundheitsanwendungen (DiGA) ersetzt das Muster-16-Verfahren und sorgt dafür, dass zertifizierte DiGAs medienbruchfrei, sicher und nachvollziehbar verordnet, die Verordnung an Kostenträger übermittelt und der Freischaltcode übermittelt an den Versicherten werden können. Es ergänzt die bestehenden Abläufe des E-Rezepts, erweitert sie um Psychotherapeutinnen und Psychotherapeuten sowie Kostenträger und ermöglicht eine vollständig digitale Bereitstellung der Freischaltcodes.
 
 ### Vorteile durch das elektronische Verordnen von DiGAs
 
-* Versicherte müssen Anträge und Muster-16-Vordrucke nicht mehr postalisch einreichen, sondern erhalten Verordnungen sofort in der Versicherten-App (FdV) oder optional als Ausdruck (Section 360 Abs. 9 SGB V).
-* Ärztinnen, Zahnärzte und Psychotherapeutinnen nutzen etablierte E-Rezept-Prozesse weiter, inklusive QES und Workflowsteuerung, wodurch Schulungs- und Dokumentationsaufwände sinken.
-* Krankenkassen empfangen Anfragen überwiegend digital, können die Verordnungsdaten strukturiert abrufen und sparen manuelle Bearbeitung der Papierformulare.
-* Der Workflow-Fachdienst dokumentiert Bereitstellung und Nutzung des Freischaltcodes transparent, was Missbrauch erschwert und revisionssichere Nachweise liefert.
+- Versicherte müssen Anträge und Muster-16-Vordrucke nicht mehr postalisch einreichen, sondern erhalten Verordnungen sofort in der Versicherten-App (FdV) oder optional als Ausdruck (Section 360 Abs. 9 SGB V).
+- Ärztinnen, Zahnärzte und Psychotherapeutinnen nutzen etablierte E-Rezept-Prozesse weiter, inklusive QES und Workflowsteuerung, wodurch Schulungs- und Dokumentationsaufwände sinken.
+- Krankenkassen empfangen Anfragen überwiegend digital, können die Verordnungsdaten strukturiert abrufen und sparen manuelle Bearbeitung der Papierformulare.
+- Der Workflow-Fachdienst dokumentiert Bereitstellung und Nutzung des Freischaltcodes transparent, was Missbrauch erschwert und revisionssichere Nachweise liefert.
 
 ### DiGA-Verordnung erstellen
 
@@ -30,14 +19,10 @@ PVS/KIS greifen auf das BfArM-DiGA-Verzeichnis zu, wählen die passende PZN (ink
 
 **Fachliche Anwendungsfälle**
 
-| |
-| :--- |
-|  |
-| [E-Rezept qualifiziert signieren](menu-technische-umsetzung-anwendungsfaelle.md#e-rezept-qualifiziert-signieren) |
-|  |
+{% assign scenario_use_cases = "E_Rezept_erstellen, E_Rezept_qualifiziert_signieren, E_Rezept_vervollstaendigen_und_Task_aktivieren" | split: ", " %}
 
-**Tabelle:**Fachliche Anwendungsfälle mit Bezug zu Szenario
-*DiGA*
+{% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Fachliche Anwendungsfälle mit Bezug zu Szenario <i>DiGA</i>" %}
+
 ### DiGA zuweisen und Freischaltcode anfordern
 
 Versicherte sehen eine neue DiGA-Verordnung im E-Rezept-FdV (oder erhalten einen Ausdruck) und weisen sie ihrem Kostenträger zu. Das E-Rezept-FdV ermittelt - idealerweise automatisch - die Telematik-ID der Krankenkasse über den FHIR-VZD, erstellt eine `Communication_DispReq` und übermittelt darin Verordnungs-ID und AccessCode. Alternativ können Versicherte den Ausdruck per Post, Servicecenter oder Service-App der Krankenkasse einreichen. Der Kostenträger startet daraufhin den Abruf. Status- und Protokolleinträge im E-Rezept-FdV machen den Fortschritt (Freischaltcode angefordert, in Prüfung, erledigt) sichtbar.
@@ -46,25 +31,18 @@ Versicherte sehen eine neue DiGA-Verordnung im E-Rezept-FdV (oder erhalten einen
 
 **Fachliche Anwendungsfälle**
 
-| |
-| :--- |
-|  |
+{% assign scenario_use_cases = "DiGA_E_Rezept_zuweisen" | split: ", " %}
 
-**Tabelle:**Fachliche Anwendungsfälle mit Bezug zu Szenario
-*Zuweisung der DiGA-Verordnung*
+{% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Fachliche Anwendungsfälle mit Bezug zu Szenario <i>Zuweisung der DiGA-Verordnung</i>" %}
+
 ### Prüfung durch Kostenträger und Bereitstellung des Freischaltcodes
 
-Kostenträger authentisieren sich über ihren Basis-Consumer, rufen die Verordnung mit `$accept` ab und prüfen Anspruch, Indikation sowie ggf. ergänzende Unterlagen. Nach erfolgreicher Prüfung erzeugen sie den Freischaltcode, legen ihn als Abgabeinformation via `$close` im Fachdienst ab und schliessen den Workflow mit einer Quittung ab. Falls kein Freischaltcode ausgegeben werden kann, hinterlegen sie eine versichertenfreundliche Begründung, damit Versicherte den Ausgang im E-Rezept-FdV nachvollziehen können.
+Kostenträger authentisieren sich über ihren Basis-Consumer, rufen die Verordnung mit `$accept` ab und prüfen Anspruch, Indikation sowie ggf. ergänzende Unterlagen. Nach erfolgreicher Prüfung erzeugen sie den Freischaltcode, legen ihn als Abgabeinformation via `$close` im Fachdienst ab und schliessen den Workflow mit einer Quittung ab. Falls kein Freischaltcode ausgegeben werden kann, hinterlegen sie eine versichertenfreundliche Begründung, damit Versicherte den Ausgang im E-Rezept-FdV nachvollziehen können. 
 
 **Beteiligte Systeme:** Kostenträger-Backend inkl. Basis-Consumer, e-Rezept-Fachdienst, interne Freischaltcode-Services
 
 **Fachliche Anwendungsfälle**
 
-| |
-| :--- |
-|  |
-|  |
+{% assign scenario_use_cases = "DiGA_E_Rezept_abrufen_kostentraeger, DiGA_Freischaltcode_bereitstellen" | split: ", " %}
 
-**Tabelle:**Fachliche Anwendungsfälle mit Bezug zu Szenario
-*Freischaltcode-Bereitstellung durch Kostenträger*
-
+{% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Fachliche Anwendungsfälle mit Bezug zu Szenario <i>Freischaltcode-Bereitstellung durch Kostenträger</i>" %}

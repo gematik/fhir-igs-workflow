@@ -29,27 +29,27 @@ Folgende Anwendungsfälle werden genutzt:
 ##### UC 2.1 - E-Rezepte erzeugen
 
 * Beschreibung: Vorbedingungen
-  * Der verordnende Leistungserbringer erzeugt ein oder mehrere E-Rezepte im Primaersystem. Für jedes E-Rezept wird eine Rezept-ID aus dem E-Rezept-Fachdienst bezogen und der Datensatz anschließend qualifiziert elektronisch signiert (QES).: * Der oder die Versicherten sind der LEI bekannt.
-* Ein oder mehrere Verordnungsdatensätze liegen im Primaersystem vor.
+  * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primaersystem. Für die Verordnung wird eine Rezept-ID aus dem E-Rezept-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).: * Der Versicherte ist der LEI bekannt.
+* Ein Verordnungsdatensatz liegt im Primärsystem vor.
 * HBA ist gesteckt und für die QES freigeschaltet.
 
 * Beschreibung: Durchzuführende Aktionen
-  * Der verordnende Leistungserbringer erzeugt ein oder mehrere E-Rezepte im Primaersystem. Für jedes E-Rezept wird eine Rezept-ID aus dem E-Rezept-Fachdienst bezogen und der Datensatz anschließend qualifiziert elektronisch signiert (QES).: * Der Leistungserbringer wählt Verordnungsdatensätze und ein Signaturverfahren aus.
-* Das Primaersystem ruft pro E-Rezept eine Rezept-ID beim E-Rezept-Fachdienst ab und ergänzt sie im Datensatz.
-* Die E-Rezepte werden über den Konnektor mit QES signiert (Einzel-, Stapel- oder Komfortsignatur).
-* AccessCodes werden im Primaersystem gespeichert.
+  * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primaersystem. Für die Verordnung wird eine Rezept-ID aus dem E-Rezept-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).: * Der Leistungserbringer wählt den Verordnungsdatensatz und ein Signaturverfahren aus.
+* Das Primärsystem ruft eine Rezept-ID beim E-Rezept-Fachdienst ab und ergänzt sie im Verordnungsdatensatz.
+* Der AccessCode wird im Primärsystem gespeichert.
+* Der Verordnungsdatensatz wird über den Konnektor mit QES signiert (Einzel-, Stapel- oder Komfortsignatur).
 
 * Beschreibung: Nachbedingungen
-  * Der verordnende Leistungserbringer erzeugt ein oder mehrere E-Rezepte im Primaersystem. Für jedes E-Rezept wird eine Rezept-ID aus dem E-Rezept-Fachdienst bezogen und der Datensatz anschließend qualifiziert elektronisch signiert (QES).: * E-Rezepte enthalten Rezept-ID und QES.
-* AccessCode je E-Rezept ist im Primaersystem gespeichert.
-* E-Rezepte sind im E-Rezept-Fachdienst im Status “initialisiert” angelegt.
+  * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primaersystem. Für die Verordnung wird eine Rezept-ID aus dem E-Rezept-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).: * E-Rezept enthält Rezept-ID und QES.
+* AccessCode des E-Rezepts ist im Primärsystem gespeichert.
+* Workflow zum E-Rezept ist im E-Rezept-Fachdienst im Status “initialisiert” angelegt.
 
 * Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * Der verordnende Leistungserbringer erzeugt ein oder mehrere E-Rezepte im Primaersystem. Für jedes E-Rezept wird eine Rezept-ID aus dem E-Rezept-Fachdienst bezogen und der Datensatz anschließend qualifiziert elektronisch signiert (QES).: * [Operation API: E-Rezept erstellen](./op-create.md)
-* QES im Primaersystem (Konnektor)
+  * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primaersystem. Für die Verordnung wird eine Rezept-ID aus dem E-Rezept-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).: * [Operation API: E-Rezept erstellen](./op-create.md)
+* QES im Primärsystem (Konnektor)
 
 * Beschreibung: Relevante(r) Sektor(en)
-  * Der verordnende Leistungserbringer erzeugt ein oder mehrere E-Rezepte im Primaersystem. Für jedes E-Rezept wird eine Rezept-ID aus dem E-Rezept-Fachdienst bezogen und der Datensatz anschließend qualifiziert elektronisch signiert (QES).:  (ZAHN-)ARZT  PSYCHOTHERAPEUT 
+  * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primaersystem. Für die Verordnung wird eine Rezept-ID aus dem E-Rezept-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).:  (ZAHN-)ARZT  PSYCHOTHERAPEUT 
 
 **Tabelle:**Fachlicher Anwendungsfall UC 2.1 - E-Rezepte erzeugen
 **Sequenzdiagramm:**
@@ -72,7 +72,7 @@ Folgende Anwendungsfälle werden genutzt:
   * Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES). Vorbereitende Tätigkeiten im Primärsystem können organisatorisch delegiert werden, die QES selbst jedoch nicht.: * QES-signierter Verordnungsdatensatz liegt im Primärsystem vor.
 
 * Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES). Vorbereitende Tätigkeiten im Primärsystem können organisatorisch delegiert werden, die QES selbst jedoch nicht.: * Keine (QES im Primaersystem)
+  * Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES). Vorbereitende Tätigkeiten im Primärsystem können organisatorisch delegiert werden, die QES selbst jedoch nicht.: * Keine (QES im Primärsystem)
 
 * Beschreibung: Relevante(r) Sektor(en)
   * Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES). Vorbereitende Tätigkeiten im Primärsystem können organisatorisch delegiert werden, die QES selbst jedoch nicht.:  (ZAHN-)ARZT  PSYCHOTHERAPEUT 
@@ -85,24 +85,25 @@ Folgende Anwendungsfälle werden genutzt:
 ##### UC 2.3 - E-Rezept einstellen
 
 * Beschreibung: Vorbedingungen
-  * Ein E-Rezept wird vom Primaersystem beim E-Rezept-Fachdienst eingestellt und ein E-Rezept-Token erzeugt.: * UC 2.1 wurde ausgeführt; E-Rezept und Signatur liegen im Primaersystem vor.
+  * Ein E-Rezept wird vom Primärsystem beim E-Rezept-Fachdienst eingestellt und ein E-Rezept-Token erzeugt.: * UC 2.1 wurde ausgeführt; E-Rezept und Signatur liegen im Primärsystem vor.
 * Rezept-ID und AccessCode sind bekannt.
 * Status im E-Rezept-Fachdienst ist “initialisiert”.
 
 * Beschreibung: Durchzuführende Aktionen
-  * Ein E-Rezept wird vom Primaersystem beim E-Rezept-Fachdienst eingestellt und ein E-Rezept-Token erzeugt.: * Der Leistungserbringer wählt ein E-Rezept zum Einstellen aus.
-* Das Primaersystem aktualisiert das E-Rezept im E-Rezept-Fachdienst.
-* Das Primaersystem erstellt einen E-Rezept-Token und speichert ihn.
+  * Ein E-Rezept wird vom Primärsystem beim E-Rezept-Fachdienst eingestellt und ein E-Rezept-Token erzeugt.: * Der Leistungserbringer wählt ein E-Rezept zum Einstellen aus.
+* Das Primärsystem lädt das E-Rezept in den Workflow im E-Rezept-Fachdienst.
+* Das Primärsystem erstellt einen E-Rezept-Token und speichert ihn.
 
 * Beschreibung: Nachbedingungen
-  * Ein E-Rezept wird vom Primaersystem beim E-Rezept-Fachdienst eingestellt und ein E-Rezept-Token erzeugt.: * E-Rezept ist im E-Rezept-Fachdienst gespeichert und hat Status “offen”.
-* Das Einstellen ist im E-Rezept-Fachdienst protokolliert.
+  * Ein E-Rezept wird vom Primärsystem beim E-Rezept-Fachdienst eingestellt und ein E-Rezept-Token erzeugt.: * Das E-Rezept ist im E-Rezept-Fachdienst gespeichert.
+* Der Workflow hat den Status “offen”.
+* Das Einstellen ist im E-Rezept-Fachdienst für den Versicherten protokolliert.
 
 * Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * Ein E-Rezept wird vom Primaersystem beim E-Rezept-Fachdienst eingestellt und ein E-Rezept-Token erzeugt.: * [Operation API: E-Rezept aktivieren](./op-activate.md)
+  * Ein E-Rezept wird vom Primärsystem beim E-Rezept-Fachdienst eingestellt und ein E-Rezept-Token erzeugt.: * [Operation API: E-Rezept aktivieren](./op-activate.md)
 
 * Beschreibung: Relevante(r) Sektor(en)
-  * Ein E-Rezept wird vom Primaersystem beim E-Rezept-Fachdienst eingestellt und ein E-Rezept-Token erzeugt.:  (ZAHN-)ARZT  PSYCHOTHERAPEUT 
+  * Ein E-Rezept wird vom Primärsystem beim E-Rezept-Fachdienst eingestellt und ein E-Rezept-Token erzeugt.:  (ZAHN-)ARZT  PSYCHOTHERAPEUT 
 
 **Tabelle:**Fachlicher Anwendungsfall UC 2.3 - E-Rezept einstellen
 **Sequenzdiagramm:**
@@ -118,13 +119,14 @@ Folgende Anwendungsfälle werden genutzt:
 
 * Beschreibung: Durchzuführende Aktionen
   * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im E-Rezept-Fachdienst auf “gelöscht” gesetzt.: * Ein Mitarbeiter der verordnenden LEI markiert das E-Rezept zum Löschen und bestätigt den Vorgang.
-* Das Primaersystem ruft den E-Rezept-Fachdienst mit Rezept-ID und AccessCode auf.
+* Das Primärsystem ruft den E-Rezept-Fachdienst mit Rezept-ID und AccessCode auf.
 * Der Status wird auf “gelöscht” gesetzt und medizinische Daten werden gelöscht.
-* Der AccessCode wird im Primaersystem gelöscht.
+* Der AccessCode wird im Primärsystem gelöscht.
 
 * Beschreibung: Nachbedingungen
-  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im E-Rezept-Fachdienst auf “gelöscht” gesetzt.: * Status ist “gelöscht”; personenbezogene und medizinische Daten sind entfernt.
-* Statuswechsel ist protokolliert.
+  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im E-Rezept-Fachdienst auf “gelöscht” gesetzt.: * Der Workflow hat den Status “gelöscht”.
+* Die personenbezogene und medizinische Daten (ausser Versicherten-ID) sind aus dem Workflow entfernt.
+* Das Löschen ist im E-Rezept-Fachdienst für den Versicherten protokolliert.
 
 * Beschreibung: Schnittstelle des E-Rezept-Fachdienst
   * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im E-Rezept-Fachdienst auf “gelöscht” gesetzt.: * [Operation API: E-Rezept löschen](./op-abort.md)
@@ -153,22 +155,22 @@ Folgende Anwendungsfälle werden genutzt:
 ##### UC 3.1 - E-Rezepte durch Versicherten abrufen
 
 * Beschreibung: Vorbedingungen
-  * Ein Versicherter ruft im FdV alle seine im E-Rezept-Fachdienst eingestellten E-Rezepte ab.: * Keine.
+  * Ein Versicherter ruft im E-Rezept-FdV alle seine im E-Rezept-Fachdienst eingestellten E-Rezepte ab.: * Keine.
 
 * Beschreibung: Durchzuführende Aktionen
-  * Ein Versicherter ruft im FdV alle seine im E-Rezept-Fachdienst eingestellten E-Rezepte ab.: * Das FdV fordert E-Rezepte beim E-Rezept-Fachdienst an.
+  * Ein Versicherter ruft im E-Rezept-FdV alle seine im E-Rezept-Fachdienst eingestellten E-Rezepte ab.: * Das FdV fordert E-Rezepte beim E-Rezept-Fachdienst an.
 * Der E-Rezept-Fachdienst identifiziert E-Rezepte über die Versicherten-ID.
-* Der E-Rezept-Fachdienst liefert E-Rezepte, Status und Statuszeitpunkte; AccessCodes nur bei Abruf über FdV.
+* Der E-Rezept-Fachdienst liefert E-Rezepte, Status und Statuszeitpunkte.
 
 * Beschreibung: Nachbedingungen
-  * Ein Versicherter ruft im FdV alle seine im E-Rezept-Fachdienst eingestellten E-Rezepte ab.: * E-Rezepte stehen im FdV zur Anzeige bereit; Daten für E-Rezept-Token sind verfügbar.
+  * Ein Versicherter ruft im E-Rezept-FdV alle seine im E-Rezept-Fachdienst eingestellten E-Rezepte ab.: * E-Rezepte stehen im E-REzept-FdV zur Anzeige bereit; Daten für E-Rezept-Token sind verfügbar.
 * Der Abruf ist protokolliert.
 
 * Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * Ein Versicherter ruft im FdV alle seine im E-Rezept-Fachdienst eingestellten E-Rezepte ab.: * [Query API: Task](./query-api-task.md)
+  * Ein Versicherter ruft im E-Rezept-FdV alle seine im E-Rezept-Fachdienst eingestellten E-Rezepte ab.: * [Query API: Task](./query-api-task.md)
 
 * Beschreibung: Relevante(r) Sektor(en)
-  * Ein Versicherter ruft im FdV alle seine im E-Rezept-Fachdienst eingestellten E-Rezepte ab.:  VERSICHERTER 
+  * Ein Versicherter ruft im E-Rezept-FdV alle seine im E-Rezept-Fachdienst eingestellten E-Rezepte ab.:  VERSICHERTER 
 
 **Tabelle:**Fachlicher Anwendungsfall UC 3.1 - E-Rezepte durch Versicherten abrufen
 **Sequenzdiagramm:**
@@ -178,24 +180,25 @@ Folgende Anwendungsfälle werden genutzt:
 ##### UC 3.2 - E-Rezept durch Versicherten löschen
 
 * Beschreibung: Vorbedingungen
-  * Der Versicherte setzt den Status eines E-Rezepts auf “gelöscht” und loescht es im E-Rezept-Fachdienst.: * UC 3.1 wurde ausgeführt.
+  * Der Versicherte setzt den Status eines E-Rezepts auf “gelöscht” und löscht es im E-Rezept-Fachdienst.: * UC 3.1 wurde ausgeführt.
 * Status des E-Rezepts ist ungleich “in Abgabe (gesperrt)”.
 
 * Beschreibung: Durchzuführende Aktionen
-  * Der Versicherte setzt den Status eines E-Rezepts auf “gelöscht” und loescht es im E-Rezept-Fachdienst.: * Versicherter wählt ein E-Rezept im FdV und bestätigt das Löschen.
-* Das FdV überträgt die Loeschanforderung an den E-Rezept-Fachdienst.
-* Der Status wird geaendert; Daten im E-Rezept werden gelöscht.
-* Der E-Rezept-Token wird im FdV gelöscht.
+  * Der Versicherte setzt den Status eines E-Rezepts auf “gelöscht” und löscht es im E-Rezept-Fachdienst.: * Versicherter wählt ein E-Rezept im E-Rezept-FdV und bestätigt das Löschen.
+* Das E-Rezept-FdV überträgt die Löschanforderung an den E-Rezept-Fachdienst.
+* Der Status wird geändert; Daten im E-Rezept werden gelöscht.
+* Der E-Rezept-Token wird im E-Rezept-FdV gelöscht.
 
 * Beschreibung: Nachbedingungen
-  * Der Versicherte setzt den Status eines E-Rezepts auf “gelöscht” und loescht es im E-Rezept-Fachdienst.: * Status ist “gelöscht”; personenbezogene und medizinische Daten sind entfernt.
-* Statuswechsel ist protokolliert.
+  * Der Versicherte setzt den Status eines E-Rezepts auf “gelöscht” und löscht es im E-Rezept-Fachdienst.: * Der Workflow hat den Status “gelöscht”.
+* Die personenbezogene und medizinische Daten (ausser Versicherten-ID) sind aus dem Workflow entfernt.
+* Das Löschen ist im E-Rezept-Fachdienst für den Versicherten protokolliert.
 
 * Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * Der Versicherte setzt den Status eines E-Rezepts auf “gelöscht” und loescht es im E-Rezept-Fachdienst.: * [Operation API: E-Rezept löschen](./op-abort.md)
+  * Der Versicherte setzt den Status eines E-Rezepts auf “gelöscht” und löscht es im E-Rezept-Fachdienst.: * [Operation API: E-Rezept löschen](./op-abort.md)
 
 * Beschreibung: Relevante(r) Sektor(en)
-  * Der Versicherte setzt den Status eines E-Rezepts auf “gelöscht” und loescht es im E-Rezept-Fachdienst.:  VERSICHERTER 
+  * Der Versicherte setzt den Status eines E-Rezepts auf “gelöscht” und löscht es im E-Rezept-Fachdienst.:  VERSICHERTER 
 
 **Tabelle:**Fachlicher Anwendungsfall UC 3.2 - E-Rezept durch Versicherten löschen
 **Sequenzdiagramm:**
@@ -210,7 +213,7 @@ Folgende Anwendungsfälle werden genutzt:
 
 * Beschreibung: Durchzuführende Aktionen
   * Ein Versicherter oder Vertreter übermittelt einen E-Rezept-Token und/oder eine Nachricht an eine Apotheke oder einen Vertreter, wahlweise über die TI oder als 2D-Code.: * Auswahl eines E-Rezept-Tokens und Versandart (TI oder 2D-Code).
-* Bei Versand über TI: Apotheke im Verzeichnisdienst waehlen oder KVNR2 eingeben.
+* Bei Versand über TI: Apotheke im Verzeichnisdienst wählen oder KVNR2 eingeben.
 * Das FdV stellt die Nachricht mit Token und/oder Text im E-Rezept-Fachdienst ein.
 * Bei 2D-Code: Token wird als 2D-Code angezeigt oder ausgedruckt.
 
@@ -253,21 +256,21 @@ Sobald die Telematik-ID im E-Rezept-FdV vorliegt, kann der Versicherte die Veror
 ##### UC 3.4 - Nachrichten durch Versicherten empfangen
 
 * Beschreibung: Vorbedingungen
-  * Ein Versicherter oder Vertreter empfaengt Nachrichten von abgebenden LEI über den E-Rezept-Fachdienst.: * UC 4.7 wurde ausgeführt.
+  * Ein Versicherter oder Vertreter empfängt Nachrichten von abgebenden LEI über den E-Rezept-Fachdienst.: * UC 4.7 wurde ausgeführt.
 * UC 3.3 wurde ausgeführt.
 
 * Beschreibung: Durchzuführende Aktionen
-  * Ein Versicherter oder Vertreter empfaengt Nachrichten von abgebenden LEI über den E-Rezept-Fachdienst.: * Das FdV fragt beim E-Rezept-Fachdienst nach neuen Nachrichten.
+  * Ein Versicherter oder Vertreter empfängt Nachrichten von abgebenden LEI über den E-Rezept-Fachdienst.: * Das FdV fragt beim E-Rezept-Fachdienst nach neuen Nachrichten.
 * Nachrichten werden heruntergeladen.
 
 * Beschreibung: Nachbedingungen
-  * Ein Versicherter oder Vertreter empfaengt Nachrichten von abgebenden LEI über den E-Rezept-Fachdienst.: * Nachrichten liegen im FdV zur Anzeige bereit.
+  * Ein Versicherter oder Vertreter empfängt Nachrichten von abgebenden LEI über den E-Rezept-Fachdienst.: * Nachrichten liegen im FdV zur Anzeige bereit.
 
 * Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * Ein Versicherter oder Vertreter empfaengt Nachrichten von abgebenden LEI über den E-Rezept-Fachdienst.: * FHIR REST: Communication (E-Rezept-Nachrichten abrufen)
+  * Ein Versicherter oder Vertreter empfängt Nachrichten von abgebenden LEI über den E-Rezept-Fachdienst.: * FHIR REST: Communication (E-Rezept-Nachrichten abrufen)
 
 * Beschreibung: Relevante(r) Sektor(en)
-  * Ein Versicherter oder Vertreter empfaengt Nachrichten von abgebenden LEI über den E-Rezept-Fachdienst.:  VERSICHERTER 
+  * Ein Versicherter oder Vertreter empfängt Nachrichten von abgebenden LEI über den E-Rezept-Fachdienst.:  VERSICHERTER 
 
 **Tabelle:**Fachlicher Anwendungsfall UC 3.4 - Nachrichten durch Versicherten empfangen
 **Sequenzdiagramm:**
@@ -277,22 +280,22 @@ Sobald die Telematik-ID im E-Rezept-FdV vorliegt, kann der Versicherte die Veror
 ##### UC 3.8 - Nachricht durch Versicherten löschen
 
 * Beschreibung: Vorbedingungen
-  * Der Versicherte loescht von ihm übermittelte Nachrichten an Apotheken oder Versicherte.: * UC 3.3 wurde ausgeführt.
+  * Der Versicherte löscht von ihm übermittelte Nachrichten an Apotheken oder Versicherte.: * UC 3.3 wurde ausgeführt.
 
 * Beschreibung: Durchzuführende Aktionen
-  * Der Versicherte loescht von ihm übermittelte Nachrichten an Apotheken oder Versicherte.: * Der Versicherte wählt Nachrichten zum Löschen aus und bestätigt den Vorgang.
-* Das FdV überträgt die Loeschanforderung je Nachricht an den E-Rezept-Fachdienst.
-* Der E-Rezept-Fachdienst loescht die Nachrichten und liefert ggf. eine Warnung, wenn bereits abgerufen.
+  * Der Versicherte löscht von ihm übermittelte Nachrichten an Apotheken oder Versicherte.: * Der Versicherte wählt Nachrichten zum Löschen aus und bestätigt den Vorgang.
+* Das FdV überträgt die Löschanforderung je Nachricht an den E-Rezept-Fachdienst.
+* Der E-Rezept-Fachdienst löscht die Nachrichten und liefert ggf. eine Warnung, wenn bereits abgerufen.
 * Die Nachrichten werden im FdV gelöscht.
 
 * Beschreibung: Nachbedingungen
-  * Der Versicherte loescht von ihm übermittelte Nachrichten an Apotheken oder Versicherte.: * Nachrichten sind im E-Rezept-Fachdienst und im FdV gelöscht.
+  * Der Versicherte löscht von ihm übermittelte Nachrichten an Apotheken oder Versicherte.: * Nachrichten sind im E-Rezept-Fachdienst und im FdV gelöscht.
 
 * Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * Der Versicherte loescht von ihm übermittelte Nachrichten an Apotheken oder Versicherte.: * FHIR REST: Communication (E-Rezept-Nachricht löschen)
+  * Der Versicherte löscht von ihm übermittelte Nachrichten an Apotheken oder Versicherte.: * FHIR REST: Communication (E-Rezept-Nachricht löschen)
 
 * Beschreibung: Relevante(r) Sektor(en)
-  * Der Versicherte loescht von ihm übermittelte Nachrichten an Apotheken oder Versicherte.:  VERSICHERTER 
+  * Der Versicherte löscht von ihm übermittelte Nachrichten an Apotheken oder Versicherte.:  VERSICHERTER 
 
 **Tabelle:**Fachlicher Anwendungsfall UC 3.8 - Nachricht durch Versicherten löschen
 **Sequenzdiagramm:**
@@ -315,21 +318,21 @@ Folgende Anwendungsfälle werden genutzt:
 ##### UC 4.6 - Nachrichten durch Abgebenden empfangen
 
 * Beschreibung: Vorbedingungen
-  * Eine abgebende LEI empfaengt E-Rezept-Token über die TI oder optisch als 2D-Code.: * UC 3.3 wurde ausgeführt oder der 2D-Code wurde präsentiert.
+  * Eine abgebende LEI empfängt E-Rezept-Token über die TI oder optisch als 2D-Code.: * UC 3.3 wurde ausgeführt oder der 2D-Code wurde präsentiert.
 
 * Beschreibung: Durchzuführende Aktionen
-  * Eine abgebende LEI empfaengt E-Rezept-Token über die TI oder optisch als 2D-Code.: * Das PS wählt den Empfangsweg (TI oder 2D-Code).
-* Bei TI: PS fragt beim E-Rezept-Fachdienst neue Nachrichten für die Telematik-ID ab und lädt sie herunter.
-* Bei 2D-Code: PS wandelt den Code in die Token-Textform um.
+  * Eine abgebende LEI empfängt E-Rezept-Token über die TI oder optisch als 2D-Code.: * Das Primärsystem wählt den Empfangsweg (TI oder 2D-Code).
+* Bei TI: Primärsystem fragt beim E-Rezept-Fachdienst neue Nachrichten für die Telematik-ID ab und lädt sie herunter.
+* Bei 2D-Code: Primärsystem wandelt den Code in die Token-Textform um.
 
 * Beschreibung: Nachbedingungen
-  * Eine abgebende LEI empfaengt E-Rezept-Token über die TI oder optisch als 2D-Code.: * E-Rezept-Token liegt im PS der abgebenden LEI vor.
+  * Eine abgebende LEI empfängt E-Rezept-Token über die TI oder optisch als 2D-Code.: * E-Rezept-Token liegt im Primärsystem vor.
 
 * Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * Eine abgebende LEI empfaengt E-Rezept-Token über die TI oder optisch als 2D-Code.: * FHIR REST: Communication (E-Rezept-Nachrichten abrufen)
+  * Eine abgebende LEI empfängt E-Rezept-Token über die TI oder optisch als 2D-Code.: * FHIR REST: Communication (E-Rezept-Nachrichten abrufen)
 
 * Beschreibung: Relevante(r) Sektor(en)
-  * Eine abgebende LEI empfaengt E-Rezept-Token über die TI oder optisch als 2D-Code.: 
+  * Eine abgebende LEI empfängt E-Rezept-Token über die TI oder optisch als 2D-Code.: 
 
 **Tabelle:**Fachlicher Anwendungsfall UC 4.6 - Nachrichten durch Abgebenden empfangen
 **Sequenzdiagramm:**
@@ -344,7 +347,7 @@ Folgende Anwendungsfälle werden genutzt:
 
 * Beschreibung: Durchzuführende Aktionen
   * Die abgebende LEI antwortet auf eine Nachricht eines Versicherten oder Vertreters.: * Ein Mitarbeiter wählt die Nachricht zu einem E-Rezept und erstellt eine Antwort.
-* Das PS stellt die Antwortnachricht im E-Rezept-Fachdienst ein.
+* Das Primärsystem stellt die Antwortnachricht im E-Rezept-Fachdienst ein.
 
 * Beschreibung: Nachbedingungen
   * Die abgebende LEI antwortet auf eine Nachricht eines Versicherten oder Vertreters.: * Nachricht liegt im E-Rezept-Fachdienst und kann asynchron empfangen werden.
@@ -365,14 +368,14 @@ Folgende Anwendungsfälle werden genutzt:
 * Beschreibung: Vorbedingungen
   * Eine abgebende LEI ruft ein E-Rezept auf Basis eines E-Rezept-Tokens aus dem E-Rezept-Fachdienst ab.: * Ein E-Rezept-Token wurde übermittelt.
 * UC 4.6 wurde ausgeführt.
-* Token liegt im PS vor; Status des E-Rezepts ist “offen”.
+* Token liegt im Primärsystem vor; Status des E-Rezepts ist “offen”.
 
 * Beschreibung: Durchzuführende Aktionen
-  * Eine abgebende LEI ruft ein E-Rezept auf Basis eines E-Rezept-Tokens aus dem E-Rezept-Fachdienst ab.: * PS ermittelt Rezept-ID und AccessCode aus dem Token.
-* PS ruft das E-Rezept beim E-Rezept-Fachdienst ab.
+  * Eine abgebende LEI ruft ein E-Rezept auf Basis eines E-Rezept-Tokens aus dem E-Rezept-Fachdienst ab.: * Primärsystem ermittelt Rezept-ID und AccessCode aus dem Token.
+* Primärsystem ruft das E-Rezept beim E-Rezept-Fachdienst ab.
 * Status wechselt auf “in Abgabe (gesperrt)”.
 * E-Rezept-Fachdienst erzeugt ein Geheimnis zur Statusänderung und übermittelt es.
-* PS prüft die QES über den Konnektor.
+* optional: Primärsystem prüft die QES über den Konnektor.
 
 * Beschreibung: Nachbedingungen
   * Eine abgebende LEI ruft ein E-Rezept auf Basis eines E-Rezept-Tokens aus dem E-Rezept-Fachdienst ab.: * Status ist “in Abgabe (gesperrt)” und protokolliert.
@@ -398,12 +401,12 @@ Folgende Anwendungsfälle werden genutzt:
 
 * Beschreibung: Durchzuführende Aktionen
   * Ein abgerufenes E-Rezept wird an den E-Rezept-Fachdienst zurückgegeben.: * Abgebender markiert das E-Rezept zum Zurückgeben und bestätigt.
-* PS ruft den E-Rezept-Fachdienst mit Rezept-ID, AccessCode und Geheimnis auf.
-* Status wird auf “offen” geaendert.
+* Primärsystem ruft den E-Rezept-Fachdienst mit Rezept-ID und Geheimnis auf.
+* Status wird auf “offen” geändert.
 
 * Beschreibung: Nachbedingungen
   * Ein abgerufenes E-Rezept wird an den E-Rezept-Fachdienst zurückgegeben.: * Status ist “offen” und protokolliert.
-* E-Rezept, Token und Geheimnis sind im PS gelöscht.
+* E-Rezept, Token und Geheimnis sind im Primärsystem gelöscht.
 
 * Beschreibung: Schnittstelle des E-Rezept-Fachdienst
   * Ein abgerufenes E-Rezept wird an den E-Rezept-Fachdienst zurückgegeben.: * [Operation API: Task zurückweisen](./op-reject.md)
@@ -425,12 +428,12 @@ Folgende Anwendungsfälle werden genutzt:
 
 * Beschreibung: Durchzuführende Aktionen
   * Nach der Abgabe wird das E-Rezept quittiert und eine Quittung vom E-Rezept-Fachdienst abgerufen.: * Abgebender markiert das E-Rezept als abgegeben.
-* PS übermittelt Rezept-ID, AccessCode, Geheimnis und Abgabeinformationen an den E-Rezept-Fachdienst.
+* Primärsystem übermittelt Rezept-ID, Geheimnis und Abgabeinformationen an den E-Rezept-Fachdienst.
 * Status wechselt zu “quittiert”; Quittung wird erstellt und zurückgegeben.
 
 * Beschreibung: Nachbedingungen
   * Nach der Abgabe wird das E-Rezept quittiert und eine Quittung vom E-Rezept-Fachdienst abgerufen.: * Status ist “quittiert”; Abgabeinformationen sind gespeichert.
-* Statuswechsel ist protokolliert; Quittung liegt im PS vor.
+* Statuswechsel ist protokolliert; Quittung liegt im Primärsystem vor.
 
 * Beschreibung: Schnittstelle des E-Rezept-Fachdienst
   * Nach der Abgabe wird das E-Rezept quittiert und eine Quittung vom E-Rezept-Fachdienst abgerufen.: * [Operation API: Task schliessen](./op-close.md)
@@ -446,15 +449,15 @@ Folgende Anwendungsfälle werden genutzt:
 ##### UC 4.8 - Quittung erneut abrufen
 
 * Beschreibung: Vorbedingungen
-  * Die Quittung wird erneut abgerufen, falls die Übertragung beim ersten Abruf fehlgeschlagen ist.: * UC 4.4 wurde ausgeführt; im PS liegt keine Quittung vor.
+  * Die Quittung wird erneut abgerufen, falls die Übertragung beim ersten Abruf fehlgeschlagen ist.: * UC 4.4 wurde ausgeführt; im Primärsystem liegt keine Quittung vor.
 * Status des E-Rezepts ist “quittiert”.
 
 * Beschreibung: Durchzuführende Aktionen
   * Die Quittung wird erneut abgerufen, falls die Übertragung beim ersten Abruf fehlgeschlagen ist.: * Abgebender wählt das E-Rezept und ruft die Quittung erneut ab.
-* PS übermittelt Rezept-ID und Geheimnis; der E-Rezept-Fachdienst liefert die Quittung erneut aus.
+* Primärsystem übermittelt Rezept-ID und Geheimnis; der E-Rezept-Fachdienst liefert die Quittung erneut aus.
 
 * Beschreibung: Nachbedingungen
-  * Die Quittung wird erneut abgerufen, falls die Übertragung beim ersten Abruf fehlgeschlagen ist.: * Quittung liegt im PS vor.
+  * Die Quittung wird erneut abgerufen, falls die Übertragung beim ersten Abruf fehlgeschlagen ist.: * Quittung liegt im Primärsystem vor.
 
 * Beschreibung: Schnittstelle des E-Rezept-Fachdienst
   * Die Quittung wird erneut abgerufen, falls die Übertragung beim ersten Abruf fehlgeschlagen ist.: * [Operation API: Task schliessen](./op-close.md)

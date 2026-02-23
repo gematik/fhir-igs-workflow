@@ -21,7 +21,8 @@ damit nur solche Leistungserbringer ein signiertes E-Rezept einstellen, die zur 
 
 
 Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mit Flowtype 162 mittels $activate prüfen, dass im Bundle eine
-*DeviceRequest*-Ressource und in der </i>Composition.type.coding.code=e16D</i> enthalten ist. Der E-Rezept-Fachdienst MUSS andernfalls mit dem HTTP-Fehlercode 400 abbrechen und in der
+*DeviceRequest*-Ressource und in der
+*Composition.type.coding.code=e16D*enthalten ist. Der E-Rezept-Fachdienst MUSS andernfalls mit dem HTTP-Fehlercode 400 abbrechen und in der
 *OperationOutcome*den Fehlertext "Für diesen Workflowtypen sind nur Verordnungen für Digitale Gesundheitsanwendungen zulässig" ausgeben.
 
 

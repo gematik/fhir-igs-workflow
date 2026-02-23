@@ -11,7 +11,7 @@ Version 2.0.0-draft - ci-build
 
 Diese Seite bietet einen Einstieg in die Operationen des DiGA-Workflows. Die Operationen entsprechen dem Basis-Workflow des E-Rezept-Fachdienstes.
 
-## Operationen
+### Operationen
 
 * [$create](./op-create.md)
 * [$activate](./op-activate.md)
