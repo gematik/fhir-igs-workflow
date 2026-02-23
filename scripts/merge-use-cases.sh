@@ -40,7 +40,9 @@ trap 'rm -f "$core_json" "$module_json"' EXIT
 yq -o=json '.' "$CORE_FILE" > "$core_json"
 yq -o=json '.' "$MODULE_IN" > "$module_json"
 
-python3 - "$core_json" "$module_json" "$CORE_IMG_DIR" "$MODULE_IMG_DIR" <<'PY' | yq -P -o=yaml > "$MODULE_OUT"
+{
+  echo "# NOTE: This file is generated. Do not edit manually."
+  python3 - "$core_json" "$module_json" "$CORE_IMG_DIR" "$MODULE_IMG_DIR" <<'PY' | yq -P -o=yaml
 import json
 import sys
 from copy import deepcopy
@@ -95,3 +97,4 @@ for entry in module_items:
 
 print(json.dumps(merged, ensure_ascii=True))
 PY
+} > "$MODULE_OUT"
