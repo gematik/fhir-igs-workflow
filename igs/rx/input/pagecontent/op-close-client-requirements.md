@@ -5,7 +5,7 @@ Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemsp
 <requirement conformance="SHALL" key="IG-TIFlow-RX-80" title="PS abgebende LEI:  Quittung abrufen - Dispensierinformationen erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="testProcedurePT02"/>
     </actor>
      Das PS der abgebenden LEI MUSS im Anwendungsfall "Quittung abrufen" die Dispensierinformationen nach den Vorgaben aus "Erstellen von Dispensierinformationen" erzeugen, wenn sie übermittelt werden sollen.
 </requirement>

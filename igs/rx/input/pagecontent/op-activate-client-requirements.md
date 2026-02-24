@@ -5,8 +5,8 @@ Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemsp
 <!-- A_19275 -->
 <requirement conformance="SHALL" key="IG-TIFlow-RX-1" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle erstellen" version="0">
     <meta lockversion="false"/>
-    <actor name="Client des E-Rezept-Fachdienstes">
-        <testProcedure id="Produkttest"/>
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="testProcedurePT28"/>
     </actor>
         Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" eine Bundle-FHIR-Ressource gemäß Profilierung https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle Rezept-ID aus der Task-Ressource als Identifier erstellen.
 </requirement>
@@ -15,16 +15,16 @@ Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemsp
 <!-- A_22541-01 -->
 <requirement conformance="SHALL" key="IG-TIFlow-RX-2" title="PS verordnende LEI: E-Rezept erstellen – Flowtype 200/209 – KVNR als Identifier" version="0">
     <meta lockversion="false"/>
-    <actor name="Client des E-Rezept-Fachdienstes">
-        <testProcedure id="Produkttest"/>
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="testProcedurePT28"/>
     </actor>
         Das PS der verordnenden LEI MUSS im Verordnungsdatensatz für ein E-Rezept des Flowtype 200 oder 209 als Identifier des Patienten in Patient.identifer.value die KVNR des Versicherten verwenden.
 </requirement>
 <!-- A_22542-01 -->
 <requirement conformance="SHALL" key="IG-TIFlow-RX-3" title="PS verordnende LEI: E-Rezept erstellen – Flowtype 200/209 – Versicherungstyp PKV" version="0">
     <meta lockversion="false"/>
-    <actor name="Client des E-Rezept-Fachdienstes">
-        <testProcedure id="Produkttest"/>
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="testProcedurePT28"/>
     </actor>
         Das PS der verordnenden LEI MUSS im Verordnungsdatensatz für ein E-Rezept des Flowtype 200 oder 209 für Coverage.type.coding.code den Wert "PKV" verwenden.
 </requirement>
@@ -33,8 +33,8 @@ Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemsp
 <!-- A_22636 -->
 <requirement conformance="SHALL" key="IG-TIFlow-RX-4" title="PS verordnende LEI: E-Rezept erstellen - Mehrfachverordnung - Beginn Einlösefrist" version="0">
     <meta lockversion="false"/>
-    <actor name="Client des E-Rezept-Fachdienstes">
-        <testProcedure id="Produkttest"/>
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="testProcedurePT28"/>
     </actor>
         Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" beim Erstellen des E-Rezept-Bundles für die Teilverordnung einer Mehrfachverordnung den Beginn der Einlösefrist der Teilverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start) angeben.
 </requirement>
@@ -43,24 +43,24 @@ Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemsp
 <!-- A_27834 -->
 <requirement conformance="SHALL" key="IG-TIFlow-RX-5" title="PS verordnende LEI: E-Rezept erstellen – Flowtype 166 – zulässige Signatur Arzt" version="0">
     <meta lockversion="false"/>
-    <actor name="Client des E-Rezept-Fachdienstes">
-        <testProcedure id="Produkttest"/>
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="testProcedurePT28"/>
     </actor>
         Das PS der verordnenden LEI MUSS sicherstellen, dass ein Verordnungsdatensatz für ein E-Rezept des Flowtype 166 nur mit einem HBA mit der zulässigen ProfessionOID oid_arzt signiert werden kann.
 </requirement>
 <!-- A_27835 -->
 <requirement conformance="SHALL" key="IG-TIFlow-RX-6" title="PS verordnende LEI: E-Rezept erstellen – Flowtype 166 – Reichdauer nach Vorgaben" version="0">
     <meta lockversion="false"/>
-    <actor name="Client des E-Rezept-Fachdienstes">
-        <testProcedure id="Produkttest"/>
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="testProcedurePT28"/>
     </actor>
         Das PS der verordnenden LEI MUSS im Verordnungsdatensatz für ein E-Rezept des Flowtype 166 sicherstellen, dass die maximale Reichdauer entsprechend den gesetzlichen Vorgaben nicht überschritten wird.
 </requirement>
 <!-- A_27836 -->
 <requirement conformance="SHALL" key="IG-TIFlow-RX-7" title="PS verordnende LEI: E-Rezept erstellen – Flowtype 166 – Bestätigungen nach §3a Abs. 2, 5 AMVV" version="0">
     <meta lockversion="false"/>
-    <actor name="Client des E-Rezept-Fachdienstes">
-        <testProcedure id="Produkttest"/>
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="testProcedurePT28"/>
     </actor>
 <table>
   <thead>
@@ -104,24 +104,24 @@ Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemsp
 <!-- A_21400 -->
 <requirement conformance="SHALL" key="IG-TIFlow-RX-8" title="PS verordnende LEI: Übergabe E-Rezept-Token an Apotheke" version="0">
     <meta lockversion="false"/>
-    <actor name="Client des E-Rezept-Fachdienstes">
-        <testProcedure id="Produkttest"/>
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="testProcedurePT28"/>
     </actor>
         Das PS der verordnenden LEI MUSS es dem Nutzer ermöglichen, die Einlöseinformationen (Task.id und AccessCode) als E-Rezept-Token über ein geeignetes Übermittlungsverfahren an eine Apotheke der Wahl zu schicken.
 </requirement>
 <!-- A_21349 -->
 <requirement conformance="SHALL" key="IG-TIFlow-RX-9" title="PS: Schutz des E-Rezept-Tokens bei Übertragung" version="0">
     <meta lockversion="false"/>
-    <actor name="Client des E-Rezept-Fachdienstes">
-        <testProcedure id="Produkttest"/>
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="testProcedurePT28"/>
     </actor>
         Das Primärsystem MUSS für die Übertragung von E-Rezept-Token ein Verfahren nutzen, dass die sehr hohe Vertraulichkeit des E-Rezept-Tokens und seine Integrität schützt.
 </requirement>
 <!-- A_21453 -->
 <requirement conformance="MAY" key="IG-TIFlow-RX-10" title="PS verordnende LEI: Herstellende Apotheke für Übermittlungsverfahren" version="0">
     <meta lockversion="false"/>
-    <actor name="Client des E-Rezept-Fachdienstes">
-        <testProcedure id="Produkttest"/>
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="testProcedurePT28"/>
     </actor>
         Das PS der verordnenden LEI KANN die Auswahl und Verwaltung von herstellenden Apotheken für die Übermittlung der E-Rezept-Einlöseinformationen ermöglichen.
 </requirement>

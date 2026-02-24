@@ -40,6 +40,29 @@ Für den Zugang zur Telematikinfrastruktur nutzt der Versicherte seine eGK mit N
 - Als Versicherter möchte ich mein E-Rezept einlösen können, damit ich das Arzneimittel in der Apotheke erhalte.
 - Als Apotheke möchte ich ein E-Rezept annehmen, beliefern und abschließen, damit die Abgabe korrekt dokumentiert ist.
 
+#### User Stories Versicherte
+
+##### E-Rezepte Abrufen
+- Als Patient möchte ich ein "E-Rezept" auswählen können, das ich herunterladen möchte, so dass ich es später einlösen oder zuweisen kann. 
+- Als Patient möchte ich, dass alle für mich verfügbaren "E-Rezepte" automatisch auf mein Gerät heruntergeladen werden, wenn sie dort noch nicht gespeichert sind, so dass ich nicht selbst meine Rezepte herunterladen muss. (eRP_159)
+- Als Patient möchte ich, dass meine E-Rezept-App für einen konsistenten Zustand zwischen dem Fachdienst und der App sorgt, so dass ich keine Rezepte doppelt auf meinem Gerät habe oder andere Inkonsistenzen entstehen, so dass ich nicht  verwirrt werde. (eRP_160)
+- Als Patient möchte ich, dass der Status meiner Rezepte automatisch von der App aktualisiert wird, wenn er sich im Fachdienst geändert hat, so dass ich immer auf dem neuesten Stand bin und nicht Rezepte einlösen will, die bereits eingelöst sind. (eRP_161)
+- Als Patient möchte ich alle E-Rezepte, die für mich verfügbar sind, sehen können, so dass ich entscheiden kann, was ich mit diesen E-Rezepten machen will.
+- Als Patient möchte ich sehen können, welchen Status ein E-Rezept hat, so dass ich in der Lage bin, den nächsten Schritt entscheiden zu können.
+- Als Patient möchte ich die relevanten Informationen aus einem E-Rezept lesen können, so dass ich weiß, was mir verschrieben wurde.
+
+##### E-Rezepte löschen
+
+- Als Patient möchte ich ein E-Rezept auswählen können, das ich löschen will, so dass ich mein Recht auf informationelle Selbstbestimmung ausüben kann.
+- Als Patient möchte ich die ausgewählten E-Rezepte löschen können, so dass ich mein Recht auf informationelle Selbstbestimmung ausüben kann.
+- Als Patient möchte ich Rückmeldung darüber erhalten, wenn die ausgewählten E-Rezepte gelöscht worden sind, so dass ich sicher sein kann, dass die Daten auch wirklich nicht mehr vorliegen.
+- Als Patient möchte ich Rückmeldung darüber erhalten, wenn das Löschen fehlgeschlagen ist, so dass ich auf anderem Wege ein Löschen einleiten kann.
+- Als Patient möchte ich eigenständig E-Rezepte aus meinem E-Rezept-FdV löschen können, um die Übersichtlichkeit in der Ansicht zu erhöhen.
+- Als Patient möchte ich nicht mehr benötigte E-Rezepte mit zugehörigen Informationen oder Nachrichten aus der Ansicht meines E-Rezept-FdV löschen können.
+
+Mit diesem Anwendungsfall kann der Nutzer die lokal in seinem E-Rezept-FdV gespeicherten E-Rezepte mit allen dazugehörigen Informationen löschen.
+
+
 ### Verordnung apothekenpflichtiger Arzneimittel (GKV/PKV)
 
 Ein verordnender Leistungserbringer erstellt im Primärsystem (PVS/KIS) den Verordnungsdatensatz, signiert diesen qualifiziert und stellt das E-Rezept im E-Rezept-Fachdienst bereit.
