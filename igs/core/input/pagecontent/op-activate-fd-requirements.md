@@ -104,3 +104,21 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
     </actor>
     Der E-Rezept-Fachdienst MUSS beim berechtigten Aufruf der Operation POST /Task/&#60;id&#62;/$activate prüfen, dass die PrescriptionID des Tasks mit der PrescriptionID im übergebenen QES-Datensatz übereinstimmt und der Präfix der PrescriptionID gleich dem Flowtype des zu aktivierenden Tasks ist und andernfalls die Operation mit dem http-Fehlercode 400 abbrechen.
 </requirement>
+
+<!-- A_23936-01 -->
+<requirement conformance="SHALL" key="IG-TIFlow-DiGA-25" title="E-Rezept-Fachdienst - Task aktivieren - Versicherten-ID als Identifikator von Versicherten" version="0">
+    <meta lockversion="false"/>
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest"/>
+    </actor>
+    Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate prüfen, dass Patient.identifier.system gleich "http://fhir.de/sid/gkv/kvid-10" ist und andernfalls die Operation mit dem http-Fehlercode 400 und dem Hinweis im OperationOutcome "Als Identifier für den Patienten muss eine VersichertenID (KVNR) angegeben werden." abbrechen.
+</requirement>
+
+<!-- A_22487 -->
+<requirement conformance="SHALL" key="IG-TIFlow-DiGA-25" title="E-Rezept-Fachdienst - Task aktivieren - Prüfregel Ausstellungsdatum" version="0">
+    <meta lockversion="false"/>
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest"/>
+    </actor>
+    Der E-Rezept-Fachdienst MUSS den Aufruf der http-POST-Operation /Task/&#60;id&#62;/$activate mit einem Fehlercode 400 und Hinweis im OperationOutcome auf "Ausstellungsdatum und Signaturzeitpunkt weichen voneinander ab, müssen aber taggleich sein" als ungültig abweisen, wenn das Datum authoredOn zur Gültigkeitsberechnung des E-Rezepts nicht dem Datum in QES.Erstellung im Signaturobjekt entspricht.
+</requirement>
