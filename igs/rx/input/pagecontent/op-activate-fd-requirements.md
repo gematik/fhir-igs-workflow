@@ -45,7 +45,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 
 
 <!-- A_28570 -->
-<requirement conformance="SHALL" key="IG-TIFlow-RX-34" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 160/166/169/200/209 - Prüfung Coverage Type" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-191" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 160/166/169/200/209 - Prüfung Coverage Type" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -92,7 +92,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 ### Prozessparamter
 
 <!-- A_27844 -->
-<requirement conformance="SHALL" key="IG-TIFlow-DiGA-29" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 160 - Prozessparameter" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-192" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 160 - Prozessparameter" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
