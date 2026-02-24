@@ -1,4 +1,4 @@
-{% assign use_cases = site.data['use-cases'] %}
+{% assign use_cases = site.data['gen-use-cases'] %}
 
 Das Szenario beschreibt die Mehrfachverordnung (MVO) für apothekenpflichtige Arzneimittel.
 Eine MVO besteht aus mehreren Teilverordnungen, die jeweils als eigenes E-Rezept verarbeitet werden.

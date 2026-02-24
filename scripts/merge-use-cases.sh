@@ -10,12 +10,12 @@ if [[ -z "$IG_SHORT" ]]; then
 fi
 
 CORE_FILE="$ROOT_DIR/igs/core/input/data/use-cases.yaml"
-MODULE_GET="$ROOT_DIR/igs/$IG_SHORT/input/data/use-cases-get.yaml"
-MODULE_OUT="$ROOT_DIR/igs/$IG_SHORT/input/data/use-cases.yaml"
+MODULE_IN="$ROOT_DIR/igs/$IG_SHORT/input/data/use-cases.yaml"
+MODULE_OUT="$ROOT_DIR/igs/$IG_SHORT/input/data/gen-use-cases.yaml"
 CORE_IMG_DIR="$ROOT_DIR/igs/core/input/images-source"
 MODULE_IMG_DIR="$ROOT_DIR/igs/$IG_SHORT/input/images-source"
 
-if [[ ! -f "$MODULE_GET" ]]; then
+if [[ ! -f "$MODULE_IN" ]]; then
   exit 0
 fi
 
@@ -38,9 +38,16 @@ module_json="$(mktemp)"
 trap 'rm -f "$core_json" "$module_json"' EXIT
 
 yq -o=json '.' "$CORE_FILE" > "$core_json"
-yq -o=json '.' "$MODULE_GET" > "$module_json"
+yq -o=json '.' "$MODULE_IN" > "$module_json"
 
-python3 - "$core_json" "$module_json" "$CORE_IMG_DIR" "$MODULE_IMG_DIR" <<'PY' | yq -P -o=yaml > "$MODULE_OUT"
+{
+  echo "#"
+  echo "########################################################################"
+  echo "# ATTENTION: This file is generated. Do not edit manually."
+  echo "# Sources: $core_json $module_json"
+  echo "########################################################################"
+  echo "#"
+  python3 - "$core_json" "$module_json" "$CORE_IMG_DIR" "$MODULE_IMG_DIR" <<'PY' | yq -P -o=yaml
 import json
 import sys
 from copy import deepcopy
@@ -95,3 +102,4 @@ for entry in module_items:
 
 print(json.dumps(merged, ensure_ascii=True))
 PY
+} > "$MODULE_OUT"

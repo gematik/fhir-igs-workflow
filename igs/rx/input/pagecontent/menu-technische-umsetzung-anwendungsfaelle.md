@@ -1,4 +1,4 @@
-{% assign use_cases = site.data['use-cases'] %}
+{% assign use_cases = site.data['gen-use-cases'] %}
 {% assign roles = site.data['roles'] %}
 
 Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der verordnung von Arzneimitteln genutzt werden.

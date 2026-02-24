@@ -1,4 +1,4 @@
-{% assign use_cases = site.data['use-cases'] %}
+{% assign use_cases = site.data['gen-use-cases'] %}
 
 Dieses Kapitel beschreibt den fachlichen Normalfall von der Verordnung bis zur Belieferung in der Apotheke.
 Im Fokus stehen die Handlungen der Beteiligten (Arzt, Versicherter, Apotheke) sowie die fachlichen Schritte.
