@@ -1,21 +1,22 @@
 actor:
-- PS_E-Rezept_abgebend
+- E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: a4d80efb059a9229fcf73e82dd2fafc03c871c50ab4f44ea3f0dc10af67cb7ec
-created: '2026-02-23T14:30:41.713783'
-date: '2026-02-24T07:05:10.837089'
+content_hash: 5b0347528abecd629bacaa99c6c957fe4035c9829dd0f836784144da9a9c8598
+created: '2026-02-24T09:40:30.594864'
+date: '2026-02-24T09:40:30.594867'
 key: IG-TIFlow-RX-72
-modified: '2026-02-24T07:05:10.837089'
+modified: '2026-02-24T09:40:30.594866'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-dispensierinformationen.md
+source: input/pagecontent/op-activate-fd-requirements.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_abgebend:
+  E-Rezept-Fachdienst:
   - Produkttest
-text: Das PS der abgebenden LEI MUSS beim Erstellen einer MedicationDispense einer
-  Rezeptur für ein E-Rezept des Flowtype 160, 169, 200 oder 209 für jede FHIR-Ressource
-  Medication Wirkstoff und Wirkstärke (inkl. Einheit) strukturiert angeben, wenn diese
-  Information strukturiert im Verordnungsdatensatz vorlag.
-title: 'PS abgebende LEI:  Dispensierinformationen – Flowtype 160/169/200/209 – Rezeptur:
-  Wirkstoff, Wirkstärke'
+text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
+  über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
+  wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
+  = true) gekennzeichnet ist und der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start)
+  nicht angegeben ist, weil die Information des Beginns der Einlösefrist notwendig
+  ist, um den Gültigkeitszeitraum zu ermitteln.
+title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Beginn Einlösefrist-Pflicht
 version: 0

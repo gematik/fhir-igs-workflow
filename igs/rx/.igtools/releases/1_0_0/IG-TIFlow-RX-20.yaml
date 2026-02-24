@@ -1,22 +1,20 @@
 actor:
-- E-Rezept-Fachdienst
-conformance: SHALL
-content_hash: 62f0e6f3fd2b5d94a25d4593d6a1e597cb61ca723c535bfcbffebc19f5f63cac
-created: '2026-02-23T14:30:41.702676'
-date: '2026-02-24T07:05:10.822745'
+- eRP_FdV
+conformance: SHALL NOT
+content_hash: e2923b8e5e73c29af30b8b0a112f18bcadce4e40c9d1ac55ecc2dc0b9163e0d3
+created: '2026-02-24T09:40:30.585433'
+date: '2026-02-24T09:40:30.585435'
 key: IG-TIFlow-RX-20
-modified: '2026-02-24T07:05:10.822745'
+modified: '2026-02-24T09:40:30.585434'
 release_status: NEW
-source: input/pagecontent/query-api-task-fd-requirements.md
+source: input/pagecontent/query-api-communication-req-fdv.md
 status: ACTIVE
 test_procedures:
-  E-Rezept-Fachdienst:
+  eRP_FdV:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
-  /Task/&lt;id&gt; durch einen Versicherten die einzelne Task-Ressource um das referenzierte,
-  serverseitig signierte E-Rezept-Bundle aus Task.input mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType
-  = 2 als search.include im Ergebnis-Bundle an den Aufrufer zurückgeben, damit der
-  Versicherte eine vollständige Einsicht in den Task und den signierten Verordnungsdatensatz
-  für eigene Dokumentationszwecke erhält.
-title: E-Rezept-Fachdienst - Task abrufen - Rückgabe Task inkl. Bundles Versicherter
+text: Das E-Rezept-FdV DARF es dem Nutzer NICHT ermöglichen, für ein E-Rezept mit
+  dem Flowtype 162, 169 oder 209 eine Anfrage zur Belieferung an eine abgebende Institution
+  zu senden.
+title: 'E-Rezept-FdV: Anfrage Belieferung - Flowtype 162 / 169 / 209 - Anfrage nicht
+  zulässig'
 version: 0

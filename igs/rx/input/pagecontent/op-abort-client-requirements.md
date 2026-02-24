@@ -4,7 +4,7 @@ Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemsp
 ### E-Rezept-FdV 
 
 <!-- A_21362-02 -->
-<requirement conformance="SHALL" key="IG-TIFlow-RX-176" title="E-Rezept-FdV: E-Rezept löschen - Flowtype 169 / 209 - nur wenn beliefert" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-5" title="E-Rezept-FdV: E-Rezept löschen - Flowtype 169 / 209 - nur wenn beliefert" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>

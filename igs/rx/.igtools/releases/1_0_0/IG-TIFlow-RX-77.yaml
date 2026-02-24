@@ -1,19 +1,20 @@
 actor:
-- PS_E-Rezept_abgebend
+- E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: 198e5500a214dfeeb6b989ede11562e6c2aae9e7597b9306be1e2f542ffe3071
-created: '2026-02-24T07:05:10.813061'
-date: '2026-02-24T07:05:10.813063'
+content_hash: d4abdfda1e0c87e4fabbdf41a91ff0a556373a12d458c06d098572454ffb5b0c
+created: '2026-02-24T09:40:30.595824'
+date: '2026-02-24T09:40:30.595827'
 key: IG-TIFlow-RX-77
-modified: '2026-02-24T07:05:10.813062'
+modified: '2026-02-24T09:40:30.595826'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-abgabedatensatz.md
+source: input/pagecontent/op-abort-fd-requirements.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_abgebend:
+  E-Rezept-Fachdienst:
   - Produkttest
-text: Das PS der abgebenden LEI MUSS beim Signieren eines Abgabedatensatzes mit einer
-  non-QES vor dem Signieren prüfen, dass die für die nonQES verwendet SMC-B gültig
-  ist.
-title: 'PS abgebende LEI: Abgabedatensatz signieren - Gültigkeit SMC-B prüfen'
+text: Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts mittels POST /Task/&lt;id&gt;/$abort
+  durch eine verordnende oder abgebende Leistungserbringerinstitution die Daten für
+  die Löschinformation des Verordnungsdatensatzes in den ePA Medication Service bereitstellen.
+title: E-Rezept-Fachdienst - E-Rezept löschen - Löschinformation ePA Medication Service
+  bereitstellen (Verordnungsdatensatz) - Leistungserbringerinstitution
 version: 0

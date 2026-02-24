@@ -1,23 +1,19 @@
 actor:
-- E-Rezept-Fachdienst
-conformance: SHALL
-content_hash: c561f70a7596b9543efbbec63daaca46d8a503116abaabfd2ad96704b1201c99
-created: '2026-02-24T07:05:10.818714'
-date: '2026-02-24T07:05:10.818717'
+- PS_E-Rezept_abgebend
+conformance: SHOULD
+content_hash: a50ed83d2e738c17afe9f8dfa9597b4f6a5462b609ac1a155ef2d542d50d5677
+created: '2026-02-24T09:40:30.596273'
+date: '2026-02-24T09:40:30.596276'
 key: IG-TIFlow-RX-79
-modified: '2026-02-24T07:05:10.818716'
+modified: '2026-02-24T09:40:30.596275'
 release_status: NEW
-source: input/pagecontent/op-reject-fd-requirements.md
+source: input/pagecontent/menu-fachlichkeit-ux-abgebend.md
 status: ACTIVE
 test_procedures:
-  E-Rezept-Fachdienst:
-  - Produktgutachten
-text: "Der E-Rezept-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 160,\
-  \ 169, 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject die\
-  \ Rolle \"professionOID\" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"\
-  Authorization\" feststellen und sicherstellen, dass ausschließlich Institutionen\
-  \ in der Rolle\n  <ul>\n    <li>oid_oeffentliche_apotheke</li>\n    <li>oid_krankenhausapotheke</li>\n\
-  \  </ul>\n  die Operation am Fachdienst aufrufen, damit das E-Rezept nicht durch\
-  \ einen Unberechtigten zurückgewiesen werden kann."
-title: E-Rezept-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Rollenprüfung
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: Das PS der abgebenden LEI SOLL bei Erhalt einer Zuweisung via KIM oder über
+  das E-Rezept-FdV einen entsprechenden Hinweis an den Arbeitsplätzen in der Apotheke
+  anzeigen, um ein zeitnahes Bearbeiten der Zuweisung zu bewirken.
+title: 'PS abgebende LEI: UX - Zuweisung - Hinweis'
 version: 0

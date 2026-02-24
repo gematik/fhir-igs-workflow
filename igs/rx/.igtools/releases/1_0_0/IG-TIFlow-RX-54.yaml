@@ -1,23 +1,18 @@
 actor:
-- E-Rezept-Fachdienst
+- PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: e2a711bca80c5d6684d2b260874f0c463b46d1294f49cbe655bcb15fd6da234f
-created: '2026-02-23T14:30:41.710365'
-date: '2026-02-24T07:05:10.833562'
+content_hash: 1e00d21d4aa369840eb2add19b6be72d83a0567bb7d3abaa55d69f91f2b94ea8
+created: '2026-02-24T09:40:30.591989'
+date: '2026-02-24T09:40:30.591991'
 key: IG-TIFlow-RX-54
-modified: '2026-02-24T07:05:10.833562'
+modified: '2026-02-24T09:40:30.591990'
 release_status: NEW
-source: input/pagecontent/op-dispense-fd-requirements.md
+source: input/pagecontent/menu-technische-umsetzung-kim.md
 status: ACTIVE
 test_procedures:
-  E-Rezept-Fachdienst:
+  PS_E-Rezept_abgebend:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen
-  mittels POST /Task/&lt;id&gt;/$dispense das im URL-Parameter "?secret=..." übertragene
-  Secret gegen das im referenzierten Task gespeicherte Secret Task.identifier:Secret
-  als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret prüfen und bei Ungleichheit
-  oder Fehlen des URL- Parameters die Operation mit dem HTTP-Fehlercode 403 abbrechen,
-  damit der Zugriff auf diesen Datensatz nur durch den Berechtigten in Kenntnis des
-  Secrets erfolgt.
-title: E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Prüfung Secret
+text: Das PS der abgebenden LEI MUSS bei der Verarbeitung des Nachrichtenteils Einlöseinformation
+  das Steuerzeichen "CRLF" aus dem E-Rezept-Token entfernen.
+title: E-Rezept - Zuweisungs-Message - CRLF
 version: 0

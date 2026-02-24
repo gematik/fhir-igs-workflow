@@ -5,7 +5,7 @@ Mit diesem Anwendungsfall stellt das PS der abgebenden LEI Dispensierinformation
 Dieser Anwendungsfall kann so lange wiederholt werden, so lange sich der Task zum E-Rezept im Status "in Abgabe (gesperrt)" befindet. Bei der wiederholten Übermittlung wird die zuvor übermittelte Dispensierinformation überschrieben. D.h. es muss immer die vollständige Dispensierinformation übermittelt werden.
 
 <!-- A_24289 -->
-<requirement conformance="SHALL" key="IG-TIFlow-RX-177" title="PS abgebende LEI: Dispensierinformationen bereitstellen - E-Rezept auswählen" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-47" title="PS abgebende LEI: Dispensierinformationen bereitstellen - E-Rezept auswählen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -14,7 +14,7 @@ Dieser Anwendungsfall kann so lange wiederholt werden, so lange sich der Task zu
 </requirement>
 
 <!-- A_24290 -->
-<requirement conformance="SHALL" key="IG-TIFlow-RX-178" title="PS abgebende LEI: Dispensierinformationen bereitstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-48" title="PS abgebende LEI: Dispensierinformationen bereitstellen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -23,7 +23,7 @@ Dieser Anwendungsfall kann so lange wiederholt werden, so lange sich der Task zu
 </requirement>
 
 <!-- A_24291-01 -->
-<requirement conformance="SHALL" key="IG-TIFlow-RX-179" title="PS abgebende LEI: Dispensierinformationen bereitstellen - Dispensierinformationen erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-49" title="PS abgebende LEI: Dispensierinformationen bereitstellen - Dispensierinformationen erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -32,7 +32,7 @@ Dieser Anwendungsfall kann so lange wiederholt werden, so lange sich der Task zu
 </requirement>
 
 <!-- A_26346 -->
-<requirement conformance="SHALL" key="IG-TIFlow-RX-180" title="PS abgebende LEI: Dispensierinformationen bereitstellen - Dispensierinformation übermitteln" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-50" title="PS abgebende LEI: Dispensierinformationen bereitstellen - Dispensierinformation übermitteln" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>

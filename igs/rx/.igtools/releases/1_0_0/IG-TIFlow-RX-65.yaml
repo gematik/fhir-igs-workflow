@@ -1,19 +1,22 @@
 actor:
 - E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: 86484fda68e0796094e5f3118468577a47955ef4150d06bc62273e0850137dda
-created: '2026-02-23T14:30:41.712531'
-date: '2026-02-24T07:05:10.835806'
+content_hash: a4aa74d467ac4cb59d3052871cb1bb0c84cf050277f7451c4509a4c5eeaaec38
+created: '2026-02-24T09:40:30.593884'
+date: '2026-02-24T09:40:30.593887'
 key: IG-TIFlow-RX-65
-modified: '2026-02-24T07:05:10.835806'
+modified: '2026-02-24T09:40:30.593886'
 release_status: NEW
-source: input/pagecontent/op-close-fd-requirements.md
+source: input/pagecontent/op-activate-fd-requirements.md
 status: ACTIVE
 test_procedures:
   E-Rezept-Fachdienst:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels /Task/&lt;id&gt;/$close
-  mit Flowtype 166, wenn die Operation erfolgreich abgeschlossen werden kann, die
-  Daten des digitalen Durchschlags E-T-Rezept dem BfArM Webdienst bereitstellen.
-title: E-Rezept-Fachdienst - Task schließen - T-Rezept Daten an BfArM Webdienst bereitstellen
+text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
+  über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
+  wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
+  = true) gekennzeichnet und der Numerator oder Denominator größer als 4 ist, weil
+  eine Mehrfachverordnungen aus maximal 4 Teilverordnungen bestehen darf.
+title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator-Denominator
+  kleiner 5
 version: 0

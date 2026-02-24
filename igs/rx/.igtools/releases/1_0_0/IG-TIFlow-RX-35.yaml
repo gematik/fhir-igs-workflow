@@ -1,22 +1,22 @@
 actor:
 - E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: cf302fcab0a262a662a274190dc27c2dc873a2449b59f80cff9dad5ee5859796
-created: '2026-02-23T14:30:41.705958'
-date: '2026-02-24T07:05:10.828438'
+content_hash: 22ed0b1ce219120b1c8659c108bfbf4c28b099806e7026f58535db0f1a711e5b
+created: '2026-02-24T09:40:30.588507'
+date: '2026-02-24T09:40:30.588510'
 key: IG-TIFlow-RX-35
-modified: '2026-02-24T07:05:10.828438'
+modified: '2026-02-24T09:40:30.588509'
 release_status: NEW
-source: input/pagecontent/op-activate-fd-requirements.md
+source: input/pagecontent/query-api-task-fd-requirements.md
 status: ACTIVE
 test_procedures:
   E-Rezept-Fachdienst:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task des Flowtype Task.extension:flowType
-  = 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen,
-  ob Coverage.type.coding.code mit dem Wert "PKV" belegt ist und im Fehlerfall die
-  Operation mit Http-Fehlercode 400 abbrechen, um sicherzustellen, dass diese Workflows
-  nur für E-Rezepte für PKV-Versicherte genutzt werden.
-title: E-Rezept-Fachdienst – Task aktivieren – Flowtype 200/209 - Prüfung Coverage
-  Type
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
+  /Task/&lt;id&gt; und Ungleichheit der KVNR des Aufrufenden (KVNR des ACCESS_TOKEN
+  im "Authorization"-Header des HTTP-Requests UNGLEICH KVNR in Task.for ) prüfen,
+  ob der im HTTP-Request-Header "X-AccessCode" oder URL-Parameter "?ac=..." übergebene
+  AccessCode gleich dem AccessCode in Task.identifier ist, damit auch Vertreter in
+  Kenntnis des AccessCodes ein einzelnes E-Rezept einsehen können.
+title: E-Rezept-Fachdienst - Task abrufen - Prüfung AccessCode bei KVNR-Missmatch
 version: 0

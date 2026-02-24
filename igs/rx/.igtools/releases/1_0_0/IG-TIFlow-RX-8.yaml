@@ -1,19 +1,19 @@
 actor:
-- PS_E-Rezept_verordnend
+- eRP_FdV
 conformance: SHALL
-content_hash: 3535ab72fffb49f68973081fe634d4dde3d19720396b846a2a49120a7fdc44f0
-created: '2026-02-23T14:30:41.699787'
-date: '2026-02-24T09:09:53.042521'
+content_hash: 9bc595627f1fb70f2d8425bb011f5b21795b2dab533729c9137b510e0ea18ee6
+created: '2026-02-24T09:40:30.583069'
+date: '2026-02-24T09:40:30.583072'
 key: IG-TIFlow-RX-8
-modified: '2026-02-24T07:05:10.817854'
+modified: '2026-02-24T09:40:30.583071'
 release_status: NEW
-source: input/pagecontent/op-activate-client-requirements.md
+source: input/pagecontent/query-api-task-client-requirements.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_verordnend:
-  - Konformitätsbestätigung
-text: Das PS der verordnenden LEI MUSS es dem Nutzer ermöglichen, die Einlöseinformationen
-  (Task.id und AccessCode) als E-Rezept-Token über ein geeignetes Übermittlungsverfahren
-  an eine Apotheke der Wahl zu schicken.
-title: 'PS verordnende LEI: Übergabe E-Rezept-Token an Apotheke'
+  eRP_FdV:
+  - Produkttest
+text: Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezepte abrufen" zum Herunterladen
+  eines spezifischen E-Rezepts des Nutzers die HTTP-Operation GET /Task/&lt;id&gt;
+  mit ACCESS_TOKEN im Authorization-Header Task-ID in URL &lt;id&gt; ausführen.
+title: 'E-Rezept-FdV: E-Rezepte abrufen -Spezifisches E-Rezept herunterladen'
 version: 0

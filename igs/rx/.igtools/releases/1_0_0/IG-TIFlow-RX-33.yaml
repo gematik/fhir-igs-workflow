@@ -1,22 +1,20 @@
 actor:
 - E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: 9f7a43929c616124fac50d8c50c614ccf78b73ab2c13c041defe2dc3c81848d5
-created: '2026-02-23T14:30:41.705640'
-date: '2026-02-24T07:05:10.828004'
+content_hash: a758c00c5d25e1d299d041211576aeb210b24979641f2c617ae3e52d0333cc11
+created: '2026-02-24T09:40:30.588227'
+date: '2026-02-24T09:40:30.588229'
 key: IG-TIFlow-RX-33
-modified: '2026-02-24T07:05:10.828004'
+modified: '2026-02-24T09:40:30.588228'
 release_status: NEW
-source: input/pagecontent/op-activate-fd-requirements.md
+source: input/pagecontent/query-api-task-fd-requirements.md
 status: ACTIVE
 test_procedures:
   E-Rezept-Fachdienst:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mit Workflowtyp 166
-  mittels $activate prüfen, dass im Bundle eine MedicationRequest-Ressource und eine
-  Medication mit Medication.extension:Arzneimittelkategorie = 02 enthalten ist. Der
-  E-Rezept-Fachdienst MUSS andernfalls mit dem HTTP-Fehlercode 400 abbrechen und in
-  der OperationOutcome den Fehlertext "Für diesen Workflowtypen sind nur T-Rezept
-  Verordnungen zulässig" ausgeben.
-title: E-Rezept-Fachdienst - Task aktivieren - Flowtype 166 - Prüfung Arzneimittelverordnung
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
+  /Task die gültige Ergebnisliste der Task-Ressourcen ohne die referenzierten, signierten
+  E-Rezept-Bundle an den Aufrufer zurückgeben, damit der Versicherte eine Übersicht
+  aller Tasks erhält.
+title: E-Rezept-Fachdienst - Rückgabe Tasks im Bundle Versicherter
 version: 0

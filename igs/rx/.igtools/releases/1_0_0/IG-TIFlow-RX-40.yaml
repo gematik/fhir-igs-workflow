@@ -1,21 +1,20 @@
 actor:
 - E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: 3450d4720be61540be8bbfeaaee7ce4ff91ccdb70f9b599816c18181f8404850
-created: '2026-02-23T14:30:41.706748'
-date: '2026-02-24T07:05:10.829574'
+content_hash: 16eef8909a8dd677d0d7f51980f5004bb3a552436229559afee53b978173e4ed
+created: '2026-02-24T09:40:30.589205'
+date: '2026-02-24T09:40:30.589208'
 key: IG-TIFlow-RX-40
-modified: '2026-02-24T07:05:10.829574'
+modified: '2026-02-24T09:40:30.589207'
 release_status: NEW
-source: input/pagecontent/op-activate-fd-requirements.md
+source: input/pagecontent/query-api-task-fd-requirements.md
 status: ACTIVE
 test_procedures:
   E-Rezept-Fachdienst:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
-  über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
-  wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
-  = true) gekennzeichnet und der Numerator kleiner als 1 ist.
-title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator größer
-  0
+text: Der E-Rezept-Fachdienst DARF den AccessCode beim Zugriff durch den Versicherten
+  NICHT an das E-Rezept-Frontend des Versicherten herausgeben, wenn der Flowtype des
+  Tasks den Wert für die Workflowsteuerung durch Leistungserbringer enthält (169,
+  209).
+title: E-Rezept-Fachdienst - Task abrufen - Flowtype 169 / 209 - keine Einlöseinformationen
 version: 0

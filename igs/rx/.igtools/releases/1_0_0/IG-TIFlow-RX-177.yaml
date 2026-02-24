@@ -1,18 +1,19 @@
 actor:
-- PS_E-Rezept_abgebend
+- E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: 19ffa40e7c9628e32dc1f20dd15e6728df83cd00f672e85e474434c8d41493ec
-created: '2026-02-24T07:50:24.881864'
-date: '2026-02-24T09:09:53.048588'
+content_hash: 5f032c47c319b53c1219014f6c4b90af5ade782501acacfd43ed175f41bc9d80
+created: '2026-02-24T09:40:30.610868'
+date: '2026-02-24T09:40:30.610871'
 key: IG-TIFlow-RX-177
-modified: '2026-02-24T07:50:24.881867'
+modified: '2026-02-24T09:40:30.610870'
 release_status: NEW
-source: input/pagecontent/op-dispense-client-requirements.md
+source: input/pagecontent/op-dispense-fd-requirements.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_abgebend:
-  - Herstellererklärung
-text: Das PS der abgebenden LEI MUSS im Anwendungsfall "Dispensierinformationen bereitstellen"
-  es dem Nutzer ermöglichen, ein E-Rezept als abgegeben auszuwählen.
-title: 'PS abgebende LEI: Dispensierinformationen bereitstellen - E-Rezept auswählen'
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen
+  mittels POST /Task/&lt;id&gt;/$dispense den Zeitpunkt des Aufrufes in Task.extension:lastMedicationDispense
+  im Format "YYYY-MM-DDThh:mm:ss+zz:zz" (FHIR-instant) anlegen und speichern.
+title: E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Zeitstempel MedicationDispense
 version: 0

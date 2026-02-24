@@ -1,21 +1,21 @@
 actor:
-- PS_E-Rezept_abgebend
+- E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: 6896bad63d794834def8159d9510a838c50497fca53836caf149a5df4dc52789
-created: '2026-02-23T14:30:41.713300'
-date: '2026-02-24T07:05:10.836546'
+content_hash: ac40cbe534f07081a4832d48b37bd5e81bb157f24b60cf349e8a5e3f4c6102b1
+created: '2026-02-24T09:40:30.594424'
+date: '2026-02-24T09:40:30.594426'
 key: IG-TIFlow-RX-69
-modified: '2026-02-24T07:05:10.836546'
+modified: '2026-02-24T09:40:30.594425'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-dispensierinformationen.md
+source: input/pagecontent/op-activate-fd-requirements.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_abgebend:
+  E-Rezept-Fachdienst:
   - Produkttest
-text: Das PS der abgebenden LEI MUSS beim Erstellen von Dispensierinformationen mit
-  Flowtype 160, 169, 200 oder 209, wenn mehrere Teilabgaben oder Stückelungen enthalten
-  sind, eine Profilversion zur Erstellung der Parameters Ressource nutzen, die zum
-  Zeitpunkt des neuesten Abgabedatums (MedicationDispense.whenHandedOver) gültig ist.
-title: 'PS abgebende LEI: Dispensierinformationen – Flowtype 160/169/200/209 – Profilversion
-  bei mehreren MedicationDispenses'
+text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
+  über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
+  wenn die Verordnung nicht als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
+  = false) gekennzeichnet ist, aber eine Extension Nummerierung oder Zeitraum enthält,
+  weil normale Verordnungen keine MVO-Angaben enthalten dürfen.
+title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Unzulässige Angaben
 version: 0

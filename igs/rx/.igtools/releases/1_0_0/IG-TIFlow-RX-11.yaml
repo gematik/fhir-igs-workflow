@@ -1,22 +1,19 @@
 actor:
-- E-Rezept-Fachdienst
+- PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: 998b0080d869a4a9c51581ced2ced3701e7210ff765e6d6997267928cf2c571b
-created: '2026-02-23T14:30:41.700664'
-date: '2026-02-24T07:05:10.819093'
+content_hash: ad0656ae3afb60dd1749256540098563d135b4bfb85947fd4f0022379912b47d
+created: '2026-02-24T09:40:30.583643'
+date: '2026-02-24T09:40:30.583645'
 key: IG-TIFlow-RX-11
-modified: '2026-02-24T07:05:10.819093'
+modified: '2026-02-24T09:40:30.583644'
 release_status: NEW
-source: input/pagecontent/op-reject-fd-requirements.md
+source: input/pagecontent/op-activate-client-requirements.md
 status: ACTIVE
 test_procedures:
-  E-Rezept-Fachdienst:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 160,
-  169, 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject, wenn
-  bereits Dispensierinformationen im E-Rezept-Fachdienst zum Task gespeichert wurden,
-  die Daten für die Löschinformation dieser Dispensierinformationen für die Übermittlung
-  in den ePA Medication Service bereitstellen.
-title: E-Rezept-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Löschmarkierungen
-  Medikationsliste bereitstellen (Dispensierinformationen)
+  PS_E-Rezept_verordnend:
+  - Konformitätsbestätigung
+text: Das PS der verordnenden LEI MUSS im Verordnungsdatensatz für ein E-Rezept des
+  Flowtype 200 oder 209 als Identifier des Patienten in Patient.identifer.value die
+  KVNR des Versicherten verwenden.
+title: 'PS verordnende LEI: E-Rezept erstellen – Flowtype 200/209 – KVNR als Identifier'
 version: 0

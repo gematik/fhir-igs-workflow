@@ -7,7 +7,7 @@ Eine Message dient der direkten Zuweisung eines E-Rezepts und enthält einen Mit
 Der zweite Message-Typ dient der freien Kommunikation zur Belieferung des E-Rezepts, bspw. Rückfragen durch die Apotheke.
 
 <!-- A_21870 -->
-<requirement conformance="SHALL" key="IG-TIFlow-RX-81" title="E-Rezept - X-KIM-Dienstkennung - Zuweisung" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-51" title="E-Rezept - X-KIM-Dienstkennung - Zuweisung" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Produkttest"/>
@@ -16,7 +16,7 @@ Der zweite Message-Typ dient der freien Kommunikation zur Belieferung des E-Reze
 </requirement>
 
 <!-- A_21871 -->
-<requirement conformance="SHALL" key="IG-TIFlow-RX-82" title="E-Rezept - X-KIM-Dienstkennung - Kommunikation" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-52" title="E-Rezept - X-KIM-Dienstkennung - Kommunikation" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Produkttest"/>
@@ -25,7 +25,7 @@ Der zweite Message-Typ dient der freien Kommunikation zur Belieferung des E-Reze
 </requirement>
 
 <!-- A_21873 -->
-<requirement conformance="SHALL" key="IG-TIFlow-RX-83" title="E-Rezept - Struktur Zuweisungs-Message" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-53" title="E-Rezept - Struktur Zuweisungs-Message" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Produkttest"/>
@@ -34,7 +34,7 @@ Der zweite Message-Typ dient der freien Kommunikation zur Belieferung des E-Reze
 </requirement>
 
 <!-- A_21874 -->
-<requirement conformance="SHALL" key="IG-TIFlow-RX-84" title="E-Rezept - Zuweisungs-Message - CRLF" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-54" title="E-Rezept - Zuweisungs-Message - CRLF" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Produkttest"/>
@@ -43,7 +43,7 @@ Der zweite Message-Typ dient der freien Kommunikation zur Belieferung des E-Reze
 </requirement>
 
 <!-- A_21875 -->
-<requirement conformance="SHALL" key="IG-TIFlow-RX-85" title="E-Rezept - Struktur Kommunikation-Message" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-55" title="E-Rezept - Struktur Kommunikation-Message" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Produkttest"/>

@@ -1,18 +1,19 @@
 actor:
 - PS_E-Rezept_abgebend
 conformance: SHOULD
-content_hash: 42fdd9afb79bcead87f4eda82b9e718ae97875edaed3df0f574b99d3b1330e9e
-created: '2026-02-24T07:24:28.996602'
-date: '2026-02-24T09:09:53.058457'
+content_hash: bafa4a61509dcb93f46c6111e6a9f23fbb3fbe8a678c2eac15ea3c6f18a4799d
+created: '2026-02-24T09:40:30.599649'
+date: '2026-02-24T09:40:30.599652'
 key: IG-TIFlow-RX-103
-modified: '2026-02-24T07:24:28.996604'
+modified: '2026-02-24T09:40:30.599651'
 release_status: NEW
 source: input/pagecontent/menu-fachlichkeit-ux-abgebend.md
 status: ACTIVE
 test_procedures:
   PS_E-Rezept_abgebend:
   - Herstellererklärung
-text: Das PS der abgebenden LEI SOLL, wenn eine Freitextverordnung vorliegt, den Nutzer
-  darauf hinweisen, dass die Angaben im E-Rezept auf Vollständigkeit zu prüfen ist.
-title: 'PS abgebende LEI: UX - Freitextverordnung - Hinweis zur manuellen Prüfung'
+text: Das PS der abgebenden LEI SOLL die Quittung mittels der Operation POST /Task/&lt;id&gt;/$close
+  automatisch abrufen, wenn eine konfigurierbare Frist nach Abgabe des E-Rezept erreicht
+  ist und der Quittungsabruf noch nicht erfolgt ist.
+title: 'PS abgebende LEI: UX – Quittung automatisch abrufen'
 version: 0

@@ -1,20 +1,26 @@
 actor:
-- PS_E-Rezept_verordnend
-conformance: SHOULD
-content_hash: 84c8f28d8bae4513e82f8905b4621eac5cd0ed8572e05fde3ffadbd3f2bc4e4e
-created: '2026-02-24T07:24:29.006177'
-date: '2026-02-24T09:09:53.071056'
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: c6ebc465ea891b299a2b6673d8c30f697fca3be1fdb7c0f497ae7e77180e8b28
+created: '2026-02-24T09:40:30.610161'
+date: '2026-02-24T09:40:30.610164'
 key: IG-TIFlow-RX-172
-modified: '2026-02-24T07:24:29.006178'
+modified: '2026-02-24T09:40:30.610163'
 release_status: NEW
-source: input/pagecontent/menu-fachlichkeit-ux-verordnend.md
+source: input/pagecontent/op-dispense-fd-requirements.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_verordnend:
-  - Herstellererklärung
-text: Das PS der verordnenden LEI SOLL dem Nutzer bei einem Ausfall von für die Anwendung
-  E-Rezept relevanten Komponenten (negativer Healthcheck der TI, Fehler in der Kommunikation
-  mit Komponenten der TI) automatisch einen Muster 16 Ausdruck erstellen. Das System
-  SOLL dem Nutzer dieses Verhalten per Hinweis mitteilen.
-title: 'PS verordnende LEI: UX - Verhalten bei Ausfall von TI Komponenten des E-Rezepts'
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: 'Der E-Rezept-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen
+  mittels POST /Task/&lt;id&gt;/$dispense das im http-Body des Requests enthaltene
+  Parameters-Objekt gegen das Profil https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PAR_DispenseOperation_Input
+  prüfen, insbesondere bei der darin enthaltenen MedicationDispense: die Korrektheit
+  der Rezept-ID https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId
+  als MedicationDispense.identifier die KVNR des Versicherten im referenzierten Task
+  (Task.for) gegen KVNR in MedicationDispense.subject:identifier und ob die Telematik-ID
+  der Apotheke gemäß ACCESS_TOKEN mit dem Wert in MedicationDispense.performer.actor:identifier
+  übereinstimmt und im Fehlerfall die Operation mit Http-Fehlercode 400 abbrechen.'
+title: E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Schemaprüfung
+  MedicationDispense
 version: 0

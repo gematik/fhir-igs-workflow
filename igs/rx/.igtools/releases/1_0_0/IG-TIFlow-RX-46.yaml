@@ -1,22 +1,21 @@
 actor:
 - E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: 5b0347528abecd629bacaa99c6c957fe4035c9829dd0f836784144da9a9c8598
-created: '2026-02-23T14:30:41.707709'
-date: '2026-02-24T07:05:10.830774'
+content_hash: 851e90c3b037bec861abc4dfaf1f833699013027d4e5ce10f8c64f3d8c737e48
+created: '2026-02-24T09:40:30.590330'
+date: '2026-02-24T09:40:30.590332'
 key: IG-TIFlow-RX-46
-modified: '2026-02-24T07:05:10.830774'
+modified: '2026-02-24T09:40:30.590331'
 release_status: NEW
-source: input/pagecontent/op-activate-fd-requirements.md
+source: input/pagecontent/query-api-task-fd-requirements.md
 status: ACTIVE
 test_procedures:
   E-Rezept-Fachdienst:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
-  über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
-  wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
-  = true) gekennzeichnet ist und der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start)
-  nicht angegeben ist, weil die Information des Beginns der Einlösefrist notwendig
-  ist, um den Gültigkeitszeitraum zu ermitteln.
-title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Beginn Einlösefrist-Pflicht
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation GET /Task/&lt;id&gt;
+  durch einen Versicherten mit der Rolle oid_versicherter, sofern die KVNR des Aufrufenden
+  ungleich der KVNR in Task.for ist, den Push Notification Prozess für den Trigger
+  mit der ChannelId "erp.task.vertreter" und den Versicherten mit der KVNR = Task.for
+  initiieren.
+title: E-Rezept-Fachdienst - Task abrufen - Vertreter - Push Notification Versicherter
 version: 0

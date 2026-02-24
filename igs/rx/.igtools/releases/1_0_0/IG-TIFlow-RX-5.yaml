@@ -1,20 +1,19 @@
 actor:
-- PS_E-Rezept_verordnend
+- eRp_FdV
 conformance: SHALL
-content_hash: 0168cbc75823d9b073186c1f83a68cb6fe9826dae8134df09f1363c5a5b72133
-created: '2026-02-23T14:30:41.698852'
-date: '2026-02-24T09:09:53.041419'
+content_hash: d2888e6da52da5683a63c3708c5389ac2ee5c449497731720cc88c199f786b28
+created: '2026-02-24T09:40:30.582403'
+date: '2026-02-24T09:40:30.582406'
 key: IG-TIFlow-RX-5
-modified: '2026-02-24T07:05:10.816414'
+modified: '2026-02-24T09:40:30.582405'
 release_status: NEW
-source: input/pagecontent/op-activate-client-requirements.md
+source: input/pagecontent/op-abort-client-requirements.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_verordnend:
-  - Konformitätsbestätigung
-text: Das PS der verordnenden LEI MUSS sicherstellen, dass ein Verordnungsdatensatz
-  für ein E-Rezept des Flowtype 166 nur mit einem HBA mit der zulässigen ProfessionOID
-  oid_arzt signiert werden kann.
-title: 'PS verordnende LEI: E-Rezept erstellen – Flowtype 166 – zulässige Signatur
-  Arzt'
+  eRp_FdV:
+  - Herstellererklärung
+text: Das E-Rezept-FdV DARF im Anwendungsfall "E-Rezept löschen" dem Nutzer das Löschen
+  von E-Rezepten mit dem Flowtype 169 oder 209 NICHT ermöglichen, wenn der Task einen
+  Status ungleich "completed" hat.
+title: 'E-Rezept-FdV: E-Rezept löschen - Flowtype 169 / 209 - nur wenn beliefert'
 version: 0

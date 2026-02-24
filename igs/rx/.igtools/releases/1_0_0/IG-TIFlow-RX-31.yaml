@@ -1,22 +1,23 @@
 actor:
 - E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: 454e69d016908c1a3af4b0b95d4236a8423fa9c53031004ee4706645e010e785
-created: '2026-02-23T14:30:41.705333'
-date: '2026-02-24T07:05:10.827494'
+content_hash: ebfc4daca795b0d3c08912623f3d177f6c3e5abd9c3fba1aa9d2a7afcc3f7d4a
+created: '2026-02-24T09:40:30.587958'
+date: '2026-02-24T09:40:30.587960'
 key: IG-TIFlow-RX-31
-modified: '2026-02-24T07:05:10.827494'
+modified: '2026-02-24T09:40:30.587959'
 release_status: NEW
-source: input/pagecontent/op-activate-fd-requirements.md
+source: input/pagecontent/query-api-task-fd-requirements.md
 status: ACTIVE
 test_procedures:
   E-Rezept-Fachdienst:
   - Produkttest
-text: 'Der E-Rezept-Fachdienst MUSS die Aktivierung eines Tasks mit Flowtype 166 mit
-  dem HTTP-Status-Code 400 abbrechen, wenn die QES gemäß der professionOID des Signaturzertifikats
-  des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die der folgenden
-  professionOID entspricht: oid_arzt damit nur solche Leistungserbringer ein signiertes
-  E-Rezept einstellen, die zur Verordnung von T-Rezepten ermächtigt sind.'
-title: E-Rezept-Fachdienst - Task aktivieren - Flowtype 166 - QES durch berechtigte
-  Berufsgruppe
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
+  /Task sicherstellen, dass ausschließlich Versicherte und Leistungserbringer in der
+  Rolle oid_versicherter oid_oeffentliche_apotheke oid_krankenhausapotheke die Operation
+  am E-Rezept-Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers
+  im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit E-Rezepte
+  nicht durch Unberechtigte ausgelesen werden können.
+title: E-Rezept-Fachdienst - Task abrufen - Rollenprüfung Versicherter oder Apotheke
+  liest Rezepte
 version: 0

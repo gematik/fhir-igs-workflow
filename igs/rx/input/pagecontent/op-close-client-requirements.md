@@ -2,7 +2,7 @@ Diese Seite enthält die normativen Anforderungen an den Client des E-Rezept-Fac
 Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/{{ site.data.constants.tiflow_core_version }}/op-close-client-requirements.html).
 
 <!-- A_19288-03 -->
-<requirement conformance="SHALL" key="IG-TIFlow-RX-80" title="PS abgebende LEI:  Quittung abrufen - Dispensierinformationen erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-28" title="PS abgebende LEI:  Quittung abrufen - Dispensierinformationen erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>

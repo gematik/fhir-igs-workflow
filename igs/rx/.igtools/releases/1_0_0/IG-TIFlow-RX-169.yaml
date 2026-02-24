@@ -1,18 +1,24 @@
 actor:
-- PS_E-Rezept_verordnend
-conformance: SHOULD
-content_hash: f33673739ecd81d7216ff268f4bb08fabfeafa00260889c59ddf9088dc8c0da1
-created: '2026-02-24T07:24:29.005594'
-date: '2026-02-24T09:09:53.070589'
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: 36589d67678c8f81613e4029193e4b1f1ae1b336588f13fae52d0a45743da155
+created: '2026-02-24T09:40:30.609730'
+date: '2026-02-24T09:40:30.609733'
 key: IG-TIFlow-RX-169
-modified: '2026-02-24T07:24:29.005596'
+modified: '2026-02-24T09:40:30.609732'
 release_status: NEW
-source: input/pagecontent/menu-fachlichkeit-ux-verordnend.md
+source: input/pagecontent/op-dispense-fd-requirements.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_verordnend:
-  - Herstellererklärung
-text: Das PS der verordnenden LEI SOLL es dem Nutzer ermöglichen, über eine Mehrfachauswahl
-  von Einträgen in der Aufgabenliste diese für die Signatur auszuwählen.
-title: 'PS verordnende LEI: UX – Aufgabenliste - Mehrfachauswahl zur Signatur'
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen
+  mittels POST /Task/&lt;id&gt;/$dispense auf den in der URL referenzierten /Task/&lt;id&gt;
+  sicherstellen, dass ausschließlich abgebende Leistungserbringer in der Rolle oid_oeffentliche_apotheke
+  oid_krankenhausapotheke die Operation am Fachdienst aufrufen dürfen und die Rolle
+  "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization"
+  feststellen, damit Dispensierinformationen nicht durch einen Unberechtigten eingestellt
+  werden kann.
+title: E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Rollenprüfung
+  Abgebender stellt Dispensierinformationen bereit
 version: 0

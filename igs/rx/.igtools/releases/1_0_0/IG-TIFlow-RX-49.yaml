@@ -1,21 +1,20 @@
 actor:
-- E-Rezept-Fachdienst
+- PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: 8353bebdcf07b3d5324705afb89bcdb95d234213ef56cd91d79d9f9041acd5c8
-created: '2026-02-23T14:30:41.708251'
-date: '2026-02-24T07:05:10.832003'
+content_hash: 52521b8678af2b01733fcd4ad32ca19a8d9bd5c5242bc209bb630b1b0f503e00
+created: '2026-02-24T09:40:30.591174'
+date: '2026-02-24T09:40:30.591176'
 key: IG-TIFlow-RX-49
-modified: '2026-02-24T07:05:10.832003'
+modified: '2026-02-24T09:40:30.591175'
 release_status: NEW
-source: input/pagecontent/op-activate-fd-requirements.md
+source: input/pagecontent/op-dispense-client-requirements.md
 status: ACTIVE
 test_procedures:
-  E-Rezept-Fachdienst:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
-  über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
-  wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
-  = true) gekennzeichnet ist und der dazugehörige value (MedicationRequest.extension:Mehrfachverordnung.extension:ID.value[x]:valueIdentifier.value)
-  nicht dem Schema aus [KBV_ITA_VGEX_Technische_Anlage_ERP] entspricht.
-title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Schema ID
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: Das PS der abgebenden LEI MUSS im Anwendungsfall "Dispensierinformationen bereitstellen"
+  die Dispensierinformationen nach den Vorgaben aus "Erstellen von Dispensierinformationen"
+  erzeugen.
+title: 'PS abgebende LEI: Dispensierinformationen bereitstellen - Dispensierinformationen
+  erstellen'
 version: 0

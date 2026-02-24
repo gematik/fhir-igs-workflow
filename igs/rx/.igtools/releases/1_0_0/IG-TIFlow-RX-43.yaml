@@ -1,21 +1,22 @@
 actor:
 - E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: ac40cbe534f07081a4832d48b37bd5e81bb157f24b60cf349e8a5e3f4c6102b1
-created: '2026-02-23T14:30:41.707223'
-date: '2026-02-24T07:05:10.830166'
+content_hash: a9a91f599c33987e8dd3228fea0dbdfe0272308caea610f4764c811e1ddb9a98
+created: '2026-02-24T09:40:30.589911'
+date: '2026-02-24T09:40:30.589913'
 key: IG-TIFlow-RX-43
-modified: '2026-02-24T07:05:10.830166'
+modified: '2026-02-24T09:40:30.589912'
 release_status: NEW
-source: input/pagecontent/op-activate-fd-requirements.md
+source: input/pagecontent/query-api-task-fd-requirements.md
 status: ACTIVE
 test_procedures:
   E-Rezept-Fachdienst:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
-  über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
-  wenn die Verordnung nicht als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
-  = false) gekennzeichnet ist, aber eine Extension Nummerierung oder Zeitraum enthält,
-  weil normale Verordnungen keine MVO-Angaben enthalten dürfen.
-title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Unzulässige Angaben
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
+  Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende LEI den im referenzierten
+  Task gespeicherten Status Task.status prüfen und mit dem Fehler 412 abbrechen, wenn
+  Task.status ungleich "in-progress", damit der Datensatz nur abgerufen werden, kann,
+  wenn sich die Verordnung in Belieferung befindet.
+title: E-Rezept-Fachdienst - Task abrufen - Apotheke - Verordnung abrufen - Prüfung
+  Status in-progress
 version: 0

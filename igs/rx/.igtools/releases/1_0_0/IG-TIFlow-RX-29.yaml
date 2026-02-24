@@ -1,21 +1,23 @@
 actor:
 - E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: 851e90c3b037bec861abc4dfaf1f833699013027d4e5ce10f8c64f3d8c737e48
-created: '2026-02-23T14:30:41.704322'
-date: '2026-02-24T07:05:10.825213'
+content_hash: 8446d8eca1e8eba85313662757736c633e1c624e759c03067fbb307960b388e9
+created: '2026-02-24T09:40:30.587543'
+date: '2026-02-24T09:40:30.587546'
 key: IG-TIFlow-RX-29
-modified: '2026-02-24T07:05:10.825213'
+modified: '2026-02-24T09:40:30.587545'
 release_status: NEW
-source: input/pagecontent/query-api-task-fd-requirements.md
+source: input/pagecontent/op-accept-fd-requirements.md
 status: ACTIVE
 test_procedures:
   E-Rezept-Fachdienst:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation GET /Task/&lt;id&gt;
-  durch einen Versicherten mit der Rolle oid_versicherter, sofern die KVNR des Aufrufenden
-  ungleich der KVNR in Task.for ist, den Push Notification Prozess für den Trigger
-  mit der ChannelId "erp.task.vertreter" und den Versicherten mit der KVNR = Task.for
-  initiieren.
-title: E-Rezept-Fachdienst - Task abrufen - Vertreter - Push Notification Versicherter
+text: Der E-Rezept-Fachdienst MUSS beim Abrufen eines Tasks mit Flowtype 160, 166,
+  169, 200 oder 209 mittels HTTP-POST/$accept-Operation auf den in der URL referenzierten
+  /Task/&lt;id&gt; sicherstellen, dass ausschließlich abgebende Institutionen in der
+  Rolle oid_oeffentliche_apotheke oid_krankenhausapotheke die Operation am Fachdienst
+  aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader
+  "Authorization" feststellen, damit E-Rezepte nicht durch Unberechtigte abgerufen
+  werden können.
+title: E-Rezept-Fachdienst - Task akzeptieren - Flowtype 160/166/169/200/209 - Rollenprüfung
 version: 0

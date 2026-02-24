@@ -1,23 +1,21 @@
 actor:
 - E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: 177cf6acc197ad95158f8027006a730a348588fc3d0d49afe92d217c14f5ed16
-created: '2026-02-23T14:30:41.705487'
-date: '2026-02-24T07:05:10.827746'
+content_hash: d78871e20010bd227cf4b02c17e416db8a681e718e34b8d25e9933bf04429500
+created: '2026-02-24T09:40:30.588094'
+date: '2026-02-24T09:40:30.588097'
 key: IG-TIFlow-RX-32
-modified: '2026-02-24T07:05:10.827746'
+modified: '2026-02-24T09:40:30.588096'
 release_status: NEW
-source: input/pagecontent/op-activate-fd-requirements.md
+source: input/pagecontent/query-api-task-fd-requirements.md
 status: ACTIVE
 test_procedures:
   E-Rezept-Fachdienst:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mit Workflowtypen 160,169,200
-  oder 209 mittels $activate prüfen, dass im Bundle eine MedicationRequest-Ressource
-  und eine Medication mit Medication.extension:Arzneimittelkategorie = 00 enthalten
-  ist. Der E-Rezept-Fachdienst MUSS andernfalls mit dem HTTP-Fehlercode 400 abbrechen
-  und in der OperationOutcome den Fehlertext "Für diesen Workflowtypen sind nur Arzneimittelverordnungen
-  zulässig" ausgeben.
-title: E-Rezept-Fachdienst - Task aktivieren - Flowtype 160/169/200/209 - Prüfung
-  Arzneimittelverordnung
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
+  /Task die dem Versicherten zugeordneten Task-Ressourcen anhand der KVNR des Versicherten
+  aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren,
+  die in Task.for die entsprechende KVNR des begünstigten Patienten referenziert haben,
+  damit ausschließlich Versicherte ihre eigenen E-Rezepte einsehen können.
+title: E-Rezept-Fachdienst - Task abrufen - Filter Tasks auf KVNR des Versicherten
 version: 0

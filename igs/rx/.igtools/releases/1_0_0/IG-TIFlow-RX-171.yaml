@@ -1,19 +1,19 @@
 actor:
-- PS_E-Rezept_verordnend
+- E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: 82232a0a8d6eedca3851ead916b767eb04c768a70297bc04e37effd789b8414b
-created: '2026-02-24T07:24:29.006050'
-date: '2026-02-24T09:09:53.070902'
+content_hash: d1d3b922bead4a239fac513deaf065cce8e3405e76fc1a106b7f25f68e9338e2
+created: '2026-02-24T09:40:30.610016'
+date: '2026-02-24T09:40:30.610018'
 key: IG-TIFlow-RX-171
-modified: '2026-02-24T07:24:29.006051'
+modified: '2026-02-24T09:40:30.610017'
 release_status: NEW
-source: input/pagecontent/menu-fachlichkeit-ux-verordnend.md
+source: input/pagecontent/op-dispense-fd-requirements.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_verordnend:
-  - Herstellererklärung
-text: Das PS der verordnenden LEI DARF in der Nachricht, die den Patienten darüber
-  informiert, dass ein E-Rezept ausgestellt wurde, NICHT medizinische oder personenbezogene
-  Informationen einfügen.
-title: 'PS verordnende LEI: Benachrichtigungssystem - Schützenswerte Informationen'
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen
+  mittels POST /Task/&lt;id&gt;/$dispense auf Task.status = in-progress prüfen und
+  bei Ungleichheit mit dem HTTP-Fehlercode 403 abbrechen.
+title: E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Prüfung Status
 version: 0

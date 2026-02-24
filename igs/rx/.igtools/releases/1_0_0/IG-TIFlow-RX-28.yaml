@@ -1,24 +1,19 @@
 actor:
-- E-Rezept-Fachdienst
+- PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: c3d29d4601ca6d9d1c99c7e2f6c3fe645ed41881ea5e0060c346bbef7d3ddcc5
-created: '2026-02-23T14:30:41.704164'
-date: '2026-02-24T07:05:10.824955'
+content_hash: db731317560cdcbd3548c0d058c50ccf08d9bef17380099181ac325725d036df
+created: '2026-02-24T09:40:30.587100'
+date: '2026-02-24T09:40:30.587103'
 key: IG-TIFlow-RX-28
-modified: '2026-02-24T07:05:10.824955'
+modified: '2026-02-24T09:40:30.587102'
 release_status: NEW
-source: input/pagecontent/query-api-task-fd-requirements.md
+source: input/pagecontent/op-close-client-requirements.md
 status: ACTIVE
 test_procedures:
-  E-Rezept-Fachdienst:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
-  Task mittels "/Task/&lt;id&gt;?secret=..." durch einen Apotheker den Task, sofern
-  er den Status "completed" hat, um das referenzierte, serverseitig signierte Quittungs-Bundle
-  aus Task.output mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType
-  = 3 als search.include im Ergebnis-Bundle ergänzen und die Ergebnismenge Task +
-  Quittungs-Bundle an den Apotheker zurückgeben, damit ein Apotheker, der ein konkretes
-  E-Rezept beliefert hat, bei Bedarf genau dieses belieferte E-Rezept inkl. der Quittung
-  erneut abrufen kann.
-title: E-Rezept-Fachdienst - Task abrufen - Rückgabe Task inkl. Bundle im Bundle Apotheker
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: Das PS der abgebenden LEI MUSS im Anwendungsfall "Quittung abrufen" die Dispensierinformationen
+  nach den Vorgaben aus "Erstellen von Dispensierinformationen" erzeugen, wenn sie
+  übermittelt werden sollen.
+title: 'PS abgebende LEI:  Quittung abrufen - Dispensierinformationen erstellen'
 version: 0

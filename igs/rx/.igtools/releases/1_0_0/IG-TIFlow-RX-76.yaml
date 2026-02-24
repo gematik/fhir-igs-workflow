@@ -1,18 +1,24 @@
 actor:
-- PS_E-Rezept_abgebend
+- E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: 76fc1a7f398767c727335316943b4d5cf64810d9cdaf2352391da2050bb901c2
-created: '2026-02-24T07:05:10.812910'
-date: '2026-02-24T07:05:10.812914'
+content_hash: cae2051e04d296aaa70f55ff039847b08ebe81c9480ceddc1819b8cd8022491b
+created: '2026-02-24T09:40:30.595682'
+date: '2026-02-24T09:40:30.595685'
 key: IG-TIFlow-RX-76
-modified: '2026-02-24T07:05:10.812913'
+modified: '2026-02-24T09:40:30.595684'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-abgabedatensatz.md
+source: input/pagecontent/op-abort-fd-requirements.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_abgebend:
+  E-Rezept-Fachdienst:
   - Produkttest
-text: Das PS der abgebenden LEI MUSS die Signatur des Abgabedatensatzes mittels Einzelsignatur,
-  Stapelsignatur und Komfortsignatur unterstützen.
-title: 'PS abgebende LEI: Abgabedatensatz signieren - Signaturverfahren'
+text: 'Der E-Rezept-Fachdienst MUSS das Löschen eines E-Rezepts mit dem Flowtype 169
+  oder 209 über den mittels der &lt;id&gt; adressierten /Task/&lt;id&gt;/$abort verhindern
+  und die Operation mit dem HTTP-Fehlercode 403 abweisen, wenn der Status des adressierten
+  Tasks ungleich "completed" ist und die Rolle des aufrufenden Nutzers der folgenden
+  Rollen entspricht: oid_versicherter damit kein Versicherter ein E-Rezept aus einem
+  Workflow mit Workflowsteuerung durch Leistungserbringer (169, 209) löscht, das nicht
+  bereits beliefert wurde.'
+title: E-Rezept-Fachdienst - E-Rezept löschen - Flowtype 169 / 209 - Versicherter
+  - Statusprüfung
 version: 0

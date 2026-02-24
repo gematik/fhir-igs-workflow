@@ -1,20 +1,19 @@
 actor:
-- PS_E-Rezept_abgebend
+- E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: 52521b8678af2b01733fcd4ad32ca19a8d9bd5c5242bc209bb630b1b0f503e00
-created: '2026-02-24T07:50:24.882139'
-date: '2026-02-24T09:09:53.049457'
+content_hash: 1bd5b91270389949261f06b60787cd5404d0724f09df8dc31f3c6b5bf4396e40
+created: '2026-02-24T09:40:30.611142'
+date: '2026-02-24T09:40:30.611144'
 key: IG-TIFlow-RX-179
-modified: '2026-02-24T07:50:24.882140'
+modified: '2026-02-24T09:40:30.611143'
 release_status: NEW
-source: input/pagecontent/op-dispense-client-requirements.md
+source: input/pagecontent/op-dispense-fd-requirements.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_abgebend:
-  - Herstellererklärung
-text: Das PS der abgebenden LEI MUSS im Anwendungsfall "Dispensierinformationen bereitstellen"
-  die Dispensierinformationen nach den Vorgaben aus "Erstellen von Dispensierinformationen"
-  erzeugen.
-title: 'PS abgebende LEI: Dispensierinformationen bereitstellen - Dispensierinformationen
-  erstellen'
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst DARF bei der Bereitstellung von Dispensierinformationen
+  mittels POST /Task/&lt;id&gt;/$dispense den Status des Task bei Aufrufen der POST
+  /Task/&lt;id&gt;/$dispense Operation NICHT verändern.
+title: E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Keine Statusänderung
 version: 0

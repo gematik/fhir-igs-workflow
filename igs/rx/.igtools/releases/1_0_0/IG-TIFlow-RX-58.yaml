@@ -1,21 +1,23 @@
 actor:
 - E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: e05370f7653cab76385633dafc4f016e88e16bb0d56475ff0c41a87472256415
-created: '2026-02-23T14:30:41.711058'
-date: '2026-02-24T07:05:10.834379'
+content_hash: 177cf6acc197ad95158f8027006a730a348588fc3d0d49afe92d217c14f5ed16
+created: '2026-02-24T09:40:30.592932'
+date: '2026-02-24T09:40:30.592935'
 key: IG-TIFlow-RX-58
-modified: '2026-02-24T07:05:10.834379'
+modified: '2026-02-24T09:40:30.592933'
 release_status: NEW
-source: input/pagecontent/op-dispense-fd-requirements.md
+source: input/pagecontent/op-activate-fd-requirements.md
 status: ACTIVE
 test_procedures:
   E-Rezept-Fachdienst:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen
-  mittels POST /Task/&lt;id&gt;/$dispense die Referenz auf den aufgerufenen Task /Task/&lt;id&gt;
-  als MedicationDispense.supportingInformation übernehmen und die MedicationDispense,
-  sowie die in MedicationDispense.medication referenzierte Medication, speichern.
-title: E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - MedicationDispense
-  speichern
+text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mit Workflowtypen 160,169,200
+  oder 209 mittels $activate prüfen, dass im Bundle eine MedicationRequest-Ressource
+  und eine Medication mit Medication.extension:Arzneimittelkategorie = 00 enthalten
+  ist. Der E-Rezept-Fachdienst MUSS andernfalls mit dem HTTP-Fehlercode 400 abbrechen
+  und in der OperationOutcome den Fehlertext "Für diesen Workflowtypen sind nur Arzneimittelverordnungen
+  zulässig" ausgeben.
+title: E-Rezept-Fachdienst - Task aktivieren - Flowtype 160/169/200/209 - Prüfung
+  Arzneimittelverordnung
 version: 0

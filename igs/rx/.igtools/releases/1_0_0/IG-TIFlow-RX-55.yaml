@@ -1,19 +1,18 @@
 actor:
-- E-Rezept-Fachdienst
+- PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: d1d3b922bead4a239fac513deaf065cce8e3405e76fc1a106b7f25f68e9338e2
-created: '2026-02-23T14:30:41.710535'
-date: '2026-02-24T07:05:10.833765'
+content_hash: 45cdce40721d018d43f225c8a34a92ae0f50712cd29243c8e576dbd5c27843b4
+created: '2026-02-24T09:40:30.592114'
+date: '2026-02-24T09:40:30.592117'
 key: IG-TIFlow-RX-55
-modified: '2026-02-24T07:05:10.833765'
+modified: '2026-02-24T09:40:30.592116'
 release_status: NEW
-source: input/pagecontent/op-dispense-fd-requirements.md
+source: input/pagecontent/menu-technische-umsetzung-kim.md
 status: ACTIVE
 test_procedures:
-  E-Rezept-Fachdienst:
+  PS_E-Rezept_abgebend:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen
-  mittels POST /Task/&lt;id&gt;/$dispense auf Task.status = in-progress prüfen und
-  bei Ungleichheit mit dem HTTP-Fehlercode 403 abbrechen.
-title: E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Prüfung Status
+text: 'Das PS der abgebenden und verordnenden LEI MUSS bei Versand einer Kommunikation-Message
+  eine Message mit "Content-Type: text/plain;charset=UTF-8" verwenden.'
+title: E-Rezept - Struktur Kommunikation-Message
 version: 0

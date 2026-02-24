@@ -1,21 +1,19 @@
 actor:
-- E-Rezept-Fachdienst
+- PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: d78871e20010bd227cf4b02c17e416db8a681e718e34b8d25e9933bf04429500
-created: '2026-02-23T14:30:41.701864'
-date: '2026-02-24T07:05:10.821765'
+content_hash: 3f03eb049aa5e60259fef6c8e8a89a515bed7f3c035bf649f3c86b06a3f0c7c9
+created: '2026-02-24T09:40:30.584186'
+date: '2026-02-24T09:40:30.584188'
 key: IG-TIFlow-RX-15
-modified: '2026-02-24T07:05:10.821765'
+modified: '2026-02-24T09:40:30.584187'
 release_status: NEW
-source: input/pagecontent/query-api-task-fd-requirements.md
+source: input/pagecontent/op-activate-client-requirements.md
 status: ACTIVE
 test_procedures:
-  E-Rezept-Fachdienst:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
-  /Task die dem Versicherten zugeordneten Task-Ressourcen anhand der KVNR des Versicherten
-  aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren,
-  die in Task.for die entsprechende KVNR des begünstigten Patienten referenziert haben,
-  damit ausschließlich Versicherte ihre eigenen E-Rezepte einsehen können.
-title: E-Rezept-Fachdienst - Task abrufen - Filter Tasks auf KVNR des Versicherten
+  PS_E-Rezept_verordnend:
+  - Konformitätsbestätigung
+text: Das PS der verordnenden LEI MUSS im Verordnungsdatensatz für ein E-Rezept des
+  Flowtype 166 sicherstellen, dass die maximale Reichdauer entsprechend den gesetzlichen
+  Vorgaben nicht überschritten wird.
+title: 'PS verordnende LEI: E-Rezept erstellen – Flowtype 166 – Reichdauer nach Vorgaben'
 version: 0

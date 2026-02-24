@@ -1,21 +1,18 @@
 actor:
-- E-Rezept-Fachdienst
-conformance: SHALL
-content_hash: a5fcf0757a016ee4b4b6a2eb1098f7e0b286f7da1c636cc9d5134a73e66f61c6
-created: '2026-02-23T14:30:41.702512'
-date: '2026-02-24T07:05:10.822558'
+- PS_E-Rezept_verordnend
+conformance: MAY
+content_hash: 9d4fa8da11cb078cbee2085ebc4d84a4701d331ae77e51318ce501e2fdef1a12
+created: '2026-02-24T09:40:30.585137'
+date: '2026-02-24T09:40:30.585139'
 key: IG-TIFlow-RX-19
-modified: '2026-02-24T07:05:10.822558'
+modified: '2026-02-24T09:40:30.585138'
 release_status: NEW
-source: input/pagecontent/query-api-task-fd-requirements.md
+source: input/pagecontent/op-activate-client-requirements.md
 status: ACTIVE
 test_procedures:
-  E-Rezept-Fachdienst:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
-  /Task/&lt;id&gt; durch einen Versicherten, wenn Task.extension:flowType = 169 oder
-  209 und die KVNR des Aufrufenden (KVNR des ACCESS_TOKEN im "Authorization"-Header
-  des HTTP-Requests) ungleich der KVNR in Task.for ist, mit dem Fehler 403 abbrechen.
-title: E-Rezept-Fachdienst - Task abrufen - Flowtype 169/209 - Nicht verfügbar bei
-  KVNR-Mismatch
+  PS_E-Rezept_verordnend:
+  - Konformitätsbestätigung
+text: Das PS der verordnenden LEI KANN die Auswahl und Verwaltung von herstellenden
+  Apotheken für die Übermittlung der E-Rezept-Einlöseinformationen ermöglichen.
+title: 'PS verordnende LEI: Herstellende Apotheke für Übermittlungsverfahren'
 version: 0

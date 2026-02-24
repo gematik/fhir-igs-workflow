@@ -1,23 +1,19 @@
 actor:
-- E-Rezept-Fachdienst
+- PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: 17851fe4a97ac3ea47d0cf8b660c9adb0371813b74a835871f270c7733f35aec
-created: '2026-02-23T14:30:41.702184'
-date: '2026-02-24T07:05:10.822146'
+content_hash: 3535ab72fffb49f68973081fe634d4dde3d19720396b846a2a49120a7fdc44f0
+created: '2026-02-24T09:40:30.584879'
+date: '2026-02-24T09:40:30.584881'
 key: IG-TIFlow-RX-17
-modified: '2026-02-24T07:05:10.822146'
+modified: '2026-02-24T09:40:30.584880'
 release_status: NEW
-source: input/pagecontent/query-api-task-fd-requirements.md
+source: input/pagecontent/op-activate-client-requirements.md
 status: ACTIVE
 test_procedures:
-  E-Rezept-Fachdienst:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen konkreten
-  über &lt;id&gt; adressierten /Task/&lt;id&gt; (ohne die Referenz einer FHIR-Operation)
-  sicherstellen, dass ausschließlich Clientsysteme in einer der Rollen oid_versicherter
-  oid_oeffentliche_apotheke oid_krankenhausapotheke oid_kostentraeger die Operation
-  am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN
-  im HTTP-RequestHeader "Authorization" feststellen, damit E-Rezepte nicht durch Unberechtigte
-  ausgelesen werden können.
-title: E-Rezept-Fachdienst - Task abrufen - Rollenprüfung
+  PS_E-Rezept_verordnend:
+  - Konformitätsbestätigung
+text: Das PS der verordnenden LEI MUSS es dem Nutzer ermöglichen, die Einlöseinformationen
+  (Task.id und AccessCode) als E-Rezept-Token über ein geeignetes Übermittlungsverfahren
+  an eine Apotheke der Wahl zu schicken.
+title: 'PS verordnende LEI: Übergabe E-Rezept-Token an Apotheke'
 version: 0

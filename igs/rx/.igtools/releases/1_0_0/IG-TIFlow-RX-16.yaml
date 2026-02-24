@@ -1,20 +1,37 @@
 actor:
-- E-Rezept-Fachdienst
+- PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: a758c00c5d25e1d299d041211576aeb210b24979641f2c617ae3e52d0333cc11
-created: '2026-02-23T14:30:41.702020'
-date: '2026-02-24T07:05:10.821959'
+content_hash: 2157ac8db874c053cad855e00f359c63525d090c1cff9b76e083aba4c7519987
+created: '2026-02-24T09:40:30.584624'
+date: '2026-02-24T09:40:30.584628'
 key: IG-TIFlow-RX-16
-modified: '2026-02-24T07:05:10.821959'
+modified: '2026-02-24T09:40:30.584627'
 release_status: NEW
-source: input/pagecontent/query-api-task-fd-requirements.md
+source: input/pagecontent/op-activate-client-requirements.md
 status: ACTIVE
 test_procedures:
-  E-Rezept-Fachdienst:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
-  /Task die gültige Ergebnisliste der Task-Ressourcen ohne die referenzierten, signierten
-  E-Rezept-Bundle an den Aufrufer zurückgeben, damit der Versicherte eine Übersicht
-  aller Tasks erhält.
-title: E-Rezept-Fachdienst - Rückgabe Tasks im Bundle Versicherter
+  PS_E-Rezept_verordnend:
+  - Konformitätsbestätigung
+text: "<table>\n  <thead>\n    <tr>\n      <th>Anzeige der fachlichen Bestätigung*</th>\n\
+  \      <th>Häufigkeit der Abfrage des Nutzers</th>\n      <th>Zulässigkeit der Vorbefüllung\
+  \ durch das PS</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>Alle\
+  \ Sicherheitsbestimmungen gemäß der Fachinformation entsprechender Fertigarzneimittel\
+  \ werden eingehalten</td>\n      <td>Bei jedem Verordnungsvorgang</td>\n      <td>\"\
+  nein\" ist zulässig, \"ja\" ist nicht zulässig</td>\n    </tr>\n    <tr>\n     \
+  \ <td>Ich verfüge über ausreichende Sachkenntnisse zur Verschreibung von Arzneimitteln\
+  \ nach § 3a AMVV</td>\n      <td>Einmalig aktiv abfragen, danach darf das Feld im\
+  \ Verordnungsvorgang angezeigt, aber vorbefüllt werden.</td>\n      <td>\"nein\"\
+  \ ist zulässig, \"ja\" ist ab der zweiten Verordnung zulässig</td>\n    </tr>\n\
+  \    <tr>\n      <td>Der Patientin bzw. dem Patienten wurde vor Beginn der Behandlung\
+  \ medizinisches Informationsmaterial gemäß den Anforderungen der Fachinformation\
+  \ entsprechender Arzneimittel ausgehändigt.</td>\n      <td>Bei jedem Verordnungsvorgang</td>\n\
+  \      <td>\"nein\" ist zulässig, \"ja\" ist nicht zulässig</td>\n    </tr>\n  \
+  \  <tr>\n      <td>Behandlung erfolgt außerhalb der zugelassenen Anwendungsgebiete\
+  \ (Off-Label)</td>\n      <td>Bei jedem Verordnungsvorgang</td>\n      <td>\"nein\"\
+  \ ist zulässig, \"ja\" ist nicht zulässig</td>\n    </tr>\n    <tr>\n      <td>Bei\
+  \ der Patientin handelt es sich um eine gebärfähige Frau</td>\n      <td>Bei jedem\
+  \ Verordnungsvorgang</td>\n      <td>\"nein\" und \"ja\" sind zulässig</td>\n  \
+  \  </tr>\n  </tbody>\n</table>"
+title: 'PS verordnende LEI: E-Rezept erstellen – Flowtype 166 – Bestätigungen nach
+  §3a Abs. 2, 5 AMVV'
 version: 0

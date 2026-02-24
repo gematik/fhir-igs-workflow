@@ -1,23 +1,22 @@
 actor:
 - E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: d2e4264c15567b374046dcc8b1f4c98eada4a7fd528ef0a451f48f1d9359a0f0
-created: '2026-02-23T14:30:41.704003'
-date: '2026-02-24T07:05:10.824647'
+content_hash: 998b0080d869a4a9c51581ced2ced3701e7210ff765e6d6997267928cf2c571b
+created: '2026-02-24T09:40:30.586833'
+date: '2026-02-24T09:40:30.586836'
 key: IG-TIFlow-RX-27
-modified: '2026-02-24T07:05:10.824647'
+modified: '2026-02-24T09:40:30.586835'
 release_status: NEW
-source: input/pagecontent/query-api-task-fd-requirements.md
+source: input/pagecontent/op-reject-fd-requirements.md
 status: ACTIVE
 test_procedures:
   E-Rezept-Fachdienst:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
-  Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende LEI den Task mit dem
-  Geheimnis Task.identifier:Secret sowie im Bundle mit dem in Task.input mit Codingsystem
-  https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType = 1 referenzierten
-  QES-Datensatz als Binary-Ressource https://www.hl7.org/fhir/binary.html an den Aufrufer
-  zurückgeben.
-title: E-Rezept-Fachdienst - Task abrufen - Apotheke - Verordnung abrufen - erneuter
-  Abruf Verordnung
+text: Der E-Rezept-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 160,
+  169, 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject, wenn
+  bereits Dispensierinformationen im E-Rezept-Fachdienst zum Task gespeichert wurden,
+  die Daten für die Löschinformation dieser Dispensierinformationen für die Übermittlung
+  in den ePA Medication Service bereitstellen.
+title: E-Rezept-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Löschmarkierungen
+  Medikationsliste bereitstellen (Dispensierinformationen)
 version: 0
