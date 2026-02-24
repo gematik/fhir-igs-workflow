@@ -29,7 +29,7 @@ Das Speichern der Abrechnungsinformationen erfolgt nur mit Einwilligung des Vers
 
 {% assign scenario_use_cases = "AF_10084, AF_10086, AF_10085" | split: ", " %}
 
-{% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Fachliche Anwendungsfälle mit Bezug zu Szenario <i>Verordnungen für PKV-Versicherte</i>" %}
+{% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Fachliche Anwendungsfälle mit Bezug zum Szenario <i>Einwilligung zum Speichern der Abrechungsinformationen</i>" %}
 
 ### Belieferung der Abrechnungsinformation durch die Apotheke
 Nach der Einlösung kann die Apotheke die Abrechnungsinformation digital bereitstellen, sofern eine Einwilligung vorliegt.

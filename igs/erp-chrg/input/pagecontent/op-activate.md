@@ -17,6 +17,7 @@ Die abgebende LEI aktiviert den Task. Für Flowtype 200/209 muss der Versicherun
 </div>
 
 ## Verarbeitung
+<!--A_22347-01-->
 <requirement conformance="SHALL" key="IG-ERP-CHRG-164" title="E-Rezept-Fachdienst – Task aktivieren – Flowtype 200/209 – Prüfung Coverage Type" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
