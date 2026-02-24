@@ -154,30 +154,4 @@ Versicherte verwalten ihre E-Rezepte in der E-Rezept-App, sehen Zugriffsprotokol
 
 **Tabelle:**Technische Anwendungsfälle mit Bezug zu Anwendungsfall
 *Verwalten von E-Rezepten durch Versicherten*
-### Nachrichtenaustausch zwischen Versicherten und Apotheke
-
-Versicherte und Apotheken tauschen Nachrichten zum E-Rezept asynchron über den E-Rezept-Fachdienst aus. Dabei kann der Versicherte eine Apotheke verbindlich zuweisen und optional strukturierte Angaben zur Belieferung (z. B. Abholung oder Botenlieferung) mitsenden. Die Apotheke kann auf diese Nachricht antworten und dem Versicherten weitere Informationen bereitstellen.
-
-#### Fachlicher Ablauf
-
-1. Der Versicherte weist das E-Rezept einer Apotheke zu und sendet eine Nachricht mit dem E-Rezept-Token.
-1. Der E-Rezept-Fachdienst validiert den Inhalt, ergänzt Metadaten (Absender, Sendezeitpunkt) und stellt die Nachricht bereit.
-1. Die Apotheke ruft neue Nachrichten ab, verarbeitet die Angaben und antwortet bei Bedarf mit einer eigenen Nachricht.
-1. Der Versicherte ruft Antworten der Apotheke ab und kann den weiteren Belieferungsprozess starten.
-
-**Beteiligte Systeme:** FdV, AVS, E-Rezept-Fachdienst
-
-**Technische Anwendungsfälle**
-
-| |
-| :--- |
-| [UC 3.3 - Nachricht durch Versicherten übermitteln](menu-technische-umsetzung-anwendungsfaelle.md#uc-3-3-nachricht-durch-versicherten-uebermitteln) |
-| [UC 3.8 - Nachricht durch Versicherten löschen](menu-technische-umsetzung-anwendungsfaelle.md#uc-3-8-nachricht-durch-versicherten-loeschen) |
-| [UC 4.6 - Nachrichten durch Abgebenden empfangen](menu-technische-umsetzung-anwendungsfaelle.md#uc-4-6-nachrichten-durch-abgebenden-empfangen) |
-| [UC 4.7 - Nachricht durch Abgebenden übermitteln](menu-technische-umsetzung-anwendungsfaelle.md#uc-4-7-nachricht-durch-abgebenden-uebermitteln) |
-| [UC 4.9 - Nachricht durch Abgebenden löschen](menu-technische-umsetzung-anwendungsfaelle.md#uc-4-9-nachricht-durch-abgebenden-loeschen) |
-| [UC 3.4 - Nachrichten durch Versicherten empfangen](menu-technische-umsetzung-anwendungsfaelle.md#uc-3-4-nachrichten-durch-versicherten-empfangen) |
-
-**Tabelle:**Technische Anwendungsfälle mit Bezug zu Anwendungsfall
-*Nachrichtenaustausch zwischen Versicherten und Apotheke*
 

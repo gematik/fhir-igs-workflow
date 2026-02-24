@@ -150,30 +150,6 @@ Jede Teilverordnung einer Mehrfachverordnung wird im E-Rezept-Fachdienst mit ein
   * : 
 
 **Tabelle:**Fachlicher Anwendungsfall
-
-### UC 3.4 - Nachrichten durch Versicherten empfangen
-
-* Beschreibung: Vorbedingungen
-  * Ein Versicherter oder Vertreter empfaengt Nachrichten von abgebenden LEI über den E-Rezept-Fachdienst.: * UC 4.7 wurde ausgeführt.
-* UC 3.3 wurde ausgeführt.
-
-* Beschreibung: Durchzuführende Aktionen
-  * Ein Versicherter oder Vertreter empfaengt Nachrichten von abgebenden LEI über den E-Rezept-Fachdienst.: * Das FdV fragt beim E-Rezept-Fachdienst nach neuen Nachrichten.
-* Nachrichten werden heruntergeladen.
-
-* Beschreibung: Nachbedingungen
-  * Ein Versicherter oder Vertreter empfaengt Nachrichten von abgebenden LEI über den E-Rezept-Fachdienst.: * Nachrichten liegen im FdV zur Anzeige bereit.
-
-* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * Ein Versicherter oder Vertreter empfaengt Nachrichten von abgebenden LEI über den E-Rezept-Fachdienst.: * FHIR REST: Communication (E-Rezept-Nachrichten abrufen)
-
-* Beschreibung: Relevante(r) Sektor(en)
-  * Ein Versicherter oder Vertreter empfaengt Nachrichten von abgebenden LEI über den E-Rezept-Fachdienst.:  VERSICHERTER 
-
-**Tabelle:**Fachlicher Anwendungsfall UC 3.4 - Nachrichten durch Versicherten empfangen
-**Sequenzdiagramm:**
-
-**Abbildung: **UC 3.4 - Nachrichten durch Versicherten empfangen
  ###
 
 * Beschreibung: Vorbedingungen
@@ -188,30 +164,34 @@ Jede Teilverordnung einer Mehrfachverordnung wird im E-Rezept-Fachdienst mit ein
   * : 
 
 **Tabelle:**Fachlicher Anwendungsfall
-
-### UC 4.6 - Nachrichten durch Abgebenden empfangen
+ ###
 
 * Beschreibung: Vorbedingungen
-  * Eine abgebende LEI empfaengt E-Rezept-Token über die TI oder optisch als 2D-Code.: * UC 3.3 wurde ausgeführt oder der 2D-Code wurde präsentiert.
-
+  * : 
 * Beschreibung: Durchzuführende Aktionen
-  * Eine abgebende LEI empfaengt E-Rezept-Token über die TI oder optisch als 2D-Code.: * Das PS wählt den Empfangsweg (TI oder 2D-Code).
-* Bei TI: PS fragt beim E-Rezept-Fachdienst neue Nachrichten für die Telematik-ID ab und lädt sie herunter.
-* Bei 2D-Code: PS wandelt den Code in die Token-Textform um.
-
+  * : 
 * Beschreibung: Nachbedingungen
-  * Eine abgebende LEI empfaengt E-Rezept-Token über die TI oder optisch als 2D-Code.: * E-Rezept-Token liegt im PS der abgebenden LEI vor.
-
+  * : 
 * Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * Eine abgebende LEI empfaengt E-Rezept-Token über die TI oder optisch als 2D-Code.: * FHIR REST: Communication (E-Rezept-Nachrichten abrufen)
-
+  * : 
 * Beschreibung: Relevante(r) Sektor(en)
-  * Eine abgebende LEI empfaengt E-Rezept-Token über die TI oder optisch als 2D-Code.: 
+  * : 
 
-**Tabelle:**Fachlicher Anwendungsfall UC 4.6 - Nachrichten durch Abgebenden empfangen
-**Sequenzdiagramm:**
+**Tabelle:**Fachlicher Anwendungsfall
+ ###
 
-**Abbildung: **UC 4.6 - Nachrichten durch Abgebenden empfangen
+* Beschreibung: Vorbedingungen
+  * : 
+* Beschreibung: Durchzuführende Aktionen
+  * : 
+* Beschreibung: Nachbedingungen
+  * : 
+* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+  * : 
+* Beschreibung: Relevante(r) Sektor(en)
+  * : 
+
+**Tabelle:**Fachlicher Anwendungsfall
 
 ### UC 4.1 - E-Rezept durch Abgebenden abrufen
 

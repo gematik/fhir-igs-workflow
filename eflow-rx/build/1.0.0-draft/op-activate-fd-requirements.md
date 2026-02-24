@@ -33,6 +33,26 @@ Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task des Flowtype Task.exten
 Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/<id>/$activate die Operation mit dem Fehlercode 400 und einem Hinweis auf den Ausschluss von Betäubungsmittel ("BTM nicht zulässig" im OperationOutcome) abbrechen, wenn der übergebene QES-Datensatz als Betäubungsmittel-Verordnung (Bundle.Medication.extension:KBV_EX_ERP_Medication_Category:code gleich "01") gekennzeichnet ist.
 
 Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation POST /Task/<id>/$activate bei erfolgreichem Abschluss der Operation, die Daten des Verordnungsdatensatzes für die Übermittlung in den ePA Medication Service bereitstellen.
+### Prozessparamter
+
+Der E-Rezept-Fachdienst MUSS bei einem Task mit Task.flowType = 160 die Attribute in Task in Abhängigkeit des in der http-POST-Operation /Task/<id>/$activate übergebenen gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_004 belegen.
+
+* Feld in Task: Task.performerType.coding.system
+  * Feldbelegung: "https://gematik.de/fhir/erp/CodeSystemGEM_ERP_CS_OrganizationType"
+* Feld in Task: Task.performerType.coding.code
+  * Feldbelegung: "1.2.276.0.76.4.54"
+* Feld in Task: Task.performerType.coding.diplay
+  * Feldbelegung: "Öffentliche Apotheke"
+* Feld in Task: Task.PrescriptionType.valueCoding.display
+  * Feldbelegung: "Flowtype für Apothekenpflichtige Arzneimittel"
+* Feld in Task: Task.ExpiryDate
+  * Feldbelegung: wenn MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = false: Task.ExpiryDate = <Datum der QES.Erstellung im Signaturobjekt> + 3 Kalendermonate sonst wenn MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.end angegeben Task.ExpiryDate = MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.end sonst Task.ExpiryDate = <Datum der QES.Erstellung im Signaturobjekt> + 365 Kalendertage
+* Feld in Task: Task.AcceptDate
+  * Feldbelegung: wenn MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = false: Task.AcceptDate = >Datum der QES.Erstellung im Signaturobjekt> + 28 Kalendertage sonst wenn MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.end angegeben Task.AcceptDate = MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.end sonst Task.AcceptDate = <Datum der QES.Erstellung im Signaturobjekt> + 365 Kalendertage
+
+**Tabelle: **TAB_eRpDM_004 Prozessparameter Flowtype 160
+
+### Prüfung von Mehrfachverordnungen
 
 Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/<id>/$activate die Operation mit dem Fehlercode 400 abbrechen, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet und der Flowtype ungleich 160, 169, 200 oder 209 ist, weil Mehrfachverordnungen nur für die Verordnungen von apothekenpflichtigen Arzneimittel (kein BtM, kein T-Rezept) zulässig sind.
 

@@ -48,7 +48,7 @@ Falls technisch kein E-T-Rezept ausgestellt werden kann, ist weiterhin das amtli
 |  |
 
 **Tabelle:**Technische Anwendungsfälle mit Bezug zu Anwendungsfall
-*Verordnung von Mehrfachverordnungen*
+*Verordnung von E-T-Rezepten*
 ### E-T-Rezept einlösen, dispensieren und abrechnen
 
 Versicherte lösen E-T-Rezepte über dieselben Kanäle wie andere E-Rezepte ein (E-Rezept-FdV, Ausdruck, eGK in der Apotheke), jedoch weder im EU-Ausland noch über Versandapotheken. Die Einlösefrist beträgt sechs Kalendertage ab Ausstellung; der E-Rezept-Fachdienst stellt die Fristüberwachung sicher. Rezepte mit dem Kennzeichen „Entlassrezept“ dürfen zu Lasten der GKV nur drei Werktage beliefert werden, bleiben anschließend aber bis zum Ablauf der Gültigkeit als Selbstzahlerrezept nutzbar.
@@ -74,7 +74,7 @@ Für jedes belieferte E-T-Rezept muss die Apotheke zwingend die Quittung abrufen
 |  |
 
 **Tabelle:**Technische Anwendungsfälle mit Bezug zu Anwendungsfall
-*Belieferung von Verordnungen mit Workflowsteuerung durch LE*
+*Belieferung von E-T-Rezepten*
 ### Übermittlung an das BfArM T-Register
 
 Der E-Rezept-Fachdienst überträgt gemäß §3a Abs. 7 AMVV die für das BfArM erforderlichen Informationen als „digitalen Durchschlag E-T-Rezept“ an den BfArM-Webdienst. Die Übermittlung erfolgt unverzüglich, nachdem die Apotheke die Quittung abgerufen hat, und ermöglicht dem BfArM die gesetzlich vorgeschriebene Auswertung und Archivierung der strukturierten Daten.
