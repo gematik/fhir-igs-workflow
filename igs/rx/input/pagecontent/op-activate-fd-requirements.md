@@ -29,7 +29,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
     </actor>
-        Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mit Workflowtypen 160,169,200 oder 209 mittels $activate prüfen, dass im Bundle eine MedicationRequest-Ressource und eine Medication mit Medication.extension:Arzneimittelkategorie = 00 enthalten ist. Der E-Rezept-Fachdienst MUSS andernfalls mit dem HTTP-Fehlercode 400 abbrechen und in der OperationOutcome den Fehlertext "Für diesen Workflowtypen sind nur Arzneimittelverordnungen zulässig" ausgeben.
+    Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mit Workflowtypen 160, 169, 200 oder 209 mittels $activate prüfen, dass im Bundle eine MedicationRequest-Ressource und eine Medication mit Medication.extension:Arzneimittelkategorie = 00 enthalten ist. Der E-Rezept-Fachdienst MUSS andernfalls mit dem HTTP-Fehlercode 400 abbrechen und in der OperationOutcome den Fehlertext "Für diesen Workflowtypen sind nur Arzneimittelverordnungen zulässig" ausgeben.
 </requirement>
 
 <!-- A_27813 -->
@@ -40,9 +40,19 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     </actor>
         Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mit Workflowtyp 166 mittels $activate prüfen, dass im Bundle eine MedicationRequest-Ressource und eine Medication mit Medication.extension:Arzneimittelkategorie = 02 enthalten ist. Der E-Rezept-Fachdienst MUSS andernfalls mit dem HTTP-Fehlercode 400 abbrechen und in der OperationOutcome den Fehlertext "Für diesen Workflowtypen sind nur T-Rezept Verordnungen zulässig" ausgeben.
 </requirement>
+<!-- ToDo: Ist hier T-Rezept in einen eigenen IG zu separieren? (Dito für alle anderen 166 Afos) -->
+
+<!-- A_28570 -->
+<requirement conformance="SHALL" key="IG-TIFlow-RX-34" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 160/166/169/200/209 - Prüfung Coverage Type" version="0">
+    <meta lockversion="false"/>
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest"/>
+    </actor>
+        Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Task des Flowtype Task.extension:flowType = 160, 166, 169, 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die Validierung von strukturierten Dosierungen anwenden.
+</requirement>
 
 <!-- A_23443-01 -->
-<requirement conformance="SHALL" key="IG-TIFlow-RX-34" title="E-Rezept-Fachdienst – Task aktivieren – Flowtype 160/169 - Prüfung Coverage Type" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-34" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 160/169 - Prüfung Coverage Type" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -51,7 +61,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_22347-01 -->
-<requirement conformance="SHALL" key="IG-TIFlow-RX-35" title="E-Rezept-Fachdienst – Task aktivieren – Flowtype 200/209 - Prüfung Coverage Type" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-35" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 200/209 - Prüfung Coverage Type" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
