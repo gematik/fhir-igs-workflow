@@ -1,4 +1,4 @@
-Diese Seite basiert auf der gleichnamigen Schnittstelle in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/{{ site.data.constants.tiflow_core_version }}query-api-medicationdispense.html) und beschreibt den Einstieg in die MedicationDispense-Query-Schnittstelle.
+Diese Seite basiert auf der gleichnamigen Schnittstelle in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/{{ site.data.constants.tiflow_core_version }}/query-api-medicationdispense.html) und beschreibt den Einstieg in die MedicationDispense-Query-Schnittstelle.
 
 ### Nachricht
 
