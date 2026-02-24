@@ -11,5 +11,9 @@ Version 1.0.0-draft - ci-build
 
 ## Query API
 
-TODO
+Die folgenden Query APIs stellt der E-Rezept-Fachdienst dem **Primärsystem eRP** sowie dem **E-Rezept-Fachdienst** zur Verfügung, um FHIR-Daten gezielt abrufen zu können.
+
+* [Query API: Device](./query-api-device.md)
+* [Query API: AuditEvent](./query-api-auditevent.md)
+* [Query API: Communication](./query-api-communication.md)
 
