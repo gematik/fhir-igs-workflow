@@ -35,9 +35,6 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
     Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close die Referenz auf den aufgerufenen Task Task/&lt;id&gt; als MedicationDispense.supportingInformation übernehmen und die MedicationDispense, sowie die in MedicationDispense.medication referenzierte Medication, speichern.
 </requirement>
 
- -E-Rezept-Fachdienst - Task schließen - 
-[<=]
-
 <!-- A_26337 -->
 <requirement conformance="SHALL" key="IG-TIFlow-RX-29" title="E-Rezept-Fachdienst - Task schließen - Zeitstempel MedicationDispense" version="0">
     <meta lockversion="false"/>
@@ -64,9 +61,6 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
     </actor>
     Der E-Rezept-Fachdienst MUSS die zulässige Beendigung eines Tasks mittels /Task/&lt;id&gt;/$close-Operation im StatusTask.status = "completed" vollziehen, damit der Workflow für den Versicherten als beendet und die Verordnung somit als eingelöst dargestellt wird.
 </requirement>
-
- -E-Rezept-Fachdienst - Task schliessen - 
-[<=]
 
 <!-- A_19233-05 -->
 <requirement conformance="SHALL" key="IG-TIFlow-RX-29" title="E-Rezept-Fachdienst - Task schließen - Quittung erstellen" version="0">
