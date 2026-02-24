@@ -92,7 +92,61 @@ Das Primärsystem soll für die Einführung des patienten-individuellen Konfigur
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="testProcedurePT02"/>
     </actor>
-     Das PS der abgebenden LEI SOLL zum Erstellen von neuen E-Rezepten folgenden Klickpfad umsetzen. Tabelle # : TAB_ILFERP_021 – E-Rezept erstellen - UX Optimaler Klickpfad Name E-Rezept erstellen - Optimaler Klickpfad Vorbedingung Der Nutzer befindet sich in einer der Medikation des Patienten bezogenen Ansicht, z.B. der Patientenakte des Primärsystems, einer Übersicht der bisher verordneten Medikationen, einer Ansicht des eMP/BMP. Nachbedingung Alle Verordnungen wurden signiert, in den E-Rezept-Fachdienst eingestellt und ggf. der Patientenausdruck gedruckt. Ablauf Der Arzt oder MFA startet den Prozess zur Erzeugen einer neuen Verordnung Suchmöglichkeiten zur Auswahl des Präparates werden angezeigt. a) Arzt: Detaillierter Verordnungsinhalt (als E-Rezept dargestellt) wird ausgewählt und die Verordnung zur Signatur freigegeben. b) MFA: Detaillierter Verordnungsinhalt (als E-Rezept dargestellt) wird ausgewählt und die Verordnung in der Aufgabenliste gespeichert (und zur späteren Signatur dem Arzt vorgelegt). optional: Die Schritte 1 bis 3 können bei mehreren auszustellenden Verordnungen wiederholt werden. Mit dem Start des Prozesses "Jetzt Signieren" durch den Arzt, werden alle zur Signatur freigegeben Verordnungen in einem Hintergrundprozess qualifiziert signiert und in den E-Rezept-Fachdienst eingestellt. Es wird ein Hinweistext anzeigt, wenn das Signieren und das Einstellen in den E-Rezept-Fachdienst erfolgreich abgeschlossen wurde. Ist die Einstellung "Patientenausdruck erstellen" gewählt, werden nach dem erfolgreichen Einstellen in den E-Rezept-Fachdienst die Patientenausdrucke automatisch gedruckt. Alternative Alternativ zu Schritt 1 und 2 kann der Prozess zum Erzeugen einer wiederholten Verordnung aus einer Patientenhistorie, Verordnungen aus einer Hausapotheke und aus einem Medikationsplan nach § 31a SGB V gestartet werden. Die Regelungen aus Anlage 23 BMV-Ä sind zu beachten.
+     Das PS der abgebenden LEI SOLL zum Erstellen von neuen E-Rezepten folgenden Klickpfad umsetzen.
+     <table>
+  <tr>
+    <th>Name</th>
+    <td>E-Rezept erstellen - Optimaler Klickpfad</td>
+  </tr>
+  <tr>
+    <th>Vorbedingung</th>
+    <td>
+      Der Nutzer befindet sich in einer der Medikation des Patienten bezogenen Ansicht, z.B. der Patientenakte des Primärsystems, 
+      einer Übersicht der bisher verordneten Medikationen, einer Ansicht des eMP/BMP.
+    </td>
+  </tr>
+  <tr>
+    <th>Nachbedingung</th>
+    <td>
+      Alle Verordnungen wurden signiert, in den E-Rezept-Fachdienst eingestellt und ggf. der Patientenausdruck gedruckt.
+    </td>
+  </tr>
+  <tr>
+    <th>Ablauf</th>
+    <td>
+      <ol>
+        <li>Der Arzt oder MFA startet den Prozess zur Erzeugen einer neuen Verordnung.</li>
+        <li>Suchmöglichkeiten zur Auswahl des Präparates werden angezeigt.</li>
+        <li>
+          a) Arzt: Detaillierter Verordnungsinhalt (als E-Rezept dargestellt) wird ausgewählt und die Verordnung zur Signatur freigegeben.<br>
+          b) MFA: Detaillierter Verordnungsinhalt (als E-Rezept dargestellt) wird ausgewählt und die Verordnung in der Aufgabenliste gespeichert 
+          (und zur späteren Signatur dem Arzt vorgelegt).
+        </li>
+        <li>Optional: Die Schritte 1 bis 3 können bei mehreren auszustellenden Verordnungen wiederholt werden.</li>
+        <li>
+          Mit dem Start des Prozesses „Jetzt Signieren“ durch den Arzt werden alle zur Signatur freigegebenen Verordnungen in einem 
+          Hintergrundprozess qualifiziert signiert und in den E-Rezept-Fachdienst eingestellt.
+        </li>
+        <li>
+          Es wird ein Hinweistext angezeigt, wenn das Signieren und das Einstellen in den E-Rezept-Fachdienst erfolgreich abgeschlossen wurde.
+        </li>
+        <li>
+          Ist die Einstellung „Patientenausdruck erstellen“ gewählt, werden nach dem erfolgreichen Einstellen in den 
+          E-Rezept-Fachdienst die Patientenausdrucke automatisch gedruckt.
+        </li>
+      </ol>
+    </td>
+  </tr>
+  <tr>
+    <th>Alternative</th>
+    <td>
+      Alternativ zu Schritt 1 und 2 kann der Prozess zum Erzeugen einer wiederholten Verordnung aus einer Patientenhistorie, 
+      Verordnungen aus einer Hausapotheke und aus einem Medikationsplan nach § 31a SGB V gestartet werden. 
+      Die Regelungen aus Anlage 23 BMV-Ä sind zu beachten.
+    </td>
+  </tr>
+</table>
+<div><figcaption><strong>Tabelle: </strong>E-Rezept erstellen - UX Optimaler Klickpfad</figcaption></div>
 </requirement>
 
 <!-- A_23567 -->
@@ -104,7 +158,14 @@ Das Primärsystem soll für die Einführung des patienten-individuellen Konfigur
      Das PS der verordnenden LEI SOLL es dem Nutzer ermöglichen, aus jeder der Medikation des Patienten bezogenen Ansicht einen Prozess zur Erzeugung einer neuen Verordnung starten zu können.
 </requirement>
 
-Abbildung 3 : Beispiel einer Rezeptübersicht
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 500px; margin-bottom: 30px;">
+        <img src="./ux-verordnend-1.png" alt="Rezeptübersicht" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung: </strong>Beispiel einer Rezeptübersicht</figcaption>
+</figure>
+
+<br>
 
 <!-- A_23568 -->
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-130" title="PS verordnende LEI: UX - Optimaler Klickpfad - Vorbelegung bekannter Informationen" version="0">
@@ -124,7 +185,17 @@ Abbildung 3 : Beispiel einer Rezeptübersicht
      Das PS der verordnenden LEI SOLL dem Nutzer nach Auswahl der Option zur Erstellung einer Verordnung die Möglichkeit geben, nach dem gewünschte Präparat aus einer Datenbank zu suchen und die zugehörigen Informationen in die Verordnung übernehmen.
 </requirement>
 
-Das PS kann dem Nutzer in diesem Arbeitsschritt auch eine Liste der häufig verschriebenen Medikamente anbieten. Abbildung 4 : Beispiel einer Medikamentensuche
+Das PS kann dem Nutzer in diesem Arbeitsschritt auch eine Liste der häufig verschriebenen Medikamente anbieten.
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 500px; margin-bottom: 30px;">
+        <img src="./ux-verordnend-2.png" alt="Medikamentensuche" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung: </strong>Beispiel einer Medikamentensuche</figcaption>
+</figure>
+
+<br>
+
 
 <!-- A_23570 -->
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-132" title="PS verordnende LEI: UX - Optimaler Klickpfad - Auswahl und Anpassung des Verordnungsinhalts und Signaturvorbereitung" version="0">
@@ -138,8 +209,17 @@ Das PS kann dem Nutzer in diesem Arbeitsschritt auch eine Liste der häufig vers
 Hinweis: Um den Nutzer hinreichend auf den folgenden Signaturschritt (nach [gemILF_PS#A_19138- PS: Auslösen der Komfortsignatur bei Nachnutzung der Primärsystem-Authentisierung]) hinzuweisen, muss z.B. bei der Verwendung einer Schaltfläche diese deutlich machen, dass
 1. eine Verordnung erzeugt werden wird. Dies kann erreicht werden durch eine
 passende Benennung z.B. mit  "Verordnen", "Dem Rezept hinzufügen".
-2. im nächsten Schritt die Signatur erfolgen kann. Dies kann erreicht werden, durch eine
-passende Benennung z.B. mit "[Verordnung/Arzneimittel]zur Signatur auswählen" oder durch die Verwendung eines Signatur-Icons. Abbildung 5 : Beispiel der Maske einer neuen Verordnung
+1. im nächsten Schritt die Signatur erfolgen kann. Dies kann erreicht werden, durch eine
+passende Benennung z.B. mit "[Verordnung/Arzneimittel]zur Signatur auswählen" oder durch die Verwendung eines Signatur-Icons.
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 500px; margin-bottom: 30px;">
+        <img src="./ux-verordnend-3.png" alt="Neue Verordnung" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung: </strong>Beispiel der Maske einer neuen Verordnung</figcaption>
+</figure>
+
+<br>
 
 <!-- A_23571 -->
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-133" title="PS verordnende LEI: UX - Optimaler Klickpfad - Vorbereitung mehrerer Verordnungen zum späteren Signieren" version="0">
@@ -161,7 +241,17 @@ Hinweis: Im Gegensatz zur Aufgabenliste handelt es sich bei dieser Liste um eine
      Das PS der verordnenden LEI SOLL dem Arzt die Möglichkeit geben, alle vorbereiteten Verordnungen auf einmal zu signieren (zweiter Klick), indem er dies auf einer diesbezüglich eindeutig benannten Schaltfläche auswählt.
 </requirement>
 
-Hinweis: Mit der Umsetzung der Aufgabenliste für das Signieren der Verordnungen wird diese Anforderung erfüllt. Abbildung 6 : Beispiel einer Rezeptübersicht Hinweis: Um die Benennung der Schaltfläche eindeutig zu gestalten, kann diese z.B. als "Jetzt signieren" benannt werden.
+Hinweis: Mit der Umsetzung der Aufgabenliste für das Signieren der Verordnungen wird diese Anforderung erfüllt.
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 500px; margin-bottom: 30px;">
+        <img src="./ux-verordnend-4.png" alt="Jetzt signieren" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung: </strong>Beispiel einer Rezeptübersicht Hinweis: Um die Benennung der Schaltfläche eindeutig zu gestalten, kann diese z.B. als "Jetzt signieren" benannt werden.</figcaption>
+</figure>
+
+<br>
+
 
 <!-- A_23573 -->
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-135" title="PS verordnende LEI: UX - Optimaler Klickpfad - Hintergrund-Signaturprozess und Fehleranzeigen" version="0">
@@ -245,9 +335,10 @@ Beim Erstellen einer Verordnung kann es zu einer Abweichung zwischen dem die Ver
 ##### Sonderfall Vertretungssituation
 
 Hinweis: Das in diesem Abschnitt beschriebene Szenario "Sonderfall Vertretungsfall" findet keine Anwendung in ZPVS. Wenn Ärzte aufgrund von Urlaub/Krankheit/Abwesenheit in der eigenen Praxis ausfallen, dürfen sie sich von einem Kollegen für maximal bis zu 3 Monate innerhalb von 12 Monaten vertreten lassen. Der Nutzer soll (ggf. für einen bestimmten Zeitraum) entscheiden können, welcher der Vertretungsfälle zutrifft (z.B. im Rechtemanagement des Systems). Das System füllt dann die Informationen zum Verordnenden Arzt in der Verordnung automatisch richtig aus. Dabei gibt es folgende Vertretungsfälle (siehe [https://www.kbv.de/html/erezept.php], Stand 27.02.2023)
-- Kollegiale Vertretung: (nach § 20 Musterberufsordnung): Die/der abwesende Arzt
+
+- **Kollegiale Vertretung**: (nach § 20 Musterberufsordnung): Die/der abwesende Arzt
 lässt sich von einem fachgleichen Kollegen/in in dessen Praxis vertreten. Die Abrechnung erfolgt über die LANR/BSNR des Vertretenden. Im Datensatz der elektronischen Verordnung erfolgt keine Kennzeichnung einer Vertretungskonstellation, es werden die Daten der ausstellenden Person und der vertretenden Praxis übermittelt.
-- Persönliche Vertretung: Ein Vertreter oder eine Vertreterin wird in der Praxis des
+- **Persönliche Vertretung**: Ein Vertreter oder eine Vertreterin wird in der Praxis des
 Vertretenen tätig, bspw. als dessen Sicherstellungsassistentin im Falle von Kindererziehungszeiten. Rechtsgrundlage wäre hier § 32 Abs. 2, Satz 2 Ärzte- Zulassungsverordnung. Die Abrechnung erfolgt über die LANR/BSNR des Vertretenen. Es muss eine Kennzeichnung des Vertreters im Datensatz erfolgen. Es werden die Daten der vertretenden ausstellenden Person sowie des vertretenen Arztes und dessen Praxis übermittelt.
 
 <!-- A_23580 -->
@@ -371,7 +462,14 @@ Für die Verordnungen von E-T-Rezepten sind gesonderte UX-Vorgaben definiert, um
 
 ### Mehrfachverordnungen
 
-Abbildung 7 : Beispiel der Maske für eine Mehrfachverordnung
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 500px; margin-bottom: 30px;">
+        <img src="./ux-verordnend-5.png" alt="Mehrfachverordnung" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung: </strong>Beispiel der Maske für eine Mehrfachverordnung</figcaption>
+</figure>
+
+<br>
 
 <!-- A_23588 -->
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-153" title="PS verordnende LEI: UX - Mehrfachverordnungen als Option" version="0">
@@ -460,7 +558,16 @@ Ein Arzt arbeitet in seinem Arbeitsablauf verschiedene Signaturaufgaben (bspw. f
      Das PS der verordnenden LEI SOLL es dem Nutzer ermöglichen, die zu signierenden Verordnungen in einer Liste anzuzeigen und zu bearbeiten.
 </requirement>
 
-Zu den relevanten Informationen einer Verordnung gehören Patient, Medikament, Einnahmehinweise, Arzt, Weg der Einlösung, Ersteller etc.. Die Aufgabenliste kann weitere Signaturaufträge oder andere Praxisaufgaben beinhalten. Folgende Grafik dient als Beispiel: Abbildung 8 : Beispiel einer Aufgabenliste mit Signaturaufträgen
+Zu den relevanten Informationen einer Verordnung gehören Patient, Medikament, Einnahmehinweise, Arzt, Weg der Einlösung, Ersteller etc.. Die Aufgabenliste kann weitere Signaturaufträge oder andere Praxisaufgaben beinhalten. Folgende Grafik dient als Beispiel: 
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 500px; margin-bottom: 30px;">
+        <img src="./ux-verordnend-6.png" alt="Signaturaufträge" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung: </strong>Beispiel einer Aufgabenliste mit Signaturaufträgen</figcaption>
+</figure>
+
+<br>
 
 <!-- A_23596 -->
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-162" title="PS verordnende LEI: UX – Aufgabenliste - Filtern und Sortieren" version="0">

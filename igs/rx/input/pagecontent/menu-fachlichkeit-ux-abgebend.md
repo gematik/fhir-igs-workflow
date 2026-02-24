@@ -1,4 +1,4 @@
-Hinweis: Die in diesem Implementierungsleitfaden beschriebenen best practice für User Experience soll die Umsetzung im Primärsystem so unterstützen, dass die Nutzung der Anwendung E-Rezept bestmöglich in die Arbeitsabläufe in der Apotheke integriert. Die best practice für User Experience stellen eine Umsetzungsempfehlung dar. D.h. es ist den Herstellern der Primärsystem freigestellt, effizientere Lösungen zu implementieren, welche den Prozessen in den Primärsystemen entsprechen.
+> Hinweis: Die in diesem Implementierungsleitfaden beschriebenen best practice für User Experience soll die Umsetzung im Primärsystem so unterstützen, dass die Nutzung der Anwendung E-Rezept bestmöglich in die Arbeitsabläufe in der Apotheke integriert. Die best practice für User Experience stellen eine Umsetzungsempfehlung dar. D.h. es ist den Herstellern der Primärsystem freigestellt, effizientere Lösungen zu implementieren, welche den Prozessen in den Primärsystemen entsprechen.
 
 ### Zuweisung von E-Rezepten an eine Apotheke
 
@@ -129,7 +129,16 @@ Das Erstellen und Senden einer Nachricht soll nach Möglichkeit aus dem Arbeitsf
      Das PS der abgebenden LEI SOLL die zu einem Vorgang gehörende Kommunikation mit dem Vorgang derart verknüpfen, dass diese im Kontext des Vorgangs dargestellt werden kann.
 </requirement>
 
-Exemplarisch eine Beispielnachricht, wie sie der Kunde im Frontend des Versicherten sehen würde: Abbildung 9 : Eine exemplarische Beispielnachricht
+Exemplarisch eine Beispielnachricht, wie sie der Kunde im Frontend des Versicherten sehen würde: 
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 500px; margin-bottom: 30px;">
+        <img src="./ux-abgebend-1.png" alt="Beispielnachricht" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung: </strong>Eine exemplarische Beispielnachricht</figcaption>
+</figure>
+
+<br>
 
 ### Bedienen eines Rezepts
 

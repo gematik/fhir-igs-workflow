@@ -7,5 +7,5 @@ Folgende Szenarien werden in diesem Implementation Guide beschrieben:
 
 Auf diesen Seiten werden Vorgaben und Empfehlungen für eine gute UX getroffen:
 
-- [Best practice UX Primärsysteme für verordnende LEIs](./menu-fachlichkeit-ux-verordnend.md)
-- [Best practice UX Primärsysteme für abgebende LEIs](./menu-fachlichkeit-ux-abgebend.md)
+- [Best practice UX Primärsysteme für verordnende LEIs](./menu-fachlichkeit-ux-verordnend.html)
+- [Best practice UX Primärsysteme für abgebende LEIs](./menu-fachlichkeit-ux-abgebend.html)
