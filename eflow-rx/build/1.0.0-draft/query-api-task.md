@@ -10,7 +10,7 @@ Version 1.0.0-draft - ci-build
 
 ## Query API: Task
 
-Diese Seite basiert auf der gleichnamigen Schnittstelle in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/1.0.0query-api-task.html) und beschreibt den Einstieg in die Task-Query-Schnittstelle.
+Diese Seite basiert auf der gleichnamigen Schnittstelle in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/1.0.0/query-api-task.html) und beschreibt den Einstieg in die Task-Query-Schnittstelle.
 
 ### Nachricht
 

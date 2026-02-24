@@ -71,7 +71,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "gemIG_TIFlow_rx",
   "title" : "E-Rezept für Arzneimittel",
   "status" : "draft",
-  "date" : "2026-02-24T11:03:06+00:00",
+  "date" : "2026-02-24T12:43:41+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -2877,15 +2877,6 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "menu-schnittstellen-additional-api.html"
-        }],
-        "nameUrl" : "menu-schnittstellen-additional-api.html",
-        "title" : "Zusätzliche APIs",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "artifacts.html"
         }],
         "nameUrl" : "artifacts.html",
@@ -2913,37 +2904,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "erp-openapi.html"
-        }],
-        "nameUrl" : "erp-openapi.html",
-        "title" : "OpenAPI: E-Rezept Produkttypen",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "release-notes.html"
         }],
         "nameUrl" : "release-notes.html",
         "title" : "Release Notes",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "spec-sheet.html"
-        }],
-        "nameUrl" : "spec-sheet.html",
-        "title" : "Steckbriefe",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "comparisons.html"
-        }],
-        "nameUrl" : "comparisons.html",
-        "title" : "Versionsvergleiche",
         "generation" : "markdown"
       },
       {
