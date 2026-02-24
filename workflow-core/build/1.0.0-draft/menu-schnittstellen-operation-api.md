@@ -19,7 +19,9 @@ Die fachmodulspezifischen Erweiterungen sind in den jeweiligen Fach-IGs dokument
 
 * [$create](./op-create.md)
 * [$activate](./op-activate.md)
+* [$close](./op-close.md)
+* [$reject](./op-reject.md)
 * [$abort](./op-abort.md)
 
-Hinweis: Ein Fachmodul MUSS in seiner jeweiligen Operationsseite klar angeben, welche Anforderungen aus dem Core geerbt werden und welche modulspezifischen Anforderungen zusaetzlich gelten.
+Hinweis: Ein Fachmodul MUSS in seiner jeweiligen Operationsseite klar angeben, welche Anforderungen aus dem Core geerbt werden und welche modulspezifischen Anforderungen zusätzlich gelten.
 

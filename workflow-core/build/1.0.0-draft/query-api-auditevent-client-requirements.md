@@ -19,7 +19,7 @@ Diese Seite beschreibt Anforderungen an Clients zur Nutzung der AuditEvent-Query
 
 ## Normative Client-Anforderungen
 
-In den vorliegenden Spezifikationen sind keine zusaetzlichen, ausschließlich auf `/AuditEvent` bezogenen, normativen Client-Anforderungen ausgewiesen.
+In den vorliegenden Spezifikationen sind keine zusätzlichen, ausschließlich auf `/AuditEvent` bezogenen, normativen Client-Anforderungen ausgewiesen.
 
 ## Hinweise zur Nutzung
 

@@ -13,3 +13,5 @@ Version 1.0.0-draft - ci-build
 
 ## Server-Anforderungen $accept
 
+Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an den E-Rezept-Fachdienst für die Operation `$accept`.
+

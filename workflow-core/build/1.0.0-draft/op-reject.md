@@ -29,8 +29,7 @@ Die API-Beschreibung für den Aufruf der Operation findet sich auf:
 
 ### Hinweis
 
-* `reject` und direktes erneutes `accept` sollen nicht als Übergabemechanismus zwischen Apotheken verwendet werden.
-* Diese Folge erzeugt für Versicherte schwer nachvollziehbare Protokollierung/Notifications.
+* `reject` und direktes erneutes `accept` sollen nicht als Übergabemechanismus zwischen Apotheken verwendet werden, da dies für Versicherte schwer nachvollziehbare Protokollierung/Notifications erzeugt.
 
 ### Sicherheitsanforderungen
 

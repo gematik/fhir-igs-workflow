@@ -1,48 +1,53 @@
 {
-  "date" : "Mon, 23 Feb, 2026 10:47:42 +0000",
+  "date" : "Tue, 24 Feb, 2026 10:28:00 +0000",
   "doco" : "For each file: start is seconds after start activity occurred. Length = milliseconds activity took",
   "files" : [{
     "name" : "/fsh-generated/resources/ImplementationGuide-de.gematik.workflow.core.json",
-    "size" : 9504,
+    "size" : 9953,
     "processes" : [{
       "activity" : "load",
-      "start" : 30,
-      "length" : 27
+      "start" : 29,
+      "length" : 32
     },
     {
       "activity" : "checkR4R4B",
-      "start" : 33,
-      "length" : 10
+      "start" : 31,
+      "length" : 15
     },
     {
       "activity" : "generateNarratives",
-      "start" : 33,
-      "length" : 182
+      "start" : 31,
+      "length" : 189
     },
     {
       "activity" : "validate",
-      "start" : 37,
-      "length" : 6986
+      "start" : 34,
+      "length" : 4741
+    },
+    {
+      "activity" : "scanForUsageStats",
+      "start" : 39,
+      "length" : 1
     },
     {
       "activity" : "generate1",
-      "start" : 44,
-      "length" : 75
+      "start" : 39,
+      "length" : 94
     },
     {
       "activity" : "generate2",
-      "start" : 49,
-      "length" : 112
+      "start" : 44,
+      "length" : 122
     },
     {
       "activity" : "generateValidationPack",
-      "start" : 68,
-      "length" : 4
+      "start" : 60,
+      "length" : 2
     },
     {
       "activity" : "scanExamplesForR5",
-      "start" : 85,
-      "length" : 3
+      "start" : 71,
+      "length" : 2
     }]
   },
   {
@@ -50,43 +55,48 @@
     "size" : 1384,
     "processes" : [{
       "activity" : "loadResources",
-      "start" : 30,
-      "length" : 17
+      "start" : 29,
+      "length" : 28
     },
     {
       "activity" : "load",
-      "start" : 30,
-      "length" : 19
+      "start" : 29,
+      "length" : 27
     },
     {
       "activity" : "load-configure",
-      "start" : 33,
+      "start" : 31,
       "length" : 1
     },
     {
-      "activity" : "loadDepInfo",
-      "start" : 33,
+      "activity" : "checkR4R4B",
+      "start" : 31,
       "length" : 1
     },
     {
       "activity" : "generateNarratives",
-      "start" : 33,
-      "length" : 28
+      "start" : 31,
+      "length" : 39
     },
     {
       "activity" : "validate",
-      "start" : 33,
-      "length" : 3747
+      "start" : 31,
+      "length" : 2562
     },
     {
       "activity" : "generate1",
-      "start" : 44,
-      "length" : 19
+      "start" : 39,
+      "length" : 29
     },
     {
       "activity" : "generate2",
-      "start" : 49,
-      "length" : 45
+      "start" : 44,
+      "length" : 47
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 60,
+      "length" : 1
     }]
   },
   {
@@ -94,53 +104,48 @@
     "size" : 1040,
     "processes" : [{
       "activity" : "loadResources",
-      "start" : 30,
-      "length" : 14
+      "start" : 29,
+      "length" : 18
     },
     {
       "activity" : "load",
-      "start" : 30,
+      "start" : 29,
       "length" : 16
-    },
-    {
-      "activity" : "load-configure",
-      "start" : 33,
-      "length" : 1
-    },
-    {
-      "activity" : "checkR4R4B",
-      "start" : 33,
-      "length" : 1
     },
     {
       "activity" : "generateNarratives",
-      "start" : 33,
-      "length" : 16
+      "start" : 31,
+      "length" : 31
     },
     {
       "activity" : "validate",
-      "start" : 37,
-      "length" : 55
+      "start" : 34,
+      "length" : 59
     },
     {
       "activity" : "generate1",
-      "start" : 44,
-      "length" : 17
+      "start" : 39,
+      "length" : 15
     },
     {
       "activity" : "generate2",
-      "start" : 49,
-      "length" : 20
+      "start" : 44,
+      "length" : 22
     },
     {
-      "activity" : "generateValidationPack",
-      "start" : 68,
+      "activity" : "scanExamplesForR5",
+      "start" : 71,
       "length" : 1
     }]
   },
   {
     "name" : "/fsh-generated/includes/fsh-link-references.md",
-    "size" : 143
+    "size" : 143,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 44,
+      "length" : 1
+    }]
   },
   {
     "name" : "/fsh-generated/includes/menu.xml",
@@ -160,15 +165,20 @@
   },
   {
     "name" : "/input/pagecontent/menu-technische-umsetzung-systemueberblick.md",
-    "size" : 5076
+    "size" : 5156,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 44,
+      "length" : 1
+    }]
   },
   {
     "name" : "/input/pagecontent/fhir-validate.md",
-    "size" : 4297,
+    "size" : 4832,
     "processes" : [{
       "activity" : "generate2",
-      "start" : 49,
-      "length" : 1
+      "start" : 44,
+      "length" : 3
     }]
   },
   {
@@ -181,7 +191,12 @@
   },
   {
     "name" : "/input/pagecontent/audit-service.md",
-    "size" : 21
+    "size" : 16098,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 44,
+      "length" : 1
+    }]
   },
   {
     "name" : "/input/pagecontent/op-reject-client-requirements.md",
@@ -189,7 +204,12 @@
   },
   {
     "name" : "/input/pagecontent/op-reject-fd-requirements.md",
-    "size" : 108
+    "size" : 2958,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 44,
+      "length" : 1
+    }]
   },
   {
     "name" : "/input/pagecontent/query-api-auditevent.md",
@@ -201,19 +221,14 @@
   },
   {
     "name" : "/input/pagecontent/op-create-fd-requirements.md",
-    "size" : 0,
-    "processes" : [{
-      "activity" : "generate2",
-      "start" : 49,
-      "length" : 1
-    }]
+    "size" : 6208
   },
   {
     "name" : "/input/pagecontent/query-api-device-fd-requirements.md",
     "size" : 517,
     "processes" : [{
-      "activity" : "scan",
-      "start" : 33,
+      "activity" : "generate2",
+      "start" : 44,
       "length" : 1
     }]
   },
@@ -227,18 +242,255 @@
   },
   {
     "name" : "/input/pagecontent/query-api-device.md",
-    "size" : 1043
+    "size" : 1043,
+    "processes" : [{
+      "activity" : "load-configure",
+      "start" : 31,
+      "length" : 1
+    }]
   },
   {
     "name" : "/input/pagecontent/op-abort-fd-requirements.md",
-    "size" : 0
+    "size" : 1968,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 44,
+      "length" : 3
+    }]
   },
   {
     "name" : "/input/pagecontent/op-create.md",
     "size" : 2167,
     "processes" : [{
       "activity" : "generate2",
-      "start" : 49,
+      "start" : 44,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/op-create-client-requirements.md",
+    "size" : 0
+  },
+  {
+    "name" : "/input/pagecontent/query-api-auditevent-client-requirements.md",
+    "size" : 565,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 44,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/menu-schnittstellen-datenschutz-und-sicherheit.md",
+    "size" : 32
+  },
+  {
+    "name" : "/input/pagecontent/op-accept.md",
+    "size" : 1256
+  },
+  {
+    "name" : "/input/pagecontent/op-reject.md",
+    "size" : 1029,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 44,
+      "length" : 3
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/ttl.md",
+    "size" : 3702
+  },
+  {
+    "name" : "/input/pagecontent/artifacts.md",
+    "size" : 81
+  },
+  {
+    "name" : "/input/pagecontent/op-activate-fd-requirements.md",
+    "size" : 8617,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 44,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/data-security.md",
+    "size" : 26756,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 44,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/query-api-communication.md",
+    "size" : 1747
+  },
+  {
+    "name" : "/input/pagecontent/op-abort.md",
+    "size" : 1333,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 44,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/menu-schnittstellen-operation-api.md",
+    "size" : 456
+  },
+  {
+    "name" : "/input/pagecontent/op-accept-fd-requirements.md",
+    "size" : 134
+  },
+  {
+    "name" : "/input/pagecontent/query-api-auditevent-fd-requirements.md",
+    "size" : 2773,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 44,
+      "length" : 3
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/query-api-communication-client-requirements.md",
+    "size" : 97
+  },
+  {
+    "name" : "/input/pagecontent/op-close-fd-requirements.md",
+    "size" : 106
+  },
+  {
+    "name" : "/input/pagecontent/op-accept-client-requirements.md",
+    "size" : 0
+  },
+  {
+    "name" : "/input/pagecontent/query-api-device-client-requirements.md",
+    "size" : 560,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 44,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/index.md",
+    "size" : 1178
+  },
+  {
+    "name" : "/input/pagecontent/menu-schnittstellen-generelle-prinzipien.md",
+    "size" : 51
+  },
+  {
+    "name" : "/input/pagecontent",
+    "size" : 0,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 44,
+      "length" : 3
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/op-activate.md",
+    "size" : 1107
+  },
+  {
+    "name" : "/input/pagecontent/menu-technische-umsetzung-systemueberblick.md",
+    "size" : 5156,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 44,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/fhir-validate.md",
+    "size" : 4832
+  },
+  {
+    "name" : "/input/pagecontent/op-close-client-requirements.md",
+    "size" : 0
+  },
+  {
+    "name" : "/input/pagecontent/op-activate-client-requirements.md",
+    "size" : 0
+  },
+  {
+    "name" : "/input/pagecontent/audit-service.md",
+    "size" : 16098,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 44,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/op-reject-client-requirements.md",
+    "size" : 0
+  },
+  {
+    "name" : "/input/pagecontent/op-reject-fd-requirements.md",
+    "size" : 2958,
+    "processes" : [{
+      "activity" : "validate",
+      "start" : 31,
+      "length" : 1
+    },
+    {
+      "activity" : "generate2",
+      "start" : 44,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/query-api-auditevent.md",
+    "size" : 1367
+  },
+  {
+    "name" : "/input/pagecontent/op-close.md",
+    "size" : 1474
+  },
+  {
+    "name" : "/input/pagecontent/op-create-fd-requirements.md",
+    "size" : 6208
+  },
+  {
+    "name" : "/input/pagecontent/query-api-device-fd-requirements.md",
+    "size" : 517,
+    "processes" : [{
+      "activity" : "checkConformanceResources",
+      "start" : 39,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/op-abort-client-requirements.md",
+    "size" : 0,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 44,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/menu-schnittstellen-query-api.md",
+    "size" : 4
+  },
+  {
+    "name" : "/input/pagecontent/query-api-device.md",
+    "size" : 1043
+  },
+  {
+    "name" : "/input/pagecontent/op-abort-fd-requirements.md",
+    "size" : 1968
+  },
+  {
+    "name" : "/input/pagecontent/op-create.md",
+    "size" : 2167,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 44,
       "length" : 2
     }]
   },
@@ -260,190 +512,16 @@
   },
   {
     "name" : "/input/pagecontent/op-reject.md",
-    "size" : 1035
+    "size" : 1029
   },
   {
     "name" : "/input/pagecontent/ttl.md",
-    "size" : 3702
-  },
-  {
-    "name" : "/input/pagecontent/artifacts.md",
-    "size" : 81,
+    "size" : 3702,
     "processes" : [{
       "activity" : "generate2",
-      "start" : 49,
+      "start" : 44,
       "length" : 1
     }]
-  },
-  {
-    "name" : "/input/pagecontent/op-activate-fd-requirements.md",
-    "size" : 109
-  },
-  {
-    "name" : "/input/pagecontent/data-security.md",
-    "size" : 26756,
-    "processes" : [{
-      "activity" : "generate2",
-      "start" : 49,
-      "length" : 1
-    }]
-  },
-  {
-    "name" : "/input/pagecontent/op-abort.md",
-    "size" : 1333
-  },
-  {
-    "name" : "/input/pagecontent/menu-schnittstellen-operation-api.md",
-    "size" : 398
-  },
-  {
-    "name" : "/input/pagecontent/op-accept-fd-requirements.md",
-    "size" : 0
-  },
-  {
-    "name" : "/input/pagecontent/query-api-auditevent-fd-requirements.md",
-    "size" : 2407
-  },
-  {
-    "name" : "/input/pagecontent/op-close-fd-requirements.md",
-    "size" : 106
-  },
-  {
-    "name" : "/input/pagecontent/op-accept-client-requirements.md",
-    "size" : 0,
-    "processes" : [{
-      "activity" : "generate2",
-      "start" : 49,
-      "length" : 1
-    }]
-  },
-  {
-    "name" : "/input/pagecontent/query-api-device-client-requirements.md",
-    "size" : 560
-  },
-  {
-    "name" : "/input/pagecontent/index.md",
-    "size" : 1173
-  },
-  {
-    "name" : "/input/pagecontent/menu-schnittstellen-generelle-prinzipien.md",
-    "size" : 51
-  },
-  {
-    "name" : "/input/pagecontent",
-    "size" : 0
-  },
-  {
-    "name" : "/input/pagecontent/op-activate.md",
-    "size" : 1107
-  },
-  {
-    "name" : "/input/pagecontent/menu-technische-umsetzung-systemueberblick.md",
-    "size" : 5076,
-    "processes" : [{
-      "activity" : "generate2",
-      "start" : 49,
-      "length" : 1
-    }]
-  },
-  {
-    "name" : "/input/pagecontent/fhir-validate.md",
-    "size" : 4297
-  },
-  {
-    "name" : "/input/pagecontent/op-close-client-requirements.md",
-    "size" : 0
-  },
-  {
-    "name" : "/input/pagecontent/op-activate-client-requirements.md",
-    "size" : 0
-  },
-  {
-    "name" : "/input/pagecontent/audit-service.md",
-    "size" : 21
-  },
-  {
-    "name" : "/input/pagecontent/op-reject-client-requirements.md",
-    "size" : 0
-  },
-  {
-    "name" : "/input/pagecontent/op-reject-fd-requirements.md",
-    "size" : 108
-  },
-  {
-    "name" : "/input/pagecontent/query-api-auditevent.md",
-    "size" : 1367
-  },
-  {
-    "name" : "/input/pagecontent/op-close.md",
-    "size" : 1474,
-    "processes" : [{
-      "activity" : "generate2",
-      "start" : 49,
-      "length" : 1
-    }]
-  },
-  {
-    "name" : "/input/pagecontent/op-create-fd-requirements.md",
-    "size" : 0
-  },
-  {
-    "name" : "/input/pagecontent/query-api-device-fd-requirements.md",
-    "size" : 517
-  },
-  {
-    "name" : "/input/pagecontent/op-abort-client-requirements.md",
-    "size" : 0
-  },
-  {
-    "name" : "/input/pagecontent/menu-schnittstellen-query-api.md",
-    "size" : 4
-  },
-  {
-    "name" : "/input/pagecontent/query-api-device.md",
-    "size" : 1043
-  },
-  {
-    "name" : "/input/pagecontent/op-abort-fd-requirements.md",
-    "size" : 0
-  },
-  {
-    "name" : "/input/pagecontent/op-create.md",
-    "size" : 2167,
-    "processes" : [{
-      "activity" : "generate2",
-      "start" : 49,
-      "length" : 1
-    }]
-  },
-  {
-    "name" : "/input/pagecontent/op-create-client-requirements.md",
-    "size" : 0,
-    "processes" : [{
-      "activity" : "generate2",
-      "start" : 49,
-      "length" : 1
-    }]
-  },
-  {
-    "name" : "/input/pagecontent/query-api-auditevent-client-requirements.md",
-    "size" : 565
-  },
-  {
-    "name" : "/input/pagecontent/menu-schnittstellen-datenschutz-und-sicherheit.md",
-    "size" : 32
-  },
-  {
-    "name" : "/input/pagecontent/op-accept.md",
-    "size" : 1256
-  },
-  {
-    "name" : "/input/pagecontent/op-reject.md",
-    "size" : 1035
-  },
-  {
-    "name" : "/input/pagecontent/ttl.md",
-    "size" : 3702
   },
   {
     "name" : "/input/pagecontent/artifacts.md",
@@ -451,14 +529,23 @@
   },
   {
     "name" : "/input/pagecontent/op-activate-fd-requirements.md",
-    "size" : 109
+    "size" : 8617
   },
   {
     "name" : "/input/pagecontent/data-security.md",
     "size" : 26756,
     "processes" : [{
       "activity" : "generate2",
-      "start" : 49,
+      "start" : 44,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/query-api-communication.md",
+    "size" : 1747,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 44,
       "length" : 1
     }]
   },
@@ -466,26 +553,35 @@
     "name" : "/input/pagecontent/op-abort.md",
     "size" : 1333,
     "processes" : [{
-      "activity" : "generate2",
-      "start" : 49,
+      "activity" : "scan",
+      "start" : 31,
       "length" : 1
     }]
   },
   {
     "name" : "/input/pagecontent/menu-schnittstellen-operation-api.md",
-    "size" : 398
+    "size" : 456
   },
   {
     "name" : "/input/pagecontent/op-accept-fd-requirements.md",
-    "size" : 0
+    "size" : 134
   },
   {
     "name" : "/input/pagecontent/query-api-auditevent-fd-requirements.md",
-    "size" : 2407
+    "size" : 2773
+  },
+  {
+    "name" : "/input/pagecontent/query-api-communication-client-requirements.md",
+    "size" : 97
   },
   {
     "name" : "/input/pagecontent/op-close-fd-requirements.md",
-    "size" : 106
+    "size" : 106,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 44,
+      "length" : 1
+    }]
   },
   {
     "name" : "/input/pagecontent/op-accept-client-requirements.md",
@@ -497,7 +593,7 @@
   },
   {
     "name" : "/input/pagecontent/index.md",
-    "size" : 1173
+    "size" : 1178
   },
   {
     "name" : "/input/pagecontent/menu-schnittstellen-generelle-prinzipien.md",
@@ -517,12 +613,7 @@
   },
   {
     "name" : "/input/content/assets/js/heading-links.js",
-    "size" : 1570,
-    "processes" : [{
-      "activity" : "generate2",
-      "start" : 49,
-      "length" : 1
-    }]
+    "size" : 1566
   },
   {
     "name" : "/template/config",
@@ -530,7 +621,12 @@
   },
   {
     "name" : "/template/config/_config.yml",
-    "size" : 31
+    "size" : 31,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 44,
+      "length" : 1
+    }]
   },
   {
     "name" : "/input/images",

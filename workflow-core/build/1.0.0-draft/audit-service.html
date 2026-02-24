@@ -204,10 +204,332 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p>  <!-- white space is critical inside of capture --></p>
-<div>
-  <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown. -->
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#systemprotokoll" id="markdown-toc-systemprotokoll">Systemprotokoll</a></li>
+  <li><a href="#zugriffsprotokoll-für-den-versicherten" id="markdown-toc-zugriffsprotokoll-für-den-versicherten">Zugriffsprotokoll für den Versicherten</a></li>
+</ul>
+
 </div>
-<p>Todo: Protokollierung</p>
+<h3 id="systemprotokoll">Systemprotokoll</h3>
+  <!-- Dieser Abschnitt ist ein Kandidat für gemSpec_FD_TI-Flow, weil es keine API beschreibt und nict relevant für Clientsysteme ist. -->
+
+<p>Der E-Rezept-Fachdienst soll Protokolldateien schreiben, die eine Analyse technischer Vorgänge erlauben. Diese Protokolldateien sind dafür vorgesehen, aufgetretene Fehler zu identifizieren und die Performance zu analysieren. Für diese Zwecke führt der E-Rezept-Fachdienst ein Systemprotokoll, mit dem der Anbieter des Dienstes jederzeit den Betriebszustand des Systems kontrollieren kann.</p>
+
+  <!-- A_19282 -->
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Systemprotokoll für Betriebszustand" version="0" key="IG-WF-CORE-77">
+	<meta lockversion="false"/>
+	<actor name="E-Rezept-Fachdienst">
+    	<testProcedure id="Herstellererklärung"></testProcedure>
+  	</actor>
+	Der E-Rezept-Fachdienst MUSS ein Systemprotokoll über durchgeführte Operationen und deren Erfolg/Misserfolg führen, um dem Anbieter des Dienstes jederzeit eine Übersicht über den aktuellen Betriebszustand zu ermöglichen.
+</requirement>
+
+  <!-- A_19283 -->
+<requirement conformance="SHALL" title="Systemprotokoll ohne personenbezogene und ohne medizinische Daten" version="0" key="IG-WF-CORE-77">
+	<meta lockversion="false"/>
+	<actor name="E-Rezept-Fachdienst">
+    	<testProcedure id="Produktgutachten"></testProcedure>
+  	</actor>
+	Der E-Rezept-Fachdienst MUSS in jedem zu tätigenden Systemprotokolleintrag alle personenbezogenen, personenbeziehbaren und medizinischen Informationen vor der Speicherung entfernen, damit vom administrativen Personal keine personenbezogenen Daten der Versicherten oder Leistungserbringer eingesehen werden können.
+</requirement>
+
+  <!-- A_19678 -->
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Systemprotokoll  Verfügbarkeit interner Logdaten" version="0" key="IG-WF-CORE-77">
+	<meta lockversion="false"/>
+	<actor name="E-Rezept-Fachdienst">
+    	<testProcedure id="Herstellererklärung"></testProcedure>
+  	</actor>
+	Der Betreiber des E-Rezept-Fachdienstes MUSS im Rahmen von Testmaßnahmen dem Testbetriebsverantwortlichen auf Anforderung die Log-Dateien des Systemprotokolls übermitteln.
+</requirement>
+
+  <!-- A_20001 -->
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Systemprotokoll zu Ergebnis einer aufgerufenen Operation" version="0" key="IG-WF-CORE-77">
+	<meta lockversion="false"/>
+	<actor name="E-Rezept-Fachdienst">
+    	<testProcedure id="Herstellererklärung"></testProcedure>
+  	</actor>
+	Der E-Rezept-Fachdienst MUSS ein Systemprotokoll über durchgeführte Operationen und deren Erfolg/Misserfolg führen.
+</requirement>
+
+<h3 id="zugriffsprotokoll-für-den-versicherten">Zugriffsprotokoll für den Versicherten</h3>
+
+<p>Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle Zugriffe auf die personenbezogenen und medizinischen Daten eines Versicherten für den Versicherten einsehbar sind. Diese Zugriffsprotokolle sind unabhängig vom Systemprotokoll und stehen ausschließlich dem Versicherten zur Wahrnehmung seiner Betroffenenrechte zur Einsicht zur Verfügung.</p>
+
+  <!-- A_19284-13 -->
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Versichertenprotokoll zu Operationen" version="0" key="IG-WF-CORE-77">
+	<meta lockversion="false"/>
+	<actor name="E-Rezept-Fachdienst">
+    	<testProcedure id="Produkttest"></testProcedure>
+  	</actor>
+	Der E-Rezept-Fachdienst MUSS jeden Aufruf von Operationen gemäß "TAB_eRPFD_004 Versichertenprotokoll" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.
+</requirement>
+
+<table>
+  <tr>
+    <th>Operation</th>
+    <th>Rolle des zugreifenden Nutzers</th>
+    <th>Beschreibung (ggf. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache)</th>
+  </tr>
+  <tr>
+    <td>http GET /Task/&lt;id&gt;</td>
+    <td>Versicherter/Vertreter</td>
+    <td>Versicherter/Vertreter hat das E-Rezept heruntergeladen</td>
+  </tr>
+  <tr>
+    <td>http GET /Task/&lt;id&gt;?secret</td>
+    <td>Apotheke/Kostenträger</td>
+    <td>Apotheke/Kostenträger hat die E-Rezept-Quittung heruntergeladen</td>
+  </tr>
+  <tr>
+    <td>http GET /Task</td>
+    <td>Apotheke</td>
+    <td>
+        <ul>
+            <li>im Erfolgsfall beim passenden AcceptPN3VSDMxx=false: Apotheke hat mit Ihrer eGK die Liste der offenen E-Rezepte abgerufen.</li>
+            <li>im Erfolgsfall bei PN3 und passende AcceptPN3VSDMxx=true: Apotheke hat mit Ihrer eGK die Liste der offenen E-Rezepte abgerufen. (Offline-Check wurde akzeptiert)</li>
+            <li>im Fehlerfall PN3 und passende AcceptPN3VSDMxx=false:  Apotheke konnte aufgrund eines Fehlerfalls nicht die Liste der offenen E-Rezepte mit Ihrer eGK abgerufen. (Offline-Check wurde nicht akzeptiert)</li>
+            <li>im sonstigen Fehlerfall: Apotheke konnte aufgrund eines Fehlerfalls nicht die Liste der offenen E-Rezepte mit Ihrer eGK abrufen.</li>
+        </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>http GET /Task</td>
+    <td>Kostenträger</td>
+    <td>Krankenkasse hat die Liste der einlösbaren Verordnungen (DiGA-Verordnungen) abgerufen.</td>
+  </tr>
+  <tr>
+    <td>http POST /Task/&lt;id&gt;/$activate</td>
+    <td>Arztpraxis/Zahnarztpraxis/Krankenhaus/Psychotherapeut</td>
+    <td>Arztpraxis/Zahnarztpraxis/Krankenhaus/Psychotherapeut hat das E-Rezept bereitgestellt.</td>
+  </tr>
+  <tr>
+    <td>http POST /Task/&lt;id&gt;/$accept</td>
+    <td>Apotheke</td>
+    <td>Apotheke hat das E-Rezept heruntergeladen</td>
+  </tr>
+  <tr>
+    <td>http POST /Task/&lt;id&gt;/$accept</td>
+    <td>Kostenträger</td>
+    <td>Krankenkasse hat die Verordnung heruntergeladen</td>
+  </tr>
+  <tr>
+    <td>http POST /Task/&lt;id&gt;/$reject</td>
+    <td>Apotheke</td>
+    <td>Apotheke hat das E-Rezept zurückgegeben.</td>
+  </tr>
+  <tr>
+    <td>http POST /Task/&lt;id&gt;/$reject</td>
+    <td>Kostenträger</td>
+    <td>Krankenkasse hat die Verordnung zurückgegeben.</td>
+  </tr>
+  <tr>
+    <td>http POST /Task/&lt;id&gt;/$dispense</td>
+    <td>Apotheke</td>
+    <td>Apotheke hat das E-Rezept beliefert.</td>
+  </tr>
+  <tr>
+    <td>http POST /Task/&lt;id&gt;/$close</td>
+    <td>Apotheke</td>
+    <td>Apotheke hat das E-Rezept abgeschlossen.</td>
+  </tr>
+  <tr>
+    <td>http POST /Task/&lt;id&gt;/$close</td>
+    <td>Kostenträger</td>
+    <td>Krankenkasse hat die Verordnung abgeschlossen.</td>
+  </tr>
+  <tr>
+    <td>http POST /Task/&lt;id&gt;/$abort</td>
+    <td>Versicherter/Vertreter</td>
+    <td>Versicherter/Vertreter hat das E-Rezept gelöscht.</td>
+  </tr>
+  <tr>
+    <td>http POST /Task/&lt;id&gt;/$abort</td>
+    <td>Arztpraxis/Zahnarztpraxis/Krankenhaus/Psychotherapeut</td>
+    <td>Arztpraxis/Zahnarztpraxis/Krankenhaus/Psychotherapeut hat das E-Rezept gelöscht.</td>
+  </tr>
+  <tr>
+    <td>http POST /Task/&lt;id&gt;/$abort</td>
+    <td>Apotheke</td>
+    <td>Apotheke hat das E-Rezept gelöscht.</td>
+  </tr>
+  <tr>
+    <td>http POST /Task/&lt;id&gt;/$eu-close</td>
+    <td>NCPeH-FD</td>
+    <td>Der Parameters.parameter:requestData.part:practitionerRole Parameters.parameter:requestData.part:practitionerName hat in Parameters.parameter:requestData.part:healthcare-facility-type Parameters.parameter:requestData.part:pointOfCare in Land B (Klartext aus: Parameters.parameter:requestData.part:countryCode) Ihr E-Rezept eingelöst.</td>
+  </tr>
+  <tr>
+    <td>http PATCH /Task/&lt;id&gt;</td>
+    <td>Versicherter</td>
+    <td>Versicherter hat Markierung zu Einlösung im EU Ausland gespeichert</td>
+  </tr>
+  <tr>
+    <td>http GET /MedicationDispense</td>
+    <td>Versicherter/Vertreter</td>
+    <td>Versicherter/Vertreter hat Medikament-Informationen heruntergeladen.</td>
+  </tr>
+  <tr>
+    <td>http DELETE /ChargeItem/&lt;id&gt;</td>
+    <td>Versicherter</td>
+    <td>Versicherter hat Abrechnungsinformation gelöscht</td>
+  </tr>
+  <tr>
+    <td>http GET /ChargeItem/&lt;id&gt;</td>
+    <td>Versicherter</td>
+    <td>Versicherter hat Abrechnungsinformation gelesen</td>
+  </tr>
+  <tr>
+    <td>http GET /ChargeItem/&lt;id&gt;</td>
+    <td>Apotheke</td>
+    <td>Apotheke hat Abrechnungsinformation gelesen</td>
+  </tr>
+  <tr>
+    <td>http POST /ChargeItem</td>
+    <td>Apotheke</td>
+    <td>Apotheke hat Abrechnungsinformation bereitgestellt</td>
+  </tr>
+  <tr>
+    <td>http PATCH /ChargeItem/&lt;id&gt;</td>
+    <td>Versicherter</td>
+    <td>Versicherter hat Markierung zu Abrechnungsinformation gespeichert</td>
+  </tr>
+  <tr>
+    <td>http PUT /ChargeItem/&lt;id&gt;</td>
+    <td>Apotheke</td>
+    <td>Apotheke hat Abrechnungsinformation geändert</td>
+  </tr>
+  <tr>
+    <td>http POST /Consent</td>
+    <td>Versicherter</td>
+    <td>Versicherter hat Einwilligung für "Beschreibung für Consent.category.coding.code" erteilt.</td>
+  </tr>
+  <tr>
+    <td>http DELETE /Consent</td>
+    <td>Versicherter</td>
+    <td>Versicherter hat Einwilligung für "Beschreibung für Consent.category.coding.code" widerrufen.</td>
+  </tr>
+  <tr>
+    <td>http POST /$grant-eu-access-permission</td>
+    <td>Versicherter</td>
+    <td>Versicherter hat eine Zugriffsberechtigung zum Einlösen von E-Rezepten für das Land "Land B" erteilt.</td>
+  </tr>
+  <tr>
+    <td>http DELETE /$revoke-eu-access-permission</td>
+    <td>Versicherter</td>
+    <td>Versicherter hat die Zugriffsberechtigung zum Einlösen von E-Rezepten für das Land "Land B" widerrufen.</td>
+  </tr>
+  <tr>
+    <td>POST /$get-eu-prescriptions<br/>Parameters.parameter:requestData.part:requesttype = demographics</td>
+    <td>NCPeH-FD</td>
+    <td>Der Parameters.parameter:requestData.part:practitionerRole Parameters.parameter:requestData.part:practitionerName hat in Parameters.parameter:requestData.part:healthcare-facility-type Parameters.parameter:requestData.part:pointOfCare in Land B (Klartext aus: Parameters.parameter:requestData.part:countryCode) Ihre Patientendaten abgerufen.</td>
+  </tr>
+  <tr>
+    <td>POST /$get-eu-prescriptions<br/>Parameters.parameter:requestData.part:requesttype = e-prescriptions-list</td>
+    <td>NCPeH-FD</td>
+    <td>Der Parameters.parameter:requestData.part:practitionerRole Parameters.parameter:requestData.part:practitionerName hat in Parameters.parameter:requestData.part:healthcare-facility-type Parameters.parameter:requestData.part:pointOfCare in Land B (Klartext aus: Parameters.parameter:requestData.part:countryCode) Ihre ausgwählten und einlösbaren E-Rezepte abgerufen.</td>
+  </tr>
+  <tr>
+    <td>POST /$get-eu-prescriptions<br/>Parameters.parameter:requestData.part:requesttype = e-prescriptions-retrieval</td>
+    <td>NCPeH-FD</td>
+    <td>Der Parameters.parameter:requestData.part:practitionerRole Parameters.parameter:requestData.part:practitionerName hat in Parameters.parameter:requestData.part:healthcare-facility-type Parameters.parameter:requestData.part:pointOfCare in Land B (Klartext aus: Parameters.parameter:requestData.part:countryCode) Ihre einzulösenden E-Rezepte abgerufen.</td>
+  </tr>
+  <tr>
+    <td>http POST /pushers/set</td>
+    <td>Versicherter</td>
+    <td>
+        <ul>
+            <li>Falls kind=null:Versicherter hat das Gerät "device_display_name" für Push-Nachrichten deregistriert.</li>
+            <li>Falls kind=http:Versicherter hat das Gerät "device_display_name" für Push-Nachrichten registriert.</li>
+        </ul>
+    </td>
+  </tr>
+  <tr>
+&lt;/table&gt;
+<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004 Versichertenprotokoll</figcaption></div>
+
+  <!-- A_19284-13 -->
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Versichertenprotokoll zu automatischen Löschen" version="0" key="IG-WF-CORE-77">
+	<meta lockversion="false"/>
+	<actor name="E-Rezept-Fachdienst">
+    	<testProcedure id="Produkttest"></testProcedure>
+  	</actor>
+	Der E-Rezept-Fachdienst MUSS beim automatischen Löschen nach Erreichen einer Löschfrist gemäß "TAB_eRPFD_004a Versichertenprotokoll nach automatischen Löschen" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.
+</requirement>
+
+<table>
+  <tr>
+    <th>Ressource</th>
+    <th>Akteur</th>
+    <th>Beschreibung (ggf. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache)</th>
+  </tr>
+  <tr>
+    <td>Ressource Task</td>
+    <td>E-Rezept-Fachdienst</td>
+    <td>Veraltete E-Rezepte vom Fachdienst automatisch gelöscht.</td>
+  </tr>
+  <tr>
+    <td>Ressource MedicationDispense</td>
+    <td>E-Rezept-Fachdienst</td>
+    <td>Veraltete Medikament-Informationen vom Fachdienst automatisch gelöscht.</td>
+  </tr>
+  <tr>
+    <td>Ressource Communication</td>
+    <td>E-Rezept-Fachdienst</td>
+    <td>Veraltete Nachricht vom Fachdienst automatisch gelöscht.</td>
+  </tr>
+  <tr>
+    <td>Ressource ChargeItem</td>
+    <td>E-Rezept-Fachdienst</td>
+    <td>Veraltete Abrechnungsinformation vom Fachdienst automatisch gelöscht.</td>
+  </tr>
+</table>
+<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004a Versichertenprotokoll nach automatischen Löschen</figcaption></div>
+
+  <!-- A_19284-13 -->
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Versichertenprotokoll zu Löschen nach Fehlerbehandlung" version="0" key="IG-WF-CORE-77">
+	<meta lockversion="false"/>
+	<actor name="E-Rezept-Fachdienst">
+    	<testProcedure id="Produkttest"></testProcedure>
+  	</actor>
+	Der E-Rezept-Fachdienst MUSS beim automatischen Löschen nach Fehlerbehandlung gemäß "TAB_eRPFD_004b Versichertenprotokoll nach Löschen wegen Fehlerbehandlung" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.
+</requirement>
+
+<table>
+  <tr>
+    <th>Ressource</th>
+    <th>Akteur</th>
+    <th>Beschreibung (ggf. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache)</th>
+  </tr>
+  <tr>
+    <td>Ressource Pusher</td>
+    <td>E-Rezept-Fachdienst</td>
+    <td>Fachdienst hat das Gerät "device_display_name" für Push-Nachrichten deregistriert..</td>
+  </tr>
+</table>
+<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004b Versichertenprotokoll nach Löschen wegen Fehlerbehandlung</figcaption></div>
+
+  <!-- A_19302 -->
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Protokolleintrag Versichertenprotokoll leicht verständlich" version="0" key="IG-WF-CORE-77">
+	<meta lockversion="false"/>
+	<actor name="E-Rezept-Fachdienst">
+    	<testProcedure id="Produkttest"></testProcedure>
+  	</actor>
+	Der E-Rezept-Fachdienst MUSS in jedem zu tätigenden Eintrag des Protokolls für Versicherte einen lesbaren Text in einfacher Sprache (deutsch und englisch) erzeugen, der mindestens den Namen des Zugreifenden, die auslösende Operation und das Ergebnis der Operation umfasst, damit Versicherte ohne technisches Vorwissen den Inhalt des Zugriffsprotokolls verstehen können.
+</requirement>
+
+  <!-- A_22217 -->
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Protokollierung - keine Angabe zu organizationName" version="0" key="IG-WF-CORE-77">
+	<meta lockversion="false"/>
+	<actor name="E-Rezept-Fachdienst">
+    	<testProcedure id="Produkttest"></testProcedure>
+  	</actor>
+	Der E-Rezept-Fachdienst MUSS, wenn im ACCESS_TOKEN die Angabe zur "organizationName" mit NULL gefüllt ist, in der Protokollierung als agentname "unbekannt" verwenden.
+</requirement>
+
+
+</tr></table>
 
 
 
@@ -227,7 +549,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Feb 23, 2026 10:47+0000">2026-02-23</span>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Feb 24, 2026 10:28+0000">2026-02-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
