@@ -3,7 +3,7 @@ Aufgabe des E-Rezept-Fachdienst ist es Verordnungs- und Dispensierungsdaten von 
 Der E-Rezept-Fachdienst muss daher in der Lage sein, die von den verordnenden Systemen (z.B. Praxis- oder Krankenhausinformationssysteme) gelieferten Daten in die von der ePA geforderten Formate zu überführen und an den ePA Medication Service zu übertragen.
 
 <figure>
-    <div class="gem-ig-img-container" style="--box-width: 500px; margin-bottom: 30px;">
+    <div class="gem-ig-img-container" style="--box-width: 600px; margin-bottom: 30px;">
         <img src="./mapping-fachdienst.png" alt="Mapping des E-Rezept-Fachdienstes" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung: </strong>Mapping des E-Rezept-Fachdienstes</figcaption>

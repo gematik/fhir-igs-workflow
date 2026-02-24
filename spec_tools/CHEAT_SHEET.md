@@ -20,7 +20,7 @@ Für Tags in Anforderungen muss die folgende Syntax verwendet werden:
 1. Bild in den Ordner input/images legen
 
 <figure>
-    <div class="gem-ig-img-container" style="--box-width: 500px; margin-bottom: 30px;">
+    <div class="gem-ig-img-container" style="--box-width: 600px; margin-bottom: 30px;">
         <img src="./todo.png" alt="todo" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung: </strong>todo</figcaption>

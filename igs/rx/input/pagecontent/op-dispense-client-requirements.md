@@ -8,7 +8,7 @@ Dieser Anwendungsfall kann so lange wiederholt werden, so lange sich der Task zu
 <requirement conformance="SHALL" key="IG-TIFlow-RX-177" title="PS abgebende LEI: Dispensierinformationen bereitstellen - E-Rezept auswählen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der abgebenden LEI MUSS im Anwendungsfall "Dispensierinformationen bereitstellen" es dem Nutzer ermöglichen, ein E-Rezept als abgegeben auszuwählen.
 </requirement>
@@ -17,7 +17,7 @@ Dieser Anwendungsfall kann so lange wiederholt werden, so lange sich der Task zu
 <requirement conformance="SHALL" key="IG-TIFlow-RX-178" title="PS abgebende LEI: Dispensierinformationen bereitstellen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der abgebenden LEI MUSS den Anwendungsfall "UC 4.16- Dispensierinformationen bereitstellen" gemäß TAB_ILFERP_022 umsetzen. Tabelle # : TAB_ILFERP_022 - Dispensierinformationen bereitstellen Name Dispensierinformationen bereitstellen Auslöser Aufruf des Anwendungsfalls in der GUI Akteur Leistungserbringer, Mitarbeiter der abgebenden LEI Vorbedingung Die LEI hat das E-Rezept vom E-Rezept-Fachdienst heruntergeladen. Der Nutzer hat im AVS ein E-Rezept als abgegeben markiert. Die LEI hat sich gegenüber der TI authentisiert. Nachbedingung Der Vorgang zum E-Rezept ist weiterhin im AVS verfügbar. Der Anwendungsfall "Dispensierinformationen bereitstellen" kann erneut ausgeführt werden. Der Anwendungsfall "Quittung abrufen" kann ausgeführt werden. Standardablauf Informationen über das abgegebene Medikament erstellt Nur für Fertigarzneimittel, die einen Data-Matrix-Code gemäß securPharm-System besitzen: Chargeninfo und Verfallsdatum ergänzen. Task-ID und Geheimnis des E-Rezepts bestimmen Dispensierinformationen dem E-Rezept-Fachdienst bereitstellen
 </requirement>
@@ -26,7 +26,7 @@ Dieser Anwendungsfall kann so lange wiederholt werden, so lange sich der Task zu
 <requirement conformance="SHALL" key="IG-TIFlow-RX-179" title="PS abgebende LEI: Dispensierinformationen bereitstellen - Dispensierinformationen erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der abgebenden LEI MUSS im Anwendungsfall "Dispensierinformationen bereitstellen" die Dispensierinformationen nach den Vorgaben aus "Erstellen von Dispensierinformationen" erzeugen.
 </requirement>
@@ -35,7 +35,7 @@ Dieser Anwendungsfall kann so lange wiederholt werden, so lange sich der Task zu
 <requirement conformance="SHALL" key="IG-TIFlow-RX-180" title="PS abgebende LEI: Dispensierinformationen bereitstellen - Dispensierinformation übermitteln" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der abgebenden LEI MUSS im Anwendungsfall "Dispensierinformationen bereitstellen" für das abgegebene E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$dispense mit ACCESS_TOKEN im Authorization-Header Task-ID in URL &lt;id&gt; Geheimnis in URL-Parameter ?secret= MedicationDispense bzw. Bundle Ressource ausführen.
 </requirement>

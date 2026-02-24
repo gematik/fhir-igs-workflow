@@ -16,7 +16,7 @@ Der Nutzer des Systems soll in jedem Verordnungsvorgang für Arzneimittel die M�
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-122" title="PS verordnende LEI: UX - E-Rezept im Verordnungsvorgang erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL es dem Nutzer ermöglichen, in jedem Verordnungsvorgang für Arzneimittel, in denen ein E-Rezept zulässig ist, ein E-Rezept zu erstellen.
 </requirement>
@@ -29,7 +29,7 @@ Das Primärsystem soll bei Ladevorgängen zum Anlegen, Speichern und Verarbeiten
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-123" title="PS verordnende LEI: UX - Verarbeitungsvorgänge im Hintergrund" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL die Verarbeitung von Daten und Kommunikation mit den Komponenten der TI im Hintergrund vornehmen und dem Nutzer parallel die Arbeit im Primärsystem ermöglichen, sofern keine Abhängigkeit zur Verarbeitung besteht.
 </requirement>
@@ -38,7 +38,7 @@ Das Primärsystem soll bei Ladevorgängen zum Anlegen, Speichern und Verarbeiten
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-124" title="PS verordnende LEI: UX - Ergebnismeldung von Verarbeitungsvorgängen im Hintergrund" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL dem Nutzer das Ergebnis einer Verarbeitung , welche das PS im Hintergrund durchgeführt hat, darstellen, ohne dabei den Arbeitsfluss zu unterbrechen. Fehlermeldungen sollen dabei deutlicher sichtbar sein als Erfolgsmeldungen.
 </requirement>
@@ -53,7 +53,7 @@ In den Einstellungen des Primärsystems kann das E-Rezept übergreifend oder fü
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-125" title="PS verordnende LEI: UX - Konfigurationsparameter E-Rezept" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL einen patienten-individuellen Konfigurationsparameter anbieten, ob Verordnungen für den Patienten per Default als E-Rezept erstellt werden.
 </requirement>
@@ -66,7 +66,7 @@ eines E-Rezeptes Um Rezepte schnell erstellen zu können, soll es möglich sein,
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-126" title="PS verordnende LEI: UX - Defaulteinstellung E-Rezept-Ausdruck" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL einen patienten-individuellen Konfigurationsparameter anbieten, ob für ein E-Rezept default-mäßig der Patientenausdruck ausgedruckt, oder ob das Rezept über das E-Rezept-FdV oder mittels eGK eingelöst werden soll.
 </requirement>
@@ -77,7 +77,7 @@ Das Primärsystem soll für die Einführung des patienten-individuellen Konfigur
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-127" title="PS verordnende LEI: UX – Stammdaten für Arzt und Einrichtung übernehmen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL bei der Erstellung des E-Rezeptes die für den behandelnden Arzt und für die Einrichtung hinterlegten Stammdaten in die Verordnung übernehmen.
 </requirement>
@@ -90,7 +90,7 @@ Das Primärsystem soll für die Einführung des patienten-individuellen Konfigur
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-128" title="PS verordnende LEI: UX - Optimaler Klickpfad" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der abgebenden LEI SOLL zum Erstellen von neuen E-Rezepten folgenden Klickpfad umsetzen.
      <table>
@@ -153,13 +153,13 @@ Das Primärsystem soll für die Einführung des patienten-individuellen Konfigur
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-129" title="PS verordnende LEI: UX - Optimaler Klickpfad - Erzeugung einer neuen Verordnung" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL es dem Nutzer ermöglichen, aus jeder der Medikation des Patienten bezogenen Ansicht einen Prozess zur Erzeugung einer neuen Verordnung starten zu können.
 </requirement>
 
 <figure>
-    <div class="gem-ig-img-container" style="--box-width: 500px; margin-bottom: 30px;">
+    <div class="gem-ig-img-container" style="--box-width: 600px; margin-bottom: 30px;">
         <img src="./ux-verordnend-1.png" alt="Rezeptübersicht" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung: </strong>Beispiel einer Rezeptübersicht</figcaption>
@@ -171,7 +171,7 @@ Das Primärsystem soll für die Einführung des patienten-individuellen Konfigur
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-130" title="PS verordnende LEI: UX - Optimaler Klickpfad - Vorbelegung bekannter Informationen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL Informationen, die sich aus dem aktuellen Aufrufkontext ergeben (z.B. den Namen des aktuell gewählten Patienten oder die medizinischen Informationen einer vorherigen Verordnung), übernehmen und diese in der neuen Verordnung vorausfüllen.
 </requirement>
@@ -180,7 +180,7 @@ Das Primärsystem soll für die Einführung des patienten-individuellen Konfigur
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-131" title="PS verordnende LEI: UX - Optimaler Klickpfad - Suche nach gewünschtem Präparat" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL dem Nutzer nach Auswahl der Option zur Erstellung einer Verordnung die Möglichkeit geben, nach dem gewünschte Präparat aus einer Datenbank zu suchen und die zugehörigen Informationen in die Verordnung übernehmen.
 </requirement>
@@ -188,7 +188,7 @@ Das Primärsystem soll für die Einführung des patienten-individuellen Konfigur
 Das PS kann dem Nutzer in diesem Arbeitsschritt auch eine Liste der häufig verschriebenen Medikamente anbieten.
 
 <figure>
-    <div class="gem-ig-img-container" style="--box-width: 500px; margin-bottom: 30px;">
+    <div class="gem-ig-img-container" style="--box-width: 600px; margin-bottom: 30px;">
         <img src="./ux-verordnend-2.png" alt="Medikamentensuche" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung: </strong>Beispiel einer Medikamentensuche</figcaption>
@@ -201,7 +201,7 @@ Das PS kann dem Nutzer in diesem Arbeitsschritt auch eine Liste der häufig vers
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-132" title="PS verordnende LEI: UX - Optimaler Klickpfad - Auswahl und Anpassung des Verordnungsinhalts und Signaturvorbereitung" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL dem Nutzer nach der Auswahl des Verordnungsinhalts die Möglichkeit geben, weitere Details (z.B. Anzahl der Packungen) der aktuellen als E-Rezept dargestellten Verordnung hinzuzufügen. Es SOLL den Nutzer darauf hinweisen, dass mit der Bestätigung dieser Auswahl die Verordnung erfolgen soll und der erste Schritt zur Signatur ausgelöst wird. Dieser Hinweis muss durch den Nutzer nicht bestätigt werden.
 </requirement>
@@ -213,7 +213,7 @@ passende Benennung z.B. mit  "Verordnen", "Dem Rezept hinzufügen".
 passende Benennung z.B. mit "[Verordnung/Arzneimittel]zur Signatur auswählen" oder durch die Verwendung eines Signatur-Icons.
 
 <figure>
-    <div class="gem-ig-img-container" style="--box-width: 500px; margin-bottom: 30px;">
+    <div class="gem-ig-img-container" style="--box-width: 600px; margin-bottom: 30px;">
         <img src="./ux-verordnend-3.png" alt="Neue Verordnung" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung: </strong>Beispiel der Maske einer neuen Verordnung</figcaption>
@@ -225,7 +225,7 @@ passende Benennung z.B. mit "[Verordnung/Arzneimittel]zur Signatur auswählen" 
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-133" title="PS verordnende LEI: UX - Optimaler Klickpfad - Vorbereitung mehrerer Verordnungen zum späteren Signieren" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL dem Nutzer ermöglichen, mehrere Verordnungen für den aktuellen Patienten zum späteren Signieren vorzubereiten, indem er die bisher beschriebenen Schritte des optimalem Klickpfades für jede Verordnung wiederholt.
 </requirement>
@@ -236,7 +236,7 @@ Hinweis: Im Gegensatz zur Aufgabenliste handelt es sich bei dieser Liste um eine
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-134" title="PS verordnende LEI: UX - Optimaler Klickpfad - Signieren aller vorbereiteten Verordnungen auf einmal" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL dem Arzt die Möglichkeit geben, alle vorbereiteten Verordnungen auf einmal zu signieren (zweiter Klick), indem er dies auf einer diesbezüglich eindeutig benannten Schaltfläche auswählt.
 </requirement>
@@ -244,7 +244,7 @@ Hinweis: Im Gegensatz zur Aufgabenliste handelt es sich bei dieser Liste um eine
 Hinweis: Mit der Umsetzung der Aufgabenliste für das Signieren der Verordnungen wird diese Anforderung erfüllt.
 
 <figure>
-    <div class="gem-ig-img-container" style="--box-width: 500px; margin-bottom: 30px;">
+    <div class="gem-ig-img-container" style="--box-width: 600px; margin-bottom: 30px;">
         <img src="./ux-verordnend-4.png" alt="Jetzt signieren" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung: </strong>Beispiel einer Rezeptübersicht Hinweis: Um die Benennung der Schaltfläche eindeutig zu gestalten, kann diese z.B. als "Jetzt signieren" benannt werden.</figcaption>
@@ -257,7 +257,7 @@ Hinweis: Mit der Umsetzung der Aufgabenliste für das Signieren der Verordnungen
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-135" title="PS verordnende LEI: UX - Optimaler Klickpfad - Hintergrund-Signaturprozess und Fehleranzeigen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL sicherstellen, dass der Signaturvorgang im Hintergrund läuft und eine weitere vollumfängliche Nutzung des PS möglich bleibt. Falls es zu Fehlern beim Signaturvorgang kommt, MUSS das PS dem Nutzer diese anzeigen.
 </requirement>
@@ -266,7 +266,7 @@ Hinweis: Mit der Umsetzung der Aufgabenliste für das Signieren der Verordnungen
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-136" title="PS verordnende LEI: UX - Optimaler Klickpfad - Hinweistext bei erfolgreichem Signieren" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL dem Nutzer einen Hinweistext anzeigen, wenn das Signieren und das Einstellen im E-Rezept-Fachdienst erfolgreich war. Das Ausblenden des Hinweistextes erfolgt ohne Interaktion des Nutzers.
 </requirement>
@@ -275,7 +275,7 @@ Hinweis: Mit der Umsetzung der Aufgabenliste für das Signieren der Verordnungen
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-137" title="PS verordnende LEI: UX - Optimaler Klickpfad - Automatischer Ausdruck bei entsprechender Konfiguration" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL nach dem erfolgreichem Einstellen eines E-Rezeptes in den E-Rezept-Fachdienst, wenn die entsprechende Konfigurationseinstellung für den Einlöseweg dies vorsieht, den E-Rezept-Ausdruck automatisch ausdrucken.
 </requirement>
@@ -288,7 +288,7 @@ Derzeit können nicht alle Verordnungsinhalte, die per Muster 16 zu verschreiben
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-138" title="PS verordnende LEI: UX – Anwendbarkeit E-Rezept" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL die Möglichkeit zum Erstellen eines E-Rezepts nur anbieten, wenn der zu erstellende Verordnungstyp durch die Anwendung E-Rezept unterstützt wird.
 </requirement>
@@ -299,7 +299,7 @@ Freitextverordnungen sollen nur verwendet werden, wenn das Erstellen einer struk
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-139" title="PS verordnende LEI: UX – Hinweis bei Freitextverordnungen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL dem Nutzer beim Erstellen einer Freitextverordnung den Hinweis darstellen, was aktuell als E-Rezept verordnet werden darf.
 </requirement>
@@ -314,7 +314,7 @@ Um weiterführende Informationen zu einer Verordnung zu notieren (z.B. die Diagn
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-140" title="PS verordnende LEI: UX - Abgabehinweise für den Apotheker" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL es dem Nutzer ermöglichen, Freitexteingaben für Abgabehinweise für den Verordnungsdatensatz (KBV_ERP_Prescription MedicationRequest.note) zu erfassen.
 </requirement>
@@ -327,7 +327,7 @@ Beim Erstellen einer Verordnung kann es zu einer Abweichung zwischen dem die Ver
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-141" title="PS verordnende LEI: E-Rezept erstellen - author Practitioner gemäß signierendem HBA" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL sicherstellen, dass für den im Verordnungsdatensatz referenzierten Practitioner (KBV_PR_ERP_Composition Composition.author) die Daten des Leistungserbringers verwendet werden, mit dessen HBA der Verordnungsdatensatz signiert wird.
 </requirement>
@@ -345,7 +345,7 @@ Vertretenen tätig, bspw. als dessen Sicherstellungsassistentin im Falle von Kin
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-142" title="PS verordnende LEI: UX - Vertretungssituation - Möglichkeit zur Entscheidung über Vertretungsfall" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL es ermöglichen für ein Nutzerprofil eine Vertretungssituation für einen Zeitraum zu hinterlegen. Folgende Konfigurationen sind zulässig: Kollegiale Vertretung (nach § 20 Musterberufsordnung) Persönliche Vertretung (nach § 32 Abs. 2, Satz 2 Ärzte-Zulassungsverordnung
 </requirement>
@@ -354,7 +354,7 @@ Vertretenen tätig, bspw. als dessen Sicherstellungsassistentin im Falle von Kin
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-143" title="PS verordnende LEI: UX - Vertretungssituation - Signatur eines E-Rezeptes" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL es in einer Vertretungssituation ermöglichen, dass der Vertretende anstatt der ursprünglich in der Verordnung benannte Arzt das E-Rezept signieren kann.
 </requirement>
@@ -363,7 +363,7 @@ Vertretenen tätig, bspw. als dessen Sicherstellungsassistentin im Falle von Kin
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-144" title="PS verordnende LEI: UX - Vertretungssituation - Kollegiale Vertretung" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL bei der Vertretungskonstellation "Kollegiale Vertretung" (nach § 20 Musterberufsordnung) den vertretenden Arzt, der die Verordnung ausstellt und signiert, in der Verordnung hinterlegen.
 </requirement>
@@ -374,7 +374,7 @@ Der ausstellende (signierende) Arzt wird in KBV_PR_ERP_Composition Composition
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-145" title="PS verordnende LEI: UX - Vertretungssituation - Persönliche Vertretung" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL bei der Vertretungskonstellation "Persönliche Vertretung" (nach § 32 Abs. 2, Satz 2 Ärzte-Zulassungsverordnung) sowohl den vertretenden Arzt, der die Verordnung ausstellt und signiert, als auch den zu vertretenden Arzt in der Verordnung hinterlegen.
 </requirement>
@@ -393,7 +393,7 @@ Hinweis: Das in diesem Abschnitt beschriebene Szenario "Sonderfall Weiterbildung
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-146" title="PS verordnende LEI: UX – Weiterbildungsassistent - Möglichkeit zur Entscheidung über Weiterbildungsassistent" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL es dem Nutzer ermöglichen, zu entscheiden, ob der Verordnende ein Weiterbildungsassistent ist.
 </requirement>
@@ -402,7 +402,7 @@ Hinweis: Das in diesem Abschnitt beschriebene Szenario "Sonderfall Weiterbildung
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-147" title="PS verordnende LEI: UX – Weiterbildungsassistent – Konfiguration ausbildende Person" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL es dem Nutzer ermöglichen, die Daten zur ausbildenden Person eines Weiterbildungsassistenten in der Konfiguration des Systems zu verwalten, sodass die Daten für das Erstellen von Verordnungen durch den Weiterbildungsassistenten genutzt werden können.
 </requirement>
@@ -413,7 +413,7 @@ Die für den Weiterbildungsassistenten und die ausbildende Person anzugebenden D
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-148" title="PS verordnende LEI: UX – Weiterbildungsassistent – E-Rezept erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL beim Erstellen eines E-Rezeptes durch einen Weiterbildungsassistenten die Daten des Weiterbildungsassistenten und der ausbildenden Person in den Verordnungsdatensatz übernehmen.
 </requirement>
@@ -428,7 +428,7 @@ Für die Verordnungen von E-T-Rezepten sind gesonderte UX-Vorgaben definiert, um
 <requirement conformance="SHALL" key="IG-TIFlow-RX-149" title="PS verordnende LEI: UX - E-T-Rezept – Hinweis T-Rezept" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI MUSS beim Erstellen von Verordnungen für Arzneimittel nach §3a AMVV sicherstellen, dass das Kennzeichen "T-Rezept" dem Nutzer gut sichtbar angezeigt wird.
 </requirement>
@@ -437,7 +437,7 @@ Für die Verordnungen von E-T-Rezepten sind gesonderte UX-Vorgaben definiert, um
 <requirement conformance="SHALL" key="IG-TIFlow-RX-150" title="PS verordnende LEI: UX - E-T-Rezept – Automatische Berechnung der Reichdauer" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL beim Erstellen eines E-T-Rezepts den Nutzer dabei unterstützen, die anzugebende Reichdauer automatisch zu berechnen, wenn die benötigten strukturierten Dosier- und Packungsinformationen im PS vorliegen.
 </requirement>
@@ -446,7 +446,7 @@ Für die Verordnungen von E-T-Rezepten sind gesonderte UX-Vorgaben definiert, um
 <requirement conformance="SHALL" key="IG-TIFlow-RX-151" title="PS verordnende LEI: UX - E-T-Rezept – Manuelle Eingabe der Reichdauer" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI MUSS dem Nutzer beim Erstellen eines E-T-Rezeptes die Möglichkeit geben, die Reichdauer der E-T-Verordnung manuell einzugeben.
 </requirement>
@@ -455,7 +455,7 @@ Für die Verordnungen von E-T-Rezepten sind gesonderte UX-Vorgaben definiert, um
 <requirement conformance="SHALL" key="IG-TIFlow-RX-152" title="PS verordnende LEI: UX - E-T-Rezept – Warnung Reichdauer" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI MUSS dem Nutzer beim Erstellen eines E-T-Rezeptes einen Warnhinweis darstellen, wenn die zulässige maximale Reichdauer, entsprechend den gesetzlichen Vorgaben, von 4 Wochen für gebärfähige Frauen und andernfalls 12 Wochen überschritten wird. Folgende Texte* sind anzuzeigen: "Für gebärfähige Frauen darf die Reichdauer der Verordnung 4 Wochen nicht überschreiten" "Die Reichdauer der Verordnung darf 12 Wochen nicht überschreiten" *Die Formulierung des anzuzeigenden Textes werden durch eine Bekanntmachung des BfArM definiert.
 </requirement>
@@ -463,7 +463,7 @@ Für die Verordnungen von E-T-Rezepten sind gesonderte UX-Vorgaben definiert, um
 ### Mehrfachverordnungen
 
 <figure>
-    <div class="gem-ig-img-container" style="--box-width: 500px; margin-bottom: 30px;">
+    <div class="gem-ig-img-container" style="--box-width: 600px; margin-bottom: 30px;">
         <img src="./ux-verordnend-5.png" alt="Mehrfachverordnung" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung: </strong>Beispiel der Maske für eine Mehrfachverordnung</figcaption>
@@ -475,7 +475,7 @@ Für die Verordnungen von E-T-Rezepten sind gesonderte UX-Vorgaben definiert, um
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-153" title="PS verordnende LEI: UX - Mehrfachverordnungen als Option" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL dem Nutzer Mehrfachverordnungen in jedem Verordnungsvorgang als Option anbieten (mindestens bei Verordnungen für Patienten mit einer Dauermedikation). &lt;=
 </requirement>
@@ -484,7 +484,7 @@ Für die Verordnungen von E-T-Rezepten sind gesonderte UX-Vorgaben definiert, um
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-154" title="PS verordnende LEI: UX - MVO - Generierung von Mehrfachverordnungen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL es dem Nutzer ermöglichen Mehrfachverordnungen leicht aus einem Verordnungsvorgang heraus generieren können.
 </requirement>
@@ -493,7 +493,7 @@ Für die Verordnungen von E-T-Rezepten sind gesonderte UX-Vorgaben definiert, um
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-155" title="PS verordnende LEI: UX - MVO- Automatische Befüllung von Teilverordnungen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL es dem Nutzer ermöglichen bei Mehrfachverordnungen den Verordnungsinhalt nur einmalig angeben zu müssen. Das PS der verordnenden LEI SOLL die Teilverordnungen automatisch mit dem gleichen Inhalt füllen.
 </requirement>
@@ -502,7 +502,7 @@ Für die Verordnungen von E-T-Rezepten sind gesonderte UX-Vorgaben definiert, um
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-156" title="PS verordnende LEI: UX - MVO - Auswahl der Anzahl von Teilverordnungen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL es dem Nutzer ermöglichen die Anzahl der Teilverordnungen mit einem Klick auswählen zu können.
 </requirement>
@@ -511,7 +511,7 @@ Für die Verordnungen von E-T-Rezepten sind gesonderte UX-Vorgaben definiert, um
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-157" title="PS verordnende LEI: UX - MVO - Unterstützung bei Einlösefristen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL den Nutzer beim Berechnen und Ausfüllen der Einlösefristen der einzelnen Teilverordnungen unterstützen und sinnvolle Abstände zur Auswahl anbieten (z.B. quartalsweise, nach Ende der berechneten Reichweite, etc.). Eine manuelle Änderung der Einlösefristen MUSS einfach möglich sein (z.B. über Auswahl des Datums über einen Kalender).
 </requirement>
@@ -520,7 +520,7 @@ Für die Verordnungen von E-T-Rezepten sind gesonderte UX-Vorgaben definiert, um
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-158" title="PS verordnende LEI: UX - MVO - Löschen von zusammengehörenden Teilverordnungen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL dem Arzt ermöglichen, dass zusammengehörende Teilverordnungen auf einmal und einzeln gelöscht werden können.
 </requirement>
@@ -529,7 +529,7 @@ Für die Verordnungen von E-T-Rezepten sind gesonderte UX-Vorgaben definiert, um
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-159" title="PS verordnende LEI: UX - MVO - Signieren von Teilverordnungen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL dem Nutzer ermöglichen, dass alle Teilverordnungen in einer Operation mit der Komfortsignatur signiert werden können.
 </requirement>
@@ -538,7 +538,7 @@ Für die Verordnungen von E-T-Rezepten sind gesonderte UX-Vorgaben definiert, um
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-160" title="PS verordnende LEI: UX - MVO - Vorbereitung durch MFA" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL es ermöglichen, dass Mehrfachverordnungen inhaltlich von MFA vorbereitet und dem Arzt zur Signatur vorgelegt werden können.
 </requirement>
@@ -553,7 +553,7 @@ Ein Arzt arbeitet in seinem Arbeitsablauf verschiedene Signaturaufgaben (bspw. f
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-161" title="PS verordnende LEI: UX – Aufgabenliste" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL es dem Nutzer ermöglichen, die zu signierenden Verordnungen in einer Liste anzuzeigen und zu bearbeiten.
 </requirement>
@@ -561,7 +561,7 @@ Ein Arzt arbeitet in seinem Arbeitsablauf verschiedene Signaturaufgaben (bspw. f
 Zu den relevanten Informationen einer Verordnung gehören Patient, Medikament, Einnahmehinweise, Arzt, Weg der Einlösung, Ersteller etc.. Die Aufgabenliste kann weitere Signaturaufträge oder andere Praxisaufgaben beinhalten. Folgende Grafik dient als Beispiel: 
 
 <figure>
-    <div class="gem-ig-img-container" style="--box-width: 500px; margin-bottom: 30px;">
+    <div class="gem-ig-img-container" style="--box-width: 600px; margin-bottom: 30px;">
         <img src="./ux-verordnend-6.png" alt="Signaturaufträge" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung: </strong>Beispiel einer Aufgabenliste mit Signaturaufträgen</figcaption>
@@ -573,7 +573,7 @@ Zu den relevanten Informationen einer Verordnung gehören Patient, Medikament, E
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-162" title="PS verordnende LEI: UX – Aufgabenliste - Filtern und Sortieren" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL dem Nutzer der Aufgabenliste ermöglichen, diese mindestens nach folgenden Kriterien zu sortieren und zu filtern: Behandelnder Arzt Patient Erstellungsdatum Art des zu signierenden Dokuments (z.B. eAU, E-Rezept, etc.)
 </requirement>
@@ -586,7 +586,7 @@ Für einen effizienten Arbeitsablauf soll ein MFA E-Rezepte anlegen, ausfüllen 
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-163" title="PS verordnende LEI: UX – Anlegen eines E-Rezeptes durch MFA" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL es ermöglichen, dass Nutzer ohne Zugriff auf einen HBA ein E-Rezept im System anlegen und ausfüllen können. Es SOLL dem Nutzer ermöglichen, das Rezept einem Verordnenden zur Signatur zu übermitteln.
 </requirement>
@@ -595,7 +595,7 @@ Für einen effizienten Arbeitsablauf soll ein MFA E-Rezepte anlegen, ausfüllen 
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-164" title="PS verordnende LEI: UX – Keine Signatur von Nutzern ohne HBA" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL verhindern, dass ein Nutzer ohne HBA ein E-Rezept signieren kann.
 </requirement>
@@ -608,7 +608,7 @@ Um eine zeitnahe Bearbeitung von Signaturaufgaben des Arztes zu ermöglichen, so
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-165" title="PS verordnende LEI: UX – Aufgabenliste – Benachrichtigungen für neue Aufgaben" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL dem Nutzer über einen Hinweis darüber benachrichtigen, dass neue zu signierende Aufgaben in der Aufgabenliste vorhanden sind.
 </requirement>
@@ -621,7 +621,7 @@ Der Verordnende hat die Möglichkeit die in der Aufgabenliste vorbereiteten Vero
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-166" title="PS verordnende LEI: UX – Aufgabenliste - Bearbeiten einzelner Einträge" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL es dem Nutzer ermöglichen, beim Überprüfen eines E-Rezeptes in der Aufgabenliste noch Veränderungen an der Verordnung vorzunehmen, bevor er diese signiert.
 </requirement>
@@ -630,7 +630,7 @@ Der Verordnende hat die Möglichkeit die in der Aufgabenliste vorbereiteten Vero
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-167" title="PS verordnende LEI: UX – Aufgabenliste - Zugriff auf Patientendaten" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL es dem Nutzer ermöglichen, die Informationen eines Patienten zu einem Eintrag aus der Aufgabenliste heraus einzusehen.
 </requirement>
@@ -639,7 +639,7 @@ Der Verordnende hat die Möglichkeit die in der Aufgabenliste vorbereiteten Vero
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-168" title="PS verordnende LEI: UX – Aufgabenliste - Grafische Anzeige E-Rezepte" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL es dem Nutzer ermöglichen, die grafische Ansicht von Rezepten aus der Aufgabenliste heraus anzuzeigen.
 </requirement>
@@ -652,7 +652,7 @@ Wie in[gemILF_PS#A_23503 - Bündeln von Signaturen zur Stapelsignatur] beschri
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-169" title="PS verordnende LEI: UX – Aufgabenliste - Mehrfachauswahl zur Signatur" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL es dem Nutzer ermöglichen, über eine Mehrfachauswahl von Einträgen in der Aufgabenliste diese für die Signatur auszuwählen.
 </requirement>
@@ -669,7 +669,7 @@ Folgerezeptes In den Fällen, wo der Patient nicht in der Praxis anwesend ist, w
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-170" title="PS verordnende LEI: Benachrichtigungssystem - Information über Rezeptausstellung" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL es dem Nutzer ermöglichen, nach dem erfolgreichen Einstellen eines E-Rezepts im E-Rezept-Fachdienst eine Benachrichtigung (bspw. per SMS oder E-Mail) an den Patienten zu versenden.
 </requirement>
@@ -678,7 +678,7 @@ Folgerezeptes In den Fällen, wo der Patient nicht in der Praxis anwesend ist, w
 <requirement conformance="SHALL" key="IG-TIFlow-RX-171" title="PS verordnende LEI: Benachrichtigungssystem - Schützenswerte Informationen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI DARF in der Nachricht, die den Patienten darüber informiert, dass ein E-Rezept ausgestellt wurde, NICHT medizinische oder personenbezogene Informationen einfügen.
 </requirement>
@@ -695,7 +695,7 @@ Wenn es technisch nicht möglich ist ein E-Rezept auszustellen (Ausfall einer de
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-172" title="PS verordnende LEI: UX - Verhalten bei Ausfall von TI Komponenten des E-Rezepts" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL dem Nutzer bei einem Ausfall von für die Anwendung E-Rezept relevanten Komponenten (negativer Healthcheck der TI, Fehler in der Kommunikation mit Komponenten der TI) automatisch einen Muster 16 Ausdruck erstellen. Das System SOLL dem Nutzer dieses Verhalten per Hinweis mitteilen.
 </requirement>
@@ -710,7 +710,7 @@ Im Arbeitsablauf des Nutzers können Fehler in der Erstellung und Verarbeitung e
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-173" title="PS verordnende LEI: UX - Verständliche Fehlermeldungen - technische Fehler" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL beim Auftreten eines Fehlers dem Nutzer eine verständliche Fehlermeldung ausgeben und nicht die von der Quelle erzeugte technische Fehlermeldung darstellen.
 </requirement>
@@ -719,7 +719,7 @@ Im Arbeitsablauf des Nutzers können Fehler in der Erstellung und Verarbeitung e
 <requirement conformance="SHOULD" key="IG-TIFlow-RX-174" title="PS verordnende LEI: UX - Verständliche Fehlermeldungen - Handlungsempfehlung" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI SOLL beim Auftreten eines Fehlers, falls möglich, dem Nutzer Handlungsempfehlungen ausgeben, die dazu beitragen können, den Fehler zu beseitigen.
 </requirement>
@@ -738,7 +738,7 @@ Rezept-Fachdienst verfügbar
 <requirement conformance="SHALL" key="IG-TIFlow-RX-175" title="PS verordnende LEI: UX - Fehlerbenachrichtigung bei Löschversuch eines E-Rezepts" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der verordnenden LEI MUSS, falls beim Löschen eines E-Rezeptes ein Fehler auftritt, dem Nutzer in einem Hinweis den Grund für den gescheiterten Löschversuch darstellen. Dieser leitet sich aus dem Fehlercode vom E-Rezept-Fachdienst ab.
 </requirement>

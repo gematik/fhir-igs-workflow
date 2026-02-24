@@ -7,7 +7,7 @@ Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemsp
 <requirement conformance="SHALL" key="IG-TIFlow-RX-176" title="E-Rezept-FdV: E-Rezept löschen - Flowtype 169 / 209 - nur wenn beliefert" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
-        <testProcedure id="testProcedurePT02"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Das E-Rezept-FdV DARF im Anwendungsfall "E-Rezept löschen" dem Nutzer das Löschen von E-Rezepten mit dem Flowtype 169 oder 209 NICHT ermöglichen, wenn der Task einen Status ungleich "completed" hat.
 </requirement>
