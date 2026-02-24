@@ -20,7 +20,7 @@ cat > "$OUTPUT_JS" <<EOF
 // === AUTO-GENERATED FILE ===
 // Do not edit by hand; edit scripts/generate-heading-links-js.sh instead.
 
-const newIssueGithubLink = "https://github.com/$GITHUB_REPO/issues/new?template=$IG_TEMPLATE_NAME";
+const newIssueGithubLink = "https://github.com/gematik/fhir-igs-workflow/issues/new?template=$IG_TEMPLATE_NAME";
 const linkParameter = "$LINK_PARAMETER";
 const igTagParameter = "$IG_TAG_PARAMETER";
 const igTagValue = "$IG_TAG";
