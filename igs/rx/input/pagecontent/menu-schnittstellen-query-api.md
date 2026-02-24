@@ -1,22 +1,5 @@
-Query API
+Die folgenden Query APIs stellt der E-Rezept-Fachdienst dem _Primärsystem eRP_ sowie dem _E-Rezept-Fachdienst_ zur Verfügung, um FHIR-Daten gezielt abrufen zu können.
 
-Diese Seite bietet den Einstieg in die lesenden RX-Schnittstellen.
-
-## Lesereihenfolge
-
-1. Modulübergreifende Regeln aus eFlow Core
-2. RX-spezifische Query-Regeln in den folgenden Seiten
-
-## Ressourcen
-
-- [Task](./query-api-task.html)
-- [MedicationDispense](./query-api-medicationdispense.html)
-
-Auch in der Query API werden FD- und Client-Anforderungen jeweils in eigene Unterseiten getrennt.
-
-Die Task-Seite umfasst die Varianten `GET /Task`, `GET /Task/{id}`, `GET /Task/{id}?ac=...` und `GET /Task/{id}?secret=...`.
-
-Modulübergreifende Query-Ressourcen sind im Core IG beschrieben:
-
-- [AuditEvent (Core)](https://gemspec.gematik.de/ig/fhir/{{ site.data.constants.tiflow_core_version }}query-api-auditevent.html)
-- [Device (Core)](https://gemspec.gematik.de/ig/fhir/{{ site.data.constants.tiflow_core_version }}query-api-device.html)
+- [Query API: Task (E-Rezept)](./query-api-task.html)
+- [Query API: MedicationDispense (Abgabe)](./query-api-medicationdispense.html)
+- [Query API: Communication (Zuweisung)](./query-api-communication.html)
