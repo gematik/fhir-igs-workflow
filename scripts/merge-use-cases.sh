@@ -44,7 +44,6 @@ yq -o=json '.' "$MODULE_IN" > "$module_json"
   echo "#"
   echo "########################################################################"
   echo "# ATTENTION: This file is generated. Do not edit manually."
-  echo "# Sources: $core_json $module_json"
   echo "########################################################################"
   echo "#"
   python3 - "$core_json" "$module_json" "$CORE_IMG_DIR" "$MODULE_IMG_DIR" <<'PY' | yq -P -o=yaml
