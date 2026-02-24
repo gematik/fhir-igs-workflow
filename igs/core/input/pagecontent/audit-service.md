@@ -43,6 +43,39 @@ Der E-Rezept-Fachdienst soll Protokolldateien schreiben, die eine Analyse techni
 
 Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle Zugriffe auf die personenbezogenen und medizinischen Daten eines Versicherten für den Versicherten einsehbar sind. Diese Zugriffsprotokolle sind unabhängig vom Systemprotokoll und stehen ausschließlich dem Versicherten zur Wahrnehmung seiner Betroffenenrechte zur Einsicht zur Verfügung.
 
+<!-- A_19296-04 -->
+<requirement conformance="SHALL" key="IG-WF-CORE-77" title="E-Rezept-Fachdienst - Inhalt Protokolleintrag" version="0">
+	<meta lockversion="false"/>
+	<actor name="E-Rezept-Fachdienst">
+    	<testProcedure id="Produkttest"/>
+  </actor>
+  Der E-Rezept-Fachdienst MUSS einen Protokolleintrag mit den folgenden Werten befüllen:
+	<ul>
+    <li>AuditEvent.text: Generierung eines HTML-<div>-Elements mit lesbarer Beschreibung in einfacher Sprache</li>
+    <li>AuditEvent.type: Fester Wertrest gemäß [CodeSystem: Audit Event ID]</li>
+    <li>AuditEvent.subtype: aus dem ValueSet [ValueSet http://hl7.org/fhir/ValueSet/auditevent-sub-type] gemäß [CodeSystem http://hl7.org/fhir/restful-interaction]:
+    <ul>
+      <li>create beim Hinzufügen/Speichern/Anlegen eines Datenobjekts mit Versichertenbezug (mit Ausnahme von AuditEvent- und Communication-Ressource)</li>
+      <li>read beim lesenden Zugriff auf ein Datenobjekt mit Versichertenbezug</li>
+      <li>update, wenn das Datenobjekt mit Versichertenbezug geändert/aktualisiert wird</li>
+      <li>delete, wenn das Datenobjekt mit Versichertenbezug manuell oder automatisch gelöscht wird</li>
+    </ul>
+    </li>
+    <li>AuditEvent.action: analog AuditEvent.subType (C, R, U, D) gemäß [ValueSet http://hl7.org/fhir/ValueSet/audit-event-action]</li>
+    <li>AuditEvent.recorded: aktuelle Systemzeit des E-Rezept-Fachdienstes</li>
+    <li>AuditEvent.outcome: Ergebnis der aufgerufenen Operation gemäß [ValueSet http://hl7.org/fhir/ValueSet/audit-event-outcome] (0 = Erfolg, 4 = Fehler auf Clientseite, 8 = Serverfehler)</li>
+    <li>AuditEvent.agent.type: Fester Werthumanuser bzw. bei Übermittlung an ePA oder NCPeH-FDdataprocessor aus [CodeSystem: Security Role Type (Experimental)]</li>
+    <li>AuditEvent.agent.name:Lesbarer Name aus ID_TOKEN des Zugreifenden, der die zu protokollierende Aktion getriggert hat, z.B. "Praxis Dr. Müller, Bahnhofstr. 78" oder Versicherter z.B. "Max Mustermann" bzw. bei Übermittlung an ePA "E-Rezept-Fachdienst"</li>
+    <li>AuditEvent.agent.who: KVNR bzw. Telematik-ID des zugreifenden Nutzers aus ID_TOKEN, der diesen Protokolleintrag ausgelöst hat</li>
+    <li>AuditEvent.agent.requestor: Fester Wert false, da keine Protokolleinträge von außen erzeugt werden</li>
+    <li>AuditEvent.soure.site: Fester Wert E-Rezept-Fachdienst</li>
+    <li>AuditEvent.soure.observer: Device-Informationen des E-Rezept-Fachdienstes (status, serialnumber=gemäß Release)</li>
+    <li>AuditEvent.entity.what: Referenz auf das durch den Abruf betroffene Datenobjekt Task, ChargeItem, MedicationDispense, Consent oder Objekt der Zugriffsberechtigung</li>
+    <li>AuditEvent.entity.name: Eintrag der KVNR des betroffenen Versicherten aus dem Identifier des protokollierten Datenobjekts (String)</li>
+    <li>AuditEvent.entity.description: Rezept-ID als Identifier, wird übernommen aus MedicationDispense, ChargeItem oder Task bzw. Consent.category.coding.code bei Anlegen oder Löschen eines Consent bzw. countryCode bei Anlegen oder Löschen einer Zugriffsberechtigung</li>
+  </ul>
+</requirement>
+
 <!-- A_19284-13 -->
 <requirement conformance="SHALL" key="IG-WF-CORE-77" title="E-Rezept-Fachdienst - Versichertenprotokoll zu Operationen" version="0">
 	<meta lockversion="false"/>
