@@ -1,5 +1,6 @@
 ### Einordnung in die Telematikinfrastruktur
 TODO: Fix link
+
 E-Rezepts für PKV-Versicherte wird [hier](https://www.example.com) beschrieben. Die App des Kostenträgers ist eine neue Komponente, zu der das E-Rezept-Frontend des Versicherten eine Schnittstelle für Abrechnungsinformationen anbietet. Die App des Kostenträgers ist keine Komponente der TI. Der Export als PDF ermöglicht weitere Übermittlungskanäle (z. B. E-Mail, Webportal).
 
 ### Fachliches Konzept
@@ -19,6 +20,7 @@ Der PKV-Versicherte kann über die E-Rezept App die Abrechnungsinformation digit
 
 ### Technisches Konzept
 TODO: Fix link
+
 Der Workflow-Typ "200" und der Workflow-Typ "209" werden [hier](https://www.example.com) beschrieben.
 
 Für E-Rezepte der Workflow-Types "200" und "209" können die Abrechnungsinformationen über den E-Rezept-Fachdienst an den Versicherten übermittelt werden.
