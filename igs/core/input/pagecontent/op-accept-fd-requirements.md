@@ -11,19 +11,6 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
     Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept den im HTTP-Header "X-AccessCode" oder URL-Parameter "?ac=..." übertragenen AccessCode gegen den im referenzierten Task gespeicherten AccessCodeTask.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit Zugriffe auf diesen Datensatz nur durch Berechtigte in Kenntnis des AccessCodes erfolgen.
 </requirement>
 
- -E-Rezept-Fachdienst - Task akzeptieren - 
-Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
-über /Task/&lt;id&gt;/$accept die Operation mit dem HTTP-Fehlercode 409 abbrechen, wenn
-der StatusTask.status = "completed",Task.status = "in-progress" oder Task.status
-= "draft" ist, damit ein bereits in Abgabe befindliches oder beliefertes E-Rezept nicht
-durch eine zweite Apotheke bearbeitet werden kann. Im OperationOutcome werden
-weitere Informationen gegeben: "Task has invalid status completed", "Task has invalid
-status in-progress" bzw. "Task has invalid status draft". Der E-Rezept-Fachdienst MUSS in
-OperationOutcome zusätzlich die Information "Task is processed by requesting
-institution" ergänzen, wenn Task.status = in-progress und die zum referenzierten Task in
-Task.owner gespeicherte Telematik-ID der abgebenden LEI mit der Telematik-ID aus dem
-ACCESS_TOKEN übereinstimmt.[<=]
-
 <!-- A_19168-01 -->
 <requirement conformance="SHALL" key="IG-TIFlow-RX-29" title="E-Rezept-Fachdienst - Task akzeptieren - Rezept bereits in Abgabe oder Bearbeitung" version="0">
     <meta lockversion="false"/>
