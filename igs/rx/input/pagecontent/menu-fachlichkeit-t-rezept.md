@@ -1,3 +1,5 @@
+{% assign use_cases = site.data['gen-use-cases'] %}
+
 Das E-T-Rezept stellt sicher, dass Arzneimittel nach §3a Abs. 1 Satz 1 AMVV (Lenalidomid, Pomalidomid, Thalidomid) digital, sicher und effizient verordnet werden können. Es löst das papiergebundene Verfahren ab, reduziert damit Verwaltungsaufwände bei Ärzten und Apotheken und verbessert gleichzeitig die inhaltliche Qualität der Verordnungen.
 
 ### Vorteile durch das E-T-Rezept
