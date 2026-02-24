@@ -2,8 +2,22 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 
 
-
-
+<!-- A_19022-01 -->
+<requirement conformance="SHALL" key="IG-TIFlow-DiGA-25" title="E-Rezept-Fachdienst - Task aktivieren - Rollenprüfung" version="0">
+  <meta lockversion="false"/>
+  <actor name="E-Rezept-Fachdienst">
+    <testProcedure id="Produktgutachten"/>
+  </actor>
+  Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks für ein E-Rezept mittels HTTP-POST/$activate-Operation auf den in der URL referenzierten /Task/&#60;id&#62; sicherstellen, dass ausschließlich verordnende Leistungserbringer in der Rolle
+  <ul>
+    <li>oid_praxis_arzt</li>
+    <li>oid_zahnarztpraxis</li>
+    <li>oid_praxis_psychotherapeut</li>
+    <li>oid_krankenhaus</li>
+    <li>oid_institution-vorsorge-reha</li> 
+  </ul>
+  die Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit E-Rezepte nicht durch Unberechtigte eingestellt werden können.
+</requirement>
 
 <!-- A_19024-03 -->
 <requirement conformance="SHALL" key="IG-TIFlow-DiGA-25" title="E-Rezept-Fachdienst - Task aktivieren - Prüfung AccessCode Prüfung Status" version="0">
