@@ -63,7 +63,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_22347-01 -->
-<requirement conformance="SHALL" key="IG-TIFlow-RX-61" title="E-Rezept-Fachdienst – Task aktivieren – Flowtype 200/209 - Prüfung Coverage Type" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-61" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 200/209 - Prüfung Coverage Type" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -86,7 +86,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
     </actor>
-        Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation POST /Task/&lt;id&gt;/$activate bei erfolgreichem Abschluss der Operation, die Daten des Verordnungsdatensatzes für die Übermittlung in den ePA Medication Service bereitstellen.
+    Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation POST /Task/&lt;id&gt;/$activate auf einen Task des Flowtype Task.extension:flowType = 160, 166, 169, 200 oder 209 bei erfolgreichem Abschluss der Operation, die Daten des Verordnungsdatensatzes für die Übermittlung in den ePA Medication Service bereitstellen.
 </requirement>
 
 ### Prozessparamter
