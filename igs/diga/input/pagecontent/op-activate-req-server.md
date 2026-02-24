@@ -30,7 +30,7 @@
 <br>
 
 <!-- A_25992 -->
-<requirement conformance="SHALL" key="IG-TIFlow-DiGA-26" title="E-Rezept-Fachdienst - Task aktivieren – Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-DiGA-26" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
@@ -42,7 +42,7 @@
 <br>
 
 <!-- A_23443-01 -->
-<requirement conformance="SHALL" key="IG-TIFlow-DiGA-27" title="E-Rezept-Fachdienst – Task aktivieren – Flowtype 162 - Prüfung Coverage Type" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-DiGA-27" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Type" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
@@ -52,7 +52,7 @@
 
 <br>
 <!-- A_26372 -->
-<requirement conformance="SHALL" key="IG-TIFlow-DiGA-28" title="E-Rezept-Fachdienst – Task aktivieren – Flowtype 162 - Prüfung Coverage Alternative IK" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-DiGA-28" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Alternative IK" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
@@ -63,7 +63,7 @@
 Dieser Ausschluss erfolgt temporär. In einer späteren Version können Unfallkassen das Verordnen von DiGAs explizit unterstützen. Die konkreten Festlegungen dazu werden in einem Folgerelease getroffen.
 
 <!-- A_27845 -->
-<requirement conformance="SHALL" key="IG-TIFlow-DiGA-29" title="E-Rezept-Fachdienst – Task aktivieren – Flowtype 162 - Prozessparameter" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-DiGA-29" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prozessparameter" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
