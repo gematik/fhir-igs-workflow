@@ -1,23 +1,22 @@
 actor:
 - E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: 8a25a586cc8c88d397b513d818a6c419218ed406dae3d7085762e6abb14e7349
+content_hash: a4aa74d467ac4cb59d3052871cb1bb0c84cf050277f7451c4509a4c5eeaaec38
 created: '2026-02-23T14:30:41.706588'
-date: '2026-02-23T14:30:41.706590'
+date: '2026-02-24T07:05:10.829367'
 key: IG-TIFlow-RX-39
-modified: '2026-02-23T14:30:41.706589'
+modified: '2026-02-24T07:05:10.829367'
 release_status: NEW
 source: input/pagecontent/op-activate-fd-requirements.md
 status: ACTIVE
 test_procedures:
   E-Rezept-Fachdienst:
   - Produkttest
-text: "<description>\n        Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks\
-  \ mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die Operation mit\
-  \ dem Fehlercode 400 abbrechen, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen\
-  \ = true) gekennzeichnet und der Numerator oder Denominator größer als 4 ist, weil\
-  \ eine Mehrfachverordnungen aus maximal 4 Teilverordnungen bestehen darf.\n    </description>\n\
-  \    <!-- A_22628 -->"
+text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
+  über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
+  wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
+  = true) gekennzeichnet und der Numerator oder Denominator größer als 4 ist, weil
+  eine Mehrfachverordnungen aus maximal 4 Teilverordnungen bestehen darf.
 title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator-Denominator
   kleiner 5
 version: 0

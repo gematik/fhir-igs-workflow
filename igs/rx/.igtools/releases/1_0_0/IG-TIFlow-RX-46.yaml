@@ -1,23 +1,22 @@
 actor:
 - E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: 3c924a971defb47675b596057e74573d46985e6e9a6f50413f57c7cf7a469f89
+content_hash: 5b0347528abecd629bacaa99c6c957fe4035c9829dd0f836784144da9a9c8598
 created: '2026-02-23T14:30:41.707709'
-date: '2026-02-23T14:30:41.707712'
+date: '2026-02-24T07:05:10.830774'
 key: IG-TIFlow-RX-46
-modified: '2026-02-23T14:30:41.707711'
+modified: '2026-02-24T07:05:10.830774'
 release_status: NEW
 source: input/pagecontent/op-activate-fd-requirements.md
 status: ACTIVE
 test_procedures:
   E-Rezept-Fachdienst:
   - Produkttest
-text: "<description>\n        Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks\
-  \ mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die Operation mit\
-  \ dem Fehlercode 400 abbrechen, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen\
-  \ = true) gekennzeichnet ist und der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start)\
-  \ nicht angegeben ist, weil die Information des Beginns der Einlösefrist notwendig\
-  \ ist, um den Gültigkeitszeitraum zu ermitteln.\n    </description>\n    <!-- A_22634\
-  \ -->"
+text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
+  über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
+  wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
+  = true) gekennzeichnet ist und der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start)
+  nicht angegeben ist, weil die Information des Beginns der Einlösefrist notwendig
+  ist, um den Gültigkeitszeitraum zu ermitteln.
 title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Beginn Einlösefrist-Pflicht
 version: 0

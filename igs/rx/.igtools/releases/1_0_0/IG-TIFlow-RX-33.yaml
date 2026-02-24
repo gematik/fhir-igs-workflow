@@ -1,23 +1,22 @@
 actor:
 - E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: e3d9569549977f330422c72d4e19a8cce3748fe72a8c7d1ea178ed80d603b406
+content_hash: 9f7a43929c616124fac50d8c50c614ccf78b73ab2c13c041defe2dc3c81848d5
 created: '2026-02-23T14:30:41.705640'
-date: '2026-02-23T14:30:41.705642'
+date: '2026-02-24T07:05:10.828004'
 key: IG-TIFlow-RX-33
-modified: '2026-02-23T14:30:41.705641'
+modified: '2026-02-24T07:05:10.828004'
 release_status: NEW
 source: input/pagecontent/op-activate-fd-requirements.md
 status: ACTIVE
 test_procedures:
   E-Rezept-Fachdienst:
   - Produkttest
-text: "<description>\n        Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks\
-  \ mit Workflowtyp 166 mittels $activate prüfen, dass im Bundle eine MedicationRequest-Ressource\
-  \ und eine Medication mit Medication.extension:Arzneimittelkategorie = 02 enthalten\
-  \ ist. Der E-Rezept-Fachdienst MUSS andernfalls mit dem HTTP-Fehlercode 400 abbrechen\
-  \ und in der OperationOutcome den Fehlertext \"Für diesen Workflowtypen sind nur\
-  \ T-Rezept Verordnungen zulässig\" ausgeben.\n    </description>\n    <!-- A_27813\
-  \ -->"
+text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mit Workflowtyp 166
+  mittels $activate prüfen, dass im Bundle eine MedicationRequest-Ressource und eine
+  Medication mit Medication.extension:Arzneimittelkategorie = 02 enthalten ist. Der
+  E-Rezept-Fachdienst MUSS andernfalls mit dem HTTP-Fehlercode 400 abbrechen und in
+  der OperationOutcome den Fehlertext "Für diesen Workflowtypen sind nur T-Rezept
+  Verordnungen zulässig" ausgeben.
 title: E-Rezept-Fachdienst - Task aktivieren - Flowtype 166 - Prüfung Arzneimittelverordnung
 version: 0
