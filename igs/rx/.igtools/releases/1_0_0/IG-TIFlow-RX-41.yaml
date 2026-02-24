@@ -1,20 +1,22 @@
 actor:
-- VAU E-Rezept-Fachdienst
+- E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: fa3b0cdc08df2ecb9106f9f9433a14c00bb2785d45ff9505503bf2ede911881f
-created: '2026-02-17T06:28:49.334919'
-date: '2026-02-17T06:28:49.334921'
+content_hash: 03b9b3e58e550e8b7da1d323092e56bd462a9778781f5acee8a3e5ee9661b017
+created: '2026-02-24T09:40:30.589356'
+date: '2026-02-24T09:40:30.589359'
 key: IG-TIFlow-RX-41
-modified: '2026-02-17T06:28:49.334920'
+modified: '2026-02-24T09:40:30.589358'
 release_status: NEW
-source: input/pagecontent/menu-schnittstellen-datenschutz-und-sicherheit.md
+source: input/pagecontent/query-api-task-fd-requirements.md
 status: ACTIVE
 test_procedures:
-  VAU E-Rezept-Fachdienst: []
-text: Die VAU des E-Rezept-Fachdienstes MUSS die in ihren Verarbeitungskontexten ablaufenden
-  Datenverarbeitungsprozesse von allen sonstigen Datenverarbeitungsprozessen des Anbieters
-  trennen und damit gewährleisten, dass der Anbieter des E-Rezept-Fachdienstes vom
-  Zugriff auf die in der VAU verarbeiteten schützenswerten Daten ausgeschlossen ist.
-title: E-Rezept-Fachdienst – Isolation der VAU von Datenverarbeitungsprozessen des
-  Anbieters
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
+  Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende LEI die zum referenzierten
+  Task in Task.owner gespeicherte Telematik-ID der abgebenden LEI mit der Telematik-ID
+  aus dem ACCESS_TOKEN vergleichen und bei Ungleichheit die Operation mit dem HTTP-Fehlercode
+  412 abbrechen, damit der Zugriff auf diesen Datensatz nur durch Berechtigte erfolgt.
+title: E-Rezept-Fachdienst - Task abrufen - Apotheke - Verordnung abrufen - Prüfung
+  Telematik-ID
 version: 0

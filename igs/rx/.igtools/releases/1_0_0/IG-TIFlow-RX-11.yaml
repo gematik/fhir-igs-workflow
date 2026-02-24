@@ -1,22 +1,19 @@
 actor:
-- E-Rezept-Fachdienst
+- PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: 4fe4212a41ab7ee491a0254c52de4c98d3bbfe098ba927facb434aa86324a70b
-created: '2026-02-17T06:28:49.331665'
-date: '2026-02-17T06:28:49.331667'
+content_hash: ad0656ae3afb60dd1749256540098563d135b4bfb85947fd4f0022379912b47d
+created: '2026-02-24T09:40:30.583643'
+date: '2026-02-24T09:40:30.583645'
 key: IG-TIFlow-RX-11
-modified: '2026-02-17T06:28:49.331666'
+modified: '2026-02-24T09:40:30.583644'
 release_status: NEW
-source: input/pagecontent/menu-schnittstellen-datenschutz-und-sicherheit.md
+source: input/pagecontent/op-activate-client-requirements.md
 status: ACTIVE
 test_procedures:
-  E-Rezept-Fachdienst: []
-text: Der E-Rezept-Fachdienst MUSS bei einer im laufenden Betrieb konfigurierbaren
-  Anzahl von 200 Aufrufen pro Sekunde eines User-Agents die Antwortzeit um ein konfigurierbares
-  Zeitintervall (Default 500ms) verzögert zurückschicken, um eine Überlast am E-Rezept-Fachdienst
-  zu verhindern. Die Drosselung muss über einen konfigurierbaren Schalter im laufenden
-  Betrieb aktivierbar bzw. deaktivierbar sein. Der E-Rezept-Fachdienst MUSS zusätzlich
-  ein Whitelisting implementieren, damit User-Agents von der Drosselung ausgenommen
-  werden können.
-title: E-Rezept-Fachdienst – Drosselung User Agent Aufrufe
+  PS_E-Rezept_verordnend:
+  - Konformitätsbestätigung
+text: Das PS der verordnenden LEI MUSS im Verordnungsdatensatz für ein E-Rezept des
+  Flowtype 200 oder 209 als Identifier des Patienten in Patient.identifer.value die
+  KVNR des Versicherten verwenden.
+title: 'PS verordnende LEI: E-Rezept erstellen – Flowtype 200/209 – KVNR als Identifier'
 version: 0

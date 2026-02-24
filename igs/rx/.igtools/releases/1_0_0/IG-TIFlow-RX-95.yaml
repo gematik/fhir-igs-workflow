@@ -1,16 +1,19 @@
-actor: []
-conformance: SHALL
-content_hash: bec7e3391ebc979aac34da3e24eb7bbce39837adcde1a2246e8470362f504b74
-created: '2026-02-17T06:28:49.342551'
-date: '2026-02-17T06:28:49.342553'
+actor:
+- PS_E-Rezept_abgebend
+conformance: SHOULD
+content_hash: 4635d5c01d267689dc8e4a6406ea2ca27b6fbb95052084e8293fe88386885eb9
+created: '2026-02-24T09:40:30.598602'
+date: '2026-02-24T09:40:30.598604'
 key: IG-TIFlow-RX-95
-modified: '2026-02-17T06:28:49.342552'
+modified: '2026-02-24T09:40:30.598603'
 release_status: NEW
-source: input/pagecontent/query-api-medicationdispense-fd-requirements.md
+source: input/pagecontent/menu-fachlichkeit-ux-abgebend.md
 status: ACTIVE
-test_procedures: {}
-text: Der E-Rezept-Fachdienst MUSS alle Zugriffe auf die Ressource MedicationDispense
-  mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE sowie POST unterbinden,
-  damit keine unzulässigen Operationen auf den Rezeptdaten ausgeführt werden können.
-title: E-Rezept-Fachdienst - unzulässige Operationen MedicationDispense (A_19400)
+test_procedures:
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: Das PS der abgebenden LEI SOLL es dem Nutzer ermöglichen, nach Bestandteilen
+  der Freitextverordnung zu suchen, ohne händisch die Inhalte der Verordnung in ein
+  Suchfeld zu übertragen.
+title: 'PS abgebende LEI: UX - Freitextverordnung - Arzneimittelsuche'
 version: 0

@@ -1,18 +1,21 @@
-actor: []
+actor:
+- PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: 54cb44acfcb83bd147e62769e45942d75a00a860306feb7a4839ff02c16149d4
-created: '2026-02-17T06:28:49.344303'
-date: '2026-02-17T06:28:49.344305'
+content_hash: be8a683788c4fe68505586cb93b562d219ec2a29c9c6b1cb88db57341ab2075d
+created: '2026-02-24T09:40:30.600862'
+date: '2026-02-24T09:40:30.600864'
 key: IG-TIFlow-RX-112
-modified: '2026-02-17T06:28:49.344304'
+modified: '2026-02-24T09:40:30.600863'
 release_status: NEW
-source: input/pagecontent/op-activate-fd-requirements.md
+source: input/pagecontent/menu-fachlichkeit-ux-abgebend.md
 status: ACTIVE
-test_procedures: {}
-text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
-  ueber /Task/{id}/$activate die Operation mit dem Fehlercode 400 abbrechen, wenn
-  die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
-  = true) gekennzeichnet und der Flowtype ungleich 160, 169, 200 oder 209 ist.
-title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - zulaessige Flowtype
-  (A_22627-01)
+test_procedures:
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: Das PS der abgebenden LEI DARF NICHT im Falle der Nicht-Erreichbarkeit der zentralen
+  Dienste der TI das AVS derart blockieren, dass andere Arten der Einlösung, die unabhängig
+  von der Anwendung E-Rezept der Telematikinfrastruktur sind (z.B. Muster-16 Verordnungen),
+  nicht möglich sind.
+title: 'PS abgebende LEI: UX - Hinweis bei Nicht-Erreichbarkeit des E-Rezept-Fachdienstes
+  - Operabilität des AVS'
 version: 0

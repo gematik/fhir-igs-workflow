@@ -1,17 +1,19 @@
-actor: []
-conformance: SHALL
-content_hash: e95d06cf8e6d653f1830a19df278131b4551c7e4c370ec3a88aae0bd8aa89f58
-created: '2026-02-17T06:28:49.344851'
-date: '2026-02-17T06:28:49.344853'
+actor:
+- PS_E-Rezept_verordnend
+conformance: SHOULD
+content_hash: eee3a9543c7d5916a5cd1bd15fc8e6d2401a59f50bc8514caa4bf16758646ba7
+created: '2026-02-24T09:40:30.602161'
+date: '2026-02-24T09:40:30.602164'
 key: IG-TIFlow-RX-119
-modified: '2026-02-17T06:28:49.344852'
+modified: '2026-02-24T09:40:30.602163'
 release_status: NEW
-source: input/pagecontent/op-activate-fd-requirements.md
+source: input/pagecontent/menu-fachlichkeit-ux-verordnend.md
 status: ACTIVE
-test_procedures: {}
-text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
-  ueber /Task/{id}/$activate die Operation mit dem Fehlercode 400 abbrechen, wenn
-  die Verordnung als Mehrfachverordnung und als Ersatzverordnung gekennzeichnet ist.
-title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - keine Ersatzverordnung
-  (A_22633)
+test_procedures:
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: Das PS der verordnenden LEI SOLL einen patienten-individuellen Konfigurationsparameter
+  anbieten, ob für ein E-Rezept default-mäßig der Patientenausdruck ausgedruckt, oder
+  ob das Rezept über das E-Rezept-FdV oder mittels eGK eingelöst werden soll.
+title: 'PS verordnende LEI: UX - Defaulteinstellung E-Rezept-Ausdruck'
 version: 0

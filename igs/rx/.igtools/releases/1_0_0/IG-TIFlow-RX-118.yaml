@@ -1,17 +1,18 @@
-actor: []
-conformance: SHALL
-content_hash: a930864b8e92b3e7747309167cfab5ed13681dd463a19f273bc23d4129bf541d
-created: '2026-02-17T06:28:49.344773'
-date: '2026-02-17T06:28:49.344775'
+actor:
+- PS_E-Rezept_verordnend
+conformance: SHOULD
+content_hash: c89e06e029a649a2928835f7a78731e6f76a60a74027af584ca425d1e34a21ba
+created: '2026-02-24T09:40:30.602035'
+date: '2026-02-24T09:40:30.602037'
 key: IG-TIFlow-RX-118
-modified: '2026-02-17T06:28:49.344774'
+modified: '2026-02-24T09:40:30.602036'
 release_status: NEW
-source: input/pagecontent/op-activate-fd-requirements.md
+source: input/pagecontent/menu-fachlichkeit-ux-verordnend.md
 status: ACTIVE
-test_procedures: {}
-text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
-  ueber /Task/{id}/$activate die Operation mit dem Fehlercode 400 abbrechen, wenn
-  die Verordnung als Mehrfachverordnung und als Entlassrezept gekennzeichnet ist.
-title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - kein Entlassrezept
-  (A_22632)
+test_procedures:
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: Das PS der verordnenden LEI SOLL einen patienten-individuellen Konfigurationsparameter
+  anbieten, ob Verordnungen für den Patienten per Default als E-Rezept erstellt werden.
+title: 'PS verordnende LEI: UX - Konfigurationsparameter E-Rezept'
 version: 0

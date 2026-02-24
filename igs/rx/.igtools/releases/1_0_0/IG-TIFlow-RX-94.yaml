@@ -1,19 +1,19 @@
-actor: []
-conformance: SHALL
-content_hash: 61dd2ecfa9595eb2813fd712aa13e3fa872cd27ab37c629dab89aabba3b1cec0
-created: '2026-02-17T06:28:49.341990'
-date: '2026-02-17T06:28:49.341992'
+actor:
+- PS_E-Rezept_abgebend
+conformance: SHOULD
+content_hash: 3791951082fd95538bef46130fb57826649a44607b031435ba50f4ba17c9103d
+created: '2026-02-24T09:40:30.598474'
+date: '2026-02-24T09:40:30.598476'
 key: IG-TIFlow-RX-94
-modified: '2026-02-17T06:28:49.341991'
+modified: '2026-02-24T09:40:30.598475'
 release_status: NEW
-source: input/pagecontent/query-api-task-fd-requirements.md
+source: input/pagecontent/menu-fachlichkeit-ux-abgebend.md
 status: ACTIVE
-test_procedures: {}
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation GET /Task/&lt;id&gt;
-  durch einen Versicherten mit der Rolle oid_versicherter, sofern die KVNR des Aufrufenden
-  ungleich der KVNR in Task.for ist, den Push Notification Prozess fuer den Trigger
-  mit der ChannelId "erp.task.vertreter" und den Versicherten mit der KVNR = Task.for
-  initiieren.
-title: E-Rezept-Fachdienst - Task abrufen - Vertreter - Push Notification Versicherter
-  (A_28125)
+test_procedures:
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: Das PS der abgebenden LEI SOLL dem Anwender ermöglichen, einen bestehenden Vorgang
+  zum Einlösen eines E-Rezepts mittels E-Rezept-Token zu suchen und nach Fund dem
+  Anwender anzuzeigen.
+title: 'PS abgebende LEI: UX - Suche nach Vorgang mittels E-Rezept-Token'
 version: 0

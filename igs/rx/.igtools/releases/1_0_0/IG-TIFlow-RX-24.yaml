@@ -1,20 +1,20 @@
 actor:
-- Eingangspunkt E-Rezept-Fachdienst
-conformance: SHALL
-content_hash: 072a83a6d42f1679a36b5450091f8fce84e73b9a8e39bc7453807905106c8b08
-created: '2026-02-17T06:28:49.333103'
-date: '2026-02-17T06:28:49.333105'
+- eRP_FdV
+conformance: SHALL NOT
+content_hash: 84b67a64b9babee16413fa0d56fe27cf0d43ce4c18a8923521a948034f3c8e76
+created: '2026-02-24T09:40:30.585964'
+date: '2026-02-24T09:40:30.585966'
 key: IG-TIFlow-RX-24
-modified: '2026-02-17T06:28:49.333104'
+modified: '2026-02-24T09:40:30.585965'
 release_status: NEW
-source: input/pagecontent/menu-schnittstellen-datenschutz-und-sicherheit.md
+source: input/pagecontent/query-api-communication-req-fdv.md
 status: ACTIVE
 test_procedures:
-  Eingangspunkt E-Rezept-Fachdienst: []
-text: Der Eingangspunkt des E-Rezept-Fachdienstes MUSS Verbindungen von Clients (Internet
-  oder TI) ausschließlich über TLS akzeptieren. Er MUSS die TLS-Verbindung terminieren
-  und HTTP Requests und Responses zwischen dem Client und dem für die jeweilige Sitzung
-  zugeordneten Verarbeitungskontext der VAU vermitteln.
-title: E-Rezept-Fachdienst – Verbindungen von Clients zu Verarbeitungskontexten der
-  VAU über den Eingangspunkt
+  eRP_FdV:
+  - Produkttest
+text: Das E-Rezept-FdV DARF NICHT im Anwendungsfall "Vertreterkommunikation" es dem
+  Nutzer ermöglichen, bezüglich einem E-Rezept mit dem Flowtype 169 oder 209 mit einem
+  Vertreter zu kommunizieren.
+title: 'E-Rezept-FdV: Vertreterkommunikation - Flowtype 169 / 209 - Vertreterkommunikation
+  nicht zulässig'
 version: 0

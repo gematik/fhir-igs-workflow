@@ -1,21 +1,19 @@
 actor:
-- E-Rezept-Fachdienst
+- eRp_FdV
 conformance: SHALL
-content_hash: dd95cbdb2272636f4bd33445ea270412ffdac2f266d323aeafd0cc826fce9a59
-created: '2026-02-17T06:28:49.330997'
-date: '2026-02-17T06:28:49.331000'
+content_hash: d2888e6da52da5683a63c3708c5389ac2ee5c449497731720cc88c199f786b28
+created: '2026-02-24T09:40:30.582403'
+date: '2026-02-24T09:40:30.582406'
 key: IG-TIFlow-RX-5
-modified: '2026-02-17T06:28:49.330999'
+modified: '2026-02-24T09:40:30.582405'
 release_status: NEW
-source: input/pagecontent/menu-schnittstellen-datenschutz-und-sicherheit.md
+source: input/pagecontent/op-abort-client-requirements.md
 status: ACTIVE
 test_procedures:
-  E-Rezept-Fachdienst: []
-text: 'Der E-Rezept-Fachdienst MUSS jede Antwort auf einen Funktionsaufruf, der einen
-  AccessCode oder Secret enthält, um den konfigurierbaren http-Response-Header "Warning"
-  (default "999 Throttling active") ergänzen und um ein konfigurierbares Zeitintervall
-  (default: 500 Millisekunden) verzögert zurückschicken, sofern der erwartete AccessCode
-  bzw. Secret nicht mit dem übergebenen AccessCode bzw. Secret übereinstimmt, um Brute-Force-Angriffe
-  durch einen hohen Zeitaufwand unattraktiv zu machen.'
-title: E-Rezept-Fachdienst – Drosselung Brute-Force-Anfragen
+  eRp_FdV:
+  - Herstellererklärung
+text: Das E-Rezept-FdV DARF im Anwendungsfall "E-Rezept löschen" dem Nutzer das Löschen
+  von E-Rezepten mit dem Flowtype 169 oder 209 NICHT ermöglichen, wenn der Task einen
+  Status ungleich "completed" hat.
+title: 'E-Rezept-FdV: E-Rezept löschen - Flowtype 169 / 209 - nur wenn beliefert'
 version: 0

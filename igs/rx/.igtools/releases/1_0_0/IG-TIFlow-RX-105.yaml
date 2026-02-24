@@ -1,19 +1,20 @@
-actor: []
-conformance: SHALL
-content_hash: 7719dba2ad50dc164be98ffbc5538a8bea471d927a2b71a528c4ed5e6c049f67
-created: '2026-02-17T06:28:49.343746'
-date: '2026-02-17T06:28:49.343749'
+actor:
+- PS_E-Rezept_abgebend
+conformance: SHOULD
+content_hash: 1024a3b13b5fbced98934a05d722b8bb92b44edee14e76bfa36c8cd7a6815e1d
+created: '2026-02-24T09:40:30.599935'
+date: '2026-02-24T09:40:30.599937'
 key: IG-TIFlow-RX-105
-modified: '2026-02-17T06:28:49.343748'
+modified: '2026-02-24T09:40:30.599936'
 release_status: NEW
-source: input/pagecontent/op-activate-fd-requirements.md
+source: input/pagecontent/menu-fachlichkeit-ux-abgebend.md
 status: ACTIVE
-test_procedures: {}
-text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task des Flowtype Task.extension:flowType
-  = 200 oder 209 mittels HTTP-POST-Operation ueber /Task/{id}/$activate pruefen, ob
-  Coverage.type.coding.code mit dem Wert "PKV" belegt ist und im Fehlerfall die Operation
-  mit Http-Fehlercode 400 abbrechen, um sicherzustellen, dass diese Workflows nur
-  fuer E-Rezepte fuer PKV-Versicherte genutzt werden.
-title: E-Rezept-Fachdienst - Task aktivieren - Flowtype 200/209 - Pruefung Coverage
-  Type (A_22347-01)
+test_procedures:
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: Das PS der abgebenden LEI SOLL für die Signatur des Abgabedatensatzes nur eine
+  QES fordern, wenn diese aufgrund vertraglicher Festlegungen erforderlich ist. In
+  allen anderen Fällen muss der Abgabedatensatz mit der SMC-B signiert werden.
+title: 'PS abgebende LEI: UX - Abgabedatensatz signieren - QES Signatur in notwendigen
+  Fällen'
 version: 0

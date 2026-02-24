@@ -1,18 +1,24 @@
-actor: []
+actor:
+- E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: 8e5495ffead2a1398d3e2f7d25bda57d86da369df816aaace20c80f819bb8a91
-created: '2026-02-17T06:28:49.339787'
-date: '2026-02-17T06:28:49.339789'
+content_hash: cae2051e04d296aaa70f55ff039847b08ebe81c9480ceddc1819b8cd8022491b
+created: '2026-02-24T09:40:30.595682'
+date: '2026-02-24T09:40:30.595685'
 key: IG-TIFlow-RX-76
-modified: '2026-02-17T06:28:49.339788'
+modified: '2026-02-24T09:40:30.595684'
 release_status: NEW
-source: input/pagecontent/op-accept-fd-requirements.md
+source: input/pagecontent/op-abort-fd-requirements.md
 status: ACTIVE
-test_procedures: {}
-text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
-  ueber /Task/&lt;id&gt;/$accept fuer den referenzierten Task die Telematik-ID aus
-  dem ACCESS_TOKEN in Task.owner speichern, damit sichergestellt werden kann, dass
-  nachfolgende Zugriffe auf diesen Datensatz nur durch Berechtigte erfolgen koennen.
-title: E-Rezept-Fachdienst - Task akzeptieren - Telematik-ID der abgebenden LEI speichern
-  (A_24174)
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: 'Der E-Rezept-Fachdienst MUSS das Löschen eines E-Rezepts mit dem Flowtype 169
+  oder 209 über den mittels der &lt;id&gt; adressierten /Task/&lt;id&gt;/$abort verhindern
+  und die Operation mit dem HTTP-Fehlercode 403 abweisen, wenn der Status des adressierten
+  Tasks ungleich "completed" ist und die Rolle des aufrufenden Nutzers der folgenden
+  Rollen entspricht: oid_versicherter damit kein Versicherter ein E-Rezept aus einem
+  Workflow mit Workflowsteuerung durch Leistungserbringer (169, 209) löscht, das nicht
+  bereits beliefert wurde.'
+title: E-Rezept-Fachdienst - E-Rezept löschen - Flowtype 169 / 209 - Versicherter
+  - Statusprüfung
 version: 0

@@ -1,18 +1,18 @@
-actor: []
-conformance: SHALL
-content_hash: 93acc551b5532214d7012b5964aeb3bdb62f37cbceff069d3ff2abe93c51707b
-created: '2026-02-17T06:28:49.344539'
-date: '2026-02-17T06:28:49.344541'
+actor:
+- PS_E-Rezept_verordnend
+conformance: SHOULD
+content_hash: 00ff7087977e7ba396cfd27113c45697feb18dbf036bba8fc65f159db5bc4ddc
+created: '2026-02-24T09:40:30.601628'
+date: '2026-02-24T09:40:30.601631'
 key: IG-TIFlow-RX-115
-modified: '2026-02-17T06:28:49.344541'
+modified: '2026-02-24T09:40:30.601629'
 release_status: NEW
-source: input/pagecontent/op-activate-fd-requirements.md
+source: input/pagecontent/menu-fachlichkeit-ux-verordnend.md
 status: ACTIVE
-test_procedures: {}
-text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
-  ueber /Task/{id}/$activate die Operation mit dem Fehlercode 400 abbrechen, wenn
-  die Verordnung als Mehrfachverordnung gekennzeichnet und der Denominator kleiner
-  als 2 ist.
-title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Denominator groesser
-  1 (A_22629)
+test_procedures:
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: Das PS der verordnenden LEI SOLL es dem Nutzer ermöglichen, in jedem Verordnungsvorgang
+  für Arzneimittel, in denen ein E-Rezept zulässig ist, ein E-Rezept zu erstellen.
+title: 'PS verordnende LEI: UX - E-Rezept im Verordnungsvorgang erstellen'
 version: 0

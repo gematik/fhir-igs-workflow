@@ -1,18 +1,20 @@
 actor:
-- E-Rezept-Fachdienst
+- eRP_FdV
 conformance: SHALL NOT
-content_hash: 6c4653c4fcca028b8765e4362835ba365b1adc37605983495493a6a49d9cc833
-created: '2026-02-17T06:28:49.332657'
-date: '2026-02-17T06:28:49.332659'
+content_hash: e2923b8e5e73c29af30b8b0a112f18bcadce4e40c9d1ac55ecc2dc0b9163e0d3
+created: '2026-02-24T09:40:30.585433'
+date: '2026-02-24T09:40:30.585435'
 key: IG-TIFlow-RX-20
-modified: '2026-02-17T06:28:49.332658'
+modified: '2026-02-24T09:40:30.585434'
 release_status: NEW
-source: input/pagecontent/menu-schnittstellen-datenschutz-und-sicherheit.md
+source: input/pagecontent/query-api-communication-req-fdv.md
 status: ACTIVE
 test_procedures:
-  E-Rezept-Fachdienst: []
-text: Der Paketfilter des E-Rezept-Fachdienstes, zum Schutz in Richtung Transportnetz
-  Internet, DARF NICHT physisch auf Systemen der VAU des E-Rezept-Fachdienstes oder
-  dem vorgeschalteten TLS-terminierenden Load Balancer implementiert werden.
-title: E-Rezept-Fachdienst – Platzierung des Paketfilters Internet
+  eRP_FdV:
+  - Produkttest
+text: Das E-Rezept-FdV DARF es dem Nutzer NICHT ermöglichen, für ein E-Rezept mit
+  dem Flowtype 162, 169 oder 209 eine Anfrage zur Belieferung an eine abgebende Institution
+  zu senden.
+title: 'E-Rezept-FdV: Anfrage Belieferung - Flowtype 162 / 169 / 209 - Anfrage nicht
+  zulässig'
 version: 0

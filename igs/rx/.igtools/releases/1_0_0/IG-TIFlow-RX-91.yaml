@@ -1,19 +1,19 @@
-actor: []
-conformance: SHALL
-content_hash: 8d578f7a0093408b95a25dec5cc8f0f9a03205eb89b436b527035ca04a21d692
-created: '2026-02-17T06:28:49.341740'
-date: '2026-02-17T06:28:49.341742'
+actor:
+- PS_E-Rezept_abgebend
+conformance: SHOULD
+content_hash: e0ac2680c86b0fe110a7e9ed567482668721105a4928332e4127b68da9bb3526
+created: '2026-02-24T09:40:30.598081'
+date: '2026-02-24T09:40:30.598084'
 key: IG-TIFlow-RX-91
-modified: '2026-02-17T06:28:49.341742'
+modified: '2026-02-24T09:40:30.598083'
 release_status: NEW
-source: input/pagecontent/query-api-task-fd-requirements.md
+source: input/pagecontent/menu-fachlichkeit-ux-abgebend.md
 status: ACTIVE
-test_procedures: {}
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
-  Task mittels /Task/&lt;id&gt;?ac=... durch eine abgebende LEI den im referenzierten
-  Task gespeicherten Status Task.status pruefen und mit dem Fehler 412 abbrechen,
-  wenn Task.status ungleich in-progress, damit der Datensatz nur abgerufen werden
-  kann, wenn sich die Verordnung in Belieferung befindet.
-title: E-Rezept-Fachdienst - Task abrufen - Apotheke - Verordnung abrufen - Pruefung
-  Status in-progress (A_24178)
+test_procedures:
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: Das PS der abgebenden LEI SOLL für den Fall, dass eine Frist überschritten wurde
+  dem Anwender einen entsprechenden Hinweis darstellen.
+title: 'PS abgebende LEI: UX - Fristen eines Rezeptes - Hinweis bei überschrittener
+  Frist'
 version: 0

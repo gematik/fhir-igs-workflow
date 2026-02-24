@@ -1,19 +1,21 @@
-actor: []
+actor:
+- E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: 5571e4089d67fccabce2da7252cde5959afd159ab64714d1b7022fdfca969720
-created: '2026-02-17T06:28:49.339141'
-date: '2026-02-17T06:28:49.339143'
+content_hash: ac40cbe534f07081a4832d48b37bd5e81bb157f24b60cf349e8a5e3f4c6102b1
+created: '2026-02-24T09:40:30.594424'
+date: '2026-02-24T09:40:30.594426'
 key: IG-TIFlow-RX-69
-modified: '2026-02-17T06:28:49.339142'
+modified: '2026-02-24T09:40:30.594425'
 release_status: NEW
-source: input/pagecontent/op-accept-fd-requirements.md
+source: input/pagecontent/op-activate-fd-requirements.md
 status: ACTIVE
-test_procedures: {}
-text: Der E-Rezept-Fachdienst MUSS beim Abrufen eines Tasks mit Flowtype 162 fuer
-  ein E-Rezept mittels HTTP-POST/$accept-Operation auf den in der URL referenzierten
-  /Task/&lt;id&gt; sicherstellen, dass ausschliesslich abgebende Institutionen in
-  der Rolle oid_kostentraeger die Operation am Fachdienst aufrufen duerfen und die
-  Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization"
-  feststellen, damit E-Rezepte nicht durch Unberechtigte abgerufen werden koennen.
-title: E-Rezept-Fachdienst - Task akzeptieren - Flowtype 162 - Rollenpruefung (A_25993)
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
+  über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
+  wenn die Verordnung nicht als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
+  = false) gekennzeichnet ist, aber eine Extension Nummerierung oder Zeitraum enthält,
+  weil normale Verordnungen keine MVO-Angaben enthalten dürfen.
+title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Unzulässige Angaben
 version: 0

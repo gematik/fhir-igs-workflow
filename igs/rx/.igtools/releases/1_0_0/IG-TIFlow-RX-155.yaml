@@ -1,18 +1,20 @@
-actor: []
-conformance: SHALL
-content_hash: a3c32fe8201c98a87a234cbaad0fabef76a1c702ea9d4049352e166ee6ce3168
-created: '2026-02-17T06:28:49.349577'
-date: '2026-02-17T06:28:49.349579'
+actor:
+- PS_E-Rezept_verordnend
+conformance: SHOULD
+content_hash: 383db03d12106fb5cc4a426c985e7773b0c6b719430b781c1aef245791d9fa2e
+created: '2026-02-24T09:40:30.607657'
+date: '2026-02-24T09:40:30.607659'
 key: IG-TIFlow-RX-155
-modified: '2026-02-17T06:28:49.349578'
+modified: '2026-02-24T09:40:30.607658'
 release_status: NEW
-source: input/pagecontent/op-close-fd-requirements.md
+source: input/pagecontent/menu-fachlichkeit-ux-verordnend.md
 status: ACTIVE
-test_procedures: {}
-text: Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation
-  ueber /Task/&lt;id&gt;/$close, wenn eine MedicationDispense Ressource uebermittelt
-  wird und die Operation erfolgreich abgeschlossen werden kann, den Push Notification
-  Prozess fuer den Trigger mit der ChannelId "erp.task.close" und den Versicherten
-  mit der KVNR = Task.for initiieren.
-title: E-Rezept-Fachdienst - Task schliessen - Push Notification Versicherter (A_28129)
+test_procedures:
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: 'Das PS der verordnenden LEI SOLL dem Nutzer der Aufgabenliste ermöglichen,
+  diese mindestens nach folgenden Kriterien zu sortieren und zu filtern: Behandelnder
+  Arzt Patient Erstellungsdatum Art des zu signierenden Dokuments (z.B. eAU, E-Rezept,
+  etc.)'
+title: 'PS verordnende LEI: UX – Aufgabenliste - Filtern und Sortieren'
 version: 0

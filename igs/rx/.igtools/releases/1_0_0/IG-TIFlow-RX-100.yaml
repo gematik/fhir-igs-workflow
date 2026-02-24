@@ -1,20 +1,19 @@
-actor: []
-conformance: SHALL
-content_hash: 2f274f0990f5bd7c294c2124662f0ce16e2b0183cc0f6e2bed61a21507aa20d5
-created: '2026-02-17T06:28:49.343337'
-date: '2026-02-17T06:28:49.343340'
+actor:
+- PS_E-Rezept_abgebend
+conformance: MAY
+content_hash: e888cf099d3a6939354ef5565720f4f5dec5112b6376e65a74a3ec8f06b9eca3
+created: '2026-02-24T09:40:30.599263'
+date: '2026-02-24T09:40:30.599265'
 key: IG-TIFlow-RX-100
-modified: '2026-02-17T06:28:49.343339'
+modified: '2026-02-24T09:40:30.599264'
 release_status: NEW
-source: input/pagecontent/op-activate-fd-requirements.md
+source: input/pagecontent/menu-fachlichkeit-ux-abgebend.md
 status: ACTIVE
-test_procedures: {}
-text: 'Der E-Rezept-Fachdienst MUSS die Aktivierung eines Tasks mit Flowtype 160,
-  169, 200 oder 209 mit dem HTTP-Status-Code 400 abbrechen, wenn die QES gemaess der
-  professionOID des Signaturzertifikats des Signierenden nicht von einer Berufsgruppe
-  ausgestellt wurde, die der folgenden professionOID entspricht: oid_arzt, oid_zahnarzt,
-  damit nur solche Leistungserbringer ein signiertes E-Rezept einstellen, die zur
-  Verordnung von Medikamenten ermaechtigt sind.'
-title: E-Rezept-Fachdienst - Task aktivieren - Flowtype 160/169/200/209 - QES durch
-  berechtigte Berufsgruppe (A_19225-02)
+test_procedures:
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: Das PS der abgebenden LEI KANN eine Möglichkeit bieten, die von einer anderen
+  Filial-Apotheke übermittelten Informationen zu einem E-Rezept zu importieren und
+  einen Vorgang dazu zu öffnen.
+title: 'PS abgebende LEI: UX - Empfang eines weitergeleiteten eines E-Rezepts'
 version: 0

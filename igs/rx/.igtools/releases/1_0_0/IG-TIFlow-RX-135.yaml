@@ -1,17 +1,21 @@
-actor: []
-conformance: SHALL
-content_hash: 024162226f8819f8c82af33c3c5494d0f554b1d095a1e214c1ebf0b40d89c7fc
-created: '2026-02-17T06:28:49.346742'
-date: '2026-02-17T06:28:49.346744'
+actor:
+- PS_E-Rezept_verordnend
+conformance: SHOULD
+content_hash: b687d2e7ea89c618260f41d09aa56c01c49092650dd7ab956f89b410940fc82e
+created: '2026-02-24T09:40:30.604830'
+date: '2026-02-24T09:40:30.604833'
 key: IG-TIFlow-RX-135
-modified: '2026-02-17T06:28:49.346743'
+modified: '2026-02-24T09:40:30.604832'
 release_status: NEW
-source: input/pagecontent/op-dispense-fd-requirements.md
+source: input/pagecontent/menu-fachlichkeit-ux-verordnend.md
 status: ACTIVE
-test_procedures: {}
-text: Der E-Rezept-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen
-  mittels POST /Task/&lt;id&gt;/$dispense den Zeitpunkt des Aufrufes in Task.extension:lastMedicationDispense
-  im Format "YYYY-MM-DDThh:mm:ss+zz:zz" (FHIR-instant) anlegen und speichern.
-title: E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Zeitstempel MedicationDispense
-  (A_24285-01)
+test_procedures:
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: 'Das PS der verordnenden LEI SOLL es ermöglichen für ein Nutzerprofil eine Vertretungssituation
+  für einen Zeitraum zu hinterlegen. Folgende Konfigurationen sind zulässig: Kollegiale
+  Vertretung (nach § 20 Musterberufsordnung) Persönliche Vertretung (nach § 32 Abs.
+  2, Satz 2 Ärzte-Zulassungsverordnung'
+title: 'PS verordnende LEI: UX - Vertretungssituation - Möglichkeit zur Entscheidung
+  über Vertretungsfall'
 version: 0

@@ -1,19 +1,19 @@
-actor: []
-conformance: SHALL
-content_hash: 9c71ec979f64dad19694eb6b5a4e224a466aed97087c9dcbd6e9ec0c5a5afd09
-created: '2026-02-17T06:28:49.346403'
-date: '2026-02-17T06:28:49.346405'
+actor:
+- PS_E-Rezept_verordnend
+conformance: SHOULD
+content_hash: bf139cb490e2c75dd794e6c83cab159652cfaf96dfe3a001340e4f9c8429650f
+created: '2026-02-24T09:40:30.604310'
+date: '2026-02-24T09:40:30.604313'
 key: IG-TIFlow-RX-131
-modified: '2026-02-17T06:28:49.346404'
+modified: '2026-02-24T09:40:30.604312'
 release_status: NEW
-source: input/pagecontent/op-dispense-fd-requirements.md
+source: input/pagecontent/menu-fachlichkeit-ux-verordnend.md
 status: ACTIVE
-test_procedures: {}
-text: Der E-Rezept-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen
-  mittels POST /Task/&lt;id&gt;/$dispense sicherstellen, dass alle vorhandenen MedicationDispenses
-  und ihre referenzierten Medications geloescht werden, wenn bereits bestehende MedicationDispense(s)
-  zum E-Rezept vorhanden sind, sodass nach Abschluss der Operation nur die neu uebermittelten
-  MedicationDispenses gespeichert sind.
-title: E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Ueberschreiben
-  vorheriger MedicationDispenses (A_26482)
+test_procedures:
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: Das PS der verordnenden LEI SOLL die Möglichkeit zum Erstellen eines E-Rezepts
+  nur anbieten, wenn der zu erstellende Verordnungstyp durch die Anwendung E-Rezept
+  unterstützt wird.
+title: 'PS verordnende LEI: UX – Anwendbarkeit E-Rezept'
 version: 0

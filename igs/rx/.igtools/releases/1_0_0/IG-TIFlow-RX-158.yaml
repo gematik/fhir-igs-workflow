@@ -1,17 +1,18 @@
-actor: []
-conformance: SHALL
-content_hash: 8fdb32c962c248daee5a4cb66a6c08cca903e537d087a338621fb489bde15708
-created: '2026-02-17T06:28:49.349876'
-date: '2026-02-17T06:28:49.349878'
+actor:
+- PS_E-Rezept_verordnend
+conformance: SHOULD
+content_hash: 7ffb708c25293e7735db3aa0013657fab9087f35668631a76da9e4ada43a8930
+created: '2026-02-24T09:40:30.608046'
+date: '2026-02-24T09:40:30.608049'
 key: IG-TIFlow-RX-158
-modified: '2026-02-17T06:28:49.349877'
+modified: '2026-02-24T09:40:30.608048'
 release_status: NEW
-source: input/pagecontent/op-close-fd-requirements.md
+source: input/pagecontent/menu-fachlichkeit-ux-verordnend.md
 status: ACTIVE
-test_procedures: {}
-text: Der E-Rezept-Fachdienst MUSS, falls keine OCSP-Response fuer das Signaturzertifikat
-  der Quittung vorliegt bzw. die letzte vorliegende OCSP-Response aelter als 24 h
-  ist, die Operation mit dem Fehler 503 abbrechen.
-title: E-Rezept-Fachdienst - Task schliessen - OCSP-Response nicht aelter als 24 h
-  (A_22919)
+test_procedures:
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: Das PS der verordnenden LEI SOLL dem Nutzer über einen Hinweis darüber benachrichtigen,
+  dass neue zu signierende Aufgaben in der Aufgabenliste vorhanden sind.
+title: 'PS verordnende LEI: UX – Aufgabenliste – Benachrichtigungen für neue Aufgaben'
 version: 0

@@ -1,8 +1,8 @@
 Die folgende Auflistung fasst die zentralen fachlichen und technischen Bausteine des RX-IG zusammen:
 
-- Fachliche Szenarien und Anwendungsfaelle fuer Verordnung und Belieferung
-- Technische Anwendungsfaelle inklusive Workflow-Statusuebergaenge
-- Query- und Operation-APIs fuer den RX-Workflow
-- Zugehoerige FHIR-Profile, OperationDefinitions und Beispielressourcen
+- Fachliche Szenarien und Anwendungsfälle für Verordnung und Belieferung
+- Technische Anwendungsfälle inklusive Workflow-Statusübergänge
+- Query- und Operation-APIs für den RX-Workflow
+- Zugehörige FHIR-Profile, OperationDefinitions und Beispielressourcen
 
-Hinweis: Moduluebergreifende Basisoperationen sind im eFlow-Core-IG dokumentiert; RX ergaenzt die modulspezifischen Regeln.
+Hinweis: Modulübergreifende Basisoperationen sind im eFlow-Core-IG dokumentiert; RX ergänzt die modulspezifischen Regeln.

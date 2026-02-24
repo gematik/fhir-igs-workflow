@@ -1,20 +1,22 @@
-actor: []
+actor:
+- E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: 8fe0297c4bbeeace39edcaa5bea0a0a26713cf053420d117f0daa38da41392aa
-created: '2026-02-17T06:28:49.339415'
-date: '2026-02-17T06:28:49.339417'
+content_hash: 5b0347528abecd629bacaa99c6c957fe4035c9829dd0f836784144da9a9c8598
+created: '2026-02-24T09:40:30.594864'
+date: '2026-02-24T09:40:30.594867'
 key: IG-TIFlow-RX-72
-modified: '2026-02-17T06:28:49.339416'
+modified: '2026-02-24T09:40:30.594866'
 release_status: NEW
-source: input/pagecontent/op-accept-fd-requirements.md
+source: input/pagecontent/op-activate-fd-requirements.md
 status: ACTIVE
-test_procedures: {}
-text: 'Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
-  ueber /Task/&lt;id&gt;/$accept die Operation mit dem Fehlercode 403 abbrechen, wenn
-  das Ende der Einloesefrist (Task.ExpiryDate) zu einem frueherem Zeitpunkt als das
-  aktuelle Datum liegt, da Verordnungen nur bis Ende der Einloesefrist abgerufen werden
-  duerfen. Im Falle dieses Fehlers ist im OperationOutcome des Response das Ende der
-  Einloesefrist wie folgt anzugeben: "Verordnung bis &lt;Datum&gt; einloesbar.", wobei
-  &lt;Datum&gt; der Wert Task.ExpiryDate im Format "dd.mm.yyyy" ist.'
-title: E-Rezept-Fachdienst - Task akzeptieren - Ende Einloesefrist pruefen (A_23539-01)
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
+  über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
+  wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
+  = true) gekennzeichnet ist und der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start)
+  nicht angegeben ist, weil die Information des Beginns der Einlösefrist notwendig
+  ist, um den Gültigkeitszeitraum zu ermitteln.
+title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Beginn Einlösefrist-Pflicht
 version: 0

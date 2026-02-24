@@ -1,17 +1,19 @@
-actor: []
-conformance: SHALL
-content_hash: 03146876a7ae20bc53aad8563c7df0911b355540d636e3cd2cd1c8015861ee7b
-created: '2026-02-17T06:28:49.346573'
-date: '2026-02-17T06:28:49.346575'
+actor:
+- PS_E-Rezept_verordnend
+conformance: SHOULD
+content_hash: 23741ae364f99312d212e4ab3dfb2e17f303c236226a1ac0f4025b70b3399b36
+created: '2026-02-24T09:40:30.604568'
+date: '2026-02-24T09:40:30.604570'
 key: IG-TIFlow-RX-133
-modified: '2026-02-17T06:28:49.346574'
+modified: '2026-02-24T09:40:30.604569'
 release_status: NEW
-source: input/pagecontent/op-dispense-fd-requirements.md
+source: input/pagecontent/menu-fachlichkeit-ux-verordnend.md
 status: ACTIVE
-test_procedures: {}
-text: Der E-Rezept-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen
-  mittels POST /Task/&lt;id&gt;/$dispense auch die Uebergabe mehrerer MedicationDispense-Objekte
-  in einem validen Standard-FHIR-Bundle im HTTP-Body des Requests ermoeglichen.
-title: E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Speicherung mehrerer
-  MedicationDispenses (A_24283-02)
+test_procedures:
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: Das PS der verordnenden LEI SOLL es dem Nutzer ermöglichen, Freitexteingaben
+  für Abgabehinweise für den Verordnungsdatensatz (KBV_ERP_Prescription MedicationRequest.note)
+  zu erfassen.
+title: 'PS verordnende LEI: UX - Abgabehinweise für den Apotheker'
 version: 0

@@ -1,22 +1,28 @@
 actor:
 - E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: b296635be397d5a598e8f46909cf122617c97049d334705779a2265cbfbc1b87
-created: '2026-02-17T06:28:49.333759'
-date: '2026-02-17T06:28:49.333762'
+content_hash: 199a193860d29bd6653c10083dfb202371bce128e896b78fd7de01e770392f7c
+created: '2026-02-24T09:40:30.587709'
+date: '2026-02-24T09:40:30.587711'
 key: IG-TIFlow-RX-30
-modified: '2026-02-17T06:28:49.333761'
+modified: '2026-02-24T09:40:30.587710'
 release_status: NEW
-source: input/pagecontent/menu-schnittstellen-datenschutz-und-sicherheit.md
+source: input/pagecontent/op-accept-fd-requirements.md
 status: ACTIVE
 test_procedures:
-  E-Rezept-Fachdienst: []
-text: Der Verarbeitungskontext des E-Rezept-Fachdienstes MUSS sicherstellen, dass
-  sämtliche schützenswerten Daten vor einer Speicherung außerhalb der VAU verschlüsselt
-  werden. Der Verarbeitungskontext MUSS dazu Schlüssel für nur jeweils ein individuelles
-  E-Rezept (inkl. aller mit diesem E-Rezept verbundenen Daten) verwenden oder mindestens
-  einmal pro Sekunde den verwendeten Schlüssel wechseln, sodass nur die innerhalb
-  einer Sekunde neu angelegten E-Rezepte mit einem Schlüssel verschlüsselt werden.
-title: E-Rezept-Fachdienst – Verschlüsselung von außerhalb des Verarbeitungskontextes
-  der VAU gespeicherten Daten
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: 'Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
+  über /Task/&lt;id&gt;/$accept die Operation mit dem Fehlercode 403 abbrechen, wenn
+  die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
+  = true) gekennzeichnet ist und und der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start)
+  zu einem späteren Zeitpunkt als das aktuelle Datum liegt, da Teilverordnungen von
+  Mehrfachverordnungen erst ab Beginn der Einlösefrist abgerufen werden dürfen. Im
+  Falle dieses Fehlers ist im OperationOutcome des Response der Beginn der Einlösefrist
+  wie folgt anzugeben: „Teilverordnung zur Mehrfachverordnung &lt;MVO Referenz&gt;
+  ist ab &lt;Datum&gt; einlösbar.“, wobei &lt;MVO Referenz&gt; der Wert MedicationRequest.extension:Mehrfachverordnung.extension:ID.value[x]:valueIdentifier.value
+  sowie &lt;Datum&gt; der Wert MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start
+  im Format "dd.mm.yyyy" ist.'
+title: E-Rezept-Fachdienst - Task akzeptieren - Mehrfachverordnung - Beginn Einlösefrist
+  prüfen
 version: 0

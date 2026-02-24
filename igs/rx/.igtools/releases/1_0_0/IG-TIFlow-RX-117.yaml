@@ -1,18 +1,19 @@
-actor: []
-conformance: SHALL
-content_hash: 9fff17f7f697c50fe42b48898bf021f944e174ac7e3da7ecddf7ed18015a2ae4
-created: '2026-02-17T06:28:49.344698'
-date: '2026-02-17T06:28:49.344700'
+actor:
+- PS_E-Rezept_verordnend
+conformance: SHOULD
+content_hash: ac6847bd55eb1bbdaf1791615f08c7e8a5cd5ba4d4b58c7b9036fb4a6ee2a741
+created: '2026-02-24T09:40:30.601895'
+date: '2026-02-24T09:40:30.601898'
 key: IG-TIFlow-RX-117
-modified: '2026-02-17T06:28:49.344699'
+modified: '2026-02-24T09:40:30.601897'
 release_status: NEW
-source: input/pagecontent/op-activate-fd-requirements.md
+source: input/pagecontent/menu-fachlichkeit-ux-verordnend.md
 status: ACTIVE
-test_procedures: {}
-text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
-  ueber /Task/{id}/$activate die Operation mit dem Fehlercode 400 abbrechen, wenn
-  die Verordnung nicht als Mehrfachverordnung gekennzeichnet ist, aber eine Extension
-  Nummerierung oder Zeitraum enthaelt.
-title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Unzulaessige Angaben
-  (A_22631)
+test_procedures:
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: Das PS der verordnenden LEI SOLL dem Nutzer das Ergebnis einer Verarbeitung
+  , welche das PS im Hintergrund durchgeführt hat, darstellen, ohne dabei den Arbeitsfluss
+  zu unterbrechen. Fehlermeldungen sollen dabei deutlicher sichtbar sein als Erfolgsmeldungen.
+title: 'PS verordnende LEI: UX - Ergebnismeldung von Verarbeitungsvorgängen im Hintergrund'
 version: 0

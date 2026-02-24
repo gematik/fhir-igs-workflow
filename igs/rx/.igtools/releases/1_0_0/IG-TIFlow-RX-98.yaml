@@ -1,18 +1,18 @@
-actor: []
+actor:
+- PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: 17c45a0e99a31d8f917c082a7b314c15028d6819defdad66b19d368c338bdff4
-created: '2026-02-17T06:28:49.342799'
-date: '2026-02-17T06:28:49.342801'
+content_hash: fe3f7cb898595e775da5bc3759bbcc96852ffaf44e3896e5dd0098416ee69004
+created: '2026-02-24T09:40:30.598998'
+date: '2026-02-24T09:40:30.599000'
 key: IG-TIFlow-RX-98
-modified: '2026-02-17T06:28:49.342801'
+modified: '2026-02-24T09:40:30.598999'
 release_status: NEW
-source: input/pagecontent/query-api-medicationdispense-fd-requirements.md
+source: input/pagecontent/menu-fachlichkeit-ux-abgebend.md
 status: ACTIVE
-test_procedures: {}
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
-  /MedicationDispense sicherstellen, dass alle im zurückgegebenen Search-Bundle enthaltenen
-  Ressourcen mit eindeutig identifizierbaren IDs versehen sind und Referenzen innerhalb
-  des Bundles auf eine Ressource mit einer eindeutigen ID verweisen.
-title: E-Rezept-Fachdienst - MedicationDispense abrufen - Referenzierung MedicationDispense
-  und Medication (A_26527)
+test_procedures:
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: Das PS der abgebenden LEI SOLL dem Nutzer ermöglichen, ein E-Rezept einem im
+  System bestehenden Vorgang zuzuordnen.
+title: 'PS abgebende LEI: UX - Zuordnung eines E-Rezepts zu einem bestehenden Vorgang'
 version: 0

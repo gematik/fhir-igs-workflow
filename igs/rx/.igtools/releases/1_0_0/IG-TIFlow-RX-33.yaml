@@ -1,19 +1,20 @@
 actor:
 - E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: 20695b145c9fb7150eed0e966fae6ad4fb30ef8fb9b701600ce090d6ea2ceacf
-created: '2026-02-17T06:28:49.334077'
-date: '2026-02-17T06:28:49.334079'
+content_hash: a758c00c5d25e1d299d041211576aeb210b24979641f2c617ae3e52d0333cc11
+created: '2026-02-24T09:40:30.588227'
+date: '2026-02-24T09:40:30.588229'
 key: IG-TIFlow-RX-33
-modified: '2026-02-17T06:28:49.334078'
+modified: '2026-02-24T09:40:30.588228'
 release_status: NEW
-source: input/pagecontent/menu-schnittstellen-datenschutz-und-sicherheit.md
+source: input/pagecontent/query-api-task-fd-requirements.md
 status: ACTIVE
 test_procedures:
-  E-Rezept-Fachdienst: []
-text: Der Verarbeitungskontext des E-Rezept-Fachdienstes MUSS sicherstellen, dass
-  sämtliche schützenswerten Daten ausschließlich über sichere Verbindungen an autorisierte
-  Nutzer weitergegeben werden.
-title: E-Rezept-Fachdienst – Geschützte Weitergabe von Daten an autorisierte Nutzer
-  durch die VAU
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
+  /Task die gültige Ergebnisliste der Task-Ressourcen ohne die referenzierten, signierten
+  E-Rezept-Bundle an den Aufrufer zurückgeben, damit der Versicherte eine Übersicht
+  aller Tasks erhält.
+title: E-Rezept-Fachdienst - Rückgabe Tasks im Bundle Versicherter
 version: 0

@@ -1,19 +1,22 @@
-actor: []
+actor:
+- E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: 9e4908074bdd940d98e08fe53eccbb460e7d09c8d708eb1c4e75e4d7edd31935
-created: '2026-02-17T06:28:49.338150'
-date: '2026-02-17T06:28:49.338152'
+content_hash: 0626b36cbe51c397ed23c4b706930cbb4b22eaed0b480edd7d05bf388be236a7
+created: '2026-02-24T09:40:30.593747'
+date: '2026-02-24T09:40:30.593750'
 key: IG-TIFlow-RX-64
-modified: '2026-02-17T06:28:49.338151'
+modified: '2026-02-24T09:40:30.593749'
 release_status: NEW
-source: input/pagecontent/op-reject-fd-requirements.md
+source: input/pagecontent/op-activate-fd-requirements.md
 status: ACTIVE
-test_procedures: {}
-text: Der E-Rezept-Fachdienst MUSS beim Zurueckweisen eines Tasks mittels HTTP-POST-Operation
-  ueber /Task/&lt;id&gt;/$reject die externe ID in Task.identifier:Secret als https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Secret
-  loeschen und den Status des referenzierten Tasks auf Task.status = ready setzen,
-  damit nachfolgende Zugriffe auf diesen Datensatz durch Berechtigte in Kenntnis des
-  AccessCodes erfolgen koennen.
-title: E-Rezept-Fachdienst - Task zurueckweisen - Secret loeschen und Status setzen
-  (A_19172-01)
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
+  über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
+  wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
+  = true) gekennzeichnet und der Flowtype ungleich 160, 169, 200 oder 209 ist, weil
+  Mehrfachverordnungen nur für die Verordnungen von apothekenpflichtigen Arzneimittel
+  (kein BtM, kein T-Rezept) zulässig sind.
+title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - zulässige Flowtype
 version: 0

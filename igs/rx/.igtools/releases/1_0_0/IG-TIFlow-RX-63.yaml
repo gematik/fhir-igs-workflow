@@ -1,18 +1,20 @@
-actor: []
+actor:
+- E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: dec865d9a0096e66ae210dc6c5d82152d90c6be4dd1efef704e14cdba7ef6331
-created: '2026-02-17T06:28:49.338054'
-date: '2026-02-17T06:28:49.338057'
+content_hash: 975d615b585284d1c04e4e9991fdb7f000d0cded7a422423ba4166cb6470eca6
+created: '2026-02-24T09:40:30.593613'
+date: '2026-02-24T09:40:30.593616'
 key: IG-TIFlow-RX-63
-modified: '2026-02-17T06:28:49.338056'
+modified: '2026-02-24T09:40:30.593615'
 release_status: NEW
-source: input/pagecontent/op-reject-fd-requirements.md
+source: input/pagecontent/op-activate-fd-requirements.md
 status: ACTIVE
-test_procedures: {}
-text: Der E-Rezept-Fachdienst MUSS beim Zurueckweisen eines Tasks mittels HTTP-POST-Operation
-  ueber /Task/&lt;id&gt;/$reject, wenn bereits Dispensierinformationen im E-Rezept-Fachdienst
-  zum Task gespeichert wurden, die Daten fuer die Loeschinformation dieser Dispensierinformationen
-  fuer die Uebermittlung in den ePA Medication Service bereitstellen.
-title: E-Rezept-Fachdienst - Task zurueckweisen - Loeschmarkierungen Medikationsliste
-  bereitstellen (Dispensierinformationen) (A_25926)
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation POST /Task/&lt;id&gt;/$activate
+  bei erfolgreichem Abschluss der Operation, die Daten des Verordnungsdatensatzes
+  für die Übermittlung in den ePA Medication Service bereitstellen.
+title: E-Rezept-Fachdienst - Task aktivieren - Daten ePA Medication Service bereitstellen
+  (Verordnungsdatensatz)
 version: 0

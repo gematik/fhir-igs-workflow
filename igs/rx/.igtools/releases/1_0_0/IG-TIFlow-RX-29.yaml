@@ -1,19 +1,23 @@
 actor:
 - E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: 9c1d93f88a793692ac37bca50edb4d4a0bbbf86f35cbb2d6f15fc8b841b562ee
-created: '2026-02-17T06:28:49.333649'
-date: '2026-02-17T06:28:49.333651'
+content_hash: 8446d8eca1e8eba85313662757736c633e1c624e759c03067fbb307960b388e9
+created: '2026-02-24T09:40:30.587543'
+date: '2026-02-24T09:40:30.587546'
 key: IG-TIFlow-RX-29
-modified: '2026-02-17T06:28:49.333650'
+modified: '2026-02-24T09:40:30.587545'
 release_status: NEW
-source: input/pagecontent/menu-schnittstellen-datenschutz-und-sicherheit.md
+source: input/pagecontent/op-accept-fd-requirements.md
 status: ACTIVE
 test_procedures:
-  E-Rezept-Fachdienst: []
-text: Der Verarbeitungskontext des E-Rezept-Fachdienstes MUSS sämtliche physikalischen
-  Systemkomponenten sowie sämtliche Softwarekomponenten umfassen, deren Sicherheitseigenschaften
-  sich auf den Schutz der personenbezogenen medizinischen Daten vor Zugriff durch
-  Unbefugte bei ihrer Verarbeitung im Klartext auswirken können.
-title: E-Rezept-Fachdienst – Verarbeitungskontext der VAU
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Abrufen eines Tasks mit Flowtype 160, 166,
+  169, 200 oder 209 mittels HTTP-POST/$accept-Operation auf den in der URL referenzierten
+  /Task/&lt;id&gt; sicherstellen, dass ausschließlich abgebende Institutionen in der
+  Rolle oid_oeffentliche_apotheke oid_krankenhausapotheke die Operation am Fachdienst
+  aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader
+  "Authorization" feststellen, damit E-Rezepte nicht durch Unberechtigte abgerufen
+  werden können.
+title: E-Rezept-Fachdienst - Task akzeptieren - Flowtype 160/166/169/200/209 - Rollenprüfung
 version: 0

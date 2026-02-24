@@ -1,6 +1,6 @@
 # FHIR-Artefakte
 
-Diese Seite enthaelt eine Uebersicht aller FHIR-Artefakte, die im Rahmen des DiGA-Implementation Guides definiert werden.
+Diese Seite enthält eine Übersicht aller FHIR-Artefakte, die im Rahmen des DiGA-Implementation Guides definiert werden.
 
 ### Parameterprofile fuer Operationen
 

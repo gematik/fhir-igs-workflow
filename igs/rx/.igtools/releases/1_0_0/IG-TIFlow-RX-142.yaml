@@ -1,16 +1,19 @@
-actor: []
+actor:
+- PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: 6a656e941e9903917dcb370be4a624226c36f4c6f6225d6e2e9858032ae076b1
-created: '2026-02-17T06:28:49.347767'
-date: '2026-02-17T06:28:49.347774'
+content_hash: d1c9352eb8dd8cfe8e9b31affb6258416ca33ea63996f85aa38f276ed17b7c54
+created: '2026-02-24T09:40:30.605983'
+date: '2026-02-24T09:40:30.605985'
 key: IG-TIFlow-RX-142
-modified: '2026-02-17T06:28:49.347772'
+modified: '2026-02-24T09:40:30.605984'
 release_status: NEW
-source: input/pagecontent/menu-schnittstellen-generelle-prinzipien.md
+source: input/pagecontent/menu-fachlichkeit-ux-verordnend.md
 status: ACTIVE
-test_procedures: {}
-text: Der E-Rezept-Fachdienst MUSS an seinen Schnittstellen eine http-GET-Operation
-  auf den Endpunkt /metadata erlauben, in welcher er ein CapabilityStatement gemaess
-  https://www.hl7.org/fhir/capabilitystatement.html veroeffentlicht.
-title: E-Rezept-Fachdienst - RESTful API CapabilityStatement (A_20171)
+test_procedures:
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: Das PS der verordnenden LEI MUSS beim Erstellen von Verordnungen für Arzneimittel
+  nach §3a AMVV sicherstellen, dass das Kennzeichen "T-Rezept" dem Nutzer gut sichtbar
+  angezeigt wird.
+title: 'PS verordnende LEI: UX - E-T-Rezept – Hinweis T-Rezept'
 version: 0

@@ -1,18 +1,20 @@
-actor: []
-conformance: SHALL
-content_hash: d2d761c81a7573a4b7796abcd9dbb26de76b807b6f566ac8f9b85c9d70a81e51
-created: '2026-02-17T06:28:49.344065'
-date: '2026-02-17T06:28:49.344068'
+actor:
+- PS_E-Rezept_abgebend
+conformance: SHOULD
+content_hash: d087dacf5767c516c2270e860dc181f6c49d3e0fe902de5d5474d38d27aacbf4
+created: '2026-02-24T09:40:30.600455'
+date: '2026-02-24T09:40:30.600458'
 key: IG-TIFlow-RX-109
-modified: '2026-02-17T06:28:49.344067'
+modified: '2026-02-24T09:40:30.600457'
 release_status: NEW
-source: input/pagecontent/op-activate-fd-requirements.md
+source: input/pagecontent/menu-fachlichkeit-ux-abgebend.md
 status: ACTIVE
-test_procedures: {}
-text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks den Wert fuer Task.extension:eu-isRedeemableByProperties
-  auf "true" setzen, wenn Task.extension:flowType = 160 oder 200 und MedicationRequests.medication
-  vom Typ KBV_PR_ERP_Medication_PZN. Andernfalls ist der Wert der Extension auf "false"
-  zu setzen.
-title: E-Rezept-Fachdienst - Task aktivieren - Bestimmung der Einloesbarkeit im EU-Ausland
-  (A_27768)
+test_procedures:
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: Das PS der abgebenden LEI SOLL im Falle unzureichender Dokumentation der Abgabe
+  in der Abrechnungsstatusliste den Nutzer auf die korrekte Stelle verweisen, die
+  in der Dokumentation zu korrigieren ist.
+title: 'PS abgebende LEI: UX - Abrechnungsstatusliste für E-Rezepte - Verweis zur
+  Korrektur'
 version: 0

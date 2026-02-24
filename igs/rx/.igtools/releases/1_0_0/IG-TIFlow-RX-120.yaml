@@ -1,18 +1,19 @@
-actor: []
-conformance: SHALL
-content_hash: b6a27f830cb4bc7da7179c3313d662a007aafb9f763a5230206f017dfac2097a
-created: '2026-02-17T06:28:49.344929'
-date: '2026-02-17T06:28:49.344931'
+actor:
+- PS_E-Rezept_verordnend
+conformance: SHOULD
+content_hash: 769123c303e39c7f15992ad2fa10b4b25fae60c8522a4bab455853023b139580
+created: '2026-02-24T09:40:30.602341'
+date: '2026-02-24T09:40:30.602344'
 key: IG-TIFlow-RX-120
-modified: '2026-02-17T06:28:49.344930'
+modified: '2026-02-24T09:40:30.602343'
 release_status: NEW
-source: input/pagecontent/op-activate-fd-requirements.md
+source: input/pagecontent/menu-fachlichkeit-ux-verordnend.md
 status: ACTIVE
-test_procedures: {}
-text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
-  ueber /Task/{id}/$activate die Operation mit dem Fehlercode 400 abbrechen, wenn
-  die Verordnung als Mehrfachverordnung gekennzeichnet ist und der Beginn der Einloesefrist
-  nicht angegeben ist.
-title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Beginn Einloesefrist-Pflicht
-  (A_22634)
+test_procedures:
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: Das PS der verordnenden LEI SOLL bei der Erstellung des E-Rezeptes die für den
+  behandelnden Arzt und für die Einrichtung hinterlegten Stammdaten in die Verordnung
+  übernehmen.
+title: 'PS verordnende LEI: UX – Stammdaten für Arzt und Einrichtung übernehmen'
 version: 0

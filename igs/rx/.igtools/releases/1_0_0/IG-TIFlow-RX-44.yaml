@@ -1,20 +1,23 @@
 actor:
-- VAU E-Rezept-Fachdienst
+- E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: ffd6866c7d4f8a228c735d099afd48d4224aabb1f0cf57ab3e7a4d9762d2ccda
-created: '2026-02-17T06:28:49.335230'
-date: '2026-02-17T06:28:49.335236'
+content_hash: d2e4264c15567b374046dcc8b1f4c98eada4a7fd528ef0a451f48f1d9359a0f0
+created: '2026-02-24T09:40:30.590053'
+date: '2026-02-24T09:40:30.590055'
 key: IG-TIFlow-RX-44
-modified: '2026-02-17T06:28:49.335235'
+modified: '2026-02-24T09:40:30.590054'
 release_status: NEW
-source: input/pagecontent/menu-schnittstellen-datenschutz-und-sicherheit.md
+source: input/pagecontent/query-api-task-fd-requirements.md
 status: ACTIVE
 test_procedures:
-  VAU E-Rezept-Fachdienst: []
-text: Die VAU des E-Rezept-Fachdienstes MUSS den Ausschluss von Manipulationen an
-  der Hardware und der Software durch den Anbieter des E-Rezept-Fachdienstes mit Mitteln
-  umsetzen, deren dauerhafte und kontinuierliche Wirksamkeit gewährleistet werden
-  kann.
-title: E-Rezept-Fachdienst – Kontinuierliche Wirksamkeit des Manipulationsschutzes
-  der VAU
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
+  Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende LEI den Task mit dem
+  Geheimnis Task.identifier:Secret sowie im Bundle mit dem in Task.input mit Codingsystem
+  https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType = 1 referenzierten
+  QES-Datensatz als Binary-Ressource https://www.hl7.org/fhir/binary.html an den Aufrufer
+  zurückgeben.
+title: E-Rezept-Fachdienst - Task abrufen - Apotheke - Verordnung abrufen - erneuter
+  Abruf Verordnung
 version: 0

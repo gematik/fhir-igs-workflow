@@ -1,17 +1,11 @@
-# Client-Anforderungen: Operation `$create`
+Diese Seite enthält die normativen Anforderungen an den Client des E-Rezept-Fachdienst für die Operation `$create`.
+Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/{{ site.data.constants.tiflow_core_version }}/op-create-client-requirements.html).
 
-Diese Seite beschreibt die Anforderungen an Clients zur Nutzung von `$create`.
-
-## Normative Client-Anforderungen (Auszug)
-
-- A_19275: Das Primaersystem MUSS ein E-Rezept-Bundle fuer die nachfolgende Signierung erstellen.
-- A_19276: Das Primaersystem MUSS fuer ein neues E-Rezept eine E-Rezept-ID ueber die Fachdienst-Schnittstelle abrufen.
-- A_19281-03: Das Primaersystem MUSS den QES-signierten Datensatz fuer das anschliessende Einstellen vorbereiten.
-
-## Hinweise zur Nutzung
-
-- Ein `Task` fuer `$create` soll nur bedarfsbezogen fuer eine konkrete Verordnung erzeugt werden.
-- Aus der API-Produktdokumentation: Task-IDs duerfen nicht auf Vorrat erzeugt bzw. bevorratet werden.
-- Der Client muss AccessCode und PrescriptionID sicher speichern, weil beide fuer `$activate` benoetigt werden.
-
-Quelle fuer Produkthinweise: [api-erp](https://github.com/gematik/api-erp/blob/master/docs/erp_bereitstellen.adoc#e-rezept-erstellen)
+<!-- A_19275 -->
+<requirement conformance="SHALL" key="IG-TIFlow-RX-4" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle erstellen" version="0">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Konformitätsbestätigung"/>
+    </actor>
+     Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" eine Bundle-FHIR-Ressource gemäß Profilierung https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle Rezept-ID aus der Task-Ressource als Identifier erstellen.
+</requirement>

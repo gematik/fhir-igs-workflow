@@ -1,15 +1,41 @@
-# Client-Anforderungen: Operation `$dispense`
+Diese Seite enthält die normativen Anforderungen an den Client des E-Rezept-Fachdienst für die Operation `$dispense`.
 
-Diese Seite beschreibt die Anforderungen an Clients zur Nutzung von `$dispense`.
+Mit diesem Anwendungsfall stellt das PS der abgebenden LEI Dispensierinformationen für den Versicherten bereit, die dann vom Versicherten auf seinem E-Rezept-FdV heruntergeladen werden können. Das E-Rezept-FdV kann dem Versicherten außerdem darstellen, dass das E-Rezept beliefert wurde bevor der Workflow des E-Rezepts durch den Anwendungsfall "Quittung abrufen" beendet wird.
 
-## Normative Client-Anforderungen (Auszug)
+Dieser Anwendungsfall kann so lange wiederholt werden, so lange sich der Task zum E-Rezept im Status "in Abgabe (gesperrt)" befindet. Bei der wiederholten Übermittlung wird die zuvor übermittelte Dispensierinformation überschrieben. D.h. es muss immer die vollständige Dispensierinformation übermittelt werden.
 
-- A_24289: Das AVS MUSS ein E-Rezept fuer die Bereitstellung von Dispensierinformationen auswaehlbar machen.
-- A_24290: Das AVS MUSS den Anwendungsfall "Dispensierinformationen bereitstellen" gemaess ILF umsetzen.
-- A_24291-01: Das AVS MUSS Dispensierinformationen profilkonform erstellen.
-- A_26346: Das AVS MUSS `POST /Task/<id>/$dispense` mit `Authorization`, `Task-ID`, `secret` und `MedicationDispense` ausfuehren.
+<!-- A_24289 -->
+<requirement conformance="SHALL" key="IG-TIFlow-RX-47" title="PS abgebende LEI: Dispensierinformationen bereitstellen - E-Rezept auswählen" version="0">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+     Das PS der abgebenden LEI MUSS im Anwendungsfall "Dispensierinformationen bereitstellen" es dem Nutzer ermöglichen, ein E-Rezept als abgegeben auszuwählen.
+</requirement>
 
-## Hinweise zur Nutzung
+<!-- A_24290 -->
+<requirement conformance="SHALL" key="IG-TIFlow-RX-48" title="PS abgebende LEI: Dispensierinformationen bereitstellen" version="0">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+     Das PS der abgebenden LEI MUSS den Anwendungsfall "UC 4.16- Dispensierinformationen bereitstellen" gemäß TAB_ILFERP_022 umsetzen. Tabelle # : TAB_ILFERP_022 - Dispensierinformationen bereitstellen Name Dispensierinformationen bereitstellen Auslöser Aufruf des Anwendungsfalls in der GUI Akteur Leistungserbringer, Mitarbeiter der abgebenden LEI Vorbedingung Die LEI hat das E-Rezept vom E-Rezept-Fachdienst heruntergeladen. Der Nutzer hat im AVS ein E-Rezept als abgegeben markiert. Die LEI hat sich gegenüber der TI authentisiert. Nachbedingung Der Vorgang zum E-Rezept ist weiterhin im AVS verfügbar. Der Anwendungsfall "Dispensierinformationen bereitstellen" kann erneut ausgeführt werden. Der Anwendungsfall "Quittung abrufen" kann ausgeführt werden. Standardablauf Informationen über das abgegebene Medikament erstellt Nur für Fertigarzneimittel, die einen Data-Matrix-Code gemäß securPharm-System besitzen: Chargeninfo und Verfallsdatum ergänzen. Task-ID und Geheimnis des E-Rezepts bestimmen Dispensierinformationen dem E-Rezept-Fachdienst bereitstellen
+</requirement>
 
-- Wiederholte `$dispense`-Aufrufe ueberschreiben vorherige Dispensierinformationen; deshalb stets die vollstaendige, aktuelle Fassung senden.
-- Fuer die Dosierung sind die Flowtype-spezifischen Vorgaben einzuhalten.
+<!-- A_24291-01 -->
+<requirement conformance="SHALL" key="IG-TIFlow-RX-49" title="PS abgebende LEI: Dispensierinformationen bereitstellen - Dispensierinformationen erstellen" version="0">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+     Das PS der abgebenden LEI MUSS im Anwendungsfall "Dispensierinformationen bereitstellen" die Dispensierinformationen nach den Vorgaben aus "Erstellen von Dispensierinformationen" erzeugen.
+</requirement>
+
+<!-- A_26346 -->
+<requirement conformance="SHALL" key="IG-TIFlow-RX-50" title="PS abgebende LEI: Dispensierinformationen bereitstellen - Dispensierinformation übermitteln" version="0">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+     Das PS der abgebenden LEI MUSS im Anwendungsfall "Dispensierinformationen bereitstellen" für das abgegebene E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$dispense mit ACCESS_TOKEN im Authorization-Header Task-ID in URL &lt;id&gt; Geheimnis in URL-Parameter ?secret= MedicationDispense bzw. Bundle Ressource ausführen.
+</requirement>

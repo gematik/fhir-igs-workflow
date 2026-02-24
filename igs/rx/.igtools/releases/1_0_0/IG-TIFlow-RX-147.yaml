@@ -1,20 +1,18 @@
-actor: []
-conformance: SHALL
-content_hash: 60c37e5b57ea863b4dd25143a4b9d642617d73b2e1c42d21019d8940b9e851be
-created: '2026-02-17T06:28:49.348499'
-date: '2026-02-17T06:28:49.348502'
+actor:
+- PS_E-Rezept_verordnend
+conformance: SHOULD
+content_hash: 61e0a376d41a1b1fb5b80d75e0f4018265fb27e4c4bc56ced2d0513562fb6397
+created: '2026-02-24T09:40:30.606637'
+date: '2026-02-24T09:40:30.606640'
 key: IG-TIFlow-RX-147
-modified: '2026-02-17T06:28:49.348501'
+modified: '2026-02-24T09:40:30.606639'
 release_status: NEW
-source: input/pagecontent/op-close-fd-requirements.md
+source: input/pagecontent/menu-fachlichkeit-ux-verordnend.md
 status: ACTIVE
-test_procedures: {}
-text: Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close
-  erlauben, dass der Aufruf ohne Uebergabe einer MedicationDispense im Request Body
-  stattfindet. Der E-Rezept-Fachdienst MUSS in dem Fall sicherstellen, dass eine MedicationDispense
-  fuer diesen Task existiert. Der E-Rezept-Fachdienst MUSS, falls keine MedicationDispense
-  zum dazugehoerigen Task existiert, mit dem Fehler 403 abbrechen. Im Fehlerfall ist
-  die Meldung "Abschluss des Workflows konnte nicht durchgefuehrt werden. Dispensierinformationen
-  wurden nicht bereitgestellt." im OperationOutcome zu uebermitteln.
-title: E-Rezept-Fachdienst - Task schliessen - Aufruf ohne MedicationDispense (A_24287-01)
+test_procedures:
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: Das PS der verordnenden LEI SOLL es dem Nutzer ermöglichen Mehrfachverordnungen
+  leicht aus einem Verordnungsvorgang heraus generieren können.
+title: 'PS verordnende LEI: UX - MVO - Generierung von Mehrfachverordnungen'
 version: 0

@@ -1,23 +1,19 @@
 actor:
-- E-Rezept-Fachdienst
+- PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: 36d63810cc1956ec1200394746726f8c0a0aeec8a54124292058f3c8818fb167
-created: '2026-02-17T06:28:49.332107'
-date: '2026-02-17T06:28:49.332109'
+content_hash: 3f03eb049aa5e60259fef6c8e8a89a515bed7f3c035bf649f3c86b06a3f0c7c9
+created: '2026-02-24T09:40:30.584186'
+date: '2026-02-24T09:40:30.584188'
 key: IG-TIFlow-RX-15
-modified: '2026-02-17T06:28:49.332108'
+modified: '2026-02-24T09:40:30.584187'
 release_status: NEW
-source: input/pagecontent/menu-schnittstellen-datenschutz-und-sicherheit.md
+source: input/pagecontent/op-activate-client-requirements.md
 status: ACTIVE
 test_procedures:
-  E-Rezept-Fachdienst: []
-text: 'Der E-Rezept-Fachdienst MUSS folgende Vorgaben umsetzen: Er MUSS mindestens
-  einmal täglich aus der TI (TI-interne Verbindung) die "TSL(ECC-RSA)" und deren zugehörigen
-  Hashwert aus der TI herunterladen. Er MUSS unter dem Pfadnamen "/TSL.xml" über das
-  vom E-Rezept-FdV genutzte HTTPS-Interface die "TSL(ECC-RSA)" der TI zur Verfügung
-  stellen (HTTP-GET, HTTP Content-Type: text/xml). Er MUSS unter dem Pfadnamen "/TSL.sha2"
-  über das vom E-Rezept-FdV genutzte HTTPS-Interface den vom TSL-Dienst heruntergeladenen
-  SHA-256 Hashwert der Datei TSL.xml aus Spiegelstrich 2 zur Verfügung stellen (HTTP
-  Content-Type: text/plain, Hashwert als hexdump kodiert (64 Byte + Newline)).'
-title: E-Rezept-Fachdienst – Bereitstellung TSL
+  PS_E-Rezept_verordnend:
+  - Konformitätsbestätigung
+text: Das PS der verordnenden LEI MUSS im Verordnungsdatensatz für ein E-Rezept des
+  Flowtype 166 sicherstellen, dass die maximale Reichdauer entsprechend den gesetzlichen
+  Vorgaben nicht überschritten wird.
+title: 'PS verordnende LEI: E-Rezept erstellen – Flowtype 166 – Reichdauer nach Vorgaben'
 version: 0

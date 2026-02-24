@@ -1,0 +1,23 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: 3d41bb531951a0fdb45fd620dd8ec914ee29e5a047ea933e4dec977eb57504ac
+created: '2026-02-16T08:14:25.038400'
+date: '2026-02-17T16:07:12.698111'
+key: IG-TIFlow-DiGA-24
+modified: '2026-02-17T16:07:12.698111'
+release_status: NEW
+source: input/pagecontent/op-activate-req-server.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: "Der E-Rezept-Fachdienst MUSS die Aktivierung eines Tasks mit Flowtype 162 mit\
+  \ dem HTTP-Status-Code 400 abbrechen, wenn die QES gemäß der professionOID des Signaturzertifikats\
+  \ des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die der folgenden\
+  \ professionOID entspricht:\n -\toid_arzt\n -\toid_zahnarzt\n -\toid_psychotherapeut\n\
+  \ -\toid_ps_psychotherapeut\n -\toid_kuj_psychotherapeut\n damit nur solche Leistungserbringer\
+  \ ein signiertes E-Rezept einstellen, die zur Verordnung von DiGAs ermächtigt sind."
+title: E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - QES durch berechtigte
+  Berufsgruppe
+version: 0

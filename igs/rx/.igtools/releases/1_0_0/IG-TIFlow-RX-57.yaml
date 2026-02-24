@@ -1,19 +1,22 @@
 actor:
 - E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: 0d7266c84b58f61f7829bf46c48fe1157a081a2a98d32896c1197af4544f8a1d
-created: '2026-02-17T06:28:49.336601'
-date: '2026-02-17T06:28:49.336603'
+content_hash: 454e69d016908c1a3af4b0b95d4236a8423fa9c53031004ee4706645e010e785
+created: '2026-02-24T09:40:30.592784'
+date: '2026-02-24T09:40:30.592786'
 key: IG-TIFlow-RX-57
-modified: '2026-02-17T06:28:49.336602'
+modified: '2026-02-24T09:40:30.592786'
 release_status: NEW
-source: input/pagecontent/menu-schnittstellen-datenschutz-und-sicherheit.md
+source: input/pagecontent/op-activate-fd-requirements.md
 status: ACTIVE
 test_procedures:
-  E-Rezept-Fachdienst: []
-text: Der E-Rezept-Fachdienst MUSS sicherstellen, dass der für das Pseudonymisieren
-  der gematik-Logdaten benötigte geheime Schlüssel key_pn_log im Klartext ausschließlich
-  innerhalb einer VAU-Instanz verarbeitet wird.
-title: E-Rezept-Fachdienst – Pseudonymisieren der gematik-Logdaten – geheimer Schlüssel
-  nur in VAU
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: 'Der E-Rezept-Fachdienst MUSS die Aktivierung eines Tasks mit Flowtype 166 mit
+  dem HTTP-Status-Code 400 abbrechen, wenn die QES gemäß der professionOID des Signaturzertifikats
+  des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die der folgenden
+  professionOID entspricht: oid_arzt damit nur solche Leistungserbringer ein signiertes
+  E-Rezept einstellen, die zur Verordnung von T-Rezepten ermächtigt sind.'
+title: E-Rezept-Fachdienst - Task aktivieren - Flowtype 166 - QES durch berechtigte
+  Berufsgruppe
 version: 0

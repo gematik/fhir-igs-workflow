@@ -1,17 +1,18 @@
-actor: []
-conformance: SHALL
-content_hash: 971c0ec6b39b92de7d6519e0acc4b9e93e2ae2e2909bf37f3d7b3dfe7887c328
-created: '2026-02-17T06:28:49.344225'
-date: '2026-02-17T06:28:49.344227'
+actor:
+- PS_E-Rezept_abgebend
+conformance: SHOULD
+content_hash: 55bb4750bf60538290def3320cfbefbfd2cb35b6d308260824880f6581dffdcc
+created: '2026-02-24T09:40:30.600725'
+date: '2026-02-24T09:40:30.600727'
 key: IG-TIFlow-RX-111
-modified: '2026-02-17T06:28:49.344226'
+modified: '2026-02-24T09:40:30.600726'
 release_status: NEW
-source: input/pagecontent/op-activate-fd-requirements.md
+source: input/pagecontent/menu-fachlichkeit-ux-abgebend.md
 status: ACTIVE
-test_procedures: {}
-text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
-  ueber /Task/{id}/$activate bei erfolgreichem Abschluss der Operation den Push Notification
-  Prozess fuer den Trigger mit der ChannelId "erp.task.activate" und den Versicherten
-  mit der KVNR = Task.for initiieren.
-title: E-Rezept-Fachdienst - Task aktivieren - Push Notification Versicherter (A_28126)
+test_procedures:
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: Das PS der abgebenden LEI SOLL in dem Fall, dass die für die Anwendung E-Rezept
+  notwendigen zentralen Dienste der TI nicht erreichbar sind, den Nutzer darüber benachrichtigen.
+title: 'PS abgebende LEI: UX - Hinweis bei Nicht-Erreichbarkeit des E-Rezept-Fachdienstes'
 version: 0

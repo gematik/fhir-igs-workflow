@@ -1,20 +1,19 @@
 actor:
-- E-Rezept-Fachdienst
+- PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: 1325317a3be865d97fd338deafbb0d2abe1cb88f2c222ed40226927b99ac5144
-created: '2026-02-17T06:28:49.331557'
-date: '2026-02-17T06:28:49.331559'
+content_hash: 6f07f232836c0ad105854005cbd701e903e5f3190e42d6e445dc71f251e76e3c
+created: '2026-02-24T09:40:30.583501'
+date: '2026-02-24T09:40:30.583504'
 key: IG-TIFlow-RX-10
-modified: '2026-02-17T06:28:49.331558'
+modified: '2026-02-24T09:40:30.583503'
 release_status: NEW
-source: input/pagecontent/menu-schnittstellen-datenschutz-und-sicherheit.md
+source: input/pagecontent/op-activate-client-requirements.md
 status: ACTIVE
 test_procedures:
-  E-Rezept-Fachdienst: []
-text: Der E-Rezept-Fachdienst MUSS jeden Zugriff auf E-Rezepte mittels AccessCode
-  (Vertreterzugriff) mit dem http-Status-Code 400 ablehnen, wenn sich aus dem Zugriff
-  eine Kombination aus KVNR der Prüfkarte eGK und KVNR von Versicherten ergibt, d.
-  h. Versicherte dürfen nicht auf Prüfrezepte und mit Prüfkarte eGK darf nicht auf
-  Rezepte von Versicherten zugegriffen werden.
-title: E-Rezept-Fachdienst – Ausschluss Vertreterzugriff auf bzw. mittels Prüf-Identität
+  PS_E-Rezept_verordnend:
+  - Konformitätsbestätigung
+text: Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden
+  erstellen" eine Bundle-FHIR-Ressource gemäß Profilierung https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle
+  Rezept-ID aus der Task-Ressource als Identifier erstellen.
+title: 'PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle erstellen'
 version: 0

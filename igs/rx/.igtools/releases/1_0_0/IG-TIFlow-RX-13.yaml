@@ -1,18 +1,20 @@
 actor:
-- Anb_eRp_FD
+- PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: f5d1131c3e02b2eaa1b68d4cada642cb5a106e9f9b06a21aea037c6f4e5d0058
-created: '2026-02-17T06:28:49.331885'
-date: '2026-02-17T06:28:49.331887'
+content_hash: e748a9f2395689d96ef3f911ef9a79a23877039f0a9db1c98956154cd6c6351b
+created: '2026-02-24T09:40:30.583922'
+date: '2026-02-24T09:40:30.583924'
 key: IG-TIFlow-RX-13
-modified: '2026-02-17T06:28:49.331886'
+modified: '2026-02-24T09:40:30.583923'
 release_status: NEW
-source: input/pagecontent/menu-schnittstellen-datenschutz-und-sicherheit.md
+source: input/pagecontent/op-activate-client-requirements.md
 status: ACTIVE
 test_procedures:
-  Anb_eRp_FD: []
-text: Der Anbieter des E-Rezept-Fachdienstes MUSS organisatorische Prozesse mit der
-  gematik zur Verwaltung von API-KEYs für die Schnittstellen des E-Rezept-Fachdienstes
-  zum Internet unterstützen.
-title: E-Rezept-Fachdienst – Prozess zur Verwaltung von API-KEYs
+  PS_E-Rezept_verordnend:
+  - Konformitätsbestätigung
+text: Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden
+  erstellen" beim Erstellen des E-Rezept-Bundles für die Teilverordnung einer Mehrfachverordnung
+  den Beginn der Einlösefrist der Teilverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start)
+  angeben.
+title: 'PS verordnende LEI: E-Rezept erstellen - Mehrfachverordnung - Beginn Einlösefrist'
 version: 0

@@ -1,18 +1,18 @@
-actor: []
-conformance: SHALL
-content_hash: 46d1134b6264b785c2a74e8d5461354b2fec071e9258b0f3a39319c65c007091
-created: '2026-02-17T06:28:49.342636'
-date: '2026-02-17T06:28:49.342639'
+actor:
+- PS_E-Rezept_abgebend
+conformance: SHOULD
+content_hash: 42fdd9afb79bcead87f4eda82b9e718ae97875edaed3df0f574b99d3b1330e9e
+created: '2026-02-24T09:40:30.598737'
+date: '2026-02-24T09:40:30.598739'
 key: IG-TIFlow-RX-96
-modified: '2026-02-17T06:28:49.342638'
+modified: '2026-02-24T09:40:30.598738'
 release_status: NEW
-source: input/pagecontent/query-api-medicationdispense-fd-requirements.md
+source: input/pagecontent/menu-fachlichkeit-ux-abgebend.md
 status: ACTIVE
-test_procedures: {}
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
-  /MedicationDispense sicherstellen, dass ausschließlich Nutzer in der Rolle oid_versicherter
-  die Operation am E-Rezept-Fachdienst aufrufen dürfen und die Rolle "professionOID"
-  des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen,
-  damit Dispensierinformationen nicht durch Unberechtigte ausgelesen werden können.
-title: E-Rezept-Fachdienst - MedicationDispense abrufen - Rollenprüfung (A_19405-02)
+test_procedures:
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: Das PS der abgebenden LEI SOLL, wenn eine Freitextverordnung vorliegt, den Nutzer
+  darauf hinweisen, dass die Angaben im E-Rezept auf Vollständigkeit zu prüfen ist.
+title: 'PS abgebende LEI: UX - Freitextverordnung - Hinweis zur manuellen Prüfung'
 version: 0

@@ -1,6 +1,6 @@
 Übersicht der fachlichen Anwendungsfälle im PKV‑Szenario.
 
-{% assign use_cases = site.data['use-cases'] %}
+{% assign use_cases = site.data['gen-use-cases'] %}
 {% assign roles = site.data['roles'] %}
 
 Die folgenden fachlichen Anwendungsfälle beschreiben – aus Sicht der beteiligten Rollen – die Schritte zur Bereitstellung und Nutzung der Abrechnungsinformation.

@@ -1,20 +1,24 @@
 actor:
-- Verarbeitungskontext E-Rezept-Fachdienst
+- E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: 95fb4f54edcac24422002d9058f9aecdf8af84c7340693cd0aa625db198fbb52
-created: '2026-02-17T06:28:49.336496'
-date: '2026-02-17T06:28:49.336498'
+content_hash: d14a4d6e901a0b25277472f31edbb474eb03047cbce1dbedff885ffe164f7982
+created: '2026-02-24T09:40:30.592631'
+date: '2026-02-24T09:40:30.592634'
 key: IG-TIFlow-RX-56
-modified: '2026-02-17T06:28:49.336497'
+modified: '2026-02-24T09:40:30.592632'
 release_status: NEW
-source: input/pagecontent/menu-schnittstellen-datenschutz-und-sicherheit.md
+source: input/pagecontent/op-activate-fd-requirements.md
 status: ACTIVE
 test_procedures:
-  Verarbeitungskontext E-Rezept-Fachdienst: []
-text: Der Verarbeitungskontext des E-Rezept-Fachdienstes MUSS den sicheren Kanal zu
-  einem Client nach Abschluss einer fachlichen Operation (die aus mehreren Requests
-  bestehen kann) abbauen, sodass anschließend keine Zugriffe dieses Clients auf den
-  Verarbeitungskontext mehr möglich sind, ohne dass eine neue Verbindung aufgebaut
-  wird.
-title: E-Rezept-Fachdienst – Automatisierter Abbau des sicheren Kanals
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: "Der E-Rezept-Fachdienst MUSS die Aktivierung eines Tasks mit Flowtype 160,\
+  \ 169, 200 oder 209 mit dem HTTP-Status-Code 400 abbrechen, wenn die QES gemäß der\
+  \ professionOID des Signaturzertifikats des Signierenden nicht von einer Berufsgruppe\
+  \ ausgestellt wurde, die der folgenden professionOID entspricht:\n    <ul>\n   \
+  \     <li>oid_arzt</li> \n        <li>oid_zahnarzt</li> \n    </ul>\n    damit nur\
+  \ solche Leistungserbringer ein signiertes E-Rezept einstellen, die zur Verordnung\
+  \ von Medikamenten ermächtigt sind."
+title: E-Rezept-Fachdienst - Task aktivieren - Flowtype 160/169/200/209 - QES durch
+  berechtigte Berufsgruppe
 version: 0

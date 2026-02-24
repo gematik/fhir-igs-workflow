@@ -1,20 +1,20 @@
-actor: []
+actor:
+- E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: c2b7465fadcc13eedb82db6f89b37d20b8f233050c64ee75f14838df95dd8861
-created: '2026-02-17T06:28:49.339877'
-date: '2026-02-17T06:28:49.339880'
+content_hash: d4abdfda1e0c87e4fabbdf41a91ff0a556373a12d458c06d098572454ffb5b0c
+created: '2026-02-24T09:40:30.595824'
+date: '2026-02-24T09:40:30.595827'
 key: IG-TIFlow-RX-77
-modified: '2026-02-17T06:28:49.339879'
+modified: '2026-02-24T09:40:30.595826'
 release_status: NEW
-source: input/pagecontent/op-accept-fd-requirements.md
+source: input/pagecontent/op-abort-fd-requirements.md
 status: ACTIVE
-test_procedures: {}
-text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
-  ueber /Task/&lt;id&gt;/$accept die Operation mit dem HTTP-Fehlercode 410 abbrechen,
-  wenn der referenzierte /Task/&lt;id&gt; existiert, jedoch kein AccessCode im Task.identifier:AccessCode
-  als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode vorhanden ist
-  oder der Status Task.status = cancelled ist, damit ein Apotheker den Versicherten
-  ueber die zwischenzeitliche Loeschung des Datensatzes in Kenntnis setzen kann.
-title: E-Rezept-Fachdienst - Task akzeptieren - Pruefung Datensatz zwischenzeitlich
-  geloescht (A_19149-02)
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts mittels POST /Task/&lt;id&gt;/$abort
+  durch eine verordnende oder abgebende Leistungserbringerinstitution die Daten für
+  die Löschinformation des Verordnungsdatensatzes in den ePA Medication Service bereitstellen.
+title: E-Rezept-Fachdienst - E-Rezept löschen - Löschinformation ePA Medication Service
+  bereitstellen (Verordnungsdatensatz) - Leistungserbringerinstitution
 version: 0

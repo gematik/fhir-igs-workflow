@@ -1,17 +1,18 @@
-actor: []
-conformance: SHALL
-content_hash: 3175423604510fcce21d7754c87cae8bcf6f24dfd6a15b438e9a02233d2b1d26
-created: '2026-02-17T06:28:49.349301'
-date: '2026-02-17T06:28:49.349303'
+actor:
+- PS_E-Rezept_verordnend
+conformance: SHOULD
+content_hash: 4d53b9b7f4821ad0420863358dac82f27a42351b892361fa29081b9e1eeeff26
+created: '2026-02-24T09:40:30.607279'
+date: '2026-02-24T09:40:30.607281'
 key: IG-TIFlow-RX-152
-modified: '2026-02-17T06:28:49.349302'
+modified: '2026-02-24T09:40:30.607280'
 release_status: NEW
-source: input/pagecontent/op-close-fd-requirements.md
+source: input/pagecontent/menu-fachlichkeit-ux-verordnend.md
 status: ACTIVE
-test_procedures: {}
-text: Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close
-  den Zeitpunkt des Aufrufes in Task.extension:lastMedicationDispense im Format "YYYY-MM-DDThh:mm:ss+zz:zz"
-  (FHIR-instant) anlegen und speichern, wenn ein MedicationDispense Objekt im Aufruf
-  uebergeben wird.
-title: E-Rezept-Fachdienst - Task schliessen - Zeitstempel MedicationDispense (A_26337)
+test_procedures:
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: Das PS der verordnenden LEI SOLL dem Nutzer ermöglichen, dass alle Teilverordnungen
+  in einer Operation mit der Komfortsignatur signiert werden können.
+title: 'PS verordnende LEI: UX - MVO - Signieren von Teilverordnungen'
 version: 0

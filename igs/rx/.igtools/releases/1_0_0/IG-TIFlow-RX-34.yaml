@@ -1,17 +1,23 @@
 actor:
-- Verarbeitungskontext E-Rezept-Fachdienst
+- E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: de395c33a16cb6cd4c36611b1a23c9ac8d3e04ee118f6ca75c221bfafa32fab7
-created: '2026-02-17T06:28:49.334183'
-date: '2026-02-17T06:28:49.334185'
+content_hash: 17851fe4a97ac3ea47d0cf8b660c9adb0371813b74a835871f270c7733f35aec
+created: '2026-02-24T09:40:30.588368'
+date: '2026-02-24T09:40:30.588370'
 key: IG-TIFlow-RX-34
-modified: '2026-02-17T06:28:49.334184'
+modified: '2026-02-24T09:40:30.588369'
 release_status: NEW
-source: input/pagecontent/menu-schnittstellen-datenschutz-und-sicherheit.md
+source: input/pagecontent/query-api-task-fd-requirements.md
 status: ACTIVE
 test_procedures:
-  Verarbeitungskontext E-Rezept-Fachdienst: []
-text: Der Verarbeitungskontext des E-Rezept-Fachdienstes MUSS sicherstellen, dass
-  er nur transportverschlüsselt mit dem PVS kommuniziert.
-title: E-Rezept-Fachdienst – Transportverschlüsselte Übertragung von Daten mit PVS
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen konkreten
+  über &lt;id&gt; adressierten /Task/&lt;id&gt; (ohne die Referenz einer FHIR-Operation)
+  sicherstellen, dass ausschließlich Clientsysteme in einer der Rollen oid_versicherter
+  oid_oeffentliche_apotheke oid_krankenhausapotheke oid_kostentraeger die Operation
+  am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN
+  im HTTP-RequestHeader "Authorization" feststellen, damit E-Rezepte nicht durch Unberechtigte
+  ausgelesen werden können.
+title: E-Rezept-Fachdienst - Task abrufen - Rollenprüfung
 version: 0

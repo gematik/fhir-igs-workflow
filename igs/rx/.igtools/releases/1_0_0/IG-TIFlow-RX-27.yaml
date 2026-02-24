@@ -1,18 +1,22 @@
 actor:
-- Anb_eRp_FD
+- E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: 52c11b1afd1fd533d34706d797db82e66a83cf75d331e42496786c5be5c3fec1
-created: '2026-02-17T06:28:49.333435'
-date: '2026-02-17T06:28:49.333438'
+content_hash: 998b0080d869a4a9c51581ced2ced3701e7210ff765e6d6997267928cf2c571b
+created: '2026-02-24T09:40:30.586833'
+date: '2026-02-24T09:40:30.586836'
 key: IG-TIFlow-RX-27
-modified: '2026-02-17T06:28:49.333437'
+modified: '2026-02-24T09:40:30.586835'
 release_status: NEW
-source: input/pagecontent/menu-schnittstellen-datenschutz-und-sicherheit.md
+source: input/pagecontent/op-reject-fd-requirements.md
 status: ACTIVE
 test_procedures:
-  Anb_eRp_FD: []
-text: Der Anbieter des E-Rezept-Fachdienstes MUSS einen betrieblichen Prozess unterstützen,
-  mittels dem die Konfiguration des Deaktivierens von Anwendungsfällen angepasst werden
-  kann.
-title: Anbieter E-Rezept-Fachdienst – Betrieblicher Prozess Deaktivieren von Übertragungen
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 160,
+  169, 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject, wenn
+  bereits Dispensierinformationen im E-Rezept-Fachdienst zum Task gespeichert wurden,
+  die Daten für die Löschinformation dieser Dispensierinformationen für die Übermittlung
+  in den ePA Medication Service bereitstellen.
+title: E-Rezept-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Löschmarkierungen
+  Medikationsliste bereitstellen (Dispensierinformationen)
 version: 0

@@ -1,22 +1,20 @@
 actor:
-- VAU E-Rezept-Fachdienst
+- E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: c1ea0bb8fd8170eb8d34f52f593058a37c9174691ebb44b5283456f930c92196
-created: '2026-02-17T06:28:49.334812'
-date: '2026-02-17T06:28:49.334814'
+content_hash: 16eef8909a8dd677d0d7f51980f5004bb3a552436229559afee53b978173e4ed
+created: '2026-02-24T09:40:30.589205'
+date: '2026-02-24T09:40:30.589208'
 key: IG-TIFlow-RX-40
-modified: '2026-02-17T06:28:49.334813'
+modified: '2026-02-24T09:40:30.589207'
 release_status: NEW
-source: input/pagecontent/menu-schnittstellen-datenschutz-und-sicherheit.md
+source: input/pagecontent/query-api-task-fd-requirements.md
 status: ACTIVE
 test_procedures:
-  VAU E-Rezept-Fachdienst: []
-text: Die VAU des E-Rezept-Fachdienstes MUSS für die Anwendergruppen Leistungserbringer
-  (E-Rezepte ausstellen, E-Rezepte einlösen) und Versicherte (E-Rezepte einsehen,
-  zuweisen und löschen) sicherstellen, dass eine Überlastung aufgrund außergewöhnlich
-  hoher Aktivität einer Anwendergruppe (primär der Versicherten) keine Beeinträchtigung
-  der Arbeitsfähigkeit der anderen Anwendergruppen (primär der Ärzte und Apotheker)
-  zur Folge hat.
-title: E-Rezept-Fachdienst – Unabhängige Skalierung der Dienst-Ressourcen für verschiedene
-  Anwendergruppen
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst DARF den AccessCode beim Zugriff durch den Versicherten
+  NICHT an das E-Rezept-Frontend des Versicherten herausgeben, wenn der Flowtype des
+  Tasks den Wert für die Workflowsteuerung durch Leistungserbringer enthält (169,
+  209).
+title: E-Rezept-Fachdienst - Task abrufen - Flowtype 169 / 209 - keine Einlöseinformationen
 version: 0

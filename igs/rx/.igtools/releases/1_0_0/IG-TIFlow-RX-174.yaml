@@ -1,0 +1,21 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: e05370f7653cab76385633dafc4f016e88e16bb0d56475ff0c41a87472256415
+created: '2026-02-24T09:40:30.610448'
+date: '2026-02-24T09:40:30.610451'
+key: IG-TIFlow-RX-174
+modified: '2026-02-24T09:40:30.610450'
+release_status: NEW
+source: input/pagecontent/op-dispense-fd-requirements.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen
+  mittels POST /Task/&lt;id&gt;/$dispense die Referenz auf den aufgerufenen Task /Task/&lt;id&gt;
+  als MedicationDispense.supportingInformation übernehmen und die MedicationDispense,
+  sowie die in MedicationDispense.medication referenzierte Medication, speichern.
+title: E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - MedicationDispense
+  speichern
+version: 0

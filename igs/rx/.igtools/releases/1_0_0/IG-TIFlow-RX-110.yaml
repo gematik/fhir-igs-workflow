@@ -1,17 +1,19 @@
-actor: []
-conformance: SHALL
-content_hash: 491152aeb8fee528ca6f372e9ae8e7d6b25d622cb31970dfaeba747f1c567f9c
-created: '2026-02-17T06:28:49.344145'
-date: '2026-02-17T06:28:49.344147'
+actor:
+- PS_E-Rezept_abgebend
+conformance: SHOULD
+content_hash: 5cb97a5db3ecdb64ea8f7394c3823686229ba82c4af628a577ec787b91e9bb32
+created: '2026-02-24T09:40:30.600587'
+date: '2026-02-24T09:40:30.600590'
 key: IG-TIFlow-RX-110
-modified: '2026-02-17T06:28:49.344146'
+modified: '2026-02-24T09:40:30.600589'
 release_status: NEW
-source: input/pagecontent/op-activate-fd-requirements.md
+source: input/pagecontent/menu-fachlichkeit-ux-abgebend.md
 status: ACTIVE
-test_procedures: {}
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation POST /Task/{id}/$activate
-  bei erfolgreichem Abschluss der Operation die Daten des Verordnungsdatensatzes fuer
-  die Uebermittlung in den ePA Medication Service bereitstellen.
-title: E-Rezept-Fachdienst - Task aktivieren - Daten ePA Medication Service bereitstellen
-  (Verordnungsdatensatz) (A_25925)
+test_procedures:
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: Das PS der abgebenden LEI SOLL im Falle der Nicht-Erreichbarkeit von zentralen
+  Diensten der TI automatisch versuchen eine Fehlerbehebung durchzuführen.
+title: 'PS abgebende LEI: UX - Nicht-Erreichbarkeit des E-Rezept-Fachdienstes - Automatische
+  Behebung'
 version: 0

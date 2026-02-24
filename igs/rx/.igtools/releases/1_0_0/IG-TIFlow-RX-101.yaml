@@ -1,19 +1,19 @@
-actor: []
-conformance: SHALL
-content_hash: e51ddf80bbf3fa4bfbc2f090ce6501ca8488c15a1f9da8d096a6f7ccfda202fe
-created: '2026-02-17T06:28:49.343421'
-date: '2026-02-17T06:28:49.343423'
+actor:
+- PS_E-Rezept_abgebend
+conformance: SHOULD
+content_hash: a835e9dbd8c6d83503589d309f9e055df6d80cdc4217de7d599e871d2686f87e
+created: '2026-02-24T09:40:30.599391'
+date: '2026-02-24T09:40:30.599394'
 key: IG-TIFlow-RX-101
-modified: '2026-02-17T06:28:49.343422'
+modified: '2026-02-24T09:40:30.599393'
 release_status: NEW
-source: input/pagecontent/op-activate-fd-requirements.md
+source: input/pagecontent/menu-fachlichkeit-ux-abgebend.md
 status: ACTIVE
-test_procedures: {}
-text: 'Der E-Rezept-Fachdienst MUSS die Aktivierung eines Tasks mit Flowtype 166 mit
-  dem HTTP-Status-Code 400 abbrechen, wenn die QES gemaess der professionOID des Signaturzertifikats
-  des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die der folgenden
-  professionOID entspricht: oid_arzt, damit nur solche Leistungserbringer ein signiertes
-  E-Rezept einstellen, die zur Verordnung von T-Rezepten ermaechtigt sind.'
-title: E-Rezept-Fachdienst - Task aktivieren - Flowtype 166 - QES durch berechtigte
-  Berufsgruppe (A_27812)
+test_procedures:
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: Das PS der abgebenden LEI SOLL dem Nutzer bei der Bedienung eines E-T-Rezeptes
+  sicherstellen, dass das Kennzeichen "T-Rezept" immer bei Verordnungen für Arzneimittel
+  nach §3a AMVV dem Anwender sichtbar dargestellt wird.
+title: 'PS abgebende LEI: UX - Bedienung T-Rezept – Hinweis T-Rezept'
 version: 0

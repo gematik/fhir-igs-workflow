@@ -1,21 +1,23 @@
 actor:
-- Eingangspunkt E-Rezept-Fachdienst
+- E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: 0d730a0f4ed8ff116fd7b839b1f6c3172153e79c9f2badc415b965f71741ab78
-created: '2026-02-17T06:28:49.333223'
-date: '2026-02-17T06:28:49.333225'
+content_hash: c561f70a7596b9543efbbec63daaca46d8a503116abaabfd2ad96704b1201c99
+created: '2026-02-24T09:40:30.586444'
+date: '2026-02-24T09:40:30.586449'
 key: IG-TIFlow-RX-25
-modified: '2026-02-17T06:28:49.333224'
+modified: '2026-02-24T09:40:30.586448'
 release_status: NEW
-source: input/pagecontent/menu-schnittstellen-datenschutz-und-sicherheit.md
+source: input/pagecontent/op-reject-fd-requirements.md
 status: ACTIVE
 test_procedures:
-  Eingangspunkt E-Rezept-Fachdienst: []
-text: Der Eingangspunkt des E-Rezept-Fachdienstes MUSS sich beim TLS-Verbindungsaufbau
-  über das Transportnetz gegenüber dem Client mit einem Extended Validation TLS-Zertifikat
-  eines Herausgebers gemäß [CAB Forum] authentisieren. Das Zertifikat MUSS an die
-  jeweilige Schnittstelle des Eingangspunkts für Primärsysteme und Frontends der Versicherten
-  des E-Rezept-Fachdienstes gebunden werden, damit Clientsysteme beim TLS-Verbindungsaufbau
-  eine vereinfachte Zertifikatsprüfung mit TLS-Standardbibliotheken durchführen können.
-title: E-Rezept-Fachdienst – Richtlinien zum TLS-Verbindungsaufbau
+  E-Rezept-Fachdienst:
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 160,\
+  \ 169, 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject die\
+  \ Rolle \"professionOID\" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"\
+  Authorization\" feststellen und sicherstellen, dass ausschließlich Institutionen\
+  \ in der Rolle\n  <ul>\n    <li>oid_oeffentliche_apotheke</li>\n    <li>oid_krankenhausapotheke</li>\n\
+  \  </ul>\n  die Operation am Fachdienst aufrufen, damit das E-Rezept nicht durch\
+  \ einen Unberechtigten zurückgewiesen werden kann."
+title: E-Rezept-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Rollenprüfung
 version: 0
