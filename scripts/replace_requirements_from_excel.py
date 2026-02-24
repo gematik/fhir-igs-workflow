@@ -62,13 +62,13 @@ def build_block(req_id: str, req: Dict[str, str], actor: str, test_procedure: st
     conformance = map_conformance(req["level"])
     description = format_description(req["desc"])
     return (
+        f"<!-- {req_id} -->\n"
         f"<requirement conformance=\"{conformance}\" title=\"{title}\">\n"
         "    <meta lockversion=\"false\"/>\n"
         f"    <actor name=\"{actor}\">\n"
         f"        <testProcedure id=\"{test_procedure}\"/>\n"
         "    </actor>\n"
         f"     {description}\n"
-        f"    <!-- {req_id} -->\n"
         "</requirement>\n"
     )
 
