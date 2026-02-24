@@ -1,0 +1,17 @@
+merger:
+  resource:
+    - CapabilityStatement/erp-fachdienst-server
+
+openapi:
+  path-output: output
+  with-metadata: true
+  with-format-parameter: true
+  with-accept-header: true
+  capability-statement:
+    - input: CapabilityStatement/erp-fachdienst-server
+      output: erp-fachdienst-server.openapi.json
+      #additional-openapi: input/openapi/render.yaml
+    - input: CapabilityStatement/erp-fachdienst-server
+      output: erp-fachdienst-server.openapi.yaml
+      #additional-openapi: input/openapi/render.yaml
+   

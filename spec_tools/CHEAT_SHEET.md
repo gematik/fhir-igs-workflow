@@ -96,3 +96,7 @@ Für Tags in Anforderungen muss die folgende Syntax verwendet werden:
 
 1. Neue Markdown-Datei im Ordner `input/pagecontent` anlegen
 2. in der sushi-config.yaml die Seite unter dem Element `pages` hinzufügen und Titel vergeben.
+
+## Suchen aller afo keys
+
+key="[^"]*"

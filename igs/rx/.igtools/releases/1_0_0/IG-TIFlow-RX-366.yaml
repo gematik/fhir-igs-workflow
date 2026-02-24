@@ -1,0 +1,23 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: bbb0fb13ae926e3e7a14a51e61a8fd5fc45cc29341beaf27c406fa630b3a990f
+created: '2026-02-20T14:36:58.393886'
+date: '2026-02-20T14:36:58.393888'
+key: IG-TIFlow-RX-366
+modified: '2026-02-20T14:36:58.393887'
+release_status: NEW
+source: input/pagecontent/op-activate-fd-requirements.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: "<Beschreibung>\n        Der E-Rezept-Fachdienst MUSS beim Aktivieren eines\
+  \ Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die Operation\
+  \ mit dem Fehlercode 400 abbrechen, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen\
+  \ = true) und als Entlassrezept ( code=\"04\" oder \"14\" in Extension https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis\
+  \ in Bundle.Composition.extention:rechtsgrundlage) gekennzeichnet ist, weil für\
+  \ Entlassrezepte keine Mehrfachverordnungen zulässig sind.\n    </Beschreibung>\n\
+  \    <!-- A_22632 -->"
+title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - kein Entlassrezept
+version: 0

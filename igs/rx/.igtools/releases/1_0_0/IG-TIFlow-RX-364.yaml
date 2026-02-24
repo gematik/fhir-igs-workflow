@@ -1,0 +1,22 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: 6f25dd3c828953faef65d17dd88a378b6cb9edfdd3d759d007b48025bb3ad23c
+created: '2026-02-20T14:36:58.393544'
+date: '2026-02-20T14:36:58.393546'
+key: IG-TIFlow-RX-364
+modified: '2026-02-20T14:36:58.393545'
+release_status: NEW
+source: input/pagecontent/op-activate-fd-requirements.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: "<Beschreibung>\n        Der E-Rezept-Fachdienst MUSS beim Aktivieren eines\
+  \ Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die Operation\
+  \ mit dem Fehlercode 400 abbrechen, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen\
+  \ = true) gekennzeichnet und der Numerator größer als der Denominator ist.\n   \
+  \ </Beschreibung>\n    <!-- A_22630 -->"
+title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator kleiner
+  / gleich Denominator
+version: 0

@@ -1,4 +1,4 @@
-{% assign use_cases = site.data['use-cases'] %}
+{% assign use_cases = site.data['gen-use-cases'] %}
 
 Dieses Kapitel beschreibt den fachlichen Normalfall von der Verordnung bis zur Belieferung in der Apotheke.
 Im Fokus stehen die Handlungen der Beteiligten (Arzt, Versicherter, Apotheke) sowie die fachlichen Schritte.
@@ -11,7 +11,7 @@ Die Fachanwendung E-Rezept ermöglicht eine Übermittlung von ärztlichen und za
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 500px; margin-bottom: 30px;">
-        <img src="./uebersicht-erezept.png" alt="Übersicht E-Rezept" style="width: 100%;">
+        <img src="./übersicht-erezept.png" alt="Übersicht E-Rezept" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung: </strong>Übersicht E-Rezept</figcaption>
 </figure>
@@ -80,6 +80,8 @@ Nach Übergabe von Task-ID und AccessCode (z. B. 2D-Code oder Nachricht) ruft di
 - Bei PKV-Versicherten kann zusätzlich eine Einwilligung zur Bereitstellung von Abrechnungsinformationen vorliegen.
 - Bei PKV muss dem Versicherten nach Abschluss der Abgabe eine ausgedruckte Quittung für die private Abrechnung bereitgestellt werden.
 
+### Anwendungsfälle
+
 **Beteiligte Systeme:** AVS, E-Rezept-Fachdienst
 
 **Technische Anwendungsfälle (User Stories)**
@@ -99,9 +101,11 @@ Versicherte verwalten ihre E-Rezepte in der E-Rezept-App, sehen Zugriffsprotokol
 3. Der Versicherte kann zusätzliche Informationen (z. B. Dispensierinformationen) abrufen.
 4. Bei Bedarf löscht der Versicherte ein E-Rezept; Vertreter handeln analog mit bekanntem AccessCode.
 
-**Beteiligte Systeme:** FdV, E-Rezept-Fachdienst
+### Anwendungsfälle
 
-**Technische Anwendungsfälle (User Stories)**
+**Beteiligte Systeme:** PVS/KIS, AVS, E-Rezept-FdV , E-Rezept-Fachdienst
+
+#### Technische Anwendungsfälle der Verordnung
 
 {% assign scenario_use_cases = "UC_3_1_E_Rezepte_durch_Versicherten_abrufen, UC_3_2_E_Rezept_durch_Versicherten_loeschen, UC_3_9_Dispensierinformationen_durch_Versicherten_abrufen" | split: ", " %}
 
@@ -121,7 +125,7 @@ Versicherte und Apotheken tauschen Nachrichten zum E-Rezept asynchron über den 
 
 **Beteiligte Systeme:** FdV, AVS, E-Rezept-Fachdienst
 
-**Technische Anwendungsfälle (User Stories)**
+**Technische Anwendungsfälle**
 
 {% assign scenario_use_cases = "UC_3_3_Nachricht_durch_Versicherten_uebermitteln, UC_3_8_Nachricht_durch_Versicherten_loeschen, UC_4_6_Nachrichten_durch_Abgebenden_empfangen, UC_4_7_Nachricht_durch_Abgebenden_uebermitteln, UC_4_9_Nachricht_durch_Abgebenden_loeschen, UC_3_4_Nachrichten_durch_Versicherten_empfangen" | split: ", " %}
 

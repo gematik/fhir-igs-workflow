@@ -1,6 +1,4 @@
-### Task erzeugen ($create)
-
-Diese Operation basiert auf der gleichnamigen Operation in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/eflow-core/latest/op-create.html).
+Diese Operation basiert auf der gleichnamigen Operation in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/{{ site.data.constants.tiflow_core_version }}/op-create.html).
 
 ### Nachricht
 
@@ -8,11 +6,16 @@ Die Nachricht wird als HTTP `POST` an `/Task/$create` gesendet.
 
 ### Anforderungen an Schnittstelle
 
-- [FD-Anforderungen zu `$create`](./op-create-fd-requirements.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
-- [Client-Anforderungen zu `$create`](./op-create-client-requirements.html): Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.
+- [Ergänzende Server-Anforderungen zu `$create`](./op-create-fd-requirements.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [Ergänzende Client-Anforderungen zu `$create`](./op-create-client-requirements.html): Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.
 
 ### API Beschreibung
 
+Die API-Beschreibung für den Aufruf der Operation findet sich auf:
+- [API-ERP: E-Rezept erstellen](https://github.com/gematik/api-erp/blob/master/docs/erp_bereitstellen.adoc#e-rezept-erstellen)
+
+{% comment %}
+TODO zum wiedereinführen für die Neuausschreibung
 <div class="gematik-api"
   data-api-type="FHIROperation"
   data-api-fhir-invoke-level="type"
@@ -41,21 +44,14 @@ Die Nachricht wird als HTTP `POST` an `/Task/$create` gesendet.
     </div>
   </div>
 </div>
+{% endcomment %}
 
 ### Hinweis
 
-- Task-IDs duerfen nicht auf Vorrat erzeugt bzw. bevorratet werden.
-- `$create` ist nur fuer konkrete, unmittelbar folgende Verordnungsprozesse zu verwenden.
+- Task-IDs dürfen nicht auf Vorrat erzeugt bzw. bevorratet werden.
+- `$create` ist nur für konkrete, unmittelbar folgende Verordnungsprozesse zu verwenden.
 - Quelle: [api-erp: E-Rezept erstellen](https://github.com/gematik/api-erp/blob/master/docs/erp_bereitstellen.adoc#e-rezept-erstellen).
 
-### Geschaeftslogik
-
-<figure>
-  <div class="gem-ig-img-container" style="--box-width: 900px; margin-bottom: 30px;">
-{% include rx-op-create-flow.svg %}
-  </div>
-  <figcaption><strong>Abbildung: </strong>Ablauf Operation `$create`</figcaption>
-</figure>
 
 ### Sicherheitsanforderungen
 

@@ -1,0 +1,24 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: d312952648a21ff5133840409badb287f65586c7ac040aced73b0cedf2616b48
+created: '2026-02-20T14:36:58.388221'
+date: '2026-02-20T14:36:58.388224'
+key: IG-TIFlow-RX-339
+modified: '2026-02-20T14:36:58.388223'
+release_status: NEW
+source: input/pagecontent/query-api-task-fd-requirements.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: "<Beschreibung>\n        Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation\
+  \ auf einen konkreten über &lt;id&gt; adressierten /Task/&lt;id&gt; (ohne die Referenz\
+  \ einer FHIR-Operation) sicherstellen, dass ausschließlich Clientsysteme in einer\
+  \ der Rollen oid_versicherter oid_oeffentliche_apotheke oid_krankenhausapotheke\
+  \ oid_kostentraeger die Operation am Fachdienst aufrufen dürfen und die Rolle \"\
+  professionOID\" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\"\
+  \ feststellen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.\n\
+  \    </Beschreibung>\n    <!-- A_19113-02 -->"
+title: E-Rezept-Fachdienst - Task abrufen - Rollenprüfung
+version: 0
