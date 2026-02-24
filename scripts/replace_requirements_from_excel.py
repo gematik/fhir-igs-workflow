@@ -11,6 +11,7 @@ import openpyxl
 
 
 A_ID_PATTERN = re.compile(r"A_\d+(?:-\d+)?")
+FULL_LINE_IDS_PATTERN = re.compile(r"^(A_\d+(?:-\d+)?)(\s+A_\d+(?:-\d+)?)*$")
 
 
 def load_requirements(excel_path: Path, sheet_name: str) -> Dict[str, Dict[str, str]]:
@@ -78,10 +79,12 @@ def replace_in_markdown(content: str, requirements: Dict[str, Dict[str, str]], a
     output_lines: List[str] = []
 
     for line in lines:
-        ids = A_ID_PATTERN.findall(line)
-        if not ids:
+        stripped = line.strip()
+        if not stripped or not FULL_LINE_IDS_PATTERN.fullmatch(stripped):
             output_lines.append(line)
             continue
+
+        ids = A_ID_PATTERN.findall(stripped)
 
         blocks = []
         for req_id in ids:
