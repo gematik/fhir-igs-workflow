@@ -34,6 +34,7 @@ Die nachfolgenden Tabellen enthalten die Bezeichnung der in diesem Implementatio
 | [eRezept-Profile] | KBV: E-Rezept Verordnungsprofile.https://simplifier.net/eRezept |
 | [Medication IG DE] | HL7 Deutschland: FHIR Implementation Guide für medikationsbezogene Anwendungsfälle im deutschen Gesundheitswesen.https://ig.fhir.de/igs/medication/1.0.3/ |
 | [dgMP-DosageTextgenerierung-Skript] | HL7 Deutschland: dgMP-DosageTextgenerierung-Skript.https://github.com/hl7germany/dgMP-DosageTextgenerierung-Skript |
+| [KBV_ITA_VGEX_Technische_Anlage_ERP] | KBV: TECHNISCHE ANLAGE ZUR ELEKTRONISCHEN ARZNEIMITTELVERORDNUNG (E16A).https://update.kbv.de/ita-update/DigitaleMuster/ERP/KBV_ITA_VGEX_Technische_Anlage_ERP.pdf |
 
 **Tabelle:**Weitere Dokumente & Verweise
 

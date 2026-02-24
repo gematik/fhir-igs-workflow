@@ -442,7 +442,7 @@ gematik GmbH / Dieses Artefakt ist lizenziert unter           <a href="./license
     <ul>
       <li>
 
-          IG &copy; 2025+ gematik GmbH.  Paket de.gematik.eflow-rx#1.0.0-draft basierend auf FHIR 4.0.1. Generiert 2026-02-23
+          IG &copy; 2025+ gematik GmbH.  Paket de.gematik.eflow-rx#1.0.0-draft basierend auf FHIR 4.0.1. Generiert 2026-02-24
           
           
                       Links: Table of Contents |
@@ -515,7 +515,7 @@ Relevante(r) Sektor(en) (        <a href="menu-technische-umsetzung-anwendungsfa
 
           IG &copy; 2025+           <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>
 .  Paket de.gematik.eflow-rx#1.0.0-draft basierend auf           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
-. Generiert           <span title="Mon, Feb 23, 2026 13:43+0000">2026-02-23</span>
+. Generiert           <span title="Tue, Feb 24, 2026 08:49+0000">2026-02-24</span>
 
                     <br/>
 
@@ -1001,6 +1001,18 @@ Eine Auflistung an Beispielen ist hier zu finden:           <a href="https://ig.
       </tr>
       <tr>
         <td>
+          <a href="menu-technische-umsetzung-kim.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/api-erp/blob/master/docs/erp_steuerung_durch_le.adoc#kim-nachrichten-in-der-e-rezept-fachanwendung">github.com</a>
+        </td>
+        <td>
+Für Beispiele zu E-Rezept spezifischen Nachrichten wird auf           <a href="https://github.com/gematik/api-erp/blob/master/docs/erp_steuerung_durch_le.adoc#kim-nachrichten-in-der-e-rezept-fachanwendung">GitHub API</a>
+ verwiesen.
+        </td>
+      </tr>
+      <tr>
+        <td>
           <a href="menu-technische-umsetzung-mapping.html">web</a>
         </td>
         <td>
@@ -1024,6 +1036,20 @@ Der E-Rezept-Fachdienst empfängt die Dispensierinformationen durch Abschluss ei
  durch ein abgebendes System. Die empfangenen Daten entsprechen den Profilen und Vorgaben der Dispensierinformationen.
 Die Übertragung der Dispensierinformationen an den ePA Medication Service via (          <a href="https://gemspec.gematik.de/ig/fhir/epa-medication/1.3.0/op-provide-dispensation-erp.html">ePA Operation API: Dispensierinformationen einstellen</a>
 ) erfolgt erst nach Abschluss des Workflows indem die $close-Operation aufgerufen wird.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="op-abort-client-requirements.html">web</a>
+        </td>
+        <td>
+          <a href="https://gemspec.gematik.de/ig/fhir/1.0.0/op-abort-client-requirements.html">gemspec.gematik.de</a>
+        </td>
+        <td>
+Diese Seite enthält die normativen Anforderungen an den Client des E-Rezept-Fachdienst für die Operation           <code class="language-plaintext highlighter-rouge">$abort</code>
+.
+Es gelten weiterhin die Anforderungen aus der           <a href="https://gemspec.gematik.de/ig/fhir/1.0.0/op-abort-client-requirements.html">Core-Spezifikation</a>
+.
         </td>
       </tr>
       <tr>
@@ -1133,6 +1159,20 @@ Diese Operation basiert auf der gleichnamigen Operation in der           <a href
       </tr>
       <tr>
         <td>
+          <a href="op-close-client-requirements.html">web</a>
+        </td>
+        <td>
+          <a href="https://gemspec.gematik.de/ig/fhir/1.0.0/op-close-client-requirements.html">gemspec.gematik.de</a>
+        </td>
+        <td>
+Diese Seite enthält die normativen Anforderungen an den Client des E-Rezept-Fachdienst für die Operation           <code class="language-plaintext highlighter-rouge">$close</code>
+.
+Es gelten weiterhin die Anforderungen aus der           <a href="https://gemspec.gematik.de/ig/fhir/1.0.0/op-close-client-requirements.html">Core-Spezifikation</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
           <a href="op-close.html">web</a>
         </td>
         <td>
@@ -1159,22 +1199,13 @@ Diese Operation basiert auf der gleichnamigen Operation in der           <a href
           <a href="op-create-client-requirements.html">web</a>
         </td>
         <td>
-          <a href="https://github.com/gematik/api-erp/blob/master/docs/erp_bereitstellen.adoc#e-rezept-erstellen">github.com</a>
+          <a href="https://gemspec.gematik.de/ig/fhir/1.0.0/op-create-client-requirements.html">gemspec.gematik.de</a>
         </td>
         <td>
-Quelle für Produkthinweise:           <a href="https://github.com/gematik/api-erp/blob/master/docs/erp_bereitstellen.adoc#e-rezept-erstellen">api-erp</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="op-create-fd-requirements.html">web</a>
-        </td>
-        <td>
-          <a href="https://gemspec.gematik.de/ig/fhir/1.0.0/op-create.html">gemspec.gematik.de</a>
-        </td>
-        <td>
-          <a href="https://gemspec.gematik.de/ig/fhir/1.0.0/op-create.html">
-Core: Operation <code class="language-plaintext highlighter-rouge">$create</code>          </a>
+Diese Seite enthält die normativen Anforderungen an den Client des E-Rezept-Fachdienst für die Operation           <code class="language-plaintext highlighter-rouge">$create</code>
+.
+Es gelten weiterhin die Anforderungen aus der           <a href="https://gemspec.gematik.de/ig/fhir/1.0.0/op-create-client-requirements.html">Core-Spezifikation</a>
+.
         </td>
       </tr>
       <tr>
@@ -1251,11 +1282,11 @@ Diese Operation basiert auf der gleichnamigen Operation in der           <a href
           <a href="query-api-communication.html">web</a>
         </td>
         <td>
-          <a href="https://gemspec.gematik.de/ig/fhir/1.0.0query-api-communication.html">gemspec.gematik.de</a>
+          <a href="https://gemspec.gematik.de/ig/fhir/1.0.0query-api-task.html">gemspec.gematik.de</a>
         </td>
         <td>
-Diese Seite basiert auf der gleichnamigen Schnittstelle in der           <a href="https://gemspec.gematik.de/ig/fhir/1.0.0query-api-communication.html">Core-Spezifikation</a>
- und beschreibt den Einstieg in die Communication-Query-Schnittstelle.
+Diese Seite basiert auf der gleichnamigen Schnittstelle in der           <a href="https://gemspec.gematik.de/ig/fhir/1.0.0query-api-task.html">Core-Spezifikation</a>
+ und beschreibt den Einstieg in die Task-Query-Schnittstelle.
         </td>
       </tr>
       <tr>
@@ -1266,7 +1297,18 @@ Diese Seite basiert auf der gleichnamigen Schnittstelle in der           <a href
           <a href="https://github.com/gematik/api-erp/blob/master/docs/erp_communication.adoc">github.com</a>
         </td>
         <td>
-          <a href="https://github.com/gematik/api-erp/blob/master/docs/erp_communication.adoc">API-ERP: Communications</a>
+          <a href="https://github.com/gematik/api-erp/blob/master/docs/erp_communication.adoc">API-ERP: API-Dokumentation für Nachrichtenaustausch</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="query-api-communication.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/api-erp/blob/master/docs/erp_communication.adoc#anwendungsfall-auf-neue-nachrichten-im-e-rezept-fachdienst-pr%C3%BCfen">github.com</a>
+        </td>
+        <td>
+          <a href="https://github.com/gematik/api-erp/blob/master/docs/erp_communication.adoc#anwendungsfall-auf-neue-nachrichten-im-e-rezept-fachdienst-pr%C3%BCfen">API-ERP: Auf neue Nachrichten im E-Rezept Fachdienst prüfen</a>
         </td>
       </tr>
       <tr>
@@ -1301,18 +1343,6 @@ Diese Seite basiert auf der gleichnamigen Schnittstelle in der           <a href
         </td>
         <td>
           <a href="https://github.com/gematik/api-erp/blob/master/docs/erp_versicherte.adoc#abgabeinformationen-zu-einem-e-rezept-abrufen">API-ERP: Abgabeinformationen zu einem E-Rezept abrufen</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="query-api-task.html">web</a>
-        </td>
-        <td>
-          <a href="https://gemspec.gematik.de/ig/fhir/1.0.0query-api-task.html">gemspec.gematik.de</a>
-        </td>
-        <td>
-Diese Seite basiert auf der gleichnamigen Schnittstelle in der           <a href="https://gemspec.gematik.de/ig/fhir/1.0.0query-api-task.html">Core-Spezifikation</a>
- und beschreibt den Einstieg in die Task-Query-Schnittstelle.
         </td>
       </tr>
       <tr>
@@ -1373,6 +1403,48 @@ medication-codings.png          <br/>
         <td>
 tree-filter.png          <br/>
           <img src="tree-filter.png" alt="tree-filter.png" width="600px" height="auto"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+ux-abgebend-1.png          <br/>
+          <img src="ux-abgebend-1.png" alt="ux-abgebend-1.png" width="600px" height="auto"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+ux-verordnend-1.png          <br/>
+          <img src="ux-verordnend-1.png" alt="ux-verordnend-1.png" width="600px" height="auto"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+ux-verordnend-2.png          <br/>
+          <img src="ux-verordnend-2.png" alt="ux-verordnend-2.png" width="600px" height="auto"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+ux-verordnend-3.png          <br/>
+          <img src="ux-verordnend-3.png" alt="ux-verordnend-3.png" width="600px" height="auto"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+ux-verordnend-4.png          <br/>
+          <img src="ux-verordnend-4.png" alt="ux-verordnend-4.png" width="600px" height="auto"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+ux-verordnend-5.png          <br/>
+          <img src="ux-verordnend-5.png" alt="ux-verordnend-5.png" width="600px" height="auto"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+ux-verordnend-6.png          <br/>
+          <img src="ux-verordnend-6.png" alt="ux-verordnend-6.png" width="600px" height="auto"/>
         </td>
       </tr>
     </table>

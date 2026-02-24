@@ -133,6 +133,12 @@
       <li>
         <a href="menu-fachlichkeit-wf-le.html">Workflow-Steuerung durch LE</a>
       </li>
+      <li>
+        <a href="menu-fachlichkeit-ux-verordnend.html">UX verordnend</a>
+      </li>
+      <li>
+        <a href="menu-fachlichkeit-ux-abgebend.html">UX abgebend</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -285,23 +291,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div>
 <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
-<h1 id="client-anforderungen-operation-abort">Client-Anforderungen: Operation <code class="language-plaintext highlighter-rouge">$abort</code></h1>
+<p>Diese Seite enthält die normativen Anforderungen an den Client des E-Rezept-Fachdienst für die Operation <code class="language-plaintext highlighter-rouge">$abort</code>.
+Es gelten weiterhin die Anforderungen aus der <a href="https://gemspec.gematik.de/ig/fhir/1.0.0/op-abort-client-requirements.html">Core-Spezifikation</a>.</p>
 
-<p>Diese Seite beschreibt die Anforderungen an Clients zur Nutzung von <code class="language-plaintext highlighter-rouge">$abort</code>.</p>
+<h3 id="e-rezept-fdv">E-Rezept-FdV</h3>
 
-<h2 id="normative-client-anforderungen-auszug">Normative Client-Anforderungen (Auszug)</h2>
-
-<ul>
-  <li>A_19244: Das AVS MUSS <code class="language-plaintext highlighter-rouge">POST /Task/&lt;id&gt;/$abort</code> mit <code class="language-plaintext highlighter-rouge">Authorization</code>, <code class="language-plaintext highlighter-rouge">Task-ID</code> und <code class="language-plaintext highlighter-rouge">secret</code> ausführen.</li>
-  <li>A_19245: Nach erfolgreichem <code class="language-plaintext highlighter-rouge">$abort</code> MUSS das AVS Token- und Secret-bezogene lokale Daten löschen.</li>
-</ul>
-
-<h2 id="hinweise-zur-nutzung">Hinweise zur Nutzung</h2>
-
-<ul>
-  <li>Vor dem Löschen ist eine explizite Nutzerbestätigung im Client vorzusehen.</li>
-  <li>Fehlerantworten (<code class="language-plaintext highlighter-rouge">403</code>, <code class="language-plaintext highlighter-rouge">410</code>) sind nutzerverständlich anzuzeigen, da sie den Status des Workflows erklaeren.</li>
-</ul>
+<!-- A_21362-02 -->
+<requirement conformance="SHALL" key="IG-TIFlow-RX-5" title="E-Rezept-FdV: E-Rezept löschen - Flowtype 169 / 209 - nur wenn beliefert" version="0">
+    <meta lockversion="false" />
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+     Das E-Rezept-FdV DARF im Anwendungsfall "E-Rezept löschen" dem Nutzer das Löschen von E-Rezepten mit dem Flowtype 169 oder 209 NICHT ermöglichen, wenn der Task einen Status ungleich "completed" hat.
+</requirement>
 
 
 
@@ -344,7 +346,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Feb 23, 2026 13:43+0000">2026-02-23</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Feb 24, 2026 08:49+0000">2026-02-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

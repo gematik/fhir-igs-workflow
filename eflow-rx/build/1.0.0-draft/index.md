@@ -12,7 +12,7 @@ Version 1.0.0-draft - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/erp/ImplementationGuide/de.gematik.eflow-rx | *Version*:1.0.0-draft |
-| Draft as of 2026-02-23 | *Computable Name*:gemIG_TIFlow_rx |
+| Draft as of 2026-02-24 | *Computable Name*:gemIG_TIFlow_rx |
 
 Dieser Implementation Guide beschreibt die Datenmodelle und Prozesse des E-Rezept-Fachdienstes für den Anwendungsfall von “Arzneimittelverordnung”. Er bildet das Fundament für die fachlichen Szenarien und die technischen Schnittstellen im E-Rezept-Workflow für dieses Szenario.
 
@@ -71,7 +71,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "gemIG_TIFlow_rx",
   "title" : "E-Rezept für Arzneimittel",
   "status" : "draft",
-  "date" : "2026-02-23T13:43:56+00:00",
+  "date" : "2026-02-24T08:49:27+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -2404,6 +2404,24 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
           "nameUrl" : "menu-fachlichkeit-t-rezept.html",
           "title" : "Verordnung von E-T-Rezepten",
           "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "menu-fachlichkeit-ux-verordnend.html"
+          }],
+          "nameUrl" : "menu-fachlichkeit-ux-verordnend.html",
+          "title" : "Best practice UX Primärsysteme für verordnende LEIs",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "menu-fachlichkeit-ux-abgebend.html"
+          }],
+          "nameUrl" : "menu-fachlichkeit-ux-abgebend.html",
+          "title" : "Best practice UX Primärsysteme für abgebende LEIs",
+          "generation" : "markdown"
         }]
       },
       {
@@ -2439,6 +2457,24 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
           }],
           "nameUrl" : "menu-technische-umsetzung-dispensierinformationen.html",
           "title" : "Erstellen von Dispensierinformationen",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "menu-technische-umsetzung-abgabedatensatz.html"
+          }],
+          "nameUrl" : "menu-technische-umsetzung-abgabedatensatz.html",
+          "title" : "Abgabedatensatz signieren",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "menu-technische-umsetzung-kim.html"
+          }],
+          "nameUrl" : "menu-technische-umsetzung-kim.html",
+          "title" : "E-Rezept-spezifische KIM-Messages",
           "generation" : "markdown"
         },
         {
@@ -2633,24 +2669,6 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
         {
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "query-api-communication.html"
-          }],
-          "nameUrl" : "query-api-communication.html",
-          "title" : "Query API: Communication",
-          "generation" : "markdown",
-          "page" : [{
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "query-api-communication-client-requirements.html"
-            }],
-            "nameUrl" : "query-api-communication-client-requirements.html",
-            "title" : "Client-Anforderungen: Communication-Query",
-            "generation" : "markdown"
-          }]
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
             "valueUrl" : "query-api-medicationdispense.html"
           }],
           "nameUrl" : "query-api-medicationdispense.html",
@@ -2663,6 +2681,24 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
             }],
             "nameUrl" : "query-api-medicationdispense-client-requirements.html",
             "title" : "Client-Anforderungen: MedicationDispense-Query",
+            "generation" : "markdown"
+          }]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "query-api-communication.html"
+          }],
+          "nameUrl" : "query-api-communication.html",
+          "title" : "Query API: Communication",
+          "generation" : "markdown",
+          "page" : [{
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-communication-req-fdv.html"
+            }],
+            "nameUrl" : "query-api-communication-req-fdv.html",
+            "title" : "E-Rezept-FdV Anforderungen: Communication-Query",
             "generation" : "markdown"
           }]
         }]
@@ -2684,15 +2720,6 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
           "title" : "Operation $create (Task erzeugen)",
           "generation" : "markdown",
           "page" : [{
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "op-create-fd-requirements.html"
-            }],
-            "nameUrl" : "op-create-fd-requirements.html",
-            "title" : "Server-Anforderungen $create",
-            "generation" : "markdown"
-          },
-          {
             "extension" : [{
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
               "valueUrl" : "op-create-client-requirements.html"
@@ -2745,15 +2772,6 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
             "nameUrl" : "op-accept-fd-requirements.html",
             "title" : "Server-Anforderungen $accept",
             "generation" : "markdown"
-          },
-          {
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "op-accept-client-requirements.html"
-            }],
-            "nameUrl" : "op-accept-client-requirements.html",
-            "title" : "Client-Anforderungen $accept",
-            "generation" : "markdown"
           }]
         },
         {
@@ -2771,15 +2789,6 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
             }],
             "nameUrl" : "op-reject-fd-requirements.html",
             "title" : "Server-Anforderungen $reject",
-            "generation" : "markdown"
-          },
-          {
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "op-reject-client-requirements.html"
-            }],
-            "nameUrl" : "op-reject-client-requirements.html",
-            "title" : "Client-Anforderungen $reject",
             "generation" : "markdown"
           }]
         },

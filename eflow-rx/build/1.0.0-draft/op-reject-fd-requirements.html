@@ -133,6 +133,12 @@
       <li>
         <a href="menu-fachlichkeit-wf-le.html">Workflow-Steuerung durch LE</a>
       </li>
+      <li>
+        <a href="menu-fachlichkeit-ux-verordnend.html">UX verordnend</a>
+      </li>
+      <li>
+        <a href="menu-fachlichkeit-ux-abgebend.html">UX abgebend</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -245,7 +251,7 @@ E-Rezept für Arzneimittel
 
             <a href="#bottom">unten</a>
 
-          | <a href="op-reject-client-requirements.html">nächste&gt;</a>
+          | <a href="op-dispense.html">nächste&gt;</a>
 
           </span>
 
@@ -285,17 +291,43 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div>
 <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
-<p>Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für die Operation <code class="language-plaintext highlighter-rouge">$reject</code>.</p>
+<p>Diese Seite enthält die workflowtyp-spezifischen normativen Anforderungen an den E-Rezept-Fachdienst für die Operation <code class="language-plaintext highlighter-rouge">$reject</code>.</p>
 
-<requirement conformance="SHALL" key="IG-TIFlow-RX-11" title="E-Rezept-Fachdienst - Task zurückweisen - Löschmarkierungen Medikationsliste bereitstellen (Dispensierinformationen)" version="0">
+<!-- A_19170-02 -->
+<requirement conformance="SHALL" key="IG-TIFlow-RX-25" title="E-Rezept-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Rollenprüfung" version="0">
+  <meta lockversion="false" />
+  <actor name="E-Rezept-Fachdienst">
+    <testProcedure id="Produktgutachten" />
+  </actor>
+  Der E-Rezept-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 160, 169, 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Institutionen in der Rolle
+  <ul>
+    <li>oid_oeffentliche_apotheke</li>
+    <li>oid_krankenhausapotheke</li>
+  </ul>
+  die Operation am Fachdienst aufrufen, damit das E-Rezept nicht durch einen Unberechtigten zurückgewiesen werden kann.
+</requirement>
+
+<!-- A_24286-02 -->
+<requirement conformance="SHALL" key="IG-TIFlow-RX-26" title="E-Rezept-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Dispensierinformationen löschen" version="0">
+  <meta lockversion="false" />
+  <actor name="E-Rezept-Fachdienst">
+    <testProcedure id="Produktgutachten" />
+  </actor>
+  Der E-Rezept-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 160, 169, 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject die Dispensierinformationen, falls welche vorhanden sind, löschen: 
+  <ul>
+    <li>Medication, die aus der MedicationDispense referenziert wird --&gt; löschen</li>
+    <li>MedicationDispense zum dazugehörigen Task --&gt; löschen</li>
+    <li>Task.extension:lastMedicationDispense --&gt; löschen</li>
+  </ul>
+</requirement>
+
+<!-- A_25926 -->
+<requirement conformance="SHALL" key="IG-TIFlow-RX-27" title="E-Rezept-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Löschmarkierungen Medikationsliste bereitstellen (Dispensierinformationen)" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
     </actor>
-    <description>
-        Der E-Rezept-Fachdienst MUSS beim Zurückweisen eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject , wenn bereits Dispensierinformationen im E-Rezept-Fachdienst zum Task gespeichert wurden, die Daten für die Löschinformation dieser Dispensierinformationen für die Übermittlung in den ePA Medication Service bereitstellen.
-    </description>
-    <!-- A_25926 -->
+    Der E-Rezept-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 160, 169, 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject, wenn bereits Dispensierinformationen im E-Rezept-Fachdienst zum Task gespeichert wurden, die Daten für die Löschinformation dieser Dispensierinformationen für die Übermittlung in den ePA Medication Service bereitstellen.
 </requirement>
 
 
@@ -329,7 +361,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="op-reject-client-requirements.html">nächste&gt;</a>
+                <a href="op-dispense.html">nächste&gt;</a>
 
               </td>
             </tr>
@@ -339,7 +371,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Feb 23, 2026 13:43+0000">2026-02-23</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Feb 24, 2026 08:49+0000">2026-02-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

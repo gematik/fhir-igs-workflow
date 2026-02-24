@@ -1503,8 +1503,6 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "http://fhir.de/StructureDefinition/normgroesse",
-      "isModifier" : false,
-      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -1525,6 +1523,7 @@
       "type" : [{
         "code" : "code"
       }],
+      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1535,12 +1534,15 @@
       }],
       "mustSupport" : true,
       "isModifier" : false,
-      "isSummary" : false,
       "binding" : {
         "strength" : "required",
         "valueSet" : "https://fhir.kbv.de/ValueSet/KBV_VS_SFHIR_KBV_NORMGROESSE"
       },
       "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      },
+      {
         "identity" : "rim",
         "map" : "N/A"
       }]

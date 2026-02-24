@@ -133,6 +133,12 @@
       <li>
         <a href="menu-fachlichkeit-wf-le.html">Workflow-Steuerung durch LE</a>
       </li>
+      <li>
+        <a href="menu-fachlichkeit-ux-verordnend.html">UX verordnend</a>
+      </li>
+      <li>
+        <a href="menu-fachlichkeit-ux-abgebend.html">UX abgebend</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -285,26 +291,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div>
 <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
-<h1 id="client-anforderungen-operation-close">Client-Anforderungen: Operation <code class="language-plaintext highlighter-rouge">$close</code></h1>
+<p>Diese Seite enthält die normativen Anforderungen an den Client des E-Rezept-Fachdienst für die Operation <code class="language-plaintext highlighter-rouge">$close</code>.
+Es gelten weiterhin die Anforderungen aus der <a href="https://gemspec.gematik.de/ig/fhir/1.0.0/op-close-client-requirements.html">Core-Spezifikation</a>.</p>
 
-<p>Diese Seite beschreibt die Anforderungen an Clients zur Nutzung von <code class="language-plaintext highlighter-rouge">$close</code>.</p>
-
-<h2 id="normative-client-anforderungen-auszug">Normative Client-Anforderungen (Auszug)</h2>
-
-<ul>
-  <li>A_19289-02: Das AVS MUSS <code class="language-plaintext highlighter-rouge">POST /Task/&lt;id&gt;/$close</code> mit <code class="language-plaintext highlighter-rouge">Authorization</code>, <code class="language-plaintext highlighter-rouge">Task-ID</code>, <code class="language-plaintext highlighter-rouge">secret</code> und optionaler <code class="language-plaintext highlighter-rouge">MedicationDispense</code> ausführen.</li>
-  <li>A_19288-03: Wenn Dispensierinformationen mitgeliefert werden, MUESSEN sie nach den fachlichen Vorgaben erstellt sein.</li>
-  <li>A_25643: Für jedes beliefertes E-Rezept MUSS <code class="language-plaintext highlighter-rouge">$close</code> ausgeführt werden, um den Workflow abzuschliessen.</li>
-  <li>A_25220 / A_25221: Bei Stapelverarbeitung MUESSEN Lastverteilungsregeln (zufälliger Startzeitpunkt, Pausen) eingehalten werden.</li>
-</ul>
-
-<h2 id="hinweise-zur-nutzung">Hinweise zur Nutzung</h2>
-
-<ul>
-  <li>Wenn in <code class="language-plaintext highlighter-rouge">$close</code> keine <code class="language-plaintext highlighter-rouge">MedicationDispense</code> übergeben wird, muss zuvor mindestens ein erfolgreicher <code class="language-plaintext highlighter-rouge">$dispense</code>-Aufruf erfolgt sein.</li>
-  <li>Nach erfolgreichem <code class="language-plaintext highlighter-rouge">$close</code> sind Dispensierinformationen für diesen Task nicht mehr aenderbar.</li>
-  <li>Die Quittung kann bei Bedarf über <code class="language-plaintext highlighter-rouge">GET /Task/&lt;id&gt;?secret=...</code> erneut abgerufen werden.</li>
-</ul>
+<!-- A_19288-03 -->
+<requirement conformance="SHALL" key="IG-TIFlow-RX-28" title="PS abgebende LEI:  Quittung abrufen - Dispensierinformationen erstellen" version="0">
+    <meta lockversion="false" />
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+     Das PS der abgebenden LEI MUSS im Anwendungsfall "Quittung abrufen" die Dispensierinformationen nach den Vorgaben aus "Erstellen von Dispensierinformationen" erzeugen, wenn sie übermittelt werden sollen.
+</requirement>
 
 
 
@@ -347,7 +344,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Feb 23, 2026 13:43+0000">2026-02-23</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Feb 24, 2026 08:49+0000">2026-02-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

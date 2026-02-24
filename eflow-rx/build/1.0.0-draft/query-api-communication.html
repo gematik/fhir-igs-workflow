@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script src="assets/js/mermaid.js" type="text/javascript"></script>
     <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
-    <style type="text/css">h2{--heading-prefix:"4.2"}
-    h3,h4,h5,h6{--heading-prefix:"4.2.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"4.3"}
+    h3,h4,h5,h6{--heading-prefix:"4.3.0"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
 
@@ -132,6 +132,12 @@
       </li>
       <li>
         <a href="menu-fachlichkeit-wf-le.html">Workflow-Steuerung durch LE</a>
+      </li>
+      <li>
+        <a href="menu-fachlichkeit-ux-verordnend.html">UX verordnend</a>
+      </li>
+      <li>
+        <a href="menu-fachlichkeit-ux-abgebend.html">UX abgebend</a>
       </li>
     </ul>
   </li>
@@ -241,11 +247,11 @@ E-Rezept für Arzneimittel
 
           <span style="float:right;">
 
-            <a href="query-api-task-client-requirements.html">&lt;vorherige</a> | 
+            <a href="query-api-medicationdispense-client-requirements.html">&lt;vorherige</a> | 
 
             <a href="#bottom">unten</a>
 
-          | <a href="query-api-communication-client-requirements.html">nächste&gt;</a>
+          | <a href="query-api-communication-req-fdv.html">nächste&gt;</a>
 
           </span>
 
@@ -289,49 +295,52 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="#nachricht" id="markdown-toc-nachricht">Nachricht</a></li>
   <li><a href="#anforderungen-an-schnittstelle" id="markdown-toc-anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</a></li>
   <li><a href="#resource-api" id="markdown-toc-resource-api">Resource API</a></li>
+  <li><a href="#instance-api" id="markdown-toc-instance-api">Instance API</a></li>
   <li><a href="#sicherheitsanforderungen" id="markdown-toc-sicherheitsanforderungen">Sicherheitsanforderungen</a></li>
 </ul>
 
 </div>
-<p>Diese Seite basiert auf der gleichnamigen Schnittstelle in der <a href="https://gemspec.gematik.de/ig/fhir/1.0.0query-api-communication.html">Core-Spezifikation</a> und beschreibt den Einstieg in die Communication-Query-Schnittstelle.</p>
+<p>Diese Seite basiert auf der gleichnamigen Schnittstelle in der <a href="https://gemspec.gematik.de/ig/fhir/1.0.0query-api-task.html">Core-Spezifikation</a> und beschreibt den Einstieg in die Task-Query-Schnittstelle.</p>
+
+<p>Communication wird für die Kommunikation zwischen Versicherten und Kostenträger verwendet.</p>
 
 <h3 id="nachricht">Nachricht</h3>
 
-<p>Die Nachricht zum Abruf von Nachrichten wird als HTTP <code class="language-plaintext highlighter-rouge">GET</code>-Anfrage an den E-Rezept-Fachdienst gesendet, um eine Liste der hinterlegten <em>Communication</em>-Instanzen abzurufen.</p>
+<p>Die Nachricht zum Abruf von E-Rezepten wird als HTTP GET-Anfrage an den E-Rezept-Fachdienst gesendet, um eine Liste der hinterlegten <em>Communication</em>-Instanzen abzurufen.</p>
 
-<p>Zum Einstellen von Nachrichten wird eine HTTP <code class="language-plaintext highlighter-rouge">POST</code>-Anfrage an den E-Rezept-Fachdienst gesendet, um eine Nachricht für einen intendierten Empfänger einzustellen.</p>
-
-<p>Zum Löschen von Nachrichten wird eine HTTP <code class="language-plaintext highlighter-rouge">DELETE</code>-Anfrage an den E-Rezept-Fachdienst gesendet, um eine Nachricht zu löschen.</p>
+<p>Mit einer POST-Anfrage an den E-Rezept-Fachdienst kann eine <em>Communication</em>-Instanz am E-Rezept-Fachdienst eingestellt werden.</p>
 
 <h3 id="anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</h3>
 
+<p>Es gibt keine workflow-spezifischen Anforderungen für den E-Rezept-Fachdienst.</p>
+
 <ul>
-  <li><a name="l488">​</a><a href="./query-api-communication-server-requirements.html">Ergänzende Client-Anforderungen zur Communication-Query</a>: Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.</li>
+  <li><a href="./query-api-communication-req-fdv.html">Workflow-spezifische Anforderungen für das E-Rezept-FdV</a></li>
 </ul>
 
 <h3 id="resource-api">Resource API</h3>
 
-<p>Anfragen an die <i>Communication</i>-Ressource können über die RESTful API mittels HTTP GET-Anfragen durchgeführt werden. Dabei können spezifische Suchparameter genutzt werden, um die Anfragen zu verfeinern. Zum Beispiel:</p>
-
-<ul>
-  <li>Für den Versicherten noch nicht vom E-Rezept-Fachdienst abgerufene Communications: <code class="language-plaintext highlighter-rouge">?recipient=&lt;kvnr&gt;&amp;received=NULL</code></li>
-</ul>
+<p>Anfragen an die <i>Communication</i>-Ressource können über die RESTful API mittels HTTP GET-Anfragen durchgeführt werden.</p>
 
 <h4 id="api-beschreibung">API Beschreibung</h4>
 
 <ul>
-  <li><a href="https://github.com/gematik/api-erp/blob/master/docs/erp_communication.adoc">API-ERP: Communications</a></li>
+  <li><a href="https://github.com/gematik/api-erp/blob/master/docs/erp_communication.adoc">API-ERP: API-Dokumentation für Nachrichtenaustausch</a></li>
 </ul>
 
-<h4 id="hinweis">Hinweis</h4>
+<h3 id="instance-api">Instance API</h3>
+
+<p>Um spezifische Details zu einer einzelnen <em>Communciation</em> mittels der RESTful API zu erhalten, wird die <em>Communciation Instance API</em> verwendet, indem eine HTTP GET-Anfrage an den Endpunkt <i>/Communciation/[id]</i> gestellt wird.</p>
+
+<h4 id="api-beschreibung-1">API Beschreibung</h4>
 
 <ul>
-  <li>Bei Bereitstellung von Communications werden angehangene JSONs in content.payload ebenfalls validiert</li>
+  <li><a href="https://github.com/gematik/api-erp/blob/master/docs/erp_communication.adoc#anwendungsfall-auf-neue-nachrichten-im-e-rezept-fachdienst-pr%C3%BCfen">API-ERP: Auf neue Nachrichten im E-Rezept Fachdienst prüfen</a></li>
 </ul>
 
 <h3 id="sicherheitsanforderungen">Sicherheitsanforderungen</h3>
 
-<p><a name="l533">​</a>Generelle Sicherheitsanforderungen werden <a href="./menu-schnittstellen-datenschutz-und-sicherheit.html">hier</a> festgehalten.</p>
+<p><a name="l553">​</a>Generelle Sicherheitsanforderungen werden <a href="./menu-schnittstellen-datenschutz-und-sicherheit.html">hier</a> festgehalten.</p>
 
 
 
@@ -355,7 +364,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <tr>
               <td style="text-align:left">&nbsp;
 
-                <a href="query-api-task-client-requirements.html">&lt;vorherige</a>
+                <a href="query-api-medicationdispense-client-requirements.html">&lt;vorherige</a>
 
               </td>
               <td style="text-align:center">
@@ -363,7 +372,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
               </td>
               <td style="text-align:right">&nbsp;
 
-                <a href="query-api-communication-client-requirements.html">nächste&gt;</a>
+                <a href="query-api-communication-req-fdv.html">nächste&gt;</a>
 
               </td>
             </tr>
@@ -373,7 +382,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Feb 23, 2026 13:43+0000">2026-02-23</span>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Feb 24, 2026 08:49+0000">2026-02-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -11,18 +11,26 @@ Version 1.0.0-draft - ci-build
 
 ## Client-Anforderungen: Task-Query
 
-# Client-Anforderungen: Query API Task
+Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Task`-Query-Endpunkte.
 
-Diese Seite beschreibt Anforderungen an Clients zur Nutzung der Task-Query-Endpunkte.
+Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezepte abrufen" zum Herunterladen alle E-Rezepte des Nutzers die HTTP-Operation GET /Task mit ACCESS_TOKEN im Authorization-Header ausführen.
 
-## Normative Client-Anforderungen (Auszug)
+Das E-Rezept-FdV KANN es dem Versicherten ermöglichen, die vom E-Rezept-Fachdienst heruntergeladenen E-Rezepte im lokalen Speicher persistent abzulegen.
+### Alternativer Ablauf 1: Ein spezifisches E-Rezept durch Nutzer abrufen
 
-* A_23449-02: Beim Apothekenabruf von Versichertenrezepten MUSS `GET /Task` mit `pnw`, `kvnr` und `hcv` korrekt aufgerufen werden.
-* A_23152: Nicht belieferte, aber bereits reservierte E-Rezepte MUESSEN durch den Client wieder zurückgegeben werden.
-* A_19292: Für den erneuten Quittungsabruf MUSS `GET /Task/<id>?secret=...` verwendet werden.
+Die Alternative 1 wird genutzt, wenn nur die Informationen zu einem E-Rezept vom E-Rezept-Fachdienst heruntergeladen werden sollen, bspw. um zu prüfen, ob sich der Status geändert hat. Dafür muss die Task-ID dieses Rezepts im E-Rezept-FdV bekannt sein.
 
-## Hinweise zur Nutzung
+Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezepte abrufen" zum Herunterladen eines spezifischen E-Rezepts des Nutzers die HTTP-Operation GET /Task/<id> mit ACCESS_TOKEN im Authorization-Header Task-ID in URL <id> ausführen.
+Für weitere Informationen siehe Operation “Ein einzelnes E-Rezept abrufen” aus der API-Schnittstelle [E-Rezept API Dokumentation].
 
-* `OperationOutcome` aus Query-Aufrufen ist im Client als konkrete Handlungsanweisung darzustellen.
-* Zugriffsinformationen (`AccessCode`, `secret`) sind als hochsensible Daten zu behandeln und nicht zu protokollieren.
+Der Response beinhaltet die Task Ressource des E-Rezepts.
+
+### Alternativer Ablauf 2: Ein spezifisches E-Rezept mit AccessCode abrufen
+
+Die Alternative 2 wird genutzt, wenn der Nutzer als Vertreter eines Versicherten ein E-Rezept vom E-Rezept-Fachdienst herunterladen möchte. Dafür müssen die Task-ID und der AccessCode dieses Rezepts im E-Rezept-FdV bekannt sein. Die Informationen Task-ID und AccessCode werden im E-Rezept-Token übermittelt.
+
+Das E-Rezept-FdV KANN im Anwendungsfall "E-Rezepte abrufen" zum Herunterladen eines E-Rezepts als Vertreter die HTTP-Operation GET /Task/<id> mit ACCESS_TOKEN im http-Header Task-ID in URL <id> AccessCode im http-Header ausführen.
+Für weitere Informationen siehe Operation “Ein einzelnes E-Rezept abrufen” aus der API-Schnittstelle [E-Rezept API Dokumentation].
+
+Der Response beinhaltet die Task Ressource des E-Rezepts.
 

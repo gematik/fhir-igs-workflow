@@ -17,5 +17,11 @@ Mit diesem Anwendungsfall stellt das PS der abgebenden LEI Dispensierinformation
 
 Dieser Anwendungsfall kann so lange wiederholt werden, so lange sich der Task zum E-Rezept im Status “in Abgabe (gesperrt)” befindet. Bei der wiederholten Übermittlung wird die zuvor übermittelte Dispensierinformation überschrieben. D.h. es muss immer die vollständige Dispensierinformation übermittelt werden.
 
-A_24289 A_24290 A_24291-01 A_26346
+Das PS der abgebenden LEI MUSS im Anwendungsfall "Dispensierinformationen bereitstellen" es dem Nutzer ermöglichen, ein E-Rezept als abgegeben auszuwählen.
+
+Das PS der abgebenden LEI MUSS den Anwendungsfall "UC 4.16- Dispensierinformationen bereitstellen" gemäß TAB_ILFERP_022 umsetzen. Tabelle # : TAB_ILFERP_022 - Dispensierinformationen bereitstellen Name Dispensierinformationen bereitstellen Auslöser Aufruf des Anwendungsfalls in der GUI Akteur Leistungserbringer, Mitarbeiter der abgebenden LEI Vorbedingung Die LEI hat das E-Rezept vom E-Rezept-Fachdienst heruntergeladen. Der Nutzer hat im AVS ein E-Rezept als abgegeben markiert. Die LEI hat sich gegenüber der TI authentisiert. Nachbedingung Der Vorgang zum E-Rezept ist weiterhin im AVS verfügbar. Der Anwendungsfall "Dispensierinformationen bereitstellen" kann erneut ausgeführt werden. Der Anwendungsfall "Quittung abrufen" kann ausgeführt werden. Standardablauf Informationen über das abgegebene Medikament erstellt Nur für Fertigarzneimittel, die einen Data-Matrix-Code gemäß securPharm-System besitzen: Chargeninfo und Verfallsdatum ergänzen. Task-ID und Geheimnis des E-Rezepts bestimmen Dispensierinformationen dem E-Rezept-Fachdienst bereitstellen
+
+Das PS der abgebenden LEI MUSS im Anwendungsfall "Dispensierinformationen bereitstellen" die Dispensierinformationen nach den Vorgaben aus "Erstellen von Dispensierinformationen" erzeugen.
+
+Das PS der abgebenden LEI MUSS im Anwendungsfall "Dispensierinformationen bereitstellen" für das abgegebene E-Rezept die HTTP-Operation POST /Task/<id>/$dispense mit ACCESS_TOKEN im Authorization-Header Task-ID in URL <id> Geheimnis in URL-Parameter ?secret= MedicationDispense bzw. Bundle Ressource ausführen.
 

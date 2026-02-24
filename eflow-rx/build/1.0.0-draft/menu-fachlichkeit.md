@@ -16,3 +16,8 @@ Folgende Szenarien werden in diesem Implementation Guide beschrieben:
 * [Verordnung von Mehrfachverordnungen (MVO)](menu-fachlichkeit-mvo.md)
 * [Verordnung von E-T-Rezepten](menu-fachlichkeit-t-rezept.md)
 
+Auf diesen Seiten werden Vorgaben und Empfehlungen für eine gute UX getroffen:
+
+* [Best practice UX Primärsysteme für verordnende LEIs](./menu-fachlichkeit-ux-verordnend.md)
+* [Best practice UX Primärsysteme für abgebende LEIs](./menu-fachlichkeit-ux-abgebend.md)
+

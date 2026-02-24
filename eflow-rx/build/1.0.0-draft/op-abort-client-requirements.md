@@ -11,17 +11,9 @@ Version 1.0.0-draft - ci-build
 
 ## Client-Anforderungen $abort
 
-# Client-Anforderungen: Operation $abort
+Diese Seite enthält die normativen Anforderungen an den Client des E-Rezept-Fachdienst für die Operation `$abort`. Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/1.0.0/op-abort-client-requirements.html).
 
-Diese Seite beschreibt die Anforderungen an Clients zur Nutzung von `$abort`.
+### E-Rezept-FdV
 
-## Normative Client-Anforderungen (Auszug)
-
-* A_19244: Das AVS MUSS `POST /Task/<id>/$abort` mit `Authorization`, `Task-ID` und `secret` ausführen.
-* A_19245: Nach erfolgreichem `$abort` MUSS das AVS Token- und Secret-bezogene lokale Daten löschen.
-
-## Hinweise zur Nutzung
-
-* Vor dem Löschen ist eine explizite Nutzerbestätigung im Client vorzusehen.
-* Fehlerantworten (`403`, `410`) sind nutzerverständlich anzuzeigen, da sie den Status des Workflows erklaeren.
+Das E-Rezept-FdV DARF im Anwendungsfall "E-Rezept löschen" dem Nutzer das Löschen von E-Rezepten mit dem Flowtype 169 oder 209 NICHT ermöglichen, wenn der Task einen Status ungleich "completed" hat.
 

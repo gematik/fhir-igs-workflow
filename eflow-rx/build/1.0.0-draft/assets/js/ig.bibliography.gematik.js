@@ -82,6 +82,13 @@ const literatureData = [
         link: "https://gemspec.gematik.de/ig/fhir/erp-t-prescription/1.1.0",
         title: "Übertragung digitaler Durchschlag zum E-T-Rezept",
         author: "gematik"
+    },
+    
+    {
+        key: "KBV_ITA_VGEX_Technische_Anlage_ERP",
+        link: "https://update.kbv.de/ita-update/DigitaleMuster/ERP/KBV_ITA_VGEX_Technische_Anlage_ERP.pdf",
+        title: "TECHNISCHE ANLAGE ZUR ELEKTRONISCHEN ARZNEIMITTELVERORDNUNG (E16A)",
+        author: "KBV"
     }
     
 ];
