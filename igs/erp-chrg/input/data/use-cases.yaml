@@ -20,8 +20,8 @@
     - Fachdienst erzeugt AccessCode zum Ändern.
   postconditions: |
     - Abrechnungsinformation ist gespeichert und protokolliert.  
-  relatedTechnicalUseCases: |
-    - [Abrechnungsinformation bereitstellen](./menu-technische-umsetzung-anwendungsfaelle.html#bereitstellen-abgebende-lei)
+  interface: |
+    - [Abrechnungsinformation bereitstellen](./query-api-chargeitem.html#post-chargeitem-bereitstellen)
   diagram: seq-abrechnungsinformation-bereitstellen
 
 - id: AF_10081
@@ -40,8 +40,8 @@
     - Fachdienst liefert Verordnungs- und PKV-Abgabedatensatz.
   postconditions: |
     - Datensätze liegen im Primärsystem vor; Zugriff ist protokolliert.
-  relatedTechnicalUseCases: |
-    - [Abrechnungsinformation abrufen](./menu-technische-umsetzung-anwendungsfaelle.html#abrufen-abgebende-lei)
+  interface: |
+    - [Abrechnungsinformation abrufen](./query-api-chargeitem.html#get-chargeitemid-details)
   diagram: seq-abrechnungsinformation-abrufen-abgebender
 
 - id: AF_10083
@@ -139,8 +139,8 @@
     - Fachdienst signiert Datensätze beim Detailabruf.
   postconditions: |
     - Daten stehen im FdV zur Anzeige und zum Export bereit; Abruf ist protokolliert.
-  relatedTechnicalUseCases: |
-    - [Abrechnungsinformation abrufen](./menu-technische-umsetzung-anwendungsfaelle.html#abrechnungsinformation-abrufen-versicherter)
+  interface: |
+    - [Abrechnungsinformation abrufen](./query-api-chargeitem.html#get-chargeitem-liste)
   diagram: seq-abrechnungsinformation-abrufen-versicherter
 
 - id: AF_10088
@@ -177,8 +177,8 @@
     - Der E-Rezept-Fachdienst speichert die Information.
   postconditions: |
     - Die Information zur Markierung ist im E-Rezept-Fachdienst gespeichert. Der Datenzugriff ist im E-Rezept-Fachdienst protokolliert.
-  relatedTechnicalUseCases: |
-    - [Abrechnungsinformation markieren](./menu-technische-umsetzung-anwendungsfaelle.html#abrechnungsinformationen-markieren)
+  interface: |
+    - [Abrechnungsinformation markieren](./query-api-chargeitem.html#patch-chargeitemid-markierung)
   diagram: seq-abrechnungsinformation-markieren
 
 - id: AF_10090
@@ -196,6 +196,6 @@
     - Der E-Rezept-Fachdienst löscht die Abrechnungsinformation.
   postconditions: |
     - Die Abrechnungsinformation sind auf dem E-Rezept-Fachdienst gelöscht. Das Löschen ist im E-Rezept-Fachdienst protokolliert.
-  relatedTechnicalUseCases: |
-    - [Abrechnungsinformation löschen](./menu-technische-umsetzung-anwendungsfaelle.html#abrechnungsinformationen-loeschen)
+  interface: |
+    - [Abrechnungsinformation löschen](./query-api-chargeitem.html#delete-chargeitemid)
   diagram: seq-abrechnungsinformation-loeschen

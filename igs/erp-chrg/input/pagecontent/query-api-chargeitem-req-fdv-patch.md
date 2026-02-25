@@ -1,5 +1,5 @@
 <!--A_24553-->
-<requirement conformance="MAY" title="E-Rezept-FdV: optional: Abrechnungsinformation markieren">
+<requirement conformance="MAY" key="IG-ERP-CHRG-98921PAA" title="E-Rezept-FdV: optional: Abrechnungsinformation markieren" version="0">
     <meta lockversion="false"/>
     <actor name="eRP_FdV">
         <testProcedure id="Herstellererklärung"/>
@@ -8,7 +8,7 @@
 </requirement>
 
 <!--A_22176-01-->
-<requirement conformance="SHALL" title="E-Rezept-FdV: Abrechnungsinformation markieren - Markierungen auswählen">
+<requirement conformance="SHALL" key="IG-ERP-CHRG-37823RK3" title="E-Rezept-FdV: Abrechnungsinformation markieren - Markierungen auswählen" version="0">
     <meta lockversion="false"/>
     <actor name="eRP_FdV">
         <testProcedure id="Produkttest"/>
@@ -23,7 +23,7 @@
 
 TODO: A_22177-02
 <!--A_22177-02-->
-<requirement conformance="SHALL" title="E-Rezept-FdV: title">
+<requirement conformance="SHALL" key="IG-ERP-CHRG-89929A71" title="E-Rezept-FdV: title" version="0">
     <meta lockversion="false"/>
     <actor name="eRP_FdV">
         <testProcedure id="Produkttest"/>
@@ -32,7 +32,7 @@ TODO: A_22177-02
 </requirement>
 
 <!--A_22179-01-->
-<requirement conformance="SHALL" title="E-Rezept-FdV: Abrechnungsinformation markieren - Speicherrequest">
+<requirement conformance="SHALL" key="IG-ERP-CHRG-07053MFH" title="E-Rezept-FdV: Abrechnungsinformation markieren - Speicherrequest" version="0">
     <meta lockversion="false"/>
     <actor name="eRP_FdV">
         <testProcedure id="Produkttest"/>

@@ -33,7 +33,8 @@ Anfragen an die Communication-Ressource können über die RESTful API mittels HT
 </div>
 
 ### Anforderungen an Schnittstelle
-[Spezifische Anforderungen für den E-Rezept-Fachdienst](./query-api-chargeitem-req-fd-get.html)
+- [Spezifische Anforderungen für den E-Rezept-Fachdienst](./query-api-chargeitem-req-fd-get.html)
+- [Spezifische Anforderungen für den E-Rezept-FdV](./query-api-chargeitem-req-fdv-get.html)
 
 ## GET /ChargeItem/&#60;id&#62; (Details)
 
@@ -62,7 +63,9 @@ Der Detailabruf erfolgt aus dem FdV/AdV oder durch die abgebende LEI (mit Access
 </div>
 
 ### Anforderungen an Schnittstelle
-[Spezifische Anforderungen für den E-Rezept-Fachdienst](./query-api-chargeitem-req-fd-get-id.html)
+- [Spezifische Anforderungen für den E-Rezept-Fachdienst](./query-api-chargeitem-req-fd-get-id.html)
+- [Spezifische Anforderungen für den E-Rezept-FdV](./query-api-chargeitem-req-fdv-get-id.html)
+- [Spezifische Anforderungen für den abgebenden Leistungserbringer](./query-api-chargeitem-req-ps-get-id.html)
 
 ## POST /ChargeItem (Bereitstellen)
 
@@ -91,7 +94,8 @@ Die Operation wird nach der Belieferung ausgelöst, sobald eine Einwilligung des
 </div>
 
 ### Anforderungen an Schnittstelle
-[Spezifische Anforderungen für den E-Rezept-Fachdienst](./query-api-chargeitem-req-fd-post.html)
+- [Spezifische Anforderungen für den E-Rezept-Fachdienst](./query-api-chargeitem-req-fd-post.html)
+- [Spezifische Anforderungen für den abgebenden Leistungserbringer](./query-api-chargeitem-req-ps-post.html)
 
 ## PATCH /ChargeItem/&#60;id&#62; (Markierungen)
 
@@ -116,8 +120,8 @@ Der Anwendungsfall wird im FdV/AdV ausgelöst, wenn Markierungen angepasst werde
 </div>
 
 ### Anforderungen an Schnittstelle
-[Spezifische Anforderungen für den E-Rezept-Fachdienst](./query-api-chargeitem-req-fd-patch.html)
-[Spezifische Anforderungen für das E-Rezept-FdV](./query-api-chargeitem-req-fdv-patch.html)
+- [Spezifische Anforderungen für den E-Rezept-Fachdienst](./query-api-chargeitem-req-fd-patch.html)
+- [Spezifische Anforderungen für das E-Rezept-FdV](./query-api-chargeitem-req-fdv-patch.html)
 
 ## PUT /ChargeItem/&#60;id&#62; (Ändern PKV‑Abgabedatensatz)
 
@@ -143,7 +147,8 @@ Der Anwendungsfall wird ausgelöst, wenn Korrekturen an Abgabedaten notwendig si
 </div>
 
 ### Anforderungen an Schnittstelle
-[Spezifische Anforderungen für den E-Rezept-Fachdienst](./query-api-chargeitem-req-fd-put.html)
+- [Spezifische Anforderungen für den E-Rezept-Fachdienst](./query-api-chargeitem-req-fd-put.html)
+- [Spezifische Anforderungen für den abgebenden Leistungserbringer](./query-api-chargeitem-req-ps-put.html)
 
 ## DELETE /ChargeItem/&#60;id&#62;
 
@@ -167,7 +172,8 @@ Der Anwendungsfall wird durch den Versicherten im FdV/AdV ausgelöst.
 </div>
 
 ### Anforderungen an Schnittstelle
-[Spezifische Anforderungen für den E-Rezept-Fachdienst](./query-api-chargeitem-req-fd-delete.html)
+- [Spezifische Anforderungen für den E-Rezept-Fachdienst](./query-api-chargeitem-req-fd-delete.html)
+- [Spezifische Anforderungen für das E-Rezept-FdV](./query-api-chargeitem-req-fdv-delete.html)
 
 ## Sicherheitsanforderungen
 Generelle Sicherheitsanforderungen werden [hier](./menu-schnittstellen-datenschutz-und-sicherheit.html) festgehalten.
