@@ -13,7 +13,7 @@ Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemsp
 
 ### Anforderungen Workflow 200, 209
 <!-- A_22541-01 -->
-<requirement conformance="SHALL" key="IG-TIFlow-RX-11" title="PS verordnende LEI: E-Rezept erstellen – Flowtype 200/209 – KVNR als Identifier" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-11" title="PS verordnende LEI: E-Rezept erstellen - Flowtype 200/209 - KVNR als Identifier" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -21,7 +21,7 @@ Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemsp
         Das PS der verordnenden LEI MUSS im Verordnungsdatensatz für ein E-Rezept des Flowtype 200 oder 209 als Identifier des Patienten in Patient.identifer.value die KVNR des Versicherten verwenden.
 </requirement>
 <!-- A_22542-01 -->
-<requirement conformance="SHALL" key="IG-TIFlow-RX-12" title="PS verordnende LEI: E-Rezept erstellen – Flowtype 200/209 – Versicherungstyp PKV" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-12" title="PS verordnende LEI: E-Rezept erstellen - Flowtype 200/209 - Versicherungstyp PKV" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -41,7 +41,7 @@ Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemsp
 
 ### Anforderungen Workflow 166
 <!-- A_27834 -->
-<requirement conformance="SHALL" key="IG-TIFlow-RX-14" title="PS verordnende LEI: E-Rezept erstellen – Flowtype 166 – zulässige Signatur Arzt" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-14" title="PS verordnende LEI: E-Rezept erstellen - Flowtype 166 - zulässige Signatur Arzt" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -49,7 +49,7 @@ Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemsp
         Das PS der verordnenden LEI MUSS sicherstellen, dass ein Verordnungsdatensatz für ein E-Rezept des Flowtype 166 nur mit einem HBA mit der zulässigen ProfessionOID oid_arzt signiert werden kann.
 </requirement>
 <!-- A_27835 -->
-<requirement conformance="SHALL" key="IG-TIFlow-RX-15" title="PS verordnende LEI: E-Rezept erstellen – Flowtype 166 – Reichdauer nach Vorgaben" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-15" title="PS verordnende LEI: E-Rezept erstellen - Flowtype 166 - Reichdauer nach Vorgaben" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -57,7 +57,7 @@ Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemsp
         Das PS der verordnenden LEI MUSS im Verordnungsdatensatz für ein E-Rezept des Flowtype 166 sicherstellen, dass die maximale Reichdauer entsprechend den gesetzlichen Vorgaben nicht überschritten wird.
 </requirement>
 <!-- A_27836 -->
-<requirement conformance="SHALL" key="IG-TIFlow-RX-16" title="PS verordnende LEI: E-Rezept erstellen – Flowtype 166 – Bestätigungen nach §3a Abs. 2, 5 AMVV" version="0">
+<requirement conformance="SHALL" key="IG-TIFlow-RX-16" title="PS verordnende LEI: E-Rezept erstellen - Flowtype 166 - Bestätigungen nach §3a Abs. 2, 5 AMVV" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -100,7 +100,20 @@ Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemsp
 </table>
 </requirement>
 
+### Patientenausdruck
+
+<requirement conformance="SHALL NOT" key="IG-TIFlow-RX-17" title="PS verordnende LEI: E-Rezept erstellen - Flowtype 169/209 -kein Patientenausdruck" version="0">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Das PS der verordnenden LEI DARF für E-Rezepte des Workflowtype mit Steuerung durch den Leistungserbringer (169, 209) NICHT einen Patientenausdruck erstellen.
+</requirement>
+
+
 ### Anforderungen Workflow 169
+<!-- ToDo: Der folgende Abschnitt hat mit dem Zuweisen und weniger mit dem E-Rezept einstellen zu tun. -->
+
 <!-- A_21400 -->
 <requirement conformance="SHALL" key="IG-TIFlow-RX-17" title="PS verordnende LEI: Übergabe E-Rezept-Token an Apotheke" version="0">
     <meta lockversion="false"/>
