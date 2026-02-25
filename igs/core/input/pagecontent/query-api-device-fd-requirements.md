@@ -1,6 +1,5 @@
-# FD-Anforderungen: Query API Device
 
-Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fuer den Device-Query-Endpunkt.
+Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für den Device-Query-Endpunkt.
 
 <!-- A_20744 -->
 <requirement conformance="SHALL" key="IG-WF-CORE-87" title="E-Rezept-Fachdienst - Selbstauskunft Device-Informationen" version="0">
