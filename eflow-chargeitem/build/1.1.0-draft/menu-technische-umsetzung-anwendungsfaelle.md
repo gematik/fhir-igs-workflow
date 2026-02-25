@@ -30,8 +30,9 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 * Beschreibung: Nachbedingungen
   * Mit der Belieferung des E-Rezepts übermittelt die abgebende LEI den PKV-Abgabedatensatz an den E-Rezept-Fachdienst und stellt damit die Abrechnungsinformation digital bereit. Voraussetzung ist die Einwilligung des Versicherten zum Speichern der Abrechnungsinformationen.: * Abrechnungsinformation ist gespeichert und protokolliert.
 
-* Beschreibung: Technische Anwendungsfälle des E-Rezept-Fachdienst
-  * Mit der Belieferung des E-Rezepts übermittelt die abgebende LEI den PKV-Abgabedatensatz an den E-Rezept-Fachdienst und stellt damit die Abrechnungsinformation digital bereit. Voraussetzung ist die Einwilligung des Versicherten zum Speichern der Abrechnungsinformationen.: 
+* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+  * Mit der Belieferung des E-Rezepts übermittelt die abgebende LEI den PKV-Abgabedatensatz an den E-Rezept-Fachdienst und stellt damit die Abrechnungsinformation digital bereit. Voraussetzung ist die Einwilligung des Versicherten zum Speichern der Abrechnungsinformationen.: * [Abrechnungsinformation bereitstellen](./query-api-chargeitem.md#post-chargeitem-bereitstellen)
+
 * Beschreibung: Relevante(r) Sektor(en)
   * Mit der Belieferung des E-Rezepts übermittelt die abgebende LEI den PKV-Abgabedatensatz an den E-Rezept-Fachdienst und stellt damit die Abrechnungsinformation digital bereit. Voraussetzung ist die Einwilligung des Versicherten zum Speichern der Abrechnungsinformationen.:  APOTHEKER 
 
@@ -53,8 +54,9 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 * Beschreibung: Nachbedingungen
   * Die Apotheke ruft eine zuvor von ihr bereitgestellte Abrechnungsinformation ab, wenn sie die Daten im Primärsystem nicht mehr vorliegen hat und der AccessCode bekannt ist.: * Datensätze liegen im Primärsystem vor; Zugriff ist protokolliert.
 
-* Beschreibung: Technische Anwendungsfälle des E-Rezept-Fachdienst
-  * Die Apotheke ruft eine zuvor von ihr bereitgestellte Abrechnungsinformation ab, wenn sie die Daten im Primärsystem nicht mehr vorliegen hat und der AccessCode bekannt ist.: 
+* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+  * Die Apotheke ruft eine zuvor von ihr bereitgestellte Abrechnungsinformation ab, wenn sie die Daten im Primärsystem nicht mehr vorliegen hat und der AccessCode bekannt ist.: * [Abrechnungsinformation abrufen](./query-api-chargeitem.md#get-chargeitemid-details)
+
 * Beschreibung: Relevante(r) Sektor(en)
   * Die Apotheke ruft eine zuvor von ihr bereitgestellte Abrechnungsinformation ab, wenn sie die Daten im Primärsystem nicht mehr vorliegen hat und der AccessCode bekannt ist.:  APOTHEKER 
 
@@ -78,8 +80,9 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 * Beschreibung: Nachbedingungen
   * Die abgebende LEI ändert auf Wunsch des Versicherten den PKV-Abgabedatensatz. Der zuvor gespeicherte Datensatz wird überschrieben.: * Änderung ist protokolliert; neuer AccessCode liegt vor.
 
-* Beschreibung: Technische Anwendungsfälle des E-Rezept-Fachdienst
-  * Die abgebende LEI ändert auf Wunsch des Versicherten den PKV-Abgabedatensatz. Der zuvor gespeicherte Datensatz wird überschrieben.: 
+* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+  * Die abgebende LEI ändert auf Wunsch des Versicherten den PKV-Abgabedatensatz. Der zuvor gespeicherte Datensatz wird überschrieben.: * [Query API: Communication](./query-api-communication.md)
+
 * Beschreibung: Relevante(r) Sektor(en)
   * Die abgebende LEI ändert auf Wunsch des Versicherten den PKV-Abgabedatensatz. Der zuvor gespeicherte Datensatz wird überschrieben.:  APOTHEKER 
 
@@ -100,9 +103,8 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 * Beschreibung: Nachbedingungen
   * Der Versicherte erteilt die Einwilligung zur Speicherung von Abrechnungsinformationen im E-Rezept-Fachdienst. Die Einwilligung ist unbefristet.: * Einwilligung ist gespeichert und protokolliert.
 
-* Beschreibung: Technische Anwendungsfälle des E-Rezept-Fachdienst
-  * Der Versicherte erteilt die Einwilligung zur Speicherung von Abrechnungsinformationen im E-Rezept-Fachdienst. Die Einwilligung ist unbefristet.: * [Einwilligung erteilen](./menu-technische-umsetzung-anwendungsfaelle.md#einwilligung-erteilen)
-
+* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+  * Der Versicherte erteilt die Einwilligung zur Speicherung von Abrechnungsinformationen im E-Rezept-Fachdienst. Die Einwilligung ist unbefristet.: 
 * Beschreibung: Relevante(r) Sektor(en)
   * Der Versicherte erteilt die Einwilligung zur Speicherung von Abrechnungsinformationen im E-Rezept-Fachdienst. Die Einwilligung ist unbefristet.:  VERSICHERTER 
 
@@ -123,9 +125,8 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 * Beschreibung: Nachbedingungen
   * Der Versicherte widerruft die Einwilligung. Dadurch werden alle Abrechnungsinformationen im E-Rezept-Fachdienst gelöscht.: * Einwilligung und Abrechnungsinformationen sind gelöscht; Vorgang ist protokolliert.
 
-* Beschreibung: Technische Anwendungsfälle des E-Rezept-Fachdienst
-  * Der Versicherte widerruft die Einwilligung. Dadurch werden alle Abrechnungsinformationen im E-Rezept-Fachdienst gelöscht.: * [Einwilligung widerrufen](./menu-technische-umsetzung-anwendungsfaelle.md#einwilligung-widerrufen)
-
+* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+  * Der Versicherte widerruft die Einwilligung. Dadurch werden alle Abrechnungsinformationen im E-Rezept-Fachdienst gelöscht.: 
 * Beschreibung: Relevante(r) Sektor(en)
   * Der Versicherte widerruft die Einwilligung. Dadurch werden alle Abrechnungsinformationen im E-Rezept-Fachdienst gelöscht.:  VERSICHERTER 
 
@@ -146,9 +147,8 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 * Beschreibung: Nachbedingungen
   * Der Versicherte sieht ein, ob eine Einwilligung im E-Rezept-Fachdienst vorliegt.: * Einwilligungsstatus liegt zur Anzeige im FdV vor.
 
-* Beschreibung: Technische Anwendungsfälle des E-Rezept-Fachdienst
-  * Der Versicherte sieht ein, ob eine Einwilligung im E-Rezept-Fachdienst vorliegt.: * [Einwilligung einsehen](./menu-technische-umsetzung-anwendungsfaelle.md#einwilligung-einsehen)
-
+* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+  * Der Versicherte sieht ein, ob eine Einwilligung im E-Rezept-Fachdienst vorliegt.: 
 * Beschreibung: Relevante(r) Sektor(en)
   * Der Versicherte sieht ein, ob eine Einwilligung im E-Rezept-Fachdienst vorliegt.:  VERSICHERTER 
 
@@ -171,8 +171,9 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 * Beschreibung: Nachbedingungen
   * Der Versicherte ruft die Abrechnungsinformationen aus dem E-Rezept-Fachdienst ab und kann sie anzeigen, exportieren oder weiterleiten.: * Daten stehen im FdV zur Anzeige und zum Export bereit; Abruf ist protokolliert.
 
-* Beschreibung: Technische Anwendungsfälle des E-Rezept-Fachdienst
-  * Der Versicherte ruft die Abrechnungsinformationen aus dem E-Rezept-Fachdienst ab und kann sie anzeigen, exportieren oder weiterleiten.: 
+* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+  * Der Versicherte ruft die Abrechnungsinformationen aus dem E-Rezept-Fachdienst ab und kann sie anzeigen, exportieren oder weiterleiten.: * [Abrechnungsinformation abrufen](./query-api-chargeitem.md#get-chargeitem-liste)
+
 * Beschreibung: Relevante(r) Sektor(en)
   * Der Versicherte ruft die Abrechnungsinformationen aus dem E-Rezept-Fachdienst ab und kann sie anzeigen, exportieren oder weiterleiten.:  VERSICHERTER 
 
@@ -193,9 +194,8 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 * Beschreibung: Nachbedingungen
   * Der Versicherte gibt die Abrechnungsinformation aus dem FdV/AdV heraus an eine Ziel-App weiter (z. B. PKV-App, Beihilfe) oder exportiert sie als PDF/A.: * Die Abrechnungsinformation ist in der Ziel-App übertragen.
 
-* Beschreibung: Technische Anwendungsfälle des E-Rezept-Fachdienst
-  * Der Versicherte gibt die Abrechnungsinformation aus dem FdV/AdV heraus an eine Ziel-App weiter (z. B. PKV-App, Beihilfe) oder exportiert sie als PDF/A.: * [Abrechnungsinformation weitergeben](./menu-technische-umsetzung-anwendungsfaelle.md#abrechnungsinformationen-weitergeben)
-
+* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+  * Der Versicherte gibt die Abrechnungsinformation aus dem FdV/AdV heraus an eine Ziel-App weiter (z. B. PKV-App, Beihilfe) oder exportiert sie als PDF/A.: 
 * Beschreibung: Relevante(r) Sektor(en)
   * Der Versicherte gibt die Abrechnungsinformation aus dem FdV/AdV heraus an eine Ziel-App weiter (z. B. PKV-App, Beihilfe) oder exportiert sie als PDF/A.:  VERSICHERTER 
 
@@ -217,8 +217,9 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 * Beschreibung: Nachbedingungen
   * Der Versicherte markiert die Abrechnungsinformation im FdV/AdV, um sie für bestimmte Aktionen zu kennzeichnen. Der E-Rezept-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.: * Die Information zur Markierung ist im E-Rezept-Fachdienst gespeichert. Der Datenzugriff ist im E-Rezept-Fachdienst protokolliert.
 
-* Beschreibung: Technische Anwendungsfälle des E-Rezept-Fachdienst
-  * Der Versicherte markiert die Abrechnungsinformation im FdV/AdV, um sie für bestimmte Aktionen zu kennzeichnen. Der E-Rezept-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.: 
+* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+  * Der Versicherte markiert die Abrechnungsinformation im FdV/AdV, um sie für bestimmte Aktionen zu kennzeichnen. Der E-Rezept-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.: * [Abrechnungsinformation markieren](./query-api-chargeitem.md#patch-chargeitemid-markierung)
+
 * Beschreibung: Relevante(r) Sektor(en)
   * Der Versicherte markiert die Abrechnungsinformation im FdV/AdV, um sie für bestimmte Aktionen zu kennzeichnen. Der E-Rezept-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.:  VERSICHERTER 
 
@@ -240,8 +241,9 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 * Beschreibung: Nachbedingungen
   * Ein Versicherter wählt im FdV (E-Rezept-FdV, E-Rezept-AdV) die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der E-Rezept-Fachdienst löscht die Abrechnungsinformation: * Die Abrechnungsinformation sind auf dem E-Rezept-Fachdienst gelöscht. Das Löschen ist im E-Rezept-Fachdienst protokolliert.
 
-* Beschreibung: Technische Anwendungsfälle des E-Rezept-Fachdienst
-  * Ein Versicherter wählt im FdV (E-Rezept-FdV, E-Rezept-AdV) die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der E-Rezept-Fachdienst löscht die Abrechnungsinformation: 
+* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+  * Ein Versicherter wählt im FdV (E-Rezept-FdV, E-Rezept-AdV) die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der E-Rezept-Fachdienst löscht die Abrechnungsinformation: * [Abrechnungsinformation löschen](./query-api-chargeitem.md#delete-chargeitemid)
+
 * Beschreibung: Relevante(r) Sektor(en)
   * Ein Versicherter wählt im FdV (E-Rezept-FdV, E-Rezept-AdV) die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der E-Rezept-Fachdienst löscht die Abrechnungsinformation:  VERSICHERTER 
 
