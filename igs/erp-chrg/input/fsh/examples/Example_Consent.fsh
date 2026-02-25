@@ -5,7 +5,8 @@ Usage: #example
 * status = #active
 * scope = http://terminology.hl7.org/CodeSystem/consentscope#patient-privacy "Privacy Consent"
 * category = GEM_ERPCHRG_CS_ConsentType#CHARGCONS "Consent for saving electronic charge item"
-* insert PKV_Identifier(patient.identifier)
+* patient.identifier.system = $identifier-kvid-10
+* patient.identifier.value = "P987654321"
 * patient.identifier.assigner.identifier.system = $identifier-iknr
 * patient.identifier.assigner.identifier.value = "168140950"
 * policyRule = http://terminology.hl7.org/CodeSystem/v3-ActCode#OPTIN
@@ -19,8 +20,9 @@ Usage: #example
 * status = #active
 * scope = http://terminology.hl7.org/CodeSystem/consentscope#patient-privacy "Privacy Consent"
 * category = GEM_ERPCHRG_CS_ConsentType#CHARGCONS "Consent for saving electronic charge item"
-* insert PKV_Identifier(patient.identifier)
+* patient.identifier.system = $identifier-kvid-10
+* patient.identifier.value = "P987654321"
 * patient.identifier.assigner.identifier.system = $identifier-iknr
 * patient.identifier.assigner.identifier.value = "168140950"
-* insert DateTimeStamp(dateTime)
+* dateTime = 2024-01-15T12:30:00Z
 * policyRule = http://terminology.hl7.org/CodeSystem/v3-ActCode#OPTIN

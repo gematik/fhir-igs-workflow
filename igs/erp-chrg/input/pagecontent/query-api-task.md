@@ -18,7 +18,7 @@ Clients können Tasks suchen (z. B. nach Status oder Identifiern), um den Bearbe
   </div>
 </div>
 
-## GET /Task/<id> (Details)
+## GET /Task/&#60;id&#62; (Details)
 
 ### Nachricht
 Der Detailabruf liefert die Task‑Ressource zu einer bekannten Task‑ID.

@@ -6,9 +6,30 @@ RUN apt-get update \
        curl \
        jq \
        wget \
-   apt-transport-https \
-   ca-certificates \
-   gnupg \
+      apt-transport-https \
+      ca-certificates \
+      gnupg \
+      zsh \
+      python3.11 \
+      python3.11-venv \
+      python3-pip \
+      build-essential \
+      autoconf \
+      bison \
+      libssl-dev \
+      libreadline-dev \
+      zlib1g-dev \
+      libyaml-dev \
+      libffi-dev \
+      libgdbm-dev \
+      libgdbm-compat-dev \
+      libdb-dev \
+      libncurses5-dev \
+      libgmp-dev \
+      libxml2-dev \
+      libxslt1-dev \
+      libsqlite3-dev \
+      libcurl4-openssl-dev \
        xvfb \
        libgtk-3-0 \
        libnotify4 \
@@ -29,6 +50,11 @@ RUN apt-get update \
         libxcb-dri3-0 \
    && rm -rf /var/lib/apt/lists/*
 
+RUN git clone --depth 1 https://github.com/rbenv/ruby-build.git /tmp/ruby-build \
+   && /tmp/ruby-build/install.sh \
+   && ruby-build 3.2.2 /usr/local \
+   && rm -rf /tmp/ruby-build
+
 RUN wget -q https://github.com/mikefarah/yq/releases/download/v4.44.1/yq_linux_amd64 -O /usr/local/bin/yq \
    && chmod +x /usr/local/bin/yq
 
@@ -46,7 +72,12 @@ RUN curl -fsSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh \
    && ln -s /usr/share/dotnet/dotnet /usr/local/bin/dotnet \
    && rm /tmp/dotnet-install.sh
 
-RUN dotnet tool install --tool-path /usr/local/bin Firely.Terminal
+RUN dotnet tool install --tool-path /usr/local/bin Firely.Terminal --version 3.4.0
+
+RUN python3.11 -m pip install --no-cache-dir --upgrade --break-system-packages pip pipx \
+   && PIPX_HOME=/opt/pipx PIPX_BIN_DIR=/usr/local/bin pipx install git+https://github.com/onyg/req-tooling.git
+
+RUN gem install jekyll bundler
 
 RUN set -e; \
    drawio_url=$(curl -s https://api.github.com/repos/jgraph/drawio-desktop/releases/latest \

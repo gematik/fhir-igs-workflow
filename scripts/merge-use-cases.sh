@@ -31,6 +31,23 @@ if ! command -v yq >/dev/null 2>&1; then
   exit 1
 fi
 
+PYTHON_BIN="${PYTHON_BIN:-}"
+if [[ -z "$PYTHON_BIN" ]]; then
+  is_python_ok() {
+    command -v "$1" >/dev/null 2>&1 || return 1
+    "$1" -c "import sys" >/dev/null 2>&1
+  }
+
+  if is_python_ok python; then
+    PYTHON_BIN="python"
+  elif is_python_ok python3; then
+    PYTHON_BIN="python3"
+  else
+    echo "Error: python is required to merge use cases (set PYTHON_BIN or add python to PATH)" >&2
+    exit 1
+  fi
+fi
+
 mkdir -p "$MODULE_IMG_DIR"
 
 core_json="$(mktemp)"
@@ -47,7 +64,7 @@ yq -o=json '.' "$MODULE_IN" > "$module_json"
   echo "# Sources: $core_json $module_json"
   echo "########################################################################"
   echo "#"
-  python3 - "$core_json" "$module_json" "$CORE_IMG_DIR" "$MODULE_IMG_DIR" <<'PY' | yq -P -o=yaml
+  "$PYTHON_BIN" - "$core_json" "$module_json" "$CORE_IMG_DIR" "$MODULE_IMG_DIR" <<'PY' | yq -P -o=yaml
 import json
 import sys
 from copy import deepcopy

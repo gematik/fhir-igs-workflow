@@ -6,7 +6,9 @@ Usage: #example
 * meta.tag.display = "Communication message sent by patient to pharmacy to request the change of an existing ChargeItem by providing the AccessCode"
 * basedOn.reference = "ChargeItem/a51520ec-0899-404f-bb97-fe7d461f90a8?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
 * status = #unknown
-* insert PKV_Identifier(sender.identifier)
-* insert ApoTelematikID(recipient.identifier)
+* sender.identifier.system = $identifier-kvid-10
+* sender.identifier.value = "P987654321"
+* recipient.identifier.system = $identifier-telematik-id
+* recipient.identifier.value = "3-2-APO-XanthippeVeilchenblau01"
 * insert DateTimeStamp(sent)
 * payload.contentString = "Bitte meinen Namen in Günther ändern, Waltraud ist falsch."

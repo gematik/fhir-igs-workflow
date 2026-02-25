@@ -6,7 +6,9 @@ Usage: #example
 * meta.tag.display = "Communication message sent by pharmacy to patient in response to a previous ChargeItem-related message"
 * basedOn.reference = "ChargeItem/a51520ec-0899-404f-bb97-fe7d461f90a8"
 * status = #unknown
-* insert PKV_Identifier(recipient.identifier)
-* insert ApoTelematikID(sender.identifier)
+* recipient.identifier.system = $identifier-kvid-10
+* recipient.identifier.value = "P987654321"
+* sender.identifier.system = $identifier-telematik-id
+* sender.identifier.value = "3-2-APO-XanthippeVeilchenblau01"
 * insert DateTimeStamp(sent)
 * payload.contentString = "Erledigt."

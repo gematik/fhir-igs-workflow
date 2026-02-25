@@ -1,22 +1,22 @@
 actor:
 - E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: 5dc14658d35b2e7d402a81e12ec47ffcb72c5fc6a36834e52e6d573e712696c8
+content_hash: 3afc8c4f6e9cbc27170834953717e13bd1cf702d238f0a20ba07a45ea96c402e
 created: '2026-01-27T12:10:05.168139'
-date: '2026-01-27T12:10:05.168141'
+date: '2026-02-25T12:16:54.664642'
 key: IG-ERP-CHRG-167
-modified: '2026-01-27T12:10:05.168140'
+modified: '2026-02-25T12:16:54.664642'
 release_status: NEW
-source: input/pagecontent/query-api-chargeitem.md
+source: input/pagecontent/query-api-chargeitem-req-fd-delete.md
 status: ACTIVE
 test_procedures:
   E-Rezept-Fachdienst:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf eine
-  konkrete über <id> adressierte /ChargeItem/<id> Ressource sicherstellen, dass ausschließlich
-  Nutzer in der Rolle oid_versicherter die Operation am E-Rezept-Fachdienst aufrufen
-  dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader
-  "Authorization" feststellen, damit eine Abrechnungsinformation nicht durch Unberechtigte
-  gelöscht werden kann.
+text: "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf eine\
+  \ konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource sicherstellen,\
+  \ dass ausschließlich Nutzer in der Rolle \n- oid_versicherter \ndie Operation am\
+  \ E-Rezept-Fachdienst aufrufen dürfen und die Rolle \"professionOID\" des Aufrufers\
+  \ im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen, damit eine\
+  \ Abrechnungsinformation nicht durch Unberechtigte gelöscht werden kann."
 title: E-Rezept-Fachdienst – Abrechnungsinformation löschen – Rollenprüfung
 version: 0

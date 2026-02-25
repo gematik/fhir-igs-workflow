@@ -1,0 +1,1 @@
+Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `ChargeItem`-Query-Endpunkte.

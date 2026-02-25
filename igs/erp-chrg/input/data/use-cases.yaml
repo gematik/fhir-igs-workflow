@@ -62,8 +62,8 @@
     - Datensatz wird überschrieben; neuer AccessCode wird erzeugt.
   postconditions: |
     - Änderung ist protokolliert; neuer AccessCode liegt vor.
-  relatedTechnicalUseCases: |
-    - [PKV-Abgabedatensatz ändern](./menu-technische-umsetzung-anwendungsfaelle.html#pkv-abgabedatensatz-aendern)
+  interface: |
+    - [Query API: Communication](./query-api-communication.html)
   diagram: seq-abrechnungsinformation-aendern
 
 - id: AF_10084
@@ -135,7 +135,7 @@
     - Abrechnungsinformationen wurden durch eine Apotheke bereitgestellt.
   actions: |
     - Liste per GET /ChargeItem abrufen.
-    - Detailabruf via GET /ChargeItem/<id> durchführen.
+    - Detailabruf via GET /ChargeItem/&#60;id&#62; durchführen.
     - Fachdienst signiert Datensätze beim Detailabruf.
   postconditions: |
     - Daten stehen im FdV zur Anzeige und zum Export bereit; Abruf ist protokolliert.
