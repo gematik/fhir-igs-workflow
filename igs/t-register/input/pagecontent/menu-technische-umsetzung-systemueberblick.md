@@ -1,15 +1,14 @@
-# Technische Umsetzung - Systemueberblick
+Die Einführung der Verordnung von E-T-Rezepten setzt auf die bestehende Infrastruktur der Anwendung E-Rezept auf. 
 
-Der digitale Durchschlag E-T-Rezept wird nach erfolgreichem Abschluss des
-Workflows (FHIR-Operation $close) erstellt. Der relevante Workflow-Typ ist
-Flowtype 166 (Arzneimittel nach § 3a AMVV).
+Am Ende des Versorgungsprozesses muss der digitale Durchschlag E-T-Rezept an das BfArM übermittelt werden.
 
-Der E-Rezept-Fachdienst erzeugt den digitalen Durchschlag aus:
+Hierfür stellt das BfArM einen Webdienst bereit, der die Daten entgegennimmt. Der BfArM Webdienst ist keine Komponente der TI. Der E-Rezept-Fachdienst agiert als Client und ruft die benötigten Schnittstellen über das Transportnetz "Internet" auf.
 
-- Verordnungsdaten (KBV)
-- Dispensierinformationen (E-Rezept-Workflow)
-- Daten aus dem FHIR-VZD (Apothekeninformationen)
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 500px; margin-bottom: 30px;">
+        <img src="./ueberblick-t-rezept.png" alt="TI für E-T-Rezept" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung: </strong>Übersicht E-Rezept Komponenten für das E-T-Rezept</figcaption>
+</figure>
 
-Der erzeugte Datensatz wird automatisiert und asynchron an den Webdienst
-BfArM uebertragen. Bei Nicht-Erreichbarkeit erfolgt eine Wiederholung mit
-Backoff.
+<br>

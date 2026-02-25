@@ -1,5 +1,3 @@
-## Übertragen des digitalen Durchschlags zum T-Rezept
-
 Nach geltenden gesetzlichen Regelungen ist dem BfArM nach Abgabe einer Verordnung eines Arzneimittels nach §3a Abs. 1 Satz 1 AMVV, also die teratogenen Wirkstoffe Lenalidomid, Pomalidomid oder Thalidomid, ein digitaler Durchschlag des E-T-Rezepts zu übermitteln.
 
 Nach erfolgreichem Abschluss eines E-T-Rezept-Workflows – konkret durch den Aufruf der FHIR-Operation `$close` am E-Rezept-Fachdienst durch die Apotheke – erstellt der E-Rezept-Fachdienst für das betroffene E-T-Rezept ein Dokument gemäß dem Profil [digitaler Durchschlag T-Rezept](./StructureDefinition-erp-tprescription-carbon-copy.html) und überträgt dieses automatisiert und asynchron an den Webdienst des BfArM. Bei einer temporären Nicht-Erreichbarkeit des BfArM wird die zuverlässige Übertragung durch Backoff-Retry-Mechanismen sichergestellt.

@@ -107,7 +107,7 @@ Nach Übergabe von Task-ID und AccessCode (z. B. 2D-Code oder Nachricht) ruft di
 
 **Beteiligte Systeme:** AVS, E-Rezept-Fachdienst
 
-**Technische Anwendungsfälle (User Stories)**
+**Technische Anwendungsfälle**
 
 {% assign scenario_use_cases = "UC_4_1_E_Rezept_durch_Abgebenden_abrufen, UC_4_2_E_Rezept_durch_Abgebenden_zurueckgeben, UC_4_3_E_Rezept_durch_Abgebenden_loeschen, UC_4_4_Quittung_abrufen, UC_4_5_Abgabedatensatz_signieren, UC_4_8_Quittung_erneut_abrufen, UC_4_16_Dispensierinformationen_bereitstellen" | split: ", " %}
 

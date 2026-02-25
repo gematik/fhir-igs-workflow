@@ -1,5 +1,11 @@
-# Referenzen
+Die nachfolgenden Tabellen enthalten die Bezeichnung der in diesem Implementation Guide referenzierten Dokumente oder externe Quellen.
 
-- Feature Dokument T-Rezept: https://gemspec.gematik.de/docs/gemF/gemF_eRp_T-Rezept/latest/
-- Spezifikation E-Rezept-Fachdienst: https://gemspec.gematik.de/docs/gemSpec/gemSpec_FD_eRp/latest/
-- E-Rezept API Dokumentation zum BfArM: https://github.com/gematik/api-erp/blob/master/docs/erp_bfarm.adoc
+### Dokumente & Verweise der gematik
+
+{% include bibliography.html authors="gematik" %}
+<div><figcaption><strong>Tabelle:</strong> Dokumente & Verweise der gematik</figcaption></div>
+
+### Weitere Dokumente & Verweise
+
+{% include bibliography.html excludeAuthors="gematik" %}
+<div><figcaption><strong>Tabelle:</strong> Weitere Dokumente & Verweise</figcaption></div>

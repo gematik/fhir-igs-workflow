@@ -2,7 +2,10 @@ Dieser Implementation Guide beschreibt die Datenmodelle und Prozesse des E-Rezep
 
 ### Zweck und Geltungsbereich
 
-- Grundlegende Workflows für E-Rezepte zur Arzneimittelversorgung (Flowtypes **160, 169, 200 und 209**)
+- Grundlegende Workflows für E-Rezepte zur Arzneimittelversorgung:
+  - **160, 200** zur Verordnung von Arzneimitteln
+  - **169, 209** zur Verordnung von Arzneimitteln mit Workflowsteuerung durch den Leistungserbringer
+  - **166** zur Verordnung von E-T-Rezepten
 - Profile, Operationen und Validierungsregeln
 - Funktionale Anforderungen
 
