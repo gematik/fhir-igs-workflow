@@ -168,7 +168,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERPCHRG-PR-Commu
       "min" : 1,
       "type" : [{
         "code" : "Identifier",
-        "profile" : ["http://fhir.de/StructureDefinition/identifier-kvid-10"]
+        "profile" : ["https://gematik.de/fhir/erpchrg/StructureDefinition/identifier-kvid-10"]
       }]
     },
     {
@@ -182,7 +182,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERPCHRG-PR-Commu
       "min" : 1,
       "type" : [{
         "code" : "Identifier",
-        "profile" : ["http://fhir.de/StructureDefinition/identifier-telematik-id"]
+        "profile" : ["https://gematik.de/fhir/erpchrg/StructureDefinition/identifier-telematik-id"]
       }]
     },
     {

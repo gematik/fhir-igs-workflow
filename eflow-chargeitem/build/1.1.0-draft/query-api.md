@@ -9,8 +9,6 @@ Version 1.1.0-draft - ci-build
 
 ## Query API
 
-Query API
-
 Diese Seite bietet einen Einstieg in die Query‑API‑Seiten der einzelnen FHIR‑Ressourcen.
 
 ## Ressourcen

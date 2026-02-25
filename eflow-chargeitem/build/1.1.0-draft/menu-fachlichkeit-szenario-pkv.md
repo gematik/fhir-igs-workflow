@@ -5,7 +5,7 @@ Abrechnungsinformationen des E-Rezepte für PKV-Versicherte
 Version 1.1.0-draft - ci-build 
 
 * [**Table of Contents**](toc.md)
-* [**Überblick zur Verordnung und Belieferung von Arzneimitteln**](menu-fachlichkeit-ueberblick.md)
+* [**Überblick über die Abrechnungsinformationen des E-Rezepts für PKV-Versicherte**](menu-fachlichkeit-ueberblick.md)
 * **Abrechnungsinformationen des E-Rezepts für PKV-Versicherte**
 
 ## Abrechnungsinformationen des E-Rezepts für PKV-Versicherte
@@ -45,8 +45,8 @@ Das Speichern der Abrechnungsinformationen erfolgt nur mit Einwilligung des Vers
 | [Einwilligung zum Speichern der Abrechnungsinformationen einsehen](menu-technische-umsetzung-anwendungsfaelle.md#einwilligung-einsehen) |
 | [Einwilligung zum Speichern der Abrechnungsinformationen widerrufen](menu-technische-umsetzung-anwendungsfaelle.md#einwilligung-widerrufen) |
 
-**Tabelle:**Fachliche Anwendungsfälle mit Bezug zu Szenario
-*Verordnungen für PKV-Versicherte*
+**Tabelle:**Fachliche Anwendungsfälle mit Bezug zum Szenario
+*Einwilligung zum Speichern der Abrechungsinformationen*
 ### Belieferung der Abrechnungsinformation durch die Apotheke
 
 Nach der Einlösung kann die Apotheke die Abrechnungsinformation digital bereitstellen, sofern eine Einwilligung vorliegt.

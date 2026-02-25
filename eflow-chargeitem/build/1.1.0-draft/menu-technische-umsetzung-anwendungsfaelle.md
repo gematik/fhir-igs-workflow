@@ -81,8 +81,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
   * Die abgebende LEI ändert auf Wunsch des Versicherten den PKV-Abgabedatensatz. Der zuvor gespeicherte Datensatz wird überschrieben.: * Änderung ist protokolliert; neuer AccessCode liegt vor.
 
 * Beschreibung: Technische Anwendungsfälle des E-Rezept-Fachdienst
-  * Die abgebende LEI ändert auf Wunsch des Versicherten den PKV-Abgabedatensatz. Der zuvor gespeicherte Datensatz wird überschrieben.: * [PKV-Abgabedatensatz ändern](./menu-technische-umsetzung-anwendungsfaelle.md#pkv-abgabedatensatz-aendern)
-
+  * Die abgebende LEI ändert auf Wunsch des Versicherten den PKV-Abgabedatensatz. Der zuvor gespeicherte Datensatz wird überschrieben.: 
 * Beschreibung: Relevante(r) Sektor(en)
   * Die abgebende LEI ändert auf Wunsch des Versicherten den PKV-Abgabedatensatz. Der zuvor gespeicherte Datensatz wird überschrieben.:  APOTHEKER 
 
@@ -168,7 +167,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 
 * Beschreibung: Durchzuführende Aktionen
   * Der Versicherte ruft die Abrechnungsinformationen aus dem E-Rezept-Fachdienst ab und kann sie anzeigen, exportieren oder weiterleiten.: * Liste per GET /ChargeItem abrufen.
-* Detailabruf via GET /ChargeItem/ durchführen.
+* Detailabruf via GET /ChargeItem/<id> durchführen.
 * Fachdienst signiert Datensätze beim Detailabruf.
 
 * Beschreibung: Nachbedingungen
@@ -198,7 +197,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
   * Der Versicherte gibt die Abrechnungsinformation aus dem FdV/AdV heraus an eine Ziel-App weiter (z. B. PKV-App, Beihilfe) oder exportiert sie als PDF/A.: * Die Abrechnungsinformation ist in der Ziel-App übertragen.
 
 * Beschreibung: Technische Anwendungsfälle des E-Rezept-Fachdienst
-  * Der Versicherte gibt die Abrechnungsinformation aus dem FdV/AdV heraus an eine Ziel-App weiter (z. B. PKV-App, Beihilfe) oder exportiert sie als PDF/A.: * [Abrechnungsinformation abrufen](./menu-technische-umsetzung-anwendungsfaelle.md#abrechnungsinformationen-weitergeben)
+  * Der Versicherte gibt die Abrechnungsinformation aus dem FdV/AdV heraus an eine Ziel-App weiter (z. B. PKV-App, Beihilfe) oder exportiert sie als PDF/A.: * [Abrechnungsinformation weitergeben](./menu-technische-umsetzung-anwendungsfaelle.md#abrechnungsinformationen-weitergeben)
 
 * Beschreibung: Relevante(r) Sektor(en)
   * Der Versicherte gibt die Abrechnungsinformation aus dem FdV/AdV heraus an eine Ziel-App weiter (z. B. PKV-App, Beihilfe) oder exportiert sie als PDF/A.:  VERSICHERTER 
@@ -222,7 +221,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
   * Der Versicherte markiert die Abrechnungsinformation im FdV/AdV, um sie für bestimmte Aktionen zu kennzeichnen. Der E-Rezept-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.: * Die Information zur Markierung ist im E-Rezept-Fachdienst gespeichert. Der Datenzugriff ist im E-Rezept-Fachdienst protokolliert.
 
 * Beschreibung: Technische Anwendungsfälle des E-Rezept-Fachdienst
-  * Der Versicherte markiert die Abrechnungsinformation im FdV/AdV, um sie für bestimmte Aktionen zu kennzeichnen. Der E-Rezept-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.: * [Abrechnungsinformation abrufen](./menu-technische-umsetzung-anwendungsfaelle.md#abrechnungsinformationen-markieren)
+  * Der Versicherte markiert die Abrechnungsinformation im FdV/AdV, um sie für bestimmte Aktionen zu kennzeichnen. Der E-Rezept-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.: * [Abrechnungsinformation markieren](./menu-technische-umsetzung-anwendungsfaelle.md#abrechnungsinformationen-markieren)
 
 * Beschreibung: Relevante(r) Sektor(en)
   * Der Versicherte markiert die Abrechnungsinformation im FdV/AdV, um sie für bestimmte Aktionen zu kennzeichnen. Der E-Rezept-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.:  VERSICHERTER 

@@ -24,10 +24,10 @@ Die folgenden Operationen nutzen den HTTP-Header “X-erp-resource”:
 | DELETE /Consent/ | Consent |
 | GET /Consent/ | Consent |
 | POST /Consent/ | Consent |
-| DELETE /ChargeItem/ | ChargeItem |
+| DELETE /ChargeItem/<id> | ChargeItem |
 | GET /ChargeItem/ | ChargeItem |
-| GET /ChargeItem/ | ChargeItem |
-| PATCH /ChargeItem/ | ChargeItem |
+| GET /ChargeItem/<id> | ChargeItem |
+| PATCH /ChargeItem/<id> | ChargeItem |
 
 Die Benutzerführung im E-Rezept-FdV muss die Funktionen für PKV-Versicherte zielgerichtet anbieten (z. B. durch Konfiguration als PKV-Versicherter).
 

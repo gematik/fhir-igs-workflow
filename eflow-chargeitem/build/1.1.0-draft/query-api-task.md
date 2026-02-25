@@ -231,7 +231,7 @@ Clients können Tasks suchen (z. B. nach Status oder Identifiern), um den Bearbe
     
 ```
 
-## GET /Task/ (Details)
+## GET /Task/<id> (Details)
 
 ### Nachricht
 
