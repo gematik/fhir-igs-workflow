@@ -1,6 +1,6 @@
 {% assign use_cases = site.data['gen-use-cases'] %}
 
-> Die weitere fachliche und technische Beschreibung zum Übertragen des digitale Durchschlag E-T-Rezept wird im FHIR Implementation Guide [gemIG_TIFlow_t-register] beschrieben.
+> Die weitere fachliche und technische Beschreibung zum Übertragen des digitale Durchschlag E-T-Rezept wird im FHIR Implementation Guide [gemIG_TIFlow_bfarm] beschrieben.
 {: .stu-note}
 
 ### Epic und User Story
