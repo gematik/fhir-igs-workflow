@@ -28,8 +28,8 @@ Diese Seite dokumentiert die technischen Anwendungsfälle für die in diesem IG 
 * Beschreibung: Nachbedingungen
   * Mit diesem Anwendungsfall erstellt ein Leistungserbringer einen Verordnungsdatensatz mit workflowspezifischen Parametern. Der Verordnungsdatensatz erhält von dem E-Rezept-Fachdienst eine Rezept-ID und wird von dem Leistungserbringer qualifiziert signiert. Der Leistungserbringer muss in seinem Primärsystem den workflowspezifischen Parameter für die direkte Zuweisung an eine Apotheke auswählen.: * Die Daten des “digitalen Durchschlag E-T-Rezept” sind, sofern die Verarbeitung im BfArM Webdienst erfolgreich abgeschlossen werden konnten, im BfArM Webdienst gespeichert.
 
-* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * Mit diesem Anwendungsfall erstellt ein Leistungserbringer einen Verordnungsdatensatz mit workflowspezifischen Parametern. Der Verordnungsdatensatz erhält von dem E-Rezept-Fachdienst eine Rezept-ID und wird von dem Leistungserbringer qualifiziert signiert. Der Leistungserbringer muss in seinem Primärsystem den workflowspezifischen Parameter für die direkte Zuweisung an eine Apotheke auswählen.: * [API-ERP: Digitaler Durchschlag E-T-Rezept am T-Register einstellen](./https://github.com/gematik/api-erp/blob/master/docs/erp_bfarm.adoc#digitaler-durchschlag-e-t-rezept-am-t-register-einstellen)
+* Beschreibung: Schnittstellen
+  * Mit diesem Anwendungsfall erstellt ein Leistungserbringer einen Verordnungsdatensatz mit workflowspezifischen Parametern. Der Verordnungsdatensatz erhält von dem E-Rezept-Fachdienst eine Rezept-ID und wird von dem Leistungserbringer qualifiziert signiert. Der Leistungserbringer muss in seinem Primärsystem den workflowspezifischen Parameter für die direkte Zuweisung an eine Apotheke auswählen.: * [API-ERP: Digitaler Durchschlag E-T-Rezept am T-Register einstellen](https://github.com/gematik/api-erp/blob/master/docs/erp_bfarm.adoc#digitaler-durchschlag-e-t-rezept-am-t-register-einstellen)
 
 
 **Tabelle:**Fachlicher Anwendungsfall UC 5.8 - Durchschlag E-T-Rezept beim BfArM einstellen

@@ -11,7 +11,7 @@ Version 1.0.0 - ci-build
 
 Diese Seite enthält eine Übersicht aller FHIR-Artefakte, die im Rahmen dieses Implementierungsleitfadens definiert werden. Sie bilden die Grundlage für die strukturierte Abbildung und Übertragung des digitalen Durchschlags E-T-Rezept. Dazu gehören Fachmodelle, Profile zur Spezifizierung von Ressourcen, Mapping Dateien zur Erstellung des Durchschlags aus Quelldaten, sowie Beispielen.
 
-## Fachmodelle
+### Fachmodelle
 
 Fachmodelle fasst Informationen zusammen, die auf fachlicher Ebene ausgetauscht werden. Sie dienen dazu den Kontext und die Inhalte der Profile nachzuvollziehen.
 
@@ -19,7 +19,7 @@ Fachmodelle fasst Informationen zusammen, die auf fachlicher Ebene ausgetauscht 
 | :--- | :--- |
 | [ Logisches Modell digitaler Durchschlag E-T-Rezept ](StructureDefinition-erp-tprescription-carbon-copy-logical.md) | Logical Model zur Abbildung der im digitalen Durchschlag E-T-Rezept erforderlichen fachlichen Informationen. |
 
-## Profile
+### Profile
 
 Die folgenden Profile stellen dar, welche Inhalte an den BfArM Webdienst übertragen werden:
 
@@ -31,18 +31,18 @@ Die folgenden Profile stellen dar, welche Inhalte an den BfArM Webdienst übertr
 | [ E-T-Rezept Medication ](StructureDefinition-erp-tprescription-medication.md) | Medikationsprofil, welches Informationen zum verordneten oder abgegebenen Arzneimittel enthält. |
 | [ E-T-Rezept Organization ](StructureDefinition-erp-tprescription-organization.md) | Angaben zur Apotheke, die das T-Rezept beliefert hat. |
 
-## Artefakte für das Mapping
+### Artefakte für das Mapping
 
 Im folgenden sind Artefakte abgebildet, die unterstützen das Mapping der Quelldaten auf den digitalen Durchschlag E-T-Rezept zu realisieren.
 
-### Unterstützende Profile
+#### Unterstützende Profile
 
 Diese Profile wurden erstellt, um Quelldatenstrukturen abzubilden und im Mapping zu realisieren:
 
 |
 |
 
-### StructureMaps
+#### StructureMaps
 
 StructureMaps sind strukturierte Dokumente, die maschinenlesbare Möglichkeit bieten Daten in andere Formate zu überführen.
 
@@ -60,7 +60,7 @@ StructureMaps sind strukturierte Dokumente, die maschinenlesbare Möglichkeit bi
 | [ E-T-Rezept Structure Map for Organization ](StructureMap-ERPTPrescriptionStructureMapOrganization.md) | Mapping-Anweisungen zur Erstellung einer BfArM Organization aus dem VZD SearchSet |
 | [ E-T-Rezept Structure Map for Task ](StructureMap-ERPTPrescriptionStructureMapTask.md) | Mappt die E-Rezept ID aus dem Task in ein Identifier Objekt |
 
-## Beispielinstanzen
+### Beispielinstanzen
 
 **Bundle**
 
@@ -91,4 +91,12 @@ StructureMaps sind strukturierte Dokumente, die maschinenlesbare Möglichkeit bi
 **Parameters**
 
 * [Beispiel digitaler Durchschlag E-T-Rezept](Parameters-TRP-Carbon-Copy.md)
+
+* [Example Parameters - example-case-01-digitaler-durchschlag](Parameters-example-case-01-digitaler-durchschlag.md)
+
+* [Example Parameters - example-case-02-digitaler-durchschlag](Parameters-example-case-02-digitaler-durchschlag.md)
+
+* [Example Parameters - example-case-03-digitaler-durchschlag](Parameters-example-case-03-digitaler-durchschlag.md)
+
+* [Example Parameters - example-case-04-digitaler-durchschlag](Parameters-example-case-04-digitaler-durchschlag.md)
 

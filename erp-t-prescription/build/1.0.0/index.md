@@ -69,7 +69,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "gemIG_TIFlow_bfarm",
   "title" : "Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst",
   "status" : "draft",
-  "date" : "2026-02-26T07:08:59+00:00",
+  "date" : "2026-02-26T13:49:45+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -1189,6 +1189,90 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "name" : "Logisches Modell digitaler Durchschlag E-T-Rezept",
       "description" : "Logical Model zur Abbildung der im digitalen Durchschlag E-T-Rezept erforderlichen fachlichen Informationen.",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      }],
+      "reference" : {
+        "reference" : "Parameters/example-case-01-digitaler-durchschlag"
+      },
+      "name" : "Example Parameters - example-case-01-digitaler-durchschlag",
+      "exampleCanonical" : "https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-carbon-copy|1.1"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/example-case-01-mapping-bundle"
+      },
+      "name" : "null (Bundle)"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      }],
+      "reference" : {
+        "reference" : "Parameters/example-case-02-digitaler-durchschlag"
+      },
+      "name" : "Example Parameters - example-case-02-digitaler-durchschlag",
+      "exampleCanonical" : "https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-carbon-copy|1.1"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/example-case-02-mapping-bundle"
+      },
+      "name" : "null (Bundle)"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      }],
+      "reference" : {
+        "reference" : "Parameters/example-case-03-digitaler-durchschlag"
+      },
+      "name" : "Example Parameters - example-case-03-digitaler-durchschlag",
+      "exampleCanonical" : "https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-carbon-copy|1.1"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/example-case-03-mapping-bundle"
+      },
+      "name" : "null (Bundle)"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      }],
+      "reference" : {
+        "reference" : "Parameters/example-case-04-digitaler-durchschlag"
+      },
+      "name" : "Example Parameters - example-case-04-digitaler-durchschlag",
+      "exampleCanonical" : "https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-carbon-copy|1.1"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/example-case-04-mapping-bundle"
+      },
+      "name" : "null (Bundle)"
     }],
     "page" : {
       "extension" : [{
@@ -1227,19 +1311,19 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
         "page" : [{
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "menu-technische-umsetzung-anwendungsfaelle.html"
+            "valueUrl" : "menu-technische-umsetzung-t-register.html"
           }],
-          "nameUrl" : "menu-technische-umsetzung-anwendungsfaelle.html",
-          "title" : "Technische Umsetzung - Anwendungsfaelle",
+          "nameUrl" : "menu-technische-umsetzung-t-register.html",
+          "title" : "Technische Umsetzung - Übermittlung an das BfArM T-Register",
           "generation" : "markdown"
         },
         {
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "menu-technische-umsetzung-t-register.html"
+            "valueUrl" : "menu-technische-umsetzung-anwendungsfaelle.html"
           }],
-          "nameUrl" : "menu-technische-umsetzung-t-register.html",
-          "title" : "Technische Umsetzung - Übermittlung an das BfArM T-Register",
+          "nameUrl" : "menu-technische-umsetzung-anwendungsfaelle.html",
+          "title" : "Technische Umsetzung - Anwendungsfaelle",
           "generation" : "markdown"
         },
         {
@@ -1251,15 +1335,6 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
           "title" : "Technische Umsetzung - Mapping des digitalen Durchschlags",
           "generation" : "markdown"
         }]
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "menu-schnittstellen-datenschutz-und-sicherheit.html"
-        }],
-        "nameUrl" : "menu-schnittstellen-datenschutz-und-sicherheit.html",
-        "title" : "Schnittstellen - Datenschutz und Sicherheit",
-        "generation" : "markdown"
       },
       {
         "extension" : [{
@@ -1282,20 +1357,65 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "artifacts.html"
+          "valueUrl" : "menu-schnittstellen-datenschutz-und-sicherheit.html"
         }],
-        "nameUrl" : "artifacts.html",
-        "title" : "FHIR-Artefakte",
+        "nameUrl" : "menu-schnittstellen-datenschutz-und-sicherheit.html",
+        "title" : "Schnittstellen - Datenschutz und Sicherheit",
         "generation" : "markdown"
       },
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "tests.html"
+          "valueUrl" : "artifacts.html"
         }],
-        "nameUrl" : "tests.html",
-        "title" : "Beispiele",
-        "generation" : "markdown"
+        "nameUrl" : "artifacts.html",
+        "title" : "FHIR-Artefakte",
+        "generation" : "markdown",
+        "page" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "tests.html"
+          }],
+          "nameUrl" : "tests.html",
+          "title" : "Beispiele",
+          "generation" : "markdown",
+          "page" : [{
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "test-case-01.html"
+            }],
+            "nameUrl" : "test-case-01.html",
+            "title" : "Beispiel 1: PZN Verordnung",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "test-case-02.html"
+            }],
+            "nameUrl" : "test-case-02.html",
+            "title" : "Beispiel 2: Wirkstoff Verordnung",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "test-case-03.html"
+            }],
+            "nameUrl" : "test-case-03.html",
+            "title" : "Beispiel 3: Freitext Verordnung",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "test-case-04.html"
+            }],
+            "nameUrl" : "test-case-04.html",
+            "title" : "Beispiel 4: Absolute Referenzierung",
+            "generation" : "markdown"
+          }]
+        }]
       },
       {
         "extension" : [{

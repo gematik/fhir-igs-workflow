@@ -5,6 +5,7 @@ Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst
 Version 1.0.0 - ci-build 
 
 * [**Table of Contents**](toc.md)
+* [**FHIR-Artefakte**](artifacts.md)
 * **Beispiele**
 
 ## Beispiele

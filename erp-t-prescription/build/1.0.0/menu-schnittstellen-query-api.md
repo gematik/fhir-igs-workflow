@@ -17,7 +17,7 @@ Im aktuellen Stand des IGs stellt der E-Rezept-Fachdienst keine Schnittstellen f
 
 Für den Datenaustausch mit dem BfArM muss der E-Rezept-Fachdienst die folgenden Anforderungen erfüllen:
 
-* [Server-Anforderungen zur Übertragung an die T-Register Schnittstellen]()
+* [Server-Anforderungen zur Übertragung an die T-Register Schnittstellen](.query-api-t-register-req-fd.md)
 
 ### Schnittstellen BfArM Webdienst
 

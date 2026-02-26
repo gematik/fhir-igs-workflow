@@ -69,7 +69,7 @@ Folgende Tabelle gibt eine grobe Darstellung des Mappings für dieses Profil:
 
 **Usages:**
 
-* Examples for this Profile: [Parameters/TRP-Carbon-Copy](Parameters-TRP-Carbon-Copy.md)
+* Examples for this Profile: [Parameters/TRP-Carbon-Copy](Parameters-TRP-Carbon-Copy.md), [Parameters/example-case-01-digitaler-durchschlag](Parameters-example-case-01-digitaler-durchschlag.md), [Parameters/example-case-02-digitaler-durchschlag](Parameters-example-case-02-digitaler-durchschlag.md), [Parameters/example-case-03-digitaler-durchschlag](Parameters-example-case-03-digitaler-durchschlag.md) and [Parameters/example-case-04-digitaler-durchschlag](Parameters-example-case-04-digitaler-durchschlag.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.erp-t-prescription|current/StructureDefinition/erp-tprescription-carbon-copy)
 

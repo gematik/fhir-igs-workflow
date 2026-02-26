@@ -1,0 +1,820 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/erp-t-prescription/Bundle/example-case-02-mapping-bundle> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "example-case-02-mapping-bundle"] ; # 
+  fhir:type [ fhir:v "collection"] ; # 
+  fhir:entry ( [
+     fhir:fullUrl [
+       fhir:v "urn:uuid:0886a530-68ef-4517-9999-b24f79b08da1"^^xsd:anyURI ;
+       fhir:l <urn:uuid:0886a530-68ef-4517-9999-b24f79b08da1>
+     ] ;
+     fhir:resource ( <urn:uuid:0886a530-68ef-4517-9999-b24f79b08da1> )
+  ] [
+     fhir:fullUrl [
+       fhir:v "urn:uuid:a3ccc266-b033-47cc-9361-98ec450f7db9"^^xsd:anyURI ;
+       fhir:l <urn:uuid:a3ccc266-b033-47cc-9361-98ec450f7db9>
+     ] ;
+     fhir:resource ( <urn:uuid:a3ccc266-b033-47cc-9361-98ec450f7db9> )
+  ] [
+     fhir:fullUrl [
+       fhir:v "urn:uuid:a7e1d25f-0b0a-40f7-b529-afda48e51b46"^^xsd:anyURI ;
+       fhir:l <urn:uuid:a7e1d25f-0b0a-40f7-b529-afda48e51b46>
+     ] ;
+     fhir:resource ( <urn:uuid:a7e1d25f-0b0a-40f7-b529-afda48e51b46> )
+  ] [
+     fhir:fullUrl [
+       fhir:v "urn:uuid:8e2e5e65-4c5d-49f2-8efc-c30e40838273"^^xsd:anyURI ;
+       fhir:l <urn:uuid:8e2e5e65-4c5d-49f2-8efc-c30e40838273>
+     ] ;
+     fhir:resource ( <urn:uuid:8e2e5e65-4c5d-49f2-8efc-c30e40838273> )
+  ] [
+     fhir:fullUrl [
+       fhir:v "urn:uuid:09330307-16ce-4cdc-810a-ca24ef80dde3"^^xsd:anyURI ;
+       fhir:l <urn:uuid:09330307-16ce-4cdc-810a-ca24ef80dde3>
+     ] ;
+     fhir:resource ( <urn:uuid:09330307-16ce-4cdc-810a-ca24ef80dde3> )
+  ] [
+     fhir:fullUrl [
+       fhir:v "urn:uuid:VZD-SearchSet-Bundle"^^xsd:anyURI ;
+       fhir:l <urn:uuid:VZD-SearchSet-Bundle>
+     ] ;
+     fhir:resource ( <urn:uuid:VZD-SearchSet-Bundle> )
+  ] ) . # 
+
+<urn:uuid:0886a530-68ef-4517-9999-b24f79b08da1> a fhir:MedicationRequest ;
+  fhir:id [ fhir:v "0886a530-68ef-4517-9999-b24f79b08da1"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "1" ] ;
+     fhir:profile ( [
+       fhir:v "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription|1.4"^^xsd:anyURI ;
+       fhir:l <https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription?version=1.4>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_StatusCoPayment"^^xsd:anyURI ;
+       fhir:l <https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_StatusCoPayment>
+     ] ;
+     fhir:value [
+       a fhir:Coding ;
+       fhir:system [
+         fhir:v "https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_StatusCoPayment"^^xsd:anyURI ;
+         fhir:l <https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_StatusCoPayment>
+       ] ;
+       fhir:code [ fhir:v "0" ]
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_EmergencyServicesFee"^^xsd:anyURI ;
+       fhir:l <https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_EmergencyServicesFee>
+     ] ;
+     fhir:value [
+       a fhir:Boolean ;
+       fhir:v false
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_SER"^^xsd:anyURI ;
+       fhir:l <https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_SER>
+     ] ;
+     fhir:value [
+       a fhir:Boolean ;
+       fhir:v false
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "Kennzeichen"^^xsd:anyURI ;
+         fhir:l fhir:Kennzeichen
+       ] ;
+       fhir:value [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] ) ;
+     fhir:url [
+       fhir:v "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Multiple_Prescription"^^xsd:anyURI ;
+       fhir:l <https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Multiple_Prescription>
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "Off-Label"^^xsd:anyURI ;
+         fhir:l fhir:Off-Label
+       ] ;
+       fhir:value [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [
+         fhir:v "GebaerfaehigeFrau"^^xsd:anyURI ;
+         fhir:l fhir:GebaerfaehigeFrau
+       ] ;
+       fhir:value [
+         a fhir:Boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:url [
+         fhir:v "EinhaltungSicherheitsmassnahmen"^^xsd:anyURI ;
+         fhir:l fhir:EinhaltungSicherheitsmassnahmen
+       ] ;
+       fhir:value [
+         a fhir:Boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:url [
+         fhir:v "AushaendigungInformationsmaterialien"^^xsd:anyURI ;
+         fhir:l fhir:AushaendigungInformationsmaterialien
+       ] ;
+       fhir:value [
+         a fhir:Boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:url [
+         fhir:v "ErklaerungSachkenntnis"^^xsd:anyURI ;
+         fhir:l fhir:ErklaerungSachkenntnis
+       ] ;
+       fhir:value [
+         a fhir:Boolean ;
+         fhir:v true
+       ]
+     ] ) ;
+     fhir:url [
+       fhir:v "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Teratogenic"^^xsd:anyURI ;
+       fhir:l <https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Teratogenic>
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_DosageFlag"^^xsd:anyURI ;
+       fhir:l <https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_DosageFlag>
+     ] ;
+     fhir:value [
+       a fhir:Boolean ;
+       fhir:v true
+     ]
+  ] [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction>
+     ] ;
+     fhir:value [
+       a fhir:Markdown ;
+       fhir:v "1-0-0-0 Stück"
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "algorithmVersion"^^xsd:anyURI ;
+         fhir:l fhir:algorithmVersion
+       ] ;
+       fhir:value [
+         a fhir:String ;
+         fhir:v "1.0.0"
+       ]
+     ] [
+       fhir:url [
+         fhir:v "language"^^xsd:anyURI ;
+         fhir:l fhir:language
+       ] ;
+       fhir:value [
+         a fhir:Code ;
+         fhir:v "de-DE"
+       ]
+     ] ) ;
+     fhir:url [
+       fhir:v "http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta"^^xsd:anyURI ;
+       fhir:l <http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta>
+     ]
+  ] ) ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:intent [ fhir:v "order"] ; # 
+  fhir:medication [
+     a fhir:Reference ;
+     fhir:l <http://pvs.praxis.local/fhir/Medication/a3ccc266-b033-47cc-9361-98ec450f7db9> ;
+     fhir:reference [ fhir:v "http://pvs.praxis.local/fhir/Medication/a3ccc266-b033-47cc-9361-98ec450f7db9" ]
+  ] ; # 
+  fhir:subject [
+     fhir:l <http://pvs.praxis.local/fhir/Patient/ce4104af-b86b-4664-afee-1b5fc3ac8acf> ;
+     fhir:reference [ fhir:v "http://pvs.praxis.local/fhir/Patient/ce4104af-b86b-4664-afee-1b5fc3ac8acf" ]
+  ] ; # 
+  fhir:authoredOn [ fhir:v "2025-05-20"^^xsd:date] ; # 
+  fhir:requester [
+     fhir:l <http://pvs.praxis.local/fhir/Practitioner/d6f3b55d-3095-4655-96dc-da3bec21271c> ;
+     fhir:reference [ fhir:v "http://pvs.praxis.local/fhir/Practitioner/d6f3b55d-3095-4655-96dc-da3bec21271c" ]
+  ] ; # 
+  fhir:insurance ( [
+     fhir:l <http://pvs.praxis.local/fhir/Coverage/da80211e-61ee-458e-a651-87370b6ec30c> ;
+     fhir:reference [ fhir:v "http://pvs.praxis.local/fhir/Coverage/da80211e-61ee-458e-a651-87370b6ec30c" ]
+  ] ) ; # 
+  fhir:dosageInstruction ( [
+     fhir:timing [
+       fhir:repeat [
+         fhir:frequency [ fhir:v "1"^^xsd:positiveInteger ] ;
+         fhir:period [ fhir:v "1"^^xsd:decimal ] ;
+         fhir:periodUnit [ fhir:v "d" ] ;
+         fhir:when ( [ fhir:v "MORN" ] )
+       ]
+     ] ;
+     fhir:doseAndRate ( [
+       fhir:dose [
+         a fhir:Quantity ;
+         fhir:value [ fhir:v "1"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "Stück" ] ;
+         fhir:system [
+           fhir:v "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BMP_DOSIEREINHEIT"^^xsd:anyURI ;
+           fhir:l <https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BMP_DOSIEREINHEIT>
+         ] ;
+         fhir:code [ fhir:v "1" ]
+       ]
+     ] )
+  ] ) ; # 
+  fhir:dispenseRequest [
+     fhir:quantity [
+       fhir:value [ fhir:v "1"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "Packung" ]
+     ] ;
+     fhir:expectedSupplyDuration [
+       fhir:value [ fhir:v "3"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "Woche(n)" ]
+     ]
+  ] . # 
+
+<urn:uuid:a3ccc266-b033-47cc-9361-98ec450f7db9> a fhir:Medication ;
+  fhir:id [ fhir:v "a3ccc266-b033-47cc-9361-98ec450f7db9"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "1" ] ;
+     fhir:profile ( [
+       fhir:v "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Ingredient|1.4"^^xsd:anyURI ;
+       fhir:l <https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Ingredient?version=1.4>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Category"^^xsd:anyURI ;
+       fhir:l <https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Category>
+     ] ;
+     fhir:value [
+       a fhir:Coding ;
+       fhir:system [
+         fhir:v "https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Category"^^xsd:anyURI ;
+         fhir:l <https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Category>
+       ] ;
+       fhir:code [ fhir:v "02" ]
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine"^^xsd:anyURI ;
+       fhir:l <https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine>
+     ] ;
+     fhir:value [
+       a fhir:Boolean ;
+       fhir:v false
+     ]
+  ] [
+     fhir:url [
+       fhir:v "http://fhir.de/StructureDefinition/normgroesse"^^xsd:anyURI ;
+       fhir:l <http://fhir.de/StructureDefinition/normgroesse>
+     ] ;
+     fhir:value [
+       a fhir:Code ;
+       fhir:v "N1"
+     ]
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Type"^^xsd:anyURI ;
+         fhir:l <https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Type>
+       ] ;
+       fhir:code [ fhir:v "wirkstoff" ]
+     ] )
+  ] ; # 
+  fhir:form [
+     fhir:text [ fhir:v "Retardtabletten" ]
+  ] ; # 
+  fhir:amount [
+     fhir:numerator [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_PackagingSize"^^xsd:anyURI ;
+           fhir:l <https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_PackagingSize>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "21"
+         ]
+       ] ) ;
+       fhir:unit [ fhir:v "Stück" ]
+     ] ;
+     fhir:denominator [
+       fhir:value [ fhir:v "1"^^xsd:decimal ]
+     ]
+  ] ; # 
+  fhir:ingredient ( [
+     fhir:item [
+       a fhir:CodeableConcept ;
+       fhir:text [ fhir:v "Lenalidomid" ]
+     ] ;
+     fhir:strength [
+       fhir:numerator [
+         fhir:value [ fhir:v 2.5 ] ;
+         fhir:unit [ fhir:v "mg" ]
+       ] ;
+       fhir:denominator [
+         fhir:value [ fhir:v "1"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "Stück" ]
+       ]
+     ]
+  ] ) . # 
+
+<urn:uuid:a7e1d25f-0b0a-40f7-b529-afda48e51b46> a fhir:MedicationDispense ;
+  fhir:id [ fhir:v "a7e1d25f-0b0a-40f7-b529-afda48e51b46"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|1.6"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense?version=1.6>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.renderedDosageInstruction"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.renderedDosageInstruction>
+     ] ;
+     fhir:value [
+       a fhir:Markdown ;
+       fhir:v "0-0-1-0 Stück"
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "algorithmVersion"^^xsd:anyURI ;
+         fhir:l fhir:algorithmVersion
+       ] ;
+       fhir:value [
+         a fhir:String ;
+         fhir:v "1.0.0"
+       ]
+     ] [
+       fhir:url [
+         fhir:v "language"^^xsd:anyURI ;
+         fhir:l fhir:language
+       ] ;
+       fhir:value [
+         a fhir:Code ;
+         fhir:v "de-DE"
+       ]
+     ] ) ;
+     fhir:url [
+       fhir:v "http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta"^^xsd:anyURI ;
+       fhir:l <http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta>
+     ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:system [
+       fhir:v "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId>
+     ] ;
+     fhir:value [ fhir:v "166.100.000.000.021.76" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:medication [
+     a fhir:Reference ;
+     fhir:l <urn:uuid:8e2e5e65-4c5d-49f2-8efc-c30e40838273> ;
+     fhir:reference [ fhir:v "urn:uuid:8e2e5e65-4c5d-49f2-8efc-c30e40838273" ]
+  ] ; # 
+  fhir:subject [
+     fhir:identifier [
+       fhir:system [
+         fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/sid/gkv/kvid-10>
+       ] ;
+       fhir:value [ fhir:v "X234567890" ]
+     ]
+  ] ; # 
+  fhir:performer ( [
+     fhir:actor [
+       fhir:identifier [
+         fhir:system [
+           fhir:v "https://gematik.de/fhir/sid/telematik-id"^^xsd:anyURI ;
+           fhir:l <https://gematik.de/fhir/sid/telematik-id>
+         ] ;
+         fhir:value [ fhir:v "3-07.2.1234560000.10.789" ]
+       ]
+     ]
+  ] ) ; # 
+  fhir:quantity [
+     fhir:value [ fhir:v "1"^^xsd:decimal ] ;
+     fhir:unit [ fhir:v "Packung" ]
+  ] ; # 
+  fhir:whenHandedOver [ fhir:v "2025-10-30"^^xsd:date] ; # 
+  fhir:dosageInstruction ( [
+     fhir:timing [
+       fhir:repeat [
+         fhir:frequency [ fhir:v "1"^^xsd:positiveInteger ] ;
+         fhir:period [ fhir:v "1"^^xsd:decimal ] ;
+         fhir:periodUnit [ fhir:v "d" ]
+       ]
+     ] ;
+     fhir:doseAndRate ( [
+       fhir:dose [
+         a fhir:Quantity ;
+         fhir:value [ fhir:v "1"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "Stück" ] ;
+         fhir:system [
+           fhir:v "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BMP_DOSIEREINHEIT"^^xsd:anyURI ;
+           fhir:l <https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BMP_DOSIEREINHEIT>
+         ] ;
+         fhir:code [ fhir:v "1" ]
+       ]
+     ] )
+  ] ) ; # 
+  fhir:substitution [
+     fhir:wasSubstituted [ fhir:v true ]
+  ] . # 
+
+<urn:uuid:8e2e5e65-4c5d-49f2-8efc-c30e40838273> a fhir:Medication ;
+  fhir:id [ fhir:v "8e2e5e65-4c5d-49f2-8efc-c30e40838273"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication|1.6"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication?version=1.6>
+     ] )
+  ] ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://fhir.de/CodeSystem/ifa/pzn"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/CodeSystem/ifa/pzn>
+       ] ;
+       fhir:code [ fhir:v "17629624" ]
+     ] ) ;
+     fhir:text [ fhir:v "Lenalidomid Ethypharm 2,5 mg Hartkapseln" ]
+  ] ; # 
+  fhir:form [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM"^^xsd:anyURI ;
+         fhir:l <https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM>
+       ] ;
+       fhir:code [ fhir:v "TAB" ] ;
+       fhir:display [ fhir:v "Tabletten" ]
+     ] )
+  ] ; # 
+  fhir:amount [
+     fhir:numerator [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-packaging-size-extension"^^xsd:anyURI ;
+           fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/medication-packaging-size-extension>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "21"
+         ]
+       ] ) ;
+       fhir:unit [ fhir:v "St" ]
+     ] ;
+     fhir:denominator [
+       fhir:value [ fhir:v "1"^^xsd:decimal ]
+     ]
+  ] ; # 
+  fhir:ingredient ( [
+     fhir:item [
+       a fhir:CodeableConcept ;
+       fhir:text [ fhir:v "Lenalidomid" ]
+     ] ;
+     fhir:strength [
+       fhir:numerator [
+         fhir:value [ fhir:v 2.5 ] ;
+         fhir:unit [ fhir:v "mg" ]
+       ] ;
+       fhir:denominator [
+         fhir:value [ fhir:v "1"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "Tbl." ]
+       ]
+     ]
+  ] ) ; # 
+  fhir:batch [
+     fhir:lotNumber [ fhir:v "A123456789-1" ]
+  ] . # 
+
+<urn:uuid:09330307-16ce-4cdc-810a-ca24ef80dde3> a fhir:Task ;
+  fhir:id [ fhir:v "09330307-16ce-4cdc-810a-ca24ef80dde3"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task|1.5"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task?version=1.5>
+     ] ) ;
+     fhir:tag ( [
+       fhir:display [ fhir:v "Task in COMPLETED state dispensed by pharmacy via $closed operation" ]
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_PrescriptionType"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_PrescriptionType>
+     ] ;
+     fhir:value [
+       a fhir:Coding ;
+       fhir:system [
+         fhir:v "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType>
+       ] ;
+       fhir:code [ fhir:v "166" ] ;
+       fhir:display [ fhir:v "Flowtype für Arzneimittel nach § 3a AMVV" ]
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_AcceptDate"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_AcceptDate>
+     ] ;
+     fhir:value [
+       a fhir:Date ;
+       fhir:v "2025-10-01"^^xsd:date
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_ExpiryDate"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_ExpiryDate>
+     ] ;
+     fhir:value [
+       a fhir:Date ;
+       fhir:v "2025-10-01"^^xsd:date
+     ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:system [
+       fhir:v "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId>
+     ] ;
+     fhir:value [ fhir:v "166.100.000.000.001.39" ]
+  ] [
+     fhir:system [
+       fhir:v "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode>
+     ] ;
+     fhir:value [ fhir:v "777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:intent [ fhir:v "order"] ; # 
+  fhir:for [
+     fhir:identifier [
+       fhir:system [
+         fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/sid/gkv/kvid-10>
+       ] ;
+       fhir:value [ fhir:v "X123456789" ]
+     ]
+  ] ; # 
+  fhir:authoredOn [ fhir:v "2025-10-01T15:29:00+00:00"^^xsd:dateTime] ; # 
+  fhir:lastModified [ fhir:v "2025-10-01T16:44:00.434+00:00"^^xsd:dateTime] ; # 
+  fhir:performerType ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_OrganizationType"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_OrganizationType>
+       ] ;
+       fhir:code [ fhir:v "urn:oid:1.2.276.0.76.4.54" ] ;
+       fhir:display [ fhir:v "Öffentliche Apotheke" ]
+     ] )
+  ] ) ; # 
+  fhir:input ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType"^^xsd:anyURI ;
+           fhir:l <https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType>
+         ] ;
+         fhir:code [ fhir:v "1" ] ;
+         fhir:display [ fhir:v "Health Care Provider Prescription" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Reference ;
+       fhir:l fhir:281a985c-f25b-4aae-91a6-41ad744080b0 ;
+       fhir:reference [ fhir:v "281a985c-f25b-4aae-91a6-41ad744080b0" ]
+     ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType"^^xsd:anyURI ;
+           fhir:l <https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType>
+         ] ;
+         fhir:code [ fhir:v "2" ] ;
+         fhir:display [ fhir:v "Patient Confirmation" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Reference ;
+       fhir:l fhir:f8c2298f-7c00-4a68-af29-8a2862d55d43 ;
+       fhir:reference [ fhir:v "f8c2298f-7c00-4a68-af29-8a2862d55d43" ]
+     ]
+  ] ) ; # 
+  fhir:output ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType"^^xsd:anyURI ;
+           fhir:l <https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType>
+         ] ;
+         fhir:code [ fhir:v "3" ] ;
+         fhir:display [ fhir:v "Receipt" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Reference ;
+       fhir:l fhir:dffbfd6a-5712-4798-bdc8-07201eb77ab8 ;
+       fhir:reference [ fhir:v "dffbfd6a-5712-4798-bdc8-07201eb77ab8" ]
+     ]
+  ] ) . # 
+
+<urn:uuid:VZD-SearchSet-Bundle> a fhir:Bundle ;
+  fhir:id [ fhir:v "VZD-SearchSet-Bundle"] ; # 
+  fhir:meta [
+     fhir:lastUpdated [ fhir:v "2025-06-19T08:42:40.732+02:00"^^xsd:dateTime ]
+  ] ; # 
+  fhir:type [ fhir:v "searchset"] ; # 
+  fhir:total [ fhir:v "3"^^xsd:nonNegativeInteger] ; # 
+  fhir:entry ( [
+     fhir:fullUrl [
+       fhir:v "https://fhir-directory-ref.vzd.ti-dienste.de/search/HealthcareService/a4f1b52e-c5de-47eb-874c-990c2b39bb77"^^xsd:anyURI ;
+       fhir:l <https://fhir-directory-ref.vzd.ti-dienste.de/search/HealthcareService/a4f1b52e-c5de-47eb-874c-990c2b39bb77>
+     ] ;
+     fhir:resource ( <https://fhir-directory-ref.vzd.ti-dienste.de/search/HealthcareService/a4f1b52e-c5de-47eb-874c-990c2b39bb77> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "match" ]
+     ]
+  ] [
+     fhir:fullUrl [
+       fhir:v "https://fhir-directory-ref.vzd.ti-dienste.de/search/Organization/4f5a9754-2a9d-486d-9eec-a5c6b5f95016"^^xsd:anyURI ;
+       fhir:l <https://fhir-directory-ref.vzd.ti-dienste.de/search/Organization/4f5a9754-2a9d-486d-9eec-a5c6b5f95016>
+     ] ;
+     fhir:resource ( <https://fhir-directory-ref.vzd.ti-dienste.de/search/Organization/4f5a9754-2a9d-486d-9eec-a5c6b5f95016> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "include" ]
+     ]
+  ] [
+     fhir:fullUrl [
+       fhir:v "https://fhir-directory-ref.vzd.ti-dienste.de/search/Location/9514f96e-897d-492d-950f-aea11d6f2bb4"^^xsd:anyURI ;
+       fhir:l <https://fhir-directory-ref.vzd.ti-dienste.de/search/Location/9514f96e-897d-492d-950f-aea11d6f2bb4>
+     ] ;
+     fhir:resource ( <https://fhir-directory-ref.vzd.ti-dienste.de/search/Location/9514f96e-897d-492d-950f-aea11d6f2bb4> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "include" ]
+     ]
+  ] ) . # 
+
+<https://fhir-directory-ref.vzd.ti-dienste.de/search/HealthcareService/a4f1b52e-c5de-47eb-874c-990c2b39bb77> a fhir:HealthcareService ;
+  fhir:id [ fhir:v "a4f1b52e-c5de-47eb-874c-990c2b39bb77"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "2" ] ;
+     fhir:lastUpdated [ fhir:v "2024-03-27T17:49:37.898+01:00"^^xsd:dateTime ] ;
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/HealthcareService"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/HealthcareService>
+     ] [
+       fhir:v "https://gematik.de/fhir/directory/StructureDefinition/HealthcareServiceDirectory"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/directory/StructureDefinition/HealthcareServiceDirectory>
+     ] ) ;
+     fhir:tag ( [
+       fhir:system [
+         fhir:v "https://gematik.de/fhir/directory/CodeSystem/Origin"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/directory/CodeSystem/Origin>
+       ] ;
+       fhir:code [ fhir:v "owner" ]
+     ] )
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [
+       fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/sid/us-npi>
+     ] ;
+     fhir:value [ fhir:v "1b9b1767-5496-4c20-bfc1-32ad6d96adbc" ]
+  ] ) ; # 
+  fhir:providedBy [
+     fhir:l <https://gematik.de/fhir/erp-t-prescription/Organization/4f5a9754-2a9d-486d-9eec-a5c6b5f95016> ;
+     fhir:reference [ fhir:v "Organization/4f5a9754-2a9d-486d-9eec-a5c6b5f95016" ]
+  ] ; # 
+  fhir:location ( [
+     fhir:l <https://gematik.de/fhir/erp-t-prescription/Location/9514f96e-897d-492d-950f-aea11d6f2bb4> ;
+     fhir:reference [ fhir:v "Location/9514f96e-897d-492d-950f-aea11d6f2bb4" ]
+  ] ) ; # 
+  fhir:telecom ( [
+     fhir:system [ fhir:v "phone" ] ;
+     fhir:value [ fhir:v "1234" ] ;
+     fhir:use [ fhir:v "work" ]
+  ] ) ; # 
+  fhir:endpoint ( [
+     fhir:l <https://gematik.de/fhir/erp-t-prescription/Endpoint/11d91987-d31e-468f-962e-845bb0c743c3> ;
+     fhir:reference [ fhir:v "Endpoint/11d91987-d31e-468f-962e-845bb0c743c3" ]
+  ] ) . # 
+
+<https://fhir-directory-ref.vzd.ti-dienste.de/search/Organization/4f5a9754-2a9d-486d-9eec-a5c6b5f95016> a fhir:Organization ;
+  fhir:id [ fhir:v "4f5a9754-2a9d-486d-9eec-a5c6b5f95016"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "1" ] ;
+     fhir:lastUpdated [ fhir:v "2023-03-23T14:14:28.492+01:00"^^xsd:dateTime ] ;
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/Organization"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/Organization>
+     ] [
+       fhir:v "https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory>
+     ] ) ;
+     fhir:tag ( [
+       fhir:system [
+         fhir:v "https://gematik.de/fhir/directory/CodeSystem/Origin"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/directory/CodeSystem/Origin>
+       ] ;
+       fhir:code [ fhir:v "owner" ]
+     ] )
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [
+       fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/sid/us-npi>
+     ] ;
+     fhir:value [ fhir:v "44bb2f53-cdd7-4098-9d52-a6c5ac0ddc8d" ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+         ] ;
+         fhir:code [ fhir:v "PRN" ]
+       ] )
+     ] ;
+     fhir:system [
+       fhir:v "https://gematik.de/fhir/sid/telematik-id"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/sid/telematik-id>
+     ] ;
+     fhir:value [ fhir:v "3-07.2.1234560000.10.789" ]
+  ] ) ; # 
+  fhir:active [ fhir:v true] ; # 
+  fhir:type ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID>
+       ] ;
+       fhir:code [ fhir:v "1.2.276.0.76.4.54" ] ;
+       fhir:display [ fhir:v "Öffentliche Apotheke" ]
+     ] )
+  ] ) ; # 
+  fhir:name [ fhir:v "Schwarzwald Apotheke"] ; # 
+  fhir:alias ( [ fhir:v "Schwarzwald Apotheke"] ) . # 
+
+<https://fhir-directory-ref.vzd.ti-dienste.de/search/Location/9514f96e-897d-492d-950f-aea11d6f2bb4> a fhir:Location ;
+  fhir:id [ fhir:v "9514f96e-897d-492d-950f-aea11d6f2bb4"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "1" ] ;
+     fhir:lastUpdated [ fhir:v "2023-03-23T14:14:28.492+01:00"^^xsd:dateTime ] ;
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/Location"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/Location>
+     ] [
+       fhir:v "https://gematik.de/fhir/directory/StructureDefinition/LocationDirectory"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/directory/StructureDefinition/LocationDirectory>
+     ] ) ;
+     fhir:tag ( [
+       fhir:system [
+         fhir:v "https://gematik.de/fhir/directory/CodeSystem/Origin"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/directory/CodeSystem/Origin>
+       ] ;
+       fhir:code [ fhir:v "owner" ]
+     ] )
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [
+       fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/sid/us-npi>
+     ] ;
+     fhir:value [ fhir:v "995d8a48-f7fc-4ffb-a676-feb18c7c052c" ]
+  ] ) ; # 
+  fhir:name [ fhir:v "Location of Organisation 3-07.2.1234560000.10.789"] ; # 
+  fhir:address [
+     fhir:use [ fhir:v "work" ] ;
+     fhir:type [ fhir:v "postal" ] ;
+     fhir:text [ fhir:v "Schwarzwaldstr. 18&#13;&#10;63762&#13;&#10;Großostheim&#13;&#10;Bayern&#13;&#10;DE" ] ;
+     fhir:line ( [ fhir:v "Schwarzwaldstr. 18" ] ) ;
+     fhir:city [ fhir:v "Großostheim" ] ;
+     fhir:state [ fhir:v "Bayern" ] ;
+     fhir:postalCode [ fhir:v "63762" ] ;
+     fhir:country [ fhir:v "DE" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

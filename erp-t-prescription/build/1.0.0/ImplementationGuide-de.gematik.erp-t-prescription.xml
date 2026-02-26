@@ -11,7 +11,7 @@
   <name value="gemIG_TIFlow_bfarm"/>
   <title value="Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst"/>
   <status value="draft"/>
-  <date value="2026-02-26T07:08:59+00:00"/>
+  <date value="2026-02-26T13:49:45+00:00"/>
   <publisher value="gematik GmbH"/>
   <contact>
     <name value="gematik GmbH"/>
@@ -894,6 +894,82 @@
       <description value="Logical Model zur Abbildung der im digitalen Durchschlag E-T-Rezept erforderlichen fachlichen Informationen."/>
       <exampleBoolean value="false"/>
     </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/example-case-01-digitaler-durchschlag"/>
+      </reference>
+      <name value="Example Parameters - example-case-01-digitaler-durchschlag"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-carbon-copy|1.1"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/example-case-01-mapping-bundle"/>
+      </reference>
+      <name value="null (Bundle)"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/example-case-02-digitaler-durchschlag"/>
+      </reference>
+      <name value="Example Parameters - example-case-02-digitaler-durchschlag"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-carbon-copy|1.1"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/example-case-02-mapping-bundle"/>
+      </reference>
+      <name value="null (Bundle)"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/example-case-03-digitaler-durchschlag"/>
+      </reference>
+      <name value="Example Parameters - example-case-03-digitaler-durchschlag"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-carbon-copy|1.1"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/example-case-03-mapping-bundle"/>
+      </reference>
+      <name value="null (Bundle)"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/example-case-04-digitaler-durchschlag"/>
+      </reference>
+      <name value="Example Parameters - example-case-04-digitaler-durchschlag"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-carbon-copy|1.1"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/example-case-04-mapping-bundle"/>
+      </reference>
+      <name value="null (Bundle)"/>
+    </resource>
     <page>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
         <valueUrl value="toc.html"/>
@@ -926,18 +1002,18 @@
         <generation value="markdown"/>
         <page>
           <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="menu-technische-umsetzung-anwendungsfaelle.html"/>
-          </extension>
-          <nameUrl value="menu-technische-umsetzung-anwendungsfaelle.html"/>
-          <title value="Technische Umsetzung - Anwendungsfaelle"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
             <valueUrl value="menu-technische-umsetzung-t-register.html"/>
           </extension>
           <nameUrl value="menu-technische-umsetzung-t-register.html"/>
           <title value="Technische Umsetzung - Übermittlung an das BfArM T-Register"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="menu-technische-umsetzung-anwendungsfaelle.html"/>
+          </extension>
+          <nameUrl value="menu-technische-umsetzung-anwendungsfaelle.html"/>
+          <title value="Technische Umsetzung - Anwendungsfaelle"/>
           <generation value="markdown"/>
         </page>
         <page>
@@ -948,14 +1024,6 @@
           <title value="Technische Umsetzung - Mapping des digitalen Durchschlags"/>
           <generation value="markdown"/>
         </page>
-      </page>
-      <page>
-        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="menu-schnittstellen-datenschutz-und-sicherheit.html"/>
-        </extension>
-        <nameUrl value="menu-schnittstellen-datenschutz-und-sicherheit.html"/>
-        <title value="Schnittstellen - Datenschutz und Sicherheit"/>
-        <generation value="markdown"/>
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
@@ -975,19 +1043,59 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="menu-schnittstellen-datenschutz-und-sicherheit.html"/>
+        </extension>
+        <nameUrl value="menu-schnittstellen-datenschutz-und-sicherheit.html"/>
+        <title value="Schnittstellen - Datenschutz und Sicherheit"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
           <valueUrl value="artifacts.html"/>
         </extension>
         <nameUrl value="artifacts.html"/>
         <title value="FHIR-Artefakte"/>
         <generation value="markdown"/>
-      </page>
-      <page>
-        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="tests.html"/>
-        </extension>
-        <nameUrl value="tests.html"/>
-        <title value="Beispiele"/>
-        <generation value="markdown"/>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="tests.html"/>
+          </extension>
+          <nameUrl value="tests.html"/>
+          <title value="Beispiele"/>
+          <generation value="markdown"/>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="test-case-01.html"/>
+            </extension>
+            <nameUrl value="test-case-01.html"/>
+            <title value="Beispiel 1: PZN Verordnung"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="test-case-02.html"/>
+            </extension>
+            <nameUrl value="test-case-02.html"/>
+            <title value="Beispiel 2: Wirkstoff Verordnung"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="test-case-03.html"/>
+            </extension>
+            <nameUrl value="test-case-03.html"/>
+            <title value="Beispiel 3: Freitext Verordnung"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="test-case-04.html"/>
+            </extension>
+            <nameUrl value="test-case-04.html"/>
+            <title value="Beispiel 4: Absolute Referenzierung"/>
+            <generation value="markdown"/>
+          </page>
+        </page>
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">

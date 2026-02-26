@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"5.1"}
-    h3,h4,h5,h6{--heading-prefix:"5.1"}</style>
+    <style type="text/css">h2{--heading-prefix:"4.1"}
+    h3,h4,h5,h6{--heading-prefix:"4.1"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -122,7 +122,7 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="menu-fachlichkeit-t-register.html">T-Register</a>
+        <a href="menu-fachlichkeit-t-register.html">Übermittlung T-Register</a>
       </li>
     </ul>
   </li>
@@ -158,8 +158,11 @@
       </li>
     </ul>
   </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhaenge
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -179,9 +182,6 @@
         <a href="license.html">Lizenz</a>
       </li>
     </ul>
-  </li>
-  <li>
-    <a href="artifacts.html">FHIR-Artefakte</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -227,7 +227,7 @@ Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst
 
             <a href="#bottom">unten</a>
 
-          | <a href="artifacts.html">nächste&gt;</a>
+          | <a href="menu-schnittstellen-datenschutz-und-sicherheit.html">nächste&gt;</a>
 
           </span>
 
@@ -284,7 +284,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Über einen organisatorischen Prozess müssen Client Credentials beim BfArM angefragt werden, welche zur Authentifizierung des E-Rezept-Fachdienst ggü. dem BfArM Webdienst genutzt werden.</p>
 
 <!-- A_27819 -->
-<requirement conformance="SHALL" title="Anbieter E-Rezept Fachdienst - BfArM - Registrierung für Client Credentials am BfArM Webdienst">
+<requirement conformance="SHALL" key="IG-BFARM-3" title="Anbieter E-Rezept Fachdienst - BfArM - Registrierung für Client Credentials am BfArM Webdienst" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
@@ -302,7 +302,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </figure>
 
 <!-- A_27820 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - BfArM - Prüfung Gültigkeit AccessToken">
+<requirement conformance="SHALL" key="IG-BFARM-4" title="E-Rezept-Fachdienst - BfArM - Prüfung Gültigkeit AccessToken" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
@@ -311,7 +311,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_27821 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - BfArM - Beziehen des AccessTokens">
+<requirement conformance="SHALL" key="IG-BFARM-5" title="E-Rezept-Fachdienst - BfArM - Beziehen des AccessTokens" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
@@ -320,7 +320,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_27822 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - BfArM - AccessToken für Zugriff auf den BfArM Webdienst">
+<requirement conformance="SHALL" key="IG-BFARM-6" title="E-Rezept-Fachdienst - BfArM - AccessToken für Zugriff auf den BfArM Webdienst" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
@@ -331,7 +331,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="lokalisierung">Lokalisierung</h3>
 
 <!-- A_27882 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - BfArM - Lokalisierung Konfigurationsparameter BfArM_Domain">
+<requirement conformance="SHALL" key="IG-BFARM-7" title="E-Rezept-Fachdienst - BfArM - Lokalisierung Konfigurationsparameter BfArM_Domain" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
@@ -342,7 +342,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Der Defaultwert für den Parameter ist  <code class="language-plaintext highlighter-rouge">https://webapps-public.bfarm.de</code>.</p>
 
 <!-- A_27817 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - BfArM - Lokalisierung des BfArM Webdienstes">
+<requirement conformance="SHALL" key="IG-BFARM-8" title="E-Rezept-Fachdienst - BfArM - Lokalisierung des BfArM Webdienstes" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
@@ -355,7 +355,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Nach Abschluss eines Workflows 166 durch Aufrufen der $close Operation erstellt der E-Rezept-Fachdienst den digitalen Durchschlag für den Vorgang des E-T-Rezeptes. Die fachlichen Informationen hierzu sind im Dokument [gemF_eRp_T-Rezept] dokumentiert.</p>
 
 <!-- A_27823 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - BfArM - Flowtype 166">
+<requirement conformance="SHALL" key="IG-BFARM-9" title="E-Rezept-Fachdienst - BfArM - Flowtype 166" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
@@ -364,7 +364,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_27824 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - BfArM - asynchrone Bereitstellung und Übermittlung">
+<requirement conformance="SHALL" key="IG-BFARM-10" title="E-Rezept-Fachdienst - BfArM - asynchrone Bereitstellung und Übermittlung" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
@@ -377,7 +377,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Als Datengrundlage für diesen Durchschlag dient der Verordnungsdatensatz samt QES, der Dispensierdatensatz, der Task der Verordnung und Daten der Apotheke aus dem FHIR-VZD. Als Kriterium für die Suche nach Apothekendaten im FHIR-VZD wird die Telematik-ID der Apotheke genutzt.</p>
 
 <!-- A_27825 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - BfArM - Suche nach Apothekendaten">
+<requirement conformance="SHALL" key="IG-BFARM-11" title="E-Rezept-Fachdienst - BfArM - Suche nach Apothekendaten" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
@@ -403,7 +403,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Für den Austausch der Daten zwischen E-Rezept-Fachdienst und dem BfArM Webdienst existiert ein FHIR Implementation Guide (IG), der Beschreibungen, OpenAPI Definition, Profile und Mappings enthält.</p>
 
 <!-- A_27826 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - BfArM - Erzeugen digitaler Durchschlag E-T-Rezept">
+<requirement conformance="SHALL" key="IG-BFARM-12" title="E-Rezept-Fachdienst - BfArM - Erzeugen digitaler Durchschlag E-T-Rezept" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
@@ -412,7 +412,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_27827 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - BfArM - Anwendungsfall Übertragen des digitalen Durchschlags">
+<requirement conformance="SHALL" key="IG-BFARM-13" title="E-Rezept-Fachdienst - BfArM - Anwendungsfall Übertragen des digitalen Durchschlags" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
@@ -464,7 +464,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_27828 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - BfArM - Übertragen des digitalen Durchschlags">
+<requirement conformance="SHALL" key="IG-BFARM-14" title="E-Rezept-Fachdienst - BfArM - Übertragen des digitalen Durchschlags" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
@@ -514,7 +514,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Dieses Vorgehen stellt sicher, dass die Übertragung an das T-Register nicht aufgrund eines fehlenden FHIR-VZD-Eintrags blockiert wird und gleichzeitig die Nachvollziehbarkeit über die Telematik-ID gewährleistet bleibt.</p>
 
 <!-- A_27830 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - BfArM - Fehlerbehandlung - Reaktion auf Scheitern des Operationaufrufs">
+<requirement conformance="SHALL" key="IG-BFARM-15" title="E-Rezept-Fachdienst - BfArM - Fehlerbehandlung - Reaktion auf Scheitern des Operationaufrufs" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
@@ -523,7 +523,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_27831 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - BfArM - Fehlerbehandlung - Protokollierung struktureller Fehler">
+<requirement conformance="SHALL" key="IG-BFARM-16" title="E-Rezept-Fachdienst - BfArM - Fehlerbehandlung - Protokollierung struktureller Fehler" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
@@ -562,7 +562,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="artifacts.html">nächste&gt;</a>
+                <a href="menu-schnittstellen-datenschutz-und-sicherheit.html">nächste&gt;</a>
 
               </td>
             </tr>
@@ -572,7 +572,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.erp-t-prescription#1.0.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Feb 26, 2026 07:08+0000">2026-02-26</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.erp-t-prescription#1.0.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Feb 26, 2026 13:49+0000">2026-02-26</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
