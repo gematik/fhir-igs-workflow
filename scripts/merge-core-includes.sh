@@ -29,7 +29,8 @@ fi
 mkdir -p "$MODULE_INCLUDE_DIR"
 
 include_list_file="$(mktemp)"
-trap 'rm -f "$include_list_file"' EXIT
+rendered_tmp="$(mktemp)"
+trap 'rm -f "$include_list_file" "$rendered_tmp"' EXIT
 
 python3 - "$MODULE_PAGE_DIR" <<'PY' > "$include_list_file"
 import re
@@ -64,7 +65,39 @@ while IFS= read -r include_name; do
     exit 1
   fi
 
-  if [[ ! -f "$dest" ]] || ! cmp -s "$src" "$dest"; then
-    cp "$src" "$dest"
+  python3 - "$src" <<'PY' > "$rendered_tmp"
+import re
+import sys
+from pathlib import Path
+
+src_path = Path(sys.argv[1])
+lines = src_path.read_text(encoding="utf-8").splitlines(keepends=True)
+output = []
+
+in_fence = False
+fence_pattern = re.compile(r"^\s*```")
+heading_pattern = re.compile(r"^(#{1,6})(\s+.*)$")
+
+for line in lines:
+    if fence_pattern.match(line):
+        in_fence = not in_fence
+        output.append(line)
+        continue
+
+    if not in_fence:
+        match = heading_pattern.match(line)
+        if match:
+            hashes, rest = match.groups()
+            new_level = min(len(hashes) + 1, 6)
+            output.append("#" * new_level + rest)
+            continue
+
+    output.append(line)
+
+sys.stdout.write("".join(output))
+PY
+
+  if [[ ! -f "$dest" ]] || ! cmp -s "$rendered_tmp" "$dest"; then
+    cp "$rendered_tmp" "$dest"
   fi
 done < "$include_list_file"
