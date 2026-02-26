@@ -1,25 +1,25 @@
 @startuml
-title UC 4.9 - Nachricht durch Abgebenden loeschen
+title UC 4.9 - Nachricht durch Abgebenden löschen
 
 actor "Mitarbeiter Apotheke" as MA
 participant "AVS" as AVS
 participant "Identity Provider" as IDP
-participant "E-Rezept Fachdienst" as FD
+participant "E-Rezept-Fachdienst" as FD
 
-MA -> AVS: Nachricht loeschen()
+MA -> AVS: Nachricht löschen()
 activate AVS
 
-opt kein gueltiger AuthN-Token
+opt kein gültiger AuthN-Token
   ref over AVS, IDP: AuthN-Token anfordern
 end
 
 AVS -> FD: DELETE /Communication/{id} (AuthN-Token)
 activate FD
-FD -> FD: Nachricht loeschen()
+FD -> FD: Nachricht löschen()
 FD --> AVS: Status (ggf. Warning)
 deactivate FD
 
-AVS -> AVS: Nachricht lokal loeschen()
+AVS -> AVS: Nachricht lokal löschen()
 AVS --> MA: Status
 deactivate AVS
 

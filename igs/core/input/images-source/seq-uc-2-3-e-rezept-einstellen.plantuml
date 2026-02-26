@@ -2,11 +2,11 @@
 title UC 2.3 - E-Rezept einstellen
 
 actor "(Zahn-)Arzt" as Arzt
-participant "Primaersystem" as PS
+participant "Primärsystem" as PS
 participant "Identity Provider" as IDP
-participant "E-Rezept Fachdienst" as FD
+participant "E-Rezept-Fachdienst" as FD
 
-Arzt -> PS: E-Rezept zum Einstellen auswaehlen()
+Arzt -> PS: E-Rezept zum Einstellen auswählen()
 activate PS
 
 opt kein gueltiger AuthN-Token
@@ -15,8 +15,9 @@ end
 
 PS -> FD: POST /Task/{id}/$activate (AuthN-Token, QES-Bundle)
 activate FD
-FD -> FD: Signatur und Daten pruefen()
+FD -> FD: Signatur und Daten prüfen()
 FD -> FD: Status auf "offen" setzen()
+FD -> FD : Datenzugriff protokollieren()
 FD --> PS: Status, E-Rezept aktualisiert
 deactivate FD
 
