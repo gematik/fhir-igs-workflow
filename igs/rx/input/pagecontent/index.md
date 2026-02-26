@@ -3,6 +3,7 @@ Dieser Implementation Guide beschreibt die Datenmodelle und Prozesse des E-Rezep
 ### Zweck und Geltungsbereich
 
 - Grundlegende Workflows für E-Rezepte zur Arzneimittelversorgung (Flowtypes **160, 169, 200 und 209**)
+- Workflow für die Verordnung von E-T-Rezepten (Flowtype **166**)
 - Profile, Operationen und Validierungsregeln
 - Funktionale Anforderungen
 
