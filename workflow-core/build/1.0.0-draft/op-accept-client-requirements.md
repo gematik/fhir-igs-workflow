@@ -13,3 +13,11 @@ Version 1.0.0-draft - ci-build
 
 ## Client-Anforderungen $accept
 
+Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an Clientsysteme für die Nutzung der Operation `$activate`.
+
+Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezept abrufen" zum Herunterladen des E-Rezepts die HTTP-Operation POST /Task/<id>/$accept mit
+* ACCESS_TOKEN im Authorization-Header
+* Task-ID in URL <id>
+* AccessCode im X-AccessCode-Header oder als URL-Parameter ?ac=
+ausführen.
+

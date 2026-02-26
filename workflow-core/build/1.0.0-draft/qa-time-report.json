@@ -1,52 +1,57 @@
 {
-  "date" : "Thu, 26 Feb, 2026 14:56:48 +0000",
+  "date" : "Thu, 26 Feb, 2026 15:11:57 +0000",
   "doco" : "For each file: start is seconds after start activity occurred. Length = milliseconds activity took",
   "files" : [{
     "name" : "/fsh-generated/resources/ImplementationGuide-de.gematik.workflow.core.json",
     "size" : 10816,
     "processes" : [{
       "activity" : "load",
-      "start" : 33,
-      "length" : 46
+      "start" : 36,
+      "length" : 82
     },
     {
       "activity" : "checkR4R4B",
-      "start" : 35,
-      "length" : 16
+      "start" : 39,
+      "length" : 14
     },
     {
       "activity" : "generateNarratives",
-      "start" : 35,
-      "length" : 161
+      "start" : 39,
+      "length" : 194
     },
     {
       "activity" : "validate",
-      "start" : 38,
-      "length" : 4890
+      "start" : 44,
+      "length" : 7681
     },
     {
       "activity" : "scanForUsageStats",
-      "start" : 43,
+      "start" : 51,
       "length" : 1
     },
     {
       "activity" : "generate1",
-      "start" : 43,
-      "length" : 100
+      "start" : 52,
+      "length" : 106
     },
     {
       "activity" : "generate2",
-      "start" : 48,
-      "length" : 113
+      "start" : 58,
+      "length" : 98
+    },
+    {
+      "activity" : "makeDependencies",
+      "start" : 60,
+      "length" : 1
     },
     {
       "activity" : "generateValidationPack",
-      "start" : 62,
-      "length" : 4
+      "start" : 79,
+      "length" : 3
     },
     {
       "activity" : "scanExamplesForR5",
-      "start" : 72,
+      "start" : 93,
       "length" : 3
     }]
   },
@@ -55,42 +60,42 @@
     "size" : 1384,
     "processes" : [{
       "activity" : "loadResources",
-      "start" : 33,
-      "length" : 24
+      "start" : 36,
+      "length" : 16
     },
     {
       "activity" : "load",
-      "start" : 33,
-      "length" : 21
+      "start" : 36,
+      "length" : 19
     },
     {
       "activity" : "load-configure",
-      "start" : 35,
-      "length" : 2
+      "start" : 39,
+      "length" : 1
     },
     {
       "activity" : "generateNarratives",
-      "start" : 35,
-      "length" : 36
+      "start" : 39,
+      "length" : 34
     },
     {
       "activity" : "validate",
-      "start" : 35,
-      "length" : 2247
+      "start" : 39,
+      "length" : 4505
     },
     {
       "activity" : "generate1",
-      "start" : 43,
+      "start" : 52,
       "length" : 33
     },
     {
       "activity" : "generate2",
-      "start" : 48,
-      "length" : 32
+      "start" : 58,
+      "length" : 39
     },
     {
       "activity" : "generateValidationPack",
-      "start" : 62,
+      "start" : 79,
       "length" : 1
     }]
   },
@@ -99,52 +104,52 @@
     "size" : 1040,
     "processes" : [{
       "activity" : "loadResources",
-      "start" : 33,
+      "start" : 36,
       "length" : 18
     },
     {
       "activity" : "load",
-      "start" : 33,
-      "length" : 19
+      "start" : 36,
+      "length" : 18
     },
     {
       "activity" : "checkR4R4B",
-      "start" : 35,
+      "start" : 39,
       "length" : 1
     },
     {
       "activity" : "generateNarratives",
-      "start" : 35,
-      "length" : 25
+      "start" : 39,
+      "length" : 29
     },
     {
       "activity" : "validate",
-      "start" : 38,
-      "length" : 59
+      "start" : 44,
+      "length" : 82
     },
     {
       "activity" : "generate1",
-      "start" : 43,
-      "length" : 17
+      "start" : 52,
+      "length" : 23
     },
     {
       "activity" : "generate2",
-      "start" : 48,
-      "length" : 14
+      "start" : 58,
+      "length" : 22
     }]
   },
   {
     "name" : "/input/includes/headline-style.html",
-    "size" : 818,
-    "processes" : [{
-      "activity" : "generate2",
-      "start" : 48,
-      "length" : 1
-    }]
+    "size" : 818
   },
   {
     "name" : "/input/includes/use-case-details-table.html",
-    "size" : 1948
+    "size" : 1948,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 58,
+      "length" : 1
+    }]
   },
   {
     "name" : "/input/includes/use-case-overview.table.html",
@@ -160,7 +165,12 @@
   },
   {
     "name" : "/fsh-generated/includes/fsh-link-references.md",
-    "size" : 143
+    "size" : 143,
+    "processes" : [{
+      "activity" : "validate",
+      "start" : 39,
+      "length" : 1
+    }]
   },
   {
     "name" : "/input/data/use-cases.yaml",
@@ -172,242 +182,19 @@
   },
   {
     "name" : "/input/pagecontent/op-reject-client-requirements.md",
-    "size" : 3384
+    "size" : 3384,
+    "processes" : [{
+      "activity" : "scan",
+      "start" : 39,
+      "length" : 1
+    }]
   },
   {
     "name" : "/input/pagecontent/audit-service.md",
     "size" : 19236,
     "processes" : [{
       "activity" : "generate2",
-      "start" : 48,
-      "length" : 1
-    }]
-  },
-  {
-    "name" : "/input/pagecontent/menu-schnittstellen-datenschutz-und-sicherheit.md",
-    "size" : 32
-  },
-  {
-    "name" : "/input/pagecontent/op-accept.md",
-    "size" : 1256
-  },
-  {
-    "name" : "/input/pagecontent/query-api-auditevent-fd-requirements.md",
-    "size" : 2773
-  },
-  {
-    "name" : "/input/pagecontent/op-create-fd-requirements.md",
-    "size" : 6192
-  },
-  {
-    "name" : "/input/pagecontent/op-abort-fd-requirements.md",
-    "size" : 1968
-  },
-  {
-    "name" : "/input/pagecontent/menu-technische-umsetzung-systemueberblick.md",
-    "size" : 5156,
-    "processes" : [{
-      "activity" : "generate2",
-      "start" : 48,
-      "length" : 1
-    }]
-  },
-  {
-    "name" : "/input/pagecontent/op-create.md",
-    "size" : 2167,
-    "processes" : [{
-      "activity" : "generate2",
-      "start" : 48,
-      "length" : 2
-    }]
-  },
-  {
-    "name" : "/input/pagecontent/op-create-client-requirements.md",
-    "size" : 2000
-  },
-  {
-    "name" : "/input/pagecontent/ttl.md",
-    "size" : 4552,
-    "processes" : [{
-      "activity" : "generate2",
-      "start" : 48,
-      "length" : 1
-    }]
-  },
-  {
-    "name" : "/input/pagecontent/op-reject.md",
-    "size" : 1029
-  },
-  {
-    "name" : "/input/pagecontent/menu-schnittstellen-operation-api.md",
-    "size" : 456
-  },
-  {
-    "name" : "/input/pagecontent/data-security.md",
-    "size" : 26756,
-    "processes" : [{
-      "activity" : "generate2",
-      "start" : 48,
-      "length" : 1
-    }]
-  },
-  {
-    "name" : "/input/pagecontent/index.md",
-    "size" : 1178,
-    "processes" : [{
-      "activity" : "validate",
-      "start" : 38,
-      "length" : 1
-    }]
-  },
-  {
-    "name" : "/input/pagecontent/op-activate.md",
-    "size" : 1107
-  },
-  {
-    "name" : "/input/pagecontent/op-close-client-requirements.md",
-    "size" : 135
-  },
-  {
-    "name" : "/input/pagecontent/query-api-consent-client-requirements.md",
-    "size" : 5247
-  },
-  {
-    "name" : "/input/pagecontent/menu-schnittstellen-generelle-prinzipien.md",
-    "size" : 51
-  },
-  {
-    "name" : "/input/pagecontent/op-close-fd-requirements.md",
-    "size" : 7111,
-    "processes" : [{
-      "activity" : "generate2",
-      "start" : 48,
-      "length" : 1
-    }]
-  },
-  {
-    "name" : "/input/pagecontent/op-activate-fd-requirements.md",
-    "size" : 25348,
-    "processes" : [{
-      "activity" : "generate2",
-      "start" : 48,
-      "length" : 3
-    }]
-  },
-  {
-    "name" : "/input/pagecontent/query-api-device-fd-requirements.md",
-    "size" : 575
-  },
-  {
-    "name" : "/input/pagecontent/query-api-communication-fd-requirements.md",
-    "size" : 23765,
-    "processes" : [{
-      "activity" : "generate2",
-      "start" : 48,
-      "length" : 1
-    }]
-  },
-  {
-    "name" : "/input/pagecontent/op-activate-client-requirements.md",
-    "size" : 5631
-  },
-  {
-    "name" : "/input/pagecontent/query-api-auditevent-client-requirements.md",
-    "size" : 565
-  },
-  {
-    "name" : "/input/pagecontent/op-close.md",
-    "size" : 1474
-  },
-  {
-    "name" : "/input/pagecontent/query-api-consent-fd-requirements.md",
-    "size" : 9252,
-    "processes" : [{
-      "activity" : "generate2",
-      "start" : 48,
-      "length" : 1
-    }]
-  },
-  {
-    "name" : "/input/pagecontent/query-api-auditevent.md",
-    "size" : 1371
-  },
-  {
-    "name" : "/input/pagecontent/op-reject-fd-requirements.md",
-    "size" : 2958,
-    "processes" : [{
-      "activity" : "generate2",
-      "start" : 48,
-      "length" : 1
-    }]
-  },
-  {
-    "name" : "/input/pagecontent/fhir-validate.md",
-    "size" : 4832
-  },
-  {
-    "name" : "/input/pagecontent/query-api-communication.md",
-    "size" : 1747
-  },
-  {
-    "name" : "/input/pagecontent/query-api-device.md",
-    "size" : 1047
-  },
-  {
-    "name" : "/input/pagecontent/query-api-communication-client-requirements.md",
-    "size" : 97
-  },
-  {
-    "name" : "/input/pagecontent/op-accept-fd-requirements.md",
-    "size" : 6858
-  },
-  {
-    "name" : "/input/pagecontent/op-accept-client-requirements.md",
-    "size" : 0
-  },
-  {
-    "name" : "/input/pagecontent/artifacts.md",
-    "size" : 81
-  },
-  {
-    "name" : "/input/pagecontent/op-abort-client-requirements.md",
-    "size" : 0,
-    "processes" : [{
-      "activity" : "generate2",
-      "start" : 48,
-      "length" : 1
-    }]
-  },
-  {
-    "name" : "/input/pagecontent/menu-schnittstellen-query-api.md",
-    "size" : 352
-  },
-  {
-    "name" : "/input/pagecontent/op-abort.md",
-    "size" : 1333
-  },
-  {
-    "name" : "/input/pagecontent/query-api-consent.md",
-    "size" : 1451
-  },
-  {
-    "name" : "/input/pagecontent/query-api-device-client-requirements.md",
-    "size" : 560
-  },
-  {
-    "name" : "/input/pagecontent",
-    "size" : 0
-  },
-  {
-    "name" : "/input/pagecontent/op-reject-client-requirements.md",
-    "size" : 3384
-  },
-  {
-    "name" : "/input/pagecontent/audit-service.md",
-    "size" : 19236,
-    "processes" : [{
-      "activity" : "generate2",
-      "start" : 48,
+      "start" : 58,
       "length" : 1
     }]
   },
@@ -424,7 +211,7 @@
     "size" : 2773,
     "processes" : [{
       "activity" : "generate2",
-      "start" : 48,
+      "start" : 58,
       "length" : 1
     }]
   },
@@ -438,14 +225,19 @@
   },
   {
     "name" : "/input/pagecontent/menu-technische-umsetzung-systemueberblick.md",
-    "size" : 5156
+    "size" : 5156,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 58,
+      "length" : 1
+    }]
   },
   {
     "name" : "/input/pagecontent/op-create.md",
     "size" : 2167,
     "processes" : [{
       "activity" : "generate2",
-      "start" : 48,
+      "start" : 58,
       "length" : 2
     }]
   },
@@ -455,7 +247,12 @@
   },
   {
     "name" : "/input/pagecontent/ttl.md",
-    "size" : 4552
+    "size" : 4552,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 58,
+      "length" : 1
+    }]
   },
   {
     "name" : "/input/pagecontent/op-reject.md",
@@ -463,16 +260,16 @@
   },
   {
     "name" : "/input/pagecontent/menu-schnittstellen-operation-api.md",
-    "size" : 456,
-    "processes" : [{
-      "activity" : "generate2",
-      "start" : 48,
-      "length" : 1
-    }]
+    "size" : 456
   },
   {
     "name" : "/input/pagecontent/data-security.md",
-    "size" : 26756
+    "size" : 26756,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 58,
+      "length" : 1
+    }]
   },
   {
     "name" : "/input/pagecontent/index.md",
@@ -488,10 +285,10 @@
   },
   {
     "name" : "/input/pagecontent/query-api-consent-client-requirements.md",
-    "size" : 5247,
+    "size" : 5641,
     "processes" : [{
       "activity" : "generate2",
-      "start" : 48,
+      "start" : 58,
       "length" : 1
     }]
   },
@@ -508,8 +305,8 @@
     "size" : 25348,
     "processes" : [{
       "activity" : "generate2",
-      "start" : 48,
-      "length" : 2
+      "start" : 58,
+      "length" : 5
     }]
   },
   {
@@ -518,7 +315,12 @@
   },
   {
     "name" : "/input/pagecontent/query-api-communication-fd-requirements.md",
-    "size" : 23765
+    "size" : 23765,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 58,
+      "length" : 1
+    }]
   },
   {
     "name" : "/input/pagecontent/op-activate-client-requirements.md",
@@ -526,7 +328,12 @@
   },
   {
     "name" : "/input/pagecontent/query-api-auditevent-client-requirements.md",
-    "size" : 565
+    "size" : 565,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 58,
+      "length" : 1
+    }]
   },
   {
     "name" : "/input/pagecontent/op-close.md",
@@ -537,7 +344,7 @@
     "size" : 9252,
     "processes" : [{
       "activity" : "generate2",
-      "start" : 48,
+      "start" : 58,
       "length" : 1
     }]
   },
@@ -551,7 +358,12 @@
   },
   {
     "name" : "/input/pagecontent/fhir-validate.md",
-    "size" : 4832
+    "size" : 4832,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 58,
+      "length" : 1
+    }]
   },
   {
     "name" : "/input/pagecontent/query-api-communication.md",
@@ -570,13 +382,13 @@
     "size" : 6858,
     "processes" : [{
       "activity" : "generate2",
-      "start" : 48,
+      "start" : 58,
       "length" : 1
     }]
   },
   {
     "name" : "/input/pagecontent/op-accept-client-requirements.md",
-    "size" : 0
+    "size" : 831
   },
   {
     "name" : "/input/pagecontent/artifacts.md",
@@ -596,7 +408,260 @@
   },
   {
     "name" : "/input/pagecontent/query-api-consent.md",
-    "size" : 1451
+    "size" : 1451,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 58,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/query-api-device-client-requirements.md",
+    "size" : 560
+  },
+  {
+    "name" : "/input/pagecontent",
+    "size" : 0
+  },
+  {
+    "name" : "/input/pagecontent/op-reject-client-requirements.md",
+    "size" : 3384
+  },
+  {
+    "name" : "/input/pagecontent/audit-service.md",
+    "size" : 19236,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 58,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/menu-schnittstellen-datenschutz-und-sicherheit.md",
+    "size" : 32
+  },
+  {
+    "name" : "/input/pagecontent/op-accept.md",
+    "size" : 1256,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 58,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/query-api-auditevent-fd-requirements.md",
+    "size" : 2773
+  },
+  {
+    "name" : "/input/pagecontent/op-create-fd-requirements.md",
+    "size" : 6192
+  },
+  {
+    "name" : "/input/pagecontent/op-abort-fd-requirements.md",
+    "size" : 1968
+  },
+  {
+    "name" : "/input/pagecontent/menu-technische-umsetzung-systemueberblick.md",
+    "size" : 5156,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 58,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/op-create.md",
+    "size" : 2167,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 58,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/op-create-client-requirements.md",
+    "size" : 2000
+  },
+  {
+    "name" : "/input/pagecontent/ttl.md",
+    "size" : 4552,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 58,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/op-reject.md",
+    "size" : 1029
+  },
+  {
+    "name" : "/input/pagecontent/menu-schnittstellen-operation-api.md",
+    "size" : 456
+  },
+  {
+    "name" : "/input/pagecontent/data-security.md",
+    "size" : 26756,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 58,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/index.md",
+    "size" : 1178
+  },
+  {
+    "name" : "/input/pagecontent/op-activate.md",
+    "size" : 1107,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 58,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/op-close-client-requirements.md",
+    "size" : 135
+  },
+  {
+    "name" : "/input/pagecontent/query-api-consent-client-requirements.md",
+    "size" : 5641
+  },
+  {
+    "name" : "/input/pagecontent/menu-schnittstellen-generelle-prinzipien.md",
+    "size" : 51
+  },
+  {
+    "name" : "/input/pagecontent/op-close-fd-requirements.md",
+    "size" : 7111,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 58,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/op-activate-fd-requirements.md",
+    "size" : 25348,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 58,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/query-api-device-fd-requirements.md",
+    "size" : 575
+  },
+  {
+    "name" : "/input/pagecontent/query-api-communication-fd-requirements.md",
+    "size" : 23765,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 58,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/op-activate-client-requirements.md",
+    "size" : 5631
+  },
+  {
+    "name" : "/input/pagecontent/query-api-auditevent-client-requirements.md",
+    "size" : 565
+  },
+  {
+    "name" : "/input/pagecontent/op-close.md",
+    "size" : 1474
+  },
+  {
+    "name" : "/input/pagecontent/query-api-consent-fd-requirements.md",
+    "size" : 9252,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 58,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/query-api-auditevent.md",
+    "size" : 1371
+  },
+  {
+    "name" : "/input/pagecontent/op-reject-fd-requirements.md",
+    "size" : 2958
+  },
+  {
+    "name" : "/input/pagecontent/fhir-validate.md",
+    "size" : 4832,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 58,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/query-api-communication.md",
+    "size" : 1747
+  },
+  {
+    "name" : "/input/pagecontent/query-api-device.md",
+    "size" : 1047
+  },
+  {
+    "name" : "/input/pagecontent/query-api-communication-client-requirements.md",
+    "size" : 97
+  },
+  {
+    "name" : "/input/pagecontent/op-accept-fd-requirements.md",
+    "size" : 6858,
+    "processes" : [{
+      "activity" : "generateNarratives",
+      "start" : 39,
+      "length" : 1
+    },
+    {
+      "activity" : "generate2",
+      "start" : 58,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/op-accept-client-requirements.md",
+    "size" : 831
+  },
+  {
+    "name" : "/input/pagecontent/artifacts.md",
+    "size" : 81
+  },
+  {
+    "name" : "/input/pagecontent/op-abort-client-requirements.md",
+    "size" : 0
+  },
+  {
+    "name" : "/input/pagecontent/menu-schnittstellen-query-api.md",
+    "size" : 352
+  },
+  {
+    "name" : "/input/pagecontent/op-abort.md",
+    "size" : 1333
+  },
+  {
+    "name" : "/input/pagecontent/query-api-consent.md",
+    "size" : 1451,
+    "processes" : [{
+      "activity" : "scan",
+      "start" : 39,
+      "length" : 1
+    },
+    {
+      "activity" : "generate2",
+      "start" : 58,
+      "length" : 1
+    }]
   },
   {
     "name" : "/input/pagecontent/query-api-device-client-requirements.md",
@@ -604,12 +669,7 @@
   },
   {
     "name" : "/input/content",
-    "size" : 0,
-    "processes" : [{
-      "activity" : "generate2",
-      "start" : 48,
-      "length" : 1
-    }]
+    "size" : 0
   },
   {
     "name" : "/input/content/assets",
@@ -637,6 +697,11 @@
   },
   {
     "name" : "/temp/pages/_includes/artifacts.xml",
-    "size" : 2214
+    "size" : 2214,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 58,
+      "length" : 1
+    }]
   }]
 }

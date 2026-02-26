@@ -33,7 +33,11 @@ erstellen.
 Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung erteilen" zum Speichern der Information im E-Rezept-Fachdienst die HTTP-Operation POST /Consent mit:
 * ACCESS_TOKEN im Authorization-Header
 ausführen.
-### Einwilligung einsehen
+### Einwilligungen einsehen
+
+**Sequenzdiagramm:**
+
+**Abbildung: **UC 3.13 - Einwilligungen durch Versicherten einsehen
 
 Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligungsinformation abrufen" zum Abrufen der Information vom E-Rezept-Fachdienst die HTTP-Operation GET /Consent mit:
 * ACCESS_TOKEN im Authorization-Header
@@ -41,6 +45,10 @@ ausführen.
 In der Response können mehrere Consent Ressourcen enthalten sein. Der Einwilligungstyp des Consent ist in Consent.category.coding.code angegeben. Die Werte können sich auf folgende Codesysteme beziehen: [GEM_ERPCHRG_CS_ConsentType], [GEM_ERPEU_CS_ConsentType].
 
 ### Einwilligung widerrufen
+
+**Sequenzdiagramm:**
+
+**Abbildung: **UC 3.15 - Einwilligung durch Versicherten widerrufen
 
 Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung widerrufen" es dem Nutzer ermöglichen, den Widerruf zu erfassen.
 
