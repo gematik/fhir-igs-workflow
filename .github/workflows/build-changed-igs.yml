@@ -161,6 +161,20 @@ jobs:
         if: steps.igs.outputs.ig_list != ''
         run: ./update-publisher.sh -y
 
+      - name: Download HAPI validator for StructureMap transformation
+        if: steps.igs.outputs.ig_list != '' && contains(steps.igs.outputs.ig_list, 'bfarm')
+        shell: bash
+        run: |
+          set -euo pipefail
+          validator_path="$GITHUB_WORKSPACE/input-cache/current_hapi_validator.jar"
+          mkdir -p "$(dirname "$validator_path")"
+          curl -sSL https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar -o "$validator_path"
+          if [[ ! -s "$validator_path" ]]; then
+            echo "Failed to download HAPI validator jar" >&2
+            exit 1
+          fi
+          echo "HAPI_VALIDATOR_JAR=$validator_path" >> "$GITHUB_ENV"
+
       - name: Build IGs
         if: steps.igs.outputs.ig_list != ''
         run: ./build-all.sh --ig ${{ steps.igs.outputs.ig_list }}
