@@ -1,4 +1,4 @@
-# Loeschfristen - Implementation Guide E-Rezept-Workflow Core v1.0.0-draft
+# Löschfristen - Implementation Guide E-Rezept-Workflow Core v1.0.0-draft
 
 Implementation Guide
 
@@ -7,9 +7,9 @@ E-Rezept-Workflow Core
 Version 1.0.0-draft - ci-build 
 
 * [**Table of Contents**](toc.md)
-* **Loeschfristen**
+* **Löschfristen**
 
-## Loeschfristen
+## Löschfristen
 
 Der E-Rezept-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen abgelaufener oder nicht mehr benötigter Ressourcen. Dieses Kapitel beschreibt die Loöchfristen und die zugehörigen Anforderungen.
 
