@@ -31,15 +31,17 @@ Zum Widerrufen einer Einwilligung wird eine HTTP `DELETE`-Anfrage an den E-Rezep
 
 ### Resource API
 
-Anfragen an die *Communication*-Ressource können über die RESTful API mittels HTTP GET-Anfragen durchgeführt werden. Dabei können spezifische Suchparameter genutzt werden, um die Anfragen zu verfeinern. Zum Beispiel:
-
-* Für den Versicherten noch nicht vom E-Rezept-Fachdienst abgerufene Communications: `?recipient=<kvnr>&received=NULL`
+tbd
 
 #### API Beschreibung
 
-* [API-ERP: Communications](https://github.com/gematik/api-erp/blob/master/docs/erp_communication.adoc)
+* [API-ERP: Communications](https://github.com/gematik/api-erp/blob/master/docs/erp_consent.adoc)
 
 #### Hinweis
 
+tbd
+
 ### Sicherheitsanforderungen
+
+tbd
 
