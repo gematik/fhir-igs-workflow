@@ -66,7 +66,7 @@ Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Consent`-Query-
     ausführen.
 </requirement>
 
-In der Response können mehrere Consent Ressourcen enthalten sein. Der Einwilligungstyp des Consent ist in Consent.category.coding.code angegeben. Die Werte können sich auf folgende Codesysteme beziehen: [GEM_ERPCHRG_CS_ConsentType], [GEM_ERPEU_CS_ConsentType].
+In der Response können mehrere Consent Ressourcen enthalten sein. Der Einwilligungstyp des Consent ist in Consent.category.coding.code angegeben. Die Werte können sich auf folgende Codesysteme beziehen: [GEM_ERPCHRG_CS_ConsentType], [GEM_ERPEU_CS_ConsentType].
 
 ### Einwilligung widerrufen
 
@@ -96,7 +96,7 @@ In der Response können mehrere Consent Ressourcen enthalten sein. Der Einwillig
     <actor name="eRP_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung widerrufen" zum Löschen der Information im E-Rezept-Fachdienst die HTTP-Operation DELETE /Consent/?category=<Einwilligungstyp> mit:
+    Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung widerrufen" zum Löschen der Information im E-Rezept-Fachdienst die HTTP-Operation DELETE /Consent/?category=&lt;Einwilligungstyp&gt; mit:
     <ul>
         <li>ACCESS_TOKEN im Authorization-Header</li>
         <li>Einwilligungstyp in ?category</li>
