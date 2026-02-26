@@ -281,9 +281,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul id="markdown-toc">
   <li><a href="#anforderungen-aus-der-core-spezifikation" id="markdown-toc-anforderungen-aus-der-core-spezifikation">Anforderungen aus der Core-Spezifikation</a></li>
-  <li><a href="#get-communication" id="markdown-toc-get-communication">GET /Communication</a></li>
-  <li><a href="#post-communication" id="markdown-toc-post-communication">POST /Communication</a></li>
-  <li><a href="#delete-communication" id="markdown-toc-delete-communication">DELETE /Communication</a></li>
   <li><a href="#modulspezifische-anforderungen-an-den-e-rezept-fachdienst" id="markdown-toc-modulspezifische-anforderungen-an-den-e-rezept-fachdienst">Modulspezifische Anforderungen an den E-Rezept-Fachdienst</a></li>
 </ul>
 
@@ -318,7 +315,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 <!-- ToDo: Fehlt hier die Angabe des Fehlercodes? Siehe auch entsprechende Afos in allen anderen SST. -->
 
-<h3 id="get-communication">GET /Communication</h3>
+<h4 id="get-communication">GET /Communication</h4>
 
 <!-- A_19520-02 -->
 <requirement conformance="SHALL" key="IG-WF-CORE-83" title="E-Rezept-Fachdienst - Nachrichten abrufen - für Empfänger filtern" version="0">
@@ -338,8 +335,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     Der E-Rezept-Fachdienst MUSS beim Abrufen von Nachrichten über die http-Operation GET auf den Endpunkt /Communication bzw. beim Abruf einer einzelnen Nachricht über /Communication/&lt;id&gt; den Wert des Attributs Communication.received = &lt;aktuelle Systemzeit&amp;gt setzen, wenn dieser Wert zum Zeitpunkt des Abrufs der Nachrichten NULL ist, damit Nutzer eine Filtermöglicheit auf "neue Nachrichten" haben.
 </requirement>
 
-<h3 id="post-communication">POST /Communication</h3>
-
+<h4 id="post-communication">POST /Communication</h4>
 <!-- A_19447-06 -->
 <requirement conformance="SHALL" key="IG-WF-CORE-83" title="E-Rezept-Fachdienst - Nachricht einstellen - Schemaprüfung" version="0">
     <meta lockversion="false" />
@@ -579,8 +575,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht mittels HTTP-POST-Operation über /Communication bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId "erp.communication.new" und den Versicherten mit der KVNR = Communication.recipient initiieren.
 </requirement>
 
-<h3 id="delete-communication">DELETE /Communication</h3>
-
+<h4 id="delete-communication">DELETE /Communication</h4>
 <p>Mit der HTTP-Operation DELETE kann ein Nutzer eine verschickte Kommunikationsnachricht als Absender löschen, um bspw. einen Irrläufer zurückzurufen. Der E-Rezept-Fachdienst prüft, ob die Nachricht bereits abgerufen wurde. Das Löschen einer ungelesenen Nachricht erfolgt sofort, das Löschen einer bereits abgerufenen Nachricht wird vom E-Rezept-Fachdienst mit einer Warnung umgesetzt, um darauf hinzuweisen, dass die Nachricht als Kopie im Clientsystem des Empfängers vorliegt und das Löschen nicht vor unberechtigter Einsichtnahme schützt.</p>
 
 <p>Um den Schutz vor unberechtigter Einsichtnahme in persönliche Daten durchzusetzen, ist es ratsam bei bereits gelesenen Nachrichten den referenzierten E-Rezept-Task zu löschen. Für eine geeignete Nutzerführung auf Clientseite ergänzt der E-Rezept-Fachdienst die http-Response um das Header-Attribut “Warning” mit einem entsprechenden Hinweis. Das Löschen des Task führt direkt auch zum Löschen aller Kommunikationsnachrichten, die auf diesen Task verweisen. Damit kann ein fälschlich adressierter Vertreter eines Versicherten keine Einsicht in die Daten des E-Rezepts mehr nehmen bzw. das E-Rezept in keiner Apotheke mehr einlösen.</p>
@@ -663,7 +658,7 @@ Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht der Profile GEM_ERP
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow-rx#1.0.0-test basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Feb 26, 2026 14:27+0000">2026-02-26</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow-rx#1.0.0-test basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Feb 26, 2026 15:51+0000">2026-02-26</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

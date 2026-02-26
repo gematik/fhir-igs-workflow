@@ -281,9 +281,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul id="markdown-toc">
   <li><a href="#anforderungen-aus-der-core-spezifikation" id="markdown-toc-anforderungen-aus-der-core-spezifikation">Anforderungen aus der Core-Spezifikation</a></li>
-  <li><a href="#post-consent" id="markdown-toc-post-consent">POST /Consent</a></li>
-  <li><a href="#get-consent" id="markdown-toc-get-consent">GET /Consent</a></li>
-  <li><a href="#delete-consent" id="markdown-toc-delete-consent">DELETE /Consent</a></li>
   <li><a href="#modulspezifische-anforderungen-an-den-e-rezept-fachdienst" id="markdown-toc-modulspezifische-anforderungen-an-den-e-rezept-fachdienst">Modulspezifische Anforderungen an den E-Rezept-Fachdienst</a></li>
 </ul>
 
@@ -310,8 +307,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </ul>
 -->
 
-<h3 id="post-consent">POST /Consent</h3>
-
+<h4 id="post-consent">POST /Consent</h4>
 <!-- A_22161 -->
 <requirement conformance="SHALL" key="IG-WF-CORE-83" title="E-Rezept-Fachdienst - Consent schreiben - Rollenprüfung" version="0">
   <meta lockversion="false" />
@@ -368,8 +364,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent, falls bei den Prüfungen keine Fehler aufgetreten sind, welche zum Abbruch der Operation führen, die übermittelte Ressource persistieren.
 </requirement>
 
-<h3 id="get-consent">GET /Consent</h3>
-
+<h4 id="get-consent">GET /Consent</h4>
 <!-- A_22159 -->
 <requirement conformance="SHALL" key="IG-WF-CORE-83" title="E-Rezept-Fachdienst - Consent lesen - Rollenprüfung" version="0">
   <meta lockversion="false" />
@@ -388,8 +383,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Consent die dem Versicherten zugeordneten Consent-Ressourcen anhand der KVNR des Versicherten im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren und in den Response aufnehmen, die in Consent.Patient.identifier die entsprechende KVNR des Versicherten referenziert haben, damit ausschließlich Versicherte ihre eigenen Information zu Einwilligungen einsehen können.
 </requirement>
 
-<h3 id="delete-consent">DELETE /Consent</h3>
-
+<h4 id="delete-consent">DELETE /Consent</h4>
 <!-- A_22154 -->
 <requirement conformance="SHALL" key="IG-WF-CORE-83" title="E-Rezept-Fachdienst - Consent löschen - alles Löschen verbieten" version="0">
   <meta lockversion="false" />
@@ -485,7 +479,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow-rx#1.0.0-test basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Feb 26, 2026 14:27+0000">2026-02-26</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow-rx#1.0.0-test basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Feb 26, 2026 15:51+0000">2026-02-26</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
