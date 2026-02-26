@@ -52,6 +52,8 @@ Folgende Daten sind, sofern im jeweiligen Datensatz vorhanden, im digitalen Durc
 
 <div><figcaption><strong>Tabelle: </strong>Daten des digitalen Durchschlags E-T-Rezept</figcaption></div>
 
+Die Informationseinheiten sind auch im [Logischen Modell digitaler Durchschlag E-T-Rezept](./StructureDefinition-erp-tprescription-carbon-copy-logical.html) beschrieben.
+
 ### Übertragung des digitalen Durchschlags
 
 Der E-Rezept-Fachdienst erstellt nach Abschluss des Workflows des E-T-Rezeptes ($close Operation) den Datensatz für den digitalen Durchschlag zur Übermittlung an den BfArM Webdienst. Analog zum Vorgehen bei der Übertragung der Daten an den Medicaton Service der ePA Aktensysteme wird eine Warteschlange verwendet, um den digitalen Durchschlag asynchron zum Abschluss des Workflows durch die Apotheke zu übertragen. Die asynchrone Übertragung gewährleistet, dass sich für die Apotheke beim Aufruf der $close Operation keine verlängerte Bearbeitungszeit des E-Rezept-Fachdienstes ergibt.
