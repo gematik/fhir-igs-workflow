@@ -36,18 +36,20 @@ gem-ig-badge-bg-darkblue"  | split: "," %}
         <td style="padding: 5px;">{{ use_case.followup | markdownify }}</td>
       </tr>
     {% endif %}
-    <tr>
-      <th style="padding: 5px; width: 23rem;">Relevante(r) Sektor(en)</th>
-      <td style="padding: 5px;">
-        {% for role in roles %}
-          {% if use_case.roles contains role %}
-            <span class="badge gem-ig-badge {{ badge-colors[forloop.index0] }}" >
-              {{ role | upcase }}
-            </span>
-          {% endif %}
-        {% endfor %}
-      </td>
-    </tr>
+    {% if use_case.roles %}
+      <tr>
+        <th style="padding: 5px; width: 23rem;">Relevante(r) Sektor(en)</th>
+        <td style="padding: 5px;">
+          {% for role in roles %}
+            {% if use_case.roles contains role %}
+              <span class="badge gem-ig-badge {{ badge-colors[forloop.index0] }}" >
+                {{ role | upcase }}
+              </span>
+            {% endif %}
+          {% endfor %}
+        </td>
+      </tr>
+    {% endif %}
   </table>
   <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall {{ use_case.title }}</figcaption>
 </figure>
