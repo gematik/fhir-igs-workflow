@@ -1,4 +1,4 @@
 Steckbriefe
 
-Steckbriefe fuer Produkt- und Anbietertypen werden in einer spaeteren Version
+Steckbriefe für Produkt- und Anbietertypen werden in einer späteren Version
 bereitgestellt.

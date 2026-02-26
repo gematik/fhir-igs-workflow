@@ -1,0 +1,24 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: a533c97c278fdf638d69d3edc2bdb6c1050fb084feaaeec511dc9c90a3e00a2d
+created: '2026-02-16T08:14:25.038727'
+date: '2026-02-17T16:07:12.698572'
+key: IG-TIFlow-DiGA-26
+modified: '2026-02-17T16:07:12.698572'
+release_status: NEW
+source: input/pagecontent/op-activate-req-server.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: "Der E-Rezept-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&#60;id&#62;/$activate\
+  \ den im FHIR Profil KBV_PR_EVDGA_HealthAppRequest gespeicherten Wert für .code[x]:codeCodeableConcept.coding.code\
+  \ gemäß den \"Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen\
+  \ der PZN, PPN und Basic UDI-DI\" beschriebenen Prüfalgorithmus validieren.\n Der\
+  \ E-Rezept-Fachdienst MUSS bei einer fehlerhaften Prüfung mit einem Http-Fehler\
+  \ 400 (Bad Request) abbrechen, sowie die Fehlermeldung \"Ungültige PZN: Die übergebene\
+  \ Pharmazentralnummer entspricht nicht den vorgeschriebenen Prüfziffer-Validierungsregeln.\"\
+  \ in Form eines OperationOutcome ausliefern."
+title: E-Rezept-Fachdienst - Task aktivieren – Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest
+version: 0

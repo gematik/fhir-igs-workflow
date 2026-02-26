@@ -1,0 +1,29 @@
+@startuml
+!include style.iuml
+
+title RX Operation $close
+
+start
+:Client ruft POST /Task/{id}/$close auf;
+:FD prueft Rolle, Secret und Task.status=in-progress;
+if (ok?) then (ja)
+else (nein)
+  :HTTP 403;
+  stop
+endif
+
+:FD validiert Close-Parameters inkl. MedicationDispense-Profil;
+if (valid?) then (ja)
+else (nein)
+  :HTTP 400;
+  stop
+endif
+
+:FD speichert finale Dispensierinformationen;
+:FD erstellt und signiert Quittungs-Bundle;
+:FD setzt Task.status = completed;
+:FD triggert Push/ePA/BfArM (flowtype-abhaengig);
+:FD liefert Task/Quittung;
+stop
+
+@enduml

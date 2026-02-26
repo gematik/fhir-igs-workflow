@@ -1,0 +1,25 @@
+@startuml
+title UC 3.4 - Nachrichten durch Versicherten empfangen
+
+actor "Versicherter/Vertreter" as V
+participant "FdV" as FdV
+participant "Identity Provider" as IDP
+participant "E-Rezept Fachdienst" as FD
+
+V -> FdV: Nachrichten abrufen()
+activate FdV
+
+opt kein gueltiger AuthN-Token
+  ref over FdV, IDP: AuthN-Token anfordern
+end
+
+FdV -> FD: GET /Communication?recipient=... (AuthN-Token)
+activate FD
+FD -> FD: Nachrichten ermitteln()
+FD --> FdV: Nachrichten
+deactivate FD
+
+FdV --> V: Nachrichten anzeigen
+deactivate FdV
+
+@enduml

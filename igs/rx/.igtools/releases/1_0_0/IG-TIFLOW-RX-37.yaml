@@ -1,0 +1,22 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: 22ed0b1ce219120b1c8659c108bfbf4c28b099806e7026f58535db0f1a711e5b
+created: '2026-02-26T08:42:49.786830'
+date: '2026-02-26T08:42:49.786832'
+key: IG-TIFLOW-RX-37
+modified: '2026-02-26T08:42:49.786831'
+release_status: NEW
+source: input/pagecontent/query-api-task-fd-requirements.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
+  /Task/&lt;id&gt; und Ungleichheit der KVNR des Aufrufenden (KVNR des ACCESS_TOKEN
+  im "Authorization"-Header des HTTP-Requests UNGLEICH KVNR in Task.for ) prüfen,
+  ob der im HTTP-Request-Header "X-AccessCode" oder URL-Parameter "?ac=..." übergebene
+  AccessCode gleich dem AccessCode in Task.identifier ist, damit auch Vertreter in
+  Kenntnis des AccessCodes ein einzelnes E-Rezept einsehen können.
+title: E-Rezept-Fachdienst - Task abrufen - Prüfung AccessCode bei KVNR-Missmatch
+version: 0

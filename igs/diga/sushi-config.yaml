@@ -3,7 +3,7 @@ fhirVersion: 4.0.1
 applyExtensionMetadataToRoot: false
 id: de.gematik.eflow-diga
 name: E-Rezept DiGA #TODO Name muss von Team Polarion vorgegeben werden gemIG...
-title: "E-Rezept fuer Digitale Gesundheitsanwendungen (DiGA)"
+title: "Verordnungen für Digitale Gesundheitsanwendungen (DiGA)"
 status: draft # draft | active | retired | unknown
 version: "2.0.0-draft"
 copyrightYear: 2026+
@@ -15,28 +15,26 @@ publisher:
   email: erp-umsetzung@gematik.de
 
 dependencies:
-  de.gematik.erezept-workflow.r4: 1.6.1
-  de.basisprofil.r4: 1.5.2
+  de.basisprofil.r4: 1.5.4
   de.gematik.epa.medication: 1.3.0
   de.gematik.ti: 1.2.0
 
 menu:
   Start: index.html
   Fachlichkeit:
-    Ueberblick: menu-fachlichkeit-ueberblick.html
+    Digitale Gesundheitsanwendungen: menu-fachlichkeit-diga.html
     Szenarien: menu-fachlichkeit-szenarien.html
-    Anwendungsfaelle: menu-fachlichkeit-anwendungsfaelle.html
   Technische Umsetzung:
-    Systemueberblick: menu-technische-umsetzung-systemueberblick.html
-    Technische Anwendungsfaelle: menu-technische-umsetzung-anwendungsfaelle.html
+    Systemüberblick: menu-technische-umsetzung-systemueberblick.html
+    Technische Anwendungsfälle: menu-technische-umsetzung-anwendungsfaelle.html
     Verarbeitungsregeln: menu-technische-umsetzung-verarbeitungsregeln.html
+    Datenschutz und Informationssicherheit: menu-datenschutz-und-sicherheit.html
   Schnittstellen:
     Generelle Prinzipien: menu-schnittstellen-generelle-prinzipien.html
-    Datenschutz und Sicherheit: menu-schnittstellen-datenschutz-und-sicherheit.html
     Query API: query-api.html
     Operation API: operation-api.html
     Additional APIs: menu-schnittstellen-additional-api.html
-  Anhaenge:
+  Anhänge:
     Referenzen: referenced.html
     Downloads: downloads.html
     Release Notes: release-notes.html
@@ -46,37 +44,45 @@ menu:
 
 pages:
   index.md:
-    title: "Implementation Guide E-Rezept-DiGA"
-  menu-fachlichkeit-ueberblick.md:
-    title: "Ueberblick zur Verordnung von DiGAs"
+    title: "Implementation Guide elektronische Verordnung von DiGAs"
+  menu-fachlichkeit-diga.md:
+    title: "Elektronische Verordnung von DiGAs"
     menu-fachlichkeit-szenarien.md:
-      title: "Szenarien fuer den DiGA-Workflow"
+      title: "Szenarien für den DiGA-Workflow"
       menu-fachlichkeit-szenario-diga.md:
-        title: "Szenario: E-Rezept fuer DiGA"
-    menu-fachlichkeit-anwendungsfaelle.md:
-      title: "Anwendungsfaelle im DiGA-Workflow"
+        title: "Szenario: Verordnungen für DiGA"
   menu-technische-umsetzung-systemueberblick.md:
-    title: "Systemueberblick"
+    title: "Systemüberblick"
     menu-technische-umsetzung-anwendungsfaelle.md:
-      title: "Technische Anwendungsfaelle"
+      title: "Technische Anwendungsfälle"
     menu-technische-umsetzung-verarbeitungsregeln.md:
-      title: "Verarbeitungsregeln fuer den E-Rezept-Fachdienst"
+      title: "Verarbeitungsregeln"
   menu-schnittstellen-generelle-prinzipien.md:
     title: "Generelle Prinzipien"
-  menu-schnittstellen-datenschutz-und-sicherheit.md:
-    title: "Datenschutz und Sicherheit"
+  menu-datenschutz-und-sicherheit.md:
+    title: "Datenschutz und Informationssicherheit"
   query-api.md:
     title: "Query API"
     query-api-task.md:
       title: "Query API: Task"
     query-api-communication.md:
       title: "Query API: Communication"
+      query-api-communication-req-fdv.md:
+        title: "Anforderungen an das E-Rezept-FdV für Communication API"
+      query-api-communication-req-ktr.md:
+        title: "Anforderungen an das Clientsystem des Kostenträgers für Communication API"
     query-api-medicationdispense.md:
       title: "Query API: MedicationDispense"
   operation-api.md:
     title: "Operation API"
+    op-create.md:
+      title: "Operation: $create"
+      op-create-req-client.md:
+        title: "Anforderungen an den verordnende Primärsystem für die $create-Operation"
     op-activate.md:
       title: "Operation: $activate"
+      op-activate-req-server.md:
+        title: "Anforderungen an den E-Rezept-Fachdienst für die $activate-Operation"
     op-accept.md:
       title: "Operation: $accept"
     op-reject.md:
@@ -87,6 +93,8 @@ pages:
     title: "FHIR-Artefakte"
   menu-schnittstellen-additional-api.md:
     title: "Additional APIs"
+    api-add-fhirvzd.md:
+      title: "API FHIR-VZD"
   referenced.md:
     title: "Referenzen"
   downloads.md:

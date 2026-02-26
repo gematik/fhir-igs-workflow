@@ -1,0 +1,34 @@
+@startuml
+title UC 2.1 - E-Rezepte erzeugen
+
+actor "(Zahn-)Arzt" as Arzt
+participant "Primaersystem" as PS
+participant "Identity Provider" as IDP
+participant "E-Rezept Fachdienst" as FD
+participant "Konnektor" as K
+
+Arzt -> PS: Verordnungsdatensaetze auswaehlen()
+activate PS
+
+opt kein gueltiger AuthN-Token
+  ref over PS, IDP: AuthN-Token anfordern
+end
+
+PS -> FD: POST /Task/$create (AuthN-Token, Verordnungsdaten)
+activate FD
+FD -> FD: Rezept-ID erzeugen()
+FD -> FD: AccessCode erzeugen()
+FD --> PS: Task, Rezept-ID, AccessCode
+deactivate FD
+
+PS -> K: QES signieren(Verordnungsdaten)
+activate K
+K --> PS: QES-Signatur
+deactivate K
+
+PS -> PS: Rezept-ID im Datensatz speichern()
+PS -> PS: AccessCode speichern()
+PS --> Arzt: Signierte E-Rezepte
+deactivate PS
+
+@enduml

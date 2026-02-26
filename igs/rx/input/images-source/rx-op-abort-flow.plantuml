@@ -1,0 +1,28 @@
+@startuml
+!include style.iuml
+
+title RX Operation $abort
+
+start
+:Client ruft POST /Task/{id}/$abort auf;
+:FD prueft Rolle und Berechtigung (AccessCode/Secret/KVNR);
+if (ok?) then (ja)
+else (nein)
+  :HTTP 403;
+  stop
+endif
+
+:FD prueft zulaessigen Status fuer Loeschung;
+if (zulaessig?) then (ja)
+else (nein)
+  :HTTP 403;
+  stop
+endif
+
+:FD entfernt personenbezogene medizinische Daten;
+:FD setzt Task.status = cancelled;
+:FD bereitet ggf. ePA-Loeschinformation vor;
+:FD triggert Push an Versicherten;
+stop
+
+@enduml

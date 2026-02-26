@@ -18,5 +18,5 @@ Usage: #definition
 * rest.mode = #server
 * extension[baseUrl].valueString = "http://todo"
 * insert Error423Locked
-* insert ImportCapabilityStatment("https://gematik.de/fhir/workflow/core/CapabilityStatement/erp-fachdienst-server", #SHALL)
+//* insert ImportCapabilityStatment("https://gematik.de/fhir/workflow/core/CapabilityStatement/erp-fachdienst-server", #SHALL)
 

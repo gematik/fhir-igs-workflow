@@ -3,7 +3,7 @@ Parent: Parameters
 Id: GEM-ERPEU-PR-PAR-PATCH-Task-Input
 Title: "GEM ERPEU PR PAR PATCH Task Input"
 Description: "This profile defines the parameters for patching the Task to mark the prescription as to-be-redeemed in the EU"
-* insert Profile(GEM_ERPEU_PR_PAR_PATCH_Task_Input)
+* insert Versioning
 
 * parameter 1..* MS
 

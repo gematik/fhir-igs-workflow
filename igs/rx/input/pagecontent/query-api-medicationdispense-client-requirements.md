@@ -1,0 +1,1 @@
+Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `MedicationDispense`-Query-Endpunkte.
