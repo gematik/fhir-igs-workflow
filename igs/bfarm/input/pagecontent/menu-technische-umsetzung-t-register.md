@@ -49,6 +49,7 @@ Folgende Daten sind, sofern im jeweiligen Datensatz vorhanden, im digitalen Durc
 |Behandlung außerhalb der zugelassenen Anwendungsgebiete (Off-Label)|Verordnungsdatensatz*|MedicationRequest.extension:T-Rezept:Off-Label|
 |Angabe, ob Verschreibung für eine gebärfähige Frau|Verordnungsdatensatz*|MedicationRequest.extension:T-Rezept:GebaerfaehigeFrau|
 |Bestätigung ausreichender Sachkenntnisse|Verordnungsdatensatz*|MedicationRequest.extension:T-Rezept:ErklaerungSachkenntnis|
+
 <div><figcaption><strong>Tabelle: </strong>Daten des digitalen Durchschlags E-T-Rezept</figcaption></div>
 
 ### Übertragung des digitalen Durchschlags
