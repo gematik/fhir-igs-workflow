@@ -1,7 +1,7 @@
 
 **Titel:** E-T-Rezept Structure Map for CarbonCopy
 
-**Beschreibung:** Diese Ressource beschreibt das Mapping und führt die Mappings aller Teilressourcen zusammen. Weitere Informationen und Beschreibungen zum Mapping können auf der Seite [Mapping des digitalen Durchschlag E-T-Rezept](./trezept.html#mapping-des-digitalen-durchschlags-e-t-rezept) eingesehen werden.
+**Beschreibung:** Diese Ressource beschreibt das Mapping und führt die Mappings aller Teilressourcen zusammen. Weitere Informationen und Beschreibungen zum Mapping können auf der Seite [Mapping des digitalen Durchschlag E-T-Rezept](./menu-technische-umsetzung-mapping.html#mapping-des-digitalen-durchschlags-e-t-rezept) eingesehen werden.
 
 | Quelle (Eingangsdaten) | Ziel (Ausgabedaten) | Transformation & Beschreibung |
 |------------------------|---------------------|-------------------------------|
