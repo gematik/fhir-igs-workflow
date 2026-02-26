@@ -80,18 +80,7 @@ Hinweis: In VAU‑Requests sind u. a. die Header `X-erp-user: l` und `X-erp-reso
 Die Operation wird nach der Belieferung ausgelöst, sobald eine Einwilligung des Versicherten vorliegt und die Abrechnungsinformation digital bereitgestellt werden soll.
 
 ### Resource API
-
-<div class="gematik-apidoc"
-  data-api-type="FHIRResource"
-  data-api-fhir-resource-type="ChargeItem"
-  data-api-fhir-interaction="create"
-  data-api-operation-id="createChargeItem">
-  <div id="CapabilityStatement">
-    <pre>
-      {% include CapabilityStatement-erp-fachdienst-server-erpchrg.json %}
-    </pre>
-  </div>
-</div>
+TODO
 
 ### Anforderungen an Schnittstelle
 - [Spezifische Anforderungen für den E-Rezept-Fachdienst](./query-api-chargeitem-req-fd-post.html)
@@ -106,18 +95,7 @@ Versicherte können Markierungen am ChargeItem (z. B. für Einreichung) ändern.
 Der Anwendungsfall wird im FdV/AdV ausgelöst, wenn Markierungen angepasst werden.
 
 ### Resource API
-
-<div class="gematik-apidoc"
-  data-api-type="FHIRResource"
-  data-api-fhir-resource-type="ChargeItem"
-  data-api-fhir-interaction="patch"
-  data-api-operation-id="patchChargeItem">
-  <div id="CapabilityStatement">
-    <pre>
-      {% include CapabilityStatement-erp-fachdienst-server-erpchrg.json %}
-    </pre>
-  </div>
-</div>
+TODO
 
 ### Anforderungen an Schnittstelle
 - [Spezifische Anforderungen für den E-Rezept-Fachdienst](./query-api-chargeitem-req-fd-patch.html)
@@ -134,17 +112,7 @@ Die abgebende LEI überschreibt den PKV‑Abgabedatensatz eines ChargeItems. Daf
 Der Anwendungsfall wird ausgelöst, wenn Korrekturen an Abgabedaten notwendig sind.
 
 ### Resource API
-<div class="gematik-apidoc"
-  data-api-type="FHIRResource"
-  data-api-fhir-resource-type="ChargeItem"
-  data-api-fhir-interaction="update"
-  data-api-operation-id="updateChargeItem">
-  <div id="CapabilityStatement">
-    <pre>
-      {% include CapabilityStatement-erp-fachdienst-server-erpchrg.json %}
-    </pre>
-  </div>
-</div>
+TODO
 
 ### Anforderungen an Schnittstelle
 - [Spezifische Anforderungen für den E-Rezept-Fachdienst](./query-api-chargeitem-req-fd-put.html)
@@ -159,17 +127,7 @@ Versicherte können Abrechnungsinformationen löschen. Dabei werden auch die ref
 Der Anwendungsfall wird durch den Versicherten im FdV/AdV ausgelöst.
 
 ### Resource API
-<div class="gematik-apidoc"
-  data-api-type="FHIRResource"
-  data-api-fhir-resource-type="ChargeItem"
-  data-api-fhir-interaction="delete"
-  data-api-operation-id="deleteChargeItem">
-  <div id="CapabilityStatement">
-    <pre>
-      {% include CapabilityStatement-erp-fachdienst-server-erpchrg.json %}
-    </pre>
-  </div>
-</div>
+TODO
 
 ### Anforderungen an Schnittstelle
 - [Spezifische Anforderungen für den E-Rezept-Fachdienst](./query-api-chargeitem-req-fd-delete.html)

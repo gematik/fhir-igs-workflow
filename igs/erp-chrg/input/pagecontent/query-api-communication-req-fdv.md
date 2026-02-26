@@ -2,7 +2,7 @@ Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Communication`-
 TODO: Prüfverfahren
 
 <!--A_24563-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-44295E1K" title="E-Rezept-FdV: optional: Abrechnungsinformation-Token übermitteln" version="0">
+<requirement conformance="MAY" key="IG-ERP-CHRG-44295E1K" title="E-Rezept-FdV: optional: Abrechnungsinformation-Token übermitteln" version="0">
     <meta lockversion="false"/>
     <actor name="eRP_FdV">
         <testProcedure id="Herstellererklärung"/>

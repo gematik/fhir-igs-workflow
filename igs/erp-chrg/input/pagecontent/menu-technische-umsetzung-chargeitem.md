@@ -1,0 +1,1 @@
+- [Spezifische Anforderungen für das E-Rezept-FdV](./menu-technische-umsetzung-chargeitem-req-fdv.html)
