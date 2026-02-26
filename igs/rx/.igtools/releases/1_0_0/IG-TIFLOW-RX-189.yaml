@@ -1,0 +1,23 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: 916260f68429c2d2179b8f78339e5060bd87522e9edbb967439ffaa1af946199
+created: '2026-02-26T08:42:49.814296'
+date: '2026-02-26T08:42:49.814298'
+key: IG-TIFLOW-RX-189
+modified: '2026-02-26T08:42:49.814297'
+release_status: NEW
+source: input/pagecontent/op-close-fd-requirements.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mit Flowtype 160, 166,\
+  \ 169, 200 oder 209 mittels HTTP-POST/$close-Operation auf den in der URL referenzierten\
+  \ /Task/&lt;id&gt; sicherstellen, dass ausschließlich abgebende Institutionen in\
+  \ der Rolle\n    <ul>\n      <li>oid_oeffentliche_apotheke</li> \n      <li>oid_krankenhausapotheke</li>\n\
+  \    </ul>\n    die Operation am Fachdienst aufrufen dürfen und die Rolle \"professionOID\"\
+  \ des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen,\
+  \ damit der Workflow nicht durch einen Unberechtigten abgeschlossen werden kann."
+title: E-Rezept-Fachdienst - Task schließen - Flowtype 160/166/169/200/209 - Rollenprüfung
+version: 0

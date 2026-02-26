@@ -1,0 +1,26 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: c6ebc465ea891b299a2b6673d8c30f697fca3be1fdb7c0f497ae7e77180e8b28
+created: '2026-02-26T08:42:49.813038'
+date: '2026-02-26T08:42:49.813040'
+key: IG-TIFLOW-RX-181
+modified: '2026-02-26T08:42:49.813039'
+release_status: NEW
+source: input/pagecontent/op-dispense-fd-requirements.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: 'Der E-Rezept-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen
+  mittels POST /Task/&lt;id&gt;/$dispense das im http-Body des Requests enthaltene
+  Parameters-Objekt gegen das Profil https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PAR_DispenseOperation_Input
+  prüfen, insbesondere bei der darin enthaltenen MedicationDispense: die Korrektheit
+  der Rezept-ID https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId
+  als MedicationDispense.identifier die KVNR des Versicherten im referenzierten Task
+  (Task.for) gegen KVNR in MedicationDispense.subject:identifier und ob die Telematik-ID
+  der Apotheke gemäß ACCESS_TOKEN mit dem Wert in MedicationDispense.performer.actor:identifier
+  übereinstimmt und im Fehlerfall die Operation mit Http-Fehlercode 400 abbrechen.'
+title: E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Schemaprüfung
+  MedicationDispense
+version: 0

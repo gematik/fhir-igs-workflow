@@ -1,0 +1,21 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: 1b50a84c6e12b238086af326b24b1b8b679daa21b529eb7cb38ed97a2c63405b
+created: '2026-02-26T08:42:49.787278'
+date: '2026-02-26T08:42:49.787281'
+key: IG-TIFLOW-RX-40
+modified: '2026-02-26T08:42:49.787280'
+release_status: NEW
+source: input/pagecontent/query-api-task-fd-requirements.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation GET /Task und GET /Task/&lt;id&gt;
+  durch einen Versicherten oid_versicherter ein optional vorhandenes Task.identifier:Secret
+  als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret aus dem zurückgegebenen
+  Task entfernen, sodass Versicherte nicht in Kenntnis des Secrets gelangen, welches
+  die Prozesshoheit des Apothekers darstellt.
+title: E-Rezept-Fachdienst - Task abrufen - Kein Secret für Versicherte
+version: 0
