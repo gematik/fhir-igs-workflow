@@ -17,9 +17,7 @@ Der Umfang der Daten, der an das BfArM übertragen wird, ergibt sich einerseits 
 Hieraus ergibt sich, dass im Hinblick auf die Datenminimierung personenbezogener Daten
 
 keine Angaben zum Versicherten (gesetzlich verboten),
-keine Angaben zum ausstellenden Leistungserbringer (inkl. Signatur, da vom BfArM nicht benötigt),
-Informationen zur Kontaktaufnahme mit der abgebenden Apotheke (vom BfArM benötigt)
-übertragen werden.
+keine Angaben zum ausstellenden Leistungserbringer (inkl. Signatur, da vom BfArM nicht benötigt), Informationen zur Kontaktaufnahme mit der abgebenden Apotheke (vom BfArM benötigt) übertragen werden.
 
 Die Daten des digitalen Durchschlags stammen im Wesentlichen aus dem Verordnungsdatensatz, dem Dispensierdatensatz und dem FHIR-VZD.
 
