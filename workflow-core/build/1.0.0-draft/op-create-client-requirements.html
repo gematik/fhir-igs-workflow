@@ -227,6 +227,42 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </div>
 <p>Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an Clientsysteme für die Nutzung der Operation <code class="language-plaintext highlighter-rouge">$create</code>.</p>
 
+<!-- ToDo Ablaufdiagramm Anwendungsfall -->
+
+<!-- A_19276 -->
+<requirement conformance="SHALL" key="IG-WF-CORE-36" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-ID abrufen" version="0">
+  <meta lockversion="false" />
+  <actor name="PS_E-Rezept_verordnend">
+    <testProcedure id="Konformitätserklärung" />
+  </actor>
+  Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" für das E-Rezept die HTTP-Operation POST /Task/$create mit
+  <ul>
+    <li>ACCESS_TOKEN im Authorization-Header</li>
+    <li>Rezept-Typ im FlowType als Parameter der FHIR-Operation $create für Task </li>
+  </ul>
+  ausführen.
+</requirement>
+
+<p>Für weitere Informationen siehe Operation “E-Rezept erstellen” aus der API-Schnittstelle [E-Rezept API Dokumentation].</p>
+
+<p>Der Value-Katalog für FlowType ist in [gemSpec_DM_eRp] beschrieben.</p>
+
+<p>Der Response des Fachdienstes liefert</p>
+<ul>
+  <li>die Rezept-ID (Task.Identifier mit “https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId”), mit der das E-Rezept-Bundle vervollständigt wird,</li>
+  <li>die Task-ID (Task.id), mit dem der Task bei Aufrufen des E-Rezept-Fachdienstes referenziert wird,</li>
+  <li>und den AccessCode (Task.Identifier mit “https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_AccessCode”), welcher für den Zugriff auf das E-Rezept im Fachdienst berechtigt</li>
+</ul>
+
+<!-- A_22893 -->
+<requirement conformance="SHALL" key="IG-WF-CORE-36" title="PS verordnende LEI: E-Rezept erstellen - Gleichheit Ausstellungsdatum und QES Erstellung" version="0">
+  <meta lockversion="false" />
+  <actor name="PS_E-Rezept_verordnend">
+    <testProcedure id="Herstellererklärung" />
+  </actor>
+  Das PS der verordnenden LEI MUSS sicherstellen, dass das Datum authoredOn des Verordnungsdatensatzes dem Datum in QES.Erstellung im Signaturobjekt entspricht.
+</requirement>
+
 
 
 </div>
@@ -245,7 +281,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Feb 26, 2026 13:20+0000">2026-02-26</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Feb 26, 2026 14:45+0000">2026-02-26</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

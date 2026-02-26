@@ -17,6 +17,10 @@ Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Consent`-Query-
 
 ### Einwilligung erteilen
 
+**Sequenzdiagramm:**
+
+**Abbildung: **UC 3.14 - Einwilligung durch Versicherten erteilen
+
 Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung erteilen" den Text für die Einwilligung derart gestalten, dass dem Nutzer eine informierte Einwilligung möglich ist. Insbesondere MÜSSEN enthalten sein: der Verwendungszweck, die konkreten Informationen über die Art der erhobenen Daten, die Speicherdauer, Hinweis auf Freiwilligkeit, auf Widerrufsrecht, Hinweis auf die Folgen bei Verweigerung oder Widerruf.
 
 Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung erteilen" es dem Nutzer ermöglichen, die Einwilligung einzugeben.
