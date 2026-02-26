@@ -13,9 +13,7 @@ Version 1.0.0-draft - ci-build
 
 ## FD-Anforderungen: Device-Query
 
-# FD-Anforderungen: Query API Device
-
-Diese Seite enthaelt die normativen Anforderungen an den E-Rezept-Fachdienst fuer den Device-Query-Endpunkt.
+Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für den Device-Query-Endpunkt.
 
 Der E-Rezept-Fachdienst MUSS über die http-Operation GET /Device dem aufrufenden Clientsystem eine statische Auskunft gemäß der Profilierung der Device-Ressource bereitstellen.
 

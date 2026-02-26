@@ -13,3 +13,5 @@ Version 1.0.0-draft - ci-build
 
 ## Client-Anforderungen $create
 
+Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an Clientsysteme für die Nutzung der Operation `$create`.
+

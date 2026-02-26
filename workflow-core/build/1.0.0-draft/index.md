@@ -14,7 +14,7 @@ Version 1.0.0-draft - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/workflow/core/ImplementationGuide/de.gematik.workflow.core | *Version*:1.0.0-draft |
-| Draft as of 2026-02-24 | *Computable Name*:ERezeptWorkflowCore |
+| Draft as of 2026-02-26 | *Computable Name*:ERezeptWorkflowCore |
 
 # Implementation Guide E-Rezept-Workflow Core
 
@@ -57,7 +57,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
   "name" : "ERezeptWorkflowCore",
   "title" : "Implementation Guide E-Rezept-Workflow Core",
   "status" : "draft",
-  "date" : "2026-02-24T23:23:02+00:00",
+  "date" : "2026-02-26T06:40:44+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -1004,6 +1004,15 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
           "title" : "Query API: Communication",
           "generation" : "markdown",
           "page" : [{
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-communication-fd-requirements.html"
+            }],
+            "nameUrl" : "query-api-communication-fd-requirements.html",
+            "title" : "FD-Anforderungen: Communication-Query",
+            "generation" : "markdown"
+          },
+          {
             "extension" : [{
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
               "valueUrl" : "query-api-communication-client-requirements.html"

@@ -22,7 +22,7 @@ Die AuditEvent-Query wird ueber HTTP `GET` auf `/AuditEvent` und `/AuditEvent/{i
 
 ### Anforderungen an Schnittstelle
 
-* [FD-Anforderungen zur AuditEvent-Query](./query-api-auditevent-fd-requirements.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+* [Server-Anforderungen zur AuditEvent-Query](./query-api-auditevent-fd-requirements.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
 * [Client-Anforderungen zur AuditEvent-Query](./query-api-auditevent-client-requirements.md): Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.
 
 ### API Beschreibung
