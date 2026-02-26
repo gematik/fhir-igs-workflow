@@ -81,3 +81,15 @@ Example module entry:
 Diagrams are referenced via `diagram` in the core use case and copied into the module's
 `input/images-source` during the merge if missing. You can override `diagram` in the module
 entry if a module-specific diagram is needed.
+
+## Core Markdown Includes in Module IGs
+
+Module pages can include selected Markdown snippets from core without copying all core pages.
+
+- In module pagecontent, reference includes using the prefix `core-`, e.g.
+	`{% include core-query-api-consent-fd-requirements.md %}`
+- Build step copies only referenced `core-*.md` includes from
+	`igs/core/input/pagecontent/<name>.md` to `igs/<module>/input/includes/core-<name>.md`
+- Sync script: [scripts/merge-core-includes.sh](scripts/merge-core-includes.sh)
+
+This keeps core as source of truth and synchronizes only tagged include files.
