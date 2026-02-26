@@ -1,19 +1,20 @@
-Dieser Implementation Guide beschreibt Profile und deren Verwendung für den Datenaustausch zwischen dem E-Rezept-Fachdienst und dem BfArM T-Register im Kontext E-T-Rezept.
+Dieser Implementation Guide beschreibt Profile und deren Verwendung für den Datenaustausch zwischen dem E-Rezept-Fachdienst und dem BfArM Webdienst.
 
 ### Zweck und Geltungsbereich
 
-- Digitaler Durchschlag T-Rezept (Übertragung an das T-Register)
+- Übertragung des digitalen Durchschlags E-T-Rezept an das BfArM T-Register
 - Profile und Mappingdaten für den Datenaustausch
 - Dokumentation der relevanten Anwendungsfälle
 
 ### Nicht im Scope
 
-- Fachliche Verordnungsszenarien außerhalb des T-Register-Austauschs
-- Abrechnung und Leistungserbringung
+- Beschreibung des Workflow **166** zur Verordnung von E-T-Rezepten, hierzu siehe [gemIG_TIFlow_rx].
 
 ### Wie dieser IG zu lesen ist
 
-Die Übersichtsseite des Szenarios beschreibt die fachlichen Anforderungen und den Zielzustand. Die Profilseiten erklären Struktur und Verwendung der Artefakte. Downloads und Beispiele sind im Bereich "Downloads" verfügbar.
+Dieser Implementation Guide ist "von links nach rechts" zu lesen. Die Menüstruktur beginnt mit fachlichen Inhalten, welche über die technischen Anwendungsfälle dann in den Spezifikationen der Endpunkte und APIs münden. Es wird empfohlen, die Inhalte in der vorgegebenen Reihenfolge zu lesen, um ein umfassendes Verständnis der Anforderungen und Spezifikationen zu erhalten.
+
+Für einen Überblick über die Inhalte und die Struktur dieses Implementation Guides kann die [Inhaltsübersicht](toc.html) konsultiert werden. Dort sind die verschiedenen Kapitel und Abschnitte mit ihren jeweiligen Inhalten und Anforderungen aufgeführt.
 
 ### Abhängigkeiten
 

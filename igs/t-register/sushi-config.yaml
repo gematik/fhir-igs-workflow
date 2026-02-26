@@ -6,14 +6,14 @@
 id: de.gematik.erp-t-prescription
 canonical: https://gematik.de/fhir/erp-t-prescription
 name: gemIG_TIFlow_bfarm
-title: "Übertragung an den BfArM"
+title: "Datenaustausch E-Rezept-Fachdienst an den BfArM Webdienst"
 description: Dieser IG Beschreibt Schnittstellen und Profile für den Datenaustauch zwischen E-Rezept-Fachdienst und BfArM Webdienst
-status: active # draft | active | retired | unknown
-version: 1.1.0
+status: draft # draft | active | retired | unknown
+version: 1.0.0
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 applyExtensionMetadataToRoot: false
 copyrightYear: 2025+
-releaseLabel: release # ci-build, ballot, release
+releaseLabel: ci-build # ci-build, ballot, release
 # license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 jurisdiction: urn:iso:std:iso:3166#DE "Germany" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
@@ -263,6 +263,7 @@ instanceOptions:
   # setId: always # always | standalone-only
 
 parameters:
+  shownav: true
   bundle-references-resolve: false
   no-validate:
     - Bundle/example-case-01-mapping-bundle
