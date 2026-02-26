@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureMap xmlns="http://hl7.org/fhir">
+  <id value="ERPTPrescriptionStructureMapKBVIngredientMedication"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: StructureMap ERPTPrescriptionStructureMapKBVIngredientMedication</b></p><a name="ERPTPrescriptionStructureMapKBVIngredientMedication"> </a><a name="hcERPTPrescriptionStructureMapKBVIngredientMedication"> </a><pre class="fml">
+<b>map</b><span style="color: navy"> &quot;</span>https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapKBVIngredientMedication<span style="color: navy">&quot; = &quot;</span>ERPTPrescriptionStructureMapKBVIngredientMedication<span style="color: navy">&quot;
+
+</span><span style="color: navy">// </span><span style="color: green">Maps KBV-Ingredient ERP Medication to BfArM T-Prescription Medication format</span>
+
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/medication.html" title="Medication">http://hl7.org/fhir/StructureDefinition/Medication</a><span style="color: navy">&quot; </span><b>alias </b>kbvMedicationIngredient <b>as </b><b>source</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/medication.html" title="Medication">http://hl7.org/fhir/StructureDefinition/Medication</a><span style="color: navy">&quot; </span><b>alias </b>bfarmMedication <b>as </b><b>target</b>
+
+<span style="color: navy">// </span><span style="color: green">Mapping-Anweisungen zur Transformation von KBV Wirkstoff-Medikamenten zu BfArM T-Prescription Format</span>
+<b>group </b>ERPTPrescriptionStructureMapKBVIngredientMedication<span style="color: navy">(</span><b>source</b> <span style="color: maroon">kbvMedicationIngredient</span><span style="color: navy"> : </span>kbvMedicationIngredient, <b>target</b> <span style="color: maroon">bfarmMedication</span><span style="color: navy"> : </span>bfarmMedication<span style="color: navy">)</span><span style="color: navy"> {
+</span>  kbvMedicationIngredient.id<b> as </b><span style="color: maroon">IdVar</span><span style="color: navy"><b> -&gt; </b></span>bfarmMedication.id = <span style="color: maroon">IdVar</span> <i>&quot;medicationId&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Übernimmt die eindeutige Medication-ID unverändert</span>
+  kbvMedicationIngredient.form<b> as </b><span style="color: maroon">formVar</span><span style="color: navy"><b> -&gt; </b></span>bfarmMedication.form = <span style="color: maroon">formVar</span> <i>&quot;medicationForm&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Kopiert die gewünschte Darreichungsform für die Wirkstoff-Verordnung (Kapseln, Salbe, Lösung, etc.)</span>
+  kbvMedicationIngredient.amount<b> as </b><span style="color: maroon">amountVar</span><span style="color: navy"><b> -&gt; </b></span>bfarmMedication.amount<b> as </b><span style="color: maroon">tgtAmountVar</span><b> then</b><span style="color: navy"> {
+</span>    amountVar.denominator<b> as </b><span style="color: maroon">amountDenominatorVar</span><span style="color: navy"><b> -&gt; </b></span>tgtAmountVar.denominator = <span style="color: maroon">amountDenominatorVar</span> <i>&quot;medicationAmountDenominator&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Kopiert den Nenner der Mengenangabe (z.B. '1' für 'pro Herstellung')</span>
+    amountVar.numerator<b> as </b><span style="color: maroon">amountNumeratorVar</span><span style="color: navy"><b> -&gt; </b></span>tgtAmountVar.numerator<b> as </b><span style="color: maroon">tgtAmountNumeratorVar</span><b> then</b><span style="color: navy"> {
+</span>      amountNumeratorVar.extension<b> as </b><span style="color: maroon">amountNumExtVar</span><span style="color: navy"><b> -&gt; </b></span>tgtAmountNumeratorVar.extension<b> as </b><span style="color: maroon">tgtAmountNumExtVar</span><b> then</b><span style="color: navy"> {
+</span>        amountNumExtVar<b> where </b>url='https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_PackagingSize'<span style="color: navy"><b> -&gt; </b></span>tgtAmountNumExtVar.url = <span style="color: blue">'https://gematik.de/fhir/epa-medication/StructureDefinition/medication-packaging-size-extension'</span><b> then</b><span style="color: navy"> {
+</span>          amountNumExtVar.value<b> as </b><span style="color: maroon">extValVar</span><span style="color: navy"><b> -&gt; </b></span>tgtAmountNumExtVar.value = <span style="color: maroon">extValVar</span> <i>&quot;copyExtensionValue&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Übernimmt den Packungsgrößenwert</span>
+        <span style="color: navy">}</span> <i>&quot;copyPackagingSizeExtensionUrl&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Wandelt KBV-Packungsgrößen-Extension in gematik EPA-Medication Extension um</span>
+      <span style="color: navy">}</span> <i>&quot;medicationAmountExt&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Transformiert Packungsgrößen-Extensions von KBV- zu gematik-Format für Wirkstoff Verordnung</span>
+      amountNumeratorVar.value<b> as </b><span style="color: maroon">amountNumeratorValueVar</span><span style="color: navy"><b> -&gt; </b></span>tgtAmountNumeratorVar.value = <span style="color: maroon">amountNumeratorValueVar</span> <i>&quot;medicationAmountNumeratorValue&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Kopiert den numerischen Wert der Gesamtmenge (z.B. '100' für 100g Salbe)</span>
+      amountNumeratorVar.unit<b> as </b><span style="color: maroon">amountNumeratorUnitVar</span><span style="color: navy"><b> -&gt; </b></span>tgtAmountNumeratorVar.unit = <span style="color: maroon">amountNumeratorUnitVar</span> <i>&quot;medicationAmountNumeratorUnit&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Übernimmt die Mengeneinheit (g, ml, Stück, etc.)</span>
+      amountNumeratorVar.system<b> as </b><span style="color: maroon">amountNumeratorSystemVar</span><span style="color: navy"><b> -&gt; </b></span>tgtAmountNumeratorVar.system = <span style="color: maroon">amountNumeratorSystemVar</span> <i>&quot;medicationAmountNumeratorSystem&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Kopiert das Codesystem für die Mengeneinheit (meist UCUM)</span>
+      amountNumeratorVar.code<b> as </b><span style="color: maroon">amountNumeratorCodeVar</span><span style="color: navy"><b> -&gt; </b></span>tgtAmountNumeratorVar.code = <span style="color: maroon">amountNumeratorCodeVar</span> <i>&quot;medicationAmountNumeratorCode&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Übernimmt den standardisierten Code für die Mengeneinheit</span>
+    <span style="color: navy">}</span> <i>&quot;medicationAmountNumerator&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Mappt die detaillierte Mengenangabe</span>
+  <span style="color: navy">}</span> <i>&quot;medicationAmount&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Mappt die Gesamtmenge der herzustellenden Wirkstoff-Verordnung</span>
+  kbvMedicationIngredient.ingredient<b> as </b><span style="color: maroon">ingredientVar</span><span style="color: navy"><b> -&gt; </b></span>bfarmMedication.ingredient = <span style="color: maroon">ingredientVar</span> <i>&quot;medicationIngredient&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Kopiert die detaillierten Wirkstoffinformationen mit Konzentrationen und Mengenangaben</span>
+<span style="color: navy">}
+
+</span></pre></div>
+  </text>
+  <url value="https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapKBVIngredientMedication"/>
+  <version value="1.0.0"/>
+  <name value="ERPTPrescriptionStructureMapKBVIngredientMedication"/>
+  <title value="E-T-Rezept Structure Map for KBV Ingredient Medication"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2025-12-19"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="erp-umsetzung@gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="Maps KBV-Ingredient ERP Medication to BfArM T-Prescription Medication format"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/Medication"/>
+    <mode value="source"/>
+    <alias value="kbvMedicationIngredient"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/Medication"/>
+    <mode value="target"/>
+    <alias value="bfarmMedication"/>
+  </structure>
+  <group>
+    <name value="ERPTPrescriptionStructureMapKBVIngredientMedication"/>
+    <typeMode value="none"/>
+    <documentation value="Mapping-Anweisungen zur Transformation von KBV Wirkstoff-Medikamenten zu BfArM T-Prescription Format"/>
+    <input>
+      <name value="kbvMedicationIngredient"/>
+      <type value="kbvMedicationIngredient"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="bfarmMedication"/>
+      <type value="bfarmMedication"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="medicationId"/>
+      <source>
+        <context value="kbvMedicationIngredient"/>
+        <element value="id"/>
+        <variable value="IdVar"/>
+      </source>
+      <target>
+        <context value="bfarmMedication"/>
+        <contextType value="variable"/>
+        <element value="id"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="IdVar"/>
+        </parameter>
+      </target>
+      <documentation value="Übernimmt die eindeutige Medication-ID unverändert"/>
+    </rule>
+    <rule>
+      <name value="medicationForm"/>
+      <source>
+        <context value="kbvMedicationIngredient"/>
+        <element value="form"/>
+        <variable value="formVar"/>
+      </source>
+      <target>
+        <context value="bfarmMedication"/>
+        <contextType value="variable"/>
+        <element value="form"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="formVar"/>
+        </parameter>
+      </target>
+      <documentation value="Kopiert die gewünschte Darreichungsform für die Wirkstoff-Verordnung (Kapseln, Salbe, Lösung, etc.)"/>
+    </rule>
+    <rule>
+      <name value="medicationAmount"/>
+      <source>
+        <context value="kbvMedicationIngredient"/>
+        <element value="amount"/>
+        <variable value="amountVar"/>
+      </source>
+      <target>
+        <context value="bfarmMedication"/>
+        <contextType value="variable"/>
+        <element value="amount"/>
+        <variable value="tgtAmountVar"/>
+      </target>
+      <rule>
+        <name value="medicationAmountDenominator"/>
+        <source>
+          <context value="amountVar"/>
+          <element value="denominator"/>
+          <variable value="amountDenominatorVar"/>
+        </source>
+        <target>
+          <context value="tgtAmountVar"/>
+          <contextType value="variable"/>
+          <element value="denominator"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueId value="amountDenominatorVar"/>
+          </parameter>
+        </target>
+        <documentation value="Kopiert den Nenner der Mengenangabe (z.B. '1' für 'pro Herstellung')"/>
+      </rule>
+      <rule>
+        <name value="medicationAmountNumerator"/>
+        <source>
+          <context value="amountVar"/>
+          <element value="numerator"/>
+          <variable value="amountNumeratorVar"/>
+        </source>
+        <target>
+          <context value="tgtAmountVar"/>
+          <contextType value="variable"/>
+          <element value="numerator"/>
+          <variable value="tgtAmountNumeratorVar"/>
+        </target>
+        <rule>
+          <name value="medicationAmountExt"/>
+          <source>
+            <context value="amountNumeratorVar"/>
+            <element value="extension"/>
+            <variable value="amountNumExtVar"/>
+          </source>
+          <target>
+            <context value="tgtAmountNumeratorVar"/>
+            <contextType value="variable"/>
+            <element value="extension"/>
+            <variable value="tgtAmountNumExtVar"/>
+          </target>
+          <rule>
+            <name value="copyPackagingSizeExtensionUrl"/>
+            <source>
+              <context value="amountNumExtVar"/>
+              <condition value="url='https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_PackagingSize'"/>
+            </source>
+            <target>
+              <context value="tgtAmountNumExtVar"/>
+              <contextType value="variable"/>
+              <element value="url"/>
+              <transform value="copy"/>
+              <parameter>
+                <valueString value="https://gematik.de/fhir/epa-medication/StructureDefinition/medication-packaging-size-extension"/>
+              </parameter>
+            </target>
+            <rule>
+              <name value="copyExtensionValue"/>
+              <source>
+                <context value="amountNumExtVar"/>
+                <element value="value"/>
+                <variable value="extValVar"/>
+              </source>
+              <target>
+                <context value="tgtAmountNumExtVar"/>
+                <contextType value="variable"/>
+                <element value="value"/>
+                <transform value="copy"/>
+                <parameter>
+                  <valueId value="extValVar"/>
+                </parameter>
+              </target>
+              <documentation value="Übernimmt den Packungsgrößenwert"/>
+            </rule>
+            <documentation value="Wandelt KBV-Packungsgrößen-Extension in gematik EPA-Medication Extension um"/>
+          </rule>
+          <documentation value="Transformiert Packungsgrößen-Extensions von KBV- zu gematik-Format für Wirkstoff Verordnung"/>
+        </rule>
+        <rule>
+          <name value="medicationAmountNumeratorValue"/>
+          <source>
+            <context value="amountNumeratorVar"/>
+            <element value="value"/>
+            <variable value="amountNumeratorValueVar"/>
+          </source>
+          <target>
+            <context value="tgtAmountNumeratorVar"/>
+            <contextType value="variable"/>
+            <element value="value"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueId value="amountNumeratorValueVar"/>
+            </parameter>
+          </target>
+          <documentation value="Kopiert den numerischen Wert der Gesamtmenge (z.B. '100' für 100g Salbe)"/>
+        </rule>
+        <rule>
+          <name value="medicationAmountNumeratorUnit"/>
+          <source>
+            <context value="amountNumeratorVar"/>
+            <element value="unit"/>
+            <variable value="amountNumeratorUnitVar"/>
+          </source>
+          <target>
+            <context value="tgtAmountNumeratorVar"/>
+            <contextType value="variable"/>
+            <element value="unit"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueId value="amountNumeratorUnitVar"/>
+            </parameter>
+          </target>
+          <documentation value="Übernimmt die Mengeneinheit (g, ml, Stück, etc.)"/>
+        </rule>
+        <rule>
+          <name value="medicationAmountNumeratorSystem"/>
+          <source>
+            <context value="amountNumeratorVar"/>
+            <element value="system"/>
+            <variable value="amountNumeratorSystemVar"/>
+          </source>
+          <target>
+            <context value="tgtAmountNumeratorVar"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueId value="amountNumeratorSystemVar"/>
+            </parameter>
+          </target>
+          <documentation value="Kopiert das Codesystem für die Mengeneinheit (meist UCUM)"/>
+        </rule>
+        <rule>
+          <name value="medicationAmountNumeratorCode"/>
+          <source>
+            <context value="amountNumeratorVar"/>
+            <element value="code"/>
+            <variable value="amountNumeratorCodeVar"/>
+          </source>
+          <target>
+            <context value="tgtAmountNumeratorVar"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueId value="amountNumeratorCodeVar"/>
+            </parameter>
+          </target>
+          <documentation value="Übernimmt den standardisierten Code für die Mengeneinheit"/>
+        </rule>
+        <documentation value="Mappt die detaillierte Mengenangabe"/>
+      </rule>
+      <documentation value="Mappt die Gesamtmenge der herzustellenden Wirkstoff-Verordnung"/>
+    </rule>
+    <rule>
+      <name value="medicationIngredient"/>
+      <source>
+        <context value="kbvMedicationIngredient"/>
+        <element value="ingredient"/>
+        <variable value="ingredientVar"/>
+      </source>
+      <target>
+        <context value="bfarmMedication"/>
+        <contextType value="variable"/>
+        <element value="ingredient"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="ingredientVar"/>
+        </parameter>
+      </target>
+      <documentation value="Kopiert die detaillierten Wirkstoffinformationen mit Konzentrationen und Mengenangaben"/>
+    </rule>
+  </group>
+</StructureMap>

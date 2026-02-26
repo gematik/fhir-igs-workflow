@@ -1,0 +1,38 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/erp-t-prescription/Organization/ExampleOrganization-T> a fhir:Organization ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ExampleOrganization-T"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-organization"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-organization>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Organization ExampleOrganization-T</b></p><a name=\"ExampleOrganization-T\"> </a><a name=\"hcExampleOrganization-T\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-erp-tprescription-organization.html\">E-T-Rezept Organization</a></p></div><p><b>identifier</b>: 3-Test-APO000053</p><p><b>name</b>: Stadt-Apotheke</p><p><b>telecom</b>: <a href=\"tel:+499876543210\">+49 987 6543210</a></p><p><b>address</b>: Hauptstraße 10 Beispielstadt 54321 DE </p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:value [ fhir:v "3-Test-APO000053" ]
+  ] ) ; # 
+  fhir:name [ fhir:v "Stadt-Apotheke"] ; # 
+  fhir:telecom ( [
+     fhir:system [ fhir:v "phone" ] ;
+     fhir:value [ fhir:v "+49 987 6543210" ]
+  ] ) ; # 
+  fhir:address ( [
+     fhir:line ( [ fhir:v "Hauptstraße 10" ] ) ;
+     fhir:city [ fhir:v "Beispielstadt" ] ;
+     fhir:postalCode [ fhir:v "54321" ] ;
+     fhir:country [ fhir:v "DE" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

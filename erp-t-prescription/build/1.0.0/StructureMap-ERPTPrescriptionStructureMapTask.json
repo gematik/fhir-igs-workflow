@@ -1,0 +1,97 @@
+{
+  "resourceType" : "StructureMap",
+  "id" : "ERPTPrescriptionStructureMapTask",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap ERPTPrescriptionStructureMapTask</b></p><a name=\"ERPTPrescriptionStructureMapTask\"> </a><a name=\"hcERPTPrescriptionStructureMapTask\"> </a><pre class=\"fml\">\r\n<b>map</b><span style=\"color: navy\"> &quot;</span>https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapTask<span style=\"color: navy\">&quot; = &quot;</span>ERPTPrescriptionStructureMapTask<span style=\"color: navy\">&quot;\r\n\r\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">Mappt die E-Rezept ID aus dem Task in ein Identifier Objekt</span>\r\n\r\n<b>uses</b><span style=\"color: navy\"> &quot;</span>https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task<span style=\"color: navy\">&quot; </span><b>alias </b>task <b>as </b><b>source</b>\r\n<b>uses</b><span style=\"color: navy\"> &quot;</span><a href=\"http://hl7.org/fhir/R4/datatypes.html#Identifier\" title=\"Identifier\">http://hl7.org/fhir/StructureDefinition/Identifier</a><span style=\"color: navy\">&quot; </span><b>alias </b>tgtIdentifier <b>as </b><b>target</b>\r\n\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">Mapping Anweisungen für GEM_Task</span>\r\n<b>group </b>ERPTPrescriptionStructureMapTask<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">task</span><span style=\"color: navy\"> : </span>task, <b>target</b> <span style=\"color: maroon\">tgtIdentifier</span><span style=\"color: navy\"> : </span>tgtIdentifier<span style=\"color: navy\">)</span><span style=\"color: navy\"> {\r\n</span>  task.identifier<b> as </b><span style=\"color: maroon\">srcTaskIdentifier</span><b> where </b>$this.system='https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId'<b> then</b><span style=\"color: navy\"> {\r\n</span>    srcTaskIdentifier.value<b> as </b><span style=\"color: maroon\">srcTaskIdentifierValue</span><b> log </b>tgtIdentifier<span style=\"color: navy\"><b> -&gt; </b></span> tgtIdentifier.system = <span style=\"color: blue\">'https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId'</span><span style=\"color: navy\">, </span> tgtIdentifier.value = <span style=\"color: maroon\">srcTaskIdentifierValue</span> <i>&quot;prescriptionIdValue&quot;</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Mappt die E-Rezept-ID aus dem Task in den Identifier</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;prescriptionId&quot;</i><span style=\"color: navy\">;</span>\r\n<span style=\"color: navy\">}\r\n\r\n</span></pre></div>"
+  },
+  "url" : "https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapTask",
+  "version" : "1.0.0",
+  "name" : "ERPTPrescriptionStructureMapTask",
+  "title" : "E-T-Rezept Structure Map for Task",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2025-12-19",
+  "publisher" : "gematik GmbH",
+  "contact" : [{
+    "name" : "gematik GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://gematik.de"
+    },
+    {
+      "system" : "email",
+      "value" : "erp-umsetzung@gematik.de"
+    }]
+  }],
+  "description" : "Mappt die E-Rezept ID aus dem Task in ein Identifier Objekt",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "structure" : [{
+    "url" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task",
+    "mode" : "source",
+    "alias" : "task"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/Identifier",
+    "mode" : "target",
+    "alias" : "tgtIdentifier"
+  }],
+  "group" : [{
+    "name" : "ERPTPrescriptionStructureMapTask",
+    "typeMode" : "none",
+    "documentation" : "Mapping Anweisungen für GEM_Task",
+    "input" : [{
+      "name" : "task",
+      "type" : "task",
+      "mode" : "source"
+    },
+    {
+      "name" : "tgtIdentifier",
+      "type" : "tgtIdentifier",
+      "mode" : "target"
+    }],
+    "rule" : [{
+      "name" : "prescriptionId",
+      "source" : [{
+        "context" : "task",
+        "element" : "identifier",
+        "variable" : "srcTaskIdentifier",
+        "condition" : "$this.system='https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId'"
+      }],
+      "rule" : [{
+        "name" : "prescriptionIdValue",
+        "source" : [{
+          "context" : "srcTaskIdentifier",
+          "element" : "value",
+          "variable" : "srcTaskIdentifierValue",
+          "logMessage" : "tgtIdentifier"
+        }],
+        "target" : [{
+          "context" : "tgtIdentifier",
+          "contextType" : "variable",
+          "element" : "system",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"
+          }]
+        },
+        {
+          "context" : "tgtIdentifier",
+          "contextType" : "variable",
+          "element" : "value",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueId" : "srcTaskIdentifierValue"
+          }]
+        }],
+        "documentation" : "Mappt die E-Rezept-ID aus dem Task in den Identifier"
+      }]
+    }]
+  }]
+}

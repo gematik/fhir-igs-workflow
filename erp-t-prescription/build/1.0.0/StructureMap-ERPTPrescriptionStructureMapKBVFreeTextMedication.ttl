@@ -1,0 +1,170 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapKBVFreeTextMedication> a fhir:StructureMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ERPTPrescriptionStructureMapKBVFreeTextMedication"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap ERPTPrescriptionStructureMapKBVFreeTextMedication</b></p><a name=\"ERPTPrescriptionStructureMapKBVFreeTextMedication\"> </a><a name=\"hcERPTPrescriptionStructureMapKBVFreeTextMedication\"> </a><pre class=\"fml\">#xD;\n<b>map</b><span style=\"color: navy\"> \"</span>https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapKBVFreeTextMedication<span style=\"color: navy\">\" = \"</span>ERPTPrescriptionStructureMapKBVFreeTextMedication<span style=\"color: navy\">\"#xD;\n#xD;\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">Maps KBV FreeText Medication to BfArM T-Prescription Medication format</span>#xD;\n#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/medication.html\" title=\"Medication\">http://hl7.org/fhir/StructureDefinition/Medication</a><span style=\"color: navy\">\" </span><b>alias </b>kbvMedicationFreeText <b>as </b><b>source</b>#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/medication.html\" title=\"Medication\">http://hl7.org/fhir/StructureDefinition/Medication</a><span style=\"color: navy\">\" </span><b>alias </b>bfarmMedication <b>as </b><b>target</b>#xD;\n#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">Mapping-Anweisungen zur Transformation von KBV Freitext-Medikamenten zu BfArM T-Prescription Format</span>#xD;\n<b>group </b>ERPTPrescriptionStructureMapKBVFreeTextMedication<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">kbvMedicationFreeText</span><span style=\"color: navy\"> : </span>kbvMedicationFreeText, <b>target</b> <span style=\"color: maroon\">bfarmMedication</span><span style=\"color: navy\"> : </span>bfarmMedication<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  kbvMedicationFreeText.id<b> as </b><span style=\"color: maroon\">IdVar</span><span style=\"color: navy\"><b> -&gt; </b></span>bfarmMedication.id = <span style=\"color: maroon\">IdVar</span> <i>\"medicationId\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Übernimmt die eindeutige Medication-ID unverändert</span>#xD;\n  kbvMedicationFreeText.code<b> as </b><span style=\"color: maroon\">srcCodeVar</span><span style=\"color: navy\"><b> -&gt; </b></span>bfarmMedication.code<b> as </b><span style=\"color: maroon\">tgtCodeVar</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    srcCodeVar.text<b> as </b><span style=\"color: maroon\">srcCodeTextVar</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtCodeVar.text = <span style=\"color: maroon\">srcCodeTextVar</span> <i>\"medicationCodeText\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Kopiert die Freitext-Bezeichnung des Medikaments (z.B. 'Aspirin 500mg Tabletten')</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"medicationCode\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Mappt den Medikamentencode mit Freitext-Beschreibung</span>#xD;\n  kbvMedicationFreeText.form<b> as </b><span style=\"color: maroon\">srcFormVar</span><span style=\"color: navy\"><b> -&gt; </b></span>bfarmMedication.form<b> as </b><span style=\"color: maroon\">tgtFormVar</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    srcFormVar.text<b> as </b><span style=\"color: maroon\">srcformTextVar</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtFormVar.text = <span style=\"color: maroon\">srcformTextVar</span> <i>\"medicationFormText\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Übernimmt die Freitext-Darreichungsform (z.B. 'Tabletten', 'Tropfen zum Einnehmen')</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"medicationForm\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Mappt die Darreichungsform als Freitext</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span></pre></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapKBVFreeTextMedication"^^xsd:anyURI ;
+     fhir:l <https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapKBVFreeTextMedication>
+  ] ; # 
+  fhir:version [ fhir:v "1.0.0"] ; # 
+  fhir:name [ fhir:v "ERPTPrescriptionStructureMapKBVFreeTextMedication"] ; # 
+  fhir:title [ fhir:v "E-T-Rezept Structure Map for KBV FreeText Medication"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-12-19"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "gematik GmbH"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "gematik GmbH" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://gematik.de" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "erp-umsetzung@gematik.de" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Maps KBV FreeText Medication to BfArM T-Prescription Medication format"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "DE" ] ;
+       fhir:display [ fhir:v "Germany" ]
+     ] )
+  ] ) ; # 
+  fhir:structure ( [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/Medication"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/Medication>
+     ] ;
+     fhir:mode [ fhir:v "source" ] ;
+     fhir:alias [ fhir:v "kbvMedicationFreeText" ]
+  ] [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/Medication"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/Medication>
+     ] ;
+     fhir:mode [ fhir:v "target" ] ;
+     fhir:alias [ fhir:v "bfarmMedication" ]
+  ] ) ; # 
+  fhir:group ( [
+     fhir:name [ fhir:v "ERPTPrescriptionStructureMapKBVFreeTextMedication" ] ;
+     fhir:typeMode [ fhir:v "none" ] ;
+     fhir:documentation [ fhir:v "Mapping-Anweisungen zur Transformation von KBV Freitext-Medikamenten zu BfArM T-Prescription Format" ] ;
+     fhir:input ( [
+       fhir:name [ fhir:v "kbvMedicationFreeText" ] ;
+       fhir:type [ fhir:v "kbvMedicationFreeText" ] ;
+       fhir:mode [ fhir:v "source" ]
+     ] [
+       fhir:name [ fhir:v "bfarmMedication" ] ;
+       fhir:type [ fhir:v "bfarmMedication" ] ;
+       fhir:mode [ fhir:v "target" ]
+     ] ) ;
+     fhir:rule ( [
+       fhir:name [ fhir:v "medicationId" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "kbvMedicationFreeText" ] ;
+         fhir:element [ fhir:v "id" ] ;
+         fhir:variable [ fhir:v "IdVar" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "bfarmMedication" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "id" ] ;
+         fhir:transform [ fhir:v "copy" ] ;
+         fhir:parameter ( [
+           fhir:value [
+             a fhir:Id ;
+             fhir:v "IdVar"
+           ]
+         ] )
+       ] ) ;
+       fhir:documentation [ fhir:v "Übernimmt die eindeutige Medication-ID unverändert" ]
+     ] [
+       fhir:name [ fhir:v "medicationCode" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "kbvMedicationFreeText" ] ;
+         fhir:element [ fhir:v "code" ] ;
+         fhir:variable [ fhir:v "srcCodeVar" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "bfarmMedication" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "code" ] ;
+         fhir:variable [ fhir:v "tgtCodeVar" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "medicationCodeText" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "srcCodeVar" ] ;
+           fhir:element [ fhir:v "text" ] ;
+           fhir:variable [ fhir:v "srcCodeTextVar" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgtCodeVar" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "text" ] ;
+           fhir:transform [ fhir:v "copy" ] ;
+           fhir:parameter ( [
+             fhir:value [
+               a fhir:Id ;
+               fhir:v "srcCodeTextVar"
+             ]
+           ] )
+         ] ) ;
+         fhir:documentation [ fhir:v "Kopiert die Freitext-Bezeichnung des Medikaments (z.B. 'Aspirin 500mg Tabletten')" ]
+       ] ) ;
+       fhir:documentation [ fhir:v "Mappt den Medikamentencode mit Freitext-Beschreibung" ]
+     ] [
+       fhir:name [ fhir:v "medicationForm" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "kbvMedicationFreeText" ] ;
+         fhir:element [ fhir:v "form" ] ;
+         fhir:variable [ fhir:v "srcFormVar" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "bfarmMedication" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "form" ] ;
+         fhir:variable [ fhir:v "tgtFormVar" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "medicationFormText" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "srcFormVar" ] ;
+           fhir:element [ fhir:v "text" ] ;
+           fhir:variable [ fhir:v "srcformTextVar" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgtFormVar" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "text" ] ;
+           fhir:transform [ fhir:v "copy" ] ;
+           fhir:parameter ( [
+             fhir:value [
+               a fhir:Id ;
+               fhir:v "srcformTextVar"
+             ]
+           ] )
+         ] ) ;
+         fhir:documentation [ fhir:v "Übernimmt die Freitext-Darreichungsform (z.B. 'Tabletten', 'Tropfen zum Einnehmen')" ]
+       ] ) ;
+       fhir:documentation [ fhir:v "Mappt die Darreichungsform als Freitext" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

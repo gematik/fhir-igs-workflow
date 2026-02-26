@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Parameters xmlns="http://hl7.org/fhir">
+  <id value="TRP-Carbon-Copy"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-carbon-copy|1.0"/>
+  </meta>
+  <parameter>
+    <name value="rxPrescription"/>
+    <part>
+      <name value="prescriptionSignatureDate"/>
+      <valueInstant value="2026-04-01T08:23:12Z"/>
+    </part>
+    <part>
+      <name value="prescriptionId"/>
+      <valueIdentifier>
+        <system value="https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"/>
+        <value value="166.100.000.000.001.39"/>
+      </valueIdentifier>
+    </part>
+    <part>
+      <name value="medicationRequest"/>
+      <resource>
+        <MedicationRequest>
+          <id value="TRP-Carbon-Copy-MedicationRequest"/>
+          <meta>
+            <profile value="https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-medication-request"/>
+          </meta>
+          <extension url="https://gematik.de/fhir/epa-medication/StructureDefinition/teratogenic-extension">
+            <extension url="off-label">
+              <valueBoolean value="true"/>
+            </extension>
+            <extension url="childbearing-potential">
+              <valueBoolean value="true"/>
+            </extension>
+            <extension url="security-compliance">
+              <valueBoolean value="false"/>
+            </extension>
+            <extension url="hand-out-information-material">
+              <valueBoolean value="false"/>
+            </extension>
+            <extension url="declaration-of-expertise">
+              <valueBoolean value="true"/>
+            </extension>
+          </extension>
+          <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction">
+            <valueMarkdown value="1-0-1-0 Stück"/>
+          </extension>
+          <extension url="http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta">
+            <extension url="algorithmVersion">
+              <valueString value="1.0.1"/>
+            </extension>
+            <extension url="language">
+              <valueCode value="de-DE"/>
+            </extension>
+          </extension>
+          <status value="completed"/>
+          <intent value="order"/>
+          <medicationReference>
+            <reference value="Medication/TRP-Carbon-Copy-Medication"/>
+          </medicationReference>
+          <subject>
+            <identifier>
+              <system>
+                <extension url="http://hl7.org/fhir/StructureDefinition/data-absent-reason">
+                  <valueCode value="not-permitted"/>
+                </extension>
+              </system>
+              <value>
+                <extension url="http://hl7.org/fhir/StructureDefinition/data-absent-reason">
+                  <valueCode value="not-permitted"/>
+                </extension>
+              </value>
+            </identifier>
+          </subject>
+          <authoredOn value="2025-05-20"/>
+          <dosageInstruction>
+            <timing>
+              <repeat>
+                <frequency value="1"/>
+                <period value="1"/>
+                <periodUnit value="d"/>
+                <when value="MORN"/>
+              </repeat>
+            </timing>
+            <doseAndRate>
+              <doseQuantity>
+                <value value="1"/>
+                <unit value="Stück"/>
+                <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BMP_DOSIEREINHEIT"/>
+                <code value="1"/>
+              </doseQuantity>
+            </doseAndRate>
+          </dosageInstruction>
+          <dosageInstruction>
+            <timing>
+              <repeat>
+                <frequency value="1"/>
+                <period value="1"/>
+                <periodUnit value="d"/>
+                <when value="EVE"/>
+              </repeat>
+            </timing>
+            <doseAndRate>
+              <doseQuantity>
+                <value value="2"/>
+                <unit value="Stück"/>
+                <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BMP_DOSIEREINHEIT"/>
+                <code value="1"/>
+              </doseQuantity>
+            </doseAndRate>
+          </dosageInstruction>
+          <dispenseRequest>
+            <quantity>
+              <value value="1"/>
+              <unit value="Packung"/>
+            </quantity>
+            <expectedSupplyDuration>
+              <value value="3"/>
+              <unit value="Woche(n)"/>
+            </expectedSupplyDuration>
+          </dispenseRequest>
+        </MedicationRequest>
+      </resource>
+    </part>
+    <part>
+      <name value="medication"/>
+      <resource>
+        <Medication>
+          <id value="TRP-Carbon-Copy-Medication"/>
+          <extension url="http://fhir.de/StructureDefinition/normgroesse">
+            <valueCode value="N1"/>
+          </extension>
+          <code>
+            <coding>
+              <system value="http://fhir.de/CodeSystem/ifa/pzn"/>
+              <code value="19201712"/>
+            </coding>
+            <text value="Pomalidomid Accord 1 mg 21 x 1 Hartkapseln"/>
+          </code>
+          <form>
+            <coding>
+              <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM"/>
+              <code value="HKP"/>
+            </coding>
+          </form>
+          <amount>
+            <numerator>
+              <extension url="https://gematik.de/fhir/epa-medication/StructureDefinition/medication-packaging-size-extension">
+                <valueString value="21"/>
+              </extension>
+              <unit value="Stück"/>
+            </numerator>
+            <denominator>
+              <value value="1"/>
+            </denominator>
+          </amount>
+          <ingredient>
+            <itemCodeableConcept>
+              <text value="Pomalidomid"/>
+            </itemCodeableConcept>
+            <strength>
+              <numerator>
+                <value value="1"/>
+                <unit value="mg"/>
+              </numerator>
+              <denominator>
+                <value value="1"/>
+                <unit value="Stück"/>
+              </denominator>
+            </strength>
+          </ingredient>
+        </Medication>
+      </resource>
+    </part>
+  </parameter>
+  <parameter>
+    <name value="rxDispensation"/>
+    <part>
+      <name value="dispenseOrganization"/>
+      <resource>
+        <Organization>
+          <id value="8b416995-852f-4933-99bf-c71ad76abae3"/>
+          <meta>
+            <profile value="https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-organization"/>
+          </meta>
+          <identifier>
+            <value value="Organisation 3-2arvtst-ap000053"/>
+          </identifier>
+          <name value="Stadt Apotheke"/>
+          <telecom>
+            <system value="phone"/>
+            <value value="1234"/>
+            <use value="work"/>
+          </telecom>
+          <address>
+            <use value="work"/>
+            <type value="postal"/>
+            <line value="Schwarzwaldstr. 18"/>
+            <city value="Großostheim"/>
+            <state value="Bayern"/>
+            <postalCode value="63762"/>
+            <country value="DE"/>
+          </address>
+        </Organization>
+      </resource>
+    </part>
+    <part>
+      <name value="dispenseInformation"/>
+      <part>
+        <name value="medicationDispense"/>
+        <resource>
+          <MedicationDispense>
+            <id value="TRP-Carbon-Copy-MedicationDispense"/>
+            <status value="completed"/>
+            <medicationReference>
+              <reference value="Medication/TRP-Carbon-Copy-D-Medication"/>
+            </medicationReference>
+            <performer>
+              <actor>
+                <reference value="Organization/8b416995-852f-4933-99bf-c71ad76abae3"/>
+              </actor>
+            </performer>
+            <whenHandedOver value="2026-04-01"/>
+          </MedicationDispense>
+        </resource>
+      </part>
+      <part>
+        <name value="medication"/>
+        <resource>
+          <Medication>
+            <id value="TRP-Carbon-Copy-D-Medication"/>
+            <extension url="http://fhir.de/StructureDefinition/normgroesse">
+              <valueCode value="N1"/>
+            </extension>
+            <code>
+              <coding>
+                <system value="http://fhir.de/CodeSystem/ifa/pzn"/>
+                <code value="19201712"/>
+              </coding>
+              <text value="Pomalidomid Accord 1 mg 21 x 1 Hartkapseln"/>
+            </code>
+            <form>
+              <coding>
+                <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM"/>
+                <code value="HKP"/>
+              </coding>
+            </form>
+            <amount>
+              <numerator>
+                <extension url="https://gematik.de/fhir/epa-medication/StructureDefinition/medication-total-quantity-formulation-extension">
+                  <valueString value="21"/>
+                </extension>
+                <unit value="Stück"/>
+              </numerator>
+              <denominator>
+                <value value="1"/>
+              </denominator>
+            </amount>
+          </Medication>
+        </resource>
+      </part>
+    </part>
+  </parameter>
+</Parameters>
