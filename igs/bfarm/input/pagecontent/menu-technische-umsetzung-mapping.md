@@ -44,7 +44,7 @@ Die StructureMap [ERP-TPrescription-StructureMap-CarbonCopy](./StructureMap-ERPT
 
 Das Mapping sieht im Wesentlichen die folgende Übertragung vor:
 
-<div class="gem-ig-svg-container" style="--box-width: 700px;">
+<div class="gem-ig-svg-container" style="--box-width: 500px;">
     {% include mapping-concept.svg %}
 </div>
 

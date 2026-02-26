@@ -66,4 +66,4 @@ Bei Übermittlungsfehlern, bei denen ein Retry sinnvoll ist, wie z.B.
 - HTTP ErrorCodes 5xx: Serverfehler
 - HTTP ErrorCodes 408 (Timeout) und 429 (Zu viele Anfragen pro Zeiteinheit durch Nutzer) wird ein Retry gemäß Exponential Backoff versucht, um die Daten einzustellen. Falls dies nach einem festgelegten Intervall nicht gelingt, werden diese Übermittlungsaufträge, sowie Übermittlungsaufträge mit HTTP ErrorCode 4xx in eine gesonderte Liste ausgesteuert, um nach Problemanalyse und ggf. einem Update des E-Rezept-Fachdienstes das Einstellen erneut zu versuchen.
 
-Der technsiche Anwendungsfall für die Übertragung ist auf [UC 5.8 - Durchschlag E-T-Rezept beim BfArM einstellen](./menu-technische-umsetzung-anwendungsfaelle#166-uebertrag-t-register.html) dargestellt.
+Der technsiche Anwendungsfall für die Übertragung ist auf [UC 5.8 - Durchschlag E-T-Rezept beim BfArM einstellen](./menu-technische-umsetzung-anwendungsfaelle.html#166-uebertrag-t-register) dargestellt.
