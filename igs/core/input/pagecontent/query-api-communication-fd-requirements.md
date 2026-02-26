@@ -221,3 +221,93 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     </table>
     <div><figcaption><strong>Tabelle: </strong>Tab_eRPFD_028 Zulässige Empfänger Communication_DispReq</figcaption></div>
 </requirement>
+
+ - E-Rezept-Fachdienst - Nachricht einstellen - Prüfung Existenz Task
+ <=
+
+<!-- A_21371-03 -->
+<requirement conformance="SHALL" key="IG-WF-CORE-83" title="E-Rezept-Fachdienst - Nachricht einstellen - Prüfung Existenz Task" version="0">
+    <meta lockversion="false"/>
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest"/>
+    </actor>
+    Der Fachdienst E-Rezept MUSS beim Einstellen einer Nachricht des Profils "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq", "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Reply", "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DiGA" oder "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Representative" über die http-Operation POST auf den Endpunkt /Communication mit dem http-Status-Code 400 abbrechen, wenn das Pflichtfeld Communication.basedOn einen Task referenziert, der nicht existiert, um Spam und nicht-verordnungsbezogene Kommunikation zu verhindern.
+</requirement>
+
+<!-- A_26320 -->
+<requirement conformance="SHALL" key="IG-WF-CORE-83" title="E-Rezept-Fachdienst - Nachricht einstellen - Dispense Request - Prüfung Status Task" version="0">
+    <meta lockversion="false"/>
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest"/>
+    </actor>
+    Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication mit GEM_ERP_PR_Communication_DispReq-Ressource für den in Communication.basedOn referenzierten Task prüfen, dass Task.status = ready und bei Ungleichheit mit dem Http-Fehler 400 und dem OperationOutcome "Task has invalid status." abbrechen, damit ausschließlich E-Rezepte zugewiesen werden, welche durch den Adressaten abrufbar sind.
+</requirement>
+
+<!-- A_26321 -->
+<requirement conformance="SHALL" key="IG-WF-CORE-83" title="E-Rezept-Fachdienst - Nachricht einstellen - Dispense Request - Prüfung Ende Gültigkeit Task" version="0">
+    <meta lockversion="false"/>
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest"/>
+    </actor>
+    Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication mit GEM_ERP_PR_Communication_DispReq-Ressource für den in Communication.basedOn referenzierten Task prüfen, dass Task.ExpiryDate nicht zu einem früheren Zeitpunkt als dem aktuellem Datum liegt und anderenfalls mit dem Http-Fehler 400 und dem OperationOutcome "Task has expired." abbrechen, damit ausschließlich E-Rezepte zugewiesen werden, welche deren Einlösefrist noch nicht erreicht ist.
+</requirement>
+
+<!-- A_26327 -->
+<requirement conformance="SHALL" key="IG-WF-CORE-83" title="E-Rezept-Fachdienst - Nachricht einstellen - Dispense Request - Prüfung Beginn Gültigkeit Task" version="0">
+    <meta lockversion="false"/>
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest"/>
+    </actor>
+    Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication mit GEM_ERP_PR_Communication_DispReq-Ressource für den in Communication.basedOn referenzierten Task prüfen, falls die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet ist, ob der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start) zum aktuellen oder einem früheren Zeitpunkt als das aktuelle Datum liegt und anderenfalls mit dem Http-Fehler 400 und dem OperationOutcome "Prescription is not fillable yet." abbrechen, damit ausschließlich E-Rezepte zugewiesen werden, deren Einlösefrist erreicht ist.
+</requirement>
+
+<!-- A_22734-01 -->
+<requirement conformance="SHALL" key="IG-WF-CORE-83" title="E-Rezept-Fachdienst - Nachricht einstellen - Prüfung Existenz ChargeItem" version="0">
+    <meta lockversion="false"/>
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest"/>
+    </actor>
+    Der Fachdienst E-Rezept MUSS beim Einstellen einer Nachricht des Profils "https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReq" oder "https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReply" über die http-Operation POST auf den Endpunkt /Communication mit dem http-Status-Code 400 abbrechen, wenn das Pflichtfeld Communication.basedOn einen ChargeItem referenziert, der nicht existiert, um Spam und nicht-rezeptbezogene Kommunikation zu verhindern.
+</requirement>
+
+<!-- A_22367-03 -->
+<requirement conformance="SHALL" key="IG-WF-CORE-83" title="E-Rezept-Fachdienst - Nachricht einstellen - Notification Apotheke" version="0">
+    <meta lockversion="false"/>
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest"/>
+    </actor>
+    Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht des Profils "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq", oder "https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReq" zur Versicherter-zu-Apotheken-Kommunikation über die http-Operation POST auf den Endpunkt /Communication prüfen, ob für die Telematik-ID des Empfängers Subscriptions registriert sind und für Registrierungen über den Subscription Service eine Notification (ping : subscription-id) senden.
+</requirement>
+
+<!-- A_28132 -->
+<requirement conformance="SHALL" key="IG-WF-CORE-83" title="E-Rezept-Fachdienst - Nachricht einstellen - Push Notification Versicherter" version="0">
+    <meta lockversion="false"/>
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest"/>
+    </actor>
+    Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht mittels HTTP-POST-Operation über /Communication bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId "erp.communication.new" und den Versicherten mit der KVNR = Communication.recipient initiieren.
+</requirement>
+
+### DELETE /Communication
+
+Mit der HTTP-Operation DELETE kann ein Nutzer eine verschickte Kommunikationsnachricht als Absender löschen, um bspw. einen Irrläufer zurückzurufen. Der E-Rezept-Fachdienst prüft, ob die Nachricht bereits abgerufen wurde. Das Löschen einer ungelesenen Nachricht erfolgt sofort, das Löschen einer bereits abgerufenen Nachricht wird vom E-Rezept-Fachdienst mit einer Warnung umgesetzt, um darauf hinzuweisen, dass die Nachricht als Kopie im Clientsystem des Empfängers vorliegt und das Löschen nicht vor unberechtigter Einsichtnahme schützt.
+
+Um den Schutz vor unberechtigter Einsichtnahme in persönliche Daten durchzusetzen, ist es ratsam bei bereits gelesenen Nachrichten den referenzierten E-Rezept-Task zu löschen. Für eine geeignete Nutzerführung auf Clientseite ergänzt der E-Rezept-Fachdienst die http-Response um das Header-Attribut "Warning" mit einem entsprechenden Hinweis. Das Löschen des Task führt direkt auch zum Löschen aller Kommunikationsnachrichten, die auf diesen Task verweisen. Damit kann ein fälschlich adressierter Vertreter eines Versicherten keine Einsicht in die Daten des E-Rezepts mehr nehmen bzw. das E-Rezept in keiner Apotheke mehr einlösen.
+
+<!-- A_20258 -->
+<requirement conformance="SHALL" key="IG-WF-CORE-83" title="E-Rezept-Fachdienst - Nachricht löschen - Absender-ID" version="0">
+    <meta lockversion="false"/>
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest"/>
+    </actor>
+    Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf /Communication/&lt;id&gt; die über &lt;id&gt; identifizierte Communication-Ressource anhand der KVNR bzw. Telematik-ID des aufrufenden Nutzers im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests über das Absender-Attribut Communication.sender lokalisieren und löschen, damit Nutzer irrtümlich versendete oder nicht mehr gewünschte Nachrichten vom E-Rezept-Fachdienst entfernen können.
+</requirement>
+
+<!-- A_20259 -->
+<requirement conformance="SHALL" key="IG-WF-CORE-83" title="E-Rezept-Fachdienst - Nachricht löschen - Warning bei Empfänger bereits abgerufen" version="0">
+    <meta lockversion="false"/>
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest"/>
+    </actor>
+    Der E-Rezept-Fachdienst MUSS beim Löschen einer Communication-Ressource der http-Response das http-Header-Feld "Warning" mit dem Zeitpunkt des Nachrichtenabrufs durch den Empfänger ergänzen (z.B. "Warning: 'Deleted message delivered at 2020-07-01 10:30:00'"), wenn die Nachricht bereits durch den Empfänger abgerufen wurde (Communication.received ungleich NULL, bzw. enthält Datum des Abrufs), um dem Absender einen Hinweis anzeigen zu können.
+</requirement>
