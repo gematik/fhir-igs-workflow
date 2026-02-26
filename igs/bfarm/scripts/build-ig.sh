@@ -80,4 +80,15 @@ if [[ -z "$MAPPING_BUNDLE_SOURCE" ]]; then
 	exit 1
 fi
 
-java -jar "$HAPI_VALIDATOR_JAR_PATH" "$MAPPING_BUNDLE_SOURCE" -transform https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapCarbonCopy -version 4.0.1 -ig ./fsh-generated/resources -output ./input/content/Bundle-erp-t-prescription-carbon-copy-actual.json -ig de.gematik.erezept-workflow.r4 -ig kbv.ita.erp -ig de.gematik.ti#1.1.0
+TRANSFORM_MAP_URL="https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapCarbonCopy"
+TRANSFORM_OUTPUT="./input/content/Bundle-erp-t-prescription-carbon-copy-actual.json"
+
+set +e
+java -jar "$HAPI_VALIDATOR_JAR_PATH" transform "$TRANSFORM_MAP_URL" "$MAPPING_BUNDLE_SOURCE" -version 4.0.1 -ig ./fsh-generated/resources -output "$TRANSFORM_OUTPUT" -ig de.gematik.erezept-workflow.r4 -ig kbv.ita.erp -ig de.gematik.ti#1.1.0
+transform_rc=$?
+set -e
+
+if [[ $transform_rc -ne 0 ]]; then
+	echo "⚠️ Modern transform command failed. Retrying legacy -transform syntax for compatibility..." >&2
+	java -jar "$HAPI_VALIDATOR_JAR_PATH" "$MAPPING_BUNDLE_SOURCE" -transform "$TRANSFORM_MAP_URL" -version 4.0.1 -ig ./fsh-generated/resources -output "$TRANSFORM_OUTPUT" -ig de.gematik.erezept-workflow.r4 -ig kbv.ita.erp -ig de.gematik.ti#1.1.0
+fi

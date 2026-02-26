@@ -10,6 +10,7 @@ Usage:
 """
 
 import json
+import os
 import sys
 import subprocess
 import tempfile
@@ -135,8 +136,22 @@ def run_hapi_transform(
         "de.gematik.epa.medication",
     ]
     
-    # Build the command
-    cmd = [
+    # Build modern command (validator 6.8+)
+    cmd_modern = [
+        "java",
+        "-jar",
+        str(hapi_jar_path),
+        "transform",
+        transform_url,
+        str(input_bundle),
+        "-version",
+        fhir_version,
+        "-output",
+        str(output_file)
+    ]
+
+    # Build legacy command (older validator versions)
+    cmd_legacy = [
         "java",
         "-jar",
         str(hapi_jar_path),
@@ -151,22 +166,55 @@ def run_hapi_transform(
     
     # Add all IG dependencies
     for ig_path in ig_paths:
-        cmd.extend(["-ig", ig_path])
+        cmd_modern.extend(["-ig", ig_path])
+        cmd_legacy.extend(["-ig", ig_path])
     
     print("🚀 Running HAPI FHIR transformation...")
     print(f"   Input: {input_bundle}")
     print(f"   Output: {output_file}")
     print(f"   Transform: {transform_url}\n")
     
-    # Run the command
+    # Run the modern command first
     result = subprocess.run(
-        cmd,
+        cmd_modern,
         capture_output=True,
         text=True,
         cwd=str(project_root)
     )
+
+    # Retry with legacy syntax for compatibility with older validators
+    if result.returncode != 0:
+        print("⚠ Modern transform command failed, retrying legacy -transform syntax...")
+        result = subprocess.run(
+            cmd_legacy,
+            capture_output=True,
+            text=True,
+            cwd=str(project_root)
+        )
     
     return result.returncode, result.stdout, result.stderr
+
+
+def resolve_hapi_validator_path() -> Path:
+    """Resolve validator jar path from env and known local defaults."""
+    candidates = []
+
+    env_path = os.getenv("HAPI_VALIDATOR_JAR")
+    if env_path:
+        candidates.append(Path(env_path).expanduser())
+
+    script_dir = Path(__file__).parent
+    project_root = script_dir.parent.parent
+    candidates.extend([
+        project_root / "input-cache" / "current_hapi_validator.jar",
+        Path("/Users/gematik/dev/validators/current_hapi_validator.jar"),
+    ])
+
+    for path in candidates:
+        if path.exists():
+            return path
+
+    return Path(candidates[0]) if candidates else Path("/Users/gematik/dev/validators/current_hapi_validator.jar")
 
 
 def main():
@@ -196,7 +244,7 @@ def main():
     output_file = output_dir / f"{test_case_name}-digitaler-durchschlag.json"
     
     # Find HAPI validator
-    hapi_jar_path = Path("/Users/gematik/dev/validators/current_hapi_validator.jar")
+    hapi_jar_path = resolve_hapi_validator_path()
     
     if not hapi_jar_path.exists():
         print(f"❌ Error: HAPI validator not found at: {hapi_jar_path}")
