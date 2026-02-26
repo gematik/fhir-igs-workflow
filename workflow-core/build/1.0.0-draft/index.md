@@ -57,7 +57,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
   "name" : "ERezeptWorkflowCore",
   "title" : "Implementation Guide E-Rezept-Workflow Core",
   "status" : "draft",
-  "date" : "2026-02-26T06:40:44+00:00",
+  "date" : "2026-02-26T12:42:14+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -1019,6 +1019,33 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
             }],
             "nameUrl" : "query-api-communication-client-requirements.html",
             "title" : "Client-Anforderungen: Communication-Query",
+            "generation" : "markdown"
+          }]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "query-api-consent.html"
+          }],
+          "nameUrl" : "query-api-consent.html",
+          "title" : "Query API: Consent",
+          "generation" : "markdown",
+          "page" : [{
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-consent-fd-requirements.html"
+            }],
+            "nameUrl" : "query-api-consent-fd-requirements.html",
+            "title" : "FD-Anforderungen: Consent-Query",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-consent-client-requirements.html"
+            }],
+            "nameUrl" : "query-api-consent-client-requirements.html",
+            "title" : "Client-Anforderungen: Consent-Query",
             "generation" : "markdown"
           }]
         }]

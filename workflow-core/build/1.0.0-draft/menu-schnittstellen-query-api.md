@@ -16,4 +16,5 @@ Die folgenden Query APIs stellt der E-Rezept-Fachdienst dem **Primärsystem eRP*
 * [Query API: Device](./query-api-device.md)
 * [Query API: AuditEvent](./query-api-auditevent.md)
 * [Query API: Communication](./query-api-communication.md)
+* [Query API: Consent](./query-api-consent.md)
 
