@@ -1,8 +1,13 @@
+{% assign use_cases = site.data['use-cases'] %}
+
 Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Consent`-Query-Endpunkte.
 
 ### Einwilligung erteilen
 
 <!-- ToDo Ablaufdiagramm Anwendungsfall -->
+{% assign use_case = use_cases | where: "title", "UC 3.14 - Einwilligung durch Versicherten erteilen" | first %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- A_22709-02 -->
 <requirement conformance="SHALL" key="IG-WF-CORE-7" title="E-Rezept-FdV: Einwilligung erteilen - Einwilligungstext" version="0">
