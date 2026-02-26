@@ -65,7 +65,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "gemIG_eRp_ChargeItem",
   "title" : "Abrechnungsinformationen des E-Rezepte für PKV-Versicherte",
   "status" : "draft",
-  "date" : "2026-02-26T09:19:47+00:00",
+  "date" : "2026-02-26T10:12:23+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -1174,6 +1174,24 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
           "nameUrl" : "menu-technische-umsetzung-verarbeitungsregeln.html",
           "title" : "Verarbeitungsregeln für den E-Rezept-Fachdienst",
           "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "menu-technische-umsetzung-chargeitem.html"
+          }],
+          "nameUrl" : "menu-technische-umsetzung-chargeitem.html",
+          "title" : "ChargeItem: Abrechnungsinformationen des E-Rezepts für PKV-Versicherte",
+          "generation" : "markdown",
+          "page" : [{
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "menu-technische-umsetzung-chargeitem-req-fdv.html"
+            }],
+            "nameUrl" : "menu-technische-umsetzung-chargeitem-req-fdv.html",
+            "title" : "E-Rezept-FdV Anforderungen: ChargeItem",
+            "generation" : "markdown"
+          }]
         }]
       },
       {
