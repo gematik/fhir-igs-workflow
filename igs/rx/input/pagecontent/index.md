@@ -2,8 +2,10 @@ Dieser Implementation Guide beschreibt die Datenmodelle und Prozesse des E-Rezep
 
 ### Zweck und Geltungsbereich
 
-- Grundlegende Workflows für E-Rezepte zur Arzneimittelversorgung (Flowtypes **160, 169, 200 und 209**)
-- Workflow für die Verordnung von E-T-Rezepten (Flowtype **166**)
+- Grundlegende Workflows für E-Rezepte zur Arzneimittelversorgung:
+  - **160, 200** zur Verordnung von Arzneimitteln
+  - **169, 209** zur Verordnung von Arzneimitteln mit Workflowsteuerung durch den Leistungserbringer
+  - **166** zur Verordnung von E-T-Rezepten
 - Profile, Operationen und Validierungsregeln
 - Funktionale Anforderungen
 
@@ -15,9 +17,9 @@ Dieser Implementation Guide beschreibt die Datenmodelle und Prozesse des E-Rezep
 
 ### Wie dieser IG zu lesen ist
 
-Dieser Implementation Guide ist "von links nach rechts" zu lesen. Die Menüstruktur beginnt mit fachlichen Inhalte, welche über die technischen Anwendungsfälle dann in den Spezifikationen der Endpunkte und APIs münden. Es wird empfohlen, die Inhalte in der vorgegebenen Reihenfolge zu lesen, um ein umfassendes Verständnis der Anforderungen und Spezifikationen zu erhalten.
+Dieser Implementation Guide ist "von links nach rechts" zu lesen. Die Menüstruktur beginnt mit fachlichen Inhalten, welche über die technischen Anwendungsfälle dann in den Spezifikationen der Endpunkte und APIs münden. Es wird empfohlen, die Inhalte in der vorgegebenen Reihenfolge zu lesen, um ein umfassendes Verständnis der Anforderungen und Spezifikationen zu erhalten.
 
-Für einen überblick über die Inhalte und die Struktur dieses Implementation Guides kann die [Inhaltsübersicht](toc.html) konsultiert werden. Dort sind die verschiedenen Kapitel und Abschnitte mit ihren jeweiligen Inhalten und Anforderungen aufgeführt.
+Für einen Überblick über die Inhalte und die Struktur dieses Implementation Guides kann die [Inhaltsübersicht](toc.html) konsultiert werden. Dort sind die verschiedenen Kapitel und Abschnitte mit ihren jeweiligen Inhalten und Anforderungen aufgeführt.
 
 ### Abhängigkeiten
 

@@ -1,0 +1,29 @@
+@startuml 
+title Ablaufdiagramm Übermittlung digitaler Durchschlag T-Rezept
+hide footbox
+autonumber "<b>[0]"
+participant "E-Rezept-Fachdienst" as FD
+participant "BfArM Webdienst" as BT
+
+FD -> FD: createCarbonCopy(): trxCarbonCopy
+
+FD -> BT++: POST TrxCarbonCopy(trxCarbonCopy)
+BT -> BT: validateCarbonCopy(trxCarbonCopy)
+
+alt Erfolgreiche Übertragung
+BT --> FD: ok
+
+else invalides Format (Errorcode 4xx)
+BT --> FD: error(4xx)
+FD -> FD: writeToDeadLetterQueue(trxCarbonCopy)
+
+else Serverfehler BfArM T-Register (Errorcode 5xx)
+BT --> FD: error(5xx | 408 | 429)
+FD -> FD: retryAfterX()
+
+end
+deactivate FD
+
+BT -> BT--: storeData(trxCarbonCopy)
+
+@enduml   
