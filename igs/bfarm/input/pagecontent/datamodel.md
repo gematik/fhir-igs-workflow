@@ -1,5 +1,3 @@
-## Informationen zum Datenmodell
-
 Dieses Projekt listet diverse Artefakte auf, die helfen sollen den Anwendungsfall der Übertragung des digitalen Durchschlags E-T-Rezept umzusetzen. 
 
 ### Fachliches Modell

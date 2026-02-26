@@ -1,4 +1,5 @@
-### Übermittlung an das BfArM T-Register
+{% assign use_cases = site.data['gen-use-cases'] %}
+{% assign roles = site.data['roles'] %}
 
 Gemäß §3a Abs. 7 AMVV übernimmt der E-Rezept-Fachdienst die Aufgabe die vom BfArM benötigten Informationen aus den E-T-Rezepten über den BfArM Webdienst an das BfArM T-Register zu übermitteln. Die Übermittlung der strukturierten Daten, im Folgenden "digitaler Durchschlag E-T-Rezept" genannt, findet statt, unverzüglich nachdem die Quittung für das E-T-Rezept durch die abgebende Apotheke abgerufen wurde. Im BfArM können die Daten dann zur Erfüllung gesetzlich zugewiesener Aufgaben in geeigneter Form dargestellt und archiviert werden.
 
@@ -19,6 +20,8 @@ Als BfArM möchte ich ...
 Unverzüglich nachdem die Apotheke die Quittung erhalten hat, wird der digitaler Durchschlag E-T-Rezept im E-Rezept-Fachdienst erstellt und an den BfArM Webdienst übertragen.
 
 Die Daten werden asynchron zum Abschluss des Workflows in einer Warteschlange übermittelt, sodass die Apotheke den Vorgang abschließen kann, selbst wenn der BfArM Webdienst nicht erreichbar ist. In diesem Fall nutzt der E-Rezept-Fachdienst ein exponentielles Backoff-Retry, bis die Übertragung zum BfArM Webdienst erfolgreich durchgeführt werden konnte.
+
+Das technische Konzept zur Übermittlung ist auf [Technisches Konzept T-Register](./menu-technische-umsetzung-t-register.html) bereitgestellt.
 
 #### Technische Anwendungsfälle
 
