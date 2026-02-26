@@ -51,7 +51,7 @@ Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen all
   </actor>
   Der E-Rezept-Fachdienst MUSS einen Protokolleintrag mit den folgenden Werten befüllen:
 	<ul>
-    <li>AuditEvent.text: Generierung eines HTML-<div>-Elements mit lesbarer Beschreibung in einfacher Sprache</li>
+    <li>AuditEvent.text: Generierung eines HTML-&lt;div&gt;-Elements mit lesbarer Beschreibung in einfacher Sprache</li>
     <li>AuditEvent.type: Fester Wertrest gemäß [CodeSystem: Audit Event ID]</li>
     <li>AuditEvent.subtype: aus dem ValueSet [ValueSet http://hl7.org/fhir/ValueSet/auditevent-sub-type] gemäß [CodeSystem http://hl7.org/fhir/restful-interaction]:
     <ul>
