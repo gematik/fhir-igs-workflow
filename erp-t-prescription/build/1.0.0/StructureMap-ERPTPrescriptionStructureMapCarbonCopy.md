@@ -16,7 +16,7 @@ Version 1.0.0 - ci-build
 | Active as of 2025-12-19 | *Computable Name*:ERPTPrescriptionStructureMapCarbonCopy |
 
  
-Diese Ressource beschreibt das Mapping und führt die Mappings aller Teilressourcen zusammen. Weitere Informationen und Beschreibungen zum Mapping können auf der Seite [Mapping des digitalen Durchschlag E-T-Rezept](./trezept.md#mapping-des-digitalen-durchschlags-e-t-rezept) eingesehen werden. 
+Diese Ressource beschreibt das Mapping und führt die Mappings aller Teilressourcen zusammen. Weitere Informationen und Beschreibungen zum Mapping können auf der Seite [Mapping des digitalen Durchschlag E-T-Rezept](./menu-technische-umsetzung-mapping.md#mapping-des-digitalen-durchschlags-e-t-rezept) eingesehen werden. 
 
 
 
@@ -45,7 +45,7 @@ Diese Ressource beschreibt das Mapping und führt die Mappings aller Teilressour
       "value" : "erp-umsetzung@gematik.de"
     }]
   }],
-  "description" : "Diese Ressource beschreibt das Mapping und führt die Mappings aller Teilressourcen zusammen. Weitere Informationen und Beschreibungen zum Mapping können auf der Seite [Mapping des digitalen Durchschlag E-T-Rezept](./trezept.html#mapping-des-digitalen-durchschlags-e-t-rezept) eingesehen werden.",
+  "description" : "Diese Ressource beschreibt das Mapping und führt die Mappings aller Teilressourcen zusammen. Weitere Informationen und Beschreibungen zum Mapping können auf der Seite [Mapping des digitalen Durchschlag E-T-Rezept](./menu-technische-umsetzung-mapping.html#mapping-des-digitalen-durchschlags-e-t-rezept) eingesehen werden.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",

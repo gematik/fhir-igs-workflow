@@ -69,7 +69,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "gemIG_TIFlow_bfarm",
   "title" : "Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst",
   "status" : "draft",
-  "date" : "2026-02-26T13:49:45+00:00",
+  "date" : "2026-02-26T16:08:04+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -1043,7 +1043,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
         "reference" : "StructureMap/ERPTPrescriptionStructureMapCarbonCopy"
       },
       "name" : "E-T-Rezept Structure Map for CarbonCopy",
-      "description" : "Diese Ressource beschreibt das Mapping und führt die Mappings aller Teilressourcen zusammen. Weitere Informationen und Beschreibungen zum Mapping können auf der Seite [Mapping des digitalen Durchschlag E-T-Rezept](./trezept.html#mapping-des-digitalen-durchschlags-e-t-rezept) eingesehen werden.",
+      "description" : "Diese Ressource beschreibt das Mapping und führt die Mappings aller Teilressourcen zusammen. Weitere Informationen und Beschreibungen zum Mapping können auf der Seite [Mapping des digitalen Durchschlag E-T-Rezept](./menu-technische-umsetzung-mapping.html#mapping-des-digitalen-durchschlags-e-t-rezept) eingesehen werden.",
       "exampleBoolean" : false
     },
     {

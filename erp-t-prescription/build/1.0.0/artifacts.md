@@ -48,7 +48,7 @@ StructureMaps sind strukturierte Dokumente, die maschinenlesbare Möglichkeit bi
 
 | | |
 | :--- | :--- |
-| [ E-T-Rezept Structure Map for CarbonCopy ](StructureMap-ERPTPrescriptionStructureMapCarbonCopy.md) | Diese Ressource beschreibt das Mapping und führt die Mappings aller Teilressourcen zusammen. Weitere Informationen und Beschreibungen zum Mapping können auf der Seite [Mapping des digitalen Durchschlag E-T-Rezept](./trezept.html#mapping-des-digitalen-durchschlags-e-t-rezept) eingesehen werden. |
+| [ E-T-Rezept Structure Map for CarbonCopy ](StructureMap-ERPTPrescriptionStructureMapCarbonCopy.md) | Diese Ressource beschreibt das Mapping und führt die Mappings aller Teilressourcen zusammen. Weitere Informationen und Beschreibungen zum Mapping können auf der Seite [Mapping des digitalen Durchschlag E-T-Rezept](./menu-technische-umsetzung-mapping.html#mapping-des-digitalen-durchschlags-e-t-rezept) eingesehen werden. |
 | [ E-T-Rezept Structure Map for Medication ](StructureMap-ERPTPrescriptionStructureMapGEMMedication.md) | Maps GEM ERP Medication to BfArM T-Prescription Medication format |
 | [ E-T-Rezept Structure Map for KBV Compounding Medication ](StructureMap-ERPTPrescriptionStructureMapKBVCompoundingMedication.md) | Mapping-Anweisungen zur Transformation von KBV Rezeptur-Medikamenten zu BfArM T-Prescription Format |
 | [ E-T-Rezept Structure Map for KBV FreeText Medication ](StructureMap-ERPTPrescriptionStructureMapKBVFreeTextMedication.md) | Maps KBV FreeText Medication to BfArM T-Prescription Medication format |
