@@ -7,7 +7,7 @@ sowie die Use Cases für Versicherte zur Verwaltung von Einwilligung und Zugriff
 
 Die Inhalte basieren auf der Spezifikation "EU Zugriff E-Rezept", Version 1.0.1
 (Stand: 10.04.2025). 
-[erp-umsetzung@gematik.de](https://gemspec.gematik.de/docs/gemF/gemF_eRp_EU/gemF_eRp_EU_V1.0.1/)
+[gemspec eRp EU 1.0.1](https://gemspec.gematik.de/docs/gemF/gemF_eRp_EU/gemF_eRp_EU_V1.0.1/)
 
 ### Zweck und Geltungsbereich
 
