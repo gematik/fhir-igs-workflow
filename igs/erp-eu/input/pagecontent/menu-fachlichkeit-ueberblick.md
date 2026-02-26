@@ -52,7 +52,12 @@ Die Kommunikation mit den abgebenden Leistungserbringern im europäischen Auslan
 
 Der Versicherte nutzt für die Verwaltung von Einwilligung und Zugriffsberechtigung ein E-Rezept-FdV, welches direkt mit dem E-Rezept-Fachdienst kommuniziert.
 
-
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 600px; margin-bottom: 30px;">
+        <img src="./uebersicht_architekur_erp_eu.jpeg" alt="Übersicht Architektur" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung: </strong>Übersicht Architektur</figcaption>
+</figure>
 
 ### Fachliches Konzept
 
