@@ -1,7 +1,3 @@
-### Anforderungen der Schnittstelle aus der Core-Spezifikation
-
-//TODO: Include Core AFOs
-
 ### Anforderungen der Schnittstelle aus diesem Modul
 
 #### PATCH

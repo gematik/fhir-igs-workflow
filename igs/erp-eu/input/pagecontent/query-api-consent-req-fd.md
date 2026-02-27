@@ -1,6 +1,6 @@
 ### Anforderungen der Schnittstelle aus der Core-Spezifikation
 
-//TODO: Include Core AFOs
+{% include core-query-api-consent-req-fd.md %}
 
 ### Anforderungen der Schnittstelle aus diesem Modul
 
