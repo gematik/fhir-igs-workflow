@@ -12,48 +12,84 @@ Version 1.1.0-draft - ci-build
 
 Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rezepte für PKV‑Versicherte“. Im Fokus steht, was im E‑Rezept‑Fachdienst und in den beteiligten Clients (FdV/AdV, Primärsysteme, AVS) passiert, wenn die fachlichen Anwendungsfälle ausgeführt werden.
 
- ###
+### UC 4.11 - Abrechnungsinformation durch Abgebenden bereitstellen
 
 * Beschreibung: Vorbedingungen
-  * : 
-* Beschreibung: Durchzuführende Aktionen
-  * : 
-* Beschreibung: Nachbedingungen
-  * : 
-* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * : 
-* Beschreibung: Relevante(r) Sektor(en)
-  * : 
+  * Mit der Belieferung des E-Rezepts übermittelt die abgebende LEI den PKV-Abgabedatensatz an den E-Rezept-Fachdienst und stellt damit die Abrechnungsinformation digital bereit. Voraussetzung ist die Einwilligung des Versicherten zum Speichern der Abrechnungsinformationen.: * Ein Mitarbeiter der abgebenden LEI hat „Quittung abrufen“ durchgeführt.
+* Task-ID und Secret zur Statusänderung „in Abgabe (gesperrt)“ sind bekannt.
+* Das E-Rezept hat den Status „quittiert“.
+* Einwilligung des Versicherten liegt vor.
 
-**Tabelle:**Fachlicher Anwendungsfall
- ###
+* Beschreibung: Durchzuführende Aktionen
+  * Mit der Belieferung des E-Rezepts übermittelt die abgebende LEI den PKV-Abgabedatensatz an den E-Rezept-Fachdienst und stellt damit die Abrechnungsinformation digital bereit. Voraussetzung ist die Einwilligung des Versicherten zum Speichern der Abrechnungsinformationen.: * PKV-Abgabedatensatz erstellen und signieren.
+* ChargeItem mit PrescriptionID und Pflichtfeldern erzeugen.
+* ChargeItem, Secret und Abgabedaten an den E-Rezept-Fachdienst senden.
+* Fachdienst prüft Einwilligung, Signatur und FHIR-Validität; übernimmt Verordnungsdatensatz und Quittung.
+* Fachdienst erzeugt AccessCode zum Ändern.
+
+* Beschreibung: Nachbedingungen
+  * Mit der Belieferung des E-Rezepts übermittelt die abgebende LEI den PKV-Abgabedatensatz an den E-Rezept-Fachdienst und stellt damit die Abrechnungsinformation digital bereit. Voraussetzung ist die Einwilligung des Versicherten zum Speichern der Abrechnungsinformationen.: * Abrechnungsinformation ist gespeichert und protokolliert.
+
+* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+  * Mit der Belieferung des E-Rezepts übermittelt die abgebende LEI den PKV-Abgabedatensatz an den E-Rezept-Fachdienst und stellt damit die Abrechnungsinformation digital bereit. Voraussetzung ist die Einwilligung des Versicherten zum Speichern der Abrechnungsinformationen.: * [Abrechnungsinformation bereitstellen](./query-api-chargeitem.md#post-chargeitem-bereitstellen)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Mit der Belieferung des E-Rezepts übermittelt die abgebende LEI den PKV-Abgabedatensatz an den E-Rezept-Fachdienst und stellt damit die Abrechnungsinformation digital bereit. Voraussetzung ist die Einwilligung des Versicherten zum Speichern der Abrechnungsinformationen.:  APOTHEKER 
+
+**Tabelle:**Fachlicher Anwendungsfall UC 4.11 - Abrechnungsinformation durch Abgebenden bereitstellen
+**Sequenzdiagramm:**
+
+**Abbildung: **UC 4.11 - Abrechnungsinformation durch Abgebenden bereitstellen
+
+### UC 4.10 - Abrechnungsinformationen durch Abgebenden abrufen
 
 * Beschreibung: Vorbedingungen
-  * : 
-* Beschreibung: Durchzuführende Aktionen
-  * : 
-* Beschreibung: Nachbedingungen
-  * : 
-* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * : 
-* Beschreibung: Relevante(r) Sektor(en)
-  * : 
+  * Die Apotheke ruft eine zuvor von ihr bereitgestellte Abrechnungsinformation ab, wenn sie die Daten im Primärsystem nicht mehr vorliegen hat und der AccessCode bekannt ist.: * Rezept-ID und AccessCode zum Ändern sind bekannt.
 
-**Tabelle:**Fachlicher Anwendungsfall
- ###
+* Beschreibung: Durchzuführende Aktionen
+  * Die Apotheke ruft eine zuvor von ihr bereitgestellte Abrechnungsinformation ab, wenn sie die Daten im Primärsystem nicht mehr vorliegen hat und der AccessCode bekannt ist.: * Aufruf des E-Rezept-Fachdienstes mit Rezept-ID und AccessCode.
+* Fachdienst prüft AccessCode und Berechtigung.
+* Fachdienst liefert Verordnungs- und PKV-Abgabedatensatz.
+
+* Beschreibung: Nachbedingungen
+  * Die Apotheke ruft eine zuvor von ihr bereitgestellte Abrechnungsinformation ab, wenn sie die Daten im Primärsystem nicht mehr vorliegen hat und der AccessCode bekannt ist.: * Datensätze liegen im Primärsystem vor; Zugriff ist protokolliert.
+
+* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+  * Die Apotheke ruft eine zuvor von ihr bereitgestellte Abrechnungsinformation ab, wenn sie die Daten im Primärsystem nicht mehr vorliegen hat und der AccessCode bekannt ist.: * [Abrechnungsinformation abrufen](./query-api-chargeitem.md#get-chargeitemid-details)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Die Apotheke ruft eine zuvor von ihr bereitgestellte Abrechnungsinformation ab, wenn sie die Daten im Primärsystem nicht mehr vorliegen hat und der AccessCode bekannt ist.:  APOTHEKER 
+
+**Tabelle:**Fachlicher Anwendungsfall UC 4.10 - Abrechnungsinformationen durch Abgebenden abrufen
+**Sequenzdiagramm:**
+
+**Abbildung: **UC 4.10 - Abrechnungsinformationen durch Abgebenden abrufen
+
+### UC 4.13 - PKV-Abgabedatensatz durch Abgebenden ändern
 
 * Beschreibung: Vorbedingungen
-  * : 
-* Beschreibung: Durchzuführende Aktionen
-  * : 
-* Beschreibung: Nachbedingungen
-  * : 
-* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * : 
-* Beschreibung: Relevante(r) Sektor(en)
-  * : 
+  * Die abgebende LEI ändert auf Wunsch des Versicherten den PKV-Abgabedatensatz. Der zuvor gespeicherte Datensatz wird überschrieben.: * Abrechnungsinformation wurde zuvor bereitgestellt.
+* Rezept-ID und AccessCode zum Ändern sind bekannt.
 
-**Tabelle:**Fachlicher Anwendungsfall
+* Beschreibung: Durchzuführende Aktionen
+  * Die abgebende LEI ändert auf Wunsch des Versicherten den PKV-Abgabedatensatz. Der zuvor gespeicherte Datensatz wird überschrieben.: * Neuer PKV-Abgabedatensatz wird erzeugt.
+* Rezept-ID, AccessCode und Datensatz werden an den Fachdienst übermittelt.
+* Fachdienst prüft AccessCode, Berechtigung, Signatur und FHIR-Validität.
+* Datensatz wird überschrieben; neuer AccessCode wird erzeugt.
+
+* Beschreibung: Nachbedingungen
+  * Die abgebende LEI ändert auf Wunsch des Versicherten den PKV-Abgabedatensatz. Der zuvor gespeicherte Datensatz wird überschrieben.: * Änderung ist protokolliert; neuer AccessCode liegt vor.
+
+* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+  * Die abgebende LEI ändert auf Wunsch des Versicherten den PKV-Abgabedatensatz. Der zuvor gespeicherte Datensatz wird überschrieben.: * [Query API: Communication](./query-api-communication.md)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Die abgebende LEI ändert auf Wunsch des Versicherten den PKV-Abgabedatensatz. Der zuvor gespeicherte Datensatz wird überschrieben.:  APOTHEKER 
+
+**Tabelle:**Fachlicher Anwendungsfall UC 4.13 - PKV-Abgabedatensatz durch Abgebenden ändern
+**Sequenzdiagramm:**
+
+**Abbildung: **UC 4.13 - PKV-Abgabedatensatz durch Abgebenden ändern
  ###
 
 * Beschreibung: Vorbedingungen
