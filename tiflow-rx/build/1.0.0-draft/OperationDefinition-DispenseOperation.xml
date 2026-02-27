@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="DispenseOperation"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition DispenseOperation</b></p><a name="DispenseOperation"> </a><a name="hcDispenseOperation"> </a><p>URL: [base]/Task/[id]/$dispense</p><p>Input parameters Profile:<a href="StructureDefinition-eflow-rx-dispense-operation-input-parameters.html">GEM ERP PR DispenseOperation Input</a></p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>secret</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td/><td><div><p>Der secret Parameter, der einer Apotheke den exklusiven Zugriff auf die Aufgabe als Teil der URL ermöglicht. Dieser Parameter muss dem Wert entsprechen, der in Task.identifier:Secret gespeichert ist. Andernfalls wird der Vorgang mit einem Fehler abgebrochen.</p>
+</div></td></tr><tr><td>IN</td><td>rxDispensation</td><td/><td>1..*</td><td/><td/><td><div><p>Informationen zu abgegebenen Medikament(en)</p>
+</div></td></tr><tr><td>IN</td><td>rxDispensation.medicationDispense</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/medicationdispense.html">MedicationDispense</a></td><td/><td/></tr><tr><td>IN</td><td>rxDispensation.medication</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/medication.html">Medication</a></td><td/><td/></tr></table></div>
+  </text>
+  <url value="https://gematik.de/fhir/erp/OperationDefinition/DispenseOperation"/>
+  <version value="1.0.0-draft"/>
+  <name value="Dispense"/>
+  <status value="draft"/>
+  <kind value="operation"/>
+  <date value="2025-12-15"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="erp-umsetzung@gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="Die Operation $dispense ermöglicht es der Apotheke, eine Ausgabe für ein Medikament durchzuführen, ohne den Status der Aufgabe zu ändern. Diese Aktion erlaubt es einem Frontend anzuzeigen, dass ein Medikament ausgegeben wurde, bevor es von der Apotheke abgeschlossen wird."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <affectsState value="true"/>
+  <code value="dispense"/>
+  <resource value="Task"/>
+  <system value="false"/>
+  <type value="false"/>
+  <instance value="true"/>
+  <inputProfile value="https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-dispense-operation-input-parameters"/>
+  <parameter>
+    <name value="secret"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Der secret Parameter, der einer Apotheke den exklusiven Zugriff auf die Aufgabe als Teil der URL ermöglicht. Dieser Parameter muss dem Wert entsprechen, der in Task.identifier:Secret gespeichert ist. Andernfalls wird der Vorgang mit einem Fehler abgebrochen."/>
+    <type value="string"/>
+  </parameter>
+  <parameter>
+    <name value="rxDispensation"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="*"/>
+    <documentation value="Informationen zu abgegebenen Medikament(en)"/>
+    <part>
+      <name value="medicationDispense"/>
+      <use value="in"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type value="MedicationDispense"/>
+    </part>
+    <part>
+      <name value="medication"/>
+      <use value="in"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type value="Medication"/>
+    </part>
+  </parameter>
+</OperationDefinition>

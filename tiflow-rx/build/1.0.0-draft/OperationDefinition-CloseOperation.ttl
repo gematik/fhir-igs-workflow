@@ -1,0 +1,97 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/erp/OperationDefinition/CloseOperation> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "CloseOperation"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition CloseOperation</b></p><a name=\"CloseOperation\"> </a><a name=\"hcCloseOperation\"> </a><p>URL: [base]/Task/[id]/$close</p><p>Input parameters Profile:<a href=\"StructureDefinition-eflow-rx-close-operation-input-parameters.html\">GEM ERP PR CloseOperation Input</a></p><p>Output parameters Profile:<a href=\"StructureDefinition-eflow-rx-close-operation-output-parameters.html\">GEM ERP PR CloseOperation Output</a></p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>secret</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td><div><p>Der secret Parameter, der einer Apotheke den exklusiven Zugriff auf die Aufgabe als Teil der URL ermöglicht. Dieser Parameter muss dem Wert entsprechen, der in Task.identifier:Secret gespeichert ist. Andernfalls wird der Vorgang mit einem Fehler abgebrochen.</p>\n</div></td></tr><tr><td>IN</td><td>rxDispensation</td><td/><td>0..*</td><td/><td/><td><div><p>Informationen zu abgegebenen Medikament(en)</p>\n</div></td></tr><tr><td>IN</td><td>rxDispensation.medicationDispense</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/medicationdispense.html\">MedicationDispense</a></td><td/><td/></tr><tr><td>IN</td><td>rxDispensation.medication</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/medication.html\">Medication</a></td><td/><td/></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/bundle.html\">Bundle</a></td><td/><td><div><p>Das Quittungs Bundle, das Angaben zum signierenden Fachdienst, die Telematik-ID der Apotheke und die Signatur enthält.</p>\n</div></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://gematik.de/fhir/erp/OperationDefinition/CloseOperation"^^xsd:anyURI ;
+     fhir:l <https://gematik.de/fhir/erp/OperationDefinition/CloseOperation>
+  ] ; # 
+  fhir:version [ fhir:v "1.0.0-draft"] ; # 
+  fhir:name [ fhir:v "Close"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:kind [ fhir:v "operation"] ; # 
+  fhir:date [ fhir:v "2025-12-15"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "gematik GmbH"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "gematik GmbH" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://gematik.de" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "erp-umsetzung@gematik.de" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Die $close-Operation beendet den E-Rezept-Workflow und erstellt eine Quittung. Das Ergebnis dieses Vorgangs ist ein signiertes Bundle, das für weitere finanzielle Verarbeitung verwendet wird. Der Status der Aufgabe ändert sich anschließend in #completed."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "DE" ] ;
+       fhir:display [ fhir:v "Germany" ]
+     ] )
+  ] ) ; # 
+  fhir:affectsState [ fhir:v true] ; # 
+  fhir:code [ fhir:v "close"] ; # 
+  fhir:resource ( [ fhir:v "Task"] ) ; # 
+  fhir:system [ fhir:v false] ; # 
+  fhir:type [ fhir:v false] ; # 
+  fhir:instance [ fhir:v true] ; # 
+  fhir:inputProfile [
+     fhir:v "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-close-operation-input-parameters"^^xsd:anyURI ;
+     fhir:l <https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-close-operation-input-parameters>
+  ] ; # 
+  fhir:outputProfile [
+     fhir:v "https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-close-operation-output-parameters"^^xsd:anyURI ;
+     fhir:l <https://gematik.de/fhir/erp/StructureDefinition/eflow-rx-close-operation-output-parameters>
+  ] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "secret" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v 1 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Der secret Parameter, der einer Apotheke den exklusiven Zugriff auf die Aufgabe als Teil der URL ermöglicht. Dieser Parameter muss dem Wert entsprechen, der in Task.identifier:Secret gespeichert ist. Andernfalls wird der Vorgang mit einem Fehler abgebrochen." ] ;
+     fhir:type [ fhir:v "string" ]
+  ] [
+     fhir:name [ fhir:v "rxDispensation" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v 0 ] ;
+     fhir:max [ fhir:v "*" ] ;
+     fhir:documentation [ fhir:v "Informationen zu abgegebenen Medikament(en)" ] ;
+     fhir:part ( [
+       fhir:name [ fhir:v "medicationDispense" ] ;
+       fhir:use [ fhir:v "in" ] ;
+       fhir:min [ fhir:v 1 ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "MedicationDispense" ]
+     ] [
+       fhir:name [ fhir:v "medication" ] ;
+       fhir:use [ fhir:v "in" ] ;
+       fhir:min [ fhir:v 0 ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "Medication" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "return" ] ;
+     fhir:use [ fhir:v "out" ] ;
+     fhir:min [ fhir:v 1 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Das Quittungs Bundle, das Angaben zum signierenden Fachdienst, die Telematik-ID der Apotheke und die Signatur enthält." ] ;
+     fhir:type [ fhir:v "Bundle" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

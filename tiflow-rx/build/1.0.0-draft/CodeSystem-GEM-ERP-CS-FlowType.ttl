@@ -1,0 +1,76 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/erp/CodeSystem/GEM-ERP-CS-FlowType> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "GEM-ERP-CS-FlowType"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem GEM-ERP-CS-FlowType</b></p><a name=\"GEM-ERP-CS-FlowType\"> </a><a name=\"hcGEM-ERP-CS-FlowType\"> </a><p>This case-sensitive code system <code>https://gematik.de/fhir/erp/CodeSystem/GEM-ERP-CS-FlowType</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">160<a name=\"GEM-ERP-CS-FlowType-160\"> </a></td><td>Flowtype für Apothekenpflichtige Arzneimittel</td></tr><tr><td style=\"white-space:nowrap\">162<a name=\"GEM-ERP-CS-FlowType-162\"> </a></td><td>Flowtype für Digitale Gesundheitsanwendungen</td></tr><tr><td style=\"white-space:nowrap\">165<a name=\"GEM-ERP-CS-FlowType-165\"> </a></td><td>Flowtype für Betäubungsmittel</td></tr><tr><td style=\"white-space:nowrap\">166<a name=\"GEM-ERP-CS-FlowType-166\"> </a></td><td>Flowtype für Arzneimittel nach § 3a AMVV</td></tr><tr><td style=\"white-space:nowrap\">169<a name=\"GEM-ERP-CS-FlowType-169\"> </a></td><td>Flowtype zur Workflow-Steuerung durch Leistungserbringer</td></tr><tr><td style=\"white-space:nowrap\">200<a name=\"GEM-ERP-CS-FlowType-200\"> </a></td><td>Flowtype für Apothekenpflichtige Arzneimittel (PKV)</td></tr><tr><td style=\"white-space:nowrap\">209<a name=\"GEM-ERP-CS-FlowType-209\"> </a></td><td>Flowtype zur Workflow-Steuerung durch Leistungserbringer (PKV)</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://gematik.de/fhir/erp/CodeSystem/GEM-ERP-CS-FlowType"^^xsd:anyURI ;
+     fhir:l <https://gematik.de/fhir/erp/CodeSystem/GEM-ERP-CS-FlowType>
+  ] ; # 
+  fhir:version [ fhir:v "1.0.0-draft"] ; # 
+  fhir:name [ fhir:v "GEM_ERP_CS_FlowType"] ; # 
+  fhir:title [ fhir:v "CodeSystem der Flowtypen"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-12-15"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "gematik GmbH"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "gematik GmbH" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://gematik.de" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "erp-umsetzung@gematik.de" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Zeigt die verschiedenen Typen des E-Rezept Workflows entsprechend der Verordnungsformulare.\n\nWICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheken wie z.B. Pharmazeutische Dienstleistungen!"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "DE" ] ;
+       fhir:display [ fhir:v "Germany" ]
+     ] )
+  ] ) ; # 
+  fhir:copyright [ fhir:v "gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.html), Version 2.0."] ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "7"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "160" ] ;
+     fhir:display [ fhir:v "Flowtype für Apothekenpflichtige Arzneimittel" ]
+  ] [
+     fhir:code [ fhir:v "162" ] ;
+     fhir:display [ fhir:v "Flowtype für Digitale Gesundheitsanwendungen" ]
+  ] [
+     fhir:code [ fhir:v "165" ] ;
+     fhir:display [ fhir:v "Flowtype für Betäubungsmittel" ]
+  ] [
+     fhir:code [ fhir:v "166" ] ;
+     fhir:display [ fhir:v "Flowtype für Arzneimittel nach § 3a AMVV" ]
+  ] [
+     fhir:code [ fhir:v "169" ] ;
+     fhir:display [ fhir:v "Flowtype zur Workflow-Steuerung durch Leistungserbringer" ]
+  ] [
+     fhir:code [ fhir:v "200" ] ;
+     fhir:display [ fhir:v "Flowtype für Apothekenpflichtige Arzneimittel (PKV)" ]
+  ] [
+     fhir:code [ fhir:v "209" ] ;
+     fhir:display [ fhir:v "Flowtype zur Workflow-Steuerung durch Leistungserbringer (PKV)" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
