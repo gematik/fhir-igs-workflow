@@ -1,5 +1,10 @@
 Diese Seite enthält die normativen Anforderungen an das PVS für die Operation `$activate`.
-Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/{{ site.data.constants.tiflow_core_version }}/op-activate-client-requirements.html).
+
+### Anforderungen aus der Core Spezifikation
+
+{% include core-op-activate-req-pvs.md %}
+
+### Modulspezifische Anforderungen
 
 ### Anforderungen im Rahmen des Moduls Arzneimittel
 <!-- A_19275 -->

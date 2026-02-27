@@ -1,5 +1,11 @@
 Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für die Operation `$accept`.
 
+### Anforderungen aus der Core Spezifikation
+
+{% include core-op-accept-req-fd.md %}
+
+### Modulspezifische Anforderungen
+
 <!-- A_19166-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-30" title="E-Rezept-Fachdienst - Task akzeptieren - Flowtype 160/166/169/200/209 - Rollenprüfung" version="0">
     <meta lockversion="false"/>

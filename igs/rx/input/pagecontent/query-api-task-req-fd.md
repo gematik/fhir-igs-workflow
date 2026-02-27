@@ -1,3 +1,11 @@
+Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für die Task-Query.
+
+### Anforderungen aus der Core Spezifikation
+
+Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
+
+### Modulspezifische Anforderungen
+
 <!-- A_21558-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-33" title="E-Rezept-Fachdienst - Task abrufen - Rollenprüfung Versicherter oder Apotheke liest Rezepte" version="0">
     <meta lockversion="false"/>

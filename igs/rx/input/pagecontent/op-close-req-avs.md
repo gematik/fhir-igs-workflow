@@ -1,5 +1,10 @@
 Diese Seite enthält die normativen Anforderungen an das AVS für die Operation `$close`.
-Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/{{ site.data.constants.tiflow_core_version }}/op-close-client-requirements.html).
+
+### Anforderungen aus der Core Spezifikation
+
+{% include core-op-close-req-avs.md %}
+
+### Modulspezifische Anforderungen
 
 <!-- A_19288-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-29" title="PS abgebende LEI:  Quittung abrufen - Dispensierinformationen erstellen" version="0">

@@ -6,7 +6,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$activate` gesendet.
 
 ### Anforderungen an Schnittstelle
 
-- [Server-Anforderungen zu `$activate`](./op-activate-fd-requirements.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [Server-Anforderungen zu `$activate`](./op-activate-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
 - [PVS-Anforderungen zu `$activate`](./op-activate-req-pvs.html): Anforderungen an das PVS zur Nutzung der Schnittstelle.
 
 ### API Beschreibung

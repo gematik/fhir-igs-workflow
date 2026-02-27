@@ -1,5 +1,6 @@
 ### Anforderungen aus der Core Spezifikation
 
+Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 
 
 ### Modulspezifische Anforderungen

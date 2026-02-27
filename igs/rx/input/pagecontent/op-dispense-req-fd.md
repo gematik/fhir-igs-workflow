@@ -1,5 +1,11 @@
 Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für die Operation `$dispense`.
 
+### Anforderungen aus der Core Spezifikation
+
+Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
+
+### Modulspezifische Anforderungen
+
 <!-- A_24279 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-178" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Rollenprüfung Abgebender stellt Dispensierinformationen bereit" version="0">
     <meta lockversion="false"/>
