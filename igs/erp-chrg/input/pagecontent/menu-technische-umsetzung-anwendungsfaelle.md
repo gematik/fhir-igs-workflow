@@ -3,7 +3,7 @@
 Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rezepte für PKV‑Versicherte“. Im Fokus steht, was im E‑Rezept‑Fachdienst und in den beteiligten Clients (FdV/AdV, Primärsysteme, AVS) passiert, wenn die fachlichen Anwendungsfälle ausgeführt werden.
 
 <!-- AF_10082 - Abrechnungsinformation durch Abgebenden bereitstellen -->
-{% assign use_case = use_cases | where: "title", "Abrechnungsinformation durch Abgebenden bereitstellen" | first %}
+{% assign use_case = use_cases | where: "title", "UC 4.11 - Abrechnungsinformation durch Abgebenden bereitstellen" | first %}
 <a id="{{ use_case.anchor }}"></a>
 ### {{ use_case.title }}
 
@@ -12,7 +12,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- AF_10081 - Abrechnungsinformation durch Abgebenden abrufen -->
-{% assign use_case = use_cases | where: "title", "Abrechnungsinformation durch Abgebenden abrufen" | first %}
+{% assign use_case = use_cases | where: "title", "UC 4.10 - Abrechnungsinformationen durch Abgebenden abrufen" | first %}
 <a id="{{ use_case.anchor }}"></a>
 ### {{ use_case.title }}
 
@@ -21,7 +21,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- AF_10083 - PKV-Abgabedatensatz durch Abgebenden ändern -->
-{% assign use_case = use_cases | where: "title", "PKV-Abgabedatensatz durch Abgebenden ändern" | first %}
+{% assign use_case = use_cases | where: "title", "UC 4.13 - PKV-Abgabedatensatz durch Abgebenden ändern" | first %}
 <a id="{{ use_case.anchor }}"></a>
 ### {{ use_case.title }}
 
@@ -30,7 +30,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- AF_10084 - Einwilligung zum Speichern der Abrechnungsinformationen erteilen -->
-{% assign use_case = use_cases | where: "title", "Einwilligung zum Speichern der Abrechnungsinformationen erteilen" | first %}
+{% assign use_case = use_cases | where: "title", "UC 3.14 - Einwilligung durch Versicherten erteilen" | first %}
 <a id="{{ use_case.anchor }}"></a>
 ### {{ use_case.title }}
 
@@ -39,7 +39,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- AF_10085 - Einwilligung zum Speichern der Abrechnungsinformationen widerrufen -->
-{% assign use_case = use_cases | where: "title", "Einwilligung zum Speichern der Abrechnungsinformationen widerrufen" | first %}
+{% assign use_case = use_cases | where: "title", "UC 3.15 - Einwilligung durch Versicherten widerrufen" | first %}
 <a id="{{ use_case.anchor }}"></a>
 ### {{ use_case.title }}
 
@@ -48,7 +48,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- AF_10086 - Einwilligung zum Speichern der Abrechnungsinformationen einsehen -->
-{% assign use_case = use_cases | where: "title", "Einwilligung zum Speichern der Abrechnungsinformationen einsehen" | first %}
+{% assign use_case = use_cases | where: "title", "UC 3.13 - Einwilligungen durch Versicherten einsehen" | first %}
 <a id="{{ use_case.anchor }}"></a>
 ### {{ use_case.title }}
 
