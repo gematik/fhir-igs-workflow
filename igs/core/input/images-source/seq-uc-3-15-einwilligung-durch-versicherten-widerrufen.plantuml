@@ -1,0 +1,22 @@
+@startuml 
+title UC 3.15 -Einwilligung durch den Versicherten widerrufen
+
+autonumber "<b>[0]"
+actor "Versicherte" as Ver
+participant "E-Rezept-FdV" as FdV
+participant "E-Rezept-Fachdienst" as FD
+participant "Identity Provider" as IDP
+
+Ver -> FdV: Einwilligung widerrufen
+opt kein gültiger AuthN-Token
+  ref over FdV, IDP: AuthN-Token anfordern
+end
+FdV -> FD: DELETE /Consent/?category{AuthN-Token}
+FD -> FD: Einwilligung prüfen
+FD -> FD: Einwilligung löschen
+FD -> FD: Datenzugriff protokollieren
+FD -> FD: optional: Löschen relevanter Daten
+FD --> FdV: :Status
+FdV --> Ver: Status
+
+@enduml  

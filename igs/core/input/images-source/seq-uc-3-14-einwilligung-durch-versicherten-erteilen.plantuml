@@ -1,0 +1,20 @@
+@startuml 
+title UC 3.14 - Einwilligung durch den Versicherten erteilen
+
+autonumber "<b>[0]"
+actor "Versicherte" as Ver
+participant "E-Rezept-FdV" as FdV
+participant "E-Rezept-Fachdienst" as FD
+participant "Identity Provider" as IDP
+
+Ver -> FdV: Einwilligung erteilen
+opt kein gültiger AuthN-Token
+  ref over FdV, IDP: AuthN-Token anfordern
+end
+FdV -> FD: POST /Consent/{AuthN-Token}
+FD -> FD: Einwilligung speichern
+FD -> FD: Datenzugriff protokollieren
+FD --> FdV: :Consent
+FdV --> Ver: Status
+
+@enduml  

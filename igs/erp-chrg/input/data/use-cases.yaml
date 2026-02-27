@@ -1,7 +1,8 @@
-- id: AF_10082
-  anchor: abrechnungsinformation-bereitstellen
-  link: menu-technische-umsetzung-anwendungsfaelle.html#abrechnungsinformation-bereitstellen
-  title: "Abrechnungsinformation durch Abgebenden bereitstellen"
+# Abgebende LEI Use Cases
+- id: UC_4_11_Abrechungsinformation_durch_Abgebenden_bereitstellen
+  anchor: uc_4_11_abrechungsinformation_durch_abgebenden_bereitstellen
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc_4_11_abrechungsinformation_durch_abgebenden_bereitstellen
+  title: "UC 4.11 - Abrechnungsinformation durch Abgebenden bereitstellen"
   roles: ["Apotheker"]
   description: |
     Mit der Belieferung des E-Rezepts übermittelt die abgebende LEI den PKV-Abgabedatensatz
@@ -22,12 +23,12 @@
     - Abrechnungsinformation ist gespeichert und protokolliert.  
   interface: |
     - [Abrechnungsinformation bereitstellen](./query-api-chargeitem.html#post-chargeitem-bereitstellen)
-  diagram: seq-abrechnungsinformation-bereitstellen
-
-- id: AF_10081
-  anchor: abrechnungsinformation-abrufen
-  link: menu-technische-umsetzung-anwendungsfaelle.html#abrechnungsinformation-abrufen
-  title: "Abrechnungsinformation durch Abgebenden abrufen"
+  diagram: seq-uc-4-11-abrechungsinformation-durch-abgebenden-bereitstellen
+  
+- id: UC_4_10_Abrechungsinformationen_durch_Abgebenden_abrufen
+  anchor: uc_4_10_abrechungsinformationen_durch_abgebenden_abrufen
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc_4_10_abrechungsinformationen_durch_abgebenden_abrufen
+  title: "UC 4.10 - Abrechnungsinformationen durch Abgebenden abrufen"
   roles: ["Apotheker"]
   description: |
     Die Apotheke ruft eine zuvor von ihr bereitgestellte Abrechnungsinformation ab,
@@ -42,12 +43,12 @@
     - Datensätze liegen im Primärsystem vor; Zugriff ist protokolliert.
   interface: |
     - [Abrechnungsinformation abrufen](./query-api-chargeitem.html#get-chargeitemid-details)
-  diagram: seq-abrechnungsinformation-abrufen-abgebender
+  diagram: seq-uc-4-10-abrechungsinformationen-durch-abgebenden-abrufen
 
-- id: AF_10083
-  anchor: pkv-abgabedatensatz-ändern
-  link: menu-technische-umsetzung-anwendungsfaelle.html#pkv-abgabedatensatz-ändern
-  title: "PKV-Abgabedatensatz durch Abgebenden ändern"
+- id: UC_4_13_Abgabedatensatz_durch_Abgebenden_aktualisieren
+  anchor: uc_4_13_abgabedatensatz_durch_abgebenden_aktualisieren
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc_4_13_abgabedatensatz_durch_abgebenden_aktualisieren
+  title: "UC 4.13 - PKV-Abgabedatensatz durch Abgebenden ändern"
   roles: ["Apotheker"]
   description: |
     Die abgebende LEI ändert auf Wunsch des Versicherten den PKV-Abgabedatensatz.
@@ -64,68 +65,21 @@
     - Änderung ist protokolliert; neuer AccessCode liegt vor.
   interface: |
     - [Query API: Communication](./query-api-communication.html)
-  diagram: seq-abrechnungsinformation-aendern
+  diagram: seq-uc-4-13-abgabedatensatz-durch-abgebenden-aktualisieren
 
-- id: AF_10084
-  anchor: einwilligung-erteilen
-  link: menu-technische-umsetzung-anwendungsfaelle.html#einwilligung-erteilen
-  title: "Einwilligung zum Speichern der Abrechnungsinformationen erteilen"
-  roles: ["Versicherter"]
-  description: |
-    Der Versicherte erteilt die Einwilligung zur Speicherung von Abrechnungsinformationen
-    im E-Rezept-Fachdienst. Die Einwilligung ist unbefristet.
-  preconditions: |
-    - Der Nutzer ist als PKV-Versicherter identifiziert.
-  actions: |
-    - Einwilligung im FdV erfassen.
-    - Consent-Ressource erstellen und an den Fachdienst übertragen.
-  postconditions: |
-    - Einwilligung ist gespeichert und protokolliert.
-  relatedTechnicalUseCases: |
-    - [Einwilligung erteilen](./menu-technische-umsetzung-anwendungsfaelle.html#einwilligung-erteilen)
-  diagram: seq-einwilligung-erteilen
+# Einwilligung
+- id: UC_3_14_Einwilligung_erteilen
+  core-uc: UC_3_14_Einwilligung_erteilen
+- id: UC_3_15_Einwilligung_widerrufen
+  core-uc: UC_3_15_Einwilligung_widerrufen
+- id: UC_3_13_Einwilligungen_einsehen
+  core-uc: UC_3_13_Einwilligungen_einsehen
 
-- id: AF_10085
-  anchor: einwilligung-widerrufen
-  link: menu-technische-umsetzung-anwendungsfaelle.html#einwilligung-widerrufen
-  title: "Einwilligung zum Speichern der Abrechnungsinformationen widerrufen"
-  roles: ["Versicherter"]
-  description: |
-    Der Versicherte widerruft die Einwilligung. Dadurch werden alle Abrechnungsinformationen
-    im E-Rezept-Fachdienst gelöscht.
-  preconditions: |
-    - Einwilligung wurde zuvor erteilt und ist abrufbar.
-  actions: |
-    - Widerruf im FdV bestätigen.
-    - DELETE /Consent?category=CHARGCONS ausführen.
-  postconditions: |
-    - Einwilligung und Abrechnungsinformationen sind gelöscht; Vorgang ist protokolliert.
-  relatedTechnicalUseCases: |
-    - [Einwilligung widerrufen](./menu-technische-umsetzung-anwendungsfaelle.html#einwilligung-widerrufen)
-  diagram: seq-einwilligung-widerrufen
-
-- id: AF_10086
-  anchor: einwilligung-einsehen
-  link: menu-technische-umsetzung-anwendungsfaelle.html#einwilligung-einsehen
-  title: "Einwilligung zum Speichern der Abrechnungsinformationen einsehen"
-  roles: ["Versicherter"]
-  description: |
-    Der Versicherte sieht ein, ob eine Einwilligung im E-Rezept-Fachdienst vorliegt.
-  preconditions: |
-    - Keine.
-  actions: |
-    - GET /Consent ausführen.
-    - Consent-Ressource mit CHARGCONS auswerten.
-  postconditions: |
-    - Einwilligungsstatus liegt zur Anzeige im FdV vor.
-  relatedTechnicalUseCases: |
-    - [Einwilligung einsehen](./menu-technische-umsetzung-anwendungsfaelle.html#einwilligung-einsehen)
-  diagram: seq-einwilligung-einsehen
-
-- id: AF_10087
-  anchor: abrechnungsinformationen-abrufen
-  link: menu-technische-umsetzung-anwendungsfaelle.html#abrechnungsinformationen-abrufen
-  title: "Abrechnungsinformationen durch den Versicherten abrufen"
+# Versicherter Use Cases
+- id: UC_3_10_Abrechungsinformationen_durch_Versicherten_abrufen
+  anchor: uc_3_10_abrechungsinformationen_durch_versicherten_abrufen
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc_3_10_abrechungsinformationen_durch_versicherten_abrufen
+  title: "UC 3.10 - Abrechnungsinformationen durch Versicherten abrufen"
   roles: ["Versicherter"]
   description: |
     Der Versicherte ruft die Abrechnungsinformationen aus dem E-Rezept-Fachdienst ab
@@ -141,11 +95,11 @@
     - Daten stehen im FdV zur Anzeige und zum Export bereit; Abruf ist protokolliert.
   interface: |
     - [Abrechnungsinformation abrufen](./query-api-chargeitem.html#get-chargeitem-liste)
-  diagram: seq-abrechnungsinformation-abrufen-versicherter
+  diagram: seq-uc-3-10-abrechungsinformationen-durch-versicherten-abrufen
 
-- id: AF_10088
-  anchor: abrechnungsinformationen-weitergeben
-  link: menu-technische-umsetzung-anwendungsfaelle.html#abrechnungsinformationen-weitergeben
+- id: Abrechungsinformationen_durch_Versicherten_weitergeben
+  anchor: abrechungsinformationen_durch_versicherten_weitergeben
+  link: menu-technische-umsetzung-anwendungsfaelle.html#abrechungsinformationen_durch_versicherten_weitergeben
   title: "Abrechnungsinformationen durch den Versicherten weitergeben"
   roles: ["Versicherter"]
   description: |
@@ -162,9 +116,9 @@
     - [Abrechnungsinformation weitergeben](./menu-technische-umsetzung-chargeitem-req-fdv.html#abrechnungsinformationen-exportieren)
   diagram: seq-abrechnungsinformation-weitergeben
 
-- id: AF_10089
-  anchor: abrechnungsinformationen-markieren
-  link: menu-technische-umsetzung-anwendungsfaelle.html#abrechnungsinformationen-markieren
+- id: UC_3_12_Abrechungsinformation_durch_Versicherten_markieren
+  anchor: uc_3_12_abrechungsinformation_durch_versicherten_markieren
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc_3_12_abrechungsinformationen_durch_versicherten_markieren
   title: "Abrechnungsinformationen durch den Versicherten markieren"
   roles: ["Versicherter"]
   description: |
@@ -179,11 +133,11 @@
     - Die Information zur Markierung ist im E-Rezept-Fachdienst gespeichert. Der Datenzugriff ist im E-Rezept-Fachdienst protokolliert.
   interface: |
     - [Abrechnungsinformation markieren](./menu-technische-umsetzung-chargeitem-req-fdv.html#abrechnungsinformationen-markieren)
-  diagram: seq-abrechnungsinformation-markieren
+  diagram: seq-uc-3-12-abrechungsinformation-durch-versicherten-markieren
 
-- id: AF_10090
-  anchor: abrechnungsinformationen-löschen
-  link: menu-technische-umsetzung-anwendungsfaelle.html#abrechnungsinformationen-löschen
+- id: AF_10090 UC_3_11_Abrechungsinformation_durch_Versicherten_löschen
+  anchor: uc_3_11_abrechungsinformation_durch_versicherten_löschen
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc_3_11_abrechungsinformation_durch_versicherten_löschen
   title: "Abrechnungsinformationen durch den Versicherten löschen"
   roles: ["Versicherter"]
   description: |
@@ -198,4 +152,4 @@
     - Die Abrechnungsinformation sind auf dem E-Rezept-Fachdienst gelöscht. Das Löschen ist im E-Rezept-Fachdienst protokolliert.
   interface: |
     - [Abrechnungsinformation löschen](./menu-technische-umsetzung-chargeitem-req-fdv.html#abrechnungsinformationen-löschen)
-  diagram: seq-abrechnungsinformation-loeschen
+  diagram: seq-uc-3-11-abrechungsinformation-durch-versicherten-loeschen

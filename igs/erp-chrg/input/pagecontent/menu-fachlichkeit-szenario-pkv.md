@@ -67,7 +67,7 @@ Das Speichern der Abrechnungsinformationen erfolgt nur mit Einwilligung des Vers
 
 **Technische Anwendungsfälle**
 
-{% assign scenario_use_cases = "AF_10084, AF_10086, AF_10085" | split: ", " %}
+{% assign scenario_use_cases = "UC_3_14_Einwilligung_erteilen, UC_3_13_Einwilligungen_einsehen, UC_3_15_Einwilligung_widerrufen" | split: ", " %}
 
 {% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Fachliche Anwendungsfälle mit Bezug zum Szenario <i>Einwilligung zum Speichern der Abrechungsinformationen</i>" %}
 
@@ -84,7 +84,7 @@ Der E-Rezept-Fachdienst erzeugt einen AccessCode, der für spätere Korrekturen 
 
 **Technische Anwendungsfälle**
 
-{% assign scenario_use_cases = "AF_10082, AF_10081, AF_10083" | split: ", " %}
+{% assign scenario_use_cases = "UC_4_11_Abrechungsinformation_durch_Abgebenden_bereitstellen, UC_4_10_Abrechungsinformationen_durch_Abgebenden_abrufen, UC_4_13_Abgabedatensatz_durch_Abgebenden_aktualisieren" | split: ", " %}
 {% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Fachliche Anwendungsfälle mit Bezug zu Szenario <i>Belieferung durch die Apotheke</i>" %}
 
 ### Abrechnung durch den Versicherten
@@ -104,7 +104,7 @@ Die Löschfristen für das E-Rezept mit den in Beziehung stehenden Daten, wie Di
 
 **Technische Anwendungsfälle**
 
-{% assign scenario_use_cases = "AF_10087, AF_10088, AF_10089, AF_10090" | split: ", " %}
+{% assign scenario_use_cases = "UC_3_12_Abrechungsinformationen_durch_Versicherten_abrufen, Abrechungsinformationen_durch_Versicherten_weitergeben, UC_3_12_Abrechungsinformation_durch_Versicherten_markieren, UC_3_11_Abrechungsinformation_durch_Versicherten_löschen" | split: ", " %}
 {% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Fachliche Anwendungsfälle mit Bezug zu Szenario <i>Abrechnung durch den Versicherten</i>" %}
 
 
