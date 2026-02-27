@@ -20,6 +20,7 @@ Die Inhalte basieren auf der Spezifikation "EU Zugriff E-Rezept", Version 1.0.1
 - Anbindung der TI an die eHDSI
 - Mapping zwischen deutschen Verordnungsdaten und dem EU-Datenmodell
 - Abrechnung von im EU-Ausland eingelösten E-Rezepten
+- Umsetzung von Workflows zu Arzneimitteln
 
 ### Wie dieser IG zu lesen ist
 

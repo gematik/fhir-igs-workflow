@@ -1,0 +1,29 @@
+@startuml
+title UC Liste ausgewählter E-Rezepte eines Versicherten abrufen
+
+actor Versicherte
+actor "LE-EU" as LEEU
+participant "eHDSI / NCPeH-FD\nDeutschland" as NCP
+participant "E-Rezept-Fachdienst" as FD
+
+Versicherte -> LEEU : [1] Abstimmung zu einzulösenden E-Rezepten
+LEEU -> NCP : [2] Abfrage Liste ausgewählter E-Rezepte
+
+NCP -> NCP : [3] Prüfung Behandlungsverhältnis\nLE-EU und Versicherter
+NCP -> NCP : [4] Prüfung Permission bzw. Rolle
+
+NCP -> FD : [5] POST /$get-eu-prescriptions\n{AuthN-Token, KVNR, Zugriffscode,\nListe von Task-IDs, laendercode,\npractitionerName, practitionerRole,\npointOfCare, healthcare-facility-type,\nrequesttype}
+
+FD -> FD : [6] Prüfung Einwilligung für KVNR
+FD -> FD : [7] Prüfung Zugriffscode für KVNR\n(KVNR, Zugriffscode, laendercode,\naktueller Zeitpunkt)
+FD -> FD : [8] Tasks zu Liste von Task-IDs bestimmen
+FD -> FD : [9] Zuordnung zu Tasks zu KVNR prüfen
+FD -> FD : [10] Einlösbarkeit der Tasks prüfen
+FD -> FD : [11] ggf. E-Rezept-Status "in Abgabe (gesperrt)" setzen
+FD -> FD : [12] Zugriff protokollieren\n(KVNR, practitionerName,\npractitionerRole, pointOfCare,\nhealthcare-facility-type,\nrequesttype)
+
+FD --> NCP : [13] Bundle von Verordnungen
+NCP -> NCP : [14] Transformierung und Transkodierung
+NCP --> LEEU : [15] Liste von ePrescriptions
+
+@enduml

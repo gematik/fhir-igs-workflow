@@ -1,0 +1,21 @@
+@startuml
+title Zugriffsberechtigung durch den Versicherten einsehen
+
+actor Versicherte
+participant "E-Rezept-FdV" as FdV
+participant "E-Rezept-Fachdienst" as FD
+participant "Identity Provider" as IdP
+
+Versicherte -> FdV : [1] Zugriffsberechtigung einsehen
+
+opt
+  ref over FdV, IdP : [2] UC5.1 - AuthN-Token durch Versicherten anfordern
+  FdV -> IdP : [2] UC5.1 - AuthN-Token durch Versicherten anfordern
+end
+
+FdV -> FD : [3] Zugriffsberechtigung abfragen\n{AuthN-Token}
+FD --> FdV : [4] Zugriffscode,\nZugriffscode gültig bis,\nLändercode
+
+FdV --> Versicherte : [5] Anzeige
+
+@enduml
