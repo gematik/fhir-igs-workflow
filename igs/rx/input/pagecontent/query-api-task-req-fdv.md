@@ -1,4 +1,10 @@
-Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Task`-Query-Endpunkte.
+### Anforderungen aus der Core Spezifikation
+
+
+
+### Modulspezifische Anforderungen
+
+Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Task`-Query-Endpunkte.
 
 <!-- A_19347-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-6" title="E-Rezept-FdV: E-Rezepte abrufen - Liste E-Rezepte abrufen" version="0">

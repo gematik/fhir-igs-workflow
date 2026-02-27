@@ -1,4 +1,4 @@
-Diese Seite enthält die normativen Anforderungen an den Client des E-Rezept-Fachdienst für die Operation `$close`.
+Diese Seite enthält die normativen Anforderungen an das AVS für die Operation `$close`.
 Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/{{ site.data.constants.tiflow_core_version }}/op-close-client-requirements.html).
 
 <!-- A_19288-03 -->

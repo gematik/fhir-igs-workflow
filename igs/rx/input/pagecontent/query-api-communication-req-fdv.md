@@ -1,4 +1,4 @@
-Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Communication`-Query-Endpunkte.
+Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Communication`-Query-Endpunkte.
 
 <!-- A_21402-02 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-RX-21" title="E-Rezept-FdV: Anfrage Belieferung - Flowtype 162 / 169 / 209 - Anfrage nicht zulässig" version="0">

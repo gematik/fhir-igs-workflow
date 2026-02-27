@@ -6,7 +6,7 @@ Die Nachricht zum Abruf von Dipensierdaten wird als HTTP GET-Anfrage an den  ges
 
 ### Anforderungen an Schnittstelle
 
-- [Ergänzende Client-Anforderungen zur MedicationDispense-Query](./query-api-medicationdispense-client-requirements.html): Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.
+- [Ergänzende Anforderungen für das E-Rezept-FdV zur MedicationDispense-Query](./query-api-medicationdispense-req-fdv.html): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
 
 ### Resource API
 
