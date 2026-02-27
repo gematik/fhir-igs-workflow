@@ -57,7 +57,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- AF_10087 - Abrechnungsinformationen durch den Versicherten abrufen -->
-{% assign use_case = use_cases | where: "title", "Abrechnungsinformationen durch den Versicherten abrufen" | first %}
+{% assign use_case = use_cases | where: "title", "UC 3.10 - Abrechnungsinformationen durch Versicherten abrufen" | first %}
 <a id="{{ use_case.anchor }}"></a>
 ### {{ use_case.title }}
 
