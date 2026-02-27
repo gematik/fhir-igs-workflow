@@ -453,3 +453,62 @@
   interface: |
     - [Operation API: Dispensierinformationen bereitstellen](./op-dispense.html)
   diagram: seq-uc-4-16-dispensierinformationen-bereitstellen
+- id: UC_3_13_Einwilligungen_einsehen
+  anchor: uc-3-13-einwilligungen-einsehen
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-3-13-einwilligungen-einsehen
+  title: UC 3.13 - Einwilligungen durch Versicherten einsehen
+  roles:
+    - Versicherter
+  description: |
+    Ein Versicherter ermittelt, welche Einwilligungen auf dem E-Rezept-Fachdienst für seine KVNR hinterlegt sind..
+  preconditions: |
+    - keine
+  actions: |
+    - Das E-Rezept-FdV führt die Operation zur Abfrage der Einwilligungen aus.
+    - Der E-Rezept-Fachdienst gibt die Information an das E-Rezept-FdV.
+  postconditions: |
+    - Die Information steht zur Anzeige im E-Rezept-FdV bereit.
+  interface: |
+    - [Operation API: Einwilligungen durch Versicherten einsehen](./query-api-consent.html)
+  diagram: seq-uc-3-13-einwilligungen-durch-versicherten-einsehen
+- id: UC_3_14_Einwilligung_erteilen
+  anchor: uc-3-14-einwilligung-erteilen
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-3-14-einwilligung-erteilen
+  title: UC 3.14 - Einwilligung durch Versicherten erteilen
+  roles:
+    - Versicherter
+  description: |
+    Ein Versicherter erteilt die Einwilligung für die Nutzung einer Funktionalität der Anwendung.
+  preconditions: |
+    - Ein Versicherter hat eine Datenverarbeitung ausgewählt, für die er eine Einwilligung erteilen möchte.
+  actions: |
+    - Ein Versicherter wählt im E-Rezept-FdV die Operation zum Erteilen der Einwilligung aus.
+    - Der E-Rezept-Fachdienst speichert die Einwilligung.
+  postconditions: |
+    - Die Einwilligung ist im E-Rezept-Fachdienst gespeichert. 
+    - Das Erteilen der Einwilligung ist im E-Rezept-Fachdienst protokolliert.
+  interface: |
+    - [Operation API: Einwilligung durch Versicherten erteilen](./query-api-consent.html)
+  diagram: seq-uc-3-14-einwilligung-durch-versicherten-erteilen
+- id: UC_3_15_Einwilligung_widerrufen
+  anchor: uc-3-15-einwilligung-widerrufen
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-3-15-einwilligung-widerrufen
+  title: UC 3.15 - Einwilligung durch Versicherten widerrufen
+  roles:
+    - Versicherter
+  description: |
+    Ein Versicherter widerruft die Einwilligung für die Nutzung einer Funktionalität der Anwendung.
+  preconditions: |
+    - Ein Versicherter hat eine Datenverarbeitung ausgewählt, für die er eine Einwilligung widerrufen möchte.
+    - Im E-Rezept-FdV liegt die Information vor, dass die Einwilligung für diese Datenverarbeitung erteilt wurde.
+  actions: |
+    - Ein Versicherter wählt über ein E-Rezept-FdV die Operation zum Widerrufen der Einwilligung auf.
+    - Der E-Rezept-Fachdienst prüft, ob zuvor die Einwilligung erteilt wurde und löscht diese. 
+    - Der E-Rezept-Fachdienst löscht für die Einwilligung relevante Daten unwiederbringlich.
+  postconditions: |
+    - Das Widerrufen der Einwilligung ist im E-Rezept-Fachdienst protokolliert.
+  interface: |
+    - [Operation API: Einwilligung durch Versicherten widerrufen](./query-api-consent.html)
+  diagram: seq-uc-3-15-einwilligung-durch-versicherten-widerrufen
+
+ 

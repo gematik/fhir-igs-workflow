@@ -1,8 +1,13 @@
+{% assign use_cases = site.data['use-cases'] %}
+
 Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Consent`-Query-Endpunkte.
 
 ### Einwilligung erteilen
 
-<!-- ToDo Ablaufdiagramm Anwendungsfall -->
+<!-- Ablaufdiagramm Anwendungsfall -->
+{% assign use_case = use_cases | where: "title", "UC 3.14 - Einwilligung durch Versicherten erteilen" | first %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- A_22709-02 -->
 <requirement conformance="SHALL" key="IG-WF-CORE-7" title="E-Rezept-FdV: Einwilligung erteilen - Einwilligungstext" version="0">
@@ -49,12 +54,15 @@ Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Consent`-Query-
     ausführen.
 </requirement>
 
-### Einwilligung einsehen
+### Einwilligungen einsehen
 
-<!-- ToDo Ablaufdiagramm Anwendungsfall -->
+<!-- Ablaufdiagramm Anwendungsfall -->
+{% assign use_case = use_cases | where: "title", "UC 3.13 - Einwilligungen durch Versicherten einsehen" | first %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- A_22168-02 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-7" title="E-Rezept-FdV: Einwilligung erteilen - Abfragerequest" version="0">
+<requirement conformance="SHALL" key="IG-WF-CORE-7" title="E-Rezept-FdV: Einwilligungsinformation abrufen - Abfragerequest" version="0">
     <meta lockversion="false"/>
     <actor name="eRP_FdV">
         <testProcedure id="Produkttest"/>
@@ -70,7 +78,10 @@ In der Response können mehrere Consent Ressourcen enthalten sein. Der Einwillig
 
 ### Einwilligung widerrufen
 
-<!-- ToDo Ablaufdiagramm Anwendungsfall -->
+<!-- Ablaufdiagramm Anwendungsfall -->
+{% assign use_case = use_cases | where: "title", "UC 3.15 - Einwilligung durch Versicherten widerrufen" | first %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- A_22169-02 -->
 <requirement conformance="SHALL" key="IG-WF-CORE-7" title="E-Rezept-FdV: Einwilligung widerrufen - Widerruf eingeben" version="0">
