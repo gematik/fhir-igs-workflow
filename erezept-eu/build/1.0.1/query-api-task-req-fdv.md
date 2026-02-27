@@ -11,10 +11,6 @@ Version 1.0.1 - ci-build
 
 ## E-Rezept-FdV Anforderungen: Task
 
-### Anforderungen der Schnittstelle aus der Core-Spezifikation
-
-//TODO: Include Core AFOs
-
 ### Anforderungen der Schnittstelle aus diesem Modul
 
 #### PATCH

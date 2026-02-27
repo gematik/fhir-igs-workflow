@@ -73,7 +73,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "gemIG_TIFlow_EU",
   "title" : "EU Zugriff E-Rezept",
   "status" : "draft",
-  "date" : "2026-02-27T13:23:54+00:00",
+  "date" : "2026-02-27T14:14:13+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
