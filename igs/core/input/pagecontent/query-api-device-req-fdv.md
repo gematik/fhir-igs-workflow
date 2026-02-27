@@ -1,8 +1,8 @@
-# Client-Anforderungen: Query API Device
+# E-Rezept-FdV-Anforderungen: Query API Device
 
-Diese Seite beschreibt Anforderungen an Clients zur Nutzung des Device-Query-Endpunkts.
+Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung des Device-Query-Endpunkts.
 
-## Normative Client-Anforderungen
+## Normative E-Rezept-FdV-Anforderungen
 
 In den vorliegenden Spezifikationen sind keine zusaetzlichen, ausschließlich auf `GET /Device` bezogenen, normativen Client-Anforderungen ausgewiesen.
 

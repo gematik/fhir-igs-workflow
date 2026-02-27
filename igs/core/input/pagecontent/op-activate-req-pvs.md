@@ -1,4 +1,4 @@
-Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an Clientsysteme für die Nutzung der Operation `$activate`.
+Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an das PVS für die Nutzung der Operation `$activate`.
 
 <!-- A_19272 -->
 <requirement conformance="SHALL" key="IG-TIFlow-DiGA-36" title="PS verordnende LEI: E-Rezept durch Verordnenden einstellen" version="0">
