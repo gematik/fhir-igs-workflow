@@ -243,7 +243,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
   * Ein Versicherter wählt im FdV (E-Rezept-FdV, E-Rezept-AdV) die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der E-Rezept-Fachdienst löscht die Abrechnungsinformation: * Die Abrechnungsinformation sind auf dem E-Rezept-Fachdienst gelöscht. Das Löschen ist im E-Rezept-Fachdienst protokolliert.
 
 * Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * Ein Versicherter wählt im FdV (E-Rezept-FdV, E-Rezept-AdV) die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der E-Rezept-Fachdienst löscht die Abrechnungsinformation: * [Abrechnungsinformation löschen](./menu-technische-umsetzung-chargeitem-req-fdv.md#abrechnungsinformationen-loeschen)
+  * Ein Versicherter wählt im FdV (E-Rezept-FdV, E-Rezept-AdV) die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der E-Rezept-Fachdienst löscht die Abrechnungsinformation: * [Abrechnungsinformation löschen](./menu-technische-umsetzung-chargeitem-req-fdv.md#abrechnungsinformationen-löschen)
 
 * Beschreibung: Relevante(r) Sektor(en)
   * Ein Versicherter wählt im FdV (E-Rezept-FdV, E-Rezept-AdV) die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der E-Rezept-Fachdienst löscht die Abrechnungsinformation:  VERSICHERTER 

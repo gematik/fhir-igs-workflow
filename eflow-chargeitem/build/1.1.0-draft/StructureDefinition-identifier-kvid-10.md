@@ -13,7 +13,7 @@ Version 1.1.0-draft - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/erpchrg/StructureDefinition/identifier-kvid-10 | *Version*:1.1.0-draft |
-| Draft as of 2026-02-26 | *Computable Name*:IdentifierKvid10 |
+| Draft as of 2026-02-27 | *Computable Name*:IdentifierKvid10 |
 
  
 Identifier profil für die Krankenversichertennummer (KVID-10) 
@@ -45,7 +45,7 @@ Other representations of profile: [CSV](StructureDefinition-identifier-kvid-10.c
   "name" : "IdentifierKvid10",
   "title" : "Identifier KVID-10",
   "status" : "draft",
-  "date" : "2026-02-26T10:12:23+00:00",
+  "date" : "2026-02-27T08:04:50+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

@@ -122,10 +122,7 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="menu-fachlichkeit-ueberblick.html">Überblick</a>
-      </li>
-      <li>
-        <a href="menu-fachlichkeit-szenario-pkv.html">Szenarien</a>
+        <a href="menu-fachlichkeit-szenario-pkv.html">Bereitstellung von Abrechnungsinformationen für PKV-Versicherte</a>
       </li>
     </ul>
   </li>
@@ -271,47 +268,41 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul id="markdown-toc">
   <li><a href="#profilierung" id="markdown-toc-profilierung">Profilierung</a></li>
-  <li><a href="#allgemeine-anforderungen-an-schnittstelle" id="markdown-toc-allgemeine-anforderungen-an-schnittstelle">Allgemeine Anforderungen an Schnittstelle</a></li>
+  <li><a href="#anforderungen-an-schnittstelle" id="markdown-toc-anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</a></li>
   <li><a href="#get-chargeitem-liste" id="markdown-toc-get-chargeitem-liste">GET /ChargeItem (Liste)</a>    <ul>
       <li><a href="#nachricht" id="markdown-toc-nachricht">Nachricht</a></li>
       <li><a href="#auslösung" id="markdown-toc-auslösung">Auslösung</a></li>
       <li><a href="#resource-api" id="markdown-toc-resource-api">Resource API</a></li>
-      <li><a href="#anforderungen-an-schnittstelle" id="markdown-toc-anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</a></li>
     </ul>
   </li>
   <li><a href="#get-chargeitemid-details" id="markdown-toc-get-chargeitemid-details">GET /ChargeItem/&#60;id&#62; (Details)</a>    <ul>
       <li><a href="#nachricht-1" id="markdown-toc-nachricht-1">Nachricht</a></li>
       <li><a href="#auslösung-1" id="markdown-toc-auslösung-1">Auslösung</a></li>
       <li><a href="#resource-api-1" id="markdown-toc-resource-api-1">Resource API</a></li>
-      <li><a href="#anforderungen-an-schnittstelle-1" id="markdown-toc-anforderungen-an-schnittstelle-1">Anforderungen an Schnittstelle</a></li>
     </ul>
   </li>
   <li><a href="#post-chargeitem-bereitstellen" id="markdown-toc-post-chargeitem-bereitstellen">POST /ChargeItem (Bereitstellen)</a>    <ul>
       <li><a href="#nachricht-2" id="markdown-toc-nachricht-2">Nachricht</a></li>
       <li><a href="#auslösung-2" id="markdown-toc-auslösung-2">Auslösung</a></li>
       <li><a href="#resource-api-2" id="markdown-toc-resource-api-2">Resource API</a></li>
-      <li><a href="#anforderungen-an-schnittstelle-2" id="markdown-toc-anforderungen-an-schnittstelle-2">Anforderungen an Schnittstelle</a></li>
     </ul>
   </li>
   <li><a href="#patch-chargeitemid-markierungen" id="markdown-toc-patch-chargeitemid-markierungen">PATCH /ChargeItem/&#60;id&#62; (Markierungen)</a>    <ul>
       <li><a href="#nachricht-3" id="markdown-toc-nachricht-3">Nachricht</a></li>
       <li><a href="#auslösung-3" id="markdown-toc-auslösung-3">Auslösung</a></li>
       <li><a href="#resource-api-3" id="markdown-toc-resource-api-3">Resource API</a></li>
-      <li><a href="#anforderungen-an-schnittstelle-3" id="markdown-toc-anforderungen-an-schnittstelle-3">Anforderungen an Schnittstelle</a></li>
     </ul>
   </li>
   <li><a href="#put-chargeitemid-ändern-pkvabgabedatensatz" id="markdown-toc-put-chargeitemid-ändern-pkvabgabedatensatz">PUT /ChargeItem/&#60;id&#62; (Ändern PKV‑Abgabedatensatz)</a>    <ul>
       <li><a href="#nachricht-4" id="markdown-toc-nachricht-4">Nachricht</a></li>
       <li><a href="#auslösung-4" id="markdown-toc-auslösung-4">Auslösung</a></li>
       <li><a href="#resource-api-4" id="markdown-toc-resource-api-4">Resource API</a></li>
-      <li><a href="#anforderungen-an-schnittstelle-4" id="markdown-toc-anforderungen-an-schnittstelle-4">Anforderungen an Schnittstelle</a></li>
     </ul>
   </li>
   <li><a href="#delete-chargeitemid" id="markdown-toc-delete-chargeitemid">DELETE /ChargeItem/&#60;id&#62;</a>    <ul>
       <li><a href="#nachricht-5" id="markdown-toc-nachricht-5">Nachricht</a></li>
       <li><a href="#auslösung-5" id="markdown-toc-auslösung-5">Auslösung</a></li>
       <li><a href="#resource-api-5" id="markdown-toc-resource-api-5">Resource API</a></li>
-      <li><a href="#anforderungen-an-schnittstelle-5" id="markdown-toc-anforderungen-an-schnittstelle-5">Anforderungen an Schnittstelle</a></li>
     </ul>
   </li>
   <li><a href="#sicherheitsanforderungen" id="markdown-toc-sicherheitsanforderungen">Sicherheitsanforderungen</a></li>
@@ -323,9 +314,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h2 id="profilierung">Profilierung</h2>
 <p>Die Profilierung der Ressource ChargeItem ist hier dokumentiert: https://simplifier.net/erezept-patientenrechnung/gem_erpchrg_pr_chargeitem</p>
 
-<h2 id="allgemeine-anforderungen-an-schnittstelle">Allgemeine Anforderungen an Schnittstelle</h2>
+<h2 id="anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</h2>
 <ul>
   <li><a href="./query-api-chargeitem-req-fd.html">Spezifische Anforderungen für den E-Rezept-Fachdienst</a></li>
+  <li><a href="./query-api-chargeitem-req-fdv.html">Spezifische Anforderungen für den E-Rezept-FdV</a></li>
+  <li><a href="./query-api-chargeitem-req-ps.html">Spezifische Anforderungen für den abgebenden Leistungserbringer</a></li>
 </ul>
 
 <h2 id="get-chargeitem-liste">GET /ChargeItem (Liste)</h2>
@@ -555,12 +548,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </div>
 </div>
 
-<h3 id="anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</h3>
-<ul>
-  <li><a href="./query-api-chargeitem-req-fd-get.html">Spezifische Anforderungen für den E-Rezept-Fachdienst</a></li>
-  <li><a href="./query-api-chargeitem-req-fdv-get.html">Spezifische Anforderungen für den E-Rezept-FdV</a></li>
-</ul>
-
 <h2 id="get-chargeitemid-details">GET /ChargeItem/&#60;id&#62; (Details)</h2>
 
 <h3 id="nachricht-1">Nachricht</h3>
@@ -788,13 +775,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </div>
 </div>
 
-<h3 id="anforderungen-an-schnittstelle-1">Anforderungen an Schnittstelle</h3>
-<ul>
-  <li><a href="./query-api-chargeitem-req-fd-get-id.html">Spezifische Anforderungen für den E-Rezept-Fachdienst</a></li>
-  <li><a href="./query-api-chargeitem-req-fdv-get-id.html">Spezifische Anforderungen für den E-Rezept-FdV</a></li>
-  <li><a href="./query-api-chargeitem-req-ps-get-id.html">Spezifische Anforderungen für den abgebenden Leistungserbringer</a></li>
-</ul>
-
 <h2 id="post-chargeitem-bereitstellen">POST /ChargeItem (Bereitstellen)</h2>
 
 <h3 id="nachricht-2">Nachricht</h3>
@@ -810,12 +790,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="resource-api-2">Resource API</h3>
 <p>TODO</p>
 
-<h3 id="anforderungen-an-schnittstelle-2">Anforderungen an Schnittstelle</h3>
-<ul>
-  <li><a href="./query-api-chargeitem-req-fd-post.html">Spezifische Anforderungen für den E-Rezept-Fachdienst</a></li>
-  <li><a href="./query-api-chargeitem-req-ps-post.html">Spezifische Anforderungen für den abgebenden Leistungserbringer</a></li>
-</ul>
-
 <h2 id="patch-chargeitemid-markierungen">PATCH /ChargeItem/&#60;id&#62; (Markierungen)</h2>
 
 <h3 id="nachricht-3">Nachricht</h3>
@@ -826,12 +800,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="resource-api-3">Resource API</h3>
 <p>TODO</p>
-
-<h3 id="anforderungen-an-schnittstelle-3">Anforderungen an Schnittstelle</h3>
-<ul>
-  <li><a href="./query-api-chargeitem-req-fd-patch.html">Spezifische Anforderungen für den E-Rezept-Fachdienst</a></li>
-  <li><a href="./query-api-chargeitem-req-fdv-patch.html">Spezifische Anforderungen für das E-Rezept-FdV</a></li>
-</ul>
 
 <h2 id="put-chargeitemid-ändern-pkvabgabedatensatz">PUT /ChargeItem/&#60;id&#62; (Ändern PKV‑Abgabedatensatz)</h2>
 
@@ -846,12 +814,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="resource-api-4">Resource API</h3>
 <p>TODO</p>
 
-<h3 id="anforderungen-an-schnittstelle-4">Anforderungen an Schnittstelle</h3>
-<ul>
-  <li><a href="./query-api-chargeitem-req-fd-put.html">Spezifische Anforderungen für den E-Rezept-Fachdienst</a></li>
-  <li><a href="./query-api-chargeitem-req-ps-put.html">Spezifische Anforderungen für den abgebenden Leistungserbringer</a></li>
-</ul>
-
 <h2 id="delete-chargeitemid">DELETE /ChargeItem/&#60;id&#62;</h2>
 
 <h3 id="nachricht-5">Nachricht</h3>
@@ -862,12 +824,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="resource-api-5">Resource API</h3>
 <p>TODO</p>
-
-<h3 id="anforderungen-an-schnittstelle-5">Anforderungen an Schnittstelle</h3>
-<ul>
-  <li><a href="./query-api-chargeitem-req-fd-delete.html">Spezifische Anforderungen für den E-Rezept-Fachdienst</a></li>
-  <li><a href="./query-api-chargeitem-req-fdv-delete.html">Spezifische Anforderungen für das E-Rezept-FdV</a></li>
-</ul>
 
 <h2 id="sicherheitsanforderungen">Sicherheitsanforderungen</h2>
 <p>Generelle Sicherheitsanforderungen werden <a href="./menu-schnittstellen-datenschutz-und-sicherheit.html">hier</a> festgehalten.</p>
@@ -891,7 +847,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Feb 26, 2026 10:12+0000">2026-02-26</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Feb 27, 2026 08:04+0000">2026-02-27</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

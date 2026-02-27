@@ -11,4 +11,5 @@ Version 1.1.0-draft - ci-build
 ## ChargeItem: Abrechnungsinformationen des E-Rezepts für PKV-Versicherte
 
 * [Spezifische Anforderungen für das E-Rezept-FdV](./menu-technische-umsetzung-chargeitem-req-fdv.md)
+* [Spezifische Anforderungen für das Primärsystem des abgebenden Leistungserbringers](./menu-technische-umsetzung-chargeitem-req-ps.md)
 

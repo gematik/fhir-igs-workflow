@@ -16,9 +16,11 @@ Die Query API für ChargeItem ermöglicht den Zugriff auf Abrechnungsinformation
 
 Die Profilierung der Ressource ChargeItem ist hier dokumentiert: https://simplifier.net/erezept-patientenrechnung/gem_erpchrg_pr_chargeitem
 
-## Allgemeine Anforderungen an Schnittstelle
+## Anforderungen an Schnittstelle
 
 * [Spezifische Anforderungen für den E-Rezept-Fachdienst](./query-api-chargeitem-req-fd.md)
+* [Spezifische Anforderungen für den E-Rezept-FdV](./query-api-chargeitem-req-fdv.md)
+* [Spezifische Anforderungen für den abgebenden Leistungserbringer](./query-api-chargeitem-req-ps.md)
 
 ## GET /ChargeItem (Liste)
 
@@ -249,11 +251,6 @@ Anfragen an die Communication-Ressource können über die RESTful API mittels HT
     
 ```
 
-### Anforderungen an Schnittstelle
-
-* [Spezifische Anforderungen für den E-Rezept-Fachdienst](./query-api-chargeitem-req-fd-get.md)
-* [Spezifische Anforderungen für den E-Rezept-FdV](./query-api-chargeitem-req-fdv-get.md)
-
 ## GET /ChargeItem/<id> (Details)
 
 ### Nachricht
@@ -481,12 +478,6 @@ Der Detailabruf erfolgt aus dem FdV/AdV oder durch die abgebende LEI (mit Access
     
 ```
 
-### Anforderungen an Schnittstelle
-
-* [Spezifische Anforderungen für den E-Rezept-Fachdienst](./query-api-chargeitem-req-fd-get-id.md)
-* [Spezifische Anforderungen für den E-Rezept-FdV](./query-api-chargeitem-req-fdv-get-id.md)
-* [Spezifische Anforderungen für den abgebenden Leistungserbringer](./query-api-chargeitem-req-ps-get-id.md)
-
 ## POST /ChargeItem (Bereitstellen)
 
 ### Nachricht
@@ -505,11 +496,6 @@ Die Operation wird nach der Belieferung ausgelöst, sobald eine Einwilligung des
 
 TODO
 
-### Anforderungen an Schnittstelle
-
-* [Spezifische Anforderungen für den E-Rezept-Fachdienst](./query-api-chargeitem-req-fd-post.md)
-* [Spezifische Anforderungen für den abgebenden Leistungserbringer](./query-api-chargeitem-req-ps-post.md)
-
 ## PATCH /ChargeItem/<id> (Markierungen)
 
 ### Nachricht
@@ -523,11 +509,6 @@ Der Anwendungsfall wird im FdV/AdV ausgelöst, wenn Markierungen angepasst werde
 ### Resource API
 
 TODO
-
-### Anforderungen an Schnittstelle
-
-* [Spezifische Anforderungen für den E-Rezept-Fachdienst](./query-api-chargeitem-req-fd-patch.md)
-* [Spezifische Anforderungen für das E-Rezept-FdV](./query-api-chargeitem-req-fdv-patch.md)
 
 ## PUT /ChargeItem/<id> (Ändern PKV‑Abgabedatensatz)
 
@@ -545,11 +526,6 @@ Der Anwendungsfall wird ausgelöst, wenn Korrekturen an Abgabedaten notwendig si
 
 TODO
 
-### Anforderungen an Schnittstelle
-
-* [Spezifische Anforderungen für den E-Rezept-Fachdienst](./query-api-chargeitem-req-fd-put.md)
-* [Spezifische Anforderungen für den abgebenden Leistungserbringer](./query-api-chargeitem-req-ps-put.md)
-
 ## DELETE /ChargeItem/<id>
 
 ### Nachricht
@@ -563,11 +539,6 @@ Der Anwendungsfall wird durch den Versicherten im FdV/AdV ausgelöst.
 ### Resource API
 
 TODO
-
-### Anforderungen an Schnittstelle
-
-* [Spezifische Anforderungen für den E-Rezept-Fachdienst](./query-api-chargeitem-req-fd-delete.md)
-* [Spezifische Anforderungen für das E-Rezept-FdV](./query-api-chargeitem-req-fdv-delete.md)
 
 ## Sicherheitsanforderungen
 

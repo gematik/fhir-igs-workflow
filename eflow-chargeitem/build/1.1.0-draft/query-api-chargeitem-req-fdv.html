@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"6.1.15"}
-    h3,h4,h5,h6{--heading-prefix:"6.1.15"}</style>
+    <style type="text/css">h2{--heading-prefix:"6.1.2"}
+    h3,h4,h5,h6{--heading-prefix:"6.1.2"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -122,10 +122,7 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="menu-fachlichkeit-ueberblick.html">Überblick</a>
-      </li>
-      <li>
-        <a href="menu-fachlichkeit-szenario-pkv.html">Szenarien</a>
+        <a href="menu-fachlichkeit-szenario-pkv.html">Bereitstellung von Abrechnungsinformationen für PKV-Versicherte</a>
       </li>
     </ul>
   </li>
@@ -266,10 +263,221 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#abrechnungsinformationen-abrufen" id="markdown-toc-abrechnungsinformationen-abrufen">Abrechnungsinformationen abrufen</a>    <ul>
+      <li><a href="#liste-von-abrechnungsinformationen-abrufen-get-chargeitem" id="markdown-toc-liste-von-abrechnungsinformationen-abrufen-get-chargeitem">Liste von Abrechnungsinformationen abrufen (GET /ChargeItem)</a></li>
+      <li><a href="#abrechnungsinformation-abrufen-get-chargeitemid" id="markdown-toc-abrechnungsinformation-abrufen-get-chargeitemid">Abrechnungsinformation abrufen (GET /ChargeItem/&#60;id&#62;)</a></li>
+    </ul>
+  </li>
+  <li><a href="#abrechnungsinformation-markieren-patch-chargeid" id="markdown-toc-abrechnungsinformation-markieren-patch-chargeid">Abrechnungsinformation markieren (PATCH /Charge/&#60;id&#62;)</a></li>
+  <li><a href="#abrechnungsinformation-löschen-delete-chargeitemid" id="markdown-toc-abrechnungsinformation-löschen-delete-chargeitemid">Abrechnungsinformation löschen (DELETE /ChargeItem/&#60;id&#62;)</a></li>
+</ul>
+
 </div>
 <p>Diese Seite beschreibt Anforderungen an Clients zur Nutzung der <code class="language-plaintext highlighter-rouge">ChargeItem</code>-Query-Endpunkte.</p>
+
+<h2 id="abrechnungsinformationen-abrufen">Abrechnungsinformationen abrufen</h2>
+<h3 id="liste-von-abrechnungsinformationen-abrufen-get-chargeitem">Liste von Abrechnungsinformationen abrufen (GET /ChargeItem)</h3>
+<p>Mit diesem Anwendungsfall kann der Nutzer eine Liste aller Abrechnungsinformationen vom E-Rezept-Fachdienst abrufen, welche für den Versicherten bereitgestellt wurden.</p>
+
+<!--A_24554-->
+<requirement conformance="MAY" key="IG-ERP-CHRG-18881YVE" title="E-Rezept-FdV: optional: Liste Abrechnungsinformationen abrufen" version="0">
+    <meta lockversion="false" />
+    <actor name="eRP_FdV">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+      Das E-Rezept-FdV KANN den Anwendungsfall "Liste Abrechnungsinformationen abrufen" umsetzen.
+</requirement>
+
+<p>TODO: A_22172-01
+<!--A_22172-01--></p>
+<requirement conformance="SHALL" key="IG-ERP-CHRG-79742GJZ" title="E-Rezept-FdV: title" version="0">
+    <meta lockversion="false" />
+    <actor name="eRP_FdV">
+        <testProcedure id="Produkttest" />
+    </actor>
+      text
+</requirement>
+
+<!--A_22173-->
+<requirement conformance="SHALL" key="IG-ERP-CHRG-64555GAN" title="E-Rezept-FdV: Liste Abrechnungsinformationen abrufen - Abfragerequest" version="0">
+    <meta lockversion="false" />
+    <actor name="eRP_FdV">
+        <testProcedure id="Produkttest" />
+    </actor>
+      Das E-Rezept-FdV MUSS im Anwendungsfall "Liste Abrechnungsinformationen abfragen" zum Abrufen der Information vom E-Rezept-Fachdienst die HTTP-Operation GET /ChargeItem mit 
+      <ul>
+        <li>ACCESS_TOKEN im Authorization-Header</li>
+      </ul>
+      ausführen. 
+</requirement>
+
+<p>In der Response ist eine Liste von ChargeItem-Ressourcen enthalten. Für jede ChargeItem-Ressource ist die folgende Information enthalten:</p>
+<ul>
+    <li>Prescription-ID</li>
+</ul>
+
+<h3 id="abrechnungsinformation-abrufen-get-chargeitemid">Abrechnungsinformation abrufen (GET /ChargeItem/&#60;id&#62;)</h3>
+<p>Mit diesem Anwendungsfall kann der Nutzer (Versicherter) die Abrechnungsinformation zu einem E-Rezept vom E-Rezept-Fachdienst herunterladen.</p>
+
+<!--A_24544-->
+<requirement conformance="MAY" key="IG-ERP-CHRG-29018CDG" title="E-Rezept-FdV: optional: Abrechnungsinformation abrufen" version="0">
+    <meta lockversion="false" />
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+      Das E-Rezept-FdV KANN den Anwendungsfall "Abrechnungsinformation durch den Versicherten abrufen" umsetzen.
+</requirement>
+
+<p>TODO: A_22174-01
+<!--A_22174-01--></p>
+<requirement conformance="SHALL" key="IG-ERP-CHRG-92528SYV" title="E-Rezept-Fachdienst – title" version="0">
+    <meta lockversion="false" />
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest" />
+    </actor>
+      text
+</requirement>
+
+<!--A_22175-->
+<requirement conformance="SHALL" key="IG-ERP-CHRG-14908CQD" title="E-Rezept-FdV: Abrechnungsinformation abrufen - Abfragerequest einzelner Datensatz" version="0">
+    <meta lockversion="false" />
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest" />
+    </actor>
+      Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation abfragen" zum Abrufen der Information zu einem einzelnen Datensatz vom E-Rezept-Fachdienst die HTTP-Operation GET /ChargeItem/&#60;id&#62;/ mit 
+      <ul>
+        <li>ACCESS_TOKEN im Authorization-Header</li>
+        <li>Prescription-ID in URL &#60;id&#62;</li>
+      </ul>
+      ausführen.
+</requirement>
+
+<p>In der Response ist die ChargeItem Ressource und die zugehörigen Detaildatensätze Verordnungsdatensatz, PKV-Abgabedatensatz, Quittung und der AccessCode zum Ändern des PKV-Abgabedatensatzes enthalten.</p>
+
+<h2 id="abrechnungsinformation-markieren-patch-chargeid">Abrechnungsinformation markieren (PATCH /Charge/&#60;id&#62;)</h2>
+<p>Mit diesem Anwendungsfall kann der Nutzer (Versicherter) Markierungen zu seiner Abrechnungsinformation setzen. Diese werden auf dem E-Rezept-Fachdienst gespeichert.</p>
+
+<!--A_24553-->
+<requirement conformance="MAY" key="IG-ERP-CHRG-98921PAA" title="E-Rezept-FdV: optional: Abrechnungsinformation markieren" version="0">
+    <meta lockversion="false" />
+    <actor name="eRP_FdV">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+      Das E-Rezept-FdV KANN den Anwendungsfall "Abrechnungsinformation markieren" umsetzen.
+</requirement>
+
+<!--A_22176-01-->
+<requirement conformance="SHALL" key="IG-ERP-CHRG-37823RK3" title="E-Rezept-FdV: Abrechnungsinformation markieren - Markierungen auswählen" version="0">
+    <meta lockversion="false" />
+    <actor name="eRP_FdV">
+        <testProcedure id="Produkttest" />
+    </actor>
+      Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation markieren" es dem Nutzer ermöglichen, eine oder mehrere der folgenden Inhalte als Markierung für eine Abrechnungsinformation zu wählen oder abzuwählen:
+      <ul>
+        <li>zur Abrechnung bei Krankenversicherung eingereicht (extention "insuranceProvider")</li>
+        <li>zur Abrechnung bei der Beihilfe eingereicht (extention "subsity")</li>
+        <li>zur Einreichung beim Finanzamt verwendet (extention "taxOffice")</li>
+      </ul>
+</requirement>
+
+<p>TODO: A_22177-02
+<!--A_22177-02--></p>
+<requirement conformance="SHALL" key="IG-ERP-CHRG-89929A71" title="E-Rezept-FdV: title" version="0">
+    <meta lockversion="false" />
+    <actor name="eRP_FdV">
+        <testProcedure id="Produkttest" />
+    </actor>
+      text
+</requirement>
+
+<!--A_22179-01-->
+<requirement conformance="SHALL" key="IG-ERP-CHRG-07053MFH" title="E-Rezept-FdV: Abrechnungsinformation markieren - Speicherrequest" version="0">
+    <meta lockversion="false" />
+    <actor name="eRP_FdV">
+        <testProcedure id="Produkttest" />
+    </actor>
+      Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation markieren" zum Speichern der Information im E-Rezept-Fachdienst die HTTP-Operation PATCH /ChargeItem/&#60;id&#62; mit 
+        <ul>
+            <li>ACCESS_TOKEN im Authorization-Header</li>
+            <li>Prescription-ID in URL &#60;id&#62;</li>
+        </ul>
+      für jede zu ändernde Markierung
+        <ul>
+            <li>"add" in type</li>
+            <li>zu ändernde Markierung in path</li>
+            <li>geänderter Wert in value</li>
+        </ul>
+      ausführen.
+</requirement>
+
+<h2 id="abrechnungsinformation-löschen-delete-chargeitemid">Abrechnungsinformation löschen (DELETE /ChargeItem/&#60;id&#62;)</h2>
+<!--A_24546-->
+<requirement conformance="MAY" key="IG-ERP-CHRG-90005HHP" title="E-Rezept-FdV: optional: Abrechnungsinformation löschen" version="0">
+    <meta lockversion="false" />
+    <actor name="eRP_FdV">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+      Das E-Rezept-FdV KANN den Anwendungsfall "Abrechnungsinformation löschen" umsetzen.
+</requirement>
+
+<!--A_22180-01-->
+<requirement conformance="SHALL" key="IG-ERP-CHRG-14219NQZ" title="E-Rezept-FdV: Abrechnungsinformation löschen - Abrechnungsinformationen zum Löschen auswählen" version="0">
+    <meta lockversion="false" />
+    <actor name="eRP_FdV">
+        <testProcedure id="Produkttest" />
+    </actor>
+      Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation löschen" es dem Nutzer ermöglichen, eine Abrechnungsinformationen zum Löschen auszuwählen.
+</requirement>
+
+<!--A_22181-01-->
+<requirement conformance="SHALL" key="IG-ERP-CHRG-00853F24" title="E-Rezept-FdV: Abrechnungsinformation löschen - Bestätigung" version="0">
+    <meta lockversion="false" />
+    <actor name="eRP_FdV">
+        <testProcedure id="Produkttest" />
+    </actor>
+      Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation löschen" vom Nutzer eine Bestätigung einholen, dass die selektierte Abrechnungsinformation gelöscht werden soll und die Möglichkeit geben, das Löschen abzubrechen.
+</requirement>
+
+<p>Das E-Rezept-FdV muss im Rahmen der Bestätigung darauf hinweisen, dass mit dem Löschen der Abrechnungsinformation die Daten des Verordnungsdatensatzes, des PKV-Abgabedatensatzes und der Quittung gelöscht werden und somit ein Neueinstellen der Abrechnungsinformation durch die Apotheke ggf. nicht mehr möglich ist.</p>
+
+<p>Das E-Rezept-FdV kann es dem Nutzer ermöglichen, den Anwendungsfall zum lokalen Löschen für die zu löschende Abrechnungsinformation zusammen mit dem Löschen auf dem E-Rezept-Fachdienst auszuführen.</p>
+
+<p>TODO: A_22182-01
+<!--A_22182-01--></p>
+<requirement conformance="SHALL" key="IG-ERP-CHRG-25421EA5" title="E-Rezept-FdV: title" version="0">
+    <meta lockversion="false" />
+    <actor name="eRP_FdV">
+        <testProcedure id="Produkttest" />
+    </actor>
+      text
+</requirement>
+
+<!--A_22183-->
+<requirement conformance="SHALL" key="IG-ERP-CHRG-82359UAF" title="E-Rezept-FdV: Abrechnungsinformation löschen - Löschrequest" version="0">
+    <meta lockversion="false" />
+    <actor name="eRP_FdV">
+        <testProcedure id="Produkttest" />
+    </actor>
+      Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation löschen" die HTTP-Operation DELETE /ChargeItem/&#60;id&#62; des E-Rezept-Fachdienstes mit
+      <ul>
+        <li>ACCESS_TOKEN im Authorization-Header</li>
+        <li>Prescription-ID in URL &#60;id&#62;</li>
+      </ul>
+      ausführen.
+</requirement>
+
+<!--A_22707-01-->
+<requirement conformance="MAY" key="IG-ERP-CHRG-00019CYE" title="E-Rezept-FdV: Hinweis automatisches Löschen Abrechnungsinformationen" version="0">
+    <meta lockversion="false" />
+    <actor name="eRP_FdV">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+      Das E-Rezept-FdV KANN, wenn es das Management von Abrechnungsinformationen unterstützt, den Nutzer vor Erreichen der Aufbewahrungsfrist der Abrechnungsinformation einen Hinweis zum automatischen Löschen geben, um dem Nutzer die Möglichkeit zu geben, falls gewünscht die Daten herunterzuladen und zu archivieren. 
+</requirement>
 
 
 
@@ -289,7 +497,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Feb 26, 2026 10:12+0000">2026-02-26</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Feb 27, 2026 08:04+0000">2026-02-27</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"2.1"}
-    h3,h4,h5,h6{--heading-prefix:"2.1"}</style>
+    <style type="text/css">h2{--heading-prefix:"2"}
+    h3,h4,h5,h6{--heading-prefix:"2"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -122,10 +122,7 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="menu-fachlichkeit-ueberblick.html">Überblick</a>
-      </li>
-      <li>
-        <a href="menu-fachlichkeit-szenario-pkv.html">Szenarien</a>
+        <a href="menu-fachlichkeit-szenario-pkv.html">Bereitstellung von Abrechnungsinformationen für PKV-Versicherte</a>
       </li>
     </ul>
   </li>
@@ -231,7 +228,7 @@ Abrechnungsinformationen des E-Rezepte für PKV-Versicherte
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-fachlichkeit-ueberblick.html'><b>Überblick über die Abrechnungsinformationen des E-Rezepts für PKV-Versicherte</b></a></li><li><b>Abrechnungsinformationen des E-Rezepts für PKV-Versicherte</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Abrechnungsinformationen des E-Rezepts für PKV-Versicherte</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -270,7 +267,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <p>Seiteninhalt:</p>
 
 <ul id="markdown-toc">
-  <li><a href="#aufbau-der-szenariobeschreibungen" id="markdown-toc-aufbau-der-szenariobeschreibungen">Aufbau der Szenariobeschreibungen</a></li>
+  <li><a href="#zielsetzung" id="markdown-toc-zielsetzung">Zielsetzung</a></li>
+  <li><a href="#zielgruppe" id="markdown-toc-zielgruppe">Zielgruppe</a></li>
+  <li><a href="#abgrenzungen" id="markdown-toc-abgrenzungen">Abgrenzungen</a></li>
+  <li><a href="#methodik" id="markdown-toc-methodik">Methodik</a></li>
+  <li><a href="#epic-e-rezept-für-pkv-versicherte" id="markdown-toc-epic-e-rezept-für-pkv-versicherte">Epic: E-Rezept für PKV-Versicherte</a></li>
+  <li><a href="#user-stories" id="markdown-toc-user-stories">User Stories</a>    <ul>
+      <li><a href="#pkv-versicherte" id="markdown-toc-pkv-versicherte">PKV-Versicherte</a></li>
+      <li><a href="#apotheker" id="markdown-toc-apotheker">Apotheker</a></li>
+      <li><a href="#kostenträger" id="markdown-toc-kostenträger">Kostenträger</a></li>
+    </ul>
+  </li>
   <li><a href="#prozessabschnitte" id="markdown-toc-prozessabschnitte">Prozessabschnitte</a>    <ul>
       <li><a href="#die-einwilligung-zum-speichern-der-abrechungsinformationen" id="markdown-toc-die-einwilligung-zum-speichern-der-abrechungsinformationen">Die Einwilligung zum Speichern der Abrechungsinformationen</a></li>
       <li><a href="#belieferung-der-abrechnungsinformation-durch-die-apotheke" id="markdown-toc-belieferung-der-abrechnungsinformation-durch-die-apotheke">Belieferung der Abrechnungsinformation durch die Apotheke</a></li>
@@ -280,18 +287,63 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </ul>
 
 </div>
-<p>Szenarioübersicht zur digitalen Bereitstellung von Abrechnungsinformationen für PKV‑Versicherte.</p>
 
-<p>Dieses Szenario beschreibt den Prozess zur digitalen Bereitstellung von Abrechnungsinformationen für PKV-Versicherte. Es ergänzt den Standard-E-Rezept-Workflow um die Erstellung, Speicherung und Bereitstellung des PKV-Abgabedatensatzes.</p>
+<p>Das Feature „Abrechnungsinformationen des E-Rezepte für PKV-Versicherte“ erweitert die bestehenden E-Rezept-Workflows um die digitale Bereitstellung und Verarbeitung von Abrechnungsinformationen. Es beschreibt den zusätzlichen Funktionsumfang für den E-Rezept-Fachdienst und die beteiligten Clientsysteme, die Prozessparameter sowie die fachlichen und technischen Anforderungen.</p>
 
-<h2 id="aufbau-der-szenariobeschreibungen">Aufbau der Szenariobeschreibungen</h2>
+<h2 id="zielsetzung">Zielsetzung</h2>
+<p>Die Beschreibung des Funktionsumfangs als Feature erleichtert das Verständnis und die Nachvollziehbarkeit der Lösung – von der Darstellung der Nutzersicht über das technische Konzept bis zur Spezifikation der technischen Details. Damit sollen Hersteller die notwendigen Umsetzungen für ihre Komponenten bewerten können.</p>
 
-<ol>
-  <li><strong>Kontext und Mehrwert</strong>: kurze Einordnung, warum das Szenario existiert und welche Vorgaben maßgeblich sind.</li>
-  <li><strong>Prozessabschnitte</strong>: strukturierte Abschnitte (Verordnung, Belieferung, Abrechnung) mit Hinweisen auf Flowtypes und Rollen.</li>
-  <li><strong>Beteiligte Akteure</strong>: Übersicht der Akteure, die im Anwendungsfall beteiligt sind.</li>
-  <li><strong>Fachliche Anwendungsfälle</strong>: Übersicht der relevanten Use Cases aus dem Katalog.</li>
-</ol>
+<h2 id="zielgruppe">Zielgruppe</h2>
+<p>Hersteller und Anbieter des Produkttyps E-Rezept-Fachdienst sowie Hersteller von Clientsystemen für den Zugriff auf den E-Rezept-Fachdienst.</p>
+
+<h2 id="abgrenzungen">Abgrenzungen</h2>
+<p>Die Festlegungen des Standard-Workflows für apothekenpflichtige Arzneimittel sind nicht Gegenstand dieses Dokuments. Die Ergänzungen widersprechen den bestehenden Festlegungen nicht.</p>
+
+<h2 id="methodik">Methodik</h2>
+<p>Anforderungen werden durch eine eindeutige ID (IG-ERP-CHRG-*) und die Schlüsselworte MUSS, DARF NICHT, SOLL, SOLL NICHT, KANN gemäß RFC 2119 gekennzeichnet. Die Schlüsselworte werden bei Bedarf um Pronomen ergänzt.</p>
+
+<h2 id="epic-e-rezept-für-pkv-versicherte">Epic: E-Rezept für PKV-Versicherte</h2>
+<p>TODO: Update link
+Der Ablauf für die Übermittlung von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel für PKV-Versicherte orientiert sich an der Verordnung von apothekenpflichtige Arzneimittel für GKV-Versicherte, und wird <a href="https://www.example.com">hier</a> beschrieben. Die Abrechnung der Apotheke erfolgt gegenüber dem Versicherten, sofern keine Direktabrechnung mit einer Krankenversicherung vereinbart wurde. Stattdessen wird der Prozess um Aspekte für die Bereitstellung von Informationen für die Erstattung der Kosten für den Versicherten erweitert.</p>
+
+<h4 id="ablauf">Ablauf</h4>
+<p>Nach der Belieferung des E-Rezepts stellt die Apotheke, sofern das E-Rezept nicht dem Sachleistungsprinzip unterliegt, auf Wunsch des Versicherten die Abrechnungsinformation zum E-Rezept im E-Rezept-Fachdienst bereit. Dort werden sie mit Einwilligung des Versicherten bis zu 10 Jahren gespeichert. Alternativ übergibt der Apotheker dem Versicherten im Ersatzverfahren einen Papierbeleg mit den abrechnungsrelevanten Informationen für die Abrechnung. Der Versicherte lädt die digital bereitgestellte Abrechnungsinformation mit dem E-Rezept-FdV vom E-Rezept-Fachdienst herunter. Der Versicherte kann für die Abrechnung die Abrechnungsinformation an eine App seiner PKV / der Beihilfe weiterleiten, in einem Portal des Kostenträgers hochladen oder ausdrucken.</p>
+
+<h2 id="user-stories">User Stories</h2>
+
+<h3 id="pkv-versicherte">PKV-Versicherte</h3>
+
+<ul>
+  <li>Als PKV-Versicherter möchte ich in der E-Rezept-App meine Zustimmung/Einwilligung geben können, so dass digitale Abrechnungsinformationen durch Apotheker im E-Rezept-Fachdienst gespeichert werden können.</li>
+  <li>Als PKV-Versicherter möchte ich in der E-Rezept-App meine Zustimmung/Einwilligung für die Speicherung von digitalen Abrechnungsinformationen zu jedem beliebigen Zeitpunkt widerrufen können.</li>
+  <li>Als PKV-Versicherter möchte ich, dass mein Apotheker erkennt, dass ich in der E-Rezept-App dem Speichern von digitalen Abrechnungsinformationen zugestimmt habe.</li>
+  <li>Als PKV-Versicherter möchte ich wählen können, ob der Apotheker mir die Abrechnungsinformation für ein E-Rezept analog (Papierbeleg) oder digital zur Verfügung stellt.</li>
+  <li>Als PKV-Versicherter möchte ich nach Abgabe in der Apotheke alle Belege in der E-Rezept-App aufrufen und nutzen können.</li>
+  <li>Als PKV-Versicherte möchte ich die digitalen Abrechnungsinformationen aus der E-Rezept-App als PDF-Dokument an einen anderen digitalen Speicherort exportieren und ausdrucken können, um meine Abrechnungen auch an einer anderen Stelle dokumentieren zu können.</li>
+  <li>Als PKV-Versicherter möchte ich aus der E-Rezept-App heraus alle abrechnungsrelevanten Informationen als PDF-Dokument digital an meinen Kostenträger übermitteln können, um eine Erstattung beantragen zu können (Eine Übermittlung erfolgt nicht automatisch).</li>
+  <li>Als PKV-Versicherter möchte ich meine eingereichten Abrechnungen im E-Rezept-Fachdienst markieren können.</li>
+  <li>Als PKV-Versicherter möchte ich, dass mein Apotheker die Abrechnungsinformationen ändern kann, wenn mir bei der Abrechnung ein Fehler auffällt. Dazu möchte ich den Apotheker in der App berechtigen können.</li>
+  <li>Als PKV-Versicherter möchte ich in der E-Rezept-App darauf hingewiesen werden, wenn die Abrechnungsinformationen nachträglich geändert wurden.</li>
+  <li>Als PKV-Versicherter möchte ich immer nur die neuste Version der Abrechnungsinformation an meinen Kostenträger weiterleiten können, damit ich nicht mit den Versionen durcheinanderkomme.</li>
+  <li>Als PKV-Versicherter möchte ich in der E-Rezept-App einen Hinweis angezeigt bekommen, bevor mein PKV-Rezept nach Ablauf von 10 Jahren automatisch gelöscht wird.</li>
+</ul>
+
+<h3 id="apotheker">Apotheker</h3>
+
+<ul>
+  <li>Als Apotheker möchte ich in meinem AVS erkennen können, ob der Versicherte dem Speichern von digitalen Abrechnungsinformationen zugestimmt hat.</li>
+  <li>Als Apotheker möchte ich dem Versicherten die digitalen Abrechnungsinformationen über den E-Rezept-Fachdienst bereitstellen können, falls der Versicherte seine Einwilligung erteilt hat.</li>
+  <li>Als Apotheker möchte ich, auf Wunsch des Versicherten, eine fehlerhaft erstellte digitale Abrechnungsinformation überschreiben können.</li>
+  <li>Als Apotheker möchte ich bei meinem Kunden die Einwilligung einholen können, um die Abrechnungsinformationen ändern zu können, wenn mir ein Fehler darin auffällt.</li>
+  <li>Als Apotheker möchte ich in meinem AVS benachrichtigt werden, wenn ein Kunde eine Änderung einer Abrechnungsinformation anfragt.</li>
+</ul>
+
+<h3 id="kostenträger">Kostenträger</h3>
+
+<ul>
+  <li>Als Kostenträger möchte ich digital eingereichte E-Rezept-Abrechnungsinformationen direkt digital weiterverarbeiten können.</li>
+  <li>Als Kostenträger möchte ich doppelte Einreichungen (analog und digital) von E-Rezept-Abrechnungsinformationen zur Erstattung erkennen können.</li>
+</ul>
 
 <h2 id="prozessabschnitte">Prozessabschnitte</h2>
 
@@ -378,7 +430,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       
         
         <tr>
-          <td><a href="menu-technische-umsetzung-anwendungsfaelle.html#pkv-abgabedatensatz-aendern">PKV-Abgabedatensatz durch Abgebenden ändern</a></td>
+          <td><a href="menu-technische-umsetzung-anwendungsfaelle.html#pkv-abgabedatensatz-ändern">PKV-Abgabedatensatz durch Abgebenden ändern</a></td>
         </tr>
       
     </tbody>
@@ -431,7 +483,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       
         
         <tr>
-          <td><a href="menu-technische-umsetzung-anwendungsfaelle.html#abrechnungsinformationen-loeschen">Abrechnungsinformationen durch den Versicherten löschen</a></td>
+          <td><a href="menu-technische-umsetzung-anwendungsfaelle.html#abrechnungsinformationen-löschen">Abrechnungsinformationen durch den Versicherten löschen</a></td>
         </tr>
       
     </tbody>
@@ -458,7 +510,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Feb 26, 2026 10:12+0000">2026-02-26</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Feb 27, 2026 08:04+0000">2026-02-27</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

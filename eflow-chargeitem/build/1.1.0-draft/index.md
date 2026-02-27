@@ -12,15 +12,15 @@ Version 1.1.0-draft - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/erpchrg/ImplementationGuide/de.gematik.eflow-chargeitem | *Version*:1.1.0-draft |
-| Draft as of 2026-02-26 | *Computable Name*:gemIG_eRp_ChargeItem |
+| Draft as of 2026-02-27 | *Computable Name*:gemIG_eRp_ChargeItem |
 
 # Implementation Guide E-Rezept Patientenrechnung (PKV)
 
-Dieser Implementation Guide beschreibt die Bereitstellung der Abrechnungsinformationen für den Kostentraeger. Er ergaenzt die workflowspezifischen Anforderungen des E-Rezept-Fachdienstes und beschreibt die relevanten Use Cases.
+Dieser Implementation Guide beschreibt die Bereitstellung der Abrechnungsinformationen für den Kostenträger. Er ergänzt die workflowspezifischen Anforderungen des E-Rezept-Fachdienstes und beschreibt die relevanten Use Cases.
 
 ## Zweck und Geltungsbereich
 
-* Abrechnungsinformationen für den Kostentraeger
+* Abrechnungsinformationen für den Kostenträger
 
 ## Nicht im Scope
 
@@ -31,9 +31,9 @@ Dieser Implementation Guide beschreibt die Bereitstellung der Abrechnungsinforma
 
 ## Wie dieser IG zu lesen ist
 
-Die Kapitel folgen der Struktur Fachlichkeit, Technische Umsetzung und Schnittstellen. Szenarien und Anwendungsfaelle verweisen auf die zugehoerigen technischen Kapitel und Profile.
+Die Kapitel folgen der Struktur Fachlichkeit, Technische Umsetzung und Schnittstellen. Szenarien und Anwendungsfälle verweisen auf die zugehörigen technischen Kapitel und Profile.
 
-## Abhaengigkeiten
+## Abhängigkeiten
 
 
 
@@ -44,7 +44,7 @@ Die Kapitel folgen der Struktur Fachlichkeit, Technische Umsetzung und Schnittst
 
 ## Kontakt und Feedback
 
-Fuer Fragen und Feedback wenden Sie sich bitte an [erp-umsetzung@gematik.de](mailto:erp-umsetzung@gematik.de).
+Für Fragen und Feedback wenden Sie sich bitte an [erp-umsetzung@gematik.de](mailto:erp-umsetzung@gematik.de).
 
 ## Rechtliche Hinweise
 
@@ -65,7 +65,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "gemIG_eRp_ChargeItem",
   "title" : "Abrechnungsinformationen des E-Rezepte für PKV-Versicherte",
   "status" : "draft",
-  "date" : "2026-02-26T10:12:23+00:00",
+  "date" : "2026-02-27T08:04:50+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -1134,20 +1134,11 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "menu-fachlichkeit-ueberblick.html"
+          "valueUrl" : "menu-fachlichkeit-szenario-pkv.html"
         }],
-        "nameUrl" : "menu-fachlichkeit-ueberblick.html",
-        "title" : "Überblick über die Abrechnungsinformationen des E-Rezepts für PKV-Versicherte",
-        "generation" : "markdown",
-        "page" : [{
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "menu-fachlichkeit-szenario-pkv.html"
-          }],
-          "nameUrl" : "menu-fachlichkeit-szenario-pkv.html",
-          "title" : "Abrechnungsinformationen des E-Rezepts für PKV-Versicherte",
-          "generation" : "markdown"
-        }]
+        "nameUrl" : "menu-fachlichkeit-szenario-pkv.html",
+        "title" : "Abrechnungsinformationen des E-Rezepts für PKV-Versicherte",
+        "generation" : "markdown"
       },
       {
         "extension" : [{
@@ -1190,6 +1181,15 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
             }],
             "nameUrl" : "menu-technische-umsetzung-chargeitem-req-fdv.html",
             "title" : "E-Rezept-FdV Anforderungen: ChargeItem",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "menu-technische-umsetzung-chargeitem-req-ps.html"
+            }],
+            "nameUrl" : "menu-technische-umsetzung-chargeitem-req-ps.html",
+            "title" : "Primärsystem des abgebenden Leistungserbringers Anforderungen: ChargeItem",
             "generation" : "markdown"
           }]
         }]
@@ -1240,127 +1240,19 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
           {
             "extension" : [{
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "query-api-chargeitem-req-fd-get.html"
-            }],
-            "nameUrl" : "query-api-chargeitem-req-fd-get.html",
-            "title" : "E-Rezept-Fachdienst Anforderungen: ChargeItem-Query",
-            "generation" : "markdown"
-          },
-          {
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "query-api-chargeitem-req-fdv-get.html"
-            }],
-            "nameUrl" : "query-api-chargeitem-req-fdv-get.html",
-            "title" : "E-Rezept-FdV Anforderungen: ChargeItem-Query",
-            "generation" : "markdown"
-          },
-          {
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "query-api-chargeitem-req-fd-get-id.html"
-            }],
-            "nameUrl" : "query-api-chargeitem-req-fd-get-id.html",
-            "title" : "E-Rezept-Fachdienst Anforderungen: ChargeItem-Query",
-            "generation" : "markdown"
-          },
-          {
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "query-api-chargeitem-req-fdv-get-id.html"
-            }],
-            "nameUrl" : "query-api-chargeitem-req-fdv-get-id.html",
-            "title" : "E-Rezept-FdV Anforderungen: ChargeItem-Query",
-            "generation" : "markdown"
-          },
-          {
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "query-api-chargeitem-req-ps-get-id.html"
-            }],
-            "nameUrl" : "query-api-chargeitem-req-ps-get-id.html",
-            "title" : "Primärsystem des abgebenden Leistungserbringers - Anforderungen: ChargeItem-Query",
-            "generation" : "markdown"
-          },
-          {
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "query-api-chargeitem-req-fd-post.html"
-            }],
-            "nameUrl" : "query-api-chargeitem-req-fd-post.html",
-            "title" : "E-Rezept-Fachdienst Anforderungen: ChargeItem-Query",
-            "generation" : "markdown"
-          },
-          {
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "query-api-chargeitem-req-ps-post.html"
-            }],
-            "nameUrl" : "query-api-chargeitem-req-ps-post.html",
-            "title" : "Primärsystem des abgebenden Leistungserbringers - Anforderungen: ChargeItem-Query",
-            "generation" : "markdown"
-          },
-          {
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "query-api-chargeitem-req-fd-patch.html"
-            }],
-            "nameUrl" : "query-api-chargeitem-req-fd-patch.html",
-            "title" : "E-Rezept-Fachdienst Anforderungen: ChargeItem-Query",
-            "generation" : "markdown"
-          },
-          {
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "query-api-chargeitem-req-fdv-patch.html"
-            }],
-            "nameUrl" : "query-api-chargeitem-req-fdv-patch.html",
-            "title" : "E-Rezept-FdV Anforderungen: ChargeItem-Query",
-            "generation" : "markdown"
-          },
-          {
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "query-api-chargeitem-req-fd-put.html"
-            }],
-            "nameUrl" : "query-api-chargeitem-req-fd-put.html",
-            "title" : "E-Rezept-Fachdienst Anforderungen: ChargeItem-Query",
-            "generation" : "markdown"
-          },
-          {
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "query-api-chargeitem-req-ps-put.html"
-            }],
-            "nameUrl" : "query-api-chargeitem-req-ps-put.html",
-            "title" : "Primärsystem des abgebenden Leistungserbringers - Anforderungen: ChargeItem-Query",
-            "generation" : "markdown"
-          },
-          {
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "query-api-chargeitem-req-fd-delete.html"
-            }],
-            "nameUrl" : "query-api-chargeitem-req-fd-delete.html",
-            "title" : "E-Rezept-Fachdienst Anforderungen: ChargeItem-Query",
-            "generation" : "markdown"
-          },
-          {
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "query-api-chargeitem-req-fdv-delete.html"
-            }],
-            "nameUrl" : "query-api-chargeitem-req-fdv-delete.html",
-            "title" : "E-Rezept-FdV Anforderungen: ChargeItem-Query",
-            "generation" : "markdown"
-          },
-          {
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
               "valueUrl" : "query-api-chargeitem-req-fdv.html"
             }],
             "nameUrl" : "query-api-chargeitem-req-fdv.html",
             "title" : "E-Rezept-FdV Anforderungen: ChargeItem-Query",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-chargeitem-req-ps.html"
+            }],
+            "nameUrl" : "query-api-chargeitem-req-ps.html",
+            "title" : "Primärsystem des abgebenden Leistungserbringers - Anforderungen: ChargeItem-Query",
             "generation" : "markdown"
           }]
         },

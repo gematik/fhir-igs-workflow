@@ -122,10 +122,7 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="menu-fachlichkeit-ueberblick.html">Überblick</a>
-      </li>
-      <li>
-        <a href="menu-fachlichkeit-szenario-pkv.html">Szenarien</a>
+        <a href="menu-fachlichkeit-szenario-pkv.html">Bereitstellung von Abrechnungsinformationen für PKV-Versicherte</a>
       </li>
     </ul>
   </li>
@@ -266,32 +263,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div class="markdown-toc">
-  <p>Seiteninhalt:</p>
-
-<ul id="markdown-toc">
-  <li><a href="#abrechnungsinformationen-abrufen" id="markdown-toc-abrechnungsinformationen-abrufen">Abrechnungsinformationen abrufen</a>    <ul>
-      <li><a href="#liste-von-abrechnungsinformationen-abrufen" id="markdown-toc-liste-von-abrechnungsinformationen-abrufen">Liste von Abrechnungsinformationen abrufen</a></li>
-      <li><a href="#abrechnungsinformation-abrufen" id="markdown-toc-abrechnungsinformation-abrufen">Abrechnungsinformation abrufen</a></li>
-    </ul>
-  </li>
-  <li><a href="#abrechnungsinformation-token-als-2d-code-anzeigen" id="markdown-toc-abrechnungsinformation-token-als-2d-code-anzeigen">Abrechnungsinformation-Token als 2D-Code anzeigen</a></li>
-  <li><a href="#abrechnungsinformation-token-einer-apotheke-übermitteln" id="markdown-toc-abrechnungsinformation-token-einer-apotheke-übermitteln">Abrechnungsinformation-Token einer Apotheke übermitteln</a></li>
-  <li><a href="#abrechnungsinformation-markieren" id="markdown-toc-abrechnungsinformation-markieren">Abrechnungsinformation markieren</a></li>
-  <li><a href="#abrechnungsinformation-löschen" id="markdown-toc-abrechnungsinformation-löschen">Abrechnungsinformation löschen</a></li>
-  <li><a href="#abrechnungsinformation-exportieren" id="markdown-toc-abrechnungsinformation-exportieren">Abrechnungsinformation exportieren</a></li>
-</ul>
-
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
-<h2 id="abrechnungsinformationen-abrufen">Abrechnungsinformationen abrufen</h2>
-<h3 id="liste-von-abrechnungsinformationen-abrufen">Liste von Abrechnungsinformationen abrufen</h3>
-<p>Mit diesem Anwendungsfall kann der Nutzer eine Liste aller Abrechnungsinformationen vom E-Rezept-Fachdienst abrufen, welche für den Versicherten bereitgestellt wurden.<br />
-Er wird <a href="./query-api-chargeitem-req-fdv-get.html">hier</a> im Detail beschreiben.</p>
-
-<h3 id="abrechnungsinformation-abrufen">Abrechnungsinformation abrufen</h3>
-<p>Mit diesem Anwendungsfall kann der Nutzer (Versicherter) die Abrechnungsinformation zu einem E-Rezept vom E-Rezept-Fachdienst herunterladen.<br />
-Er wird <a href="./query-api-chargeitem-req-fdv-get-id.html">hier</a> im Detail beschreiben.</p>
-
 <h2 id="abrechnungsinformation-token-als-2d-code-anzeigen">Abrechnungsinformation-Token als 2D-Code anzeigen</h2>
 <p>Mit diesem Anwendungsfall kann der Nutzer den AccessCode zum Ändern als 2D-Code auf dem Bildschirm seines E-Rezept-FdVs anzeigen lassen, um es direkt in der Apotheke vorzuzeigen und die Apotheke damit zu berechtigen, die Abrechnungsinformation vom E-Rezept-Fachdienst abzurufen und den PKV-Abgabedatensatz einmalig zu ändern.</p>
 
@@ -332,18 +306,6 @@ Er wird <a href="./query-api-chargeitem-req-fdv-get-id.html">hier</a> im Detail 
     </actor>
       Das E-Rezept-FdV MUSS im Anwendungsfall "2D-Code Abrechnungsinformation anzeigen" mit dem erstellten Abrechnungsinformation-Token einen 2D-Code erstellen und auf dem Display des Endgerätes anzeigen.
 </requirement>
-
-<h2 id="abrechnungsinformation-token-einer-apotheke-übermitteln">Abrechnungsinformation-Token einer Apotheke übermitteln</h2>
-<p>Mit diesem Anwendungsfall kann der Nutzer den AccessCode zum Ändern mittels einer Nachricht einer Apotheke übermitteln und die Apotheke damit zu berechtigen, die Abrechnungsinformation vom E-Rezept-Fachdienst abzurufen und den PKV-Abgabedatensatz einmalig zu ändern.<br />
-Er wird <a href="./query-api-communication-req-fdv.md">hier</a> im Detail beschreiben.</p>
-
-<h2 id="abrechnungsinformation-markieren">Abrechnungsinformation markieren</h2>
-<p>Mit diesem Anwendungsfall kann der Nutzer (Versicherter) Markierungen zu seiner Abrechnungsinformation setzen. Diese werden auf dem E-Rezept-Fachdienst gespeichert.<br />
-Er wird <a href="./query-api-chargeitem-req-fdv-patch.html">hier</a> im Detail beschreiben.</p>
-
-<h2 id="abrechnungsinformation-löschen">Abrechnungsinformation löschen</h2>
-<p>Mit diesem Anwendungsfall kann der Nutzer (Versicherter) die Abrechnungsinformation zu einem E-Rezept, die auf dem E-Rezept-Fachdienst gespeichert ist, löschen.<br />
-Er wird <a href="./query-api-chargeitem-req-fdv-delete.html">hier</a> im Detail beschreiben.</p>
 
 <h2 id="abrechnungsinformation-exportieren">Abrechnungsinformation exportieren</h2>
 <p>Mit diesem Anwendungsfall kann der Versicherte die Abrechnungsinformation aus dem E-Rezept-FdV exportieren, um es zur Abrechnung einzureichen oder zu archivieren.</p>
@@ -402,7 +364,7 @@ Er wird <a href="./query-api-chargeitem-req-fdv-delete.html">hier</a> im Detail 
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Feb 26, 2026 10:12+0000">2026-02-26</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Feb 27, 2026 08:04+0000">2026-02-27</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
