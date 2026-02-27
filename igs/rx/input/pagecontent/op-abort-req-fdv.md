@@ -1,7 +1,8 @@
-Diese Seite enthält die normativen Anforderungen an den Client des E-Rezept-Fachdienst für die Operation `$abort`.
-Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/{{ site.data.constants.tiflow_core_version }}/op-abort-client-requirements.html).
+### Anforderungen aus der Core Spezifikation
 
-### E-Rezept-FdV 
+{% include core-op-abort-req-fdv.md %}
+
+### Modulspezifische Anforderungen
 
 <!-- A_21362-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-5" title="E-Rezept-FdV: E-Rezept löschen - Flowtype 169 / 209 - nur wenn beliefert" version="0">

@@ -1,5 +1,11 @@
 Diese Seite enthält die workflowtyp-spezifischen normativen Anforderungen an den E-Rezept-Fachdienst für die Operation `$reject`.
 
+### Anforderungen aus der Core Spezifikation
+
+{% include core-op-reject-req-fd.md %}
+
+### Modulspezifische Anforderungen
+
 <!-- A_19170-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-26" title="E-Rezept-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Rollenprüfung" version="0">
   <meta lockversion="false"/>

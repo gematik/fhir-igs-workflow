@@ -1,4 +1,10 @@
-Diese Seite enthält die normativen Anforderungen an den Client des E-Rezept-Fachdienst für die Operation `$dispense`.
+Diese Seite enthält die normativen Anforderungen an das AVS für die Operation `$dispense`.
+
+### Anforderungen aus der Core Spezifikation
+
+Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
+
+### Modulspezifische Anforderungen
 
 Mit diesem Anwendungsfall stellt das PS der abgebenden LEI Dispensierinformationen für den Versicherten bereit, die dann vom Versicherten auf seinem E-Rezept-FdV heruntergeladen werden können. Das E-Rezept-FdV kann dem Versicherten außerdem darstellen, dass das E-Rezept beliefert wurde bevor der Workflow des E-Rezepts durch den Anwendungsfall "Quittung abrufen" beendet wird.
 

@@ -6,7 +6,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$reject` gesendet.
 
 ### Anforderungen an Schnittstelle
 
-- [Ergänzende Server-Anforderungen zu `$reject`](./op-reject-fd-requirements.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [Ergänzende Server-Anforderungen zu `$reject`](./op-reject-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
 
 ### API Beschreibung
 

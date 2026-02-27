@@ -1,5 +1,11 @@
 Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für die Operation `$close`.
 
+### Anforderungen aus der Core Spezifikation
+
+{% include core-op-close-req-fd.md %}
+
+### Modulspezifische Anforderungen
+
 <!-- A_19230-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-189" title="E-Rezept-Fachdienst - Task schließen - Flowtype 160/166/169/200/209 - Rollenprüfung" version="0">
     <meta lockversion="false"/>

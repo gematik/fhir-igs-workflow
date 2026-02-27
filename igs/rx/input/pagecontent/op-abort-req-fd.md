@@ -1,5 +1,11 @@
 Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für die Operation `$abort`.
 
+### Anforderungen aus der Core Spezifikation
+
+{% include core-op-abort-req-fd.md %}
+
+### Modulspezifische Anforderungen
+
 <!-- A_22102-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-85" title="E-Rezept-Fachdienst - E-Rezept löschen - Flowtype 169 / 209 - Versicherter - Statusprüfung" version="0">
     <meta lockversion="false"/>

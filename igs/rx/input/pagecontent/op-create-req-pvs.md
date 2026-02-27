@@ -1,5 +1,10 @@
-Diese Seite enthält die normativen Anforderungen an den Client des E-Rezept-Fachdienst für die Operation `$create`.
-Es gelten weiterhin die Anforderungen aus der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/{{ site.data.constants.tiflow_core_version }}/op-create-client-requirements.html).
+Diese Seite enthält die normativen Anforderungen an das PVS für die Operation `$create`.
+
+### Anforderungen aus der Core Spezifikation
+
+{% include core-op-create-req-pvs.md %}
+
+### Modulspezifische Anforderungen
 
 <!-- A_19275 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-4" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle erstellen" version="0">

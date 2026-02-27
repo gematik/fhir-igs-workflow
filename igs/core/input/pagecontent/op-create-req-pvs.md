@@ -1,4 +1,4 @@
-Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an Clientsysteme für die Nutzung der Operation `$create`.
+Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an das PVS für die Nutzung der Operation `$create`.
 
 <!-- ToDo Ablaufdiagramm Anwendungsfall -->
 

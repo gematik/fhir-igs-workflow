@@ -1,6 +1,6 @@
 {% assign use_cases = site.data['use-cases'] %}
 
-Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Consent`-Query-Endpunkte.
+Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Consent`-Query-Endpunkte.
 
 ### Einwilligung erteilen
 
