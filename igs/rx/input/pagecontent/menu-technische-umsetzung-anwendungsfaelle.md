@@ -3,62 +3,6 @@
 
 Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der verordnung von Arzneimitteln genutzt werden.
 
-### Umzusetzende Anwendungsfälle
-
-Im vorliegenden IG sind die folgenden ClientSysteme beteiligt: E-Rezept-FdV, PS eRp abgebend, PS eRp verordnend.
-Um diesem IG konform zu sein müssen die Clientsysteme die folgenden Anwendungsfälle wiefolgt umsetzen.
-
-#### PS der abgebenden LEI
-
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-209" title="PS abgebende LEI: TIFlow-RX - Verpflichtende Anwendungsfälle" version="0">
-    <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Konformitätsbestätigung"/>
-    </actor>
-    Das PS der abgebenden LEI MUSS für die Umsetzung zur Belieferung von Arzneimitteln die Anwendungsfälle
-    <ul>
-    <li>UC 4.1 - E-Rezept durch Abgebenden abrufen</li>
-    <li>UC 4.2 - E-Rezept durch Abgebenden zurückgeben</li>
-    <li>UC 4.3 - E-Rezept durch Abgebenden löschen</li>
-    <li>UC 4.4 - Quittung abrufen</li>
-    <li>UC 4.5 - Abgabedatensatz durch Abgebenden signieren</li>
-    <li>UC 4.8 - Quittung erneut abrufen</li>
-    <li>UC 4.16 - Dispensierinformationen bereitstellen</li>
-    </ul>
-
-    umsetzen.
-</requirement>
-
-<requirement conformance="SHOULD" key="IG-TIFLOW-RX-210" title="PS abgebende LEI: TIFlow-RX - Optionale Anwendungsfälle" version="0">
-    <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Konformitätsbestätigung"/>
-    </actor>
-    Das PS der abgebenden LEI SOLL für die Umsetzung zur Belieferung von Arzneimitteln die Anwendungsfälle
-    <ul>
-    <li>UC 4.16 - Dispensierinformationen bereitstellen</li>
-    </ul>
-    umsetzen.
-</requirement>
-
-#### PS der verordnenden LEI
-
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-211" title="PS verordnende LEI: TIFlow-RX - Verpflichtende Anwendungsfälle" version="0">
-    <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Konformitätsbestätigung"/>
-    </actor>
-    Das PS der verordnenden LEI MUSS für die Umsetzung zur Verordnung von Arzneimitteln die Anwendungsfälle
-    <ul>
-    <li>UC 2.1 - E-Rezepte erzeugen</li>
-    <li>E-Rezept qualifiziert signieren</li>
-    <li>UC 2.3 - E-Rezept einstellen</li>
-    <li>UC 2.5 - E-Rezept durch Verordnenden löschen</li>
-    </ul>
-    umsetzen.
-</requirement>
-
-
 ### Liste der Anwendungsfälle
 
 <!-- UC 2.1 - E-Rezepte erzeugen -->
