@@ -1,8 +1,8 @@
-# Server Anforderungen Anforderungen: Zugriffsberechtigung löschen - E-Rezept Workflow EU v1.0.1
+# Server Anforderungen Anforderungen: Zugriffsberechtigung löschen - EU Zugriff E-Rezept v1.0.1
 
-E-Rezept Workflow EU
+EU Zugriff E-Rezept
 
-Version 1.0.1 - release 
+Version 1.0.1 - ci-build 
 
 * [**Table of Contents**](toc.md)
 * [**Schnittstellen - Operation API**](menu-schnittstellen-operation-api.md)

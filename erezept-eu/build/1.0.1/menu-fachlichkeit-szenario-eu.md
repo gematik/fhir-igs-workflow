@@ -1,8 +1,8 @@
-# Fachlichkeit - Szenario EU - E-Rezept Workflow EU v1.0.1
+# Fachlichkeit - Szenario EU - EU Zugriff E-Rezept v1.0.1
 
-E-Rezept Workflow EU
+EU Zugriff E-Rezept
 
-Version 1.0.1 - release 
+Version 1.0.1 - ci-build 
 
 * [**Table of Contents**](toc.md)
 * **Fachlichkeit - Szenario EU**
@@ -67,4 +67,34 @@ Der registrierte Zugriffscode wird dem Nutzer im E-Rezept-FdV zusammen mit dem G
 Nach Ablauf der Gültigkeit löscht der E-Rezept-Fachdienst den Zugriffscode.
 
 Es gibt keine Möglichkeit in der Rolle Vertreter den Zugriff des LE-EU auf die Daten des Versicherten zu autorisieren.
+
+### Technische Anwendungsfälle
+
+#### Versicherteninteratkion
+
+**Beteiligte Systeme:** E-Rezept-Fachdienst, E-Rezept-FdV
+
+| |
+| :--- |
+|  |
+| [UC 3.15 - Einwilligung durch Versicherten widerrufen](menu-technische-umsetzung-anwendungsfaelle.md#uc-3-15-einwilligung-widerrufen) |
+| [UC 3.16 - Zugriffsberechtigung durch Versicherten erstellen](menu-technische-umsetzung-anwendungsfaelle.md#uc-3-16-zugriffsberechtigung-erstellen) |
+| [UC 3.17 - Zugriffsberechtigung durch Versicherten löschen](menu-technische-umsetzung-anwendungsfaelle.md#uc-3-17-zugriffsberechtigung-loeschen) |
+| [UC 3.18 - Zugriffsberechtigung durch Versicherten einsehen](menu-technische-umsetzung-anwendungsfaelle.md#uc-3-18-zugriffsberechtigung-einsehen) |
+| [UC 3.19 - E-Rezept durch den Versicherten markieren](menu-technische-umsetzung-anwendungsfaelle.md#uc-e-rezept-markieren) |
+
+**Tabelle:**Technische Anwendungsfälle mit Bezug zur Verwaltung von
+*E-Rezepten im EU Ausland*
+#### Interatkion NCPeH
+
+**Beteiligte Systeme:** E-Rezept-Fachdienst, NCPeH
+
+| |
+| :--- |
+|  |
+| [UC 4.21 - Liste ausgewählter E-Rezepte eines Versicherten abrufen](menu-technische-umsetzung-anwendungsfaelle.md#uc-4-21-liste-ausgewaehlte-abrufen) |
+| [UC 4.22 - Abgabe eines E-Rezeptes im europäischen Ausland](menu-technische-umsetzung-anwendungsfaelle.md#uc-4-22-abgabe-eu) |
+
+**Tabelle:**Technische Anwendungsfälle mit Bezug zum Abrufen von
+*E-Rezepten für die Einlösung im EU Ausland*
 

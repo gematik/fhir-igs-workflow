@@ -1,8 +1,8 @@
-# Downloads - E-Rezept Workflow EU v1.0.1
+# Downloads - EU Zugriff E-Rezept v1.0.1
 
-E-Rezept Workflow EU
+EU Zugriff E-Rezept
 
-Version 1.0.1 - release 
+Version 1.0.1 - ci-build 
 
 * [**Table of Contents**](toc.md)
 * **Downloads**
