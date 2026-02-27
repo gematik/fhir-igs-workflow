@@ -92,7 +92,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
-<a id="accesscode-an-apotheke-uebermitteln"></a>
+<a id="accesscode-an-apotheke-übermitteln"></a>
 ## Berechtigen der Apotheke zum Ändern des PKV‑Abgabedatensatzes
 Der Versicherte übermittelt der abgebenden LEI einen AccessCode, um die Apotheke zum Abruf und einmaligen Ändern zu berechtigen.
 

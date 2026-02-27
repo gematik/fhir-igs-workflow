@@ -1,12 +1,12 @@
 # Implementation Guide E-Rezept Patientenrechnung (PKV)
 
 Dieser Implementation Guide beschreibt die Bereitstellung der Abrechnungsinformationen für den
-Kostentraeger. Er ergaenzt die workflowspezifischen Anforderungen des
+Kostenträger. Er ergänzt die workflowspezifischen Anforderungen des
 E-Rezept-Fachdienstes und beschreibt die relevanten Use Cases.
 
 ## Zweck und Geltungsbereich
 
-- Abrechnungsinformationen für den Kostentraeger
+- Abrechnungsinformationen für den Kostenträger
 
 ## Nicht im Scope
 
@@ -18,16 +18,16 @@ E-Rezept-Fachdienstes und beschreibt die relevanten Use Cases.
 ## Wie dieser IG zu lesen ist
 
 Die Kapitel folgen der Struktur Fachlichkeit, Technische Umsetzung und
-Schnittstellen. Szenarien und Anwendungsfaelle verweisen auf die zugehoerigen
+Schnittstellen. Szenarien und Anwendungsfälle verweisen auf die zugehörigen
 technischen Kapitel und Profile.
 
-## Abhaengigkeiten
+## Abhängigkeiten
 
 {% include dependency-table.xhtml %}
 
 ## Kontakt und Feedback
 
-Fuer Fragen und Feedback wenden Sie sich bitte an
+Für Fragen und Feedback wenden Sie sich bitte an
 [erp-umsetzung@gematik.de](mailto:erp-umsetzung@gematik.de).
 
 ## Rechtliche Hinweise

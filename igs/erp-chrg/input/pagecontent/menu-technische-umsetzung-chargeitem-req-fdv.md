@@ -1,12 +1,3 @@
-## Abrechnungsinformationen abrufen
-### Liste von Abrechnungsinformationen abrufen
-Mit diesem Anwendungsfall kann der Nutzer eine Liste aller Abrechnungsinformationen vom E-Rezept-Fachdienst abrufen, welche für den Versicherten bereitgestellt wurden.<br>
-Er wird [hier](./query-api-chargeitem-req-fdv-get.html) im Detail beschreiben.
-
-### Abrechnungsinformation abrufen
-Mit diesem Anwendungsfall kann der Nutzer (Versicherter) die Abrechnungsinformation zu einem E-Rezept vom E-Rezept-Fachdienst herunterladen.<br>
-Er wird [hier](./query-api-chargeitem-req-fdv-get-id.html) im Detail beschreiben.
-
 ## Abrechnungsinformation-Token als 2D-Code anzeigen
 Mit diesem Anwendungsfall kann der Nutzer den AccessCode zum Ändern als 2D-Code auf dem Bildschirm seines E-Rezept-FdVs anzeigen lassen, um es direkt in der Apotheke vorzuzeigen und die Apotheke damit zu berechtigen, die Abrechnungsinformation vom E-Rezept-Fachdienst abzurufen und den PKV-Abgabedatensatz einmalig zu ändern.
 
@@ -47,18 +38,6 @@ Für die Beschreibung der Struktur des Abrechnungsinformation-Token siehe [gemSp
     </actor>
       Das E-Rezept-FdV MUSS im Anwendungsfall "2D-Code Abrechnungsinformation anzeigen" mit dem erstellten Abrechnungsinformation-Token einen 2D-Code erstellen und auf dem Display des Endgerätes anzeigen.
 </requirement>
-
-## Abrechnungsinformation-Token einer Apotheke übermitteln
-Mit diesem Anwendungsfall kann der Nutzer den AccessCode zum Ändern mittels einer Nachricht einer Apotheke übermitteln und die Apotheke damit zu berechtigen, die Abrechnungsinformation vom E-Rezept-Fachdienst abzurufen und den PKV-Abgabedatensatz einmalig zu ändern.<br>
-Er wird [hier](./query-api-communication-req-fdv.md) im Detail beschreiben.
-
-## Abrechnungsinformation markieren
-Mit diesem Anwendungsfall kann der Nutzer (Versicherter) Markierungen zu seiner Abrechnungsinformation setzen. Diese werden auf dem E-Rezept-Fachdienst gespeichert.<br>
-Er wird [hier](./query-api-chargeitem-req-fdv-patch.html) im Detail beschreiben.
-
-## Abrechnungsinformation löschen
-Mit diesem Anwendungsfall kann der Nutzer (Versicherter) die Abrechnungsinformation zu einem E-Rezept, die auf dem E-Rezept-Fachdienst gespeichert ist, löschen.<br>
-Er wird [hier](./query-api-chargeitem-req-fdv-delete.html) im Detail beschreiben.
 
 ## Abrechnungsinformation exportieren
 Mit diesem Anwendungsfall kann der Versicherte die Abrechnungsinformation aus dem E-Rezept-FdV exportieren, um es zur Abrechnung einzureichen oder zu archivieren.
