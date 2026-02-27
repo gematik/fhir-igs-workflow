@@ -1,3 +1,6 @@
+{% assign use_cases = site.data['gen-use-cases'] %}
+{% assign roles = site.data['roles'] %}
+
 ### Epic und User Story
 
 Das fachliche Konzept zum Einlösen von E-Rezepten im europäischen Ausland wurde im Rahmen von "Feature ePrescription/eDispensation Land A" [gemF_ePres-eDisp] abgestimmt.
@@ -57,3 +60,23 @@ Der registrierte Zugriffscode wird dem Nutzer im E-Rezept-FdV zusammen mit dem G
 Nach Ablauf der Gültigkeit löscht der E-Rezept-Fachdienst den Zugriffscode.
 
 Es gibt keine Möglichkeit in der Rolle Vertreter den Zugriff des LE-EU auf die Daten des Versicherten zu autorisieren.
+
+### Technische Anwendungsfälle
+
+#### Versicherteninteratkion
+
+**Beteiligte Systeme:** E-Rezept-Fachdienst, E-Rezept-FdV
+
+{% assign scenario_use_cases = "UC_3_13_Einwilligungen_einsehen,
+UC_3_14_Einwilligung_erteilen, UC_3_15_Einwilligung_widerrufen, UC_3_16_Zugriffsberechtigung_erstellen, UC_3_17_Zugriffsberechtigung_loeschen, UC_3_18_Zugriffsberechtigung_einsehen, UC_3_19_e_rezept_markieren" | split: ", " %}
+
+{% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Technische Anwendungsfälle mit Bezug zur Verwaltung von <i>E-Rezepten im EU Ausland</i>" %}
+
+#### Interatkion NCPeH
+
+**Beteiligte Systeme:** E-Rezept-Fachdienst, NCPeH
+
+{% assign scenario_use_cases = "UC_4_19_Demographische_Daten_abrufen,
+UC_4_20_Liste_Einloesbare_Abrufen, UC_4_21_Liste_Ausgewaehlte_Abrufen, UC_4_22_Abgabe_EU" | split: ", " %}
+
+{% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Technische Anwendungsfälle mit Bezug zum Abrufen von <i>E-Rezepten für die Einlösung im EU Ausland</i>" %}
