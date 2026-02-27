@@ -1,0 +1,21 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: c52ab027701fbdaffc31c819e377e744abe4a3dfab346be648b9a2a0edfa5f66
+created: '2026-02-27T12:28:58.239593'
+date: '2026-02-27T12:28:58.239595'
+key: IG-TIFLOW-EU-17
+modified: '2026-02-27T12:28:58.239594'
+release_status: NEW
+source: input/pagecontent/query-api-task-req-fd.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete
+  über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten
+  auf die Ressource übertragene Parameters Ressource gegen das FHIR-Profil GEM_ERPEU_PR_PAR_PATCH_Task_Input
+  prüfen und bei Nicht-Konformität den Aufruf mit dem http-Status-Code 400 ablehnen,
+  damit nur FHIR-valide Ressourcen in den E-Rezept-Fachdienst akzeptiert werden.
+title: E-Rezept-Fachdienst -Task markieren -Versicherter - FHIR-Validierung Parameters
+version: 0

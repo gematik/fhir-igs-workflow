@@ -1,0 +1,20 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: 9a92badbc04584e30bc7775f78d4c85ddf4f9551ccbdfd93c1312d61376aea35
+created: '2026-02-27T12:28:58.247572'
+date: '2026-02-27T12:28:58.247575'
+key: IG-TIFLOW-EU-42
+modified: '2026-02-27T12:28:58.247574'
+release_status: NEW
+source: input/pagecontent/op-grant-eu-access-permission-req-fd.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts
+  /$get-eu-prescriptions durch den NCPeH-FD das im http-Body des Requests enthaltene
+  Parameter-Objekt gegen das Profil [GEM_ERP_PR_PAR_EU_GET_Prescription_EU_Input]
+  prüfen und im Fehlerfall die Operation mit HTTP-Fehlercode 400 abbrechen.
+title: E-Rezept-Fachdienst - eu-prescription abfragen - Schemaprüfung
+version: 0

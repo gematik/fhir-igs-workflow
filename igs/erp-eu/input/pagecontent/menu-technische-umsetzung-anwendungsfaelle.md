@@ -27,6 +27,30 @@ Für die im Rahmen des Einlösens im europäischen Ausland vorgegebenen Prozesss
 
 Sobald ein E-Rezept durch eine LE-EU mit dem Anwendungsfall "Abruf der abzugebenden E-Rezepten des Versicherten" abgerufen wurde, kann es nicht mehr erneut abgerufen werden oder in einer anderen Apotheke eingelöst werden.
 
+### Umzusetzende Anwendungsfälle von Clients
+
+#### E-Rezept-FdV 
+
+<requirement conformance="MAY" key="IG-TIFLOW-EU-19" title="E-Rezept-FdV: TIFlow-EU - optionale Anwendungsfälle" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Das E-Rezept-Fachdienst MUSS für die Umsetzung der Bedienung von E-Rezepten im EU Kontext die Anwendungsfälle
+
+    <ul>
+    <li>UC 3.13 - Einwilligung einsehen</li>
+    <li>UC 3.14 - Einwilligung erteilen</li>
+    <li>UC 3.15 - Einwilligung widerrufen</li>
+    <li>UC 3.16 - Zugriffsberechtigung durch Versicherten erstellen</li>
+    <li>UC 3.17 - Zugriffsberechtigung durch Versicherten löschen</li>
+    <li>UC 3.18 - Zugriffsberechtigung durch Versicherten einsehen</li>
+    <li>UC 3.19 - E-Rezept durch den Versicherten markieren</li>
+    </ul>
+
+    umsetzen.
+</requirement>
+
 ### Use Cases zur Verwaltung der Einwilligung durch den Versicherten
 
 <!-- UC 3.13 - Einwilligung einsehen -->
@@ -49,7 +73,7 @@ Sobald ein E-Rezept durch eine LE-EU mit dem Anwendungsfall "Abruf der abzugeben
 
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
-<!-- UC 3.13 - Einwilligung widerrufen -->
+<!-- UC 3.15 - Einwilligung widerrufen -->
 {% assign use_case = use_cases | where: "id", "UC_3_15_Einwilligung_widerrufen" %}
 
 <a id="{{ use_case.anchor }}"></a>
@@ -93,8 +117,8 @@ Sobald ein E-Rezept durch eine LE-EU mit dem Anwendungsfall "Abruf der abzugeben
 
 ### Use Cases zur Verwaltung der E-Rezepte durch den Versicherten
 
-<!-- UC - E-Rezept durch den Versicherten markieren -->
-{% assign use_case = use_cases | where: "id", "UC_e_rezept_markieren" %}
+<!-- UC 3.19 - E-Rezept durch den Versicherten markieren -->
+{% assign use_case = use_cases | where: "id", "UC_3_19_e_rezept_markieren" %}
 
 <a id="{{ use_case.anchor }}"></a>
 ### {{ use_case.title }}
