@@ -3,7 +3,6 @@
 
 Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der verordnung von Arzneimitteln genutzt werden.
 
-### Liste der Anwendungsfälle
 
 <!-- UC 2.1 - E-Rezepte erzeugen -->
 {% assign use_case = use_cases | where: "title", "UC 2.1 - E-Rezepte erzeugen" | first %}
