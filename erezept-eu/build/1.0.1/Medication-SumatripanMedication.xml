@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Medication xmlns="http://hl7.org/fhir">
+  <id value="SumatripanMedication"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/erp-eu//StructureDefinition/GEM-ERPEU-PR-Medication"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Medication SumatripanMedication</b></p><a name="SumatripanMedication"> </a><a name="hcSumatripanMedication"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-GEM-ERPEU-PR-Medication.html">EU-Medication</a></p></div><p><b>DrugCategoryExtension</b>: <a href="https://simplifier.net/resolve?scope=de.gematik.epa.medication@1.3.0&amp;canonical=https://gematik.de/fhir/epa-medication/CodeSystem/epa-drug-category-cs#epa-drug-category-cs-00">EPA Code System für Arzneimittelkategorien: 00</a> (Arzneimittel oder in die Arzneimittelversorgung nach § 31 SGB V einbezogenes Produkt)</p><p><b>MedicationIsVaccineExtension</b>: false</p><p><b>ExtensionNormgroesseDeBasis</b>: N1</p><p><b>code</b>: <span title="Codes:{http://fhir.de/CodeSystem/ifa/pzn 06313728}">Sumatriptan-1a Pharma 100 mg Tabletten</span></p><p><b>form</b>: <span title="Codes:{https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM TAB}">TAB</span></p><p><b>amount</b>: 20 St/1</p><h3>Batches</h3><table class="grid"><tr><td style="display: none">-</td><td><b>LotNumber</b></td></tr><tr><td style="display: none">*</td><td>1234567890</td></tr></table></div>
+  </text>
+  <extension url="https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension">
+    <valueCoding>
+      <system value="https://gematik.de/fhir/epa-medication/CodeSystem/epa-drug-category-cs"/>
+      <code value="00"/>
+    </valueCoding>
+  </extension>
+  <extension url="https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension">
+    <valueBoolean value="false"/>
+  </extension>
+  <extension url="http://fhir.de/StructureDefinition/normgroesse">
+    <valueCode value="N1"/>
+  </extension>
+  <code>
+    <coding>
+      <system value="http://fhir.de/CodeSystem/ifa/pzn"/>
+      <code value="06313728"/>
+    </coding>
+    <text value="Sumatriptan-1a Pharma 100 mg Tabletten"/>
+  </code>
+  <form>
+    <coding>
+      <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM"/>
+      <code value="TAB"/>
+    </coding>
+  </form>
+  <amount>
+    <numerator>
+      <extension url="https://gematik.de/fhir/epa-medication/StructureDefinition/medication-total-quantity-formulation-extension">
+        <valueString value="20"/>
+      </extension>
+      <value value="20"/>
+      <unit value="St"/>
+    </numerator>
+    <denominator>
+      <value value="1"/>
+    </denominator>
+  </amount>
+  <batch>
+    <lotNumber value="1234567890"/>
+  </batch>
+</Medication>

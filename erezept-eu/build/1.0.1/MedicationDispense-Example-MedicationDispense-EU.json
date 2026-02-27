@@ -1,0 +1,35 @@
+{
+  "resourceType" : "MedicationDispense",
+  "id" : "Example-MedicationDispense-EU",
+  "meta" : {
+    "profile" : ["https://gematik.de/fhir/erp-eu//StructureDefinition/GEM-ERPEU-PR-MedicationDispense"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: MedicationDispense Example-MedicationDispense-EU</b></p><a name=\"Example-MedicationDispense-EU\"> </a><a name=\"hcExample-MedicationDispense-EU\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-GEM-ERPEU-PR-MedicationDispense.html\">Dispensation of the Prescription from the EU</a></p></div><p><b>identifier</b>: <code>https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId</code>/160.000.033.491.280.78</p><p><b>status</b>: Completed</p><p><b>medication</b>: <a href=\"Medication-SumatripanMedication.html\">Medication 06313728</a></p><p><b>subject</b>: Identifier: NamingSystemKVID/X123456789</p><h3>Performers</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Actor</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"PractitionerRole-Example-EU-PractitionerRole.html\">PractitionerRole</a></td></tr></table><p><b>quantity</b>: 2 pkg</p><p><b>whenHandedOver</b>: 2026-10-01</p></div>"
+  },
+  "identifier" : [{
+    "system" : "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
+    "value" : "160.000.033.491.280.78"
+  }],
+  "status" : "completed",
+  "medicationReference" : {
+    "reference" : "Medication/SumatripanMedication"
+  },
+  "subject" : {
+    "identifier" : {
+      "system" : "http://fhir.de/sid/gkv/kvid-10",
+      "value" : "X123456789"
+    }
+  },
+  "performer" : [{
+    "actor" : {
+      "reference" : "PractitionerRole/Example-EU-PractitionerRole"
+    }
+  }],
+  "quantity" : {
+    "value" : 2,
+    "unit" : "pkg"
+  },
+  "whenHandedOver" : "2026-10-01"
+}
