@@ -45,7 +45,7 @@ Other representations of profile: [CSV](StructureDefinition-identifier-iknr.csv)
   "name" : "IdentifierIknr",
   "title" : "Identifier IKNR",
   "status" : "draft",
-  "date" : "2026-02-27T14:50:48+00:00",
+  "date" : "2026-02-27T15:19:26+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

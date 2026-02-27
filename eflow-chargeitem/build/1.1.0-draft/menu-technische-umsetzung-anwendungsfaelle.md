@@ -132,20 +132,31 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
   * : 
 
 **Tabelle:**Fachlicher Anwendungsfall
- ###
+
+### UC 3.10 - Abrechnungsinformationen durch Versicherten abrufen
 
 * Beschreibung: Vorbedingungen
-  * : 
-* Beschreibung: Durchzuführende Aktionen
-  * : 
-* Beschreibung: Nachbedingungen
-  * : 
-* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * : 
-* Beschreibung: Relevante(r) Sektor(en)
-  * : 
+  * Der Versicherte ruft die Abrechnungsinformationen aus dem E-Rezept-Fachdienst ab und kann sie anzeigen, exportieren oder weiterleiten.: * Einwilligung liegt vor.
+* Abrechnungsinformationen wurden durch eine Apotheke bereitgestellt.
 
-**Tabelle:**Fachlicher Anwendungsfall
+* Beschreibung: Durchzuführende Aktionen
+  * Der Versicherte ruft die Abrechnungsinformationen aus dem E-Rezept-Fachdienst ab und kann sie anzeigen, exportieren oder weiterleiten.: * Liste per GET /ChargeItem abrufen.
+* Detailabruf via GET /ChargeItem/<id> durchführen.
+* Fachdienst signiert Datensätze beim Detailabruf.
+
+* Beschreibung: Nachbedingungen
+  * Der Versicherte ruft die Abrechnungsinformationen aus dem E-Rezept-Fachdienst ab und kann sie anzeigen, exportieren oder weiterleiten.: * Daten stehen im FdV zur Anzeige und zum Export bereit; Abruf ist protokolliert.
+
+* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+  * Der Versicherte ruft die Abrechnungsinformationen aus dem E-Rezept-Fachdienst ab und kann sie anzeigen, exportieren oder weiterleiten.: * [Abrechnungsinformation abrufen](./query-api-chargeitem.md#get-chargeitem-liste)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Der Versicherte ruft die Abrechnungsinformationen aus dem E-Rezept-Fachdienst ab und kann sie anzeigen, exportieren oder weiterleiten.:  VERSICHERTER 
+
+**Tabelle:**Fachlicher Anwendungsfall UC 3.10 - Abrechnungsinformationen durch Versicherten abrufen
+**Sequenzdiagramm:**
+
+**Abbildung: **UC 3.10 - Abrechnungsinformationen durch Versicherten abrufen
 
 ### Abrechnungsinformationen durch den Versicherten weitergeben
 
