@@ -45,7 +45,7 @@ Other representations of profile: [CSV](StructureDefinition-identifier-kvid-10.c
   "name" : "IdentifierKvid10",
   "title" : "Identifier KVID-10",
   "status" : "draft",
-  "date" : "2026-02-27T08:04:50+00:00",
+  "date" : "2026-02-27T13:41:32+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

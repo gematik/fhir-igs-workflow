@@ -16,7 +16,7 @@ Um zu vermeiden, dass der Anbieter des E-Rezept-Fachdienstes ein Profil über al
 TODO: Sollen wir die Hinweise mit aufnehmen?
 
 Die Fachanwendung E-Rezept MUSS sicherstellen, dass eine Einwilligung in die Verarbeitung von Abrechnungsinformationen nur für PKV-Versicherte möglich ist.
-Für den E-Rezept-Fachdienst heißt dies:
+Für den E-Rezept-Fachdienst heißt dies: 
 
 Die Fachanwendung E-Rezept MUSS sicherstellen, dass eine Verarbeitung von Abrechnungsinformationen nur für PKV-Versicherte erfolgt, die hierfür eingewilligt haben.
 

@@ -85,9 +85,9 @@ Das Speichern der Abrechnungsinformationen erfolgt nur mit Einwilligung des Vers
 
 | |
 | :--- |
-| [Einwilligung zum Speichern der Abrechnungsinformationen erteilen](menu-technische-umsetzung-anwendungsfaelle.md#einwilligung-erteilen) |
-| [Einwilligung zum Speichern der Abrechnungsinformationen einsehen](menu-technische-umsetzung-anwendungsfaelle.md#einwilligung-einsehen) |
-| [Einwilligung zum Speichern der Abrechnungsinformationen widerrufen](menu-technische-umsetzung-anwendungsfaelle.md#einwilligung-widerrufen) |
+|  |
+|  |
+|  |
 
 **Tabelle:**Fachliche Anwendungsfälle mit Bezug zum Szenario
 *Einwilligung zum Speichern der Abrechungsinformationen*
@@ -108,9 +108,9 @@ Der E-Rezept-Fachdienst erzeugt einen AccessCode, der für spätere Korrekturen 
 
 | |
 | :--- |
-| [Abrechnungsinformation durch Abgebenden bereitstellen](menu-technische-umsetzung-anwendungsfaelle.md#abrechnungsinformation-bereitstellen) |
-| [Abrechnungsinformation durch Abgebenden abrufen](menu-technische-umsetzung-anwendungsfaelle.md#abrechnungsinformation-abrufen) |
-| [PKV-Abgabedatensatz durch Abgebenden ändern](menu-technische-umsetzung-anwendungsfaelle.md#pkv-abgabedatensatz-ändern) |
+| [UC 4.11 - Abrechnungsinformation durch Abgebenden bereitstellen](menu-technische-umsetzung-anwendungsfaelle.md#uc_4_11_abrechungsinformation_durch_abgebenden_bereitstellen) |
+| [UC 4.10 - Abrechnungsinformationen durch Abgebenden abrufen](menu-technische-umsetzung-anwendungsfaelle.md#uc_4_10_abrechungsinformationen_durch_abgebenden_abrufen) |
+| [UC 4.13 - PKV-Abgabedatensatz durch Abgebenden ändern](menu-technische-umsetzung-anwendungsfaelle.md#uc_4_13_abgabedatensatz_durch_abgebenden_aktualisieren) |
 
 **Tabelle:**Fachliche Anwendungsfälle mit Bezug zu Szenario
 *Belieferung durch die Apotheke*
@@ -135,10 +135,10 @@ Die Löschfristen für das E-Rezept mit den in Beziehung stehenden Daten, wie Di
 
 | |
 | :--- |
-| [Abrechnungsinformationen durch den Versicherten abrufen](menu-technische-umsetzung-anwendungsfaelle.md#abrechnungsinformationen-abrufen) |
-| [Abrechnungsinformationen durch den Versicherten weitergeben](menu-technische-umsetzung-anwendungsfaelle.md#abrechnungsinformationen-weitergeben) |
-| [Abrechnungsinformationen durch den Versicherten markieren](menu-technische-umsetzung-anwendungsfaelle.md#abrechnungsinformationen-markieren) |
-| [Abrechnungsinformationen durch den Versicherten löschen](menu-technische-umsetzung-anwendungsfaelle.md#abrechnungsinformationen-löschen) |
+|  |
+| [Abrechnungsinformationen durch den Versicherten weitergeben](menu-technische-umsetzung-anwendungsfaelle.md#abrechungsinformationen_durch_versicherten_weitergeben) |
+| [Abrechnungsinformationen durch den Versicherten markieren](menu-technische-umsetzung-anwendungsfaelle.md#uc_3_12_abrechungsinformationen_durch_versicherten_markieren) |
+|  |
 
 **Tabelle:**Fachliche Anwendungsfälle mit Bezug zu Szenario
 *Abrechnung durch den Versicherten*

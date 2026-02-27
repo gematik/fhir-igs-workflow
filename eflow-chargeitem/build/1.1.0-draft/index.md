@@ -65,7 +65,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "gemIG_eRp_ChargeItem",
   "title" : "Abrechnungsinformationen des E-Rezepte für PKV-Versicherte",
   "status" : "draft",
-  "date" : "2026-02-27T08:04:50+00:00",
+  "date" : "2026-02-27T13:41:32+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -1186,9 +1186,9 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
           {
             "extension" : [{
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "menu-technische-umsetzung-chargeitem-req-ps.html"
+              "valueUrl" : "menu-technische-umsetzung-chargeitem-req-avs.html"
             }],
-            "nameUrl" : "menu-technische-umsetzung-chargeitem-req-ps.html",
+            "nameUrl" : "menu-technische-umsetzung-chargeitem-req-avs.html",
             "title" : "Primärsystem des abgebenden Leistungserbringers Anforderungen: ChargeItem",
             "generation" : "markdown"
           }]
@@ -1249,9 +1249,9 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
           {
             "extension" : [{
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "query-api-chargeitem-req-ps.html"
+              "valueUrl" : "query-api-chargeitem-req-avs.html"
             }],
-            "nameUrl" : "query-api-chargeitem-req-ps.html",
+            "nameUrl" : "query-api-chargeitem-req-avs.html",
             "title" : "Primärsystem des abgebenden Leistungserbringers - Anforderungen: ChargeItem-Query",
             "generation" : "markdown"
           }]

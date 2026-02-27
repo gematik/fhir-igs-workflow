@@ -20,7 +20,7 @@ Die Profilierung der Ressource ChargeItem ist hier dokumentiert: https://simplif
 
 * [Spezifische Anforderungen für den E-Rezept-Fachdienst](./query-api-chargeitem-req-fd.md)
 * [Spezifische Anforderungen für den E-Rezept-FdV](./query-api-chargeitem-req-fdv.md)
-* [Spezifische Anforderungen für den abgebenden Leistungserbringer](./query-api-chargeitem-req-ps.md)
+* [Spezifische Anforderungen für den abgebenden Leistungserbringer](./query-api-chargeitem-req-avs.md)
 
 ## GET /ChargeItem (Liste)
 
