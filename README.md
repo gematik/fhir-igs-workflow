@@ -58,3 +58,11 @@ Notes:
 
 - The publisher JAR is shared under tools/publisher/ and downloaded on first build.
 - All IGs target FHIR R4 (4.0.1).
+
+## License
+
+Copyright 2026 gematik GmbH
+
+Apache License, Version 2.0
+
+See the [LICENSE](./LICENSE) for the specific language governing permissions 
