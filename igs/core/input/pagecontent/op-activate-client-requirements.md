@@ -1,4 +1,15 @@
+{% assign use_cases = site.data['use-cases'] %}
+
 Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an Clientsysteme für die Nutzung der Operation `$activate`.
+
+<br>
+
+<!-- Ablaufdiagramm Anwendungsfall -->
+{% assign use_case = use_cases | where: "title", "UC 4.1 - E-Rezept durch Abgebenden abrufen" | first %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
+<br>
 
 <!-- A_19272 -->
 <requirement conformance="SHALL" key="IG-TIFlow-DiGA-36" title="PS verordnende LEI: E-Rezept durch Verordnenden einstellen" version="0">
