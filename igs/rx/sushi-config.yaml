@@ -1,10 +1,10 @@
 canonical: https://gematik.de/fhir/erp
 fhirVersion: 4.0.1
-id: de.gematik.erezept-workflow.r4
-name: E-Rezept Workflow #TODO Name muss von Team Polarion vorgegeben werden gemIG...
-title: "Implementation Guide E-Rezept-Fachdienst"
+id: de.gematik.eflow-rx
+name: gemIG_TIFlow_rx
+title: "E-Rezept für Arzneimittel"
 status: draft # draft | active | retired | unknown
-version: 1.6.1-draft
+version: 1.0.0-draft
 copyrightYear: 2025+
 releaseLabel: ci-build # ci-build, ballot, release
 jurisdiction: urn:iso:std:iso:3166#DE "Germany" # https://www.hl7.org/fhir/valueset-jurisdiction.html
@@ -18,24 +18,23 @@ dependencies:
   de.gematik.epa.medication: 1.3.0
   de.gematik.terminology: 1.0.8
   de.gematik.ti: 1.2.0
+  hl7.fhir.uv.xver-r5.r4: 0.0.1-snapshot-2
 
 applyExtensionMetadataToRoot: false
 
 menu:
   Start: index.html
   Fachlichkeit:
-    Überblick: menu-fachlichkeit-ueberblick.html
-    Szenarien: menu-fachlichkeit-szenarien.html
-    Anwendungsfälle: menu-fachlichkeit-anwendungsfaelle.html
+    Arzneimittel: menu-fachlichkeit-e-rezept.html
+    Teratogene Arzneimittel: menu-fachlichkeit-t-rezept.html
+    Mehrfachverordnungen: menu-fachlichkeit-mvo.html
+    Workflow-Steuerung durch LE: menu-fachlichkeit-wf-le.html
   Technische Umsetzung:
-    Systemüberblick: menu-technische-umsetzung-systemueberblick.html
     Technische Anwendungsfälle: menu-technische-umsetzung-anwendungsfaelle.html
-    Verarbeitungsregeln: menu-technische-umsetzung-verarbeitungsregeln.html
-    Validierung von Dosierinformationen: menu-technische-umsetzung-dosierung.html
-    Mappings: mapping.html
+    Strukturierte Dosierungen: menu-technische-umsetzung-dosierung.html
+    Dispensierinformationen: menu-technische-umsetzung-dispensierinformationen.html
+    Mappings: menu-technische-umsetzung-mapping.html
   Schnittstellen:
-    Generelle Prinzipien: menu-schnittstellen-generelle-prinzipien.html
-    Datenschutz und Sicherheit: menu-schnittstellen-datenschutz-und-sicherheit.html
     Query API: menu-schnittstellen-query-api.html
     Operation API: menu-schnittstellen-operation-api.html
     Additional APIs: menu-schnittstellen-additional-api.html
@@ -52,76 +51,118 @@ menu:
 pages:
   index.md:
     title: "Implementation Guide E-Rezept-Fachdienst"
-  menu-fachlichkeit-ueberblick.md:
-    title: "Überblick zur Verordnung und Belieferung von Arzneimitteln"
-    menu-fachlichkeit-szenarien.md:
-      title: "Szenarien für den Verordnungsprozess"
-      menu-fachlichkeit-szenarien-t-rezept.md:
-        title: "Verordnung von E-T-Rezepten"
-    menu-fachlichkeit-anwendungsfaelle.md:
-      title: "Anwendungsfälle für den Medikationsprozess"
-  menu-technische-umsetzung-systemueberblick.md:
-    title: "Systemüberblick"
+  menu-fachlichkeit.md:
+    title: "Fachliche Aspekte zur Arzneimittelverordnung"
+    menu-fachlichkeit-e-rezept.md:
+      title: "Verordnung von apothekenpflichtigen Arzneimitteln"
+    menu-fachlichkeit-wf-le.md:
+      title: "Verordnung mit Steuerung durch Leistungserbringer"
+    menu-fachlichkeit-mvo.md:
+      title: "Verordnung von Mehrfachverordnungen (MVO)"
+    menu-fachlichkeit-t-rezept.md:
+      title: "Verordnung von E-T-Rezepten"
+  menu-technisch.md:
+    title: "Technische Aspekte zur Arzneimittelverordnung"
     menu-technische-umsetzung-anwendungsfaelle.md:
       title: "Technische Anwendungsfälle"
-    menu-technische-umsetzung-verarbeitungsregeln.md:
-      title: "Verarbeitungsregeln für den E-Rezept-Fachdienst"
     menu-technische-umsetzung-dosierung.md:
       title: "Validierung von Dosierungsinformationen"
-    menu-technische-umsetzung-anbindung-epa-ms.md:
-      title: "Anbindung an den ePA MedicationService"
-    menu-technische-umsetzung-anbindung-fvzd.md:
-      title: "Anbindung an den FHIR-VZD"
-    menu-technische-umsetzung-anbindung-bfarm.md:
-      title: "Anbindung an den BfArM Webdienst"
-  mapping.md:
-    title: "Vorgaben zum Mapping von FHIR-Instanzen"
-    mapping-prescription.md:
-      title: "Mapping von Verordnungsdaten"
-      mapping-prescription-bundle-parameters.md:
-        title: "Mapping des Bundles zu Parameters für Verordnungsdaten"
-      mapping-prescription-practitioner.md:
-        title: "Mapping des Verordnenden für Verordnungsdaten"
-      mapping-prescription-organization.md:
-        title: "Mapping der Organization für Verordnungsdaten"
-      mapping-prescription-medicationrequest.md:
-        title: "Mapping der Verschreibung für Verordnungsdaten"
-      mapping-prescription-medication.md:
-        title: "Mapping der Arzneimitteldaten für Verordnungsdaten"
-        mapping-prescription-medication-compounding.md:
-          title: "Mapping einer Rezeptur Medikation"
-        mapping-prescription-medication-freetext.md:
-          title: "Mapping einer Freitext Medikation"
-        mapping-prescription-medication-ingredient.md:
-          title: "Mapping einer Wirkstoff Medikation"
-        mapping-prescription-medication-pzn.md:
-          title: "Mapping einer PZN Medikation"
-    mapping-dispensation.md:
-      title: "Mapping von Dispensierinformationen"
-    comparison-Bundle-input-example-1.md:
-      title: "Beispiel für eine Transformation einer PZN"
-    comparison-Bundle-input-example-2.md:
-      title: "Beispiel für eine Transformation einer Wirkstoffverordnung"
-    comparison-Bundle-input-example-3.md:
-      title: "Beispiel für eine Transformation einer Freitextverordnung"
-    comparison-Bundle-input-example-4.md:
-      title: "Beispiel für eine Transformation einer Rezepturverordnung"
-    comparison-Bundle-input-example-5.md:
-      title: "Beispiel für eine Transformation einer Verordnung mit absoluter Referenzierung"
-  menu-schnittstellen-generelle-prinzipien.md:
-    title: "Generelle Prinzipien"
-  menu-schnittstellen-datenschutz-und-sicherheit.md:
-    title: "Datenschutz und Sicherheit"
+    menu-technische-umsetzung-dispensierinformationen.md:
+      title: "Erstellen von Dispensierinformationen" 
+    menu-technische-umsetzung-mapping.md:
+      title: "Vorgaben zum Mapping von FHIR-Instanzen"
+      mapping-prescription.md:
+        title: "Mapping von Verordnungsdaten"
+        mapping-prescription-bundle-parameters.md:
+          title: "Mapping des Bundles zu Parameters für Verordnungsdaten"
+        mapping-prescription-practitioner.md:
+          title: "Mapping des Verordnenden für Verordnungsdaten"
+        mapping-prescription-organization.md:
+          title: "Mapping der Organization für Verordnungsdaten"
+        mapping-prescription-medicationrequest.md:
+          title: "Mapping der Verschreibung für Verordnungsdaten"
+        mapping-prescription-medication.md:
+          title: "Mapping der Arzneimitteldaten für Verordnungsdaten"
+          mapping-prescription-medication-compounding.md:
+            title: "Mapping einer Rezeptur Medikation"
+          mapping-prescription-medication-freetext.md:
+            title: "Mapping einer Freitext Medikation"
+          mapping-prescription-medication-ingredient.md:
+            title: "Mapping einer Wirkstoff Medikation"
+          mapping-prescription-medication-pzn.md:
+            title: "Mapping einer PZN Medikation"
+      mapping-dispensation.md:
+        title: "Mapping von Dispensierinformationen"
+      comparison-Bundle-input-example-1.md:
+        title: "Beispiel für eine Transformation einer PZN"
+      comparison-Bundle-input-example-2.md:
+        title: "Beispiel für eine Transformation einer Wirkstoffverordnung"
+      comparison-Bundle-input-example-3.md:
+        title: "Beispiel für eine Transformation einer Freitextverordnung"
+      comparison-Bundle-input-example-4.md:
+        title: "Beispiel für eine Transformation einer Rezepturverordnung"
+      comparison-Bundle-input-example-5.md:
+        title: "Beispiel für eine Transformation einer Verordnung mit absoluter Referenzierung"
   menu-schnittstellen-query-api.md:
     title: "Query API"
+    query-api-task.md:
+      title: "Query API: Task"
+      query-api-task-fd-requirements.md:
+        title: "Server-Anforderungen: Task-Query"
+      query-api-task-client-requirements.md:
+        title: "Client-Anforderungen: Task-Query"
+    query-api-communication.md:
+      title: "Query API: Communication"
+      query-api-communication-client-requirements.md:
+        title: "Client-Anforderungen: Communication-Query"
+    query-api-medicationdispense.md:
+      title: "Query API: MedicationDispense"
+      query-api-medicationdispense-client-requirements.md:
+        title: "Client-Anforderungen: MedicationDispense-Query"
   menu-schnittstellen-operation-api.md:
     title: "Operation API"
     op-create.md:
       title: "Operation $create (Task erzeugen)"
+      op-create-fd-requirements.md:
+        title: "Server-Anforderungen $create"
+      op-create-client-requirements.md:
+        title: "Client-Anforderungen $create"
     op-activate.md:
       title: "Operation $activate (Task aktivieren)"
+      op-activate-fd-requirements.md:
+        title: "Server-Anforderungen $activate"
+      op-activate-client-requirements.md:
+        title: "Client-Anforderungen $activate"
+    op-accept.md:
+      title: "Operation $accept (Task akzeptieren)"
+      op-accept-fd-requirements.md:
+        title: "Server-Anforderungen $accept"
+      op-accept-client-requirements.md:
+        title: "Client-Anforderungen $accept"
+    op-reject.md:
+      title: "Operation $reject (Task zurückweisen)"
+      op-reject-fd-requirements.md:
+        title: "Server-Anforderungen $reject"
+      op-reject-client-requirements.md:
+        title: "Client-Anforderungen $reject"
+    op-dispense.md:
+      title: "Operation $dispense (Dispensierinformationen bereitstellen)"
+      op-dispense-fd-requirements.md:
+        title: "Server-Anforderungen $dispense"
+      op-dispense-client-requirements.md:
+        title: "Client-Anforderungen $dispense"
+    op-close.md:
+      title: "Operation $close (Task schließen)"
+      op-close-fd-requirements.md:
+        title: "Server-Anforderungen $close"
+      op-close-client-requirements.md:
+        title: "Client-Anforderungen $close"
     op-abort.md:
       title: "Operation $abort (Task abbrechen)"
+      op-abort-fd-requirements.md:
+        title: "Server-Anforderungen $abort"
+      op-abort-client-requirements.md:
+        title: "Client-Anforderungen $abort"
   menu-schnittstellen-additional-api.md:
     title: "Zusätzliche APIs"
   artifacts.md:
@@ -142,12 +183,14 @@ pages:
     title: "Apache Licence"
 
 parameters:
+  shownav: true # TODO: In alle IGs integrieren
   path-resource:
     - input/resources/structuremaps
     - input/resources/kbv-bundles
     - input/resources/transformed-kbv-bundles
   path-pages:
     - input/content
+    - input/pagecontent
   no-narrative:
     # "StructureDefinition/*" doesn't seem to work anymore
     - StructureDefinition/*

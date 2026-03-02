@@ -1,0 +1,21 @@
+@startuml
+!include style.iuml
+
+title RX Operation $reject
+
+start
+:Client ruft POST /Task/{id}/$reject auf;
+:FD prueft Rolle, Secret und Task.status=in-progress;
+if (ok?) then (ja)
+else (nein)
+  :HTTP 403;
+  stop
+endif
+
+:FD loescht Secret, Task.owner und ggf. Dispensierdaten;
+:FD setzt Task.status = ready;
+:FD bereitet ggf. ePA-Loeschmarkierungen vor;
+:FD triggert Push an Versicherten;
+stop
+
+@enduml

@@ -28,8 +28,14 @@ menu:
     Zugriffsprotokollierung: audit-service.html
     Datenschutz und Sicherheit: data-security.html
     FHIR-Validierung: fhir-validate.html
-    Loeschfristen: ttl.html
+    Löschfristen: ttl.html
+  Schnittstellen:
+    Query API: menu-schnittstellen-query-api.html
+    Operation API: menu-schnittstellen-operation-api.html
   FHIR-Artefakte: artifacts.html
+
+# TODO: Technische Anbindung an externe Systeme, ePA, F-VZD, BfArM beschreiben
+# TODO: menu-technische-umsetzung-systemueberblick einbinden
 
 pages:
   index.md:
@@ -41,7 +47,71 @@ pages:
   fhir-validate.md:
     title: "FHIR-Ressource validieren"
   ttl.md:
-    title: "Loeschfristen"
+    title: "Löschfristen"
+  menu-schnittstellen-operation-api.md:
+    title: "Operation API"
+    op-create.md:
+      title: "Operation $create (Task erzeugen)"
+      op-create-fd-requirements.md:
+        title: "Server-Anforderungen $create"
+      op-create-client-requirements.md:
+        title: "Client-Anforderungen $create"
+    op-activate.md:
+      title: "Operation $activate (Task aktivieren)"
+      op-activate-fd-requirements.md:
+        title: "Server-Anforderungen $activate"
+      op-activate-client-requirements.md:
+        title: "Client-Anforderungen $activate"
+    op-accept.md:
+      title: "Operation $accept (Task akzeptieren)"
+      op-accept-fd-requirements.md:
+        title: "Server-Anforderungen $accept"
+      op-accept-client-requirements.md:
+        title: "Client-Anforderungen $accept"
+    op-reject.md:
+      title: "Operation $reject (Task zurückweisen)"
+      op-reject-fd-requirements.md:
+        title: "Server-Anforderungen $reject"
+      op-reject-client-requirements.md:
+        title: "Client-Anforderungen $reject"
+    op-close.md:
+      title: "Operation $close (Task schließen)"
+      op-close-fd-requirements.md:
+        title: "Server-Anforderungen $close"
+      op-close-client-requirements.md:
+        title: "Client-Anforderungen $close"
+    op-abort.md:
+      title: "Operation $abort (Task abbrechen)"
+      op-abort-fd-requirements.md:
+        title: "Server-Anforderungen $abort"
+      op-abort-client-requirements.md:
+        title: "Client-Anforderungen $abort"
+  menu-schnittstellen-query-api.md:
+    title: "Query API"
+    query-api-auditevent.md:
+      title: "Query API: AuditEvent"
+      query-api-auditevent-fd-requirements.md:
+        title: "FD-Anforderungen: AuditEvent-Query"
+      query-api-auditevent-client-requirements.md:
+        title: "Client-Anforderungen: AuditEvent-Query"
+    query-api-device.md:
+      title: "Query API: Device"
+      query-api-device-fd-requirements.md:
+        title: "FD-Anforderungen: Device-Query"
+      query-api-device-client-requirements.md:
+        title: "Client-Anforderungen: Device-Query"
+    query-api-communication.md:
+      title: "Query API: Communication"
+      query-api-communication-fd-requirements.md:
+        title: "FD-Anforderungen: Communication-Query"
+      query-api-communication-client-requirements.md:
+        title: "Client-Anforderungen: Communication-Query"
+    query-api-consent.md:
+      title: "Query API: Consent"
+      query-api-consent-fd-requirements.md:
+        title: "FD-Anforderungen: Consent-Query"
+      query-api-consent-client-requirements.md:
+        title: "Client-Anforderungen: Consent-Query"
   artifacts.md:
     title: "FHIR-Artefakte"
 

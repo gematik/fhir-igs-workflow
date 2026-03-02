@@ -1,0 +1,13 @@
+@startuml
+title Übertragen an den ePA MedicationService
+
+participant "E-Rezept-Fachdienst" as FD
+participant "ePA MedicationService" as EPA
+
+FD -> FD: Ereignis nach $activate/$close/$abort
+FD -> EPA: Übertragung von Medikationsdaten
+activate EPA
+EPA --> FD: Status
+deactivate EPA
+
+@enduml

@@ -3,7 +3,7 @@ Parent: TIOrganization
 Id: erp-tprescription-organization
 Title: "E-T-Rezept Organization"
 Description: "Angaben zur Apotheke, die das T-Rezept beliefert hat."
-* insert Profile(erp-tprescription-organization)
+* insert Versioning
 
 * telecom MS
 * name MS

@@ -2,7 +2,7 @@ Extension: GEM_ERPEU_EX_MedicinalPackageDescription
 Id: GEM-ERPEU-EX-MedicinalPackageDescription
 Description: "Description of a packaged medicinal product."
 Context: Medication, Extension
-* insert StructureDefinition(GEM_ERPEU_EX_MedicinalPackageDescription)
+* insert Versioning
 * value[x] only string
 * valueString 1..1 MS
   * ^short = "Description of a packaged medicinal product."

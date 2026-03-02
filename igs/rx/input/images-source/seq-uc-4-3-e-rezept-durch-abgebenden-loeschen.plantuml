@@ -1,0 +1,27 @@
+@startuml
+title UC 4.3 - E-Rezept durch Abgebenden loeschen
+
+actor "Mitarbeiter Apotheke" as MA
+participant "AVS" as AVS
+participant "Identity Provider" as IDP
+participant "E-Rezept Fachdienst" as FD
+
+MA -> AVS: E-Rezept loeschen()
+activate AVS
+
+opt kein gueltiger AuthN-Token
+  ref over AVS, IDP: AuthN-Token anfordern
+end
+
+AVS -> FD: POST /Task/{id}/$abort (AuthN-Token, AccessCode, Secret)
+activate FD
+FD -> FD: Status auf "geloescht" setzen()
+FD -> FD: Daten loeschen()
+FD --> AVS: Status
+deactivate FD
+
+AVS -> AVS: Token und Secret loeschen()
+AVS --> MA: Status
+deactivate AVS
+
+@enduml

@@ -3,7 +3,7 @@ Parent: Task
 Id: GEM-ERP-PR-Task
 Title: "GEM ERP PR Task"
 Description: "Task für die Verwaltung des E-Rezept-Workflows"
-* insert Profile(GEM_ERP_PR_Task)
+* insert Meta
 
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
@@ -15,8 +15,8 @@ Description: "Task für die Verwaltung des E-Rezept-Workflows"
 and GEM_ERP_EX_AcceptDate named acceptDate 0..1 MS
 and GEM_ERP_EX_ExpiryDate named expiryDate 0..1 MS
 and GEM_ERP_EX_LastMedicationDispense named lastMedicationDispense 0..1
-and GEM_ERP_EX_EU_IS_REDEEMABLE_BY_PROPERTIES named eu-isRedeemableByProperties 0..1 MS
-and GEM_ERP_EX_EU_IS_REDEEMABLE_BY_PATIENT_AUTHORIZATION named eu-isRedeemableByPatientAuthorization 0..1 MS
+and EFlowRxEuIsRedeemableByPropertiesExtension named eu-isRedeemableByProperties 0..1 MS
+and EFlowRxEuIsRedeemableByPatientAuthorizationExtension named eu-isRedeemableByPatientAuthorization 0..1 MS
 
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"

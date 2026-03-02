@@ -1,5 +1,4 @@
-RuleSet: ValueSet(name)
-* ^url = "https://gematik.de/fhir/erp/ValueSet/{name}"
+RuleSet: ValueSet
 * insert Versioning
 * ^publisher = "gematik GmbH"
 * ^contact.telecom.system = #url

@@ -2,7 +2,7 @@
 // === AUTO-GENERATED FILE ===
 // Do not edit by hand; edit scripts/generate-heading-links-js.sh and config.sh instead.
 
-const newIssueGithubLink = "https://github.com/gematik/fhir-profiles-erp/issues/new?template=BUG-REPORT.yml";
+const newIssueGithubLink = "https://github.com/gematik/fhir-igs-workflow/issues/new?template=BUG-REPORT.yml";
 
 document.addEventListener("DOMContentLoaded", function() {
   setTimeout(function() {

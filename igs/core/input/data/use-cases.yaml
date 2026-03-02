@@ -1,0 +1,514 @@
+- id: E_Rezept_qualifiziert_signieren
+  anchor: e-rezept-qualifiziert-signieren
+  link: menu-technische-umsetzung-anwendungsfaelle.html#e-rezept-qualifiziert-signieren
+  title: E-Rezept qualifiziert signieren
+  roles:
+    - (Zahn-)Arzt
+  description: |
+    Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES).
+    Vorbereitende Tätigkeiten im Primärsystem können organisatorisch delegiert werden, die QES selbst jedoch nicht.
+  preconditions: |
+    - Rezept-ID (PrescriptionID) ist im Verordnungsdatensatz enthalten.
+    - Ein freigeschalteter HBA steht zur Verfügung.
+    - Konsistenz: `authoredOn` im Verordnungsdatensatz entspricht dem Datum der QES.
+  actions: |
+    - Das Primärsystem startet die QES-Erstellung über den Konnektor.
+    - Der (Zahn-)Arzt signiert den Verordnungsdatensatz mit dem HBA.
+    - Das Primärsystem erhält den QES-signierten Datensatz zur weiteren Verarbeitung.
+  postconditions: |
+    - QES-signierter Verordnungsdatensatz liegt im Primärsystem vor.
+  interface: |
+    - Keine (QES im Primärsystem)
+  diagram: seq-e-rezept-qualifiziert-signieren
+- id: E_Rezept_abgabe_dokumentieren
+  anchor: e-rezept-abgabe-dokumentieren
+  link: menu-technische-umsetzung-anwendungsfaelle.html#e-rezept-abgabe-dokumentieren
+  title: E-Rezept-Abgabe zeitnah dokumentieren
+  roles:
+    - Apotheke
+  description: |
+    Vor Abschluss des Workflows kann die Apotheke über $dispense Dispensierinformationen einstellen,
+    damit Versicherte und FdV zeitnah über die erfolgte Abgabe informiert werden, ohne eine Quittung auszulösen.
+  preconditions: |
+    - Die Apotheke besitzt das Secret aus dem vorherigen Abruf.
+    - Das Rezept wurde beliefert, aber der Workflow ist noch nicht abgeschlossen.
+    - Dispensierdaten (MedicationDispense + Medication) liegen im AVS vor und bleiben unterhalb der Größenlimits.
+  actions: |
+    - Das AVS ruft /Task/{id}/$dispense?secret=... via POST auf und übermittelt die Abgabeinformationen in einer Parameters-Ressource.
+    - Der Fachdienst plausibilisiert die Daten und speichert sie ohne Statuswechsel des Tasks.
+  postconditions: |
+    - Dispensierinformationen stehen dem Versicherten im E-Rezept-FdV zur Verfügung.
+    - Task behält Status `in-progress`; keine Quittung wurde erzeugt.
+  interface: |
+    - [Operation API: Dispensierinformationen bereitstellen](./op-dispense.html)
+  diagram: seq-e-rezept-abgabe-zeitnah-dokumentieren
+- id: UC_2_1_E_Rezepte_erzeugen
+  anchor: uc-2-1-e-rezepte-erzeugen
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-2-1-e-rezepte-erzeugen
+  title: UC 2.1 - E-Rezepte erzeugen
+  roles:
+    - (Zahn-)Arzt
+  description: |
+    Der verordnende Leistungserbringer erzeugt eine Verordnung im Primaersystem.
+    Für die Verordnung wird eine Rezept-ID aus dem E-Rezept-Fachdienst bezogen und der Verordnungsdatensatz
+    anschließend qualifiziert elektronisch signiert (QES).
+  preconditions: |
+    - Der Versicherte ist der LEI bekannt.
+    - Ein Verordnungsdatensatz liegt im Primärsystem vor.
+    - HBA ist gesteckt und für die QES freigeschaltet.
+  actions: |
+    - Der Leistungserbringer wählt den Verordnungsdatensatz und ein Signaturverfahren aus.
+    - Das Primärsystem ruft eine Rezept-ID beim E-Rezept-Fachdienst ab und ergänzt sie im Verordnungsdatensatz.
+    - Der AccessCode wird im Primärsystem gespeichert.
+    - Der Verordnungsdatensatz wird über den Konnektor mit QES signiert (Einzel-, Stapel- oder Komfortsignatur).
+  postconditions: |
+    - E-Rezept enthält Rezept-ID und QES.
+    - AccessCode des E-Rezepts ist im Primärsystem gespeichert.
+    - Workflow zum E-Rezept ist im E-Rezept-Fachdienst im Status "initialisiert" angelegt.
+  interface: |
+    - [Operation API: E-Rezept erstellen](./op-create.html)
+    - QES im Primärsystem (Konnektor)
+  diagram: seq-uc-2-1-e-rezepte-erzeugen
+- id: UC_2_3_E_Rezept_einstellen
+  anchor: uc-2-3-e-rezept-einstellen
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-2-3-e-rezept-einstellen
+  title: UC 2.3 - E-Rezept einstellen
+  roles:
+    - (Zahn-)Arzt
+  description: |
+    Ein E-Rezept wird vom Primärsystem beim E-Rezept-Fachdienst eingestellt und ein E-Rezept-Token erzeugt.
+  preconditions: |
+    - UC 2.1 wurde ausgeführt; E-Rezept und Signatur liegen im Primärsystem vor.
+    - Rezept-ID und AccessCode sind bekannt.
+    - Status im E-Rezept-Fachdienst ist "initialisiert".
+  actions: |
+    - Der Leistungserbringer wählt ein E-Rezept zum Einstellen aus.
+    - Das Primärsystem lädt das E-Rezept in den Workflow im E-Rezept-Fachdienst.
+    - Das Primärsystem erstellt einen E-Rezept-Token und speichert ihn.
+  postconditions: |
+    - Das E-Rezept ist im E-Rezept-Fachdienst gespeichert.
+    - Der Workflow hat den Status "offen".
+    - Das Einstellen ist im E-Rezept-Fachdienst für den Versicherten protokolliert.
+  interface: |
+    - [Operation API: E-Rezept aktivieren](./op-activate.html)
+  diagram: seq-uc-2-3-e-rezept-einstellen
+- id: UC_2_5_E_Rezept_durch_Verordnenden_loeschen
+  anchor: uc-2-5-e-rezept-durch-verordnenden-loeschen
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-2-5-e-rezept-durch-verordnenden-loeschen
+  title: UC 2.5 - E-Rezept durch Verordnenden löschen
+  roles:
+    - (Zahn-)Arzt
+  description: |
+    Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im E-Rezept-Fachdienst auf "gelöscht" gesetzt.
+  preconditions: |
+    - UC 2.3 wurde ausgeführt.
+    - Rezept-ID und AccessCode sind bekannt.
+    - Status im E-Rezept-Fachdienst ist "offen".
+  actions: |
+    - Ein Mitarbeiter der verordnenden LEI markiert das E-Rezept zum Löschen und bestätigt den Vorgang.
+    - Das Primärsystem ruft den E-Rezept-Fachdienst mit Rezept-ID und AccessCode auf.
+    - Der Status wird auf "gelöscht" gesetzt und medizinische Daten werden gelöscht.
+    - Der AccessCode wird im Primärsystem gelöscht.
+  postconditions: |
+    - Der Workflow hat den Status "gelöscht".
+    - Die personenbezogene und medizinische Daten (ausser Versicherten-ID) sind aus dem Workflow entfernt.
+    - Das Löschen ist im E-Rezept-Fachdienst für den Versicherten protokolliert.
+  interface: |
+    - [Operation API: E-Rezept löschen](./op-abort.html)
+  diagram: seq-uc-2-5-e-rezept-durch-verordnenden-loeschen
+- id: UC_3_1_E_Rezepte_durch_Versicherten_abrufen
+  anchor: uc-3-1-e-rezepte-durch-versicherten-abrufen
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-3-1-e-rezepte-durch-versicherten-abrufen
+  title: UC 3.1 - E-Rezepte durch Versicherten abrufen
+  roles:
+    - Versicherter
+  description: |
+    Ein Versicherter ruft im E-Rezept-FdV alle seine im E-Rezept-Fachdienst eingestellten E-Rezepte ab.
+  preconditions: |
+    - Keine.
+  actions: |
+    - Das FdV fordert E-Rezepte beim E-Rezept-Fachdienst an.
+    - Der E-Rezept-Fachdienst identifiziert E-Rezepte über die Versicherten-ID.
+    - Der E-Rezept-Fachdienst liefert E-Rezepte, Status und Statuszeitpunkte.
+  postconditions: |
+    - E-Rezepte stehen im E-REzept-FdV zur Anzeige bereit; Daten für E-Rezept-Token sind verfügbar.
+    - Der Abruf ist protokolliert.
+  interface: |
+    - [Query API: Task](./query-api-task.html)
+  diagram: seq-uc-3-1-e-rezepte-durch-versicherten-abrufen
+- id: UC_3_2_E_Rezept_durch_Versicherten_loeschen
+  anchor: uc-3-2-e-rezept-durch-versicherten-loeschen
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-3-2-e-rezept-durch-versicherten-loeschen
+  title: UC 3.2 - E-Rezept durch Versicherten löschen
+  roles:
+    - Versicherter
+  description: |
+    Der Versicherte setzt den Status eines E-Rezepts auf "gelöscht" und löscht es im E-Rezept-Fachdienst.
+  preconditions: |
+    - UC 3.1 wurde ausgeführt.
+    - Status des E-Rezepts ist ungleich "in Abgabe (gesperrt)".
+  actions: |
+    - Versicherter wählt ein E-Rezept im E-Rezept-FdV und bestätigt das Löschen.
+    - Das E-Rezept-FdV überträgt die Löschanforderung an den E-Rezept-Fachdienst.
+    - Der Status wird geändert; Daten im E-Rezept werden gelöscht.
+    - Der E-Rezept-Token wird im E-Rezept-FdV gelöscht.
+  postconditions: |
+    - Der Workflow hat den Status "gelöscht".
+    - Die personenbezogene und medizinische Daten (ausser Versicherten-ID) sind aus dem Workflow entfernt.
+    - Das Löschen ist im E-Rezept-Fachdienst für den Versicherten protokolliert.
+  interface: |
+    - [Operation API: E-Rezept löschen](./op-abort.html)
+  diagram: seq-uc-3-2-e-rezept-durch-versicherten-loeschen
+- id: UC_3_3_Nachricht_durch_Versicherten_uebermitteln
+  anchor: uc-3-3-nachricht-durch-versicherten-uebermitteln
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-3-3-nachricht-durch-versicherten-uebermitteln
+  title: UC 3.3 - Nachricht durch Versicherten übermitteln
+  roles:
+    - Versicherter
+    - Vertreter
+  description: |
+    Ein Versicherter oder Vertreter übermittelt einen E-Rezept-Token und/oder eine Nachricht an eine Apotheke
+    oder einen Vertreter, wahlweise über die TI oder als 2D-Code.
+  preconditions: |
+    - UC 3.1 wurde ausgeführt und ein E-Rezept-Token erstellt.
+    - Alternativ liegt ein E-Rezept-Token beim Vertreter vor.
+  actions: |
+    - Auswahl eines E-Rezept-Tokens und Versandart (TI oder 2D-Code).
+    - Bei Versand über TI: Apotheke im Verzeichnisdienst wählen oder KVNR2 eingeben.
+    - Das FdV stellt die Nachricht mit Token und/oder Text im E-Rezept-Fachdienst ein.
+    - Bei 2D-Code: Token wird als 2D-Code angezeigt oder ausgedruckt.
+  postconditions: |
+    - Nachricht liegt im E-Rezept-Fachdienst und kann vom Empfänger abgerufen werden.
+    - Bei 2D-Code ist der Token für den Empfänger verfügbar.
+  interface: |
+    - FHIR REST: Communication (E-Rezept-Nachricht einstellen)
+  diagram: seq-uc-3-3-nachricht-durch-versicherten-uebermitteln
+- id: UC_3_4_Nachrichten_durch_Versicherten_empfangen
+  anchor: uc-3-4-nachrichten-durch-versicherten-empfangen
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-3-4-nachrichten-durch-versicherten-empfangen
+  title: UC 3.4 - Nachrichten durch Versicherten empfangen
+  roles:
+    - Versicherter
+    - Vertreter
+  description: |
+    Ein Versicherter oder Vertreter empfängt Nachrichten von abgebenden LEI über den E-Rezept-Fachdienst.
+  preconditions: |
+    - UC 4.7 wurde ausgeführt.
+    - UC 3.3 wurde ausgeführt.
+  actions: |
+    - Das FdV fragt beim E-Rezept-Fachdienst nach neuen Nachrichten.
+    - Nachrichten werden heruntergeladen.
+  postconditions: |
+    - Nachrichten liegen im FdV zur Anzeige bereit.
+  interface: |
+    - FHIR REST: Communication (E-Rezept-Nachrichten abrufen)
+  diagram: seq-uc-3-4-nachrichten-durch-versicherten-empfangen
+- id: UC_3_8_Nachricht_durch_Versicherten_loeschen
+  anchor: uc-3-8-nachricht-durch-versicherten-loeschen
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-3-8-nachricht-durch-versicherten-loeschen
+  title: UC 3.8 - Nachricht durch Versicherten löschen
+  roles:
+    - Versicherter
+  description: |
+    Der Versicherte löscht von ihm übermittelte Nachrichten an Apotheken oder Versicherte.
+  preconditions: |
+    - UC 3.3 wurde ausgeführt.
+  actions: |
+    - Der Versicherte wählt Nachrichten zum Löschen aus und bestätigt den Vorgang.
+    - Das FdV überträgt die Löschanforderung je Nachricht an den E-Rezept-Fachdienst.
+    - Der E-Rezept-Fachdienst löscht die Nachrichten und liefert ggf. eine Warnung, wenn bereits abgerufen.
+    - Die Nachrichten werden im FdV gelöscht.
+  postconditions: |
+    - Nachrichten sind im E-Rezept-Fachdienst und im FdV gelöscht.
+  interface: |
+    - FHIR REST: Communication (E-Rezept-Nachricht löschen)
+  diagram: seq-uc-3-8-nachricht-durch-versicherten-loeschen
+- id: UC_3_9_Dispensierinformationen_durch_Versicherten_abrufen
+  anchor: uc-3-9-dispensierinformationen-durch-versicherten-abrufen
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-3-9-dispensierinformationen-durch-versicherten-abrufen
+  title: UC 3.9 - Dispensierinformationen durch Versicherten abrufen
+  roles:
+    - Versicherter
+  description: |
+    Ein Versicherter ruft im FdV alle seine im E-Rezept-Fachdienst eingestellten Dispensierinformationenen ab.
+  preconditions: |
+    - Dispensierinformationen wurden durch eine abgebende LEI bereitgestellt.
+  actions: |
+    - Das FdV fordert Dispensierinformationenen beim E-Rezept-Fachdienst an.
+    - Der E-Rezept-Fachdienst identifiziert Dispensierinformationenen über die Versicherten-ID.
+    - Der E-Rezept-Fachdienst liefert Dispensierinformationenen an das FdV aus.
+  postconditions: |
+    - Dispensierinformationen stehen im FdV zur Anzeige bereit.
+    - Der Abruf ist protokolliert.
+  interface: |
+    - [Query API: MedicationDispense](./query-api-medicationdispense.html)
+  diagram: seq-uc-3-9-dispensierinformationen-durch-versicherten-abrufen
+- id: UC_4_6_Nachrichten_durch_Abgebenden_empfangen
+  anchor: uc-4-6-nachrichten-durch-abgebenden-empfangen
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-4-6-nachrichten-durch-abgebenden-empfangen
+  title: UC 4.6 - Nachrichten durch Abgebenden empfangen
+  roles:
+    - Apotheke
+  description: |
+    Eine abgebende LEI empfängt E-Rezept-Token über die TI oder optisch als 2D-Code.
+  preconditions: |
+    - UC 3.3 wurde ausgeführt oder der 2D-Code wurde präsentiert.
+  actions: |
+    - Das Primärsystem wählt den Empfangsweg (TI oder 2D-Code).
+    - Bei TI: Primärsystem fragt beim E-Rezept-Fachdienst neue Nachrichten für die Telematik-ID ab und lädt sie herunter.
+    - Bei 2D-Code: Primärsystem wandelt den Code in die Token-Textform um.
+  postconditions: |
+    - E-Rezept-Token liegt im Primärsystem vor.
+  interface: |
+    - FHIR REST: Communication (E-Rezept-Nachrichten abrufen)
+  diagram: seq-uc-4-6-nachrichten-durch-abgebenden-empfangen
+- id: UC_4_7_Nachricht_durch_Abgebenden_uebermitteln
+  anchor: uc-4-7-nachricht-durch-abgebenden-uebermitteln
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-4-7-nachricht-durch-abgebenden-uebermitteln
+  title: UC 4.7 - Nachricht durch Abgebenden übermitteln
+  roles:
+    - Apotheke
+  description: |
+    Die abgebende LEI antwortet auf eine Nachricht eines Versicherten oder Vertreters.
+  preconditions: |
+    - UC 3.3 wurde ausgeführt.
+    - UC 4.6 wurde ausgeführt.
+  actions: |
+    - Ein Mitarbeiter wählt die Nachricht zu einem E-Rezept und erstellt eine Antwort.
+    - Das Primärsystem stellt die Antwortnachricht im E-Rezept-Fachdienst ein.
+  postconditions: |
+    - Nachricht liegt im E-Rezept-Fachdienst und kann asynchron empfangen werden.
+  interface: |
+    - FHIR REST: Communication (E-Rezept-Nachricht einstellen)
+  diagram: seq-uc-4-7-nachricht-durch-abgebenden-uebermitteln
+- id: UC_4_9_Nachricht_durch_Abgebenden_loeschen
+  anchor: uc-4-9-nachricht-durch-abgebenden-loeschen
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-4-9-nachricht-durch-abgebenden-loeschen
+  title: UC 4.9 - Nachricht durch Abgebenden löschen
+  roles:
+    - Apotheke
+  description: |
+    Der Abgebende löscht von ihm übermittelte Nachrichten an Versicherte.
+  preconditions: |
+    - UC 4.7 wurde ausgeführt.
+  actions: |
+    - Der Abgebende wählt Nachrichten zum Löschen aus und bestätigt.
+    - Das Primärsystem überträgt Löschanforderungen an den E-Rezept-Fachdienst.
+    - Der E-Rezept-Fachdienst löscht Nachrichten und liefert ggf. Warnung bei bereits erfolgtem Abruf.
+    - Nachrichten werden im Primärsystem gelöscht.
+  postconditions: |
+    - Nachrichten sind im E-Rezept-Fachdienst und im Primärsystem gelöscht.
+  interface: |
+    - FHIR REST: Communication (E-Rezept-Nachricht löschen)
+  diagram: seq-uc-4-9-nachricht-durch-abgebenden-loeschen
+- id: UC_4_1_E_Rezept_durch_Abgebenden_abrufen
+  anchor: uc-4-1-e-rezept-durch-abgebenden-abrufen
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-4-1-e-rezept-durch-abgebenden-abrufen
+  title: UC 4.1 - E-Rezept durch Abgebenden abrufen
+  roles:
+    - Apotheke
+  description: |
+    Eine abgebende LEI ruft ein E-Rezept auf Basis eines E-Rezept-Tokens aus dem E-Rezept-Fachdienst ab.
+  preconditions: |
+    - Ein E-Rezept-Token wurde übermittelt.
+    - UC 4.6 wurde ausgeführt.
+    - Token liegt im Primärsystem vor; Status des E-Rezepts ist "offen".
+  actions: |
+    - Primärsystem ermittelt Rezept-ID und AccessCode aus dem Token.
+    - Primärsystem ruft das E-Rezept beim E-Rezept-Fachdienst ab.
+    - Status wechselt auf "in Abgabe (gesperrt)".
+    - E-Rezept-Fachdienst erzeugt ein Geheimnis zur Statusänderung und übermittelt es.
+    - optional: Primärsystem prüft die QES über den Konnektor.
+  postconditions: |
+    - Status ist "in Abgabe (gesperrt)" und protokolliert.
+    - E-Rezept liegt im AVS vor; Geheimnis ist gespeichert.
+  interface: |
+    - [Operation API: Task akzeptieren](./op-accept.html)
+  diagram: seq-uc-4-1-e-rezept-durch-abgebenden-abrufen
+- id: UC_4_2_E_Rezept_durch_Abgebenden_zurueckgeben
+  anchor: uc-4-2-e-rezept-durch-abgebenden-zurueckgeben
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-4-2-e-rezept-durch-abgebenden-zurueckgeben
+  title: UC 4.2 - E-Rezept durch Abgebenden zurückgeben
+  roles:
+    - Apotheke
+  description: |
+    Ein abgerufenes E-Rezept wird an den E-Rezept-Fachdienst zurückgegeben.
+  preconditions: |
+    - UC 4.1 wurde ausgeführt.
+    - Rezept-ID, AccessCode und Geheimnis sind bekannt.
+    - Status ist "in Abgabe (gesperrt)".
+  actions: |
+    - Abgebender markiert das E-Rezept zum Zurückgeben und bestätigt.
+    - Primärsystem ruft den E-Rezept-Fachdienst mit Rezept-ID und Geheimnis auf.
+    - Status wird auf "offen" geändert.
+  postconditions: |
+    - Status ist "offen" und protokolliert.
+    - E-Rezept, Token und Geheimnis sind im Primärsystem gelöscht.
+  interface: |
+    - [Operation API: Task zurückweisen](./op-reject.html)
+  diagram: seq-uc-4-2-e-rezept-durch-abgebenden-zurueckgeben
+- id: UC_4_3_E_Rezept_durch_Abgebenden_loeschen
+  anchor: uc-4-3-e-rezept-durch-abgebenden-loeschen
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-4-3-e-rezept-durch-abgebenden-loeschen
+  title: UC 4.3 - E-Rezept durch Abgebenden löschen
+  roles:
+    - Apotheke
+  description: |
+    Der abgebende Leistungserbringer löscht ein zuvor abgerufenes E-Rezept.
+  preconditions: |
+    - Ein E-Rezept-Token wurde übermittelt und der Wunsch zum Löschen liegt vor.
+    - UC 4.6 und UC 4.1 wurden ausgeführt.
+    - Rezept-ID, AccessCode und Geheimnis sind bekannt; Status ist "in Abgabe (gesperrt)".
+  actions: |
+    - Abgebender markiert das E-Rezept zum Löschen und bestätigt.
+    - Primärsystem ruft den E-Rezept-Fachdienst mit Rezept-ID und Geheimnis auf.
+    - Status wechselt auf "gelöscht"; Daten werden entfernt.
+  postconditions: |
+    - Status ist "gelöscht" und protokolliert; Daten sind entfernt.
+    - E-Rezept, Token und Geheimnis sind im Primärsystem gelöscht.
+  interface: |
+    - [Operation API: E-Rezept löschen](./op-abort.html)
+  diagram: seq-uc-4-3-e-rezept-durch-abgebenden-loeschen
+- id: UC_4_4_Quittung_abrufen
+  anchor: uc-4-4-quittung-abrufen
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-4-4-quittung-abrufen
+  title: UC 4.4 - Quittung abrufen
+  roles:
+    - Apotheke
+  description: |
+    Nach der Abgabe wird das E-Rezept quittiert und eine Quittung vom E-Rezept-Fachdienst abgerufen.
+  preconditions: |
+    - UC 4.1 wurde ausgeführt.
+    - QES des E-Rezepts ist gültig geprüft.
+    - Rezept-ID, AccessCode und Geheimnis sind bekannt; Status ist "in Abgabe (gesperrt)".
+  actions: |
+    - Abgebender markiert das E-Rezept als abgegeben.
+    - Primärsystem übermittelt Rezept-ID, Geheimnis und Abgabeinformationen an den E-Rezept-Fachdienst.
+    - Status wechselt zu "quittiert"; Quittung wird erstellt und zurückgegeben.
+  postconditions: |
+    - Status ist "quittiert"; Abgabeinformationen sind gespeichert.
+    - Statuswechsel ist protokolliert; Quittung liegt im Primärsystem vor.
+  interface: |
+    - [Operation API: Task schliessen](./op-close.html)
+  diagram: seq-uc-4-4-quittung-abrufen
+- id: UC_4_5_Abgabedatensatz_signieren
+  anchor: uc-4-5-abgabedatensatz-signieren
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-4-5-abgabedatensatz-signieren
+  title: UC 4.5 - Abgabedatensatz durch Abgebenden signieren
+  roles:
+    - Apotheke
+  description: |
+    Der Abgebende signiert den Abgabedatensatz fortgeschritten oder qualifiziert (QES).
+  preconditions: |
+    - E-Rezept wurde dispensiert.
+    - Abgabedatensatz liegt im Primärsystem bereit.
+    - HBA oder SMC-B ist gesteckt und freigeschaltet.
+  actions: |
+    - Bei Abgabe ohne Änderung: fortgeschrittene Signatur.
+    - Bei Abgabe mit Änderung: QES für den Dispensierdatensatz.
+  postconditions: |
+    - Abgabedatensatz ist durch den Abgebenden signiert.
+  interface: |
+    - Keine (Signatur im Primärsystem)
+  diagram: seq-uc-4-5-abgabedatensatz-signieren
+- id: UC_4_8_Quittung_erneut_abrufen
+  anchor: uc-4-8-quittung-erneut-abrufen
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-4-8-quittung-erneut-abrufen
+  title: UC 4.8 - Quittung erneut abrufen
+  roles:
+    - Apotheke
+  description: |
+    Die Quittung wird erneut abgerufen, falls die Übertragung beim ersten Abruf fehlgeschlagen ist.
+  preconditions: |
+    - UC 4.4 wurde ausgeführt; im Primärsystem liegt keine Quittung vor.
+    - Status des E-Rezepts ist "quittiert".
+  actions: |
+    - Abgebender wählt das E-Rezept und ruft die Quittung erneut ab.
+    - Primärsystem übermittelt Rezept-ID und Geheimnis; der E-Rezept-Fachdienst liefert die Quittung erneut aus.
+  postconditions: |
+    - Quittung liegt im Primärsystem vor.
+  interface: |
+    - [Operation API: Task schliessen](./op-close.html)
+  diagram: seq-uc-4-8-quittung-erneut-abrufen
+- id: UC_4_16_Dispensierinformationen_bereitstellen
+  anchor: uc-4-16-dispensierinformationen-bereitstellen
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-4-16-dispensierinformationen-bereitstellen
+  title: UC 4.16 - Dispensierinformationen bereitstellen
+  roles:
+    - Apotheke
+  description: |
+    Ein Mitarbeiter der abgebenden LEI hat ein E-Rezept dispensiert. Er markiert das E-Rezept über das Primärsystem als abgegeben und bestätigt es. Das Primärsystem übermittelt beim Aufruf des E-Rezept-Fachdienstes die Rezept-ID und das Geheimnis zur Bereitstellung der Dispensierinformationen. Im Aufruf ist die Dispensierinformation enthalten.
+  preconditions: |
+    - Ein Mitarbeiter der abgebenden LEI hat den Anwendungsfall "UC 4.1 - E-Rezept durch Abgebenden abrufen" durchgeführt.- Das Primärsystem hat die QES des E-Rezepts erfolgreich geprüft. Die QES des E-Rezepts ist gültig.
+    - Die Rezept-ID, der AccessCode und das Geheimnis zur Statusänderung "in Abgabe (gesperrt)" des E-Rezepts sind im Primärsystem bekannt.
+    - Das E-Rezept im E-Rezept-Fachdienst hat den Status "in Abgabe (gesperrt)".
+  actions: |
+    - Abgebender wählt ein beliefertes E-Rezept zur Bereitstellung von Dispensierinformationen aus.
+    - Das Primärsystem übermittelt die Dispensierinformationen an den E-Rezept-Fachdienst.
+  postconditions: |
+    - Das E-Rezept im E-Rezept-Fachdienst hat den Status "in Abgabe (gesperrt)".
+    - Die Information zur Abgabe liegen im E-Rezept-Fachdienst.
+    - Das Bereitstellen der Dispensierinformationen ist im E-Rezept-Fachdienst protokolliert.
+    - Das Primärsystem erhält eine Bestätigung, dass die Dispensierinformationen bereitgestellt wurden.
+  interface: |
+    - [Operation API: Dispensierinformationen bereitstellen](./op-dispense.html)
+  diagram: seq-uc-4-16-dispensierinformationen-bereitstellen
+- id: UC_3_13_Einwilligungen_einsehen
+  anchor: uc-3-13-einwilligungen-einsehen
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-3-13-einwilligungen-einsehen
+  title: UC 3.13 - Einwilligungen durch Versicherten einsehen
+  roles:
+    - Versicherter
+  description: |
+    Ein Versicherter ermittelt, welche Einwilligungen auf dem E-Rezept-Fachdienst für seine KVNR hinterlegt sind..
+  preconditions: |
+    - keine
+  actions: |
+    - Das E-Rezept-FdV führt die Operation zur Abfrage der Einwilligungen aus.
+    - Der E-Rezept-Fachdienst gibt die Information an das E-Rezept-FdV.
+  postconditions: |
+    - Die Information steht zur Anzeige im E-Rezept-FdV bereit.
+  interface: |
+    - [Operation API: Einwilligungen durch Versicherten einsehen](./query-api-consent.html)
+  diagram: seq-uc-3-13-einwilligungen-durch-versicherten-einsehen
+- id: UC_3_14_Einwilligung_erteilen
+  anchor: uc-3-14-einwilligung-erteilen
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-3-14-einwilligung-erteilen
+  title: UC 3.14 - Einwilligung durch Versicherten erteilen
+  roles:
+    - Versicherter
+  description: |
+    Ein Versicherter erteilt die Einwilligung für die Nutzung einer Funktionalität der Anwendung.
+  preconditions: |
+    - Ein Versicherter hat eine Datenverarbeitung ausgewählt, für die er eine Einwilligung erteilen möchte.
+  actions: |
+    - Ein Versicherter wählt im E-Rezept-FdV die Operation zum Erteilen der Einwilligung aus.
+    - Der E-Rezept-Fachdienst speichert die Einwilligung.
+  postconditions: |
+    - Die Einwilligung ist im E-Rezept-Fachdienst gespeichert. 
+    - Das Erteilen der Einwilligung ist im E-Rezept-Fachdienst protokolliert.
+  interface: |
+    - [Operation API: Einwilligung durch Versicherten erteilen](./query-api-consent.html)
+  diagram: seq-uc-3-14-einwilligung-durch-versicherten-erteilen
+- id: UC_3_15_Einwilligung_widerrufen
+  anchor: uc-3-15-einwilligung-widerrufen
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-3-15-einwilligung-widerrufen
+  title: UC 3.15 - Einwilligung durch Versicherten widerrufen
+  roles:
+    - Versicherter
+  description: |
+    Ein Versicherter widerruft die Einwilligung für die Nutzung einer Funktionalität der Anwendung.
+  preconditions: |
+    - Ein Versicherter hat eine Datenverarbeitung ausgewählt, für die er eine Einwilligung widerrufen möchte.
+    - Im E-Rezept-FdV liegt die Information vor, dass die Einwilligung für diese Datenverarbeitung erteilt wurde.
+  actions: |
+    - Ein Versicherter wählt über ein E-Rezept-FdV die Operation zum Widerrufen der Einwilligung auf.
+    - Der E-Rezept-Fachdienst prüft, ob zuvor die Einwilligung erteilt wurde und löscht diese. 
+    - Der E-Rezept-Fachdienst löscht für die Einwilligung relevante Daten unwiederbringlich.
+  postconditions: |
+    - Das Widerrufen der Einwilligung ist im E-Rezept-Fachdienst protokolliert.
+  interface: |
+    - [Operation API: Einwilligung durch Versicherten widerrufen](./query-api-consent.html)
+  diagram: seq-uc-3-15-einwilligung-durch-versicherten-widerrufen
+
+ 

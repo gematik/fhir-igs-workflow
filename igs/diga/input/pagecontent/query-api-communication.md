@@ -1,11 +1,30 @@
-Query API: Communication
 
-Communication wird fuer die Zuweisung der DiGA-Verordnung an den Kostentraeger
-verwendet sowie fuer Rueckmeldungen.
+Communication wird für die Kommunikation zwischen Versicherten und Kostenträger verwendet.
 
-## POST /Communication
-- Zuweisung durch den Versicherten an den Kostentraeger
-- Payload ist optional (Kardinalitaet 0..1) fuer DiGA
+### POST /Communication
+- Zuweisung von Verordnungen durch den Versicherten an den Kostenträger. Der Payload ist hierbei optional (Kardinalitaet 0..1)
+- Übermittlung einer Nachricht dürch den Kostenträger an den Versicherten.
 
-## GET /Communication
-- Abruf von Rueckmeldungen und Zuweisungen
+Es gelten die übergreifenden Anforderungen an die POST /Communication Schnittstelle.
+
+Es gibt keine workflow-spezifischen Anforderungen für den E-Rezept-Fachdienst.
+
+[Workflow-spezifische Anforderungen für das E-Rezept-FdV](./query-api-communication-req-fdv.html)
+
+[Workflow-spezifische Anforderungen für den Kostenträger](./query-api-communication-req-ktr.html)
+
+-API Beschreibung aus Cap Statement
+
+### GET /Communication
+- Abruf von Zuweisungen durch den Kostenträger
+- Abruf von Rückmeldungen durch den Versicherten
+
+Es gelten die übergreifenden Anforderungen an die GET /Communication Schnittstelle.
+
+Es gibt keine workflow-spezifischen Anforderungen für den E-Rezept-Fachdienst.
+
+Es gibt keine workflow-spezifischen Anforderungen für das E-Rezept-FdV.
+
+Es gibt keine workflow-spezifischen Anforderungen für den Kostenträger.
+
+-API Beschreibung aus Cap Statement

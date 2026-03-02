@@ -2,7 +2,7 @@ ValueSet: GEM_ERP_VS_OperationOutcomeDetails
 Id: GEM-ERP-VS-OperationOutcomeDetails
 Title: "GEM ERP VS OperationOutcomeDetails"
 Description: "Fachliche Fehlercodes des E-Rezept-Fachdienst"
-* insert ValueSet(GEM_ERP_VS_OperationOutcomeDetails)
+* insert Meta-VS
 
 // Include all from this Repository
 * include codes from system GEM_ERP_CS_OperationOutcomeDetails

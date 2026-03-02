@@ -3,7 +3,7 @@ Id: erp-tprescription-carbon-copy
 Parent: Parameters
 Title: "Digitaler Durchschlag T-Rezept"
 Description: "Dieses Profil beschreibt den digitalen Durchschlag T-Rezept der alle Informationen zusammenführt und verlinkt. Alle für den Anwendungsfall relevanten Ressourcen sind hier aufgelistet."
-* insert Profile(erp-tprescription-carbon-copy)
+* insert Versioning
 
 * parameter ^slicing.discriminator.type = #value
 * parameter ^slicing.discriminator.path = "name"

@@ -3,7 +3,7 @@ Parent: EPAMedication
 Id: erp-tprescription-medication
 Title: "E-T-Rezept Medication"
 Description: "Medikationsprofil, welches Informationen zum verordneten oder abgegebenen Arzneimittel enthält."
-* insert Profile(erp-tprescription-medication)
+* insert Versioning
 
 * contained MS
   * ^short = "Enthaltene Medikationen"

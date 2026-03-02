@@ -1,0 +1,132 @@
+- id: E_Rezept_erstellen
+  anchor: e-rezept-erstellen
+  link: menu-fachlichkeit-anwendungsfaelle.html#e-rezept-erstellen
+  title: "E-Rezept erstellen"
+  roles: ["(Zahn-)Arzt"]
+  description: |
+    Ein E-Rezept wird im Primaersystem (PVS/KIS) als Verordnungsdatensatz erstellt.
+    Fuer die Bereitstellung auf dem E-Rezept-Fachdienst wird ein Task angelegt, ueber den eine Rezept-ID (PrescriptionID)
+    vergeben und ein AccessCode erzeugt wird.
+  preconditions: |
+    - Der Leistungserbringer ist gegenueber der TI authentisiert (Institutionsidentitaet via SMC-B ueber IdP/Konnektor).
+    - Der Verordnungsdatensatz liegt lokal als KBV-konformes FHIR-Bundle vor.
+  actions: |
+    - Das Primaersystem legt im E-Rezept-Fachdienst einen Task an.
+    - Der E-Rezept-Fachdienst vergibt eine Rezept-ID (PrescriptionID) und generiert einen AccessCode.
+    - Das Primaersystem uebernimmt die Rezept-ID in den lokalen Verordnungsdatensatz.
+  postconditions: |
+    - Task liegt im Status `draft` vor.
+    - Rezept-ID und AccessCode sind im Primaersystem verfuegbar.
+  relatedTechnicalUseCases: |
+    - [E-Rezept erstellen](./menu-technische-umsetzung-anwendungsfaelle.html#e-rezept-erstellen)
+
+- id: E_Rezept_qualifiziert_signieren
+  anchor: e-rezept-qualifiziert-signieren
+  link: menu-fachlichkeit-anwendungsfaelle.html#e-rezept-qualifiziert-signieren
+  title: "E-Rezept qualifiziert signieren"
+  roles: ["(Zahn-)Arzt"]
+  description: |
+    Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES).
+    Vorbereitende Taetigkeiten im Primaersystem koennen organisatorisch delegiert werden, die QES selbst jedoch nicht.
+  preconditions: |
+    - Rezept-ID (PrescriptionID) ist im Verordnungsdatensatz enthalten.
+    - Ein freigeschalteter HBA steht zur Verfuegung.
+    - Konsistenz: `authoredOn` im Verordnungsdatensatz entspricht dem Datum der QES.
+  actions: |
+    - Das Primaersystem startet die QES-Erstellung ueber den Konnektor.
+    - Der (Zahn-)Arzt signiert den Verordnungsdatensatz mit dem HBA.
+    - Das Primaersystem erhaelt den QES-signierten Datensatz zur weiteren Verarbeitung.
+  postconditions: |
+    - QES-signierter Verordnungsdatensatz liegt im Primaersystem vor.
+  relatedTechnicalUseCases: |
+    - [E-Rezept qualifiziert signieren](./menu-technische-umsetzung-anwendungsfaelle.html#e-rezept-qualifiziert-signieren)
+
+- id: E_Rezept_vervollstaendigen_und_Task_aktivieren
+  anchor: e-rezept-vervollstaendigen-und-task-aktivieren
+  link: menu-fachlichkeit-anwendungsfaelle.html#e-rezept-vervollstaendigen-und-task-aktivieren
+  title: "E-Rezept vervollstaendigen und Task aktivieren"
+  roles: ["(Zahn-)Arzt"]
+  description: |
+    Der (Zahn-)Arzt finalisiert eine bereits erstellte Verordnung und stellt sie qualifiziert signiert fuer den Versicherten bereit.
+    Mit der Bereitstellung startet der Einloese-Workflow: Die Verordnung wird im E-Rezept-Fachdienst geprueft und anschliessend so veroeffentlicht,
+    dass sie im vorgesehenen Prozess (z. B. Einloesung in der Apotheke oder Bearbeitung durch den Kostentraeger) genutzt werden kann.
+  preconditions: |
+    - Das E-Rezept wurde zuvor erstellt und befindet sich noch in der Vorbereitungsphase.
+    - Der qualifiziert signierte Verordnungsdatensatz (QES) liegt im Primaersystem vor.
+    - Ein Berechtigungsmerkmal zur geschuetzten Bereitstellung liegt vor (z. B. AccessCode).
+  actions: |
+    - Das Primaersystem stellt den qualifiziert signierten Verordnungsdatensatz beim E-Rezept-Fachdienst bereit.
+    - Der E-Rezept-Fachdienst prueft Berechtigung, Signatur und fachliche Konsistenz der Verordnung.
+    - Bei erfolgreicher Pruefung wird die Verordnung fuer die weitere Verarbeitung (Einloesung/Bearbeitung) freigeschaltet.
+  postconditions: |
+    - Das E-Rezept ist bereitgestellt und kann im weiteren Prozess eingeloest bzw. bearbeitet werden.
+    - Der Status des Workflows entspricht der bereitgestellten Verordnung.
+  relatedTechnicalUseCases: |
+    - [E-Rezept vervollstaendigen und Task aktivieren](./menu-technische-umsetzung-anwendungsfaelle.html#e-rezept-vervollstaendigen-und-task-aktivieren)
+
+- id: DiGA_E_Rezept_zuweisen
+  anchor: diga-e-rezept-zuweisen
+  link: menu-fachlichkeit-anwendungsfaelle.html#diga-e-rezept-zuweisen
+  title: "DiGA-Verordnung einem Kostentraeger zuweisen"
+  roles: ["Versicherter"]
+  description: |
+    Versicherte leiten ihr E-Rezept fuer eine DiGA an den zustaendigen Kostentraeger weiter - entweder per
+    E-Rezept-FdV nach Section 360 Abs. 10 SGB V oder ueber einen Ausdruck nach Section 360 Abs. 9 SGB V. Ziel ist es,
+    den Freischaltcode anzufordern und den Status des Antrags transparent zu halten.
+  preconditions: |
+    - Das E-Rezept fuer DiGA liegt im E-Rezept-FdV des Versicherten vor oder ein Ausdruck ist vorhanden.
+    - Die Kostentraeger-IK ist bekannt (z. B. aus dem Authentifizierungs-Token oder manuell gewaehlt).
+    - Der Versicherte weist sich gegenueber dem E-Rezept-FdV oder der Krankenkassen-App aus (eGK oder GesundheitsID).
+  actions: |
+    - Das E-Rezept-FdV ermittelt die Telematik-ID des Kostentraegers ueber das FHIR-VZD oder bietet eine manuelle Auswahl an.
+    - Das System erstellt eine `Communication` (DispReq) mit dem E-Rezept-Token und adressiert diese an den Kostentraeger.
+    - Alternativ uebermittelt der Versicherte den Ausdruck an den Kostentraeger, der daraufhin den Abrufprozess startet.
+  postconditions: |
+    - Der Kostentraeger verfuegt ueber das E-Rezept-Token und kann das DiGA-E-Rezept abrufen.
+    - Der Versicherte sieht im Protokoll den Versandzeitpunkt und kann den Status nachverfolgen.
+  relatedTechnicalUseCases: |
+    - [DiGA-Verordnung zuweisen](./menu-technische-umsetzung-anwendungsfaelle.html#diga-e-rezept-zuweisen)
+
+- id: DiGA_E_Rezept_abrufen_kostentraeger
+  anchor: diga-e-rezept-abrufen-kostentraeger
+  link: menu-fachlichkeit-anwendungsfaelle.html#diga-e-rezept-abrufen-kostentraeger
+  title: "DiGA-E-Rezept abrufen (Kostentraeger)"
+  roles: ["Kostentraeger"]
+  description: |
+    Der Kostentraeger ruft mit Hilfe des erhaltenen E-Rezept-Tokens die DiGA-Verordnung vom E-Rezept-Fachdienst ab,
+    prueft Leistungsanspruch und bereitet die Freischaltcode-Erstellung vor.
+  preconditions: |
+    - Zugangsdaten (Access Token) auf Basis der SM-B KTR liegen vor; das System ist an die TI angebunden.
+    - Ein E-Rezept-Token mit passender IK wurde empfangen (z. B. Communication vom Versicherten oder Scan eines Ausdrucks).
+    - Der Flowtype 162 befindet sich im Status `ready` und ist noch keinem anderen Kostentraeger zugeordnet.
+  actions: |
+    - Das Kostentraegersystem ruft /Task/{id}/$accept mit AccessCode auf und erhaelt Task, Binary und Secret.
+    - Die Verordnung wird im Backend persistiert, fachlich geprueft und mit dem Freischaltprozess verknuepft.
+    - Status- und Protokolleintraege werden im eigenen System und gegenueber dem Versicherten gepflegt.
+  postconditions: |
+    - Das Secret liegt vor und belegt den Kostentraeger als Bearbeiter; Task-Status wechselt auf `in-progress`.
+    - Pruef- und Abrechnungsdaten stehen strukturiert zur Verfuegung; der Versicherte sieht eine Statusaenderung.
+  relatedTechnicalUseCases: |
+    - [DiGA-E-Rezept abrufen](./menu-technische-umsetzung-anwendungsfaelle.html#diga-e-rezept-abrufen)
+
+- id: DiGA_Freischaltcode_bereitstellen
+  anchor: diga-freischaltcode-bereitstellen
+  link: menu-fachlichkeit-anwendungsfaelle.html#diga-freischaltcode-bereitstellen
+  title: "Freischaltcode bereitstellen oder Rueckmeldung geben"
+  roles: ["Kostentraeger"]
+  description: |
+    Nach erfolgreicher Pruefung stellt der Kostentraeger den Freischaltcode als Abgabeinformation im E-Rezept-Fachdienst bereit
+    oder dokumentiert, aus welchem Grund kein Code erzeugt werden kann.
+  preconditions: |
+    - Das Secret aus dem vorigen Abruf liegt vor; der Kostentraeger ist autorisiert.
+    - Der Freischaltcode wurde generiert oder ein fachlicher Ablehnungsgrund ist bekannt (z. B. fehlender Anspruch).
+    - Die technischen Limitierungen (z. B. Requestgroesse < 1 MB) fuer `$close` oder `$dispense` werden eingehalten.
+  actions: |
+    - Das Kostentraegersystem uebermittelt ueber `$dispense` oder `$close` eine Parameters-Ressource mit dem Freischaltcode
+      bzw. einer versichertenfreundlichen Rueckmeldung.
+    - Der E-Rezept-Fachdienst persistiert die Abgabeinformation und beendet bei `$close` den Workflow mit Quittung.
+  postconditions: |
+    - Der Versicherte sieht im E-Rezept-FdV (oder erhaelt per Krankenkasse) den Freischaltcode oder die Begruendung.
+    - Der Workflow ist abgeschlossen; der Kostentraeger erhaelt eine Quittung fuer die Dokumentation.
+  relatedTechnicalUseCases: |
+    - [Freischaltcode bereitstellen](./menu-technische-umsetzung-anwendungsfaelle.html#diga-freischaltcode-bereitstellen)
