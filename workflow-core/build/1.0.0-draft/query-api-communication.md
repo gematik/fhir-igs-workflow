@@ -24,7 +24,7 @@ Zum Löschen von Nachrichten wird eine HTTP `DELETE`-Anfrage an den E-Rezept-Fac
 
 ### Anforderungen an Schnittstelle
 
-* [Ergänzende Client-Anforderungen zur Communication-Query](./query-api-communication-server-requirements.md): Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.
+* [Ergänzende Client-Anforderungen zur Communication-Query](./query-api-communication-req-fd.md): Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.
 
 ### Resource API
 

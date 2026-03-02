@@ -26,8 +26,8 @@ Zum Widerrufen einer Einwilligung wird eine HTTP `DELETE`-Anfrage an den E-Rezep
 
 ### Anforderungen an Schnittstelle
 
-* [Server-Anforderungen zur Consent-Query](./query-api-consent-fd-requirements.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
-* [Client-Anforderungen zur Consent-Query](./query-api-consent-client-requirements.md): Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.
+* [Server-Anforderungen zur Consent-Query](./query-api-consent-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+* [Client-Anforderungen zur Consent-Query](./query-api-consent-req-fdv.md): Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.
 
 ### Resource API
 

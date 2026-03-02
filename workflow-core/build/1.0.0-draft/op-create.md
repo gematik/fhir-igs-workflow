@@ -18,8 +18,8 @@ Die Nachricht wird als HTTP `POST` an `/Task/$create` gesendet.
 
 ### Anforderungen an Schnittstelle
 
-* [Server-Anforderungen zu `$create`](./op-create-fd-requirements.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
-* [Client-Anforderungen zu `$create`](./op-create-client-requirements.md): Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.
+* [Server-Anforderungen zu `$create`](./op-create-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+* [Client-Anforderungen zu `$create`](./op-create-req-pvs.md): Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.
 
 ### API Beschreibung
 
