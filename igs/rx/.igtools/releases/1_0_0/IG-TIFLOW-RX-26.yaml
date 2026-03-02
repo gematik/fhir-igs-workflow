@@ -1,0 +1,23 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: c561f70a7596b9543efbbec63daaca46d8a503116abaabfd2ad96704b1201c99
+created: '2026-02-26T08:42:49.784667'
+date: '2026-02-27T14:39:41.695352'
+key: IG-TIFLOW-RX-26
+modified: '2026-02-27T14:39:41.695352'
+release_status: NEW
+source: input/pagecontent/op-reject-req-fd.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 160,\
+  \ 169, 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject die\
+  \ Rolle \"professionOID\" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"\
+  Authorization\" feststellen und sicherstellen, dass ausschließlich Institutionen\
+  \ in der Rolle\n  <ul>\n    <li>oid_oeffentliche_apotheke</li>\n    <li>oid_krankenhausapotheke</li>\n\
+  \  </ul>\n  die Operation am Fachdienst aufrufen, damit das E-Rezept nicht durch\
+  \ einen Unberechtigten zurückgewiesen werden kann."
+title: E-Rezept-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Rollenprüfung
+version: 0

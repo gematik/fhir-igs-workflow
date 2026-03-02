@@ -8,7 +8,7 @@ Die Device-Query wird ueber HTTP `GET` auf `/Device` aufgerufen.
 
 ### Anforderungen an Schnittstelle
 
-- [FD-Anforderungen zur Device-Query](./query-api-device-fd-requirements.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [Server Anforderungen zur Device-Query](./query-api-device-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
 - [Client-Anforderungen zur Device-Query](./query-api-device-client-requirements.html): Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.
 
 ### API Beschreibung

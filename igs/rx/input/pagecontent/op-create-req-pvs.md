@@ -1,0 +1,16 @@
+Diese Seite enthält die normativen Anforderungen an das PVS für die Operation `$create`.
+
+### Anforderungen aus der Core Spezifikation
+
+{% include core-op-create-req-pvs.md %}
+
+### Modulspezifische Anforderungen
+
+<!-- A_19275 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-4" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle erstellen" version="0">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Konformitätsbestätigung"/>
+    </actor>
+     Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" eine Bundle-FHIR-Ressource gemäß Profilierung https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle Rezept-ID aus der Task-Ressource als Identifier erstellen.
+</requirement>

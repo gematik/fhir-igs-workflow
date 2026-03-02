@@ -6,8 +6,8 @@ Die Nachricht zum Abruf von E-Rezepten wird als HTTP GET-Anfrage an den E-Rezept
 
 ### Anforderungen an Schnittstelle
 
-- [Ergänzende Server-Anforderungen zur Task-Query](./query-api-task-client-requirements.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
-- [Ergänzende Client-Anforderungen zur Task-Query](./query-api-task-server-requirements.html): Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.
+- [Ergänzende Server-Anforderungen zur Task-Query](./query-api-task-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [Ergänzende Anforderungen für das E-Rezept-FdV zur Task-Query](./query-api-task-req-fdv.html): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
 
 ### Resource API
 
@@ -36,7 +36,7 @@ Um spezifische Details zu einem einzelnen _Task_ mittels der RESTful API zu erha
 
 #### Hinweise
 
-- Mit dem AccessCode in `GEM_ERP_NS_AccessCode` wird der Zugriff für Vertreter und Apotheker gesteuert, in dem der Versicherte diesen AccessCode z.B. als QR-Code weitergibt.
+- Mit dem AccessCode in `GEM_ERP_NS_AccessCode` wird der Zugriff für Vertreter und Apotheker gesteuert, in dem der Versicherte diesen AccessCode z.B. über Nachrichten oder als 2D-Code weitergibt.
 - Bei `"value":"X123456789"` ist die KVNR des Versicherten enthalten, nach welcher die Rezept-Tasks gefiltert wurden. Im Ergebnis wurde nur ein einzelnes E-Rezept gefunden.
 - Der Prozesstyp in `GEM_ERP_EX_PrescriptionType` referenziert die Workflow-Definition, in diesem Fall den Prozess für apothekenpflichtige Arzneimittel.
 - Mit der Angabe ` "display":"Öffentliche Apotheke"` kann dem Versicherten ein Hinweis angezeigt werden, wo er das E-Rezept einlösen kann (bspw. Apotheke oder Sanitätshaus).

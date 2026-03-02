@@ -4,5 +4,8 @@
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Konformitätsbestätigung"/>
   </actor>
-  Das Clientsystem des Kostenträgers MUSS im Anwendungsfall "Nachricht an Versicherten versenden" eine FHIR-Ressource mit dem Profil GEM_ERP_PR_Communication_DiGA erstellen.
+  <description>
+    Das Clientsystem des Kostenträgers MUSS im Anwendungsfall "Nachricht an Versicherten versenden" eine FHIR-Ressource mit dem Profil GEM_ERP_PR_Communication_DiGA erstellen.
+  </description>
+  <!-- A_28540 -->
 </requirement>

@@ -1,5 +1,8 @@
 {% assign use_cases = site.data['gen-use-cases'] %}
 
+> Die weitere fachliche und technische Beschreibung zum Übertragen des digitale Durchschlag E-T-Rezept wird im FHIR Implementation Guide [gemIG_TIFlow_bfarm] beschrieben.
+{: .stu-note}
+
 ### Epic und User Story
 
 Gemäß § 312 Abs. 1 Nr. 2 SGB V soll die gematik Maßnahmen durchführen, damit vertragsärztliche Verordnungen für Arzneimittel nach § 3a Abs. 1 Satz 1 der Arzneimittelverschreibungsverordnung (elektronisches T-Rezept, E-T-Rezept) elektronisch übermittelt werden können. Weitere Vorgaben an das elektronische T-Rezept ergeben sich insbesondere aus dem § 3a in der Arzneimittelverschreibungsverordnung (AMVV).
@@ -57,12 +60,6 @@ Die Abrechnung von E-T-Rezepten verläuft je nach Kostenträger analog zu den Pr
 Bei allen belieferten E-T-Rezepten muss die Apotheke die Quittung zwingend abrufen, damit die Übermittlung der digitalen Durchschläge an das T-Register (gemäß § 3a Abs. 7 AMVV) bei allen E-T-Rezepten sichergestellt wird. 
 
 > **Offener Punkt**: Das BMG prüft derzeit, ob in der ApBetrO definiert werden soll, dass der Zeitpunkt des Quittungsabrufs in der Apotheke zu dokumentieren ist. 
-
-##### Übermittlung an das BfArM T-Register
-
-Gemäß §3a Abs. 7 AMVV übernimmt der E-Rezept-Fachdienst die Aufgabe die vom BfArM benötigten Informationen aus den E-T-Rezepten über den BfArM Webdienst an das BfArM T-Register zu übermitteln. Die Übermittlung der strukturierten Daten, im Folgenden "digitaler Durchschlag E-T-Rezept" genannt, findet statt, unverzüglich nachdem die Quittung für das E-T-Rezept durch die abgebende Apotheke abgerufen wurde. Im BfArM können die Daten dann zur Erfüllung gesetzlich zugewiesener Aufgaben in geeigneter Form dargestellt und archiviert werden.
-
-Disclaimer: aktuell wird mit dem BMG und dem BfArM abgestimmt, wie der "digitale Durchschlag E-T-Rezept" in der AMVV noch passender definiert werden kann.
 
 #### User Stories
 
@@ -161,15 +158,6 @@ Mögliche Darstellung im E-Rezept-FdV (TI-Demonstrator):
 
 <br>
 
-##### User Stories des BfArM
-
-Als BfArM möchte ich ...
-
-- ... sichergehen, dass nur approbierte Humanmediziner (nicht Tier- und Zahnärzte) T-Rezepte verschreiben können, sodass keine unbefugten Ärzte Arzneimittel nach §3a Abs. 1 Satz 1 AMVV verordnen.
-- ... die Informationen der "digitalen Durchschläge" in strukturierte Form erhalten, damit ich meine gesetzlichen Aufträge erfüllen kann.
-- ... die Apotheke bei einem fachlichen Fehler oder einer Nachfrage (z.B. Überschreiten der zulässigen Höchstmenge) kontaktieren können, sodass diese den Patienten und den Arzt informieren können.
-- ... keine neuen IT-Systeme anschaffen müssen, um die "digitalen Durchschläge" ansehen und auswerten zu können, sodass ich geringe finanziellen Aufwände habe.
-
 #### Darstellung als Patient Journey
 
 In einer Patient Journey wird der zukünftige Versorgungsprozess (von dem Ausstellen der Verordnung bis hin zur Übermittlung der Daten an das BfArM) dargestellt: [Link zum Demonstrator](https://www.figma.com/proto/WK4kuhH0YLfIt8ixpRUkGW/Showcase-%7C-T-Rezept?page-id=19%3A2&node-id=4017-2335&p=f&viewport=-3147%2C-3057%2C0.37&t=sN866urDA2PzVSmi-1&scaling=contain&content-scaling=fixed&starting-point-node-id=4017%3A2335&hotspot-hints=0)
@@ -210,14 +198,6 @@ Eine Apotheke schließt den Vorgang zu einem E-T-Rezept analog zu E-Rezepten fü
 {% assign scenario_use_cases = "UC_4_1_E_Rezept_durch_Abgebenden_abrufen, UC_4_2_E_Rezept_durch_Abgebenden_zurueckgeben, UC_4_3_E_Rezept_durch_Abgebenden_loeschen, UC_4_4_Quittung_abrufen, UC_4_5_Abgabedatensatz_signieren, UC_4_8_Quittung_erneut_abrufen, UC_4_16_Dispensierinformationen_bereitstellen" | split: ", " %}
 
 {% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Technische Anwendungsfälle mit Bezug zu Anwendungsfall <i>Belieferung von E-T-Rezepten</i>" %}
-
-#### Übermittlung digitaler Durchschlag E-T-Rezept
-
-Unverzüglich nachdem die Apotheke die Quittung erhalten hat, wird der digitaler Durchschlag E-T-Rezept im E-Rezept-Fachdienst erstellt und an den BfArM Webdienst übertragen.
-
-Die Daten werden asynchron zum Abschluss des Workflows in einer Warteschlange übermittelt, sodass die Apotheke den Vorgang abschließen kann, selbst wenn der BfArM Webdienst nicht erreichbar ist. In diesem Fall nutzt der E-Rezept-Fachdienst ein exponentielles Backoff-Retry, bis die Übertragung zum BfArM Webdienst erfolgreich durchgeführt werden konnte.
-
-Die weitere fachliche und technische Beschreibung zum Übertragen des digitale Durchschlag E-T-Rezept wird im FHIR Implementation Guide [gemIG_TIFlow_t-register] beschrieben.
 
 #### Abrechnung
 
