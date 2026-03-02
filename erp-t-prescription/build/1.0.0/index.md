@@ -12,7 +12,7 @@ Version 1.0.0 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/erp-t-prescription/ImplementationGuide/de.gematik.erp-t-prescription | *Version*:1.0.0 |
-| Draft as of 2026-02-26 | *Computable Name*:gemIG_TIFlow_bfarm |
+| Draft as of 2026-03-02 | *Computable Name*:gemIG_TIFlow_bfarm |
 
 Dieser Implementation Guide beschreibt Profile und deren Verwendung für den Datenaustausch zwischen dem E-Rezept-Fachdienst und dem BfArM Webdienst.
 
@@ -69,7 +69,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "gemIG_TIFlow_bfarm",
   "title" : "Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst",
   "status" : "draft",
-  "date" : "2026-02-26T16:08:04+00:00",
+  "date" : "2026-03-02T12:13:40+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

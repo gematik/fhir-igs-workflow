@@ -51,12 +51,7 @@ Version 1.0.0 - ci-build
   },
   "subject" : {
     "identifier" : {
-      "_system" : {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
-          "valueCode" : "not-permitted"
-        }]
-      },
+      "system" : "http://fhir.de/sid/gkv/kvid-10",
       "_value" : {
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
