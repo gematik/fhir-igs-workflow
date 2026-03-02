@@ -4,7 +4,7 @@
 Der E-Rezept-Fachdienst soll Protokolldateien schreiben, die eine Analyse technischer Vorgänge erlauben. Diese Protokolldateien sind dafür vorgesehen, aufgetretene Fehler zu identifizieren und die Performance zu analysieren. Für diese Zwecke führt der E-Rezept-Fachdienst ein Systemprotokoll, mit dem der Anbieter des Dienstes jederzeit den Betriebszustand des Systems kontrollieren kann.
 
 <!-- A_19282 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-77" title="E-Rezept-Fachdienst - Systemprotokoll für Betriebszustand" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-1" title="E-Rezept-Fachdienst - Systemprotokoll für Betriebszustand" version="0">
 	<meta lockversion="false"/>
 	<actor name="E-Rezept-Fachdienst">
     	<testProcedure id="Herstellererklärung"/>
@@ -13,7 +13,7 @@ Der E-Rezept-Fachdienst soll Protokolldateien schreiben, die eine Analyse techni
 </requirement>
 
 <!-- A_19283 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-77" title="Systemprotokoll ohne personenbezogene und ohne medizinische Daten" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-2" title="Systemprotokoll ohne personenbezogene und ohne medizinische Daten" version="0">
 	<meta lockversion="false"/>
 	<actor name="E-Rezept-Fachdienst">
     	<testProcedure id="Produktgutachten"/>
@@ -22,7 +22,7 @@ Der E-Rezept-Fachdienst soll Protokolldateien schreiben, die eine Analyse techni
 </requirement>
 
 <!-- A_19678 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-77" title="E-Rezept-Fachdienst - Systemprotokoll  Verfügbarkeit interner Logdaten" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-3" title="E-Rezept-Fachdienst - Systemprotokoll  Verfügbarkeit interner Logdaten" version="0">
 	<meta lockversion="false"/>
 	<actor name="E-Rezept-Fachdienst">
     	<testProcedure id="Herstellererklärung"/>
@@ -31,7 +31,7 @@ Der E-Rezept-Fachdienst soll Protokolldateien schreiben, die eine Analyse techni
 </requirement>
 
 <!-- A_20001 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-77" title="E-Rezept-Fachdienst - Systemprotokoll zu Ergebnis einer aufgerufenen Operation" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-4" title="E-Rezept-Fachdienst - Systemprotokoll zu Ergebnis einer aufgerufenen Operation" version="0">
 	<meta lockversion="false"/>
 	<actor name="E-Rezept-Fachdienst">
     	<testProcedure id="Herstellererklärung"/>
@@ -44,7 +44,7 @@ Der E-Rezept-Fachdienst soll Protokolldateien schreiben, die eine Analyse techni
 Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle Zugriffe auf die personenbezogenen und medizinischen Daten eines Versicherten für den Versicherten einsehbar sind. Diese Zugriffsprotokolle sind unabhängig vom Systemprotokoll und stehen ausschließlich dem Versicherten zur Wahrnehmung seiner Betroffenenrechte zur Einsicht zur Verfügung.
 
 <!-- A_19296-04 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-77" title="E-Rezept-Fachdienst - Inhalt Protokolleintrag" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-5" title="E-Rezept-Fachdienst - Inhalt Protokolleintrag" version="0">
 	<meta lockversion="false"/>
 	<actor name="E-Rezept-Fachdienst">
     	<testProcedure id="Produkttest"/>
@@ -77,7 +77,7 @@ Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen all
 </requirement>
 
 <!-- A_19284-13 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-77" title="E-Rezept-Fachdienst - Versichertenprotokoll zu Operationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-6" title="E-Rezept-Fachdienst - Versichertenprotokoll zu Operationen" version="0">
 	<meta lockversion="false"/>
 	<actor name="E-Rezept-Fachdienst">
     	<testProcedure id="Produkttest"/>
@@ -268,7 +268,7 @@ Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen all
 <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004 Versichertenprotokoll</figcaption></div>
 
 <!-- A_19284-13 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-77" title="E-Rezept-Fachdienst - Versichertenprotokoll zu automatischen Löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-7" title="E-Rezept-Fachdienst - Versichertenprotokoll zu automatischen Löschen" version="0">
 	<meta lockversion="false"/>
 	<actor name="E-Rezept-Fachdienst">
     	<testProcedure id="Produkttest"/>
@@ -306,7 +306,7 @@ Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen all
 <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004a Versichertenprotokoll nach automatischen Löschen</figcaption></div>
 
 <!-- A_19284-13 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-77" title="E-Rezept-Fachdienst - Versichertenprotokoll zu Löschen nach Fehlerbehandlung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-8" title="E-Rezept-Fachdienst - Versichertenprotokoll zu Löschen nach Fehlerbehandlung" version="0">
 	<meta lockversion="false"/>
 	<actor name="E-Rezept-Fachdienst">
     	<testProcedure id="Produkttest"/>
@@ -329,7 +329,7 @@ Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen all
 <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004b Versichertenprotokoll nach Löschen wegen Fehlerbehandlung</figcaption></div>
 
 <!-- A_19302 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-77" title="E-Rezept-Fachdienst - Protokolleintrag Versichertenprotokoll leicht verständlich" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-9" title="E-Rezept-Fachdienst - Protokolleintrag Versichertenprotokoll leicht verständlich" version="0">
 	<meta lockversion="false"/>
 	<actor name="E-Rezept-Fachdienst">
     	<testProcedure id="Produkttest"/>
@@ -338,7 +338,7 @@ Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen all
 </requirement>
 
 <!-- A_22217 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-77" title="E-Rezept-Fachdienst - Protokollierung - keine Angabe zu organizationName" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-10" title="E-Rezept-Fachdienst - Protokollierung - keine Angabe zu organizationName" version="0">
 	<meta lockversion="false"/>
 	<actor name="E-Rezept-Fachdienst">
     	<testProcedure id="Produkttest"/>

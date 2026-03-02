@@ -3,7 +3,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch. 
 
 <!-- A_20546-03 -->
-<requirement conformance="SHALL" key="IG-TIFlow-DiGA-25" title="E-Rezept-Fachdienst - E-Rezept löschen - Versicherter - Prüfung KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-42" title="E-Rezept-Fachdienst - E-Rezept löschen - Versicherter - Prüfung KVNR" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
@@ -12,7 +12,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
  <!-- A_19120-03 -->
-<requirement conformance="SHALL" key="IG-TIFlow-DiGA-25" title="E-Rezept-Fachdienst - E-Rezept löschen - Verordnender - Prüfung AccessCode und Status" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-43" title="E-Rezept-Fachdienst - E-Rezept löschen - Verordnender - Prüfung AccessCode und Status" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>

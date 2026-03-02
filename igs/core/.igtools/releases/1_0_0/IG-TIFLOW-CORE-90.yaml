@@ -1,0 +1,22 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: 29adf8e8f9757f7ec16b99c07bb1bb5d5892ed6457b775828e599880c6193076
+created: '2026-03-02T12:25:39.670468'
+date: '2026-03-02T12:25:39.670470'
+key: IG-TIFLOW-CORE-90
+modified: '2026-03-02T12:25:39.670469'
+release_status: NEW
+source: input/pagecontent/query-api-consent-req-fd.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
+  /Consent die dem Versicherten zugeordneten Consent-Ressourcen anhand der KVNR des
+  Versicherten im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren
+  und in den Response aufnehmen, die in Consent.Patient.identifier die entsprechende
+  KVNR des Versicherten referenziert haben, damit ausschließlich Versicherte ihre
+  eigenen Information zu Einwilligungen einsehen können.
+title: E-Rezept-Fachdienst - Consent lesen - Filter KVNR
+version: 0
