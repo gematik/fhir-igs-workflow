@@ -310,3 +310,75 @@ Für weitere Informationen siehe Kapitel "Als Nutzer gegenüber der Telematikinf
     </actor>
     Das Primärsystem MUSS das Zertifikat C.HCI.AUT der SM-B über die Operation ReadCardCertificate des Konnektors gemäß [gemSpec_Kon#4.1.9.5.2] bzw. [gemILF_PS#4.4.4.2] auslesen.
 </requirement>
+
+Hinweis: Im Rahmen der Signatur wird auf privates Schlüsselmaterial zugegriffen. Die verwendeten Karten müssen sich daher in einem erhöhten Sicherheitszustand befinden, der ggf. erst durch eine PIN-Eingabe hergestellt werden muss. Das Primärsystem muss den Kartenzustand abfragen und die Karte ggf. durch den Nutzer freischalten lassen. Mit dem (optionalen) Einblenden eines Hinweises der Form "Bitte beachten Sie die Anzeige an Ihrem Kartenterminal" muss das Primärsystem dafür sorgen, dass die Abfrage einer PIN-Eingabe am Kartenterminal vom Benutzer nicht übersehen wird.
+
+Anschließend werden die signierte "challenge" und das verwendete Authentisierungszertifikat der Smartcard an den IDP-Dienst übermittelt.
+
+<!-- A_20667-03 -->
+<requirement conformance="SHALL" key="IG-WF-CORE-36" title="CS: Response auf die Challenge des Authorization-Endpunktes" version="0">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="CS_E-Rezept_KTR">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="NCPeH_ePeDA">
+        <testProcedure id="Produkttest"/>
+    </actor>
+    Das Clientsystem MUSS das eingereichte CHALLENGE_TOKEN zusammen mit der von der Smartcard signierten Challenge-Signatur "signed_challenge" und dem Authentifizierungszertifikat der Smartcard, mit dem öffentlichen Schlüssel des Authorization-Endpunktes PUK_IDP_ENC verschlüsselt, in Form eines HTTP-POST-Requests senden.
+</requirement>
+
+Hinweis: Der Aufbau der Anfrage und der einzureichenden Objekte entspricht [gemSpec_IDP_Dienst#Kapitel 7.3 Authentication Request].
+
+Hinweis: Das Signieren und Verschlüsseln des "CHALLENGE_TOKEN" ist durch die Verwendung eines Nested JWT (angelehnt an den folgenden Draft: https://tools.ietf.org/html/draft-yusef-oauth-nested-jwt-03) zu realisieren. Im cty-Header ist "NJWT" zu setzen, um anzuzeigen, dass es sich um einen Nested JWT handelt. Das Signieren wird dabei durch die Verwendung einer JSON Web Signature (JWS) [RFC7515 # section-3 - Compact Serialization] gewährleistet. Die Verschlüsselung des signierten Token wird durch die Nutzung der JSON Web Encryption (JWE) [RFC7516 # section-3] sichergestellt. Als Verschlüsselungsalgorithmus ist ECDH-ES (Elliptic Curve Diffie-Hellman Ephemeral Static key agreement) vorgesehen.
+
+Der Authorization-Endpunkt validiert nun die "session" sowie die "signed_challenge" und prüft das Zertifikat der LEI. Anschließend verknüpft er die "session" mit der Identität aus dem Authentisierungszertifikat und erstellt einen "AUTHORIZATION_CODE", welchen er als Antwort zurücksendet.
+
+Das Clientsystem empfängt nun diesen "AUTHORIZATION_CODE" vom IDP-Dienst und reicht ihn zusammen mit dem KEY_VERIFIER beim Token-Endpunkt ein.
+
+<!-- A_20668-01 -->
+<requirement conformance="SHALL" key="IG-WF-CORE-36" title="CS: Annahme des AUTHORIZATION_CODE" version="0">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="CS_E-Rezept_KTR">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="NCPeH_ePeDA">
+        <testProcedure id="Produktgutachten"/>
+    </actor>
+    Das Clientsystem MUSS den vom Authorization-Endpunkt als Antwort auf die signierte Challenge gesendeten AUTHORIZATION_CODE verarbeiten. Das Clientsystem MUSS das AUTHORIZATION_CODE ablehnen, wenn dieser außerhalb der mit dem Authorization-Endpunkt etablierten TLS-Verbindung übertragen wird.
+</requirement>
+
+<!-- A_21333-01 -->
+<requirement conformance="SHALL" key="IG-WF-CORE-36" title="CS: Erzeugung des Token-Key" version="0">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="CS_E-Rezept_KTR">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="NCPeH_ePeDA">
+        <testProcedure id="Produktgutachten"/>
+    </actor>
+    Das Clientsystem MUSS vor dem Abrufen von ID_Token und ACCESS_Token einen zufälligen 256bit-AES-Schlüssel ("Token Key") erzeugen.
+</requirement>
+
+
+
+
+
+
