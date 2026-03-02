@@ -1,3 +1,12 @@
+Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Operation `$accept`.
+
+### Anforderungen aus der Core Spezifikation
+
+{% include core-op-accept-req-fd.md %}
+
+### Modulspezifische Anforderungen
+
+
 <!-- A_25993 -->
 <requirement conformance="SHALL" key="IG-TIFlow-DiGA-17" title="E-Rezept-Fachdienst - Task akzeptieren - Flowtype 162 - Rollenprüfung" version="0">
   <meta lockversion="false"/>

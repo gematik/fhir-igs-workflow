@@ -1,4 +1,13 @@
 
+Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Operation `$close`.
+
+### Anforderungen aus der Core Spezifikation
+
+{% include core-op-close-req-fd.md %}
+
+### Modulspezifische Anforderungen
+
+
 <!-- A_19230-01 -->
 <requirement conformance="SHALL" key="IG-TIFlow-DiGA-15" title="E-Rezept-Fachdienst - Task schliessen - Flowtype 162 - Rollenprüfung" version="0">
   <meta lockversion="false"/>

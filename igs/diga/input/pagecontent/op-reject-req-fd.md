@@ -1,3 +1,10 @@
+Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Operation `$reject`.
+
+### Anforderungen aus der Core Spezifikation
+
+{% include core-op-reject-req-fd.md %}
+
+### Modulspezifische Anforderungen
 
 <!-- A_19170-02 -->
 <requirement conformance="SHALL" key="IG-TIFlow-DiGA-23" title="E-Rezept-Fachdienst - Task zurückweisen - Flowtype 162 - Rollenprüfung" version="0">

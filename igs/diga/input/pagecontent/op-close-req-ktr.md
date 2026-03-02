@@ -1,3 +1,10 @@
+Diese Seite enthält die normativen Anforderungen an ein Clientsystem des Kostenträgers für die Operation `$close`.
+
+### Anforderungen aus der Core Spezifikation
+
+{% include core-op-close-req-ktr.md %}
+
+### Modulspezifische Anforderungen
 
 <!-- A_26004-01 -->
 <requirement conformance="SHALL" key="IG-TIFlow-DiGA-37" title="CS Kostenträger: Dispensierinformationen - Flowtype 162 - MedicationDispense erstellen" version="0">

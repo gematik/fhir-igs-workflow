@@ -1,4 +1,13 @@
 
+Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Operation `$activate`.
+
+### Anforderungen aus der Core Spezifikation
+
+{% include core-op-activate-req-fd.md %}
+
+### Modulspezifische Anforderungen
+
+
 <!-- A_25990 -->
 <requirement conformance="SHALL" key="IG-TIFlow-DiGA-24" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - QES durch berechtigte Berufsgruppe" version="0">
   <meta lockversion="false"/>

@@ -1,3 +1,10 @@
+Diese Seite enthält die normativen Anforderungen an ein PVS für die Operation `$create`.
+
+### Anforderungen aus der Core Spezifikation
+
+{% include core-op-create-req-pvs.md %}
+
+### Modulspezifische Anforderungen
 
 Zur Verordnung von DiGAs werden die DiGA-FHIR-Profile der KBV genutzt: https://simplifier.net/evdga.
 
