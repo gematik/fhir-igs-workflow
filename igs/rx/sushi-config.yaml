@@ -1,6 +1,6 @@
 canonical: https://gematik.de/fhir/erp
 fhirVersion: 4.0.1
-id: de.gematik.eflow-rx
+id: de.gematik.tiflow-rx
 name: gemIG_TIFlow_rx
 title: "E-Rezept für Arzneimittel"
 status: draft # draft | active | retired | unknown
@@ -29,6 +29,8 @@ menu:
     Teratogene Arzneimittel: menu-fachlichkeit-t-rezept.html
     Mehrfachverordnungen: menu-fachlichkeit-mvo.html
     Workflow-Steuerung durch LE: menu-fachlichkeit-wf-le.html
+    UX verordnend: menu-fachlichkeit-ux-verordnend.html
+    UX abgebend: menu-fachlichkeit-ux-abgebend.html
   Technische Umsetzung:
     Technische Anwendungsfälle: menu-technische-umsetzung-anwendungsfaelle.html
     Strukturierte Dosierungen: menu-technische-umsetzung-dosierung.html
@@ -37,15 +39,14 @@ menu:
   Schnittstellen:
     Query API: menu-schnittstellen-query-api.html
     Operation API: menu-schnittstellen-operation-api.html
-    Additional APIs: menu-schnittstellen-additional-api.html
   FHIR-Artefakte: artifacts.html
   Anhänge:
     Referenzen: referenced.html
     Downloads: downloads.html
-    OpenAPI: erp-openapi.html
+    #OpenAPI: erp-openapi.html
     Release Notes: release-notes.html
-    Steckbriefe: spec-sheet.html
-    Versionsvergleiche: comparisons.html
+    #Steckbriefe: spec-sheet.html
+    #Versionsvergleiche: comparisons.html
     Lizenz: license.html
 
 pages:
@@ -61,6 +62,10 @@ pages:
       title: "Verordnung von Mehrfachverordnungen (MVO)"
     menu-fachlichkeit-t-rezept.md:
       title: "Verordnung von E-T-Rezepten"
+    menu-fachlichkeit-ux-verordnend.md:
+      title: "Best practice UX Primärsysteme für verordnende LEIs"
+    menu-fachlichkeit-ux-abgebend.md:
+      title: "Best practice UX Primärsysteme für abgebende LEIs"
   menu-technisch.md:
     title: "Technische Aspekte zur Arzneimittelverordnung"
     menu-technische-umsetzung-anwendungsfaelle.md:
@@ -69,6 +74,10 @@ pages:
       title: "Validierung von Dosierungsinformationen"
     menu-technische-umsetzung-dispensierinformationen.md:
       title: "Erstellen von Dispensierinformationen" 
+    menu-technische-umsetzung-abgabedatensatz.md:
+      title: "Abgabedatensatz signieren" 
+    menu-technische-umsetzung-kim.md:
+      title: "E-Rezept-spezifische KIM-Messages" 
     menu-technische-umsetzung-mapping.md:
       title: "Vorgaben zum Mapping von FHIR-Instanzen"
       mapping-prescription.md:
@@ -107,78 +116,70 @@ pages:
     title: "Query API"
     query-api-task.md:
       title: "Query API: Task"
-      query-api-task-fd-requirements.md:
+      query-api-task-req-fd.md:
         title: "Server-Anforderungen: Task-Query"
-      query-api-task-client-requirements.md:
-        title: "Client-Anforderungen: Task-Query"
-    query-api-communication.md:
-      title: "Query API: Communication"
-      query-api-communication-client-requirements.md:
-        title: "Client-Anforderungen: Communication-Query"
+      query-api-task-req-fdv.md:
+        title: "E-Rezept-FdV Anforderungen: Task-Query"
     query-api-medicationdispense.md:
       title: "Query API: MedicationDispense"
-      query-api-medicationdispense-client-requirements.md:
-        title: "Client-Anforderungen: MedicationDispense-Query"
+      query-api-medicationdispense-req-fdv.md:
+        title: "E-Rezept-FdV Anforderungen: MedicationDispense-Query"
+    query-api-communication.md:
+      title: "Query API: Communication"
+      query-api-communication-req-fdv.md:
+        title: "E-Rezept-FdV Anforderungen: Communication-Query"
   menu-schnittstellen-operation-api.md:
     title: "Operation API"
     op-create.md:
       title: "Operation $create (Task erzeugen)"
-      op-create-fd-requirements.md:
-        title: "Server-Anforderungen $create"
-      op-create-client-requirements.md:
-        title: "Client-Anforderungen $create"
+      op-create-req-pvs.md:
+        title: "PVS-Anforderungen $create"
     op-activate.md:
       title: "Operation $activate (Task aktivieren)"
-      op-activate-fd-requirements.md:
+      op-activate-req-fd.md:
         title: "Server-Anforderungen $activate"
-      op-activate-client-requirements.md:
-        title: "Client-Anforderungen $activate"
+      op-activate-req-pvs.md:
+        title: "PVS-Anforderungen $activate"
     op-accept.md:
       title: "Operation $accept (Task akzeptieren)"
-      op-accept-fd-requirements.md:
+      op-accept-req-fd.md:
         title: "Server-Anforderungen $accept"
-      op-accept-client-requirements.md:
-        title: "Client-Anforderungen $accept"
     op-reject.md:
       title: "Operation $reject (Task zurückweisen)"
-      op-reject-fd-requirements.md:
+      op-reject-req-fd.md:
         title: "Server-Anforderungen $reject"
-      op-reject-client-requirements.md:
-        title: "Client-Anforderungen $reject"
     op-dispense.md:
       title: "Operation $dispense (Dispensierinformationen bereitstellen)"
-      op-dispense-fd-requirements.md:
+      op-dispense-req-fd.md:
         title: "Server-Anforderungen $dispense"
-      op-dispense-client-requirements.md:
-        title: "Client-Anforderungen $dispense"
+      op-dispense-req-avs.md:
+        title: "AVS-Anforderungen $dispense"
     op-close.md:
       title: "Operation $close (Task schließen)"
-      op-close-fd-requirements.md:
+      op-close-req-fd.md:
         title: "Server-Anforderungen $close"
-      op-close-client-requirements.md:
-        title: "Client-Anforderungen $close"
+      op-close-req-avs.md:
+        title: "AVS-Anforderungen $close"
     op-abort.md:
       title: "Operation $abort (Task abbrechen)"
-      op-abort-fd-requirements.md:
+      op-abort-req-fd.md:
         title: "Server-Anforderungen $abort"
-      op-abort-client-requirements.md:
-        title: "Client-Anforderungen $abort"
-  menu-schnittstellen-additional-api.md:
-    title: "Zusätzliche APIs"
+      op-abort-req-fdv.md:
+        title: "E-Rezept-FdV Anforderungen $abort"
   artifacts.md:
     title: "FHIR-Artefakte"
   referenced.md:
     title: "Referenzen"
   downloads.md:
     title: "Downloads"
-  erp-openapi.md:
-    title: "OpenAPI: E-Rezept Produkttypen"
+  # erp-openapi.md:
+  #   title: "OpenAPI: E-Rezept Produkttypen"
   release-notes.md:
     title: "Release Notes"
-  spec-sheet.md:
-    title: "Steckbriefe"
-  comparisons.md:
-    title: "Versionsvergleiche"
+  # spec-sheet.md:
+  #   title: "Steckbriefe"
+  # comparisons.md:
+  #   title: "Versionsvergleiche"
   license.md:
     title: "Apache Licence"
 
@@ -191,6 +192,7 @@ parameters:
   path-pages:
     - input/content
     - input/pagecontent
+    - input/intro-notes
   no-narrative:
     # "StructureDefinition/*" doesn't seem to work anymore
     - StructureDefinition/*

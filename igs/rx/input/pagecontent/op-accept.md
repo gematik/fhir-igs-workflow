@@ -6,8 +6,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$accept` gesendet.
 
 ### Anforderungen an Schnittstelle
 
-- [Ergänzende Server-Anforderungen zu `$accept`](./op-accept-fd-requirements.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
-- [Ergänzende Client-Anforderungen zu `$accept`](./op-accept-client-requirements.html): Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.
+- [Ergänzende Server-Anforderungen zu `$accept`](./op-accept-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
 
 ### API Beschreibung
 
@@ -18,15 +17,6 @@ Die API-Beschreibung für den Aufruf der Operation findet sich auf:
 
 - Die Rückgabe kann bei Mehrfachverordnung mit `403` scheitern, wenn die Einlösefrist noch nicht begonnen hat.
 - AccessCode und insbesondere `secret` sind als hochsensible Daten zu behandeln.
-
-### Geschäftslogik
-
-<figure>
-  <div class="gem-ig-img-container" style="--box-width: 900px; margin-bottom: 30px;">
-{% include rx-op-accept-flow.svg %}
-  </div>
-  <figcaption><strong>Abbildung: </strong>Ablauf Operation `$accept`</figcaption>
-</figure>
 
 ### Sicherheitsanforderungen
 

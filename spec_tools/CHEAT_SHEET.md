@@ -5,9 +5,7 @@
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
     </actor>
-    <description>
       text
-    </description>
 </requirement>
 
 Eine Nummer/key muss nicht vergeben werden, da diese automatisch generiert wird.
@@ -22,7 +20,7 @@ Für Tags in Anforderungen muss die folgende Syntax verwendet werden:
 1. Bild in den Ordner input/images legen
 
 <figure>
-    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+    <div class="gem-ig-img-container" style="--box-width: 600px; margin-bottom: 30px;">
         <img src="./todo.png" alt="todo" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung: </strong>todo</figcaption>
@@ -102,3 +100,21 @@ Für Tags in Anforderungen muss die folgende Syntax verwendet werden:
 ## Suchen aller afo keys
 
 key="[^"]*"
+
+## Quellen und Referenzen
+
+Das IG Tooling unterstützt eine automatisierte Generierung einer Referenzenliste, [s. Beispiel ePA](https://gemspec.gematik.de/ig/fhir/epa-medication/1.3.0/referenced.html).
+Hierzu ist in `input/data` eine Datei `bibliography.yaml` anzulegen. Diese enthält Einträge in folgender Form:
+
+```yaml
+entries:
+  - key: "gemIG_eRp_ChargeInformation"
+    author: "gematik"
+    title: "E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte"
+    link: "https://gemspec.gematik.de/ig/fhir/de-gematik-erezept-patientenrechnung-r4/"
+```
+
+Dadurch werden automatisch die Referenzen aufgelistet. 
+
+Im Markdown text kann der key verwendet werden, um automatisch eine Verlinkung zu erzeugen, Bsp.: "Das ist in [gemIG_eRp_ChargeInformation] beschrieben...".
+Beim Bauen des IG wird der Link dann automatisch gesetzt.

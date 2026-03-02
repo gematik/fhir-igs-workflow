@@ -1,4 +1,4 @@
-{% assign use_cases = site.data['use-cases'] %}
+{% assign use_cases = site.data['gen-use-cases'] %}
 
 Dieses Kapitel beschreibt den fachlichen Normalfall von der Verordnung bis zur Belieferung in der Apotheke.
 Im Fokus stehen die Handlungen der Beteiligten (Arzt, Versicherter, Apotheke) sowie die fachlichen Schritte.
@@ -10,8 +10,8 @@ Das Szenario umfasst die Versorgung gesetzlich (GKV) und privat (PKV) Versichert
 Die Fachanwendung E-Rezept ermöglicht eine Übermittlung von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel in elektronischer Form. Sie setzt sich aus den folgenden dargestellten Bestandteilen zusammen:
 
 <figure>
-    <div class="gem-ig-img-container" style="--box-width: 500px; margin-bottom: 30px;">
-        <img src="./übersicht-erezept.png" alt="Übersicht E-Rezept" style="width: 100%;">
+    <div class="gem-ig-img-container" style="--box-width: 600px; margin-bottom: 30px;">
+        <img src="./uebersicht-erezept.png" alt="Übersicht E-Rezept" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung: </strong>Übersicht E-Rezept</figcaption>
 </figure>
@@ -39,6 +39,29 @@ Für den Zugang zur Telematikinfrastruktur nutzt der Versicherte seine eGK mit N
 - Als verordnender Leistungserbringer möchte ich ein E-Rezept ausstellen und bereitstellen, damit der Versicherte das Arzneimittel beziehen kann.
 - Als Versicherter möchte ich mein E-Rezept einlösen können, damit ich das Arzneimittel in der Apotheke erhalte.
 - Als Apotheke möchte ich ein E-Rezept annehmen, beliefern und abschließen, damit die Abgabe korrekt dokumentiert ist.
+
+#### User Stories Versicherte
+
+##### E-Rezepte Abrufen
+- Als Patient möchte ich ein "E-Rezept" auswählen können, das ich herunterladen möchte, so dass ich es später einlösen oder zuweisen kann. 
+- Als Patient möchte ich, dass alle für mich verfügbaren "E-Rezepte" automatisch auf mein Gerät heruntergeladen werden, wenn sie dort noch nicht gespeichert sind, so dass ich nicht selbst meine Rezepte herunterladen muss. (eRP_159)
+- Als Patient möchte ich, dass meine E-Rezept-App für einen konsistenten Zustand zwischen dem Fachdienst und der App sorgt, so dass ich keine Rezepte doppelt auf meinem Gerät habe oder andere Inkonsistenzen entstehen, so dass ich nicht  verwirrt werde. (eRP_160)
+- Als Patient möchte ich, dass der Status meiner Rezepte automatisch von der App aktualisiert wird, wenn er sich im Fachdienst geändert hat, so dass ich immer auf dem neuesten Stand bin und nicht Rezepte einlösen will, die bereits eingelöst sind. (eRP_161)
+- Als Patient möchte ich alle E-Rezepte, die für mich verfügbar sind, sehen können, so dass ich entscheiden kann, was ich mit diesen E-Rezepten machen will.
+- Als Patient möchte ich sehen können, welchen Status ein E-Rezept hat, so dass ich in der Lage bin, den nächsten Schritt entscheiden zu können.
+- Als Patient möchte ich die relevanten Informationen aus einem E-Rezept lesen können, so dass ich weiß, was mir verschrieben wurde.
+
+##### E-Rezepte löschen
+
+- Als Patient möchte ich ein E-Rezept auswählen können, das ich löschen will, so dass ich mein Recht auf informationelle Selbstbestimmung ausüben kann.
+- Als Patient möchte ich die ausgewählten E-Rezepte löschen können, so dass ich mein Recht auf informationelle Selbstbestimmung ausüben kann.
+- Als Patient möchte ich Rückmeldung darüber erhalten, wenn die ausgewählten E-Rezepte gelöscht worden sind, so dass ich sicher sein kann, dass die Daten auch wirklich nicht mehr vorliegen.
+- Als Patient möchte ich Rückmeldung darüber erhalten, wenn das Löschen fehlgeschlagen ist, so dass ich auf anderem Wege ein Löschen einleiten kann.
+- Als Patient möchte ich eigenständig E-Rezepte aus meinem E-Rezept-FdV löschen können, um die Übersichtlichkeit in der Ansicht zu erhöhen.
+- Als Patient möchte ich nicht mehr benötigte E-Rezepte mit zugehörigen Informationen oder Nachrichten aus der Ansicht meines E-Rezept-FdV löschen können.
+
+Mit diesem Anwendungsfall kann der Nutzer die lokal in seinem E-Rezept-FdV gespeicherten E-Rezepte mit allen dazugehörigen Informationen löschen.
+
 
 ### Verordnung apothekenpflichtiger Arzneimittel (GKV/PKV)
 
@@ -84,7 +107,7 @@ Nach Übergabe von Task-ID und AccessCode (z. B. 2D-Code oder Nachricht) ruft di
 
 **Beteiligte Systeme:** AVS, E-Rezept-Fachdienst
 
-**Technische Anwendungsfälle (User Stories)**
+**Technische Anwendungsfälle**
 
 {% assign scenario_use_cases = "UC_4_1_E_Rezept_durch_Abgebenden_abrufen, UC_4_2_E_Rezept_durch_Abgebenden_zurueckgeben, UC_4_3_E_Rezept_durch_Abgebenden_loeschen, UC_4_4_Quittung_abrufen, UC_4_5_Abgabedatensatz_signieren, UC_4_8_Quittung_erneut_abrufen, UC_4_16_Dispensierinformationen_bereitstellen" | split: ", " %}
 
@@ -110,23 +133,3 @@ Versicherte verwalten ihre E-Rezepte in der E-Rezept-App, sehen Zugriffsprotokol
 {% assign scenario_use_cases = "UC_3_1_E_Rezepte_durch_Versicherten_abrufen, UC_3_2_E_Rezept_durch_Versicherten_loeschen, UC_3_9_Dispensierinformationen_durch_Versicherten_abrufen" | split: ", " %}
 
 {% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Technische Anwendungsfälle mit Bezug zu Anwendungsfall <i>Verwalten von E-Rezepten durch Versicherten</i>" %}
-
-
-### Nachrichtenaustausch zwischen Versicherten und Apotheke
-
-Versicherte und Apotheken tauschen Nachrichten zum E-Rezept asynchron über den E-Rezept-Fachdienst aus. Dabei kann der Versicherte eine Apotheke verbindlich zuweisen und optional strukturierte Angaben zur Belieferung (z. B. Abholung oder Botenlieferung) mitsenden. Die Apotheke kann auf diese Nachricht antworten und dem Versicherten weitere Informationen bereitstellen.
-
-#### Fachlicher Ablauf
-
-1. Der Versicherte weist das E-Rezept einer Apotheke zu und sendet eine Nachricht mit dem E-Rezept-Token.
-2. Der E-Rezept-Fachdienst validiert den Inhalt, ergänzt Metadaten (Absender, Sendezeitpunkt) und stellt die Nachricht bereit.
-3. Die Apotheke ruft neue Nachrichten ab, verarbeitet die Angaben und antwortet bei Bedarf mit einer eigenen Nachricht.
-4. Der Versicherte ruft Antworten der Apotheke ab und kann den weiteren Belieferungsprozess starten.
-
-**Beteiligte Systeme:** FdV, AVS, E-Rezept-Fachdienst
-
-**Technische Anwendungsfälle**
-
-{% assign scenario_use_cases = "UC_3_3_Nachricht_durch_Versicherten_uebermitteln, UC_3_8_Nachricht_durch_Versicherten_loeschen, UC_4_6_Nachrichten_durch_Abgebenden_empfangen, UC_4_7_Nachricht_durch_Abgebenden_uebermitteln, UC_4_9_Nachricht_durch_Abgebenden_loeschen, UC_3_4_Nachrichten_durch_Versicherten_empfangen" | split: ", " %}
-
-{% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Technische Anwendungsfälle mit Bezug zu Anwendungsfall <i>Nachrichtenaustausch zwischen Versicherten und Apotheke</i>" %}

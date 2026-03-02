@@ -75,3 +75,18 @@ See the [LICENSE](./LICENSE) for the specific language governing permissions
     2. The software is provided "as is" without warranty of any kind, either express or implied, including, but not limited to, the warranties of fitness for a particular purpose, merchantability, and/or non-infringement. The authors or copyright holders shall not be liable in any manner whatsoever for any damages or other claims arising from, out of or in connection with the software or the use or other dealings with the software, whether in an action of contract, tort, or otherwise.
     3. We take open source license compliance very seriously. We are always striving to achieve compliance at all times and to improve our processes. If you find any issues or have any suggestions or comments, or if you see any other ways in which we can improve, please reach out to: ospo@gematik.de
 3. Please note: Parts of this code may have been generated using AI-supported technology. Please take this into account, especially when troubleshooting, for security analyses and possible adjustments.
+Diagrams are referenced via `diagram` in the core use case and copied into the module's
+`input/images-source` during the merge if missing. You can override `diagram` in the module
+entry if a module-specific diagram is needed.
+
+## Core Markdown Includes in Module IGs
+
+Module pages can include selected Markdown snippets from core without copying all core pages.
+
+- In module pagecontent, reference includes using the prefix `core-`, e.g.
+	`{% include core-query-api-consent-fd-requirements.md %}`
+- Build step copies only referenced `core-*.md` includes from
+	`igs/core/input/pagecontent/<name>.md` to `igs/<module>/input/includes/core-<name>.md`
+- Sync script: [scripts/merge-core-includes.sh](scripts/merge-core-includes.sh)
+
+This keeps core as source of truth and synchronizes only tagged include files.

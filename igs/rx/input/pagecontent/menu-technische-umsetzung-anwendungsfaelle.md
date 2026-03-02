@@ -1,8 +1,87 @@
-{% assign use_cases = site.data['use-cases'] %}
+{% assign use_cases = site.data['gen-use-cases'] %}
 {% assign roles = site.data['roles'] %}
 
 Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der verordnung von Arzneimitteln genutzt werden.
 
+### Umzusetzende Anwendungsfälle von Clients
+
+#### PS verordnende LEI
+
+<requirement conformance="SHALL" title="PS verordnende LEI: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Das PS der verordnenden LEI MUSS für die Umsetzung der Verordnung von E-Rezepten für Arzneimittel die Anwendungsfälle
+
+    <ul>
+    <li>UC 2.1 - E-Rezepte erzeugen</li>
+    <li>E-Rezept qualifiziert signieren</li>
+    <li>UC 2.3 - E-Rezept einstellen</li>
+    <li>UC 2.5 - E-Rezept durch Verordnenden löschen</li>
+    </ul>
+
+    umsetzen.
+</requirement>
+
+#### PS abgebende LEI
+
+<requirement conformance="SHALL" title="PS abgebende LEI: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Das PS der abgebenden LEI MUSS für die Umsetzung der Belieferung von E-Rezepten für Arzneimittel die Anwendungsfälle
+
+    <ul>
+    <li>UC 4.1 - E-Rezept durch Abgebenden abrufen</li>
+    <li>UC 4.2 - E-Rezept durch Abgebenden zurückgeben</li>
+    <li>UC 4.3 - E-Rezept durch Abgebenden löschen</li>
+    <li>UC 4.4 - Quittung abrufen</li>
+    <li>UC 4.5 - Abgabedatensatz durch Abgebenden signieren</li>
+    <li>UC 4.8 - Quittung erneut abrufen</li>
+    <li>UC 4.6 - Nachrichten durch Abgebenden empfangen</li>
+    <li>UC 4.7 - Nachricht durch Abgebenden übermitteln</li>
+    <li>UC 4.9 - Nachricht durch Abgebenden löschen</li>
+    </ul>
+
+    umsetzen.
+</requirement>
+
+<requirement conformance="SHOULD" title="PS abgebende LEI: TIFlow-RX - empfohlene Anwendungsfälle" version="0">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Das PS der abgebenden LEI SOLL für die Umsetzung der Belieferung von E-Rezepten für Arzneimittel den Anwendungsfall
+
+    <ul>
+    <li>UC 4.16 - Dispensierinformationen bereitstellen</li>
+    </ul>
+
+    umsetzen.
+</requirement>
+
+#### E-Rezept-FdV 
+
+<requirement conformance="SHALL" title="E-Rezept-FdV: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von E-Rezepten für Arzneimittel die Anwendungsfälle
+
+    <ul>
+    <li>UC 3.1 – E-Rezepte durch Versicherten abrufen</li>
+    <li>UC 3.6 – E-Rezept durch Vertreter abrufen</li>
+    <li>UC 3.2 – E-Rezept durch Versicherten löschen</li>
+    <li>UC 3.3 – Nachricht durch Versicherten übermitteln</li>
+    <li>UC 3.4 – Nachricht durch Versicherten empfangen</li>
+    <li>UC 3.8 – Nachricht durch Versicherten löschen</li>
+    </ul>
+
+    umsetzen.
+</requirement>
 
 
 
@@ -119,6 +198,12 @@ Jede Teilverordnung einer Mehrfachverordnung wird im E-Rezept-Fachdienst mit ein
 {% include use-case-details-table.html use_case=use_case roles=roles %}
 
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
+#### Technische Aspekte für die Mehrfachverordnung (MVO)
+
+Wenn ein AVS eine Teilverordnung abruft, deren Einlösezeitraum noch nicht erreicht ist, dann liefert der E-Rezept-Fachdienst einen Fehler 403. Im OperationOutcome der Fehlermeldung liefert der E-Rezept-Fachdienst das Datum des Beginns der Einlösefrist.
+
+Für die QES-Prüfung wird die PKCS#7-Datei verwendet. Die Verordnungsdaten des E-Rezepts sind innerhalb der PKCS#7-Datei enthalten und müssen für die Weiterverarbeitung extrahiert werden.
 
 <!-- UC 4.2 - E-Rezept durch Abgebenden zurückgeben -->
 {% assign use_case = use_cases | where: "title", "UC 4.2 - E-Rezept durch Abgebenden zurueckgeben" | first %}

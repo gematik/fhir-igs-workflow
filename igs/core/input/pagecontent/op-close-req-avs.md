@@ -1,0 +1,1 @@
+Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an das AVS für die Nutzung der Operation `$close`.

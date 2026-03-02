@@ -1,30 +1,35 @@
-Diese Seite basiert auf der gleichnamigen Schnittstelle in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/{{ site.data.constants.tiflow_core_version }}query-api-communication.html) und beschreibt den Einstieg in die Communication-Query-Schnittstelle.
+Diese Seite basiert auf der gleichnamigen Schnittstelle in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/{{ site.data.constants.tiflow_core_version }}/query-api-communication.html) und beschreibt den Einstieg in die Communication-Query-Schnittstelle.
+
+Communication wird für die Kommunikation zwischen Versicherten und Kostenträger verwendet.
 
 ### Nachricht
 
-Die Nachricht zum Abruf von Nachrichten wird als HTTP `GET`-Anfrage an den E-Rezept-Fachdienst gesendet, um eine Liste der hinterlegten _Communication_-Instanzen abzurufen.
+Die Nachricht zum Abruf von E-Rezepten wird als HTTP GET-Anfrage an den E-Rezept-Fachdienst gesendet, um eine Liste der hinterlegten _Communication_-Instanzen abzurufen.
 
-Zum Einstellen von Nachrichten wird eine HTTP `POST`-Anfrage an den E-Rezept-Fachdienst gesendet, um eine Nachricht für einen intendierten Empfänger einzustellen.
-
-Zum Löschen von Nachrichten wird eine HTTP `DELETE`-Anfrage an den E-Rezept-Fachdienst gesendet, um eine Nachricht zu löschen.
+Mit einer POST-Anfrage an den E-Rezept-Fachdienst kann eine _Communication_-Instanz am E-Rezept-Fachdienst eingestellt werden.
 
 ### Anforderungen an Schnittstelle
 
-- [Ergänzende Client-Anforderungen zur Communication-Query](./query-api-communication-server-requirements.html): Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.
+Es gibt keine workflow-spezifischen Anforderungen für den E-Rezept-Fachdienst.
+
+- [Workflow-spezifische Anforderungen für das E-Rezept-FdV](./query-api-communication-req-fdv.html)
+
 
 ### Resource API
 
-Anfragen an die <i>Communication</i>-Ressource können über die RESTful API mittels HTTP GET-Anfragen durchgeführt werden. Dabei können spezifische Suchparameter genutzt werden, um die Anfragen zu verfeinern. Zum Beispiel:
-
-- Für den Versicherten noch nicht vom E-Rezept-Fachdienst abgerufene Communications: `?recipient=<kvnr>&received=NULL`
+Anfragen an die <i>Communication</i>-Ressource können über die RESTful API mittels HTTP GET-Anfragen durchgeführt werden.
 
 #### API Beschreibung
 
-- [API-ERP: Communications](https://github.com/gematik/api-erp/blob/master/docs/erp_communication.adoc)
+- [API-ERP: API-Dokumentation für Nachrichtenaustausch](https://github.com/gematik/api-erp/blob/master/docs/erp_communication.adoc)
 
-#### Hinweis
+### Instance API
 
-- Bei Bereitstellung von Communications werden angehangene JSONs in content.payload ebenfalls validiert
+Um spezifische Details zu einer einzelnen _Communciation_ mittels der RESTful API zu erhalten, wird die _Communciation Instance API_ verwendet, indem eine HTTP GET-Anfrage an den Endpunkt <i>/Communciation/[id]</i> gestellt wird.
+
+#### API Beschreibung
+
+- [API-ERP: Auf neue Nachrichten im E-Rezept Fachdienst prüfen](https://github.com/gematik/api-erp/blob/master/docs/erp_communication.adoc#anwendungsfall-auf-neue-nachrichten-im-e-rezept-fachdienst-pr%C3%BCfen)
 
 
 ### Sicherheitsanforderungen

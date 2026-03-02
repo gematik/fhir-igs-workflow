@@ -68,6 +68,10 @@ run_ig() {
     "$ROOT_DIR/scripts/merge-use-cases.sh" "$ig_short"
   fi
 
+  if [[ -x "$ROOT_DIR/scripts/merge-core-includes.sh" ]]; then
+    "$ROOT_DIR/scripts/merge-core-includes.sh" "$ig_short"
+  fi
+
   if command -v sushi >/dev/null 2>&1; then
     (cd "$ig_dir" && sushi .)
   else
