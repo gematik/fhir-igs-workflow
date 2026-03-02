@@ -14,7 +14,7 @@ Profile: [GEM_ERPCHRG_PR_Consentversion: null1.1.0-draft)](StructureDefinition-G
 
 ## Participants
 
-* **Role**: # Who the consent applies toPatient
+* **Role**: Patient
   * **Details**: Identifier: NamingSystemKVID/P987654321
 
 This consent is made under the regulation opt-in .

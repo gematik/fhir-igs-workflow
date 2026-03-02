@@ -13,7 +13,7 @@ Version 1.1.0-draft - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/erpchrg/StructureDefinition/identifier-iknr | *Version*:1.1.0-draft |
-| Draft as of 2026-02-27 | *Computable Name*:IdentifierIknr |
+| Draft as of 2026-03-02 | *Computable Name*:IdentifierIknr |
 
  
 Identifier profil für die Institutionskennzeichen-Nummer (IKNR) 
@@ -45,7 +45,7 @@ Other representations of profile: [CSV](StructureDefinition-identifier-iknr.csv)
   "name" : "IdentifierIknr",
   "title" : "Identifier IKNR",
   "status" : "draft",
-  "date" : "2026-02-27T15:19:26+00:00",
+  "date" : "2026-03-02T08:02:27+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
