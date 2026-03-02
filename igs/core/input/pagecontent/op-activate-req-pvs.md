@@ -1,4 +1,6 @@
-Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an das PVS für die Nutzung der Operation `$activate`.
+{% assign use_cases = site.data['use-cases'] %}
+
+Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an Clientsysteme für die Nutzung der Operation `$activate`.
 
 <br>
 
