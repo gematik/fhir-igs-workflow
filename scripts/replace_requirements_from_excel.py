@@ -5,7 +5,7 @@ import argparse
 import html
 import re
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict, List, Optional, Sequence, Set
 
 import openpyxl
 
@@ -39,6 +39,69 @@ def load_requirements(excel_path: Path, sheet_name: str) -> Dict[str, Dict[str, 
             "level": (row[index["Verbindlichkeit"]] or "").strip(),
         }
     return requirements
+
+
+def discover_excel_files(excel_arg: Optional[str], excel_dir: Path) -> List[Path]:
+    if excel_arg:
+        path = Path(excel_arg)
+        return [path]
+
+    if not excel_dir.exists() or not excel_dir.is_dir():
+        raise ValueError(f"Excel directory does not exist or is not a directory: {excel_dir}")
+
+    files = sorted(p for p in excel_dir.glob("*.xlsx") if p.is_file())
+    if not files:
+        raise ValueError(f"No .xlsx files found in directory: {excel_dir}")
+    return files
+
+
+def load_requirements_from_files(
+    excel_files: Sequence[Path],
+    sheet_name: str,
+    required_ids: Optional[Set[str]] = None,
+) -> Dict[str, Dict[str, str]]:
+    merged: Dict[str, Dict[str, str]] = {}
+    accepted_files: List[Path] = []
+
+    for excel_file in excel_files:
+        try:
+            requirements = load_requirements(excel_file, sheet_name)
+        except Exception as exc:
+            print(f"Skipping non-conforming Excel file {excel_file}: {exc}")
+            continue
+
+        accepted_files.append(excel_file)
+        for req_id, req in requirements.items():
+            if required_ids is not None and req_id not in required_ids:
+                continue
+
+            if req_id in merged and merged[req_id] != req:
+                print(
+                    f"Warning: conflicting definition for {req_id} in {excel_file}; "
+                    "keeping the first occurrence"
+                )
+                continue
+            merged.setdefault(req_id, req)
+
+    if not accepted_files:
+        files_list = ", ".join(str(p) for p in excel_files)
+        raise ValueError(
+            "No conforming Excel files found. "
+            f"Checked files: {files_list}. Expected sheet '{sheet_name}' with columns "
+            "ID, Titel, Beschreibung, Verbindlichkeit."
+        )
+
+    print(f"Using {len(accepted_files)} conforming Excel file(s).")
+    return merged
+
+
+def collect_required_ids(markdown_content: str) -> Set[str]:
+    required_ids: Set[str] = set()
+    for line in markdown_content.splitlines():
+        stripped = line.strip()
+        if stripped and FULL_LINE_IDS_PATTERN.fullmatch(stripped):
+            required_ids.update(A_ID_PATTERN.findall(stripped))
+    return required_ids
 
 
 def map_conformance(level: str) -> str:
@@ -100,7 +163,12 @@ def replace_in_markdown(content: str, requirements: Dict[str, Dict[str, str]], a
 def main() -> None:
     parser = argparse.ArgumentParser(description="Replace A_ requirement IDs in a markdown file.")
     parser.add_argument("--markdown", required=True, help="Path to the markdown file to update")
-    parser.add_argument("--excel", required=True, help="Path to the Excel file with requirements")
+    parser.add_argument("--excel", help="Path to a single Excel file with requirements")
+    parser.add_argument(
+        "--excel-dir",
+        default=".temp",
+        help="Directory to scan for .xlsx files when --excel is not provided",
+    )
     parser.add_argument("--sheet", default="Festlegungen", help="Sheet name in the Excel file")
     parser.add_argument("--actor", default="E-Rezept-Fachdienst", help="Actor name for the requirement block")
     parser.add_argument("--test-procedure", default="Produkttest", help="Test procedure id")
@@ -108,10 +176,12 @@ def main() -> None:
     args = parser.parse_args()
 
     markdown_path = Path(args.markdown)
-    excel_path = Path(args.excel)
-
-    requirements = load_requirements(excel_path, args.sheet)
     content = markdown_path.read_text(encoding="utf-8")
+    required_ids = collect_required_ids(content)
+
+    excel_files = discover_excel_files(args.excel, Path(args.excel_dir))
+    requirements = load_requirements_from_files(excel_files, args.sheet, required_ids)
+
     updated = replace_in_markdown(content, requirements, args.actor, args.test_procedure)
     markdown_path.write_text(updated, encoding="utf-8")
 

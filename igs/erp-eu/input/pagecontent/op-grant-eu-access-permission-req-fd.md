@@ -134,3 +134,19 @@
     </actor>
      Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD, wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, für alle Tasks deren Task-IDs in Parameters.parameter:requestData.part:prescription-id enthalten sind, die Telematik-ID aus dem ACCESS_TOKEN in Task.owner speichern.
 </requirement>
+
+Einen Zugriffsberechtigung eines Versicherten für das Einlösen von E-Rezepten im europäischen Ausland beinhaltet die folgenden Informationen:
+
+- KVNR des Versicherten,
+- Ländercode des Landes, für welches die Zugriffsberechtigung durch den Versicherten erteilt wurde,
+- Zugriffscode,
+- gültig bis (1h ab Einstellen), wird durch den E-Rezept-Fachdienst beim Einstellen der Zugriffsberechtigung gesetzt.
+
+<!-- A_27083 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-EU-57" title="E-Rezept-Fachdienst - Zugriffsberechtigung - periodische Bereinigung" version="0">
+    <meta lockversion="false"/>
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest"/>
+    </actor>
+     Der E-Rezept-Fachdienst MUSS periodisch prüfen, dass keine zeitlich ungültigen Zugriffsberechtigungen gespeichert sind.
+</requirement>
