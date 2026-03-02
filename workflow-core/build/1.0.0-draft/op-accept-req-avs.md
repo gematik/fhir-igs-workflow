@@ -1,4 +1,4 @@
-# Client-Anforderungen $accept - Implementation Guide E-Rezept-Workflow Core v1.0.0-draft
+# AVS-Anforderungen $accept - Implementation Guide E-Rezept-Workflow Core v1.0.0-draft
 
 Implementation Guide
 
@@ -9,9 +9,9 @@ Version 1.0.0-draft - ci-build
 * [**Table of Contents**](toc.md)
 * [**Operation API**](menu-schnittstellen-operation-api.md)
 * [**Operation $accept (Task akzeptieren)**](op-accept.md)
-* **Client-Anforderungen $accept**
+* **AVS-Anforderungen $accept**
 
-## Client-Anforderungen $accept
+## AVS-Anforderungen $accept
 
 Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an Clientsysteme für die Nutzung der Operation `$activate`.
 

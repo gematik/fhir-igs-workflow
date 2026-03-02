@@ -19,7 +19,9 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$abort` gesendet.
 ### Anforderungen an Schnittstelle
 
 * [Server-Anforderungen zu `$abort`](./op-abort-fd-requirements.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
-* [Client-Anforderungen zu `$abort`](./op-abort-client-requirements.md): Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.
+* [PVS-Anforderungen zu `$abort`](./op-abort-req-pvs.md): Anforderungen an ein Praxisverwaltungssystem zur Nutzung der Schnittstelle.
+* [AVS-Anforderungen zu `$abort`](./op-abort-req-avs.md): Anforderungen an ein Praxisverwaltungssystem zur Nutzung der Schnittstelle.
+* [FdV-Anforderungen zu `$abort`](./op-abort-req-avs.md): Anforderungen an ein E-Rezept-FdV zur Nutzung der Schnittstelle.
 
 ### API Beschreibung
 

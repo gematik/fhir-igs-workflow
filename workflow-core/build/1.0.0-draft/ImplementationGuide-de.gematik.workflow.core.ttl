@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "ERezeptWorkflowCore"] ; # 
   fhir:title [ fhir:v "Implementation Guide E-Rezept-Workflow Core"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-03-02T09:42:10+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-03-02T10:24:37+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "gematik GmbH"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "gematik GmbH" ] ;
@@ -1681,7 +1681,26 @@
                fhir:v "op-accept-req-avs.html"^^xsd:anyURI ;
                fhir:l fhir:op-accept-req-avs.html
              ] ;
-             fhir:title [ fhir:v "Client-Anforderungen $accept" ] ;
+             fhir:title [ fhir:v "AVS-Anforderungen $accept" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] [
+             fhir:extension ( [
+               fhir:url [
+                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+               ] ;
+               fhir:value [
+                 a fhir:Url ;
+                 fhir:v "op-accept-req-ktr.html"^^xsd:anyURI ;
+                 fhir:l fhir:op-accept-req-ktr.html
+               ]
+             ] ) ;
+             fhir:name [
+               a fhir:Url ;
+               fhir:v "op-accept-req-ktr.html"^^xsd:anyURI ;
+               fhir:l fhir:op-accept-req-ktr.html
+             ] ;
+             fhir:title [ fhir:v "KTR-Anforderungen $accept" ] ;
              fhir:generation [ fhir:v "markdown" ]
            ] )
          ] [
@@ -1730,16 +1749,35 @@
                ] ;
                fhir:value [
                  a fhir:Url ;
-                 fhir:v "op-reject-client-requirements.html"^^xsd:anyURI ;
-                 fhir:l fhir:op-reject-client-requirements.html
+                 fhir:v "op-reject-req-avs.html"^^xsd:anyURI ;
+                 fhir:l fhir:op-reject-req-avs.html
                ]
              ] ) ;
              fhir:name [
                a fhir:Url ;
-               fhir:v "op-reject-client-requirements.html"^^xsd:anyURI ;
-               fhir:l fhir:op-reject-client-requirements.html
+               fhir:v "op-reject-req-avs.html"^^xsd:anyURI ;
+               fhir:l fhir:op-reject-req-avs.html
              ] ;
-             fhir:title [ fhir:v "Client-Anforderungen $reject" ] ;
+             fhir:title [ fhir:v "AVS-Anforderungen $reject" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] [
+             fhir:extension ( [
+               fhir:url [
+                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+               ] ;
+               fhir:value [
+                 a fhir:Url ;
+                 fhir:v "op-reject-req-ktr.html"^^xsd:anyURI ;
+                 fhir:l fhir:op-reject-req-ktr.html
+               ]
+             ] ) ;
+             fhir:name [
+               a fhir:Url ;
+               fhir:v "op-reject-req-ktr.html"^^xsd:anyURI ;
+               fhir:l fhir:op-reject-req-ktr.html
+             ] ;
+             fhir:title [ fhir:v "KTR-Anforderungen $reject" ] ;
              fhir:generation [ fhir:v "markdown" ]
            ] )
          ] [
@@ -1797,7 +1835,26 @@
                fhir:v "op-close-req-avs.html"^^xsd:anyURI ;
                fhir:l fhir:op-close-req-avs.html
              ] ;
-             fhir:title [ fhir:v "Client-Anforderungen $close" ] ;
+             fhir:title [ fhir:v "AVS-Anforderungen $close" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] [
+             fhir:extension ( [
+               fhir:url [
+                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+               ] ;
+               fhir:value [
+                 a fhir:Url ;
+                 fhir:v "op-close-req-ktr.html"^^xsd:anyURI ;
+                 fhir:l fhir:op-close-req-ktr.html
+               ]
+             ] ) ;
+             fhir:name [
+               a fhir:Url ;
+               fhir:v "op-close-req-ktr.html"^^xsd:anyURI ;
+               fhir:l fhir:op-close-req-ktr.html
+             ] ;
+             fhir:title [ fhir:v "KTR-Anforderungen $close" ] ;
              fhir:generation [ fhir:v "markdown" ]
            ] )
          ] [
@@ -1846,16 +1903,54 @@
                ] ;
                fhir:value [
                  a fhir:Url ;
-                 fhir:v "op-abort-client-requirements.html"^^xsd:anyURI ;
-                 fhir:l fhir:op-abort-client-requirements.html
+                 fhir:v "op-abort-req-pvs.html"^^xsd:anyURI ;
+                 fhir:l fhir:op-abort-req-pvs.html
                ]
              ] ) ;
              fhir:name [
                a fhir:Url ;
-               fhir:v "op-abort-client-requirements.html"^^xsd:anyURI ;
-               fhir:l fhir:op-abort-client-requirements.html
+               fhir:v "op-abort-req-pvs.html"^^xsd:anyURI ;
+               fhir:l fhir:op-abort-req-pvs.html
              ] ;
-             fhir:title [ fhir:v "Client-Anforderungen $abort" ] ;
+             fhir:title [ fhir:v "PVS-Anforderungen $abort" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] [
+             fhir:extension ( [
+               fhir:url [
+                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+               ] ;
+               fhir:value [
+                 a fhir:Url ;
+                 fhir:v "op-abort-req-avs.html"^^xsd:anyURI ;
+                 fhir:l fhir:op-abort-req-avs.html
+               ]
+             ] ) ;
+             fhir:name [
+               a fhir:Url ;
+               fhir:v "op-abort-req-avs.html"^^xsd:anyURI ;
+               fhir:l fhir:op-abort-req-avs.html
+             ] ;
+             fhir:title [ fhir:v "AVS-Anforderungen $abort" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] [
+             fhir:extension ( [
+               fhir:url [
+                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+               ] ;
+               fhir:value [
+                 a fhir:Url ;
+                 fhir:v "op-abort-req-fdv.html"^^xsd:anyURI ;
+                 fhir:l fhir:op-abort-req-fdv.html
+               ]
+             ] ) ;
+             fhir:name [
+               a fhir:Url ;
+               fhir:v "op-abort-req-fdv.html"^^xsd:anyURI ;
+               fhir:l fhir:op-abort-req-fdv.html
+             ] ;
+             fhir:title [ fhir:v "FdV-Anforderungen $abort" ] ;
              fhir:generation [ fhir:v "markdown" ]
            ] )
          ] )
@@ -2040,16 +2135,35 @@
                ] ;
                fhir:value [
                  a fhir:Url ;
-                 fhir:v "query-api-communication-client-requirements.html"^^xsd:anyURI ;
-                 fhir:l fhir:query-api-communication-client-requirements.html
+                 fhir:v "query-api-communication-req-fdv.html"^^xsd:anyURI ;
+                 fhir:l fhir:query-api-communication-req-fdv.html
                ]
              ] ) ;
              fhir:name [
                a fhir:Url ;
-               fhir:v "query-api-communication-client-requirements.html"^^xsd:anyURI ;
-               fhir:l fhir:query-api-communication-client-requirements.html
+               fhir:v "query-api-communication-req-fdv.html"^^xsd:anyURI ;
+               fhir:l fhir:query-api-communication-req-fdv.html
              ] ;
-             fhir:title [ fhir:v "Client-Anforderungen: Communication-Query" ] ;
+             fhir:title [ fhir:v "FdV-Anforderungen: Communication-Query" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] [
+             fhir:extension ( [
+               fhir:url [
+                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+               ] ;
+               fhir:value [
+                 a fhir:Url ;
+                 fhir:v "query-api-communication-req-avs.html"^^xsd:anyURI ;
+                 fhir:l fhir:query-api-communication-req-avs.html
+               ]
+             ] ) ;
+             fhir:name [
+               a fhir:Url ;
+               fhir:v "query-api-communication-req-avs.html"^^xsd:anyURI ;
+               fhir:l fhir:query-api-communication-req-avs.html
+             ] ;
+             fhir:title [ fhir:v "AVS-Anforderungen: Communication-Query" ] ;
              fhir:generation [ fhir:v "markdown" ]
            ] )
          ] [

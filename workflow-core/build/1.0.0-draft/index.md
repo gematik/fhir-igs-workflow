@@ -57,7 +57,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
   "name" : "ERezeptWorkflowCore",
   "title" : "Implementation Guide E-Rezept-Workflow Core",
   "status" : "draft",
-  "date" : "2026-03-02T09:42:10+00:00",
+  "date" : "2026-03-02T10:24:37+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -847,7 +847,16 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
               "valueUrl" : "op-accept-req-avs.html"
             }],
             "nameUrl" : "op-accept-req-avs.html",
-            "title" : "Client-Anforderungen $accept",
+            "title" : "AVS-Anforderungen $accept",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "op-accept-req-ktr.html"
+            }],
+            "nameUrl" : "op-accept-req-ktr.html",
+            "title" : "KTR-Anforderungen $accept",
             "generation" : "markdown"
           }]
         },
@@ -871,10 +880,19 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
           {
             "extension" : [{
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "op-reject-client-requirements.html"
+              "valueUrl" : "op-reject-req-avs.html"
             }],
-            "nameUrl" : "op-reject-client-requirements.html",
-            "title" : "Client-Anforderungen $reject",
+            "nameUrl" : "op-reject-req-avs.html",
+            "title" : "AVS-Anforderungen $reject",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "op-reject-req-ktr.html"
+            }],
+            "nameUrl" : "op-reject-req-ktr.html",
+            "title" : "KTR-Anforderungen $reject",
             "generation" : "markdown"
           }]
         },
@@ -901,7 +919,16 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
               "valueUrl" : "op-close-req-avs.html"
             }],
             "nameUrl" : "op-close-req-avs.html",
-            "title" : "Client-Anforderungen $close",
+            "title" : "AVS-Anforderungen $close",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "op-close-req-ktr.html"
+            }],
+            "nameUrl" : "op-close-req-ktr.html",
+            "title" : "KTR-Anforderungen $close",
             "generation" : "markdown"
           }]
         },
@@ -925,10 +952,28 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
           {
             "extension" : [{
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "op-abort-client-requirements.html"
+              "valueUrl" : "op-abort-req-pvs.html"
             }],
-            "nameUrl" : "op-abort-client-requirements.html",
-            "title" : "Client-Anforderungen $abort",
+            "nameUrl" : "op-abort-req-pvs.html",
+            "title" : "PVS-Anforderungen $abort",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "op-abort-req-avs.html"
+            }],
+            "nameUrl" : "op-abort-req-avs.html",
+            "title" : "AVS-Anforderungen $abort",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "op-abort-req-fdv.html"
+            }],
+            "nameUrl" : "op-abort-req-fdv.html",
+            "title" : "FdV-Anforderungen $abort",
             "generation" : "markdown"
           }]
         }]
@@ -1015,10 +1060,19 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
           {
             "extension" : [{
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "query-api-communication-client-requirements.html"
+              "valueUrl" : "query-api-communication-req-fdv.html"
             }],
-            "nameUrl" : "query-api-communication-client-requirements.html",
-            "title" : "Client-Anforderungen: Communication-Query",
+            "nameUrl" : "query-api-communication-req-fdv.html",
+            "title" : "FdV-Anforderungen: Communication-Query",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-communication-req-avs.html"
+            }],
+            "nameUrl" : "query-api-communication-req-avs.html",
+            "title" : "AVS-Anforderungen: Communication-Query",
             "generation" : "markdown"
           }]
         },

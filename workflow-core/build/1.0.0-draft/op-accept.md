@@ -19,7 +19,8 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$accept` gesendet.
 ### Anforderungen an Schnittstelle
 
 * [Server-Anforderungen zu `$accept`](./op-accept-fd-requirements.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
-* [Client-Anforderungen zu `$accept`](./op-accept-client-requirements.md): Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.
+* [AVS-Anforderungen zu `$accept`](./op-accept-req-avs.md): Anforderungen an das Apothekenverwaltungssystem zur Nutzung der Schnittstelle.
+* [AVS-Anforderungen zu `$accept`](./op-accept-req-ktr.md): Anforderungen an das Clientsystem des Kostenträgers zur Nutzung der Schnittstelle.
 
 ### API Beschreibung
 
