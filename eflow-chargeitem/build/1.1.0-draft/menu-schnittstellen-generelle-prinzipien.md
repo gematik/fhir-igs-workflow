@@ -9,11 +9,11 @@ Version 1.1.0-draft - ci-build
 
 ## Generelle Prinzipien
 
-## Authentisierung
+### Authentisierung
 
 Die Authentisierung der Nutzer am E-Rezept-Fachdienst erfolgt mittels ACCESS_TOKEN. Tokens werden von registrierten Identity Providern ausgestellt. Für die Authentisierung eines Versicherten am IdP der gematik wird eine eGK mit NFC-Schnittstelle verwendet; zukünftig können föderierte IdPs eingebunden werden.
 
-## HTTP-Header
+### HTTP-Header
 
 Die folgenden Operationen nutzen den HTTP-Header “X-erp-resource”:
 

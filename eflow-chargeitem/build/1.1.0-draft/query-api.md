@@ -11,7 +11,7 @@ Version 1.1.0-draft - ci-build
 
 Diese Seite bietet einen Einstieg in die Query‑API‑Seiten der einzelnen FHIR‑Ressourcen.
 
-## Ressourcen
+### Ressourcen
 
 * [ChargeItem](./query-api-chargeitem.md)
 * [Consent](./query-api-consent.md)

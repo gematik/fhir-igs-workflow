@@ -12,28 +12,28 @@ Version 1.1.0-draft - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/erpchrg/ImplementationGuide/de.gematik.eflow-chargeitem | *Version*:1.1.0-draft |
-| Draft as of 2026-03-02 | *Computable Name*:gemIG_eRp_ChargeItem |
+| Draft as of 2026-03-03 | *Computable Name*:gemIG_eRp_ChargeItem |
 
-# Implementation Guide E-Rezept Patientenrechnung (PKV)
+### Implementation Guide E-Rezept Patientenrechnung (PKV)
 
 Dieser Implementation Guide beschreibt die Bereitstellung der Abrechnungsinformationen für den Kostenträger. Er ergänzt die workflowspezifischen Anforderungen des E-Rezept-Fachdienstes und beschreibt die relevanten Use Cases.
 
-## Zweck und Geltungsbereich
+#### Zweck und Geltungsbereich
 
 * Abrechnungsinformationen für den Kostenträger
 
-## Nicht im Scope
+#### Nicht im Scope
 
 * GKV-spezifische Workflows
 * Nicht apothekenpflichtige Verordnungen
 * Abrechnung ausserhalb des E-Rezept-Fachdienstes
 * PKV-spezifische Anforderungen an Schnittstellen und Datenmodelle
 
-## Wie dieser IG zu lesen ist
+#### Wie dieser IG zu lesen ist
 
 Die Kapitel folgen der Struktur Fachlichkeit, Technische Umsetzung und Schnittstellen. Szenarien und Anwendungsfälle verweisen auf die zugehörigen technischen Kapitel und Profile.
 
-## Abhängigkeiten
+#### Abhängigkeiten
 
 
 
@@ -42,11 +42,11 @@ Die Kapitel folgen der Struktur Fachlichkeit, Technische Umsetzung und Schnittst
 
 
 
-## Kontakt und Feedback
+#### Kontakt und Feedback
 
 Für Fragen und Feedback wenden Sie sich bitte an [erp-umsetzung@gematik.de](mailto:erp-umsetzung@gematik.de).
 
-## Rechtliche Hinweise
+#### Rechtliche Hinweise
 
 Copyright ©2026+ gematik GmbH
 
@@ -65,7 +65,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "gemIG_eRp_ChargeItem",
   "title" : "Abrechnungsinformationen des E-Rezepte für PKV-Versicherte",
   "status" : "draft",
-  "date" : "2026-03-02T11:53:36+00:00",
+  "date" : "2026-03-03T10:14:52+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -1263,7 +1263,16 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
           }],
           "nameUrl" : "query-api-consent.html",
           "title" : "Query API: Consent",
-          "generation" : "markdown"
+          "generation" : "markdown",
+          "page" : [{
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-consent-req-fd.html"
+            }],
+            "nameUrl" : "query-api-consent-req-fd.html",
+            "title" : "E-Rezept-Fachdienst Anforderungen: Consent-Query",
+            "generation" : "markdown"
+          }]
         },
         {
           "extension" : [{
@@ -1317,7 +1326,16 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
           }],
           "nameUrl" : "op-accept.html",
           "title" : "Operation: $accept",
-          "generation" : "markdown"
+          "generation" : "markdown",
+          "page" : [{
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "op-accept-req-fd.html"
+            }],
+            "nameUrl" : "op-accept-req-fd.html",
+            "title" : "E-Rezept-Fachdienst Anforderungen: $accept",
+            "generation" : "markdown"
+          }]
         },
         {
           "extension" : [{
@@ -1326,7 +1344,16 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
           }],
           "nameUrl" : "op-activate.html",
           "title" : "Operation: $activate",
-          "generation" : "markdown"
+          "generation" : "markdown",
+          "page" : [{
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "op-activate-req-fd.html"
+            }],
+            "nameUrl" : "op-activate-req-fd.html",
+            "title" : "E-Rezept-Fachdienst Anforderungen: $activate",
+            "generation" : "markdown"
+          }]
         }]
       },
       {
@@ -1336,15 +1363,6 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
         }],
         "nameUrl" : "artifacts.html",
         "title" : "FHIR-Artefakte",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "menu-schnittstellen-additional-api.html"
-        }],
-        "nameUrl" : "menu-schnittstellen-additional-api.html",
-        "title" : "Additional APIs",
         "generation" : "markdown"
       },
       {

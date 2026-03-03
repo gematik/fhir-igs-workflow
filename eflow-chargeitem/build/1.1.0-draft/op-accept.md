@@ -10,15 +10,19 @@ Version 1.1.0-draft - ci-build
 
 ## Operation: $accept
 
-## Nachricht
+### Nachricht
 
 Die Operation $accept wird als HTTP POST auf `/Task/<id>/$accept` ausgeführt.
 
-## Auslösung
+### Anforderungen an Schnittstelle
+
+* [Anforderungen für den E-Rezept-Fachdienst](./op-accept-req-fd.md)
+
+### Auslösung
 
 Die abgebende LEI ruft $accept auf, um ein E‑Rezept anzunehmen und – für Flowtype 200/209 – die Einwilligung zum Speichern der Abrechnungsinformationen zu berücksichtigen.
 
-## FHIR Operation API
+### FHIR Operation API
 
 ```
 
@@ -231,10 +235,7 @@ Die abgebende LEI ruft $accept auf, um ein E‑Rezept anzunehmen und – für Fl
     
 ```
 
-## Verarbeitung
-
-Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task des Flowtype Task.extension:flowType = 200 oder 209 mittels HTTP-POST-Operation über /Task/<id>/$accept, wenn für die KVNR des begünstigten Versicherten (Task.for) eine Consent Ressource mit Consent.patient.identifier = KVNR und Consent.category.coding.code = "CHARGCONS" existiert, das Response Bundle um die Consent Ressource ergänzen, um der abgebenden LEI die Information zu übermitteln, ob der Versicherte eine Einwilligung zum Speichern der Abrechnungsinformationen auf dem E-Rezept-Fachdienst erteilt hat.
-## Sicherheitsanforderungen
+### Sicherheitsanforderungen
 
 Generelle Sicherheitsanforderungen werden [hier](./menu-schnittstellen-datenschutz-und-sicherheit.md) festgehalten.
 

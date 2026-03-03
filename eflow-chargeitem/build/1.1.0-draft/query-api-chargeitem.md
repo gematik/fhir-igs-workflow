@@ -12,17 +12,17 @@ Version 1.1.0-draft - ci-build
 
 Die Query API für ChargeItem ermöglicht den Zugriff auf Abrechnungsinformationen (Verordnungsdatensatz, PKV‑Abgabedatensatz, Quittung). Die Abrechnungsinformation wird als ChargeItem mit Referenzen auf die Datensätze abgebildet.
 
-## Profilierung
+### Profilierung
 
 Die Profilierung der Ressource ChargeItem ist hier dokumentiert: https://simplifier.net/erezept-patientenrechnung/gem_erpchrg_pr_chargeitem
 
-## Anforderungen an Schnittstelle
+### Anforderungen an Schnittstelle
 
-* [Spezifische Anforderungen für den E-Rezept-Fachdienst](./query-api-chargeitem-req-fd.md)
-* [Spezifische Anforderungen für den E-Rezept-FdV](./query-api-chargeitem-req-fdv.md)
-* [Spezifische Anforderungen für den abgebenden Leistungserbringer](./query-api-chargeitem-req-avs.md)
+* [Anforderungen für den E-Rezept-Fachdienst](./query-api-chargeitem-req-fd.md)
+* [Anforderungen für den E-Rezept-FdV](./query-api-chargeitem-req-fdv.md)
+* [Anforderungen für den abgebenden Leistungserbringer](./query-api-chargeitem-req-avs.md)
 
-## GET /ChargeItem (Liste)
+### GET /ChargeItem (Liste)
 
 ### Nachricht
 
@@ -251,7 +251,7 @@ Anfragen an die Communication-Ressource können über die RESTful API mittels HT
     
 ```
 
-## GET /ChargeItem/<id> (Details)
+### GET /ChargeItem/<id> (Details)
 
 ### Nachricht
 
@@ -478,7 +478,7 @@ Der Detailabruf erfolgt aus dem FdV/AdV oder durch die abgebende LEI (mit Access
     
 ```
 
-## POST /ChargeItem (Bereitstellen)
+### POST /ChargeItem (Bereitstellen)
 
 ### Nachricht
 
@@ -496,7 +496,7 @@ Die Operation wird nach der Belieferung ausgelöst, sobald eine Einwilligung des
 
 TODO
 
-## PATCH /ChargeItem/<id> (Markierungen)
+### PATCH /ChargeItem/<id> (Markierungen)
 
 ### Nachricht
 
@@ -510,7 +510,7 @@ Der Anwendungsfall wird im FdV/AdV ausgelöst, wenn Markierungen angepasst werde
 
 TODO
 
-## PUT /ChargeItem/<id> (Ändern PKV‑Abgabedatensatz)
+### PUT /ChargeItem/<id> (Ändern PKV‑Abgabedatensatz)
 
 ### Nachricht
 
@@ -526,7 +526,7 @@ Der Anwendungsfall wird ausgelöst, wenn Korrekturen an Abgabedaten notwendig si
 
 TODO
 
-## DELETE /ChargeItem/<id>
+### DELETE /ChargeItem/<id>
 
 ### Nachricht
 
@@ -540,7 +540,7 @@ Der Anwendungsfall wird durch den Versicherten im FdV/AdV ausgelöst.
 
 TODO
 
-## Sicherheitsanforderungen
+### Sicherheitsanforderungen
 
 Generelle Sicherheitsanforderungen werden [hier](./menu-schnittstellen-datenschutz-und-sicherheit.md) festgehalten.
 

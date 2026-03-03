@@ -11,7 +11,7 @@ Version 1.1.0-draft - ci-build
 
 ## Primärsystem des abgebenden Leistungserbringers - Anforderungen: ChargeItem-Query
 
-## Abrechnungsinformation bereitstellen (POST /ChargeItem)
+### Abrechnungsinformation bereitstellen (POST /ChargeItem)
 
 Mit diesem Anwendungsfall stellt die abgebende LEI die Abrechnungsinformation zu einem E-Rezept auf dem E-Rezept-Fachdienst ein.
 
@@ -42,7 +42,7 @@ Wenn das E-Rezept bereits vom E-Rezept-Fachdienst gelöscht wurde, dann enthält
 
 Wenn der Versicherte zwischenzeitlich die Einwilligung zum Speichern von Abrechnungsinformationen im E-Rezept-Fachdienst widerrufen hat, dann enthält der Response den Fehlercode 403.
 
-## PKV-Abgabedatensatz ändern (PUT /ChargeItem/<id>)
+### PKV-Abgabedatensatz ändern (PUT /ChargeItem/<id>)
 
 Mit diesem Anwendungsfall kann die abgebende LEI den PKV-Abgabedatensatz zu einem E-Rezept, welche die abgebende LEI zuvor auf dem E-Rezept-Fachdienst bereitgestellt hat, ändern. Als Voraussetzung muss der Versicherte der abgebenden LEI einen AccessCode übermitteln, um die abgebende LEI zu berechtigen.
 
@@ -67,7 +67,7 @@ Das PS abgebende LEI MUSS im Anwendungsfall "PKV-Abgabedatensatz ändern" die HT
 ausführen.
 Wenn der Versicherte zwischenzeitlich die Einwilligung zum Speichern von Abrechnungsinformationen im E-Rezept-Fachdienst widerrufen hat, dann enthält der Response den Fehlercode 403.
 
-## Abrechnungsinformation abrufen (GET /ChargeItem/<id>)
+### Abrechnungsinformation abrufen (GET /ChargeItem/<id>)
 
 Mit diesem Anwendungsfall kann eine abgebende LEI die Abrechnungsinformation vom E-Rezept-Fachdienst abrufen, welche durch sie zuvor bereitgestellt und noch nicht gelöscht wurde. Als Voraussetzung muss der Versicherte der abgebenden LEI einen AccessCode übermitteln, um die abgebende LEI zu berechtigen.
 

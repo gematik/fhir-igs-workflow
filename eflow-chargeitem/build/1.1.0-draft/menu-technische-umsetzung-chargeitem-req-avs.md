@@ -11,17 +11,17 @@ Version 1.1.0-draft - ci-build
 
 ## Primärsystem des abgebenden Leistungserbringers Anforderungen: ChargeItem
 
-## Abrechnungsinformation bereitstellen
+### Abrechnungsinformation bereitstellen
 
 Mit diesem Anwendungsfall stellt die abgebende LEI die Abrechnungsinformation zu einem E-Rezept auf dem E-Rezept-Fachdienst ein.
  Er wird [hier](./query-api-chargeitem-req-ps-post.md) im Detail beschreiben.
 
-## Abrechnungsinformation abrufen
+### Abrechnungsinformation abrufen
 
 Mit diesem Anwendungsfall kann eine abgebende LEI die Abrechnungsinformation vom E-Rezept-Fachdienst abrufen, welche durch sie zuvor bereitgestellt und noch nicht gelöscht wurde. Als Voraussetzung muss der Versicherte der abgebenden LEI einen AccessCode übermitteln, um die abgebende LEI zu berechtigen.
  Er wird [hier](./query-api-chargeitem-req-ps-get-id.md) im Detail beschreiben.
 
-## PKV-Abgabedatensatz ändern
+### PKV-Abgabedatensatz ändern
 
 Mit diesem Anwendungsfall kann die abgebende LEI den PKV-Abgabedatensatz zu einem E-Rezept, welche die abgebende LEI zuvor auf dem E-Rezept-Fachdienst bereitgestellt hat, ändern. Als Voraussetzung muss der Versicherte der abgebenden LEI einen AccessCode übermitteln, um die abgebende LEI zu berechtigen.
  Er wird [hier](./query-api-chargeitem-req-ps-put.md) im Detail beschreiben.

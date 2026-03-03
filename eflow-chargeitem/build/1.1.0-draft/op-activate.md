@@ -10,15 +10,19 @@ Version 1.1.0-draft - ci-build
 
 ## Operation: $activate
 
-## Nachricht
+### Nachricht
 
 Die Operation $activate wird als HTTP POST auf `/Task/<id>/$activate` ausgeführt.
 
-## Auslösung
+### Anforderungen an Schnittstelle
+
+* [Anforderungen für den E-Rezept-Fachdienst](./op-activate-req-fd.md)
+
+### Auslösung
 
 Die abgebende LEI aktiviert den Task. Für Flowtype 200/209 muss der Versicherungstyp PKV im Verordnungsdatensatz geprüft werden.
 
-## FHIR Operation API
+### FHIR Operation API
 
 ```
 
@@ -231,10 +235,7 @@ Die abgebende LEI aktiviert den Task. Für Flowtype 200/209 muss der Versicherun
     
 ```
 
-## Verarbeitung
-
-Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task des Flowtype Task.extension:flowType = 200 oder 209 mittels HTTP-POST-Operation über /Task/<id>/$activate prüfen, ob Coverage.type.coding.code mit dem Wert "PKV" belegt ist und im Fehlerfall die Operation mit Http-Fehlercode 400 abbrechen, um sicherzustellen, dass diese Workflows nur für E-Rezepte für PKV-Versicherte genutzt werden.
-## Sicherheitsanforderungen
+### Sicherheitsanforderungen
 
 Generelle Sicherheitsanforderungen werden [hier](./menu-schnittstellen-datenschutz-und-sicherheit.md) festgehalten.
 

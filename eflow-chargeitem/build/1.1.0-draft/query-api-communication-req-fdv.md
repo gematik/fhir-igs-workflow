@@ -13,6 +13,16 @@ Version 1.1.0-draft - ci-build
 
 Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Communication`-Query-Endpunkte. TODO: Prüfverfahren
 
+### Anforderungen aus der Core Spezifikation
+
+Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Communication`-Query-Endpunkte.
+
+#### Nachricht versenden
+
+#### Nachricht löschen
+
+### Modulspezifische Anforderungen
+
 Das E-Rezept-FdV KANN den Anwendungsfall "Abrechnungsinformations-Token einer Apotheke übermitteln" umsetzen.
 
 Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation-Token einer Apotheke übermitteln" es dem Nutzer ermöglichen, ein E-Rezept auszuwählen, um den zugehörigen Abrechnungsinformation-Token der Apotheke, welche den PKV-Abgabedatensatz bereitgestellt hat, mittels einer Nachricht zu übermitteln und die Apotheke somit für das Ändern des PKV-Abgabedatensatzes zu berechtigen.
