@@ -1,5 +1,12 @@
 Diese Seite beschreibt Anforderungen am E-Rezept-Fachdienst zur Nutzung der `Communication`-Query-Endpunkte.
 
+### Anforderungen aus der Core Spezifikation
+
+{% include core.query-api-communication-req-fd.md %}
+
+### Modulspezifische Anforderungen
+
+
 <!--A_22734-01-->
 <requirement conformance="SHALL" key="IG-ERP-CHRG-227" title="E-Rezept-Fachdienst – Nachricht einstellen – Prüfung Existenz ChargeItem" version="0">
     <meta lockversion="false"/>

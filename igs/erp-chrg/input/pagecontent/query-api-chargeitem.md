@@ -4,9 +4,9 @@ Die Query API für ChargeItem ermöglicht den Zugriff auf Abrechnungsinformation
 Die Profilierung der Ressource ChargeItem ist hier dokumentiert: https://simplifier.net/erezept-patientenrechnung/gem_erpchrg_pr_chargeitem
 
 ## Anforderungen an Schnittstelle
-- [Spezifische Anforderungen für den E-Rezept-Fachdienst](./query-api-chargeitem-req-fd.html)
-- [Spezifische Anforderungen für den E-Rezept-FdV](./query-api-chargeitem-req-fdv.html)
-- [Spezifische Anforderungen für den abgebenden Leistungserbringer](./query-api-chargeitem-req-avs.html)
+- [Anforderungen für den E-Rezept-Fachdienst](./query-api-chargeitem-req-fd.html)
+- [Anforderungen für den E-Rezept-FdV](./query-api-chargeitem-req-fdv.html)
+- [Anforderungen für den abgebenden Leistungserbringer](./query-api-chargeitem-req-avs.html)
 
 ## GET /ChargeItem (Liste)
 

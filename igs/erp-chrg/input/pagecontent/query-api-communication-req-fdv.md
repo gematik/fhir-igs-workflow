@@ -1,6 +1,12 @@
 Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Communication`-Query-Endpunkte.
 TODO: Prüfverfahren
 
+### Anforderungen aus der Core Spezifikation
+
+{% include core.query-api-communication-req-fdv.md %}
+
+### Modulspezifische Anforderungen
+
 <!--A_24563-->
 <requirement conformance="MAY" key="IG-ERP-CHRG-44295E1K" title="E-Rezept-FdV: optional: Abrechnungsinformation-Token übermitteln" version="0">
     <meta lockversion="false"/>
