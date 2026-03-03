@@ -2,7 +2,7 @@ Diese Seite enthält die workflowtyp-spezifischen normativen Anforderungen an de
 
 ### Anforderungen aus der Core Spezifikation
 
-{% include core-op-reject-req-fd.md %}
+{% include core.op-reject-req-fd.md %}
 
 ### Modulspezifische Anforderungen
 

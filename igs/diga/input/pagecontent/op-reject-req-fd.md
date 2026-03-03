@@ -2,7 +2,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 
 ### Anforderungen aus der Core Spezifikation
 
-{% include core-op-reject-req-fd.md %}
+{% include core.op-reject-req-fd.md %}
 
 ### Modulspezifische Anforderungen
 

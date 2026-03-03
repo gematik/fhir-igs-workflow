@@ -84,7 +84,7 @@ entry if a module-specific diagram is needed.
 Module pages can include selected Markdown snippets from core without copying all core pages.
 
 - In module pagecontent, reference includes using the prefix `core-`, e.g.
-	`{% include core-query-api-consent-fd-requirements.md %}`
+	`{% include core.query-api-consent-fd-requirements.md %}`
 - Build step copies only referenced `core-*.md` includes from
 	`igs/core/input/pagecontent/<name>.md` to `igs/<module>/input/includes/core-<name>.md`
 - Sync script: [scripts/merge-core-includes.sh](scripts/merge-core-includes.sh)

@@ -2,7 +2,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Commun
 
 ### Anforderungen aus der Core Spezifikation
 
-{% include core-query-api-communication-req-fdv.md %}
+{% include core.query-api-communication-req-fdv.md %}
 
 ### Modulspezifische Anforderungen
 

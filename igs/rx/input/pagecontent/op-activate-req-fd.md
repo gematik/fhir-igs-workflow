@@ -2,7 +2,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 
 ### Anforderungen aus der Core Spezifikation
 
-{% include core-op-activate-req-fd.md %}
+{% include core.op-activate-req-fd.md %}
 
 ### Modulspezifische Anforderungen
 

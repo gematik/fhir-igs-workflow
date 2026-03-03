@@ -2,7 +2,7 @@ Diese Seite enthält die normativen Anforderungen an ein Clientsystem des Kosten
 
 ### Anforderungen aus der Core Spezifikation
 
-{% include core-op-reject-req-ktr.md %}
+{% include core.op-reject-req-ktr.md %}
 
 ### Modulspezifische Anforderungen
 
