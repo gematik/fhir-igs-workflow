@@ -35,13 +35,6 @@ Die folgenden Profile stellen dar, welche Inhalte an den BfArM Webdienst übertr
 
 Im folgenden sind Artefakte abgebildet, die unterstützen das Mapping der Quelldaten auf den digitalen Durchschlag E-T-Rezept zu realisieren.
 
-#### Unterstützende Profile
-
-Diese Profile wurden erstellt, um Quelldatenstrukturen abzubilden und im Mapping zu realisieren:
-
-|
-|
-
 #### StructureMaps
 
 StructureMaps sind strukturierte Dokumente, die maschinenlesbare Möglichkeit bieten Daten in andere Formate zu überführen.

@@ -1,18 +1,18 @@
-# Implementation Guide Übermittlung den BfArM Webdienst - Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst v1.0.0
+# Implementation Guide: Übermittlung an den BfArM Webdienst - Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst v1.0.0
 
 Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst
 
 Version 1.0.0 - ci-build 
 
 * [**Table of Contents**](toc.md)
-* **Implementation Guide Übermittlung den BfArM Webdienst**
+* **Implementation Guide: Übermittlung an den BfArM Webdienst**
 
-## Implementation Guide Übermittlung den BfArM Webdienst
+## Implementation Guide: Übermittlung an den BfArM Webdienst
 
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/erp-t-prescription/ImplementationGuide/de.gematik.erp-t-prescription | *Version*:1.0.0 |
-| Draft as of 2026-03-02 | *Computable Name*:gemIG_TIFlow_bfarm |
+| Draft as of 2026-03-03 | *Computable Name*:gemIG_TIFlow_bfarm |
 
 Dieser Implementation Guide beschreibt Profile und deren Verwendung für den Datenaustausch zwischen dem E-Rezept-Fachdienst und dem BfArM Webdienst.
 
@@ -69,7 +69,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "gemIG_TIFlow_bfarm",
   "title" : "Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst",
   "status" : "draft",
-  "date" : "2026-03-02T12:13:40+00:00",
+  "date" : "2026-03-03T06:38:17+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -1288,7 +1288,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
           "valueUrl" : "index.html"
         }],
         "nameUrl" : "index.html",
-        "title" : "Implementation Guide Übermittlung den BfArM Webdienst",
+        "title" : "Implementation Guide: Übermittlung an den BfArM Webdienst",
         "generation" : "markdown"
       },
       {
@@ -1306,7 +1306,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
           "valueUrl" : "menu-technische-umsetzung-systemueberblick.html"
         }],
         "nameUrl" : "menu-technische-umsetzung-systemueberblick.html",
-        "title" : "Technische Umsetzung - Systemueberblick",
+        "title" : "Technische Umsetzung - Systemüberblick",
         "generation" : "markdown",
         "page" : [{
           "extension" : [{
@@ -1323,7 +1323,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
             "valueUrl" : "menu-technische-umsetzung-anwendungsfaelle.html"
           }],
           "nameUrl" : "menu-technische-umsetzung-anwendungsfaelle.html",
-          "title" : "Technische Umsetzung - Anwendungsfaelle",
+          "title" : "Technische Umsetzung - Anwendungsfälle",
           "generation" : "markdown"
         },
         {
@@ -1461,6 +1461,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
     {
       "code" : "path-pages",
       "value" : "input/content"
+    },
+    {
+      "code" : "path-pages",
+      "value" : "input/intro-notes"
     },
     {
       "code" : "path-resource",

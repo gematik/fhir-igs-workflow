@@ -5,7 +5,7 @@ Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst
 Version 1.0.0 - ci-build 
 
 * [**Table of Contents**](toc.md)
-* [**Technische Umsetzung - Systemueberblick**](menu-technische-umsetzung-systemueberblick.md)
+* [**Technische Umsetzung - Systemüberblick**](menu-technische-umsetzung-systemueberblick.md)
 * **Technische Umsetzung - Übermittlung an das BfArM T-Register**
 
 ## Technische Umsetzung - Übermittlung an das BfArM T-Register

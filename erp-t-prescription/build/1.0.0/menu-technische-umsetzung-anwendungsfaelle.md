@@ -1,14 +1,14 @@
-# Technische Umsetzung - Anwendungsfaelle - Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst v1.0.0
+# Technische Umsetzung - Anwendungsfälle - Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst v1.0.0
 
 Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst
 
 Version 1.0.0 - ci-build 
 
 * [**Table of Contents**](toc.md)
-* [**Technische Umsetzung - Systemueberblick**](menu-technische-umsetzung-systemueberblick.md)
-* **Technische Umsetzung - Anwendungsfaelle**
+* [**Technische Umsetzung - Systemüberblick**](menu-technische-umsetzung-systemueberblick.md)
+* **Technische Umsetzung - Anwendungsfälle**
 
-## Technische Umsetzung - Anwendungsfaelle
+## Technische Umsetzung - Anwendungsfälle
 
 Diese Seite dokumentiert die technischen Anwendungsfälle für die in diesem IG beschriebenen fachlichen Szenarien.
 
