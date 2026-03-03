@@ -1,4 +1,4 @@
-{% assign use_cases = site.data['use-cases'] %} {% assign roles = site.data['roles'] %}
+{% assign use_cases = site.data['gen-use-cases'] %} {% assign roles = site.data['roles'] %}
 
 Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rezepte für PKV‑Versicherte“. Im Fokus steht, was im E‑Rezept‑Fachdienst und in den beteiligten Clients (FdV/AdV, Primärsysteme, AVS) passiert, wenn die fachlichen Anwendungsfälle ausgeführt werden.
 

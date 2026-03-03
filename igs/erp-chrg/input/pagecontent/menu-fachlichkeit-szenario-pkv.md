@@ -1,4 +1,5 @@
-{% assign use_cases = site.data.use-cases %}
+{% assign use_cases = site.data['gen-use-cases'] %}
+
 Das Feature „Abrechnungsinformationen des E-Rezepte für PKV-Versicherte“ erweitert die bestehenden E-Rezept-Workflows um die digitale Bereitstellung und Verarbeitung von Abrechnungsinformationen. Es beschreibt den zusätzlichen Funktionsumfang für den E-Rezept-Fachdienst und die beteiligten Clientsysteme, die Prozessparameter sowie die fachlichen und technischen Anforderungen.
 
 ### Zielsetzung
