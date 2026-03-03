@@ -11,7 +11,7 @@ Das fachliche Konzept zum Einlösen von E-Rezepten im europäischen Ausland wurd
 
 Für das europäische Nutzungsszenario ePrescription/eDispensation dürfen folgende E-Rezepte nicht verarbeitet werden:
 
-Betäubungsmittel,
+- Betäubungsmittel
 - Arzneimittel, die nach ärztlicher Verschreibung oder nach den Vorschriften eines Arzneibuchs für den Versicherten zubereitet werden (bezeichnet als "formula magistralis" oder "extemporale Zubereitungen").
 - Arzneimittel, die als Humanarzneimittel eingestuft sind, aber nicht durch ein industrielles Verfahren hergestellt oder bei deren Herstellung kein industrielles Verfahren angewandt wurde.
 - Arzneimittel, die nicht als Humanarzneimittel eingestuft sind,
