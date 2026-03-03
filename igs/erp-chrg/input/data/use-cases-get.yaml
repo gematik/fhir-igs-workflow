@@ -149,10 +149,10 @@
   title: "Abrechnungsinformationen durch den Versicherten weitergeben"
   roles: ["Versicherter"]
   description: |
-    Der Versicherte gibt die Abrechnungsinformation aus dem FdV/AdV heraus an eine 
-    Ziel-App weiter (z. B. PKV-App, Beihilfe) oder exportiert sie als PDF/A.
+    Der Versicherte gibt die Abrechnungsinformation aus dem E-Rezept-FdV heraus an eine 
+    Ziel-App weiter (z. B. Service-App der Krankenversicherung, Service-App der Beihilfe) oder exportiert sie als PDF/A.
   preconditions: |
-    - Der Versicherte hat über das FdV (E-Rezept-FdV) die Abrechnungsinformation vom E-Rezept-Fachdienst abgerufen.
+    - Der Versicherte hat über das E-Rezept-FdV die Abrechnungsinformation vom E-Rezept-Fachdienst abgerufen.
   actions: |
     - Das FdV erstellt eine PDF/A-Datei mit der eingebetteten Abrechnungsinformation.
     - Das FdV übergibt die PDF/A-Datei an die Ziel-App oder bietet sie zum Download an.
@@ -168,12 +168,12 @@
   title: "Abrechnungsinformationen durch den Versicherten markieren"
   roles: ["Versicherter"]
   description: |
-    Der Versicherte markiert die Abrechnungsinformation im FdV/AdV, um sie für bestimmte Aktionen zu kennzeichnen. Der E-Rezept-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.
+    Der Versicherte markiert die Abrechnungsinformation im E-Rezept-FdV, um sie für bestimmte Aktionen zu kennzeichnen. Der E-Rezept-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.
   preconditions: |
     - Eine LEI hat den Anwendungsfall "Abrechnungsinformation durch Abgebenden bereitstellen" für das E-Rezept durchgeführt. Die Abrechnungsinformation ist auf dem E-Rezept-Fachdienst gespeichert.
     - Der Versicherte hat sich über den Anwendungsfall "Abrufen der Abrechnungsinformation durch den Versicherten" die zu markierende Abrechnungsinformation herausgesucht.
   actions: |
-    - Ein Versicherter wählt im FdV (E-Rezept-FdV) die zu markierende Abrechnungsinformation sowie die zu Optionen für die Markierung aus.
+    - Ein Versicherter wählt im E-Rezept-FdV die zu markierende Abrechnungsinformation sowie die zu Optionen für die Markierung aus.
     - Der E-Rezept-Fachdienst speichert die Information.
   postconditions: |
     - Die Information zur Markierung ist im E-Rezept-Fachdienst gespeichert. Der Datenzugriff ist im E-Rezept-Fachdienst protokolliert.
@@ -187,12 +187,13 @@
   title: "Abrechnungsinformationen durch den Versicherten löschen"
   roles: ["Versicherter"]
   description: |
-    Ein Versicherter wählt im FdV (E-Rezept-FdV, E-Rezept-AdV) die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der E-Rezept-Fachdienst löscht die Abrechnungsinformation
+    Ein Versicherter wählt im E-Rezept-FdV die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der E-Rezept-Fachdienst löscht die Abrechnungsinformation
   preconditions: |
     - Eine LEI hat den Anwendungsfall "Abrechnungsinformation durch Abgebenden bereitstellen" für das E-Rezept durchgeführt.
     - Der Versicherte hat sich über den Anwendungsfall "Abrufen der Abrechnungsinformation durch den Versicherten" die Abrechnungsinformation auf sein FdV heruntergeladen.
   actions: |
-    - Ein Versicherter wählt im FdV (E-Rezept-FdV) die zu löschende Abrechnungsinformation sowie die zu Optionen für die Löschung aus.
+    - Ein Versicherter wählt im E-Rezept-FdV die zu löschende Abrechnungsinformation aus und bestätigt das Löschen.
+    - Das E-Rezept-FdV überträgt den Löschrequest
     - Der E-Rezept-Fachdienst löscht die Abrechnungsinformation.
   postconditions: |
     - Die Abrechnungsinformation sind auf dem E-Rezept-Fachdienst gelöscht. Das Löschen ist im E-Rezept-Fachdienst protokolliert.

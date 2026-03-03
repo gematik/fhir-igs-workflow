@@ -6,8 +6,10 @@ Die Query API für Communication beschreibt das Einstellen von Nachrichten im Ra
 Nachrichten werden als Communication‑Ressourcen an den E‑Rezept‑Fachdienst gesendet. Die verwendeten Profile richten sich nach der Kommunikationsbeziehung (Versicherter - Apotheke).
 
 ### Anforderungen an die Schnittstelle
-- [Anforderungen für den E-Rezept-Fachdienst](./query-api-communication-req-fd.html)
-- [Anforderungen für das E-Rezept-FdV](./query-api-communication-req-fdv.html)
+
+- [Server-Anforderungen zu Communications](./query-api-communication-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [FdV-Anforderungen zu Communications](./query-api-communication-req-fdv.html): Anforderungen an ein E-Rezept-FdV zur Nutzung der Schnittstelle.
+- [AVS-Anforderungen zu Communications](./query-api-communication-req-avs.html): Anforderungen an ein Apothekenverwaltungssystem zur Nutzung der Schnittstelle.
 
 ### Resource API
 

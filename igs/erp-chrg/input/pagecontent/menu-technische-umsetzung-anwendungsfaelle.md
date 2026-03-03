@@ -1,6 +1,6 @@
 {% assign use_cases = site.data['gen-use-cases'] %} {% assign roles = site.data['roles'] %}
 
-Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rezepte für PKV‑Versicherte“. Im Fokus steht, was im E‑Rezept‑Fachdienst und in den beteiligten Clients (FdV/AdV, Primärsysteme, AVS) passiert, wenn die fachlichen Anwendungsfälle ausgeführt werden.
+Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios "Abrechnungsinformationen für PKV-Versicherte". 
 
 <!-- AF_10082 - Abrechnungsinformation durch Abgebenden bereitstellen -->
 {% assign use_case = use_cases | where: "title", "UC 4.11 - Abrechnungsinformation durch Abgebenden bereitstellen" | first %}
@@ -96,7 +96,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 ## Berechtigen der Apotheke zum Ändern des PKV‑Abgabedatensatzes
 Der Versicherte übermittelt der abgebenden LEI einen AccessCode, um die Apotheke zum Abruf und einmaligen Ändern zu berechtigen.
 
-- Das FdV/AdV erzeugt einen Abrechnungsinformation‑Token.
+- Das E-Rezept-FdV erzeugt einen Abrechnungsinformation‑Token.
 - Der Versicherte übermittelt den Token per Nachricht (Communication) oder zeigt einen 2D‑Code.
 - Das AVS nutzt den AccessCode für Abruf/Änderung der Abrechnungsinformation.
 
