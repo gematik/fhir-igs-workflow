@@ -266,7 +266,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul id="markdown-toc">
   <li><a href="#verordnen-durch-psychotherapeuten" id="markdown-toc-verordnen-durch-psychotherapeuten">Verordnen durch Psychotherapeuten</a></li>
   <li><a href="#authentisierung-kostenträger" id="markdown-toc-authentisierung-kostenträger">Authentisierung Kostenträger</a></li>
-  <li><a href="#workflow-162" id="markdown-toc-workflow-162">Workflow 162</a></li>
+  <li><a href="#workflow-mit-flowtype-162" id="markdown-toc-workflow-mit-flowtype-162">Workflow mit Flowtype 162</a></li>
   <li><a href="#löschfristen" id="markdown-toc-löschfristen">Löschfristen</a></li>
   <li><a href="#zugriff-auf-fhir-vzd" id="markdown-toc-zugriff-auf-fhir-vzd">Zugriff auf FHIR-VZD</a></li>
   <li><a href="#evdga-fhir-profile" id="markdown-toc-evdga-fhir-profile">eVDGA FHIR Profile</a></li>
@@ -292,7 +292,7 @@ und den E-Rezept-Fachdienst zu.</p>
 
 <p>Die Authentisierung des Primärsystem einer Psychotherapeuten Praxis am E-Rezept-Fachdienst
 erfolgt mittels eines ACCESS_TOKEN. Diese werden durch den zentralen IDP-Dienst
-ausgestellt, welche die Identität des Nutzers attestieren. Eine Nutzung sektoraler IdPDienste
+ausgestellt, welche die Identität des Nutzers attestieren. Eine Nutzung sektoraler IdP-Dienste
 ist nicht vorgesehen.</p>
 
 <p>Für die Authentisierung nutzt die Psychotherapeuten Praxis ihre SMC-B mit der
@@ -311,19 +311,18 @@ vorgesehen.</p>
 
 <p>Für die Authentisierung nutzt der Kostenträger seine SM-B KTR mit der Rolle oid_kostentraeger.</p>
 
-<h3 id="workflow-162">Workflow 162</h3>
+<h3 id="workflow-mit-flowtype-162">Workflow mit Flowtype 162</h3>
 <p>Für Übermittlungen von DiGA Verordnungen wird der <strong>Flowtype 162</strong> verwendet.</p>
 
-<p>Der Flowtype 162 verwendet dasselbe Statusmodell wie Flowtype 160.</p>
+<p>Der Workflow mit Flowtype 162 verwendet dasselbe Statusmodell wie der Workflow mit Flowtype 160.</p>
 
-<p>Der Statusübergang von “in Abgabe (gesperrt)” zu “gelöscht” über “UC 4.3 - E-Rezept durch Abgebenden löschen” ist für DiGA Verordnungen nicht vorgesehen.</p>
+<p>Der Statusübergang von “in-progress” zu “cancelled” durch den Kostenträger über “UC 4.3 - E-Rezept durch Abgebenden löschen” ist für DiGA Verordnungen nicht vorgesehen.</p>
 
 <h3 id="löschfristen">Löschfristen</h3>
-<p>Die Löschfristen für Workflows mit Verordnungen des Flowtype 162 entsprechen denen des Flowtype 160.</p>
+<p>Die Löschfristen für Workflows mit Flowtype 162 entsprechen denen des Workflows mit Flowtype 160.</p>
 
 <h3 id="zugriff-auf-fhir-vzd">Zugriff auf FHIR-VZD</h3>
-<p>Zur Prüfung der IKNR muss der E-Rezept-Fachdienst die Telematik-ID des
-Kostenträgers auflösen. Das Mapping zwischen IKNR und Telematik-ID erfolgt über das FHIR-VZD und kann bis zu 24 Stunden gecacht werden.</p>
+<p>Zur Prüfung der IKNR muss der E-Rezept-Fachdienst die Telematik-ID des Kostenträgers auflösen. Das Mapping zwischen IKNR und Telematik-ID erfolgt über das FHIR-VZD und kann bis zu 24 Stunden gecacht werden.</p>
 
 <h3 id="evdga-fhir-profile">eVDGA FHIR Profile</h3>
 <p>Zur Verordnung von DiGA werden die KBV-Profile der elektronischen Verordnung
@@ -349,7 +348,7 @@ Workflowprofile des E-Rezept-Workflows werden um diese Profile ergänzt.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Feb 23, 2026 05:46+0000">2026-02-23</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 3, 2026 05:14+0000">2026-03-03</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

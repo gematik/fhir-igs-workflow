@@ -12,7 +12,7 @@ Version 2.0.0-draft - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/erp-diga/ImplementationGuide/de.gematik.eflow-diga | *Version*:2.0.0-draft |
-| Draft as of 2026-02-23 | *Computable Name*:ERezeptDiGA |
+| Draft as of 2026-03-03 | *Computable Name*:ERezeptDiGA |
 
 Dieser Implementation Guide beschreibt das Feature zur elektronischen Verordnung von Digitalen Gesundheitsanwendungen (DiGA). Er beschreibt DiGA-spezifische Anforderungen und Use Cases für Verordnende, Kostenträger und Versicherte.
 
@@ -98,7 +98,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "ERezeptDiGA",
   "title" : "Verordnungen für Digitale Gesundheitsanwendungen (DiGA)",
   "status" : "draft",
-  "date" : "2026-02-23T05:46:19+00:00",
+  "date" : "2026-03-03T05:14:36+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -1001,9 +1001,18 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
           "page" : [{
             "extension" : [{
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "op-create-req-client.html"
+              "valueUrl" : "op-create-req-fd.html"
             }],
-            "nameUrl" : "op-create-req-client.html",
+            "nameUrl" : "op-create-req-fd.html",
+            "title" : "Anforderungen an den E-Rezept-Fachdienst für die $create-Operation",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "op-create-req-pvs.html"
+            }],
+            "nameUrl" : "op-create-req-pvs.html",
             "title" : "Anforderungen an den verordnende Primärsystem für die $create-Operation",
             "generation" : "markdown"
           }]
@@ -1019,10 +1028,19 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
           "page" : [{
             "extension" : [{
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "op-activate-req-server.html"
+              "valueUrl" : "op-activate-req-fd.html"
             }],
-            "nameUrl" : "op-activate-req-server.html",
+            "nameUrl" : "op-activate-req-fd.html",
             "title" : "Anforderungen an den E-Rezept-Fachdienst für die $activate-Operation",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "op-activate-req-pvs.html"
+            }],
+            "nameUrl" : "op-activate-req-pvs.html",
+            "title" : "Anforderungen an den verordnende Primärsystem für die $activate-Operation",
             "generation" : "markdown"
           }]
         },
@@ -1033,7 +1051,25 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
           }],
           "nameUrl" : "op-accept.html",
           "title" : "Operation: $accept",
-          "generation" : "markdown"
+          "generation" : "markdown",
+          "page" : [{
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "op-accept-req-fd.html"
+            }],
+            "nameUrl" : "op-accept-req-fd.html",
+            "title" : "Anforderungen an den E-Rezept-Fachdienst für die $accept-Operation",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "op-accept-req-ktr.html"
+            }],
+            "nameUrl" : "op-accept-req-ktr.html",
+            "title" : "Anforderungen an das Clientsystem des Kostenträger für die $accept-Operation",
+            "generation" : "markdown"
+          }]
         },
         {
           "extension" : [{
@@ -1042,7 +1078,25 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
           }],
           "nameUrl" : "op-reject.html",
           "title" : "Operation: $reject",
-          "generation" : "markdown"
+          "generation" : "markdown",
+          "page" : [{
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "op-reject-req-fd.html"
+            }],
+            "nameUrl" : "op-reject-req-fd.html",
+            "title" : "Anforderungen an den E-Rezept-Fachdienst für die $reject-Operation",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "op-reject-req-ktr.html"
+            }],
+            "nameUrl" : "op-reject-req-ktr.html",
+            "title" : "Anforderungen an das Clientsystem des Kostenträger für die $reject-Operation",
+            "generation" : "markdown"
+          }]
         },
         {
           "extension" : [{
@@ -1055,19 +1109,46 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
           "page" : [{
             "extension" : [{
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "op-close-req-server.html"
+              "valueUrl" : "op-close-req-fd.html"
             }],
-            "nameUrl" : "op-close-req-server.html",
+            "nameUrl" : "op-close-req-fd.html",
             "title" : "Anforderungen an den E-Rezept-Fachdienst für die $close-Operation",
             "generation" : "markdown"
           },
           {
             "extension" : [{
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "op-close-req-client.html"
+              "valueUrl" : "op-close-req-ktr.html"
             }],
-            "nameUrl" : "op-close-req-client.html",
-            "title" : "Anforderungen an das Clientsystem des Kostenträgers für die $close-Operation",
+            "nameUrl" : "op-close-req-ktr.html",
+            "title" : "Anforderungen an das Clientsystem des Kostenträger für die $close-Operation",
+            "generation" : "markdown"
+          }]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "op-abort.html"
+          }],
+          "nameUrl" : "op-abort.html",
+          "title" : "Operation: $abort",
+          "generation" : "markdown",
+          "page" : [{
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "op-abort-req-fd.html"
+            }],
+            "nameUrl" : "op-abort-req-fd.html",
+            "title" : "Anforderungen an den E-Rezept-Fachdienst für die $abort-Operation",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "op-abort-req-pvs.html"
+            }],
+            "nameUrl" : "op-abort-req-pvs.html",
+            "title" : "Anforderungen an den verordnende Primärsystem für die $abort-Operation",
             "generation" : "markdown"
           }]
         }]

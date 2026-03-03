@@ -20,11 +20,8 @@ Die Operation $create wird als HTTP POST auf /Task/$create ausgeführt.
 
 ### Anforderungen an Schnittstelle
 
-Es gelten die übergreifenden Anforderungen an die $create Operation. ToDo: link zu übergreifenden Anforderungen
-
-Es gibt keine workflow-spezifischen Anforderungen für den E-Rezept-Fachdienst.
-
-[Workflow-spezifische Anforderungen für das PS der verordnenden LEI](./op-create-req-client.md)
+* [Server-Anforderungen zu `$create`](./op-create-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+* [Anforderungen für PVS zu `$create`](./op-create-req-pvs.md): Anforderungen an das PVS zur Nutzung der Schnittstelle.
 
 -API BEschreibung aus Cap Statement
 

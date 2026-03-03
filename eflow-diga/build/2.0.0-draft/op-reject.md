@@ -20,11 +20,8 @@ Die Operation $reject wird als HTTP POST auf /Task/<id>/$reject ausgeführt.
 
 ### Anforderungen an Schnittstelle
 
-Es gelten die übergreifenden Anforderungen an die $reject Operation. ToDo: link zu übergreifenden Anforderungen
-
-[Workflow-spezifische Anforderungen für den E-Rezept-Fachdienst](./op-reject-req-server.md)
-
-link AFO CS - PS der Verordnungen LEI
+* [Server-Anforderungen zu `$reject`](./op-reject-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+* [Anforderungen für KTR zu `$reject`](./op-reject-req-ktr.md): Anforderungen an das Clientsystem des KTR zur Nutzung der Schnittstelle.
 
 -API BEschreibung aus Cap Statement
 

@@ -18,11 +18,8 @@ Die Operation $close wird als HTTP POST auf /Task/<id>/$close ausgeführt.
 
 ### Anforderungen an Schnittstelle
 
-Es gelten die übergreifenden Anforderungen an die $close Operation. ToDo: link zu übergreifenden Anforderungen
-
-[Workflow-spezifische Anforderungen für den E-Rezept-Fachdienst](./op-close-req-server.md)
-
-[Workflow-spezifische Anforderungen für das Clientsystem des Kostenträgers](./op-close-req-client.md)
+* [Server-Anforderungen zu `$close`](./op-close-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+* [Anforderungen für KTR zu `$close`](./op-close-req-ktr.md): Anforderungen an das Clientsystem des KTR zur Nutzung der Schnittstelle.
 
 ### Hinweis
 

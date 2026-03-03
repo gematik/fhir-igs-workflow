@@ -10,7 +10,7 @@
   <name value="ERezeptDiGA"/>
   <title value="Verordnungen für Digitale Gesundheitsanwendungen (DiGA)"/>
   <status value="draft"/>
-  <date value="2026-02-23T05:46:19+00:00"/>
+  <date value="2026-03-03T05:14:36+00:00"/>
   <publisher value="gematik GmbH"/>
   <contact>
     <name value="gematik GmbH"/>
@@ -726,9 +726,17 @@
           <generation value="markdown"/>
           <page>
             <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-              <valueUrl value="op-create-req-client.html"/>
+              <valueUrl value="op-create-req-fd.html"/>
             </extension>
-            <nameUrl value="op-create-req-client.html"/>
+            <nameUrl value="op-create-req-fd.html"/>
+            <title value="Anforderungen an den E-Rezept-Fachdienst für die $create-Operation"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-create-req-pvs.html"/>
+            </extension>
+            <nameUrl value="op-create-req-pvs.html"/>
             <title value="Anforderungen an den verordnende Primärsystem für die $create-Operation"/>
             <generation value="markdown"/>
           </page>
@@ -742,10 +750,18 @@
           <generation value="markdown"/>
           <page>
             <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-              <valueUrl value="op-activate-req-server.html"/>
+              <valueUrl value="op-activate-req-fd.html"/>
             </extension>
-            <nameUrl value="op-activate-req-server.html"/>
+            <nameUrl value="op-activate-req-fd.html"/>
             <title value="Anforderungen an den E-Rezept-Fachdienst für die $activate-Operation"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-activate-req-pvs.html"/>
+            </extension>
+            <nameUrl value="op-activate-req-pvs.html"/>
+            <title value="Anforderungen an den verordnende Primärsystem für die $activate-Operation"/>
             <generation value="markdown"/>
           </page>
         </page>
@@ -756,6 +772,22 @@
           <nameUrl value="op-accept.html"/>
           <title value="Operation: $accept"/>
           <generation value="markdown"/>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-accept-req-fd.html"/>
+            </extension>
+            <nameUrl value="op-accept-req-fd.html"/>
+            <title value="Anforderungen an den E-Rezept-Fachdienst für die $accept-Operation"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-accept-req-ktr.html"/>
+            </extension>
+            <nameUrl value="op-accept-req-ktr.html"/>
+            <title value="Anforderungen an das Clientsystem des Kostenträger für die $accept-Operation"/>
+            <generation value="markdown"/>
+          </page>
         </page>
         <page>
           <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
@@ -764,6 +796,22 @@
           <nameUrl value="op-reject.html"/>
           <title value="Operation: $reject"/>
           <generation value="markdown"/>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-reject-req-fd.html"/>
+            </extension>
+            <nameUrl value="op-reject-req-fd.html"/>
+            <title value="Anforderungen an den E-Rezept-Fachdienst für die $reject-Operation"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-reject-req-ktr.html"/>
+            </extension>
+            <nameUrl value="op-reject-req-ktr.html"/>
+            <title value="Anforderungen an das Clientsystem des Kostenträger für die $reject-Operation"/>
+            <generation value="markdown"/>
+          </page>
         </page>
         <page>
           <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
@@ -774,18 +822,42 @@
           <generation value="markdown"/>
           <page>
             <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-              <valueUrl value="op-close-req-server.html"/>
+              <valueUrl value="op-close-req-fd.html"/>
             </extension>
-            <nameUrl value="op-close-req-server.html"/>
+            <nameUrl value="op-close-req-fd.html"/>
             <title value="Anforderungen an den E-Rezept-Fachdienst für die $close-Operation"/>
             <generation value="markdown"/>
           </page>
           <page>
             <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-              <valueUrl value="op-close-req-client.html"/>
+              <valueUrl value="op-close-req-ktr.html"/>
             </extension>
-            <nameUrl value="op-close-req-client.html"/>
-            <title value="Anforderungen an das Clientsystem des Kostenträgers für die $close-Operation"/>
+            <nameUrl value="op-close-req-ktr.html"/>
+            <title value="Anforderungen an das Clientsystem des Kostenträger für die $close-Operation"/>
+            <generation value="markdown"/>
+          </page>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="op-abort.html"/>
+          </extension>
+          <nameUrl value="op-abort.html"/>
+          <title value="Operation: $abort"/>
+          <generation value="markdown"/>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-abort-req-fd.html"/>
+            </extension>
+            <nameUrl value="op-abort-req-fd.html"/>
+            <title value="Anforderungen an den E-Rezept-Fachdienst für die $abort-Operation"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-abort-req-pvs.html"/>
+            </extension>
+            <nameUrl value="op-abort-req-pvs.html"/>
+            <title value="Anforderungen an den verordnende Primärsystem für die $abort-Operation"/>
             <generation value="markdown"/>
           </page>
         </page>

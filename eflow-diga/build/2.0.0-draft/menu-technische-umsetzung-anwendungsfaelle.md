@@ -44,7 +44,7 @@ Folgende Anwendungsfälle werden genutzt:
 * AccessCode des E-Rezepts ist im Primärsystem gespeichert.
 * Workflow zum E-Rezept ist im E-Rezept-Fachdienst im Status “initialisiert” angelegt.
 
-* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+* Beschreibung: Schnittstellen
   * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primaersystem. Für die Verordnung wird eine Rezept-ID aus dem E-Rezept-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).: * [Operation API: E-Rezept erstellen](./op-create.md)
 * QES im Primärsystem (Konnektor)
 
@@ -71,7 +71,7 @@ Folgende Anwendungsfälle werden genutzt:
 * Beschreibung: Nachbedingungen
   * Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES). Vorbereitende Tätigkeiten im Primärsystem können organisatorisch delegiert werden, die QES selbst jedoch nicht.: * QES-signierter Verordnungsdatensatz liegt im Primärsystem vor.
 
-* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+* Beschreibung: Schnittstellen
   * Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES). Vorbereitende Tätigkeiten im Primärsystem können organisatorisch delegiert werden, die QES selbst jedoch nicht.: * Keine (QES im Primärsystem)
 
 * Beschreibung: Relevante(r) Sektor(en)
@@ -99,7 +99,7 @@ Folgende Anwendungsfälle werden genutzt:
 * Der Workflow hat den Status “offen”.
 * Das Einstellen ist im E-Rezept-Fachdienst für den Versicherten protokolliert.
 
-* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+* Beschreibung: Schnittstellen
   * Ein E-Rezept wird vom Primärsystem beim E-Rezept-Fachdienst eingestellt und ein E-Rezept-Token erzeugt.: * [Operation API: E-Rezept aktivieren](./op-activate.md)
 
 * Beschreibung: Relevante(r) Sektor(en)
@@ -128,7 +128,7 @@ Folgende Anwendungsfälle werden genutzt:
 * Die personenbezogene und medizinische Daten (ausser Versicherten-ID) sind aus dem Workflow entfernt.
 * Das Löschen ist im E-Rezept-Fachdienst für den Versicherten protokolliert.
 
-* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+* Beschreibung: Schnittstellen
   * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im E-Rezept-Fachdienst auf “gelöscht” gesetzt.: * [Operation API: E-Rezept löschen](./op-abort.md)
 
 * Beschreibung: Relevante(r) Sektor(en)
@@ -166,7 +166,7 @@ Folgende Anwendungsfälle werden genutzt:
   * Ein Versicherter ruft im E-Rezept-FdV alle seine im E-Rezept-Fachdienst eingestellten E-Rezepte ab.: * E-Rezepte stehen im E-REzept-FdV zur Anzeige bereit; Daten für E-Rezept-Token sind verfügbar.
 * Der Abruf ist protokolliert.
 
-* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+* Beschreibung: Schnittstellen
   * Ein Versicherter ruft im E-Rezept-FdV alle seine im E-Rezept-Fachdienst eingestellten E-Rezepte ab.: * [Query API: Task](./query-api-task.md)
 
 * Beschreibung: Relevante(r) Sektor(en)
@@ -194,7 +194,7 @@ Folgende Anwendungsfälle werden genutzt:
 * Die personenbezogene und medizinische Daten (ausser Versicherten-ID) sind aus dem Workflow entfernt.
 * Das Löschen ist im E-Rezept-Fachdienst für den Versicherten protokolliert.
 
-* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+* Beschreibung: Schnittstellen
   * Der Versicherte setzt den Status eines E-Rezepts auf “gelöscht” und löscht es im E-Rezept-Fachdienst.: * [Operation API: E-Rezept löschen](./op-abort.md)
 
 * Beschreibung: Relevante(r) Sektor(en)
@@ -221,7 +221,7 @@ Folgende Anwendungsfälle werden genutzt:
   * Ein Versicherter oder Vertreter übermittelt einen E-Rezept-Token und/oder eine Nachricht an eine Apotheke oder einen Vertreter, wahlweise über die TI oder als 2D-Code.: * Nachricht liegt im E-Rezept-Fachdienst und kann vom Empfänger abgerufen werden.
 * Bei 2D-Code ist der Token für den Empfänger verfügbar.
 
-* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+* Beschreibung: Schnittstellen
   * Ein Versicherter oder Vertreter übermittelt einen E-Rezept-Token und/oder eine Nachricht an eine Apotheke oder einen Vertreter, wahlweise über die TI oder als 2D-Code.: * FHIR REST: Communication (E-Rezept-Nachricht einstellen)
 
 * Beschreibung: Relevante(r) Sektor(en)
@@ -266,7 +266,7 @@ Sobald die Telematik-ID im E-Rezept-FdV vorliegt, kann der Versicherte die Veror
 * Beschreibung: Nachbedingungen
   * Ein Versicherter oder Vertreter empfängt Nachrichten von abgebenden LEI über den E-Rezept-Fachdienst.: * Nachrichten liegen im FdV zur Anzeige bereit.
 
-* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+* Beschreibung: Schnittstellen
   * Ein Versicherter oder Vertreter empfängt Nachrichten von abgebenden LEI über den E-Rezept-Fachdienst.: * FHIR REST: Communication (E-Rezept-Nachrichten abrufen)
 
 * Beschreibung: Relevante(r) Sektor(en)
@@ -291,7 +291,7 @@ Sobald die Telematik-ID im E-Rezept-FdV vorliegt, kann der Versicherte die Veror
 * Beschreibung: Nachbedingungen
   * Der Versicherte löscht von ihm übermittelte Nachrichten an Apotheken oder Versicherte.: * Nachrichten sind im E-Rezept-Fachdienst und im FdV gelöscht.
 
-* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+* Beschreibung: Schnittstellen
   * Der Versicherte löscht von ihm übermittelte Nachrichten an Apotheken oder Versicherte.: * FHIR REST: Communication (E-Rezept-Nachricht löschen)
 
 * Beschreibung: Relevante(r) Sektor(en)
@@ -328,7 +328,7 @@ Folgende Anwendungsfälle werden genutzt:
 * Beschreibung: Nachbedingungen
   * Eine abgebende LEI empfängt E-Rezept-Token über die TI oder optisch als 2D-Code.: * E-Rezept-Token liegt im Primärsystem vor.
 
-* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+* Beschreibung: Schnittstellen
   * Eine abgebende LEI empfängt E-Rezept-Token über die TI oder optisch als 2D-Code.: * FHIR REST: Communication (E-Rezept-Nachrichten abrufen)
 
 * Beschreibung: Relevante(r) Sektor(en)
@@ -352,7 +352,7 @@ Folgende Anwendungsfälle werden genutzt:
 * Beschreibung: Nachbedingungen
   * Die abgebende LEI antwortet auf eine Nachricht eines Versicherten oder Vertreters.: * Nachricht liegt im E-Rezept-Fachdienst und kann asynchron empfangen werden.
 
-* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+* Beschreibung: Schnittstellen
   * Die abgebende LEI antwortet auf eine Nachricht eines Versicherten oder Vertreters.: * FHIR REST: Communication (E-Rezept-Nachricht einstellen)
 
 * Beschreibung: Relevante(r) Sektor(en)
@@ -381,7 +381,7 @@ Folgende Anwendungsfälle werden genutzt:
   * Eine abgebende LEI ruft ein E-Rezept auf Basis eines E-Rezept-Tokens aus dem E-Rezept-Fachdienst ab.: * Status ist “in Abgabe (gesperrt)” und protokolliert.
 * E-Rezept liegt im AVS vor; Geheimnis ist gespeichert.
 
-* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+* Beschreibung: Schnittstellen
   * Eine abgebende LEI ruft ein E-Rezept auf Basis eines E-Rezept-Tokens aus dem E-Rezept-Fachdienst ab.: * [Operation API: Task akzeptieren](./op-accept.md)
 
 * Beschreibung: Relevante(r) Sektor(en)
@@ -408,7 +408,7 @@ Folgende Anwendungsfälle werden genutzt:
   * Ein abgerufenes E-Rezept wird an den E-Rezept-Fachdienst zurückgegeben.: * Status ist “offen” und protokolliert.
 * E-Rezept, Token und Geheimnis sind im Primärsystem gelöscht.
 
-* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+* Beschreibung: Schnittstellen
   * Ein abgerufenes E-Rezept wird an den E-Rezept-Fachdienst zurückgegeben.: * [Operation API: Task zurückweisen](./op-reject.md)
 
 * Beschreibung: Relevante(r) Sektor(en)
@@ -435,7 +435,7 @@ Folgende Anwendungsfälle werden genutzt:
   * Nach der Abgabe wird das E-Rezept quittiert und eine Quittung vom E-Rezept-Fachdienst abgerufen.: * Status ist “quittiert”; Abgabeinformationen sind gespeichert.
 * Statuswechsel ist protokolliert; Quittung liegt im Primärsystem vor.
 
-* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+* Beschreibung: Schnittstellen
   * Nach der Abgabe wird das E-Rezept quittiert und eine Quittung vom E-Rezept-Fachdienst abgerufen.: * [Operation API: Task schliessen](./op-close.md)
 
 * Beschreibung: Relevante(r) Sektor(en)
@@ -459,7 +459,7 @@ Folgende Anwendungsfälle werden genutzt:
 * Beschreibung: Nachbedingungen
   * Die Quittung wird erneut abgerufen, falls die Übertragung beim ersten Abruf fehlgeschlagen ist.: * Quittung liegt im Primärsystem vor.
 
-* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+* Beschreibung: Schnittstellen
   * Die Quittung wird erneut abgerufen, falls die Übertragung beim ersten Abruf fehlgeschlagen ist.: * [Operation API: Task schliessen](./op-close.md)
 
 * Beschreibung: Relevante(r) Sektor(en)
