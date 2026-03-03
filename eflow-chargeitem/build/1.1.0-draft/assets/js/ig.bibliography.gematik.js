@@ -29,6 +29,13 @@ const literatureData = [
     },
     
     {
+        key: "gemILF_PS_eRp",
+        link: "https://gemspec.gematik.de/docs/gemILF/gemILF_PS_eRp/latest/",
+        title: "Spezifikation Implementierungsleitfaden Primärsysteme - E-Rezept",
+        author: "gematik"
+    },
+    
+    {
         key: "gemSpec_Perf",
         link: "https://gemspec.gematik.de/docs/gemSpec/gemSpec_Perf/latest/",
         title: "Übergreifende Spezifikation Performance und Mengengerüst TI-Plattform",

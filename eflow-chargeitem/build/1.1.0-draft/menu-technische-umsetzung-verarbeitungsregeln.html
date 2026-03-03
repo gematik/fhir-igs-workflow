@@ -260,14 +260,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div class="markdown-toc">
-  <p>Seiteninhalt:</p>
-
-<ul id="markdown-toc">
-  <li><a href="#löschfristen" id="markdown-toc-löschfristen">Löschfristen</a></li>
-  <li><a href="#protokollierung" id="markdown-toc-protokollierung">Protokollierung</a></li>
-</ul>
-
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
 <h3 id="löschfristen">Löschfristen</h3>
 <p>Für die Löschfristen des E-Rezepts gelten für Flowtype 200 und 209 die Vorgaben von Flowtype 160.</p>
@@ -278,16 +272,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         <testProcedure id="Produkttest" />
     </actor>
 Der E-Rezept-Fachdienst MUSS ein ChargeItem innerhalb eines Monats nach Ablauf von 10 Jahren nach dem Erstellen der Ressource automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren, damit nicht mehr benötigte Informationen gelöscht sind. Der E-Rezept-Fachdienst MUSS bei jedem Löschen eines ChargeItems alle referenzierten Bundles (E-Rezept-Bundle, Quittungs-Bundle, PKV-Abgabedatensatz) ebenfalls löschen, damit die Informationen rund um ein gelöschtes ChargeItem ebenfalls entfernt werden.
-</requirement>
-
-<h3 id="protokollierung">Protokollierung</h3>
-<p>TODO: Fix</p>
-<requirement conformance="SHALL" key="IG-ERP-CHRG-284" title="E-Rezept-Fachdienst – Versichertenprotokoll zu Operationen" version="0">
-    <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
-        <testProcedure id="Produkttest" />
-    </actor>
-Der E-Rezept-Fachdienst MUSS jeden Aufruf der folgenden Operationen protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern, damit der Versicherte Zugriffe nachvollziehen und bei unberechtigten Zugriffen intervenieren kann.
 </requirement>
 
 
@@ -309,7 +293,7 @@ Der E-Rezept-Fachdienst MUSS jeden Aufruf der folgenden Operationen protokollier
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 3, 2026 14:15+0000">2026-03-03</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 3, 2026 14:31+0000">2026-03-03</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

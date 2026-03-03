@@ -21,12 +21,12 @@ Das PS der abgebenden LEI MUSS es dem Nutzer ermöglichen, ein E-Rezept auszuwä
 Die Information, dass der Versicherte die Einwilligung zum Speichern der Abrechnungsinformationen auf dem E-Rezept-Fachdienst erteilt hat, wird im Anwendungsfall “E-Rezept abrufen” übermittelt.
 
 Das PS der abgebenden LEI MUSS im Anwendungsfall "Abrechnungsinformation bereitstellen" eine FHIR-Ressource des PKV-Abgabedatensatzes mit den Informationen zur Abrechnung des abgegebenen Medikaments erstellen.
-TODO: Fix Links Für die Spezifikation der Ressource PKV-Abgabedatensatz siehe [gemSpec_DM_eRp].
+Für die Spezifikation der Ressource PKV-Abgabedatensatz siehe [gemSpec_DM_eRp].
 
 Das Signieren des PKV-Abgabedatensatzes erfolgt gemäß [gemILF_PS_eRp] Kap. “Abgabedatensatz signieren”. Für die Wahl des Signaturverfahrens (QES oder nonQES) gelten die rechtlichen Vorgaben.
 
 Das PS der abgebenden LEI MUSS im Anwendungsfall "Abrechnungsinformation bereitstellen" eine FHIR-Ressource ChargeItem erstellen und den PKV-Abgabedatensatzes als contained Ressource einfügen.
-TODO: Fix Link Für die Spezifikation der Ressource ChargeItem siehe [gemSpec_DM_eRp].
+Für die Spezifikation der Ressource ChargeItem siehe [gemSpec_DM_eRp].
 
 Das PS der abgebenden LEI MUSS im Anwendungsfall "Abrechnungsinformation bereitstellen" die HTTP-Operation POST /ChargeItem/ des E-Rezept-Fachdienstes mit
 * ACCESS_TOKEN im Authorization-Header
@@ -45,12 +45,12 @@ Mit diesem Anwendungsfall kann die abgebende LEI den PKV-Abgabedatensatz zu eine
 Das PS der abgebenden LEI MUSS es dem Nutzer ermöglichen, die Abrechnungsinformation zu einem E-Rezept zum Ändern auf dem E-Rezept-Fachdienst auszuwählen.
 
 Das PS der abgebenden LEI MUSS im Anwendungsfall "PKV-Abgabedatensatz ändern" eine FHIR-Ressource des PKV-Abgabedatensatzes mit den Informationen zur Abrechnung des abgegebenen Medikaments erstellen.
-TODO: Fix Links Für die Spezifikation der Ressource PKV-Abgabedatensatz siehe [gemSpec_DM_eRp].
+Für die Spezifikation der Ressource PKV-Abgabedatensatz siehe [gemSpec_DM_eRp].
 
 Das Signieren des PKV-Abgabedatensatzes erfolgt gemäß [gemILF_PS_eRp] Kap. “Abgabedatensatz signieren”.
 
 Das PS der abgebenden LEI MUSS im Anwendungsfall "PKV-Abgabedatensatz ändern" eine FHIR-Ressource ChargeItem erstellen und den PKV-Abgabedatensatzes als contained Ressource einfügen.
-TODO: Fix Link Für die Spezifikation der Ressource ChargeItem siehe [gemSpec_DM_eRp].
+Für die Spezifikation der Ressource ChargeItem siehe [gemSpec_DM_eRp].
 
 Das PS abgebende LEI MUSS im Anwendungsfall "PKV-Abgabedatensatz ändern" die HTTP-Operation PUT /ChargeItem/<id>/ des E-Rezept-Fachdienstes mit
 * ACCESS_TOKEN im Authorization-Header
