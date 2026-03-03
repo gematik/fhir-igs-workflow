@@ -1,7 +1,7 @@
 Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `ChargeItem`-Query-Endpunkte.
 
 ### Abrechnungsinformationen abrufen
-### Liste von Abrechnungsinformationen abrufen (GET /ChargeItem)
+#### Liste von Abrechnungsinformationen abrufen (GET /ChargeItem)
 Mit diesem Anwendungsfall kann der Nutzer eine Liste aller Abrechnungsinformationen vom E-Rezept-Fachdienst abrufen, welche für den Versicherten bereitgestellt wurden.
 
 <!--A_24554-->
@@ -31,7 +31,7 @@ In der Response ist eine Liste von ChargeItem-Ressourcen enthalten. Für jede Ch
     <li>Prescription-ID</li>
 </ul>
 
-### Abrechnungsinformation abrufen (GET /ChargeItem/&#60;id&#62;)
+#### Abrechnungsinformation abrufen (GET /ChargeItem/&#60;id&#62;)
 Mit diesem Anwendungsfall kann der Nutzer (Versicherter) die Abrechnungsinformation zu einem E-Rezept vom E-Rezept-Fachdienst herunterladen.
 
 <!--A_24544-->
