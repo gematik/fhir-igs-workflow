@@ -14,6 +14,4 @@ Die API-Beschreibung für den Aufruf der Operation findet sich auf:
 - [API-ERP: Abgabeinformationen zu einem E-Rezept einstellen](https://github.com/gematik/api-erp/blob/master/docs/erp_eprescription.adoc#abgabeinformationen-zu-einem-e-rezept-einstellen)
 
 
-### Sicherheitsanforderungen
 
-Generelle Sicherheitsanforderungen werden [hier](./menu-technische-umsetzung-datenschutz-und-sicherheit.html) festgehalten.

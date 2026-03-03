@@ -14,6 +14,4 @@ Die API-Beschreibung für den Aufruf der Operation findet sich auf:
 - [API-ERP: Abfragen des Zugriffscodes im E-Rezept-Fachdienst](https://github.com/gematik/api-erp/blob/master/docs/erp_eprescription.adoc#abfragen-des-zugriffscodes-im-e-rezept-fachdienst)
 
 
-### Sicherheitsanforderungen
 
-Generelle Sicherheitsanforderungen werden [hier](./menu-technische-umsetzung-datenschutz-und-sicherheit.html) festgehalten.

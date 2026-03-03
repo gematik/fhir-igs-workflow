@@ -25,6 +25,4 @@ Anfragen an die <i>Consent</i>-Ressource können über die RESTful API durchgef�
 - [API-ERP: Zustimmung für die Nutzung von E-Rezepten im EU-Ausland](https://github.com/gematik/api-erp/blob/master/docs/erp_eprescription.adoc#zustimmung-f%C3%BCr-die-nutzung-von-e-rezepten-im-eu-ausland)
 
 
-### Sicherheitsanforderungen
 
-Generelle Sicherheitsanforderungen werden [hier](./menu-technische-umsetzung-datenschutz-und-sicherheit.html) festgehalten.

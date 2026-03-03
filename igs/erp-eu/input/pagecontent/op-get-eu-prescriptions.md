@@ -14,6 +14,3 @@ Die API-Beschreibung für den Aufruf der Operation findet sich auf:
 - [API-ERP: Abfragen von E-Rezepten des E-Rezept-Fachdienst](https://github.com/gematik/api-erp/blob/master/docs/erp_eprescription.adoc#abfragen-von-e-rezepten-des-e-rezept-fachdienst)
 
 
-### Sicherheitsanforderungen
-
-Generelle Sicherheitsanforderungen werden [hier](./menu-technische-umsetzung-datenschutz-und-sicherheit.html) festgehalten.
