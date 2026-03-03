@@ -1,64 +1,61 @@
 Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an Clientsysteme für die Nutzung der Operation `$reject`.
 
-Das PS der abgebenden LEI MUSS es dem Nutzer ermöglichen, ein E-Rezept zum Zurückgeben auszuwählen.
-
-Das PS der abgebenden LEI MUSS vom Nutzer eine Bestätigung einholen, dass das ausgewählte E-Rezept zurückgegeben werden soll und die Möglichkeit geben, das Zurückgeben abzubrechen.
 
 <!-- A_19249 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-236" title="PS abgebende LEI: E-Rezept durch Abgebenden zurückgeben" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-236" title="CS Kostenträger: Verordnung durch Abgebenden zurückgeben" version="0">
   <meta lockversion="false"/>
-  <actor name="PS_E-Rezept_abgebend">
+  <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>
   </actor>
-  Das PS der abgebenden LEI MUSS den Anwendungsfall "UC 4.2 - E-Rezept durch Abgebenden zurückgeben" gemäß TAB_ILFERP_008 umsetzen.
+  Das Clientsystem MUSS den Anwendungsfall "UC 4.2 - E-Rezept durch Abgebenden zurückgeben" gemäß TAB_ILFERP_008 umsetzen.
   <table>
     <tr> 
 		<th>Name</th>
-		<th>E-Rezept durch Abgebenden zurückgeben</th>
+		<th>Verordnung durch Abgebenden zurückgeben</th>
 	</tr>
 	<tr> 
 		<td>Auslöser</td>
-		<td>Aufruf des Anwendungsfalls in der UI</td>
+		<td>Aufruf des Anwendungsfalls in der UI oder automatisierte Verarbeitung</td>
 	</tr>
     <tr> 
 		<td>Akteur</td>
-		<td>Leistungserbringer, Mitarbeiter der abgebenden LEI</td>
+		<td>Mitarbeiter des Kostenträgers</td>
 	</tr>
     <tr> 
 		<td>Vorbedingung</td>
 		<td>
             <ul>
-                <li>Die LEI hat das E-Rezept vom E-Rezept-Fachdienst heruntergeladen und es befindet sich im Status "in-progress".</li>
-                <li>Der Nutzer hat ein E-Rezept zum Zurückgeben markiert und das Zurückgeben bestätigt.</li>
-                <li>Die LEI hat sich gegenüber der TI authentisiert.</li>
+                <li>Der Kostenträger hat die Verordnung vom Fachdienst heruntergeladen und es befindet sich im Status "in-progress".</li>
+                <li>Der Nutzer hat die Verordnung zum Zurückgeben markiert und das Zurückgeben bestätigt.</li>
+                <li>Das Clientsystem hat sich gegenüber der TI authentisiert.</li>
             </ul>
         </td>
 	</tr>
     <tr> 
 		<td>Nachbedingung</td>
-		<td>Das ausgewählte E-Rezept hat auf dem E-Rezept-Fachdienst den Status "ready"</td>
+		<td>Der Workflow der Verordnung hat auf dem Fachdienst den Status "ready"</td>
 	</tr>
     <tr> 
 		<td>Standardablauf</td>
 		<td>
             <ol>
-                <li>Task-ID und Geheimnis des E-Rezepts bestimmen</li>
-                <li>E-Rezept Status auf Fachdienst ändern</li>
-                <li>E-Rezept und E-Rezept-Token in PS löschen</li>
+                <li>Task-ID und Geheimnis der Verordnung bestimmen</li>
+                <li>Verordnung Status auf Fachdienst ändern</li>
+                <li>Verordnung und E-Rezept-Token im CS löschen</li>
             </ol>
         </td>
 	</tr>
   </table>
-  <div><figcaption><strong>Tabelle: </strong>TAB_ILFERP_008 - E-Rezept durch Abgebenden zurückgeben</figcaption></div>
+  <div><figcaption><strong>Tabelle: </strong>TAB_ILFERP_008 - Verordnung durch Clientsystem zurückgeben</figcaption></div>
 </requirement>
 
 <!-- A_19250 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-237" title="PS abgebende LEI: E-Rezept zurückgeben - Statusrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-237" title="CS Kostenträger: Verordnung zurückgeben - Statusrequest" version="0">
   <meta lockversion="false"/>
-  <actor name="PS_E-Rezept_abgebend">
+  <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>
   </actor>
-  Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezept durch Abgebenden zurückgeben" für das zurückzugebende E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$reject mit 
+  Das CS Kostenträger MUSS im Anwendungsfall "Verordnung durch Clientsystem zurückgeben" für die zurückzugebende Verordnung die HTTP-Operation POST /Task/&lt;id&gt;/$reject mit 
   <ul>
     <li>ACCESS_TOKEN im Authorization-Header</li>
     <li>Task-ID in URL &lt;id&gt; </li>
@@ -68,10 +65,10 @@ Das PS der abgebenden LEI MUSS vom Nutzer eine Bestätigung einholen, dass das a
 </requirement>
 
 <!-- A_19251 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-238" title="PS abgebende LEI: E-Rezept zurückgeben - E-Rezept löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-238" title="CS Kostenträger: Verordnung zurückgeben - Verordnung löschen" version="0">
   <meta lockversion="false"/>
-  <actor name="PS_E-Rezept_abgebend">
+  <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>
   </actor>
-  Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezept durch Abgebenden zurückgeben" für das zurückzugebende E-Rezept nach erfolgreichem Aufruf der Operation "Ein E-Rezept zurückweisen" die Daten zum E-Rezept, E-Rezept-Token und das Geheimnis im PS löschen.
+  Das CS Kostenträger MUSS im Anwendungsfall "Verordnung durch Clientsystem zurückgeben" für das zurückzugebende E-Rezept nach erfolgreichem Aufruf der Operation "Eine Verordnung zurückweisen" die Daten zu Verordnung, E-Rezept-Token und das Geheimnis im CS löschen.
 </requirement>

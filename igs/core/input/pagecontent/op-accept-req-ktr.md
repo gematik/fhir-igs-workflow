@@ -7,7 +7,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
     <actor name="CS_E-Rezept_KTR">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-    Das PS der abgebenden LEI MUSS im Anwendungsfall "Verordnung abrufen" zum Herunterladen des E-Rezepts die HTTP-Operation POST /Task/&#60;id&#62;/$accept mit
+    Das Clientsystem MUSS im Anwendungsfall "Verordnung abrufen" zum Herunterladen des E-Rezepts die HTTP-Operation POST /Task/&#60;id&#62;/$accept mit
     <ul> 
         <li>ACCESS_TOKEN im Authorization-Header</li>
         <li>Task-ID in URL &#60;id&#62;</li>
