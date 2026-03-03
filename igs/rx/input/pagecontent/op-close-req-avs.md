@@ -2,7 +2,7 @@ Diese Seite enthält die normativen Anforderungen an das AVS für die Operation 
 
 ### Anforderungen aus der Core Spezifikation
 
-{% include core-op-close-req-avs.md %}
+{% include core.op-close-req-avs.md %}
 
 ### Modulspezifische Anforderungen
 

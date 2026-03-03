@@ -2,7 +2,7 @@ Diese Seite enthält die normativen Anforderungen an das PVS für die Operation 
 
 ### Anforderungen aus der Core Spezifikation
 
-{% include core-op-create-req-pvs.md %}
+{% include core.op-create-req-pvs.md %}
 
 ### Modulspezifische Anforderungen
 

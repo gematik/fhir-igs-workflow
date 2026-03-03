@@ -5,19 +5,13 @@ Die Operation $close wird als HTTP POST auf /Task/&#60;id&#62;/$close ausgeführ
 
 ### Anforderungen an Schnittstelle
 
-Es gelten die übergreifenden Anforderungen an die $close Operation.
-ToDo: link zu übergreifenden Anforderungen
+- [Server-Anforderungen zu `$close`](./op-close-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
 
-[Workflow-spezifische Anforderungen für den E-Rezept-Fachdienst](./op-close-req-server.html)
+- [Anforderungen für KTR zu `$close`](./op-close-req-ktr.html): Anforderungen an das Clientsystem des KTR zur Nutzung der Schnittstelle.
 
-[Workflow-spezifische Anforderungen für das Clientsystem des Kostenträgers](./op-close-req-client.html)
 
 ### Hinweis
-Nach Abschluss der Workflows eines E-Rezeptes hat der Kostenträger die Möglichkeit
-dem Versicherten eine Antwort zur Zuweisung zu übermitteln. Hierfür erstellt der
-Kostenträger eine Communication vom ProfilGEM_ERP_PR_Communication_DiGA und
-ergänzt unter Communication.payload.contentString den Antworttext, der dem Nutzer
-im E-Rezept-FdV dargestellt werden soll.
+Nach Abschluss der Workflows eines E-Rezeptes hat der Kostenträger die Möglichkeit dem Versicherten eine Antwort zur Zuweisung zu übermitteln. Hierfür erstellt der Kostenträger eine Communication vom ProfilGEM_ERP_PR_Communication_DiGA und ergänzt unter Communication.payload.contentString den Antworttext, der dem Nutzer im E-Rezept-FdV dargestellt werden soll.
 
 ### Geschäftslogik
 ToDo: Diagram zum Ablauf

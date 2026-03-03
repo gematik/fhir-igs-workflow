@@ -1,6 +1,6 @@
 ### Anforderungen aus der Core Spezifikation
 
-{% include core-op-abort-req-fdv.md %}
+{% include core.op-abort-req-fdv.md %}
 
 ### Modulspezifische Anforderungen
 

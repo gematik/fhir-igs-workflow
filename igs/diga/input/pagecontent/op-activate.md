@@ -7,10 +7,8 @@ Die Operation $activate wird als HTTP POST auf /Task/&#60;id&#62;/$activate ausg
 
 ### Anforderungen an Schnittstelle
 
-Es gelten die übergreifenden Anforderungen an die $activate Operation.
-ToDo: link zu übergreifenden Anforderungen 
+- [Server-Anforderungen zu `$activate`](./op-activate-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
 
-[Workflow-spezifische Anforderungen für den E-Rezept-Fachdienst](./op-activate-req-server.html)
+- [Anforderungen für PVS zu `$activate`](./op-activate-req-pvs.html): Anforderungen an das PVS zur Nutzung der Schnittstelle.
 
-Es gibt keine workflow-spezifischen Anforderungen für das verordnende Primärsystem.
 

@@ -43,11 +43,14 @@ include_pattern = re.compile(r"\{\%\s*include\s+([^\s%]+)")
 selected = set()
 
 for md_file in module_page_dir.rglob("*.md"):
-    text = md_file.read_text(encoding="utf-8")
-    for match in include_pattern.finditer(text):
-        include_name = match.group(1).strip().strip('"\'')
-        if include_name.startswith("core-") and include_name.endswith(".md"):
-            selected.add(include_name)
+  text = md_file.read_text(encoding="utf-8")
+  for match in include_pattern.finditer(text):
+    include_name = match.group(1).strip().strip('"\'')
+    if (
+      include_name.endswith(".md")
+      and (include_name.startswith("core-") or include_name.startswith("core."))
+    ):
+      selected.add(include_name)
 
 for include_name in sorted(selected):
     print(include_name)
@@ -56,7 +59,15 @@ PY
 while IFS= read -r include_name; do
   [[ -z "$include_name" ]] && continue
 
-  core_file_name="${include_name#core-}"
+  if [[ "$include_name" == core-* ]]; then
+    core_file_name="${include_name#core-}"
+  elif [[ "$include_name" == core.* ]]; then
+    core_file_name="${include_name#core.}"
+  else
+    echo "Error: unsupported core include name '$include_name'" >&2
+    exit 1
+  fi
+
   src="$CORE_PAGE_DIR/$core_file_name"
   dest="$MODULE_INCLUDE_DIR/$include_name"
 
