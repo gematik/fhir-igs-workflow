@@ -15,7 +15,7 @@ Diese Seite enthält die normativen Anforderungen an das AVS für die Operation 
 
 ### Anforderungen aus der Core Spezifikation
 
-Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an das AVS für die Nutzung der Operation `$close`.
+Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an Clientsysteme für die Nutzung der Operation `$close`.
 
 ### Modulspezifische Anforderungen
 
