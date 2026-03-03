@@ -3,6 +3,85 @@
 
 Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der verordnung von Arzneimitteln genutzt werden.
 
+### Umzusetzende Anwendungsfälle von Clients
+
+#### PS verordnende LEI
+
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-212" title="PS verordnende LEI: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Das PS der verordnenden LEI MUSS für die Umsetzung der Verordnung von E-Rezepten für Arzneimittel die Anwendungsfälle
+
+    <ul>
+    <li>UC 2.1 - E-Rezepte erzeugen</li>
+    <li>E-Rezept qualifiziert signieren</li>
+    <li>UC 2.3 - E-Rezept einstellen</li>
+    <li>UC 2.5 - E-Rezept durch Verordnenden löschen</li>
+    </ul>
+
+    umsetzen.
+</requirement>
+
+#### PS abgebende LEI
+
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-213" title="PS abgebende LEI: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Das PS der abgebenden LEI MUSS für die Umsetzung der Belieferung von E-Rezepten für Arzneimittel die Anwendungsfälle
+
+    <ul>
+    <li>UC 4.1 - E-Rezept durch Abgebenden abrufen</li>
+    <li>UC 4.2 - E-Rezept durch Abgebenden zurückgeben</li>
+    <li>UC 4.3 - E-Rezept durch Abgebenden löschen</li>
+    <li>UC 4.4 - Quittung abrufen</li>
+    <li>UC 4.5 - Abgabedatensatz durch Abgebenden signieren</li>
+    <li>UC 4.8 - Quittung erneut abrufen</li>
+    <li>UC 4.6 - Nachrichten durch Abgebenden empfangen</li>
+    <li>UC 4.7 - Nachricht durch Abgebenden übermitteln</li>
+    <li>UC 4.9 - Nachricht durch Abgebenden löschen</li>
+    </ul>
+
+    umsetzen.
+</requirement>
+
+<requirement conformance="SHOULD" key="IG-TIFLOW-RX-214" title="PS abgebende LEI: TIFlow-RX - empfohlene Anwendungsfälle" version="0">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Das PS der abgebenden LEI SOLL für die Umsetzung der Belieferung von E-Rezepten für Arzneimittel den Anwendungsfall
+
+    <ul>
+    <li>UC 4.16 - Dispensierinformationen bereitstellen</li>
+    </ul>
+
+    umsetzen.
+</requirement>
+
+#### E-Rezept-FdV 
+
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-215" title="E-Rezept-FdV: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von E-Rezepten für Arzneimittel die Anwendungsfälle
+
+    <ul>
+    <li>UC 3.1 – E-Rezepte durch Versicherten abrufen</li>
+    <li>UC 3.6 – E-Rezept durch Vertreter abrufen</li>
+    <li>UC 3.2 – E-Rezept durch Versicherten löschen</li>
+    <li>UC 3.3 – Nachricht durch Versicherten übermitteln</li>
+    <li>UC 3.4 – Nachricht durch Versicherten empfangen</li>
+    <li>UC 3.8 – Nachricht durch Versicherten löschen</li>
+    </ul>
+
+    umsetzen.
+</requirement>
 
 
 

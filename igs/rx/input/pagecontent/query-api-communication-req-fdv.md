@@ -1,7 +1,13 @@
-Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Communication`-Query-Endpunkte.
+Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Communication`-Query-Endpunkte.
+
+### Anforderungen aus der Core Spezifikation
+
+{% include core.query-api-communication-req-fdv.md %}
+
+### Modulspezifische Anforderungen
 
 <!-- A_21402-02 -->
-<requirement conformance="SHALL NOT" key="IG-TIFlow-RX-20" title="E-Rezept-FdV: Anfrage Belieferung - Flowtype 162 / 169 / 209 - Anfrage nicht zulässig" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-RX-21" title="E-Rezept-FdV: Anfrage Belieferung - Flowtype 162 / 169 / 209 - Anfrage nicht zulässig" version="0">
     <meta lockversion="false"/>
     <actor name="eRP_FdV">
         <testProcedure id="Produkttest"/>
@@ -10,7 +16,7 @@ Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Communication`-
 </requirement>
 
 <!-- A_21403-02 -->
-<requirement conformance="SHALL" key="IG-TIFlow-RX-21" title="E-Rezept-FdV: E-Rezept zuweisen - Flowtype 169 / 209 - Zuweisen nicht zulässig" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-22" title="E-Rezept-FdV: E-Rezept zuweisen - Flowtype 169 / 209 - Zuweisen nicht zulässig" version="0">
     <meta lockversion="false"/>
     <actor name="eRP_FdV">
         <testProcedure id="Produkttest"/>
@@ -19,7 +25,7 @@ Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Communication`-
 </requirement>
 
 <!-- A_27833 -->
-<requirement conformance="SHALL NOT" key="IG-TIFlow-RX-22" title="E-Rezept-FdV: E-Rezept zuweisen- Flowtype 166 - Zuweisen als Versand nicht zulässig" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-RX-23" title="E-Rezept-FdV: E-Rezept zuweisen- Flowtype 166 - Zuweisen als Versand nicht zulässig" version="0">
     <meta lockversion="false"/>
     <actor name="eRP_FdV">
         <testProcedure id="Produkttest"/>
@@ -28,7 +34,7 @@ Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Communication`-
 </requirement>
 
 <!-- A_26326 -->
-<requirement conformance="SHALL" key="IG-TIFlow-RX-23" title="E-Rezept-FdV: E-Rezept zuweisen - Beginn Gültigkeit prüfen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-24" title="E-Rezept-FdV: E-Rezept zuweisen - Beginn Gültigkeit prüfen" version="0">
     <meta lockversion="false"/>
     <actor name="eRP_FdV">
         <testProcedure id="Produkttest"/>
@@ -37,7 +43,7 @@ Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Communication`-
 </requirement>
 
 <!-- A_21361-02 -->
-<requirement conformance="SHALL NOT" key="IG-TIFlow-RX-24" title="E-Rezept-FdV: Vertreterkommunikation - Flowtype 169 / 209 - Vertreterkommunikation nicht zulässig" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-RX-25" title="E-Rezept-FdV: Vertreterkommunikation - Flowtype 169 / 209 - Vertreterkommunikation nicht zulässig" version="0">
     <meta lockversion="false"/>
     <actor name="eRP_FdV">
         <testProcedure id="Produkttest"/>

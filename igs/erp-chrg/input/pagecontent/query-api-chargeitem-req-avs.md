@@ -1,4 +1,4 @@
-## Abrechnungsinformation bereitstellen (POST /ChargeItem)
+### Abrechnungsinformation bereitstellen (POST /ChargeItem)
 Mit diesem Anwendungsfall stellt die abgebende LEI die Abrechnungsinformation zu einem E-Rezept auf dem E-Rezept-Fachdienst ein.
 
 <!--A_22708-->
@@ -77,7 +77,7 @@ Wenn das E-Rezept bereits vom E-Rezept-Fachdienst gelöscht wurde, dann enthält
 
 Wenn der Versicherte zwischenzeitlich die Einwilligung zum Speichern von Abrechnungsinformationen im E-Rezept-Fachdienst widerrufen hat, dann enthält der Response den Fehlercode 403.
 
-## PKV-Abgabedatensatz ändern (PUT /ChargeItem/&#60;id&#62;)
+### PKV-Abgabedatensatz ändern (PUT /ChargeItem/&#60;id&#62;)
 Mit diesem Anwendungsfall kann die abgebende LEI den PKV-Abgabedatensatz zu einem E-Rezept, welche die abgebende LEI zuvor auf dem E-Rezept-Fachdienst bereitgestellt hat, ändern. Als Voraussetzung muss der Versicherte der abgebenden LEI einen AccessCode übermitteln, um die abgebende LEI zu berechtigen.
 
 <!--A_22191-->
@@ -143,7 +143,7 @@ Für die Spezifikation der Ressource ChargeItem siehe [gemSpec_DM_eRp].
 
 Wenn der Versicherte zwischenzeitlich die Einwilligung zum Speichern von Abrechnungsinformationen im E-Rezept-Fachdienst widerrufen hat, dann enthält der Response den Fehlercode 403.
 
-## Abrechnungsinformation abrufen (GET /ChargeItem/&#60;id&#62;)
+### Abrechnungsinformation abrufen (GET /ChargeItem/&#60;id&#62;)
 Mit diesem Anwendungsfall kann eine abgebende LEI die Abrechnungsinformation vom E-Rezept-Fachdienst abrufen, welche durch sie zuvor bereitgestellt und noch nicht gelöscht wurde. Als Voraussetzung muss der Versicherte der abgebenden LEI einen AccessCode übermitteln, um die abgebende LEI zu berechtigen.
 
 TODO: A_22202 

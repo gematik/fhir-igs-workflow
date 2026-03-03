@@ -1,5 +1,5 @@
 
-<!-- Quelle: A_26007 - E-Rezept-FdV: E-Rezept zuweisen - Flowtype 162 - Kostenträger auswählen -->
+<!-- A_26007 -->
 <requirement conformance="MAY" key="IG-TIFlow-DiGA-31" title="A_26007 - E-Rezept-FdV: E-Rezept zuweisen - Flowtype 162 - Kostenträger auswählen" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-FdV">

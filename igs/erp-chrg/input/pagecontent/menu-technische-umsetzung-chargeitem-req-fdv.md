@@ -1,4 +1,4 @@
-## Abrechnungsinformation-Token als 2D-Code anzeigen
+### Abrechnungsinformation-Token als 2D-Code anzeigen
 Mit diesem Anwendungsfall kann der Nutzer den AccessCode zum Ändern als 2D-Code auf dem Bildschirm seines E-Rezept-FdVs anzeigen lassen, um es direkt in der Apotheke vorzuzeigen und die Apotheke damit zu berechtigen, die Abrechnungsinformation vom E-Rezept-Fachdienst abzurufen und den PKV-Abgabedatensatz einmalig zu ändern.
 
 <!--A_24577-->
@@ -39,7 +39,7 @@ Für die Beschreibung der Struktur des Abrechnungsinformation-Token siehe [gemSp
       Das E-Rezept-FdV MUSS im Anwendungsfall "2D-Code Abrechnungsinformation anzeigen" mit dem erstellten Abrechnungsinformation-Token einen 2D-Code erstellen und auf dem Display des Endgerätes anzeigen.
 </requirement>
 
-## Abrechnungsinformation exportieren
+### Abrechnungsinformation exportieren
 Mit diesem Anwendungsfall kann der Versicherte die Abrechnungsinformation aus dem E-Rezept-FdV exportieren, um es zur Abrechnung einzureichen oder zu archivieren.
 
 <!--A_24555-->

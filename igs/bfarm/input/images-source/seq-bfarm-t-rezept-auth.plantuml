@@ -1,0 +1,14 @@
+@startuml
+title Zugriff auf BfArM T-Rezept Webdienst
+
+actor "E-Rezept-Fachdienst" as ERFD
+participant "BfArM Authdienst" as AUTH
+participant "BfArM Webdienst" as WEB
+
+ERFD -> AUTH: POST /ords/rezepte/oauth/token\n(client_id, client_secret,\ngrant_type=client_credentials)
+AUTH --> ERFD: AccessToken (JWT)
+
+ERFD -> WEB: GET /ords/rezepte/t-rezept/v1\nAuthorization: Bearer <AccessToken>
+WEB --> ERFD: 200 OK
+
+@enduml

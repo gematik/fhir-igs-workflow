@@ -1,14 +1,14 @@
 Die Query API für ChargeItem ermöglicht den Zugriff auf Abrechnungsinformationen (Verordnungsdatensatz, PKV‑Abgabedatensatz, Quittung). Die Abrechnungsinformation wird als ChargeItem mit Referenzen auf die Datensätze abgebildet.
 
-## Profilierung
+### Profilierung
 Die Profilierung der Ressource ChargeItem ist hier dokumentiert: https://simplifier.net/erezept-patientenrechnung/gem_erpchrg_pr_chargeitem
 
-## Anforderungen an Schnittstelle
-- [Spezifische Anforderungen für den E-Rezept-Fachdienst](./query-api-chargeitem-req-fd.html)
-- [Spezifische Anforderungen für den E-Rezept-FdV](./query-api-chargeitem-req-fdv.html)
-- [Spezifische Anforderungen für den abgebenden Leistungserbringer](./query-api-chargeitem-req-avs.html)
+### Anforderungen an Schnittstelle
+- [Anforderungen für den E-Rezept-Fachdienst](./query-api-chargeitem-req-fd.html)
+- [Anforderungen für den E-Rezept-FdV](./query-api-chargeitem-req-fdv.html)
+- [Anforderungen für den abgebenden Leistungserbringer](./query-api-chargeitem-req-avs.html)
 
-## GET /ChargeItem (Liste)
+### GET /ChargeItem (Liste)
 
 ### Nachricht
 Versicherte rufen ihre Abrechnungsinformationen als Liste ab. Die Antwort ist ein Bundle vom Typ searchset ohne die referenzierten Datensätze.
@@ -34,7 +34,7 @@ Anfragen an die Communication-Ressource können über die RESTful API mittels HT
   </div>
 </div>
 
-## GET /ChargeItem/&#60;id&#62; (Details)
+### GET /ChargeItem/&#60;id&#62; (Details)
 
 ### Nachricht
 Der Detailabruf liefert ein Bundle mit ChargeItem, Verordnungsdatensatz, PKV‑Abgabedatensatz und Quittung. Für Versicherte werden die Datensätze durch den E‑Rezept‑Fachdienst signiert.
@@ -60,7 +60,7 @@ Der Detailabruf erfolgt aus dem FdV/AdV oder durch die abgebende LEI (mit Access
   </div>
 </div>
 
-## POST /ChargeItem (Bereitstellen)
+### POST /ChargeItem (Bereitstellen)
 
 ### Nachricht
 Die abgebende LEI stellt die Abrechnungsinformation bereit, indem sie ein ChargeItem an den E‑Rezept‑Fachdienst übermittelt. Das ChargeItem enthält Referenzen auf Verordnungsdatensatz und Quittung sowie den PKV‑Abgabedatensatz (contained Binary). Für die Berechtigungsprüfung werden Task‑ID und Secret über URL‑Parameter übermittelt.
@@ -75,7 +75,7 @@ Die Operation wird nach der Belieferung ausgelöst, sobald eine Einwilligung des
 ### Resource API
 TODO
 
-## PATCH /ChargeItem/&#60;id&#62; (Markierungen)
+### PATCH /ChargeItem/&#60;id&#62; (Markierungen)
 
 ### Nachricht
 Versicherte können Markierungen am ChargeItem (z. B. für Einreichung) ändern.
@@ -86,7 +86,7 @@ Der Anwendungsfall wird im FdV/AdV ausgelöst, wenn Markierungen angepasst werde
 ### Resource API
 TODO
 
-## PUT /ChargeItem/&#60;id&#62; (Ändern PKV‑Abgabedatensatz)
+### PUT /ChargeItem/&#60;id&#62; (Ändern PKV‑Abgabedatensatz)
 
 ### Nachricht
 Die abgebende LEI überschreibt den PKV‑Abgabedatensatz eines ChargeItems. Dafür sind Prescription‑ID und AccessCode erforderlich.
@@ -99,7 +99,7 @@ Der Anwendungsfall wird ausgelöst, wenn Korrekturen an Abgabedaten notwendig si
 ### Resource API
 TODO
 
-## DELETE /ChargeItem/&#60;id&#62;
+### DELETE /ChargeItem/&#60;id&#62;
 
 ### Nachricht
 Versicherte können Abrechnungsinformationen löschen. Dabei werden auch die referenzierten Datensätze gelöscht.
@@ -110,5 +110,5 @@ Der Anwendungsfall wird durch den Versicherten im FdV/AdV ausgelöst.
 ### Resource API
 TODO
 
-## Sicherheitsanforderungen
+### Sicherheitsanforderungen
 Generelle Sicherheitsanforderungen werden [hier](./menu-schnittstellen-datenschutz-und-sicherheit.html) festgehalten.

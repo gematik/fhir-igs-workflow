@@ -1,0 +1,22 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: eeaf9737cf719d501dafcb7b562b54afc94f27fcbf0c8396d816cf41facb9e80
+created: '2026-03-02T12:25:39.664316'
+date: '2026-03-02T12:25:39.664318'
+key: IG-TIFLOW-CORE-61
+modified: '2026-03-02T12:25:39.664317'
+release_status: NEW
+source: input/pagecontent/op-activate-req-fd.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
+  über /Task/&#60;id&#62;/$activate den im Aufrufparameter übergebenen FHIR-Operationsparameter
+  des QES-Datensatzes als PKCS#7-Datei einer Enveloping CAdES-Signatur entgegennehmen
+  und verarbeiten und bei Fehlen oder ungültiger ASN.1 Datenstruktur die Weiterverarbeitung
+  im Fachdienst mit dem http-Status-Code 400 beantworten, damit kein Schadcode und
+  keine "fachfremden" Daten in den E-Rezept-Fachdienst hochgeladen werden.
+title: E-Rezept-Fachdienst - Task aktivieren - Schemavalidierung
+version: 0

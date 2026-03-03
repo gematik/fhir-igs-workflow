@@ -1,4 +1,4 @@
-
+<!-- A_28540 -->
 <requirement conformance="SHALL" key="IG-TIFlow-DiGA-30" title="CS Kostenträger: Nachricht versenden - Flowtype 162 - Communication erstellen" version="0">
   <meta lockversion="false"/>
   <actor name="CS_E-Rezept_KTR">

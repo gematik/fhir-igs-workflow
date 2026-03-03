@@ -11,7 +11,7 @@ Die Fachanwendung E-Rezept ermöglicht eine Übermittlung von ärztlichen und za
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 600px; margin-bottom: 30px;">
-        <img src="./übersicht-erezept.png" alt="Übersicht E-Rezept" style="width: 100%;">
+        <img src="./uebersicht-erezept.png" alt="Übersicht E-Rezept" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung: </strong>Übersicht E-Rezept</figcaption>
 </figure>
@@ -107,7 +107,7 @@ Nach Übergabe von Task-ID und AccessCode (z. B. 2D-Code oder Nachricht) ruft di
 
 **Beteiligte Systeme:** AVS, E-Rezept-Fachdienst
 
-**Technische Anwendungsfälle (User Stories)**
+**Technische Anwendungsfälle**
 
 {% assign scenario_use_cases = "UC_4_1_E_Rezept_durch_Abgebenden_abrufen, UC_4_2_E_Rezept_durch_Abgebenden_zurueckgeben, UC_4_3_E_Rezept_durch_Abgebenden_loeschen, UC_4_4_Quittung_abrufen, UC_4_5_Abgabedatensatz_signieren, UC_4_8_Quittung_erneut_abrufen, UC_4_16_Dispensierinformationen_bereitstellen" | split: ", " %}
 
@@ -133,23 +133,3 @@ Versicherte verwalten ihre E-Rezepte in der E-Rezept-App, sehen Zugriffsprotokol
 {% assign scenario_use_cases = "UC_3_1_E_Rezepte_durch_Versicherten_abrufen, UC_3_2_E_Rezept_durch_Versicherten_loeschen, UC_3_9_Dispensierinformationen_durch_Versicherten_abrufen" | split: ", " %}
 
 {% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Technische Anwendungsfälle mit Bezug zu Anwendungsfall <i>Verwalten von E-Rezepten durch Versicherten</i>" %}
-
-
-### Nachrichtenaustausch zwischen Versicherten und Apotheke
-
-Versicherte und Apotheken tauschen Nachrichten zum E-Rezept asynchron über den E-Rezept-Fachdienst aus. Dabei kann der Versicherte eine Apotheke verbindlich zuweisen und optional strukturierte Angaben zur Belieferung (z. B. Abholung oder Botenlieferung) mitsenden. Die Apotheke kann auf diese Nachricht antworten und dem Versicherten weitere Informationen bereitstellen.
-
-#### Fachlicher Ablauf
-
-1. Der Versicherte weist das E-Rezept einer Apotheke zu und sendet eine Nachricht mit dem E-Rezept-Token.
-2. Der E-Rezept-Fachdienst validiert den Inhalt, ergänzt Metadaten (Absender, Sendezeitpunkt) und stellt die Nachricht bereit.
-3. Die Apotheke ruft neue Nachrichten ab, verarbeitet die Angaben und antwortet bei Bedarf mit einer eigenen Nachricht.
-4. Der Versicherte ruft Antworten der Apotheke ab und kann den weiteren Belieferungsprozess starten.
-
-**Beteiligte Systeme:** FdV, AVS, E-Rezept-Fachdienst
-
-**Technische Anwendungsfälle**
-
-{% assign scenario_use_cases = "UC_3_3_Nachricht_durch_Versicherten_uebermitteln, UC_3_8_Nachricht_durch_Versicherten_loeschen, UC_4_6_Nachrichten_durch_Abgebenden_empfangen, UC_4_7_Nachricht_durch_Abgebenden_uebermitteln, UC_4_9_Nachricht_durch_Abgebenden_loeschen, UC_3_4_Nachrichten_durch_Versicherten_empfangen" | split: ", " %}
-
-{% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Technische Anwendungsfälle mit Bezug zu Anwendungsfall <i>Nachrichtenaustausch zwischen Versicherten und Apotheke</i>" %}

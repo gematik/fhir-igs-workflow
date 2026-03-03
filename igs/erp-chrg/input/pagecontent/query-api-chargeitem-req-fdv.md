@@ -1,6 +1,6 @@
 Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `ChargeItem`-Query-Endpunkte.
 
-## Abrechnungsinformationen abrufen
+### Abrechnungsinformationen abrufen
 ### Liste von Abrechnungsinformationen abrufen (GET /ChargeItem)
 Mit diesem Anwendungsfall kann der Nutzer eine Liste aller Abrechnungsinformationen vom E-Rezept-Fachdienst abrufen, welche für den Versicherten bereitgestellt wurden.
 
@@ -79,7 +79,7 @@ TODO: A_22174-01
 
 In der Response ist die ChargeItem Ressource und die zugehörigen Detaildatensätze Verordnungsdatensatz, PKV-Abgabedatensatz, Quittung und der AccessCode zum Ändern des PKV-Abgabedatensatzes enthalten.
 
-## Abrechnungsinformation markieren (PATCH /Charge/&#60;id&#62;)
+### Abrechnungsinformation markieren (PATCH /Charge/&#60;id&#62;)
 Mit diesem Anwendungsfall kann der Nutzer (Versicherter) Markierungen zu seiner Abrechnungsinformation setzen. Diese werden auf dem E-Rezept-Fachdienst gespeichert.
 
 <!--A_24553-->
@@ -135,7 +135,7 @@ TODO: A_22177-02
       ausführen.
 </requirement>
 
-## Abrechnungsinformation löschen (DELETE /ChargeItem/&#60;id&#62;)
+### Abrechnungsinformation löschen (DELETE /ChargeItem/&#60;id&#62;)
 <!--A_24546-->
 <requirement conformance="MAY" key="IG-ERP-CHRG-90005HHP" title="E-Rezept-FdV: optional: Abrechnungsinformation löschen" version="0">
     <meta lockversion="false"/>

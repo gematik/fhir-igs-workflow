@@ -23,7 +23,6 @@ menu:
   Start: index.html
   Fachlichkeit:
     Digitale Gesundheitsanwendungen: menu-fachlichkeit-diga.html
-    Szenarien: menu-fachlichkeit-szenarien.html
   Technische Umsetzung:
     Systemüberblick: menu-technische-umsetzung-systemueberblick.html
     Technische Anwendungsfälle: menu-technische-umsetzung-anwendungsfaelle.html
@@ -47,10 +46,6 @@ pages:
     title: "Implementation Guide elektronische Verordnung von DiGAs"
   menu-fachlichkeit-diga.md:
     title: "Elektronische Verordnung von DiGAs"
-    menu-fachlichkeit-szenarien.md:
-      title: "Szenarien für den DiGA-Workflow"
-      menu-fachlichkeit-szenario-diga.md:
-        title: "Szenario: Verordnungen für DiGA"
   menu-technische-umsetzung-systemueberblick.md:
     title: "Systemüberblick"
     menu-technische-umsetzung-anwendungsfaelle.md:
@@ -77,18 +72,40 @@ pages:
     title: "Operation API"
     op-create.md:
       title: "Operation: $create"
-      op-create-req-client.md:
+      op-create-req-fd.md:
+        title: "Anforderungen an den E-Rezept-Fachdienst für die $create-Operation"
+      op-create-req-pvs.md:
         title: "Anforderungen an den verordnende Primärsystem für die $create-Operation"
     op-activate.md:
       title: "Operation: $activate"
-      op-activate-req-server.md:
+      op-activate-req-fd.md:
         title: "Anforderungen an den E-Rezept-Fachdienst für die $activate-Operation"
+      op-activate-req-pvs.md:
+        title: "Anforderungen an den verordnende Primärsystem für die $activate-Operation"
     op-accept.md:
       title: "Operation: $accept"
+      op-accept-req-fd.md:
+        title: "Anforderungen an den E-Rezept-Fachdienst für die $accept-Operation"
+      op-accept-req-ktr.md:
+        title: "Anforderungen an das Clientsystem des Kostenträger für die $accept-Operation"
     op-reject.md:
       title: "Operation: $reject"
+      op-reject-req-fd.md:
+        title: "Anforderungen an den E-Rezept-Fachdienst für die $reject-Operation"
+      op-reject-req-ktr.md:
+        title: "Anforderungen an das Clientsystem des Kostenträger für die $reject-Operation"
     op-close.md:
       title: "Operation: $close"
+      op-close-req-fd.md:
+        title: "Anforderungen an den E-Rezept-Fachdienst für die $close-Operation"
+      op-close-req-ktr.md:
+        title: "Anforderungen an das Clientsystem des Kostenträger für die $close-Operation"
+    op-abort.md:
+      title: "Operation: $abort"
+      op-abort-req-fd.md:
+        title: "Anforderungen an den E-Rezept-Fachdienst für die $abort-Operation"
+      op-abort-req-pvs.md:
+        title: "Anforderungen an den verordnende Primärsystem für die $abort-Operation"
   artifacts.md:
     title: "FHIR-Artefakte"
   menu-schnittstellen-additional-api.md:

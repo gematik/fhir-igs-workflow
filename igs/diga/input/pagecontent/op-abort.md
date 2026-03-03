@@ -8,15 +8,11 @@ Die Operation $abort wird als HTTP POST auf /Task/<id>/$abort ausgeführt.
 
 ### Anforderungen an Schnittstelle
 
-Es gelten die übergreifenden Anforderungen an die $abort Operation.
-ToDo: link zu übergreifenden Anforderungen 
+- [Server-Anforderungen zu `$abort`](./op-abort-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
 
-Es gibt keine workflow-spezifischen Anforderungen für den E-Rezept-Fachdienst.
+- [Anforderungen für PVS zu `$abort`](./op-abort-req-pvs.html): Anforderungen an das PVS zur Nutzung der Schnittstelle.
 
-Es gibt keine workflow-spezifischen Anforderungen für das PS der verordnenden LEI.
-
-Es gibt keine workflow-spezifischen Anforderungen für das E-Rezept-FdV.
-
+- [Anforderungen für FdV zu `$abort`](./op-abort-req-fdv.html): Anforderungen an das FdV zur Nutzung der Schnittstelle.
  
 -API BEschreibung aus Cap Statement
  
