@@ -35,10 +35,6 @@ Hinweis: Die Textnachricht ist optional.
 
 Innerhalb der Textnachricht sind keine Internet-Links und keine Non-Printable-Characters zulässig.
 
-TODO: Do A_22738-01?
-
-text
-
 Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation-Token einer Apotheke übermitteln" eine FHIR Ressource Communication des Profils https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReq mit
 * Telematik-ID der ausgewählten abgebenden LEI in recipient
 * Textnachricht in payload contentString
