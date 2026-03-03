@@ -1,5 +1,4 @@
 Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Communication`-Query-Endpunkte.
-TODO: Prüfverfahren
 
 ### Anforderungen aus der Core Spezifikation
 

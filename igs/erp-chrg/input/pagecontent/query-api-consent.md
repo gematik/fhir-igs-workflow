@@ -7,53 +7,33 @@ Die Query API für Consent ermöglicht das Erteilen, Einsehen und Widerrufen der
 
 ### POST /Consent (Einwilligung erteilen)
 
-### Nachricht
+#### Nachricht
 Der Versicherte erteilt die Einwilligung durch das Erstellen einer Consent‑Ressource (CHARGCONS). Die KVNR wird in Consent.patient.identifier angegeben.
 
 ### GET /Consent (Einwilligung einsehen)
 
-### Nachricht
+#### Nachricht
 Der Versicherte liest die gespeicherte Einwilligung aus. Die Antwort ist ein Bundle mit den Consent‑Ressourcen des Versicherten.
 
 **Beispiel-URI:** `https://prescriptionserver.telematik/Consent`
 
-### Auslösung
+#### Auslösung
 Die Operation wird im FdV/AdV ausgelöst, um den Einwilligungsstatus anzuzeigen.
 
-### Resource API
-<div class="gematik-apidoc"
-  data-api-type="FHIRResource"
-  data-api-fhir-resource-type="Consent"
-  data-api-fhir-interaction="read"
-  data-api-operation-id="readConsent">
-  <div id="CapabilityStatement">
-    <pre>
-      {% include CapabilityStatement-erp-fachdienst-server-erpchrg.json %}
-    </pre>
-  </div>
-</div>
+#### Resource API
+Anfragen an die <i>Consent</i>-Ressource können über die RESTful API mittels HTTP GET-Anfragen durchgeführt werden. 
 
 ### DELETE /Consent (Einwilligung widerrufen)
 
-### Nachricht
+#### Nachricht
 Der Versicherte widerruft die Einwilligung. Der Widerruf löscht die Consent‑Ressource und alle zugehörigen Abrechnungsinformationen.
 
 **Beispiel-URI:** `https://prescriptionserver.telematik/Consent?category=CHARGCONS`
 
-### Auslösung
+#### Auslösung
 Die Operation wird im FdV/AdV ausgelöst, wenn der Versicherte die Einwilligung zurückzieht.
 
-### Resource API
-<div class="gematik-apidoc"
-  data-api-type="FHIRResource"
-  data-api-fhir-resource-type="Consent"
-  data-api-fhir-interaction="delete"
-  data-api-operation-id="deleteConsent">
-  <div id="CapabilityStatement">
-    <pre>
-      {% include CapabilityStatement-erp-fachdienst-server-erpchrg.json %}
-    </pre>
-  </div>
-</div>
+#### Resource API
+Die <i>Consent</i>-Ressource können über die RESTful API mittels HTTP DELETE-Anfragen gelöscht werden.
 
 

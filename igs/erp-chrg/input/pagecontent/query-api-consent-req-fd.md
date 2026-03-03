@@ -6,7 +6,7 @@ Diese Seite beschreibt Anforderungen am E-Rezept-Fachdienst zur Nutzung der `Con
 
 ### Modulspezifische Anforderungen
 
-### POST /Consent (Einwilligung erteilen)
+#### POST /Consent (Einwilligung erteilen)
 
 <requirement conformance="SHALL" key="IG-ERP-CHRG-219" title="E-Rezept-Fachdienst – Consent schreiben – Rollenprüfung Versicherter" version="0">
     <meta lockversion="false"/>
@@ -48,7 +48,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunk
 Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent – falls bei den Prüfungen keine Fehler aufgetreten sind, welche zum Abbruch der Operation führen – die übermittelte Ressource persistieren.
 </requirement>
 
-### GET /Consent (Einwilligung einsehen)
+#### GET /Consent (Einwilligung einsehen)
 
 <requirement conformance="SHALL" key="IG-ERP-CHRG-217" title="E-Rezept-Fachdienst – Consent lesen – Rollenprüfung Versicherter" version="0">
     <meta lockversion="false"/>
@@ -66,7 +66,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
 Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Consent die dem Versicherten zugeordneten Consent-Ressourcen anhand der KVNR des Versicherten im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren und in den Response aufnehmen, die in Consent.patient.identifier die entsprechende KVNR des begünstigten Versicherten referenziert haben, damit ausschließlich Versicherte ihre eigenen Informationen zu Einwilligungen einsehen können.
 </requirement>
 
-### DELETE /Consent (Einwilligung widerrufen)
+#### DELETE /Consent (Einwilligung widerrufen)
 
 <requirement conformance="SHALL" key="IG-ERP-CHRG-212" title="E-Rezept-Fachdienst – Consent löschen – alles Löschen verbieten" version="0">
     <meta lockversion="false"/>

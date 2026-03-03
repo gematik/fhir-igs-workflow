@@ -1,5 +1,3 @@
-Operationen
-
 Diese Seite bietet einen Einstieg in die Operations‑APIs.
 
 ### Operationen

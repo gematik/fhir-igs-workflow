@@ -21,16 +21,6 @@ Mit diesem Anwendungsfall stellt die abgebende LEI die Abrechnungsinformation zu
 
 Die Information, dass der Versicherte die Einwilligung zum Speichern der Abrechnungsinformationen auf dem E-Rezept-Fachdienst erteilt hat, wird im Anwendungsfall "E-Rezept abrufen" übermittelt.
 
-TODO: A_22187
-<!--A_22187-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-52369JHM" title="E-Rezept-Fachdienst – title" version="0">
-    <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Produkttest"/>
-    </actor>
-      text
-</requirement>
-
 <!--A_22188-->
 <requirement conformance="SHALL" key="IG-ERP-CHRG-03077PVE" title="PS abgebende LEI: Abrechnungsinformation bereitstellen – PKV-Abgabedatensatz erstellen" version="0">
     <meta lockversion="false"/>
@@ -89,16 +79,6 @@ Mit diesem Anwendungsfall kann die abgebende LEI den PKV-Abgabedatensatz zu eine
       Das PS der abgebenden LEI MUSS es dem Nutzer ermöglichen, die Abrechnungsinformation zu einem E-Rezept zum Ändern auf dem E-Rezept-Fachdienst auszuwählen.
 </requirement>
 
-TODO: A_22192 
-<!--A_22192-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-80758PUK" title="PS abgebende LEI: title" version="0">
-    <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Konformitätsbestätigung"/>
-    </actor>
-      text
-</requirement>
-
 <!--A_22193-->
 <requirement conformance="SHALL" key="IG-ERP-CHRG-06446PDE" title="PS abgebende LEI: PKV-Abgabedatensatz ändern – PKV-Abgabedatensatz erstellen" version="0">
     <meta lockversion="false"/>
@@ -145,16 +125,6 @@ Wenn der Versicherte zwischenzeitlich die Einwilligung zum Speichern von Abrechn
 
 ### Abrechnungsinformation abrufen (GET /ChargeItem/&#60;id&#62;)
 Mit diesem Anwendungsfall kann eine abgebende LEI die Abrechnungsinformation vom E-Rezept-Fachdienst abrufen, welche durch sie zuvor bereitgestellt und noch nicht gelöscht wurde. Als Voraussetzung muss der Versicherte der abgebenden LEI einen AccessCode übermitteln, um die abgebende LEI zu berechtigen.
-
-TODO: A_22202 
-<!--A_22202 -->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-08524D64" title="PS abgebende LEI: Abrechnungsinformation abrufen" version="0">
-    <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Produkttest"/>
-    </actor>
-      text
-</requirement>
 
 <!--A_22203-->
 <requirement conformance="SHALL" key="IG-ERP-CHRG-63541GTY" title="PS abgebende LEI: Abrechnungsinformation abrufen - Leserequest" version="0">

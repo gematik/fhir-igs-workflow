@@ -13,16 +13,6 @@ Mit diesem Anwendungsfall kann der Nutzer eine Liste aller Abrechnungsinformatio
       Das E-Rezept-FdV KANN den Anwendungsfall "Liste Abrechnungsinformationen abrufen" umsetzen.
 </requirement>
 
-TODO: A_22172-01
-<!--A_22172-01-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-79742GJZ" title="E-Rezept-FdV: title" version="0">
-    <meta lockversion="false"/>
-    <actor name="eRP_FdV">
-        <testProcedure id="Produkttest"/>
-    </actor>
-      text
-</requirement>
-
 <!--A_22173-->
 <requirement conformance="SHALL" key="IG-ERP-CHRG-64555GAN" title="E-Rezept-FdV: Liste Abrechnungsinformationen abrufen - Abfragerequest" version="0">
     <meta lockversion="false"/>
@@ -51,16 +41,6 @@ Mit diesem Anwendungsfall kann der Nutzer (Versicherter) die Abrechnungsinformat
         <testProcedure id="Herstellererklärung"/>
     </actor>
       Das E-Rezept-FdV KANN den Anwendungsfall "Abrechnungsinformation durch den Versicherten abrufen" umsetzen.
-</requirement>
-
-TODO: A_22174-01
-<!--A_22174-01-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-92528SYV" title="E-Rezept-Fachdienst – title" version="0">
-    <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
-        <testProcedure id="Produkttest"/>
-    </actor>
-      text
 </requirement>
 
 <!--A_22175-->
@@ -103,16 +83,6 @@ Mit diesem Anwendungsfall kann der Nutzer (Versicherter) Markierungen zu seiner 
         <li>zur Abrechnung bei der Beihilfe eingereicht (extention "subsity")</li>
         <li>zur Einreichung beim Finanzamt verwendet (extention "taxOffice")</li>
       </ul>
-</requirement>
-
-TODO: A_22177-02
-<!--A_22177-02-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-89929A71" title="E-Rezept-FdV: title" version="0">
-    <meta lockversion="false"/>
-    <actor name="eRP_FdV">
-        <testProcedure id="Produkttest"/>
-    </actor>
-      text
 </requirement>
 
 <!--A_22179-01-->
@@ -166,16 +136,6 @@ TODO: A_22177-02
 Das E-Rezept-FdV muss im Rahmen der Bestätigung darauf hinweisen, dass mit dem Löschen der Abrechnungsinformation die Daten des Verordnungsdatensatzes, des PKV-Abgabedatensatzes und der Quittung gelöscht werden und somit ein Neueinstellen der Abrechnungsinformation durch die Apotheke ggf. nicht mehr möglich ist.
 
 Das E-Rezept-FdV kann es dem Nutzer ermöglichen, den Anwendungsfall zum lokalen Löschen für die zu löschende Abrechnungsinformation zusammen mit dem Löschen auf dem E-Rezept-Fachdienst auszuführen.
-
-TODO: A_22182-01
-<!--A_22182-01-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-25421EA5" title="E-Rezept-FdV: title" version="0">
-    <meta lockversion="false"/>
-    <actor name="eRP_FdV">
-        <testProcedure id="Produkttest"/>
-    </actor>
-      text
-</requirement>
 
 <!--A_22183-->
 <requirement conformance="SHALL" key="IG-ERP-CHRG-82359UAF" title="E-Rezept-FdV: Abrechnungsinformation löschen - Löschrequest" version="0">
