@@ -11,7 +11,7 @@ Version 1.1.0-draft - ci-build
 
 ## E-Rezept-FdV Anforderungen: Communication-Query
 
-Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Communication`-Query-Endpunkte. TODO: Prüfverfahren
+Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Communication`-Query-Endpunkte.
 
 ### Anforderungen aus der Core Spezifikation
 

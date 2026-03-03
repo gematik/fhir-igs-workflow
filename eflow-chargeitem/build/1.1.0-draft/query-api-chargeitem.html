@@ -266,30 +266,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul id="markdown-toc">
   <li><a href="#profilierung" id="markdown-toc-profilierung">Profilierung</a></li>
   <li><a href="#anforderungen-an-schnittstelle" id="markdown-toc-anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</a></li>
+  <li><a href="#api-beschreibung" id="markdown-toc-api-beschreibung">API Beschreibung</a></li>
   <li><a href="#get-chargeitem-liste" id="markdown-toc-get-chargeitem-liste">GET /ChargeItem (Liste)</a></li>
-  <li><a href="#nachricht" id="markdown-toc-nachricht">Nachricht</a></li>
-  <li><a href="#auslösung" id="markdown-toc-auslösung">Auslösung</a></li>
-  <li><a href="#resource-api" id="markdown-toc-resource-api">Resource API</a></li>
   <li><a href="#get-chargeitemid-details" id="markdown-toc-get-chargeitemid-details">GET /ChargeItem/&#60;id&#62; (Details)</a></li>
-  <li><a href="#nachricht-1" id="markdown-toc-nachricht-1">Nachricht</a></li>
-  <li><a href="#auslösung-1" id="markdown-toc-auslösung-1">Auslösung</a></li>
-  <li><a href="#resource-api-1" id="markdown-toc-resource-api-1">Resource API</a></li>
   <li><a href="#post-chargeitem-bereitstellen" id="markdown-toc-post-chargeitem-bereitstellen">POST /ChargeItem (Bereitstellen)</a></li>
-  <li><a href="#nachricht-2" id="markdown-toc-nachricht-2">Nachricht</a></li>
-  <li><a href="#auslösung-2" id="markdown-toc-auslösung-2">Auslösung</a></li>
-  <li><a href="#resource-api-2" id="markdown-toc-resource-api-2">Resource API</a></li>
   <li><a href="#patch-chargeitemid-markierungen" id="markdown-toc-patch-chargeitemid-markierungen">PATCH /ChargeItem/&#60;id&#62; (Markierungen)</a></li>
-  <li><a href="#nachricht-3" id="markdown-toc-nachricht-3">Nachricht</a></li>
-  <li><a href="#auslösung-3" id="markdown-toc-auslösung-3">Auslösung</a></li>
-  <li><a href="#resource-api-3" id="markdown-toc-resource-api-3">Resource API</a></li>
   <li><a href="#put-chargeitemid-ändern-pkvabgabedatensatz" id="markdown-toc-put-chargeitemid-ändern-pkvabgabedatensatz">PUT /ChargeItem/&#60;id&#62; (Ändern PKV‑Abgabedatensatz)</a></li>
-  <li><a href="#nachricht-4" id="markdown-toc-nachricht-4">Nachricht</a></li>
-  <li><a href="#auslösung-4" id="markdown-toc-auslösung-4">Auslösung</a></li>
-  <li><a href="#resource-api-4" id="markdown-toc-resource-api-4">Resource API</a></li>
   <li><a href="#delete-chargeitemid" id="markdown-toc-delete-chargeitemid">DELETE /ChargeItem/&#60;id&#62;</a></li>
-  <li><a href="#nachricht-5" id="markdown-toc-nachricht-5">Nachricht</a></li>
   <li><a href="#auslösung-5" id="markdown-toc-auslösung-5">Auslösung</a></li>
-  <li><a href="#resource-api-5" id="markdown-toc-resource-api-5">Resource API</a></li>
 </ul>
 
 </div>
@@ -305,509 +289,91 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="./query-api-chargeitem-req-avs.html">Anforderungen für den abgebenden Leistungserbringer</a></li>
 </ul>
 
+<h3 id="api-beschreibung">API Beschreibung</h3>
+
+<ul>
+  <li><a href="https://github.com/gematik/api-erp/blob/master/docs/erp_chargeItem.adoc">API-ERP: Charge Items</a></li>
+</ul>
+
 <h3 id="get-chargeitem-liste">GET /ChargeItem (Liste)</h3>
 
-<h3 id="nachricht">Nachricht</h3>
+<h4 id="nachricht">Nachricht</h4>
 <p>Versicherte rufen ihre Abrechnungsinformationen als Liste ab. Die Antwort ist ein Bundle vom Typ searchset ohne die referenzierten Datensätze.</p>
 
 <p><strong>Beispiel-URI:</strong> <code class="language-plaintext highlighter-rouge">https://erp.zentral.erp.splitdns.ti-dienste.de/ChargeItem/</code></p>
 
 <p>Hinweis: Liegt keine Einwilligung vor, wird eine leere Liste zurückgegeben, da nach Widerruf alle Abrechnungsinformationen gelöscht wurden.</p>
 
-<h3 id="auslösung">Auslösung</h3>
+<h4 id="auslösung">Auslösung</h4>
 <p>Die Operation wird im FdV/AdV ausgelöst, z. B. beim Abruf der Liste oder nach Gerätewechsel.</p>
 
-<h3 id="resource-api">Resource API</h3>
-<p>Anfragen an die Communication-Ressource können über die RESTful API mittels HTTP GET-Anfragen durchgeführt werden.</p>
-<div class="gematik-apidoc" data-api-type="FHIRResource" data-api-fhir-resource-type="ChargeItem" data-api-fhir-interaction="search-type" data-api-operation-id="searchChargeItem">
-  <div id="CapabilityStatement">
-    <pre>
-      {
-  "resourceType": "CapabilityStatement",
-  "id": "erp-fachdienst-server-erpchrg",
-  "meta": {
-    "profile": [
-      "https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"
-    ]
-  },
-  "url": "https://gematik.de/fhir/erpchrg/OperationDefinition/ERPFachdienstServerChrgOperationDefinition",
-  "extension": [
-    {
-      "url": "https://gematik.de/fhir/ti/StructureDefinition/extension-base-url",
-      "valueString": "https://gematik.de/fhir/erpchrg"
-    }
-  ],
-  "name": "ERPFachdienstServerChrg",
-  "status": "draft",
-  "version": "1.1.0",
-  "date": "2025-04-10",
-  "title": "ERPCHRG CapabilityStatement für den E-Rezept-Fachdienst",
-  "description": "CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)",
-  "contact": [
-    {
-      "telecom": [
-        {
-          "system": "url",
-          "value": "https://www.gematik.de"
-        }
-      ]
-    }
-  ],
-  "kind": "requirements",
-  "fhirVersion": "4.0.1",
-  "format": [
-    "application/fhir+json",
-    "application/fhir+xml"
-  ],
-  "rest": [
-    {
-      "mode": "server",
-      "resource": [
-        {
-          "type": "Task",
-          "versioning": "versioned-update",
-          "readHistory": true,
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-              "valueCode": "SHALL"
-            }
-          ],
-          "interaction": [
-            {
-              "code": "read",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ]
-            },
-            {
-              "code": "search-type",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "ChargeItem",
-          "versioning": "versioned-update",
-          "readHistory": true,
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-              "valueCode": "SHALL"
-            }
-          ],
-          "interaction": [
-            {
-              "code": "read",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ]
-            },
-            {
-              "code": "search-type",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ]
-            },
-            {
-              "code": "create",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ]
-            },
-            {
-              "code": "update",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ]
-            },
-            {
-              "code": "patch",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ]
-            },
-            {
-              "code": "delete",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "Consent",
-          "versioning": "versioned-update",
-          "readHistory": true,
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-              "valueCode": "SHALL"
-            }
-          ],
-          "interaction": [
-            {
-              "code": "read",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ]
-            },
-            {
-              "code": "create",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ]
-            },
-            {
-              "code": "delete",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "Communication",
-          "versioning": "versioned-update",
-          "readHistory": true,
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-              "valueCode": "SHALL"
-            }
-          ],
-          "interaction": [
-            {
-              "code": "create",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
-
-    </pre>
-  </div>
-</div>
+<h4 id="resource-api">Resource API</h4>
+<p>Anfragen an die <i>ChargeItem</i>-Ressource können über die RESTful API mittels HTTP GET-Anfragen durchgeführt werden.</p>
 
 <h3 id="get-chargeitemid-details">GET /ChargeItem/&#60;id&#62; (Details)</h3>
 
-<h3 id="nachricht-1">Nachricht</h3>
+<h4 id="nachricht-1">Nachricht</h4>
 <p>Der Detailabruf liefert ein Bundle mit ChargeItem, Verordnungsdatensatz, PKV‑Abgabedatensatz und Quittung. Für Versicherte werden die Datensätze durch den E‑Rezept‑Fachdienst signiert.</p>
 
 <p><strong>Beispiel-URI (Versicherter):</strong> <code class="language-plaintext highlighter-rouge">https://prescriptionserver.telematik/ChargeItem/200.000.001.944.091.20</code></p>
 
 <p><strong>Beispiel-URI (abgebende LEI):</strong> <code class="language-plaintext highlighter-rouge">https://prescriptionserver.telematik/ChargeItem/200.000.001.944.091.20?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea</code></p>
 
-<h3 id="auslösung-1">Auslösung</h3>
+<h4 id="auslösung-1">Auslösung</h4>
 <p>Der Detailabruf erfolgt aus dem FdV/AdV oder durch die abgebende LEI (mit AccessCode), z. B. zur Korrektur.</p>
 
-<h3 id="resource-api-1">Resource API</h3>
-
-<div class="gematik-apidoc" data-api-type="FHIRResource" data-api-fhir-resource-type="ChargeItem" data-api-fhir-interaction="read" data-api-operation-id="readChargeItem">
-  <div id="CapabilityStatement">
-    <pre>
-      {
-  "resourceType": "CapabilityStatement",
-  "id": "erp-fachdienst-server-erpchrg",
-  "meta": {
-    "profile": [
-      "https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"
-    ]
-  },
-  "url": "https://gematik.de/fhir/erpchrg/OperationDefinition/ERPFachdienstServerChrgOperationDefinition",
-  "extension": [
-    {
-      "url": "https://gematik.de/fhir/ti/StructureDefinition/extension-base-url",
-      "valueString": "https://gematik.de/fhir/erpchrg"
-    }
-  ],
-  "name": "ERPFachdienstServerChrg",
-  "status": "draft",
-  "version": "1.1.0",
-  "date": "2025-04-10",
-  "title": "ERPCHRG CapabilityStatement für den E-Rezept-Fachdienst",
-  "description": "CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)",
-  "contact": [
-    {
-      "telecom": [
-        {
-          "system": "url",
-          "value": "https://www.gematik.de"
-        }
-      ]
-    }
-  ],
-  "kind": "requirements",
-  "fhirVersion": "4.0.1",
-  "format": [
-    "application/fhir+json",
-    "application/fhir+xml"
-  ],
-  "rest": [
-    {
-      "mode": "server",
-      "resource": [
-        {
-          "type": "Task",
-          "versioning": "versioned-update",
-          "readHistory": true,
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-              "valueCode": "SHALL"
-            }
-          ],
-          "interaction": [
-            {
-              "code": "read",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ]
-            },
-            {
-              "code": "search-type",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "ChargeItem",
-          "versioning": "versioned-update",
-          "readHistory": true,
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-              "valueCode": "SHALL"
-            }
-          ],
-          "interaction": [
-            {
-              "code": "read",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ]
-            },
-            {
-              "code": "search-type",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ]
-            },
-            {
-              "code": "create",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ]
-            },
-            {
-              "code": "update",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ]
-            },
-            {
-              "code": "patch",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ]
-            },
-            {
-              "code": "delete",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "Consent",
-          "versioning": "versioned-update",
-          "readHistory": true,
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-              "valueCode": "SHALL"
-            }
-          ],
-          "interaction": [
-            {
-              "code": "read",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ]
-            },
-            {
-              "code": "create",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ]
-            },
-            {
-              "code": "delete",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "Communication",
-          "versioning": "versioned-update",
-          "readHistory": true,
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-              "valueCode": "SHALL"
-            }
-          ],
-          "interaction": [
-            {
-              "code": "create",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
-
-    </pre>
-  </div>
-</div>
+<h4 id="resource-api-1">Resource API</h4>
+<p>Anfragen an die <i>ChargeItem</i>-Ressource können über die RESTful API mittels HTTP GET-Anfragen durchgeführt werden.</p>
 
 <h3 id="post-chargeitem-bereitstellen">POST /ChargeItem (Bereitstellen)</h3>
 
-<h3 id="nachricht-2">Nachricht</h3>
+<h4 id="nachricht-2">Nachricht</h4>
 <p>Die abgebende LEI stellt die Abrechnungsinformation bereit, indem sie ein ChargeItem an den E‑Rezept‑Fachdienst übermittelt. Das ChargeItem enthält Referenzen auf Verordnungsdatensatz und Quittung sowie den PKV‑Abgabedatensatz (contained Binary). Für die Berechtigungsprüfung werden Task‑ID und Secret über URL‑Parameter übermittelt.</p>
 
 <p><strong>Beispiel-URI:</strong> <code class="language-plaintext highlighter-rouge">https://prescriptionserver.telematik/ChargeItem?task=200.000.001.944.091.20&amp;secret=c36ca26502892b371d252c99b496e31505ff449aca9bc69e231c58148f6233cf</code></p>
 
 <p>Hinweis: In VAU‑Requests sind u. a. die Header <code class="language-plaintext highlighter-rouge">X-erp-user: l</code> und <code class="language-plaintext highlighter-rouge">X-erp-resource: ChargeItem</code> zu setzen.</p>
 
-<h3 id="auslösung-2">Auslösung</h3>
+<h4 id="auslösung-2">Auslösung</h4>
 <p>Die Operation wird nach der Belieferung ausgelöst, sobald eine Einwilligung des Versicherten vorliegt und die Abrechnungsinformation digital bereitgestellt werden soll.</p>
 
-<h3 id="resource-api-2">Resource API</h3>
-<p>TODO</p>
+<h4 id="resource-api-2">Resource API</h4>
+<p>Die <i>ChargeItem</i>-Ressource können über die RESTful API mittels HTTP GET-Anfragen angelegt werden.</p>
 
 <h3 id="patch-chargeitemid-markierungen">PATCH /ChargeItem/&#60;id&#62; (Markierungen)</h3>
 
-<h3 id="nachricht-3">Nachricht</h3>
+<h4 id="nachricht-3">Nachricht</h4>
 <p>Versicherte können Markierungen am ChargeItem (z. B. für Einreichung) ändern.</p>
 
-<h3 id="auslösung-3">Auslösung</h3>
+<h4 id="auslösung-3">Auslösung</h4>
 <p>Der Anwendungsfall wird im FdV/AdV ausgelöst, wenn Markierungen angepasst werden.</p>
 
-<h3 id="resource-api-3">Resource API</h3>
-<p>TODO</p>
+<h4 id="resource-api-3">Resource API</h4>
+<p>Die <i>ChargeItem</i>-Ressource können über die RESTful API mittels HTTP PATCH-Anfragen angepasst werden.</p>
 
 <h3 id="put-chargeitemid-ändern-pkvabgabedatensatz">PUT /ChargeItem/&#60;id&#62; (Ändern PKV‑Abgabedatensatz)</h3>
 
-<h3 id="nachricht-4">Nachricht</h3>
+<h4 id="nachricht-4">Nachricht</h4>
 <p>Die abgebende LEI überschreibt den PKV‑Abgabedatensatz eines ChargeItems. Dafür sind Prescription‑ID und AccessCode erforderlich.</p>
 
 <p><strong>Beispiel-URI:</strong> <code class="language-plaintext highlighter-rouge">https://prescriptionserver.telematik/ChargeItem/200.000.001.944.091.20?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea</code></p>
 
-<h3 id="auslösung-4">Auslösung</h3>
+<h4 id="auslösung-4">Auslösung</h4>
 <p>Der Anwendungsfall wird ausgelöst, wenn Korrekturen an Abgabedaten notwendig sind.</p>
 
-<h3 id="resource-api-4">Resource API</h3>
-<p>TODO</p>
+<h4 id="resource-api-4">Resource API</h4>
+<p>Die <i>ChargeItem</i>-Ressource können über die RESTful API mittels HTTP PUT-Anfragen korrigiert werden.</p>
 
 <h3 id="delete-chargeitemid">DELETE /ChargeItem/&#60;id&#62;</h3>
 
-<h3 id="nachricht-5">Nachricht</h3>
+<h4 id="nachricht-5">Nachricht</h4>
 <p>Versicherte können Abrechnungsinformationen löschen. Dabei werden auch die referenzierten Datensätze gelöscht.</p>
 
 <h3 id="auslösung-5">Auslösung</h3>
 <p>Der Anwendungsfall wird durch den Versicherten im FdV/AdV ausgelöst.</p>
 
-<h3 id="resource-api-5">Resource API</h3>
-<p>TODO</p>
+<h4 id="resource-api-5">Resource API</h4>
+<p>Die <i>ChargeItem</i>-Ressource können über die RESTful API mittels HTTP DELETE-Anfragen gelöscht werden.</p>
 
 
 
@@ -828,7 +394,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 3, 2026 13:32+0000">2026-03-03</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 3, 2026 14:15+0000">2026-03-03</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

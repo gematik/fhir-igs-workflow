@@ -488,16 +488,6 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunk
 Wenn die Abfrage des OCSP-Response für das Signaturzertifikat fehlschlägt, muss der HTTP-Request mit dem HTTP-Status-Code 512 abgelehnt werden.
 </requirement>
 
-<p>TODO: Remove? Otherwise fix
-<!--A_22141--></p>
-<requirement conformance="SHALL" key="IG-ERP-CHRG-196" title="E-Rezept-Fachdienst – Signaturzertifikat SMC-B prüfen" version="0">
-    <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
-        <testProcedure id="Produkttest" />
-    </actor>
-Der E-Rezept-Fachdienst MUSS ein Signatur-Zertifikat einer nonQES-Signatur einer Leistungserbringerinstitution gemäß gemSpec_PKI#TUC_PKI_018 mit den Parametern oid_smc_b_osig, intendedKeyUsage nonRepudiation, intendedExtendedKeyUsage leer, OCSP-Graceperiod 12 Stunden, Offline-Modus nein, Prüfmodus OCSP auf Gültigkeit prüfen. Die OCSP-Response darf 12 Stunden zwischengespeichert werden.
-</requirement>
-
 <!--A_22134-->
 <requirement conformance="SHALL" key="IG-ERP-CHRG-197" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Verordnungsdatensatz übernehmen" version="0">
     <meta lockversion="false" />
@@ -748,7 +738,7 @@ löschen.
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 3, 2026 13:32+0000">2026-03-03</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 3, 2026 14:15+0000">2026-03-03</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

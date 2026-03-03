@@ -266,9 +266,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul id="markdown-toc">
   <li><a href="#anforderungen-aus-der-core-spezifikation" id="markdown-toc-anforderungen-aus-der-core-spezifikation">Anforderungen aus der Core Spezifikation</a></li>
   <li><a href="#modulspezifische-anforderungen" id="markdown-toc-modulspezifische-anforderungen">Modulspezifische Anforderungen</a></li>
-  <li><a href="#post-consent-einwilligung-erteilen" id="markdown-toc-post-consent-einwilligung-erteilen">POST /Consent (Einwilligung erteilen)</a></li>
-  <li><a href="#get-consent-einwilligung-einsehen" id="markdown-toc-get-consent-einwilligung-einsehen">GET /Consent (Einwilligung einsehen)</a></li>
-  <li><a href="#delete-consent-einwilligung-widerrufen" id="markdown-toc-delete-consent-einwilligung-widerrufen">DELETE /Consent (Einwilligung widerrufen)</a></li>
 </ul>
 
 </div>
@@ -420,7 +417,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="modulspezifische-anforderungen">Modulspezifische Anforderungen</h3>
 
-<h3 id="post-consent-einwilligung-erteilen">POST /Consent (Einwilligung erteilen)</h3>
+<h4 id="post-consent-einwilligung-erteilen">POST /Consent (Einwilligung erteilen)</h4>
 
 <requirement conformance="SHALL" key="IG-ERP-CHRG-219" title="E-Rezept-Fachdienst – Consent schreiben – Rollenprüfung Versicherter" version="0">
     <meta lockversion="false" />
@@ -462,7 +459,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunk
 Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent – falls bei den Prüfungen keine Fehler aufgetreten sind, welche zum Abbruch der Operation führen – die übermittelte Ressource persistieren.
 </requirement>
 
-<h3 id="get-consent-einwilligung-einsehen">GET /Consent (Einwilligung einsehen)</h3>
+<h4 id="get-consent-einwilligung-einsehen">GET /Consent (Einwilligung einsehen)</h4>
 
 <requirement conformance="SHALL" key="IG-ERP-CHRG-217" title="E-Rezept-Fachdienst – Consent lesen – Rollenprüfung Versicherter" version="0">
     <meta lockversion="false" />
@@ -480,7 +477,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
 Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Consent die dem Versicherten zugeordneten Consent-Ressourcen anhand der KVNR des Versicherten im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren und in den Response aufnehmen, die in Consent.patient.identifier die entsprechende KVNR des begünstigten Versicherten referenziert haben, damit ausschließlich Versicherte ihre eigenen Informationen zu Einwilligungen einsehen können.
 </requirement>
 
-<h3 id="delete-consent-einwilligung-widerrufen">DELETE /Consent (Einwilligung widerrufen)</h3>
+<h4 id="delete-consent-einwilligung-widerrufen">DELETE /Consent (Einwilligung widerrufen)</h4>
 
 <requirement conformance="SHALL" key="IG-ERP-CHRG-212" title="E-Rezept-Fachdienst – Consent löschen – alles Löschen verbieten" version="0">
     <meta lockversion="false" />
@@ -541,7 +538,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpu
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 3, 2026 13:32+0000">2026-03-03</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 3, 2026 14:15+0000">2026-03-03</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -9,8 +9,6 @@ Version 1.1.0-draft - ci-build
 
 ## Operation API
 
-Operationen
-
 Diese Seite bietet einen Einstieg in die Operations‑APIs.
 
 ### Operationen
