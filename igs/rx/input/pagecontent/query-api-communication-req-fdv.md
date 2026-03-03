@@ -14,6 +14,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Commun
     </actor>
      Das E-Rezept-FdV DARF es dem Nutzer NICHT ermöglichen, für ein E-Rezept mit dem Flowtype 162, 169 oder 209 eine Anfrage zur Belieferung an eine abgebende Institution zu senden.
 </requirement>
+<!-- ToDo: A_21402-02 ist abgekündigt -->
 
 <!-- A_21403-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-22" title="E-Rezept-FdV: E-Rezept zuweisen - Flowtype 169 / 209 - Zuweisen nicht zulässig" version="0">
