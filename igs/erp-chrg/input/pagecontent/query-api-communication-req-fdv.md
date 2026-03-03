@@ -48,16 +48,6 @@ Hinweis: Die Textnachricht ist optional.
 
 Innerhalb der Textnachricht sind keine Internet-Links und keine Non-Printable-Characters zulässig.
 
-<!--A_22738-01-->
-TODO: Do A_22738-01?
-<requirement conformance="SHALL" key="IG-ERP-CHRG-00913HM8" title="E-Rezept-FdV: Abrechnungsinformation-Token übermitteln" version="0">
-    <meta lockversion="false"/>
-    <actor name="eRP_FdV">
-        <testProcedure id="Produkttest"/>
-    </actor>
-      text
-</requirement>
-
 <!--A_22739-01-->
 <requirement conformance="SHALL" key="IG-ERP-CHRG-71358V1H" title="E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Nachricht erstellen" version="0">
     <meta lockversion="false"/>
