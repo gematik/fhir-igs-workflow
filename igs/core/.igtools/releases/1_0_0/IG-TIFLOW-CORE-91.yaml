@@ -1,0 +1,19 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: 6f76efe75e096c5ba45866dcec840462cd5e26985c0a3901c86b3a88fda2bb55
+created: '2026-03-02T12:25:39.670604'
+date: '2026-03-02T12:25:39.670606'
+key: IG-TIFLOW-CORE-91
+modified: '2026-03-02T12:25:39.670605'
+release_status: NEW
+source: input/pagecontent/query-api-consent-req-fd.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt
+  /Consent ohne Angabe ?category mit dem HTTP-Fehlercode 405 ablehnen, um das Löschen
+  mehrerer Ressourcen über einen Request zu verhindern.
+title: E-Rezept-Fachdienst - Consent löschen - alles Löschen verbieten
+version: 0

@@ -4,19 +4,19 @@ title UC 3.1 - E-Rezepte durch Versicherten abrufen
 actor "Versicherter" as V
 participant "FdV" as FdV
 participant "Identity Provider" as IDP
-participant "E-Rezept Fachdienst" as FD
+participant "E-Rezept-Fachdienst" as FD
 
 V -> FdV: E-Rezepte abrufen()
 activate FdV
 
-opt kein gueltiger AuthN-Token
+opt kein gültiger AuthN-Token
   ref over FdV, IDP: AuthN-Token anfordern
 end
 
-FdV -> FD: GET /Task?patient=... (AuthN-Token)
+FdV -> FD: GET /Task (AuthN-Token)
 activate FD
 FD -> FD: E-Rezepte nach Versicherten-ID ermitteln()
-FD --> FdV: E-Rezepte, Status, Zeitpunkte, AccessCodes
+FD --> FdV: E-Rezepte, Status, AccessCodes
 deactivate FD
 
 FdV --> V: Liste der E-Rezepte

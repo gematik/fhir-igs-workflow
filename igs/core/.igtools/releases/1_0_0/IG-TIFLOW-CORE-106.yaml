@@ -1,0 +1,26 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: a6f088485f569934ce71108ba81d4900554a3e2f35ce8443ceb78a2458e90fb2
+created: '2026-03-02T12:25:39.673287'
+date: '2026-03-02T12:25:39.673290'
+key: IG-TIFLOW-CORE-106
+modified: '2026-03-02T12:25:39.673289'
+release_status: NEW
+source: input/pagecontent/op-accept-req-fd.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
+  über /Task/&lt;id&gt;/$accept den Status des Tasks auf Task.status = "in-progress"
+  setzen, eine 256 Bit Zufallszahl mit einer Mindestentropie von 120 Bit erzeugen,
+  hexadezimal kodieren ([0-9a-f]{64}) und diese im zu speichernden Task als externe
+  ID in Task.identifier:Secret als https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Secret
+  hinzufügen und den Task im Bundle mit dem in Task.input mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType
+  = 1 referenzierten QES-Datensatz als Binary-Ressource https://www.hl7.org/fhir/binary.html
+  an den Aufrufer zurückgeben, damit das E-Rezept für die nachfolgende Bearbeitung
+  durch den abrufenden Apotheker reserviert ist.
+title: E-Rezept-Fachdienst - Task akzeptieren - Generierung Secret, Statuswechsel
+  in Abgabe und Rückgabewert
+version: 0

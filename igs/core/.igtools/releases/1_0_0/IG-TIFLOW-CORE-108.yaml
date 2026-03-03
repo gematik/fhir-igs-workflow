@@ -1,0 +1,23 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: 43e27693722fcee1c6c3976080239cb290ffdc88768ee53c68468b827e9d29a7
+created: '2026-03-02T12:25:39.673546'
+date: '2026-03-02T12:25:39.673548'
+key: IG-TIFLOW-CORE-108
+modified: '2026-03-02T12:25:39.673547'
+release_status: NEW
+source: input/pagecontent/op-accept-req-fd.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
+  über /Task/&lt;id&gt;/$accept die Operation mit dem HTTP-Fehlercode 410 abbrechen,
+  wenn der referenzierte /Task/&lt;id&gt; existiert, jedoch kein AccessCode im Task.identifier:AccessCode
+  als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode vorhanden ist
+  oder der Status Task.status = cancelled ist, damit die abgebende LEI den Versicherten
+  über die zwischenzeitliche Löschung des Datensatzes in Kenntnis setzen kann.
+title: E-Rezept-Fachdienst - Task akzeptieren - Prüfung Datensatz zwischenzeitlich
+  gelöscht
+version: 0
