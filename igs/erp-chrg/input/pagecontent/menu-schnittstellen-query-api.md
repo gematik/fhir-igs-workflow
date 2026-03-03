@@ -2,7 +2,7 @@ Query API
 
 Dieses Kapitel beschreibt die Schnittstellen des E-Rezept-Fachdienstes für die PKV-Abrechnung (Flowtype 200/209). Anforderungen sind in Requirement-Blöcken formuliert.
 
-## Task
+### Task
 ### POST /Task/<id>/$accept
 <requirement conformance="SHALL" key="IG-ERP-CHRG-285" title="E-Rezept-Fachdienst – Task akzeptieren – Flowtype 200/209 – Einwilligung ermitteln" version="0">
     <meta lockversion="false"/>
@@ -21,7 +21,7 @@ Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task des Flowtype Task.exten
 Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task des Flowtype Task.extension:flowType = 200 oder 209 mittels HTTP-POST-Operation über /Task/<id>/$activate prüfen, ob Coverage.type.coding.code mit dem Wert "PKV" belegt ist und im Fehlerfall die Operation mit Http-Fehlercode 400 abbrechen, um sicherzustellen, dass diese Workflows nur für E-Rezepte für PKV-Versicherte genutzt werden.
 </requirement>
 
-## ChargeItem
+### ChargeItem
 <requirement conformance="SHALL" key="IG-ERP-CHRG-287" title="E-Rezept-Fachdienst – ChargeItem – unzulässige Operationen" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
@@ -396,7 +396,7 @@ Der E-Rezept-Fachdienst MUSS die im HTTP-PUT-Operation auf die Ressource ChargeI
 Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete über <id> adressierte /ChargeItem/<id> Ressource durch eine abgebende LEI eine 256-Bit-Zufallszahl mit einer Mindestentropie von 120 Bit erzeugen, hexadezimal kodieren ([0-9a-f]{64}) und diese im zu speichernden ChargeItem als externe ID in ChargeItem.identifier:AccessCode als https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_AccessCode überschreiben, damit nachfolgende Zugriffe auf diesen Datensatz nur durch Berechtigte in Kenntnis des AccessCodes erfolgen.
 </requirement>
 
-## Consent
+### Consent
 <requirement conformance="SHALL" key="IG-ERP-CHRG-333" title="E-Rezept-Fachdienst – unzulässige Operationen Consent" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
@@ -504,7 +504,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunk
 Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent – falls bei den Prüfungen keine Fehler aufgetreten sind, welche zum Abbruch der Operation führen – die übermittelte Ressource persistieren.
 </requirement>
 
-## Communication
+### Communication
 ### POST /Communication
 <requirement conformance="SHALL" key="IG-ERP-CHRG-346" title="E-Rezept-Fachdienst – Nachricht einstellen – Schemaprüfung" version="0">
     <meta lockversion="false"/>

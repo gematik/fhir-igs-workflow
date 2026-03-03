@@ -1,42 +1,13 @@
-Query API: Consent
+Diese Seite basiert auf der gleichnamigen Schnittstelle in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/{{ site.data.constants.tiflow_core_version }}query-api-consent.html) und beschreibt den Einstieg in die Communication-Query-Schnittstelle.
 
 Die Query API für Consent ermöglicht das Erteilen, Einsehen und Widerrufen der Einwilligung zur Speicherung von Abrechnungsinformationen.
-
-## Profilierung
-Die Profilierung der Ressource Consent ist hier dokumentiert: https://simplifier.net/erezept-patientenrechnung/gem_erpchrg_pr_consent
-
-## Unzulässige Operationen
-<requirement conformance="SHALL" key="IG-ERP-CHRG-211" title="E-Rezept-Fachdienst – unzulässige Operationen Consent" version="0">
-    <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
-        <testProcedure id="Produkttest"/>
-    </actor>
-Der E-Rezept-Fachdienst MUSS alle Zugriffe auf die Ressource Consent mittels der HTTP-Operationen PUT, PATCH oder HEAD unterbinden, damit keine unzulässigen Operationen auf die Informationen zur Einwilligung ausgeführt werden können.
-</requirement>
-
-## POST /Consent (Einwilligung erteilen)
 
 ### Nachricht
 Der Versicherte erteilt die Einwilligung durch das Erstellen einer Consent‑Ressource (CHARGCONS). Die KVNR wird in Consent.patient.identifier angegeben.
 
-**Beispiel-URI:** `https://prescriptionserver.telematik/Consent`
-
-### Auslösung
-Die Operation wird im FdV/AdV ausgelöst, wenn der Versicherte der Speicherung zustimmt.
-
 ### Resource API
-<div class="gematik-apidoc"
-  data-api-type="FHIRResource"
-  data-api-fhir-resource-type="Consent"
-  data-api-fhir-interaction="create"
-  data-api-operation-id="createConsent">
-  <div id="CapabilityStatement">
-    <pre>
-      {% include CapabilityStatement-erp-fachdienst-server-erpchrg.json %}
-    </pre>
-  </div>
-</div>
 
+TODO AFOs
 ### Verarbeitung
 <requirement conformance="SHALL" key="IG-ERP-CHRG-219" title="E-Rezept-Fachdienst – Consent schreiben – Rollenprüfung Versicherter" version="0">
     <meta lockversion="false"/>
@@ -78,7 +49,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunk
 Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent – falls bei den Prüfungen keine Fehler aufgetreten sind, welche zum Abbruch der Operation führen – die übermittelte Ressource persistieren.
 </requirement>
 
-## GET /Consent (Einwilligung einsehen)
+### GET /Consent (Einwilligung einsehen)
 
 ### Nachricht
 Der Versicherte liest die gespeicherte Einwilligung aus. Die Antwort ist ein Bundle mit den Consent‑Ressourcen des Versicherten.
@@ -118,7 +89,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
 Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Consent die dem Versicherten zugeordneten Consent-Ressourcen anhand der KVNR des Versicherten im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren und in den Response aufnehmen, die in Consent.patient.identifier die entsprechende KVNR des begünstigten Versicherten referenziert haben, damit ausschließlich Versicherte ihre eigenen Informationen zu Einwilligungen einsehen können.
 </requirement>
 
-## DELETE /Consent (Einwilligung widerrufen)
+### DELETE /Consent (Einwilligung widerrufen)
 
 ### Nachricht
 Der Versicherte widerruft die Einwilligung. Der Widerruf löscht die Consent‑Ressource und alle zugehörigen Abrechnungsinformationen.
@@ -182,5 +153,5 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpu
 Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt /Consent die Ressource löschen, bei der Consent.patient.identifier der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests sowie Consent.category.coding.code dem in ?category übermittelten Wert entspricht.
 </requirement>
 
-## Sicherheitsanforderungen
+### Sicherheitsanforderungen
 Generelle Sicherheitsanforderungen werden [hier](./menu-schnittstellen-datenschutz-und-sicherheit.html) festgehalten.

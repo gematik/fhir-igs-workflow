@@ -1,6 +1,6 @@
 Die Query API für Task beschreibt den lesenden Zugriff auf Tasks. PKV‑spezifische Vorgänge erfolgen über die Operationen $accept und $activate und sind auf den jeweiligen Operationsseiten beschrieben.
 
-## GET /Task (Suche)
+### GET /Task (Suche)
 
 ### Nachricht
 Clients können Tasks suchen (z. B. nach Status oder Identifiern), um den Bearbeitungsstand zu ermitteln.
@@ -18,7 +18,7 @@ Clients können Tasks suchen (z. B. nach Status oder Identifiern), um den Bearbe
   </div>
 </div>
 
-## GET /Task/&#60;id&#62; (Details)
+### GET /Task/&#60;id&#62; (Details)
 
 ### Nachricht
 Der Detailabruf liefert die Task‑Ressource zu einer bekannten Task‑ID.
@@ -36,6 +36,6 @@ Der Detailabruf liefert die Task‑Ressource zu einer bekannten Task‑ID.
   </div>
 </div>
 
-## Weiterführende Operationen
+### Weiterführende Operationen
 - [$accept](./op-accept.html)
 - [$activate](./op-activate.html)

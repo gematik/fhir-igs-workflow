@@ -1,6 +1,6 @@
 Diese Seite beschreibt Anforderungen am E-Rezept-Fachdienst zur Nutzung der `ChargeItem`-Query-Endpunkte.
 
-## Allgemeine Regeln
+### Allgemeine Regeln
 <!--A_22111-->
 <requirement conformance="SHALL" key="IG-ERP-CHRG-165" title="E-Rezept-Fachdienst – ChargeItem – unzulässige Operationen" version="0">
     <meta lockversion="false"/>
@@ -10,7 +10,7 @@ Diese Seite beschreibt Anforderungen am E-Rezept-Fachdienst zur Nutzung der `Cha
 Der E-Rezept-Fachdienst MUSS alle Zugriffe auf die Ressource ChargeItem mittels der HTTP-Operationen HEAD unterbinden, damit keine unzulässigen Operationen auf die Informationen zu Abrechnungsinformationen ausgeführt werden können.
 </requirement>
 
-## GET /ChargeItem
+### GET /ChargeItem
 <!--A_22118-->
 <requirement conformance="SHALL" key="IG-ERP-CHRG-170" title="E-Rezept-Fachdienst – Abrechnungsinformationen abrufen – Rollenprüfung Versicherter" version="0">
     <meta lockversion="false"/>
@@ -47,7 +47,7 @@ Der E-Rezept-Fachdienst MUSS das Eingrenzen einer Suchanfrage auf /ChargeItem ü
 Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /ChargeItem eine Liste von ChargeItem Ressourcen ohne die in supportingInformation referenzierten Datensätze entsprechend der Filterung und Suchkriterien übermitteln.
 </requirement>
 
-## GET /ChargeItem/&#60;id&#62;
+### GET /ChargeItem/&#60;id&#62;
 <!--A_22124-->
 <requirement conformance="SHALL" key="IG-ERP-CHRG-175" title="E-Rezept-Fachdienst – Abrechnungsinformation abrufen – Rollenprüfung Versicherter oder Apotheker" version="0">
     <meta lockversion="false"/>
@@ -102,7 +102,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation GET /ChargeItem/&#60;id&#
 Der E-Rezept-Fachdienst DARF beim Aufruf der Operation GET /ChargeItem/&#60;id&#62; durch eine abgebende Leistungserbringerinstitution das in ChargeItem.supportingInformation referenzierte Element ChargeItem.supportingInformation:receiptBundle und den Identifier ChargeItem.identifier:AccessCode NICHT in den Response übernehmen, sodass die abgebende LEI nur den Verordnungsdatensatz und durch sie änderbaren PKV-Abgabedatensatz erhält.
 </requirement>
 
-## POST /ChargeItem
+### POST /ChargeItem
 <!--A_22129-->
 <requirement conformance="SHALL" key="IG-ERP-CHRG-185" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Rollenprüfung" version="0">
     <meta lockversion="false"/>
@@ -261,7 +261,7 @@ Der E-Rezept-Fachdienst MUSS beim Erzeugen eines ChargeItem mittels HTTP-POST-Op
 </ul>
 </requirement>
 
-## PATCH /ChargeItem/&#60;id&#62;
+### PATCH /ChargeItem/&#60;id&#62;
 <!--A_22879-->
 <requirement conformance="SHALL" key="IG-ERP-CHRG-181" title="E-Rezept-Fachdienst – Abrechnungsinformation ändern (PATCH) – alles Ändern verbieten" version="0">
     <meta lockversion="false"/>
@@ -298,7 +298,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkr
 Der E-Rezept-Fachdienst MUSS die in der HTTP-PATCH-Operation auf die Ressource Chargeltem übertragene Parameters Ressource gegen das FHIR-Profil GEM_ERPCHRG_PR_PAR_Patch_ChargeItem_Input prüfen und bei Nicht-Konformität das Verarbeiten der Ressource im E-Rezept-Fachdienst mit dem http-Status-Code 400 ablehnen.
 </requirement>
 
-## PUT /ChargeItem/&#60;id&#62;
+### PUT /ChargeItem/&#60;id&#62;
 <!--A_22144-->
 <requirement conformance="SHALL" key="IG-ERP-CHRG-201" title="E-Rezept-Fachdienst – Abrechnungsinformation ändern – Rollenprüfung" version="0">
     <meta lockversion="false"/>
@@ -412,7 +412,7 @@ Der E-Rezept-Fachdienst DARF beim Aufruf der HTTP-PUT-Operation auf eine konkret
 Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende LEI bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId "erp.chargeitem.update" und den Versicherten mit der KVNR = ChargeItem.subject initiieren. 
 </requirement>
 
-## DELETE /ChargeItem/&#60;id&#62;
+### DELETE /ChargeItem/&#60;id&#62;
 <!--A_22112-->
 <requirement conformance="SHALL" key="IG-ERP-CHRG-166" title="E-Rezept-Fachdienst – Abrechnungsinformation löschen – alles Löschen verbieten" version="0">
     <meta lockversion="false"/>
