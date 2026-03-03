@@ -56,5 +56,4 @@ Die Operation wird im FdV/AdV ausgelöst, wenn der Versicherte die Einwilligung 
   </div>
 </div>
 
-### Sicherheitsanforderungen
-Generelle Sicherheitsanforderungen werden [hier](./menu-technische-umsetzung-datenschutz-und-sicherheit.html) festgehalten.
+

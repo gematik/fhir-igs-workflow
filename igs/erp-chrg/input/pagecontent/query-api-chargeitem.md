@@ -110,5 +110,4 @@ Der Anwendungsfall wird durch den Versicherten im FdV/AdV ausgelöst.
 ### Resource API
 TODO
 
-### Sicherheitsanforderungen
-Generelle Sicherheitsanforderungen werden [hier](./menu-technische-umsetzung-datenschutz-und-sicherheit.html) festgehalten.
+
