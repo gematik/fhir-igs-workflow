@@ -111,4 +111,4 @@ Der Anwendungsfall wird durch den Versicherten im FdV/AdV ausgelöst.
 TODO
 
 ### Sicherheitsanforderungen
-Generelle Sicherheitsanforderungen werden [hier](./menu-schnittstellen-datenschutz-und-sicherheit.html) festgehalten.
+Generelle Sicherheitsanforderungen werden [hier](./menu-technische-umsetzung-datenschutz-und-sicherheit.html) festgehalten.

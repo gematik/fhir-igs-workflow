@@ -20,4 +20,4 @@ Die abgebende LEI aktiviert den Task. Für Flowtype 200/209 muss der Versicherun
 </div>
 
 ### Sicherheitsanforderungen
-Generelle Sicherheitsanforderungen werden [hier](./menu-schnittstellen-datenschutz-und-sicherheit.html) festgehalten.
+Generelle Sicherheitsanforderungen werden [hier](./menu-technische-umsetzung-datenschutz-und-sicherheit.html) festgehalten.

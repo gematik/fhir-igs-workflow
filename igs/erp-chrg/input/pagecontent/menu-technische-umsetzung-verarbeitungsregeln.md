@@ -1,5 +1,3 @@
-Verarbeitungsregeln für den E-Rezept-Fachdienst
-
 ### Löschfristen
 Für die Löschfristen des E-Rezepts gelten für Flowtype 200 und 209 die Vorgaben von Flowtype 160.
 
