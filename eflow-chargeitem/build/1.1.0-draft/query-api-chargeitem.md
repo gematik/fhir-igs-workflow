@@ -116,7 +116,7 @@ Die *ChargeItem*-Ressource können über die RESTful API mittels HTTP PUT-Anfrag
 
 Versicherte können Abrechnungsinformationen löschen. Dabei werden auch die referenzierten Datensätze gelöscht.
 
-### Auslösung
+#### Auslösung
 
 Der Anwendungsfall wird durch den Versicherten im FdV/AdV ausgelöst.
 
