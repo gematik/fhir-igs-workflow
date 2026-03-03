@@ -65,7 +65,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "gemIG_eRp_ChargeItem",
   "title" : "Abrechnungsinformationen des E-Rezepte für PKV-Versicherte",
   "status" : "draft",
-  "date" : "2026-03-03T12:03:19+00:00",
+  "date" : "2026-03-03T13:32:32+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -1192,6 +1192,15 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
             "title" : "Primärsystem des abgebenden Leistungserbringers Anforderungen: ChargeItem",
             "generation" : "markdown"
           }]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "menu-technische-umsetzung-datenschutz-und-sicherheit.html"
+          }],
+          "nameUrl" : "menu-technische-umsetzung-datenschutz-und-sicherheit.html",
+          "title" : "Datenschutz und Sicherheit",
+          "generation" : "markdown"
         }]
       },
       {
@@ -1201,15 +1210,6 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
         }],
         "nameUrl" : "menu-schnittstellen-generelle-prinzipien.html",
         "title" : "Generelle Prinzipien",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "menu-schnittstellen-datenschutz-und-sicherheit.html"
-        }],
-        "nameUrl" : "menu-schnittstellen-datenschutz-und-sicherheit.html",
-        "title" : "Datenschutz und Sicherheit",
         "generation" : "markdown"
       },
       {

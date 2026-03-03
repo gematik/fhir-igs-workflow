@@ -35,5 +35,5 @@ Anfragen an die *Communication*-Ressource können über die RESTful API mittels 
 
 ## Sicherheitsanforderungen
 
-Generelle Sicherheitsanforderungen werden [hier](./menu-schnittstellen-datenschutz-und-sicherheit.md) festgehalten.
+Generelle Sicherheitsanforderungen werden [hier](./menu-technische-umsetzung-datenschutz-und-sicherheit.md) festgehalten.
 

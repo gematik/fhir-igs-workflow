@@ -235,7 +235,3 @@ Die abgebende LEI ruft $accept auf, um ein E‑Rezept anzunehmen und – für Fl
     
 ```
 
-### Sicherheitsanforderungen
-
-Generelle Sicherheitsanforderungen werden [hier](./menu-schnittstellen-datenschutz-und-sicherheit.md) festgehalten.
-
