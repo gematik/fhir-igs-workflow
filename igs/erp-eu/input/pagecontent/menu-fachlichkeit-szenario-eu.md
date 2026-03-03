@@ -63,7 +63,7 @@ Es gibt keine Möglichkeit in der Rolle Vertreter den Zugriff des LE-EU auf die 
 
 ### Technische Anwendungsfälle
 
-#### Versicherteninteratkion
+#### Versicherteninteraktion
 
 **Beteiligte Systeme:** E-Rezept-Fachdienst, E-Rezept-FdV
 
@@ -72,7 +72,7 @@ UC_3_14_Einwilligung_erteilen, UC_3_15_Einwilligung_widerrufen, UC_3_16_Zugriffs
 
 {% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Technische Anwendungsfälle mit Bezug zur Verwaltung von <i>E-Rezepten im EU Ausland</i>" %}
 
-#### Interatkion NCPeH
+#### Interaktion NCPeH
 
 **Beteiligte Systeme:** E-Rezept-Fachdienst, NCPeH
 
