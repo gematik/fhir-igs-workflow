@@ -90,48 +90,78 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 **Sequenzdiagramm:**
 
 **Abbildung: **UC 4.13 - PKV-Abgabedatensatz durch Abgebenden ändern
- ###
+
+### UC 3.14 - Einwilligung durch Versicherten erteilen
 
 * Beschreibung: Vorbedingungen
-  * : 
-* Beschreibung: Durchzuführende Aktionen
-  * : 
-* Beschreibung: Nachbedingungen
-  * : 
-* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * : 
-* Beschreibung: Relevante(r) Sektor(en)
-  * : 
+  * Ein Versicherter erteilt die Einwilligung für die Nutzung einer Funktionalität der Anwendung.: * Ein Versicherter hat eine Datenverarbeitung ausgewählt, für die er eine Einwilligung erteilen möchte.
 
-**Tabelle:**Fachlicher Anwendungsfall
- ###
+* Beschreibung: Durchzuführende Aktionen
+  * Ein Versicherter erteilt die Einwilligung für die Nutzung einer Funktionalität der Anwendung.: * Ein Versicherter wählt im E-Rezept-FdV die Operation zum Erteilen der Einwilligung aus.
+* Der E-Rezept-Fachdienst speichert die Einwilligung.
+
+* Beschreibung: Nachbedingungen
+  * Ein Versicherter erteilt die Einwilligung für die Nutzung einer Funktionalität der Anwendung.: * Die Einwilligung ist im E-Rezept-Fachdienst gespeichert.
+* Das Erteilen der Einwilligung ist im E-Rezept-Fachdienst protokolliert.
+
+* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+  * Ein Versicherter erteilt die Einwilligung für die Nutzung einer Funktionalität der Anwendung.: * [Operation API: Einwilligung durch Versicherten erteilen](./query-api-consent.md)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Ein Versicherter erteilt die Einwilligung für die Nutzung einer Funktionalität der Anwendung.:  VERSICHERTER 
+
+**Tabelle:**Fachlicher Anwendungsfall UC 3.14 - Einwilligung durch Versicherten erteilen
+**Sequenzdiagramm:**
+
+**Abbildung: **UC 3.14 - Einwilligung durch Versicherten erteilen
+
+### UC 3.15 - Einwilligung durch Versicherten widerrufen
 
 * Beschreibung: Vorbedingungen
-  * : 
-* Beschreibung: Durchzuführende Aktionen
-  * : 
-* Beschreibung: Nachbedingungen
-  * : 
-* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * : 
-* Beschreibung: Relevante(r) Sektor(en)
-  * : 
+  * Ein Versicherter widerruft die Einwilligung für die Nutzung einer Funktionalität der Anwendung.: * Ein Versicherter hat eine Datenverarbeitung ausgewählt, für die er eine Einwilligung widerrufen möchte.
+* Im E-Rezept-FdV liegt die Information vor, dass die Einwilligung für diese Datenverarbeitung erteilt wurde.
 
-**Tabelle:**Fachlicher Anwendungsfall
- ###
+* Beschreibung: Durchzuführende Aktionen
+  * Ein Versicherter widerruft die Einwilligung für die Nutzung einer Funktionalität der Anwendung.: * Ein Versicherter wählt über ein E-Rezept-FdV die Operation zum Widerrufen der Einwilligung auf.
+* Der E-Rezept-Fachdienst prüft, ob zuvor die Einwilligung erteilt wurde und löscht diese.
+* Der E-Rezept-Fachdienst löscht für die Einwilligung relevante Daten unwiederbringlich.
+
+* Beschreibung: Nachbedingungen
+  * Ein Versicherter widerruft die Einwilligung für die Nutzung einer Funktionalität der Anwendung.: * Das Widerrufen der Einwilligung ist im E-Rezept-Fachdienst protokolliert.
+
+* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+  * Ein Versicherter widerruft die Einwilligung für die Nutzung einer Funktionalität der Anwendung.: * [Operation API: Einwilligung durch Versicherten widerrufen](./query-api-consent.md)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Ein Versicherter widerruft die Einwilligung für die Nutzung einer Funktionalität der Anwendung.:  VERSICHERTER 
+
+**Tabelle:**Fachlicher Anwendungsfall UC 3.15 - Einwilligung durch Versicherten widerrufen
+**Sequenzdiagramm:**
+
+**Abbildung: **UC 3.15 - Einwilligung durch Versicherten widerrufen
+
+### UC 3.13 - Einwilligungen durch Versicherten einsehen
 
 * Beschreibung: Vorbedingungen
-  * : 
-* Beschreibung: Durchzuführende Aktionen
-  * : 
-* Beschreibung: Nachbedingungen
-  * : 
-* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * : 
-* Beschreibung: Relevante(r) Sektor(en)
-  * : 
+  * Ein Versicherter ermittelt, welche Einwilligungen auf dem E-Rezept-Fachdienst für seine KVNR hinterlegt sind..: * keine
 
-**Tabelle:**Fachlicher Anwendungsfall
+* Beschreibung: Durchzuführende Aktionen
+  * Ein Versicherter ermittelt, welche Einwilligungen auf dem E-Rezept-Fachdienst für seine KVNR hinterlegt sind..: * Das E-Rezept-FdV führt die Operation zur Abfrage der Einwilligungen aus.
+* Der E-Rezept-Fachdienst gibt die Information an das E-Rezept-FdV.
+
+* Beschreibung: Nachbedingungen
+  * Ein Versicherter ermittelt, welche Einwilligungen auf dem E-Rezept-Fachdienst für seine KVNR hinterlegt sind..: * Die Information steht zur Anzeige im E-Rezept-FdV bereit.
+
+* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+  * Ein Versicherter ermittelt, welche Einwilligungen auf dem E-Rezept-Fachdienst für seine KVNR hinterlegt sind..: * [Operation API: Einwilligungen durch Versicherten einsehen](./query-api-consent.md)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Ein Versicherter ermittelt, welche Einwilligungen auf dem E-Rezept-Fachdienst für seine KVNR hinterlegt sind..:  VERSICHERTER 
+
+**Tabelle:**Fachlicher Anwendungsfall UC 3.13 - Einwilligungen durch Versicherten einsehen
+**Sequenzdiagramm:**
+
+**Abbildung: **UC 3.13 - Einwilligungen durch Versicherten einsehen
 
 ### UC 3.10 - Abrechnungsinformationen durch Versicherten abrufen
 

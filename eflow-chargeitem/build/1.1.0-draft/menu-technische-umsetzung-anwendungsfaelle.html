@@ -270,6 +270,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="#uc-411---abrechnungsinformation-durch-abgebenden-bereitstellen" id="markdown-toc-uc-411---abrechnungsinformation-durch-abgebenden-bereitstellen">UC 4.11 - Abrechnungsinformation durch Abgebenden bereitstellen</a></li>
   <li><a href="#uc-410---abrechnungsinformationen-durch-abgebenden-abrufen" id="markdown-toc-uc-410---abrechnungsinformationen-durch-abgebenden-abrufen">UC 4.10 - Abrechnungsinformationen durch Abgebenden abrufen</a></li>
   <li><a href="#uc-413---pkv-abgabedatensatz-durch-abgebenden-ändern" id="markdown-toc-uc-413---pkv-abgabedatensatz-durch-abgebenden-ändern">UC 4.13 - PKV-Abgabedatensatz durch Abgebenden ändern</a></li>
+  <li><a href="#uc-314---einwilligung-durch-versicherten-erteilen" id="markdown-toc-uc-314---einwilligung-durch-versicherten-erteilen">UC 3.14 - Einwilligung durch Versicherten erteilen</a></li>
+  <li><a href="#uc-315---einwilligung-durch-versicherten-widerrufen" id="markdown-toc-uc-315---einwilligung-durch-versicherten-widerrufen">UC 3.15 - Einwilligung durch Versicherten widerrufen</a></li>
+  <li><a href="#uc-313---einwilligungen-durch-versicherten-einsehen" id="markdown-toc-uc-313---einwilligungen-durch-versicherten-einsehen">UC 3.13 - Einwilligungen durch Versicherten einsehen</a></li>
   <li><a href="#uc-310---abrechnungsinformationen-durch-versicherten-abrufen" id="markdown-toc-uc-310---abrechnungsinformationen-durch-versicherten-abrufen">UC 3.10 - Abrechnungsinformationen durch Versicherten abrufen</a></li>
   <li><a href="#abrechnungsinformationen-durch-den-versicherten-weitergeben" id="markdown-toc-abrechnungsinformationen-durch-den-versicherten-weitergeben">Abrechnungsinformationen durch den Versicherten weitergeben</a></li>
   <li><a href="#abrechnungsinformationen-durch-den-versicherten-markieren" id="markdown-toc-abrechnungsinformationen-durch-den-versicherten-markieren">Abrechnungsinformationen durch den Versicherten markieren</a></li>
@@ -513,35 +516,45 @@ Der zuvor gespeicherte Datensatz wird überschrieben.</p>
 
   <!-- AF_10084 - Einwilligung zum Speichern der Abrechnungsinformationen erteilen -->
 
-<p><a></a>
-###</p>
+<p><a id="uc-3-14-einwilligung-erteilen"></a></p>
+<h3 id="uc-314---einwilligung-durch-versicherten-erteilen">UC 3.14 - Einwilligung durch Versicherten erteilen</h3>
 
 <figure style="width: auto;">
   <table style="width: auto; border: 1px solid #dcdcdc;">
     <tr>
       <th style="padding: 5px; width: 23rem;">Beschreibung</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><p>Ein Versicherter erteilt die Einwilligung für die Nutzung einer Funktionalität der Anwendung.</p>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li>Ein Versicherter hat eine Datenverarbeitung ausgewählt, für die er eine Einwilligung erteilen möchte.</li>
+</ul>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li>Ein Versicherter wählt im E-Rezept-FdV die Operation zum Erteilen der Einwilligung aus.</li>
+  <li>Der E-Rezept-Fachdienst speichert die Einwilligung.</li>
+</ul>
 </td>
 
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li>Die Einwilligung ist im E-Rezept-Fachdienst gespeichert.</li>
+  <li>Das Erteilen der Einwilligung ist im E-Rezept-Fachdienst protokolliert.</li>
+</ul>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Schnittstelle des E-Rezept-Fachdienst</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li><a href="./query-api-consent.html">Operation API: Einwilligung durch Versicherten erteilen</a></li>
+</ul>
 </td>
     </tr>
     
@@ -554,44 +567,69 @@ Der zuvor gespeicherte Datensatz wird überschrieben.</p>
           
         
           
+            <span class="badge gem-ig-badge 
+gem-ig-badge-bg-green">
+              VERSICHERTER
+            </span>
+          
         
       </td>
     </tr>
   </table>
-  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall </figcaption>
+  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall UC 3.14 - Einwilligung durch Versicherten erteilen</figcaption>
+</figure>
+
+<p><strong>Sequenzdiagramm:</strong></p>
+
+<figure>
+	<div style="--box-width: 700px; margin-bottom: 30px;" class="gem-ig-img-container">
+		  <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 753 495" zoomAndPan="magnify" preserveAspectRatio="none" width="753px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:753px;height:495px;background:#FFFFFF;" version="1.1" height="495px"><defs></defs><g><text font-weight="bold" lengthAdjust="spacing" x="162.75" font-size="14" textLength="431" y="27.9951" font-family="sans-serif" fill="#000000">UC 3.14 - Einwilligung durch den Versicherten erteilen</text><rect width="591.5" x="156" y="164.7266" style="stroke:#000000;stroke-width:1.5;" fill="none" height="61.2344"></rect><line y1="118.5938" x1="47" y2="414.625" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="47"></line><line y1="118.5938" x1="220" y2="414.625" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="220"></line><line y1="118.5938" x1="467" y2="414.625" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="467"></line><line y1="118.5938" x1="675.5" y2="414.625" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="675.5"></line><text lengthAdjust="spacing" x="5" font-size="14" textLength="79" y="115.292" font-family="sans-serif" fill="#000000">Versicherte</text><ellipse cx="47.5" cy="50.7969" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M47.5,58.7969 L47.5,85.7969 M34.5,66.7969 L60.5,66.7969 M47.5,85.7969 L34.5,100.7969 M47.5,85.7969 L60.5,100.7969 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><text lengthAdjust="spacing" x="5" font-size="14" textLength="79" y="426.6201" font-family="sans-serif" fill="#000000">Versicherte</text><ellipse cx="47.5" cy="438.4219" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M47.5,446.4219 L47.5,473.4219 M34.5,454.4219 L60.5,454.4219 M47.5,473.4219 L34.5,488.4219 M47.5,473.4219 L60.5,488.4219 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><rect rx="2.5" ry="2.5" width="109" x="166" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="173" font-size="14" textLength="95" y="107.292" font-family="sans-serif" fill="#000000">E-Rezept-FdV</text><rect rx="2.5" ry="2.5" width="109" x="166" y="413.625" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="173" font-size="14" textLength="95" y="433.6201" font-family="sans-serif" fill="#000000">E-Rezept-FdV</text><rect rx="2.5" ry="2.5" width="159" x="388" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="395" font-size="14" textLength="145" y="107.292" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><rect rx="2.5" ry="2.5" width="159" x="388" y="413.625" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="395" font-size="14" textLength="145" y="433.6201" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><rect rx="2.5" ry="2.5" width="124" x="613.5" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="620.5" font-size="14" textLength="110" y="107.292" font-family="sans-serif" fill="#000000">Identity Provider</text><rect rx="2.5" ry="2.5" width="124" x="613.5" y="413.625" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="620.5" font-size="14" textLength="110" y="433.6201" font-family="sans-serif" fill="#000000">Identity Provider</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="208.5,145.7266,218.5,149.7266,208.5,153.7266,212.5,149.7266"></polygon><line y1="149.7266" x1="47.5" y2="149.7266" style="stroke:#181818;stroke-width:1.0;" x2="214.5"></line><text font-weight="bold" lengthAdjust="spacing" x="54.5" font-size="13" textLength="21" y="144.6606" font-family="sans-serif" fill="#000000">[1]</text><text lengthAdjust="spacing" x="79.5" font-size="13" textLength="124" y="144.6606" font-family="sans-serif" fill="#000000">Einwilligung erteilen</text><path d="M156,164.7266 L226,164.7266 L226,171.8594 L216,181.8594 L156,181.8594 L156,164.7266 " style="stroke:#000000;stroke-width:1.5;" fill="#EEEEEE"></path><rect width="591.5" x="156" y="164.7266" style="stroke:#000000;stroke-width:1.5;" fill="none" height="61.2344"></rect><text font-weight="bold" lengthAdjust="spacing" x="171" font-size="13" textLength="25" y="177.7935" font-family="sans-serif" fill="#000000">opt</text><text font-weight="bold" lengthAdjust="spacing" x="241" font-size="11" textLength="177" y="176.937" font-family="sans-serif" fill="#000000">[kein gültiger AuthN-Token]</text><rect width="577.5" x="163" y="181.8594" style="stroke:#000000;stroke-width:1.5;" fill="none" height="39.1016"></rect><path d="M163,181.8594 L229,181.8594 L229,188.8594 L219,198.8594 L163,198.8594 L163,181.8594 " style="stroke:#000000;stroke-width:2.0;" fill="#EEEEEE"></path><text font-weight="bold" lengthAdjust="spacing" x="176" font-size="13" textLength="21" y="195.9263" font-family="sans-serif" fill="#000000">ref</text><text lengthAdjust="spacing" x="378.75" font-size="12" textLength="146" y="213.998" font-family="sans-serif" fill="#000000">AuthN-Token anfordern</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="455.5,250.0938,465.5,254.0938,455.5,258.0938,459.5,254.0938"></polygon><line y1="254.0938" x1="220.5" y2="254.0938" style="stroke:#181818;stroke-width:1.0;" x2="461.5"></line><text font-weight="bold" lengthAdjust="spacing" x="227.5" font-size="13" textLength="21" y="249.0278" font-family="sans-serif" fill="#000000">[2]</text><text lengthAdjust="spacing" x="252.5" font-size="13" textLength="198" y="249.0278" font-family="sans-serif" fill="#000000">POST /Consent/{AuthN-Token}</text><line y1="283.2266" x1="467.5" y2="283.2266" style="stroke:#181818;stroke-width:1.0;" x2="509.5"></line><line y1="283.2266" x1="509.5" y2="296.2266" style="stroke:#181818;stroke-width:1.0;" x2="509.5"></line><line y1="296.2266" x1="468.5" y2="296.2266" style="stroke:#181818;stroke-width:1.0;" x2="509.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="478.5,292.2266,468.5,296.2266,478.5,300.2266,474.5,296.2266"></polygon><text font-weight="bold" lengthAdjust="spacing" x="474.5" font-size="13" textLength="21" y="278.1606" font-family="sans-serif" fill="#000000">[3]</text><text lengthAdjust="spacing" x="499.5" font-size="13" textLength="138" y="278.1606" font-family="sans-serif" fill="#000000">Einwilligung speichern</text><line y1="325.3594" x1="467.5" y2="325.3594" style="stroke:#181818;stroke-width:1.0;" x2="509.5"></line><line y1="325.3594" x1="509.5" y2="338.3594" style="stroke:#181818;stroke-width:1.0;" x2="509.5"></line><line y1="338.3594" x1="468.5" y2="338.3594" style="stroke:#181818;stroke-width:1.0;" x2="509.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="478.5,334.3594,468.5,338.3594,478.5,342.3594,474.5,338.3594"></polygon><text font-weight="bold" lengthAdjust="spacing" x="474.5" font-size="13" textLength="21" y="320.2935" font-family="sans-serif" fill="#000000">[4]</text><text lengthAdjust="spacing" x="499.5" font-size="13" textLength="169" y="320.2935" font-family="sans-serif" fill="#000000">Datenzugriff protokollieren</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="231.5,363.4922,221.5,367.4922,231.5,371.4922,227.5,367.4922"></polygon><line y1="367.4922" x1="225.5" y2="367.4922" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="466.5"></line><text font-weight="bold" lengthAdjust="spacing" x="237.5" font-size="13" textLength="21" y="362.4263" font-family="sans-serif" fill="#000000">[5]</text><text lengthAdjust="spacing" x="262.5" font-size="13" textLength="57" y="362.4263" font-family="sans-serif" fill="#000000">:Consent</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="58.5,392.625,48.5,396.625,58.5,400.625,54.5,396.625"></polygon><line y1="396.625" x1="52.5" y2="396.625" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="219.5"></line><text font-weight="bold" lengthAdjust="spacing" x="64.5" font-size="13" textLength="21" y="391.5591" font-family="sans-serif" fill="#000000">[6]</text><text lengthAdjust="spacing" x="89.5" font-size="13" textLength="42" y="391.5591" font-family="sans-serif" fill="#000000">Status</text></g></svg>
+	</div>
+	<figcaption><strong>Abbildung: </strong>UC 3.14 - Einwilligung durch Versicherten erteilen</figcaption>
 </figure>
 
   <!-- AF_10085 - Einwilligung zum Speichern der Abrechnungsinformationen widerrufen -->
 
-<p><a></a>
-###</p>
+<p><a id="uc-3-15-einwilligung-widerrufen"></a></p>
+<h3 id="uc-315---einwilligung-durch-versicherten-widerrufen">UC 3.15 - Einwilligung durch Versicherten widerrufen</h3>
 
 <figure style="width: auto;">
   <table style="width: auto; border: 1px solid #dcdcdc;">
     <tr>
       <th style="padding: 5px; width: 23rem;">Beschreibung</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><p>Ein Versicherter widerruft die Einwilligung für die Nutzung einer Funktionalität der Anwendung.</p>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li>Ein Versicherter hat eine Datenverarbeitung ausgewählt, für die er eine Einwilligung widerrufen möchte.</li>
+  <li>Im E-Rezept-FdV liegt die Information vor, dass die Einwilligung für diese Datenverarbeitung erteilt wurde.</li>
+</ul>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li>Ein Versicherter wählt über ein E-Rezept-FdV die Operation zum Widerrufen der Einwilligung auf.</li>
+  <li>Der E-Rezept-Fachdienst prüft, ob zuvor die Einwilligung erteilt wurde und löscht diese.</li>
+  <li>Der E-Rezept-Fachdienst löscht für die Einwilligung relevante Daten unwiederbringlich.</li>
+</ul>
 </td>
 
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li>Das Widerrufen der Einwilligung ist im E-Rezept-Fachdienst protokolliert.</li>
+</ul>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Schnittstelle des E-Rezept-Fachdienst</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li><a href="./query-api-consent.html">Operation API: Einwilligung durch Versicherten widerrufen</a></li>
+</ul>
 </td>
     </tr>
     
@@ -604,44 +642,67 @@ Der zuvor gespeicherte Datensatz wird überschrieben.</p>
           
         
           
+            <span class="badge gem-ig-badge 
+gem-ig-badge-bg-green">
+              VERSICHERTER
+            </span>
+          
         
       </td>
     </tr>
   </table>
-  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall </figcaption>
+  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall UC 3.15 - Einwilligung durch Versicherten widerrufen</figcaption>
+</figure>
+
+<p><strong>Sequenzdiagramm:</strong></p>
+
+<figure>
+	<div style="--box-width: 700px; margin-bottom: 30px;" class="gem-ig-img-container">
+		  <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 903 579" zoomAndPan="magnify" preserveAspectRatio="none" width="903px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:903px;height:579px;background:#FFFFFF;" version="1.1" height="579px"><defs></defs><g><text font-weight="bold" lengthAdjust="spacing" x="226.75" font-size="14" textLength="453" y="27.9951" font-family="sans-serif" fill="#000000">UC 3.15 -Einwilligung durch den Versicherten widerrufen</text><rect width="723.5" x="174" y="164.7266" style="stroke:#000000;stroke-width:1.5;" fill="none" height="61.2344"></rect><line y1="118.5938" x1="47" y2="498.8906" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="47"></line><line y1="118.5938" x1="238" y2="498.8906" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="238"></line><line y1="118.5938" x1="562" y2="498.8906" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="562"></line><line y1="118.5938" x1="825.5" y2="498.8906" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="825.5"></line><text lengthAdjust="spacing" x="5" font-size="14" textLength="79" y="115.292" font-family="sans-serif" fill="#000000">Versicherte</text><ellipse cx="47.5" cy="50.7969" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M47.5,58.7969 L47.5,85.7969 M34.5,66.7969 L60.5,66.7969 M47.5,85.7969 L34.5,100.7969 M47.5,85.7969 L60.5,100.7969 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><text lengthAdjust="spacing" x="5" font-size="14" textLength="79" y="510.8857" font-family="sans-serif" fill="#000000">Versicherte</text><ellipse cx="47.5" cy="522.6875" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M47.5,530.6875 L47.5,557.6875 M34.5,538.6875 L60.5,538.6875 M47.5,557.6875 L34.5,572.6875 M47.5,557.6875 L60.5,572.6875 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><rect rx="2.5" ry="2.5" width="109" x="184" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="191" font-size="14" textLength="95" y="107.292" font-family="sans-serif" fill="#000000">E-Rezept-FdV</text><rect rx="2.5" ry="2.5" width="109" x="184" y="497.8906" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="191" font-size="14" textLength="95" y="517.8857" font-family="sans-serif" fill="#000000">E-Rezept-FdV</text><rect rx="2.5" ry="2.5" width="159" x="483" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="490" font-size="14" textLength="145" y="107.292" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><rect rx="2.5" ry="2.5" width="159" x="483" y="497.8906" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="490" font-size="14" textLength="145" y="517.8857" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><rect rx="2.5" ry="2.5" width="124" x="763.5" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="770.5" font-size="14" textLength="110" y="107.292" font-family="sans-serif" fill="#000000">Identity Provider</text><rect rx="2.5" ry="2.5" width="124" x="763.5" y="497.8906" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="770.5" font-size="14" textLength="110" y="517.8857" font-family="sans-serif" fill="#000000">Identity Provider</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="226.5,145.7266,236.5,149.7266,226.5,153.7266,230.5,149.7266"></polygon><line y1="149.7266" x1="47.5" y2="149.7266" style="stroke:#181818;stroke-width:1.0;" x2="232.5"></line><text font-weight="bold" lengthAdjust="spacing" x="54.5" font-size="13" textLength="21" y="144.6606" font-family="sans-serif" fill="#000000">[1]</text><text lengthAdjust="spacing" x="79.5" font-size="13" textLength="142" y="144.6606" font-family="sans-serif" fill="#000000">Einwilligung widerrufen</text><path d="M174,164.7266 L244,164.7266 L244,171.8594 L234,181.8594 L174,181.8594 L174,164.7266 " style="stroke:#000000;stroke-width:1.5;" fill="#EEEEEE"></path><rect width="723.5" x="174" y="164.7266" style="stroke:#000000;stroke-width:1.5;" fill="none" height="61.2344"></rect><text font-weight="bold" lengthAdjust="spacing" x="189" font-size="13" textLength="25" y="177.7935" font-family="sans-serif" fill="#000000">opt</text><text font-weight="bold" lengthAdjust="spacing" x="259" font-size="11" textLength="177" y="176.937" font-family="sans-serif" fill="#000000">[kein gültiger AuthN-Token]</text><rect width="709.5" x="181" y="181.8594" style="stroke:#000000;stroke-width:1.5;" fill="none" height="39.1016"></rect><path d="M181,181.8594 L247,181.8594 L247,188.8594 L237,198.8594 L181,198.8594 L181,181.8594 " style="stroke:#000000;stroke-width:2.0;" fill="#EEEEEE"></path><text font-weight="bold" lengthAdjust="spacing" x="194" font-size="13" textLength="21" y="195.9263" font-family="sans-serif" fill="#000000">ref</text><text lengthAdjust="spacing" x="462.75" font-size="12" textLength="146" y="213.998" font-family="sans-serif" fill="#000000">AuthN-Token anfordern</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="550.5,250.0938,560.5,254.0938,550.5,258.0938,554.5,254.0938"></polygon><line y1="254.0938" x1="238.5" y2="254.0938" style="stroke:#181818;stroke-width:1.0;" x2="556.5"></line><text font-weight="bold" lengthAdjust="spacing" x="245.5" font-size="13" textLength="21" y="249.0278" font-family="sans-serif" fill="#000000">[2]</text><text lengthAdjust="spacing" x="270.5" font-size="13" textLength="275" y="249.0278" font-family="sans-serif" fill="#000000">DELETE /Consent/?category{AuthN-Token}</text><line y1="283.2266" x1="562.5" y2="283.2266" style="stroke:#181818;stroke-width:1.0;" x2="604.5"></line><line y1="283.2266" x1="604.5" y2="296.2266" style="stroke:#181818;stroke-width:1.0;" x2="604.5"></line><line y1="296.2266" x1="563.5" y2="296.2266" style="stroke:#181818;stroke-width:1.0;" x2="604.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="573.5,292.2266,563.5,296.2266,573.5,300.2266,569.5,296.2266"></polygon><text font-weight="bold" lengthAdjust="spacing" x="569.5" font-size="13" textLength="21" y="278.1606" font-family="sans-serif" fill="#000000">[3]</text><text lengthAdjust="spacing" x="594.5" font-size="13" textLength="117" y="278.1606" font-family="sans-serif" fill="#000000">Einwilligung prüfen</text><line y1="325.3594" x1="562.5" y2="325.3594" style="stroke:#181818;stroke-width:1.0;" x2="604.5"></line><line y1="325.3594" x1="604.5" y2="338.3594" style="stroke:#181818;stroke-width:1.0;" x2="604.5"></line><line y1="338.3594" x1="563.5" y2="338.3594" style="stroke:#181818;stroke-width:1.0;" x2="604.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="573.5,334.3594,563.5,338.3594,573.5,342.3594,569.5,338.3594"></polygon><text font-weight="bold" lengthAdjust="spacing" x="569.5" font-size="13" textLength="21" y="320.2935" font-family="sans-serif" fill="#000000">[4]</text><text lengthAdjust="spacing" x="594.5" font-size="13" textLength="125" y="320.2935" font-family="sans-serif" fill="#000000">Einwilligung löschen</text><line y1="367.4922" x1="562.5" y2="367.4922" style="stroke:#181818;stroke-width:1.0;" x2="604.5"></line><line y1="367.4922" x1="604.5" y2="380.4922" style="stroke:#181818;stroke-width:1.0;" x2="604.5"></line><line y1="380.4922" x1="563.5" y2="380.4922" style="stroke:#181818;stroke-width:1.0;" x2="604.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="573.5,376.4922,563.5,380.4922,573.5,384.4922,569.5,380.4922"></polygon><text font-weight="bold" lengthAdjust="spacing" x="569.5" font-size="13" textLength="21" y="362.4263" font-family="sans-serif" fill="#000000">[5]</text><text lengthAdjust="spacing" x="594.5" font-size="13" textLength="169" y="362.4263" font-family="sans-serif" fill="#000000">Datenzugriff protokollieren</text><line y1="409.625" x1="562.5" y2="409.625" style="stroke:#181818;stroke-width:1.0;" x2="604.5"></line><line y1="409.625" x1="604.5" y2="422.625" style="stroke:#181818;stroke-width:1.0;" x2="604.5"></line><line y1="422.625" x1="563.5" y2="422.625" style="stroke:#181818;stroke-width:1.0;" x2="604.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="573.5,418.625,563.5,422.625,573.5,426.625,569.5,422.625"></polygon><text font-weight="bold" lengthAdjust="spacing" x="569.5" font-size="13" textLength="21" y="404.5591" font-family="sans-serif" fill="#000000">[6]</text><text lengthAdjust="spacing" x="594.5" font-size="13" textLength="224" y="404.5591" font-family="sans-serif" fill="#000000">optional: Löschen relevanter Daten</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="249.5,447.7578,239.5,451.7578,249.5,455.7578,245.5,451.7578"></polygon><line y1="451.7578" x1="243.5" y2="451.7578" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="561.5"></line><text font-weight="bold" lengthAdjust="spacing" x="255.5" font-size="13" textLength="21" y="446.6919" font-family="sans-serif" fill="#000000">[7]</text><text lengthAdjust="spacing" x="280.5" font-size="13" textLength="46" y="446.6919" font-family="sans-serif" fill="#000000">:Status</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="58.5,476.8906,48.5,480.8906,58.5,484.8906,54.5,480.8906"></polygon><line y1="480.8906" x1="52.5" y2="480.8906" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="237.5"></line><text font-weight="bold" lengthAdjust="spacing" x="64.5" font-size="13" textLength="21" y="475.8247" font-family="sans-serif" fill="#000000">[8]</text><text lengthAdjust="spacing" x="89.5" font-size="13" textLength="42" y="475.8247" font-family="sans-serif" fill="#000000">Status</text></g></svg>
+	</div>
+	<figcaption><strong>Abbildung: </strong>UC 3.15 - Einwilligung durch Versicherten widerrufen</figcaption>
 </figure>
 
   <!-- AF_10086 - Einwilligung zum Speichern der Abrechnungsinformationen einsehen -->
 
-<p><a></a>
-###</p>
+<p><a id="uc-3-13-einwilligungen-einsehen"></a></p>
+<h3 id="uc-313---einwilligungen-durch-versicherten-einsehen">UC 3.13 - Einwilligungen durch Versicherten einsehen</h3>
 
 <figure style="width: auto;">
   <table style="width: auto; border: 1px solid #dcdcdc;">
     <tr>
       <th style="padding: 5px; width: 23rem;">Beschreibung</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><p>Ein Versicherter ermittelt, welche Einwilligungen auf dem E-Rezept-Fachdienst für seine KVNR hinterlegt sind..</p>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li>keine</li>
+</ul>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li>Das E-Rezept-FdV führt die Operation zur Abfrage der Einwilligungen aus.</li>
+  <li>Der E-Rezept-Fachdienst gibt die Information an das E-Rezept-FdV.</li>
+</ul>
 </td>
 
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li>Die Information steht zur Anzeige im E-Rezept-FdV bereit.</li>
+</ul>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Schnittstelle des E-Rezept-Fachdienst</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li><a href="./query-api-consent.html">Operation API: Einwilligungen durch Versicherten einsehen</a></li>
+</ul>
 </td>
     </tr>
     
@@ -654,11 +715,25 @@ Der zuvor gespeicherte Datensatz wird überschrieben.</p>
           
         
           
+            <span class="badge gem-ig-badge 
+gem-ig-badge-bg-green">
+              VERSICHERTER
+            </span>
+          
         
       </td>
     </tr>
   </table>
-  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall </figcaption>
+  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall UC 3.13 - Einwilligungen durch Versicherten einsehen</figcaption>
+</figure>
+
+<p><strong>Sequenzdiagramm:</strong></p>
+
+<figure>
+	<div style="--box-width: 700px; margin-bottom: 30px;" class="gem-ig-img-container">
+		  <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 714 411" zoomAndPan="magnify" preserveAspectRatio="none" width="714px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:714px;height:411px;background:#FFFFFF;" version="1.1" height="411px"><defs></defs><g><text font-weight="bold" lengthAdjust="spacing" x="127" font-size="14" textLength="463" y="27.9951" font-family="sans-serif" fill="#000000">UC 3.13 - Einwilligungen durch den Versicherten einsehen</text><rect width="526" x="182" y="164.7266" style="stroke:#000000;stroke-width:1.5;" fill="none" height="61.2344"></rect><line y1="118.5938" x1="47" y2="330.3594" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="47"></line><line y1="118.5938" x1="246" y2="330.3594" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="246"></line><line y1="118.5938" x1="484" y2="330.3594" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="484"></line><line y1="118.5938" x1="636" y2="330.3594" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="636"></line><text lengthAdjust="spacing" x="5" font-size="14" textLength="79" y="115.292" font-family="sans-serif" fill="#000000">Versicherte</text><ellipse cx="47.5" cy="50.7969" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M47.5,58.7969 L47.5,85.7969 M34.5,66.7969 L60.5,66.7969 M47.5,85.7969 L34.5,100.7969 M47.5,85.7969 L60.5,100.7969 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><text lengthAdjust="spacing" x="5" font-size="14" textLength="79" y="342.3545" font-family="sans-serif" fill="#000000">Versicherte</text><ellipse cx="47.5" cy="354.1563" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M47.5,362.1563 L47.5,389.1563 M34.5,370.1563 L60.5,370.1563 M47.5,389.1563 L34.5,404.1563 M47.5,389.1563 L60.5,404.1563 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><rect rx="2.5" ry="2.5" width="109" x="192" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="199" font-size="14" textLength="95" y="107.292" font-family="sans-serif" fill="#000000">E-Rezept-FdV</text><rect rx="2.5" ry="2.5" width="109" x="192" y="329.3594" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="199" font-size="14" textLength="95" y="349.3545" font-family="sans-serif" fill="#000000">E-Rezept-FdV</text><rect rx="2.5" ry="2.5" width="159" x="405" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="412" font-size="14" textLength="145" y="107.292" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><rect rx="2.5" ry="2.5" width="159" x="405" y="329.3594" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="412" font-size="14" textLength="145" y="349.3545" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><rect rx="2.5" ry="2.5" width="124" x="574" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="581" font-size="14" textLength="110" y="107.292" font-family="sans-serif" fill="#000000">Identity Provider</text><rect rx="2.5" ry="2.5" width="124" x="574" y="329.3594" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="581" font-size="14" textLength="110" y="349.3545" font-family="sans-serif" fill="#000000">Identity Provider</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="234.5,145.7266,244.5,149.7266,234.5,153.7266,238.5,149.7266"></polygon><line y1="149.7266" x1="47.5" y2="149.7266" style="stroke:#181818;stroke-width:1.0;" x2="240.5"></line><text font-weight="bold" lengthAdjust="spacing" x="54.5" font-size="13" textLength="21" y="144.6606" font-family="sans-serif" fill="#000000">[1]</text><text lengthAdjust="spacing" x="79.5" font-size="13" textLength="150" y="144.6606" font-family="sans-serif" fill="#000000">Einwilligungen einsehen</text><path d="M182,164.7266 L252,164.7266 L252,171.8594 L242,181.8594 L182,181.8594 L182,164.7266 " style="stroke:#000000;stroke-width:1.5;" fill="#EEEEEE"></path><rect width="526" x="182" y="164.7266" style="stroke:#000000;stroke-width:1.5;" fill="none" height="61.2344"></rect><text font-weight="bold" lengthAdjust="spacing" x="197" font-size="13" textLength="25" y="177.7935" font-family="sans-serif" fill="#000000">opt</text><text font-weight="bold" lengthAdjust="spacing" x="267" font-size="11" textLength="177" y="176.937" font-family="sans-serif" fill="#000000">[kein gültiger AuthN-Token]</text><rect width="512" x="189" y="181.8594" style="stroke:#000000;stroke-width:1.5;" fill="none" height="39.1016"></rect><path d="M189,181.8594 L255,181.8594 L255,188.8594 L245,198.8594 L189,198.8594 L189,181.8594 " style="stroke:#000000;stroke-width:2.0;" fill="#EEEEEE"></path><text font-weight="bold" lengthAdjust="spacing" x="202" font-size="13" textLength="21" y="195.9263" font-family="sans-serif" fill="#000000">ref</text><text lengthAdjust="spacing" x="372" font-size="12" textLength="146" y="213.998" font-family="sans-serif" fill="#000000">AuthN-Token anfordern</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="472.5,250.0938,482.5,254.0938,472.5,258.0938,476.5,254.0938"></polygon><line y1="254.0938" x1="246.5" y2="254.0938" style="stroke:#181818;stroke-width:1.0;" x2="478.5"></line><text font-weight="bold" lengthAdjust="spacing" x="253.5" font-size="13" textLength="21" y="249.0278" font-family="sans-serif" fill="#000000">[2]</text><text lengthAdjust="spacing" x="278.5" font-size="13" textLength="189" y="249.0278" font-family="sans-serif" fill="#000000">GET /Consent/{AuthN-Token}</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="257.5,279.2266,247.5,283.2266,257.5,287.2266,253.5,283.2266"></polygon><line y1="283.2266" x1="251.5" y2="283.2266" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="483.5"></line><text font-weight="bold" lengthAdjust="spacing" x="263.5" font-size="13" textLength="21" y="278.1606" font-family="sans-serif" fill="#000000">[3]</text><text lengthAdjust="spacing" x="288.5" font-size="13" textLength="91" y="278.1606" font-family="sans-serif" fill="#000000">:Consent Liste</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="58.5,308.3594,48.5,312.3594,58.5,316.3594,54.5,312.3594"></polygon><line y1="312.3594" x1="52.5" y2="312.3594" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="245.5"></line><text font-weight="bold" lengthAdjust="spacing" x="64.5" font-size="13" textLength="21" y="307.2935" font-family="sans-serif" fill="#000000">[4]</text><text lengthAdjust="spacing" x="89.5" font-size="13" textLength="51" y="307.2935" font-family="sans-serif" fill="#000000">Anzeige</text></g></svg>
+	</div>
+	<figcaption><strong>Abbildung: </strong>UC 3.13 - Einwilligungen durch Versicherten einsehen</figcaption>
 </figure>
 
   <!-- AF_10087 - Abrechnungsinformationen durch den Versicherten abrufen -->
@@ -776,7 +851,7 @@ Ziel-App weiter (z. B. PKV-App, Beihilfe) oder exportiert sie als PDF/A.</p>
     <tr>
       <th style="padding: 5px; width: 23rem;">Schnittstelle des E-Rezept-Fachdienst</th>
       <td style="padding: 5px;"><ul>
-  <li><a name="l1736">​</a><a href="./menu-technische-umsetzung-chargeitem-req-fdv.html#abrechnungsinformationen-exportieren">Abrechnungsinformation weitergeben</a></li>
+  <li><a name="l2165">​</a><a href="./menu-technische-umsetzung-chargeitem-req-fdv.html#abrechnungsinformationen-exportieren">Abrechnungsinformation weitergeben</a></li>
 </ul>
 </td>
     </tr>
@@ -850,7 +925,7 @@ gem-ig-badge-bg-green">
     <tr>
       <th style="padding: 5px; width: 23rem;">Schnittstelle des E-Rezept-Fachdienst</th>
       <td style="padding: 5px;"><ul>
-  <li><a name="l1918">​</a><a href="./menu-technische-umsetzung-chargeitem-req-fdv.html#abrechnungsinformationen-markieren">Abrechnungsinformation markieren</a></li>
+  <li><a name="l2347">​</a><a href="./menu-technische-umsetzung-chargeitem-req-fdv.html#abrechnungsinformationen-markieren">Abrechnungsinformation markieren</a></li>
 </ul>
 </td>
     </tr>
@@ -924,7 +999,7 @@ gem-ig-badge-bg-green">
     <tr>
       <th style="padding: 5px; width: 23rem;">Schnittstelle des E-Rezept-Fachdienst</th>
       <td style="padding: 5px;"><ul>
-  <li><a name="l2136">​</a><a href="./menu-technische-umsetzung-chargeitem-req-fdv.html#abrechnungsinformationen-löschen">Abrechnungsinformation löschen</a></li>
+  <li><a name="l2565">​</a><a href="./menu-technische-umsetzung-chargeitem-req-fdv.html#abrechnungsinformationen-löschen">Abrechnungsinformation löschen</a></li>
 </ul>
 </td>
     </tr>
@@ -993,7 +1068,7 @@ gem-ig-badge-bg-green">
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 3, 2026 10:14+0000">2026-03-03</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 3, 2026 12:03+0000">2026-03-03</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

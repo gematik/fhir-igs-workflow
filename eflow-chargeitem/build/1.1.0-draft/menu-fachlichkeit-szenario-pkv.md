@@ -85,9 +85,9 @@ Das Speichern der Abrechnungsinformationen erfolgt nur mit Einwilligung des Vers
 
 | |
 | :--- |
-|  |
-|  |
-|  |
+| [UC 3.14 - Einwilligung durch Versicherten erteilen](menu-technische-umsetzung-anwendungsfaelle.md#uc-3-14-einwilligung-erteilen) |
+| [UC 3.13 - Einwilligungen durch Versicherten einsehen](menu-technische-umsetzung-anwendungsfaelle.md#uc-3-13-einwilligungen-einsehen) |
+| [UC 3.15 - Einwilligung durch Versicherten widerrufen](menu-technische-umsetzung-anwendungsfaelle.md#uc-3-15-einwilligung-widerrufen) |
 
 **Tabelle:**Fachliche Anwendungsfälle mit Bezug zum Szenario
 *Einwilligung zum Speichern der Abrechungsinformationen*
@@ -138,7 +138,7 @@ Die Löschfristen für das E-Rezept mit den in Beziehung stehenden Daten, wie Di
 |  |
 | [Abrechnungsinformationen durch den Versicherten weitergeben](menu-technische-umsetzung-anwendungsfaelle.md#abrechungsinformationen_durch_versicherten_weitergeben) |
 | [Abrechnungsinformationen durch den Versicherten markieren](menu-technische-umsetzung-anwendungsfaelle.md#uc_3_12_abrechungsinformationen_durch_versicherten_markieren) |
-|  |
+| [Abrechnungsinformationen durch den Versicherten löschen](menu-technische-umsetzung-anwendungsfaelle.md#uc_3_11_abrechungsinformation_durch_versicherten_löschen) |
 
 **Tabelle:**Fachliche Anwendungsfälle mit Bezug zu Szenario
 *Abrechnung durch den Versicherten*
