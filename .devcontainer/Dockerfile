@@ -102,8 +102,14 @@ RUN printf '%s\n' \
       'mkdir -p "$IGTOOLS_DIR"' \
       'if [[ ! -f "$IGTOOLS_JAR" ]]; then' \
       '  echo "Downloading igtools from $IGTOOLS_URL"' \
-      '  curl -L "$IGTOOLS_URL" -o "$IGTOOLS_JAR"' \
+      '  curl -fL "$IGTOOLS_URL" -o "$IGTOOLS_JAR" || { echo "Error: Failed to download igtools from $IGTOOLS_URL" >&2; exit 1; }' \
+      '  if ! file "$IGTOOLS_JAR" | grep -q "Java archive\|Zip archive"; then' \
+      '    echo "Error: Downloaded file is not a valid JAR archive" >&2' \
+      '    rm -f "$IGTOOLS_JAR"' \
+      '    exit 1' \
+      '  fi' \
       'fi' \
       'exec java -jar "$IGTOOLS_JAR" "$@"' \
       > /usr/local/bin/igtools \
-   && chmod +x /usr/local/bin/igtools
+   && chmod +x /usr/local/bin/igtools \
+   && mkdir -p /opt/igtools && chown node:node /opt/igtools

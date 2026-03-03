@@ -48,7 +48,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- AF_10086 - Einwilligung zum Speichern der Abrechnungsinformationen einsehen -->
-{% assign use_case = use_cases | where: "id", "UC_3_13_Einwilligungen_einsehen" | first %}
+{% assign use_case = use_cases | where: "title", "UC 3.13 - Einwilligungen durch Versicherten einsehen" | first %}
 <a id="{{ use_case.anchor }}"></a>
 ### {{ use_case.title }}
 
