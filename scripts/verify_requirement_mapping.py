@@ -10,6 +10,19 @@ from typing import Dict, Iterable, List, Set
 import openpyxl
 
 
+def first_non_empty(row: tuple, indexes: List[int]) -> str:
+    for idx in indexes:
+        if idx >= len(row):
+            continue
+        value = row[idx]
+        if value is None:
+            continue
+        text = str(value).strip()
+        if text:
+            return text
+    return ""
+
+
 def format_source(path: Path) -> str:
     stem = path.stem
     if "_V" in stem:
@@ -18,8 +31,8 @@ def format_source(path: Path) -> str:
     return stem
 
 
-def collect_excel_ids(xlsx_paths: Iterable[Path]) -> Dict[str, Set[str]]:
-    all_ids: Dict[str, Set[str]] = {}
+def collect_excel_ids(xlsx_paths: Iterable[Path]) -> Dict[str, Dict[str, Set[str]]]:
+    all_ids: Dict[str, Dict[str, Set[str]]] = {}
     for path in xlsx_paths:
         source = format_source(path)
         workbook = openpyxl.load_workbook(path, read_only=True, data_only=True)
@@ -33,13 +46,33 @@ def collect_excel_ids(xlsx_paths: Iterable[Path]) -> Dict[str, Set[str]]:
             if "ID" not in index:
                 continue
             id_idx = index["ID"]
+            title_indexes = [
+                index[name]
+                for name in ("Titel", "Title")
+                if name in index
+            ]
+            content_indexes = [
+                index[name]
+                for name in ("Beschreibung", "Inhalt", "Content")
+                if name in index
+            ]
             for row in sheet.iter_rows(min_row=2, values_only=True):
                 value = row[id_idx]
                 if not value:
                     continue
                 req_id = str(value).strip()
                 if req_id:
-                    all_ids.setdefault(req_id, set()).add(source)
+                    title = first_non_empty(row, title_indexes)
+                    content = first_non_empty(row, content_indexes)
+                    req_info = all_ids.setdefault(
+                        req_id,
+                        {"sources": set(), "titles": set(), "contents": set()},
+                    )
+                    req_info["sources"].add(source)
+                    if title:
+                        req_info["titles"].add(title)
+                    if content:
+                        req_info["contents"].add(content)
     return all_ids
 
 
@@ -74,6 +107,11 @@ def main() -> None:
         default="qa",
         help="Directory to write CSV reports (default: qa)",
     )
+    parser.add_argument(
+        "--description",
+        action="store_true",
+        help="Include requirement content/description in output CSV files",
+    )
     args = parser.parse_args()
 
     xlsx_dir = Path(args.xlsx_dir)
@@ -100,20 +138,49 @@ def main() -> None:
         old_req = entry.get("old_req")
         new_req = entry.get("new_req") or []
         if old_req and len(new_req) > 1:
-            duplicate_rows.append(
-                [old_req, ";".join(sorted(new_req)), ";".join(sorted(entry.get("igs") or []))]
+            req_info = excel_ids.get(old_req, {})
+            row = [
+                old_req,
+                ";".join(sorted(req_info.get("titles", set()))),
+            ]
+            if args.description:
+                row.append("\n\n".join(sorted(req_info.get("contents", set()))))
+            row.extend(
+                [
+                    ";".join(sorted(new_req)),
+                    ";".join(sorted(entry.get("igs") or [])),
+                ]
             )
+            duplicate_rows.append(row)
 
-    missing_rows = [[req_id, ";".join(sorted(excel_ids.get(req_id, set())))] for req_id in missing_ids]
+    missing_rows = []
+    for req_id in missing_ids:
+        req_info = excel_ids.get(req_id, {})
+        row = [
+            req_id,
+            ";".join(sorted(req_info.get("titles", set()))),
+        ]
+        if args.description:
+            row.append("\n\n".join(sorted(req_info.get("contents", set()))))
+        row.append(";".join(sorted(req_info.get("sources", set()))))
+        missing_rows.append(row)
+
+    missing_header = ["old_req", "title"]
+    duplicate_header = ["old_req", "title"]
+    if args.description:
+        missing_header.append("content")
+        duplicate_header.append("content")
+    missing_header.append("source")
+    duplicate_header.extend(["new_req", "igs"])
 
     write_csv(
         output_dir / "requirement-mapping-missing.csv",
-        ["old_req", "source"],
+        missing_header,
         missing_rows,
     )
     write_csv(
         output_dir / "requirement-mapping-duplicate.csv",
-        ["old_req", "new_req", "igs"],
+        duplicate_header,
         duplicate_rows,
     )
 
