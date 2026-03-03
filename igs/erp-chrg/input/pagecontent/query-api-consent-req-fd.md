@@ -1,5 +1,11 @@
 Diese Seite beschreibt Anforderungen am E-Rezept-Fachdienst zur Nutzung der `Consent`-Query-Endpunkte.
 
+### Anforderungen aus der Core Spezifikation
+
+{% include core.query-api-consent-req-fd.md %}
+
+### Modulspezifische Anforderungen
+
 ### POST /Consent (Einwilligung erteilen)
 
 <requirement conformance="SHALL" key="IG-ERP-CHRG-219" title="E-Rezept-Fachdienst – Consent schreiben – Rollenprüfung Versicherter" version="0">
