@@ -1,6 +1,6 @@
-# Technische Anwendungsfälle - Abrechnungsinformationen des E-Rezepte für PKV-Versicherte v1.1.0-draft
+# Technische Anwendungsfälle - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft
 
-Abrechnungsinformationen des E-Rezepte für PKV-Versicherte
+Abrechnungsinformationen für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 
@@ -10,7 +10,7 @@ Version 1.1.0-draft - ci-build
 
 ## Technische Anwendungsfälle
 
-Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rezepte für PKV‑Versicherte“. Im Fokus steht, was im E‑Rezept‑Fachdienst und in den beteiligten Clients (FdV/AdV, Primärsysteme, AVS) passiert, wenn die fachlichen Anwendungsfälle ausgeführt werden.
+Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios “Abrechnungsinformationen für PKV-Versicherte”.
 
 ### UC 4.11 - Abrechnungsinformation durch Abgebenden bereitstellen
 
@@ -36,7 +36,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 * Beschreibung: Relevante(r) Sektor(en)
   * Mit der Belieferung des E-Rezepts übermittelt die abgebende LEI den PKV-Abgabedatensatz an den E-Rezept-Fachdienst und stellt damit die Abrechnungsinformation digital bereit. Voraussetzung ist die Einwilligung des Versicherten zum Speichern der Abrechnungsinformationen.:  APOTHEKER 
 
-**Tabelle:**Fachlicher Anwendungsfall UC 4.11 - Abrechnungsinformation durch Abgebenden bereitstellen
+**Tabelle:**UC 4.11 - Abrechnungsinformation durch Abgebenden bereitstellen
 **Sequenzdiagramm:**
 
 **Abbildung: **UC 4.11 - Abrechnungsinformation durch Abgebenden bereitstellen
@@ -60,7 +60,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 * Beschreibung: Relevante(r) Sektor(en)
   * Die Apotheke ruft eine zuvor von ihr bereitgestellte Abrechnungsinformation ab, wenn sie die Daten im Primärsystem nicht mehr vorliegen hat und der AccessCode bekannt ist.:  APOTHEKER 
 
-**Tabelle:**Fachlicher Anwendungsfall UC 4.10 - Abrechnungsinformationen durch Abgebenden abrufen
+**Tabelle:**UC 4.10 - Abrechnungsinformationen durch Abgebenden abrufen
 **Sequenzdiagramm:**
 
 **Abbildung: **UC 4.10 - Abrechnungsinformationen durch Abgebenden abrufen
@@ -86,7 +86,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 * Beschreibung: Relevante(r) Sektor(en)
   * Die abgebende LEI ändert auf Wunsch des Versicherten den PKV-Abgabedatensatz. Der zuvor gespeicherte Datensatz wird überschrieben.:  APOTHEKER 
 
-**Tabelle:**Fachlicher Anwendungsfall UC 4.13 - PKV-Abgabedatensatz durch Abgebenden ändern
+**Tabelle:**UC 4.13 - PKV-Abgabedatensatz durch Abgebenden ändern
 **Sequenzdiagramm:**
 
 **Abbildung: **UC 4.13 - PKV-Abgabedatensatz durch Abgebenden ändern
@@ -110,7 +110,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 * Beschreibung: Relevante(r) Sektor(en)
   * Ein Versicherter erteilt die Einwilligung für die Nutzung einer Funktionalität der Anwendung.:  VERSICHERTER 
 
-**Tabelle:**Fachlicher Anwendungsfall UC 3.14 - Einwilligung durch Versicherten erteilen
+**Tabelle:**UC 3.14 - Einwilligung durch Versicherten erteilen
 **Sequenzdiagramm:**
 
 **Abbildung: **UC 3.14 - Einwilligung durch Versicherten erteilen
@@ -135,7 +135,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 * Beschreibung: Relevante(r) Sektor(en)
   * Ein Versicherter widerruft die Einwilligung für die Nutzung einer Funktionalität der Anwendung.:  VERSICHERTER 
 
-**Tabelle:**Fachlicher Anwendungsfall UC 3.15 - Einwilligung durch Versicherten widerrufen
+**Tabelle:**UC 3.15 - Einwilligung durch Versicherten widerrufen
 **Sequenzdiagramm:**
 
 **Abbildung: **UC 3.15 - Einwilligung durch Versicherten widerrufen
@@ -158,7 +158,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 * Beschreibung: Relevante(r) Sektor(en)
   * Ein Versicherter ermittelt, welche Einwilligungen auf dem E-Rezept-Fachdienst für seine KVNR hinterlegt sind..:  VERSICHERTER 
 
-**Tabelle:**Fachlicher Anwendungsfall UC 3.13 - Einwilligungen durch Versicherten einsehen
+**Tabelle:**UC 3.13 - Einwilligungen durch Versicherten einsehen
 **Sequenzdiagramm:**
 
 **Abbildung: **UC 3.13 - Einwilligungen durch Versicherten einsehen
@@ -183,7 +183,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 * Beschreibung: Relevante(r) Sektor(en)
   * Der Versicherte ruft die Abrechnungsinformationen aus dem E-Rezept-Fachdienst ab und kann sie anzeigen, exportieren oder weiterleiten.:  VERSICHERTER 
 
-**Tabelle:**Fachlicher Anwendungsfall UC 3.10 - Abrechnungsinformationen durch Versicherten abrufen
+**Tabelle:**UC 3.10 - Abrechnungsinformationen durch Versicherten abrufen
 **Sequenzdiagramm:**
 
 **Abbildung: **UC 3.10 - Abrechnungsinformationen durch Versicherten abrufen
@@ -206,7 +206,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 * Beschreibung: Relevante(r) Sektor(en)
   * Der Versicherte gibt die Abrechnungsinformation aus dem FdV/AdV heraus an eine Ziel-App weiter (z. B. PKV-App, Beihilfe) oder exportiert sie als PDF/A.:  VERSICHERTER 
 
-**Tabelle:**Fachlicher Anwendungsfall Abrechnungsinformationen durch den Versicherten weitergeben
+**Tabelle:**Abrechnungsinformationen durch den Versicherten weitergeben
 **Sequenzdiagramm:**
 
 **Abbildung: **Abrechnungsinformationen durch den Versicherten weitergeben
@@ -230,7 +230,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 * Beschreibung: Relevante(r) Sektor(en)
   * Der Versicherte markiert die Abrechnungsinformation im FdV/AdV, um sie für bestimmte Aktionen zu kennzeichnen. Der E-Rezept-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.:  VERSICHERTER 
 
-**Tabelle:**Fachlicher Anwendungsfall Abrechnungsinformationen durch den Versicherten markieren
+**Tabelle:**Abrechnungsinformationen durch den Versicherten markieren
 **Sequenzdiagramm:**
 
 **Abbildung: **Abrechnungsinformationen durch den Versicherten markieren
@@ -254,7 +254,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 * Beschreibung: Relevante(r) Sektor(en)
   * Ein Versicherter wählt im FdV (E-Rezept-FdV, E-Rezept-AdV) die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der E-Rezept-Fachdienst löscht die Abrechnungsinformation:  VERSICHERTER 
 
-**Tabelle:**Fachlicher Anwendungsfall Abrechnungsinformationen durch den Versicherten löschen
+**Tabelle:**Abrechnungsinformationen durch den Versicherten löschen
 **Sequenzdiagramm:**
 
 **Abbildung: **Abrechnungsinformationen durch den Versicherten löschen
@@ -263,7 +263,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios „E‑Rez
 
 Der Versicherte übermittelt der abgebenden LEI einen AccessCode, um die Apotheke zum Abruf und einmaligen Ändern zu berechtigen.
 
-* Das FdV/AdV erzeugt einen Abrechnungsinformation‑Token.
+* Das E-Rezept-FdV erzeugt einen Abrechnungsinformation‑Token.
 * Der Versicherte übermittelt den Token per Nachricht (Communication) oder zeigt einen 2D‑Code.
 * Das AVS nutzt den AccessCode für Abruf/Änderung der Abrechnungsinformation.
 

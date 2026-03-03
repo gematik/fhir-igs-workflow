@@ -1,6 +1,6 @@
-# Communication message sent by patient to pharmacy to request the change of an existing ChargeItem by providing the AccessCode - Abrechnungsinformationen des E-Rezepte für PKV-Versicherte v1.1.0-draft
+# Communication message sent by patient to pharmacy to request the change of an existing ChargeItem by providing the AccessCode - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft
 
-Abrechnungsinformationen des E-Rezepte für PKV-Versicherte
+Abrechnungsinformationen für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 

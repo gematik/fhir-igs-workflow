@@ -1,15 +1,15 @@
-# Primärsystem des abgebenden Leistungserbringers - Anforderungen: ChargeItem-Query - Abrechnungsinformationen des E-Rezepte für PKV-Versicherte v1.1.0-draft
+# AVS-Anforderungen: ChargeItem-Query - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft
 
-Abrechnungsinformationen des E-Rezepte für PKV-Versicherte
+Abrechnungsinformationen für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 
 * [**Table of Contents**](toc.md)
 * [**Query API**](query-api.md)
 * [**Query API: ChargeItem**](query-api-chargeitem.md)
-* **Primärsystem des abgebenden Leistungserbringers - Anforderungen: ChargeItem-Query**
+* **AVS-Anforderungen: ChargeItem-Query**
 
-## Primärsystem des abgebenden Leistungserbringers - Anforderungen: ChargeItem-Query
+## AVS-Anforderungen: ChargeItem-Query
 
 ### Abrechnungsinformation bereitstellen (POST /ChargeItem)
 

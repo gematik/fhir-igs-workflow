@@ -1,6 +1,6 @@
-# GEM ERPCHRG PR PAR Patch ChargeItem Input Parameter - Abrechnungsinformationen des E-Rezepte für PKV-Versicherte v1.1.0-draft
+# GEM ERPCHRG PR PAR Patch ChargeItem Input Parameter - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft
 
-Abrechnungsinformationen des E-Rezepte für PKV-Versicherte
+Abrechnungsinformationen für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 

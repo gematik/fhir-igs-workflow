@@ -1,6 +1,6 @@
-# Communication message sent by pharmacy to patient in response to a previous ChargeItem-related message - Abrechnungsinformationen des E-Rezepte für PKV-Versicherte v1.1.0-draft
+# Communication message sent by pharmacy to patient in response to a previous ChargeItem-related message - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft
 
-Abrechnungsinformationen des E-Rezepte für PKV-Versicherte
+Abrechnungsinformationen für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 

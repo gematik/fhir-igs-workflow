@@ -1,15 +1,15 @@
-# E-Rezept-Fachdienst Anforderungen: Communication-Query - Abrechnungsinformationen des E-Rezepte für PKV-Versicherte v1.1.0-draft
+# FD-Anforderungen: Communication-Query - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft
 
-Abrechnungsinformationen des E-Rezepte für PKV-Versicherte
+Abrechnungsinformationen für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 
 * [**Table of Contents**](toc.md)
 * [**Query API**](query-api.md)
 * [**Query API: Communication**](query-api-communication.md)
-* **E-Rezept-Fachdienst Anforderungen: Communication-Query**
+* **FD-Anforderungen: Communication-Query**
 
-## E-Rezept-Fachdienst Anforderungen: Communication-Query
+## FD-Anforderungen: Communication-Query
 
 Diese Seite beschreibt Anforderungen am E-Rezept-Fachdienst zur Nutzung der `Communication`-Query-Endpunkte.
 

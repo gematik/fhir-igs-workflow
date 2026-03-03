@@ -1,15 +1,15 @@
-# E-Rezept-FdV Anforderungen: Communication-Query - Abrechnungsinformationen des E-Rezepte für PKV-Versicherte v1.1.0-draft
+# FdV-Anforderungen: Communication-Query - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft
 
-Abrechnungsinformationen des E-Rezepte für PKV-Versicherte
+Abrechnungsinformationen für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 
 * [**Table of Contents**](toc.md)
 * [**Query API**](query-api.md)
 * [**Query API: Communication**](query-api-communication.md)
-* **E-Rezept-FdV Anforderungen: Communication-Query**
+* **FdV-Anforderungen: Communication-Query**
 
-## E-Rezept-FdV Anforderungen: Communication-Query
+## FdV-Anforderungen: Communication-Query
 
 Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Communication`-Query-Endpunkte.
 

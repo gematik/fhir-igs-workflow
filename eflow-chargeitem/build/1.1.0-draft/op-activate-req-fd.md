@@ -1,15 +1,15 @@
-# E-Rezept-Fachdienst Anforderungen: $activate - Abrechnungsinformationen des E-Rezepte für PKV-Versicherte v1.1.0-draft
+# FD-Anforderungen: $activate - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft
 
-Abrechnungsinformationen des E-Rezepte für PKV-Versicherte
+Abrechnungsinformationen für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 
 * [**Table of Contents**](toc.md)
 * [**Operation API**](operation-api.md)
 * [**Operation: $activate**](op-activate.md)
-* **E-Rezept-Fachdienst Anforderungen: $activate**
+* **FD-Anforderungen: $activate**
 
-## E-Rezept-Fachdienst Anforderungen: $activate
+## FD-Anforderungen: $activate
 
 Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für die Operation `$activate`.
 

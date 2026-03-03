@@ -1,6 +1,6 @@
-# GEM_ERPCHRG_EX_MarkingFlag - Abrechnungsinformationen des E-Rezepte für PKV-Versicherte v1.1.0-draft
+# GEM_ERPCHRG_EX_MarkingFlag - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft
 
-Abrechnungsinformationen des E-Rezepte für PKV-Versicherte
+Abrechnungsinformationen für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 

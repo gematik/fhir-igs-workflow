@@ -1,6 +1,6 @@
-# ERPCHRG CapabilityStatement für Clients des E-Rezept-Fachdienst - Abrechnungsinformationen des E-Rezepte für PKV-Versicherte v1.1.0-draft
+# ERPCHRG CapabilityStatement für Clients des E-Rezept-Fachdienst - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft
 
-Abrechnungsinformationen des E-Rezepte für PKV-Versicherte
+Abrechnungsinformationen für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 

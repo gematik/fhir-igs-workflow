@@ -1,6 +1,6 @@
-# Identifier KVID-10 - Abrechnungsinformationen des E-Rezepte für PKV-Versicherte v1.1.0-draft
+# Identifier KVID-10 - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft
 
-Abrechnungsinformationen des E-Rezepte für PKV-Versicherte
+Abrechnungsinformationen für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 
@@ -45,7 +45,7 @@ Other representations of profile: [CSV](StructureDefinition-identifier-kvid-10.c
   "name" : "IdentifierKvid10",
   "title" : "Identifier KVID-10",
   "status" : "draft",
-  "date" : "2026-03-03T15:50:01+00:00",
+  "date" : "2026-03-03T23:41:56+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

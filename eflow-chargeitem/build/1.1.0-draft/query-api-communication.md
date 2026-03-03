@@ -1,6 +1,6 @@
-# Query API: Communication - Abrechnungsinformationen des E-Rezepte für PKV-Versicherte v1.1.0-draft
+# Query API: Communication - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft
 
-Abrechnungsinformationen des E-Rezepte für PKV-Versicherte
+Abrechnungsinformationen für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 
@@ -20,8 +20,9 @@ Nachrichten werden als Communication‑Ressourcen an den E‑Rezept‑Fachdienst
 
 ### Anforderungen an die Schnittstelle
 
-* [Anforderungen für den E-Rezept-Fachdienst](./query-api-communication-req-fd.md)
-* [Anforderungen für das E-Rezept-FdV](./query-api-communication-req-fdv.md)
+* [Server-Anforderungen zu Communications](./query-api-communication-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+* [FdV-Anforderungen zu Communications](./query-api-communication-req-fdv.md): Anforderungen an ein E-Rezept-FdV zur Nutzung der Schnittstelle.
+* [AVS-Anforderungen zu Communications](./query-api-communication-req-avs.md): Anforderungen an ein Apothekenverwaltungssystem zur Nutzung der Schnittstelle.
 
 ### Resource API
 

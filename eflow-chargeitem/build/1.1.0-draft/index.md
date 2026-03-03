@@ -1,6 +1,6 @@
-# Implementation Guide E-Rezept-Fachdienst - Abrechnungsinformationen des E-Rezepte für PKV-Versicherte v1.1.0-draft
+# Implementation Guide E-Rezept-Fachdienst - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft
 
-Abrechnungsinformationen des E-Rezepte für PKV-Versicherte
+Abrechnungsinformationen für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 
@@ -63,9 +63,9 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "url" : "https://gematik.de/fhir/erpchrg/ImplementationGuide/de.gematik.eflow-chargeitem",
   "version" : "1.1.0-draft",
   "name" : "gemIG_eRp_ChargeItem",
-  "title" : "Abrechnungsinformationen des E-Rezepte für PKV-Versicherte",
+  "title" : "Abrechnungsinformationen für PKV-Versicherte",
   "status" : "draft",
-  "date" : "2026-03-03T15:50:01+00:00",
+  "date" : "2026-03-03T23:41:56+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -1234,7 +1234,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
               "valueUrl" : "query-api-chargeitem-req-fd.html"
             }],
             "nameUrl" : "query-api-chargeitem-req-fd.html",
-            "title" : "E-Rezept-Fachdienst Anforderungen: ChargeItem-Query",
+            "title" : "FD-Anforderungen: ChargeItem-Query",
             "generation" : "markdown"
           },
           {
@@ -1243,7 +1243,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
               "valueUrl" : "query-api-chargeitem-req-fdv.html"
             }],
             "nameUrl" : "query-api-chargeitem-req-fdv.html",
-            "title" : "E-Rezept-FdV Anforderungen: ChargeItem-Query",
+            "title" : "FdV-Anforderungen: ChargeItem-Query",
             "generation" : "markdown"
           },
           {
@@ -1252,7 +1252,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
               "valueUrl" : "query-api-chargeitem-req-avs.html"
             }],
             "nameUrl" : "query-api-chargeitem-req-avs.html",
-            "title" : "Primärsystem des abgebenden Leistungserbringers - Anforderungen: ChargeItem-Query",
+            "title" : "AVS-Anforderungen: ChargeItem-Query",
             "generation" : "markdown"
           }]
         },
@@ -1270,7 +1270,16 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
               "valueUrl" : "query-api-consent-req-fd.html"
             }],
             "nameUrl" : "query-api-consent-req-fd.html",
-            "title" : "E-Rezept-Fachdienst Anforderungen: Consent-Query",
+            "title" : "FD-Anforderungen: Consent-Query",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-consent-req-fdv.html"
+            }],
+            "nameUrl" : "query-api-consent-req-fdv.html",
+            "title" : "Client-Anforderungen: Consent-Query",
             "generation" : "markdown"
           }]
         },
@@ -1288,7 +1297,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
               "valueUrl" : "query-api-communication-req-fd.html"
             }],
             "nameUrl" : "query-api-communication-req-fd.html",
-            "title" : "E-Rezept-Fachdienst Anforderungen: Communication-Query",
+            "title" : "FD-Anforderungen: Communication-Query",
             "generation" : "markdown"
           },
           {
@@ -1297,7 +1306,16 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
               "valueUrl" : "query-api-communication-req-fdv.html"
             }],
             "nameUrl" : "query-api-communication-req-fdv.html",
-            "title" : "E-Rezept-FdV Anforderungen: Communication-Query",
+            "title" : "FdV-Anforderungen: Communication-Query",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-communication-req-avs.html"
+            }],
+            "nameUrl" : "query-api-communication-req-avs.html",
+            "title" : "AVS-Anforderungen: Communication-Query",
             "generation" : "markdown"
           }]
         },
@@ -1333,7 +1351,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
               "valueUrl" : "op-accept-req-fd.html"
             }],
             "nameUrl" : "op-accept-req-fd.html",
-            "title" : "E-Rezept-Fachdienst Anforderungen: $accept",
+            "title" : "FD-Anforderungen: $accept",
             "generation" : "markdown"
           }]
         },
@@ -1351,7 +1369,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
               "valueUrl" : "op-activate-req-fd.html"
             }],
             "nameUrl" : "op-activate-req-fd.html",
-            "title" : "E-Rezept-Fachdienst Anforderungen: $activate",
+            "title" : "FD-Anforderungen: $activate",
             "generation" : "markdown"
           }]
         }]

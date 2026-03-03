@@ -1,15 +1,15 @@
-# E-Rezept-Fachdienst Anforderungen: $accept - Abrechnungsinformationen des E-Rezepte für PKV-Versicherte v1.1.0-draft
+# FD-Anforderungen: $accept - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft
 
-Abrechnungsinformationen des E-Rezepte für PKV-Versicherte
+Abrechnungsinformationen für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 
 * [**Table of Contents**](toc.md)
 * [**Operation API**](operation-api.md)
 * [**Operation: $accept**](op-accept.md)
-* **E-Rezept-Fachdienst Anforderungen: $accept**
+* **FD-Anforderungen: $accept**
 
-## E-Rezept-Fachdienst Anforderungen: $accept
+## FD-Anforderungen: $accept
 
 Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für die Operation `$accept`.
 

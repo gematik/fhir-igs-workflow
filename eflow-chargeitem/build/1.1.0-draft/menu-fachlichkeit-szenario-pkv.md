@@ -1,6 +1,6 @@
-# Abrechnungsinformationen des E-Rezepts für PKV-Versicherte - Abrechnungsinformationen des E-Rezepte für PKV-Versicherte v1.1.0-draft
+# Abrechnungsinformationen des E-Rezepts für PKV-Versicherte - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft
 
-Abrechnungsinformationen des E-Rezepte für PKV-Versicherte
+Abrechnungsinformationen für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 
@@ -9,7 +9,7 @@ Version 1.1.0-draft - ci-build
 
 ## Abrechnungsinformationen des E-Rezepts für PKV-Versicherte
 
-Das Feature „Abrechnungsinformationen des E-Rezepte für PKV-Versicherte“ erweitert die bestehenden E-Rezept-Workflows um die digitale Bereitstellung und Verarbeitung von Abrechnungsinformationen. Es beschreibt den zusätzlichen Funktionsumfang für den E-Rezept-Fachdienst und die beteiligten Clientsysteme, die Prozessparameter sowie die fachlichen und technischen Anforderungen.
+Das Feature „Abrechnungsinformationen für PKV-Versicherte“ erweitert die bestehenden E-Rezept-Workflows für Arzneimittel um die digitale Bereitstellung von Abrechnungsinformationen. Es beschreibt den zusätzlichen Funktionsumfang für den E-Rezept-Fachdienst und die beteiligten Clientsysteme, die Prozessparameter sowie die fachlichen und technischen Anforderungen.
 
 ### Zielsetzung
 
@@ -27,9 +27,11 @@ Die Festlegungen des Standard-Workflows für apothekenpflichtige Arzneimittel si
 
 Anforderungen werden durch eine eindeutige ID (IG-ERP-CHRG-*) und die Schlüsselworte MUSS, DARF NICHT, SOLL, SOLL NICHT, KANN gemäß RFC 2119 gekennzeichnet. Die Schlüsselworte werden bei Bedarf um Pronomen ergänzt.
 
-### Epic: E-Rezept für PKV-Versicherte
+### Epic
 
-TODO: Update link Der Ablauf für die Übermittlung von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel für PKV-Versicherte orientiert sich an der Verordnung von apothekenpflichtige Arzneimittel für GKV-Versicherte, und wird [hier](https://gemspec.gematik.de/ig/fhir/1.0.0/menu-fachlichkeit-e-rezept.html) beschrieben. Die Abrechnung der Apotheke erfolgt gegenüber dem Versicherten, sofern keine Direktabrechnung mit einer Krankenversicherung vereinbart wurde. Stattdessen wird der Prozess um Aspekte für die Bereitstellung von Informationen für die Erstattung der Kosten für den Versicherten erweitert.
+TODO: Update link
+
+Der Ablauf für die Übermittlung von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel für PKV-Versicherte orientiert sich an der Verordnung von apothekenpflichtige Arzneimittel für GKV-Versicherte, und wird [hier](https://gemspec.gematik.de/ig/fhir/1.0.0/menu-fachlichkeit-e-rezept.html) beschrieben. Die Abrechnung der Apotheke erfolgt gegenüber dem Versicherten, sofern keine Direktabrechnung mit einer Krankenversicherung vereinbart wurde. Stattdessen wird der Prozess um Aspekte für die Bereitstellung von Informationen für die Erstattung der Kosten für den Versicherten erweitert.
 
 #### Ablauf
 
@@ -37,33 +39,39 @@ Nach der Belieferung des E-Rezepts stellt die Apotheke, sofern das E-Rezept nich
 
 ### User Stories
 
-### PKV-Versicherte
+#### PKV-Versicherte
 
-* Als PKV-Versicherter möchte ich in der E-Rezept-App meine Zustimmung/Einwilligung geben können, so dass digitale Abrechnungsinformationen durch Apotheker im E-Rezept-Fachdienst gespeichert werden können.
-* Als PKV-Versicherter möchte ich in der E-Rezept-App meine Zustimmung/Einwilligung für die Speicherung von digitalen Abrechnungsinformationen zu jedem beliebigen Zeitpunkt widerrufen können.
-* Als PKV-Versicherter möchte ich, dass mein Apotheker erkennt, dass ich in der E-Rezept-App dem Speichern von digitalen Abrechnungsinformationen zugestimmt habe.
-* Als PKV-Versicherter möchte ich wählen können, ob der Apotheker mir die Abrechnungsinformation für ein E-Rezept analog (Papierbeleg) oder digital zur Verfügung stellt.
-* Als PKV-Versicherter möchte ich nach Abgabe in der Apotheke alle Belege in der E-Rezept-App aufrufen und nutzen können.
-* Als PKV-Versicherte möchte ich die digitalen Abrechnungsinformationen aus der E-Rezept-App als PDF-Dokument an einen anderen digitalen Speicherort exportieren und ausdrucken können, um meine Abrechnungen auch an einer anderen Stelle dokumentieren zu können.
-* Als PKV-Versicherter möchte ich aus der E-Rezept-App heraus alle abrechnungsrelevanten Informationen als PDF-Dokument digital an meinen Kostenträger übermitteln können, um eine Erstattung beantragen zu können (Eine Übermittlung erfolgt nicht automatisch).
-* Als PKV-Versicherter möchte ich meine eingereichten Abrechnungen im E-Rezept-Fachdienst markieren können.
-* Als PKV-Versicherter möchte ich, dass mein Apotheker die Abrechnungsinformationen ändern kann, wenn mir bei der Abrechnung ein Fehler auffällt. Dazu möchte ich den Apotheker in der App berechtigen können.
-* Als PKV-Versicherter möchte ich in der E-Rezept-App darauf hingewiesen werden, wenn die Abrechnungsinformationen nachträglich geändert wurden.
-* Als PKV-Versicherter möchte ich immer nur die neuste Version der Abrechnungsinformation an meinen Kostenträger weiterleiten können, damit ich nicht mit den Versionen durcheinanderkomme.
-* Als PKV-Versicherter möchte ich in der E-Rezept-App einen Hinweis angezeigt bekommen, bevor mein PKV-Rezept nach Ablauf von 10 Jahren automatisch gelöscht wird.
+Als PKV-Versicherter möchte ich …
 
-### Apotheker
+* … in der E-Rezept-App meine Zustimmung/Einwilligung geben können, so dass digitale Abrechnungsinformationen durch Apotheker im E-Rezept-Fachdienst gespeichert werden können.
+* … in der E-Rezept-App meine Zustimmung/Einwilligung für die Speicherung von digitalen Abrechnungsinformationen zu jedem beliebigen Zeitpunkt widerrufen können.
+* …, dass mein Apotheker erkennt, dass ich in der E-Rezept-App dem Speichern von digitalen Abrechnungsinformationen zugestimmt habe.
+* … wählen können, ob der Apotheker mir die Abrechnungsinformation für ein E-Rezept analog (Papierbeleg) oder digital zur Verfügung stellt.
+* … nach Abgabe in der Apotheke alle Belege in der E-Rezept-App aufrufen und nutzen können.
+* … die digitalen Abrechnungsinformationen aus der E-Rezept-App als PDF-Dokument an einen anderen digitalen Speicherort exportieren und ausdrucken können, um meine Abrechnungen auch an einer anderen Stelle dokumentieren zu können.
+* … aus der E-Rezept-App heraus alle abrechnungsrelevanten Informationen als PDF-Dokument digital an meinen Kostenträger übermitteln können, um eine Erstattung beantragen zu können (Eine Übermittlung erfolgt nicht automatisch).
+* … meine eingereichten Abrechnungen im E-Rezept-Fachdienst markieren können.
+* …, dass mein Apotheker die Abrechnungsinformationen ändern kann, wenn mir bei der Abrechnung ein Fehler auffällt. Dazu möchte ich den Apotheker in der App berechtigen können.
+* … in der E-Rezept-App darauf hingewiesen werden, wenn die Abrechnungsinformationen nachträglich geändert wurden.
+* … immer nur die neuste Version der Abrechnungsinformation an meinen Kostenträger weiterleiten können, damit ich nicht mit den Versionen durcheinanderkomme.
+* … in der E-Rezept-App einen Hinweis angezeigt bekommen, bevor mein PKV-Rezept nach Ablauf von 10 Jahren automatisch gelöscht wird.
 
-* Als Apotheker möchte ich in meinem AVS erkennen können, ob der Versicherte dem Speichern von digitalen Abrechnungsinformationen zugestimmt hat.
-* Als Apotheker möchte ich dem Versicherten die digitalen Abrechnungsinformationen über den E-Rezept-Fachdienst bereitstellen können, falls der Versicherte seine Einwilligung erteilt hat.
-* Als Apotheker möchte ich, auf Wunsch des Versicherten, eine fehlerhaft erstellte digitale Abrechnungsinformation überschreiben können.
-* Als Apotheker möchte ich bei meinem Kunden die Einwilligung einholen können, um die Abrechnungsinformationen ändern zu können, wenn mir ein Fehler darin auffällt.
-* Als Apotheker möchte ich in meinem AVS benachrichtigt werden, wenn ein Kunde eine Änderung einer Abrechnungsinformation anfragt.
+#### Apotheker
 
-### Kostenträger
+Als Apotheker möchte ich …
 
-* Als Kostenträger möchte ich digital eingereichte E-Rezept-Abrechnungsinformationen direkt digital weiterverarbeiten können.
-* Als Kostenträger möchte ich doppelte Einreichungen (analog und digital) von E-Rezept-Abrechnungsinformationen zur Erstattung erkennen können.
+* … in meinem AVS erkennen können, ob der Versicherte dem Speichern von digitalen Abrechnungsinformationen zugestimmt hat.
+* … dem Versicherten die digitalen Abrechnungsinformationen über den E-Rezept-Fachdienst bereitstellen können, falls der Versicherte seine Einwilligung erteilt hat.
+* …, auf Wunsch des Versicherten, eine fehlerhaft erstellte digitale Abrechnungsinformation überschreiben können.
+* … bei meinem Kunden die Einwilligung einholen können, um die Abrechnungsinformationen ändern zu können, wenn mir ein Fehler darin auffällt.
+* … in meinem AVS benachrichtigt werden, wenn ein Kunde eine Änderung einer Abrechnungsinformation anfragt.
+
+#### Kostenträger
+
+Als Kostenträger möchte ich …
+
+* … digital eingereichte E-Rezept-Abrechnungsinformationen direkt digital weiterverarbeiten können.
+* … doppelte Einreichungen (analog und digital) von E-Rezept-Abrechnungsinformationen zur Erstattung erkennen können.
 
 ### Prozessabschnitte
 
@@ -73,7 +81,7 @@ Die digitale Abrechnungsinformation besteht aus den folgenden Datensätzen:
 * PKV-Abgabedatensatz
 * Quittungsdatensatz
 
-### Die Einwilligung zum Speichern der Abrechungsinformationen
+### Einwilligung zum Speichern der Abrechungsinformationen
 
 Das Speichern der Abrechnungsinformationen erfolgt nur mit Einwilligung des Versicherten. Diese Einwilligung kann der Versicherte speichern, einsehen und jederzeit widerrufen. Sie wird unbefristet erteilt, und mit dem Widerruf der Einwilligung werden bereits gespeicherte Abrechnungsinformationen gelöscht.
 
@@ -89,7 +97,7 @@ Das Speichern der Abrechnungsinformationen erfolgt nur mit Einwilligung des Vers
 | [UC 3.13 - Einwilligungen durch Versicherten einsehen](menu-technische-umsetzung-anwendungsfaelle.md#uc-3-13-einwilligungen-einsehen) |
 | [UC 3.15 - Einwilligung durch Versicherten widerrufen](menu-technische-umsetzung-anwendungsfaelle.md#uc-3-15-einwilligung-widerrufen) |
 
-**Tabelle:**Fachliche Anwendungsfälle mit Bezug zum Szenario
+**Tabelle:**Technische Anwendungsfälle mit Bezug zum Szenario
 *Einwilligung zum Speichern der Abrechungsinformationen*
 ### Belieferung der Abrechnungsinformation durch die Apotheke
 
@@ -97,7 +105,7 @@ Nach der Einlösung kann die Apotheke die Abrechnungsinformation digital bereits
 
 Der PKV-Abgabedatensatz wird durch die Apotheke erstellt. Er enthält – sofern in der Apotheke Änderungen bei der Abgabe vorgenommen werden – den QES-signierten PKV-Abgabedatensatz; andernfalls den fortgeschritten signierten PKV-Abgabedatensatz. Das Informationsmodell zum PKV-Abgabedatensatz wird durch den Verband der PKVen und DAV erarbeitet.
 
-Der E-Rezept-Fachdienst erzeugt einen AccessCode, der für spätere Korrekturen genutzt werden kann.
+Der Versicherte kann nachträglich die Apotheke berechtigen Korrekturen am PKV-Abgabedatensatz vorzunehmen und den korrigierten Datensatz im E-Rezept-Fachdienst zu speichern. Dafür erzeugt der E-Rezept-Fachdienst einen AccessCode.
 
 **Beteiligte Akteure:**
 
@@ -112,7 +120,7 @@ Der E-Rezept-Fachdienst erzeugt einen AccessCode, der für spätere Korrekturen 
 | [UC 4.10 - Abrechnungsinformationen durch Abgebenden abrufen](menu-technische-umsetzung-anwendungsfaelle.md#uc_4_10_abrechungsinformationen_durch_abgebenden_abrufen) |
 | [UC 4.13 - PKV-Abgabedatensatz durch Abgebenden ändern](menu-technische-umsetzung-anwendungsfaelle.md#uc_4_13_abgabedatensatz_durch_abgebenden_aktualisieren) |
 
-**Tabelle:**Fachliche Anwendungsfälle mit Bezug zu Szenario
+**Tabelle:**Technische Anwendungsfälle mit Bezug zu Szenario
 *Belieferung durch die Apotheke*
 ### Abrechnung durch den Versicherten
 
@@ -140,6 +148,6 @@ Die Löschfristen für das E-Rezept mit den in Beziehung stehenden Daten, wie Di
 | [Abrechnungsinformationen durch den Versicherten markieren](menu-technische-umsetzung-anwendungsfaelle.md#uc_3_12_abrechungsinformationen_durch_versicherten_markieren) |
 | [Abrechnungsinformationen durch den Versicherten löschen](menu-technische-umsetzung-anwendungsfaelle.md#uc_3_11_abrechungsinformation_durch_versicherten_löschen) |
 
-**Tabelle:**Fachliche Anwendungsfälle mit Bezug zu Szenario
+**Tabelle:**Technische Anwendungsfälle mit Bezug zu Szenario
 *Abrechnung durch den Versicherten*
 

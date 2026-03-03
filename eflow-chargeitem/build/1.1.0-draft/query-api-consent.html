@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Query API: Consent - Abrechnungsinformationen des E-Rezepte für PKV-Versicherte v1.1.0-draft</title>
+    <title>Query API: Consent - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -205,7 +205,7 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-Abrechnungsinformationen des E-Rezepte für PKV-Versicherte
+Abrechnungsinformationen für PKV-Versicherte
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
             <span style="display:inline-block;">Version 1.1.0-draft - ci-build
@@ -260,56 +260,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div class="markdown-toc">
-  <p>Seiteninhalt:</p>
-
-<ul id="markdown-toc">
-  <li><a href="#anforderungen-an-die-schnittstelle" id="markdown-toc-anforderungen-an-die-schnittstelle">Anforderungen an die Schnittstelle</a></li>
-  <li><a href="#post-consent-einwilligung-erteilen" id="markdown-toc-post-consent-einwilligung-erteilen">POST /Consent (Einwilligung erteilen)</a></li>
-  <li><a href="#get-consent-einwilligung-einsehen" id="markdown-toc-get-consent-einwilligung-einsehen">GET /Consent (Einwilligung einsehen)</a></li>
-  <li><a href="#delete-consent-einwilligung-widerrufen" id="markdown-toc-delete-consent-einwilligung-widerrufen">DELETE /Consent (Einwilligung widerrufen)</a></li>
-</ul>
-
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
 <p>Diese Seite basiert auf der gleichnamigen Schnittstelle in der <a href="https://gemspec.gematik.de/ig/fhir/1.0.0query-api-consent.html">Core-Spezifikation</a> und beschreibt den Einstieg in die Consent-Query-Schnittstelle.</p>
 
 <p>Die Query API für Consent ermöglicht das Erteilen, Einsehen und Widerrufen der Einwilligung zur Speicherung von Abrechnungsinformationen.</p>
 
 <h3 id="anforderungen-an-die-schnittstelle">Anforderungen an die Schnittstelle</h3>
+
 <ul>
-  <li><a href="./query-api-consent-req-fd.html">Anforderungen für den E-Rezept-Fachdienst</a></li>
+  <li><a href="./query-api-consent-req-fd.html">Server-Anforderungen zur Consent-Query</a>: Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.</li>
+  <li><a href="./query-api-consent-req-fdv.html">FdV-Anforderungen zur Consent-Query</a>: Anforderungen an das E-Rezept-FdV des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.</li>
 </ul>
-
-<h3 id="post-consent-einwilligung-erteilen">POST /Consent (Einwilligung erteilen)</h3>
-
-<h4 id="nachricht">Nachricht</h4>
-<p>Der Versicherte erteilt die Einwilligung durch das Erstellen einer Consent‑Ressource (CHARGCONS). Die KVNR wird in Consent.patient.identifier angegeben.</p>
-
-<h3 id="get-consent-einwilligung-einsehen">GET /Consent (Einwilligung einsehen)</h3>
-
-<h4 id="nachricht-1">Nachricht</h4>
-<p>Der Versicherte liest die gespeicherte Einwilligung aus. Die Antwort ist ein Bundle mit den Consent‑Ressourcen des Versicherten.</p>
-
-<p><strong>Beispiel-URI:</strong> <code class="language-plaintext highlighter-rouge">https://prescriptionserver.telematik/Consent</code></p>
-
-<h4 id="auslösung">Auslösung</h4>
-<p>Die Operation wird im FdV/AdV ausgelöst, um den Einwilligungsstatus anzuzeigen.</p>
-
-<h4 id="resource-api">Resource API</h4>
-<p>Anfragen an die <i>Consent</i>-Ressource können über die RESTful API mittels HTTP GET-Anfragen durchgeführt werden.</p>
-
-<h3 id="delete-consent-einwilligung-widerrufen">DELETE /Consent (Einwilligung widerrufen)</h3>
-
-<h4 id="nachricht-2">Nachricht</h4>
-<p>Der Versicherte widerruft die Einwilligung. Der Widerruf löscht die Consent‑Ressource und alle zugehörigen Abrechnungsinformationen.</p>
-
-<p><strong>Beispiel-URI:</strong> <code class="language-plaintext highlighter-rouge">https://prescriptionserver.telematik/Consent?category=CHARGCONS</code></p>
-
-<h4 id="auslösung-1">Auslösung</h4>
-<p>Die Operation wird im FdV/AdV ausgelöst, wenn der Versicherte die Einwilligung zurückzieht.</p>
-
-<h4 id="resource-api-1">Resource API</h4>
-<p>Die <i>Consent</i>-Ressource können über die RESTful API mittels HTTP DELETE-Anfragen gelöscht werden.</p>
 
 
 
@@ -330,7 +293,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 3, 2026 15:50+0000">2026-03-03</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 3, 2026 23:41+0000">2026-03-03</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
