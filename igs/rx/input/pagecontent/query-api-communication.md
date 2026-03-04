@@ -10,10 +10,9 @@ Mit einer POST-Anfrage an den E-Rezept-Fachdienst kann eine _Communication_-Inst
 
 ### Anforderungen an Schnittstelle
 
-Es gibt keine workflow-spezifischen Anforderungen für den E-Rezept-Fachdienst.
-
-- [Workflow-spezifische Anforderungen für das E-Rezept-FdV](./query-api-communication-req-fdv.html)
-
+- [FD-Anforderungen zur Communication-Query](./query-api-communication-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [FdV-Anforderungen für Communication-Query](./query-api-communication-req-fdv.html): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
+- [AVS-Anforderungen für Communication-Query](./query-api-communication-req-avs.html): Anforderungen an das AVS zur Nutzung der Schnittstelle.
 
 ### Resource API
 
