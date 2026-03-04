@@ -58,3 +58,14 @@ Die Alternative 2 wird genutzt, wenn der Nutzer als Vertreter eines Versicherten
 Für weitere Informationen siehe Operation "Ein einzelnes E-Rezept abrufen" aus der API-Schnittstelle [E-Rezept API Dokumentation].
 
 Der Response beinhaltet die Task Ressource des E-Rezepts.
+
+### Workflowspezifische Anforderungen
+
+<!-- A_27832 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-216" title="E-Rezept-FdV: Flowtype 166 - Hinweis auf Workflow-Besonderheit" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FdV">
+        <testProcedure id="Produkttest"/>
+    </actor>
+     Das E-Rezept-FdV MUSS den Nutzer bei der Einsicht in ein E-Rezept mit dem Flowtype 166 darauf hinweisen, dass bei diesem Vorgang seine Einlösemöglichkeiten beschränkt sind und das Rezept eine verkürzte Gültigkeit aufweist.
+</requirement>

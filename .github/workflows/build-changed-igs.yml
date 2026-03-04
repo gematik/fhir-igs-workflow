@@ -65,10 +65,15 @@ jobs:
       - name: Install tooling
         run: |
           sudo apt-get update
-          sudo apt-get install -y zsh
+          sudo apt-get install -y zsh graphviz
           npm install -g fsh-sushi
           sudo wget -q https://github.com/mikefarah/yq/releases/download/v4.44.1/yq_linux_amd64 -O /usr/local/bin/yq
           sudo chmod +x /usr/local/bin/yq
+
+      - name: Verify Graphviz
+        run: |
+          which dot
+          dot -V
 
       - name: Install Firely Terminal (fhir)
         run: |
@@ -160,6 +165,20 @@ jobs:
       - name: Download IG Publisher
         if: steps.igs.outputs.ig_list != ''
         run: ./update-publisher.sh -y
+
+      - name: Download HAPI validator for StructureMap transformation
+        if: steps.igs.outputs.ig_list != '' && contains(steps.igs.outputs.ig_list, 'bfarm')
+        shell: bash
+        run: |
+          set -euo pipefail
+          validator_path="$GITHUB_WORKSPACE/input-cache/current_hapi_validator.jar"
+          mkdir -p "$(dirname "$validator_path")"
+          curl -sSL https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar -o "$validator_path"
+          if [[ ! -s "$validator_path" ]]; then
+            echo "Failed to download HAPI validator jar" >&2
+            exit 1
+          fi
+          echo "HAPI_VALIDATOR_JAR=$validator_path" >> "$GITHUB_ENV"
 
       - name: Build IGs
         if: steps.igs.outputs.ig_list != ''
