@@ -271,21 +271,20 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios “Abrechn
 ### Berechtigen der Apotheke zum Ändern des PKV-Abgabedatensatzes
 
 * Beschreibung: Vorbedingungen
-  * Der Versicherte übermittelt der abgebenden LEI einen AccessCode, um die Apotheke zum Abruf und einmaligen Ändern zu berechtigen.: * Ein Mitarbeiter der abgebenden LEI hat den Anwendungsfall “UC 4.11 - Abrechnungsinformation durch Abgebenden bereitstellen” durchgeführt.
-* Die Rezept-ID der Abrechnungsinformation und der AccessCode zum Ändern sind im PS bekannt.
+  * Der Versicherte übermittelt der abgebenden LEI einen AccessCode, um die Apotheke zum Abruf und einmaligen Ändern zu berechtigen. Die Übermittlung erfolgt gemäß dem Anwendungsfall “UC 3.3 - Nachricht durch Versicherten übermitteln”.: * Ein Mitarbeiter der abgebenden LEI hat den Anwendungsfall “UC 4.11 - Abrechnungsinformation durch Abgebenden bereitstellen” durchgeführt.
 
 * Beschreibung: Durchzuführende Aktionen
-  * Der Versicherte übermittelt der abgebenden LEI einen AccessCode, um die Apotheke zum Abruf und einmaligen Ändern zu berechtigen.: * Das E-Rezept-FdV erzeugt einen Abrechnungsinformation-Token.
+  * Der Versicherte übermittelt der abgebenden LEI einen AccessCode, um die Apotheke zum Abruf und einmaligen Ändern zu berechtigen. Die Übermittlung erfolgt gemäß dem Anwendungsfall “UC 3.3 - Nachricht durch Versicherten übermitteln”.: * Das E-Rezept-FdV erzeugt einen Abrechnungsinformation-Token.
 * Der Versicherte übermittelt den Token per Nachricht (Communication) oder zeigt einen 2D-Code.
 
 * Beschreibung: Nachbedingungen
-  * Der Versicherte übermittelt der abgebenden LEI einen AccessCode, um die Apotheke zum Abruf und einmaligen Ändern zu berechtigen.: * Das AVS nutzt den AccessCode für Abruf/Änderung der Abrechnungsinformation.
+  * Der Versicherte übermittelt der abgebenden LEI einen AccessCode, um die Apotheke zum Abruf und einmaligen Ändern zu berechtigen. Die Übermittlung erfolgt gemäß dem Anwendungsfall “UC 3.3 - Nachricht durch Versicherten übermitteln”.: * Das AVS nutzt den AccessCode für Abruf/Änderung der Abrechnungsinformation.
 
 * Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * Der Versicherte übermittelt der abgebenden LEI einen AccessCode, um die Apotheke zum Abruf und einmaligen Ändern zu berechtigen.: * FHIR REST: Communication (E-Rezept-Nachricht einstellen)
+  * Der Versicherte übermittelt der abgebenden LEI einen AccessCode, um die Apotheke zum Abruf und einmaligen Ändern zu berechtigen. Die Übermittlung erfolgt gemäß dem Anwendungsfall “UC 3.3 - Nachricht durch Versicherten übermitteln”.: * FHIR REST: Communication (E-Rezept-Nachricht einstellen)
 
 * Beschreibung: Relevante(r) Sektor(en)
-  * Der Versicherte übermittelt der abgebenden LEI einen AccessCode, um die Apotheke zum Abruf und einmaligen Ändern zu berechtigen.:  VERSICHERTER 
+  * Der Versicherte übermittelt der abgebenden LEI einen AccessCode, um die Apotheke zum Abruf und einmaligen Ändern zu berechtigen. Die Übermittlung erfolgt gemäß dem Anwendungsfall “UC 3.3 - Nachricht durch Versicherten übermitteln”.:  VERSICHERTER 
 
 **Tabelle:**Berechtigen der Apotheke zum Ändern des PKV-Abgabedatensatzes
 **Sequenzdiagramm:**
