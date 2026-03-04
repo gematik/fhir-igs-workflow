@@ -45,7 +45,7 @@ Other representations of profile: [CSV](StructureDefinition-identifier-telematik
   "name" : "IdentifierTelematikId",
   "title" : "Identifier Telematik-ID",
   "status" : "draft",
-  "date" : "2026-03-04T14:00:20+00:00",
+  "date" : "2026-03-04T14:06:40+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

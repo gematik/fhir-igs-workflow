@@ -35,7 +35,7 @@ Der PKV-Versicherte kann über die E-Rezept App die Abrechnungsinformation digit
 
 TODO: Fix link
 
-Der Workflow-Typ “200” und der Workflow-Typ “209” werden im [gemIG_eRp_Prescription] beschrieben.
+Der Workflow-Typ “200” und der Workflow-Typ “209” werden in [gemIG_eRp_Prescription] beschrieben.
 
 Für E-Rezepte der Workflow-Types “200” und “209” können die Abrechnungsinformationen über den E-Rezept-Fachdienst an den Versicherten übermittelt werden.
 
