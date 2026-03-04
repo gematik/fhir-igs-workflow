@@ -218,34 +218,55 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios “Abrechn
 **Sequenzdiagramm:**
 
 **Abbildung: **Abrechnungsinformationen durch den Versicherten weitergeben
- ###
+
+### UC 3.12 - Abrechnungsinformationen durch den Versicherten markieren
 
 * Beschreibung: Vorbedingungen
-  * : 
-* Beschreibung: Durchzuführende Aktionen
-  * : 
-* Beschreibung: Nachbedingungen
-  * : 
-* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * : 
-* Beschreibung: Relevante(r) Sektor(en)
-  * : 
+  * Der Versicherte markiert die Abrechnungsinformation im E-Rezept-FdV, um sie für bestimmte Aktionen zu kennzeichnen. Der E-Rezept-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.: * Eine LEI hat den Anwendungsfall “Abrechnungsinformation durch Abgebenden bereitstellen” für das E-Rezept durchgeführt. Die Abrechnungsinformation ist auf dem E-Rezept-Fachdienst gespeichert.
+* Der Versicherte hat sich über den Anwendungsfall “Abrufen der Abrechnungsinformation durch den Versicherten” die zu markierende Abrechnungsinformation herausgesucht.
 
-**Tabelle:**
- ###
+* Beschreibung: Durchzuführende Aktionen
+  * Der Versicherte markiert die Abrechnungsinformation im E-Rezept-FdV, um sie für bestimmte Aktionen zu kennzeichnen. Der E-Rezept-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.: * Ein Versicherter wählt im E-Rezept-FdV die zu markierende Abrechnungsinformation sowie die zu Optionen für die Markierung aus.
+* Der E-Rezept-Fachdienst speichert die Information.
+
+* Beschreibung: Nachbedingungen
+  * Der Versicherte markiert die Abrechnungsinformation im E-Rezept-FdV, um sie für bestimmte Aktionen zu kennzeichnen. Der E-Rezept-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.: * Die Information zur Markierung ist im E-Rezept-Fachdienst gespeichert. Der Datenzugriff ist im E-Rezept-Fachdienst protokolliert.
+
+* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+  * Der Versicherte markiert die Abrechnungsinformation im E-Rezept-FdV, um sie für bestimmte Aktionen zu kennzeichnen. Der E-Rezept-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.: * [Abrechnungsinformation markieren](./menu-technische-umsetzung-chargeitem-req-fdv.md#abrechnungsinformationen-markieren)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Der Versicherte markiert die Abrechnungsinformation im E-Rezept-FdV, um sie für bestimmte Aktionen zu kennzeichnen. Der E-Rezept-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.:  VERSICHERTER 
+
+**Tabelle:**UC 3.12 - Abrechnungsinformationen durch den Versicherten markieren
+**Sequenzdiagramm:**
+
+**Abbildung: **UC 3.12 - Abrechnungsinformationen durch den Versicherten markieren
+
+### UC 3.11 - Abrechnungsinformationen durch den Versicherten löschen
 
 * Beschreibung: Vorbedingungen
-  * : 
-* Beschreibung: Durchzuführende Aktionen
-  * : 
-* Beschreibung: Nachbedingungen
-  * : 
-* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * : 
-* Beschreibung: Relevante(r) Sektor(en)
-  * : 
+  * Ein Versicherter wählt im E-Rezept-FdV die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der E-Rezept-Fachdienst löscht die Abrechnungsinformation: * Eine LEI hat den Anwendungsfall “Abrechnungsinformation durch Abgebenden bereitstellen” für das E-Rezept durchgeführt.
+* Der Versicherte hat sich über den Anwendungsfall “Abrufen der Abrechnungsinformation durch den Versicherten” die Abrechnungsinformation auf sein FdV heruntergeladen.
 
-**Tabelle:**
+* Beschreibung: Durchzuführende Aktionen
+  * Ein Versicherter wählt im E-Rezept-FdV die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der E-Rezept-Fachdienst löscht die Abrechnungsinformation: * Ein Versicherter wählt im E-Rezept-FdV die zu löschende Abrechnungsinformation aus und bestätigt das Löschen.
+* Das E-Rezept-FdV überträgt den Löschrequest
+* Der E-Rezept-Fachdienst löscht die Abrechnungsinformation.
+
+* Beschreibung: Nachbedingungen
+  * Ein Versicherter wählt im E-Rezept-FdV die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der E-Rezept-Fachdienst löscht die Abrechnungsinformation: * Die Abrechnungsinformation sind auf dem E-Rezept-Fachdienst gelöscht. Das Löschen ist im E-Rezept-Fachdienst protokolliert.
+
+* Beschreibung: Schnittstelle des E-Rezept-Fachdienst
+  * Ein Versicherter wählt im E-Rezept-FdV die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der E-Rezept-Fachdienst löscht die Abrechnungsinformation: * [Abrechnungsinformation löschen](./menu-technische-umsetzung-chargeitem-req-fdv.md#abrechnungsinformationen-löschen)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Ein Versicherter wählt im E-Rezept-FdV die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der E-Rezept-Fachdienst löscht die Abrechnungsinformation:  VERSICHERTER 
+
+**Tabelle:**UC 3.11 - Abrechnungsinformationen durch den Versicherten löschen
+**Sequenzdiagramm:**
+
+**Abbildung: **UC 3.11 - Abrechnungsinformationen durch den Versicherten löschen
 
 ### Berechtigen der Apotheke zum Ändern des PKV-Abgabedatensatzes
 
