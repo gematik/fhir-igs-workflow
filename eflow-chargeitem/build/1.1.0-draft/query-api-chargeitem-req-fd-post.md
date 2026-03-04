@@ -107,16 +107,6 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunk
 Wenn die Abfrage des OCSP-Response für das Signaturzertifikat fehlschlägt, muss der HTTP-Request mit dem HTTP-Status-Code 512 abgelehnt werden.
 </requirement>
 
-TODO: Remove? Otherwise fix
-<!--A_22141-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-196" title="E-Rezept-Fachdienst – Signaturzertifikat SMC-B prüfen" version="0">
-    <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
-        <testProcedure id="Produkttest"/>
-    </actor>
-Der E-Rezept-Fachdienst MUSS ein Signatur-Zertifikat einer nonQES-Signatur einer Leistungserbringerinstitution gemäß gemSpec_PKI#TUC_PKI_018 mit den Parametern oid_smc_b_osig, intendedKeyUsage nonRepudiation, intendedExtendedKeyUsage leer, OCSP-Graceperiod 12 Stunden, Offline-Modus nein, Prüfmodus OCSP auf Gültigkeit prüfen. Die OCSP-Response darf 12 Stunden zwischengespeichert werden.
-</requirement>
-
 <!--A_22134-->
 <requirement conformance="SHALL" key="IG-ERP-CHRG-197" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Verordnungsdatensatz übernehmen" version="0">
     <meta lockversion="false"/>
