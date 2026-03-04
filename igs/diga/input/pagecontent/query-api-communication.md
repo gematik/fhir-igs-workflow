@@ -5,13 +5,9 @@ Communication wird für die Kommunikation zwischen Versicherten und Kostenträge
 - Zuweisung von Verordnungen durch den Versicherten an den Kostenträger. Der Payload ist hierbei optional (Kardinalitaet 0..1)
 - Übermittlung einer Nachricht dürch den Kostenträger an den Versicherten.
 
-Es gelten die übergreifenden Anforderungen an die POST /Communication Schnittstelle.
-
-Es gibt keine workflow-spezifischen Anforderungen für den E-Rezept-Fachdienst.
-
-[Workflow-spezifische Anforderungen für das E-Rezept-FdV](./query-api-communication-req-fdv.html)
-
-[Workflow-spezifische Anforderungen für den Kostenträger](./query-api-communication-req-ktr.html)
+- [Server-Anforderungen zu Communications](./query-api-communication-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [FdV-Anforderungen zu Communications](./query-api-communication-req-fdv.html): Anforderungen an ein E-Rezept-FdV zur Nutzung der Schnittstelle.
+- [KTR-Anforderungen zu Communications](./query-api-communication-req-ktr.html): Anforderungen an ein CS Kostenträger zur Nutzung der Schnittstelle.
 
 -API Beschreibung aus Cap Statement
 

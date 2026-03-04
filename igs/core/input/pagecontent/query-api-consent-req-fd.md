@@ -10,7 +10,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- ToDo: Neue Anforderung aller zu verwaltenden Einwilligungen? (Oder wird das durch die Profilierung der Ressource festgelegt)  -->
-<!-->
+<!--
   Der E-Rezept-Fachdienst MUSS Consent Ressourcen mit den folgenden Categorien verwalten:
   <ul>
         <li>https://gematik.de/fhir/erpchrg/CodeSystem/GEM_ERPCHRG_CS_ConsentType </li>

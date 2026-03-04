@@ -1,3 +1,10 @@
+Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Communication`-Query-Endpunkte.
+
+### Anforderungen aus der Core Spezifikation
+
+{% include core.query-api-communication-req-fdv.md %}
+
+### Modulspezifische Anforderungen
 
 <!-- A_26007 -->
 <requirement conformance="MAY" key="IG-TIFlow-DiGA-31" title="A_26007 - E-Rezept-FdV: E-Rezept zuweisen - Flowtype 162 - Kostenträger auswählen" version="0">
