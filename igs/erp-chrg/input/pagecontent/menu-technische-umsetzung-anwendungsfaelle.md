@@ -92,6 +92,15 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios "Abrechnun
 
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
+<!-- Berechtigen der Apotheke zum Ändern des PKV-Abgabedatensatzes -->
+{% assign use_case = use_cases | where: "id", "accesscode-an-apotheke-übermitteln" | first %}
+<a id="{{ use_case.anchor }}"></a>
+### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
 <a id="accesscode-an-apotheke-übermitteln"></a>
 ## Berechtigen der Apotheke zum Ändern des PKV‑Abgabedatensatzes
 Der Versicherte übermittelt der abgebenden LEI einen AccessCode, um die Apotheke zum Abruf und einmaligen Ändern zu berechtigen.

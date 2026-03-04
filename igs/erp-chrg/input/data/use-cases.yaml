@@ -162,3 +162,19 @@
   interface: |
     - [Abrechnungsinformation löschen](./menu-technische-umsetzung-chargeitem-req-fdv.html#abrechnungsinformationen-löschen)
   diagram: seq-uc-3-11-abrechungsinformation-durch-versicherten-loeschen
+
+- id: accesscode-an-apotheke-übermitteln
+  core-uc: UC_3_3_Nachricht_durch_Versicherten_uebermitteln
+  anchor: accesscode-an-apotheke-übermitteln
+  link: menu-technische-umsetzung-anwendungsfaelle.html#accesscode-an-apotheke-übermitteln
+  title: "Berechtigen der Apotheke zum Ändern des PKV-Abgabedatensatzes"
+  description: |
+    Der Versicherte übermittelt der abgebenden LEI einen AccessCode, um die Apotheke zum Abruf und einmaligen Ändern zu berechtigen.
+  preconditions: |
+    - Ein Mitarbeiter der abgebenden LEI hat den Anwendungsfall "UC 4.11 - Abrechnungsinformation durch Abgebenden bereitstellen" durchgeführt.
+    - Die Rezept-ID der Abrechnungsinformation und der AccessCode zum Ändern sind im PS bekannt.
+  actions: |
+    - Das E-Rezept-FdV erzeugt einen Abrechnungsinformation-Token.
+    - Der Versicherte übermittelt den Token per Nachricht (Communication) oder zeigt einen 2D-Code.    
+  postconditions: |
+    - Das AVS nutzt den AccessCode für Abruf/Änderung der Abrechnungsinformation.
