@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>E-Rezept-FdV Anforderungen: Task-Query - E-Rezept für Arzneimittel v1.0.0-draft</title>
+    <title>FdV-Anforderungen: Task-Query - E-Rezept für Arzneimittel v1.0.0-draft</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -231,7 +231,7 @@ E-Rezept für Arzneimittel
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-query-api.html'><b>Query API</b></a></li><li><a href='query-api-task.html'><b>Query API: Task</b></a></li><li><b>E-Rezept-FdV Anforderungen: Task-Query</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-query-api.html'><b>Query API</b></a></li><li><a href='query-api-task.html'><b>Query API: Task</b></a></li><li><b>FdV-Anforderungen: Task-Query</b></li>
 
           <span style="float:right;">
 
@@ -239,7 +239,7 @@ E-Rezept für Arzneimittel
 
             <a href="#bottom">unten</a>
 
-          | <a href="query-api-medicationdispense.html">nächste&gt;</a>
+          | <a href="query-api-task-req-avs.html">nächste&gt;</a>
 
           </span>
 
@@ -261,7 +261,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   
-  <h2>E-Rezept-FdV Anforderungen: Task-Query</h2>
+  <h2>FdV-Anforderungen: Task-Query</h2>
   
 
 
@@ -284,6 +284,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="#modulspezifische-anforderungen" id="markdown-toc-modulspezifische-anforderungen">Modulspezifische Anforderungen</a></li>
   <li><a href="#alternativer-ablauf-1-ein-spezifisches-e-rezept-durch-nutzer-abrufen" id="markdown-toc-alternativer-ablauf-1-ein-spezifisches-e-rezept-durch-nutzer-abrufen">Alternativer Ablauf 1: Ein spezifisches E-Rezept durch Nutzer abrufen</a></li>
   <li><a href="#alternativer-ablauf-2-ein-spezifisches-e-rezept-mit-accesscode-abrufen" id="markdown-toc-alternativer-ablauf-2-ein-spezifisches-e-rezept-mit-accesscode-abrufen">Alternativer Ablauf 2: Ein spezifisches E-Rezept mit AccessCode abrufen</a></li>
+  <li><a href="#workflowspezifische-anforderungen" id="markdown-toc-workflowspezifische-anforderungen">Workflowspezifische Anforderungen</a></li>
 </ul>
 
 </div>
@@ -347,6 +348,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Der Response beinhaltet die Task Ressource des E-Rezepts.</p>
 
+<h3 id="workflowspezifische-anforderungen">Workflowspezifische Anforderungen</h3>
+
+<!-- A_27832 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-216" title="E-Rezept-FdV: Flowtype 166 - Hinweis auf Workflow-Besonderheit" version="0">
+    <meta lockversion="false" />
+    <actor name="eRp_FdV">
+        <testProcedure id="Produkttest" />
+    </actor>
+     Das E-Rezept-FdV MUSS den Nutzer bei der Einsicht in ein E-Rezept mit dem Flowtype 166 darauf hinweisen, dass bei diesem Vorgang seine Einlösemöglichkeiten beschränkt sind und das Rezept eine verkürzte Gültigkeit aufweist.
+</requirement>
+
 
 
 
@@ -378,7 +390,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="query-api-medicationdispense.html">nächste&gt;</a>
+                <a href="query-api-task-req-avs.html">nächste&gt;</a>
 
               </td>
             </tr>
@@ -388,7 +400,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 3, 2026 06:01+0000">2026-03-03</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Mar 4, 2026 22:27+0000">2026-03-04</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

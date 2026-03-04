@@ -1,4 +1,4 @@
-# Server-Anforderungen $activate - E-Rezept für Arzneimittel v1.0.0-draft
+# FD-Anforderungen $activate - E-Rezept für Arzneimittel v1.0.0-draft
 
 E-Rezept für Arzneimittel
 
@@ -7,9 +7,9 @@ Version 1.0.0-draft - ci-build
 * [**Table of Contents**](toc.md)
 * [**Operation API**](menu-schnittstellen-operation-api.md)
 * [**Operation $activate (Task aktivieren)**](op-activate.md)
-* **Server-Anforderungen $activate**
+* **FD-Anforderungen $activate**
 
-## Server-Anforderungen $activate
+## FD-Anforderungen $activate
 
 Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für die Operation `$activate`.
 

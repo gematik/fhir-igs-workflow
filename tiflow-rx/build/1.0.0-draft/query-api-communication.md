@@ -22,9 +22,9 @@ Mit einer POST-Anfrage an den E-Rezept-Fachdienst kann eine **Communication**-In
 
 ### Anforderungen an Schnittstelle
 
-Es gibt keine workflow-spezifischen Anforderungen für den E-Rezept-Fachdienst.
-
-* [Workflow-spezifische Anforderungen für das E-Rezept-FdV](./query-api-communication-req-fdv.md)
+* [FD-Anforderungen zur Communication-Query](./query-api-communication-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+* [FdV-Anforderungen für Communication-Query](./query-api-communication-req-fdv.md): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
+* [AVS-Anforderungen für Communication-Query](./query-api-communication-req-avs.md): Anforderungen an das AVS zur Nutzung der Schnittstelle.
 
 ### Resource API
 
@@ -41,8 +41,4 @@ Um spezifische Details zu einer einzelnen **Communciation** mittels der RESTful 
 #### API Beschreibung
 
 * [API-ERP: Auf neue Nachrichten im E-Rezept Fachdienst prüfen](https://github.com/gematik/api-erp/blob/master/docs/erp_communication.adoc#anwendungsfall-auf-neue-nachrichten-im-e-rezept-fachdienst-pr%C3%BCfen)
-
-### Sicherheitsanforderungen
-
-Generelle Sicherheitsanforderungen werden [hier](./menu-schnittstellen-datenschutz-und-sicherheit.md) festgehalten.
 

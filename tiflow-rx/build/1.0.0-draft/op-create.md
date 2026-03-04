@@ -18,7 +18,8 @@ Die Nachricht wird als HTTP `POST` an `/Task/$create` gesendet.
 
 ### Anforderungen an Schnittstelle
 
-* [Ergänzende Anforderungen für PVS zu `$create`](./op-create-req-pvs.md): Anforderungen an das PVS zur Nutzung der Schnittstelle.
+* [FD-Anforderungen zu `$create`](./op-create-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+* [PVS-Anforderungen zu `$create`](./op-create-req-pvs.md): Anforderungen an das PVS zur Nutzung der Schnittstelle.
 
 ### API Beschreibung
 
@@ -31,8 +32,4 @@ Die API-Beschreibung für den Aufruf der Operation findet sich auf:
 * Task-IDs dürfen nicht auf Vorrat erzeugt bzw. bevorratet werden.
 * `$create` ist nur für konkrete, unmittelbar folgende Verordnungsprozesse zu verwenden.
 * Quelle: [api-erp: E-Rezept erstellen](https://github.com/gematik/api-erp/blob/master/docs/erp_bereitstellen.adoc#e-rezept-erstellen).
-
-### Sicherheitsanforderungen
-
-Generelle Sicherheitsanforderungen werden [hier](./menu-schnittstellen-datenschutz-und-sicherheit.md) festgehalten.
 

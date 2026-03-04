@@ -1,4 +1,4 @@
-# Server-Anforderungen $abort - E-Rezept für Arzneimittel v1.0.0-draft
+# FdV-Anforderungen $abort - E-Rezept für Arzneimittel v1.0.0-draft
 
 E-Rezept für Arzneimittel
 
@@ -7,9 +7,9 @@ Version 1.0.0-draft - ci-build
 * [**Table of Contents**](toc.md)
 * [**Operation API**](menu-schnittstellen-operation-api.md)
 * [**Operation $abort (Task abbrechen)**](op-abort.md)
-* **Server-Anforderungen $abort**
+* **FdV-Anforderungen $abort**
 
-## Server-Anforderungen $abort
+## FdV-Anforderungen $abort
 
 Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für die Operation `$abort`.
 

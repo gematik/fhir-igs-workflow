@@ -1,4 +1,4 @@
-# E-Rezept-FdV Anforderungen: Task-Query - E-Rezept für Arzneimittel v1.0.0-draft
+# FdV-Anforderungen: Task-Query - E-Rezept für Arzneimittel v1.0.0-draft
 
 E-Rezept für Arzneimittel
 
@@ -7,9 +7,9 @@ Version 1.0.0-draft - ci-build
 * [**Table of Contents**](toc.md)
 * [**Query API**](menu-schnittstellen-query-api.md)
 * [**Query API: Task**](query-api-task.md)
-* **E-Rezept-FdV Anforderungen: Task-Query**
+* **FdV-Anforderungen: Task-Query**
 
-## E-Rezept-FdV Anforderungen: Task-Query
+## FdV-Anforderungen: Task-Query
 
 ### Anforderungen aus der Core Spezifikation
 
@@ -39,4 +39,8 @@ Das E-Rezept-FdV KANN im Anwendungsfall "E-Rezepte abrufen" zum Herunterladen ei
 Für weitere Informationen siehe Operation “Ein einzelnes E-Rezept abrufen” aus der API-Schnittstelle [E-Rezept API Dokumentation].
 
 Der Response beinhaltet die Task Ressource des E-Rezepts.
+
+### Workflowspezifische Anforderungen
+
+Das E-Rezept-FdV MUSS den Nutzer bei der Einsicht in ein E-Rezept mit dem Flowtype 166 darauf hinweisen, dass bei diesem Vorgang seine Einlösemöglichkeiten beschränkt sind und das Rezept eine verkürzte Gültigkeit aufweist.
 

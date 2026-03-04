@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>E-Rezept-FdV Anforderungen: Communication-Query - E-Rezept für Arzneimittel v1.0.0-draft</title>
+    <title>FdV-Anforderungen: Communication-Query - E-Rezept für Arzneimittel v1.0.0-draft</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"4.3.1"}
-    h3,h4,h5,h6{--heading-prefix:"4.3.1"}</style>
+    <style type="text/css">h2{--heading-prefix:"4.3.2"}
+    h3,h4,h5,h6{--heading-prefix:"4.3.2"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -231,15 +231,15 @@ E-Rezept für Arzneimittel
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-query-api.html'><b>Query API</b></a></li><li><a href='query-api-communication.html'><b>Query API: Communication</b></a></li><li><b>E-Rezept-FdV Anforderungen: Communication-Query</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-query-api.html'><b>Query API</b></a></li><li><a href='query-api-communication.html'><b>Query API: Communication</b></a></li><li><b>FdV-Anforderungen: Communication-Query</b></li>
 
           <span style="float:right;">
 
-            <a href="query-api-communication.html">&lt;vorherige</a> | 
+            <a href="query-api-communication-req-fd.html">&lt;vorherige</a> | 
 
             <a href="#bottom">unten</a>
 
-          | <a href="menu-schnittstellen-operation-api.html">nächste&gt;</a>
+          | <a href="query-api-communication-req-avs.html">nächste&gt;</a>
 
           </span>
 
@@ -261,7 +261,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   
-  <h2>E-Rezept-FdV Anforderungen: Communication-Query</h2>
+  <h2>FdV-Anforderungen: Communication-Query</h2>
   
 
 
@@ -289,7 +289,60 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="anforderungen-aus-der-core-spezifikation">Anforderungen aus der Core Spezifikation</h3>
 
-<p>Diese Seite beschreibt Anforderungen an Clients zur Nutzung der <code class="language-plaintext highlighter-rouge">Communication</code>-Query-Endpunkte.</p>
+<p>Diese Seite beschreibt Anforderungen ein E-Rezept-FdV zur Nutzung der <code class="language-plaintext highlighter-rouge">Communication</code>-Query-Endpunkte.</p>
+
+<h4 id="nachrichten-abrufen">Nachrichten abrufen</h4>
+
+<!-- A_19205 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-183" title="Nachrichten abrufen - Nachrichten von Fachdienst herunterladen" version="0">
+    <meta lockversion="false" />
+    <actor name="eRP_FdV">
+        <testProcedure id="Produkttest" />
+    </actor>
+    Das E-Rezept-FdV MUSS im Anwendungsfall "Nachrichten von Apotheken anzeigen" zum Herunterladen von Nachrichten vom E-Rezept-Fachdienst die HTTP-Operation GET /Communication mit
+    <ul>
+        <li>ACCESS_TOKEN im Authorization-Header</li>
+        <li>optional: ?received=null für nur ungelesene Nachrichten</li>
+        <li>optional: ?received=gtYYYY-MM-DD_sort=sent für Nachrichten jünger als Datum DD.MM.YYY</li>
+    </ul>
+    ausführen.
+</requirement>
+
+<h4 id="nachricht-versenden">Nachricht versenden</h4>
+<p>Die für die Nachricht zu verwendende Communication-Ressource wird modul- und anwendungsfall-spezifisch festgelegt.</p>
+
+<!-- A_19203 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-183" title="Nachricht senden - Nachricht auf Fachdienst einstellen" version="0">
+    <meta lockversion="false" />
+    <actor name="eRP_FdV">
+        <testProcedure id="Produkttest" />
+    </actor>
+    Das E-Rezept-FdV MUSS im Anwendungsfall "Nachricht senden" zum Übermitteln einer Nachricht über den E-Rezept-Fachdienst die HTTP-Operation POST /Communication mit
+    <ul>
+        <li>ACCESS_TOKEN im Authorization-Header</li>
+        <li>Communication Ressource in HTTP-Request-Body</li> 
+    </ul>
+    ausführen.
+</requirement>
+
+<h4 id="nachricht-löschen">Nachricht löschen</h4>
+<p>Das E-Rezept-FdV MUSS im Anwendungsfall “Nachricht löschen” es dem Nutzer ermöglichen, eine Nachricht zum Löschen auf dem E-Rezept-Fachdienst auszuwählen.</p>
+
+<p>Das E-Rezept-FdV MUSS im Anwendungsfall “Nachricht löschen” vom Nutzer eine Bestätigung einholen, dass die selektierte Nachricht gelöscht werden sollen und die Möglichkeit geben, das Löschen abzubrechen.</p>
+
+<!-- A_21526-01 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-183" title="E-Rezept-FdV: Nachricht löschen - Löschrequest" version="0">
+    <meta lockversion="false" />
+    <actor name="eRP_FdV">
+        <testProcedure id="Produkttest" />
+    </actor>
+    Das E-Rezept-FdV MUSS im Anwendungsfall "Nachrichten löschen" für die zu löschende Nachricht die HTTP-Operation DELETE /Communication/&lt;id&gt; des E-Rezept-Fachdienstes mit
+    <ul>
+        <li>ACCESS_TOKEN im Authorization-Header</li>
+        <li>Communication-ID in URL &lt;id&gt;</li> 
+    </ul>
+    ausführen.
+</requirement>
 
 <h3 id="modulspezifische-anforderungen">Modulspezifische Anforderungen</h3>
 
@@ -301,6 +354,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </actor>
      Das E-Rezept-FdV DARF es dem Nutzer NICHT ermöglichen, für ein E-Rezept mit dem Flowtype 162, 169 oder 209 eine Anfrage zur Belieferung an eine abgebende Institution zu senden.
 </requirement>
+<!-- ToDo: A_21402-02 ist abgekündigt -->
 
 <!-- A_21403-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-22" title="E-Rezept-FdV: E-Rezept zuweisen - Flowtype 169 / 209 - Zuweisen nicht zulässig" version="0">
@@ -361,7 +415,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <tr>
               <td style="text-align:left">&#xA0;
 
-                <a href="query-api-communication.html">&lt;vorherige</a>
+                <a href="query-api-communication-req-fd.html">&lt;vorherige</a>
 
               </td>
               <td style="text-align:center">
@@ -369,7 +423,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="menu-schnittstellen-operation-api.html">nächste&gt;</a>
+                <a href="query-api-communication-req-avs.html">nächste&gt;</a>
 
               </td>
             </tr>
@@ -379,7 +433,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 3, 2026 06:01+0000">2026-03-03</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Mar 4, 2026 22:27+0000">2026-03-04</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

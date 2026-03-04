@@ -16,8 +16,8 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$dispense` gesendet.
 
 ### Anforderungen an Schnittstelle
 
-* [Ergänzende Server-Anforderungen zu `$dispense`](./op-dispense-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
-* [Ergänzende Anforderungen für AVS zu `$dispense`](./op-dispense-req-avs.md): Anforderungen an das AVS zur Nutzung der Schnittstelle.
+* [FD-Anforderungen zu `$dispense`](./op-dispense-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+* [AVS-Anforderungen zu `$dispense`](./op-dispense-req-avs.md): Anforderungen an das AVS zur Nutzung der Schnittstelle.
 
 ### API Beschreibung
 
@@ -29,8 +29,4 @@ Die API-Beschreibung für den Aufruf der Operation findet sich auf:
 
 * Wiederholte Aufrufe von `$dispense` überschreiben die bisher gespeicherten Dispensierinformationen.
 * Deshalb muss immer die vollständige, aktuelle MedicationDispense übermittelt werden.
-
-### Sicherheitsanforderungen
-
-Generelle Sicherheitsanforderungen werden [hier](./menu-schnittstellen-datenschutz-und-sicherheit.md) festgehalten.
 

@@ -18,8 +18,9 @@ Die Nachricht zum Abruf von E-Rezepten wird als HTTP GET-Anfrage an den E-Rezept
 
 ### Anforderungen an Schnittstelle
 
-* [Ergänzende Server-Anforderungen zur Task-Query](./query-api-task-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
-* [Ergänzende Anforderungen für das E-Rezept-FdV zur Task-Query](./query-api-task-req-fdv.md): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
+* [FD-Anforderungen zur Task-Query](./query-api-task-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+* [FdV-Anforderungen für Task-Query](./query-api-task-req-fdv.md): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
+* [AVS-Anforderungen für Task-Query](./query-api-task-req-avs.md): Anforderungen an das AVS zur Nutzung der Schnittstelle.
 
 ### Resource API
 
@@ -52,8 +53,4 @@ Um spezifische Details zu einem einzelnen **Task** mittels der RESTful API zu er
 * Der Prozesstyp in `GEM_ERP_EX_PrescriptionType` referenziert die Workflow-Definition, in diesem Fall den Prozess für apothekenpflichtige Arzneimittel.
 * Mit der Angabe ` “display”:”Öffentliche Apotheke”` kann dem Versicherten ein Hinweis angezeigt werden, wo er das E-Rezept einlösen kann (bspw. Apotheke oder Sanitätshaus).
 * Bei der Rückgabe der Verordnung an den Versicherten wird eine vom E-Rezept-Fachdienst erstellte Signatur des E-Rezept-Bundles übertragen. Diese muss vom E-Rezept-FdV nicht validiert werden.
-
-### Sicherheitsanforderungen
-
-Generelle Sicherheitsanforderungen werden [hier](./menu-schnittstellen-datenschutz-und-sicherheit.md) festgehalten.
 

@@ -1,4 +1,4 @@
-# Server-Anforderungen $accept - E-Rezept für Arzneimittel v1.0.0-draft
+# FD-Anforderungen $accept - E-Rezept für Arzneimittel v1.0.0-draft
 
 E-Rezept für Arzneimittel
 
@@ -7,9 +7,9 @@ Version 1.0.0-draft - ci-build
 * [**Table of Contents**](toc.md)
 * [**Operation API**](menu-schnittstellen-operation-api.md)
 * [**Operation $accept (Task akzeptieren)**](op-accept.md)
-* **Server-Anforderungen $accept**
+* **FD-Anforderungen $accept**
 
-## Server-Anforderungen $accept
+## FD-Anforderungen $accept
 
 Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für die Operation `$accept`.
 

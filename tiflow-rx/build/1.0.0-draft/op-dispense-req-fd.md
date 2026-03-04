@@ -1,4 +1,4 @@
-# Server-Anforderungen $dispense - E-Rezept für Arzneimittel v1.0.0-draft
+# FD-Anforderungen $dispense - E-Rezept für Arzneimittel v1.0.0-draft
 
 E-Rezept für Arzneimittel
 
@@ -7,9 +7,9 @@ Version 1.0.0-draft - ci-build
 * [**Table of Contents**](toc.md)
 * [**Operation API**](menu-schnittstellen-operation-api.md)
 * [**Operation $dispense (Dispensierinformationen bereitstellen)**](op-dispense.md)
-* **Server-Anforderungen $dispense**
+* **FD-Anforderungen $dispense**
 
-## Server-Anforderungen $dispense
+## FD-Anforderungen $dispense
 
 Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für die Operation `$dispense`.
 

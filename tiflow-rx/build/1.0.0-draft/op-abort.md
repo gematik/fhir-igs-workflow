@@ -18,8 +18,10 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$abort` gesendet.
 
 ### Anforderungen an Schnittstelle
 
-* [Ergänzende Server-Anforderungen zu `$abort`](./op-abort-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
-* [Ergänzende Anforderungen für das E-Rezept-FdV zu `$abort`](./op-abort-req-fdv.md): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
+* [FD-Anforderungen zu `$abort`](./op-abort-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+* [FdV-Anforderungen zu `$abort`](./op-abort-req-fdv.md): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
+* [PVS-Anforderungen zu `$abort`](./op-abort-req-pvs.md): Anforderungen an das PVS zur Nutzung der Schnittstelle.
+* [AVS-Anforderungen zu `$abort`](./op-abort-req-avs.md): Anforderungen an das AVS zur Nutzung der Schnittstelle.
 
 ### API Beschreibung
 
@@ -33,8 +35,4 @@ Die API-Beschreibung für den Aufruf der Operation findet sich auf:
 
 * Nach erfolgreichem `$abort` sind lokale Einlöseinformationen (`secret`, Token-Bezug) im Client zu bereinigen.
 * Fehlercodes und OperationOutcome-Hinweise sollen dem Nutzer mit klarem Bezug zum Task-Status angezeigt werden.
-
-### Sicherheitsanforderungen
-
-Generelle Sicherheitsanforderungen werden [hier](./menu-schnittstellen-datenschutz-und-sicherheit.md) festgehalten.
 

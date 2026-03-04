@@ -1,4 +1,4 @@
-# Server-Anforderungen $reject - E-Rezept für Arzneimittel v1.0.0-draft
+# FD-Anforderungen $reject - E-Rezept für Arzneimittel v1.0.0-draft
 
 E-Rezept für Arzneimittel
 
@@ -7,9 +7,9 @@ Version 1.0.0-draft - ci-build
 * [**Table of Contents**](toc.md)
 * [**Operation API**](menu-schnittstellen-operation-api.md)
 * [**Operation $reject (Task zurückweisen)**](op-reject.md)
-* **Server-Anforderungen $reject**
+* **FD-Anforderungen $reject**
 
-## Server-Anforderungen $reject
+## FD-Anforderungen $reject
 
 Diese Seite enthält die workflowtyp-spezifischen normativen Anforderungen an den E-Rezept-Fachdienst für die Operation `$reject`.
 

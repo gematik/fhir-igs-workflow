@@ -18,8 +18,8 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$activate` gesendet.
 
 ### Anforderungen an Schnittstelle
 
-* [Ergänzende Server-Anforderungen zu `$activate`](./op-activate-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
-* [Ergänzende Anforderungen für PVS zu `$activate`](./op-activate-req-pvs.md): Anforderungen an das PVS zur Nutzung der Schnittstelle.
+* [FD-Anforderungen zu `$activate`](./op-activate-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+* [PVS-Anforderungen zu `$activate`](./op-activate-req-pvs.md): Anforderungen an das PVS zur Nutzung der Schnittstelle.
 
 ### API Beschreibung
 
@@ -31,8 +31,4 @@ Die API-Beschreibung für den Aufruf der Operation findet sich auf:
 
 * Bei ausbleibender Antwort soll der Client den Aufruf wiederholen.
 * Wenn ein wiederholter Aufruf mit `403` und “Task not in status draft but in status ready” antwortet, war ein vorheriger Aufruf bereits erfolgreich.
-
-### Sicherheitsanforderungen
-
-Generelle Sicherheitsanforderungen werden [hier](./menu-schnittstellen-datenschutz-und-sicherheit.md) festgehalten.
 

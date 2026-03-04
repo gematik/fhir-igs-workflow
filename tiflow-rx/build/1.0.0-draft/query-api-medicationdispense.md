@@ -18,7 +18,7 @@ Die Nachricht zum Abruf von Dipensierdaten wird als HTTP GET-Anfrage an den gese
 
 ### Anforderungen an Schnittstelle
 
-* [Ergänzende Anforderungen für das E-Rezept-FdV zur MedicationDispense-Query](./query-api-medicationdispense-req-fdv.md): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
+* [FdV-Anforderungen für MedicationDispense-Query](./query-api-medicationdispense-req-fdv.md): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
 
 ### Resource API
 
@@ -46,8 +46,4 @@ Um spezifische Details zu einem einzelnen **MedicationDispense** mittels der RES
 #### Hinweise
 
 * …Hinweise
-
-### Sicherheitsanforderungen
-
-Generelle Sicherheitsanforderungen werden [hier](./menu-schnittstellen-datenschutz-und-sicherheit.md) festgehalten.
 

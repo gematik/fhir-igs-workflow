@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Server-Anforderungen: Task-Query - E-Rezept für Arzneimittel v1.0.0-draft</title>
+    <title>FD-Anforderungen: Task-Query - E-Rezept für Arzneimittel v1.0.0-draft</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -231,7 +231,7 @@ E-Rezept für Arzneimittel
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-query-api.html'><b>Query API</b></a></li><li><a href='query-api-task.html'><b>Query API: Task</b></a></li><li><b>Server-Anforderungen: Task-Query</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-query-api.html'><b>Query API</b></a></li><li><a href='query-api-task.html'><b>Query API: Task</b></a></li><li><b>FD-Anforderungen: Task-Query</b></li>
 
           <span style="float:right;">
 
@@ -261,7 +261,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   
-  <h2>Server-Anforderungen: Task-Query</h2>
+  <h2>FD-Anforderungen: Task-Query</h2>
   
 
 
@@ -299,7 +299,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
     </actor>
-        Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task sicherstellen, dass ausschließlich Versicherte und Leistungserbringer in der Rolle oid_versicherter oid_oeffentliche_apotheke oid_krankenhausapotheke die Operation am E-Rezept-Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.
+        Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task sicherstellen, dass ausschließlich Versicherte und Leistungserbringer in der Rolle
+        <ul>
+            <li>oid_versicherter</li>
+            <li>oid_oeffentliche_apotheke</li>
+            <li>oid_krankenhausapotheke</li> 
+        </ul>
+        die Operation am E-Rezept-Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.
 </requirement>
 
 <!-- A_19115-01 -->
@@ -308,7 +314,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
     </actor>
-        Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task die dem Versicherten zugeordneten Task-Ressourcen anhand der KVNR des Versicherten aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, die in Task.for die entsprechende KVNR des begünstigten Patienten referenziert haben, damit ausschließlich Versicherte ihre eigenen E-Rezepte einsehen können.
+    Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task die dem Versicherten zugeordneten Task-Ressourcen anhand der KVNR des Versicherten aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, die in Task.for die entsprechende KVNR des begünstigten Patienten referenziert haben, damit ausschließlich Versicherte ihre eigenen E-Rezepte einsehen können.
 </requirement>
 
 <!-- A_19129-01 -->
@@ -317,25 +323,32 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
     </actor>
-        Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task die gültige Ergebnisliste der Task-Ressourcen ohne die referenzierten, signierten E-Rezept-Bundle an den Aufrufer zurückgeben, damit der Versicherte eine Übersicht aller Tasks erhält.
+    Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task die gültige Ergebnisliste der Task-Ressourcen ohne die referenzierten, signierten E-Rezept-Bundle an den Aufrufer zurückgeben, damit der Versicherte eine Übersicht aller Tasks erhält.
 </requirement>
 
 <!-- A_19113-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-36" title="E-Rezept-Fachdienst - Task abrufen - Rollenprüfung" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
-        <testProcedure id="Produkttest" />
+        <testProcedure id="Produktgutachten" />
     </actor>
-        Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen konkreten über &lt;id&gt; adressierten /Task/&lt;id&gt; (ohne die Referenz einer FHIR-Operation) sicherstellen, dass ausschließlich Clientsysteme in einer der Rollen oid_versicherter oid_oeffentliche_apotheke oid_krankenhausapotheke oid_kostentraeger die Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.
+    Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen konkreten über &lt;id&gt; adressierten /Task/&lt;id&gt; (ohne die Referenz einer FHIR-Operation) sicherstellen, dass ausschließlich Clientsysteme in einer der Rollen 
+    <ul>
+        <li>oid_versicherter</li>
+        <li>oid_oeffentliche_apotheke</li>
+        <li>oid_krankenhausapotheke</li>
+        <li>oid_kostentraeger</li> 
+    </ul>
+    die Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.
 </requirement>
 
 <!-- A_19116-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-37" title="E-Rezept-Fachdienst - Task abrufen - Prüfung AccessCode bei KVNR-Missmatch" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
-        <testProcedure id="Produkttest" />
+        <testProcedure id="Produktgutachten" />
     </actor>
-        Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen /Task/&lt;id&gt; und Ungleichheit der KVNR des Aufrufenden (KVNR des ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests UNGLEICH KVNR in Task.for ) prüfen, ob der im HTTP-Request-Header "X-AccessCode" oder URL-Parameter "?ac=..." übergebene AccessCode gleich dem AccessCode in Task.identifier ist, damit auch Vertreter in Kenntnis des AccessCodes ein einzelnes E-Rezept einsehen können.
+    Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen /Task/&lt;id&gt; und Ungleichheit der KVNR des Aufrufenden (KVNR des ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests UNGLEICH KVNR in Task.for ) prüfen, ob der im HTTP-Request-Header "X-AccessCode" oder URL-Parameter "?ac=..." übergebene AccessCode gleich dem AccessCode in Task.identifier ist, damit auch Vertreter in Kenntnis des AccessCodes ein einzelnes E-Rezept einsehen können.
 </requirement>
 
 <!-- A_26148 -->
@@ -375,7 +388,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_21360-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-42" title="E-Rezept-Fachdienst - Task abrufen - Flowtype 169 / 209 - keine Einlöseinformationen" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-RX-42" title="E-Rezept-Fachdienst - Task abrufen - Flowtype 169 / 209 - keine Einlöseinformationen" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
@@ -478,7 +491,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 3, 2026 06:01+0000">2026-03-03</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Mar 4, 2026 22:27+0000">2026-03-04</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
