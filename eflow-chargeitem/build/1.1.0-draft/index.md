@@ -65,7 +65,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "gemIG_eRp_ChargeItem",
   "title" : "Abrechnungsinformationen für PKV-Versicherte",
   "status" : "draft",
-  "date" : "2026-03-04T10:28:14+00:00",
+  "date" : "2026-03-04T10:52:48+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -1316,51 +1316,6 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
             }],
             "nameUrl" : "query-api-communication-req-avs.html",
             "title" : "AVS-Anforderungen: Communication-Query",
-            "generation" : "markdown"
-          }]
-        }]
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "operation-api.html"
-        }],
-        "nameUrl" : "operation-api.html",
-        "title" : "Operation API",
-        "generation" : "markdown",
-        "page" : [{
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "op-accept.html"
-          }],
-          "nameUrl" : "op-accept.html",
-          "title" : "Operation: $accept",
-          "generation" : "markdown",
-          "page" : [{
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "op-accept-req-fd.html"
-            }],
-            "nameUrl" : "op-accept-req-fd.html",
-            "title" : "FD-Anforderungen: $accept",
-            "generation" : "markdown"
-          }]
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "op-activate.html"
-          }],
-          "nameUrl" : "op-activate.html",
-          "title" : "Operation: $activate",
-          "generation" : "markdown",
-          "page" : [{
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "op-activate-req-fd.html"
-            }],
-            "nameUrl" : "op-activate-req-fd.html",
-            "title" : "FD-Anforderungen: $activate",
             "generation" : "markdown"
           }]
         }]
