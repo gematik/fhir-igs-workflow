@@ -1,7 +1,7 @@
 ### Einordnung in die Telematikinfrastruktur
 TODO: Fix link<br>
 
-E-Rezepts für PKV-Versicherte wird [hier](https://gemspec.gematik.de/ig/fhir/{{ site.data.constants.tiflow_rx_version }}/menu-fachlichkeit-e-rezept.html) beschrieben. Die App des Kostenträgers ist eine neue Komponente, zu der das E-Rezept-Frontend des Versicherten eine Schnittstelle für Abrechnungsinformationen anbietet. Die App des Kostenträgers ist keine Komponente der TI. Der Export als PDF ermöglicht weitere Übermittlungskanäle (z. B. E-Mail, Webportal).
+E-Rezepts für PKV-Versicherte wird in [gemIG_eRp_Prescription] beschrieben. Die App des Kostenträgers ist eine neue Komponente, zu der das E-Rezept-Frontend des Versicherten eine Schnittstelle für Abrechnungsinformationen anbietet. Die App des Kostenträgers ist keine Komponente der TI. Der Export als PDF ermöglicht weitere Übermittlungskanäle (z. B. E-Mail, Webportal).
 
 ### Fachliches Konzept
 Die digitale Abrechnungsinformation besteht aus den folgenden Datensätzen: Verordnungsdatensatz, PKV-Abgabedatensatz und Quittungsdatensatz.
@@ -21,6 +21,6 @@ Der PKV-Versicherte kann über die E-Rezept App die Abrechnungsinformation digit
 ### Technisches Konzept
 TODO: Fix link<br>
 
-Der Workflow-Typ "200" und der Workflow-Typ "209" werden [hier](https://gemspec.gematik.de/ig/fhir/{{ site.data.constants.tiflow_rx_version }}/menu-fachlichkeit-e-rezept.html) beschrieben.
+Der Workflow-Typ "200" und der Workflow-Typ "209" werden im [gemIG_eRp_Prescription] beschrieben.
 
 Für E-Rezepte der Workflow-Types "200" und "209" können die Abrechnungsinformationen über den E-Rezept-Fachdienst an den Versicherten übermittelt werden.

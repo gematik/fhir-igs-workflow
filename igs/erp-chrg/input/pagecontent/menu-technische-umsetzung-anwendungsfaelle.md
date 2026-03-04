@@ -100,17 +100,3 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios "Abrechnun
 {% include use-case-details-table.html use_case=use_case roles=roles %}
 
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
-
-<!--
-<a id="accesscode-an-apotheke-übermitteln"></a>
-## Berechtigen der Apotheke zum Ändern des PKV‑Abgabedatensatzes
-Der Versicherte übermittelt der abgebenden LEI einen AccessCode, um die Apotheke zum Abruf und einmaligen Ändern zu berechtigen.
-
-- Das E-Rezept-FdV erzeugt einen Abrechnungsinformation‑Token.
-- Der Versicherte übermittelt den Token per Nachricht (Communication) oder zeigt einen 2D‑Code.
-- Das AVS nutzt den AccessCode für Abruf/Änderung der Abrechnungsinformation.
-
-<em>Schnittstelle:</em> <i><a href="./query-api-communication.html">query-api-communication</a></i>
-
-**Sequenzdiagramm (Platzhalter):**-->
-<!-- TODO: SD AccessCode an Apotheke übermitteln -->
