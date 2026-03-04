@@ -1,3 +1,12 @@
+Diese Seite beschreibt Anforderungen an ein Clientsystem des Kostenträgers zur Nutzung der `Communication`-Query-Endpunkte.
+
+### Anforderungen aus der Core Spezifikation
+
+{% include core.query-api-communication-req-ktr.md %}
+
+### Modulspezifische Anforderungen
+
+
 <!-- A_28540 -->
 <requirement conformance="SHALL" key="IG-TIFlow-DiGA-30" title="CS Kostenträger: Nachricht versenden - Flowtype 162 - Communication erstellen" version="0">
   <meta lockversion="false"/>
