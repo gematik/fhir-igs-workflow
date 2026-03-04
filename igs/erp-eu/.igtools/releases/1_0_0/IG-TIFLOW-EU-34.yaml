@@ -1,0 +1,22 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: a41a75f4cdff2f2561c11cbd71ca5f5166932219e85f4b60dd9bb96876e6c25e
+created: '2026-02-27T12:28:58.245029'
+date: '2026-02-27T12:28:58.245032'
+key: IG-TIFLOW-EU-34
+modified: '2026-02-27T12:28:58.245031'
+release_status: NEW
+source: input/pagecontent/op-eu-close-req-fd.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts
+  /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass für die in Parameters.parameter:requestData.part:kvnr
+  übermittelte KVNR ein Consent-Datensatz mit Consent.patient.identifier = KVNR und
+  Consent.category.coding.code = EUDISPCONS existiert und bei fehlgeschlagener Prüfung
+  die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit nur Dispensierinformationen
+  für Versicherte übermittelt werden, die eine Einwilligung erteilt haben.
+title: E-Rezept-Fachdienst - Task schließen - EU - Prüfung Einwilligung für KVNR
+version: 0

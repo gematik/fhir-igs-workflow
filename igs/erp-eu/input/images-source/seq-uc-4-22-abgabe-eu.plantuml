@@ -1,0 +1,35 @@
+@startuml
+title UC Abgabe von E-Rezepten im europäischen Ausland
+
+actor Versicherte
+actor "LE-EU" as LEEU
+participant "eHDSI / NCPeH-FD\nDeutschland" as NCP
+participant "E-Rezept-Fachdienst" as FD
+
+opt "Zugriffscode zeitlich ungültig"
+  Versicherte -> LEEU : [1] neuen Zugriffscode übergeben
+end
+
+LEEU -> LEEU : [2] eDispensation Dokumente (CDAs) erstellen
+LEEU -> NCP : [3] eDispensation übermitteln
+
+NCP -> NCP : [4] Prüfung Behandlungsverhältnis\nLE-EU und Versicherter
+NCP -> NCP : [5] Prüfung Permission bzw. Rolle
+NCP -> NCP : [6] Transformierung und Transkodierung
+
+loop für jeden eDispensation Dokument (CDA)
+  NCP -> FD : [7] POST /Task/Rezepte-ID/$eu-close\n{AuthN-Token, KVNR, Zugriffscode,\nMedicationDispense, laendercode,\npractitionerName, practitionerRole,\npointOfCare, healthcare-facility-type}
+
+  FD -> FD : [8] Prüfung Einwilligung für KVNR
+  FD -> FD : [9] Prüfung Zugriffscode für KVNR\n(KVNR, Zugriffscode, laendercode,\naktueller Zeitpunkt)
+  FD -> FD : [10] Status für Task prüfen
+  FD -> FD : [11] FHIR Schemaprüfung MedicationDispense
+  FD -> FD : [12] Status für Task setzen
+  FD -> FD : [13] Zugriff protokollieren\n(KVNR, practitionerName,\npractitionerRole, pointOfCare,\nhealthcare-facility-type)
+
+  FD --> NCP : [14] Status
+end
+
+NCP --> LEEU : [15] Status
+
+@enduml

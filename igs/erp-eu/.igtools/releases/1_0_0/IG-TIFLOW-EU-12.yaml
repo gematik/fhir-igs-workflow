@@ -1,0 +1,21 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: e3f88f60593b6fd75c96fc7f446b2bbad14df039f574e31954e07df14b59395c
+created: '2026-02-27T12:28:58.238581'
+date: '2026-02-27T12:28:58.238584'
+key: IG-TIFLOW-EU-12
+modified: '2026-02-27T12:28:58.238582'
+release_status: NEW
+source: input/pagecontent/op-get-eu-prescriptions-req-fd.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt
+  /$grant-eu-access-permission mit dem im Request übermittelten KVNR, Zugriffscode
+  und Ländercode eine neue Zugriffsberechtigung speichern und den Wert valid_until
+  auf aktuellen Zeitpunkt + 1h setzen.
+title: E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Neue Zugriffsberechtigung
+  speichern
+version: 0

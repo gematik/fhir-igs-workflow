@@ -1,14 +1,14 @@
 canonical:  https://gematik.de/fhir/erp-eu/
 fhirVersion: 4.0.1
 applyExtensionMetadataToRoot: false
-version: 1.1.2
+version: 1.0.1
 id: de.gematik.erezept.eu
-name: E-Rezept Workflow EU
-title: "E-Rezept Workflow EU"
-description: Dieser IG Beschreibt Datenmodelle für den E-Rezept-Fachdienst mit dem NCPeH Deutschland
-status: active # draft | active | retired | unknown
+name: gemIG_TIFlow_EU
+title: "EU Zugriff E-Rezept"
+description: Dieser IG beschreibt Datenmodelle und Anwendungsfälle für den Datenaustausch zwischen E-Rezept-Fachdienst und dem NCPeH Deutschland
+status: draft # draft | active | retired | unknown
 copyrightYear: 2025+
-releaseLabel: release # ci-build, ballot, release
+releaseLabel: ci-build # ci-build, ballot, release
 jurisdiction: urn:iso:std:iso:3166#DE "Germany" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
   name: gematik GmbH
@@ -25,19 +25,14 @@ dependencies:
 menu:
   Start: index.html
   Fachlichkeit:
-    Überblick: menu-fachlichkeit-ueberblick.html
-    Szenarien: menu-fachlichkeit-szenarien.html
-    Anwendungsfälle: menu-fachlichkeit-anwendungsfaelle.html
+    Szenario EU: menu-fachlichkeit-szenario-eu.html
   Technische Umsetzung:
-    Systemüberblick: menu-technische-umsetzung-systemueberblick.html
+    Technisches Konzept: menu-technische-umsetzung-konzept.html
     Technische Anwendungsfälle: menu-technische-umsetzung-anwendungsfaelle.html
-    Verarbeitungsregeln: menu-technische-umsetzung-verarbeitungsregeln.html
+    Datenschutz und Sicherheit: menu-technische-umsetzung-datenschutz-und-sicherheit.html
   Schnittstellen:
-    Generelle Prinzipien: menu-schnittstellen-generelle-prinzipien.html
-    Datenschutz und Sicherheit: menu-schnittstellen-datenschutz-und-sicherheit.html
     Query API: menu-schnittstellen-query-api.html
     Operation API: menu-schnittstellen-operation-api.html
-    Additional APIs: menu-schnittstellen-additional-api.html
   FHIR-Artefakte: artifacts.html
   Anhänge:
     Referenzen: referenced.html
@@ -49,30 +44,49 @@ menu:
 pages:
   index.md:
     title: "EU Zugriff E-Rezept"
-  menu-fachlichkeit-ueberblick.md:
-    title: "Fachlichkeit - Überblick"
-    menu-fachlichkeit-szenarien.md:
-      title: "Fachlichkeit - Szenarien"
-      menu-fachlichkeit-szenario-eu.md:
-        title: "Fachlichkeit - Szenario EU"
-    menu-fachlichkeit-anwendungsfaelle.md:
-      title: "Fachlichkeit - Anwendungsfälle"
-  menu-technische-umsetzung-systemueberblick.md:
-    title: "Technische Umsetzung - Systemüberblick"
+  menu-fachlichkeit-szenario-eu.md:
+    title: "Fachlichkeit - Szenario EU"
+  menu-technische-umsetzung-konzept.md:
+    title: "Technisches Konzept"
     menu-technische-umsetzung-anwendungsfaelle.md:
       title: "Technische Umsetzung - Technische Anwendungsfälle"
-    menu-technische-umsetzung-verarbeitungsregeln.md:
-      title: "Technische Umsetzung - Verarbeitungsregeln"
-  menu-schnittstellen-generelle-prinzipien.md:
-    title: "Schnittstellen - Generelle Prinzipien"
-  menu-schnittstellen-datenschutz-und-sicherheit.md:
-    title: "Schnittstellen - Datenschutz und Sicherheit"
+    menu-technische-umsetzung-datenschutz-und-sicherheit.md:
+      title: "Schnittstellen - Datenschutz und Sicherheit"
   menu-schnittstellen-query-api.md:
     title: "Schnittstellen - Query API"
+    query-api-consent.md:
+      title: "Query API: Consent"
+      query-api-consent-req-fd.md:
+        title: "Server Anforderungen: Consent"
+    query-api-task.md:
+      title: "Query API: Task"
+      query-api-task-req-fdv.md:
+        title: "E-Rezept-FdV Anforderungen: Task"
+      query-api-task-req-fd.md:
+        title: "Server Anforderungen: Task"
   menu-schnittstellen-operation-api.md:
     title: "Schnittstellen - Operation API"
-  menu-schnittstellen-additional-api.md:
-    title: "Schnittstellen - Additional APIs"
+    op-grant-eu-access-permission.md:
+      title: "Operation API: Zugriffsberechtigung erstellen"
+      op-grant-eu-access-permission-req-fd.md:
+        title: "Server Anforderungen: Zugriffsberechtigung erstellen"
+    op-read-eu-access-permission.md:
+      title: "Operation API: Zugriffsberechtigung einsehen"
+      op-read-eu-access-permission-req-fd.md:
+        title: "Server Anforderungen: Zugriffsberechtigung einsehen"
+    op-revoke-eu-access-permission.md:
+      title: "Operation API: Zugriffsberechtigung löschen"
+      op-revoke-eu-access-permission-req-fd.md:
+        title: "Server Anforderungen Anforderungen: Zugriffsberechtigung löschen"
+    op-get-eu-prescriptions.md:
+      title: "Operation API: E-Rezepte zur Einlösung im EU-Ausland abrufen"
+      op-get-eu-prescriptions-req-fd.md:
+        title: "Server Anforderungen: E-Rezepte zur Einlösung im EU-Ausland abrufen"
+    op-eu-close.md:
+      title: "Operation API: Abgabe von E-Rezepten im EU-Ausland"
+      op-eu-close-req-fd.md:
+        title: "Server Anforderungen: Abgabe von E-Rezepten im EU-Ausland"
+
   artifacts.md:
     title: "FHIR-Artefakte"
   referenced.md:
@@ -85,7 +99,9 @@ pages:
     title: "Steckbriefe"
   license.md:
     title: "Lizenz"
-
+  
+  
 parameters:
   path-pages:
     - input/pagecontent
+    - input/content

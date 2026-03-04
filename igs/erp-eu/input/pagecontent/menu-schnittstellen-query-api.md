@@ -1,13 +1,9 @@
-# Schnittstellen – Query API
+Die folgenden Query APIs stellt der E-Rezept-Fachdienst dem _E-Rezept-FdV_ sowie dem _NCPeH_ zur Verfügung.
 
-Die Spezifikation ergänzt Abfragen für Zugriffsberechtigungen und EU‑spezifische
-Use Cases.
+### Verwaltung der Einwilligung durch den Versicherten
 
-## Abfragen
+- [Query API: Consent](./query-api-consent.html)
 
-* GET /$read-eu-access-permission
+### Verwaltung der E-Rezepte durch den Versicherten
 
-## Hinweise
-
-Die Abfrage demographischer Daten und der E‑Rezept‑Listen erfolgt über
-POST /$get-eu-prescriptions mit unterschiedlichen requesttype‑Werten.
+- [Query API: Task](./query-api-task.html)

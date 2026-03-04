@@ -10,8 +10,8 @@ Das Szenario umfasst die Versorgung gesetzlich (GKV) und privat (PKV) Versichert
 Die Fachanwendung E-Rezept ermöglicht eine Übermittlung von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel in elektronischer Form. Sie setzt sich aus den folgenden dargestellten Bestandteilen zusammen:
 
 <figure>
-    <div class="gem-ig-img-container" style="--box-width: 600px; margin-bottom: 30px;">
-        <img src="./uebersicht-erezept.png" alt="Übersicht E-Rezept" style="width: 100%;">
+    <div class="gem-ig-img-container" style="--box-width: 754px; margin-bottom: 30px;">
+        <img src="./uebersicht_architekur_erp_eu.jpeg" alt="Übersicht E-Rezept" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung: </strong>Übersicht E-Rezept</figcaption>
 </figure>

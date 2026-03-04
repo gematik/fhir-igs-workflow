@@ -1,0 +1,20 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: e52286175f78120e8d4013e2f107b0e8b2c155db23587216faaa6e0536c2c0e4
+created: '2026-02-27T12:28:58.247053'
+date: '2026-02-27T12:28:58.247055'
+key: IG-TIFLOW-EU-40
+modified: '2026-02-27T12:28:58.247054'
+release_status: NEW
+source: input/pagecontent/op-revoke-eu-access-permission-req-fd.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf den Endpunkt
+  /$revoke-eu-access-permission die KVNR des Versicherten im ACCESS_TOKEN im HTTP-RequestHeader
+  "Authorization" feststellen und, falls vorhanden, zu dieser KVNR gespeicherte Zugriffsberechtigungen
+  löschen.
+title: E-Rezept-Fachdienst - Zugriffsberechtigung löschen - Löschen
+version: 0
