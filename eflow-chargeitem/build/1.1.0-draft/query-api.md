@@ -16,5 +16,4 @@ Diese Seite bietet einen Einstieg in die Query‑API‑Seiten der einzelnen FHIR
 * [ChargeItem](./query-api-chargeitem.md)
 * [Consent](./query-api-consent.md)
 * [Communication](./query-api-communication.md)
-* [Task](./query-api-task.md)
 

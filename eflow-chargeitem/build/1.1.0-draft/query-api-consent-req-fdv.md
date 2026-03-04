@@ -1,4 +1,4 @@
-# Client-Anforderungen: Consent-Query - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft
+# FdV-Anforderungen: Consent-Query - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft
 
 Abrechnungsinformationen für PKV-Versicherte
 
@@ -7,9 +7,9 @@ Version 1.1.0-draft - ci-build
 * [**Table of Contents**](toc.md)
 * [**Query API**](query-api.md)
 * [**Query API: Consent**](query-api-consent.md)
-* **Client-Anforderungen: Consent-Query**
+* **FdV-Anforderungen: Consent-Query**
 
-## Client-Anforderungen: Consent-Query
+## FdV-Anforderungen: Consent-Query
 
 Diese Seite beschreibt Anforderungen für das E-Rezept-FdV zur Nutzung der `Consent`-Query-Endpunkte.
 

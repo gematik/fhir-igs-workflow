@@ -1,33 +1,52 @@
-# E-Rezept-FdV Anforderungen: ChargeItem-Query - Abrechnungsinformationen des E-Rezepte für PKV-Versicherte v1.1.0-draft
+<!--A_24553-->
+<requirement conformance="MAY" title="E-Rezept-FdV: optional: Abrechnungsinformation markieren">
+    <meta lockversion="false"/>
+    <actor name="eRP_FdV">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+      Das E-Rezept-FdV KANN den Anwendungsfall "Abrechnungsinformation markieren" umsetzen.
+</requirement>
 
-Abrechnungsinformationen des E-Rezepte für PKV-Versicherte
+<!--A_22176-01-->
+<requirement conformance="SHALL" title="E-Rezept-FdV: Abrechnungsinformation markieren - Markierungen auswählen">
+    <meta lockversion="false"/>
+    <actor name="eRP_FdV">
+        <testProcedure id="Produkttest"/>
+    </actor>
+      Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation markieren" es dem Nutzer ermöglichen, eine oder mehrere der folgenden Inhalte als Markierung für eine Abrechnungsinformation zu wählen oder abzuwählen:
+      <ul>
+        <li>zur Abrechnung bei Krankenversicherung eingereicht (extention "insuranceProvider")</li>
+        <li>zur Abrechnung bei der Beihilfe eingereicht (extention "subsity")</li>
+        <li>zur Einreichung beim Finanzamt verwendet (extention "taxOffice")</li>
+      </ul>
+</requirement>
 
-Version 1.1.0-draft - ci-build 
+TODO: A_22177-02
+<!--A_22177-02-->
+<requirement conformance="SHALL" title="E-Rezept-FdV: title">
+    <meta lockversion="false"/>
+    <actor name="eRP_FdV">
+        <testProcedure id="Produkttest"/>
+    </actor>
+      text
+</requirement>
 
-* [**Table of Contents**](toc.md)
-* [**Query API**](query-api.md)
-* [**Query API: ChargeItem**](query-api-chargeitem.md)
-* **E-Rezept-FdV Anforderungen: ChargeItem-Query**
-
-## E-Rezept-FdV Anforderungen: ChargeItem-Query
-
-Das E-Rezept-FdV KANN den Anwendungsfall "Abrechnungsinformation markieren" umsetzen.
-
-Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation markieren" es dem Nutzer ermöglichen, eine oder mehrere der folgenden Inhalte als Markierung für eine Abrechnungsinformation zu wählen oder abzuwählen:
-* zur Abrechnung bei Krankenversicherung eingereicht (extention "insuranceProvider")
-* zur Abrechnung bei der Beihilfe eingereicht (extention "subsity")
-* zur Einreichung beim Finanzamt verwendet (extention "taxOffice")
-
-TODO: A_22177-02 
-
-text
-
-Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation markieren" zum Speichern der Information im E-Rezept-Fachdienst die HTTP-Operation PATCH /ChargeItem/<id> mit
-* ACCESS_TOKEN im Authorization-Header
-* Prescription-ID in URL <id>
-für jede zu ändernde Markierung
-* "add" in type
-* zu ändernde Markierung in path
-* geänderter Wert in value
-ausführen.
-
+<!--A_22179-01-->
+<requirement conformance="SHALL" title="E-Rezept-FdV: Abrechnungsinformation markieren - Speicherrequest">
+    <meta lockversion="false"/>
+    <actor name="eRP_FdV">
+        <testProcedure id="Produkttest"/>
+    </actor>
+      Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation markieren" zum Speichern der Information im E-Rezept-Fachdienst die HTTP-Operation PATCH /ChargeItem/&#60;id&#62; mit 
+        <ul>
+            <li>ACCESS_TOKEN im Authorization-Header</li>
+            <li>Prescription-ID in URL &#60;id&#62;</li>
+        </ul>
+      für jede zu ändernde Markierung
+        <ul>
+            <li>"add" in type</li>
+            <li>zu ändernde Markierung in path</li>
+            <li>geänderter Wert in value</li>
+        </ul>
+      ausführen.
+</requirement>

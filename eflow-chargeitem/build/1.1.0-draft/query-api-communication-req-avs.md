@@ -17,8 +17,25 @@ Diese Seite beschreibt Anforderungen ein AVS zur Nutzung der `Communication`-Que
 
 Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Communication`-Query-Endpunkte.
 
+#### Nachrichten abrufen
+
+Das PS der abgebenden LEI MUSS im Anwendungsfall "Nachrichten von Versicherten empfangen" zwischen den Aufrufen der Operation GET /Communication mindestens 5 Minuten warten. Der Zeitraum zwischen den Aufrufen muss um eine zufällige Zeitspanne zwischen 0 und 10.000 Millisekunden verlängert werden, um eine Gleichverteilung der Anfragen am E-Rezept-Fachdienst über alle Apotheken zu erreichen.
+
+Das PS der abgebenden LEI MUSS im Anwendungsfall "Nachrichten von Versicherten empfangen" die HTTP-Operation GET /Communication mit
+* ACCESS_TOKEN im Authorization-Header
+* optional: ?received=null für nur ungelesene Nachrichten
+* optional: ?received=gtYYYY-MM-DD für Nachrichten nach Datum DD.MM.YYYY
+ausführen.
+Falls eine oder mehrere E-Rezept-Nachrichten für die abgebende LEI auf dem E-Rezept-Fachdienst bereitstehen, übermittelt der E-Rezept-Fachdienst ein Bundle von Communication Ressourcen. 
+
 #### Nachricht versenden
 
+Die für die Nachricht zu verwendende Communication-Ressource wird modul- und anwendungsfall-spezifisch festgelegt.
+
+Das PS der abgebenden LEI MUSS im Anwendungsfall "Nachricht an Versicherten versenden" die HTTP-Operation POST /Communication mit
+* ACCESS_TOKEN im Authorization-Header
+* Communication Ressource im HTTP-Request-Body
+ausführen.
 #### Nachricht löschen
 
 Mit diesem Anwendungsfall kann die abgebende LEI von ihr versendete Nachrichten an einen Versicherten auf dem Fachdienst löschen.

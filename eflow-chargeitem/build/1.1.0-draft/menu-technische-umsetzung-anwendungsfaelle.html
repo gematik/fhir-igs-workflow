@@ -298,21 +298,23 @@ Voraussetzung ist die Einwilligung des Versicherten zum Speichern der Abrechnung
     <tr>
       <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
       <td style="padding: 5px;"><ul>
-  <li>Ein Mitarbeiter der abgebenden LEI hat „Quittung abrufen“ durchgeführt.</li>
-  <li>Task-ID und Secret zur Statusänderung „in Abgabe (gesperrt)“ sind bekannt.</li>
-  <li>Das E-Rezept hat den Status „quittiert“.</li>
-  <li>Einwilligung des Versicherten liegt vor.</li>
+  <li>Ein Mitarbeiter der abgebenden LEI hat den Anwendungsfall “UC 4.4 - Quittung abrufen” durchgeführt.</li>
+  <li>Die Task-ID und das Geheimnis zur Statusänderung “in Abgabe (gesperrt)” des E-Rezepts sind im PS bekannt.</li>
+  <li>Das E-Rezept im E-Rezept-Fachdienst hat den Status “quittiert”.</li>
+  <li>Der Versicherte hat im E-Rezept-FdV eine Einwilligung zum Speichern der Abrechnungsinformationen auf dem E-Rezept-Fachdienst erteilt. Diese Information liegt im PS vor.</li>
 </ul>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
       <td style="padding: 5px;"><ul>
-  <li>PKV-Abgabedatensatz erstellen und signieren.</li>
-  <li>ChargeItem mit PrescriptionID und Pflichtfeldern erzeugen.</li>
-  <li>ChargeItem, Secret und Abgabedaten an den E-Rezept-Fachdienst senden.</li>
-  <li>Fachdienst prüft Einwilligung, Signatur und FHIR-Validität; übernimmt Verordnungsdatensatz und Quittung.</li>
-  <li>Fachdienst erzeugt AccessCode zum Ändern.</li>
+  <li>Ein Mitarbeiter der abgebenden LEI hat mit dem Versicherten abgestimmt, dass die Abrechnungsinformation digital zur Verfügung gestellt werden soll.</li>
+  <li>Das PS erstellt den PKV-Abgabedatensatz und signiert diesen mit dem Konnektor.</li>
+  <li>Das PS erstellt eine ChargeItem-Ressource mit einem Identifier aus der PrescriptionID und den übrigen Pflichtfeldern gemäß FHIR-Profil und übermittelt diese an den E-Rezept-Fachdienstes zusammen mit dem generierten Geheimnis des belieferten Tasks zum Zeitpunkt des Statuswechsels “in Abgabe (gesperrt)” und den signierten Abgabedaten.</li>
+  <li>Der E-Rezept-Fachdienst prüft, ob eine Einwilligung zum Speichern der Abrechnungsinformationen vorliegt.  Falls die Einwilligung vorliegt, übernimmt der E-Rezept-Fachdienst  den Verordnungsdatensatz und die Quittung aus dem E-Rezept-Workflow und speichert diese als Teil der Abrechnungsinformation zusammen mit dem “ChargeItem”. Identifier der ChargeItem-Ressource ist die Rezept-ID.</li>
+  <li>Der E-Rezept-Fachdienst prüft die Signatur und die FHIR-Validität des PKV-Abgabedatensatzes.</li>
+  <li>Der E-Rezept-Fachdienst erzeugt einen AccessCode zum Ändern des PKV-Abgabedatensatzes.</li>
+  <li>Der Status des E-Rezept Workflows ändert sich nicht.</li>
 </ul>
 </td>
 
@@ -320,7 +322,8 @@ Voraussetzung ist die Einwilligung des Versicherten zum Speichern der Abrechnung
     <tr>
       <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
       <td style="padding: 5px;"><ul>
-  <li>Abrechnungsinformation ist gespeichert und protokolliert.</li>
+  <li>Die Abrechnungsinformation ist im E-Rezept-Fachdienst gespeichert.</li>
+  <li>Das Einstellen der Abrechnungsinformation ist im E-Rezept-Fachdienst protokolliert.</li>
 </ul>
 </td>
     </tr>
@@ -384,9 +387,10 @@ wenn sie die Daten im Primärsystem nicht mehr vorliegen hat und der AccessCode 
     <tr>
       <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
       <td style="padding: 5px;"><ul>
-  <li>Aufruf des E-Rezept-Fachdienstes mit Rezept-ID und AccessCode.</li>
-  <li>Fachdienst prüft AccessCode und Berechtigung.</li>
-  <li>Fachdienst liefert Verordnungs- und PKV-Abgabedatensatz.</li>
+  <li>Das PS übermittelt beim Aufruf an den E-Rezept-Fachdienst die Rezept-ID und den AccessCode zum Ändern.</li>
+  <li>Der E-Rezept-Fachdienst prüft den AccessCode zum Ändern.</li>
+  <li>Der E-Rezept-Fachdienst prüft, ob die Abrechnungsinformation initial durch die LEI eingestellt wurde.</li>
+  <li>Der E-Rezept-Fachdienst übermittelt den PKV-Abgabedatensatz und den Verordnungsdatensatz an die Apotheke.</li>
 </ul>
 </td>
 
@@ -394,7 +398,8 @@ wenn sie die Daten im Primärsystem nicht mehr vorliegen hat und der AccessCode 
     <tr>
       <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
       <td style="padding: 5px;"><ul>
-  <li>Datensätze liegen im Primärsystem vor; Zugriff ist protokolliert.</li>
+  <li>Der PKV-Abgabedatensatz und der Verordnungsdatensatz liegen im PS vor, um Änderungen am PKV-Abgabedatensatz zu ermöglichen.</li>
+  <li>Der Datenzugriff ist im E-Rezept-Fachdienst protokolliert.</li>
 </ul>
 </td>
     </tr>
@@ -451,18 +456,21 @@ Der zuvor gespeicherte Datensatz wird überschrieben.</p>
     <tr>
       <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
       <td style="padding: 5px;"><ul>
-  <li>Abrechnungsinformation wurde zuvor bereitgestellt.</li>
-  <li>Rezept-ID und AccessCode zum Ändern sind bekannt.</li>
+  <li>Ein Mitarbeiter der abgebenden LEI hat den Anwendungsfall “Abrechnungsinformation durch Abgebenden bereitstellen” durchgeführt.</li>
+  <li>Die Rezept-ID der Abrechnungsinformation und der AccessCode zum Ändern sind im PS bekannt.</li>
 </ul>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
       <td style="padding: 5px;"><ul>
-  <li>Neuer PKV-Abgabedatensatz wird erzeugt.</li>
-  <li>Rezept-ID, AccessCode und Datensatz werden an den Fachdienst übermittelt.</li>
-  <li>Fachdienst prüft AccessCode, Berechtigung, Signatur und FHIR-Validität.</li>
-  <li>Datensatz wird überschrieben; neuer AccessCode wird erzeugt.</li>
+  <li>Ein Mitarbeiter der abgebenden LEI erstellt mit dem Primärsystem einen neuen PKV-Abgabedatensatz.</li>
+  <li>Das PS übermittelt beim Aufruf des E-Rezept-Fachdienstes die Rezept-ID, den AccessCode zum Ändern und den PKV-Abgabedatensatz.</li>
+  <li>Der E-Rezept-Fachdienst prüft den AccessCode zum Ändern.</li>
+  <li>Der E-Rezept-Fachdienst prüft, dass die Abgabeinformation initial durch die LEI eingestellt wurde.</li>
+  <li>Der E-Rezept-Fachdienst prüft die Signatur und die FHIR-Validität des PKV-Abgabedatensatzes.</li>
+  <li>Der E-Rezept-Fachdienst überschreibt den PKV-Abgabedatensatz.</li>
+  <li>Der E-Rezept-Fachdienst erzeugt einen neuen AccessCode zum Ändern und überschreibt den alten AccessCode zum Ändern.</li>
 </ul>
 </td>
 
@@ -470,7 +478,7 @@ Der zuvor gespeicherte Datensatz wird überschrieben.</p>
     <tr>
       <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
       <td style="padding: 5px;"><ul>
-  <li>Änderung ist protokolliert; neuer AccessCode liegt vor.</li>
+  <li>Das Ändern des PKV-Abgabedatensatzes ist im E-Rezept-Fachdienst protokolliert.</li>
 </ul>
 </td>
     </tr>
@@ -818,14 +826,14 @@ gem-ig-badge-bg-green">
   <table style="width: auto; border: 1px solid #dcdcdc;">
     <tr>
       <th style="padding: 5px; width: 23rem;">Beschreibung</th>
-      <td style="padding: 5px;"><p>Der Versicherte gibt die Abrechnungsinformation aus dem FdV/AdV heraus an eine 
-Ziel-App weiter (z. B. PKV-App, Beihilfe) oder exportiert sie als PDF/A.</p>
+      <td style="padding: 5px;"><p>Der Versicherte gibt die Abrechnungsinformation aus dem E-Rezept-FdV heraus an eine 
+Ziel-App weiter (z. B. Service-App der Krankenversicherung, Service-App der Beihilfe) oder exportiert sie als PDF/A.</p>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
       <td style="padding: 5px;"><ul>
-  <li>Der Versicherte hat über das FdV (E-Rezept-FdV) die Abrechnungsinformation vom E-Rezept-Fachdienst abgerufen.</li>
+  <li>Der Versicherte hat über das E-Rezept-FdV die Abrechnungsinformation vom E-Rezept-Fachdienst abgerufen.</li>
 </ul>
 </td>
     </tr>
@@ -848,7 +856,7 @@ Ziel-App weiter (z. B. PKV-App, Beihilfe) oder exportiert sie als PDF/A.</p>
     <tr>
       <th style="padding: 5px; width: 23rem;">Schnittstelle des E-Rezept-Fachdienst</th>
       <td style="padding: 5px;"><ul>
-  <li><a name="l2159">​</a><a href="./menu-technische-umsetzung-chargeitem-req-fdv.html#abrechnungsinformationen-exportieren">Abrechnungsinformation weitergeben</a></li>
+  <li><a name="l2183">​</a><a href="./menu-technische-umsetzung-chargeitem-req-fdv.html#abrechnungsinformationen-exportieren">Abrechnungsinformation weitergeben</a></li>
 </ul>
 </td>
     </tr>
@@ -892,7 +900,7 @@ gem-ig-badge-bg-green">
   <table style="width: auto; border: 1px solid #dcdcdc;">
     <tr>
       <th style="padding: 5px; width: 23rem;">Beschreibung</th>
-      <td style="padding: 5px;"><p>Der Versicherte markiert die Abrechnungsinformation im FdV/AdV, um sie für bestimmte Aktionen zu kennzeichnen. Der E-Rezept-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.</p>
+      <td style="padding: 5px;"><p>Der Versicherte markiert die Abrechnungsinformation im E-Rezept-FdV, um sie für bestimmte Aktionen zu kennzeichnen. Der E-Rezept-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.</p>
 </td>
     </tr>
     <tr>
@@ -906,7 +914,7 @@ gem-ig-badge-bg-green">
     <tr>
       <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
       <td style="padding: 5px;"><ul>
-  <li>Ein Versicherter wählt im FdV (E-Rezept-FdV) die zu markierende Abrechnungsinformation sowie die zu Optionen für die Markierung aus.</li>
+  <li>Ein Versicherter wählt im E-Rezept-FdV die zu markierende Abrechnungsinformation sowie die zu Optionen für die Markierung aus.</li>
   <li>Der E-Rezept-Fachdienst speichert die Information.</li>
 </ul>
 </td>
@@ -922,7 +930,7 @@ gem-ig-badge-bg-green">
     <tr>
       <th style="padding: 5px; width: 23rem;">Schnittstelle des E-Rezept-Fachdienst</th>
       <td style="padding: 5px;"><ul>
-  <li><a name="l2341">​</a><a href="./menu-technische-umsetzung-chargeitem-req-fdv.html#abrechnungsinformationen-markieren">Abrechnungsinformation markieren</a></li>
+  <li><a name="l2365">​</a><a href="./menu-technische-umsetzung-chargeitem-req-fdv.html#abrechnungsinformationen-markieren">Abrechnungsinformation markieren</a></li>
 </ul>
 </td>
     </tr>
@@ -966,7 +974,7 @@ gem-ig-badge-bg-green">
   <table style="width: auto; border: 1px solid #dcdcdc;">
     <tr>
       <th style="padding: 5px; width: 23rem;">Beschreibung</th>
-      <td style="padding: 5px;"><p>Ein Versicherter wählt im FdV (E-Rezept-FdV, E-Rezept-AdV) die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der E-Rezept-Fachdienst löscht die Abrechnungsinformation</p>
+      <td style="padding: 5px;"><p>Ein Versicherter wählt im E-Rezept-FdV die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der E-Rezept-Fachdienst löscht die Abrechnungsinformation</p>
 </td>
     </tr>
     <tr>
@@ -980,7 +988,8 @@ gem-ig-badge-bg-green">
     <tr>
       <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
       <td style="padding: 5px;"><ul>
-  <li>Ein Versicherter wählt im FdV (E-Rezept-FdV) die zu löschende Abrechnungsinformation sowie die zu Optionen für die Löschung aus.</li>
+  <li>Ein Versicherter wählt im E-Rezept-FdV die zu löschende Abrechnungsinformation aus und bestätigt das Löschen.</li>
+  <li>Das E-Rezept-FdV überträgt den Löschrequest</li>
   <li>Der E-Rezept-Fachdienst löscht die Abrechnungsinformation.</li>
 </ul>
 </td>
@@ -996,7 +1005,7 @@ gem-ig-badge-bg-green">
     <tr>
       <th style="padding: 5px; width: 23rem;">Schnittstelle des E-Rezept-Fachdienst</th>
       <td style="padding: 5px;"><ul>
-  <li><a name="l2559">​</a><a href="./menu-technische-umsetzung-chargeitem-req-fdv.html#abrechnungsinformationen-löschen">Abrechnungsinformation löschen</a></li>
+  <li><a name="l2586">​</a><a href="./menu-technische-umsetzung-chargeitem-req-fdv.html#abrechnungsinformationen-löschen">Abrechnungsinformation löschen</a></li>
 </ul>
 </td>
     </tr>
@@ -1065,7 +1074,7 @@ gem-ig-badge-bg-green">
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 3, 2026 23:41+0000">2026-03-03</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Mar 4, 2026 10:28+0000">2026-03-04</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

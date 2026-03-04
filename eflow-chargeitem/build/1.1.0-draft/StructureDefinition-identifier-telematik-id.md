@@ -13,7 +13,7 @@ Version 1.1.0-draft - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/erpchrg/StructureDefinition/identifier-telematik-id | *Version*:1.1.0-draft |
-| Draft as of 2026-03-03 | *Computable Name*:IdentifierTelematikId |
+| Draft as of 2026-03-04 | *Computable Name*:IdentifierTelematikId |
 
  
 Identifier profil für die Telematik-ID 
@@ -45,7 +45,7 @@ Other representations of profile: [CSV](StructureDefinition-identifier-telematik
   "name" : "IdentifierTelematikId",
   "title" : "Identifier Telematik-ID",
   "status" : "draft",
-  "date" : "2026-03-03T23:41:56+00:00",
+  "date" : "2026-03-04T10:28:14+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

@@ -12,7 +12,7 @@ Version 1.1.0-draft - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/erpchrg/ImplementationGuide/de.gematik.eflow-chargeitem | *Version*:1.1.0-draft |
-| Draft as of 2026-03-03 | *Computable Name*:gemIG_eRp_ChargeItem |
+| Draft as of 2026-03-04 | *Computable Name*:gemIG_eRp_ChargeItem |
 
 ### Implementation Guide E-Rezept Patientenrechnung (PKV)
 
@@ -65,7 +65,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "gemIG_eRp_ChargeItem",
   "title" : "Abrechnungsinformationen für PKV-Versicherte",
   "status" : "draft",
-  "date" : "2026-03-03T23:41:56+00:00",
+  "date" : "2026-03-04T10:28:14+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -1279,7 +1279,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
               "valueUrl" : "query-api-consent-req-fdv.html"
             }],
             "nameUrl" : "query-api-consent-req-fdv.html",
-            "title" : "Client-Anforderungen: Consent-Query",
+            "title" : "FdV-Anforderungen: Consent-Query",
             "generation" : "markdown"
           }]
         },
@@ -1318,15 +1318,6 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
             "title" : "AVS-Anforderungen: Communication-Query",
             "generation" : "markdown"
           }]
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "query-api-task.html"
-          }],
-          "nameUrl" : "query-api-task.html",
-          "title" : "Query API: Task",
-          "generation" : "markdown"
         }]
       },
       {
