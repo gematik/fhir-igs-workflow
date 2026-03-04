@@ -75,7 +75,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios "Abrechnun
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- AF_10089 - Abrechnungsinformationen durch den Versicherten markieren -->
-{% assign use_case = use_cases | where: "title", "Abrechnungsinformationen durch den Versicherten markieren" | first %}
+{% assign use_case = use_cases | where: "title", "UC 3.12 - Abrechnungsinformationen durch den Versicherten markieren" | first %}
 <a id="{{ use_case.anchor }}"></a>
 ### {{ use_case.title }}
 
@@ -84,7 +84,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios "Abrechnun
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- AF_10090 - Abrechnungsinformationen durch den Versicherten löschen -->
-{% assign use_case = use_cases | where: "title", "Abrechnungsinformationen durch den Versicherten löschen" | first %}
+{% assign use_case = use_cases | where: "title", "UC 3.11 - Abrechnungsinformationen durch den Versicherten löschen" | first %}
 <a id="{{ use_case.anchor }}"></a>
 ### {{ use_case.title }}
 
