@@ -2,7 +2,7 @@ Diese Seite enthält die normativen Anforderungen an ein FdV für die Operation 
 
 ### Anforderungen aus der Core Spezifikation
 
-{% include core-op-abort-req-fdv.md %}
+{% include core.op-abort-req-fdv.md %}
 
 ### Modulspezifische Anforderungen
 

@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Anforderungen an das Clientsystem des Kostenträgers für Communication API - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft</title>
+    <title>KTR-Anforderungen: Communication-Query - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"6.2.2"}
-    h3,h4,h5,h6{--heading-prefix:"6.2.2"}</style>
+    <style type="text/css">h2{--heading-prefix:"6.2.3"}
+    h3,h4,h5,h6{--heading-prefix:"6.2.3"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -225,7 +225,7 @@ Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='query-api.html'><b>Query API</b></a></li><li><a href='query-api-communication.html'><b>Query API: Communication</b></a></li><li><b>Anforderungen an das Clientsystem des Kostenträgers für Communication API</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='query-api.html'><b>Query API</b></a></li><li><a href='query-api-communication.html'><b>Query API: Communication</b></a></li><li><b>KTR-Anforderungen: Communication-Query</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -245,7 +245,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   
-  <h2>Anforderungen an das Clientsystem des Kostenträgers für Communication API</h2>
+  <h2>KTR-Anforderungen: Communication-Query</h2>
   
 
 
@@ -260,9 +260,98 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#anforderungen-aus-der-core-spezifikation" id="markdown-toc-anforderungen-aus-der-core-spezifikation">Anforderungen aus der Core Spezifikation</a></li>
+  <li><a href="#modulspezifische-anforderungen" id="markdown-toc-modulspezifische-anforderungen">Modulspezifische Anforderungen</a></li>
+</ul>
+
 </div>
+<p>Diese Seite beschreibt Anforderungen an ein Clientsystem des Kostenträgers zur Nutzung der <code class="language-plaintext highlighter-rouge">Communication</code>-Query-Endpunkte.</p>
+
+<h3 id="anforderungen-aus-der-core-spezifikation">Anforderungen aus der Core Spezifikation</h3>
+
+<p>Diese Seite beschreibt Anforderungen ein Clientsystem des Kostenrägers zur Nutzung der <code class="language-plaintext highlighter-rouge">Communication</code>-Query-Endpunkte.</p>
+
+<h4 id="nachrichten-abrufen">Nachrichten abrufen</h4>
+<!-- A_21556 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-111" title="CS Kostenträger: Nachrichten abrufen - Häufigkeit" version="0">
+  <meta lockversion="false" />
+  <actor name="CS_E-Rezept_KTR">
+    <testProcedure id="Herstellererklärung" />
+  </actor>
+  Das CS Kostenträger MUSS im Anwendungsfall "Nachrichten von Versicherten empfangen" zwischen den Aufrufen der Operation GET /Communication mindestens 5 Minuten warten. Der Zeitraum zwischen den Aufrufen muss um eine zufällige Zeitspanne zwischen 0 und 10.000 Millisekunden verlängert werden, um eine Gleichverteilung der Anfragen am E-Rezept-Fachdienst über alle Apotheken zu erreichen.
+</requirement>
+
+<!-- A_19329-01 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-111" title="CS Kostenträger: Nachrichten abrufen - Abfrage" version="0">
+  <meta lockversion="false" />
+  <actor name="CS_E-Rezept_KTR">
+    <testProcedure id="Herstellererklärung" />
+  </actor>
+  Das CS Kostenträger MUSS im Anwendungsfall "Nachrichten von Versicherten empfangen" die HTTP-Operation GET /Communication mit
+  <ul>
+    <li>ACCESS_TOKEN im Authorization-Header</li>
+    <li>optional: ?received=null für nur ungelesene Nachrichten</li>
+    <li>optional: ?received=gtYYYY-MM-DD für Nachrichten nach Datum DD.MM.YYYY</li>
+  </ul>
+  ausführen.
+</requirement>
+
+<p>Falls eine oder mehrere E-Rezept-Nachrichten für die abgebende LEI auf dem E-Rezept-Fachdienst bereitstehen, übermittelt der E-Rezept-Fachdienst ein Bundle von Communication Ressourcen. </p>
+
+<h4 id="nachricht-versenden">Nachricht versenden</h4>
+<p>Die für die Nachricht zu verwendende Communication-Ressource wird modul- und anwendungsfall-spezifisch festgelegt.</p>
+
+<!-- A_19334 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-111" title="CS Kostenträger: Nachricht versenden - Nachricht auf Fachdienst einstellen" version="0">
+  <meta lockversion="false" />
+  <actor name="CS_E-Rezept_KTR">
+    <testProcedure id="Herstellererklärung" />
+  </actor>
+  Das CS Kostenträger MUSS im Anwendungsfall "Nachricht an Versicherten versenden" die HTTP-Operation POST /Communication mit
+  <ul>
+    <li>ACCESS_TOKEN im Authorization-Header</li>
+    <li>Communication Ressource im HTTP-Request-Body</li>
+  </ul>
+  ausführen.
+</requirement>
+
+<h4 id="nachricht-löschen">Nachricht löschen</h4>
+<p>Mit diesem Anwendungsfall kann die abgebende LEI von ihr versendete Nachrichten an einen Versicherten auf dem Fachdienst löschen.</p>
+
+<p>Das CS Kostenträger MUSS es dem Nutzer ermöglichen, eine Nachricht zum
+Löschen auf dem Fachdienst auszuwählen.</p>
+
+<p>Das CS Kostenträger MUSS vom Nutzer eine Bestätigung einholen, dass die
+ausgewählte Nachricht gelöscht werden soll, und die Möglichkeit geben, das
+Löschen abzubrechen.</p>
+
+<!-- A_21489 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-111" title="CS Kostenträger: Nachricht löschen - Löschrequest" version="0">
+  <meta lockversion="false" />
+  <actor name="CS_E-Rezept_KTR">
+    <testProcedure id="Herstellererklärung" />
+  </actor>
+  Das CS Kostenträger MUSS im Anwendungsfall "Nachricht durch Abgebenden löschen" für die zu löschende Nachricht die HTTP-Operation DELETE /Communication/&lt;id&gt; mit
+  <ul>
+    <li>ACCESS_TOKEN im Authorization-Header</li>
+    <li>Communication-ID in URL &lt;id&gt; </li>
+  </ul>
+  ausführen.
+</requirement>
+
+<p>Der Fachdienst prüft anhand der Telematik-ID im ACCESS_TOKEN, ob die LEI der Absender der zu löschenden Nachricht ist.</p>
+
+<p>Das CS Kostenträger KANN im Anwendungsfall “Nachricht durch Abgebenden
+löschen” dem Nutzer ermöglichen, die Nachricht auch lokal im PS zu löschen.</p>
+
+<p>Hinweis: Nachrichten an Versicherte sind immer an den Workflow des referenzierten E-Rezeptes gebunden. Wenn ein E-Rezept-Workflow, bspw. durch den Versicherten oder aufgrund von durch den Fachdienst durchgesetzte Löschfristen, auf dem Fachdienst gelöscht wird, dann werden auch alle zugehörigen Nachrichten gelöscht.</p>
+
+<h3 id="modulspezifische-anforderungen">Modulspezifische Anforderungen</h3>
+
 <!-- A_28540 -->
 <requirement conformance="SHALL" key="IG-TIFlow-DiGA-30" title="CS Kostenträger: Nachricht versenden - Flowtype 162 - Communication erstellen" version="0">
   <meta lockversion="false" />
@@ -290,7 +379,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 3, 2026 05:14+0000">2026-03-03</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Mar 4, 2026 00:31+0000">2026-03-04</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -12,7 +12,7 @@ Version 2.0.0-draft - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/erp-diga/ImplementationGuide/de.gematik.eflow-diga | *Version*:2.0.0-draft |
-| Draft as of 2026-03-03 | *Computable Name*:ERezeptDiGA |
+| Draft as of 2026-03-04 | *Computable Name*:ERezeptDiGA |
 
 Dieser Implementation Guide beschreibt das Feature zur elektronischen Verordnung von Digitalen Gesundheitsanwendungen (DiGA). Er beschreibt DiGA-spezifische Anforderungen und Use Cases für Verordnende, Kostenträger und Versicherte.
 
@@ -98,7 +98,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "ERezeptDiGA",
   "title" : "Verordnungen für Digitale Gesundheitsanwendungen (DiGA)",
   "status" : "draft",
-  "date" : "2026-03-03T05:14:36+00:00",
+  "date" : "2026-03-04T00:31:41+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -956,10 +956,19 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
           "page" : [{
             "extension" : [{
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-communication-req-fd.html"
+            }],
+            "nameUrl" : "query-api-communication-req-fd.html",
+            "title" : "FD-Anforderungen: Communication-Query",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
               "valueUrl" : "query-api-communication-req-fdv.html"
             }],
             "nameUrl" : "query-api-communication-req-fdv.html",
-            "title" : "Anforderungen an das E-Rezept-FdV für Communication API",
+            "title" : "FdV-Anforderungen: Communication-Query",
             "generation" : "markdown"
           },
           {
@@ -968,7 +977,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
               "valueUrl" : "query-api-communication-req-ktr.html"
             }],
             "nameUrl" : "query-api-communication-req-ktr.html",
-            "title" : "Anforderungen an das Clientsystem des Kostenträgers für Communication API",
+            "title" : "KTR-Anforderungen: Communication-Query",
             "generation" : "markdown"
           }]
         },
