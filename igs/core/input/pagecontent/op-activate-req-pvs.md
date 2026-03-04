@@ -88,7 +88,7 @@ Hinweis: Für den Fall, dass das Clientsystem beim Aufruf der Operation keinen R
 Fehler 403 mit dem OperationOutcome "Task not in status draft but in status ready" zurückkommt, wurde der erste Aufruf bereits erfolgreich durch den E-Rezept-Fachdienst verarbeitet. Wenn eine Response mit dem Status 200 zurückkommt, war der zweite Aufruf erfolgreich.
 
 <!-- A_22503 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-46" title="PS verordnende LEI: E-Rezept einstellen - kein Patientenausdruck bei Fehler beim Aktivieren" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-46" title="PS verordnende LEI: E-Rezept einstellen - kein Patientenausdruck bei Fehler beim Aktivieren" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Herstellererklärung"/>

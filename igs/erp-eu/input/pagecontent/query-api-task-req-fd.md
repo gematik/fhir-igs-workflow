@@ -17,9 +17,13 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
 <requirement conformance="SHALL" key="IG-TIFLOW-EU-15" title="E-Rezept-Fachdienst - Task markieren - Versicherter - Rollenprüfung Versicherter markiert Rezepte" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Produktgutachten"/>
     </actor>
-     Der E-Rezept-Fachdienst MUSS bei Aufruf der HTTP-PATCH-Operation auf den Endpunkt /Task/&lt;id&gt; sicherstellen, dass ausschließlich Versicherte in der Rolle: oid_versicherter, die Operation am E-Rezept-Fachdienst aufrufen dürfen und die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit E-Rezepte nicht durch Unberechtigte markiert werden können.
+     Der E-Rezept-Fachdienst MUSS bei Aufruf der HTTP-PATCH-Operation auf den Endpunkt /Task/&lt;id&gt; sicherstellen, dass ausschließlich Versicherte in der Rolle: 
+     <ul>
+        <li>oid_versicherter</li>
+     </ul>
+     , die Operation am E-Rezept-Fachdienst aufrufen dürfen und die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit E-Rezepte nicht durch Unberechtigte markiert werden können.
 </requirement>
 
 <!-- A_27550 -->
@@ -38,6 +42,15 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
         <testProcedure id="Produkttest"/>
     </actor>
      Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten auf die Ressource übertragene Parameters Ressource gegen das FHIR-Profil GEM_ERPEU_PR_PAR_PATCH_Task_Input prüfen und bei Nicht-Konformität den Aufruf mit dem http-Status-Code 400 ablehnen, damit nur FHIR-valide Ressourcen in den E-Rezept-Fachdienst akzeptiert werden.
+</requirement>
+
+<!-- A_28500 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-EU-18" title="E-Rezept-Fachdienst -Task markieren -Versicherter - nur einlösbare E-Rezepte" version="0">
+    <meta lockversion="false"/>
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest"/>
+    </actor>
+    Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten prüfen, ob der adressierte Task in Task.extension:eu-isRedeemableByProperties.valueBoolean = true gesetzt ist und anderfalls mit dem HTTP-Fehlercode "409 - Conflict" und einer entsprechenden Fehlermeldung im OperationOutcome die Operation abbrechen.
 </requirement>
 
 <!-- A_27552 -->

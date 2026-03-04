@@ -48,6 +48,14 @@ Für die im Rahmen des Einlösens im europäischen Ausland vorgegebenen Prozesss
 
 Sobald ein E-Rezept durch eine LE-EU mit dem Anwendungsfall "Abruf der abzugebenden E-Rezepten des Versicherten" abgerufen wurde, kann es nicht mehr erneut abgerufen werden oder in einer anderen Apotheke eingelöst werden.
 
+### Zugriffsberechtigung eines Versicherten für das Einlösen von E-Rezepten im europäischen Ausland
+
+Einen Zugriffsberechtigung eines Versicherten für das Einlösen von E-Rezepten im europäischen Ausland beinhaltet die folgenden Informationen:
+
+- KVNR des Versicherten,
+- Ländercode des Landes, für welches die Zugriffsberechtigung durch den Versicherten erteilt wurde,
+- Zugriffscode,
+- gültig bis (1h ab Einstellen), wird durch den E-Rezept-Fachdienst beim Einstellen der Zugriffsberechtigung gesetzt.
 
 ### Zulässige europäische Länder
 

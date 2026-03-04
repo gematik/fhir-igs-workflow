@@ -28,9 +28,4 @@ Anfragen an die <i>Communication</i>-Ressource können über die RESTful API mit
 
 #### Hinweis
 
-- Bei Bereitstellung von Communications werden angehangene JSONs in content.payload ebenfalls validiert
-
-
-### Sicherheitsanforderungen
-
-Generelle Sicherheitsanforderungen werden [hier](./menu-schnittstellen-datenschutz-und-sicherheit.html) festgehalten.
+- Bei Bereitstellung von Communications werden angehangene JSONs in content.payload ebenfalls validiert.
