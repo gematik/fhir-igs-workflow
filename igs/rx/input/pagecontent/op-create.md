@@ -52,6 +52,4 @@ TODO zum wiedereinführen für die Neuausschreibung
 - Quelle: [api-erp: E-Rezept erstellen](https://github.com/gematik/api-erp/blob/master/docs/erp_bereitstellen.adoc#e-rezept-erstellen).
 
 
-### Sicherheitsanforderungen
 
-Generelle Sicherheitsanforderungen werden [hier](./menu-schnittstellen-datenschutz-und-sicherheit.html) festgehalten.

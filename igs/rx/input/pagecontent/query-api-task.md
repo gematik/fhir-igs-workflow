@@ -43,6 +43,3 @@ Um spezifische Details zu einem einzelnen _Task_ mittels der RESTful API zu erha
 - Bei der Rückgabe der Verordnung an den Versicherten wird eine vom E-Rezept-Fachdienst erstellte Signatur des E-Rezept-Bundles übertragen. Diese muss vom E-Rezept-FdV nicht validiert werden.
 
 
-### Sicherheitsanforderungen
-
-Generelle Sicherheitsanforderungen werden [hier](./menu-schnittstellen-datenschutz-und-sicherheit.html) festgehalten.

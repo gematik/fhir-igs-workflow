@@ -36,6 +36,3 @@ Um spezifische Details zu einem einzelnen _MedicationDispense_ mittels der RESTf
 
 - ...Hinweise
 
-### Sicherheitsanforderungen
-
-Generelle Sicherheitsanforderungen werden [hier](./menu-schnittstellen-datenschutz-und-sicherheit.html) festgehalten.
