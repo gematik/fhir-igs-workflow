@@ -29,7 +29,3 @@ tbd
 
 tbd
 
-
-### Sicherheitsanforderungen
-
-tbd
