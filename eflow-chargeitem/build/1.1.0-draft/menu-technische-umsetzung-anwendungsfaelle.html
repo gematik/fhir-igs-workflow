@@ -269,8 +269,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="#uc-313---einwilligungen-durch-versicherten-einsehen" id="markdown-toc-uc-313---einwilligungen-durch-versicherten-einsehen">UC 3.13 - Einwilligungen durch Versicherten einsehen</a></li>
   <li><a href="#uc-310---abrechnungsinformationen-durch-versicherten-abrufen" id="markdown-toc-uc-310---abrechnungsinformationen-durch-versicherten-abrufen">UC 3.10 - Abrechnungsinformationen durch Versicherten abrufen</a></li>
   <li><a href="#abrechnungsinformationen-durch-den-versicherten-weitergeben" id="markdown-toc-abrechnungsinformationen-durch-den-versicherten-weitergeben">Abrechnungsinformationen durch den Versicherten weitergeben</a></li>
-  <li><a href="#abrechnungsinformationen-durch-den-versicherten-markieren" id="markdown-toc-abrechnungsinformationen-durch-den-versicherten-markieren">Abrechnungsinformationen durch den Versicherten markieren</a></li>
-  <li><a href="#abrechnungsinformationen-durch-den-versicherten-löschen" id="markdown-toc-abrechnungsinformationen-durch-den-versicherten-löschen">Abrechnungsinformationen durch den Versicherten löschen</a></li>
   <li><a href="#berechtigen-der-apotheke-zum-ändern-des-pkv-abgabedatensatzes" id="markdown-toc-berechtigen-der-apotheke-zum-ändern-des-pkv-abgabedatensatzes">Berechtigen der Apotheke zum Ändern des PKV-Abgabedatensatzes</a></li>
 </ul>
 
@@ -853,7 +851,7 @@ Ziel-App weiter (z. B. Service-App der Krankenversicherung, Service-App der Beih
     <tr>
       <th style="padding: 5px; width: 23rem;">Schnittstelle des E-Rezept-Fachdienst</th>
       <td style="padding: 5px;"><ul>
-  <li><a name="l2177">​</a><a href="./menu-technische-umsetzung-chargeitem-req-fdv.html#abrechnungsinformationen-exportieren">Abrechnungsinformation weitergeben</a></li>
+  <li><a name="l2169">​</a><a href="./menu-technische-umsetzung-chargeitem-req-fdv.html#abrechnungsinformationen-exportieren">Abrechnungsinformation weitergeben</a></li>
 </ul>
 </td>
     </tr>
@@ -890,45 +888,35 @@ gem-ig-badge-bg-green">
 
   <!-- AF_10089 - Abrechnungsinformationen durch den Versicherten markieren -->
 
-<p><a id="uc_3_12_abrechungsinformation_durch_versicherten_markieren"></a></p>
-<h3 id="abrechnungsinformationen-durch-den-versicherten-markieren">Abrechnungsinformationen durch den Versicherten markieren</h3>
+<p><a></a>
+###</p>
 
 <figure style="width: auto;">
   <table style="width: auto; border: 1px solid #dcdcdc;">
     <tr>
       <th style="padding: 5px; width: 23rem;">Beschreibung</th>
-      <td style="padding: 5px;"><p>Der Versicherte markiert die Abrechnungsinformation im E-Rezept-FdV, um sie für bestimmte Aktionen zu kennzeichnen. Der E-Rezept-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.</p>
+      <td style="padding: 5px;">
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
-      <td style="padding: 5px;"><ul>
-  <li>Eine LEI hat den Anwendungsfall “Abrechnungsinformation durch Abgebenden bereitstellen” für das E-Rezept durchgeführt. Die Abrechnungsinformation ist auf dem E-Rezept-Fachdienst gespeichert.</li>
-  <li>Der Versicherte hat sich über den Anwendungsfall “Abrufen der Abrechnungsinformation durch den Versicherten” die zu markierende Abrechnungsinformation herausgesucht.</li>
-</ul>
+      <td style="padding: 5px;">
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
-      <td style="padding: 5px;"><ul>
-  <li>Ein Versicherter wählt im E-Rezept-FdV die zu markierende Abrechnungsinformation sowie die zu Optionen für die Markierung aus.</li>
-  <li>Der E-Rezept-Fachdienst speichert die Information.</li>
-</ul>
+      <td style="padding: 5px;">
 </td>
 
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
-      <td style="padding: 5px;"><ul>
-  <li>Die Information zur Markierung ist im E-Rezept-Fachdienst gespeichert. Der Datenzugriff ist im E-Rezept-Fachdienst protokolliert.</li>
-</ul>
+      <td style="padding: 5px;">
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Schnittstelle des E-Rezept-Fachdienst</th>
-      <td style="padding: 5px;"><ul>
-  <li><a name="l2359">​</a><a href="./menu-technische-umsetzung-chargeitem-req-fdv.html#abrechnungsinformationen-markieren">Abrechnungsinformation markieren</a></li>
-</ul>
+      <td style="padding: 5px;">
 </td>
     </tr>
     
@@ -941,69 +929,44 @@ gem-ig-badge-bg-green">
           
         
           
-            <span class="badge gem-ig-badge 
-gem-ig-badge-bg-green">
-              VERSICHERTER
-            </span>
-          
         
       </td>
     </tr>
   </table>
-  <figcaption><strong>Tabelle:</strong> Abrechnungsinformationen durch den Versicherten markieren</figcaption>
-</figure>
-
-<p><strong>Sequenzdiagramm:</strong></p>
-
-<figure>
-	<div style="--box-width: 700px; margin-bottom: 30px;" class="gem-ig-img-container">
-		  <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 947 579" zoomAndPan="magnify" preserveAspectRatio="none" width="947px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:947px;height:579px;background:#FFFFFF;" version="1.1" height="579px"><defs></defs><g><text font-weight="bold" lengthAdjust="spacing" x="237.5" font-size="14" textLength="475" y="27.9951" font-family="sans-serif" fill="#000000">Abrechnungsinformation durch den Versicherten markieren</text><rect width="10" x="305" y="149.7266" style="stroke:#181818;stroke-width:1.0;" fill="#FFFFFF" height="331.1641"></rect><rect width="10" x="661" y="338.3594" style="stroke:#181818;stroke-width:1.0;" fill="#FFFFFF" height="113.3984"></rect><rect width="694.5" x="246.5" y="248.9922" style="stroke:#000000;stroke-width:1.5;" fill="none" height="61.2344"></rect><line y1="118.5938" x1="50" y2="498.8906" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="50"></line><line y1="118.5938" x1="309.5" y2="498.8906" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="309.5"></line><line y1="118.5938" x1="665.5" y2="498.8906" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="665.5"></line><line y1="118.5938" x1="869" y2="498.8906" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="869"></line><text lengthAdjust="spacing" x="5" font-size="14" textLength="84" y="115.292" font-family="sans-serif" fill="#000000">Versicherter</text><ellipse cx="50" cy="50.7969" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M50,58.7969 L50,85.7969 M37,66.7969 L63,66.7969 M50,85.7969 L37,100.7969 M50,85.7969 L63,100.7969 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><text lengthAdjust="spacing" x="5" font-size="14" textLength="84" y="510.8857" font-family="sans-serif" fill="#000000">Versicherter</text><ellipse cx="50" cy="522.6875" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M50,530.6875 L50,557.6875 M37,538.6875 L63,538.6875 M50,557.6875 L37,572.6875 M50,557.6875 L63,572.6875 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><rect rx="2.5" ry="2.5" width="107" x="256.5" y="71" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="46.5938"></rect><text lengthAdjust="spacing" x="263.5" font-size="14" textLength="93" y="90.9951" font-family="sans-serif" fill="#000000">Frontend des</text><text lengthAdjust="spacing" x="266" font-size="14" textLength="88" y="107.292" font-family="sans-serif" fill="#000000">Versicherten</text><rect rx="2.5" ry="2.5" width="107" x="256.5" y="497.8906" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="46.5938"></rect><text lengthAdjust="spacing" x="263.5" font-size="14" textLength="93" y="517.8857" font-family="sans-serif" fill="#000000">Frontend des</text><text lengthAdjust="spacing" x="266" font-size="14" textLength="88" y="534.1826" font-family="sans-serif" fill="#000000">Versicherten</text><rect rx="2.5" ry="2.5" width="159" x="586.5" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="593.5" font-size="14" textLength="145" y="107.292" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><rect rx="2.5" ry="2.5" width="159" x="586.5" y="497.8906" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="593.5" font-size="14" textLength="145" y="517.8857" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><rect rx="2.5" ry="2.5" width="124" x="807" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="814" font-size="14" textLength="110" y="107.292" font-family="sans-serif" fill="#000000">Identity Provider</text><rect rx="2.5" ry="2.5" width="124" x="807" y="497.8906" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="814" font-size="14" textLength="110" y="517.8857" font-family="sans-serif" fill="#000000">Identity Provider</text><rect width="10" x="305" y="149.7266" style="stroke:#181818;stroke-width:1.0;" fill="#FFFFFF" height="331.1641"></rect><rect width="10" x="661" y="338.3594" style="stroke:#181818;stroke-width:1.0;" fill="#FFFFFF" height="113.3984"></rect><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="293,145.7266,303,149.7266,293,153.7266,297,149.7266"></polygon><line y1="149.7266" x1="50" y2="149.7266" style="stroke:#181818;stroke-width:1.0;" x2="299"></line><text lengthAdjust="spacing" x="57" font-size="13" textLength="236" y="144.6606" font-family="sans-serif" fill="#000000">Abrechnungsinformation markieren()</text><line y1="178.8594" x1="315" y2="178.8594" style="stroke:#181818;stroke-width:1.0;" x2="357"></line><line y1="178.8594" x1="357" y2="191.8594" style="stroke:#181818;stroke-width:1.0;" x2="357"></line><line y1="191.8594" x1="316" y2="191.8594" style="stroke:#181818;stroke-width:1.0;" x2="357"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="326,187.8594,316,191.8594,326,195.8594,322,191.8594"></polygon><text lengthAdjust="spacing" x="322" font-size="13" textLength="168" y="173.7935" font-family="sans-serif" fill="#000000">Markierungen auswählen()</text><line y1="220.9922" x1="315" y2="220.9922" style="stroke:#181818;stroke-width:1.0;" x2="357"></line><line y1="220.9922" x1="357" y2="233.9922" style="stroke:#181818;stroke-width:1.0;" x2="357"></line><line y1="233.9922" x1="316" y2="233.9922" style="stroke:#181818;stroke-width:1.0;" x2="357"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="326,229.9922,316,233.9922,326,237.9922,322,233.9922"></polygon><text lengthAdjust="spacing" x="322" font-size="13" textLength="175" y="215.9263" font-family="sans-serif" fill="#000000">PrescriptionID bestimmen()</text><path d="M246.5,248.9922 L316.5,248.9922 L316.5,256.125 L306.5,266.125 L246.5,266.125 L246.5,248.9922 " style="stroke:#000000;stroke-width:1.5;" fill="#EEEEEE"></path><rect width="694.5" x="246.5" y="248.9922" style="stroke:#000000;stroke-width:1.5;" fill="none" height="61.2344"></rect><text font-weight="bold" lengthAdjust="spacing" x="261.5" font-size="13" textLength="25" y="262.0591" font-family="sans-serif" fill="#000000">opt</text><text font-weight="bold" lengthAdjust="spacing" x="331.5" font-size="11" textLength="177" y="261.2026" font-family="sans-serif" fill="#000000">[kein gültiger AuthN-Token]</text><rect width="680.5" x="253.5" y="266.125" style="stroke:#000000;stroke-width:1.5;" fill="none" height="39.1016"></rect><path d="M253.5,266.125 L319.5,266.125 L319.5,273.125 L309.5,283.125 L253.5,283.125 L253.5,266.125 " style="stroke:#000000;stroke-width:2.0;" fill="#EEEEEE"></path><text font-weight="bold" lengthAdjust="spacing" x="266.5" font-size="13" textLength="21" y="280.1919" font-family="sans-serif" fill="#000000">ref</text><text lengthAdjust="spacing" x="432.25" font-size="12" textLength="323" y="298.2637" font-family="sans-serif" fill="#000000">UC 5.1 - AuthN-Token durch Versicherten anfordern</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="649,334.3594,659,338.3594,649,342.3594,653,338.3594"></polygon><line y1="338.3594" x1="315" y2="338.3594" style="stroke:#181818;stroke-width:1.0;" x2="655"></line><text lengthAdjust="spacing" x="322" font-size="13" textLength="327" y="333.2935" font-family="sans-serif" fill="#000000">PATCH /ChargeItem/{PrescriptionID}(AuthN-Token)</text><line y1="367.4922" x1="671" y2="367.4922" style="stroke:#181818;stroke-width:1.0;" x2="713"></line><line y1="367.4922" x1="713" y2="380.4922" style="stroke:#181818;stroke-width:1.0;" x2="713"></line><line y1="380.4922" x1="672" y2="380.4922" style="stroke:#181818;stroke-width:1.0;" x2="713"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="682,376.4922,672,380.4922,682,384.4922,678,380.4922"></polygon><text lengthAdjust="spacing" x="678" font-size="13" textLength="147" y="362.4263" font-family="sans-serif" fill="#000000">Markierung speichern()</text><line y1="409.625" x1="671" y2="409.625" style="stroke:#181818;stroke-width:1.0;" x2="713"></line><line y1="409.625" x1="713" y2="422.625" style="stroke:#181818;stroke-width:1.0;" x2="713"></line><line y1="422.625" x1="672" y2="422.625" style="stroke:#181818;stroke-width:1.0;" x2="713"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="682,418.625,672,422.625,682,426.625,678,422.625"></polygon><text lengthAdjust="spacing" x="678" font-size="13" textLength="179" y="404.5591" font-family="sans-serif" fill="#000000">Datenzugriff protokollieren()</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="326,447.7578,316,451.7578,326,455.7578,322,451.7578"></polygon><line y1="451.7578" x1="320" y2="451.7578" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="665"></line><text lengthAdjust="spacing" x="332" font-size="13" textLength="40" y="446.6919" font-family="sans-serif" fill="#000000">status</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="61,476.8906,51,480.8906,61,484.8906,57,480.8906"></polygon><line y1="480.8906" x1="55" y2="480.8906" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="309"></line><text lengthAdjust="spacing" x="67" font-size="13" textLength="40" y="475.8247" font-family="sans-serif" fill="#000000">status</text></g></svg>
-	</div>
-	<figcaption><strong>Abbildung: </strong>Abrechnungsinformationen durch den Versicherten markieren</figcaption>
+  <figcaption><strong>Tabelle:</strong> </figcaption>
 </figure>
 
   <!-- AF_10090 - Abrechnungsinformationen durch den Versicherten löschen -->
 
-<p><a id="uc_3_11_abrechungsinformation_durch_versicherten_löschen"></a></p>
-<h3 id="abrechnungsinformationen-durch-den-versicherten-löschen">Abrechnungsinformationen durch den Versicherten löschen</h3>
+<p><a></a>
+###</p>
 
 <figure style="width: auto;">
   <table style="width: auto; border: 1px solid #dcdcdc;">
     <tr>
       <th style="padding: 5px; width: 23rem;">Beschreibung</th>
-      <td style="padding: 5px;"><p>Ein Versicherter wählt im E-Rezept-FdV die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der E-Rezept-Fachdienst löscht die Abrechnungsinformation</p>
+      <td style="padding: 5px;">
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
-      <td style="padding: 5px;"><ul>
-  <li>Eine LEI hat den Anwendungsfall “Abrechnungsinformation durch Abgebenden bereitstellen” für das E-Rezept durchgeführt.</li>
-  <li>Der Versicherte hat sich über den Anwendungsfall “Abrufen der Abrechnungsinformation durch den Versicherten” die Abrechnungsinformation auf sein FdV heruntergeladen.</li>
-</ul>
+      <td style="padding: 5px;">
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
-      <td style="padding: 5px;"><ul>
-  <li>Ein Versicherter wählt im E-Rezept-FdV die zu löschende Abrechnungsinformation aus und bestätigt das Löschen.</li>
-  <li>Das E-Rezept-FdV überträgt den Löschrequest</li>
-  <li>Der E-Rezept-Fachdienst löscht die Abrechnungsinformation.</li>
-</ul>
+      <td style="padding: 5px;">
 </td>
 
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
-      <td style="padding: 5px;"><ul>
-  <li>Die Abrechnungsinformation sind auf dem E-Rezept-Fachdienst gelöscht. Das Löschen ist im E-Rezept-Fachdienst protokolliert.</li>
-</ul>
+      <td style="padding: 5px;">
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Schnittstelle des E-Rezept-Fachdienst</th>
-      <td style="padding: 5px;"><ul>
-  <li><a name="l2580">​</a><a href="./menu-technische-umsetzung-chargeitem-req-fdv.html#abrechnungsinformationen-löschen">Abrechnungsinformation löschen</a></li>
-</ul>
+      <td style="padding: 5px;">
 </td>
     </tr>
     
@@ -1016,25 +979,11 @@ gem-ig-badge-bg-green">
           
         
           
-            <span class="badge gem-ig-badge 
-gem-ig-badge-bg-green">
-              VERSICHERTER
-            </span>
-          
         
       </td>
     </tr>
   </table>
-  <figcaption><strong>Tabelle:</strong> Abrechnungsinformationen durch den Versicherten löschen</figcaption>
-</figure>
-
-<p><strong>Sequenzdiagramm:</strong></p>
-
-<figure>
-	<div style="--box-width: 700px; margin-bottom: 30px;" class="gem-ig-img-container">
-		  <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 1022 608" zoomAndPan="magnify" preserveAspectRatio="none" width="1022px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:1022px;height:608px;background:#FFFFFF;" version="1.1" height="608px"><defs></defs><g><text font-weight="bold" lengthAdjust="spacing" x="284" font-size="14" textLength="457" y="27.9951" font-family="sans-serif" fill="#000000">Abrechnungsinformation durch den Versicherten löschen</text><rect width="10" x="316" y="149.7266" style="stroke:#181818;stroke-width:1.0;" fill="#FFFFFF" height="360.2969"></rect><rect width="10" x="695" y="367.4922" style="stroke:#181818;stroke-width:1.0;" fill="#FFFFFF" height="113.3984"></rect><rect width="758.5" x="257.5" y="278.125" style="stroke:#000000;stroke-width:1.5;" fill="none" height="61.2344"></rect><line y1="118.5938" x1="50" y2="528.0234" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="50"></line><line y1="118.5938" x1="320.5" y2="528.0234" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="320.5"></line><line y1="118.5938" x1="699.5" y2="528.0234" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="699.5"></line><line y1="118.5938" x1="944" y2="528.0234" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="944"></line><text lengthAdjust="spacing" x="5" font-size="14" textLength="84" y="115.292" font-family="sans-serif" fill="#000000">Versicherter</text><ellipse cx="50" cy="50.7969" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M50,58.7969 L50,85.7969 M37,66.7969 L63,66.7969 M50,85.7969 L37,100.7969 M50,85.7969 L63,100.7969 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><text lengthAdjust="spacing" x="5" font-size="14" textLength="84" y="540.0186" font-family="sans-serif" fill="#000000">Versicherter</text><ellipse cx="50" cy="551.8203" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M50,559.8203 L50,586.8203 M37,567.8203 L63,567.8203 M50,586.8203 L37,601.8203 M50,586.8203 L63,601.8203 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><rect rx="2.5" ry="2.5" width="107" x="267.5" y="71" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="46.5938"></rect><text lengthAdjust="spacing" x="274.5" font-size="14" textLength="93" y="90.9951" font-family="sans-serif" fill="#000000">Frontend des</text><text lengthAdjust="spacing" x="277" font-size="14" textLength="88" y="107.292" font-family="sans-serif" fill="#000000">Versicherten</text><rect rx="2.5" ry="2.5" width="107" x="267.5" y="527.0234" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="46.5938"></rect><text lengthAdjust="spacing" x="274.5" font-size="14" textLength="93" y="547.0186" font-family="sans-serif" fill="#000000">Frontend des</text><text lengthAdjust="spacing" x="277" font-size="14" textLength="88" y="563.3154" font-family="sans-serif" fill="#000000">Versicherten</text><rect rx="2.5" ry="2.5" width="159" x="620.5" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="627.5" font-size="14" textLength="145" y="107.292" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><rect rx="2.5" ry="2.5" width="159" x="620.5" y="527.0234" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="627.5" font-size="14" textLength="145" y="547.0186" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><rect rx="2.5" ry="2.5" width="124" x="882" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="889" font-size="14" textLength="110" y="107.292" font-family="sans-serif" fill="#000000">Identity Provider</text><rect rx="2.5" ry="2.5" width="124" x="882" y="527.0234" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="889" font-size="14" textLength="110" y="547.0186" font-family="sans-serif" fill="#000000">Identity Provider</text><rect width="10" x="316" y="149.7266" style="stroke:#181818;stroke-width:1.0;" fill="#FFFFFF" height="360.2969"></rect><rect width="10" x="695" y="367.4922" style="stroke:#181818;stroke-width:1.0;" fill="#FFFFFF" height="113.3984"></rect><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="304,145.7266,314,149.7266,304,153.7266,308,149.7266"></polygon><line y1="149.7266" x1="50" y2="149.7266" style="stroke:#181818;stroke-width:1.0;" x2="310"></line><text lengthAdjust="spacing" x="57" font-size="13" textLength="236" y="144.6606" font-family="sans-serif" fill="#000000">Abrechnungsinformationen löschen()</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="61,174.8594,51,178.8594,61,182.8594,57,178.8594"></polygon><line y1="178.8594" x1="55" y2="178.8594" style="stroke:#181818;stroke-width:1.0;" x2="315"></line><text lengthAdjust="spacing" x="67" font-size="13" textLength="242" y="173.7935" font-family="sans-serif" fill="#000000">Bestätigung zum Löschen anfordern()</text><line y1="207.9922" x1="326" y2="207.9922" style="stroke:#181818;stroke-width:1.0;" x2="368"></line><line y1="207.9922" x1="368" y2="220.9922" style="stroke:#181818;stroke-width:1.0;" x2="368"></line><line y1="220.9922" x1="327" y2="220.9922" style="stroke:#181818;stroke-width:1.0;" x2="368"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="337,216.9922,327,220.9922,337,224.9922,333,220.9922"></polygon><text lengthAdjust="spacing" x="333" font-size="13" textLength="238" y="202.9263" font-family="sans-serif" fill="#000000">Abrechnungsinformation auswählen()</text><line y1="250.125" x1="326" y2="250.125" style="stroke:#181818;stroke-width:1.0;" x2="368"></line><line y1="250.125" x1="368" y2="263.125" style="stroke:#181818;stroke-width:1.0;" x2="368"></line><line y1="263.125" x1="327" y2="263.125" style="stroke:#181818;stroke-width:1.0;" x2="368"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="337,259.125,327,263.125,337,267.125,333,263.125"></polygon><text lengthAdjust="spacing" x="333" font-size="13" textLength="355" y="245.0591" font-family="sans-serif" fill="#000000">PrescriptionID zu Abrechnungsinformation bestimmen()</text><path d="M257.5,278.125 L327.5,278.125 L327.5,285.2578 L317.5,295.2578 L257.5,295.2578 L257.5,278.125 " style="stroke:#000000;stroke-width:1.5;" fill="#EEEEEE"></path><rect width="758.5" x="257.5" y="278.125" style="stroke:#000000;stroke-width:1.5;" fill="none" height="61.2344"></rect><text font-weight="bold" lengthAdjust="spacing" x="272.5" font-size="13" textLength="25" y="291.1919" font-family="sans-serif" fill="#000000">opt</text><text font-weight="bold" lengthAdjust="spacing" x="342.5" font-size="11" textLength="177" y="290.3354" font-family="sans-serif" fill="#000000">[kein gültiger AuthN-Token]</text><rect width="744.5" x="264.5" y="295.2578" style="stroke:#000000;stroke-width:1.5;" fill="none" height="39.1016"></rect><path d="M264.5,295.2578 L330.5,295.2578 L330.5,302.2578 L320.5,312.2578 L264.5,312.2578 L264.5,295.2578 " style="stroke:#000000;stroke-width:2.0;" fill="#EEEEEE"></path><text font-weight="bold" lengthAdjust="spacing" x="277.5" font-size="13" textLength="21" y="309.3247" font-family="sans-serif" fill="#000000">ref</text><text lengthAdjust="spacing" x="475.25" font-size="12" textLength="323" y="327.3965" font-family="sans-serif" fill="#000000">UC 5.1 - AuthN-Token durch Versicherten anfordern</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="683,363.4922,693,367.4922,683,371.4922,687,367.4922"></polygon><line y1="367.4922" x1="326" y2="367.4922" style="stroke:#181818;stroke-width:1.0;" x2="689"></line><text lengthAdjust="spacing" x="333" font-size="13" textLength="332" y="362.4263" font-family="sans-serif" fill="#000000">DELETE /ChargeItem/{PrescriptionID}(AuthN-Token)</text><line y1="396.625" x1="705" y2="396.625" style="stroke:#181818;stroke-width:1.0;" x2="747"></line><line y1="396.625" x1="747" y2="409.625" style="stroke:#181818;stroke-width:1.0;" x2="747"></line><line y1="409.625" x1="706" y2="409.625" style="stroke:#181818;stroke-width:1.0;" x2="747"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="716,405.625,706,409.625,716,413.625,712,409.625"></polygon><text lengthAdjust="spacing" x="712" font-size="13" textLength="220" y="391.5591" font-family="sans-serif" fill="#000000">Abrechnungsinformation löschen()</text><line y1="438.7578" x1="705" y2="438.7578" style="stroke:#181818;stroke-width:1.0;" x2="747"></line><line y1="438.7578" x1="747" y2="451.7578" style="stroke:#181818;stroke-width:1.0;" x2="747"></line><line y1="451.7578" x1="706" y2="451.7578" style="stroke:#181818;stroke-width:1.0;" x2="747"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="716,447.7578,706,451.7578,716,455.7578,712,451.7578"></polygon><text lengthAdjust="spacing" x="712" font-size="13" textLength="190" y="433.6919" font-family="sans-serif" fill="#000000">Löschvorgang protokollieren()</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="337,476.8906,327,480.8906,337,484.8906,333,480.8906"></polygon><line y1="480.8906" x1="331" y2="480.8906" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="699"></line><text lengthAdjust="spacing" x="343" font-size="13" textLength="40" y="475.8247" font-family="sans-serif" fill="#000000">status</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="61,506.0234,51,510.0234,61,514.0234,57,510.0234"></polygon><line y1="510.0234" x1="55" y2="510.0234" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="320"></line><text lengthAdjust="spacing" x="67" font-size="13" textLength="40" y="504.9575" font-family="sans-serif" fill="#000000">status</text></g></svg>
-	</div>
-	<figcaption><strong>Abbildung: </strong>Abrechnungsinformationen durch den Versicherten löschen</figcaption>
+  <figcaption><strong>Tabelle:</strong> </figcaption>
 </figure>
 
   <!-- Berechtigen der Apotheke zum Ändern des PKV-Abgabedatensatzes -->
@@ -1129,7 +1078,7 @@ gem-ig-badge-bg-green">
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Mar 4, 2026 14:06+0000">2026-03-04</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Mar 4, 2026 14:16+0000">2026-03-04</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
