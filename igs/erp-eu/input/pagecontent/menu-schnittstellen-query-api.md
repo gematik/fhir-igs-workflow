@@ -1,4 +1,4 @@
-Die folgenden Operation APIs stellt der E-Rezept-Fachdienst dem _E-Rezept-FdV_ sowie dem _NCPeH_ zur Verfügung.
+Die folgenden Query APIs stellt der E-Rezept-Fachdienst dem _E-Rezept-FdV_ sowie dem _NCPeH_ zur Verfügung.
 
 ### Verwaltung der Einwilligung durch den Versicherten
 
