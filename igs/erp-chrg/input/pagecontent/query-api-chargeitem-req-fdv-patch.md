@@ -21,16 +21,6 @@
       </ul>
 </requirement>
 
-TODO: A_22177-02
-<!--A_22177-02-->
-<requirement conformance="SHALL" title="E-Rezept-FdV: title">
-    <meta lockversion="false"/>
-    <actor name="eRP_FdV">
-        <testProcedure id="Produkttest"/>
-    </actor>
-      text
-</requirement>
-
 <!--A_22179-01-->
 <requirement conformance="SHALL" title="E-Rezept-FdV: Abrechnungsinformation markieren - Speicherrequest">
     <meta lockversion="false"/>

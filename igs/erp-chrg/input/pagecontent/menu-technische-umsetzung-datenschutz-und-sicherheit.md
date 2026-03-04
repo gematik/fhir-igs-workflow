@@ -2,8 +2,6 @@ PKV-Versicherte erhalten Abrechnungsinformationen, die sie bei ihrer privaten Kr
 
 Um zu vermeiden, dass der Anbieter des E-Rezept-Fachdienstes ein Profil über alle PKV-Versicherten mit Einwilligung erhält, wird die Information über die Einwilligung in der VAU verarbeitet und verschlüsselt gespeichert. Die Nichtabstreitbarkeit der Einwilligung ist technisch sicherzustellen.
 
-TODO: Sollen wir die Hinweise mit aufnehmen?
-
 <!--A_22207-->
 <requirement conformance="SHALL" key="IG-ERP-CHRG-229" title="Einwilligung in Verarbeitung von Abrechnungsinformationen nur für PKV-Versicherte" version="0">
     <meta lockversion="false"/>
