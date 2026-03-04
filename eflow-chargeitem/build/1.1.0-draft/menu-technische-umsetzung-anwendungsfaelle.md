@@ -291,15 +291,3 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios “Abrechn
 
 **Abbildung: **Berechtigen der Apotheke zum Ändern des PKV-Abgabedatensatzes
 
-## Berechtigen der Apotheke zum Ändern des PKV‑Abgabedatensatzes
-
-Der Versicherte übermittelt der abgebenden LEI einen AccessCode, um die Apotheke zum Abruf und einmaligen Ändern zu berechtigen.
-
-* Das E-Rezept-FdV erzeugt einen Abrechnungsinformation‑Token.
-* Der Versicherte übermittelt den Token per Nachricht (Communication) oder zeigt einen 2D‑Code.
-* Das AVS nutzt den AccessCode für Abruf/Änderung der Abrechnungsinformation.
-
-**Schnittstelle:** *[query-api-communication](./query-api-communication.md)*
-
-**Sequenzdiagramm (Platzhalter):** 
-
