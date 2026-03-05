@@ -1,4 +1,4 @@
-<!--> FHIR-Ressource validieren -->
+<!-- FHIR-Ressource validieren -->
 
 Der E-Rezept-Fachdienst validiert bei Operationen von Clientsystemen übermittelte FHIR-Ressourcen. Die folgenden Anforderungen beschreiben Mindestprüfungen.
 

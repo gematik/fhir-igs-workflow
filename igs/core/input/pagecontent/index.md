@@ -21,6 +21,7 @@ Der Core-IG fokussiert auf die technische Basisschicht des Fachdienstes:
 - [Datenschutz und Sicherheit](./data-security.html)
 - [FHIR-Validierung](./fhir-validate.html)
 - [Löschfristen](./ttl.html)
+- [Verbindungsaufbau Clientsysteme (über IDP-Dienst)](./verbindungsaufbau-client.html)
 - [Query API (modulübergreifend)](./query-api.html)
 - [Operation API (modulübergreifend)](./operation-api.html)
 - [FHIR-Artefakte](./artifacts.html)
