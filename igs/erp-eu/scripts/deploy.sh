@@ -85,8 +85,6 @@ fi
 
 echo "✅ PUBLISH_URL: ${PUBLISH_URL}"
 
-# TODO Add Simplifier cli
-
 "$SCRIPT_DIR/build-ig.sh"
  
 
