@@ -36,6 +36,7 @@ Der Core-IG fokussiert auf die technische Basisschicht des Fachdienstes:
 * [Datenschutz und Sicherheit](./data-security.md)
 * [FHIR-Validierung](./fhir-validate.md)
 * [Löschfristen](./ttl.md)
+* [Verbindungsaufbau Clientsysteme (über IDP-Dienst)](./verbindungsaufbau-client.md)
 * [Query API (modulübergreifend)](./query-api.md)
 * [Operation API (modulübergreifend)](./operation-api.md)
 * [FHIR-Artefakte](./artifacts.md)
@@ -57,7 +58,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
   "name" : "gemIG_TIFlow_core",
   "title" : "Implementation Guide E-Rezept-Workflow Core",
   "status" : "draft",
-  "date" : "2026-03-05T08:51:05+00:00",
+  "date" : "2026-03-05T14:55:28+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -763,6 +764,15 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "verbindungsaufbau-client.html"
+        }],
+        "nameUrl" : "verbindungsaufbau-client.html",
+        "title" : "Verbindungsaufbau von Clientsystemen",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "menu-schnittstellen-datenschutz-und-sicherheit.html"
         }],
         "nameUrl" : "menu-schnittstellen-datenschutz-und-sicherheit.html",
@@ -1197,6 +1207,60 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
             }],
             "nameUrl" : "query-api-consent-req-fdv.html",
             "title" : "Client-Anforderungen: Consent-Query",
+            "generation" : "markdown"
+          }]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "query-api-pushers.html"
+          }],
+          "nameUrl" : "query-api-pushers.html",
+          "title" : "Query API: pushers",
+          "generation" : "markdown",
+          "page" : [{
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-pushers-req-fd.html"
+            }],
+            "nameUrl" : "query-api-pushers-req-fd.html",
+            "title" : "FD-Anforderungen: pushers-Query",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-pushers-req-fdv.html"
+            }],
+            "nameUrl" : "query-api-pushers-req-fdv.html",
+            "title" : "FdV-Anforderungen: pushers-Query",
+            "generation" : "markdown"
+          }]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "query-api-channels.html"
+          }],
+          "nameUrl" : "query-api-channels.html",
+          "title" : "Query API: channels",
+          "generation" : "markdown",
+          "page" : [{
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-channels-req-fd.html"
+            }],
+            "nameUrl" : "query-api-channels-req-fd.html",
+            "title" : "FD-Anforderungen: channels-Query",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-channels-req-fdv.html"
+            }],
+            "nameUrl" : "query-api-channels-req-fdv.html",
+            "title" : "FdV-Anforderungen: channels-Query",
             "generation" : "markdown"
           }]
         }]
