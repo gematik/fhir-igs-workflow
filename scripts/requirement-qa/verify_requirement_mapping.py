@@ -31,20 +31,34 @@ def format_source(path: Path) -> str:
     return stem
 
 
-def collect_excel_ids(xlsx_paths: Iterable[Path]) -> Dict[str, Dict[str, Set[str]]]:
+def collect_excel_ids(xlsx_paths: Iterable[Path], ptsb: bool = False) -> Dict[str, Dict[str, Set[str]]]:
     all_ids: Dict[str, Dict[str, Set[str]]] = {}
     for path in xlsx_paths:
-        source = format_source(path)
         workbook = openpyxl.load_workbook(path, read_only=True, data_only=True)
-        for sheet_name in workbook.sheetnames:
+
+        sheet_names: List[str]
+        if ptsb:
+            if "Festlegungen" not in workbook.sheetnames:
+                continue
+            sheet_names = ["Festlegungen"]
+        else:
+            sheet_names = list(workbook.sheetnames)
+
+        for sheet_name in sheet_names:
             sheet = workbook[sheet_name]
             rows = sheet.iter_rows(min_row=1, max_row=1, values_only=True)
             header = next(rows, [])
             if not header:
                 continue
-            index = {name: i for i, name in enumerate(header) if name is not None}
+
+            index = {
+                str(name).strip(): i
+                for i, name in enumerate(header)
+                if name is not None and str(name).strip()
+            }
             if "ID" not in index:
                 continue
+
             id_idx = index["ID"]
             title_indexes = [
                 index[name]
@@ -56,23 +70,40 @@ def collect_excel_ids(xlsx_paths: Iterable[Path]) -> Dict[str, Dict[str, Set[str
                 for name in ("Beschreibung", "Inhalt", "Content")
                 if name in index
             ]
+
+            # In PTSB mode, source should come from the sheet column.
+            source_idx = index.get("Quelle (Referenz)") if ptsb else None
+
             for row in sheet.iter_rows(min_row=2, values_only=True):
                 value = row[id_idx]
                 if not value:
                     continue
+
                 req_id = str(value).strip()
-                if req_id:
-                    title = first_non_empty(row, title_indexes)
-                    content = first_non_empty(row, content_indexes)
-                    req_info = all_ids.setdefault(
-                        req_id,
-                        {"sources": set(), "titles": set(), "contents": set()},
-                    )
-                    req_info["sources"].add(source)
-                    if title:
-                        req_info["titles"].add(title)
-                    if content:
-                        req_info["contents"].add(content)
+                if not req_id:
+                    continue
+
+                title = first_non_empty(row, title_indexes)
+                content = first_non_empty(row, content_indexes)
+
+                if source_idx is not None and source_idx < len(row):
+                    source_value = row[source_idx]
+                    source = str(source_value).strip() if source_value is not None else ""
+                else:
+                    source = ""
+                if not source:
+                    source = format_source(path)
+
+                req_info = all_ids.setdefault(
+                    req_id,
+                    {"sources": set(), "titles": set(), "contents": set()},
+                )
+                req_info["sources"].add(source)
+                if title:
+                    req_info["titles"].add(title)
+                if content:
+                    req_info["contents"].add(content)
+
     return all_ids
 
 
@@ -112,6 +143,11 @@ def main() -> None:
         action="store_true",
         help="Include requirement content/description in output CSV files",
     )
+    parser.add_argument(
+        "--ptsb",
+        action="store_true",
+        help="Only use gemProdT*.xlsx files and parse requirements from sheet 'Festlegungen'",
+    )
     args = parser.parse_args()
 
     xlsx_dir = Path(args.xlsx_dir)
@@ -125,8 +161,12 @@ def main() -> None:
 
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    xlsx_paths = sorted(xlsx_dir.glob("*.xlsx"))
-    excel_ids = collect_excel_ids(xlsx_paths)
+    if args.ptsb:
+        xlsx_paths = sorted(xlsx_dir.glob("gemProdT*.xlsx"))
+    else:
+        xlsx_paths = sorted(xlsx_dir.glob("*.xlsx"))
+
+    excel_ids = collect_excel_ids(xlsx_paths, ptsb=args.ptsb)
 
     mapping_entries = load_mapping(mapping_path)
     mapping_ids = {entry.get("old_req") for entry in mapping_entries if entry.get("old_req")}
