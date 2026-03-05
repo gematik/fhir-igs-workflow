@@ -4,9 +4,10 @@ Die Operation führt zum Löschen der für den Versicherten gespeicherten Zugrif
 
 Die Nachricht wird als HTTP `DELETE` an `/$revoke-eu-access-permission` gesendet.
 
-### Anforderungen an Schnittstelle
+### Anforderungen an die Schnittstelle
 
-- [Server Anforderungen zu `$revoke-eu-access-permission`](revoke-eu-access-permission-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [Server Anforderungen zu `$revoke-eu-access-permission`](./revoke-eu-access-permission-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [FdV-Anforderungen zu `$revoke-eu-access-permission`](./revoke-eu-access-permission-req-fd.html): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
 
 ### API Beschreibung
 

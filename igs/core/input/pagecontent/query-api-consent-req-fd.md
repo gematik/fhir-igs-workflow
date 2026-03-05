@@ -13,8 +13,8 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 <!--
   Der E-Rezept-Fachdienst MUSS Consent Ressourcen mit den folgenden Categorien verwalten:
   <ul>
-        <li>https://gematik.de/fhir/erpchrg/CodeSystem/GEM_ERPCHRG_CS_ConsentType </li>
-        <li>https://gematik.de/fhir/erp-eu/CodeSystem/GEM_ERPEU_CS_ConsentType </li>
+        <li>https://gematik.de/fhir/erpchrg/CodeSystem/GEM_ERPCHRG_CS_ConsentType</li>
+        <li>https://gematik.de/fhir/erp-eu/CodeSystem/GEM_ERPEU_CS_ConsentType</li>
   </ul>
 -->
   

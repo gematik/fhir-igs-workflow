@@ -6,7 +6,8 @@ Die Nachricht wird als HTTP `POST` an `/$get-eu-prescriptions` gesendet.
 
 ### Anforderungen an Schnittstelle
 
-- [Server Anforderungen zu `$get-eu-prescriptions`](get-eu-prescriptions-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [Server Anforderungen zu `$get-eu-prescriptions`](./get-eu-prescriptions-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [NCPeH Anforderungen zu `$get-eu-prescriptions`](./get-eu-prescriptions-req-ncpeha.html): Anforderungen an den NCPeH-FD zur Nutzung der Schnittstelle.
 
 ### API Beschreibung
 

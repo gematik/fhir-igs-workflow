@@ -6,8 +6,8 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$close` gesendet.
 
 ### Anforderungen an Schnittstelle
 
-- [Ergänzende Server-Anforderungen zu `$close`](./op-close-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
-- [Ergänzende Anforderungen für AVS zu `$close`](./op-close-req-avs.html): Anforderungen an das AVS zur Nutzung der Schnittstelle.
+- [FD-Anforderungen zu `$close`](./op-close-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [AVS-Anforderungen zu `$close`](./op-close-req-avs.html): Anforderungen an das AVS zur Nutzung der Schnittstelle.
 
 ### API Beschreibung
 

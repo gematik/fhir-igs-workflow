@@ -12,7 +12,13 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
     </actor>
-        Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task sicherstellen, dass ausschließlich Versicherte und Leistungserbringer in der Rolle oid_versicherter oid_oeffentliche_apotheke oid_krankenhausapotheke die Operation am E-Rezept-Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.
+        Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task sicherstellen, dass ausschließlich Versicherte und Leistungserbringer in der Rolle
+        <ul>
+            <li>oid_versicherter</li>
+            <li>oid_oeffentliche_apotheke</li>
+            <li>oid_krankenhausapotheke</li> 
+        </ul>
+        die Operation am E-Rezept-Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.
 </requirement>
 
 <!-- A_19115-01 -->
@@ -21,7 +27,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
     </actor>
-        Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task die dem Versicherten zugeordneten Task-Ressourcen anhand der KVNR des Versicherten aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, die in Task.for die entsprechende KVNR des begünstigten Patienten referenziert haben, damit ausschließlich Versicherte ihre eigenen E-Rezepte einsehen können.
+    Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task die dem Versicherten zugeordneten Task-Ressourcen anhand der KVNR des Versicherten aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, die in Task.for die entsprechende KVNR des begünstigten Patienten referenziert haben, damit ausschließlich Versicherte ihre eigenen E-Rezepte einsehen können.
 </requirement>
 
 <!-- A_19129-01 -->
@@ -30,25 +36,32 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
     </actor>
-        Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task die gültige Ergebnisliste der Task-Ressourcen ohne die referenzierten, signierten E-Rezept-Bundle an den Aufrufer zurückgeben, damit der Versicherte eine Übersicht aller Tasks erhält.
+    Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task die gültige Ergebnisliste der Task-Ressourcen ohne die referenzierten, signierten E-Rezept-Bundle an den Aufrufer zurückgeben, damit der Versicherte eine Übersicht aller Tasks erhält.
 </requirement>
 
 <!-- A_19113-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-36" title="E-Rezept-Fachdienst - Task abrufen - Rollenprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Produktgutachten"/>
     </actor>
-        Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen konkreten über &lt;id&gt; adressierten /Task/&lt;id&gt; (ohne die Referenz einer FHIR-Operation) sicherstellen, dass ausschließlich Clientsysteme in einer der Rollen oid_versicherter oid_oeffentliche_apotheke oid_krankenhausapotheke oid_kostentraeger die Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.
+    Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen konkreten über &lt;id&gt; adressierten /Task/&lt;id&gt; (ohne die Referenz einer FHIR-Operation) sicherstellen, dass ausschließlich Clientsysteme in einer der Rollen 
+    <ul>
+        <li>oid_versicherter</li>
+        <li>oid_oeffentliche_apotheke</li>
+        <li>oid_krankenhausapotheke</li>
+        <li>oid_kostentraeger</li> 
+    </ul>
+    die Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.
 </requirement>
 
 <!-- A_19116-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-37" title="E-Rezept-Fachdienst - Task abrufen - Prüfung AccessCode bei KVNR-Missmatch" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Produktgutachten"/>
     </actor>
-        Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen /Task/&lt;id&gt; und Ungleichheit der KVNR des Aufrufenden (KVNR des ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests UNGLEICH KVNR in Task.for ) prüfen, ob der im HTTP-Request-Header "X-AccessCode" oder URL-Parameter "?ac=..." übergebene AccessCode gleich dem AccessCode in Task.identifier ist, damit auch Vertreter in Kenntnis des AccessCodes ein einzelnes E-Rezept einsehen können.
+    Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen /Task/&lt;id&gt; und Ungleichheit der KVNR des Aufrufenden (KVNR des ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests UNGLEICH KVNR in Task.for ) prüfen, ob der im HTTP-Request-Header "X-AccessCode" oder URL-Parameter "?ac=..." übergebene AccessCode gleich dem AccessCode in Task.identifier ist, damit auch Vertreter in Kenntnis des AccessCodes ein einzelnes E-Rezept einsehen können.
 </requirement>
 
 <!-- A_26148 -->
@@ -88,7 +101,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 </requirement>
 
 <!-- A_21360-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-42" title="E-Rezept-Fachdienst - Task abrufen - Flowtype 169 / 209 - keine Einlöseinformationen" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-RX-42" title="E-Rezept-Fachdienst - Task abrufen - Flowtype 169 / 209 - keine Einlöseinformationen" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
