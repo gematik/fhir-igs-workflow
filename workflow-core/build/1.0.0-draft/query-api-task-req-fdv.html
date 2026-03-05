@@ -235,11 +235,68 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#alternativer-ablauf-1-ein-spezifisches-e-rezept-durch-nutzer-abrufen" id="markdown-toc-alternativer-ablauf-1-ein-spezifisches-e-rezept-durch-nutzer-abrufen">Alternativer Ablauf 1: Ein spezifisches E-Rezept durch Nutzer abrufen</a></li>
+  <li><a href="#alternativer-ablauf-2-ein-spezifisches-e-rezept-mit-accesscode-abrufen" id="markdown-toc-alternativer-ablauf-2-ein-spezifisches-e-rezept-mit-accesscode-abrufen">Alternativer Ablauf 2: Ein spezifisches E-Rezept mit AccessCode abrufen</a></li>
+</ul>
+
 </div>
 <p>Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der <code class="language-plaintext highlighter-rouge">Task</code>-Query-Endpunkte.</p>
 
+<!-- A_19347-01 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE--6" title="E-Rezept-FdV: E-Rezepte abrufen - Liste E-Rezepte abrufen" version="0">
+    <meta lockversion="false" />
+    <actor name="eRP_FdV">
+        <testProcedure id="Produkttest" />
+    </actor>
+     Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezepte abrufen" zum Herunterladen alle E-Rezepte des Nutzers die HTTP-Operation GET /Task mit ACCESS_TOKEN im Authorization-Header ausführen.
+</requirement>
+
+<!-- A_19348-01 -->
+<requirement conformance="MAY" key="IG-TIFLOW-CORE-7" title="E-Rezept-FdV: E-Rezept abrufen - E-Rezepte lokal speichern" version="0">
+    <meta lockversion="false" />
+    <actor name="eRP_FdV">
+        <testProcedure id="Produkttest" />
+    </actor>
+     Das E-Rezept-FdV KANN es dem Versicherten ermöglichen, die vom E-Rezept-Fachdienst heruntergeladenen E-Rezepte im lokalen Speicher persistent abzulegen.
+</requirement>
+
+<h3 id="alternativer-ablauf-1-ein-spezifisches-e-rezept-durch-nutzer-abrufen">Alternativer Ablauf 1: Ein spezifisches E-Rezept durch Nutzer abrufen</h3>
+
+<p>Die Alternative 1 wird genutzt, wenn nur die Informationen zu einem E-Rezept vom E-Rezept-Fachdienst heruntergeladen werden sollen, bspw. um zu prüfen, ob sich der Status geändert hat. Dafür muss die Task-ID dieses Rezepts im E-Rezept-FdV bekannt sein.</p>
+
+<!-- A_19350-01 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-8" title="E-Rezept-FdV: E-Rezepte abrufen -Spezifisches E-Rezept herunterladen" version="0">
+    <meta lockversion="false" />
+    <actor name="eRP_FdV">
+        <testProcedure id="Produkttest" />
+    </actor>
+     Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezepte abrufen" zum Herunterladen eines spezifischen E-Rezepts des Nutzers die HTTP-Operation GET /Task/&lt;id&gt; mit ACCESS_TOKEN im Authorization-Header Task-ID in URL &lt;id&gt; ausführen.
+</requirement>
+
+<p>Für weitere Informationen siehe Operation “Ein einzelnes E-Rezept abrufen” aus der API-Schnittstelle [E-Rezept API Dokumentation].</p>
+
+<p>Der Response beinhaltet die Task Ressource des E-Rezepts.</p>
+
+<h3 id="alternativer-ablauf-2-ein-spezifisches-e-rezept-mit-accesscode-abrufen">Alternativer Ablauf 2: Ein spezifisches E-Rezept mit AccessCode abrufen</h3>
+
+<p>Die Alternative 2 wird genutzt, wenn der Nutzer als Vertreter eines Versicherten ein E-Rezept vom E-Rezept-Fachdienst herunterladen möchte. Dafür müssen die Task-ID und der AccessCode dieses Rezepts im E-Rezept-FdV bekannt sein. Die Informationen Task-ID und AccessCode werden im E-Rezept-Token übermittelt.</p>
+
+<!-- A_19351-01 -->
+<requirement conformance="MAY" key="IG-TIFLOW-CORE-9" title="E-Rezept-FdV: E-Rezepte abrufen - E-Rezept mit AccessCode herunterladen" version="0">
+    <meta lockversion="false" />
+    <actor name="eRP_FdV">
+        <testProcedure id="Produkttest" />
+    </actor>
+     Das E-Rezept-FdV KANN im Anwendungsfall "E-Rezepte abrufen" zum Herunterladen eines E-Rezepts als Vertreter die HTTP-Operation GET /Task/&lt;id&gt; mit ACCESS_TOKEN im http-Header Task-ID in URL &lt;id&gt; AccessCode im http-Header ausführen.
+</requirement>
+
+<p>Für weitere Informationen siehe Operation “Ein einzelnes E-Rezept abrufen” aus der API-Schnittstelle [E-Rezept API Dokumentation].</p>
+
+<p>Der Response beinhaltet die Task Ressource des E-Rezepts.</p>
 
 
 
@@ -281,7 +338,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Mar 5, 2026 14:55+0000">2026-03-05</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Mar 5, 2026 21:58+0000">2026-03-05</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
