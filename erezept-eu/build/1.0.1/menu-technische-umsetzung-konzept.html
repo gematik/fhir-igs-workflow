@@ -137,6 +137,9 @@
       <li>
         <a href="menu-technische-umsetzung-anwendungsfaelle.html">Technische Anwendungsfälle</a>
       </li>
+      <li>
+        <a href="menu-technische-umsetzung-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -149,9 +152,6 @@
       </li>
       <li>
         <a href="menu-schnittstellen-operation-api.html">Operation API</a>
-      </li>
-      <li>
-        <a href="menu-schnittstellen-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
       </li>
     </ul>
   </li>
@@ -256,6 +256,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul id="markdown-toc">
   <li><a href="#statusmodell" id="markdown-toc-statusmodell">Statusmodell</a></li>
+  <li><a href="#zugriffsberechtigung-eines-versicherten-für-das-einlösen-von-e-rezepten-im-europäischen-ausland" id="markdown-toc-zugriffsberechtigung-eines-versicherten-für-das-einlösen-von-e-rezepten-im-europäischen-ausland">Zugriffsberechtigung eines Versicherten für das Einlösen von E-Rezepten im europäischen Ausland</a></li>
   <li><a href="#zulässige-europäische-länder" id="markdown-toc-zulässige-europäische-länder">Zulässige europäische Länder</a></li>
 </ul>
 
@@ -274,6 +275,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </figure>
 
 <p><br /></p>
+
+<!-- A_27097 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-EU-56" title="Format Zugriffscode" version="0">
+    <meta lockversion="false" />
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest" />
+    </actor>
+     Produkttypen der Anwendung E-Rezept MÜSSEN, wenn sie einen Zugriffscode für das Einlösen im europäischen Ausland verarbeiten, folgende Formatvorgaben für den Zugriffscode einhalten: String mit Gesamtlänge von 6 Zeichen, erlaubte Zeichen: a-z, A-Z, 0-9.
+</requirement>
 
 <h3 id="statusmodell">Statusmodell</h3>
 
@@ -331,6 +341,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Sobald ein E-Rezept durch eine LE-EU mit dem Anwendungsfall “Abruf der abzugebenden E-Rezepten des Versicherten” abgerufen wurde, kann es nicht mehr erneut abgerufen werden oder in einer anderen Apotheke eingelöst werden.</p>
 
+<h3 id="zugriffsberechtigung-eines-versicherten-für-das-einlösen-von-e-rezepten-im-europäischen-ausland">Zugriffsberechtigung eines Versicherten für das Einlösen von E-Rezepten im europäischen Ausland</h3>
+
+<p>Einen Zugriffsberechtigung eines Versicherten für das Einlösen von E-Rezepten im europäischen Ausland beinhaltet die folgenden Informationen:</p>
+
+<ul>
+  <li>KVNR des Versicherten,</li>
+  <li>Ländercode des Landes, für welches die Zugriffsberechtigung durch den Versicherten erteilt wurde,</li>
+  <li>Zugriffscode,</li>
+  <li>gültig bis (1h ab Einstellen), wird durch den E-Rezept-Fachdienst beim Einstellen der Zugriffsberechtigung gesetzt.</li>
+</ul>
+
 <h3 id="zulässige-europäische-länder">Zulässige europäische Länder</h3>
 
 <p>Um zu bestimmen, welche europäischen Länder das die Anwendung ePrescription/eDispensation Szenario Land A unterstützen, lädt der E-Rezept-Fachdienst die Liste dieser Länder aus dem FHIR-VZD. Die Liste kann für 96h gecacht werden.</p>
@@ -374,7 +395,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.erezept.eu#1.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Feb 27, 2026 14:14+0000">2026-02-27</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.erezept.eu#1.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Mar 5, 2026 06:07+0000">2026-03-05</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

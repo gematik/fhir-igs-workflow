@@ -13,9 +13,9 @@ Die folgenden Operation APIs stellt der E-Rezept-Fachdienst dem **E-Rezept-FdV**
 
 ### Verwaltung der Zugriffsberechtigung durch den Versicherten
 
-* E-Rezept-FdV: [Operation API: Zugriffsberechtigung erstellen](./op-grant-eu-access-permission)
-* E-Rezept-FdV: [Operation API: Zugriffsberechtigung abfragen](./op-read-eu-access-permission)
-* E-Rezept-FdV: [Operation API: Zugriffsberechtigung löschen](./op-revoke-eu-access-permission)
+* E-Rezept-FdV: [Operation API: Zugriffsberechtigung erstellen](./op-grant-eu-access-permission.md)
+* E-Rezept-FdV: [Operation API: Zugriffsberechtigung abfragen](./op-read-eu-access-permission.md)
+* E-Rezept-FdV: [Operation API: Zugriffsberechtigung löschen](./op-revoke-eu-access-permission.md)
 
 ### Belieferung durch eine Apotheke im europäischen Ausland
 

@@ -9,7 +9,7 @@ Version 1.0.1 - ci-build
 
 ## Schnittstellen - Query API
 
-Die folgenden Operation APIs stellt der E-Rezept-Fachdienst dem **E-Rezept-FdV** sowie dem **NCPeH** zur Verfügung.
+Die folgenden Query APIs stellt der E-Rezept-Fachdienst dem **E-Rezept-FdV** sowie dem **NCPeH** zur Verfügung.
 
 ### Verwaltung der Einwilligung durch den Versicherten
 

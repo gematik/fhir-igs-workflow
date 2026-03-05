@@ -1,4 +1,4 @@
-# Server Anforderungen: Zugriffsberechtigung einsehen - EU Zugriff E-Rezept v1.0.1
+# FD-Anforderungen: Zugriffsberechtigung einsehen - EU Zugriff E-Rezept v1.0.1
 
 EU Zugriff E-Rezept
 
@@ -7,9 +7,9 @@ Version 1.0.1 - ci-build
 * [**Table of Contents**](toc.md)
 * [**Schnittstellen - Operation API**](menu-schnittstellen-operation-api.md)
 * [**Operation API: Zugriffsberechtigung einsehen**](op-read-eu-access-permission.md)
-* **Server Anforderungen: Zugriffsberechtigung einsehen**
+* **FD-Anforderungen: Zugriffsberechtigung einsehen**
 
-## Server Anforderungen: Zugriffsberechtigung einsehen
+## FD-Anforderungen: Zugriffsberechtigung einsehen
 
 ### Anforderungen der Schnittstelle aus diesem Modul
 

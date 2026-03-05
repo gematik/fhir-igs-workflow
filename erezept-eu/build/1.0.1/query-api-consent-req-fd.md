@@ -1,4 +1,4 @@
-# Server Anforderungen: Consent - EU Zugriff E-Rezept v1.0.1
+# FD-Anforderungen: Consent - EU Zugriff E-Rezept v1.0.1
 
 EU Zugriff E-Rezept
 
@@ -7,9 +7,9 @@ Version 1.0.1 - ci-build
 * [**Table of Contents**](toc.md)
 * [**Schnittstellen - Query API**](menu-schnittstellen-query-api.md)
 * [**Query API: Consent**](query-api-consent.md)
-* **Server Anforderungen: Consent**
+* **FD-Anforderungen: Consent**
 
-## Server Anforderungen: Consent
+## FD-Anforderungen: Consent
 
 ### Anforderungen der Schnittstelle aus der Core-Spezifikation
 

@@ -19,8 +19,7 @@ Das fachliche Konzept zum Einlösen von E-Rezepten im europäischen Ausland wurd
 
 Für das europäische Nutzungsszenario ePrescription/eDispensation dürfen folgende E-Rezepte nicht verarbeitet werden:
 
-Betäubungsmittel,
-
+* Betäubungsmittel
 * Arzneimittel, die nach ärztlicher Verschreibung oder nach den Vorschriften eines Arzneibuchs für den Versicherten zubereitet werden (bezeichnet als “formula magistralis” oder “extemporale Zubereitungen”).
 * Arzneimittel, die als Humanarzneimittel eingestuft sind, aber nicht durch ein industrielles Verfahren hergestellt oder bei deren Herstellung kein industrielles Verfahren angewandt wurde.
 * Arzneimittel, die nicht als Humanarzneimittel eingestuft sind, noch nicht gültige oder abgelaufene E-Rezepte. Zusätzlich bestehen Einschränkungen, wenn das Mapping aus den Verordnungsdaten in das geforderte europäische Datenformat nicht möglich ist.
@@ -70,7 +69,7 @@ Es gibt keine Möglichkeit in der Rolle Vertreter den Zugriff des LE-EU auf die 
 
 ### Technische Anwendungsfälle
 
-#### Versicherteninteratkion
+#### Versicherteninteraktion
 
 **Beteiligte Systeme:** E-Rezept-Fachdienst, E-Rezept-FdV
 
@@ -85,7 +84,7 @@ Es gibt keine Möglichkeit in der Rolle Vertreter den Zugriff des LE-EU auf die 
 
 **Tabelle:**Technische Anwendungsfälle mit Bezug zur Verwaltung von
 *E-Rezepten im EU Ausland*
-#### Interatkion NCPeH
+#### Interaktion NCPeH
 
 **Beteiligte Systeme:** E-Rezept-Fachdienst, NCPeH
 

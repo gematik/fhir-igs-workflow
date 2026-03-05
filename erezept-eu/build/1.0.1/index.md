@@ -1,18 +1,18 @@
-# EU Zugriff E-Rezept - EU Zugriff E-Rezept v1.0.1
+# Einlösen von E-Rezepten im europäischen Ausland - EU Zugriff E-Rezept v1.0.1
 
 EU Zugriff E-Rezept
 
 Version 1.0.1 - ci-build 
 
 * [**Table of Contents**](toc.md)
-* **EU Zugriff E-Rezept**
+* **Einlösen von E-Rezepten im europäischen Ausland**
 
-## EU Zugriff E-Rezept
+## Einlösen von E-Rezepten im europäischen Ausland
 
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/erp-eu//ImplementationGuide/de.gematik.erezept.eu | *Version*:1.0.1 |
-| Draft as of 2026-02-27 | *Computable Name*:gemIG_TIFlow_EU |
+| Draft as of 2026-03-05 | *Computable Name*:gemIG_TIFlow_EU |
 
 ### EU Zugriff E-Rezept
 
@@ -73,7 +73,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "gemIG_TIFlow_EU",
   "title" : "EU Zugriff E-Rezept",
   "status" : "draft",
-  "date" : "2026-02-27T14:14:13+00:00",
+  "date" : "2026-03-05T06:07:12+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -1230,7 +1230,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
           "valueUrl" : "index.html"
         }],
         "nameUrl" : "index.html",
-        "title" : "EU Zugriff E-Rezept",
+        "title" : "Einlösen von E-Rezepten im europäischen Ausland",
         "generation" : "markdown"
       },
       {
@@ -1258,16 +1258,16 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
           "nameUrl" : "menu-technische-umsetzung-anwendungsfaelle.html",
           "title" : "Technische Umsetzung - Technische Anwendungsfälle",
           "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "menu-technische-umsetzung-datenschutz-und-sicherheit.html"
+          }],
+          "nameUrl" : "menu-technische-umsetzung-datenschutz-und-sicherheit.html",
+          "title" : "Schnittstellen - Datenschutz und Sicherheit",
+          "generation" : "markdown"
         }]
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "menu-schnittstellen-datenschutz-und-sicherheit.html"
-        }],
-        "nameUrl" : "menu-schnittstellen-datenschutz-und-sicherheit.html",
-        "title" : "Schnittstellen - Datenschutz und Sicherheit",
-        "generation" : "markdown"
       },
       {
         "extension" : [{
@@ -1291,7 +1291,16 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
               "valueUrl" : "query-api-consent-req-fd.html"
             }],
             "nameUrl" : "query-api-consent-req-fd.html",
-            "title" : "Server Anforderungen: Consent",
+            "title" : "FD-Anforderungen: Consent",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-consent-req-fdv.html"
+            }],
+            "nameUrl" : "query-api-consent-req-fdv.html",
+            "title" : "FdV-Anforderungen: Consent",
             "generation" : "markdown"
           }]
         },
@@ -1347,6 +1356,15 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
             "nameUrl" : "op-grant-eu-access-permission-req-fd.html",
             "title" : "Server Anforderungen: Zugriffsberechtigung erstellen",
             "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "op-grant-eu-access-permission-req-fdv.html"
+            }],
+            "nameUrl" : "op-grant-eu-access-permission-req-fdv.html",
+            "title" : "FdV-Anforderungen: Zugriffsberechtigung erstellen",
+            "generation" : "markdown"
           }]
         },
         {
@@ -1363,7 +1381,16 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
               "valueUrl" : "op-read-eu-access-permission-req-fd.html"
             }],
             "nameUrl" : "op-read-eu-access-permission-req-fd.html",
-            "title" : "Server Anforderungen: Zugriffsberechtigung einsehen",
+            "title" : "FD-Anforderungen: Zugriffsberechtigung einsehen",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "op-read-eu-access-permission-req-fdv.html"
+            }],
+            "nameUrl" : "op-read-eu-access-permission-req-fdv.html",
+            "title" : "FdV-Anforderungen: Zugriffsberechtigung einsehen",
             "generation" : "markdown"
           }]
         },
@@ -1381,7 +1408,16 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
               "valueUrl" : "op-revoke-eu-access-permission-req-fd.html"
             }],
             "nameUrl" : "op-revoke-eu-access-permission-req-fd.html",
-            "title" : "Server Anforderungen Anforderungen: Zugriffsberechtigung löschen",
+            "title" : "FD-Anforderungen Anforderungen: Zugriffsberechtigung löschen",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "op-revoke-eu-access-permission-req-fdv.html"
+            }],
+            "nameUrl" : "op-revoke-eu-access-permission-req-fdv.html",
+            "title" : "FdV-Anforderungen Anforderungen: Zugriffsberechtigung löschen",
             "generation" : "markdown"
           }]
         },
@@ -1399,7 +1435,16 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
               "valueUrl" : "op-get-eu-prescriptions-req-fd.html"
             }],
             "nameUrl" : "op-get-eu-prescriptions-req-fd.html",
-            "title" : "Server Anforderungen: E-Rezepte zur Einlösung im EU-Ausland abrufen",
+            "title" : "FD-Anforderungen: E-Rezepte zur Einlösung im EU-Ausland abrufen",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "op-get-eu-prescriptions-req-ncpeha.html"
+            }],
+            "nameUrl" : "op-get-eu-prescriptions-req-ncpeha.html",
+            "title" : "NCPeH-Anforderungen: E-Rezepte zur Einlösung im EU-Ausland abrufen",
             "generation" : "markdown"
           }]
         },
@@ -1417,7 +1462,16 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
               "valueUrl" : "op-eu-close-req-fd.html"
             }],
             "nameUrl" : "op-eu-close-req-fd.html",
-            "title" : "Server Anforderungen: Abgabe von E-Rezepten im EU-Ausland",
+            "title" : "FD-Anforderungen: Abgabe von E-Rezepten im EU-Ausland",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "op-eu-close-req-ncpeha.html"
+            }],
+            "nameUrl" : "op-eu-close-req-ncpeha.html",
+            "title" : "NCPeH-Anforderungen: Abgabe von E-Rezepten im EU-Ausland",
             "generation" : "markdown"
           }]
         }]

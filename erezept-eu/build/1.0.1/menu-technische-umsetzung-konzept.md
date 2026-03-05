@@ -18,6 +18,7 @@ Der Versicherte nutzt für die Verwaltung von Einwilligung und Zugriffsberechtig
 **Abbildung: **Übersicht Architektur
 
 
+Produkttypen der Anwendung E-Rezept MÜSSEN, wenn sie einen Zugriffscode für das Einlösen im europäischen Ausland verarbeiten, folgende Formatvorgaben für den Zugriffscode einhalten: String mit Gesamtlänge von 6 Zeichen, erlaubte Zeichen: a-z, A-Z, 0-9.
 ### Statusmodell
 
 Für die Übermittlung von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel in Deutschland wird das folgende Statusmodell umgesetzt.
@@ -37,6 +38,15 @@ Für die im Rahmen des Einlösens im europäischen Ausland vorgegebenen Prozesss
 **Tabelle: **Statusübergänge EU Mapping
 
 Sobald ein E-Rezept durch eine LE-EU mit dem Anwendungsfall “Abruf der abzugebenden E-Rezepten des Versicherten” abgerufen wurde, kann es nicht mehr erneut abgerufen werden oder in einer anderen Apotheke eingelöst werden.
+
+### Zugriffsberechtigung eines Versicherten für das Einlösen von E-Rezepten im europäischen Ausland
+
+Einen Zugriffsberechtigung eines Versicherten für das Einlösen von E-Rezepten im europäischen Ausland beinhaltet die folgenden Informationen:
+
+* KVNR des Versicherten,
+* Ländercode des Landes, für welches die Zugriffsberechtigung durch den Versicherten erteilt wurde,
+* Zugriffscode,
+* gültig bis (1h ab Einstellen), wird durch den E-Rezept-Fachdienst beim Einstellen der Zugriffsberechtigung gesetzt.
 
 ### Zulässige europäische Länder
 

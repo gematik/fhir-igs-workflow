@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Server Anforderungen: Consent - EU Zugriff E-Rezept v1.0.1</title>
+    <title>FD-Anforderungen: Consent - EU Zugriff E-Rezept v1.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"5.1.1"}
-    h3,h4,h5,h6{--heading-prefix:"5.1.1"}</style>
+    <style type="text/css">h2{--heading-prefix:"4.1.1"}
+    h3,h4,h5,h6{--heading-prefix:"4.1.1"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -137,6 +137,9 @@
       <li>
         <a href="menu-technische-umsetzung-anwendungsfaelle.html">Technische Anwendungsfälle</a>
       </li>
+      <li>
+        <a href="menu-technische-umsetzung-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -149,9 +152,6 @@
       </li>
       <li>
         <a href="menu-schnittstellen-operation-api.html">Operation API</a>
-      </li>
-      <li>
-        <a href="menu-schnittstellen-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
       </li>
     </ul>
   </li>
@@ -216,7 +216,7 @@ EU Zugriff E-Rezept
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-query-api.html'><b>Schnittstellen - Query API</b></a></li><li><a href='query-api-consent.html'><b>Query API: Consent</b></a></li><li><b>Server Anforderungen: Consent</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-query-api.html'><b>Schnittstellen - Query API</b></a></li><li><a href='query-api-consent.html'><b>Query API: Consent</b></a></li><li><b>FD-Anforderungen: Consent</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -236,7 +236,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   
-  <h2>Server Anforderungen: Consent</h2>
+  <h2>FD-Anforderungen: Consent</h2>
   
 
 
@@ -265,7 +265,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für den Consent-Endpunkt.</p>
 
 <!-- A_22153 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-83" title="E-Rezept-Fachdienst - Consent - unzulässige Operationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-82" title="E-Rezept-Fachdienst - Consent - unzulässige Operationen" version="0">
   <meta lockversion="false" />
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest" />
@@ -274,17 +274,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- ToDo: Neue Anforderung aller zu verwaltenden Einwilligungen? (Oder wird das durch die Profilierung der Ressource festgelegt)  -->
-<!-->
+<!--
   Der E-Rezept-Fachdienst MUSS Consent Ressourcen mit den folgenden Categorien verwalten:
   <ul>
-        <li>https://gematik.de/fhir/erpchrg/CodeSystem/GEM_ERPCHRG_CS_ConsentType </li>
-        <li>https://gematik.de/fhir/erp-eu/CodeSystem/GEM_ERPEU_CS_ConsentType </li>
+        <li>https://gematik.de/fhir/erpchrg/CodeSystem/GEM_ERPCHRG_CS_ConsentType</li>
+        <li>https://gematik.de/fhir/erp-eu/CodeSystem/GEM_ERPEU_CS_ConsentType</li>
   </ul>
 -->
 
 <h4 id="post-consent">POST /Consent</h4>
 <!-- A_22161 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-83" title="E-Rezept-Fachdienst - Consent schreiben - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-83" title="E-Rezept-Fachdienst - Consent schreiben - Rollenprüfung" version="0">
   <meta lockversion="false" />
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produktgutachten" />
@@ -293,7 +293,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22289 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-83" title="E-Rezept-Fachdienst - Consent schreiben - Prüfung KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-84" title="E-Rezept-Fachdienst - Consent schreiben - Prüfung KVNR" version="0">
   <meta lockversion="false" />
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest" />
@@ -302,7 +302,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22351 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-83" title="E-Rezept-Fachdienst - Consent schreiben - FHIR-Validierung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-85" title="E-Rezept-Fachdienst - Consent schreiben - FHIR-Validierung" version="0">
   <meta lockversion="false" />
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest" />
@@ -311,7 +311,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22162-01 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-83" title="E-Rezept-Fachdienst - Consent schreiben - nur eine Einwilligung pro KVNR und Einwilligungstyp" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-86" title="E-Rezept-Fachdienst - Consent schreiben - nur eine Einwilligung pro KVNR und Einwilligungstyp" version="0">
   <meta lockversion="false" />
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest" />
@@ -320,7 +320,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_27143 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-83" title="E-Rezept-Fachdienst - Consent schreiben - Zeitstempel setzen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-87" title="E-Rezept-Fachdienst - Consent schreiben - Zeitstempel setzen" version="0">
   <meta lockversion="false" />
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest" />
@@ -331,7 +331,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>A_22350 - E-Rezept-Fachdienst - Consent schreiben – Persistieren&lt;=</p>
 
 <!-- A_27143 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-83" title="E-Rezept-Fachdienst - Consent schreiben - Persistieren" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-88" title="E-Rezept-Fachdienst - Consent schreiben - Persistieren" version="0">
   <meta lockversion="false" />
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Herstellererklärung" />
@@ -341,7 +341,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="get-consent">GET /Consent</h4>
 <!-- A_22159 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-83" title="E-Rezept-Fachdienst - Consent lesen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-89" title="E-Rezept-Fachdienst - Consent lesen - Rollenprüfung" version="0">
   <meta lockversion="false" />
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produktgutachten" />
@@ -350,7 +350,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22160 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-83" title="E-Rezept-Fachdienst - Consent lesen - Filter KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-90" title="E-Rezept-Fachdienst - Consent lesen - Filter KVNR" version="0">
   <meta lockversion="false" />
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest" />
@@ -360,7 +360,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="delete-consent">DELETE /Consent</h4>
 <!-- A_22154 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-83" title="E-Rezept-Fachdienst - Consent löschen - alles Löschen verbieten" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-91" title="E-Rezept-Fachdienst - Consent löschen - alles Löschen verbieten" version="0">
   <meta lockversion="false" />
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest" />
@@ -369,7 +369,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22155 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-83" title="E-Rezept-Fachdienst - Consent löschen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-92" title="E-Rezept-Fachdienst - Consent löschen - Rollenprüfung" version="0">
   <meta lockversion="false" />
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produktgutachten" />
@@ -378,7 +378,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22874-02 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-83" title="E-Rezept-Fachdienst - Consent löschen - Prüfung category" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-93" title="E-Rezept-Fachdienst - Consent löschen - Prüfung category" version="0">
   <meta lockversion="false" />
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest" />
@@ -396,7 +396,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- ToDo: A_27131 -> EU IG --></p>
 
 <!-- A_22158 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-83" title="E-Rezept-Fachdienst - Consent löschen - Ressource löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-94" title="E-Rezept-Fachdienst - Consent löschen - Ressource löschen" version="0">
   <meta lockversion="false" />
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produktgutachten" />
@@ -436,7 +436,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.erezept.eu#1.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Feb 27, 2026 14:14+0000">2026-02-27</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.erezept.eu#1.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Mar 5, 2026 06:07+0000">2026-03-05</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

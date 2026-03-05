@@ -1,4 +1,4 @@
-# Server Anforderungen Anforderungen: Zugriffsberechtigung löschen - EU Zugriff E-Rezept v1.0.1
+# FD-Anforderungen Anforderungen: Zugriffsberechtigung löschen - EU Zugriff E-Rezept v1.0.1
 
 EU Zugriff E-Rezept
 
@@ -7,9 +7,9 @@ Version 1.0.1 - ci-build
 * [**Table of Contents**](toc.md)
 * [**Schnittstellen - Operation API**](menu-schnittstellen-operation-api.md)
 * [**Operation API: Zugriffsberechtigung löschen**](op-revoke-eu-access-permission.md)
-* **Server Anforderungen Anforderungen: Zugriffsberechtigung löschen**
+* **FD-Anforderungen Anforderungen: Zugriffsberechtigung löschen**
 
-## Server Anforderungen Anforderungen: Zugriffsberechtigung löschen
+## FD-Anforderungen Anforderungen: Zugriffsberechtigung löschen
 
 ### Anforderungen der Schnittstelle aus diesem Modul
 

@@ -1,4 +1,4 @@
-# Server Anforderungen: Abgabe von E-Rezepten im EU-Ausland - EU Zugriff E-Rezept v1.0.1
+# FD-Anforderungen: Abgabe von E-Rezepten im EU-Ausland - EU Zugriff E-Rezept v1.0.1
 
 EU Zugriff E-Rezept
 
@@ -7,13 +7,9 @@ Version 1.0.1 - ci-build
 * [**Table of Contents**](toc.md)
 * [**Schnittstellen - Operation API**](menu-schnittstellen-operation-api.md)
 * [**Operation API: Abgabe von E-Rezepten im EU-Ausland**](op-eu-close.md)
-* **Server Anforderungen: Abgabe von E-Rezepten im EU-Ausland**
+* **FD-Anforderungen: Abgabe von E-Rezepten im EU-Ausland**
 
-## Server Anforderungen: Abgabe von E-Rezepten im EU-Ausland
-
-### Anforderungen der Schnittstelle aus der Core-Spezifikation
-
-//TODO: Include Core AFOs
+## FD-Anforderungen: Abgabe von E-Rezepten im EU-Ausland
 
 ### Anforderungen der Schnittstelle aus diesem Modul
 

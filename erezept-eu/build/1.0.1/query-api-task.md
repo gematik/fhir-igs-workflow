@@ -33,7 +33,3 @@ Anfragen an die *Task*-Ressource können über die RESTful API durchgeführt wer
 
 * [API-ERP: Setzen der Markierung zur Einlösung im EU-Ausland](https://github.com/gematik/api-erp/blob/master/docs/erp_eprescription.adoc#setzen-der-markierung-zur-einl%C3%B6sung-im-eu-ausland)
 
-### Sicherheitsanforderungen
-
-Generelle Sicherheitsanforderungen werden [hier](./menu-schnittstellen-datenschutz-und-sicherheit.md) festgehalten.
-

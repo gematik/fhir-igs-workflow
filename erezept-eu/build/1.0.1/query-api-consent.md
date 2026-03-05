@@ -22,9 +22,10 @@ Die Nachricht zur Interaktion mit Einwilligungen als FHIR-Ressource **Consent** 
 | POST | Zustimmung erteilen |
 | DELETE | Zustimmung widerrufen |
 
-### Anforderungen an Schnittstelle
+### Anforderungen an die Schnittstelle
 
-* [Server Anforderungen zur Consent-Query](./query-api-consent-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+* [Server-Anforderungen zur Consent-Query](./query-api-consent-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+* [FdV-Anforderungen zur Consent-Query](./query-api-consent-req-fdv.md): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
 
 ### Resource API
 
@@ -35,8 +36,4 @@ Anfragen an die *Consent*-Ressource können über die RESTful API durchgeführt 
 #### API Beschreibung
 
 * [API-ERP: Zustimmung für die Nutzung von E-Rezepten im EU-Ausland](https://github.com/gematik/api-erp/blob/master/docs/erp_eprescription.adoc#zustimmung-f%C3%BCr-die-nutzung-von-e-rezepten-im-eu-ausland)
-
-### Sicherheitsanforderungen
-
-Generelle Sicherheitsanforderungen werden [hier](./menu-schnittstellen-datenschutz-und-sicherheit.md) festgehalten.
 
