@@ -1,0 +1,24 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: abdd9fa19cf00fd18e7af4ddbbc83aa782481cd70609b8b6b84962d48c5b62c9
+created: '2026-03-05T08:56:21.783916'
+date: '2026-03-05T08:56:21.783918'
+key: IG-TIFLOW-CORE-317
+modified: '2026-03-05T08:56:21.783917'
+release_status: NEW
+source: input/pagecontent/op-activate-req-fd.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
+  über /Task/&#60;id&#62;/$activate den im HTTP-RequestHeader "X-AccessCode" oder
+  URL-Parameter "?ac=..." übertragenen AccessCode gegen den im referenzierten Task
+  gespeicherten AccessCode Task.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode
+  und den Status des Tasks auf Task.status = draft prüfen und bei Ungleichheit oder
+  Fehlen des HTTP-Headers die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit
+  Zugriffe auf diesen Datensatz nur durch Berechtigte in Kenntnis des AccessCodes
+  erfolgen.
+title: E-Rezept-Fachdienst - Task aktivieren - Prüfung AccessCode Prüfung Status
+version: 0

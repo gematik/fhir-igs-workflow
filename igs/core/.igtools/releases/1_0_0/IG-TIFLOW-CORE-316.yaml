@@ -1,0 +1,24 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: 7102d9543eb67b11e1595dcf64fdf6c227dd8b5203097d2af6199859eab0adcb
+created: '2026-03-05T08:56:21.783748'
+date: '2026-03-05T08:56:21.783750'
+key: IG-TIFLOW-CORE-316
+modified: '2026-03-05T08:56:21.783749'
+release_status: NEW
+source: input/pagecontent/op-activate-req-fd.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks für ein E-Rezept mittels\
+  \ HTTP-POST/$activate-Operation auf den in der URL referenzierten /Task/&#60;id&#62;\
+  \ sicherstellen, dass ausschließlich verordnende Leistungserbringer in der Rolle\n\
+  \  <ul>\n    <li>oid_praxis_arzt</li>\n    <li>oid_zahnarztpraxis</li>\n    <li>oid_praxis_psychotherapeut</li>\n\
+  \    <li>oid_krankenhaus</li>\n    <li>oid_institution-vorsorge-reha</li> \n  </ul>\n\
+  \  die Operation am Fachdienst aufrufen dürfen und die Rolle \"professionOID\" des\
+  \ Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen,\
+  \ damit E-Rezepte nicht durch Unberechtigte eingestellt werden können."
+title: E-Rezept-Fachdienst - Task aktivieren - Rollenprüfung
+version: 0

@@ -1,0 +1,27 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: 735d92516d6fcec0a78298307b66ae5861a7dcda3502e32ba268c3faf6c695dc
+created: '2026-03-05T08:56:21.791581'
+date: '2026-03-05T08:56:21.791584'
+key: IG-TIFLOW-CORE-361
+modified: '2026-03-05T08:56:21.791583'
+release_status: NEW
+source: input/pagecontent/op-accept-req-fd.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: "Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
+  \ über /Task/&lt;id&gt;/$accept die Operation mit dem HTTP-Fehlercode 409 abbrechen,\
+  \ wenn der StatusTask.status = \"completed\", Task.status = \"in-progress\" oder\
+  \ Task.status = \"draft\" ist, damit ein bereits in Abgabe befindliches oder beliefertes\
+  \ E-Rezept nicht durch eine zweite Apotheke bearbeitet werden kann. Im OperationOutcome\
+  \ werden weitere Informationen gegeben: \"Task has invalid status completed\", \"\
+  Task has invalid status in-progress\" bzw. \"Task has invalid status draft\". <br>\n\
+  \    Der E-Rezept-Fachdienst MUSS in OperationOutcome zusätzlich die Information\
+  \ \"Task is processed by requesting institution\" ergänzen, wenn Task.status = \"\
+  in-progress\" und die zum referenzierten Task in Task.owner gespeicherte Telematik-ID\
+  \ der abgebenden LEI mit der Telematik-ID aus dem ACCESS_TOKEN übereinstimmt."
+title: E-Rezept-Fachdienst - Task akzeptieren - Rezept bereits in Abgabe oder Bearbeitung
+version: 0

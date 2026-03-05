@@ -1,7 +1,7 @@
 Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an das AVS für die Nutzung der Operation `$abort`.
 
 <!-- A_19241 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-49" title="PS abgebende LEI: E-Rezepte löschen - E-Rezept auswählen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-306" title="PS abgebende LEI: E-Rezepte löschen - E-Rezept auswählen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -10,7 +10,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19242 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-50" title="PS abgebende LEI: E-Rezept löschen - Bestätigung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-307" title="PS abgebende LEI: E-Rezept löschen - Bestätigung" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -19,7 +19,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19243 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-51" title="PS abgebende LEI: E-Rezept durch Abgebenden löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-308" title="PS abgebende LEI: E-Rezept durch Abgebenden löschen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -28,7 +28,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19244 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-52" title="PS abgebende LEI: E-Rezept löschen - Löschrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-309" title="PS abgebende LEI: E-Rezept löschen - Löschrequest" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -37,7 +37,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19245 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-53" title="PS abgebende LEI: E-Rezept löschen - E-Rezept-Token löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-310" title="PS abgebende LEI: E-Rezept löschen - E-Rezept-Token löschen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -48,7 +48,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 ## PVS
 
 <!-- A_19236 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-54" title="PS verordnende LEI: E-Rezepte löschen - E-Rezept zum Löschen auswählen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-311" title="PS verordnende LEI: E-Rezepte löschen - E-Rezept zum Löschen auswählen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -57,7 +57,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19237 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-55" title="PS verordnende LEI: E-Rezept löschen - Bestätigung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-312" title="PS verordnende LEI: E-Rezept löschen - Bestätigung" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -66,7 +66,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19238 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-56" title="PS verordnende LEI: E-Rezept durch Verordnenden löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-313" title="PS verordnende LEI: E-Rezept durch Verordnenden löschen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -75,7 +75,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19239-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-57" title="PS verordnende LEI: E-Rezept löschen - Löschrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-314" title="PS verordnende LEI: E-Rezept löschen - Löschrequest" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -84,7 +84,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19240 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-58" title="PS verordnende LEI: E-Rezept löschen - E-Rezept-Token löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-315" title="PS verordnende LEI: E-Rezept löschen - E-Rezept-Token löschen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>

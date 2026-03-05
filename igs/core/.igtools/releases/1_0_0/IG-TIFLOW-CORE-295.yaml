@@ -1,0 +1,23 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: a3a1aa430edf5aa58b24fc0010b1ca8a7a4f12e4a60de36c456e4e5fdfb88b9d
+created: '2026-03-05T08:56:21.779316'
+date: '2026-03-05T08:56:21.779318'
+key: IG-TIFLOW-CORE-295
+modified: '2026-03-05T08:56:21.779317'
+release_status: NEW
+source: input/pagecontent/op-abort-req-fd.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts durch einen Versicherten,
+  wenn der HTTP-Request keinen HTTP-Header "X-AccessCode" oder URL-Parameter "?ac=..."
+  enthält, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header
+  des HTTP-Requests identifizieren, diese gegen die in Task.for hinterlegte KVNR des
+  begünstigten Patienten prüfen und bei Missmatch den Aufruf mit dem HTTP-Fehlercode
+  403 abweisen, damit ausschließlich der begünstigte Versicherte als Berechtigter
+  ohne Kenntnis des AccessCodes ein E-Rezept löscht.
+title: E-Rezept-Fachdienst - E-Rezept löschen - Versicherter - Prüfung KVNR
+version: 0

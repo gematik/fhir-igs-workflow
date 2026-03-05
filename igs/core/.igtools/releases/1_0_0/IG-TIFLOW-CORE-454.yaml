@@ -1,0 +1,27 @@
+actor:
+- CS_E-Rezept_KTR
+- NCPeH_ePeDA
+- PS_E-Rezept_abgebend
+- PS_E-Rezept_verordnend
+conformance: SHALL
+content_hash: d80cf85e901504352cca12dbabbfe395219c0821610df27d8ceecb445e46cbfa
+created: '2026-03-05T08:56:21.803877'
+date: '2026-03-05T08:56:21.803880'
+key: IG-TIFLOW-CORE-454
+modified: '2026-03-05T08:56:21.803879'
+release_status: NEW
+source: input/pagecontent/menu-schnittstellen-verbindungsaufbau-client.md
+status: ACTIVE
+test_procedures:
+  CS_E-Rezept_KTR:
+  - Herstellererklärung
+  NCPeH_ePeDA:
+  - Produktgutachten
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: "Das Clientsystem MUSS über den CODE_VERIFIER einen SHA256-HASH-Wert, die sogenannte\
+  \ CODE_CHALLENGE, gemäß [RFC7636#section-4.2] bilden.\n\n    code_challenge = BASE64URL-ENCODE(SHA256(ASCII(code_verifier)))"
+title: 'CS: Erzeugen des Hash-Werts des CODE_VERIFIER'
+version: 0

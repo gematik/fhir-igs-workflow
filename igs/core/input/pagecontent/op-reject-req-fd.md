@@ -3,7 +3,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch. 
 
 <!-- A_19171-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-11" title="E-Rezept-Fachdienst - Task zurückweisen - Prüfung Secret" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-252" title="E-Rezept-Fachdienst - Task zurückweisen - Prüfung Secret" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
@@ -12,7 +12,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_19172-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-12" title="E-Rezept-Fachdienst - Task zurückweisen - Secret löschen und Status setzen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-253" title="E-Rezept-Fachdienst - Task zurückweisen - Secret löschen und Status setzen" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -21,7 +21,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_24175 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-13" title="E-Rezept-Fachdienst - Task zurückweisen - Telematik-ID der abgebenden LEI löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-254" title="E-Rezept-Fachdienst - Task zurückweisen - Telematik-ID der abgebenden LEI löschen" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produktgutachten"/>
@@ -30,7 +30,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_28128 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-14" title="E-Rezept-Fachdienst - Task zurückweisen - Push Notification Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-255" title="E-Rezept-Fachdienst - Task zurückweisen - Push Notification Versicherter" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>

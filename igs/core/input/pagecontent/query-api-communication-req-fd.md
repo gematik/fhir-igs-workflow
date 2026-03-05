@@ -1,7 +1,7 @@
 Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für den Communication-Endpunkt.
 
 <!-- A_19401 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-212" title="E-Rezept-Fachdienst - Communication - unzulässige Operationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-469" title="E-Rezept-Fachdienst - Communication - unzulässige Operationen" version="0">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"/>
@@ -10,7 +10,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_19446-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-213" title="E-Rezept-Fachdienst - Communication - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-470" title="E-Rezept-Fachdienst - Communication - Rollenprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -30,7 +30,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 
 
 <!-- A_19520-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-214" title="E-Rezept-Fachdienst - Nachrichten abrufen - für Empfänger filtern" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-471" title="E-Rezept-Fachdienst - Nachrichten abrufen - für Empfänger filtern" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -39,7 +39,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_19521 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-215" title="E-Rezept-Fachdienst - Nachrichten abrufen - als abgerufen markieren" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-472" title="E-Rezept-Fachdienst - Nachrichten abrufen - als abgerufen markieren" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -50,7 +50,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 ### POST /Communication
 
 <!-- A_19447-06 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-216" title="E-Rezept-Fachdienst - Nachricht einstellen - Schemaprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-473" title="E-Rezept-Fachdienst - Nachricht einstellen - Schemaprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -101,7 +101,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 <!-- ToDo: DiGA und rx trennen -->
 
 <!-- A_23878-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-217" title="E-Rezept-Fachdienst - Nachricht einstellen - Validierung Payload  GEM_ERP_PR_Communication_DispReq" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-474" title="E-Rezept-Fachdienst - Nachricht einstellen - Validierung Payload  GEM_ERP_PR_Communication_DispReq" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -110,7 +110,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_23879-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-218" title="E-Rezept-Fachdienst - Nachricht einstellen - Validierung Payload  GEM_ERP_PR_Communication_Reply" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-475" title="E-Rezept-Fachdienst - Nachricht einstellen - Validierung Payload  GEM_ERP_PR_Communication_Reply" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -119,7 +119,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_19448-04 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-219" title="E-Rezept-Fachdienst - Nachricht einstellen - Absender und Sendedatum" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-476" title="E-Rezept-Fachdienst - Nachricht einstellen - Absender und Sendedatum" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -131,7 +131,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
  <=
 
 <!-- A_20229-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-220" title="E-Rezept-Fachdienst - Nachricht einstellen - Versicherter-zu-Versichertem-Kommunikation" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-477" title="E-Rezept-Fachdienst - Nachricht einstellen - Versicherter-zu-Versichertem-Kommunikation" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -140,7 +140,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_20511 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-221" title="E-Rezept-Fachdienst - Nachricht einstellen - Nachrichtenzähler zweckgebunden" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-478" title="E-Rezept-Fachdienst - Nachricht einstellen - Nachrichtenzähler zweckgebunden" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Herstellererklärung"/>
@@ -149,7 +149,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_20230-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-222" title="E-Rezept-Fachdienst - Nachricht einstellen - Einlösbare E-Rezepte für Versicherter-zu-Versichertem-Kommunikation" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-479" title="E-Rezept-Fachdienst - Nachricht einstellen - Einlösbare E-Rezepte für Versicherter-zu-Versichertem-Kommunikation" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -158,7 +158,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_20231-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-223" title="E-Rezept-Fachdienst - Nachricht einstellen - Ausschluss Nachrichten an Empfänger gleich Absender" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-480" title="E-Rezept-Fachdienst - Nachricht einstellen - Ausschluss Nachrichten an Empfänger gleich Absender" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -167,7 +167,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_19450-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-224" title="E-Rezept-Fachdienst - Nachricht einstellen - Schadcodeprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-481" title="E-Rezept-Fachdienst - Nachricht einstellen - Schadcodeprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produktgutachten"/>
@@ -182,7 +182,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_20885-04 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-225" title="E-Rezept-Fachdienst - Nachricht einstellen - Prüfung Versichertenbezug und Berechtigung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-482" title="E-Rezept-Fachdienst - Nachricht einstellen - Prüfung Versichertenbezug und Berechtigung" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -199,7 +199,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_27767-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-226" title="E-Rezept-Fachdienst - Nachricht einstellen - Prüfung des Empfängers" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-483" title="E-Rezept-Fachdienst - Nachricht einstellen - Prüfung des Empfängers" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -226,7 +226,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
  <=
 
 <!-- A_21371-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-227" title="E-Rezept-Fachdienst - Nachricht einstellen - Prüfung Existenz Task" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-484" title="E-Rezept-Fachdienst - Nachricht einstellen - Prüfung Existenz Task" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -235,7 +235,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_26320 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-228" title="E-Rezept-Fachdienst - Nachricht einstellen - Dispense Request - Prüfung Status Task" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-485" title="E-Rezept-Fachdienst - Nachricht einstellen - Dispense Request - Prüfung Status Task" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -244,7 +244,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_26321 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-229" title="E-Rezept-Fachdienst - Nachricht einstellen - Dispense Request - Prüfung Ende Gültigkeit Task" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-486" title="E-Rezept-Fachdienst - Nachricht einstellen - Dispense Request - Prüfung Ende Gültigkeit Task" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -253,7 +253,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_26327 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-230" title="E-Rezept-Fachdienst - Nachricht einstellen - Dispense Request - Prüfung Beginn Gültigkeit Task" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-487" title="E-Rezept-Fachdienst - Nachricht einstellen - Dispense Request - Prüfung Beginn Gültigkeit Task" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -262,7 +262,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_22734-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-231" title="E-Rezept-Fachdienst - Nachricht einstellen - Prüfung Existenz ChargeItem" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-488" title="E-Rezept-Fachdienst - Nachricht einstellen - Prüfung Existenz ChargeItem" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -271,7 +271,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_22367-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-232" title="E-Rezept-Fachdienst - Nachricht einstellen - Notification Apotheke" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-489" title="E-Rezept-Fachdienst - Nachricht einstellen - Notification Apotheke" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -280,7 +280,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_28132 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-233" title="E-Rezept-Fachdienst - Nachricht einstellen - Push Notification Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-490" title="E-Rezept-Fachdienst - Nachricht einstellen - Push Notification Versicherter" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -295,7 +295,7 @@ Mit der HTTP-Operation DELETE kann ein Nutzer eine verschickte Kommunikationsna
 Um den Schutz vor unberechtigter Einsichtnahme in persönliche Daten durchzusetzen, ist es ratsam bei bereits gelesenen Nachrichten den referenzierten E-Rezept-Task zu löschen. Für eine geeignete Nutzerführung auf Clientseite ergänzt der E-Rezept-Fachdienst die http-Response um das Header-Attribut "Warning" mit einem entsprechenden Hinweis. Das Löschen des Task führt direkt auch zum Löschen aller Kommunikationsnachrichten, die auf diesen Task verweisen. Damit kann ein fälschlich adressierter Vertreter eines Versicherten keine Einsicht in die Daten des E-Rezepts mehr nehmen bzw. das E-Rezept in keiner Apotheke mehr einlösen.
 
 <!-- A_20258 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-234" title="E-Rezept-Fachdienst - Nachricht löschen - Absender-ID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-491" title="E-Rezept-Fachdienst - Nachricht löschen - Absender-ID" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -304,7 +304,7 @@ Um den Schutz vor unberechtigter Einsichtnahme in persönliche Daten durchzusetz
 </requirement>
 
 <!-- A_20259 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-235" title="E-Rezept-Fachdienst - Nachricht löschen - Warning bei Empfänger bereits abgerufen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-492" title="E-Rezept-Fachdienst - Nachricht löschen - Warning bei Empfänger bereits abgerufen" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>

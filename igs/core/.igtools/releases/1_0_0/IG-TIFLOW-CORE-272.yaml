@@ -1,0 +1,21 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: 94c336dc31ecb1bb2b4d4ce96cb6940abd49591c09be8e7276d79ced41455304
+created: '2026-03-05T08:56:21.774287'
+date: '2026-03-05T08:56:21.774290'
+key: IG-TIFLOW-CORE-272
+modified: '2026-03-05T08:56:21.774289'
+release_status: NEW
+source: input/pagecontent/op-close-req-fd.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation
+  über /Task/&lt;id&gt;/$close, wenn eine MedicationDispense Ressource übermittelt
+  wird und die Operation erfolgreich abgeschlossen werden kann, den Push Notification
+  Prozess für den Trigger mit der ChannelId "erp.task.close" und den Versicherten
+  mit der KVNR = Task.for initiieren.
+title: E-Rezept-Fachdienst - Task schließen - Push Notification Versicherter
+version: 0
