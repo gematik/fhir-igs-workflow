@@ -201,9 +201,9 @@ jobs:
           echo "| IG | Version | QA errors | QA warnings | QA info | QA hints | Output |" >> "$GITHUB_STEP_SUMMARY"
           echo "|---|---:|---:|---:|---:|---:|---|" >> "$GITHUB_STEP_SUMMARY"
 
-          # Parse IG Publisher OperationOutcome JSON if present.
+          # Parse IG Publisher QA outputs (qa.json / qa.min.html / qa.txt).
           python - <<'PY'
-          import json, os, glob
+          import json, os, glob, re
 
           ig_list = os.environ.get("IG_LIST","").split()
           ref_name = os.environ.get("GITHUB_REF_NAME","")
@@ -219,33 +219,75 @@ jobs:
               m = re.search(rf"^{re.escape(key)}:\s*['\"]?([^'\"\n]+)", txt, flags=re.M)
               return m.group(1).strip() if m else ""
 
-          def count_severities(op):
-              issues = op.get("issue", []) if isinstance(op, dict) else []
-              c = {"error":0,"warning":0,"information":0,"info":0,"hint":0}
-              for it in issues:
-                  sev = (it.get("severity") or "").lower()
-                  if sev in c: c[sev]+=1
-              # normalize "information" vs "info"
-              if c["info"] and not c["information"]:
-                  c["information"] = c["info"]
-              return c
-
-          def find_validation_json(ig):
-              # common locations produced by IG Publisher
-              candidates = [
-                  f"igs/{ig}/output/qa/validation-oo.json",
-                  f"igs/{ig}/output/qa/validation.json",
-              ]
-              for c in candidates:
-                  if os.path.isfile(c) and os.path.getsize(c) > 0:
-                      return c
-              # fallback: search
-              hits = glob.glob(f"igs/{ig}/output/**/validation-oo.json", recursive=True) \
-                   + glob.glob(f"igs/{ig}/output/**/validation.json", recursive=True)
-              for h in hits:
-                  if os.path.isfile(h) and os.path.getsize(h) > 0:
-                      return h
+          def find_first_existing(paths):
+              for p in paths:
+                  if os.path.isfile(p) and os.path.getsize(p) > 0:
+                      return p
               return None
+
+          def find_qa_json(ig):
+              candidates = [
+                  f"igs/{ig}/output/qa.json",
+                  f"igs/{ig}/output/qa/qa.json",
+              ]
+              direct_hit = find_first_existing(candidates)
+              if direct_hit:
+                  return direct_hit
+              hits = glob.glob(f"igs/{ig}/output/**/qa.json", recursive=True)
+              return find_first_existing(hits)
+
+          def find_qa_min_html(ig):
+              candidates = [
+                  f"igs/{ig}/output/qa.min.html",
+                  f"igs/{ig}/output/qa/qa.min.html",
+              ]
+              direct_hit = find_first_existing(candidates)
+              if direct_hit:
+                  return direct_hit
+              hits = glob.glob(f"igs/{ig}/output/**/qa.min.html", recursive=True)
+              return find_first_existing(hits)
+
+          def find_qa_txt(ig):
+              candidates = [
+                  f"igs/{ig}/output/qa.txt",
+                  f"igs/{ig}/output/qa/qa.txt",
+              ]
+              direct_hit = find_first_existing(candidates)
+              if direct_hit:
+                  return direct_hit
+              hits = glob.glob(f"igs/{ig}/output/**/qa.txt", recursive=True)
+              return find_first_existing(hits)
+
+          def parse_qa_json(path):
+              data = json.load(open(path, "r", encoding="utf-8"))
+              err = data.get("errs", data.get("errors", data.get("error")))
+              warn = data.get("warnings", data.get("warn", data.get("warning")))
+              info = data.get("info", data.get("information"))
+              hint = data.get("hints", data.get("hint"))
+
+              # Many IG Publisher outputs only provide errs/warnings/hints where
+              # hints corresponds to the "info" line in qa.min.html/qa.txt.
+              if info is None and hint is not None:
+                  info = hint
+                  hint = "—"
+
+              return err, warn, info, hint
+
+          def parse_qa_min_html(path):
+              text = open(path, "r", encoding="utf-8", errors="replace").read()
+              m = re.search(r"errors\s*=\s*(\d+)\s*,\s*warn\s*=\s*(\d+)\s*,\s*info\s*=\s*(\d+)", text, flags=re.I)
+              if not m:
+                  return None
+              err, warn, info = m.groups()
+              return int(err), int(warn), int(info), "—"
+
+          def parse_qa_txt(path):
+              text = open(path, "r", encoding="utf-8", errors="replace").read()
+              m = re.search(r"err\s*=\s*(\d+)\s*,\s*warn\s*=\s*(\d+)\s*,\s*info\s*=\s*(\d+)", text, flags=re.I)
+              if not m:
+                  return None
+              err, warn, info = m.groups()
+              return int(err), int(warn), int(info), "—"
 
           with open(summary, "a", encoding="utf-8") as f:
               for ig in ig_list:
@@ -254,16 +296,26 @@ jobs:
                   out_dir = f"igs/{ig}/output"
                   out_link = f"`{out_dir}`" if os.path.isdir(out_dir) else "—"
 
-                  vpath = find_validation_json(ig)
-                  if vpath:
+                  qa_json = find_qa_json(ig)
+                  qa_min_html = find_qa_min_html(ig)
+                  qa_txt = find_qa_txt(ig)
+
+                  if qa_json:
                       try:
-                          op = json.load(open(vpath, "r", encoding="utf-8"))
-                          c = count_severities(op)
-                          err = c["error"]
-                          warn = c["warning"]
-                          info = c["information"]
-                          hint = c["hint"]
+                          err, warn, info, hint = parse_qa_json(qa_json)
                       except Exception:
+                          err=warn=info=hint="?"
+                  elif qa_min_html:
+                      parsed = parse_qa_min_html(qa_min_html)
+                      if parsed:
+                          err, warn, info, hint = parsed
+                      else:
+                          err=warn=info=hint="?"
+                  elif qa_txt:
+                      parsed = parse_qa_txt(qa_txt)
+                      if parsed:
+                          err, warn, info, hint = parsed
+                      else:
                           err=warn=info=hint="?"
                   else:
                       err=warn=info=hint="—"
