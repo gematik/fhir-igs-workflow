@@ -13,7 +13,7 @@ Version 1.0.0-draft - ci-build
 
 ## Client-Anforderungen: Consent-Query
 
-Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Consent`-Query-Endpunkte.
+Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Consent`-Query-Endpunkte.
 
 ### Einwilligung erteilen
 

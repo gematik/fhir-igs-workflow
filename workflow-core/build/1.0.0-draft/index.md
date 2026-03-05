@@ -14,7 +14,7 @@ Version 1.0.0-draft - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/workflow/core/ImplementationGuide/de.gematik.workflow.core | *Version*:1.0.0-draft |
-| Draft as of 2026-03-02 | *Computable Name*:ERezeptWorkflowCore |
+| Draft as of 2026-03-05 | *Computable Name*:gemIG_TIFlow_core |
 
 # Implementation Guide E-Rezept-Workflow Core
 
@@ -54,10 +54,10 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
   "id" : "de.gematik.workflow.core",
   "url" : "https://gematik.de/fhir/workflow/core/ImplementationGuide/de.gematik.workflow.core",
   "version" : "1.0.0-draft",
-  "name" : "ERezeptWorkflowCore",
+  "name" : "gemIG_TIFlow_core",
   "title" : "Implementation Guide E-Rezept-Workflow Core",
   "status" : "draft",
-  "date" : "2026-03-02T10:24:37+00:00",
+  "date" : "2026-03-05T08:18:18+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -150,6 +150,17 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
       {
         "url" : "value",
         "valueString" : "ci-build"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "shownav"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -435,6 +446,17 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
     {
       "extension" : [{
         "url" : "code",
+        "valueCode" : "shownav"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
         "valueCode" : "autoload-resources"
       },
       {
@@ -685,30 +707,6 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     }],
-    "resource" : [{
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CapabilityStatement"
-      }],
-      "reference" : {
-        "reference" : "CapabilityStatement/erp-fachdienst-client"
-      },
-      "name" : "ERP Capability Statement für Clients des E-Rezept-Fachdienst",
-      "description" : "Dieses Capability Statement legt die Anforderungen an Clients des E-Rezept-Fachdienst fest. Es definiert die unterstützten Interaktionen, erforderliche HTTP Header sowie erwartete Status Codes.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CapabilityStatement"
-      }],
-      "reference" : {
-        "reference" : "CapabilityStatement/erp-fachdienst-server"
-      },
-      "name" : "ERP CapabilityStatement für den E-Rezept-Fachdienst",
-      "description" : "ERP CapabilityStatement für den E-Rezept-Fachdienst",
-      "exampleBoolean" : false
-    }],
     "page" : {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
@@ -760,6 +758,33 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
         }],
         "nameUrl" : "ttl.html",
         "title" : "Löschfristen",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "menu-schnittstellen-datenschutz-und-sicherheit.html"
+        }],
+        "nameUrl" : "menu-schnittstellen-datenschutz-und-sicherheit.html",
+        "title" : "Datenschutz und Sicherheit",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "menu-schnittstellen-generelle-prinzipien.html"
+        }],
+        "nameUrl" : "menu-schnittstellen-generelle-prinzipien.html",
+        "title" : "Generelle Prinzipien",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "menu-technische-umsetzung-systemueberblick.html"
+        }],
+        "nameUrl" : "menu-technische-umsetzung-systemueberblick.html",
+        "title" : "Technische Umsetzung - Systemüberblick",
         "generation" : "markdown"
       },
       {
@@ -989,6 +1014,33 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
         "page" : [{
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "query-api-medicationdispense.html"
+          }],
+          "nameUrl" : "query-api-medicationdispense.html",
+          "title" : "Query API: MedicationDispense",
+          "generation" : "markdown",
+          "page" : [{
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-medicationdispense-req-fd.html"
+            }],
+            "nameUrl" : "query-api-medicationdispense-req-fd.html",
+            "title" : "FD-Anforderungen: MedicationDispense-Query",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-medicationdispense-req-fdv.html"
+            }],
+            "nameUrl" : "query-api-medicationdispense-req-fdv.html",
+            "title" : "FdV-Anforderungen: MedicationDispense-Query",
+            "generation" : "markdown"
+          }]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
             "valueUrl" : "query-api-auditevent.html"
           }],
           "nameUrl" : "query-api-auditevent.html",
@@ -1009,7 +1061,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
               "valueUrl" : "query-api-auditevent-req-fdv.html"
             }],
             "nameUrl" : "query-api-auditevent-req-fdv.html",
-            "title" : "Client-Anforderungen: AuditEvent-Query",
+            "title" : "FdV-Anforderungen: AuditEvent-Query",
             "generation" : "markdown"
           }]
         },
@@ -1033,10 +1085,10 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
           {
             "extension" : [{
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "query-api-device-client-requirements.html"
+              "valueUrl" : "query-api-device-req-fdv.html"
             }],
-            "nameUrl" : "query-api-device-client-requirements.html",
-            "title" : "Client-Anforderungen: Device-Query",
+            "nameUrl" : "query-api-device-req-fdv.html",
+            "title" : "FdV-Anforderungen: Device-Query",
             "generation" : "markdown"
           }]
         },
@@ -1073,6 +1125,15 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
             }],
             "nameUrl" : "query-api-communication-req-avs.html",
             "title" : "AVS-Anforderungen: Communication-Query",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-communication-req-ktr.html"
+            }],
+            "nameUrl" : "query-api-communication-req-ktr.html",
+            "title" : "KTR-Anforderungen: Communication-Query",
             "generation" : "markdown"
           }]
         },

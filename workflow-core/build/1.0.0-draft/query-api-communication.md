@@ -24,7 +24,10 @@ Zum Löschen von Nachrichten wird eine HTTP `DELETE`-Anfrage an den E-Rezept-Fac
 
 ### Anforderungen an Schnittstelle
 
-* [Ergänzende Client-Anforderungen zur Communication-Query](./query-api-communication-req-fd.md): Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.
+* [Server-Anforderungen zu Communications](./query-api-communication-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+* [FdV-Anforderungen zu Communications](./query-api-communication-req-fdv.md): Anforderungen an ein E-Rezept-FdV zur Nutzung der Schnittstelle.
+* [AVS-Anforderungen zu Communications](./query-api-communication-req-avs.md): Anforderungen an ein Apothekenverwaltungssystem zur Nutzung der Schnittstelle.
+* [KTR-Anforderungen zu Communications](./query-api-communication-req-ktr.md): Anforderungen an ein Clientsystem des Kostenträgers zur Nutzung der Schnittstelle.
 
 ### Resource API
 
@@ -38,9 +41,5 @@ Anfragen an die *Communication*-Ressource können über die RESTful API mittels 
 
 #### Hinweis
 
-* Bei Bereitstellung von Communications werden angehangene JSONs in content.payload ebenfalls validiert
-
-### Sicherheitsanforderungen
-
-Generelle Sicherheitsanforderungen werden [hier](./menu-schnittstellen-datenschutz-und-sicherheit.md) festgehalten.
+* Bei Bereitstellung von Communications werden angehangene JSONs in content.payload ebenfalls validiert.
 

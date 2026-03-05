@@ -11,17 +11,17 @@
   fhir:id [ fhir:v "de.gematik.workflow.core"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide de.gematik.workflow.core</b></p><a name=\"de.gematik.workflow.core\"> </a><a name=\"hcde.gematik.workflow.core\"> </a><h2>ERezeptWorkflowCore</h2><p>The official URL for this implementation guide is: </p><pre>https://gematik.de/fhir/workflow/core/ImplementationGuide/de.gematik.workflow.core</pre></div>"^^rdf:XMLLiteral ]
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide de.gematik.workflow.core</b></p><a name=\"de.gematik.workflow.core\"> </a><a name=\"hcde.gematik.workflow.core\"> </a><h2>gemIG_TIFlow_core</h2><p>The official URL for this implementation guide is: </p><pre>https://gematik.de/fhir/workflow/core/ImplementationGuide/de.gematik.workflow.core</pre></div>"^^rdf:XMLLiteral ]
   ] ; # 
   fhir:url [
      fhir:v "https://gematik.de/fhir/workflow/core/ImplementationGuide/de.gematik.workflow.core"^^xsd:anyURI ;
      fhir:l <https://gematik.de/fhir/workflow/core/ImplementationGuide/de.gematik.workflow.core>
   ] ; # 
   fhir:version [ fhir:v "1.0.0-draft"] ; # 
-  fhir:name [ fhir:v "ERezeptWorkflowCore"] ; # 
+  fhir:name [ fhir:v "gemIG_TIFlow_core"] ; # 
   fhir:title [ fhir:v "Implementation Guide E-Rezept-Workflow Core"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-03-02T10:24:37+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-03-05T08:18:18+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "gematik GmbH"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "gematik GmbH" ] ;
@@ -166,6 +166,30 @@
          fhir:value [
            a fhir:String ;
            fhir:v "ci-build"
+         ]
+       ] ) ;
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "code"^^xsd:anyURI ;
+           fhir:l fhir:code
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "shownav"
+         ]
+       ] [
+         fhir:url [
+           fhir:v "value"^^xsd:anyURI ;
+           fhir:l fhir:value
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "true"
          ]
        ] ) ;
        fhir:url [
@@ -789,6 +813,30 @@
          ] ;
          fhir:value [
            a fhir:Code ;
+           fhir:v "shownav"
+         ]
+       ] [
+         fhir:url [
+           fhir:v "value"^^xsd:anyURI ;
+           fhir:l fhir:value
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "true"
+         ]
+       ] ) ;
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "code"^^xsd:anyURI ;
+           fhir:l fhir:code
+         ] ;
+         fhir:value [
+           a fhir:Code ;
            fhir:v "autoload-resources"
          ]
        ] [
@@ -1334,49 +1382,6 @@
          fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
        ]
      ] ) ;
-     fhir:resource ( [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
-           fhir:v "CapabilityStatement"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <https://gematik.de/fhir/workflow/core/CapabilityStatement/erp-fachdienst-client> ;
-         fhir:reference [ fhir:v "CapabilityStatement/erp-fachdienst-client" ]
-       ] ;
-       fhir:name [ fhir:v "ERP Capability Statement für Clients des E-Rezept-Fachdienst" ] ;
-       fhir:description [ fhir:v "Dieses Capability Statement legt die Anforderungen an Clients des E-Rezept-Fachdienst fest. Es definiert die unterstützten Interaktionen, erforderliche HTTP Header sowie erwartete Status Codes." ] ;
-       fhir:example [
-         a fhir:Boolean ;
-         fhir:v false
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
-           fhir:v "CapabilityStatement"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <https://gematik.de/fhir/workflow/core/CapabilityStatement/erp-fachdienst-server> ;
-         fhir:reference [ fhir:v "CapabilityStatement/erp-fachdienst-server" ]
-       ] ;
-       fhir:name [ fhir:v "ERP CapabilityStatement für den E-Rezept-Fachdienst" ] ;
-       fhir:description [ fhir:v "ERP CapabilityStatement für den E-Rezept-Fachdienst" ] ;
-       fhir:example [
-         a fhir:Boolean ;
-         fhir:v false
-       ]
-     ] ) ;
      fhir:page [
        fhir:extension ( [
          fhir:url [
@@ -1490,6 +1495,63 @@
            fhir:l fhir:ttl.html
          ] ;
          fhir:title [ fhir:v "Löschfristen" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+           ] ;
+           fhir:value [
+             a fhir:Url ;
+             fhir:v "menu-schnittstellen-datenschutz-und-sicherheit.html"^^xsd:anyURI ;
+             fhir:l fhir:menu-schnittstellen-datenschutz-und-sicherheit.html
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:Url ;
+           fhir:v "menu-schnittstellen-datenschutz-und-sicherheit.html"^^xsd:anyURI ;
+           fhir:l fhir:menu-schnittstellen-datenschutz-und-sicherheit.html
+         ] ;
+         fhir:title [ fhir:v "Datenschutz und Sicherheit" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+           ] ;
+           fhir:value [
+             a fhir:Url ;
+             fhir:v "menu-schnittstellen-generelle-prinzipien.html"^^xsd:anyURI ;
+             fhir:l fhir:menu-schnittstellen-generelle-prinzipien.html
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:Url ;
+           fhir:v "menu-schnittstellen-generelle-prinzipien.html"^^xsd:anyURI ;
+           fhir:l fhir:menu-schnittstellen-generelle-prinzipien.html
+         ] ;
+         fhir:title [ fhir:v "Generelle Prinzipien" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+           ] ;
+           fhir:value [
+             a fhir:Url ;
+             fhir:v "menu-technische-umsetzung-systemueberblick.html"^^xsd:anyURI ;
+             fhir:l fhir:menu-technische-umsetzung-systemueberblick.html
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:Url ;
+           fhir:v "menu-technische-umsetzung-systemueberblick.html"^^xsd:anyURI ;
+           fhir:l fhir:menu-technische-umsetzung-systemueberblick.html
+         ] ;
+         fhir:title [ fhir:v "Technische Umsetzung - Systemüberblick" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
@@ -1981,6 +2043,64 @@
              ] ;
              fhir:value [
                a fhir:Url ;
+               fhir:v "query-api-medicationdispense.html"^^xsd:anyURI ;
+               fhir:l fhir:query-api-medicationdispense.html
+             ]
+           ] ) ;
+           fhir:name [
+             a fhir:Url ;
+             fhir:v "query-api-medicationdispense.html"^^xsd:anyURI ;
+             fhir:l fhir:query-api-medicationdispense.html
+           ] ;
+           fhir:title [ fhir:v "Query API: MedicationDispense" ] ;
+           fhir:generation [ fhir:v "markdown" ] ;
+           fhir:page ( [
+             fhir:extension ( [
+               fhir:url [
+                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+               ] ;
+               fhir:value [
+                 a fhir:Url ;
+                 fhir:v "query-api-medicationdispense-req-fd.html"^^xsd:anyURI ;
+                 fhir:l fhir:query-api-medicationdispense-req-fd.html
+               ]
+             ] ) ;
+             fhir:name [
+               a fhir:Url ;
+               fhir:v "query-api-medicationdispense-req-fd.html"^^xsd:anyURI ;
+               fhir:l fhir:query-api-medicationdispense-req-fd.html
+             ] ;
+             fhir:title [ fhir:v "FD-Anforderungen: MedicationDispense-Query" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] [
+             fhir:extension ( [
+               fhir:url [
+                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+               ] ;
+               fhir:value [
+                 a fhir:Url ;
+                 fhir:v "query-api-medicationdispense-req-fdv.html"^^xsd:anyURI ;
+                 fhir:l fhir:query-api-medicationdispense-req-fdv.html
+               ]
+             ] ) ;
+             fhir:name [
+               a fhir:Url ;
+               fhir:v "query-api-medicationdispense-req-fdv.html"^^xsd:anyURI ;
+               fhir:l fhir:query-api-medicationdispense-req-fdv.html
+             ] ;
+             fhir:title [ fhir:v "FdV-Anforderungen: MedicationDispense-Query" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] )
+         ] [
+           fhir:extension ( [
+             fhir:url [
+               fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+               fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+             ] ;
+             fhir:value [
+               a fhir:Url ;
                fhir:v "query-api-auditevent.html"^^xsd:anyURI ;
                fhir:l fhir:query-api-auditevent.html
              ]
@@ -2028,7 +2148,7 @@
                fhir:v "query-api-auditevent-req-fdv.html"^^xsd:anyURI ;
                fhir:l fhir:query-api-auditevent-req-fdv.html
              ] ;
-             fhir:title [ fhir:v "Client-Anforderungen: AuditEvent-Query" ] ;
+             fhir:title [ fhir:v "FdV-Anforderungen: AuditEvent-Query" ] ;
              fhir:generation [ fhir:v "markdown" ]
            ] )
          ] [
@@ -2077,16 +2197,16 @@
                ] ;
                fhir:value [
                  a fhir:Url ;
-                 fhir:v "query-api-device-client-requirements.html"^^xsd:anyURI ;
-                 fhir:l fhir:query-api-device-client-requirements.html
+                 fhir:v "query-api-device-req-fdv.html"^^xsd:anyURI ;
+                 fhir:l fhir:query-api-device-req-fdv.html
                ]
              ] ) ;
              fhir:name [
                a fhir:Url ;
-               fhir:v "query-api-device-client-requirements.html"^^xsd:anyURI ;
-               fhir:l fhir:query-api-device-client-requirements.html
+               fhir:v "query-api-device-req-fdv.html"^^xsd:anyURI ;
+               fhir:l fhir:query-api-device-req-fdv.html
              ] ;
-             fhir:title [ fhir:v "Client-Anforderungen: Device-Query" ] ;
+             fhir:title [ fhir:v "FdV-Anforderungen: Device-Query" ] ;
              fhir:generation [ fhir:v "markdown" ]
            ] )
          ] [
@@ -2164,6 +2284,25 @@
                fhir:l fhir:query-api-communication-req-avs.html
              ] ;
              fhir:title [ fhir:v "AVS-Anforderungen: Communication-Query" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] [
+             fhir:extension ( [
+               fhir:url [
+                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+               ] ;
+               fhir:value [
+                 a fhir:Url ;
+                 fhir:v "query-api-communication-req-ktr.html"^^xsd:anyURI ;
+                 fhir:l fhir:query-api-communication-req-ktr.html
+               ]
+             ] ) ;
+             fhir:name [
+               a fhir:Url ;
+               fhir:v "query-api-communication-req-ktr.html"^^xsd:anyURI ;
+               fhir:l fhir:query-api-communication-req-ktr.html
+             ] ;
+             fhir:title [ fhir:v "KTR-Anforderungen: Communication-Query" ] ;
              fhir:generation [ fhir:v "markdown" ]
            ] )
          ] [

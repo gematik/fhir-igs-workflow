@@ -21,7 +21,7 @@ Für weitere Informationen zum IDP-Dienst und zum Ablauf der Authentisierung sie
 Zur Nutzung des IDP-Dienstes gelten einige grundlegende Voraussetzungen, welche das PS erfüllen muss.
 
 <!-- A_20654-01 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-36" title="CS: Registrierung des Clientsystems des E-Rezept-Fachdienstes" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-447" title="CS: Registrierung des Clientsystems des E-Rezept-Fachdienstes" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -39,7 +39,7 @@ Zur Nutzung des IDP-Dienstes gelten einige grundlegende Voraussetzungen, welche 
 </requirement>
 
 <!-- A_20656-02 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-36" title="CS: Prüfung der Signatur des Discovery Document" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-448" title="CS: Prüfung der Signatur des Discovery Document" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -65,7 +65,7 @@ Hinweis: Der genaue Aufbau entspricht [gemSpec_IDP_Dienst#Kapitel 7.7 Aufbau des
 Bei Aufruf der Funktion "VerifyDocument" an der Außenschnittstelle des Konnektors ist es nicht möglich, direkt auch eine Prüfung des Zertifikatstyps und der Rollen-OID durchzuführen.
 
 <!-- A_20657-01 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-36" title="CS: Prüfung Typ und Rolle des Signaturzertifikats des Discovery Document" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-449" title="CS: Prüfung Typ und Rolle des Signaturzertifikats des Discovery Document" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -85,7 +85,7 @@ Bei Aufruf der Funktion "VerifyDocument" an der Außenschnittstelle des Konnekto
 Hinweis: Zur Durchführung der Prüfungen gemäß A_20657-* und ähnlicher Anforderungen ist zu verifizieren, ob im Feld certificatePolicies (2.5.29.32) des Zertifikates der richtige Zertifikatstyp FD.SIG (1.2.276.0.76.4.203) gemäß [gemSpec_OID#Tabelle Tab_PKI_405] eingetragen ist und sich in der Admission (1.3.36.8.3.3) des Zertifikats die richtige "oid_idpd" (1.2.276.0.76.4.260) findet.
 
 <!-- A_20658-01 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-36" title="CS: Sicheres Löschen der Token" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-450" title="CS: Sicheres Löschen der Token" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -105,7 +105,7 @@ Hinweis: Zur Durchführung der Prüfungen gemäß A_20657-* und ähnlicher Anfor
 Darüber hinaus gelten für die Kommunikation mit dem IDP-Dienst die Vorgaben aus 5.1.1 - Kommunikation zu den Diensten der TI.
 
 <!-- A_21337-01 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-36" title="CS: Löschung von TOKEN bei zeitlichem Ablauf" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-451" title="CS: Löschung von TOKEN bei zeitlichem Ablauf" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -123,7 +123,7 @@ Darüber hinaus gelten für die Kommunikation mit dem IDP-Dienst die Vorgaben au
 </requirement>
 
 <!-- A_21338-01 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-36" title="CS: Sichere Speicherung der Token" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-452" title="CS: Sichere Speicherung der Token" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -147,7 +147,7 @@ Im Folgenden wird der Ablauf der Token-Beantragung und Ausstellung detaillierter
 Im ersten Schritt erzeugt sich das Primärsystem einen zufälligen "CODE_VERFIER" und bildet darüber den Hash "CODE_CHALLENGE". Mit dessen Hilfe kann es sich im späteren Verlauf als valider Empfänger des Tokens ausweisen.
 
 <!-- A_20659-01 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-36" title="CS: Erzeugen des CODE_VERIFIER" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-453" title="CS: Erzeugen des CODE_VERIFIER" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -165,7 +165,7 @@ Im ersten Schritt erzeugt sich das Primärsystem einen zufälligen "CODE_VERFIER
 </requirement>
 
 <!-- A_20660-01 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-36" title="CS: Erzeugen des Hash-Werts des CODE_VERIFIER" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-454" title="CS: Erzeugen des Hash-Werts des CODE_VERIFIER" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -187,7 +187,7 @@ Im ersten Schritt erzeugt sich das Primärsystem einen zufälligen "CODE_VERFIER
 Anschließend werden der gehashte Zufallswert und die notwendigen Angaben als "CODE_CHALLENGE" beim Authorization-Endpunkt des IDP-Dienstes eingereicht.
 
 <!-- A_20661-01 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-36" title="CS: Anfrage des AUTHORIZATION_CODE für ein ACCESS_TOKEN" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-455" title="CS: Anfrage des AUTHORIZATION_CODE für ein ACCESS_TOKEN" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -217,7 +217,7 @@ Der Authorization-Endpunkt legt nun eine "session_id" an, stellt alle nötigen I
 Der Authorization-Endpunkt liefert als Response zur Anfrage des "AUTHORIZATION_CODE" einen "CHALLENGE_TOKEN", um die Identität der LEI zu bestätigen, sowie den "consent" des im "scope" angefragten Fachdienstes.
 
 <!-- A_20662-01 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-36" title="CS: Annahme des user_consent und des CHALLENGE_TOKEN" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-456" title="CS: Annahme des user_consent und des CHALLENGE_TOKEN" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -235,7 +235,7 @@ Der Authorization-Endpunkt liefert als Response zur Anfrage des "AUTHORIZATION_C
 </requirement>
 
 <!-- A_20663-02 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-36" title="CS: Annahme des user_consent und des CHALLENGE_TOKEN" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-457" title="CS: Annahme des user_consent und des CHALLENGE_TOKEN" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -255,7 +255,7 @@ Der Authorization-Endpunkt liefert als Response zur Anfrage des "AUTHORIZATION_C
 Das Clientsystem verwendet nun die AUT-Identität der SM-B der Institution und deren Konnektor/Basis Consumer, um das gehashte "CHALLENGE_TOKEN" des IDP-Dienstes zu signieren. Wenn es sich um eine erstmalige Anmeldung des Benutzers bei diesem Fachdienst handelt, werden diesem darüber hinaus die für den Zugriff übermittelten Daten der LEI angezeigt.
 
 <!-- A_20664 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-36" title="Bestätigung des Consent" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-458" title="Bestätigung des Consent" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -273,7 +273,7 @@ Das Clientsystem verwendet nun die AUT-Identität der SM-B der Institution und d
 Hinweis: Die erfolgte Zustimmung des Nutzers darf gespeichert werden und weitere Abfragen können entfallen.
 
 <!-- A_20665-02 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-36" title="CS: Signatur der Challenge des IdP-Dienstes" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-459" title="CS: Signatur der Challenge des IdP-Dienstes" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -297,7 +297,7 @@ Hinweis: Aktuell befinden sich vornehmlich SMC-B der Generation G2 im Feld. Bei 
 Für weitere Informationen siehe Kapitel "Als Nutzer gegenüber der Telematikinfrastruktur authentisieren" in der API-Schnittstelle [E-Rezept API Dokumentation].
 
 <!-- A_20666-02 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-36" title="Auslesen des Authentisierungszertifikates" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-460" title="Auslesen des Authentisierungszertifikates" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -316,7 +316,7 @@ Hinweis: Im Rahmen der Signatur wird auf privates Schlüsselmaterial zugegriffen
 Anschließend werden die signierte "challenge" und das verwendete Authentisierungszertifikat der Smartcard an den IDP-Dienst übermittelt.
 
 <!-- A_20667-03 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-36" title="CS: Response auf die Challenge des Authorization-Endpunktes" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-461" title="CS: Response auf die Challenge des Authorization-Endpunktes" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -342,7 +342,7 @@ Der Authorization-Endpunkt validiert nun die "session" sowie die "signed_challen
 Das Clientsystem empfängt nun diesen "AUTHORIZATION_CODE" vom IDP-Dienst und reicht ihn zusammen mit dem KEY_VERIFIER beim Token-Endpunkt ein.
 
 <!-- A_20668-01 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-36" title="CS: Annahme des AUTHORIZATION_CODE" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-462" title="CS: Annahme des AUTHORIZATION_CODE" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -360,7 +360,7 @@ Das Clientsystem empfängt nun diesen "AUTHORIZATION_CODE" vom IDP-Dienst und re
 </requirement>
 
 <!-- A_21333-01 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-36" title="CS: Erzeugung des Token-Key" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-463" title="CS: Erzeugung des Token-Key" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>

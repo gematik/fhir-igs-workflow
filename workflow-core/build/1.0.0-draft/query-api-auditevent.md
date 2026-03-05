@@ -23,21 +23,11 @@ Die AuditEvent-Query wird ueber HTTP `GET` auf `/AuditEvent` und `/AuditEvent/{i
 ### Anforderungen an Schnittstelle
 
 * [Server-Anforderungen zur AuditEvent-Query](./query-api-auditevent-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
-* [Client-Anforderungen zur AuditEvent-Query](./query-api-auditevent-client-requirements.md): Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.
+* [FdV-Anforderungen zur AuditEvent-Query](./query-api-auditevent-req-fdv.md): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
 
 ### API Beschreibung
 
-#### GET /AuditEvent
-
-```
-server
-```
-
-#### GET /AuditEvent/{id}
-
-```
-server
-```
+* [Einsicht in das Zugriffsprotokoll](https://github.com/gematik/api-erp/blob/master/docs/erp_versicherte.adoc#einsicht-in-das-zugriffsprotokoll)
 
 ### Hinweis
 

@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script src="assets/js/mermaid.js" type="text/javascript"></script>
     <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
-    <style type="text/css">h2{--heading-prefix:"6.2.1"}
-    h3,h4,h5,h6{--heading-prefix:"6.2.1"}</style>
+    <style type="text/css">h2{--heading-prefix:"9.2.1"}
+    h3,h4,h5,h6{--heading-prefix:"9.2.1"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
 
@@ -189,6 +189,16 @@ Implementation Guide<br/> E-Rezept-Workflow Core
         <ul class="breadcrumb">
           <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="menu-schnittstellen-operation-api.html"><b>Operation API</b></a></li><li><a href="op-activate.html"><b>Operation $activate (Task aktivieren)</b></a></li><li><b>Server-Anforderungen $activate</b></li>
 
+          <span style="float:right;">
+
+            <a href="op-activate.html">&lt;vorherige</a> | 
+
+            <a href="#bottom">unten</a>
+
+          | <a href="op-activate-req-pvs.html">nächste&gt;</a>
+
+          </span>
+
         </ul>
       </div>    <!-- /container -->
     </div>    <!-- /segment-breadcrumb -->
@@ -228,7 +238,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an den E-Rezept-Fachdienst für die Operation <code class="language-plaintext highlighter-rouge">$activate</code>.</p>
 
   <!-- A_19022-01 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Rollenprüfung" version="0" key="IG-TIFlow-DiGA-25">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Rollenprüfung" version="0" key="IG-TIFLOW-CORE-316">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produktgutachten"></testProcedure>
@@ -245,7 +255,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_19024-03 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Prüfung AccessCode Prüfung Status" version="0" key="IG-TIFlow-DiGA-25">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Prüfung AccessCode Prüfung Status" version="0" key="IG-TIFLOW-CORE-317">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"></testProcedure>
@@ -255,7 +265,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- ToDo: Prüfung in 2 Afos separieren -->
 
   <!-- A_19020 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Schemavalidierung" version="0" key="IG-TIFlow-DiGA-25">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Schemavalidierung" version="0" key="IG-TIFLOW-CORE-318">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"></testProcedure>
@@ -264,7 +274,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_20159-04 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA" version="0" key="IG-TIFlow-DiGA-25">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA" version="0" key="IG-TIFLOW-CORE-319">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produktgutachten"></testProcedure>
@@ -309,7 +319,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- ToDo: können HBA-Vorläuferkarten entfernt werden? ME ja -->
 
   <!-- A_19025-03 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - QES prüfen Rezept aktualisieren" version="0" key="IG-TIFlow-DiGA-25">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - QES prüfen Rezept aktualisieren" version="0" key="IG-TIFLOW-CORE-320">
   <meta lockversion="false"/>
   <actor name="E-Rezept-Fachdienst">
     <testProcedure id="Produkttest"></testProcedure>
@@ -330,13 +340,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_23172 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Mimetype Signatur" version="0" key="IG-TIFlow-DiGA-25">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Mimetype Signatur" version="0" key="IG-TIFLOW-CORE-321">
     <meta lockversion="false"/>
     Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die Angabe zum Mimetype des signierten Dokumentes prüfen und mit dem Fehler 400 abbrechen, wenn dieser ungleich "text/plain; charset=utf-8" ist.
 </requirement>
 
   <!-- A_21370 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Prüfung Rezept-ID und Präfix gegen Flowtype" version="0" key="IG-TIFlow-DiGA-25">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Prüfung Rezept-ID und Präfix gegen Flowtype" version="0" key="IG-TIFLOW-CORE-322">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"></testProcedure>
@@ -345,7 +355,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_23936-01 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Versicherten-ID als Identifikator von Versicherten" version="0" key="IG-TIFlow-DiGA-25">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Versicherten-ID als Identifikator von Versicherten" version="0" key="IG-TIFLOW-CORE-323">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"></testProcedure>
@@ -354,7 +364,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_22487 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Prüfregel Ausstellungsdatum" version="0" key="IG-TIFlow-DiGA-25">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Prüfregel Ausstellungsdatum" version="0" key="IG-TIFLOW-CORE-324">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"></testProcedure>
@@ -363,7 +373,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_19127-03 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Übernahme der Versicherten-ID" version="0" key="IG-TIFlow-DiGA-25">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Übernahme der Versicherten-ID" version="0" key="IG-TIFLOW-CORE-325">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"></testProcedure>
@@ -373,7 +383,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- ToDo: Grammatik -->
 
   <!-- A_28126 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Push Notification Versicherter" version="0" key="IG-TIFlow-DiGA-25">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Push Notification Versicherter" version="0" key="IG-TIFLOW-CORE-326">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"></testProcedure>
@@ -382,7 +392,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_19128 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Status ready" version="0" key="IG-TIFlow-DiGA-25">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Status ready" version="0" key="IG-TIFLOW-CORE-327">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"></testProcedure>
@@ -394,7 +404,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 &lt;=</p>
 
   <!-- A_19029-06 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Serversignatur" version="0" key="IG-TIFlow-DiGA-25">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Serversignatur" version="0" key="IG-TIFLOW-CORE-328">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"></testProcedure>
@@ -416,7 +426,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 <h3 id="verifizieren-von-prüfziffern">Verifizieren von Prüfziffern</h3>
 
   <!-- A_23888 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der IK Nummer im Profil KBV_PR_FOR_Coverage" version="0" key="IG-TIFlow-DiGA-25">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der IK Nummer im Profil KBV_PR_FOR_Coverage" version="0" key="IG-TIFLOW-CORE-329">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"></testProcedure>
@@ -425,7 +435,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 </requirement>
 
   <!-- A_24030 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der IK Nummer im Profil KBV_PR_FOR_Coverage - AlternativeID" version="0" key="IG-TIFlow-DiGA-25">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der IK Nummer im Profil KBV_PR_FOR_Coverage - AlternativeID" version="0" key="IG-TIFLOW-CORE-330">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"></testProcedure>
@@ -434,7 +444,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 </requirement>
 
   <!-- A_23890-01 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung KVNR im Profil KBV_PR_FOR_Patient" version="0" key="IG-TIFlow-DiGA-25">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung KVNR im Profil KBV_PR_FOR_Patient" version="0" key="IG-TIFLOW-CORE-331">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"></testProcedure>
@@ -443,7 +453,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 </requirement>
 
   <!-- A_23891-01 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR im Profil KBV_PR_FOR_Practitioner" version="0" key="IG-TIFlow-DiGA-25">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR im Profil KBV_PR_FOR_Practitioner" version="0" key="IG-TIFLOW-CORE-332">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"></testProcedure>
@@ -494,7 +504,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 <p>Hinweis: Im Rahmen der ambulanten spezialfachärztlichen Versorgung (ASV) nach &sect; 116b SGB V wird gemäß der ASV-Vereinbarung von Krankenhausärzten die sog. Fachgruppennummer statt der LANR verwendet. Die Fachgruppennummer wird ein einem separaten Element hinterlegt. In diesem Fall muss keine ANR angegeben werden.</p>
 
   <!-- A_24031 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration bei Auffälligkeiten" version="0" key="IG-TIFlow-DiGA-25">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration bei Auffälligkeiten" version="0" key="IG-TIFLOW-CORE-333">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"></testProcedure>
@@ -503,7 +513,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 </requirement>
 
   <!-- A_24032 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration Fehler" version="0" key="IG-TIFlow-DiGA-25">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration Fehler" version="0" key="IG-TIFLOW-CORE-334">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"></testProcedure>
@@ -512,7 +522,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 </requirement>
 
   <!-- A_24033 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration Warning" version="0" key="IG-TIFlow-DiGA-25">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration Warning" version="0" key="IG-TIFLOW-CORE-335">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"></testProcedure>
@@ -527,7 +537,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 </requirement>
 
   <!-- A_23892 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_ERP_Medication_PZN" version="0" key="IG-TIFlow-DiGA-25">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_ERP_Medication_PZN" version="0" key="IG-TIFLOW-CORE-336">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"></testProcedure>
@@ -537,7 +547,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- ToDo: ggf. nach IG rx verschieben -->
 
   <!-- A_24034 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_ERP_Medication_Compounding" version="0" key="IG-TIFlow-DiGA-25">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_ERP_Medication_Compounding" version="0" key="IG-TIFLOW-CORE-337">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"></testProcedure>
@@ -547,7 +557,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- ToDo: ggf. nach IG rx verschieben -->
 
   <!-- A_25992 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest" version="0" key="IG-TIFlow-DiGA-25">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest" version="0" key="IG-TIFLOW-CORE-338">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"></testProcedure>
@@ -574,9 +584,31 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
     <div class="container">    <!-- container -->
 
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&nbsp;
+
+                <a href="op-activate.html">&lt;vorherige</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">oben</a>
+              </td>
+              <td style="text-align:right">&nbsp;
+
+                <a href="op-activate-req-pvs.html">nächste&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 2, 2026 10:24+0000">2026-03-02</span>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Mar 5, 2026 08:18+0000">2026-03-05</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -32,7 +32,3 @@ Die API-Beschreibung für den Aufruf der Operation findet sich auf:
 * Bei ausbleibender Antwort soll der Client den Aufruf wiederholen.
 * Wenn ein wiederholter Aufruf mit `403` und “Task not in status draft but in status ready” antwortet, war ein vorheriger Aufruf bereits erfolgreich.
 
-### Sicherheitsanforderungen
-
-Generelle Sicherheitsanforderungen werden [hier](./menu-schnittstellen-datenschutz-und-sicherheit.md) festgehalten.
-

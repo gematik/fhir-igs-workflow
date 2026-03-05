@@ -189,6 +189,16 @@ Implementation Guide<br /> E-Rezept-Workflow Core
         <ul class="breadcrumb">
           <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>FHIR-Ressource validieren</b></li>
 
+          <span style="float:right;">
+
+            <a href="data-security.html">&lt;vorherige</a> | 
+
+            <a href="#bottom">unten</a>
+
+          | <a href="ttl.html">nächste&gt;</a>
+
+          </span>
+
         </ul>
       </div>  <!-- /container -->
     </div>  <!-- /segment-breadcrumb -->
@@ -236,7 +246,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Der E-Rezept-Fachdienst validiert bei Operationen von Clientsystemen übermittelte FHIR-Ressourcen. Die folgenden Anforderungen beschreiben Mindestprüfungen.</p>
 
 <!-- A_27658 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-76" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Datumsangabe ohne Zeitzoneninformation" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-432" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Datumsangabe ohne Zeitzoneninformation" version="0">
 	<meta lockversion="false" />
 	<actor name="E-Rezept-Fachdienst">
     	<testProcedure id="Herstellererklärung" />
@@ -245,7 +255,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_27698 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-77" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Eindeutige Angabe meta.profile" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-433" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Eindeutige Angabe meta.profile" version="0">
 	<meta lockversion="false" />
 	<actor name="E-Rezept-Fachdienst">
     	<testProcedure id="Produkttest" />
@@ -256,7 +266,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="prüfung-von-referenzen-in-bundles">Prüfung von Referenzen in Bundles</h3>
 
 <!-- A_26229-02 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-78" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Pruefung Konsistenz Ressource IDs" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-434" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Pruefung Konsistenz Ressource IDs" version="0">
 	<meta lockversion="false" />
 	<actor name="E-Rezept-Fachdienst">
     	<testProcedure id="Produkttest" />
@@ -265,7 +275,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_26233-01 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-79" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Format fullUrl" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-435" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Format fullUrl" version="0">
 	<meta lockversion="false" />
 	<actor name="E-Rezept-Fachdienst">
     	<testProcedure id="Produkttest" />
@@ -274,7 +284,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_27648 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-80" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Existenz von Ressource.id" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-436" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Existenz von Ressource.id" version="0">
 	<meta lockversion="false" />
 	<actor name="E-Rezept-Fachdienst">
     	<testProcedure id="Produkttest" />
@@ -283,7 +293,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_27649 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-81" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Auflösbarkeit von Referenzen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-437" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Auflösbarkeit von Referenzen" version="0">
 	<meta lockversion="false" />
 	<actor name="E-Rezept-Fachdienst">
     	<testProcedure id="Produkttest" />
@@ -294,7 +304,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="validierung-von-extensions">Validierung von Extensions</h3>
 
 <!-- A_22927-03 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-82" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Ausschluss unspezifizierter Extensions" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-438" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Ausschluss unspezifizierter Extensions" version="0">
 	<meta lockversion="false" />
 	<actor name="E-Rezept-Fachdienst">
     	<testProcedure id="Produkttest" />
@@ -318,9 +328,31 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
     <div class="container">  <!-- container -->
 
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="data-security.html">&lt;vorherige</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">oben</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="ttl.html">nächste&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 2, 2026 10:24+0000">2026-03-02</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Mar 5, 2026 08:18+0000">2026-03-05</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

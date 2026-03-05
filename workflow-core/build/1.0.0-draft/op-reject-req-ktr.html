@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"6.4.3"}
-    h3,h4,h5,h6{--heading-prefix:"6.4.3"}</style>
+    <style type="text/css">h2{--heading-prefix:"9.4.3"}
+    h3,h4,h5,h6{--heading-prefix:"9.4.3"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -189,6 +189,16 @@ Implementation Guide<br /> E-Rezept-Workflow Core
         <ul class="breadcrumb">
           <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-operation-api.html'><b>Operation API</b></a></li><li><a href='op-reject.html'><b>Operation $reject (Task zurückweisen)</b></a></li><li><b>KTR-Anforderungen $reject</b></li>
 
+          <span style="float:right;">
+
+            <a href="op-reject-req-avs.html">&lt;vorherige</a> | 
+
+            <a href="#bottom">unten</a>
+
+          | <a href="op-close.html">nächste&gt;</a>
+
+          </span>
+
         </ul>
       </div>  <!-- /container -->
     </div>  <!-- /segment-breadcrumb -->
@@ -227,65 +237,61 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </div>
 <p>Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an Clientsysteme für die Nutzung der Operation <code class="language-plaintext highlighter-rouge">$reject</code>.</p>
 
-<p>Das PS der abgebenden LEI MUSS es dem Nutzer ermöglichen, ein E-Rezept zum Zurückgeben auszuwählen.</p>
-
-<p>Das PS der abgebenden LEI MUSS vom Nutzer eine Bestätigung einholen, dass das ausgewählte E-Rezept zurückgegeben werden soll und die Möglichkeit geben, das Zurückgeben abzubrechen.</p>
-
 <!-- A_19249 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-36" title="PS abgebende LEI: E-Rezept durch Abgebenden zurückgeben" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-494" title="CS Kostenträger: Verordnung durch Abgebenden zurückgeben" version="0">
   <meta lockversion="false" />
-  <actor name="PS_E-Rezept_abgebend">
+  <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung" />
   </actor>
-  Das PS der abgebenden LEI MUSS den Anwendungsfall "UC 4.2 - E-Rezept durch Abgebenden zurückgeben" gemäß TAB_ILFERP_008 umsetzen.
+  Das Clientsystem MUSS den Anwendungsfall "UC 4.2 - E-Rezept durch Abgebenden zurückgeben" gemäß TAB_ILFERP_008 umsetzen.
   <table>
     <tr> 
 		<th>Name</th>
-		<th>E-Rezept durch Abgebenden zurückgeben</th>
+		<th>Verordnung durch Abgebenden zurückgeben</th>
 	</tr>
 	<tr> 
 		<td>Auslöser</td>
-		<td>Aufruf des Anwendungsfalls in der UI</td>
+		<td>Aufruf des Anwendungsfalls in der UI oder automatisierte Verarbeitung</td>
 	</tr>
     <tr> 
 		<td>Akteur</td>
-		<td>Leistungserbringer, Mitarbeiter der abgebenden LEI</td>
+		<td>Mitarbeiter des Kostenträgers</td>
 	</tr>
     <tr> 
 		<td>Vorbedingung</td>
 		<td>
             <ul>
-                <li>Die LEI hat das E-Rezept vom E-Rezept-Fachdienst heruntergeladen und es befindet sich im Status "in-progress".</li>
-                <li>Der Nutzer hat ein E-Rezept zum Zurückgeben markiert und das Zurückgeben bestätigt.</li>
-                <li>Die LEI hat sich gegenüber der TI authentisiert.</li>
+                <li>Der Kostenträger hat die Verordnung vom Fachdienst heruntergeladen und es befindet sich im Status "in-progress".</li>
+                <li>Der Nutzer hat die Verordnung zum Zurückgeben markiert und das Zurückgeben bestätigt.</li>
+                <li>Das Clientsystem hat sich gegenüber der TI authentisiert.</li>
             </ul>
         </td>
 	</tr>
     <tr> 
 		<td>Nachbedingung</td>
-		<td>Das ausgewählte E-Rezept hat auf dem E-Rezept-Fachdienst den Status "ready"</td>
+		<td>Der Workflow der Verordnung hat auf dem Fachdienst den Status "ready"</td>
 	</tr>
     <tr> 
 		<td>Standardablauf</td>
 		<td>
             <ol>
-                <li>Task-ID und Geheimnis des E-Rezepts bestimmen</li>
-                <li>E-Rezept Status auf Fachdienst ändern</li>
-                <li>E-Rezept und E-Rezept-Token in PS löschen</li>
+                <li>Task-ID und Geheimnis der Verordnung bestimmen</li>
+                <li>Verordnung Status auf Fachdienst ändern</li>
+                <li>Verordnung und E-Rezept-Token im CS löschen</li>
             </ol>
         </td>
 	</tr>
   </table>
-  <div><figcaption><strong>Tabelle: </strong>TAB_ILFERP_008 - E-Rezept durch Abgebenden zurückgeben</figcaption></div>
+  <div><figcaption><strong>Tabelle: </strong>TAB_ILFERP_008 - Verordnung durch Clientsystem zurückgeben</figcaption></div>
 </requirement>
 
 <!-- A_19250 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-36" title="PS abgebende LEI: E-Rezept zurückgeben - Statusrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-495" title="CS Kostenträger: Verordnung zurückgeben - Statusrequest" version="0">
   <meta lockversion="false" />
-  <actor name="PS_E-Rezept_abgebend">
+  <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung" />
   </actor>
-  Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezept durch Abgebenden zurückgeben" für das zurückzugebende E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$reject mit 
+  Das CS Kostenträger MUSS im Anwendungsfall "Verordnung durch Clientsystem zurückgeben" für die zurückzugebende Verordnung die HTTP-Operation POST /Task/&lt;id&gt;/$reject mit 
   <ul>
     <li>ACCESS_TOKEN im Authorization-Header</li>
     <li>Task-ID in URL &lt;id&gt; </li>
@@ -295,12 +301,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_19251 -->
-<requirement conformance="SHALL" key="IG-WF-CORE-36" title="PS abgebende LEI: E-Rezept zurückgeben - E-Rezept löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-496" title="CS Kostenträger: Verordnung zurückgeben - Verordnung löschen" version="0">
   <meta lockversion="false" />
-  <actor name="PS_E-Rezept_abgebend">
+  <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung" />
   </actor>
-  Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezept durch Abgebenden zurückgeben" für das zurückzugebende E-Rezept nach erfolgreichem Aufruf der Operation "Ein E-Rezept zurückweisen" die Daten zum E-Rezept, E-Rezept-Token und das Geheimnis im PS löschen.
+  Das CS Kostenträger MUSS im Anwendungsfall "Verordnung durch Clientsystem zurückgeben" für das zurückzugebende E-Rezept nach erfolgreichem Aufruf der Operation "Eine Verordnung zurückweisen" die Daten zu Verordnung, E-Rezept-Token und das Geheimnis im CS löschen.
 </requirement>
 
 
@@ -319,9 +325,31 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
     <div class="container">  <!-- container -->
 
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="op-reject-req-avs.html">&lt;vorherige</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">oben</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="op-close.html">nächste&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 2, 2026 10:24+0000">2026-03-02</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Mar 5, 2026 08:18+0000">2026-03-05</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

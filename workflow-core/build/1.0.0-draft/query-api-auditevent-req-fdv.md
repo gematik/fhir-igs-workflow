@@ -1,4 +1,4 @@
-# Client-Anforderungen: AuditEvent-Query - Implementation Guide E-Rezept-Workflow Core v1.0.0-draft
+# FdV-Anforderungen: AuditEvent-Query - Implementation Guide E-Rezept-Workflow Core v1.0.0-draft
 
 Implementation Guide
 
@@ -9,15 +9,15 @@ Version 1.0.0-draft - ci-build
 * [**Table of Contents**](toc.md)
 * [**Query API**](menu-schnittstellen-query-api.md)
 * [**Query API: AuditEvent**](query-api-auditevent.md)
-* **Client-Anforderungen: AuditEvent-Query**
+* **FdV-Anforderungen: AuditEvent-Query**
 
-## Client-Anforderungen: AuditEvent-Query
+## FdV-Anforderungen: AuditEvent-Query
 
-# Client-Anforderungen: Query API AuditEvent
+# E-Rezept-FdV-Anforderungen: Query API AuditEvent
 
-Diese Seite beschreibt Anforderungen an Clients zur Nutzung der AuditEvent-Query-Endpunkte.
+Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der AuditEvent-Query-Endpunkte.
 
-## Normative Client-Anforderungen
+## Normative E-Rezept-FdV-Anforderungen
 
 In den vorliegenden Spezifikationen sind keine zusätzlichen, ausschließlich auf `/AuditEvent` bezogenen, normativen Client-Anforderungen ausgewiesen.
 

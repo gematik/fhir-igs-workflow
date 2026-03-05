@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"6.6.3"}
-    h3,h4,h5,h6{--heading-prefix:"6.6.3"}</style>
+    <style type="text/css">h2{--heading-prefix:"9.6.3"}
+    h3,h4,h5,h6{--heading-prefix:"9.6.3"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -189,6 +189,16 @@ Implementation Guide<br /> E-Rezept-Workflow Core
         <ul class="breadcrumb">
           <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-operation-api.html'><b>Operation API</b></a></li><li><a href='op-abort.html'><b>Operation $abort (Task abbrechen)</b></a></li><li><b>AVS-Anforderungen $abort</b></li>
 
+          <span style="float:right;">
+
+            <a href="op-abort-req-pvs.html">&lt;vorherige</a> | 
+
+            <a href="#bottom">unten</a>
+
+          | <a href="op-abort-req-fdv.html">nächste&gt;</a>
+
+          </span>
+
         </ul>
       </div>  <!-- /container -->
     </div>  <!-- /segment-breadcrumb -->
@@ -225,6 +235,99 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div>
 <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
+<p>Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an das AVS für die Nutzung der Operation <code class="language-plaintext highlighter-rouge">$abort</code>.</p>
+
+<!-- A_19241 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-306" title="PS abgebende LEI: E-Rezepte löschen - E-Rezept auswählen" version="0">
+    <meta lockversion="false" />
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Konformitätsbestätigung" />
+    </actor>
+     Das PS der abgebenden LEI MUSS es dem Nutzer ermöglichen, ein E-Rezept zum Löschen auf dem Fachdienst auszuwählen.
+</requirement>
+
+<!-- A_19242 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-307" title="PS abgebende LEI: E-Rezept löschen - Bestätigung" version="0">
+    <meta lockversion="false" />
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Konformitätsbestätigung" />
+    </actor>
+     Das PS der abgebenden LEI MUSS vom Nutzer eine Bestätigung einholen, dass das ausgewählte E-Rezept gelöscht werden soll, und die Möglichkeit geben, das Löschen abzubrechen.
+</requirement>
+
+<!-- A_19243 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-308" title="PS abgebende LEI: E-Rezept durch Abgebenden löschen" version="0">
+    <meta lockversion="false" />
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Konformitätsbestätigung" />
+    </actor>
+     Das PS der abgebenden LEI MUSS den Anwendungsfall "UC 4.3 - E-Rezept durch Abgebenden löschen" aus [gemSysL_eRp] gemäß TAB_ILFERP_009 umsetzen. Tabelle # : TAB_ILFERP_009 – E-Rezept durch Abgebenden löschen Name E-Rezept durch Abgebenden löschen Auslöser Aufruf des Anwendungsfalls in der GUI Akteur Leistungserbringer, Mitarbeiter der abgebenden LEI Vorbedingung Die LEI hat das E-Rezept vom E-Rezept-Fachdienst heruntergeladen. Der Nutzer hat ein E-Rezept zum Löschen markiert und das Löschen bestätigt. Die LEI hat sich gegenüber der TI authentisiert. Nachbedingung Das ausgewählte E-Rezept ist vom E-Rezept-Fachdienst unwiederbringlich gelöscht. Standardablauf Task-ID und Geheimnis des E-Rezepts bestimmen E-Rezept auf Fachdienst löschen E-Rezept-Token in PS löschen
+</requirement>
+
+<!-- A_19244 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-309" title="PS abgebende LEI: E-Rezept löschen - Löschrequest" version="0">
+    <meta lockversion="false" />
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Konformitätsbestätigung" />
+    </actor>
+     Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezept durch Abgebenden löschen" für das zu löschende E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$abort mit ACCESS_TOKEN im Authorization-Header Task-ID in URL &lt;id&gt; Geheimnis in URL Parameter ?secret= ausführen.
+</requirement>
+
+<!-- A_19245 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-310" title="PS abgebende LEI: E-Rezept löschen - E-Rezept-Token löschen" version="0">
+    <meta lockversion="false" />
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Konformitätsbestätigung" />
+    </actor>
+     Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezept durch Abgebenden löschen" für das zu löschende E-Rezept nach erfolgreichem Aufruf der Operation "Ein E-Rezept löschen" die Daten zum E-Rezept-Token und das Geheimnis im PS löschen.
+</requirement>
+
+<h2 id="pvs">PVS</h2>
+
+<!-- A_19236 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-311" title="PS verordnende LEI: E-Rezepte löschen - E-Rezept zum Löschen auswählen" version="0">
+    <meta lockversion="false" />
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Konformitätsbestätigung" />
+    </actor>
+     Das PS der verordnenden LEI MUSS es dem Nutzer ermöglichen, ein E-Rezept zum Löschen auf dem Fachdienst auszuwählen.
+</requirement>
+
+<!-- A_19237 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-312" title="PS verordnende LEI: E-Rezept löschen - Bestätigung" version="0">
+    <meta lockversion="false" />
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Konformitätsbestätigung" />
+    </actor>
+     Das PS der verordnenden LEI MUSS vom Nutzer eine Bestätigung einholen, dass das ausgewählte E-Rezept gelöscht werden soll und die Möglichkeit geben, das Löschen abzubrechen.
+</requirement>
+
+<!-- A_19238 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-313" title="PS verordnende LEI: E-Rezept durch Verordnenden löschen" version="0">
+    <meta lockversion="false" />
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Konformitätsbestätigung" />
+    </actor>
+     Das PS der verordnenden LEI MUSS den Anwendungsfall "UC 2.5 - E-Rezept durch Verordnenden löschen" aus [gemSysL_eRp] gemäß TAB_ILFERP_004 umsetzen. Tabelle # : TAB_ILFERP_004 – E-Rezept durch Verordnenden löschen Name E-Rezept durch Verordnenden löschen Auslöser Aufruf des Anwendungsfalls in der GUI Akteur Leistungserbringer, Mitarbeiter verordnende LEI Vorbedingung Der Nutzer hat ein E-Rezept zum Löschen markiert und das Löschen bestätigt. Die LEI hat sich gegenüber der TI authentisiert. Nachbedingung Das ausgewählte E-Rezept ist vom E-Rezept-Fachdienst unwiederbringlich gelöscht. Standardablauf Task-ID und AccessCode des E-Rezepts bestimmen E-Rezept auf E-Rezept-Fachdienst löschen E-Rezept-Token in PS löschen
+</requirement>
+
+<!-- A_19239-01 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-314" title="PS verordnende LEI: E-Rezept löschen - Löschrequest" version="0">
+    <meta lockversion="false" />
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Konformitätsbestätigung" />
+    </actor>
+     Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden löschen" für das zu löschende E-Rezept die HTTP-Operation POST /TASK/&lt;id&gt;/$abort mit ACCESS_TOKEN im Authorization-Header Task-ID in URL &lt;id&gt; AccessCode im X-AccessCode-Header oder als URL-Parameter ?ac= ausführen.
+</requirement>
+
+<!-- A_19240 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-315" title="PS verordnende LEI: E-Rezept löschen - E-Rezept-Token löschen" version="0">
+    <meta lockversion="false" />
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Konformitätsbestätigung" />
+    </actor>
+     Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden löschen" für das zu löschende E-Rezept nach erfolgreichem Aufruf der Operation "Ein E-Rezept löschen" die Task-ID und den AccessCode im PS löschen.
+</requirement>
 
 
 
@@ -243,9 +346,31 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
     <div class="container">  <!-- container -->
 
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="op-abort-req-pvs.html">&lt;vorherige</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">oben</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="op-abort-req-fdv.html">nächste&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 2, 2026 10:24+0000">2026-03-02</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Mar 5, 2026 08:18+0000">2026-03-05</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

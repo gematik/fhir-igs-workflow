@@ -36,7 +36,4 @@ Die API-Beschreibung für den Aufruf der Operation findet sich auf:
 ### Geschäftslogik
 
 **Abbildung: **Ablauf Operation `$accept`
-### Sicherheitsanforderungen
-
-Generelle Sicherheitsanforderungen werden [hier](./menu-schnittstellen-datenschutz-und-sicherheit.md) festgehalten.
 

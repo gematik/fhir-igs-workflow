@@ -15,6 +15,7 @@ Die folgenden Query APIs stellt der E-Rezept-Fachdienst den Clientsystemen zur V
 
 * [Query API: Device](./query-api-device.md)
 * [Query API: AuditEvent](./query-api-auditevent.md)
+* [MedicationDispense](./query-api-medicationdispense.md)
 * [Query API: Communication](./query-api-communication.md)
 * [Query API: Consent](./query-api-consent.md)
 

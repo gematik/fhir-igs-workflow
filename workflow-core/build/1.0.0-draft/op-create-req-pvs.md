@@ -13,7 +13,7 @@ Version 1.0.0-draft - ci-build
 
 ## Client-Anforderungen $create
 
-Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an Clientsysteme für die Nutzung der Operation `$create`.
+Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an das PVS für die Nutzung der Operation `$create`.
 
 Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" für das E-Rezept die HTTP-Operation POST /Task/$create mit
 * ACCESS_TOKEN im Authorization-Header

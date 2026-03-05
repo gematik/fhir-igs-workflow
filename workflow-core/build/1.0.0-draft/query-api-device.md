@@ -27,11 +27,7 @@ Die Device-Query wird ueber HTTP `GET` auf `/Device` aufgerufen.
 
 ### API Beschreibung
 
-#### GET /Device
-
-```
-server
-```
+* [Erweiterter Health-Check](https://github.com/gematik/api-erp/blob/master/docs/erp_ps_probing.adoc#erweiterter-health-check)
 
 ### Hinweis
 
