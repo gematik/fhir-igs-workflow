@@ -1,6 +1,19 @@
 Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für den Task-Endpunkt.
 
+<!-- A_19030 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-34" title="E-Rezept-Fachdienst - unzulässige Operationen Task" version="0">
+    <meta lockversion="false"/>
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest"/>
+    </actor>
+    Der E-Rezept-Fachdienst MUSS alle Zugriffe auf die Ressource Task mittels der HTTP-Operationen PUT, HEAD und DELETE sowie POST ohne die Angabe einer gültigen FHIR-Operation unterbinden, damit keine unzulässigen Operationen auf den Rezeptdaten ausgeführt werden können.
+</requirement>
+
+Der Zugriff mittels POST und Angabe einer gültigen FHIR-Operation ist unter [Operations](./menu-schnittstellen-operation-api.html) beschrieben.
+
 ### GET /Task (Liste)
+
+Der Zugriff mittels der HTTP-Operation GET steht ausschließlich für die Einsichtnahme in E-Rezepte durch den Versicherten bzw. einen Vertreter mit Wissen um den AccessCode bzw. einer abgebenden Institution mit Wissen um das Secret zur Verfügung. Die GET-Operation ohne Referenz einer FHIR-Operation führt zu keiner Statusänderung.
 
 <!-- A_21558-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-33" title="E-Rezept-Fachdienst - Liste Task abrufen - Rollenprüfung" version="0">
@@ -432,10 +445,45 @@ A_24179-01 - E-Rezept-Fachdienst - Task abrufen -  - Verordnung abrufen - erneu
 
 <!-- Push Notification -->
 <!-- A_28125 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-48" title="E-Rezept-Fachdienst - Task abrufen - Vertreter - Push Notification Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-48" title="E-Rezept-Fachdienst - Task abrufen - Vertreter - Push Notification Versicherter" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation GET /Task/&lt;id&gt; durch einen Versicherten mit der Rolle oid_versicherter, sofern die KVNR des Aufrufenden ungleich der KVNR in Task.for ist, den Push Notification Prozess für den Trigger mit der ChannelId "erp.task.vertreter" und den Versicherten mit der KVNR = Task.for initiieren.
+</requirement>
+
+### PATCH /Task
+
+Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicherten zur Verfügung. Die PATCH-Operation führt zu keiner Statusänderung des Tasks.
+
+<!-- A_27548 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-14" title="E-Rezept-Fachdienst – Task markieren - alles Markieren verbieten" version="0">
+    <meta lockversion="false"/>
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest"/>
+    </actor>
+     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-Operation PATCH auf den Endpunkt /Task ohne Angabe einer &lt;id&gt; für eine konkrete Ressource mit dem HTTP-Fehlercode 405 ablehnen, um das Markieren mehrerer Ressourcen über einen Request zu verhindern.
+</requirement>
+
+<!-- A_27549 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-15" title="E-Rezept-Fachdienst - Task markieren - Versicherter - Rollenprüfung Versicherter markiert Rezepte" version="0">
+    <meta lockversion="false"/>
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produktgutachten"/>
+    </actor>
+     Der E-Rezept-Fachdienst MUSS bei Aufruf der HTTP-PATCH-Operation auf den Endpunkt /Task/&lt;id&gt; sicherstellen, dass ausschließlich Versicherte in der Rolle: 
+     <ul>
+        <li>oid_versicherter</li>
+     </ul>
+     , die Operation am E-Rezept-Fachdienst aufrufen dürfen und die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit E-Rezepte nicht durch Unberechtigte markiert werden können.
+</requirement>
+
+<!-- A_27550 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-16" title="E-Rezept-Fachdienst -Task markieren -Versicherter - Prüfung KVNR" version="0">
+    <meta lockversion="false"/>
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Produkttest"/>
+    </actor>
+     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die im gespeicherten Datensatz in Task.for.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit den Aufruf mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich der begünstigte Versicherte als Berechtigter einen Task ändert.
 </requirement>
