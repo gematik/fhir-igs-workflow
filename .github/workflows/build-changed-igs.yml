@@ -1,4 +1,5 @@
 name: Build changed IGs
+run-name: Build IGs - ${{ inputs.ig }}
 
 on:
   push:
@@ -183,6 +184,95 @@ jobs:
       - name: Build IGs
         if: steps.igs.outputs.ig_list != ''
         run: ./build-all.sh --ig ${{ steps.igs.outputs.ig_list }}
+
+      - name: IG build summary
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          echo "## FHIR IG build summary" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Trigger: \`${{ github.event_name }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Selected input \`ig\`: \`${{ inputs.ig || github.event.inputs.ig || '' }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Built IGs: \`${{ steps.igs.outputs.ig_list || '' }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+
+          echo "| IG | Version | QA errors | QA warnings | QA info | QA hints | Output |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|---|---:|---:|---:|---:|---:|---|" >> "$GITHUB_STEP_SUMMARY"
+
+          # Parse IG Publisher OperationOutcome JSON if present.
+          python - <<'PY'
+          import json, os, glob
+
+          ig_list = os.environ.get("IG_LIST","").split()
+          ref_name = os.environ.get("GITHUB_REF_NAME","")
+          summary = os.environ["GITHUB_STEP_SUMMARY"]
+
+          def read_yaml_value(path, key):
+              # ultra-minimal yaml read for your two keys; avoids extra deps
+              import re
+              try:
+                  txt = open(path, "r", encoding="utf-8").read()
+              except FileNotFoundError:
+                  return ""
+              m = re.search(rf"^{re.escape(key)}:\s*['\"]?([^'\"\n]+)", txt, flags=re.M)
+              return m.group(1).strip() if m else ""
+
+          def count_severities(op):
+              issues = op.get("issue", []) if isinstance(op, dict) else []
+              c = {"error":0,"warning":0,"information":0,"info":0,"hint":0}
+              for it in issues:
+                  sev = (it.get("severity") or "").lower()
+                  if sev in c: c[sev]+=1
+              # normalize "information" vs "info"
+              if c["info"] and not c["information"]:
+                  c["information"] = c["info"]
+              return c
+
+          def find_validation_json(ig):
+              # common locations produced by IG Publisher
+              candidates = [
+                  f"igs/{ig}/output/qa/validation-oo.json",
+                  f"igs/{ig}/output/qa/validation.json",
+              ]
+              for c in candidates:
+                  if os.path.isfile(c) and os.path.getsize(c) > 0:
+                      return c
+              # fallback: search
+              hits = glob.glob(f"igs/{ig}/output/**/validation-oo.json", recursive=True) \
+                   + glob.glob(f"igs/{ig}/output/**/validation.json", recursive=True)
+              for h in hits:
+                  if os.path.isfile(h) and os.path.getsize(h) > 0:
+                      return h
+              return None
+
+          with open(summary, "a", encoding="utf-8") as f:
+              for ig in ig_list:
+                  cfg = f"igs/{ig}/sushi-config.yaml"
+                  version = read_yaml_value(cfg, "version") or ""
+                  out_dir = f"igs/{ig}/output"
+                  out_link = f"`{out_dir}`" if os.path.isdir(out_dir) else "—"
+
+                  vpath = find_validation_json(ig)
+                  if vpath:
+                      try:
+                          op = json.load(open(vpath, "r", encoding="utf-8"))
+                          c = count_severities(op)
+                          err = c["error"]
+                          warn = c["warning"]
+                          info = c["information"]
+                          hint = c["hint"]
+                      except Exception:
+                          err=warn=info=hint="?"
+                  else:
+                      err=warn=info=hint="—"
+
+                  f.write(f"| `{ig}` | `{version}` | {err} | {warn} | {info} | {hint} | {out_link} |\n")
+
+          PY
+        env:
+          IG_LIST: ${{ steps.igs.outputs.ig_list }}
 
       - name: Report deploy count
         if: steps.igs.outputs.ig_list != ''
