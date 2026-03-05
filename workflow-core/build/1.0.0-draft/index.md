@@ -57,7 +57,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
   "name" : "gemIG_TIFlow_core",
   "title" : "Implementation Guide E-Rezept-Workflow Core",
   "status" : "draft",
-  "date" : "2026-03-05T08:18:18+00:00",
+  "date" : "2026-03-05T08:51:05+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -1012,6 +1012,42 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
         "title" : "Query API",
         "generation" : "markdown",
         "page" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "query-api-task.html"
+          }],
+          "nameUrl" : "query-api-task.html",
+          "title" : "Query API: Task",
+          "generation" : "markdown",
+          "page" : [{
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-task-req-fd.html"
+            }],
+            "nameUrl" : "query-api-task-req-fd.html",
+            "title" : "FD-Anforderungen: Task-Query",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-task-req-fdv.html"
+            }],
+            "nameUrl" : "query-api-task-req-fdv.html",
+            "title" : "FdV-Anforderungen: Task-Query",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-task-req-avs.html"
+            }],
+            "nameUrl" : "query-api-task-req-avs.html",
+            "title" : "AVS-Anforderungen: Task-Query",
+            "generation" : "markdown"
+          }]
+        },
+        {
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
             "valueUrl" : "query-api-medicationdispense.html"
