@@ -2,6 +2,8 @@ Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Subscription`-Q
 
 Um die Last am E-Rezept-Fachdienst zu kontrollieren, wurde festgelegt, dass ein AVS nicht öfter als alle 5 min nach neuen Nachrichten anfragen darf (A_21556). Die dadurch bis zu 5 min entstehende Verzögerung verlängert die Zeit, bis eine Apotheke auf die Nachricht des Versicherten reagieren kann. Aus dem Grund wird eine Funktionalität eingeführt, mit der AVS eine Notification erhalten, dass eine neue Nachricht für eine Telematik-ID vorliegt. Nach Erhalt einer Notification darf das AVS die neue Nachricht sofort abrufen.
 
+<!-- ToDo: um KTR erweitern -->
+
 <!-- A_22426 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-505" title="PS abgebende LEI: Subscription für neue Communication - eine Subscription pro Telematik-ID" version="0">
     <meta lockversion="false"/>
