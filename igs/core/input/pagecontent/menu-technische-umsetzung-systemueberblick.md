@@ -37,7 +37,7 @@ Der E-Rezept-Fachdienst verwaltet E-Rezepte über einen medizinischen Workflow. 
 
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-497" title="Anbieter E-Rezept-Fachdienst Speicherung Schlüsselmaterial in HSM" version="0">
     <meta lockversion="false"/>
-    <actor name="Anbieter E-Rezept-Fachdienst">
+    <actor name="Anb_eRp_FD">
         <testProcedure id="Sich.techn. Eignung: Gutachten (Anbieter)"/>
     </actor>
     <description>

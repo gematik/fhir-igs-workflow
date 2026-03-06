@@ -55,6 +55,7 @@ KNOWN_ACTORS: Set[str] = {
     "E-Rezept-Fachdienst", #TODO: change to eRp_FD und in allen AFOs
     "eRp_FdV",
     "NCPeH_ePeDA",
+    "Anb_NCPeH_FD",
     "PS_E-Rezept_abgebend",
     "PS_E-Rezept_verordnend",
     "CS_E-Rezept_KTR",
@@ -67,6 +68,7 @@ SUBJECT_RULES: List[Tuple[str, str, str]] = [
     ("Der E-Rezept-Fachdienst", "E-Rezept-Fachdienst", "Der E-Rezept-Fachdienst"),
     ("Das E-Rezept-FdV", "eRp_FdV", "Das E-Rezept-FdV"),
     ("Der NCPeH-FD", "NCPeH_ePeDA", "Der NCPeH-FD"),
+    ("Anbieter des NCPeH-FD", "Anb_NCPeH_FD", "Anbieter des NCPeH-FD"),
     ("Das PS der abgebenden LEI", "PS_E-Rezept_abgebend", "Das PS der abgebenden LEI"),
     ("Das PS der verordnenden LEI", "PS_E-Rezept_verordnend", "Das PS der verordnenden LEI"),
     ("Das Clientsystem Kostenträger", "CS_E-Rezept_KTR", "Das Clientsystem Kostenträger"),
@@ -80,6 +82,7 @@ ACTOR_CANONICAL_SUBJECT: Dict[str, str] = {
     "E-Rezept-Fachdienst": "Der E-Rezept-Fachdienst",
     "eRp_FdV": "Das E-Rezept-FdV",
     "NCPeH_ePeDA": "Der NCPeH-FD",
+    "Anb_NCPeH_FD": "Anbieter des NCPeH-FD",
     "PS_E-Rezept_abgebend": "Das PS der abgebenden LEI",
     "PS_E-Rezept_verordnend": "Das PS der verordnenden LEI",
     "CS_E-Rezept_KTR": "Das Clientsystem Kostenträger",
