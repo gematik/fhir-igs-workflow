@@ -1,6 +1,6 @@
-# Communication message sent by pharmacy to patient in response to a previous ChargeItem-related message - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft
+# Communication message sent by pharmacy to patient in response to a previous ChargeItem-related message - E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte v1.1.0-draft
 
-Abrechnungsinformationen für PKV-Versicherte
+E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 
@@ -14,7 +14,7 @@ Profile: [Reply on change Request on ChargeItem from pharmacy to Patientversion:
 
 Tag: Communication message sent by pharmacy to patient in response to a previous ChargeItem-related message (Details: [not stated] code null = 'Communication message sent by pharmacy to patient in response to a previous ChargeItem-related message')
 
-**basedOn**: [ChargeItem/a51520ec-0899-404f-bb97-fe7d461f90a8](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.2&canonical=http://fhir.org/packages/de.basisprofil.r4/ChargeItem/a51520ec-0899-404f-bb97-fe7d461f90a8)
+**basedOn**: [ChargeItem/a51520ec-0899-404f-bb97-fe7d461f90a8](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.org/packages/de.basisprofil.r4/ChargeItem/a51520ec-0899-404f-bb97-fe7d461f90a8)
 
 **status**: Unknown
 

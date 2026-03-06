@@ -1,6 +1,6 @@
-# Query API: ChargeItem - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft
+# Query API: ChargeItem - E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte v1.1.0-draft
 
-Abrechnungsinformationen für PKV-Versicherte
+E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 
@@ -24,7 +24,7 @@ Die Profilierung der Ressource ChargeItem ist hier dokumentiert: https://simplif
 
 ### API Beschreibung
 
-* [API-ERP: Charge Items](https://github.com/gematik/api-erp/blob/master/docs/erp_chargeItem.adoc)
+* [API-ERP: PKV-Abrechnungsinformationen](https://github.com/gematik/api-erp/blob/master/docs/erp_chargeItem.adoc)
 
 ### GET /ChargeItem (Liste)
 

@@ -1,6 +1,6 @@
-# Primärsystem des abgebenden Leistungserbringers Anforderungen: ChargeItem - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft
+# Primärsystem des abgebenden Leistungserbringers Anforderungen: ChargeItem - E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte v1.1.0-draft
 
-Abrechnungsinformationen für PKV-Versicherte
+E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 

@@ -1,6 +1,6 @@
-# Verarbeitungsregeln für den E-Rezept-Fachdienst - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft
+# Verarbeitungsregeln für den E-Rezept-Fachdienst - E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte v1.1.0-draft
 
-Abrechnungsinformationen für PKV-Versicherte
+E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 

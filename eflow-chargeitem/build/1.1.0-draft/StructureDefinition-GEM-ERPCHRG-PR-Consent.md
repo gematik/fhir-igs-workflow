@@ -1,6 +1,6 @@
-# GEM_ERPCHRG_PR_Consent - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft
+# GEM_ERPCHRG_PR_Consent - E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte v1.1.0-draft
 
-Abrechnungsinformationen für PKV-Versicherte
+E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 
@@ -174,7 +174,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERPCHRG-PR-Conse
       "min" : 1,
       "type" : [{
         "code" : "Identifier",
-        "profile" : ["https://gematik.de/fhir/erpchrg/StructureDefinition/identifier-kvid-10"]
+        "profile" : ["http://fhir.de/StructureDefinition/identifier-kvid-10"]
       }],
       "mustSupport" : true
     },
@@ -188,7 +188,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERPCHRG-PR-Conse
       "path" : "Consent.patient.identifier.assigner.identifier",
       "type" : [{
         "code" : "Identifier",
-        "profile" : ["https://gematik.de/fhir/erpchrg/StructureDefinition/identifier-iknr"]
+        "profile" : ["http://fhir.de/StructureDefinition/identifier-iknr"]
       }],
       "mustSupport" : true
     },

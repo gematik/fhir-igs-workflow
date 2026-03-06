@@ -1654,7 +1654,7 @@
       </base>
       <type>
         <code value="Identifier"/>
-        <profile value="https://gematik.de/fhir/erpchrg/StructureDefinition/identifier-kvid-10"/>
+        <profile value="http://fhir.de/StructureDefinition/identifier-kvid-10"/>
       </type>
       <condition value="ele-1"/>
       <constraint>
@@ -1822,6 +1822,12 @@
       <type>
         <code value="CodeableConcept"/>
       </type>
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://fhir.de/CodeSystem/identifier-type-de-basis"/>
+          <code value="KVZ10"/>
+        </coding>
+      </patternCodeableConcept>
       <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
@@ -1831,6 +1837,13 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <constraint>
+        <key value="kvid-2"/>
+        <severity value="warning"/>
+        <human value="Die type Codes 'GKV' und 'PKV' haben den Status 'retired', daher sollen diese nicht mehr verwendet werden"/>
+        <expression value="($this.coding.exists(system='http://fhir.de/CodeSystem/identifier-type-de-basis' and code='GKV') or $this.coding.exists(system='http://fhir.de/CodeSystem/identifier-type-de-basis' and code='PKV')).not()"/>
+        <source value="http://fhir.de/StructureDefinition/identifier-kvid-10"/>
+      </constraint>
       <isModifier value="false"/>
       <isSummary value="true"/>
       <binding>
@@ -1839,7 +1852,7 @@
         </extension>
         <strength value="extensible"/>
         <description value="A coded type for an identifier that can be used to determine which identifier to use for a specific purpose."/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/identifier-type|4.0.1"/>
+        <valueSet value="http://fhir.de/ValueSet/identifier-type-de-basis"/>
       </binding>
       <mapping>
         <identity value="rim"/>
@@ -1872,7 +1885,7 @@
       <definition value="Establishes the namespace for the value - that is, a URL that describes a set values that are unique."/>
       <comment value="Identifier.system is always case sensitive."/>
       <requirements value="There are many sets  of identifiers.  To perform matching of two identifiers, we need to know what set we're dealing with. The system identifies a particular set of unique identifiers."/>
-      <min value="0"/>
+      <min value="1"/>
       <max value="1"/>
       <base>
         <path value="Identifier.system"/>
@@ -1915,7 +1928,7 @@
       <short value="The value that is unique"/>
       <definition value="The portion of the identifier typically relevant to the user and which is unique within the context of the system."/>
       <comment value="If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986.  The value's primary purpose is computational mapping.  As a result, it may be normalized for comparison purposes (e.g. removing non-significant whitespace, dashes, etc.)  A value formatted for human display can be conveyed using the [Rendered Value extension](http://hl7.org/fhir/R4/extension-rendered-value.html). Identifier.value is to be treated as case sensitive unless knowledge of the Identifier.system allows the processer to be confident that non-case-sensitive processing is safe."/>
-      <min value="0"/>
+      <min value="1"/>
       <max value="1"/>
       <base>
         <path value="Identifier.value"/>
@@ -1936,6 +1949,13 @@
         <expression value="hasValue() or (children().count() &gt; id.count())"/>
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="kvid-1"/>
+        <severity value="warning"/>
+        <human value="Der unveränderliche Teil der KVID muss 10-stellig sein und mit einem Großbuchstaben anfangen"/>
+        <expression value="matches('^[A-Z][0-9]{9}$')"/>
+        <source value="http://fhir.de/StructureDefinition/identifier-kvid-10"/>
       </constraint>
       <isModifier value="false"/>
       <isSummary value="true"/>
@@ -2025,7 +2045,7 @@
       </base>
       <type>
         <code value="Reference"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization"/>
       </type>
       <condition value="ele-1"/>
       <constraint>
@@ -2224,7 +2244,7 @@
       </base>
       <type>
         <code value="Identifier"/>
-        <profile value="https://gematik.de/fhir/erpchrg/StructureDefinition/identifier-iknr"/>
+        <profile value="http://fhir.de/StructureDefinition/identifier-iknr"/>
       </type>
       <condition value="ele-1"/>
       <constraint>
@@ -4103,7 +4123,7 @@
       <min value="1"/>
       <type>
         <code value="Identifier"/>
-        <profile value="https://gematik.de/fhir/erpchrg/StructureDefinition/identifier-kvid-10"/>
+        <profile value="http://fhir.de/StructureDefinition/identifier-kvid-10"/>
       </type>
       <mustSupport value="true"/>
     </element>
@@ -4115,7 +4135,7 @@
       <path value="Consent.patient.identifier.assigner.identifier"/>
       <type>
         <code value="Identifier"/>
-        <profile value="https://gematik.de/fhir/erpchrg/StructureDefinition/identifier-iknr"/>
+        <profile value="http://fhir.de/StructureDefinition/identifier-iknr"/>
       </type>
       <mustSupport value="true"/>
     </element>

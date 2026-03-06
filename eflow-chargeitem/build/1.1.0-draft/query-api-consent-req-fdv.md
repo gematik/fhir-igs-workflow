@@ -1,6 +1,6 @@
-# FdV-Anforderungen: Consent-Query - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft
+# FdV-Anforderungen: Consent-Query - E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte v1.1.0-draft
 
-Abrechnungsinformationen für PKV-Versicherte
+E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 
@@ -61,8 +61,4 @@ Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung widerrufen" zum Löschen d
 * Einwilligungstyp in ?category
 ausführen.
 Der Einwilligungstyp ist entsprechend dem Codesystem [GEM_ERPCHRG_CS_ConsentType] oder [GEM_ERPEU_CS_ConsentType] anzugeben.
-
-### Modulspezifische Anforderungen
-
-Für die Verwaltung der Einwilligung zum Speichern der Abrechnungsinformationen wird Consent.category.coding.code mit dem Codesystem https://gematik.de/fhir/erpchrg/CodeSystem/GEM_ERPCHRG_CS_ConsentType verwendet.
 

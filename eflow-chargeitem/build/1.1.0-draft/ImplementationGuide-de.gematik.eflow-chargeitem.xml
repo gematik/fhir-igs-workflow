@@ -3,14 +3,14 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="de.gematik.eflow-chargeitem"/>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide de.gematik.eflow-chargeitem</b></p><a name="de.gematik.eflow-chargeitem"> </a><a name="hcde.gematik.eflow-chargeitem"> </a><h2>gemIG_eRp_ChargeItem</h2><p>The official URL for this implementation guide is: </p><pre>https://gematik.de/fhir/erpchrg/ImplementationGuide/de.gematik.eflow-chargeitem</pre></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide de.gematik.eflow-chargeitem</b></p><a name="de.gematik.eflow-chargeitem"> </a><a name="hcde.gematik.eflow-chargeitem"> </a><h2>gemIG_TIFlow_erpchrg</h2><p>The official URL for this implementation guide is: </p><pre>https://gematik.de/fhir/erpchrg/ImplementationGuide/de.gematik.eflow-chargeitem</pre></div>
   </text>
   <url value="https://gematik.de/fhir/erpchrg/ImplementationGuide/de.gematik.eflow-chargeitem"/>
   <version value="1.1.0-draft"/>
-  <name value="gemIG_eRp_ChargeItem"/>
-  <title value="Abrechnungsinformationen für PKV-Versicherte"/>
+  <name value="gemIG_TIFlow_erpchrg"/>
+  <title value="E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte"/>
   <status value="draft"/>
-  <date value="2026-03-06T10:48:20+00:00"/>
+  <date value="2026-03-06T15:03:48+00:00"/>
   <publisher value="gematik GmbH"/>
   <contact>
     <name value="gematik GmbH"/>
@@ -52,7 +52,7 @@
   <dependsOn id="de_basisprofil_r4">
     <uri value="http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4"/>
     <packageId value="de.basisprofil.r4"/>
-    <version value="1.5.2"/>
+    <version value="1.5.4"/>
   </dependsOn>
   <dependsOn id="de_gematik_ti">
     <uri value="https://gematik.de/fhir/ti/ImplementationGuide/de.gematik.ti"/>
@@ -74,6 +74,14 @@
       </extension>
       <extension url="value">
         <valueString value="ci-build"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="shownav"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -349,6 +357,14 @@
       </extension>
       <extension url="value">
         <valueString value="ci-build"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="shownav"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -763,39 +779,6 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:complex-type"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/identifier-iknr"/>
-      </reference>
-      <name value="Identifier IKNR"/>
-      <description value="Identifier profil für die Institutionskennzeichen-Nummer (IKNR)"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:complex-type"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/identifier-kvid-10"/>
-      </reference>
-      <name value="Identifier KVID-10"/>
-      <description value="Identifier profil für die Krankenversichertennummer (KVID-10)"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:complex-type"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/identifier-telematik-id"/>
-      </reference>
-      <name value="Identifier Telematik-ID"/>
-      <description value="Identifier profil für die Telematik-ID"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
@@ -905,14 +888,6 @@
           <title value="Datenschutz und Sicherheit"/>
           <generation value="markdown"/>
         </page>
-      </page>
-      <page>
-        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="menu-schnittstellen-generelle-prinzipien.html"/>
-        </extension>
-        <nameUrl value="menu-schnittstellen-generelle-prinzipien.html"/>
-        <title value="Generelle Prinzipien"/>
-        <generation value="markdown"/>
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">

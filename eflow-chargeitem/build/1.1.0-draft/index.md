@@ -1,6 +1,6 @@
-# Implementation Guide E-Rezept-Fachdienst - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft
+# Implementation Guide E-Rezept-Fachdienst - E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte v1.1.0-draft
 
-Abrechnungsinformationen für PKV-Versicherte
+E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 
@@ -12,7 +12,7 @@ Version 1.1.0-draft - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/erpchrg/ImplementationGuide/de.gematik.eflow-chargeitem | *Version*:1.1.0-draft |
-| Draft as of 2026-03-06 | *Computable Name*:gemIG_eRp_ChargeItem |
+| Draft as of 2026-03-06 | *Computable Name*:gemIG_TIFlow_erpchrg |
 
 ### Implementation Guide E-Rezept Patientenrechnung (PKV)
 
@@ -41,7 +41,6 @@ Die Kapitel folgen der Struktur Fachlichkeit, Technische Umsetzung und Schnittst
 
 
 
-
 #### Kontakt und Feedback
 
 Für Fragen und Feedback wenden Sie sich bitte an [erp-umsetzung@gematik.de](mailto:erp-umsetzung@gematik.de).
@@ -62,10 +61,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "id" : "de.gematik.eflow-chargeitem",
   "url" : "https://gematik.de/fhir/erpchrg/ImplementationGuide/de.gematik.eflow-chargeitem",
   "version" : "1.1.0-draft",
-  "name" : "gemIG_eRp_ChargeItem",
-  "title" : "Abrechnungsinformationen für PKV-Versicherte",
+  "name" : "gemIG_TIFlow_erpchrg",
+  "title" : "E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte",
   "status" : "draft",
-  "date" : "2026-03-06T10:48:20+00:00",
+  "date" : "2026-03-06T15:03:48+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -112,7 +111,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
     "id" : "de_basisprofil_r4",
     "uri" : "http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4",
     "packageId" : "de.basisprofil.r4",
-    "version" : "1.5.2"
+    "version" : "1.5.4"
   },
   {
     "id" : "de_gematik_ti",
@@ -140,6 +139,17 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       {
         "url" : "value",
         "valueString" : "ci-build"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "shownav"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -518,6 +528,17 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       {
         "url" : "value",
         "valueString" : "ci-build"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "shownav"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -1045,42 +1066,6 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:complex-type"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/identifier-iknr"
-      },
-      "name" : "Identifier IKNR",
-      "description" : "Identifier profil für die Institutionskennzeichen-Nummer (IKNR)",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:complex-type"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/identifier-kvid-10"
-      },
-      "name" : "Identifier KVID-10",
-      "description" : "Identifier profil für die Krankenversichertennummer (KVID-10)",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:complex-type"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/identifier-telematik-id"
-      },
-      "name" : "Identifier Telematik-ID",
-      "description" : "Identifier profil für die Telematik-ID",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
@@ -1202,15 +1187,6 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
           "title" : "Datenschutz und Sicherheit",
           "generation" : "markdown"
         }]
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "menu-schnittstellen-generelle-prinzipien.html"
-        }],
-        "nameUrl" : "menu-schnittstellen-generelle-prinzipien.html",
-        "title" : "Generelle Prinzipien",
-        "generation" : "markdown"
       },
       {
         "extension" : [{

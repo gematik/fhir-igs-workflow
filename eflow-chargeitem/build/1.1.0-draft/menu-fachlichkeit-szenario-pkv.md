@@ -1,6 +1,6 @@
-# Abrechnungsinformationen des E-Rezepts für PKV-Versicherte - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft
+# Abrechnungsinformationen des E-Rezepts für PKV-Versicherte - E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte v1.1.0-draft
 
-Abrechnungsinformationen für PKV-Versicherte
+E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 
@@ -85,9 +85,7 @@ Die digitale Abrechnungsinformation besteht aus den folgenden Datensätzen:
 
 Das Speichern der Abrechnungsinformationen erfolgt nur mit Einwilligung des Versicherten. Diese Einwilligung kann der Versicherte speichern, einsehen und jederzeit widerrufen. Sie wird unbefristet erteilt, und mit dem Widerruf der Einwilligung werden bereits gespeicherte Abrechnungsinformationen gelöscht.
 
-**Beteiligte Akteure:**
-
-* PKV-Versicherter
+**Beteiligte Akteure:** **Beteiligte Systeme:** E-Rezept-FdV, E-Rezept-Fachdienst
 
 **Technische Anwendungsfälle**
 

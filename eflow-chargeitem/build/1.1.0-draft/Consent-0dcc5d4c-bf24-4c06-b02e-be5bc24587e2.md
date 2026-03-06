@@ -1,6 +1,6 @@
-# Consent to store digital ChargeItem - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft
+# Consent to store digital ChargeItem - E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte v1.1.0-draft
 
-Abrechnungsinformationen für PKV-Versicherte
+E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 
@@ -59,7 +59,7 @@ The subject has given their consent.
       }
     }
   },
-  "dateTime" : "2024-01-15T12:30:00Z",
+  "dateTime" : "2025-10-01T15:29:00.434+00:00",
   "policyRule" : {
     "coding" : [{
       "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",

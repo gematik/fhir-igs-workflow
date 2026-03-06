@@ -11,17 +11,17 @@
   fhir:id [ fhir:v "de.gematik.eflow-chargeitem"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide de.gematik.eflow-chargeitem</b></p><a name=\"de.gematik.eflow-chargeitem\"> </a><a name=\"hcde.gematik.eflow-chargeitem\"> </a><h2>gemIG_eRp_ChargeItem</h2><p>The official URL for this implementation guide is: </p><pre>https://gematik.de/fhir/erpchrg/ImplementationGuide/de.gematik.eflow-chargeitem</pre></div>"^^rdf:XMLLiteral ]
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide de.gematik.eflow-chargeitem</b></p><a name=\"de.gematik.eflow-chargeitem\"> </a><a name=\"hcde.gematik.eflow-chargeitem\"> </a><h2>gemIG_TIFlow_erpchrg</h2><p>The official URL for this implementation guide is: </p><pre>https://gematik.de/fhir/erpchrg/ImplementationGuide/de.gematik.eflow-chargeitem</pre></div>"^^rdf:XMLLiteral ]
   ] ; # 
   fhir:url [
      fhir:v "https://gematik.de/fhir/erpchrg/ImplementationGuide/de.gematik.eflow-chargeitem"^^xsd:anyURI ;
      fhir:l <https://gematik.de/fhir/erpchrg/ImplementationGuide/de.gematik.eflow-chargeitem>
   ] ; # 
   fhir:version [ fhir:v "1.1.0-draft"] ; # 
-  fhir:name [ fhir:v "gemIG_eRp_ChargeItem"] ; # 
-  fhir:title [ fhir:v "Abrechnungsinformationen für PKV-Versicherte"] ; # 
+  fhir:name [ fhir:v "gemIG_TIFlow_erpchrg"] ; # 
+  fhir:title [ fhir:v "E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-03-06T10:48:20+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-03-06T15:03:48+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "gematik GmbH"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "gematik GmbH" ] ;
@@ -89,7 +89,7 @@
        fhir:l <http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4>
      ] ;
      fhir:packageId [ fhir:v "de.basisprofil.r4" ] ;
-     fhir:version [ fhir:v "1.5.2" ]
+     fhir:version [ fhir:v "1.5.4" ]
   ] [
      fhir:id [ fhir:v "de_gematik_ti" ] ;
      fhir:uri [
@@ -142,6 +142,30 @@
          fhir:value [
            a fhir:String ;
            fhir:v "ci-build"
+         ]
+       ] ) ;
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "code"^^xsd:anyURI ;
+           fhir:l fhir:code
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "shownav"
+         ]
+       ] [
+         fhir:url [
+           fhir:v "value"^^xsd:anyURI ;
+           fhir:l fhir:value
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "true"
          ]
        ] ) ;
        fhir:url [
@@ -967,6 +991,30 @@
          fhir:value [
            a fhir:String ;
            fhir:v "ci-build"
+         ]
+       ] ) ;
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "code"^^xsd:anyURI ;
+           fhir:l fhir:code
+         ] ;
+         fhir:value [
+           a fhir:Code ;
+           fhir:v "shownav"
+         ]
+       ] [
+         fhir:url [
+           fhir:v "value"^^xsd:anyURI ;
+           fhir:l fhir:value
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "true"
          ]
        ] ) ;
        fhir:url [
@@ -2062,69 +2110,6 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "StructureDefinition:complex-type"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <https://gematik.de/fhir/erpchrg/StructureDefinition/identifier-iknr> ;
-         fhir:reference [ fhir:v "StructureDefinition/identifier-iknr" ]
-       ] ;
-       fhir:name [ fhir:v "Identifier IKNR" ] ;
-       fhir:description [ fhir:v "Identifier profil für die Institutionskennzeichen-Nummer (IKNR)" ] ;
-       fhir:example [
-         a fhir:Boolean ;
-         fhir:v false
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
-           fhir:v "StructureDefinition:complex-type"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <https://gematik.de/fhir/erpchrg/StructureDefinition/identifier-kvid-10> ;
-         fhir:reference [ fhir:v "StructureDefinition/identifier-kvid-10" ]
-       ] ;
-       fhir:name [ fhir:v "Identifier KVID-10" ] ;
-       fhir:description [ fhir:v "Identifier profil für die Krankenversichertennummer (KVID-10)" ] ;
-       fhir:example [
-         a fhir:Boolean ;
-         fhir:v false
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
-           fhir:v "StructureDefinition:complex-type"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <https://gematik.de/fhir/erpchrg/StructureDefinition/identifier-telematik-id> ;
-         fhir:reference [ fhir:v "StructureDefinition/identifier-telematik-id" ]
-       ] ;
-       fhir:name [ fhir:v "Identifier Telematik-ID" ] ;
-       fhir:description [ fhir:v "Identifier profil für die Telematik-ID" ] ;
-       fhir:example [
-         a fhir:Boolean ;
-         fhir:v false
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
            fhir:v "StructureDefinition:resource"
          ]
        ] ) ;
@@ -2373,25 +2358,6 @@
            fhir:title [ fhir:v "Datenschutz und Sicherheit" ] ;
            fhir:generation [ fhir:v "markdown" ]
          ] )
-       ] [
-         fhir:extension ( [
-           fhir:url [
-             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-           ] ;
-           fhir:value [
-             a fhir:Url ;
-             fhir:v "menu-schnittstellen-generelle-prinzipien.html"^^xsd:anyURI ;
-             fhir:l fhir:menu-schnittstellen-generelle-prinzipien.html
-           ]
-         ] ) ;
-         fhir:name [
-           a fhir:Url ;
-           fhir:v "menu-schnittstellen-generelle-prinzipien.html"^^xsd:anyURI ;
-           fhir:l fhir:menu-schnittstellen-generelle-prinzipien.html
-         ] ;
-         fhir:title [ fhir:v "Generelle Prinzipien" ] ;
-         fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
            fhir:url [

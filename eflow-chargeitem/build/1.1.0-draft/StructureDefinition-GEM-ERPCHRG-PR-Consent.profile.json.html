@@ -11,7 +11,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>GEM_ERPCHRG_PR_Consent - JSON Representation - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft</title>
+    <title>GEM_ERPCHRG_PR_Consent - JSON Representation - E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte v1.1.0-draft</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -86,8 +86,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"6.5"}
-    h3,h4,h5,h6{--heading-prefix:"6.5"}</style>
+    <style type="text/css">h2{--heading-prefix:"5.5"}
+    h3,h4,h5,h6{--heading-prefix:"5.5"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -162,9 +162,6 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
-      </li>
-      <li>
         <a href="query-api.html">Query API</a>
       </li>
     </ul>
@@ -210,7 +207,7 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-Abrechnungsinformationen für PKV-Versicherte
+E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
             <span style="display:inline-block;">Version 1.1.0-draft - ci-build
@@ -231,6 +228,16 @@ Abrechnungsinformationen für PKV-Versicherte
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
           <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>FHIR-Artefakte</b></a></li><li><b>GEM_ERPCHRG_PR_Consent</b></li>
+
+          <span style="float:right;">
+
+            <a href="StructureDefinition-GEM-ERPCHRG-PR-Consent.profile.xml.html">&lt;vorherige</a> | 
+
+            <a href="#bottom">unten</a>
+
+          | <a href="StructureDefinition-GEM-ERPCHRG-PR-Consent.profile.ttl.html">nächste&gt;</a>
+
+          </span>
 
         </ul>
       </div>  <!-- /container -->
@@ -2355,7 +2362,7 @@ Abrechnungsinformationen für PKV-Versicherte
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.code">code</a>" : "Identifier",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.profile">profile</a>" : [
-              <a href="StructureDefinition-identifier-kvid-10.html" style="color: Maroon">&#x1F517;</a> "https://gematik.de/fhir/erpchrg/StructureDefinition/identifier-kvid-10"
+              <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/StructureDefinition/identifier-kvid-10" style="color: Maroon">&#x1F517;</a> "http://fhir.de/StructureDefinition/identifier-kvid-10"
             ]
           }
         ],
@@ -2565,6 +2572,14 @@ Abrechnungsinformationen für PKV-Versicherte
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.code">code</a>" : "CodeableConcept"
           }
         ],
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.pattern_x_">patternCodeableConcept</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://fhir.de/CodeSystem/identifier-type-de-basis",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "KVZ10"
+            }
+          ]
+        },
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.condition">condition</a>" : [
           "ele-1"
         ],
@@ -2576,6 +2591,13 @@ Abrechnungsinformationen für PKV-Versicherte
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "hasValue() or (children().count() &gt; id.count())",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "@value|f:*|h:div",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/Element"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "kvid-2",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "warning",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "Die type Codes 'GKV' und 'PKV' haben den Status 'retired', daher sollen diese nicht mehr verwendet werden",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "($this.coding.exists(system='http://fhir.de/CodeSystem/identifier-type-de-basis' and code='GKV') or $this.coding.exists(system='http://fhir.de/CodeSystem/identifier-type-de-basis' and code='PKV')).not()",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://fhir.de/StructureDefinition/identifier-kvid-10"
           }
         ],
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : false,
@@ -2589,7 +2611,7 @@ Abrechnungsinformationen für PKV-Versicherte
           ],
           "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.binding.strength">strength</a>" : "extensible",
           "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.binding.description">description</a>" : "A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.",
-          "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.binding.valueSet">valueSet</a>" : "http://hl7.org/fhir/ValueSet/identifier-type|4.0.1"
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.binding.valueSet">valueSet</a>" : "http://fhir.de/ValueSet/identifier-type-de-basis"
         },
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>" : [
           {
@@ -2625,7 +2647,7 @@ Abrechnungsinformationen für PKV-Versicherte
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.definition">definition</a>" : "Establishes the namespace for the value - that is, a URL that describes a set values that are unique.",
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.comment">comment</a>" : "Identifier.system is always case sensitive.",
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.requirements">requirements</a>" : "There are many sets  of identifiers.  To perform matching of two identifiers, we need to know what set we're dealing with. The system identifies a particular set of unique identifiers.",
-        "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a>" : 0,
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a>" : 1,
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a>" : "1",
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base">base</a>" : {
           "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.path">path</a>" : "Identifier.system",
@@ -2677,7 +2699,7 @@ Abrechnungsinformationen für PKV-Versicherte
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.short">short</a>" : "The value that is unique",
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.definition">definition</a>" : "The portion of the identifier typically relevant to the user and which is unique within the context of the system.",
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.comment">comment</a>" : "If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986.  The value's primary purpose is computational mapping.  As a result, it may be normalized for comparison purposes (e.g. removing non-significant whitespace, dashes, etc.)  A value formatted for human display can be conveyed using the [Rendered Value extension](http://hl7.org/fhir/R4/extension-rendered-value.html). Identifier.value is to be treated as case sensitive unless knowledge of the Identifier.system allows the processer to be confident that non-case-sensitive processing is safe.",
-        "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a>" : 0,
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a>" : 1,
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a>" : "1",
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base">base</a>" : {
           "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.path">path</a>" : "Identifier.value",
@@ -2703,6 +2725,13 @@ Abrechnungsinformationen für PKV-Versicherte
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "hasValue() or (children().count() &gt; id.count())",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "@value|f:*|h:div",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/Element"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "kvid-1",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "warning",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "Der unveränderliche Teil der KVID muss 10-stellig sein und mit einem Großbuchstaben anfangen",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "matches('^[A-Z][0-9]{9}$')",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://fhir.de/StructureDefinition/identifier-kvid-10"
           }
         ],
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : false,
@@ -2807,7 +2836,7 @@ Abrechnungsinformationen für PKV-Versicherte
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.code">code</a>" : "Reference",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.targetProfile">targetProfile</a>" : [
-              <a href="http://hl7.org/fhir/R4/organization.html" style="color: Maroon">&#x1F517;</a> "http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"
+              <a href="http://hl7.org/fhir/R4/organization.html" style="color: Maroon">&#x1F517;</a> "http://hl7.org/fhir/StructureDefinition/Organization"
             ]
           }
         ],
@@ -3057,7 +3086,7 @@ Abrechnungsinformationen für PKV-Versicherte
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.code">code</a>" : "Identifier",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.profile">profile</a>" : [
-              <a href="StructureDefinition-identifier-iknr.html" style="color: Maroon">&#x1F517;</a> "https://gematik.de/fhir/erpchrg/StructureDefinition/identifier-iknr"
+              <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/StructureDefinition/identifier-iknr" style="color: Maroon">&#x1F517;</a> "http://fhir.de/StructureDefinition/identifier-iknr"
             ]
           }
         ],
@@ -5394,7 +5423,7 @@ Abrechnungsinformationen für PKV-Versicherte
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.code">code</a>" : "Identifier",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.profile">profile</a>" : [
-              <a href="StructureDefinition-identifier-kvid-10.html" style="color: Maroon">&#x1F517;</a> "https://gematik.de/fhir/erpchrg/StructureDefinition/identifier-kvid-10"
+              <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/StructureDefinition/identifier-kvid-10" style="color: Maroon">&#x1F517;</a> "http://fhir.de/StructureDefinition/identifier-kvid-10"
             ]
           }
         ],
@@ -5412,7 +5441,7 @@ Abrechnungsinformationen für PKV-Versicherte
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.code">code</a>" : "Identifier",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.profile">profile</a>" : [
-              <a href="StructureDefinition-identifier-iknr.html" style="color: Maroon">&#x1F517;</a> "https://gematik.de/fhir/erpchrg/StructureDefinition/identifier-iknr"
+              <a href="https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.de/StructureDefinition/identifier-iknr" style="color: Maroon">&#x1F517;</a> "http://fhir.de/StructureDefinition/identifier-iknr"
             ]
           }
         ],
@@ -5460,9 +5489,31 @@ Abrechnungsinformationen für PKV-Versicherte
   <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
     <div class="container">  <!-- container -->
 
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="StructureDefinition-GEM-ERPCHRG-PR-Consent.profile.xml.html">&lt;vorherige</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">oben</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="StructureDefinition-GEM-ERPCHRG-PR-Consent.profile.ttl.html">nächste&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Mar 6, 2026 10:48+0000">2026-03-06</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Mar 6, 2026 15:03+0000">2026-03-06</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

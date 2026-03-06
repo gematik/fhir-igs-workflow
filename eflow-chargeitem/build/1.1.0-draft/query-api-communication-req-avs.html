@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>AVS-Anforderungen: Communication-Query - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft</title>
+    <title>AVS-Anforderungen: Communication-Query - E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte v1.1.0-draft</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"5.3.3"}
-    h3,h4,h5,h6{--heading-prefix:"5.3.3"}</style>
+    <style type="text/css">h2{--heading-prefix:"4.3.3"}
+    h3,h4,h5,h6{--heading-prefix:"4.3.3"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -154,9 +154,6 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
-      </li>
-      <li>
         <a href="query-api.html">Query API</a>
       </li>
     </ul>
@@ -202,7 +199,7 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-Abrechnungsinformationen für PKV-Versicherte
+E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
             <span style="display:inline-block;">Version 1.1.0-draft - ci-build
@@ -223,6 +220,16 @@ Abrechnungsinformationen für PKV-Versicherte
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
           <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='query-api.html'><b>Query API</b></a></li><li><a href='query-api-communication.html'><b>Query API: Communication</b></a></li><li><b>AVS-Anforderungen: Communication-Query</b></li>
+
+          <span style="float:right;">
+
+            <a href="query-api-communication-req-fdv.html">&lt;vorherige</a> | 
+
+            <a href="#bottom">unten</a>
+
+          | <a href="artifacts.html">nächste&gt;</a>
+
+          </span>
 
         </ul>
       </div>  <!-- /container -->
@@ -257,14 +264,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div class="markdown-toc">
-  <p>Seiteninhalt:</p>
-
-<ul id="markdown-toc">
-  <li><a href="#anforderungen-aus-der-core-spezifikation" id="markdown-toc-anforderungen-aus-der-core-spezifikation">Anforderungen aus der Core Spezifikation</a></li>
-  <li><a href="#modulspezifische-anforderungen" id="markdown-toc-modulspezifische-anforderungen">Modulspezifische Anforderungen</a></li>
-</ul>
-
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
 <p>Diese Seite beschreibt Anforderungen ein AVS zur Nutzung der <code class="language-plaintext highlighter-rouge">Communication</code>-Query-Endpunkte für “Bereitstellung von Abrechnungsinformationen für PKV-Versicherte”.</p>
 
@@ -274,7 +275,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="nachrichten-abrufen">Nachrichten abrufen</h4>
 <!-- A_21556 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-111" title="PS abgebende LEI: Nachrichten abrufen - Häufigkeit" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-297" title="PS abgebende LEI: Nachrichten abrufen - Häufigkeit" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung" />
@@ -283,7 +284,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_19329-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-111" title="PS abgebende LEI: Nachrichten abrufen - Abfrage" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-298" title="PS abgebende LEI: Nachrichten abrufen - Abfrage" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung" />
@@ -303,7 +304,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Die für die Nachricht zu verwendende Communication-Ressource wird modul- und anwendungsfall-spezifisch festgelegt.</p>
 
 <!-- A_19334 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-111" title="PS abgebende LEI: Nachricht versenden - Nachricht auf Fachdienst einstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-299" title="PS abgebende LEI: Nachricht versenden - Nachricht auf Fachdienst einstellen" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung" />
@@ -327,7 +328,7 @@ ausgewählte Nachricht gelöscht werden soll, und die Möglichkeit geben, das
 Löschen abzubrechen.</p>
 
 <!-- A_21489 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-111" title="PS abgebende LEI: Nachricht löschen - Löschrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-300" title="PS abgebende LEI: Nachricht löschen - Löschrequest" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung" />
@@ -347,8 +348,6 @@ löschen” dem Nutzer ermöglichen, die Nachricht auch lokal im PS zu löschen.
 
 <p>Hinweis: Nachrichten an Versicherte sind immer an den Workflow des referenzierten E-Rezeptes gebunden. Wenn ein E-Rezept-Workflow, bspw. durch den Versicherten oder aufgrund von durch den Fachdienst durchgesetzte Löschfristen, auf dem Fachdienst gelöscht wird, dann werden auch alle zugehörigen Nachrichten gelöscht.</p>
 
-<h3 id="modulspezifische-anforderungen">Modulspezifische Anforderungen</h3>
-
 
 
 
@@ -366,9 +365,31 @@ löschen” dem Nutzer ermöglichen, die Nachricht auch lokal im PS zu löschen.
   <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
     <div class="container">  <!-- container -->
 
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="query-api-communication-req-fdv.html">&lt;vorherige</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">oben</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="artifacts.html">nächste&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Mar 6, 2026 10:48+0000">2026-03-06</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Mar 6, 2026 15:03+0000">2026-03-06</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -1,6 +1,6 @@
-# Communication message sent by patient to pharmacy to request the change of an existing ChargeItem by providing the AccessCode - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft
+# Communication message sent by patient to pharmacy to request the change of an existing ChargeItem by providing the AccessCode - E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte v1.1.0-draft
 
-Abrechnungsinformationen für PKV-Versicherte
+E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 
@@ -14,7 +14,7 @@ Profile: [Request for Modification on ChargeItemversion: null1.1.0-draft)](Struc
 
 Tag: Communication message sent by patient to pharmacy to request the change of an existing ChargeItem by providing the AccessCode (Details: [not stated] code null = 'Communication message sent by patient to pharmacy to request the change of an existing ChargeItem by providing the AccessCode')
 
-**basedOn**: [ChargeItem/a51520ec-0899-404f-bb97-fe7d461f90a8?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.2&canonical=http://fhir.org/packages/de.basisprofil.r4/ChargeItem/a51520ec-0899-404f-bb97-fe7d461f90a8?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea)
+**basedOn**: [ChargeItem/a51520ec-0899-404f-bb97-fe7d461f90a8?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.org/packages/de.basisprofil.r4/ChargeItem/a51520ec-0899-404f-bb97-fe7d461f90a8?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea)
 
 **status**: Unknown
 

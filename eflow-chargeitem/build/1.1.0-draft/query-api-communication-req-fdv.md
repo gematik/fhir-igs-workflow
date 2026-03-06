@@ -1,6 +1,6 @@
-# FdV-Anforderungen: Communication-Query - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft
+# FdV-Anforderungen: Communication-Query - E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte v1.1.0-draft
 
-Abrechnungsinformationen für PKV-Versicherte
+E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 
@@ -15,7 +15,7 @@ Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Communication`-
 
 ### Anforderungen aus der Core Spezifikation
 
-Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Communication`-Query-Endpunkte.
+Diese Seite beschreibt Anforderungen ein E-Rezept-FdV zur Nutzung der `Communication`-Query-Endpunkte.
 
 #### Nachrichten abrufen
 

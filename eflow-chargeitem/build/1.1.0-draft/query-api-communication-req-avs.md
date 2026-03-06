@@ -1,6 +1,6 @@
-# AVS-Anforderungen: Communication-Query - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft
+# AVS-Anforderungen: Communication-Query - E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte v1.1.0-draft
 
-Abrechnungsinformationen für PKV-Versicherte
+E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 
@@ -53,6 +53,4 @@ Der Fachdienst prüft anhand der Telematik-ID im ACCESS_TOKEN, ob die LEI der Ab
 Das PS der abgebenden LEI KANN im Anwendungsfall “Nachricht durch Abgebenden löschen” dem Nutzer ermöglichen, die Nachricht auch lokal im PS zu löschen.
 
 Hinweis: Nachrichten an Versicherte sind immer an den Workflow des referenzierten E-Rezeptes gebunden. Wenn ein E-Rezept-Workflow, bspw. durch den Versicherten oder aufgrund von durch den Fachdienst durchgesetzte Löschfristen, auf dem Fachdienst gelöscht wird, dann werden auch alle zugehörigen Nachrichten gelöscht.
-
-### Modulspezifische Anforderungen
 

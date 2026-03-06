@@ -1,6 +1,6 @@
-# ChargeItem with Bundles completed by Fachdienst - Abrechnungsinformationen für PKV-Versicherte v1.1.0-draft
+# ChargeItem with Bundles completed by Fachdienst - E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte v1.1.0-draft
 
-Abrechnungsinformationen für PKV-Versicherte
+E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 
@@ -31,9 +31,9 @@ Profile: [GEM_ERPCHRG_PR_ChargeItemversion: null1.1.0-draft)](StructureDefinitio
 
 **supportingInformation**: 
 
-* [http://fhir.abda.de/eRezeptAbgabedaten/StructureDefinition/DAV-PKV-PR-ERP-AbgabedatenBundle](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.2&canonical=http://fhir.org/packages/de.basisprofil.r4/Bundle/72bd741c-7ad8-41d8-97c3-9aabbdd0f5b4)
-* [https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.2&canonical=http://fhir.org/packages/de.basisprofil.r4/Bundle/200.000.000.000.000.01)
-* [https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.2&canonical=http://fhir.org/packages/de.basisprofil.r4/Bundle/0428d416-149e-48a4-977c-394887b3d85c)
+* [http://fhir.abda.de/eRezeptAbgabedaten/StructureDefinition/DAV-PKV-PR-ERP-AbgabedatenBundle](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.org/packages/de.basisprofil.r4/Bundle/72bd741c-7ad8-41d8-97c3-9aabbdd0f5b4)
+* [https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.org/packages/de.basisprofil.r4/Bundle/200.000.000.000.000.01)
+* [https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.org/packages/de.basisprofil.r4/Bundle/0428d416-149e-48a4-977c-394887b3d85c)
 
 
 

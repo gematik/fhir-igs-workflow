@@ -1709,7 +1709,7 @@
       },
       "type" : [{
         "code" : "Identifier",
-        "profile" : ["https://gematik.de/fhir/erpchrg/StructureDefinition/identifier-kvid-10"]
+        "profile" : ["http://fhir.de/StructureDefinition/identifier-kvid-10"]
       }],
       "condition" : ["ele-1"],
       "constraint" : [{
@@ -1883,6 +1883,12 @@
       "type" : [{
         "code" : "CodeableConcept"
       }],
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://fhir.de/CodeSystem/identifier-type-de-basis",
+          "code" : "KVZ10"
+        }]
+      },
       "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
@@ -1891,6 +1897,13 @@
         "expression" : "hasValue() or (children().count() > id.count())",
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "kvid-2",
+        "severity" : "warning",
+        "human" : "Die type Codes 'GKV' und 'PKV' haben den Status 'retired', daher sollen diese nicht mehr verwendet werden",
+        "expression" : "($this.coding.exists(system='http://fhir.de/CodeSystem/identifier-type-de-basis' and code='GKV') or $this.coding.exists(system='http://fhir.de/CodeSystem/identifier-type-de-basis' and code='PKV')).not()",
+        "source" : "http://fhir.de/StructureDefinition/identifier-kvid-10"
       }],
       "isModifier" : false,
       "isSummary" : true,
@@ -1901,7 +1914,7 @@
         }],
         "strength" : "extensible",
         "description" : "A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.",
-        "valueSet" : "http://hl7.org/fhir/ValueSet/identifier-type|4.0.1"
+        "valueSet" : "http://fhir.de/ValueSet/identifier-type-de-basis"
       },
       "mapping" : [{
         "identity" : "rim",
@@ -1935,7 +1948,7 @@
       "definition" : "Establishes the namespace for the value - that is, a URL that describes a set values that are unique.",
       "comment" : "Identifier.system is always case sensitive.",
       "requirements" : "There are many sets  of identifiers.  To perform matching of two identifiers, we need to know what set we're dealing with. The system identifies a particular set of unique identifiers.",
-      "min" : 0,
+      "min" : 1,
       "max" : "1",
       "base" : {
         "path" : "Identifier.system",
@@ -1979,7 +1992,7 @@
       "short" : "The value that is unique",
       "definition" : "The portion of the identifier typically relevant to the user and which is unique within the context of the system.",
       "comment" : "If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986.  The value's primary purpose is computational mapping.  As a result, it may be normalized for comparison purposes (e.g. removing non-significant whitespace, dashes, etc.)  A value formatted for human display can be conveyed using the [Rendered Value extension](http://hl7.org/fhir/R4/extension-rendered-value.html). Identifier.value is to be treated as case sensitive unless knowledge of the Identifier.system allows the processer to be confident that non-case-sensitive processing is safe.",
-      "min" : 0,
+      "min" : 1,
       "max" : "1",
       "base" : {
         "path" : "Identifier.value",
@@ -2000,6 +2013,13 @@
         "expression" : "hasValue() or (children().count() > id.count())",
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "kvid-1",
+        "severity" : "warning",
+        "human" : "Der unveränderliche Teil der KVID muss 10-stellig sein und mit einem Großbuchstaben anfangen",
+        "expression" : "matches('^[A-Z][0-9]{9}$')",
+        "source" : "http://fhir.de/StructureDefinition/identifier-kvid-10"
       }],
       "isModifier" : false,
       "isSummary" : true,
@@ -2091,7 +2111,7 @@
       },
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"]
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Organization"]
       }],
       "condition" : ["ele-1"],
       "constraint" : [{
@@ -2297,7 +2317,7 @@
       },
       "type" : [{
         "code" : "Identifier",
-        "profile" : ["https://gematik.de/fhir/erpchrg/StructureDefinition/identifier-iknr"]
+        "profile" : ["http://fhir.de/StructureDefinition/identifier-iknr"]
       }],
       "condition" : ["ele-1"],
       "constraint" : [{
@@ -4248,7 +4268,7 @@
       "min" : 1,
       "type" : [{
         "code" : "Identifier",
-        "profile" : ["https://gematik.de/fhir/erpchrg/StructureDefinition/identifier-kvid-10"]
+        "profile" : ["http://fhir.de/StructureDefinition/identifier-kvid-10"]
       }],
       "mustSupport" : true
     },
@@ -4262,7 +4282,7 @@
       "path" : "Consent.patient.identifier.assigner.identifier",
       "type" : [{
         "code" : "Identifier",
-        "profile" : ["https://gematik.de/fhir/erpchrg/StructureDefinition/identifier-iknr"]
+        "profile" : ["http://fhir.de/StructureDefinition/identifier-iknr"]
       }],
       "mustSupport" : true
     },
