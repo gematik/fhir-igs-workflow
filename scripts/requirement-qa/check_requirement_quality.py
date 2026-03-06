@@ -40,6 +40,7 @@ REQ_BLOCK_RE = re.compile(
 
 ACTOR_RE = re.compile(r"<actor\b[^>]*\bname=\"([^\"]+)\"[^>]*>", re.DOTALL)
 CONFORMANCE_RE = re.compile(r"\bconformance=\"([^\"]+)\"")
+KEY_RE = re.compile(r"\bkey=\"([^\"]+)\"")
 TAG_RE = re.compile(r"<[^>]+>")
 LEADING_SUBJECT_RE = re.compile(r"^(Der|Das|Die)\s+([A-ZÄÖÜ][\wÄÖÜäöüß\-/]*)")
 GENERIC_LEADING_SUBJECTS: Set[str] = {
@@ -88,6 +89,7 @@ class Finding:
     file_path: Path
     line: int
     aid: str
+    key: str
     message: str
 
 
@@ -242,6 +244,8 @@ def check_file(file_path: Path, fix: bool) -> CheckResult:
         attrs = match.group("attrs") or ""
         body = match.group("body") or ""
         aid = match.group("aid") or "(ohne A_ID)"
+        key_match = KEY_RE.search(attrs)
+        key = key_match.group(1) if key_match else "(ohne key)"
 
         line = line_for_offset(content, start)
 
@@ -257,6 +261,7 @@ def check_file(file_path: Path, fix: bool) -> CheckResult:
                         file_path=file_path,
                         line=line_for_offset(content, start + m.start()),
                         aid=aid,
+                        key=key,
                         message=f"unknown actor in tag: '{actor_name}'",
                     )
                 )
@@ -271,6 +276,7 @@ def check_file(file_path: Path, fix: bool) -> CheckResult:
                     file_path=file_path,
                     line=line,
                     aid=aid,
+                    key=key,
                     message=f"unknown actor at text start: '{unknown_subject}'",
                 )
             )
@@ -287,6 +293,7 @@ def check_file(file_path: Path, fix: bool) -> CheckResult:
                     file_path=file_path,
                     line=line,
                     aid=aid,
+                    key=key,
                     message=(
                         f"conformance mismatch: '{actual_conf}' but text implies '{expected_conf}'"
                     ),
@@ -310,6 +317,7 @@ def check_file(file_path: Path, fix: bool) -> CheckResult:
                         file_path=file_path,
                         line=line,
                         aid=aid,
+                        key=key,
                         message=(
                             f"actor mismatch: actors={actor_names} but text starts with "
                             f"'{subject_prefix}' -> expected actor='{expected_actor}'"
@@ -331,6 +339,7 @@ def check_file(file_path: Path, fix: bool) -> CheckResult:
                         file_path=file_path,
                         line=line,
                         aid=aid,
+                        key=key,
                         message=(
                             f"non-canonical actor subject: '{subject_prefix}' -> "
                             f"'{canonical_subject}'"
@@ -372,11 +381,6 @@ def main() -> int:
         help="Apply automatic fixes for conformance/actor/subject mismatches",
     )
     parser.add_argument(
-        "--output",
-        default="qa/requirement-quality-report.txt",
-        help="Write report to this file (default: qa/requirement-quality-report.txt)",
-    )
-    parser.add_argument(
         "--output-csv",
         default="qa/requirement-quality-report.csv",
         help="Write CSV report to this file (default: qa/requirement-quality-report.csv)",
@@ -403,7 +407,10 @@ def main() -> int:
 
     for finding in all_findings:
         report_lines.append(
-            f"[ISSUE] {finding.file_path}:{finding.line} {finding.aid}: {finding.message}"
+            (
+                f"[ISSUE] {finding.file_path}:{finding.line} {finding.aid} "
+                f"{finding.key}: {finding.message}"
+            )
         )
 
     if all_unknown_actors:
@@ -417,15 +424,11 @@ def main() -> int:
 
     report_text = "\n".join(report_lines) + "\n"
 
-    output_path = Path(args.output)
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(report_text, encoding="utf-8")
-
     csv_path = Path(args.output_csv)
     csv_path.parent.mkdir(parents=True, exist_ok=True)
     with csv_path.open("w", encoding="utf-8", newline="") as fp:
         writer = csv.writer(fp)
-        writer.writerow(["type", "file", "line", "aid", "message"])
+        writer.writerow(["type", "file", "line", "aid", "key", "message"])
         for finding in all_findings:
             writer.writerow(
                 [
@@ -433,6 +436,7 @@ def main() -> int:
                     str(finding.file_path),
                     finding.line,
                     finding.aid,
+                    finding.key,
                     finding.message,
                 ]
             )
@@ -440,6 +444,7 @@ def main() -> int:
             writer.writerow(
                 [
                     "UNKNOWN_ACTOR",
+                    "",
                     "",
                     "",
                     "",
@@ -452,6 +457,7 @@ def main() -> int:
                 "",
                 "",
                 "",
+                "",
                 (
                     f"Checked {len(files)} file(s), found {len(all_findings)} issue(s), "
                     f"unknown actors: {len(all_unknown_actors)}, changed files: {changed_files}."
@@ -460,7 +466,6 @@ def main() -> int:
         )
 
     print(report_text, end="")
-    print(f"Report written to: {output_path}")
     print(f"CSV report written to: {csv_path}")
 
     # Non-zero when issues remain (also in --fix mode, to force review).
