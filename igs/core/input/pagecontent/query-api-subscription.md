@@ -14,7 +14,7 @@ Die Nachricht zur Interaktion mit Subscription als FHIR-Ressource _Subscription_
 ### Anforderungen an Schnittstelle
 
 - [Server Anforderungen zur Subscription-Query](./query-api-subscription-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
-- [Client-Anforderungen zur Subscription-Query](./link.html): Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.
+- [Client-Anforderungen zur Subscription-Query](./query-api-subscription-req-avs.html): Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.
 
 ### Resource API
 
