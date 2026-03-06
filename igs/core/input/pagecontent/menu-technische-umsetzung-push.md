@@ -187,8 +187,6 @@ Ansonsten:<br>
 
 </requirement>
 
-Die Datenstruktur des Nachrichteninhalts ist in [gemSpec_DM_eRp]#TAB_eRpDM_004 beschrieben.
-
 <!-- A_28116 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-531" title="E-Rezept-Fachdienst - Push Notification senden - verpflichtende Verschlüsselung" version="0">
     <meta lockversion="false"/>
@@ -207,4 +205,76 @@ Die Vorgaben für die Verschlüsselung sind in `A_27161-* - Fachdienst - Push No
         <testProcedure id="Produkttest"/>
     </actor>
      Der E-Rezept-Fachdienst MUSS beim Erstellen einer Push Notification die Identifier des zugehörigen Protokolleintrags (AuditEvent.id) des Triggers im Identifier-Feld des äußeren Notification-Objekts (notification.identifier) angeben.
+</requirement>
+
+### Push Notification Datenstruktur
+
+<!-- A_28124 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-533" title="E-Rezept - Push Notifications - Datenstruktur Nachrichteninhalte" version="0">
+    <meta lockversion="false"/>
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Der E-Rezept-Fachdienst und das E-Rezept-FdV MÜSSEN für den Anwendungsfall "Push Notifications" Nachrichteninhalte mit der folgenden Datenstruktur im JSON Format unterstützen:
+
+<table>
+<thead>
+<tr>
+<th>Attribut</th>
+<th>verpflichtend</th>
+<th>Beschreibung</th>
+<th>zulässige Werte</th>
+<th>Beispiel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ChannelId</td>
+<td>ja</td>
+<td>Der Trigger, der die Push Notification initiiert hat.</td>
+<td>bis zu 30 Stellen, UTF-8</td>
+<td>erp.communication.new</td>
+</tr>
+<tr>
+<td>Identifier</td>
+<td>ja</td>
+<td>Ein Identifier, der als Kontext zur Nachricht dient.</td>
+<td>bis zu 50 Stellen, UTF-8</td>
+<td>160.000.000.000.123.76</td>
+</tr>
+<tr>
+<td>IdentifierType</td>
+<td>ja</td>
+<td>Der Art Identifier, der mitgeschickt wird.</td>
+<td>bis zu 20 Stellen, UTF-8</td>
+<td>TaskId</td>
+</tr>
+<tr>
+<td>Product</td>
+<td>ja</td>
+<td>Der Name des verordneten bzw. abgegebenen Produkts (Medikament oder DiGA).</td>
+<td>bis zu 100 Stellen, UTF-8</td>
+<td>Sumatriptan-1a Pharma 100 mg Tabletten</td>
+</tr>
+<tr>
+<td>ActorName</td>
+<td>ja</td>
+<td>Der Name des Akteurs. Das kann zum Beispiel der Name der Apotheke oder des Kostenträgers sein.</td>
+<td>bis zu 100 Stellen, UTF-8</td>
+<td>Meine Apotheke</td>
+</tr>
+<tr>
+<td>Message</td>
+<td>nein</td>
+<td>Die Nachricht, die an den Versicherten verschickt wird.<br>Nachrichten mit mehr als 240 Zeichen müssen nach 237 Zeichen abgeschnitten und mit drei Punkten (…) ergänzt werden.</td>
+<td>bis zu 240 Stellen, UTF-8</td>
+<td>Wir möchten Sie informieren, dass Ihre bestellten Medikamente zur Abholung bereitstehen.</td>
+</tr>
+</tbody>
+</table>
+
+<div><figcaption><strong>Tabelle: </strong>Push Notification Datenstruktur Nachrichteninhalte</figcaption></div>
 </requirement>
