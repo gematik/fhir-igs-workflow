@@ -57,6 +57,11 @@ if %HAS_FILTER%==0 (
         if not exist "%%~fG\input-cache" mkdir "%%~fG\input-cache" >nul 2>&1
         if not exist "%%~fG\input-cache\publisher.jar" copy /Y "%ROOT_DIR%input-cache\publisher.jar" "%%~fG\input-cache\publisher.jar" >nul
       )
+      call :run_merge_use_cases "%%~nxG"
+      if errorlevel 1 (
+        popd >nul
+        exit /b 1
+      )
       if exist "%ROOT_DIR%_genonce.bat" (
         echo [build-all] Running _genonce.bat
         call "%ROOT_DIR%_genonce.bat"
@@ -116,6 +121,11 @@ if exist "%ROOT_DIR%input-cache\publisher.jar" (
   if not exist "%IG_DIR%\input-cache" mkdir "%IG_DIR%\input-cache" >nul 2>&1
   if not exist "%IG_DIR%\input-cache\publisher.jar" copy /Y "%ROOT_DIR%input-cache\publisher.jar" "%IG_DIR%\input-cache\publisher.jar" >nul
 )
+call :run_merge_use_cases "%IG_NAME%"
+if errorlevel 1 (
+  popd >nul
+  exit /b 1
+)
 if exist "%ROOT_DIR%_genonce.bat" (
   echo [build-all] Running _genonce.bat
   call "%ROOT_DIR%_genonce.bat"
@@ -130,6 +140,29 @@ if exist "%ROOT_DIR%_genonce.bat" (
   exit /b 1
 )
 popd >nul
+exit /b 0
+
+:run_merge_use_cases
+set "IG_SHORT=%~1"
+if exist "%ROOT_DIR%scripts\merge-use-cases.sh" (
+  where bash >nul 2>&1
+  if errorlevel 1 (
+    echo [build-all] Warning: bash not found; skipping merge-use-cases.sh
+    exit /b 0
+  )
+  echo [build-all] Running merge-use-cases.sh for !IG_SHORT!
+  set "MERGE_SCRIPT=%ROOT_DIR%scripts\merge-use-cases.sh"
+  for /f "usebackq delims=" %%P in (`bash -lc "cygpath -u \"!MERGE_SCRIPT!\""`) do set "MERGE_SCRIPT_POSIX=%%P"
+  if not defined MERGE_SCRIPT_POSIX (
+    echo [build-all] Error: failed to convert path for merge-use-cases.sh
+    exit /b 1
+  )
+  bash "!MERGE_SCRIPT_POSIX!" "!IG_SHORT!"
+  if errorlevel 1 (
+    echo [build-all] Error: merge-use-cases.sh failed for !IG_SHORT!
+    exit /b 1
+  )
+)
 exit /b 0
 
 :help

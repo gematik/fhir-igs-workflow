@@ -1,22 +1,22 @@
 actor:
 - E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: 0a69f01b7a7514507f4a4799170ea2c2ff8ffd797c5a82c2fb08352e7d01dfa0
+content_hash: 1bdeca1f1fef855c19fbbe8ec36e4f492364faffe49e19bdd62089be806f9e51
 created: '2026-01-27T12:10:05.162972'
-date: '2026-01-27T12:10:05.162980'
+date: '2026-02-26T14:23:11.631685'
 key: IG-ERP-CHRG-189
-modified: '2026-01-27T12:10:05.162978'
+modified: '2026-02-26T14:23:11.631685'
 release_status: NEW
-source: input/pagecontent/query-api-chargeitem.md
+source: input/pagecontent/query-api-chargeitem-req-fd.md
 status: ACTIVE
 test_procedures:
   E-Rezept-Fachdienst:
   - Produkttest
 text: Der E-Rezept-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
-  /ChargeItem sicherstellen, dass der im URL-Parameter "task=..." referenzierte Task
-  den Flowtype Task.extension:flowType = 200 oder 209 besitzt und bei fehlgeschlagener
-  Prüfung mit dem HTTP-Fehlercode 400 abbrechen, damit nur eine Abrechnungsinformation
-  für E-Rezepte mit zulässigen Flowtype angelegt wird.
+  /ChargeItem sicherstellen, dass der zum Task zugehörige Verordnungsdatensatz unter
+  Coverage.type.coding.code den Wert "PKV" enthält und bei fehlgeschlagener Prüfung
+  mit dem HTTP-Fehlercode 400 abbrechen, damit nur eine Abrechnungsinformation für
+  E-Rezepte mit zulässigen Kostenträger angelegt wird.
 title: E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Prüfung Flowtype
   Task
 version: 0
