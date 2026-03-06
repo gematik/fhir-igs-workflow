@@ -93,7 +93,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios "Abrechnun
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- Berechtigen der Apotheke zum Ändern des PKV-Abgabedatensatzes -->
-{% assign use_case = use_cases | where: "id", "accesscode-an-apotheke-übermitteln" | first %}
+{% assign use_case = use_cases | where: "id", "chrg-accesscode-an-apotheke-übermitteln" | first %}
 <a id="{{ use_case.anchor }}"></a>
 ### {{ use_case.title }}
 
