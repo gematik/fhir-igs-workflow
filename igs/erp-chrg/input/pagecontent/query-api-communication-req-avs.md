@@ -3,6 +3,3 @@ Diese Seite beschreibt Anforderungen ein AVS zur Nutzung der `Communication`-Que
 ### Anforderungen aus der Core Spezifikation
 
 {% include core.query-api-communication-req-avs.md %}
-
-### Modulspezifische Anforderungen
-
