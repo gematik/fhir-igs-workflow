@@ -4,9 +4,9 @@
 Checks:
 - conformance value against requirement text modal verb:
   - MUSS -> SHALL
-  - MUSS NICHT / DARF NICHT -> SHALL NOT
+    - DARF ... NICHT -> SHALL NOT
   - SOLL -> SHOULD
-  - KANN / DARF -> MAY
+    - KANN -> MAY
 - actor name against beginning of requirement text:
   - Der E-Rezept-Fachdienst -> E-Rezept-Fachdienst
   - Das E-Rezept-FdV -> eRp_FdV
@@ -41,6 +41,13 @@ REQ_BLOCK_RE = re.compile(
 ACTOR_RE = re.compile(r"<actor\b[^>]*\bname=\"([^\"]+)\"[^>]*>", re.DOTALL)
 CONFORMANCE_RE = re.compile(r"\bconformance=\"([^\"]+)\"")
 TAG_RE = re.compile(r"<[^>]+>")
+LEADING_SUBJECT_RE = re.compile(r"^(Der|Das|Die)\s+([A-ZÄÖÜ][\wÄÖÜäöüß\-/]*)")
+GENERIC_LEADING_SUBJECTS: Set[str] = {
+    "Der Hersteller",
+    "Der Anbieter",
+    "Das Clientsystem",
+    "Das Primärsystem",
+}
 
 
 KNOWN_ACTORS: Set[str] = {
@@ -128,13 +135,37 @@ def detect_subject(text: str) -> Optional[Tuple[str, str, str]]:
     return None
 
 
+def detect_unknown_leading_subject(text: str) -> Optional[str]:
+    """Return a leading subject like 'Der Peter' when it looks actor-like but unknown."""
+    if detect_subject(text):
+        return None
+
+    match = LEADING_SUBJECT_RE.match(text)
+    if not match:
+        return None
+
+    candidate = f"{match.group(1)} {match.group(2)}"
+
+    # Generic subject starts are valid in many requirements and should not be
+    # treated as unknown actors.
+    if candidate in GENERIC_LEADING_SUBJECTS:
+        return None
+
+    # Only flag compact actor-like starts, e.g. "Der Peter MUSS ...".
+    # This avoids noisy matches for longer noun phrases.
+    if not re.match(r"^(Der|Das|Die)\s+[A-ZÄÖÜ][\wÄÖÜäöüß\-/]*\s+(MUSS|SOLL|KANN|DARF)\b", text):
+        return None
+
+    return candidate
+
+
 def line_for_offset(content: str, offset: int) -> int:
     return content.count("\n", 0, offset) + 1
 
 
 def iter_target_files(targets: Sequence[str]) -> Iterable[Path]:
     if not targets:
-        targets = ["igs"]
+        targets = ["igs/*/input/pagecontent"]
 
     seen: Set[Path] = set()
     for target in targets:
@@ -147,6 +178,12 @@ def iter_target_files(targets: Sequence[str]) -> Iterable[Path]:
                     if resolved not in seen:
                         seen.add(resolved)
                         yield matched
+                elif matched.is_dir():
+                    for md_file in matched.rglob("*.md"):
+                        resolved = md_file.resolve()
+                        if resolved not in seen:
+                            seen.add(resolved)
+                            yield md_file
             continue
 
         if path.is_file() and path.suffix.lower() == ".md":
@@ -157,6 +194,32 @@ def iter_target_files(targets: Sequence[str]) -> Iterable[Path]:
             continue
 
         if path.is_dir():
+            # If an IG root is passed (e.g. igs/core), only scan input/pagecontent.
+            if (path / "input" / "pagecontent").is_dir():
+                scan_dir = path / "input" / "pagecontent"
+                for md_file in scan_dir.rglob("*.md"):
+                    resolved = md_file.resolve()
+                    if resolved not in seen:
+                        seen.add(resolved)
+                        yield md_file
+                continue
+
+            # If the igs root is passed explicitly, scan each IG's input/pagecontent.
+            if path.name == "igs":
+                for ig_dir in path.iterdir():
+                    if not ig_dir.is_dir():
+                        continue
+                    scan_dir = ig_dir / "input" / "pagecontent"
+                    if not scan_dir.is_dir():
+                        continue
+                    for md_file in scan_dir.rglob("*.md"):
+                        resolved = md_file.resolve()
+                        if resolved not in seen:
+                            seen.add(resolved)
+                            yield md_file
+                continue
+
+            # Fallback for explicit non-IG directories.
             for md_file in path.rglob("*.md"):
                 resolved = md_file.resolve()
                 if resolved not in seen:
@@ -182,14 +245,35 @@ def check_file(file_path: Path, fix: bool) -> CheckResult:
 
         line = line_for_offset(content, start)
 
-        actor_match = ACTOR_RE.search(body)
-        actor_name = actor_match.group(1) if actor_match else ""
+        actor_matches = list(ACTOR_RE.finditer(body))
+        actor_names = [m.group(1) for m in actor_matches]
 
-        if actor_name and actor_name not in KNOWN_ACTORS:
-            unknown_actors.add(actor_name)
+        for m in actor_matches:
+            actor_name = m.group(1)
+            if actor_name not in KNOWN_ACTORS:
+                unknown_actors.add(actor_name)
+                findings.append(
+                    Finding(
+                        file_path=file_path,
+                        line=line_for_offset(content, start + m.start()),
+                        aid=aid,
+                        message=f"unknown actor in tag: '{actor_name}'",
+                    )
+                )
 
         body_after_actor = re.sub(r"^.*?</actor>", "", body, flags=re.DOTALL)
         body_plain = normalize_space(strip_tags(body_after_actor))
+
+        unknown_subject = detect_unknown_leading_subject(body_plain)
+        if unknown_subject:
+            findings.append(
+                Finding(
+                    file_path=file_path,
+                    line=line,
+                    aid=aid,
+                    message=f"unknown actor at text start: '{unknown_subject}'",
+                )
+            )
 
         expected_conf = get_modal_expected_conformance(body_plain)
         conf_match = CONFORMANCE_RE.search(attrs)
@@ -220,28 +304,28 @@ def check_file(file_path: Path, fix: bool) -> CheckResult:
         if subject_info:
             subject_prefix, expected_actor, canonical_subject = subject_info
 
-            if actor_name and actor_name != expected_actor:
+            if actor_names and expected_actor not in actor_names:
                 findings.append(
                     Finding(
                         file_path=file_path,
                         line=line,
                         aid=aid,
                         message=(
-                            f"actor mismatch: actor='{actor_name}' but text starts with "
+                            f"actor mismatch: actors={actor_names} but text starts with "
                             f"'{subject_prefix}' -> expected actor='{expected_actor}'"
                         ),
                     )
                 )
-                if fix and actor_match:
+                if fix and len(actor_matches) == 1:
                     new_block = re.sub(
                         r'(<actor\b[^>]*\bname=")([^"]+)("[^>]*>)',
                         rf"\g<1>{expected_actor}\g<3>",
                         new_block,
                         count=1,
                     )
-                    actor_name = expected_actor
+                    actor_names = [expected_actor]
 
-            if actor_name == expected_actor and subject_prefix != canonical_subject:
+            if expected_actor in actor_names and subject_prefix != canonical_subject:
                 findings.append(
                     Finding(
                         file_path=file_path,
@@ -280,7 +364,7 @@ def main() -> int:
     parser.add_argument(
         "targets",
         nargs="*",
-        help="Files/directories/globs to scan (default: igs)",
+        help="Files/directories/globs to scan (default: igs/*/input/pagecontent)",
     )
     parser.add_argument(
         "--fix",
