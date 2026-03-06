@@ -3,7 +3,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Task`-
 <!-- A_19347-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE--6" title="E-Rezept-FdV: E-Rezepte abrufen - Liste E-Rezepte abrufen" version="0">
     <meta lockversion="false"/>
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
      Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezepte abrufen" zum Herunterladen alle E-Rezepte des Nutzers die HTTP-Operation GET /Task mit ACCESS_TOKEN im Authorization-Header ausführen.
@@ -12,7 +12,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Task`-
 <!-- A_19348-01 -->
 <requirement conformance="MAY" key="IG-TIFLOW-CORE-7" title="E-Rezept-FdV: E-Rezept abrufen - E-Rezepte lokal speichern" version="0">
     <meta lockversion="false"/>
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
      Das E-Rezept-FdV KANN es dem Versicherten ermöglichen, die vom E-Rezept-Fachdienst heruntergeladenen E-Rezepte im lokalen Speicher persistent abzulegen.
@@ -25,7 +25,7 @@ Die Alternative 1 wird genutzt, wenn nur die Informationen zu einem E-Rezept vom
 <!-- A_19350-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-8" title="E-Rezept-FdV: E-Rezepte abrufen -Spezifisches E-Rezept herunterladen" version="0">
     <meta lockversion="false"/>
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
      Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezepte abrufen" zum Herunterladen eines spezifischen E-Rezepts des Nutzers die HTTP-Operation GET /Task/&lt;id&gt; mit ACCESS_TOKEN im Authorization-Header Task-ID in URL &lt;id&gt; ausführen.
@@ -42,7 +42,7 @@ Die Alternative 2 wird genutzt, wenn der Nutzer als Vertreter eines Versicherten
 <!-- A_19351-01 -->
 <requirement conformance="MAY" key="IG-TIFLOW-CORE-9" title="E-Rezept-FdV: E-Rezepte abrufen - E-Rezept mit AccessCode herunterladen" version="0">
     <meta lockversion="false"/>
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
      Das E-Rezept-FdV KANN im Anwendungsfall "E-Rezepte abrufen" zum Herunterladen eines E-Rezepts als Vertreter die HTTP-Operation GET /Task/&lt;id&gt; mit ACCESS_TOKEN im http-Header Task-ID in URL &lt;id&gt; AccessCode im http-Header ausführen.

@@ -89,7 +89,7 @@ Das Primärsystem soll für die Einführung des patienten-individuellen Konfigur
 <!-- A_23566 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-RX-130" title="PS verordnende LEI: UX - Optimaler Klickpfad" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_verordnend">
+    <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
      Das PS der abgebenden LEI SOLL zum Erstellen von neuen E-Rezepten folgenden Klickpfad umsetzen.
@@ -254,7 +254,7 @@ Hinweis: Mit der Umsetzung der Aufgabenliste für das Signieren der Verordnungen
 
 
 <!-- A_23573 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-RX-137" title="PS verordnende LEI: UX - Optimaler Klickpfad - Hintergrund-Signaturprozess und Fehleranzeigen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-137" title="PS verordnende LEI: UX - Optimaler Klickpfad - Hintergrund-Signaturprozess und Fehleranzeigen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -434,7 +434,7 @@ Für die Verordnungen von E-T-Rezepten sind gesonderte UX-Vorgaben definiert, um
 </requirement>
 
 <!-- A_27861 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-152" title="PS verordnende LEI: UX - E-T-Rezept – Automatische Berechnung der Reichdauer" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-RX-152" title="PS verordnende LEI: UX - E-T-Rezept – Automatische Berechnung der Reichdauer" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -508,7 +508,7 @@ Für die Verordnungen von E-T-Rezepten sind gesonderte UX-Vorgaben definiert, um
 </requirement>
 
 <!-- A_23592 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-RX-159" title="PS verordnende LEI: UX - MVO - Unterstützung bei Einlösefristen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-159" title="PS verordnende LEI: UX - MVO - Unterstützung bei Einlösefristen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -675,7 +675,7 @@ Folgerezeptes In den Fällen, wo der Patient nicht in der Praxis anwesend ist, w
 </requirement>
 
 <!-- A_23603 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-173" title="PS verordnende LEI: Benachrichtigungssystem - Schützenswerte Informationen" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-RX-173" title="PS verordnende LEI: Benachrichtigungssystem - Schützenswerte Informationen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
