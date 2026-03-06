@@ -144,7 +144,7 @@ Für die Authentisierung erstellt der E-Rezept-Fachdienst einen self-signed Bear
 Für die Bezeichnung der Ressourcen Records siehe "A_24592-* Anbieter ePA-Aktensystem - Registrierung an übergreifender ePA-Domäne". Die Informationen zu jedem ePA-Aktensystem enthalten den Endpunkt für den Authorization Service [I_Authorization_Service], Medication Service [I_Medication_Service] und Information Service [I_Information_Service].
 
 <!-- A_25938 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-506" title="E-Rezept-Fachdienst - ePA - Aktualisierung Cache ePA-Aktensysteme" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-506" title="E-Rezept-Fachdienst - ePA - Aktualisierung Cache ePA-Aktensysteme" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -164,7 +164,7 @@ Für die Bezeichnung der Ressourcen Records siehe "A_24592-* Anbieter ePA-Aktens
 </requirement>
 
 <!-- A_25940 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-508" title="E-Rezept-Fachdienst - ePA - Aktualisierung Cache Zuordnung KVNR zu ePA-Aktensystem" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-508" title="E-Rezept-Fachdienst - ePA - Aktualisierung Cache Zuordnung KVNR zu ePA-Aktensystem" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
