@@ -6,8 +6,8 @@ Die Nachricht wird als HTTP `DELETE` an `/$revoke-eu-access-permission` gesendet
 
 ### Anforderungen an die Schnittstelle
 
-- [Server Anforderungen zu `$revoke-eu-access-permission`](./revoke-eu-access-permission-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
-- [FdV-Anforderungen zu `$revoke-eu-access-permission`](./revoke-eu-access-permission-req-fd.html): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
+- [Server Anforderungen zu `$revoke-eu-access-permission`](./op-revoke-eu-access-permission-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [FdV-Anforderungen zu `$revoke-eu-access-permission`](./op-revoke-eu-access-permission-req-fd.html): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
 
 ### API Beschreibung
 

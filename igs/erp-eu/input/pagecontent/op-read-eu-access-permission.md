@@ -6,8 +6,8 @@ Die Nachricht wird als HTTP `GET` an `/$read-eu-access-permission` gesendet.
 
 ### Anforderungen an Schnittstelle
 
-- [Server Anforderungen zu `$read-eu-access-permission`](./read-eu-access-permission-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
-- [FdV-Anforderungen zu `$read-eu-access-permission`](./read-eu-access-permission-req-fd.html): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
+- [Server Anforderungen zu `$read-eu-access-permission`](./op-read-eu-access-permission-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [FdV-Anforderungen zu `$read-eu-access-permission`](./op-read-eu-access-permission-req-fd.html): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
 
 ### API Beschreibung
 
