@@ -101,34 +101,23 @@ def normalize_space(text: str) -> str:
 
 
 def get_modal_expected_conformance(text: str) -> Optional[str]:
-    upper = text.upper()
+    # Case-sensitive on purpose: only all-caps modals are normative markers.
+    # This avoids matching incidental lowercase words like "... zuweisen kann".
+    sentences = re.split(r"[.!?;]", text)
 
-    # Find first modal keyword in reading order.
-    modal_match = re.search(r"\b(MUSS|SOLL|KANN|DARF)\b", upper)
-    if not modal_match:
-        return None
+    # SHALL NOT when text contains DARF ... NICHT within one sentence fragment.
+    for sentence in sentences:
+        if re.search(r"\bDARF\b.*?\bNICHT\b", sentence):
+            return "SHALL NOT"
 
-    modal = modal_match.group(1)
-    rest = upper[modal_match.end() :]
+    if re.search(r"\bMUSS\b", text):
+        return "SHALL"
 
-    # Treat non-adjacent negative forms like "DARF ... NICHT" as negative,
-    # but only within the same sentence fragment.
-    sentence_end = len(rest)
-    for sep in (".", "!", "?", ";"):
-        idx = rest.find(sep)
-        if idx != -1:
-            sentence_end = min(sentence_end, idx)
-    window = rest[:sentence_end]
-    is_negative = re.search(r"\bNICHT\b", window) is not None
-
-    if modal == "MUSS":
-        return "SHALL NOT" if is_negative else "SHALL"
-    if modal == "SOLL":
+    if re.search(r"\bSOLL\b", text):
         return "SHOULD"
-    if modal == "KANN":
+
+    if re.search(r"\bKANN\b", text):
         return "MAY"
-    if modal == "DARF":
-        return "SHALL NOT" if is_negative else "MAY"
 
     return None
 
