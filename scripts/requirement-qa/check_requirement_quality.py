@@ -12,8 +12,8 @@ Checks:
   - Das E-Rezept-FdV -> eRp_FdV
   - Das PS der abgebenden LEI -> PS_E-Rezept_abgebend
   - Das PS der verordnenden LEI -> PS_E-Rezept_verordnend
-    - Das Clientsystem Kostenträger -> CS_E-Rezept_KTR
-    - Anbieter E-Rezept-Fachdienst -> Anb_eRp_FD
+  - Das Clientsystem Kostenträger -> CS_E-Rezept_KTR
+  - Anbieter E-Rezept-Fachdienst -> Anb_eRp_FD
 - reports unknown actor names
 - canonicalizes alias subject phrase:
     - Das CS Kostenträger -> Das Clientsystem Kostenträger
@@ -44,13 +44,12 @@ TAG_RE = re.compile(r"<[^>]+>")
 
 
 KNOWN_ACTORS: Set[str] = {
-    "E-Rezept-Fachdienst",
+    "E-Rezept-Fachdienst", #TODO: change to eRp_FD und in allen AFOs
     "eRp_FdV",
     "PS_E-Rezept_abgebend",
     "PS_E-Rezept_verordnend",
     "CS_E-Rezept_KTR",
     "Anb_eRp_FD",
-    "Anbieter E-Rezept-Fachdienst",
 }
 
 
