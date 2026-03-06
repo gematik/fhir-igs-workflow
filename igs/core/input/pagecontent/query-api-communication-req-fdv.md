@@ -1,12 +1,12 @@
-Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Communication`-Query-Endpunkte.
+Diese Seite beschreibt Anforderungen ein E-Rezept-FdV zur Nutzung der `Communication`-Query-Endpunkte.
 
 ### Nachrichten abrufen
 
 
 <!-- A_19205 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-183" title="Nachrichten abrufen - Nachrichten von Fachdienst herunterladen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-276" title="Nachrichten abrufen - Nachrichten von Fachdienst herunterladen" version="0">
     <meta lockversion="false"/>
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Nachrichten von Apotheken anzeigen" zum Herunterladen von Nachrichten vom E-Rezept-Fachdienst die HTTP-Operation GET /Communication mit
@@ -24,9 +24,9 @@ Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Communication`-
 Die für die Nachricht zu verwendende Communication-Ressource wird modul- und anwendungsfall-spezifisch festgelegt.
 
 <!-- A_19203 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-183" title="Nachricht senden - Nachricht auf Fachdienst einstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-277" title="Nachricht senden - Nachricht auf Fachdienst einstellen" version="0">
     <meta lockversion="false"/>
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Nachricht senden" zum Übermitteln einer Nachricht über den E-Rezept-Fachdienst die HTTP-Operation POST /Communication mit
@@ -46,9 +46,9 @@ Das E-Rezept-FdV MUSS im Anwendungsfall "Nachricht löschen" es dem Nutzer ermö
 Das E-Rezept-FdV MUSS im Anwendungsfall "Nachricht löschen" vom Nutzer eine Bestätigung einholen, dass die selektierte Nachricht gelöscht werden sollen und die Möglichkeit geben, das Löschen abzubrechen.
 
 <!-- A_21526-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-183" title="E-Rezept-FdV: Nachricht löschen - Löschrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-278" title="E-Rezept-FdV: Nachricht löschen - Löschrequest" version="0">
     <meta lockversion="false"/>
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Nachrichten löschen" für die zu löschende Nachricht die HTTP-Operation DELETE /Communication/&lt;id&gt; des E-Rezept-Fachdienstes mit

@@ -1,0 +1,32 @@
+@startuml
+title Zugriffsberechtigung durch Versicherten erstellen
+
+actor Apotheke
+actor Versicherte
+participant "E-Rezept-FdV" as FdV
+participant "E-Rezept-Fachdienst" as FD
+participant "Identity Provider" as IdP
+
+FdV --> Versicherte : [1] mögliche Länder anzeigen
+Versicherte -> FdV : [2] Land auswählen
+Versicherte -> FdV : [3] Zugriffscode anfordern
+FdV -> FdV : [4] zufälligen Zugriffscode erzeugen
+
+opt
+  ref over FdV, IdP : [5] UC5.1 - AuthN-Token durch Versicherten anfordern
+  FdV -> IdP : [5] UC5.1 - AuthN-Token durch Versicherten anfordern
+end
+
+FdV -> FD : [6] Zugriffscode und Ländercode übermitteln
+FD -> FD : [7] Einwilligung prüfen
+FD -> FD : [8] Prüfen, ob einlösbare E-Rezepte existieren
+FD -> FD : [9] Gültigkeit Ländercode prüfen
+FD -> FD : [10] Format Zugriffscode prüfen
+FD -> FD : [11] ggf. bestehenden Zugriffscode löschen
+FD -> FD : [12] Zugriffscode speichern
+FD --> FdV : [13] :Zugriffscode gültig bis
+
+FdV --> Versicherte : [14] Zugriffscode und Gültigkeitszeitraum anzeigen
+Versicherte -> Apotheke : [15] Zugriffscode übermitteln
+
+@enduml

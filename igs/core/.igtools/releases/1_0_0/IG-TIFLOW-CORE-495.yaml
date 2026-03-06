@@ -1,0 +1,21 @@
+actor:
+- CS_E-Rezept_KTR
+conformance: SHALL
+content_hash: be644e996e24781dea8b53d59618dc9d9dd46cbea06cb9adf5d431b630929ea6
+created: '2026-03-05T08:56:21.812207'
+date: '2026-03-05T08:56:21.812210'
+key: IG-TIFLOW-CORE-495
+modified: '2026-03-05T08:56:21.812209'
+release_status: NEW
+source: input/pagecontent/op-reject-req-ktr.md
+status: ACTIVE
+test_procedures:
+  CS_E-Rezept_KTR:
+  - Herstellererklärung
+text: "Das CS Kostenträger MUSS im Anwendungsfall \"Verordnung durch Clientsystem\
+  \ zurückgeben\" für die zurückzugebende Verordnung die HTTP-Operation POST /Task/&lt;id&gt;/$reject\
+  \ mit \n  <ul>\n    <li>ACCESS_TOKEN im Authorization-Header</li>\n    <li>Task-ID\
+  \ in URL &lt;id&gt; </li>\n    <li>Geheimnis in URL-Parameter ?secret=</li>\n  </ul>\n\
+  \  ausführen."
+title: 'CS Kostenträger: Verordnung zurückgeben - Statusrequest'
+version: 0

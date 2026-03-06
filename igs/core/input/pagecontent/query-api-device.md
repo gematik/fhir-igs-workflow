@@ -13,18 +13,7 @@ Die Device-Query wird ueber HTTP `GET` auf `/Device` aufgerufen.
 
 ### API Beschreibung
 
-#### GET /Device
-
-<div class="gematik-apidoc"
-  data-api-type="FHIRResource"
-  data-api-fhir-resource-type="Device"
-  data-api-fhir-interaction="search-type">
-  <div id="CapabilityStatement">
-    <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
-    </pre>
-  </div>
-</div>
+- [Erweiterter Health-Check](https://github.com/gematik/api-erp/blob/master/docs/erp_ps_probing.adoc#erweiterter-health-check)
 
 ### Hinweis
 

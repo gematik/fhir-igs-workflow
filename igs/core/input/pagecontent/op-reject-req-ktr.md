@@ -2,7 +2,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 
 <!-- A_19249 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-236" title="CS Kostenträger: Verordnung durch Abgebenden zurückgeben" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-494" title="CS Kostenträger: Verordnung durch Abgebenden zurückgeben" version="0">
   <meta lockversion="false"/>
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>
@@ -50,12 +50,12 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19250 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-237" title="CS Kostenträger: Verordnung zurückgeben - Statusrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-495" title="CS Kostenträger: Verordnung zurückgeben - Statusrequest" version="0">
   <meta lockversion="false"/>
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>
   </actor>
-  Das CS Kostenträger MUSS im Anwendungsfall "Verordnung durch Clientsystem zurückgeben" für die zurückzugebende Verordnung die HTTP-Operation POST /Task/&lt;id&gt;/$reject mit 
+  Das Clientsystem Kostenträger MUSS im Anwendungsfall "Verordnung durch Clientsystem zurückgeben" für die zurückzugebende Verordnung die HTTP-Operation POST /Task/&lt;id&gt;/$reject mit 
   <ul>
     <li>ACCESS_TOKEN im Authorization-Header</li>
     <li>Task-ID in URL &lt;id&gt; </li>
@@ -65,10 +65,10 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19251 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-238" title="CS Kostenträger: Verordnung zurückgeben - Verordnung löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-496" title="CS Kostenträger: Verordnung zurückgeben - Verordnung löschen" version="0">
   <meta lockversion="false"/>
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>
   </actor>
-  Das CS Kostenträger MUSS im Anwendungsfall "Verordnung durch Clientsystem zurückgeben" für das zurückzugebende E-Rezept nach erfolgreichem Aufruf der Operation "Eine Verordnung zurückweisen" die Daten zu Verordnung, E-Rezept-Token und das Geheimnis im CS löschen.
+  Das Clientsystem Kostenträger MUSS im Anwendungsfall "Verordnung durch Clientsystem zurückgeben" für das zurückzugebende E-Rezept nach erfolgreichem Aufruf der Operation "Eine Verordnung zurückweisen" die Daten zu Verordnung, E-Rezept-Token und das Geheimnis im CS löschen.
 </requirement>

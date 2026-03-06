@@ -1,0 +1,22 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: d5b892819e9b353c949e096a7ab811989d6f6a5152910bc9b55de670207416b5
+created: '2026-02-27T12:28:58.237666'
+date: '2026-02-27T12:28:58.237681'
+key: IG-TIFLOW-EU-7
+modified: '2026-02-27T12:28:58.237679'
+release_status: NEW
+source: input/pagecontent/op-get-eu-prescriptions-req-fd.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt
+  /$grant-eu-access-permission die Rolle professionOID des Aufrufers im ACCESS_TOKEN
+  im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich
+  Versicherte in der Rolle oid_versicherter die Operation am E-Rezept-Fachdienst aufrufen
+  dürfen, damit eine Zugriffsberechtigte nicht durch Unberechtigte erteilt werden
+  kann.
+title: E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Rollenprüfung
+version: 0

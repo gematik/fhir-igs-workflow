@@ -6,8 +6,9 @@ Die Nachricht zum Abruf von E-Rezepten wird als HTTP GET-Anfrage an den E-Rezept
 
 ### Anforderungen an Schnittstelle
 
-- [Ergänzende Server-Anforderungen zur Task-Query](./query-api-task-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
-- [Ergänzende Anforderungen für das E-Rezept-FdV zur Task-Query](./query-api-task-req-fdv.html): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
+- [FD-Anforderungen zur Task-Query](./query-api-task-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [FdV-Anforderungen für Task-Query](./query-api-task-req-fdv.html): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
+- [AVS-Anforderungen für Task-Query](./query-api-task-req-avs.html): Anforderungen an das AVS zur Nutzung der Schnittstelle.
 
 ### Resource API
 
@@ -43,6 +44,3 @@ Um spezifische Details zu einem einzelnen _Task_ mittels der RESTful API zu erha
 - Bei der Rückgabe der Verordnung an den Versicherten wird eine vom E-Rezept-Fachdienst erstellte Signatur des E-Rezept-Bundles übertragen. Diese muss vom E-Rezept-FdV nicht validiert werden.
 
 
-### Sicherheitsanforderungen
-
-Generelle Sicherheitsanforderungen werden [hier](./menu-schnittstellen-datenschutz-und-sicherheit.html) festgehalten.

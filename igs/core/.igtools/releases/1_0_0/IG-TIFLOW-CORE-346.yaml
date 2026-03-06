@@ -1,0 +1,22 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: 7af5942a07be1fc5453d2911b3c815bd239a0f070d31939998fd0a57f3fc7419
+created: '2026-03-05T08:56:21.788722'
+date: '2026-03-05T08:56:21.788724'
+key: IG-TIFLOW-CORE-346
+modified: '2026-03-05T08:56:21.788723'
+release_status: NEW
+source: input/pagecontent/query-api-consent-req-fd.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produktgutachten
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
+  /Consent sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter
+  die Operation am E-Rezept-Fachdienst aufrufen dürfen und die Rolle "professionOID"
+  des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen,
+  damit die Information zur Einwilligung nicht durch Unberechtigte ausgelesen werden
+  kann.
+title: E-Rezept-Fachdienst - Consent lesen - Rollenprüfung
+version: 0

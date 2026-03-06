@@ -1,0 +1,19 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: 020f02c12b04f234dc8f1e30c9cae92ecf54165087c691d79b80fbd45c54f093
+created: '2026-03-05T08:56:21.799273'
+date: '2026-03-05T08:56:21.799276'
+key: IG-TIFLOW-CORE-433
+modified: '2026-03-05T08:56:21.799275'
+release_status: NEW
+source: input/pagecontent/fhir-validate.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen,
+  dass maximal ein meta.profile-Eintrag vorhanden ist und bei Abweichung mit dem HTTP-Fehlercode
+  400 sowie einem entsprechenden OperationOutcome die Verarbeitung ablehnen.
+title: E-Rezept-Fachdienst - FHIR-Ressource validieren - Eindeutige Angabe meta.profile
+version: 0

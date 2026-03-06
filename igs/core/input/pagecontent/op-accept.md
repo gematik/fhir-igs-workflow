@@ -28,7 +28,3 @@ Die API-Beschreibung für den Aufruf der Operation findet sich auf:
   </div>
   <figcaption><strong>Abbildung: </strong>Ablauf Operation `$accept`</figcaption>
 </figure>
-
-### Sicherheitsanforderungen
-
-Generelle Sicherheitsanforderungen werden [hier](./menu-schnittstellen-datenschutz-und-sicherheit.html) festgehalten.

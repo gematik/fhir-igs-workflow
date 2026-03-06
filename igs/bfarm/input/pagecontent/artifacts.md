@@ -26,15 +26,6 @@ StructureDefinition/erp-tprescription-organization,
 
 Im folgenden sind Artefakte abgebildet, die unterstützen das Mapping der Quelldaten auf den digitalen Durchschlag E-T-Rezept zu realisieren.
 
-#### Unterstützende Profile
-
-Diese Profile wurden erstellt, um Quelldatenstrukturen abzubilden und im Mapping zu realisieren:
-
-{% capture map_profiles %}
-StructureDefinition/erp-tprescription-vzd-searchset
-{% endcapture %}
-{% include artifacts-table-generator.html render=map_profiles %}
-
 #### StructureMaps
 
 StructureMaps sind strukturierte Dokumente, die maschinenlesbare Möglichkeit bieten Daten in andere Formate zu überführen.

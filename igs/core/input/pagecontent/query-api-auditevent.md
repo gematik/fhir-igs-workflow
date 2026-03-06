@@ -13,31 +13,8 @@ Die AuditEvent-Query wird ueber HTTP `GET` auf `/AuditEvent` und `/AuditEvent/{i
 
 ### API Beschreibung
 
-#### GET /AuditEvent
+- [Einsicht in das Zugriffsprotokoll](https://github.com/gematik/api-erp/blob/master/docs/erp_versicherte.adoc#einsicht-in-das-zugriffsprotokoll)
 
-<div class="gematik-apidoc"
-  data-api-type="FHIRResource"
-  data-api-fhir-resource-type="AuditEvent"
-  data-api-fhir-interaction="search-type">
-  <div id="CapabilityStatement">
-    <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
-    </pre>
-  </div>
-</div>
-
-#### GET /AuditEvent/{id}
-
-<div class="gematik-apidoc"
-  data-api-type="FHIRResource"
-  data-api-fhir-resource-type="AuditEvent"
-  data-api-fhir-interaction="read">
-  <div id="CapabilityStatement">
-    <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
-    </pre>
-  </div>
-</div>
 
 ### Hinweis
 

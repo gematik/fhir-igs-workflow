@@ -5,8 +5,9 @@ Description: "Ein MedicationRequest für die Ausgabe von Pomalidomid mit einer D
 * status = #completed
 * intent = #order
 * authoredOn = "2026-04-01"
-* subject.identifier.system.extension[+].url = $data-absent-reason
-* subject.identifier.system.extension[=].valueCode = #not-permitted
+* subject.identifier.system = $identifier-kvid-10
+// * subject.identifier.system.extension[+].url = $data-absent-reason
+// * subject.identifier.system.extension[=].valueCode = #not-permitted
 * subject.identifier.value.extension[+].url = $data-absent-reason
 * subject.identifier.value.extension[=].valueCode = #not-permitted
 * medicationReference = Reference(ExampleMedication1-Pomalidomid-T)

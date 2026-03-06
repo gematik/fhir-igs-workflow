@@ -1,0 +1,19 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: 2e773406e1faf310f8bfa66bdd31118343dae1b83ee2b8bcc6adc4283de4fd5e
+created: '2026-03-05T08:56:21.775485'
+date: '2026-03-05T08:56:21.775488'
+key: IG-TIFLOW-CORE-275
+modified: '2026-03-05T08:56:21.775487'
+release_status: NEW
+source: input/pagecontent/op-close-req-fd.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS, falls keine OCSP-Response für das Signaturzertifikat
+  der Quittung vorliegt bzw. die letzte vorliegende OCSP-Response älter als 24h ist,
+  die Operation mit dem Fehler 503 abbrechen.
+title: E-Rezept-Fachdienst - Task schließen - OCSP-Response nicht älter als 24h
+version: 0

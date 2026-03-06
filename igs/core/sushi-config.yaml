@@ -2,7 +2,7 @@ canonical: https://gematik.de/fhir/workflow/core
 fhirVersion: 4.0.1
 applyExtensionMetadataToRoot: false
 id: de.gematik.workflow.core
-name: E-Rezept Workflow Core #TODO Name muss von Team Polarion vorgegeben werden gemIG...
+name: gemIG_TIFlow_core
 title: "Implementation Guide E-Rezept-Workflow Core"
 status: draft # draft | active | retired | unknown
 version: 1.0.0-draft
@@ -29,6 +29,9 @@ menu:
     Datenschutz und Sicherheit: data-security.html
     FHIR-Validierung: fhir-validate.html
     Löschfristen: ttl.html
+    Verbindungsaufbau von Clientsystemen: verbindungsaufbau-client.html
+  Technische Funktionsmerkmale:
+    Paginierung: menu-technische-umsetzung-paging.html
   Schnittstellen:
     Query API: menu-schnittstellen-query-api.html
     Operation API: menu-schnittstellen-operation-api.html
@@ -36,6 +39,7 @@ menu:
 
 # TODO: Technische Anbindung an externe Systeme, ePA, F-VZD, BfArM beschreiben
 # TODO: menu-technische-umsetzung-systemueberblick einbinden
+# TODO: Add ...-paging.md
 
 pages:
   index.md:
@@ -48,12 +52,16 @@ pages:
     title: "FHIR-Ressource validieren"
   ttl.md:
     title: "Löschfristen"
+  verbindungsaufbau-client.md:
+    title: "Verbindungsaufbau von Clientsystemen"
   menu-schnittstellen-datenschutz-und-sicherheit.md:
     title: "Datenschutz und Sicherheit"
   menu-schnittstellen-generelle-prinzipien.md:
     title: "Generelle Prinzipien"
   menu-technische-umsetzung-systemueberblick.md:
     title: "Technische Umsetzung - Systemüberblick"
+  menu-technische-umsetzung-paging.md:
+    title: "Handhabung der Rückgabe von mehreren FHIR-Objekten"
   menu-schnittstellen-operation-api.md:
     title: "Operation API"
     op-create.md:
@@ -104,18 +112,34 @@ pages:
         title: "FdV-Anforderungen $abort"
   menu-schnittstellen-query-api.md:
     title: "Query API"
+    query-api-task.md:
+      title: "Query API: Task"
+      query-api-task-req-fd.md:
+        title: "FD-Anforderungen: Task-Query"
+      query-api-task-req-fdv.md:
+        title: "FdV-Anforderungen: Task-Query"
+      query-api-task-req-avs.md:
+        title: "AVS-Anforderungen: Task-Query"
+      query-api-task-req-ktr.md:
+        title: "KTR-Anforderungen: Task-Query"
+    query-api-medicationdispense.md:
+      title: "Query API: MedicationDispense"
+      query-api-medicationdispense-req-fd.md:
+        title: "FD-Anforderungen: MedicationDispense-Query"
+      query-api-medicationdispense-req-fdv.md:
+        title: "FdV-Anforderungen: MedicationDispense-Query"
     query-api-auditevent.md:
       title: "Query API: AuditEvent"
       query-api-auditevent-req-fd.md:
         title: "FD-Anforderungen: AuditEvent-Query"
       query-api-auditevent-req-fdv.md:
-        title: "Client-Anforderungen: AuditEvent-Query"
+        title: "FdV-Anforderungen: AuditEvent-Query"
     query-api-device.md:
       title: "Query API: Device"
       query-api-device-req-fd.md:
         title: "FD-Anforderungen: Device-Query"
       query-api-device-req-fdv.md:
-        title: "E-Rezept-FdV-Anforderungen: Device-Query"
+        title: "FdV-Anforderungen: Device-Query"
     query-api-communication.md:
       title: "Query API: Communication"
       query-api-communication-req-fd.md:
@@ -132,10 +156,23 @@ pages:
         title: "FD-Anforderungen: Consent-Query"
       query-api-consent-req-fdv.md:
         title: "Client-Anforderungen: Consent-Query"
+    query-api-pushers.md:
+      title: "Query API: pushers"
+      query-api-pushers-req-fd.md:
+        title: "FD-Anforderungen: pushers-Query"
+      query-api-pushers-req-fdv.md:
+        title: "FdV-Anforderungen: pushers-Query"
+    query-api-channels.md:
+      title: "Query API: channels"
+      query-api-channels-req-fd.md:
+        title: "FD-Anforderungen: channels-Query"
+      query-api-channels-req-fdv.md:
+        title: "FdV-Anforderungen: channels-Query"
   artifacts.md:
     title: "FHIR-Artefakte"
 
 parameters:
+  shownav: true
   path-pages:
     - input/pagecontent
     - input/content

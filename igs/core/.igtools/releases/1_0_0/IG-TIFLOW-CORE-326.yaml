@@ -1,0 +1,20 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: 492087312af1ee70127beb87fa7cff9c342016e7491d3d050ca33b8435a72b76
+created: '2026-03-05T08:56:21.785480'
+date: '2026-03-05T08:56:21.785482'
+key: IG-TIFLOW-CORE-326
+modified: '2026-03-05T08:56:21.785481'
+release_status: NEW
+source: input/pagecontent/op-activate-req-fd.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
+  über /Task/&#60;id&#62;/$activate bei erfolgreichem Abschluss der Operation, den
+  Push Notification Prozess für den Trigger mit der ChannelId "erp.task.activate"
+  und den Versicherten mit der KVNR = Task.for initiieren.
+title: E-Rezept-Fachdienst - Task aktivieren - Push Notification Versicherter
+version: 0

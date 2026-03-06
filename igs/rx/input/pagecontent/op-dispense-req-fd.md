@@ -97,7 +97,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 </requirement>
 
 <!-- A_24284 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-188" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Keine Statusänderung" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-RX-188" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Keine Statusänderung" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>

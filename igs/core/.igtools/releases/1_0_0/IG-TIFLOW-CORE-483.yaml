@@ -1,0 +1,28 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: 0aac006bc458b8ed3a00f62d5e3303a9a690baef84506629be64c377cb2251b8
+created: '2026-03-05T08:56:21.809779'
+date: '2026-03-05T08:56:21.809781'
+key: IG-TIFLOW-CORE-483
+modified: '2026-03-05T08:56:21.809780'
+release_status: NEW
+source: input/pagecontent/query-api-communication-req-fd.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: "Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht des Profils \"\
+  https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq\"\
+  \ durch einen Versicherten über die http-Operation POST auf den Endpunkt /Communication\
+  \ die Zulässigkeit der Übermittlung auf Basis des Flowtypes des referenzierten Tasks\
+  \ (Task.extension:flowType) und dem Empfänger Communication.recipient prüfen und\
+  \ mit dem http-Status-Code 403 abbrechen, wenn der Empfänger laut TAB_eRPFD_028\
+  \ den spezifischen Flowtype nicht empfangen darf.\n    <table>\n    <tr> \n\t\t\
+  <th>Empfänger (Präfix der Telematik-ID)</th>\n\t\t<th>Zulässige Flowtypes</th>\n\
+  \t</tr>\n\t<tr> \n\t\t<td>oid_oeffentliche_apotheke (3-*, 9-*)</td>\n\t\t<td>160,\
+  \ 166, 200</td>\n\t</tr>\n    <tr> \n\t\t<td>oid_kostentraeger (8-*)</td>\n\t\t\
+  <td>162</td>\n\t</tr>\n    </table>\n    <div><figcaption><strong>Tabelle: </strong>Tab_eRPFD_028\
+  \ Zulässige Empfänger Communication_DispReq</figcaption></div>"
+title: E-Rezept-Fachdienst - Nachricht einstellen - Prüfung des Empfängers
+version: 0

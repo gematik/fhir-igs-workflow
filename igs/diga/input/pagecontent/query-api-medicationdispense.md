@@ -8,3 +8,6 @@ die Abgabeinformation eine begründende Rückmeldung.
 
 ## GET /MedicationDispense
 - Abruf des Freischaltcodes durch den Versicherten
+
+- [Server-Anforderungen zu MedicationDispense](./query-api-medicationdispense-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [FdV-Anforderungen zu MedicationDispense](./query-api-medicationdispense-req-fdv.html): Anforderungen an ein E-Rezept-FdV zur Nutzung der Schnittstelle.
