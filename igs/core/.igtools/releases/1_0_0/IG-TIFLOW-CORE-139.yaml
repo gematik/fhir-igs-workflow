@@ -1,0 +1,21 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: e78479ac13637ae4db0596903bb3cdd3e76bba63b5f80ba9a2809274bb307c69
+created: '2026-03-09T16:37:37.576265'
+date: '2026-03-09T16:37:37.576267'
+key: IG-TIFLOW-CORE-139
+modified: '2026-03-09T16:37:37.576266'
+release_status: NEW
+source: input/pagecontent/op-activate-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS den Aufruf der http-POST-Operation /Task/&#60;id&#62;/$activate
+  mit einem Fehlercode 400 und Hinweis im OperationOutcome auf "Ausstellungsdatum
+  und Signaturzeitpunkt weichen voneinander ab, müssen aber taggleich sein" als ungültig
+  abweisen, wenn das Datum authoredOn zur Gültigkeitsberechnung des E-Rezepts nicht
+  dem Datum in QES.Erstellung im Signaturobjekt entspricht.
+title: E-Rezept-Fachdienst - Task aktivieren - Prüfregel Ausstellungsdatum
+version: 0

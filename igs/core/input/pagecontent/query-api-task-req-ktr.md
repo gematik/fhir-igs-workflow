@@ -2,7 +2,7 @@ Diese Seite beschreibt Anforderungen an das Clientsystem Kostenträger zur Nutzu
 
 ### Recovery Secret
 
-<requirement conformance="SHALL"  title="CS Kostenträger: Recovery Secret - Statusrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-171" title="CS Kostenträger: Recovery Secret - Statusrequest" version="0">
   <meta lockversion="false"/>
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>
@@ -23,7 +23,7 @@ Mit diesem Anwendungsfall kann eine abgebende LEI die Quittung erneut abrufen, f
 Der Anwendungsfall kann bei Bedarf wiederholt werden.
 
 <!-- A_19292 -->
-<requirement conformance="SHALL"  title="CS Kostenträger: Quittung erneut abrufen - Statusrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-172" title="CS Kostenträger: Quittung erneut abrufen - Statusrequest" version="0">
   <meta lockversion="false"/>
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>

@@ -1,7 +1,7 @@
 Der E-Rezept-Fachdienst stellt eine http-Schnittstelle für den Aufruf durch Clientsysteme bereit. Das Ergebnis der Operation wird in der Verwendung von Http-Status-Codes [HTTP-STATUS-CODES] mitgeteilt. Die folgende Tabelle listet die vom E-Rezept-Fachdienst genutzten Http-Status-Codes auf.
 
 <!-- A_19514-03 -->
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Http-Status-Codes" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-279" title="E-Rezept-Fachdienst - Http-Status-Codes" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -30,7 +30,7 @@ Der E-Rezept-Fachdienst stellt eine http-Schnittstelle für den Aufruf durch Cli
 <div><figcaption><strong>Tabelle: </strong>Übersicht HTTP-Statuscodes E-Rezept-Fachdienst</figcaption></div>
 
 <!-- A_22103 -->
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Fehlerdetails in OperationOutcome" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-280" title="E-Rezept-Fachdienst - Fehlerdetails in OperationOutcome" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>

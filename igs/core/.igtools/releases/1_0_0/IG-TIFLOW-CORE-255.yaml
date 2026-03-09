@@ -1,0 +1,24 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: e89945f25d4919b69d1f4dd9e9fe6878f4fdc8e3c0648856de854e043df3e470
+created: '2026-03-09T16:37:37.608886'
+date: '2026-03-09T16:37:37.608888'
+key: IG-TIFLOW-CORE-255
+modified: '2026-03-09T16:37:37.608887'
+release_status: NEW
+source: input/pagecontent/query-api-communication-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET, DELETE und POST-Operation\
+  \ auf den Endpunkt /Communication bzw. /Communication/&lt;id&gt; sicherstellen,\
+  \ dass ausschließlich Versicherte, Leistungserbingerinstitutionen und Kostenträger\
+  \ in der Rolle\n    <ul>\n        <li>oid_versicherter</li>\n        <li>oid_oeffentliche_apotheke</li>\n\
+  \        <li>oid_krankenhausapotheke</li>\n        <li>oid_kostentraeger</li>\n\
+  \    </ul>\n    die Operation am Fachdienst aufrufen dürfen und die Rolle \"professionOID\"\
+  \ des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen,\
+  \ damit der Nachrichtenaustausch nicht zwischen Unbefugten erfolgt."
+title: E-Rezept-Fachdienst - Communication - Rollenprüfung
+version: 0

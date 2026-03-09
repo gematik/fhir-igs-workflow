@@ -1,0 +1,22 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 3b78c1f947500f4cb4c1a2db41460df3c8db43822c17607239a6c09aa0b63af7
+created: '2026-03-09T16:37:37.612804'
+date: '2026-03-09T16:37:37.612807'
+key: IG-TIFLOW-CORE-274
+modified: '2026-03-09T16:37:37.612806'
+release_status: NEW
+source: input/pagecontent/query-api-communication-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: 'Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht des Profils "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq",
+  oder "https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReq"
+  zur Versicherter-zu-Apotheken-Kommunikation über die http-Operation POST auf den
+  Endpunkt /Communication prüfen, ob für die Telematik-ID des Empfängers Subscriptions
+  registriert sind und für Registrierungen über den Subscription Service eine Notification
+  (ping : subscription-id) senden.'
+title: E-Rezept-Fachdienst - Nachricht einstellen - Notification Apotheke
+version: 0

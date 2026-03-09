@@ -1,0 +1,23 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 3ee0db505b65a72409ffbb84674068474006e2a50614120cce1f7f73e571552e
+created: '2026-03-09T16:37:37.564841'
+date: '2026-03-09T16:37:37.564843'
+key: IG-TIFLOW-CORE-87
+modified: '2026-03-09T16:37:37.564842'
+release_status: NEW
+source: input/pagecontent/query-api-task-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete
+  über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten,
+  den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header
+  des HTTP-Requests identifizieren, diese gegen die im gespeicherten Datensatz in
+  Task.for.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei
+  Ungleichheit den Aufruf mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich
+  der begünstigte Versicherte als Berechtigter einen Task ändert.
+title: E-Rezept-Fachdienst -Task markieren -Versicherter - Prüfung KVNR
+version: 0

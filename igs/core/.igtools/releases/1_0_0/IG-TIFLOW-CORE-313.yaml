@@ -1,0 +1,22 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 7a0e78d18bb1abdbe2d9579c518eab0bffc981fa86d2aa3b43a31d15bde28f81
+created: '2026-03-09T16:37:37.626542'
+date: '2026-03-09T16:37:37.626544'
+key: IG-TIFLOW-CORE-313
+modified: '2026-03-09T16:37:37.626543'
+release_status: NEW
+source: input/pagecontent/menu-technische-umsetzung-epa-ms.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS die Aufrufe zum Ermitteln des ePA-Aktensystem für
+  mindestens eine Minute unterbrechen, wenn ein Operationsaufruf im Information Service
+  mit einem Statuscode 500 scheitert, und anschließend für weitere Aufrufe einen exponentiellen
+  Backoff-Mechanismus anwenden, der die Wartezeit zwischen den Versuchen sukzessive
+  verdoppelt, um die Belastung des Zielsystems zu minimieren.
+title: E-Rezept-Fachdienst - ePA - Fehlerbehandlung - Information Service - Fehler
+  im Information Service
+version: 0

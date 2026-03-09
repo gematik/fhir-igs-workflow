@@ -1,0 +1,21 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 03974dd427dcbd94f48c30c48ab58d779f79f80708db974d88d45da2b7a70205
+created: '2026-03-09T16:37:37.609180'
+date: '2026-03-09T16:37:37.609182'
+key: IG-TIFLOW-CORE-257
+modified: '2026-03-09T16:37:37.609181'
+release_status: NEW
+source: input/pagecontent/query-api-communication-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Abrufen von Nachrichten über die http-Operation
+  GET auf den Endpunkt /Communication bzw. beim Abruf einer einzelnen Nachricht über
+  /Communication/&lt;id&gt; den Wert des Attributs Communication.received = &lt;aktuelle
+  Systemzeit&gt setzen, wenn dieser Wert zum Zeitpunkt des Abrufs der Nachrichten
+  NULL ist, damit Nutzer eine Filtermöglicheit auf "neue Nachrichten" haben.
+title: E-Rezept-Fachdienst - Nachrichten abrufen - als abgerufen markieren
+version: 0

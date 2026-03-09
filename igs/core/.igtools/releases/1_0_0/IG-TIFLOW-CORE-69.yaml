@@ -1,0 +1,20 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 35c54a5e8117709aadba87770f940b653bd1ab34e46f76754496a5192a3ece9b
+created: '2026-03-09T16:37:37.562114'
+date: '2026-03-09T16:37:37.562116'
+key: IG-TIFLOW-CORE-69
+modified: '2026-03-09T16:37:37.562115'
+release_status: NEW
+source: input/pagecontent/query-api-task-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit
+  den URL-Parameter pnw="..." durch eine abgebende LEI, falls im VSDM Prüfungsnachweis
+  keine Prüfziffer enthalten, das Ergebnis im Prüfungsnachweis gleich 3 und der passende
+  Status AcceptPN3VSDMxx = false ist mit dem Fehler 454 abbrechen.
+title: E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - AcceptPN3 false
+version: 0
