@@ -1,0 +1,34 @@
+@startuml
+title ePA-Aktensystem nicht verfügbar
+
+participant "E-Rezept-Fachdienst" as FD
+participant "Information Service 1" as IS1
+participant "Aktensystem 1" as AS1
+participant "Information Service 2" as IS2
+participant "Aktensystem 2" as AS2
+
+== Versuch 1 ==
+
+FD -> IS1 : Request
+IS1 --> FD : Response StatusCode: 500 (Internal Server Error)
+
+FD -> IS2 : Request
+IS2 --> FD : Response StatusCode: 404 (Not Found)
+
+== Erneuter Versuch in 1min ==
+
+FD -> IS1 : Request
+IS1 --> FD : Response StatusCode: 500 (Internal Server Error)
+
+FD -> IS2 : Request
+IS2 --> FD : Response StatusCode: 404 (Not Found)
+
+== exponentieller Backoff Retry Interval ==
+
+FD -> IS1 : Request
+IS1 --> FD : Response StatusCode: 200 (Success)
+
+FD -> AS1 : Request
+AS1 --> FD : Response StatusCode: 200 (Success)
+
+@enduml

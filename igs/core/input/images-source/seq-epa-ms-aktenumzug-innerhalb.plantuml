@@ -1,0 +1,34 @@
+@startuml
+title Aktenkonto Umzug innerhalb eines ePA-Aktensystemen
+
+participant "E-Rezept-Fachdienst" as FD
+participant "Information Service 1" as IS1
+participant "Aktensystem 1" as AS1
+participant "Information Service 2" as IS2
+participant "Aktensystem 2" as AS2
+
+== Versuch 1 ==
+
+FD -> IS1 : Request
+IS1 --> FD : Response StatusCode: 409 (Conflict)
+
+FD -> IS2 : Request
+IS2 --> FD : Response StatusCode: 404 (Not Found)
+
+== Erneuter Versuch in 24h ==
+
+FD -> IS1 : Request
+IS1 --> FD : Response StatusCode: 409 (Conflict)
+
+FD -> IS2 : Request
+IS2 --> FD : Response StatusCode: 404 (Not Found)
+
+== Erneuter Versuch in 24h ==
+
+FD -> IS1 : Request
+IS1 --> FD : Response StatusCode: 200 (Success)
+
+FD -> IS2 : Request
+IS2 --> FD : Response StatusCode: 200 (Success)
+
+@enduml
