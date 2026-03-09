@@ -5,3 +5,5 @@ Die folgenden Query APIs stellt der E-Rezept-Fachdienst den Clientsystemen zur V
 - [MedicationDispense](./query-api-medicationdispense.html)
 - [Query API: Communication](./query-api-communication.html)
 - [Query API: Consent](./query-api-consent.html)
+- [Query API: Push Notification - pushers](./query-api-pushers.html)
+- [Query API: Push Notification - channels](./query-api-channels.html)

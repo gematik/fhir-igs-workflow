@@ -19,11 +19,6 @@ Anfragen an die <i>MedicationDispense</i>-Ressource können über die RESTful AP
 
 - [API-ERP: Abgabeinformationen abrufen](https://github.com/gematik/api-erp/blob/master/docs/erp_versicherte.adoc#abgabeinformationen-abrufen)
 
-#### Hinweise
-
-- Im Anwendungsfall "Abgabeinformationen abrufen" wird die Suche per `identifier` auf die PrescriptionID genutzt.
-- Die Rückgabe erfolgt als Bundle und kann ein oder mehrere `MedicationDispense`-Objekte enthalten.
-
 
 ### Instance API
 

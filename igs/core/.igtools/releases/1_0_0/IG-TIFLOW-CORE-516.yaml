@@ -1,19 +1,20 @@
 actor:
 - E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: 48bbcc2a4b984147001cf664264f699d0b2c676b43d18c6d074757ad0bdce600
-created: '2026-03-05T11:54:41.760973'
-date: '2026-03-05T11:54:41.760976'
+content_hash: b3b21ec4b1f447209ebd6e01e1521543607ade3aef7246b85c9176d472c30d0b
+created: '2026-03-05T15:44:54.416121'
+date: '2026-03-05T15:44:54.416123'
 key: IG-TIFLOW-CORE-516
-modified: '2026-03-05T11:54:41.760975'
+modified: '2026-03-05T15:44:54.416122'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-epa-ms.md
+source: input/pagecontent/query-api-subscription-req-fd.md
 status: ACTIVE
 test_procedures:
   E-Rezept-Fachdienst:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Bereitstellen der Daten für den ePA Medication
-  Service sicherstellen, dass Datenwerte der E-Rezept FHIR Ressource übernommen werden,
-  sofern das entsprechende Element in dem Ausgangs- und Zielprofilen vorhanden ist.
-title: E-Rezept-Fachdienst - ePA - Mapping - Übernahme von Werten zwischen Profilen
+text: 'Der E-Rezept-Fachdienst MUSS für die Registrierung der Subscription einen Bearer-Token
+  mit den Claims subscriptionid: Pseudonym der Telematik-ID iAt: Timestamp wann Subscription
+  erstellt wurde exp: Timestamp Ablauf der Subscription erstellen und mit einer Identität
+  des E-Rezept-Fachdienstes signieren (Signature Algortihm: ES256).'
+title: E-Rezept-Fachdienst – Subscription registrieren – Barrier-Token
 version: 0

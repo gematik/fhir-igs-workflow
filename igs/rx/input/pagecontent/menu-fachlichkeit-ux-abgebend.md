@@ -182,7 +182,7 @@ Task.extension:expiryDate, bei Kassenrezepten 3 Monate nach Ausstellung). Danach
 Der E-Rezept-Fachdienst löscht eingestellte Rezepte zehn Tage nach Ablaufen einer der Gültigkeit einer Verordnung (Task.extension:expiryDate). Daher kann das AVS in diesen zehn Tagen ein abgelaufenes Rezept vom E-Rezept-Fachdienst abrufen. Diese Verordnungen dürfen nicht von der Apotheke beliefert werden.
 
 <!-- A_23800 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-102" title="PS abgebende LEI: UX - Fristen eines Rezeptes - Überschreiten der Einlösefrist" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-RX-102" title="PS abgebende LEI: UX - Fristen eines Rezeptes - Überschreiten der Einlösefrist" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -256,7 +256,7 @@ In bestimmten Fällen kann es vorkommen, dass ein Vorgang für eine Verordnung i
 abrechnen zu lassen Es soll die Möglichkeit bestehen, einem Vorgang nachträglich ein E-Rezept zuzuordnen. Somit soll vermieden werden, dass der bestehende Vorgang gelöscht und ein neuer Vorgang angelegt werden muss. Abweichungen zwischen den Informationen im Vorgang und der Verordnung sollen dem Nutzer angezeigt werden.
 
 <!-- A_23805 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-107" title="PS abgebende LEI: UX - Zuordnung eines E-Rezepts zu einem bestehenden Vorgang" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-RX-107" title="PS abgebende LEI: UX - Zuordnung eines E-Rezepts zu einem bestehenden Vorgang" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -424,7 +424,7 @@ Für das Umschwenken auf eine andere Instanz des E-Rezept-Fachdienstes siehe [ge
 </requirement>
 
 <!-- A_23816 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-121" title="PS abgebende LEI: UX - Hinweis bei Nicht-Erreichbarkeit des E-Rezept-Fachdienstes - Operabilität des AVS" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-RX-121" title="PS abgebende LEI: UX - Hinweis bei Nicht-Erreichbarkeit des E-Rezept-Fachdienstes - Operabilität des AVS" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>

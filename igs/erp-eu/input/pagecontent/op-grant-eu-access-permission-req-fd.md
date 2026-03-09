@@ -1,7 +1,5 @@
 ### Anforderungen der Schnittstelle aus diesem Modul
 
-
-
 <!-- A_27088 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-EU-7" title="E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Rollenprüfung" version="0">
     <meta lockversion="false"/>
