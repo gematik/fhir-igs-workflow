@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"11.5.4"}
-    h3,h4,h5,h6{--heading-prefix:"11.5.4"}</style>
+    <style type="text/css">h2{--heading-prefix:"16.5.4"}
+    h3,h4,h5,h6{--heading-prefix:"16.5.4"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -134,7 +134,29 @@
         <a href="ttl.html">Löschfristen</a>
       </li>
       <li>
+        <a href="error-codes.html">Fehlercodes</a>
+      </li>
+      <li>
         <a href="verbindungsaufbau-client.html">Verbindungsaufbau von Clientsystemen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Technische Funktionsmerkmale
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-technische-umsetzung-epa-ms.html">ePA Medication Service</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-push.html">Push Notification</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-paging.html">Paginierung</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-validation.html">FHIR-Validierung</a>
       </li>
     </ul>
   </li>
@@ -255,7 +277,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung" />
   </actor>
-  Das CS Kostenträger MUSS im Anwendungsfall "Nachrichten von Versicherten empfangen" zwischen den Aufrufen der Operation GET /Communication mindestens 5 Minuten warten. Der Zeitraum zwischen den Aufrufen muss um eine zufällige Zeitspanne zwischen 0 und 10.000 Millisekunden verlängert werden, um eine Gleichverteilung der Anfragen am E-Rezept-Fachdienst über alle Apotheken zu erreichen.
+  Das Clientsystem Kostenträger MUSS im Anwendungsfall "Nachrichten von Versicherten empfangen" zwischen den Aufrufen der Operation GET /Communication mindestens 5 Minuten warten. Der Zeitraum zwischen den Aufrufen muss um eine zufällige Zeitspanne zwischen 0 und 10.000 Millisekunden verlängert werden, um eine Gleichverteilung der Anfragen am E-Rezept-Fachdienst über alle Apotheken zu erreichen.
 </requirement>
 
 <!-- A_19329-01 -->
@@ -264,7 +286,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung" />
   </actor>
-  Das CS Kostenträger MUSS im Anwendungsfall "Nachrichten von Versicherten empfangen" die HTTP-Operation GET /Communication mit
+  Das Clientsystem Kostenträger MUSS im Anwendungsfall "Nachrichten von Versicherten empfangen" die HTTP-Operation GET /Communication mit
   <ul>
     <li>ACCESS_TOKEN im Authorization-Header</li>
     <li>optional: ?received=null für nur ungelesene Nachrichten</li>
@@ -285,7 +307,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung" />
   </actor>
-  Das CS Kostenträger MUSS im Anwendungsfall "Nachricht an Versicherten versenden" die HTTP-Operation POST /Communication mit
+  Das Clientsystem Kostenträger MUSS im Anwendungsfall "Nachricht an Versicherten versenden" die HTTP-Operation POST /Communication mit
   <ul>
     <li>ACCESS_TOKEN im Authorization-Header</li>
     <li>Communication Ressource im HTTP-Request-Body</li>
@@ -310,7 +332,7 @@ Löschen abzubrechen.</p>
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung" />
   </actor>
-  Das CS Kostenträger MUSS im Anwendungsfall "Nachricht durch Abgebenden löschen" für die zu löschende Nachricht die HTTP-Operation DELETE /Communication/&lt;id&gt; mit
+  Das Clientsystem Kostenträger MUSS im Anwendungsfall "Nachricht durch Abgebenden löschen" für die zu löschende Nachricht die HTTP-Operation DELETE /Communication/&lt;id&gt; mit
   <ul>
     <li>ACCESS_TOKEN im Authorization-Header</li>
     <li>Communication-ID in URL &lt;id&gt; </li>
@@ -365,7 +387,7 @@ löschen” dem Nutzer ermöglichen, die Nachricht auch lokal im PS zu löschen.
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Mar 5, 2026 21:58+0000">2026-03-05</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 13:02+0000">2026-03-09</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

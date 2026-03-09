@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"11.2"}
-    h3,h4,h5,h6{--heading-prefix:"11.2.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"16.2"}
+    h3,h4,h5,h6{--heading-prefix:"16.2.0"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -134,7 +134,29 @@
         <a href="ttl.html">Löschfristen</a>
       </li>
       <li>
+        <a href="error-codes.html">Fehlercodes</a>
+      </li>
+      <li>
         <a href="verbindungsaufbau-client.html">Verbindungsaufbau von Clientsystemen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Technische Funktionsmerkmale
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-technische-umsetzung-epa-ms.html">ePA Medication Service</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-push.html">Push Notification</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-paging.html">Paginierung</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-validation.html">FHIR-Validierung</a>
       </li>
     </ul>
   </li>
@@ -194,7 +216,7 @@ Implementation Guide<br /> E-Rezept-Workflow Core
 
           <span style="float:right;">
 
-            <a href="query-api-task-req-avs.html">&lt;vorherige</a> | 
+            <a href="query-api-task-req-ktr.html">&lt;vorherige</a> | 
 
             <a href="#bottom">unten</a>
 
@@ -257,6 +279,23 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="nachricht">Nachricht</h3>
 
+<p>Die Nachricht zur Interaktion mit Einlöseinformationen als FHIR-Ressource <em>MedicationDispense</em> wird über die folgenden HTTP-Methoden ermöglicht:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>HTTP-Methode</th>
+      <th>Ergebnis der Anfrage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>GET</td>
+      <td>Einlöseinformation abrufen</td>
+    </tr>
+  </tbody>
+</table>
+
 <h3 id="anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</h3>
 
 <ul>
@@ -291,7 +330,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <tr>
               <td style="text-align:left">&#xA0;
 
-                <a href="query-api-task-req-avs.html">&lt;vorherige</a>
+                <a href="query-api-task-req-ktr.html">&lt;vorherige</a>
 
               </td>
               <td style="text-align:center">
@@ -309,7 +348,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Mar 5, 2026 21:58+0000">2026-03-05</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 13:02+0000">2026-03-09</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

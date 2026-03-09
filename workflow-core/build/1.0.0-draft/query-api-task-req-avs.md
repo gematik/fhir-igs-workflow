@@ -15,3 +15,17 @@ Version 1.0.0-draft - ci-build
 
 Diese Seite beschreibt Anforderungen an das AVS zur Nutzung der `Task`-Query-Endpunkte.
 
+### Recovery Secret
+
+### Quittung erneut abrufen
+
+Mit diesem Anwendungsfall kann eine abgebende LEI die Quittung erneut abrufen, falls bei der Übermittlung vom E-Rezept-Fachdienst ein Fehler aufgetreten ist.
+
+Der Anwendungsfall kann bei Bedarf wiederholt werden.
+
+Das PS der abgebenden LEI MUSS im Anwendungsfall "Quittung erneut abrufen" für das E-Rezept die HTTP-Operation GET /Task/<id>/ mit
+* ACCESS_TOKEN im Authorization-Header
+* Task-ID in URL <id> 
+* Geheimnis in URL-Parameter ?secret=
+ausführen.
+

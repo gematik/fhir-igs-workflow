@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"11.1.2"}
-    h3,h4,h5,h6{--heading-prefix:"11.1.2"}</style>
+    <style type="text/css">h2{--heading-prefix:"16.1.2"}
+    h3,h4,h5,h6{--heading-prefix:"16.1.2"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -134,7 +134,29 @@
         <a href="ttl.html">Löschfristen</a>
       </li>
       <li>
+        <a href="error-codes.html">Fehlercodes</a>
+      </li>
+      <li>
         <a href="verbindungsaufbau-client.html">Verbindungsaufbau von Clientsystemen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Technische Funktionsmerkmale
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-technische-umsetzung-epa-ms.html">ePA Medication Service</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-push.html">Push Notification</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-paging.html">Paginierung</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-validation.html">FHIR-Validierung</a>
       </li>
     </ul>
   </li>
@@ -249,7 +271,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_19347-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE--6" title="E-Rezept-FdV: E-Rezepte abrufen - Liste E-Rezepte abrufen" version="0">
     <meta lockversion="false" />
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest" />
     </actor>
      Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezepte abrufen" zum Herunterladen alle E-Rezepte des Nutzers die HTTP-Operation GET /Task mit ACCESS_TOKEN im Authorization-Header ausführen.
@@ -258,7 +280,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_19348-01 -->
 <requirement conformance="MAY" key="IG-TIFLOW-CORE-7" title="E-Rezept-FdV: E-Rezept abrufen - E-Rezepte lokal speichern" version="0">
     <meta lockversion="false" />
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest" />
     </actor>
      Das E-Rezept-FdV KANN es dem Versicherten ermöglichen, die vom E-Rezept-Fachdienst heruntergeladenen E-Rezepte im lokalen Speicher persistent abzulegen.
@@ -271,7 +293,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_19350-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-8" title="E-Rezept-FdV: E-Rezepte abrufen -Spezifisches E-Rezept herunterladen" version="0">
     <meta lockversion="false" />
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest" />
     </actor>
      Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezepte abrufen" zum Herunterladen eines spezifischen E-Rezepts des Nutzers die HTTP-Operation GET /Task/&lt;id&gt; mit ACCESS_TOKEN im Authorization-Header Task-ID in URL &lt;id&gt; ausführen.
@@ -288,7 +310,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_19351-01 -->
 <requirement conformance="MAY" key="IG-TIFLOW-CORE-9" title="E-Rezept-FdV: E-Rezepte abrufen - E-Rezept mit AccessCode herunterladen" version="0">
     <meta lockversion="false" />
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest" />
     </actor>
      Das E-Rezept-FdV KANN im Anwendungsfall "E-Rezepte abrufen" zum Herunterladen eines E-Rezepts als Vertreter die HTTP-Operation GET /Task/&lt;id&gt; mit ACCESS_TOKEN im http-Header Task-ID in URL &lt;id&gt; AccessCode im http-Header ausführen.
@@ -338,7 +360,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Mar 5, 2026 21:58+0000">2026-03-05</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 13:02+0000">2026-03-09</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

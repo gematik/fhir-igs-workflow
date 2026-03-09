@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"11.6.2"}
-    h3,h4,h5,h6{--heading-prefix:"11.6.2"}</style>
+    <style type="text/css">h2{--heading-prefix:"16.6.2"}
+    h3,h4,h5,h6{--heading-prefix:"16.6.2"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -134,7 +134,29 @@
         <a href="ttl.html">Löschfristen</a>
       </li>
       <li>
+        <a href="error-codes.html">Fehlercodes</a>
+      </li>
+      <li>
         <a href="verbindungsaufbau-client.html">Verbindungsaufbau von Clientsystemen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Technische Funktionsmerkmale
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-technische-umsetzung-epa-ms.html">ePA Medication Service</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-push.html">Push Notification</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-paging.html">Paginierung</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-validation.html">FHIR-Validierung</a>
       </li>
     </ul>
   </li>
@@ -198,7 +220,7 @@ Implementation Guide<br /> E-Rezept-Workflow Core
 
             <a href="#bottom">unten</a>
 
-          | <a href="query-api-pushers.html">nächste&gt;</a>
+          | <a href="artifacts.html">nächste&gt;</a>
 
           </span>
 
@@ -264,7 +286,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_22709-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-439" title="E-Rezept-FdV: Einwilligung erteilen - Einwilligungstext" version="0">
     <meta lockversion="false" />
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung" />
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung erteilen" den Text für die Einwilligung derart gestalten, dass dem Nutzer eine informierte Einwilligung möglich ist. Insbesondere MÜSSEN enthalten sein: der Verwendungszweck, die konkreten Informationen über die Art der erhobenen Daten, die Speicherdauer, Hinweis auf Freiwilligkeit, auf Widerrufsrecht, Hinweis auf die Folgen bei Verweigerung oder Widerruf.
@@ -273,7 +295,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_22163-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-440" title="E-Rezept-FdV: Einwilligung erteilen - Einwilligung eingeben" version="0">
     <meta lockversion="false" />
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung" />
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung erteilen" es dem Nutzer ermöglichen, die Einwilligung einzugeben.
@@ -282,7 +304,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_22165-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-441" title="E-Rezept-FdV: Einwilligung erteilen - Consent Ressource erstellen" version="0">
     <meta lockversion="false" />
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest" />
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung erteilen" eine Consent Ressource mit:
@@ -296,7 +318,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_22166-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-442" title="E-Rezept-FdV: Einwilligung erteilen - Speicherrequest" version="0">
     <meta lockversion="false" />
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest" />
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung erteilen" zum Speichern der Information im E-Rezept-Fachdienst die HTTP-Operation POST /Consent mit:
@@ -322,7 +344,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_22168-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-443" title="E-Rezept-FdV: Einwilligungsinformation abrufen - Abfragerequest" version="0">
     <meta lockversion="false" />
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest" />
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligungsinformation abrufen" zum Abrufen der Information vom E-Rezept-Fachdienst die HTTP-Operation GET /Consent mit:
@@ -350,7 +372,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_22169-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-444" title="E-Rezept-FdV: Einwilligung widerrufen - Widerruf eingeben" version="0">
     <meta lockversion="false" />
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung" />
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung widerrufen" es dem Nutzer ermöglichen, den Widerruf zu erfassen.
@@ -359,7 +381,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_22330-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-445" title="E-Rezept-FdV: Einwilligung widerrufen - Bestätigung" version="0">
     <meta lockversion="false" />
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung" />
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung widerrufen" vom Nutzer eine Bestätigung einholen, dass die Einwilligung widerrufen werden soll, somit ggf. korrespondierende Daten gelöscht werden und die Möglichkeit geben, das Widerrufen abzubrechen.
@@ -368,7 +390,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_22171-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-446" title="E-Rezept-FdV: Einwilligung widerrufen - Löschrequest" version="0">
     <meta lockversion="false" />
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest" />
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung widerrufen" zum Löschen der Information im E-Rezept-Fachdienst die HTTP-Operation DELETE /Consent/?category=&lt;Einwilligungstyp&gt; mit:
@@ -411,7 +433,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="query-api-pushers.html">nächste&gt;</a>
+                <a href="artifacts.html">nächste&gt;</a>
 
               </td>
             </tr>
@@ -421,7 +443,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Mar 5, 2026 21:58+0000">2026-03-05</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 13:02+0000">2026-03-09</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

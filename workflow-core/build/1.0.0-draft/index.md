@@ -14,9 +14,7 @@ Version 1.0.0-draft - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/workflow/core/ImplementationGuide/de.gematik.workflow.core | *Version*:1.0.0-draft |
-| Draft as of 2026-03-05 | *Computable Name*:gemIG_TIFlow_core |
-
-# Implementation Guide E-Rezept-Workflow Core
+| Draft as of 2026-03-09 | *Computable Name*:gemIG_TIFlow_core |
 
 Dieser IG beschreibt die zentralen, IG-übergreifenden Anforderungen an den E-Rezept-Fachdienst. Er fasst grundlegende Sicherheits-, Protokollierungs- und Validierungsvorgaben zusammen, die in allen nachgelagerten IGs wiederverwendet werden.
 
@@ -30,6 +28,11 @@ Der Core-IG fokussiert auf die technische Basisschicht des Fachdienstes:
 * Löschfristen und automatisches Löschen
 * Modulübergreifende Operationen auf Task ($create, $activate, $abort, …)
 
+### Anforderungen zur Umsetzung des IGs
+
+Der E-Rezept-Fachdienst MUSS den Implementation Guide "E-Rezept-Workflow Core" umsetzen.
+
+Der E-Rezept-Fachdienst MUSS zur Umsetzung des Implementation Guides "E-Rezept-Workflow Core" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind.
 ## Aufbau
 
 * [Zugriffsprotokollierung](./audit-service.md)
@@ -58,7 +61,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
   "name" : "gemIG_TIFlow_core",
   "title" : "Implementation Guide E-Rezept-Workflow Core",
   "status" : "draft",
-  "date" : "2026-03-05T21:58:29+00:00",
+  "date" : "2026-03-09T13:02:00+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -764,6 +767,33 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "menu-technische-umsetzung-epa-ms.html"
+        }],
+        "nameUrl" : "menu-technische-umsetzung-epa-ms.html",
+        "title" : "ePA MedicationService",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "menu-technische-umsetzung-push.html"
+        }],
+        "nameUrl" : "menu-technische-umsetzung-push.html",
+        "title" : "Push Notification senden",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "error-codes.html"
+        }],
+        "nameUrl" : "error-codes.html",
+        "title" : "Fehlercodes",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "verbindungsaufbau-client.html"
         }],
         "nameUrl" : "verbindungsaufbau-client.html",
@@ -795,6 +825,24 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
         }],
         "nameUrl" : "menu-technische-umsetzung-systemueberblick.html",
         "title" : "Technische Umsetzung - Systemüberblick",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "menu-technische-umsetzung-paging.html"
+        }],
+        "nameUrl" : "menu-technische-umsetzung-paging.html",
+        "title" : "Handhabung der Rückgabe von mehreren FHIR-Objekten",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "menu-technische-umsetzung-validation.html"
+        }],
+        "nameUrl" : "menu-technische-umsetzung-validation.html",
+        "title" : "FHIR-Ressource validieren",
         "generation" : "markdown"
       },
       {
@@ -1055,6 +1103,15 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
             "nameUrl" : "query-api-task-req-avs.html",
             "title" : "AVS-Anforderungen: Task-Query",
             "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-task-req-ktr.html"
+            }],
+            "nameUrl" : "query-api-task-req-ktr.html",
+            "title" : "KTR-Anforderungen: Task-Query",
+            "generation" : "markdown"
           }]
         },
         {
@@ -1207,60 +1264,6 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
             }],
             "nameUrl" : "query-api-consent-req-fdv.html",
             "title" : "Client-Anforderungen: Consent-Query",
-            "generation" : "markdown"
-          }]
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "query-api-pushers.html"
-          }],
-          "nameUrl" : "query-api-pushers.html",
-          "title" : "Query API: pushers",
-          "generation" : "markdown",
-          "page" : [{
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "query-api-pushers-req-fd.html"
-            }],
-            "nameUrl" : "query-api-pushers-req-fd.html",
-            "title" : "FD-Anforderungen: pushers-Query",
-            "generation" : "markdown"
-          },
-          {
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "query-api-pushers-req-fdv.html"
-            }],
-            "nameUrl" : "query-api-pushers-req-fdv.html",
-            "title" : "FdV-Anforderungen: pushers-Query",
-            "generation" : "markdown"
-          }]
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "query-api-channels.html"
-          }],
-          "nameUrl" : "query-api-channels.html",
-          "title" : "Query API: channels",
-          "generation" : "markdown",
-          "page" : [{
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "query-api-channels-req-fd.html"
-            }],
-            "nameUrl" : "query-api-channels-req-fd.html",
-            "title" : "FD-Anforderungen: channels-Query",
-            "generation" : "markdown"
-          },
-          {
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "query-api-channels-req-fdv.html"
-            }],
-            "nameUrl" : "query-api-channels-req-fdv.html",
-            "title" : "FdV-Anforderungen: channels-Query",
             "generation" : "markdown"
           }]
         }]

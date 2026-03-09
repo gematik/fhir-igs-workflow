@@ -109,3 +109,31 @@ Das Clientsystem MUSS den vom Authorization-Endpunkt als Antwort auf die signier
 
 Das Clientsystem MUSS vor dem Abrufen von ID_Token und ACCESS_Token einen zufälligen 256bit-AES-Schlüssel ("Token Key") erzeugen.
 
+Das Clientsystem MUSS den KEY_VERIFIER bilden, indem "Token Key" und CODE_VERIFIER in einem JSON-Objekt kodiert werden.
+Hinweis: Der Aufbau des “KEY_VERIFIER” entspricht [gemSpec_IDP_Dienst#Kapitel 7.5 Token Request].
+
+Das Clientsystem MUSS den "Key_Verifier" mittels JWE und PUK_IDP_ENC verschlüsseln und zusammen mit dem AUTHORIZATION_CODE TLS-gesichert und als HTTP/1.1 POST Request an den Token-Endpunkt senden.
+Hinweis: Der Aufbau der Anfrage entspricht [gemSpec_IDP_Dienst#Kapitel 7.5 Token Request].
+
+Als Verschlüsselungsalgorithmus ist ECDH-ES (Elliptic Curve Diffie-Hellman Ephemeral Static key agreement) vorgesehen.
+
+Der Token-Endpunkt validiert den “CODE_VERFIER” und gleicht diesen mit der “code_challenge” ab. Dann erzeugt er die erforderlichen Token und verschlüsselt beide mit dem “Token-Key”.
+
+Das Primärsystem erhält nun den signierten “ID_TOKEN” und den “ACCESS_TOKEN” vom Token-Endpunkt und prüft die Signatur des “ID_TOKEN”.
+
+Das Clientsystem MUSS das vom Token-Endpunkt ausgegebene ID_TOKEN als HTTP/1.1 Statusmeldung 200 verarbeiten und mittels "Token Key" entschlüsseln. Das Clientsystem MUSS das ID_TOKEN ablehnen, wenn dieses außerhalb der mit dem Token-Endpunkt etablierten TLS-Verbindung übertragen wird oder nicht mit dem vorher übermittelten "Token Key" verschlüsselt war.
+Hinweis: Der Aufbau der Antwort und des “ID_TOKEN” entspricht [gemSpec_IDP_Dienst#Kapitel 7.6 Token Response].
+
+Das Clientsystem MUSS das vom Token-Endpunkt ausgegebene ACCESS_TOKEN in der HTTP/1.1 Statusmeldung 200 verarbeiten und mittels "Token Key" entschlüsseln. Das Clientsystem MUSS das ACCESS_TOKEN ablehnen, wenn dieses außerhalb der mit dem Token-Endpunkt etablierten TLS-Verbindung übertragen wird oder nicht mit dem vorher übermittelten "Token Key" verschlüsselt war.
+Hinweis: Der Aufbau der Antwort und des “ACCESS_TOKEN” entspricht [gemSpec_IDP_Dienst#Kapitel 7.6 Token Response].
+
+Das Clientsystem MUSS die Signatur des ACCESS_TOKEN und ID_TOKEN mathematisch prüfen und auf ein gültiges C.FD.SIG-Zertifikat mit der Rollen-OID "oid_idpd" zurückführen.
+Zur Prüfung von Zertifikatstyp- und Rollen-OID siehe Hinweis zu A_20657-*.
+
+Das Clientsystem MUSS das zur Signatur des ACCESS_TOKEN verwendete Zertifikat auf Gültigkeit innerhalb der TI prüfen. Das Clientsystem MUSS, wenn es den Konnektor oder den Basis-Consumer nutzt, mit der Operation "VerifyCertificate" prüfen.
+Für die Prüfung mittels Konnektor siehe [gemSpec_Kon#4.1.9.5.3] bzw. [gemILF_PS#4.4.4.3].
+
+Für die Prüfung mittels Basis-Consumer siehe [gemSpec_Basis_KTR_Consumer#A_17429].
+
+Im weiteren Verlauf kann der “ACCESS_TOKEN” innerhalb seiner Gültigkeitsdauer bei verschiedenen Aufrufen des Fachdienstes eingereicht werden. Der Fachdienst entschlüsselt das “ACCESS_TOKEN” mit seinem privaten Schlüssel, validiert es, zieht die notwendigen Informationen entsprechend seinem Claim heraus und verwendet diese für seine fachlichen Operationen.
+

@@ -36,11 +36,11 @@ Das Clientsystem MUSS den Anwendungsfall "UC 4.2 - E-Rezept durch Abgebenden zur
 
 **Tabelle: **TAB_ILFERP_008 - Verordnung durch Clientsystem zurückgeben
 
-Das CS Kostenträger MUSS im Anwendungsfall "Verordnung durch Clientsystem zurückgeben" für die zurückzugebende Verordnung die HTTP-Operation POST /Task/<id>/$reject mit
+Das Clientsystem Kostenträger MUSS im Anwendungsfall "Verordnung durch Clientsystem zurückgeben" für die zurückzugebende Verordnung die HTTP-Operation POST /Task/<id>/$reject mit
 * ACCESS_TOKEN im Authorization-Header
 * Task-ID in URL <id> 
 * Geheimnis in URL-Parameter ?secret=
 ausführen.
 
-Das CS Kostenträger MUSS im Anwendungsfall "Verordnung durch Clientsystem zurückgeben" für das zurückzugebende E-Rezept nach erfolgreichem Aufruf der Operation "Eine Verordnung zurückweisen" die Daten zu Verordnung, E-Rezept-Token und das Geheimnis im CS löschen.
+Das Clientsystem Kostenträger MUSS im Anwendungsfall "Verordnung durch Clientsystem zurückgeben" für das zurückzugebende E-Rezept nach erfolgreichem Aufruf der Operation "Eine Verordnung zurückweisen" die Daten zu Verordnung, E-Rezept-Token und das Geheimnis im CS löschen.
 

@@ -12,15 +12,15 @@ Version 1.0.0-draft - ci-build
 
 ## Query API: Communication
 
-Diese Seite basiert auf der gleichnamigen Schnittstelle in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/query-api-communication.html) und beschreibt den Einstieg in die Communication-Query-Schnittstelle.
-
 ### Nachricht
 
-Die Nachricht zum Abruf von Nachrichten wird als HTTP `GET`-Anfrage an den E-Rezept-Fachdienst gesendet, um eine Liste der hinterlegten **Communication**-Instanzen abzurufen.
+Die Interaktion mit Nachrichten als FHIR-Ressource **Communication** wird über die folgenden HTTP-Methoden ermöglicht:
 
-Zum Einstellen von Nachrichten wird eine HTTP `POST`-Anfrage an den E-Rezept-Fachdienst gesendet, um eine Nachricht für einen intendierten Empfänger einzustellen.
-
-Zum Löschen von Nachrichten wird eine HTTP `DELETE`-Anfrage an den E-Rezept-Fachdienst gesendet, um eine Nachricht zu löschen.
+| | |
+| :--- | :--- |
+| GET | Nachrichten abrufen |
+| POST | Nachricht einstellen |
+| DELETE | Nachricht löschen |
 
 ### Anforderungen an Schnittstelle
 

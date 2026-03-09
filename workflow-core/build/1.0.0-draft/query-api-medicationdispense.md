@@ -20,6 +20,12 @@ Dem Versicherten werden über die Ressource MedicationDispense Informationen üb
 
 ### Nachricht
 
+Die Nachricht zur Interaktion mit Einlöseinformationen als FHIR-Ressource **MedicationDispense** wird über die folgenden HTTP-Methoden ermöglicht:
+
+| | |
+| :--- | :--- |
+| GET | Einlöseinformation abrufen |
+
 ### Anforderungen an Schnittstelle
 
 * [Server-Anforderungen zur MedicationDispense-Query](./query-api-medicationdispense-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.

@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"6"}
-    h3,h4,h5,h6{--heading-prefix:"6"}</style>
+    <style type="text/css">h2{--heading-prefix:"9"}
+    h3,h4,h5,h6{--heading-prefix:"9"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -134,7 +134,29 @@
         <a href="ttl.html">Löschfristen</a>
       </li>
       <li>
+        <a href="error-codes.html">Fehlercodes</a>
+      </li>
+      <li>
         <a href="verbindungsaufbau-client.html">Verbindungsaufbau von Clientsystemen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Technische Funktionsmerkmale
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-technische-umsetzung-epa-ms.html">ePA Medication Service</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-push.html">Push Notification</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-paging.html">Paginierung</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-validation.html">FHIR-Validierung</a>
       </li>
     </ul>
   </li>
@@ -194,7 +216,7 @@ Implementation Guide<br /> E-Rezept-Workflow Core
 
           <span style="float:right;">
 
-            <a href="ttl.html">&lt;vorherige</a> | 
+            <a href="error-codes.html">&lt;vorherige</a> | 
 
             <a href="#bottom">unten</a>
 
@@ -619,6 +641,136 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     Das Clientsystem MUSS vor dem Abrufen von ID_Token und ACCESS_Token einen zufälligen 256bit-AES-Schlüssel ("Token Key") erzeugen.
 </requirement>
 
+<!-- A_21334-01 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-463" title="CS: Erzeugung des KEY_VERIFIER" version="0">
+    <meta lockversion="false" />
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="CS_E-Rezept_KTR">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="NCPeH_ePeDA">
+        <testProcedure id="Produkttest" />
+    </actor>
+    Das Clientsystem MUSS den KEY_VERIFIER bilden, indem "Token Key" und CODE_VERIFIER in einem JSON-Objekt kodiert werden.
+</requirement>
+
+<p>Hinweis: Der Aufbau des “KEY_VERIFIER” entspricht [gemSpec_IDP_Dienst#Kapitel 7.5 Token Request].</p>
+
+<!-- A_20671-02 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-463" title="CS: Einreichen des AUTHORIZATION_CODE beim Token-Endpunkt" version="0">
+    <meta lockversion="false" />
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="CS_E-Rezept_KTR">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="NCPeH_ePeDA">
+        <testProcedure id="Produkttest" />
+    </actor>
+    Das Clientsystem MUSS den "Key_Verifier" mittels JWE und PUK_IDP_ENC verschlüsseln und zusammen mit dem AUTHORIZATION_CODE TLS-gesichert und als HTTP/1.1 POST Request an den Token-Endpunkt senden.
+</requirement>
+
+<p>Hinweis: Der Aufbau der Anfrage entspricht [gemSpec_IDP_Dienst#Kapitel 7.5 Token Request].</p>
+
+<p>Als Verschlüsselungsalgorithmus ist ECDH-ES (Elliptic Curve Diffie-Hellman Ephemeral Static key agreement) vorgesehen.</p>
+
+<p>Der Token-Endpunkt validiert den “CODE_VERFIER” und gleicht diesen mit der “code_challenge” ab. Dann erzeugt er die erforderlichen Token und verschlüsselt beide mit dem “Token-Key”.</p>
+
+<p>Das Primärsystem erhält nun den signierten “ID_TOKEN” und den “ACCESS_TOKEN” vom Token-Endpunkt und prüft die Signatur des “ID_TOKEN”.</p>
+
+<!-- A_20672-02 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-463" title="CS: Annahme des ID_TOKEN" version="0">
+    <meta lockversion="false" />
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="CS_E-Rezept_KTR">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="NCPeH_ePeDA">
+        <testProcedure id="Produktgutachten" />
+    </actor>
+    Das Clientsystem MUSS das vom Token-Endpunkt ausgegebene ID_TOKEN als HTTP/1.1 Statusmeldung 200 verarbeiten und mittels "Token Key" entschlüsseln. Das Clientsystem MUSS das ID_TOKEN ablehnen, wenn dieses außerhalb der mit dem Token-Endpunkt etablierten TLS-Verbindung übertragen wird oder nicht mit dem vorher übermittelten "Token Key" verschlüsselt war.
+</requirement>
+
+<p>Hinweis: Der Aufbau der Antwort und des “ID_TOKEN” entspricht [gemSpec_IDP_Dienst#Kapitel 7.6 Token Response].</p>
+
+<!-- A_20673-02 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-463" title="CS: Annahme des ACCESS_TOKEN" version="0">
+    <meta lockversion="false" />
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="CS_E-Rezept_KTR">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="NCPeH_ePeDA">
+        <testProcedure id="Produktgutachten" />
+    </actor>
+    Das Clientsystem MUSS das vom Token-Endpunkt ausgegebene ACCESS_TOKEN in der HTTP/1.1 Statusmeldung 200 verarbeiten und mittels "Token Key" entschlüsseln. Das Clientsystem MUSS das ACCESS_TOKEN ablehnen, wenn dieses außerhalb der mit dem Token-Endpunkt etablierten TLS-Verbindung übertragen wird oder nicht mit dem vorher übermittelten "Token Key" verschlüsselt war.
+</requirement>
+
+<p>Hinweis: Der Aufbau der Antwort und des “ACCESS_TOKEN” entspricht [gemSpec_IDP_Dienst#Kapitel 7.6 Token Response].</p>
+
+<!-- A_20674-01 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-463" title="CS: Formale Prüfung der Signatur des ID_TOKEN und des ACCESS_TOKEN" version="0">
+    <meta lockversion="false" />
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="CS_E-Rezept_KTR">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="NCPeH_ePeDA">
+        <testProcedure id="Produkttest" />
+    </actor>
+    Das Clientsystem MUSS die Signatur des ACCESS_TOKEN und ID_TOKEN mathematisch prüfen und auf ein gültiges C.FD.SIG-Zertifikat mit der Rollen-OID "oid_idpd" zurückführen.
+</requirement>
+
+<p>Zur Prüfung von Zertifikatstyp- und Rollen-OID siehe Hinweis zu A_20657-*.</p>
+
+<!-- A_20675-01 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-463" title="CS: Gültigkeitsprüfung des Signaturzertifikats des ACCESS_TOKEN innerhalb der TI" version="0">
+    <meta lockversion="false" />
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="CS_E-Rezept_KTR">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="NCPeH_ePeDA">
+        <testProcedure id="Produktgutachten" />
+    </actor>
+    Das Clientsystem MUSS das zur Signatur des ACCESS_TOKEN verwendete Zertifikat auf Gültigkeit innerhalb der TI prüfen. Das Clientsystem MUSS, wenn es den Konnektor oder den Basis-Consumer nutzt, mit der Operation "VerifyCertificate" prüfen.
+</requirement>
+
+<p>Für die Prüfung mittels Konnektor siehe [gemSpec_Kon#4.1.9.5.3] bzw. [gemILF_PS#4.4.4.3].</p>
+
+<p>Für die Prüfung mittels Basis-Consumer siehe [gemSpec_Basis_KTR_Consumer#A_17429].</p>
+
+<p>Im weiteren Verlauf kann der “ACCESS_TOKEN” innerhalb seiner Gültigkeitsdauer bei verschiedenen Aufrufen des Fachdienstes eingereicht werden. Der Fachdienst entschlüsselt das “ACCESS_TOKEN” mit seinem privaten Schlüssel, validiert es, zieht die notwendigen Informationen entsprechend seinem Claim heraus und verwendet diese für seine fachlichen Operationen.</p>
+
 
 
 
@@ -642,7 +794,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <tr>
               <td style="text-align:left">&#xA0;
 
-                <a href="ttl.html">&lt;vorherige</a>
+                <a href="error-codes.html">&lt;vorherige</a>
 
               </td>
               <td style="text-align:center">
@@ -660,7 +812,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Mar 5, 2026 21:58+0000">2026-03-05</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 13:02+0000">2026-03-09</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

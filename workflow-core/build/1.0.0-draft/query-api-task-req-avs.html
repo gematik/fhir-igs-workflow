@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"11.1.3"}
-    h3,h4,h5,h6{--heading-prefix:"11.1.3"}</style>
+    <style type="text/css">h2{--heading-prefix:"16.1.3"}
+    h3,h4,h5,h6{--heading-prefix:"16.1.3"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -134,7 +134,29 @@
         <a href="ttl.html">Löschfristen</a>
       </li>
       <li>
+        <a href="error-codes.html">Fehlercodes</a>
+      </li>
+      <li>
         <a href="verbindungsaufbau-client.html">Verbindungsaufbau von Clientsystemen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Technische Funktionsmerkmale
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-technische-umsetzung-epa-ms.html">ePA Medication Service</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-push.html">Push Notification</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-paging.html">Paginierung</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-validation.html">FHIR-Validierung</a>
       </li>
     </ul>
   </li>
@@ -198,7 +220,7 @@ Implementation Guide<br /> E-Rezept-Workflow Core
 
             <a href="#bottom">unten</a>
 
-          | <a href="query-api-medicationdispense.html">nächste&gt;</a>
+          | <a href="query-api-task-req-ktr.html">nächste&gt;</a>
 
           </span>
 
@@ -235,10 +257,39 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#recovery-secret" id="markdown-toc-recovery-secret">Recovery Secret</a></li>
+  <li><a href="#quittung-erneut-abrufen" id="markdown-toc-quittung-erneut-abrufen">Quittung erneut abrufen</a></li>
+</ul>
+
 </div>
 <p>Diese Seite beschreibt Anforderungen an das AVS zur Nutzung der <code class="language-plaintext highlighter-rouge">Task</code>-Query-Endpunkte.</p>
+
+<h3 id="recovery-secret">Recovery Secret</h3>
+
+<h3 id="quittung-erneut-abrufen">Quittung erneut abrufen</h3>
+
+<p>Mit diesem Anwendungsfall kann eine abgebende LEI die Quittung erneut abrufen, falls bei der Übermittlung vom E-Rezept-Fachdienst ein Fehler aufgetreten ist.</p>
+
+<p>Der Anwendungsfall kann bei Bedarf wiederholt werden.</p>
+
+<!-- A_19292 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-368" title="PS abgebende LEI: Quittung erneut abrufen - Statusrequest" version="0">
+  <meta lockversion="false" />
+  <actor name="PS_E-Rezept_abgebend">
+    <testProcedure id="Herstellererklärung" />
+  </actor>
+  Das PS der abgebenden LEI MUSS im Anwendungsfall "Quittung erneut abrufen" für das E-Rezept die HTTP-Operation GET /Task/&lt;id&gt;/ mit 
+  <ul>
+    <li>ACCESS_TOKEN im Authorization-Header</li>
+    <li>Task-ID in URL &lt;id&gt; </li>
+    <li>Geheimnis in URL-Parameter ?secret=</li>
+  </ul>
+  ausführen.
+</requirement>
 
 
 
@@ -271,7 +322,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="query-api-medicationdispense.html">nächste&gt;</a>
+                <a href="query-api-task-req-ktr.html">nächste&gt;</a>
 
               </td>
             </tr>
@@ -281,7 +332,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Mar 5, 2026 21:58+0000">2026-03-05</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 13:02+0000">2026-03-09</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

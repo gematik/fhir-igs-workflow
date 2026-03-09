@@ -16,11 +16,13 @@ Für die Nutzung verschiedener im Rahmen der Anwendung E-Rezept angebotenen Funk
 
 ### Nachricht
 
-Die Nachricht zum Abruf von Einwilligungen wird als HTTP `GET`-Anfrage an den E-Rezept-Fachdienst gesendet, um eine Liste der hinterlegten **Consent**-Instanzen abzurufen.
+Die Nachricht zur Interaktion mit Einwilligungen als FHIR-Ressource **Consent** wird über die folgenden HTTP-Methoden ermöglicht:
 
-Zum Erteilen von Einwilligungen wird eine HTTP `POST`-Anfrage an den E-Rezept-Fachdienst gesendet.
-
-Zum Widerrufen einer Einwilligung wird eine HTTP `DELETE`-Anfrage an den E-Rezept-Fachdienst gesendet.
+| | |
+| :--- | :--- |
+| GET | Einwilligungen einsehen |
+| POST | Einwilligung erteilen |
+| DELETE | Einwilligung widerrufen |
 
 ### Anforderungen an Schnittstelle
 
