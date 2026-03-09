@@ -8,7 +8,7 @@ Checks:
   - SOLL -> SHOULD
     - KANN -> MAY
 - actor name against beginning of requirement text:
-  - Der E-Rezept-Fachdienst -> E-Rezept-Fachdienst
+    - Der E-Rezept-Fachdienst -> eRp_FD
   - Das E-Rezept-FdV -> eRp_FdV
   - Das PS der abgebenden LEI -> PS_E-Rezept_abgebend
   - Das PS der verordnenden LEI -> PS_E-Rezept_verordnend
@@ -52,7 +52,7 @@ GENERIC_LEADING_SUBJECTS: Set[str] = {
 
 
 KNOWN_ACTORS: Set[str] = {
-    "E-Rezept-Fachdienst", #TODO: change to eRp_FD und in allen AFOs
+    "eRp_FD",
     "eRp_FdV",
     "NCPeH_ePeDA",
     "Anb_NCPeH_FD",
@@ -65,7 +65,7 @@ KNOWN_ACTORS: Set[str] = {
 
 # Ordered by priority and specificity.
 SUBJECT_RULES: List[Tuple[str, str, str]] = [
-    ("Der E-Rezept-Fachdienst", "E-Rezept-Fachdienst", "Der E-Rezept-Fachdienst"),
+    ("Der E-Rezept-Fachdienst", "eRp_FD", "Der E-Rezept-Fachdienst"),
     ("Das E-Rezept-FdV", "eRp_FdV", "Das E-Rezept-FdV"),
     ("Der NCPeH-FD", "NCPeH_ePeDA", "Der NCPeH-FD"),
     ("Anbieter des NCPeH-FD", "Anb_NCPeH_FD", "Anbieter des NCPeH-FD"),
@@ -79,7 +79,7 @@ SUBJECT_RULES: List[Tuple[str, str, str]] = [
 ]
 
 ACTOR_CANONICAL_SUBJECT: Dict[str, str] = {
-    "E-Rezept-Fachdienst": "Der E-Rezept-Fachdienst",
+    "eRp_FD": "Der E-Rezept-Fachdienst",
     "eRp_FdV": "Das E-Rezept-FdV",
     "NCPeH_ePeDA": "Der NCPeH-FD",
     "Anb_NCPeH_FD": "Anbieter des NCPeH-FD",

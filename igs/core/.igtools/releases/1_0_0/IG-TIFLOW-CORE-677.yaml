@@ -1,0 +1,25 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 42ca7e83ab97a6e1917be83a99c810a5b2722d5264ddf876b0bbc0ee43628f71
+created: '2026-03-09T16:27:45.466947'
+date: '2026-03-09T16:27:45.466950'
+key: IG-TIFLOW-CORE-677
+modified: '2026-03-09T16:27:45.466948'
+release_status: NEW
+source: input/pagecontent/op-activate-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: 'Der E-Rezept-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&#60;id&#62;/$activate
+  einen im FHIR Profil KBV_PR_FOR_Coverage gespeicherten Wert für payor.identifier.value
+  gemäß dem im "Gemeinsames Rundschreiben Institutionskennzeichen (IK)" vom 01.06.2020
+  unter Kapitel 1.2.5 "Prüfziffer" beschriebenen Prüfalgorithmus validieren, und bei
+  einer fehlerhaften Prüfung den Prozess mit einem Http-Fehler 400 (Bad Request) abbrechen
+  sowie die Fehlermeldung "Ungültiges Institutionskennzeichen (IKNR): Das übergebene
+  Institutionskennzeichen im Versicherungsstatus entspricht nicht den Prüfziffer-Validierungsregeln."
+  in Form einer OperationOutcome ausliefern.'
+title: E-Rezept-Fachdienst - Task aktivieren - Überprüfung der IK Nummer im Profil
+  KBV_PR_FOR_Coverage
+version: 0

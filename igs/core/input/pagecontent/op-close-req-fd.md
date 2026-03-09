@@ -3,18 +3,18 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_19231-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-268" title="E-Rezept-Fachdienst - Task schließen - Prüfung Secret" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-574" title="E-Rezept-Fachdienst - Task schließen - Prüfung Secret" version="0">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$close das im URL-Parameter "?secret=..." übertragene Secret gegen das im referenzierten Task gespeicherte Secret Task.identifier:Secret als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret und auf Task.status = "in-progress" prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit der Zugriff auf diesen Datensatz nur durch den Berechtigten in Kenntnis des Secrets erfolgt.
 </requirement>
 
 <!-- A_19248-05 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-269" title="E-Rezept-Fachdienst - Task schließen - Schemaprüfung MedicationDispense" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-575" title="E-Rezept-Fachdienst - Task schließen - Schemaprüfung MedicationDispense" version="0">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close das im HTTP-Body des Requests enthaltene Parameters-Objekt gegen das Profil https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PAR_CloseOperation_Input prüfen, insbesondere bei der darin enthaltenen MedicationDispense:
@@ -27,45 +27,45 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_27051 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-270" title="E-Rezept-Fachdienst - Task schließen - MedicationDispense speichern" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-576" title="E-Rezept-Fachdienst - Task schließen - MedicationDispense speichern" version="0">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close die Referenz auf den aufgerufenen Task Task/&lt;id&gt; als MedicationDispense.supportingInformation übernehmen und die MedicationDispense, sowie die in MedicationDispense.medication referenzierte Medication, speichern.
 </requirement>
 
 <!-- A_26337 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-271" title="E-Rezept-Fachdienst - Task schließen - Zeitstempel MedicationDispense" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-577" title="E-Rezept-Fachdienst - Task schließen - Zeitstempel MedicationDispense" version="0">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close den Zeitpunkt des Aufrufes in Task.extension:lastMedicationDispense im Format "YYYY-MM-DDThh:mm:ss+zz:zz" (FHIR-instant) anlegen und speichern, wenn ein MedicationDispense Objekt im Aufruf übergeben wird.
 </requirement>
 
 <!-- A_28129 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-272" title="E-Rezept-Fachdienst - Task schließen - Push Notification Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-578" title="E-Rezept-Fachdienst - Task schließen - Push Notification Versicherter" version="0">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$close, wenn eine MedicationDispense Ressource übermittelt wird und die Operation erfolgreich abgeschlossen werden kann, den Push Notification Prozess für den Trigger mit der ChannelId "erp.task.close" und den Versicherten mit der KVNR = Task.for initiieren.
 </requirement>
 
 <!-- A_19232 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-273" title="E-Rezept-Fachdienst - Task schließen - Status beenden" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-579" title="E-Rezept-Fachdienst - Task schließen - Status beenden" version="0">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
     Der E-Rezept-Fachdienst MUSS die zulässige Beendigung eines Tasks mittels /Task/&lt;id&gt;/$close-Operation im StatusTask.status = "completed" vollziehen, damit der Workflow für den Versicherten als beendet und die Verordnung somit als eingelöst dargestellt wird.
 </requirement>
 
 <!-- A_19233-05 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-274" title="E-Rezept-Fachdienst - Task schließen - Quittung erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-580" title="E-Rezept-Fachdienst - Task schließen - Quittung erstellen" version="0">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels /Task/&lt;id&gt;/$close ein Quittungsbundle gemäß des FHIR-Profils https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle mit folgenden Informationen erstellen:
@@ -83,9 +83,9 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_22919 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-275" title="E-Rezept-Fachdienst - Task schließen - OCSP-Response nicht älter als 24h" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-581" title="E-Rezept-Fachdienst - Task schließen - OCSP-Response nicht älter als 24h" version="0">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
     Der E-Rezept-Fachdienst MUSS, falls keine OCSP-Response für das Signaturzertifikat der Quittung vorliegt bzw. die letzte vorliegende OCSP-Response älter als 24h ist, die Operation mit dem Fehler 503 abbrechen.

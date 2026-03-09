@@ -2,7 +2,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 
 <!-- A_19249 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-494" title="CS Kostenträger: Verordnung durch Abgebenden zurückgeben" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-814" title="CS Kostenträger: Verordnung durch Abgebenden zurückgeben" version="0">
   <meta lockversion="false"/>
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>
@@ -50,7 +50,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19250 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-495" title="CS Kostenträger: Verordnung zurückgeben - Statusrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-815" title="CS Kostenträger: Verordnung zurückgeben - Statusrequest" version="0">
   <meta lockversion="false"/>
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>
@@ -65,7 +65,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19251 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-496" title="CS Kostenträger: Verordnung zurückgeben - Verordnung löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-816" title="CS Kostenträger: Verordnung zurückgeben - Verordnung löschen" version="0">
   <meta lockversion="false"/>
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>

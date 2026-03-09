@@ -7,9 +7,9 @@ Diese Seite enthält die workflowtyp-spezifischen normativen Anforderungen an de
 ### Modulspezifische Anforderungen
 
 <!-- A_19170-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-26" title="E-Rezept-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-223" title="E-Rezept-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Rollenprüfung" version="0">
   <meta lockversion="false"/>
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 160, 169, 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Institutionen in der Rolle
@@ -21,9 +21,9 @@ Diese Seite enthält die workflowtyp-spezifischen normativen Anforderungen an de
 </requirement>
 
 <!-- A_24286-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-27" title="E-Rezept-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Dispensierinformationen löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-224" title="E-Rezept-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Dispensierinformationen löschen" version="0">
   <meta lockversion="false"/>
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 160, 169, 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject die Dispensierinformationen, falls welche vorhanden sind, löschen: 
@@ -35,9 +35,9 @@ Diese Seite enthält die workflowtyp-spezifischen normativen Anforderungen an de
 </requirement>
 
 <!-- A_25926 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-28" title="E-Rezept-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Löschmarkierungen Medikationsliste bereitstellen (Dispensierinformationen)" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-225" title="E-Rezept-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Löschmarkierungen Medikationsliste bereitstellen (Dispensierinformationen)" version="0">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 160, 169, 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject, wenn bereits Dispensierinformationen im E-Rezept-Fachdienst zum Task gespeichert wurden, die Daten für die Löschinformation dieser Dispensierinformationen für die Übermittlung in den ePA Medication Service bereitstellen.

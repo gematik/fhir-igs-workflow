@@ -5,18 +5,18 @@ Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `ChargeItem`-Que
 Mit diesem Anwendungsfall kann der Nutzer eine Liste aller Abrechnungsinformationen vom E-Rezept-Fachdienst abrufen, welche für den Versicherten bereitgestellt wurden.
 
 <!--A_24554-->
-<requirement conformance="MAY" key="IG-TIFLOW-CHRG15" title="E-Rezept-FdV: optional: Liste Abrechnungsinformationen abrufen" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CHRG-15" title="E-Rezept-FdV: optional: Liste Abrechnungsinformationen abrufen" version="0">
     <meta lockversion="false"/>
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
       Das E-Rezept-FdV KANN den Anwendungsfall "Liste Abrechnungsinformationen abrufen" umsetzen.
 </requirement>
 
 <!--A_22173-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG16" title="E-Rezept-FdV: Liste Abrechnungsinformationen abrufen - Abfragerequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-16" title="E-Rezept-FdV: Liste Abrechnungsinformationen abrufen - Abfragerequest" version="0">
     <meta lockversion="false"/>
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
       Das E-Rezept-FdV MUSS im Anwendungsfall "Liste Abrechnungsinformationen abfragen" zum Abrufen der Information vom E-Rezept-Fachdienst die HTTP-Operation GET /ChargeItem mit 
@@ -35,18 +35,18 @@ In der Response ist eine Liste von ChargeItem-Ressourcen enthalten. Für jede Ch
 Mit diesem Anwendungsfall kann der Nutzer (Versicherter) die Abrechnungsinformation zu einem E-Rezept vom E-Rezept-Fachdienst herunterladen.
 
 <!--A_24544-->
-<requirement conformance="MAY" key="IG-TIFLOW-CHRG17" title="E-Rezept-FdV: optional: Abrechnungsinformation abrufen" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CHRG-17" title="E-Rezept-FdV: optional: Abrechnungsinformation abrufen" version="0">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>
       Das E-Rezept-FdV KANN den Anwendungsfall "Abrechnungsinformation durch den Versicherten abrufen" umsetzen.
 </requirement>
 
 <!--A_22175-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG18" title="E-Rezept-FdV: Abrechnungsinformation abrufen - Abfragerequest einzelner Datensatz" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-18" title="E-Rezept-FdV: Abrechnungsinformation abrufen - Abfragerequest einzelner Datensatz" version="0">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
       Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation abfragen" zum Abrufen der Information zu einem einzelnen Datensatz vom E-Rezept-Fachdienst die HTTP-Operation GET /ChargeItem/&#60;id&#62;/ mit 
@@ -63,18 +63,18 @@ In der Response ist die ChargeItem Ressource und die zugehörigen Detaildatensä
 Mit diesem Anwendungsfall kann der Nutzer (Versicherter) Markierungen zu seiner Abrechnungsinformation setzen. Diese werden auf dem E-Rezept-Fachdienst gespeichert.
 
 <!--A_24553-->
-<requirement conformance="MAY" key="IG-TIFLOW-CHRG19" title="E-Rezept-FdV: optional: Abrechnungsinformation markieren" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CHRG-19" title="E-Rezept-FdV: optional: Abrechnungsinformation markieren" version="0">
     <meta lockversion="false"/>
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
       Das E-Rezept-FdV KANN den Anwendungsfall "Abrechnungsinformation markieren" umsetzen.
 </requirement>
 
 <!--A_22176-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG20" title="E-Rezept-FdV: Abrechnungsinformation markieren - Markierungen auswählen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-20" title="E-Rezept-FdV: Abrechnungsinformation markieren - Markierungen auswählen" version="0">
     <meta lockversion="false"/>
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
       Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation markieren" es dem Nutzer ermöglichen, eine oder mehrere der folgenden Inhalte als Markierung für eine Abrechnungsinformation zu wählen oder abzuwählen:
@@ -86,9 +86,9 @@ Mit diesem Anwendungsfall kann der Nutzer (Versicherter) Markierungen zu seiner 
 </requirement>
 
 <!--A_22179-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG21" title="E-Rezept-FdV: Abrechnungsinformation markieren - Speicherrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-21" title="E-Rezept-FdV: Abrechnungsinformation markieren - Speicherrequest" version="0">
     <meta lockversion="false"/>
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
       Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation markieren" zum Speichern der Information im E-Rezept-Fachdienst die HTTP-Operation PATCH /ChargeItem/&#60;id&#62; mit 
@@ -107,27 +107,27 @@ Mit diesem Anwendungsfall kann der Nutzer (Versicherter) Markierungen zu seiner 
 
 ### Abrechnungsinformation löschen (DELETE /ChargeItem/&#60;id&#62;)
 <!--A_24546-->
-<requirement conformance="MAY" key="IG-TIFLOW-CHRG22" title="E-Rezept-FdV: optional: Abrechnungsinformation löschen" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CHRG-22" title="E-Rezept-FdV: optional: Abrechnungsinformation löschen" version="0">
     <meta lockversion="false"/>
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
       Das E-Rezept-FdV KANN den Anwendungsfall "Abrechnungsinformation löschen" umsetzen.
 </requirement>
 
 <!--A_22180-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG23" title="E-Rezept-FdV: Abrechnungsinformation löschen - Abrechnungsinformationen zum Löschen auswählen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-23" title="E-Rezept-FdV: Abrechnungsinformation löschen - Abrechnungsinformationen zum Löschen auswählen" version="0">
     <meta lockversion="false"/>
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
       Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation löschen" es dem Nutzer ermöglichen, eine Abrechnungsinformationen zum Löschen auszuwählen.
 </requirement>
 
 <!--A_22181-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG24" title="E-Rezept-FdV: Abrechnungsinformation löschen - Bestätigung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-24" title="E-Rezept-FdV: Abrechnungsinformation löschen - Bestätigung" version="0">
     <meta lockversion="false"/>
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
       Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation löschen" vom Nutzer eine Bestätigung einholen, dass die selektierte Abrechnungsinformation gelöscht werden soll und die Möglichkeit geben, das Löschen abzubrechen.
@@ -138,9 +138,9 @@ Das E-Rezept-FdV muss im Rahmen der Bestätigung darauf hinweisen, dass mit dem 
 Das E-Rezept-FdV kann es dem Nutzer ermöglichen, den Anwendungsfall zum lokalen Löschen für die zu löschende Abrechnungsinformation zusammen mit dem Löschen auf dem E-Rezept-Fachdienst auszuführen.
 
 <!--A_22183-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG25" title="E-Rezept-FdV: Abrechnungsinformation löschen - Löschrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-25" title="E-Rezept-FdV: Abrechnungsinformation löschen - Löschrequest" version="0">
     <meta lockversion="false"/>
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
       Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation löschen" die HTTP-Operation DELETE /ChargeItem/&#60;id&#62; des E-Rezept-Fachdienstes mit
@@ -152,9 +152,9 @@ Das E-Rezept-FdV kann es dem Nutzer ermöglichen, den Anwendungsfall zum lokalen
 </requirement>
 
 <!--A_22707-01-->
-<requirement conformance="MAY" key="IG-TIFLOW-CHRG26" title="E-Rezept-FdV: Hinweis automatisches Löschen Abrechnungsinformationen" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CHRG-26" title="E-Rezept-FdV: Hinweis automatisches Löschen Abrechnungsinformationen" version="0">
     <meta lockversion="false"/>
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
       Das E-Rezept-FdV KANN, wenn es das Management von Abrechnungsinformationen unterstützt, den Nutzer vor Erreichen der Aufbewahrungsfrist der Abrechnungsinformation einen Hinweis zum automatischen Löschen geben, um dem Nutzer die Möglichkeit zu geben, falls gewünscht die Daten herunterzuladen und zu archivieren. 

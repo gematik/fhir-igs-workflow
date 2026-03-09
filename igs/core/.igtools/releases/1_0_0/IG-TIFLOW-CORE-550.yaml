@@ -1,0 +1,23 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 7f45c0fbb489416cb77108c02fea2ef23b18845985dc57eeb28b4a651d60859c
+created: '2026-03-09T16:27:45.440508'
+date: '2026-03-09T16:27:45.440511'
+key: IG-TIFLOW-CORE-550
+modified: '2026-03-09T16:27:45.440509'
+release_status: NEW
+source: input/pagecontent/menu-technische-umsetzung-validation.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS bei der Validierung einer FHIR-Ressource sicherstellen,
+  dass keine Extensions vorhanden sind, die nicht an den in den FHIR-Profilen spezifizierten
+  Stellen verwendet werden. Sollte eine solche Extension gefunden werden, gilt der
+  Datensatz als ungültig. In diesem Fall ist eine Fehlermeldung mit dem HTTP-Status
+  400 und der Nachricht "Unintendierte Verwendung von Extensions an unspezifizierter
+  Stelle" auszugeben.
+title: E-Rezept-Fachdienst - FHIR-Ressource validieren - Ausschluss unspezifizierter
+  Extensions
+version: 0

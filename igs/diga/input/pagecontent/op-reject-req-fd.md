@@ -7,9 +7,9 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 ### Modulspezifische Anforderungen
 
 <!-- A_19170-02 -->
-<requirement conformance="SHALL" key="IG-TIFlow-DiGA-23" title="E-Rezept-Fachdienst - Task zurückweisen - Flowtype 162 - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-DiGA-15354BV3" title="E-Rezept-Fachdienst - Task zurückweisen - Flowtype 162 - Rollenprüfung" version="0">
   <meta lockversion="false"/>
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 162 HTTP-POST-Operation über /Task/&lt;id&gt;/$reject die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Institutionen in der Rolle

@@ -14,9 +14,9 @@ Der Versicherte nutzt für die Verwaltung von Einwilligung und Zugriffsberechtig
 <br>
 
 <!-- A_27097 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-EU-56" title="Format Zugriffscode" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-EU-58" title="Format Zugriffscode" version="0">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Produkttypen der Anwendung E-Rezept MÜSSEN, wenn sie einen Zugriffscode für das Einlösen im europäischen Ausland verarbeiten, folgende Formatvorgaben für den Zugriffscode einhalten: String mit Gesamtlänge von 6 Zeichen, erlaubte Zeichen: a-z, A-Z, 0-9.
@@ -64,18 +64,18 @@ Um zu bestimmen, welche europäischen Länder das die Anwendung ePrescription/eD
 Der Ablauf der Authentisierung und Suche ist in [gemSpec_VZD_FHIR_Directory]#AF_10403 Fachdienst sucht Einträge im FHIR-Directory beschrieben. Der Betreiber des E-Rezept-Fachdienst muss beim FHIR-VZD Anbieter für den Zugriff auf den FHIR-VZD nach [gemSpec_VZD_FHIR_Directory]#Nutzer und Rollen registrieren.
 
 <!-- A_27095 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-EU-20" title="E-Rezept-Fachdienst - Zugriffsberechtigung - Liste zulässiger Länder" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-EU-59" title="E-Rezept-Fachdienst - Zugriffsberechtigung - Liste zulässiger Länder" version="0">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der E-Rezept-Fachdienst MUSS die Liste aller zulässigen Länder aus dem Verzeichnisdienst ermitteln, indem an den Verzeichnisdienst folgende Abfrage gestellt wird: Abfrage der Ressource "HealthcareService", HealthcareServices, deren Speciality "57833-6" aus https://loinc.org enthalten, HealthcareServices, deren Organisation aktiv sind, HealthcareServices, deren Organisation den OrganizationProfessionOIDType "1.2.276.0.76.4.292" entspricht, Einbeziehen der Organisation in das Rückgabeergebnis.
 </requirement>
 
 <!-- A_27096 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-EU-21" title="E-Rezept-Fachdienst - Zugriffsberechtigung - Caching Liste zulässiger Länder" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-EU-60" title="E-Rezept-Fachdienst - Zugriffsberechtigung - Caching Liste zulässiger Länder" version="0">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der E-Rezept-Fachdienst DARF NICHT Informationen zur Liste zulässiger Länder verwenden, welche länger als 96h lokal durch den E-Rezept-Fachdienst gecacht wurden.

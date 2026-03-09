@@ -1,18 +1,18 @@
 Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für den channels-Endpunkt.
 
 <!-- A_28121 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-340" title="E-Rezept-Fachdienst - unzulässige Operationen Channels" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-569" title="E-Rezept-Fachdienst - unzulässige Operationen Channels" version="0">
   <meta lockversion="false"/>
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
   Der E-Rezept-Fachdienst MUSS alle Zugriffe auf die Ressource Channels mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE unterbinden, damit keine unzulässigen Operationen auf den Daten ausgeführt werden können.
 </requirement>
 
 <!-- A_28117 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-340" title="E-Rezept-Fachdienst - Push Notifications - Channels- OpenApi_Notification_Fachdienst" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-570" title="E-Rezept-Fachdienst - Push Notifications - Channels- OpenApi_Notification_Fachdienst" version="0">
   <meta lockversion="false"/>
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>
   </actor>
   Der E-Rezept-Fachdienst MUSS die API mit den Endpunkten GET /channels, GET /channels/{pushkey} und POST /channels/{pushkey} gemäß [OpenAPI_FD] bereitstellen.
@@ -24,9 +24,9 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 Mit der Operation GET /channels können die verfügbaren Channels abgefragt werden.
 
 <!-- A_28118 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-340" title="E-Rezept-Fachdienst - Push Notifications - Channels abrufen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-571" title="E-Rezept-Fachdienst - Push Notifications - Channels abrufen - Rollenprüfung" version="0">
   <meta lockversion="false"/>
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation GET /channels die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle 
@@ -39,9 +39,9 @@ Mit der Operation GET /channels können die verfügbaren Channels abgefragt werd
 Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfiguration für eine spezifische FdV-Instanz abgefragt werden.
 
 <!-- A_28119 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-340" title="E-Rezept-Fachdienst - Push Notifications - Channels einer Instanz abrufen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-572" title="E-Rezept-Fachdienst - Push Notifications - Channels einer Instanz abrufen - Rollenprüfung" version="0">
   <meta lockversion="false"/>
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation GET /channels/{pushkey} die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle 
@@ -54,9 +54,9 @@ Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfigu
 ### POST /channels
 
 <!-- A_28120 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-340" title="E-Rezept-Fachdienst - Push Notifications - Channels konfigurieren - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-573" title="E-Rezept-Fachdienst - Push Notifications - Channels konfigurieren - Rollenprüfung" version="0">
   <meta lockversion="false"/>
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation POST /channels/{pushkey} die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle 

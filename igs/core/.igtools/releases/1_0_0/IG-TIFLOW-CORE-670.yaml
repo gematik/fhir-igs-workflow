@@ -1,0 +1,22 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 2a760402a20b97616c14ba6919854bbb91001034cf9f7494ad195d8b5fe41c76
+created: '2026-03-09T16:27:45.465871'
+date: '2026-03-09T16:27:45.465874'
+key: IG-TIFLOW-CORE-670
+modified: '2026-03-09T16:27:45.465873'
+release_status: NEW
+source: input/pagecontent/op-activate-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim berechtigten Aufruf der Operation POST /Task/&#60;id&#62;/$activate
+  prüfen, dass die PrescriptionID des Tasks mit der PrescriptionID im übergebenen
+  QES-Datensatz übereinstimmt und der Präfix der PrescriptionID gleich dem Flowtype
+  des zu aktivierenden Tasks ist und andernfalls die Operation mit dem http-Fehlercode
+  400 abbrechen.
+title: E-Rezept-Fachdienst - Task aktivieren - Prüfung Rezept-ID und Präfix gegen
+  Flowtype
+version: 0

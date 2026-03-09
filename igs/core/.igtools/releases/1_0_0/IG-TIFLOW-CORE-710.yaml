@@ -1,0 +1,22 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 9d51e94857ac1b8c378ec7c1f380ab53c09ea6a4f5ce1cbb9994066947199470
+created: '2026-03-09T16:27:45.473632'
+date: '2026-03-09T16:27:45.473635'
+key: IG-TIFLOW-CORE-710
+modified: '2026-03-09T16:27:45.473634'
+release_status: NEW
+source: input/pagecontent/op-create-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Anlegen eines neuen Tasks eine Rezept-ID gemäß
+  der Bildungsregel [gemSpec_DM_eRp#A_19217-*] generieren und als Identifier mit Namingsystem
+  https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId dem Task
+  hinzufügen und sicherstellen, dass diese Rezept-ID innerhalb von 11 Jahren nach
+  ihrer Erzeugung nicht erneut vergeben wird, damit es innerhalb der Aufbewahrungsfrist
+  der Abrechnungsdaten bei den Krankenkassen zu keinen Dubletten kommt.
+title: E-Rezept-Fachdienst - Task erzeugen - Generierung Rezept-ID
+version: 0

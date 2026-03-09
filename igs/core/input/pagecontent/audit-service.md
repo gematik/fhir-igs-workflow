@@ -4,36 +4,36 @@
 Der E-Rezept-Fachdienst soll Protokolldateien schreiben, die eine Analyse technischer Vorgänge erlauben. Diese Protokolldateien sind dafür vorgesehen, aufgetretene Fehler zu identifizieren und die Performance zu analysieren. Für diese Zwecke führt der E-Rezept-Fachdienst ein Systemprotokoll, mit dem der Anbieter des Dienstes jederzeit den Betriebszustand des Systems kontrollieren kann.
 
 <!-- A_19282 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-242" title="E-Rezept-Fachdienst - Systemprotokoll für Betriebszustand" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-534" title="E-Rezept-Fachdienst - Systemprotokoll für Betriebszustand" version="0">
 	<meta lockversion="false"/>
-	<actor name="E-Rezept-Fachdienst">
+	<actor name="eRp_FD">
     	<testProcedure id="Herstellererklärung"/>
   	</actor>
 	Der E-Rezept-Fachdienst MUSS ein Systemprotokoll über durchgeführte Operationen und deren Erfolg/Misserfolg führen, um dem Anbieter des Dienstes jederzeit eine Übersicht über den aktuellen Betriebszustand zu ermöglichen.
 </requirement>
 
 <!-- A_19283 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-243" title="Systemprotokoll ohne personenbezogene und ohne medizinische Daten" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-535" title="Systemprotokoll ohne personenbezogene und ohne medizinische Daten" version="0">
 	<meta lockversion="false"/>
-	<actor name="E-Rezept-Fachdienst">
+	<actor name="eRp_FD">
     	<testProcedure id="Produktgutachten"/>
   	</actor>
 	Der E-Rezept-Fachdienst MUSS in jedem zu tätigenden Systemprotokolleintrag alle personenbezogenen, personenbeziehbaren und medizinischen Informationen vor der Speicherung entfernen, damit vom administrativen Personal keine personenbezogenen Daten der Versicherten oder Leistungserbringer eingesehen werden können.
 </requirement>
 
 <!-- A_19678 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-244" title="E-Rezept-Fachdienst - Systemprotokoll  Verfügbarkeit interner Logdaten" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-536" title="E-Rezept-Fachdienst - Systemprotokoll  Verfügbarkeit interner Logdaten" version="0">
 	<meta lockversion="false"/>
-	<actor name="E-Rezept-Fachdienst">
+	<actor name="eRp_FD">
     	<testProcedure id="Herstellererklärung"/>
   	</actor>
 	Der Betreiber des E-Rezept-Fachdienstes MUSS im Rahmen von Testmaßnahmen dem Testbetriebsverantwortlichen auf Anforderung die Log-Dateien des Systemprotokolls übermitteln.
 </requirement>
 
 <!-- A_20001 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-245" title="E-Rezept-Fachdienst - Systemprotokoll zu Ergebnis einer aufgerufenen Operation" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-537" title="E-Rezept-Fachdienst - Systemprotokoll zu Ergebnis einer aufgerufenen Operation" version="0">
 	<meta lockversion="false"/>
-	<actor name="E-Rezept-Fachdienst">
+	<actor name="eRp_FD">
     	<testProcedure id="Herstellererklärung"/>
   	</actor>
 	Der E-Rezept-Fachdienst MUSS ein Systemprotokoll über durchgeführte Operationen und deren Erfolg/Misserfolg führen.
@@ -44,9 +44,9 @@ Der E-Rezept-Fachdienst soll Protokolldateien schreiben, die eine Analyse techni
 Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle Zugriffe auf die personenbezogenen und medizinischen Daten eines Versicherten für den Versicherten einsehbar sind. Diese Zugriffsprotokolle sind unabhängig vom Systemprotokoll und stehen ausschließlich dem Versicherten zur Wahrnehmung seiner Betroffenenrechte zur Einsicht zur Verfügung.
 
 <!-- A_19296-04 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-246" title="E-Rezept-Fachdienst - Inhalt Protokolleintrag" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-538" title="E-Rezept-Fachdienst - Inhalt Protokolleintrag" version="0">
 	<meta lockversion="false"/>
-	<actor name="E-Rezept-Fachdienst">
+	<actor name="eRp_FD">
     	<testProcedure id="Produkttest"/>
   </actor>
   Der E-Rezept-Fachdienst MUSS einen Protokolleintrag mit den folgenden Werten befüllen:
@@ -77,9 +77,9 @@ Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen all
 </requirement>
 
 <!-- A_19284-13 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-247" title="E-Rezept-Fachdienst - Versichertenprotokoll zu Operationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-539" title="E-Rezept-Fachdienst - Versichertenprotokoll zu Operationen" version="0">
 	<meta lockversion="false"/>
-	<actor name="E-Rezept-Fachdienst">
+	<actor name="eRp_FD">
     	<testProcedure id="Produkttest"/>
   	</actor>
 	Der E-Rezept-Fachdienst MUSS jeden Aufruf von Operationen gemäß "TAB_eRPFD_004 Versichertenprotokoll" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.
@@ -268,9 +268,9 @@ Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen all
 <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004 Versichertenprotokoll</figcaption></div>
 
 <!-- A_19284-13 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-248" title="E-Rezept-Fachdienst - Versichertenprotokoll zu automatischen Löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-540" title="E-Rezept-Fachdienst - Versichertenprotokoll zu automatischen Löschen" version="0">
 	<meta lockversion="false"/>
-	<actor name="E-Rezept-Fachdienst">
+	<actor name="eRp_FD">
     	<testProcedure id="Produkttest"/>
   	</actor>
 	Der E-Rezept-Fachdienst MUSS beim automatischen Löschen nach Erreichen einer Löschfrist gemäß "TAB_eRPFD_004a Versichertenprotokoll nach automatischen Löschen" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.
@@ -306,9 +306,9 @@ Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen all
 <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004a Versichertenprotokoll nach automatischen Löschen</figcaption></div>
 
 <!-- A_19284-13 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-249" title="E-Rezept-Fachdienst - Versichertenprotokoll zu Löschen nach Fehlerbehandlung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-541" title="E-Rezept-Fachdienst - Versichertenprotokoll zu Löschen nach Fehlerbehandlung" version="0">
 	<meta lockversion="false"/>
-	<actor name="E-Rezept-Fachdienst">
+	<actor name="eRp_FD">
     	<testProcedure id="Produkttest"/>
   	</actor>
 	Der E-Rezept-Fachdienst MUSS beim automatischen Löschen nach Fehlerbehandlung gemäß "TAB_eRPFD_004b Versichertenprotokoll nach Löschen wegen Fehlerbehandlung" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.
@@ -329,18 +329,18 @@ Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen all
 <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004b Versichertenprotokoll nach Löschen wegen Fehlerbehandlung</figcaption></div>
 
 <!-- A_19302 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-250" title="E-Rezept-Fachdienst - Protokolleintrag Versichertenprotokoll leicht verständlich" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-542" title="E-Rezept-Fachdienst - Protokolleintrag Versichertenprotokoll leicht verständlich" version="0">
 	<meta lockversion="false"/>
-	<actor name="E-Rezept-Fachdienst">
+	<actor name="eRp_FD">
     	<testProcedure id="Produkttest"/>
   	</actor>
 	Der E-Rezept-Fachdienst MUSS in jedem zu tätigenden Eintrag des Protokolls für Versicherte einen lesbaren Text in einfacher Sprache (deutsch und englisch) erzeugen, der mindestens den Namen des Zugreifenden, die auslösende Operation und das Ergebnis der Operation umfasst, damit Versicherte ohne technisches Vorwissen den Inhalt des Zugriffsprotokolls verstehen können.
 </requirement>
 
 <!-- A_22217 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-251" title="E-Rezept-Fachdienst - Protokollierung - keine Angabe zu organizationName" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-543" title="E-Rezept-Fachdienst - Protokollierung - keine Angabe zu organizationName" version="0">
 	<meta lockversion="false"/>
-	<actor name="E-Rezept-Fachdienst">
+	<actor name="eRp_FD">
     	<testProcedure id="Produkttest"/>
   	</actor>
 	Der E-Rezept-Fachdienst MUSS, wenn im ACCESS_TOKEN die Angabe zur "organizationName" mit NULL gefüllt ist, in der Protokollierung als agentname "unbekannt" verwenden.

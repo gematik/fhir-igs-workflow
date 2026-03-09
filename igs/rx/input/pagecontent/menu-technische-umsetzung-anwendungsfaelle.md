@@ -7,7 +7,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 #### PS verordnende LEI
 
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-212" title="PS verordnende LEI: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-266" title="PS verordnende LEI: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -26,7 +26,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 #### PS abgebende LEI
 
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-213" title="PS abgebende LEI: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-267" title="PS abgebende LEI: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -48,7 +48,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
     umsetzen.
 </requirement>
 
-<requirement conformance="SHOULD" key="IG-TIFLOW-RX-214" title="PS abgebende LEI: TIFlow-RX - empfohlene Anwendungsfälle" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-RX-268" title="PS abgebende LEI: TIFlow-RX - empfohlene Anwendungsfälle" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -64,7 +64,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 #### E-Rezept-FdV 
 
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-215" title="E-Rezept-FdV: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-269" title="E-Rezept-FdV: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>

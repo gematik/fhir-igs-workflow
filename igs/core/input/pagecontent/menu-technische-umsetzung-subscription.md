@@ -1,45 +1,45 @@
 Der Subscription Service wird außerhalb der VAU betrieben.
 
 <!-- A_22368 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-500" title="E-Rezept-Fachdienst - Subscription Service - Webschnittstelle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-649" title="E-Rezept-Fachdienst - Subscription Service - Webschnittstelle" version="0">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der E-Rezept-Fachdienst MUSS eine Webschnittstelle anbieten, welche Websocket-Verbindungen mit einer Dauer von bis zu 12 h unterstützt.
 </requirement>
 
 <!-- A_22369 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-501" title="E-Rezept-Fachdienst - Subscription Service - Prüfung Bearer-Token" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-650" title="E-Rezept-Fachdienst - Subscription Service - Prüfung Bearer-Token" version="0">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der E-Rezept-Fachdienst MUSS an der Webschnittstelle des Subscription Service beim Verbindungsaufbau prüfen, dass der Client einen zeitlich und kryptographisch gültigen Bearer-Token der Schnittstelle GET /Subscription übermittelt und bei nicht-erfolgreicher Prüfung die Verbindung mit dem Fehler 403 ablehnen.
 </requirement>
 
 <!-- A_22370 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-502" title="E-Rezept-Fachdienst - Subscription Service - Upgrade" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-651" title="E-Rezept-Fachdienst - Subscription Service - Upgrade" version="0">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der E-Rezept-Fachdienst MUSS an der Webschnittstelle des Subscription Service beim Verbindungsaufbau ein Upgrade durchführen.
 </requirement>
 
 <!-- A_22371 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-503" title="E-Rezept-Fachdienst - Subscription Service - abgelaufene Verbindungen schließen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-652" title="E-Rezept-Fachdienst - Subscription Service - abgelaufene Verbindungen schließen" version="0">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der E-Rezept-Fachdienst MUSS an der Webschnittstelle des Subscription Service sicherstellen, dass Verbindungen nach Überschreiten des Timestamp Ablauf der Subscription geschlossen werden.
 </requirement>
 
 <!-- A_22378 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-504" title="E-Rezept-Fachdienst - Subscription Service - Verbot Profilbildung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-653" title="E-Rezept-Fachdienst - Subscription Service - Verbot Profilbildung" version="0">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der E-Rezept-Fachdienst DARF in der Verbindung zum Subscription Service anfallende Metadaten (Client-IP-Adresse, etc.) NICHT für eine unbefugte Profilbildung der verbundenen Clients verwenden.

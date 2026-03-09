@@ -24,9 +24,9 @@ Die Inhalte basieren auf der Spezifikation "EU Zugriff E-Rezept", Version 1.0.1
 
 ### Anforderungen zur Umsetzung des IGs
 
-<requirement conformance="SHALL" title="E-Rezept: Anwendung des IG 'EU Zugriff E-Rezept' für Einlösen von E-Rezepten im EU Ausland" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-EU-102" title="E-Rezept: Anwendung des IG 'EU Zugriff E-Rezept' für Einlösen von E-Rezepten im EU Ausland" version="0">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>
     <actor name="NCPeH_ePeDA">
@@ -35,9 +35,9 @@ Die Inhalte basieren auf der Spezifikation "EU Zugriff E-Rezept", Version 1.0.1
     Der E-Rezept-Fachdienst und dessen Client MÜSSEN zur Umsetzung des Einlösens von E-Rezepten im EU Ausland den Implementation Guide "EU Zugriff E-Rezept" umsetzen.
 </requirement>
 
-<requirement conformance="SHALL" title="E-Rezept: Umsetzung des Moduls 'EU Zugriff E-Rezept'" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-EU-103" title="E-Rezept: Umsetzung des Moduls 'EU Zugriff E-Rezept'" version="0">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>
     <actor name="NCPeH_ePeDA">

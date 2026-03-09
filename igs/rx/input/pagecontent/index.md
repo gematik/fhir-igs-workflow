@@ -17,9 +17,9 @@ Dieser Implementation Guide beschreibt die Datenmodelle und Prozesse des E-Rezep
 
 ### Anforderungen zur Umsetzung des IGs
 
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-218" title="E-Rezept: Anwendung des IG 'E-Rezept für Arzneimittel' für Workflows 160, 166, 169, 200 und 209" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-311" title="E-Rezept: Anwendung des IG 'E-Rezept für Arzneimittel' für Workflows 160, 166, 169, 200 und 209" version="0">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>
     <actor name="eRp_FdV">
@@ -34,9 +34,9 @@ Dieser Implementation Guide beschreibt die Datenmodelle und Prozesse des E-Rezep
     Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung der Workflows 160, 166, 169, 200 und 209 den Implementation Guide "E-Rezept für Arzneimittel" umsetzen.
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-219" title="E-Rezept: Umsetzung des Moduls 'E-Rezept für Arzneimittel'" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-312" title="E-Rezept: Umsetzung des Moduls 'E-Rezept für Arzneimittel'" version="0">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>
     <actor name="eRp_FdV">

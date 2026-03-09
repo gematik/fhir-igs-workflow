@@ -2,7 +2,7 @@
 
 <requirement conformance="SHALL" title="E-Rezept-Fachdienst – title">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
       text
@@ -99,7 +99,7 @@ Für Tags in Anforderungen muss die folgende Syntax verwendet werden:
 
 ## Suchen aller afo keys
 
-key="[^"]*"
+]*"
 
 ## Quellen und Referenzen
 

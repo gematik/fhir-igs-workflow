@@ -5,7 +5,7 @@
 
 #### E-Rezept-FdV 
 
-<requirement conformance="SHALL" key="IG-TIFLOW-EU-19" title="E-Rezept-FdV: TIFlow-EU - optionale Anwendungsfälle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-EU-81" title="E-Rezept-FdV: TIFlow-EU - optionale Anwendungsfälle" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>

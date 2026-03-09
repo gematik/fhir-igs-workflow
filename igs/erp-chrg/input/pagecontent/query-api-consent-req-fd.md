@@ -9,9 +9,9 @@ Diese Seite beschreibt Anforderungen am E-Rezept-Fachdienst zur Nutzung der `Con
 #### DELETE /Consent (Einwilligung widerrufen)
 
 <!-- A_22157 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG45" title="E-Rezept-Fachdienst – Consent löschen – Löschen der bestehenden Abrechnungsinformationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-45" title="E-Rezept-Fachdienst – Consent löschen – Löschen der bestehenden Abrechnungsinformationen" version="0">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt /Consent mit ?category=CHARGCONS alle dem Versicherten zugeordneten ChargeItem-Ressourcen (ChargeItem.subject.identifier) anhand der KVNR des Versicherten im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren und löschen.
