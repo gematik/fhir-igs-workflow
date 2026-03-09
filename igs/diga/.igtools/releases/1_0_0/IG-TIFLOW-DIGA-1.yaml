@@ -1,0 +1,22 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: c599f21526f02e0a4bd273c5a7aaf51d91bedf92cf7c47b0f962d93535fbf262
+created: '2026-03-09T16:33:33.726094'
+date: '2026-03-09T16:33:33.726108'
+key: IG-TIFLOW-DIGA-1
+modified: '2026-03-09T16:33:33.726106'
+release_status: NEW
+source: input/pagecontent/op-reject-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 162\
+  \ HTTP-POST-Operation über /Task/&lt;id&gt;/$reject die Rolle \"professionOID\"\
+  \ des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen\
+  \ und sicherstellen, dass ausschließlich Institutionen in der Rolle\n  <ul>\n  \
+  \  <li>oid_kostentraeger</li>\n  </ul>\n  die Operation am Fachdienst aufrufen,\
+  \ damit die Verordnung nicht durch einen Unberechtigten zurückgewiesen werden kann."
+title: E-Rezept-Fachdienst - Task zurückweisen - Flowtype 162 - Rollenprüfung
+version: 0

@@ -9,7 +9,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Medica
 Der Kostenträger stellt die Abgabeinformationen beim Abschluss des Workflows zur Verordnung ein. Der Task hat dann den Status "completed".
 
 <!-- A_26013 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-DiGA-32127JR1" title="E-Rezept-FdV: Abgabeinformationen abfragen - Flowtyp 162 - Anzeige des Freischaltcodes" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-20" title="E-Rezept-FdV: Abgabeinformationen abfragen - Flowtyp 162 - Anzeige des Freischaltcodes" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FdV">
     <testProcedure id="Herstellererklärung"/>
@@ -18,7 +18,7 @@ Der Kostenträger stellt die Abgabeinformationen beim Abschluss des Workflows zu
 </requirement>
 
 <!-- A_26340 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-DiGA-81850YP4" title="E-Rezept-FdV: Abgabeinformationen abfragen - Flowtyp 162 - Supportinformationen für DiGA-App" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-21" title="E-Rezept-FdV: Abgabeinformationen abfragen - Flowtyp 162 - Supportinformationen für DiGA-App" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FdV">
     <testProcedure id="Herstellererklärung"/>

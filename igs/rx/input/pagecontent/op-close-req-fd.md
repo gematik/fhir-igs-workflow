@@ -7,7 +7,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 ### Modulspezifische Anforderungen
 
 <!-- A_19230-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-227" title="E-Rezept-Fachdienst - Task schließen - Flowtype 160/166/169/200/209 - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-8" title="E-Rezept-Fachdienst - Task schließen - Flowtype 160/166/169/200/209 - Rollenprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -22,7 +22,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 
 
 <!-- A_26002-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-228" title="E-Rezept-Fachdienst - Task schließen - Flowtype 160/166/169/200/209 - Profilprüfung MedicationDispense" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-9" title="E-Rezept-Fachdienst - Task schließen - Flowtype 160/166/169/200/209 - Profilprüfung MedicationDispense" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -31,7 +31,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_24287-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-229" title="E-Rezept-Fachdienst - Task schließen - Aufruf ohne MedicationDispense" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-10" title="E-Rezept-Fachdienst - Task schließen - Aufruf ohne MedicationDispense" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -41,7 +41,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_26481 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-230" title="E-Rezept-Fachdienst - Task schließen - Überschreiben vorheriger MedicationDispenses" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-11" title="E-Rezept-Fachdienst - Task schließen - Überschreiben vorheriger MedicationDispenses" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -50,7 +50,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_22069-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-231" title="E-Rezept-Fachdienst - Task schließen - Speicherung mehrerer MedicationDispenses" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-12" title="E-Rezept-Fachdienst - Task schließen - Speicherung mehrerer MedicationDispenses" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -59,7 +59,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_25928-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-232" title="E-Rezept-Fachdienst - Task schließen - Daten ePA Medication Service bereitstellen (Dispensierinformationen)" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-13" title="E-Rezept-Fachdienst - Task schließen - Daten ePA Medication Service bereitstellen (Dispensierinformationen)" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -68,7 +68,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_27814 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-233" title="E-Rezept-Fachdienst - Task schließen - T-Rezept Daten an BfArM Webdienst bereitstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-14" title="E-Rezept-Fachdienst - Task schließen - T-Rezept Daten an BfArM Webdienst bereitstellen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>

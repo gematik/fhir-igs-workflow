@@ -7,7 +7,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Commun
 ### Modulspezifische Anforderungen
 
 <!-- A_26007 -->
-<requirement conformance="MAY" key="IG-TIFLOW-DiGA-28248ZWF" title="E-Rezept-FdV: E-Rezept zuweisen - Flowtype 162 - Kostenträger auswählen" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-DIGA-5" title="E-Rezept-FdV: E-Rezept zuweisen - Flowtype 162 - Kostenträger auswählen" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FdV">
     <testProcedure id="Herstellererklärung"/>

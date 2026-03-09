@@ -9,7 +9,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 
 
 <!-- A_19230-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-DiGA-74871W0K" title="E-Rezept-Fachdienst - Task schliessen - Flowtype 162 - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-3" title="E-Rezept-Fachdienst - Task schliessen - Flowtype 162 - Rollenprüfung" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>
@@ -24,7 +24,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 </br>
 
   <!-- A_26003-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-DiGA-96091UW9" title="E-Rezept-Fachdienst - Task schließen - Flowtype 162 - Profilprüfung MedicationDispense" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-4" title="E-Rezept-Fachdienst - Task schließen - Flowtype 162 - Profilprüfung MedicationDispense" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>

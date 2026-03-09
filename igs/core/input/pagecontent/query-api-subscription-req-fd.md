@@ -1,7 +1,7 @@
 Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für den Subscription-Query-Endpunkt.
 
 <!-- A_22362-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-817" title="E-Rezept-Fachdienst – Subscription registrieren – Rollenprüfung" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-Fachdienst – Subscription registrieren – Rollenprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -10,7 +10,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_22362-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-818" title="E-Rezept-Fachdienst – Subscription registrieren – Rollenprüfung" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-Fachdienst – Subscription registrieren – Rollenprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -19,7 +19,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_22364 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-819" title="E-Rezept-Fachdienst – Subscription registrieren – Response" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-Fachdienst – Subscription registrieren – Response" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -28,7 +28,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_22365 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-820" title="E-Rezept-Fachdienst – Subscription registrieren – Pseudonym der Telematik-ID" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-Fachdienst – Subscription registrieren – Pseudonym der Telematik-ID" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -37,7 +37,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_22383-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-821" title="E-Rezept-Fachdienst – Generierungsschlüssel – Pseudonym der Telematik-ID" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-Fachdienst – Generierungsschlüssel – Pseudonym der Telematik-ID" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -46,7 +46,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_22366 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-822" title="E-Rezept-Fachdienst – Subscription registrieren – Barrier-Token" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-Fachdienst – Subscription registrieren – Barrier-Token" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>

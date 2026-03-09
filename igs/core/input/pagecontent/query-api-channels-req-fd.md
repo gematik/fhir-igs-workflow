@@ -1,7 +1,7 @@
 Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für den channels-Endpunkt.
 
 <!-- A_28121 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-569" title="E-Rezept-Fachdienst - unzulässige Operationen Channels" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - unzulässige Operationen Channels" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produktgutachten"/>
@@ -10,7 +10,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_28117 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-570" title="E-Rezept-Fachdienst - Push Notifications - Channels- OpenApi_Notification_Fachdienst" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Push Notifications - Channels- OpenApi_Notification_Fachdienst" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>
@@ -24,7 +24,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 Mit der Operation GET /channels können die verfügbaren Channels abgefragt werden.
 
 <!-- A_28118 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-571" title="E-Rezept-Fachdienst - Push Notifications - Channels abrufen - Rollenprüfung" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Push Notifications - Channels abrufen - Rollenprüfung" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produktgutachten"/>
@@ -39,7 +39,7 @@ Mit der Operation GET /channels können die verfügbaren Channels abgefragt werd
 Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfiguration für eine spezifische FdV-Instanz abgefragt werden.
 
 <!-- A_28119 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-572" title="E-Rezept-Fachdienst - Push Notifications - Channels einer Instanz abrufen - Rollenprüfung" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Push Notifications - Channels einer Instanz abrufen - Rollenprüfung" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produktgutachten"/>
@@ -54,7 +54,7 @@ Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfigu
 ### POST /channels
 
 <!-- A_28120 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-573" title="E-Rezept-Fachdienst - Push Notifications - Channels konfigurieren - Rollenprüfung" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Push Notifications - Channels konfigurieren - Rollenprüfung" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produktgutachten"/>

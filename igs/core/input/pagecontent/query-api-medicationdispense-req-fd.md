@@ -2,7 +2,7 @@
 Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für den Device-Query-Endpunkt.
 
 <!-- A_19400 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-628" title="E-Rezept-Fachdienst - MedicationDispense - unzulässige Operationen" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - MedicationDispense - unzulässige Operationen" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     	<testProcedure id="Produktgutachten"/>
@@ -13,7 +13,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 ### GET /MedicationDispense
 
 <!-- A_19405-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-629" title="E-Rezept-Fachdienst - MedicationDispense abrufen - Rollenprüfung" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - MedicationDispense abrufen - Rollenprüfung" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     	<testProcedure id="Produktgutachten"/>
@@ -26,7 +26,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
  <!-- A_19406-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-630" title="E-Rezept-Fachdienst - MedicationDispense abrufen - Filter MedicationDispense auf KVNR des Versicherten" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - MedicationDispense abrufen - Filter MedicationDispense auf KVNR des Versicherten" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     	<testProcedure id="Produktgutachten"/>
@@ -35,7 +35,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_26527 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-631" title="E-Rezept-Fachdienst - MedicationDispense abrufen - Referenzierung MedicationDispense und Medication" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - MedicationDispense abrufen - Referenzierung MedicationDispense und Medication" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     	<testProcedure id="Produkttest"/>
@@ -47,7 +47,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
  <=
 
 <!-- A_22070-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-632" title="E-Rezept-Fachdienst - MedicationDispense abrufen - Rückgabe mehrerer MedicationDispenses" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - MedicationDispense abrufen - Rückgabe mehrerer MedicationDispenses" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     	<testProcedure id="Produkttest"/>

@@ -7,7 +7,7 @@ Diese Seite enthält die normativen Anforderungen an das PVS für die Operation 
 ### Modulspezifische Anforderungen
 
 <!-- A_19275 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-310" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-91" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>

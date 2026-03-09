@@ -1,0 +1,25 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 75eca0c09a63320c2b1596ec517ac4c09915909f72c42188457c80e68e48100a
+created: '2026-03-09T16:35:19.339988'
+date: '2026-03-09T16:35:19.339990'
+key: IG-TIFLOW-EU-8
+modified: '2026-03-09T16:35:19.339989'
+release_status: NEW
+source: input/pagecontent/op-get-eu-prescriptions-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: 'Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts
+  /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass nur Ressourcen eines
+  Tasks bereitgestellt werden, die folgende Kriterien erfüllen: Task.for = KVNR für
+  die KVNR aus Parameters.parameter:requestData.part:kvnr Task.ExpiryDate nicht vor
+  dem aktuellen Datum Falls MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
+  = true, dann MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start
+  nicht nach dem aktuellen Datum Task.extension:eu-isRedeemableByProperties = true
+  Task.extension:eu-isRedeemableByPatientAuthorization = true damit eine Apotheke
+  im europäischen Ausland nur einlösbare E-Rezepte abrufen kann.'
+title: E-Rezept-Fachdienst - eu-prescription abfragen - Filter einlösbarer E-Rezepte
+version: 0

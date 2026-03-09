@@ -14,7 +14,7 @@ Der Versicherte nutzt für die Verwaltung von Einwilligung und Zugriffsberechtig
 <br>
 
 <!-- A_27097 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-EU-58" title="Format Zugriffscode" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-EU-1" title="Format Zugriffscode" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -64,7 +64,7 @@ Um zu bestimmen, welche europäischen Länder das die Anwendung ePrescription/eD
 Der Ablauf der Authentisierung und Suche ist in [gemSpec_VZD_FHIR_Directory]#AF_10403 Fachdienst sucht Einträge im FHIR-Directory beschrieben. Der Betreiber des E-Rezept-Fachdienst muss beim FHIR-VZD Anbieter für den Zugriff auf den FHIR-VZD nach [gemSpec_VZD_FHIR_Directory]#Nutzer und Rollen registrieren.
 
 <!-- A_27095 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-EU-59" title="E-Rezept-Fachdienst - Zugriffsberechtigung - Liste zulässiger Länder" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-EU-2" title="E-Rezept-Fachdienst - Zugriffsberechtigung - Liste zulässiger Länder" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -73,7 +73,7 @@ Der Ablauf der Authentisierung und Suche ist in [gemSpec_VZD_FHIR_Directory]#AF_
 </requirement>
 
 <!-- A_27096 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-EU-60" title="E-Rezept-Fachdienst - Zugriffsberechtigung - Caching Liste zulässiger Länder" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-EU-3" title="E-Rezept-Fachdienst - Zugriffsberechtigung - Caching Liste zulässiger Länder" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>

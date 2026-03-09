@@ -4,7 +4,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 
 <!-- A_19276 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-729" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-ID abrufen" version="0">
+<requirement conformance="SHALL"  title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-ID abrufen" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Konformitätserklärung"/>
@@ -27,7 +27,7 @@ Der Response des Fachdienstes liefert
 - und den AccessCode (Task.Identifier mit "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_AccessCode"), welcher für den Zugriff auf das E-Rezept im Fachdienst berechtigt
 
 <!-- A_22893 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-730" title="PS verordnende LEI: E-Rezept erstellen - Gleichheit Ausstellungsdatum und QES Erstellung" version="0">
+<requirement conformance="SHALL"  title="PS verordnende LEI: E-Rezept erstellen - Gleichheit Ausstellungsdatum und QES Erstellung" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Herstellererklärung"/>

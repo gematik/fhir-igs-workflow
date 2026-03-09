@@ -1,7 +1,7 @@
 ### Anforderungen der Schnittstelle aus diesem Modul
 
 <!-- A_27088 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-EU-111" title="E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-EU-54" title="E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Rollenprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -10,7 +10,7 @@
 </requirement>
 
 <!-- A_27089 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-EU-112" title="E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Einwillung für KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-EU-55" title="E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Einwillung für KVNR" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -19,7 +19,7 @@
 </requirement>
 
 <!-- A_27090 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-EU-113" title="E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Ländercode" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-EU-56" title="E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Ländercode" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -28,7 +28,7 @@
 </requirement>
 
 <!-- A_27091 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-EU-114" title="E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Zugriffscode" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-EU-57" title="E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Zugriffscode" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -37,7 +37,7 @@
 </requirement>
 
 <!-- A_27092 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-EU-115" title="E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Löschen bestehender Zugriffsberechtigung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-EU-58" title="E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Löschen bestehender Zugriffsberechtigung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -46,7 +46,7 @@
 </requirement>
 
 <!-- A_27093 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-EU-116" title="E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Neue Zugriffsberechtigung speichern" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-EU-59" title="E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Neue Zugriffsberechtigung speichern" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -55,7 +55,7 @@
 </requirement>
 
 <!-- A_27094 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-EU-117" title="E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Response" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-EU-60" title="E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Response" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -69,7 +69,7 @@
 <!-- ToDo: Die Afo soll an einen geeigneten Ort verschoben werden. -->
 
 <!-- A_27083 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-EU-118" title="E-Rezept-Fachdienst - Zugriffsberechtigung - periodische Bereinigung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-EU-61" title="E-Rezept-Fachdienst - Zugriffsberechtigung - periodische Bereinigung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>

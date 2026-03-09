@@ -1,7 +1,7 @@
 Der Subscription Service wird außerhalb der VAU betrieben.
 
 <!-- A_22368 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-649" title="E-Rezept-Fachdienst - Subscription Service - Webschnittstelle" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Subscription Service - Webschnittstelle" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -10,7 +10,7 @@ Der Subscription Service wird außerhalb der VAU betrieben.
 </requirement>
 
 <!-- A_22369 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-650" title="E-Rezept-Fachdienst - Subscription Service - Prüfung Bearer-Token" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Subscription Service - Prüfung Bearer-Token" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -19,7 +19,7 @@ Der Subscription Service wird außerhalb der VAU betrieben.
 </requirement>
 
 <!-- A_22370 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-651" title="E-Rezept-Fachdienst - Subscription Service - Upgrade" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Subscription Service - Upgrade" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -28,7 +28,7 @@ Der Subscription Service wird außerhalb der VAU betrieben.
 </requirement>
 
 <!-- A_22371 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-652" title="E-Rezept-Fachdienst - Subscription Service - abgelaufene Verbindungen schließen" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Subscription Service - abgelaufene Verbindungen schließen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -37,7 +37,7 @@ Der Subscription Service wird außerhalb der VAU betrieben.
 </requirement>
 
 <!-- A_22378 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-653" title="E-Rezept-Fachdienst - Subscription Service - Verbot Profilbildung" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Subscription Service - Verbot Profilbildung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>

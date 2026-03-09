@@ -10,7 +10,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Consen
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- A_22709-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-745" title="E-Rezept-FdV: Einwilligung erteilen - Einwilligungstext" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-FdV: Einwilligung erteilen - Einwilligungstext" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
@@ -19,7 +19,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Consen
 </requirement>
 
 <!-- A_22163-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-746" title="E-Rezept-FdV: Einwilligung erteilen - Einwilligung eingeben" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-FdV: Einwilligung erteilen - Einwilligung eingeben" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
@@ -28,7 +28,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Consen
 </requirement>
 
 <!-- A_22165-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-747" title="E-Rezept-FdV: Einwilligung erteilen - Consent Ressource erstellen" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-FdV: Einwilligung erteilen - Consent Ressource erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -42,7 +42,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Consen
 </requirement>
 
 <!-- A_22166-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-748" title="E-Rezept-FdV: Einwilligung erteilen - Speicherrequest" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-FdV: Einwilligung erteilen - Speicherrequest" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -62,7 +62,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Consen
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- A_22168-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-749" title="E-Rezept-FdV: Einwilligungsinformation abrufen - Abfragerequest" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-FdV: Einwilligungsinformation abrufen - Abfragerequest" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -84,7 +84,7 @@ In der Response können mehrere Consent Ressourcen enthalten sein. Der Einwillig
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- A_22169-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-750" title="E-Rezept-FdV: Einwilligung widerrufen - Widerruf eingeben" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-FdV: Einwilligung widerrufen - Widerruf eingeben" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
@@ -93,7 +93,7 @@ In der Response können mehrere Consent Ressourcen enthalten sein. Der Einwillig
 </requirement>
 
 <!-- A_22330-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-751" title="E-Rezept-FdV: Einwilligung widerrufen - Bestätigung" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-FdV: Einwilligung widerrufen - Bestätigung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
@@ -102,7 +102,7 @@ In der Response können mehrere Consent Ressourcen enthalten sein. Der Einwillig
 </requirement>
 
 <!-- A_22171-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-752" title="E-Rezept-FdV: Einwilligung widerrufen - Löschrequest" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-FdV: Einwilligung widerrufen - Löschrequest" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>

@@ -1,7 +1,7 @@
 ### Anforderungen der Schnittstelle aus diesem Modul
 
 <!-- A_27068 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-EU-94" title="E-Rezept-Fachdienst - Task schließen - EU - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-EU-37" title="E-Rezept-Fachdienst - Task schließen - EU - Rollenprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -10,7 +10,7 @@
 </requirement>
 
 <!-- A_27069 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-EU-95" title="E-Rezept-Fachdienst - Task schließen - EU - Schemaprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-EU-38" title="E-Rezept-Fachdienst - Task schließen - EU - Schemaprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -19,7 +19,7 @@
 </requirement>
 
 <!-- A_27070 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-EU-96" title="E-Rezept-Fachdienst - Task schließen - EU - Prüfung Einwilligung für KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-EU-39" title="E-Rezept-Fachdienst - Task schließen - EU - Prüfung Einwilligung für KVNR" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -28,7 +28,7 @@
 </requirement>
 
 <!-- A_27071 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-EU-97" title="E-Rezept-Fachdienst - Task schließen - EU - Prüfung Zugriffsberechtigung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-EU-40" title="E-Rezept-Fachdienst - Task schließen - EU - Prüfung Zugriffsberechtigung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -37,7 +37,7 @@
 </requirement>
 
 <!-- A_27072 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-EU-98" title="E-Rezept-Fachdienst - Task schließen - EU - Statusprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-EU-41" title="E-Rezept-Fachdienst - Task schließen - EU - Statusprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -46,7 +46,7 @@
 </requirement>
 
 <!-- A_27074 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-EU-99" title="E-Rezept-Fachdienst - Task schließen - EU - Zeitstempel MedicationDispense" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-EU-42" title="E-Rezept-Fachdienst - Task schließen - EU - Zeitstempel MedicationDispense" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -55,7 +55,7 @@
 </requirement>
 
 <!-- A_27075 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-EU-100" title="E-Rezept-Fachdienst - Task schließen - EU - Status beenden" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-EU-43" title="E-Rezept-Fachdienst - Task schließen - EU - Status beenden" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>

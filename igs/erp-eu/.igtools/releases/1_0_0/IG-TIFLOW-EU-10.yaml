@@ -1,0 +1,21 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 5b928641cf304555d7623187e9a71fffc263bdbf6c0ea9b3522bca8d7b142b8c
+created: '2026-03-09T16:35:19.340260'
+date: '2026-03-09T16:35:19.340263'
+key: IG-TIFLOW-EU-10
+modified: '2026-03-09T16:35:19.340262'
+release_status: NEW
+source: input/pagecontent/op-get-eu-prescriptions-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: 'Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts
+  /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass wenn Parameters.parameter:requestData.part:prescription-id
+  leer ist, nur Ressourcen eines Tasks bereitgestellt werden, die folgendes Kriterium
+  erfüllen: Task.status = ready.'
+title: E-Rezept-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage aller
+  einlösbaren Verordnungsinformationen
+version: 0

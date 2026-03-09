@@ -7,7 +7,7 @@
 #### DELETE
 
 <!-- A_27131 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-EU-89" title="E-Rezept-Fachdienst - Consent löschen - EUDISPCONS - Löschen Zugriffsberechtigung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-EU-32" title="E-Rezept-Fachdienst - Consent löschen - EUDISPCONS - Löschen Zugriffsberechtigung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>

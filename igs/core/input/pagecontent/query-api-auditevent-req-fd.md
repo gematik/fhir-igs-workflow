@@ -3,7 +3,7 @@
 Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für die AuditEvent-Query-Endpunkte.
 
 <!-- A_19402 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-633" title="E-Rezept-Fachdienst - unzulässige Operationen AuditEvent" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - unzulässige Operationen AuditEvent" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>
@@ -14,7 +14,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 ### GET /AuditEvent
 
 <!-- A_19395 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-634" title="E-Rezept-Fachdienst - AuditEvent lesen - Rollenprüfung" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - AuditEvent lesen - Rollenprüfung" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>
@@ -23,7 +23,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_19396 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-635" title="E-Rezept-Fachdienst - AuditEvent lesen - Filter KVNR" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - AuditEvent lesen - Filter KVNR" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>
@@ -32,7 +32,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_19397 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-636" title="E-Rezept-Fachdienst - AuditEvent lesen - Rückgabe im Bundle" version="0">
+<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - AuditEvent lesen - Rückgabe im Bundle" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>

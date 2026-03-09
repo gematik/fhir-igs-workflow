@@ -1,22 +1,21 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: d209d87420a8621cd3742b41c3daa79bd07b580149e1eb41c50920167e53aabb
-created: '2026-03-09T16:27:47.028323'
-date: '2026-03-09T16:27:47.028327'
+content_hash: e3f88f60593b6fd75c96fc7f446b2bbad14df039f574e31954e07df14b59395c
+created: '2026-03-09T16:35:19.349524'
+date: '2026-03-09T16:35:19.349526'
 key: IG-TIFLOW-EU-59
-modified: '2026-03-09T16:27:47.028326'
+modified: '2026-03-09T16:35:19.349525'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-konzept.md
+source: input/pagecontent/op-grant-eu-access-permission-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: 'Der E-Rezept-Fachdienst MUSS die Liste aller zulässigen Länder aus dem Verzeichnisdienst
-  ermitteln, indem an den Verzeichnisdienst folgende Abfrage gestellt wird: Abfrage
-  der Ressource "HealthcareService", HealthcareServices, deren Speciality "57833-6"
-  aus https://loinc.org enthalten, HealthcareServices, deren Organisation aktiv sind,
-  HealthcareServices, deren Organisation den OrganizationProfessionOIDType "1.2.276.0.76.4.292"
-  entspricht, Einbeziehen der Organisation in das Rückgabeergebnis.'
-title: E-Rezept-Fachdienst - Zugriffsberechtigung - Liste zulässiger Länder
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt
+  /$grant-eu-access-permission mit dem im Request übermittelten KVNR, Zugriffscode
+  und Ländercode eine neue Zugriffsberechtigung speichern und den Wert valid_until
+  auf aktuellen Zeitpunkt + 1h setzen.
+title: E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Neue Zugriffsberechtigung
+  speichern
 version: 0

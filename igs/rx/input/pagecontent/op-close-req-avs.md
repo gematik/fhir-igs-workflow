@@ -7,7 +7,7 @@ Diese Seite enthält die normativen Anforderungen an das AVS für die Operation 
 ### Modulspezifische Anforderungen
 
 <!-- A_19288-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-313" title="PS abgebende LEI:  Quittung abrufen - Dispensierinformationen erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-94" title="PS abgebende LEI:  Quittung abrufen - Dispensierinformationen erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -16,7 +16,7 @@ Diese Seite enthält die normativen Anforderungen an das AVS für die Operation 
 </requirement>
 
 <!-- A_27840 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-314" title="PS abgebende LEI: Quittung abrufen - Abruf der Quittung durchführen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-95" title="PS abgebende LEI: Quittung abrufen - Abruf der Quittung durchführen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Produkttest"/>

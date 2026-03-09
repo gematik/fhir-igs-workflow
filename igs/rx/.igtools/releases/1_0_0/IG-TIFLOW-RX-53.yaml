@@ -1,0 +1,23 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 177cf6acc197ad95158f8027006a730a348588fc3d0d49afe92d217c14f5ed16
+created: '2026-03-09T16:36:14.473898'
+date: '2026-03-09T16:36:14.473900'
+key: IG-TIFLOW-RX-53
+modified: '2026-03-09T16:36:14.473899'
+release_status: NEW
+source: input/pagecontent/op-activate-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mit Workflowtypen 160,
+  169, 200 oder 209 mittels $activate prüfen, dass im Bundle eine MedicationRequest-Ressource
+  und eine Medication mit Medication.extension:Arzneimittelkategorie = 00 enthalten
+  ist. Der E-Rezept-Fachdienst MUSS andernfalls mit dem HTTP-Fehlercode 400 abbrechen
+  und in der OperationOutcome den Fehlertext "Für diesen Workflowtypen sind nur Arzneimittelverordnungen
+  zulässig" ausgeben.
+title: E-Rezept-Fachdienst - Task aktivieren - Flowtype 160/169/200/209 - Prüfung
+  Arzneimittelverordnung
+version: 0
