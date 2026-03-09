@@ -5,7 +5,7 @@ Um die Last am E-Rezept-Fachdienst zu kontrollieren, wurde festgelegt, dass ein 
 <!-- ToDo: um KTR erweitern -->
 
 <!-- A_22426 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-243" title="PS abgebende LEI: Subscription für neue Communication - eine Subscription pro Telematik-ID" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-243" title="PS abgebende LEI: Subscription für neue Communication - eine Subscription pro Telematik-ID" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>

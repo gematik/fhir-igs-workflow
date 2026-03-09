@@ -37,7 +37,7 @@ Mit diesem Anwendungsfall kann der Nutzer (Versicherter) die Abrechnungsinformat
 <!--A_24544-->
 <requirement conformance="MAY" key="IG-TIFLOW-CHRG-17" title="E-Rezept-FdV: optional: Abrechnungsinformation abrufen" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
+    <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
       Das E-Rezept-FdV KANN den Anwendungsfall "Abrechnungsinformation durch den Versicherten abrufen" umsetzen.
@@ -46,7 +46,7 @@ Mit diesem Anwendungsfall kann der Nutzer (Versicherter) die Abrechnungsinformat
 <!--A_22175-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-18" title="E-Rezept-FdV: Abrechnungsinformation abrufen - Abfragerequest einzelner Datensatz" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
       Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation abfragen" zum Abrufen der Information zu einem einzelnen Datensatz vom E-Rezept-Fachdienst die HTTP-Operation GET /ChargeItem/&#60;id&#62;/ mit 
