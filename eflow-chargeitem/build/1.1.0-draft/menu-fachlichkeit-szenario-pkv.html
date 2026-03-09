@@ -268,6 +268,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <p>Seiteninhalt:</p>
 
 <ul id="markdown-toc">
+  <li><a href="#fachliches-konzept" id="markdown-toc-fachliches-konzept">Fachliches Konzept</a></li>
   <li><a href="#epic" id="markdown-toc-epic">Epic</a></li>
   <li><a href="#user-stories" id="markdown-toc-user-stories">User Stories</a></li>
   <li><a href="#prozessabschnitte" id="markdown-toc-prozessabschnitte">Prozessabschnitte</a></li>
@@ -279,6 +280,21 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </div>
 
 <p>Das Feature „Abrechnungsinformationen für PKV-Versicherte“ erweitert die bestehenden E-Rezept-Workflows für Arzneimittel um die digitale Bereitstellung von Abrechnungsinformationen. Es beschreibt den zusätzlichen Funktionsumfang für den E-Rezept-Fachdienst und die beteiligten Clientsysteme, die Prozessparameter sowie die fachlichen und technischen Anforderungen.</p>
+
+<h3 id="fachliches-konzept">Fachliches Konzept</h3>
+<p>Die digitale Abrechnungsinformation besteht aus den folgenden Datensätzen: Verordnungsdatensatz, PKV-Abgabedatensatz und Quittungsdatensatz.</p>
+
+<p>Der Verordnungsdatensatz wird durch den Arzt/Zahnarzt erstellt, mit einer Qualifizierten Elektronischen Signatur (QES) versehen und auf dem E-Rezept-Fachdienst eingestellt. Für den Abrechnungsprozess wird der Verordnungsdatensatz ohne QES übermittelt, um das Risiko vom Mehrfacheinlösungen zu vermeiden. Statt der QES wird der Verordnungsdatensatz durch den E-Rezept-Fachdienst fortgeschritten signiert, um die Integrität des Datensatzes für den Abrechnungsprozess sicherzustellen.</p>
+
+<p>Der PKV-Abgabedatensatz wird durch die Apotheke erstellt. Er enthält, sofern in der Apotheke Änderungen bei der Abgabe vorgenommen werden, den QES-signierten PKV-Abgabedatensatz und sofern in der Apotheke keine Änderungen erfolgen, den fortgeschritten signierten PKV-Abgabedatensatz. Das Informationsmodell zum PKV-Abgabedatensatz wird durch den Verband der PKVen und DAV erarbeitet.</p>
+
+<p>Die Quittung wird durch den E-Rezept-Fachdienst erstellt und fortgeschritten signiert. Sie dient dem Versicherten bei der Abrechnung gegenüber dem Kostenträger als Nachweis, dass ein Arzneimittel auf ein E-Rezept einmalig über die TI abgegeben worden ist.</p>
+
+<p>Der PKV-Versicherte hat die Möglichkeit, die Abrechnung in einem Zeitraum von bis zu 10 Jahren bei seiner Krankenversicherung vorzunehmen. Daher werden die Abrechnungsinformationen so lange für den Versicherten im E-Rezept-Fachdienst vorgehalten, bevor sie automatisch gelöscht werden (Rechtliche Grundlage &sect; 360 Abs. 13 SGB V). Der PKV-Versicherte hat die Möglichkeit, sie vorab, beispielsweise wenn die Abrechnung abgeschlossen wurde, zu löschen.</p>
+
+<p>Eine Langzeitarchivierung der Abrechnungsinformation im E-Rezept-Fachdienst ist nicht vorgesehen. Hierfür kann der Versicherte beispielsweise die elektronische Patientenakte (ePA) nutzen.</p>
+
+<p>Der PKV-Versicherte kann über die E-Rezept App die Abrechnungsinformation digital an seine PKV schicken, um die Erstattung zu beantragen. Der Export in Form eines PDFs ermöglicht hierbei verschiedene Kanäle zur Übermittlung (wie E-Mail, Webportal, App des Kostenträgers).</p>
 
 <h3 id="epic">Epic</h3>
 <p>TODO: Update link<br/></p>
@@ -455,7 +471,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       
         
         <tr>
-          <td><a name="l749">​</a><a href="menu-technische-umsetzung-anwendungsfaelle.html#uc_3_12_abrechungsinformationen_durch_versicherten_markieren">UC 3.12 - Abrechnungsinformationen durch den Versicherten markieren</a></td>
+          <td><a name="l777">​</a><a href="menu-technische-umsetzung-anwendungsfaelle.html#uc_3_12_abrechungsinformationen_durch_versicherten_markieren">UC 3.12 - Abrechnungsinformationen durch den Versicherten markieren</a></td>
         </tr>
       
         
@@ -509,7 +525,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 07:49+0000">2026-03-09</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 09:20+0000">2026-03-09</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -64,7 +64,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "gemIG_TIFlow_erpchrg",
   "title" : "E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte",
   "status" : "draft",
-  "date" : "2026-03-09T07:49:43+00:00",
+  "date" : "2026-03-09T09:20:56+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

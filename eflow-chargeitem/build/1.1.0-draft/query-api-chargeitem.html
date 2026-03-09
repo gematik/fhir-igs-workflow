@@ -269,14 +269,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul id="markdown-toc">
   <li><a href="#profilierung" id="markdown-toc-profilierung">Profilierung</a></li>
+  <li><a href="#nachricht" id="markdown-toc-nachricht">Nachricht</a></li>
   <li><a href="#anforderungen-an-schnittstelle" id="markdown-toc-anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</a></li>
   <li><a href="#api-beschreibung" id="markdown-toc-api-beschreibung">API Beschreibung</a></li>
-  <li><a href="#get-chargeitem-liste" id="markdown-toc-get-chargeitem-liste">GET /ChargeItem (Liste)</a></li>
-  <li><a href="#get-chargeitemid-details" id="markdown-toc-get-chargeitemid-details">GET /ChargeItem/&#60;id&#62; (Details)</a></li>
-  <li><a href="#post-chargeitem-bereitstellen" id="markdown-toc-post-chargeitem-bereitstellen">POST /ChargeItem (Bereitstellen)</a></li>
-  <li><a href="#patch-chargeitemid-markierungen" id="markdown-toc-patch-chargeitemid-markierungen">PATCH /ChargeItem/&#60;id&#62; (Markierungen)</a></li>
-  <li><a href="#put-chargeitemid-ändern-pkvabgabedatensatz" id="markdown-toc-put-chargeitemid-ändern-pkvabgabedatensatz">PUT /ChargeItem/&#60;id&#62; (Ändern PKV‑Abgabedatensatz)</a></li>
-  <li><a href="#delete-chargeitemid" id="markdown-toc-delete-chargeitemid">DELETE /ChargeItem/&#60;id&#62;</a></li>
 </ul>
 
 </div>
@@ -285,6 +280,44 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="profilierung">Profilierung</h3>
 <p>Die Profilierung der Ressource ChargeItem ist hier dokumentiert: https://simplifier.net/erezept-patientenrechnung/gem_erpchrg_pr_chargeitem</p>
 
+<h3 id="nachricht">Nachricht</h3>
+<p>Die Nachricht zur Interaktion mit Einwilligungen als FHIR-Ressource ChargeItem wird über die folgenden HTTP-Methoden ermöglicht:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>HTTP-Methode</th>
+      <th>Ergebnis der Anfrage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>GET</td>
+      <td>Abrechnungsinformationen als Liste abrufen</td>
+    </tr>
+    <tr>
+      <td>GET/<id></id></td>
+      <td>Bestimmte Abrechnungsinformationen abrufen</td>
+    </tr>
+    <tr>
+      <td>POST</td>
+      <td>Abrechnungsinformation bereitstellen</td>
+    </tr>
+    <tr>
+      <td>PATCH/<id></id></td>
+      <td>Abrechnungsinformation markieren</td>
+    </tr>
+    <tr>
+      <td>PUT/<id></id></td>
+      <td>Abrechnungsinformation überschreiben</td>
+    </tr>
+    <tr>
+      <td>DELETE/<id></id></td>
+      <td>Abrechnungsinformation löschen</td>
+    </tr>
+  </tbody>
+</table>
+
 <h3 id="anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</h3>
 <ul>
   <li><a href="./query-api-chargeitem-req-fd.html">Anforderungen für den E-Rezept-Fachdienst</a></li>
@@ -292,91 +325,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="./query-api-chargeitem-req-avs.html">Anforderungen für den abgebenden Leistungserbringer</a></li>
 </ul>
 
+<h4 id="resource-api">Resource API</h4>
+<p>Anfragen an die <i>ChargeItem</i>-Ressource können über die RESTful API durchgeführt werden.</p>
+
 <h3 id="api-beschreibung">API Beschreibung</h3>
 
 <ul>
   <li><a href="https://github.com/gematik/api-erp/blob/master/docs/erp_chargeItem.adoc">API-ERP: PKV-Abrechnungsinformationen</a></li>
 </ul>
-
-<h3 id="get-chargeitem-liste">GET /ChargeItem (Liste)</h3>
-
-<h4 id="nachricht">Nachricht</h4>
-<p>Versicherte rufen ihre Abrechnungsinformationen als Liste ab. Die Antwort ist ein Bundle vom Typ searchset ohne die referenzierten Datensätze.</p>
-
-<p><strong>Beispiel-URI:</strong> <code class="language-plaintext highlighter-rouge">https://erp.zentral.erp.splitdns.ti-dienste.de/ChargeItem/</code></p>
-
-<p>Hinweis: Liegt keine Einwilligung vor, wird eine leere Liste zurückgegeben, da nach Widerruf alle Abrechnungsinformationen gelöscht wurden.</p>
-
-<h4 id="auslösung">Auslösung</h4>
-<p>Die Operation wird im FdV/AdV ausgelöst, z. B. beim Abruf der Liste oder nach Gerätewechsel.</p>
-
-<h4 id="resource-api">Resource API</h4>
-<p>Anfragen an die <i>ChargeItem</i>-Ressource können über die RESTful API mittels HTTP GET-Anfragen durchgeführt werden.</p>
-
-<h3 id="get-chargeitemid-details">GET /ChargeItem/&#60;id&#62; (Details)</h3>
-
-<h4 id="nachricht-1">Nachricht</h4>
-<p>Der Detailabruf liefert ein Bundle mit ChargeItem, Verordnungsdatensatz, PKV‑Abgabedatensatz und Quittung. Für Versicherte werden die Datensätze durch den E‑Rezept‑Fachdienst signiert.</p>
-
-<p><strong>Beispiel-URI (Versicherter):</strong> <code class="language-plaintext highlighter-rouge">https://prescriptionserver.telematik/ChargeItem/200.000.001.944.091.20</code></p>
-
-<p><strong>Beispiel-URI (abgebende LEI):</strong> <code class="language-plaintext highlighter-rouge">https://prescriptionserver.telematik/ChargeItem/200.000.001.944.091.20?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea</code></p>
-
-<h4 id="auslösung-1">Auslösung</h4>
-<p>Der Detailabruf erfolgt aus dem FdV/AdV oder durch die abgebende LEI (mit AccessCode), z. B. zur Korrektur.</p>
-
-<h4 id="resource-api-1">Resource API</h4>
-<p>Anfragen an die <i>ChargeItem</i>-Ressource können über die RESTful API mittels HTTP GET-Anfragen durchgeführt werden.</p>
-
-<h3 id="post-chargeitem-bereitstellen">POST /ChargeItem (Bereitstellen)</h3>
-
-<h4 id="nachricht-2">Nachricht</h4>
-<p>Die abgebende LEI stellt die Abrechnungsinformation bereit, indem sie ein ChargeItem an den E‑Rezept‑Fachdienst übermittelt. Das ChargeItem enthält Referenzen auf Verordnungsdatensatz und Quittung sowie den PKV‑Abgabedatensatz (contained Binary). Für die Berechtigungsprüfung werden Task‑ID und Secret über URL‑Parameter übermittelt.</p>
-
-<p><strong>Beispiel-URI:</strong> <code class="language-plaintext highlighter-rouge">https://prescriptionserver.telematik/ChargeItem?task=200.000.001.944.091.20&amp;secret=c36ca26502892b371d252c99b496e31505ff449aca9bc69e231c58148f6233cf</code></p>
-
-<p>Hinweis: In VAU‑Requests sind u. a. die Header <code class="language-plaintext highlighter-rouge">X-erp-user: l</code> und <code class="language-plaintext highlighter-rouge">X-erp-resource: ChargeItem</code> zu setzen.</p>
-
-<h4 id="auslösung-2">Auslösung</h4>
-<p>Die Operation wird nach der Belieferung ausgelöst, sobald eine Einwilligung des Versicherten vorliegt und die Abrechnungsinformation digital bereitgestellt werden soll.</p>
-
-<h4 id="resource-api-2">Resource API</h4>
-<p>Die <i>ChargeItem</i>-Ressource können über die RESTful API mittels HTTP GET-Anfragen angelegt werden.</p>
-
-<h3 id="patch-chargeitemid-markierungen">PATCH /ChargeItem/&#60;id&#62; (Markierungen)</h3>
-
-<h4 id="nachricht-3">Nachricht</h4>
-<p>Versicherte können Markierungen am ChargeItem (z. B. für Einreichung) ändern.</p>
-
-<h4 id="auslösung-3">Auslösung</h4>
-<p>Der Anwendungsfall wird im FdV/AdV ausgelöst, wenn Markierungen angepasst werden.</p>
-
-<h4 id="resource-api-3">Resource API</h4>
-<p>Die <i>ChargeItem</i>-Ressource können über die RESTful API mittels HTTP PATCH-Anfragen angepasst werden.</p>
-
-<h3 id="put-chargeitemid-ändern-pkvabgabedatensatz">PUT /ChargeItem/&#60;id&#62; (Ändern PKV‑Abgabedatensatz)</h3>
-
-<h4 id="nachricht-4">Nachricht</h4>
-<p>Die abgebende LEI überschreibt den PKV‑Abgabedatensatz eines ChargeItems. Dafür sind Prescription‑ID und AccessCode erforderlich.</p>
-
-<p><strong>Beispiel-URI:</strong> <code class="language-plaintext highlighter-rouge">https://prescriptionserver.telematik/ChargeItem/200.000.001.944.091.20?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea</code></p>
-
-<h4 id="auslösung-4">Auslösung</h4>
-<p>Der Anwendungsfall wird ausgelöst, wenn Korrekturen an Abgabedaten notwendig sind.</p>
-
-<h4 id="resource-api-4">Resource API</h4>
-<p>Die <i>ChargeItem</i>-Ressource können über die RESTful API mittels HTTP PUT-Anfragen korrigiert werden.</p>
-
-<h3 id="delete-chargeitemid">DELETE /ChargeItem/&#60;id&#62;</h3>
-
-<h4 id="nachricht-5">Nachricht</h4>
-<p>Versicherte können Abrechnungsinformationen löschen. Dabei werden auch die referenzierten Datensätze gelöscht.</p>
-
-<h4 id="auslösung-5">Auslösung</h4>
-<p>Der Anwendungsfall wird durch den Versicherten im FdV/AdV ausgelöst.</p>
-
-<h4 id="resource-api-5">Resource API</h4>
-<p>Die <i>ChargeItem</i>-Ressource können über die RESTful API mittels HTTP DELETE-Anfragen gelöscht werden.</p>
 
 
 
@@ -419,7 +375,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 07:49+0000">2026-03-09</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 09:20+0000">2026-03-09</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
