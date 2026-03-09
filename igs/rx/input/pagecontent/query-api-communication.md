@@ -1,10 +1,10 @@
 Diese Seite basiert auf der gleichnamigen Schnittstelle in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/{{ site.data.constants.tiflow_core_version }}/query-api-communication.html) und beschreibt den Einstieg in die Communication-Query-Schnittstelle.
 
-Communication wird für die Kommunikation zwischen Versicherten und Kostenträger verwendet.
+Communication wird für die Kommunikation zwischen Versicherten und Apotheke verwendet.
 
 ### Nachricht
 
-Die Nachricht zum Abruf von E-Rezepten wird als HTTP GET-Anfrage an den E-Rezept-Fachdienst gesendet, um eine Liste der hinterlegten _Communication_-Instanzen abzurufen.
+Die Nachricht zum Abruf von Nachrichten wird als HTTP GET-Anfrage an den E-Rezept-Fachdienst gesendet, um eine Liste der hinterlegten _Communication_-Instanzen abzurufen.
 
 Mit einer POST-Anfrage an den E-Rezept-Fachdienst kann eine _Communication_-Instanz am E-Rezept-Fachdienst eingestellt werden.
 
