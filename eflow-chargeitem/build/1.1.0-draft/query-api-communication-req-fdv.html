@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>FdV-Anforderungen: Communication-Query - E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte v1.1.0-draft</title>
+    <title>FdV-Anforderungen: Communication-Query - Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte v1.1.0-draft</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -132,16 +132,13 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="menu-technische-umsetzung-systemueberblick.html">Systemüberblick</a>
+        <a href="menu-technische-umsetzung-systemueberblick.html">Einordnung in die Telematikinfrastruktur</a>
       </li>
       <li>
         <a href="menu-technische-umsetzung-anwendungsfaelle.html">Technische Anwendungsfälle</a>
       </li>
       <li>
         <a href="menu-technische-umsetzung-verarbeitungsregeln.html">Verarbeitungsregeln</a>
-      </li>
-      <li>
-        <a href="menu-technische-umsetzung-chargeitem.html">Abrechnungsinformationen des E-Rezepts für PKV-Versicherte</a>
       </li>
       <li>
         <a href="menu-technische-umsetzung-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
@@ -199,7 +196,7 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte
+Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
             <span style="display:inline-block;">Version 1.1.0-draft - ci-build
@@ -335,7 +332,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="modulspezifische-anforderungen">Modulspezifische Anforderungen</h3>
 
 <!--A_24563-->
-<requirement conformance="MAY" key="IG-ERP-CHRG-44295E1K" title="E-Rezept-FdV: optional: Abrechnungsinformation-Token übermitteln" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CHRG1" title="E-Rezept-FdV: optional: Abrechnungsinformation-Token übermitteln" version="0">
     <meta lockversion="false" />
     <actor name="eRP_FdV">
         <testProcedure id="Herstellererklärung" />
@@ -344,7 +341,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!--A_22735-01-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-68690VHC" title="E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - E-Rezept auswählen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG2" title="E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - E-Rezept auswählen" version="0">
     <meta lockversion="false" />
     <actor name="eRP_FdV">
         <testProcedure id="Produkttest" />
@@ -353,7 +350,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!--A_22736-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-25821XFL" title="E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Apotheke auswählen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG3" title="E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Apotheke auswählen" version="0">
     <meta lockversion="false" />
     <actor name="eRP_FdV">
         <testProcedure id="Produkttest" />
@@ -364,7 +361,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Die Korrektur des PKV-Abgabedatensatzes wird durch die Apotheke durchgeführt, welche die ursprünglichen Abrechnungsinformation erstellt hat. Daher ist keine freie Apothekenwahl für den Nutzer notwendig. Es ist ausreichend, die Apotheke aus den vorliegenden Abrechnungsinformationen zu ermitteln und dem Nutzer als Adressat der Nachricht anzuzeigen.</p>
 
 <!--A_22737-01-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-34906LR4" title="E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - freie Textnachricht" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG4" title="E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - freie Textnachricht" version="0">
     <meta lockversion="false" />
     <actor name="eRP_FdV">
         <testProcedure id="Produkttest" />
@@ -377,7 +374,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Innerhalb der Textnachricht sind keine Internet-Links und keine Non-Printable-Characters zulässig.</p>
 
 <!--A_22739-01-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-71358V1H" title="E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Nachricht erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG5" title="E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Nachricht erstellen" version="0">
     <meta lockversion="false" />
     <actor name="eRP_FdV">
         <testProcedure id="Produkttest" />
@@ -392,7 +389,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!--A_22740-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-69716H2W" title="E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Nachricht auf E-Rezept-Fachdienst einstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG6" title="E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Nachricht auf E-Rezept-Fachdienst einstellen" version="0">
     <meta lockversion="false" />
     <actor name="eRP_FdV">
         <testProcedure id="Produkttest" />
@@ -445,7 +442,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 09:20+0000">2026-03-09</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 14:20+0000">2026-03-09</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>AVS-Anforderungen: ChargeItem-Query - E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte v1.1.0-draft</title>
+    <title>AVS-Anforderungen: ChargeItem-Query - Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte v1.1.0-draft</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -132,16 +132,13 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="menu-technische-umsetzung-systemueberblick.html">Systemüberblick</a>
+        <a href="menu-technische-umsetzung-systemueberblick.html">Einordnung in die Telematikinfrastruktur</a>
       </li>
       <li>
         <a href="menu-technische-umsetzung-anwendungsfaelle.html">Technische Anwendungsfälle</a>
       </li>
       <li>
         <a href="menu-technische-umsetzung-verarbeitungsregeln.html">Verarbeitungsregeln</a>
-      </li>
-      <li>
-        <a href="menu-technische-umsetzung-chargeitem.html">Abrechnungsinformationen des E-Rezepts für PKV-Versicherte</a>
       </li>
       <li>
         <a href="menu-technische-umsetzung-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
@@ -199,7 +196,7 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte
+Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
             <span style="display:inline-block;">Version 1.1.0-draft - ci-build
@@ -278,7 +275,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Mit diesem Anwendungsfall stellt die abgebende LEI die Abrechnungsinformation zu einem E-Rezept auf dem E-Rezept-Fachdienst ein.</p>
 
 <!--A_22708-->
-<requirement conformance="SHALL NOT" key="IG-ERP-CHRG-30168RYA" title="PS abgebende LEI: Abrechnungsinformation bereitstellen – Einwilligung muss vorliegen" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CHRG27" title="PS abgebende LEI: Abrechnungsinformation bereitstellen – Einwilligung muss vorliegen" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung" />
@@ -287,7 +284,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!--A_22186-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-96876DS5" title="PS abgebende LEI: Abrechnungsinformation bereitstellen – E-Rezept auswählen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG28" title="PS abgebende LEI: Abrechnungsinformation bereitstellen – E-Rezept auswählen" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung" />
@@ -298,7 +295,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Die Information, dass der Versicherte die Einwilligung zum Speichern der Abrechnungsinformationen auf dem E-Rezept-Fachdienst erteilt hat, wird im Anwendungsfall “E-Rezept abrufen” übermittelt.</p>
 
 <!--A_22188-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-03077PVE" title="PS abgebende LEI: Abrechnungsinformation bereitstellen – PKV-Abgabedatensatz erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG29" title="PS abgebende LEI: Abrechnungsinformation bereitstellen – PKV-Abgabedatensatz erstellen" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung" />
@@ -311,7 +308,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Das Signieren des PKV-Abgabedatensatzes erfolgt gemäß [gemILF_PS_eRp] Kap. “Abgabedatensatz signieren”. Für die Wahl des Signaturverfahrens (QES oder nonQES) gelten die rechtlichen Vorgaben.</p>
 
 <!--A_22189-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-79277ZR7" title="PS abgebende LEI: Abrechnungsinformation bereitstellen – ChargeItem erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG30" title="PS abgebende LEI: Abrechnungsinformation bereitstellen – ChargeItem erstellen" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung" />
@@ -322,7 +319,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Für die Spezifikation der Ressource ChargeItem siehe [gemSpec_DM_eRp].</p>
 
 <!--A_22190-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-03695JQ2" title="PS abgebende LEI: Abrechnungsinformation bereitstellen - Speicherrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG31" title="PS abgebende LEI: Abrechnungsinformation bereitstellen - Speicherrequest" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung" />
@@ -345,7 +342,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Mit diesem Anwendungsfall kann die abgebende LEI den PKV-Abgabedatensatz zu einem E-Rezept, welche die abgebende LEI zuvor auf dem E-Rezept-Fachdienst bereitgestellt hat, ändern. Als Voraussetzung muss der Versicherte der abgebenden LEI einen AccessCode übermitteln, um die abgebende LEI zu berechtigen.</p>
 
 <!--A_22191-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-03575L7M" title="PS abgebende LEI: PKV-Abgabedatensatz ändern - PKV-Abgabedatensatz zum Ändern auswählen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG32" title="PS abgebende LEI: PKV-Abgabedatensatz ändern - PKV-Abgabedatensatz zum Ändern auswählen" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung" />
@@ -354,7 +351,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!--A_22193-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-06446PDE" title="PS abgebende LEI: PKV-Abgabedatensatz ändern – PKV-Abgabedatensatz erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG33" title="PS abgebende LEI: PKV-Abgabedatensatz ändern – PKV-Abgabedatensatz erstellen" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung" />
@@ -367,7 +364,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Das Signieren des PKV-Abgabedatensatzes erfolgt gemäß [gemILF_PS_eRp] Kap. “Abgabedatensatz signieren”.</p>
 
 <!--A_22194 -->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-04535L9N" title="PS abgebende LEI: PKV-Abgabedatensatz ändern – ChargeItem erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG34" title="PS abgebende LEI: PKV-Abgabedatensatz ändern – ChargeItem erstellen" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung" />
@@ -378,7 +375,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Für die Spezifikation der Ressource ChargeItem siehe [gemSpec_DM_eRp].</p>
 
 <!--A_22195-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-90148Q11" title="PS abgebende LEI: PKV-Abgabedatensatz ändern - Speicherrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG35" title="PS abgebende LEI: PKV-Abgabedatensatz ändern - Speicherrequest" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung" />
@@ -399,7 +396,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Mit diesem Anwendungsfall kann eine abgebende LEI die Abrechnungsinformation vom E-Rezept-Fachdienst abrufen, welche durch sie zuvor bereitgestellt und noch nicht gelöscht wurde. Als Voraussetzung muss der Versicherte der abgebenden LEI einen AccessCode übermitteln, um die abgebende LEI zu berechtigen.</p>
 
 <!--A_22203-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-63541GTY" title="PS abgebende LEI: Abrechnungsinformation abrufen - Leserequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG36" title="PS abgebende LEI: Abrechnungsinformation abrufen - Leserequest" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Produkttest" />
@@ -455,7 +452,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 09:20+0000">2026-03-09</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 14:20+0000">2026-03-09</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Verarbeitungsregeln für den E-Rezept-Fachdienst - E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte v1.1.0-draft</title>
+    <title>Verarbeitungsregeln für den E-Rezept-Fachdienst - Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte v1.1.0-draft</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -132,16 +132,13 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="menu-technische-umsetzung-systemueberblick.html">Systemüberblick</a>
+        <a href="menu-technische-umsetzung-systemueberblick.html">Einordnung in die Telematikinfrastruktur</a>
       </li>
       <li>
         <a href="menu-technische-umsetzung-anwendungsfaelle.html">Technische Anwendungsfälle</a>
       </li>
       <li>
         <a href="menu-technische-umsetzung-verarbeitungsregeln.html">Verarbeitungsregeln</a>
-      </li>
-      <li>
-        <a href="menu-technische-umsetzung-chargeitem.html">Abrechnungsinformationen des E-Rezepts für PKV-Versicherte</a>
       </li>
       <li>
         <a href="menu-technische-umsetzung-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
@@ -199,7 +196,7 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte
+Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
             <span style="display:inline-block;">Version 1.1.0-draft - ci-build
@@ -227,7 +224,7 @@ E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte
 
             <a href="#bottom">unten</a>
 
-          | <a href="menu-technische-umsetzung-chargeitem.html">nächste&gt;</a>
+          | <a href="menu-technische-umsetzung-datenschutz-und-sicherheit.html">nächste&gt;</a>
 
           </span>
 
@@ -264,13 +261,39 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#allgemeine-verarbeitungsregeln" id="markdown-toc-allgemeine-verarbeitungsregeln">Allgemeine Verarbeitungsregeln</a></li>
+  <li><a href="#verarbeitungsregeln-für-den-e-rezept-fachdienst" id="markdown-toc-verarbeitungsregeln-für-den-e-rezept-fachdienst">Verarbeitungsregeln für den E-Rezept-Fachdienst</a></li>
+  <li><a href="#verarbeitungsregeln-für-das-e-rezept-fdv" id="markdown-toc-verarbeitungsregeln-für-das-e-rezept-fdv">Verarbeitungsregeln für das E-Rezept-FdV</a></li>
+</ul>
+
 </div>
-<h3 id="löschfristen">Löschfristen</h3>
+<p>Diese Seite beschreibt gesonderte Verarbeitungsregeln und technische Aspekte für den E-Rezept-Fachdienst und dessen Clients im Kontext der Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte.</p>
+
+<h3 id="allgemeine-verarbeitungsregeln">Allgemeine Verarbeitungsregeln</h3>
+
+<h4 id="zuordnung-workflow">Zuordnung Workflow</h4>
+
+<p>Für die Übermittlung von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel für PKV-Versicherte wird der Workflow-Typ “200” eingeführt. Für den Workflow von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel mit Steuerung durch Leistungserbringer wird der Workflow-Typ “209” eingeführt.</p>
+
+<p>Im Workflow-Typ “200”  und Workflow-Typ “209” werden dasselbe Informationsmodell für den Verordnungsdatensatz (siehe https://simplifier.net/erezept ) wie bei der Verordnung für GKV-Versicherte verwendet.
+Hinweis: In MedicationRequest.insurance.Coverage.type mit dem Codesystem Coverage.type.coding in https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Coverage ist erkennbar, ob der Versicherte, für den das E-Rezept erstellt wurde, bei einer PKV versichert ist.</p>
+
+<p>Der Ablauf im Workflow-Typ “200” ist identisch zum Workflow-Typ “160”. Der Ablauf im Workflow-Typ “209” ist identisch zum Workflow-Typ “169”.</p>
+
+<p>Der Workflow-Typ “200” und der Workflow-Typ “209” verwenden dasselbe Statusmodell, wie der Workflow-Typ “160”. Siehe [gemSysL_eRp#2.4.6 Konzept Status E-Rezept].</p>
+
+<p>Für E-Rezepte der Workflow-Types “200” und “209” können die Abrechnungsinformationen über den E-Rezept-Fachdienst an den Versicherten übermittelt werden.</p>
+
+<h3 id="verarbeitungsregeln-für-den-e-rezept-fachdienst">Verarbeitungsregeln für den E-Rezept-Fachdienst</h3>
+
+<h4 id="löschfristen">Löschfristen</h4>
 <p>Für die Löschfristen des E-Rezepts gelten für Flowtype 200 und 209 die Vorgaben von Flowtype 160.</p>
 
-<requirement conformance="SHALL" key="IG-ERP-CHRG-283" title="E-Rezept-Fachdienst – Löschfrist ChargeItem" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG7" title="E-Rezept-Fachdienst – Löschfrist ChargeItem" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
@@ -278,6 +301,96 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 Der E-Rezept-Fachdienst MUSS ein ChargeItem innerhalb eines Monats nach Ablauf von 10 Jahren nach dem Erstellen der Ressource automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren, damit nicht mehr benötigte Informationen gelöscht sind. Der E-Rezept-Fachdienst MUSS bei jedem Löschen eines ChargeItems alle referenzierten Bundles (E-Rezept-Bundle, Quittungs-Bundle, PKV-Abgabedatensatz) ebenfalls löschen, damit die Informationen rund um ein gelöschtes ChargeItem ebenfalls entfernt werden.
 </requirement>
 
+<h4 id="identifikation-von-pkv-versicherten">Identifikation von PKV-Versicherten</h4>
+<p>Die Zuordnung eines E-Rezeptes zu einem Versicherten erfolgt auf Basis der Versicherten-ID (10-stelliger unveränderlicher Teil der Krankenversichertennummer (KVNR)). D.h. teilnehmende PKV-Versicherte benötigen eine KVNR, welche ihnen über ihre Krankenversicherung zugeordnet wird. An der Versicherten-ID kann nicht erkannt werden, ob der Versicherte bei einer PKV versichert ist.</p>
+
+<p>Die Authentisierung des Nutzers am E-Rezept-Fachdienst erfolgt mittels eines ACCESS_TOKEN. Diese werden durch Identity Provider (IdP) ausgestellt, welche die Identität des Nutzers attestieren. Es werden ACCESS_TOKEN von IdPs akzeptiert, bei denen der E-Rezept-Fachdienst sich registriert hat.</p>
+
+<p>Mit dem Start der Anwendung E-Rezept kann der IdP der gematik genutzt werden. Für die Authentisierung eines Versicherten am IdP der gematik mittels E-Rezept-FdV wird eine eGK mit NFC-Schnittstelle verwendet.</p>
+
+<p>Mit der Entwicklung von digitalen Identitäten, bspw. föderierter IdPs, werden diese für die Authentisierung einbezogen.</p>
+
+<h3 id="verarbeitungsregeln-für-das-e-rezept-fdv">Verarbeitungsregeln für das E-Rezept-FdV</h3>
+
+<h4 id="abrechnungsinformation-token-als-2d-code-anzeigen">Abrechnungsinformation-Token als 2D-Code anzeigen</h4>
+<p>Mit diesem Anwendungsfall kann der Nutzer den AccessCode zum Ändern als 2D-Code auf dem Bildschirm seines E-Rezept-FdVs anzeigen lassen, um es direkt in der Apotheke vorzuzeigen und die Apotheke damit zu berechtigen, die Abrechnungsinformation vom E-Rezept-Fachdienst abzurufen und den PKV-Abgabedatensatz einmalig zu ändern.</p>
+
+<!--A_24577-->
+<requirement conformance="MAY" key="IG-TIFLOW-CHRG8" title="E-Rezept-FdV: optional: 2D-Code Abrechnungsinformation anzeigen" version="0">
+    <meta lockversion="false" />
+    <actor name="eRP_FdV">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+      Das E-Rezept-FdV KANN den Anwendungsfall "2D-Code Abrechnungsinformation anzeigen" umsetzen.
+</requirement>
+
+<!--A_22726-01-->
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG9" title="E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen - E-Rezept auswählen" version="0">
+    <meta lockversion="false" />
+    <actor name="eRP_FdV">
+        <testProcedure id="Produkttest" />
+    </actor>
+      Das E-Rezept-FdV MUSS im Anwendungsfall "2D-Code Abrechnungsinformation anzeigen" es dem Nutzer ermöglichen, ein E-Rezept für die Anzeige des 2D-Code der Abrechnungsinformation auszuwählen, um einer Apotheke das Einscannen zu ermöglichen und sie somit für das Ändern des PKV-Abgabedatensatzes zu berechtigen.
+</requirement>
+
+<!--A_22727-01-->
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG10" title="E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen - Abrechnungsinformation-Token erstellen" version="0">
+    <meta lockversion="false" />
+    <actor name="eRP_FdV">
+        <testProcedure id="Produkttest" />
+    </actor>
+      Das E-Rezept-FdV MUSS im Anwendungsfall "2D-Code Abrechnungsinformation anzeigen" für das ausgewählte E-Rezept den Abrechnungsinformation-Token erstellen.
+</requirement>
+
+<p>Für die Beschreibung der Struktur des Abrechnungsinformation-Token siehe [gemSpec_DM_eRp].</p>
+
+<!--A_22728-01-->
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG11" title="E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen" version="0">
+    <meta lockversion="false" />
+    <actor name="eRP_FdV">
+        <testProcedure id="Produkttest" />
+    </actor>
+      Das E-Rezept-FdV MUSS im Anwendungsfall "2D-Code Abrechnungsinformation anzeigen" mit dem erstellten Abrechnungsinformation-Token einen 2D-Code erstellen und auf dem Display des Endgerätes anzeigen.
+</requirement>
+
+<h4 id="abrechnungsinformation-exportieren">Abrechnungsinformation exportieren</h4>
+<p>Mit diesem Anwendungsfall kann der Versicherte die Abrechnungsinformation aus dem E-Rezept-FdV exportieren, um es zur Abrechnung einzureichen oder zu archivieren.</p>
+
+<!--A_24555-->
+<requirement conformance="MAY" key="IG-TIFLOW-CHRG12" title="E-Rezept-FdV: optional: Abrechnungsinformation exportieren" version="0">
+    <meta lockversion="false" />
+    <actor name="eRP_FdV">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+      Das E-Rezept-FdV KANN den Anwendungsfall "Abrechnungsinformation exportieren" umsetzen.
+</requirement>
+
+<!--A_22184-02-->
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG13" title="E-Rezept-FdV: Abrechnungsinformation exportieren - PDF/A erstellen" version="0">
+    <meta lockversion="false" />
+    <actor name="eRP_FdV">
+        <testProcedure id="Produkttest" />
+    </actor>
+      Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation exportieren" auf Basis der vom E-Rezept-Fachdienst zu einer Prescription-ID heruntergeladenen ChargeItem, Verordnungsdatensatz, PKV-Abgabedatensatz und Quittung Ressourcen
+      <ul>
+        <li>einen Ausdruck erstellen,</li>
+        <li>für den Ausdruck ein PDF gemäß PDF/A-3-Standard (ISO 19005-3) erstellen,</li>
+        <li>in das Dokument den signierten Verordnungsdatensatz (&#60;Prescription-ID&#62;_verordnung.p7s), den signierten PKV-Abgabedatensatz (&#60;Prescription-ID&#62;_abgabedaten.p7s) und den signierten Quittung Datensatz (&#60;Prescription-ID&#62;_quittung.p7s) gemäß PDF/A-3 einbetten.</li>
+      </ul>
+</requirement>
+
+<p>Für die Visualisierung der Abrechnungsinformation für PKV-Versicherte ist die zwischen DAV und PKV-Verband vereinbarte Technische Anlage zu den PKV-Abgabedaten und dem dortigen Kapitel 6 Ausdruck für den Privatversicherten sowie dem Unterkapitel 6.2 Spezifikation des Ausdrucks für den Versicherten <a href="http://www.abda.de/themen/e-health/datenauschtausch-pkv">Empfehlung</a> zu beachten. Zur Umsetzungsunterstützung siehe auch <a href="https://github.com/DAV-ABDA/eRezept-Beispiele/tree/main/PKV">hier</a>.</p>
+
+<!--A_22185-01-->
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG14" title="E-Rezept-FdV: Abrechnungsinformation exportieren - PDF teilen" version="0">
+    <meta lockversion="false" />
+    <actor name="eRP_FdV">
+        <testProcedure id="Produkttest" />
+    </actor>
+      Das E-Rezept-FdV MUSS es dem Nutzer im Anwendungsfall "Abrechnungsinformation exportieren" ermöglichen, das erstellte PDF mit anderen Apps zu teilen, um den Versicherten die Möglichkeit zu geben, seine Abrechnungsinformation an Krankenversicherungen oder andere Institutionen zur Abrechnung zu übermitteln.
+</requirement>
+
+<p>Das schließt das Versenden per E-Mail oder die Ablage im Dateisystem ein.</p>
 
 
 
@@ -309,7 +422,7 @@ Der E-Rezept-Fachdienst MUSS ein ChargeItem innerhalb eines Monats nach Ablauf v
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="menu-technische-umsetzung-chargeitem.html">nächste&gt;</a>
+                <a href="menu-technische-umsetzung-datenschutz-und-sicherheit.html">nächste&gt;</a>
 
               </td>
             </tr>
@@ -319,7 +432,7 @@ Der E-Rezept-Fachdienst MUSS ein ChargeItem innerhalb eines Monats nach Ablauf v
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 09:20+0000">2026-03-09</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 14:20+0000">2026-03-09</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

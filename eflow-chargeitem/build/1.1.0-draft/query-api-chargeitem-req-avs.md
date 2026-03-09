@@ -1,6 +1,6 @@
-# AVS-Anforderungen: ChargeItem-Query - E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte v1.1.0-draft
+# AVS-Anforderungen: ChargeItem-Query - Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte v1.1.0-draft
 
-E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte
+Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 

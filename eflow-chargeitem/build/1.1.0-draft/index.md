@@ -1,6 +1,6 @@
-# Implementation Guide E-Rezept-Fachdienst - E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte v1.1.0-draft
+# Implementation Guide E-Rezept-Fachdienst - Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte v1.1.0-draft
 
-E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte
+Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 
@@ -14,26 +14,29 @@ Version 1.1.0-draft - ci-build
 | *Official URL*:https://gematik.de/fhir/erpchrg/ImplementationGuide/de.gematik.eflow-chargeitem | *Version*:1.1.0-draft |
 | Draft as of 2026-03-09 | *Computable Name*:gemIG_TIFlow_erpchrg |
 
-### Implementation Guide E-Rezept Patientenrechnung (PKV)
-
 Dieser Implementation Guide beschreibt die Bereitstellung der Abrechnungsinformationen für den Kostenträger. Er ergänzt die workflowspezifischen Anforderungen des E-Rezept-Fachdienstes und beschreibt die relevanten Use Cases.
 
-#### Zweck und Geltungsbereich
+### Zweck und Geltungsbereich
 
-* Abrechnungsinformationen für den Kostenträger
+* Verwaltung von Abrechnungsinformationen von E-Rezepten für PKV-Versicherte
+* Bereitstellen von Abrechnungsinformationen von E-Rezepten durch das AVS
 
-#### Nicht im Scope
+### Nicht im Scope
 
-* GKV-spezifische Workflows
+* Arzneimittelspezifische Workflows zur Belieferung von E-Rezepten
 * Nicht apothekenpflichtige Verordnungen
 * Abrechnung ausserhalb des E-Rezept-Fachdienstes
-* PKV-spezifische Anforderungen an Schnittstellen und Datenmodelle
 
-#### Wie dieser IG zu lesen ist
+### Anforderungen zur Umsetzung des IGs
+
+Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung der Verwaltung von Abrechnungsinformationen zu Arzneimitteln den Implementation Guide "Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte" umsetzen.
+
+Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides "Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
+### Wie dieser IG zu lesen ist
 
 Die Kapitel folgen der Struktur Fachlichkeit, Technische Umsetzung und Schnittstellen. Szenarien und Anwendungsfälle verweisen auf die zugehörigen technischen Kapitel und Profile.
 
-#### Abhängigkeiten
+### Abhängigkeiten
 
 
 
@@ -41,11 +44,11 @@ Die Kapitel folgen der Struktur Fachlichkeit, Technische Umsetzung und Schnittst
 
 
 
-#### Kontakt und Feedback
+### Kontakt und Feedback
 
 Für Fragen und Feedback wenden Sie sich bitte an [erp-umsetzung@gematik.de](mailto:erp-umsetzung@gematik.de).
 
-#### Rechtliche Hinweise
+### Rechtliche Hinweise
 
 Copyright ©2026+ gematik GmbH
 
@@ -62,9 +65,9 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "url" : "https://gematik.de/fhir/erpchrg/ImplementationGuide/de.gematik.eflow-chargeitem",
   "version" : "1.1.0-draft",
   "name" : "gemIG_TIFlow_erpchrg",
-  "title" : "E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte",
+  "title" : "Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte",
   "status" : "draft",
-  "date" : "2026-03-09T09:20:56+00:00",
+  "date" : "2026-03-09T14:20:19+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -1150,33 +1153,6 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
           "nameUrl" : "menu-technische-umsetzung-verarbeitungsregeln.html",
           "title" : "Verarbeitungsregeln für den E-Rezept-Fachdienst",
           "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "menu-technische-umsetzung-chargeitem.html"
-          }],
-          "nameUrl" : "menu-technische-umsetzung-chargeitem.html",
-          "title" : "ChargeItem: Abrechnungsinformationen des E-Rezepts für PKV-Versicherte",
-          "generation" : "markdown",
-          "page" : [{
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "menu-technische-umsetzung-chargeitem-req-fdv.html"
-            }],
-            "nameUrl" : "menu-technische-umsetzung-chargeitem-req-fdv.html",
-            "title" : "E-Rezept-FdV Anforderungen: ChargeItem",
-            "generation" : "markdown"
-          },
-          {
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "menu-technische-umsetzung-chargeitem-req-avs.html"
-            }],
-            "nameUrl" : "menu-technische-umsetzung-chargeitem-req-avs.html",
-            "title" : "Primärsystem des abgebenden Leistungserbringers Anforderungen: ChargeItem",
-            "generation" : "markdown"
-          }]
         },
         {
           "extension" : [{

@@ -1,6 +1,6 @@
-# ERPCHRG CapabilityStatement für den E-Rezept-Fachdienst - E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte v1.1.0-draft
+# ERPCHRG CapabilityStatement für den E-Rezept-Fachdienst - Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte v1.1.0-draft
 
-E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte
+Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 

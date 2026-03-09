@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Datenschutz und Sicherheit - E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte v1.1.0-draft</title>
+    <title>Datenschutz und Sicherheit - Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte v1.1.0-draft</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"3.4"}
-    h3,h4,h5,h6{--heading-prefix:"3.4"}</style>
+    <style type="text/css">h2{--heading-prefix:"3.3"}
+    h3,h4,h5,h6{--heading-prefix:"3.3"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -132,16 +132,13 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="menu-technische-umsetzung-systemueberblick.html">Systemüberblick</a>
+        <a href="menu-technische-umsetzung-systemueberblick.html">Einordnung in die Telematikinfrastruktur</a>
       </li>
       <li>
         <a href="menu-technische-umsetzung-anwendungsfaelle.html">Technische Anwendungsfälle</a>
       </li>
       <li>
         <a href="menu-technische-umsetzung-verarbeitungsregeln.html">Verarbeitungsregeln</a>
-      </li>
-      <li>
-        <a href="menu-technische-umsetzung-chargeitem.html">Abrechnungsinformationen des E-Rezepts für PKV-Versicherte</a>
       </li>
       <li>
         <a href="menu-technische-umsetzung-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
@@ -199,7 +196,7 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte
+Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
             <span style="display:inline-block;">Version 1.1.0-draft - ci-build
@@ -223,7 +220,7 @@ E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte
 
           <span style="float:right;">
 
-            <a href="menu-technische-umsetzung-chargeitem-req-avs.html">&lt;vorherige</a> | 
+            <a href="menu-technische-umsetzung-verarbeitungsregeln.html">&lt;vorherige</a> | 
 
             <a href="#bottom">unten</a>
 
@@ -272,7 +269,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Um zu vermeiden, dass der Anbieter des E-Rezept-Fachdienstes ein Profil über alle PKV-Versicherten mit Einwilligung erhält, wird die Information über die Einwilligung in der VAU verarbeitet und verschlüsselt gespeichert. Die Nichtabstreitbarkeit der Einwilligung ist technisch sicherzustellen.</p>
 
 <!--A_22207-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-229" title="Einwilligung in Verarbeitung von Abrechnungsinformationen nur für PKV-Versicherte" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG37" title="Einwilligung in Verarbeitung von Abrechnungsinformationen nur für PKV-Versicherte" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
@@ -282,7 +279,7 @@ Die Fachanwendung E-Rezept MUSS sicherstellen, dass eine Einwilligung in die Ver
 
 <p>Für den E-Rezept-Fachdienst heißt dies:
 <!--A_22208--></p>
-<requirement conformance="SHALL" key="IG-ERP-CHRG-230" title="Verarbeitung von Abrechnungsinformationen nur nach Einwilligung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG38" title="Verarbeitung von Abrechnungsinformationen nur nach Einwilligung" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
@@ -291,7 +288,7 @@ Die Fachanwendung E-Rezept MUSS sicherstellen, dass eine Verarbeitung von Abrech
 </requirement>
 
 <!--A_22209-->
-<requirement conformance="SHALL NOT" key="IG-ERP-CHRG-231" title="Verarbeitung von Abrechnungsinformationen im E-Rezept-Fachdienst nur nach Einwilligung" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CHRG39" title="Verarbeitung von Abrechnungsinformationen im E-Rezept-Fachdienst nur nach Einwilligung" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
@@ -300,7 +297,7 @@ Der E-Rezept-Fachdienst DARF NICHT Abrechnungsinformationen verarbeiten, wenn ke
 </requirement>
 
 <!--A_22210-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-232" title="Nichtabstreitbarkeit der Einwilligung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG40" title="Nichtabstreitbarkeit der Einwilligung" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
@@ -309,7 +306,7 @@ Die Fachanwendung E-Rezept MUSS sicherstellen, dass die technische Umsetzung der
 </requirement>
 
 <!--A_22211-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-233" title="Löschen von Abrechnungsinformationen nach zehn Jahren" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG41" title="Löschen von Abrechnungsinformationen nach zehn Jahren" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
@@ -318,7 +315,7 @@ Der E-Rezept-Fachdienst MUSS Abrechnungsinformationen zu einem E-Rezept nach zeh
 </requirement>
 
 <!--A_22212-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-234" title="Information über Möglichkeit des Speicherns der Abrechnungsinformationen nur für konkretes E-Rezept" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG42" title="Information über Möglichkeit des Speicherns der Abrechnungsinformationen nur für konkretes E-Rezept" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
@@ -327,7 +324,7 @@ Der E-Rezept-Fachdienst MUSS sicherstellen, dass abgebende Leistungserbringer di
 </requirement>
 
 <!--A_22213-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-235" title="Schutz der Abrechnungsinformationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG43" title="Schutz der Abrechnungsinformationen" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
@@ -336,7 +333,7 @@ Der E-Rezept-Fachdienst MUSS die Abrechnungsinformationen während der Verarbeit
 </requirement>
 
 <!--A_22214-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-236" title="Protokollierung der Einwilligung bzw. des Widerrufs" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG44" title="Protokollierung der Einwilligung bzw. des Widerrufs" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
@@ -367,7 +364,7 @@ Der E-Rezept-Fachdienst MUSS die Einwilligung in das Speichern der Abrechnungsin
             <tr>
               <td style="text-align:left">&#xA0;
 
-                <a href="menu-technische-umsetzung-chargeitem-req-avs.html">&lt;vorherige</a>
+                <a href="menu-technische-umsetzung-verarbeitungsregeln.html">&lt;vorherige</a>
 
               </td>
               <td style="text-align:center">
@@ -385,7 +382,7 @@ Der E-Rezept-Fachdienst MUSS die Einwilligung in das Speichern der Abrechnungsin
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 09:20+0000">2026-03-09</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 14:20+0000">2026-03-09</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

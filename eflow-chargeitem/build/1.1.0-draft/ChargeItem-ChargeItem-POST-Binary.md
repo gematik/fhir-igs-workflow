@@ -1,6 +1,6 @@
-# ChargeItem with contained Binary to Fachdienst - E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte v1.1.0-draft
+# ChargeItem with contained Binary to Fachdienst - Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte v1.1.0-draft
 
-E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte
+Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 

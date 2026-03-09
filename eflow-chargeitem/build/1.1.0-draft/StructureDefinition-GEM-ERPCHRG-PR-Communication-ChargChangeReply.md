@@ -1,6 +1,6 @@
-# Reply on change Request on ChargeItem from pharmacy to Patient - E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte v1.1.0-draft
+# Reply on change Request on ChargeItem from pharmacy to Patient - Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte v1.1.0-draft
 
-E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte
+Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 

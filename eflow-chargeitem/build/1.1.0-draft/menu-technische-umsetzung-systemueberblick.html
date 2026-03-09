@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Systemüberblick - E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte v1.1.0-draft</title>
+    <title>Systemüberblick - Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte v1.1.0-draft</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -132,16 +132,13 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="menu-technische-umsetzung-systemueberblick.html">Systemüberblick</a>
+        <a href="menu-technische-umsetzung-systemueberblick.html">Einordnung in die Telematikinfrastruktur</a>
       </li>
       <li>
         <a href="menu-technische-umsetzung-anwendungsfaelle.html">Technische Anwendungsfälle</a>
       </li>
       <li>
         <a href="menu-technische-umsetzung-verarbeitungsregeln.html">Verarbeitungsregeln</a>
-      </li>
-      <li>
-        <a href="menu-technische-umsetzung-chargeitem.html">Abrechnungsinformationen des E-Rezepts für PKV-Versicherte</a>
       </li>
       <li>
         <a href="menu-technische-umsetzung-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
@@ -199,7 +196,7 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte
+Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
             <span style="display:inline-block;">Version 1.1.0-draft - ci-build
@@ -264,26 +261,23 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div class="markdown-toc">
-  <p>Seiteninhalt:</p>
-
-<ul id="markdown-toc">
-  <li><a href="#einordnung-in-die-telematikinfrastruktur" id="markdown-toc-einordnung-in-die-telematikinfrastruktur">Einordnung in die Telematikinfrastruktur</a></li>
-  <li><a href="#technisches-konzept" id="markdown-toc-technisches-konzept">Technisches Konzept</a></li>
-</ul>
-
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
-<h3 id="einordnung-in-die-telematikinfrastruktur">Einordnung in die Telematikinfrastruktur</h3>
-<p>TODO: Fix link<br /></p>
+<p>Die Einführung des E-Rezepts für PKV-Versicherte setzt auf die bestehende Infrastruktur auf, die mit der Umsetzung des E-Rezepts geschaffen wurde.</p>
 
-<p>E-Rezepts für PKV-Versicherte wird in [gemIG_eRp_Prescription] beschrieben. Die App des Kostenträgers ist eine neue Komponente, zu der das E-Rezept-Frontend des Versicherten eine Schnittstelle für Abrechnungsinformationen anbietet. Die App des Kostenträgers ist keine Komponente der TI. Der Export als PDF ermöglicht weitere Übermittlungskanäle (z. B. E-Mail, Webportal).</p>
+<p>PKV-Versicherte sind eine neue Benutzergruppe.</p>
 
-<h3 id="technisches-konzept">Technisches Konzept</h3>
-<p>TODO: Fix link<br /></p>
+<p>Die App des Kostenträgers ist eine neue Komponente, zu der das E-Rezept-Frontend des Versicherten eine Schnittstelle für Abrechnungsinformationen anbietet. Die App des Kostenträgers ist keine Komponente der TI. Der Export in Form eines PDFs ermöglicht hierbei weitere Kanäle zur Übermittlung wie bspw. E-Mail oder Webportal.</p>
 
-<p>Der Workflow-Typ “200” und der Workflow-Typ “209” werden in [gemIG_eRp_Prescription] beschrieben.</p>
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 800px; margin-bottom: 30px;">
+        <img src="./einordnung-ti.png" alt="todo" style="width: 100%;" />
+    </div>
+    <figcaption><strong>Abbildung: </strong>Einordnung in die Telematik-Infrastruktur</figcaption>
+</figure>
 
-<p>Für E-Rezepte der Workflow-Types “200” und “209” können die Abrechnungsinformationen über den E-Rezept-Fachdienst an den Versicherten übermittelt werden.</p>
+<p><br /></p>
 
 
 
@@ -326,7 +320,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 09:20+0000">2026-03-09</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-chargeitem#1.1.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 14:20+0000">2026-03-09</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

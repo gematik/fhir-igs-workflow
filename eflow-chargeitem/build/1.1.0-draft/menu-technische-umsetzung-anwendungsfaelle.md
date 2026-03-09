@@ -1,6 +1,6 @@
-# Technische Anwendungsfälle - E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte v1.1.0-draft
+# Technische Anwendungsfälle - Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte v1.1.0-draft
 
-E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte
+Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte
 
 Version 1.1.0-draft - ci-build 
 
@@ -89,7 +89,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios “Abrechn
   * Die abgebende LEI ändert auf Wunsch des Versicherten den PKV-Abgabedatensatz. Der zuvor gespeicherte Datensatz wird überschrieben.: * Das Ändern des PKV-Abgabedatensatzes ist im E-Rezept-Fachdienst protokolliert.
 
 * Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * Die abgebende LEI ändert auf Wunsch des Versicherten den PKV-Abgabedatensatz. Der zuvor gespeicherte Datensatz wird überschrieben.: * [Query API: Communication](./query-api-communication.md)
+  * Die abgebende LEI ändert auf Wunsch des Versicherten den PKV-Abgabedatensatz. Der zuvor gespeicherte Datensatz wird überschrieben.: * [Abrechnungsinformation abrufen](./query-api-chargeitem.md)
 
 * Beschreibung: Relevante(r) Sektor(en)
   * Die abgebende LEI ändert auf Wunsch des Versicherten den PKV-Abgabedatensatz. Der zuvor gespeicherte Datensatz wird überschrieben.:  APOTHEKER 
@@ -209,7 +209,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios “Abrechn
   * Der Versicherte gibt die Abrechnungsinformation aus dem E-Rezept-FdV heraus an eine Ziel-App weiter (z. B. Service-App der Krankenversicherung, Service-App der Beihilfe) oder exportiert sie als PDF/A.: * Die Abrechnungsinformation ist in der Ziel-App übertragen.
 
 * Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * Der Versicherte gibt die Abrechnungsinformation aus dem E-Rezept-FdV heraus an eine Ziel-App weiter (z. B. Service-App der Krankenversicherung, Service-App der Beihilfe) oder exportiert sie als PDF/A.: * [Abrechnungsinformation weitergeben](./menu-technische-umsetzung-chargeitem-req-fdv.md#abrechnungsinformationen-exportieren)
+  * Der Versicherte gibt die Abrechnungsinformation aus dem E-Rezept-FdV heraus an eine Ziel-App weiter (z. B. Service-App der Krankenversicherung, Service-App der Beihilfe) oder exportiert sie als PDF/A.: * [Abrechnungsinformation weitergeben](./menu-technische-umsetzung-verarbeitungsregeln.md#abrechnungsinformationen-exportieren)
 
 * Beschreibung: Relevante(r) Sektor(en)
   * Der Versicherte gibt die Abrechnungsinformation aus dem E-Rezept-FdV heraus an eine Ziel-App weiter (z. B. Service-App der Krankenversicherung, Service-App der Beihilfe) oder exportiert sie als PDF/A.:  VERSICHERTER 
@@ -233,7 +233,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios “Abrechn
   * Der Versicherte markiert die Abrechnungsinformation im E-Rezept-FdV, um sie für bestimmte Aktionen zu kennzeichnen. Der E-Rezept-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.: * Die Information zur Markierung ist im E-Rezept-Fachdienst gespeichert. Der Datenzugriff ist im E-Rezept-Fachdienst protokolliert.
 
 * Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * Der Versicherte markiert die Abrechnungsinformation im E-Rezept-FdV, um sie für bestimmte Aktionen zu kennzeichnen. Der E-Rezept-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.: * [Abrechnungsinformation markieren](./menu-technische-umsetzung-chargeitem-req-fdv.md#abrechnungsinformationen-markieren)
+  * Der Versicherte markiert die Abrechnungsinformation im E-Rezept-FdV, um sie für bestimmte Aktionen zu kennzeichnen. Der E-Rezept-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.: * [Abrechnungsinformation markieren](./menu-technische-umsetzung-verarbeitungsregeln.md#abrechnungsinformationen-markieren)
 
 * Beschreibung: Relevante(r) Sektor(en)
   * Der Versicherte markiert die Abrechnungsinformation im E-Rezept-FdV, um sie für bestimmte Aktionen zu kennzeichnen. Der E-Rezept-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.:  VERSICHERTER 
@@ -258,7 +258,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios “Abrechn
   * Ein Versicherter wählt im E-Rezept-FdV die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der E-Rezept-Fachdienst löscht die Abrechnungsinformation: * Die Abrechnungsinformation sind auf dem E-Rezept-Fachdienst gelöscht. Das Löschen ist im E-Rezept-Fachdienst protokolliert.
 
 * Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * Ein Versicherter wählt im E-Rezept-FdV die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der E-Rezept-Fachdienst löscht die Abrechnungsinformation: * [Abrechnungsinformation löschen](./menu-technische-umsetzung-chargeitem-req-fdv.md#abrechnungsinformationen-löschen)
+  * Ein Versicherter wählt im E-Rezept-FdV die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der E-Rezept-Fachdienst löscht die Abrechnungsinformation: * [Abrechnungsinformation löschen](./menu-technische-umsetzung-verarbeitungsregeln.md#abrechnungsinformationen-löschen)
 
 * Beschreibung: Relevante(r) Sektor(en)
   * Ein Versicherter wählt im E-Rezept-FdV die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der E-Rezept-Fachdienst löscht die Abrechnungsinformation:  VERSICHERTER 
@@ -281,7 +281,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios “Abrechn
   * Der Versicherte übermittelt der abgebenden LEI einen AccessCode, um die Apotheke zum Abruf und einmaligen Ändern zu berechtigen. Die Übermittlung erfolgt gemäß dem Anwendungsfall “UC 3.3 - Nachricht durch Versicherten übermitteln”.: * Das AVS nutzt den AccessCode für Abruf/Änderung der Abrechnungsinformation.
 
 * Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * Der Versicherte übermittelt der abgebenden LEI einen AccessCode, um die Apotheke zum Abruf und einmaligen Ändern zu berechtigen. Die Übermittlung erfolgt gemäß dem Anwendungsfall “UC 3.3 - Nachricht durch Versicherten übermitteln”.: * FHIR REST: Communication (E-Rezept-Nachricht einstellen)
+  * Der Versicherte übermittelt der abgebenden LEI einen AccessCode, um die Apotheke zum Abruf und einmaligen Ändern zu berechtigen. Die Übermittlung erfolgt gemäß dem Anwendungsfall “UC 3.3 - Nachricht durch Versicherten übermitteln”.: * [Nachricht an Apotheke übermitteln](./query-api-communication.md#abrechnungsinformationen-löschen)
 
 * Beschreibung: Relevante(r) Sektor(en)
   * Der Versicherte übermittelt der abgebenden LEI einen AccessCode, um die Apotheke zum Abruf und einmaligen Ändern zu berechtigen. Die Übermittlung erfolgt gemäß dem Anwendungsfall “UC 3.3 - Nachricht durch Versicherten übermitteln”.:  VERSICHERTER 
