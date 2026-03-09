@@ -19,7 +19,9 @@ Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource _Task_ wird ü
 
 ### Resource API
 
-tbd
+Durch Angabe des URL-Parameter ?ac= bei der GET-Operation kann eine abgebende Institution den Anwendungsfall "Recovery Secret" ausführen.
+
+Durch Angabe des URL-Parameter ?secret= bei der GET-Operation kann eine abgebende Institution den Anwendungsfall "UC 4.8 - Quittung erneut abrufen" ausführen.
 
 #### API Beschreibung
 
