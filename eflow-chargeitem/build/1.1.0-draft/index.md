@@ -12,7 +12,7 @@ Version 1.1.0-draft - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/erpchrg/ImplementationGuide/de.gematik.eflow-chargeitem | *Version*:1.1.0-draft |
-| Draft as of 2026-03-06 | *Computable Name*:gemIG_TIFlow_erpchrg |
+| Draft as of 2026-03-09 | *Computable Name*:gemIG_TIFlow_erpchrg |
 
 ### Implementation Guide E-Rezept Patientenrechnung (PKV)
 
@@ -64,7 +64,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "gemIG_TIFlow_erpchrg",
   "title" : "E-Rezepte apothekenpflichtiger Arzneimittel für PKV-Versicherte",
   "status" : "draft",
-  "date" : "2026-03-06T15:03:48+00:00",
+  "date" : "2026-03-09T07:49:43+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
