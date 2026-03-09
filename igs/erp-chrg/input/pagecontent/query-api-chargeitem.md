@@ -9,16 +9,17 @@ Die Nachricht zur Interaktion mit Einwilligungen als FHIR-Ressource ChargeItem w
 |HTTP-Methode|Ergebnis der Anfrage|
 |---|---|
 |GET|Abrechnungsinformationen als Liste abrufen|
-|GET/<id>|Bestimmte Abrechnungsinformationen abrufen|
+|GET /<id>|Spezifische Abrechnungsinformationen abrufen|
 |POST|Abrechnungsinformation bereitstellen|
-|PATCH/<id>|Abrechnungsinformation markieren|
-|PUT/<id>|Abrechnungsinformation überschreiben|
-|DELETE/<id>|Abrechnungsinformation löschen|
+|PATCH /<id>|Abrechnungsinformation markieren|
+|PUT /<id>|Abrechnungsinformation aktualisieren|
+|DELETE /<id>|Abrechnungsinformation löschen|
 
 ### Anforderungen an Schnittstelle
-- [Anforderungen für den E-Rezept-Fachdienst](./query-api-chargeitem-req-fd.html)
-- [Anforderungen für den E-Rezept-FdV](./query-api-chargeitem-req-fdv.html)
-- [Anforderungen für den abgebenden Leistungserbringer](./query-api-chargeitem-req-avs.html)
+
+- [Server-Anforderungen zu ChargeItem](./query-api-chargeitem-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [FdV-Anforderungen zu ChargeItem](./query-api-chargeitem-req-fdv.html): Anforderungen an ein E-Rezept-FdV zur Nutzung der Schnittstelle.
+- [AVS-Anforderungen zu ChargeItem](./query-api-chargeitem-req-avs.html): Anforderungen an ein AVS zur Nutzung der Schnittstelle.
 
 #### Resource API
 Anfragen an die <i>ChargeItem</i>-Ressource können über die RESTful API durchgeführt werden.
