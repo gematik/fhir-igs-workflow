@@ -1,2 +1,0 @@
-- [Anforderungen für das E-Rezept-FdV](./menu-technische-umsetzung-chargeitem-req-fdv.html)
-- [Anforderungen für das Primärsystem des abgebenden Leistungserbringers](./menu-technische-umsetzung-chargeitem-req-avs.html)

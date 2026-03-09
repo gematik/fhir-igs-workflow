@@ -72,7 +72,7 @@
   postconditions: |
     - Das Ändern des PKV-Abgabedatensatzes ist im E-Rezept-Fachdienst protokolliert.
   interface: |
-    - [Query API: Communication](./query-api-communication.html)
+    - [Abrechnungsinformation abrufen](./query-api-chargeitem.html)
   diagram: seq-uc-4-13-abgabedatensatz-durch-abgebenden-aktualisieren
 
 # Einwilligung
@@ -121,7 +121,7 @@
   postconditions: |
     - Die Abrechnungsinformation ist in der Ziel-App übertragen.
   interface: |
-    - [Abrechnungsinformation weitergeben](./menu-technische-umsetzung-chargeitem-req-fdv.html#abrechnungsinformationen-exportieren)
+    - [Abrechnungsinformation weitergeben](./menu-technische-umsetzung-verarbeitungsregeln.html#abrechnungsinformationen-exportieren)
   diagram: seq-abrechnungsinformation-weitergeben
 
 - id: UC_3_12_Abrechungsinformation_durch_Versicherten_markieren
@@ -140,7 +140,7 @@
   postconditions: |
     - Die Information zur Markierung ist im E-Rezept-Fachdienst gespeichert. Der Datenzugriff ist im E-Rezept-Fachdienst protokolliert.
   interface: |
-    - [Abrechnungsinformation markieren](./menu-technische-umsetzung-chargeitem-req-fdv.html#abrechnungsinformationen-markieren)
+    - [Abrechnungsinformation markieren](./menu-technische-umsetzung-verarbeitungsregeln.html#abrechnungsinformationen-markieren)
   diagram: seq-uc-3-12-abrechungsinformation-durch-versicherten-markieren
 
 - id: UC_3_11_Abrechungsinformation_durch_Versicherten_löschen
@@ -160,7 +160,7 @@
   postconditions: |
     - Die Abrechnungsinformation sind auf dem E-Rezept-Fachdienst gelöscht. Das Löschen ist im E-Rezept-Fachdienst protokolliert.
   interface: |
-    - [Abrechnungsinformation löschen](./menu-technische-umsetzung-chargeitem-req-fdv.html#abrechnungsinformationen-löschen)
+    - [Abrechnungsinformation löschen](./menu-technische-umsetzung-verarbeitungsregeln.html#abrechnungsinformationen-löschen)
   diagram: seq-uc-3-11-abrechungsinformation-durch-versicherten-loeschen
 
 - id: chrg-accesscode-an-apotheke-übermitteln
@@ -175,5 +175,7 @@
   actions: |
     - Das E-Rezept-FdV erzeugt einen Abrechnungsinformation-Token.
     - Der Versicherte übermittelt den Token per Nachricht (Communication) oder zeigt einen 2D-Code.    
+  interface: |
+    - [Nachricht an Apotheke übermitteln](./query-api-communication.html#abrechnungsinformationen-löschen)
   postconditions: |
     - Das AVS nutzt den AccessCode für Abruf/Änderung der Abrechnungsinformation.

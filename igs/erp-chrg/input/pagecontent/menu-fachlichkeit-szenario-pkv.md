@@ -18,7 +18,7 @@ Eine Langzeitarchivierung der Abrechnungsinformation im E-Rezept-Fachdienst ist 
 Der PKV-Versicherte kann über die E-Rezept App die Abrechnungsinformation digital an seine PKV schicken, um die Erstattung zu beantragen. Der Export in Form eines PDFs ermöglicht hierbei verschiedene Kanäle zur Übermittlung (wie E-Mail, Webportal, App des Kostenträgers).
 
 ### Epic
-TODO: Update link<br>
+<!-- TODO: Update link -->
 
 Der Ablauf für die Übermittlung von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel für PKV-Versicherte orientiert sich an der Verordnung von apothekenpflichtige Arzneimittel für GKV-Versicherte, und wird in [gemIG_eRp_Prescription] beschrieben. Die Abrechnung der Apotheke erfolgt gegenüber dem Versicherten, sofern keine Direktabrechnung mit einer Krankenversicherung vereinbart wurde. Stattdessen wird der Prozess um Aspekte für die Bereitstellung von Informationen für die Erstattung der Kosten für den Versicherten erweitert. 
 
@@ -67,8 +67,7 @@ Die digitale Abrechnungsinformation besteht aus den folgenden Datensätzen:
 ### Einwilligung zum Speichern der Abrechungsinformationen
 Das Speichern der Abrechnungsinformationen erfolgt nur mit Einwilligung des Versicherten. Diese Einwilligung kann der Versicherte speichern, einsehen und jederzeit widerrufen. Sie wird unbefristet erteilt, und mit dem Widerruf der Einwilligung werden bereits gespeicherte Abrechnungsinformationen gelöscht. 
 
-**Beteiligte Akteure:** 
-**Beteiligte Systeme:** E-Rezept-FdV, E-Rezept-Fachdienst
+**Beteiligte Systeme:** E-Rezept-Fachdienst, E-Rezept-FdV
 
 **Technische Anwendungsfälle**
 
@@ -83,9 +82,7 @@ Der PKV-Abgabedatensatz wird durch die Apotheke erstellt. Er enthält – sofern
 
 Der Versicherte kann nachträglich die Apotheke berechtigen Korrekturen am PKV-Abgabedatensatz vorzunehmen und den korrigierten Datensatz im E-Rezept-Fachdienst zu speichern. Dafür erzeugt der E-Rezept-Fachdienst einen AccessCode.
 
-**Beteiligte Akteure:**
-- abgebender Leistungserbringer (Apotheke)
-- PKV-Versicherter
+**Beteiligte Systeme:** E-Rezept-Fachdienst, AVS
 
 **Technische Anwendungsfälle**
 
@@ -103,9 +100,7 @@ Eine Langzeitarchivierung der Abrechnungsinformation im E-Rezept-Fachdienst ist 
 
 Die Löschfristen für das E-Rezept mit den in Beziehung stehenden Daten, wie Dispensierinformationen und Kommunikationen zum E-Rezept, werden unabhängig von der zugehörigen Abrechnungsinformation durchgesetzt. Siehe [gemSysL_eRp]#A_18525.
 
-**Beteiligte Akteure:**
-- PKV-Versicherter
-- Kostenträger
+**Beteiligte Systeme:** E-Rezept-Fachdienst, E-Rezept-FdV
 
 **Technische Anwendungsfälle**
 
