@@ -80,7 +80,7 @@ Es gibt keine Möglichkeit in der Rolle Vertreter den Zugriff des LE-EU auf die 
 | [UC 3.16 - Zugriffsberechtigung durch Versicherten erstellen](menu-technische-umsetzung-anwendungsfaelle.md#uc-3-16-zugriffsberechtigung-erstellen) |
 | [UC 3.17 - Zugriffsberechtigung durch Versicherten löschen](menu-technische-umsetzung-anwendungsfaelle.md#uc-3-17-zugriffsberechtigung-loeschen) |
 | [UC 3.18 - Zugriffsberechtigung durch Versicherten einsehen](menu-technische-umsetzung-anwendungsfaelle.md#uc-3-18-zugriffsberechtigung-einsehen) |
-| [UC 3.19 - E-Rezept durch den Versicherten markieren](menu-technische-umsetzung-anwendungsfaelle.md#uc-e-rezept-markieren) |
+| [UC 3.19 - E-Rezept durch den Versicherten markieren](menu-technische-umsetzung-anwendungsfaelle.md#uc-3-19-e-rezept-markieren) |
 
 **Tabelle:**Technische Anwendungsfälle mit Bezug zur Verwaltung von
 *E-Rezepten im EU Ausland*

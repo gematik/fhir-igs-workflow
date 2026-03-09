@@ -9,7 +9,5 @@ Version 1.0.1 - ci-build
 
 ## Lizenz
 
-# Lizenz
-
-Das Projekt steht unter der Apache License, Version 2.0. Details finden Sie in der Datei [LICENSE](LICENSE).
+Das Projekt steht unter der Apache License, Version 2.0. Details finden Sie in der Datei [LICENSE](license.md).
 

@@ -18,8 +18,8 @@ Die Nachricht wird als HTTP `POST` an `/$grant-eu-access-permission` gesendet.
 
 ### Anforderungen an Schnittstelle
 
-* [Server Anforderungen zu `$grant-eu-access-permission`](./grant-eu-access-permission-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
-* [FdV-Anforderungen zu `$grant-eu-access-permission`](./grant-eu-access-permission-req-fd.md): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
+* [Server Anforderungen zu `$grant-eu-access-permission`](./op-grant-eu-access-permission-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+* [FdV-Anforderungen zu `$grant-eu-access-permission`](./op-grant-eu-access-permission-req-fdv.md): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
 
 ### API Beschreibung
 

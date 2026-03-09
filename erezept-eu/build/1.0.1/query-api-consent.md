@@ -18,9 +18,9 @@ Die Nachricht zur Interaktion mit Einwilligungen als FHIR-Ressource **Consent** 
 
 | | |
 | :--- | :--- |
-| GET | Zustimmung einsehen |
-| POST | Zustimmung erteilen |
-| DELETE | Zustimmung widerrufen |
+| GET | Einwilligungen einsehen |
+| POST | Einwilligung erteilen |
+| DELETE | Einwilligung widerrufen |
 
 ### Anforderungen an die Schnittstelle
 

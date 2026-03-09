@@ -12,7 +12,7 @@ Version 1.0.1 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/erp-eu//ImplementationGuide/de.gematik.erezept.eu | *Version*:1.0.1 |
-| Draft as of 2026-03-05 | *Computable Name*:gemIG_TIFlow_EU |
+| Draft as of 2026-03-09 | *Computable Name*:gemIG_TIFlow_eu |
 
 ### EU Zugriff E-Rezept
 
@@ -33,6 +33,11 @@ Die Inhalte basieren auf der Spezifikation “EU Zugriff E-Rezept”, Version 1.
 * Abrechnung von im EU-Ausland eingelösten E-Rezepten
 * Umsetzung von Workflows zu Arzneimitteln
 
+### Anforderungen zur Umsetzung des IGs
+
+Der E-Rezept-Fachdienst und dessen Client MÜSSEN zur Umsetzung des Einlösens von E-Rezepten im EU Ausland den Implementation Guide "EU Zugriff E-Rezept" umsetzen.
+
+Der E-Rezept-Fachdienst und dessen Client MÜSSEN zur Umsetzung des Implementation Guides "EU Zugriff E-Rezept" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
 ### Wie dieser IG zu lesen ist
 
 Die Kapitel folgen der Struktur Fachlichkeit, Technische Umsetzung und Schnittstellen. Szenarien und Anwendungsfälle verweisen auf die zugehörigen technischen Kapitel.
@@ -70,10 +75,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "id" : "de.gematik.erezept.eu",
   "url" : "https://gematik.de/fhir/erp-eu//ImplementationGuide/de.gematik.erezept.eu",
   "version" : "1.0.1",
-  "name" : "gemIG_TIFlow_EU",
+  "name" : "gemIG_TIFlow_eu",
   "title" : "EU Zugriff E-Rezept",
   "status" : "draft",
-  "date" : "2026-03-05T06:07:12+00:00",
+  "date" : "2026-03-09T13:02:52+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -167,6 +172,17 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       {
         "url" : "value",
         "valueString" : "ci-build"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "shownav"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -446,6 +462,17 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       {
         "url" : "value",
         "valueString" : "ci-build"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "shownav"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },

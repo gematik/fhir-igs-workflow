@@ -14,7 +14,7 @@ Version 1.0.1 - ci-build
 
 #### E-Rezept-FdV
 
-Das E-Rezept-Fachdienst MUSS für die Umsetzung der Bedienung von E-Rezepten im EU Kontext die Anwendungsfälle
+Das E-Rezept-FdV MUSS für die Umsetzung der Bedienung von E-Rezepten im EU Kontext die Anwendungsfälle
 * UC 3.13 - Einwilligung einsehen
 * UC 3.14 - Einwilligung erteilen
 * UC 3.15 - Einwilligung widerrufen

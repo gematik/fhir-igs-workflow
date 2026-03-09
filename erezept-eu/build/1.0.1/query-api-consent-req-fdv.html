@@ -218,6 +218,16 @@ EU Zugriff E-Rezept
         <ul class="breadcrumb">
           <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-query-api.html'><b>Schnittstellen - Query API</b></a></li><li><a href='query-api-consent.html'><b>Query API: Consent</b></a></li><li><b>FdV-Anforderungen: Consent</b></li>
 
+          <span style="float:right;">
+
+            <a href="query-api-consent-req-fd.html">&lt;vorherige</a> | 
+
+            <a href="#bottom">unten</a>
+
+          | <a href="query-api-task.html">nächste&gt;</a>
+
+          </span>
+
         </ul>
       </div>  <!-- /container -->
     </div>  <!-- /segment-breadcrumb -->
@@ -270,27 +280,27 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- Ablaufdiagramm Anwendungsfall -->
 
 <!-- A_22709-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-182" title="E-Rezept-FdV: Einwilligung erteilen - Einwilligungstext" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-439" title="E-Rezept-FdV: Einwilligung erteilen - Einwilligungstext" version="0">
     <meta lockversion="false" />
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung" />
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung erteilen" den Text für die Einwilligung derart gestalten, dass dem Nutzer eine informierte Einwilligung möglich ist. Insbesondere MÜSSEN enthalten sein: der Verwendungszweck, die konkreten Informationen über die Art der erhobenen Daten, die Speicherdauer, Hinweis auf Freiwilligkeit, auf Widerrufsrecht, Hinweis auf die Folgen bei Verweigerung oder Widerruf.
 </requirement>
 
 <!-- A_22163-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-183" title="E-Rezept-FdV: Einwilligung erteilen - Einwilligung eingeben" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-440" title="E-Rezept-FdV: Einwilligung erteilen - Einwilligung eingeben" version="0">
     <meta lockversion="false" />
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung" />
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung erteilen" es dem Nutzer ermöglichen, die Einwilligung einzugeben.
 </requirement>
 
 <!-- A_22165-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-184" title="E-Rezept-FdV: Einwilligung erteilen - Consent Ressource erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-441" title="E-Rezept-FdV: Einwilligung erteilen - Consent Ressource erstellen" version="0">
     <meta lockversion="false" />
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest" />
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung erteilen" eine Consent Ressource mit:
@@ -302,9 +312,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22166-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-185" title="E-Rezept-FdV: Einwilligung erteilen - Speicherrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-442" title="E-Rezept-FdV: Einwilligung erteilen - Speicherrequest" version="0">
     <meta lockversion="false" />
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest" />
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung erteilen" zum Speichern der Information im E-Rezept-Fachdienst die HTTP-Operation POST /Consent mit:
@@ -318,9 +328,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- Ablaufdiagramm Anwendungsfall -->
 
 <!-- A_22168-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-186" title="E-Rezept-FdV: Einwilligungsinformation abrufen - Abfragerequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-443" title="E-Rezept-FdV: Einwilligungsinformation abrufen - Abfragerequest" version="0">
     <meta lockversion="false" />
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest" />
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligungsinformation abrufen" zum Abrufen der Information vom E-Rezept-Fachdienst die HTTP-Operation GET /Consent mit:
@@ -336,27 +346,27 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- Ablaufdiagramm Anwendungsfall -->
 
 <!-- A_22169-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-187" title="E-Rezept-FdV: Einwilligung widerrufen - Widerruf eingeben" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-444" title="E-Rezept-FdV: Einwilligung widerrufen - Widerruf eingeben" version="0">
     <meta lockversion="false" />
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung" />
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung widerrufen" es dem Nutzer ermöglichen, den Widerruf zu erfassen.
 </requirement>
 
 <!-- A_22330-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-188" title="E-Rezept-FdV: Einwilligung widerrufen - Bestätigung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-445" title="E-Rezept-FdV: Einwilligung widerrufen - Bestätigung" version="0">
     <meta lockversion="false" />
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung" />
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung widerrufen" vom Nutzer eine Bestätigung einholen, dass die Einwilligung widerrufen werden soll, somit ggf. korrespondierende Daten gelöscht werden und die Möglichkeit geben, das Widerrufen abzubrechen.
 </requirement>
 
 <!-- A_22171-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-189" title="E-Rezept-FdV: Einwilligung widerrufen - Löschrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-446" title="E-Rezept-FdV: Einwilligung widerrufen - Löschrequest" version="0">
     <meta lockversion="false" />
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest" />
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung widerrufen" zum Löschen der Information im E-Rezept-Fachdienst die HTTP-Operation DELETE /Consent/?category=&lt;Einwilligungstyp&gt; mit:
@@ -390,9 +400,31 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
     <div class="container">  <!-- container -->
 
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="query-api-consent-req-fd.html">&lt;vorherige</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">oben</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="query-api-task.html">nächste&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.erezept.eu#1.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Mar 5, 2026 06:07+0000">2026-03-05</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.erezept.eu#1.0.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 13:02+0000">2026-03-09</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
