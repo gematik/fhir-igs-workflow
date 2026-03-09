@@ -143,6 +143,9 @@
       <li>
         <a href="menu-technische-umsetzung-mapping.html">Erzeugen digitaler Durchschlag</a>
       </li>
+      <li>
+        <a href="menu-technische-umsetzung-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -152,9 +155,6 @@
     <ul class="dropdown-menu">
       <li>
         <a href="menu-schnittstellen-query-api.html">Query API</a>
-      </li>
-      <li>
-        <a href="menu-schnittstellen-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
       </li>
     </ul>
   </li>
@@ -279,7 +279,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         
           Draft
           
-            as of 2026-03-03
+            as of 2026-03-09
           
         
       </td>
@@ -309,6 +309,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul id="markdown-toc">
   <li><a href="#zweck-und-geltungsbereich" id="markdown-toc-zweck-und-geltungsbereich">Zweck und Geltungsbereich</a></li>
   <li><a href="#nicht-im-scope" id="markdown-toc-nicht-im-scope">Nicht im Scope</a></li>
+  <li><a href="#anforderungen-zur-umsetzung-des-igs" id="markdown-toc-anforderungen-zur-umsetzung-des-igs">Anforderungen zur Umsetzung des IGs</a></li>
   <li><a href="#wie-dieser-ig-zu-lesen-ist" id="markdown-toc-wie-dieser-ig-zu-lesen-ist">Wie dieser IG zu lesen ist</a></li>
   <li><a href="#abhängigkeiten" id="markdown-toc-abhängigkeiten">Abhängigkeiten</a></li>
   <li><a href="#kontakt-und-feedback" id="markdown-toc-kontakt-und-feedback">Kontakt und Feedback</a></li>
@@ -331,6 +332,24 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul>
   <li>Beschreibung des Workflow <strong>166</strong> zur Verordnung von E-T-Rezepten, hierzu siehe [gemIG_TIFlow_rx].</li>
 </ul>
+
+<h3 id="anforderungen-zur-umsetzung-des-igs">Anforderungen zur Umsetzung des IGs</h3>
+
+<requirement conformance="SHALL" title="E-Rezept: Anwendung des IG 'Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst' für Übertragung von Daten vom E-Rezept-Fachdienst an den BfArM Webdienst" version="0">
+    <meta lockversion="false" />
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    Der E-Rezept-Fachdienst MUSS zur Umsetzung der Übertragung von Daten vom E-Rezept-Fachdienst an den BfArM Webdienst den Implementation Guide "Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst" umsetzen.
+</requirement>
+
+<requirement conformance="SHALL" title="E-Rezept: Umsetzung des Moduls 'Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst'" version="0">
+    <meta lockversion="false" />
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    Der E-Rezept-Fachdienst MUSS zur Umsetzung des Implementation Guides "Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
+</requirement>
 
 <h3 id="wie-dieser-ig-zu-lesen-ist">Wie dieser IG zu lesen ist</h3>
 
@@ -448,7 +467,7 @@ Version 2025</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.erp-t-prescription#1.0.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 3, 2026 06:38+0000">2026-03-03</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.erp-t-prescription#1.0.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 13:10+0000">2026-03-09</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

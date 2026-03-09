@@ -12,7 +12,7 @@ Version 1.0.0 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/erp-t-prescription/ImplementationGuide/de.gematik.erp-t-prescription | *Version*:1.0.0 |
-| Draft as of 2026-03-03 | *Computable Name*:gemIG_TIFlow_bfarm |
+| Draft as of 2026-03-09 | *Computable Name*:gemIG_TIFlow_bfarm |
 
 Dieser Implementation Guide beschreibt Profile und deren Verwendung für den Datenaustausch zwischen dem E-Rezept-Fachdienst und dem BfArM Webdienst.
 
@@ -26,6 +26,11 @@ Dieser Implementation Guide beschreibt Profile und deren Verwendung für den Dat
 
 * Beschreibung des Workflow **166** zur Verordnung von E-T-Rezepten, hierzu siehe [gemIG_TIFlow_rx].
 
+### Anforderungen zur Umsetzung des IGs
+
+Der E-Rezept-Fachdienst MUSS zur Umsetzung der Übertragung von Daten vom E-Rezept-Fachdienst an den BfArM Webdienst den Implementation Guide "Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst" umsetzen.
+
+Der E-Rezept-Fachdienst MUSS zur Umsetzung des Implementation Guides "Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
 ### Wie dieser IG zu lesen ist
 
 Dieser Implementation Guide ist “von links nach rechts” zu lesen. Die Menüstruktur beginnt mit fachlichen Inhalten, welche über die technischen Anwendungsfälle dann in den Spezifikationen der Endpunkte und APIs münden. Es wird empfohlen, die Inhalte in der vorgegebenen Reihenfolge zu lesen, um ein umfassendes Verständnis der Anforderungen und Spezifikationen zu erhalten.
@@ -69,7 +74,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "gemIG_TIFlow_bfarm",
   "title" : "Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst",
   "status" : "draft",
-  "date" : "2026-03-03T06:38:17+00:00",
+  "date" : "2026-03-09T13:10:00+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -1334,6 +1339,15 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
           "nameUrl" : "menu-technische-umsetzung-mapping.html",
           "title" : "Technische Umsetzung - Mapping des digitalen Durchschlags",
           "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "menu-technische-umsetzung-datenschutz-und-sicherheit.html"
+          }],
+          "nameUrl" : "menu-technische-umsetzung-datenschutz-und-sicherheit.html",
+          "title" : "Schnittstellen - Datenschutz und Sicherheit",
+          "generation" : "markdown"
         }]
       },
       {
@@ -1350,18 +1364,9 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
             "valueUrl" : "query-api-t-register-req-fd.html"
           }],
           "nameUrl" : "query-api-t-register-req-fd.html",
-          "title" : "Server-Anforderungen zur Übertragung an die T-Register Schnittstelle",
+          "title" : "Schnittstelle zur Übertragung an das BfArM T-Register",
           "generation" : "markdown"
         }]
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "menu-schnittstellen-datenschutz-und-sicherheit.html"
-        }],
-        "nameUrl" : "menu-schnittstellen-datenschutz-und-sicherheit.html",
-        "title" : "Schnittstellen - Datenschutz und Sicherheit",
-        "generation" : "markdown"
       },
       {
         "extension" : [{

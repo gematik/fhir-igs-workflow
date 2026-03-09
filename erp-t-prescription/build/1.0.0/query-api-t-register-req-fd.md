@@ -1,4 +1,4 @@
-# Server-Anforderungen zur Übertragung an die T-Register Schnittstelle - Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst v1.0.0
+# Schnittstelle zur Übertragung an das BfArM T-Register - Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst v1.0.0
 
 Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst
 
@@ -6,9 +6,9 @@ Version 1.0.0 - ci-build
 
 * [**Table of Contents**](toc.md)
 * [**Schnittstellen - Query API**](menu-schnittstellen-query-api.md)
-* **Server-Anforderungen zur Übertragung an die T-Register Schnittstelle**
+* **Schnittstelle zur Übertragung an das BfArM T-Register**
 
-## Server-Anforderungen zur Übertragung an die T-Register Schnittstelle
+## Schnittstelle zur Übertragung an das BfArM T-Register
 
 Zur Übertragung von Daten vom E-Rezept-Fachdienst an die T-Register Schnittstellen des BfArM Webdienst gelten die folgenden Anforderungen:
 
