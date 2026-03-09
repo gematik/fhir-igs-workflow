@@ -10,6 +10,25 @@ Dieser Implementation Guide beschreibt Profile und deren Verwendung für den Dat
 
 - Beschreibung des Workflow **166** zur Verordnung von E-T-Rezepten, hierzu siehe [gemIG_TIFlow_rx].
 
+### Anforderungen zur Umsetzung des IGs
+
+<requirement conformance="SHALL" title="E-Rezept: Anwendung des IG 'Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst' für Übertragung von Daten vom E-Rezept-Fachdienst an den BfArM Webdienst" version="0">
+    <meta lockversion="false"/>
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Der E-Rezept-Fachdienst MUSS zur Umsetzung der Übertragung von Daten vom E-Rezept-Fachdienst an den BfArM Webdienst den Implementation Guide "Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst" umsetzen.
+</requirement>
+
+<requirement conformance="SHALL" title="E-Rezept: Umsetzung des Moduls 'Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst'" version="0">
+    <meta lockversion="false"/>
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Der E-Rezept-Fachdienst MUSS zur Umsetzung des Implementation Guides "Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
+</requirement>
+
+
 ### Wie dieser IG zu lesen ist
 
 Dieser Implementation Guide ist "von links nach rechts" zu lesen. Die Menüstruktur beginnt mit fachlichen Inhalten, welche über die technischen Anwendungsfälle dann in den Spezifikationen der Endpunkte und APIs münden. Es wird empfohlen, die Inhalte in der vorgegebenen Reihenfolge zu lesen, um ein umfassendes Verständnis der Anforderungen und Spezifikationen zu erhalten.

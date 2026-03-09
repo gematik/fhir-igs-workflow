@@ -17,7 +17,7 @@ Dieser Implementation Guide beschreibt die Datenmodelle und Prozesse des E-Rezep
 
 ### Anforderungen zur Umsetzung des IGs
 
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-218" title="E-Rezept: Workflows für das Modul 'E-Rezept für Arzneimittel'" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-218" title="E-Rezept: Anwendung des IG 'E-Rezept für Arzneimittel' für Workflows 160, 166, 169, 200 und 209" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Herstellererklärung"/>
@@ -31,7 +31,7 @@ Dieser Implementation Guide beschreibt die Datenmodelle und Prozesse des E-Rezep
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-    Der E-Rezept-Fachdienst und dessen Clients MUSS zur Umsetzung der Workflows 160, 200, 169, 209 und 166 den Implementation Guides "E-Rezept für Arzneimittel" umsetzen.
+    Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung der Workflows 160, 166, 169, 200 und 209 den Implementation Guide "E-Rezept für Arzneimittel" umsetzen.
 </requirement>
 
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-219" title="E-Rezept: Umsetzung des Moduls 'E-Rezept für Arzneimittel'" version="0">
@@ -48,7 +48,7 @@ Dieser Implementation Guide beschreibt die Datenmodelle und Prozesse des E-Rezep
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-    Der E-Rezept-Fachdienst und dessen Clients MUSS zur Umsetzung des Implementation Guides "E-Rezept für Arzneimittel" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
+    Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides "E-Rezept für Arzneimittel" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
 </requirement>
 
 
