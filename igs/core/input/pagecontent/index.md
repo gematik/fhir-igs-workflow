@@ -21,7 +21,15 @@ Der Core-IG fokussiert auf die technische Basisschicht des Fachdienstes:
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-    Der E-Rezept-Fachdienst MUSS zur Umsetzung des Implementation Guides "Implementation Guide E-Rezept-Workflow Core" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind.
+    Der E-Rezept-Fachdienst MUSS den Implementation Guide "E-Rezept-Workflow Core" umsetzen.
+</requirement>
+
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst: Umsetzung 'Implementation Guide E-Rezept-Workflow Core'" version="0">
+    <meta lockversion="false"/>
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Der E-Rezept-Fachdienst MUSS zur Umsetzung des Implementation Guides "E-Rezept-Workflow Core" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind.
 </requirement>
 
 ## Aufbau
