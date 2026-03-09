@@ -31,7 +31,7 @@ Dieser Implementation Guide beschreibt die Datenmodelle und Prozesse des E-Rezep
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-    Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides "E-Rezept für Arzneimittel" Profile und Terminologien aus diesem IG und [gemIG_TIFlow_core] unterstützen.
+    Der E-Rezept-Fachdienst und dessen Clients MUSS zur Umsetzung des Implementation Guides "E-Rezept für Arzneimittel" Profile und Terminologien aus diesem IG und [gemIG_TIFlow_core] unterstützen.
 </requirement>
 
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-219" title="E-Rezept: zu unterstützende Workflows im Modul 'E-Rezept für Arzneimittel'" version="0">
@@ -48,7 +48,7 @@ Dieser Implementation Guide beschreibt die Datenmodelle und Prozesse des E-Rezep
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-    Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides "E-Rezept für Arzneimittel" die Workflows 160, 200, 169, 209 und 166 unterstützen.
+    Der E-Rezept-Fachdienst und dessen Clients MUSS zur Umsetzung des Implementation Guides "E-Rezept für Arzneimittel" die Workflows 160, 200, 169, 209 und 166 unterstützen.
 </requirement>
 
 ### Wie dieser IG zu lesen ist
