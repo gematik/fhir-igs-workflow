@@ -1,5 +1,20 @@
 Diese Seite beschreibt gesonderte Verarbeitungsregeln und technische Aspekte für den E-Rezept-Fachdienst und dessen Clients im Kontext der Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte.
 
+### Allgemeine Verarbeitungsregeln
+
+#### Zuordnung Workflow
+
+Für die Übermittlung von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel für PKV-Versicherte wird der Workflow-Typ "200" eingeführt. Für den Workflow von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel mit Steuerung durch Leistungserbringer wird der Workflow-Typ "209" eingeführt.
+
+Im Workflow-Typ "200"  und Workflow-Typ "209" werden dasselbe Informationsmodell für den Verordnungsdatensatz (siehe https://simplifier.net/erezept ) wie bei der Verordnung für GKV-Versicherte verwendet.
+Hinweis: In MedicationRequest.insurance.Coverage.type mit dem Codesystem Coverage.type.coding in https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Coverage ist erkennbar, ob der Versicherte, für den das E-Rezept erstellt wurde, bei einer PKV versichert ist.
+
+Der Ablauf im Workflow-Typ "200" ist identisch zum Workflow-Typ "160". Der Ablauf im Workflow-Typ "209" ist identisch zum Workflow-Typ "169". 
+
+Der Workflow-Typ "200" und der Workflow-Typ "209" verwenden dasselbe Statusmodell, wie der Workflow-Typ "160". Siehe [gemSysL_eRp#2.4.6 Konzept Status E-Rezept].
+
+Für E-Rezepte der Workflow-Types "200" und "209" können die Abrechnungsinformationen über den E-Rezept-Fachdienst an den Versicherten übermittelt werden.
+
 ### Verarbeitungsregeln für den E-Rezept-Fachdienst
 
 #### Löschfristen
@@ -12,6 +27,15 @@ Für die Löschfristen des E-Rezepts gelten für Flowtype 200 und 209 die Vorgab
     </actor>
 Der E-Rezept-Fachdienst MUSS ein ChargeItem innerhalb eines Monats nach Ablauf von 10 Jahren nach dem Erstellen der Ressource automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren, damit nicht mehr benötigte Informationen gelöscht sind. Der E-Rezept-Fachdienst MUSS bei jedem Löschen eines ChargeItems alle referenzierten Bundles (E-Rezept-Bundle, Quittungs-Bundle, PKV-Abgabedatensatz) ebenfalls löschen, damit die Informationen rund um ein gelöschtes ChargeItem ebenfalls entfernt werden.
 </requirement>
+
+#### Identifikation von PKV-Versicherten
+Die Zuordnung eines E-Rezeptes zu einem Versicherten erfolgt auf Basis der Versicherten-ID (10-stelliger unveränderlicher Teil der Krankenversichertennummer (KVNR)). D.h. teilnehmende PKV-Versicherte benötigen eine KVNR, welche ihnen über ihre Krankenversicherung zugeordnet wird. An der Versicherten-ID kann nicht erkannt werden, ob der Versicherte bei einer PKV versichert ist.
+
+Die Authentisierung des Nutzers am E-Rezept-Fachdienst erfolgt mittels eines ACCESS_TOKEN. Diese werden durch Identity Provider (IdP) ausgestellt, welche die Identität des Nutzers attestieren. Es werden ACCESS_TOKEN von IdPs akzeptiert, bei denen der E-Rezept-Fachdienst sich registriert hat.
+
+Mit dem Start der Anwendung E-Rezept kann der IdP der gematik genutzt werden. Für die Authentisierung eines Versicherten am IdP der gematik mittels E-Rezept-FdV wird eine eGK mit NFC-Schnittstelle verwendet.
+
+Mit der Entwicklung von digitalen Identitäten, bspw. föderierter IdPs, werden diese für die Authentisierung einbezogen.
 
 ### Verarbeitungsregeln für das E-Rezept-FdV
 
