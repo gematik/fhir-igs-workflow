@@ -3,7 +3,10 @@ Für den Empfang von Push Notifications in einem FdV muss sich die App-Instanz a
 
 ### Nachricht
 
-tbd
+|HTTP-Methode|Ergebnis der Anfrage|
+|---|---|
+|GET|Registrierungen abrufen|
+|POST|FdV-Instanz registrieren|
 
 ### Anforderungen an Schnittstelle
 

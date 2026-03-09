@@ -3,7 +3,13 @@ Für den Empfang von Push Notifications in einem FdV kann die App-Instanz eine K
 
 ### Nachricht
 
-tbd
+Die Nachricht zur Interaktion mit Konfigurationen für Push Notifications als Ressource _Channels_ wird über die folgenden HTTP-Methoden ermöglicht:
+
+|HTTP-Methode|Aufruf|Ergebnis der Anfrage|
+|---|---|
+|GET|GET /channels|Verfügbare Channels abrufen|
+|GET|GET /channels/{pushkey}|Für eine FdV-Instanz hinterlegte Konfiguration abrufen|
+|POST|POST /channels|Konfiguration für eine FdV-Instanz speichern|
 
 ### Anforderungen an Schnittstelle
 

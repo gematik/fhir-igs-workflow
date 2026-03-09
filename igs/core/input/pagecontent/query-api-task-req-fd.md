@@ -279,6 +279,7 @@ Die Struktur der VSDM Prüfziffer ist in A_23453-* (siehe Änderungseintrag C_11
         <td>24</td>
     </tr>
 </table>
+<div><figcaption><strong>Tabelle: </strong>Struktur VSDM Prüfziffer</figcaption></div>
 
 <!-- A_23454 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-48" title="E-Rezept-Fachdienst - Prüfung Prüfziffer" version="0">

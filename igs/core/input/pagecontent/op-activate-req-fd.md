@@ -165,9 +165,6 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
     Der E-Rezept-Fachdienst MUSS die zulässige Aktivierung eines Tasks mittels /Task/&#60;id&#62;/$activate-Operation im Status Task.status = ready vollziehen und bei erfolgreichem Abschluss der Operation die Ressource Task im HTTP-Body der HTTP-Response zurückgeben, damit die verordnende Leistungserbringerinstitution über den erfolgreichen Abschluss der Operation in Kenntnis gesetzt wird.
 </requirement>
 
-A_19029-06 - E-Rezept-Fachdienst - Task aktivieren - Serversignatur Rezept aktivieren
-<=
-
 <!-- A_19029-06 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-328" title="E-Rezept-Fachdienst - Task aktivieren - Serversignatur" version="0">
     <meta lockversion="false"/>

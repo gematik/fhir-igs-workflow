@@ -10,7 +10,7 @@
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-    Das E-Rezept-Fachdienst MUSS für die Umsetzung der Bedienung von E-Rezepten im EU Kontext die Anwendungsfälle
+    Das E-Rezept-FdV MUSS für die Umsetzung der Bedienung von E-Rezepten im EU Kontext die Anwendungsfälle
 
     <ul>
     <li>UC 3.13 - Einwilligung einsehen</li>
