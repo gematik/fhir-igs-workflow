@@ -1,0 +1,20 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: 38265bf3a153a75db92f515576b5caf241d801cc9701ae5e7ddcdfdc59b119a6
+created: '2026-03-09T15:08:38.296442'
+date: '2026-03-09T15:08:38.296448'
+key: IG-TIFLOW-CHRG92
+modified: '2026-03-09T15:08:38.296446'
+release_status: NEW
+source: input/pagecontent/query-api-chargeitem-req-fd.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: "Der E-Rezept-Fachdienst MUSS beim Löschen einer ChargeItem-Ressource auch \n\
+  - die in ChargeItem.supportingInformation referenzierten Ressourcen des Verordnungsdatensatzes,\
+  \ des PKV-Abgabedatensatzes und der Quittung,\n- alle Communication mit Communication.basedOn\
+  \ = ChargeItem.id, \nlöschen."
+title: E-Rezept-Fachdienst – Abrechnungsinformation löschen – zu löschende Ressourcen
+version: 0

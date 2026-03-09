@@ -2,7 +2,7 @@
 Mit diesem Anwendungsfall stellt die abgebende LEI die Abrechnungsinformation zu einem E-Rezept auf dem E-Rezept-Fachdienst ein.
 
 <!--A_22708-->
-<requirement conformance="SHALL NOT" key="IG-ERP-CHRG-30168RYA" title="PS abgebende LEI: Abrechnungsinformation bereitstellen – Einwilligung muss vorliegen" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CHRG27" title="PS abgebende LEI: Abrechnungsinformation bereitstellen – Einwilligung muss vorliegen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -11,7 +11,7 @@ Mit diesem Anwendungsfall stellt die abgebende LEI die Abrechnungsinformation zu
 </requirement>
 
 <!--A_22186-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-96876DS5" title="PS abgebende LEI: Abrechnungsinformation bereitstellen – E-Rezept auswählen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG28" title="PS abgebende LEI: Abrechnungsinformation bereitstellen – E-Rezept auswählen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -22,7 +22,7 @@ Mit diesem Anwendungsfall stellt die abgebende LEI die Abrechnungsinformation zu
 Die Information, dass der Versicherte die Einwilligung zum Speichern der Abrechnungsinformationen auf dem E-Rezept-Fachdienst erteilt hat, wird im Anwendungsfall "E-Rezept abrufen" übermittelt.
 
 <!--A_22188-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-03077PVE" title="PS abgebende LEI: Abrechnungsinformation bereitstellen – PKV-Abgabedatensatz erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG29" title="PS abgebende LEI: Abrechnungsinformation bereitstellen – PKV-Abgabedatensatz erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -35,7 +35,7 @@ Für die Spezifikation der Ressource PKV-Abgabedatensatz siehe [gemSpec_DM_eRp].
 Das Signieren des PKV-Abgabedatensatzes erfolgt gemäß [gemILF_PS_eRp] Kap. "Abgabedatensatz signieren". Für die Wahl des Signaturverfahrens (QES oder nonQES) gelten die rechtlichen Vorgaben.
 
 <!--A_22189-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-79277ZR7" title="PS abgebende LEI: Abrechnungsinformation bereitstellen – ChargeItem erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG30" title="PS abgebende LEI: Abrechnungsinformation bereitstellen – ChargeItem erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -46,7 +46,7 @@ Das Signieren des PKV-Abgabedatensatzes erfolgt gemäß [gemILF_PS_eRp] Kap. "Ab
 Für die Spezifikation der Ressource ChargeItem siehe [gemSpec_DM_eRp].
 
 <!--A_22190-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-03695JQ2" title="PS abgebende LEI: Abrechnungsinformation bereitstellen - Speicherrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG31" title="PS abgebende LEI: Abrechnungsinformation bereitstellen - Speicherrequest" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -69,7 +69,7 @@ Wenn der Versicherte zwischenzeitlich die Einwilligung zum Speichern von Abrechn
 Mit diesem Anwendungsfall kann die abgebende LEI den PKV-Abgabedatensatz zu einem E-Rezept, welche die abgebende LEI zuvor auf dem E-Rezept-Fachdienst bereitgestellt hat, ändern. Als Voraussetzung muss der Versicherte der abgebenden LEI einen AccessCode übermitteln, um die abgebende LEI zu berechtigen.
 
 <!--A_22191-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-03575L7M" title="PS abgebende LEI: PKV-Abgabedatensatz ändern - PKV-Abgabedatensatz zum Ändern auswählen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG32" title="PS abgebende LEI: PKV-Abgabedatensatz ändern - PKV-Abgabedatensatz zum Ändern auswählen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -78,7 +78,7 @@ Mit diesem Anwendungsfall kann die abgebende LEI den PKV-Abgabedatensatz zu eine
 </requirement>
 
 <!--A_22193-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-06446PDE" title="PS abgebende LEI: PKV-Abgabedatensatz ändern – PKV-Abgabedatensatz erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG33" title="PS abgebende LEI: PKV-Abgabedatensatz ändern – PKV-Abgabedatensatz erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -91,7 +91,7 @@ Für die Spezifikation der Ressource PKV-Abgabedatensatz siehe [gemSpec_DM_eRp].
 Das Signieren des PKV-Abgabedatensatzes erfolgt gemäß [gemILF_PS_eRp] Kap. "Abgabedatensatz signieren".
 
 <!--A_22194 -->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-04535L9N" title="PS abgebende LEI: PKV-Abgabedatensatz ändern – ChargeItem erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG34" title="PS abgebende LEI: PKV-Abgabedatensatz ändern – ChargeItem erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -102,7 +102,7 @@ Das Signieren des PKV-Abgabedatensatzes erfolgt gemäß [gemILF_PS_eRp] Kap. "Ab
 Für die Spezifikation der Ressource ChargeItem siehe [gemSpec_DM_eRp].
 
 <!--A_22195-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-90148Q11" title="PS abgebende LEI: PKV-Abgabedatensatz ändern - Speicherrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG35" title="PS abgebende LEI: PKV-Abgabedatensatz ändern - Speicherrequest" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -123,7 +123,7 @@ Wenn der Versicherte zwischenzeitlich die Einwilligung zum Speichern von Abrechn
 Mit diesem Anwendungsfall kann eine abgebende LEI die Abrechnungsinformation vom E-Rezept-Fachdienst abrufen, welche durch sie zuvor bereitgestellt und noch nicht gelöscht wurde. Als Voraussetzung muss der Versicherte der abgebenden LEI einen AccessCode übermitteln, um die abgebende LEI zu berechtigen.
 
 <!--A_22203-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-63541GTY" title="PS abgebende LEI: Abrechnungsinformation abrufen - Leserequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG36" title="PS abgebende LEI: Abrechnungsinformation abrufen - Leserequest" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Produkttest"/>

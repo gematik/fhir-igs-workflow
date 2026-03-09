@@ -7,7 +7,7 @@ Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Communication`-
 ### Modulspezifische Anforderungen
 
 <!--A_24563-->
-<requirement conformance="MAY" key="IG-ERP-CHRG-44295E1K" title="E-Rezept-FdV: optional: Abrechnungsinformation-Token übermitteln" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CHRG1" title="E-Rezept-FdV: optional: Abrechnungsinformation-Token übermitteln" version="0">
     <meta lockversion="false"/>
     <actor name="eRP_FdV">
         <testProcedure id="Herstellererklärung"/>
@@ -16,7 +16,7 @@ Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Communication`-
 </requirement>
 
 <!--A_22735-01-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-68690VHC" title="E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - E-Rezept auswählen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG2" title="E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - E-Rezept auswählen" version="0">
     <meta lockversion="false"/>
     <actor name="eRP_FdV">
         <testProcedure id="Produkttest"/>
@@ -25,7 +25,7 @@ Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Communication`-
 </requirement>
 
 <!--A_22736-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-25821XFL" title="E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Apotheke auswählen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG3" title="E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Apotheke auswählen" version="0">
     <meta lockversion="false"/>
     <actor name="eRP_FdV">
         <testProcedure id="Produkttest"/>
@@ -36,7 +36,7 @@ Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Communication`-
 Die Korrektur des PKV-Abgabedatensatzes wird durch die Apotheke durchgeführt, welche die ursprünglichen Abrechnungsinformation erstellt hat. Daher ist keine freie Apothekenwahl für den Nutzer notwendig. Es ist ausreichend, die Apotheke aus den vorliegenden Abrechnungsinformationen zu ermitteln und dem Nutzer als Adressat der Nachricht anzuzeigen.
 
 <!--A_22737-01-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-34906LR4" title="E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - freie Textnachricht" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG4" title="E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - freie Textnachricht" version="0">
     <meta lockversion="false"/>
     <actor name="eRP_FdV">
         <testProcedure id="Produkttest"/>
@@ -49,7 +49,7 @@ Hinweis: Die Textnachricht ist optional.
 Innerhalb der Textnachricht sind keine Internet-Links und keine Non-Printable-Characters zulässig.
 
 <!--A_22739-01-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-71358V1H" title="E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Nachricht erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG5" title="E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Nachricht erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="eRP_FdV">
         <testProcedure id="Produkttest"/>
@@ -64,7 +64,7 @@ Innerhalb der Textnachricht sind keine Internet-Links und keine Non-Printable-Ch
 </requirement>
 
 <!--A_22740-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-69716H2W" title="E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Nachricht auf E-Rezept-Fachdienst einstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG6" title="E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Nachricht auf E-Rezept-Fachdienst einstellen" version="0">
     <meta lockversion="false"/>
     <actor name="eRP_FdV">
         <testProcedure id="Produkttest"/>

@@ -8,7 +8,7 @@ Diese Seite beschreibt Anforderungen am E-Rezept-Fachdienst zur Nutzung der `Com
 
 
 <!--A_22734-01-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-227" title="E-Rezept-Fachdienst – Nachricht einstellen – Prüfung Existenz ChargeItem" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG161" title="E-Rezept-Fachdienst – Nachricht einstellen – Prüfung Existenz ChargeItem" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -17,7 +17,7 @@ Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht der Profile GEM_ERP
 </requirement>
 
 <!--A_22367-02-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-228" title="E-Rezept-Fachdienst – Nachricht einstellen – Notification Apotheke" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG162" title="E-Rezept-Fachdienst – Nachricht einstellen – Notification Apotheke" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>

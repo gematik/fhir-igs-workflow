@@ -1,0 +1,24 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: cae248aaf5c8578fef0fabad3f74e83997e91e94078d9c4b2516d0e465aff931
+created: '2026-03-09T15:08:38.293748'
+date: '2026-03-09T15:08:38.293751'
+key: IG-TIFLOW-CHRG75
+modified: '2026-03-09T15:08:38.293749'
+release_status: NEW
+source: input/pagecontent/query-api-chargeitem-req-fd.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete
+  über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch einen Versicherten,
+  den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header
+  des HTTP-Requests identifizieren, diese gegen die im gespeicherten Datensatz in
+  ChargeItem.subject.identifier hinterlegte KVNR des begünstigten Versicherten prüfen
+  und bei Ungleichheit den Aufruf mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich
+  der begünstigte Versicherte eine Abrechnungsinformation ändert.
+title: E-Rezept-Fachdienst – Abrechnungsinformation ändern (PATCH) – Versicherter
+  – Prüfung KVNR
+version: 0

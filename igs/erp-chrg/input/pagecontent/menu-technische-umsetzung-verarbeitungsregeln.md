@@ -20,7 +20,7 @@ Für E-Rezepte der Workflow-Types "200" und "209" können die Abrechnungsinforma
 #### Löschfristen
 Für die Löschfristen des E-Rezepts gelten für Flowtype 200 und 209 die Vorgaben von Flowtype 160.
 
-<requirement conformance="SHALL" key="IG-ERP-CHRG-283" title="E-Rezept-Fachdienst – Löschfrist ChargeItem" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG7" title="E-Rezept-Fachdienst – Löschfrist ChargeItem" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
@@ -43,7 +43,7 @@ Mit der Entwicklung von digitalen Identitäten, bspw. föderierter IdPs, werden 
 Mit diesem Anwendungsfall kann der Nutzer den AccessCode zum Ändern als 2D-Code auf dem Bildschirm seines E-Rezept-FdVs anzeigen lassen, um es direkt in der Apotheke vorzuzeigen und die Apotheke damit zu berechtigen, die Abrechnungsinformation vom E-Rezept-Fachdienst abzurufen und den PKV-Abgabedatensatz einmalig zu ändern.
 
 <!--A_24577-->
-<requirement conformance="MAY" key="IG-ERP-CHRG-51674CC3" title="E-Rezept-FdV: optional: 2D-Code Abrechnungsinformation anzeigen" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CHRG8" title="E-Rezept-FdV: optional: 2D-Code Abrechnungsinformation anzeigen" version="0">
     <meta lockversion="false"/>
     <actor name="eRP_FdV">
         <testProcedure id="Herstellererklärung"/>
@@ -52,7 +52,7 @@ Mit diesem Anwendungsfall kann der Nutzer den AccessCode zum Ändern als 2D-Code
 </requirement>
 
 <!--A_22726-01-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-30013X4C" title="E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen - E-Rezept auswählen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG9" title="E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen - E-Rezept auswählen" version="0">
     <meta lockversion="false"/>
     <actor name="eRP_FdV">
         <testProcedure id="Produkttest"/>
@@ -61,7 +61,7 @@ Mit diesem Anwendungsfall kann der Nutzer den AccessCode zum Ändern als 2D-Code
 </requirement>
 
 <!--A_22727-01-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-48162NWX" title="E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen - Abrechnungsinformation-Token erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG10" title="E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen - Abrechnungsinformation-Token erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="eRP_FdV">
         <testProcedure id="Produkttest"/>
@@ -72,7 +72,7 @@ Mit diesem Anwendungsfall kann der Nutzer den AccessCode zum Ändern als 2D-Code
 Für die Beschreibung der Struktur des Abrechnungsinformation-Token siehe [gemSpec_DM_eRp].
 
 <!--A_22728-01-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-46601PCT" title="E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG11" title="E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen" version="0">
     <meta lockversion="false"/>
     <actor name="eRP_FdV">
         <testProcedure id="Produkttest"/>
@@ -84,7 +84,7 @@ Für die Beschreibung der Struktur des Abrechnungsinformation-Token siehe [gemSp
 Mit diesem Anwendungsfall kann der Versicherte die Abrechnungsinformation aus dem E-Rezept-FdV exportieren, um es zur Abrechnung einzureichen oder zu archivieren.
 
 <!--A_24555-->
-<requirement conformance="MAY" key="IG-ERP-CHRG-66685XSJ" title="E-Rezept-FdV: optional: Abrechnungsinformation exportieren" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CHRG12" title="E-Rezept-FdV: optional: Abrechnungsinformation exportieren" version="0">
     <meta lockversion="false"/>
     <actor name="eRP_FdV">
         <testProcedure id="Herstellererklärung"/>
@@ -93,7 +93,7 @@ Mit diesem Anwendungsfall kann der Versicherte die Abrechnungsinformation aus de
 </requirement>
 
 <!--A_22184-02-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-24140HHW" title="E-Rezept-FdV: Abrechnungsinformation exportieren - PDF/A erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG13" title="E-Rezept-FdV: Abrechnungsinformation exportieren - PDF/A erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="eRP_FdV">
         <testProcedure id="Produkttest"/>
@@ -109,7 +109,7 @@ Mit diesem Anwendungsfall kann der Versicherte die Abrechnungsinformation aus de
 Für die Visualisierung der Abrechnungsinformation für PKV-Versicherte ist die zwischen DAV und PKV-Verband vereinbarte Technische Anlage zu den PKV-Abgabedaten und dem dortigen Kapitel 6 Ausdruck für den Privatversicherten sowie dem Unterkapitel 6.2 Spezifikation des Ausdrucks für den Versicherten [Empfehlung](http://www.abda.de/themen/e-health/datenauschtausch-pkv) zu beachten. Zur Umsetzungsunterstützung siehe auch [hier](https://github.com/DAV-ABDA/eRezept-Beispiele/tree/main/PKV). 
 
 <!--A_22185-01-->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-54660ZU5" title="E-Rezept-FdV: Abrechnungsinformation exportieren - PDF teilen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG14" title="E-Rezept-FdV: Abrechnungsinformation exportieren - PDF teilen" version="0">
     <meta lockversion="false"/>
     <actor name="eRP_FdV">
         <testProcedure id="Produkttest"/>

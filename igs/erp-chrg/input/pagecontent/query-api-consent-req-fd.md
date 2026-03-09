@@ -9,7 +9,7 @@ Diese Seite beschreibt Anforderungen am E-Rezept-Fachdienst zur Nutzung der `Con
 #### DELETE /Consent (Einwilligung widerrufen)
 
 <!-- A_22157 -->
-<requirement conformance="SHALL" key="IG-ERP-CHRG-215" title="E-Rezept-Fachdienst – Consent löschen – Löschen der bestehenden Abrechnungsinformationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG45" title="E-Rezept-Fachdienst – Consent löschen – Löschen der bestehenden Abrechnungsinformationen" version="0">
     <meta lockversion="false"/>
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest"/>
