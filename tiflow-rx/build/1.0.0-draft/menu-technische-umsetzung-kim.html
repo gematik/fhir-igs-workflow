@@ -290,7 +290,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_21870 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-53" title="E-Rezept - X-KIM-Dienstkennung - Zuweisung" version="0">
     <meta lockversion="false" />
-    <actor name="PS_E-Rezept_abgebend">
+    <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Produkttest" />
     </actor>
      Das PS der verordnenden LEI MUSS bei der Übermittlung eines E-Rezepts über KIM im KIM-Header "X-KIM-Dienstkennung" den Wert "eRezept;Zuweisung;V1.0" für die direkte Zuweisung und Übermittlung der Einlöseinformationen verwenden.
@@ -308,7 +308,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_21873 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-55" title="E-Rezept - Struktur Zuweisungs-Message" version="0">
     <meta lockversion="false" />
-    <actor name="PS_E-Rezept_abgebend">
+    <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Produkttest" />
     </actor>
      Das PS der verordnenden LEI MUSS bei Versand einer Zuweisungs-Message eine Message mit "Content-Type: multipart/mixed;..." und der folgenden Struktur verwenden. Tabelle # : Struktur der Message mit "Content-Type: multipart/mixed;..." Teil Inhalt optional Freitext Freitextmessage für den Empfänger default: "direkte Zuweisung E-Rezept" nein Einlöseinformation E-Rezept-Token als Link gemäß gemSpec_DM_eRp#A_19554 Nach 45 Zeichen MUSS ein Steuerzeichen "CRLF" eingefügt werden nein Therapieplan Therapieplan als Anhang, base64 codiert ja
@@ -375,7 +375,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Mar 5, 2026 05:49+0000">2026-03-05</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 06:28+0000">2026-03-09</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

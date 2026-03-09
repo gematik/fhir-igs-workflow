@@ -18,6 +18,7 @@ Die Nachricht zum Abruf von Dipensierdaten wird als HTTP GET-Anfrage an den gese
 
 ### Anforderungen an Schnittstelle
 
+* [FD-Anforderungen zur MedicationDispense-Query](./query-api-medicationdispense-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
 * [FdV-Anforderungen für MedicationDispense-Query](./query-api-medicationdispense-req-fdv.md): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
 
 ### Resource API
@@ -29,11 +30,6 @@ Anfragen an die *MedicationDispense*-Ressource können über die RESTful API mit
 #### API Beschreibung
 
 * [API-ERP: Abgabeinformationen abrufen](https://github.com/gematik/api-erp/blob/master/docs/erp_versicherte.adoc#abgabeinformationen-abrufen)
-
-#### Hinweise
-
-* Im Anwendungsfall “Abgabeinformationen abrufen” wird die Suche per `identifier` auf die PrescriptionID genutzt.
-* Die Rückgabe erfolgt als Bundle und kann ein oder mehrere `MedicationDispense`-Objekte enthalten.
 
 ### Instance API
 

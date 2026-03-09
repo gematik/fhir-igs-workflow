@@ -294,9 +294,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h4 id="nachrichten-abrufen">Nachrichten abrufen</h4>
 
 <!-- A_19205 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-183" title="Nachrichten abrufen - Nachrichten von Fachdienst herunterladen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-276" title="Nachrichten abrufen - Nachrichten von Fachdienst herunterladen" version="0">
     <meta lockversion="false" />
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest" />
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Nachrichten von Apotheken anzeigen" zum Herunterladen von Nachrichten vom E-Rezept-Fachdienst die HTTP-Operation GET /Communication mit
@@ -312,9 +312,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Die für die Nachricht zu verwendende Communication-Ressource wird modul- und anwendungsfall-spezifisch festgelegt.</p>
 
 <!-- A_19203 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-183" title="Nachricht senden - Nachricht auf Fachdienst einstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-277" title="Nachricht senden - Nachricht auf Fachdienst einstellen" version="0">
     <meta lockversion="false" />
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest" />
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Nachricht senden" zum Übermitteln einer Nachricht über den E-Rezept-Fachdienst die HTTP-Operation POST /Communication mit
@@ -331,9 +331,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Das E-Rezept-FdV MUSS im Anwendungsfall “Nachricht löschen” vom Nutzer eine Bestätigung einholen, dass die selektierte Nachricht gelöscht werden sollen und die Möglichkeit geben, das Löschen abzubrechen.</p>
 
 <!-- A_21526-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-183" title="E-Rezept-FdV: Nachricht löschen - Löschrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-278" title="E-Rezept-FdV: Nachricht löschen - Löschrequest" version="0">
     <meta lockversion="false" />
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest" />
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Nachrichten löschen" für die zu löschende Nachricht die HTTP-Operation DELETE /Communication/&lt;id&gt; des E-Rezept-Fachdienstes mit
@@ -349,7 +349,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_21402-02 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-RX-21" title="E-Rezept-FdV: Anfrage Belieferung - Flowtype 162 / 169 / 209 - Anfrage nicht zulässig" version="0">
     <meta lockversion="false" />
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest" />
     </actor>
      Das E-Rezept-FdV DARF es dem Nutzer NICHT ermöglichen, für ein E-Rezept mit dem Flowtype 162, 169 oder 209 eine Anfrage zur Belieferung an eine abgebende Institution zu senden.
@@ -357,9 +357,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- ToDo: A_21402-02 ist abgekündigt -->
 
 <!-- A_21403-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-22" title="E-Rezept-FdV: E-Rezept zuweisen - Flowtype 169 / 209 - Zuweisen nicht zulässig" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-RX-22" title="E-Rezept-FdV: E-Rezept zuweisen - Flowtype 169 / 209 - Zuweisen nicht zulässig" version="0">
     <meta lockversion="false" />
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest" />
     </actor>
      Das E-Rezept-FdV DARF im Anwendungsfall "E-Rezept einer Apotheke zuweisen" es dem Nutzer NICHT ermöglichen, ein E-Rezept mit dem Flowtype 169 oder 209 an eine Apotheke zuzuweisen.
@@ -368,7 +368,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_27833 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-RX-23" title="E-Rezept-FdV: E-Rezept zuweisen- Flowtype 166 - Zuweisen als Versand nicht zulässig" version="0">
     <meta lockversion="false" />
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest" />
     </actor>
      Das E-Rezept-FdV DARF im Anwendungsfall "E-Rezept einer Apotheke zuweisen" für ein E-Rezept mit dem Flowtype 166 es dem Nutzer NICHT ermöglichen ein E-T-Rezept mit der Belieferungsart "Postversand" an eine Apotheke zuzuweisen.
@@ -377,7 +377,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_26326 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-24" title="E-Rezept-FdV: E-Rezept zuweisen - Beginn Gültigkeit prüfen" version="0">
     <meta lockversion="false" />
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest" />
     </actor>
      Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept einer Apotheke zuweisen" prüfen, ob bei Teilverordnungen von Mehrfachverordnungen (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start) erreicht ist und in diesem Fall den Anwendungsfall abbrechen.
@@ -386,7 +386,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_21361-02 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-RX-25" title="E-Rezept-FdV: Vertreterkommunikation - Flowtype 169 / 209 - Vertreterkommunikation nicht zulässig" version="0">
     <meta lockversion="false" />
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest" />
     </actor>
      Das E-Rezept-FdV DARF NICHT im Anwendungsfall "Vertreterkommunikation" es dem Nutzer ermöglichen, bezüglich einem E-Rezept mit dem Flowtype 169 oder 209 mit einem Vertreter zu kommunizieren.
@@ -433,7 +433,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Mar 5, 2026 05:49+0000">2026-03-05</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 06:28+0000">2026-03-09</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

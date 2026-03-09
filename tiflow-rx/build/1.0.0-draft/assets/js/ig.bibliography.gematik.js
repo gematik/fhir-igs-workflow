@@ -89,6 +89,13 @@ const literatureData = [
         link: "https://update.kbv.de/ita-update/DigitaleMuster/ERP/KBV_ITA_VGEX_Technische_Anlage_ERP.pdf",
         title: "TECHNISCHE ANLAGE ZUR ELEKTRONISCHEN ARZNEIMITTELVERORDNUNG (E16A)",
         author: "KBV"
+    },
+    
+    {
+        key: "gemIG_TIFlow_core",
+        link: "https://gemspec.gematik.de/ig/fhir/",
+        title: "Implementation Guide TIFlow-Core",
+        author: "gematik"
     }
     
 ];

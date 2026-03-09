@@ -24,6 +24,7 @@ Die nachfolgenden Tabellen enthalten die Bezeichnung der in diesem Implementatio
 | [gemKPT_Betr] | gematik: Betriebskonzept Online-Produktivbetrieb.https://gemspec.gematik.de/docs/gemSpec/gemKPT_Betr/latest/ |
 | [gemSysL_eRp] | gematik: Systemlösung E-Rezept.https://gemspec.gematik.de/docs/gemSpec/gemSysL_eRp/latest/ |
 | [gemIG_TIFlow_bfarm] | gematik: Übertragung digitaler Durchschlag zum E-T-Rezept.https://gemspec.gematik.de/ig/fhir/erp-t-prescription/1.1.0 |
+| [gemIG_TIFlow_core] | gematik: Implementation Guide TIFlow-Core.https://gemspec.gematik.de/ig/fhir/ |
 
 **Tabelle:**Dokumente & Verweise der gematik
 
