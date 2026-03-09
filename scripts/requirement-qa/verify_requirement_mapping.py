@@ -119,6 +119,65 @@ def write_csv(path: Path, header: List[str], rows: List[List[str]]) -> None:
         writer.writerows(rows)
 
 
+def load_single_column_csv(path: Path, preferred_columns: List[str]) -> Set[str]:
+    """Load values from CSV, supporting optional headers or plain one-column files."""
+    if not path.exists():
+        return set()
+
+    with path.open("r", encoding="utf-8", newline="") as handle:
+        rows = [row for row in csv.reader(handle) if row]
+
+    if not rows:
+        return set()
+
+    def clean(text: str) -> str:
+        return text.strip()
+
+    header = [clean(col).lower() for col in rows[0]]
+    preferred = [c.lower() for c in preferred_columns]
+
+    # Header mode: first row contains one of the expected column names.
+    if any(col in preferred for col in header):
+        value_idx = next((i for i, col in enumerate(header) if col in preferred), 0)
+        data_rows = rows[1:]
+    else:
+        # Plain mode: first column contains values directly.
+        value_idx = 0
+        data_rows = rows
+
+    values: Set[str] = set()
+    for row in data_rows:
+        if value_idx >= len(row):
+            continue
+        value = clean(row[value_idx])
+        if not value or value.startswith("#"):
+            continue
+        values.add(value)
+
+    return values
+
+
+def source_matches_spec(source: str, allowed_specs: Set[str]) -> bool:
+    for spec in allowed_specs:
+        if source == spec or source.startswith(f"{spec} "):
+            return True
+    return False
+
+
+def filter_excel_ids_by_specs(
+    excel_ids: Dict[str, Dict[str, Set[str]]],
+    allowed_specs: Set[str],
+) -> Dict[str, Dict[str, Set[str]]]:
+    if not allowed_specs:
+        return excel_ids
+
+    filtered: Dict[str, Dict[str, Set[str]]] = {}
+    for req_id, info in excel_ids.items():
+        if any(source_matches_spec(src, allowed_specs) for src in info.get("sources", set())):
+            filtered[req_id] = info
+    return filtered
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Verify requirement mapping coverage against Excel A_ IDs."
@@ -148,11 +207,23 @@ def main() -> None:
         action="store_true",
         help="Only use gemProdT*.xlsx files and parse requirements from sheet 'Festlegungen'",
     )
+    parser.add_argument(
+        "--ignore-list",
+        default="scripts/requirement-qa/config/req-ignore.csv",
+        help="One-column CSV with old_req IDs to ignore for missing output",
+    )
+    parser.add_argument(
+        "--specs-to-check",
+        default="scripts/requirement-qa/config/specs-to-check.csv",
+        help="One-column CSV with source specs to include in --ptsb mode",
+    )
     args = parser.parse_args()
 
     xlsx_dir = Path(args.xlsx_dir)
     mapping_path = Path(args.mapping)
     output_dir = Path(args.output_dir)
+    ignore_list_path = Path(args.ignore_list)
+    specs_to_check_path = Path(args.specs_to_check)
 
     if not xlsx_dir.exists():
         raise FileNotFoundError(f"XLSX directory not found: {xlsx_dir}")
@@ -168,10 +239,16 @@ def main() -> None:
 
     excel_ids = collect_excel_ids(xlsx_paths, ptsb=args.ptsb)
 
+    ignore_ids = load_single_column_csv(ignore_list_path, ["old_req", "id", "requirement", "req"])
+    specs_to_check = load_single_column_csv(specs_to_check_path, ["spec", "source", "document"])
+
+    if args.ptsb:
+        excel_ids = filter_excel_ids_by_specs(excel_ids, specs_to_check)
+
     mapping_entries = load_mapping(mapping_path)
     mapping_ids = {entry.get("old_req") for entry in mapping_entries if entry.get("old_req")}
 
-    missing_ids = sorted(set(excel_ids.keys()) - mapping_ids)
+    missing_ids = sorted((set(excel_ids.keys()) - mapping_ids) - ignore_ids)
 
     duplicate_rows: List[List[str]] = []
     for entry in mapping_entries:

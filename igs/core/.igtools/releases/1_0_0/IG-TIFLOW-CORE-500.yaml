@@ -1,33 +1,134 @@
 actor:
 - E-Rezept-Fachdienst
 conformance: SHALL
-content_hash: 651c964d19af527c05f099a69a75599711311e148fde8dadc43eafc74bb025e6
-created: '2026-03-05T15:25:27.991763'
-date: '2026-03-05T15:25:27.991767'
+content_hash: ad66911c6c5b9f151b44ba487f9df7db400001eca8845bbd8049fd4ffa50bf9d
+created: '2026-03-05T11:54:41.756667'
+date: '2026-03-05T14:47:08.377811'
 key: IG-TIFLOW-CORE-500
-modified: '2026-03-05T15:25:27.991766'
+modified: '2026-03-05T14:47:08.377811'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-paging.md
+source: input/pagecontent/menu-technische-umsetzung-epa-ms.md
 status: ACTIVE
 test_procedures:
   E-Rezept-Fachdienst:
   - Produkttest
-text: "Der E-Rezept-Fachdienst MUSS das Konzept zur Handhabung der Rückgabe von mehreren\
-  \ FHIR-Objekten auf folgende Endpunkte anwenden: Tabelle #: TAB_eRPFD_021 Endpunkte\
-  \ des E-Rezept-Fachdienst, die das Konzept zur Handhabung der Rückgabe von mehreren\
-  \ FHIR-Objekten bereitstellen müssen \n     \n     <table>\n<thead>\n<tr>\n<th>Endpunkt</th>\n\
-  <th>Client</th>\n<th>Inhalt der Response</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n\
-  <td>GET /Task</td>\n<td>Versicherte, Abgebende LEI</td>\n<td>Liste von verfügbaren\
-  \ Tasks im E-Rezept-Fachdienst</td>\n</tr>\n<tr>\n<td>GET /Communication</td>\n\
-  <td>Versicherte, Abgebende LEI</td>\n<td>Liste von verfügbaren Communications</td>\n\
-  </tr>\n<tr>\n<td>GET /MedicationDispense</td>\n<td>Versicherte</td>\n<td>Liste von\
-  \ eingestellten MedicationDispenses von Verordnungen</td>\n</tr>\n<tr>\n<td>GET\
-  \ /ChargeItem</td>\n<td>Versicherte</td>\n<td>Liste von Abrechnungsinformationen\
-  \ von Verordnungen</td>\n</tr>\n<tr>\n<td>GET /AuditEvent</td>\n<td>Versicherte</td>\n\
-  <td>Liste von Protokolleinträgen des Versicherten</td>\n</tr>\n</tbody>\n</table>\n\
-  \n<div><figcaption><strong>Tabelle: </strong>Endpunkte des E-Rezept-Fachdienst,\
-  \ die das Konzept zur Handhabung der Rückgabe von mehreren FHIR-Objekten bereitstellen\
-  \ müssen</figcaption></div>"
-title: E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten -
-  Betroffene Endpunkte
+text: 'Der E-Rezept-Fachdienst MUSS das Zertifikat des ePA-Aktensystems gemäß den
+  Vorgaben von [gemSpec_PKI] und des TUC_PKI_018 mit den Eingangsdaten gemäß der Tabelle
+  Tab_eRPFD_018 prüfen und im Fehlerfall den Aufbau der HTTPS-Verbindung abbrechen.
+  Tabelle #: Tab_eRPFD_018 – Eingangsdaten für die Prüfung des ePA-Aktensystem Server-Zertifikats
+
+
+  <table>
+
+  <thead>
+
+  <tr>
+
+  <th>TUC_PKI_018 Eingangsdaten</th>
+
+  <th>Zulässiger Wert bzw. Beschreibung</th>
+
+  </tr>
+
+  </thead>
+
+  <tbody>
+
+  <tr>
+
+  <td>TSL</td>
+
+  <td>die entsprechende TSL für Infrastrukturkomponenten</td>
+
+  </tr>
+
+  <tr>
+
+  <td>Zertifikat</td>
+
+  <td>das zu prüfende Zertifikat vom Kommunikationspartner</td>
+
+  </tr>
+
+  <tr>
+
+  <td>Referenzzeitpunkt</td>
+
+  <td>aktuelle Systemzeit</td>
+
+  </tr>
+
+  <tr>
+
+  <td>Prüfmodus</td>
+
+  <td>OCSP</td>
+
+  </tr>
+
+  <tr>
+
+  <td>PolicyList</td>
+
+  <td>oid_fd_tls_s</td>
+
+  </tr>
+
+  <tr>
+
+  <td>Vorgesehene KeyUsage</td>
+
+  <td>digitalSignature</td>
+
+  </tr>
+
+  <tr>
+
+  <td>Vorgesehene ExtendedKeyUsage</td>
+
+  <td>id-kp-serverAuth</td>
+
+  </tr>
+
+  <tr>
+
+  <td>GracePeriod</td>
+
+  <td>der Wert muss konfigurierbar sein</td>
+
+  </tr>
+
+  <tr>
+
+  <td>Offline-Modus</td>
+
+  <td>nein</td>
+
+  </tr>
+
+  <tr>
+
+  <td>Timeout</td>
+
+  <td>Default-Wert (siehe [gemSpec_PKI])</td>
+
+  </tr>
+
+  <tr>
+
+  <td>TOLERATE_OCSP_FAILURE</td>
+
+  <td>Default-Wert (siehe [gemSpec_PKI])</td>
+
+  </tr>
+
+  </tbody>
+
+  </table>
+
+
+  <div><figcaption><strong>Tabelle: </strong>Eingangsdaten für die Prüfung des ePA-Aktensystem
+  Server-Zertifikats</figcaption></div>'
+title: E-Rezept-Fachdienst - ePA - TLS-Server X.509-Zertifikat des ePA-Aktensystems
+  auf Gültigkeit prüfen
 version: 0

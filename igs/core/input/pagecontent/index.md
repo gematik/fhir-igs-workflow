@@ -1,5 +1,3 @@
-# Implementation Guide E-Rezept-Workflow Core
-
 Dieser IG beschreibt die zentralen, IG-übergreifenden Anforderungen an den
 E-Rezept-Fachdienst. Er fasst grundlegende Sicherheits-, Protokollierungs- und
 Validierungsvorgaben zusammen, die in allen nachgelagerten IGs wiederverwendet
@@ -14,6 +12,25 @@ Der Core-IG fokussiert auf die technische Basisschicht des Fachdienstes:
 - Validierung von FHIR-Ressourcen und Bundles
 - Löschfristen und automatisches Löschen
 - Modulübergreifende Operationen auf Task ($create, $activate, $abort, ...)
+
+
+### Anforderungen zur Umsetzung des IGs
+
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst: Anwendung des IG 'E-Rezept-Workflow Core'" version="0">
+    <meta lockversion="false"/>
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Der E-Rezept-Fachdienst MUSS den Implementation Guide "E-Rezept-Workflow Core" umsetzen.
+</requirement>
+
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst: Umsetzung 'Implementation Guide E-Rezept-Workflow Core'" version="0">
+    <meta lockversion="false"/>
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Der E-Rezept-Fachdienst MUSS zur Umsetzung des Implementation Guides "E-Rezept-Workflow Core" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind.
+</requirement>
 
 ## Aufbau
 

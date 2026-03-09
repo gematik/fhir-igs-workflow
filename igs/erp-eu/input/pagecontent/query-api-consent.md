@@ -6,9 +6,9 @@ Die Nachricht zur Interaktion mit Einwilligungen als FHIR-Ressource _Consent_ wi
 
 |HTTP-Methode|Ergebnis der Anfrage|
 |---|---|
-|GET|Zustimmung einsehen|
-|POST|Zustimmung erteilen|
-|DELETE|Zustimmung widerrufen|
+|GET|Einwilligungen einsehen|
+|POST|Einwilligung erteilen|
+|DELETE|Einwilligung widerrufen|
 
 ### Anforderungen an die Schnittstelle
 

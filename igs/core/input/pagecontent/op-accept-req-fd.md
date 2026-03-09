@@ -11,6 +11,8 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
     Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept den im HTTP-Header "X-AccessCode" oder URL-Parameter "?ac=..." übertragenen AccessCode gegen den im referenzierten Task gespeicherten AccessCodeTask.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit Zugriffe auf diesen Datensatz nur durch Berechtigte in Kenntnis des AccessCodes erfolgen.
 </requirement>
 
+<!-- ToDo: lässt sich feststellen, wie die AVS den Aufruf nutzen? Wäre es legitim den HTTP-Header abzukündigen? -->
+
 <!-- A_19168-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-361" title="E-Rezept-Fachdienst - Task akzeptieren - Rezept bereits in Abgabe oder Bearbeitung" version="0">
     <meta lockversion="false"/>
