@@ -34,9 +34,9 @@ Dieser Implementation Guide beschreibt die Datenmodelle und Prozesse des E-Rezep
 
 ### Anforderungen zur Umsetzung des IGs
 
-Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides "E-Rezept für Arzneimittel" Profile und Terminologien aus diesem IG und [gemIG_TIFlow_core] unterstützen.
+Der E-Rezept-Fachdienst und dessen Clients MUSS zur Umsetzung des Implementation Guides "E-Rezept für Arzneimittel" Profile und Terminologien aus diesem IG und [gemIG_TIFlow_core] unterstützen.
 
-Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides "E-Rezept für Arzneimittel" die Workflows 160, 200, 169, 209 und 166 unterstützen.
+Der E-Rezept-Fachdienst und dessen Clients MUSS zur Umsetzung des Implementation Guides "E-Rezept für Arzneimittel" die Workflows 160, 200, 169, 209 und 166 unterstützen.
 ### Wie dieser IG zu lesen ist
 
 Dieser Implementation Guide ist “von links nach rechts” zu lesen. Die Menüstruktur beginnt mit fachlichen Inhalten, welche über die technischen Anwendungsfälle dann in den Spezifikationen der Endpunkte und APIs münden. Es wird empfohlen, die Inhalte in der vorgegebenen Reihenfolge zu lesen, um ein umfassendes Verständnis der Anforderungen und Spezifikationen zu erhalten.
@@ -80,7 +80,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "gemIG_TIFlow_rx",
   "title" : "E-Rezept für Arzneimittel",
   "status" : "draft",
-  "date" : "2026-03-09T06:28:29+00:00",
+  "date" : "2026-03-09T07:41:21+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
