@@ -15,6 +15,42 @@ Dieser Implementation Guide beschreibt die Datenmodelle und Prozesse des E-Rezep
 - Produkttyp-spezifische Implementierungsdetails außerhalb des Fachdienstes
 - Beschreibung und Definition von Prozessen außerhalb des Fachdienstes
 
+### Anforderungen zur Umsetzung des IGs
+
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-218" title="E-Rezept: Umsetzung des Moduls 'E-Rezept für Arzneimittel'" version="0">
+    <meta lockversion="false"/>
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides "E-Rezept für Arzneimittel" Profile und Terminologien aus diesem IG und [gemIG_TIFlow_core] unterstützen.
+</requirement>
+
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-219" title="E-Rezept: zu unterstützende Workflows im Modul 'E-Rezept für Arzneimittel'" version="0">
+    <meta lockversion="false"/>
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides "E-Rezept für Arzneimittel" die Workflows 160, 200, 169, 209 und 166 unterstützen.
+</requirement>
+
 ### Wie dieser IG zu lesen ist
 
 Dieser Implementation Guide ist "von links nach rechts" zu lesen. Die Menüstruktur beginnt mit fachlichen Inhalten, welche über die technischen Anwendungsfälle dann in den Spezifikationen der Endpunkte und APIs münden. Es wird empfohlen, die Inhalte in der vorgegebenen Reihenfolge zu lesen, um ein umfassendes Verständnis der Anforderungen und Spezifikationen zu erhalten.
