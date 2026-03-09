@@ -1,0 +1,22 @@
+actor:
+- E-Rezept-Fachdienst
+conformance: SHALL
+content_hash: 1bdeca1f1fef855c19fbbe8ec36e4f492364faffe49e19bdd62089be806f9e51
+created: '2026-03-09T15:08:38.291733'
+date: '2026-03-09T15:08:38.291736'
+key: IG-TIFLOW-CHRG61
+modified: '2026-03-09T15:08:38.291735'
+release_status: NEW
+source: input/pagecontent/query-api-chargeitem-req-fd.md
+status: ACTIVE
+test_procedures:
+  E-Rezept-Fachdienst:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
+  /ChargeItem sicherstellen, dass der zum Task zugehörige Verordnungsdatensatz unter
+  Coverage.type.coding.code den Wert "PKV" enthält und bei fehlgeschlagener Prüfung
+  mit dem HTTP-Fehlercode 400 abbrechen, damit nur eine Abrechnungsinformation für
+  E-Rezepte mit zulässigen Kostenträger angelegt wird.
+title: E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Prüfung Flowtype
+  Task
+version: 0
