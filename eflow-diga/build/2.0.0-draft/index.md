@@ -12,7 +12,7 @@ Version 2.0.0-draft - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/erp-diga/ImplementationGuide/de.gematik.eflow-diga | *Version*:2.0.0-draft |
-| Draft as of 2026-03-04 | *Computable Name*:ERezeptDiGA |
+| Draft as of 2026-03-09 | *Computable Name*:gemIG_TIFlow_diga |
 
 Dieser Implementation Guide beschreibt das Feature zur elektronischen Verordnung von Digitalen Gesundheitsanwendungen (DiGA). Er beschreibt DiGA-spezifische Anforderungen und Use Cases für Verordnende, Kostenträger und Versicherte.
 
@@ -30,6 +30,11 @@ Hersteller und Anbieter des Produkttyps TI-Flow-Fachdienst sowie Hersteller von 
 
 Die Inhalte sind in Fachlichkeit, Technische Umsetzung und Schnittstellen strukturiert. Ein durchgängendes Szenario beschreibt den Prozess vom Verordnen bis zum Einlösen.
 
+### Anforderungen zur Umsetzung des IGs
+
+Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Workflow 162 den Implementation Guide "Verordnungen für Digitale Gesundheitsanwendungen (DiGA)" umsetzen.
+
+Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides "Verordnungen für Digitale Gesundheitsanwendungen (DiGA)" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
 ### Methodik
 
 #### Apps
@@ -95,10 +100,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "id" : "de.gematik.eflow-diga",
   "url" : "https://gematik.de/fhir/erp-diga/ImplementationGuide/de.gematik.eflow-diga",
   "version" : "2.0.0-draft",
-  "name" : "ERezeptDiGA",
+  "name" : "gemIG_TIFlow_diga",
   "title" : "Verordnungen für Digitale Gesundheitsanwendungen (DiGA)",
   "status" : "draft",
-  "date" : "2026-03-04T00:31:41+00:00",
+  "date" : "2026-03-09T13:00:52+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -179,6 +184,17 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       {
         "url" : "value",
         "valueString" : "ci-build"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "shownav"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -458,6 +474,17 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       {
         "url" : "value",
         "valueString" : "ci-build"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "shownav"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -988,7 +1015,25 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
           }],
           "nameUrl" : "query-api-medicationdispense.html",
           "title" : "Query API: MedicationDispense",
-          "generation" : "markdown"
+          "generation" : "markdown",
+          "page" : [{
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-medicationdispense-req-fd.html"
+            }],
+            "nameUrl" : "query-api-medicationdispense-req-fd.html",
+            "title" : "FD-Anforderungen: MedicationDispense-Query",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-medicationdispense-req-fdv.html"
+            }],
+            "nameUrl" : "query-api-medicationdispense-req-fdv.html",
+            "title" : "FdV-Anforderungen: MedicationDispense-Query",
+            "generation" : "markdown"
+          }]
         }]
       },
       {

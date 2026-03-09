@@ -227,6 +227,16 @@ Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
         <ul class="breadcrumb">
           <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='operation-api.html'><b>Operation API</b></a></li><li><a href='op-activate.html'><b>Operation: $activate</b></a></li><li><b>Anforderungen an den verordnende Primärsystem für die $activate-Operation</b></li>
 
+          <span style="float:right;">
+
+            <a href="op-activate-req-fd.html">&lt;vorherige</a> | 
+
+            <a href="#bottom">unten</a>
+
+          | <a href="op-accept.html">nächste&gt;</a>
+
+          </span>
+
         </ul>
       </div>  <!-- /container -->
     </div>  <!-- /segment-breadcrumb -->
@@ -282,7 +292,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p><br /></p>
 
 <!-- A_19272 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-44" title="PS verordnende LEI: E-Rezept durch Verordnenden einstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-301" title="PS verordnende LEI: E-Rezept durch Verordnenden einstellen" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Konformitätserklärung" />
@@ -339,7 +349,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_19273-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-45" title="PS verordnende LEI: E-Rezept einstellen - Task auf Fachdienst aktivieren" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-302" title="PS verordnende LEI: E-Rezept einstellen - Task auf Fachdienst aktivieren" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Konformitätserklärung" />
@@ -358,7 +368,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 Fehler 403 mit dem OperationOutcome “Task not in status draft but in status ready” zurückkommt, wurde der erste Aufruf bereits erfolgreich durch den E-Rezept-Fachdienst verarbeitet. Wenn eine Response mit dem Status 200 zurückkommt, war der zweite Aufruf erfolgreich.</p>
 
 <!-- A_22503 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-46" title="PS verordnende LEI: E-Rezept einstellen - kein Patientenausdruck bei Fehler beim Aktivieren" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-303" title="PS verordnende LEI: E-Rezept einstellen - kein Patientenausdruck bei Fehler beim Aktivieren" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Herstellererklärung" />
@@ -370,7 +380,7 @@ Fehler 403 mit dem OperationOutcome “Task not in status draft but in status re
 <!-- ToDo: Können in den workflow-spezifischen Modulen weitere Hinweise geben? rx und diga haben unterschiedliche vorgaben durch die KBV --></p>
 
 <!-- A_19279 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-47" title="PS verordnende LEI: E-Rezept einstellen - E-Rezept-Token erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-304" title="PS verordnende LEI: E-Rezept einstellen - E-Rezept-Token erstellen" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Herstellererklärung" />
@@ -382,7 +392,7 @@ Fehler 403 mit dem OperationOutcome “Task not in status draft but in status re
 <!-- ToDo: Referenz korrigieren --></p>
 
 <!-- A_19280 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-48" title="PS verordnende LEI: E-Rezept einstellen - Datamatrix-Code erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-305" title="PS verordnende LEI: E-Rezept einstellen - Datamatrix-Code erstellen" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Herstellererklärung" />
@@ -414,9 +424,31 @@ Fehler 403 mit dem OperationOutcome “Task not in status draft but in status re
   <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
     <div class="container">  <!-- container -->
 
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="op-activate-req-fd.html">&lt;vorherige</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">oben</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="op-accept.html">nächste&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Mar 4, 2026 00:31+0000">2026-03-04</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 13:00+0000">2026-03-09</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

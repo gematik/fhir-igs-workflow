@@ -19,9 +19,9 @@ Diese Seite beschreibt Anforderungen ein Clientsystem des Kostenrägers zur Nutz
 
 #### Nachrichten abrufen
 
-Das CS Kostenträger MUSS im Anwendungsfall "Nachrichten von Versicherten empfangen" zwischen den Aufrufen der Operation GET /Communication mindestens 5 Minuten warten. Der Zeitraum zwischen den Aufrufen muss um eine zufällige Zeitspanne zwischen 0 und 10.000 Millisekunden verlängert werden, um eine Gleichverteilung der Anfragen am E-Rezept-Fachdienst über alle Apotheken zu erreichen.
+Das Clientsystem Kostenträger MUSS im Anwendungsfall "Nachrichten von Versicherten empfangen" zwischen den Aufrufen der Operation GET /Communication mindestens 5 Minuten warten. Der Zeitraum zwischen den Aufrufen muss um eine zufällige Zeitspanne zwischen 0 und 10.000 Millisekunden verlängert werden, um eine Gleichverteilung der Anfragen am E-Rezept-Fachdienst über alle Apotheken zu erreichen.
 
-Das CS Kostenträger MUSS im Anwendungsfall "Nachrichten von Versicherten empfangen" die HTTP-Operation GET /Communication mit
+Das Clientsystem Kostenträger MUSS im Anwendungsfall "Nachrichten von Versicherten empfangen" die HTTP-Operation GET /Communication mit
 * ACCESS_TOKEN im Authorization-Header
 * optional: ?received=null für nur ungelesene Nachrichten
 * optional: ?received=gtYYYY-MM-DD für Nachrichten nach Datum DD.MM.YYYY
@@ -32,7 +32,7 @@ Falls eine oder mehrere E-Rezept-Nachrichten für die abgebende LEI auf dem E-Re
 
 Die für die Nachricht zu verwendende Communication-Ressource wird modul- und anwendungsfall-spezifisch festgelegt.
 
-Das CS Kostenträger MUSS im Anwendungsfall "Nachricht an Versicherten versenden" die HTTP-Operation POST /Communication mit
+Das Clientsystem Kostenträger MUSS im Anwendungsfall "Nachricht an Versicherten versenden" die HTTP-Operation POST /Communication mit
 * ACCESS_TOKEN im Authorization-Header
 * Communication Ressource im HTTP-Request-Body
 ausführen.
@@ -44,7 +44,7 @@ Das CS Kostenträger MUSS es dem Nutzer ermöglichen, eine Nachricht zum Lösche
 
 Das CS Kostenträger MUSS vom Nutzer eine Bestätigung einholen, dass die ausgewählte Nachricht gelöscht werden soll, und die Möglichkeit geben, das Löschen abzubrechen.
 
-Das CS Kostenträger MUSS im Anwendungsfall "Nachricht durch Abgebenden löschen" für die zu löschende Nachricht die HTTP-Operation DELETE /Communication/<id> mit
+Das Clientsystem Kostenträger MUSS im Anwendungsfall "Nachricht durch Abgebenden löschen" für die zu löschende Nachricht die HTTP-Operation DELETE /Communication/<id> mit
 * ACCESS_TOKEN im Authorization-Header
 * Communication-ID in URL <id> 
 ausführen.

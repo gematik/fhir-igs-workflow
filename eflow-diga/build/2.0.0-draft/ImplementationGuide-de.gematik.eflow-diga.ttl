@@ -11,17 +11,17 @@
   fhir:id [ fhir:v "de.gematik.eflow-diga"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide de.gematik.eflow-diga</b></p><a name=\"de.gematik.eflow-diga\"> </a><a name=\"hcde.gematik.eflow-diga\"> </a><h2>ERezeptDiGA</h2><p>The official URL for this implementation guide is: </p><pre>https://gematik.de/fhir/erp-diga/ImplementationGuide/de.gematik.eflow-diga</pre></div>"^^rdf:XMLLiteral ]
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide de.gematik.eflow-diga</b></p><a name=\"de.gematik.eflow-diga\"> </a><a name=\"hcde.gematik.eflow-diga\"> </a><h2>gemIG_TIFlow_diga</h2><p>The official URL for this implementation guide is: </p><pre>https://gematik.de/fhir/erp-diga/ImplementationGuide/de.gematik.eflow-diga</pre></div>"^^rdf:XMLLiteral ]
   ] ; # 
   fhir:url [
      fhir:v "https://gematik.de/fhir/erp-diga/ImplementationGuide/de.gematik.eflow-diga"^^xsd:anyURI ;
      fhir:l <https://gematik.de/fhir/erp-diga/ImplementationGuide/de.gematik.eflow-diga>
   ] ; # 
   fhir:version [ fhir:v "2.0.0-draft"] ; # 
-  fhir:name [ fhir:v "ERezeptDiGA"] ; # 
+  fhir:name [ fhir:v "gemIG_TIFlow_diga"] ; # 
   fhir:title [ fhir:v "Verordnungen für Digitale Gesundheitsanwendungen (DiGA)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-03-04T00:31:41+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-03-09T13:00:52+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "gematik GmbH"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "gematik GmbH" ] ;
@@ -150,6 +150,30 @@
          fhir:value [
            a fhir:String ;
            fhir:v "ci-build"
+         ]
+       ] ) ;
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "code"^^xsd:anyURI ;
+           fhir:l fhir:code
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "shownav"
+         ]
+       ] [
+         fhir:url [
+           fhir:v "value"^^xsd:anyURI ;
+           fhir:l fhir:value
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "true"
          ]
        ] ) ;
        fhir:url [
@@ -759,6 +783,30 @@
          fhir:value [
            a fhir:String ;
            fhir:v "ci-build"
+         ]
+       ] ) ;
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "code"^^xsd:anyURI ;
+           fhir:l fhir:code
+         ] ;
+         fhir:value [
+           a fhir:Code ;
+           fhir:v "shownav"
+         ]
+       ] [
+         fhir:url [
+           fhir:v "value"^^xsd:anyURI ;
+           fhir:l fhir:value
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "true"
          ]
        ] ) ;
        fhir:url [
@@ -1861,7 +1909,46 @@
              fhir:l fhir:query-api-medicationdispense.html
            ] ;
            fhir:title [ fhir:v "Query API: MedicationDispense" ] ;
-           fhir:generation [ fhir:v "markdown" ]
+           fhir:generation [ fhir:v "markdown" ] ;
+           fhir:page ( [
+             fhir:extension ( [
+               fhir:url [
+                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+               ] ;
+               fhir:value [
+                 a fhir:Url ;
+                 fhir:v "query-api-medicationdispense-req-fd.html"^^xsd:anyURI ;
+                 fhir:l fhir:query-api-medicationdispense-req-fd.html
+               ]
+             ] ) ;
+             fhir:name [
+               a fhir:Url ;
+               fhir:v "query-api-medicationdispense-req-fd.html"^^xsd:anyURI ;
+               fhir:l fhir:query-api-medicationdispense-req-fd.html
+             ] ;
+             fhir:title [ fhir:v "FD-Anforderungen: MedicationDispense-Query" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] [
+             fhir:extension ( [
+               fhir:url [
+                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+               ] ;
+               fhir:value [
+                 a fhir:Url ;
+                 fhir:v "query-api-medicationdispense-req-fdv.html"^^xsd:anyURI ;
+                 fhir:l fhir:query-api-medicationdispense-req-fdv.html
+               ]
+             ] ) ;
+             fhir:name [
+               a fhir:Url ;
+               fhir:v "query-api-medicationdispense-req-fdv.html"^^xsd:anyURI ;
+               fhir:l fhir:query-api-medicationdispense-req-fdv.html
+             ] ;
+             fhir:title [ fhir:v "FdV-Anforderungen: MedicationDispense-Query" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] )
          ] )
        ] [
          fhir:extension ( [

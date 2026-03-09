@@ -227,6 +227,16 @@ Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
         <ul class="breadcrumb">
           <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Implementation Guide elektronische Verordnung von DiGAs</b></li>
 
+          <span style="float:right;">
+
+            <a href="toc.html">&lt;vorherige</a> | 
+
+            <a href="#bottom">unten</a>
+
+          | <a href="menu-fachlichkeit-diga.html">nächste&gt;</a>
+
+          </span>
+
         </ul>
       </div>  <!-- /container -->
     </div>  <!-- /segment-breadcrumb -->
@@ -275,14 +285,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         
           Draft
           
-            as of 2026-03-04
+            as of 2026-03-09
           
         
       </td>
 
 
 
-      <td><i>Computable Name</i>: <span style="font-family: monospace;">ERezeptDiGA</span></td>
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">gemIG_TIFlow_diga</span></td>
     </tr>
 
 
@@ -306,6 +316,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="#zielgruppe" id="markdown-toc-zielgruppe">Zielgruppe</a></li>
   <li><a href="#zweck-und-geltungsbereich" id="markdown-toc-zweck-und-geltungsbereich">Zweck und Geltungsbereich</a></li>
   <li><a href="#wie-dieser-ig-zu-lesen-ist" id="markdown-toc-wie-dieser-ig-zu-lesen-ist">Wie dieser IG zu lesen ist</a></li>
+  <li><a href="#anforderungen-zur-umsetzung-des-igs" id="markdown-toc-anforderungen-zur-umsetzung-des-igs">Anforderungen zur Umsetzung des IGs</a></li>
   <li><a href="#methodik" id="markdown-toc-methodik">Methodik</a></li>
   <li><a href="#abhängigkeiten" id="markdown-toc-abhängigkeiten">Abhängigkeiten</a></li>
   <li><a href="#kontakt-und-feedback" id="markdown-toc-kontakt-und-feedback">Kontakt und Feedback</a></li>
@@ -334,6 +345,36 @@ Versicherte.</p>
 <p>Die Inhalte sind in Fachlichkeit, Technische Umsetzung und Schnittstellen
 strukturiert. Ein durchgängendes Szenario beschreibt den Prozess vom
 Verordnen bis zum Einlösen.</p>
+
+<h3 id="anforderungen-zur-umsetzung-des-igs">Anforderungen zur Umsetzung des IGs</h3>
+
+<requirement conformance="SHALL" title="E-Rezept: Anwendung des IG 'Verordnungen für Digitale Gesundheitsanwendungen (DiGA)' für Workflow 162" version="0">
+    <meta lockversion="false" />
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="CS_E-Rezept_KTR">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Workflow 162 den Implementation Guide "Verordnungen für Digitale Gesundheitsanwendungen (DiGA)" umsetzen.
+</requirement>
+
+<requirement conformance="SHALL" title="E-Rezept: Umsetzung des Moduls 'Verordnungen für Digitale Gesundheitsanwendungen (DiGA)'" version="0">
+    <meta lockversion="false" />
+    <actor name="E-Rezept-Fachdienst">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="CS_E-Rezept_KTR">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides "Verordnungen für Digitale Gesundheitsanwendungen (DiGA)" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
+</requirement>
 
 <h3 id="methodik">Methodik</h3>
 
@@ -453,9 +494,31 @@ Health Level Seven International.</p>
   <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
     <div class="container">  <!-- container -->
 
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="toc.html">&lt;vorherige</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">oben</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="menu-fachlichkeit-diga.html">nächste&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Mar 4, 2026 00:31+0000">2026-03-04</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 13:00+0000">2026-03-09</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

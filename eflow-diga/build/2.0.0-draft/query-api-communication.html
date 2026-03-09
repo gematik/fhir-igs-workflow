@@ -227,6 +227,16 @@ Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
         <ul class="breadcrumb">
           <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='query-api.html'><b>Query API</b></a></li><li><b>Query API: Communication</b></li>
 
+          <span style="float:right;">
+
+            <a href="query-api-task.html">&lt;vorherige</a> | 
+
+            <a href="#bottom">unten</a>
+
+          | <a href="query-api-communication-req-fd.html">nächste&gt;</a>
+
+          </span>
+
         </ul>
       </div>  <!-- /container -->
     </div>  <!-- /segment-breadcrumb -->
@@ -264,23 +274,57 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <p>Seiteninhalt:</p>
 
 <ul id="markdown-toc">
+  <li><a href="#nachricht" id="markdown-toc-nachricht">Nachricht</a></li>
+  <li><a href="#anforderungen-an-schnittstelle" id="markdown-toc-anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</a></li>
   <li><a href="#post-communication" id="markdown-toc-post-communication">POST /Communication</a></li>
   <li><a href="#get-communication" id="markdown-toc-get-communication">GET /Communication</a></li>
 </ul>
 
 </div>
 
+<p>Diese Seite basiert auf der gleichnamigen Schnittstelle in der <a href="https://gemspec.gematik.de/ig/fhir//query-api-communication.html">Core-Spezifikation</a> und beschreibt den Einstieg in die Communication-Query-Schnittstelle.</p>
+
 <p>Communication wird für die Kommunikation zwischen Versicherten und Kostenträger verwendet.</p>
+
+<h3 id="nachricht">Nachricht</h3>
+
+<p>Die Interaktion mit Nachrichten als FHIR-Ressource <em>Communication</em> wird über die folgenden HTTP-Methoden ermöglicht:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>HTTP-Methode</th>
+      <th>Ergebnis der Anfrage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>GET</td>
+      <td>Nachrichten abrufen</td>
+    </tr>
+    <tr>
+      <td>POST</td>
+      <td>Nachricht einstellen</td>
+    </tr>
+    <tr>
+      <td>DELETE</td>
+      <td>Nachricht löschen</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</h3>
+
+<ul>
+  <li><a href="./query-api-communication-req-fd.html">Server-Anforderungen zu Communications</a>: Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.</li>
+  <li><a href="./query-api-communication-req-fdv.html">FdV-Anforderungen zu Communications</a>: Anforderungen an ein E-Rezept-FdV zur Nutzung der Schnittstelle.</li>
+  <li><a href="./query-api-communication-req-ktr.html">KTR-Anforderungen zu Communications</a>: Anforderungen an ein CS Kostenträger zur Nutzung der Schnittstelle.</li>
+</ul>
 
 <h3 id="post-communication">POST /Communication</h3>
 <ul>
   <li>Zuweisung von Verordnungen durch den Versicherten an den Kostenträger. Der Payload ist hierbei optional (Kardinalitaet 0..1)</li>
-  <li>
-    <p>Übermittlung einer Nachricht dürch den Kostenträger an den Versicherten.</p>
-  </li>
-  <li><a href="./query-api-communication-req-fd.html">Server-Anforderungen zu Communications</a>: Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.</li>
-  <li><a href="./query-api-communication-req-fdv.html">FdV-Anforderungen zu Communications</a>: Anforderungen an ein E-Rezept-FdV zur Nutzung der Schnittstelle.</li>
-  <li><a href="./query-api-communication-req-ktr.html">KTR-Anforderungen zu Communications</a>: Anforderungen an ein CS Kostenträger zur Nutzung der Schnittstelle.</li>
+  <li>Übermittlung einer Nachricht dürch den Kostenträger an den Versicherten.</li>
 </ul>
 
 <p>-API Beschreibung aus Cap Statement</p>
@@ -318,9 +362,31 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
     <div class="container">  <!-- container -->
 
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="query-api-task.html">&lt;vorherige</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">oben</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="query-api-communication-req-fd.html">nächste&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Mar 4, 2026 00:31+0000">2026-03-04</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 13:00+0000">2026-03-09</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

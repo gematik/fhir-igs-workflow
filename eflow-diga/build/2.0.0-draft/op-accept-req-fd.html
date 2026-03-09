@@ -227,6 +227,16 @@ Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
         <ul class="breadcrumb">
           <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='operation-api.html'><b>Operation API</b></a></li><li><a href='op-accept.html'><b>Operation: $accept</b></a></li><li><b>Anforderungen an den E-Rezept-Fachdienst für die $accept-Operation</b></li>
 
+          <span style="float:right;">
+
+            <a href="op-accept.html">&lt;vorherige</a> | 
+
+            <a href="#bottom">unten</a>
+
+          | <a href="op-accept-req-ktr.html">nächste&gt;</a>
+
+          </span>
+
         </ul>
       </div>  <!-- /container -->
     </div>  <!-- /segment-breadcrumb -->
@@ -278,7 +288,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.</p>
 
 <!-- A_19167-04 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-103" title="E-Rezept-Fachdienst - Task akzeptieren - Prüfung AccessCode" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-360" title="E-Rezept-Fachdienst - Task akzeptieren - Prüfung AccessCode" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
@@ -286,8 +296,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept den im HTTP-Header "X-AccessCode" oder URL-Parameter "?ac=..." übertragenen AccessCode gegen den im referenzierten Task gespeicherten AccessCodeTask.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit Zugriffe auf diesen Datensatz nur durch Berechtigte in Kenntnis des AccessCodes erfolgen.
 </requirement>
 
+<!-- ToDo: lässt sich feststellen, wie die AVS den Aufruf nutzen? Wäre es legitim den HTTP-Header abzukündigen? -->
+
 <!-- A_19168-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-104" title="E-Rezept-Fachdienst - Task akzeptieren - Rezept bereits in Abgabe oder Bearbeitung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-361" title="E-Rezept-Fachdienst - Task akzeptieren - Rezept bereits in Abgabe oder Bearbeitung" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
@@ -299,7 +311,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Hinweis: Die Informationen in OperationOutcome werden ggf. als mehrere Strings in einem Array übermittelt.</p>
 
 <!-- A_23539-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-105" title="E-Rezept-Fachdienst - Task akzeptieren - Ende Einlösefrist prüfen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-362" title="E-Rezept-Fachdienst - Task akzeptieren - Ende Einlösefrist prüfen" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
@@ -308,7 +320,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_19169-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-106" title="E-Rezept-Fachdienst - Task akzeptieren - Generierung Secret, Statuswechsel in Abgabe und Rückgabewert" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-363" title="E-Rezept-Fachdienst - Task akzeptieren - Generierung Secret, Statuswechsel in Abgabe und Rückgabewert" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
@@ -317,7 +329,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_24174 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-107" title="E-Rezept-Fachdienst - Task akzeptieren - Telematik-ID der abgebenden LEI speichern" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-364" title="E-Rezept-Fachdienst - Task akzeptieren - Telematik-ID der abgebenden LEI speichern" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
@@ -332,7 +344,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </ul>
 
 <!-- A_24174 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-108" title="E-Rezept-Fachdienst - Task akzeptieren - Prüfung Datensatz zwischenzeitlich gelöscht" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-365" title="E-Rezept-Fachdienst - Task akzeptieren - Prüfung Datensatz zwischenzeitlich gelöscht" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
@@ -341,7 +353,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_28127 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-109" title="E-Rezept-Fachdienst - Task akzeptieren - Push Notification Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-366" title="E-Rezept-Fachdienst - Task akzeptieren - Push Notification Versicherter" version="0">
     <meta lockversion="false" />
     <actor name="E-Rezept-Fachdienst">
         <testProcedure id="Produkttest" />
@@ -380,9 +392,31 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
     <div class="container">  <!-- container -->
 
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="op-accept.html">&lt;vorherige</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">oben</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="op-accept-req-ktr.html">nächste&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Mar 4, 2026 00:31+0000">2026-03-04</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 13:00+0000">2026-03-09</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
