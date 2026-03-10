@@ -104,12 +104,10 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
     damit der nachfolgende Workflow ausschließlich auf Basis medizinisch korrekter und vom Leistungserbringer mittels Signatur freigegebener Daten erfolgt.
 </requirement>
 
+<!-- Diese Afo wurde nicht zugewiesen, da die Konnektoren sich nicht so verhalten. -->
 <!-- A_23172 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-136" title="E-Rezept-Fachdienst - Task aktivieren - Mimetype Signatur" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
-    </actor>
     Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate die Angabe zum Mimetype des signierten Dokumentes prüfen und mit dem Fehler 400 abbrechen, wenn dieser ungleich "text/plain; charset=utf-8" ist.
 </requirement>
 
