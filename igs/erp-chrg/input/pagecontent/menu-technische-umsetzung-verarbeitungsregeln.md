@@ -20,6 +20,7 @@ Für E-Rezepte der Workflow-Types "200" und "209" können die Abrechnungsinforma
 #### Löschfristen
 Für die Löschfristen des E-Rezepts gelten für Flowtype 200 und 209 die Vorgaben von Flowtype 160.
 
+<!-- A_22109 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-7" title="E-Rezept-Fachdienst – Löschfrist ChargeItem" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
