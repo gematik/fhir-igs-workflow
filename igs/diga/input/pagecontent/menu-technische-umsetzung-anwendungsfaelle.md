@@ -249,7 +249,7 @@ Beim Zuweisen im Rahmen einer DiGA-Verordnung wird kein Payload mit Zusatzinform
 {% assign use_case = use_cases | where: "title", "UC 4.17 - Verordnung erneut abrufen" | first %}
 
 <a id="{{ use_case.anchor }}"></a>
-### {{ use_case.title }}
+##### {{ use_case.title }}
 
 {% include use-case-details-table.html use_case=use_case roles=roles %}
 
@@ -290,7 +290,7 @@ Beim Zuweisen im Rahmen einer DiGA-Verordnung wird kein Payload mit Zusatzinform
 {% assign use_case = use_cases | where: "title", "UC 4.9 - Nachricht durch Abgebenden löschen" | first %}
 
 <a id="{{ use_case.anchor }}"></a>
-### {{ use_case.title }}
+##### {{ use_case.title }}
 
 {% include use-case-details-table.html use_case=use_case roles=roles %}
 
