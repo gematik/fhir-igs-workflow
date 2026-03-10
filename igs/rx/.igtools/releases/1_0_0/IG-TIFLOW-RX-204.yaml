@@ -1,0 +1,23 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: d2e4264c15567b374046dcc8b1f4c98eada4a7fd528ef0a451f48f1d9359a0f0
+created: '2026-03-10T08:03:11.697728'
+date: '2026-03-10T08:03:11.697731'
+key: IG-TIFLOW-RX-204
+modified: '2026-03-10T08:03:11.697729'
+release_status: NEW
+source: input/pagecontent/query-api-task-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
+  Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende LEI den Task mit dem
+  Geheimnis Task.identifier:Secret sowie im Bundle mit dem in Task.input mit Codingsystem
+  https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType = 1 referenzierten
+  QES-Datensatz als Binary-Ressource https://www.hl7.org/fhir/binary.html an den Aufrufer
+  zurückgeben.
+title: E-Rezept-Fachdienst - Task abrufen - Apotheke - Verordnung abrufen - erneuter
+  Abruf Verordnung
+version: 0

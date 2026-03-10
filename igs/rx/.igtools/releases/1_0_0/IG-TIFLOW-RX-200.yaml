@@ -1,0 +1,24 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: c3d29d4601ca6d9d1c99c7e2f6c3fe645ed41881ea5e0060c346bbef7d3ddcc5
+created: '2026-03-10T08:03:11.697057'
+date: '2026-03-10T08:03:11.697064'
+key: IG-TIFLOW-RX-200
+modified: '2026-03-10T08:03:11.697062'
+release_status: NEW
+source: input/pagecontent/query-api-task-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
+  Task mittels "/Task/&lt;id&gt;?secret=..." durch einen Apotheker den Task, sofern
+  er den Status "completed" hat, um das referenzierte, serverseitig signierte Quittungs-Bundle
+  aus Task.output mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType
+  = 3 als search.include im Ergebnis-Bundle ergänzen und die Ergebnismenge Task +
+  Quittungs-Bundle an den Apotheker zurückgeben, damit ein Apotheker, der ein konkretes
+  E-Rezept beliefert hat, bei Bedarf genau dieses belieferte E-Rezept inkl. der Quittung
+  erneut abrufen kann.
+title: E-Rezept-Fachdienst - Task abrufen - Rückgabe Task inkl. Bundle im Bundle Apotheker
+version: 0

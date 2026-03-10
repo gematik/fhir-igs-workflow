@@ -318,6 +318,16 @@ Hinweis: Im Rahmen der ambulanten spezialfachärztlichen Versorgung (ASV) nach �
 </requirement>
 <!-- ToDo: ggf. nach IG rx verschieben -->
 
+<!-- A_22925 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-350" title="E-Rezept-Fachdienst - Task aktivieren - Längenprüfung PZN" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FD">
+        <testProcedure id="Produkttest"/>
+    </actor>
+     Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 und einem Hinweis auf die Längenprüfung der PZN ("Länge PZN unzulässig (muss 8-stellig sein))" im OperationOutcome) abbrechen, wenn die PZN einer übergebenen PZN-Verordnung in KBV_PR_ERP_Medication_PZN.code.coding.code nicht 8-stellig ist.
+</requirement>
+<!-- ToDo: ggf. nach IG rx verschieben -->
+
 <!-- A_25992 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-153" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest" version="0">
     <meta lockversion="false"/>

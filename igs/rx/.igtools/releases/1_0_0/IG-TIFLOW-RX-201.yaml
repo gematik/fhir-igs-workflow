@@ -1,0 +1,22 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 03b9b3e58e550e8b7da1d323092e56bd462a9778781f5acee8a3e5ee9661b017
+created: '2026-03-10T08:03:11.697263'
+date: '2026-03-10T08:03:11.697268'
+key: IG-TIFLOW-RX-201
+modified: '2026-03-10T08:03:11.697267'
+release_status: NEW
+source: input/pagecontent/query-api-task-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
+  Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende LEI die zum referenzierten
+  Task in Task.owner gespeicherte Telematik-ID der abgebenden LEI mit der Telematik-ID
+  aus dem ACCESS_TOKEN vergleichen und bei Ungleichheit die Operation mit dem HTTP-Fehlercode
+  412 abbrechen, damit der Zugriff auf diesen Datensatz nur durch Berechtigte erfolgt.
+title: E-Rezept-Fachdienst - Task abrufen - Apotheke - Verordnung abrufen - Prüfung
+  Telematik-ID
+version: 0
