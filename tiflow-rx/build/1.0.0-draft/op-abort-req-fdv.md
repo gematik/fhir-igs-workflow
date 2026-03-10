@@ -17,8 +17,6 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept löschen" dem Nutzer einen Hinweis geben, wie sich das Löschen auf die Informationen zum E-Rezept in der elektronischen Patientenakte auswirkt.
 
-Das E-Rezept-FdV DARF im Anwendungsfall "E-Rezept löschen" dem Nutzer das Löschen von E-Rezepten mit dem Flowtype 169 oder 209 NICHT ermöglichen, wenn der Task einen Status ungleich "completed" hat.
-
 Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept löschen" es dem Nutzer ermöglichen, ein E-Rezept zum Löschen auszuwählen.
 
 Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept löschen", falls das E-Rezept-FdV die Funktionalität für Abrechnungsinformationen unterstützt, wenn der Nutzer ein E-Rezept mit Kostenträgertyp (Coverage.type.coding.code) "PKV" zum Löschen ausgewählt hat und für das E-Rezept noch keine Abrechnungsinformationen bereitgestellt wurden, eine Warnung anzeigen, dass ein Bereitstellen der Abrechnungsinformationen zum E-Rezept nach dem Löschen des E-Rezepts nicht mehr möglich ist.

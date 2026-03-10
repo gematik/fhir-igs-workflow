@@ -22,23 +22,6 @@ Das PS der verordnenden LEI MUSS für die Umsetzung der Verordnung von E-Rezepte
 * UC 2.3 - E-Rezept einstellen
 * UC 2.5 - E-Rezept durch Verordnenden löschen
 umsetzen.
-#### PS abgebende LEI
-
-Das PS der abgebenden LEI MUSS für die Umsetzung der Belieferung von E-Rezepten für Arzneimittel die Anwendungsfälle
-* UC 4.1 - E-Rezept durch Abgebenden abrufen
-* UC 4.2 - E-Rezept durch Abgebenden zurückgeben
-* UC 4.3 - E-Rezept durch Abgebenden löschen
-* UC 4.4 - Quittung abrufen
-* UC 4.5 - Abgabedatensatz durch Abgebenden signieren
-* UC 4.8 - Quittung erneut abrufen
-* UC 4.6 - Nachrichten durch Abgebenden empfangen
-* UC 4.7 - Nachricht durch Abgebenden übermitteln
-* UC 4.9 - Nachricht durch Abgebenden löschen
-umsetzen.
-
-Das PS der abgebenden LEI SOLL für die Umsetzung der Belieferung von E-Rezepten für Arzneimittel den Anwendungsfall
-* UC 4.16 - Dispensierinformationen bereitstellen
-umsetzen.
 #### E-Rezept-FdV
 
 Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von E-Rezepten für Arzneimittel die Anwendungsfälle
@@ -49,6 +32,27 @@ Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von E-Rezepten für Arzneim
 * UC 3.4 – Nachricht durch Versicherten empfangen
 * UC 3.8 – Nachricht durch Versicherten löschen
 umsetzen.
+#### PS abgebende LEI
+
+Das PS der abgebenden LEI MUSS für die Umsetzung der Belieferung von E-Rezepten für Arzneimittel die Anwendungsfälle
+* UC 4.1 - E-Rezept durch Abgebenden abrufen
+* UC 4.2 - E-Rezept durch Abgebenden zurückgeben
+* UC 4.3 - E-Rezept durch Abgebenden löschen
+* UC 4.4 - Quittung abrufen
+* UC 4.5 - Abgabedatensatz durch Abgebenden signieren
+* UC 4.17 - Verordnung erneut abrufen
+* UC 4.8 - Quittung erneut abrufen
+* UC 4.6 - Nachrichten durch Abgebenden empfangen
+* UC 4.7 - Nachricht durch Abgebenden übermitteln
+* UC 4.9 - Nachricht durch Abgebenden löschen
+umsetzen.
+
+Das PS der abgebenden LEI SOLL für die Umsetzung der Belieferung von E-Rezepten für Arzneimittel den Anwendungsfall
+* UC 4.16 - Dispensierinformationen bereitstellen
+umsetzen.
+### Technische Use Cases
+
+#### Verordnende Leistungserbringerinstitution
 
 ### UC 2.1 - E-Rezepte erzeugen
 
@@ -80,6 +84,34 @@ umsetzen.
 
 **Abbildung: **UC 2.1 - E-Rezepte erzeugen
 
+### E-Rezept qualifiziert signieren
+
+* Beschreibung: Vorbedingungen
+  * Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES). Vorbereitende Tätigkeiten im Primärsystem können organisatorisch delegiert werden, die QES selbst jedoch nicht.: * Rezept-ID (PrescriptionID) ist im Verordnungsdatensatz enthalten.
+* Ein freigeschalteter HBA steht zur Verfügung.
+* Konsistenz: `authoredOn` im Verordnungsdatensatz entspricht dem Datum der QES.
+
+* Beschreibung: Durchzuführende Aktionen
+  * Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES). Vorbereitende Tätigkeiten im Primärsystem können organisatorisch delegiert werden, die QES selbst jedoch nicht.: * Das Primärsystem startet die QES-Erstellung über den Konnektor.
+* Der (Zahn-)Arzt signiert den Verordnungsdatensatz mit dem HBA.
+* Das Primärsystem erhält den QES-signierten Datensatz zur weiteren Verarbeitung.
+
+* Beschreibung: Nachbedingungen
+  * Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES). Vorbereitende Tätigkeiten im Primärsystem können organisatorisch delegiert werden, die QES selbst jedoch nicht.: * QES-signierter Verordnungsdatensatz liegt im Primärsystem vor.
+
+* Beschreibung: Schnittstellen
+  * Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES). Vorbereitende Tätigkeiten im Primärsystem können organisatorisch delegiert werden, die QES selbst jedoch nicht.: * Keine (QES im Primärsystem)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES). Vorbereitende Tätigkeiten im Primärsystem können organisatorisch delegiert werden, die QES selbst jedoch nicht.:  (ZAHN-)ARZT 
+
+**Tabelle:**Fachlicher Anwendungsfall E-Rezept qualifiziert signieren
+* Die QES-Erstellung erfolgt im Primärsystem (HBA/Konnektor) vor dem Aufruf von `$activate`.
+
+**Sequenzdiagramm:**
+
+**Abbildung: **E-Rezept qualifiziert signieren
+
 ### UC 2.3 - E-Rezept einstellen
 
 * Beschreibung: Vorbedingungen
@@ -107,35 +139,48 @@ umsetzen.
 **Sequenzdiagramm:**
 
 **Abbildung: **UC 2.3 - E-Rezept einstellen
-#### Technische Aspekte für die Mehrfachverordnung (MVO)
+**Technische Aspekte für die Mehrfachverordnung (MVO)**
 
-Für jede Teilverordnung einer Mehrfachverordnung wird ein einzelnes E-Rezept erstellt. Im Verordnungsdatensatz wird das ERezept als Teil einer Mehrfachverordnung gekennzeichnet (`MedicationRequest: extension:Mehrfachverordnung.extension:Kennzeichen`).
+Für jede Teilverordnung einer Mehrfachverordnung wird ein einzelnes E-Rezept erstellt. Im Verordnungsdatensatz wird das E-Rezept als Teil einer Mehrfachverordnung gekennzeichnet (`MedicationRequest: extension:Mehrfachverordnung.extension:Kennzeichen`).
 
 Zusätzlich werden u.a. die Informationen
 
 * Nummer des Rezepts der Mehrfachverordnung (`MedicationRequest.extension:Mehrfachverordnung.extension:Nummerierung.value[x]:valueRatio.numerator`)
 * Gesamtzahl der Teilverordnungen in der Mehrfachverordnung (`MedicationRequest: extension Mehrfachverordnung.extension: Nummerierung.value[x]:valueRatio.denominator`)
 * Start der Gültigkeit (`MedicationRequest.extension: Mehrfachverordnung extension: Zeitraum.value[x]:valuePeriod.start`)
-* Ende der Gültigkeit (`MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.end`)
-
-angegeben.
+* Ende der Gültigkeit (`MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.end`) angegeben.
 
 Jede Teilverordnung einer Mehrfachverordnung wird im E-Rezept-Fachdienst mit einem eigenen Workflow (Task) verwaltet. Dies ermöglicht den Versicherten und den Apotheken eine separate Verarbeitung jedes E-Rezepts einer Mehrfachverordnung.
 
- ###
+### UC 2.5 - E-Rezept durch Verordnenden löschen
 
 * Beschreibung: Vorbedingungen
-  * : 
-* Beschreibung: Durchzuführende Aktionen
-  * : 
-* Beschreibung: Nachbedingungen
-  * : 
-* Beschreibung: Schnittstellen
-  * : 
-* Beschreibung: Relevante(r) Sektor(en)
-  * : 
+  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im E-Rezept-Fachdienst auf “gelöscht” gesetzt.: * UC 2.3 wurde ausgeführt.
+* Rezept-ID und AccessCode sind bekannt.
+* Status im E-Rezept-Fachdienst ist “offen”.
 
-**Tabelle:**Fachlicher Anwendungsfall
+* Beschreibung: Durchzuführende Aktionen
+  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im E-Rezept-Fachdienst auf “gelöscht” gesetzt.: * Ein Mitarbeiter der verordnenden LEI markiert das E-Rezept zum Löschen und bestätigt den Vorgang.
+* Das Primärsystem ruft den E-Rezept-Fachdienst mit Rezept-ID und AccessCode auf.
+* Der Status wird auf “gelöscht” gesetzt und medizinische Daten werden gelöscht.
+* Der AccessCode wird im Primärsystem gelöscht.
+
+* Beschreibung: Nachbedingungen
+  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im E-Rezept-Fachdienst auf “gelöscht” gesetzt.: * Der Workflow hat den Status “gelöscht”.
+* Die personenbezogene und medizinische Daten (ausser Versicherten-ID) sind aus dem Workflow entfernt.
+* Das Löschen ist im E-Rezept-Fachdienst für den Versicherten protokolliert.
+
+* Beschreibung: Schnittstellen
+  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im E-Rezept-Fachdienst auf “gelöscht” gesetzt.: * [Operation API: E-Rezept löschen](./op-abort.md)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im E-Rezept-Fachdienst auf “gelöscht” gesetzt.:  (ZAHN-)ARZT 
+
+**Tabelle:**Fachlicher Anwendungsfall UC 2.5 - E-Rezept durch Verordnenden löschen
+**Sequenzdiagramm:**
+
+**Abbildung: **UC 2.5 - E-Rezept durch Verordnenden löschen
+#### Versicherter
 
 ### UC 3.1 - E-Rezepte durch Versicherten abrufen
 
@@ -161,6 +206,34 @@ Jede Teilverordnung einer Mehrfachverordnung wird im E-Rezept-Fachdienst mit ein
 **Sequenzdiagramm:**
 
 **Abbildung: **UC 3.1 - E-Rezepte durch Versicherten abrufen
+
+### UC 3.2 - E-Rezept durch Versicherten löschen
+
+* Beschreibung: Vorbedingungen
+  * Der Versicherte setzt den Status eines E-Rezepts auf “gelöscht” und löscht es im E-Rezept-Fachdienst.: * UC 3.1 wurde ausgeführt.
+* Status des E-Rezepts ist ungleich “in Abgabe (gesperrt)”.
+
+* Beschreibung: Durchzuführende Aktionen
+  * Der Versicherte setzt den Status eines E-Rezepts auf “gelöscht” und löscht es im E-Rezept-Fachdienst.: * Versicherter wählt ein E-Rezept im E-Rezept-FdV und bestätigt das Löschen.
+* Das E-Rezept-FdV überträgt die Löschanforderung an den E-Rezept-Fachdienst.
+* Der Status wird geändert; Daten im E-Rezept werden gelöscht.
+* Der E-Rezept-Token wird im E-Rezept-FdV gelöscht.
+
+* Beschreibung: Nachbedingungen
+  * Der Versicherte setzt den Status eines E-Rezepts auf “gelöscht” und löscht es im E-Rezept-Fachdienst.: * Der Workflow hat den Status “gelöscht”.
+* Die personenbezogene und medizinische Daten (ausser Versicherten-ID) sind aus dem Workflow entfernt.
+* Das Löschen ist im E-Rezept-Fachdienst für den Versicherten protokolliert.
+
+* Beschreibung: Schnittstellen
+  * Der Versicherte setzt den Status eines E-Rezepts auf “gelöscht” und löscht es im E-Rezept-Fachdienst.: * [Operation API: E-Rezept löschen](./op-abort.md)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Der Versicherte setzt den Status eines E-Rezepts auf “gelöscht” und löscht es im E-Rezept-Fachdienst.:  VERSICHERTER 
+
+**Tabelle:**Fachlicher Anwendungsfall UC 3.2 - E-Rezept durch Versicherten löschen
+**Sequenzdiagramm:**
+
+**Abbildung: **UC 3.2 - E-Rezept durch Versicherten löschen
  ###
 
 * Beschreibung: Vorbedingungen
@@ -203,20 +276,8 @@ Jede Teilverordnung einer Mehrfachverordnung wird im E-Rezept-Fachdienst mit ein
   * : 
 
 **Tabelle:**Fachlicher Anwendungsfall
- ###
+#### Apotheke
 
-* Beschreibung: Vorbedingungen
-  * : 
-* Beschreibung: Durchzuführende Aktionen
-  * : 
-* Beschreibung: Nachbedingungen
-  * : 
-* Beschreibung: Schnittstellen
-  * : 
-* Beschreibung: Relevante(r) Sektor(en)
-  * : 
-
-**Tabelle:**Fachlicher Anwendungsfall
  ###
 
 * Beschreibung: Vorbedingungen
@@ -260,40 +321,93 @@ Jede Teilverordnung einer Mehrfachverordnung wird im E-Rezept-Fachdienst mit ein
 **Sequenzdiagramm:**
 
 **Abbildung: **UC 4.1 - E-Rezept durch Abgebenden abrufen
-#### Technische Aspekte für die Mehrfachverordnung (MVO)
+**Technische Aspekte für die Mehrfachverordnung (MVO)**
 
 Wenn ein AVS eine Teilverordnung abruft, deren Einlösezeitraum noch nicht erreicht ist, dann liefert der E-Rezept-Fachdienst einen Fehler 403. Im OperationOutcome der Fehlermeldung liefert der E-Rezept-Fachdienst das Datum des Beginns der Einlösefrist.
 
 Für die QES-Prüfung wird die PKCS#7-Datei verwendet. Die Verordnungsdaten des E-Rezepts sind innerhalb der PKCS#7-Datei enthalten und müssen für die Weiterverarbeitung extrahiert werden.
 
- ###
+### UC 4.2 - E-Rezept durch Abgebenden zurückgeben
 
 * Beschreibung: Vorbedingungen
-  * : 
-* Beschreibung: Durchzuführende Aktionen
-  * : 
-* Beschreibung: Nachbedingungen
-  * : 
-* Beschreibung: Schnittstellen
-  * : 
-* Beschreibung: Relevante(r) Sektor(en)
-  * : 
+  * Ein abgerufenes E-Rezept wird an den E-Rezept-Fachdienst zurückgegeben.: * UC 4.1 wurde ausgeführt.
+* Rezept-ID, AccessCode und Geheimnis sind bekannt.
+* Status ist “in Abgabe (gesperrt)”.
 
-**Tabelle:**Fachlicher Anwendungsfall
- ###
+* Beschreibung: Durchzuführende Aktionen
+  * Ein abgerufenes E-Rezept wird an den E-Rezept-Fachdienst zurückgegeben.: * Abgebender markiert das E-Rezept zum Zurückgeben und bestätigt.
+* Primärsystem ruft den E-Rezept-Fachdienst mit Rezept-ID und Geheimnis auf.
+* Status wird auf “offen” geändert.
+
+* Beschreibung: Nachbedingungen
+  * Ein abgerufenes E-Rezept wird an den E-Rezept-Fachdienst zurückgegeben.: * Status ist “offen” und protokolliert.
+* E-Rezept, Token und Geheimnis sind im Primärsystem gelöscht.
+
+* Beschreibung: Schnittstellen
+  * Ein abgerufenes E-Rezept wird an den E-Rezept-Fachdienst zurückgegeben.: * [Operation API: Task zurückweisen](./op-reject.md)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Ein abgerufenes E-Rezept wird an den E-Rezept-Fachdienst zurückgegeben.: 
+
+**Tabelle:**Fachlicher Anwendungsfall UC 4.2 - E-Rezept durch Abgebenden zurückgeben
+**Sequenzdiagramm:**
+
+**Abbildung: **UC 4.2 - E-Rezept durch Abgebenden zurückgeben
+
+### UC 4.3 - E-Rezept durch Abgebenden löschen
 
 * Beschreibung: Vorbedingungen
-  * : 
-* Beschreibung: Durchzuführende Aktionen
-  * : 
-* Beschreibung: Nachbedingungen
-  * : 
-* Beschreibung: Schnittstellen
-  * : 
-* Beschreibung: Relevante(r) Sektor(en)
-  * : 
+  * Der abgebende Leistungserbringer löscht ein zuvor abgerufenes E-Rezept.: * Ein E-Rezept-Token wurde übermittelt und der Wunsch zum Löschen liegt vor.
+* UC 4.6 und UC 4.1 wurden ausgeführt.
+* Rezept-ID, AccessCode und Geheimnis sind bekannt; Status ist “in Abgabe (gesperrt)”.
 
-**Tabelle:**Fachlicher Anwendungsfall
+* Beschreibung: Durchzuführende Aktionen
+  * Der abgebende Leistungserbringer löscht ein zuvor abgerufenes E-Rezept.: * Abgebender markiert das E-Rezept zum Löschen und bestätigt.
+* Primärsystem ruft den E-Rezept-Fachdienst mit Rezept-ID und Geheimnis auf.
+* Status wechselt auf “gelöscht”; Daten werden entfernt.
+
+* Beschreibung: Nachbedingungen
+  * Der abgebende Leistungserbringer löscht ein zuvor abgerufenes E-Rezept.: * Status ist “gelöscht” und protokolliert; Daten sind entfernt.
+* E-Rezept, Token und Geheimnis sind im Primärsystem gelöscht.
+
+* Beschreibung: Schnittstellen
+  * Der abgebende Leistungserbringer löscht ein zuvor abgerufenes E-Rezept.: * [Operation API: E-Rezept löschen](./op-abort.md)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Der abgebende Leistungserbringer löscht ein zuvor abgerufenes E-Rezept.: 
+
+**Tabelle:**Fachlicher Anwendungsfall UC 4.3 - E-Rezept durch Abgebenden löschen
+**Sequenzdiagramm:**
+
+**Abbildung: **UC 4.3 - E-Rezept durch Abgebenden löschen
+
+### UC 4.16 - Dispensierinformationen bereitstellen
+
+* Beschreibung: Vorbedingungen
+  * Ein Mitarbeiter der abgebenden LEI hat ein E-Rezept dispensiert. Er markiert das E-Rezept über das Primärsystem als abgegeben und bestätigt es. Das Primärsystem übermittelt beim Aufruf des E-Rezept-Fachdienstes die Rezept-ID und das Geheimnis zur Bereitstellung der Dispensierinformationen. Im Aufruf ist die Dispensierinformation enthalten.: * Ein Mitarbeiter der abgebenden LEI hat den Anwendungsfall “UC 4.1 - E-Rezept durch Abgebenden abrufen” durchgeführt.- Das Primärsystem hat die QES des E-Rezepts erfolgreich geprüft. Die QES des E-Rezepts ist gültig.
+* Die Rezept-ID, der AccessCode und das Geheimnis zur Statusänderung “in Abgabe (gesperrt)” des E-Rezepts sind im Primärsystem bekannt.
+* Das E-Rezept im E-Rezept-Fachdienst hat den Status “in Abgabe (gesperrt)”.
+
+* Beschreibung: Durchzuführende Aktionen
+  * Ein Mitarbeiter der abgebenden LEI hat ein E-Rezept dispensiert. Er markiert das E-Rezept über das Primärsystem als abgegeben und bestätigt es. Das Primärsystem übermittelt beim Aufruf des E-Rezept-Fachdienstes die Rezept-ID und das Geheimnis zur Bereitstellung der Dispensierinformationen. Im Aufruf ist die Dispensierinformation enthalten.: * Abgebender wählt ein beliefertes E-Rezept zur Bereitstellung von Dispensierinformationen aus.
+* Das Primärsystem übermittelt die Dispensierinformationen an den E-Rezept-Fachdienst.
+
+* Beschreibung: Nachbedingungen
+  * Ein Mitarbeiter der abgebenden LEI hat ein E-Rezept dispensiert. Er markiert das E-Rezept über das Primärsystem als abgegeben und bestätigt es. Das Primärsystem übermittelt beim Aufruf des E-Rezept-Fachdienstes die Rezept-ID und das Geheimnis zur Bereitstellung der Dispensierinformationen. Im Aufruf ist die Dispensierinformation enthalten.: * Das E-Rezept im E-Rezept-Fachdienst hat den Status “in Abgabe (gesperrt)”.
+* Die Information zur Abgabe liegen im E-Rezept-Fachdienst.
+* Das Bereitstellen der Dispensierinformationen ist im E-Rezept-Fachdienst protokolliert.
+* Das Primärsystem erhält eine Bestätigung, dass die Dispensierinformationen bereitgestellt wurden.
+
+* Beschreibung: Schnittstellen
+  * Ein Mitarbeiter der abgebenden LEI hat ein E-Rezept dispensiert. Er markiert das E-Rezept über das Primärsystem als abgegeben und bestätigt es. Das Primärsystem übermittelt beim Aufruf des E-Rezept-Fachdienstes die Rezept-ID und das Geheimnis zur Bereitstellung der Dispensierinformationen. Im Aufruf ist die Dispensierinformation enthalten.: * [Operation API: Dispensierinformationen bereitstellen](./op-dispense.md)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Ein Mitarbeiter der abgebenden LEI hat ein E-Rezept dispensiert. Er markiert das E-Rezept über das Primärsystem als abgegeben und bestätigt es. Das Primärsystem übermittelt beim Aufruf des E-Rezept-Fachdienstes die Rezept-ID und das Geheimnis zur Bereitstellung der Dispensierinformationen. Im Aufruf ist die Dispensierinformation enthalten.: 
+
+**Tabelle:**Fachlicher Anwendungsfall UC 4.16 - Dispensierinformationen bereitstellen
+**Sequenzdiagramm:**
+
+**Abbildung: **UC 4.16 - Dispensierinformationen bereitstellen
 
 ### UC 4.4 - Quittung abrufen
 
@@ -349,6 +463,20 @@ Für die QES-Prüfung wird die PKCS#7-Datei verwendet. Die Verordnungsdaten des 
 **Sequenzdiagramm:**
 
 **Abbildung: **UC 4.5 - Abgabedatensatz durch Abgebenden signieren
+ ###
+
+* Beschreibung: Vorbedingungen
+  * : 
+* Beschreibung: Durchzuführende Aktionen
+  * : 
+* Beschreibung: Nachbedingungen
+  * : 
+* Beschreibung: Schnittstellen
+  * : 
+* Beschreibung: Relevante(r) Sektor(en)
+  * : 
+
+**Tabelle:**Fachlicher Anwendungsfall
 
 ### UC 4.8 - Quittung erneut abrufen
 
@@ -364,7 +492,7 @@ Für die QES-Prüfung wird die PKCS#7-Datei verwendet. Die Verordnungsdaten des 
   * Die Quittung wird erneut abgerufen, falls die Übertragung beim ersten Abruf fehlgeschlagen ist.: * Quittung liegt im Primärsystem vor.
 
 * Beschreibung: Schnittstellen
-  * Die Quittung wird erneut abgerufen, falls die Übertragung beim ersten Abruf fehlgeschlagen ist.: * [Operation API: Task schliessen](./op-close.md)
+  * Die Quittung wird erneut abgerufen, falls die Übertragung beim ersten Abruf fehlgeschlagen ist.: * [Operation API: Querry API Task](./query-api-task.md)
 
 * Beschreibung: Relevante(r) Sektor(en)
   * Die Quittung wird erneut abgerufen, falls die Übertragung beim ersten Abruf fehlgeschlagen ist.: 
@@ -373,132 +501,6 @@ Für die QES-Prüfung wird die PKCS#7-Datei verwendet. Die Verordnungsdaten des 
 **Sequenzdiagramm:**
 
 **Abbildung: **UC 4.8 - Quittung erneut abrufen
- ###
-
-* Beschreibung: Vorbedingungen
-  * : 
-* Beschreibung: Durchzuführende Aktionen
-  * : 
-* Beschreibung: Nachbedingungen
-  * : 
-* Beschreibung: Schnittstellen
-  * : 
-* Beschreibung: Relevante(r) Sektor(en)
-  * : 
-
-**Tabelle:**Fachlicher Anwendungsfall
- ###
-
-* Beschreibung: Vorbedingungen
-  * : 
-* Beschreibung: Durchzuführende Aktionen
-  * : 
-* Beschreibung: Nachbedingungen
-  * : 
-* Beschreibung: Schnittstellen
-  * : 
-* Beschreibung: Relevante(r) Sektor(en)
-  * : 
-
-**Tabelle:**Fachlicher Anwendungsfall
- ###
-
-* Beschreibung: Vorbedingungen
-  * : 
-* Beschreibung: Durchzuführende Aktionen
-  * : 
-* Beschreibung: Nachbedingungen
-  * : 
-* Beschreibung: Schnittstellen
-  * : 
-* Beschreibung: Relevante(r) Sektor(en)
-  * : 
-
-**Tabelle:**Fachlicher Anwendungsfall
-
-### E-Rezept qualifiziert signieren
-
-* Beschreibung: Vorbedingungen
-  * Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES). Vorbereitende Tätigkeiten im Primärsystem können organisatorisch delegiert werden, die QES selbst jedoch nicht.: * Rezept-ID (PrescriptionID) ist im Verordnungsdatensatz enthalten.
-* Ein freigeschalteter HBA steht zur Verfügung.
-* Konsistenz: `authoredOn` im Verordnungsdatensatz entspricht dem Datum der QES.
-
-* Beschreibung: Durchzuführende Aktionen
-  * Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES). Vorbereitende Tätigkeiten im Primärsystem können organisatorisch delegiert werden, die QES selbst jedoch nicht.: * Das Primärsystem startet die QES-Erstellung über den Konnektor.
-* Der (Zahn-)Arzt signiert den Verordnungsdatensatz mit dem HBA.
-* Das Primärsystem erhält den QES-signierten Datensatz zur weiteren Verarbeitung.
-
-* Beschreibung: Nachbedingungen
-  * Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES). Vorbereitende Tätigkeiten im Primärsystem können organisatorisch delegiert werden, die QES selbst jedoch nicht.: * QES-signierter Verordnungsdatensatz liegt im Primärsystem vor.
-
-* Beschreibung: Schnittstellen
-  * Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES). Vorbereitende Tätigkeiten im Primärsystem können organisatorisch delegiert werden, die QES selbst jedoch nicht.: * Keine (QES im Primärsystem)
-
-* Beschreibung: Relevante(r) Sektor(en)
-  * Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES). Vorbereitende Tätigkeiten im Primärsystem können organisatorisch delegiert werden, die QES selbst jedoch nicht.:  (ZAHN-)ARZT 
-
-**Tabelle:**Fachlicher Anwendungsfall E-Rezept qualifiziert signieren
-* Die QES-Erstellung erfolgt im Primärsystem (HBA/Konnektor) vor dem Aufruf von `$activate`.
-
-**Sequenzdiagramm:**
-
-**Abbildung: **E-Rezept qualifiziert signieren
- ###
-
-* Beschreibung: Vorbedingungen
-  * : 
-* Beschreibung: Durchzuführende Aktionen
-  * : 
-* Beschreibung: Nachbedingungen
-  * : 
-* Beschreibung: Schnittstellen
-  * : 
-* Beschreibung: Relevante(r) Sektor(en)
-  * : 
-
-**Tabelle:**Fachlicher Anwendungsfall
- ###
-
-* Beschreibung: Vorbedingungen
-  * : 
-* Beschreibung: Durchzuführende Aktionen
-  * : 
-* Beschreibung: Nachbedingungen
-  * : 
-* Beschreibung: Schnittstellen
-  * : 
-* Beschreibung: Relevante(r) Sektor(en)
-  * : 
-
-**Tabelle:**Fachlicher Anwendungsfall
- ###
-
-* Beschreibung: Vorbedingungen
-  * : 
-* Beschreibung: Durchzuführende Aktionen
-  * : 
-* Beschreibung: Nachbedingungen
-  * : 
-* Beschreibung: Schnittstellen
-  * : 
-* Beschreibung: Relevante(r) Sektor(en)
-  * : 
-
-**Tabelle:**Fachlicher Anwendungsfall
- ###
-
-* Beschreibung: Vorbedingungen
-  * : 
-* Beschreibung: Durchzuführende Aktionen
-  * : 
-* Beschreibung: Nachbedingungen
-  * : 
-* Beschreibung: Schnittstellen
-  * : 
-* Beschreibung: Relevante(r) Sektor(en)
-  * : 
-
-**Tabelle:**Fachlicher Anwendungsfall
  ###
 
 * Beschreibung: Vorbedingungen

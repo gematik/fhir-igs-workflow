@@ -294,36 +294,36 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.</p>
 
 <!-- A_19171-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-252" title="E-Rezept-Fachdienst - Task zurückweisen - Prüfung Secret" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-17" title="E-Rezept-Fachdienst - Task zurückweisen - Prüfung Secret" version="0">
   <meta lockversion="false" />
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produkttest" />
   </actor>
     Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$reject das im URL-Parameter "?secret=..." übertragene Secret gegen das im referenzierten Task gespeicherte Secret Task.identifier:Secret als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret und auf Task.status = in-progress prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit der Zugriff auf diesen Datensatz nur durch den Berechtigten in Kenntnis des Secrets erfolgt.
 </requirement>
 
 <!-- A_19172-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-253" title="E-Rezept-Fachdienst - Task zurückweisen - Secret löschen und Status setzen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-18" title="E-Rezept-Fachdienst - Task zurückweisen - Secret löschen und Status setzen" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$reject die externe ID in Task.identifier:Secret als https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Secret löschen und den Status des referenzierten Tasks auf Task.status = ready setzen, damit nachfolgende Zugriffe auf diesen Datensatz durch Berechtigte in Kenntnis des AccessCodes erfolgen können.
 </requirement>
 
 <!-- A_24175 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-254" title="E-Rezept-Fachdienst - Task zurückweisen - Telematik-ID der abgebenden LEI löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-19" title="E-Rezept-Fachdienst - Task zurückweisen - Telematik-ID der abgebenden LEI löschen" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produktgutachten" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$reject die zum referenzierten Task in Task.owner gespeicherte Telematik-ID der abgebenden LEI löschen.
 </requirement>
 
 <!-- A_28128 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-255" title="E-Rezept-Fachdienst - Task zurückweisen - Push Notification Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-20" title="E-Rezept-Fachdienst - Task zurückweisen - Push Notification Versicherter" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$reject bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId "erp.task.reject" und den Versicherten mit der KVNR = Task.for initiieren.
@@ -332,9 +332,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="modulspezifische-anforderungen">Modulspezifische Anforderungen</h3>
 
 <!-- A_19170-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-26" title="E-Rezept-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-4" title="E-Rezept-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Rollenprüfung" version="0">
   <meta lockversion="false" />
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produktgutachten" />
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 160, 169, 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Institutionen in der Rolle
@@ -346,9 +346,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_24286-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-27" title="E-Rezept-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Dispensierinformationen löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-5" title="E-Rezept-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Dispensierinformationen löschen" version="0">
   <meta lockversion="false" />
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produktgutachten" />
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 160, 169, 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject die Dispensierinformationen, falls welche vorhanden sind, löschen: 
@@ -360,9 +360,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_25926 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-28" title="E-Rezept-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Löschmarkierungen Medikationsliste bereitstellen (Dispensierinformationen)" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-6" title="E-Rezept-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Löschmarkierungen Medikationsliste bereitstellen (Dispensierinformationen)" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 160, 169, 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject, wenn bereits Dispensierinformationen im E-Rezept-Fachdienst zum Task gespeichert wurden, die Daten für die Löschinformation dieser Dispensierinformationen für die Übermittlung in den ePA Medication Service bereitstellen.
@@ -409,7 +409,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 13:39+0000">2026-03-09</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 10, 2026 12:06+0000">2026-03-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

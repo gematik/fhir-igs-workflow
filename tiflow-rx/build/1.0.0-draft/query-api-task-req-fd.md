@@ -75,7 +75,6 @@ Die IKNR ist im Verordnungsdatensatz unter Coverage.payor.identifier.value zu fi
 Der E-Rezept-Fachdienst kann eine Mapping zwischen den IKNR und dem zugehörigen Fachdiensten VSDM erstellen und hierfür das im DNS hinterlegte Mapping zwischen IKNR und den Endpunkten der Fachdienste VSDM nutzen.
 
 Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI, falls das Ergebnis im VSDM Prüfungsnachweis gleich 3 ist, URL-Parameter kvnr="..." übermittelt wurde und keine E-Rezeptes für den Versicherten im E-Rezept-Fachdienst gespeichert sind, eine leere Liste mit dem Status 202 zurückgeben.
-- E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - AcceptPN3 false <=
 
 Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI, falls im VSDM Prüfungsnachweis keine Prüfziffer enthalten, das Ergebnis im Prüfungsnachweis gleich 3 und der passende Status AcceptPN3VSDMxx = false ist mit dem Fehler 454 abbrechen.
 
@@ -171,7 +170,6 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzel
 Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen Task mittels "/Task/<id>?ac=..." durch eine abgebende Institution den im URL-Parameter "?ac=..." übertragenen AccessCode gegen den im referenzierten Task gespeicherten AccessCode Task.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit Zugriffe auf diesen Datensatz nur durch Berechtigte in Kenntnis des AccessCode erfolgen.
 
 Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen Task mittels "/Task/<id>?ac=..." durch eine abgebende Institution den im referenzierten Task gespeicherten Status Task.status prüfen und mit dem Fehler 412 abbrechen, wenn Task.status ungleich "in-progress" und ungleich "completed" ist, damit der Datensatz nur abgerufen werden, kann, wenn sich die Verordnung in Belieferung befindet oder der Workflow abgeschlossen ist.
-A_24179-01 - E-Rezept-Fachdienst - Task abrufen - - Verordnung abrufen - erneuter Abruf VerordnungDer E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen Task mittels “/Task/?ac=..." <=
 
 Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen Task mittels "/Task/<id>?ac=..." durch eine abgebende Institution den Task mit dem Geheimnis Task.identifier:Secret sowie im Bundle mit dem in Task.input mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType = 1 referenzierten QES-Datensatz als Binary-Ressource https://www.hl7.org/fhir/binary.html an den Aufrufer zurückgeben.
 
