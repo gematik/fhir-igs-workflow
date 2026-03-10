@@ -34,6 +34,7 @@ Dieser Implementation Guide beschreibt die Datenmodelle und Prozesse des E-Rezep
     Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung der Workflows 160, 166, 169, 200 und 209 den Implementation Guide "E-Rezept für Arzneimittel" umsetzen.
 </requirement>
 
+<!-- A_20213-01, A_23027, A_19300-01, A_23028, A_19299-02, A_19297-01, A_19295-01, A_22483-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-93" title="E-Rezept: Umsetzung des Moduls 'E-Rezept für Arzneimittel'" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">

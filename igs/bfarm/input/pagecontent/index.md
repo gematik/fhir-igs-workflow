@@ -20,6 +20,7 @@ Dieser Implementation Guide beschreibt Profile und deren Verwendung für den Dat
     Der E-Rezept-Fachdienst MUSS zur Umsetzung der Übertragung von Daten vom E-Rezept-Fachdienst an den BfArM Webdienst den Implementation Guide "Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst" umsetzen.
 </requirement>
 
+<!-- A_27843 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-BFARM-16" title="E-Rezept: Umsetzung des Moduls 'Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst'" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">

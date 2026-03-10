@@ -35,6 +35,7 @@ Verordnen bis zum Einlösen.
     Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Workflow 162 den Implementation Guide "Verordnungen für Digitale Gesundheitsanwendungen (DiGA)" umsetzen.
 </requirement>
 
+<!-- A_26060, A_23027, A_19295-01, A_22483-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-19" title="E-Rezept: Umsetzung des Moduls 'Verordnungen für Digitale Gesundheitsanwendungen (DiGA)'" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">

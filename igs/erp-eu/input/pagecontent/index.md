@@ -35,6 +35,7 @@ Die Inhalte basieren auf der Spezifikation "EU Zugriff E-Rezept", Version 1.0.1
     Der E-Rezept-Fachdienst und dessen Client MÜSSEN zur Umsetzung des Einlösens von E-Rezepten im EU Ausland den Implementation Guide "EU Zugriff E-Rezept" umsetzen.
 </requirement>
 
+<!-- A_22206-01, A_27189 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-EU-46" title="E-Rezept: Umsetzung des Moduls 'EU Zugriff E-Rezept'" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
