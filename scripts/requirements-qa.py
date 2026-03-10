@@ -59,10 +59,20 @@ def main() -> None:
         action="store_true",
         help="Include requirement content/description in output CSV files",
     )
-    parser.add_argument(
+    mode_group = parser.add_mutually_exclusive_group()
+    mode_group.add_argument(
         "--ptsb",
+        dest="ptsb_mode",
         action="store_true",
-        help="Only use gemProdT*.xlsx files and parse requirements from sheet 'Festlegungen'",
+        help=(
+            "Use PTSB mode (default): only gemProdT*.xlsx files and sheet 'Festlegungen'"
+        ),
+    )
+    mode_group.add_argument(
+        "--xmls",
+        dest="ptsb_mode",
+        action="store_false",
+        help="Use non-PTSB mode: process all *.xlsx files and sheets",
     )
     parser.add_argument(
         "--quality-output-csv",
@@ -87,6 +97,7 @@ def main() -> None:
         action="store_true",
         help="Fail the pipeline when quality check reports issues",
     )
+    parser.set_defaults(ptsb_mode=True)
     args = parser.parse_args()
 
     scripts_dir = Path(__file__).resolve().parent / "requirement-qa"
@@ -98,7 +109,7 @@ def main() -> None:
     print("Running requirements QA pipeline")
     print(f"- Root: {args.root}")
     print(f"- XLSX dir: {args.xlsx_dir}")
-    print(f"- Mode: {'PTSB' if args.ptsb else 'default'}")
+    print(f"- Mode: {'PTSB' if args.ptsb_mode else 'XMLS'}")
 
     run_step(
         "Generate requirement mapping",
@@ -124,7 +135,7 @@ def main() -> None:
     ]
     if args.description:
         verify_cmd.append("--description")
-    if args.ptsb:
+    if args.ptsb_mode:
         verify_cmd.append("--ptsb")
 
     run_step("Verify requirement mapping coverage", verify_cmd)
