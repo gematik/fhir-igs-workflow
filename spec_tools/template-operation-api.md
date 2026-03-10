@@ -1,4 +1,4 @@
-TODO: 
+ZU ERLEDIGEN BEI NUTZUNG UND DIESEN TEIL LÖSCHEN: 
 - Ersetzen von <Name> mit fachlichem Namen der Operation (bspw. "Task erzeugen")
 - Ersetzen von <op-name> mit FHIR Namen der Operation (bspw. "$create")
 

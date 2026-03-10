@@ -1,4 +1,4 @@
-TODO: 
+ZU ERLEDIGEN BEI NUTZUNG UND DIESEN TEIL LÖSCHEN: 
 - Ersetzen von <Resource> mit dem Namen der FHIR Ressource (bspw. MedicationDispense)
 - Ersetzen von <Name> mit fachlichem Namen der Informationseinheit (bspw. Dispensierinformation)
 

@@ -10,7 +10,7 @@ Description: "Antwort des Leistungserbringers an den Patienten"
   * ^comment = "Muss standardmäßig laut FHIR Core Specification angegeben werden, wird jedoch während des Lebenszyklus der Ressource nicht verändert."
 
 * basedOn 1..1 MS
-* basedOn only Reference(Task) //TODO: Wechsel auf Identifier
+* basedOn only Reference(Task)
 * basedOn ^type.aggregation = #referenced
   * ^short = "Gibt das E-Rezept-Token gemäß gemSpec_DM_eRp an."
   * ^comment = "Hat die Form 'Task/{{PrescriptionID}}'"

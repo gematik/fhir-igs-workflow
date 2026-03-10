@@ -75,7 +75,6 @@ Der E-Rezept-Fachdienst validiert bei Operationen von Clientsystemen übermittel
 		 <div><figcaption><strong>Tabelle: </strong>title</figcaption></div>
 </requirement>
 
-<!-- TODO: Check Duplikat -->
 <!-- A_27658 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-206" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Datumsangabe ohne Zeitzoneninformation" version="0">
 	<meta lockversion="false"/>
@@ -94,7 +93,6 @@ Der E-Rezept-Fachdienst validiert bei Operationen von Clientsystemen übermittel
      Die Produkttypen der Anwendung E-Rezept und Clientsysteme des E-Rezept-Fachdienstes MÜSSEN sicherstellen, dass bei der Erstellung von Datensätzen Datums- und Zeitangaben ohne Zeitzoneninformation, die entsprechend dem Datum gültige deutsche Zeitzone (CET/CEST) angewendet wird.
 </requirement>
 
-<!-- TODO: Check Duplikat -->
 <!-- A_27698 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-207" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Eindeutige Angabe meta.profile" version="0">
 	<meta lockversion="false"/>
@@ -234,7 +232,6 @@ Der E-Rezept-Fachdienst validiert bei Operationen von Clientsystemen übermittel
 
 ### Validierung von Extensions
 
-<!-- TODO: Check Duplikat -->
 <!-- A_22927-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-212" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Ausschluss unspezifizierter Extensions" version="0">
 	<meta lockversion="false"/>
