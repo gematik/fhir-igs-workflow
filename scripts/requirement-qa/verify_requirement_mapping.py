@@ -227,6 +227,48 @@ def filter_excel_ids_by_specs(
     return filtered
 
 
+def actor_signature(actors: List[str]) -> str:
+    return ";".join(sorted(a.strip() for a in actors if a and a.strip()))
+
+
+def is_ok_split_duplicate(entry: Dict[str, List[str]]) -> bool:
+    """Return True if duplicate mapping is acceptable because title and actor differ.
+
+    Rule: when one old_req is intentionally split, do not report it as duplicate if
+    all mapped new requirements have distinct titles and distinct actor signatures.
+    """
+    occurrences = entry.get("occurrences") or []
+    if not isinstance(occurrences, list) or len(occurrences) < 2:
+        return False
+
+    by_new_req: Dict[str, Dict[str, str]] = {}
+    for occ in occurrences:
+        if not isinstance(occ, dict):
+            continue
+        new_req = str(occ.get("new_req") or "").strip()
+        if not new_req:
+            continue
+        title = str(occ.get("title") or "").strip()
+        actors = occ.get("actors") or []
+        if not isinstance(actors, list):
+            actors = []
+        by_new_req[new_req] = {
+            "title": title,
+            "actor_sig": actor_signature(actors),
+        }
+
+    if len(by_new_req) < 2:
+        return False
+
+    titles = [meta["title"] for meta in by_new_req.values()]
+    actor_sigs = [meta["actor_sig"] for meta in by_new_req.values()]
+
+    # "OK duplicate" when split is distinguishable by title and/or actor set.
+    titles_differ = len(set(titles)) > 1
+    actors_differ = len(set(actor_sigs)) > 1
+    return titles_differ or actors_differ
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Verify requirement mapping coverage against Excel A_ IDs."
@@ -309,6 +351,8 @@ def main() -> None:
         old_req = entry.get("old_req")
         new_req = entry.get("new_req") or []
         if old_req and len(new_req) > 1:
+            if is_ok_split_duplicate(entry):
+                continue
             req_info = excel_ids.get(old_req, {})
             row = [
                 old_req,
