@@ -38,15 +38,6 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
 Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /ChargeItem durch einen Versicherten, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren und die ChargeItems danach filtern, damit der Versicherte nur Abrechnungsinformationen abruft, bei denen er der Begünstigte ist.
 </requirement>
 
-<!--A_22121-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-49" title="E-Rezept-Fachdienst – Abrechnungsinformationen abrufen – Suchkriterien" version="0">
-    <meta lockversion="false"/>
-    <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
-    </actor>
-Der E-Rezept-Fachdienst MUSS das Eingrenzen einer Suchanfrage auf /ChargeItem über die URL-Parameter gemäß https://www.hl7.org/fhir/chargeitem.html#search mindestens für die Attribute ChargeItem.enteredDate und ChargeItem.meta.__lastUpdated erlauben, damit Versicherte und Apotheken eine Suche nach neuen Abrechnungsinformationseinträgen durchführen können.
-</requirement>
-
 <!--A_22122-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-50" title="E-Rezept-Fachdienst – Abrechnungsinformationen abrufen – Response" version="0">
     <meta lockversion="false"/>
