@@ -3,7 +3,8 @@
 
 1. Generate requirement mapping.
 2. Verify mapping coverage.
-3. Check requirement quality.
+3. Check duplicate old A_ references.
+4. Check requirement quality.
 """
 
 import argparse
@@ -69,6 +70,14 @@ def main() -> None:
         help="Path to quality CSV report (default: qa/requirement-quality-report.csv)",
     )
     parser.add_argument(
+        "--old-req-duplicates-output-csv",
+        default="qa/requirement-old-req-duplicates.csv",
+        help=(
+            "Path to CSV report for duplicated old A_ references "
+            "(default: qa/requirement-old-req-duplicates.csv)"
+        ),
+    )
+    parser.add_argument(
         "--quality-fix",
         action="store_true",
         help="Apply automatic safe fixes during quality checks",
@@ -83,6 +92,7 @@ def main() -> None:
     scripts_dir = Path(__file__).resolve().parent / "requirement-qa"
     generate_script = scripts_dir / "generate_requirement_mapping.py"
     verify_script = scripts_dir / "verify_requirement_mapping.py"
+    duplicate_old_req_script = scripts_dir / "check_duplicate_old_requirements.py"
     quality_script = scripts_dir / "check_requirement_quality.py"
 
     print("Running requirements QA pipeline")
@@ -119,6 +129,18 @@ def main() -> None:
 
     run_step("Verify requirement mapping coverage", verify_cmd)
 
+    duplicate_old_req_rc = run_step(
+        "Check duplicate old A_ references",
+        [
+            sys.executable,
+            str(duplicate_old_req_script),
+            args.root,
+            "--output-csv",
+            args.old_req_duplicates_output_csv,
+        ],
+        strict=False,
+    )
+
     quality_cmd = [
         sys.executable,
         str(quality_script),
@@ -139,7 +161,10 @@ def main() -> None:
     print(f"- Mapping JSON: {args.mapping}")
     print(f"- Missing CSV: {Path(args.output_dir) / 'requirement-mapping-missing.csv'}")
     print(f"- Duplicate CSV: {Path(args.output_dir) / 'requirement-mapping-duplicate.csv'}")
+    print(f"- Old A_ duplicates CSV: {args.old_req_duplicates_output_csv}")
     print(f"- Quality CSV: {args.quality_output_csv}")
+    if duplicate_old_req_rc != 0:
+        print("- Duplicate old A_ references were found.")
     if quality_rc != 0 and not args.strict_quality:
         print("- Quality issues were found (non-strict mode, pipeline continued).")
 
