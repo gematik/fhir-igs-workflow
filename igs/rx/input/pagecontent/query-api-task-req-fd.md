@@ -33,19 +33,3 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen /Task/&lt;id&gt; durch einen Versicherten, wenn Task.extension:flowType = 169 oder 209 und die KVNR des Aufrufenden (KVNR des ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests) ungleich der KVNR in Task.for ist, mit dem Fehler 403 abbrechen.
 </requirement>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

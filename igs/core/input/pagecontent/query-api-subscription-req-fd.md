@@ -53,3 +53,12 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     </actor>
      Der E-Rezept-Fachdienst MUSS für die Registrierung der Subscription einen Bearer-Token mit den Claims subscriptionid: Pseudonym der Telematik-ID iAt: Timestamp wann Subscription erstellt wurde exp: Timestamp Ablauf der Subscription erstellen und mit einer Identität des E-Rezept-Fachdienstes signieren (Signature Algortihm: ES256).
 </requirement>
+
+<!-- A_22363 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-352" title="E-Rezept-Fachdienst – Subscription registrieren – Prüfung Telematik-ID" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FD">
+        <testProcedure id="Produkttest"/>
+    </actor>
+     Der E-Rezept-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription Ressource durch eine abgebende Leistungserbringerinstitution (Apotheke), diese anhand der Telematik-ID aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die in der Ressource im Element criteria Attribut receipient hinterlegte Telematik-ID prüfen und bei Ungleichheit den Aufruf mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich die Apotheke für sich selbst eine Subscription registrieren kann.
+</requirement>

@@ -106,7 +106,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication, falls die Ressource dem GEM_ERP_PR_Communication_DispReq-Profil entspricht, den Inhalt der contentString-Eigenschaft auf valides JSON sowie gegen die Struktur in TAB_eRpDM_002 überprüfen und bei negativem Prüfergebnis, mit einem Http-Fehler 400 (Bad Request) abbrechen sowie mit einer aussagekräftigen Fehlermeldung in Form einer eingebetteten OperationOutcome-Ressource antworten.
+    Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication, falls die Ressource dem GEM_ERP_PR_Communication_DispReq-Profil entspricht, den Inhalt der contentString-Eigenschaft auf valides JSON sowie gegen die Struktur in "Tabelle: E-Rezept einer Apotheke zuweisen" überprüfen und bei negativem Prüfergebnis, mit einem Http-Fehler 400 (Bad Request) abbrechen sowie mit einer aussagekräftigen Fehlermeldung in Form einer eingebetteten OperationOutcome-Ressource antworten.
 </requirement>
 
 <!-- A_23879-01 -->
@@ -115,7 +115,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication, falls die Ressource dem GEM_ERP_PR_Communication_Reply-Profil entspricht, den Inhalt der contentString-Eigenschaft auf valides JSON sowie gegen die Struktur in TAB_eRpDM_003 überprüfen und bei negativem Prüfergebnis, mit einem Http-Fehler 400 (Bad Request) abbrechen sowie mit einer aussagekräftigen Fehlermeldung in Form einer eingebetteten OperationOutcome-Ressource antworten.
+    Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication, falls die Ressource dem GEM_ERP_PR_Communication_Reply-Profil entspricht, den Inhalt der contentString-Eigenschaft auf valides JSON sowie gegen die Struktur in "Tabelle: Nachricht als Apotheke an einen Versicherten schicken" überprüfen und bei negativem Prüfergebnis, mit einem Http-Fehler 400 (Bad Request) abbrechen sowie mit einer aussagekräftigen Fehlermeldung in Form einer eingebetteten OperationOutcome-Ressource antworten.
 </requirement>
 
 <!-- A_19448-04 -->
@@ -222,9 +222,6 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <div><figcaption><strong>Tabelle: </strong>Tab_eRPFD_028 Zulässige Empfänger Communication_DispReq</figcaption></div>
 </requirement>
 
- - E-Rezept-Fachdienst - Nachricht einstellen - Prüfung Existenz Task
- <=
-
 <!-- A_21371-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-270" title="E-Rezept-Fachdienst - Nachricht einstellen - Prüfung Existenz Task" version="0">
     <meta lockversion="false"/>
@@ -286,6 +283,138 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
         <testProcedure id="Produkttest"/>
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht mittels HTTP-POST-Operation über /Communication bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId "erp.communication.new" und den Versicherten mit der KVNR = Communication.recipient initiieren.
+</requirement>
+
+<!-- A_23877-01 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-359" title="E-Rezept-Fachdienst: Nachrichtenaustausch - Nachricht durch Abgebenden übermitteln - Datenstruktur Nachricht" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FD">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+     Der E-Rezept-Fachdienst MUSS für den Anwendungsfall "Nachricht durch Abgebenden übermitteln" Nachrichten mit der folgenden Datenstruktur in der contentString-Eigenschaft des GEM_ERP_PR_Communication_Reply unterstützen.
+   
+   <table>
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>verpflichtend</th>
+      <th>Beschreibung</th>
+      <th>zulässige Werte</th>
+      <th>Beispiel</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>version</td>
+      <td>ja</td>
+      <td>Gibt die Version des JSON an. Aktuell immer 3. Kann im weiteren Lebenszyklus verändert werden.</td>
+      <td>nummerisch, bis zu 6 Stellen</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>communicationType</td>
+      <td>ja</td>
+      <td>Beschreibt die Art der Nachricht.</td>
+      <td>text, link, reservationStatus, pickupCodeHR, pickupCodeDMC, deliveryStatus, paymentInfo</td>
+      <td>reservationStatus</td>
+    </tr>
+    <tr>
+      <td>text</td>
+      <td>Falls communicationType = text oder link: ja<br>Falls communicationType = pickupCodeHR, pickupCodeDMC, deliveryStatus oder paymentInfo: nein<br>Falls communicationType = reservationStatus: verboten</td>
+      <td>Zusätzlicher Freitext der Apotheke an den Versicherten. Falls communicationType gleich "link" ist, beschreibt dies das URL-Ziel, sodass der Versicherte vor dem Aufruf über das Ziel des Absprungs informiert wird.</td>
+      <td>800 Stellen, keine URL</td>
+      <td>Wir möchten Sie informieren, dass Ihre bestellten Medikamente zur Abholung bereitstehen. Den Abholcode finden Sie anbei.</td>
+    </tr>
+    <tr>
+      <td>url</td>
+      <td>Falls communicationType = link: ja<br>Ansonsten: verboten</td>
+      <td>Einbettung einer externen URL ausschließlich für das Einlösen von E-Rezepten in einer externen Bestellplattform.</td>
+      <td>500 Stellen, URL gemäß RFC3986</td>
+      <td>https://www.meine-apotheke.de/pickup/59b52340-7a6a-430d-99ea-45a8e5cd03f6</td>
+    </tr>
+    <tr>
+      <td>transactionID</td>
+      <td>ja</td>
+      <td>Wiederholung aus der empfangenen Nachricht. Dient dazu, Nachrichten einer Transaktion zuordnen zu können.</td>
+      <td>36 Stellen, UUID</td>
+      <td>8196b610-9b77-47ab-936e-362cd92ef2aa</td>
+    </tr>
+    <tr>
+      <td>readyForCollection</td>
+      <td>Falls communicationType = reservationStatus: ja<br>Ansonsten: verboten</td>
+      <td>Zeitpunkt der Verfügbarkeit</td>
+      <td>immediately, sameDay, nextDay, nextDayAM, nextDayPM, unknown, notAvailable</td>
+      <td>immediately</td>
+    </tr>
+    <tr>
+      <td>deliveryStatus</td>
+      <td>Falls communicationType = deliveryStatus: ja<br>Ansonsten: verboten</td>
+      <td>Information zum Status der Lieferung (Bote, Versand)</td>
+      <td>preparedWaiting, inTransport, delivered, incident</td>
+      <td>inTransport</td>
+    </tr>
+    <tr>
+      <td>inTransportPosition</td>
+      <td>Falls communicationType = deliveryStatus: nein<br>Ansonsten: verboten</td>
+      <td>GMS Position des Transporters</td>
+      <td>Lat, Long</td>
+      <td><pre>{
+  "long": 13.387595793605172,
+  "lat": 52.522529939635795
+}</pre></td>
+    </tr>
+    <tr>
+      <td>inTransportETA</td>
+      <td>Falls communicationType = deliveryStatus: nein<br>Ansonsten: verboten</td>
+      <td>Erwartete Ankunft Zeitfenster von – bis</td>
+      <td>TIMESTAMP-TIMESTAMP</td>
+      <td><pre>{
+  "from": 1735736400,
+  "to": 1735741800
+}</pre></td>
+    </tr>
+    <tr>
+      <td>totalAmount</td>
+      <td>Falls communicationType = paymentInfo: ja<br>Ansonsten: verboten</td>
+      <td>Zu zahlender Betrag in Eurocent, rein nummerisch</td>
+      <td>Nummerisch</td>
+      <td>12550</td>
+    </tr>
+    <tr>
+      <td>paymentMethods</td>
+      <td>Falls communicationType = paymentInfo: nein<br>Ansonsten: verboten</td>
+      <td>Verfügbare Zahlungsarten</td>
+      <td>Array aus Objects: cash, bankaccount, creditcard, paypal (optional)</td>
+      <td><pre>"paymentMethods": [
+  { "method": "cash" },
+  {
+    "method": "bankaccount",
+    "url": "https://my.payment.provider.de/pay/..."
+  },
+  {
+    "method": "paypal",
+    "url": "https://paypal.me/&lt;some_account&gt;"
+  }
+]</pre></td>
+    </tr>
+    <tr>
+      <td>pickUpCodeHR</td>
+      <td>Falls communicationType = pickupCodeHR und supplyOptionsType = onPremise: ja<br>Ansonsten: verboten</td>
+      <td>Menschenlesbarer Abholcode</td>
+      <td>1-8 Stellen</td>
+      <td>12315615</td>
+    </tr>
+    <tr>
+      <td>pickUpCodeDMC</td>
+      <td>Falls communicationType = pickupCodeDMC und supplyOptionsType = onPremise: ja<br>Ansonsten: verboten</td>
+      <td>Maschinenlesbarer Abholcode (Data-Matrix-Code gemäß ISO/IEC 16022:2006)</td>
+      <td>8-2000 Stellen</td>
+      <td>5346a991-c5c6-49c8-b87b-4cdd255bbde4</td>
+    </tr>
+  </tbody>
+</table>
+<div><figcaption><strong>Tabelle: </strong>Nachricht als Apotheke an einen Versicherten schicken</figcaption></div>
+     
 </requirement>
 
 ### DELETE /Communication
