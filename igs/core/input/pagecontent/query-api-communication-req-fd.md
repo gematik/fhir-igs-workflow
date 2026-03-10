@@ -285,6 +285,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht mittels HTTP-POST-Operation über /Communication bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId "erp.communication.new" und den Versicherten mit der KVNR = Communication.recipient initiieren.
 </requirement>
 
+<!-- A_23876 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-358" title="E-Rezept-Fachdienst: Nachrichtenaustausch - E-Rezept einer Apotheke zuweisen - Datenstruktur Nachricht" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
@@ -419,6 +420,111 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </table>
 
 <div><figcaption><strong>Tabelle: </strong>Nachricht als Apotheke an einen Versicherten schicken</figcaption></div>
+     
+</requirement>
+
+<!-- A_23878-01 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-360" title="E-Rezept-Fachdienst - Nachricht einstellen - Validierung des Payload-Inhalt von GEM_ERP_PR_Communication_DispReq" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FD">
+        <testProcedure id="Produkttest"/>
+    </actor>
+     Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication den Inhalt der contentString-Eigenschaft des GEM_ERP_PR_Communication_DispReq-Profils auf valides JSON überprüfen und, falls die Inhalte des strukturierten JSON die unter "Prüfungsoperationen durch den Fachdienst" aufgeführten Anforderungen nicht erfüllen mit, einem Http-Fehler 400 (Bad Request) abbrechen sowie mit einer aussagekräftigen Fehlermeldung in Form einer eingebetteten OperationOutcome-Ressource antworten.
+     
+     <table>
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>Pflicht / Optional</th>
+      <th>Prüfungsoperationen durch den Fachdienst</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>version</td>
+      <td>Pflicht</td>
+      <td>Der Wert muss immer 1 sein.</td>
+    </tr>
+    <tr>
+      <td>supplyOptionsType</td>
+      <td>Pflicht</td>
+      <td>Einer der folgenden Werte muss gesetzt sein: "onPremise", "delivery", "shipment". Wenn Communication.extension:flowType == 166 ist nur "onPremise" und "delivery" erlaubt.</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>Optional</td>
+      <td>Die Zeichenlänge darf maximal 100 Zeichen betragen.</td>
+    </tr>
+    <tr>
+      <td>address</td>
+      <td>Optional</td>
+      <td>Die Zeichenlänge darf maximal 500 Zeichen betragen.</td>
+    </tr>
+    <tr>
+      <td>hint</td>
+      <td>Optional</td>
+      <td>Die Zeichenlänge darf maximal 500 Zeichen betragen.</td>
+    </tr>
+    <tr>
+      <td>phone</td>
+      <td>Optional</td>
+      <td>Die Zeichenlänge darf maximal 100 Zeichen betragen.</td>
+    </tr>
+  </tbody>
+</table>
+<div><figcaption><strong>Tabelle: </strong>Prüfungsoperationen durch den Fachdienst GEM_ERP_PR_Communication_DispReq-Profil</figcaption></div>
+</requirement>
+
+<!-- A_23879 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-361" title="E-Rezept-Fachdienst - Nachricht einstellen - Validierung des Payload-Inhalt von GEM_ERP_PR_Communication_Reply" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FD">
+        <testProcedure id="Produkttest"/>
+    </actor>
+     Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication den Inhalt der contentString-Eigenschaft des GEM_ERP_PR_Communication_Reply-Profils auf valides JSON überprüfen und, falls die Inhalte des strukturierten JSON die unter "Prüfungsoperationen durch den Fachdienst" aufgeführten Anforderungen nicht erfüllen, mit einem Http-Fehler 400 (Bad Request) abbrechen sowie mit einer aussagekräftigen Fehlermeldung in Form einer eingebetteten OperationOutcome-Ressource antworten. 
+     
+     <table>
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>Pflicht / Optional</th>
+      <th>Prüfungsoperationen durch den Fachdienst</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>version</td>
+      <td>Pflicht</td>
+      <td>Der Wert muss immer 1 sein.</td>
+    </tr>
+    <tr>
+      <td>supplyOptionsType</td>
+      <td>Pflicht</td>
+      <td>Einer der folgenden Werte muss gesetzt sein: "onPremise", "delivery", "shipment".</td>
+    </tr>
+    <tr>
+      <td>info_text</td>
+      <td>Optional</td>
+      <td>Die Zeichenlänge darf maximal 500 Zeichen betragen.</td>
+    </tr>
+    <tr>
+      <td>url</td>
+      <td>Optional</td>
+      <td>Wenn gesetzt, muss der übermittelte String eine valide URL gemäß RFC3986 sein. Die Zeichenlänge darf maximal 500 Zeichen betragen.</td>
+    </tr>
+    <tr>
+      <td>pickUpCodeHR</td>
+      <td>Optional</td>
+      <td>Wenn gesetzt, muss das Attribut supplyOptionsType den Wert "onPremise" haben und die Zeichenlänge darf maximal 8 Zeichen betragen.</td>
+    </tr>
+    <tr>
+      <td>pickUpCodeDMC</td>
+      <td>Optional</td>
+      <td>Wenn gesetzt, muss das Attribut supplyOptionsType den Wert "onPremise" haben und die Zeichenlänge darf maximal 128 Zeichen betragen.</td>
+    </tr>
+  </tbody>
+</table>
+<div><figcaption><strong>Tabelle: </strong>Prüfungsoperationen durch den Fachdienst GEM_ERP_PR_Communication_Reply-Profil</figcaption></div>
      
 </requirement>
 

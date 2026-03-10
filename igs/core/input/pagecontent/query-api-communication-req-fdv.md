@@ -104,7 +104,7 @@ Die für die Nachricht zu verwendende Communication-Ressource wird modul- und an
     ausführen.
 </requirement>
 
-
+<!-- A_23876 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-355" title="E-Rezept-FdV: Nachrichtenaustausch - E-Rezept einer Apotheke zuweisen - Datenstruktur Nachricht" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">

@@ -29,6 +29,7 @@ Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Communication`-
 
 Falls eine oder mehrere E-Rezept-Nachrichten für die abgebende LEI auf dem E-Rezept-Fachdienst bereitstehen, übermittelt der E-Rezept-Fachdienst ein Bundle von Communication Ressourcen. 
 
+<!-- A_23876 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-356" title="PS abgebende LEI: Nachrichtenaustausch - E-Rezept einer Apotheke zuweisen - Datenstruktur Nachricht" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
