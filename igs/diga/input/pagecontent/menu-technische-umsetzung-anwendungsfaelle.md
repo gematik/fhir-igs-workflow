@@ -1,7 +1,7 @@
 {% assign use_cases = site.data['gen-use-cases'] %}
 {% assign roles = site.data['roles'] %}
 
-### Ablaufdiagramm
+### Ablaufdiagramm Verordnung von DiGAs
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 400px; margin-bottom: 30px;">
@@ -11,19 +11,72 @@
 </figure>
 
 
-### Technische Anwendungsfälle
+### Umzusetzende Anwendungsfälle von Clients
 
-#### Anwendungsfälle im Rahmen der Verordnung
+Die folgenden Abschnitte beschreiben die technischen Anwendungsfälle, die für das Modul der Verordnung von digitalen Gesundheitsanwendungen genutzt werden.
 
-Die Prozesse des verordnenden Leistungserbringers, welche für die Übermittlung von
-ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel
-konzipiert wurden, werden ebenso für die Verordnung von DiGAs genutzt.
+#### PS verordnende LEI
 
-Folgende Anwendungsfälle werden genutzt:
-- UC 2.1 - E-Rezepte erzeugen
-- E-Rezept qualifiziert signieren
-- UC 2.3 - E-Rezept einstellen
-- UC 2.5 - E-Rezept durch Verordnenden löschen
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-51" title="PS verordnende LEI: TIFlow-DIGA - verpflichtende Anwendungsfälle" version="0">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Das PS der verordnenden LEI MUSS für die Umsetzung der Verordnung von DiGAs die Anwendungsfälle
+    <ul>
+        <li>UC 2.1 - E-Rezepte erzeugen</li>
+        <li>E-Rezept qualifiziert signieren</li>
+        <li>UC 2.3 - E-Rezept einstellen</li>
+        <li>UC 2.5 - E-Rezept durch Verordnenden löschen</li>
+    </ul>
+    umsetzen.
+</requirement>
+
+#### E-Rezept-FdV 
+
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-54" title="E-Rezept-FdV: TIFlow-DIGA - verpflichtende Anwendungsfälle" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von Verordnungen von DiGAs die Anwendungsfälle
+    <ul>
+        <li>UC 3.1 – E-Rezepte durch Versicherten abrufen</li>
+        <li>UC 3.2 – E-Rezept durch Versicherten löschen</li>
+        <li>Kostenträger suchen</li>
+        <li>UC 3.3 – Nachricht durch Versicherten übermitteln</li>
+        <li>UC 3.4 – Nachricht durch Versicherten empfangen</li>
+        <li>UC 3.8 – Nachricht durch Versicherten löschen</li>
+        <li>UC 3.5 - Protokolldaten abrufen</li>
+    </ul>
+    umsetzen.
+</requirement>
+
+#### Clientsystem Kostenträger
+
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-52" title="CS Kostenträger: TIFlow-DIGA - verpflichtende Anwendungsfälle" version="0">
+    <meta lockversion="false"/>
+    <actor name="CS_E-Rezept_KTR">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Das Clientsystem des Kostenträgers MUSS für die Umsetzung der Verordnung von DiGAs die Anwendungsfälle
+    <ul>
+        <li>UC 4.1 - E-Rezept durch Abgebenden abrufen</li>
+        <li>UC 4.2 - E-Rezept durch Abgebenden zurückgeben</li>
+        <li>UC 4.4 - Quittung abrufen</li>
+        <li>UC 4.17 - Verordnung erneut abrufen</li>
+        <li>UC 4.8 - Quittung erneut abrufen</li>
+        <li>UC 4.6 - Nachrichten durch Abgebenden empfangen</li>
+        <li>UC 4.7 - Nachricht durch Abgebenden übermitteln</li>
+        <li>UC 4.9 - Nachricht durch Abgebenden löschen</li>
+    </ul>
+    umsetzen.
+</requirement>
+
+
+### Technische Use Cases
+
+#### Verordnende Leistungserbringerinstitution
 
 <!-- UC 2.1 - E-Rezepte erzeugen -->
 {% assign use_case = use_cases | where: "title", "UC 2.1 - E-Rezepte erzeugen" | first %}
@@ -68,25 +121,7 @@ Folgende Anwendungsfälle werden genutzt:
 
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
-
-
-
-
-#### Anwendungsfälle im Rahmen der Verwaltung durch den Versicherten
-
-Die Prozesse des Versicherten für die Einsichtnahme in die Verordnungen, das
-Übermitteln der Verordnung an den Kostenträger und die Kommunikation mit dem
-Kostenträger, entsprechen denen welche für die Übermittlung von ärztlichen und
-zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel konzipiert wurden.
-
-Folgende Anwendungsfälle werden genutzt:
-- UC 3.1 - E-Rezepte durch Versicherten abrufen
-- UC 3.2 - E-Rezept durch Versicherten löschen
-- UC 3.3 - Nachricht durch Versicherten übermitteln
-- Kostenträger suchen
-- UC 3.4 - Nachrichten durch Versicherten empfangen
-- UC 3.8 - Nachricht durch Versicherten löschen
-- UC 3.5 - Protokolldaten abrufen
+#### Versicherter
 
 <!-- UC 3.1 - E-Rezepte durch Versicherten abrufen -->
 {% assign use_case = use_cases | where: "title", "UC 3.1 - E-Rezepte durch Versicherten abrufen" | first %}
@@ -178,40 +213,7 @@ Beim Zuweisen im Rahmen einer DiGA-Verordnung wird kein Payload mit Zusatzinform
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 
-#### Anwändungsfälle im Rahmen des Einlösens durch Kostenträger
-
-Die Prozesse des Kostenträgers für das Abrufen und Verarbeiten der Verordnung orientieren sich an den Prozessen der abgebenden Leistungserbringerinstitutionen bei Verordnungen für
-apothekenpflichtige Arzneimitteln.
-
-Folgende Anwendungsfälle werden genutzt:
-- UC 4.6 - Nachrichten durch Abgebenden empfangen
-- UC 4.7 - Nachricht durch Abgebenden übermitteln
-- UC 4.1 - E-Rezept durch Abgebenden abrufen
-- UC 4.2 - E-Rezept durch Abgebenden zurückgeben
-- UC 4.4 - Quittung abrufen
-- Recovery Secret
-- UC 4.8 - Quittung erneut abrufen
-
-<!-- UC 4.6 - Nachrichten durch Abgebenden empfangen -->
-{% assign use_case = use_cases | where: "title", "UC 4.6 - Nachrichten durch Abgebenden empfangen" | first %}
-
-<a id="{{ use_case.anchor }}"></a>
-##### {{ use_case.title }}
-
-{% include use-case-details-table.html use_case=use_case roles=roles %}
-
-{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
-
-
-<!-- UC 4.7 - Nachricht durch Abgebenden übermitteln -->
-{% assign use_case = use_cases | where: "title", "UC 4.7 - Nachricht durch Abgebenden übermitteln" | first %}
-
-<a id="{{ use_case.anchor }}"></a>
-##### {{ use_case.title }}
-
-{% include use-case-details-table.html use_case=use_case roles=roles %}
-
-{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+#### Kostenträger
 
 <!-- UC 4.1 - E-Rezept durch Abgebenden abrufen -->
 {% assign use_case = use_cases | where: "title", "UC 4.1 - E-Rezept durch Abgebenden abrufen" | first %}
@@ -243,11 +245,52 @@ Folgende Anwendungsfälle werden genutzt:
 
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
+<!-- UC 4.17 - Verordnung erneut abrufen -->
+{% assign use_case = use_cases | where: "title", "UC 4.17 - Verordnung erneut abrufen" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
 <!-- UC 4.8 - Quittung erneut abrufen -->
 {% assign use_case = use_cases | where: "title", "UC 4.8 - Quittung erneut abrufen" | first %}
 
 <a id="{{ use_case.anchor }}"></a>
 ##### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
+<!-- UC 4.6 - Nachrichten durch Abgebenden empfangen -->
+{% assign use_case = use_cases | where: "title", "UC 4.6 - Nachrichten durch Abgebenden empfangen" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+##### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
+
+<!-- UC 4.7 - Nachricht durch Abgebenden übermitteln -->
+{% assign use_case = use_cases | where: "title", "UC 4.7 - Nachricht durch Abgebenden übermitteln" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+##### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
+<!-- UC 4.9 - Nachricht durch Abgebenden löschen -->
+{% assign use_case = use_cases | where: "title", "UC 4.9 - Nachricht durch Abgebenden löschen" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+### {{ use_case.title }}
 
 {% include use-case-details-table.html use_case=use_case roles=roles %}
 

@@ -1,7 +1,7 @@
 {% assign use_cases = site.data['gen-use-cases'] %}
 {% assign roles = site.data['roles'] %}
 
-Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der verordnung von Arzneimitteln genutzt werden.
+Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der Verordnung von Arzneimitteln genutzt werden.
 
 ### Umzusetzende Anwendungsfälle von Clients
 
@@ -39,6 +39,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
         <li>UC 3.3 – Nachricht durch Versicherten übermitteln</li>
         <li>UC 3.4 – Nachricht durch Versicherten empfangen</li>
         <li>UC 3.8 – Nachricht durch Versicherten löschen</li>
+        <li>UC 3.5 - Protokolldaten abrufen</li>
     </ul>
     umsetzen.
 </requirement>
