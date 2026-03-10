@@ -4,10 +4,14 @@
 import argparse
 import csv
 import json
+import re
 from pathlib import Path
 from typing import Dict, Iterable, List, Set
 
 import openpyxl
+
+
+OLD_REQ_ID_RE = re.compile(r"^(A_\d+)(?:-(\d+))?$")
 
 
 def first_non_empty(row: tuple, indexes: List[int]) -> str:
@@ -110,6 +114,51 @@ def collect_excel_ids(xlsx_paths: Iterable[Path], ptsb: bool = False) -> Dict[st
 def load_mapping(mapping_path: Path) -> List[Dict[str, List[str]]]:
     data = json.loads(mapping_path.read_text(encoding="utf-8"))
     return data.get("requirement_mapping", [])
+
+
+def parse_old_req_id(req_id: str) -> tuple[str, int] | None:
+    """Parse old requirement IDs and return (base_id, revision).
+
+    Examples:
+    - A_26148 -> (A_26148, 0)
+    - A_26148-01 -> (A_26148, 1)
+    """
+    match = OLD_REQ_ID_RE.match(req_id.strip())
+    if not match:
+        return None
+
+    base_id = match.group(1)
+    revision = int(match.group(2)) if match.group(2) else 0
+    return base_id, revision
+
+
+def build_max_mapping_revision(mapping_ids: Set[str]) -> Dict[str, int]:
+    max_revision_by_base: Dict[str, int] = {}
+    for req_id in mapping_ids:
+        parsed = parse_old_req_id(req_id)
+        if not parsed:
+            continue
+        base_id, revision = parsed
+        current = max_revision_by_base.get(base_id, -1)
+        if revision > current:
+            max_revision_by_base[base_id] = revision
+    return max_revision_by_base
+
+
+def is_excel_id_covered_by_mapping(req_id: str, max_mapping_revision: Dict[str, int]) -> bool:
+    parsed = parse_old_req_id(req_id)
+    if not parsed:
+        return False
+
+    base_id, excel_revision = parsed
+    mapped_max_revision = max_mapping_revision.get(base_id)
+    if mapped_max_revision is None:
+        return False
+
+    # Coverage rule:
+    # - A_12345 is covered by A_12345 or A_12345-xx in mapping.
+    # - A_12345-02 is covered only if mapping has revision >= 2 for same base.
+    return mapped_max_revision >= excel_revision
 
 
 def write_csv(path: Path, header: List[str], rows: List[List[str]]) -> None:
@@ -247,8 +296,13 @@ def main() -> None:
 
     mapping_entries = load_mapping(mapping_path)
     mapping_ids = {entry.get("old_req") for entry in mapping_entries if entry.get("old_req")}
+    max_mapping_revision = build_max_mapping_revision(mapping_ids)
 
-    missing_ids = sorted((set(excel_ids.keys()) - mapping_ids) - ignore_ids)
+    missing_ids = sorted(
+        req_id
+        for req_id in excel_ids.keys()
+        if req_id not in ignore_ids and not is_excel_id_covered_by_mapping(req_id, max_mapping_revision)
+    )
 
     duplicate_rows: List[List[str]] = []
     for entry in mapping_entries:
