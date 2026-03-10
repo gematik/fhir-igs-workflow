@@ -1,21 +1,20 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: b7314a617ad3458fc7e2c7dbfe55bc0acc943d492ed0e3ce38a480f5887ab040
+content_hash: 40910f941785bb132547a72c7767b2db6694b64cf787c210d908e91fd946085f
 created: '2026-03-09T16:35:19.345236'
-date: '2026-03-09T16:35:19.345239'
+date: '2026-03-10T06:42:47.929853'
 key: IG-TIFLOW-EU-37
-modified: '2026-03-09T16:35:19.345238'
+modified: '2026-03-10T06:42:47.929853'
 release_status: NEW
 source: input/pagecontent/op-eu-close-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: 'Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts
-  /Task/&lt;id&gt;/$eu-close sicherstellen, dass ausschließlich Nutzer in der Rolle:
-  oid_ncpeh, die Operation am Fachdienst aufrufen dürfen und die Rolle professionOID
-  des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader Authorization feststellen, damit
-  der E-Rezept-Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.'
-title: E-Rezept-Fachdienst - Task schließen - EU - Rollenprüfung
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts
+  /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass der Zeitpunkt
+  des Aufrufes in Task.extension:lastMedicationDispense im Format "YYYY-MM-DDThh:mm:ss+zz:zz"
+  (FHIR-instant) angelegt und gespeichert wird.
+title: E-Rezept-Fachdienst - Task schließen - EU - Zeitstempel MedicationDispense
 version: 0

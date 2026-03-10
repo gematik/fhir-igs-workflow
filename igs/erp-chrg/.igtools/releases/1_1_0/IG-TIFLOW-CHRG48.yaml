@@ -1,0 +1,22 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 9c5519e7d3f30bdbf04416f610f480b18a2d71d4531814f17b48cdea2327bede
+created: '2026-03-10T06:41:02.733087'
+date: '2026-03-10T06:41:02.733090'
+key: IG-TIFLOW-CHRG48
+modified: '2026-03-10T06:41:02.733089'
+release_status: NEW
+source: input/pagecontent/query-api-chargeitem-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
+  /ChargeItem durch einen Versicherten, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN
+  im "Authorization"-Header des HTTP-Requests identifizieren und die ChargeItems danach
+  filtern, damit der Versicherte nur Abrechnungsinformationen abruft, bei denen er
+  der Begünstigte ist.
+title: E-Rezept-Fachdienst – Abrechnungsinformationen abrufen – Versicherter – Filter
+  KVNR
+version: 0
