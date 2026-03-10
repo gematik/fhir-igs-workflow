@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Query API: pushers - Implementation Guide E-Rezept-Workflow Core v1.0.0-draft</title>
+    <title>Query API: Pushers - Implementation Guide E-Rezept-Workflow Core v1.0.0-draft</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"11.7"}
-    h3,h4,h5,h6{--heading-prefix:"11.7.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"15.8"}
+    h3,h4,h5,h6{--heading-prefix:"15.8.0"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -122,10 +122,10 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="audit-service.html">Zugriffsprotokollierung</a>
+        <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
       </li>
       <li>
-        <a href="data-security.html">Datenschutz und Sicherheit</a>
+        <a href="audit-service.html">Zugriffsprotokollierung</a>
       </li>
       <li>
         <a href="fhir-validate.html">FHIR-Validierung</a>
@@ -134,7 +134,26 @@
         <a href="ttl.html">Löschfristen</a>
       </li>
       <li>
+        <a href="error-codes.html">Fehlercodes</a>
+      </li>
+      <li>
         <a href="verbindungsaufbau-client.html">Verbindungsaufbau von Clientsystemen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Technische Funktionsmerkmale
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-technische-umsetzung-epa-ms.html">ePA Medication Service</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-push.html">Push Notification</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-paging.html">Paginierung</a>
       </li>
     </ul>
   </li>
@@ -153,6 +172,9 @@
   </li>
   <li>
     <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+  <li>
+    <a href="requirement-mapping-old-to-new.html">Anforderungsmapping</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -190,11 +212,11 @@ Implementation Guide<br /> E-Rezept-Workflow Core
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-query-api.html'><b>Query API</b></a></li><li><b>Query API: pushers</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-query-api.html'><b>Query API</b></a></li><li><b>Query API: Pushers</b></li>
 
           <span style="float:right;">
 
-            <a href="query-api-consent-req-fdv.html">&lt;vorherige</a> | 
+            <a href="query-api-channels-req-fdv.html">&lt;vorherige</a> | 
 
             <a href="#bottom">unten</a>
 
@@ -220,7 +242,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   
-  <h2>Query API: pushers</h2>
+  <h2>Query API: Pushers</h2>
   
 
 
@@ -250,7 +272,24 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="nachricht">Nachricht</h3>
 
-<p>tbd</p>
+<table>
+  <thead>
+    <tr>
+      <th>HTTP-Methode</th>
+      <th>Ergebnis der Anfrage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>GET</td>
+      <td>Registrierungen abrufen</td>
+    </tr>
+    <tr>
+      <td>POST</td>
+      <td>FdV-Instanz registrieren</td>
+    </tr>
+  </tbody>
+</table>
 
 <h3 id="anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</h3>
 
@@ -261,15 +300,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="resource-api">Resource API</h3>
 
-<p>tbd</p>
+<p>Dieser Endpunkt ermöglicht die Erstellung, Änderung und Löschung von Pushers für den authentifizierten Nutzer. Das Verhalten dieses Endpunkts variiert je nach Werten im JSON-Body.</p>
+
+<p>Ist <code class="language-plaintext highlighter-rouge">kind</code> nicht <code class="language-plaintext highlighter-rouge">null</code>, wird der Pusher mit dieser <code class="language-plaintext highlighter-rouge">app_id</code> und <code class="language-plaintext highlighter-rouge">pushkey</code> für diesen Nutzer aktualisiert oder erstellt, falls er nicht existiert. Ist <code class="language-plaintext highlighter-rouge">kind</code> <code class="language-plaintext highlighter-rouge">null</code>, wird der Pusher mit dieser <code class="language-plaintext highlighter-rouge">app_id</code> und <code class="language-plaintext highlighter-rouge">pushkey</code> für diesen Nutzer gelöscht.</p>
 
 <h4 id="api-beschreibung">API Beschreibung</h4>
 
-<p>tbd</p>
-
-<h4 id="hinweis">Hinweis</h4>
-
-<p>tbd</p>
+<ul>
+  <li><a href="https://github.com/gematik/api-erp/blob/master/docs/erp_push_notifications.adoc#pusher-verwaltung">API-ERP: Pusher Verwaltung</a></li>
+</ul>
 
 
 
@@ -294,7 +333,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <tr>
               <td style="text-align:left">&#xA0;
 
-                <a href="query-api-consent-req-fdv.html">&lt;vorherige</a>
+                <a href="query-api-channels-req-fdv.html">&lt;vorherige</a>
 
               </td>
               <td style="text-align:center">
@@ -312,7 +351,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Mar 5, 2026 21:58+0000">2026-03-05</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 10, 2026 13:14+0000">2026-03-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

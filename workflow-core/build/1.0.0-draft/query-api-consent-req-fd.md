@@ -1,4 +1,4 @@
-# FD-Anforderungen: Consent-Query - Implementation Guide E-Rezept-Workflow Core v1.0.0-draft
+# Server-Anforderungen: Consent-Query - Implementation Guide E-Rezept-Workflow Core v1.0.0-draft
 
 Implementation Guide
 
@@ -9,9 +9,9 @@ Version 1.0.0-draft - ci-build
 * [**Table of Contents**](toc.md)
 * [**Query API**](menu-schnittstellen-query-api.md)
 * [**Query API: Consent**](query-api-consent.md)
-* **FD-Anforderungen: Consent-Query**
+* **Server-Anforderungen: Consent-Query**
 
-## FD-Anforderungen: Consent-Query
+## Server-Anforderungen: Consent-Query
 
 Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für den Consent-Endpunkt.
 
@@ -27,7 +27,8 @@ Der E-Rezept-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource Consen
 Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent sicherstellen, dass noch keine Consent Ressource für die KVNR im ACCESS_TOKEN und Consent.category.coding.code = <Einwilligungstyp> aus URL-Parameter category gespeichert ist, um maximal eine Einwilligung für den Versicherten für jeden Einwilligungstypen zu speichern. Im Fehlerfall muss der HTTP-Request mit dem HTTP-Fehlercode 409 abgewiesen werden.
 
 Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent den Zeitpunkt des erfolgreichen Operationsaufrufs in der Consent-Ressource unter .dateTime mit Sekundengenauigkeit hinterlegen.
-A_22350 - E-Rezept-Fachdienst - Consent schreiben – Persistieren<=
+
+Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent – falls bei den Prüfungen keine Fehler aufgetreten sind, welche zum Abbruch der Operation führen – die übermittelte Ressource persistieren.
 
 Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent, falls bei den Prüfungen keine Fehler aufgetreten sind, welche zum Abbruch der Operation führen, die übermittelte Ressource persistieren.
 ### GET /Consent

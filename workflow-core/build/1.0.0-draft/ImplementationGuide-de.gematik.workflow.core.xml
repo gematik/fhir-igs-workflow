@@ -10,7 +10,7 @@
   <name value="gemIG_TIFlow_core"/>
   <title value="Implementation Guide E-Rezept-Workflow Core"/>
   <status value="draft"/>
-  <date value="2026-03-09T13:02:00+00:00"/>
+  <date value="2026-03-10T13:14:16+00:00"/>
   <publisher value="gematik GmbH"/>
   <contact>
     <name value="gematik GmbH"/>
@@ -39,7 +39,7 @@
     </extension>
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r4"/>
-    <version value="7.0.1"/>
+    <version value="7.1.0"/>
   </dependsOn>
   <dependsOn id="hl7ext">
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
@@ -519,14 +519,6 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="data-security.html"/>
-        </extension>
-        <nameUrl value="data-security.html"/>
-        <title value="Datenschutz und Sicherheit"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
           <valueUrl value="fhir-validate.html"/>
         </extension>
         <nameUrl value="fhir-validate.html"/>
@@ -607,10 +599,10 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="menu-technische-umsetzung-validation.html"/>
+          <valueUrl value="menu-technische-umsetzung-subscription.html"/>
         </extension>
-        <nameUrl value="menu-technische-umsetzung-validation.html"/>
-        <title value="FHIR-Ressource validieren"/>
+        <nameUrl value="menu-technische-umsetzung-subscription.html"/>
+        <title value="Notifications für AVS"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -824,7 +816,7 @@
               <valueUrl value="query-api-task-req-fd.html"/>
             </extension>
             <nameUrl value="query-api-task-req-fd.html"/>
-            <title value="FD-Anforderungen: Task-Query"/>
+            <title value="Server-Anforderungen: Task-Query"/>
             <generation value="markdown"/>
           </page>
           <page>
@@ -864,7 +856,7 @@
               <valueUrl value="query-api-medicationdispense-req-fd.html"/>
             </extension>
             <nameUrl value="query-api-medicationdispense-req-fd.html"/>
-            <title value="FD-Anforderungen: MedicationDispense-Query"/>
+            <title value="Server-Anforderungen: MedicationDispense-Query"/>
             <generation value="markdown"/>
           </page>
           <page>
@@ -888,7 +880,7 @@
               <valueUrl value="query-api-auditevent-req-fd.html"/>
             </extension>
             <nameUrl value="query-api-auditevent-req-fd.html"/>
-            <title value="FD-Anforderungen: AuditEvent-Query"/>
+            <title value="Server-Anforderungen: AuditEvent-Query"/>
             <generation value="markdown"/>
           </page>
           <page>
@@ -912,7 +904,7 @@
               <valueUrl value="query-api-device-req-fd.html"/>
             </extension>
             <nameUrl value="query-api-device-req-fd.html"/>
-            <title value="FD-Anforderungen: Device-Query"/>
+            <title value="Server-Anforderungen: Device-Query"/>
             <generation value="markdown"/>
           </page>
           <page>
@@ -936,7 +928,7 @@
               <valueUrl value="query-api-communication-req-fd.html"/>
             </extension>
             <nameUrl value="query-api-communication-req-fd.html"/>
-            <title value="FD-Anforderungen: Communication-Query"/>
+            <title value="Server-Anforderungen: Communication-Query"/>
             <generation value="markdown"/>
           </page>
           <page>
@@ -976,7 +968,7 @@
               <valueUrl value="query-api-consent-req-fd.html"/>
             </extension>
             <nameUrl value="query-api-consent-req-fd.html"/>
-            <title value="FD-Anforderungen: Consent-Query"/>
+            <title value="Server-Anforderungen: Consent-Query"/>
             <generation value="markdown"/>
           </page>
           <page>
@@ -988,6 +980,78 @@
             <generation value="markdown"/>
           </page>
         </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="query-api-channels.html"/>
+          </extension>
+          <nameUrl value="query-api-channels.html"/>
+          <title value="Query API: Channels"/>
+          <generation value="markdown"/>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="query-api-channels-req-fd.html"/>
+            </extension>
+            <nameUrl value="query-api-channels-req-fd.html"/>
+            <title value="Server-Anforderungen: Channels-Query"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="query-api-channels-req-fdv.html"/>
+            </extension>
+            <nameUrl value="query-api-channels-req-fdv.html"/>
+            <title value="FdV-Anforderungen: Channels-Query"/>
+            <generation value="markdown"/>
+          </page>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="query-api-pushers.html"/>
+          </extension>
+          <nameUrl value="query-api-pushers.html"/>
+          <title value="Query API: Pushers"/>
+          <generation value="markdown"/>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="query-api-pushers-req-fd.html"/>
+            </extension>
+            <nameUrl value="query-api-pushers-req-fd.html"/>
+            <title value="Server-Anforderungen: Pushers-Query"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="query-api-pushers-req-fdv.html"/>
+            </extension>
+            <nameUrl value="query-api-pushers-req-fdv.html"/>
+            <title value="FdV-Anforderungen: Pushers-Query"/>
+            <generation value="markdown"/>
+          </page>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="query-api-subscription.html"/>
+          </extension>
+          <nameUrl value="query-api-subscription.html"/>
+          <title value="Query API: Subscription"/>
+          <generation value="markdown"/>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="query-api-subscription-req-fd.html"/>
+            </extension>
+            <nameUrl value="query-api-subscription-req-fd.html"/>
+            <title value="Server-Anforderungen: Subscription-Query"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="query-api-subscription-req-avs.html"/>
+            </extension>
+            <nameUrl value="query-api-subscription-req-avs.html"/>
+            <title value="AVS-Anforderungen: Subscription-Query"/>
+            <generation value="markdown"/>
+          </page>
+        </page>
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
@@ -995,6 +1059,14 @@
         </extension>
         <nameUrl value="artifacts.html"/>
         <title value="FHIR-Artefakte"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="requirement-mapping-old-to-new.html"/>
+        </extension>
+        <nameUrl value="requirement-mapping-old-to-new.html"/>
+        <title value="Mapping alter Anforderungen auf FHIR-IG Anforderungen"/>
         <generation value="markdown"/>
       </page>
     </page>

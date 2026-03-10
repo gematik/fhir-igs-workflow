@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>FD-Anforderungen: Task-Query - Implementation Guide E-Rezept-Workflow Core v1.0.0-draft</title>
+    <title>Server-Anforderungen: Task-Query - Implementation Guide E-Rezept-Workflow Core v1.0.0-draft</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"16.1.1"}
-    h3,h4,h5,h6{--heading-prefix:"16.1.1"}</style>
+    <style type="text/css">h2{--heading-prefix:"15.1.1"}
+    h3,h4,h5,h6{--heading-prefix:"15.1.1"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -122,10 +122,10 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="audit-service.html">Zugriffsprotokollierung</a>
+        <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
       </li>
       <li>
-        <a href="data-security.html">Datenschutz und Sicherheit</a>
+        <a href="audit-service.html">Zugriffsprotokollierung</a>
       </li>
       <li>
         <a href="fhir-validate.html">FHIR-Validierung</a>
@@ -155,9 +155,6 @@
       <li>
         <a href="menu-technische-umsetzung-paging.html">Paginierung</a>
       </li>
-      <li>
-        <a href="menu-technische-umsetzung-validation.html">FHIR-Validierung</a>
-      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -175,6 +172,9 @@
   </li>
   <li>
     <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+  <li>
+    <a href="requirement-mapping-old-to-new.html">Anforderungsmapping</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -212,7 +212,7 @@ Implementation Guide<br /> E-Rezept-Workflow Core
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-query-api.html'><b>Query API</b></a></li><li><a href='query-api-task.html'><b>Query API: Task</b></a></li><li><b>FD-Anforderungen: Task-Query</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-query-api.html'><b>Query API</b></a></li><li><a href='query-api-task.html'><b>Query API: Task</b></a></li><li><b>Server-Anforderungen: Task-Query</b></li>
 
           <span style="float:right;">
 
@@ -242,7 +242,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   
-  <h2>FD-Anforderungen: Task-Query</h2>
+  <h2>Server-Anforderungen: Task-Query</h2>
   
 
 
@@ -270,9 +270,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für den Task-Endpunkt.</p>
 
 <!-- A_19030 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-34" title="E-Rezept-Fachdienst - unzulässige Operationen Task" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-49" title="E-Rezept-Fachdienst - unzulässige Operationen Task" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS alle Zugriffe auf die Ressource Task mittels der HTTP-Operationen PUT, HEAD und DELETE sowie POST ohne die Angabe einer gültigen FHIR-Operation unterbinden, damit keine unzulässigen Operationen auf den Rezeptdaten ausgeführt werden können.
@@ -285,9 +285,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Der Zugriff mittels der HTTP-Operation GET steht ausschließlich für die Einsichtnahme in E-Rezepte durch den Versicherten bzw. einen Vertreter mit Wissen um den AccessCode bzw. einer abgebenden Institution mit Wissen um das Secret zur Verfügung. Die GET-Operation ohne Referenz einer FHIR-Operation führt zu keiner Statusänderung.</p>
 
 <!-- A_21558-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-33" title="E-Rezept-Fachdienst - Liste Task abrufen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-50" title="E-Rezept-Fachdienst - Liste Task abrufen - Rollenprüfung" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task sicherstellen, dass ausschließlich Versicherte und Leistungserbringer in der Rolle
@@ -300,18 +300,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_19115-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-34" title="E-Rezept-Fachdienst - Liste Task abrufen - Versicherter- Filter auf KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-51" title="E-Rezept-Fachdienst - Liste Task abrufen - Versicherter- Filter auf KVNR" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task die dem Versicherten zugeordneten Task-Ressourcen anhand der KVNR des Versicherten aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, die in Task.for die entsprechende KVNR des begünstigten Patienten referenziert haben, damit ausschließlich Versicherte ihre eigenen E-Rezepte einsehen können.
 </requirement>
 
 <!-- A_19129-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-35" title="E-Rezept-Fachdienst - Liste Task abrufen - Versicherter - Rückgabe Tasks im Bundle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-52" title="E-Rezept-Fachdienst - Liste Task abrufen - Versicherter - Rückgabe Tasks im Bundle" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task durch einen Versicherten die gültige Ergebnisliste der Task-Ressourcen ohne die referenzierten, signierten E-Rezept-Bundle an den Aufrufer zurückgeben, damit der Versicherte eine Übersicht aller Tasks erhält.
@@ -320,9 +320,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- eGK in der Apotheke -->
 
 <!-- A_27444 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-48" title="E-Rezept-Fachdienst - Rezepte lesen - Konfigurationsparameter RateLimit" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-53" title="E-Rezept-Fachdienst - Rezepte lesen - Konfigurationsparameter RateLimit" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS einen Konfigurationsparameter RATELIMIT_MAX1d_ERROR_UC4_12 verwalten.
@@ -331,27 +331,27 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Der Defaultwert für RATELIMIT_MAX1d_ERROR_UC4_12 ist 100.</p>
 
 <!-- A_27445 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-48" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - Ratelimit pro Telematik-ID pro Tag" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-54" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - Ratelimit pro Telematik-ID pro Tag" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit dem URL-Parameter pnw="..." durch eine abgebende LEI die Telematik-ID des Aufrufers im ACCESS_TOKEN im HTTP-Requestheader "Authorization" feststellen und den Aufruf in einer Statistik zur Prüfung des Ratelimits erfassen, wenn der Aufruf mit einem Fehler 456 oder 458 abgebrochen wird. Der E-Rezept-Fachdienst MUSS die Statistik zur Prüfung des Ratelimits alle 24h zurück auf 0 setzen.
 </requirement>
 
 <!-- A_27446 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-48" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - Ratelimit pro Telematik-ID prüfen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-55" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - Ratelimit pro Telematik-ID prüfen" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit dem URL-Parameter pnw="..." durch eine abgebende LEI prüfen, ob mit dem Aufruf die Anzahl RATELIMIT_MAX1d_ERROR_UC4_12 überschritten ist und in diesem Fall den Aufruf mit dem Fehler 423 abbrechen.
 </requirement>
 
 <!-- A_23450-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-48" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Prüfung Prüfungsnachweis" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-56" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Prüfung Prüfungsnachweis" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI,den im Parameter pnw übermittelten Prüfungsnachweis extrahieren, die Version der Prüfziffer bestimmen, den Prüfungsnachweis prüfen und bei Fehlen oder fehlerhafter Prüfung mit dem Fehler 403 abbrechen, damit nur Clients die Operation aufrufen können, welche einen Anwesenheitsnachweis erfolgreich durchgeführt haben.
@@ -364,18 +364,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>In der Version 2 ist das erste Byte der Prüfziffer &gt; 128. Die Prüfung des Prüfungsnachweises für Prüfziffer Version 2 ist in Kapitel “HTTP-Operation GET - Prüfung VSDM Prüfungsnachweis (Version 2)” beschrieben.</p>
 
 <!-- A_27287 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-48" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Vergleich KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-57" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Vergleich KVNR" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI prüfen, ob die in der Prüfziffer übermittelte KVNR identisch ist mit dem Wert im URL-Parameter kvnr="..." und bei Ungleichheit mit dem Fehler 456 abbrechen.
 </requirement>
 
 <!-- A_27347 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-48" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Vergleich hcv" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-58" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Vergleich hcv" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI prüfen, falls im Operationsaufruf der URL-Parameter hcv übermittelt wurde, den im URL-Parameter übermittelten Wert transformieren, miteinander vergleichen und bei Ungleichheit mit dem Fehler 458 abbrechen.
@@ -384,9 +384,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Die Kodierung und das Format den in der Prüfziffer übermittelten Wert für hcv ist in A_27278-* beschrieben. Das Clientsystem übermittelt hcvBase64URLSafe-kodiert.</p>
 
 <!-- A_23451-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-48" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Zeitraum Akzeptanz Prüfungsnachweis" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-59" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Zeitraum Akzeptanz Prüfungsnachweis" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit dem URL-Parameter pnw="..." durch eine abgebende LEI, falls im VSDM Prüfungsnachweis eine Prüfziffer enthalten ist, prüfen, dass die Differenz zwischen Zeitstempel aus der Prüfziffer des Prüfungsnachweises und dem aktuellen Zeitpunkt nicht größer als 30 Minuten (konfigurierbar) ist und bei fehlerhafter Prüfung mit dem Fehler 403 abbrechen. Im Fehlerfall ist die Meldung "Anwesenheitsnachweis konnte nicht erfolgreich durchgeführt werden (Zeitliche Gültigkeit des Anwesenheitsnachweis überschritten)." im OperationOutcome zu übermitteln.
@@ -395,9 +395,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des Prüfungsnachweises erfolgt ausschließlich nach Anpassung von A_23451-* im Rahmen des Änderungsmanagement für Spezifikationen.</p>
 
 <!-- A_23452-04 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-48" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Filter Status, KVNR und Workflowtype" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-60" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Filter Status, KVNR und Workflowtype" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI, falls im VSDM Prüfungsnachweis eine Prüfziffer enthalten ist, die Tasks nach
@@ -411,36 +411,36 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_25206 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-48" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-61" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI, falls im VSDM Prüfungsnachweis keine Prüfziffer enthalten ist, prüfen, ob das Ergebnis im Prüfungsnachweis gleich 3 ist und bei fehlerhafter Prüfung mit dem Fehler 403 abbrechen.
 </requirement>
 
 <!-- A_25208-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-48" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - URL kvnr" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-62" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - URL kvnr" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI prüfen, ob ein URL-Parameter kvnr="..." übermittelt wurde und bei fehlerhafter Prüfung mit dem Fehler 455 abbrechen.
 </requirement>
 
 <!-- A_27346 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-48" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - URL hcv" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-63" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - URL hcv" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI prüfen, falls enforce_hcv_check = TRUE, ob ein URL-Parameter hcv="..." übermittelt wurde und bei fehlerhafter Prüfung mit dem Fehler 457 abbrechen.
 </requirement>
 
 <!-- A_25994 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-48" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - Mappen von IKNR zu VSDM" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-64" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - Mappen von IKNR zu VSDM" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI, falls das Ergebnis im VSDM Prüfungsnachweis gleich 3 ist und URL-Parameter kvnr="..." übermittelt wurde, die IKNR des neuesten E-Rezeptes (wenn vorhanden) zum Fachdienst VSDM mappen, damit der E-Rezept-Fachdienst feststellen kann, welcher Status AcceptPN3VSDMxx zu prüfen ist.
@@ -451,30 +451,27 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Der E-Rezept-Fachdienst kann eine Mapping zwischen den IKNR und dem zugehörigen Fachdiensten VSDM erstellen und hierfür das im DNS hinterlegte Mapping zwischen IKNR und den Endpunkten der Fachdienste VSDM nutzen.</p>
 
 <!-- A_25995 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-48" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - keine E-Rezepte" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-65" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - keine E-Rezepte" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI, falls das Ergebnis im VSDM Prüfungsnachweis gleich 3 ist, URL-Parameter kvnr="..." übermittelt wurde und keine E-Rezeptes für den Versicherten im E-Rezept-Fachdienst gespeichert sind, eine leere Liste mit dem Status 202 zurückgeben.
 </requirement>
 
-<p>- E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - AcceptPN3 false
-&lt;=</p>
-
 <!-- A_25207 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-48" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - AcceptPN3 false" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-66" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - AcceptPN3 false" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI, falls im VSDM Prüfungsnachweis keine Prüfziffer enthalten, das Ergebnis im Prüfungsnachweis gleich 3 und der passende Status AcceptPN3VSDMxx = false ist mit dem Fehler 454 abbrechen.
 </requirement>
 
 <!-- A_25209-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-48" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - AcceptPN3 true - Filter Status, KVNR und Workflowtype" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-67" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - AcceptPN3 true - Filter Status, KVNR und Workflowtype" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI, falls der passende Status AcceptPN3VSDMxx = true, das Ergebnis im VSDM Prüfungsnachweis gleich 3 ist und URL-Parameter kvnr="..." übermittelt wurde, die Tasks nach 
@@ -551,9 +548,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div><figcaption><strong>Tabelle: </strong>Struktur VSDM Prüfziffer</figcaption></div>
 
 <!-- A_23454 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-48" title="E-Rezept-Fachdienst - Prüfung Prüfziffer" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-68" title="E-Rezept-Fachdienst - Prüfung Prüfziffer" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS die Prüfung des VSDM Prüfungsnachweises wie folgt umsetzen: 
@@ -574,9 +571,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Der E-Rezept-Fachdienst verwaltet HMAC-Schlüssel, welche durch die Betreiber der Fachdienste VSDM bereitgestellt werden. Ein HMAC-Schlüssel wird durch die Kennung des Betreibers des Fachdienstes VSDM und der Version des Schlüssels identifiziert.</p>
 
 <!-- A_23456-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-48" title="E-Rezept-Fachdienst - Prüfung Prüfziffer - Berechnung HMAC der Prüfziffer" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-69" title="E-Rezept-Fachdienst - Prüfung Prüfziffer - Berechnung HMAC der Prüfziffer" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS, falls im VSDM Prüfungsnachweis eine Prüfziffer enthalten ist, für den HMAC der Prüfziffer die führenden 23 Byte der Prüfziffer (Felder 1-5) mittels SHA-256 Hashfunktion berechnen und für den nachfolgenden Vergleich die ersten 24 Byte verwenden.<br />
@@ -594,9 +591,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Die Struktur der VSDM Prüfziffer Version 2 ist in [gemSpec_Krypt#A_27278-* VSDM-FD: Struktur einer Prüfziffer der Version 2] beschrieben.</p>
 
 <!-- A_27301 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-48" title="E-Rezept-Fachdienst - Prüfung und Entschlüsselung Prüfziffer Version 2" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-70" title="E-Rezept-Fachdienst - Prüfung und Entschlüsselung Prüfziffer Version 2" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produktgutachten" />
     </actor>
     Der E-Rezept-Fachdienst MUSS eine Prüfziffer Version 2 gemäß [gemSpec_Krypt#A_27279-*] entschlüsseln und prüfen.
@@ -607,9 +604,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="get-task-einzelne-verordnung">GET /Task/<id> (Einzelne Verordnung)</id></h3>
 
 <!-- A_19113-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-36" title="E-Rezept-Fachdienst - Task abrufen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-71" title="E-Rezept-Fachdienst - Task abrufen - Rollenprüfung" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produktgutachten" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen konkreten über &lt;id&gt; adressierten /Task/&lt;id&gt; (ohne die Referenz einer FHIR-Operation) sicherstellen, dass ausschließlich Clientsysteme in einer der Rollen 
@@ -623,83 +620,81 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_19116-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-37" title="E-Rezept-Fachdienst - Task abrufen - Versicherter - Prüfung AccessCode bei KVNR-Missmatch" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-72" title="E-Rezept-Fachdienst - Task abrufen - Versicherter - Prüfung AccessCode bei KVNR-Missmatch" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produktgutachten" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen /Task/&lt;id&gt; durch einen Versicherten bei Ungleichheit der KVNR des Aufrufenden (KVNR des ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests UNGLEICH KVNR in Task.for ) prüfen, ob der im HTTP-Request-Header "X-AccessCode" oder URL-Parameter "?ac=..." übergebene AccessCode gleich dem AccessCode in Task.identifier ist, damit auch Vertreter in Kenntnis des AccessCodes ein einzelnes E-Rezept einsehen können.
 </requirement>
 
 <!-- A_21375-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-39" title="E-Rezept-Fachdienst - Task abrufen - Versicherter - Rückgabe Task inkl. Bundles" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-73" title="E-Rezept-Fachdienst - Task abrufen - Versicherter - Rückgabe Task inkl. Bundles" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen /Task/&lt;id&gt; durch einen Versicherten die einzelne Task-Ressource um das referenzierte, serverseitig signierte E-Rezept-Bundle aus Task.input mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType = 2 als search.include im Ergebnis-Bundle an den Aufrufer zurückgeben, damit der Versicherte eine vollständige Einsicht in den Task und den signierten Verordnungsdatensatz für eigene Dokumentationszwecke erhält.
 </requirement>
 
 <!-- A_21532-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-40" title="E-Rezept-Fachdienst - Task abrufen - Versicherter - Kein Secret" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-74" title="E-Rezept-Fachdienst - Task abrufen - Versicherter - Kein Secret" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation GET /Task und GET /Task/&lt;id&gt; durch einen Versicherten oid_versicherter ein optional vorhandenes Task.identifier:Secret als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret aus dem zurückgegebenen Task entfernen, sodass Versicherte nicht in Kenntnis des Secrets gelangen, welches die Prozesshoheit des Apothekers darstellt.
 </requirement>
 
 <!-- A_20702-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-41" title="E-Rezept-Fachdienst - Task abrufen - Keine Einlöseinformationen in unbekannten Clients" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-75" title="E-Rezept-Fachdienst - Task abrufen - Keine Einlöseinformationen in unbekannten Clients" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task/&lt;id&gt; ausschließlich solchen Clients die AccessCode Information (Task.identifier mit system="https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode" ) in den Task-Ressourcen zurückgeben, welche anhand der mitgeteilten, gültigen Produktidentifikation als hierfür zulässige Clients erkannt werden.
 </requirement>
 
 <!-- A_24176-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-43" title="E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - Prüfung Telematik-ID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-76" title="E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - Prüfung Telematik-ID" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende Institution die zum referenzierten Task in Task.owner gespeicherte Telematik-ID der abgebenden Institution mit der Telematik-ID aus dem ACCESS_TOKEN vergleichen und bei Ungleichheit die Operation mit dem HTTP-Fehlercode 412 abbrechen, damit der Zugriff auf diesen Datensatz nur durch Berechtigte erfolgt.
 </requirement>
 
 <!-- A_24177-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-44" title="E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - Prüfung AccessCode" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-77" title="E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - Prüfung AccessCode" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende Institution den im URL-Parameter "?ac=..." übertragenen AccessCode gegen den im referenzierten Task gespeicherten AccessCode Task.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit Zugriffe auf diesen Datensatz nur durch Berechtigte in Kenntnis des AccessCode erfolgen.
 </requirement>
 
 <!-- A_24178-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-45" title="E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - Prüfung Status" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-78" title="E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - Prüfung Status" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende Institution den im referenzierten Task gespeicherten Status Task.status prüfen und mit dem Fehler 412 abbrechen, wenn Task.status ungleich "in-progress" und ungleich "completed" ist, damit der Datensatz nur abgerufen werden, kann, wenn sich die Verordnung in Belieferung befindet oder der Workflow abgeschlossen ist.
 </requirement>
 
-<p>A_24179-01 - E-Rezept-Fachdienst - Task abrufen -  - Verordnung abrufen - erneuter Abruf VerordnungDer E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen Task mittels “/Task/<id>?ac=..." &lt;=</id></p>
-
 <!-- A_24179-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-46" title="E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - erneuter Abruf Verordnung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-79" title="E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - erneuter Abruf Verordnung" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende Institution den Task mit dem Geheimnis Task.identifier:Secret sowie im Bundle mit dem in Task.input mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType = 1 referenzierten QES-Datensatz als Binary-Ressource https://www.hl7.org/fhir/binary.html an den Aufrufer zurückgeben.
 </requirement>
 
 <!-- A_19226-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-47" title="E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Rückgabe Task inkl. Bundle im Bundle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-80" title="E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Rückgabe Task inkl. Bundle im Bundle" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen Task mittels "/Task/&lt;id&gt;?secret=..." durch eine abgebende Institution den Task, sofern er den Status "completed" hat, um das referenzierte, serverseitig signierte Quittungs-Bundle aus Task.output mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType = 3 als search.include im Ergebnis-Bundle ergänzen und die Ergebnismenge Task + Quittungs-Bundle an den Abgebenden zurückgeben, damit ein Abgebender, der ein konkretes E-Rezept beliefert hat, bei Bedarf genau dieses belieferte E-Rezept inkl. der Quittung erneut abrufen kann.
@@ -707,9 +702,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <!-- Push Notification -->
 <!-- A_28125 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-48" title="E-Rezept-Fachdienst - Task abrufen - Vertreter - Push Notification Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-81" title="E-Rezept-Fachdienst - Task abrufen - Vertreter - Push Notification Versicherter" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation GET /Task/&lt;id&gt; durch einen Versicherten mit der Rolle oid_versicherter, sofern die KVNR des Aufrufenden ungleich der KVNR in Task.for ist, den Push Notification Prozess für den Trigger mit der ChannelId "erp.task.vertreter" und den Versicherten mit der KVNR = Task.for initiieren.
@@ -720,18 +715,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicherten zur Verfügung. Die PATCH-Operation führt zu keiner Statusänderung des Tasks.</p>
 
 <!-- A_27548 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-14" title="E-Rezept-Fachdienst – Task markieren - alles Markieren verbieten" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-82" title="E-Rezept-Fachdienst – Task markieren - alles Markieren verbieten" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
      Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-Operation PATCH auf den Endpunkt /Task ohne Angabe einer &lt;id&gt; für eine konkrete Ressource mit dem HTTP-Fehlercode 405 ablehnen, um das Markieren mehrerer Ressourcen über einen Request zu verhindern.
 </requirement>
 
 <!-- A_27549 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-15" title="E-Rezept-Fachdienst - Task markieren - Versicherter - Rollenprüfung Versicherter markiert Rezepte" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-83" title="E-Rezept-Fachdienst - Task markieren - Versicherter - Rollenprüfung Versicherter markiert Rezepte" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produktgutachten" />
     </actor>
      Der E-Rezept-Fachdienst MUSS bei Aufruf der HTTP-PATCH-Operation auf den Endpunkt /Task/&lt;id&gt; sicherstellen, dass ausschließlich Versicherte in der Rolle: 
@@ -742,9 +737,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_27550 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-16" title="E-Rezept-Fachdienst -Task markieren -Versicherter - Prüfung KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-84" title="E-Rezept-Fachdienst -Task markieren -Versicherter - Prüfung KVNR" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
      Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die im gespeicherten Datensatz in Task.for.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit den Aufruf mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich der begünstigte Versicherte als Berechtigter einen Task ändert.
@@ -791,7 +786,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 13:02+0000">2026-03-09</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 10, 2026 13:14+0000">2026-03-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

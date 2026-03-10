@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"16.6.2"}
-    h3,h4,h5,h6{--heading-prefix:"16.6.2"}</style>
+    <style type="text/css">h2{--heading-prefix:"15.6.2"}
+    h3,h4,h5,h6{--heading-prefix:"15.6.2"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -122,10 +122,10 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="audit-service.html">Zugriffsprotokollierung</a>
+        <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
       </li>
       <li>
-        <a href="data-security.html">Datenschutz und Sicherheit</a>
+        <a href="audit-service.html">Zugriffsprotokollierung</a>
       </li>
       <li>
         <a href="fhir-validate.html">FHIR-Validierung</a>
@@ -155,9 +155,6 @@
       <li>
         <a href="menu-technische-umsetzung-paging.html">Paginierung</a>
       </li>
-      <li>
-        <a href="menu-technische-umsetzung-validation.html">FHIR-Validierung</a>
-      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -175,6 +172,9 @@
   </li>
   <li>
     <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+  <li>
+    <a href="requirement-mapping-old-to-new.html">Anforderungsmapping</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -220,7 +220,7 @@ Implementation Guide<br /> E-Rezept-Workflow Core
 
             <a href="#bottom">unten</a>
 
-          | <a href="artifacts.html">nächste&gt;</a>
+          | <a href="query-api-channels.html">nächste&gt;</a>
 
           </span>
 
@@ -284,7 +284,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </figure>
 
 <!-- A_22709-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-439" title="E-Rezept-FdV: Einwilligung erteilen - Einwilligungstext" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-213" title="E-Rezept-FdV: Einwilligung erteilen - Einwilligungstext" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung" />
@@ -293,7 +293,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22163-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-440" title="E-Rezept-FdV: Einwilligung erteilen - Einwilligung eingeben" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-214" title="E-Rezept-FdV: Einwilligung erteilen - Einwilligung eingeben" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung" />
@@ -302,7 +302,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22165-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-441" title="E-Rezept-FdV: Einwilligung erteilen - Consent Ressource erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-215" title="E-Rezept-FdV: Einwilligung erteilen - Consent Ressource erstellen" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest" />
@@ -316,7 +316,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22166-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-442" title="E-Rezept-FdV: Einwilligung erteilen - Speicherrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-216" title="E-Rezept-FdV: Einwilligung erteilen - Speicherrequest" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest" />
@@ -342,7 +342,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </figure>
 
 <!-- A_22168-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-443" title="E-Rezept-FdV: Einwilligungsinformation abrufen - Abfragerequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-217" title="E-Rezept-FdV: Einwilligungsinformation abrufen - Abfragerequest" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest" />
@@ -370,7 +370,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </figure>
 
 <!-- A_22169-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-444" title="E-Rezept-FdV: Einwilligung widerrufen - Widerruf eingeben" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-218" title="E-Rezept-FdV: Einwilligung widerrufen - Widerruf eingeben" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung" />
@@ -379,7 +379,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22330-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-445" title="E-Rezept-FdV: Einwilligung widerrufen - Bestätigung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-219" title="E-Rezept-FdV: Einwilligung widerrufen - Bestätigung" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung" />
@@ -388,7 +388,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22171-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-446" title="E-Rezept-FdV: Einwilligung widerrufen - Löschrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-220" title="E-Rezept-FdV: Einwilligung widerrufen - Löschrequest" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest" />
@@ -433,7 +433,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="artifacts.html">nächste&gt;</a>
+                <a href="query-api-channels.html">nächste&gt;</a>
 
               </td>
             </tr>
@@ -443,7 +443,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 13:02+0000">2026-03-09</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 10, 2026 13:14+0000">2026-03-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

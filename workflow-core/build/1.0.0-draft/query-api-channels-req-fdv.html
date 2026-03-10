@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>FdV-Anforderungen: channels-Query - Implementation Guide E-Rezept-Workflow Core v1.0.0-draft</title>
+    <title>FdV-Anforderungen: Channels-Query - Implementation Guide E-Rezept-Workflow Core v1.0.0-draft</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"11.8.2"}
-    h3,h4,h5,h6{--heading-prefix:"11.8.2"}</style>
+    <style type="text/css">h2{--heading-prefix:"15.7.2"}
+    h3,h4,h5,h6{--heading-prefix:"15.7.2"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -122,10 +122,10 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="audit-service.html">Zugriffsprotokollierung</a>
+        <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
       </li>
       <li>
-        <a href="data-security.html">Datenschutz und Sicherheit</a>
+        <a href="audit-service.html">Zugriffsprotokollierung</a>
       </li>
       <li>
         <a href="fhir-validate.html">FHIR-Validierung</a>
@@ -134,7 +134,26 @@
         <a href="ttl.html">Löschfristen</a>
       </li>
       <li>
+        <a href="error-codes.html">Fehlercodes</a>
+      </li>
+      <li>
         <a href="verbindungsaufbau-client.html">Verbindungsaufbau von Clientsystemen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Technische Funktionsmerkmale
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-technische-umsetzung-epa-ms.html">ePA Medication Service</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-push.html">Push Notification</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-paging.html">Paginierung</a>
       </li>
     </ul>
   </li>
@@ -153,6 +172,9 @@
   </li>
   <li>
     <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+  <li>
+    <a href="requirement-mapping-old-to-new.html">Anforderungsmapping</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -190,7 +212,7 @@ Implementation Guide<br /> E-Rezept-Workflow Core
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-query-api.html'><b>Query API</b></a></li><li><a href='query-api-channels.html'><b>Query API: channels</b></a></li><li><b>FdV-Anforderungen: channels-Query</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-query-api.html'><b>Query API</b></a></li><li><a href='query-api-channels.html'><b>Query API: Channels</b></a></li><li><b>FdV-Anforderungen: Channels-Query</b></li>
 
           <span style="float:right;">
 
@@ -198,7 +220,7 @@ Implementation Guide<br /> E-Rezept-Workflow Core
 
             <a href="#bottom">unten</a>
 
-          | <a href="artifacts.html">nächste&gt;</a>
+          | <a href="query-api-pushers.html">nächste&gt;</a>
 
           </span>
 
@@ -220,7 +242,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   
-  <h2>FdV-Anforderungen: channels-Query</h2>
+  <h2>FdV-Anforderungen: Channels-Query</h2>
   
 
 
@@ -243,9 +265,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Die Funktionalität zu Push Notification für FdVs ist anwendungsübergreifend in [gemF_PushNotification] beschrieben. In diesem Kapitel werden die zusätzlichen E-Rezept spezifischen Anforderungen beschrieben.</p>
 
 <!-- A_28123 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-441" title="E-Rezept-FdV: Push Notifications - Channelkonfiguration - OpenAPI" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-101" title="E-Rezept-FdV: Push Notifications - Channelkonfiguration - OpenAPI" version="0">
     <meta lockversion="false" />
-    <actor name="eRP_FdV">
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest" />
     </actor>
     Das E-Rezept-FdV MUSS, wenn es den Anwendungsfall "Push Notifications" umsetzt, für die Registrierung und Verwaltung der Channels für die FdV-Instanzen des Versicherten am E-Rezept-Fachdienst die Operationen gemäß [OpenAPI_FD] verwenden.
@@ -282,7 +304,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="artifacts.html">nächste&gt;</a>
+                <a href="query-api-pushers.html">nächste&gt;</a>
 
               </td>
             </tr>
@@ -292,7 +314,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Mar 5, 2026 21:58+0000">2026-03-05</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 10, 2026 13:14+0000">2026-03-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"13"}
-    h3,h4,h5,h6{--heading-prefix:"13"}</style>
+    <style type="text/css">h2{--heading-prefix:"12"}
+    h3,h4,h5,h6{--heading-prefix:"12"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -122,10 +122,10 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="audit-service.html">Zugriffsprotokollierung</a>
+        <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
       </li>
       <li>
-        <a href="data-security.html">Datenschutz und Sicherheit</a>
+        <a href="audit-service.html">Zugriffsprotokollierung</a>
       </li>
       <li>
         <a href="fhir-validate.html">FHIR-Validierung</a>
@@ -155,9 +155,6 @@
       <li>
         <a href="menu-technische-umsetzung-paging.html">Paginierung</a>
       </li>
-      <li>
-        <a href="menu-technische-umsetzung-validation.html">FHIR-Validierung</a>
-      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -175,6 +172,9 @@
   </li>
   <li>
     <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+  <li>
+    <a href="requirement-mapping-old-to-new.html">Anforderungsmapping</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -220,7 +220,7 @@ Implementation Guide<br /> E-Rezept-Workflow Core
 
             <a href="#bottom">unten</a>
 
-          | <a href="menu-technische-umsetzung-validation.html">nächste&gt;</a>
+          | <a href="menu-technische-umsetzung-subscription.html">nächste&gt;</a>
 
           </span>
 
@@ -271,9 +271,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Zu unterscheiden sind drei verschiedene Mechanismen: Sortierung, Filterung und Pagination. Die angefragten Funktionen sind jeweils auf einen Konkreten Endpunkt anzuwenden. Es ist möglich diese Funktionen miteinander zu kombinieren, sodass z.B. eine Anfrage sortiert und gefiltert wird.</p>
 
 <!-- A_24434 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-500" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Betroffene Endpunkte" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-292" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Betroffene Endpunkte" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
      Der E-Rezept-Fachdienst MUSS das Konzept zur Handhabung der Rückgabe von mehreren FHIR-Objekten auf folgende Endpunkte anwenden: Tabelle #: TAB_eRPFD_021 Endpunkte des E-Rezept-Fachdienst, die das Konzept zur Handhabung der Rückgabe von mehreren FHIR-Objekten bereitstellen müssen 
@@ -325,9 +325,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Für jeden dieser Ressourcen gelten dann Kriterien, nach denen sortiert und gefiltert werden kann.</p>
 
 <!-- A_24436-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-501" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Filter- und Sortierkriterien" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-293" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Filter- und Sortierkriterien" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
      Der E-Rezept-Fachdienst MUSS für die Sortierung bei der Handhabung der Rückgabe von mehreren FHIR-Objekten den FHIR-Suchparameter "_sort" unterstützen und für die folgenden Ressourcen entsprechende Such- und Sortierkriterien bereitstellen:
@@ -463,18 +463,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Es können mehrere Sortierkriterien angegeben werden. Bei der Sortierung sortiert der E-Rezept-Fachdienst dann zuerst nach dem ersten, dann zweiten, usw. Kriterium.</p>
 
 <!-- A_24437 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-502" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Sortieren von Einträgen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-294" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Sortieren von Einträgen" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
      Der E-Rezept-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Sortierung nach mehreren Kriterien ermöglichen, indem entsprechend der Reihenfolge der angegebenen Kriterien sortiert wird.
 </requirement>
 
 <!-- A_24438 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-503" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Sortieren von Einträgen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-295" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Sortieren von Einträgen" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
      Der E-Rezept-Fachdienst MUSS für die Sortierung bei der Handhabung der Rückgabe von mehreren FHIR-Objekten folgende Ressourcen nach folgenden Kriterien aufsteigend sortieren, wenn der Client keine Sortierung im Request angefragt hat: 
@@ -516,9 +516,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Standardmäßig werden die Einträge aufsteigend sortiert. Wenn diese Reihenfolge umgekehrt werden soll, kann ein “-“ vor das Sortierkriterium gestellt werden.</p>
 
 <!-- A_24440 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-504" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Sortierreihenfolge der Einträge" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-296" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Sortierreihenfolge der Einträge" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
      Der E-Rezept-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Sortierreihenfolge umkehren, wenn der Client das Präfix "-" am Sortierkriterium angibt.
@@ -529,9 +529,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Für den Datentyp “date” sollen folgende Filterkriterien als URL-Parameter unterstützt werden:</p>
 
 <!-- A_25515 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-505" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Filteroperatoren für Datumsabfragen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-297" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Filteroperatoren für Datumsabfragen" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
      Der E-Rezept-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten folgende Filteroperatoren für Suchkriterien anbieten, deren Datentyp "date" ist: 
@@ -600,9 +600,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Neben Angaben zur Paginierung übermittelt der Client auch Angaben zur Filterung und Sortierung, diese müssen bei der Erzeugung der Link Relations erhalten bleiben.</p>
 
 <!-- A_24441-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-506" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - URL-Parameter für Paginierung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-298" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - URL-Parameter für Paginierung" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
      Der E-Rezept-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Paginierung nach FHIR ermöglichen und folgende URL-Parameter unterstützen: 
@@ -630,9 +630,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_24442-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-507" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Link Relations für Paginierung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-299" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Link Relations für Paginierung" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
      Der E-Rezept-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten folgende Link Relations unter Bundle.link generieren, sofern diese erzeugt werden können: 
@@ -660,9 +660,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_24443-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-508" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Paginierung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-300" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Paginierung" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
      Der E-Rezept-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Paginierung nach FHIR für folgende Endpunkte mit den jeweiligen Parametern unterstützen 
@@ -714,9 +714,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_24444 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-509" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Erhalten von URL-Parametern" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-301" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Erhalten von URL-Parametern" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
      Der E-Rezept-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten und Generierung von URLs der Link Relations die vom Client angegebenen Filter- und Sortierkriterien verwerten und erhalten.
@@ -753,7 +753,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="menu-technische-umsetzung-validation.html">nächste&gt;</a>
+                <a href="menu-technische-umsetzung-subscription.html">nächste&gt;</a>
 
               </td>
             </tr>
@@ -763,7 +763,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 13:02+0000">2026-03-09</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 10, 2026 13:14+0000">2026-03-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>FD-Anforderungen: AuditEvent-Query - Implementation Guide E-Rezept-Workflow Core v1.0.0-draft</title>
+    <title>Server-Anforderungen: AuditEvent-Query - Implementation Guide E-Rezept-Workflow Core v1.0.0-draft</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"16.3.1"}
-    h3,h4,h5,h6{--heading-prefix:"16.3.1"}</style>
+    <style type="text/css">h2{--heading-prefix:"15.3.1"}
+    h3,h4,h5,h6{--heading-prefix:"15.3.1"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -122,10 +122,10 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="audit-service.html">Zugriffsprotokollierung</a>
+        <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
       </li>
       <li>
-        <a href="data-security.html">Datenschutz und Sicherheit</a>
+        <a href="audit-service.html">Zugriffsprotokollierung</a>
       </li>
       <li>
         <a href="fhir-validate.html">FHIR-Validierung</a>
@@ -155,9 +155,6 @@
       <li>
         <a href="menu-technische-umsetzung-paging.html">Paginierung</a>
       </li>
-      <li>
-        <a href="menu-technische-umsetzung-validation.html">FHIR-Validierung</a>
-      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -175,6 +172,9 @@
   </li>
   <li>
     <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+  <li>
+    <a href="requirement-mapping-old-to-new.html">Anforderungsmapping</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -212,7 +212,7 @@ Implementation Guide<br /> E-Rezept-Workflow Core
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-query-api.html'><b>Query API</b></a></li><li><a href='query-api-auditevent.html'><b>Query API: AuditEvent</b></a></li><li><b>FD-Anforderungen: AuditEvent-Query</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-query-api.html'><b>Query API</b></a></li><li><a href='query-api-auditevent.html'><b>Query API: AuditEvent</b></a></li><li><b>Server-Anforderungen: AuditEvent-Query</b></li>
 
           <span style="float:right;">
 
@@ -242,7 +242,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   
-  <h2>FD-Anforderungen: AuditEvent-Query</h2>
+  <h2>Server-Anforderungen: AuditEvent-Query</h2>
   
 
 
@@ -265,9 +265,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für die AuditEvent-Query-Endpunkte.</p>
 
 <!-- A_19402 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-291" title="E-Rezept-Fachdienst - unzulässige Operationen AuditEvent" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-97" title="E-Rezept-Fachdienst - unzulässige Operationen AuditEvent" version="0">
   <meta lockversion="false" />
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produkttest" />
   </actor>
   Der E-Rezept-Fachdienst MUSS alle Zugriffe auf die Ressource AuditEvent mittels der HTTP-Operationen PUT, PATCH, HEAD, DELETE und POST unterbinden, damit keine unzulässigen Operationen auf den Protokolldaten ausgeführt werden können.
@@ -276,27 +276,27 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="get-auditevent">GET /AuditEvent</h3>
 
 <!-- A_19395 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-292" title="E-Rezept-Fachdienst - AuditEvent lesen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-98" title="E-Rezept-Fachdienst - AuditEvent lesen - Rollenprüfung" version="0">
   <meta lockversion="false" />
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produkttest" />
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /AuditEvent und auf einen konkreten über &lt;id&gt; adressierten /AuditEvent/&lt;id&gt; sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit Protokolleinträge nicht durch Unberechtigte ausgelesen werden können.
 </requirement>
 
 <!-- A_19396 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-293" title="E-Rezept-Fachdienst - AuditEvent lesen - Filter KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-99" title="E-Rezept-Fachdienst - AuditEvent lesen - Filter KVNR" version="0">
   <meta lockversion="false" />
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produkttest" />
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /AuditEvent die dem Versicherten zugeordneten AuditEvent-Ressourcen anhand der KVNR des Versicherten im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, die in AuditEvent.entity.name die entsprechende KVNR des begünstigten Patienten referenziert haben, damit ausschließlich Versicherte ihre eigenen Protokolleinträge einsehen können.
 </requirement>
 
 <!-- A_19397 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-294" title="E-Rezept-Fachdienst - AuditEvent lesen - Rückgabe im Bundle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-100" title="E-Rezept-Fachdienst - AuditEvent lesen - Rückgabe im Bundle" version="0">
   <meta lockversion="false" />
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produkttest" />
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /AuditEvent die Ergebnisliste der AuditEvent-Ressourcen bei mehr als einem Eintrag als Ergebnis-Bundle an den Aufrufer zurückgeben, damit der Versicherte eine vollständige Einsicht in das Zugriffsprotokoll erhält.
@@ -343,7 +343,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 13:02+0000">2026-03-09</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 10, 2026 13:14+0000">2026-03-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

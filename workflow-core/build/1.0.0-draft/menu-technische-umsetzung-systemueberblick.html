@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script src="assets/js/mermaid.js" type="text/javascript"></script>
     <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
-    <style type="text/css">h2{--heading-prefix:"12"}
-    h3,h4,h5,h6{--heading-prefix:"12"}</style>
+    <style type="text/css">h2{--heading-prefix:"11"}
+    h3,h4,h5,h6{--heading-prefix:"11"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
 
@@ -122,10 +122,10 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="audit-service.html">Zugriffsprotokollierung</a>
+        <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
       </li>
       <li>
-        <a href="data-security.html">Datenschutz und Sicherheit</a>
+        <a href="audit-service.html">Zugriffsprotokollierung</a>
       </li>
       <li>
         <a href="fhir-validate.html">FHIR-Validierung</a>
@@ -155,9 +155,6 @@
       <li>
         <a href="menu-technische-umsetzung-paging.html">Paginierung</a>
       </li>
-      <li>
-        <a href="menu-technische-umsetzung-validation.html">FHIR-Validierung</a>
-      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -175,6 +172,9 @@
   </li>
   <li>
     <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+  <li>
+    <a href="requirement-mapping-old-to-new.html">Anforderungsmapping</a>
   </li>
 </ul>
             </div>    <!-- /.nav-collapse -->
@@ -272,9 +272,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Der E-Rezept-Fachdienst realisiert die Vertraulichkeit und Integrität der verarbeiteten Daten über das Konzept der vertrauenswürdigen Ausführungsumgebung (VAU), die eine durchgängige Verschlüsselung der E-Rezepte und der dazu gehörigen Daten aus einer Kombination kryptografischer Verfahren während des Transports, der vertrauenswürdigen Verarbeitung und in der verschlüsselten Persistierung der Daten sicherstellt.</p>
 
-<p>Abbildung 1: Systemüberblick</p>
 <figure>
-    <div style="--box-width: 700px; margin-bottom: 30px;" class="gem-ig-img-container"><a name="l410">​</a>
+    <div style="--box-width: 700px; margin-bottom: 30px;" class="gem-ig-img-container"><a name="l407">​</a>
         <img src="./vau-erp-fd.png" alt="VAU des E-Rezept-Fachdienstes" style="width: 100%;"/>
     </div>
     <figcaption><strong>Abbildung: </strong>Systemüberblick</figcaption>
@@ -286,7 +285,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Der E-Rezept-Fachdienst stellt Schnittstellen für die Verwaltung von E-Rezepten und für den Nachrichtenaustausch bereit. Diese werden von Leistungserbringerinstitutionen, Kostenträger und Versicherten genutzt, die über ihre jeweiligen Clientsysteme auf den E-Rezept-Fachdienst zugreifen.</p>
 
 <figure>
-    <div style="--box-width: 700px; margin-bottom: 30px;" class="gem-ig-img-container"><a name="l432">​</a>
+    <div style="--box-width: 700px; margin-bottom: 30px;" class="gem-ig-img-container"><a name="l429">​</a>
         <img src="./systemkontext.png" alt="Systemkontext" style="width: 100%;"/>
     </div>
     <figcaption><strong>Abbildung: </strong>Systemkontext E-Rezept-Fachdienst</figcaption>
@@ -303,26 +302,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="zerlegung-des-produkttyps">Zerlegung des Produkttyps</h3>
 <p>Der E-Rezept-Fachdienst verwaltet E-Rezepte über einen medizinischen Workflow. Dabei muss er die Vertraulichkeit und Integrität der verarbeiteten Daten sicherstellen. Daraus ergeben sich Sicherheitsanforderungen an die Betriebsumgebung, an die Fachlogik der Prozessverarbeitung sowie an die Ausführungsumgebung des Programmcodes.</p>
 
-<requirement conformance="SHALL" title="Anbieter E-Rezept-Fachdienst Speicherung Schlüsselmaterial in HSM" version="0" key="IG-TIFLOW-CORE-497">
-    <meta lockversion="false"/>
-    <actor name="Anb_eRp_FD">
-        <testProcedure id="Sich.techn. Eignung: Gutachten (Anbieter)"></testProcedure>
-    </actor>
-    <description>
-        Der Anbieter des E-Rezept-Fachdienstes MUSS das private Schlüsselmaterial für kryptografische Verfahren (Entschlüsselung, Signaturen) in einem HSM speichern, dessen Eignung durch eine erfolgreiche Evaluierung nachgewiesen wurde. Als Evaluierungsschemata kommen dabei Common Criteria, ITSEC oder Federal Information Processing Standard (FIPS) in Frage.
-
-        Die Prüftiefe MUSS mindestens 
-        <ul>
-            <li>FIPS 140-2 Level 3,</li>
-            <li>Common Criteria EAL 4+ mit hohem Angriffspotenzial</li>
-            <li>oder ITSEC E3 der Stärke "hoch"</li> 
-        </ul>
-        entsprechen.
-    </description>
-      <!-- A_19586 -->
-</requirement>
-
-<p>Eine über die Schlüsselspeicherung in einem Hardware Security Module (HSM) hinausgehende Anforderung an die Zerlegung des E-Rezept-Fachdienstes gibt es aus funktionaler Sicht nicht.</p>
 
 
 
@@ -364,7 +343,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 13:02+0000">2026-03-09</span>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 10, 2026 13:14+0000">2026-03-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

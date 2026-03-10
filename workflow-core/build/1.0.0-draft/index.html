@@ -122,10 +122,10 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="audit-service.html">Zugriffsprotokollierung</a>
+        <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
       </li>
       <li>
-        <a href="data-security.html">Datenschutz und Sicherheit</a>
+        <a href="audit-service.html">Zugriffsprotokollierung</a>
       </li>
       <li>
         <a href="fhir-validate.html">FHIR-Validierung</a>
@@ -155,9 +155,6 @@
       <li>
         <a href="menu-technische-umsetzung-paging.html">Paginierung</a>
       </li>
-      <li>
-        <a href="menu-technische-umsetzung-validation.html">FHIR-Validierung</a>
-      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -175,6 +172,9 @@
   </li>
   <li>
     <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+  <li>
+    <a href="requirement-mapping-old-to-new.html">Anforderungsmapping</a>
   </li>
 </ul>
             </div>    <!-- /.nav-collapse -->
@@ -272,7 +272,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         
           Draft
           
-            as of 2026-03-09
+            as of 2026-03-10
           
         
       </td>
@@ -318,17 +318,18 @@ werden.</p>
 
 <h3 id="anforderungen-zur-umsetzung-des-igs">Anforderungen zur Umsetzung des IGs</h3>
 
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst: Anwendung des IG 'E-Rezept-Workflow Core'" version="0">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst: Anwendung des IG 'E-Rezept-Workflow Core'" version="0" key="IG-TIFLOW-CORE-199">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Herstellererklärung"></testProcedure>
     </actor>
     Der E-Rezept-Fachdienst MUSS den Implementation Guide "E-Rezept-Workflow Core" umsetzen.
 </requirement>
 
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst: Umsetzung 'Implementation Guide E-Rezept-Workflow Core'" version="0">
+  <!-- A_20745-01, A_19299-02, A_19298-01, A_22483-01, A_19324-01 -->
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst: Umsetzung 'Implementation Guide E-Rezept-Workflow Core'" version="0" key="IG-TIFLOW-CORE-200">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Herstellererklärung"></testProcedure>
     </actor>
     Der E-Rezept-Fachdienst MUSS zur Umsetzung des Implementation Guides "E-Rezept-Workflow Core" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind.
@@ -338,12 +339,12 @@ werden.</p>
 
 <ul>
   <li><a href="./audit-service.html">Zugriffsprotokollierung</a></li>
-  <li><a href="./data-security.html">Datenschutz und Sicherheit</a></li>
+  <li><a name="l482">​</a><a href="./data-security.html">Datenschutz und Sicherheit</a></li>
   <li><a href="./fhir-validate.html">FHIR-Validierung</a></li>
   <li><a href="./ttl.html">Löschfristen</a></li>
   <li><a href="./verbindungsaufbau-client.html">Verbindungsaufbau Clientsysteme (über IDP-Dienst)</a></li>
-  <li><a name="l496">​</a><a href="./query-api.html">Query API (modulübergreifend)</a></li>
-  <li><a name="l500">​</a><a href="./operation-api.html">Operation API (modulübergreifend)</a></li>
+  <li><a name="l498">​</a><a href="./query-api.html">Query API (modulübergreifend)</a></li>
+  <li><a name="l502">​</a><a href="./operation-api.html">Operation API (modulübergreifend)</a></li>
   <li><a href="./artifacts.html">FHIR-Artefakte</a></li>
 </ul>
 
@@ -393,7 +394,7 @@ prozessspezifische Details werden in den jeweiligen IGs dokumentiert.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 13:02+0000">2026-03-09</span>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 10, 2026 13:14+0000">2026-03-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

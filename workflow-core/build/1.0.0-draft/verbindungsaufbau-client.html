@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"9"}
-    h3,h4,h5,h6{--heading-prefix:"9"}</style>
+    <style type="text/css">h2{--heading-prefix:"8"}
+    h3,h4,h5,h6{--heading-prefix:"8"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -122,10 +122,10 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="audit-service.html">Zugriffsprotokollierung</a>
+        <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
       </li>
       <li>
-        <a href="data-security.html">Datenschutz und Sicherheit</a>
+        <a href="audit-service.html">Zugriffsprotokollierung</a>
       </li>
       <li>
         <a href="fhir-validate.html">FHIR-Validierung</a>
@@ -155,9 +155,6 @@
       <li>
         <a href="menu-technische-umsetzung-paging.html">Paginierung</a>
       </li>
-      <li>
-        <a href="menu-technische-umsetzung-validation.html">FHIR-Validierung</a>
-      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -175,6 +172,9 @@
   </li>
   <li>
     <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+  <li>
+    <a href="requirement-mapping-old-to-new.html">Anforderungsmapping</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -285,7 +285,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Zur Nutzung des IDP-Dienstes gelten einige grundlegende Voraussetzungen, welche das PS erfüllen muss.</p>
 
 <!-- A_20654-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-447" title="CS: Registrierung des Clientsystems des E-Rezept-Fachdienstes" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-221" title="CS: Registrierung des Clientsystems des E-Rezept-Fachdienstes" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung" />
@@ -303,7 +303,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_20656-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-448" title="CS: Prüfung der Signatur des Discovery Document" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-222" title="CS: Prüfung der Signatur des Discovery Document" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung" />
@@ -329,7 +329,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Bei Aufruf der Funktion “VerifyDocument” an der Außenschnittstelle des Konnektors ist es nicht möglich, direkt auch eine Prüfung des Zertifikatstyps und der Rollen-OID durchzuführen.</p>
 
 <!-- A_20657-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-449" title="CS: Prüfung Typ und Rolle des Signaturzertifikats des Discovery Document" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-223" title="CS: Prüfung Typ und Rolle des Signaturzertifikats des Discovery Document" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung" />
@@ -349,7 +349,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Hinweis: Zur Durchführung der Prüfungen gemäß A_20657-* und ähnlicher Anforderungen ist zu verifizieren, ob im Feld certificatePolicies (2.5.29.32) des Zertifikates der richtige Zertifikatstyp FD.SIG (1.2.276.0.76.4.203) gemäß [gemSpec_OID#Tabelle Tab_PKI_405] eingetragen ist und sich in der Admission (1.3.36.8.3.3) des Zertifikats die richtige “oid_idpd” (1.2.276.0.76.4.260) findet.</p>
 
 <!-- A_20658-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-450" title="CS: Sicheres Löschen der Token" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-224" title="CS: Sicheres Löschen der Token" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung" />
@@ -369,7 +369,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Darüber hinaus gelten für die Kommunikation mit dem IDP-Dienst die Vorgaben aus 5.1.1 - Kommunikation zu den Diensten der TI.</p>
 
 <!-- A_21337-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-451" title="CS: Löschung von TOKEN bei zeitlichem Ablauf" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-225" title="CS: Löschung von TOKEN bei zeitlichem Ablauf" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung" />
@@ -387,7 +387,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_21338-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-452" title="CS: Sichere Speicherung der Token" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-226" title="CS: Sichere Speicherung der Token" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung" />
@@ -411,7 +411,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Im ersten Schritt erzeugt sich das Primärsystem einen zufälligen “CODE_VERFIER” und bildet darüber den Hash “CODE_CHALLENGE”. Mit dessen Hilfe kann es sich im späteren Verlauf als valider Empfänger des Tokens ausweisen.</p>
 
 <!-- A_20659-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-453" title="CS: Erzeugen des CODE_VERIFIER" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-227" title="CS: Erzeugen des CODE_VERIFIER" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung" />
@@ -429,7 +429,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_20660-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-454" title="CS: Erzeugen des Hash-Werts des CODE_VERIFIER" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-228" title="CS: Erzeugen des Hash-Werts des CODE_VERIFIER" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung" />
@@ -451,7 +451,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Anschließend werden der gehashte Zufallswert und die notwendigen Angaben als “CODE_CHALLENGE” beim Authorization-Endpunkt des IDP-Dienstes eingereicht.</p>
 
 <!-- A_20661-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-455" title="CS: Anfrage des AUTHORIZATION_CODE für ein ACCESS_TOKEN" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-229" title="CS: Anfrage des AUTHORIZATION_CODE für ein ACCESS_TOKEN" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung" />
@@ -481,7 +481,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Der Authorization-Endpunkt liefert als Response zur Anfrage des “AUTHORIZATION_CODE” einen “CHALLENGE_TOKEN”, um die Identität der LEI zu bestätigen, sowie den “consent” des im “scope” angefragten Fachdienstes.</p>
 
 <!-- A_20662-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-456" title="CS: Annahme des user_consent und des CHALLENGE_TOKEN" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-230" title="CS: Annahme des user_consent und des CHALLENGE_TOKEN" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung" />
@@ -499,7 +499,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_20663-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-457" title="CS: Annahme des user_consent und des CHALLENGE_TOKEN" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-231" title="CS: Annahme des user_consent und des CHALLENGE_TOKEN" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung" />
@@ -519,7 +519,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Das Clientsystem verwendet nun die AUT-Identität der SM-B der Institution und deren Konnektor/Basis Consumer, um das gehashte “CHALLENGE_TOKEN” des IDP-Dienstes zu signieren. Wenn es sich um eine erstmalige Anmeldung des Benutzers bei diesem Fachdienst handelt, werden diesem darüber hinaus die für den Zugriff übermittelten Daten der LEI angezeigt.</p>
 
 <!-- A_20664 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-458" title="Bestätigung des Consent" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-232" title="Bestätigung des Consent" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung" />
@@ -537,7 +537,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Hinweis: Die erfolgte Zustimmung des Nutzers darf gespeichert werden und weitere Abfragen können entfallen.</p>
 
 <!-- A_20665-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-459" title="CS: Signatur der Challenge des IdP-Dienstes" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-233" title="CS: Signatur der Challenge des IdP-Dienstes" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung" />
@@ -561,7 +561,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Für weitere Informationen siehe Kapitel “Als Nutzer gegenüber der Telematikinfrastruktur authentisieren” in der API-Schnittstelle [E-Rezept API Dokumentation].</p>
 
 <!-- A_20666-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-460" title="Auslesen des Authentisierungszertifikates" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-234" title="Auslesen des Authentisierungszertifikates" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung" />
@@ -580,7 +580,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Anschließend werden die signierte “challenge” und das verwendete Authentisierungszertifikat der Smartcard an den IDP-Dienst übermittelt.</p>
 
 <!-- A_20667-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-461" title="CS: Response auf die Challenge des Authorization-Endpunktes" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-235" title="CS: Response auf die Challenge des Authorization-Endpunktes" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung" />
@@ -606,7 +606,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Das Clientsystem empfängt nun diesen “AUTHORIZATION_CODE” vom IDP-Dienst und reicht ihn zusammen mit dem KEY_VERIFIER beim Token-Endpunkt ein.</p>
 
 <!-- A_20668-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-462" title="CS: Annahme des AUTHORIZATION_CODE" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-236" title="CS: Annahme des AUTHORIZATION_CODE" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung" />
@@ -624,7 +624,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_21333-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-463" title="CS: Erzeugung des Token-Key" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-237" title="CS: Erzeugung des Token-Key" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung" />
@@ -642,7 +642,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_21334-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-463" title="CS: Erzeugung des KEY_VERIFIER" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-238" title="CS: Erzeugung des KEY_VERIFIER" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung" />
@@ -662,7 +662,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Hinweis: Der Aufbau des “KEY_VERIFIER” entspricht [gemSpec_IDP_Dienst#Kapitel 7.5 Token Request].</p>
 
 <!-- A_20671-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-463" title="CS: Einreichen des AUTHORIZATION_CODE beim Token-Endpunkt" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-239" title="CS: Einreichen des AUTHORIZATION_CODE beim Token-Endpunkt" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung" />
@@ -688,7 +688,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Das Primärsystem erhält nun den signierten “ID_TOKEN” und den “ACCESS_TOKEN” vom Token-Endpunkt und prüft die Signatur des “ID_TOKEN”.</p>
 
 <!-- A_20672-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-463" title="CS: Annahme des ID_TOKEN" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-240" title="CS: Annahme des ID_TOKEN" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung" />
@@ -708,7 +708,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Hinweis: Der Aufbau der Antwort und des “ID_TOKEN” entspricht [gemSpec_IDP_Dienst#Kapitel 7.6 Token Response].</p>
 
 <!-- A_20673-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-463" title="CS: Annahme des ACCESS_TOKEN" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-241" title="CS: Annahme des ACCESS_TOKEN" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung" />
@@ -728,7 +728,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Hinweis: Der Aufbau der Antwort und des “ACCESS_TOKEN” entspricht [gemSpec_IDP_Dienst#Kapitel 7.6 Token Response].</p>
 
 <!-- A_20674-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-463" title="CS: Formale Prüfung der Signatur des ID_TOKEN und des ACCESS_TOKEN" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-242" title="CS: Formale Prüfung der Signatur des ID_TOKEN und des ACCESS_TOKEN" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung" />
@@ -748,7 +748,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Zur Prüfung von Zertifikatstyp- und Rollen-OID siehe Hinweis zu A_20657-*.</p>
 
 <!-- A_20675-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-463" title="CS: Gültigkeitsprüfung des Signaturzertifikats des ACCESS_TOKEN innerhalb der TI" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-243" title="CS: Gültigkeitsprüfung des Signaturzertifikats des ACCESS_TOKEN innerhalb der TI" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung" />
@@ -812,7 +812,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 13:02+0000">2026-03-09</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 10, 2026 13:14+0000">2026-03-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

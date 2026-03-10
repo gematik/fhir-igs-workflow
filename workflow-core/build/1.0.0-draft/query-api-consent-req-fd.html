@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>FD-Anforderungen: Consent-Query - Implementation Guide E-Rezept-Workflow Core v1.0.0-draft</title>
+    <title>Server-Anforderungen: Consent-Query - Implementation Guide E-Rezept-Workflow Core v1.0.0-draft</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"16.6.1"}
-    h3,h4,h5,h6{--heading-prefix:"16.6.1"}</style>
+    <style type="text/css">h2{--heading-prefix:"15.6.1"}
+    h3,h4,h5,h6{--heading-prefix:"15.6.1"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -122,10 +122,10 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="audit-service.html">Zugriffsprotokollierung</a>
+        <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
       </li>
       <li>
-        <a href="data-security.html">Datenschutz und Sicherheit</a>
+        <a href="audit-service.html">Zugriffsprotokollierung</a>
       </li>
       <li>
         <a href="fhir-validate.html">FHIR-Validierung</a>
@@ -155,9 +155,6 @@
       <li>
         <a href="menu-technische-umsetzung-paging.html">Paginierung</a>
       </li>
-      <li>
-        <a href="menu-technische-umsetzung-validation.html">FHIR-Validierung</a>
-      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -175,6 +172,9 @@
   </li>
   <li>
     <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+  <li>
+    <a href="requirement-mapping-old-to-new.html">Anforderungsmapping</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -212,7 +212,7 @@ Implementation Guide<br /> E-Rezept-Workflow Core
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-query-api.html'><b>Query API</b></a></li><li><a href='query-api-consent.html'><b>Query API: Consent</b></a></li><li><b>FD-Anforderungen: Consent-Query</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-query-api.html'><b>Query API</b></a></li><li><a href='query-api-consent.html'><b>Query API: Consent</b></a></li><li><b>Server-Anforderungen: Consent-Query</b></li>
 
           <span style="float:right;">
 
@@ -242,7 +242,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   
-  <h2>FD-Anforderungen: Consent-Query</h2>
+  <h2>Server-Anforderungen: Consent-Query</h2>
   
 
 
@@ -270,9 +270,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für den Consent-Endpunkt.</p>
 
 <!-- A_22153 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-339" title="E-Rezept-Fachdienst - Consent - unzulässige Operationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-158" title="E-Rezept-Fachdienst - Consent - unzulässige Operationen" version="0">
   <meta lockversion="false" />
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produkttest" />
   </actor>
   Der E-Rezept-Fachdienst MUSS alle Zugriffe auf die Ressource Consent mittels der HTTP-Operationen PUT, PATCH, oder HEAD unterbinden, damit keine unzulässigen Operationen auf die Informationen zur Einwilligung ausgeführt werden können.
@@ -290,56 +290,63 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="post-consent">POST /Consent</h3>
 
 <!-- A_22161 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-340" title="E-Rezept-Fachdienst - Consent schreiben - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-159" title="E-Rezept-Fachdienst - Consent schreiben - Rollenprüfung" version="0">
   <meta lockversion="false" />
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produktgutachten" />
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am E-Rezept-Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit eine Einwilligung nicht durch Unberechtigte erteilt werden kann.
 </requirement>
 
 <!-- A_22289 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-341" title="E-Rezept-Fachdienst - Consent schreiben - Prüfung KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-160" title="E-Rezept-Fachdienst - Consent schreiben - Prüfung KVNR" version="0">
   <meta lockversion="false" />
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produkttest" />
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent sicherstellen, dass die KVNR im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests und die KVNR in Consent.patient.identifier übereinstimmen, damit eine Einwilligung für einen Versicherten nicht durch Dritte erteilt werden kann. Im Fehlerfall muss der Http-Request mit dem Http-Fehlercode 403 abgewiesen werden.
 </requirement>
 
 <!-- A_22351 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-342" title="E-Rezept-Fachdienst - Consent schreiben - FHIR-Validierung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-161" title="E-Rezept-Fachdienst - Consent schreiben - FHIR-Validierung" version="0">
   <meta lockversion="false" />
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produkttest" />
   </actor>
   Der E-Rezept-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource Consent übertragene Consent Ressource gegen das FHIR-Profil Consent prüfen und bei Nicht-Konformität das Anlegen der Ressource im E-Rezept-Fachdienst mit dem http-Status-Code 400 ablehnen, damit nur FHIR-valide Ressourcen in den E-Rezept-Fachdienst hochgeladen werden.
 </requirement>
 
 <!-- A_22162-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-343" title="E-Rezept-Fachdienst - Consent schreiben - nur eine Einwilligung pro KVNR und Einwilligungstyp" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-162" title="E-Rezept-Fachdienst - Consent schreiben - nur eine Einwilligung pro KVNR und Einwilligungstyp" version="0">
   <meta lockversion="false" />
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produkttest" />
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent sicherstellen, dass noch keine Consent Ressource für die KVNR im ACCESS_TOKEN und Consent.category.coding.code = &lt;Einwilligungstyp&gt; aus URL-Parameter category gespeichert ist, um maximal eine Einwilligung für den Versicherten für jeden Einwilligungstypen zu speichern. Im Fehlerfall muss der HTTP-Request mit dem HTTP-Fehlercode 409 abgewiesen werden.
 </requirement>
 
 <!-- A_27143 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-344" title="E-Rezept-Fachdienst - Consent schreiben - Zeitstempel setzen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-163" title="E-Rezept-Fachdienst - Consent schreiben - Zeitstempel setzen" version="0">
   <meta lockversion="false" />
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produkttest" />
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent den Zeitpunkt des erfolgreichen Operationsaufrufs in der Consent-Ressource unter .dateTime mit Sekundengenauigkeit hinterlegen.
 </requirement>
 
-<p>A_22350 - E-Rezept-Fachdienst - Consent schreiben – Persistieren&lt;=</p>
+<!-- A_22350 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-351" title="E-Rezept-Fachdienst - Consent schreiben – Persistieren" version="0">
+    <meta lockversion="false" />
+    <actor name="eRp_FD">
+        <testProcedure id="Produkttest" />
+    </actor>
+     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent – falls bei den Prüfungen keine Fehler aufgetreten sind, welche zum Abbruch der Operation führen – die übermittelte Ressource persistieren.
+</requirement>
 
 <!-- A_27143 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-345" title="E-Rezept-Fachdienst - Consent schreiben - Persistieren" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-164" title="E-Rezept-Fachdienst - Consent schreiben - Persistieren" version="0">
   <meta lockversion="false" />
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Herstellererklärung" />
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent, falls bei den Prüfungen keine Fehler aufgetreten sind, welche zum Abbruch der Operation führen, die übermittelte Ressource persistieren.
@@ -348,18 +355,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="get-consent">GET /Consent</h3>
 
 <!-- A_22159 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-346" title="E-Rezept-Fachdienst - Consent lesen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-165" title="E-Rezept-Fachdienst - Consent lesen - Rollenprüfung" version="0">
   <meta lockversion="false" />
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produktgutachten" />
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Consent sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am E-Rezept-Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit die Information zur Einwilligung nicht durch Unberechtigte ausgelesen werden kann.
 </requirement>
 
 <!-- A_22160 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-347" title="E-Rezept-Fachdienst - Consent lesen - Filter KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-166" title="E-Rezept-Fachdienst - Consent lesen - Filter KVNR" version="0">
   <meta lockversion="false" />
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produkttest" />
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Consent die dem Versicherten zugeordneten Consent-Ressourcen anhand der KVNR des Versicherten im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren und in den Response aufnehmen, die in Consent.Patient.identifier die entsprechende KVNR des Versicherten referenziert haben, damit ausschließlich Versicherte ihre eigenen Information zu Einwilligungen einsehen können.
@@ -368,27 +375,27 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="delete-consent">DELETE /Consent</h3>
 
 <!-- A_22154 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-348" title="E-Rezept-Fachdienst - Consent löschen - alles Löschen verbieten" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-167" title="E-Rezept-Fachdienst - Consent löschen - alles Löschen verbieten" version="0">
   <meta lockversion="false" />
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produkttest" />
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt /Consent ohne Angabe ?category mit dem HTTP-Fehlercode 405 ablehnen, um das Löschen mehrerer Ressourcen über einen Request zu verhindern.
 </requirement>
 
 <!-- A_22155 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-349" title="E-Rezept-Fachdienst - Consent löschen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-168" title="E-Rezept-Fachdienst - Consent löschen - Rollenprüfung" version="0">
   <meta lockversion="false" />
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produktgutachten" />
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt /Consent die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am E-Rezept-Fachdienst aufrufen dürfen, damit die Information zur Einwilligung nicht durch Unberechtigte gelöscht werden kann.
 </requirement>
 
 <!-- A_22874-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-350" title="E-Rezept-Fachdienst - Consent löschen - Prüfung category" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-169" title="E-Rezept-Fachdienst - Consent löschen - Prüfung category" version="0">
   <meta lockversion="false" />
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produkttest" />
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt /Consent prüfen, dass der für ?category angegebene Wert in den CodeSystemen 
@@ -404,9 +411,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- ToDo: A_27131 -> EU IG --></p>
 
 <!-- A_22158 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-351" title="E-Rezept-Fachdienst - Consent löschen - Ressource löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-170" title="E-Rezept-Fachdienst - Consent löschen - Ressource löschen" version="0">
   <meta lockversion="false" />
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produktgutachten" />
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt /Consent die Ressource löschen, bei der Consent.patient.identifier der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests sowie Consent.category.coding.code dem in ?category übermittelten Wert entspricht.
@@ -453,7 +460,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 13:02+0000">2026-03-09</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 10, 2026 13:14+0000">2026-03-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

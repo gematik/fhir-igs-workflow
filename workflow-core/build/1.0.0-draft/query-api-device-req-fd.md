@@ -1,4 +1,4 @@
-# FD-Anforderungen: Device-Query - Implementation Guide E-Rezept-Workflow Core v1.0.0-draft
+# Server-Anforderungen: Device-Query - Implementation Guide E-Rezept-Workflow Core v1.0.0-draft
 
 Implementation Guide
 
@@ -9,9 +9,9 @@ Version 1.0.0-draft - ci-build
 * [**Table of Contents**](toc.md)
 * [**Query API**](menu-schnittstellen-query-api.md)
 * [**Query API: Device**](query-api-device.md)
-* **FD-Anforderungen: Device-Query**
+* **Server-Anforderungen: Device-Query**
 
-## FD-Anforderungen: Device-Query
+## Server-Anforderungen: Device-Query
 
 Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für den Device-Query-Endpunkt.
 

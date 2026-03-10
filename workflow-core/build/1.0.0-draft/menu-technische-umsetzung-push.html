@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"7"}
-    h3,h4,h5,h6{--heading-prefix:"7"}</style>
+    <style type="text/css">h2{--heading-prefix:"6"}
+    h3,h4,h5,h6{--heading-prefix:"6"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -122,10 +122,10 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="audit-service.html">Zugriffsprotokollierung</a>
+        <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
       </li>
       <li>
-        <a href="data-security.html">Datenschutz und Sicherheit</a>
+        <a href="audit-service.html">Zugriffsprotokollierung</a>
       </li>
       <li>
         <a href="fhir-validate.html">FHIR-Validierung</a>
@@ -155,9 +155,6 @@
       <li>
         <a href="menu-technische-umsetzung-paging.html">Paginierung</a>
       </li>
-      <li>
-        <a href="menu-technische-umsetzung-validation.html">FHIR-Validierung</a>
-      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -175,6 +172,9 @@
   </li>
   <li>
     <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+  <li>
+    <a href="requirement-mapping-old-to-new.html">Anforderungsmapping</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -275,9 +275,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Der E-Rezept-Fachdienst erstellt ein Notification-Objekt für verschlüsselte Notifications wie in [OpenAPI_PushGateway] beschrieben. Der Nachrichteninhalt, auf den in diesem Kapitel verwiesen wird, ist der Inhalt des Ciphertexts.</p>
 
 <!-- A_28115 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-530" title="E-Rezept-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-181" title="E-Rezept-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
      Der E-Rezept-Fachdienst MUSS den Nachrichteninhalt einer Push Notification gemäß TAB_eRPFD_028 erzeugen.
@@ -442,23 +442,24 @@ Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeabl
 
 </tbody>
 </table>
+<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_028 Nachrichteninhalt Push Notification</figcaption></div>
 
 <p>
 <strong>Definition [medicationName]:</strong><br />
 Falls medication dem Profil "KBV_PR_ERP_Medication_Ingredient" entspricht:<br />
-`Medication.ingredient.item.itemCodeableConcept.text`<br /><br />
+`Medication.ingredient.item.itemCodeableConcept.text`<br />
 Ansonsten:<br />
 `Medication.code.text`
 </p>
 
-<div><figcaption><strong>Tabelle: </strong>Nachrichteninhalt Push Notification</figcaption></div>
+
 
 </requirement>
 
 <!-- A_28116 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-531" title="E-Rezept-Fachdienst - Push Notification senden - verpflichtende Verschlüsselung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-182" title="E-Rezept-Fachdienst - Push Notification senden - verpflichtende Verschlüsselung" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
      Der E-Rezept-Fachdienst MUSS den Nachrichteninhalt einer Push Notification verschlüsseln.
@@ -467,9 +468,9 @@ Ansonsten:<br />
 <p>Die Vorgaben für die Verschlüsselung sind in <code class="language-plaintext highlighter-rouge">A_27161-* - Fachdienst - Push Notification senden - Nachricht verschlüsseln</code> beschrieben.</p>
 
 <!-- A_28135 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-532" title="E-Rezept-Fachdienst - Push Notification senden - Referenz auf Protokolleintrag" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-183" title="E-Rezept-Fachdienst - Push Notification senden - Referenz auf Protokolleintrag" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest" />
     </actor>
      Der E-Rezept-Fachdienst MUSS beim Erstellen einer Push Notification die Identifier des zugehörigen Protokolleintrags (AuditEvent.id) des Triggers im Identifier-Feld des äußeren Notification-Objekts (notification.identifier) angeben.
@@ -478,9 +479,9 @@ Ansonsten:<br />
 <h3 id="push-notification-datenstruktur">Push Notification Datenstruktur</h3>
 
 <!-- A_28124 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-533" title="E-Rezept - Push Notifications - Datenstruktur Nachrichteninhalte" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-184" title="E-Rezept - Push Notifications - Datenstruktur Nachrichteninhalte" version="0">
     <meta lockversion="false" />
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Herstellererklärung" />
     </actor>
     <actor name="eRp_FdV">
@@ -544,7 +545,7 @@ Ansonsten:<br />
 </tbody>
 </table>
 
-<div><figcaption><strong>Tabelle: </strong>Push Notification Datenstruktur Nachrichteninhalte</figcaption></div>
+<div><figcaption><strong>Tabelle: </strong>TAB_eRp_DM_004 Push Notification Datenstruktur Nachrichteninhalte</figcaption></div>
 </requirement>
 
 
@@ -587,7 +588,7 @@ Ansonsten:<br />
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 13:02+0000">2026-03-09</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 10, 2026 13:14+0000">2026-03-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

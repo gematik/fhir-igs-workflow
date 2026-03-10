@@ -37,14 +37,13 @@ Der E-Rezept-Fachdienst MUSS den Nachrichteninhalt einer Push Notification gemä
 | erp.eu.prescription.redeem | Task.identifier.PrescriptionID | TaskId | KBV_PR_ERP_Bundle.entry.[medicationName] | GEM_ERPEU_PR_PAR_GET_Prescription_Input.parameter.part[practionerName].valueString | - |
 | erp.eu.prescription.close | Task.identifier.PrescriptionID | TaskId | GEM_ERPEU_PR_PAR_CloseOperation_Input.parameter[rxDispensation].[medication].[medicationName] | GEM_ERPEU_PR_PAR_CloseOperation_Input.parameter.part[practionerData].name.text | - |
 
+**Tabelle: **TAB_eRPFD_028 Nachrichteninhalt Push Notification
+
  **Definition [medicationName]:**
  Falls medication dem Profil "KBV_PR_ERP_Medication_Ingredient" entspricht:
  `Medication.ingredient.item.itemCodeableConcept.text`
-
  Ansonsten:
  `Medication.code.text` 
-
-**Tabelle: **Nachrichteninhalt Push Notification
 
 Der E-Rezept-Fachdienst MUSS den Nachrichteninhalt einer Push Notification verschlüsseln.
 Die Vorgaben für die Verschlüsselung sind in `A_27161-* - Fachdienst - Push Notification senden - Nachricht verschlüsseln` beschrieben.
@@ -63,5 +62,5 @@ Der E-Rezept-Fachdienst und das E-Rezept-FdV MÜSSEN für den Anwendungsfall "Pu
 | ActorName | ja | Der Name des Akteurs. Das kann zum Beispiel der Name der Apotheke oder des Kostenträgers sein. | bis zu 100 Stellen, UTF-8 | Meine Apotheke |
 | Message | nein | Die Nachricht, die an den Versicherten verschickt wird.Nachrichten mit mehr als 240 Zeichen müssen nach 237 Zeichen abgeschnitten und mit drei Punkten (…) ergänzt werden. | bis zu 240 Stellen, UTF-8 | Wir möchten Sie informieren, dass Ihre bestellten Medikamente zur Abholung bereitstehen. |
 
-**Tabelle: **Push Notification Datenstruktur Nachrichteninhalte
+**Tabelle: **TAB_eRp_DM_004 Push Notification Datenstruktur Nachrichteninhalte
 

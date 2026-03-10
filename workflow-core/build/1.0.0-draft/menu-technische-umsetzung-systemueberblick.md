@@ -17,8 +17,6 @@ Der E-Rezept-Fachdienst verwaltet E-Rezepte in der Telematikinfrastruktur als ei
 
 Der E-Rezept-Fachdienst realisiert die Vertraulichkeit und Integrität der verarbeiteten Daten über das Konzept der vertrauenswürdigen Ausführungsumgebung (VAU), die eine durchgängige Verschlüsselung der E-Rezepte und der dazu gehörigen Daten aus einer Kombination kryptografischer Verfahren während des Transports, der vertrauenswürdigen Verarbeitung und in der verschlüsselten Persistierung der Daten sicherstellt.
 
-Abbildung 1: Systemüberblick
-
 **Abbildung: **Systemüberblick
 
 
@@ -40,11 +38,4 @@ Leistungserbringerinstitutionen und Versicherte weisen sich gegenüber dem E-Rez
 ### Zerlegung des Produkttyps
 
 Der E-Rezept-Fachdienst verwaltet E-Rezepte über einen medizinischen Workflow. Dabei muss er die Vertraulichkeit und Integrität der verarbeiteten Daten sicherstellen. Daraus ergeben sich Sicherheitsanforderungen an die Betriebsumgebung, an die Fachlogik der Prozessverarbeitung sowie an die Ausführungsumgebung des Programmcodes.
-
-Der Anbieter des E-Rezept-Fachdienstes MUSS das private Schlüsselmaterial für kryptografische Verfahren (Entschlüsselung, Signaturen) in einem HSM speichern, dessen Eignung durch eine erfolgreiche Evaluierung nachgewiesen wurde. Als Evaluierungsschemata kommen dabei Common Criteria, ITSEC oder Federal Information Processing Standard (FIPS) in Frage. Die Prüftiefe MUSS mindestens
-* FIPS 140-2 Level 3,
-* Common Criteria EAL 4+ mit hohem Angriffspotenzial
-* oder ITSEC E3 der Stärke "hoch"
-entsprechen.
-Eine über die Schlüsselspeicherung in einem Hardware Security Module (HSM) hinausgehende Anforderung an die Zerlegung des E-Rezept-Fachdienstes gibt es aus funktionaler Sicht nicht.
 

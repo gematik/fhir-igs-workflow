@@ -31,13 +31,11 @@ Die Nachricht zur Interaktion mit Einwilligungen als FHIR-Ressource **Consent** 
 
 ### Resource API
 
-tbd
+Anfragen an die *Consent*-Ressource können über die RESTful API durchgeführt werden. Dabei können spezifische Suchparameter genutzt werden, um die Anfragen zu verfeinern. Zum Beispiel:
+
+* Suche nach Einwilligungen, die für einen Anwendungsfall eingestellt wurden: `?category=CHARGCONS`
 
 #### API Beschreibung
 
 * [API-ERP: Consent](https://github.com/gematik/api-erp/blob/master/docs/erp_consent.adoc)
-
-#### Hinweis
-
-tbd
 

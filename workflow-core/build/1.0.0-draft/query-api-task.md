@@ -18,10 +18,14 @@ Für die Nutzung verschiedener im Rahmen der Anwendung E-Rezept angebotenen Funk
 
 Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource **Task** wird über die folgenden HTTP-Methoden ermöglicht:
 
-| | |
-| :--- | :--- |
-| GET | Task abrufen |
-| PATCH | Task markieren |
+| | | |
+| :--- | :--- | :--- |
+| Versicherter | GET | Liste von Task abrufen |
+| Versicherter | GET / | Spezifischen Task abrufen |
+| Apotheke, Kostenträger | GET /?ac= | Recovery Secret |
+| Apotheke, Kostenträger | GET /?secret= | Quittung erneut abrufen |
+| Versicherter | GET / | Spezifischen Task abrufen |
+| Versicherter | PATCH | Task markieren |
 
 ### Anforderungen an Schnittstelle
 
@@ -32,15 +36,23 @@ Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource **Task** wird 
 
 ### Resource API
 
-Durch Angabe des URL-Parameter ?ac= bei der GET-Operation kann eine abgebende Institution den Anwendungsfall “Recovery Secret” ausführen.
+Anfragen an die *Task*-Ressource können über die RESTful API mittels HTTP GET-Anfragen durchgeführt werden.
 
-Durch Angabe des URL-Parameter ?secret= bei der GET-Operation kann eine abgebende Institution den Anwendungsfall “UC 4.8 - Quittung erneut abrufen” ausführen.
+Durch Angabe des URL-Parameter `?ac=` bei der GET-Operation kann eine abgebende Institution den Anwendungsfall “Recovery Secret” ausführen.
+
+Durch Angabe des URL-Parameter `?secret=` bei der GET-Operation kann eine abgebende Institution den Anwendungsfall “UC 4.8 - Quittung erneut abrufen” ausführen.
 
 #### API Beschreibung
 
-tbd
+* [API-ERP: Alle E-Rezepte ansehen (FdV)](https://github.com/gematik/api-erp/blob/master/docs/erp_versicherte.adoc#alle-e-rezepte-ansehen)
 
-#### Hinweis
+### Instance API
 
-tbd
+Um spezifische Details zu einem einzelnen **Task** mittels der RESTful API zu erhalten, wird die **Task Instance API** verwendet, indem eine HTTP GET-Anfrage an den Endpunkt */Task/[id]* gestellt wird.
+
+#### API Beschreibung
+
+* [API-ERP: E-Rezept abrufen (FdV)](https://github.com/gematik/api-erp/blob/master/docs/erp_versicherte.adoc#ein-einzelnes-e-rezept-abrufen-und-in-der-apotheke-einl%C3%B6sen)
+* [API-ERP: E-Rezept erneut abrufen (PS abgebend)](https://github.com/gematik/api-erp/blob/master/docs/erp_abrufen.adoc#e-rezept-erneut-abrufen)
+* [API-ERP: Quittung erneut abrufen (PS abgebend)](https://github.com/gematik/api-erp/blob/master/docs/erp_abrufen.adoc#quittung-erneut-abrufen)
 

@@ -14,7 +14,7 @@ Version 1.0.0-draft - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/workflow/core/ImplementationGuide/de.gematik.workflow.core | *Version*:1.0.0-draft |
-| Draft as of 2026-03-09 | *Computable Name*:gemIG_TIFlow_core |
+| Draft as of 2026-03-10 | *Computable Name*:gemIG_TIFlow_core |
 
 Dieser IG beschreibt die zentralen, IG-übergreifenden Anforderungen an den E-Rezept-Fachdienst. Er fasst grundlegende Sicherheits-, Protokollierungs- und Validierungsvorgaben zusammen, die in allen nachgelagerten IGs wiederverwendet werden.
 
@@ -61,7 +61,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
   "name" : "gemIG_TIFlow_core",
   "title" : "Implementation Guide E-Rezept-Workflow Core",
   "status" : "draft",
-  "date" : "2026-03-09T13:02:00+00:00",
+  "date" : "2026-03-10T13:14:16+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -92,7 +92,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "7.0.1"
+    "version" : "7.1.0"
   },
   {
     "id" : "hl7ext",
@@ -740,15 +740,6 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "data-security.html"
-        }],
-        "nameUrl" : "data-security.html",
-        "title" : "Datenschutz und Sicherheit",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "fhir-validate.html"
         }],
         "nameUrl" : "fhir-validate.html",
@@ -839,10 +830,10 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "menu-technische-umsetzung-validation.html"
+          "valueUrl" : "menu-technische-umsetzung-subscription.html"
         }],
-        "nameUrl" : "menu-technische-umsetzung-validation.html",
-        "title" : "FHIR-Ressource validieren",
+        "nameUrl" : "menu-technische-umsetzung-subscription.html",
+        "title" : "Notifications für AVS",
         "generation" : "markdown"
       },
       {
@@ -1083,7 +1074,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
               "valueUrl" : "query-api-task-req-fd.html"
             }],
             "nameUrl" : "query-api-task-req-fd.html",
-            "title" : "FD-Anforderungen: Task-Query",
+            "title" : "Server-Anforderungen: Task-Query",
             "generation" : "markdown"
           },
           {
@@ -1128,7 +1119,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
               "valueUrl" : "query-api-medicationdispense-req-fd.html"
             }],
             "nameUrl" : "query-api-medicationdispense-req-fd.html",
-            "title" : "FD-Anforderungen: MedicationDispense-Query",
+            "title" : "Server-Anforderungen: MedicationDispense-Query",
             "generation" : "markdown"
           },
           {
@@ -1155,7 +1146,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
               "valueUrl" : "query-api-auditevent-req-fd.html"
             }],
             "nameUrl" : "query-api-auditevent-req-fd.html",
-            "title" : "FD-Anforderungen: AuditEvent-Query",
+            "title" : "Server-Anforderungen: AuditEvent-Query",
             "generation" : "markdown"
           },
           {
@@ -1182,7 +1173,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
               "valueUrl" : "query-api-device-req-fd.html"
             }],
             "nameUrl" : "query-api-device-req-fd.html",
-            "title" : "FD-Anforderungen: Device-Query",
+            "title" : "Server-Anforderungen: Device-Query",
             "generation" : "markdown"
           },
           {
@@ -1209,7 +1200,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
               "valueUrl" : "query-api-communication-req-fd.html"
             }],
             "nameUrl" : "query-api-communication-req-fd.html",
-            "title" : "FD-Anforderungen: Communication-Query",
+            "title" : "Server-Anforderungen: Communication-Query",
             "generation" : "markdown"
           },
           {
@@ -1254,7 +1245,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
               "valueUrl" : "query-api-consent-req-fd.html"
             }],
             "nameUrl" : "query-api-consent-req-fd.html",
-            "title" : "FD-Anforderungen: Consent-Query",
+            "title" : "Server-Anforderungen: Consent-Query",
             "generation" : "markdown"
           },
           {
@@ -1266,6 +1257,87 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
             "title" : "Client-Anforderungen: Consent-Query",
             "generation" : "markdown"
           }]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "query-api-channels.html"
+          }],
+          "nameUrl" : "query-api-channels.html",
+          "title" : "Query API: Channels",
+          "generation" : "markdown",
+          "page" : [{
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-channels-req-fd.html"
+            }],
+            "nameUrl" : "query-api-channels-req-fd.html",
+            "title" : "Server-Anforderungen: Channels-Query",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-channels-req-fdv.html"
+            }],
+            "nameUrl" : "query-api-channels-req-fdv.html",
+            "title" : "FdV-Anforderungen: Channels-Query",
+            "generation" : "markdown"
+          }]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "query-api-pushers.html"
+          }],
+          "nameUrl" : "query-api-pushers.html",
+          "title" : "Query API: Pushers",
+          "generation" : "markdown",
+          "page" : [{
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-pushers-req-fd.html"
+            }],
+            "nameUrl" : "query-api-pushers-req-fd.html",
+            "title" : "Server-Anforderungen: Pushers-Query",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-pushers-req-fdv.html"
+            }],
+            "nameUrl" : "query-api-pushers-req-fdv.html",
+            "title" : "FdV-Anforderungen: Pushers-Query",
+            "generation" : "markdown"
+          }]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "query-api-subscription.html"
+          }],
+          "nameUrl" : "query-api-subscription.html",
+          "title" : "Query API: Subscription",
+          "generation" : "markdown",
+          "page" : [{
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-subscription-req-fd.html"
+            }],
+            "nameUrl" : "query-api-subscription-req-fd.html",
+            "title" : "Server-Anforderungen: Subscription-Query",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-subscription-req-avs.html"
+            }],
+            "nameUrl" : "query-api-subscription-req-avs.html",
+            "title" : "AVS-Anforderungen: Subscription-Query",
+            "generation" : "markdown"
+          }]
         }]
       },
       {
@@ -1275,6 +1347,15 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
         }],
         "nameUrl" : "artifacts.html",
         "title" : "FHIR-Artefakte",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "requirement-mapping-old-to-new.html"
+        }],
+        "nameUrl" : "requirement-mapping-old-to-new.html",
+        "title" : "Mapping alter Anforderungen auf FHIR-IG Anforderungen",
         "generation" : "markdown"
       }]
     },

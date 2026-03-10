@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"16.1.3"}
-    h3,h4,h5,h6{--heading-prefix:"16.1.3"}</style>
+    <style type="text/css">h2{--heading-prefix:"15.1.3"}
+    h3,h4,h5,h6{--heading-prefix:"15.1.3"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -122,10 +122,10 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="audit-service.html">Zugriffsprotokollierung</a>
+        <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
       </li>
       <li>
-        <a href="data-security.html">Datenschutz und Sicherheit</a>
+        <a href="audit-service.html">Zugriffsprotokollierung</a>
       </li>
       <li>
         <a href="fhir-validate.html">FHIR-Validierung</a>
@@ -155,9 +155,6 @@
       <li>
         <a href="menu-technische-umsetzung-paging.html">Paginierung</a>
       </li>
-      <li>
-        <a href="menu-technische-umsetzung-validation.html">FHIR-Validierung</a>
-      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -175,6 +172,9 @@
   </li>
   <li>
     <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+  <li>
+    <a href="requirement-mapping-old-to-new.html">Anforderungsmapping</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -270,6 +270,20 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="recovery-secret">Recovery Secret</h3>
 
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-15" title="PS abgebende LEI: Recovery Secret - Statusrequest" version="0">
+  <meta lockversion="false" />
+  <actor name="PS_E-Rezept_abgebend">
+    <testProcedure id="Herstellererklärung" />
+  </actor>
+  Das PS der abgebenden LEI MUSS im Anwendungsfall "Recovery Secret" für das E-Rezept die HTTP-Operation GET /Task/&lt;id&gt;/ mit 
+  <ul>
+    <li>ACCESS_TOKEN im Authorization-Header</li>
+    <li>Task-ID in URL &lt;id&gt; </li>
+    <li>Access_Code in URL-Parameter ?ac=</li>
+  </ul>
+  ausführen.
+</requirement>
+
 <h3 id="quittung-erneut-abrufen">Quittung erneut abrufen</h3>
 
 <p>Mit diesem Anwendungsfall kann eine abgebende LEI die Quittung erneut abrufen, falls bei der Übermittlung vom E-Rezept-Fachdienst ein Fehler aufgetreten ist.</p>
@@ -277,7 +291,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Der Anwendungsfall kann bei Bedarf wiederholt werden.</p>
 
 <!-- A_19292 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-368" title="PS abgebende LEI: Quittung erneut abrufen - Statusrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-16" title="PS abgebende LEI: Quittung erneut abrufen - Statusrequest" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung" />
@@ -332,7 +346,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 13:02+0000">2026-03-09</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 10, 2026 13:14+0000">2026-03-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

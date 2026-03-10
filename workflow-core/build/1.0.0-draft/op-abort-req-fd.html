@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"15.6.1"}
-    h3,h4,h5,h6{--heading-prefix:"15.6.1"}</style>
+    <style type="text/css">h2{--heading-prefix:"14.6.1"}
+    h3,h4,h5,h6{--heading-prefix:"14.6.1"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -122,10 +122,10 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="audit-service.html">Zugriffsprotokollierung</a>
+        <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
       </li>
       <li>
-        <a href="data-security.html">Datenschutz und Sicherheit</a>
+        <a href="audit-service.html">Zugriffsprotokollierung</a>
       </li>
       <li>
         <a href="fhir-validate.html">FHIR-Validierung</a>
@@ -155,9 +155,6 @@
       <li>
         <a href="menu-technische-umsetzung-paging.html">Paginierung</a>
       </li>
-      <li>
-        <a href="menu-technische-umsetzung-validation.html">FHIR-Validierung</a>
-      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -175,6 +172,9 @@
   </li>
   <li>
     <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+  <li>
+    <a href="requirement-mapping-old-to-new.html">Anforderungsmapping</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -265,21 +265,64 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.</p>
 
 <!-- A_20546-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-295" title="E-Rezept-Fachdienst - E-Rezept löschen - Versicherter - Prüfung KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-102" title="E-Rezept-Fachdienst - E-Rezept löschen - Versicherter - Prüfung KVNR" version="0">
   <meta lockversion="false" />
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produkttest" />
   </actor>
     Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts durch einen Versicherten, wenn der HTTP-Request keinen HTTP-Header "X-AccessCode" oder URL-Parameter "?ac=..." enthält, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die in Task.for hinterlegte KVNR des begünstigten Patienten prüfen und bei Missmatch den Aufruf mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich der begünstigte Versicherte als Berechtigter ohne Kenntnis des AccessCodes ein E-Rezept löscht.
 </requirement>
 
-<p><!-- A_19120-03 --></p>
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-296" title="E-Rezept-Fachdienst - E-Rezept löschen - Verordnender - Prüfung AccessCode und Status" version="0">
+<!-- A_19120-03 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-103" title="E-Rezept-Fachdienst - E-Rezept löschen - Verordnender - Prüfung AccessCode und Status" version="0">
   <meta lockversion="false" />
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produkttest" />
   </actor>
     Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &#60;id&#62; adressierten/Task/&#60;id&#62;/$abort durch verordnende Leistungserbringer den im HTTPHeader "X-AccessCode" gegen den im referenzierten Task enthaltenen AccessCode prüfen und bei Missmatch oder Fehlen im HTTP-Header oder wenn der Task.Status ungleich "ready" ist, den Aufruf mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich die verordnende Leistungserbringerinstitution in Kenntnis des AccessCodes als Berechtigte ein E-Rezept löschen.
+</requirement>
+
+<!-- A_19027-06 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-104" title="E-Rezept-Fachdienst - E-Rezept löschen - Medizinische und personenbezogene Daten löschen" version="0">
+  <meta lockversion="false" />
+  <actor name="eRp_FD">
+    <testProcedure id="Produktgutachten" />
+  </actor>
+  Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &#60;id&#62; adressierten /Task/&#60;id&#62;/$abort alle personenbezogenen medizinischen Daten, außer der KVNR in Task.for, aus dem referenzierten Task entfernen. Dies gilt insbesondere für:
+  <ul>
+    <li>Task.input --&gt; löschen (inkl. aller referenzierten Elemente)</li>
+    <li>Task.output --&gt; löschen (inkl. aller referenzierten Elemente)</li>
+    <li>Task.identifier (AccessCode) --&gt; löschen</li>
+    <li>Task.identifier (Secret, falls vorhanden) --&gt; löschen</li>
+    <li>Task.extension:lastMedicationDispense (Zeitstempel, falls vorhanden) --&gt; löschen</li>
+    <li>Task.owner --&gt; löschen</li>
+    <li>Medication --&gt; die in MedicationDispense.medication referenzierte Medication löschen</li>
+    <li>MedicationDispense --&gt; die in MedicationDispense.supportingInformation auf Task.id verweist löschen</li>
+    <li>Communication --&gt; die in Communication.basedOn auf Task.id verweist</li>
+  </ul>
+  damit dem Betroffenenrecht auf Löschen durch den Versicherten entsprochen wird und beim Löschen durch den Verordnenden dem Versicherten eine aussagekräftige Fehlermeldung durch einen Apotheker vermittelt werden kann.
+</requirement>
+
+<p>Hinweis: Die KVNR in Task.for wird nicht gelöscht, damit der Versicherte den Status des Task mit dem E-Rezept-FdV abrufen kann.</p>
+
+<p>Bestehende Übermittlungsaufträge in den ePA Medication Service für das zu löschende E-Rezept werden nicht gelöscht.</p>
+
+<!-- A_19121 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-105" title="E-Rezept-Fachdienst - E-Rezept löschen - Status" version="0">
+  <meta lockversion="false" />
+  <actor name="eRp_FD">
+    <testProcedure id="Produkttest" />
+  </actor>
+  Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &#60;id&#62; adressierten /Task/&#60;id&#62;/$abort den Status des Tasks Task.status auf den Wert "cancelled" setzen, damit der Task nicht weiter bearbeitet werden kann.
+</requirement>
+
+<!-- A_28131 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-106" title="E-Rezept-Fachdienst - E-Rezept löschen - Push Notification Versicherter" version="0">
+  <meta lockversion="false" />
+  <actor name="eRp_FD">
+    <testProcedure id="Produkttest" />
+  </actor>
+  Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$abort bei erfolgreichem Abschluss der Operation, wenn die Rolle des aufrufenden Nutzers ungleich oid_versicherter ist, den Push Notification Prozess für den Trigger mit der ChannelId "erp.task.abort" und den Versicherten mit der KVNR = Task.for initiieren.
 </requirement>
 
 
@@ -322,7 +365,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 13:02+0000">2026-03-09</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 10, 2026 13:14+0000">2026-03-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
