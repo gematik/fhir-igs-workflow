@@ -1,11 +1,11 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: b70411e20cbbcfe7220262afe6da1a250f87ddb27f9c94d4613c00252ed25edc
-created: '2026-03-09T16:37:37.560587'
-date: '2026-03-09T16:37:37.560590'
+content_hash: bdcc142e94bca5cea1a2db4df34e52a13bdbe7b87c66955cd04167e8476e4922
+created: '2026-03-10T06:59:22.663187'
+date: '2026-03-10T06:59:22.663189'
 key: IG-TIFLOW-CORE-58
-modified: '2026-03-09T16:37:37.560589'
+modified: '2026-03-10T06:59:22.663188'
 release_status: NEW
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
@@ -13,9 +13,9 @@ test_procedures:
   eRp_FD:
   - Produkttest
 text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
-  /Task mit dem URL-Parameter pnw="..." durch eine abgebende LEI prüfen, ob mit dem
-  Aufruf die Anzahl RATELIMIT_MAX1d_ERROR_UC4_12 überschritten ist und in diesem Fall
-  den Aufruf mit dem Fehler 423 abbrechen.
-title: E-Rezept-Fachdienst - Rezepte lesen - Apotheke - Ratelimit pro Telematik-ID
-  prüfen
+  /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI prüfen, falls im
+  Operationsaufruf der URL-Parameter hcv übermittelt wurde, den im URL-Parameter übermittelten
+  Wert transformieren, miteinander vergleichen und bei Ungleichheit mit dem Fehler
+  458 abbrechen.
+title: E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Vergleich hcv
 version: 0

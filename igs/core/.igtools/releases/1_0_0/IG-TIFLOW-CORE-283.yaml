@@ -1,20 +1,21 @@
 actor:
 - CS_E-Rezept_KTR
 conformance: SHALL
-content_hash: c5d543cc2dc51ac6c7206d03a85bd5bd433b9cb6b59e507ec0cdf0588e362183
-created: '2026-03-09T16:37:37.615886'
-date: '2026-03-09T16:37:37.615889'
+content_hash: 5aa16ae7c4c788a73b589c489a96e8e95f062347fed42232b303764b69542984
+created: '2026-03-10T06:59:22.711897'
+date: '2026-03-10T06:59:22.711899'
 key: IG-TIFLOW-CORE-283
-modified: '2026-03-09T16:37:37.615888'
+modified: '2026-03-10T06:59:22.711898'
 release_status: NEW
 source: input/pagecontent/op-reject-req-ktr.md
 status: ACTIVE
 test_procedures:
   CS_E-Rezept_KTR:
   - Herstellererklärung
-text: Das Clientsystem Kostenträger MUSS im Anwendungsfall "Verordnung durch Clientsystem
-  zurückgeben" für das zurückzugebende E-Rezept nach erfolgreichem Aufruf der Operation
-  "Eine Verordnung zurückweisen" die Daten zu Verordnung, E-Rezept-Token und das Geheimnis
-  im CS löschen.
-title: 'CS Kostenträger: Verordnung zurückgeben - Verordnung löschen'
+text: "Das Clientsystem Kostenträger MUSS im Anwendungsfall \"Verordnung durch Clientsystem\
+  \ zurückgeben\" für die zurückzugebende Verordnung die HTTP-Operation POST /Task/&lt;id&gt;/$reject\
+  \ mit \n  <ul>\n    <li>ACCESS_TOKEN im Authorization-Header</li>\n    <li>Task-ID\
+  \ in URL &lt;id&gt; </li>\n    <li>Geheimnis in URL-Parameter ?secret=</li>\n  </ul>\n\
+  \  ausführen."
+title: 'CS Kostenträger: Verordnung zurückgeben - Statusrequest'
 version: 0

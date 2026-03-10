@@ -1,12 +1,12 @@
 actor:
 - CS_E-Rezept_KTR
 - PS_E-Rezept_abgebend
-conformance: SHALL
-content_hash: 5a65ec04a02598fca0d6ec719ff9e11fa78c9d3fd08756b48be8a68d1c0d8c05
-created: '2026-03-09T16:37:37.606907'
-date: '2026-03-09T16:37:37.606910'
+conformance: SHALL NOT
+content_hash: 5c3e2dc82cac4dd7132c0138fdd47459ba4d7fc903555c2cc404f71791e95c85
+created: '2026-03-10T06:59:22.702785'
+date: '2026-03-10T06:59:22.702788'
 key: IG-TIFLOW-CORE-244
-modified: '2026-03-09T16:37:37.606909'
+modified: '2026-03-10T06:59:22.702786'
 release_status: NEW
 source: input/pagecontent/query-api-subscription-req-avs.md
 status: ACTIVE
@@ -15,12 +15,8 @@ test_procedures:
   - Herstellererklärung
   PS_E-Rezept_abgebend:
   - Herstellererklärung
-text: 'Das PS der abgebenden LEI MUSS den Anwendungsfall "Subscription für neue Communication"
-  gemäß TAB_ILFERP_017 umsetzen. Tabelle # : TAB_ILFERP_017 – Subscription für neue
-  Communication Name Subscription für neue Communication Auslöser Periodischer Aufruf,
-  wenn keine Websocket-Verbindung für die Notification besteht Akteur AVS Vorbedingung
-  Die LEI hat sich gegenüber der TI authentisiert. Nachbedingung Es besteht eine Websocket-Verbindung
-  zum Empfang der Notification Standardablauf Subscription Ressource erstellen Subscription
-  registrieren Websocket-Verbindung zu Subscription Service aufbauen Listening'
-title: 'PS abgebende LEI: Subscription für neue Communication'
+text: Das PS der abgebenden LEI DARF NICHT mehr als eine Subscription pro Telematik-ID
+  registrieren.
+title: 'PS abgebende LEI: Subscription für neue Communication - eine Subscription
+  pro Telematik-ID'
 version: 0

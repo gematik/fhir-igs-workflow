@@ -1,20 +1,23 @@
 actor:
-- eRp_FdV
+- eRp_FD
 conformance: SHALL
-content_hash: 91331a08567db34d9b3fd4397d43b57c2458e6fe8c82dba68dd45aabe5b8f915
-created: '2026-03-09T16:37:37.559209'
-date: '2026-03-09T16:37:37.559211'
+content_hash: 3d1dcbcc2457765c90ce997d34632ff7d8fd89586e5e3f87005f3b6f9f7b176e
+created: '2026-03-10T06:59:22.662098'
+date: '2026-03-10T06:59:22.662100'
 key: IG-TIFLOW-CORE-50
-modified: '2026-03-09T16:37:37.559210'
+modified: '2026-03-10T06:59:22.662099'
 release_status: NEW
-source: input/pagecontent/query-api-communication-req-fdv.md
+source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
-  eRp_FdV:
+  eRp_FD:
   - Produkttest
-text: "Das E-Rezept-FdV MUSS im Anwendungsfall \"Nachricht senden\" zum Übermitteln\
-  \ einer Nachricht über den E-Rezept-Fachdienst die HTTP-Operation POST /Communication\
-  \ mit\n    <ul>\n        <li>ACCESS_TOKEN im Authorization-Header</li>\n       \
-  \ <li>Communication Ressource in HTTP-Request-Body</li> \n    </ul>\n    ausführen."
-title: Nachricht senden - Nachricht auf Fachdienst einstellen
+text: "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt\
+  \ /Task sicherstellen, dass ausschließlich Versicherte und Leistungserbringer in\
+  \ der Rolle\n    <ul>\n        <li>oid_versicherter</li>\n        <li>oid_oeffentliche_apotheke</li>\n\
+  \        <li>oid_krankenhausapotheke</li> \n    </ul>\n    die Operation am E-Rezept-Fachdienst\
+  \ aufrufen dürfen und die Rolle \"professionOID\" des Aufrufers im ACCESS_TOKEN\
+  \ im HTTP-RequestHeader \"Authorization\" feststellen, damit E-Rezepte nicht durch\
+  \ Unberechtigte ausgelesen werden können."
+title: E-Rezept-Fachdienst - Liste Task abrufen - Rollenprüfung
 version: 0

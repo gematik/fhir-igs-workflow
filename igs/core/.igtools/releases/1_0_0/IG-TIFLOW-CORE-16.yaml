@@ -1,22 +1,20 @@
 actor:
-- eRp_FD
+- PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: 76e20b40f796886467623331aa26315a85b7f4003398b27183ab4c9bc7423e8b
-created: '2026-03-09T16:37:37.552000'
-date: '2026-03-09T16:37:37.552003'
+content_hash: 32773f5b8238ad43f0c6a32d719bee295ec6279221b6af63efade9a6ba2beec5
+created: '2026-03-10T06:59:22.655629'
+date: '2026-03-10T06:59:22.655631'
 key: IG-TIFLOW-CORE-16
-modified: '2026-03-09T16:37:37.552002'
+modified: '2026-03-10T06:59:22.655630'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-validation.md
+source: input/pagecontent/query-api-task-req-avs.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen,
-  ob angegebene Referenzen nach [FHIR Spezifikation Auflösen von Referenzen in Bundles]
-  ermittelt werden können und bei Auffälligkeiten mit dem HTTP-Fehlercode 400 abbrechen
-  und die Fehlermeldung "Referenz einer Ressource konnte nicht aufgelöst werden."
-  in Form eines OperationOutcome ausliefern.
-title: E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Auflösbarkeit von
-  Referenzen
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: "Das PS der abgebenden LEI MUSS im Anwendungsfall \"Quittung erneut abrufen\"\
+  \ für das E-Rezept die HTTP-Operation GET /Task/&lt;id&gt;/ mit \n  <ul>\n    <li>ACCESS_TOKEN\
+  \ im Authorization-Header</li>\n    <li>Task-ID in URL &lt;id&gt; </li>\n    <li>Geheimnis\
+  \ in URL-Parameter ?secret=</li>\n  </ul>\n  ausführen."
+title: 'PS abgebende LEI: Quittung erneut abrufen - Statusrequest'
 version: 0

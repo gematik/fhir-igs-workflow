@@ -1,22 +1,23 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 47407c22a412eac450c17bed5f77ea84117a0a93958a968f44d794b2b9217a61
-created: '2026-03-09T16:37:37.563594'
-date: '2026-03-09T16:37:37.563596'
+content_hash: 921c7f79870f35f04a48e625b4207ced97477e5772f4dcef241134f41c75dae2
+created: '2026-03-10T06:59:22.666761'
+date: '2026-03-10T06:59:22.666764'
 key: IG-TIFLOW-CORE-78
-modified: '2026-03-09T16:37:37.563595'
+modified: '2026-03-10T06:59:22.666763'
 release_status: NEW
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
-  /Task/&lt;id&gt; ausschließlich solchen Clients die AccessCode Information (Task.identifier
-  mit system="https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode" ) in
-  den Task-Ressourcen zurückgeben, welche anhand der mitgeteilten, gültigen Produktidentifikation
-  als hierfür zulässige Clients erkannt werden.
-title: E-Rezept-Fachdienst - Task abrufen - Keine Einlöseinformationen in unbekannten
-  Clients
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
+  Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende Institution den im referenzierten
+  Task gespeicherten Status Task.status prüfen und mit dem Fehler 412 abbrechen, wenn
+  Task.status ungleich "in-progress" und ungleich "completed" ist, damit der Datensatz
+  nur abgerufen werden, kann, wenn sich die Verordnung in Belieferung befindet oder
+  der Workflow abgeschlossen ist.
+title: E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen
+  - Prüfung Status
 version: 0

@@ -1,22 +1,20 @@
 actor:
-- eRp_FdV
+- eRp_FD
 conformance: SHALL
-content_hash: afcfd12ad0a8c1c9285f20ce9b779db11978872e5297d91e26402810e0fd077c
-created: '2026-03-09T16:37:37.558999'
-date: '2026-03-09T16:37:37.559005'
+content_hash: 85444ed4a6ebb217876c3512edef26598f514efc2f0219081fe447c93889b924
+created: '2026-03-10T06:59:22.661912'
+date: '2026-03-10T06:59:22.661915'
 key: IG-TIFLOW-CORE-49
-modified: '2026-03-09T16:37:37.559004'
+modified: '2026-03-10T06:59:22.661914'
 release_status: NEW
-source: input/pagecontent/query-api-communication-req-fdv.md
+source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
-  eRp_FdV:
+  eRp_FD:
   - Produkttest
-text: "Das E-Rezept-FdV MUSS im Anwendungsfall \"Nachrichten von Apotheken anzeigen\"\
-  \ zum Herunterladen von Nachrichten vom E-Rezept-Fachdienst die HTTP-Operation GET\
-  \ /Communication mit\n    <ul>\n        <li>ACCESS_TOKEN im Authorization-Header</li>\n\
-  \        <li>optional: ?received=null für nur ungelesene Nachrichten</li>\n    \
-  \    <li>optional: ?received=gtYYYY-MM-DD_sort=sent für Nachrichten jünger als Datum\
-  \ DD.MM.YYY</li>\n    </ul>\n    ausführen."
-title: Nachrichten abrufen - Nachrichten von Fachdienst herunterladen
+text: Der E-Rezept-Fachdienst MUSS alle Zugriffe auf die Ressource Task mittels der
+  HTTP-Operationen PUT, HEAD und DELETE sowie POST ohne die Angabe einer gültigen
+  FHIR-Operation unterbinden, damit keine unzulässigen Operationen auf den Rezeptdaten
+  ausgeführt werden können.
+title: E-Rezept-Fachdienst - unzulässige Operationen Task
 version: 0

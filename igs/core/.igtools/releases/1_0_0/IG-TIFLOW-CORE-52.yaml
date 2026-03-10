@@ -1,20 +1,21 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 85444ed4a6ebb217876c3512edef26598f514efc2f0219081fe447c93889b924
-created: '2026-03-09T16:37:37.559756'
-date: '2026-03-09T16:37:37.559758'
+content_hash: 17bbd6a2554a67d60c6cd9053151d3702f764f4b6d4985d8b9cc1eca2af5f5d5
+created: '2026-03-10T06:59:22.662387'
+date: '2026-03-10T06:59:22.662390'
 key: IG-TIFLOW-CORE-52
-modified: '2026-03-09T16:37:37.559757'
+modified: '2026-03-10T06:59:22.662389'
 release_status: NEW
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS alle Zugriffe auf die Ressource Task mittels der
-  HTTP-Operationen PUT, HEAD und DELETE sowie POST ohne die Angabe einer gültigen
-  FHIR-Operation unterbinden, damit keine unzulässigen Operationen auf den Rezeptdaten
-  ausgeführt werden können.
-title: E-Rezept-Fachdienst - unzulässige Operationen Task
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
+  /Task durch einen Versicherten die gültige Ergebnisliste der Task-Ressourcen ohne
+  die referenzierten, signierten E-Rezept-Bundle an den Aufrufer zurückgeben, damit
+  der Versicherte eine Übersicht aller Tasks erhält.
+title: E-Rezept-Fachdienst - Liste Task abrufen - Versicherter - Rückgabe Tasks im
+  Bundle
 version: 0

@@ -1,19 +1,20 @@
 actor:
-- PS_E-Rezept_verordnend
+- eRp_FD
 conformance: SHALL
-content_hash: 04478f6d886ece0c53bbe3ae7dd090db84ab66fdb16e3230cbe66da12be344c7
-created: '2026-03-09T16:36:14.470612'
-date: '2026-03-09T16:36:14.470615'
+content_hash: d4abdfda1e0c87e4fabbdf41a91ff0a556373a12d458c06d098572454ffb5b0c
+created: '2026-03-10T06:59:24.354401'
+date: '2026-03-10T06:59:24.354403'
 key: IG-TIFLOW-RX-38
-modified: '2026-03-09T16:36:14.470614'
+modified: '2026-03-10T06:59:24.354402'
 release_status: NEW
-source: input/pagecontent/op-activate-req-pvs.md
+source: input/pagecontent/op-abort-req-fd.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_verordnend:
-  - Konformitätsbestätigung
-text: Das PS der verordnenden LEI MUSS im Verordnungsdatensatz für ein E-Rezept des
-  Flowtype 200 oder 209 für Coverage.type.coding.code den Wert "PKV" verwenden.
-title: 'PS verordnende LEI: E-Rezept erstellen - Flowtype 200/209 - Versicherungstyp
-  PKV'
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts mittels POST /Task/&lt;id&gt;/$abort
+  durch eine verordnende oder abgebende Leistungserbringerinstitution die Daten für
+  die Löschinformation des Verordnungsdatensatzes in den ePA Medication Service bereitstellen.
+title: E-Rezept-Fachdienst - E-Rezept löschen - Löschinformation ePA Medication Service
+  bereitstellen (Verordnungsdatensatz) - Leistungserbringerinstitution
 version: 0

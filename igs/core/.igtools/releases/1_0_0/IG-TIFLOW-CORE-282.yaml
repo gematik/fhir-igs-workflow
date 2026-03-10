@@ -1,21 +1,34 @@
 actor:
 - CS_E-Rezept_KTR
 conformance: SHALL
-content_hash: 5aa16ae7c4c788a73b589c489a96e8e95f062347fed42232b303764b69542984
-created: '2026-03-09T16:37:37.615711'
-date: '2026-03-09T16:37:37.615714'
+content_hash: b516052d5be4f592b34c6f905685a9afc6afae9e5ed7281f99de7f29387013ee
+created: '2026-03-10T06:59:22.711575'
+date: '2026-03-10T06:59:22.711578'
 key: IG-TIFLOW-CORE-282
-modified: '2026-03-09T16:37:37.615713'
+modified: '2026-03-10T06:59:22.711577'
 release_status: NEW
 source: input/pagecontent/op-reject-req-ktr.md
 status: ACTIVE
 test_procedures:
   CS_E-Rezept_KTR:
   - Herstellererklärung
-text: "Das Clientsystem Kostenträger MUSS im Anwendungsfall \"Verordnung durch Clientsystem\
-  \ zurückgeben\" für die zurückzugebende Verordnung die HTTP-Operation POST /Task/&lt;id&gt;/$reject\
-  \ mit \n  <ul>\n    <li>ACCESS_TOKEN im Authorization-Header</li>\n    <li>Task-ID\
-  \ in URL &lt;id&gt; </li>\n    <li>Geheimnis in URL-Parameter ?secret=</li>\n  </ul>\n\
-  \  ausführen."
-title: 'CS Kostenträger: Verordnung zurückgeben - Statusrequest'
+text: "Das Clientsystem MUSS den Anwendungsfall \"UC 4.2 - E-Rezept durch Abgebenden\
+  \ zurückgeben\" gemäß TAB_ILFERP_008 umsetzen.\n  <table>\n    <tr> \n\t\t<th>Name</th>\n\
+  \t\t<th>Verordnung durch Abgebenden zurückgeben</th>\n\t</tr>\n\t<tr> \n\t\t<td>Auslöser</td>\n\
+  \t\t<td>Aufruf des Anwendungsfalls in der UI oder automatisierte Verarbeitung</td>\n\
+  \t</tr>\n    <tr> \n\t\t<td>Akteur</td>\n\t\t<td>Mitarbeiter des Kostenträgers</td>\n\
+  \t</tr>\n    <tr> \n\t\t<td>Vorbedingung</td>\n\t\t<td>\n            <ul>\n    \
+  \            <li>Der Kostenträger hat die Verordnung vom Fachdienst heruntergeladen\
+  \ und es befindet sich im Status \"in-progress\".</li>\n                <li>Der\
+  \ Nutzer hat die Verordnung zum Zurückgeben markiert und das Zurückgeben bestätigt.</li>\n\
+  \                <li>Das Clientsystem hat sich gegenüber der TI authentisiert.</li>\n\
+  \            </ul>\n        </td>\n\t</tr>\n    <tr> \n\t\t<td>Nachbedingung</td>\n\
+  \t\t<td>Der Workflow der Verordnung hat auf dem Fachdienst den Status \"ready\"\
+  </td>\n\t</tr>\n    <tr> \n\t\t<td>Standardablauf</td>\n\t\t<td>\n            <ol>\n\
+  \                <li>Task-ID und Geheimnis der Verordnung bestimmen</li>\n     \
+  \           <li>Verordnung Status auf Fachdienst ändern</li>\n                <li>Verordnung\
+  \ und E-Rezept-Token im CS löschen</li>\n            </ol>\n        </td>\n\t</tr>\n\
+  \  </table>\n  <div><figcaption><strong>Tabelle: </strong>TAB_ILFERP_008 - Verordnung\
+  \ durch Clientsystem zurückgeben</figcaption></div>"
+title: 'CS Kostenträger: Verordnung durch Abgebenden zurückgeben'
 version: 0

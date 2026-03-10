@@ -1,19 +1,25 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 51b6c6307ff413ebcb197a8cf8433e7aa74e737cee9af27b7420800cd33d61e9
-created: '2026-03-09T16:37:37.564521'
-date: '2026-03-09T16:37:37.564523'
+content_hash: a05993d06127f885537e590ece4efc855e4745a8287b03ab2798b8c614df8b45
+created: '2026-03-10T06:59:22.668131'
+date: '2026-03-10T06:59:22.668134'
 key: IG-TIFLOW-CORE-85
-modified: '2026-03-09T16:37:37.564522'
+modified: '2026-03-10T06:59:22.668133'
 release_status: NEW
-source: input/pagecontent/query-api-task-req-fd.md
+source: input/pagecontent/ttl.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-Operation PATCH auf den Endpunkt
-  /Task ohne Angabe einer &lt;id&gt; für eine konkrete Ressource mit dem HTTP-Fehlercode
-  405 ablehnen, um das Markieren mehrerer Ressourcen über einen Request zu verhindern.
-title: E-Rezept-Fachdienst – Task markieren - alles Markieren verbieten
+text: "Der E-Rezept-Fachdienst MUSS einen Task nach Ablauf der Löschfrist gemäss der\
+  \ folgenden Festlegung automatisch löschen und das Löschen in einem AuditEvent für\
+  \ den Versicherten nachvollziehbar protokollieren.\n\t<table>\n\t\t<tr> \n\t\t<th>Task.status\
+  \ nach Statuswechsel</th>\n\t\t<th>Löschfrist</th>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>draft</td>\n\
+  \t\t<td>10 Tage nach Statuswechsel</td>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>ready</td>\n\
+  \t\t<td>10 Tage nach Datum in Task.expiryDate</td>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>in-progress</td>\n\
+  \t\t<td>100 Tage nach Statuswechsel</td>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>completed</td>\n\
+  \t\t<td>100 Tage nach Statuswechsel</td>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>cancelled</td>\n\
+  \t\t<td>10 Tage nach Statuswechsel</td>\n\t\t</tr>\n\t</table>"
+title: E-Rezept-Fachdienst - Löschfrist abgelaufener Rezepte
 version: 0

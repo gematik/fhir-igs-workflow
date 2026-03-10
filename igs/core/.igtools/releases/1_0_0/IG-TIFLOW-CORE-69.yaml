@@ -1,20 +1,22 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 35c54a5e8117709aadba87770f940b653bd1ab34e46f76754496a5192a3ece9b
-created: '2026-03-09T16:37:37.562114'
-date: '2026-03-09T16:37:37.562116'
+content_hash: 52336c5a103d0e646c8df4ea72b7281f275b5d7434982497b632dbcb86101c4c
+created: '2026-03-10T06:59:22.664954'
+date: '2026-03-10T06:59:22.664956'
 key: IG-TIFLOW-CORE-69
-modified: '2026-03-09T16:37:37.562115'
+modified: '2026-03-10T06:59:22.664955'
 release_status: NEW
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit
-  den URL-Parameter pnw="..." durch eine abgebende LEI, falls im VSDM Prüfungsnachweis
-  keine Prüfziffer enthalten, das Ergebnis im Prüfungsnachweis gleich 3 und der passende
-  Status AcceptPN3VSDMxx = false ist mit dem Fehler 454 abbrechen.
-title: E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - AcceptPN3 false
+text: "Der E-Rezept-Fachdienst MUSS, falls im VSDM Prüfungsnachweis eine Prüfziffer\
+  \ enthalten ist, für den HMAC der Prüfziffer die führenden 23 Byte der Prüfziffer\
+  \ (Felder 1-5) mittels SHA-256 Hashfunktion berechnen und für den nachfolgenden\
+  \ Vergleich die ersten 24 Byte verwenden.<br>\n    Der E-Rezept-Fachdienst MUSS\
+  \ im Fehlerfall die Meldung \"Anwesenheitsnachweis konnte nicht erfolgreich durchgeführt\
+  \ werden (Fehler bei Prüfung der HMAC-Sicherung).\" im OperationOutcome zu übermitteln."
+title: E-Rezept-Fachdienst - Prüfung Prüfziffer - Berechnung HMAC der Prüfziffer
 version: 0

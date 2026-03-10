@@ -1,18 +1,21 @@
 actor:
 - PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: 45cdce40721d018d43f225c8a34a92ae0f50712cd29243c8e576dbd5c27843b4
-created: '2026-03-09T16:36:14.482216'
-date: '2026-03-09T16:36:14.482218'
+content_hash: af2bb8bea36675867669935b30104f457a4fdd4ae9965ffb561b8681347b2731
+created: '2026-03-10T06:59:24.367583'
+date: '2026-03-10T06:59:24.367586'
 key: IG-TIFLOW-RX-90
-modified: '2026-03-09T16:36:14.482217'
+modified: '2026-03-10T06:59:24.367585'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-kim.md
+source: input/pagecontent/op-dispense-req-avs.md
 status: ACTIVE
 test_procedures:
   PS_E-Rezept_abgebend:
-  - Produkttest
-text: 'Das PS der abgebenden und verordnenden LEI MUSS bei Versand einer Kommunikation-Message
-  eine Message mit "Content-Type: text/plain;charset=UTF-8" verwenden.'
-title: E-Rezept - Struktur Kommunikation-Message
+  - Herstellererklärung
+text: Das PS der abgebenden LEI MUSS im Anwendungsfall "Dispensierinformationen bereitstellen"
+  für das abgegebene E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$dispense mit
+  ACCESS_TOKEN im Authorization-Header Task-ID in URL &lt;id&gt; Geheimnis in URL-Parameter
+  ?secret= MedicationDispense bzw. Bundle Ressource ausführen.
+title: 'PS abgebende LEI: Dispensierinformationen bereitstellen - Dispensierinformation
+  übermitteln'
 version: 0

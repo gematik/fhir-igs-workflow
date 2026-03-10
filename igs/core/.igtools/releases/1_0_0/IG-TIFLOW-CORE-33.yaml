@@ -1,21 +1,19 @@
 actor:
-- CS_E-Rezept_KTR
+- eRp_FD
 conformance: SHALL
-content_hash: 2e9b4ba679af81e75e20c232176f43c4d465fd1c2675209c2f0c27a1eb94e995
-created: '2026-03-09T16:37:37.555667'
-date: '2026-03-09T16:37:37.555670'
+content_hash: b49cd6694369f3b823e0b6926f9b65a6da43fe9678baceb68e3e8277da811888
+created: '2026-03-10T06:59:22.658730'
+date: '2026-03-10T06:59:22.658733'
 key: IG-TIFLOW-CORE-33
-modified: '2026-03-09T16:37:37.555669'
+modified: '2026-03-10T06:59:22.658732'
 release_status: NEW
-source: input/pagecontent/query-api-communication-req-ktr.md
+source: input/pagecontent/query-api-channels-req-fd.md
 status: ACTIVE
 test_procedures:
-  CS_E-Rezept_KTR:
-  - Herstellererklärung
-text: "Das Clientsystem Kostenträger MUSS im Anwendungsfall \"Nachrichten von Versicherten\
-  \ empfangen\" die HTTP-Operation GET /Communication mit\n  <ul>\n    <li>ACCESS_TOKEN\
-  \ im Authorization-Header</li>\n    <li>optional: ?received=null für nur ungelesene\
-  \ Nachrichten</li>\n    <li>optional: ?received=gtYYYY-MM-DD für Nachrichten nach\
-  \ Datum DD.MM.YYYY</li>\n  </ul>\n  ausführen."
-title: 'CS Kostenträger: Nachrichten abrufen - Abfrage'
+  eRp_FD:
+  - Produktgutachten
+text: Der E-Rezept-Fachdienst MUSS alle Zugriffe auf die Ressource Channels mittels
+  der HTTP-Operationen PUT, PATCH, HEAD und DELETE unterbinden, damit keine unzulässigen
+  Operationen auf den Daten ausgeführt werden können.
+title: E-Rezept-Fachdienst - unzulässige Operationen Channels
 version: 0

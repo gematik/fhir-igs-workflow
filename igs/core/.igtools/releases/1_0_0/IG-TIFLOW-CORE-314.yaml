@@ -1,21 +1,22 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: f060cf3245eb64620c7beef5a39ff17aa95b042f17f6fcaf165e78d57272d60e
-created: '2026-03-09T16:37:37.626673'
-date: '2026-03-09T16:37:37.626676'
+content_hash: 7a0e78d18bb1abdbe2d9579c518eab0bffc981fa86d2aa3b43a31d15bde28f81
+created: '2026-03-10T06:59:22.722227'
+date: '2026-03-10T06:59:22.722229'
 key: IG-TIFLOW-CORE-314
-modified: '2026-03-09T16:37:37.626675'
+modified: '2026-03-10T06:59:22.722228'
 release_status: NEW
 source: input/pagecontent/menu-technische-umsetzung-epa-ms.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS den Aufruf zum Ermitteln des ePA-Aktensystem als
-  fehlerhaft kennzeichnen und eine detaillierte Fehlermeldung für interne Analysezwecke
-  protokollieren, wenn der Information Service der ePA auf einen Operationsaufruf
-  mit einem Statuscode 400 (malformed Request) reagiert.
-title: E-Rezept-Fachdienst - ePA - Fehlerbehandlung - Information Service - Struktureller
-  Fehler
+text: Der E-Rezept-Fachdienst MUSS die Aufrufe zum Ermitteln des ePA-Aktensystem für
+  mindestens eine Minute unterbrechen, wenn ein Operationsaufruf im Information Service
+  mit einem Statuscode 500 scheitert, und anschließend für weitere Aufrufe einen exponentiellen
+  Backoff-Mechanismus anwenden, der die Wartezeit zwischen den Versuchen sukzessive
+  verdoppelt, um die Belastung des Zielsystems zu minimieren.
+title: E-Rezept-Fachdienst - ePA - Fehlerbehandlung - Information Service - Fehler
+  im Information Service
 version: 0

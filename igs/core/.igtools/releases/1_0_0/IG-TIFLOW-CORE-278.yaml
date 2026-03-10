@@ -1,20 +1,22 @@
 actor:
-- eRp_FdV
+- eRp_FD
 conformance: SHALL
-content_hash: 98c78c1ceeff95c7db5a52592a7d650d2da318b19d6aa0090bc616e410044ff6
-created: '2026-03-09T16:37:37.613723'
-date: '2026-03-09T16:37:37.613727'
+content_hash: 0fdc2a8f1dcc16d6971bfbf843d90c9e1f5d9b95cf3452e4d0751f0f5f988155
+created: '2026-03-10T06:59:22.709533'
+date: '2026-03-10T06:59:22.709535'
 key: IG-TIFLOW-CORE-278
-modified: '2026-03-09T16:37:37.613726'
+modified: '2026-03-10T06:59:22.709534'
 release_status: NEW
-source: input/pagecontent/query-api-medicationdispense-req-fdv.md
+source: input/pagecontent/query-api-communication-req-fd.md
 status: ACTIVE
 test_procedures:
-  eRp_FdV:
+  eRp_FD:
   - Produkttest
-text: "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abgabeinformationen abfragen\" die\
-  \ HTTP-Operation GET /MedicationDispense mit\n    <ul>\n        <li>ACCESS_TOKEN\
-  \ im Authorization-Header</li>\n        <li>optional: Suchparameter gemäß https://www.hl7.org/fhir/medicationdispense.html#search</li>\n\
-  \    </ul>\n    ausführen."
-title: 'E-Rezept-FdV: Abgabeinformationen abfragen - MedicationDispense abrufen'
+text: 'Der E-Rezept-Fachdienst MUSS beim Löschen einer Communication-Ressource der
+  http-Response das http-Header-Feld "Warning" mit dem Zeitpunkt des Nachrichtenabrufs
+  durch den Empfänger ergänzen (z.B. "Warning: ''Deleted message delivered at 2020-07-01
+  10:30:00''"), wenn die Nachricht bereits durch den Empfänger abgerufen wurde (Communication.received
+  ungleich NULL, bzw. enthält Datum des Abrufs), um dem Absender einen Hinweis anzeigen
+  zu können.'
+title: E-Rezept-Fachdienst - Nachricht löschen - Warning bei Empfänger bereits abgerufen
 version: 0

@@ -1,29 +1,23 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: dec9afa9a43d967dce5dfd2c1aad056611b45c768deedd94baa03a4861222ad1
-created: '2026-03-09T16:37:37.611581'
-date: '2026-03-09T16:37:37.611584'
+content_hash: 4f948124fc1a6a419a2e50da7921b3c4345515d6738adfe641b7f8ba82471870
+created: '2026-03-10T06:59:22.707713'
+date: '2026-03-10T06:59:22.707716'
 key: IG-TIFLOW-CORE-267
-modified: '2026-03-09T16:37:37.611583'
+modified: '2026-03-10T06:59:22.707715'
 release_status: NEW
 source: input/pagecontent/query-api-communication-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Produkttest
-text: "Der E-Rezept-Fachdienst MUSS das Einstellen einer Nachricht des Profils \"\
-  https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq\"\
-  \ oder \"https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Representative\"\
-  \ durch einen Versicherten über die http-Operation POST auf den Endpunkt /Communication\
-  \ mit dem http-Status-Code 400 abbrechen, wenn \n    <ul><li>\n        die KVNR\
-  \ des in Communication.basedOn referenzierten Tasks Task.for ungleich der KVNR des\
-  \ Einstellenden in \"idNummer\" des übergebenen ACCESS_TOKEN\n    </li></ul>\n \
-  \   und\n    <ul><li>\n        der http-Header \"X-AccessCode\" fehlt oder der im\
-  \ http-Header \"X-AccessCode\" übergebene AccessCode ungleich dem AccessCode-Identifier\
-  \ des referenzierten Tasks\n    </li></ul>\n    ist, um irreführende Testnachrichten\
-  \ zu unterbinden, die eine vermeidbare Mehrbelastung für den E-Rezept-Fachdienst\
-  \ darstellen."
-title: E-Rezept-Fachdienst - Nachricht einstellen - Prüfung Versichertenbezug und
-  Berechtigung
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS das Einstellen einer Nachricht über die http-Operation\
+  \ POST auf den Endpunkt /Communication mit dem http-Status-Code 400 abbrechen, wenn\n\
+  \    <ul>\n        <li>der Nachrichteninhalt Communication.payload größer als 10\
+  \ kByte ist oder</li>\n        <li>in von Versicherten eingestellten Nachrichten\
+  \ in Communication.payload eine externe URLs enthält oder</li>\n        <li>ein\
+  \ Attachment mit MimeType \"application/*\" enthält,</li>\n    </ul>\n    damit\
+  \ über den E-Rezept-Fachdienst kein Schadcode verteilt wird."
+title: E-Rezept-Fachdienst - Nachricht einstellen - Schadcodeprüfung
 version: 0

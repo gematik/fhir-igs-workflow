@@ -1,22 +1,19 @@
 actor:
-- eRp_FD
+- eRp_FdV
 conformance: SHALL
-content_hash: cf84060645723ba6618dc985f3373e957b8992aea6c1950249621c1830d012be
-created: '2026-03-09T16:37:37.568058'
-date: '2026-03-09T16:37:37.568061'
+content_hash: 03fe7e611a3008b829440acd553d465edb33f8602fc5ca7bb47c42c2b5f5d4dc
+created: '2026-03-10T06:59:22.670943'
+date: '2026-03-10T06:59:22.670946'
 key: IG-TIFLOW-CORE-101
-modified: '2026-03-09T16:37:37.568060'
+modified: '2026-03-10T06:59:22.670945'
 release_status: NEW
-source: input/pagecontent/query-api-auditevent-req-fd.md
+source: input/pagecontent/query-api-channels-req-fdv.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
+  eRp_FdV:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
-  /AuditEvent und auf einen konkreten über &lt;id&gt; adressierten /AuditEvent/&lt;id&gt;
-  sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die
-  Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers
-  im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit Protokolleinträge
-  nicht durch Unberechtigte ausgelesen werden können.
-title: E-Rezept-Fachdienst - AuditEvent lesen - Rollenprüfung
+text: Das E-Rezept-FdV MUSS, wenn es den Anwendungsfall "Push Notifications" umsetzt,
+  für die Registrierung und Verwaltung der Channels für die FdV-Instanzen des Versicherten
+  am E-Rezept-Fachdienst die Operationen gemäß [OpenAPI_FD] verwenden.
+title: 'E-Rezept-FdV: Push Notifications - Channelkonfiguration - OpenAPI'
 version: 0

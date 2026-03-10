@@ -1,11 +1,11 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 29820fa1c8b62015cc54b871b212b6511219b844a1a7b950dbcd133c22f77df1
-created: '2026-03-09T16:35:19.349146'
-date: '2026-03-09T16:35:19.349148'
+content_hash: 12ec8606a5443ee1a710d253479247510a298974b32152f4b4d0a5bbdbdaa465
+created: '2026-03-10T06:59:24.136553'
+date: '2026-03-10T06:59:24.136555'
 key: IG-TIFLOW-EU-56
-modified: '2026-03-09T16:35:19.349147'
+modified: '2026-03-10T06:59:24.136554'
 release_status: NEW
 source: input/pagecontent/op-grant-eu-access-permission-req-fd.md
 status: ACTIVE
@@ -13,11 +13,14 @@ test_procedures:
   eRp_FD:
   - Produkttest
 text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt
-  /$grant-eu-access-permission prüfen, dass der im Request übermittelte Ländercode
-  (Parameters.parameter:countryCode) einem Land entspricht, welches die Anwendung
-  ePrescription/eDispensation Szenario Land A unterstützt und bei fehlschlagender
-  Prüfung die Operation mit dem HTTP-Fehlercode 409 und dem OperationOutcome "Für
-  das angefragte Land ist Einlösen von E-Rezepten nicht möglich." abbrechen, damit
-  der Versicherte nur für zulässige europäische Länder eine Zugriffsberechtigung erteilt.
-title: E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Ländercode
+  /$grant-eu-access-permission die KVNR des Versicherten im ACCESS_TOKEN im HTTP-RequestHeader
+  "Authorization" feststellen und sicherstellen, dass ein Consent-Datensatz mit Consent.patient.identifier
+  = KVNR und Consent.category.coding.code = EUDISPCONS existiert und bei fehlgeschlagener
+  Prüfung die Operation mit dem HTTP-Fehlercode 403 und dem OperationOutcome "Das
+  Erstellen einer Zugriffsberechtigung ist erst zulässig, wenn eine Einwilligung durch
+  den Nutzer zum Einlösen von E-Rezepten im europäischen Ausland erteilt wurde." abbrechen,
+  damit nur Versicherte eine Zugriffsberechtigung schreiben, die eine Einwilligung
+  erteilt haben.
+title: E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Einwillung für
+  KVNR
 version: 0

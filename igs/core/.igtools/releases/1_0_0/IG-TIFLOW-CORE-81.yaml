@@ -1,23 +1,21 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 921c7f79870f35f04a48e625b4207ced97477e5772f4dcef241134f41c75dae2
-created: '2026-03-09T16:37:37.563982'
-date: '2026-03-09T16:37:37.563985'
+content_hash: 851e90c3b037bec861abc4dfaf1f833699013027d4e5ce10f8c64f3d8c737e48
+created: '2026-03-10T06:59:22.667173'
+date: '2026-03-10T06:59:22.667175'
 key: IG-TIFLOW-CORE-81
-modified: '2026-03-09T16:37:37.563984'
+modified: '2026-03-10T06:59:22.667174'
 release_status: NEW
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
-  Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende Institution den im referenzierten
-  Task gespeicherten Status Task.status prüfen und mit dem Fehler 412 abbrechen, wenn
-  Task.status ungleich "in-progress" und ungleich "completed" ist, damit der Datensatz
-  nur abgerufen werden, kann, wenn sich die Verordnung in Belieferung befindet oder
-  der Workflow abgeschlossen ist.
-title: E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen
-  - Prüfung Status
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation GET /Task/&lt;id&gt;
+  durch einen Versicherten mit der Rolle oid_versicherter, sofern die KVNR des Aufrufenden
+  ungleich der KVNR in Task.for ist, den Push Notification Prozess für den Trigger
+  mit der ChannelId "erp.task.vertreter" und den Versicherten mit der KVNR = Task.for
+  initiieren.
+title: E-Rezept-Fachdienst - Task abrufen - Vertreter - Push Notification Versicherter
 version: 0

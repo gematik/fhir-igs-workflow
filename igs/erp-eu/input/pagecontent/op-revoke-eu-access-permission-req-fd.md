@@ -1,7 +1,7 @@
 ### Anforderungen der Schnittstelle aus diesem Modul
 
 <!-- A_27084 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-EU-52" title="E-Rezept-Fachdienst - Zugriffsberechtigung löschen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-EU-53" title="E-Rezept-Fachdienst - Zugriffsberechtigung löschen - Rollenprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -10,7 +10,7 @@
 </requirement>
 
 <!-- A_27085 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-EU-53" title="E-Rezept-Fachdienst - Zugriffsberechtigung löschen - Löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-EU-54" title="E-Rezept-Fachdienst - Zugriffsberechtigung löschen - Löschen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>

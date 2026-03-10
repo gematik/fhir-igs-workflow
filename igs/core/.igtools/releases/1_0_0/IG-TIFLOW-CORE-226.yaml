@@ -4,11 +4,11 @@ actor:
 - PS_E-Rezept_abgebend
 - PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: f5f458c310fb3a8fee3fde974b498de7a7888b3580f3901da49ad711dd8b9b9d
-created: '2026-03-09T16:37:37.602154'
-date: '2026-03-09T16:37:37.602157'
+content_hash: e40712a6a2f417f5b61c3dff16d6324c67b5a07a38babbaa95c768f4534af670
+created: '2026-03-10T06:59:22.697970'
+date: '2026-03-10T06:59:22.697973'
 key: IG-TIFLOW-CORE-226
-modified: '2026-03-09T16:37:37.602156'
+modified: '2026-03-10T06:59:22.697972'
 release_status: NEW
 source: input/pagecontent/verbindungsaufbau-client.md
 status: ACTIVE
@@ -21,9 +21,7 @@ test_procedures:
   - Herstellererklärung
   PS_E-Rezept_verordnend:
   - Herstellererklärung
-text: 'Das Clientsystem MUSS zur Laufzeit einen CODE_VERIFIER (Zufallswert) gemäß
-  [RFC7636#section-4.1] bilden. Der CODE_VERIFIER MUSS eine Länge von mindestens 43
-  und maximal 128 Zeichen enthalten. Dabei sind die folgenden Zeichen zulässig: [A-Z]
-  / [a-z] / [0-9] / "-" / "." / "_" / "~".'
-title: 'CS: Erzeugen des CODE_VERIFIER'
+text: Das Clientsystem MUSS empfangene ACCESS_TOKEN, ID_TOKEN und AUTHORIZATION_CODE-Objekte
+  gegen unberechtigten Zugriff schützen.
+title: 'CS: Sichere Speicherung der Token'
 version: 0

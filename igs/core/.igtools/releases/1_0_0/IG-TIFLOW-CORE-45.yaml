@@ -1,21 +1,19 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 94c336dc31ecb1bb2b4d4ce96cb6940abd49591c09be8e7276d79ced41455304
-created: '2026-03-09T16:37:37.557947'
-date: '2026-03-09T16:37:37.557950'
+content_hash: 2e773406e1faf310f8bfa66bdd31118343dae1b83ee2b8bcc6adc4283de4fd5e
+created: '2026-03-10T06:59:22.660824'
+date: '2026-03-10T06:59:22.660827'
 key: IG-TIFLOW-CORE-45
-modified: '2026-03-09T16:37:37.557949'
+modified: '2026-03-10T06:59:22.660826'
 release_status: NEW
 source: input/pagecontent/op-close-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation
-  über /Task/&lt;id&gt;/$close, wenn eine MedicationDispense Ressource übermittelt
-  wird und die Operation erfolgreich abgeschlossen werden kann, den Push Notification
-  Prozess für den Trigger mit der ChannelId "erp.task.close" und den Versicherten
-  mit der KVNR = Task.for initiieren.
-title: E-Rezept-Fachdienst - Task schließen - Push Notification Versicherter
+text: Der E-Rezept-Fachdienst MUSS, falls keine OCSP-Response für das Signaturzertifikat
+  der Quittung vorliegt bzw. die letzte vorliegende OCSP-Response älter als 24h ist,
+  die Operation mit dem Fehler 503 abbrechen.
+title: E-Rezept-Fachdienst - Task schließen - OCSP-Response nicht älter als 24h
 version: 0

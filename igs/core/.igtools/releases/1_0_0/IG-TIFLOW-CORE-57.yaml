@@ -1,11 +1,11 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 404b100cf7ea8a284cbe29ecb5fd14558c9d99ad820edf0d67abeeb561f50775
-created: '2026-03-09T16:37:37.560461'
-date: '2026-03-09T16:37:37.560463'
+content_hash: 90ff02d461e6bf5142ddb9343004fc0a5053a9ddc625a9a0e75b1459bdb0dda1
+created: '2026-03-10T06:59:22.663058'
+date: '2026-03-10T06:59:22.663061'
 key: IG-TIFLOW-CORE-57
-modified: '2026-03-09T16:37:37.560462'
+modified: '2026-03-10T06:59:22.663060'
 release_status: NEW
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
@@ -13,11 +13,8 @@ test_procedures:
   eRp_FD:
   - Produkttest
 text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
-  /Task mit dem URL-Parameter pnw="..." durch eine abgebende LEI die Telematik-ID
-  des Aufrufers im ACCESS_TOKEN im HTTP-Requestheader "Authorization" feststellen
-  und den Aufruf in einer Statistik zur Prüfung des Ratelimits erfassen, wenn der
-  Aufruf mit einem Fehler 456 oder 458 abgebrochen wird. Der E-Rezept-Fachdienst MUSS
-  die Statistik zur Prüfung des Ratelimits alle 24h zurück auf 0 setzen.
-title: E-Rezept-Fachdienst - Rezepte lesen - Apotheke - Ratelimit pro Telematik-ID
-  pro Tag
+  /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI prüfen, ob die in
+  der Prüfziffer übermittelte KVNR identisch ist mit dem Wert im URL-Parameter kvnr="..."
+  und bei Ungleichheit mit dem Fehler 456 abbrechen.
+title: E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Vergleich KVNR
 version: 0

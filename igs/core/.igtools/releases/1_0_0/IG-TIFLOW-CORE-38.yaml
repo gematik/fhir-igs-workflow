@@ -1,21 +1,23 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: abe079776e0f58626ac8664658631e6035904e1d51c4eb435954e6f54cb0a2c1
-created: '2026-03-09T16:37:37.556655'
-date: '2026-03-09T16:37:37.556657'
+content_hash: 8b9f94d6c0d533793b356acfc7ed976915b505c270a82a6a9235ccfe715071e2
+created: '2026-03-10T06:59:22.659658'
+date: '2026-03-10T06:59:22.659660'
 key: IG-TIFLOW-CORE-38
-modified: '2026-03-09T16:37:37.556656'
+modified: '2026-03-10T06:59:22.659659'
 release_status: NEW
-source: input/pagecontent/query-api-channels-req-fd.md
+source: input/pagecontent/op-close-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Produktgutachten
-text: "Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation GET /channels die Rolle\
-  \ \"professionOID\" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\"\
-  \ feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle \n\
-  \  <ul>\n    <li>oid_versicherter</li>\n  </ul>\n  die Operation aufrufen, damit\
-  \ die Operation nicht durch unberechtigte Dritte ausgeführt wird."
-title: E-Rezept-Fachdienst - Push Notifications - Channels abrufen - Rollenprüfung
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation
+  über /Task/&lt;id&gt;/$close das im URL-Parameter "?secret=..." übertragene Secret
+  gegen das im referenzierten Task gespeicherte Secret Task.identifier:Secret als
+  https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret und auf Task.status =
+  "in-progress" prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation
+  mit dem HTTP-Fehlercode 403 abbrechen, damit der Zugriff auf diesen Datensatz nur
+  durch den Berechtigten in Kenntnis des Secrets erfolgt.
+title: E-Rezept-Fachdienst - Task schließen - Prüfung Secret
 version: 0

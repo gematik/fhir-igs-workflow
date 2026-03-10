@@ -1,23 +1,28 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: d2559f34b60217649892a2c33dddf6b58bcd99a49bed71af2fbacae70704f71d
-created: '2026-03-09T16:36:14.481424'
-date: '2026-03-10T06:48:07.239843'
+content_hash: 62410b3871a00d40f4bde4bee3136b20ef69b668d5e2d6b3461056774a6e913e
+created: '2026-03-10T06:59:24.366457'
+date: '2026-03-10T06:59:24.366461'
 key: IG-TIFLOW-RX-85
-modified: '2026-03-10T06:48:07.239843'
+modified: '2026-03-10T06:59:24.366460'
 release_status: NEW
-source: input/pagecontent/op-abort-req-fd.md
+source: input/pagecontent/op-accept-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: "Der E-Rezept-Fachdienst MUSS das Löschen eines E-Rezepts über den mittels der\
-  \ &lt;id&gt; adressierten /Task/&lt;id&gt;/$abort verhindern und die Operation mit\
-  \ dem HTTP-Fehlercode 403 abweisen, wenn der Status des adressierten Tasks gleich\
-  \ \"in-progress\" ist und die Rolle des aufrufenden Nutzers nicht einer der folgenden\
-  \ Rollen entspricht:\n <ul>\n <li>oid_oeffentliche_apotheke</li>\n <li>oid_krankenhausapotheke</li>\n\
-  \ </ul>\n damit Nutzer außerhalb der Apotheke keine Rezepte löschen, die sich aktuell\
-  \ in Belieferung befinden."
-title: E-Rezept-Fachdienst - E-Rezept löschen - Apotheke - Statusprüfung in-progress
+text: 'Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
+  über /Task/&lt;id&gt;/$accept die Operation mit dem Fehlercode 403 abbrechen, wenn
+  die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
+  = true) gekennzeichnet ist und und der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start)
+  zu einem späteren Zeitpunkt als das aktuelle Datum liegt, da Teilverordnungen von
+  Mehrfachverordnungen erst ab Beginn der Einlösefrist abgerufen werden dürfen. Im
+  Falle dieses Fehlers ist im OperationOutcome des Response der Beginn der Einlösefrist
+  wie folgt anzugeben: "Teilverordnung zur Mehrfachverordnung &lt;MVO Referenz&gt;
+  ist ab &lt;Datum&gt; einlösbar.", wobei &lt;MVO Referenz&gt; der Wert MedicationRequest.extension:Mehrfachverordnung.extension:ID.value[x]:valueIdentifier.value
+  sowie &lt;Datum&gt; der Wert MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start
+  im Format "dd.mm.yyyy" ist.'
+title: E-Rezept-Fachdienst - Task akzeptieren - Mehrfachverordnung - Beginn Einlösefrist
+  prüfen
 version: 0

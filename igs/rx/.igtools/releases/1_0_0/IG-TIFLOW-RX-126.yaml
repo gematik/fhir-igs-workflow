@@ -1,20 +1,19 @@
 actor:
 - PS_E-Rezept_abgebend
-conformance: SHOULD
-content_hash: d087dacf5767c516c2270e860dc181f6c49d3e0fe902de5d5474d38d27aacbf4
-created: '2026-03-09T16:36:14.488256'
-date: '2026-03-09T16:36:14.488259'
+conformance: SHALL
+content_hash: b7bd162035c938792f7834c8683e0dd73e86f38d62c2c77c14b10d65d0a1889c
+created: '2026-03-10T06:59:24.373494'
+date: '2026-03-10T06:59:24.373497'
 key: IG-TIFLOW-RX-126
-modified: '2026-03-09T16:36:14.488258'
+modified: '2026-03-10T06:59:24.373496'
 release_status: NEW
 source: input/pagecontent/menu-fachlichkeit-ux-abgebend.md
 status: ACTIVE
 test_procedures:
   PS_E-Rezept_abgebend:
   - Herstellererklärung
-text: Das PS der abgebenden LEI SOLL im Falle unzureichender Dokumentation der Abgabe
-  in der Abrechnungsstatusliste den Nutzer auf die korrekte Stelle verweisen, die
-  in der Dokumentation zu korrigieren ist.
-title: 'PS abgebende LEI: UX - Abrechnungsstatusliste für E-Rezepte - Verweis zur
-  Korrektur'
+text: Das PS der abgebenden LEI MUSS die Quittung mittels der Operation POST /Task/&lt;id&gt;/$close
+  für jedes E-Rezept, was beliefert wurde, abrufen, um den Workflow im E-Rezept-Fachdienst
+  abzuschließen.
+title: 'PS abgebende LEI: UX – Workflow von E-Rezepten abschließen'
 version: 0

@@ -1,21 +1,23 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 088a299282a75c03cb38d9df53cbda1eb8c34acc00c7c0762aae5b7e8915399d
-created: '2026-03-09T16:37:37.629579'
-date: '2026-03-09T16:37:37.629582'
+content_hash: b3be07d0cda4182a200fbdfe4c0a632cf73557a0cc7a1597fe1f04476207c635
+created: '2026-03-10T06:59:22.725369'
+date: '2026-03-10T06:59:22.725371'
 key: IG-TIFLOW-CORE-330
-modified: '2026-03-09T16:37:37.629581'
+modified: '2026-03-10T06:59:22.725370'
 release_status: NEW
 source: input/pagecontent/menu-technische-umsetzung-epa-ms.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS bei einem Statuscode 400 in der Response des Medication
-  Service, der auf operationelle Probleme wie Entschlüsselungsprobleme hindeutet,
-  den Übermittlungsversuch abbrechen, einen neuen VAU-Kanal aufbauen und anschließend
-  einen neuen Übermittlungsversuch starten.
-title: E-Rezept-Fachdienst - ePA - Fehlerbehandlung - Probleme bei der Entschlüsselung
-  durch den Medication Service
+text: Der E-Rezept-Fachdienst MUSS die Datenübermittlung an ein Aktenkonto für mindestens
+  eine Minute unterbrechen, wenn ein Aufruf im Medication Service mit dem Statuscode
+  500 scheitert, anschließend den Endpunkt zum Auffinden des Aktenkonto für diese
+  KVNR bei allen weiteren Information Services abrufen, die Anfrage am gefundenen
+  Medication Service wiederholen und bei anhaltenden Problemen einen exponentiellen
+  Backoff-Mechanismus anwenden, der die Wartezeit zwischen den Versuchen sukzessive
+  verdoppelt, um die Systembelastung zu minimieren.
+title: E-Rezept-Fachdienst - ePA - Fehlerbehandlung - Reaktion auf Scheitern des Operationaufrufs
 version: 0

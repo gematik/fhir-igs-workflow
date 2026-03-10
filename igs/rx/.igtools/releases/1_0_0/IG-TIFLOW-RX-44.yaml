@@ -1,19 +1,20 @@
 actor:
 - PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: 3535ab72fffb49f68973081fe634d4dde3d19720396b846a2a49120a7fdc44f0
-created: '2026-03-09T16:36:14.471809'
-date: '2026-03-09T16:36:14.471811'
+content_hash: b0d058df7ace0150d3d171e15f359162d6b21779ffef941c6791ab38adac3ef0
+created: '2026-03-10T06:59:24.355594'
+date: '2026-03-10T06:59:24.355596'
 key: IG-TIFLOW-RX-44
-modified: '2026-03-09T16:36:14.471810'
+modified: '2026-03-10T06:59:24.355595'
 release_status: NEW
 source: input/pagecontent/op-activate-req-pvs.md
 status: ACTIVE
 test_procedures:
   PS_E-Rezept_verordnend:
   - Konformitätsbestätigung
-text: Das PS der verordnenden LEI MUSS es dem Nutzer ermöglichen, die Einlöseinformationen
-  (Task.id und AccessCode) als E-Rezept-Token über ein geeignetes Übermittlungsverfahren
-  an eine Apotheke der Wahl zu schicken.
-title: 'PS verordnende LEI: Übergabe E-Rezept-Token an Apotheke'
+text: Das PS der verordnenden LEI MUSS sicherstellen, dass ein Verordnungsdatensatz
+  für ein E-Rezept des Flowtype 166 nur mit einem HBA mit der zulässigen ProfessionOID
+  oid_arzt signiert werden kann.
+title: 'PS verordnende LEI: E-Rezept erstellen - Flowtype 166 - zulässige Signatur
+  Arzt'
 version: 0

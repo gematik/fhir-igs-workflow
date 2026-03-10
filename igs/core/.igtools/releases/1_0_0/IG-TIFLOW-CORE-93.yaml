@@ -1,22 +1,22 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 5200eb8eca481819be9a6c34bd45bc047a2f41df81479d2ff86cb98114c497be
-created: '2026-03-09T16:37:37.566652'
-date: '2026-03-09T16:37:37.566654'
+content_hash: 217203f66d5f554c11026d4194d7bed9b478caf2529d7817203d1f6fa865513e
+created: '2026-03-10T06:59:22.669645'
+date: '2026-03-10T06:59:22.669648'
 key: IG-TIFLOW-CORE-93
-modified: '2026-03-09T16:37:37.566653'
+modified: '2026-03-10T06:59:22.669647'
 release_status: NEW
-source: input/pagecontent/ttl.md
+source: input/pagecontent/query-api-medicationdispense-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Produkttest
-text: "Der E-Rezept-Fachdienst MUSS eine gespeicherte Ressource Communication\n\t\
-  automatisch löschen:\n\t<ul>\n\t\t<li>ohne eine Referenz auf einen Task in Communication.basedOn\
-  \ nach 100 Tagen ab ihrem Sendedatum Communication.sent,</li>\n\t\t<li>mit einer\
-  \ Referenz auf einen Task in Communication.basedOn gemäss der Löschfrist beim Löschen\
-  \ des Tasks,</li>\n\t\t<li>mit einer Referenz auf einen ChargeItem in Communication.basedOn\
-  \ nach 100 Tagen ab ihrem Sendedatum Communication.sent.</li>\n\t</ul>"
-title: E-Rezept-Fachdienst - Löschfrist veraltete Nachrichten
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt\
+  \ /MedicationDispense sicherstellen, dass ausschließlich Nutzer in der Rolle \n\
+  \  <ul>\n    <li>oid_versicherter</li>\n  </ul>\n  die Operation am E-Rezept-Fachdienst\
+  \ aufrufen dürfen und die Rolle \"professionOID\" des Aufrufers im ACCESS_TOKEN\
+  \ im HTTP-RequestHeader \"Authorization\" feststellen, damit Dispensierinformationen\
+  \ nicht durch Unberechtigte ausgelesen werden können."
+title: E-Rezept-Fachdienst - MedicationDispense abrufen - Rollenprüfung
 version: 0

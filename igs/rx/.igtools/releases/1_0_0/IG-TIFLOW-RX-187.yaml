@@ -1,20 +1,20 @@
 actor:
-- PS_E-Rezept_abgebend
-conformance: SHALL
-content_hash: ee9c9a23a400eefd45a81304575e35db1760aec83147af4170345ecbd049ab72
-created: '2026-03-09T16:36:14.497921'
-date: '2026-03-09T16:36:14.497924'
+- PS_E-Rezept_verordnend
+conformance: SHOULD
+content_hash: 84c8f28d8bae4513e82f8905b4621eac5cd0ed8572e05fde3ffadbd3f2bc4e4e
+created: '2026-03-10T06:59:24.382952'
+date: '2026-03-10T06:59:24.382954'
 key: IG-TIFLOW-RX-187
-modified: '2026-03-09T16:36:14.497923'
+modified: '2026-03-10T06:59:24.382953'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-dispensierinformationen.md
+source: input/pagecontent/menu-fachlichkeit-ux-verordnend.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_abgebend:
-  - Produkttest
-text: Das Clientsystem des Kostenträgers MUSS beim Erstellen von Dispensierinformationen
-  mit Flowtype 162 eine FHIR-Ressource mit dem Profil GEM_ERP_PR_MedicationDispense_DiGA
-  erstellen.
-title: 'CS Kostenträger: Dispensierinformationen – Flowtype 162 – MedicationDispense
-  erstellen'
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: Das PS der verordnenden LEI SOLL dem Nutzer bei einem Ausfall von für die Anwendung
+  E-Rezept relevanten Komponenten (negativer Healthcheck der TI, Fehler in der Kommunikation
+  mit Komponenten der TI) automatisch einen Muster 16 Ausdruck erstellen. Das System
+  SOLL dem Nutzer dieses Verhalten per Hinweis mitteilen.
+title: 'PS verordnende LEI: UX - Verhalten bei Ausfall von TI Komponenten des E-Rezepts'
 version: 0

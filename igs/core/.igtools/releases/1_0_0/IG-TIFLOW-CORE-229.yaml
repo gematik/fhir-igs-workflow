@@ -4,11 +4,11 @@ actor:
 - PS_E-Rezept_abgebend
 - PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: 4b1f867eda7066365ade10f519c3fe80bcbe22620a44f6aff38df6eaa318aca4
-created: '2026-03-09T16:37:37.603288'
-date: '2026-03-09T16:37:37.603291'
+content_hash: 85401a46f2b413580c873ddbddf601591531f0ccde4978e44be254b4ad661164
+created: '2026-03-10T06:59:22.698746'
+date: '2026-03-10T06:59:22.698748'
 key: IG-TIFLOW-CORE-229
-modified: '2026-03-09T16:37:37.603290'
+modified: '2026-03-10T06:59:22.698747'
 release_status: NEW
 source: input/pagecontent/verbindungsaufbau-client.md
 status: ACTIVE
@@ -16,13 +16,17 @@ test_procedures:
   CS_E-Rezept_KTR:
   - Herstellererklärung
   NCPeH_ePeDA:
-  - Herstellererklärung
+  - Produktgutachten
   PS_E-Rezept_abgebend:
   - Herstellererklärung
   PS_E-Rezept_verordnend:
   - Herstellererklärung
-text: Das Clientsystem MUSS den "user_consent" und den CHALLENGE_TOKEN vom Authorization-Endpunkt
-  des IDP-Dienstes annehmen. Der Authorization-Endpunkt liefert diese als Antwort
-  auf den Authorization-Request des Clientsystems.
-title: 'CS: Annahme des user_consent und des CHALLENGE_TOKEN'
+text: "Das Clientsystem MUSS den Antrag zum AUTHORIZATION_CODE für ein ACCESS_TOKEN\
+  \ beim Authorization-Endpunkt (URI_AUTH) in Form eines HTTP/1.1 GET Request stellen\
+  \ und dabei die folgenden Attribute anführen:\n    <ul>\n        <li>\"response_type\"\
+  </li>\n        <li>\"scope\"</li>\n        <li>\"client_id\"</li>\n        <li>\"\
+  redirect_uri\"</li>\n        <li>\"code_challenge\" (Hashwert des \"code_verifier\"\
+  ) [RFC7636#section-4.2]</li>\n        <li>\"code_challenge_method\" HASH-Algorithmus\
+  \ (S256) [RFC7636#section-4.3]</li>\n    </ul>"
+title: 'CS: Anfrage des AUTHORIZATION_CODE für ein ACCESS_TOKEN'
 version: 0

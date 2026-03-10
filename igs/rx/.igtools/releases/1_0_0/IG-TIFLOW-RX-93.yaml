@@ -1,29 +1,23 @@
 actor:
-- PS_E-Rezept_abgebend
 - PS_E-Rezept_verordnend
-- eRp_FD
-- eRp_FdV
 conformance: SHALL
-content_hash: 18d6a02be2e301cd4acbe6f762f3a84f2c526dca4fc0186fa72a5ed5cd446d63
-created: '2026-03-09T16:36:14.483547'
-date: '2026-03-09T16:36:14.483552'
+content_hash: 7657adb0f6d1a8d1c79fc54dec162d746e09f44893079e467d39d2ee39f1ec49
+created: '2026-03-10T06:59:24.368136'
+date: '2026-03-10T06:59:24.368139'
 key: IG-TIFLOW-RX-93
-modified: '2026-03-09T16:36:14.483550'
+modified: '2026-03-10T06:59:24.368138'
 release_status: NEW
-source: input/pagecontent/index.md
+source: input/pagecontent/menu-technische-umsetzung-kim.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_abgebend:
-  - Herstellererklärung
   PS_E-Rezept_verordnend:
-  - Herstellererklärung
-  eRp_FD:
-  - Herstellererklärung
-  eRp_FdV:
-  - Herstellererklärung
-text: Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation
-  Guides "E-Rezept für Arzneimittel" alle Anforderungen und FHIR-Artefakte umsetzen,
-  die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core],
-  die in diesem IG referenziert werden.
-title: 'E-Rezept: Umsetzung des Moduls ''E-Rezept für Arzneimittel'''
+  - Produkttest
+text: 'Das PS der verordnenden LEI MUSS bei Versand einer Zuweisungs-Message eine
+  Message mit "Content-Type: multipart/mixed;..." und der folgenden Struktur verwenden.
+  Tabelle # : Struktur der Message mit "Content-Type: multipart/mixed;..." Teil Inhalt
+  optional Freitext Freitextmessage für den Empfänger default: "direkte Zuweisung
+  E-Rezept" nein Einlöseinformation E-Rezept-Token als Link gemäß gemSpec_DM_eRp#A_19554
+  Nach 45 Zeichen MUSS ein Steuerzeichen "CRLF" eingefügt werden nein Therapieplan
+  Therapieplan als Anhang, base64 codiert ja'
+title: E-Rezept - Struktur Zuweisungs-Message
 version: 0

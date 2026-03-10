@@ -1,20 +1,22 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: b341f092b43652e70bf0a07e80a6e0f99875179ff1f9e5e52343159ed12ffb59
-created: '2026-03-09T16:37:37.567643'
-date: '2026-03-09T16:37:37.567645'
+content_hash: 9f59e9a6ffba88e4cbfc6bee560158f4e9971a9465961eb84f30b1444f5974cc
+created: '2026-03-10T06:59:22.670578'
+date: '2026-03-10T06:59:22.670580'
 key: IG-TIFLOW-CORE-99
-modified: '2026-03-09T16:37:37.567644'
+modified: '2026-03-10T06:59:22.670579'
 release_status: NEW
-source: input/pagecontent/query-api-medicationdispense-req-fd.md
+source: input/pagecontent/query-api-auditevent-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS im Anwendungsfall "Abgabeinformationen abrufen"
-  die Suche aller Abgabeinformationen zu einer Verordnung mit dem Aufruf GET /MedicationDispense?identifier=https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId|&lt;PrescriptionID&gt;
-  unterstützten und dabei eines oder mehrere MedicationDispense-Objekte in einem Bundle
-  an den Aufrufenden zurückgeben.
-title: E-Rezept-Fachdienst - MedicationDispense abrufen - Rückgabe mehrerer MedicationDispenses
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
+  /AuditEvent die dem Versicherten zugeordneten AuditEvent-Ressourcen anhand der KVNR
+  des Versicherten im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren,
+  die in AuditEvent.entity.name die entsprechende KVNR des begünstigten Patienten
+  referenziert haben, damit ausschließlich Versicherte ihre eigenen Protokolleinträge
+  einsehen können.
+title: E-Rezept-Fachdienst - AuditEvent lesen - Filter KVNR
 version: 0

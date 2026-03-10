@@ -1,19 +1,21 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: b95ae3630c7f5a0f9e1728e593971fc56fe5d58c6c7d707bac480eff9add13ab
-created: '2026-03-09T16:37:37.567080'
-date: '2026-03-09T16:37:37.567083'
+content_hash: 366c3aab053fa47bd854a08b982e784fa9357bb0d8daaac941312c663f82f6fe
+created: '2026-03-10T06:59:22.669922'
+date: '2026-03-10T06:59:22.669924'
 key: IG-TIFLOW-CORE-95
-modified: '2026-03-09T16:37:37.567082'
+modified: '2026-03-10T06:59:22.669923'
 release_status: NEW
 source: input/pagecontent/query-api-medicationdispense-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Produktgutachten
-text: Der E-Rezept-Fachdienst MUSS alle Zugriffe auf die Ressource MedicationDispense
-  mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE sowie POST unterbinden,
-  damit keine unzulässigen Operationen auf den Rezeptdaten ausgeführt werden können.
-title: E-Rezept-Fachdienst - MedicationDispense - unzulässige Operationen
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
+  /MedicationDispense sicherstellen, dass alle im zurückgegebenen Search-Bundle enthaltenen
+  Ressourcen mit eindeutig identifizierbaren IDs versehen sind und Referenzen innerhalb
+  des Bundles auf eine Ressource mit einer eindeutigen ID verweisen.
+title: E-Rezept-Fachdienst - MedicationDispense abrufen - Referenzierung MedicationDispense
+  und Medication
 version: 0

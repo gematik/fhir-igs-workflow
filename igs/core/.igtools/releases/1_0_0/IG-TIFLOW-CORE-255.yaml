@@ -1,24 +1,19 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: e89945f25d4919b69d1f4dd9e9fe6878f4fdc8e3c0648856de854e043df3e470
-created: '2026-03-09T16:37:37.608886'
-date: '2026-03-09T16:37:37.608888'
+content_hash: d9c624820efeac80fba128de9882b14694b018ce3b64b293bb2370ab7c16c71d
+created: '2026-03-10T06:59:22.705545'
+date: '2026-03-10T06:59:22.705548'
 key: IG-TIFLOW-CORE-255
-modified: '2026-03-09T16:37:37.608887'
+modified: '2026-03-10T06:59:22.705547'
 release_status: NEW
 source: input/pagecontent/query-api-communication-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET, DELETE und POST-Operation\
-  \ auf den Endpunkt /Communication bzw. /Communication/&lt;id&gt; sicherstellen,\
-  \ dass ausschließlich Versicherte, Leistungserbingerinstitutionen und Kostenträger\
-  \ in der Rolle\n    <ul>\n        <li>oid_versicherter</li>\n        <li>oid_oeffentliche_apotheke</li>\n\
-  \        <li>oid_krankenhausapotheke</li>\n        <li>oid_kostentraeger</li>\n\
-  \    </ul>\n    die Operation am Fachdienst aufrufen dürfen und die Rolle \"professionOID\"\
-  \ des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen,\
-  \ damit der Nachrichtenaustausch nicht zwischen Unbefugten erfolgt."
-title: E-Rezept-Fachdienst - Communication - Rollenprüfung
+text: Der E-Rezept-Fachdienst MUSS alle Zugriffe auf die Ressource Communication mittels
+  der HTTP-Operationen PUT, PATCH und HEAD unterbinden, damit keine unzulässigen Operationen
+  auf den Kommunikationsnachrichten ausgeführt werden können.
+title: E-Rezept-Fachdienst - Communication - unzulässige Operationen
 version: 0

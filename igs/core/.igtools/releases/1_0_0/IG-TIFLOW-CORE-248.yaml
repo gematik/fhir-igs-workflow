@@ -1,12 +1,12 @@
 actor:
 - CS_E-Rezept_KTR
 - PS_E-Rezept_abgebend
-conformance: MAY
-content_hash: b3f4489f47c46cd15adbe19ba0c99a4560cb2258451156a662144bb9bd186ab7
-created: '2026-03-09T16:37:37.607581'
-date: '2026-03-09T16:37:37.607583'
+conformance: SHALL
+content_hash: 7c5eceb278dff2e1ac6c284f9512553e94679ebfe9326780e63be5725299d4f7
+created: '2026-03-10T06:59:22.704297'
+date: '2026-03-10T06:59:22.704300'
 key: IG-TIFLOW-CORE-248
-modified: '2026-03-09T16:37:37.607582'
+modified: '2026-03-10T06:59:22.704299'
 release_status: NEW
 source: input/pagecontent/query-api-subscription-req-avs.md
 status: ACTIVE
@@ -15,8 +15,8 @@ test_procedures:
   - Herstellererklärung
   PS_E-Rezept_abgebend:
   - Herstellererklärung
-text: Der Primärsystem der abgebenden LEI KANN eine beliebige Wartezeit bis zum Abruf
-  der Nachrichten mit Anwendungsfall „Nachrichten von Versicherten empfangen“ umsetzen,
-  wenn in einem Zeitraum sehr viele ping-Benachrichtigungen empfangen werden.
-title: 'PS abgebende LEI: Subscription für neue Communication - Wartezeit'
+text: Das PS der abgebenden LEI MUSS im Anwendungsfall "Subscription für neue Communication"
+  nach der Registrierung eine Web Socket Verbindung zum Subscription Service mit Authorization
+  Header aufbauen und ein Upgrade durchführen.
+title: 'PS abgebende LEI: Subscription für neue Communication - Subscription'
 version: 0

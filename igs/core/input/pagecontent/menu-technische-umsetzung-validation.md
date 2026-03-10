@@ -1,7 +1,7 @@
 Der E-Rezept-Fachdienst validiert beim Aufruf einer Operation von Clientsystemen übermittelte FHIR-Ressourcen.
 
 <!-- A_27658 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-11" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Datumsangabe ohne Zeitzoneninformation" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-8" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Datumsangabe ohne Zeitzoneninformation" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -10,7 +10,7 @@ Der E-Rezept-Fachdienst validiert beim Aufruf einer Operation von Clientsystemen
 </requirement>
 
 <!-- A_27698 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-12" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Eindeutige Angabe meta.profile" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-9" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Eindeutige Angabe meta.profile" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -21,7 +21,7 @@ Der E-Rezept-Fachdienst validiert beim Aufruf einer Operation von Clientsystemen
 ### Prüfung von Referenzen in Bundles
 
 <!-- A_26229-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-13" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Konsistenz Ressource IDs" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-10" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Konsistenz Ressource IDs" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -30,7 +30,7 @@ Der E-Rezept-Fachdienst validiert beim Aufruf einer Operation von Clientsystemen
 </requirement>
 
 <!-- A_26229-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-14" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Konsistenz Ressource IDs" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-11" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Konsistenz Ressource IDs" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -39,7 +39,7 @@ Der E-Rezept-Fachdienst validiert beim Aufruf einer Operation von Clientsystemen
 </requirement>
 
 <!-- A_27648 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-15" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Existenz von Ressource.id" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-12" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Existenz von Ressource.id" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -48,7 +48,7 @@ Der E-Rezept-Fachdienst validiert beim Aufruf einer Operation von Clientsystemen
 </requirement>
 
 <!-- A_27649 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-16" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Auflösbarkeit von Referenzen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-13" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Auflösbarkeit von Referenzen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -59,7 +59,7 @@ Der E-Rezept-Fachdienst validiert beim Aufruf einer Operation von Clientsystemen
 ### Validierung von Extensions
 
 <!-- A_22927-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-17" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Ausschluss unspezifizierter Extensions" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-14" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Ausschluss unspezifizierter Extensions" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>

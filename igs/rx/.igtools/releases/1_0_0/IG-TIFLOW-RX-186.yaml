@@ -1,20 +1,19 @@
 actor:
-- PS_E-Rezept_abgebend
-conformance: SHALL
-content_hash: b47c159e1c3fd0032a8003bc915f70309fc0d75367a7d0c6dd7a641d09372c08
-created: '2026-03-09T16:36:14.497260'
-date: '2026-03-09T16:36:14.497262'
+- PS_E-Rezept_verordnend
+conformance: SHALL NOT
+content_hash: d01f94e6ece12cfd83c6a488633575ebbeeddbaef2bb1f3ba7b116d7b91049ca
+created: '2026-03-10T06:59:24.382823'
+date: '2026-03-10T06:59:24.382825'
 key: IG-TIFLOW-RX-186
-modified: '2026-03-09T16:36:14.497261'
+modified: '2026-03-10T06:59:24.382824'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-dispensierinformationen.md
+source: input/pagecontent/menu-fachlichkeit-ux-verordnend.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_abgebend:
-  - Produkttest
-text: Das PS der abgebenden LEI MUSS beim Erstellen von Dispensierinformationen mit
-  Flowtype 160, 169, 200 oder 209 eine FHIR-Ressource mit dem Profil GEM_ERP_PR_MedicationDispense
-  erstellen.
-title: 'PS abgebende LEI: Dispensierinformationen - Flowtype 160/169/200/209 - MedicationDispense
-  erstellen'
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: Das PS der verordnenden LEI DARF in der Nachricht, die den Patienten darüber
+  informiert, dass ein E-Rezept ausgestellt wurde, NICHT medizinische oder personenbezogene
+  Informationen einfügen.
+title: 'PS verordnende LEI: Benachrichtigungssystem - Schützenswerte Informationen'
 version: 0

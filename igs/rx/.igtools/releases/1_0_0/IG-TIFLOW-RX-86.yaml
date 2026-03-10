@@ -1,19 +1,25 @@
 actor:
-- PS_E-Rezept_verordnend
+- eRp_FD
 conformance: SHALL
-content_hash: 93191900e354862013afce8cae34ece61f646d9190a3775b67d4b853332e5172
-created: '2026-03-09T16:36:14.481709'
-date: '2026-03-09T16:36:14.481712'
+content_hash: 05d98bab261a56d545f5427e4d3ae501bfd363ac407496d627c11a393d9fd8c0
+created: '2026-03-10T06:59:24.366643'
+date: '2026-03-10T06:59:24.366646'
 key: IG-TIFLOW-RX-86
-modified: '2026-03-09T16:36:14.481710'
+modified: '2026-03-10T06:59:24.366645'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-kim.md
+source: input/pagecontent/op-accept-req-fd.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_verordnend:
+  eRp_FD:
   - Produkttest
-text: Das PS der verordnenden LEI MUSS bei der Übermittlung eines E-Rezepts über KIM
-  im KIM-Header "X-KIM-Dienstkennung" den Wert "eRezept;Zuweisung;V1.0" für die direkte
-  Zuweisung und Übermittlung der Einlöseinformationen verwenden.
-title: E-Rezept - X-KIM-Dienstkennung - Zuweisung
+text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
+  über /Task/&lt;id&gt;/$accept, wenn der Verordnungsdatensatz Coverage.type.coding.code
+  = "PKV" enthält und für die KVNR des begünstigten Versicherten (Task.for) eine Consent
+  Ressource mit Consent.patient.identifier = KVNR und Consent.category.coding.code
+  = "CHARGCONS" existiert, das Response Bundle um die Consent Ressource ergänzen,
+  um der abgebenden LEI die Information zu übermitteln, dass der Versicherte eine
+  Einwilligung zum Speichern der Abrechnungsinformationen auf dem E-Rezept-Fachdienst
+  erteilt hat.
+title: E-Rezept-Fachdienst - Task akzeptieren - Coverage PKV - Einwilligung Abrechnungsinformation
+  ermitteln
 version: 0

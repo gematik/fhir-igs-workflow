@@ -1,28 +1,29 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 0aac006bc458b8ed3a00f62d5e3303a9a690baef84506629be64c377cb2251b8
-created: '2026-03-09T16:37:37.611899'
-date: '2026-03-09T16:37:37.611902'
+content_hash: dec9afa9a43d967dce5dfd2c1aad056611b45c768deedd94baa03a4861222ad1
+created: '2026-03-10T06:59:22.707897'
+date: '2026-03-10T06:59:22.707899'
 key: IG-TIFLOW-CORE-268
-modified: '2026-03-09T16:37:37.611901'
+modified: '2026-03-10T06:59:22.707898'
 release_status: NEW
 source: input/pagecontent/query-api-communication-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: "Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht des Profils \"\
+text: "Der E-Rezept-Fachdienst MUSS das Einstellen einer Nachricht des Profils \"\
   https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq\"\
+  \ oder \"https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Representative\"\
   \ durch einen Versicherten über die http-Operation POST auf den Endpunkt /Communication\
-  \ die Zulässigkeit der Übermittlung auf Basis des Flowtypes des referenzierten Tasks\
-  \ (Task.extension:flowType) und dem Empfänger Communication.recipient prüfen und\
-  \ mit dem http-Status-Code 403 abbrechen, wenn der Empfänger laut TAB_eRPFD_028\
-  \ den spezifischen Flowtype nicht empfangen darf.\n    <table>\n    <tr> \n\t\t\
-  <th>Empfänger (Präfix der Telematik-ID)</th>\n\t\t<th>Zulässige Flowtypes</th>\n\
-  \t</tr>\n\t<tr> \n\t\t<td>oid_oeffentliche_apotheke (3-*, 9-*)</td>\n\t\t<td>160,\
-  \ 166, 200</td>\n\t</tr>\n    <tr> \n\t\t<td>oid_kostentraeger (8-*)</td>\n\t\t\
-  <td>162</td>\n\t</tr>\n    </table>\n    <div><figcaption><strong>Tabelle: </strong>Tab_eRPFD_028\
-  \ Zulässige Empfänger Communication_DispReq</figcaption></div>"
-title: E-Rezept-Fachdienst - Nachricht einstellen - Prüfung des Empfängers
+  \ mit dem http-Status-Code 400 abbrechen, wenn \n    <ul><li>\n        die KVNR\
+  \ des in Communication.basedOn referenzierten Tasks Task.for ungleich der KVNR des\
+  \ Einstellenden in \"idNummer\" des übergebenen ACCESS_TOKEN\n    </li></ul>\n \
+  \   und\n    <ul><li>\n        der http-Header \"X-AccessCode\" fehlt oder der im\
+  \ http-Header \"X-AccessCode\" übergebene AccessCode ungleich dem AccessCode-Identifier\
+  \ des referenzierten Tasks\n    </li></ul>\n    ist, um irreführende Testnachrichten\
+  \ zu unterbinden, die eine vermeidbare Mehrbelastung für den E-Rezept-Fachdienst\
+  \ darstellen."
+title: E-Rezept-Fachdienst - Nachricht einstellen - Prüfung Versichertenbezug und
+  Berechtigung
 version: 0

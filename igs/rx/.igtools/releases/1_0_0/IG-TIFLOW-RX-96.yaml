@@ -1,19 +1,19 @@
 actor:
-- PS_E-Rezept_abgebend
-conformance: SHOULD
-content_hash: a50ed83d2e738c17afe9f8dfa9597b4f6a5462b609ac1a155ef2d542d50d5677
-created: '2026-03-09T16:36:14.484440'
-date: '2026-03-09T16:36:14.484443'
+- PS_E-Rezept_verordnend
+conformance: SHALL
+content_hash: 6f07f232836c0ad105854005cbd701e903e5f3190e42d6e445dc71f251e76e3c
+created: '2026-03-10T06:59:24.368634'
+date: '2026-03-10T06:59:24.368637'
 key: IG-TIFLOW-RX-96
-modified: '2026-03-09T16:36:14.484441'
+modified: '2026-03-10T06:59:24.368635'
 release_status: NEW
-source: input/pagecontent/menu-fachlichkeit-ux-abgebend.md
+source: input/pagecontent/op-create-req-pvs.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_abgebend:
-  - Herstellererklärung
-text: Das PS der abgebenden LEI SOLL bei Erhalt einer Zuweisung via KIM oder über
-  das E-Rezept-FdV einen entsprechenden Hinweis an den Arbeitsplätzen in der Apotheke
-  anzeigen, um ein zeitnahes Bearbeiten der Zuweisung zu bewirken.
-title: 'PS abgebende LEI: UX - Zuweisung - Hinweis'
+  PS_E-Rezept_verordnend:
+  - Konformitätsbestätigung
+text: Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden
+  erstellen" eine Bundle-FHIR-Ressource gemäß Profilierung https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle
+  Rezept-ID aus der Task-Ressource als Identifier erstellen.
+title: 'PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle erstellen'
 version: 0

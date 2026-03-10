@@ -1,11 +1,11 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: bdcc142e94bca5cea1a2db4df34e52a13bdbe7b87c66955cd04167e8476e4922
-created: '2026-03-09T16:37:37.560965'
-date: '2026-03-09T16:37:37.560967'
+content_hash: 55c90c797548d0af4a3ea48766945b6599c8de06c8d18fadec785d2c4a185822
+created: '2026-03-10T06:59:22.663675'
+date: '2026-03-10T06:59:22.663677'
 key: IG-TIFLOW-CORE-61
-modified: '2026-03-09T16:37:37.560966'
+modified: '2026-03-10T06:59:22.663676'
 release_status: NEW
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
@@ -13,9 +13,8 @@ test_procedures:
   eRp_FD:
   - Produkttest
 text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
-  /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI prüfen, falls im
-  Operationsaufruf der URL-Parameter hcv übermittelt wurde, den im URL-Parameter übermittelten
-  Wert transformieren, miteinander vergleichen und bei Ungleichheit mit dem Fehler
-  458 abbrechen.
-title: E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Vergleich hcv
+  /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI, falls im VSDM Prüfungsnachweis
+  keine Prüfziffer enthalten ist, prüfen, ob das Ergebnis im Prüfungsnachweis gleich
+  3 ist und bei fehlerhafter Prüfung mit dem Fehler 403 abbrechen.
+title: E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3
 version: 0

@@ -1,26 +1,20 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: b4a1bd94e00c860a5cc09a295e82b3b1aa2f75397bf942e908cad5a1b2d13edf
-created: '2026-03-09T16:37:37.561281'
-date: '2026-03-09T16:37:37.561283'
+content_hash: 2428789872fdb77ebd545e523e51b4fb6f6d930691e5b19b4fc1c2780d1897db
+created: '2026-03-10T06:59:22.663937'
+date: '2026-03-10T06:59:22.663939'
 key: IG-TIFLOW-CORE-63
-modified: '2026-03-09T16:37:37.561282'
+modified: '2026-03-10T06:59:22.663938'
 release_status: NEW
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt\
-  \ /Task mit den URL-Parameter pnw=\"...\" durch eine abgebende LEI, falls im VSDM\
-  \ Prüfungsnachweis eine Prüfziffer enthalten ist, die Tasks nach\n    <ul>\n   \
-  \ <li>Task.status= \"ready\"</li>\n    <li>Task.for = KVNRfür die KVNR aus der Prüfziffer\
-  \ des Prüfungsnachweises</li>\n    <li>Task.ExpiryDatenicht vor dem aktuellen Datum\
-  \ liegt</li>\n    <li>und Task.extension:flowType = 160 oder 166</li>\n    </ul>\n\
-  \    filtern und in einem Bundle der gefundenen Tasks (ohne den signierte Anhang\
-  \ QES) zurückgeben, damit eine Apotheke alle zu einem Versicherten gehörenden E-Rezepte\
-  \ mit dem Status \"offen\" abrufen kann."
-title: E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Filter Status, KVNR
-  und Workflowtype
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit
+  den URL-Parameter pnw="..." durch eine abgebende LEI prüfen, falls enforce_hcv_check
+  = TRUE, ob ein URL-Parameter hcv="..." übermittelt wurde und bei fehlerhafter Prüfung
+  mit dem Fehler 457 abbrechen.
+title: E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - URL hcv
 version: 0

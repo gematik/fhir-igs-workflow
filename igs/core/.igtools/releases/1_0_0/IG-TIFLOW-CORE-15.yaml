@@ -1,21 +1,20 @@
 actor:
-- eRp_FD
+- PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: 6fb2a4b19dd17aab90ca21771fdaa4d5e72b3acc0857605fe4ae960bf9f6d122
-created: '2026-03-09T16:37:37.551868'
-date: '2026-03-09T16:37:37.551871'
+content_hash: c1a38d60b5fa3d426520a09350001d6585cd8d0cc87cf1b67d24bcceb06424ac
+created: '2026-03-10T06:59:22.655385'
+date: '2026-03-10T06:59:22.655388'
 key: IG-TIFLOW-CORE-15
-modified: '2026-03-09T16:37:37.551869'
+modified: '2026-03-10T06:59:22.655387'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-validation.md
+source: input/pagecontent/query-api-task-req-avs.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ
-  Bundle prüfen, ob für jedes entry im Bundle die ID der Ressource (Bundle.entry.resource.id)
-  vorhanden ist und bei Auffälligkeiten mit dem HTTP-Fehlercode 400 abbrechen und
-  die Fehlermeldung "Die ID einer Ressource im Bundle ist nicht vorhanden." in Form
-  eines OperationOutcome ausliefern.
-title: E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Existenz von Ressource.id
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: "Das PS der abgebenden LEI MUSS im Anwendungsfall \"Recovery Secret\" für das\
+  \ E-Rezept die HTTP-Operation GET /Task/&lt;id&gt;/ mit \n  <ul>\n    <li>ACCESS_TOKEN\
+  \ im Authorization-Header</li>\n    <li>Task-ID in URL &lt;id&gt; </li>\n    <li>Access_Code\
+  \ in URL-Parameter ?ac=</li>\n  </ul>\n  ausführen."
+title: 'PS abgebende LEI: Recovery Secret - Statusrequest'
 version: 0

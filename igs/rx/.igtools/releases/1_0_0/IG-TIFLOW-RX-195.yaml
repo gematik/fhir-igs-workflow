@@ -1,24 +1,22 @@
 actor:
-- eRp_FD
+- PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: 4d052172719d43aa11dac0894b6255957355896ed891548b7fc374853c215296
-created: '2026-03-10T06:48:07.240106'
-date: '2026-03-10T06:48:07.240109'
+content_hash: 6d16635812e5b44b05567f6bca48f28e9de2ec29c05c78d21dee26c41ec07f9e
+created: '2026-03-10T06:59:24.384260'
+date: '2026-03-10T06:59:24.384262'
 key: IG-TIFLOW-RX-195
-modified: '2026-03-10T06:48:07.240108'
+modified: '2026-03-10T06:59:24.384261'
 release_status: NEW
-source: input/pagecontent/op-abort-req-fd.md
+source: input/pagecontent/menu-technische-umsetzung-dispensierinformationen.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
+  PS_E-Rezept_abgebend:
   - Produkttest
-text: "Der E-Rezept-Fachdienst MUSS das Löschen eines E-Rezepts über den mittels der\
-  \ &lt;id&gt; adressierten /Task/&lt;id&gt;/$abort verhindern und die Operation mit\
-  \ dem HTTP-Fehlercode 403 abweisen, wenn der Status des adressierten Tasks ungleich\
-  \ \"in-progress\" ist und die Rolle des aufrufenden Nutzers einer der folgenden\
-  \ Rollen entspricht: \n    <ul>\n        <li>oid_oeffentliche_apotheke</li>\n  \
-  \      <li>oid_krankenhausapotheke</li>\n    </ul>\n    damit kein Apotheker ein\
-  \ Rezept löscht, das ihm nicht ausdrücklich zugewiesen wurde."
-title: E-Rezept-Fachdienst - E-Rezept löschen - Apotheke - Statusprüfung ungleich
-  in-progress
+text: Das PS der abgebenden LEI MUSS beim Erstellen von Dispensierinformationen mit
+  Flowtype 160, 169, 200 oder 209 die FHIR-Ressource Medication um Chargeninformation
+  und Verfallsdatum aus dem SecurPharm-Scan [SecurPharm] ergänzen, sofern es sich
+  bei dem abgegebenen Arzneimittel um ein Fertigarzneimittel handelt, das einen Data-Matrix-Code
+  gemäß securPharmSystem besitzt.
+title: 'PS abgebende LEI: Dispensierinformationen – Flowtype 160/169/200/209 – Fertigarzneimittel:
+  Chargeninfo'
 version: 0

@@ -1,25 +1,23 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 9c9cd2b3d7c19e502e9bd6c4e195070da20c1071ac93cdf7262646bcceb228a8
-created: '2026-03-09T16:37:37.564245'
-date: '2026-03-09T16:37:37.564247'
+content_hash: ff3d7f0738a897f8b0634e836055b9f53f5ee0995b560651ba58756f502b0acc
+created: '2026-03-10T06:59:22.667471'
+date: '2026-03-10T06:59:22.667473'
 key: IG-TIFLOW-CORE-83
-modified: '2026-03-09T16:37:37.564246'
+modified: '2026-03-10T06:59:22.667472'
 release_status: NEW
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
-  Task mittels "/Task/&lt;id&gt;?secret=..." durch eine abgebende Institution den
-  Task, sofern er den Status "completed" hat, um das referenzierte, serverseitig signierte
-  Quittungs-Bundle aus Task.output mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType =
-  3 als search.include im Ergebnis-Bundle ergänzen und die Ergebnismenge Task + Quittungs-Bundle
-  an den Abgebenden zurückgeben, damit ein Abgebender, der ein konkretes E-Rezept
-  beliefert hat, bei Bedarf genau dieses belieferte E-Rezept inkl. der Quittung erneut
-  abrufen kann.
-title: E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Rückgabe Task
-  inkl. Bundle im Bundle
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS bei Aufruf der HTTP-PATCH-Operation auf den Endpunkt\
+  \ /Task/&lt;id&gt; sicherstellen, dass ausschließlich Versicherte in der Rolle:\
+  \ \n     <ul>\n        <li>oid_versicherter</li>\n     </ul>\n     , die Operation\
+  \ am E-Rezept-Fachdienst aufrufen dürfen und die Rolle professionOID des Aufrufers\
+  \ im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen, damit E-Rezepte\
+  \ nicht durch Unberechtigte markiert werden können."
+title: E-Rezept-Fachdienst - Task markieren - Versicherter - Rollenprüfung Versicherter
+  markiert Rezepte
 version: 0

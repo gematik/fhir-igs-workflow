@@ -1,7 +1,7 @@
 Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für den pusher-Endpunkt.
 
 <!-- A_28114 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-200" title="E-Rezept-Fachdienst - unzulässige Operationen Pushers" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-201" title="E-Rezept-Fachdienst - unzulässige Operationen Pushers" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produktgutachten"/>
@@ -10,7 +10,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_28111 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-201" title="E-Rezept-Fachdienst - Push Notifications - Pushers - OpenApi_Notification_Fachdienst" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-202" title="E-Rezept-Fachdienst - Push Notifications - Pushers - OpenApi_Notification_Fachdienst" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>
@@ -23,7 +23,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 Mit der Operation GET /pushers können alle für den Nutzer registrierten FdV-Instanzen abgefragt werden.
 
 <!-- A_28113 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-202" title="E-Rezept-Fachdienst - Push Notifications - App-Registrierungen abrufen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-203" title="E-Rezept-Fachdienst - Push Notifications - App-Registrierungen abrufen - Rollenprüfung" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produktgutachten"/>
@@ -36,7 +36,7 @@ Mit der Operation GET /pushers können alle für den Nutzer registrierten FdV-In
 </requirement>
 
 <!-- A_28530 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-203" title="E-Rezept-Fachdienst - Push Notifications - App-Registrierungen abrufen - Filter auf KVNR des Versicherten" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-204" title="E-Rezept-Fachdienst - Push Notifications - App-Registrierungen abrufen - Filter auf KVNR des Versicherten" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>
@@ -47,7 +47,7 @@ Mit der Operation GET /pushers können alle für den Nutzer registrierten FdV-In
 ### POST /pushers/set
 
 <!-- A_28112 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-204" title="E-Rezept-Fachdienst - Push Notifications - App-Registrierungen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-205" title="E-Rezept-Fachdienst - Push Notifications - App-Registrierungen - Rollenprüfung" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produktgutachten"/>

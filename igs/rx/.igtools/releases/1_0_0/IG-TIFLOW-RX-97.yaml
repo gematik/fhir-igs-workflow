@@ -1,21 +1,29 @@
 actor:
 - PS_E-Rezept_abgebend
-conformance: SHOULD
-content_hash: 99268bb43d111973c3de9ffd6fa529708f89f7e9e048e19265eb8ce011be42d0
-created: '2026-03-09T16:36:14.484568'
-date: '2026-03-09T16:36:14.484570'
+- PS_E-Rezept_verordnend
+- eRp_FD
+- eRp_FdV
+conformance: SHALL
+content_hash: 67a86c9f8c596ef8a3ec60f5870ef5b28c0d61e597a8b951d40f986003adb31d
+created: '2026-03-10T06:59:24.368950'
+date: '2026-03-10T06:59:24.368952'
 key: IG-TIFLOW-RX-97
-modified: '2026-03-09T16:36:14.484569'
+modified: '2026-03-10T06:59:24.368951'
 release_status: NEW
-source: input/pagecontent/menu-fachlichkeit-ux-abgebend.md
+source: input/pagecontent/index.md
 status: ACTIVE
 test_procedures:
   PS_E-Rezept_abgebend:
   - Herstellererklärung
-text: Das PS der abgebenden LEI SOLL bei Erhalt einer Zuweisung eines E-Rezeptes via
-  KIM oder über das E-Rezept-FdV prüfen, ob ein Vorgang im Primärsystem zur Rezept-ID
-  existiert und falls nicht automatisch einen Vorgang anlegen und die Informationen
-  zum E-Rezept in diesen Vorgang übernehmen
-title: 'PS abgebende LEI: UX - Zuweisung - Übernahme E-Rezept aus Nachricht in einen
-  Vorgang'
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+  eRp_FD:
+  - Herstellererklärung
+  eRp_FdV:
+  - Herstellererklärung
+text: Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung der Workflows
+  160, 166, 169, 200 und 209 den Implementation Guide "E-Rezept für Arzneimittel"
+  umsetzen.
+title: 'E-Rezept: Anwendung des IG ''E-Rezept für Arzneimittel'' für Workflows 160,
+  166, 169, 200 und 209'
 version: 0

@@ -1,20 +1,22 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 94059da631e4176061b9d03e82dd7de6c3856a6192ab99bc0b6181cc48acaf3a
-created: '2026-03-09T16:37:37.612951'
-date: '2026-03-09T16:37:37.612954'
+content_hash: 3b78c1f947500f4cb4c1a2db41460df3c8db43822c17607239a6c09aa0b63af7
+created: '2026-03-10T06:59:22.708981'
+date: '2026-03-10T06:59:22.708983'
 key: IG-TIFLOW-CORE-275
-modified: '2026-03-09T16:37:37.612953'
+modified: '2026-03-10T06:59:22.708982'
 release_status: NEW
 source: input/pagecontent/query-api-communication-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht mittels HTTP-POST-Operation
-  über /Communication bei erfolgreichem Abschluss der Operation, den Push Notification
-  Prozess für den Trigger mit der ChannelId "erp.communication.new" und den Versicherten
-  mit der KVNR = Communication.recipient initiieren.
-title: E-Rezept-Fachdienst - Nachricht einstellen - Push Notification Versicherter
+text: 'Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht des Profils "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq",
+  oder "https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReq"
+  zur Versicherter-zu-Apotheken-Kommunikation über die http-Operation POST auf den
+  Endpunkt /Communication prüfen, ob für die Telematik-ID des Empfängers Subscriptions
+  registriert sind und für Registrierungen über den Subscription Service eine Notification
+  (ping : subscription-id) senden.'
+title: E-Rezept-Fachdienst - Nachricht einstellen - Notification Apotheke
 version: 0

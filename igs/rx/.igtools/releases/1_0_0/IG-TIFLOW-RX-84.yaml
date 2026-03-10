@@ -1,21 +1,23 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 8353bebdcf07b3d5324705afb89bcdb95d234213ef56cd91d79d9f9041acd5c8
-created: '2026-03-09T16:36:14.481291'
-date: '2026-03-10T06:48:07.254057'
+content_hash: 8446d8eca1e8eba85313662757736c633e1c624e759c03067fbb307960b388e9
+created: '2026-03-10T06:59:24.365673'
+date: '2026-03-10T06:59:24.365676'
 key: IG-TIFLOW-RX-84
-modified: '2026-03-10T06:48:07.254057'
+modified: '2026-03-10T06:59:24.365675'
 release_status: NEW
-source: input/pagecontent/op-activate-req-fd.md
+source: input/pagecontent/op-accept-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
-  über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
-  wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
-  = true) gekennzeichnet ist und der dazugehörige value (MedicationRequest.extension:Mehrfachverordnung.extension:ID.value[x]:valueIdentifier.value)
-  nicht dem Schema aus [KBV_ITA_VGEX_Technische_Anlage_ERP] entspricht.
-title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Schema ID
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS beim Abrufen eines Tasks mit Flowtype 160, 166,\
+  \ 169, 200 oder 209 mittels HTTP-POST/$accept-Operation auf den in der URL referenzierten\
+  \ /Task/&lt;id&gt; sicherstellen, dass ausschließlich abgebende Institutionen in\
+  \ der Rolle\n    <ul>\n      <li>oid_oeffentliche_apotheke</li> \n      <li>oid_krankenhausapotheke</li>\n\
+  \    </ul>\n    die Operation am Fachdienst aufrufen dürfen und die Rolle \"professionOID\"\
+  \ des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen,\
+  \ damit E-Rezepte nicht durch Unberechtigte abgerufen werden können."
+title: E-Rezept-Fachdienst - Task akzeptieren - Flowtype 160/166/169/200/209 - Rollenprüfung
 version: 0

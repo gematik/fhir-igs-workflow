@@ -1,20 +1,18 @@
 actor:
-- CS_E-Rezept_KTR
+- eRp_FD
 conformance: SHALL
-content_hash: 45a18ad442a39f41f77dbf8e5b7edb55688ebf65ffab88a56e2023e43913e849
-created: '2026-03-09T16:37:37.555857'
-date: '2026-03-09T16:37:37.555860'
+content_hash: 476c0083f13b89c74a9ab271004ded520755b47d492844d26e4b4d20ec04e934
+created: '2026-03-10T06:59:22.658861'
+date: '2026-03-10T06:59:22.658864'
 key: IG-TIFLOW-CORE-34
-modified: '2026-03-09T16:37:37.555859'
+modified: '2026-03-10T06:59:22.658863'
 release_status: NEW
-source: input/pagecontent/query-api-communication-req-ktr.md
+source: input/pagecontent/query-api-channels-req-fd.md
 status: ACTIVE
 test_procedures:
-  CS_E-Rezept_KTR:
-  - Herstellererklärung
-text: "Das Clientsystem Kostenträger MUSS im Anwendungsfall \"Nachricht an Versicherten\
-  \ versenden\" die HTTP-Operation POST /Communication mit\n  <ul>\n    <li>ACCESS_TOKEN\
-  \ im Authorization-Header</li>\n    <li>Communication Ressource im HTTP-Request-Body</li>\n\
-  \  </ul>\n  ausführen."
-title: 'CS Kostenträger: Nachricht versenden - Nachricht auf Fachdienst einstellen'
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS die API mit den Endpunkten GET /channels, GET /channels/{pushkey}
+  und POST /channels/{pushkey} gemäß [OpenAPI_FD] bereitstellen.
+title: E-Rezept-Fachdienst - Push Notifications - Channels- OpenApi_Notification_Fachdienst
 version: 0

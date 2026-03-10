@@ -1,0 +1,22 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 955eb661badee88bb5f48ced2493ba05fc3425c88da50f8d5cc53995861a0535
+created: '2026-03-10T06:59:22.654457'
+date: '2026-03-10T06:59:22.654459'
+key: IG-TIFLOW-CORE-10
+modified: '2026-03-10T06:59:22.654458'
+release_status: NEW
+source: input/pagecontent/menu-technische-umsetzung-validation.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ
+  Bundle prüfen, ob die ID der Ressource (Bundle.entry.resource.id) und die ID ihrer
+  fullUrl (Bundle.entry.fullurl) übereinstimmen und bei Auffälligkeiten mit dem HTTP-Fehlercode
+  400 abbrechen und die Fehlermeldung "Die ID einer Ressource und die ID der zugehörigen
+  fullUrl stimmen nicht überein." in Form eines OperationOutcome ausliefern.
+title: E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Konsistenz Ressource
+  IDs
+version: 0

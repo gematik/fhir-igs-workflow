@@ -1,22 +1,23 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 9f59e9a6ffba88e4cbfc6bee560158f4e9971a9465961eb84f30b1444f5974cc
-created: '2026-03-09T16:37:37.568200'
-date: '2026-03-09T16:37:37.568202'
+content_hash: a3a1aa430edf5aa58b24fc0010b1ca8a7a4f12e4a60de36c456e4e5fdfb88b9d
+created: '2026-03-10T06:59:22.671211'
+date: '2026-03-10T06:59:22.671213'
 key: IG-TIFLOW-CORE-102
-modified: '2026-03-09T16:37:37.568201'
+modified: '2026-03-10T06:59:22.671212'
 release_status: NEW
-source: input/pagecontent/query-api-auditevent-req-fd.md
+source: input/pagecontent/op-abort-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
-  /AuditEvent die dem Versicherten zugeordneten AuditEvent-Ressourcen anhand der KVNR
-  des Versicherten im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren,
-  die in AuditEvent.entity.name die entsprechende KVNR des begünstigten Patienten
-  referenziert haben, damit ausschließlich Versicherte ihre eigenen Protokolleinträge
-  einsehen können.
-title: E-Rezept-Fachdienst - AuditEvent lesen - Filter KVNR
+text: Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts durch einen Versicherten,
+  wenn der HTTP-Request keinen HTTP-Header "X-AccessCode" oder URL-Parameter "?ac=..."
+  enthält, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header
+  des HTTP-Requests identifizieren, diese gegen die in Task.for hinterlegte KVNR des
+  begünstigten Patienten prüfen und bei Missmatch den Aufruf mit dem HTTP-Fehlercode
+  403 abweisen, damit ausschließlich der begünstigte Versicherte als Berechtigter
+  ohne Kenntnis des AccessCodes ein E-Rezept löscht.
+title: E-Rezept-Fachdienst - E-Rezept löschen - Versicherter - Prüfung KVNR
 version: 0

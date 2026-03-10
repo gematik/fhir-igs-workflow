@@ -1,11 +1,11 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: ac40cbe534f07081a4832d48b37bd5e81bb157f24b60cf349e8a5e3f4c6102b1
-created: '2026-03-09T16:36:14.480032'
-date: '2026-03-10T06:48:07.252830'
+content_hash: d6ee718ab93870321047142a42b4eb1df61c500dca0765ce47b061985be07322
+created: '2026-03-10T06:59:24.364336'
+date: '2026-03-10T06:59:24.364338'
 key: IG-TIFLOW-RX-78
-modified: '2026-03-10T06:48:07.252830'
+modified: '2026-03-10T06:59:24.364337'
 release_status: NEW
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
@@ -14,8 +14,9 @@ test_procedures:
   - Produkttest
 text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
   über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
-  wenn die Verordnung nicht als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
-  = false) gekennzeichnet ist, aber eine Extension Nummerierung oder Zeitraum enthält,
-  weil normale Verordnungen keine MVO-Angaben enthalten dürfen.
-title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Unzulässige Angaben
+  wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
+  = true) und als Ersatzverordnung ( code="10" oder "11" oder "17" in Extension https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis
+  in Bundle.Composition.extention:rechtsgrundlage) gekennzeichnet ist, weil für Ersatzverordnungen
+  keine Mehrfachverordnungen zulässig sind.
+title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - keine Ersatzverordnung
 version: 0

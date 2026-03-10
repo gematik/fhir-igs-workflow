@@ -4,11 +4,11 @@ actor:
 - PS_E-Rezept_abgebend
 - PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: a7c3dc41a3bc83b482321a44201844723dff56b9bc729749155b0cbf758efaf8
-created: '2026-03-09T16:37:37.605119'
-date: '2026-03-09T16:37:37.605121'
+content_hash: 9f67390e20a1c696d4b28e118094da31deb65f0fe9c0593160a89543caf9c97a
+created: '2026-03-10T06:59:22.700868'
+date: '2026-03-10T06:59:22.700871'
 key: IG-TIFLOW-CORE-237
-modified: '2026-03-09T16:37:37.605120'
+modified: '2026-03-10T06:59:22.700869'
 release_status: NEW
 source: input/pagecontent/verbindungsaufbau-client.md
 status: ACTIVE
@@ -16,12 +16,12 @@ test_procedures:
   CS_E-Rezept_KTR:
   - Herstellererklärung
   NCPeH_ePeDA:
-  - Produkttest
+  - Produktgutachten
   PS_E-Rezept_abgebend:
   - Herstellererklärung
   PS_E-Rezept_verordnend:
   - Herstellererklärung
-text: Das Clientsystem MUSS den KEY_VERIFIER bilden, indem "Token Key" und CODE_VERIFIER
-  in einem JSON-Objekt kodiert werden.
-title: 'CS: Erzeugung des KEY_VERIFIER'
+text: Das Clientsystem MUSS vor dem Abrufen von ID_Token und ACCESS_Token einen zufälligen
+  256bit-AES-Schlüssel ("Token Key") erzeugen.
+title: 'CS: Erzeugung des Token-Key'
 version: 0

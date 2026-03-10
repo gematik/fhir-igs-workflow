@@ -1,22 +1,19 @@
 actor:
-- PS_E-Rezept_abgebend
+- PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: 6d16635812e5b44b05567f6bca48f28e9de2ec29c05c78d21dee26c41ec07f9e
-created: '2026-03-09T16:36:14.498416'
-date: '2026-03-09T16:36:14.498418'
+content_hash: 3fe3202309c8960ed62b89c67af819b029b3be42cb33c76d4c0c7431105be4f9
+created: '2026-03-10T06:59:24.383355'
+date: '2026-03-10T06:59:24.383358'
 key: IG-TIFLOW-RX-190
-modified: '2026-03-09T16:36:14.498417'
+modified: '2026-03-10T06:59:24.383357'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-dispensierinformationen.md
+source: input/pagecontent/menu-fachlichkeit-ux-verordnend.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_abgebend:
-  - Produkttest
-text: Das PS der abgebenden LEI MUSS beim Erstellen von Dispensierinformationen mit
-  Flowtype 160, 169, 200 oder 209 die FHIR-Ressource Medication um Chargeninformation
-  und Verfallsdatum aus dem SecurPharm-Scan [SecurPharm] ergänzen, sofern es sich
-  bei dem abgegebenen Arzneimittel um ein Fertigarzneimittel handelt, das einen Data-Matrix-Code
-  gemäß securPharmSystem besitzt.
-title: 'PS abgebende LEI: Dispensierinformationen – Flowtype 160/169/200/209 – Fertigarzneimittel:
-  Chargeninfo'
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: Das PS der verordnenden LEI MUSS, falls beim Löschen eines E-Rezeptes ein Fehler
+  auftritt, dem Nutzer in einem Hinweis den Grund für den gescheiterten Löschversuch
+  darstellen. Dieser leitet sich aus dem Fehlercode vom E-Rezept-Fachdienst ab.
+title: 'PS verordnende LEI: UX - Fehlerbenachrichtigung bei Löschversuch eines E-Rezepts'
 version: 0

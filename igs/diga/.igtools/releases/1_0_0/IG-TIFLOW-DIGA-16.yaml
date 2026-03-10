@@ -1,23 +1,31 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 52574727bedc0b66ccb3c5ecf12955683a5a92e1983675557d5a18bba6d4a0c0
-created: '2026-03-09T16:33:33.729904'
-date: '2026-03-09T16:33:33.729907'
+content_hash: ce2d2a9cfd7af429fe6f47bad54cab79174e51d7c026b8d65e6cc7bd63b9ca2b
+created: '2026-03-10T06:59:23.095608'
+date: '2026-03-10T06:59:23.095610'
 key: IG-TIFLOW-DIGA-16
-modified: '2026-03-09T16:33:33.729906'
+modified: '2026-03-10T06:59:23.095609'
 release_status: NEW
-source: input/pagecontent/op-accept-req-fd.md
+source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: "Der E-Rezept-Fachdienst MUSS beim Abrufen eines Tasks für eine Verordnung mit\
-  \ Flowtype 162 mittels HTTP-POST/$accept-Operation auf den in der URL referenzierten/Task/&#60;id&#62;\
-  \ die Rolle \"professionOID\" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader\
-  \ \"Authorization\" feststellen und sicherstellen, dass ausschließlich Institutionen\
-  \ in der Rolle\n  <ul>\n    <li>oid_kostentraeger</li>\n  </ul>\n  die Operation\
-  \ am Fachdienst aufrufen, damit die Verordnung nicht durch einen Unberechtigten\
-  \ abgerufen werden kann."
-title: E-Rezept-Fachdienst - Task akzeptieren - Flowtype 162 - Rollenprüfung
+text: "Der E-Rezept-Fachdienst MUSS bei einem Task mit Task.flowType = 162 die Attribute\
+  \ in Task in Abhängigkeit des in der http-POST-Operation /Task/&#60;id&#62;/$activate\
+  \ übergebenen gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_005 belegen.<br>\n\
+  \n  <table>\n    <tr> \n      <th>Feld in Task</th>\n      <th>Feldbelegung</th>\n\
+  \    </tr>\n    <tr> \n      <td>Task.performerType.coding.system</td>\n      <td>\"\
+  https://gematik.de/fhir/erp/CodeSystemGEM_ERP_CS_OrganizationType\"</td>\n    </tr>\n\
+  \    <tr> \n      <td>Task.performerType.coding.code</td>\n      <td>\"1.2.276.0.76.4.59\"\
+  </td>\n    </tr>\n    <tr> \n      <td>Task.performerType.coding.diplay</td>\n \
+  \     <td>\"Kostenträger\"</td>\n    </tr>\n    <tr> \n      <td>Task.PrescriptionType.valueCoding.display</td>\n\
+  \      <td>\"Flowtype für Digitale Gesundheitsanwendungen\"</td>\n    </tr>\n  \
+  \  <tr> \n      <td>Task.ExpiryDate</td>\n      <td>&#60;Datum der QES.Erstellung\
+  \ im Signaturobjekt&#62; + 3 Kalendermonate</td>\n    </tr>\n    <tr> \n      <td>Task.AcceptDate</td>\n\
+  \      <td>&#60;Datum der QES.Erstellung im Signaturobjekt&#62; + 3 Kalendermonate</td>\n\
+  \    </tr>\n  </table>\n  <div><figcaption><strong>Tabelle: </strong>TAB_eRpDM_005\
+  \ Prozessparameter Flowtype 162</figcaption></div>"
+title: E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prozessparameter
 version: 0

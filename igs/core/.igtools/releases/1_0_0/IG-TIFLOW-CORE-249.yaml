@@ -1,23 +1,22 @@
 actor:
-- eRp_FD
-conformance: SHALL
-content_hash: 9dd2e07a044673a60147597e5ee84c631fb61629434aae016e998275683bf982
-created: '2026-03-09T16:37:37.607884'
-date: '2026-03-10T06:48:04.877965'
+- CS_E-Rezept_KTR
+- PS_E-Rezept_abgebend
+conformance: MAY
+content_hash: b3f4489f47c46cd15adbe19ba0c99a4560cb2258451156a662144bb9bd186ab7
+created: '2026-03-10T06:59:22.704464'
+date: '2026-03-10T06:59:22.704467'
 key: IG-TIFLOW-CORE-249
-modified: '2026-03-10T06:48:04.877965'
+modified: '2026-03-10T06:59:22.704466'
 release_status: NEW
-source: input/pagecontent/audit-service.md
+source: input/pagecontent/query-api-subscription-req-avs.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim automatischen Löschen nach Fehlerbehandlung
-  gemäß "TAB_eRPFD_004b Versichertenprotokoll nach Löschen wegen Fehlerbehandlung"
-  protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag
-  AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten
-  in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte
-  die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff
-  ggf. intervenieren.
-title: E-Rezept-Fachdienst - Versichertenprotokoll zu Löschen nach Fehlerbehandlung
+  CS_E-Rezept_KTR:
+  - Herstellererklärung
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: Der Primärsystem der abgebenden LEI KANN eine beliebige Wartezeit bis zum Abruf
+  der Nachrichten mit Anwendungsfall „Nachrichten von Versicherten empfangen“ umsetzen,
+  wenn in einem Zeitraum sehr viele ping-Benachrichtigungen empfangen werden.
+title: 'PS abgebende LEI: Subscription für neue Communication - Wartezeit'
 version: 0

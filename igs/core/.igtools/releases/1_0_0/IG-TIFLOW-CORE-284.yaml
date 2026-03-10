@@ -1,22 +1,20 @@
 actor:
-- eRp_FD
+- CS_E-Rezept_KTR
 conformance: SHALL
-content_hash: 2ce435849df29f9d58dca40baf08354f0760a60c49eb06745aff69dd830e0f45
-created: '2026-03-09T16:37:37.616195'
-date: '2026-03-09T16:37:37.616198'
+content_hash: c5d543cc2dc51ac6c7206d03a85bd5bd433b9cb6b59e507ec0cdf0588e362183
+created: '2026-03-10T06:59:22.712055'
+date: '2026-03-10T06:59:22.712057'
 key: IG-TIFLOW-CORE-284
-modified: '2026-03-09T16:37:37.616197'
+modified: '2026-03-10T06:59:22.712056'
 release_status: NEW
-source: input/pagecontent/query-api-subscription-req-fd.md
+source: input/pagecontent/op-reject-req-ktr.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription
-  Ressource sicherstellen, dass ausschließlich Nutzer in der Rolle oid_oeffentliche_apotheke
-  oid_krankenhausapotheke oid_kostentraeger die Operation am E-Rezept-Fachdienst aufrufen
-  dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader
-  "Authorization" feststellen, damit eine Subscription nicht durch Unberechtigte registriert
-  werden kann.
-title: E-Rezept-Fachdienst – Subscription registrieren – Rollenprüfung
+  CS_E-Rezept_KTR:
+  - Herstellererklärung
+text: Das Clientsystem Kostenträger MUSS im Anwendungsfall "Verordnung durch Clientsystem
+  zurückgeben" für das zurückzugebende E-Rezept nach erfolgreichem Aufruf der Operation
+  "Eine Verordnung zurückweisen" die Daten zu Verordnung, E-Rezept-Token und das Geheimnis
+  im CS löschen.
+title: 'CS Kostenträger: Verordnung zurückgeben - Verordnung löschen'
 version: 0

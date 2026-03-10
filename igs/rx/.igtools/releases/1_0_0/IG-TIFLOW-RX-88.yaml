@@ -1,23 +1,29 @@
 actor:
-- PS_E-Rezept_verordnend
+- PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: 7657adb0f6d1a8d1c79fc54dec162d746e09f44893079e467d39d2ee39f1ec49
-created: '2026-03-09T16:36:14.481966'
-date: '2026-03-09T16:36:14.481969'
+content_hash: 15f9bdf6a42a2a407d367e0afeacb0e615c74541ec3661e669809da41614a100
+created: '2026-03-10T06:59:24.367210'
+date: '2026-03-10T06:59:24.367212'
 key: IG-TIFLOW-RX-88
-modified: '2026-03-09T16:36:14.481968'
+modified: '2026-03-10T06:59:24.367211'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-kim.md
+source: input/pagecontent/op-dispense-req-avs.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_verordnend:
-  - Produkttest
-text: 'Das PS der verordnenden LEI MUSS bei Versand einer Zuweisungs-Message eine
-  Message mit "Content-Type: multipart/mixed;..." und der folgenden Struktur verwenden.
-  Tabelle # : Struktur der Message mit "Content-Type: multipart/mixed;..." Teil Inhalt
-  optional Freitext Freitextmessage für den Empfänger default: "direkte Zuweisung
-  E-Rezept" nein Einlöseinformation E-Rezept-Token als Link gemäß gemSpec_DM_eRp#A_19554
-  Nach 45 Zeichen MUSS ein Steuerzeichen "CRLF" eingefügt werden nein Therapieplan
-  Therapieplan als Anhang, base64 codiert ja'
-title: E-Rezept - Struktur Zuweisungs-Message
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: 'Das PS der abgebenden LEI MUSS den Anwendungsfall "UC 4.16- Dispensierinformationen
+  bereitstellen" gemäß TAB_ILFERP_022 umsetzen. Tabelle # : TAB_ILFERP_022 - Dispensierinformationen
+  bereitstellen Name Dispensierinformationen bereitstellen Auslöser Aufruf des Anwendungsfalls
+  in der GUI Akteur Leistungserbringer, Mitarbeiter der abgebenden LEI Vorbedingung
+  Die LEI hat das E-Rezept vom E-Rezept-Fachdienst heruntergeladen. Der Nutzer hat
+  im AVS ein E-Rezept als abgegeben markiert. Die LEI hat sich gegenüber der TI authentisiert.
+  Nachbedingung Der Vorgang zum E-Rezept ist weiterhin im AVS verfügbar. Der Anwendungsfall
+  "Dispensierinformationen bereitstellen" kann erneut ausgeführt werden. Der Anwendungsfall
+  "Quittung abrufen" kann ausgeführt werden. Standardablauf Informationen über das
+  abgegebene Medikament erstellt Nur für Fertigarzneimittel, die einen Data-Matrix-Code
+  gemäß securPharm-System besitzen: Chargeninfo und Verfallsdatum ergänzen. Task-ID
+  und Geheimnis des E-Rezepts bestimmen Dispensierinformationen dem E-Rezept-Fachdienst
+  bereitstellen'
+title: 'PS abgebende LEI: Dispensierinformationen bereitstellen'
 version: 0

@@ -1,21 +1,29 @@
 actor:
 - PS_E-Rezept_abgebend
-conformance: SHOULD
-content_hash: b62b6989aff090d89184d532b328ad5ca16375ce1b5c9866025aa090f112531a
-created: '2026-03-09T16:36:14.484697'
-date: '2026-03-09T16:36:14.484699'
+- PS_E-Rezept_verordnend
+- eRp_FD
+- eRp_FdV
+conformance: SHALL
+content_hash: 18d6a02be2e301cd4acbe6f762f3a84f2c526dca4fc0186fa72a5ed5cd446d63
+created: '2026-03-10T06:59:24.369240'
+date: '2026-03-10T06:59:24.369244'
 key: IG-TIFLOW-RX-98
-modified: '2026-03-09T16:36:14.484698'
+modified: '2026-03-10T06:59:24.369242'
 release_status: NEW
-source: input/pagecontent/menu-fachlichkeit-ux-abgebend.md
+source: input/pagecontent/index.md
 status: ACTIVE
 test_procedures:
   PS_E-Rezept_abgebend:
   - Herstellererklärung
-text: 'Das PS der abgebenden LEI SOLL die Möglichkeit bieten, bestimmte Nachrichten
-  zu konfigurieren, die entweder automatisch versendet oder als Vorlage für den manuellen
-  Versand genutzt werden können. Folgende Nachrichtentypen sind zu berücksichtigen:
-  Empfangsbestätigung nach Zuweisung eines E-Rezepts via KIM oder E-Rezept-FdV Abholbenachrichtigung
-  an einen Kunden (Nicht-)Lieferbarkeit eines Medikament'
-title: 'PS abgebende LEI: UX - Nachrichtenkonfiguration'
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+  eRp_FD:
+  - Herstellererklärung
+  eRp_FdV:
+  - Herstellererklärung
+text: Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation
+  Guides "E-Rezept für Arzneimittel" alle Anforderungen und FHIR-Artefakte umsetzen,
+  die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core],
+  die in diesem IG referenziert werden.
+title: 'E-Rezept: Umsetzung des Moduls ''E-Rezept für Arzneimittel'''
 version: 0

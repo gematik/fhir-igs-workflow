@@ -1,21 +1,20 @@
 actor:
 - CS_E-Rezept_KTR
 conformance: SHALL
-content_hash: 827b383d05b4dc9fa3ce15d01f5b652a7c0832688ab97dc9f1359d37c600d5ff
-created: '2026-03-09T16:37:37.555475'
-date: '2026-03-09T16:37:37.555478'
+content_hash: 95a07a31adc6d2514c7727e1212794f757ed640ea5edf7498cc6df919e617f08
+created: '2026-03-10T06:59:22.658445'
+date: '2026-03-10T06:59:22.658447'
 key: IG-TIFLOW-CORE-32
-modified: '2026-03-09T16:37:37.555477'
+modified: '2026-03-10T06:59:22.658446'
 release_status: NEW
 source: input/pagecontent/query-api-communication-req-ktr.md
 status: ACTIVE
 test_procedures:
   CS_E-Rezept_KTR:
   - Herstellererklärung
-text: Das Clientsystem Kostenträger MUSS im Anwendungsfall "Nachrichten von Versicherten
-  empfangen" zwischen den Aufrufen der Operation GET /Communication mindestens 5 Minuten
-  warten. Der Zeitraum zwischen den Aufrufen muss um eine zufällige Zeitspanne zwischen
-  0 und 10.000 Millisekunden verlängert werden, um eine Gleichverteilung der Anfragen
-  am E-Rezept-Fachdienst über alle Apotheken zu erreichen.
-title: 'CS Kostenträger: Nachrichten abrufen - Häufigkeit'
+text: "Das Clientsystem Kostenträger MUSS im Anwendungsfall \"Nachricht durch Abgebenden\
+  \ löschen\" für die zu löschende Nachricht die HTTP-Operation DELETE /Communication/&lt;id&gt;\
+  \ mit\n  <ul>\n    <li>ACCESS_TOKEN im Authorization-Header</li>\n    <li>Communication-ID\
+  \ in URL &lt;id&gt; </li>\n  </ul>\n  ausführen."
+title: 'CS Kostenträger: Nachricht löschen - Löschrequest'
 version: 0

@@ -1,11 +1,11 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 31fb4899b998af53ea4470eaca9f3b24a099b5fbb90622c5207bce8b3d371375
-created: '2026-03-09T16:37:37.610489'
-date: '2026-03-09T16:37:37.610491'
+content_hash: 7f3f71d3966412eb96bb5bbb86172a810c326cd373cbb288ff6de6a0df90e94a
+created: '2026-03-10T06:59:22.706915'
+date: '2026-03-10T06:59:22.706917'
 key: IG-TIFLOW-CORE-261
-modified: '2026-03-09T16:37:37.610490'
+modified: '2026-03-10T06:59:22.706916'
 release_status: NEW
 source: input/pagecontent/query-api-communication-req-fd.md
 status: ACTIVE
@@ -13,11 +13,10 @@ test_procedures:
   eRp_FD:
   - Produkttest
 text: Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation
-  POST auf den Endpunkt /Communication die Absenderidentifikation aus dem Attribut
-  idNummer des im HTTP-Header "Authorization" übergebenen ACCESS_TOKEN mit dem entsprechenden
-  System https://gematik.de/fhir/sid/telematik-id für Institutionen der TI bzw. http://fhir.de/sid/gkv/kvid-10
-  für Versicherte übernehmen sowie das Absendedatum Communication.sent auf die aktuelle
-  Systemzeit des E-Rezept-Fachdienstes setzen, damit Absender und Sendezeitpunkt für
-  den Empfänger eindeutig sind.
-title: E-Rezept-Fachdienst - Nachricht einstellen - Absender und Sendedatum
+  POST auf den Endpunkt /Communication, falls die Ressource dem GEM_ERP_PR_Communication_Reply-Profil
+  entspricht, den Inhalt der contentString-Eigenschaft auf valides JSON sowie gegen
+  die Struktur in TAB_eRpDM_003 überprüfen und bei negativem Prüfergebnis, mit einem
+  Http-Fehler 400 (Bad Request) abbrechen sowie mit einer aussagekräftigen Fehlermeldung
+  in Form einer eingebetteten OperationOutcome-Ressource antworten.
+title: E-Rezept-Fachdienst - Nachricht einstellen - Validierung Payload  GEM_ERP_PR_Communication_Reply
 version: 0

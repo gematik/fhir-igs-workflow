@@ -1,18 +1,24 @@
 actor:
 - eRp_FdV
-conformance: SHALL NOT
-content_hash: 43dff17c0e7e00bffd7bd918434ff40cd273957af4d1b6ee73094649a3bed5ff
-created: '2026-03-09T16:35:19.347687'
-date: '2026-03-09T16:35:19.347689'
+conformance: SHALL
+content_hash: ee32eb11879fba0fc2ce4cec95626eb11658d7d7013549ebb03d8622f6a24377
+created: '2026-03-10T06:59:24.135163'
+date: '2026-03-10T06:59:24.135166'
 key: IG-TIFLOW-EU-48
-modified: '2026-03-09T16:35:19.347688'
+modified: '2026-03-10T06:59:24.135165'
 release_status: NEW
 source: input/pagecontent/op-grant-eu-access-permission-req-fdv.md
 status: ACTIVE
 test_procedures:
   eRp_FdV:
-  - Herstellererklärung
-text: Das E-Rezept-FdV DARF NICHT Informationen zur Liste zulässiger Länder verwenden,
-  welche länger als 96h lokal durch das E-Rezept-FdV gecacht wurden.
-title: 'E-Rezept-FdV: Zugriffsberechtigung - Caching Liste zulässiger Länder'
+  - Produkttest
+text: "Das E-Rezept-FdV MUSS Anwendungsfall \"Zugriffsberechtigung erteilen\" die\
+  \ Liste aller zulässigen Länder aus dem Verzeichnisdienst ermitteln, indem an den\
+  \ Verzeichnisdienst folgende Abfrage gestellt wird:\n    <ul>\n        <li>Abfrage\
+  \ der Ressource \"HealthcareService\"</li>\n        <li>HealthcareServices, deren\
+  \ Speciality \"57833-6\" aus https://loinc.org enthalten</li>\n        <li>HealthcareServices,\
+  \ deren Organisation aktiv sind</li>\n        <li>HealthcareServices, deren Organisation\
+  \ den OrganizationProfessionOIDType \"1.2.276.0.76.4.292\" entspricht</li>\n   \
+  \     <li>Einbeziehen der Organisation in das Rückgabeergebnis</li>\n    </ul>"
+title: 'E-Rezept-FdV: Zugriffsberechtigung - Liste zulässiger Länder'
 version: 0

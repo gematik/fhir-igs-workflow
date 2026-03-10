@@ -1,21 +1,20 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 6ac4ebf83290e0191ee95013810a7c1d87d4cb64fb03d045af84c51aa9350c4d
-created: '2026-03-09T16:37:37.557004'
-date: '2026-03-09T16:37:37.557006'
+content_hash: 17b2bcb3ba3581264e9cffd73db0febb0e2e2de54c5e5cf23b14fc946da83d85
+created: '2026-03-10T06:59:22.660021'
+date: '2026-03-10T06:59:22.660024'
 key: IG-TIFLOW-CORE-40
-modified: '2026-03-09T16:37:37.557005'
+modified: '2026-03-10T06:59:22.660023'
 release_status: NEW
-source: input/pagecontent/query-api-channels-req-fd.md
+source: input/pagecontent/op-close-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Produktgutachten
-text: "Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation POST /channels/{pushkey}\
-  \ die Rolle \"professionOID\" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader\
-  \ \"Authorization\" feststellen und sicherstellen, dass ausschließlich Versicherte\
-  \ in der Rolle \n  <ul>\n    <li>oid_versicherter</li>\n  </ul>\n  die Operation\
-  \ aufrufen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird."
-title: E-Rezept-Fachdienst - Push Notifications - Channels konfigurieren - Rollenprüfung
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close
+  die Referenz auf den aufgerufenen Task Task/&lt;id&gt; als MedicationDispense.supportingInformation
+  übernehmen und die MedicationDispense, sowie die in MedicationDispense.medication
+  referenzierte Medication, speichern.
+title: E-Rezept-Fachdienst - Task schließen - MedicationDispense speichern
 version: 0

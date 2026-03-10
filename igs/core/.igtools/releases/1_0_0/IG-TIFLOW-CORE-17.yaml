@@ -1,23 +1,23 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 7f45c0fbb489416cb77108c02fea2ef23b18845985dc57eeb28b4a651d60859c
-created: '2026-03-09T16:37:37.552135'
-date: '2026-03-09T16:37:37.552138'
+content_hash: c4510701ae054569ebb103c996869281af00ffa8b26249a6bb2b8b3f87c9764e
+created: '2026-03-10T06:59:22.655945'
+date: '2026-03-10T06:59:22.655947'
 key: IG-TIFLOW-CORE-17
-modified: '2026-03-09T16:37:37.552137'
+modified: '2026-03-10T06:59:22.655946'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-validation.md
+source: input/pagecontent/op-reject-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS bei der Validierung einer FHIR-Ressource sicherstellen,
-  dass keine Extensions vorhanden sind, die nicht an den in den FHIR-Profilen spezifizierten
-  Stellen verwendet werden. Sollte eine solche Extension gefunden werden, gilt der
-  Datensatz als ungültig. In diesem Fall ist eine Fehlermeldung mit dem HTTP-Status
-  400 und der Nachricht "Unintendierte Verwendung von Extensions an unspezifizierter
-  Stelle" auszugeben.
-title: E-Rezept-Fachdienst - FHIR-Ressource validieren - Ausschluss unspezifizierter
-  Extensions
+text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
+  über /Task/&#60;id&#62;/$reject das im URL-Parameter "?secret=..." übertragene Secret
+  gegen das im referenzierten Task gespeicherte Secret Task.identifier:Secret als
+  https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret und auf Task.status =
+  in-progress prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation
+  mit dem HTTP-Fehlercode 403 abbrechen, damit der Zugriff auf diesen Datensatz nur
+  durch den Berechtigten in Kenntnis des Secrets erfolgt.
+title: E-Rezept-Fachdienst - Task zurückweisen - Prüfung Secret
 version: 0

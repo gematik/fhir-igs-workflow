@@ -15,7 +15,7 @@ E-Rezept-Fachdienstes und beschreibt die relevanten Use Cases.
 
 ### Anforderungen zur Umsetzung des IGs
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-159" title="E-Rezept: Anwendung des IG 'Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte' für die Verwaltung von Abrechnungsinformationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-161" title="E-Rezept: Anwendung des IG 'Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte' für die Verwaltung von Abrechnungsinformationen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Herstellererklärung"/>
@@ -30,7 +30,7 @@ E-Rezept-Fachdienstes und beschreibt die relevanten Use Cases.
 </requirement>
 
 <!-- A_22206-01, A_22205-0, A_22204, A_22963 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-160" title="E-Rezept: Umsetzung des Moduls 'Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte'" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-162" title="E-Rezept: Umsetzung des Moduls 'Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte'" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Herstellererklärung"/>

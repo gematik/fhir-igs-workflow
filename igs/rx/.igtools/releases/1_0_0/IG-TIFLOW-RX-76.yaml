@@ -1,11 +1,11 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 94554cc083a46fbb7fbf3c4de3722ffc99c52ed54816cf936b4c4900ea534500
-created: '2026-03-09T16:36:14.479616'
-date: '2026-03-10T06:48:07.252487'
+content_hash: ac40cbe534f07081a4832d48b37bd5e81bb157f24b60cf349e8a5e3f4c6102b1
+created: '2026-03-10T06:59:24.364046'
+date: '2026-03-10T06:59:24.364050'
 key: IG-TIFLOW-RX-76
-modified: '2026-03-10T06:48:07.252487'
+modified: '2026-03-10T06:59:24.364048'
 release_status: NEW
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
@@ -14,8 +14,8 @@ test_procedures:
   - Produkttest
 text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
   über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
-  wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
-  = true) gekennzeichnet und der Denominator kleiner als 2 ist, weil eine Mehrfachverordnungen
-  aus mindestens 2 Teilverordnungen bestehen muss.
-title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Denominator größer  1
+  wenn die Verordnung nicht als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
+  = false) gekennzeichnet ist, aber eine Extension Nummerierung oder Zeitraum enthält,
+  weil normale Verordnungen keine MVO-Angaben enthalten dürfen.
+title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Unzulässige Angaben
 version: 0

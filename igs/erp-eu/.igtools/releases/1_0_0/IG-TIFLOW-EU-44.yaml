@@ -1,20 +1,20 @@
 actor:
-- eRp_FdV
+- eRp_FD
 conformance: SHALL
-content_hash: 4630c4a3351153335d7ec70020fc83edeb13af4fb47bb22d52ecc59683fede57
-created: '2026-03-09T16:35:19.346435'
-date: '2026-03-09T16:35:19.346437'
+content_hash: 37ea4ab0e7d05c6ffb8ec0e2185f3ba07eea91ff20bd91f3b6215b039b5e6528
+created: '2026-03-10T06:59:24.134036'
+date: '2026-03-10T06:59:24.134038'
 key: IG-TIFLOW-EU-44
-modified: '2026-03-09T16:35:19.346436'
+modified: '2026-03-10T06:59:24.134037'
 release_status: NEW
-source: input/pagecontent/op-read-eu-access-permission-req-fdv.md
+source: input/pagecontent/op-eu-close-req-fd.md
 status: ACTIVE
 test_procedures:
-  eRp_FdV:
+  eRp_FD:
   - Produkttest
-text: "Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung abrufen\" zum\
-  \ Abrufen der Information vom E-Rezept-Fachdienst die HTTP-Operation GET /$read-eu-access-permission\
-  \ mit: \n    <ul>\n        <li>ACCESS_TOKEN im Authorization-Header</li>\n    </ul>\n\
-  \    ausführen."
-title: 'E-Rezept-FdV: Zugriffsberechtigung abrufen - Abfragerequest'
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts
+  /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD bei erfolgreichem Abschluss der Operation,
+  den Push Notification Prozess für den Trigger mit der ChannelId "erp.eu.prescription.close"
+  und den Versicherten mit der KVNR = Task.for initiieren.
+title: E-Rezept-Fachdienst - Task schließen - EU - Push Notification Versicherter
 version: 0

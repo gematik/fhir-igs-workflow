@@ -1,19 +1,21 @@
 actor:
-- PS_E-Rezept_verordnend
-conformance: SHOULD
-content_hash: ac6847bd55eb1bbdaf1791615f08c7e8a5cd5ba4d4b58c7b9036fb4a6ee2a741
-created: '2026-03-09T16:36:14.489608'
-date: '2026-03-09T16:36:14.489610'
+- PS_E-Rezept_abgebend
+conformance: SHALL NOT
+content_hash: 26a3c00eab4f0f310e7cf60e212a16003588b1a997c783a4b5d159b752ef8e41
+created: '2026-03-10T06:59:24.374513'
+date: '2026-03-10T06:59:24.374515'
 key: IG-TIFLOW-RX-134
-modified: '2026-03-09T16:36:14.489609'
+modified: '2026-03-10T06:59:24.374514'
 release_status: NEW
-source: input/pagecontent/menu-fachlichkeit-ux-verordnend.md
+source: input/pagecontent/menu-fachlichkeit-ux-abgebend.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_verordnend:
+  PS_E-Rezept_abgebend:
   - Herstellererklärung
-text: Das PS der verordnenden LEI SOLL dem Nutzer das Ergebnis einer Verarbeitung
-  , welche das PS im Hintergrund durchgeführt hat, darstellen, ohne dabei den Arbeitsfluss
-  zu unterbrechen. Fehlermeldungen sollen dabei deutlicher sichtbar sein als Erfolgsmeldungen.
-title: 'PS verordnende LEI: UX - Ergebnismeldung von Verarbeitungsvorgängen im Hintergrund'
+text: Das PS der abgebenden LEI DARF NICHT im Falle der Nicht-Erreichbarkeit der zentralen
+  Dienste der TI das AVS derart blockieren, dass andere Arten der Einlösung, die unabhängig
+  von der Anwendung E-Rezept der Telematikinfrastruktur sind (z.B. Muster-16 Verordnungen),
+  nicht möglich sind.
+title: 'PS abgebende LEI: UX - Hinweis bei Nicht-Erreichbarkeit des E-Rezept-Fachdienstes
+  - Operabilität des AVS'
 version: 0

@@ -4,11 +4,11 @@ actor:
 - PS_E-Rezept_abgebend
 - PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: d80cf85e901504352cca12dbabbfe395219c0821610df27d8ceecb445e46cbfa
-created: '2026-03-09T16:37:37.602679'
-date: '2026-03-09T16:37:37.602681'
+content_hash: f5f458c310fb3a8fee3fde974b498de7a7888b3580f3901da49ad711dd8b9b9d
+created: '2026-03-10T06:59:22.698201'
+date: '2026-03-10T06:59:22.698203'
 key: IG-TIFLOW-CORE-227
-modified: '2026-03-09T16:37:37.602680'
+modified: '2026-03-10T06:59:22.698202'
 release_status: NEW
 source: input/pagecontent/verbindungsaufbau-client.md
 status: ACTIVE
@@ -21,7 +21,9 @@ test_procedures:
   - Herstellererklärung
   PS_E-Rezept_verordnend:
   - Herstellererklärung
-text: "Das Clientsystem MUSS über den CODE_VERIFIER einen SHA256-HASH-Wert, die sogenannte\
-  \ CODE_CHALLENGE, gemäß [RFC7636#section-4.2] bilden.\n\n    code_challenge = BASE64URL-ENCODE(SHA256(ASCII(code_verifier)))"
-title: 'CS: Erzeugen des Hash-Werts des CODE_VERIFIER'
+text: 'Das Clientsystem MUSS zur Laufzeit einen CODE_VERIFIER (Zufallswert) gemäß
+  [RFC7636#section-4.1] bilden. Der CODE_VERIFIER MUSS eine Länge von mindestens 43
+  und maximal 128 Zeichen enthalten. Dabei sind die folgenden Zeichen zulässig: [A-Z]
+  / [a-z] / [0-9] / "-" / "." / "_" / "~".'
+title: 'CS: Erzeugen des CODE_VERIFIER'
 version: 0

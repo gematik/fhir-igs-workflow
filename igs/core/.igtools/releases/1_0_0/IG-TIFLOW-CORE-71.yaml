@@ -1,24 +1,24 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 381a2e70bcc8be2b8ef7e05137a4a988777fc7f2b8a04e06e95554a51eecbda5
-created: '2026-03-09T16:37:37.562553'
-date: '2026-03-09T16:37:37.562556'
+content_hash: 17851fe4a97ac3ea47d0cf8b660c9adb0371813b74a835871f270c7733f35aec
+created: '2026-03-10T06:59:22.665284'
+date: '2026-03-10T06:59:22.665286'
 key: IG-TIFLOW-CORE-71
-modified: '2026-03-09T16:37:37.562555'
+modified: '2026-03-10T06:59:22.665285'
 release_status: NEW
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Produkttest
-text: "Der E-Rezept-Fachdienst MUSS die Prüfung des VSDM Prüfungsnachweises wie folgt\
-  \ umsetzen: \n    <ol type =\"1\">\n        <li>die Prüfziffer aus dem Prüfungsnachweis\
-  \ extrahieren</li>\n        <li>Falls eine Prüfziffer im Prüfungsnachweis enthalten\
-  \ ist:\n        <ol type=\"a\">\n            <li>HMAC-Schlüssel auf Basis Kennung\
-  \ des Betreibers (Feld 4) und Version des Hash-Schlüssels (Feld 5) ermitteln</li>\n\
-  \            <li>HMAC über Felder 1-5 der übermittelten Prüfziffer berechnen</li>\n\
-  \            <li>Berechneten HMAC mit dem in der Prüfziffer übermittelten HMAC auf\
-  \ Gleichheit prüfen</li>\n        </ol>\n        </li>\n    </ol>"
-title: E-Rezept-Fachdienst - Prüfung Prüfziffer
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen konkreten\
+  \ über &lt;id&gt; adressierten /Task/&lt;id&gt; (ohne die Referenz einer FHIR-Operation)\
+  \ sicherstellen, dass ausschließlich Clientsysteme in einer der Rollen \n    <ul>\n\
+  \        <li>oid_versicherter</li>\n        <li>oid_oeffentliche_apotheke</li>\n\
+  \        <li>oid_krankenhausapotheke</li>\n        <li>oid_kostentraeger</li> \n\
+  \    </ul>\n    die Operation am Fachdienst aufrufen dürfen und die Rolle \"professionOID\"\
+  \ des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen,\
+  \ damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können."
+title: E-Rezept-Fachdienst - Task abrufen - Rollenprüfung
 version: 0

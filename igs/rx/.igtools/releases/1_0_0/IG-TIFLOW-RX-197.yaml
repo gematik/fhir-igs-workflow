@@ -1,24 +1,21 @@
 actor:
-- eRp_FD
+- PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: cae2051e04d296aaa70f55ff039847b08ebe81c9480ceddc1819b8cd8022491b
-created: '2026-03-10T06:48:07.240400'
-date: '2026-03-10T06:48:07.240403'
+content_hash: a4d80efb059a9229fcf73e82dd2fafc03c871c50ab4f44ea3f0dc10af67cb7ec
+created: '2026-03-10T06:59:24.384520'
+date: '2026-03-10T06:59:24.384523'
 key: IG-TIFLOW-RX-197
-modified: '2026-03-10T06:48:07.240402'
+modified: '2026-03-10T06:59:24.384522'
 release_status: NEW
-source: input/pagecontent/op-abort-req-fd.md
+source: input/pagecontent/menu-technische-umsetzung-dispensierinformationen.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
+  PS_E-Rezept_abgebend:
   - Produkttest
-text: 'Der E-Rezept-Fachdienst MUSS das Löschen eines E-Rezepts mit dem Flowtype 169
-  oder 209 über den mittels der &lt;id&gt; adressierten /Task/&lt;id&gt;/$abort verhindern
-  und die Operation mit dem HTTP-Fehlercode 403 abweisen, wenn der Status des adressierten
-  Tasks ungleich "completed" ist und die Rolle des aufrufenden Nutzers der folgenden
-  Rollen entspricht: oid_versicherter damit kein Versicherter ein E-Rezept aus einem
-  Workflow mit Workflowsteuerung durch Leistungserbringer (169, 209) löscht, das nicht
-  bereits beliefert wurde.'
-title: E-Rezept-Fachdienst - E-Rezept löschen - Flowtype 169 / 209 - Versicherter
-  - Statusprüfung
+text: Das PS der abgebenden LEI MUSS beim Erstellen einer MedicationDispense einer
+  Rezeptur für ein E-Rezept des Flowtype 160, 169, 200 oder 209 für jede FHIR-Ressource
+  Medication Wirkstoff und Wirkstärke (inkl. Einheit) strukturiert angeben, wenn diese
+  Information strukturiert im Verordnungsdatensatz vorlag.
+title: 'PS abgebende LEI:  Dispensierinformationen – Flowtype 160/169/200/209 – Rezeptur:
+  Wirkstoff, Wirkstärke'
 version: 0

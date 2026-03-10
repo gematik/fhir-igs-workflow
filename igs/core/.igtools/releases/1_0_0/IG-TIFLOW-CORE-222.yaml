@@ -4,11 +4,11 @@ actor:
 - PS_E-Rezept_abgebend
 - PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: d7b50283ba979820e5818a33ef983509a0a1d39f6bf1d1a7136d0020b2f1701d
-created: '2026-03-09T16:37:37.601109'
-date: '2026-03-09T16:37:37.601112'
+content_hash: cf42e40dc6f0a3fdcfe6d9b271742beec99abb6bb5cd805fcf60b3771d074104
+created: '2026-03-10T06:59:22.697051'
+date: '2026-03-10T06:59:22.697054'
 key: IG-TIFLOW-CORE-222
-modified: '2026-03-09T16:37:37.601111'
+modified: '2026-03-10T06:59:22.697053'
 release_status: NEW
 source: input/pagecontent/verbindungsaufbau-client.md
 status: ACTIVE
@@ -21,7 +21,10 @@ test_procedures:
   - Herstellererklärung
   PS_E-Rezept_verordnend:
   - Herstellererklärung
-text: Das Clientsystem MUSS die Signatur des Discovery Document auf ein zeitlich gültiges
-  C.FD.SIG-Zertifikat mit der Rollen-OID "oid_idpd" zurückführen können.
-title: 'CS: Prüfung Typ und Rolle des Signaturzertifikats des Discovery Document'
+text: Das Clientsystem MUSS die JWS (JSON Web Signature) [RFC7515#section-3] Signatur
+  des Discovery Document auf mathematische Korrektheit sowie auf Gültigkeit des ausstellenden
+  Zertifikates innerhalb der TI prüfen. Das Clientsystem MUSS, wenn es den Konnektor
+  oder den Basis-Consumer nutzt, die Gültigkeit des Zertifikates mit der Operation
+  "VerifyCertificate" prüfen.
+title: 'CS: Prüfung der Signatur des Discovery Document'
 version: 0

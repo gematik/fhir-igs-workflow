@@ -1,20 +1,19 @@
 actor:
-- PS_E-Rezept_abgebend
+- eRp_FD
 conformance: SHALL
-content_hash: 32773f5b8238ad43f0c6a32d719bee295ec6279221b6af63efade9a6ba2beec5
-created: '2026-03-09T16:37:37.552723'
-date: '2026-03-09T16:37:37.552725'
+content_hash: a2b965adcc6f56ae433c47d4fd3836dca3eb418acb02b4d4958fb5ebea0720fc
+created: '2026-03-10T06:59:22.656224'
+date: '2026-03-10T06:59:22.656227'
 key: IG-TIFLOW-CORE-19
-modified: '2026-03-09T16:37:37.552724'
+modified: '2026-03-10T06:59:22.656226'
 release_status: NEW
-source: input/pagecontent/query-api-task-req-avs.md
+source: input/pagecontent/op-reject-req-fd.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_abgebend:
-  - Herstellererklärung
-text: "Das PS der abgebenden LEI MUSS im Anwendungsfall \"Quittung erneut abrufen\"\
-  \ für das E-Rezept die HTTP-Operation GET /Task/&lt;id&gt;/ mit \n  <ul>\n    <li>ACCESS_TOKEN\
-  \ im Authorization-Header</li>\n    <li>Task-ID in URL &lt;id&gt; </li>\n    <li>Geheimnis\
-  \ in URL-Parameter ?secret=</li>\n  </ul>\n  ausführen."
-title: 'PS abgebende LEI: Quittung erneut abrufen - Statusrequest'
+  eRp_FD:
+  - Produktgutachten
+text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
+  über /Task/&#60;id&#62;/$reject die zum referenzierten Task in Task.owner gespeicherte
+  Telematik-ID der abgebenden LEI löschen.
+title: E-Rezept-Fachdienst - Task zurückweisen - Telematik-ID der abgebenden LEI löschen
 version: 0

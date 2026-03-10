@@ -1,20 +1,21 @@
 actor:
-- CS_E-Rezept_KTR
+- eRp_FD
 conformance: SHALL
-content_hash: 95a07a31adc6d2514c7727e1212794f757ed640ea5edf7498cc6df919e617f08
-created: '2026-03-09T16:37:37.556051'
-date: '2026-03-09T16:37:37.556054'
+content_hash: abe079776e0f58626ac8664658631e6035904e1d51c4eb435954e6f54cb0a2c1
+created: '2026-03-10T06:59:22.659022'
+date: '2026-03-10T06:59:22.659024'
 key: IG-TIFLOW-CORE-35
-modified: '2026-03-09T16:37:37.556053'
+modified: '2026-03-10T06:59:22.659023'
 release_status: NEW
-source: input/pagecontent/query-api-communication-req-ktr.md
+source: input/pagecontent/query-api-channels-req-fd.md
 status: ACTIVE
 test_procedures:
-  CS_E-Rezept_KTR:
-  - Herstellererklärung
-text: "Das Clientsystem Kostenträger MUSS im Anwendungsfall \"Nachricht durch Abgebenden\
-  \ löschen\" für die zu löschende Nachricht die HTTP-Operation DELETE /Communication/&lt;id&gt;\
-  \ mit\n  <ul>\n    <li>ACCESS_TOKEN im Authorization-Header</li>\n    <li>Communication-ID\
-  \ in URL &lt;id&gt; </li>\n  </ul>\n  ausführen."
-title: 'CS Kostenträger: Nachricht löschen - Löschrequest'
+  eRp_FD:
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation GET /channels die Rolle\
+  \ \"professionOID\" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\"\
+  \ feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle \n\
+  \  <ul>\n    <li>oid_versicherter</li>\n  </ul>\n  die Operation aufrufen, damit\
+  \ die Operation nicht durch unberechtigte Dritte ausgeführt wird."
+title: E-Rezept-Fachdienst - Push Notifications - Channels abrufen - Rollenprüfung
 version: 0
