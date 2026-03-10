@@ -106,7 +106,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication, falls die Ressource dem GEM_ERP_PR_Communication_DispReq-Profil entspricht, den Inhalt der contentString-Eigenschaft auf valides JSON sowie gegen die Struktur in TAB_eRpDM_002 überprüfen und bei negativem Prüfergebnis, mit einem Http-Fehler 400 (Bad Request) abbrechen sowie mit einer aussagekräftigen Fehlermeldung in Form einer eingebetteten OperationOutcome-Ressource antworten.
+    Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication, falls die Ressource dem GEM_ERP_PR_Communication_DispReq-Profil entspricht, den Inhalt der contentString-Eigenschaft auf valides JSON sowie gegen die Struktur in "Tabelle: E-Rezept einer Apotheke zuweisen" überprüfen und bei negativem Prüfergebnis, mit einem Http-Fehler 400 (Bad Request) abbrechen sowie mit einer aussagekräftigen Fehlermeldung in Form einer eingebetteten OperationOutcome-Ressource antworten.
 </requirement>
 
 <!-- A_23879-01 -->
@@ -285,7 +285,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht mittels HTTP-POST-Operation über /Communication bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId "erp.communication.new" und den Versicherten mit der KVNR = Communication.recipient initiieren.
 </requirement>
 
-<!-- A_23876 -->
+<!-- A_23876-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-358" title="E-Rezept-Fachdienst: Nachrichtenaustausch - E-Rezept einer Apotheke zuweisen - Datenstruktur Nachricht" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
@@ -307,63 +307,115 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <tr>
       <td>version</td>
       <td>ja</td>
-      <td>Gibt die Version des JSON an. Aktuell immer 1. Kann im weiteren Lebenszyklus verändert werden.</td>
+      <td>Gibt die Version des JSON an. Aktuell immer 3. Kann im weiteren Lebenszyklus verändert werden.</td>
       <td>nummerisch, bis zu 6 Stellen</td>
-      <td>1</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>communicationType</td>
+      <td>ja</td>
+      <td>Beschreibt die Art der Nachricht.</td>
+      <td>order, text</td>
+      <td>order</td>
     </tr>
     <tr>
       <td>supplyOptionsType</td>
-      <td>ja</td>
-      <td>Wird gemäß des Servicerequests gesetzt, den der Nutzer wählt. Die für den Nutzer zur Auswahl stehenden Services gibt die Apotheke vor, indem sie den servicespezifischen Zuweisungs-Endpunkt angibt, oder nicht.</td>
+      <td>Falls communicationType = order: ja<br>Falls communicationType = text: verboten</td>
+      <td>Wird gemäß des Servicerequests gesetzt, den der Nutzer wählt. Die für den Nutzer verfügbaren Services sind für die jeweilige Apotheke im FHIR-VZD hinterlegt.</td>
       <td>onPremise, shipment, delivery</td>
       <td>onPremise</td>
     </tr>
     <tr>
-      <td>name</td>
-      <td>nein</td>
-      <td>Name des Versicherten.</td>
-      <td>100 Stellen, UTF-8</td>
-      <td>Dr. Maximilian von Muster</td>
+      <td>firstname</td>
+      <td>Falls communicationType = order und supplyOptionsType = delivery oder shipment: ja<br>Ansonsten: nein</td>
+      <td>Vorname des Versicherten bzw. Lieferungsempfänger</td>
+      <td>45 Stellen</td>
+      <td>Maximilian</td>
+    </tr>
+    <tr>
+      <td>lastname</td>
+      <td>Falls communicationType = order und supplyOptionsType = delivery oder shipment: ja<br>Ansonsten: nein</td>
+      <td>Name des Versicherten bzw. Lieferungsempfänger.</td>
+      <td>45 Stellen</td>
+      <td>Dr. von Muster</td>
     </tr>
     <tr>
       <td>address</td>
-      <td>nein</td>
-      <td>String-Array der Zeilen einer Adresse. Sie ist im JSON in der korrekten Reihenfolge anzugeben und auch auszulesen. "onPremise": Adresse des Versicherten laut Rezept. "delivery"/"shipment": Adresse des Lieferungsempfängers – mindestens: Strasse+Hausnummer, PLZ+Ort werden gesetzt.</td>
-      <td>Array von Strings je 500 Stellen UTF-8</td>
-      <td><pre>"address": [
-  "wohnhaft bei Emilia Fischer",
-  "Bundesallee 312",
-  "123. OG",
-  "12345 Berlin"
-]</pre></td>
+      <td>Falls communicationType = order und supplyOptionsType = delivery oder shipment: ja<br>Ansonsten: nein</td>
+      <td>Strasse und Hausnummer des Versicherten bzw. Lieferungsempfänger</td>
+      <td>3-100 Stellen</td>
+      <td>Bundesallee 312</td>
+    </tr>
+    <tr>
+      <td>postcode</td>
+      <td>Falls communicationType = order und supplyOptionsType = delivery oder shipment: ja<br>Ansonsten: nein</td>
+      <td>PLZ des Versicherten bzw. Lieferungsempfänger</td>
+      <td>3-10 Stellen</td>
+      <td>12345</td>
+    </tr>
+    <tr>
+      <td>city</td>
+      <td>Falls communicationType = order und supplyOptionsType = delivery oder shipment: ja<br>Ansonsten: nein</td>
+      <td>Ort des Versicherten bzw. Lieferungsempfänger</td>
+      <td>2-100 Stellen</td>
+      <td>Berlin</td>
+    </tr>
+    <tr>
+      <td>country</td>
+      <td>Falls communicationType = order und supplyOptionsType = delivery oder shipment: ja<br>Ansonsten: nein</td>
+      <td>Land des Versicherten bzw. Lieferungsempfänger</td>
+      <td>ISO 3166-1 Alpha-2 Code</td>
+      <td>DE</td>
     </tr>
     <tr>
       <td>hint</td>
-      <td>nein</td>
-      <td>Hinweis, den der Versicherte mit angeben kann.</td>
-      <td>500 Stellen, UTF-8</td>
+      <td>Falls communicationType = text: verboten<br>Ansonsten: nein</td>
+      <td>Lieferanweisung, die der Nutzer mit angeben kann.</td>
+      <td>0-100 Stellen</td>
       <td>Bitte im Morsecode klingeln: -.-.</td>
     </tr>
     <tr>
+      <td>text</td>
+      <td>Falls communicationType = text: ja<br>Ansonsten: nein</td>
+      <td>Zusätzliche Anmerkungen des Nutzers zur Bestellung.</td>
+      <td>0-800 Stellen, keine URL</td>
+      <td></td>
+    </tr>
+    <tr>
       <td>phone</td>
-      <td>nein</td>
-      <td>Telefonnummer</td>
-      <td>32 Stellen, UTF-8</td>
+      <td>Falls communicationType = order: ja<br>Ansonsten: nein</td>
+      <td>Telefonnummer. E-164 Format, jedoch anstelle des „+" mit „00" / rein nummerisch.</td>
+      <td>32 Stellen</td>
       <td>004916094858168</td>
+    </tr>
+    <tr>
+      <td>email</td>
+      <td>nein</td>
+      <td>E-Mail-Adresse des Nutzers. Format mit @ und Punkt.</td>
+      <td>0-70 Stellen, RFC-5322-konforme E-Mail-Adresse</td>
+      <td>max@musterfrau.de</td>
+    </tr>
+    <tr>
+      <td>transactionID</td>
+      <td>ja</td>
+      <td>Dient dazu, Nachrichten einer Transaktion zuordnen zu können.</td>
+      <td>36 Stellen, UUID</td>
+      <td>8196b610-9b77-47ab-936e-362cd92ef2aa</td>
     </tr>
   </tbody>
 </table>
 <div><figcaption><strong>Tabelle: </strong>E-Rezept einer Apotheke zuweisen</figcaption></div>
 </requirement>
 
+<!-- A_23877-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-359" title="E-Rezept-Fachdienst: Nachrichtenaustausch - Nachricht durch Abgebenden übermitteln - Datenstruktur Nachricht" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>
      Der E-Rezept-Fachdienst MUSS für den Anwendungsfall "Nachricht durch Abgebenden übermitteln" Nachrichten mit der folgenden Datenstruktur in der contentString-Eigenschaft des GEM_ERP_PR_Communication_Reply unterstützen.
-     
-     <table>
+   
+   <table>
   <thead>
     <tr>
       <th>Attribut</th>
@@ -377,102 +429,114 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <tr>
       <td>version</td>
       <td>ja</td>
-      <td>Gibt die Version des JSON an. Aktuell immer 1. Kann im weiteren Lebenszyklus verändert werden.</td>
+      <td>Gibt die Version des JSON an. Aktuell immer 3. Kann im weiteren Lebenszyklus verändert werden.</td>
       <td>nummerisch, bis zu 6 Stellen</td>
-      <td>1</td>
+      <td>3</td>
     </tr>
     <tr>
-      <td>supplyOptionsType</td>
+      <td>communicationType</td>
       <td>ja</td>
-      <td>Wird gemäß des Servicerequests gesetzt, den der Nutzer wählt. Die für den Nutzer zur Auswahl stehenden Services gibt die Apotheke vor, indem sie den servicespezifischen Zuweisungs-Endpunkt angibt, oder nicht.</td>
-      <td>onPremise, shipment, delivery</td>
-      <td>onPremise</td>
+      <td>Beschreibt die Art der Nachricht.</td>
+      <td>text, link, reservationStatus, pickupCodeHR, pickupCodeDMC, deliveryStatus, paymentInfo</td>
+      <td>reservationStatus</td>
     </tr>
     <tr>
-      <td>info_text</td>
-      <td>nein</td>
-      <td>Zusätzlicher Freitext des Versicherten an die Apotheke</td>
-      <td>500 Stellen, UTF-8</td>
+      <td>text</td>
+      <td>Falls communicationType = text oder link: ja<br>Falls communicationType = pickupCodeHR, pickupCodeDMC, deliveryStatus oder paymentInfo: nein<br>Falls communicationType = reservationStatus: verboten</td>
+      <td>Zusätzlicher Freitext der Apotheke an den Versicherten. Falls communicationType gleich "link" ist, beschreibt dies das URL-Ziel, sodass der Versicherte vor dem Aufruf über das Ziel des Absprungs informiert wird.</td>
+      <td>800 Stellen, keine URL</td>
       <td>Wir möchten Sie informieren, dass Ihre bestellten Medikamente zur Abholung bereitstehen. Den Abholcode finden Sie anbei.</td>
     </tr>
     <tr>
       <td>url</td>
-      <td>nein</td>
-      <td>Einbettung einer externen URL ausschließlich für das Einlösen von E-Rezepten in einer externen Bestellplattform</td>
+      <td>Falls communicationType = link: ja<br>Ansonsten: verboten</td>
+      <td>Einbettung einer externen URL ausschließlich für das Einlösen von E-Rezepten in einer externen Bestellplattform.</td>
       <td>500 Stellen, URL gemäß RFC3986</td>
       <td>https://www.meine-apotheke.de/pickup/59b52340-7a6a-430d-99ea-45a8e5cd03f6</td>
     </tr>
     <tr>
+      <td>transactionID</td>
+      <td>ja</td>
+      <td>Wiederholung aus der empfangenen Nachricht. Dient dazu, Nachrichten einer Transaktion zuordnen zu können.</td>
+      <td>36 Stellen, UUID</td>
+      <td>8196b610-9b77-47ab-936e-362cd92ef2aa</td>
+    </tr>
+    <tr>
+      <td>readyForCollection</td>
+      <td>Falls communicationType = reservationStatus: ja<br>Ansonsten: verboten</td>
+      <td>Zeitpunkt der Verfügbarkeit</td>
+      <td>immediately, sameDay, nextDay, nextDayAM, nextDayPM, unknown, notAvailable</td>
+      <td>immediately</td>
+    </tr>
+    <tr>
+      <td>deliveryStatus</td>
+      <td>Falls communicationType = deliveryStatus: ja<br>Ansonsten: verboten</td>
+      <td>Information zum Status der Lieferung (Bote, Versand)</td>
+      <td>preparedWaiting, inTransport, delivered, incident</td>
+      <td>inTransport</td>
+    </tr>
+    <tr>
+      <td>inTransportPosition</td>
+      <td>Falls communicationType = deliveryStatus: nein<br>Ansonsten: verboten</td>
+      <td>GMS Position des Transporters</td>
+      <td>Lat, Long</td>
+      <td><pre>{
+  "long": 13.387595793605172,
+  "lat": 52.522529939635795
+}</pre></td>
+    </tr>
+    <tr>
+      <td>inTransportETA</td>
+      <td>Falls communicationType = deliveryStatus: nein<br>Ansonsten: verboten</td>
+      <td>Erwartete Ankunft Zeitfenster von – bis</td>
+      <td>TIMESTAMP-TIMESTAMP</td>
+      <td><pre>{
+  "from": 1735736400,
+  "to": 1735741800
+}</pre></td>
+    </tr>
+    <tr>
+      <td>totalAmount</td>
+      <td>Falls communicationType = paymentInfo: ja<br>Ansonsten: verboten</td>
+      <td>Zu zahlender Betrag in Eurocent, rein nummerisch</td>
+      <td>Nummerisch</td>
+      <td>12550</td>
+    </tr>
+    <tr>
+      <td>paymentMethods</td>
+      <td>Falls communicationType = paymentInfo: nein<br>Ansonsten: verboten</td>
+      <td>Verfügbare Zahlungsarten</td>
+      <td>Array aus Objects: cash, bankaccount, creditcard, paypal (optional)</td>
+      <td><pre>"paymentMethods": [
+  { "method": "cash" },
+  {
+    "method": "bankaccount",
+    "url": "https://my.payment.provider.de/pay/..."
+  },
+  {
+    "method": "paypal",
+    "url": "https://paypal.me/&lt;some_account&gt;"
+  }
+]</pre></td>
+    </tr>
+    <tr>
       <td>pickUpCodeHR</td>
-      <td>nein</td>
-      <td>Menschenlesbarer Abholcode. Nur bei supplyOptionsType "onPremise". Wenn gesetzt, wird dem Nutzer der Inhalt des "pickUpCodeHR" optisch hervorgehoben angezeigt.</td>
-      <td>8 Stellen, UTF-8</td>
+      <td>Falls communicationType = pickupCodeHR und supplyOptionsType = onPremise: ja<br>Ansonsten: verboten</td>
+      <td>Menschenlesbarer Abholcode</td>
+      <td>1-8 Stellen</td>
       <td>12315615</td>
     </tr>
     <tr>
       <td>pickUpCodeDMC</td>
-      <td>nein</td>
-      <td>Maschinenlesbarer Abholcode (Data-Matrix-Code). Nur bei supplyOptionsType "onPremise". Wenn gesetzt, kann sich der Nutzer den Inhalt als Data-Matrix-Code anzeigen lassen. Der Inhalt wird gemäß ISO/IEC 16022:2006 von der App in einen DMC gewandelt. Fehlt die Interpretation, so wird der Code als Freitext angezeigt.</td>
-      <td>128 Stellen, UTF-8</td>
+      <td>Falls communicationType = pickupCodeDMC und supplyOptionsType = onPremise: ja<br>Ansonsten: verboten</td>
+      <td>Maschinenlesbarer Abholcode (Data-Matrix-Code gemäß ISO/IEC 16022:2006)</td>
+      <td>8-2000 Stellen</td>
       <td>5346a991-c5c6-49c8-b87b-4cdd255bbde4</td>
     </tr>
   </tbody>
 </table>
-
 <div><figcaption><strong>Tabelle: </strong>Nachricht als Apotheke an einen Versicherten schicken</figcaption></div>
      
-</requirement>
-
-<!-- A_23878-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-360" title="E-Rezept-Fachdienst - Nachricht einstellen - Validierung des Payload-Inhalt von GEM_ERP_PR_Communication_DispReq" version="0">
-    <meta lockversion="false"/>
-    <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
-    </actor>
-     Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication den Inhalt der contentString-Eigenschaft des GEM_ERP_PR_Communication_DispReq-Profils auf valides JSON überprüfen und, falls die Inhalte des strukturierten JSON die unter "Prüfungsoperationen durch den Fachdienst" aufgeführten Anforderungen nicht erfüllen mit, einem Http-Fehler 400 (Bad Request) abbrechen sowie mit einer aussagekräftigen Fehlermeldung in Form einer eingebetteten OperationOutcome-Ressource antworten.
-     
-     <table>
-  <thead>
-    <tr>
-      <th>Attribut</th>
-      <th>Pflicht / Optional</th>
-      <th>Prüfungsoperationen durch den Fachdienst</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>version</td>
-      <td>Pflicht</td>
-      <td>Der Wert muss immer 1 sein.</td>
-    </tr>
-    <tr>
-      <td>supplyOptionsType</td>
-      <td>Pflicht</td>
-      <td>Einer der folgenden Werte muss gesetzt sein: "onPremise", "delivery", "shipment". Wenn Communication.extension:flowType == 166 ist nur "onPremise" und "delivery" erlaubt.</td>
-    </tr>
-    <tr>
-      <td>name</td>
-      <td>Optional</td>
-      <td>Die Zeichenlänge darf maximal 100 Zeichen betragen.</td>
-    </tr>
-    <tr>
-      <td>address</td>
-      <td>Optional</td>
-      <td>Die Zeichenlänge darf maximal 500 Zeichen betragen.</td>
-    </tr>
-    <tr>
-      <td>hint</td>
-      <td>Optional</td>
-      <td>Die Zeichenlänge darf maximal 500 Zeichen betragen.</td>
-    </tr>
-    <tr>
-      <td>phone</td>
-      <td>Optional</td>
-      <td>Die Zeichenlänge darf maximal 100 Zeichen betragen.</td>
-    </tr>
-  </tbody>
-</table>
-<div><figcaption><strong>Tabelle: </strong>Prüfungsoperationen durch den Fachdienst GEM_ERP_PR_Communication_DispReq-Profil</figcaption></div>
 </requirement>
 
 <!-- A_23879 -->
