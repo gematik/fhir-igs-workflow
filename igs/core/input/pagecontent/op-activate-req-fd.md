@@ -104,6 +104,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
     damit der nachfolgende Workflow ausschließlich auf Basis medizinisch korrekter und vom Leistungserbringer mittels Signatur freigegebener Daten erfolgt.
 </requirement>
 
+<!-- Diese Afo wurde nicht zugewiesen, da die Konnektoren sich nicht so verhalten. -->
 <!-- A_23172 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-136" title="E-Rezept-Fachdienst - Task aktivieren - Mimetype Signatur" version="0">
     <meta lockversion="false"/>
