@@ -1,9 +1,9 @@
-﻿<!-- get modelType --><?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE HTML>
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>GEM ERP PR MedicationDispense DiGA - Testing - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft</title>
+    <title>Anforderungen an das E-Rezept-FdV für die $abort-Operation - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-draft</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script src="assets/js/mermaid.js" type="text/javascript"></script>
     <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
-    <style type="text/css">h2{--heading-prefix:"8.4"}
-    h3,h4,h5,h6{--heading-prefix:"8.4"}</style>
+    <style type="text/css">h2{--heading-prefix:"7.6.2"}
+    h3,h4,h5,h6{--heading-prefix:"7.6.2"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
 
@@ -178,7 +178,7 @@
       <li>
         <a href="release-notes.html">Release Notes</a>
       </li>
-      <li><a name="l277">​</a>
+      <li><a name="l276">​</a>
         <a href="spec-sheet.html">Steckbriefe</a>
       </li>
       <li>
@@ -225,15 +225,15 @@ Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
     <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
       <div class="container">    <!-- container -->
         <ul class="breadcrumb">
-          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="artifacts.html"><b>FHIR-Artefakte</b></a></li><li><b>GEM ERP PR MedicationDispense DiGA</b></li>
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="operation-api.html"><b>Operation API</b></a></li><li><a href="op-abort.html"><b>Operation: $abort</b></a></li><li><b>Anforderungen an das E-Rezept-FdV für die $abort-Operation</b></li>
 
           <span style="float:right;">
 
-            <a href="StructureDefinition-GEM-ERP-PR-MedicationDispense-DiGA-mappings.html">&lt;vorherige</a> | 
+            <a href="op-abort-req-fd.html">&lt;vorherige</a> | 
 
             <a href="#bottom">unten</a>
 
-          | <a href="StructureDefinition-GEM-ERP-PR-MedicationDispense-DiGA-examples.html">nächste&gt;</a>
+          | <a href="op-abort-req-pvs.html">nächste&gt;</a>
 
           </span>
 
@@ -246,38 +246,16 @@ Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
       <div class="container">    <!-- container -->
         <div class="row">
           <div class="inner-wrapper">
-<div style="counter-reset: section 6" class="col-12">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
   
-  
-
-
-
-
-
-
-
-
-
-
-
-<ul class="nav nav-tabs">
-
-  <li>
-    <a href="StructureDefinition-GEM-ERP-PR-MedicationDispense-DiGA.html">Content</a>
-  </li>
-
-
-
-  <li>
-    <a href="StructureDefinition-GEM-ERP-PR-MedicationDispense-DiGA-definitions.html">Detailed Descriptions</a>
-  </li>
-
-
-
-  
-    <li>
-      <a href="StructureDefinition-GEM-ERP-PR-MedicationDispense-DiGA-mappings.html">Mappings</a>
-    </li>
+  <h2>Anforderungen an das E-Rezept-FdV für die $abort-Operation</h2>
   
 
 
@@ -285,84 +263,98 @@ Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
 
 
-  
-    
-      <li>
-        <a href="StructureDefinition-GEM-ERP-PR-MedicationDispense-DiGA-examples.html">Examples</a>
-      </li>
-    
-  
 
 
 
 
-  
-    <li>
-      <a href="StructureDefinition-GEM-ERP-PR-MedicationDispense-DiGA.profile.xml.html">XML</a>
-    </li>
-  
 
 
-  
-    <li>
-      <a href="StructureDefinition-GEM-ERP-PR-MedicationDispense-DiGA.profile.json.html">JSON</a>
-    </li>
-  
+    <p>  <!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
 
-
-  
-    <li>
-      <a href="StructureDefinition-GEM-ERP-PR-MedicationDispense-DiGA.profile.ttl.html">TTL</a>
-    </li>
-  
-
-
+<ul id="markdown-toc">
+  <li><a href="#anforderungen-aus-der-core-spezifikation" id="markdown-toc-anforderungen-aus-der-core-spezifikation">Anforderungen aus der Core Spezifikation</a></li>
+  <li><a href="#modulspezifische-anforderungen" id="markdown-toc-modulspezifische-anforderungen">Modulspezifische Anforderungen</a></li>
 </ul>
 
+</div>
+<p>Diese Seite enthält die normativen Anforderungen an ein FdV für die Operation <code class="language-plaintext highlighter-rouge">$abort</code>.</p>
 
-  <a name="root"> </a>
-  <h2 id="root">Resource Profile: GEM_ERP_PR_MedicationDispense_DiGA - Testing</h2>
+<h3 id="anforderungen-aus-der-core-spezifikation">Anforderungen aus der Core Spezifikation</h3>
 
-  <table class="colsd">
-    <tr>
+<p>Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an das E-Rezept-FdV für die Nutzung der Operation <code class="language-plaintext highlighter-rouge">$abort</code>.</p>
 
-      <td colspan="2">
-        
-          Draft
-          
-            as of 2026-02-06
-          
-        
-      </td>
+  <!-- A_26082 -->
+<requirement conformance="SHALL" title="E-Rezept-FdV: E-Rezept löschen - Hinweis zu Daten in ePA" version="0" key="IG-TIFLOW-CORE-21">
+    <meta lockversion="false"/>
+    <actor name="eRp_FdV">
+        <testProcedure id="Produkttest"></testProcedure>
+    </actor>
+     Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept löschen" dem Nutzer einen Hinweis geben, wie sich das Löschen auf die Informationen zum E-Rezept in der elektronischen Patientenakte auswirkt.
+</requirement>
 
-    </tr>
-  </table>
+  <!-- A_19219-01 -->
+<requirement conformance="SHALL" title="E-Rezept-FdV: E-Rezept löschen - E-Rezept zum Löschen auswählen" version="0" key="IG-TIFLOW-CORE-23">
+    <meta lockversion="false"/>
+    <actor name="eRp_FdV">
+        <testProcedure id="Produkttest"></testProcedure>
+    </actor>
+     Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept löschen" es dem Nutzer ermöglichen, ein E-Rezept zum Löschen auszuwählen.
+</requirement>
 
+  <!-- A_24023-03 -->
+<requirement conformance="SHALL" title="E-Rezept-FdV:  E-Rezepte löschen - Coverage PKV - Warnung Abgabeinformationen" version="0" key="IG-TIFLOW-CORE-24">
+    <meta lockversion="false"/>
+    <actor name="eRp_FdV">
+        <testProcedure id="Produkttest"></testProcedure>
+    </actor>
+     Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept löschen", falls das E-Rezept-FdV die Funktionalität für Abrechnungsinformationen unterstützt, wenn der Nutzer ein E-Rezept mit Kostenträgertyp (Coverage.type.coding.code) "PKV" zum Löschen ausgewählt hat und für das E-Rezept noch keine Abrechnungsinformationen bereitgestellt wurden, eine Warnung anzeigen, dass ein Bereitstellen der Abrechnungsinformationen zum E-Rezept nach dem Löschen des E-Rezepts nicht mehr möglich ist.
+</requirement>
 
+  <!-- A_19220-01 -->
+<requirement conformance="SHALL" title="E-Rezept-FdV: E-Rezept löschen - Bestätigung" version="0" key="IG-TIFLOW-CORE-25">
+    <meta lockversion="false"/>
+    <actor name="eRp_FdV">
+        <testProcedure id="Produkttest"></testProcedure>
+    </actor>
+     Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept löschen" vom Nutzer eine Bestätigung einholen, dass das ausgewählte E-Rezept gelöscht werden soll und die Möglichkeit geben, das Löschen abzubrechen.
+</requirement>
 
+  <!-- A_19221-02 -->
+<requirement conformance="SHALL" title="E-Rezept-FdV: E-Rezept löschen" version="0" key="IG-TIFLOW-CORE-26">
+    <meta lockversion="false"/>
+    <actor name="eRp_FdV">
+        <testProcedure id="Produkttest"></testProcedure>
+    </actor>
+     Das E-Rezept-FdV MUSS den Anwendungsfall "UC 3.2 - E-Rezept durch Versicherten löschen" aus [gemSysL_eRp] gemäß TAB_FdVERP_008 umsetzen. Tabelle # : TAB_FdVERP_008 – E-Rezept löschen Name E-Rezept löschen Auslöser Aufruf des Anwendungsfalls in der GUI Akteur Versicherter Vorbedingung Der Nutzer hat ein zum Löschen markiert und das Löschen bestätigt. Der Nutzer hat sich gegenüber der TI authentisiert. Nachbedingung Das ausgewählte E-Rezept ist vom E-Rezept-Fachdienst unwiederbringlich gelöscht. Standardablauf Task-ID und AccessCode des E-Rezepts bestimmen E-Rezept löschen E-Rezept-Token löschen
+</requirement>
 
-  <!-- insert intro if present -->
+  <!-- A_19222-01 -->
+<requirement conformance="SHALL" title="E-Rezept-FdV: E-Rezept löschen - Löschrequest" version="0" key="IG-TIFLOW-CORE-27">
+    <meta lockversion="false"/>
+    <actor name="eRp_FdV">
+        <testProcedure id="Produkttest"></testProcedure>
+    </actor>
+     Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezepte löschen" für das zu löschende E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$abort des E-Rezept-Fachdienstes mit ACCESS_TOKEN im Authorization-Header Task-ID in URL &lt;id&gt; optional: AccessCode im x-AccessCode-Header ausführen.
+</requirement>
 
+  <!-- A_19223-01 -->
+<requirement conformance="SHALL" title="E-Rezept-FdV: E-Rezept löschen - E-Rezept-Token löschen" version="0" key="IG-TIFLOW-CORE-28">
+    <meta lockversion="false"/>
+    <actor name="eRp_FdV">
+        <testProcedure id="Produkttest"></testProcedure>
+    </actor>
+     Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept löschen" für das zu löschende E-Rezept nach erfolgreichem Aufruf der Operation "Ein E-Rezept löschen" die Daten zum E-Rezept-Token lokal löschen.
+</requirement>
 
+<h3 id="modulspezifische-anforderungen">Modulspezifische Anforderungen</h3>
 
-
-<h3>Test Plans</h3>
-
-  <p><b>No test plans are currently available for the  Profile.</b></p>
-
-
-<h3>Test Scripts</h3>
-
-  <p><b>No test scripts are currently available for the  Profile.</b></p>
-
-
-  <!-- insert notes if present -->
-
+<p>Es gibt keine modulspezifischen Anforderungen.</p>
 
 
 
 </div>
-
         </div>    <!-- /inner-wrapper -->
       </div>    <!-- /row -->
     </div>    <!-- /container -->
@@ -370,8 +362,6 @@ Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
   <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
   <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
-
-  <script src="assets/js/tabs.js" type="text/javascript"> </script>
 
   <script src="assets/js/window-hash.js" type="text/javascript"> </script>
   <a name="bottom"> </a>
@@ -384,7 +374,7 @@ Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
             <tr>
               <td style="text-align:left">&nbsp;
 
-                <a href="StructureDefinition-GEM-ERP-PR-MedicationDispense-DiGA-mappings.html">&lt;vorherige</a>
+                <a href="op-abort-req-fd.html">&lt;vorherige</a>
 
               </td>
               <td style="text-align:center">
@@ -392,7 +382,7 @@ Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
               </td>
               <td style="text-align:right">&nbsp;
 
-                <a href="StructureDefinition-GEM-ERP-PR-MedicationDispense-DiGA-examples.html">nächste&gt;</a>
+                <a href="op-abort-req-pvs.html">nächste&gt;</a>
 
               </td>
             </tr>

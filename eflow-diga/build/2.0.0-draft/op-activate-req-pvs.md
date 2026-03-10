@@ -17,6 +17,11 @@ Diese Seite enthält die normativen Anforderungen an ein PVS für die Operation 
 
 Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an Clientsysteme für die Nutzung der Operation `$activate`.
 
+**Sequenzdiagramm:**
+
+**Abbildung: **UC 4.1 - E-Rezept durch Abgebenden abrufen
+
+
 Das PS der verordnenden LEI MUSS den Anwendungsfall "UC 2.3 - E-Rezept einstellen" gemäß TAB_ILFERP_003 umsetzen. 
 
 * Name: Auslöser

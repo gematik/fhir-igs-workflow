@@ -178,7 +178,7 @@
       <li>
         <a href="release-notes.html">Release Notes</a>
       </li>
-      <li>
+      <li><a name="l276">​</a>
         <a href="spec-sheet.html">Steckbriefe</a>
       </li>
       <li>
@@ -287,9 +287,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an den E-Rezept-Fachdienst für die Operation <code class="language-plaintext highlighter-rouge">$activate</code>.</p>
 
   <!-- A_19022-01 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Rollenprüfung" version="0" key="IG-TIFLOW-CORE-316">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Rollenprüfung" version="0" key="IG-TIFLOW-CORE-131">
   <meta lockversion="false"/>
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produktgutachten"></testProcedure>
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks für ein E-Rezept mittels HTTP-POST/$activate-Operation auf den in der URL referenzierten&nbsp;/Task/&lt;id&gt; sicherstellen, dass ausschließlich verordnende Leistungserbringer in der Rolle
@@ -304,9 +304,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_19024-03 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Prüfung AccessCode Prüfung Status" version="0" key="IG-TIFLOW-CORE-317">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Prüfung AccessCode Prüfung Status" version="0" key="IG-TIFLOW-CORE-132">
   <meta lockversion="false"/>
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate den im HTTP-RequestHeader "X-AccessCode" oder URL-Parameter "?ac=..." übertragenen AccessCode gegen den im referenzierten Task gespeicherten AccessCode Task.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode und den Status des Tasks auf Task.status = draft prüfen und bei Ungleichheit oder Fehlen des HTTP-Headers die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit Zugriffe auf diesen Datensatz nur durch Berechtigte in Kenntnis des AccessCodes erfolgen.
@@ -314,18 +314,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- ToDo: Prüfung in 2 Afos separieren -->
 
   <!-- A_19020 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Schemavalidierung" version="0" key="IG-TIFLOW-CORE-318">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Schemavalidierung" version="0" key="IG-TIFLOW-CORE-133">
   <meta lockversion="false"/>
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate den im Aufrufparameter übergebenen FHIR-Operationsparameter des QES-Datensatzes als PKCS#7-Datei einer Enveloping CAdES-Signatur entgegennehmen und verarbeiten und bei Fehlen oder ungültiger ASN.1 Datenstruktur die Weiterverarbeitung im Fachdienst mit dem http-Status-Code 400 beantworten, damit kein Schadcode und keine "fachfremden" Daten in den E-Rezept-Fachdienst hochgeladen werden.
 </requirement>
 
   <!-- A_20159-04 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA" version="0" key="IG-TIFLOW-CORE-319">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA" version="0" key="IG-TIFLOW-CORE-134">
   <meta lockversion="false"/>
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produktgutachten"></testProcedure>
   </actor>
     Der E-Rezept-Fachdienst MUSS das QES-Signaturzertifikat C.HP.QES in der Signatur des übergebenen QES-Datensatzes gemäß [gemSpec_PKI#TUC_PKI_030] mit folgenden Parametern auf Gültigkeit prüfen:
@@ -368,9 +368,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- ToDo: können HBA-Vorläuferkarten entfernt werden? ME ja -->
 
   <!-- A_19025-03 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - QES prüfen Rezept aktualisieren" version="0" key="IG-TIFLOW-CORE-320">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - QES prüfen Rezept aktualisieren" version="0" key="IG-TIFLOW-CORE-135">
   <meta lockversion="false"/>
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
     Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate 
@@ -388,43 +388,44 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     damit der nachfolgende Workflow ausschließlich auf Basis medizinisch korrekter und vom Leistungserbringer mittels Signatur freigegebener Daten erfolgt.
 </requirement>
 
+  <!-- Diese Afo wurde nicht zugewiesen, da die Konnektoren sich nicht so verhalten. -->
   <!-- A_23172 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Mimetype Signatur" version="0" key="IG-TIFLOW-CORE-321">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Mimetype Signatur" version="0" key="IG-TIFLOW-CORE-136">
     <meta lockversion="false"/>
     Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die Angabe zum Mimetype des signierten Dokumentes prüfen und mit dem Fehler 400 abbrechen, wenn dieser ungleich "text/plain; charset=utf-8" ist.
 </requirement>
 
   <!-- A_21370 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Prüfung Rezept-ID und Präfix gegen Flowtype" version="0" key="IG-TIFLOW-CORE-322">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Prüfung Rezept-ID und Präfix gegen Flowtype" version="0" key="IG-TIFLOW-CORE-137">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der E-Rezept-Fachdienst MUSS beim berechtigten Aufruf der Operation POST /Task/&lt;id&gt;/$activate prüfen, dass die PrescriptionID des Tasks mit der PrescriptionID im übergebenen QES-Datensatz übereinstimmt und der Präfix der PrescriptionID gleich dem Flowtype des zu aktivierenden Tasks ist und andernfalls die Operation mit dem http-Fehlercode 400 abbrechen.
 </requirement>
 
   <!-- A_23936-01 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Versicherten-ID als Identifikator von Versicherten" version="0" key="IG-TIFLOW-CORE-323">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Versicherten-ID als Identifikator von Versicherten" version="0" key="IG-TIFLOW-CORE-138">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen, dass Patient.identifier.system gleich "http://fhir.de/sid/gkv/kvid-10" ist und andernfalls die Operation mit dem http-Fehlercode 400 und dem Hinweis im OperationOutcome "Als Identifier für den Patienten muss eine VersichertenID (KVNR) angegeben werden." abbrechen.
 </requirement>
 
   <!-- A_22487 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Prüfregel Ausstellungsdatum" version="0" key="IG-TIFLOW-CORE-324">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Prüfregel Ausstellungsdatum" version="0" key="IG-TIFLOW-CORE-139">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der E-Rezept-Fachdienst MUSS den Aufruf der http-POST-Operation /Task/&lt;id&gt;/$activate mit einem Fehlercode 400 und Hinweis im OperationOutcome auf "Ausstellungsdatum und Signaturzeitpunkt weichen voneinander ab, müssen aber taggleich sein" als ungültig abweisen, wenn das Datum authoredOn zur Gültigkeitsberechnung des E-Rezepts nicht dem Datum in QES.Erstellung im Signaturobjekt entspricht.
 </requirement>
 
   <!-- A_19127-03 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Übernahme der Versicherten-ID" version="0" key="IG-TIFLOW-CORE-325">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Übernahme der Versicherten-ID" version="0" key="IG-TIFLOW-CORE-140">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der E-Rezept-Fachdienst MUSS im Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die KVNR des Patienten dem Identifier http://fhir.de/sid/gkv/kvid-10 der Patient-Ressource im E-Rezept-Bundle entnehmen und diesen als Identifier in Task.for mit system http://fhir.de/sid/gkv/kvid-10 hinzufügen, damit ausschließlich eine gültige, vom Arzt signierte Patientenreferenz im Workflow verwendet wird.
@@ -432,27 +433,27 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- ToDo: Grammatik -->
 
   <!-- A_28126 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Push Notification Versicherter" version="0" key="IG-TIFLOW-CORE-326">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Push Notification Versicherter" version="0" key="IG-TIFLOW-CORE-141">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId "erp.task.activate" und den Versicherten mit der KVNR = Task.for initiieren.
 </requirement>
 
   <!-- A_19128 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Status ready" version="0" key="IG-TIFLOW-CORE-327">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Status ready" version="0" key="IG-TIFLOW-CORE-142">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der E-Rezept-Fachdienst MUSS die zulässige Aktivierung eines Tasks mittels /Task/&lt;id&gt;/$activate-Operation im Status Task.status = ready&nbsp;vollziehen und bei erfolgreichem Abschluss der Operation die Ressource Task im HTTP-Body der HTTP-Response zurückgeben, damit die verordnende Leistungserbringerinstitution über den erfolgreichen Abschluss der Operation in Kenntnis gesetzt wird.
 </requirement>
 
   <!-- A_19029-06 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Serversignatur" version="0" key="IG-TIFLOW-CORE-328">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Serversignatur" version="0" key="IG-TIFLOW-CORE-143">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der E-Rezept-Fachdienst MUSS das bei der Operation /Task/&lt;id&gt;/$activate im QES-Datensatz enthaltene Verordnung in ein Bundle gleichen Typs in JSON-Repräsentation beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task/&lt;id&gt; zurück liefern.Dies gilt für folgende Bundles: https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundlehttps://fhir.kbv.de/StructureDefinition/KBV_PR_EVDGA_Bundle <br/>
@@ -471,36 +472,36 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 
 <h4 id="verifizieren-von-prüfziffern">Verifizieren von Prüfziffern</h4>
   <!-- A_23888 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der IK Nummer im Profil KBV_PR_FOR_Coverage" version="0" key="IG-TIFLOW-CORE-329">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der IK Nummer im Profil KBV_PR_FOR_Coverage" version="0" key="IG-TIFLOW-CORE-144">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&lt;id&gt;/$activate einen im FHIR Profil KBV_PR_FOR_Coverage gespeicherten Wert für payor.identifier.value gemäß dem im "Gemeinsames Rundschreiben Institutionskennzeichen (IK)" vom 01.06.2020 unter Kapitel 1.2.5 "Prüfziffer" beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung den Prozess mit einem Http-Fehler 400 (Bad Request) abbrechen sowie die Fehlermeldung "Ungültiges Institutionskennzeichen (IKNR): Das übergebene Institutionskennzeichen im Versicherungsstatus entspricht nicht den Prüfziffer-Validierungsregeln." in Form einer OperationOutcome ausliefern.
 </requirement>
 
   <!-- A_24030 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der IK Nummer im Profil KBV_PR_FOR_Coverage - AlternativeID" version="0" key="IG-TIFLOW-CORE-330">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der IK Nummer im Profil KBV_PR_FOR_Coverage - AlternativeID" version="0" key="IG-TIFLOW-CORE-145">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&lt;id&gt;/$activate die im FHIR Profil KBV_PR_FOR_Coverage gespeicherten Werte für payor.identifier.extension:alternativeID.value[x]:valueIdentifier gemäß dem "Gemeinsames Rundschreiben Institutionskennzeichen (IK)" vom 01.06.2020 unter Kapitel 1.2.5 "Prüfziffer" beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung mit einem Http-Fehler 400 (Bad Request) abbrechen sowie die Fehlermeldung "Ungültiges Institutionskennzeichen (IKNR): Das übergebene Institutionskennzeichen des Kostenträgers entspricht nicht den Prüfziffer-Validierungsregeln." in Form einer OperationOutcome ausliefern.
 </requirement>
 
   <!-- A_23890-01 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung KVNR im Profil KBV_PR_FOR_Patient" version="0" key="IG-TIFLOW-CORE-331">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung KVNR im Profil KBV_PR_FOR_Patient" version="0" key="IG-TIFLOW-CORE-146">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&lt;id&gt;/$activate einen im FHIR Profil KBV_PR_FOR_Patient gespeicherten Wert für Patient.identifier:versichertenId.value gemäß der Anlage 1 der "Prüfziffernberechnung für die Krankenversichertennummer nach &sect; 290 SGB V" vom 26.02.2019 beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung mit einem Http-Fehler 400 (Bad Request) abbrechen sowie die Fehlermeldung "Ungültige Versichertennummer (KVNR): Die übergebene Versichertennummer des Patienten entspricht nicht den Prüfziffer-Validierungsregeln." in Form einer OperationOutcome ausliefern.
 </requirement>
 
   <!-- A_23891-01 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR im Profil KBV_PR_FOR_Practitioner" version="0" key="IG-TIFLOW-CORE-332">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR im Profil KBV_PR_FOR_Practitioner" version="0" key="IG-TIFLOW-CORE-147">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&lt;id&gt;/$activate einen im FHIR Profil KBV_PR_FOR_Practitioner hinterlegten Wert für identifier:ANR.value bzw. identifier:ZANR.value gemäß der Anlage 6 BMV-Ä der "Technischen Anlage zum Vertrag über den Datenaustausch zwischen dem GKV-Spitzenverband (Spitzenverband Bund der Krankenkassen) und der Kassenärztlichen Bundesvereinigung" unter "Aufbau der lebenslangen Arztnummer – LANR" beschriebenen Prüfalgorithmus unter Beachtung der folgenden zulässigen Ausnahmen validieren, und bei einer fehlerhaften Prüfung auf diese Auffälligkeit gemäß der Konfiguration reagieren.
@@ -549,27 +550,27 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 <p>Hinweis: Im Rahmen der ambulanten spezialfachärztlichen Versorgung (ASV) nach &sect; 116b SGB V wird gemäß der ASV-Vereinbarung von Krankenhausärzten die sog. Fachgruppennummer statt der LANR verwendet. Die Fachgruppennummer wird ein einem separaten Element hinterlegt. In diesem Fall muss keine ANR angegeben werden.</p>
 
   <!-- A_24031 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration bei Auffälligkeiten" version="0" key="IG-TIFLOW-CORE-333">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration bei Auffälligkeiten" version="0" key="IG-TIFLOW-CORE-148">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der E-Rezept-Fachdienst MUSS für die Überprüfung der ANR/ZANR eine Möglichkeit der Konfiguration vorsehen und bei der Durchführung einer Vergleichsoperation je nach Konfiguration bei Auffälligkeit die Operation mit einer Warnung fortführen oder mit einer Fehlermeldung abbrechen.
 </requirement>
 
   <!-- A_24032 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration Fehler" version="0" key="IG-TIFLOW-CORE-334">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration Fehler" version="0" key="IG-TIFLOW-CORE-149">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der E-Rezept-Fachdienst MUSS für die Überprüfung der ANR/ZANR, wenn bei der Prüfung eine Auffälligkeit auftritt und die Konfiguration Fehler aktiv ist, mit dem Http-Fehlercode 400 abbrechen und die Fehlermeldung "Ungültige Arztnummer (LANR oder ZANR): Die übergebene Arztnummer entspricht nicht den Prüfziffer-Validierungsregeln." in Form einer OperationOutcome ausliefern.
 </requirement>
 
   <!-- A_24033 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration Warning" version="0" key="IG-TIFLOW-CORE-335">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration Warning" version="0" key="IG-TIFLOW-CORE-150">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der E-Rezept-Fachdienst MUSS für die Überprüfung der ANR/ZANR, wenn bei der Prüfung eine Auffälligkeit auftritt und die Konfiguration Warning aktiv ist, mit dem Http-Responsecode 252 antworten und den Response für die Auffälligkeit mit einem Http-Header "Warning" mit
@@ -582,9 +583,9 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 </requirement>
 
   <!-- A_23892 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_ERP_Medication_PZN" version="0" key="IG-TIFLOW-CORE-336">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_ERP_Medication_PZN" version="0" key="IG-TIFLOW-CORE-151">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&lt;id&gt;/$activate den im FHIR Profil KBV_PR_ERP_Medication_PZN gespeicherten Wert für code.coding:pznCode.code gemäß den "Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI" beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung mit einem Http-Fehler 400 (Bad Request) abbrechen sowie die Fehlermeldung "Ungültige PZN: Die übergebene Pharmazentralnummer entspricht nicht den vorgeschriebenen Prüfziffer-Validierungsregeln." in Form einer OperationOutcome ausliefern.
@@ -592,32 +593,31 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- ToDo: ggf. nach IG rx verschieben -->
 
   <!-- A_24034 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_ERP_Medication_Compounding" version="0" key="IG-TIFLOW-CORE-337">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_ERP_Medication_Compounding" version="0" key="IG-TIFLOW-CORE-152">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&lt;id&gt;/$activate den im FHIR Profil KBV_PR_ERP_Medication_Compounding gespeicherten Wert für ingredient.item[x]:itemCodeableConcept.coding:pznCode.code gemäß den "Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI" beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung mit einem Http-Fehler 400 (Bad Request) abbrechen sowie die Fehlermeldung "Ungültige PZN: Die übergebene Pharmazentralnummer entspricht nicht den vorgeschriebenen Prüfziffer-Validierungsregeln." in Form einer OperationOutcome ausliefern.
 </requirement>
   <!-- ToDo: ggf. nach IG rx verschieben -->
 
-  <!-- A_25992 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest" version="0" key="IG-TIFLOW-CORE-338">
+  <!-- A_22925 -->
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Längenprüfung PZN" version="0" key="IG-TIFLOW-CORE-350">
     <meta lockversion="false"/>
-    <actor name="E-Rezept-Fachdienst">
+    <actor name="eRp_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-    Der E-Rezept-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&lt;id&gt;/$activate den im FHIR Profil KBV_PR_EVDGA_HealthAppRequest gespeicherten Wert für .code[x]:codeCodeableConcept.coding.code gemäß den "Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI" beschriebenen Prüfalgorithmus validieren. <br/>
-    Der E-Rezept-Fachdienst MUSS bei einer fehlerhaften Prüfung mit einem Http-Fehler 400 (Bad Request) abbrechen, sowie die Fehlermeldung "Ungültige PZN: Die übergebene Pharmazentralnummer entspricht nicht den vorgeschriebenen Prüfziffer-Validierungsregeln." in Form eines OperationOutcome ausliefern.
+     Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 und einem Hinweis auf die Längenprüfung der PZN ("Länge PZN unzulässig (muss 8-stellig sein))" im OperationOutcome) abbrechen, wenn die PZN einer übergebenen PZN-Verordnung in KBV_PR_ERP_Medication_PZN.code.coding.code nicht 8-stellig ist.
 </requirement>
-  <!-- ToDo: ggf. nach IG eDiGA verschieben -->
+  <!-- ToDo: ggf. nach IG rx verschieben -->
 
 <h3 id="modulspezifische-anforderungen">Modulspezifische Anforderungen</h3>
 
   <!-- A_25990 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - QES durch berechtigte Berufsgruppe" version="0" key="IG-TIFlow-DiGA-24">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - QES durch berechtigte Berufsgruppe" version="0" key="IG-TIFLOW-DIGA-11">
   <meta lockversion="false"/>
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
   Der E-Rezept-Fachdienst MUSS die Aktivierung eines Tasks mit Flowtype 162 mit dem HTTP-Status-Code 400 abbrechen, wenn die QES gemäß der professionOID des Signaturzertifikats des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die der folgenden professionOID entspricht:
@@ -634,9 +634,9 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 <p><br/></p>
 
   <!-- A_25991 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Verordnung von DiGAs" version="0" key="IG-TIFlow-DiGA-25">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Verordnung von DiGAs" version="0" key="IG-TIFLOW-DIGA-12">
   <meta lockversion="false"/>
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mit Flowtype 162 mittels $activate prüfen, dass im Bundle eine <i>DeviceRequest</i>-Ressource und in der <i>Composition.type.coding.code=e16D</i> enthalten ist. Der E-Rezept-Fachdienst MUSS andernfalls mit dem HTTP-Fehlercode 400 abbrechen und in der <i>OperationOutcome</i> den Fehlertext "Für diesen Workflowtypen sind nur Verordnungen für Digitale Gesundheitsanwendungen zulässig" ausgeben.
@@ -645,9 +645,9 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 <p><br/></p>
 
   <!-- A_25992 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest" version="0" key="IG-TIFlow-DiGA-26">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest" version="0" key="IG-TIFLOW-DIGA-13">
   <meta lockversion="false"/>
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&lt;id&gt;/$activate den im FHIR Profil KBV_PR_EVDGA_HealthAppRequest gespeicherten Wert für .code[x]:codeCodeableConcept.coding.code gemäß den "Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI" beschriebenen Prüfalgorithmus validieren.<br/>
@@ -657,9 +657,9 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 <p><br/></p>
 
   <!-- A_23443-01 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Type" version="0" key="IG-TIFlow-DiGA-27">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Type" version="0" key="IG-TIFLOW-DIGA-14">
   <meta lockversion="false"/>
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Task des Flowtype Task.extension:flowType = 162 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen, obCoverage.type.coding.code nicht mit dem Wert "PKV" belegt ist und im Fehlerfall die Operation mit Http-Fehlercode 400 abbrechen, um sicherzustellen, dass diese Workflows nicht für E-Rezepte für PKV-Versicherte genutzt werden.
@@ -667,9 +667,9 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 
 <p><br/>
   <!-- A_26372 --></p>
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Alternative IK" version="0" key="IG-TIFlow-DiGA-28">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Alternative IK" version="0" key="IG-TIFLOW-DIGA-15">
   <meta lockversion="false"/>
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Task des Flowtype Task.extension:flowType = 162 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen, ob die Extension Coverage.payor.identifier.extension:alternativeID vorhanden ist und in diesem Fall die Operation mit Http-Fehlercode 400 abbrechen, um sicherzustellen, dass dieser Workflow nicht für Verordnungen genutzt wird, die zu Lasten von Unfallkassen oder Berufsgenossenschaften gehen.
@@ -678,9 +678,9 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 <p>Dieser Ausschluss erfolgt temporär. In einer späteren Version können Unfallkassen das Verordnen von DiGAs explizit unterstützen. Die konkreten Festlegungen dazu werden in einem Folgerelease getroffen.</p>
 
   <!-- A_27845 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prozessparameter" version="0" key="IG-TIFlow-DiGA-29">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prozessparameter" version="0" key="IG-TIFLOW-DIGA-16">
   <meta lockversion="false"/>
-  <actor name="E-Rezept-Fachdienst">
+  <actor name="eRp_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
   Der E-Rezept-Fachdienst MUSS bei einem Task mit Task.flowType = 162 die Attribute in Task in Abhängigkeit des in der http-POST-Operation /Task/&lt;id&gt;/$activate übergebenen gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_005 belegen.<br/>
@@ -758,7 +758,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 9, 2026 13:00+0000">2026-03-09</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 10, 2026 12:52+0000">2026-03-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
