@@ -19,15 +19,23 @@ Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource _Task_ wird ü
 
 ### Resource API
 
-Durch Angabe des URL-Parameter ?ac= bei der GET-Operation kann eine abgebende Institution den Anwendungsfall "Recovery Secret" ausführen.
+Anfragen an die <i>Task</i>-Ressource können über die RESTful API mittels HTTP GET-Anfragen durchgeführt werden.
 
-Durch Angabe des URL-Parameter ?secret= bei der GET-Operation kann eine abgebende Institution den Anwendungsfall "UC 4.8 - Quittung erneut abrufen" ausführen.
+Durch Angabe des URL-Parameter `?ac=` bei der GET-Operation kann eine abgebende Institution den Anwendungsfall "Recovery Secret" ausführen.
+
+Durch Angabe des URL-Parameter `?secret=` bei der GET-Operation kann eine abgebende Institution den Anwendungsfall "UC 4.8 - Quittung erneut abrufen" ausführen.
 
 #### API Beschreibung
 
-tbd
+- [API-ERP: Alle E-Rezepte ansehen (FdV)](https://github.com/gematik/api-erp/blob/master/docs/erp_versicherte.adoc#alle-e-rezepte-ansehen)
 
-#### Hinweis
+### Instance API
 
-tbd
+Um spezifische Details zu einem einzelnen _Task_ mittels der RESTful API zu erhalten, wird die _Task Instance API_ verwendet, indem eine HTTP GET-Anfrage an den Endpunkt <i>/Task/[id]</i> gestellt wird.
+
+#### API Beschreibung
+
+- [API-ERP: E-Rezept abrufen (FdV)](https://github.com/gematik/api-erp/blob/master/docs/erp_versicherte.adoc#ein-einzelnes-e-rezept-abrufen-und-in-der-apotheke-einl%C3%B6sen)
+- [API-ERP: E-Rezept erneut abrufen (PS abgebend)](https://github.com/gematik/api-erp/blob/master/docs/erp_abrufen.adoc#e-rezept-erneut-abrufen)
+- [API-ERP: Quittung erneut abrufen (PS abgebend)](https://github.com/gematik/api-erp/blob/master/docs/erp_abrufen.adoc#quittung-erneut-abrufen)
 

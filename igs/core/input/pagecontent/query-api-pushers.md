@@ -16,13 +16,11 @@ Für den Empfang von Push Notifications in einem FdV muss sich die App-Instanz a
 
 ### Resource API
 
-tbd
+Dieser Endpunkt ermöglicht die Erstellung, Änderung und Löschung von Pushers für den authentifizierten Nutzer. Das Verhalten dieses Endpunkts variiert je nach Werten im JSON-Body.
+
+Ist `kind` nicht `null`, wird der Pusher mit dieser `app_id` und `pushkey` für diesen Nutzer aktualisiert oder erstellt, falls er nicht existiert. Ist `kind` `null`, wird der Pusher mit dieser `app_id` und `pushkey` für diesen Nutzer gelöscht.
 
 #### API Beschreibung
 
-tbd
-
-#### Hinweis
-
-tbd
+- [API-ERP: Pusher Verwaltung](https://github.com/gematik/api-erp/blob/master/docs/erp_push_notifications.adoc#pusher-verwaltung)
 

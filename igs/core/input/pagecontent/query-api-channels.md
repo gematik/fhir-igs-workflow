@@ -19,13 +19,10 @@ Die Nachricht zur Interaktion mit Konfigurationen für Push Notifications als Re
 
 ### Resource API
 
-tbd
+Der E-Rezept-Fachdienst unterstützt das optionale Feature "Channels". Ruft alle verfügbaren Channels für den authentifizierten Nutzer ab.
 
 #### API Beschreibung
 
-tbd
+- [API-ERP: Channel Verwaltung](https://github.com/gematik/api-erp/blob/master/docs/erp_push_notifications.adoc#channel-verwaltung)
 
-#### Hinweis
-
-tbd
 
