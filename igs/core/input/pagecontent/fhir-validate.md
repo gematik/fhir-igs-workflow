@@ -75,6 +75,7 @@ Der E-Rezept-Fachdienst validiert bei Operationen von Clientsystemen übermittel
 		 <div><figcaption><strong>Tabelle: </strong>title</figcaption></div>
 </requirement>
 
+<!-- TODO: Check Duplikat -->
 <!-- A_27658 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-206" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Datumsangabe ohne Zeitzoneninformation" version="0">
 	<meta lockversion="false"/>
@@ -84,6 +85,16 @@ Der E-Rezept-Fachdienst validiert bei Operationen von Clientsystemen übermittel
 	Der E-Rezept-Fachdienst MUSS sicherstellen, dass alle Datums- und Zeitangaben ohne explizite Zeitzoneninformation als deutsche Zeit (CET/CEST) entsprechend der historischen oder aktuellen Regelung interpretiert werden.
 </requirement>
 
+<!-- A_27659 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-341" title="FHIR-Ressourcen - Datumsangabe ohne Zeitzoneninformation" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FD">
+        <testProcedure id="Produkttest"/>
+    </actor>
+     Die Produkttypen der Anwendung E-Rezept und Clientsysteme des E-Rezept-Fachdienstes MÜSSEN sicherstellen, dass bei der Erstellung von Datensätzen Datums- und Zeitangaben ohne Zeitzoneninformation, die entsprechend dem Datum gültige deutsche Zeitzone (CET/CEST) angewendet wird.
+</requirement>
+
+<!-- TODO: Check Duplikat -->
 <!-- A_27698 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-207" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Eindeutige Angabe meta.profile" version="0">
 	<meta lockversion="false"/>
@@ -91,6 +102,15 @@ Der E-Rezept-Fachdienst validiert bei Operationen von Clientsystemen übermittel
     	<testProcedure id="Produkttest"/>
   	</actor>
 	Der E-Rezept-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen, dass maximal ein meta.profile-Eintrag vorhanden ist und bei Abweichung mit dem HTTP-Fehlercode 400 sowie einem entsprechenden OperationOutcome die Verarbeitung ablehnen.
+</requirement>
+
+<!-- A_27697 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-342" title="FHIR-Ressourcen – Eindeutige Angabe meta.profile" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FD">
+        <testProcedure id="Produkttest"/>
+    </actor>
+     Die Produkttypen der Anwendung E-Rezept und die Clientsysteme des E-Rezept-Fachdienstes MÜSSEN bei der Erstellung jeder FHIR-Ressource sicherstellen, dass im Element meta.profile genau ein Eintrag enthalten ist, wenn im Profil das Element meta.profile verpflichtend anzugeben ist; bei Abweichung ist die Ressource als fehlerhaft zu behandeln und darf nicht übermittelt werden.
 </requirement>
 
 ### Prüfung von Referenzen in Bundles
@@ -133,6 +153,7 @@ Der E-Rezept-Fachdienst validiert bei Operationen von Clientsystemen übermittel
 
 ### Validierung von Extensions
 
+<!-- TODO: Check Duplikat -->
 <!-- A_22927-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-212" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Ausschluss unspezifizierter Extensions" version="0">
 	<meta lockversion="false"/>
@@ -140,4 +161,13 @@ Der E-Rezept-Fachdienst validiert bei Operationen von Clientsystemen übermittel
     	<testProcedure id="Produkttest"/>
   	</actor>
 	Der E-Rezept-Fachdienst MUSS bei der Validierung einer FHIR-Ressource sicherstellen, dass keine Extensions vorhanden sind, die nicht an den in den FHIR-Profilen spezifizierten Stellen verwendet werden. Sollte eine solche Extension gefunden werden, gilt der Datensatz als ungültig. In diesem Fall ist eine Fehlermeldung mit dem HTTP-Status 400 auszugeben.
+</requirement>
+
+<!-- A_27672 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-343" title="FHIR Ressourcen - Ausschluss unspezifizierter Extensions" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FD">
+        <testProcedure id="Produkttest"/>
+    </actor>
+     Die Produkttypen der Anwendung E-Rezept und Clientsysteme des E-Rezept-Fachdienstes MÜSSEN sicherstellen, dass bei der Erstellung von Datensätzen Extensions nur an den Stellen verwendet werden, an denen sie im FHIR-Profil ausdrücklich definiert sind.
 </requirement>
