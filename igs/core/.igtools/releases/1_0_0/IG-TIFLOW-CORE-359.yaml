@@ -1,11 +1,11 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 83e9809f38e3db9c54df382c2d9de03cf8eedbf07e9c03fe18d490a0885267a8
+content_hash: 93d3bdd8ad1aa4a909710a76e53aba7a1f57b9e349f36dd7603df2d5f90126c9
 created: '2026-03-10T08:19:54.194967'
-date: '2026-03-10T08:19:54.194969'
+date: '2026-03-10T09:10:26.428633'
 key: IG-TIFLOW-CORE-359
-modified: '2026-03-10T08:19:54.194968'
+modified: '2026-03-10T09:10:26.428633'
 release_status: NEW
 source: input/pagecontent/query-api-communication-req-fd.md
 status: ACTIVE
@@ -14,34 +14,56 @@ test_procedures:
   - Herstellererklärung
 text: "Der E-Rezept-Fachdienst MUSS für den Anwendungsfall \"Nachricht durch Abgebenden\
   \ übermitteln\" Nachrichten mit der folgenden Datenstruktur in der contentString-Eigenschaft\
-  \ des GEM_ERP_PR_Communication_Reply unterstützen.\n     \n     <table>\n  <thead>\n\
-  \    <tr>\n      <th>Attribut</th>\n      <th>verpflichtend</th>\n      <th>Beschreibung</th>\n\
-  \      <th>zulässige Werte</th>\n      <th>Beispiel</th>\n    </tr>\n  </thead>\n\
-  \  <tbody>\n    <tr>\n      <td>version</td>\n      <td>ja</td>\n      <td>Gibt\
-  \ die Version des JSON an. Aktuell immer 1. Kann im weiteren Lebenszyklus verändert\
-  \ werden.</td>\n      <td>nummerisch, bis zu 6 Stellen</td>\n      <td>1</td>\n\
-  \    </tr>\n    <tr>\n      <td>supplyOptionsType</td>\n      <td>ja</td>\n    \
-  \  <td>Wird gemäß des Servicerequests gesetzt, den der Nutzer wählt. Die für den\
-  \ Nutzer zur Auswahl stehenden Services gibt die Apotheke vor, indem sie den servicespezifischen\
-  \ Zuweisungs-Endpunkt angibt, oder nicht.</td>\n      <td>onPremise, shipment, delivery</td>\n\
-  \      <td>onPremise</td>\n    </tr>\n    <tr>\n      <td>info_text</td>\n     \
-  \ <td>nein</td>\n      <td>Zusätzlicher Freitext des Versicherten an die Apotheke</td>\n\
-  \      <td>500 Stellen, UTF-8</td>\n      <td>Wir möchten Sie informieren, dass\
-  \ Ihre bestellten Medikamente zur Abholung bereitstehen. Den Abholcode finden Sie\
-  \ anbei.</td>\n    </tr>\n    <tr>\n      <td>url</td>\n      <td>nein</td>\n  \
-  \    <td>Einbettung einer externen URL ausschließlich für das Einlösen von E-Rezepten\
-  \ in einer externen Bestellplattform</td>\n      <td>500 Stellen, URL gemäß RFC3986</td>\n\
-  \      <td>https://www.meine-apotheke.de/pickup/59b52340-7a6a-430d-99ea-45a8e5cd03f6</td>\n\
-  \    </tr>\n    <tr>\n      <td>pickUpCodeHR</td>\n      <td>nein</td>\n      <td>Menschenlesbarer\
-  \ Abholcode. Nur bei supplyOptionsType \"onPremise\". Wenn gesetzt, wird dem Nutzer\
-  \ der Inhalt des \"pickUpCodeHR\" optisch hervorgehoben angezeigt.</td>\n      <td>8\
-  \ Stellen, UTF-8</td>\n      <td>12315615</td>\n    </tr>\n    <tr>\n      <td>pickUpCodeDMC</td>\n\
-  \      <td>nein</td>\n      <td>Maschinenlesbarer Abholcode (Data-Matrix-Code).\
-  \ Nur bei supplyOptionsType \"onPremise\". Wenn gesetzt, kann sich der Nutzer den\
-  \ Inhalt als Data-Matrix-Code anzeigen lassen. Der Inhalt wird gemäß ISO/IEC 16022:2006\
-  \ von der App in einen DMC gewandelt. Fehlt die Interpretation, so wird der Code\
-  \ als Freitext angezeigt.</td>\n      <td>128 Stellen, UTF-8</td>\n      <td>5346a991-c5c6-49c8-b87b-4cdd255bbde4</td>\n\
-  \    </tr>\n  </tbody>\n</table>\n\n<div><figcaption><strong>Tabelle: </strong>Nachricht\
+  \ des GEM_ERP_PR_Communication_Reply unterstützen.\n \n <table>\n <thead>\n <tr>\n\
+  \ <th>Attribut</th>\n <th>verpflichtend</th>\n <th>Beschreibung</th>\n <th>zulässige\
+  \ Werte</th>\n <th>Beispiel</th>\n </tr>\n </thead>\n <tbody>\n <tr>\n <td>version</td>\n\
+  \ <td>ja</td>\n <td>Gibt die Version des JSON an. Aktuell immer 3. Kann im weiteren\
+  \ Lebenszyklus verändert werden.</td>\n <td>nummerisch, bis zu 6 Stellen</td>\n\
+  \ <td>3</td>\n </tr>\n <tr>\n <td>communicationType</td>\n <td>ja</td>\n <td>Beschreibt\
+  \ die Art der Nachricht.</td>\n <td>text, link, reservationStatus, pickupCodeHR,\
+  \ pickupCodeDMC, deliveryStatus, paymentInfo</td>\n <td>reservationStatus</td>\n\
+  \ </tr>\n <tr>\n <td>text</td>\n <td>Falls communicationType = text oder link: ja<br>Falls\
+  \ communicationType = pickupCodeHR, pickupCodeDMC, deliveryStatus oder paymentInfo:\
+  \ nein<br>Falls communicationType = reservationStatus: verboten</td>\n <td>Zusätzlicher\
+  \ Freitext der Apotheke an den Versicherten. Falls communicationType gleich \"link\"\
+  \ ist, beschreibt dies das URL-Ziel, sodass der Versicherte vor dem Aufruf über\
+  \ das Ziel des Absprungs informiert wird.</td>\n <td>800 Stellen, keine URL</td>\n\
+  \ <td>Wir möchten Sie informieren, dass Ihre bestellten Medikamente zur Abholung\
+  \ bereitstehen. Den Abholcode finden Sie anbei.</td>\n </tr>\n <tr>\n <td>url</td>\n\
+  \ <td>Falls communicationType = link: ja<br>Ansonsten: verboten</td>\n <td>Einbettung\
+  \ einer externen URL ausschließlich für das Einlösen von E-Rezepten in einer externen\
+  \ Bestellplattform.</td>\n <td>500 Stellen, URL gemäß RFC3986</td>\n <td>https://www.meine-apotheke.de/pickup/59b52340-7a6a-430d-99ea-45a8e5cd03f6</td>\n\
+  \ </tr>\n <tr>\n <td>transactionID</td>\n <td>ja</td>\n <td>Wiederholung aus der\
+  \ empfangenen Nachricht. Dient dazu, Nachrichten einer Transaktion zuordnen zu können.</td>\n\
+  \ <td>36 Stellen, UUID</td>\n <td>8196b610-9b77-47ab-936e-362cd92ef2aa</td>\n </tr>\n\
+  \ <tr>\n <td>readyForCollection</td>\n <td>Falls communicationType = reservationStatus:\
+  \ ja<br>Ansonsten: verboten</td>\n <td>Zeitpunkt der Verfügbarkeit</td>\n <td>immediately,\
+  \ sameDay, nextDay, nextDayAM, nextDayPM, unknown, notAvailable</td>\n <td>immediately</td>\n\
+  \ </tr>\n <tr>\n <td>deliveryStatus</td>\n <td>Falls communicationType = deliveryStatus:\
+  \ ja<br>Ansonsten: verboten</td>\n <td>Information zum Status der Lieferung (Bote,\
+  \ Versand)</td>\n <td>preparedWaiting, inTransport, delivered, incident</td>\n <td>inTransport</td>\n\
+  \ </tr>\n <tr>\n <td>inTransportPosition</td>\n <td>Falls communicationType = deliveryStatus:\
+  \ nein<br>Ansonsten: verboten</td>\n <td>GMS Position des Transporters</td>\n <td>Lat,\
+  \ Long</td>\n <td><pre>{\n \"long\": 13.387595793605172,\n \"lat\": 52.522529939635795\n\
+  }</pre></td>\n </tr>\n <tr>\n <td>inTransportETA</td>\n <td>Falls communicationType\
+  \ = deliveryStatus: nein<br>Ansonsten: verboten</td>\n <td>Erwartete Ankunft Zeitfenster\
+  \ von – bis</td>\n <td>TIMESTAMP-TIMESTAMP</td>\n <td><pre>{\n \"from\": 1735736400,\n\
+  \ \"to\": 1735741800\n}</pre></td>\n </tr>\n <tr>\n <td>totalAmount</td>\n <td>Falls\
+  \ communicationType = paymentInfo: ja<br>Ansonsten: verboten</td>\n <td>Zu zahlender\
+  \ Betrag in Eurocent, rein nummerisch</td>\n <td>Nummerisch</td>\n <td>12550</td>\n\
+  \ </tr>\n <tr>\n <td>paymentMethods</td>\n <td>Falls communicationType = paymentInfo:\
+  \ nein<br>Ansonsten: verboten</td>\n <td>Verfügbare Zahlungsarten</td>\n <td>Array\
+  \ aus Objects: cash, bankaccount, creditcard, paypal (optional)</td>\n <td><pre>\"\
+  paymentMethods\": [\n { \"method\": \"cash\" },\n {\n \"method\": \"bankaccount\"\
+  ,\n \"url\": \"https://my.payment.provider.de/pay/...\"\n },\n {\n \"method\": \"\
+  paypal\",\n \"url\": \"https://paypal.me/&lt;some_account&gt;\"\n }\n]</pre></td>\n\
+  \ </tr>\n <tr>\n <td>pickUpCodeHR</td>\n <td>Falls communicationType = pickupCodeHR\
+  \ und supplyOptionsType = onPremise: ja<br>Ansonsten: verboten</td>\n <td>Menschenlesbarer\
+  \ Abholcode</td>\n <td>1-8 Stellen</td>\n <td>12315615</td>\n </tr>\n <tr>\n <td>pickUpCodeDMC</td>\n\
+  \ <td>Falls communicationType = pickupCodeDMC und supplyOptionsType = onPremise:\
+  \ ja<br>Ansonsten: verboten</td>\n <td>Maschinenlesbarer Abholcode (Data-Matrix-Code\
+  \ gemäß ISO/IEC 16022:2006)</td>\n <td>8-2000 Stellen</td>\n <td>5346a991-c5c6-49c8-b87b-4cdd255bbde4</td>\n\
+  \ </tr>\n </tbody>\n</table>\n<div><figcaption><strong>Tabelle: </strong>Nachricht\
   \ als Apotheke an einen Versicherten schicken</figcaption></div>"
 title: 'E-Rezept-Fachdienst: Nachrichtenaustausch - Nachricht durch Abgebenden übermitteln
   - Datenstruktur Nachricht'
