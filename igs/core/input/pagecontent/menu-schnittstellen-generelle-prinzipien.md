@@ -53,3 +53,54 @@ In diesem Abschnitt werden allgemeingültige Funktionsmerkmale des E-Rezept-Fach
      <li>Device – GET-Operation mit statischen Informationen zur serverseitigen Signatur damit der Client eine Information über die FHIR-Kompatibilität zum Fachdienst erhält.</li>
      </ul>
 </requirement>
+
+### E-Rezept ID
+
+Die E-Rezept-ID wird durch den E-Rezept-Fachdienst beim Anlegen eines Tasks für den Workflow des E-Rezepts erstellt.
+
+<!-- A_19217-01 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-348" title="Aufbau E-Rezept-ID" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FD">
+        <testProcedure id="Produkttest"/>
+    </actor>
+     Der E-Rezept-Fachdienst MUSS E-Rezept-IDs erzeugen und verwalten, welche der Syntax "aaa.bbb.bbb.bbb.bbb.cc" und der folgenden Semantik genügen 
+     
+     <table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Bedeutung</th>
+      <th>Datentyp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>aaa</td>
+      <td>E-Rezept-Typ</td>
+      <td>alphanummerisch, mit der Belegung gemäß "flowType" in <a href="https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType">https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType</a></td>
+    </tr>
+    <tr>
+      <td>bbb.bbb.bbb.bbb</td>
+      <td>fortlaufende Rezeptnummer</td>
+      <td>nummerisch, 12-stellig</td>
+    </tr>
+    <tr>
+      <td>cc</td>
+      <td>Prüfnummer Verfahren gemäß [ISO 7064]</td>
+      <td>nummerisch</td>
+    </tr>
+  </tbody>
+</table>
+     
+     damit Tippfehler in der manuellen Erfassung erkannt werden können und die E-Rezept-ID über 11 Jahre eine eineindeutige Zuordnung zwischen allen Datenobjekten im E-Rezept-Workflow erlaubt.
+</requirement>
+
+<!-- A_19218 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-349" title="Prüfung E-Rezept-ID" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FD">
+        <testProcedure id="Produkttest"/>
+    </actor>
+     Alle Produkttypen, die eine E-Rezept-ID aus externen Systemen einlesen oder von Benutzern entgegen nehmen, MÜSSEN die E-Rezept-ID gegen ihre Prüfziffer nach dem Modulo-97-Verfahren gemäß [ISO 7064] prüfen und bei Ungültigkeit die Weiterverarbeitung verhindern, damit Benutzerfehleingaben vor der Verarbeitung erkannt werden.
+</requirement>

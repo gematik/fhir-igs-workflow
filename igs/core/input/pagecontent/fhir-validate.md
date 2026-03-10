@@ -151,6 +151,87 @@ Der E-Rezept-Fachdienst validiert bei Operationen von Clientsystemen übermittel
 	Der E-Rezept-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen, ob angegebene Referenzen nach [FHIR Spezifikation Auflösen von Referenzen in Bundles] ermittelt werden können und bei Auffälligkeiten mit dem HTTP-Fehlercode 400 abbrechen und die Fehlermeldung "Referenz einer Ressource konnte nicht aufgelöst werden." in Form eines OperationOutcome ausliefern.
 </requirement>
 
+<!-- A_26229-01 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-344" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Konsistenz Ressource IDs" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FD">
+        <testProcedure id="Produkttest"/>
+    </actor>
+     Der E-Rezept-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob die ID der Ressource (Bundle.entry.resource.id) und die ID ihrer fullUrl (Bundle.entry.fullurl) übereinstimmen und bei Auffälligkeiten mit dem HTTP-Fehlercode 400 abbrechen und die Fehlermeldung "Die ID einer Ressource und die ID der zugehörigen fullUrl stimmen nicht überein." in Form eines OperationOutcome ausliefern.
+</requirement>
+
+<!-- A_26237-01 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-345" title="FHIR-Ressourcen - Ressource-ID in fullUrl" version="0">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Konformitätsbestätigung"/>
+    </actor>
+    <actor name="CS_E-Rezept_KTR">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="NCPeH_ePeDA">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="eRp_FD">
+        <testProcedure id="Produkttest"/>
+    </actor>
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Konformitätsbestätigung"/>
+    </actor>
+     Die Produkttypen der Anwendung E-Rezept und Clientsysteme des E-Rezept-Fachdienstes MÜSSEN bei der Erstellung einer FHIR-Ressource die ID der fullURL (Bundle.entry.fullurl) der Ressource auf die ID der Ressource (Bundle.entry.resource.id) setzen, sofern das http(s)-Schema verwendet wird.
+</requirement>
+
+<!-- A_26238-01 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-346" title="FHIR-Ressourcen - Format fullUrl" version="0">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Konformitätsbestätigung"/>
+    </actor>
+    <actor name="CS_E-Rezept_KTR">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="NCPeH_ePeDA">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="eRp_FD">
+        <testProcedure id="Produkttest"/>
+    </actor>
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Konformitätsbestätigung"/>
+    </actor>
+     Die Produkttypen der Anwendung E-Rezept und Clientsysteme des E-Rezept-Fachdienstes MÜSSEN bei der Erstellung einer FHIR-Ressource sicherstellen, dass die fullURL (Bundle.entry.fullUrl) entweder im [Format http-Schema] oder im [Format urn:uuid-Schema] vorliegt.
+</requirement>
+
+<!-- A_22216-01 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-347" title="FHIR-Ressourcen Versionsangabe" version="0">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Konformitätsbestätigung"/>
+    </actor>
+    <actor name="CS_E-Rezept_KTR">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="NCPeH_ePeDA">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="eRp_FD">
+        <testProcedure id="Produkttest"/>
+    </actor>
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Konformitätsbestätigung"/>
+    </actor>
+     Die Produkttypen der Anwendung E-Rezept und Clientsystem des E-Rezept-Fachdienstes MÜSSEN alle generierten FHIR-Ressourcen mit der Versionsnummer gemäß [datatypes.html#canonical](https://www.hl7.org/fhir/datatypes.html#canonical) im Feld Ressource.meta.profile kennzeichnen, zu dessen aktuell gültiger Profilversion sie mutmaßlich validieren.
+</requirement>
+
 ### Validierung von Extensions
 
 <!-- TODO: Check Duplikat -->
