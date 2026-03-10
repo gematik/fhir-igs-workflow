@@ -1,0 +1,32 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 559f5c87fe54315e0c84c1dbf1be5a9f956dc02e12dbababc9e2d1154e62f277
+created: '2026-03-10T06:48:04.899081'
+date: '2026-03-10T06:48:04.899084'
+key: IG-TIFLOW-CORE-340
+modified: '2026-03-10T06:48:04.899083'
+release_status: NEW
+source: input/pagecontent/op-abort-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels\
+  \ der &#60;id&#62; adressierten /Task/&#60;id&#62;/$abort alle personenbezogenen\
+  \ medizinischen Daten, außer der KVNR in Task.for, aus dem referenzierten Task entfernen.\
+  \ Dies gilt insbesondere für:\n  <ul>\n    <li>Task.input --> löschen (inkl. aller\
+  \ referenzierten Elemente)</li>\n    <li>Task.output --> löschen (inkl. aller referenzierten\
+  \ Elemente)</li>\n    <li>Task.identifier (AccessCode) --> löschen</li>\n    <li>Task.identifier\
+  \ (Secret, falls vorhanden) --> löschen</li>\n    <li>Task.extension:lastMedicationDispense\
+  \ (Zeitstempel, falls vorhanden) --> löschen</li>\n    <li>Task.owner --> löschen</li>\n\
+  \    <li>Medication --> die in MedicationDispense.medication referenzierte Medication\
+  \ löschen</li>\n    <li>MedicationDispense --> die in MedicationDispense.supportingInformation\
+  \ auf Task.id verweist löschen</li>\n    <li>Communication --> die in Communication.basedOn\
+  \ auf Task.id verweist</li>\n  </ul>\n  damit dem Betroffenenrecht auf Löschen durch\
+  \ den Versicherten entsprochen wird und beim Löschen durch den Verordnenden dem\
+  \ Versicherten eine aussagekräftige Fehlermeldung durch einen Apotheker vermittelt\
+  \ werden kann."
+title: E-Rezept-Fachdienst - E-Rezept löschen - Medizinische und personenbezogene
+  Daten löschen
+version: 0

@@ -4,7 +4,7 @@
 Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle Zugriffe auf die personenbezogenen und medizinischen Daten eines Versicherten für den Versicherten einsehbar sind. Diese Zugriffsprotokolle sind unabhängig vom Systemprotokoll und stehen ausschließlich dem Versicherten zur Wahrnehmung seiner Betroffenenrechte zur Einsicht zur Verfügung.
 
 <!-- A_19296-04 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Inhalt Protokolleintrag" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-334" title="E-Rezept-Fachdienst - Inhalt Protokolleintrag" version="0">
 	<meta lockversion="false"/>
 	<actor name="eRp_FD">
     	<testProcedure id="Produkttest"/>
@@ -37,7 +37,7 @@ Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen all
 </requirement>
 
 <!-- A_19284-13 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Versichertenprotokoll zu Operationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-335" title="E-Rezept-Fachdienst - Versichertenprotokoll zu Operationen" version="0">
 	<meta lockversion="false"/>
 	<actor name="eRp_FD">
     	<testProcedure id="Produkttest"/>
@@ -228,7 +228,7 @@ Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen all
 <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004 Versichertenprotokoll</figcaption></div>
 
 <!-- A_19284-13 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Versichertenprotokoll zu automatischen Löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-336" title="E-Rezept-Fachdienst - Versichertenprotokoll zu automatischen Löschen" version="0">
 	<meta lockversion="false"/>
 	<actor name="eRp_FD">
     	<testProcedure id="Produkttest"/>
@@ -311,7 +311,7 @@ Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen all
 Der E-Rezept-Fachdienst protokolliert das erfolgreiche Übermitteln von Daten für jedes E-Rezept an den Medication Service im Zugriffsprotokoll des Versicherten. Für Übermittlungsversuche, welche nicht erfolgreich durchgeführt werden konnten und für die die Übermittlung erneut versucht wird, wird kein Eintrag im Zugriffsprotokoll angelegt.
 
 <!-- A_25962 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - ePA - Medication Service - Versichertenprotokoll" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-337" title="E-Rezept-Fachdienst - ePA - Medication Service - Versichertenprotokoll" version="0">
 	<meta lockversion="false"/>
 	<actor name="eRp_FD">
     <testProcedure id="Produkttest"/>

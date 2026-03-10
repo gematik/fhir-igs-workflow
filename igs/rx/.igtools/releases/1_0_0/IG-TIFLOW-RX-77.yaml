@@ -1,11 +1,11 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 8353bebdcf07b3d5324705afb89bcdb95d234213ef56cd91d79d9f9041acd5c8
+content_hash: 142f610f9602a18d7a54bc2bb6c75cb43c4d12c186f255e4312ab47168e6725b
 created: '2026-03-09T16:36:14.479750'
-date: '2026-03-09T16:36:14.479752'
+date: '2026-03-10T06:48:07.252661'
 key: IG-TIFLOW-RX-77
-modified: '2026-03-09T16:36:14.479751'
+modified: '2026-03-10T06:48:07.252661'
 release_status: NEW
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
@@ -15,7 +15,7 @@ test_procedures:
 text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
   über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
   wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
-  = true) gekennzeichnet ist und der dazugehörige value (MedicationRequest.extension:Mehrfachverordnung.extension:ID.value[x]:valueIdentifier.value)
-  nicht dem Schema aus [KBV_ITA_VGEX_Technische_Anlage_ERP] entspricht.
-title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Schema ID
+  = true) gekennzeichnet und der Numerator größer als der Denominator ist.
+title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator kleiner
+  / gleich Denominator
 version: 0

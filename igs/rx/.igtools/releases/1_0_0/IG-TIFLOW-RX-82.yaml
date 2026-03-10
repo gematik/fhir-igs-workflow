@@ -1,18 +1,22 @@
 actor:
-- PS_E-Rezept_abgebend
+- eRp_FD
 conformance: SHALL
-content_hash: 19ffa40e7c9628e32dc1f20dd15e6728df83cd00f672e85e474434c8d41493ec
+content_hash: 9b81efc06bc564423c53fb0733edde1b50e2beac9896bf8895cd57945689662f
 created: '2026-03-09T16:36:14.481021'
-date: '2026-03-09T16:36:14.481024'
+date: '2026-03-10T06:48:07.253586'
 key: IG-TIFLOW-RX-82
-modified: '2026-03-09T16:36:14.481023'
+modified: '2026-03-10T06:48:07.253586'
 release_status: NEW
-source: input/pagecontent/op-dispense-req-avs.md
+source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_abgebend:
-  - Herstellererklärung
-text: Das PS der abgebenden LEI MUSS im Anwendungsfall "Dispensierinformationen bereitstellen"
-  es dem Nutzer ermöglichen, ein E-Rezept als abgegeben auszuwählen.
-title: 'PS abgebende LEI: Dispensierinformationen bereitstellen - E-Rezept auswählen'
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
+  über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
+  wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
+  = true) gekennzeichnet ist und das Startdatum (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start)
+  vor dem Ausstellungsdatum (MedicationRequest.authoredOn) liegt.
+title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Startdatum nicht
+  vor Ausstellungsdatum
 version: 0

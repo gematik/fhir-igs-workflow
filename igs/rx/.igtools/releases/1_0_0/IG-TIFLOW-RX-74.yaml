@@ -1,11 +1,11 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 5b0347528abecd629bacaa99c6c957fe4035c9829dd0f836784144da9a9c8598
+content_hash: a4aa74d467ac4cb59d3052871cb1bb0c84cf050277f7451c4509a4c5eeaaec38
 created: '2026-03-09T16:36:14.479348'
-date: '2026-03-09T16:36:14.479350'
+date: '2026-03-10T06:48:07.252127'
 key: IG-TIFLOW-RX-74
-modified: '2026-03-09T16:36:14.479349'
+modified: '2026-03-10T06:48:07.252127'
 release_status: NEW
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
@@ -15,8 +15,8 @@ test_procedures:
 text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
   über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
   wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
-  = true) gekennzeichnet ist und der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start)
-  nicht angegeben ist, weil die Information des Beginns der Einlösefrist notwendig
-  ist, um den Gültigkeitszeitraum zu ermitteln.
-title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Beginn Einlösefrist-Pflicht
+  = true) gekennzeichnet und der Numerator oder Denominator größer als 4 ist, weil
+  eine Mehrfachverordnungen aus maximal 4 Teilverordnungen bestehen darf.
+title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator-Denominator
+  kleiner 5
 version: 0

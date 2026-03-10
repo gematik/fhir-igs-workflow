@@ -90,7 +90,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
  <=
 
 <!-- A_27768 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Bestimmung der Einlösbarkeit im EU-Ausland" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-200" title="E-Rezept-Fachdienst - Task aktivieren - Bestimmung der Einlösbarkeit im EU-Ausland" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -474,7 +474,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_22634 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-81" title="E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Beginn Einlösefrist-Pflicht" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-201" title="E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Beginn Einlösefrist-Pflicht" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>

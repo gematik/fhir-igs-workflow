@@ -1,0 +1,20 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: f1fe15514bc91e0de2310bdeed53b0e2cf69e103ea24dbd10f475623aa04420f
+created: '2026-03-10T06:48:07.246449'
+date: '2026-03-10T06:48:07.246452'
+key: IG-TIFLOW-RX-200
+modified: '2026-03-10T06:48:07.246451'
+release_status: NEW
+source: input/pagecontent/op-activate-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: "Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks den Wert für Task.extension:eu-isRedeemableByProperties\
+  \ auf \"true\" setzen, wenn: \n    <ul>\n      <li>Task.extension:flowType = 160\
+  \ oder 200 und</li>\n      <li>MedicationRequests.medication vom Typ KBV_PR_ERP_Medication_PZN.</li>\n\
+  \    </ul>\n    Andernfalls ist der Wert der Extension auf \"false\" zu setzen."
+title: E-Rezept-Fachdienst - Task aktivieren - Bestimmung der Einlösbarkeit im EU-Ausland
+version: 0

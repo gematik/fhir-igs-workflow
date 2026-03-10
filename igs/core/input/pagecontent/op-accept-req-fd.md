@@ -12,7 +12,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_19167-04 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task akzeptieren - Prüfung AccessCode" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-343" title="E-Rezept-Fachdienst - Task akzeptieren - Prüfung AccessCode" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>

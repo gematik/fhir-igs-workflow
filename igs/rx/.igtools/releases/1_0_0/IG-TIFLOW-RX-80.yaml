@@ -1,28 +1,22 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 62410b3871a00d40f4bde4bee3136b20ef69b668d5e2d6b3461056774a6e913e
+content_hash: d6ee718ab93870321047142a42b4eb1df61c500dca0765ce47b061985be07322
 created: '2026-03-09T16:36:14.480599'
-date: '2026-03-09T16:36:14.480601'
+date: '2026-03-10T06:48:07.253211'
 key: IG-TIFLOW-RX-80
-modified: '2026-03-09T16:36:14.480600'
+modified: '2026-03-10T06:48:07.253211'
 release_status: NEW
-source: input/pagecontent/op-accept-req-fd.md
+source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: 'Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
-  über /Task/&lt;id&gt;/$accept die Operation mit dem Fehlercode 403 abbrechen, wenn
-  die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
-  = true) gekennzeichnet ist und und der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start)
-  zu einem späteren Zeitpunkt als das aktuelle Datum liegt, da Teilverordnungen von
-  Mehrfachverordnungen erst ab Beginn der Einlösefrist abgerufen werden dürfen. Im
-  Falle dieses Fehlers ist im OperationOutcome des Response der Beginn der Einlösefrist
-  wie folgt anzugeben: "Teilverordnung zur Mehrfachverordnung &lt;MVO Referenz&gt;
-  ist ab &lt;Datum&gt; einlösbar.", wobei &lt;MVO Referenz&gt; der Wert MedicationRequest.extension:Mehrfachverordnung.extension:ID.value[x]:valueIdentifier.value
-  sowie &lt;Datum&gt; der Wert MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start
-  im Format "dd.mm.yyyy" ist.'
-title: E-Rezept-Fachdienst - Task akzeptieren - Mehrfachverordnung - Beginn Einlösefrist
-  prüfen
+text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
+  über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
+  wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
+  = true) und als Ersatzverordnung ( code="10" oder "11" oder "17" in Extension https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis
+  in Bundle.Composition.extention:rechtsgrundlage) gekennzeichnet ist, weil für Ersatzverordnungen
+  keine Mehrfachverordnungen zulässig sind.
+title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - keine Ersatzverordnung
 version: 0

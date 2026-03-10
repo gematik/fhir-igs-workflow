@@ -1,18 +1,23 @@
 actor:
-- PS_E-Rezept_verordnend
+- eRp_FD
 conformance: SHALL
-content_hash: 96d0fd7506d89bec717521b8aede66c1584644537cbf72af3761d14ab5c2b92f
+content_hash: 9dd2e07a044673a60147597e5ee84c631fb61629434aae016e998275683bf982
 created: '2026-03-09T16:37:37.607884'
-date: '2026-03-09T16:37:37.607888'
+date: '2026-03-10T06:48:04.877965'
 key: IG-TIFLOW-CORE-249
-modified: '2026-03-09T16:37:37.607886'
+modified: '2026-03-10T06:48:04.877965'
 release_status: NEW
-source: input/pagecontent/op-abort-req-pvs.md
+source: input/pagecontent/audit-service.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_verordnend:
-  - Konformitätsbestätigung
-text: Das PS der verordnenden LEI MUSS es dem Nutzer ermöglichen, ein E-Rezept zum
-  Löschen auf dem Fachdienst auszuwählen.
-title: 'PS verordnende LEI: E-Rezepte löschen - E-Rezept zum Löschen auswählen'
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim automatischen Löschen nach Fehlerbehandlung
+  gemäß "TAB_eRPFD_004b Versichertenprotokoll nach Löschen wegen Fehlerbehandlung"
+  protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag
+  AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten
+  in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte
+  die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff
+  ggf. intervenieren.
+title: E-Rezept-Fachdienst - Versichertenprotokoll zu Löschen nach Fehlerbehandlung
 version: 0
