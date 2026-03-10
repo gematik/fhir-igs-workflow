@@ -71,7 +71,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 
 Dieser Ausschluss erfolgt temporär. In einer späteren Version können Unfallkassen das Verordnen von DiGAs explizit unterstützen. Die konkreten Festlegungen dazu werden in einem Folgerelease getroffen.
 
-<!-- A_27845 -->
+<!-- A_27845, A_19999 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-16" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prozessparameter" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">

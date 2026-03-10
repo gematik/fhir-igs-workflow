@@ -173,3 +173,21 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Commun
 </table>
 <div><figcaption><strong>Tabelle: </strong>E-Rezept einer Apotheke zuweisen</figcaption></div>
 </requirement>
+
+Ein JSON-Schema zur Validierung ist unter [Comm_DispReq_JSON_Schema] zu finden.
+<!-- ToDo: Link auflösen -->
+
+<table>
+  <tr>
+    <th>Nachrichtentyp (communicationType)</th>
+    <th>Beschreibung</th>
+  </tr>
+  <tr>
+    <td>order</td>
+    <td>Zuweisen eines E-Rezepts</td>
+  </tr>
+  <tr>
+    <td>text</td>
+    <td>Antwort auf eine Nachricht der Apotheke</td>
+  </tr>
+</table>

@@ -114,7 +114,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 
 ### Prozessparamter
 
-<!-- A_27844 -->
+<!-- A_27844, A_19999 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-65" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 160 - Prozessparameter" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
@@ -171,7 +171,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
   <div><figcaption><strong>Tabelle: </strong>TAB_eRpDM_004 Prozessparameter Flowtype 160</figcaption></div>
 </requirement>
 
-<!-- A_27846 -->
+<!-- A_27846, A_19999 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-66" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 166 - Prozessparameter" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
@@ -212,7 +212,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
   <div><figcaption><strong>Tabelle: </strong>TAB_eRpDM_006 Prozessparameter Flowtype 166</figcaption></div>
 </requirement>
 
-<!-- A_27847 -->
+<!-- A_27847, A_19999 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-67" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 169 - Prozessparameter" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
@@ -269,7 +269,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
   <div><figcaption><strong>Tabelle: </strong>TAB_eRpDM_007 Prozessparameter Flowtype 169</figcaption></div>
 </requirement>
 
-<!-- A_27848 -->
+<!-- A_27848, A_19999 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-68" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 200 - Prozessparameter" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
@@ -326,7 +326,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
   <div><figcaption><strong>Tabelle: </strong>TAB_eRpDM_008 Prozessparameter Flowtype 200</figcaption></div>
 </requirement>
 
-<!-- A_27849 -->
+<!-- A_27849, A_19999 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-69" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 209 - Prozessparameter" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">

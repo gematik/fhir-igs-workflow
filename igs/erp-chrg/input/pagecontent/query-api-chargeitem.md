@@ -6,14 +6,15 @@ Die Profilierung der Ressource ChargeItem ist hier dokumentiert: https://simplif
 ### Nachricht
 Die Nachricht zur Interaktion mit Einwilligungen als FHIR-Ressource ChargeItem wird über die folgenden HTTP-Methoden ermöglicht:
 
-|HTTP-Methode|Ergebnis der Anfrage|
-|---|---|
-|GET|Abrechnungsinformationen als Liste abrufen|
-|GET /<id>|Spezifische Abrechnungsinformationen abrufen|
-|POST|Abrechnungsinformation bereitstellen|
-|PATCH /<id>|Abrechnungsinformation markieren|
-|PUT /<id>|Abrechnungsinformation aktualisieren|
-|DELETE /<id>|Abrechnungsinformation löschen|
+|Akteur|HTTP-Methode|Ergebnis der Anfrage|
+|---|---|---|
+|Versicherter|GET|Abrechnungsinformationen als Liste abrufen|
+|Versicherter|GET /<id>|Spezifische Abrechnungsinformationen abrufen|
+|Apotheke|GET /<id>?ac=|Spezifische Abrechnungsinformationen abrufen|
+|Apotheke|POST|Abrechnungsinformation bereitstellen|
+|Versicherter|PATCH /<id>|Abrechnungsinformation markieren|
+|Apotheke|PUT /<id>|Abrechnungsinformation aktualisieren|
+|Versicherter|DELETE /<id>|Abrechnungsinformation löschen|
 
 ### Anforderungen an Schnittstelle
 

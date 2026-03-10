@@ -258,14 +258,6 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication mit GEM_ERP_PR_Communication_DispReq-Ressource für den in Communication.basedOn referenzierten Task prüfen, falls die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet ist, ob der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start) zum aktuellen oder einem früheren Zeitpunkt als das aktuelle Datum liegt und anderenfalls mit dem Http-Fehler 400 und dem OperationOutcome "Prescription is not fillable yet." abbrechen, damit ausschließlich E-Rezepte zugewiesen werden, deren Einlösefrist erreicht ist.
 </requirement>
 
-<!-- A_22734-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-274" title="E-Rezept-Fachdienst - Nachricht einstellen - Prüfung Existenz ChargeItem" version="0">
-    <meta lockversion="false"/>
-    <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
-    </actor>
-    Der Fachdienst E-Rezept MUSS beim Einstellen einer Nachricht des Profils "https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReq" oder "https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReply" über die http-Operation POST auf den Endpunkt /Communication mit dem http-Status-Code 400 abbrechen, wenn das Pflichtfeld Communication.basedOn einen ChargeItem referenziert, der nicht existiert, um Spam und nicht-rezeptbezogene Kommunikation zu verhindern.
-</requirement>
 
 <!-- A_22367-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-275" title="E-Rezept-Fachdienst - Nachricht einstellen - Notification Apotheke" version="0">
@@ -273,7 +265,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht des Profils "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq", oder "https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReq" zur Versicherter-zu-Apotheken-Kommunikation über die http-Operation POST auf den Endpunkt /Communication prüfen, ob für die Telematik-ID des Empfängers Subscriptions registriert sind und für Registrierungen über den Subscription Service eine Notification (ping : subscription-id) senden.
+    Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht des Profils "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq" oder "https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReq" zur Versicherter-zu-Apotheken-Kommunikation über die http-Operation POST auf den Endpunkt /Communication prüfen, ob für die Telematik-ID des Empfängers Subscriptions registriert sind und für Registrierungen über den Subscription Service eine Notification (ping : subscription-id) senden.
 </requirement>
 
 <!-- A_28132 -->

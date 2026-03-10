@@ -180,6 +180,41 @@ Die für die Nachricht zu verwendende Communication-Ressource wird modul- und an
      
 </requirement>
 
+<table>
+  <tr>
+    <th>Nachrichtentyp (communicationType)</th>
+    <th>Beschreibung</th>
+  </tr>
+  <tr>
+    <td>text</td>
+    <td>Übermittlung einer Freitext-Nachricht</td>
+  </tr>
+  <tr>
+    <td>link</td>
+    <td>Übermittlung einer URL zum Vorgang</td>
+  </tr>
+  <tr>
+    <td>reservationStatus</td>
+    <td>Übermittlung des Reservierungsstatus</td>
+  </tr>
+  <tr>
+    <td>pickupCodeHR</td>
+    <td>Übermittlung eines menschenlesbares Abholcodes</td>
+  </tr>
+  <tr>
+    <td>pickupCodeDMC</td>
+    <td>Übermittlung eines maschinenlesbaren Abholcodes</td>
+  </tr>
+  <tr>
+    <td>deliveryStatus</td>
+    <td>Übermittlung des Lieferstatus</td>
+  </tr>
+  <tr>
+    <td>paymentInfo</td>
+    <td>Übermittlung eines Hinweises zum zu zahlenden Betrags</td>
+  </tr>
+</table>
+
 ### Nachricht löschen
 
 Mit diesem Anwendungsfall kann die abgebende LEI von ihr versendete Nachrichten an einen Versicherten auf dem Fachdienst löschen.

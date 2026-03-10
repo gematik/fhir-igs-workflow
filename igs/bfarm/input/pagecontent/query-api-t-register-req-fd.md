@@ -127,13 +127,13 @@ Anschließend erstellt der E-Rezept-Fachdienst den digitalen Durchschlag für de
 
 Für den Austausch der Daten zwischen E-Rezept-Fachdienst und dem BfArM Webdienst existiert ein FHIR Implementation Guide (IG), der Beschreibungen, OpenAPI Definition, Profile und Mappings enthält.
 
-<!-- A_27826 -->
+<!-- A_27826-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-BFARM-10" title="E-Rezept-Fachdienst - BfArM - Erzeugen digitaler Durchschlag E-T-Rezept" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-     Der E-Rezept-Fachdienst MUSS beim Bereitstellen eines digitalen Durchschlag für ein T-Rezept an den BfArM Webdienst die folgenden Daten aus dem Vorgang zum E-T-Rezept nach Profil ERP_TPrescription_CarbonCopy erzeugen.
+     Der E-Rezept-Fachdienst MUSS beim Bereitstellen eines digitalen Durchschlag für ein T-Rezept an den BfArM Webdienst einen Datensatz nach dem Profil ERP_TPrescription_CarbonCopy erzeugen.
 </requirement>
 
 <!-- A_27827 -->

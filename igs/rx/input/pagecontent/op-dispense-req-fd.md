@@ -87,6 +87,15 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
         Der E-Rezept-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen mittels POST /Task/&lt;id&gt;/$dispense den Zeitpunkt des Aufrufes in Task.extension:lastMedicationDispense im Format "YYYY-MM-DDThh:mm:ss+zz:zz" (FHIR-instant) anlegen und speichern.
 </requirement>
 
+<!-- A_28410 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-30" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Telematik-ID der abgebenden LEI speichern" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FD">
+        <testProcedure id="Produkttest"/>
+    </actor>
+    Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$dispense für den referenzierten Task die Telematik-ID aus dem ACCESS_TOKEN in Task.owner speichern, damit sichergestellt werden kann, dass nachfolgende Zugriffe auf diesen Datensatz nur durch Berechtigte erfolgen können.
+</requirement>
+
 <!-- A_28130 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-31" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Push Notification Versicherter" version="0">
     <meta lockversion="false"/>

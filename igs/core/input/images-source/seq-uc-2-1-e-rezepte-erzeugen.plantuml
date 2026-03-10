@@ -21,9 +21,9 @@ FD -> FD: AccessCode erzeugen()
 FD --> PS: Task, Rezept-ID, AccessCode
 deactivate FD
 
-PS -> PS: Rezept-ID im Datensatz speichern()
+PS -> PS: Rezept-ID im Verordnungsdatensatz einfügen()
 
-PS -> K: QES signieren(Verordnungsdaten)
+PS -> K: QES signieren(Verordnungsdatensatz)
 activate K
 K --> PS: QES-Signatur
 deactivate K
