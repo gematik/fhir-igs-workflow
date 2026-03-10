@@ -122,6 +122,24 @@ def normalize_title(title: str) -> str:
     return re.sub(r"\s+", " ", title).strip()
 
 
+def display_old_req_id(normalized_old_req: str, occs: List[Occurrence]) -> str:
+    """Choose a human-readable ID for CSV output without forced normalization.
+
+    Matching is still done on normalized IDs, but display should prefer raw syntax.
+    """
+    raw_ids = {occ.raw_old_req for occ in occs}
+    match = OLD_REQ_PARSE_RE.match(normalized_old_req)
+    if not match:
+        return sorted(raw_ids)[0] if raw_ids else normalized_old_req
+
+    base = match.group(1)
+    if base in raw_ids:
+        return base
+    if f"{base}-01" in raw_ids:
+        return f"{base}-01"
+    return sorted(raw_ids)[0] if raw_ids else normalized_old_req
+
+
 def collect_occurrences(files: Iterable[Path]) -> Dict[str, List[Occurrence]]:
     occurrences: Dict[str, List[Occurrence]] = {}
 
@@ -155,7 +173,7 @@ def collect_occurrences(files: Iterable[Path]) -> Dict[str, List[Occurrence]]:
 
 def write_csv(
     output_csv: Path,
-    duplicate_groups: List[Tuple[str, Tuple[str, ...], List[Occurrence]]],
+    duplicate_groups: List[Tuple[str, Tuple[str, ...], str, List[Occurrence]]],
 ) -> None:
     output_csv.parent.mkdir(parents=True, exist_ok=True)
 
@@ -163,7 +181,8 @@ def write_csv(
         writer = csv.writer(handle)
         writer.writerow(["old_req", "actors", "title", "occurrences", "raw_ids", "locations"])
 
-        for old_req, actors, title, occs in duplicate_groups:
+        for normalized_old_req, actors, title, occs in duplicate_groups:
+            old_req = display_old_req_id(normalized_old_req, occs)
             actor_sig = actor_signature(actors)
             raw_ids = ";".join(sorted({occ.raw_old_req for occ in occs}))
             locations = ";".join(f"{occ.file_path}:{occ.line}" for occ in occs)

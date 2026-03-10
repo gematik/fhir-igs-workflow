@@ -9,15 +9,6 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
      Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept löschen" dem Nutzer einen Hinweis geben, wie sich das Löschen auf die Informationen zum E-Rezept in der elektronischen Patientenakte auswirkt.
 </requirement>
 
-<!-- A_21362-02 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-22" title="E-Rezept-FdV: E-Rezept löschen - Flowtype 169 / 209 - nur wenn beliefert" version="0">
-    <meta lockversion="false"/>
-    <actor name="eRp_FdV">
-        <testProcedure id="Produkttest"/>
-    </actor>
-     Das E-Rezept-FdV DARF im Anwendungsfall "E-Rezept löschen" dem Nutzer das Löschen von E-Rezepten mit dem Flowtype 169 oder 209 NICHT ermöglichen, wenn der Task einen Status ungleich "completed" hat.
-</requirement>
-
 <!-- A_19219-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-23" title="E-Rezept-FdV: E-Rezept löschen - E-Rezept zum Löschen auswählen" version="0">
     <meta lockversion="false"/>
