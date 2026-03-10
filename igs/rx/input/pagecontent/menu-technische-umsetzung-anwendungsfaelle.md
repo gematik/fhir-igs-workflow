@@ -114,7 +114,7 @@ angegeben.
 Jede Teilverordnung einer Mehrfachverordnung wird im E-Rezept-Fachdienst mit einem eigenen Workflow (Task) verwaltet. Dies ermöglicht den Versicherten und den Apotheken eine separate Verarbeitung jedes E-Rezepts einer Mehrfachverordnung.
 
 <!-- UC 2.5 - E-Rezept durch Verordnenden löschen -->
-{% assign use_case = use_cases | where: "title", "UC 2.5 - E-Rezept durch Verordnenden loeschen" | first %}
+{% assign use_case = use_cases | where: "title", "UC 2.5 - E-Rezept durch Verordnenden löschen" | first %}
 
 <a id="{{ use_case.anchor }}"></a>
 ### {{ use_case.title }}
@@ -134,7 +134,7 @@ Jede Teilverordnung einer Mehrfachverordnung wird im E-Rezept-Fachdienst mit ein
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- UC 3.2 - E-Rezept durch Versicherten löschen -->
-{% assign use_case = use_cases | where: "title", "UC 3.2 - E-Rezept durch Versicherten loeschen" | first %}
+{% assign use_case = use_cases | where: "title", "UC 3.2 - E-Rezept durch Versicherten löschen" | first %}
 
 <a id="{{ use_case.anchor }}"></a>
 ### {{ use_case.title }}
@@ -144,7 +144,7 @@ Jede Teilverordnung einer Mehrfachverordnung wird im E-Rezept-Fachdienst mit ein
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- UC 3.3 - Nachricht durch Versicherten übermitteln -->
-{% assign use_case = use_cases | where: "title", "UC 3.3 - Nachricht durch Versicherten uebermitteln" | first %}
+{% assign use_case = use_cases | where: "title", "UC 3.3 - Nachricht durch Versicherten übermitteln" | first %}
 
 <a id="{{ use_case.anchor }}"></a>
 ### {{ use_case.title }}
@@ -164,7 +164,7 @@ Jede Teilverordnung einer Mehrfachverordnung wird im E-Rezept-Fachdienst mit ein
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- UC 3.8 - Nachricht durch Versicherten löschen -->
-{% assign use_case = use_cases | where: "title", "UC 3.8 - Nachricht durch Versicherten loeschen" | first %}
+{% assign use_case = use_cases | where: "title", "UC 3.8 - Nachricht durch Versicherten löschen" | first %}
 
 <a id="{{ use_case.anchor }}"></a>
 ### {{ use_case.title }}
@@ -200,7 +200,7 @@ Wenn ein AVS eine Teilverordnung abruft, deren Einlösezeitraum noch nicht errei
 Für die QES-Prüfung wird die PKCS#7-Datei verwendet. Die Verordnungsdaten des E-Rezepts sind innerhalb der PKCS#7-Datei enthalten und müssen für die Weiterverarbeitung extrahiert werden.
 
 <!-- UC 4.2 - E-Rezept durch Abgebenden zurückgeben -->
-{% assign use_case = use_cases | where: "title", "UC 4.2 - E-Rezept durch Abgebenden zurueckgeben" | first %}
+{% assign use_case = use_cases | where: "title", "UC 4.2 - E-Rezept durch Abgebenden zurückgeben" | first %}
 
 <a id="{{ use_case.anchor }}"></a>
 ### {{ use_case.title }}
@@ -210,7 +210,7 @@ Für die QES-Prüfung wird die PKCS#7-Datei verwendet. Die Verordnungsdaten des 
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- UC 4.3 - E-Rezept durch Abgebenden löschen -->
-{% assign use_case = use_cases | where: "title", "UC 4.3 - E-Rezept durch Abgebenden loeschen" | first %}
+{% assign use_case = use_cases | where: "title", "UC 4.3 - E-Rezept durch Abgebenden löschen" | first %}
 
 <a id="{{ use_case.anchor }}"></a>
 ### {{ use_case.title }}
@@ -250,7 +250,7 @@ Für die QES-Prüfung wird die PKCS#7-Datei verwendet. Die Verordnungsdaten des 
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- UC 4.7 - Nachricht durch Abgebenden übermitteln -->
-{% assign use_case = use_cases | where: "title", "UC 4.7 - Nachricht durch Abgebenden uebermitteln" | first %}
+{% assign use_case = use_cases | where: "title", "UC 4.7 - Nachricht durch Abgebenden übermitteln" | first %}
 
 <a id="{{ use_case.anchor }}"></a>
 ### {{ use_case.title }}
@@ -260,7 +260,7 @@ Für die QES-Prüfung wird die PKCS#7-Datei verwendet. Die Verordnungsdaten des 
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- UC 4.9 - Nachricht durch Abgebenden löschen -->
-{% assign use_case = use_cases | where: "title", "UC 4.9 - Nachricht durch Abgebenden loeschen" | first %}
+{% assign use_case = use_cases | where: "title", "UC 4.9 - Nachricht durch Abgebenden löschen" | first %}
 
 <a id="{{ use_case.anchor }}"></a>
 ### {{ use_case.title }}
