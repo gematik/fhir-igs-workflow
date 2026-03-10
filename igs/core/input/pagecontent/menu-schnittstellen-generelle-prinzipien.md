@@ -107,6 +107,10 @@ Die E-Rezept-ID wird durch den E-Rezept-Fachdienst beim Anlegen eines Tasks für
 
 ### Verarbeitung von Datensätzen
 
+Es gelten folgende Anforderungen und Vorgaben zur Verarbeitung und Interpretation von Zeichen- und Datensätzen im E-Rezept-Fachdienst.
+
+Für die Kommunikation und die Interoperabilität müssen bezüglich Datensätzen einheitliche Vorgaben gelten. Laut FHIR Spezifikation wird für XML und JSON Datensätze das Character Encoding "UTF-8" vorgegeben. Byte Order Marks (BOM) werden nicht angeben.
+
 <!-- A_28428  -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-362" title="E-Rezept-Fachdienst - Verarbeitung von Datensätzen - Deserialisierung von PKCS#7 Enveloping-Daten" version="0">
     <meta lockversion="false"/>
@@ -123,4 +127,46 @@ Die E-Rezept-ID wird durch den E-Rezept-Fachdienst beim Anlegen eines Tasks für
         <testProcedure id="Produkttest"/>
     </actor>
     Der E‑Rezept‑Fachdienst MUSS eingehende Datensätze strikt als UTF‑8 ohne Byte Order Mark (BOM) decodieren und bei fehlgeschlagener Decodierung oder beim Vorhandensein eines BOM die Verarbeitung mit einer HTTP‑Antwort 400 (Bad Request) und geeigneter Fehlermeldung abbrechen.
+</requirement>
+
+<!-- A_28429 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-364" title="Character Encoding für E-Rezept-Fachdienst" version="0">
+    <meta lockversion="false"/>
+            <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Konformitätsbestätigung"/>
+    </actor>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Konformitätsbestätigung"/>
+    </actor>
+    <actor name="CS_E-Rezept_KTR">
+        <testProcedure id="Konformitätsbestätigung"/>
+    </actor>
+    <actor name="NCPeH_ePeDA">
+        <testProcedure id="Produkttest"/>
+    </actor>
+    <actor name="eRp_FdV">
+        <testProcedure id="Produkttest"/>
+    </actor>
+    Clientsysteme des E-Rezept-Fachdienstes MÜSSEN für die Kommunikation mit dem E-Rezept-Fachdienst ausschließlich das Character Encoding UTF-8 verwenden.
+</requirement>
+
+<!-- A_28430 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-365" title="Verbot Angabe von BOM für E-Rezept-Fachdienst" version="0">
+    <meta lockversion="false"/>
+        <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Konformitätsbestätigung"/>
+    </actor>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Konformitätsbestätigung"/>
+    </actor>
+    <actor name="CS_E-Rezept_KTR">
+        <testProcedure id="Konformitätsbestätigung"/>
+    </actor>
+    <actor name="NCPeH_ePeDA">
+        <testProcedure id="Produkttest"/>
+    </actor>
+    <actor name="eRp_FdV">
+        <testProcedure id="Produkttest"/>
+    </actor>
+    Clientsysteme des E-Rezept-Fachdienstes DÜRFEN für die Kommunikation mit dem E-Rezept-Fachdienst in Datensätzen ein Byte Order Mark (BOM) NICHT angeben.
 </requirement>
