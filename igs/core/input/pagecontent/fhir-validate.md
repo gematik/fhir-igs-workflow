@@ -1,6 +1,79 @@
-<!-- FHIR-Ressource validieren -->
-
 Der E-Rezept-Fachdienst validiert bei Operationen von Clientsystemen übermittelte FHIR-Ressourcen. Die folgenden Anforderungen beschreiben Mindestprüfungen.
+
+<!-- A_23384-05 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-335" title="E-Rezept-Fachdienst - Prüfung Gültigkeit FHIR Ressourcen" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FD">
+        <testProcedure id="Produkttest"/>
+    </actor>
+     Der E-Rezept-Fachdienst MUSS bei der Prüfung der zeitlichen Gültigkeit einer FHIR Ressource den Wert aus dem Element gemäß folgender Tabelle zugrunde legen. 
+
+  <table>
+    <thead>
+      <tr>
+        <th>Bezeichnung</th>
+        <th>Package</th>
+        <th>FHIR Profil</th>
+        <th>Element/Zeitpunkt</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>KBV Verordnungsdatensatz</td>
+        <td><code>kbv.ita.erp</code></td>
+        <td><code>KBV_PR_ERP_Prescription</code></td>
+        <td><code>MedicationRequest.authoredOn</code></td>
+      </tr>
+      <tr>
+        <td>KBV Verordnungsdatensatz DiGA</td>
+        <td><code>kbv.itv.evdga</code></td>
+        <td><code>KBV_PR_EVDGA_HealthAppRequest</code></td>
+        <td><code>DeviceRequest.authoredOn</code></td>
+      </tr>
+      <tr>
+        <td>Communication</td>
+        <td><code>de.gematik.erezept-workflow.r4</code></td>
+        <td>
+          <code>Gem_ErxCommunicationDispReq</code>
+          <code>Gem_ErxCommunicationInfoReq</code>
+          <code>Gem_ErxCommunicationReply</code>
+          <code>Gem_ErxCommunicationDispRepresentative</code>
+          <code>GEM_ERP_PR_Communication_DispReq</code>
+          <code>GEM_ERP_PR_Communication_InfoReq</code>
+          <code>GEM_ERP_PR_Communication_Reply</code>
+          <code>GEM_ERP_PR_Communication_Representative</code>
+        </td>
+        <td>Zeitpunkt des Aufrufs der Operation am E-Rezept-Fachdienst</td>
+      </tr>
+      <tr>
+        <td>MedicationDispense</td>
+        <td><code>de.gematik.erezept-workflow.r4</code></td>
+        <td>
+          <code>Gem_erxMedicationDispense</code>
+          <code>GEM_ERP_PR_MedicationDispense</code>
+        </td>
+        <td><code>MedicationDispense.whenHandedOver</code></td>
+      </tr>
+      <tr>
+        <td>PKV Patientenrechnung</td>
+        <td><code>de.gematik.erezept-patientenrechnung.r4</code></td>
+        <td>
+          <code>GEM_ERPCHRG_PR_ChargeItem</code>
+          <code>GEM_ERPCHRG_PR_Consent</code>
+        </td>
+        <td>Zeitpunkt des Aufrufs der Operation am E-Rezept-Fachdienst</td>
+      </tr>
+      <tr>
+        <td>PKV Abgabedatensatz</td>
+        <td><code>de.abda.eRezeptAbgabedatenPKV</code></td>
+        <td><code>DAV_PKV_PR_ERP_Abgabeinformationen</code></td>
+        <td><code>MedicationDispense.whenHandedOver</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+		 <div><figcaption><strong>Tabelle: </strong>title</figcaption></div>
+</requirement>
 
 <!-- A_27658 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-206" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Datumsangabe ohne Zeitzoneninformation" version="0">

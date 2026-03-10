@@ -24,7 +24,7 @@ Der Core-IG fokussiert auf die technische Basisschicht des Fachdienstes:
     Der E-Rezept-Fachdienst MUSS den Implementation Guide "E-Rezept-Workflow Core" umsetzen.
 </requirement>
 
-<!-- A_20745-01, A_19299-02, A_19298-01, A_22483-01 -->
+<!-- A_20745-01, A_19299-02, A_19298-01, A_22483-01, A_19324-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-200" title="E-Rezept-Fachdienst: Umsetzung 'Implementation Guide E-Rezept-Workflow Core'" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">

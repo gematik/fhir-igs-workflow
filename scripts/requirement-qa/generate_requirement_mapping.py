@@ -7,7 +7,7 @@ import re
 from pathlib import Path
 from typing import Dict, List, Set
 
-COMMENT_RE = re.compile(r"<!--\s*(A_\d+(?:-\d+)?)\s*-->")
+OLD_REQ_RE = re.compile(r"A_\d+(?:-\d+)?")
 REQ_KEY_RE = re.compile(r"<requirement\b[^>]*\bkey=\"([^\"]+)\"")
 
 
@@ -32,16 +32,17 @@ def parse_file(path: Path, root: Path, mapping: Dict[str, Dict[str, Set[str]]]) 
     rel_path = path.relative_to(root.parent).as_posix()
     ig_name = path.relative_to(root).parts[0]
 
-    pending_old = None
+    pending_old: List[str] = []
     for line in path.read_text(encoding="utf-8").splitlines():
-        comment_match = COMMENT_RE.search(line)
-        if comment_match:
-            pending_old = comment_match.group(1)
+        comment_ids = OLD_REQ_RE.findall(line)
+        if comment_ids:
+            pending_old = comment_ids
 
         key_match = REQ_KEY_RE.search(line)
         if key_match and pending_old:
-            add_mapping(mapping, pending_old, key_match.group(1), ig_name, rel_path)
-            pending_old = None
+            for old_req in pending_old:
+                add_mapping(mapping, old_req, key_match.group(1), ig_name, rel_path)
+            pending_old = []
 
 
 def build_output(mapping: Dict[str, Dict[str, Set[str]]]) -> Dict[str, List[Dict[str, List[str]]]]:
