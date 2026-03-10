@@ -32,19 +32,18 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
         <testProcedure id="Herstellererklärung"/>
     </actor>
     Das PS der abgebenden LEI MUSS für die Umsetzung der Belieferung von E-Rezepten für Arzneimittel die Anwendungsfälle
-
     <ul>
-    <li>UC 4.1 - E-Rezept durch Abgebenden abrufen</li>
-    <li>UC 4.2 - E-Rezept durch Abgebenden zurückgeben</li>
-    <li>UC 4.3 - E-Rezept durch Abgebenden löschen</li>
-    <li>UC 4.4 - Quittung abrufen</li>
-    <li>UC 4.5 - Abgabedatensatz durch Abgebenden signieren</li>
-    <li>UC 4.8 - Quittung erneut abrufen</li>
-    <li>UC 4.6 - Nachrichten durch Abgebenden empfangen</li>
-    <li>UC 4.7 - Nachricht durch Abgebenden übermitteln</li>
-    <li>UC 4.9 - Nachricht durch Abgebenden löschen</li>
+        <li>UC 4.1 - E-Rezept durch Abgebenden abrufen</li>
+        <li>UC 4.2 - E-Rezept durch Abgebenden zurückgeben</li>
+        <li>UC 4.3 - E-Rezept durch Abgebenden löschen</li>
+        <li>UC 4.4 - Quittung abrufen</li>
+        <li>UC 4.5 - Abgabedatensatz durch Abgebenden signieren</li>
+        <li>UC 4.17 - Recovery Secret</li>
+        <li>UC 4.8 - Quittung erneut abrufen</li>
+        <li>UC 4.6 - Nachrichten durch Abgebenden empfangen</li>
+        <li>UC 4.7 - Nachricht durch Abgebenden übermitteln</li>
+        <li>UC 4.9 - Nachricht durch Abgebenden löschen</li>
     </ul>
-
     umsetzen.
 </requirement>
 
@@ -54,11 +53,9 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
         <testProcedure id="Herstellererklärung"/>
     </actor>
     Das PS der abgebenden LEI SOLL für die Umsetzung der Belieferung von E-Rezepten für Arzneimittel den Anwendungsfall
-
     <ul>
     <li>UC 4.16 - Dispensierinformationen bereitstellen</li>
     </ul>
-
     umsetzen.
 </requirement>
 
@@ -70,7 +67,6 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
         <testProcedure id="Herstellererklärung"/>
     </actor>
     Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von E-Rezepten für Arzneimittel die Anwendungsfälle
-
     <ul>
     <li>UC 3.1 – E-Rezepte durch Versicherten abrufen</li>
     <li>UC 3.6 – E-Rezept durch Vertreter abrufen</li>
@@ -79,7 +75,6 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
     <li>UC 3.4 – Nachricht durch Versicherten empfangen</li>
     <li>UC 3.8 – Nachricht durch Versicherten löschen</li>
     </ul>
-
     umsetzen.
 </requirement>
 
@@ -107,14 +102,13 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 #### Technische Aspekte für die Mehrfachverordnung (MVO)
 
-Für jede Teilverordnung einer Mehrfachverordnung wird ein einzelnes E-Rezept erstellt. Im Verordnungsdatensatz wird das ERezept als Teil einer Mehrfachverordnung gekennzeichnet (`MedicationRequest: extension:Mehrfachverordnung.extension:Kennzeichen`).
+Für jede Teilverordnung einer Mehrfachverordnung wird ein einzelnes E-Rezept erstellt. Im Verordnungsdatensatz wird das E-Rezept als Teil einer Mehrfachverordnung gekennzeichnet (`MedicationRequest: extension:Mehrfachverordnung.extension:Kennzeichen`).
 
 Zusätzlich werden u.a. die Informationen
 - Nummer des Rezepts der Mehrfachverordnung (`MedicationRequest.extension:Mehrfachverordnung.extension:Nummerierung.value[x]:valueRatio.numerator`)
 - Gesamtzahl der Teilverordnungen in der Mehrfachverordnung (`MedicationRequest: extension Mehrfachverordnung.extension: Nummerierung.value[x]:valueRatio.denominator`)
 - Start der Gültigkeit (`MedicationRequest.extension: Mehrfachverordnung extension: Zeitraum.value[x]:valuePeriod.start`)
 - Ende der Gültigkeit (`MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.end`) 
-
 angegeben.
 
 Jede Teilverordnung einer Mehrfachverordnung wird im E-Rezept-Fachdienst mit einem eigenen Workflow (Task) verwaltet. Dies ermöglicht den Versicherten und den Apotheken eine separate Verarbeitung jedes E-Rezepts einer Mehrfachverordnung.

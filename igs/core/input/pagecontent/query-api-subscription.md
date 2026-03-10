@@ -6,14 +6,14 @@ Die Nachricht zum Registrierungsanforderungen zur Benachrichtigungen über Commu
 
 Die Nachricht zur Interaktion mit Subscription als FHIR-Ressource _Subscription_ wird über die folgenden HTTP-Methoden ermöglicht:
 
-|HTTP-Methode|Ergebnis der Anfrage|
-|---|---|
-|POST|Registrierung an der E-Rezept-Fachdienst Webschnittstelle|
-|GET|Websocket-Verbindung zum NotificationService|
+|Akteur|HTTP-Methode|Ergebnis der Anfrage|
+|---|---|---|
+|Apotheke, Kostenträger|POST|Registrierung an der E-Rezept-Fachdienst Webschnittstelle|
+|Apotheke, Kostenträger|GET|Websocket-Verbindung zum NotificationService|
 
 ### Anforderungen an Schnittstelle
 
-- [Server Anforderungen zur Subscription-Query](./query-api-subscription-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [FD-Anforderungen zur Subscription-Query](./query-api-subscription-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
 - [Client-Anforderungen zur Subscription-Query](./query-api-subscription-req-avs.html): Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.
 
 ### Resource API

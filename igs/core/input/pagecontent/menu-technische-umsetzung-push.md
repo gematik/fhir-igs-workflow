@@ -174,16 +174,17 @@ Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeabl
 
 </tbody>
 </table>
+<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_028 Nachrichteninhalt Push Notification</figcaption></div>
 
 <p>
 <strong>Definition [medicationName]:</strong><br>
 Falls medication dem Profil "KBV_PR_ERP_Medication_Ingredient" entspricht:<br>
-`Medication.ingredient.item.itemCodeableConcept.text`<br><br>
+`Medication.ingredient.item.itemCodeableConcept.text`<br>
 Ansonsten:<br>
 `Medication.code.text`
 </p>
 
-<div><figcaption><strong>Tabelle: </strong>Nachrichteninhalt Push Notification</figcaption></div>
+
 
 </requirement>
 
@@ -276,5 +277,5 @@ Die Vorgaben für die Verschlüsselung sind in `A_27161-* - Fachdienst - Push No
 </tbody>
 </table>
 
-<div><figcaption><strong>Tabelle: </strong>Push Notification Datenstruktur Nachrichteninhalte</figcaption></div>
+<div><figcaption><strong>Tabelle: </strong>TAB_eRp_DM_004 Push Notification Datenstruktur Nachrichteninhalte</figcaption></div>
 </requirement>

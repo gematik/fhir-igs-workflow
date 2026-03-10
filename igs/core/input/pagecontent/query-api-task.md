@@ -4,10 +4,14 @@ Für die Nutzung verschiedener im Rahmen der Anwendung E-Rezept angebotenen Funk
 
 Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource _Task_ wird über die folgenden HTTP-Methoden ermöglicht:
 
-|HTTP-Methode|Ergebnis der Anfrage|
-|---|---|
-|GET|Task abrufen|
-|PATCH|Task markieren|
+|Akteur|HTTP-Methode|Ergebnis der Anfrage|
+|---|---|---|
+|Versicherter|GET|Liste von Task abrufen|
+|Versicherter|GET /<id>|Spezifischen Task abrufen|
+|Apotheke, Kostenträger|GET /<id>?ac=|Recovery Secret|
+|Apotheke, Kostenträger|GET /<id>?secret=|Quittung erneut abrufen|
+|Versicherter|GET /<id>|Spezifischen Task abrufen|
+|Versicherter|PATCH|Task markieren|
 
 ### Anforderungen an Schnittstelle
 

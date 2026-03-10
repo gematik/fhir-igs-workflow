@@ -190,9 +190,6 @@ Der E-Rezept-Fachdienst kann eine Mapping zwischen den IKNR und dem zugehörigen
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI, falls das Ergebnis im VSDM Prüfungsnachweis gleich 3 ist, URL-Parameter kvnr="..." übermittelt wurde und keine E-Rezeptes für den Versicherten im E-Rezept-Fachdienst gespeichert sind, eine leere Liste mit dem Status 202 zurückgeben.
 </requirement>
 
- - E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - AcceptPN3 false
-<=
-
 <!-- A_25207 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-66" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - AcceptPN3 false" version="0">
     <meta lockversion="false"/>
@@ -422,8 +419,6 @@ Hinweis: Der Abgleich der erfolgreich entschlüsselten KVNR mit der vom Client g
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende Institution den im referenzierten Task gespeicherten Status Task.status prüfen und mit dem Fehler 412 abbrechen, wenn Task.status ungleich "in-progress" und ungleich "completed" ist, damit der Datensatz nur abgerufen werden, kann, wenn sich die Verordnung in Belieferung befindet oder der Workflow abgeschlossen ist.
 </requirement>
-
-A_24179-01 - E-Rezept-Fachdienst - Task abrufen -  - Verordnung abrufen - erneuter Abruf VerordnungDer E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen Task mittels "/Task/<id>?ac=..." <=
 
 <!-- A_24179-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-79" title="E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - erneuter Abruf Verordnung" version="0">
