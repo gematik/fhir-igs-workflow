@@ -6,7 +6,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-97" title="E-Rezept-Fachdienst - unzulässige Operationen AuditEvent" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
-    <testProcedure id="Produkttest"/>
+    <testProcedure id="Produktgutachten"/>
   </actor>
   Der E-Rezept-Fachdienst MUSS alle Zugriffe auf die Ressource AuditEvent mittels der HTTP-Operationen PUT, PATCH, HEAD, DELETE und POST unterbinden, damit keine unzulässigen Operationen auf den Protokolldaten ausgeführt werden können.
 </requirement>
@@ -17,7 +17,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-98" title="E-Rezept-Fachdienst - AuditEvent lesen - Rollenprüfung" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
-    <testProcedure id="Produkttest"/>
+    <testProcedure id="Produktgutachten"/>
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /AuditEvent und auf einen konkreten über &lt;id&gt; adressierten /AuditEvent/&lt;id&gt; sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit Protokolleinträge nicht durch Unberechtigte ausgelesen werden können.
 </requirement>
@@ -26,7 +26,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-99" title="E-Rezept-Fachdienst - AuditEvent lesen - Filter KVNR" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
-    <testProcedure id="Produkttest"/>
+    <testProcedure id="Produktgutachten"/>
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /AuditEvent die dem Versicherten zugeordneten AuditEvent-Ressourcen anhand der KVNR des Versicherten im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, die in AuditEvent.entity.name die entsprechende KVNR des begünstigten Patienten referenziert haben, damit ausschließlich Versicherte ihre eigenen Protokolleinträge einsehen können.
 </requirement>

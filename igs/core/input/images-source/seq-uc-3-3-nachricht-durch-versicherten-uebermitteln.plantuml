@@ -18,6 +18,7 @@ alt Versand über TI
   VZD --> FdV: Empfängerdaten
   FdV -> FD: POST /Communication (AuthN-Token, Token, Payload)
   activate FD
+  FD -> FD: Nachricht prüfen()
   FD -> FD: Nachricht speichern()
   FD --> FdV: Status
   deactivate FD

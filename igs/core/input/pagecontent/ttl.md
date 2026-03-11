@@ -5,7 +5,7 @@ Der E-Rezept-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-85" title="E-Rezept-Fachdienst - Löschfrist abgelaufener Rezepte" version="0">
 	<meta lockversion="false"/>
 	<actor name="eRp_FD">
-    	<testProcedure id="Produkttest"/>
+    	<testProcedure id="Produktgutachten"/>
   	</actor>
 	Der E-Rezept-Fachdienst MUSS einen Task nach Ablauf der Löschfrist gemäss der folgenden Festlegung automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren.
 	<table>
@@ -58,7 +58,7 @@ Der E-Rezept-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-88" title="E-Rezept-Fachdienst - Löschfrist veraltete MedicationDispense" version="0">
 	<meta lockversion="false"/>
 	<actor name="eRp_FD">
-    	<testProcedure id="Produkttest"/>
+    	<testProcedure id="Produktgutachten"/>
   	</actor>
 	Der E-Rezept-Fachdienst MUSS eine gespeicherte Ressource MedicationDispense nach 100 Tagen ab ihrem Erzeugungsdatum MedicationDispense.whenHandedOver automatisch löschen.
 </requirement>
@@ -67,17 +67,17 @@ Der E-Rezept-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-89" title="E-Rezept-Fachdienst - Löschfrist ChargeItem" version="0">
 	<meta lockversion="false"/>
 	<actor name="eRp_FD">
-    	<testProcedure id="Produkttest"/>
+    	<testProcedure id="Produktgutachten"/>
   	</actor>
-	Der E-Rezept-Fachdienst MUSS ein ChargeItem innerhalb eines Monats nach Ablauf 	von 10 Jahren nach dem Erstellen der Ressource automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren.<br>
-	Der E-Rezept-Fachdienst MUSS bei jedem Löschen eines ChargeItems alle referenzierten Bundles (E-Rezept-Bundle, Quittungs-Bundle, PKV-Abgabedatensatz) ebenfalls löschen.
+	Der E-Rezept-Fachdienst MUSS ein ChargeItem innerhalb eines Monats nach Ablauf von 10 Jahren nach dem Erstellen der Ressource automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren.<br>
+	Der E-Rezept-Fachdienst MUSS bei jedem Löschen eines ChargeItems alle referenzierten Bundles (E-Rezept-Bundle, Quittungs-Bundle, PKV-Abgabedatensatz) ebenfalls löschen, damit die Informationen rund um ein gelöschtes ChargeItem ebenfalls entfernt werden.
 </requirement>
 
 <!-- A_19253-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-90" title="E-Rezept-Fachdienst - Löschfrist veraltete Nachrichten" version="0">
 	<meta lockversion="false"/>
 	<actor name="eRp_FD">
-    	<testProcedure id="Produkttest"/>
+    	<testProcedure id="Produktgutachten"/>
   	</actor>
 	Der E-Rezept-Fachdienst MUSS eine gespeicherte Ressource Communication
 	automatisch löschen:
@@ -92,7 +92,7 @@ Der E-Rezept-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-91" title="E-Rezept-Fachdienst - Löschfrist veraltete Protokolleinträge" version="0">
 	<meta lockversion="false"/>
 	<actor name="eRp_FD">
-    	<testProcedure id="Produkttest"/>
+    	<testProcedure id="Produktgutachten"/>
   	</actor>
 	Der E-Rezept-Fachdienst MUSS eine gespeicherte Ressource AuditEvent nach 3 Jahren ab dem Erzeugungsdatum AuditEvent.recorded innerhalb von einem Monat löschen.
 </requirement>

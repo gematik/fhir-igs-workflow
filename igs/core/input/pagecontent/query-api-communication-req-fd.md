@@ -4,7 +4,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-255" title="E-Rezept-Fachdienst - Communication - unzulässige Operationen" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
-    <testProcedure id="Produkttest"/>
+    <testProcedure id="Produktgutachten"/>
   </actor>
   Der E-Rezept-Fachdienst MUSS alle Zugriffe auf die Ressource Communication mittels der HTTP-Operationen PUT, PATCH und HEAD unterbinden, damit keine unzulässigen Operationen auf den Kommunikationsnachrichten ausgeführt werden können.
 </requirement>
@@ -13,7 +13,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-256" title="E-Rezept-Fachdienst - Communication - Rollenprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Produktgutachten"/>
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET, DELETE und POST-Operation auf den Endpunkt /Communication bzw. /Communication/&lt;id&gt; sicherstellen, dass ausschließlich Versicherte, Leistungserbingerinstitutionen und Kostenträger in der Rolle
     <ul>
@@ -33,7 +33,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-257" title="E-Rezept-Fachdienst - Nachrichten abrufen - für Empfänger filtern" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Produktgutachten"/>
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Abrufen von Nachrichten über die http-Operation GET auf den Endpunkt /Communication bzw. beim Abruf einer einzelnen Nachricht über /Communication/&lt;id&gt; ausschließlich die Nachrichten an den Aufrufer zurückgeben, die im Attribut Communication.recipient oder Communication.sender mit dem entsprechenden Identifier https://gematik.de/fhir/sid/telematik-id für Apotheken bzw. http://fhir.de/sid/gkv/kvid-10 für Versicherte den gleichen Typ und den identischen Wert haben wie im Attribut "idNummer" des übergebenen ACCESS_TOKEN im HTTP-Header "Authorization" für Versicherten-ID bzw. Telematik-ID, damit keine Nachrichten an Dritte unrechtmäßig ausgelesen werden.
 </requirement>

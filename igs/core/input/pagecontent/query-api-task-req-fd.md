@@ -34,7 +34,7 @@ Der Zugriff mittels der HTTP-Operation GET steht ausschließlich für die Einsic
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-51" title="E-Rezept-Fachdienst - Liste Task abrufen - Versicherter- Filter auf KVNR" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Produktgutachten"/>
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task die dem Versicherten zugeordneten Task-Ressourcen anhand der KVNR des Versicherten aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, die in Task.for die entsprechende KVNR des begünstigten Patienten referenziert haben, damit ausschließlich Versicherte ihre eigenen E-Rezepte einsehen können.
 </requirement>
@@ -118,7 +118,7 @@ Die Kodierung und das Format den in der Prüfziffer übermittelten Wert für hcv
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-59" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Zeitraum Akzeptanz Prüfungsnachweis" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Produktgutachten"/>
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit dem URL-Parameter pnw="..." durch eine abgebende LEI, falls im VSDM Prüfungsnachweis eine Prüfziffer enthalten ist, prüfen, dass die Differenz zwischen Zeitstempel aus der Prüfziffer des Prüfungsnachweises und dem aktuellen Zeitpunkt nicht größer als 30 Minuten (konfigurierbar) ist und bei fehlerhafter Prüfung mit dem Fehler 403 abbrechen. Im Fehlerfall ist die Meldung "Anwesenheitsnachweis konnte nicht erfolgreich durchgeführt werden (Zeitliche Gültigkeit des Anwesenheitsnachweis überschritten)." im OperationOutcome zu übermitteln.
 </requirement>
@@ -305,7 +305,7 @@ Der E-Rezept-Fachdienst verwaltet HMAC-Schlüssel, welche durch die Betreiber de
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-69" title="E-Rezept-Fachdienst - Prüfung Prüfziffer - Berechnung HMAC der Prüfziffer" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Produktgutachten"/>
     </actor>
     Der E-Rezept-Fachdienst MUSS, falls im VSDM Prüfungsnachweis eine Prüfziffer enthalten ist, für den HMAC der Prüfziffer die führenden 23 Byte der Prüfziffer (Felder 1-5) mittels SHA-256 Hashfunktion berechnen und für den nachfolgenden Vergleich die ersten 24 Byte verwenden.<br>
     Der E-Rezept-Fachdienst MUSS im Fehlerfall die Meldung "Anwesenheitsnachweis konnte nicht erfolgreich durchgeführt werden (Fehler bei Prüfung der HMAC-Sicherung)." im OperationOutcome zu übermitteln.
@@ -397,7 +397,7 @@ Hinweis: Der Abgleich der erfolgreich entschlüsselten KVNR mit der vom Client g
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-76" title="E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - Prüfung Telematik-ID" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Produktgutachten"/>
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende Institution die zum referenzierten Task in Task.owner gespeicherte Telematik-ID der abgebenden Institution mit der Telematik-ID aus dem ACCESS_TOKEN vergleichen und bei Ungleichheit die Operation mit dem HTTP-Fehlercode 412 abbrechen, damit der Zugriff auf diesen Datensatz nur durch Berechtigte erfolgt.
 </requirement>
@@ -406,7 +406,7 @@ Hinweis: Der Abgleich der erfolgreich entschlüsselten KVNR mit der vom Client g
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-77" title="E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - Prüfung AccessCode" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Produktgutachten"/>
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende Institution den im URL-Parameter "?ac=..." übertragenen AccessCode gegen den im referenzierten Task gespeicherten AccessCode Task.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit Zugriffe auf diesen Datensatz nur durch Berechtigte in Kenntnis des AccessCode erfolgen.
 </requirement>

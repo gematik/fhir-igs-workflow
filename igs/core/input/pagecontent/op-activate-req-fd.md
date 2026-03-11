@@ -115,7 +115,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-137" title="E-Rezept-Fachdienst - Task aktivieren - Prüfung Rezept-ID und Präfix gegen Flowtype" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Produktgutachten"/>
     </actor>
     Der E-Rezept-Fachdienst MUSS beim berechtigten Aufruf der Operation POST /Task/&#60;id&#62;/$activate prüfen, dass die PrescriptionID des Tasks mit der PrescriptionID im übergebenen QES-Datensatz übereinstimmt und der Präfix der PrescriptionID gleich dem Flowtype des zu aktivierenden Tasks ist und andernfalls die Operation mit dem http-Fehlercode 400 abbrechen.
 </requirement>
@@ -142,7 +142,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-140" title="E-Rezept-Fachdienst - Task aktivieren - Übernahme der Versicherten-ID" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Produktgutachten"/>
     </actor>
     Der E-Rezept-Fachdienst MUSS im Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate die KVNR des Patienten dem Identifier http://fhir.de/sid/gkv/kvid-10 der Patient-Ressource im E-Rezept-Bundle entnehmen und diesen als Identifier in Task.for mit system http://fhir.de/sid/gkv/kvid-10 hinzufügen, damit ausschließlich eine gültige, vom Arzt signierte Patientenreferenz im Workflow verwendet wird.
 </requirement>

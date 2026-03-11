@@ -18,16 +18,7 @@ Für E-Rezepte der Workflow-Types "200" und "209" können die Abrechnungsinforma
 ### Verarbeitungsregeln für den E-Rezept-Fachdienst
 
 #### Löschfristen
-Für die Löschfristen des E-Rezepts gelten für Flowtype 200 und 209 die Vorgaben von Flowtype 160.
-
-<!-- A_22109 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-7" title="E-Rezept-Fachdienst – Löschfrist ChargeItem" version="0">
-    <meta lockversion="false"/>
-    <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
-    </actor>
-Der E-Rezept-Fachdienst MUSS ein ChargeItem innerhalb eines Monats nach Ablauf von 10 Jahren nach dem Erstellen der Ressource automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren, damit nicht mehr benötigte Informationen gelöscht sind. Der E-Rezept-Fachdienst MUSS bei jedem Löschen eines ChargeItems alle referenzierten Bundles (E-Rezept-Bundle, Quittungs-Bundle, PKV-Abgabedatensatz) ebenfalls löschen, damit die Informationen rund um ein gelöschtes ChargeItem ebenfalls entfernt werden.
-</requirement>
+Der Fachdienst löscht Abrechnungsinformationen automatisch 10 Jahre nach der erstmaligen Bereitstellung, wenn der Versicherte diese nicht vorab schon gelöscht hat.
 
 #### Identifikation von PKV-Versicherten
 Die Zuordnung eines E-Rezeptes zu einem Versicherten erfolgt auf Basis der Versicherten-ID (10-stelliger unveränderlicher Teil der Krankenversichertennummer (KVNR)). D.h. teilnehmende PKV-Versicherte benötigen eine KVNR, welche ihnen über ihre Krankenversicherung zugeordnet wird. An der Versicherten-ID kann nicht erkannt werden, ob der Versicherte bei einer PKV versichert ist.

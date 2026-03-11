@@ -1,22 +1,22 @@
 @startuml
 title Zugriffsberechtigung durch Versicherten löschen
 
+autonumber "<b>[0]"
 actor Versicherte
 participant "E-Rezept-FdV" as FdV
 participant "E-Rezept-Fachdienst" as FD
-participant "Identity Provider" as IdP
+participant "Identity Provider" as IDP
 
-Versicherte -> FdV : [1] Zugriffsberechtigung löschen
+Versicherte -> FdV : Zugriffsberechtigung löschen
 
-opt
-  ref over FdV, IdP : [2] UC5.1 - AuthN-Token durch Versicherten anfordern
-  FdV -> IdP : [2] UC5.1 - AuthN-Token durch Versicherten anfordern
+opt kein gültiger AuthN-Token
+  ref over FdV, IDP: AuthN-Token anfordern
 end
 
-FdV -> FD : [3] Zugriffscode löschen\n{AuthN-Token, KVNR}
-FD -> FD : [4] Zugriffscode für KVNR löschen
-FD --> FdV : [5] Status
-FdV -> FdV : [6] Zugriffscode löschen
-FdV --> Versicherte : [7] Status anzeigen
+FdV -> FD : Zugriffscode löschen\n{AuthN-Token, KVNR}
+FD -> FD : Zugriffscode für KVNR löschen
+FD --> FdV : Status
+FdV -> FdV : Zugriffscode löschen
+FdV --> Versicherte : Status anzeigen
 
 @enduml

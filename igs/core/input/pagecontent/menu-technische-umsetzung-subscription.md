@@ -13,7 +13,7 @@ Der Subscription Service wird außerhalb der VAU betrieben.
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-117" title="E-Rezept-Fachdienst - Subscription Service - Prüfung Bearer-Token" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Produktgutachten"/>
     </actor>
      Der E-Rezept-Fachdienst MUSS an der Webschnittstelle des Subscription Service beim Verbindungsaufbau prüfen, dass der Client einen zeitlich und kryptographisch gültigen Bearer-Token der Schnittstelle GET /Subscription übermittelt und bei nicht-erfolgreicher Prüfung die Verbindung mit dem Fehler 403 ablehnen.
 </requirement>

@@ -16,7 +16,7 @@ end
 PS -> FD: POST /Task/{id}/$activate (AuthN-Token, QES-Bundle)
 activate FD
 FD -> FD: Signatur und Daten prüfen()
-FD -> FD: Status auf "offen" setzen()
+FD -> FD: Status auf "ready" setzen()
 FD -> FD : Datenzugriff protokollieren()
 FD --> PS: Status, E-Rezept aktualisiert
 deactivate FD

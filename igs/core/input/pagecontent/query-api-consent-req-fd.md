@@ -141,7 +141,6 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 Es bestehen anwendungsfall-spezifische Anforderungen, welche Inhalte beim Widerruf einer Einwilligung zu löschen sind.
-<!-- ToDo: A_22157 -> CHRG IG -->
 <!-- ToDo: A_27131 -> EU IG -->
 
 <!-- A_22158 -->
