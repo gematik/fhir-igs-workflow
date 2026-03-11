@@ -87,7 +87,7 @@
     - Das Primärsystem erstellt einen E-Rezept-Token und speichert ihn.
   postconditions: |
     - Das E-Rezept ist im E-Rezept-Fachdienst gespeichert.
-    - Der Workflow hat den Status "offen".
+    - Der Workflow hat den Status "ready".
     - Das Einstellen ist im E-Rezept-Fachdienst für den Versicherten protokolliert.
   interface: |
     - [Operation API: E-Rezept aktivieren](./op-activate.html)
@@ -99,18 +99,18 @@
   roles:
     - (Zahn-)Arzt
   description: |
-    Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im E-Rezept-Fachdienst auf "gelöscht" gesetzt.
+    Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im E-Rezept-Fachdienst auf "cancelled" gesetzt.
   preconditions: |
     - UC 2.3 wurde ausgeführt.
     - Rezept-ID und AccessCode sind bekannt.
-    - Status im E-Rezept-Fachdienst ist "offen".
+    - Status im E-Rezept-Fachdienst ist "ready".
   actions: |
     - Ein Mitarbeiter der verordnenden LEI markiert das E-Rezept zum Löschen und bestätigt den Vorgang.
     - Das Primärsystem ruft den E-Rezept-Fachdienst mit Rezept-ID und AccessCode auf.
-    - Der Status wird auf "gelöscht" gesetzt und medizinische Daten werden gelöscht.
+    - Der Status wird auf "cancelled" gesetzt und medizinische Daten werden gelöscht.
     - Der AccessCode wird im Primärsystem gelöscht.
   postconditions: |
-    - Der Workflow hat den Status "gelöscht".
+    - Der Workflow hat den Status "cancelled".
     - Die personenbezogene und medizinische Daten (ausser Versicherten-ID) sind aus dem Workflow entfernt.
     - Das Löschen ist im E-Rezept-Fachdienst für den Versicherten protokolliert.
   interface: |
@@ -143,17 +143,17 @@
   roles:
     - Versicherter
   description: |
-    Der Versicherte setzt den Status eines E-Rezepts auf "gelöscht" und löscht es im E-Rezept-Fachdienst.
+    Der Versicherte setzt den Status eines E-Rezepts auf "cancelled" und löscht es im E-Rezept-Fachdienst.
   preconditions: |
     - UC 3.1 wurde ausgeführt.
-    - Status des E-Rezepts ist ungleich "in Abgabe (gesperrt)".
+    - Status des E-Rezepts ist ungleich "in-progress".
   actions: |
     - Versicherter wählt ein E-Rezept im E-Rezept-FdV und bestätigt das Löschen.
     - Das E-Rezept-FdV überträgt die Löschanforderung an den E-Rezept-Fachdienst.
     - Der Status wird geändert; Daten im E-Rezept werden gelöscht.
     - Der E-Rezept-Token wird im E-Rezept-FdV gelöscht.
   postconditions: |
-    - Der Workflow hat den Status "gelöscht".
+    - Der Workflow hat den Status "cancelled".
     - Die personenbezogene und medizinische Daten (ausser Versicherten-ID) sind aus dem Workflow entfernt.
     - Das Löschen ist im E-Rezept-Fachdienst für den Versicherten protokolliert.
   interface: |
@@ -312,15 +312,15 @@
   preconditions: |
     - Ein E-Rezept-Token wurde übermittelt.
     - UC 4.6 wurde ausgeführt.
-    - Token liegt im Primärsystem vor; Status des E-Rezepts ist "offen".
+    - Token liegt im Primärsystem vor; Status des E-Rezepts ist "ready".
   actions: |
     - Primärsystem ermittelt Rezept-ID und AccessCode aus dem Token.
     - Primärsystem ruft das E-Rezept beim E-Rezept-Fachdienst ab.
-    - Status wechselt auf "in Abgabe (gesperrt)".
+    - Status wechselt auf "in-progress".
     - E-Rezept-Fachdienst erzeugt ein Geheimnis zur Statusänderung und übermittelt es.
     - optional: Primärsystem prüft die QES über den Konnektor.
   postconditions: |
-    - Status ist "in Abgabe (gesperrt)" und protokolliert.
+    - Status ist "in-progress" und protokolliert.
     - E-Rezept liegt im AVS vor; Geheimnis ist gespeichert.
   interface: |
     - [Operation API: Task akzeptieren](./op-accept.html)
@@ -336,13 +336,13 @@
   preconditions: |
     - UC 4.1 wurde ausgeführt.
     - Rezept-ID, AccessCode und Geheimnis sind bekannt.
-    - Status ist "in Abgabe (gesperrt)".
+    - Status ist "in-progress".
   actions: |
     - Abgebender markiert das E-Rezept zum Zurückgeben und bestätigt.
     - Primärsystem ruft den E-Rezept-Fachdienst mit Rezept-ID und Geheimnis auf.
-    - Status wird auf "offen" geändert.
+    - Status wird auf "ready" geändert.
   postconditions: |
-    - Status ist "offen" und protokolliert.
+    - Status ist "ready" und protokolliert.
     - E-Rezept, Token und Geheimnis sind im Primärsystem gelöscht.
   interface: |
     - [Operation API: Task zurückweisen](./op-reject.html)
@@ -358,13 +358,13 @@
   preconditions: |
     - Ein E-Rezept-Token wurde übermittelt und der Wunsch zum Löschen liegt vor.
     - UC 4.6 und UC 4.1 wurden ausgeführt.
-    - Rezept-ID, AccessCode und Geheimnis sind bekannt; Status ist "in Abgabe (gesperrt)".
+    - Rezept-ID, AccessCode und Geheimnis sind bekannt; Status ist "in-progress".
   actions: |
     - Abgebender markiert das E-Rezept zum Löschen und bestätigt.
     - Primärsystem ruft den E-Rezept-Fachdienst mit Rezept-ID und Geheimnis auf.
-    - Status wechselt auf "gelöscht"; Daten werden entfernt.
+    - Status wechselt auf "cancelled"; Daten werden entfernt.
   postconditions: |
-    - Status ist "gelöscht" und protokolliert; Daten sind entfernt.
+    - Status ist "cancelled" und protokolliert; Daten sind entfernt.
     - E-Rezept, Token und Geheimnis sind im Primärsystem gelöscht.
   interface: |
     - [Operation API: E-Rezept löschen](./op-abort.html)
@@ -380,7 +380,7 @@
   preconditions: |
     - UC 4.1 wurde ausgeführt.
     - QES des E-Rezepts ist gültig geprüft.
-    - Rezept-ID, AccessCode und Geheimnis sind bekannt; Status ist "in Abgabe (gesperrt)".
+    - Rezept-ID, AccessCode und Geheimnis sind bekannt; Status ist "in-progress".
   actions: |
     - Abgebender markiert das E-Rezept als abgegeben.
     - Primärsystem übermittelt Rezept-ID, Geheimnis und Abgabeinformationen an den E-Rezept-Fachdienst.
@@ -459,13 +459,13 @@
     Ein Mitarbeiter der abgebenden LEI hat ein E-Rezept dispensiert. Er markiert das E-Rezept über das Primärsystem als abgegeben und bestätigt es. Das Primärsystem übermittelt beim Aufruf des E-Rezept-Fachdienstes die Rezept-ID und das Geheimnis zur Bereitstellung der Dispensierinformationen. Im Aufruf ist die Dispensierinformation enthalten.
   preconditions: |
     - Ein Mitarbeiter der abgebenden LEI hat den Anwendungsfall "UC 4.1 - E-Rezept durch Abgebenden abrufen" durchgeführt.- Das Primärsystem hat die QES des E-Rezepts erfolgreich geprüft. Die QES des E-Rezepts ist gültig.
-    - Die Rezept-ID, der AccessCode und das Geheimnis zur Statusänderung "in Abgabe (gesperrt)" des E-Rezepts sind im Primärsystem bekannt.
-    - Das E-Rezept im E-Rezept-Fachdienst hat den Status "in Abgabe (gesperrt)".
+    - Die Rezept-ID, der AccessCode und das Geheimnis zur Statusänderung "in-progress" des E-Rezepts sind im Primärsystem bekannt.
+    - Das E-Rezept im E-Rezept-Fachdienst hat den Status "in-progress".
   actions: |
     - Abgebender wählt ein beliefertes E-Rezept zur Bereitstellung von Dispensierinformationen aus.
     - Das Primärsystem übermittelt die Dispensierinformationen an den E-Rezept-Fachdienst.
   postconditions: |
-    - Das E-Rezept im E-Rezept-Fachdienst hat den Status "in Abgabe (gesperrt)".
+    - Das E-Rezept im E-Rezept-Fachdienst hat den Status "in-progress".
     - Die Information zur Abgabe liegen im E-Rezept-Fachdienst.
     - Das Bereitstellen der Dispensierinformationen ist im E-Rezept-Fachdienst protokolliert.
     - Das Primärsystem erhält eine Bestätigung, dass die Dispensierinformationen bereitgestellt wurden.

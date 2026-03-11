@@ -76,7 +76,7 @@ Der Ablauf der Authentisierung und Suche ist in [gemSpec_VZD_FHIR_Directory]#AF_
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-EU-3" title="E-Rezept-Fachdienst - Zugriffsberechtigung - Caching Liste zulässiger Länder" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Der E-Rezept-Fachdienst DARF NICHT Informationen zur Liste zulässiger Länder verwenden, welche länger als 96h lokal durch den E-Rezept-Fachdienst gecacht wurden.
 </requirement>

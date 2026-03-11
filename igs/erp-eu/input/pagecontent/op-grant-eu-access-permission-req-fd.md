@@ -72,7 +72,7 @@
 <requirement conformance="SHALL" key="IG-TIFLOW-EU-62" title="E-Rezept-Fachdienst - Zugriffsberechtigung - periodische Bereinigung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Der E-Rezept-Fachdienst MUSS periodisch prüfen, dass keine zeitlich ungültigen Zugriffsberechtigungen gespeichert sind.
 </requirement>

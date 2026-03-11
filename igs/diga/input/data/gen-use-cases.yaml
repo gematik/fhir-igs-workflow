@@ -65,7 +65,7 @@
     - Das Primaersystem aktualisiert das E-Rezept im E-Rezept-Fachdienst.
     - Das Primaersystem erstellt einen E-Rezept-Token und speichert ihn.
   postconditions: |
-    - E-Rezept ist im E-Rezept-Fachdienst gespeichert und hat Status "offen".
+    - E-Rezept ist im E-Rezept-Fachdienst gespeichert und hat Status "ready".
     - Das Einstellen ist im E-Rezept-Fachdienst protokolliert.
   interface: |
     - [Operation API: E-Rezept aktivieren](./op-activate.html)
@@ -81,7 +81,7 @@
   preconditions: |
     - UC 2.3 wurde ausgeführt.
     - Rezept-ID und AccessCode sind bekannt.
-    - Status im E-Rezept-Fachdienst ist "offen".
+    - Status im E-Rezept-Fachdienst ist "ready".
   actions: |
     - Ein Mitarbeiter der verordnenden LEI markiert das E-Rezept zum Löschen und bestätigt den Vorgang.
     - Das Primaersystem ruft den E-Rezept-Fachdienst mit Rezept-ID und AccessCode auf.
@@ -268,7 +268,7 @@
   preconditions: |
     - Ein E-Rezept-Token wurde übermittelt.
     - UC 4.6 wurde ausgeführt.
-    - Token liegt im PS vor; Status des E-Rezepts ist "offen".
+    - Token liegt im PS vor; Status des E-Rezepts ist "ready".
   actions: |
     - PS ermittelt Rezept-ID und AccessCode aus dem Token.
     - PS ruft das E-Rezept beim E-Rezept-Fachdienst ab.
@@ -296,9 +296,9 @@
   actions: |
     - Abgebender markiert das E-Rezept zum Zurückgeben und bestätigt.
     - PS ruft den E-Rezept-Fachdienst mit Rezept-ID, AccessCode und Geheimnis auf.
-    - Status wird auf "offen" geaendert.
+    - Status wird auf "ready" geaendert.
   postconditions: |
-    - Status ist "offen" und protokolliert.
+    - Status ist "ready" und protokolliert.
     - E-Rezept, Token und Geheimnis sind im PS gelöscht.
   interface: |
     - [Operation API: Task zurückweisen](./op-reject.html)

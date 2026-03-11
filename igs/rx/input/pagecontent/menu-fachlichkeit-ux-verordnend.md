@@ -729,10 +729,8 @@ Die Bereitstellung der Fehlerdetails per Email o.Ä. steht mit diesen Anforderun
 ##### Status des E-Rezepts bei Versuch es zu löschen
 
 Ein Arzt kann ein von ihm ausgestelltes E-Rezept löschen. Wenn das nicht möglich ist, soll der Arzt aus dem PS heraus den Grund erkennen können, um besser darauf reagieren zu können. Wenn versucht wird das Rezept zu löschen, sind folgende Fehlermeldungen auszuwerten:
-- Returncode 403 - Forbidden: Das Rezept ist gesperrt und befindet sich in
-Bearbeitung bei einer Apotheke. Solange das E-Rezept noch nicht durch die Apotheke beliefert wurde, kann es durch die Apotheke gelöscht werden.
-- Returncode 410 - Gone: Das Rezept wurde bereits gelöscht und ist nicht mehr im E-
-Rezept-Fachdienst verfügbar
+- Returncode 403 - Forbidden: Das Rezept ist gesperrt und befindet sich in Bearbeitung bei einer Apotheke. Solange das E-Rezept noch nicht durch die Apotheke beliefert wurde, kann es durch die Apotheke gelöscht werden.
+- Returncode 410 - Gone: Das Rezept wurde bereits gelöscht und ist nicht mehr im E-Rezept-Fachdienst verfügbar
 
 <!-- A_23607-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-190" title="PS verordnende LEI: UX - Fehlerbenachrichtigung bei Löschversuch eines E-Rezepts" version="0">

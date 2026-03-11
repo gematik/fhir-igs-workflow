@@ -24,7 +24,7 @@ Der E-Rezept-Fachdienst prüft bei Operationsaufrufen, ob die E-Rezepte die folg
 - PZN-Verordnung (KBV_PR_ERP_Medication_PZN) mit strukturierter Angabe der Stückzahl sowie der Packungsgröße, getrennt nach Einheit und numerischem Wert,
 - Gültigkeitszeitraum ist erreicht,
 - Gültigkeitszeitraum ist nicht überschritten,
-- der Workflow zum E-Rezept hat den Status "offen".
+- der Workflow zum E-Rezept hat den Status "ready".
 - Ein E-Rezept, welches die obigen Kriterien erfüllt, wird im Kontext dieses Features als einlösbares E-Rezept bezeichnet.
 
 Ein Versicherter kann sich im E-Rezept-FdV anzeigen lassen, welche seiner E-Rezepte im europäischen Ausland einlösbar sind

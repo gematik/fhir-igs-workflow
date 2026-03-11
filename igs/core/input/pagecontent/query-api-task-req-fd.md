@@ -54,7 +54,7 @@ Der Zugriff mittels der HTTP-Operation GET steht ausschließlich für die Einsic
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-53" title="E-Rezept-Fachdienst - Rezepte lesen - Konfigurationsparameter RateLimit" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
     Der E-Rezept-Fachdienst MUSS einen Konfigurationsparameter RATELIMIT_MAX1d_ERROR_UC4_12 verwalten.
 </requirement>
@@ -138,7 +138,7 @@ Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des
     <li>Task.ExpiryDatenicht vor dem aktuellen Datum liegt</li>
     <li>und Task.extension:flowType = 160 oder 166</li>
     </ul>
-    filtern und in einem Bundle der gefundenen Tasks (ohne den signierte Anhang QES) zurückgeben, damit eine Apotheke alle zu einem Versicherten gehörenden E-Rezepte mit dem Status "offen" abrufen kann.
+    filtern und in einem Bundle der gefundenen Tasks (ohne den signierte Anhang QES) zurückgeben, damit eine Apotheke alle zu einem Versicherten gehörenden E-Rezepte mit dem Status "ready" abrufen kann.
 </requirement>
 
 <!-- A_25206 -->
@@ -212,7 +212,7 @@ Der E-Rezept-Fachdienst kann eine Mapping zwischen den IKNR und dem zugehörigen
         <li>Task.ExpiryDate nicht vor dem aktuellen Datum liegt</li>
         <li>und Task.extension:flowType = 160 oder 166</li>
     </ul>
-    filtern und in einem Bundle der gefundenen Tasks (ohne den signierte Anhang QES) zurückgeben, damit eine Apotheke alle zu einem Versicherten gehörenden E-Rezepte mit dem Status "offen" abrufen kann. Der E-Rezept-Fachdienst MUSS für den Response den Returncode 202 verwenden.
+    filtern und in einem Bundle der gefundenen Tasks (ohne den signierte Anhang QES) zurückgeben, damit eine Apotheke alle zu einem Versicherten gehörenden E-Rezepte mit dem Status "ready" abrufen kann. Der E-Rezept-Fachdienst MUSS für den Response den Returncode 202 verwenden.
 </requirement>
 
 Diese Operation führt nicht zu einer Statusänderung bei den zurück gelieferten Task Ressourcen.

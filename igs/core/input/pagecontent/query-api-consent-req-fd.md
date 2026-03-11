@@ -71,7 +71,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-351" title="E-Rezept-Fachdienst - Consent schreiben – Persistieren" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent – falls bei den Prüfungen keine Fehler aufgetreten sind, welche zum Abbruch der Operation führen – die übermittelte Ressource persistieren.
 </requirement>

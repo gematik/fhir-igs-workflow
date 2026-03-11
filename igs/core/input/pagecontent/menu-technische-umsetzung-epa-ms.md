@@ -107,7 +107,7 @@ Für die Authentisierung erstellt der E-Rezept-Fachdienst einen self-signed Bear
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-306" title="E-Rezept-Fachdienst - ePA - JWT Bearer-Token Claims" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Produktgutachten"/>
     </actor>
      Der E-Rezept-Fachdienst MUSS für die Authentisierung gegenüber dem ePA-Aktensystem ein JWT Baerer-Token gemäß A_25165-* erstellen.
 </requirement>
@@ -116,7 +116,7 @@ Für die Authentisierung erstellt der E-Rezept-Fachdienst einen self-signed Bear
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-307" title="E-Rezept-Fachdienst - ePA - JWT Bearer-Token Signatur" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Produktgutachten"/>
     </actor>
      Der E-Rezept-Fachdienst MUSS für die Authentisierung gegenüber dem ePA-Aktensystem das C.FD.AUT Zertifikat mit professionOID oid_erp-vau und der der Telematik-ID 9-E-Rezept-Fachdienst verwenden.
 </requirement>
@@ -136,7 +136,7 @@ Für die Authentisierung erstellt der E-Rezept-Fachdienst einen self-signed Bear
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-309" title="E-Rezept-Fachdienst - ePA - Lokalisierung des ePA-Aktensysteme" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Der E-Rezept-Fachdienst MUSS zur Lokalisierung der ePA-Aktensysteme die durch die im DNS für die übergreifende ePA-Domäne epa4all.de eingestellten Informationen aufrufen.
 </requirement>
@@ -147,7 +147,7 @@ Für die Bezeichnung der Ressourcen Records siehe "A_24592-* Anbieter ePA-Aktens
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-310" title="E-Rezept-Fachdienst - ePA - Aktualisierung Cache ePA-Aktensysteme" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Der E-Rezept-Fachdienst DARF NICHT Lokalisierungsinformationen zu ePA-Aktensystemen verwenden, welche länger als 24h lokal durch den E-Rezept-Fachdienst gecacht wurden.
 </requirement>
@@ -158,7 +158,7 @@ Für die Bezeichnung der Ressourcen Records siehe "A_24592-* Anbieter ePA-Aktens
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-311" title="E-Rezept-Fachdienst - ePA - ePA-Aktensystem für KVNR ermitteln" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Der E-Rezept-Fachdienst MUSS für das Ermitteln des ePA-Aktensystem bei dem das Aktenkonto zu einer KVNR verwaltet wird, einmal den Endpunkt .../ehr/{insurantid}/consentdecisions des [I_Information_Service] jedes ePA-Aktensystem aufrufen und das Ermitteln abbrechen, wenn die Response den Statuscode 404 erhält.
 </requirement>
@@ -167,7 +167,7 @@ Für die Bezeichnung der Ressourcen Records siehe "A_24592-* Anbieter ePA-Aktens
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-312" title="E-Rezept-Fachdienst - ePA - Aktualisierung Cache Zuordnung KVNR zu ePA-Aktensystem" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Der E-Rezept-Fachdienst DARF NICHT Informationen zur Zuordnung von KVNR und ePA-Aktensystem verwenden, welche länger als 180 Tage gecacht wurden.
 </requirement>
@@ -176,7 +176,7 @@ Für die Bezeichnung der Ressourcen Records siehe "A_24592-* Anbieter ePA-Aktens
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-313" title="E-Rezept-Fachdienst - ePA - Aktualisierung Cache Zuordnung KVNR zu ePA-Aktensystem - Statuscode 404" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Der E-Rezept-Fachdienst MUSS gecachte Informationen zur Zuordnung von KVNR und ePA-Aktensystem invalidieren, wenn bei der Übermittlung die Response den Statuscode 404 erhält.
 </requirement>
@@ -185,7 +185,7 @@ Für die Bezeichnung der Ressourcen Records siehe "A_24592-* Anbieter ePA-Aktens
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-314" title="E-Rezept-Fachdienst - ePA - Fehlerbehandlung - Information Service - Fehler im Information Service" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Der E-Rezept-Fachdienst MUSS die Aufrufe zum Ermitteln des ePA-Aktensystem für mindestens eine Minute unterbrechen, wenn ein Operationsaufruf im Information Service mit einem Statuscode 500 scheitert, und anschließend für weitere Aufrufe einen exponentiellen Backoff-Mechanismus anwenden, der die Wartezeit zwischen den Versuchen sukzessive verdoppelt, um die Belastung des Zielsystems zu minimieren.
 </requirement>
@@ -194,7 +194,7 @@ Für die Bezeichnung der Ressourcen Records siehe "A_24592-* Anbieter ePA-Aktens
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-315" title="E-Rezept-Fachdienst - ePA - Fehlerbehandlung - Information Service - Struktureller Fehler" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Der E-Rezept-Fachdienst MUSS den Aufruf zum Ermitteln des ePA-Aktensystem als fehlerhaft kennzeichnen und eine detaillierte Fehlermeldung für interne Analysezwecke protokollieren, wenn der Information Service der ePA auf einen Operationsaufruf mit einem Statuscode 400 (malformed Request) reagiert.
 </requirement>
@@ -475,7 +475,7 @@ Der E-Rezept-Fachdienst muss den Inhalt jedes Operationsaufrufes am Medication S
 <requirement conformance="MAY" key="IG-TIFLOW-CORE-328" title="E-Rezept-Fachdienst - ePA - Übermittlung - Bündelung von Übermittlungsaufträgen nach KVNR" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Der E-Rezept-Fachdienst KANN für die Übermittlung von Verordnungsdaten und Dispensierinformationen an den ePA Medication Service mehrere Instanzen von MedicationRequest oder mehrere Instanzen von MedicationDispense einer KVNR in einem einzigen Operationsaufruf bündeln.
 </requirement>
@@ -512,7 +512,7 @@ Es wird unterschieden zwischen den Szenarien, dass ein Aktenkonto innerhalb eine
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-329" title="E-Rezept-Fachdienst - ePA - Fehlerbehandlung - Aktenkonto-Umzug" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Der E-Rezept-Fachdienst MUSS alle Übermittlungsaufträge für eine KVNR für 24 Stunden pausieren, wenn das Aktenkonto aufgrund eines Umzugs nicht erreichbar ist und der Medication Service oder der Information Service eine Response mit dem Statuscode 409 zurückgibt, und nach dieser Pause einen erneuten Übermittlungsversuch starten.
 </requirement>
@@ -531,7 +531,7 @@ Es wird unterschieden zwischen den Szenarien, dass ein Aktenkonto innerhalb eine
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-330" title="E-Rezept-Fachdienst - ePA - Fehlerbehandlung - Reaktion auf Scheitern des Operationaufrufs" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Der E-Rezept-Fachdienst MUSS die Datenübermittlung an ein Aktenkonto für mindestens eine Minute unterbrechen, wenn ein Aufruf im Medication Service mit dem Statuscode 500 scheitert, anschließend den Endpunkt zum Auffinden des Aktenkonto für diese KVNR bei allen weiteren Information Services abrufen, die Anfrage am gefundenen Medication Service wiederholen und bei anhaltenden Problemen einen exponentiellen Backoff-Mechanismus anwenden, der die Wartezeit zwischen den Versuchen sukzessive verdoppelt, um die Systembelastung zu minimieren.
 </requirement>

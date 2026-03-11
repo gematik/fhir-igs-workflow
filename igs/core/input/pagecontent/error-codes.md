@@ -4,7 +4,7 @@ Der E-Rezept-Fachdienst stellt eine http-Schnittstelle für den Aufruf durch Cli
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-280" title="E-Rezept-Fachdienst - Http-Status-Codes" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Der E-Rezept-Fachdienst MUSS beim Aufruf einer Operation im Http-Response-Header einen HTTP-Status-Codes gemäß [RFC7231] zurückgeben.
 </requirement>

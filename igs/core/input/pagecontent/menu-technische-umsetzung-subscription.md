@@ -4,7 +4,7 @@ Der Subscription Service wird außerhalb der VAU betrieben.
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-116" title="E-Rezept-Fachdienst - Subscription Service - Webschnittstelle" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Der E-Rezept-Fachdienst MUSS eine Webschnittstelle anbieten, welche Websocket-Verbindungen mit einer Dauer von bis zu 12 h unterstützt.
 </requirement>

@@ -10,13 +10,13 @@
     Voraussetzung ist die Einwilligung des Versicherten zum Speichern der Abrechnungsinformationen.
   preconditions: |
     - Ein Mitarbeiter der abgebenden LEI hat den Anwendungsfall "UC 4.4 - Quittung abrufen" durchgeführt.
-    - Die Task-ID und das Geheimnis zur Statusänderung "in Abgabe (gesperrt)" des E-Rezepts sind im PS bekannt.
+    - Die Task-ID und das Geheimnis zur Statusänderung "in-progress" des E-Rezepts sind im PS bekannt.
     - Das E-Rezept im E-Rezept-Fachdienst hat den Status "quittiert".
     - Der Versicherte hat im E-Rezept-FdV eine Einwilligung zum Speichern der Abrechnungsinformationen auf dem E-Rezept-Fachdienst erteilt. Diese Information liegt im PS vor.
   actions: |
     - Ein Mitarbeiter der abgebenden LEI hat mit dem Versicherten abgestimmt, dass die Abrechnungsinformation digital zur Verfügung gestellt werden soll.
     - Das PS erstellt den PKV-Abgabedatensatz und signiert diesen mit dem Konnektor.
-    - Das PS erstellt eine ChargeItem-Ressource mit einem Identifier aus der PrescriptionID und den übrigen Pflichtfeldern gemäß FHIR-Profil und übermittelt diese an den E-Rezept-Fachdienstes zusammen mit dem generierten Geheimnis des belieferten Tasks zum Zeitpunkt des Statuswechsels "in Abgabe (gesperrt)" und den signierten Abgabedaten.
+    - Das PS erstellt eine ChargeItem-Ressource mit einem Identifier aus der PrescriptionID und den übrigen Pflichtfeldern gemäß FHIR-Profil und übermittelt diese an den E-Rezept-Fachdienstes zusammen mit dem generierten Geheimnis des belieferten Tasks zum Zeitpunkt des Statuswechsels "in-progress" und den signierten Abgabedaten.
     - Der E-Rezept-Fachdienst prüft, ob eine Einwilligung zum Speichern der Abrechnungsinformationen vorliegt.  Falls die Einwilligung vorliegt, übernimmt der E-Rezept-Fachdienst  den Verordnungsdatensatz und die Quittung aus dem E-Rezept-Workflow und speichert diese als Teil der Abrechnungsinformation zusammen mit dem "ChargeItem". Identifier der ChargeItem-Ressource ist die Rezept-ID. 
     - Der E-Rezept-Fachdienst prüft die Signatur und die FHIR-Validität des PKV-Abgabedatensatzes.
     - Der E-Rezept-Fachdienst erzeugt einen AccessCode zum Ändern des PKV-Abgabedatensatzes.

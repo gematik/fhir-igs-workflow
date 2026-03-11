@@ -28,7 +28,7 @@ Die technische Authentifizierung erfolgt dann über den `/token` Endpunkt, der d
 <requirement conformance="SHALL" key="IG-TIFLOW-BFARM-2" title="E-Rezept-Fachdienst - BfArM - Prüfung Gültigkeit AccessToken" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Der E-Rezept-Fachdienst MUSS vor dem Zugriff auf den BfArM Webdienst prüfen, ob der zuletzt bezogene AccessToken noch gültig ist und im Falle der Ungültigkeit einen neuen AccessToken über den /ords/rezepte/oauth/token Endpunkt am BfArM Webdienst beziehen.
 </requirement>
@@ -58,7 +58,7 @@ Die technische Authentifizierung erfolgt dann über den `/token` Endpunkt, der d
 <requirement conformance="SHALL" key="IG-TIFLOW-BFARM-5" title="E-Rezept-Fachdienst - BfArM - Lokalisierung Konfigurationsparameter BfArM_Domain" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Der E-Rezept-Fachdienst MUSS einen Konfigurationsparameter BfArM_Domain für die Domain des BfArM Webdienstes verwalten.
 </requirement>
@@ -69,7 +69,7 @@ Der Defaultwert für den Parameter ist  `https://webapps-public.bfarm.de`.
 <requirement conformance="SHALL" key="IG-TIFLOW-BFARM-6" title="E-Rezept-Fachdienst - BfArM - Lokalisierung des BfArM Webdienstes" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Der E-Rezept-Fachdienst MUSS zur Lokalisierung des BfArM Webdienstes die im DNS für BfArM_Domain eingestellten Informationen aufrufen.
 </requirement>
@@ -240,7 +240,7 @@ Dieses Vorgehen stellt sicher, dass die Übertragung an das T-Register nicht auf
 <requirement conformance="SHALL" key="IG-TIFLOW-BFARM-13" title="E-Rezept-Fachdienst - BfArM - Fehlerbehandlung - Reaktion auf Scheitern des Operationaufrufs" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Der E-Rezept-Fachdienst MUSS die Datenübermittlung an den BfArM Webdienst für mindestens eine Minute unterbrechen, wenn ein Aufruf mit dem Statuscode 500 oder 429 scheitert. Bei anhaltenden Problemen MUSS der E-Rezept-Fachdienst einen exponentiellen Backoff-Mechanismus anwenden, der die Wartezeit zwischen den Versuchen sukzessive verdoppelt, um die Systembelastung zu minimieren.
 </requirement>
@@ -249,7 +249,7 @@ Dieses Vorgehen stellt sicher, dass die Übertragung an das T-Register nicht auf
 <requirement conformance="SHALL" key="IG-TIFLOW-BFARM-14" title="E-Rezept-Fachdienst - BfArM - Fehlerbehandlung - Protokollierung struktureller Fehler" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Der E-Rezept-Fachdienst MUSS den Aufruf am BfArM Webdienst als fehlerhaft kennzeichnen und eine detaillierte Fehlermeldung für interne Analysezwecke protokollieren, wenn der BfArM Webdienst auf einen Operationsaufruf mit einem Statuscode 400 (Bad Request) oder 422 (Unprocessable Entity) reagiert.
 </requirement>
