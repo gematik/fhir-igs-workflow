@@ -2,7 +2,7 @@ Extension: GEM_ERP_EX_SupplyOptionsType
 Id: GEM-ERP-EX-SupplyOptionsType
 Title: "GEM ERP EX SupplyOptionsType"
 Description: "Extension zur Angabe des bevorzugten Versorgungskanals"
-* insert Meta
+* insert StructureDefinition(GEM_ERP_EX_SupplyOptionsType)
 * ^context.type = #element
 * ^context.expression = "Communication.payload"
 * . ^short = "Optionen für bevorzugte oder angebotene Versorgungskanäle"

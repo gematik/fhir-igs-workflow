@@ -1,5 +1,5 @@
 Instance: ExampleDispenseInputParameters
-InstanceOf: EFlowRxDispenseOperationInputParameters
+InstanceOf: GEM_ERP_PR_PAR_DispenseOperation_Input
 Usage: #example
 Title: "Example Dispense Parameters"
 * parameter[rxDispensation]
@@ -12,7 +12,7 @@ Title: "Example Dispense Parameters"
     * resource = SumatripanMedication
 
 Instance: ExampleDispenseInputParametersMultipleMedicationDispenses
-InstanceOf: EFlowRxDispenseOperationInputParameters
+InstanceOf: GEM_ERP_PR_PAR_DispenseOperation_Input
 Usage: #example
 Title: "Example Dispense Parameters"
 * parameter[rxDispensation][+]
@@ -33,7 +33,7 @@ Title: "Example Dispense Parameters"
     * resource = SimpleMedication
 
 Instance: ExampleDispenseInputParametersKombipackung
-InstanceOf: EFlowRxDispenseOperationInputParameters
+InstanceOf: GEM_ERP_PR_PAR_DispenseOperation_Input
 Usage: #example
 Title: "Example Dispense Parameters"
 * parameter[rxDispensation]
@@ -48,7 +48,7 @@ Title: "Example Dispense Parameters"
 
 /*
 Instance: INVALID-ExampleDispenseInputParametersWithoutMedication
-InstanceOf: EFlowRxDispenseOperationInputParameters
+InstanceOf: GEM_ERP_PR_PAR_DispenseOperation_Input
 Usage: #example
 Title: "Example Dispense Parameters"
 * parameter[rxDispensation]
@@ -58,14 +58,14 @@ Title: "Example Dispense Parameters"
     * resource = Example-MedicationDispense-Without-Medication
 
 Instance: INVALID-ExampleDispenseInputParametersNoParts
-InstanceOf: EFlowRxDispenseOperationInputParameters
+InstanceOf: GEM_ERP_PR_PAR_DispenseOperation_Input
 Usage: #example
 Title: "Example Dispense Parameters"
 * parameter[rxDispensation]
   * name = "rxDispensation"
 
 Instance: INVALID-ExampleDispenseInputParametersReferenceWrong
-InstanceOf: EFlowRxDispenseOperationInputParameters
+InstanceOf: GEM_ERP_PR_PAR_DispenseOperation_Input
 Usage: #example
 Title: "Example Dispense Parameters"
 * parameter[rxDispensation]
@@ -78,7 +78,7 @@ Title: "Example Dispense Parameters"
     * resource = SimpleMedication
 
 Instance: INVALID-ExampleDispenseInputParametersReferenceWrongMultiple
-InstanceOf: EFlowRxDispenseOperationInputParameters
+InstanceOf: GEM_ERP_PR_PAR_DispenseOperation_Input
 Usage: #example
 Title: "Example Dispense Parameters"
 * parameter[rxDispensation][+]

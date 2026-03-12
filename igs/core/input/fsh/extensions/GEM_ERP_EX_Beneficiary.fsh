@@ -2,7 +2,7 @@ Extension: GEM_ERP_EX_Beneficiary
 Id: GEM-ERP-EX-Beneficiary
 Title: "GEM ERP EX Beneficiary"
 Description: "Der Begünstigte (z. B. Apotheke) des E-Rezept-Beleg, der erstellt wird, wenn der E-Rezept-Workflow abgeschlossen ist."
-* insert Meta
+* insert StructureDefinition(GEM_ERP_EX_Beneficiary)
 * ^context.type = #element
 * ^context.expression = "Composition"
 * . ^short = "The beneficiary of the receipt"

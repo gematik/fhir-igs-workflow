@@ -3,7 +3,7 @@ Parent: Device
 Id: GEM-ERP-PR-Device
 Title: "GEM ERP PR Device"
 Description: "Statische Informationen auf dem E-Rezept-Fachdienst"
-* insert Meta
+* insert Profile(GEM_ERP_PR_Device)
 * status 1..
 * serialNumber MS
 * deviceName 1..1

@@ -3,7 +3,7 @@ Parent: Bundle
 Id: GEM-ERP-PR-Bundle-OP-Accept
 Title: "GEM ERP PR Bundle OP Accept"
 Description: "Antwort des E-Rezept-Fachdienst auf die $accept-Operation"
-* insert Meta
+* insert StructureDefinition(GEM_ERP_PR_Bundle_OP_Accept)
 
 * type = #collection (exactly)
 * entry 2..2

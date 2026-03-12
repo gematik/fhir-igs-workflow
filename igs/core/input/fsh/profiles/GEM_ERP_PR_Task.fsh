@@ -3,7 +3,7 @@ Parent: Task
 Id: GEM-ERP-PR-Task
 Title: "GEM ERP PR Task"
 Description: "Task für die Verwaltung des E-Rezept-Workflows"
-* insert Meta
+* insert Profile(GEM_ERP_PR_Task)
 
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
@@ -15,8 +15,8 @@ Description: "Task für die Verwaltung des E-Rezept-Workflows"
 and GEM_ERP_EX_AcceptDate named acceptDate 0..1 MS
 and GEM_ERP_EX_ExpiryDate named expiryDate 0..1 MS
 and GEM_ERP_EX_LastMedicationDispense named lastMedicationDispense 0..1
-and EFlowRxEuIsRedeemableByPropertiesExtension named eu-isRedeemableByProperties 0..1 MS
-and EFlowRxEuIsRedeemableByPatientAuthorizationExtension named eu-isRedeemableByPatientAuthorization 0..1 MS
+and GEM_ERP_EX_EU_IS_REDEEMABLE_BY_PROPERTIES named eu-isRedeemableByProperties 0..1 MS
+and GEM_ERP_EX_EU_IS_REDEEMABLE_BY_PATIENT_AUTHORIZATION named eu-isRedeemableByPatientAuthorization 0..1 MS
 
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
@@ -28,10 +28,10 @@ and EFlowRxEuIsRedeemableByPatientAuthorizationExtension named eu-isRedeemableBy
     Secret 0..1
 * identifier[PrescriptionID] only EPrescriptionId
   * ^short = "E-Rezept-ID"
-  * ^definition = "Die E-Rezept-ID ist der Hauptidentifikator für die Task Ressource und den gesamten E-Rezept Workflow. Dieser Identifikator wird vom E-Rezept-Fachdienst generiert und darf nicht manuell geändert werden."
+  * ^definition = "Die E-Rezept-ID ist der Hauptidentifikator für die Task Ressource und den gesamten E-Rezept Workflow. Dieser Identifikator wird vom E-Rezept Fachdienst generiert und darf nicht manuell geändert werden."
 * identifier[AccessCode] 
   * ^short = "AccessCode Identifier"
-  * ^definition = "Generiert vom E-Rezept-Fachdienst. Dieser Identifikator muss in jeder Anfrage zur Task Ressource übertragen werden."
+  * ^definition = "Generiert vom E-Rezept Fachdienst. Dieser Identifikator muss in jeder Anfrage zur Task Ressource übertragen werden."
   * system 1..
   * system = "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode" (exactly)
   * value 1..

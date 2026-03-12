@@ -2,7 +2,7 @@ Extension: GEM_ERP_EX_AvailabilityState
 Id: GEM-ERP-EX-AvailabilityState
 Title: "GEM ERP EX AvailabilityState"
 Description: "Extension zur Angabe von Typ des Verfügbarkeitsstatus für die Anfrage zur Medikamentenverfügbarkeit."
-* insert Meta
+* insert StructureDefinition(GEM_ERP_EX_AvailabilityState)
 * ^context.type = #element
 * ^context.expression = "Communication.payload"
 * value[x] only Coding

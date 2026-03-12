@@ -3,7 +3,7 @@ Parent: Communication
 Id: GEM-ERP-PR-Communication
 Title: "GEM ERP PR Communication"
 Description: "Generische Workflow-Communication"
-* insert Meta
+* insert StructureDefinition(GEM_ERP_PR_Communication)
 * ^abstract = true
 
 * basedOn 1..1 MS

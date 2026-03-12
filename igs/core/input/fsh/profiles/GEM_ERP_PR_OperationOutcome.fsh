@@ -3,7 +3,7 @@ Parent: OperationOutcome
 Id: GEM-ERP-PR-OperationOutcome
 Title: "GEM ERP PR OperationOutcome"
 Description: "OperationOutcome für Angabe von Fehlermeldungen vom E-Rezept-Fachdienst"
-* insert Meta
+* insert Profile(GEM_ERP_PR_OperationOutcome)
 
 * issue.severity MS
 * issue.code MS
