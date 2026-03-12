@@ -3,7 +3,6 @@ Für die Nutzung verschiedener im Rahmen der Anwendung E-Rezept angebotenen Funk
 
 ### Nachricht
 
-
 Die Nachricht zur Interaktion mit Einwilligungen als FHIR-Ressource _Consent_ wird über die folgenden HTTP-Methoden ermöglicht:
 
 |HTTP-Methode|Ergebnis der Anfrage|
@@ -36,11 +35,13 @@ Anfragen an die <i>Consent</i>-Ressource können über die RESTful API durchgef�
       {% include CapabilityStatement-erp-fachdienst-server.json %}
     </pre>
   </div>
-  <div id="Request-Examples">
-    <!-- TODO: Request-Beispiel für GET /Consent (FdV, JSON) ergänzen -->
-  </div>
   <div id="Response-Examples">
-    <!-- TODO: Response-Beispiel für GET /Consent Bundle (FdV, JSON) ergänzen -->
+    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+      {% fragment Bundle/example-searchset-consent JSON %}
+    </div>
+    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+      {% fragment Bundle/example-searchset-consent XML %}
+    </div>
   </div>
 </div>
 

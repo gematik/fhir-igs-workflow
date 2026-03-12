@@ -32,10 +32,20 @@ Anfragen an die <i>Subscription</i>-Ressource können über die RESTful API mitt
     </pre>
   </div>
   <div id="Request-Examples">
-    <!-- TODO: Request-Beispiel für POST /Subscription (AVS/KTR, XML) ergänzen -->
+    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+      {% fragment Subscription/example-create-subscription-request JSON %}
+    </div>
+    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+      {% fragment Subscription/example-create-subscription-request XML %}
+    </div>
   </div>
   <div id="Response-Examples">
-    <!-- TODO: Response-Beispiel für POST /Subscription (AVS/KTR, XML) ergänzen -->
+    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+      {% fragment Subscription/example-create-subscription-response JSON %}
+    </div>
+    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+      {% fragment Subscription/example-create-subscription-response XML %}
+    </div>
   </div>
 </div>
 

@@ -16,17 +16,19 @@ Die Device-Query wird ueber HTTP `GET` auf `/Device` aufgerufen.
 <div class="gematik-apidoc"
   data-api-type="FHIRResource"
   data-api-fhir-resource-type="Device"
-  data-api-fhir-interaction="read">
+  data-api-fhir-interaction="search-type">
   <div id="CapabilityStatement">
     <pre>
       {% include CapabilityStatement-erp-fachdienst-server.json %}
     </pre>
   </div>
-  <div id="Request-Examples">
-    <!-- TODO: Request-Beispiel für GET /Device ergänzen (alle Clients: XML und JSON) -->
-  </div>
   <div id="Response-Examples">
-    <!-- TODO: Response-Beispiel für GET /Device ergänzen (XML und JSON) -->
+    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+      {% fragment Device/ReceiptBundleDevice JSON %}
+    </div>
+    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+      {% fragment Device/ReceiptBundleDevice XML %}
+    </div>
   </div>
 </div>
 

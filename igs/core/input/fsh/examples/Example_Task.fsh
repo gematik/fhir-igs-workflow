@@ -26,7 +26,7 @@ InstanceOf: GEM_ERP_PR_Task
 Title: "Task aktiviert durch (Z)PVS/KIS via $activate Operation"
 Description: "Beispiel für einen Task, der durch (Z)PVS/KIS über die $activate Operation aktiviert wurde und ein einlösbares E-Rezept trägt"
 Usage: #example
-* id = "607255ed-ce41-47fc-aad3-cfce1c39963f"
+* id = "TaskInReadyState"
 * meta.tag.display = "Task in READY state activated by (Z)PVS/KIS via $activate operation"
 * extension[flowType].url = "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_PrescriptionType"
 * extension[flowType].valueCoding = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType#160 "Flowtype für Apothekenpflichtige Arzneimittel"
@@ -144,7 +144,7 @@ InstanceOf: GEM_ERP_PR_Task
 Title: "Task abgeschlossen durch Apotheke via $close Operation"
 Description: "Beispiel für einen Task, der von einer Apotheke über die $close Operation abgeschlossen wurde"
 Usage: #example
-* id = "09330307-16ce-4cdc-810a-ca24ef80dde3"
+* id = "TaskInClosedState"
 * meta.tag.display = "Task in COMPLETED state dispensed by pharmacy via $closed operation"
 * extension[flowType].url = "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_PrescriptionType"
 * extension[flowType].valueCoding = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType#160 "Flowtype für Apothekenpflichtige Arzneimittel"

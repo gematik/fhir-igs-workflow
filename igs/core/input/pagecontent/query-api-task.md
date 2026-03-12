@@ -40,11 +40,13 @@ Durch Angabe des URL-Parameter `?secret=` bei der GET-Operation kann eine abgebe
       {% include CapabilityStatement-erp-fachdienst-server.json %}
     </pre>
   </div>
-  <div id="Request-Examples">
-    <!-- TODO: Request-Beispiel für GET /Task (FdV, JSON) ergänzen -->
-  </div>
   <div id="Response-Examples">
-    <!-- TODO: Response-Beispiel für GET /Task Bundle (FdV, JSON) ergänzen -->
+    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+      {% fragment Bundle/example-searchset-task JSON %}
+    </div>
+    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+      {% fragment Bundle/example-searchset-task XML %}
+    </div>
   </div>
 </div>
 
@@ -63,11 +65,13 @@ Um spezifische Details zu einem einzelnen _Task_ mittels der RESTful API zu erha
       {% include CapabilityStatement-erp-fachdienst-server.json %}
     </pre>
   </div>
-  <div id="Request-Examples">
-    <!-- TODO: Request-Beispiele für GET /Task/{id} ergänzen (FdV: JSON, AVS/KTR: XML) -->
-  </div>
   <div id="Response-Examples">
-    <!-- TODO: Response-Beispiele für GET /Task/{id} ergänzen (FdV: JSON, AVS/KTR: XML) -->
+    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+      {% fragment Task/TaskInReadyState JSON %}
+    </div>
+    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+      {% fragment Task/TaskInReadyState XML %}
+    </div>
   </div>
 </div>
 

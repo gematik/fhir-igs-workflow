@@ -34,11 +34,13 @@ Anfragen an die <i>Communication</i>-Ressource können über die RESTful API mit
       {% include CapabilityStatement-erp-fachdienst-server.json %}
     </pre>
   </div>
-  <div id="Request-Examples">
-    <!-- TODO: Request-Beispiele für GET /Communication ergänzen (FdV: JSON, AVS: XML, KTR: XML) -->
-  </div>
   <div id="Response-Examples">
-    <!-- TODO: Response-Beispiele für GET /Communication Bundle ergänzen (FdV: JSON, AVS: XML, KTR: XML) -->
+    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+      {% fragment Bundle/example-searchset-communication JSON %}
+    </div>
+    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+      {% fragment Bundle/example-searchset-communication XML %}
+    </div>
   </div>
 </div>
 

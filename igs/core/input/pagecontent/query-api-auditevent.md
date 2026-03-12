@@ -22,11 +22,13 @@ Die AuditEvent-Query wird ueber HTTP `GET` auf `/AuditEvent` und `/AuditEvent/{i
       {% include CapabilityStatement-erp-fachdienst-server.json %}
     </pre>
   </div>
-  <div id="Request-Examples">
-    <!-- TODO: Request-Beispiel für GET /AuditEvent (FdV, JSON) ergänzen -->
-  </div>
   <div id="Response-Examples">
-    <!-- TODO: Response-Beispiel für GET /AuditEvent Bundle (FdV, JSON) ergänzen -->
+    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+      {% fragment Bundle/example-searchset-auditevent JSON %}
+    </div>
+    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+      {% fragment Bundle/example-searchset-auditevent XML %}
+    </div>
   </div>
 </div>
 

@@ -32,11 +32,13 @@ Anfragen an die <i>MedicationDispense</i>-Ressource können über die RESTful AP
       {% include CapabilityStatement-erp-fachdienst-server.json %}
     </pre>
   </div>
-  <div id="Request-Examples">
-    <!-- TODO: Request-Beispiel für GET /MedicationDispense (FdV, JSON) ergänzen -->
-  </div>
   <div id="Response-Examples">
-    <!-- TODO: Response-Beispiel für GET /MedicationDispense Bundle (FdV, JSON) ergänzen -->
+    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+      {% fragment Bundle/example-searchset-medicationdispense JSON %}
+    </div>
+    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+      {% fragment Bundle/example-searchset-medicationdispense XML %}
+    </div>
   </div>
 </div>
 
