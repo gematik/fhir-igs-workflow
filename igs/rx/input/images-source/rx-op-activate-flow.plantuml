@@ -19,8 +19,8 @@ else (nein)
   stop
 endif
 
-:FD fuehrt Flowtype- und Fachregeln aus (inkl. MVO);
-if (Regeln erfuellt?) then (ja)
+:FD führt Flowtype- und Fachregeln aus (inkl. MVO);
+if (Regeln erfüllt?) then (ja)
 else (nein)
   :HTTP 400;
   stop
@@ -29,7 +29,7 @@ endif
 :FD speichert Verordnungsdaten und signiertes Bundle;
 :FD setzt Task.status = ready;
 :FD triggert Folgeverarbeitung (ePA/Push);
-:FD gibt Task zurueck;
+:FD gibt Task zurück;
 stop
 
 @enduml
