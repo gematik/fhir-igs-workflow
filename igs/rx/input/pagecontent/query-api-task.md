@@ -2,7 +2,14 @@ Diese Seite basiert auf der gleichnamigen Schnittstelle in der [Core-Spezifikati
 
 ### Nachricht
 
-Die Nachricht zum Abruf von E-Rezepten wird als HTTP GET-Anfrage an den E-Rezept-Fachdienst gesendet, um eine Liste der hinterlegten _Task_-Instanzen abzurufen.
+Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource _Task_ wird über die folgenden HTTP-Methoden ermöglicht:
+
+|Akteur|HTTP-Methode|Ergebnis der Anfrage|
+|---|---|---|
+|Versicherter|GET|Liste von Task abrufen|
+|Versicherter|GET /<id>|Spezifischen Task abrufen|
+|Apotheke|GET /<id>?ac=|Recovery Secret|
+|Apotheke|GET /<id>?secret=|Quittung erneut abrufen|
 
 ### Anforderungen an Schnittstelle
 

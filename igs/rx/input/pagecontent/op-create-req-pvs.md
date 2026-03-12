@@ -5,3 +5,5 @@ Diese Seite enthält die normativen Anforderungen an das PVS für die Operation 
 {% include core.op-create-req-pvs.md %}
 
 ### Modulspezifische Anforderungen
+
+Es bestehen keine modulspezifischen Anforderungen.
