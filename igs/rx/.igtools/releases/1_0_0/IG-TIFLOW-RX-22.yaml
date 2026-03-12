@@ -1,24 +1,25 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 36589d67678c8f81613e4029193e4b1f1ae1b336588f13fae52d0a45743da155
+content_hash: 7e28202676b9db58ee1112718a207a2dae0d61347bafc7b6528eab38f4697bf8
 created: '2026-03-10T06:59:24.351711'
-date: '2026-03-10T06:59:24.351714'
+date: '2026-03-12T14:55:04.012355'
 key: IG-TIFLOW-RX-22
-modified: '2026-03-10T06:59:24.351712'
+modified: '2026-03-12T14:55:04.012355'
 release_status: NEW
 source: input/pagecontent/op-dispense-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen
-  mittels POST /Task/&lt;id&gt;/$dispense auf den in der URL referenzierten /Task/&lt;id&gt;
-  sicherstellen, dass ausschließlich abgebende Leistungserbringer in der Rolle oid_oeffentliche_apotheke
-  oid_krankenhausapotheke die Operation am Fachdienst aufrufen dürfen und die Rolle
-  "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization"
-  feststellen, damit Dispensierinformationen nicht durch einen Unberechtigten eingestellt
-  werden kann.
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen\
+  \ mittels POST /Task/&lt;id&gt;/$dispense auf den in der URL referenzierten /Task/&lt;id&gt;\
+  \ sicherstellen, dass ausschließlich abgebende Leistungserbringer in einer der Rollen\n\
+  \ <ul> \n <li>oid_oeffentliche_apotheke</li>\n <li>oid_krankenhausapotheke</li>\n\
+  \ </ul>\n die Operation am Fachdienst aufrufen dürfen und die Rolle \"professionOID\"\
+  \ des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen,\
+  \ damit Dispensierinformationen nicht durch einen Unberechtigten eingestellt werden\
+  \ kann."
 title: E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Rollenprüfung
   Abgebender stellt Dispensierinformationen bereit
 version: 0

@@ -1,24 +1,24 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 68e1088f1c4c90bb8b658ed8bf3978c679121592a46e60cfa843b6c99e3254ab
+content_hash: b73c204555341470e8937da9b7b19657233aec3c1a8a088749f0f6b6d82ec095
 created: '2026-03-10T07:01:45.480149'
-date: '2026-03-10T07:01:45.480151'
+date: '2026-03-12T14:55:02.964246'
 key: IG-TIFLOW-CHRG-51
-modified: '2026-03-10T07:01:45.480150'
+modified: '2026-03-12T14:55:02.964246'
 release_status: NEW
 source: input/pagecontent/query-api-chargeitem-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf eine konkrete
-  über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource sicherstellen,
-  dass ausschließlich Versicherte oder Apotheken in den Rollen oid_versicherter, oid_oeffentliche_apotheke
-  oder oid_krankenhausapotheke die Operation am E-Rezept-Fachdienst aufrufen dürfen
-  und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader
-  "Authorization" feststellen, damit E-Rezepte nicht durch Unberechtigte ausgelesen
-  werden können.
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf eine konkrete\
+  \ über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource sicherstellen,\
+  \ dass ausschließlich Versicherte oder Apotheken in den Rollen \n <ul>\n <li>oid_versicherter</li>\n\
+  \ <li>oid_oeffentliche_apotheke</li>\n <li>oid_krankenhausapotheke</li> \n </ul>\n\
+  \ die Operation am E-Rezept-Fachdienst aufrufen dürfen und die Rolle \"professionOID\"\
+  \ des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen,\
+  \ damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können."
 title: E-Rezept-Fachdienst – Abrechnungsinformation abrufen – Rollenprüfung Versicherter
   oder Apotheker
 version: 0
