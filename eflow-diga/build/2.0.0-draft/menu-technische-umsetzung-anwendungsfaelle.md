@@ -122,7 +122,7 @@ umsetzen.
 
 * Beschreibung: Nachbedingungen
   * Ein E-Rezept wird vom Primärsystem beim E-Rezept-Fachdienst eingestellt und ein E-Rezept-Token erzeugt.: * Das E-Rezept ist im E-Rezept-Fachdienst gespeichert.
-* Der Workflow hat den Status “offen”.
+* Der Workflow hat den Status “ready”.
 * Das Einstellen ist im E-Rezept-Fachdienst für den Versicherten protokolliert.
 
 * Beschreibung: Schnittstellen
@@ -139,26 +139,26 @@ umsetzen.
 ##### UC 2.5 - E-Rezept durch Verordnenden löschen
 
 * Beschreibung: Vorbedingungen
-  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im E-Rezept-Fachdienst auf “gelöscht” gesetzt.: * UC 2.3 wurde ausgeführt.
+  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im E-Rezept-Fachdienst auf “cancelled” gesetzt.: * UC 2.3 wurde ausgeführt.
 * Rezept-ID und AccessCode sind bekannt.
-* Status im E-Rezept-Fachdienst ist “offen”.
+* Status im E-Rezept-Fachdienst ist “ready”.
 
 * Beschreibung: Durchzuführende Aktionen
-  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im E-Rezept-Fachdienst auf “gelöscht” gesetzt.: * Ein Mitarbeiter der verordnenden LEI markiert das E-Rezept zum Löschen und bestätigt den Vorgang.
+  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im E-Rezept-Fachdienst auf “cancelled” gesetzt.: * Ein Mitarbeiter der verordnenden LEI markiert das E-Rezept zum Löschen und bestätigt den Vorgang.
 * Das Primärsystem ruft den E-Rezept-Fachdienst mit Rezept-ID und AccessCode auf.
-* Der Status wird auf “gelöscht” gesetzt und medizinische Daten werden gelöscht.
+* Der Status wird auf “cancelled” gesetzt und medizinische Daten werden gelöscht.
 * Der AccessCode wird im Primärsystem gelöscht.
 
 * Beschreibung: Nachbedingungen
-  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im E-Rezept-Fachdienst auf “gelöscht” gesetzt.: * Der Workflow hat den Status “gelöscht”.
+  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im E-Rezept-Fachdienst auf “cancelled” gesetzt.: * Der Workflow hat den Status “cancelled”.
 * Die personenbezogene und medizinische Daten (ausser Versicherten-ID) sind aus dem Workflow entfernt.
 * Das Löschen ist im E-Rezept-Fachdienst für den Versicherten protokolliert.
 
 * Beschreibung: Schnittstellen
-  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im E-Rezept-Fachdienst auf “gelöscht” gesetzt.: * [Operation API: E-Rezept löschen](./op-abort.md)
+  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im E-Rezept-Fachdienst auf “cancelled” gesetzt.: * [Operation API: E-Rezept löschen](./op-abort.md)
 
 * Beschreibung: Relevante(r) Sektor(en)
-  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im E-Rezept-Fachdienst auf “gelöscht” gesetzt.:  (ZAHN-)ARZT  PSYCHOTHERAPEUT 
+  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im E-Rezept-Fachdienst auf “cancelled” gesetzt.:  (ZAHN-)ARZT  PSYCHOTHERAPEUT 
 
 **Tabelle:**Fachlicher Anwendungsfall UC 2.5 - E-Rezept durch Verordnenden löschen
 **Sequenzdiagramm:**
@@ -194,25 +194,25 @@ umsetzen.
 ##### UC 3.2 - E-Rezept durch Versicherten löschen
 
 * Beschreibung: Vorbedingungen
-  * Der Versicherte setzt den Status eines E-Rezepts auf “gelöscht” und löscht es im E-Rezept-Fachdienst.: * UC 3.1 wurde ausgeführt.
-* Status des E-Rezepts ist ungleich “in Abgabe (gesperrt)”.
+  * Der Versicherte setzt den Status eines E-Rezepts auf “cancelled” und löscht es im E-Rezept-Fachdienst.: * UC 3.1 wurde ausgeführt.
+* Status des E-Rezepts ist ungleich “in-progress”.
 
 * Beschreibung: Durchzuführende Aktionen
-  * Der Versicherte setzt den Status eines E-Rezepts auf “gelöscht” und löscht es im E-Rezept-Fachdienst.: * Versicherter wählt ein E-Rezept im E-Rezept-FdV und bestätigt das Löschen.
+  * Der Versicherte setzt den Status eines E-Rezepts auf “cancelled” und löscht es im E-Rezept-Fachdienst.: * Versicherter wählt ein E-Rezept im E-Rezept-FdV und bestätigt das Löschen.
 * Das E-Rezept-FdV überträgt die Löschanforderung an den E-Rezept-Fachdienst.
 * Der Status wird geändert; Daten im E-Rezept werden gelöscht.
 * Der E-Rezept-Token wird im E-Rezept-FdV gelöscht.
 
 * Beschreibung: Nachbedingungen
-  * Der Versicherte setzt den Status eines E-Rezepts auf “gelöscht” und löscht es im E-Rezept-Fachdienst.: * Der Workflow hat den Status “gelöscht”.
+  * Der Versicherte setzt den Status eines E-Rezepts auf “cancelled” und löscht es im E-Rezept-Fachdienst.: * Der Workflow hat den Status “cancelled”.
 * Die personenbezogene und medizinische Daten (ausser Versicherten-ID) sind aus dem Workflow entfernt.
 * Das Löschen ist im E-Rezept-Fachdienst für den Versicherten protokolliert.
 
 * Beschreibung: Schnittstellen
-  * Der Versicherte setzt den Status eines E-Rezepts auf “gelöscht” und löscht es im E-Rezept-Fachdienst.: * [Operation API: E-Rezept löschen](./op-abort.md)
+  * Der Versicherte setzt den Status eines E-Rezepts auf “cancelled” und löscht es im E-Rezept-Fachdienst.: * [Operation API: E-Rezept löschen](./op-abort.md)
 
 * Beschreibung: Relevante(r) Sektor(en)
-  * Der Versicherte setzt den Status eines E-Rezepts auf “gelöscht” und löscht es im E-Rezept-Fachdienst.:  VERSICHERTER 
+  * Der Versicherte setzt den Status eines E-Rezepts auf “cancelled” und löscht es im E-Rezept-Fachdienst.:  VERSICHERTER 
 
 **Tabelle:**Fachlicher Anwendungsfall UC 3.2 - E-Rezept durch Versicherten löschen
 **Sequenzdiagramm:**
@@ -322,17 +322,17 @@ Sobald die Telematik-ID im E-Rezept-FdV vorliegt, kann der Versicherte die Veror
 * Beschreibung: Vorbedingungen
   * Eine abgebende LEI ruft ein E-Rezept auf Basis eines E-Rezept-Tokens aus dem E-Rezept-Fachdienst ab.: * Ein E-Rezept-Token wurde übermittelt.
 * UC 4.6 wurde ausgeführt.
-* Token liegt im Primärsystem vor; Status des E-Rezepts ist “offen”.
+* Token liegt im Primärsystem vor; Status des E-Rezepts ist “ready”.
 
 * Beschreibung: Durchzuführende Aktionen
   * Eine abgebende LEI ruft ein E-Rezept auf Basis eines E-Rezept-Tokens aus dem E-Rezept-Fachdienst ab.: * Primärsystem ermittelt Rezept-ID und AccessCode aus dem Token.
 * Primärsystem ruft das E-Rezept beim E-Rezept-Fachdienst ab.
-* Status wechselt auf “in Abgabe (gesperrt)”.
+* Status wechselt auf “in-progress”.
 * E-Rezept-Fachdienst erzeugt ein Geheimnis zur Statusänderung und übermittelt es.
 * optional: Primärsystem prüft die QES über den Konnektor.
 
 * Beschreibung: Nachbedingungen
-  * Eine abgebende LEI ruft ein E-Rezept auf Basis eines E-Rezept-Tokens aus dem E-Rezept-Fachdienst ab.: * Status ist “in Abgabe (gesperrt)” und protokolliert.
+  * Eine abgebende LEI ruft ein E-Rezept auf Basis eines E-Rezept-Tokens aus dem E-Rezept-Fachdienst ab.: * Status ist “in-progress” und protokolliert.
 * E-Rezept liegt im AVS vor; Geheimnis ist gespeichert.
 
 * Beschreibung: Schnittstellen
@@ -351,15 +351,15 @@ Sobald die Telematik-ID im E-Rezept-FdV vorliegt, kann der Versicherte die Veror
 * Beschreibung: Vorbedingungen
   * Ein abgerufenes E-Rezept wird an den E-Rezept-Fachdienst zurückgegeben.: * UC 4.1 wurde ausgeführt.
 * Rezept-ID, AccessCode und Geheimnis sind bekannt.
-* Status ist “in Abgabe (gesperrt)”.
+* Status ist “in-progress”.
 
 * Beschreibung: Durchzuführende Aktionen
   * Ein abgerufenes E-Rezept wird an den E-Rezept-Fachdienst zurückgegeben.: * Abgebender markiert das E-Rezept zum Zurückgeben und bestätigt.
 * Primärsystem ruft den E-Rezept-Fachdienst mit Rezept-ID und Geheimnis auf.
-* Status wird auf “offen” geändert.
+* Status wird auf “ready” geändert.
 
 * Beschreibung: Nachbedingungen
-  * Ein abgerufenes E-Rezept wird an den E-Rezept-Fachdienst zurückgegeben.: * Status ist “offen” und protokolliert.
+  * Ein abgerufenes E-Rezept wird an den E-Rezept-Fachdienst zurückgegeben.: * Status ist “ready” und protokolliert.
 * E-Rezept, Token und Geheimnis sind im Primärsystem gelöscht.
 
 * Beschreibung: Schnittstellen
@@ -378,7 +378,7 @@ Sobald die Telematik-ID im E-Rezept-FdV vorliegt, kann der Versicherte die Veror
 * Beschreibung: Vorbedingungen
   * Nach der Abgabe wird das E-Rezept quittiert und eine Quittung vom E-Rezept-Fachdienst abgerufen.: * UC 4.1 wurde ausgeführt.
 * QES des E-Rezepts ist gültig geprüft.
-* Rezept-ID, AccessCode und Geheimnis sind bekannt; Status ist “in Abgabe (gesperrt)”.
+* Rezept-ID, AccessCode und Geheimnis sind bekannt; Status ist “in-progress”.
 
 * Beschreibung: Durchzuführende Aktionen
   * Nach der Abgabe wird das E-Rezept quittiert und eine Quittung vom E-Rezept-Fachdienst abgerufen.: * Abgebender markiert das E-Rezept als abgegeben.

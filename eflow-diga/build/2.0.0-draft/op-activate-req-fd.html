@@ -399,7 +399,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Prüfung Rezept-ID und Präfix gegen Flowtype" version="0" key="IG-TIFLOW-CORE-137">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"></testProcedure>
+        <testProcedure id="Produktgutachten"></testProcedure>
     </actor>
     Der E-Rezept-Fachdienst MUSS beim berechtigten Aufruf der Operation POST /Task/&lt;id&gt;/$activate prüfen, dass die PrescriptionID des Tasks mit der PrescriptionID im übergebenen QES-Datensatz übereinstimmt und der Präfix der PrescriptionID gleich dem Flowtype des zu aktivierenden Tasks ist und andernfalls die Operation mit dem http-Fehlercode 400 abbrechen.
 </requirement>
@@ -426,7 +426,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Übernahme der Versicherten-ID" version="0" key="IG-TIFLOW-CORE-140">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"></testProcedure>
+        <testProcedure id="Produktgutachten"></testProcedure>
     </actor>
     Der E-Rezept-Fachdienst MUSS im Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die KVNR des Patienten dem Identifier http://fhir.de/sid/gkv/kvid-10 der Patient-Ressource im E-Rezept-Bundle entnehmen und diesen als Identifier in Task.for mit system http://fhir.de/sid/gkv/kvid-10 hinzufügen, damit ausschließlich eine gültige, vom Arzt signierte Patientenreferenz im Workflow verwendet wird.
 </requirement>
@@ -677,7 +677,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 
 <p>Dieser Ausschluss erfolgt temporär. In einer späteren Version können Unfallkassen das Verordnen von DiGAs explizit unterstützen. Die konkreten Festlegungen dazu werden in einem Folgerelease getroffen.</p>
 
-  <!-- A_27845 -->
+  <!-- A_27845, A_19999 -->
 <requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prozessparameter" version="0" key="IG-TIFLOW-DIGA-16">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
@@ -758,7 +758,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 10, 2026 12:52+0000">2026-03-10</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Mar 12, 2026 05:37+0000">2026-03-12</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
