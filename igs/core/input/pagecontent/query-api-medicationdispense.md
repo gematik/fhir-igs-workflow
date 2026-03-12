@@ -23,12 +23,22 @@ Anfragen an die <i>MedicationDispense</i>-Ressource können über die RESTful AP
 
 #### API Beschreibung
 
-- [API-ERP: Abgabeinformationen abrufen](https://github.com/gematik/api-erp/blob/master/docs/erp_versicherte.adoc#abgabeinformationen-abrufen)
-- [API-ERP: Abgabeinformationen zu einem E-Rezept abrufen](https://github.com/gematik/api-erp/blob/master/docs/erp_versicherte.adoc#abgabeinformationen-zu-einem-e-rezept-abrufen)
-
-<!-- ### Instance API -->
-
-<!-- TODO: für neuausschreibung einzelne API mit richtiger /<id>? -->
+<div class="gematik-api"
+  data-api-type="FHIRInteraction"
+  data-api-fhir-resource="MedicationDispense"
+  data-api-fhir-interaction="search-type">
+  <div id="CapabilityStatement">
+    <pre>
+      {% include CapabilityStatement-erp-fachdienst-server.json %}
+    </pre>
+  </div>
+  <div id="Request-Examples">
+    <!-- TODO: Request-Beispiel für GET /MedicationDispense (FdV, JSON) ergänzen -->
+  </div>
+  <div id="Response-Examples">
+    <!-- TODO: Response-Beispiel für GET /MedicationDispense Bundle (FdV, JSON) ergänzen -->
+  </div>
+</div>
 
 
 

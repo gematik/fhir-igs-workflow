@@ -25,7 +25,22 @@ Anfragen an die <i>Communication</i>-Ressource können über die RESTful API mit
 
 #### API Beschreibung
 
-- [API-ERP: Communications](https://github.com/gematik/api-erp/blob/master/docs/erp_communication.adoc)
+<div class="gematik-api"
+  data-api-type="FHIRInteraction"
+  data-api-fhir-resource="Communication"
+  data-api-fhir-interaction="search-type">
+  <div id="CapabilityStatement">
+    <pre>
+      {% include CapabilityStatement-erp-fachdienst-server.json %}
+    </pre>
+  </div>
+  <div id="Request-Examples">
+    <!-- TODO: Request-Beispiele für GET /Communication ergänzen (FdV: JSON, AVS: XML, KTR: XML) -->
+  </div>
+  <div id="Response-Examples">
+    <!-- TODO: Response-Beispiele für GET /Communication Bundle ergänzen (FdV: JSON, AVS: XML, KTR: XML) -->
+  </div>
+</div>
 
 #### Hinweis
 

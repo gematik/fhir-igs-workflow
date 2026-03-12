@@ -22,7 +22,22 @@ Anfragen an die <i>Subscription</i>-Ressource können über die RESTful API mitt
 
 #### API Beschreibung
 
-- [API-ERP: Benachrichtigungen für Apotheken](https://github.com/gematik/api-erp/blob/master/docs/erp_notification_avs.adoc)
+<div class="gematik-api"
+  data-api-type="FHIRInteraction"
+  data-api-fhir-resource="Subscription"
+  data-api-fhir-interaction="create">
+  <div id="CapabilityStatement">
+    <pre>
+      {% include CapabilityStatement-erp-fachdienst-server.json %}
+    </pre>
+  </div>
+  <div id="Request-Examples">
+    <!-- TODO: Request-Beispiel für POST /Subscription (AVS/KTR, XML) ergänzen -->
+  </div>
+  <div id="Response-Examples">
+    <!-- TODO: Response-Beispiel für POST /Subscription (AVS/KTR, XML) ergänzen -->
+  </div>
+</div>
 
 #### Beispielhafter Ablauf
 

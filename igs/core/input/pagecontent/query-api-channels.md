@@ -23,6 +23,7 @@ Der E-Rezept-Fachdienst unterstützt das optionale Feature "Channels". Ruft alle
 
 #### API Beschreibung
 
-- [API-ERP: Channel Verwaltung](https://github.com/gematik/api-erp/blob/master/docs/erp_push_notifications.adoc#channel-verwaltung)
+<!-- INFO: Channels ist kein FHIR-Endpunkt, daher kein gematik-api div mit CapabilityStatement möglich. -->
+<!-- TODO: API-Beschreibung für Channels (non-FHIR, FdV-only, JSON) ergänzen -->
 
 

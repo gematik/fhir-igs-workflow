@@ -31,7 +31,22 @@ Durch Angabe des URL-Parameter `?secret=` bei der GET-Operation kann eine abgebe
 
 #### API Beschreibung
 
-- [API-ERP: Alle E-Rezepte ansehen (FdV)](https://github.com/gematik/api-erp/blob/master/docs/erp_versicherte.adoc#alle-e-rezepte-ansehen)
+<div class="gematik-api"
+  data-api-type="FHIRInteraction"
+  data-api-fhir-resource="Task"
+  data-api-fhir-interaction="search-type">
+  <div id="CapabilityStatement">
+    <pre>
+      {% include CapabilityStatement-erp-fachdienst-server.json %}
+    </pre>
+  </div>
+  <div id="Request-Examples">
+    <!-- TODO: Request-Beispiel für GET /Task (FdV, JSON) ergänzen -->
+  </div>
+  <div id="Response-Examples">
+    <!-- TODO: Response-Beispiel für GET /Task Bundle (FdV, JSON) ergänzen -->
+  </div>
+</div>
 
 ### Instance API
 
@@ -39,7 +54,20 @@ Um spezifische Details zu einem einzelnen _Task_ mittels der RESTful API zu erha
 
 #### API Beschreibung
 
-- [API-ERP: E-Rezept abrufen (FdV)](https://github.com/gematik/api-erp/blob/master/docs/erp_versicherte.adoc#ein-einzelnes-e-rezept-abrufen-und-in-der-apotheke-einl%C3%B6sen)
-- [API-ERP: E-Rezept erneut abrufen (PS abgebend)](https://github.com/gematik/api-erp/blob/master/docs/erp_abrufen.adoc#e-rezept-erneut-abrufen)
-- [API-ERP: Quittung erneut abrufen (PS abgebend)](https://github.com/gematik/api-erp/blob/master/docs/erp_abrufen.adoc#quittung-erneut-abrufen)
+<div class="gematik-api"
+  data-api-type="FHIRInteraction"
+  data-api-fhir-resource="Task"
+  data-api-fhir-interaction="read">
+  <div id="CapabilityStatement">
+    <pre>
+      {% include CapabilityStatement-erp-fachdienst-server.json %}
+    </pre>
+  </div>
+  <div id="Request-Examples">
+    <!-- TODO: Request-Beispiele für GET /Task/{id} ergänzen (FdV: JSON, AVS/KTR: XML) -->
+  </div>
+  <div id="Response-Examples">
+    <!-- TODO: Response-Beispiele für GET /Task/{id} ergänzen (FdV: JSON, AVS/KTR: XML) -->
+  </div>
+</div>
 

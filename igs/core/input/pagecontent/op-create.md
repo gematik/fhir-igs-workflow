@@ -11,11 +11,6 @@ Die Nachricht wird als HTTP `POST` an `/Task/$create` gesendet.
 
 ### API Beschreibung
 
-Die API-Beschreibung für den Aufruf der Operation findet sich auf:
-- [API-ERP: E-Rezept erstellen](https://github.com/gematik/api-erp/blob/master/docs/erp_bereitstellen.adoc#e-rezept-erstellen)
-
-{% comment %}
-TODO zum wiedereinführen für die Neuausschreibung
 <div class="gematik-api"
   data-api-type="FHIROperation"
   data-api-fhir-invoke-level="type"
@@ -44,7 +39,6 @@ TODO zum wiedereinführen für die Neuausschreibung
     </div>
   </div>
 </div>
-{% endcomment %}
 
 ### Hinweis
 

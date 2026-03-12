@@ -22,5 +22,6 @@ Ist `kind` nicht `null`, wird der Pusher mit dieser `app_id` und `pushkey` für 
 
 #### API Beschreibung
 
-- [API-ERP: Pusher Verwaltung](https://github.com/gematik/api-erp/blob/master/docs/erp_push_notifications.adoc#pusher-verwaltung)
+<!-- INFO: Pushers ist kein FHIR-Endpunkt, daher kein gematik-api div mit CapabilityStatement möglich. -->
+<!-- TODO: API-Beschreibung für Pushers (non-FHIR, FdV-only, JSON) ergänzen -->
 

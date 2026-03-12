@@ -27,5 +27,20 @@ Anfragen an die <i>Consent</i>-Ressource können über die RESTful API durchgef�
 
 #### API Beschreibung
 
-- [API-ERP: Consent](https://github.com/gematik/api-erp/blob/master/docs/erp_consent.adoc)
+<div class="gematik-api"
+  data-api-type="FHIRInteraction"
+  data-api-fhir-resource="Consent"
+  data-api-fhir-interaction="search-type">
+  <div id="CapabilityStatement">
+    <pre>
+      {% include CapabilityStatement-erp-fachdienst-server.json %}
+    </pre>
+  </div>
+  <div id="Request-Examples">
+    <!-- TODO: Request-Beispiel für GET /Consent (FdV, JSON) ergänzen -->
+  </div>
+  <div id="Response-Examples">
+    <!-- TODO: Response-Beispiel für GET /Consent Bundle (FdV, JSON) ergänzen -->
+  </div>
+</div>
 
