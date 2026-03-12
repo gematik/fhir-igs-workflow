@@ -25,9 +25,9 @@ Anfragen an die <i>Communication</i>-Ressource können über die RESTful API mit
 
 #### API Beschreibung
 
-<div class="gematik-api"
-  data-api-type="FHIRInteraction"
-  data-api-fhir-resource="Communication"
+<div class="gematik-apidoc"
+  data-api-type="FHIRResource"
+  data-api-fhir-resource-type="Communication"
   data-api-fhir-interaction="search-type">
   <div id="CapabilityStatement">
     <pre>

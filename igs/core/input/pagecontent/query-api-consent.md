@@ -27,9 +27,9 @@ Anfragen an die <i>Consent</i>-Ressource können über die RESTful API durchgef�
 
 #### API Beschreibung
 
-<div class="gematik-api"
-  data-api-type="FHIRInteraction"
-  data-api-fhir-resource="Consent"
+<div class="gematik-apidoc"
+  data-api-type="FHIRResource"
+  data-api-fhir-resource-type="Consent"
   data-api-fhir-interaction="search-type">
   <div id="CapabilityStatement">
     <pre>

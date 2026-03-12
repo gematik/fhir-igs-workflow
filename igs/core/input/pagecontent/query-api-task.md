@@ -31,9 +31,9 @@ Durch Angabe des URL-Parameter `?secret=` bei der GET-Operation kann eine abgebe
 
 #### API Beschreibung
 
-<div class="gematik-api"
-  data-api-type="FHIRInteraction"
-  data-api-fhir-resource="Task"
+<div class="gematik-apidoc"
+  data-api-type="FHIRResource"
+  data-api-fhir-resource-type="Task"
   data-api-fhir-interaction="search-type">
   <div id="CapabilityStatement">
     <pre>
@@ -54,9 +54,9 @@ Um spezifische Details zu einem einzelnen _Task_ mittels der RESTful API zu erha
 
 #### API Beschreibung
 
-<div class="gematik-api"
-  data-api-type="FHIRInteraction"
-  data-api-fhir-resource="Task"
+<div class="gematik-apidoc"
+  data-api-type="FHIRResource"
+  data-api-fhir-resource-type="Task"
   data-api-fhir-interaction="read">
   <div id="CapabilityStatement">
     <pre>

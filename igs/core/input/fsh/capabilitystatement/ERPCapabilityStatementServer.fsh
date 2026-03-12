@@ -17,6 +17,112 @@ Usage: #definition
 * format[+] = #application/fhir+xml
 * rest.mode = #server
 * extension[baseUrl].valueString = "http://tiflow"
-* insert Error423Locked
+* insert TaskInteraction(#SHALL)
+* insert CommunicationInteraction(#SHALL)
+* insert AuditEventInteraction(#SHALL)
+* insert WorkflowMedicationDispenseInteraction(#SHALL)
 //* insert ImportCapabilityStatment("https://gematik.de/fhir/workflow/core/CapabilityStatement/erp-fachdienst-server", #SHALL)
+
+RuleSet: TaskInteraction(expectation)
+* insert CapSupportResource(Task, #SHALL)
+* insert CapSupportProfile(GEM_ERP_PR_Task, #SHALL)
+
+* insert CapResourceInteraction(#search-type, #SHALL)
+* insert SearchTypeInteractionStatusCodes
+* insert CapResourceInteraction(#read, #SHALL)
+* insert ReadInteractionStatusCodes
+
+* insert CapSupportResourceSearchParamNoDefinition(authored-on, #date, {expectation}, "Task.authoredOn; default sort if _sort is not provided")
+* insert CapSupportResourceSearchParamNoDefinition(status, #token, {expectation}, "Task.status")
+* insert CapSupportResourceSearchParamNoDefinition(expiry-date, #date, {expectation}, "Task.extension:expiryDate.valueDate")
+* insert CapSupportResourceSearchParamNoDefinition(accept-date, #date, {expectation}, "Task.extension:acceptDate.valueDate")
+* insert CapSupportResourceSearchParamNoDefinition(modified, #date, {expectation}, "Task.lastModified")
+* insert CapSupportResourceSearchParamNoDefinition(_sort, #string, {expectation}, "Supports sorting over supported Task search criteria")
+* insert CapSupportResourceSearchParamNoDefinition(_count, #number, {expectation}, "Maximum number of returned entries per page; max value is 50")
+* insert CapSupportResourceSearchParamNoDefinition(__offset, #number, {expectation}, "Zero-based offset of the first returned entry; default is 0")
+
+* insert CapSupportResourceOperation(create, CreateOperation, {expectation})
+* insert TaskPostOperationStatusCodes
+* insert CapSupportResourceOperation(activate, ActivateOperation, {expectation})
+* insert TaskPostOperationStatusCodes
+* insert CapSupportResourceOperation(accept, AcceptOperation, {expectation})
+* insert TaskPostOperationStatusCodes
+* insert CapSupportResourceOperation(reject, RejectOperation, {expectation})
+* insert TaskPostOperationStatusCodes
+* insert CapSupportResourceOperation(close, CloseOperation, {expectation})
+* insert TaskPostOperationStatusCodes
+* insert CapSupportResourceOperation(abort, AbortOperation, {expectation})
+* insert TaskPostOperationStatusCodes
+
+RuleSet: CommunicationInteraction(expectation)
+* insert CapSupportResource(Communication, #SHALL)
+* insert CapSupportProfile(GEM_ERP_PR_Communication, #SHALL)
+* insert CapSupportProfile(GEM_ERP_PR_Communication_DispReq, #SHALL)
+* insert CapSupportProfile(GEM_ERP_PR_Communication_Reply, #SHALL)
+* insert CapSupportProfile(GEM_ERP_PR_Communication_Representative, #SHALL)
+
+* insert CapResourceInteraction(#search-type, #SHALL)
+* insert SearchTypeInteractionStatusCodes
+* insert CapResourceInteraction(#read, #SHALL)
+* insert ReadInteractionStatusCodes
+* insert CapResourceInteraction(#create, #SHALL)
+* insert CreateInteractionStatusCodes
+* insert CapResourceInteraction(#delete, #SHALL)
+* insert DeleteInteractionStatusCodes
+
+* insert CapSupportResourceSearchParamNoDefinition(sent, #date, {expectation}, "Communication.sent; default sort if _sort is not provided")
+* insert CapSupportResourceSearchParamNoDefinition(received, #date, {expectation}, "Communication.received")
+* insert CapSupportResourceSearchParamNoDefinition(recipient, #string, {expectation}, "Communication.recipient.identifier.value")
+* insert CapSupportResourceSearchParamNoDefinition(sender, #string, {expectation}, "Communication.sender.identifier.value")
+* insert CapSupportResourceSearchParamNoDefinition(_sort, #string, {expectation}, "Supports sorting over supported Communication search criteria")
+* insert CapSupportResourceSearchParamNoDefinition(_count, #number, {expectation}, "Maximum number of returned entries per page; max value is 50")
+* insert CapSupportResourceSearchParamNoDefinition(__offset, #number, {expectation}, "Zero-based offset of the first returned entry; default is 0")
+
+RuleSet: AuditEventInteraction(expectation)
+* insert CapSupportResource(AuditEvent, #SHALL)
+* insert CapSupportProfile(GEM_ERP_PR_AuditEvent, #SHALL)
+
+* insert CapResourceInteraction(#search-type, #SHALL)
+* insert SearchTypeInteractionStatusCodes
+* insert CapResourceInteraction(#read, #SHALL)
+* insert ReadInteractionStatusCodes
+
+* insert CapSupportResourceSearchParamNoDefinition(date, #date, {expectation}, "AuditEvent.recorded; default sort if _sort is not provided")
+* insert CapSupportResourceSearchParamNoDefinition(entity, #string, {expectation}, "AuditEvent.entity.what.identifier.value")
+* insert CapSupportResourceSearchParamNoDefinition(_sort, #string, {expectation}, "Supports sorting over supported AuditEvent search criteria")
+* insert CapSupportResourceSearchParamNoDefinition(_count, #number, {expectation}, "Maximum number of returned entries per page; max value is 50")
+* insert CapSupportResourceSearchParamNoDefinition(__offset, #number, {expectation}, "Zero-based offset of the first returned entry; default is 0")
+
+RuleSet: WorkflowMedicationDispenseInteraction(expectation)
+* insert CapSupportResource(MedicationDispense, #SHALL)
+* insert CapSupportProfile(GEM_ERP_PR_MedicationDispense, #SHALL)
+
+* insert CapResourceInteraction(#search-type, #SHALL)
+* insert SearchTypeInteractionStatusCodes
+* insert CapResourceInteraction(#read, #SHALL)
+* insert ReadInteractionStatusCodes
+
+* insert CapSupportResourceSearchParamNoDefinition(whenhandedover, #date, {expectation}, "MedicationDispense.whenHandedOver; default sort if _sort is not provided")
+* insert CapSupportResourceSearchParamNoDefinition(whenprepared, #date, {expectation}, "MedicationDispense.whenPrepared")
+* insert CapSupportResourceSearchParamNoDefinition(performer, #string, {expectation}, "MedicationDispense.performer.actor.identifier.value")
+* insert CapSupportResourceSearchParamNoDefinition(_sort, #string, {expectation}, "Supports sorting over supported MedicationDispense search criteria")
+
+RuleSet: TaskPostOperationStatusCodes
+* rest.resource[=].operation[=] insert Successful
+* rest.resource[=].operation[=] insert InvalidRequest
+* rest.resource[=].operation[=] insert ResourceIsNotKnown
+* rest.resource[=].operation[=] insert ResourceWasDeleted
+* rest.resource[=].operation[=] insert WrongStatusParameter
+
+RuleSet: CreateInteractionStatusCodes
+* rest.resource[=].interaction[=] insert Successful
+* rest.resource[=].interaction[=] insert InvalidRequest
+* rest.resource[=].interaction[=] insert UnknownResourceType
+
+RuleSet: DeleteInteractionStatusCodes
+* rest.resource[=].interaction[=] insert Successful
+* rest.resource[=].interaction[=] insert InvalidRequest
+* rest.resource[=].interaction[=] insert UnknownResourceType
+* rest.resource[=].interaction[=] insert ResourceIsNotKnown
+* rest.resource[=].interaction[=] insert ResourceWasDeleted
 

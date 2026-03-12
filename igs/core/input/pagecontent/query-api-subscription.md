@@ -22,9 +22,9 @@ Anfragen an die <i>Subscription</i>-Ressource können über die RESTful API mitt
 
 #### API Beschreibung
 
-<div class="gematik-api"
-  data-api-type="FHIRInteraction"
-  data-api-fhir-resource="Subscription"
+<div class="gematik-apidoc"
+  data-api-type="FHIRResource"
+  data-api-fhir-resource-type="Subscription"
   data-api-fhir-interaction="create">
   <div id="CapabilityStatement">
     <pre>

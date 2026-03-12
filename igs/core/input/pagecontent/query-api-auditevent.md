@@ -13,9 +13,9 @@ Die AuditEvent-Query wird ueber HTTP `GET` auf `/AuditEvent` und `/AuditEvent/{i
 
 ### API Beschreibung
 
-<div class="gematik-api"
-  data-api-type="FHIRInteraction"
-  data-api-fhir-resource="AuditEvent"
+<div class="gematik-apidoc"
+  data-api-type="FHIRResource"
+  data-api-fhir-resource-type="AuditEvent"
   data-api-fhir-interaction="search-type">
   <div id="CapabilityStatement">
     <pre>

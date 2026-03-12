@@ -23,9 +23,9 @@ Anfragen an die <i>MedicationDispense</i>-Ressource können über die RESTful AP
 
 #### API Beschreibung
 
-<div class="gematik-api"
-  data-api-type="FHIRInteraction"
-  data-api-fhir-resource="MedicationDispense"
+<div class="gematik-apidoc"
+  data-api-type="FHIRResource"
+  data-api-fhir-resource-type="MedicationDispense"
   data-api-fhir-interaction="search-type">
   <div id="CapabilityStatement">
     <pre>

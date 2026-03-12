@@ -13,9 +13,9 @@ Die Device-Query wird ueber HTTP `GET` auf `/Device` aufgerufen.
 
 ### API Beschreibung
 
-<div class="gematik-api"
-  data-api-type="FHIRInteraction"
-  data-api-fhir-resource="Device"
+<div class="gematik-apidoc"
+  data-api-type="FHIRResource"
+  data-api-fhir-resource-type="Device"
   data-api-fhir-interaction="read">
   <div id="CapabilityStatement">
     <pre>
