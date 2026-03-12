@@ -13,6 +13,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$reject` gesendet.
 
 <div class="gematik-api"
   data-api-type="FHIROperation"
+  data-api-fhir-resource-type="Task"
   data-api-fhir-invoke-level="instance"
   data-api-operation-id="rejectOperation">
   <div id="CapabilityStatement">

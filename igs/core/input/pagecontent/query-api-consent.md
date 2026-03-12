@@ -26,6 +26,8 @@ Anfragen an die <i>Consent</i>-Ressource können über die RESTful API durchgef�
 
 #### API Beschreibung
 
+#### with search-type
+
 <div class="gematik-apidoc"
   data-api-type="FHIRResource"
   data-api-fhir-resource-type="Consent"
@@ -44,4 +46,54 @@ Anfragen an die <i>Consent</i>-Ressource können über die RESTful API durchgef�
     </div>
   </div>
 </div>
+
+#### with read
+
+<div class="gematik-apidoc"
+  data-api-type="FHIRResource"
+  data-api-fhir-resource-type="Consent"
+  data-api-fhir-interaction="read">
+  <div id="CapabilityStatement">
+    <pre>
+      {% include CapabilityStatement-erp-fachdienst-server.json %}
+    </pre>
+  </div>
+  <div id="Response-Examples">
+    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+      {% fragment Bundle/example-searchset-consent JSON %}
+    </div>
+    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+      {% fragment Bundle/example-searchset-consent XML %}
+    </div>
+  </div>
+</div>
+
+#### DELTE
+
+<div class="gematik-apidoc"
+  data-api-type="FHIRResource"
+  data-api-fhir-resource-type="Consent"
+  data-api-fhir-interaction="delete">
+  <div id="CapabilityStatement">
+    <pre>
+      {% include CapabilityStatement-erp-fachdienst-server.json %}
+    </pre>
+  </div>
+  <div id="Response-Examples">
+    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+      {% fragment Bundle/example-searchset-consent JSON %}
+    </div>
+    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+      {% fragment Bundle/example-searchset-consent XML %}
+    </div>
+  </div>
+</div>
+
+Fragment json:
+
+{% fragment Bundle/example-searchset-consent JSON %}
+
+Fragment XML
+
+{% fragment Bundle/example-searchset-consent XML %}
 

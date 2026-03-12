@@ -237,6 +237,11 @@ RuleSet: CapSupportProfile (profile, expectation)
 * rest.resource[=].supportedProfile[=].extension[0].url = $capabilitystatement-expectation
 * rest.resource[=].supportedProfile[=].extension[0].valueCode = {expectation}
 
+RuleSet: CapSupportProfileUrl(profileUrl, expectation)
+* rest.resource[=].supportedProfile[+] = "{profileUrl}"
+* rest.resource[=].supportedProfile[=].extension[0].url = $capabilitystatement-expectation
+* rest.resource[=].supportedProfile[=].extension[0].valueCode = {expectation}
+
 RuleSet: CapResourceInteraction (interaction, expectation)
 * rest.resource[=] insert CapInteraction({interaction}, {expectation})
 

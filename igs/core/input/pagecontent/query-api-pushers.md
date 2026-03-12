@@ -22,6 +22,51 @@ Ist `kind` nicht `null`, wird der Pusher mit dieser `app_id` und `pushkey` für 
 
 #### API Beschreibung
 
-<!-- INFO: Pushers ist kein FHIR-Endpunkt, daher kein gematik-api div mit CapabilityStatement möglich. -->
-<!-- TODO: API-Beschreibung für Pushers (non-FHIR, FdV-only, JSON) ergänzen -->
+##### GET /pushers
+
+<div class="gematik-api"
+	data-api-type="Custom"
+	data-api-method="GET"
+	data-api-operation-id="getPushers_erp_fd"
+	data-api-url-path="/pushers">
+	<div id="CapabilityStatement">
+		<pre>
+		{% include CapabilityStatement-erp-fachdienst-server.json %}
+		</pre>
+	</div>
+	<div id="Formats">
+			<div data-value="application/json"></div>
+	</div>
+	<div id="Responses">
+		<div data-code="200" data-error-code="" data-response-type="application/json">Successful operation</div>
+		<div data-code="400" data-error-code="badRequest" data-response-type="application/fhir+json">Bad Request</div>
+		<div data-code="401" data-error-code="unauthorized" data-response-type="application/fhir+json">Unauthorized</div>
+		<div data-code="403" data-error-code="forbidden" data-response-type="application/fhir+json">Forbidden</div>
+		<div data-code="429" data-error-code="tooManyRequests" data-response-type="application/fhir+json">Too Many Requests</div>
+	</div>
+</div>
+
+##### POST /pushers/set
+
+<div class="gematik-api"
+	data-api-type="Custom"
+	data-api-method="POST"
+	data-api-operation-id="setPusher_erp_fd"
+	data-api-url-path="/pushers/set">
+	<div id="CapabilityStatement">
+		<pre>
+		{% include CapabilityStatement-erp-fachdienst-server.json %}
+		</pre>
+	</div>
+	<div id="Formats">
+			<div data-value="application/json"></div>
+	</div>
+	<div id="Responses">
+		<div data-code="200" data-error-code="" data-response-type="application/json">Successful operation</div>
+		<div data-code="400" data-error-code="badRequest" data-response-type="application/fhir+json">Bad Request</div>
+		<div data-code="401" data-error-code="unauthorized" data-response-type="application/fhir+json">Unauthorized</div>
+		<div data-code="403" data-error-code="forbidden" data-response-type="application/fhir+json">Forbidden</div>
+		<div data-code="429" data-error-code="tooManyRequests" data-response-type="application/fhir+json">Too Many Requests</div>
+	</div>
+</div>
 

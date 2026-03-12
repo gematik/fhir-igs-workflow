@@ -18,9 +18,13 @@ Usage: #definition
 * rest.mode = #server
 * extension[baseUrl].valueString = "http://tiflow"
 * insert TaskInteraction(#SHALL)
+* insert ChargeItemInteraction(#SHALL)
+* insert ConsentInteraction(#SHALL)
 * insert CommunicationInteraction(#SHALL)
 * insert AuditEventInteraction(#SHALL)
 * insert WorkflowMedicationDispenseInteraction(#SHALL)
+* insert DeviceInteraction(#SHALL)
+* insert SubscriptionInteraction(#SHALL)
 //* insert ImportCapabilityStatment("https://gematik.de/fhir/workflow/core/CapabilityStatement/erp-fachdienst-server", #SHALL)
 
 RuleSet: TaskInteraction(expectation)
@@ -31,11 +35,13 @@ RuleSet: TaskInteraction(expectation)
 * insert SearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#read, #SHALL)
 * insert ReadInteractionStatusCodes
+* insert CapResourceInteraction(#patch, #SHALL)
+* insert PatchInteractionStatusCodes
 
 * insert CapSupportResourceSearchParamNoDefinition(authored-on, #date, {expectation}, "Task.authoredOn; default sort if _sort is not provided")
 * insert CapSupportResourceSearchParamNoDefinition(status, #token, {expectation}, "Task.status")
-* insert CapSupportResourceSearchParamNoDefinition(expiry-date, #date, {expectation}, "Task.extension:expiryDate.valueDate")
-* insert CapSupportResourceSearchParamNoDefinition(accept-date, #date, {expectation}, "Task.extension:acceptDate.valueDate")
+* insert CapSupportCustomSearchParam(expiry-date, TaskExpiryDateSP, #date, {expectation}, "Task.extension:expiryDate.valueDate")
+* insert CapSupportCustomSearchParam(accept-date, TaskAcceptDateSP, #date, {expectation}, "Task.extension:acceptDate.valueDate")
 * insert CapSupportResourceSearchParamNoDefinition(modified, #date, {expectation}, "Task.lastModified")
 * insert CapSupportResourceSearchParamNoDefinition(_sort, #string, {expectation}, "Supports sorting over supported Task search criteria")
 * insert CapSupportResourceSearchParamNoDefinition(_count, #number, {expectation}, "Maximum number of returned entries per page; max value is 50")
@@ -53,6 +59,42 @@ RuleSet: TaskInteraction(expectation)
 * insert TaskPostOperationStatusCodes
 * insert CapSupportResourceOperation(abort, AbortOperation, {expectation})
 * insert TaskPostOperationStatusCodes
+* insert CapSupportResourceOperation(dispense, DispenseOperation, {expectation})
+* insert TaskPostOperationStatusCodes
+
+RuleSet: ChargeItemInteraction(expectation)
+* insert CapSupportResource(ChargeItem, {expectation})
+
+* insert CapResourceInteraction(#search-type, #SHALL)
+* insert SearchTypeInteractionStatusCodes
+* insert CapResourceInteraction(#read, #SHALL)
+* insert ReadInteractionStatusCodes
+* insert CapResourceInteraction(#create, #SHALL)
+* insert CreateInteractionStatusCodes
+* insert CapResourceInteraction(#update, #SHALL)
+* insert UpdateInteractionStatusCodes
+* insert CapResourceInteraction(#patch, #SHALL)
+* insert PatchInteractionStatusCodes
+* insert CapResourceInteraction(#delete, #SHALL)
+* insert DeleteInteractionStatusCodes
+
+* insert CapSupportResourceSearchParam(_lastUpdated, http://hl7.org/fhir/SearchParameter/Resource-lastUpdated, #date, {expectation}, "Resource.meta.lastUpdated")
+* insert CapSupportResourceSearchParam(identifier, http://hl7.org/fhir/SearchParameter/clinical-identifier, #token, {expectation}, "ChargeItem.identifier")
+* insert CapSupportResourceSearchParamNoDefinition(_sort, #string, {expectation}, "Supports sorting over supported ChargeItem search criteria")
+* insert CapSupportResourceSearchParamNoDefinition(_count, #number, {expectation}, "Maximum number of returned entries per page; max value is 50")
+* insert CapSupportResourceSearchParamNoDefinition(__offset, #number, {expectation}, "Zero-based offset of the first returned entry; default is 0")
+
+RuleSet: ConsentInteraction(expectation)
+* insert CapSupportResource(Consent, {expectation})
+
+* insert CapResourceInteraction(#search-type, #SHALL)
+* insert SearchTypeInteractionStatusCodes
+* insert CapResourceInteraction(#create, #SHALL)
+* insert CreateInteractionStatusCodes
+* insert CapResourceInteraction(#delete, #SHALL)
+* insert DeleteInteractionStatusCodes
+
+* insert CapSupportResourceSearchParam(category, http://hl7.org/fhir/SearchParameter/Consent-category, #token, {expectation}, "Consent.category")
 
 RuleSet: CommunicationInteraction(expectation)
 * insert CapSupportResource(Communication, #SHALL)
@@ -107,6 +149,21 @@ RuleSet: WorkflowMedicationDispenseInteraction(expectation)
 * insert CapSupportResourceSearchParamNoDefinition(performer, #string, {expectation}, "MedicationDispense.performer.actor.identifier.value")
 * insert CapSupportResourceSearchParamNoDefinition(_sort, #string, {expectation}, "Supports sorting over supported MedicationDispense search criteria")
 
+RuleSet: DeviceInteraction(expectation)
+* insert CapSupportResource(Device, {expectation})
+* insert CapSupportProfile(GEM_ERP_PR_Device, {expectation})
+
+* insert CapResourceInteraction(#search-type, {expectation})
+* insert SearchTypeInteractionStatusCodes
+
+RuleSet: SubscriptionInteraction(expectation)
+* insert CapSupportResource(Subscription, {expectation})
+
+* insert CapResourceInteraction(#search-type, {expectation})
+* insert SearchTypeInteractionStatusCodes
+* insert CapResourceInteraction(#create, {expectation})
+* insert CreateInteractionStatusCodes
+
 RuleSet: TaskPostOperationStatusCodes
 * rest.resource[=].operation[=] insert Successful
 * rest.resource[=].operation[=] insert InvalidRequest
@@ -120,6 +177,20 @@ RuleSet: CreateInteractionStatusCodes
 * rest.resource[=].interaction[=] insert UnknownResourceType
 
 RuleSet: DeleteInteractionStatusCodes
+* rest.resource[=].interaction[=] insert Successful
+* rest.resource[=].interaction[=] insert InvalidRequest
+* rest.resource[=].interaction[=] insert UnknownResourceType
+* rest.resource[=].interaction[=] insert ResourceIsNotKnown
+* rest.resource[=].interaction[=] insert ResourceWasDeleted
+
+RuleSet: UpdateInteractionStatusCodes
+* rest.resource[=].interaction[=] insert Successful
+* rest.resource[=].interaction[=] insert InvalidRequest
+* rest.resource[=].interaction[=] insert UnknownResourceType
+* rest.resource[=].interaction[=] insert ResourceIsNotKnown
+* rest.resource[=].interaction[=] insert ResourceWasDeleted
+
+RuleSet: PatchInteractionStatusCodes
 * rest.resource[=].interaction[=] insert Successful
 * rest.resource[=].interaction[=] insert InvalidRequest
 * rest.resource[=].interaction[=] insert UnknownResourceType

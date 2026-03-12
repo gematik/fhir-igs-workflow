@@ -13,6 +13,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/$create` gesendet.
 
 <div class="gematik-api"
   data-api-type="FHIROperation"
+  data-api-fhir-resource-type="Task"
   data-api-fhir-invoke-level="type"
   data-api-operation-id="createOperation">
   <div id="CapabilityStatement">
