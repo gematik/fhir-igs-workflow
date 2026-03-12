@@ -7,7 +7,7 @@ Der E-Rezept-Fachdienst nutzt den OAuth 2.0 Client Credentials Flow nach [OAuth 
 Über einen organisatorischen Prozess müssen Client Credentials beim BfArM angefragt werden, welche zur Authentifizierung des E-Rezept-Fachdienst ggü. dem BfArM Webdienst genutzt werden.
 
 <!-- A_27819 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-1" title="Anbieter E-Rezept Fachdienst - BfArM - Registrierung für Client Credentials am BfArM Webdienst" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-1" title="Anbieter E-Rezept-Fachdienst - BfArM - Registrierung für Client Credentials am BfArM Webdienst" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
