@@ -1,24 +1,21 @@
 actor:
-- eRp_FD
+- PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: af7cf8324b286df1e2a7e63ddacf653f2f674e8fe29f6178f5c695f7d860e099
+content_hash: 40d95da37ad153a740c84dd7f235cd39f37018e98d3d3a00c8438609aa56dcb2
 created: '2026-03-10T07:01:45.480286'
-date: '2026-03-10T07:01:45.480289'
+date: '2026-03-12T14:55:02.960423'
 key: IG-TIFLOW-CHRG-52
-modified: '2026-03-10T07:01:45.480288'
+modified: '2026-03-12T14:55:02.960423'
 release_status: NEW
-source: input/pagecontent/query-api-chargeitem-req-fd.md
+source: input/pagecontent/menu-technische-umsetzung-anwendungsfaelle.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf eine konkrete
-  über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch einen Versicherten,
-  den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header
-  des HTTP-Requests identifizieren, diese gegen die in ChargeItem.subject.identifier
-  hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit den Aufruf
-  mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich der begünstigte Versicherte
-  eine Abrechnungsinformation abrufen kann.
-title: E-Rezept-Fachdienst – Abrechnungsinformation abrufen – Versicherter – Prüfung
-  KVNR
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: "Das PS der abgebenden LEI MUSS für die Umsetzung der Abrechnungsinformationen\
+  \ für PKV-Versicherte die Anwendungsfälle\n <ul>\n <li>UC 4.5 - Abgabedatensatz\
+  \ durch Abgebenden signieren</li>\n <li>UC 4.11 - Abrechnungsinformation durch Abgebenden\
+  \ bereitstellen</li>\n <li>UC 4.10 - Abrechnungsinformationen durch Abgebenden abrufen</li>\n\
+  \ <li>UC 4.13 - PKV-Abgabedatensatz durch Abgebenden ändern</li>\n </ul>\n umsetzen."
+title: 'PS abgebende LEI: TIFlow-CHRG - verpflichtende Anwendungsfälle'
 version: 0
