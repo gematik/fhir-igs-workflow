@@ -184,25 +184,25 @@ jobs:
 
           igtools_ok = script_exit == "0" and found_error_keywords != "true"
           igtools_icon = "✅" if igtools_ok else "❌"
-            if igtools_ok:
+          if igtools_ok:
               igtools_text = "Pre-Check igtools: IGTools ist ohne Fehler durchgelaufen."
               igtools_result = "OK"
-            else:
+          else:
               igtools_text = (
-                f"Pre-Check igtools: IGTools hat Fehler gemeldet "
-                f"(Exit-Code: {script_exit}, ERROR/FAILED in Ausgabe: {found_error_keywords})."
+                  f"Pre-Check igtools: IGTools hat Fehler gemeldet "
+                  f"(Exit-Code: {script_exit}, ERROR/FAILED in Ausgabe: {found_error_keywords})."
               )
               igtools_result = "ERROR"
 
           git_clean = tree_clean == "true"
           git_icon = "✅" if git_clean else "⚠️"
-            if git_clean:
+          if git_clean:
               git_text = "Pre-Check git changes: IGTools hat keine Git-Änderungen erzeugt."
               git_result = "OK"
-            elif igtools_ok:
+          elif igtools_ok:
               git_text = "Pre-Check git changes: IGTools hat Änderungen in Git produziert. Anforderungen sind NICHT eingecheckt."
               git_result = "WARNING"
-            else:
+          else:
               git_text = "Pre-Check git changes: Es wurden Git-Änderungen erkannt; zusätzlich sind IGTools-Fehler aufgetreten."
               git_result = "WARNING"
 
