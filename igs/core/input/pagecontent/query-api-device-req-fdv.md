@@ -9,4 +9,4 @@ In den vorliegenden Spezifikationen sind keine zusaetzlichen, ausschließlich au
 ## Hinweise zur Nutzung
 
 - Die bereitgestellten `Device`-Informationen sind als Fachdienst-Selbstauskunft zu interpretieren.
-- Das bereitgestellte Signaturzertifikat des Fachdienstes ist nur fuer vorgesehene Signaturpruefungen zu verwenden.
+- Das bereitgestellte Signaturzertifikat des Fachdienstes ist nur für vorgesehene Signaturprüfungen zu verwenden.

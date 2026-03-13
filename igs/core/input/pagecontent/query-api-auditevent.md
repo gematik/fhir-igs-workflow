@@ -35,5 +35,5 @@ Die AuditEvent-Query wird ueber HTTP `GET` auf `/AuditEvent` und `/AuditEvent/{i
 
 ### Hinweis
 
-- Die AuditEvent-Query ist auf Versicherte beschraenkt.
-- Schreibende HTTP-Operationen auf `AuditEvent` sind unzulaessig.
+- Die AuditEvent-Query ist auf Versicherte beschränkt.
+- Schreibende HTTP-Operationen auf `AuditEvent` sind unzulässig.

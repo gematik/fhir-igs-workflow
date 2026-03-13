@@ -8,5 +8,5 @@ In den vorliegenden Spezifikationen sind keine zusätzlichen, ausschließlich au
 
 ## Hinweise zur Nutzung
 
-- AuditEvent-Eintraege enthalten personenbezogene Protokolldaten und sind entsprechend vertraulich zu behandeln.
+- AuditEvent-Einträge enthalten personenbezogene Protokolldaten und sind entsprechend vertraulich zu behandeln.
 - `OperationOutcome` aus Query-Aufrufen ist im Client als konkrete Handlungsanweisung darzustellen.
