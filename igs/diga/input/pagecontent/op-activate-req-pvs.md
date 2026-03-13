@@ -6,4 +6,4 @@ Diese Seite enthält die normativen Anforderungen an ein PVS für die Operation 
 
 ### Modulspezifische Anforderungen
 
-Es gibt keine modulspezifischen Anforderungen.
+Es bestehen keine modulspezifischen Anforderungen.

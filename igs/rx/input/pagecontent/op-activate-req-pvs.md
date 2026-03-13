@@ -7,14 +7,17 @@ Diese Seite enthält die normativen Anforderungen an das PVS für die Operation 
 ### Modulspezifische Anforderungen
 
 ### Anforderungen im Rahmen des Moduls Arzneimittel
-<!-- A_19275 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-40" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle erstellen" version="0">
+
+
+<!-- A_28574 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-40" title="PS verordnende LEI: E-Rezept erstellen - Flowtype 160/166/169/200/209 - Bereitstellen von Dosierinformationen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
     </actor>
-        Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" eine Bundle-FHIR-Ressource gemäß Profilierung https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle Rezept-ID aus der Task-Ressource als Identifier erstellen.
+    Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" für Verordnungen mit Flowtype 160, 166, 169, 200 oder 209 Dosierinformationen nach [Medication IG] erzeugen und im E-Rezept-Bundle angeben.
 </requirement>
+
 
 ### Anforderungen Workflow 200, 209
 <!-- A_22541-01 -->
@@ -45,6 +48,7 @@ Diese Seite enthält die normativen Anforderungen an das PVS für die Operation 
 </requirement>
 
 ### Anforderungen Workflow 166
+
 <!-- A_27834 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-44" title="PS verordnende LEI: E-Rezept erstellen - Flowtype 166 - zulässige Signatur Arzt" version="0">
     <meta lockversion="false"/>
@@ -53,6 +57,7 @@ Diese Seite enthält die normativen Anforderungen an das PVS für die Operation 
     </actor>
         Das PS der verordnenden LEI MUSS sicherstellen, dass ein Verordnungsdatensatz für ein E-Rezept des Flowtype 166 nur mit einem HBA mit der zulässigen ProfessionOID oid_arzt signiert werden kann.
 </requirement>
+
 <!-- A_27835 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-45" title="PS verordnende LEI: E-Rezept erstellen - Flowtype 166 - Reichdauer nach Vorgaben" version="0">
     <meta lockversion="false"/>
@@ -61,6 +66,7 @@ Diese Seite enthält die normativen Anforderungen an das PVS für die Operation 
     </actor>
         Das PS der verordnenden LEI MUSS im Verordnungsdatensatz für ein E-Rezept des Flowtype 166 sicherstellen, dass die maximale Reichdauer entsprechend den gesetzlichen Vorgaben nicht überschritten wird.
 </requirement>
+
 <!-- A_27836 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-46" title="PS verordnende LEI: E-Rezept erstellen - Flowtype 166 - Bestätigungen nach §3a Abs. 2, 5 AMVV" version="0">
     <meta lockversion="false"/>
@@ -127,6 +133,7 @@ Diese Seite enthält die normativen Anforderungen an das PVS für die Operation 
     </actor>
         Das PS der verordnenden LEI MUSS es dem Nutzer ermöglichen, die Einlöseinformationen (Task.id und AccessCode) als E-Rezept-Token über ein geeignetes Übermittlungsverfahren an eine Apotheke der Wahl zu schicken.
 </requirement>
+
 <!-- A_21349 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-49" title="PS: Schutz des E-Rezept-Tokens bei Übertragung" version="0">
     <meta lockversion="false"/>
@@ -135,6 +142,7 @@ Diese Seite enthält die normativen Anforderungen an das PVS für die Operation 
     </actor>
         Das Primärsystem MUSS für die Übertragung von E-Rezept-Token ein Verfahren nutzen, dass die sehr hohe Vertraulichkeit des E-Rezept-Tokens und seine Integrität schützt.
 </requirement>
+
 <!-- A_21453 -->
 <requirement conformance="MAY" key="IG-TIFLOW-RX-50" title="PS verordnende LEI: Herstellende Apotheke für Übermittlungsverfahren" version="0">
     <meta lockversion="false"/>

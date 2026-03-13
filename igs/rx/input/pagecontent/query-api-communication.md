@@ -4,9 +4,13 @@ Communication wird für die Kommunikation zwischen Versicherten und Apotheke ver
 
 ### Nachricht
 
-Die Nachricht zum Abruf von Nachrichten wird als HTTP GET-Anfrage an den E-Rezept-Fachdienst gesendet, um eine Liste der hinterlegten _Communication_-Instanzen abzurufen.
+Die Interaktion mit Nachrichten als FHIR-Ressource _Communication_ wird über die folgenden HTTP-Methoden ermöglicht:
 
-Mit einer POST-Anfrage an den E-Rezept-Fachdienst kann eine _Communication_-Instanz am E-Rezept-Fachdienst eingestellt werden.
+|HTTP-Methode|Ergebnis der Anfrage|
+|---|---|
+|GET|Nachrichten abrufen|
+|POST|Nachricht einstellen|
+|DELETE|Nachricht löschen|
 
 ### Anforderungen an Schnittstelle
 
