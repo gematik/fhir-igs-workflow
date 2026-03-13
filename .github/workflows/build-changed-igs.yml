@@ -1,5 +1,5 @@
-name: Build changed IGs
-run-name: Build IGs - ${{ inputs.ig }}
+name: Build IGs
+run-name: Build IGs - ${{ inputs.ig || github.event.inputs.ig || 'all' }}
 
 on:
   push:
@@ -8,12 +8,12 @@ on:
   workflow_dispatch:
     inputs:
       ig:
-        description: "IG to build (select 'changed' to build only changed IGs)"
+        description: "IG to build (select 'all' to build all IGs in sequence)"
         type: choice
         required: true
-        default: changed
+        default: all
         options:
-          - changed
+          - all
           - core
           - diga
           - erp-chrg
@@ -89,6 +89,210 @@ jobs:
           python -m pip install --upgrade pipx
           python -m pipx install git+https://github.com/onyg/req-tooling.git
 
+      - name: IGTools Vorprüfung ausführen
+        id: igtools_precheck
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          artifact_dir="artifacts"
+          log_file="$artifact_dir/igtools-vorpruefung.log"
+          report_file="$artifact_dir/igtools-vorpruefung.html"
+          mkdir -p "$artifact_dir"
+
+          set +e
+          ./scripts/run-igtools-process-all.sh 2>&1 | tee "$log_file"
+          script_exit=${PIPESTATUS[0]}
+          set -e
+
+          if grep -Eq '(^|[^A-Z])(ERROR|FAILED)([^A-Z]|$)' "$log_file"; then
+            found_error_keywords="true"
+          else
+            found_error_keywords="false"
+          fi
+
+          if git diff --quiet --ignore-submodules -- && \
+             git diff --cached --quiet --ignore-submodules -- && \
+             [[ -z "$(git ls-files --others --exclude-standard)" ]]; then
+            tree_clean="true"
+          else
+            tree_clean="false"
+          fi
+
+          status="ok"
+          message="Vorprüfung erfolgreich: igtools process lief ohne Fehlerhinweise und hat keine Repository-Änderungen verursacht."
+
+          if [[ "$script_exit" -ne 0 || "$found_error_keywords" == "true" ]]; then
+            status="failed"
+            message="Vorprüfung fehlgeschlagen: ./scripts/run-igtools-process-all.sh hat Fehler geliefert (Exit-Code ungleich 0 oder Ausgabe mit ERROR/FAILED)."
+          elif [[ "$tree_clean" != "true" ]]; then
+            status="failed"
+            message="Vorprüfung fehlgeschlagen: ./scripts/run-igtools-process-all.sh lief zwar ohne offensichtliche Fehler, hat aber Dateien im Repository verändert. Bitte die erzeugten Änderungen einchecken oder die Ursache beheben."
+          fi
+
+          export PRECHECK_STATUS="$status"
+          export PRECHECK_MESSAGE="$message"
+          export PRECHECK_SCRIPT_EXIT="$script_exit"
+          export PRECHECK_FOUND_ERROR_KEYWORDS="$found_error_keywords"
+          export PRECHECK_TREE_CLEAN="$tree_clean"
+          export PRECHECK_LOG_FILE="$log_file"
+          export PRECHECK_REPORT_FILE="$report_file"
+
+          python - <<'PY'
+          import html
+          import os
+          import textwrap
+          from pathlib import Path
+
+          status = os.environ["PRECHECK_STATUS"]
+          message = os.environ["PRECHECK_MESSAGE"]
+          script_exit = os.environ["PRECHECK_SCRIPT_EXIT"]
+          found_error_keywords = os.environ["PRECHECK_FOUND_ERROR_KEYWORDS"]
+          tree_clean = os.environ["PRECHECK_TREE_CLEAN"]
+          log_file = Path(os.environ["PRECHECK_LOG_FILE"])
+          report_file = Path(os.environ["PRECHECK_REPORT_FILE"])
+
+          log_text = ""
+          if log_file.exists():
+              log_text = log_file.read_text(encoding="utf-8", errors="replace")
+
+          status_label = "ERFOLGREICH" if status == "ok" else "FEHLER"
+          status_color = "#1b5e20" if status == "ok" else "#b71c1c"
+          status_bg = "#e8f5e9" if status == "ok" else "#ffebee"
+
+          html_doc = textwrap.dedent(
+              f"""\
+              <!doctype html>
+              <html lang=\"de\">
+              <head>
+                <meta charset=\"utf-8\" />
+                <title>IGTools Vorprüfung</title>
+                <style>
+                  :root {{
+                    --bg: #f4f7fb;
+                    --card: #ffffff;
+                    --text: #123;
+                    --muted: #4f5b6b;
+                    --line: #d8e0ea;
+                  }}
+                  body {{
+                    margin: 0;
+                    padding: 2rem;
+                    background: radial-gradient(circle at top right, #e8f1ff, var(--bg) 50%);
+                    color: var(--text);
+                    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;
+                  }}
+                  .wrap {{ max-width: 1100px; margin: 0 auto; }}
+                  .card {{
+                    background: var(--card);
+                    border: 1px solid var(--line);
+                    border-radius: 14px;
+                    box-shadow: 0 10px 24px rgba(30, 55, 90, 0.08);
+                    padding: 1.25rem 1.5rem;
+                    margin-bottom: 1rem;
+                  }}
+                  h1 {{ margin: 0 0 0.5rem 0; font-size: 1.6rem; }}
+                  p {{ margin: 0.4rem 0; color: var(--muted); }}
+                  .badge {{
+                    display: inline-block;
+                    font-weight: 700;
+                    padding: 0.35rem 0.7rem;
+                    border-radius: 999px;
+                    color: {status_color};
+                    background: {status_bg};
+                    border: 1px solid {status_color};
+                    margin-top: 0.5rem;
+                  }}
+                  table {{ width: 100%; border-collapse: collapse; margin-top: 0.8rem; }}
+                  th, td {{
+                    border: 1px solid var(--line);
+                    padding: 0.55rem 0.7rem;
+                    text-align: left;
+                    font-size: 0.92rem;
+                  }}
+                  th {{ background: #eef3fa; font-weight: 700; }}
+                  pre {{
+                    background: #0f1722;
+                    color: #dce6f3;
+                    border-radius: 10px;
+                    padding: 1rem;
+                    overflow: auto;
+                    font-size: 0.86rem;
+                    line-height: 1.45;
+                  }}
+                </style>
+              </head>
+              <body>
+                <div class=\"wrap\">
+                  <div class=\"card\">
+                    <h1>IGTools Vorprüfung</h1>
+                    <p>{html.escape(message)}</p>
+                    <div class=\"badge\">Status: {status_label}</div>
+                  </div>
+
+                  <div class=\"card\">
+                    <h2>Prüfkriterien</h2>
+                    <table>
+                      <thead>
+                        <tr><th>Kriterium</th><th>Ergebnis</th></tr>
+                      </thead>
+                      <tbody>
+                        <tr><td>Exit-Code von ./scripts/run-igtools-process-all.sh</td><td>{html.escape(script_exit)}</td></tr>
+                        <tr><td>Ausgabe enthält ERROR/FAILED</td><td>{html.escape(found_error_keywords)}</td></tr>
+                        <tr><td>Repository nach Lauf unverändert</td><td>{html.escape(tree_clean)}</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class=\"card\">
+                    <h2>Konsolenausgabe</h2>
+                    <pre>{html.escape(log_text)}</pre>
+                  </div>
+                </div>
+              </body>
+              </html>
+              """
+          )
+
+          report_file.write_text(html_doc, encoding="utf-8")
+          PY
+
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+          echo "message=$message" >> "$GITHUB_OUTPUT"
+          echo "script_exit=$script_exit" >> "$GITHUB_OUTPUT"
+          echo "found_error_keywords=$found_error_keywords" >> "$GITHUB_OUTPUT"
+          echo "tree_clean=$tree_clean" >> "$GITHUB_OUTPUT"
+
+      - name: IGTools Vorprüfungsbericht hochladen
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: igtools-vorpruefung
+          path: |
+            artifacts/igtools-vorpruefung.html
+            artifacts/igtools-vorpruefung.log
+          if-no-files-found: error
+
+      - name: IGTools Vorprüfung auswerten
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "${{ steps.igtools_precheck.outputs.status }}" != "ok" ]]; then
+            echo "::error title=IGTools Vorprüfung fehlgeschlagen::${{ steps.igtools_precheck.outputs.message }}"
+            exit 1
+          fi
+
+      - name: IGTools Vorprüfung - Zusammenfassung
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "## IGTools Vorprüfung" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Status: \`${{ steps.igtools_precheck.outputs.status }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Ergebnis: ${{ steps.igtools_precheck.outputs.message }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- HTML-Bericht: Artifact \`igtools-vorpruefung\`" >> "$GITHUB_STEP_SUMMARY"
+
       - name: Install draw.io (headless)
         if: env.BUILD_GENERATE_DRAWIO_IMAGES == 'true'
         run: |
@@ -112,36 +316,22 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          manual_ig="${{ github.event.inputs.ig }}"
-          if [[ -n "$manual_ig" && "$manual_ig" != "changed" ]]; then
-            echo "ig_list=$manual_ig" >> "$GITHUB_OUTPUT"
-            exit 0
+          manual_ig="${{ inputs.ig || github.event.inputs.ig || 'all' }}"
+
+          if [[ "$manual_ig" == "all" ]]; then
+            mapfile -t ig_list < <(find igs -mindepth 2 -maxdepth 2 -name ig.ini -print | sed -E 's|^igs/([^/]+)/ig.ini$|\1|' | sort -u)
+            echo "ig_mode=all" >> "$GITHUB_OUTPUT"
+          else
+            ig_list=("$manual_ig")
+            echo "ig_mode=single" >> "$GITHUB_OUTPUT"
           fi
-          base_sha="${{ github.event.before }}"
-          head_sha="${{ github.sha }}"
-
-          if [[ "$base_sha" == "0000000000000000000000000000000000000000" ]]; then
-            base_sha=$(git rev-list --max-parents=0 "$head_sha")
-          fi
-
-          mapfile -t files < <(git diff --name-only "$base_sha" "$head_sha")
-
-          declare -A igs=()
-
-          for f in "${files[@]}"; do
-            if [[ "$f" =~ ^igs/([^/]+)/ ]]; then
-              igs["${BASH_REMATCH[1]}"]=1
-            fi
-          done
-
-          ig_list=("${!igs[@]}")
 
           if [[ ${#ig_list[@]} -eq 0 ]]; then
             echo "ig_list=" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
-          ig_list_sorted=$(printf "%s\n" "${ig_list[@]}" | sort -u | tr '\n' ' ' | xargs)
+          ig_list_sorted=$(printf "%s\n" "${ig_list[@]}" | tr '\n' ' ' | xargs)
           echo "ig_list=$ig_list_sorted" >> "$GITHUB_OUTPUT"
 
       - name: Install FHIR packages
@@ -183,7 +373,14 @@ jobs:
 
       - name: Build IGs
         if: steps.igs.outputs.ig_list != ''
-        run: ./build-all.sh --ig ${{ steps.igs.outputs.ig_list }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "${{ steps.igs.outputs.ig_mode }}" == "all" ]]; then
+            ./build-all.sh
+          else
+            ./build-all.sh --ig ${{ steps.igs.outputs.ig_list }}
+          fi
 
       - name: IG build summary
         if: always()
@@ -395,4 +592,4 @@ jobs:
 
       - name: No IG changes
         if: steps.igs.outputs.ig_list == ''
-        run: echo "No IG changes detected; skipping build."
+        run: echo "Keine IGs gefunden; Build wird übersprungen."
