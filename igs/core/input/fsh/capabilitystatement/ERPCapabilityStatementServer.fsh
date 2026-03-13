@@ -25,10 +25,6 @@ Usage: #definition
 * insert WorkflowMedicationDispenseInteraction(#SHALL)
 * insert DeviceInteraction(#SHALL)
 * insert SubscriptionInteraction(#SHALL)
-* insert RevokeEUAccessPermissionInteraction(#SHALL)
-* insert GrantEUAccessPermissionInteraction(#SHALL)
-* insert ReadEUAccessPermissionInteraction(#SHALL)
-* insert GetEUPrescriptionsInteraction(#SHALL)
 //* insert ImportCapabilityStatment("https://gematik.de/fhir/workflow/core/CapabilityStatement/erp-fachdienst-server", #SHALL)
 
 RuleSet: TaskInteraction(expectation)
@@ -65,8 +61,6 @@ RuleSet: TaskInteraction(expectation)
 * insert TaskPostOperationStatusCodes
 * insert CapSupportResourceOperation(dispense, DispenseOperation, {expectation})
 * insert TaskPostOperationStatusCodes
-* insert CapSupportResourceOperation(eu-close, EUCloseOperation, {expectation})
-* insert TaskPostOperationStatusCodes
 
 RuleSet: ChargeItemInteraction(expectation)
 * insert CapSupportResource(ChargeItem, {expectation})
@@ -93,22 +87,6 @@ RuleSet: ConsentInteraction(expectation)
 * insert CreateInteractionStatusCodes
 * insert CapResourceInteraction(#delete, #SHALL)
 * insert DeleteInteractionStatusCodes
-
-RuleSet: RevokeEUAccessPermissionInteraction(expectation)
-* insert CapSupportSystemOperation(revoke-eu-access-permission, RevokeEUAccessPermissionOperation, {expectation})
-* insert SystemLevelOperationStatusCodes
-
-RuleSet: GrantEUAccessPermissionInteraction(expectation)
-* insert CapSupportSystemOperation(grant-eu-access-permission, GrantEUAccessPermissionOperation, {expectation})
-* insert SystemLevelOperationStatusCodes
-
-RuleSet: ReadEUAccessPermissionInteraction(expectation)
-* insert CapSupportSystemOperation(read-eu-access-permission, ReadEUAccessPermissionOperation, {expectation})
-* insert SystemLevelOperationStatusCodes
-
-RuleSet: GetEUPrescriptionsInteraction(expectation)
-* insert CapSupportSystemOperation(get-eu-prescriptions, GetEUPrescriptionsOperation, {expectation})
-* insert SystemLevelOperationStatusCodes
 
 RuleSet: CommunicationInteraction(expectation)
 * insert CapSupportResource(Communication, #SHALL)
