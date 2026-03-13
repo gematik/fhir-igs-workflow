@@ -6,7 +6,11 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Task`-
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
-     Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezepte abrufen" zum Herunterladen alle E-Rezepte des Nutzers die HTTP-Operation GET /Task mit ACCESS_TOKEN im Authorization-Header ausführen.
+     Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezepte abrufen" zum Herunterladen alle E-Rezepte des Nutzers die HTTP-Operation GET /Task mit 
+     <ul>
+        <li>ACCESS_TOKEN im Authorization-Header</li>
+     </ul>
+     ausführen.
 </requirement>
 
 <!-- A_19348-01 -->
@@ -28,7 +32,12 @@ Die Alternative 1 wird genutzt, wenn nur die Informationen zu einem E-Rezept vom
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
-     Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezepte abrufen" zum Herunterladen eines spezifischen E-Rezepts des Nutzers die HTTP-Operation GET /Task/&lt;id&gt; mit ACCESS_TOKEN im Authorization-Header Task-ID in URL &lt;id&gt; ausführen.
+    Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezepte abrufen" zum Herunterladen eines spezifischen E-Rezepts des Nutzers die HTTP-Operation GET /Task/&lt;id&gt; mit 
+    <ul>
+    <li>ACCESS_TOKEN im Authorization-Header</li>
+    <li>Task-ID in URL &lt;id&gt; </li>
+    </ul>
+    ausführen.
 </requirement>
 
 Für weitere Informationen siehe Operation "Ein einzelnes E-Rezept abrufen" aus der API-Schnittstelle [E-Rezept API Dokumentation].
@@ -45,7 +54,13 @@ Die Alternative 2 wird genutzt, wenn der Nutzer als Vertreter eines Versicherten
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
-     Das E-Rezept-FdV KANN im Anwendungsfall "E-Rezepte abrufen" zum Herunterladen eines E-Rezepts als Vertreter die HTTP-Operation GET /Task/&lt;id&gt; mit ACCESS_TOKEN im http-Header Task-ID in URL &lt;id&gt; AccessCode im http-Header ausführen.
+    Das E-Rezept-FdV KANN im Anwendungsfall "E-Rezepte abrufen" zum Herunterladen eines E-Rezepts als Vertreter die HTTP-Operation GET /Task/&lt;id&gt; mit 
+    <ul>
+        <li>ACCESS_TOKEN im http-Header</li>
+        <li>Task-ID in URL &lt;id&gt; </li>
+        <li>AccessCode im http-Header </li>
+    </ul>
+    ausführen.
 </requirement>
 
 Für weitere Informationen siehe Operation "Ein einzelnes E-Rezept abrufen" aus der API-Schnittstelle [E-Rezept API Dokumentation].
