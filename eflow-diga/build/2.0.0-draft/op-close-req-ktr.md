@@ -17,6 +17,14 @@ Diese Seite enthält die normativen Anforderungen an ein Clientsystem des Kosten
 
 Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an Clientsysteme für die Nutzung der Operation `$close`.
 
+Die Erstellung der MedicationDispense erfolgt modulspezifisch.
+
+Das Clientsystem Kostenträger MUSS im Anwendungsfall "Quittung abrufen" für zum Abschliessen des Workflows für die Verordnung die HTTP-Operation POST /Task/<id>/$close mit
+* ACCESS_TOKEN im Authorization-Header
+* Task-ID in URL <id>
+* Geheimnis in URL-Parameter ?secret=
+* MedicationDispense
+ausführen.
 ### Modulspezifische Anforderungen
 
 Das Clientsystem des Kostenträgers MUSS im Anwendungsfall "Quittung abrufen" eine FHIR-Ressource mit dem Profil GEM_ERP_PR_MedicationDispense_DiGA erstellen.

@@ -229,7 +229,7 @@ Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
           <span style="float:right;">
 
-            <a href="query-api-task.html">&lt;vorherige</a> | 
+            <a href="query-api-task-req-ktr.html">&lt;vorherige</a> | 
 
             <a href="#bottom">unten</a>
 
@@ -316,32 +316,24 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</h3>
 
 <ul>
-  <li><a href="./query-api-communication-req-fd.html">Server-Anforderungen zu Communications</a>: Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.</li>
+  <li><a href="./query-api-communication-req-fd.html">FD-Anforderungen zu Communications</a>: Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.</li>
   <li><a href="./query-api-communication-req-fdv.html">FdV-Anforderungen zu Communications</a>: Anforderungen an ein E-Rezept-FdV zur Nutzung der Schnittstelle.</li>
   <li><a href="./query-api-communication-req-ktr.html">KTR-Anforderungen zu Communications</a>: Anforderungen an ein CS Kostenträger zur Nutzung der Schnittstelle.</li>
 </ul>
 
 <h3 id="post-communication">POST /Communication</h3>
 <ul>
-  <li>Zuweisung von Verordnungen durch den Versicherten an den Kostenträger. Der Payload ist hierbei optional (Kardinalitaet 0..1)</li>
-  <li>Übermittlung einer Nachricht dürch den Kostenträger an den Versicherten.</li>
+  <li>Zuweisung einer Verordnung durch den Versicherten an den Kostenträger. Der Payload ist hierbei optional (Kardinalität 0..1)</li>
+  <li>Übermittlung einer Nachricht durch den Kostenträger an den Versicherten.</li>
 </ul>
 
 <p>-API Beschreibung aus Cap Statement</p>
 
 <h3 id="get-communication">GET /Communication</h3>
 <ul>
-  <li>Abruf von Zuweisungen durch den Kostenträger</li>
-  <li>Abruf von Rückmeldungen durch den Versicherten</li>
+  <li>Kostenträger: Abruf von Zuweisungen von Versicherten</li>
+  <li>Versicherter: Abruf der Rückmeldungen des Kostenträgers</li>
 </ul>
-
-<p>Es gelten die übergreifenden Anforderungen an die GET /Communication Schnittstelle.</p>
-
-<p>Es gibt keine workflow-spezifischen Anforderungen für den E-Rezept-Fachdienst.</p>
-
-<p>Es gibt keine workflow-spezifischen Anforderungen für das E-Rezept-FdV.</p>
-
-<p>Es gibt keine workflow-spezifischen Anforderungen für den Kostenträger.</p>
 
 <p>-API Beschreibung aus Cap Statement</p>
 
@@ -368,7 +360,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <tr>
               <td style="text-align:left">&nbsp;
 
-                <a href="query-api-task.html">&lt;vorherige</a>
+                <a href="query-api-task-req-ktr.html">&lt;vorherige</a>
 
               </td>
               <td style="text-align:center">
@@ -386,7 +378,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Mar 12, 2026 05:37+0000">2026-03-12</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Mar 13, 2026 07:25+0000">2026-03-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -79,7 +79,7 @@
     <script src="assets/js/mermaid.js" type="text/javascript"></script>
     <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
     <style type="text/css">h2{--heading-prefix:"6.1"}
-    h3,h4,h5,h6{--heading-prefix:"6.1"}</style>
+    h3,h4,h5,h6{--heading-prefix:"6.1.0"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
 
@@ -233,7 +233,7 @@ Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
             <a href="#bottom">unten</a>
 
-          | <a href="query-api-communication.html">nächste&gt;</a>
+          | <a href="query-api-task-req-fd.html">nächste&gt;</a>
 
           </span>
 
@@ -274,11 +274,66 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <p>Seiteninhalt:</p>
 
 <ul id="markdown-toc">
-  <li><a href="#get-task-suche" id="markdown-toc-get-task-suche">GET /Task (Suche)</a></li>
-  <li><a href="#get-task-details" id="markdown-toc-get-task-details">GET /Task/<id> (Details)</id></a></li>
+  <li><a href="#nachricht" id="markdown-toc-nachricht">Nachricht</a></li>
+  <li><a href="#anforderungen-an-schnittstelle" id="markdown-toc-anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</a></li>
 </ul>
 
 </div>
+<p>Diese Seite basiert auf der gleichnamigen Schnittstelle in der <a href="https://gemspec.gematik.de/ig/fhir//query-api-task.html">Core-Spezifikation</a> und beschreibt den Einstieg in die Task-Query-Schnittstelle.</p>
+
+<h3 id="nachricht">Nachricht</h3>
+
+<p>Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource <em>Task</em> wird über die folgenden HTTP-Methoden ermöglicht:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Akteur</th>
+      <th>HTTP-Methode</th>
+      <th>Ergebnis der Anfrage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Versicherter</td>
+      <td>GET</td>
+      <td>Liste von Task abrufen</td>
+    </tr>
+    <tr>
+      <td>Versicherter</td>
+      <td>GET /<id></id></td>
+      <td>Spezifischen Task abrufen</td>
+    </tr>
+    <tr>
+      <td>Kostenträger</td>
+      <td>GET /<id>?ac=</id></td>
+      <td>Recovery Secret</td>
+    </tr>
+    <tr>
+      <td>Kostenträger</td>
+      <td>GET /<id>?secret=</id></td>
+      <td>Quittung erneut abrufen</td>
+    </tr>
+    <tr>
+      <td>Versicherter</td>
+      <td>GET /<id></id></td>
+      <td>Spezifischen Task abrufen</td>
+    </tr>
+    <tr>
+      <td>Versicherter</td>
+      <td>PATCH</td>
+      <td>Task markieren</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</h3>
+
+<ul>
+  <li><a href="./query-api-task-req-fd.html">FD-Anforderungen zur Task-Query</a>: Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.</li>
+  <li><a href="./query-api-task-req-fdv.html">FdV-Anforderungen für Task-Query</a>: Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.</li>
+  <li><a name="l550">​</a><a href="./query-api-task-req-avs.html">AVS-Anforderungen für Task-Query</a>: Anforderungen an das AVS zur Nutzung der Schnittstelle.</li>
+</ul>
 
 <p>Die Query API für Task beschreibt den lesenden Zugriff auf Tasks.
 Der Versicherte ruft die Liste aller seiner Verordnungen inklusive DiGA-Verordnungen ab.
@@ -287,24 +342,6 @@ Der Versicherte kann mit Referenz auf eine Task-ID eine einzelne Verordnung abru
 <p>Der Kostenträger kann unter Angabe der Task-ID und des ACCESS_CODE die Daten einer einzelnen Verordnung abrufen und somit insbesondere den Anwendungfall “Recovery Secret” umsetzen.</p>
 
 <p>Der Kostenträger kann unter Angabe der Task-ID und des Secrets die Daten einer einzelnen Verordnung abrufen und somit insbesondere den Anwendungfall “Quittung erneut abrufen” umsetzen.</p>
-
-<h3 id="get-task-suche">GET /Task (Suche)</h3>
-<ul>
-  <li>Der Aufruf basiert auf dem GET /Task Aufruf des Basis-Workflow für E-Rezepte.</li>
-</ul>
-
-<p>Es gibt keine workflow-spezifischen Anforderungen für den E-Rezept-Fachdienst.</p>
-
-<p>Es gibt keine workflow-spezifischen Anforderungen für das E-Rezept-FdV.</p>
-
-<h3 id="get-task-details">GET /Task/<id> (Details)</id></h3>
-<ul>
-  <li>Der Aufruf basiert auf dem GET /Task/&lt;id&gt; Aufruf des Basis-Workflow für E-Rezepte.</li>
-</ul>
-
-<p>Es gibt keine workflow-spezifischen Anforderungen für das E-Rezept-FdV.</p>
-
-<p>Es gibt keine workflow-spezifischen Anforderungen für den Kostenträger.</p>
 
 
 
@@ -337,7 +374,7 @@ Der Versicherte kann mit Referenz auf eine Task-ID eine einzelne Verordnung abru
               </td>
               <td style="text-align:right">&nbsp;
 
-                <a href="query-api-communication.html">nächste&gt;</a>
+                <a href="query-api-task-req-fd.html">nächste&gt;</a>
 
               </td>
             </tr>
@@ -347,7 +384,7 @@ Der Versicherte kann mit Referenz auf eine Task-ID eine einzelne Verordnung abru
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Mar 12, 2026 05:37+0000">2026-03-12</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Mar 13, 2026 07:25+0000">2026-03-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

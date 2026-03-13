@@ -285,6 +285,24 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an Clientsysteme für die Nutzung der Operation <code class="language-plaintext highlighter-rouge">$close</code>.</p>
 
+<p>Die Erstellung der MedicationDispense erfolgt modulspezifisch.</p>
+
+  <!-- A_19289-02 -->
+<requirement conformance="SHALL" title="CS Kostenträger: Quittung abrufen - Statusrequest" version="0" key="IG-TIFLOW-CORE-372">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung"></testProcedure>
+    </actor>
+    Das Clientsystem Kostenträger MUSS im Anwendungsfall "Quittung abrufen" für zum Abschliessen des Workflows für die Verordnung die HTTP-Operation POST /Task/&lt;id&gt;/$close mit
+    <ul> 
+        <li>ACCESS_TOKEN im Authorization-Header</li>
+        <li>Task-ID in URL &lt;id&gt;</li>
+        <li>Geheimnis in URL-Parameter ?secret=</li>
+        <li>MedicationDispense</li>
+    </ul>
+    ausführen.
+</requirement>
+
 <h3 id="modulspezifische-anforderungen">Modulspezifische Anforderungen</h3>
 
   <!-- A_26004-01 -->
@@ -337,7 +355,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Mar 12, 2026 05:37+0000">2026-03-12</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Mar 13, 2026 07:25+0000">2026-03-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
