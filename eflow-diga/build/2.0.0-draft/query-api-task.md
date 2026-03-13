@@ -19,10 +19,9 @@ Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource **Task** wird 
 | | | |
 | :--- | :--- | :--- |
 | Versicherter | GET | Liste von Task abrufen |
-| Versicherter | GET / | Spezifischen Task abrufen |
-| Kostenträger | GET /?ac= | Recovery Secret |
-| Kostenträger | GET /?secret= | Quittung erneut abrufen |
-| Versicherter | GET / | Spezifischen Task abrufen |
+| Versicherter | GET /<id> | Spezifischen Task abrufen |
+| Kostenträger | GET /<id>?ac= | Recovery Secret |
+| Kostenträger | GET /<id>?secret= | Quittung erneut abrufen |
 | Versicherter | PATCH | Task markieren |
 
 ### Anforderungen an Schnittstelle
