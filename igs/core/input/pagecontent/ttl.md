@@ -1,5 +1,5 @@
 
-Der E-Rezept-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen abgelaufener oder nicht mehr benötigter Ressourcen. Dieses Kapitel beschreibt die Loöchfristen und die zugehörigen Anforderungen.
+Der E-Rezept-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen abgelaufener oder nicht mehr benötigter Ressourcen. Dieses Kapitel beschreibt die Löschfristen und die zugehörigen Anforderungen.
 
 <!-- A_19252-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-85" title="E-Rezept-Fachdienst - Löschfrist abgelaufener Rezepte" version="0">
@@ -7,7 +7,7 @@ Der E-Rezept-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen
 	<actor name="eRp_FD">
     	<testProcedure id="Produktgutachten"/>
   	</actor>
-	Der E-Rezept-Fachdienst MUSS einen Task nach Ablauf der Löschfrist gemäss der folgenden Festlegung automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren.
+	Der E-Rezept-Fachdienst MUSS einen Task nach Ablauf der Löschfrist gemäß der folgenden Festlegung automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren.
 	<table>
 		<tr> 
 		<th>Task.status nach Statuswechsel</th>
@@ -83,7 +83,7 @@ Der E-Rezept-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen
 	automatisch löschen:
 	<ul>
 		<li>ohne eine Referenz auf einen Task in Communication.basedOn nach 100 Tagen ab ihrem Sendedatum Communication.sent,</li>
-		<li>mit einer Referenz auf einen Task in Communication.basedOn gemäss der Löschfrist beim Löschen des Tasks,</li>
+		<li>mit einer Referenz auf einen Task in Communication.basedOn gemäß der Löschfrist beim Löschen des Tasks,</li>
 		<li>mit einer Referenz auf einen ChargeItem in Communication.basedOn nach 100 Tagen ab ihrem Sendedatum Communication.sent.</li>
 	</ul>
 </requirement>

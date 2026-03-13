@@ -2,7 +2,7 @@
 
 Diese Seite enthält eine Übersicht aller FHIR-Artefakte, die im Rahmen des DiGA-Implementation Guides definiert werden.
 
-### Parameterprofile fuer Operationen
+### Parameterprofile für Operationen
 
 {% include artefacts-structuredef-table-generator.html type="Parameters" %}
 <div><figcaption><strong>Tabelle:</strong> Parameterprofile</figcaption></div>

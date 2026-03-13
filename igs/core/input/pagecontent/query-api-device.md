@@ -1,10 +1,8 @@
-# Query API: Device
-
-Diese Seite beschreibt die moduluebergreifende Device-Query-Schnittstelle.
+Diese Seite beschreibt die modulübergreifende Device-Query-Schnittstelle.
 
 ### Nachricht
 
-Die Device-Query wird ueber HTTP `GET` auf `/Device` aufgerufen.
+Die Device-Query wird über HTTP `GET` auf `/Device` aufgerufen.
 
 ### Anforderungen an Schnittstelle
 

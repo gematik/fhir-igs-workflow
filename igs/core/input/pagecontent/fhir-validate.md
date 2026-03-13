@@ -118,7 +118,7 @@ Der E-Rezept-Fachdienst validiert bei Operationen von Clientsystemen übermittel
 ### Prüfung von Referenzen in Bundles
 
 <!-- A_26229-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-208" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Pruefung Konsistenz Ressource IDs" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-208" title="E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Konsistenz Ressource IDs" version="0">
 	<meta lockversion="false"/>
 	<actor name="eRp_FD">
     	<testProcedure id="Produkttest"/>

@@ -1,10 +1,8 @@
-# Query API: AuditEvent
-
-Diese Seite beschreibt die moduluebergreifende AuditEvent-Query-Schnittstelle.
+Diese Seite beschreibt die modulübergreifende AuditEvent-Query-Schnittstelle.
 
 ### Nachricht
 
-Die AuditEvent-Query wird ueber HTTP `GET` auf `/AuditEvent` und `/AuditEvent/{id}` aufgerufen.
+Die AuditEvent-Query wird über HTTP `GET` auf `/AuditEvent` und `/AuditEvent/{id}` aufgerufen.
 
 ### Anforderungen an Schnittstelle
 
