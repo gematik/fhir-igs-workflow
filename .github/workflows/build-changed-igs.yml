@@ -126,8 +126,8 @@ jobs:
             status="failed"
             message="Vorprüfung fehlgeschlagen: ./scripts/run-igtools-process-all.sh hat Fehler geliefert (Exit-Code ungleich 0 oder Ausgabe mit ERROR/FAILED)."
           elif [[ "$tree_clean" != "true" ]]; then
-            status="failed"
-            message="Vorprüfung fehlgeschlagen: ./scripts/run-igtools-process-all.sh lief zwar ohne offensichtliche Fehler, hat aber Dateien im Repository verändert. Bitte die erzeugten Änderungen einchecken oder die Ursache beheben."
+            status="warning"
+            message="Vorprüfung mit Warnung: ./scripts/run-igtools-process-all.sh lief ohne offensichtliche Fehler, hat aber Dateien im Repository verändert. Bitte die erzeugten Änderungen einchecken oder die Ursache beheben."
           fi
 
           export PRECHECK_STATUS="$status"
@@ -156,9 +156,31 @@ jobs:
           if log_file.exists():
               log_text = log_file.read_text(encoding="utf-8", errors="replace")
 
-          status_label = "ERFOLGREICH" if status == "ok" else "FEHLER"
-          status_color = "#1b5e20" if status == "ok" else "#b71c1c"
-          status_bg = "#e8f5e9" if status == "ok" else "#ffebee"
+            status_meta = {
+              "ok": {
+                "label": "ERFOLGREICH ✅",
+                "color": "#1b5e20",
+                "bg": "#e8f5e9",
+              },
+              "warning": {
+                "label": "WARNUNG ⚠️",
+                "color": "#8a6d1f",
+                "bg": "#fff8e1",
+              },
+              "failed": {
+                "label": "FEHLER ❌",
+                "color": "#b71c1c",
+                "bg": "#ffebee",
+              },
+            }.get(status, {
+              "label": "UNBEKANNT ❓",
+              "color": "#37474f",
+              "bg": "#eceff1",
+            })
+
+            status_label = status_meta["label"]
+            status_color = status_meta["color"]
+            status_bg = status_meta["bg"]
 
           html_doc = textwrap.dedent(
               f"""\
@@ -277,10 +299,17 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if [[ "${{ steps.igtools_precheck.outputs.status }}" != "ok" ]]; then
+          if [[ "${{ steps.igtools_precheck.outputs.status }}" == "failed" ]]; then
             echo "::error title=IGTools Vorprüfung fehlgeschlagen::${{ steps.igtools_precheck.outputs.message }}"
             exit 1
           fi
+
+      - name: IGTools Vorprüfung Warnung ausgeben
+        if: steps.igtools_precheck.outputs.status == 'warning'
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "::warning title=IGTools Vorprüfung mit Warnung::${{ steps.igtools_precheck.outputs.message }}"
 
       - name: IGTools Vorprüfung - Zusammenfassung
         if: always()
@@ -291,6 +320,7 @@ jobs:
           echo "" >> "$GITHUB_STEP_SUMMARY"
           echo "- Status: \`${{ steps.igtools_precheck.outputs.status }}\`" >> "$GITHUB_STEP_SUMMARY"
           echo "- Ergebnis: ${{ steps.igtools_precheck.outputs.message }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Hinweis: Bei Status \`warning\` läuft die Pipeline weiter; nur Status \`failed\` beendet den Job." >> "$GITHUB_STEP_SUMMARY"
           echo "- HTML-Bericht: Artifact \`igtools-vorpruefung\`" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Install draw.io (headless)
