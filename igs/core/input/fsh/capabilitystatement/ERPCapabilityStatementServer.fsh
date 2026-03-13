@@ -25,6 +25,10 @@ Usage: #definition
 * insert WorkflowMedicationDispenseInteraction(#SHALL)
 * insert DeviceInteraction(#SHALL)
 * insert SubscriptionInteraction(#SHALL)
+* insert RevokeEUAccessPermissionInteraction(#SHALL)
+* insert GrantEUAccessPermissionInteraction(#SHALL)
+* insert ReadEUAccessPermissionInteraction(#SHALL)
+* insert GetEUPrescriptionsInteraction(#SHALL)
 //* insert ImportCapabilityStatment("https://gematik.de/fhir/workflow/core/CapabilityStatement/erp-fachdienst-server", #SHALL)
 
 RuleSet: TaskInteraction(expectation)
@@ -61,6 +65,8 @@ RuleSet: TaskInteraction(expectation)
 * insert TaskPostOperationStatusCodes
 * insert CapSupportResourceOperation(dispense, DispenseOperation, {expectation})
 * insert TaskPostOperationStatusCodes
+* insert CapSupportResourceOperation(eu-close, EUCloseOperation, {expectation})
+* insert TaskPostOperationStatusCodes
 
 RuleSet: ChargeItemInteraction(expectation)
 * insert CapSupportResource(ChargeItem, {expectation})
@@ -78,12 +84,6 @@ RuleSet: ChargeItemInteraction(expectation)
 * insert CapResourceInteraction(#delete, #SHALL)
 * insert DeleteInteractionStatusCodes
 
-* insert CapSupportResourceSearchParam(_lastUpdated, http://hl7.org/fhir/SearchParameter/Resource-lastUpdated, #date, {expectation}, "Resource.meta.lastUpdated")
-* insert CapSupportResourceSearchParam(identifier, http://hl7.org/fhir/SearchParameter/clinical-identifier, #token, {expectation}, "ChargeItem.identifier")
-* insert CapSupportResourceSearchParamNoDefinition(_sort, #string, {expectation}, "Supports sorting over supported ChargeItem search criteria")
-* insert CapSupportResourceSearchParamNoDefinition(_count, #number, {expectation}, "Maximum number of returned entries per page; max value is 50")
-* insert CapSupportResourceSearchParamNoDefinition(__offset, #number, {expectation}, "Zero-based offset of the first returned entry; default is 0")
-
 RuleSet: ConsentInteraction(expectation)
 * insert CapSupportResource(Consent, {expectation})
 
@@ -94,7 +94,21 @@ RuleSet: ConsentInteraction(expectation)
 * insert CapResourceInteraction(#delete, #SHALL)
 * insert DeleteInteractionStatusCodes
 
-* insert CapSupportResourceSearchParam(category, http://hl7.org/fhir/SearchParameter/Consent-category, #token, {expectation}, "Consent.category")
+RuleSet: RevokeEUAccessPermissionInteraction(expectation)
+* insert CapSupportSystemOperation(revoke-eu-access-permission, RevokeEUAccessPermissionOperation, {expectation})
+* insert SystemLevelOperationStatusCodes
+
+RuleSet: GrantEUAccessPermissionInteraction(expectation)
+* insert CapSupportSystemOperation(grant-eu-access-permission, GrantEUAccessPermissionOperation, {expectation})
+* insert SystemLevelOperationStatusCodes
+
+RuleSet: ReadEUAccessPermissionInteraction(expectation)
+* insert CapSupportSystemOperation(read-eu-access-permission, ReadEUAccessPermissionOperation, {expectation})
+* insert SystemLevelOperationStatusCodes
+
+RuleSet: GetEUPrescriptionsInteraction(expectation)
+* insert CapSupportSystemOperation(get-eu-prescriptions, GetEUPrescriptionsOperation, {expectation})
+* insert SystemLevelOperationStatusCodes
 
 RuleSet: CommunicationInteraction(expectation)
 * insert CapSupportResource(Communication, #SHALL)
