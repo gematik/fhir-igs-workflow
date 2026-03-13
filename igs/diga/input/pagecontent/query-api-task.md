@@ -7,10 +7,9 @@ Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource _Task_ wird ü
 |Akteur|HTTP-Methode|Ergebnis der Anfrage|
 |---|---|---|
 |Versicherter|GET|Liste von Task abrufen|
-|Versicherter|GET /<id>|Spezifischen Task abrufen|
-|Kostenträger|GET /<id>?ac=|Recovery Secret|
-|Kostenträger|GET /<id>?secret=|Quittung erneut abrufen|
-|Versicherter|GET /<id>|Spezifischen Task abrufen|
+|Versicherter|GET /&#60;id&#62;|Spezifischen Task abrufen|
+|Kostenträger|GET /&#60;id&#62;?ac=|Recovery Secret|
+|Kostenträger|GET /&#60;id&#62;?secret=|Quittung erneut abrufen|
 |Versicherter|PATCH|Task markieren|
 
 ### Anforderungen an Schnittstelle
