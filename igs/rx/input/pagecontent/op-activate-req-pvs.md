@@ -10,7 +10,7 @@ Diese Seite enthält die normativen Anforderungen an das PVS für die Operation 
 
 
 <!-- A_28574 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-40" title="PS verordnende LEI: E-Rezept erstellen - Flowtype 160/166/169/200/209 - Bereitstellen von Dosierinformationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-212" title="PS verordnende LEI: E-Rezept erstellen - Flowtype 160/166/169/200/209 - Bereitstellen von Dosierinformationen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>

@@ -9,7 +9,7 @@ Diese Seite beschreibt Anforderungen an das AVS zur Nutzung der `Communication`-
 #### Nachrichten abrufen
 
 <!-- A_23876-01 -->
-<requirement conformance="SHALL" title="PS abgebende LEI: Nachrichtenaustausch - E-Rezept einer Apotheke zuweisen - Datenstruktur Nachricht" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-209" title="PS abgebende LEI: Nachrichtenaustausch - E-Rezept einer Apotheke zuweisen - Datenstruktur Nachricht" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -133,7 +133,7 @@ Diese Seite beschreibt Anforderungen an das AVS zur Nutzung der `Communication`-
 #### Nachricht versenden
 
 <!-- A_21373 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-109" title="PS abgebende LEI: Nachricht versenden - Externe URL ausschließlich für Einlösung" version="0">
+<requirement conformance="SHALL" title="PS abgebende LEI: Nachricht versenden - Externe URL ausschließlich für Einlösung" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>
@@ -142,7 +142,7 @@ Diese Seite beschreibt Anforderungen an das AVS zur Nutzung der `Communication`-
 </requirement>
 
 <!-- A_28538 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-109" title="PS abgebende LEI: Nachricht versenden - Belieferung Arzneimittel - Nachricht erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-210" title="PS abgebende LEI: Nachricht versenden - Belieferung Arzneimittel - Nachricht erstellen" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>
@@ -160,7 +160,7 @@ Beispiele für diesen Anwendungsfall stehen im GitHub  https://github.com/gema
 Erläuterung und das Schema des Payloads sind in [gemSpec_DM_eRp#TAB_eRpDM_003] zu finden.
 
 <!-- A_19333-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-109" title="PS abgebende LEI: Nachricht versenden - Belieferung Arzneimittel - Communication Ressource erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-211" title="PS abgebende LEI: Nachricht versenden - Belieferung Arzneimittel - Communication Ressource erstellen" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>

@@ -5,7 +5,7 @@ Die Erstellung der MedicationDispense erfolgt Flowtype-spezifisch.
 
 
 <!-- A_19289-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-196" title="PS abgebende LEI: Quittung abrufen - Statusrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-367" title="PS abgebende LEI: Quittung abrufen - Statusrequest" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -29,7 +29,7 @@ Der E-Rezept-Fachdienst prüft regelmäßig den Status seines Signaturzertifikat
 Die Quittung wird als PKCS#7-Datei erstellt. Die quittierten Daten sind innerhalb der PKCS#7-Datei enthalten.
 
 <!-- A_20766 -->
-<requirement conformance="MAY" key="IG-TIFLOW-CORE-196" title="PS abgebende LEI:  Quittung abrufen - Quittungssignatur prüfen" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CORE-368" title="PS abgebende LEI:  Quittung abrufen - Quittungssignatur prüfen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -51,7 +51,7 @@ Als Response liefert der Konnektor einen standardisierten Prüfbericht in einer
 Eine Apotheke schließt nach Belieferung eines E-Rezepts den Vorgang mittels $close-Aufruf entsprechend vertraglicher Vorgaben bis zum Ende des folgenden Werktags ab. Der Abschluss des Vorgangs mittels $close-Operation kann einzeln oder auch als Stapelverarbeitung durchgeführt werden. Bei einer Stapelverarbeitung ruft das AVS hintereinander die $close-Operation für jedes E-Rezept auf. Um Lastspitzen am E-Rezept-Fachdienst zu vermeiden, gelten folgende Anforderungen für die Stapelverarbeitung.
 
 <!-- A_25219 -->
-<requirement conformance="MAY" key="IG-TIFLOW-CORE-196" title="PS abgebende LEI:  Quittung abrufen - Stapelverarbeitung" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CORE-369" title="PS abgebende LEI:  Quittung abrufen - Stapelverarbeitung" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -62,7 +62,7 @@ Eine Apotheke schließt nach Belieferung eines E-Rezepts den Vorgang mittels $cl
 Falls ein AVS diese Aufrufe im Stapel verarbeitet, soll der Startzeitpunkt für die Aufrufe der $close-Operation am E-Rezept-Fachdienst zufällig verteilt sein, um die betriebliche Stabilität des E-Rezept-Fachdienstes zu gewährleisten.
 
 <!-- A_25220 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-196" title="PS abgebende LEI:  Quittung abrufen - Stapelverarbeitung - Startzeitpunkt" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-370" title="PS abgebende LEI:  Quittung abrufen - Stapelverarbeitung - Startzeitpunkt" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -71,7 +71,7 @@ Falls ein AVS diese Aufrufe im Stapel verarbeitet, soll der Startzeitpunkt für 
 </requirement>
 
 <!-- A_25221 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-196" title="PS abgebende LEI:  Quittung abrufen - Stapelverarbeitung - Wartezeit zwischen Aufrufen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-371" title="PS abgebende LEI:  Quittung abrufen - Stapelverarbeitung - Wartezeit zwischen Aufrufen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
