@@ -4,26 +4,6 @@ Dargestellt werden je Quelldokument nur übernommene Anforderungen (gemappte Anf
 
 Hinweis: Links auf neue Anforderungen verwenden aktuell den Platzhalter `{{NEW_IG_BASE_URL}}`.
 
-### Unbekannte Quelle
-
-#### Übernommene Anforderungen
-
-| Alte Anforderung | Alter Titel | Neue Anforderungen | IGs |
-|---|---|---|---|
-| [A_22121](https://gemspec.gematik.de/search/index.html?A_22121) | - | [IG-TIFLOW-CHRG-49]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-chargeitem-req-fd.html) | erp-chrg |
-| [A_22207](https://gemspec.gematik.de/search/index.html?A_22207) | - | [IG-TIFLOW-CHRG-37]({{NEW_IG_BASE_URL}}/erp-chrg/menu-technische-umsetzung-datenschutz-und-sicherheit.html) | erp-chrg |
-| [A_22208](https://gemspec.gematik.de/search/index.html?A_22208) | - | [IG-TIFLOW-CHRG-38]({{NEW_IG_BASE_URL}}/erp-chrg/menu-technische-umsetzung-datenschutz-und-sicherheit.html) | erp-chrg |
-| [A_22209](https://gemspec.gematik.de/search/index.html?A_22209) | - | [IG-TIFLOW-CHRG-39]({{NEW_IG_BASE_URL}}/erp-chrg/menu-technische-umsetzung-datenschutz-und-sicherheit.html) | erp-chrg |
-| [A_22210](https://gemspec.gematik.de/search/index.html?A_22210) | - | [IG-TIFLOW-CHRG-40]({{NEW_IG_BASE_URL}}/erp-chrg/menu-technische-umsetzung-datenschutz-und-sicherheit.html) | erp-chrg |
-| [A_22211](https://gemspec.gematik.de/search/index.html?A_22211) | - | [IG-TIFLOW-CHRG-41]({{NEW_IG_BASE_URL}}/erp-chrg/menu-technische-umsetzung-datenschutz-und-sicherheit.html) | erp-chrg |
-| [A_22212](https://gemspec.gematik.de/search/index.html?A_22212) | - | [IG-TIFLOW-CHRG-42]({{NEW_IG_BASE_URL}}/erp-chrg/menu-technische-umsetzung-datenschutz-und-sicherheit.html) | erp-chrg |
-| [A_22213](https://gemspec.gematik.de/search/index.html?A_22213) | - | [IG-TIFLOW-CHRG-43]({{NEW_IG_BASE_URL}}/erp-chrg/menu-technische-umsetzung-datenschutz-und-sicherheit.html) | erp-chrg |
-| [A_22214](https://gemspec.gematik.de/search/index.html?A_22214) | - | [IG-TIFLOW-CHRG-44]({{NEW_IG_BASE_URL}}/erp-chrg/menu-technische-umsetzung-datenschutz-und-sicherheit.html) | erp-chrg |
-| [A_28500](https://gemspec.gematik.de/search/index.html?A_28500) | - | [IG-TIFLOW-EU-22]({{NEW_IG_BASE_URL}}/erp-eu/query-api-task-req-fd.html) | erp-eu |
-| [A_28530](https://gemspec.gematik.de/search/index.html?A_28530) | - | [IG-TIFLOW-CORE-204]({{NEW_IG_BASE_URL}}/core/query-api-pushers-req-fd.html) | core |
-| [A_28540](https://gemspec.gematik.de/search/index.html?A_28540) | - | [IG-TIFLOW-DIGA-2]({{NEW_IG_BASE_URL}}/diga/query-api-communication-req-ktr.html) | diga |
-| [A_28570](https://gemspec.gematik.de/search/index.html?A_28570) | - | [IG-TIFLOW-RX-59]({{NEW_IG_BASE_URL}}/rx/op-activate-req-fd.html) | rx |
-
 ### gemILF_PS_eRp
 
 #### Übernommene Anforderungen
@@ -272,6 +252,92 @@ Hinweis: Links auf neue Anforderungen verwenden aktuell den Platzhalter `{{NEW_I
 | Alte Anforderung | Alter Titel |
 |---|---|
 | [A_23333](https://gemspec.gematik.de/search/index.html?A_23333) | E-Rezept - Übergangszeit Packages "kbv.ita.erp 1.0.2" |
+
+### gemSpec_eRp_FdV
+
+#### Übernommene Anforderungen
+
+| Alte Anforderung | Alter Titel | Neue Anforderungen | IGs |
+|---|---|---|---|
+| [A_19203](https://gemspec.gematik.de/search/index.html?A_19203) | E-Rezept-FdV: E-Rezept zuweisen - Nachricht auf E-Rezept-Fachdienst einstellen | [IG-TIFLOW-CORE-47]({{NEW_IG_BASE_URL}}/core/query-api-communication-req-fdv.html) | core |
+| [A_19205](https://gemspec.gematik.de/search/index.html?A_19205) | E-Rezept-FdV: Nachrichten anzeigen - Nachrichten herunterladen | [IG-TIFLOW-CORE-46]({{NEW_IG_BASE_URL}}/core/query-api-communication-req-fdv.html) | core |
+| [A_19219-01](https://gemspec.gematik.de/search/index.html?A_19219-01) | E-Rezept-FdV: E-Rezept löschen - E-Rezept zum Löschen auswählen | [IG-TIFLOW-CORE-23]({{NEW_IG_BASE_URL}}/core/op-abort-req-fdv.html) | core |
+| [A_19220-01](https://gemspec.gematik.de/search/index.html?A_19220-01) | E-Rezept-FdV: E-Rezept löschen - Bestätigung | [IG-TIFLOW-CORE-25]({{NEW_IG_BASE_URL}}/core/op-abort-req-fdv.html) | core |
+| [A_19221-02](https://gemspec.gematik.de/search/index.html?A_19221-02) | E-Rezept-FdV: E-Rezept löschen | [IG-TIFLOW-CORE-26]({{NEW_IG_BASE_URL}}/core/op-abort-req-fdv.html) | core |
+| [A_19222-01](https://gemspec.gematik.de/search/index.html?A_19222-01) | E-Rezept-FdV: E-Rezept löschen - Löschrequest | [IG-TIFLOW-CORE-27]({{NEW_IG_BASE_URL}}/core/op-abort-req-fdv.html) | core |
+| [A_19223-01](https://gemspec.gematik.de/search/index.html?A_19223-01) | E-Rezept-FdV: E-Rezept löschen - E-Rezept-Token löschen | [IG-TIFLOW-CORE-28]({{NEW_IG_BASE_URL}}/core/op-abort-req-fdv.html) | core |
+| [A_19345](https://gemspec.gematik.de/search/index.html?A_19345) | E-Rezept-FdV: Abgabeinformationen abfragen - MedicationDispense abrufen | [IG-TIFLOW-CORE-279]({{NEW_IG_BASE_URL}}/core/query-api-medicationdispense-req-fdv.html) | core |
+| [A_19347-01](https://gemspec.gematik.de/search/index.html?A_19347-01) | E-Rezept-FdV: E-Rezepte abrufen - Liste E-Rezepte abrufen | [IG-TIFLOW-CORE-154]({{NEW_IG_BASE_URL}}/core/query-api-task-req-fdv.html) | core |
+| [A_19348-01](https://gemspec.gematik.de/search/index.html?A_19348-01) | E-Rezept-FdV: E-Rezept abrufen - E-Rezepte lokal speichern | [IG-TIFLOW-CORE-155]({{NEW_IG_BASE_URL}}/core/query-api-task-req-fdv.html) | core |
+| [A_19350-01](https://gemspec.gematik.de/search/index.html?A_19350-01) | E-Rezept-FdV: E-Rezepte abrufen -Spezifisches E-Rezept herunterladen | [IG-TIFLOW-CORE-156]({{NEW_IG_BASE_URL}}/core/query-api-task-req-fdv.html) | core |
+| [A_19351-01](https://gemspec.gematik.de/search/index.html?A_19351-01) | E-Rezept-FdV: E-Rezepte abrufen - E-Rezept mit AccessCode herunterladen | [IG-TIFLOW-CORE-157]({{NEW_IG_BASE_URL}}/core/query-api-task-req-fdv.html) | core |
+| [A_21361-02](https://gemspec.gematik.de/search/index.html?A_21361-02) | E-Rezept-FdV: Vertreterkommunikation - Flowtype 169 / 209 - Vertreterkommunikation nicht zulässig | [IG-TIFLOW-RX-19]({{NEW_IG_BASE_URL}}/rx/query-api-communication-req-fdv.html) | rx |
+| [A_21362-02](https://gemspec.gematik.de/search/index.html?A_21362-02) | E-Rezept-FdV: E-Rezept löschen - Flowtype 169 / 209 - nur wenn beliefert | [IG-TIFLOW-RX-7]({{NEW_IG_BASE_URL}}/rx/op-abort-req-fdv.html) | rx |
+| [A_21402-02](https://gemspec.gematik.de/search/index.html?A_21402-02) | E-Rezept-FdV: Anfrage Belieferung - Flowtype 162 / 169 / 209 - Anfrage nicht zulässig | [IG-TIFLOW-RX-15]({{NEW_IG_BASE_URL}}/rx/query-api-communication-req-fdv.html)<br/>[IG-TIFLOW-RX-16]({{NEW_IG_BASE_URL}}/rx/query-api-communication-req-fdv.html) | rx |
+| [A_21403-02](https://gemspec.gematik.de/search/index.html?A_21403-02) | E-Rezept-FdV: E-Rezept zuweisen - Flowtype 169 / 209 - Zuweisen nicht zulässig | [IG-TIFLOW-RX-16]({{NEW_IG_BASE_URL}}/rx/query-api-communication-req-fdv.html) | rx |
+| [A_21526-01](https://gemspec.gematik.de/search/index.html?A_21526-01) | E-Rezept-FdV: Nachricht löschen - Löschrequest | [IG-TIFLOW-CORE-48]({{NEW_IG_BASE_URL}}/core/query-api-communication-req-fdv.html) | core |
+| [A_22163-02](https://gemspec.gematik.de/search/index.html?A_22163-02) | E-Rezept-FdV: Einwilligung erteilen - Einwilligung eingeben | [IG-TIFLOW-CORE-214]({{NEW_IG_BASE_URL}}/core/query-api-consent-req-fdv.html) | core |
+| [A_22165-01](https://gemspec.gematik.de/search/index.html?A_22165-01) | E-Rezept-FdV: Einwilligung erteilen - Consent Ressource erstellen | [IG-TIFLOW-CORE-215]({{NEW_IG_BASE_URL}}/core/query-api-consent-req-fdv.html) | core |
+| [A_22166-01](https://gemspec.gematik.de/search/index.html?A_22166-01) | E-Rezept-FdV: Einwilligung erteilen - Speicherrequest | [IG-TIFLOW-CORE-216]({{NEW_IG_BASE_URL}}/core/query-api-consent-req-fdv.html) | core |
+| [A_22168-02](https://gemspec.gematik.de/search/index.html?A_22168-02) | E-Rezept-FdV: Einwilligungsinformation abrufen - Abfragerequest | [IG-TIFLOW-CORE-217]({{NEW_IG_BASE_URL}}/core/query-api-consent-req-fdv.html) | core |
+| [A_22169-02](https://gemspec.gematik.de/search/index.html?A_22169-02) | E-Rezept-FdV: Einwilligung widerrufen - Widerruf eingeben | [IG-TIFLOW-CORE-218]({{NEW_IG_BASE_URL}}/core/query-api-consent-req-fdv.html) | core |
+| [A_22171-01](https://gemspec.gematik.de/search/index.html?A_22171-01) | E-Rezept-FdV: Einwilligung widerrufen - Löschrequest | [IG-TIFLOW-CORE-220]({{NEW_IG_BASE_URL}}/core/query-api-consent-req-fdv.html) | core |
+| [A_22173](https://gemspec.gematik.de/search/index.html?A_22173) | E-Rezept-FdV: Liste Abrechnungsinformationen abrufen - Abfragerequest | [IG-TIFLOW-CHRG-16]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-chargeitem-req-fdv.html) | erp-chrg |
+| [A_22175](https://gemspec.gematik.de/search/index.html?A_22175) | E-Rezept-FdV: Abrechnungsinformation abrufen - Abfragerequest einzelner Datensatz | [IG-TIFLOW-CHRG-18]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-chargeitem-req-fdv.html) | erp-chrg |
+| [A_22176-01](https://gemspec.gematik.de/search/index.html?A_22176-01) | E-Rezept-FdV: Abrechnungsinformation markieren - Markierungen auswählen | [IG-TIFLOW-CHRG-20]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-chargeitem-req-fdv.html) | erp-chrg |
+| [A_22179-01](https://gemspec.gematik.de/search/index.html?A_22179-01) | E-Rezept-FdV: Abrechnungsinformation markieren - Speicherrequest | [IG-TIFLOW-CHRG-21]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-chargeitem-req-fdv.html) | erp-chrg |
+| [A_22180-01](https://gemspec.gematik.de/search/index.html?A_22180-01) | E-Rezept-FdV: Abrechnungsinformation löschen - Abrechnungsinformationen zum Löschen auswählen | [IG-TIFLOW-CHRG-23]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-chargeitem-req-fdv.html) | erp-chrg |
+| [A_22181-01](https://gemspec.gematik.de/search/index.html?A_22181-01) | E-Rezept-FdV: Abrechnungsinformation löschen - Bestätigung | [IG-TIFLOW-CHRG-24]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-chargeitem-req-fdv.html) | erp-chrg |
+| [A_22183](https://gemspec.gematik.de/search/index.html?A_22183) | E-Rezept-FdV: Abrechnungsinformation löschen - Löschrequest | [IG-TIFLOW-CHRG-25]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-chargeitem-req-fdv.html) | erp-chrg |
+| [A_22184-02](https://gemspec.gematik.de/search/index.html?A_22184-02) | E-Rezept-FdV: Abrechnungsinformation exportieren - PDF/A erstellen | [IG-TIFLOW-CHRG-13]({{NEW_IG_BASE_URL}}/erp-chrg/menu-technische-umsetzung-verarbeitungsregeln.html) | erp-chrg |
+| [A_22185-01](https://gemspec.gematik.de/search/index.html?A_22185-01) | E-Rezept-FdV: Abrechnungsinformation exportieren - PDF teilen | [IG-TIFLOW-CHRG-14]({{NEW_IG_BASE_URL}}/erp-chrg/menu-technische-umsetzung-verarbeitungsregeln.html) | erp-chrg |
+| [A_22330-02](https://gemspec.gematik.de/search/index.html?A_22330-02) | E-Rezept-FdV: Einwilligung widerrufen - Bestätigung | [IG-TIFLOW-CORE-219]({{NEW_IG_BASE_URL}}/core/query-api-consent-req-fdv.html) | core |
+| [A_22707-01](https://gemspec.gematik.de/search/index.html?A_22707-01) | E-Rezept-FdV: Hinweis automatisches Löschen Abrechnungsinformationen | [IG-TIFLOW-CHRG-26]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-chargeitem-req-fdv.html) | erp-chrg |
+| [A_22709-02](https://gemspec.gematik.de/search/index.html?A_22709-02) | E-Rezept-FdV: Einwilligung erteilen - Einwilligungstext | [IG-TIFLOW-CORE-213]({{NEW_IG_BASE_URL}}/core/query-api-consent-req-fdv.html) | core |
+| [A_22726-01](https://gemspec.gematik.de/search/index.html?A_22726-01) | E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen - E-Rezept auswählen | [IG-TIFLOW-CHRG-9]({{NEW_IG_BASE_URL}}/erp-chrg/menu-technische-umsetzung-verarbeitungsregeln.html) | erp-chrg |
+| [A_22727-01](https://gemspec.gematik.de/search/index.html?A_22727-01) | E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen - Abrechnungsinformation-Token erstellen | [IG-TIFLOW-CHRG-10]({{NEW_IG_BASE_URL}}/erp-chrg/menu-technische-umsetzung-verarbeitungsregeln.html) | erp-chrg |
+| [A_22728-01](https://gemspec.gematik.de/search/index.html?A_22728-01) | E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen | [IG-TIFLOW-CHRG-11]({{NEW_IG_BASE_URL}}/erp-chrg/menu-technische-umsetzung-verarbeitungsregeln.html) | erp-chrg |
+| [A_22735-01](https://gemspec.gematik.de/search/index.html?A_22735-01) | E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - E-Rezept auswählen | [IG-TIFLOW-CHRG-2]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-communication-req-fdv.html) | erp-chrg |
+| [A_22736](https://gemspec.gematik.de/search/index.html?A_22736) | E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Apotheke auswählen | [IG-TIFLOW-CHRG-3]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-communication-req-fdv.html) | erp-chrg |
+| [A_22737-01](https://gemspec.gematik.de/search/index.html?A_22737-01) | E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - freie Textnachricht | [IG-TIFLOW-CHRG-4]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-communication-req-fdv.html) | erp-chrg |
+| [A_22739-01](https://gemspec.gematik.de/search/index.html?A_22739-01) | E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Nachricht erstellen | [IG-TIFLOW-CHRG-5]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-communication-req-fdv.html) | erp-chrg |
+| [A_22740](https://gemspec.gematik.de/search/index.html?A_22740) | E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Nachricht auf E-Rezept-Fachdienst einstellen | [IG-TIFLOW-CHRG-6]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-communication-req-fdv.html) | erp-chrg |
+| [A_24023-03](https://gemspec.gematik.de/search/index.html?A_24023-03) | E-Rezept-FdV:  E-Rezepte löschen - Coverage PKV - Warnung Abgabeinformationen | [IG-TIFLOW-CORE-24]({{NEW_IG_BASE_URL}}/core/op-abort-req-fdv.html) | core |
+| [A_24544](https://gemspec.gematik.de/search/index.html?A_24544) | E-Rezept-FdV: optional: Abrechnungsinformation abrufen | [IG-TIFLOW-CHRG-17]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-chargeitem-req-fdv.html) | erp-chrg |
+| [A_24546](https://gemspec.gematik.de/search/index.html?A_24546) | E-Rezept-FdV: optional: Abrechnungsinformation löschen | [IG-TIFLOW-CHRG-22]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-chargeitem-req-fdv.html) | erp-chrg |
+| [A_24553](https://gemspec.gematik.de/search/index.html?A_24553) | E-Rezept-FdV: optional: Abrechnungsinformation markieren | [IG-TIFLOW-CHRG-19]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-chargeitem-req-fdv.html) | erp-chrg |
+| [A_24554](https://gemspec.gematik.de/search/index.html?A_24554) | E-Rezept-FdV: optional: Liste Abrechnungsinformationen abrufen | [IG-TIFLOW-CHRG-15]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-chargeitem-req-fdv.html) | erp-chrg |
+| [A_24555](https://gemspec.gematik.de/search/index.html?A_24555) | E-Rezept-FdV: optional: Abrechnungsinformation exportieren | [IG-TIFLOW-CHRG-12]({{NEW_IG_BASE_URL}}/erp-chrg/menu-technische-umsetzung-verarbeitungsregeln.html) | erp-chrg |
+| [A_24563](https://gemspec.gematik.de/search/index.html?A_24563) | E-Rezept-FdV: optional: Abrechnungsinformation-Token übermitteln | [IG-TIFLOW-CHRG-1]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-communication-req-fdv.html) | erp-chrg |
+| [A_24577](https://gemspec.gematik.de/search/index.html?A_24577) | E-Rezept-FdV: optional: 2D-Code Abrechnungsinformation anzeigen | [IG-TIFLOW-CHRG-8]({{NEW_IG_BASE_URL}}/erp-chrg/menu-technische-umsetzung-verarbeitungsregeln.html) | erp-chrg |
+| [A_26007](https://gemspec.gematik.de/search/index.html?A_26007) | E-Rezept-FdV: E-Rezept zuweisen - Flowtype 162 - Kostenträger auswählen | [IG-TIFLOW-DIGA-5]({{NEW_IG_BASE_URL}}/diga/query-api-communication-req-fdv.html) | diga |
+| [A_26009](https://gemspec.gematik.de/search/index.html?A_26009) | E-Rezept-FdV: optional: Kostenträger suchen | [IG-TIFLOW-DIGA-7]({{NEW_IG_BASE_URL}}/diga/api-add-fhirvzd.html) | diga |
+| [A_26010](https://gemspec.gematik.de/search/index.html?A_26010) | E-Rezept-FdV: Kostenträger suchen - IKNR aus ACCESS_TOKEN beziehen | [IG-TIFLOW-DIGA-8]({{NEW_IG_BASE_URL}}/diga/api-add-fhirvzd.html) | diga |
+| [A_26011](https://gemspec.gematik.de/search/index.html?A_26011) | E-Rezept-FdV: Kostenträger suchen - Telematik-ID im Verzeichnisdienst suchen | [IG-TIFLOW-DIGA-9]({{NEW_IG_BASE_URL}}/diga/api-add-fhirvzd.html) | diga |
+| [A_26012](https://gemspec.gematik.de/search/index.html?A_26012) | E-Rezept-FdV: Kostenträger Suchen - Liste verfügbarer Kostenträger ermitteln | [IG-TIFLOW-DIGA-10]({{NEW_IG_BASE_URL}}/diga/api-add-fhirvzd.html) | diga |
+| [A_26013](https://gemspec.gematik.de/search/index.html?A_26013) | E-Rezept-FdV: Abgabeinformationen abfragen - Flowtyp 162 - Anzeige des Freischaltcodes | [IG-TIFLOW-DIGA-21]({{NEW_IG_BASE_URL}}/diga/query-api-medicationdispense-req-fdv.html) | diga |
+| [A_26082](https://gemspec.gematik.de/search/index.html?A_26082) | E-Rezept-FdV: E-Rezept löschen - Hinweis zu Daten in ePA | [IG-TIFLOW-CORE-21]({{NEW_IG_BASE_URL}}/core/op-abort-req-fdv.html) | core |
+| [A_26326](https://gemspec.gematik.de/search/index.html?A_26326) | E-Rezept-FdV: E-Rezept zuweisen - Beginn Gültigkeit prüfen | [IG-TIFLOW-RX-18]({{NEW_IG_BASE_URL}}/rx/query-api-communication-req-fdv.html) | rx |
+| [A_26340](https://gemspec.gematik.de/search/index.html?A_26340) | E-Rezept-FdV: Abgabeinformationen abfragen - Flowtyp 162 - Supportinformationen für DiGA-App | [IG-TIFLOW-DIGA-22]({{NEW_IG_BASE_URL}}/diga/query-api-medicationdispense-req-fdv.html) | diga |
+| [A_27109](https://gemspec.gematik.de/search/index.html?A_27109) | E-Rezept-FdV: Zugriffsberechtigung - Liste zulässiger Länder | [IG-TIFLOW-EU-48]({{NEW_IG_BASE_URL}}/erp-eu/op-grant-eu-access-permission-req-fdv.html) | erp-eu |
+| [A_27110](https://gemspec.gematik.de/search/index.html?A_27110) | E-Rezept-FdV: Zugriffsberechtigung - Caching Liste zulässiger Länder | [IG-TIFLOW-EU-49]({{NEW_IG_BASE_URL}}/erp-eu/op-grant-eu-access-permission-req-fdv.html) | erp-eu |
+| [A_27111](https://gemspec.gematik.de/search/index.html?A_27111) | E-Rezept-FdV: Zugriffsberechtigung erteilen - Land auswählen | [IG-TIFLOW-EU-50]({{NEW_IG_BASE_URL}}/erp-eu/op-grant-eu-access-permission-req-fdv.html) | erp-eu |
+| [A_27113](https://gemspec.gematik.de/search/index.html?A_27113) | E-Rezept-FdV: Zugriffsberechtigung erteilen - Zugriffscode erzeugen | [IG-TIFLOW-EU-51]({{NEW_IG_BASE_URL}}/erp-eu/op-grant-eu-access-permission-req-fdv.html) | erp-eu |
+| [A_27114](https://gemspec.gematik.de/search/index.html?A_27114) | E-Rezept-FdV: Zugriffsberechtigung erteilen - Zugriffsberechtigung am E-Rezept-Fachdienst speichern | [IG-TIFLOW-EU-52]({{NEW_IG_BASE_URL}}/erp-eu/op-grant-eu-access-permission-req-fdv.html) | erp-eu |
+| [A_27121](https://gemspec.gematik.de/search/index.html?A_27121) | E-Rezept-FdV: Zugriffsberechtigung abrufen - Abfragerequest | [IG-TIFLOW-EU-45]({{NEW_IG_BASE_URL}}/erp-eu/op-read-eu-access-permission-req-fdv.html) | erp-eu |
+| [A_27125](https://gemspec.gematik.de/search/index.html?A_27125) | E-Rezept-FdV: Zugriffsberechtigung löschen - Abfragerequest | [IG-TIFLOW-EU-33]({{NEW_IG_BASE_URL}}/erp-eu/op-revoke-eu-access-permission-req-fdv.html) | erp-eu |
+| [A_27126](https://gemspec.gematik.de/search/index.html?A_27126) | E-Rezept-FdV: Zugriffsberechtigung löschen - lokale Zugriffsberechtigung löschen | [IG-TIFLOW-EU-34]({{NEW_IG_BASE_URL}}/erp-eu/op-revoke-eu-access-permission-req-fdv.html) | erp-eu |
+| [A_27488](https://gemspec.gematik.de/search/index.html?A_27488) | E-Rezept-FdV: E-Rezept zum Einlösen im EU-Ausland markieren | [IG-TIFLOW-EU-25]({{NEW_IG_BASE_URL}}/erp-eu/query-api-task-req-fdv.html) | erp-eu |
+| [A_27489](https://gemspec.gematik.de/search/index.html?A_27489) | E-Rezept-FdV: optional: E-Rezept markieren | [IG-TIFLOW-EU-27]({{NEW_IG_BASE_URL}}/erp-eu/query-api-task-req-fdv.html) | erp-eu |
+| [A_27490](https://gemspec.gematik.de/search/index.html?A_27490) | E-Rezept-FdV: E-Rezept markieren | [IG-TIFLOW-EU-29]({{NEW_IG_BASE_URL}}/erp-eu/query-api-task-req-fdv.html) | erp-eu |
+| [A_27491](https://gemspec.gematik.de/search/index.html?A_27491) | E-Rezept-FdV: E-Rezept markieren - Speicherrequest | [IG-TIFLOW-EU-31]({{NEW_IG_BASE_URL}}/erp-eu/query-api-task-req-fdv.html) | erp-eu |
+| [A_27545](https://gemspec.gematik.de/search/index.html?A_27545) | E-Rezept-FdV: E-Rezept markieren - FHIR Ressource erstellen | [IG-TIFLOW-EU-30]({{NEW_IG_BASE_URL}}/erp-eu/query-api-task-req-fdv.html) | erp-eu |
+| [A_27617](https://gemspec.gematik.de/search/index.html?A_27617) | E-Rezept-FdV: E-Rezept zum Einlösen im EU-Ausland markieren - Hinweis Belieferungsmöglichkeit | [IG-TIFLOW-EU-26]({{NEW_IG_BASE_URL}}/erp-eu/query-api-task-req-fdv.html) | erp-eu |
+| [A_27618](https://gemspec.gematik.de/search/index.html?A_27618) | E-Rezept-FdV: E-Rezept markieren - E-Rezepte auswählen | [IG-TIFLOW-EU-28]({{NEW_IG_BASE_URL}}/erp-eu/query-api-task-req-fdv.html) | erp-eu |
+| [A_27832](https://gemspec.gematik.de/search/index.html?A_27832) | E-Rezept-FdV: Flowtype 166 - Hinweis auf Workflow-Besonderheit | [IG-TIFLOW-RX-83]({{NEW_IG_BASE_URL}}/rx/query-api-task-req-fdv.html) | rx |
+| [A_27833](https://gemspec.gematik.de/search/index.html?A_27833) | E-Rezept-FdV: E-Rezept zuweisen- Flowtype 166 - Zuweisen als Versand nicht zulässig | [IG-TIFLOW-RX-17]({{NEW_IG_BASE_URL}}/rx/query-api-communication-req-fdv.html) | rx |
+| [A_28122](https://gemspec.gematik.de/search/index.html?A_28122) | E-Rezept-FdV: Push Notifications - Instanz registrieren - OpenAPI | [IG-TIFLOW-CORE-302]({{NEW_IG_BASE_URL}}/core/query-api-pushers-req-fdv.html) | core |
+| [A_28123](https://gemspec.gematik.de/search/index.html?A_28123) | E-Rezept-FdV: Push Notifications - Channelkonfiguration - OpenAPI | [IG-TIFLOW-CORE-101]({{NEW_IG_BASE_URL}}/core/query-api-channels-req-fdv.html) | core |
 
 ### gemSpec_FD_eRp
 
@@ -785,89 +851,29 @@ Hinweis: Links auf neue Anforderungen verwenden aktuell den Platzhalter `{{NEW_I
 | [A_27859](https://gemspec.gematik.de/search/index.html?A_27859) | E-Rezept-Fachdienst - Zugriff auf Webdienste - Deaktivieren von Übertragungen |
 | [A_27860](https://gemspec.gematik.de/search/index.html?A_27860) | Anbieter E-Rezept-Fachdienst - Zugriff auf Webdienste - Betrieblicher Prozess Deaktivieren von Übertragungen |
 
-### gemSpec_eRp_FdV
+### Unbekannte Quelle
 
 #### Übernommene Anforderungen
 
 | Alte Anforderung | Alter Titel | Neue Anforderungen | IGs |
 |---|---|---|---|
-| [A_19203](https://gemspec.gematik.de/search/index.html?A_19203) | E-Rezept-FdV: E-Rezept zuweisen - Nachricht auf E-Rezept-Fachdienst einstellen | [IG-TIFLOW-CORE-47]({{NEW_IG_BASE_URL}}/core/query-api-communication-req-fdv.html) | core |
-| [A_19205](https://gemspec.gematik.de/search/index.html?A_19205) | E-Rezept-FdV: Nachrichten anzeigen - Nachrichten herunterladen | [IG-TIFLOW-CORE-46]({{NEW_IG_BASE_URL}}/core/query-api-communication-req-fdv.html) | core |
-| [A_19219-01](https://gemspec.gematik.de/search/index.html?A_19219-01) | E-Rezept-FdV: E-Rezept löschen - E-Rezept zum Löschen auswählen | [IG-TIFLOW-CORE-23]({{NEW_IG_BASE_URL}}/core/op-abort-req-fdv.html) | core |
-| [A_19220-01](https://gemspec.gematik.de/search/index.html?A_19220-01) | E-Rezept-FdV: E-Rezept löschen - Bestätigung | [IG-TIFLOW-CORE-25]({{NEW_IG_BASE_URL}}/core/op-abort-req-fdv.html) | core |
-| [A_19221-02](https://gemspec.gematik.de/search/index.html?A_19221-02) | E-Rezept-FdV: E-Rezept löschen | [IG-TIFLOW-CORE-26]({{NEW_IG_BASE_URL}}/core/op-abort-req-fdv.html) | core |
-| [A_19222-01](https://gemspec.gematik.de/search/index.html?A_19222-01) | E-Rezept-FdV: E-Rezept löschen - Löschrequest | [IG-TIFLOW-CORE-27]({{NEW_IG_BASE_URL}}/core/op-abort-req-fdv.html) | core |
-| [A_19223-01](https://gemspec.gematik.de/search/index.html?A_19223-01) | E-Rezept-FdV: E-Rezept löschen - E-Rezept-Token löschen | [IG-TIFLOW-CORE-28]({{NEW_IG_BASE_URL}}/core/op-abort-req-fdv.html) | core |
-| [A_19345](https://gemspec.gematik.de/search/index.html?A_19345) | E-Rezept-FdV: Abgabeinformationen abfragen - MedicationDispense abrufen | [IG-TIFLOW-CORE-279]({{NEW_IG_BASE_URL}}/core/query-api-medicationdispense-req-fdv.html) | core |
-| [A_19347-01](https://gemspec.gematik.de/search/index.html?A_19347-01) | E-Rezept-FdV: E-Rezepte abrufen - Liste E-Rezepte abrufen | [IG-TIFLOW-CORE-154]({{NEW_IG_BASE_URL}}/core/query-api-task-req-fdv.html) | core |
-| [A_19348-01](https://gemspec.gematik.de/search/index.html?A_19348-01) | E-Rezept-FdV: E-Rezept abrufen - E-Rezepte lokal speichern | [IG-TIFLOW-CORE-155]({{NEW_IG_BASE_URL}}/core/query-api-task-req-fdv.html) | core |
-| [A_19350-01](https://gemspec.gematik.de/search/index.html?A_19350-01) | E-Rezept-FdV: E-Rezepte abrufen -Spezifisches E-Rezept herunterladen | [IG-TIFLOW-CORE-156]({{NEW_IG_BASE_URL}}/core/query-api-task-req-fdv.html) | core |
-| [A_19351-01](https://gemspec.gematik.de/search/index.html?A_19351-01) | E-Rezept-FdV: E-Rezepte abrufen - E-Rezept mit AccessCode herunterladen | [IG-TIFLOW-CORE-157]({{NEW_IG_BASE_URL}}/core/query-api-task-req-fdv.html) | core |
-| [A_21361-02](https://gemspec.gematik.de/search/index.html?A_21361-02) | E-Rezept-FdV: Vertreterkommunikation - Flowtype 169 / 209 - Vertreterkommunikation nicht zulässig | [IG-TIFLOW-RX-19]({{NEW_IG_BASE_URL}}/rx/query-api-communication-req-fdv.html) | rx |
-| [A_21362-02](https://gemspec.gematik.de/search/index.html?A_21362-02) | E-Rezept-FdV: E-Rezept löschen - Flowtype 169 / 209 - nur wenn beliefert | [IG-TIFLOW-RX-7]({{NEW_IG_BASE_URL}}/rx/op-abort-req-fdv.html) | rx |
-| [A_21402-02](https://gemspec.gematik.de/search/index.html?A_21402-02) | E-Rezept-FdV: Anfrage Belieferung - Flowtype 162 / 169 / 209 - Anfrage nicht zulässig | [IG-TIFLOW-RX-15]({{NEW_IG_BASE_URL}}/rx/query-api-communication-req-fdv.html)<br/>[IG-TIFLOW-RX-16]({{NEW_IG_BASE_URL}}/rx/query-api-communication-req-fdv.html) | rx |
-| [A_21403-02](https://gemspec.gematik.de/search/index.html?A_21403-02) | E-Rezept-FdV: E-Rezept zuweisen - Flowtype 169 / 209 - Zuweisen nicht zulässig | [IG-TIFLOW-RX-16]({{NEW_IG_BASE_URL}}/rx/query-api-communication-req-fdv.html) | rx |
-| [A_21526-01](https://gemspec.gematik.de/search/index.html?A_21526-01) | E-Rezept-FdV: Nachricht löschen - Löschrequest | [IG-TIFLOW-CORE-48]({{NEW_IG_BASE_URL}}/core/query-api-communication-req-fdv.html) | core |
-| [A_22163-02](https://gemspec.gematik.de/search/index.html?A_22163-02) | E-Rezept-FdV: Einwilligung erteilen - Einwilligung eingeben | [IG-TIFLOW-CORE-214]({{NEW_IG_BASE_URL}}/core/query-api-consent-req-fdv.html) | core |
-| [A_22165-01](https://gemspec.gematik.de/search/index.html?A_22165-01) | E-Rezept-FdV: Einwilligung erteilen - Consent Ressource erstellen | [IG-TIFLOW-CORE-215]({{NEW_IG_BASE_URL}}/core/query-api-consent-req-fdv.html) | core |
-| [A_22166-01](https://gemspec.gematik.de/search/index.html?A_22166-01) | E-Rezept-FdV: Einwilligung erteilen - Speicherrequest | [IG-TIFLOW-CORE-216]({{NEW_IG_BASE_URL}}/core/query-api-consent-req-fdv.html) | core |
-| [A_22168-02](https://gemspec.gematik.de/search/index.html?A_22168-02) | E-Rezept-FdV: Einwilligungsinformation abrufen - Abfragerequest | [IG-TIFLOW-CORE-217]({{NEW_IG_BASE_URL}}/core/query-api-consent-req-fdv.html) | core |
-| [A_22169-02](https://gemspec.gematik.de/search/index.html?A_22169-02) | E-Rezept-FdV: Einwilligung widerrufen - Widerruf eingeben | [IG-TIFLOW-CORE-218]({{NEW_IG_BASE_URL}}/core/query-api-consent-req-fdv.html) | core |
-| [A_22171-01](https://gemspec.gematik.de/search/index.html?A_22171-01) | E-Rezept-FdV: Einwilligung widerrufen - Löschrequest | [IG-TIFLOW-CORE-220]({{NEW_IG_BASE_URL}}/core/query-api-consent-req-fdv.html) | core |
-| [A_22173](https://gemspec.gematik.de/search/index.html?A_22173) | E-Rezept-FdV: Liste Abrechnungsinformationen abrufen - Abfragerequest | [IG-TIFLOW-CHRG-16]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-chargeitem-req-fdv.html) | erp-chrg |
-| [A_22175](https://gemspec.gematik.de/search/index.html?A_22175) | E-Rezept-FdV: Abrechnungsinformation abrufen - Abfragerequest einzelner Datensatz | [IG-TIFLOW-CHRG-18]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-chargeitem-req-fdv.html) | erp-chrg |
-| [A_22176-01](https://gemspec.gematik.de/search/index.html?A_22176-01) | E-Rezept-FdV: Abrechnungsinformation markieren - Markierungen auswählen | [IG-TIFLOW-CHRG-20]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-chargeitem-req-fdv.html) | erp-chrg |
-| [A_22179-01](https://gemspec.gematik.de/search/index.html?A_22179-01) | E-Rezept-FdV: Abrechnungsinformation markieren - Speicherrequest | [IG-TIFLOW-CHRG-21]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-chargeitem-req-fdv.html) | erp-chrg |
-| [A_22180-01](https://gemspec.gematik.de/search/index.html?A_22180-01) | E-Rezept-FdV: Abrechnungsinformation löschen - Abrechnungsinformationen zum Löschen auswählen | [IG-TIFLOW-CHRG-23]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-chargeitem-req-fdv.html) | erp-chrg |
-| [A_22181-01](https://gemspec.gematik.de/search/index.html?A_22181-01) | E-Rezept-FdV: Abrechnungsinformation löschen - Bestätigung | [IG-TIFLOW-CHRG-24]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-chargeitem-req-fdv.html) | erp-chrg |
-| [A_22183](https://gemspec.gematik.de/search/index.html?A_22183) | E-Rezept-FdV: Abrechnungsinformation löschen - Löschrequest | [IG-TIFLOW-CHRG-25]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-chargeitem-req-fdv.html) | erp-chrg |
-| [A_22184-02](https://gemspec.gematik.de/search/index.html?A_22184-02) | E-Rezept-FdV: Abrechnungsinformation exportieren - PDF/A erstellen | [IG-TIFLOW-CHRG-13]({{NEW_IG_BASE_URL}}/erp-chrg/menu-technische-umsetzung-verarbeitungsregeln.html) | erp-chrg |
-| [A_22185-01](https://gemspec.gematik.de/search/index.html?A_22185-01) | E-Rezept-FdV: Abrechnungsinformation exportieren - PDF teilen | [IG-TIFLOW-CHRG-14]({{NEW_IG_BASE_URL}}/erp-chrg/menu-technische-umsetzung-verarbeitungsregeln.html) | erp-chrg |
-| [A_22330-02](https://gemspec.gematik.de/search/index.html?A_22330-02) | E-Rezept-FdV: Einwilligung widerrufen - Bestätigung | [IG-TIFLOW-CORE-219]({{NEW_IG_BASE_URL}}/core/query-api-consent-req-fdv.html) | core |
-| [A_22707-01](https://gemspec.gematik.de/search/index.html?A_22707-01) | E-Rezept-FdV: Hinweis automatisches Löschen Abrechnungsinformationen | [IG-TIFLOW-CHRG-26]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-chargeitem-req-fdv.html) | erp-chrg |
-| [A_22709-02](https://gemspec.gematik.de/search/index.html?A_22709-02) | E-Rezept-FdV: Einwilligung erteilen - Einwilligungstext | [IG-TIFLOW-CORE-213]({{NEW_IG_BASE_URL}}/core/query-api-consent-req-fdv.html) | core |
-| [A_22726-01](https://gemspec.gematik.de/search/index.html?A_22726-01) | E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen - E-Rezept auswählen | [IG-TIFLOW-CHRG-9]({{NEW_IG_BASE_URL}}/erp-chrg/menu-technische-umsetzung-verarbeitungsregeln.html) | erp-chrg |
-| [A_22727-01](https://gemspec.gematik.de/search/index.html?A_22727-01) | E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen - Abrechnungsinformation-Token erstellen | [IG-TIFLOW-CHRG-10]({{NEW_IG_BASE_URL}}/erp-chrg/menu-technische-umsetzung-verarbeitungsregeln.html) | erp-chrg |
-| [A_22728-01](https://gemspec.gematik.de/search/index.html?A_22728-01) | E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen | [IG-TIFLOW-CHRG-11]({{NEW_IG_BASE_URL}}/erp-chrg/menu-technische-umsetzung-verarbeitungsregeln.html) | erp-chrg |
-| [A_22735-01](https://gemspec.gematik.de/search/index.html?A_22735-01) | E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - E-Rezept auswählen | [IG-TIFLOW-CHRG-2]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-communication-req-fdv.html) | erp-chrg |
-| [A_22736](https://gemspec.gematik.de/search/index.html?A_22736) | E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Apotheke auswählen | [IG-TIFLOW-CHRG-3]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-communication-req-fdv.html) | erp-chrg |
-| [A_22737-01](https://gemspec.gematik.de/search/index.html?A_22737-01) | E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - freie Textnachricht | [IG-TIFLOW-CHRG-4]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-communication-req-fdv.html) | erp-chrg |
-| [A_22739-01](https://gemspec.gematik.de/search/index.html?A_22739-01) | E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Nachricht erstellen | [IG-TIFLOW-CHRG-5]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-communication-req-fdv.html) | erp-chrg |
-| [A_22740](https://gemspec.gematik.de/search/index.html?A_22740) | E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Nachricht auf E-Rezept-Fachdienst einstellen | [IG-TIFLOW-CHRG-6]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-communication-req-fdv.html) | erp-chrg |
-| [A_24023-03](https://gemspec.gematik.de/search/index.html?A_24023-03) | E-Rezept-FdV:  E-Rezepte löschen - Coverage PKV - Warnung Abgabeinformationen | [IG-TIFLOW-CORE-24]({{NEW_IG_BASE_URL}}/core/op-abort-req-fdv.html) | core |
-| [A_24544](https://gemspec.gematik.de/search/index.html?A_24544) | E-Rezept-FdV: optional: Abrechnungsinformation abrufen | [IG-TIFLOW-CHRG-17]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-chargeitem-req-fdv.html) | erp-chrg |
-| [A_24546](https://gemspec.gematik.de/search/index.html?A_24546) | E-Rezept-FdV: optional: Abrechnungsinformation löschen | [IG-TIFLOW-CHRG-22]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-chargeitem-req-fdv.html) | erp-chrg |
-| [A_24553](https://gemspec.gematik.de/search/index.html?A_24553) | E-Rezept-FdV: optional: Abrechnungsinformation markieren | [IG-TIFLOW-CHRG-19]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-chargeitem-req-fdv.html) | erp-chrg |
-| [A_24554](https://gemspec.gematik.de/search/index.html?A_24554) | E-Rezept-FdV: optional: Liste Abrechnungsinformationen abrufen | [IG-TIFLOW-CHRG-15]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-chargeitem-req-fdv.html) | erp-chrg |
-| [A_24555](https://gemspec.gematik.de/search/index.html?A_24555) | E-Rezept-FdV: optional: Abrechnungsinformation exportieren | [IG-TIFLOW-CHRG-12]({{NEW_IG_BASE_URL}}/erp-chrg/menu-technische-umsetzung-verarbeitungsregeln.html) | erp-chrg |
-| [A_24563](https://gemspec.gematik.de/search/index.html?A_24563) | E-Rezept-FdV: optional: Abrechnungsinformation-Token übermitteln | [IG-TIFLOW-CHRG-1]({{NEW_IG_BASE_URL}}/erp-chrg/query-api-communication-req-fdv.html) | erp-chrg |
-| [A_24577](https://gemspec.gematik.de/search/index.html?A_24577) | E-Rezept-FdV: optional: 2D-Code Abrechnungsinformation anzeigen | [IG-TIFLOW-CHRG-8]({{NEW_IG_BASE_URL}}/erp-chrg/menu-technische-umsetzung-verarbeitungsregeln.html) | erp-chrg |
-| [A_26007](https://gemspec.gematik.de/search/index.html?A_26007) | E-Rezept-FdV: E-Rezept zuweisen - Flowtype 162 - Kostenträger auswählen | [IG-TIFLOW-DIGA-5]({{NEW_IG_BASE_URL}}/diga/query-api-communication-req-fdv.html) | diga |
-| [A_26009](https://gemspec.gematik.de/search/index.html?A_26009) | E-Rezept-FdV: optional: Kostenträger suchen | [IG-TIFLOW-DIGA-7]({{NEW_IG_BASE_URL}}/diga/api-add-fhirvzd.html) | diga |
-| [A_26010](https://gemspec.gematik.de/search/index.html?A_26010) | E-Rezept-FdV: Kostenträger suchen - IKNR aus ACCESS_TOKEN beziehen | [IG-TIFLOW-DIGA-8]({{NEW_IG_BASE_URL}}/diga/api-add-fhirvzd.html) | diga |
-| [A_26011](https://gemspec.gematik.de/search/index.html?A_26011) | E-Rezept-FdV: Kostenträger suchen - Telematik-ID im Verzeichnisdienst suchen | [IG-TIFLOW-DIGA-9]({{NEW_IG_BASE_URL}}/diga/api-add-fhirvzd.html) | diga |
-| [A_26012](https://gemspec.gematik.de/search/index.html?A_26012) | E-Rezept-FdV: Kostenträger Suchen - Liste verfügbarer Kostenträger ermitteln | [IG-TIFLOW-DIGA-10]({{NEW_IG_BASE_URL}}/diga/api-add-fhirvzd.html) | diga |
-| [A_26013](https://gemspec.gematik.de/search/index.html?A_26013) | E-Rezept-FdV: Abgabeinformationen abfragen - Flowtyp 162 - Anzeige des Freischaltcodes | [IG-TIFLOW-DIGA-21]({{NEW_IG_BASE_URL}}/diga/query-api-medicationdispense-req-fdv.html) | diga |
-| [A_26082](https://gemspec.gematik.de/search/index.html?A_26082) | E-Rezept-FdV: E-Rezept löschen - Hinweis zu Daten in ePA | [IG-TIFLOW-CORE-21]({{NEW_IG_BASE_URL}}/core/op-abort-req-fdv.html) | core |
-| [A_26326](https://gemspec.gematik.de/search/index.html?A_26326) | E-Rezept-FdV: E-Rezept zuweisen - Beginn Gültigkeit prüfen | [IG-TIFLOW-RX-18]({{NEW_IG_BASE_URL}}/rx/query-api-communication-req-fdv.html) | rx |
-| [A_26340](https://gemspec.gematik.de/search/index.html?A_26340) | E-Rezept-FdV: Abgabeinformationen abfragen - Flowtyp 162 - Supportinformationen für DiGA-App | [IG-TIFLOW-DIGA-22]({{NEW_IG_BASE_URL}}/diga/query-api-medicationdispense-req-fdv.html) | diga |
-| [A_27109](https://gemspec.gematik.de/search/index.html?A_27109) | E-Rezept-FdV: Zugriffsberechtigung - Liste zulässiger Länder | [IG-TIFLOW-EU-48]({{NEW_IG_BASE_URL}}/erp-eu/op-grant-eu-access-permission-req-fdv.html) | erp-eu |
-| [A_27110](https://gemspec.gematik.de/search/index.html?A_27110) | E-Rezept-FdV: Zugriffsberechtigung - Caching Liste zulässiger Länder | [IG-TIFLOW-EU-49]({{NEW_IG_BASE_URL}}/erp-eu/op-grant-eu-access-permission-req-fdv.html) | erp-eu |
-| [A_27111](https://gemspec.gematik.de/search/index.html?A_27111) | E-Rezept-FdV: Zugriffsberechtigung erteilen - Land auswählen | [IG-TIFLOW-EU-50]({{NEW_IG_BASE_URL}}/erp-eu/op-grant-eu-access-permission-req-fdv.html) | erp-eu |
-| [A_27113](https://gemspec.gematik.de/search/index.html?A_27113) | E-Rezept-FdV: Zugriffsberechtigung erteilen - Zugriffscode erzeugen | [IG-TIFLOW-EU-51]({{NEW_IG_BASE_URL}}/erp-eu/op-grant-eu-access-permission-req-fdv.html) | erp-eu |
-| [A_27114](https://gemspec.gematik.de/search/index.html?A_27114) | E-Rezept-FdV: Zugriffsberechtigung erteilen - Zugriffsberechtigung am E-Rezept-Fachdienst speichern | [IG-TIFLOW-EU-52]({{NEW_IG_BASE_URL}}/erp-eu/op-grant-eu-access-permission-req-fdv.html) | erp-eu |
-| [A_27121](https://gemspec.gematik.de/search/index.html?A_27121) | E-Rezept-FdV: Zugriffsberechtigung abrufen - Abfragerequest | [IG-TIFLOW-EU-45]({{NEW_IG_BASE_URL}}/erp-eu/op-read-eu-access-permission-req-fdv.html) | erp-eu |
-| [A_27125](https://gemspec.gematik.de/search/index.html?A_27125) | E-Rezept-FdV: Zugriffsberechtigung löschen - Abfragerequest | [IG-TIFLOW-EU-33]({{NEW_IG_BASE_URL}}/erp-eu/op-revoke-eu-access-permission-req-fdv.html) | erp-eu |
-| [A_27126](https://gemspec.gematik.de/search/index.html?A_27126) | E-Rezept-FdV: Zugriffsberechtigung löschen - lokale Zugriffsberechtigung löschen | [IG-TIFLOW-EU-34]({{NEW_IG_BASE_URL}}/erp-eu/op-revoke-eu-access-permission-req-fdv.html) | erp-eu |
-| [A_27488](https://gemspec.gematik.de/search/index.html?A_27488) | E-Rezept-FdV: E-Rezept zum Einlösen im EU-Ausland markieren | [IG-TIFLOW-EU-25]({{NEW_IG_BASE_URL}}/erp-eu/query-api-task-req-fdv.html) | erp-eu |
-| [A_27489](https://gemspec.gematik.de/search/index.html?A_27489) | E-Rezept-FdV: optional: E-Rezept markieren | [IG-TIFLOW-EU-27]({{NEW_IG_BASE_URL}}/erp-eu/query-api-task-req-fdv.html) | erp-eu |
-| [A_27490](https://gemspec.gematik.de/search/index.html?A_27490) | E-Rezept-FdV: E-Rezept markieren | [IG-TIFLOW-EU-29]({{NEW_IG_BASE_URL}}/erp-eu/query-api-task-req-fdv.html) | erp-eu |
-| [A_27491](https://gemspec.gematik.de/search/index.html?A_27491) | E-Rezept-FdV: E-Rezept markieren - Speicherrequest | [IG-TIFLOW-EU-31]({{NEW_IG_BASE_URL}}/erp-eu/query-api-task-req-fdv.html) | erp-eu |
-| [A_27545](https://gemspec.gematik.de/search/index.html?A_27545) | E-Rezept-FdV: E-Rezept markieren - FHIR Ressource erstellen | [IG-TIFLOW-EU-30]({{NEW_IG_BASE_URL}}/erp-eu/query-api-task-req-fdv.html) | erp-eu |
-| [A_27617](https://gemspec.gematik.de/search/index.html?A_27617) | E-Rezept-FdV: E-Rezept zum Einlösen im EU-Ausland markieren - Hinweis Belieferungsmöglichkeit | [IG-TIFLOW-EU-26]({{NEW_IG_BASE_URL}}/erp-eu/query-api-task-req-fdv.html) | erp-eu |
-| [A_27618](https://gemspec.gematik.de/search/index.html?A_27618) | E-Rezept-FdV: E-Rezept markieren - E-Rezepte auswählen | [IG-TIFLOW-EU-28]({{NEW_IG_BASE_URL}}/erp-eu/query-api-task-req-fdv.html) | erp-eu |
-| [A_27832](https://gemspec.gematik.de/search/index.html?A_27832) | E-Rezept-FdV: Flowtype 166 - Hinweis auf Workflow-Besonderheit | [IG-TIFLOW-RX-83]({{NEW_IG_BASE_URL}}/rx/query-api-task-req-fdv.html) | rx |
-| [A_27833](https://gemspec.gematik.de/search/index.html?A_27833) | E-Rezept-FdV: E-Rezept zuweisen- Flowtype 166 - Zuweisen als Versand nicht zulässig | [IG-TIFLOW-RX-17]({{NEW_IG_BASE_URL}}/rx/query-api-communication-req-fdv.html) | rx |
-| [A_28122](https://gemspec.gematik.de/search/index.html?A_28122) | E-Rezept-FdV: Push Notifications - Instanz registrieren - OpenAPI | [IG-TIFLOW-CORE-302]({{NEW_IG_BASE_URL}}/core/query-api-pushers-req-fdv.html) | core |
-| [A_28123](https://gemspec.gematik.de/search/index.html?A_28123) | E-Rezept-FdV: Push Notifications - Channelkonfiguration - OpenAPI | [IG-TIFLOW-CORE-101]({{NEW_IG_BASE_URL}}/core/query-api-channels-req-fdv.html) | core |
+| [A_28500](https://gemspec.gematik.de/search/index.html?A_28500) | - | [IG-TIFLOW-EU-22]({{NEW_IG_BASE_URL}}/erp-eu/query-api-task-req-fd.html) | erp-eu |
+| [A_28530](https://gemspec.gematik.de/search/index.html?A_28530) | - | [IG-TIFLOW-CORE-204]({{NEW_IG_BASE_URL}}/core/query-api-pushers-req-fd.html) | core |
+| [A_28540](https://gemspec.gematik.de/search/index.html?A_28540) | - | [IG-TIFLOW-DIGA-2]({{NEW_IG_BASE_URL}}/diga/query-api-communication-req-ktr.html) | diga |
+| [A_28570](https://gemspec.gematik.de/search/index.html?A_28570) | - | [IG-TIFLOW-RX-59]({{NEW_IG_BASE_URL}}/rx/op-activate-req-fd.html) | rx |
+
+### gemF_eRp_PKV
+
+#### Übernommene Anforderungen
+
+| Alte Anforderung | Alter Titel | Neue Anforderungen | IGs |
+|---|---|---|---|
+| [A_22207](https://gemspec.gematik.de/search/index.html?A_22207) | Einwilligung in Verarbeitung von Abrechnungsinformationen nur für PKV-Versicherte | [IG-TIFLOW-CHRG-37]({{NEW_IG_BASE_URL}}/erp-chrg/menu-technische-umsetzung-datenschutz-und-sicherheit.html) | erp-chrg |
+| [A_22208](https://gemspec.gematik.de/search/index.html?A_22208) | Verarbeitung von Abrechnungsinformationen nur nach Einwilligung | [IG-TIFLOW-CHRG-38]({{NEW_IG_BASE_URL}}/erp-chrg/menu-technische-umsetzung-datenschutz-und-sicherheit.html) | erp-chrg |
+| [A_22209](https://gemspec.gematik.de/search/index.html?A_22209) | Verarbeitung von Abrechnungsinformationen im E-Rezept-Fachdienst nur nach Einwilligung | [IG-TIFLOW-CHRG-39]({{NEW_IG_BASE_URL}}/erp-chrg/menu-technische-umsetzung-datenschutz-und-sicherheit.html) | erp-chrg |
+| [A_22210](https://gemspec.gematik.de/search/index.html?A_22210) | Nichtabstreitbarkeit der Einwilligung | [IG-TIFLOW-CHRG-40]({{NEW_IG_BASE_URL}}/erp-chrg/menu-technische-umsetzung-datenschutz-und-sicherheit.html) | erp-chrg |
+| [A_22211](https://gemspec.gematik.de/search/index.html?A_22211) | Löschen von Abrechnungsinformationen nach zehn Jahren | [IG-TIFLOW-CHRG-41]({{NEW_IG_BASE_URL}}/erp-chrg/menu-technische-umsetzung-datenschutz-und-sicherheit.html) | erp-chrg |
+| [A_22212](https://gemspec.gematik.de/search/index.html?A_22212) | Information über Möglichkeit des Speicherns der Abrechnungsinformationen nur für konkretes E-Rezept | [IG-TIFLOW-CHRG-42]({{NEW_IG_BASE_URL}}/erp-chrg/menu-technische-umsetzung-datenschutz-und-sicherheit.html) | erp-chrg |
+| [A_22213](https://gemspec.gematik.de/search/index.html?A_22213) | Schutz der Abrechnungsinformationen | [IG-TIFLOW-CHRG-43]({{NEW_IG_BASE_URL}}/erp-chrg/menu-technische-umsetzung-datenschutz-und-sicherheit.html) | erp-chrg |
+| [A_22214](https://gemspec.gematik.de/search/index.html?A_22214) | Protokollierung der Einwilligung bzw. des Widerrufs | [IG-TIFLOW-CHRG-44]({{NEW_IG_BASE_URL}}/erp-chrg/menu-technische-umsetzung-datenschutz-und-sicherheit.html) | erp-chrg |
 

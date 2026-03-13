@@ -162,11 +162,35 @@ def is_ptsb_source(source: str) -> bool:
     return "ptsb" in normalized or "gemprodt" in normalized
 
 
+def is_gemspec_source(source: str) -> bool:
+    return "gemspec" in source.casefold()
+
+
+def is_gemf_source(source: str) -> bool:
+    return "gemf" in source.casefold()
+
+
 def preferred_source(sources: Set[str]) -> str:
     if not sources:
         return "Unbekannte Quelle"
 
     sorted_sources = sorted(sources)
+
+    # Prioritize gemSpec sources first. gemF is fallback only when no gemSpec source exists.
+    gemspec_sources = [src for src in sorted_sources if is_gemspec_source(src)]
+    non_ptsb_gemspec = [src for src in gemspec_sources if not is_ptsb_source(src)]
+    if non_ptsb_gemspec:
+        return non_ptsb_gemspec[0]
+    if gemspec_sources:
+        return gemspec_sources[0]
+
+    non_gemf_sources = [src for src in sorted_sources if not is_gemf_source(src)]
+    non_ptsb_non_gemf = [src for src in non_gemf_sources if not is_ptsb_source(src)]
+    if non_ptsb_non_gemf:
+        return non_ptsb_non_gemf[0]
+    if non_gemf_sources:
+        return non_gemf_sources[0]
+
     non_ptsb = [src for src in sorted_sources if not is_ptsb_source(src)]
     if non_ptsb:
         return non_ptsb[0]
@@ -262,6 +286,7 @@ def build_markdown(
         grouped_ignored_by_source[source].append(old_req)
 
     all_sources = sorted(set(grouped_mapped_by_source.keys()) | set(grouped_ignored_by_source.keys()))
+    all_sources = sorted(all_sources, key=lambda source: (is_gemf_source(source), source.casefold()))
 
     lines: List[str] = []
     lines.append(
