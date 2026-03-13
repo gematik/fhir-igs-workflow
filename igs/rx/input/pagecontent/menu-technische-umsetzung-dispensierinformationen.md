@@ -10,7 +10,7 @@ Für die Anwendungsfälle "Dispensierinformationen bereitstellen" und "Quittung 
 </requirement>
 
 <!-- A_28575 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-191" title="PS abgebende LEI: Dispensierinformationen - Flowtype 160/166/169/200/209 - Bereitstellen von Dosierinformationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-213" title="PS abgebende LEI: Dispensierinformationen - Flowtype 160/166/169/200/209 - Bereitstellen von Dosierinformationen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Produkttest"/>
@@ -93,7 +93,7 @@ Die Dosieranweisung werden in der MedicationDispense als Freitext angegeben. Die
 </requirement>
 
 <!-- A_28417 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-199" title="PS abgebende LEI: Dispensierinformationen – Flowtype 160/166/169/200/209 - Substitutionskennzeichen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-214" title="PS abgebende LEI: Dispensierinformationen – Flowtype 160/166/169/200/209 - Substitutionskennzeichen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Produkttest"/>
