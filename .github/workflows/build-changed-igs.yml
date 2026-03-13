@@ -184,11 +184,27 @@ jobs:
 
           igtools_ok = script_exit == "0" and found_error_keywords != "true"
           igtools_icon = "✅" if igtools_ok else "❌"
-          igtools_result = "OK" if igtools_ok else "ERROR"
+            if igtools_ok:
+              igtools_text = "Pre-Check igtools: IGTools ist ohne Fehler durchgelaufen."
+              igtools_result = "OK"
+            else:
+              igtools_text = (
+                f"Pre-Check igtools: IGTools hat Fehler gemeldet "
+                f"(Exit-Code: {script_exit}, ERROR/FAILED in Ausgabe: {found_error_keywords})."
+              )
+              igtools_result = "ERROR"
 
           git_clean = tree_clean == "true"
           git_icon = "✅" if git_clean else "⚠️"
-          git_result = "OK" if git_clean else "WARNING"
+            if git_clean:
+              git_text = "Pre-Check git changes: IGTools hat keine Git-Änderungen erzeugt."
+              git_result = "OK"
+            elif igtools_ok:
+              git_text = "Pre-Check git changes: IGTools hat Änderungen in Git produziert. Anforderungen sind NICHT eingecheckt."
+              git_result = "WARNING"
+            else:
+              git_text = "Pre-Check git changes: Es wurden Git-Änderungen erkannt; zusätzlich sind IGTools-Fehler aufgetreten."
+              git_result = "WARNING"
 
           html_doc = textwrap.dedent(
               f"""\
@@ -267,8 +283,8 @@ jobs:
                         <tr><th>Kriterium</th><th>Ergebnis</th></tr>
                       </thead>
                       <tbody>
-                        <tr><td>{igtools_icon} Pre-Check igtools</td><td>{igtools_result}</td></tr>
-                        <tr><td>{git_icon} Pre-Check git changes</td><td>{git_result}</td></tr>
+                        <tr><td>{igtools_icon} {igtools_text}</td><td>{igtools_result}</td></tr>
+                        <tr><td>{git_icon} {git_text}</td><td>{git_result}</td></tr>
                         <tr><td>Exit-Code von ./scripts/run-igtools-process-all.sh</td><td>{html.escape(script_exit)}</td></tr>
                         <tr><td>Ausgabe enthält ERROR/FAILED</td><td>{html.escape(found_error_keywords)}</td></tr>
                         <tr><td>Repository nach Lauf unverändert</td><td>{html.escape(tree_clean)}</td></tr>
@@ -316,22 +332,27 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+
+          if [[ "${{ steps.igtools_precheck.outputs.script_exit }}" == "0" && "${{ steps.igtools_precheck.outputs.found_error_keywords }}" != "true" ]]; then
+            igtools_line="✅ Pre-Check igtools: IGTools ist ohne Fehler durchgelaufen."
+          else
+            igtools_line="❌ Pre-Check igtools: IGTools hat Fehler gemeldet (Exit-Code: ${{ steps.igtools_precheck.outputs.script_exit }}, ERROR/FAILED in Ausgabe: ${{ steps.igtools_precheck.outputs.found_error_keywords }})."
+          fi
+
+          if [[ "${{ steps.igtools_precheck.outputs.tree_clean }}" == "true" ]]; then
+            git_line="✅ Pre-Check git changes: IGTools hat keine Git-Änderungen erzeugt."
+          elif [[ "${{ steps.igtools_precheck.outputs.script_exit }}" == "0" && "${{ steps.igtools_precheck.outputs.found_error_keywords }}" != "true" ]]; then
+            git_line="⚠️ Pre-Check git changes: IGTools hat Änderungen in Git produziert. Anforderungen sind NICHT eingecheckt."
+          else
+            git_line="⚠️ Pre-Check git changes: Es wurden Git-Änderungen erkannt; zusätzlich sind IGTools-Fehler aufgetreten."
+          fi
+
           echo "## IGTools Vorprüfung" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
           echo "- Status: \`${{ steps.igtools_precheck.outputs.status }}\`" >> "$GITHUB_STEP_SUMMARY"
           echo "- Ergebnis: ${{ steps.igtools_precheck.outputs.message }}" >> "$GITHUB_STEP_SUMMARY"
-          if [[ "${{ steps.igtools_precheck.outputs.status }}" == "failed" ]]; then
-            echo "- ❌ Pre-Check igtools" >> "$GITHUB_STEP_SUMMARY"
-          else
-            echo "- ✅ Pre-Check igtools" >> "$GITHUB_STEP_SUMMARY"
-          fi
-          if [[ "${{ steps.igtools_precheck.outputs.tree_clean }}" == "true" ]]; then
-            echo "- ✅ Pre-Check git changes" >> "$GITHUB_STEP_SUMMARY"
-          else
-            echo "- ⚠️ Pre-Check git changes" >> "$GITHUB_STEP_SUMMARY"
-          fi
-          echo "- Hinweis: Bei Status \`warning\` läuft die Pipeline weiter; nur Status \`failed\` beendet den Job." >> "$GITHUB_STEP_SUMMARY"
-          echo "- Detaillierte Ausgabe: im Job-Log von Schritt \`IGTools Vorprüfung ausführen\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- $igtools_line" >> "$GITHUB_STEP_SUMMARY"
+          echo "- $git_line" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Install draw.io (headless)
         if: env.BUILD_GENERATE_DRAWIO_IMAGES == 'true'
