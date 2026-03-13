@@ -71,7 +71,7 @@ umsetzen.
 * Workflow zum E-Rezept ist im E-Rezept-Fachdienst im Status “initialisiert” angelegt.
 
 * Beschreibung: Schnittstellen
-  * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primaersystem. Für die Verordnung wird eine Rezept-ID aus dem E-Rezept-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).: * [Operation API: E-Rezept erstellen](./op-create.md)
+  * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primaersystem. Für die Verordnung wird eine Rezept-ID aus dem E-Rezept-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).: * [Operation API: Verordnung erstellen](./op-create.md)
 * QES im Primärsystem (Konnektor)
 
 * Beschreibung: Relevante(r) Sektor(en)

@@ -28,11 +28,10 @@ Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource **Task** wird 
 
 * [FD-Anforderungen zur Task-Query](./query-api-task-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
 * [FdV-Anforderungen für Task-Query](./query-api-task-req-fdv.md): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
-* [AVS-Anforderungen für Task-Query](./query-api-task-req-avs.md): Anforderungen an das AVS zur Nutzung der Schnittstelle.
+* [KTR-Anforderungen für Task-Query](./query-api-task-req-ktr.md): Anforderungen an das Clientsystem Kostenträger zur Nutzung der Schnittstelle.
 
-Die Query API für Task beschreibt den lesenden Zugriff auf Tasks. Der Versicherte ruft die Liste aller seiner Verordnungen inklusive DiGA-Verordnungen ab. Der Versicherte kann mit Referenz auf eine Task-ID eine einzelne Verordnung abrufen.
+#### API Beschreibung
 
-Der Kostenträger kann unter Angabe der Task-ID und des ACCESS_CODE die Daten einer einzelnen Verordnung abrufen und somit insbesondere den Anwendungfall “Recovery Secret” umsetzen.
-
-Der Kostenträger kann unter Angabe der Task-ID und des Secrets die Daten einer einzelnen Verordnung abrufen und somit insbesondere den Anwendungfall “Quittung erneut abrufen” umsetzen.
+* [API-ERP: Abruf der DiGA-Verordnung durch den Versicherten](https://github.com/gematik/api-erp/blob/master/docs/erp_diga.adoc#abrufen-der-diga-verordnung)
+* [API-ERP: E-Rezept erneut abrufen durch den Kostenträger](https://github.com/gematik/api-erp/blob/master/docs/erp_abrufen.adoc#e-rezept-erneut-abrufen)
 
