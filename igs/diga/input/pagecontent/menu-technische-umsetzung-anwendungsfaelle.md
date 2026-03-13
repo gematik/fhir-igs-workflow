@@ -144,7 +144,7 @@ Die folgenden Abschnitte beschreiben die technischen Anwendungsfälle, die für 
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- UC 3.3 - Nachricht durch Versicherten übermitteln -->
-{% assign use_case = use_cases | where: "title", "UC 3.3 - Nachricht durch Versicherten übermitteln" | first %}
+{% assign use_case = use_cases | where: "id", "UC_3_3_Nachricht_durch_Versicherten_uebermitteln" | first %}
 
 <a id="{{ use_case.anchor }}"></a>
 ##### {{ use_case.title }}
