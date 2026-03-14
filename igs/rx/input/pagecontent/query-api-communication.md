@@ -17,6 +17,7 @@ Die Interaktion mit Nachrichten als FHIR-Ressource _Communication_ wird über di
 - [FD-Anforderungen zur Communication-Query](./query-api-communication-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
 - [FdV-Anforderungen für Communication-Query](./query-api-communication-req-fdv.html): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
 - [AVS-Anforderungen für Communication-Query](./query-api-communication-req-avs.html): Anforderungen an das AVS zur Nutzung der Schnittstelle.
+- [Datenmodell Payload für Communication-Query](./query-api-communication-req-data.html): Datenmodell Payload zur Nutzung der Schnittstelle.
 
 ### Resource API
 
