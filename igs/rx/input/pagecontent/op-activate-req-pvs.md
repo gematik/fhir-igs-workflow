@@ -6,9 +6,6 @@ Diese Seite enthält die normativen Anforderungen an das PVS für die Operation 
 
 ### Modulspezifische Anforderungen
 
-### Anforderungen im Rahmen des Moduls Arzneimittel
-
-
 <!-- A_28574 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-212" title="PS verordnende LEI: E-Rezept erstellen - Flowtype 160/166/169/200/209 - Bereitstellen von Dosierinformationen" version="0">
     <meta lockversion="false"/>

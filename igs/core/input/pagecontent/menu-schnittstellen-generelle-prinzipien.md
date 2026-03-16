@@ -170,3 +170,33 @@ Für die Kommunikation und die Interoperabilität müssen bezüglich Datensätze
     </actor>
     Clientsysteme des E-Rezept-Fachdienstes DÜRFEN für die Kommunikation mit dem E-Rezept-Fachdienst in Datensätzen ein Byte Order Mark (BOM) NICHT angeben.
 </requirement>
+
+
+### Verarbeitung von FHIR Ressourcen
+
+#### Verarbeitung von Datumsangaben
+
+In der Verarbeitung der FHIR-Ressourcen ist es wichtig, dass Datums- und Zeitangaben konsistent und eindeutig interpretiert werden.
+
+Aufgrund der Profilierung einiger Datenfelder kommt es vor, dass keine Zeitzoneninformation im Datum enthalten ist. Diese Zeitangaben sollen gemäß der zum jeweiligen Datum gültigen deutschen Zeit (CET/CEST) interpretiert werden. Diese Regelung stellt sicher, dass alle beteiligten Systeme einheitlich und korrekt mit Datums- und Zeitangaben umgehen, unabhängig davon, ob die Angaben in der Vergangenheit oder Gegenwart liegen.
+
+<!-- A_27660 -->
+<requirement conformance="SHALL" key="" title="CS: Verarbeitung von Datumsangaben ohne Zeitzoneninformation" version="0">
+    <meta lockversion="false"/>
+        <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="CS_E-Rezept_KTR">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="NCPeH_ePeDA">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Clientsysteme des E-Rezept-Fachdienstes MÜSSEN bei der Verarbeitung von FHIR-Ressourcen der Anwendung E-Rezept sicherstellen, dass Datumsangaben ohne explizite Zeitzoneninformationen gemäß der zum jeweiligen Datum gültigen deutschen Zeit (CET/CEST) verarbeitet werden.
+</requirement>

@@ -41,7 +41,7 @@ Clientsysteme verwenden bei den in TAB_ILFERP_012 dargestellten Aktivitäten Zer
 <tr>
 <td>Nur für PS der abgebenden LEI: Signaturzertifikat E-Rezept-Fachdienst</td>
 <td>ja</td>
-<td>C.FD.SIG</td>
+<td>C.FD.OSIG</td>
 <td>oid_erezept</td>
 <td>aktiv</td>
 </tr>

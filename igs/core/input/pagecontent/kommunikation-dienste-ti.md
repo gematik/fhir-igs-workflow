@@ -85,7 +85,7 @@ Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.
     Das Clientsystem des E-Rezept-Fachdienst MUSS bei jedem Verbindungsaufbau zum E-Rezept-Fachdienst oder IDP-Dienst diesen anhand seines TLS-Zertifikats authentifizieren und MUSS die Verbindungen ablehnen, falls die Authentifizierung fehlschlägt.
 </requirement>
 
-<!-- A_20015-02 -->
+<!-- A_20015-02, A_20014-04 -->
 <requirement conformance="SHALL" key="" title="CS: HTTP-Header user-agent" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
@@ -98,6 +98,9 @@ Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.
         <testProcedure id="Herstellererklärung"/>
     </actor>
     <actor name="Anb_NCPeH_FD">
+        <testProcedure id="Produkttest"/>
+    </actor>
+    <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
     Das Clientsystem des E-Rezept-Fachdienstes MUSS in alle HTTP-Requests an den E-Rezept-Fachdienst und IDP-Dienst im äußeren HTTP-Request den HTTP-Header user-agent gemäß [RFC7231] mit &lt;Produktname&gt;/&lt;Produktversion&gt; &lt;Herstellername&gt;/&lt;client_id&gt; mit 
@@ -136,7 +139,7 @@ Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.
     </ul>
 </requirement>
 
-<!-- A_21569-01 -->
+<!-- A_21569-01, A_21570-01  -->
 <requirement conformance="SHALL" key="" title="CS: HTTP-Header X-erp-resource" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
@@ -163,6 +166,18 @@ Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.
 <th>X-erp-resource</th>
 </tr>
 <tr>
+<td>Query API: AuditEvent</td>
+<td>AuditEvent</td>
+</tr>
+<tr>
+<td>Query API: ChargeItem</td>
+<td>ChargeItem</td>
+</tr>
+<tr>
+<td>Query API: Consent</td>
+<td>Consent</td>
+</tr>
+<tr>
 <td>Query API: Communication</td>
 <td>Communication</td>
 </tr>
@@ -181,10 +196,6 @@ Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.
 <tr>
 <td>Query API: Task<br>POST /Task *</td>
 <td>Task</td>
-</tr>
-<tr>
-<td>Query API: ChargeItem</td>
-<td>ChargeItem</td>
 </tr>
 <tr>
 <td>POST /$get-eu-prescriptions</td>

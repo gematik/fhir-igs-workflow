@@ -689,7 +689,7 @@ Beispiel für eine Nachricht: "Ihr E-Rezept wurde soeben von Ihrem Arzt untersch
 
 #### Bei Ausfall auf Muster 16 zurückgreifen
 
-Wenn es technisch nicht möglich ist ein E-Rezept auszustellen (Ausfall einer der relevanten Komponenten), wird automatisch ein Muster 16 mit dem Verordnungsinhalt ausgewählt. Dem Nutzer wird ein Hinweis eingeblendet, dass es aktuell nicht möglich ist, ein E-Rezept auszustellen. Um festzustellen, ob relevante Komponenten der TI nicht erreichbar sind, kann ein einfacher Healthcheck (https://github.com/gematik/api-erp/blob/master/docs/erp_ps_probing.adoc#einfacher- health-check )  genutzt werden. Es sollte ebenfalls auf ein Muster 16 zurückgegriffen werden, wenn beim Erstellen eines Rezeptes in der Kommunikation mit den Diensten der TI ein Fehler auftritt.
+Wenn es technisch nicht möglich ist ein E-Rezept auszustellen (Ausfall einer der relevanten Komponenten), wird automatisch ein Muster 16 mit dem Verordnungsinhalt ausgewählt. Dem Nutzer wird ein Hinweis eingeblendet, dass es aktuell nicht möglich ist, ein E-Rezept auszustellen. Um festzustellen, ob relevante Komponenten der TI nicht erreichbar sind, kann ein einfacher Healthcheck (https://github.com/gematik/api-erp/blob/master/docs/erp_ps_probing.adoc#einfacher-health-check )  genutzt werden. Es sollte ebenfalls auf ein Muster 16 zurückgegriffen werden, wenn beim Erstellen eines Rezeptes in der Kommunikation mit den Diensten der TI ein Fehler auftritt.
 
 <!-- A_23604 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-RX-187" title="PS verordnende LEI: UX - Verhalten bei Ausfall von TI Komponenten des E-Rezepts" version="0">
