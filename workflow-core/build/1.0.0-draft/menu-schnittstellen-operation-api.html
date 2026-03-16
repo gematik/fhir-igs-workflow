@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"14"}
-    h3,h4,h5,h6{--heading-prefix:"14.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"16"}
+    h3,h4,h5,h6{--heading-prefix:"16.0"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -137,7 +137,13 @@
         <a href="error-codes.html">Fehlercodes</a>
       </li>
       <li>
-        <a href="verbindungsaufbau-client.html">Verbindungsaufbau von Clientsystemen</a>
+        <a href="kommunikation-dienste-ti.html">Kommunikation zu Diensten der TI</a>
+      </li>
+      <li>
+        <a href="pki-zertifikatspruefung.html">PKI Zertifikatsprüfung</a>
+      </li>
+      <li>
+        <a href="authentifizierung-client.html">Authentifizierung von Clientsystemen</a>
       </li>
     </ul>
   </li>
@@ -172,9 +178,6 @@
   </li>
   <li>
     <a href="artifacts.html">FHIR-Artefakte</a>
-  </li>
-  <li>
-    <a href="requirement-mapping-old-to-new.html">Anforderungsmapping</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -260,21 +263,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div>
 <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
-<p>TODO</p>
-
-<p>Die fachmodulspezifischen Erweiterungen sind in den jeweiligen Fach-IGs dokumentiert.</p>
-
-<h2 id="shared-operations">Shared Operations</h2>
+<p>Die folgenden Operation APIs stellt der E-Rezept-Fachdienst zur verfügung</p>
 
 <ul>
-  <li><a href="./op-create.html">$create</a></li>
-  <li><a href="./op-activate.html">$activate</a></li>
-  <li><a href="./op-close.html">$close</a></li>
-  <li><a href="./op-reject.html">$reject</a></li>
-  <li><a href="./op-abort.html">$abort</a></li>
+  <li>Primärsystem: <a href="./op-create.html">Operation API: E-Rezept erstellen</a></li>
+  <li>Primärsystem: <a href="./op-activate.html">Operation API: E-Rezept aktivieren</a></li>
+  <li>Primärsystem: <a href="./op-accept.html">Operation API: Task abrufen</a></li>
+  <li>Primärsystem: <a href="./op-reject.html">Operation API: Task zurückweisen</a></li>
+  <li>Primärsystem: <a href="./op-close.html">Operation API: Task schließen</a></li>
+  <li>Primärsystem / E-Rezept-FdV: <a href="./op-abort.html">Operation API: E-Rezept löschen</a></li>
 </ul>
-
-<p>Hinweis: Ein Fachmodul MUSS in seiner jeweiligen Operationsseite klar angeben, welche Anforderungen aus dem Core geerbt werden und welche modulspezifischen Anforderungen zusätzlich gelten.</p>
 
 
 
@@ -317,7 +315,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 10, 2026 13:14+0000">2026-03-10</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 16, 2026 17:04+0000">2026-03-16</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

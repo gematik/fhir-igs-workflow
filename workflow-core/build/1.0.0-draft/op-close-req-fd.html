@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"14.5.1"}
-    h3,h4,h5,h6{--heading-prefix:"14.5.1"}</style>
+    <style type="text/css">h2{--heading-prefix:"16.5.1"}
+    h3,h4,h5,h6{--heading-prefix:"16.5.1"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -137,7 +137,13 @@
         <a href="error-codes.html">Fehlercodes</a>
       </li>
       <li>
-        <a href="verbindungsaufbau-client.html">Verbindungsaufbau von Clientsystemen</a>
+        <a href="kommunikation-dienste-ti.html">Kommunikation zu Diensten der TI</a>
+      </li>
+      <li>
+        <a href="pki-zertifikatspruefung.html">PKI Zertifikatsprüfung</a>
+      </li>
+      <li>
+        <a href="authentifizierung-client.html">Authentifizierung von Clientsystemen</a>
       </li>
     </ul>
   </li>
@@ -172,9 +178,6 @@
   </li>
   <li>
     <a href="artifacts.html">FHIR-Artefakte</a>
-  </li>
-  <li>
-    <a href="requirement-mapping-old-to-new.html">Anforderungsmapping</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -306,6 +309,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close den Zeitpunkt des Aufrufes in Task.extension:lastMedicationDispense im Format "YYYY-MM-DDThh:mm:ss+zz:zz" (FHIR-instant) anlegen und speichern, wenn ein MedicationDispense Objekt im Aufruf übergeben wird.
 </requirement>
 
+<!-- A_28411 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-366" title="E-Rezept-Fachdienst - Task schließen - Telematik-ID der abgebenden LEI speichern" version="0">
+    <meta lockversion="false" />
+    <actor name="eRp_FD">
+        <testProcedure id="Produkttest" />
+    </actor>
+    Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close für den referenzierten Task die Telematik-ID aus dem ACCESS_TOKEN in Task.owner speichern, damit sichergestellt werden kann, dass nachfolgende Zugriffe auf diesen Datensatz nur durch Berechtigte erfolgen können.
+</requirement>
+
 <!-- A_28129 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-42" title="E-Rezept-Fachdienst - Task schließen - Push Notification Versicherter" version="0">
     <meta lockversion="false" />
@@ -324,7 +336,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     Der E-Rezept-Fachdienst MUSS die zulässige Beendigung eines Tasks mittels /Task/&lt;id&gt;/$close-Operation im StatusTask.status = "completed" vollziehen, damit der Workflow für den Versicherten als beendet und die Verordnung somit als eingelöst dargestellt wird.
 </requirement>
 
-<!-- A_19233-05 -->
+<!-- A_19233-06 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-44" title="E-Rezept-Fachdienst - Task schließen - Quittung erstellen" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FD">
@@ -332,7 +344,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels /Task/&lt;id&gt;/$close ein Quittungsbundle gemäß des FHIR-Profils https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle mit folgenden Informationen erstellen:
     <ul>
-        <li>Telematik-ID der aufrufenden Apotheke als Beneficiary in die erxComposition</li>
+        <li>Telematik-ID der aufrufenden Apotheke als Beneficiary in die GEM_ERP_PR_Composition</li>
         <li>Zeitstempel des Statuswechsel des Tasks "in-progress" in event.period.start</li>
         <li>aktueller Zeitstempel in event.period.end</li>
         <li>Identifier PrescriptionID des Task als identifier des Quittungs-Bundle</li>
@@ -341,7 +353,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </ul>
     und dieses Quittungs-Bundle mit der Signaturidentität des Fachdienstes ID.FD.OSIG gemäß [RFC5652] mit Profil CAdES-BES ([CAdES]) im Enveloping signieren.
     In die Signatur wird die letzte OCSP-Antwort der regelmäßigen Statusprüfung des Signaturzertifikats C.FD.OSIG eingebettet.
-    Das Signatur-Ergebnis wird als dss:Base64Signature-Objekt in Bundle.signature eingebettet und dieses Quittungs-Bundle mit Referenz in Task.outputmit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType= 3 gespeichert sowie als Response des http-Requests an den Aufrufer zurückgeben, damit die abgebende LEI einen Nachweis über den ordnungsgemäßen Abschluss des E-Rezept-Workflows als Quittung erhält.
+    Das Signatur-Ergebnis wird als dss:Base64Signature-Objekt in Bundle.signature eingebettet und dieses Quittungs-Bundle mit Referenz in Task.output mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType = 3 gespeichert sowie als Response des http-Requests an den Aufrufer zurückgeben, damit die abgebende LEI einen Nachweis über den ordnungsgemäßen Abschluss des E-Rezept-Workflows als Quittung erhält.
 </requirement>
 
 <!-- A_22919 -->
@@ -393,7 +405,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 10, 2026 13:14+0000">2026-03-10</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 16, 2026 17:04+0000">2026-03-16</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

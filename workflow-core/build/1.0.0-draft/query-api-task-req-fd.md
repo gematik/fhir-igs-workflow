@@ -59,7 +59,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
 * Task.for = KVNRfür die KVNR aus der Prüfziffer des Prüfungsnachweises
 * Task.ExpiryDatenicht vor dem aktuellen Datum liegt
 * und Task.extension:flowType = 160 oder 166
-filtern und in einem Bundle der gefundenen Tasks (ohne den signierte Anhang QES) zurückgeben, damit eine Apotheke alle zu einem Versicherten gehörenden E-Rezepte mit dem Status "offen" abrufen kann.
+filtern und in einem Bundle der gefundenen Tasks (ohne den signierte Anhang QES) zurückgeben, damit eine Apotheke alle zu einem Versicherten gehörenden E-Rezepte mit dem Status "ready" abrufen kann.
 
 Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI, falls im VSDM Prüfungsnachweis keine Prüfziffer enthalten ist, prüfen, ob das Ergebnis im Prüfungsnachweis gleich 3 ist und bei fehlerhafter Prüfung mit dem Fehler 403 abbrechen.
 
@@ -81,7 +81,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
 * Task.for = KVNR aus dem URL-Parameter,
 * Task.ExpiryDate nicht vor dem aktuellen Datum liegt
 * und Task.extension:flowType = 160 oder 166
-filtern und in einem Bundle der gefundenen Tasks (ohne den signierte Anhang QES) zurückgeben, damit eine Apotheke alle zu einem Versicherten gehörenden E-Rezepte mit dem Status "offen" abrufen kann. Der E-Rezept-Fachdienst MUSS für den Response den Returncode 202 verwenden.
+filtern und in einem Bundle der gefundenen Tasks (ohne den signierte Anhang QES) zurückgeben, damit eine Apotheke alle zu einem Versicherten gehörenden E-Rezepte mit dem Status "ready" abrufen kann. Der E-Rezept-Fachdienst MUSS für den Response den Returncode 202 verwenden.
 Diese Operation führt nicht zu einer Statusänderung bei den zurück gelieferten Task Ressourcen.
 
 #### Prüfung VSDM Prüfungsnachweis

@@ -137,7 +137,13 @@
         <a href="error-codes.html">Fehlercodes</a>
       </li>
       <li>
-        <a href="verbindungsaufbau-client.html">Verbindungsaufbau von Clientsystemen</a>
+        <a href="kommunikation-dienste-ti.html">Kommunikation zu Diensten der TI</a>
+      </li>
+      <li>
+        <a href="pki-zertifikatspruefung.html">PKI Zertifikatsprüfung</a>
+      </li>
+      <li>
+        <a href="authentifizierung-client.html">Authentifizierung von Clientsystemen</a>
       </li>
     </ul>
   </li>
@@ -172,9 +178,6 @@
   </li>
   <li>
     <a href="artifacts.html">FHIR-Artefakte</a>
-  </li>
-  <li>
-    <a href="requirement-mapping-old-to-new.html">Anforderungsmapping</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -267,7 +270,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-85" title="E-Rezept-Fachdienst - Löschfrist abgelaufener Rezepte" version="0">
 	<meta lockversion="false" />
 	<actor name="eRp_FD">
-    	<testProcedure id="Produkttest" />
+    	<testProcedure id="Produktgutachten" />
   	</actor>
 	Der E-Rezept-Fachdienst MUSS einen Task nach Ablauf der Löschfrist gemäss der folgenden Festlegung automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren.
 	<table>
@@ -320,7 +323,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-88" title="E-Rezept-Fachdienst - Löschfrist veraltete MedicationDispense" version="0">
 	<meta lockversion="false" />
 	<actor name="eRp_FD">
-    	<testProcedure id="Produkttest" />
+    	<testProcedure id="Produktgutachten" />
   	</actor>
 	Der E-Rezept-Fachdienst MUSS eine gespeicherte Ressource MedicationDispense nach 100 Tagen ab ihrem Erzeugungsdatum MedicationDispense.whenHandedOver automatisch löschen.
 </requirement>
@@ -329,17 +332,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-89" title="E-Rezept-Fachdienst - Löschfrist ChargeItem" version="0">
 	<meta lockversion="false" />
 	<actor name="eRp_FD">
-    	<testProcedure id="Produkttest" />
+    	<testProcedure id="Produktgutachten" />
   	</actor>
-	Der E-Rezept-Fachdienst MUSS ein ChargeItem innerhalb eines Monats nach Ablauf 	von 10 Jahren nach dem Erstellen der Ressource automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren.<br />
-	Der E-Rezept-Fachdienst MUSS bei jedem Löschen eines ChargeItems alle referenzierten Bundles (E-Rezept-Bundle, Quittungs-Bundle, PKV-Abgabedatensatz) ebenfalls löschen.
+	Der E-Rezept-Fachdienst MUSS ein ChargeItem innerhalb eines Monats nach Ablauf von 10 Jahren nach dem Erstellen der Ressource automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren.<br />
+	Der E-Rezept-Fachdienst MUSS bei jedem Löschen eines ChargeItems alle referenzierten Bundles (E-Rezept-Bundle, Quittungs-Bundle, PKV-Abgabedatensatz) ebenfalls löschen, damit die Informationen rund um ein gelöschtes ChargeItem ebenfalls entfernt werden.
 </requirement>
 
 <!-- A_19253-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-90" title="E-Rezept-Fachdienst - Löschfrist veraltete Nachrichten" version="0">
 	<meta lockversion="false" />
 	<actor name="eRp_FD">
-    	<testProcedure id="Produkttest" />
+    	<testProcedure id="Produktgutachten" />
   	</actor>
 	Der E-Rezept-Fachdienst MUSS eine gespeicherte Ressource Communication
 	automatisch löschen:
@@ -354,7 +357,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-91" title="E-Rezept-Fachdienst - Löschfrist veraltete Protokolleinträge" version="0">
 	<meta lockversion="false" />
 	<actor name="eRp_FD">
-    	<testProcedure id="Produkttest" />
+    	<testProcedure id="Produktgutachten" />
   	</actor>
 	Der E-Rezept-Fachdienst MUSS eine gespeicherte Ressource AuditEvent nach 3 Jahren ab dem Erzeugungsdatum AuditEvent.recorded innerhalb von einem Monat löschen.
 </requirement>
@@ -399,7 +402,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 10, 2026 13:14+0000">2026-03-10</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 16, 2026 17:04+0000">2026-03-16</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

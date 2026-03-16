@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"14.2.2"}
-    h3,h4,h5,h6{--heading-prefix:"14.2.2"}</style>
+    <style type="text/css">h2{--heading-prefix:"16.2.2"}
+    h3,h4,h5,h6{--heading-prefix:"16.2.2"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -137,7 +137,13 @@
         <a href="error-codes.html">Fehlercodes</a>
       </li>
       <li>
-        <a href="verbindungsaufbau-client.html">Verbindungsaufbau von Clientsystemen</a>
+        <a href="kommunikation-dienste-ti.html">Kommunikation zu Diensten der TI</a>
+      </li>
+      <li>
+        <a href="pki-zertifikatspruefung.html">PKI Zertifikatsprüfung</a>
+      </li>
+      <li>
+        <a href="authentifizierung-client.html">Authentifizierung von Clientsystemen</a>
       </li>
     </ul>
   </li>
@@ -172,9 +178,6 @@
   </li>
   <li>
     <a href="artifacts.html">FHIR-Artefakte</a>
-  </li>
-  <li>
-    <a href="requirement-mapping-old-to-new.html">Anforderungsmapping</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -262,78 +265,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </div>
 
 <p>Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an Clientsysteme für die Nutzung der Operation <code class="language-plaintext highlighter-rouge">$activate</code>.</p>
-
-<p><br /></p>
-
-<!-- Ablaufdiagramm Anwendungsfall -->
-
-<p><strong>Sequenzdiagramm:</strong></p>
-
-<figure>
-	<div class="gem-ig-img-container" style="--box-width: 600px; margin-bottom: 30px;">
-		<?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="579px" preserveAspectRatio="none" style="width:1078px;height:579px;background:#FFFFFF;" version="1.1" viewBox="0 0 1078 579" width="1078px" zoomAndPan="magnify"><defs /><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="362" x="360.25" y="27.9951">UC 4.1 - E-Rezept durch Abgebenden abrufen</text><rect fill="#FFFFFF" height="331.1641" style="stroke:#181818;stroke-width:1.0;" width="10" x="297" y="149.7266" /><rect fill="#FFFFFF" height="155.5313" style="stroke:#181818;stroke-width:1.0;" width="10" x="785.5" y="296.2266" /><rect fill="none" height="61.2344" style="stroke:#000000;stroke-width:1.5;" width="439.5" x="271.5" y="206.8594" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="80" x2="80" y1="118.5938" y2="498.8906" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="301.5" x2="301.5" y1="118.5938" y2="498.8906" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="639" x2="639" y1="118.5938" y2="498.8906" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="790" x2="790" y1="118.5938" y2="498.8906" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="144" x="5" y="115.292">Mitarbeiter Apotheke</text><ellipse cx="80" cy="50.7969" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M80,58.7969 L80,85.7969 M67,66.7969 L93,66.7969 M80,85.7969 L67,100.7969 M80,85.7969 L93,100.7969 " fill="none" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="144" x="5" y="510.8857">Mitarbeiter Apotheke</text><ellipse cx="80" cy="522.6875" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M80,530.6875 L80,557.6875 M67,538.6875 L93,538.6875 M80,557.6875 L67,572.6875 M80,557.6875 L93,572.6875 " fill="none" style="stroke:#181818;stroke-width:0.5;" /><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="41" x="281.5" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="27" x="288.5" y="107.292">AVS</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="41" x="281.5" y="497.8906" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="27" x="288.5" y="517.8857">AVS</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="124" x="577" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="584" y="107.292">Identity Provider</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="124" x="577" y="497.8906" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="584" y="517.8857">Identity Provider</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="159" x="711" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="718" y="107.292">E-Rezept-Fachdienst</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="159" x="711" y="497.8906" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="718" y="517.8857">E-Rezept-Fachdienst</text><rect fill="#FFFFFF" height="331.1641" style="stroke:#181818;stroke-width:1.0;" width="10" x="297" y="149.7266" /><rect fill="#FFFFFF" height="155.5313" style="stroke:#181818;stroke-width:1.0;" width="10" x="785.5" y="296.2266" /><polygon fill="#181818" points="285,145.7266,295,149.7266,285,153.7266,289,149.7266" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="80" x2="291" y1="149.7266" y2="149.7266" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="120" x="87" y="144.6606">E-Rezept abrufen()</text><line style="stroke:#181818;stroke-width:1.0;" x1="307" x2="349" y1="178.8594" y2="178.8594" /><line style="stroke:#181818;stroke-width:1.0;" x1="349" x2="349" y1="178.8594" y2="191.8594" /><line style="stroke:#181818;stroke-width:1.0;" x1="308" x2="349" y1="191.8594" y2="191.8594" /><polygon fill="#181818" points="318,187.8594,308,191.8594,318,195.8594,314,191.8594" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="313" x="314" y="173.7935">Rezept-ID und AccessCode aus Token ermitteln()</text><path d="M271.5,206.8594 L341.5,206.8594 L341.5,213.9922 L331.5,223.9922 L271.5,223.9922 L271.5,206.8594 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;" /><rect fill="none" height="61.2344" style="stroke:#000000;stroke-width:1.5;" width="439.5" x="271.5" y="206.8594" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="25" x="286.5" y="219.9263">opt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="185" x="356.5" y="219.0698">[kein gueltiger AuthN-Token]</text><rect fill="none" height="39.1016" style="stroke:#000000;stroke-width:1.5;" width="425.5" x="278.5" y="223.9922" /><path d="M278.5,223.9922 L344.5,223.9922 L344.5,230.9922 L334.5,240.9922 L278.5,240.9922 L278.5,223.9922 " fill="#EEEEEE" style="stroke:#000000;stroke-width:2.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="291.5" y="238.0591">ref</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="146" x="418.25" y="256.1309">AuthN-Token anfordern</text><polygon fill="#181818" points="773.5,292.2266,783.5,296.2266,773.5,300.2266,777.5,296.2266" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="307" x2="779.5" y1="296.2266" y2="296.2266" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="340" x="314" y="291.1606">POST /Task/{id}/$accept (AuthN-Token, AccessCode)</text><line style="stroke:#181818;stroke-width:1.0;" x1="795.5" x2="837.5" y1="325.3594" y2="325.3594" /><line style="stroke:#181818;stroke-width:1.0;" x1="837.5" x2="837.5" y1="325.3594" y2="338.3594" /><line style="stroke:#181818;stroke-width:1.0;" x1="796.5" x2="837.5" y1="338.3594" y2="338.3594" /><polygon fill="#181818" points="806.5,334.3594,796.5,338.3594,806.5,342.3594,802.5,338.3594" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="269" x="802.5" y="320.2935">Status auf "in Abgabe (gesperrt)" setzen()</text><line style="stroke:#181818;stroke-width:1.0;" x1="795.5" x2="837.5" y1="367.4922" y2="367.4922" /><line style="stroke:#181818;stroke-width:1.0;" x1="837.5" x2="837.5" y1="367.4922" y2="380.4922" /><line style="stroke:#181818;stroke-width:1.0;" x1="796.5" x2="837.5" y1="380.4922" y2="380.4922" /><polygon fill="#181818" points="806.5,376.4922,796.5,380.4922,806.5,384.4922,802.5,380.4922" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="142" x="802.5" y="362.4263">Geheimnis erzeugen()</text><line style="stroke:#181818;stroke-width:1.0;" x1="795.5" x2="837.5" y1="409.625" y2="409.625" /><line style="stroke:#181818;stroke-width:1.0;" x1="837.5" x2="837.5" y1="409.625" y2="422.625" /><line style="stroke:#181818;stroke-width:1.0;" x1="796.5" x2="837.5" y1="422.625" y2="422.625" /><polygon fill="#181818" points="806.5,418.625,796.5,422.625,806.5,426.625,802.5,422.625" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="179" x="802.5" y="404.5591">Datenzugriff protokollieren()</text><polygon fill="#181818" points="318,447.7578,308,451.7578,318,455.7578,314,451.7578" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="312" x2="789.5" y1="451.7578" y2="451.7578" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="153" x="324" y="446.6919">Task, Binary, Geheimnis</text><polygon fill="#181818" points="91,476.8906,81,480.8906,91,484.8906,87,480.8906" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="85" x2="301" y1="480.8906" y2="480.8906" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="193" x="97" y="475.8247">Status und Verordnungsdaten</text></g></svg>
-	</div>
-	<figcaption><strong>Abbildung: </strong>UC 4.1 - E-Rezept durch Abgebenden abrufen</figcaption>
-</figure>
-
-<p><br /></p>
-
-<!-- A_19272 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-111" title="PS verordnende LEI: E-Rezept durch Verordnenden einstellen" version="0">
-  <meta lockversion="false" />
-  <actor name="PS_E-Rezept_verordnend">
-    <testProcedure id="Konformitätserklärung" />
-  </actor>
-  Das PS der verordnenden LEI MUSS den Anwendungsfall "UC 2.3 - E-Rezept einstellen" gemäß TAB_ILFERP_003 umsetzen. 
-  <table>
-    <tr> 
-		<th>Name</th>
-		<th>E-Rezept durch Verordnenden einstellen</th>
-	</tr>
-	<tr> 
-		<td>Auslöser</td>
-		<td>
-            <ul>
-                <li>Aufruf des Anwendungsfalls in der GUI</li>
-                <li>kann durch "E-Rezept durch Verordnenden erstellen" getriggert werden</li>
-            </ul>
-        </td>
-	</tr>
-    <tr> 
-		<td>Akteur</td>
-		<td>Leistungserbringer, Mitarbeiter der verordnenden LEI</td>
-	</tr>
-    <tr> 
-		<td>Vorbedingung</td>
-		<td>
-            <ul>
-                <li>Das E-Rezept wurde erstellt. (Anwendungsfall "E-Rezept erstellen"). Es stehen ein QES-signiertes E-Rezept-Bundle als PKCS#7-Datei bereit.</li>
-                <li>Die LEI hat sich gegenüber der TI authentisiert.</li>
-            </ul>
-        </td>
-	</tr>
-    <tr> 
-		<td>Nachbedingung</td>
-		<td>Das E-Rezept ist auf dem E-Rezept-Fachdienst gespeichert. Es kann durch den Versicherten oder einen Apotheker in Kenntnis der Einlöseinformationen (Task-ID + AccessCode) abgerufen werden. Der Workflow hat den Status "ready".</td>
-	</tr>
-    <tr> 
-		<td>Standardablauf</td>
-		<td>
-            <ol>
-                <li>Task auf dem E-Rezept-Fachdienst aktivieren</li>
-                <li>
-                    optional, wenn der Patientenausdruck ausgedruckt werden soll:
-                    <ol>
-                        <li>E-Rezept-Token erzeugen</li>
-                        <li>Patientenausdruck erstellen</li>
-                    </ol>
-                </li>
-            </ol>
-        </td>
-	</tr>
-  </table>
-  <div><figcaption><strong>Tabelle: </strong>TAB_ILFERP_003 - E-Rezept durch Verordnenden einstellen</figcaption></div>
-</requirement>
 
 <!-- A_19273-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-112" title="PS verordnende LEI: E-Rezept einstellen - Task auf Fachdienst aktivieren" version="0">
@@ -431,7 +362,7 @@ Fehler 403 mit dem OperationOutcome “Task not in status draft but in status re
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 10, 2026 13:14+0000">2026-03-10</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 16, 2026 17:04+0000">2026-03-16</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

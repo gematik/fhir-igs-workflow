@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"15.1.1"}
-    h3,h4,h5,h6{--heading-prefix:"15.1.1"}</style>
+    <style type="text/css">h2{--heading-prefix:"17.1.1"}
+    h3,h4,h5,h6{--heading-prefix:"17.1.1"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -137,7 +137,13 @@
         <a href="error-codes.html">Fehlercodes</a>
       </li>
       <li>
-        <a href="verbindungsaufbau-client.html">Verbindungsaufbau von Clientsystemen</a>
+        <a href="kommunikation-dienste-ti.html">Kommunikation zu Diensten der TI</a>
+      </li>
+      <li>
+        <a href="pki-zertifikatspruefung.html">PKI Zertifikatsprüfung</a>
+      </li>
+      <li>
+        <a href="authentifizierung-client.html">Authentifizierung von Clientsystemen</a>
       </li>
     </ul>
   </li>
@@ -172,9 +178,6 @@
   </li>
   <li>
     <a href="artifacts.html">FHIR-Artefakte</a>
-  </li>
-  <li>
-    <a href="requirement-mapping-old-to-new.html">Anforderungsmapping</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -303,7 +306,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-51" title="E-Rezept-Fachdienst - Liste Task abrufen - Versicherter- Filter auf KVNR" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest" />
+        <testProcedure id="Produktgutachten" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task die dem Versicherten zugeordneten Task-Ressourcen anhand der KVNR des Versicherten aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, die in Task.for die entsprechende KVNR des begünstigten Patienten referenziert haben, damit ausschließlich Versicherte ihre eigenen E-Rezepte einsehen können.
 </requirement>
@@ -323,7 +326,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-53" title="E-Rezept-Fachdienst - Rezepte lesen - Konfigurationsparameter RateLimit" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest" />
+        <testProcedure id="Herstellererklärung" />
     </actor>
     Der E-Rezept-Fachdienst MUSS einen Konfigurationsparameter RATELIMIT_MAX1d_ERROR_UC4_12 verwalten.
 </requirement>
@@ -387,7 +390,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-59" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Zeitraum Akzeptanz Prüfungsnachweis" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest" />
+        <testProcedure id="Produktgutachten" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit dem URL-Parameter pnw="..." durch eine abgebende LEI, falls im VSDM Prüfungsnachweis eine Prüfziffer enthalten ist, prüfen, dass die Differenz zwischen Zeitstempel aus der Prüfziffer des Prüfungsnachweises und dem aktuellen Zeitpunkt nicht größer als 30 Minuten (konfigurierbar) ist und bei fehlerhafter Prüfung mit dem Fehler 403 abbrechen. Im Fehlerfall ist die Meldung "Anwesenheitsnachweis konnte nicht erfolgreich durchgeführt werden (Zeitliche Gültigkeit des Anwesenheitsnachweis überschritten)." im OperationOutcome zu übermitteln.
 </requirement>
@@ -407,7 +410,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <li>Task.ExpiryDatenicht vor dem aktuellen Datum liegt</li>
     <li>und Task.extension:flowType = 160 oder 166</li>
     </ul>
-    filtern und in einem Bundle der gefundenen Tasks (ohne den signierte Anhang QES) zurückgeben, damit eine Apotheke alle zu einem Versicherten gehörenden E-Rezepte mit dem Status "offen" abrufen kann.
+    filtern und in einem Bundle der gefundenen Tasks (ohne den signierte Anhang QES) zurückgeben, damit eine Apotheke alle zu einem Versicherten gehörenden E-Rezepte mit dem Status "ready" abrufen kann.
 </requirement>
 
 <!-- A_25206 -->
@@ -481,7 +484,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         <li>Task.ExpiryDate nicht vor dem aktuellen Datum liegt</li>
         <li>und Task.extension:flowType = 160 oder 166</li>
     </ul>
-    filtern und in einem Bundle der gefundenen Tasks (ohne den signierte Anhang QES) zurückgeben, damit eine Apotheke alle zu einem Versicherten gehörenden E-Rezepte mit dem Status "offen" abrufen kann. Der E-Rezept-Fachdienst MUSS für den Response den Returncode 202 verwenden.
+    filtern und in einem Bundle der gefundenen Tasks (ohne den signierte Anhang QES) zurückgeben, damit eine Apotheke alle zu einem Versicherten gehörenden E-Rezepte mit dem Status "ready" abrufen kann. Der E-Rezept-Fachdienst MUSS für den Response den Returncode 202 verwenden.
 </requirement>
 
 <p>Diese Operation führt nicht zu einer Statusänderung bei den zurück gelieferten Task Ressourcen.</p>
@@ -574,7 +577,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-69" title="E-Rezept-Fachdienst - Prüfung Prüfziffer - Berechnung HMAC der Prüfziffer" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest" />
+        <testProcedure id="Produktgutachten" />
     </actor>
     Der E-Rezept-Fachdienst MUSS, falls im VSDM Prüfungsnachweis eine Prüfziffer enthalten ist, für den HMAC der Prüfziffer die führenden 23 Byte der Prüfziffer (Felder 1-5) mittels SHA-256 Hashfunktion berechnen und für den nachfolgenden Vergleich die ersten 24 Byte verwenden.<br />
     Der E-Rezept-Fachdienst MUSS im Fehlerfall die Meldung "Anwesenheitsnachweis konnte nicht erfolgreich durchgeführt werden (Fehler bei Prüfung der HMAC-Sicherung)." im OperationOutcome zu übermitteln.
@@ -659,7 +662,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-76" title="E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - Prüfung Telematik-ID" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest" />
+        <testProcedure id="Produktgutachten" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende Institution die zum referenzierten Task in Task.owner gespeicherte Telematik-ID der abgebenden Institution mit der Telematik-ID aus dem ACCESS_TOKEN vergleichen und bei Ungleichheit die Operation mit dem HTTP-Fehlercode 412 abbrechen, damit der Zugriff auf diesen Datensatz nur durch Berechtigte erfolgt.
 </requirement>
@@ -668,7 +671,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-77" title="E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - Prüfung AccessCode" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest" />
+        <testProcedure id="Produktgutachten" />
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende Institution den im URL-Parameter "?ac=..." übertragenen AccessCode gegen den im referenzierten Task gespeicherten AccessCode Task.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit Zugriffe auf diesen Datensatz nur durch Berechtigte in Kenntnis des AccessCode erfolgen.
 </requirement>
@@ -786,7 +789,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 10, 2026 13:14+0000">2026-03-10</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 16, 2026 17:04+0000">2026-03-16</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

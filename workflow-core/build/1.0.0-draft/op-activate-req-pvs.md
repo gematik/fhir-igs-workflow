@@ -15,35 +15,6 @@ Version 1.0.0-draft - ci-build
 
 Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an Clientsysteme für die Nutzung der Operation `$activate`.
 
-**Sequenzdiagramm:**
-
-**Abbildung: **UC 4.1 - E-Rezept durch Abgebenden abrufen
-
-
-Das PS der verordnenden LEI MUSS den Anwendungsfall "UC 2.3 - E-Rezept einstellen" gemäß TAB_ILFERP_003 umsetzen. 
-
-* Name: Auslöser
-  * E-Rezept durch Verordnenden einstellen: * Aufruf des Anwendungsfalls in der GUI
-* kann durch "E-Rezept durch Verordnenden erstellen" getriggert werden
-
-* Name: Akteur
-  * E-Rezept durch Verordnenden einstellen: Leistungserbringer, Mitarbeiter der verordnenden LEI
-* Name: Vorbedingung
-  * E-Rezept durch Verordnenden einstellen: * Das E-Rezept wurde erstellt. (Anwendungsfall "E-Rezept erstellen"). Es stehen ein QES-signiertes E-Rezept-Bundle als PKCS#7-Datei bereit.
-* Die LEI hat sich gegenüber der TI authentisiert.
-
-* Name: Nachbedingung
-  * E-Rezept durch Verordnenden einstellen: Das E-Rezept ist auf dem E-Rezept-Fachdienst gespeichert. Es kann durch den Versicherten oder einen Apotheker in Kenntnis der Einlöseinformationen (Task-ID + AccessCode) abgerufen werden. Der Workflow hat den Status "ready".
-* Name: Standardablauf
-  * E-Rezept durch Verordnenden einstellen: 1. Task auf dem E-Rezept-Fachdienst aktivieren
-1. optional, wenn der Patientenausdruck ausgedruckt werden soll:
-1. E-Rezept-Token erzeugen
-1. Patientenausdruck erstellen
-
-
-
-**Tabelle: **TAB_ILFERP_003 - E-Rezept durch Verordnenden einstellen
-
 Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden einstellen" für das E-Rezept die HTTP-Operation POST /Task/<id>/$activate mit
 * ACCESS_TOKEN im Authorization-Header
 * Task-ID in URL <id> 

@@ -24,12 +24,11 @@ Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource **Task** wird 
 | Versicherter | GET / | Spezifischen Task abrufen |
 | Apotheke, Kostenträger | GET /?ac= | Recovery Secret |
 | Apotheke, Kostenträger | GET /?secret= | Quittung erneut abrufen |
-| Versicherter | GET / | Spezifischen Task abrufen |
 | Versicherter | PATCH | Task markieren |
 
 ### Anforderungen an Schnittstelle
 
-* [Server-Anforderungen zur Task-Query](./query-api-task-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+* [FD-Anforderungen zur Task-Query](./query-api-task-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
 * [FdV-Anforderungen zur Task-Query](./query-api-task-req-fdv.md): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
 * [AVS-Anforderungen zur Task-Query](./query-api-task-req-avs.md): Anforderungen an das AVS zur Nutzung der Schnittstelle.
 * [KTR-Anforderungen zur Task-Query](./query-api-task-req-ktr.md): Anforderungen an das AVS zur Nutzung der Schnittstelle.

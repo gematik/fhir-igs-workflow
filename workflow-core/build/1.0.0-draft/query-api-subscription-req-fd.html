@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"15.9.1"}
-    h3,h4,h5,h6{--heading-prefix:"15.9.1"}</style>
+    <style type="text/css">h2{--heading-prefix:"17.9.1"}
+    h3,h4,h5,h6{--heading-prefix:"17.9.1"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -137,7 +137,13 @@
         <a href="error-codes.html">Fehlercodes</a>
       </li>
       <li>
-        <a href="verbindungsaufbau-client.html">Verbindungsaufbau von Clientsystemen</a>
+        <a href="kommunikation-dienste-ti.html">Kommunikation zu Diensten der TI</a>
+      </li>
+      <li>
+        <a href="pki-zertifikatspruefung.html">PKI Zertifikatsprüfung</a>
+      </li>
+      <li>
+        <a href="authentifizierung-client.html">Authentifizierung von Clientsystemen</a>
       </li>
     </ul>
   </li>
@@ -172,9 +178,6 @@
   </li>
   <li>
     <a href="artifacts.html">FHIR-Artefakte</a>
-  </li>
-  <li>
-    <a href="requirement-mapping-old-to-new.html">Anforderungsmapping</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -266,7 +269,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-285" title="E-Rezept-Fachdienst – Subscription registrieren – Rollenprüfung" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest" />
+        <testProcedure id="Produktgutachten" />
     </actor>
      Der E-Rezept-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription Ressource sicherstellen, dass ausschließlich Nutzer in der Rolle oid_oeffentliche_apotheke oid_krankenhausapotheke oid_kostentraeger die Operation am E-Rezept-Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit eine Subscription nicht durch Unberechtigte registriert werden kann.
 </requirement>
@@ -284,7 +287,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-288" title="E-Rezept-Fachdienst – Subscription registrieren – Pseudonym der Telematik-ID" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest" />
+        <testProcedure id="Produktgutachten" />
     </actor>
      Der E-Rezept-Fachdienst MUSS das Pseudonym innerhalb der VAU mittels eines 128-Bit-AES-CMAC-Schlüssels erstellen und hexadezimal kodieren (32 Byte lang) (vgl gemSpec_Krypt#A_20163).
 </requirement>
@@ -293,7 +296,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-289" title="E-Rezept-Fachdienst – Generierungsschlüssel – Pseudonym der Telematik-ID" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest" />
+        <testProcedure id="Produktgutachten" />
     </actor>
      Der E-Rezept-Fachdienst MUSS den AES-CMAC-Schlüssel zur Pseudonymgenerierung regelmäßig mindestens alle 3 Monate ändern.
 </requirement>
@@ -302,10 +305,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-290" title="E-Rezept-Fachdienst – Subscription registrieren – Barrier-Token" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest" />
+        <testProcedure id="Produktgutachten" />
     </actor>
-     Der E-Rezept-Fachdienst MUSS für die Registrierung der Subscription einen Bearer-Token mit den Claims subscriptionid: Pseudonym der Telematik-ID iAt: Timestamp wann Subscription erstellt wurde exp: Timestamp Ablauf der Subscription erstellen und mit einer Identität des E-Rezept-Fachdienstes signieren (Signature Algortihm: ES256).
-</requirement>
+     Der E-Rezept-Fachdienst MUSS für die Registrierung der Subscription einen Bearer-Token mit den Claims 
+     <ul>
+     <li>subscriptionid: Pseudonym der Telematik-ID</li>
+     <li>iAt: Timestamp wann Subscription erstellt wurde 
+     <li>exp: Timestamp Ablauf der Subscription 
+     &lt;/ul&gt;
+     erstellen und mit einer Identität des E-Rezept-Fachdienstes signieren (Signature Algortihm: ES256).
+&lt;/requirement&gt;
 
 <!-- A_22363 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-352" title="E-Rezept-Fachdienst – Subscription registrieren – Prüfung Telematik-ID" version="0">
@@ -316,6 +325,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
      Der E-Rezept-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription Ressource durch eine abgebende Leistungserbringerinstitution (Apotheke), diese anhand der Telematik-ID aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die in der Ressource im Element criteria Attribut receipient hinterlegte Telematik-ID prüfen und bei Ungleichheit den Aufruf mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich die Apotheke für sich selbst eine Subscription registrieren kann.
 </requirement>
 
+</li></li></ul></requirement>
 
 
 
@@ -357,7 +367,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 10, 2026 13:14+0000">2026-03-10</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 16, 2026 17:04+0000">2026-03-16</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

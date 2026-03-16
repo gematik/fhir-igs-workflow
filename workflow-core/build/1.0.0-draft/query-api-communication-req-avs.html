@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"15.5.3"}
-    h3,h4,h5,h6{--heading-prefix:"15.5.3"}</style>
+    <style type="text/css">h2{--heading-prefix:"17.5.3"}
+    h3,h4,h5,h6{--heading-prefix:"17.5.3"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -137,7 +137,13 @@
         <a href="error-codes.html">Fehlercodes</a>
       </li>
       <li>
-        <a href="verbindungsaufbau-client.html">Verbindungsaufbau von Clientsystemen</a>
+        <a href="kommunikation-dienste-ti.html">Kommunikation zu Diensten der TI</a>
+      </li>
+      <li>
+        <a href="pki-zertifikatspruefung.html">PKI Zertifikatsprüfung</a>
+      </li>
+      <li>
+        <a href="authentifizierung-client.html">Authentifizierung von Clientsystemen</a>
       </li>
     </ul>
   </li>
@@ -172,9 +178,6 @@
   </li>
   <li>
     <a href="artifacts.html">FHIR-Artefakte</a>
-  </li>
-  <li>
-    <a href="requirement-mapping-old-to-new.html">Anforderungsmapping</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -315,139 +318,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   ausführen.
 </requirement>
 
-<!-- A_23877-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-357" title="PS abgebende LEI: Nachrichtenaustausch - Nachricht durch Abgebenden übermitteln - Datenstruktur Nachricht" version="0">
-    <meta lockversion="false" />
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Herstellererklärung" />
-    </actor>
-     Das PS abgebende LEI MUSS für den Anwendungsfall "Nachricht durch Abgebenden übermitteln" Nachrichten mit der folgenden Datenstruktur in der contentString-Eigenschaft des GEM_ERP_PR_Communication_Reply unterstützen.
-     
-  <table>
-  <thead>
-    <tr>
-      <th>Attribut</th>
-      <th>verpflichtend</th>
-      <th>Beschreibung</th>
-      <th>zulässige Werte</th>
-      <th>Beispiel</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>version</td>
-      <td>ja</td>
-      <td>Gibt die Version des JSON an. Aktuell immer 3. Kann im weiteren Lebenszyklus verändert werden.</td>
-      <td>nummerisch, bis zu 6 Stellen</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>communicationType</td>
-      <td>ja</td>
-      <td>Beschreibt die Art der Nachricht.</td>
-      <td>text, link, reservationStatus, pickupCodeHR, pickupCodeDMC, deliveryStatus, paymentInfo</td>
-      <td>reservationStatus</td>
-    </tr>
-    <tr>
-      <td>text</td>
-      <td>Falls communicationType = text oder link: ja<br />Falls communicationType = pickupCodeHR, pickupCodeDMC, deliveryStatus oder paymentInfo: nein<br />Falls communicationType = reservationStatus: verboten</td>
-      <td>Zusätzlicher Freitext der Apotheke an den Versicherten. Falls communicationType gleich "link" ist, beschreibt dies das URL-Ziel, sodass der Versicherte vor dem Aufruf über das Ziel des Absprungs informiert wird.</td>
-      <td>800 Stellen, keine URL</td>
-      <td>Wir möchten Sie informieren, dass Ihre bestellten Medikamente zur Abholung bereitstehen. Den Abholcode finden Sie anbei.</td>
-    </tr>
-    <tr>
-      <td>url</td>
-      <td>Falls communicationType = link: ja<br />Ansonsten: verboten</td>
-      <td>Einbettung einer externen URL ausschließlich für das Einlösen von E-Rezepten in einer externen Bestellplattform.</td>
-      <td>500 Stellen, URL gemäß RFC3986</td>
-      <td>https://www.meine-apotheke.de/pickup/59b52340-7a6a-430d-99ea-45a8e5cd03f6</td>
-    </tr>
-    <tr>
-      <td>transactionID</td>
-      <td>ja</td>
-      <td>Wiederholung aus der empfangenen Nachricht. Dient dazu, Nachrichten einer Transaktion zuordnen zu können.</td>
-      <td>36 Stellen, UUID</td>
-      <td>8196b610-9b77-47ab-936e-362cd92ef2aa</td>
-    </tr>
-    <tr>
-      <td>readyForCollection</td>
-      <td>Falls communicationType = reservationStatus: ja<br />Ansonsten: verboten</td>
-      <td>Zeitpunkt der Verfügbarkeit</td>
-      <td>immediately, sameDay, nextDay, nextDayAM, nextDayPM, unknown, notAvailable</td>
-      <td>immediately</td>
-    </tr>
-    <tr>
-      <td>deliveryStatus</td>
-      <td>Falls communicationType = deliveryStatus: ja<br />Ansonsten: verboten</td>
-      <td>Information zum Status der Lieferung (Bote, Versand)</td>
-      <td>preparedWaiting, inTransport, delivered, incident</td>
-      <td>inTransport</td>
-    </tr>
-    <tr>
-      <td>inTransportPosition</td>
-      <td>Falls communicationType = deliveryStatus: nein<br />Ansonsten: verboten</td>
-      <td>GMS Position des Transporters</td>
-      <td>Lat, Long</td>
-      <td><pre>{
-  "long": 13.387595793605172,
-  "lat": 52.522529939635795
-}</pre></td>
-    </tr>
-    <tr>
-      <td>inTransportETA</td>
-      <td>Falls communicationType = deliveryStatus: nein<br />Ansonsten: verboten</td>
-      <td>Erwartete Ankunft Zeitfenster von – bis</td>
-      <td>TIMESTAMP-TIMESTAMP</td>
-      <td><pre>{
-  "from": 1735736400,
-  "to": 1735741800
-}</pre></td>
-    </tr>
-    <tr>
-      <td>totalAmount</td>
-      <td>Falls communicationType = paymentInfo: ja<br />Ansonsten: verboten</td>
-      <td>Zu zahlender Betrag in Eurocent, rein nummerisch</td>
-      <td>Nummerisch</td>
-      <td>12550</td>
-    </tr>
-    <tr>
-      <td>paymentMethods</td>
-      <td>Falls communicationType = paymentInfo: nein<br />Ansonsten: verboten</td>
-      <td>Verfügbare Zahlungsarten</td>
-      <td>Array aus Objects: cash, bankaccount, creditcard, paypal (optional)</td>
-      <td><pre>"paymentMethods": [
-  { "method": "cash" },
-  {
-    "method": "bankaccount",
-    "url": "https://my.payment.provider.de/pay/..."
-  },
-  {
-    "method": "paypal",
-    "url": "https://paypal.me/&lt;some_account&gt;"
-  }
-]</pre></td>
-    </tr>
-    <tr>
-      <td>pickUpCodeHR</td>
-      <td>Falls communicationType = pickupCodeHR und supplyOptionsType = onPremise: ja<br />Ansonsten: verboten</td>
-      <td>Menschenlesbarer Abholcode</td>
-      <td>1-8 Stellen</td>
-      <td>12315615</td>
-    </tr>
-    <tr>
-      <td>pickUpCodeDMC</td>
-      <td>Falls communicationType = pickupCodeDMC und supplyOptionsType = onPremise: ja<br />Ansonsten: verboten</td>
-      <td>Maschinenlesbarer Abholcode (Data-Matrix-Code gemäß ISO/IEC 16022:2006)</td>
-      <td>8-2000 Stellen</td>
-      <td>5346a991-c5c6-49c8-b87b-4cdd255bbde4</td>
-    </tr>
-  </tbody>
-</table>
-  
-<div><figcaption><strong>Tabelle: </strong>Nachricht als Apotheke an einen Versicherten schicken</figcaption></div>
-     
-</requirement>
-
 <h3 id="nachricht-löschen">Nachricht löschen</h3>
 
 <p>Mit diesem Anwendungsfall kann die abgebende LEI von ihr versendete Nachrichten an einen Versicherten auf dem Fachdienst löschen.</p>
@@ -520,7 +390,7 @@ löschen” dem Nutzer ermöglichen, die Nachricht auch lokal im PS zu löschen.
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 10, 2026 13:14+0000">2026-03-10</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 16, 2026 17:04+0000">2026-03-16</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

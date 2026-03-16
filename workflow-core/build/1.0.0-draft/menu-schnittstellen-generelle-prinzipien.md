@@ -44,4 +44,17 @@ Der E-Rezept-Fachdienst MUSS E-Rezept-IDs erzeugen und verwalten, welche der Syn
 damit Tippfehler in der manuellen Erfassung erkannt werden können und die E-Rezept-ID über 11 Jahre eine eineindeutige Zuordnung zwischen allen Datenobjekten im E-Rezept-Workflow erlaubt.
 
 Alle Produkttypen, die eine E-Rezept-ID aus externen Systemen einlesen oder von Benutzern entgegen nehmen, MÜSSEN die E-Rezept-ID gegen ihre Prüfziffer nach dem Modulo-97-Verfahren gemäß [ISO 7064] prüfen und bei Ungültigkeit die Weiterverarbeitung verhindern, damit Benutzerfehleingaben vor der Verarbeitung erkannt werden.
+### Verarbeitung von Datensätzen
+
+Es gelten folgende Anforderungen und Vorgaben zur Verarbeitung und Interpretation von Zeichen- und Datensätzen im E-Rezept-Fachdienst.
+
+Für die Kommunikation und die Interoperabilität müssen bezüglich Datensätzen einheitliche Vorgaben gelten. Laut FHIR Spezifikation wird für XML und JSON Datensätze das Character Encoding “UTF-8” vorgegeben. Byte Order Marks (BOM) werden nicht angeben.
+
+Der E-Rezept-Fachdienst MUSS beim Verarbeiten von PKCS#7 Enveloping-Daten die Anforderungen zur Verarbeitung von Datensätzen im E-Rezept-Fachdienst anwenden.
+
+Der E‑Rezept‑Fachdienst MUSS eingehende Datensätze strikt als UTF‑8 ohne Byte Order Mark (BOM) decodieren und bei fehlgeschlagener Decodierung oder beim Vorhandensein eines BOM die Verarbeitung mit einer HTTP‑Antwort 400 (Bad Request) und geeigneter Fehlermeldung abbrechen.
+
+Clientsysteme des E-Rezept-Fachdienstes MÜSSEN für die Kommunikation mit dem E-Rezept-Fachdienst ausschließlich das Character Encoding UTF-8 verwenden.
+
+Clientsysteme des E-Rezept-Fachdienstes DÜRFEN für die Kommunikation mit dem E-Rezept-Fachdienst in Datensätzen ein Byte Order Mark (BOM) NICHT angeben.
 
