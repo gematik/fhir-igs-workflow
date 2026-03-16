@@ -25,18 +25,12 @@ RuleSet: SuccessfulWithParameters
   * extension[description].valueString = "Successful operation"
   * extension[responseType].valueString = "Parameters"
 
-RuleSet: Error423Locked
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "423"
-  * extension[description].valueString = "If the insurant objected to the medication process or objected to the submission of prescription and dispensation data into the ePA system, the Medication Service is locked."
-  * extension[responseType].valueString = "application/json"
-  * extension[errorCode].valueString = "locked"
-
+//TODO: harmonize Errorcode descriptions with CapabilityStatement
 RuleSet: UnknownSearchParameter
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "400"
   * extension[description].valueString = "Unknown search parameter"
-  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_PARAM_UNKNOWN"
 
 
@@ -44,14 +38,14 @@ RuleSet: InvalidQueryParameters
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "400"
   * extension[description].valueString = "Invalid query parameter(s)"
-  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_BAD_SYNTAX"
 
 RuleSet: InvalidRequest
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "400"
   * extension[description].valueString = "Invalid request"
-  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_BAD_FORMAT"
 
 
@@ -59,56 +53,56 @@ RuleSet: UnknownResourceType
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "404"
   * extension[description].valueString = "Unknown resource type"
-  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_UNKNOWN_TYPE"
 
 RuleSet: IDTokenCheck
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "403"
   * extension[description].valueString = "ID-Token or Insurant-ID mismatch"
-  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "SVC_IDENTITY_MISMATCH"
 
 RuleSet: Unauthorized
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "401"
   * extension[description].valueString = "Authentication is required and has failed or has not yet been provided"
-  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_AUTH_REQUIRED"
 
 RuleSet: MethodNotAllowed
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "405"
   * extension[description].valueString = "Method not allowed for this endpoint"
-  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_OP_NOT_ALLOWED"
 
 RuleSet: RequestTimeout
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "408"
   * extension[description].valueString = "Request timeout"
-  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_TIMEOUT"
 
 RuleSet: Conflict
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "409"
   * extension[description].valueString = "Conflict"
-  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_CONFLICT"
 
 RuleSet: TooManyRequests
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "429"
   * extension[description].valueString = "Too many requests"
-  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_RATE_LIMIT"
 
 RuleSet: InternalServerError
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "500"
   * extension[description].valueString = "Internal server error"
-  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_INTERNAL_ERROR"
 
 
@@ -116,7 +110,7 @@ RuleSet: ResourceIsNotKnown
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "404"
   * extension[description].valueString = "Resource is not known"
-  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_RESOURCE_ID_FAIL"
 
 
@@ -124,7 +118,7 @@ RuleSet: ResourceWasDeleted
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "410"
   * extension[description].valueString = "Resource was deleted"
-  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_DELETED"
 
 
@@ -132,7 +126,7 @@ RuleSet: EmptyList
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "404"
   * extension[description].valueString = "No Resource found matching the query"
-  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_NO_MATCH"
 
 // Medication Service specific Error
@@ -140,14 +134,14 @@ RuleSet: WrongStatusParameter
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "400"
   * extension[description].valueString = "Parameter with wrong status"
-  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MEDSVC_STATUS_INVALID"
 
 RuleSet: ParameterInvalidContent
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "400"
   * extension[description].valueString = "Parameter contains not allowed content"
-  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MEDSVC_PARAMETERS_INVALID_CONTENT"
 
 
@@ -155,7 +149,7 @@ RuleSet: DosageInvalid
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "400"
   * extension[description].valueString = "Invalid dosage structure or content"
-  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MEDSVC_DOSAGE_INVALID"
 
 
@@ -163,7 +157,7 @@ RuleSet: VersionAwareConflict
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "409"
   * extension[description].valueString = "Update Conflict (server current version = %s, client version referenced = %s)"
-  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_VERSION_AWARE_CONFLICT"
 
 
@@ -171,7 +165,7 @@ RuleSet: NoValidStructure
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "422"
   * extension[description].valueString = "Invalid Data Structure in Medication Service"
-  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MEDSVC_NO_VALID_STRUCTURE"
 
 
@@ -179,7 +173,7 @@ RuleSet: OrgHeaderProfileMismatch
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "422"
   * extension[description].valueString = "Profile mismatch in header Organization"
-  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "SVC_ORG_HEADER_PROFILE_MISMATCH"
 
 
@@ -187,7 +181,7 @@ RuleSet: OpNotAllowed
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "405"
   * extension[description].valueString = "Operation %s not allowed for resource %s"
-  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_OP_NOT_ALLOWED"
 
 
@@ -195,7 +189,7 @@ RuleSet: EMPChronologyIdMismatch
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "409"
   * extension[description].valueString = "Mismatch between acknowledged and current eMP chronology ID"
-  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MEDSVC_EMP_CHRONOLOGY_ID_MISMATCH"
 
 
@@ -203,7 +197,7 @@ RuleSet: EMPLinkingNotSuccessful
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "400"
   * extension[description].valueString = "MedicationStatement could not be linked to an eMP-Entry successfully"
-  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "LINKING_NOT_SUCCESSFUL"
 
 
@@ -211,7 +205,7 @@ RuleSet: EMPUnlinkingNotSuccessful
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "400"
   * extension[description].valueString = "MedicationStatement could not be unlinked from an eMP-Entry successfully"
-  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "UNLINKING_NOT_SUCCESSFUL"
 
 
@@ -219,7 +213,7 @@ RuleSet: OperationOutsideBatch
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "405"
   * extension[description].valueString = "The operation can only be executed within a batch context"
-  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MEDSVC_OPERATION_OUTSIDE_BATCH"
 
 
@@ -227,7 +221,7 @@ RuleSet: AlreadyLinked
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "400"
   * extension[description].valueString = "Already linked to another instance"
-  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MEDSVC_ALREADY_LINKED"
 
 
@@ -235,7 +229,7 @@ RuleSet: EMPEntryAlreadyExists
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "409"
   * extension[description].valueString = "eMP entry already exists"
-  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MEDSVC_EMP_ENTRY_ALREADY_EXISTS"
 
 
@@ -243,7 +237,7 @@ RuleSet: EMPNoExist
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "404"
   * extension[description].valueString = "eMP does not exist"
-  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MEDSVC_EMP_NO_EXIST"
 
 
