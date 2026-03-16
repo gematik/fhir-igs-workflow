@@ -1,5 +1,5 @@
 Instance: ERPFachdienstServer
-InstanceOf: TICapabilityStatement
+InstanceOf: GEM_ERP_PR_CapabilityStatement
 Usage: #definition
 * insert Meta-Instance
 
@@ -17,18 +17,12 @@ Usage: #definition
 * format[+] = #application/fhir+xml
 * rest.mode = #server
 * extension[baseUrl].valueString = "http://tiflow"
-* extension[+].url = $ex-capability-environment
-* extension[=].valueCode = #RU
-* extension[+].url = $ex-capability-feature
-* extension[=].extension[+].url = "definition"
-* extension[=].extension[=].valueCanonical = "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType#160"
-* extension[=].extension[+].url = "value"
-* extension[=].extension[=].valueBoolean = true
-* extension[+].url = $ex-capability-feature
-* extension[=].extension[+].url = "definition"
-* extension[=].extension[=].valueCanonical = "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_Features#subscription"
-* extension[=].extension[+].url = "value"
-* extension[=].extension[=].valueBoolean = true
+* extension[environment].valueCode = #RU
+* extension[fhirConfiguration][+].valueCode = #FD-RU-DEFAULT
+* extension[capabilityFeature][+].extension[coding].valueCoding = $cs-flowtype#160 "Flowtype für Apothekenpflichtige Arzneimittel"
+* extension[capabilityFeature][=].extension[value].valueBoolean = true
+* extension[capabilityFeature][+].extension[coding].valueCoding = $cs-features#subscription "Push notification via Subscription resource"
+* extension[capabilityFeature][=].extension[value].valueBoolean = true
 * insert TaskInteraction(#SHALL)
 * insert ChargeItemInteraction(#SHALL)
 * insert ConsentInteraction(#SHALL)

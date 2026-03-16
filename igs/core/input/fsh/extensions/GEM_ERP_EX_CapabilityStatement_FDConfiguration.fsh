@@ -13,6 +13,6 @@ Description: "Diese Extension deklariert eine konkrete Konfigurationsausprägung
 * value[x] only code
 * valueCode 1..1
 * valueCode from GEM_ERP_VS_FDConfiguration (preferred)
-* valueCode ^short = "FD-Konfigurationscode"
-* valueCode ^definition = "Code für eine Fachdienstkonfiguration aus dem extern gepflegten FDConfiguration-CodeSystem."
-* valueCode ^comment = "Preferred-Bindung erlaubt kontrollierte Erweiterung und rückwärtskompatible Verarbeitung bei neu eingeführten Codes."
+  * ^short = "FD-Konfigurationscode"
+  * ^definition = "Code für eine Fachdienstkonfiguration aus dem extern gepflegten FDConfiguration-CodeSystem."
+  * ^comment = "Preferred-Bindung erlaubt kontrollierte Erweiterung und rückwärtskompatible Verarbeitung bei neu eingeführten Codes."

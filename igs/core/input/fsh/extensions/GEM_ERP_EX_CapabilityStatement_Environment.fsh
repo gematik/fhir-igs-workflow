@@ -13,6 +13,6 @@ Description: "Diese Extension kennzeichnet die Zielumgebung eines konkreten Capa
 * value[x] only code
 * valueCode 1..1
 * valueCode from GEM_ERP_VS_CapabilityStatement_Environment (required)
-* valueCode ^short = "Code der Zielumgebung"
-* valueCode ^definition = "Umgebungscode gemäß GEM_ERP_CS_CapabilityStatement_Environment (PU, RU, TU, DEV)."
-* valueCode ^comment = "Der Code beschreibt die Umgebung des konkreten Endpoints, nicht die generische Spezifikation."
+  * ^short = "Code der Zielumgebung"
+  * ^definition = "Umgebungscode gemäß GEM_ERP_CS_CapabilityStatement_Environment (PU, RU, TU, DEV)."
+  * ^comment = "Der Code beschreibt die Umgebung des konkreten Endpoints, nicht die generische Spezifikation."

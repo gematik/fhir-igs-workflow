@@ -7,35 +7,44 @@ Description: "Diese Compound-Extension deklariert ein einzelnes Feature eines ko
 * ^context[=].expression = "CapabilityStatement"
 
 * . ^short = "Deklaration eines aktivierbaren CapabilityStatement-Features"
-* . ^definition = "Compound-Extension mit den Teilslices definition und value zur Beschreibung eines einzelnen Features inklusive Aktivierungszustand."
+* . ^definition = "Compound-Extension mit den Teilslices coding und value zur Beschreibung eines einzelnen Features inklusive Aktivierungszustand."
 * . ^comment = "Diese Extension kann auf CapabilityStatement-Ebene mehrfach wiederholt werden (0..*), um die komplette Feature-Menge eines konkreten Systems zu beschreiben."
 
-* extension ^slicing.discriminator.type = #value
-* extension ^slicing.discriminator.path = "url"
-* extension ^slicing.rules = #closed
-* extension ^short = "Container für die Child-Slices definition und value"
-* extension ^definition = "Enthält die verpflichtenden Child-Slices für Feature-Referenz und Feature-Status."
-* extension ^comment = "Nur die Slices definition und value sind zulässig."
+* extension
+  * ^slicing.discriminator.type = #value
+  * ^slicing.discriminator.path = "url"
+  * ^slicing.rules = #closed
+  * ^short = "Container für die Child-Slices coding und value"
+  * ^definition = "Enthält die verpflichtenden Child-Slices für Feature-Code und Feature-Status."
+  * ^comment = "Nur die Slices coding und value sind zulässig."
 
 * extension contains
-    definition 1..1 MS and
+    coding 1..1 MS and
     value 1..1 MS
 
-* extension[definition] ^short = "Canonical-Referenz auf den Feature-Bezeichner"
-* extension[definition] ^definition = "Verweist per valueCanonical auf ein Feature-Konzept aus GEM_ERP_CS_FlowType oder GEM_ERP_CS_Features."
-* extension[definition] ^comment = "Das referenzierte Canonical identifiziert, welches Feature beschrieben wird."
-* extension[definition].value[x] only canonical
-* extension[definition].valueCanonical 1..1
-* extension[definition].valueCanonical from GEM_ERP_VS_CapabilityStatement_Feature (required)
-* extension[definition].valueCanonical ^short = "Feature-Canonical"
-* extension[definition].valueCanonical ^definition = "Canonical URL eines Feature-Konzepts aus den zulässigen CodeSystemen des Feature-ValueSets."
-* extension[definition].valueCanonical ^comment = "Für Workflow-Typen auf GEM_ERP_CS_FlowType, für sonstige Features auf GEM_ERP_CS_Features referenzieren."
+* extension[coding]
+  * ^short = "Coding des Feature-Bezeichners"
+  * ^definition = "Verweist per valueCoding auf ein Feature-Konzept aus GEM_ERP_CS_FlowType oder GEM_ERP_CS_Features."
+  * ^comment = "Das Coding identifiziert, welches Feature beschrieben wird."
+  * value[x] only Coding
+  * valueCoding from GEM_ERP_VS_CapabilityStatement_Feature (required)
+  * valueCoding 1..1
+    * ^short = "Feature-Coding"
+    * ^definition = "Coding eines Feature-Konzepts aus den zulässigen CodeSystemen des Feature-ValueSets."
+    * ^comment = "Für Workflow-Typen auf GEM_ERP_CS_FlowType, für sonstige Features auf GEM_ERP_CS_Features referenzieren."
+    * system 1..1
+      * ^short = "CodeSystem des Features"
+      * ^definition = "Referenziert das verwendete Feature-CodeSystem, z. B. GEM_ERP_CS_FlowType oder GEM_ERP_CS_Features."
+    * code 1..1
+      * ^short = "Feature-Code"
+      * ^definition = "Konkreter Feature-Code innerhalb des gewählten CodeSystems."
 
-* extension[value] ^short = "Aktivierungszustand des Features"
-* extension[value] ^definition = "Beschreibt, ob das in definition referenzierte Feature in dieser Umgebung aktiv ist."
-* extension[value] ^comment = "true = aktiv; false = deklariert, aber derzeit nicht aktiv."
-* extension[value].value[x] only boolean
-* extension[value].valueBoolean 1..1
-* extension[value].valueBoolean ^short = "Feature aktiv (true/false)"
-* extension[value].valueBoolean ^definition = "Boolean-Wert zur Laufzeitaktivierung des referenzierten Features."
-* extension[value].valueBoolean ^comment = "Soll den effektiven Betriebszustand der referenzierten Funktionalität wiedergeben."
+* extension[value]
+  * ^short = "Aktivierungszustand des Features"
+  * ^definition = "Beschreibt, ob das in definition referenzierte Feature in dieser Umgebung aktiv ist."
+  * ^comment = "true = aktiv; false = deklariert, aber derzeit nicht aktiv."
+  * value[x] only boolean
+  * valueBoolean 1..1
+    * ^short = "Feature aktiv (true/false)"
+    * ^definition = "Boolean-Wert zur Laufzeitaktivierung des referenzierten Features."
+    * ^comment = "Soll den effektiven Betriebszustand der referenzierten Funktionalität wiedergeben."

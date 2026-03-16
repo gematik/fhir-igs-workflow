@@ -2,14 +2,14 @@
 
 Die Extension-Familie für CapabilityStatements ergänzt die statische Schnittstellenbeschreibung um konkrete Laufzeit- und Deployment-Informationen.
 
-- GEM_ERP_EX_CapabilityStatement_Feature beschreibt einzelne deklarierbare Features als Paar aus Referenz (definition) und Aktivierungsstatus (value).
+- GEM_ERP_EX_CapabilityStatement_Feature beschreibt einzelne deklarierbare Features als Paar aus Coding (coding) und Aktivierungsstatus (value).
 - GEM_ERP_EX_CapabilityStatement_Environment kennzeichnet die Zielumgebung (PU, RU, TU, DEV), für die die Deklaration gilt.
 
 ### Modellierungsprinzip
 
 Das Feature-Muster ist als Compound-Extension umgesetzt:
 
-- definition: canonical Referenz auf ein Feature-Konzept
+- coding: Coding mit system + code auf ein Feature-Konzept
 - value: boolescher Aktivierungszustand
 
 Für die Referenz werden zwei CodeSysteme kombiniert:
