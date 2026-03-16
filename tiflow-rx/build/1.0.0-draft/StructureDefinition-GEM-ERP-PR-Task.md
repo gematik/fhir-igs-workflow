@@ -201,7 +201,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Task.csv)
       "path" : "Task.identifier",
       "sliceName" : "PrescriptionID",
       "short" : "E-Rezept-ID",
-      "definition" : "Die E-Rezept-ID ist der Hauptidentifikator für die Task Ressource und den gesamten E-Rezept Workflow. Dieser Identifikator wird vom E-Rezept Fachdienst generiert und darf nicht manuell geändert werden.",
+      "definition" : "Die E-Rezept-ID ist der Hauptidentifikator für die Task Ressource und den gesamten E-Rezept Workflow. Dieser Identifikator wird vom E-Rezept-Fachdienst generiert und darf nicht manuell geändert werden.",
       "min" : 1,
       "max" : "1",
       "type" : [{
@@ -214,7 +214,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Task.csv)
       "path" : "Task.identifier",
       "sliceName" : "AccessCode",
       "short" : "AccessCode Identifier",
-      "definition" : "Generiert vom E-Rezept Fachdienst. Dieser Identifikator muss in jeder Anfrage zur Task Ressource übertragen werden.",
+      "definition" : "Generiert vom E-Rezept-Fachdienst. Dieser Identifikator muss in jeder Anfrage zur Task Ressource übertragen werden.",
       "min" : 0,
       "max" : "1"
     },

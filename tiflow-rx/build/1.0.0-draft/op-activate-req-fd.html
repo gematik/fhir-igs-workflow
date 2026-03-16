@@ -406,7 +406,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Prüfung Rezept-ID und Präfix gegen Flowtype" version="0" key="IG-TIFLOW-CORE-137">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"></testProcedure>
+        <testProcedure id="Produktgutachten"></testProcedure>
     </actor>
     Der E-Rezept-Fachdienst MUSS beim berechtigten Aufruf der Operation POST /Task/&lt;id&gt;/$activate prüfen, dass die PrescriptionID des Tasks mit der PrescriptionID im übergebenen QES-Datensatz übereinstimmt und der Präfix der PrescriptionID gleich dem Flowtype des zu aktivierenden Tasks ist und andernfalls die Operation mit dem http-Fehlercode 400 abbrechen.
 </requirement>
@@ -433,7 +433,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Übernahme der Versicherten-ID" version="0" key="IG-TIFLOW-CORE-140">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"></testProcedure>
+        <testProcedure id="Produktgutachten"></testProcedure>
     </actor>
     Der E-Rezept-Fachdienst MUSS im Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die KVNR des Patienten dem Identifier http://fhir.de/sid/gkv/kvid-10 der Patient-Ressource im E-Rezept-Bundle entnehmen und diesen als Identifier in Task.for mit system http://fhir.de/sid/gkv/kvid-10 hinzufügen, damit ausschließlich eine gültige, vom Arzt signierte Patientenreferenz im Workflow verwendet wird.
 </requirement>
@@ -694,7 +694,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 <requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Ausschluss Betäubungsmittel" version="0" key="IG-TIFLOW-RX-62">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"></testProcedure>
+        <testProcedure id="Herstellererklärung"></testProcedure>
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 und einem Hinweis auf den Ausschluss von Betäubungsmittel ("BTM nicht zulässig" im OperationOutcome) abbrechen, wenn der übergebene QES-Datensatz als Betäubungsmittel-Verordnung (Bundle.Medication.extension:KBV_EX_ERP_Medication_Category:code gleich "01") gekennzeichnet ist.
 </requirement>
@@ -727,7 +727,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 
 <h3 id="prozessparamter">Prozessparamter</h3>
 
-  <!-- A_27844 -->
+  <!-- A_27844, A_19999 -->
 <requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 160 - Prozessparameter" version="0" key="IG-TIFLOW-RX-65">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
@@ -784,7 +784,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <div><figcaption><strong>Tabelle: </strong>TAB_eRpDM_004 Prozessparameter Flowtype 160</figcaption></div>
 </requirement>
 
-  <!-- A_27846 -->
+  <!-- A_27846, A_19999 -->
 <requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 166 - Prozessparameter" version="0" key="IG-TIFLOW-RX-66">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
@@ -825,7 +825,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <div><figcaption><strong>Tabelle: </strong>TAB_eRpDM_006 Prozessparameter Flowtype 166</figcaption></div>
 </requirement>
 
-  <!-- A_27847 -->
+  <!-- A_27847, A_19999 -->
 <requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 169 - Prozessparameter" version="0" key="IG-TIFLOW-RX-67">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
@@ -882,7 +882,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <div><figcaption><strong>Tabelle: </strong>TAB_eRpDM_007 Prozessparameter Flowtype 169</figcaption></div>
 </requirement>
 
-  <!-- A_27848 -->
+  <!-- A_27848, A_19999 -->
 <requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 200 - Prozessparameter" version="0" key="IG-TIFLOW-RX-68">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
@@ -939,7 +939,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <div><figcaption><strong>Tabelle: </strong>TAB_eRpDM_008 Prozessparameter Flowtype 200</figcaption></div>
 </requirement>
 
-  <!-- A_27849 -->
+  <!-- A_27849, A_19999 -->
 <requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 209 - Prozessparameter" version="0" key="IG-TIFLOW-RX-69">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
@@ -1160,7 +1160,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 10, 2026 12:06+0000">2026-03-10</span>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 16, 2026 06:27+0000">2026-03-16</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

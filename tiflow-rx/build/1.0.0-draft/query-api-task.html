@@ -291,7 +291,39 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="nachricht">Nachricht</h3>
 
-<p>Die Nachricht zum Abruf von E-Rezepten wird als HTTP GET-Anfrage an den E-Rezept-Fachdienst gesendet, um eine Liste der hinterlegten <em>Task</em>-Instanzen abzurufen.</p>
+<p>Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource <em>Task</em> wird über die folgenden HTTP-Methoden ermöglicht:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Akteur</th>
+      <th>HTTP-Methode</th>
+      <th>Ergebnis der Anfrage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Versicherter</td>
+      <td>GET</td>
+      <td>Liste von Task abrufen</td>
+    </tr>
+    <tr>
+      <td>Versicherter</td>
+      <td>GET /&#60;id&#62;</td>
+      <td>Spezifischen Task abrufen</td>
+    </tr>
+    <tr>
+      <td>Apotheke</td>
+      <td>GET /&#60;id&#62;?ac=</td>
+      <td>Recovery Secret</td>
+    </tr>
+    <tr>
+      <td>Apotheke</td>
+      <td>GET /&#60;id&#62;?secret=</td>
+      <td>Quittung erneut abrufen</td>
+    </tr>
+  </tbody>
+</table>
 
 <h3 id="anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</h3>
 
@@ -363,7 +395,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 10, 2026 12:06+0000">2026-03-10</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 16, 2026 06:27+0000">2026-03-16</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -16,15 +16,20 @@ Communication wird für die Kommunikation zwischen Versicherten und Apotheke ver
 
 ### Nachricht
 
-Die Nachricht zum Abruf von Nachrichten wird als HTTP GET-Anfrage an den E-Rezept-Fachdienst gesendet, um eine Liste der hinterlegten **Communication**-Instanzen abzurufen.
+Die Interaktion mit Nachrichten als FHIR-Ressource **Communication** wird über die folgenden HTTP-Methoden ermöglicht:
 
-Mit einer POST-Anfrage an den E-Rezept-Fachdienst kann eine **Communication**-Instanz am E-Rezept-Fachdienst eingestellt werden.
+| | |
+| :--- | :--- |
+| GET | Nachrichten abrufen |
+| POST | Nachricht einstellen |
+| DELETE | Nachricht löschen |
 
 ### Anforderungen an Schnittstelle
 
 * [FD-Anforderungen zur Communication-Query](./query-api-communication-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
 * [FdV-Anforderungen für Communication-Query](./query-api-communication-req-fdv.md): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
 * [AVS-Anforderungen für Communication-Query](./query-api-communication-req-avs.md): Anforderungen an das AVS zur Nutzung der Schnittstelle.
+* [Datenmodell Payload für Communication-Query](./query-api-communication-req-data.md): Datenmodell Payload zur Nutzung der Schnittstelle.
 
 ### Resource API
 
@@ -40,5 +45,5 @@ Um spezifische Details zu einer einzelnen **Communciation** mittels der RESTful 
 
 #### API Beschreibung
 
-* [API-ERP: Auf neue Nachrichten im E-Rezept Fachdienst prüfen](https://github.com/gematik/api-erp/blob/master/docs/erp_communication.adoc#anwendungsfall-auf-neue-nachrichten-im-e-rezept-fachdienst-pr%C3%BCfen)
+* [API-ERP: Auf neue Nachrichten im E-Rezept-Fachdienst prüfen](https://github.com/gematik/api-erp/blob/master/docs/erp_communication.adoc#anwendungsfall-auf-neue-nachrichten-im-e-rezept-fachdienst-pr%C3%BCfen)
 

@@ -297,16 +297,21 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-22" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Rollenprüfung Abgebender stellt Dispensierinformationen bereit" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest" />
+        <testProcedure id="Produktgutachten" />
     </actor>
-        Der E-Rezept-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen mittels POST /Task/&lt;id&gt;/$dispense auf den in der URL referenzierten /Task/&lt;id&gt; sicherstellen, dass ausschließlich abgebende Leistungserbringer in der Rolle oid_oeffentliche_apotheke oid_krankenhausapotheke die Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit Dispensierinformationen nicht durch einen Unberechtigten eingestellt werden kann.
+        Der E-Rezept-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen mittels POST /Task/&lt;id&gt;/$dispense auf den in der URL referenzierten /Task/&lt;id&gt; sicherstellen, dass ausschließlich abgebende Leistungserbringer in einer der Rollen
+        <ul> 
+        <li>oid_oeffentliche_apotheke</li>
+        <li>oid_krankenhausapotheke</li>
+        </ul>
+        die Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit Dispensierinformationen nicht durch einen Unberechtigten eingestellt werden kann.
 </requirement>
 
 <!-- A_24280 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-23" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Prüfung Secret" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest" />
+        <testProcedure id="Produktgutachten" />
     </actor>
         Der E-Rezept-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen mittels POST /Task/&lt;id&gt;/$dispense das im URL-Parameter "?secret=..." übertragene Secret gegen das im referenzierten Task gespeicherte Secret Task.identifier:Secret als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret prüfen und bei Ungleichheit oder Fehlen des URL- Parameters die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit der Zugriff auf diesen Datensatz nur durch den Berechtigten in Kenntnis des Secrets erfolgt.
 </requirement>
@@ -315,9 +320,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-24" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Prüfung Status" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest" />
+        <testProcedure id="Produktgutachten" />
     </actor>
-        Der E-Rezept-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen mittels POST /Task/&lt;id&gt;/$dispense auf Task.status = in-progress prüfen und bei Ungleichheit mit dem HTTP-Fehlercode 403 abbrechen.
+    Der E-Rezept-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen mittels POST /Task/&lt;id&gt;/$dispense auf Task.status = in-progress prüfen und bei Ungleichheit mit dem HTTP-Fehlercode 403 abbrechen.
 </requirement>
 
 <!-- A_24281-02 -->
@@ -372,6 +377,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         <testProcedure id="Produkttest" />
     </actor>
         Der E-Rezept-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen mittels POST /Task/&lt;id&gt;/$dispense den Zeitpunkt des Aufrufes in Task.extension:lastMedicationDispense im Format "YYYY-MM-DDThh:mm:ss+zz:zz" (FHIR-instant) anlegen und speichern.
+</requirement>
+
+<!-- A_28410 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-207" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Telematik-ID der abgebenden LEI speichern" version="0">
+    <meta lockversion="false" />
+    <actor name="eRp_FD">
+        <testProcedure id="Produkttest" />
+    </actor>
+    Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$dispense für den referenzierten Task die Telematik-ID aus dem ACCESS_TOKEN in Task.owner speichern, damit sichergestellt werden kann, dass nachfolgende Zugriffe auf diesen Datensatz nur durch Berechtigte erfolgen können.
 </requirement>
 
 <!-- A_28130 -->
@@ -433,7 +447,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 10, 2026 12:06+0000">2026-03-10</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 16, 2026 06:27+0000">2026-03-16</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

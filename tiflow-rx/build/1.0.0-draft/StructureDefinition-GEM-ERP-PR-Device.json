@@ -73,7 +73,7 @@
         "human" : "If the resource is contained in another resource, it SHALL NOT contain nested Resources",
         "expression" : "contained.contained.empty()",
         "xpath" : "not(parent::f:contained and f:contained)",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Device"
+        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
       },
       {
         "key" : "dom-3",
@@ -81,7 +81,7 @@
         "human" : "If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource",
         "expression" : "contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()",
         "xpath" : "not(exists(for $id in f:contained/*/f:id/@value return $contained[not(parent::*/descendant::f:reference/@value=concat('#', $contained/*/id/@value) or descendant::f:reference[@value='#'])]))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Device"
+        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
       },
       {
         "key" : "dom-4",
@@ -89,7 +89,7 @@
         "human" : "If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated",
         "expression" : "contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()",
         "xpath" : "not(exists(f:contained/*/f:meta/f:versionId)) and not(exists(f:contained/*/f:meta/f:lastUpdated))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Device"
+        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
       },
       {
         "key" : "dom-5",
@@ -97,7 +97,7 @@
         "human" : "If a resource is contained in another resource, it SHALL NOT have a security label",
         "expression" : "contained.meta.security.empty()",
         "xpath" : "not(exists(f:contained/*/f:meta/f:security))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Device"
+        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
       },
       {
         "extension" : [{
@@ -113,7 +113,7 @@
         "human" : "A resource should have narrative for robust management",
         "expression" : "text.`div`.exists()",
         "xpath" : "exists(f:text/h:div)",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Device"
+        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
       }],
       "isModifier" : false,
       "isSummary" : false,
@@ -307,14 +307,6 @@
     {
       "id" : "Device.extension",
       "path" : "Device.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -356,14 +348,6 @@
     {
       "id" : "Device.modifierExtension",
       "path" : "Device.modifierExtension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Extensions that cannot be ignored",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -420,7 +404,6 @@
       "type" : [{
         "code" : "Identifier"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -430,23 +413,8 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "v2",
-        "map" : "CX / EI (occasionally, more often EI maps to a resource id or a URL)"
-      },
-      {
-        "identity" : "rim",
-        "map" : "II - The Identifier class is a little looser than the v3 type II because it allows URIs as well as registered OIDs or GUIDs.  Also maps to Role[classCode=IDENT]"
-      },
-      {
-        "identity" : "servd",
-        "map" : "Identifier"
-      },
-      {
         "identity" : "w5",
         "map" : "FiveWs.identifier"
       },
@@ -464,7 +432,6 @@
       "path" : "Device.definition",
       "short" : "The reference to the definition for the device",
       "definition" : "The reference to the definition for the device.",
-      "comment" : "References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository.",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -476,7 +443,6 @@
         "code" : "Reference",
         "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/DeviceDefinition|4.0.1"]
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -484,24 +450,9 @@
         "expression" : "hasValue() or (children().count() > id.count())",
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ref-1",
-        "severity" : "error",
-        "human" : "SHALL have a contained resource if a local reference is provided",
-        "expression" : "reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))",
-        "xpath" : "not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Reference"
       }],
       "isModifier" : false,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "rim",
-        "map" : "The target of a resource reference is a RIM entry point (Act, Role, or Entity)"
-      }]
+      "isSummary" : false
     },
     {
       "id" : "Device.udiCarrier",
@@ -519,7 +470,6 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -531,10 +481,6 @@
       "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "w5",
         "map" : "FiveWs.identifier"
       },
@@ -573,14 +519,6 @@
     {
       "id" : "Device.udiCarrier.extension",
       "path" : "Device.udiCarrier.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -668,7 +606,6 @@
       "path" : "Device.udiCarrier.deviceIdentifier",
       "short" : "Mandatory fixed portion of UDI",
       "definition" : "The device identifier (DI) is a mandatory, fixed portion of a UDI that identifies the labeler and the specific version or model of a device.",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "alias" : ["DI"],
       "min" : 0,
       "max" : "1",
@@ -708,7 +645,6 @@
       "path" : "Device.udiCarrier.issuer",
       "short" : "UDI Issuing Organization",
       "definition" : "Organization that is charged with issuing UDIs for devices.  For example, the US FDA issuers include :\n1) GS1: \nhttp://hl7.org/fhir/NamingSystem/gs1-di, \n2) HIBCC:\nhttp://hl7.org/fhir/NamingSystem/hibcc-dI, \n3) ICCBBA for blood containers:\nhttp://hl7.org/fhir/NamingSystem/iccbba-blood-di, \n4) ICCBA for other devices:\nhttp://hl7.org/fhir/NamingSystem/iccbba-other-di.",
-      "comment" : "see http://en.wikipedia.org/wiki/Uniform_resource_identifier",
       "alias" : ["Barcode System"],
       "min" : 0,
       "max" : "1",
@@ -744,7 +680,6 @@
       "path" : "Device.udiCarrier.jurisdiction",
       "short" : "Regional UDI authority",
       "definition" : "The identity of the authoritative source for UDI generation within a  jurisdiction.  All UDIs are globally unique within a single namespace with the appropriate repository uri as the system.  For example,  UDIs of devices managed in the U.S. by the FDA, the value is  http://hl7.org/fhir/NamingSystem/fda-udi.",
-      "comment" : "see http://en.wikipedia.org/wiki/Uniform_resource_identifier",
       "requirements" : "Allows a recipient of a UDI to know which database will contain the UDI-associated metadata.",
       "min" : 0,
       "max" : "1",
@@ -933,7 +868,6 @@
       "path" : "Device.statusReason",
       "short" : "online | paused | standby | offline | not-ready | transduc-discon | hw-discon | off",
       "definition" : "Reason for the dtatus of the Device availability.",
-      "comment" : "Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination.",
       "min" : 0,
       "max" : "*",
       "base" : {
@@ -944,7 +878,6 @@
       "type" : [{
         "code" : "CodeableConcept"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -954,6 +887,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
+      "isSummary" : false,
       "binding" : {
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
@@ -964,22 +898,6 @@
         "valueSet" : "http://hl7.org/fhir/ValueSet/device-status-reason|4.0.1"
       },
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "v2",
-        "map" : "CE/CNE/CWE"
-      },
-      {
-        "identity" : "rim",
-        "map" : "CD"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:CodeableConcept rdfs:subClassOf dt:CD"
-      },
-      {
         "identity" : "w5",
         "map" : "FiveWs.status"
       }]
@@ -1029,7 +947,6 @@
       "path" : "Device.manufacturer",
       "short" : "Name of device manufacturer",
       "definition" : "A name of the manufacturer.",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -1144,7 +1061,6 @@
       "path" : "Device.lotNumber",
       "short" : "Lot number of manufacture",
       "definition" : "Lot number assigned by the manufacturer.",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -1229,7 +1145,6 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1239,10 +1154,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : false
     },
     {
       "id" : "Device.deviceName.id",
@@ -1274,14 +1186,6 @@
     {
       "id" : "Device.deviceName.extension",
       "path" : "Device.deviceName.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -1369,7 +1273,6 @@
       "path" : "Device.deviceName.name",
       "short" : "The name of the device",
       "definition" : "The name of the device.",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "alias" : ["Σ"],
       "min" : 1,
       "max" : "1",
@@ -1440,7 +1343,6 @@
       "path" : "Device.modelNumber",
       "short" : "The model number for the device",
       "definition" : "The model number for the device.",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -1510,7 +1412,6 @@
       "path" : "Device.type",
       "short" : "The kind or type of device",
       "definition" : "The kind or type of device.",
-      "comment" : "Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination.",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -1521,7 +1422,6 @@
       "type" : [{
         "code" : "CodeableConcept"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1531,6 +1431,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
+      "isSummary" : false,
       "binding" : {
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
@@ -1539,23 +1440,7 @@
         "strength" : "example",
         "description" : "Codes to identify medical devices.",
         "valueSet" : "http://hl7.org/fhir/ValueSet/device-type|4.0.1"
-      },
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "v2",
-        "map" : "CE/CNE/CWE"
-      },
-      {
-        "identity" : "rim",
-        "map" : "CD"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:CodeableConcept rdfs:subClassOf dt:CD"
-      }]
+      }
     },
     {
       "id" : "Device.specialization",
@@ -1572,7 +1457,6 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1582,10 +1466,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : false
     },
     {
       "id" : "Device.specialization.id",
@@ -1617,14 +1498,6 @@
     {
       "id" : "Device.specialization.extension",
       "path" : "Device.specialization.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -1712,7 +1585,6 @@
       "path" : "Device.specialization.systemType",
       "short" : "The standard that is used to operate and communicate",
       "definition" : "The standard that is used to operate and communicate.",
-      "comment" : "Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination.",
       "alias" : ["Σ"],
       "min" : 1,
       "max" : "1",
@@ -1724,7 +1596,6 @@
       "type" : [{
         "code" : "CodeableConcept"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1734,29 +1605,13 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "v2",
-        "map" : "CE/CNE/CWE"
-      },
-      {
-        "identity" : "rim",
-        "map" : "CD"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:CodeableConcept rdfs:subClassOf dt:CD"
-      }]
+      "isSummary" : false
     },
     {
       "id" : "Device.specialization.version",
       "path" : "Device.specialization.version",
       "short" : "The version of the standard that is used to operate and communicate",
       "definition" : "The version of the standard that is used to operate and communicate.",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -1797,7 +1652,6 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1807,10 +1661,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : false
     },
     {
       "id" : "Device.version.id",
@@ -1842,14 +1693,6 @@
     {
       "id" : "Device.version.extension",
       "path" : "Device.version.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -1937,7 +1780,6 @@
       "path" : "Device.version.type",
       "short" : "The type of the device version",
       "definition" : "The type of the device version.",
-      "comment" : "Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination.",
       "alias" : ["Σ"],
       "min" : 0,
       "max" : "1",
@@ -1949,7 +1791,6 @@
       "type" : [{
         "code" : "CodeableConcept"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1959,22 +1800,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "v2",
-        "map" : "CE/CNE/CWE"
-      },
-      {
-        "identity" : "rim",
-        "map" : "CD"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:CodeableConcept rdfs:subClassOf dt:CD"
-      }]
+      "isSummary" : false
     },
     {
       "id" : "Device.version.component",
@@ -1991,7 +1817,6 @@
       "type" : [{
         "code" : "Identifier"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -2001,23 +1826,8 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "v2",
-        "map" : "CX / EI (occasionally, more often EI maps to a resource id or a URL)"
-      },
-      {
-        "identity" : "rim",
-        "map" : "II - The Identifier class is a little looser than the v3 type II because it allows URIs as well as registered OIDs or GUIDs.  Also maps to Role[classCode=IDENT]"
-      },
-      {
-        "identity" : "servd",
-        "map" : "Identifier"
-      },
-      {
         "identity" : "w5",
         "map" : "FiveWs.what[x]"
       }]
@@ -2027,7 +1837,6 @@
       "path" : "Device.version.value",
       "short" : "The version text",
       "definition" : "The version text.",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -2064,7 +1873,6 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -2074,10 +1882,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : false
     },
     {
       "id" : "Device.property.id",
@@ -2109,14 +1914,6 @@
     {
       "id" : "Device.property.extension",
       "path" : "Device.property.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -2204,7 +2001,6 @@
       "path" : "Device.property.type",
       "short" : "Code that specifies the property DeviceDefinitionPropetyCode (Extensible)",
       "definition" : "Code that specifies the property DeviceDefinitionPropetyCode (Extensible).",
-      "comment" : "Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination.",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -2215,7 +2011,6 @@
       "type" : [{
         "code" : "CodeableConcept"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -2225,29 +2020,13 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "v2",
-        "map" : "CE/CNE/CWE"
-      },
-      {
-        "identity" : "rim",
-        "map" : "CD"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:CodeableConcept rdfs:subClassOf dt:CD"
-      }]
+      "isSummary" : false
     },
     {
       "id" : "Device.property.valueQuantity",
       "path" : "Device.property.valueQuantity",
       "short" : "Property value as a quantity",
       "definition" : "Property value as a quantity.",
-      "comment" : "The context of use may frequently define what kind of quantity this is and therefore what kind of units can be used. The context of use may also restrict the values for the comparator.",
       "min" : 0,
       "max" : "*",
       "base" : {
@@ -2258,7 +2037,6 @@
       "type" : [{
         "code" : "Quantity"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -2266,35 +2044,15 @@
         "expression" : "hasValue() or (children().count() > id.count())",
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "qty-3",
-        "severity" : "error",
-        "human" : "If a code for the unit is present, the system SHALL also be present",
-        "expression" : "code.empty() or system.exists()",
-        "xpath" : "not(exists(f:code)) or exists(f:system)",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Quantity"
       }],
       "isModifier" : false,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "v2",
-        "map" : "SN (see also Range) or CQ"
-      },
-      {
-        "identity" : "rim",
-        "map" : "PQ, IVL<PQ>, MO, CO, depending on the values"
-      }]
+      "isSummary" : false
     },
     {
       "id" : "Device.property.valueCode",
       "path" : "Device.property.valueCode",
       "short" : "Property value as a code, e.g., NTP4 (synced to NTP)",
       "definition" : "Property value as a code, e.g., NTP4 (synced to NTP).",
-      "comment" : "Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination.",
       "min" : 0,
       "max" : "*",
       "base" : {
@@ -2305,7 +2063,6 @@
       "type" : [{
         "code" : "CodeableConcept"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -2315,29 +2072,13 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "v2",
-        "map" : "CE/CNE/CWE"
-      },
-      {
-        "identity" : "rim",
-        "map" : "CD"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:CodeableConcept rdfs:subClassOf dt:CD"
-      }]
+      "isSummary" : false
     },
     {
       "id" : "Device.patient",
       "path" : "Device.patient",
       "short" : "Patient to whom Device is affixed",
       "definition" : "Patient information, If the device is affixed to a person.",
-      "comment" : "References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository.",
       "requirements" : "If the device is implanted in a patient, then need to associate the device to the patient.",
       "min" : 0,
       "max" : "1",
@@ -2350,7 +2091,6 @@
         "code" : "Reference",
         "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"]
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -2358,25 +2098,10 @@
         "expression" : "hasValue() or (children().count() > id.count())",
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ref-1",
-        "severity" : "error",
-        "human" : "SHALL have a contained resource if a local reference is provided",
-        "expression" : "reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))",
-        "xpath" : "not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Reference"
       }],
       "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "rim",
-        "map" : "The target of a resource reference is a RIM entry point (Act, Role, or Entity)"
-      },
-      {
         "identity" : "w5",
         "map" : "FiveWs.subject[x]"
       },
@@ -2394,7 +2119,6 @@
       "path" : "Device.owner",
       "short" : "Organization responsible for device",
       "definition" : "An organization that is responsible for the provision and ongoing maintenance of the device.",
-      "comment" : "References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository.",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -2406,7 +2130,6 @@
         "code" : "Reference",
         "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"]
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -2414,25 +2137,10 @@
         "expression" : "hasValue() or (children().count() > id.count())",
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ref-1",
-        "severity" : "error",
-        "human" : "SHALL have a contained resource if a local reference is provided",
-        "expression" : "reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))",
-        "xpath" : "not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Reference"
       }],
       "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "rim",
-        "map" : "The target of a resource reference is a RIM entry point (Act, Role, or Entity)"
-      },
-      {
         "identity" : "w5",
         "map" : "FiveWs.source"
       },
@@ -2457,16 +2165,7 @@
       "type" : [{
         "code" : "ContactPoint"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
-        "key" : "cpt-2",
-        "severity" : "error",
-        "human" : "A system is required if a value is provided.",
-        "expression" : "value.empty() or system.exists()",
-        "xpath" : "not(exists(f:value)) or exists(f:system)",
-        "source" : "http://hl7.org/fhir/StructureDefinition/ContactPoint"
-      },
-      {
         "key" : "ele-1",
         "severity" : "error",
         "human" : "All FHIR elements must have a @value or children",
@@ -2476,23 +2175,8 @@
       }],
       "mustSupport" : true,
       "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "v2",
-        "map" : "XTN"
-      },
-      {
-        "identity" : "rim",
-        "map" : "TEL"
-      },
-      {
-        "identity" : "servd",
-        "map" : "ContactPoint"
-      },
-      {
         "identity" : "w5",
         "map" : "FiveWs.source"
       },
@@ -2506,7 +2190,6 @@
       "path" : "Device.location",
       "short" : "Where the device is found",
       "definition" : "The place where the device can be found.",
-      "comment" : "References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository.",
       "requirements" : "Device.location can be used to track device location.",
       "min" : 0,
       "max" : "1",
@@ -2519,7 +2202,6 @@
         "code" : "Reference",
         "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Location|4.0.1"]
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -2527,25 +2209,10 @@
         "expression" : "hasValue() or (children().count() > id.count())",
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ref-1",
-        "severity" : "error",
-        "human" : "SHALL have a contained resource if a local reference is provided",
-        "expression" : "reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))",
-        "xpath" : "not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Reference"
       }],
       "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "rim",
-        "map" : "The target of a resource reference is a RIM entry point (Act, Role, or Entity)"
-      },
-      {
         "identity" : "w5",
         "map" : "FiveWs.where[x]"
       },
@@ -2594,7 +2261,6 @@
       "path" : "Device.note",
       "short" : "Device notes and comments",
       "definition" : "Descriptive information, usage information or implantation information that is not captured in an existing element.",
-      "comment" : "For systems that do not have structured annotations, they can simply communicate a single annotation with no author or time.  This element may need to be included in narrative because of the potential for modifying information.  *Annotations SHOULD NOT* be used to communicate \"modifying\" information that could be computable. (This is a SHOULD because enforcing user behavior is nearly impossible).",
       "min" : 0,
       "max" : "*",
       "base" : {
@@ -2605,7 +2271,6 @@
       "type" : [{
         "code" : "Annotation"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -2615,19 +2280,8 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "v2",
-        "map" : "N/A"
-      },
-      {
-        "identity" : "rim",
-        "map" : "Act"
-      },
-      {
         "identity" : "rim",
         "map" : ".text"
       }]
@@ -2637,7 +2291,6 @@
       "path" : "Device.safety",
       "short" : "Safety Characteristics of Device",
       "definition" : "Provides additional safety characteristics about a medical device.  For example devices containing latex.",
-      "comment" : "Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination.",
       "min" : 0,
       "max" : "*",
       "base" : {
@@ -2648,7 +2301,6 @@
       "type" : [{
         "code" : "CodeableConcept"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -2661,22 +2313,6 @@
       "isSummary" : true,
       "mapping" : [{
         "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "v2",
-        "map" : "CE/CNE/CWE"
-      },
-      {
-        "identity" : "rim",
-        "map" : "CD"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:CodeableConcept rdfs:subClassOf dt:CD"
-      },
-      {
-        "identity" : "rim",
         "map" : "NA"
       }]
     },
@@ -2685,7 +2321,6 @@
       "path" : "Device.parent",
       "short" : "The parent device",
       "definition" : "The parent device.",
-      "comment" : "References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository.",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -2697,7 +2332,6 @@
         "code" : "Reference",
         "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Device|4.0.1"]
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -2705,24 +2339,9 @@
         "expression" : "hasValue() or (children().count() > id.count())",
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ref-1",
-        "severity" : "error",
-        "human" : "SHALL have a contained resource if a local reference is provided",
-        "expression" : "reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))",
-        "xpath" : "not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Reference"
       }],
       "isModifier" : false,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "rim",
-        "map" : "The target of a resource reference is a RIM entry point (Act, Role, or Entity)"
-      }]
+      "isSummary" : false
     }]
   },
   "differential" : {

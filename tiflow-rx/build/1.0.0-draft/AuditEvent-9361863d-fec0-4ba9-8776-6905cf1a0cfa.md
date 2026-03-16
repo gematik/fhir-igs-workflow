@@ -56,7 +56,7 @@ Praxis Dr. Müller, Bahnhofstr. 78 hat ein E-Rezept 160.123.456.789.123.58 einge
     "requestor" : false
   }],
   "source" : {
-    "site" : "E-Rezept Fachdienst",
+    "site" : "E-Rezept-Fachdienst",
     "observer" : {
       "reference" : "Device/1"
     }

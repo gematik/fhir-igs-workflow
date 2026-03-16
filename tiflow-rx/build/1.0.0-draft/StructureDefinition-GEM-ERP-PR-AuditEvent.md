@@ -177,7 +177,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-AuditEven
       "id" : "AuditEvent.source.site",
       "path" : "AuditEvent.source.site",
       "min" : 1,
-      "fixedString" : "E-Rezept Fachdienst"
+      "fixedString" : "E-Rezept-Fachdienst"
     },
     {
       "id" : "AuditEvent.source.observer",

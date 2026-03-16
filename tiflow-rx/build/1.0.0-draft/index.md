@@ -12,7 +12,7 @@ Version 1.0.0-draft - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/erp/ImplementationGuide/de.gematik.tiflow-rx | *Version*:1.0.0-draft |
-| Draft as of 2026-03-10 | *Computable Name*:gemIG_TIFlow_rx |
+| Draft as of 2026-03-16 | *Computable Name*:gemIG_TIFlow_rx |
 
 Dieser Implementation Guide beschreibt die Datenmodelle und Prozesse des E-Rezept-Fachdienstes für den Anwendungsfall von “Arzneimittelverordnung”. Er bildet das Fundament für die fachlichen Szenarien und die technischen Schnittstellen im E-Rezept-Workflow für dieses Szenario.
 
@@ -80,7 +80,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "gemIG_TIFlow_rx",
   "title" : "E-Rezept für Arzneimittel",
   "status" : "draft",
-  "date" : "2026-03-10T12:06:05+00:00",
+  "date" : "2026-03-16T06:27:05+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -2744,6 +2744,15 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
             }],
             "nameUrl" : "query-api-communication-req-avs.html",
             "title" : "AVS-Anforderungen: Communication-Query",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-communication-req-data.html"
+            }],
+            "nameUrl" : "query-api-communication-req-data.html",
+            "title" : "Datenmodell payload",
             "generation" : "markdown"
           }]
         }]
