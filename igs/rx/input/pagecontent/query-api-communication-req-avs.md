@@ -37,9 +37,9 @@ siehe [Datenmodell Payload für Communication-Query](./query-api-communication-r
 
 Für TAB_eRpDM_003 siehe [Datenmodell Payload für Communication-Query](./query-api-communication-req-data.html)
 
-Beispiele für diesen Anwendungsfall stehen im GitHub  https://github.com/gematik/interactive-api-erp.Die 
+Beispiele für diesen Anwendungsfall stehen im GitHub  https://github.com/gematik/interactive-api-erp . 
 
-Erläuterung und das Schema des Payloads sind in [gemSpec_DM_eRp#TAB_eRpDM_003] zu finden.
+Die Erläuterung und das Schema des Payloads sind in [gemSpec_DM_eRp#TAB_eRpDM_003] zu finden.
 
 <!-- A_19333-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-211" title="PS abgebende LEI: Nachricht versenden - Belieferung Arzneimittel - Communication Ressource erstellen" version="0">

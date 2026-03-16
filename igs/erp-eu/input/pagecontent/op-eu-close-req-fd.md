@@ -63,9 +63,6 @@
      Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass die zulässige Beendigung eines übermittelten Tasks im Status Task.status = completed vollzogen wird, damit der Workflow für den Versicherten als beendet und das E-Rezept somit als eingelöst dargestellt wird.
 </requirement>
 
- - E-Rezept-Fachdienst - Task schließen - EU - 
- <=
-
 <!-- A_28206 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-EU-44" title="E-Rezept-Fachdienst - Task schließen - EU - Push Notification Versicherter" version="0">
     <meta lockversion="false"/>

@@ -5,8 +5,8 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-92" title="E-Rezept-Fachdienst - MedicationDispense - unzulässige Operationen" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
-    	<testProcedure id="Produktgutachten"/>
-  	</actor>
+   	<testProcedure id="Produktgutachten"/>
+  </actor>
   Der E-Rezept-Fachdienst MUSS alle Zugriffe auf die Ressource MedicationDispense mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE sowie POST unterbinden, damit keine unzulässigen Operationen auf den Rezeptdaten ausgeführt werden können.
 </requirement>
 
@@ -17,7 +17,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     	<testProcedure id="Produktgutachten"/>
-  	</actor>
+  </actor>
   Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /MedicationDispense sicherstellen, dass ausschließlich Nutzer in der Rolle 
   <ul>
     <li>oid_versicherter</li>
@@ -29,8 +29,8 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-94" title="E-Rezept-Fachdienst - MedicationDispense abrufen - Filter MedicationDispense auf KVNR des Versicherten" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
-    	<testProcedure id="Produktgutachten"/>
-  	</actor>
+   	<testProcedure id="Produktgutachten"/>
+  </actor>
   Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /MedicationDispense die dem Versicherten zugeordneten MedicationDispense-Ressourcen anhand der KVNR des Versicherten im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, die in MedicationDispense.subject die entsprechende KVNR des begünstigten Patienten referenziert haben, damit ausschließlich Versicherte ihre eigenen Dispensierinformationen einsehen können.
 </requirement>
 
@@ -38,20 +38,17 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-95" title="E-Rezept-Fachdienst - MedicationDispense abrufen - Referenzierung MedicationDispense und Medication" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
-    	<testProcedure id="Produkttest"/>
-  	</actor>
+   	<testProcedure id="Produkttest"/>
+  </actor>
   Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /MedicationDispense sicherstellen, dass alle im zurückgegebenen Search-Bundle enthaltenen Ressourcen mit eindeutig identifizierbaren IDs versehen sind und Referenzen innerhalb des Bundles auf eine Ressource mit einer eindeutigen ID verweisen.
 </requirement>
-
- - E-Rezept-Fachdienst - MedicationDispense abrufen - 
- <=
 
 <!-- A_22070-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-96" title="E-Rezept-Fachdienst - MedicationDispense abrufen - Rückgabe mehrerer MedicationDispenses" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
-    	<testProcedure id="Produkttest"/>
-  	</actor>
+   	<testProcedure id="Produkttest"/>
+  </actor>
   Der E-Rezept-Fachdienst MUSS im Anwendungsfall "Abgabeinformationen abrufen" die Suche aller Abgabeinformationen zu einer Verordnung mit dem Aufruf GET /MedicationDispense?identifier=https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId|&lt;PrescriptionID&gt; unterstützten und dabei eines oder mehrere MedicationDispense-Objekte in einem Bundle an den Aufrufenden zurückgeben.
 </requirement>
 

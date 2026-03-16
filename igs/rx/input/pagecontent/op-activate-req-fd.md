@@ -86,9 +86,6 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
     Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 und einem Hinweis auf den Ausschluss von Betäubungsmittel ("BTM nicht zulässig" im OperationOutcome) abbrechen, wenn der übergebene QES-Datensatz als Betäubungsmittel-Verordnung (Bundle.Medication.extension:KBV_EX_ERP_Medication_Category:code gleich "01") gekennzeichnet ist.
 </requirement>
 
- - E-Rezept-Fachdienst - Task aktivieren - 
- <=
-
 <!-- A_27768 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-RX-63" title="E-Rezept-Fachdienst - Task aktivieren - Bestimmung der Einlösbarkeit im EU-Ausland" version="0">
     <meta lockversion="false"/>
