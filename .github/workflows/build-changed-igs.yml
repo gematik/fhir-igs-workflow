@@ -419,7 +419,7 @@ jobs:
         run: ./update-publisher.sh -y
 
       - name: Download HAPI validator for StructureMap transformation
-        if: steps.igs.outputs.ig_list != '' && contains(steps.igs.outputs.ig_list, 'bfarm')
+        if: steps.igs.outputs.ig_list != '' && (contains(steps.igs.outputs.ig_list, 'bfarm') || contains(steps.igs.outputs.ig_list, 'rx'))
         shell: bash
         run: |
           set -euo pipefail

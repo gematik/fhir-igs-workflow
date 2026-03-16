@@ -25,27 +25,43 @@ from pathlib import Path
 DEFAULT_TRANSFORM_URL = (
     "https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpBundleMap"
 )
-DEFAULT_HAPI_JAR = Path("/Users/gematik/dev/validators/hapi_validator_6_5_26.jar")
+DEFAULT_HAPI_JAR = Path.home() / "dev" / "validators" / "current_hapi_validator.jar"
+LEGACY_HAPI_JAR = Path.home() / "dev" / "validators" / "hapi_validator_6_5_26.jar"
 FHIR_VERSION = "4.0.1"
 
 
 def resolve_hapi_jar(explicit: Path | None) -> Path:
     """Return the path to the HAPI validator jar, ensuring it exists."""
 
-    candidates = []
+    script_path = Path(__file__).resolve()
+    ig_root = script_path.parents[2]
+    repo_root = script_path.parents[4]
+    candidates: list[Path] = []
+
     if explicit:
-        candidates.append(explicit)
+        candidates.append(explicit.expanduser())
+
     env_value = os.environ.get("HAPI_VALIDATOR_JAR")
     if env_value:
-        candidates.append(Path(env_value))
-    candidates.append(DEFAULT_HAPI_JAR)
+        candidates.append(Path(env_value).expanduser())
+
+    candidates.extend(
+        [
+            repo_root / "input-cache" / "current_hapi_validator.jar",
+            ig_root / "input-cache" / "current_hapi_validator.jar",
+            DEFAULT_HAPI_JAR,
+            LEGACY_HAPI_JAR,
+        ]
+    )
 
     for candidate in candidates:
         if candidate and candidate.exists():
             return candidate
 
     print("❌ Kein HAPI-Validator gefunden. Setze HAPI_VALIDATOR_JAR oder übergebe --hapi-jar.", file=sys.stderr)
-    print(f"   Erwartet z. B.: {DEFAULT_HAPI_JAR}", file=sys.stderr)
+    print("   Geprüfte Pfade:", file=sys.stderr)
+    for candidate in candidates:
+        print(f"   - {candidate}", file=sys.stderr)
     sys.exit(1)
 
 
