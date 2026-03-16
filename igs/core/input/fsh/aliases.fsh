@@ -34,6 +34,10 @@ Alias: $ePAMedication = https://gematik.de/fhir/epa-medication/StructureDefiniti
 // Workflow
 Alias: $prescription-id-ns = https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId
 Alias: $eu-access-code-ns = https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_EU_AccessCode
+Alias: $cs-flowtype = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType
+Alias: $cs-features = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_Features
+Alias: $ex-capability-feature = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_CapabilityStatement_Feature
+Alias: $ex-capability-environment = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_CapabilityStatement_Environment
 
 // TI Common
 Alias: $ti-oo = https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes

@@ -17,6 +17,18 @@ Usage: #definition
 * format[+] = #application/fhir+xml
 * rest.mode = #server
 * extension[baseUrl].valueString = "http://tiflow"
+* extension[+].url = $ex-capability-environment
+* extension[=].valueCode = #RU
+* extension[+].url = $ex-capability-feature
+* extension[=].extension[+].url = "definition"
+* extension[=].extension[=].valueCanonical = "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType#160"
+* extension[=].extension[+].url = "value"
+* extension[=].extension[=].valueBoolean = true
+* extension[+].url = $ex-capability-feature
+* extension[=].extension[+].url = "definition"
+* extension[=].extension[=].valueCanonical = "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_Features#subscription"
+* extension[=].extension[+].url = "value"
+* extension[=].extension[=].valueBoolean = true
 * insert TaskInteraction(#SHALL)
 * insert ChargeItemInteraction(#SHALL)
 * insert ConsentInteraction(#SHALL)
