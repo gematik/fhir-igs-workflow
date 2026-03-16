@@ -872,35 +872,49 @@ gem-ig-badge-bg-blue">
 
 <!-- UC 3.3 - Nachricht durch Versicherten übermitteln -->
 
-<p><a></a>
-#####</p>
+<p><a id="uc-3-3-nachricht-durch-versicherten-uebermitteln"></a></p>
+<h5 id="uc-33---nachricht-durch-versicherten-übermitteln">UC 3.3 - Nachricht durch Versicherten übermitteln</h5>
 
 <figure style="width: auto;">
   <table style="width: auto; border: 1px solid #dcdcdc;">
     <tr>
       <th style="padding: 5px; width: 23rem;">Beschreibung</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><p>Ein Versicherter oder Vertreter übermittelt einen E-Rezept-Token und/oder eine Nachricht an eine Apotheke
+oder einen Vertreter, wahlweise über die TI oder als 2D-Code.</p>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li>UC 3.1 wurde ausgeführt und ein E-Rezept-Token erstellt.</li>
+  <li>Alternativ liegt ein E-Rezept-Token beim Vertreter vor.</li>
+</ul>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li>Auswahl eines E-Rezept-Tokens und Versandart (TI oder 2D-Code).</li>
+  <li>Bei Versand über TI: Apotheke im Verzeichnisdienst wählen oder KVNR2 eingeben.</li>
+  <li>Das FdV stellt die Nachricht mit Token und/oder Text im E-Rezept-Fachdienst ein.</li>
+  <li>Bei 2D-Code: Token wird als 2D-Code angezeigt oder ausgedruckt.</li>
+</ul>
 </td>
 
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li>Nachricht liegt im E-Rezept-Fachdienst und kann vom Empfänger abgerufen werden.</li>
+  <li>Bei 2D-Code ist der Token für den Empfänger verfügbar.</li>
+</ul>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Schnittstellen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li><a href="./query-api-communication.html">Query API: Nachricht einstellen</a></li>
+</ul>
 </td>
     </tr>
     
@@ -915,44 +929,68 @@ gem-ig-badge-bg-blue">
           
         
           
+            <span class="badge gem-ig-badge 
+gem-ig-badge-bg-blue">
+              VERSICHERTER
+            </span>
+          
         
       </td>
     </tr>
   </table>
-  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall </figcaption>
+  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall UC 3.3 - Nachricht durch Versicherten übermitteln</figcaption>
+</figure>
+
+<p><strong>Sequenzdiagramm:</strong></p>
+
+<figure>
+	<div class="gem-ig-img-container" style="--box-width: 600px; margin-bottom: 30px;">
+		<?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="628px" preserveAspectRatio="none" style="width:1007px;height:628px;background:#FFFFFF;" version="1.1" viewBox="0 0 1007 628" width="1007px" zoomAndPan="magnify"><defs /><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="408" x="300.75" y="27.9951">UC 3.3 - Nachricht durch Versicherten uebermitteln</text><rect fill="#FFFFFF" height="380.2344" style="stroke:#181818;stroke-width:1.0;" width="10" x="318" y="149.7266" /><rect fill="#FFFFFF" height="71.2656" style="stroke:#181818;stroke-width:1.0;" width="10" x="834.5" y="336.4922" /><rect fill="none" height="337.1016" style="stroke:#000000;stroke-width:1.5;" width="990.5" x="10" y="164.7266" /><rect fill="none" height="61.2344" style="stroke:#000000;stroke-width:1.5;" width="320" x="293" y="188.8594" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="98" x2="98" y1="118.5938" y2="547.9609" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="323" x2="323" y1="118.5938" y2="547.9609" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="541" x2="541" y1="118.5938" y2="547.9609" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="681" x2="681" y1="118.5938" y2="547.9609" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="839" x2="839" y1="118.5938" y2="547.9609" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="150" x="20" y="115.292">Versicherter/Vertreter</text><ellipse cx="98" cy="50.7969" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M98,58.7969 L98,85.7969 M85,66.7969 L111,66.7969 M98,85.7969 L85,100.7969 M98,85.7969 L111,100.7969 " fill="none" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="150" x="20" y="559.9561">Versicherter/Vertreter</text><ellipse cx="98" cy="571.7578" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M98,579.7578 L98,606.7578 M85,587.7578 L111,587.7578 M98,606.7578 L85,621.7578 M98,606.7578 L111,621.7578 " fill="none" style="stroke:#181818;stroke-width:0.5;" /><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="40" x="303" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="26" x="310" y="107.292">FdV</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="40" x="303" y="546.9609" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="26" x="310" y="566.9561">FdV</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="124" x="479" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="486" y="107.292">Identity Provider</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="124" x="479" y="546.9609" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="486" y="566.9561">Identity Provider</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="137" x="613" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123" x="620" y="107.292">Verzeichnisdienst</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="137" x="613" y="546.9609" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123" x="620" y="566.9561">Verzeichnisdienst</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="159" x="760" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="767" y="107.292">E-Rezept-Fachdienst</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="159" x="760" y="546.9609" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="767" y="566.9561">E-Rezept-Fachdienst</text><rect fill="#FFFFFF" height="380.2344" style="stroke:#181818;stroke-width:1.0;" width="10" x="318" y="149.7266" /><rect fill="#FFFFFF" height="71.2656" style="stroke:#181818;stroke-width:1.0;" width="10" x="834.5" y="336.4922" /><polygon fill="#181818" points="306,145.7266,316,149.7266,306,153.7266,310,149.7266" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="98" x2="312" y1="149.7266" y2="149.7266" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="189" x="105" y="144.6606">Nachricht mit Token senden()</text><path d="M10,164.7266 L74,164.7266 L74,171.8594 L64,181.8594 L10,181.8594 L10,164.7266 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;" /><rect fill="none" height="337.1016" style="stroke:#000000;stroke-width:1.5;" width="990.5" x="10" y="164.7266" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="19" x="25" y="177.7935">alt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="119" x="89" y="176.937">[Versand ueber TI]</text><path d="M293,188.8594 L363,188.8594 L363,195.9922 L353,205.9922 L293,205.9922 L293,188.8594 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;" /><rect fill="none" height="61.2344" style="stroke:#000000;stroke-width:1.5;" width="320" x="293" y="188.8594" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="25" x="308" y="201.9263">opt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="185" x="378" y="201.0698">[kein gueltiger AuthN-Token]</text><rect fill="none" height="39.1016" style="stroke:#000000;stroke-width:1.5;" width="306" x="300" y="205.9922" /><path d="M300,205.9922 L366,205.9922 L366,212.9922 L356,222.9922 L300,222.9922 L300,205.9922 " fill="#EEEEEE" style="stroke:#000000;stroke-width:2.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="313" y="220.0591">ref</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="146" x="380" y="238.1309">AuthN-Token anfordern</text><polygon fill="#181818" points="669.5,274.2266,679.5,278.2266,669.5,282.2266,673.5,278.2266" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="328" x2="675.5" y1="278.2266" y2="278.2266" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="121" x="335" y="273.1606">Apotheke suchen()</text><polygon fill="#181818" points="339,303.3594,329,307.3594,339,311.3594,335,307.3594" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="333" x2="680.5" y1="307.3594" y2="307.3594" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="115" x="345" y="302.2935">Empfaengerdaten</text><polygon fill="#181818" points="822.5,332.4922,832.5,336.4922,822.5,340.4922,826.5,336.4922" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="328" x2="828.5" y1="336.4922" y2="336.4922" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="321" x="335" y="331.4263">POST /Communication (AuthN-Token, Token, Text)</text><line style="stroke:#181818;stroke-width:1.0;" x1="844.5" x2="886.5" y1="365.625" y2="365.625" /><line style="stroke:#181818;stroke-width:1.0;" x1="886.5" x2="886.5" y1="365.625" y2="378.625" /><line style="stroke:#181818;stroke-width:1.0;" x1="845.5" x2="886.5" y1="378.625" y2="378.625" /><polygon fill="#181818" points="855.5,374.625,845.5,378.625,855.5,382.625,851.5,378.625" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="137" x="851.5" y="360.5591">Nachricht speichern()</text><polygon fill="#181818" points="339,403.7578,329,407.7578,339,411.7578,335,407.7578" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="333" x2="838.5" y1="407.7578" y2="407.7578" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="42" x="345" y="402.6919">Status</text><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="10" x2="1000.5" y1="416.7578" y2="416.7578" /><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="65" x="15" y="426.9683">[2D-Code]</text><line style="stroke:#181818;stroke-width:1.0;" x1="328" x2="370" y1="451.6953" y2="451.6953" /><line style="stroke:#181818;stroke-width:1.0;" x1="370" x2="370" y1="451.6953" y2="464.6953" /><line style="stroke:#181818;stroke-width:1.0;" x1="329" x2="370" y1="464.6953" y2="464.6953" /><polygon fill="#181818" points="339,460.6953,329,464.6953,339,468.6953,335,464.6953" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="194" x="335" y="446.6294">Token als 2D-Code erzeugen()</text><polygon fill="#181818" points="109,489.8281,99,493.8281,109,497.8281,105,493.8281" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="103" x2="317" y1="493.8281" y2="493.8281" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="196" x="115" y="488.7622">2D-Code anzeigen/ausdrucken</text><polygon fill="#181818" points="109,525.9609,99,529.9609,109,533.9609,105,529.9609" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="103" x2="322" y1="529.9609" y2="529.9609" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="85" x="115" y="524.895">Bestaetigung</text></g></svg>
+	</div>
+	<figcaption><strong>Abbildung: </strong>UC 3.3 - Nachricht durch Versicherten übermitteln</figcaption>
 </figure>
 
 <!-- UC 3.4 - Nachrichten durch Versicherten empfangen -->
 
-<p><a></a>
-#####</p>
+<p><a id="uc-3-4-nachrichten-durch-versicherten-empfangen"></a></p>
+<h5 id="uc-34---nachrichten-durch-versicherten-empfangen">UC 3.4 - Nachrichten durch Versicherten empfangen</h5>
 
 <figure style="width: auto;">
   <table style="width: auto; border: 1px solid #dcdcdc;">
     <tr>
       <th style="padding: 5px; width: 23rem;">Beschreibung</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><p>Ein Versicherter oder Vertreter empfängt Nachrichten von abgebenden LEI über den E-Rezept-Fachdienst.</p>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li>UC 4.7 wurde ausgeführt.</li>
+  <li>UC 3.3 wurde ausgeführt.</li>
+</ul>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li>Das FdV fragt beim E-Rezept-Fachdienst nach neuen Nachrichten.</li>
+  <li>Nachrichten werden heruntergeladen.</li>
+</ul>
 </td>
 
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li>Nachrichten liegen im FdV zur Anzeige bereit.</li>
+</ul>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Schnittstellen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li><a href="./query-api-communication.html">Query API: Nachrichten abrufen</a></li>
+</ul>
 </td>
     </tr>
     
@@ -967,44 +1005,69 @@ gem-ig-badge-bg-blue">
           
         
           
+            <span class="badge gem-ig-badge 
+gem-ig-badge-bg-blue">
+              VERSICHERTER
+            </span>
+          
         
       </td>
     </tr>
   </table>
-  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall </figcaption>
+  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall UC 3.4 - Nachrichten durch Versicherten empfangen</figcaption>
+</figure>
+
+<p><strong>Sequenzdiagramm:</strong></p>
+
+<figure>
+	<div class="gem-ig-img-container" style="--box-width: 600px; margin-bottom: 30px;">
+		<?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="453px" preserveAspectRatio="none" style="width:764px;height:453px;background:#FFFFFF;" version="1.1" viewBox="0 0 764 453" width="764px" zoomAndPan="magnify"><defs /><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="416" x="176" y="27.9951">UC 3.4 - Nachrichten durch Versicherten empfangen</text><rect fill="#FFFFFF" height="204.7656" style="stroke:#181818;stroke-width:1.0;" width="10" x="246" y="149.7266" /><rect fill="#FFFFFF" height="71.2656" style="stroke:#181818;stroke-width:1.0;" width="10" x="591" y="254.0938" /><rect fill="none" height="61.2344" style="stroke:#000000;stroke-width:1.5;" width="275" x="221" y="164.7266" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="83" x2="83" y1="118.5938" y2="372.4922" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="251" x2="251" y1="118.5938" y2="372.4922" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="343" x2="343" y1="118.5938" y2="372.4922" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="595.5" x2="595.5" y1="118.5938" y2="372.4922" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="150" x="5" y="115.292">Versicherter/Vertreter</text><ellipse cx="83" cy="50.7969" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M83,58.7969 L83,85.7969 M70,66.7969 L96,66.7969 M83,85.7969 L70,100.7969 M83,85.7969 L96,100.7969 " fill="none" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="150" x="5" y="384.4873">Versicherter/Vertreter</text><ellipse cx="83" cy="396.2891" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M83,404.2891 L83,431.2891 M70,412.2891 L96,412.2891 M83,431.2891 L70,446.2891 M83,431.2891 L96,446.2891 " fill="none" style="stroke:#181818;stroke-width:0.5;" /><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="40" x="231" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="26" x="238" y="107.292">FdV</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="40" x="231" y="371.4922" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="26" x="238" y="391.4873">FdV</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="124" x="281" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="288" y="107.292">Identity Provider</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="124" x="281" y="371.4922" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="288" y="391.4873">Identity Provider</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="159" x="516.5" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="523.5" y="107.292">E-Rezept-Fachdienst</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="159" x="516.5" y="371.4922" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="523.5" y="391.4873">E-Rezept-Fachdienst</text><rect fill="#FFFFFF" height="204.7656" style="stroke:#181818;stroke-width:1.0;" width="10" x="246" y="149.7266" /><rect fill="#FFFFFF" height="71.2656" style="stroke:#181818;stroke-width:1.0;" width="10" x="591" y="254.0938" /><polygon fill="#181818" points="234,145.7266,244,149.7266,234,153.7266,238,149.7266" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="83" x2="240" y1="149.7266" y2="149.7266" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="140" x="90" y="144.6606">Nachrichten abrufen()</text><path d="M221,164.7266 L291,164.7266 L291,171.8594 L281,181.8594 L221,181.8594 L221,164.7266 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;" /><rect fill="none" height="61.2344" style="stroke:#000000;stroke-width:1.5;" width="275" x="221" y="164.7266" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="25" x="236" y="177.7935">opt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="185" x="306" y="176.937">[kein gueltiger AuthN-Token]</text><rect fill="none" height="39.1016" style="stroke:#000000;stroke-width:1.5;" width="180" x="228" y="181.8594" /><path d="M228,181.8594 L294,181.8594 L294,188.8594 L284,198.8594 L228,198.8594 L228,181.8594 " fill="#EEEEEE" style="stroke:#000000;stroke-width:2.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="241" y="195.9263">ref</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="146" x="245" y="213.998">AuthN-Token anfordern</text><polygon fill="#181818" points="579,250.0938,589,254.0938,579,258.0938,583,254.0938" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="256" x2="585" y1="254.0938" y2="254.0938" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="316" x="263" y="249.0278">GET /Communication?recipient=... (AuthN-Token)</text><line style="stroke:#181818;stroke-width:1.0;" x1="601" x2="643" y1="283.2266" y2="283.2266" /><line style="stroke:#181818;stroke-width:1.0;" x1="643" x2="643" y1="283.2266" y2="296.2266" /><line style="stroke:#181818;stroke-width:1.0;" x1="602" x2="643" y1="296.2266" y2="296.2266" /><polygon fill="#181818" points="612,292.2266,602,296.2266,612,300.2266,608,296.2266" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="149" x="608" y="278.1606">Nachrichten ermitteln()</text><polygon fill="#181818" points="267,321.3594,257,325.3594,267,329.3594,263,325.3594" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="261" x2="595" y1="325.3594" y2="325.3594" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="77" x="273" y="320.2935">Nachrichten</text><polygon fill="#181818" points="94,350.4922,84,354.4922,94,358.4922,90,354.4922" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="88" x2="250" y1="354.4922" y2="354.4922" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="139" x="100" y="349.4263">Nachrichten anzeigen</text></g></svg>
+	</div>
+	<figcaption><strong>Abbildung: </strong>UC 3.4 - Nachrichten durch Versicherten empfangen</figcaption>
 </figure>
 
 <!-- UC 3.8 - Nachricht durch Versicherten löschen -->
 
-<p><a></a>
-#####</p>
+<p><a id="uc-3-8-nachricht-durch-versicherten-loeschen"></a></p>
+<h5 id="uc-38---nachricht-durch-versicherten-löschen">UC 3.8 - Nachricht durch Versicherten löschen</h5>
 
 <figure style="width: auto;">
   <table style="width: auto; border: 1px solid #dcdcdc;">
     <tr>
       <th style="padding: 5px; width: 23rem;">Beschreibung</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><p>Der Versicherte löscht von ihm übermittelte Nachrichten an Apotheken oder Versicherte.</p>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li>UC 3.3 wurde ausgeführt.</li>
+</ul>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li>Der Versicherte wählt Nachrichten zum Löschen aus und bestätigt den Vorgang.</li>
+  <li>Das FdV überträgt die Löschanforderung je Nachricht an den E-Rezept-Fachdienst.</li>
+  <li>Der E-Rezept-Fachdienst löscht die Nachrichten und liefert ggf. eine Warnung, wenn bereits abgerufen.</li>
+  <li>Die Nachrichten werden im FdV gelöscht.</li>
+</ul>
 </td>
 
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li>Nachrichten sind im E-Rezept-Fachdienst und im FdV gelöscht.</li>
+</ul>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Schnittstellen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li><a href="./query-api-communication.html">Query API: Nachricht löschen</a></li>
+</ul>
 </td>
     </tr>
     
@@ -1019,46 +1082,70 @@ gem-ig-badge-bg-blue">
           
         
           
+            <span class="badge gem-ig-badge 
+gem-ig-badge-bg-blue">
+              VERSICHERTER
+            </span>
+          
         
       </td>
     </tr>
   </table>
-  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall </figcaption>
+  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall UC 3.8 - Nachricht durch Versicherten löschen</figcaption>
+</figure>
+
+<p><strong>Sequenzdiagramm:</strong></p>
+
+<figure>
+	<div class="gem-ig-img-container" style="--box-width: 600px; margin-bottom: 30px;">
+		<?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="495px" preserveAspectRatio="none" style="width:697px;height:495px;background:#FFFFFF;" version="1.1" viewBox="0 0 697 495" width="697px" zoomAndPan="magnify"><defs /><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="379" x="161.25" y="27.9951">UC 3.8 - Nachricht durch Versicherten loeschen</text><rect fill="#FFFFFF" height="246.8984" style="stroke:#181818;stroke-width:1.0;" width="10" x="201" y="149.7266" /><rect fill="#FFFFFF" height="71.2656" style="stroke:#181818;stroke-width:1.0;" width="10" x="541.5" y="254.0938" /><rect fill="none" height="61.2344" style="stroke:#000000;stroke-width:1.5;" width="291" x="176" y="164.7266" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="50" x2="50" y1="118.5938" y2="414.625" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="206" x2="206" y1="118.5938" y2="414.625" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="395" x2="395" y1="118.5938" y2="414.625" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="546" x2="546" y1="118.5938" y2="414.625" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="5" y="115.292">Versicherter</text><ellipse cx="50" cy="50.7969" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M50,58.7969 L50,85.7969 M37,66.7969 L63,66.7969 M50,85.7969 L37,100.7969 M50,85.7969 L63,100.7969 " fill="none" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="5" y="426.6201">Versicherter</text><ellipse cx="50" cy="438.4219" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M50,446.4219 L50,473.4219 M37,454.4219 L63,454.4219 M50,473.4219 L37,488.4219 M50,473.4219 L63,488.4219 " fill="none" style="stroke:#181818;stroke-width:0.5;" /><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="40" x="186" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="26" x="193" y="107.292">FdV</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="40" x="186" y="413.625" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="26" x="193" y="433.6201">FdV</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="124" x="333" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="340" y="107.292">Identity Provider</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="124" x="333" y="413.625" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="340" y="433.6201">Identity Provider</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="159" x="467" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="474" y="107.292">E-Rezept-Fachdienst</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="159" x="467" y="413.625" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="474" y="433.6201">E-Rezept-Fachdienst</text><rect fill="#FFFFFF" height="246.8984" style="stroke:#181818;stroke-width:1.0;" width="10" x="201" y="149.7266" /><rect fill="#FFFFFF" height="71.2656" style="stroke:#181818;stroke-width:1.0;" width="10" x="541.5" y="254.0938" /><polygon fill="#181818" points="189,145.7266,199,149.7266,189,153.7266,193,149.7266" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="50" x2="195" y1="149.7266" y2="149.7266" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="132" x="57" y="144.6606">Nachricht loeschen()</text><path d="M176,164.7266 L246,164.7266 L246,171.8594 L236,181.8594 L176,181.8594 L176,164.7266 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;" /><rect fill="none" height="61.2344" style="stroke:#000000;stroke-width:1.5;" width="291" x="176" y="164.7266" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="25" x="191" y="177.7935">opt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="185" x="261" y="176.937">[kein gueltiger AuthN-Token]</text><rect fill="none" height="39.1016" style="stroke:#000000;stroke-width:1.5;" width="277" x="183" y="181.8594" /><path d="M183,181.8594 L249,181.8594 L249,188.8594 L239,198.8594 L183,198.8594 L183,181.8594 " fill="#EEEEEE" style="stroke:#000000;stroke-width:2.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="196" y="195.9263">ref</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="146" x="248.5" y="213.998">AuthN-Token anfordern</text><polygon fill="#181818" points="529.5,250.0938,539.5,254.0938,529.5,258.0938,533.5,254.0938" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="211" x2="535.5" y1="254.0938" y2="254.0938" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="285" x="218" y="249.0278">DELETE /Communication/{id} (AuthN-Token)</text><line style="stroke:#181818;stroke-width:1.0;" x1="551.5" x2="593.5" y1="283.2266" y2="283.2266" /><line style="stroke:#181818;stroke-width:1.0;" x1="593.5" x2="593.5" y1="283.2266" y2="296.2266" /><line style="stroke:#181818;stroke-width:1.0;" x1="552.5" x2="593.5" y1="296.2266" y2="296.2266" /><polygon fill="#181818" points="562.5,292.2266,552.5,296.2266,562.5,300.2266,558.5,296.2266" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="132" x="558.5" y="278.1606">Nachricht loeschen()</text><polygon fill="#181818" points="222,321.3594,212,325.3594,222,329.3594,218,325.3594" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="216" x2="545.5" y1="325.3594" y2="325.3594" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="135" x="228" y="320.2935">Status (ggf. Warning)</text><line style="stroke:#181818;stroke-width:1.0;" x1="211" x2="253" y1="354.4922" y2="354.4922" /><line style="stroke:#181818;stroke-width:1.0;" x1="253" x2="253" y1="354.4922" y2="367.4922" /><line style="stroke:#181818;stroke-width:1.0;" x1="212" x2="253" y1="367.4922" y2="367.4922" /><polygon fill="#181818" points="222,363.4922,212,367.4922,222,371.4922,218,367.4922" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="165" x="218" y="349.4263">Nachricht lokal loeschen()</text><polygon fill="#181818" points="61,392.625,51,396.625,61,400.625,57,396.625" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="55" x2="205" y1="396.625" y2="396.625" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="42" x="67" y="391.5591">Status</text></g></svg>
+	</div>
+	<figcaption><strong>Abbildung: </strong>UC 3.8 - Nachricht durch Versicherten löschen</figcaption>
 </figure>
 
 <h4 id="apotheke">Apotheke</h4>
 
 <!-- UC 4.6 - Nachrichten durch Abgebenden empfangen -->
 
-<p><a></a>
-#####</p>
+<p><a id="uc-4-6-nachrichten-durch-abgebenden-empfangen"></a></p>
+<h5 id="uc-46---nachrichten-durch-abgebenden-empfangen">UC 4.6 - Nachrichten durch Abgebenden empfangen</h5>
 
 <figure style="width: auto;">
   <table style="width: auto; border: 1px solid #dcdcdc;">
     <tr>
       <th style="padding: 5px; width: 23rem;">Beschreibung</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><p>Eine abgebende LEI empfängt E-Rezept-Token über die TI oder optisch als 2D-Code.</p>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li>UC 3.3 wurde ausgeführt oder der 2D-Code wurde präsentiert.</li>
+</ul>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li>Das Primärsystem wählt den Empfangsweg (TI oder 2D-Code).</li>
+  <li>Bei TI: Primärsystem fragt beim E-Rezept-Fachdienst neue Nachrichten für die Telematik-ID ab und lädt sie herunter.</li>
+  <li>Bei 2D-Code: Primärsystem wandelt den Code in die Token-Textform um.</li>
+</ul>
 </td>
 
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li>E-Rezept-Token liegt im Primärsystem vor.</li>
+</ul>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Schnittstellen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li><a href="./query-api-communication.html">Query API: Nachrichten abrufen</a></li>
+</ul>
 </td>
     </tr>
     
@@ -1077,7 +1164,16 @@ gem-ig-badge-bg-blue">
       </td>
     </tr>
   </table>
-  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall </figcaption>
+  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall UC 4.6 - Nachrichten durch Abgebenden empfangen</figcaption>
+</figure>
+
+<p><strong>Sequenzdiagramm:</strong></p>
+
+<figure>
+	<div class="gem-ig-img-container" style="--box-width: 600px; margin-bottom: 30px;">
+		<?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="583px" preserveAspectRatio="none" style="width:884px;height:583px;background:#FFFFFF;" version="1.1" viewBox="0 0 884 583" width="884px" zoomAndPan="magnify"><defs /><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="414" x="236" y="27.9951">UC 4.6 - Nachrichten durch Abgebenden empfangen</text><rect fill="#FFFFFF" height="334.9688" style="stroke:#181818;stroke-width:1.0;" width="10" x="286" y="149.7266" /><rect fill="#FFFFFF" height="71.2656" style="stroke:#181818;stroke-width:1.0;" width="10" x="699" y="278.2266" /><rect fill="none" height="291.8359" style="stroke:#000000;stroke-width:1.5;" width="626.5" x="250.5" y="164.7266" /><rect fill="none" height="61.2344" style="stroke:#000000;stroke-width:1.5;" width="267" x="260.5" y="188.8594" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="80" x2="80" y1="118.5938" y2="502.6953" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="290.5" x2="290.5" y1="118.5938" y2="502.6953" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="440" x2="440" y1="118.5938" y2="502.6953" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="703.5" x2="703.5" y1="118.5938" y2="502.6953" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="144" x="5" y="115.292">Mitarbeiter Apotheke</text><ellipse cx="80" cy="50.7969" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M80,58.7969 L80,85.7969 M67,66.7969 L93,66.7969 M80,85.7969 L67,100.7969 M80,85.7969 L93,100.7969 " fill="none" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="144" x="5" y="514.6904">Mitarbeiter Apotheke</text><ellipse cx="80" cy="526.4922" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M80,534.4922 L80,561.4922 M67,542.4922 L93,542.4922 M80,561.4922 L67,576.4922 M80,561.4922 L93,576.4922 " fill="none" style="stroke:#181818;stroke-width:0.5;" /><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="41" x="270.5" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="27" x="277.5" y="107.292">AVS</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="41" x="270.5" y="501.6953" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="27" x="277.5" y="521.6904">AVS</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="124" x="378" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="385" y="107.292">Identity Provider</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="124" x="378" y="501.6953" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="385" y="521.6904">Identity Provider</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="159" x="624.5" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="631.5" y="107.292">E-Rezept-Fachdienst</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="159" x="624.5" y="501.6953" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="631.5" y="521.6904">E-Rezept-Fachdienst</text><rect fill="#FFFFFF" height="334.9688" style="stroke:#181818;stroke-width:1.0;" width="10" x="286" y="149.7266" /><rect fill="#FFFFFF" height="71.2656" style="stroke:#181818;stroke-width:1.0;" width="10" x="699" y="278.2266" /><polygon fill="#181818" points="274,145.7266,284,149.7266,274,153.7266,278,149.7266" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="80" x2="280" y1="149.7266" y2="149.7266" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="187" x="87" y="144.6606">E-Rezept-Token empfangen()</text><path d="M250.5,164.7266 L314.5,164.7266 L314.5,171.8594 L304.5,181.8594 L250.5,181.8594 L250.5,164.7266 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;" /><rect fill="none" height="291.8359" style="stroke:#000000;stroke-width:1.5;" width="626.5" x="250.5" y="164.7266" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="19" x="265.5" y="177.7935">alt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="115" x="329.5" y="176.937">[Empfang &#252;ber TI]</text><path d="M260.5,188.8594 L330.5,188.8594 L330.5,195.9922 L320.5,205.9922 L260.5,205.9922 L260.5,188.8594 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;" /><rect fill="none" height="61.2344" style="stroke:#000000;stroke-width:1.5;" width="267" x="260.5" y="188.8594" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="25" x="275.5" y="201.9263">opt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="177" x="345.5" y="201.0698">[kein g&#252;ltiger AuthN-Token]</text><rect fill="none" height="39.1016" style="stroke:#000000;stroke-width:1.5;" width="237.5" x="267.5" y="205.9922" /><path d="M267.5,205.9922 L333.5,205.9922 L333.5,212.9922 L323.5,222.9922 L267.5,222.9922 L267.5,205.9922 " fill="#EEEEEE" style="stroke:#000000;stroke-width:2.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="280.5" y="220.0591">ref</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="146" x="313.25" y="238.1309">AuthN-Token anfordern</text><polygon fill="#181818" points="687,274.2266,697,278.2266,687,282.2266,691,278.2266" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="296" x2="693" y1="278.2266" y2="278.2266" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="384" x="303" y="273.1606">GET /Communication?recipient=Telematik-ID (AuthN-Token)</text><line style="stroke:#181818;stroke-width:1.0;" x1="709" x2="751" y1="307.3594" y2="307.3594" /><line style="stroke:#181818;stroke-width:1.0;" x1="751" x2="751" y1="307.3594" y2="320.3594" /><line style="stroke:#181818;stroke-width:1.0;" x1="710" x2="751" y1="320.3594" y2="320.3594" /><polygon fill="#181818" points="720,316.3594,710,320.3594,720,324.3594,716,320.3594" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="149" x="716" y="302.2935">Nachrichten ermitteln()</text><polygon fill="#181818" points="307,345.4922,297,349.4922,307,353.4922,303,349.4922" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="301" x2="703" y1="349.4922" y2="349.4922" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="100" x="313" y="344.4263">E-Rezept-Token</text><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="250.5" x2="877" y1="358.4922" y2="358.4922" /><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="65" x="255.5" y="368.7026">[2D-Code]</text><line style="stroke:#181818;stroke-width:1.0;" x1="296" x2="338" y1="393.4297" y2="393.4297" /><line style="stroke:#181818;stroke-width:1.0;" x1="338" x2="338" y1="393.4297" y2="406.4297" /><line style="stroke:#181818;stroke-width:1.0;" x1="297" x2="338" y1="406.4297" y2="406.4297" /><polygon fill="#181818" points="307,402.4297,297,406.4297,307,410.4297,303,406.4297" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="124" x="303" y="388.3638">2D-Code scannen()</text><line style="stroke:#181818;stroke-width:1.0;" x1="296" x2="338" y1="435.5625" y2="435.5625" /><line style="stroke:#181818;stroke-width:1.0;" x1="338" x2="338" y1="435.5625" y2="448.5625" /><line style="stroke:#181818;stroke-width:1.0;" x1="297" x2="338" y1="448.5625" y2="448.5625" /><polygon fill="#181818" points="307,444.5625,297,448.5625,307,452.5625,303,448.5625" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="125" x="303" y="430.4966">Token extrahieren()</text><polygon fill="#181818" points="91,480.6953,81,484.6953,91,488.6953,87,484.6953" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="85" x2="290" y1="484.6953" y2="484.6953" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="107" x="97" y="479.6294">Token verf&#252;fgbar</text></g></svg>
+	</div>
+	<figcaption><strong>Abbildung: </strong>UC 4.6 - Nachrichten durch Abgebenden empfangen</figcaption>
 </figure>
 
 <!-- UC 4.1 - E-Rezept durch Abgebenden abrufen -->
@@ -1541,35 +1637,45 @@ gem-ig-badge-bg-blue">
 
 <!-- UC 4.17 - Verordnung erneut abrufen -->
 
-<p><a></a>
-#####</p>
+<p><a id="uc-4-17-verordnung-erneut-abrufen"></a></p>
+<h5 id="uc-417---verordnung-erneut-abrufen">UC 4.17 - Verordnung erneut abrufen</h5>
 
 <figure style="width: auto;">
   <table style="width: auto; border: 1px solid #dcdcdc;">
     <tr>
       <th style="padding: 5px; width: 23rem;">Beschreibung</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><p>Die Verordnung wird erneut abgerufen, falls die Übertragung beim ersten Abruf mit $accept fehlgeschlagen ist.</p>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li>UC 4.1 wurde ausgeführt; im Clientsystem liegt keine Verordnung oder das zugehörige Secret vor.</li>
+  <li>Status des E-Rezepts ist “in-progress”.</li>
+</ul>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li>Abgebender wählt die Zugriffsinformation für die Verordnung (E-Rezept-Token) aus und ruft die Verordnung erneut ab.</li>
+  <li>Primärsystem übermittelt Rezept-ID und Access_Code; der E-Rezept-Fachdienst liefert die Verordnung und das Secret erneut aus.</li>
+</ul>
 </td>
 
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li>Verordnung liegt im Primärsystem vor.</li>
+</ul>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Schnittstellen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li><a href="./query-api-task.html">Query API: Task</a></li>
+</ul>
 </td>
     </tr>
     
@@ -1588,7 +1694,16 @@ gem-ig-badge-bg-blue">
       </td>
     </tr>
   </table>
-  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall </figcaption>
+  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall UC 4.17 - Verordnung erneut abrufen</figcaption>
+</figure>
+
+<p><strong>Sequenzdiagramm:</strong></p>
+
+<figure>
+	<div class="gem-ig-img-container" style="--box-width: 600px; margin-bottom: 30px;">
+		<?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="453px" preserveAspectRatio="none" style="width:668px;height:453px;background:#FFFFFF;" version="1.1" viewBox="0 0 668 453" width="668px" zoomAndPan="magnify"><defs /><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="298" x="187" y="27.9951">UC 4.17 - Verordnung erneut abrufen</text><rect fill="#FFFFFF" height="204.7656" style="stroke:#181818;stroke-width:1.0;" width="10" x="283" y="149.7266" /><rect fill="#FFFFFF" height="71.2656" style="stroke:#181818;stroke-width:1.0;" width="10" x="547" y="254.0938" /><rect fill="none" height="61.2344" style="stroke:#000000;stroke-width:1.5;" width="267" x="257.5" y="164.7266" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="80" x2="80" y1="118.5938" y2="372.4922" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="287.5" x2="287.5" y1="118.5938" y2="372.4922" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="380.5" x2="380.5" y1="118.5938" y2="372.4922" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="551.5" x2="551.5" y1="118.5938" y2="372.4922" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="144" x="5" y="115.292">Mitarbeiter Apotheke</text><ellipse cx="80" cy="50.7969" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M80,58.7969 L80,85.7969 M67,66.7969 L93,66.7969 M80,85.7969 L67,100.7969 M80,85.7969 L93,100.7969 " fill="none" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="144" x="5" y="384.4873">Mitarbeiter Apotheke</text><ellipse cx="80" cy="396.2891" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M80,404.2891 L80,431.2891 M67,412.2891 L93,412.2891 M80,431.2891 L67,446.2891 M80,431.2891 L93,446.2891 " fill="none" style="stroke:#181818;stroke-width:0.5;" /><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="41" x="267.5" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="27" x="274.5" y="107.292">AVS</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="41" x="267.5" y="371.4922" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="27" x="274.5" y="391.4873">AVS</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="124" x="318.5" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="325.5" y="107.292">Identity Provider</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="124" x="318.5" y="371.4922" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="325.5" y="391.4873">Identity Provider</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="159" x="472.5" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="479.5" y="107.292">E-Rezept-Fachdienst</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="159" x="472.5" y="371.4922" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="479.5" y="391.4873">E-Rezept-Fachdienst</text><rect fill="#FFFFFF" height="204.7656" style="stroke:#181818;stroke-width:1.0;" width="10" x="283" y="149.7266" /><rect fill="#FFFFFF" height="71.2656" style="stroke:#181818;stroke-width:1.0;" width="10" x="547" y="254.0938" /><polygon fill="#181818" points="271,145.7266,281,149.7266,271,153.7266,275,149.7266" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="80" x2="277" y1="149.7266" y2="149.7266" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="184" x="87" y="144.6606">Verordnung erneut abrufen()</text><path d="M257.5,164.7266 L327.5,164.7266 L327.5,171.8594 L317.5,181.8594 L257.5,181.8594 L257.5,164.7266 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;" /><rect fill="none" height="61.2344" style="stroke:#000000;stroke-width:1.5;" width="267" x="257.5" y="164.7266" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="25" x="272.5" y="177.7935">opt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="177" x="342.5" y="176.937">[kein g&#252;ltiger AuthN-Token]</text><rect fill="none" height="39.1016" style="stroke:#000000;stroke-width:1.5;" width="181" x="264.5" y="181.8594" /><path d="M264.5,181.8594 L330.5,181.8594 L330.5,188.8594 L320.5,198.8594 L264.5,198.8594 L264.5,181.8594 " fill="#EEEEEE" style="stroke:#000000;stroke-width:2.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="277.5" y="195.9263">ref</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="146" x="282" y="213.998">AuthN-Token anfordern</text><polygon fill="#181818" points="535,250.0938,545,254.0938,535,258.0938,539,254.0938" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="293" x2="541" y1="254.0938" y2="254.0938" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="235" x="300" y="249.0278">GET /Task/{id}?ac=... (AuthN-Token)</text><line style="stroke:#181818;stroke-width:1.0;" x1="557" x2="599" y1="283.2266" y2="283.2266" /><line style="stroke:#181818;stroke-width:1.0;" x1="599" x2="599" y1="283.2266" y2="296.2266" /><line style="stroke:#181818;stroke-width:1.0;" x1="558" x2="599" y1="296.2266" y2="296.2266" /><polygon fill="#181818" points="568,292.2266,558,296.2266,568,300.2266,564,296.2266" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="97" x="564" y="278.1606">Status pr&#252;fen()</text><polygon fill="#181818" points="304,321.3594,294,325.3594,304,329.3594,300,325.3594" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="298" x2="551" y1="325.3594" y2="325.3594" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="149" x="310" y="320.2935">Verordnung und Secret</text><polygon fill="#181818" points="91,350.4922,81,354.4922,91,358.4922,87,354.4922" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="85" x2="287" y1="354.4922" y2="354.4922" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="75" x="97" y="349.4263">Verordnung</text></g></svg>
+	</div>
+	<figcaption><strong>Abbildung: </strong>UC 4.17 - Verordnung erneut abrufen</figcaption>
 </figure>
 
 <!-- UC 4.8 - Quittung erneut abrufen -->
@@ -1664,35 +1779,45 @@ gem-ig-badge-bg-blue">
 
 <!-- UC 4.7 - Nachricht durch Abgebenden übermitteln -->
 
-<p><a></a>
-#####</p>
+<p><a id="uc-4-7-nachricht-durch-abgebenden-uebermitteln"></a></p>
+<h5 id="uc-47---nachricht-durch-abgebenden-übermitteln">UC 4.7 - Nachricht durch Abgebenden übermitteln</h5>
 
 <figure style="width: auto;">
   <table style="width: auto; border: 1px solid #dcdcdc;">
     <tr>
       <th style="padding: 5px; width: 23rem;">Beschreibung</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><p>Die abgebende LEI antwortet auf eine Nachricht eines Versicherten oder Vertreters.</p>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li>UC 3.3 wurde ausgeführt.</li>
+  <li>UC 4.6 wurde ausgeführt.</li>
+</ul>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li>Ein Mitarbeiter wählt die Nachricht zu einem E-Rezept und erstellt eine Antwort.</li>
+  <li>Das Primärsystem stellt die Antwortnachricht im E-Rezept-Fachdienst ein.</li>
+</ul>
 </td>
 
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li>Nachricht liegt im E-Rezept-Fachdienst und kann asynchron empfangen werden.</li>
+</ul>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Schnittstellen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li><a href="./query-api-communication.html">Query API: Nachricht einstellen</a></li>
+</ul>
 </td>
     </tr>
     
@@ -1711,40 +1836,60 @@ gem-ig-badge-bg-blue">
       </td>
     </tr>
   </table>
-  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall </figcaption>
+  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall UC 4.7 - Nachricht durch Abgebenden übermitteln</figcaption>
+</figure>
+
+<p><strong>Sequenzdiagramm:</strong></p>
+
+<figure>
+	<div class="gem-ig-img-container" style="--box-width: 600px; margin-bottom: 30px;">
+		<?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="453px" preserveAspectRatio="none" style="width:763px;height:453px;background:#FFFFFF;" version="1.1" viewBox="0 0 763 453" width="763px" zoomAndPan="magnify"><defs /><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="406" x="180.5" y="27.9951">UC 4.7 - Nachricht durch Abgebenden uebermitteln</text><rect fill="#FFFFFF" height="204.7656" style="stroke:#181818;stroke-width:1.0;" width="10" x="276" y="149.7266" /><rect fill="#FFFFFF" height="71.2656" style="stroke:#181818;stroke-width:1.0;" width="10" x="602" y="254.0938" /><rect fill="none" height="61.2344" style="stroke:#000000;stroke-width:1.5;" width="275" x="250.5" y="164.7266" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="80" x2="80" y1="118.5938" y2="372.4922" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="280.5" x2="280.5" y1="118.5938" y2="372.4922" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="373.5" x2="373.5" y1="118.5938" y2="372.4922" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="606.5" x2="606.5" y1="118.5938" y2="372.4922" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="144" x="5" y="115.292">Mitarbeiter Apotheke</text><ellipse cx="80" cy="50.7969" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M80,58.7969 L80,85.7969 M67,66.7969 L93,66.7969 M80,85.7969 L67,100.7969 M80,85.7969 L93,100.7969 " fill="none" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="144" x="5" y="384.4873">Mitarbeiter Apotheke</text><ellipse cx="80" cy="396.2891" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M80,404.2891 L80,431.2891 M67,412.2891 L93,412.2891 M80,431.2891 L67,446.2891 M80,431.2891 L93,446.2891 " fill="none" style="stroke:#181818;stroke-width:0.5;" /><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="41" x="260.5" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="27" x="267.5" y="107.292">AVS</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="41" x="260.5" y="371.4922" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="27" x="267.5" y="391.4873">AVS</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="124" x="311.5" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="318.5" y="107.292">Identity Provider</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="124" x="311.5" y="371.4922" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="318.5" y="391.4873">Identity Provider</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="159" x="527.5" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="534.5" y="107.292">E-Rezept-Fachdienst</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="159" x="527.5" y="371.4922" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="534.5" y="391.4873">E-Rezept-Fachdienst</text><rect fill="#FFFFFF" height="204.7656" style="stroke:#181818;stroke-width:1.0;" width="10" x="276" y="149.7266" /><rect fill="#FFFFFF" height="71.2656" style="stroke:#181818;stroke-width:1.0;" width="10" x="602" y="254.0938" /><polygon fill="#181818" points="264,145.7266,274,149.7266,264,153.7266,268,149.7266" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="80" x2="270" y1="149.7266" y2="149.7266" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="177" x="87" y="144.6606">Antwortnachricht erstellen()</text><path d="M250.5,164.7266 L320.5,164.7266 L320.5,171.8594 L310.5,181.8594 L250.5,181.8594 L250.5,164.7266 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;" /><rect fill="none" height="61.2344" style="stroke:#000000;stroke-width:1.5;" width="275" x="250.5" y="164.7266" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="25" x="265.5" y="177.7935">opt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="185" x="335.5" y="176.937">[kein gueltiger AuthN-Token]</text><rect fill="none" height="39.1016" style="stroke:#000000;stroke-width:1.5;" width="181" x="257.5" y="181.8594" /><path d="M257.5,181.8594 L323.5,181.8594 L323.5,188.8594 L313.5,198.8594 L257.5,198.8594 L257.5,181.8594 " fill="#EEEEEE" style="stroke:#000000;stroke-width:2.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="270.5" y="195.9263">ref</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="146" x="275" y="213.998">AuthN-Token anfordern</text><polygon fill="#181818" points="590,250.0938,600,254.0938,590,258.0938,594,254.0938" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="286" x2="596" y1="254.0938" y2="254.0938" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="297" x="293" y="249.0278">POST /Communication (AuthN-Token, Antwort)</text><line style="stroke:#181818;stroke-width:1.0;" x1="612" x2="654" y1="283.2266" y2="283.2266" /><line style="stroke:#181818;stroke-width:1.0;" x1="654" x2="654" y1="283.2266" y2="296.2266" /><line style="stroke:#181818;stroke-width:1.0;" x1="613" x2="654" y1="296.2266" y2="296.2266" /><polygon fill="#181818" points="623,292.2266,613,296.2266,623,300.2266,619,296.2266" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="137" x="619" y="278.1606">Nachricht speichern()</text><polygon fill="#181818" points="297,321.3594,287,325.3594,297,329.3594,293,325.3594" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="291" x2="606" y1="325.3594" y2="325.3594" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="42" x="303" y="320.2935">Status</text><polygon fill="#181818" points="91,350.4922,81,354.4922,91,358.4922,87,354.4922" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="85" x2="280" y1="354.4922" y2="354.4922" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="85" x="97" y="349.4263">Bestaetigung</text></g></svg>
+	</div>
+	<figcaption><strong>Abbildung: </strong>UC 4.7 - Nachricht durch Abgebenden übermitteln</figcaption>
 </figure>
 
 <!-- UC 4.9 - Nachricht durch Abgebenden löschen -->
 
-<p><a></a>
-#####</p>
+<p><a id="uc-4-9-nachricht-durch-abgebenden-loeschen"></a></p>
+<h5 id="uc-49---nachricht-durch-abgebenden-löschen">UC 4.9 - Nachricht durch Abgebenden löschen</h5>
 
 <figure style="width: auto;">
   <table style="width: auto; border: 1px solid #dcdcdc;">
     <tr>
       <th style="padding: 5px; width: 23rem;">Beschreibung</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><p>Der Abgebende löscht von ihm übermittelte Nachrichten an Versicherte.</p>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li>UC 4.7 wurde ausgeführt.</li>
+</ul>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li>Der Abgebende wählt Nachrichten zum Löschen aus und bestätigt.</li>
+  <li>Das Primärsystem überträgt Löschanforderungen an den E-Rezept-Fachdienst.</li>
+  <li>Der E-Rezept-Fachdienst löscht Nachrichten und liefert ggf. Warnung bei bereits erfolgtem Abruf.</li>
+  <li>Nachrichten werden im Primärsystem gelöscht.</li>
+</ul>
 </td>
 
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li>Nachrichten sind im E-Rezept-Fachdienst und im Primärsystem gelöscht.</li>
+</ul>
 </td>
     </tr>
     <tr>
       <th style="padding: 5px; width: 23rem;">Schnittstellen</th>
-      <td style="padding: 5px;">
+      <td style="padding: 5px;"><ul>
+  <li><a href="./query-api-communication.html">Query API: Nachricht löschen</a></li>
+</ul>
 </td>
     </tr>
     
@@ -1763,7 +1908,16 @@ gem-ig-badge-bg-blue">
       </td>
     </tr>
   </table>
-  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall </figcaption>
+  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall UC 4.9 - Nachricht durch Abgebenden löschen</figcaption>
+</figure>
+
+<p><strong>Sequenzdiagramm:</strong></p>
+
+<figure>
+	<div class="gem-ig-img-container" style="--box-width: 600px; margin-bottom: 30px;">
+		<?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="495px" preserveAspectRatio="none" style="width:727px;height:495px;background:#FFFFFF;" version="1.1" viewBox="0 0 727 495" width="727px" zoomAndPan="magnify"><defs /><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="377" x="177.25" y="27.9951">UC 4.9 - Nachricht durch Abgebenden loeschen</text><rect fill="#FFFFFF" height="246.8984" style="stroke:#181818;stroke-width:1.0;" width="10" x="231" y="149.7266" /><rect fill="#FFFFFF" height="71.2656" style="stroke:#181818;stroke-width:1.0;" width="10" x="571.5" y="254.0938" /><rect fill="none" height="61.2344" style="stroke:#000000;stroke-width:1.5;" width="291.5" x="205.5" y="164.7266" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="80" x2="80" y1="118.5938" y2="414.625" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="235.5" x2="235.5" y1="118.5938" y2="414.625" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="425" x2="425" y1="118.5938" y2="414.625" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="576" x2="576" y1="118.5938" y2="414.625" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="144" x="5" y="115.292">Mitarbeiter Apotheke</text><ellipse cx="80" cy="50.7969" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M80,58.7969 L80,85.7969 M67,66.7969 L93,66.7969 M80,85.7969 L67,100.7969 M80,85.7969 L93,100.7969 " fill="none" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="144" x="5" y="426.6201">Mitarbeiter Apotheke</text><ellipse cx="80" cy="438.4219" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M80,446.4219 L80,473.4219 M67,454.4219 L93,454.4219 M80,473.4219 L67,488.4219 M80,473.4219 L93,488.4219 " fill="none" style="stroke:#181818;stroke-width:0.5;" /><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="41" x="215.5" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="27" x="222.5" y="107.292">AVS</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="41" x="215.5" y="413.625" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="27" x="222.5" y="433.6201">AVS</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="124" x="363" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="370" y="107.292">Identity Provider</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="124" x="363" y="413.625" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="370" y="433.6201">Identity Provider</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="159" x="497" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="504" y="107.292">E-Rezept-Fachdienst</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="159" x="497" y="413.625" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="504" y="433.6201">E-Rezept-Fachdienst</text><rect fill="#FFFFFF" height="246.8984" style="stroke:#181818;stroke-width:1.0;" width="10" x="231" y="149.7266" /><rect fill="#FFFFFF" height="71.2656" style="stroke:#181818;stroke-width:1.0;" width="10" x="571.5" y="254.0938" /><polygon fill="#181818" points="219,145.7266,229,149.7266,219,153.7266,223,149.7266" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="80" x2="225" y1="149.7266" y2="149.7266" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="132" x="87" y="144.6606">Nachricht loeschen()</text><path d="M205.5,164.7266 L275.5,164.7266 L275.5,171.8594 L265.5,181.8594 L205.5,181.8594 L205.5,164.7266 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;" /><rect fill="none" height="61.2344" style="stroke:#000000;stroke-width:1.5;" width="291.5" x="205.5" y="164.7266" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="25" x="220.5" y="177.7935">opt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="185" x="290.5" y="176.937">[kein gueltiger AuthN-Token]</text><rect fill="none" height="39.1016" style="stroke:#000000;stroke-width:1.5;" width="277.5" x="212.5" y="181.8594" /><path d="M212.5,181.8594 L278.5,181.8594 L278.5,188.8594 L268.5,198.8594 L212.5,198.8594 L212.5,181.8594 " fill="#EEEEEE" style="stroke:#000000;stroke-width:2.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="225.5" y="195.9263">ref</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="146" x="278.25" y="213.998">AuthN-Token anfordern</text><polygon fill="#181818" points="559.5,250.0938,569.5,254.0938,559.5,258.0938,563.5,254.0938" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="241" x2="565.5" y1="254.0938" y2="254.0938" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="285" x="248" y="249.0278">DELETE /Communication/{id} (AuthN-Token)</text><line style="stroke:#181818;stroke-width:1.0;" x1="581.5" x2="623.5" y1="283.2266" y2="283.2266" /><line style="stroke:#181818;stroke-width:1.0;" x1="623.5" x2="623.5" y1="283.2266" y2="296.2266" /><line style="stroke:#181818;stroke-width:1.0;" x1="582.5" x2="623.5" y1="296.2266" y2="296.2266" /><polygon fill="#181818" points="592.5,292.2266,582.5,296.2266,592.5,300.2266,588.5,296.2266" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="132" x="588.5" y="278.1606">Nachricht loeschen()</text><polygon fill="#181818" points="252,321.3594,242,325.3594,252,329.3594,248,325.3594" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="246" x2="575.5" y1="325.3594" y2="325.3594" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="135" x="258" y="320.2935">Status (ggf. Warning)</text><line style="stroke:#181818;stroke-width:1.0;" x1="241" x2="283" y1="354.4922" y2="354.4922" /><line style="stroke:#181818;stroke-width:1.0;" x1="283" x2="283" y1="354.4922" y2="367.4922" /><line style="stroke:#181818;stroke-width:1.0;" x1="242" x2="283" y1="367.4922" y2="367.4922" /><polygon fill="#181818" points="252,363.4922,242,367.4922,252,371.4922,248,367.4922" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="165" x="248" y="349.4263">Nachricht lokal loeschen()</text><polygon fill="#181818" points="91,392.625,81,396.625,91,400.625,87,396.625" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="85" x2="235" y1="396.625" y2="396.625" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="42" x="97" y="391.5591">Status</text></g></svg>
+	</div>
+	<figcaption><strong>Abbildung: </strong>UC 4.9 - Nachricht durch Abgebenden löschen</figcaption>
 </figure>
 
 
@@ -1807,7 +1961,7 @@ gem-ig-badge-bg-blue">
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 16, 2026 06:27+0000">2026-03-16</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 16, 2026 11:08+0000">2026-03-16</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

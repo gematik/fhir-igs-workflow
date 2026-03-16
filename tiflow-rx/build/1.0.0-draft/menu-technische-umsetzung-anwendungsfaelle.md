@@ -235,64 +235,107 @@ Jede Teilverordnung einer Mehrfachverordnung wird im E-Rezept-Fachdienst mit ein
 **Sequenzdiagramm:**
 
 **Abbildung: **UC 3.2 - E-Rezept durch Versicherten löschen
- #####
+
+##### UC 3.3 - Nachricht durch Versicherten übermitteln
 
 * Beschreibung: Vorbedingungen
-  * : 
-* Beschreibung: Durchzuführende Aktionen
-  * : 
-* Beschreibung: Nachbedingungen
-  * : 
-* Beschreibung: Schnittstellen
-  * : 
-* Beschreibung: Relevante(r) Sektor(en)
-  * : 
+  * Ein Versicherter oder Vertreter übermittelt einen E-Rezept-Token und/oder eine Nachricht an eine Apotheke oder einen Vertreter, wahlweise über die TI oder als 2D-Code.: * UC 3.1 wurde ausgeführt und ein E-Rezept-Token erstellt.
+* Alternativ liegt ein E-Rezept-Token beim Vertreter vor.
 
-**Tabelle:**Fachlicher Anwendungsfall
- #####
+* Beschreibung: Durchzuführende Aktionen
+  * Ein Versicherter oder Vertreter übermittelt einen E-Rezept-Token und/oder eine Nachricht an eine Apotheke oder einen Vertreter, wahlweise über die TI oder als 2D-Code.: * Auswahl eines E-Rezept-Tokens und Versandart (TI oder 2D-Code).
+* Bei Versand über TI: Apotheke im Verzeichnisdienst wählen oder KVNR2 eingeben.
+* Das FdV stellt die Nachricht mit Token und/oder Text im E-Rezept-Fachdienst ein.
+* Bei 2D-Code: Token wird als 2D-Code angezeigt oder ausgedruckt.
+
+* Beschreibung: Nachbedingungen
+  * Ein Versicherter oder Vertreter übermittelt einen E-Rezept-Token und/oder eine Nachricht an eine Apotheke oder einen Vertreter, wahlweise über die TI oder als 2D-Code.: * Nachricht liegt im E-Rezept-Fachdienst und kann vom Empfänger abgerufen werden.
+* Bei 2D-Code ist der Token für den Empfänger verfügbar.
+
+* Beschreibung: Schnittstellen
+  * Ein Versicherter oder Vertreter übermittelt einen E-Rezept-Token und/oder eine Nachricht an eine Apotheke oder einen Vertreter, wahlweise über die TI oder als 2D-Code.: * [Query API: Nachricht einstellen](./query-api-communication.md)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Ein Versicherter oder Vertreter übermittelt einen E-Rezept-Token und/oder eine Nachricht an eine Apotheke oder einen Vertreter, wahlweise über die TI oder als 2D-Code.:  VERSICHERTER 
+
+**Tabelle:**Fachlicher Anwendungsfall UC 3.3 - Nachricht durch Versicherten übermitteln
+**Sequenzdiagramm:**
+
+**Abbildung: **UC 3.3 - Nachricht durch Versicherten übermitteln
+
+##### UC 3.4 - Nachrichten durch Versicherten empfangen
 
 * Beschreibung: Vorbedingungen
-  * : 
-* Beschreibung: Durchzuführende Aktionen
-  * : 
-* Beschreibung: Nachbedingungen
-  * : 
-* Beschreibung: Schnittstellen
-  * : 
-* Beschreibung: Relevante(r) Sektor(en)
-  * : 
+  * Ein Versicherter oder Vertreter empfängt Nachrichten von abgebenden LEI über den E-Rezept-Fachdienst.: * UC 4.7 wurde ausgeführt.
+* UC 3.3 wurde ausgeführt.
 
-**Tabelle:**Fachlicher Anwendungsfall
- #####
+* Beschreibung: Durchzuführende Aktionen
+  * Ein Versicherter oder Vertreter empfängt Nachrichten von abgebenden LEI über den E-Rezept-Fachdienst.: * Das FdV fragt beim E-Rezept-Fachdienst nach neuen Nachrichten.
+* Nachrichten werden heruntergeladen.
+
+* Beschreibung: Nachbedingungen
+  * Ein Versicherter oder Vertreter empfängt Nachrichten von abgebenden LEI über den E-Rezept-Fachdienst.: * Nachrichten liegen im FdV zur Anzeige bereit.
+
+* Beschreibung: Schnittstellen
+  * Ein Versicherter oder Vertreter empfängt Nachrichten von abgebenden LEI über den E-Rezept-Fachdienst.: * [Query API: Nachrichten abrufen](./query-api-communication.md)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Ein Versicherter oder Vertreter empfängt Nachrichten von abgebenden LEI über den E-Rezept-Fachdienst.:  VERSICHERTER 
+
+**Tabelle:**Fachlicher Anwendungsfall UC 3.4 - Nachrichten durch Versicherten empfangen
+**Sequenzdiagramm:**
+
+**Abbildung: **UC 3.4 - Nachrichten durch Versicherten empfangen
+
+##### UC 3.8 - Nachricht durch Versicherten löschen
 
 * Beschreibung: Vorbedingungen
-  * : 
-* Beschreibung: Durchzuführende Aktionen
-  * : 
-* Beschreibung: Nachbedingungen
-  * : 
-* Beschreibung: Schnittstellen
-  * : 
-* Beschreibung: Relevante(r) Sektor(en)
-  * : 
+  * Der Versicherte löscht von ihm übermittelte Nachrichten an Apotheken oder Versicherte.: * UC 3.3 wurde ausgeführt.
 
-**Tabelle:**Fachlicher Anwendungsfall
+* Beschreibung: Durchzuführende Aktionen
+  * Der Versicherte löscht von ihm übermittelte Nachrichten an Apotheken oder Versicherte.: * Der Versicherte wählt Nachrichten zum Löschen aus und bestätigt den Vorgang.
+* Das FdV überträgt die Löschanforderung je Nachricht an den E-Rezept-Fachdienst.
+* Der E-Rezept-Fachdienst löscht die Nachrichten und liefert ggf. eine Warnung, wenn bereits abgerufen.
+* Die Nachrichten werden im FdV gelöscht.
+
+* Beschreibung: Nachbedingungen
+  * Der Versicherte löscht von ihm übermittelte Nachrichten an Apotheken oder Versicherte.: * Nachrichten sind im E-Rezept-Fachdienst und im FdV gelöscht.
+
+* Beschreibung: Schnittstellen
+  * Der Versicherte löscht von ihm übermittelte Nachrichten an Apotheken oder Versicherte.: * [Query API: Nachricht löschen](./query-api-communication.md)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Der Versicherte löscht von ihm übermittelte Nachrichten an Apotheken oder Versicherte.:  VERSICHERTER 
+
+**Tabelle:**Fachlicher Anwendungsfall UC 3.8 - Nachricht durch Versicherten löschen
+**Sequenzdiagramm:**
+
+**Abbildung: **UC 3.8 - Nachricht durch Versicherten löschen
 #### Apotheke
 
- #####
+##### UC 4.6 - Nachrichten durch Abgebenden empfangen
 
 * Beschreibung: Vorbedingungen
-  * : 
-* Beschreibung: Durchzuführende Aktionen
-  * : 
-* Beschreibung: Nachbedingungen
-  * : 
-* Beschreibung: Schnittstellen
-  * : 
-* Beschreibung: Relevante(r) Sektor(en)
-  * : 
+  * Eine abgebende LEI empfängt E-Rezept-Token über die TI oder optisch als 2D-Code.: * UC 3.3 wurde ausgeführt oder der 2D-Code wurde präsentiert.
 
-**Tabelle:**Fachlicher Anwendungsfall
+* Beschreibung: Durchzuführende Aktionen
+  * Eine abgebende LEI empfängt E-Rezept-Token über die TI oder optisch als 2D-Code.: * Das Primärsystem wählt den Empfangsweg (TI oder 2D-Code).
+* Bei TI: Primärsystem fragt beim E-Rezept-Fachdienst neue Nachrichten für die Telematik-ID ab und lädt sie herunter.
+* Bei 2D-Code: Primärsystem wandelt den Code in die Token-Textform um.
+
+* Beschreibung: Nachbedingungen
+  * Eine abgebende LEI empfängt E-Rezept-Token über die TI oder optisch als 2D-Code.: * E-Rezept-Token liegt im Primärsystem vor.
+
+* Beschreibung: Schnittstellen
+  * Eine abgebende LEI empfängt E-Rezept-Token über die TI oder optisch als 2D-Code.: * [Query API: Nachrichten abrufen](./query-api-communication.md)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Eine abgebende LEI empfängt E-Rezept-Token über die TI oder optisch als 2D-Code.: 
+
+**Tabelle:**Fachlicher Anwendungsfall UC 4.6 - Nachrichten durch Abgebenden empfangen
+**Sequenzdiagramm:**
+
+**Abbildung: **UC 4.6 - Nachrichten durch Abgebenden empfangen
 
 ##### UC 4.1 - E-Rezept durch Abgebenden abrufen
 
@@ -464,20 +507,30 @@ Für die QES-Prüfung wird die PKCS#7-Datei verwendet. Die Verordnungsdaten des 
 **Sequenzdiagramm:**
 
 **Abbildung: **UC 4.5 - Abgabedatensatz durch Abgebenden signieren
- #####
+
+##### UC 4.17 - Verordnung erneut abrufen
 
 * Beschreibung: Vorbedingungen
-  * : 
-* Beschreibung: Durchzuführende Aktionen
-  * : 
-* Beschreibung: Nachbedingungen
-  * : 
-* Beschreibung: Schnittstellen
-  * : 
-* Beschreibung: Relevante(r) Sektor(en)
-  * : 
+  * Die Verordnung wird erneut abgerufen, falls die Übertragung beim ersten Abruf mit $accept fehlgeschlagen ist.: * UC 4.1 wurde ausgeführt; im Clientsystem liegt keine Verordnung oder das zugehörige Secret vor.
+* Status des E-Rezepts ist “in-progress”.
 
-**Tabelle:**Fachlicher Anwendungsfall
+* Beschreibung: Durchzuführende Aktionen
+  * Die Verordnung wird erneut abgerufen, falls die Übertragung beim ersten Abruf mit $accept fehlgeschlagen ist.: * Abgebender wählt die Zugriffsinformation für die Verordnung (E-Rezept-Token) aus und ruft die Verordnung erneut ab.
+* Primärsystem übermittelt Rezept-ID und Access_Code; der E-Rezept-Fachdienst liefert die Verordnung und das Secret erneut aus.
+
+* Beschreibung: Nachbedingungen
+  * Die Verordnung wird erneut abgerufen, falls die Übertragung beim ersten Abruf mit $accept fehlgeschlagen ist.: * Verordnung liegt im Primärsystem vor.
+
+* Beschreibung: Schnittstellen
+  * Die Verordnung wird erneut abgerufen, falls die Übertragung beim ersten Abruf mit $accept fehlgeschlagen ist.: * [Query API: Task](./query-api-task.md)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Die Verordnung wird erneut abgerufen, falls die Übertragung beim ersten Abruf mit $accept fehlgeschlagen ist.: 
+
+**Tabelle:**Fachlicher Anwendungsfall UC 4.17 - Verordnung erneut abrufen
+**Sequenzdiagramm:**
+
+**Abbildung: **UC 4.17 - Verordnung erneut abrufen
 
 ##### UC 4.8 - Quittung erneut abrufen
 
@@ -502,32 +555,53 @@ Für die QES-Prüfung wird die PKCS#7-Datei verwendet. Die Verordnungsdaten des 
 **Sequenzdiagramm:**
 
 **Abbildung: **UC 4.8 - Quittung erneut abrufen
- #####
+
+##### UC 4.7 - Nachricht durch Abgebenden übermitteln
 
 * Beschreibung: Vorbedingungen
-  * : 
-* Beschreibung: Durchzuführende Aktionen
-  * : 
-* Beschreibung: Nachbedingungen
-  * : 
-* Beschreibung: Schnittstellen
-  * : 
-* Beschreibung: Relevante(r) Sektor(en)
-  * : 
+  * Die abgebende LEI antwortet auf eine Nachricht eines Versicherten oder Vertreters.: * UC 3.3 wurde ausgeführt.
+* UC 4.6 wurde ausgeführt.
 
-**Tabelle:**Fachlicher Anwendungsfall
- #####
+* Beschreibung: Durchzuführende Aktionen
+  * Die abgebende LEI antwortet auf eine Nachricht eines Versicherten oder Vertreters.: * Ein Mitarbeiter wählt die Nachricht zu einem E-Rezept und erstellt eine Antwort.
+* Das Primärsystem stellt die Antwortnachricht im E-Rezept-Fachdienst ein.
+
+* Beschreibung: Nachbedingungen
+  * Die abgebende LEI antwortet auf eine Nachricht eines Versicherten oder Vertreters.: * Nachricht liegt im E-Rezept-Fachdienst und kann asynchron empfangen werden.
+
+* Beschreibung: Schnittstellen
+  * Die abgebende LEI antwortet auf eine Nachricht eines Versicherten oder Vertreters.: * [Query API: Nachricht einstellen](./query-api-communication.md)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Die abgebende LEI antwortet auf eine Nachricht eines Versicherten oder Vertreters.: 
+
+**Tabelle:**Fachlicher Anwendungsfall UC 4.7 - Nachricht durch Abgebenden übermitteln
+**Sequenzdiagramm:**
+
+**Abbildung: **UC 4.7 - Nachricht durch Abgebenden übermitteln
+
+##### UC 4.9 - Nachricht durch Abgebenden löschen
 
 * Beschreibung: Vorbedingungen
-  * : 
-* Beschreibung: Durchzuführende Aktionen
-  * : 
-* Beschreibung: Nachbedingungen
-  * : 
-* Beschreibung: Schnittstellen
-  * : 
-* Beschreibung: Relevante(r) Sektor(en)
-  * : 
+  * Der Abgebende löscht von ihm übermittelte Nachrichten an Versicherte.: * UC 4.7 wurde ausgeführt.
 
-**Tabelle:**Fachlicher Anwendungsfall
+* Beschreibung: Durchzuführende Aktionen
+  * Der Abgebende löscht von ihm übermittelte Nachrichten an Versicherte.: * Der Abgebende wählt Nachrichten zum Löschen aus und bestätigt.
+* Das Primärsystem überträgt Löschanforderungen an den E-Rezept-Fachdienst.
+* Der E-Rezept-Fachdienst löscht Nachrichten und liefert ggf. Warnung bei bereits erfolgtem Abruf.
+* Nachrichten werden im Primärsystem gelöscht.
+
+* Beschreibung: Nachbedingungen
+  * Der Abgebende löscht von ihm übermittelte Nachrichten an Versicherte.: * Nachrichten sind im E-Rezept-Fachdienst und im Primärsystem gelöscht.
+
+* Beschreibung: Schnittstellen
+  * Der Abgebende löscht von ihm übermittelte Nachrichten an Versicherte.: * [Query API: Nachricht löschen](./query-api-communication.md)
+
+* Beschreibung: Relevante(r) Sektor(en)
+  * Der Abgebende löscht von ihm übermittelte Nachrichten an Versicherte.: 
+
+**Tabelle:**Fachlicher Anwendungsfall UC 4.9 - Nachricht durch Abgebenden löschen
+**Sequenzdiagramm:**
+
+**Abbildung: **UC 4.9 - Nachricht durch Abgebenden löschen
 
