@@ -423,9 +423,12 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          validator_version="${HAPI_VALIDATOR_VERSION:-6.5.26}"
+          validator_url="https://github.com/hapifhir/org.hl7.fhir.core/releases/download/${validator_version}/validator_cli.jar"
           validator_path="$GITHUB_WORKSPACE/input-cache/current_hapi_validator.jar"
           mkdir -p "$(dirname "$validator_path")"
-          curl -sSL https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar -o "$validator_path"
+          echo "Downloading HAPI validator ${validator_version} from ${validator_url}"
+          curl -sSL "$validator_url" -o "$validator_path"
           if [[ ! -s "$validator_path" ]]; then
             echo "Failed to download HAPI validator jar" >&2
             exit 1

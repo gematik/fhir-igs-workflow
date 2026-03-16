@@ -65,16 +65,29 @@ def resolve_hapi_jar(explicit: Path | None) -> Path:
     sys.exit(1)
 
 
-def build_command(
+def build_commands(
     hapi_jar: Path,
     kbv_bundle: Path,
     output_file: Path,
     transform_url: str,
     project_root: Path,
-) -> list[str]:
-    """Construct the java command for the transformation run."""
+) -> tuple[list[str], list[str]]:
+    """Construct modern and legacy java commands for transformation."""
 
-    cmd: list[str] = [
+    cmd_modern: list[str] = [
+        "java",
+        "-jar",
+        str(hapi_jar),
+        "transform",
+        transform_url,
+        str(kbv_bundle),
+        "-version",
+        FHIR_VERSION,
+        "-output",
+        str(output_file),
+    ]
+
+    cmd_legacy: list[str] = [
         "java",
         "-jar",
         str(hapi_jar),
@@ -104,20 +117,50 @@ def build_command(
 
     for ig_dir in local_igs:
         if ig_dir.exists():
-            cmd.extend(["-ig", str(ig_dir)])
+            cmd_modern.extend(["-ig", str(ig_dir)])
+            cmd_legacy.extend(["-ig", str(ig_dir)])
 
     for package in package_igs:
-        cmd.extend(["-ig", package])
+        cmd_modern.extend(["-ig", package])
+        cmd_legacy.extend(["-ig", package])
 
-    return cmd
+    return cmd_modern, cmd_legacy
 
 
-def run_transform(cmd: list[str], project_root: Path) -> subprocess.CompletedProcess[str]:
-    """Execute the HAPI validator and return the completed process."""
+def run_transform(commands: tuple[list[str], list[str]], project_root: Path) -> subprocess.CompletedProcess[str]:
+    """Execute transform with modern syntax first and fallback to legacy."""
+
+    cmd_modern, cmd_legacy = commands
 
     print("🚀 Starte Provide-Prescription-Transformation …")
-    print("   Kommando:", " ".join(cmd))
-    return subprocess.run(cmd, capture_output=True, text=True, cwd=str(project_root))
+    print("   Kommando (modern):", " ".join(cmd_modern))
+    result = subprocess.run(cmd_modern, capture_output=True, text=True, cwd=str(project_root))
+    if result.returncode == 0:
+        return result
+
+    print("⚠️ Moderner Transform-Aufruf fehlgeschlagen, versuche Legacy-Syntax …", file=sys.stderr)
+    print("   Kommando (legacy):", " ".join(cmd_legacy), file=sys.stderr)
+    legacy_result = subprocess.run(cmd_legacy, capture_output=True, text=True, cwd=str(project_root))
+
+    # Keep output from both runs for easier CI troubleshooting.
+    combined_stdout = ""
+    if result.stdout:
+        combined_stdout += "[modern]\n" + result.stdout + "\n"
+    if legacy_result.stdout:
+        combined_stdout += "[legacy]\n" + legacy_result.stdout
+
+    combined_stderr = ""
+    if result.stderr:
+        combined_stderr += "[modern]\n" + result.stderr + "\n"
+    if legacy_result.stderr:
+        combined_stderr += "[legacy]\n" + legacy_result.stderr
+
+    return subprocess.CompletedProcess(
+        args=legacy_result.args,
+        returncode=legacy_result.returncode,
+        stdout=combined_stdout,
+        stderr=combined_stderr,
+    )
 
 
 def load_args() -> argparse.Namespace:
@@ -144,8 +187,8 @@ def main() -> int:
     project_root = Path(__file__).resolve().parents[2]
     hapi_jar = resolve_hapi_jar(args.hapi_jar)
 
-    cmd = build_command(hapi_jar, kbv_bundle, output_file, args.transform, project_root)
-    result = run_transform(cmd, project_root)
+    commands = build_commands(hapi_jar, kbv_bundle, output_file, args.transform, project_root)
+    result = run_transform(commands, project_root)
 
     if result.stdout:
         print("\n📋 STDOUT:\n", result.stdout)
