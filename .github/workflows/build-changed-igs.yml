@@ -600,7 +600,6 @@ jobs:
               count=$(find "$out_dir" -type f | wc -l | tr -d ' ')
               total=$((total + count))
             fi
-
             id=$(yq -r '.id // ""' "igs/$ig/sushi-config.yaml")
             version=$(yq -r '.version // ""' "igs/$ig/sushi-config.yaml")
             id=${id#de.gematik.}
@@ -615,6 +614,36 @@ jobs:
             echo "deploy target: gs://gematik_gemspec_fhir_prod-0/$prefix"
           done
           echo "deploying $total files"
+
+      - name: Package IG output folders as ZIP
+        if: steps.igs.outputs.ig_list != ''
+        shell: bash
+        run: |
+          set -euo pipefail
+          for ig in ${{ steps.igs.outputs.ig_list }}; do
+            ig_dir="igs/$ig"
+            out_dir="$ig_dir/output"
+            zip_file="$ig_dir/output.zip"
+
+            if [[ -d "$out_dir" ]]; then
+              rm -f "$zip_file"
+              (
+                cd "$ig_dir"
+                zip -qr "output.zip" "output"
+              )
+              if [[ -s "$zip_file" ]]; then
+                echo "Created $zip_file"
+              fi
+            fi
+          done
+
+      - name: Upload IG output ZIPs
+        if: steps.igs.outputs.ig_list != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: ig-output-zips-${{ github.run_number }}
+          path: igs/*/output.zip
+          if-no-files-found: warn
 
       - name: Prepare GitHub Pages content
         if: steps.igs.outputs.ig_list != ''
@@ -642,6 +671,11 @@ jobs:
 
               mkdir -p "$target_dir"
               cp -R "$out_dir"/. "$target_dir"/
+
+              zip_file="igs/$ig/output.zip"
+              if [[ -f "$zip_file" ]]; then
+                cp "$zip_file" "$target_dir/output.zip"
+              fi
             fi
           done
 
