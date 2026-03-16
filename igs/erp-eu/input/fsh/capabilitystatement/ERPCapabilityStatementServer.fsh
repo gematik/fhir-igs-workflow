@@ -41,6 +41,10 @@ RuleSet: TaskInteraction(expectation)
 * insert CapSupportResourceSearchParamNoDefinition(authored-on, #date, {expectation}, "Search by Task.authoredOn")
 * insert CapSupportResourceSearchParamNoDefinition(accept-date, #date, {expectation}, "Search by Task.extension[acceptDate]")
 * insert CapSupportResourceSearchParamNoDefinition(expiry-date, #date, {expectation}, "Search by Task.extension[expiryDate]")
+* insert CapSupportResourceSearchParamNoDefinition(modified, #date, {expectation}, "Search by Task.lastModified")
+* insert CapSupportResourceSearchParamNoDefinition(_sort, #string, {expectation}, "Supports sorting over supported Task search criteria")
+* insert CapSupportResourceSearchParamNoDefinition(_count, #number, {expectation}, "Maximum number of returned entries per page; max value is 50")
+* insert CapSupportResourceSearchParamNoDefinition(__offset, #number, {expectation}, "Zero-based offset of the first returned entry; default is 0")
 
 * insert CapSupportResourceOperation(eu-close, EUCloseOperation, {expectation})
 

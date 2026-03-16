@@ -48,17 +48,17 @@ RuleSet: TaskInteraction(expectation)
 * insert CapSupportResourceSearchParamNoDefinition(__offset, #number, {expectation}, "Zero-based offset of the first returned entry; default is 0")
 
 * insert CapSupportResourceOperation(create, CreateOperation, {expectation})
-* insert TaskPostOperationStatusCodes
+* insert TaskCreateOperationStatusCodes
 * insert CapSupportResourceOperation(activate, ActivateOperation, {expectation})
 * insert TaskPostOperationStatusCodes
 * insert CapSupportResourceOperation(accept, AcceptOperation, {expectation})
 * insert TaskPostOperationStatusCodes
 * insert CapSupportResourceOperation(reject, RejectOperation, {expectation})
-* insert TaskPostOperationStatusCodes
+* insert TaskNoContentOperationStatusCodes
 * insert CapSupportResourceOperation(close, CloseOperation, {expectation})
 * insert TaskPostOperationStatusCodes
 * insert CapSupportResourceOperation(abort, AbortOperation, {expectation})
-* insert TaskPostOperationStatusCodes
+* insert TaskNoContentOperationStatusCodes
 * insert CapSupportResourceOperation(dispense, DispenseOperation, {expectation})
 * insert TaskPostOperationStatusCodes
 
@@ -78,6 +78,12 @@ RuleSet: ChargeItemInteraction(expectation)
 * insert CapResourceInteraction(#delete, #SHALL)
 * insert DeleteInteractionStatusCodes
 
+* insert CapSupportResourceSearchParam(entered-date, http://hl7.org/fhir/SearchParameter/ChargeItem-enteredDate, #date, {expectation}, "ChargeItem.enteredDate; default sort if _sort is not provided")
+* insert CapSupportResourceSearchParam(_lastUpdated, http://hl7.org/fhir/SearchParameter/Resource-lastUpdated, #date, {expectation}, "ChargeItem.meta.lastUpdated")
+* insert CapSupportResourceSearchParamNoDefinition(_sort, #string, {expectation}, "Supports sorting over supported ChargeItem search criteria")
+* insert CapSupportResourceSearchParamNoDefinition(_count, #number, {expectation}, "Maximum number of returned entries per page; max value is 50")
+* insert CapSupportResourceSearchParamNoDefinition(__offset, #number, {expectation}, "Zero-based offset of the first returned entry; default is 0")
+
 RuleSet: ConsentInteraction(expectation)
 * insert CapSupportResource(Consent, {expectation})
 
@@ -94,6 +100,7 @@ RuleSet: CommunicationInteraction(expectation)
 * insert CapSupportProfile(GEM_ERP_PR_Communication_DispReq, #SHALL)
 * insert CapSupportProfile(GEM_ERP_PR_Communication_Reply, #SHALL)
 * insert CapSupportProfile(GEM_ERP_PR_Communication_Representative, #SHALL)
+* insert CapSupportProfile(GEM_ERP_PR_Communication_DiGA, #SHALL)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
 * insert SearchTypeInteractionStatusCodes
@@ -161,15 +168,32 @@ RuleSet: TaskPostOperationStatusCodes
 * rest.resource[=].operation[=] insert InvalidRequest
 * rest.resource[=].operation[=] insert ResourceIsNotKnown
 * rest.resource[=].operation[=] insert ResourceWasDeleted
+* rest.resource[=].operation[=] insert Conflict
+* rest.resource[=].operation[=] insert WrongStatusParameter
+
+RuleSet: TaskCreateOperationStatusCodes
+* rest.resource[=].operation[=] insert SuccessfulCreated
+* rest.resource[=].operation[=] insert InvalidRequest
+* rest.resource[=].operation[=] insert ResourceIsNotKnown
+* rest.resource[=].operation[=] insert ResourceWasDeleted
+* rest.resource[=].operation[=] insert Conflict
+* rest.resource[=].operation[=] insert WrongStatusParameter
+
+RuleSet: TaskNoContentOperationStatusCodes
+* rest.resource[=].operation[=] insert SuccessfulNoContent
+* rest.resource[=].operation[=] insert InvalidRequest
+* rest.resource[=].operation[=] insert ResourceIsNotKnown
+* rest.resource[=].operation[=] insert ResourceWasDeleted
+* rest.resource[=].operation[=] insert Conflict
 * rest.resource[=].operation[=] insert WrongStatusParameter
 
 RuleSet: CreateInteractionStatusCodes
-* rest.resource[=].interaction[=] insert Successful
+* rest.resource[=].interaction[=] insert SuccessfulCreated
 * rest.resource[=].interaction[=] insert InvalidRequest
 * rest.resource[=].interaction[=] insert UnknownResourceType
 
 RuleSet: DeleteInteractionStatusCodes
-* rest.resource[=].interaction[=] insert Successful
+* rest.resource[=].interaction[=] insert SuccessfulNoContent
 * rest.resource[=].interaction[=] insert InvalidRequest
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown

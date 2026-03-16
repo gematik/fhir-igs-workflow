@@ -3,6 +3,16 @@ RuleSet: Successful
   * extension[statusCode].valueString = "200"
   * extension[description].valueString = "Successful operation"
 
+RuleSet: SuccessfulCreated
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "201"
+  * extension[description].valueString = "Resource created"
+
+RuleSet: SuccessfulNoContent
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "204"
+  * extension[description].valueString = "Successful operation without response body"
+
 RuleSet: SuccessfulWithBundle
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "200"
@@ -58,6 +68,48 @@ RuleSet: IDTokenCheck
   * extension[description].valueString = "ID-Token or Insurant-ID mismatch"
   * extension[responseType].valueString = "EPAMSOperationOutcome"
   * extension[errorCode].valueString = "SVC_IDENTITY_MISMATCH"
+
+RuleSet: Unauthorized
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "401"
+  * extension[description].valueString = "Authentication is required and has failed or has not yet been provided"
+  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[errorCode].valueString = "MSG_AUTH_REQUIRED"
+
+RuleSet: MethodNotAllowed
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "405"
+  * extension[description].valueString = "Method not allowed for this endpoint"
+  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[errorCode].valueString = "MSG_OP_NOT_ALLOWED"
+
+RuleSet: RequestTimeout
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "408"
+  * extension[description].valueString = "Request timeout"
+  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[errorCode].valueString = "MSG_TIMEOUT"
+
+RuleSet: Conflict
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "409"
+  * extension[description].valueString = "Conflict"
+  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[errorCode].valueString = "MSG_CONFLICT"
+
+RuleSet: TooManyRequests
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "429"
+  * extension[description].valueString = "Too many requests"
+  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[errorCode].valueString = "MSG_RATE_LIMIT"
+
+RuleSet: InternalServerError
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "500"
+  * extension[description].valueString = "Internal server error"
+  * extension[responseType].valueString = "EPAMSOperationOutcome"
+  * extension[errorCode].valueString = "MSG_INTERNAL_ERROR"
 
 
 RuleSet: ResourceIsNotKnown
@@ -304,26 +356,41 @@ RuleSet: HistoryInteractionStatusCodes
 
 RuleSet: SearchTypeInteractionStatusCodes
 * rest.resource[=].interaction[=] insert Successful
+* rest.resource[=].interaction[=] insert Unauthorized
 * rest.resource[=].interaction[=] insert UnknownSearchParameter
 * rest.resource[=].interaction[=] insert InvalidQueryParameters
+* rest.resource[=].interaction[=] insert MethodNotAllowed
+* rest.resource[=].interaction[=] insert RequestTimeout
+* rest.resource[=].interaction[=] insert TooManyRequests
+* rest.resource[=].interaction[=] insert InternalServerError
 * rest.resource[=].interaction[=] insert UnknownResourceType
 
 
 RuleSet: ReadInteractionStatusCodes
 * rest.resource[=].interaction[=] insert Successful
+* rest.resource[=].interaction[=] insert Unauthorized
 * rest.resource[=].interaction[=] insert InvalidRequest
+* rest.resource[=].interaction[=] insert MethodNotAllowed
+* rest.resource[=].interaction[=] insert RequestTimeout
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
 * rest.resource[=].interaction[=] insert ResourceWasDeleted
+* rest.resource[=].interaction[=] insert TooManyRequests
+* rest.resource[=].interaction[=] insert InternalServerError
 
 
 // RuleSet: SystemLevelOperationStatusCodes
 // * rest.operation[=] insert Successful
 
 RuleSet: SystemLevelOperationStatusCodes
+* rest.operation[=] insert Unauthorized
 * rest.operation[=] insert UnknownSearchParameter
 * rest.operation[=] insert InvalidQueryParameters
 * rest.operation[=] insert InvalidRequest
+* rest.operation[=] insert MethodNotAllowed
+* rest.operation[=] insert RequestTimeout
+* rest.operation[=] insert TooManyRequests
+* rest.operation[=] insert InternalServerError
 
 RuleSet: SystemLevelOperationStatusCodesWithBundle
 * rest.operation[=] insert SuccessfulWithBundle

@@ -168,7 +168,7 @@
     - Nachricht liegt im E-Rezept-Fachdienst und kann vom Empfänger abgerufen werden.
     - Bei 2D-Code ist der Token für den Empfänger verfügbar.
   interface: |
-    - FHIR REST: Communication (E-Rezept-Nachricht einstellen)
+    - [Query API: Nachricht einstellen](./query-api-communication.html)
   diagram: seq-uc-3-3-nachricht-durch-versicherten-uebermitteln
 - id: UC_3_4_Nachrichten_durch_Versicherten_empfangen
   anchor: uc-3-4-nachrichten-durch-versicherten-empfangen
@@ -188,7 +188,7 @@
   postconditions: |
     - Nachrichten liegen im FdV zur Anzeige bereit.
   interface: |
-    - FHIR REST: Communication (E-Rezept-Nachrichten abrufen)
+    - [Query API: Nachrichten abrufen](./query-api-communication.html)
   diagram: seq-uc-3-4-nachrichten-durch-versicherten-empfangen
 - id: UC_3_8_Nachricht_durch_Versicherten_loeschen
   anchor: uc-3-8-nachricht-durch-versicherten-loeschen
@@ -208,7 +208,7 @@
   postconditions: |
     - Nachrichten sind im E-Rezept-Fachdienst und im FdV gelöscht.
   interface: |
-    - FHIR REST: Communication (E-Rezept-Nachricht löschen)
+    - [Query API: Nachricht löschen](./query-api-communication.html)
   diagram: seq-uc-3-8-nachricht-durch-versicherten-loeschen
 - id: UC_4_1_E_Rezept_durch_Abgebenden_abrufen
   anchor: uc-4-1-e-rezept-durch-abgebenden-abrufen
@@ -295,7 +295,7 @@
   postconditions: |
     - Quittung liegt im Primärsystem vor.
   interface: |
-    - [Operation API: Querry API Task](./query-api-task.html)
+    - [Query API: Task](./query-api-task.html)
   diagram: seq-uc-4-8-quittung-erneut-abrufen
 - id: UC_4_17_Verordnung_erneut_abrufen
   anchor: uc-4-17-verordnung-erneut-abrufen
@@ -314,7 +314,7 @@
   postconditions: |
     - Verordnung liegt im Primärsystem vor.
   interface: |
-    - [Operation API: Querry API Task](./query-api-task.html)
+    - [Query API: Task](./query-api-task.html)
   diagram: seq-uc-4-17-verordnung-erneut-abrufen
 - id: UC_4_6_Nachrichten_durch_Abgebenden_empfangen
   anchor: uc-4-6-nachrichten-durch-abgebenden-empfangen
@@ -333,7 +333,7 @@
   postconditions: |
     - E-Rezept-Token liegt im Primärsystem vor.
   interface: |
-    - FHIR REST: Communication (E-Rezept-Nachrichten abrufen)
+    - [Query API: Nachrichten abrufen](./query-api-communication.html)
   diagram: seq-uc-4-6-nachrichten-durch-abgebenden-empfangen
 - id: UC_4_7_Nachricht_durch_Abgebenden_uebermitteln
   anchor: uc-4-7-nachricht-durch-abgebenden-uebermitteln
@@ -352,7 +352,7 @@
   postconditions: |
     - Nachricht liegt im E-Rezept-Fachdienst und kann asynchron empfangen werden.
   interface: |
-    - FHIR REST: Communication (E-Rezept-Nachricht einstellen)
+    - [Query API: Nachricht einstellen](./query-api-communication.html)
   diagram: seq-uc-4-7-nachricht-durch-abgebenden-uebermitteln
 - id: UC_4_9_Nachricht_durch_Abgebenden_loeschen
   anchor: uc-4-9-nachricht-durch-abgebenden-loeschen
@@ -372,5 +372,5 @@
   postconditions: |
     - Nachrichten sind im E-Rezept-Fachdienst und im Primärsystem gelöscht.
   interface: |
-    - FHIR REST: Communication (E-Rezept-Nachricht löschen)
+    - [Query API: Nachricht löschen](./query-api-communication.html)
   diagram: seq-uc-4-9-nachricht-durch-abgebenden-loeschen
