@@ -13,7 +13,7 @@ siehe [Datenmodell Payload für Communication-Query](./query-api-communication-r
 #### Nachricht versenden
 
 <!-- A_21373 -->
-<requirement conformance="SHALL" title="PS abgebende LEI: Nachricht versenden - Externe URL ausschließlich für Einlösung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-219" title="PS abgebende LEI: Nachricht versenden - Externe URL ausschließlich für Einlösung" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>
