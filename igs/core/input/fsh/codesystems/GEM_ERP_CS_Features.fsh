@@ -5,7 +5,7 @@ Description: "Dieses CodeSystem beschreibt serverseitige Feature-Flags des E-Rez
 * insert CodeSystem(GEM_ERP_CS_Features)
 * ^content = #complete
 
-* #eu-prescription "EU cross-border prescription support" "Unterstützung grenzüberschreitender E-Rezept-Prozesse für EU-Workflows."
-* #medication-dispense-v2 "MedicationDispense V2 profile support" "Unterstützung für MedicationDispense Version 2 inklusive zugehöriger Validierungsregeln."
-* #subscription "Push notification via Subscription resource" "Unterstützung für Benachrichtigungen über die FHIR-Ressource Subscription."
-* #multi-prescription "Mehrfachverordnung (MVO) support" "Unterstützung für Mehrfachverordnung (MVO) inklusive workflowrelevanter Fachlogik."
+* #eu-prescription "EU-Feature" "Unterstützung grenzüberschreitender E-Rezept-Prozesse."
+* #t-prescription-transfer "Übertragung digitaler Durchschlag" "Unterstüztung der Übertragung von digitalen Durchschlägen an den BfArM Webdienst"
+
+//TODO: Überlegen, ob das hier auch ein externes Valueset sein sollte
