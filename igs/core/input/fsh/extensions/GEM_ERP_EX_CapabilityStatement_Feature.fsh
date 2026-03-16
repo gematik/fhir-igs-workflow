@@ -1,7 +1,7 @@
 Extension: GEM_ERP_EX_CapabilityStatement_Feature
 Id: GEM-ERP-EX-CapabilityStatement-Feature
 Title: "GEM ERP EX CapabilityStatement Feature"
-Description: "Diese Compound-Extension deklariert ein einzelnes Feature eines konkreten Fachdienst-Deployments. Das Teilfeld definition verweist per Canonical auf den fachlichen Feature-Bezeichner (Workflow-Typ oder sonstiges Feature), waehrend value den aktuellen Aktivierungszustand dieses Features am betrachteten Endpoint beschreibt."
+Description: "Diese Compound-Extension deklariert ein einzelnes Feature eines konkreten Fachdienst-Deployments. Das Teilfeld definition verweist per Canonical auf den fachlichen Feature-Bezeichner (Workflow-Typ oder sonstiges Feature), während value den aktuellen Aktivierungszustand dieses Features am betrachteten Endpoint beschreibt."
 * insert StructureDefinition(GEM_ERP_EX_CapabilityStatement_Feature)
 * ^context[0].type = #element
 * ^context[=].expression = "CapabilityStatement"
@@ -13,9 +13,9 @@ Description: "Diese Compound-Extension deklariert ein einzelnes Feature eines ko
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #closed
-* extension ^short = "Container fuer die Child-Slices definition und value"
-* extension ^definition = "Enthaelt die verpflichtenden Child-Slices fuer Feature-Referenz und Feature-Status."
-* extension ^comment = "Nur die Slices definition und value sind zulaessig."
+* extension ^short = "Container für die Child-Slices definition und value"
+* extension ^definition = "Enthält die verpflichtenden Child-Slices für Feature-Referenz und Feature-Status."
+* extension ^comment = "Nur die Slices definition und value sind zulässig."
 
 * extension contains
     definition 1..1 MS and
@@ -28,8 +28,8 @@ Description: "Diese Compound-Extension deklariert ein einzelnes Feature eines ko
 * extension[definition].valueCanonical 1..1
 * extension[definition].valueCanonical from GEM_ERP_VS_CapabilityStatement_Feature (required)
 * extension[definition].valueCanonical ^short = "Feature-Canonical"
-* extension[definition].valueCanonical ^definition = "Canonical URL eines Feature-Konzepts aus den zulaessigen CodeSystemen des Feature-ValueSets."
-* extension[definition].valueCanonical ^comment = "Fuer Workflow-Typen auf GEM_ERP_CS_FlowType, fuer sonstige Features auf GEM_ERP_CS_Features referenzieren."
+* extension[definition].valueCanonical ^definition = "Canonical URL eines Feature-Konzepts aus den zulässigen CodeSystemen des Feature-ValueSets."
+* extension[definition].valueCanonical ^comment = "Für Workflow-Typen auf GEM_ERP_CS_FlowType, für sonstige Features auf GEM_ERP_CS_Features referenzieren."
 
 * extension[value] ^short = "Aktivierungszustand des Features"
 * extension[value] ^definition = "Beschreibt, ob das in definition referenzierte Feature in dieser Umgebung aktiv ist."
@@ -38,4 +38,4 @@ Description: "Diese Compound-Extension deklariert ein einzelnes Feature eines ko
 * extension[value].valueBoolean 1..1
 * extension[value].valueBoolean ^short = "Feature aktiv (true/false)"
 * extension[value].valueBoolean ^definition = "Boolean-Wert zur Laufzeitaktivierung des referenzierten Features."
-* extension[value].valueBoolean ^comment = "Soll den effektiven Betriebszustand der referenzierten Funktionalitaet wiedergeben."
+* extension[value].valueBoolean ^comment = "Soll den effektiven Betriebszustand der referenzierten Funktionalität wiedergeben."
