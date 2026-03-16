@@ -145,6 +145,9 @@
       <li>
         <a href="authentifizierung-client.html">Authentifizierung von Clientsystemen</a>
       </li>
+      <li>
+        <a href="health-check.html">Health Check</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -274,7 +277,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Clientsysteme nutzen TLS-Verbindungen für die Kommunikation zu den Diensten der TI. Es verbindet sich mit dem E-Rezept-Fachdienst und einem Identity Provider.</p>
 
 <!-- A_19451-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-382" title="CS: Lokalisierung E-Rezept-Fachdienst" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-390" title="CS: Lokalisierung E-Rezept-Fachdienst" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung" />
@@ -296,7 +299,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Die Abfrage beim Namensdienst der TI erfolgt über einen DNS-Lookup. Hierfür muss der Konnektor als DNS-Resolver konfiguriert sein.</p>
 
 <!-- A_19744-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-383" title="CS: Endpunkt Schnittstelle E-Rezept-Fachdienst" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-391" title="CS: Endpunkt Schnittstelle E-Rezept-Fachdienst" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung" />
@@ -318,7 +321,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Die URL des Downloadpunktes im zentralen Netz der TI lautet: “https://idp.zentral.idp.splitdns.ti-dienste.de/.well-known/openid-configuration” [gemSpec_IDP_Dienst#A_19874-*].</p>
 
 <!-- A_19234-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-384" title="CS: Kommunikation über TLS-Verbindung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-392" title="CS: Kommunikation über TLS-Verbindung" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung" />
@@ -338,7 +341,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.</p>
 
 <!-- A_19235-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-385" title="CS: Unzulässige TLS-Verbindungen ablehnen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-393" title="CS: Unzulässige TLS-Verbindungen ablehnen" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung" />
@@ -355,8 +358,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     Das Clientsystem des E-Rezept-Fachdienst MUSS bei jedem Verbindungsaufbau zum E-Rezept-Fachdienst oder IDP-Dienst diesen anhand seines TLS-Zertifikats authentifizieren und MUSS die Verbindungen ablehnen, falls die Authentifizierung fehlschlägt.
 </requirement>
 
-<!-- A_20015-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-386" title="CS: HTTP-Header user-agent" version="0">
+<!-- A_20015-02, A_20014-04 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-394" title="CS: HTTP-Header user-agent" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung" />
@@ -370,6 +373,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="Anb_NCPeH_FD">
         <testProcedure id="Produkttest" />
     </actor>
+    <actor name="eRp_FdV">
+        <testProcedure id="Produkttest" />
+    </actor>
     Das Clientsystem des E-Rezept-Fachdienstes MUSS in alle HTTP-Requests an den E-Rezept-Fachdienst und IDP-Dienst im äußeren HTTP-Request den HTTP-Header user-agent gemäß [RFC7231] mit &lt;Produktname&gt;/&lt;Produktversion&gt; &lt;Herstellername&gt;/&lt;client_id&gt; mit 
     <ul>
     <li>&lt;Produktname&gt; gemäß eigener Definition, Länge 1-20 Zeichen, Zeichenvorrat [0-9a-zA-Z\-\.]</li>
@@ -380,7 +386,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 &lt;/requirement&gt;
 
 <!-- A_21568-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-387" title="CS: HTTP-Header X-erp-user" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-395" title="CS: HTTP-Header X-erp-user" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung" />
@@ -406,8 +412,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </ul>
 </requirement>
 
-<!-- A_21569-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-388" title="CS: HTTP-Header X-erp-resource" version="0">
+<!-- A_21569-01, A_21570-01  -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-396" title="CS: HTTP-Header X-erp-resource" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung" />
@@ -433,6 +439,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <th>X-erp-resource</th>
 </tr>
 <tr>
+<td>Query API: AuditEvent</td>
+<td>AuditEvent</td>
+</tr>
+<tr>
+<td>Query API: ChargeItem</td>
+<td>ChargeItem</td>
+</tr>
+<tr>
+<td>Query API: Consent</td>
+<td>Consent</td>
+</tr>
+<tr>
 <td>Query API: Communication</td>
 <td>Communication</td>
 </tr>
@@ -453,10 +471,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <td>Task</td>
 </tr>
 <tr>
-<td>Query API: ChargeItem</td>
-<td>ChargeItem</td>
-</tr>
-<tr>
 <td>POST /$get-eu-prescriptions</td>
 <td>Prescription</td>
 </tr>
@@ -472,7 +486,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 Die Kommunikation zum E-Rezept-Fachdienst wird zusätzlich zu TLS über einen sicheren Kanal (Verschlüsselung auf Http-Ebene) zwischen dem PS und der Vertrauenswürdigen Ausführungsumgebung (VAU) im E-Rezept-Fachdienst gesichert. 
 
 <!-- A_19741-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-389" title="CS: Umsetzung sicherer Kanal zur VAU des E-Rezept-Fachdienstes" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-397" title="CS: Umsetzung sicherer Kanal zur VAU des E-Rezept-Fachdienstes" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung" />
@@ -554,7 +568,7 @@ Hinweis zum Fehlerhandling: Nur wenn der äußere Response der E-Rezept-Fachdien
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 16, 2026 17:04+0000">2026-03-16</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.workflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 16, 2026 23:02+0000">2026-03-16</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

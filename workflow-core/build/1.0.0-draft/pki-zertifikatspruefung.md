@@ -37,7 +37,7 @@ Clientsysteme verwenden bei den in TAB_ILFERP_012 dargestellten Aktivitäten Zer
   * Nutzung: aktiv
 * Aktivität: Nur für PS der abgebenden LEI: Signaturzertifikat E-Rezept-Fachdienst
   * Zertifikat der TI: ja
-  * Zertifikatstyp: C.FD.SIG
+  * Zertifikatstyp: C.FD.OSIG
   * Rollen-OID: oid_erezept
   * Nutzung: aktiv
 
