@@ -3,10 +3,10 @@ Für den Empfang von Push Notifications in einem FdV muss sich die App-Instanz a
 
 ### Nachricht
 
-|HTTP-Methode|Ergebnis der Anfrage|
-|---|---|
-|GET|Registrierungen abrufen|
-|POST|FdV-Instanz registrieren|
+| HTTP-Methode | Ergebnis der Anfrage     |
+| ------------ | ------------------------ |
+| GET          | Registrierungen abrufen  |
+| POST         | FdV-Instanz registrieren |
 
 ### Anforderungen an Schnittstelle
 
@@ -37,6 +37,11 @@ Ist `kind` nicht `null`, wird der Pusher mit dieser `app_id` und `pushkey` für 
 	<div id="Formats">
 			<div data-value="application/json"></div>
 	</div>
+	<div id="Response-Examples">
+		<div data-name="application/json" data-type="JSON">
+			{% include pushers-list-response-example.json %}
+		</div>
+	</div>
 	<div id="Responses">
 		<div data-code="200" data-error-code="" data-response-type="application/json">Successful operation</div>
 		<div data-code="400" data-error-code="badRequest" data-response-type="application/fhir+json">Bad Request</div>
@@ -60,6 +65,19 @@ Ist `kind` nicht `null`, wird der Pusher mit dieser `app_id` und `pushkey` für 
 	</div>
 	<div id="Formats">
 			<div data-value="application/json"></div>
+	</div>
+	<div id="Request-Examples">
+		<div data-name="application/json" data-type="JSON">
+			{% include pushers-set-registration-example.json %}
+		</div>
+		<div data-name="application/json" data-type="JSON">
+			{% include pushers-set-deletion-example.json %}
+		</div>
+	</div>
+	<div id="Response-Examples">
+		<div data-name="application/json" data-type="JSON">
+			{% include empty-object-response-example.json %}
+		</div>
 	</div>
 	<div id="Responses">
 		<div data-code="200" data-error-code="" data-response-type="application/json">Successful operation</div>
