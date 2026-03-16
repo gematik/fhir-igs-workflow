@@ -56,7 +56,7 @@ RuleSet: UnknownResourceType
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_UNKNOWN_TYPE"
 
-RuleSet: IDTokenCheck
+RuleSet: IDTokenCheck //TODO: Check
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "403"
   * extension[description].valueString = "ID-Token or Insurant-ID mismatch"
@@ -83,13 +83,6 @@ RuleSet: RequestTimeout
   * extension[description].valueString = "Request timeout"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_TIMEOUT"
-
-RuleSet: Conflict
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "409"
-  * extension[description].valueString = "Conflict"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "MSG_CONFLICT"
 
 RuleSet: TooManyRequests
 * extension[responseInfo][+]
@@ -129,53 +122,13 @@ RuleSet: EmptyList
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_NO_MATCH"
 
-// Medication Service specific Error
-RuleSet: WrongStatusParameter
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "400"
-  * extension[description].valueString = "Parameter with wrong status"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "MEDSVC_STATUS_INVALID"
-
-RuleSet: ParameterInvalidContent
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "400"
-  * extension[description].valueString = "Parameter contains not allowed content"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "MEDSVC_PARAMETERS_INVALID_CONTENT"
-
-
+// TIFlow Related Errors
 RuleSet: DosageInvalid
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "400"
   * extension[description].valueString = "Invalid dosage structure or content"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "MEDSVC_DOSAGE_INVALID"
-
-
-RuleSet: VersionAwareConflict
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "409"
-  * extension[description].valueString = "Update Conflict (server current version = %s, client version referenced = %s)"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "MSG_VERSION_AWARE_CONFLICT"
-
-
-RuleSet: NoValidStructure
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "422"
-  * extension[description].valueString = "Invalid Data Structure in Medication Service"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "MEDSVC_NO_VALID_STRUCTURE"
-
-
-RuleSet: OrgHeaderProfileMismatch
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "422"
-  * extension[description].valueString = "Profile mismatch in header Organization"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "SVC_ORG_HEADER_PROFILE_MISMATCH"
-
+  * extension[errorCode].valueString = "TIFLOW_DOSAGE_INVALID" //TODO: TI Common
 
 RuleSet: OpNotAllowed
 * extension[responseInfo][+]
@@ -183,78 +136,6 @@ RuleSet: OpNotAllowed
   * extension[description].valueString = "Operation %s not allowed for resource %s"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_OP_NOT_ALLOWED"
-
-
-RuleSet: EMPChronologyIdMismatch
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "409"
-  * extension[description].valueString = "Mismatch between acknowledged and current eMP chronology ID"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "MEDSVC_EMP_CHRONOLOGY_ID_MISMATCH"
-
-
-RuleSet: EMPLinkingNotSuccessful
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "400"
-  * extension[description].valueString = "MedicationStatement could not be linked to an eMP-Entry successfully"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "LINKING_NOT_SUCCESSFUL"
-
-
-RuleSet: EMPUnlinkingNotSuccessful
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "400"
-  * extension[description].valueString = "MedicationStatement could not be unlinked from an eMP-Entry successfully"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "UNLINKING_NOT_SUCCESSFUL"
-
-
-RuleSet: OperationOutsideBatch
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "405"
-  * extension[description].valueString = "The operation can only be executed within a batch context"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "MEDSVC_OPERATION_OUTSIDE_BATCH"
-
-
-RuleSet: AlreadyLinked
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "400"
-  * extension[description].valueString = "Already linked to another instance"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "MEDSVC_ALREADY_LINKED"
-
-
-RuleSet: EMPEntryAlreadyExists
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "409"
-  * extension[description].valueString = "eMP entry already exists"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "MEDSVC_EMP_ENTRY_ALREADY_EXISTS"
-
-
-RuleSet: EMPNoExist
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "404"
-  * extension[description].valueString = "eMP does not exist"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "MEDSVC_EMP_NO_EXIST"
-
-
-RuleSet: X-Requesting-Organization (required)
-* extension[header][+]
-  * extension[name].valueString = "X-Requesting-Organization"
-  * extension[type].valueString = "string"
-  * extension[description].valueString = "Base64 encoded FHIR Organization resource in JSON format used to identify the originator of the request"
-  * extension[format].valueString = "base64(fhir+json:Organization)"
-  * extension[required].valueBoolean = {required}
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "431"
-  * extension[description].valueString = "Requesting Organization Header exceeds maximum size"
-  * extension[responseType].valueString = "application/json"
-  * extension[errorCode].valueString = "SVC_ORG_HEADER_TOO_LARGE"
-
-
 
 RuleSet: ImportCapabilityStatment (capabilityStatement, expectation)
 * imports[+] = Canonical({capabilityStatement})
@@ -372,10 +253,6 @@ RuleSet: ReadInteractionStatusCodes
 * rest.resource[=].interaction[=] insert TooManyRequests
 * rest.resource[=].interaction[=] insert InternalServerError
 
-
-// RuleSet: SystemLevelOperationStatusCodes
-// * rest.operation[=] insert Successful
-
 RuleSet: SystemLevelOperationStatusCodes
 * rest.operation[=] insert Unauthorized
 * rest.operation[=] insert UnknownSearchParameter
@@ -390,11 +267,9 @@ RuleSet: SystemLevelOperationStatusCodesWithBundle
 * rest.operation[=] insert SuccessfulWithBundle
 * insert SystemLevelOperationStatusCodes
 
-
 RuleSet: SystemLevelQueryOperationStatusCodesWithNormalSuccess
 * rest.operation[=] insert Successful
 * insert SystemLevelOperationStatusCodes
-
 
 RuleSet: SystemLevelOperationStatusCodesWithParameters
 * rest.operation[=] insert SuccessfulWithParameters
@@ -414,115 +289,11 @@ RuleSet: SystemLevelOperationStatusCodesGeteMP
 
 
 RuleSet: SystemLevelPostOperation
-* rest.operation[=] insert X-Requesting-Organization(true)
 * rest.operation[=] insert SuccessfulWithParameters
 * rest.operation[=] insert IDTokenCheck
-* rest.operation[=] insert OrgHeaderProfileMismatch
-
-
-RuleSet: SystemLevelPostEMLOperation
-* insert SystemLevelPostOperation
-* rest.operation[=] insert DosageInvalid
-* rest.operation[=] insert NoValidStructure
-* rest.operation[=] insert WrongStatusParameter
-
-
-RuleSet: SystemLevelUpdateEMLOperation
-* insert SystemLevelPostOperation
-* rest.operation[=] insert VersionAwareConflict
-* rest.operation[=] insert ResourceIsNotKnown
-* rest.operation[=] insert OpNotAllowed
-* rest.operation[=] insert DosageInvalid
-* rest.operation[=] insert NoValidStructure
-* rest.operation[=] insert WrongStatusParameter
-
-
-RuleSet: SystemLevelPostEMPOperation
-* insert SystemLevelPostOperation
-* rest.operation[=] insert DosageInvalid
-* rest.operation[=] insert NoValidStructure
-* rest.operation[=] insert WrongStatusParameter
-* rest.operation[=] insert EMPChronologyIdMismatch
-* rest.operation[=] insert ResourceIsNotKnown
-* rest.operation[=] insert ResourceWasDeleted
-* rest.operation[=] insert EMPEntryAlreadyExists
-
-
-// RuleSet: SystemLevelPostEMPByMedicationReferenceOperation
-// * insert SystemLevelPostOperation
-// * rest.operation[=] insert ResourceIsNotKnown
-// * rest.operation[=] insert ResourceWasDeleted
-// * rest.operation[=] insert DosageInvalid
-// * rest.operation[=] insert NoValidStructure
-// * rest.operation[=] insert WrongStatusParameter
-// * rest.operation[=] insert EMPChronologyIdMismatch
-
-
-RuleSet: SystemLevelUpdateEMPOperation
-* insert SystemLevelPostOperation
-* rest.operation[=] insert VersionAwareConflict
-* rest.operation[=] insert ResourceIsNotKnown
-* rest.operation[=] insert DosageInvalid
-* rest.operation[=] insert NoValidStructure
-* rest.operation[=] insert WrongStatusParameter
-* rest.operation[=] insert EMPChronologyIdMismatch
-
-
-RuleSet: SystemLevelPostBatchEMPOperation
-* rest.operation[=] insert X-Requesting-Organization(true)
-* rest.operation[=] insert SuccessfulWithBundle
-* rest.operation[=] insert InvalidRequest
-* rest.operation[=] insert EMPChronologyIdMismatch
-* rest.operation[=] insert DosageInvalid
-* rest.operation[=] insert NoValidStructure
-* rest.operation[=] insert OrgHeaderProfileMismatch
-* rest.operation[=] insert WrongStatusParameter
-* rest.operation[=] insert VersionAwareConflict
-* rest.operation[=] insert ResourceIsNotKnown
-
-
-RuleSet: SystemLevelPostEMPCommitOperation
-// * rest.operation[=] insert X-Requesting-Organization(true)
-* rest.operation[=] insert SuccessfulWithParameters
-* rest.operation[=] insert OperationOutsideBatch
-* rest.operation[=] insert EMPChronologyIdMismatch
 
 // Operations on Type and Instance Level ([base]/Medication/$operation or [base]/Medication/[resId]/$operation)
 
 RuleSet: TypeLevelPostOperation
-* rest.resource[=].operation[=] insert X-Requesting-Organization(true)
 * rest.resource[=].operation[=] insert SuccessfulWithParameters
 * rest.resource[=].operation[=] insert IDTokenCheck
-* rest.resource[=].operation[=] insert OrgHeaderProfileMismatch
-
-
-RuleSet: TypeLevelPostEMLOperation
-* insert TypeLevelPostOperation
-* rest.resource[=].operation[=] insert NoValidStructure
-* rest.resource[=].operation[=] insert DosageInvalid
-* rest.resource[=].operation[=] insert WrongStatusParameter
-
-
-RuleSet: TypeLevelCancelEMLOperation
-* insert TypeLevelPostOperation
-* rest.resource[=].operation[=] insert ResourceIsNotKnown
-* rest.resource[=].operation[=] insert OpNotAllowed
-
-
-RuleSet: TypeLevelLinkEMPOperation
-* insert TypeLevelPostOperation
-* rest.resource[=].operation[=] insert NoValidStructure
-* rest.resource[=].operation[=] insert ResourceIsNotKnown
-* rest.resource[=].operation[=] insert ResourceWasDeleted
-* rest.resource[=].operation[=] insert WrongStatusParameter
-* rest.resource[=].operation[=] insert EMPLinkingNotSuccessful
-* rest.resource[=].operation[=] insert AlreadyLinked
-
-
-RuleSet: TypeLevelUnlinkEMPOperation
-* insert TypeLevelPostOperation
-* rest.resource[=].operation[=] insert NoValidStructure
-* rest.resource[=].operation[=] insert ResourceIsNotKnown
-* rest.resource[=].operation[=] insert ResourceWasDeleted
-* rest.resource[=].operation[=] insert OpNotAllowed
-* rest.resource[=].operation[=] insert EMPUnlinkingNotSuccessful

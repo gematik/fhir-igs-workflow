@@ -165,29 +165,23 @@ RuleSet: SubscriptionInteraction(expectation)
 * insert CapResourceInteraction(#create, {expectation})
 * insert CreateInteractionStatusCodes
 
-RuleSet: TaskPostOperationStatusCodes
+RuleSet: TaskPostOperationStatusCodes //TODO: Alle Fehlercodes überarbeiten
 * rest.resource[=].operation[=] insert Successful
 * rest.resource[=].operation[=] insert InvalidRequest
 * rest.resource[=].operation[=] insert ResourceIsNotKnown
 * rest.resource[=].operation[=] insert ResourceWasDeleted
-* rest.resource[=].operation[=] insert Conflict
-* rest.resource[=].operation[=] insert WrongStatusParameter
 
 RuleSet: TaskCreateOperationStatusCodes
 * rest.resource[=].operation[=] insert SuccessfulCreated
 * rest.resource[=].operation[=] insert InvalidRequest
 * rest.resource[=].operation[=] insert ResourceIsNotKnown
 * rest.resource[=].operation[=] insert ResourceWasDeleted
-* rest.resource[=].operation[=] insert Conflict
-* rest.resource[=].operation[=] insert WrongStatusParameter
 
 RuleSet: TaskNoContentOperationStatusCodes
 * rest.resource[=].operation[=] insert SuccessfulNoContent
 * rest.resource[=].operation[=] insert InvalidRequest
 * rest.resource[=].operation[=] insert ResourceIsNotKnown
 * rest.resource[=].operation[=] insert ResourceWasDeleted
-* rest.resource[=].operation[=] insert Conflict
-* rest.resource[=].operation[=] insert WrongStatusParameter
 
 RuleSet: CreateInteractionStatusCodes
 * rest.resource[=].interaction[=] insert SuccessfulCreated
