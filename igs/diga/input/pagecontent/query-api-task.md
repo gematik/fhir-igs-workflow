@@ -7,23 +7,19 @@ Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource _Task_ wird ü
 |Akteur|HTTP-Methode|Ergebnis der Anfrage|
 |---|---|---|
 |Versicherter|GET|Liste von Task abrufen|
-|Versicherter|GET /<id>|Spezifischen Task abrufen|
-|Kostenträger|GET /<id>?ac=|Recovery Secret|
-|Kostenträger|GET /<id>?secret=|Quittung erneut abrufen|
-|Versicherter|GET /<id>|Spezifischen Task abrufen|
+|Versicherter|GET /&#60;id&#62;|Spezifischen Task abrufen|
+|Kostenträger|GET /&#60;id&#62;?ac=|Recovery Secret|
+|Kostenträger|GET /&#60;id&#62;?secret=|Quittung erneut abrufen|
 |Versicherter|PATCH|Task markieren|
 
 ### Anforderungen an Schnittstelle
 
 - [FD-Anforderungen zur Task-Query](./query-api-task-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
 - [FdV-Anforderungen für Task-Query](./query-api-task-req-fdv.html): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
-- [AVS-Anforderungen für Task-Query](./query-api-task-req-avs.html): Anforderungen an das AVS zur Nutzung der Schnittstelle.
+- [KTR-Anforderungen für Task-Query](./query-api-task-req-ktr.html): Anforderungen an das Clientsystem Kostenträger zur Nutzung der Schnittstelle.
 
+#### API Beschreibung
 
-Die Query API für Task beschreibt den lesenden Zugriff auf Tasks.
-Der Versicherte ruft die Liste aller seiner Verordnungen inklusive DiGA-Verordnungen ab.
-Der Versicherte kann mit Referenz auf eine Task-ID eine einzelne Verordnung abrufen.
+- [API-ERP: Abruf der DiGA-Verordnung durch den Versicherten](https://github.com/gematik/api-erp/blob/master/docs/erp_diga.adoc#abrufen-der-diga-verordnung)
+- [API-ERP: E-Rezept erneut abrufen durch den Kostenträger](https://github.com/gematik/api-erp/blob/master/docs/erp_abrufen.adoc#e-rezept-erneut-abrufen)
 
-Der Kostenträger kann unter Angabe der Task-ID und des ACCESS_CODE die Daten einer einzelnen Verordnung abrufen und somit insbesondere den Anwendungfall "Recovery Secret" umsetzen.
-
-Der Kostenträger kann unter Angabe der Task-ID und des Secrets die Daten einer einzelnen Verordnung abrufen und somit insbesondere den Anwendungfall "Quittung erneut abrufen" umsetzen.
