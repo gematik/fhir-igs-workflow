@@ -236,7 +236,7 @@ umsetzen.
 * Bei 2D-Code ist der Token für den Empfänger verfügbar.
 
 * Beschreibung: Schnittstellen
-  * Ein Versicherter oder Vertreter übermittelt einen E-Rezept-Token und/oder eine Nachricht an eine Apotheke oder einen Vertreter, wahlweise über die TI oder als 2D-Code.: * FHIR REST: Communication (E-Rezept-Nachricht einstellen)
+  * Ein Versicherter oder Vertreter übermittelt einen E-Rezept-Token und/oder eine Nachricht an eine Apotheke oder einen Vertreter, wahlweise über die TI oder als 2D-Code.: * [Query API: Nachricht einstellen](./query-api-communication.md)
 
 * Beschreibung: Relevante(r) Sektor(en)
   * Ein Versicherter oder Vertreter übermittelt einen E-Rezept-Token und/oder eine Nachricht an eine Apotheke oder einen Vertreter, wahlweise über die TI oder als 2D-Code.:  VERSICHERTER 
@@ -281,7 +281,7 @@ Sobald die Telematik-ID im E-Rezept-FdV vorliegt, kann der Versicherte die Veror
   * Ein Versicherter oder Vertreter empfängt Nachrichten von abgebenden LEI über den E-Rezept-Fachdienst.: * Nachrichten liegen im FdV zur Anzeige bereit.
 
 * Beschreibung: Schnittstellen
-  * Ein Versicherter oder Vertreter empfängt Nachrichten von abgebenden LEI über den E-Rezept-Fachdienst.: * FHIR REST: Communication (E-Rezept-Nachrichten abrufen)
+  * Ein Versicherter oder Vertreter empfängt Nachrichten von abgebenden LEI über den E-Rezept-Fachdienst.: * [Query API: Nachrichten abrufen](./query-api-communication.md)
 
 * Beschreibung: Relevante(r) Sektor(en)
   * Ein Versicherter oder Vertreter empfängt Nachrichten von abgebenden LEI über den E-Rezept-Fachdienst.:  VERSICHERTER 
@@ -306,7 +306,7 @@ Sobald die Telematik-ID im E-Rezept-FdV vorliegt, kann der Versicherte die Veror
   * Der Versicherte löscht von ihm übermittelte Nachrichten an Apotheken oder Versicherte.: * Nachrichten sind im E-Rezept-Fachdienst und im FdV gelöscht.
 
 * Beschreibung: Schnittstellen
-  * Der Versicherte löscht von ihm übermittelte Nachrichten an Apotheken oder Versicherte.: * FHIR REST: Communication (E-Rezept-Nachricht löschen)
+  * Der Versicherte löscht von ihm übermittelte Nachrichten an Apotheken oder Versicherte.: * [Query API: Nachricht löschen](./query-api-communication.md)
 
 * Beschreibung: Relevante(r) Sektor(en)
   * Der Versicherte löscht von ihm übermittelte Nachrichten an Apotheken oder Versicherte.:  VERSICHERTER 
@@ -414,7 +414,7 @@ Sobald die Telematik-ID im E-Rezept-FdV vorliegt, kann der Versicherte die Veror
   * Die Verordnung wird erneut abgerufen, falls die Übertragung beim ersten Abruf mit $accept fehlgeschlagen ist.: * Verordnung liegt im Primärsystem vor.
 
 * Beschreibung: Schnittstellen
-  * Die Verordnung wird erneut abgerufen, falls die Übertragung beim ersten Abruf mit $accept fehlgeschlagen ist.: * [Operation API: Querry API Task](./query-api-task.md)
+  * Die Verordnung wird erneut abgerufen, falls die Übertragung beim ersten Abruf mit $accept fehlgeschlagen ist.: * [Query API: Task](./query-api-task.md)
 
 * Beschreibung: Relevante(r) Sektor(en)
   * Die Verordnung wird erneut abgerufen, falls die Übertragung beim ersten Abruf mit $accept fehlgeschlagen ist.:  KOSTENTRÄGER 
@@ -438,7 +438,7 @@ Sobald die Telematik-ID im E-Rezept-FdV vorliegt, kann der Versicherte die Veror
   * Die Quittung wird erneut abgerufen, falls die Übertragung beim ersten Abruf fehlgeschlagen ist.: * Quittung liegt im Primärsystem vor.
 
 * Beschreibung: Schnittstellen
-  * Die Quittung wird erneut abgerufen, falls die Übertragung beim ersten Abruf fehlgeschlagen ist.: * [Operation API: Querry API Task](./query-api-task.md)
+  * Die Quittung wird erneut abgerufen, falls die Übertragung beim ersten Abruf fehlgeschlagen ist.: * [Query API: Task](./query-api-task.md)
 
 * Beschreibung: Relevante(r) Sektor(en)
   * Die Quittung wird erneut abgerufen, falls die Übertragung beim ersten Abruf fehlgeschlagen ist.:  KOSTENTRÄGER 
@@ -462,7 +462,7 @@ Sobald die Telematik-ID im E-Rezept-FdV vorliegt, kann der Versicherte die Veror
   * Eine abgebende LEI empfängt E-Rezept-Token über die TI oder optisch als 2D-Code.: * E-Rezept-Token liegt im Primärsystem vor.
 
 * Beschreibung: Schnittstellen
-  * Eine abgebende LEI empfängt E-Rezept-Token über die TI oder optisch als 2D-Code.: * FHIR REST: Communication (E-Rezept-Nachrichten abrufen)
+  * Eine abgebende LEI empfängt E-Rezept-Token über die TI oder optisch als 2D-Code.: * [Query API: Nachrichten abrufen](./query-api-communication.md)
 
 * Beschreibung: Relevante(r) Sektor(en)
   * Eine abgebende LEI empfängt E-Rezept-Token über die TI oder optisch als 2D-Code.:  KOSTENTRÄGER 
@@ -486,7 +486,7 @@ Sobald die Telematik-ID im E-Rezept-FdV vorliegt, kann der Versicherte die Veror
   * Die abgebende LEI antwortet auf eine Nachricht eines Versicherten oder Vertreters.: * Nachricht liegt im E-Rezept-Fachdienst und kann asynchron empfangen werden.
 
 * Beschreibung: Schnittstellen
-  * Die abgebende LEI antwortet auf eine Nachricht eines Versicherten oder Vertreters.: * FHIR REST: Communication (E-Rezept-Nachricht einstellen)
+  * Die abgebende LEI antwortet auf eine Nachricht eines Versicherten oder Vertreters.: * [Query API: Nachricht einstellen](./query-api-communication.md)
 
 * Beschreibung: Relevante(r) Sektor(en)
   * Die abgebende LEI antwortet auf eine Nachricht eines Versicherten oder Vertreters.:  KOSTENTRÄGER 
@@ -511,7 +511,7 @@ Sobald die Telematik-ID im E-Rezept-FdV vorliegt, kann der Versicherte die Veror
   * Der Abgebende löscht von ihm übermittelte Nachrichten an Versicherte.: * Nachrichten sind im E-Rezept-Fachdienst und im Primärsystem gelöscht.
 
 * Beschreibung: Schnittstellen
-  * Der Abgebende löscht von ihm übermittelte Nachrichten an Versicherte.: * FHIR REST: Communication (E-Rezept-Nachricht löschen)
+  * Der Abgebende löscht von ihm übermittelte Nachrichten an Versicherte.: * [Query API: Nachricht löschen](./query-api-communication.md)
 
 * Beschreibung: Relevante(r) Sektor(en)
   * Der Abgebende löscht von ihm übermittelte Nachrichten an Versicherte.:  KOSTENTRÄGER 
