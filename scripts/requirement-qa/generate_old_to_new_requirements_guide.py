@@ -11,7 +11,7 @@ Output:
 Links:
 - Old requirement: https://gemspec.gematik.de/search/index.html?<req-id>
 - New requirement: placeholder URL based on mapped file location
-  (default placeholder base: {{NEW_IG_BASE_URL}})
+  (default placeholder base: {{NEW_IG_BASE_URL}}) //TODO: set base url for new IGs!
 """
 
 from __future__ import annotations
