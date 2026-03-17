@@ -3,8 +3,8 @@ InstanceOf: TICapabilityStatement
 Usage: #definition
 
 * id = "erp-fachdienst-client-diga"
-* title = "ERP DiGA CapabilityStatement fuer Clients des E-Rezept-Fachdienst"
-* description = "Dieses CapabilityStatement legt die Anforderungen an Clients des E-Rezept-Fachdienst fuer Digitale Gesundheitsanwendungen fest."
+* title = "ERP DiGA CapabilityStatement für Clients des E-Rezept-Fachdienst"
+* description = "Dieses CapabilityStatement legt die Anforderungen an Clients des E-Rezept-Fachdienst für Digitale Gesundheitsanwendungen fest."
 * contact
   * telecom
     * system = #url

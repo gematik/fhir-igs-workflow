@@ -3,8 +3,8 @@ InstanceOf: TICapabilityStatement
 Usage: #definition
 
 * id = "erp-fachdienst-server-rx"
-* title = "ERP Rx CapabilityStatement fuer den E-Rezept-Fachdienst"
-* description = "CapabilityStatement fuer den E-Rezept-Fachdienst (Arzneimittel-Workflow)"
+* title = "ERP Rx CapabilityStatement für den E-Rezept-Fachdienst"
+* description = "CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)"
 * contact
   * telecom
     * system = #url
@@ -25,7 +25,7 @@ Usage: #definition
 
 RuleSet: TaskInteraction(expectation)
 * insert CapSupportResource(Task, #SHALL)
-* insert CapSupportProfileUrl($erp-task, #SHALL)
+* insert CapSupportProfileUrl(https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task, #SHALL)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
 * insert SearchTypeInteractionStatusCodes
@@ -58,10 +58,10 @@ RuleSet: TaskInteraction(expectation)
 
 RuleSet: CommunicationInteraction(expectation)
 * insert CapSupportResource(Communication, #SHALL)
-* insert CapSupportProfileUrl($erp-communication, #SHALL)
-* insert CapSupportProfileUrl($erp-communication-dispreq, #SHALL)
-* insert CapSupportProfileUrl($erp-communication-reply, #SHALL)
-* insert CapSupportProfileUrl($erp-communication-representative, #SHALL)
+* insert CapSupportProfileUrl(https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication, #SHALL)
+* insert CapSupportProfileUrl(https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq, #SHALL)
+* insert CapSupportProfileUrl(https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Reply, #SHALL)
+* insert CapSupportProfileUrl(https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Representative, #SHALL)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
 * insert SearchTypeInteractionStatusCodes
@@ -82,7 +82,7 @@ RuleSet: CommunicationInteraction(expectation)
 
 RuleSet: MedicationDispenseInteraction(expectation)
 * insert CapSupportResource(MedicationDispense, #SHALL)
-* insert CapSupportProfileUrl($erp-medication-dispense, #SHALL)
+* insert CapSupportProfileUrl(https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense, #SHALL)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
 * insert SearchTypeInteractionStatusCodes

@@ -3,8 +3,8 @@ InstanceOf: TICapabilityStatement
 Usage: #definition
 
 * id = "erp-fachdienst-client-rx"
-* title = "ERP Rx CapabilityStatement fuer Clients des E-Rezept-Fachdienst"
-* description = "Dieses CapabilityStatement legt die Anforderungen an Clients des E-Rezept-Fachdienst fuer den Arzneimittel-Workflow fest."
+* title = "ERP Rx CapabilityStatement für Clients des E-Rezept-Fachdienst"
+* description = "Dieses CapabilityStatement legt die Anforderungen an Clients des E-Rezept-Fachdienst für den Arzneimittel-Workflow fest."
 * contact
   * telecom
     * system = #url

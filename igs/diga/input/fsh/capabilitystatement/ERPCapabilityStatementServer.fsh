@@ -3,8 +3,8 @@ InstanceOf: TICapabilityStatement
 Usage: #definition
 
 * id = "erp-fachdienst-server-diga"
-* title = "ERP DiGA CapabilityStatement fuer den E-Rezept-Fachdienst"
-* description = "CapabilityStatement fuer den E-Rezept-Fachdienst (Digitale Gesundheitsanwendungen)"
+* title = "ERP DiGA CapabilityStatement für den E-Rezept-Fachdienst"
+* description = "CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendungen)"
 * contact
   * telecom
     * system = #url
@@ -29,7 +29,7 @@ Usage: #definition
 
 RuleSet: TaskInteraction(expectation)
 * insert CapSupportResource(Task, #SHALL)
-* insert CapSupportProfileUrl($erp-task, #SHALL)
+* insert CapSupportProfileUrl(https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task, #SHALL)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
 * insert SearchTypeInteractionStatusCodes
@@ -60,7 +60,7 @@ RuleSet: TaskInteraction(expectation)
 
 RuleSet: CommunicationInteraction(expectation)
 * insert CapSupportResource(Communication, #SHALL)
-* insert CapSupportProfileUrl($erp-communication-diga, #SHALL)
+* insert CapSupportProfileUrl(https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DiGA, #SHALL)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
 * insert SearchTypeInteractionStatusCodes
@@ -81,7 +81,7 @@ RuleSet: CommunicationInteraction(expectation)
 
 RuleSet: MedicationDispenseInteraction(expectation)
 * insert CapSupportResource(MedicationDispense, #SHALL)
-* insert CapSupportProfileUrl($erp-medication-dispense-diga, #SHALL)
+* insert CapSupportProfileUrl(https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA, #SHALL)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
 * insert SearchTypeInteractionStatusCodes
