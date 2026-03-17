@@ -67,7 +67,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Commun
 </requirement>
 
 <!-- A_28542 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-RX-21" title="E-Rezept-FdV: E-Rezept zuweisen - Zuweisen - Payload" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-21" title="E-Rezept-FdV: E-Rezept zuweisen - Zuweisen - Payload" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -76,7 +76,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Commun
 </requirement>
 
 <!-- A_28544 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-RX-22" title="E-Rezept-FdV: E-Rezept zuweisen - Auf Nachricht antworten - Payload" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-22" title="E-Rezept-FdV: E-Rezept zuweisen - Auf Nachricht antworten - Payload" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -87,7 +87,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Commun
 siehe [Datenmodell Payload für Communication-Query](./query-api-communication-req-data.html)
 
 <!-- A_19201-01 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-RX-23" title="E-Rezept-FdV: E-Rezept zuweisen - Nachricht erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-RX-23" title="E-Rezept-FdV: E-Rezept zuweisen - Nachricht erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>

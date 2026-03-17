@@ -9,7 +9,7 @@ Diese Seite beschreibt Anforderungen ein AVS zur Nutzung der `Communication`-Que
 #### Nachricht versenden
 
 <!--A_28539-->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CHRG-32" title="PS abgebende LEI: Nachricht versenden - Apotheke  - Abrechnungsinformation - Communication Ressource erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-32" title="PS abgebende LEI: Nachricht versenden - Apotheke  - Abrechnungsinformation - Communication Ressource erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>

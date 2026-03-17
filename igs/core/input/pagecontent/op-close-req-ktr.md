@@ -5,7 +5,7 @@ Die Erstellung der MedicationDispense erfolgt modulspezifisch.
 <!-- A_19289-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-304" title="CS Kostenträger: Quittung abrufen - Statusrequest" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend">
+    <actor name="CS_E-Rezept_KTR">
         <testProcedure id="Herstellererklärung"/>
     </actor>
     Das Clientsystem Kostenträger MUSS im Anwendungsfall "Quittung abrufen" für zum Abschliessen des Workflows für die Verordnung die HTTP-Operation POST /Task/&#60;id&#62;/$close mit
