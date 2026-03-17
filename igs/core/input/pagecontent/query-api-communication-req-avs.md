@@ -79,3 +79,68 @@ Das PS der abgebenden LEI KANN im Anwendungsfall "Nachricht durch Abgebenden
 löschen" dem Nutzer ermöglichen, die Nachricht auch lokal im PS zu löschen.
 
 Hinweis: Nachrichten an Versicherte sind immer an den Workflow des referenzierten E-Rezeptes gebunden. Wenn ein E-Rezept-Workflow, bspw. durch den Versicherten oder aufgrund von durch den Fachdienst durchgesetzte Löschfristen, auf dem Fachdienst gelöscht wird, dann werden auch alle zugehörigen Nachrichten gelöscht.
+
+<!-- A_19328 -->
+<requirement conformance="SHALL" title="PS abgebende LEI: Nachrichten von Versicherten empfangen">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Produkttest"/>
+    </actor>
+     Das PS der abgebenden LEI MUSS den Anwendungsfall "UC 4.6 - Nachrichten durch Abgebenden empfangen" aus [gemSysL_eRp] gemäß TAB_ILFERP_010 umsetzen. Tabelle # : TAB_ILFERP_010 – Nachrichten von Versicherten empfangen Name Nachrichten von Versicherten empfangen Auslöser Aufruf des Anwendungsfalls in der GUI periodische Abfrage durch das PS Akteur Leistungserbringer, Mitarbeiter der abgebenden LEI Vorbedingung Die LEI hat sich gegenüber der TI authentisiert. Nachbedingung Die auf dem E-Rezept-Fachdienst für die abgebende LEI hinterlegten Communication Ressourcen wurden übertragen. Die E-Rezept-Nachrichten stehen im PS bereit. Standardablauf E-Rezept-Nachrichten am Fachdienst abrufen Mitteilung und E-Rezept-Token extrahieren
+</requirement>
+<!-- A_19330 -->
+<requirement conformance="SHALL" title="PS abgebende LEI: Nachricht versenden - E-Rezept auswählen">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Produkttest"/>
+    </actor>
+     Das PS der abgebenden LEI MUSS es dem Nutzer ermöglichen, eine E-Rezept-Nachricht auszuwählen, um eine Antwort zu senden.
+</requirement>
+<!-- A_19331 -->
+<requirement conformance="SHALL" title="PS abgebende LEI: Nachricht versenden - Mitteilung erfassen">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Produkttest"/>
+    </actor>
+     Das PS der abgebenden LEI MUSS es dem Nutzer ermöglichen, für eine E-Rezept-Nachricht an einen Versicherten eine Textnachricht zu erfassen.
+</requirement>
+<!-- A_19332 -->
+<requirement conformance="SHALL" title="PS abgebende LEI: Nachricht an Versicherten versenden">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Produkttest"/>
+    </actor>
+     Das PS der abgebenden LEI MUSS den Anwendungsfall "UC 4.7 - Nachricht durch Abgebenden übermitteln" aus [gemSysL_eRp] gemäß TAB_ILFERP_011 umsetzen. Tabelle # : TAB_ILFERP_011 – Nachricht an Versicherten versenden Name Nachricht an Versicherten versenden Auslöser Aufruf des Anwendungsfalls in der GUI Akteur Leistungserbringer, Mitarbeiter der abgebenden LEI Vorbedingung Die LEI hat eine E-Rezept-Nachricht vom E-Rezept-Fachdienst heruntergeladen. Der Nutzer hat eine Mitteilung als Antwort auf die Nachricht erfasst. Die LEI hat sich gegenüber der TI authentisiert. Nachbedingung Auf dem E-Rezept-Fachdienst steht eine E-Rezept-Nachricht für den Versicherten bereit. Standardablauf Versicherten-ID aus der Nachricht des Versicherten bestimmen Communication Ressource erstellen E-Rezept-Nachricht auf Fachdienst einstellen
+</requirement>
+<!-- A_21486 -->
+<requirement conformance="SHALL" title="PS abgebende LEI: Nachricht löschen - Nachricht auswählen">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Produkttest"/>
+    </actor>
+     Das PS der abgebenden LEI MUSS es dem Nutzer ermöglichen, eine Nachricht zum Löschen auf dem Fachdienst auszuwählen.
+</requirement>
+<!-- A_21487 -->
+<requirement conformance="SHALL" title="PS abgebende LEI: Nachricht löschen - Bestätigung">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Produkttest"/>
+    </actor>
+     Das PS der abgebenden LEI MUSS vom Nutzer eine Bestätigung einholen, dass die ausgewählte Nachricht gelöscht werden soll, und die Möglichkeit geben, das Löschen abzubrechen.
+</requirement>
+<!-- A_21488 -->
+<requirement conformance="SHALL" title="PS abgebende LEI: Nachricht durch Abgebenden löschen">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Produkttest"/>
+    </actor>
+     Das PS der abgebenden LEI MUSS den Anwendungsfall "UC 4.9 - Nachricht durch Abgebenden löschen" aus [gemSysL_eRp] gemäß TAB_ILFERP_013 umsetzen. Tabelle # : TAB_ILFERP_013 – Nachricht durch Abgebenden löschen Name Nachricht durch Abgebenden löschen Auslöser Aufruf des Anwendungsfalls in der GUI Akteur Leistungserbringer, Mitarbeiter der abgebenden LEI Vorbedingung Der Nutzer hat eine Nachricht zum Löschen markiert und das Löschen bestätigt. Die LEI hat sich gegenüber der TI authentisiert. Nachbedingung Die ausgewählte Nachricht ist vom E-Rezept-Fachdienst unwiederbringlich gelöscht. Standardablauf ID der Communication Ressource bestimmen Nachricht auf Fachdienst löschen Nachricht in PS löschen (optional)
+</requirement>
+<!-- A_21490 -->
+<requirement conformance="MAY" title="PS abgebende LEI: Nachricht löschen - Nachricht im PS löschen">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Produkttest"/>
+    </actor>
+     Das PS der abgebenden LEI KANN im Anwendungsfall "Nachricht durch Abgebenden löschen" dem Nutzer ermöglichen, die Nachricht auch lokal im PS zu löschen.
+</requirement>

@@ -49,3 +49,28 @@ Der Response des Fachdienstes liefert
 - und den AccessCode (Task.Identifier mit "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_AccessCode"), welcher für den Zugriff auf das E-Rezept im Fachdienst berechtigt
 
 Hinweis: Die Task-ID entspricht der Rezept-ID.
+
+<!-- A_19274-01 -->
+<requirement conformance="SHALL" title="PS verordnende LEI: E-Rezept durch Verordnenden erstellen">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Produkttest"/>
+    </actor>
+     Das PS der verordnenden LEI MUSS den Anwendungsfall "UC 2.1 - E-Rezepte erzeugen" aus [gemSysL_eRp] gemäß TAB_ILFERP_002 umsetzen. Tabelle # : TAB_ILFERP_002 – E-Rezept durch Verordnenden erstellen Name E-Rezept durch Verordnenden erstellen Auslöser Aufruf des Anwendungsfalls in der GUI Akteur Leistungserbringer, Mitarbeiter verordnende LEI Vorbedingung Die LEI hat sich gegenüber der TI authentisiert. Der Workflow-Typ (FlowType) ist bekannt. Nachbedingung Im PS steht ein QES-Datensatz über den Verordnungsdatensatz des E-Rezept bereit. Standardablauf E-Rezept-ID von Fachdienst abrufen E-Rezept-Bundle erstellen E-Rezept-Bundle QES signieren (nur durch LE ausführbar)
+</requirement>
+<!-- A_19281-03 -->
+<requirement conformance="SHALL" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle QES signieren">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Produkttest"/>
+    </actor>
+     Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" für das E-Rezept die Signaturoperation des Konnektors mit der Referenz RFC-5652 für CMS-Signatur (CAdES) Signaturtype für eine enveloping Signature dem base64-codierten E-Rezept-Bundle eingebetteter OCSP-Antwort (IncludeRevocationInfo = true) Angabe des Mimetypes "text/plain; charset=utf-8" ausführen.
+</requirement>
+<!-- A_21363-01 -->
+<requirement conformance="SHALL" title="PS verordnende LEI: Auswahl des Flowtypes">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Produkttest"/>
+    </actor>
+     Das PS der verordnenden LEI MUSS beim Erstellen eines E-Rezeptes die Auswahl des gewünschten Workflows gemäß https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType ermöglichen.
+</requirement>

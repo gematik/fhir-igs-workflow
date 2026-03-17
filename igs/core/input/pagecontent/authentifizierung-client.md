@@ -20,7 +20,7 @@ Für weitere Informationen zum IDP-Dienst und zum Ablauf der Authentisierung sie
 
 Zur Nutzung des IDP-Dienstes gelten einige grundlegende Voraussetzungen, welche das PS erfüllen muss.
 
-<!-- A_20654-01 -->
+<!-- A_123456-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-1" title="CS: Registrierung des Clientsystems des E-Rezept-Fachdienstes" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">

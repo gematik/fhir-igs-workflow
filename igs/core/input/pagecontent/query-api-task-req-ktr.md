@@ -37,4 +37,19 @@ Der Anwendungsfall kann bei Bedarf wiederholt werden.
   ausführen.
 </requirement>
 
-
+<!-- A_20654-01 -->
+<requirement conformance="SHALL" title="CS: Registrierung des Clientsystems des E-Rezept-Fachdienstes">
+    <meta lockversion="false"/>
+    <actor name="CS_E-Rezept_KTR">
+        <testProcedure id="Produkttest"/>
+    </actor>
+     Der Hersteller des Clientsystem des E-Rezept-Fachdienstes MUSS sich über einen organisatorischen Prozess beim Anbieter des IDP-Dienstes für die Dienste, für welche Token abgerufen werden sollen, registrieren. Der IDP-Dienst vergibt dabei eine "client_id". Diese "client_id" MUSS vom Clientsystem bei Nutzung des IDP-Dienstes übertragen werden.
+</requirement>
+<!-- A_20655-01 -->
+<requirement conformance="SHALL" title="CS: Regelmäßiges Einlesen des Discovery Document">
+    <meta lockversion="false"/>
+    <actor name="CS_E-Rezept_KTR">
+        <testProcedure id="Produkttest"/>
+    </actor>
+     Das Clientsystem MUSS das Discovery Document (DD) [RFC8414] regelmäßig alle 24 Stunden einlesen und auswerten, und danach die darin aufgeführten URI zu den benötigten öffentlichen Schlüsseln (PUKs) und Diensten verwenden. Der Downloadpunkt wird als Teil der organisatorischen Registrierung des Clientsystems beim IDP-Dienst übergeben. Das Clientsystem MUSS den Downloadpunkt des Discovery Document als konfigurierbaren Parameter speichern.
+</requirement>

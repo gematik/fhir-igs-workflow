@@ -65,7 +65,8 @@ def main() -> None:
         dest="ptsb_mode",
         action="store_true",
         help=(
-            "Use PTSB mode (default): only gemProdT*.xlsx files and sheet 'Festlegungen'"
+            "Use PTSB mode (default): only gemProdT*.xlsx and gemSST*.xlsx files "
+            "and sheet 'Festlegungen'"
         ),
     )
     mode_group.add_argument(

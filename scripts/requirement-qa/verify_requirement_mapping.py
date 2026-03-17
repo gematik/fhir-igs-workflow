@@ -296,7 +296,10 @@ def main() -> None:
     parser.add_argument(
         "--ptsb",
         action="store_true",
-        help="Only use gemProdT*.xlsx files and parse requirements from sheet 'Festlegungen'",
+        help=(
+            "Only use gemProdT*.xlsx and gemSST*.xlsx files and parse requirements "
+            "from sheet 'Festlegungen'"
+        ),
     )
     parser.add_argument(
         "--ignore-list",
@@ -324,7 +327,9 @@ def main() -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
 
     if args.ptsb:
-        xlsx_paths = sorted(xlsx_dir.glob("gemProdT*.xlsx"))
+        xlsx_paths = sorted(
+            list(xlsx_dir.glob("gemProdT*.xlsx")) + list(xlsx_dir.glob("gemSST*.xlsx"))
+        )
     else:
         xlsx_paths = sorted(xlsx_dir.glob("*.xlsx"))
 

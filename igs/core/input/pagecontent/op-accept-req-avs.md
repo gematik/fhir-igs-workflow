@@ -15,3 +15,12 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
     </ul>
     ausführen.
 </requirement>
+
+<!-- A_21372 -->
+<requirement conformance="SHALL" title="PS abgebende LEI: Übernahme Rezeptinformationen in Warenwirtschaftssystem">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Produkttest"/>
+    </actor>
+     Das PS der abgebenden LEI MUSS bei der Übernahme von E-Rezept-Informationen in ein Warenwirtschaftssystem die Integrität und Vertraulichkeit der personenbezogenen und medizinischen Daten sicherstellen und zusätzlich sicherstellen, dass der Umfang der übertragenen Daten nur auf das unmittelbare für die Einlösung erforderliche Maß beschränkt (Datenminimierung) ist und keine Verwendung der Daten über die unmittelbare Rezepteinlösung hinaus erfolgt (Zweckbindung).
+</requirement>
