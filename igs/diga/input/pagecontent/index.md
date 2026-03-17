@@ -54,7 +54,7 @@ Verordnen bis zum Einlösen.
 ### Methodik
 
 #### Apps
-In diesem Dokument IG verschiedene Apps betrachtet.
+In diesem IG werden verschiedene Apps betrachtet.
 
 **App nach § 360 Abs. 10 SGB V**
 
