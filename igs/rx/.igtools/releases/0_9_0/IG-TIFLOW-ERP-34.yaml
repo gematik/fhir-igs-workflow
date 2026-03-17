@@ -1,0 +1,19 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 5f032c47c319b53c1219014f6c4b90af5ade782501acacfd43ed175f41bc9d80
+created: '2026-03-17T11:33:13.258221'
+date: '2026-03-17T11:33:13.258224'
+key: IG-TIFLOW-ERP-34
+modified: '2026-03-17T11:33:13.258223'
+release_status: NEW
+source: input/pagecontent/op-dispense-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen
+  mittels POST /Task/&lt;id&gt;/$dispense den Zeitpunkt des Aufrufes in Task.extension:lastMedicationDispense
+  im Format "YYYY-MM-DDThh:mm:ss+zz:zz" (FHIR-instant) anlegen und speichern.
+title: E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Zeitstempel MedicationDispense
+version: 0
