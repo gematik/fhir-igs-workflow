@@ -270,23 +270,43 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p>  <!-- white space is critical inside of capture --></p>
-<div>
-  <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown. -->
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#nachricht" id="markdown-toc-nachricht">Nachricht</a></li>
+  <li><a href="#anforderungen-an-schnittstelle" id="markdown-toc-anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</a></li>
+</ul>
+
 </div>
 <p>Query API: MedicationDispense</p>
 
-<p>MedicationDispense wird für die Abgabeinformation der DiGA genutzt. Der
-Freischaltcode sowie die DiGA-Bezeichnung werden in der Abgabeinformation
-bereitgestellt. 
-Falls kein Freischaltcode bereitgestellt werden kann, enthält
-die Abgabeinformation eine begründende Rückmeldung.</p>
+<p>MedicationDispense wird für die Abgabeinformation der DiGA genutzt. Der Freischaltcode sowie die DiGA-Bezeichnung werden in der Abgabeinformation bereitgestellt. 
+Falls kein Freischaltcode bereitgestellt werden kann, enthält die Abgabeinformation eine begründende Rückmeldung.</p>
 
-<h2 id="get-medicationdispense">GET /MedicationDispense</h2>
+<h3 id="nachricht">Nachricht</h3>
+
+<p>Die Interaktion mit Nachrichten als FHIR-Ressource <em>MedicationDispense</em> wird über die folgenden HTTP-Methoden ermöglicht:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>HTTP-Methode</th>
+      <th>Ergebnis der Anfrage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>GET</td>
+      <td>Freischaltcodes abrufen</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</h3>
+
 <ul>
-  <li>
-    <p>Abruf des Freischaltcodes durch den Versicherten</p>
-  </li>
-  <li><a href="./query-api-medicationdispense-req-fd.html">Server-Anforderungen zu MedicationDispense</a>: Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.</li>
+  <li><a href="./query-api-medicationdispense-req-fd.html">FD-Anforderungen zu MedicationDispense</a>: Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.</li>
   <li><a href="./query-api-medicationdispense-req-fdv.html">FdV-Anforderungen zu MedicationDispense</a>: Anforderungen an ein E-Rezept-FdV zur Nutzung der Schnittstelle.</li>
 </ul>
 
@@ -331,7 +351,7 @@ die Abgabeinformation eine begründende Rückmeldung.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 16, 2026 16:38+0000">2026-03-16</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.eflow-diga#2.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 17, 2026 05:46+0000">2026-03-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

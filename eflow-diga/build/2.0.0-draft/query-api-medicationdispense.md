@@ -14,9 +14,16 @@ Query API: MedicationDispense
 
 MedicationDispense wird für die Abgabeinformation der DiGA genutzt. Der Freischaltcode sowie die DiGA-Bezeichnung werden in der Abgabeinformation bereitgestellt. Falls kein Freischaltcode bereitgestellt werden kann, enthält die Abgabeinformation eine begründende Rückmeldung.
 
-## GET /MedicationDispense
+### Nachricht
 
-* Abruf des Freischaltcodes durch den Versicherten
-* [Server-Anforderungen zu MedicationDispense](./query-api-medicationdispense-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+Die Interaktion mit Nachrichten als FHIR-Ressource **MedicationDispense** wird über die folgenden HTTP-Methoden ermöglicht:
+
+| | |
+| :--- | :--- |
+| GET | Freischaltcodes abrufen |
+
+### Anforderungen an Schnittstelle
+
+* [FD-Anforderungen zu MedicationDispense](./query-api-medicationdispense-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
 * [FdV-Anforderungen zu MedicationDispense](./query-api-medicationdispense-req-fdv.md): Anforderungen an ein E-Rezept-FdV zur Nutzung der Schnittstelle.
 
