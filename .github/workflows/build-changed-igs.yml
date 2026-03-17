@@ -637,12 +637,12 @@ jobs:
             fi
           done
 
-      - name: Upload IG output ZIPs
+      - name: Upload IG outputs
         if: steps.igs.outputs.ig_list != ''
         uses: actions/upload-artifact@v4
         with:
-          name: ig-output-zips-${{ github.run_number }}
-          path: igs/*/output.zip
+          name: ig-outputs-${{ github.run_number }}
+          path: igs/*/output
           if-no-files-found: warn
 
       - name: Prepare GitHub Pages content
