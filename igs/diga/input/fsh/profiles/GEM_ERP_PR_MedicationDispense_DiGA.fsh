@@ -3,7 +3,7 @@ Parent: EPAMedicationDispense
 Id: GEM-ERP-PR-MedicationDispense-DiGA
 Title: "GEM ERP PR MedicationDispense DiGA"
 Description: "Dispensierung einer DiGA-Verordnung"
-* insert Profile(GEM_ERP_PR_MedicationDispense_DiGA)
+* insert StructureDefinition(GEM_ERP_PR_MedicationDispense_DiGA)
 * obeys workflow-medicationdispense-redeemcode-1
 * obeys workflow-medicationdispense-redeemcode-2
 * obeys workflow-medicationdispense-redeemcode-3
@@ -49,6 +49,11 @@ Description: "Dispensierung einer DiGA-Verordnung"
 
 * substitution 0..0
   * ^comment = "Laut Bundesamt für Soziale Sicherung ist der Ersatz für DiGAs nicht erlaubt."
+
+Invariant: workflow-abgabeDatumsFormat //TODO: rename
+Description: "Wert muss ein Datum in der Form: YYYY-MM-DD sein."
+* severity = #error
+* expression = "toString().length()=10"
 
 Invariant: workflow-medicationdispense-redeemcode-1
 Description: "Eine Notiz wurde nicht gefunden, ist jedoch obligatorisch, wenn kein Einlösecode angegeben wird."

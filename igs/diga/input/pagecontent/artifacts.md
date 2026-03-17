@@ -1,11 +1,11 @@
-# FHIR-Artefakte
-
 Diese Seite enthält eine Übersicht aller FHIR-Artefakte, die im Rahmen des DiGA-Implementation Guides definiert werden.
 
-### Parameterprofile für Operationen
+#### Capability Statements
 
-{% include artefacts-structuredef-table-generator.html type="Parameters" %}
-<div><figcaption><strong>Tabelle:</strong> Parameterprofile</figcaption></div>
+Das _Capability_ _Statement_ beschreibt die Anforderungen und Fähigkeiten, die ein Server für die konforme Implementierung des TIFlow Fachdienstes umsetzen muss. Es handelt sich um eine Konformitätserklärung, die spezifiziert, welche Ressourcen, Interaktionen und Suchparameter das der TIFlow Fachdienste unterstützen muss.
+
+{% include artifacts-table-generator.html resourceType="CapabilityStatement" %}
+<div><figcaption><strong>Tabelle:</strong> Capability Statements</figcaption></div>
 
 ### Ressourcenprofile
 
