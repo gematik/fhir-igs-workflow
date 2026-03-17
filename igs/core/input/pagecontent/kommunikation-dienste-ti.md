@@ -206,6 +206,7 @@ Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.
 <td>access-permission</td>
 </tr>
 </table>
+<div><figcaption><strong>Tabelle: </strong>HTTP-Header "X-erp-resource"</figcaption></div>
 
 
 ### Verschlüsselte Kommunikation zur VAU des E-Rezept-Fachdienstes  

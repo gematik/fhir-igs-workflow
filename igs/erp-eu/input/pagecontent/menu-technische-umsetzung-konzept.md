@@ -13,15 +13,6 @@ Der Versicherte nutzt für die Verwaltung von Einwilligung und Zugriffsberechtig
 
 <br>
 
-<!-- A_27097 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-EU-1" title="Format Zugriffscode" version="0">
-    <meta lockversion="false"/>
-    <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
-    </actor>
-     Produkttypen der Anwendung E-Rezept MÜSSEN, wenn sie einen Zugriffscode für das Einlösen im europäischen Ausland verarbeiten, folgende Formatvorgaben für den Zugriffscode einhalten: String mit Gesamtlänge von 6 Zeichen, erlaubte Zeichen: a-z, A-Z, 0-9.
-</requirement>
-
 ### Statusmodell
 
 Für die Übermittlung von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel in Deutschland wird das folgende Statusmodell umgesetzt.
@@ -56,6 +47,15 @@ Einen Zugriffsberechtigung eines Versicherten für das Einlösen von E-Rezepten 
 - Ländercode des Landes, für welches die Zugriffsberechtigung durch den Versicherten erteilt wurde,
 - Zugriffscode,
 - gültig bis (1h ab Einstellen), wird durch den E-Rezept-Fachdienst beim Einstellen der Zugriffsberechtigung gesetzt.
+
+<!-- A_27097 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-EU-1" title="Format Zugriffscode" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FD">
+        <testProcedure id="Produkttest"/>
+    </actor>
+    Produkttypen der Anwendung E-Rezept MÜSSEN, wenn sie einen Zugriffscode für das Einlösen im europäischen Ausland verarbeiten, folgende Formatvorgaben für den Zugriffscode einhalten: String mit Gesamtlänge von 6 Zeichen, erlaubte Zeichen: a-z, A-Z, 0-9.
+</requirement>
 
 ### Zulässige europäische Länder
 

@@ -46,6 +46,7 @@ Clientsysteme verwenden bei den in TAB_ILFERP_012 dargestellten Aktivitäten Zer
 <td>aktiv</td>
 </tr>
 </table>
+<div><figcaption><strong>Tabelle: </strong>Zertifikatsnutzung"</figcaption></div>
 
 Es gelten folgende übergreifende Festlegungen für die Prüfung aktiv durch ein Clientsystem genutzter Zertifikate.
 
