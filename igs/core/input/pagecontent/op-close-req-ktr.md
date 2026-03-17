@@ -3,7 +3,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 Die Erstellung der MedicationDispense erfolgt modulspezifisch.
 
 <!-- A_19289-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-372" title="CS Kostenträger: Quittung abrufen - Statusrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-304" title="CS Kostenträger: Quittung abrufen - Statusrequest" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>

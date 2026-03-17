@@ -3,7 +3,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_19149-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-185" title="E-Rezept-Fachdienst - Task akzeptieren - Prüfung Datensatz zwischenzeitlich gelöscht" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-217" title="E-Rezept-Fachdienst - Task akzeptieren - Prüfung Datensatz zwischenzeitlich gelöscht" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -12,7 +12,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_19167-04 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-186" title="E-Rezept-Fachdienst - Task akzeptieren - Prüfung AccessCode" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-218" title="E-Rezept-Fachdienst - Task akzeptieren - Prüfung AccessCode" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -23,7 +23,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 <!-- ToDo: lässt sich feststellen, wie die AVS den Aufruf nutzen? Wäre es legitim den HTTP-Header abzukündigen? -->
 
 <!-- A_19168-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-187" title="E-Rezept-Fachdienst - Task akzeptieren - Rezept bereits in Abgabe oder Bearbeitung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-219" title="E-Rezept-Fachdienst - Task akzeptieren - Rezept bereits in Abgabe oder Bearbeitung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -35,7 +35,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 Hinweis: Die Informationen in OperationOutcome werden ggf. als mehrere Strings in einem Array übermittelt.
 
 <!-- A_23539-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-188" title="E-Rezept-Fachdienst - Task akzeptieren - Ende Einlösefrist prüfen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-220" title="E-Rezept-Fachdienst - Task akzeptieren - Ende Einlösefrist prüfen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -44,7 +44,7 @@ Hinweis: Die Informationen in OperationOutcome werden ggf. als mehrere Strings i
 </requirement>
 
 <!-- A_19169-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-189" title="E-Rezept-Fachdienst - Task akzeptieren - Generierung Secret, Statuswechsel in Abgabe und Rückgabewert" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-221" title="E-Rezept-Fachdienst - Task akzeptieren - Generierung Secret, Statuswechsel in Abgabe und Rückgabewert" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -53,7 +53,7 @@ Hinweis: Die Informationen in OperationOutcome werden ggf. als mehrere Strings i
 </requirement>
 
 <!-- A_24174-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-190" title="E-Rezept-Fachdienst - Task akzeptieren - Telematik-ID der abgebenden Institution speichern" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-222" title="E-Rezept-Fachdienst - Task akzeptieren - Telematik-ID der abgebenden Institution speichern" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -66,7 +66,7 @@ Die Telematik-ID ist im Task wie folgt zu hinterlegen:
 - Task.owner.identifier.value= $Telematik-ID der Apotheke gemäß https://simplifier.net/basisprofil-de-r4/identifiertelematikid
 
 <!-- A_28127 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-192" title="E-Rezept-Fachdienst - Task akzeptieren - Push Notification Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-223" title="E-Rezept-Fachdienst - Task akzeptieren - Push Notification Versicherter" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>

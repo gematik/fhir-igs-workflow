@@ -4,7 +4,7 @@
 For each selected IG under igs/*:
 1. Remove all key attributes from <requirement ...> tags in input/pagecontent markdown files.
 2. Set current_req_number: 0 in .igtools/config.yaml.
-3. Delete all files inside .igtools/releases/1_0_0.
+3. Delete all files inside .igtools/releases/0_9_0.
 4. Run igtools process for selected IGs (or all when no --ig is provided).
 """
 
@@ -156,7 +156,7 @@ def main() -> int:
         if reset_current_req_number(config_path):
             config_updates += 1
 
-        release_dir = ig_dir / ".igtools" / "releases" / "1_0_0"
+        release_dir = ig_dir / ".igtools" / "releases" / "0_9_0"
         deleted_release_files += delete_release_files(release_dir)
 
     print("Reset summary:")
@@ -164,7 +164,7 @@ def main() -> int:
     print(f"- Markdown files scanned: {total_md_files}")
     print(f"- Markdown files changed (keys removed): {changed_md_files}")
     print(f"- Config files updated: {config_updates}")
-    print(f"- Files deleted in .igtools/releases/1_0_0: {deleted_release_files}")
+    print(f"- Files deleted in .igtools/releases/0_9_0: {deleted_release_files}")
 
     if args.skip_process:
         print("Skipped: igtools process")

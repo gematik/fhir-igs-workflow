@@ -1,0 +1,20 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 90ff02d461e6bf5142ddb9343004fc0a5053a9ddc625a9a0e75b1459bdb0dda1
+created: '2026-03-17T10:52:33.221652'
+date: '2026-03-17T10:52:33.221655'
+key: IG-TIFLOW-CORE-79
+modified: '2026-03-17T10:52:33.221653'
+release_status: NEW
+source: input/pagecontent/query-api-task-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
+  /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI prüfen, ob die in
+  der Prüfziffer übermittelte KVNR identisch ist mit dem Wert im URL-Parameter kvnr="..."
+  und bei Ungleichheit mit dem Fehler 456 abbrechen.
+title: E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Vergleich KVNR
+version: 0

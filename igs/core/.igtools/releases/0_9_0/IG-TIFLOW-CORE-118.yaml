@@ -1,0 +1,20 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: b341f092b43652e70bf0a07e80a6e0f99875179ff1f9e5e52343159ed12ffb59
+created: '2026-03-17T10:52:33.228927'
+date: '2026-03-17T10:52:33.228929'
+key: IG-TIFLOW-CORE-118
+modified: '2026-03-17T10:52:33.228928'
+release_status: NEW
+source: input/pagecontent/query-api-medicationdispense-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS im Anwendungsfall "Abgabeinformationen abrufen"
+  die Suche aller Abgabeinformationen zu einer Verordnung mit dem Aufruf GET /MedicationDispense?identifier=https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId|&lt;PrescriptionID&gt;
+  unterstützten und dabei eines oder mehrere MedicationDispense-Objekte in einem Bundle
+  an den Aufrufenden zurückgeben.
+title: E-Rezept-Fachdienst - MedicationDispense abrufen - Rückgabe mehrerer MedicationDispenses
+version: 0

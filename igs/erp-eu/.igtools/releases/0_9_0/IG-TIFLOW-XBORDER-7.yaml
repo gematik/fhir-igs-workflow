@@ -1,0 +1,23 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 76fa6199c6e24a14ecdb38a18efc842562d1020b85acf98d7582ccf42ea18a60
+created: '2026-03-17T10:52:37.528160'
+date: '2026-03-17T10:52:37.528162'
+key: IG-TIFLOW-XBORDER-7
+modified: '2026-03-17T10:52:37.528161'
+release_status: NEW
+source: input/pagecontent/op-get-eu-prescriptions-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts
+  /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass zu dem in Parameters.parameter:requestData.part:kvnr,
+  Parameters.parameter:requestData.part:accessCode und Parameters.parameter:requestData.part:countryCode
+  übermittelte Tripple von KVNR, Zugriffs- und Ländercode eine zeitliche gültige Zugriffsberechtigung
+  im E-Rezept-Fachdienst existiert und bei fehlgeschlagener Prüfung die Operation
+  mit dem HTTP-Fehlercode 403 abbrechen, damit nur Verordnungsdaten für Versicherte
+  übermittelt werden, wenn eine gültige Zugriffsberechtigung vorliegt.
+title: E-Rezept-Fachdienst - eu-prescription abfragen - Prüfung Zugriffsberechtigung
+version: 0

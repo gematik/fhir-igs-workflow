@@ -9,7 +9,7 @@ Diese Seite beschreibt Anforderungen am E-Rezept-Fachdienst zur Nutzung der `Com
 #### POST /Communication
 
 <!--A_22734-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-163" title="E-Rezept-Fachdienst – Nachricht einstellen – Prüfung Existenz ChargeItem" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-96" title="E-Rezept-Fachdienst – Nachricht einstellen – Prüfung Existenz ChargeItem" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>

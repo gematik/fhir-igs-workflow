@@ -4,7 +4,7 @@ Diese Seite beschreibt Anforderungen ein Clientsystem des Kostenrägers zur Nutz
 ### Nachrichten abrufen
 
 <!-- A_21556 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-29" title="CS Kostenträger: Nachrichten abrufen - Häufigkeit" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-44" title="CS Kostenträger: Nachrichten abrufen - Häufigkeit" version="0">
   <meta lockversion="false"/>
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>
@@ -13,7 +13,7 @@ Diese Seite beschreibt Anforderungen ein Clientsystem des Kostenrägers zur Nutz
 </requirement>
 
 <!-- A_19329-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-30" title="CS Kostenträger: Nachrichten abrufen - Abfrage" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-45" title="CS Kostenträger: Nachrichten abrufen - Abfrage" version="0">
   <meta lockversion="false"/>
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>
@@ -35,7 +35,7 @@ Falls eine oder mehrere E-Rezept-Nachrichten für die abgebende LEI auf dem E-Re
 Die für die Nachricht zu verwendende Communication-Ressource wird modul- und anwendungsfall-spezifisch festgelegt.
 
 <!-- A_19334 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-31" title="CS Kostenträger: Nachricht versenden - Nachricht auf Fachdienst einstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-46" title="CS Kostenträger: Nachricht versenden - Nachricht auf Fachdienst einstellen" version="0">
   <meta lockversion="false"/>
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>
@@ -60,7 +60,7 @@ ausgewählte Nachricht gelöscht werden soll, und die Möglichkeit geben, das
 Löschen abzubrechen.
 
 <!-- A_21489 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-32" title="CS Kostenträger: Nachricht löschen - Löschrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-47" title="CS Kostenträger: Nachricht löschen - Löschrequest" version="0">
   <meta lockversion="false"/>
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>

@@ -1,0 +1,23 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 680f2e795aa021409c13c8e32e2750f154c1ada3369a841ad276bdaf70a56c85
+created: '2026-03-17T10:52:38.443606'
+date: '2026-03-17T10:52:38.443612'
+key: IG-TIFLOW-RX-5
+modified: '2026-03-17T10:52:38.443610'
+release_status: NEW
+source: input/pagecontent/op-reject-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 160,\
+  \ 169, 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject die\
+  \ Dispensierinformationen, falls welche vorhanden sind, löschen: \n  <ul>\n    <li>Medication,\
+  \ die aus der MedicationDispense referenziert wird --> löschen</li>\n    <li>MedicationDispense\
+  \ zum dazugehörigen Task --> löschen</li>\n    <li>Task.extension:lastMedicationDispense\
+  \ --> löschen</li>\n  </ul>"
+title: E-Rezept-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Dispensierinformationen
+  löschen
+version: 0

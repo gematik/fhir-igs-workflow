@@ -1,0 +1,25 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 923cb5251c9260964361b65e8c0ab24a1b148112ab1427867cb66e866ce870cf
+created: '2026-03-17T10:52:38.526471'
+date: '2026-03-17T10:52:38.526519'
+key: IG-TIFLOW-RX-38
+modified: '2026-03-17T10:52:38.526516'
+release_status: NEW
+source: input/pagecontent/op-abort-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS beim Löschen eines Tasks für eine Verordnung mit\
+  \ Flowtype 160, 166, 169, 200 oder 209 mittels HTTP-POST/$abort-Operation auf den\
+  \ in der URL referenzierten/Task/&#60;id&#62; die Rolle \"professionOID\" des Aufrufers\
+  \ im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen und sicherstellen,\
+  \ dass ausschließlich Institutionen in der Rolle\n  <ul>\n    <li>oid_versicherter</li>\n\
+  \    <li>oid_praxis_arzt</li>\n    <li>oid_zahnarztpraxis</li>\n    <li>oid_krankenhaus</li>\n\
+  \    <li>oid_institution-vorsorge-reha</li>\n    <li>oid_oeffentliche_apotheke</li>\n\
+  \    <li>oid_krankenhausapotheke</li>\n  </ul>\n  die Operation am Fachdienst aufrufen,\
+  \ damit die Verordnung nicht durch einen Unberechtigten gelöscht werden kann."
+title: E-Rezept-Fachdienst - E-Rezept löschen - Flowtype 160/166/169/200/209 - Rollenprüfung
+version: 0

@@ -1,0 +1,25 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: a05993d06127f885537e590ece4efc855e4745a8287b03ab2798b8c614df8b45
+created: '2026-03-17T10:52:33.227028'
+date: '2026-03-17T10:52:33.227031'
+key: IG-TIFLOW-CORE-107
+modified: '2026-03-17T10:52:33.227030'
+release_status: NEW
+source: input/pagecontent/ttl.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS einen Task nach Ablauf der Löschfrist gemäss der\
+  \ folgenden Festlegung automatisch löschen und das Löschen in einem AuditEvent für\
+  \ den Versicherten nachvollziehbar protokollieren.\n\t<table>\n\t\t<tr> \n\t\t<th>Task.status\
+  \ nach Statuswechsel</th>\n\t\t<th>Löschfrist</th>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>draft</td>\n\
+  \t\t<td>10 Tage nach Statuswechsel</td>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>ready</td>\n\
+  \t\t<td>10 Tage nach Datum in Task.expiryDate</td>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>in-progress</td>\n\
+  \t\t<td>100 Tage nach Statuswechsel</td>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>completed</td>\n\
+  \t\t<td>100 Tage nach Statuswechsel</td>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>cancelled</td>\n\
+  \t\t<td>10 Tage nach Statuswechsel</td>\n\t\t</tr>\n\t</table>"
+title: E-Rezept-Fachdienst - Löschfrist abgelaufener Rezepte
+version: 0

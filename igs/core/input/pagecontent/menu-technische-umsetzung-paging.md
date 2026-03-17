@@ -3,7 +3,7 @@ Für Endpunkte, die eine Menge an FHIR-Objekten abfragen gelten einheitliche Vor
 Zu unterscheiden sind drei verschiedene Mechanismen: Sortierung, Filterung und Pagination. Die angefragten Funktionen sind jeweils auf einen Konkreten Endpunkt anzuwenden. Es ist möglich diese Funktionen miteinander zu kombinieren, sodass z.B. eine Anfrage sortiert und gefiltert wird.
 
 <!-- A_24434 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-292" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Betroffene Endpunkte" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-325" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Betroffene Endpunkte" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -57,7 +57,7 @@ Clients erhalten die Möglichkeit die Rückgabe der Elemente im FHIR-Bundle zu s
 Für jeden dieser Ressourcen gelten dann Kriterien, nach denen sortiert und gefiltert werden kann.
 
 <!-- A_24436-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-293" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Filter- und Sortierkriterien" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-326" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Filter- und Sortierkriterien" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -195,7 +195,7 @@ Hinweis: Standard Such- und Sortierparametern in FHIR ist ein "_" vorangestellt 
 Es können mehrere Sortierkriterien angegeben werden. Bei der Sortierung sortiert der E-Rezept-Fachdienst dann zuerst nach dem ersten, dann zweiten, usw. Kriterium.
 
 <!-- A_24437 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-294" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Sortieren von Einträgen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-327" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Sortieren von Einträgen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -204,7 +204,7 @@ Es können mehrere Sortierkriterien angegeben werden. Bei der Sortierung sortier
 </requirement>
 
 <!-- A_24438 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-295" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Sortieren von Einträgen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-328" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Sortieren von Einträgen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -248,7 +248,7 @@ Es können mehrere Sortierkriterien angegeben werden. Bei der Sortierung sortier
 Standardmäßig werden die Einträge aufsteigend sortiert. Wenn diese Reihenfolge umgekehrt werden soll, kann ein "-" vor das Sortierkriterium gestellt werden.
 
 <!-- A_24440 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-296" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Sortierreihenfolge der Einträge" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-329" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Sortierreihenfolge der Einträge" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -261,7 +261,7 @@ Clients können am E-Rezept-Fachdienst Anfragen stellen, dessen Ergebnismenge na
 Für den Datentyp "date" sollen folgende Filterkriterien als URL-Parameter unterstützt werden:
 
 <!-- A_25515 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-297" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Filteroperatoren für Datumsabfragen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-330" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Filteroperatoren für Datumsabfragen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -332,7 +332,7 @@ Falls die Link Relations nicht zu plausiblen Ergebnissen führen (z.B. wenn es k
 Neben Angaben zur Paginierung übermittelt der Client auch Angaben zur Filterung und Sortierung, diese müssen bei der Erzeugung der Link Relations erhalten bleiben.
 
 <!-- A_24441-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-298" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - URL-Parameter für Paginierung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-331" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - URL-Parameter für Paginierung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -362,7 +362,7 @@ Neben Angaben zur Paginierung übermittelt der Client auch Angaben zur Filterung
 </requirement>
 
 <!-- A_24442-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-299" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Link Relations für Paginierung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-332" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Link Relations für Paginierung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -392,7 +392,7 @@ Neben Angaben zur Paginierung übermittelt der Client auch Angaben zur Filterung
 </requirement>
 
 <!-- A_24443-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-300" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Paginierung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-333" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Paginierung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -446,7 +446,7 @@ Neben Angaben zur Paginierung übermittelt der Client auch Angaben zur Filterung
 </requirement>
 
 <!-- A_24444 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-301" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Erhalten von URL-Parametern" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-334" title="E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Erhalten von URL-Parametern" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
