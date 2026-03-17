@@ -301,115 +301,14 @@ RuleSet: SystemLevelOperationStatusCodesGeteMP
 
 
 RuleSet: SystemLevelPostOperation
-* rest.operation[=] insert X-Requesting-Organization(true)
 * rest.operation[=] insert SuccessfulWithParameters
 * rest.operation[=] insert IDTokenCheck
 * rest.operation[=] insert OrgHeaderProfileMismatch
 
 
-RuleSet: SystemLevelPostEMLOperation
-* insert SystemLevelPostOperation
-* rest.operation[=] insert DosageInvalid
-* rest.operation[=] insert NoValidStructure
-* rest.operation[=] insert WrongStatusParameter
-
-
-RuleSet: SystemLevelUpdateEMLOperation
-* insert SystemLevelPostOperation
-* rest.operation[=] insert VersionAwareConflict
-* rest.operation[=] insert ResourceIsNotKnown
-* rest.operation[=] insert OpNotAllowed
-* rest.operation[=] insert DosageInvalid
-* rest.operation[=] insert NoValidStructure
-* rest.operation[=] insert WrongStatusParameter
-
-
-RuleSet: SystemLevelPostEMPOperation
-* insert SystemLevelPostOperation
-* rest.operation[=] insert DosageInvalid
-* rest.operation[=] insert NoValidStructure
-* rest.operation[=] insert WrongStatusParameter
-* rest.operation[=] insert EMPChronologyIdMismatch
-* rest.operation[=] insert ResourceIsNotKnown
-* rest.operation[=] insert ResourceWasDeleted
-* rest.operation[=] insert EMPEntryAlreadyExists
-
-
-// RuleSet: SystemLevelPostEMPByMedicationReferenceOperation
-// * insert SystemLevelPostOperation
-// * rest.operation[=] insert ResourceIsNotKnown
-// * rest.operation[=] insert ResourceWasDeleted
-// * rest.operation[=] insert DosageInvalid
-// * rest.operation[=] insert NoValidStructure
-// * rest.operation[=] insert WrongStatusParameter
-// * rest.operation[=] insert EMPChronologyIdMismatch
-
-
-RuleSet: SystemLevelUpdateEMPOperation
-* insert SystemLevelPostOperation
-* rest.operation[=] insert VersionAwareConflict
-* rest.operation[=] insert ResourceIsNotKnown
-* rest.operation[=] insert DosageInvalid
-* rest.operation[=] insert NoValidStructure
-* rest.operation[=] insert WrongStatusParameter
-* rest.operation[=] insert EMPChronologyIdMismatch
-
-
-RuleSet: SystemLevelPostBatchEMPOperation
-* rest.operation[=] insert X-Requesting-Organization(true)
-* rest.operation[=] insert SuccessfulWithBundle
-* rest.operation[=] insert InvalidRequest
-* rest.operation[=] insert EMPChronologyIdMismatch
-* rest.operation[=] insert DosageInvalid
-* rest.operation[=] insert NoValidStructure
-* rest.operation[=] insert OrgHeaderProfileMismatch
-* rest.operation[=] insert WrongStatusParameter
-* rest.operation[=] insert VersionAwareConflict
-* rest.operation[=] insert ResourceIsNotKnown
-
-
-RuleSet: SystemLevelPostEMPCommitOperation
-// * rest.operation[=] insert X-Requesting-Organization(true)
-* rest.operation[=] insert SuccessfulWithParameters
-* rest.operation[=] insert OperationOutsideBatch
-* rest.operation[=] insert EMPChronologyIdMismatch
-
 // Operations on Type and Instance Level ([base]/Medication/$operation or [base]/Medication/[resId]/$operation)
 
 RuleSet: TypeLevelPostOperation
-* rest.resource[=].operation[=] insert X-Requesting-Organization(true)
 * rest.resource[=].operation[=] insert SuccessfulWithParameters
 * rest.resource[=].operation[=] insert IDTokenCheck
 * rest.resource[=].operation[=] insert OrgHeaderProfileMismatch
-
-
-RuleSet: TypeLevelPostEMLOperation
-* insert TypeLevelPostOperation
-* rest.resource[=].operation[=] insert NoValidStructure
-* rest.resource[=].operation[=] insert DosageInvalid
-* rest.resource[=].operation[=] insert WrongStatusParameter
-
-
-RuleSet: TypeLevelCancelEMLOperation
-* insert TypeLevelPostOperation
-* rest.resource[=].operation[=] insert ResourceIsNotKnown
-* rest.resource[=].operation[=] insert OpNotAllowed
-
-
-RuleSet: TypeLevelLinkEMPOperation
-* insert TypeLevelPostOperation
-* rest.resource[=].operation[=] insert NoValidStructure
-* rest.resource[=].operation[=] insert ResourceIsNotKnown
-* rest.resource[=].operation[=] insert ResourceWasDeleted
-* rest.resource[=].operation[=] insert WrongStatusParameter
-* rest.resource[=].operation[=] insert EMPLinkingNotSuccessful
-* rest.resource[=].operation[=] insert AlreadyLinked
-
-
-RuleSet: TypeLevelUnlinkEMPOperation
-* insert TypeLevelPostOperation
-* rest.resource[=].operation[=] insert NoValidStructure
-* rest.resource[=].operation[=] insert ResourceIsNotKnown
-* rest.resource[=].operation[=] insert ResourceWasDeleted
-* rest.resource[=].operation[=] insert OpNotAllowed
-* rest.resource[=].operation[=] insert EMPUnlinkingNotSuccessful
