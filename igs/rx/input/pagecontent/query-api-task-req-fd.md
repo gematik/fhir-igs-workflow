@@ -11,7 +11,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 ##### Workflowspezifische Anforderungen
 
 <!-- A_21360-01 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-RX-20" title="E-Rezept-Fachdienst - Liste Task abrufen - Flowtype 169 / 209 - Versicherter keine Einlöseinformationen" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-ERP-24" title="E-Rezept-Fachdienst - Liste Task abrufen - Flowtype 169 / 209 - Versicherter keine Einlöseinformationen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -26,7 +26,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 ##### Workflowspezifische Anforderungen
 
 <!-- A_26148 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-21" title="E-Rezept-Fachdienst - Task abrufen - Flowtype 169/209 - Nicht verfügbar bei KVNR-Mismatch" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-25" title="E-Rezept-Fachdienst - Task abrufen - Flowtype 169/209 - Nicht verfügbar bei KVNR-Mismatch" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>

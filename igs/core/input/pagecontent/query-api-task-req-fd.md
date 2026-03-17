@@ -1,7 +1,7 @@
 Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für den Task-Endpunkt.
 
 <!-- A_19030 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-49" title="E-Rezept-Fachdienst - unzulässige Operationen Task" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-71" title="E-Rezept-Fachdienst - unzulässige Operationen Task" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -16,7 +16,7 @@ Der Zugriff mittels POST und Angabe einer gültigen FHIR-Operation ist unter [Op
 Der Zugriff mittels der HTTP-Operation GET steht ausschließlich für die Einsichtnahme in E-Rezepte durch den Versicherten bzw. einen Vertreter mit Wissen um den AccessCode bzw. einer abgebenden Institution mit Wissen um das Secret zur Verfügung. Die GET-Operation ohne Referenz einer FHIR-Operation führt zu keiner Statusänderung.
 
 <!-- A_21558-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-50" title="E-Rezept-Fachdienst - Liste Task abrufen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-72" title="E-Rezept-Fachdienst - Liste Task abrufen - Rollenprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -31,7 +31,7 @@ Der Zugriff mittels der HTTP-Operation GET steht ausschließlich für die Einsic
 </requirement>
 
 <!-- A_19115-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-51" title="E-Rezept-Fachdienst - Liste Task abrufen - Versicherter- Filter auf KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-73" title="E-Rezept-Fachdienst - Liste Task abrufen - Versicherter- Filter auf KVNR" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -40,7 +40,7 @@ Der Zugriff mittels der HTTP-Operation GET steht ausschließlich für die Einsic
 </requirement>
 
 <!-- A_19129-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-52" title="E-Rezept-Fachdienst - Liste Task abrufen - Versicherter - Rückgabe Tasks im Bundle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-74" title="E-Rezept-Fachdienst - Liste Task abrufen - Versicherter - Rückgabe Tasks im Bundle" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -51,7 +51,7 @@ Der Zugriff mittels der HTTP-Operation GET steht ausschließlich für die Einsic
 <!-- eGK in der Apotheke -->
 
 <!-- A_27444 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-53" title="E-Rezept-Fachdienst - Rezepte lesen - Konfigurationsparameter RateLimit" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-75" title="E-Rezept-Fachdienst - Rezepte lesen - Konfigurationsparameter RateLimit" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Herstellererklärung"/>
@@ -62,7 +62,7 @@ Der Zugriff mittels der HTTP-Operation GET steht ausschließlich für die Einsic
 Der Defaultwert für RATELIMIT_MAX1d_ERROR_UC4_12 ist 100.
 
 <!-- A_27445 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-54" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - Ratelimit pro Telematik-ID pro Tag" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-76" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - Ratelimit pro Telematik-ID pro Tag" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -71,7 +71,7 @@ Der Defaultwert für RATELIMIT_MAX1d_ERROR_UC4_12 ist 100.
 </requirement>
 
 <!-- A_27446 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-55" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - Ratelimit pro Telematik-ID prüfen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-77" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - Ratelimit pro Telematik-ID prüfen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -80,7 +80,7 @@ Der Defaultwert für RATELIMIT_MAX1d_ERROR_UC4_12 ist 100.
 </requirement>
 
 <!-- A_23450-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-56" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Prüfung Prüfungsnachweis" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-78" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Prüfung Prüfungsnachweis" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -95,7 +95,7 @@ In der Version 1 beginnt die Prüfziffer mit einem Großbuchstaben. Die Prüfung
 In der Version 2 ist das erste Byte der Prüfziffer > 128. Die Prüfung des Prüfungsnachweises für Prüfziffer Version 2 ist in Kapitel "HTTP-Operation GET - Prüfung VSDM Prüfungsnachweis (Version 2)" beschrieben.
 
 <!-- A_27287 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-57" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Vergleich KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-79" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Vergleich KVNR" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -104,7 +104,7 @@ In der Version 2 ist das erste Byte der Prüfziffer > 128. Die Prüfung des Prü
 </requirement>
 
 <!-- A_27347 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-58" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Vergleich hcv" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-80" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Vergleich hcv" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -115,7 +115,7 @@ In der Version 2 ist das erste Byte der Prüfziffer > 128. Die Prüfung des Prü
 Die Kodierung und das Format den in der Prüfziffer übermittelten Wert für hcv ist in A_27278-* beschrieben. Das Clientsystem übermittelt hcvBase64URLSafe-kodiert.
 
 <!-- A_23451-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-59" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Zeitraum Akzeptanz Prüfungsnachweis" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-81" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Zeitraum Akzeptanz Prüfungsnachweis" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -126,7 +126,7 @@ Die Kodierung und das Format den in der Prüfziffer übermittelten Wert für hcv
 Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des Prüfungsnachweises erfolgt ausschließlich nach Anpassung von A_23451-* im Rahmen des Änderungsmanagement für Spezifikationen.
 
 <!-- A_23452-04 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-60" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Filter Status, KVNR und Workflowtype" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-82" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Filter Status, KVNR und Workflowtype" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -142,7 +142,7 @@ Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des
 </requirement>
 
 <!-- A_25206 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-61" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-83" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -151,7 +151,7 @@ Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des
 </requirement>
 
 <!-- A_25208-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-62" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - URL kvnr" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-84" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - URL kvnr" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -160,7 +160,7 @@ Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des
 </requirement>
 
 <!-- A_27346 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-63" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - URL hcv" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-85" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - URL hcv" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -169,7 +169,7 @@ Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des
 </requirement>
 
 <!-- A_25994 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-64" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - Mappen von IKNR zu VSDM" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-86" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - Mappen von IKNR zu VSDM" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -182,7 +182,7 @@ Die IKNR ist im Verordnungsdatensatz unter Coverage.payor.identifier.value zu fi
 Der E-Rezept-Fachdienst kann eine Mapping zwischen den IKNR und dem zugehörigen Fachdiensten VSDM erstellen und hierfür das im DNS hinterlegte Mapping zwischen IKNR und den Endpunkten der Fachdienste VSDM nutzen.
 
 <!-- A_25995 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-65" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - keine E-Rezepte" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-87" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - keine E-Rezepte" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -191,7 +191,7 @@ Der E-Rezept-Fachdienst kann eine Mapping zwischen den IKNR und dem zugehörigen
 </requirement>
 
 <!-- A_25207 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-66" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - AcceptPN3 false" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-88" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - AcceptPN3 false" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -200,7 +200,7 @@ Der E-Rezept-Fachdienst kann eine Mapping zwischen den IKNR und dem zugehörigen
 </requirement>
 
 <!-- A_25209-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-67" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - AcceptPN3 true - Filter Status, KVNR und Workflowtype" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-89" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - AcceptPN3 true - Filter Status, KVNR und Workflowtype" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -279,7 +279,7 @@ Die Struktur der VSDM Prüfziffer ist in A_23453-* (siehe Änderungseintrag C_11
 <div><figcaption><strong>Tabelle: </strong>Struktur VSDM Prüfziffer</figcaption></div>
 
 <!-- A_23454 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-68" title="E-Rezept-Fachdienst - Prüfung Prüfziffer" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-90" title="E-Rezept-Fachdienst - Prüfung Prüfziffer" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -302,7 +302,7 @@ Der Vergleich für die Ermittlung des HMAC-Schlüssel (2.a.) erfolgt case-sensit
 Der E-Rezept-Fachdienst verwaltet HMAC-Schlüssel, welche durch die Betreiber der Fachdienste VSDM bereitgestellt werden. Ein HMAC-Schlüssel wird durch die Kennung des Betreibers des Fachdienstes VSDM und der Version des Schlüssels identifiziert.
 
 <!-- A_23456-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-69" title="E-Rezept-Fachdienst - Prüfung Prüfziffer - Berechnung HMAC der Prüfziffer" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-91" title="E-Rezept-Fachdienst - Prüfung Prüfziffer - Berechnung HMAC der Prüfziffer" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -322,7 +322,7 @@ Das Informationsmodel des VSDM Prüfungsnachweises ist in [gemSysL_VSDM] beschri
 Die Struktur der VSDM Prüfziffer Version 2 ist in [gemSpec_Krypt#A_27278-* VSDM-FD: Struktur einer Prüfziffer der Version 2] beschrieben.
 
 <!-- A_27301 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-70" title="E-Rezept-Fachdienst - Prüfung und Entschlüsselung Prüfziffer Version 2" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-92" title="E-Rezept-Fachdienst - Prüfung und Entschlüsselung Prüfziffer Version 2" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -341,7 +341,7 @@ Hinweis: Der Abgleich der erfolgreich entschlüsselten KVNR mit der vom Client g
 ### GET /Task/<id> (Einzelne Verordnung)
 
 <!-- A_19113-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-71" title="E-Rezept-Fachdienst - Task abrufen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-93" title="E-Rezept-Fachdienst - Task abrufen - Rollenprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -357,7 +357,7 @@ Hinweis: Der Abgleich der erfolgreich entschlüsselten KVNR mit der vom Client g
 </requirement>
 
 <!-- A_19116-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-72" title="E-Rezept-Fachdienst - Task abrufen - Versicherter - Prüfung AccessCode bei KVNR-Missmatch" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-94" title="E-Rezept-Fachdienst - Task abrufen - Versicherter - Prüfung AccessCode bei KVNR-Missmatch" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -366,7 +366,7 @@ Hinweis: Der Abgleich der erfolgreich entschlüsselten KVNR mit der vom Client g
 </requirement>
 
 <!-- A_21375-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-73" title="E-Rezept-Fachdienst - Task abrufen - Versicherter - Rückgabe Task inkl. Bundles" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-95" title="E-Rezept-Fachdienst - Task abrufen - Versicherter - Rückgabe Task inkl. Bundles" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -375,7 +375,7 @@ Hinweis: Der Abgleich der erfolgreich entschlüsselten KVNR mit der vom Client g
 </requirement>
 
 <!-- A_21532-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-74" title="E-Rezept-Fachdienst - Task abrufen - Versicherter - Kein Secret" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-96" title="E-Rezept-Fachdienst - Task abrufen - Versicherter - Kein Secret" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -384,7 +384,7 @@ Hinweis: Der Abgleich der erfolgreich entschlüsselten KVNR mit der vom Client g
 </requirement>
 
 <!-- A_20702-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-75" title="E-Rezept-Fachdienst - Task abrufen - Keine Einlöseinformationen in unbekannten Clients" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-97" title="E-Rezept-Fachdienst - Task abrufen - Keine Einlöseinformationen in unbekannten Clients" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -394,7 +394,7 @@ Hinweis: Der Abgleich der erfolgreich entschlüsselten KVNR mit der vom Client g
 
 
 <!-- A_24176-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-76" title="E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - Prüfung Telematik-ID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-98" title="E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - Prüfung Telematik-ID" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -403,7 +403,7 @@ Hinweis: Der Abgleich der erfolgreich entschlüsselten KVNR mit der vom Client g
 </requirement>
 
 <!-- A_24177-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-77" title="E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - Prüfung AccessCode" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-99" title="E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - Prüfung AccessCode" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -412,7 +412,7 @@ Hinweis: Der Abgleich der erfolgreich entschlüsselten KVNR mit der vom Client g
 </requirement>
 
 <!-- A_24178-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-78" title="E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - Prüfung Status" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-100" title="E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - Prüfung Status" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -421,7 +421,7 @@ Hinweis: Der Abgleich der erfolgreich entschlüsselten KVNR mit der vom Client g
 </requirement>
 
 <!-- A_24179-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-79" title="E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - erneuter Abruf Verordnung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-101" title="E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - erneuter Abruf Verordnung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -430,7 +430,7 @@ Hinweis: Der Abgleich der erfolgreich entschlüsselten KVNR mit der vom Client g
 </requirement>
 
 <!-- A_19226-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-80" title="E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Rückgabe Task inkl. Bundle im Bundle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-102" title="E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Rückgabe Task inkl. Bundle im Bundle" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -441,7 +441,7 @@ Hinweis: Der Abgleich der erfolgreich entschlüsselten KVNR mit der vom Client g
 
 <!-- Push Notification -->
 <!-- A_28125 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-81" title="E-Rezept-Fachdienst - Task abrufen - Vertreter - Push Notification Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-103" title="E-Rezept-Fachdienst - Task abrufen - Vertreter - Push Notification Versicherter" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -454,7 +454,7 @@ Hinweis: Der Abgleich der erfolgreich entschlüsselten KVNR mit der vom Client g
 Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicherten zur Verfügung. Die PATCH-Operation führt zu keiner Statusänderung des Tasks.
 
 <!-- A_27548 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-82" title="E-Rezept-Fachdienst – Task markieren - alles Markieren verbieten" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-104" title="E-Rezept-Fachdienst – Task markieren - alles Markieren verbieten" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -463,7 +463,7 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
 </requirement>
 
 <!-- A_27549 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-83" title="E-Rezept-Fachdienst - Task markieren - Versicherter - Rollenprüfung Versicherter markiert Rezepte" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-105" title="E-Rezept-Fachdienst - Task markieren - Versicherter - Rollenprüfung Versicherter markiert Rezepte" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -476,7 +476,7 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
 </requirement>
 
 <!-- A_27550 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-84" title="E-Rezept-Fachdienst -Task markieren -Versicherter - Prüfung KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-106" title="E-Rezept-Fachdienst -Task markieren -Versicherter - Prüfung KVNR" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>

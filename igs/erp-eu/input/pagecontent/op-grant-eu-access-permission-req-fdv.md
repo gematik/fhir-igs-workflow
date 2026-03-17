@@ -6,7 +6,7 @@ Um zu bestimmen, welche europäischen Länder die Anwendung ePrescription/eDispe
 dieser Länder aus dem FHIR-VZD. Die Liste kann für 96h gecacht werden.
 
 <!--A_27109 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-EU-48" title="E-Rezept-FdV: Zugriffsberechtigung - Liste zulässiger Länder" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-48" title="E-Rezept-FdV: Zugriffsberechtigung - Liste zulässiger Länder" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -22,7 +22,7 @@ dieser Länder aus dem FHIR-VZD. Die Liste kann für 96h gecacht werden.
 </requirement>
 
 <!--A_27110 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-EU-49" title="E-Rezept-FdV: Zugriffsberechtigung - Caching Liste zulässiger Länder" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-XBORDER-49" title="E-Rezept-FdV: Zugriffsberechtigung - Caching Liste zulässiger Länder" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
@@ -31,7 +31,7 @@ dieser Länder aus dem FHIR-VZD. Die Liste kann für 96h gecacht werden.
 </requirement>
 
 <!--A_27111 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-EU-50" title="E-Rezept-FdV: Zugriffsberechtigung - Land auswählen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-50" title="E-Rezept-FdV: Zugriffsberechtigung - Land auswählen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
@@ -40,7 +40,7 @@ dieser Länder aus dem FHIR-VZD. Die Liste kann für 96h gecacht werden.
 </requirement>
 
 <!--A_27113 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-EU-51" title="E-Rezept-FdV: Zugriffsberechtigung - Zugriffscode erzeugen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-51" title="E-Rezept-FdV: Zugriffsberechtigung - Zugriffscode erzeugen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produktgutachten"/>
@@ -54,7 +54,7 @@ Für jede weitere Erteilung einer Zugriffsberechtigung für ePrescription/Dispen
 <!-- ToDo: Afo Zugriffscode in IG übernehmen -->
 
 <!--A_27114 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-EU-52" title="E-Rezept-FdV: Zugriffsberechtigung - Zugriffsberechtigung am E-Rezept-Fachdienst speichern" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-52" title="E-Rezept-FdV: Zugriffsberechtigung - Zugriffsberechtigung am E-Rezept-Fachdienst speichern" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>

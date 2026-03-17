@@ -1,0 +1,24 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 3a98d225dc239824784adabf4a8a89a1aa3c96d28c0daba0f835efc3214ac725
+created: '2026-03-17T11:33:06.666283'
+date: '2026-03-17T11:33:06.666285'
+key: IG-TIFLOW-CORE-125
+modified: '2026-03-17T11:33:06.666284'
+release_status: NEW
+source: input/pagecontent/op-abort-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der
+  &#60;id&#62; adressierten/Task/&#60;id&#62;/$abort durch verordnende Leistungserbringer
+  den im HTTPHeader "X-AccessCode" gegen den im referenzierten Task enthaltenen AccessCode
+  prüfen und bei Missmatch oder Fehlen im HTTP-Header oder wenn der Task.Status ungleich
+  "ready" ist, den Aufruf mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich
+  die verordnende Leistungserbringerinstitution in Kenntnis des AccessCodes als Berechtigte
+  ein E-Rezept löschen.
+title: E-Rezept-Fachdienst - E-Rezept löschen - Verordnender - Prüfung AccessCode
+  und Status
+version: 0

@@ -3,7 +3,7 @@ In diesem Abschnitt werden allgemeingültige Funktionsmerkmale des E-Rezept-Fach
 ### RESTful API
 
 <!-- A_19536 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-336" title="E-Rezept-Fachdienst - RESTful API" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-313" title="E-Rezept-Fachdienst - RESTful API" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -12,7 +12,7 @@ In diesem Abschnitt werden allgemeingültige Funktionsmerkmale des E-Rezept-Fach
 </requirement>
 
 <!-- A_19537 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-337" title="E-Rezept-Fachdienst - RESTful API MimeType fhir+xml" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-314" title="E-Rezept-Fachdienst - RESTful API MimeType fhir+xml" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -21,7 +21,7 @@ In diesem Abschnitt werden allgemeingültige Funktionsmerkmale des E-Rezept-Fach
 </requirement>
 
 <!-- A_19538 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-338" title="E-Rezept-Fachdienst - RESTful API MimeType fhir+json" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-315" title="E-Rezept-Fachdienst - RESTful API MimeType fhir+json" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -30,7 +30,7 @@ In diesem Abschnitt werden allgemeingültige Funktionsmerkmale des E-Rezept-Fach
 </requirement>
 
 <!-- A_19539 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-339" title="E-Rezept-Fachdienst - RESTful API MimeType Aufrufparameter" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-316" title="E-Rezept-Fachdienst - RESTful API MimeType Aufrufparameter" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -39,7 +39,7 @@ In diesem Abschnitt werden allgemeingültige Funktionsmerkmale des E-Rezept-Fach
 </requirement>
 
 <!-- A_20171 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-340" title="E-Rezept-Fachdienst - RESTful API CapabilityStatement" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-317" title="E-Rezept-Fachdienst - RESTful API CapabilityStatement" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -59,7 +59,7 @@ In diesem Abschnitt werden allgemeingültige Funktionsmerkmale des E-Rezept-Fach
 Die E-Rezept-ID wird durch den E-Rezept-Fachdienst beim Anlegen eines Tasks für den Workflow des E-Rezepts erstellt.
 
 <!-- A_19217-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-348" title="Aufbau E-Rezept-ID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-318" title="Aufbau E-Rezept-ID" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -97,7 +97,7 @@ Die E-Rezept-ID wird durch den E-Rezept-Fachdienst beim Anlegen eines Tasks für
 </requirement>
 
 <!-- A_19218 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-349" title="Prüfung E-Rezept-ID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-319" title="Prüfung E-Rezept-ID" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -112,7 +112,7 @@ Es gelten folgende Anforderungen und Vorgaben zur Verarbeitung und Interpretatio
 Für die Kommunikation und die Interoperabilität müssen bezüglich Datensätzen einheitliche Vorgaben gelten. Laut FHIR Spezifikation wird für XML und JSON Datensätze das Character Encoding "UTF-8" vorgegeben. Byte Order Marks (BOM) werden nicht angeben.
 
 <!-- A_28428  -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-362" title="E-Rezept-Fachdienst - Verarbeitung von Datensätzen - Deserialisierung von PKCS#7 Enveloping-Daten" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-320" title="E-Rezept-Fachdienst - Verarbeitung von Datensätzen - Deserialisierung von PKCS#7 Enveloping-Daten" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -121,7 +121,7 @@ Für die Kommunikation und die Interoperabilität müssen bezüglich Datensätze
 </requirement>
 
 <!-- A_28427 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-363" title="E-Rezept-Fachdienst - Verarbeitung von Datensätzen - Forcieren von UTF-8 ohne BOM" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-321" title="E-Rezept-Fachdienst - Verarbeitung von Datensätzen - Forcieren von UTF-8 ohne BOM" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -130,7 +130,7 @@ Für die Kommunikation und die Interoperabilität müssen bezüglich Datensätze
 </requirement>
 
 <!-- A_28429 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-364" title="Character Encoding für E-Rezept-Fachdienst" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-322" title="Character Encoding für E-Rezept-Fachdienst" version="0">
     <meta lockversion="false"/>
             <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -151,7 +151,7 @@ Für die Kommunikation und die Interoperabilität müssen bezüglich Datensätze
 </requirement>
 
 <!-- A_28430 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-365" title="Verbot Angabe von BOM für E-Rezept-Fachdienst" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-323" title="Verbot Angabe von BOM für E-Rezept-Fachdienst" version="0">
     <meta lockversion="false"/>
         <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -169,4 +169,34 @@ Für die Kommunikation und die Interoperabilität müssen bezüglich Datensätze
         <testProcedure id="Produkttest"/>
     </actor>
     Clientsysteme des E-Rezept-Fachdienstes DÜRFEN für die Kommunikation mit dem E-Rezept-Fachdienst in Datensätzen ein Byte Order Mark (BOM) NICHT angeben.
+</requirement>
+
+
+### Verarbeitung von FHIR Ressourcen
+
+#### Verarbeitung von Datumsangaben
+
+In der Verarbeitung der FHIR-Ressourcen ist es wichtig, dass Datums- und Zeitangaben konsistent und eindeutig interpretiert werden.
+
+Aufgrund der Profilierung einiger Datenfelder kommt es vor, dass keine Zeitzoneninformation im Datum enthalten ist. Diese Zeitangaben sollen gemäß der zum jeweiligen Datum gültigen deutschen Zeit (CET/CEST) interpretiert werden. Diese Regelung stellt sicher, dass alle beteiligten Systeme einheitlich und korrekt mit Datums- und Zeitangaben umgehen, unabhängig davon, ob die Angaben in der Vergangenheit oder Gegenwart liegen.
+
+<!-- A_27660 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-324" title="CS: Verarbeitung von Datumsangaben ohne Zeitzoneninformation" version="0">
+    <meta lockversion="false"/>
+        <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="CS_E-Rezept_KTR">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="NCPeH_ePeDA">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Clientsysteme des E-Rezept-Fachdienstes MÜSSEN bei der Verarbeitung von FHIR-Ressourcen der Anwendung E-Rezept sicherstellen, dass Datumsangaben ohne explizite Zeitzoneninformationen gemäß der zum jeweiligen Datum gültigen deutschen Zeit (CET/CEST) verarbeitet werden.
 </requirement>

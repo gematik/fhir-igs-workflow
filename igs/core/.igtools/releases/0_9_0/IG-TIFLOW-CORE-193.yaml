@@ -1,0 +1,22 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 479c6635574c71d607f8782b8a6ae953bfdc08be0a98ebf115c4489bfdaf6033
+created: '2026-03-17T11:33:06.680916'
+date: '2026-03-17T11:33:06.680919'
+key: IG-TIFLOW-CORE-193
+modified: '2026-03-17T11:33:06.680917'
+release_status: NEW
+source: input/pagecontent/query-api-consent-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produktgutachten
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt
+  /Consent die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader
+  "Authorization" feststellen und sicherstellen, dass ausschließlich Versicherte in
+  der Rolle oid_versicherter die Operation am E-Rezept-Fachdienst aufrufen dürfen,
+  damit die Information zur Einwilligung nicht durch Unberechtigte gelöscht werden
+  kann.
+title: E-Rezept-Fachdienst - Consent löschen - Rollenprüfung
+version: 0

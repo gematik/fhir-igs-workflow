@@ -13,15 +13,6 @@ Der Versicherte nutzt für die Verwaltung von Einwilligung und Zugriffsberechtig
 
 <br>
 
-<!-- A_27097 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-EU-1" title="Format Zugriffscode" version="0">
-    <meta lockversion="false"/>
-    <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
-    </actor>
-     Produkttypen der Anwendung E-Rezept MÜSSEN, wenn sie einen Zugriffscode für das Einlösen im europäischen Ausland verarbeiten, folgende Formatvorgaben für den Zugriffscode einhalten: String mit Gesamtlänge von 6 Zeichen, erlaubte Zeichen: a-z, A-Z, 0-9.
-</requirement>
-
 ### Statusmodell
 
 Für die Übermittlung von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel in Deutschland wird das folgende Statusmodell umgesetzt.
@@ -57,6 +48,15 @@ Einen Zugriffsberechtigung eines Versicherten für das Einlösen von E-Rezepten 
 - Zugriffscode,
 - gültig bis (1h ab Einstellen), wird durch den E-Rezept-Fachdienst beim Einstellen der Zugriffsberechtigung gesetzt.
 
+<!-- A_27097 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-1" title="Format Zugriffscode" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FD">
+        <testProcedure id="Produkttest"/>
+    </actor>
+    Produkttypen der Anwendung E-Rezept MÜSSEN, wenn sie einen Zugriffscode für das Einlösen im europäischen Ausland verarbeiten, folgende Formatvorgaben für den Zugriffscode einhalten: String mit Gesamtlänge von 6 Zeichen, erlaubte Zeichen: a-z, A-Z, 0-9.
+</requirement>
+
 ### Zulässige europäische Länder
 
 Um zu bestimmen, welche europäischen Länder das die Anwendung ePrescription/eDispensation Szenario Land A unterstützen, lädt der E-Rezept-Fachdienst die Liste dieser Länder aus dem FHIR-VZD. Die Liste kann für 96h gecacht werden.
@@ -64,7 +64,7 @@ Um zu bestimmen, welche europäischen Länder das die Anwendung ePrescription/eD
 Der Ablauf der Authentisierung und Suche ist in [gemSpec_VZD_FHIR_Directory]#AF_10403 Fachdienst sucht Einträge im FHIR-Directory beschrieben. Der Betreiber des E-Rezept-Fachdienst muss beim FHIR-VZD Anbieter für den Zugriff auf den FHIR-VZD nach [gemSpec_VZD_FHIR_Directory]#Nutzer und Rollen registrieren.
 
 <!-- A_27095 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-EU-2" title="E-Rezept-Fachdienst - Zugriffsberechtigung - Liste zulässiger Länder" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-2" title="E-Rezept-Fachdienst - Zugriffsberechtigung - Liste zulässiger Länder" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -73,7 +73,7 @@ Der Ablauf der Authentisierung und Suche ist in [gemSpec_VZD_FHIR_Directory]#AF_
 </requirement>
 
 <!-- A_27096 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-EU-3" title="E-Rezept-Fachdienst - Zugriffsberechtigung - Caching Liste zulässiger Länder" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-XBORDER-3" title="E-Rezept-Fachdienst - Zugriffsberechtigung - Caching Liste zulässiger Länder" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Herstellererklärung"/>

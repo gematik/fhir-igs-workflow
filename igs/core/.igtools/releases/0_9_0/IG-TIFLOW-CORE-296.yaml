@@ -1,0 +1,26 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 5979348d376dfa21477af121dd8157a815bd607b6dfbd46c00de580676110e34
+created: '2026-03-17T11:33:06.707934'
+date: '2026-03-17T11:33:06.707938'
+key: IG-TIFLOW-CORE-296
+modified: '2026-03-17T11:33:06.707937'
+release_status: NEW
+source: input/pagecontent/query-api-communication-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation
+  POST auf den Endpunkt /Communication mit GEM_ERP_PR_Communication_DispReq-Ressource
+  für den in Communication.basedOn referenzierten Task prüfen, falls die Verordnung
+  als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
+  = true) gekennzeichnet ist, ob der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start)
+  zum aktuellen oder einem früheren Zeitpunkt als das aktuelle Datum liegt und anderenfalls
+  mit dem Http-Fehler 400 und dem OperationOutcome "Prescription is not fillable yet."
+  abbrechen, damit ausschließlich E-Rezepte zugewiesen werden, deren Einlösefrist
+  erreicht ist.
+title: E-Rezept-Fachdienst - Nachricht einstellen - Dispense Request - Prüfung Beginn
+  Gültigkeit Task
+version: 0

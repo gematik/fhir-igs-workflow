@@ -24,7 +24,7 @@ Die Auswahl kann mit dem Anwendungsfall "Kostenträger suchen" erfolgen.
 Beim Zuweisen einer DiGA-Verordnung ist keine freie Textnachricht vorgesehen, um eine maschinelle Verarbeitung zur Bereitstellung des Freischaltcodes zu ermöglichen.
 
 <!-- A_19201-01 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-DIGA-55" title="E-Rezept-FdV: Verordnung zuweisen - Nachricht erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-6" title="E-Rezept-FdV: Verordnung zuweisen - Nachricht erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>

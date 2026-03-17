@@ -419,13 +419,16 @@ jobs:
         run: ./update-publisher.sh -y
 
       - name: Download HAPI validator for StructureMap transformation
-        if: steps.igs.outputs.ig_list != '' && contains(steps.igs.outputs.ig_list, 'bfarm')
+        if: steps.igs.outputs.ig_list != '' && (contains(steps.igs.outputs.ig_list, 'bfarm') || contains(steps.igs.outputs.ig_list, 'rx'))
         shell: bash
         run: |
           set -euo pipefail
+          validator_version="${HAPI_VALIDATOR_VERSION:-6.5.26}"
+          validator_url="https://github.com/hapifhir/org.hl7.fhir.core/releases/download/${validator_version}/validator_cli.jar"
           validator_path="$GITHUB_WORKSPACE/input-cache/current_hapi_validator.jar"
           mkdir -p "$(dirname "$validator_path")"
-          curl -sSL https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar -o "$validator_path"
+          echo "Downloading HAPI validator ${validator_version} from ${validator_url}"
+          curl -sSL "$validator_url" -o "$validator_path"
           if [[ ! -s "$validator_path" ]]; then
             echo "Failed to download HAPI validator jar" >&2
             exit 1
@@ -597,7 +600,6 @@ jobs:
               count=$(find "$out_dir" -type f | wc -l | tr -d ' ')
               total=$((total + count))
             fi
-
             id=$(yq -r '.id // ""' "igs/$ig/sushi-config.yaml")
             version=$(yq -r '.version // ""' "igs/$ig/sushi-config.yaml")
             id=${id#de.gematik.}
@@ -612,6 +614,36 @@ jobs:
             echo "deploy target: gs://gematik_gemspec_fhir_prod-0/$prefix"
           done
           echo "deploying $total files"
+
+      - name: Package IG output folders as ZIP
+        if: steps.igs.outputs.ig_list != ''
+        shell: bash
+        run: |
+          set -euo pipefail
+          for ig in ${{ steps.igs.outputs.ig_list }}; do
+            ig_dir="igs/$ig"
+            out_dir="$ig_dir/output"
+            zip_file="$ig_dir/output.zip"
+
+            if [[ -d "$out_dir" ]]; then
+              rm -f "$zip_file"
+              (
+                cd "$ig_dir"
+                zip -qr "output.zip" "output"
+              )
+              if [[ -s "$zip_file" ]]; then
+                echo "Created $zip_file"
+              fi
+            fi
+          done
+
+      - name: Upload IG outputs
+        if: steps.igs.outputs.ig_list != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: ig-outputs-${{ github.run_number }}
+          path: igs/*/output
+          if-no-files-found: warn
 
       - name: Prepare GitHub Pages content
         if: steps.igs.outputs.ig_list != ''
@@ -639,6 +671,11 @@ jobs:
 
               mkdir -p "$target_dir"
               cp -R "$out_dir"/. "$target_dir"/
+
+              zip_file="igs/$ig/output.zip"
+              if [[ -f "$zip_file" ]]; then
+                cp "$zip_file" "$target_dir/output.zip"
+              fi
             fi
           done
 

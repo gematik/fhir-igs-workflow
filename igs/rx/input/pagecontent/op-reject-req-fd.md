@@ -7,7 +7,7 @@ Diese Seite enthält die workflowtyp-spezifischen normativen Anforderungen an de
 ### Modulspezifische Anforderungen
 
 <!-- A_19170-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-4" title="E-Rezept-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-4" title="E-Rezept-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Rollenprüfung" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produktgutachten"/>
@@ -21,7 +21,7 @@ Diese Seite enthält die workflowtyp-spezifischen normativen Anforderungen an de
 </requirement>
 
 <!-- A_24286-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-5" title="E-Rezept-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Dispensierinformationen löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-5" title="E-Rezept-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Dispensierinformationen löschen" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produktgutachten"/>
@@ -35,7 +35,7 @@ Diese Seite enthält die workflowtyp-spezifischen normativen Anforderungen an de
 </requirement>
 
 <!-- A_25926 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-RX-6" title="E-Rezept-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Löschmarkierungen Medikationsliste bereitstellen (Dispensierinformationen)" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-6" title="E-Rezept-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Löschmarkierungen Medikationsliste bereitstellen (Dispensierinformationen)" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
