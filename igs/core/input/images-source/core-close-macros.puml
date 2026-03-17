@@ -1,0 +1,93 @@
+/' ============================================================
+   Core-Makros für $close Operation (IG-TIFLOW-CORE)
+   Enthält 3 Prozeduren – je eine pro Verarbeitungsphase.
+   Wird per !include in core-op-close.puml und rx-op-close.puml
+   eingebunden.
+   ============================================================ '/
+
+!procedure $core_fhir_validation()
+
+  :Parameters-Objekt gegen Profil\nGEM_ERP_PR_PAR_CloseOperation_Input\nvalidieren:\n• Rezept-ID korrekt?\n• KVNR (Task.for) == MedicationDispense.subject?\n• Telematik-ID (ACCESS_TOKEN) ==\n  MedicationDispense.performer.actor?;<<#LightBlue>>
+  note right
+    **IG-TIFLOW-CORE-39** / A_19248-05
+    Fehlercode: SVC_VALIDATION_FAILED
+  end note
+
+  if (Validierung bestanden?) then (nein)
+    :Abbruch mit **HTTP 400**\nSVC_VALIDATION_FAILED;<<#pink>>
+    stop
+  else (ja)
+  endif
+
+!endprocedure
+
+
+!procedure $core_business_validation()
+
+  :Secret prüfen\n(URL-Parameter ?secret= gegen\nTask.identifier:Secret)\nund Task.status = "in-progress" prüfen;<<#LightBlue>>
+  note right
+    **IG-TIFLOW-CORE-38** / A_19231-02
+    Fehlercodes:
+    • TIFLOW_INVALID_TASK_STATUS
+    • TIFLOW_SECRET_MISMATCH
+  end note
+
+  if (Secret gültig &\nTask.status = "in-progress"?) then (nein)
+    :Abbruch mit **HTTP 403**\nTIFLOW_INVALID_TASK_STATUS\noder TIFLOW_SECRET_MISMATCH;<<#pink>>
+    stop
+  else (ja)
+  endif
+
+  :OCSP-Response für Signaturzertifikat\nC.FD.OSIG prüfen\n(darf nicht älter als 24h sein);<<#LightBlue>>
+  note right
+    **IG-TIFLOW-CORE-45** / A_22919
+  end note
+
+  if (OCSP-Response vorhanden\n& nicht älter als 24h?) then (nein)
+    :Abbruch mit **HTTP 503**;<<#pink>>
+    stop
+  else (ja)
+  endif
+
+!endprocedure
+
+
+!procedure $core_data_processing()
+
+  :Task-Referenz als\nMedicationDispense.supportingInformation\nübernehmen und MedicationDispense\nsowie Medication speichern;<<#LightBlue>>
+  note right
+    **IG-TIFLOW-CORE-40** / A_27051
+  end note
+
+  if (MedicationDispense\nim Request übermittelt?) then (ja)
+    :Zeitstempel in\nTask.extension:lastMedicationDispense\nspeichern (FHIR-instant);<<#LightBlue>>
+    note right
+      **IG-TIFLOW-CORE-41** / A_26337
+    end note
+  else (nein)
+  endif
+
+  :Telematik-ID aus ACCESS_TOKEN\nin Task.owner speichern;<<#LightBlue>>
+  note right
+    **IG-TIFLOW-CORE-366**
+  end note
+
+  :Task.status auf **"completed"** setzen;<<#LightBlue>>
+  note right
+    **IG-TIFLOW-CORE-43** / A_19232
+  end note
+
+  :Quittungsbundle erstellen\n(GEM_ERP_PR_Bundle) und mit\nID.FD.OSIG signieren (CAdES-BES)\nIn Task.output speichern (DocumentType = 3);<<#LightBlue>>
+  note right
+    **IG-TIFLOW-CORE-44** / A_19233-05
+  end note
+
+  if (MedicationDispense übermittelt\n& Operation erfolgreich?) then (ja)
+    :Push-Notification auslösen\nChannelId: "erp.task.close"\nZiel: Versicherter (KVNR = Task.for);<<#LightBlue>>
+    note right
+      **IG-TIFLOW-CORE-42** / A_28129
+    end note
+  else (nein)
+  endif
+
+!endprocedure

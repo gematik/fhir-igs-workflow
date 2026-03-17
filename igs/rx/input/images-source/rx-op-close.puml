@@ -1,0 +1,114 @@
+@startuml
+title E-Rezept $close Operation – Server-Ablauf (strukturiert)\nModul: tiflow-rx (Arzneimittel FT 160/166/169/200/209)\n(POST /Task/{id}/$close)
+
+!include ../../../core/input/images-source/core-close-macros.puml
+
+legend top left
+  |= Farbe |= Bedeutung |
+  |<#LightBlue>| Core-Anforderung (IG-TIFLOW-CORE) |
+  |<#LightGreen>| Modulspezifisch (IG-TIFLOW-RX) |
+  |<#pink>| Fehler / Abbruch |
+end legend
+
+|E-Rezept-Fachdienst|
+start
+
+:Empfang HTTP POST /Task/{id}/$close\n- ACCESS_TOKEN im Authorization-Header\n- Task-ID in der URL\n- Secret im URL-Parameter ?secret=\n- Optional: MedicationDispense / Bundle;
+
+:Rollenprüfung: nur\n• oid_oeffentliche_apotheke\n• oid_krankenhausapotheke\n(Flowtype 160/166/169/200/209);<<#LightGreen>>
+note right
+  **IG-TIFLOW-RX-8** / A_19230-01
+  Fehlercode: TIFLOW_AUTH_ROLE_NOT_ALLOWED
+end note
+
+if (Rolle zulässig?) then (nein)
+  :Abbruch mit **HTTP 403**\nTIFLOW_AUTH_ROLE_NOT_ALLOWED;<<#pink>>
+  stop
+else (ja)
+endif
+
+partition "1. FHIR-Validierung" {
+
+  /' --- Core: FHIR-Schema-Validierung --- '/
+  $core_fhir_validation()
+
+  if (MedicationDispense\nim Request enthalten?) then (ja)
+    :Profilprüfung: MedicationDispense\nmuss GEM_ERP_PR_MedicationDispense\nentsprechen;<<#LightGreen>>
+    note right
+      **IG-TIFLOW-RX-9** / A_26002-02
+      Fehlercode:
+      TIFLOW_INVALID_MEDICATION_DISPENSE
+    end note
+    if (Profil korrekt?) then (nein)
+      :Abbruch mit Fehler\nTIFLOW_INVALID_MEDICATION_DISPENSE\n"Unzulässige Abgabeinformationen:\nFür diesen Workflow sind nur\nAbgabeinformationen für\nArzneimittel zulässig.";<<#pink>>
+      stop
+    else (ja)
+    endif
+  else (nein)
+  endif
+
+  :Mehrere MedicationDispense-Objekte\nin einem FHIR-Bundle ermöglichen;<<#LightGreen>>
+  note right
+    **IG-TIFLOW-RX-12**
+  end note
+
+}
+
+partition "2. Business-Validierung" {
+
+  /' --- Core: Secret + OCSP --- '/
+  $core_business_validation()
+
+  /' --- RX-spezifisch ab hier --- '/
+  if (MedicationDispense\nim Request enthalten?) then (nein)
+    :Prüfen ob bereits eine\nMedicationDispense zum Task existiert;<<#LightGreen>>
+    note right
+      **IG-TIFLOW-RX-10** / A_24287-01
+      Fehlercode:
+      TIFLOW_MEDICATION_DISPENSE_MISSING
+    end note
+    if (Bestehende MedicationDispense\nvorhanden?) then (nein)
+      :Abbruch mit **HTTP 403**\nTIFLOW_MEDICATION_DISPENSE_MISSING\n"Dispensierinformationen wurden\nnicht bereitgestellt.";<<#pink>>
+      stop
+    else (ja)
+    endif
+  else (ja)
+  endif
+
+}
+
+partition "3. Datenverarbeitung" {
+
+  /' --- RX-spezifisch: Vorbereitung --- '/
+  if (MedicationDispense\nim Request enthalten?) then (ja)
+    :Vorhandene MedicationDispenses und\nMedications löschen (wenn neue\nMedicationDispense übermittelt);<<#LightGreen>>
+    note right
+      **IG-TIFLOW-RX-11** / A_26481
+    end note
+  else (nein)
+  endif
+
+  /' --- Core-Block: Speichern & Workflow abschließen --- '/
+  $core_data_processing()
+
+  /' --- RX-spezifisch: Externe Dienste --- '/
+  :Daten für ePA Medication Service\nbereitstellen (Status = "completed");<<#LightGreen>>
+  note right
+    **IG-TIFLOW-RX-13** / A_25928-01
+  end note
+
+  if (Flowtype = 166?) then (ja)
+    :Daten des digitalen Durchschlags\nE-T-Rezept dem BfArM Webdienst\nbereitstellen;<<#LightGreen>>
+    note right
+      **IG-TIFLOW-RX-14** / A_27814
+    end note
+  else (nein)
+  endif
+
+  :Signiertes Quittungsbundle\nals HTTP-Response zurückgeben\n(**HTTP 200**);
+
+}
+
+stop
+
+@enduml

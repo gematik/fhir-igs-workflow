@@ -1,0 +1,33 @@
+@startuml
+title E-Rezept $close Operation – Server-Ablauf\nCore (IG-TIFLOW-CORE)\n(POST /Task/{id}/$close)
+
+!include core-close-macros.puml
+
+|E-Rezept-Fachdienst|
+start
+
+:Empfang HTTP POST /Task/{id}/$close\n- ACCESS_TOKEN im Authorization-Header\n- Task-ID in der URL\n- Secret im URL-Parameter ?secret=\n- Optional: MedicationDispense / Bundle;
+
+partition "1. FHIR-Validierung" {
+
+  $core_fhir_validation()
+
+}
+
+partition "2. Business-Validierung" {
+
+  $core_business_validation()
+
+}
+
+partition "3. Datenverarbeitung" {
+
+  $core_data_processing()
+
+  :Signiertes Quittungsbundle\nals HTTP-Response zurückgeben\n(**HTTP 200**);
+
+}
+
+stop
+
+@enduml

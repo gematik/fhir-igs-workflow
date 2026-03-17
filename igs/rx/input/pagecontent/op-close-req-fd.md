@@ -77,3 +77,10 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 Der Implementation Guide zur Übermittlung des digitalen Durchschlags an den BfArM Webdienst ist im [gemIG_TIFlow_bfarm] beschrieben.
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+    {% include rx-op-close.svg %}
+    </div>
+    <figcaption><strong>Abbildung: </strong>Aktivitätsdiagramm der $close-Operation</figcaption>
+</figure>

@@ -99,3 +99,10 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
     </actor>
     Der E-Rezept-Fachdienst MUSS, falls keine OCSP-Response für das Signaturzertifikat der Quittung vorliegt bzw. die letzte vorliegende OCSP-Response älter als 24h ist, die Operation mit dem Fehler 503 abbrechen.
 </requirement>
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+    {% include core-op-close.svg %}
+    </div>
+    <figcaption><strong>Abbildung: </strong>Aktivitätsdiagramm der $close-Operation</figcaption>
+</figure>
