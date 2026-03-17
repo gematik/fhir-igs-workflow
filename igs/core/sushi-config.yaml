@@ -1,11 +1,11 @@
-canonical: https://gematik.de/fhir/workflow/core
+canonical: https://gematik.de/fhir/tiflow/core
 fhirVersion: 4.0.1
 applyExtensionMetadataToRoot: false
-id: de.gematik.workflow.core
+id: de.gematik.tiflow.core
 name: gemIG_TIFlow_core
-title: "Implementation Guide E-Rezept-Workflow Core"
+title: "TIFlow - Kernfunktionalitäten"
 status: draft # draft | active | retired | unknown
-version: 1.0.0-draft
+version: 0.9.0
 
 copyrightYear: 2025+
 releaseLabel: ci-build # ci-build, ballot, release
@@ -30,7 +30,10 @@ menu:
     FHIR-Validierung: fhir-validate.html
     Löschfristen: ttl.html
     Fehlercodes: error-codes.html
-    Verbindungsaufbau von Clientsystemen: verbindungsaufbau-client.html
+    Kommunikation zu Diensten der TI: kommunikation-dienste-ti.html
+    PKI Zertifikatsprüfung: pki-zertifikatspruefung.html
+    Authentifizierung von Clientsystemen: authentifizierung-client.html
+    Health Check: health-check.html
   Technische Funktionsmerkmale:
     ePA Medication Service: menu-technische-umsetzung-epa-ms.html
     Push Notification: menu-technische-umsetzung-push.html
@@ -41,9 +44,8 @@ menu:
   FHIR-Artefakte: artifacts.html
   Anforderungsmapping: requirement-mapping-old-to-new.html
 
-# TODO: Technische Anbindung an externe Systeme, ePA, F-VZD, BfArM beschreiben
+# TODO Neuausschreibung: Technische Anbindung an externe Systeme, ePA, F-VZD, BfArM beschreiben
 # TODO: menu-technische-umsetzung-systemueberblick einbinden
-# TODO: Add ...-paging.md
 
 pages:
   index.md:
@@ -60,8 +62,14 @@ pages:
     title: "Push Notification senden"
   error-codes.md:
     title: "Fehlercodes"
-  verbindungsaufbau-client.md:
-    title: "Verbindungsaufbau von Clientsystemen"
+  kommunikation-dienste-ti.md:
+    title: "Kommunikation zu Diensten der TI"
+  pki-zertifikatspruefung.md:
+    title: "Zertifikatsprüfung"
+  authentifizierung-client.md:
+    title: "Authentifizierung von Clientsystemen"
+  health-check.md:
+    title: "Health Check"
   menu-schnittstellen-datenschutz-und-sicherheit.md:
     title: "Datenschutz und Sicherheit"
   menu-schnittstellen-generelle-prinzipien.md:

@@ -4,7 +4,7 @@ title UC 4.1 - E-Rezept durch Abgebenden abrufen
 actor "Mitarbeiter Apotheke" as MA
 participant "AVS" as AVS
 participant "Identity Provider" as IDP
-participant "E-Rezept Fachdienst" as FD
+participant "E-Rezept-Fachdienst" as FD
 participant "Konnektor" as K
 
 MA -> AVS: E-Rezept abrufen()
@@ -17,7 +17,7 @@ end
 
 AVS -> FD: POST /Task/{id}/$accept (AuthN-Token, AccessCode)
 activate FD
-FD -> FD: Status auf "in Abgabe (gesperrt)" setzen()
+FD -> FD: Status auf "in-progress" setzen()
 FD -> FD: Geheimnis erzeugen()
 FD --> AVS: Task, Binary, Geheimnis
 deactivate FD

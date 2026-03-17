@@ -23,7 +23,7 @@ Description: "AuditEvent für die Protokollierung des Zugriffs auf eRezepte"
 
 * source MS
   * site 1..1
-  * site = "E-Rezept Fachdienst" (exactly)
+  * site = "E-Rezept-Fachdienst" (exactly)
   * observer only Reference(Device)
   * observer.reference 1..1
 

@@ -165,11 +165,11 @@
     - Der NCPeH-FD prüft das Vorliegen einer Behandlungsbeziehung zwischen LE-EU und Versicherten.
     - Der NCPeH-FD prüft die Permission aus der Anfrage und falls nicht vorhanden die Rolle des anfragenden LE-EU.
     - Der NCPeH-FD sendet einen Request mit der Liste von Rezept-IDs des Versicherten an den E-Rezept-Fachdienst.
-    - Der E-Rezept-Fachdienst ändert den Status der abgefragten E-Rezepte, falls der Status "offen" ist, in "in Abgabe (gesperrt)".
+    - Der E-Rezept-Fachdienst ändert den Status der abgefragten E-Rezepte, falls der Status "ready" ist, in "in-progress".
     - Der E-Rezept-Fachdienst übermittelt die Liste der E-Rezepte an den NCPeH-FD.
     - Der NCPeH-FD transformiert und transkodiert die E-Rezepte in das entsprechende eHDSI-Dokumentenformat und erstellt den Response für den LE-EU.
   postconditions: |
-    - Der Status der einlösbaren E-Rezepte des Versicherten ist "in Abgabe (gesperrt)".
+    - Der Status der einlösbaren E-Rezepte des Versicherten ist "in-progress".
     - Die Abfrage ist im E-Rezept-Fachdienst protokolliert.
     - Der LE-EU stehen die Liste der E-Rezepte des Versicherten zur Verfügung.
   interface: |

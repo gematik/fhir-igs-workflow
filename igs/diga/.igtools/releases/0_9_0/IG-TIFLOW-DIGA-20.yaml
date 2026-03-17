@@ -1,0 +1,31 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: ce2d2a9cfd7af429fe6f47bad54cab79174e51d7c026b8d65e6cc7bd63b9ca2b
+created: '2026-03-17T11:33:07.522812'
+date: '2026-03-17T11:33:07.522827'
+key: IG-TIFLOW-DIGA-20
+modified: '2026-03-17T11:33:07.522824'
+release_status: NEW
+source: input/pagecontent/op-activate-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: "Der E-Rezept-Fachdienst MUSS bei einem Task mit Task.flowType = 162 die Attribute\
+  \ in Task in Abhängigkeit des in der http-POST-Operation /Task/&#60;id&#62;/$activate\
+  \ übergebenen gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_005 belegen.<br>\n\
+  \n  <table>\n    <tr> \n      <th>Feld in Task</th>\n      <th>Feldbelegung</th>\n\
+  \    </tr>\n    <tr> \n      <td>Task.performerType.coding.system</td>\n      <td>\"\
+  https://gematik.de/fhir/erp/CodeSystemGEM_ERP_CS_OrganizationType\"</td>\n    </tr>\n\
+  \    <tr> \n      <td>Task.performerType.coding.code</td>\n      <td>\"1.2.276.0.76.4.59\"\
+  </td>\n    </tr>\n    <tr> \n      <td>Task.performerType.coding.diplay</td>\n \
+  \     <td>\"Kostenträger\"</td>\n    </tr>\n    <tr> \n      <td>Task.PrescriptionType.valueCoding.display</td>\n\
+  \      <td>\"Flowtype für Digitale Gesundheitsanwendungen\"</td>\n    </tr>\n  \
+  \  <tr> \n      <td>Task.ExpiryDate</td>\n      <td>&#60;Datum der QES.Erstellung\
+  \ im Signaturobjekt&#62; + 3 Kalendermonate</td>\n    </tr>\n    <tr> \n      <td>Task.AcceptDate</td>\n\
+  \      <td>&#60;Datum der QES.Erstellung im Signaturobjekt&#62; + 3 Kalendermonate</td>\n\
+  \    </tr>\n  </table>\n  <div><figcaption><strong>Tabelle: </strong>TAB_eRpDM_005\
+  \ Prozessparameter Flowtype 162</figcaption></div>"
+title: E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prozessparameter
+version: 0

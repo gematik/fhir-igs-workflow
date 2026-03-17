@@ -4,56 +4,8 @@ Das PS der abgebenden LEI MUSS es dem Nutzer ermöglichen, ein E-Rezept zum Zur�
 
 Das PS der abgebenden LEI MUSS vom Nutzer eine Bestätigung einholen, dass das ausgewählte E-Rezept zurückgegeben werden soll und die Möglichkeit geben, das Zurückgeben abzubrechen.
 
-<!-- A_19249 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-193" title="PS abgebende LEI: E-Rezept durch Abgebenden zurückgeben" version="0">
-  <meta lockversion="false"/>
-  <actor name="PS_E-Rezept_abgebend">
-    <testProcedure id="Herstellererklärung"/>
-  </actor>
-  Das PS der abgebenden LEI MUSS den Anwendungsfall "UC 4.2 - E-Rezept durch Abgebenden zurückgeben" gemäß TAB_ILFERP_008 umsetzen.
-  <table>
-    <tr> 
-		<th>Name</th>
-		<th>E-Rezept durch Abgebenden zurückgeben</th>
-	</tr>
-	<tr> 
-		<td>Auslöser</td>
-		<td>Aufruf des Anwendungsfalls in der UI</td>
-	</tr>
-    <tr> 
-		<td>Akteur</td>
-		<td>Leistungserbringer, Mitarbeiter der abgebenden LEI</td>
-	</tr>
-    <tr> 
-		<td>Vorbedingung</td>
-		<td>
-            <ul>
-                <li>Die LEI hat das E-Rezept vom E-Rezept-Fachdienst heruntergeladen und es befindet sich im Status "in-progress".</li>
-                <li>Der Nutzer hat ein E-Rezept zum Zurückgeben markiert und das Zurückgeben bestätigt.</li>
-                <li>Die LEI hat sich gegenüber der TI authentisiert.</li>
-            </ul>
-        </td>
-	</tr>
-    <tr> 
-		<td>Nachbedingung</td>
-		<td>Das ausgewählte E-Rezept hat auf dem E-Rezept-Fachdienst den Status "ready"</td>
-	</tr>
-    <tr> 
-		<td>Standardablauf</td>
-		<td>
-            <ol>
-                <li>Task-ID und Geheimnis des E-Rezepts bestimmen</li>
-                <li>E-Rezept Status auf Fachdienst ändern</li>
-                <li>E-Rezept und E-Rezept-Token in PS löschen</li>
-            </ol>
-        </td>
-	</tr>
-  </table>
-  <div><figcaption><strong>Tabelle: </strong>TAB_ILFERP_008 - E-Rezept durch Abgebenden zurückgeben</figcaption></div>
-</requirement>
-
 <!-- A_19250 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-194" title="PS abgebende LEI: E-Rezept zurückgeben - Statusrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-224" title="PS abgebende LEI: E-Rezept zurückgeben - Statusrequest" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>
@@ -68,7 +20,7 @@ Das PS der abgebenden LEI MUSS vom Nutzer eine Bestätigung einholen, dass das a
 </requirement>
 
 <!-- A_19251 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-195" title="PS abgebende LEI: E-Rezept zurückgeben - E-Rezept löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-225" title="PS abgebende LEI: E-Rezept zurückgeben - E-Rezept löschen" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>

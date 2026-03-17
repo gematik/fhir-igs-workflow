@@ -15,7 +15,7 @@ end
 
 AVS -> FD: POST /Task/{id}/$reject (AuthN-Token, Secret)
 activate FD
-FD -> FD: Status auf "offen" setzen()
+FD -> FD: Status auf "ready" setzen()
 FD -> FD : Datenzugriff protokollieren()
 FD --> AVS: Status
 deactivate FD

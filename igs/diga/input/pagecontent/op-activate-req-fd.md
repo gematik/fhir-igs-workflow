@@ -9,7 +9,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 
 
 <!-- A_25990 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-11" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - QES durch berechtigte Berufsgruppe" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-15" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - QES durch berechtigte Berufsgruppe" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>
@@ -28,7 +28,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 <br>
 
 <!-- A_25991 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-12" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Verordnung von DiGAs" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-16" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Verordnung von DiGAs" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>
@@ -39,7 +39,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 <br>
 
 <!-- A_25992 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-13" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-17" title="E-Rezept-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>
@@ -51,7 +51,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 <br>
 
 <!-- A_23443-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-14" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Type" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-18" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Type" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>
@@ -61,7 +61,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 
 <br>
 <!-- A_26372 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-15" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Alternative IK" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-19" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Alternative IK" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>
@@ -71,8 +71,8 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 
 Dieser Ausschluss erfolgt temporär. In einer späteren Version können Unfallkassen das Verordnen von DiGAs explizit unterstützen. Die konkreten Festlegungen dazu werden in einem Folgerelease getroffen.
 
-<!-- A_27845 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-16" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prozessparameter" version="0">
+<!-- A_27845, A_19999 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-20" title="E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prozessparameter" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>

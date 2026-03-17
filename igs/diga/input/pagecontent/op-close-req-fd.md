@@ -12,7 +12,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-3" title="E-Rezept-Fachdienst - Task schliessen - Flowtype 162 - Rollenprüfung" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
-    <testProcedure id="Produkttest"/>
+    <testProcedure id="Produktgutachten"/>
   </actor>
   Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks für eine Verordnung mit Flowtype 162 mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/&#60;id&#60;  die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Institutionen in der Rolle
   <ul>

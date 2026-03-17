@@ -246,7 +246,7 @@ RuleSet: ProvenanceInteraction(expectation)
 * insert CapSupportResourceSearchParam(recorded, http://hl7.org/fhir/SearchParameter/Provenance-recorded, #date, {expectation}, "When the activity was recorded / updated")
 * insert CapSupportResourceSearchParam(when, http://hl7.org/fhir/SearchParameter/Provenance-when, #date, {expectation}, "Provenance.occurred as dateTime")
 * insert CapSupportCustomSearchParam(is-emp-chronology, IsEMPChronologySP, #token, {expectation}, "Provenance.extension:isEMPChronology")
-// TODO: Custom SearchParameter for extension of the Type MedicationStatement.extension.typr
+// TODO Neuausschreibung: Custom SearchParameter for extension of the Type MedicationStatement.extension.typr
 * rest.resource[=].searchInclude[+] = "Provenance:agent"
 * rest.resource[=].searchInclude[+] = "Provenance:target"
 // * rest.resource[=].searchRevInclude[+] = "Provenance:target"

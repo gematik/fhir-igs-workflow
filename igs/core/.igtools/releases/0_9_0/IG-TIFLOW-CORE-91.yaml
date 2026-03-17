@@ -1,0 +1,22 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 52336c5a103d0e646c8df4ea72b7281f275b5d7434982497b632dbcb86101c4c
+created: '2026-03-17T11:33:06.659485'
+date: '2026-03-17T11:33:06.659487'
+key: IG-TIFLOW-CORE-91
+modified: '2026-03-17T11:33:06.659486'
+release_status: NEW
+source: input/pagecontent/query-api-task-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS, falls im VSDM Prüfungsnachweis eine Prüfziffer\
+  \ enthalten ist, für den HMAC der Prüfziffer die führenden 23 Byte der Prüfziffer\
+  \ (Felder 1-5) mittels SHA-256 Hashfunktion berechnen und für den nachfolgenden\
+  \ Vergleich die ersten 24 Byte verwenden.<br>\n    Der E-Rezept-Fachdienst MUSS\
+  \ im Fehlerfall die Meldung \"Anwesenheitsnachweis konnte nicht erfolgreich durchgeführt\
+  \ werden (Fehler bei Prüfung der HMAC-Sicherung).\" im OperationOutcome zu übermitteln."
+title: E-Rezept-Fachdienst - Prüfung Prüfziffer - Berechnung HMAC der Prüfziffer
+version: 0

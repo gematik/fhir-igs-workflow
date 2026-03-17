@@ -1,0 +1,21 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: b70411e20cbbcfe7220262afe6da1a250f87ddb27f9c94d4613c00252ed25edc
+created: '2026-03-17T11:33:06.657329'
+date: '2026-03-17T11:33:06.657332'
+key: IG-TIFLOW-CORE-77
+modified: '2026-03-17T11:33:06.657331'
+release_status: NEW
+source: input/pagecontent/query-api-task-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
+  /Task mit dem URL-Parameter pnw="..." durch eine abgebende LEI prüfen, ob mit dem
+  Aufruf die Anzahl RATELIMIT_MAX1d_ERROR_UC4_12 überschritten ist und in diesem Fall
+  den Aufruf mit dem Fehler 423 abbrechen.
+title: E-Rezept-Fachdienst - Rezepte lesen - Apotheke - Ratelimit pro Telematik-ID
+  prüfen
+version: 0

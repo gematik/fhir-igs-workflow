@@ -1,0 +1,20 @@
+actor:
+- PS_E-Rezept_abgebend
+conformance: SHALL
+content_hash: b3868bde9184946e2f7092e624c6b80ebf912106ba0a03f1f15d8234fbc18812
+created: '2026-03-17T11:33:06.673075'
+date: '2026-03-17T11:33:06.673078'
+key: IG-TIFLOW-CORE-153
+modified: '2026-03-17T11:33:06.673077'
+release_status: NEW
+source: input/pagecontent/op-abort-req-avs.md
+status: ACTIVE
+test_procedures:
+  PS_E-Rezept_abgebend:
+  - Konformitätsbestätigung
+text: Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezept durch Abgebenden
+  löschen" für das zu löschende E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$abort
+  mit ACCESS_TOKEN im Authorization-Header Task-ID in URL &lt;id&gt; Geheimnis in
+  URL Parameter ?secret= ausführen.
+title: 'PS abgebende LEI: E-Rezept löschen - Löschrequest'
+version: 0

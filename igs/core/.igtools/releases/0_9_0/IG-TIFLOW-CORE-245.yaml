@@ -1,0 +1,22 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 76e20b40f796886467623331aa26315a85b7f4003398b27183ab4c9bc7423e8b
+created: '2026-03-17T11:33:06.695726'
+date: '2026-03-17T11:33:06.695729'
+key: IG-TIFLOW-CORE-245
+modified: '2026-03-17T11:33:06.695728'
+release_status: NEW
+source: input/pagecontent/fhir-validate.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen,
+  ob angegebene Referenzen nach [FHIR Spezifikation Auflösen von Referenzen in Bundles]
+  ermittelt werden können und bei Auffälligkeiten mit dem HTTP-Fehlercode 400 abbrechen
+  und die Fehlermeldung "Referenz einer Ressource konnte nicht aufgelöst werden."
+  in Form eines OperationOutcome ausliefern.
+title: E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Auflösbarkeit von
+  Referenzen
+version: 0

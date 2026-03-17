@@ -1,24 +1,24 @@
 @startuml
 title E-Rezept durch den Versicherten markieren
 
-actor Versicherte
+autonumber "<b>[0]"
+actor Versicherte as Ver
 participant "E-Rezept-FdV" as FdV
 participant "E-Rezept-Fachdienst" as FD
-participant "Identity Provider" as IdP
+participant "Identity Provider" as IDP
 
-Versicherte -> FdV : [1] E-Rezept auswählen
-Versicherte -> FdV : [2] Markierung auswählen/abwählen
+Ver -> FdV : E-Rezept auswählen
+Ver -> FdV : Markierung auswählen/abwählen
 
-opt
-  ref over FdV, IdP : [3] UC5.1 - AuthN-Token durch Versicherten anfordern
-  FdV -> IdP : [3] UC5.1 - AuthN-Token durch Versicherten anfordern
+opt kein gültiger AuthN-Token
+  ref over FdV, IDP: AuthN-Token anfordern
 end
 
-FdV -> FD : [4] PATCH /Task/{Task-ID} {AuthN-Token}
-FD -> FD : [5] Markierung speichern
-FD -> FD : [6] Datenzugriff protokollieren
-FD --> FdV : [7] Status
+FdV -> FD : PATCH /Task/{Task-ID} {AuthN-Token}
+FD -> FD : Markierung speichern
+FD -> FD : Datenzugriff protokollieren
+FD --> FdV : Status
 
-FdV --> Versicherte : [8] Status anzeigen
+FdV --> Versicherte : Status anzeigen
 
 @enduml

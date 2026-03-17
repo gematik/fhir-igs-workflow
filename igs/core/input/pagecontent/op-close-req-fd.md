@@ -3,7 +3,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_19231-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-38" title="E-Rezept-Fachdienst - Task schließen - Prüfung Secret" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-53" title="E-Rezept-Fachdienst - Task schließen - Prüfung Secret" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -12,7 +12,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_19248-05 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-39" title="E-Rezept-Fachdienst - Task schließen - Schemaprüfung MedicationDispense" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-54" title="E-Rezept-Fachdienst - Task schließen - Schemaprüfung MedicationDispense" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -27,7 +27,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_27051 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-40" title="E-Rezept-Fachdienst - Task schließen - MedicationDispense speichern" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-55" title="E-Rezept-Fachdienst - Task schließen - MedicationDispense speichern" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -36,7 +36,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_26337 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-41" title="E-Rezept-Fachdienst - Task schließen - Zeitstempel MedicationDispense" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-56" title="E-Rezept-Fachdienst - Task schließen - Zeitstempel MedicationDispense" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -44,8 +44,17 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
     Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close den Zeitpunkt des Aufrufes in Task.extension:lastMedicationDispense im Format "YYYY-MM-DDThh:mm:ss+zz:zz" (FHIR-instant) anlegen und speichern, wenn ein MedicationDispense Objekt im Aufruf übergeben wird.
 </requirement>
 
+<!-- A_28411 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-57" title="E-Rezept-Fachdienst - Task schließen - Telematik-ID der abgebenden LEI speichern" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FD">
+        <testProcedure id="Produkttest"/>
+    </actor>
+    Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close für den referenzierten Task die Telematik-ID aus dem ACCESS_TOKEN in Task.owner speichern, damit sichergestellt werden kann, dass nachfolgende Zugriffe auf diesen Datensatz nur durch Berechtigte erfolgen können.
+</requirement>
+
 <!-- A_28129 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-42" title="E-Rezept-Fachdienst - Task schließen - Push Notification Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-58" title="E-Rezept-Fachdienst - Task schließen - Push Notification Versicherter" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -54,7 +63,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_19232 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-43" title="E-Rezept-Fachdienst - Task schließen - Status beenden" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-59" title="E-Rezept-Fachdienst - Task schließen - Status beenden" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -62,15 +71,15 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
     Der E-Rezept-Fachdienst MUSS die zulässige Beendigung eines Tasks mittels /Task/&lt;id&gt;/$close-Operation im StatusTask.status = "completed" vollziehen, damit der Workflow für den Versicherten als beendet und die Verordnung somit als eingelöst dargestellt wird.
 </requirement>
 
-<!-- A_19233-05 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-44" title="E-Rezept-Fachdienst - Task schließen - Quittung erstellen" version="0">
+<!-- A_19233-06 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-60" title="E-Rezept-Fachdienst - Task schließen - Quittung erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
     Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels /Task/&lt;id&gt;/$close ein Quittungsbundle gemäß des FHIR-Profils https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle mit folgenden Informationen erstellen:
     <ul>
-        <li>Telematik-ID der aufrufenden Apotheke als Beneficiary in die erxComposition</li>
+        <li>Telematik-ID der aufrufenden Apotheke als Beneficiary in die GEM_ERP_PR_Composition</li>
         <li>Zeitstempel des Statuswechsel des Tasks "in-progress" in event.period.start</li>
         <li>aktueller Zeitstempel in event.period.end</li>
         <li>Identifier PrescriptionID des Task als identifier des Quittungs-Bundle</li>
@@ -79,11 +88,11 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
     </ul>
     und dieses Quittungs-Bundle mit der Signaturidentität des Fachdienstes ID.FD.OSIG gemäß [RFC5652] mit Profil CAdES-BES ([CAdES]) im Enveloping signieren.
     In die Signatur wird die letzte OCSP-Antwort der regelmäßigen Statusprüfung des Signaturzertifikats C.FD.OSIG eingebettet.
-    Das Signatur-Ergebnis wird als dss:Base64Signature-Objekt in Bundle.signature eingebettet und dieses Quittungs-Bundle mit Referenz in Task.outputmit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType= 3 gespeichert sowie als Response des http-Requests an den Aufrufer zurückgeben, damit die abgebende LEI einen Nachweis über den ordnungsgemäßen Abschluss des E-Rezept-Workflows als Quittung erhält.
+    Das Signatur-Ergebnis wird als dss:Base64Signature-Objekt in Bundle.signature eingebettet und dieses Quittungs-Bundle mit Referenz in Task.output mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType = 3 gespeichert sowie als Response des http-Requests an den Aufrufer zurückgeben, damit die abgebende LEI einen Nachweis über den ordnungsgemäßen Abschluss des E-Rezept-Workflows als Quittung erhält.
 </requirement>
 
 <!-- A_22919 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-45" title="E-Rezept-Fachdienst - Task schließen - OCSP-Response nicht älter als 24h" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-61" title="E-Rezept-Fachdienst - Task schließen - OCSP-Response nicht älter als 24h" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>

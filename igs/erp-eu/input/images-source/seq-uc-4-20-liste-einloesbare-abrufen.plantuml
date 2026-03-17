@@ -1,23 +1,24 @@
 @startuml
 title UC Liste der einlösbaren E-Rezepte eines Versicherten abrufen
 
+autonumber "<b>[0]"
 actor "LE-EU" as LEEU
 participant "eHDSI / NCPeH-FD\nDeutschland" as NCP
 participant "E-Rezept-Fachdienst" as FD
 
-LEEU -> NCP : [1] Abfrage einlösbarer E-Rezepte
-NCP -> NCP : [2] Prüfung Behandlungsverhältnis\nLE-EU und Versicherter
-NCP -> NCP : [3] Prüfung Permission bzw. Rolle
+LEEU -> NCP : Abfrage einlösbarer E-Rezepte
+NCP -> NCP : Prüfung Behandlungsverhältnis\nLE-EU und Versicherter
+NCP -> NCP : Prüfung Permission bzw. Rolle
 
-NCP -> FD : [4] POST /$get-eu-prescriptions\n{AuthN-Token, KVNR, Zugriffscode,\nlaendercode, practitionerName,\npractitionerRole, pointOfCare,\nhealthcare-facility-type,\nrequesttype}
+NCP -> FD : POST /$get-eu-prescriptions\n{AuthN-Token, KVNR, Zugriffscode,\nlaendercode, practitionerName,\npractitionerRole, pointOfCare,\nhealthcare-facility-type,\nrequesttype}
 
-FD -> FD : [5] Einwilligung für KVNR prüfen
-FD -> FD : [6] Prüfung Zugriffscode für KVNR\n(KVNR, Zugriffscode, laendercode,\naktueller Zeitpunkt)
-FD -> FD : [7] Einlösbare Tasks für KVNR bestimmen
-FD -> FD : [8] Zugriff protokollieren\n(KVNR, practitionerName,\npractitionerRole, pointOfCare,\nhealthcare-facility-type,\nrequesttype)
+FD -> FD : Einwilligung für KVNR prüfen
+FD -> FD : Prüfung Zugriffscode für KVNR\n(KVNR, Zugriffscode, laendercode,\naktueller Zeitpunkt)
+FD -> FD : Einlösbare Tasks für KVNR bestimmen
+FD -> FD : Zugriff protokollieren\n(KVNR, practitionerName,\npractitionerRole, pointOfCare,\nhealthcare-facility-type,\nrequesttype)
 
-FD --> NCP : [9] Bundle von Verordnungen
-NCP -> NCP : [10] Transformierung und Transkodierung
-NCP --> LEEU : [11] Liste von ePrescriptions
+FD --> NCP : Bundle von Verordnungen
+NCP -> NCP : Transformierung und Transkodierung
+NCP --> LEEU : Liste von ePrescriptions
 
 @enduml

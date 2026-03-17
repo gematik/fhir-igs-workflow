@@ -28,10 +28,10 @@ and EFlowRxEuIsRedeemableByPatientAuthorizationExtension named eu-isRedeemableBy
     Secret 0..1
 * identifier[PrescriptionID] only EPrescriptionId
   * ^short = "E-Rezept-ID"
-  * ^definition = "Die E-Rezept-ID ist der Hauptidentifikator für die Task Ressource und den gesamten E-Rezept Workflow. Dieser Identifikator wird vom E-Rezept Fachdienst generiert und darf nicht manuell geändert werden."
+  * ^definition = "Die E-Rezept-ID ist der Hauptidentifikator für die Task Ressource und den gesamten E-Rezept Workflow. Dieser Identifikator wird vom E-Rezept-Fachdienst generiert und darf nicht manuell geändert werden."
 * identifier[AccessCode] 
   * ^short = "AccessCode Identifier"
-  * ^definition = "Generiert vom E-Rezept Fachdienst. Dieser Identifikator muss in jeder Anfrage zur Task Ressource übertragen werden."
+  * ^definition = "Generiert vom E-Rezept-Fachdienst. Dieser Identifikator muss in jeder Anfrage zur Task Ressource übertragen werden."
   * system 1..
   * system = "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode" (exactly)
   * value 1..

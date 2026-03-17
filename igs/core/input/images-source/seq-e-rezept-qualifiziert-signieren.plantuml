@@ -2,18 +2,18 @@
 title E-Rezept qualifiziert signieren
 
 actor "Verordnender" as V
-participant "Primaersystem" as PS
+participant "Primärsystem" as PS
 participant "Konnektor" as K
 
 V -> PS: QES auslösen()
 activate PS
 
-PS -> K: sign_Document_QES(Verordnungsdaten)
+PS -> K: sign_Document_QES(Verordnungsdatensatz)
 activate K
 K --> PS: QES-Signatur
 deactivate K
 
-PS -> PS: Signierte Verordnungsdaten speichern()
+PS -> PS: Signierten Verordnungsdatensatz speichern()
 PS --> V: QES abgeschlossen
 deactivate PS
 

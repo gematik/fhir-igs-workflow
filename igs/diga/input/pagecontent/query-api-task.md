@@ -1,22 +1,25 @@
+Diese Seite basiert auf der gleichnamigen Schnittstelle in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/{{ site.data.constants.tiflow_core_version }}/query-api-task.html) und beschreibt den Einstieg in die Task-Query-Schnittstelle.
 
-Die Query API für Task beschreibt den lesenden Zugriff auf Tasks.
-Der Versicherte ruft die Liste aller seiner Verordnungen inklusive DiGA-Verordnungen ab.
-Der Versicherte kann mit Referenz auf eine Task-ID eine einzelne Verordnung abrufen.
+### Nachricht
 
-Der Kostenträger kann unter Angabe der Task-ID und des ACCESS_CODE die Daten einer einzelnen Verordnung abrufen und somit insbesondere den Anwendungfall "Recovery Secret" umsetzen.
+Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource _Task_ wird über die folgenden HTTP-Methoden ermöglicht:
 
-Der Kostenträger kann unter Angabe der Task-ID und des Secrets die Daten einer einzelnen Verordnung abrufen und somit insbesondere den Anwendungfall "Quittung erneut abrufen" umsetzen.
+|Akteur|HTTP-Methode|Ergebnis der Anfrage|
+|---|---|---|
+|Versicherter|GET|Liste von Task abrufen|
+|Versicherter|GET /&#60;id&#62;|Spezifischen Task abrufen|
+|Kostenträger|GET /&#60;id&#62;?ac=|Recovery Secret|
+|Kostenträger|GET /&#60;id&#62;?secret=|Quittung erneut abrufen|
+|Versicherter|PATCH|Task markieren|
 
-### GET /Task (Suche)
-- Der Aufruf basiert auf dem GET /Task Aufruf des Basis-Workflow für E-Rezepte.
+### Anforderungen an Schnittstelle
 
-Es gibt keine workflow-spezifischen Anforderungen für den E-Rezept-Fachdienst.
+- [FD-Anforderungen zur Task-Query](./query-api-task-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [FdV-Anforderungen für Task-Query](./query-api-task-req-fdv.html): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
+- [KTR-Anforderungen für Task-Query](./query-api-task-req-ktr.html): Anforderungen an das Clientsystem Kostenträger zur Nutzung der Schnittstelle.
 
-Es gibt keine workflow-spezifischen Anforderungen für das E-Rezept-FdV.
+#### API Beschreibung
 
-### GET /Task/<id> (Details)
-- Der Aufruf basiert auf dem GET /Task/&#60;id&#62; Aufruf des Basis-Workflow für E-Rezepte.
+- [API-ERP: Abruf der DiGA-Verordnung durch den Versicherten](https://github.com/gematik/api-erp/blob/master/docs/erp_diga.adoc#abrufen-der-diga-verordnung)
+- [API-ERP: E-Rezept erneut abrufen durch den Kostenträger](https://github.com/gematik/api-erp/blob/master/docs/erp_abrufen.adoc#e-rezept-erneut-abrufen)
 
-Es gibt keine workflow-spezifischen Anforderungen für das E-Rezept-FdV.
-
-Es gibt keine workflow-spezifischen Anforderungen für den Kostenträger.

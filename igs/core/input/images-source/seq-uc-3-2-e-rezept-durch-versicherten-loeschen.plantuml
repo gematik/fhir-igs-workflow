@@ -15,7 +15,7 @@ end
 
 FdV -> FD: POST /Task/{id}/$abort (AuthN-Token, AccessCode)
 activate FD
-FD -> FD: Status auf "gelöscht" setzen()
+FD -> FD: Status auf "cancelled" setzen()
 FD -> FD: Daten löschen()
 FD --> FdV: Status
 FD -> FD : Datenzugriff protokollieren()

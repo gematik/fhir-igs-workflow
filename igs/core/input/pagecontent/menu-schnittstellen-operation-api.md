@@ -1,13 +1,8 @@
-TODO
+Die folgenden Operation APIs stellt der E-Rezept-Fachdienst zur verfügung
 
-Die fachmodulspezifischen Erweiterungen sind in den jeweiligen Fach-IGs dokumentiert.
-
-## Shared Operations
-
-- [$create](./op-create.html)
-- [$activate](./op-activate.html)
-- [$close](./op-close.html)
-- [$reject](./op-reject.html)
-- [$abort](./op-abort.html)
-
-Hinweis: Ein Fachmodul MUSS in seiner jeweiligen Operationsseite klar angeben, welche Anforderungen aus dem Core geerbt werden und welche modulspezifischen Anforderungen zusätzlich gelten.
+- Primärsystem: [Operation API: E-Rezept erstellen](./op-create.html)
+- Primärsystem: [Operation API: E-Rezept aktivieren](./op-activate.html)
+- Primärsystem: [Operation API: Task abrufen](./op-accept.html)
+- Primärsystem: [Operation API: Task zurückweisen](./op-reject.html)
+- Primärsystem: [Operation API: Task schließen](./op-close.html)
+- Primärsystem / E-Rezept-FdV: [Operation API: E-Rezept löschen](./op-abort.html)

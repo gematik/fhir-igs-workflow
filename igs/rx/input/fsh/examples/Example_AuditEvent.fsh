@@ -23,7 +23,7 @@ Usage: #example
 * agent[=].who.identifier.value = "1-SMC-B-Testkarte-883110000095957"
 * agent[=].name = "Praxis Dr. Müller"
 * agent[=].requestor = false
-* source.site = "E-Rezept Fachdienst"
+* source.site = "E-Rezept-Fachdienst"
 * source.observer = Reference(ReceiptBundleDevice)
 * entity[+].what.reference = "https://erp.app.ti-dienste.de/Task/160.123.456.789.123.58"
 * entity[=].what.identifier.system = "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"

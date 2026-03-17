@@ -1,10 +1,10 @@
 Der E-Rezept-Fachdienst stellt eine http-Schnittstelle für den Aufruf durch Clientsysteme bereit. Das Ergebnis der Operation wird in der Verwendung von Http-Status-Codes [HTTP-STATUS-CODES] mitgeteilt. Die folgende Tabelle listet die vom E-Rezept-Fachdienst genutzten Http-Status-Codes auf.
 
 <!-- A_19514-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-280" title="E-Rezept-Fachdienst - Http-Status-Codes" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-302" title="E-Rezept-Fachdienst - Http-Status-Codes" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Herstellererklärung"/>
     </actor>
      Der E-Rezept-Fachdienst MUSS beim Aufruf einer Operation im Http-Response-Header einen HTTP-Status-Codes gemäß [RFC7231] zurückgeben.
 </requirement>
@@ -30,10 +30,10 @@ Der E-Rezept-Fachdienst stellt eine http-Schnittstelle für den Aufruf durch Cli
 <div><figcaption><strong>Tabelle: </strong>Übersicht HTTP-Statuscodes E-Rezept-Fachdienst</figcaption></div>
 
 <!-- A_22103 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-281" title="E-Rezept-Fachdienst - Fehlerdetails in OperationOutcome" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-303" title="E-Rezept-Fachdienst - Fehlerdetails in OperationOutcome" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+        <testProcedure id="Produktgutachten"/>
     </actor>
      Der E-Rezept-Fachdienst MUSS im Fehlerfall (http-Statuscodes &gt;= 400) Hinweise zur Fehlerursache 
      

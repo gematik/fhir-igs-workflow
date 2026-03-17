@@ -5,24 +5,24 @@ title RX Operation $create
 
 start
 :Client ruft POST /Task/$create auf;
-:FD prueft Rolle aus ACCESS_TOKEN;
-if (Rolle zulaessig?) then (ja)
+:FD prüft Rolle aus ACCESS_TOKEN;
+if (Rolle zuässig?) then (ja)
 else (nein)
   :HTTP 403;
   stop
 endif
 
 :FD validiert Parameters gegen CreateOperationDefinition;
-if (Schema gueltig?) then (ja)
+if (Schema gültig?) then (ja)
 else (nein)
   :HTTP 400;
   stop
 endif
 
-:FD uebernimmt workflowType;
+:FD übernimmt workflowType;
 :FD erzeugt PrescriptionID, Task.id und AccessCode;
 :FD setzt Task.status = draft;
-:FD gibt Task zurueck;
+:FD gibt Task zurück;
 stop
 
 @enduml

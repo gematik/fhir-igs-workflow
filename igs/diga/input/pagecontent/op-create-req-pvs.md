@@ -8,8 +8,10 @@ Diese Seite enthält die normativen Anforderungen an ein PVS für die Operation 
 
 Zur Verordnung von DiGAs werden die DiGA-FHIR-Profile der KBV genutzt: https://simplifier.net/evdga.
 
+Das PS der verordnenden LEI darf FHIR-Extensions nicht im Verordnungsdatensatz verwenden, die nicht explizit gemäß KBV-Profilversion "kbv.itv.evdga" beschrieben sind.
+
 <!-- A_26373 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-DIGA-18" title="PS verordnende LEI: keine elektronische Verordnung einer DiGA zu Lasten BG/UK" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-DIGA-22" title="PS verordnende LEI: keine elektronische Verordnung einer DiGA zu Lasten BG/UK" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Herstellererklärung"/>

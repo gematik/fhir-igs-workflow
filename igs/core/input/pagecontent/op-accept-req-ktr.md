@@ -2,12 +2,12 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 
 <!-- A_19558-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-334" title="CS Kostenträger:  E-Rezept abrufen - Task herunterladen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-367" title="CS Kostenträger:  E-Rezept abrufen - Task herunterladen" version="0">
     <meta lockversion="false"/>
     <actor name="CS_E-Rezept_KTR">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-    Das Clientsystem MUSS im Anwendungsfall "Verordnung abrufen" zum Herunterladen des E-Rezepts die HTTP-Operation POST /Task/&#60;id&#62;/$accept mit
+    Das Clientsystem Kostenträger MUSS im Anwendungsfall "Verordnung abrufen" zum Herunterladen des E-Rezepts die HTTP-Operation POST /Task/&#60;id&#62;/$accept mit
     <ul> 
         <li>ACCESS_TOKEN im Authorization-Header</li>
         <li>Task-ID in URL &#60;id&#62;</li>
