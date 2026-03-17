@@ -44,3 +44,5 @@ und dieses Quittungs-Bundle mit der Signaturidentität des Fachdienstes ID.FD.OS
 
 Der E-Rezept-Fachdienst MUSS, falls keine OCSP-Response für das Signaturzertifikat der Quittung vorliegt bzw. die letzte vorliegende OCSP-Response älter als 24h ist, die Operation mit dem Fehler 503 abbrechen.
 
+**Abbildung: **Aktivitätsdiagramm der $close-Operation
+

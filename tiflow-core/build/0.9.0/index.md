@@ -59,7 +59,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
   "name" : "gemIG_TIFlow_core",
   "title" : "TIFlow - Kernfunktionalitäten",
   "status" : "draft",
-  "date" : "2026-03-17T11:07:02+00:00",
+  "date" : "2026-03-17T15:43:06+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -1372,15 +1372,6 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
         }],
         "nameUrl" : "artifacts.html",
         "title" : "FHIR-Artefakte",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "requirement-mapping-old-to-new.html"
-        }],
-        "nameUrl" : "requirement-mapping-old-to-new.html",
-        "title" : "Mapping alter Anforderungen auf FHIR-IG Anforderungen",
         "generation" : "markdown"
       }]
     },
