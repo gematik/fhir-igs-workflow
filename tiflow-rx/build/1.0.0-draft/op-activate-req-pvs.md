@@ -36,8 +36,6 @@ Für die Spezifikation des Datamatrix-Code für E-Rezept-Token siehe [gemSpec_DM
 
 ### Modulspezifische Anforderungen
 
-### Anforderungen im Rahmen des Moduls Arzneimittel
-
 Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" für Verordnungen mit Flowtype 160, 166, 169, 200 oder 209 Dosierinformationen nach [Medication IG] erzeugen und im E-Rezept-Bundle angeben.
 ### Anforderungen Workflow 200, 209
 

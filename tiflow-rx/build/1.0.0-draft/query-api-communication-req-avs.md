@@ -70,9 +70,9 @@ Das PS der abgebenden LEI (Apotheke) MUSS im Anwendungsfall "Nachricht an Versic
 erstellen.
 Für TAB_eRpDM_003 siehe [Datenmodell Payload für Communication-Query](./query-api-communication-req-data.md)
 
-Beispiele für diesen Anwendungsfall stehen im GitHub  https://github.com/gematik/interactive-api-erp.Die
+Beispiele für diesen Anwendungsfall stehen im GitHub  https://github.com/gematik/interactive-api-erp .
 
-Erläuterung und das Schema des Payloads sind in [gemSpec_DM_eRp#TAB_eRpDM_003] zu finden.
+Die Erläuterung und das Schema des Payloads sind in [gemSpec_DM_eRp#TAB_eRpDM_003] zu finden.
 
 Das PS der abgebenden LEI (Apotheke) MUSS im Anwendungsfall "Nachricht an Versicherten versenden" bezüglich der Belieferung eines Arzneimittels eine Communication Ressource mit dem Profil GEM_ERP_PR_Communication_Reply mit
 * Versicherten-ID des Absenders der empfangenen Nachricht in recipient

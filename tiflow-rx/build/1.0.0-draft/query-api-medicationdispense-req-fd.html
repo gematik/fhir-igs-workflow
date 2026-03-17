@@ -295,8 +295,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-92" title="E-Rezept-Fachdienst - MedicationDispense - unzulässige Operationen" version="0">
   <meta lockversion="false" />
   <actor name="eRp_FD">
-    	<testProcedure id="Produktgutachten" />
-  	</actor>
+   	<testProcedure id="Produktgutachten" />
+  </actor>
   Der E-Rezept-Fachdienst MUSS alle Zugriffe auf die Ressource MedicationDispense mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE sowie POST unterbinden, damit keine unzulässigen Operationen auf den Rezeptdaten ausgeführt werden können.
 </requirement>
 
@@ -306,7 +306,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <meta lockversion="false" />
   <actor name="eRp_FD">
     	<testProcedure id="Produktgutachten" />
-  	</actor>
+  </actor>
   Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /MedicationDispense sicherstellen, dass ausschließlich Nutzer in der Rolle 
   <ul>
     <li>oid_versicherter</li>
@@ -318,8 +318,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-94" title="E-Rezept-Fachdienst - MedicationDispense abrufen - Filter MedicationDispense auf KVNR des Versicherten" version="0">
   <meta lockversion="false" />
   <actor name="eRp_FD">
-    	<testProcedure id="Produktgutachten" />
-  	</actor>
+   	<testProcedure id="Produktgutachten" />
+  </actor>
   Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /MedicationDispense die dem Versicherten zugeordneten MedicationDispense-Ressourcen anhand der KVNR des Versicherten im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, die in MedicationDispense.subject die entsprechende KVNR des begünstigten Patienten referenziert haben, damit ausschließlich Versicherte ihre eigenen Dispensierinformationen einsehen können.
 </requirement>
 
@@ -327,20 +327,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-95" title="E-Rezept-Fachdienst - MedicationDispense abrufen - Referenzierung MedicationDispense und Medication" version="0">
   <meta lockversion="false" />
   <actor name="eRp_FD">
-    	<testProcedure id="Produkttest" />
-  	</actor>
+   	<testProcedure id="Produkttest" />
+  </actor>
   Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /MedicationDispense sicherstellen, dass alle im zurückgegebenen Search-Bundle enthaltenen Ressourcen mit eindeutig identifizierbaren IDs versehen sind und Referenzen innerhalb des Bundles auf eine Ressource mit einer eindeutigen ID verweisen.
 </requirement>
-
-<p>- E-Rezept-Fachdienst - MedicationDispense abrufen - 
- &lt;=</p>
 
 <!-- A_22070-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-96" title="E-Rezept-Fachdienst - MedicationDispense abrufen - Rückgabe mehrerer MedicationDispenses" version="0">
   <meta lockversion="false" />
   <actor name="eRp_FD">
-    	<testProcedure id="Produkttest" />
-  	</actor>
+   	<testProcedure id="Produkttest" />
+  </actor>
   Der E-Rezept-Fachdienst MUSS im Anwendungsfall "Abgabeinformationen abrufen" die Suche aller Abgabeinformationen zu einer Verordnung mit dem Aufruf GET /MedicationDispense?identifier=https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId|&lt;PrescriptionID&gt; unterstützten und dabei eines oder mehrere MedicationDispense-Objekte in einem Bundle an den Aufrufenden zurückgeben.
 </requirement>
 
@@ -389,7 +386,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 16, 2026 11:08+0000">2026-03-16</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow-rx#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 17, 2026 06:27+0000">2026-03-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
