@@ -38,7 +38,7 @@ Der Anwendungsfall kann bei Bedarf wiederholt werden.
 </requirement>
 
 <!-- A_20654-01 -->
-<requirement conformance="SHALL" title="CS: Registrierung des Clientsystems des E-Rezept-Fachdienstes">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-415" title="CS: Registrierung des Clientsystems des E-Rezept-Fachdienstes" version="0">
     <meta lockversion="false"/>
     <actor name="CS_E-Rezept_KTR">
         <testProcedure id="Produkttest"/>
@@ -46,7 +46,7 @@ Der Anwendungsfall kann bei Bedarf wiederholt werden.
      Der Hersteller des Clientsystem des E-Rezept-Fachdienstes MUSS sich über einen organisatorischen Prozess beim Anbieter des IDP-Dienstes für die Dienste, für welche Token abgerufen werden sollen, registrieren. Der IDP-Dienst vergibt dabei eine "client_id". Diese "client_id" MUSS vom Clientsystem bei Nutzung des IDP-Dienstes übertragen werden.
 </requirement>
 <!-- A_20655-01 -->
-<requirement conformance="SHALL" title="CS: Regelmäßiges Einlesen des Discovery Document">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-416" title="CS: Regelmäßiges Einlesen des Discovery Document" version="0">
     <meta lockversion="false"/>
     <actor name="CS_E-Rezept_KTR">
         <testProcedure id="Produkttest"/>

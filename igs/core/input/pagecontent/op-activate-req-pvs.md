@@ -59,7 +59,7 @@ Für die Spezifikation des Datamatrix-Code für E-Rezept-Token siehe [gemSpec_DM
 <!-- ToDo: Referenz korrigieren -->
 
 <!-- A_19272 -->
-<requirement conformance="SHALL" title="PS verordnende LEI: E-Rezept durch Verordnenden einstellen">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-410" title="PS verordnende LEI: E-Rezept durch Verordnenden einstellen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Produkttest"/>
@@ -67,7 +67,7 @@ Für die Spezifikation des Datamatrix-Code für E-Rezept-Token siehe [gemSpec_DM
      Das PS der verordnenden LEI MUSS den Anwendungsfall "UC 2.3 - E-Rezept einstellen" aus [gemSysL_eRp] gemäß TAB_ILFERP_003 umsetzen. Tabelle # : TAB_ILFERP_003 – E-Rezept durch Verordnenden einstellen Name E-Rezept durch Verordnenden einstellen Auslöser Aufruf des Anwendungsfalls in der GUI kann durch "E-Rezept durch Verordnenden erstellen" getriggert werden Akteur Leistungserbringer, Mitarbeiter verordnende LEI Vorbedingung Das E-Rezept wurde erstellt. (Anwendungsfall "E-Rezept erstellen"). Es stehen ein QES-signiertes E-Rezept-Bundle als PKCS#7-Datei bereit. Die LEI hat sich gegenüber der TI authentisiert. Nachbedingung Das E-Rezept ist auf dem E-Rezept-Fachdienst gespeichert. Es kann durch den Versicherten oder einen Apotheker in Kenntnis der Einlöseinformationen (Task-ID + AccessCode) abgerufen werden. Standardablauf Task auf dem E-Rezept-Fachdienst aktivieren optional, wenn das E-Rezept ausgedruckt werden soll: E-Rezept-Token erzeugen E-Rezept-Ausdruck erstellen
 </requirement>
 <!-- A_19543 -->
-<requirement conformance="SHALL" title="Generierung DataMatrix-Code">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-411" title="Generierung DataMatrix-Code" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Produkttest"/>
@@ -75,7 +75,7 @@ Für die Spezifikation des Datamatrix-Code für E-Rezept-Token siehe [gemSpec_DM
      Das E-Rezept-FdV und das PS der verordnenden LEI MÜSSEN die Datenstruktur für 2D-Code-Daten in eine DataMatrix-Darstellung gemäß ISO/IEC 16022:2006 überführen können.
 </requirement>
 <!-- A_19554 -->
-<requirement conformance="SHALL" title="Datenstruktur Einlöseinformationen für E-Rezept">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-412" title="Datenstruktur Einlöseinformationen für E-Rezept" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Produkttest"/>
@@ -83,7 +83,7 @@ Für die Spezifikation des Datamatrix-Code für E-Rezept-Token siehe [gemSpec_DM
      Das E-Rezept-FdV und das PS der verordnenden LEI MÜSSEN zum Erstellen eines E-Rezept-Token die ID auf einen Task zusammen mit dem AccessCode des Tasks aus den lokal verfügbaren Informationen eines E-Rezepts als URL in der Form: 2D-Code-Daten = "Task/" + Task.id + "/$accept?ac=" + AccessCode zusammenstellen, damit diese Zeichenkette als Referenz in einer E-Rezept-Nachricht und in einem JSON-Array für die Generierung eines 2D-Codes verwendet werden kann.
 </requirement>
 <!-- A_21243 -->
-<requirement conformance="SHALL" title="PS verordnende LEI: E-Rezept-erstellen - Unterstützung Signaturverfahren">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-413" title="PS verordnende LEI: E-Rezept-erstellen - Unterstützung Signaturverfahren" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Produkttest"/>
@@ -91,7 +91,7 @@ Für die Spezifikation des Datamatrix-Code für E-Rezept-Token siehe [gemSpec_DM
      Das PS der verordnenden LEI MUSS muss die Erstellung der E-Rezepte mittels Einzelsignatur, Stapelsignatur und Komfortsignatur unterstützen.
 </requirement>
 <!-- A_22423 -->
-<requirement conformance="SHALL" title="PS verordnende LEI: separater Ausdruck je Flowtype">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-414" title="PS verordnende LEI: separater Ausdruck je Flowtype" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Produkttest"/>

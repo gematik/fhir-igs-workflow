@@ -1,0 +1,29 @@
+actor:
+- PS_E-Rezept_abgebend
+conformance: SHALL
+content_hash: 82c439da9167c7888470431b667e8b303d2962e4683ab143cc9b35f575f19645
+created: '2026-03-17T17:01:34.440587'
+date: '2026-03-17T17:01:34.440598'
+key: IG-TIFLOW-ERP-205
+modified: '2026-03-17T17:01:34.440593'
+release_status: NEW
+source: input/pagecontent/op-dispense-req-avs.md
+status: ACTIVE
+test_procedures:
+  PS_E-Rezept_abgebend:
+  - Produkttest
+text: 'Das PS der abgebenden LEI MUSS den Anwendungsfall "Abrechnungsinformation durch
+  Abgebenden bereitstellen" gemäß TAB_ILFERP_xxx umsetzen. Tabelle # : TAB_ILFERP_xxx
+  – Abrechnungsinformation bereitstellen Name Abrechnungsinformation bereitstellen
+  Auslöser Aufruf des Anwendungsfalls in der GUI Akteur Leistungserbringer, Mitarbeiter
+  der abgebenden LEI Vorbedingung Die abgebende LEI hat den Workflow zum E-Rezept
+  mit dem Anwendungsfall „Quittung abrufen“ abgeschlossen. Die Information Task-ID
+  und dem Secret zum E-Rezept sind bekannt. Im PS liegt die Information vor, dass
+  der Versicherte die Einwilligung zum Speichern der Abrechnungsinformationen auf
+  dem E-Rezept-Fachdienst erteilt hat. Die LEI hat sich gegenüber der TI authentisiert.
+  Nachbedingung Der PKV-Abgabedatensatz ist auf dem E-Rezept-Fachdienst gespeichert.
+  Standardablauf PKV-Abgabedatensatz erstellen PKV-Abgabedatensatz mit Konnektor signieren
+  ChargeItem erstellen Task-ID und Geheimnis des E-Rezepts bestimmen PKV-Abgabedatensatz
+  speichern'
+title: 'PS abgebende LEI: Abrechnungsinformation bereitstellen'
+version: 0

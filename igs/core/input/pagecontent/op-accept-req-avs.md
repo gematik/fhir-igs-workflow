@@ -17,7 +17,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_21372 -->
-<requirement conformance="SHALL" title="PS abgebende LEI: Übernahme Rezeptinformationen in Warenwirtschaftssystem">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-420" title="PS abgebende LEI: Übernahme Rezeptinformationen in Warenwirtschaftssystem" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Produkttest"/>

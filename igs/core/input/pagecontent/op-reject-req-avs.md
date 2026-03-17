@@ -29,7 +29,7 @@ Das PS der abgebenden LEI MUSS vom Nutzer eine Bestätigung einholen, dass das a
 </requirement>
 
 <!-- A_19246 -->
-<requirement conformance="SHALL" title="PS abgebende LEI: E-Rezepte zurückgeben - E-Rezept auswählen">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-417" title="PS abgebende LEI: E-Rezepte zurückgeben - E-Rezept auswählen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Produkttest"/>
@@ -37,7 +37,7 @@ Das PS der abgebenden LEI MUSS vom Nutzer eine Bestätigung einholen, dass das a
      Das PS der abgebenden LEI MUSS es dem Nutzer ermöglichen, ein E-Rezept zum Zurückgeben auszuwählen.
 </requirement>
 <!-- A_19247 -->
-<requirement conformance="SHALL" title="PS abgebende LEI: E-Rezept zurückgeben - Bestätigung">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-418" title="PS abgebende LEI: E-Rezept zurückgeben - Bestätigung" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Produkttest"/>
@@ -45,7 +45,7 @@ Das PS der abgebenden LEI MUSS vom Nutzer eine Bestätigung einholen, dass das a
      Das PS der abgebenden LEI MUSS vom Nutzer eine Bestätigung einholen, dass das ausgewählte E-Rezept zurückgegeben werden soll und die Möglichkeit geben, das Zurückgeben abzubrechen.
 </requirement>
 <!-- A_19249 -->
-<requirement conformance="SHALL" title="PS abgebende LEI: E-Rezept durch Abgebenden zurückgeben">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-419" title="PS abgebende LEI: E-Rezept durch Abgebenden zurückgeben" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Produkttest"/>
