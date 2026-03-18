@@ -41,6 +41,7 @@ Hinweis: Links auf neue Anforderungen verwenden aktuell den Platzhalter `{{NEW_I
 | [A_20015-02](https://gemspec.gematik.de/search/index.html?A_20015-02) | CS: HTTP-Header user-agent | [IG-TIFLOW-CORE-141]({{NEW_IG_BASE_URL}}/core/kommunikation-dienste-ti.html) | core |
 | [A_20091-01](https://gemspec.gematik.de/search/index.html?A_20091-01) | CS: Prüfung der Zertifikate für TLS-Verbindung zu E-Rezept-Fachdienst und IDP-Dienst | [IG-TIFLOW-CORE-266]({{NEW_IG_BASE_URL}}/core/pki-zertifikatspruefung.html) | core |
 | [A_20654-01](https://gemspec.gematik.de/search/index.html?A_20654-01) | CS: Registrierung des Clientsystems des E-Rezept-Fachdienstes | [IG-TIFLOW-CORE-1]({{NEW_IG_BASE_URL}}/core/authentifizierung-client.html) | core |
+| [A_20655-01](https://gemspec.gematik.de/search/index.html?A_20655-01) | CS: Regelmäßiges Einlesen des Discovery Document | [IG-TIFLOW-CORE-2]({{NEW_IG_BASE_URL}}/core/authentifizierung-client.html) | core |
 | [A_20656-02](https://gemspec.gematik.de/search/index.html?A_20656-02) | CS: Prüfung der Signatur des Discovery Document | [IG-TIFLOW-CORE-2]({{NEW_IG_BASE_URL}}/core/authentifizierung-client.html) | core |
 | [A_20657-01](https://gemspec.gematik.de/search/index.html?A_20657-01) | CS: Prüfung Typ und Rolle des Signaturzertifikats des Discovery Document | [IG-TIFLOW-CORE-3]({{NEW_IG_BASE_URL}}/core/authentifizierung-client.html) | core |
 | [A_20658-01](https://gemspec.gematik.de/search/index.html?A_20658-01) | CS: Sicheres Löschen der Token | [IG-TIFLOW-CORE-4]({{NEW_IG_BASE_URL}}/core/authentifizierung-client.html) | core |
@@ -193,6 +194,7 @@ Hinweis: Links auf neue Anforderungen verwenden aktuell den Platzhalter `{{NEW_I
 | [A_23816](https://gemspec.gematik.de/search/index.html?A_23816) | PS abgebende LEI: UX - Hinweis bei Nicht-Erreichbarkeit des E-Rezept-Fachdienstes - Operabilität des AVS | [IG-TIFLOW-ERP-138]({{NEW_IG_BASE_URL}}/rx/menu-fachlichkeit-ux-abgebend.html) | rx |
 | [A_23817](https://gemspec.gematik.de/search/index.html?A_23817) | PS abgebende LEI: UX - Verständliche Fehlermeldungen - technische Fehler | [IG-TIFLOW-ERP-139]({{NEW_IG_BASE_URL}}/rx/menu-fachlichkeit-ux-abgebend.html) | rx |
 | [A_23818](https://gemspec.gematik.de/search/index.html?A_23818) | PS abgebende LEI: UX - Verständliche Fehlermeldungen - Handlungsempfehlung | [IG-TIFLOW-ERP-140]({{NEW_IG_BASE_URL}}/rx/menu-fachlichkeit-ux-abgebend.html) | rx |
+| [A_24181](https://gemspec.gematik.de/search/index.html?A_24181) | PS abgebende LEI: E-Rezept erneut abrufen - E-Rezept abrufen | [IG-TIFLOW-CORE-31]({{NEW_IG_BASE_URL}}/core/query-api-task-req-avs.html) | core |
 | [A_25219](https://gemspec.gematik.de/search/index.html?A_25219) | PS abgebende LEI: Quittung abrufen - Stapelverarbeitung | [IG-TIFLOW-CORE-261]({{NEW_IG_BASE_URL}}/core/op-close-req-avs.html) | core |
 | [A_25220](https://gemspec.gematik.de/search/index.html?A_25220) | PS abgebende LEI: Quittung abrufen - Stapelverarbeitung - Startzeitpunkt | [IG-TIFLOW-CORE-262]({{NEW_IG_BASE_URL}}/core/op-close-req-avs.html) | core |
 | [A_25221](https://gemspec.gematik.de/search/index.html?A_25221) | PS abgebende LEI: Quittung abrufen - Stapelverarbeitung - Wartezeit zwischen Aufrufen | [IG-TIFLOW-CORE-263]({{NEW_IG_BASE_URL}}/core/op-close-req-avs.html) | core |
@@ -217,6 +219,46 @@ Hinweis: Links auf neue Anforderungen verwenden aktuell den Platzhalter `{{NEW_I
 | [A_27841](https://gemspec.gematik.de/search/index.html?A_27841) | PS abgebende LEI: UX - Bedienung T-Rezept – Hinweis T-Rezept | [IG-TIFLOW-ERP-127]({{NEW_IG_BASE_URL}}/rx/menu-fachlichkeit-ux-abgebend.html) | rx |
 | [A_27842](https://gemspec.gematik.de/search/index.html?A_27842) | PS abgebende LEI: UX - Bedienung T-Rezept – Hinweis T-Rezept Belieferungsoption | [IG-TIFLOW-ERP-128]({{NEW_IG_BASE_URL}}/rx/menu-fachlichkeit-ux-abgebend.html) | rx |
 | [A_27861](https://gemspec.gematik.de/search/index.html?A_27861) | PS verordnende LEI: UX - E-T-Rezept – Automatische Berechnung der Reichdauer | [IG-TIFLOW-ERP-169]({{NEW_IG_BASE_URL}}/rx/menu-fachlichkeit-ux-verordnend.html) | rx |
+
+#### Nicht übernommene Anforderungen
+
+| Alte Anforderung | Alter Titel |
+|---|---|
+| [A_19246](https://gemspec.gematik.de/search/index.html?A_19246) | PS abgebende LEI: E-Rezepte zurückgeben - E-Rezept auswählen |
+| [A_19247](https://gemspec.gematik.de/search/index.html?A_19247) | PS abgebende LEI: E-Rezept zurückgeben - Bestätigung |
+| [A_19249](https://gemspec.gematik.de/search/index.html?A_19249) | PS abgebende LEI: E-Rezept durch Abgebenden zurückgeben |
+| [A_19272](https://gemspec.gematik.de/search/index.html?A_19272) | PS verordnende LEI: E-Rezept durch Verordnenden einstellen |
+| [A_19274-01](https://gemspec.gematik.de/search/index.html?A_19274-01) | PS verordnende LEI: E-Rezept durch Verordnenden erstellen |
+| [A_19286-01](https://gemspec.gematik.de/search/index.html?A_19286-01) | PS abgebende LEI: Quittung abrufen - E-Rezept auswählen |
+| [A_19287-02](https://gemspec.gematik.de/search/index.html?A_19287-02) | PS abgebende LEI: Quittung abrufen |
+| [A_19288-03](https://gemspec.gematik.de/search/index.html?A_19288-03) | PS abgebende LEI:  Quittung abrufen - Dispensierinformationen erstellen |
+| [A_19290](https://gemspec.gematik.de/search/index.html?A_19290) | PS abgebende LEI: Quittung erneut abrufen - E-Rezept auswählen |
+| [A_19291](https://gemspec.gematik.de/search/index.html?A_19291) | PS abgebende LEI: Quittung erneut abrufen |
+| [A_19293](https://gemspec.gematik.de/search/index.html?A_19293) | PS abgebende LEI: E-Rezept abrufen - E-Rezept-Token auswählen |
+| [A_19294](https://gemspec.gematik.de/search/index.html?A_19294) | PS abgebende LEI: E-Rezept abrufen |
+| [A_19328](https://gemspec.gematik.de/search/index.html?A_19328) | PS abgebende LEI: Nachrichten von Versicherten empfangen |
+| [A_19330](https://gemspec.gematik.de/search/index.html?A_19330) | PS abgebende LEI: Nachricht versenden - E-Rezept auswählen |
+| [A_19331](https://gemspec.gematik.de/search/index.html?A_19331) | PS abgebende LEI: Nachricht versenden - Mitteilung erfassen |
+| [A_19332](https://gemspec.gematik.de/search/index.html?A_19332) | PS abgebende LEI: Nachricht an Versicherten versenden |
+| [A_19630-01](https://gemspec.gematik.de/search/index.html?A_19630-01) | PS abgebende LEI: 2D-Code scannen |
+| [A_19631-01](https://gemspec.gematik.de/search/index.html?A_19631-01) | PS abgebende LEI: 2D-Code scannen - Token extrahieren |
+| [A_19900](https://gemspec.gematik.de/search/index.html?A_19900) | PS abgebende LEI: E-Rezept abrufen - E-Rezept-Bundle extrahieren |
+| [A_19901](https://gemspec.gematik.de/search/index.html?A_19901) | PS abgebende LEI: E-Rezept abrufen - Daten speichern |
+| [A_21243](https://gemspec.gematik.de/search/index.html?A_21243) | PS verordnende LEI: E-Rezept-erstellen - Unterstützung Signaturverfahren |
+| [A_21363-01](https://gemspec.gematik.de/search/index.html?A_21363-01) | PS verordnende LEI: Auswahl des Flowtypes |
+| [A_21486](https://gemspec.gematik.de/search/index.html?A_21486) | PS abgebende LEI: Nachricht löschen - Nachricht auswählen |
+| [A_21487](https://gemspec.gematik.de/search/index.html?A_21487) | PS abgebende LEI: Nachricht löschen - Bestätigung |
+| [A_21488](https://gemspec.gematik.de/search/index.html?A_21488) | PS abgebende LEI: Nachricht durch Abgebenden löschen |
+| [A_21490](https://gemspec.gematik.de/search/index.html?A_21490) | PS abgebende LEI: Nachricht löschen - Nachricht im PS löschen |
+| [A_21723](https://gemspec.gematik.de/search/index.html?A_21723) | PS abgebende LEI: Übergabe E-Rezept-Token an Apotheke |
+| [A_22187](https://gemspec.gematik.de/search/index.html?A_22187) | PS abgebende LEI: Abrechnungsinformation bereitstellen |
+| [A_22192](https://gemspec.gematik.de/search/index.html?A_22192) | PS abgebende LEI: PKV-Abgabedatensatz ändern |
+| [A_22202](https://gemspec.gematik.de/search/index.html?A_22202) | PS abgebende LEI: Abrechnungsinformation abrufen |
+| [A_23448-01](https://gemspec.gematik.de/search/index.html?A_23448-01) | PS abgebende LEI: E-Rezepte von Versicherten abrufen (VSDM) |
+| [A_24180](https://gemspec.gematik.de/search/index.html?A_24180) | PS abgebende LEI: E-Rezept erneut abrufen |
+| [A_24289](https://gemspec.gematik.de/search/index.html?A_24289) | PS abgebende LEI: Dispensierinformationen bereitstellen - E-Rezept auswählen |
+| [A_24290](https://gemspec.gematik.de/search/index.html?A_24290) | PS abgebende LEI: Dispensierinformationen bereitstellen |
+| [A_24291-01](https://gemspec.gematik.de/search/index.html?A_24291-01) | PS abgebende LEI: Dispensierinformationen bereitstellen - Dispensierinformationen erstellen |
 
 ### gemSpec_DM_eRp
 
