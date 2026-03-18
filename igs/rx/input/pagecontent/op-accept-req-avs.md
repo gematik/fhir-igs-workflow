@@ -13,7 +13,7 @@ Für den Flowtype "200" und "209" wird im Response Bundle eine Consent Ressource
 Möchte der Versicherte die Möglichkeit einer Online-Rezepteinlösung nutzen, kann die abgebende LEI die Belieferungs- und ggfs. Zuzahlungsmodalitäten über ihr Warenwirtschaftssystem ("Onlineshop") abwickeln. Hierzu ist ggfs. die Übernahme von Rezeptinformationen zur Befüllung eines Warenkorbs erforderlich. 
 
 <!-- A_21372 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-97" title="PS abgebende LEI: Übernahme Rezeptinformationen in Warenwirtschaftssystem" version="0">
+<requirement conformance="SHALL" key="" title="PS abgebende LEI: Übernahme Rezeptinformationen in Warenwirtschaftssystem" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
