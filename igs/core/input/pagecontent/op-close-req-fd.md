@@ -1,4 +1,3 @@
-Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an den E-Rezept-Fachdienst für die Operation `$close`.
 
 Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
