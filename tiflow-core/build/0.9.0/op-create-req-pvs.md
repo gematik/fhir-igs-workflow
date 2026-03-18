@@ -37,3 +37,20 @@ Der Response des Fachdienstes liefert
 
 Hinweis: Die Task-ID entspricht der Rezept-ID.
 
+Für die qualifizierte elektronische Signatur des Verordnungsbundels wird der Konnektor verwendet. Es wird eine CMS-Signatur (CAdES) erstellt. Die Operation für die QES muss durch den Leistungserbringer durchgeführt werden.
+
+Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" für das E-Rezept die Signaturoperation des Konnektors mit
+* der Referenz RFC-5652 für CMS-Signatur (CAdES)
+* Signaturtype für eine enveloping Signature
+* dem base64-codierten E-Rezept-Bundle
+* eingebetteter OCSP-Antwort (IncludeRevocationInfo = true)
+* Angabe des Mimetypes "text/plain; charset=utf-8"
+ausführen.
+Für weitere Informationen siehe Operation “E-Rezept qualifiziert signieren” aus der API-Schnittstelle [E-Rezept API Dokumentation].
+
+Das PS der verordnenden LEI MUSS muss die Erstellung der E-Rezepte mittels Einzelsignatur, Stapelsignatur und Komfortsignatur des Konnektors unterstützen.
+
+Für die Nutzung der Komfortsignatur siehe [gemILF_PS].
+
+Falls keine Komfortsignatur zur Verfügung steht oder die Komfortsignatur deaktiviert ist, soll das PS der verordnenden LEI die Stapelsignatur verwenden ist, falls mehrere E-Rezepte signiert werden sollen. 
+

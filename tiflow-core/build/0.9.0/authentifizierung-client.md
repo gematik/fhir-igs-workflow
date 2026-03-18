@@ -33,6 +33,8 @@ Zur Nutzung des IDP-Dienstes gelten einige grundlegende Voraussetzungen, welche 
 
 Der Hersteller des Clientsystem des E-Rezept-Fachdienstes MUSS sich über einen organisatorischen Prozess beim Anbieter des IDP-Dienstes für die Dienste, für welche Token abgerufen werden sollen, registrieren. Der IDP-Dienst vergibt dabei eine "client_id". Diese "client_id" MUSS vom Clientsystem bei Nutzung des IDP-Dienstes übertragen werden.
 
+Das Clientsystem MUSS das Discovery Document (DD) [RFC8414] regelmäßig alle 24 Stunden einlesen und auswerten, und danach die darin aufgeführten URI zu den benötigten öffentlichen Schlüsseln (PUKs) und Diensten verwenden. Der Downloadpunkt wird als Teil der organisatorischen Registrierung des Clientsystems beim IDP-Dienst übergeben. Das Clientsystem MUSS den Downloadpunkt des Discovery Document als konfigurierbaren Parameter speichern.
+
 Das Clientsystem MUSS die JWS (JSON Web Signature) [RFC7515#section-3] Signatur des Discovery Document auf mathematische Korrektheit sowie auf Gültigkeit des ausstellenden Zertifikates innerhalb der TI prüfen. Das Clientsystem MUSS, wenn es den Konnektor oder den Basis-Consumer nutzt, die Gültigkeit des Zertifikates mit der Operation "VerifyCertificate" prüfen.
 Für die Prüfung des ausstellenden Zertifikats mittels Konnektor siehe [gemSpec_Kon#4.1.9.5.3] bzw. [gemILF_PS#4.4.4.3].
 

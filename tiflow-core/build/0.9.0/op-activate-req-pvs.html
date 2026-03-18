@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"17.2.2"}
-    h3,h4,h5,h6{--heading-prefix:"17.2.2"}</style>
+    <style type="text/css">h2{--heading-prefix:"19.2.2"}
+    h3,h4,h5,h6{--heading-prefix:"19.2.2"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -143,10 +143,16 @@
         <a href="pki-zertifikatspruefung.html">PKI Zertifikatsprüfung</a>
       </li>
       <li>
+        <a href="datamatrix-code-client.html">Datamatrix Code</a>
+      </li>
+      <li>
         <a href="authentifizierung-client.html">Authentifizierung von Clientsystemen</a>
       </li>
       <li>
         <a href="health-check.html">Health Check</a>
+      </li>
+      <li>
+        <a href="fehlerbehandlung-client.html">Fehlerbehandlung Clientsysteme</a>
       </li>
     </ul>
   </li>
@@ -181,6 +187,9 @@
   </li>
   <li>
     <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+  <li>
+    <a href="requirement-mapping-old-to-new.html">Anforderungsmapping</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -288,6 +297,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Hinweis: Für den Fall, dass das Clientsystem beim Aufruf der Operation keinen Response erhält, soll der Aufruf wiederholt werden. Wenn im Response des zweiten Aufrufs ein
 Fehler 403 mit dem OperationOutcome “Task not in status draft but in status ready” zurückkommt, wurde der erste Aufruf bereits erfolgreich durch den E-Rezept-Fachdienst verarbeitet. Wenn eine Response mit dem Status 200 zurückkommt, war der zweite Aufruf erfolgreich.</p>
 
+<h3 id="patientenausdruck">Patientenausdruck</h3>
+
 <!-- A_22503 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-134" title="PS verordnende LEI: E-Rezept einstellen - kein Patientenausdruck bei Fehler beim Aktivieren" version="0">
   <meta lockversion="false" />
@@ -299,6 +310,15 @@ Fehler 403 mit dem OperationOutcome “Task not in status draft but in status re
 
 <p>Für den Patientenausdruck gelten vorrangig die Regelungen zum Ausdruck eines E-Rezepts aus den Bundesmantelverträgen [BMV] und [BMV-Z].
 <!-- ToDo: Können in den workflow-spezifischen Modulen weitere Hinweise geben? rx und diga haben unterschiedliche vorgaben durch die KBV --></p>
+
+<!-- A_22423 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-372" title="PS verordnende LEI: E-Rezept einstellen - separater Patientenausdruck je Flowtype" version="0">
+  <meta lockversion="false" />
+  <actor name="PS_E-Rezept_verordnend">
+    <testProcedure id="Herstellererklärung" />
+  </actor>
+  Das PS der verordnenden LEI MUSS sicherstellen, dass für jeden Flowtype ein separater Patientenausdruck erfolgt, sofern der Nutzer Verordnungen mit unterschiedlichen Flowtypes einstellt und für diese Patientenausdrucke erzeugen möchte.
+</requirement>
 
 <!-- A_19279 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-135" title="PS verordnende LEI: E-Rezept einstellen - E-Rezept-Token erstellen" version="0">
@@ -365,7 +385,7 @@ Fehler 403 mit dem OperationOutcome “Task not in status draft but in status re
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 17, 2026 15:43+0000">2026-03-17</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Mar 18, 2026 14:02+0000">2026-03-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

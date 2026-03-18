@@ -12,7 +12,7 @@ Version 0.9.0 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow/core/ImplementationGuide/de.gematik.tiflow.core | *Version*:0.9.0 |
-| Draft as of 2026-03-17 | *Computable Name*:gemIG_TIFlow_core |
+| Draft as of 2026-03-18 | *Computable Name*:gemIG_TIFlow_core |
 
 Dieser IG beschreibt die zentralen, IG-übergreifenden Anforderungen an den E-Rezept-Fachdienst. Er fasst grundlegende Sicherheits-, Protokollierungs- und Validierungsvorgaben zusammen, die in allen nachgelagerten IGs wiederverwendet werden.
 
@@ -59,7 +59,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
   "name" : "gemIG_TIFlow_core",
   "title" : "TIFlow - Kernfunktionalitäten",
   "status" : "draft",
-  "date" : "2026-03-17T15:43:06+00:00",
+  "date" : "2026-03-18T14:02:37+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -421,7 +421,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
     },
     {
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-      "valueCode" : "hl7.fhir.uv.tools.r4#0.9.0"
+      "valueCode" : "hl7.fhir.uv.tools.r4#1.1.0"
     },
     {
       "extension" : [{
@@ -792,6 +792,15 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "datamatrix-code-client.html"
+        }],
+        "nameUrl" : "datamatrix-code-client.html",
+        "title" : "Datamatrix Code",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "pki-zertifikatspruefung.html"
         }],
         "nameUrl" : "pki-zertifikatspruefung.html",
@@ -814,6 +823,15 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
         }],
         "nameUrl" : "health-check.html",
         "title" : "Health Check",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "fehlerbehandlung-client.html"
+        }],
+        "nameUrl" : "fehlerbehandlung-client.html",
+        "title" : "Fehlerbehandlung Clientsysteme",
         "generation" : "markdown"
       },
       {
@@ -1372,6 +1390,15 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
         }],
         "nameUrl" : "artifacts.html",
         "title" : "FHIR-Artefakte",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "requirement-mapping-old-to-new.html"
+        }],
+        "nameUrl" : "requirement-mapping-old-to-new.html",
+        "title" : "Mapping alter Anforderungen auf FHIR-IG Anforderungen",
         "generation" : "markdown"
       }]
     },

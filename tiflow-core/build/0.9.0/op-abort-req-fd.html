@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"17.6.1"}
-    h3,h4,h5,h6{--heading-prefix:"17.6.1"}</style>
+    <style type="text/css">h2{--heading-prefix:"19.6.1"}
+    h3,h4,h5,h6{--heading-prefix:"19.6.1"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -143,10 +143,16 @@
         <a href="pki-zertifikatspruefung.html">PKI Zertifikatsprüfung</a>
       </li>
       <li>
+        <a href="datamatrix-code-client.html">Datamatrix Code</a>
+      </li>
+      <li>
         <a href="authentifizierung-client.html">Authentifizierung von Clientsystemen</a>
       </li>
       <li>
         <a href="health-check.html">Health Check</a>
+      </li>
+      <li>
+        <a href="fehlerbehandlung-client.html">Fehlerbehandlung Clientsysteme</a>
       </li>
     </ul>
   </li>
@@ -181,6 +187,9 @@
   </li>
   <li>
     <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+  <li>
+    <a href="requirement-mapping-old-to-new.html">Anforderungsmapping</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -280,12 +289,21 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_19120-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-125" title="E-Rezept-Fachdienst - E-Rezept löschen - Verordnender - Prüfung AccessCode und Status" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-125" title="E-Rezept-Fachdienst - E-Rezept löschen - Verordnender - Prüfung AccessCode" version="0">
   <meta lockversion="false" />
   <actor name="eRp_FD">
     <testProcedure id="Produkttest" />
   </actor>
-    Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &#60;id&#62; adressierten/Task/&#60;id&#62;/$abort durch verordnende Leistungserbringer den im HTTPHeader "X-AccessCode" gegen den im referenzierten Task enthaltenen AccessCode prüfen und bei Missmatch oder Fehlen im HTTP-Header oder wenn der Task.Status ungleich "ready" ist, den Aufruf mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich die verordnende Leistungserbringerinstitution in Kenntnis des AccessCodes als Berechtigte ein E-Rezept löschen.
+    Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &#60;id&#62; adressierten/Task/&#60;id&#62;/$abort durch verordnende Leistungserbringer den im HTTP-Header "X-AccessCode" gegen den im referenzierten Task enthaltenen AccessCode prüfen und bei Missmatch oder Fehlen im HTTP-Header, den Aufruf mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich die verordnende Leistungserbringerinstitution in Kenntnis des AccessCodes als Berechtigte ein E-Rezept löschen.
+</requirement>
+
+<!-- A_19120-03 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-371" title="E-Rezept-Fachdienst - E-Rezept löschen - Verordnender - Prüfung Status" version="0">
+  <meta lockversion="false" />
+  <actor name="eRp_FD">
+    <testProcedure id="Produkttest" />
+  </actor>
+    Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &#60;id&#62; adressierten/Task/&#60;id&#62;/$abort durch verordnende Leistungserbringer den im referenzierten Task gespeicherten Status Task.status prüfen und mit dem Fehler 412 abbrechen, wenn Task.status ungleich "ready" ist, damit die verordnende Leistungserbringerinstitution eine Verordnung nur löschen kann, wenn sie sich noch nicht in Belieferung befindet oder beliefert wurde.
 </requirement>
 
 <!-- A_19027-06 -->
@@ -371,7 +389,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 17, 2026 15:43+0000">2026-03-17</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Mar 18, 2026 14:02+0000">2026-03-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

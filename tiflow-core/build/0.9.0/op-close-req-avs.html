@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"17.5.2"}
-    h3,h4,h5,h6{--heading-prefix:"17.5.2"}</style>
+    <style type="text/css">h2{--heading-prefix:"19.5.2"}
+    h3,h4,h5,h6{--heading-prefix:"19.5.2"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -143,10 +143,16 @@
         <a href="pki-zertifikatspruefung.html">PKI Zertifikatsprüfung</a>
       </li>
       <li>
+        <a href="datamatrix-code-client.html">Datamatrix Code</a>
+      </li>
+      <li>
         <a href="authentifizierung-client.html">Authentifizierung von Clientsystemen</a>
       </li>
       <li>
         <a href="health-check.html">Health Check</a>
+      </li>
+      <li>
+        <a href="fehlerbehandlung-client.html">Fehlerbehandlung Clientsysteme</a>
       </li>
     </ul>
   </li>
@@ -181,6 +187,9 @@
   </li>
   <li>
     <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+  <li>
+    <a href="requirement-mapping-old-to-new.html">Anforderungsmapping</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -267,6 +276,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
 <p>Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an Clientsysteme für die Nutzung der Operation <code class="language-plaintext highlighter-rouge">$close</code>.</p>
+
+<!-- A_27840 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-386" title="PS abgebende LEI: Quittung abrufen - Abschluss des Workflows durchführen" version="0">
+    <meta lockversion="false" />
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    Das PS der abgebenden LEI MUSS den Anwendungsfall "Quittung abrufen" für Verordnungen, welche abschließend verarbeitet wurden, ausführen, um den Workflow am E-Rezept-Fachdienst abzuschließen.
+</requirement>
 
 <p>Die Erstellung der MedicationDispense erfolgt Flowtype-spezifisch.</p>
 
@@ -387,7 +405,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 17, 2026 15:43+0000">2026-03-17</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Mar 18, 2026 14:02+0000">2026-03-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
