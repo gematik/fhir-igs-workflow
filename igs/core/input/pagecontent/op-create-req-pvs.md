@@ -52,7 +52,7 @@ Hinweis: Die Task-ID entspricht der Rezept-ID.
 Für die qualifizierte elektronische Signatur des Verordnungsbundels wird der Konnektor verwendet. Es wird eine CMS-Signatur (CAdES) erstellt. Die Operation für die QES muss durch den Leistungserbringer durchgeführt werden.
 
 <!-- A_19281-03 -->
-<requirement conformance="SHALL" key="" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle QES signieren" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-380" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle QES signieren" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Konformitätserklärung"/>

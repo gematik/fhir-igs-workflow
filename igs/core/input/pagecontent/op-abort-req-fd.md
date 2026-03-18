@@ -21,7 +21,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_19120-03 -->
-<requirement conformance="SHALL" key="" title="E-Rezept-Fachdienst - E-Rezept löschen - Verordnender - Prüfung Status" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-371" title="E-Rezept-Fachdienst - E-Rezept löschen - Verordnender - Prüfung Status" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>

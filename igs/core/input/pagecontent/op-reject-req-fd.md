@@ -12,7 +12,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_19171-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-33" title="E-Rezept-Fachdienst - Task zurückweisen - Prüfung Status" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-369" title="E-Rezept-Fachdienst - Task zurückweisen - Prüfung Status" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>

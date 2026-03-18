@@ -4,11 +4,11 @@ actor:
 - PS_E-Rezept_abgebend
 - PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: cf42e40dc6f0a3fdcfe6d9b271742beec99abb6bb5cd805fcf60b3771d074104
+content_hash: 77ca34a73e13f2fe08aa91995815d2a8a706dec27fbcb20dc907e172a71fad6e
 created: '2026-03-17T11:33:06.637470'
-date: '2026-03-17T11:33:06.637474'
+date: '2026-03-18T14:56:22.526178'
 key: IG-TIFLOW-CORE-2
-modified: '2026-03-17T11:33:06.637473'
+modified: '2026-03-18T14:56:22.526178'
 release_status: NEW
 source: input/pagecontent/authentifizierung-client.md
 status: ACTIVE
@@ -21,10 +21,11 @@ test_procedures:
   - Herstellererklärung
   PS_E-Rezept_verordnend:
   - Herstellererklärung
-text: Das Clientsystem MUSS die JWS (JSON Web Signature) [RFC7515#section-3] Signatur
-  des Discovery Document auf mathematische Korrektheit sowie auf Gültigkeit des ausstellenden
-  Zertifikates innerhalb der TI prüfen. Das Clientsystem MUSS, wenn es den Konnektor
-  oder den Basis-Consumer nutzt, die Gültigkeit des Zertifikates mit der Operation
-  "VerifyCertificate" prüfen.
-title: 'CS: Prüfung der Signatur des Discovery Document'
+text: "Das Clientsystem MUSS das Discovery Document (DD) [RFC8414] regelmäßig alle\
+  \ 24 Stunden einlesen und auswerten, und danach die darin aufgeführten URI zu den\
+  \ benötigten öffentlichen Schlüsseln (PUKs) und Diensten verwenden.\n Der Downloadpunkt\
+  \ wird als Teil der organisatorischen Registrierung des Clientsystems beim IDP-Dienst\
+  \ übergeben.\n Das Clientsystem MUSS den Downloadpunkt des Discovery Document als\
+  \ konfigurierbaren Parameter speichern."
+title: 'CS: Regelmäßiges Einlesen des Discovery Document'
 version: 0

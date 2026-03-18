@@ -29,7 +29,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19024-03 -->
-<requirement conformance="SHALL" key="" title="E-Rezept-Fachdienst - Task aktivieren - Prüfung Status" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-373" title="E-Rezept-Fachdienst - Task aktivieren - Prüfung Status" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>

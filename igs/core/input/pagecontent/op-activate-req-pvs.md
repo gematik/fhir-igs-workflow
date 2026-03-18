@@ -37,7 +37,7 @@ Für den Patientenausdruck gelten vorrangig die Regelungen zum Ausdruck eines E-
 <!-- ToDo: Können in den workflow-spezifischen Modulen weitere Hinweise geben? rx und diga haben unterschiedliche vorgaben durch die KBV -->
 
 <!-- A_22423 -->
-<requirement conformance="SHALL" key="" title="PS verordnende LEI: E-Rezept einstellen - separater Patientenausdruck je Flowtype" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-372" title="PS verordnende LEI: E-Rezept einstellen - separater Patientenausdruck je Flowtype" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Herstellererklärung"/>

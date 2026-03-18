@@ -1,7 +1,7 @@
 Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an Clientsysteme für die Nutzung der Operation `$close`.
 
 <!-- A_27840 -->
-<requirement conformance="SHALL" key="" title="PS abgebende LEI: Quittung abrufen - Abschluss des Workflows durchführen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-386" title="PS abgebende LEI: Quittung abrufen - Abschluss des Workflows durchführen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>

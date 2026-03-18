@@ -59,7 +59,7 @@ Zur Nutzung des IDP-Dienstes gelten einige grundlegende Voraussetzungen, welche 
 </requirement>
 
 <!-- A_20656-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-2" title="CS: Prüfung der Signatur des Discovery Document" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-368" title="CS: Prüfung der Signatur des Discovery Document" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
