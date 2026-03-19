@@ -6,3 +6,8 @@ RuleSet: Versioning
 * ^status = #draft
 * ^version = "0.9.0" //TODO: Verify
 * ^date = "2025-09-25"
+
+RuleSet: Version
+* version = "0.9.0"
+* status = #draft
+* date = "2026-03-17"

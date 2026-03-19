@@ -10,9 +10,7 @@ Usage: #definition
     * system = #url
     * value = "https://www.gematik.de"
 * kind = #requirements
-* version = "2.0.0-draft"
-* status = #draft
-* date = "2026-03-17"
+* insert Version
 * fhirVersion = #4.0.1
 * format[0] = #application/fhir+json
 * format[+] = #application/fhir+xml
@@ -60,7 +58,7 @@ RuleSet: TaskInteraction(expectation)
 
 RuleSet: CommunicationInteraction(expectation)
 * insert CapSupportResource(Communication, #SHALL)
-* insert CapSupportProfileUrl(https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DiGA, #SHALL)
+* insert CapSupportProfileUrl(GEM_ERP_PR_Communication_DiGA, #SHALL)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
 * insert SearchTypeInteractionStatusCodes

@@ -100,7 +100,6 @@ RuleSet: CommunicationInteraction(expectation)
 * insert CapSupportProfile(GEM_ERP_PR_Communication_DispReq, #SHALL)
 * insert CapSupportProfile(GEM_ERP_PR_Communication_Reply, #SHALL)
 * insert CapSupportProfile(GEM_ERP_PR_Communication_Representative, #SHALL)
-* insert CapSupportProfile(GEM_ERP_PR_Communication_DiGA, #SHALL)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
 * insert SearchTypeInteractionStatusCodes

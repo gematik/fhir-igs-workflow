@@ -19,23 +19,6 @@ Description: "Dieses Profil beschreibt die Fähigkeiten des E-Rezept-Fachdienste
   * ^short = "Die von der API unterstützten Medientypen, z.B. application/json oder application/fhir+json"
 
 * extension contains
-  BaseUrl named baseUrl 0..1 and
-  HTTPHeader named header 0..* and
-  HttpResponseInfo named responseInfo 0..* and
   GEM_ERP_EX_CapabilityStatement_Environment named environment 0..1 and
   GEM_ERP_EX_CapabilityStatement_FDConfiguration named fhirConfiguration 0..* and
   GEM_ERP_EX_CapabilityStatement_Feature named capabilityFeature 0..*
-
-* rest.resource.interaction.extension contains
-  HTTPHeader named header 0..* and
-  HttpResponseInfo named responseInfo 0..*
-
-* rest.resource.operation.extension contains
-  HTTPHeader named header 0..* and
-  HttpResponseInfo named responseInfo 0..* and
-  HttpMethod named method 0..2
-
-* rest.operation.extension contains
-  HTTPHeader named header 0..* and
-  HttpResponseInfo named responseInfo 0..* and
-  HttpMethod named method 0..2

@@ -32,14 +32,14 @@ Description: "Dieses Profil definiert die Parameter für das Schließen eines Wo
     * name = "medicationDispense"
     * value[x] 0..0
     * resource 1..1
-    * resource only GEM_ERP_PR_MedicationDispense or GEM_ERP_PR_MedicationDispense_DiGA
+    * resource only MedicationDispense //TODO: Make sure rx and diga have their own CloseOperation Definitions
     * part 0..0
   * part[medication]
     * name MS
     * name = "medication"
     * value[x] 0..0
     * resource 1..1
-    * resource only GEM_ERP_PR_Medication
+    * resource only GEM_ERP_PR_Medication //TODO: Generify to medication and move to rx
     * part 0..0
 
 Invariant: workflow-parameters-close-medication-exists
