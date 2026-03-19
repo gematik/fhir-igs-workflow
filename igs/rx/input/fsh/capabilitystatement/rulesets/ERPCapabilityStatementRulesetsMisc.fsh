@@ -16,8 +16,7 @@ RuleSet: CapResourceInteraction(interaction, expectation)
 RuleSet: CapInteraction(interaction, expectation)
 * interaction[+]
   * code = {interaction}
-  * extension[+].url = $capabilitystatement-expectation
-  * extension[=].valueCode = {expectation}
+  * extension[expectation].valueCode = {expectation}
 
 RuleSet: CapSupportResourceSearchParam(name, canonical, type, expectation, documentation)
 * rest.resource[=] insert CapSupportSearchParam({name}, {canonical}, {type}, {expectation}, {documentation})
@@ -46,5 +45,4 @@ RuleSet: CapSupportOperation(name, operation, expectation)
 * operation[+]
   * name = "{name}"
   * definition = "{operation}"
-  * extension.url = $capabilitystatement-expectation
-  * extension.valueCode = {expectation}
+  * extension[expectation].valueCode = {expectation}
