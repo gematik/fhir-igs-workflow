@@ -2,13 +2,13 @@ RuleSet: CapSupportResource(resource, expectation)
 * rest.resource[+].type = #{resource}
 * rest.resource[=].versioning = #versioned-update
 * rest.resource[=].readHistory = true
-* rest.resource[=].extension[0].url = $capabilitystatement-expectation
-* rest.resource[=].extension[0].valueCode = {expectation}
+* rest.resource[=].extension[+].url = $capabilitystatement-expectation
+* rest.resource[=].extension[=].valueCode = {expectation}
 
 RuleSet: CapSupportProfileUrl(profileUrl, expectation)
 * rest.resource[=].supportedProfile[+] = "{profileUrl}"
-* rest.resource[=].supportedProfile[=].extension[0].url = $capabilitystatement-expectation
-* rest.resource[=].supportedProfile[=].extension[0].valueCode = {expectation}
+* rest.resource[=].supportedProfile[=].extension[+].url = $capabilitystatement-expectation
+* rest.resource[=].supportedProfile[=].extension[=].valueCode = {expectation}
 
 RuleSet: CapResourceInteraction(interaction, expectation)
 * rest.resource[=] insert CapInteraction({interaction}, {expectation})
@@ -16,8 +16,8 @@ RuleSet: CapResourceInteraction(interaction, expectation)
 RuleSet: CapInteraction(interaction, expectation)
 * interaction[+]
   * code = {interaction}
-  * extension[0].url = $capabilitystatement-expectation
-  * extension[0].valueCode = {expectation}
+  * extension[+].url = $capabilitystatement-expectation
+  * extension[=].valueCode = {expectation}
 
 RuleSet: CapSupportResourceSearchParam(name, canonical, type, expectation, documentation)
 * rest.resource[=] insert CapSupportSearchParam({name}, {canonical}, {type}, {expectation}, {documentation})
@@ -27,8 +27,8 @@ RuleSet: CapSupportResourceSearchParamNoDefinition(name, type, expectation, docu
   * name = "{name}"
   * type = {type}
   * documentation = {documentation}
-  * extension[0].url = $capabilitystatement-expectation
-  * extension[0].valueCode = {expectation}
+  * extension[+].url = $capabilitystatement-expectation
+  * extension[=].valueCode = {expectation}
 
 RuleSet: CapSupportSearchParam(name, canonical, type, expectation, documentation)
 * searchParam[+]
@@ -36,8 +36,8 @@ RuleSet: CapSupportSearchParam(name, canonical, type, expectation, documentation
   * definition = "{canonical}"
   * type = {type}
   * documentation = {documentation}
-  * extension[0].url = $capabilitystatement-expectation
-  * extension[0].valueCode = {expectation}
+  * extension[+].url = $capabilitystatement-expectation
+  * extension[=].valueCode = {expectation}
 
 RuleSet: CapSupportResourceOperation(name, operation, expectation)
 * rest.resource[=] insert CapSupportOperation({name}, {operation}, {expectation})
