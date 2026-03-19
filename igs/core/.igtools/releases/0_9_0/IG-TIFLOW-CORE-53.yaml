@@ -1,11 +1,11 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 8b9f94d6c0d533793b356acfc7ed976915b505c270a82a6a9235ccfe715071e2
+content_hash: 242dfb2e323d222aea0d7e7794123d8206ee8e50089019bd4e7d1cfa42e4c3e7
 created: '2026-03-17T11:33:06.652972'
-date: '2026-03-17T11:33:06.652974'
+date: '2026-03-18T14:56:22.540170'
 key: IG-TIFLOW-CORE-53
-modified: '2026-03-17T11:33:06.652973'
+modified: '2026-03-18T14:56:22.540170'
 release_status: NEW
 source: input/pagecontent/op-close-req-fd.md
 status: ACTIVE
@@ -15,9 +15,9 @@ test_procedures:
 text: Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation
   über /Task/&lt;id&gt;/$close das im URL-Parameter "?secret=..." übertragene Secret
   gegen das im referenzierten Task gespeicherte Secret Task.identifier:Secret als
-  https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret und auf Task.status =
-  "in-progress" prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation
-  mit dem HTTP-Fehlercode 403 abbrechen, damit der Zugriff auf diesen Datensatz nur
-  durch den Berechtigten in Kenntnis des Secrets erfolgt.
+  https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret prüfen und bei Ungleichheit
+  oder Fehlen des URL-Parameters die Operation mit dem HTTP-Fehlercode 403 abbrechen,
+  damit der Zugriff auf diesen Datensatz nur durch den Berechtigten in Kenntnis des
+  Secrets erfolgt.
 title: E-Rezept-Fachdienst - Task schließen - Prüfung Secret
 version: 0

@@ -24,7 +24,6 @@ Das PS der verordnenden LEI darf FHIR-Extensions nicht im Verordnungsdatensatz v
 
 Es gelten weitere modulspezifische Anforderungen für den Verordnungsdatensatz.
 
-
 <!-- A_19276 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-229" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-ID abrufen" version="0">
   <meta lockversion="false"/>
@@ -49,3 +48,30 @@ Der Response des Fachdienstes liefert
 - und den AccessCode (Task.Identifier mit "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_AccessCode"), welcher für den Zugriff auf das E-Rezept im Fachdienst berechtigt
 
 Hinweis: Die Task-ID entspricht der Rezept-ID.
+
+Für die qualifizierte elektronische Signatur des Verordnungsbundels wird der Konnektor verwendet. Es wird eine CMS-Signatur (CAdES) erstellt. Die Operation für die QES muss durch den Leistungserbringer durchgeführt werden.
+
+<!-- A_19281-03 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-380" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle QES signieren" version="0">
+  <meta lockversion="false"/>
+  <actor name="PS_E-Rezept_verordnend">
+    <testProcedure id="Konformitätserklärung"/>
+  </actor>
+  Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" für das E-Rezept die Signaturoperation des Konnektors mit 
+  <ul>
+  <li>der Referenz RFC-5652 für CMS-Signatur (CAdES)</li>
+  <li>Signaturtype für eine enveloping Signature</li>
+  <li>dem base64-codierten E-Rezept-Bundle</li>
+  <li>eingebetteter OCSP-Antwort (IncludeRevocationInfo = true)</li>
+  <li>Angabe des Mimetypes "text/plain; charset=utf-8"</li>
+  </ul>
+  ausführen.
+</requirement>
+
+Für weitere Informationen siehe Operation "E-Rezept qualifiziert signieren" aus der API-Schnittstelle [E-Rezept API Dokumentation].
+
+Das PS der verordnenden LEI MUSS muss die Erstellung der E-Rezepte mittels Einzelsignatur, Stapelsignatur und Komfortsignatur des Konnektors unterstützen.
+
+Für die Nutzung der Komfortsignatur siehe [gemILF_PS].
+
+Falls keine Komfortsignatur zur Verfügung steht oder die Komfortsignatur deaktiviert ist, soll das PS der verordnenden LEI die Stapelsignatur verwenden ist, falls mehrere E-Rezepte signiert werden sollen. 

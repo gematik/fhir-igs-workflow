@@ -110,7 +110,7 @@ Diese Seite enthält die normativen Anforderungen an das PVS für die Operation 
 
 ### Patientenausdruck
 
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-ERP-55" title="PS verordnende LEI: E-Rezept erstellen - Flowtype 169/209 -kein Patientenausdruck" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-ERP-55" title="PS verordnende LEI: E-Rezept erstellen - Flowtype 169/209 - kein Patientenausdruck" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>

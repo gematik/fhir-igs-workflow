@@ -2,6 +2,7 @@ Diese Seite beschreibt Anforderungen an das AVS zur Nutzung der `Task`-Query-End
 
 ### Recovery Secret
 
+<!-- A_24181 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-31" title="PS abgebende LEI: Recovery Secret - Statusrequest" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">

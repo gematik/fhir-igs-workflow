@@ -12,7 +12,7 @@ Description: "Diese Ressource beschreibt das Mapping und führt die Mappings all
 * import[+] = Canonical(ERPTPrescriptionStructureMapMedication)
 
 * insert sd_structure(http://hl7.org/fhir/StructureDefinition/Bundle, source, bundle)
-* insert sd_structure(https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-carbon-copy, target, erpTCarbonCopy)
+* insert sd_structure(https://gematik.de/fhir/tiflow/bfarm/StructureDefinition/erp-tprescription-carbon-copy, target, erpTCarbonCopy)
 
 // Map rxDispense
 * group[+]
