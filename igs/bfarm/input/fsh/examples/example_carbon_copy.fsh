@@ -3,7 +3,7 @@ InstanceOf: ERP_TPrescription_CarbonCopy
 Usage: #example
 Title: "Beispiel digitaler Durchschlag E-T-Rezept"
 Description: "Dieses Beispiel wurde manuell angelegt, um den Aufbau eines digitalen Durchschlags abzubilden"
-* meta.profile = "https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-carbon-copy|1.0"
+* meta.profile = "https://gematik.de/fhir/tiflow/bfarm/StructureDefinition/erp-tprescription-carbon-copy|1.1"
 * parameter[rxPrescription]
   * name = "rxPrescription"
   * part[prescriptionSignatureDate]
