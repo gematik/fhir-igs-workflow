@@ -1,0 +1,34 @@
+@startuml
+title sd E‑Rezepte eines Versicherten durch Abgebenden abrufen (PoPP)
+
+' Teilnehmer/Lifelines
+actor "Versicherter/\nVertreter" as Versicherter
+actor "Mitarbeiter LEI" as MitarbeiterLEI
+participant "Primärsystem\nabgebende LEI" as PS_LEI #pink
+participant "E‑Rezept‑Fachdienst" as FD #lightyellow
+participant "Identity Provider" as IDP #lightgreen
+participant "PoPP-Service" as PoPP_Service #lightgreen
+
+' Grundablauf
+Versicherter -> Versicherter : stellt eGK bereit()
+activate PS_LEI
+MitarbeiterLEI -> PS_LEI: E‑Rezepte von Versicherten abrufen()
+PS_LEI -> PoPP_Service: Erstelle PoPP-Token(eGK, SMC‑B)
+PoPP_Service --> PS_LEI: :PoPP‑Token
+
+opt kein gültiger AccessToken
+  ref over PS_LEI, IDP: UC 5.2 – AuthN‑Token durch LEI anfordern
+end opt
+
+PS_LEI -> FD: GET /Task(AuthN‑Token, PoPP‑Token)
+FD -> FD: Prüfe PoPP‑Token()
+
+FD -> FD: Prüfe Telematik‑ID PoPP‑Token()
+FD -> FD: Prüfe Zeitstempel PoPP‑Token()
+FD -> FD: Zugriff protokollieren()
+
+FD --> PS_LEI: :Liste Task
+PS_LEI --> MitarbeiterLEI
+deactivate PS_LEI
+
+@enduml

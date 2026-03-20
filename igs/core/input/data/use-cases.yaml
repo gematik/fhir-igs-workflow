@@ -449,6 +449,30 @@
   interface: |
     - [Query API: Task](./query-api-task.html)
   diagram: seq-uc-4-8-quittung-erneut-abrufen
+- id: UC_4_15_E-Rezepte_durch_Abgebenden_abrufen_PoPP
+  anchor: uc-4-15-e-rezepte-durch-abgebenden-abrufen-popp
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc-4-15-e-rezepte-durch-abgebenden-abrufen-popp
+  title: UC 4.15 - E-Rezepte durch Abgebenden abrufen (PoPP)
+  roles:
+    - Apotheke
+  description: |
+    Eine Apotheke kann nach dem Einlesen der eGK auf die einlösbaren E-Rezepte des Versicherten zugreifen. 
+  preconditions: |
+    - Der Versicherte oder ein Vertreter befindet sich vor Ort im Kontakt mit einem Mitarbeiter der Apotheke.
+    - Der Versicherte hat seine eGK bzw. der Vertreter die eGK des zu Vertretenden dabei.
+  actions: |
+    - Das PS liest unter Nutzung eines im Rahmen von PoPP zulässigen Kartenlesegerät die eGK ein.
+    - Das PS ruft für diese eGK den Anwendungsfall zum Erstellen eines PoPP-Token auf. Im Ergebnis erhält das PS, sofern die eGK nicht gesperrt und das Authentifizierungszertifikat gültig ist, einen PoPP-Token.
+    - Das PS übermittelt dem PoPP-Token, um die einlösbaren E-Rezepte des Versicherten vom E-Rezept-Fachdienst abzurufen.
+    - Der E-Rezept-Fachdienst prüft die Gültigkeit des PoPP-Tokens.
+    - Der E-Rezept-Fachdienst übermittelt die Zugriffsinformationen (Task-ID und AccessCode) zu jedem einlösbaren E-Rezept.
+  postconditions: |
+    - Im PS stehen die Zugriffsinformationen (Task-ID und AccessCode) für alle einlösbaren E-Rezepte zur Verfügung.
+    - Im PS kann zu den einzelnen E-Rezepten der Anwendungsfall "UC 4.1 - E-Rezept durch Abgebenden abrufen" ausführen, um die E-Rezepte im PS anzuzeigen.
+    - Der Zugriff der Apotheke auf die E-Rezepte ist für den Versicherten auf dem E-Rezept-Fachdienst protokolliert.
+  interface: |
+    - [Query API: Task](./query-api-task.html)
+  diagram: seq-uc-4-15-e-rezepte-durch abgebenden-abrufen-popp
 - id: UC_4_16_Dispensierinformationen_bereitstellen
   anchor: uc-4-16-dispensierinformationen-bereitstellen
   link: menu-technische-umsetzung-anwendungsfaelle.html#uc-4-16-dispensierinformationen-bereitstellen

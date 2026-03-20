@@ -91,6 +91,38 @@ Die Vorschrift zum Kodieren ist in https://www.educative.io/answers/what-is-bas
 
 Bsp.-URL: GET /Task?kvnr=X11058...&hcv=F9Z...I&pnw=H4sIAAAAA...
 
+#### E-Rezepte von Versicherten abrufen (PoPP)
+
+Mit diesem Anwendungsfall kann die abgebende LEI die Zugriffsinformationen zu allen einlösbaren E-Rezepten von einem Versicherten, dessen eGK mit einem im Rahmen von PoPP zulässigen Kartenlesegerät eingelesen wurde, vom E-Rezept-Fachdienst abrufen.
+
+<!-- A_22435-02 -->
+<requirement conformance="SHALL" key="" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (PoPP) - PoPP-Token abrufen" version="0">
+  <meta lockversion="false"/>
+  <actor name="PS_E-Rezept_abgebend">
+    <testProcedure id="Herstellererklärung"/>
+  </actor>
+  Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten abrufen" einen PoPP-Token vom PoPP-Service abrufen.
+</requirement>
+
+Für die Umsetzung siehe [spec-ilf-popp-client].
+<!-- ToDo: Link auflösen -->
+
+Hinweis: Im Response des PoPP-Service erhält das PS den PoPP-Token im JWT Compact Serialization Format (s. gemSpec_PoPP_Service#A_26432). Das PS gibt den PoPP-Token im gleichen Format an den E-Rezept-Fachdienst weiter.
+
+<!-- A_22437-02 -->
+<requirement conformance="SHALL" key="" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (PoPP) - E-Rezepte abrufen" version="0">
+  <meta lockversion="false"/>
+  <actor name="PS_E-Rezept_abgebend">
+    <testProcedure id="Herstellererklärung"/>
+  </actor>
+  Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten abrufen" die HTTP-Operation GET /Task mit
+  <ul>
+  <li>ACCESS_TOKEN im Authorization-Header</li>
+  <li>PoPP-Token in HTTP-Header X-PoPP-Token</li>
+  </ul>
+  ausführen.
+</requirement>
+
 Im Response ist eine Liste von Tasks enthalten. Für jeden Task sind u.a. folgende Informationen enthalten: Task-ID und AccessCode.
 
 Auf Basis dieser Informationen können die Verordnungsdatensätze zu den E-Rezepten vom E-Rezept-Fachdienst abgerufen werden. Erst dann sind die Inhalte der Verordnungen im AVS bekannt und können mit dem Versicherten abgestimmt werden.
@@ -98,7 +130,7 @@ Auf Basis dieser Informationen können die Verordnungsdatensätze zu den E-Rezep
 Abgerufene Rezepte, welche nicht durch die Apotheke beliefert werden, müssen durch die Apotheke zurückgegeben (Anwendungsfall "E-Rezept durch Abgebenden zurückgeben") werden.
 
 <!-- A_23152 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-211" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (VSDM) - nicht belieferte E-Rezepte zurückgeben" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-211" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen - nicht belieferte E-Rezepte zurückgeben" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>
