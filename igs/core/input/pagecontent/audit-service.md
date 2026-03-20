@@ -36,7 +36,7 @@ Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen all
   </ul>
 </requirement>
 
-<!-- A_19284-13 -->
+<!-- A_19284-14 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-25" title="E-Rezept-Fachdienst - Versichertenprotokoll zu Operationen" version="0">
 	<meta lockversion="false"/>
 	<actor name="eRp_FD">
@@ -63,7 +63,7 @@ Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen all
   </tr>
   <tr>
     <td>http GET /Task</td>
-    <td>Apotheke</td>
+    <td>Apotheke (VSDM)</td>
     <td>
         <ul>
             <li>im Erfolgsfall beim passenden AcceptPN3VSDMxx=false: Apotheke hat mit Ihrer eGK die Liste der offenen E-Rezepte abgerufen.</li>
@@ -72,6 +72,11 @@ Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen all
             <li>im sonstigen Fehlerfall: Apotheke konnte aufgrund eines Fehlerfalls nicht die Liste der offenen E-Rezepte mit Ihrer eGK abrufen.</li>
         </ul>
     </td>
+  </tr>
+  <tr>
+    <td>http GET /Task</td>
+    <td>Apotheke (PoPP)</td>
+    <td>Die Apotheke hat die Liste der einlösbaren E-Rezepte abgerufen durch Autorisierung mittels &#60;PoPP-Anwendungsfall&#62;.</td>
   </tr>
   <tr>
     <td>http GET /Task</td>
@@ -227,7 +232,19 @@ Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen all
 </table>
 <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004 Versichertenprotokoll</figcaption></div>
 
-<!-- A_19284-13 -->
+<table>
+<tr>
+<th>Wert in proofMethod</th>
+<th>Wert für &#60;PoPP-Anwendungsfall&#62;</th>
+</tr>
+<tr>
+<td>ehc-practitioner-*</td>
+<td>eGK in der Apotheke</td>
+</tr>
+</table>
+<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004a Versichertenprotokoll PoPP Anwendungsfall</figcaption></div>
+
+<!-- A_19284-14 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-26" title="E-Rezept-Fachdienst - Versichertenprotokoll zu automatischen Löschen" version="0">
 	<meta lockversion="false"/>
 	<actor name="eRp_FD">
@@ -265,7 +282,7 @@ Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen all
 </table>
 <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004a Versichertenprotokoll nach automatischen Löschen</figcaption></div>
 
-<!-- A_19284-13 -->
+<!-- A_19284-14 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-27" title="E-Rezept-Fachdienst - Versichertenprotokoll zu Löschen nach Fehlerbehandlung" version="0">
 	<meta lockversion="false"/>
 	<actor name="eRp_FD">
