@@ -216,7 +216,7 @@ Der E-Rezept-Fachdienst kann eine Mapping zwischen den IKNR und dem zugehörigen
 </requirement>
 
 <!-- A_22432-02 -->
-<requirement conformance="SHALL" key="" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - Prüfung PoPP-Token" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-388" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - Prüfung PoPP-Token" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -227,7 +227,7 @@ Der E-Rezept-Fachdienst kann eine Mapping zwischen den IKNR und dem zugehörigen
 Die Anforderungen zum Prüfen des PoPP-Token sind im Kapitel "HTTP-Operation GET - Prüfung PoPP-Token" beschrieben.
 
 <!-- A_23399-01 -->
-<requirement conformance="SHALL" key="" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - PoPP - Zeitraum Akzeptanz PoPP-Token" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-389" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - PoPP - Zeitraum Akzeptanz PoPP-Token" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -238,7 +238,7 @@ Die Anforderungen zum Prüfen des PoPP-Token sind im Kapitel "HTTP-Operation GET
 Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des PoPP-Token erfolgt ausschließlich nach Anpassung von A_23399-* im Rahmen des Änderungsmanagement für Spezifikationen.
 
 <!-- A_22431-02 -->
-<requirement conformance="SHALL" key="" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - PoPP - PoPP - Filter KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-390" title="E-Rezept-Fachdienst - Rezepte lesen - Apotheke - PoPP - PoPP - Filter KVNR" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -422,7 +422,7 @@ Der E-Rezept-Fachdienst setzt gemäß [gemSpec_PoPP_Service] in der Rolle PoPP-
 Anstelle zur nicht zugewiesenen Anforderung  A_27358 - Beziehen der URL für den PoPP-Service
 
 <!-- A_28579 -->
-<requirement conformance="SHALL" key="" title="E-Rezept-Fachdienst - Prüfung PoPP-Token - Apotheke - PoPP Prüfung - Konfiguration PoPP-Service URL" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-391" title="E-Rezept-Fachdienst - Prüfung PoPP-Token - Apotheke - PoPP Prüfung - Konfiguration PoPP-Service URL" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Herstellererklärung"/>
@@ -433,7 +433,7 @@ Anstelle zur nicht zugewiesenen Anforderung  A_27358 - Beziehen der URL für 
 Ergänzung der stündlichen Abfrage des JWKS zu A_26449 - Beziehen der Schlüssel für die PoPP-Token Signaturprüfung :
 
 <!-- A_28580 -->
-<requirement conformance="SHALL" key="" title="E-Rezept-Fachdienst - Prüfung PoPP-Token - Aktualisierung des PoPP-Service JWK-Sets" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-392" title="E-Rezept-Fachdienst - Prüfung PoPP-Token - Aktualisierung des PoPP-Service JWK-Sets" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Herstellererklärung"/>
@@ -444,7 +444,7 @@ Ergänzung der stündlichen Abfrage des JWKS zu A_26449 - Beziehen der Schlüss
 Der E-Rezept-Fachdienst prüft zur Umsetzung von A_27016-* das Signaturzertifikat des PoPP-Service wie folgt:
 
 <!-- A_28724 -->
-<requirement conformance="SHALL" key="" title="E-Rezept-Fachdienst - Prüfung PoPP-Token - Prüfung Signaturzertifikat PoPP-Service" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-393" title="E-Rezept-Fachdienst - Prüfung PoPP-Token - Prüfung Signaturzertifikat PoPP-Service" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -492,7 +492,7 @@ Der E-Rezept-Fachdienst prüft zur Umsetzung von A_27016-* das Signaturzertifika
 Der TUC gibt neben dem Status der Zertifikatsprüfung auch die im Zertifikat enthaltene Rolle (Admission) zurück. Der E-Rezept-Fachdienst prüft zur Umsetzung von A_27016-* die Rolle. wie folgt:
 
 <!-- A_28731 -->
-<requirement conformance="SHALL" key="" title="E-Rezept-Fachdienst - Prüfung PoPP-Token - Prüfung Rolle Signaturzertifikat PoPP-Service" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-394" title="E-Rezept-Fachdienst - Prüfung PoPP-Token - Prüfung Rolle Signaturzertifikat PoPP-Service" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -503,7 +503,7 @@ Der TUC gibt neben dem Status der Zertifikatsprüfung auch die im Zertifikat ent
 Der E-Rezept-Fachdienst prüft zur Umsetzung von A_26452-* die Telematik-ID aus dem PoPP-Token wie folgt:
 
 <!-- A_23402-01 -->
-<requirement conformance="SHALL" key="" title="E-Rezept-Fachdienst - Prüfung PoPP-Token - Telematik-ID prüfen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-395" title="E-Rezept-Fachdienst - Prüfung PoPP-Token - Telematik-ID prüfen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>

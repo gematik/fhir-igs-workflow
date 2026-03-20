@@ -72,7 +72,7 @@ Der Datentyp der Task.id erlaubt bis zu 64 Zeichen zur Angabe einer ID des Tasks
 Der Nutzer eines E-Rezept-FdV kann die Zugriffs Rezeptinformationen als 2D-Code auf dem Bildschirm seines E-Rezept-FdVs anzeigen lassen, um das/die E-Rezept/E-Rezepte direkt in der Apotheke einlösen zu können.
 
 <!-- A_21401-02 -->
-<requirement conformance="SHALL NOT" key="" title="E-Rezept-FdV: E-Rezept-Token als 2D-Code anzeigen - Flowtype 169 / 209 - Anzeige nicht zulässig" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-396" title="E-Rezept-FdV: E-Rezept-Token als 2D-Code anzeigen - Flowtype 169 / 209 - Anzeige nicht zulässig" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
@@ -83,7 +83,7 @@ Der Nutzer eines E-Rezept-FdV kann die Zugriffs Rezeptinformationen als 2D-Code 
 Ein 2D-Code kann bis zu 3 E-Rezept-Token beinhalten. Sollen mehr E-Rezept-Token übermittelt werden, können bspw. mehrere 2D-Codes erzeugt und angezeigt werden.
 
 <!-- A_24571 -->
-<requirement conformance="SHALL NOT" key="" title="E-Rezept-FdV: E-Rezept-Token als 2D-Code anzeigen - maximal 3 E-Rezept-Token in 2D-Code" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-397" title="E-Rezept-FdV: E-Rezept-Token als 2D-Code anzeigen - maximal 3 E-Rezept-Token in 2D-Code" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
@@ -93,7 +93,7 @@ Ein 2D-Code kann bis zu 3 E-Rezept-Token beinhalten. Sollen mehr E-Rezept-Token 
 
 
 <!-- A_20181-01 -->
-<requirement conformance="SHALL NOT" key="" title="E-Rezept-FdV: E-Rezept-Token als 2D-Code anzeigen - personenbezogene Daten" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-398" title="E-Rezept-FdV: E-Rezept-Token als 2D-Code anzeigen - personenbezogene Daten" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produktgutachten"/>
