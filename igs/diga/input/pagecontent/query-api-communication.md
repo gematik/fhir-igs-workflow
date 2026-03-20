@@ -40,7 +40,7 @@ Die Interaktion mit Nachrichten als FHIR-Ressource _Communication_ wird über di
 	<div id="Request-Examples">
 		<!-- TODO: Replace with a representative Communication create request for DiGA. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Communication/Communication_Reply_DiGA XML %}
+			{% fragment Communication/140f716f-f649-44fe-9a4e-157eb3c8adf3 XML %}
 		</div>
 	</div>
 	<div id="Response-Examples">
