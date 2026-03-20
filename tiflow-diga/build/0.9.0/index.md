@@ -103,7 +103,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "gemIG_TIFlow_diga",
   "title" : "TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)",
   "status" : "draft",
-  "date" : "2026-03-20T13:44:44+00:00",
+  "date" : "2026-03-20T14:24:28+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
