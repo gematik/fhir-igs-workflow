@@ -27,7 +27,22 @@ Anfragen an die <i>Communication</i>-Ressource können über die RESTful API mit
 
 #### API Beschreibung
 
-- [API-ERP: Communications](https://github.com/gematik/api-erp/blob/master/docs/erp_communication.adoc)
+<div class="gematik-api"
+	data-api-type="FHIRResource"
+	data-api-fhir-resource-type="Communication"
+	data-api-fhir-interaction="search-type">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-erp-fachdienst-server-erpchrg.json %}
+		</pre>
+	</div>
+	<div id="Response-Examples">
+		<!-- TODO: Replace placeholder searchset with a representative Communication query example for ERP-CHRG. -->
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Bundle/ExampleERPCHRGCommunicationSearchset XML %}
+		</div>
+	</div>
+</div>
 
 ## Sicherheitsanforderungen
 Generelle Sicherheitsanforderungen werden [hier](./menu-technische-umsetzung-datenschutz-und-sicherheit.html) festgehalten.

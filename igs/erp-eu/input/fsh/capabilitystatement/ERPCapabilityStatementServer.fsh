@@ -19,6 +19,7 @@ Usage: #definition
 * extension[baseUrl].valueString = $erp-base-url
 
 * insert TaskInteraction(#SHALL)
+* insert ConsentInteraction(#SHALL)
 * insert GrantEUAccessPermissionInteraction(#SHALL)
 * insert ReadEUAccessPermissionInteraction(#SHALL)
 * insert RevokeEUAccessPermissionInteraction(#SHALL)
@@ -47,6 +48,18 @@ RuleSet: TaskInteraction(expectation)
 * insert CapSupportResourceSearchParamNoDefinition(__offset, #number, {expectation}, "Nullbasierter Offset des ersten zurückgegebenen Eintrags; default is 0")
 
 * insert CapSupportResourceOperation(eu-close, EUCloseOperation, {expectation}, "Finishes the EU ePrescription workflow and creates a signed receipt bundle")
+
+RuleSet: ConsentInteraction(expectation)
+* insert CapSupportResource(Consent, {expectation})
+
+* insert CapResourceInteraction(#search-type, #SHALL)
+* insert SearchTypeInteractionStatusCodes
+* insert CapResourceInteraction(#create, #SHALL)
+* insert CreateInteractionStatusCodes
+* insert CapResourceInteraction(#delete, #SHALL)
+* insert DeleteInteractionStatusCodes
+
+* insert CapSupportResourceSearchParam(category, http://hl7.org/fhir/SearchParameter/Consent-category, #token, {expectation}, "Consent.category - Unterstützt die Suche nach der Art der Einwilligung")
 
 RuleSet: GrantEUAccessPermissionInteraction(expectation)
 * insert CapSupportSystemOperation(grant-eu-access-permission, Grant-EU-Access-Permission, {expectation}, "Registers access code and country for EU prescription access")

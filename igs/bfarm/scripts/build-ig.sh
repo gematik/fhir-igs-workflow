@@ -50,6 +50,9 @@ resolve_mapping_bundle_source() {
 
 # IG-specific extra steps only
 
+# Sync OperationDefinition includes referenced by module pages.
+python3 "$ROOT_DIR/scripts/sync_operation_definitions_from_core.py" --igs bfarm
+
 # Run scripts that need artifacts from IG Publisher
 ./tests/run-all-tests.sh
 ./scripts/fml_table.sh

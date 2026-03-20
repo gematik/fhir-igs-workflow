@@ -14,10 +14,26 @@ Die Operation $abort wird als HTTP POST auf /Task/<id>/$abort ausgeführt.
 
 - [Anforderungen für FdV zu `$abort`](./op-abort-req-fdv.html): Anforderungen an das FdV zur Nutzung der Schnittstelle.
  
--API BEschreibung aus Cap Statement
- 
-### Hinweise
-keine
- 
-### Geschäftslogik
-ToDo: Diagram zum Ablauf
+### API Beschreibung
+
+<div class="gematik-api"
+	data-api-type="FHIROperation"
+	data-api-fhir-resource-type="Task"
+	data-api-fhir-invoke-level="instance"
+	data-api-operation-id="abortOperation">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-erp-fachdienst-server-diga.json %}
+		</pre>
+	</div>
+  <div id="OperationDefinition">
+    <pre>
+      {% include OperationDefinition-AbortOperation.json %}
+    </pre>
+  </div>
+	<div id="Response-Examples">
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleDiGAOperationOutcomeError XML %}
+		</div>
+	</div>
+</div>

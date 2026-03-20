@@ -27,4 +27,19 @@ Anfragen an die <i>ChargeItem</i>-Ressource können über die RESTful API durchg
 
 ### API Beschreibung
 
-- [API-ERP: PKV-Abrechnungsinformationen](https://github.com/gematik/api-erp/blob/master/docs/erp_chargeItem.adoc)
+<div class="gematik-api"
+	data-api-type="FHIRResource"
+	data-api-fhir-resource-type="ChargeItem"
+	data-api-fhir-interaction="search-type">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-erp-fachdienst-server-erpchrg.json %}
+		</pre>
+	</div>
+	<div id="Response-Examples">
+		<!-- TODO: Replace placeholder searchset with a representative ChargeItem query example. -->
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Bundle/ExampleERPCHRGChargeItemSearchset XML %}
+		</div>
+	</div>
+</div>

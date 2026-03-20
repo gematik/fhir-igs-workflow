@@ -20,6 +20,43 @@ Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource _Task_ wird ü
 
 #### API Beschreibung
 
-- [API-ERP: Abruf der DiGA-Verordnung durch den Versicherten](https://github.com/gematik/api-erp/blob/master/docs/erp_diga.adoc#abrufen-der-diga-verordnung)
-- [API-ERP: E-Rezept erneut abrufen durch den Kostenträger](https://github.com/gematik/api-erp/blob/master/docs/erp_abrufen.adoc#e-rezept-erneut-abrufen)
+<div class="gematik-api"
+	data-api-type="FHIRResource"
+	data-api-fhir-resource-type="Task"
+	data-api-fhir-interaction="search-type">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-erp-fachdienst-server-diga.json %}
+		</pre>
+	</div>
+	<div id="Response-Examples">
+		<!-- TODO: Replace placeholder searchset with a representative Task query example for DiGA. -->
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Bundle/ExampleDiGATaskSearchset XML %}
+		</div>
+	</div>
+</div>
+
+<div class="gematik-api"
+	data-api-type="FHIRResource"
+	data-api-fhir-resource-type="Task"
+	data-api-fhir-interaction="patch">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-erp-fachdienst-server-diga.json %}
+		</pre>
+	</div>
+	<div id="Request-Examples">
+		<!-- TODO: Add a dedicated Task patch request example for DiGA. -->
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Parameters/ExampleDiGAOperationRequestParameters XML %}
+		</div>
+	</div>
+	<div id="Response-Examples">
+		<!-- TODO: Add a dedicated Task patch response example for DiGA. -->
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Bundle/ExampleDiGATaskSearchset XML %}
+		</div>
+	</div>
+</div>
 

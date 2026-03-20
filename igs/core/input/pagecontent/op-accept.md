@@ -27,9 +27,6 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$accept` gesendet.
       {% include OperationDefinition-AcceptOperation.json %}
     </pre>
   </div>
-  <div id="Request-Examples">
-    <!-- TODO: Request-Beispiel für $accept ergänzen (kein Body, nur Header mit AccessCode) -->
-  </div>
   <div id="Response-Examples">
     <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
       {% fragment Bundle/ExampleAcceptResponseBundle XML %}

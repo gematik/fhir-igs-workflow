@@ -28,11 +28,47 @@ Die Interaktion mit Nachrichten als FHIR-Ressource _Communication_ wird über di
 
 
 
--API Beschreibung aus Cap Statement
+<div class="gematik-api"
+	data-api-type="FHIRResource"
+	data-api-fhir-resource-type="Communication"
+	data-api-fhir-interaction="create">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-erp-fachdienst-server-diga.json %}
+		</pre>
+	</div>
+	<div id="Request-Examples">
+		<!-- TODO: Replace with a representative Communication create request for DiGA. -->
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Communication/Communication_Reply_DiGA XML %}
+		</div>
+	</div>
+	<div id="Response-Examples">
+		<!-- TODO: Add a dedicated create response example if needed. -->
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleDiGAOperationOutcomeError XML %}
+		</div>
+	</div>
+</div>
 
 ### GET /Communication
 - Kostenträger: Abruf von Zuweisungen von Versicherten
 - Versicherter: Abruf der Rückmeldungen des Kostenträgers
 
 
--API Beschreibung aus Cap Statement
+<div class="gematik-api"
+	data-api-type="FHIRResource"
+	data-api-fhir-resource-type="Communication"
+	data-api-fhir-interaction="search-type">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-erp-fachdienst-server-diga.json %}
+		</pre>
+	</div>
+	<div id="Response-Examples">
+		<!-- TODO: Replace placeholder searchset with a representative Communication query example for DiGA. -->
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Bundle/ExampleDiGACommunicationSearchset XML %}
+		</div>
+	</div>
+</div>

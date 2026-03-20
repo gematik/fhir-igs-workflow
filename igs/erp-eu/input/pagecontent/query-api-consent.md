@@ -17,13 +17,71 @@ Die Nachricht zur Interaktion mit Einwilligungen als FHIR-Ressource _Consent_ wi
 
 ### Resource API
 
-Anfragen an die <i>Consent</i>-Ressource können über die RESTful API durchgeführt werden. Dabei können spezifische Suchparameter genutzt werden, um die Anfragen zu verfeinern. Zum Beispiel:
+#### Einstellen von Einwilligungen
 
-- Suche nach Einwilligungen, die für einen Anwendungsfall eingestellt wurden: ``?category=EUDISPCONS``
+Als Versicherter möchte ich eine Einwilligung zur elektronischen Speicherung meiner Abrechnungsinformationen erstellen und dem Fachdienst übermitteln. Die Einwilligung wird über die FHIR-Ressource "Consent" abgebildet.
 
-#### API Beschreibung
+Der Aufruf erfolgt als http-`POST`-Operation auf die Ressource /Consent. Im Aufruf muss das während der Authentisierung erhaltene ACCESS_TOKEN im http-Request-Header Authorization übergeben werden.
 
-- [API-ERP: Zustimmung für die Nutzung von E-Rezepten im EU-Ausland](https://github.com/gematik/api-erp/blob/master/docs/erp_eprescription.adoc#zustimmung-f%C3%BCr-die-nutzung-von-e-rezepten-im-eu-ausland)
+<div class="gematik-apidoc"
+  data-api-type="FHIRResource"
+  data-api-fhir-resource-type="Consent"
+  data-api-fhir-interaction="create">
+  <div id="CapabilityStatement">
+    <pre>
+      {% include CapabilityStatement-erp-fachdienst-server.json %}
+    </pre>
+  </div>
+  <div id="Response-Examples">
+    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+      {% fragment Consent/ExampleEUConsent JSON %}
+    </div>
+    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+      {% fragment Consent/ExampleEUConsent XML %}
+    </div>
+  </div>
+</div>
 
+#### Abfragen von Einwilligungen
 
+Als Versicherter möchte ich meine erteilte Einwilligung zur elektronischen Speicherung meiner Abrechnungsinformationen einsehen.
 
+Der Aufruf erfolgt als http-GET-Operation auf die Ressource /Consent. Im Aufruf muss das während der Authentisierung erhaltene ACCESS_TOKEN im http-Request-Header Authorization übergeben werden, der Fachdienst filtert die Consent-Einträge nach der im ACCESS_TOKEN enthaltenen KVNR des Versicherten.
+
+<div class="gematik-apidoc"
+  data-api-type="FHIRResource"
+  data-api-fhir-resource-type="Consent"
+  data-api-fhir-interaction="search-type">
+  <div id="CapabilityStatement">
+    <pre>
+      {% include CapabilityStatement-erp-fachdienst-server.json %}
+    </pre>
+  </div>
+  <div id="Response-Examples">
+    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+      {% fragment Bundle/ExampleGetConsent JSON %}
+    </div>
+    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+      {% fragment Bundle/ExampleGetConsent XML %}
+    </div>
+  </div>
+</div>
+
+### Instance API
+
+#### Löschen einer einzelnen Einwilligung
+
+Als Versicherter möchte ich meine erteilte Einwilligung zur elektronischen Speicherung meiner Abrechnungsinformationen widerrufen. Mit dem Widerruf der Einwilligung werden bereits gespeicherte Abrechnungsinformationen gelöscht.
+
+Der Aufruf erfolgt als http-`DELETE`-Operation auf die Ressource /Consent. Im Aufruf muss das während der Authentisierung erhaltene ACCESS_TOKEN im http-Request-Header Authorization übergeben werden, der Fachdienst filtert die Consent-Einträge nach der im ACCESS_TOKEN enthaltenen KVNR des Versicherten.
+
+<div class="gematik-apidoc"
+  data-api-type="FHIRResource"
+  data-api-fhir-resource-type="Consent"
+  data-api-fhir-interaction="delete">
+  <div id="CapabilityStatement">
+    <pre>
+      {% include CapabilityStatement-erp-fachdienst-server.json %}
+    </pre>
+  </div>
+</div>

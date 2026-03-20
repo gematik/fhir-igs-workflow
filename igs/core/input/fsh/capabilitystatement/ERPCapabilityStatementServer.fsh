@@ -95,6 +95,8 @@ RuleSet: ConsentInteraction(expectation)
 * insert CapResourceInteraction(#delete, #SHALL)
 * insert DeleteInteractionStatusCodes
 
+* insert CapSupportResourceSearchParam(category, http://hl7.org/fhir/SearchParameter/Consent-category, #token, {expectation}, "Consent.category - Unterstützt die Suche nach der Art der Einwilligung")
+
 RuleSet: CommunicationInteraction(expectation)
 * insert CapSupportResource(Communication, #SHALL)
 * insert CapSupportProfile(GEM_ERP_PR_Communication, #SHALL)

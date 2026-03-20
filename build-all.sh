@@ -108,8 +108,12 @@ run_ig() {
     fi
   fi
 
-  if [[ -x "$ig_dir/scripts/build-ig.sh" ]]; then
-    (cd "$ig_dir" && "$ig_dir/scripts/build-ig.sh")
+  if [[ -f "$ig_dir/scripts/build-ig.sh" ]]; then
+    if [[ -x "$ig_dir/scripts/build-ig.sh" ]]; then
+      (cd "$ig_dir" && "$ig_dir/scripts/build-ig.sh")
+    else
+      (cd "$ig_dir" && bash "$ig_dir/scripts/build-ig.sh")
+    fi
   fi
 
   if [[ -x "$ROOT_DIR/_genonce.sh" ]]; then

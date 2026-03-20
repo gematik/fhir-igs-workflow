@@ -53,12 +53,33 @@ Durch Angabe des URL-Parameter `?secret=` bei der GET-Operation kann eine abgebe
 
 Um spezifische Details zu einem einzelnen _Task_ mittels der RESTful API zu erhalten, wird die _Task Instance API_ verwendet, indem eine HTTP GET-Anfrage an den Endpunkt <i>/Task/[id]</i> gestellt wird.
 
-#### API Beschreibung
+#### Task abrufen
 
 <div class="gematik-apidoc"
   data-api-type="FHIRResource"
   data-api-fhir-resource-type="Task"
   data-api-fhir-interaction="read">
+  <div id="CapabilityStatement">
+    <pre>
+      {% include CapabilityStatement-erp-fachdienst-server.json %}
+    </pre>
+  </div>
+  <div id="Response-Examples">
+    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+      {% fragment Task/TaskInReadyState JSON %}
+    </div>
+    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+      {% fragment Task/TaskInReadyState XML %}
+    </div>
+  </div>
+</div>
+
+#### Task markieren
+
+<div class="gematik-apidoc"
+  data-api-type="FHIRResource"
+  data-api-fhir-resource-type="Task"
+  data-api-fhir-interaction="patch">
   <div id="CapabilityStatement">
     <pre>
       {% include CapabilityStatement-erp-fachdienst-server.json %}
