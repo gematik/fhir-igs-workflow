@@ -5,15 +5,15 @@ Zero Trust (ZETA) die Funktionalität ist anwendungsübergreifend in [gemSpec_ZE
 
 Dieses Dokument dient als Grundlage für die Abstimmung über eine technische Zugriffsrichtlinie. Ziel ist es, in verständlicher Sprache zu erläutern, welche Prüfungen durchgeführt werden, bevor ein Zugriff auf VSDM2 Systeme gewährt wird.
 
-## Grundprinzip der Richtlinie
+#### Grundprinzip der Richtlinie
 
 Die hier beschriebene Richtlinie funktioniert nach einem einfachen Prinzip: Ein Zugriff wird nur dann erlaubt, wenn **alle** definierten Bedingungen erfüllt sind. Scheitert auch nur eine einzige Prüfung, wird der Zugriff verweigert und die Gründe für die Ablehnung werden protokolliert.
 
-## Die Prüfungen im Detail
+#### Die Prüfungen im Detail
 
 Im Folgenden werden die Prüfungen beschrieben, die ein anfragendes System erfolgreich durchlaufen muss.
 
-### 1. Prüfung des Berufs oder der Einrichtungsart
+#### 1. Prüfung des Berufs oder der Einrichtungsart
 
 Diese Regel stellt sicher, dass nur bestimmte Berufsgruppen oder Arten von Einrichtungen auf das System zugreifen dürfen. Technisch wird dies über eine sogenannte OID (Object Identifier) geprüft, eine eindeutige Kennung für jeden Beruf oder jede Einrichtung.
 
@@ -29,11 +29,10 @@ Folgende Berufe und Einrichtungsarten sind zugelassen:
 * **1.2.276.0.76.4.53:** Krankenhaus
 * **1.2.276.0.76.4.54:** Öffentliche Apotheke
 * **1.2.276.0.76.4.55:** Krankenhausapotheke
-* **1.2.276.0.76.4.56:** Bundeswehrapotheke
-* **1.2.276.0.76.4.57:** Betriebsstätte Mobile Einrichtung Rettungsdienst
 * **1.2.276.0.76.4.59:** Betriebsstätte Kostenträger
+* **1.2.276.0.76.4.292:** NcPeH (LE-EU verwendet HCPI + Permission + Zugriffscode (6-stellig alphanumerisch) für Requests)
 
-### 2. Prüfung der Client-Anwendung
+#### 2. Prüfung der Client-Anwendung
 
 Diese Regel verifiziert, dass die verwendete Software (der "Client") und deren Version für den Zugriff bei der gematik registriert sind. Jede Software, die auf das System zugreifen möchte, identifiziert sich mit einer Produktkennung und einer Versionsnummer.
 
@@ -49,7 +48,7 @@ Es wird geprüft, ob die Kombination aus Produkt und Version in einer Liste der 
 
 Eine Anfrage von Produkt A in Version 1.2 wäre erfolgreich, eine Anfrage in Version 1.1 würde jedoch scheitern.
 
-### 3. Prüfung der angeforderten Berechtigungen (Scopes)
+#### 3. Prüfung der angeforderten Berechtigungen (Scopes)
 
 Diese Regel stellt sicher, dass die anfragende Anwendung nur die Berechtigungen anfordert, die ihr auch gewährt werden dürfen. Anwendungen können bestimmte "Scopes" anfordern, die ihnen Lese- oder Schreibzugriff auf bestimmte Datenbereiche gewähren.
 
@@ -58,11 +57,11 @@ Es wird die Liste der von der Anwendung angeforderten Berechtigungen mit der Lis
 
 **Beispiel:**
 
-* Erlaubte Berechtigungen sind: `vsdservice`
-* Anwendung fordert an: `vsdservice` -> **Erfolg**
-* Anwendung fordert an: `vsd_daten_schreiben` -> **Fehler** (da `vsd_daten_schreiben` nicht erlaubt ist)
+* Erlaubte Berechtigungen sind: `/vau`
+* Anwendung fordert an: `/vau` -> **Erfolg**
+* Anwendung fordert an: `/erezept` -> **Fehler** (da `/erezept` nicht erlaubt ist)
 
-### 4. Prüfung der Ziel-Ressource (Audience)
+#### 4. Prüfung der Ziel-Ressource (Audience)
 
 Diese Regel kontrolliert, auf welche Zielsysteme oder Datenbereiche ("Audiences") zugegriffen werden darf. Dies ist eine zusätzliche Sicherheitsebene, um sicherzustellen, dass ein Zugriffstoken nur für den vorgesehenen Zweck verwendet wird.
 
@@ -73,9 +72,10 @@ Es wird abgeglichen, ob die von der Anwendung angefragten Ziel-Ressourcen in der
 
 **Beispiel:**
 
-* Erlaubte Ziel-Ressourcen: `vsdm2-url`
-* Anwendung fordert Zugriff auf: `vsdm2-url` -> **Erfolg**
+* Erlaubte Ziel-Ressourcen: `/vau`
+* Anwendung fordert Zugriff auf: `/vau` -> **Erfolg**
 * Anwendung fordert Zugriff auf: `unknown-url` -> **Fehler** (da `unknown-url` nicht erlaubt ist)
+
 
 ## Gültigkeitsdauer der Zugriffstoken (TTL)
 
@@ -86,7 +86,7 @@ Es gibt zwei Arten von Token:
 * **Access Token:** Dies ist der eigentliche "Schlüssel" für den direkten Zugriff auf Daten. Er hat eine sehr kurze Lebensdauer.
   * **Gültigkeit:** 300 Sekunden (5 Minuten)
 * **Refresh Token:** Wenn das Access Token abgelaufen ist, kann die Anwendung dieses zweite Token verwenden, um ein neues Access Token zu erhalten, ohne dass sich der Benutzer erneut anmelden muss. Es hat eine deutlich längere Lebensdauer.
-  * **Gültigkeit:** 86400 Sekunden (24 Stunden)
+  * **Gültigkeit:** 43200 Sekunden (12 Stunden)
 
 ## Ergebnis der Prüfung
 
