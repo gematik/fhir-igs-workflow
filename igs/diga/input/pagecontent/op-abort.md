@@ -16,7 +16,7 @@ Die Operation $abort wird als HTTP POST auf /Task/<id>/$abort ausgeführt.
  
 -API BEschreibung aus Cap Statement
  
-### Hinweis
+### Hinweise
 keine
  
 ### Geschäftslogik

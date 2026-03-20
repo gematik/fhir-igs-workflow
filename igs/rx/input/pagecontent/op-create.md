@@ -46,7 +46,7 @@ TODO zum wiedereinführen für die Neuausschreibung
 </div>
 {% endcomment %}
 
-### Hinweis
+### Hinweise
 
 - Task-IDs dürfen nicht auf Vorrat erzeugt bzw. bevorratet werden.
 - `$create` ist nur für konkrete, unmittelbar folgende Verordnungsprozesse zu verwenden.

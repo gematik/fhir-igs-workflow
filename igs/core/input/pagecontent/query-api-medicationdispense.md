@@ -17,9 +17,8 @@ Die Nachricht zur Interaktion mit Einlöseinformationen als FHIR-Ressource _Medi
 
 ### Resource API
 
-Anfragen an die <i>MedicationDispense</i>-Ressource können über die RESTful API mittels HTTP GET-Anfragen durchgeführt werden.
-
-#### API Beschreibung
+Als Versicherter möchte ich die Abgabeinformationen erhalten, um mir darüber einen digitalen Beipackzettel herunterzuladen und weitere Anwendungshinweise für mein Medikament zu erhalten.
+Die Rückgabe erfolgt als Liste im `Bundle` eines oder mehrerer MedicationDispenses, welche den ggfs. angegebenen Suchparametern entsprechen.
 
 <div class="gematik-apidoc"
   data-api-type="FHIRResource"

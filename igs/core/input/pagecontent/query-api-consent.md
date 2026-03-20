@@ -20,13 +20,36 @@ Die Nachricht zur Interaktion mit Einwilligungen als FHIR-Ressource _Consent_ wi
 
 ### Resource API
 
-Anfragen an die <i>Consent</i>-Ressource können über die RESTful API durchgeführt werden. Dabei können spezifische Suchparameter genutzt werden, um die Anfragen zu verfeinern. Zum Beispiel:
+#### Einstellen von Einwilligungen
 
-- Suche nach Einwilligungen, die für einen Anwendungsfall eingestellt wurden: ``?category=CHARGCONS``
+Als Versicherter möchte ich eine Einwilligung zur elektronischen Speicherung meiner Abrechnungsinformationen erstellen und dem Fachdienst übermitteln. Die Einwilligung wird über die FHIR-Ressource "Consent" abgebildet.
 
-#### API Beschreibung
+Der Aufruf erfolgt als http-`POST`-Operation auf die Ressource /Consent. Im Aufruf muss das während der Authentisierung erhaltene ACCESS_TOKEN im http-Request-Header Authorization übergeben werden.
 
-#### with search-type
+<div class="gematik-apidoc"
+  data-api-type="FHIRResource"
+  data-api-fhir-resource-type="Consent"
+  data-api-fhir-interaction="create">
+  <div id="CapabilityStatement">
+    <pre>
+      {% include CapabilityStatement-erp-fachdienst-server.json %}
+    </pre>
+  </div>
+  <div id="Response-Examples">
+    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+      {% fragment Consent/QueryConsentCHARGCONS JSON %}
+    </div>
+    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+      {% fragment Consent/QueryConsentCHARGCONS XML %}
+    </div>
+  </div>
+</div>
+
+#### Abfragen von Einwilligungen
+
+Als Versicherter möchte ich meine erteilte Einwilligung zur elektronischen Speicherung meiner Abrechnungsinformationen einsehen.
+
+Der Aufruf erfolgt als http-GET-Operation auf die Ressource /Consent. Im Aufruf muss das während der Authentisierung erhaltene ACCESS_TOKEN im http-Request-Header Authorization übergeben werden, der Fachdienst filtert die Consent-Einträge nach der im ACCESS_TOKEN enthaltenen KVNR des Versicherten.
 
 <div class="gematik-apidoc"
   data-api-type="FHIRResource"
@@ -47,28 +70,13 @@ Anfragen an die <i>Consent</i>-Ressource können über die RESTful API durchgef�
   </div>
 </div>
 
-#### with read
+### Instance API
 
-<div class="gematik-apidoc"
-  data-api-type="FHIRResource"
-  data-api-fhir-resource-type="Consent"
-  data-api-fhir-interaction="read">
-  <div id="CapabilityStatement">
-    <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
-    </pre>
-  </div>
-  <div id="Response-Examples">
-    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-      {% fragment Bundle/example-searchset-consent JSON %}
-    </div>
-    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-      {% fragment Bundle/example-searchset-consent XML %}
-    </div>
-  </div>
-</div>
+#### Löschen einer einzelnen Einwilligung
 
-#### DELTE
+Als Versicherter möchte ich meine erteilte Einwilligung zur elektronischen Speicherung meiner Abrechnungsinformationen widerrufen. Mit dem Widerruf der Einwilligung werden bereits gespeicherte Abrechnungsinformationen gelöscht.
+
+Der Aufruf erfolgt als http-`DELETE`-Operation auf die Ressource /Consent. Im Aufruf muss das während der Authentisierung erhaltene ACCESS_TOKEN im http-Request-Header Authorization übergeben werden, der Fachdienst filtert die Consent-Einträge nach der im ACCESS_TOKEN enthaltenen KVNR des Versicherten.
 
 <div class="gematik-apidoc"
   data-api-type="FHIRResource"
@@ -79,21 +87,5 @@ Anfragen an die <i>Consent</i>-Ressource können über die RESTful API durchgef�
       {% include CapabilityStatement-erp-fachdienst-server.json %}
     </pre>
   </div>
-  <div id="Response-Examples">
-    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-      {% fragment Bundle/example-searchset-consent JSON %}
-    </div>
-    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-      {% fragment Bundle/example-searchset-consent XML %}
-    </div>
-  </div>
 </div>
-
-Fragment json:
-
-{% fragment Bundle/example-searchset-consent JSON %}
-
-Fragment XML
-
-{% fragment Bundle/example-searchset-consent XML %}
 

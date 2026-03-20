@@ -15,7 +15,7 @@ Die Operation $create wird als HTTP POST auf /Task/$create ausgeführt.
  
 -API BEschreibung aus Cap Statement
  
-### Hinweis
+### Hinweise
 Es ist nicht zulässig Verordnungs-IDs "auf Vorrat" am E-Rezept-Fachdienst abzufragen.
  
 ### Geschäftslogik

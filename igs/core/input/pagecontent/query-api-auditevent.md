@@ -31,7 +31,8 @@ Die AuditEvent-Query wird über HTTP `GET` auf `/AuditEvent` und `/AuditEvent/{i
 </div>
 
 
-### Hinweis
+### Hinweise
 
-- Die AuditEvent-Query ist auf Versicherte beschränkt.
-- Schreibende HTTP-Operationen auf `AuditEvent` sind unzulässig.
+- Dieser Aufruf soll nicht regelmäßig im FdV ausgeführt werden, sondern nur, wenn der Versicherte Einsicht in das Protokoll nehmen möchte. Dies spart Ressourcen am E-Rezept-Fachdienst.
+- Die Angabe "`total`" wird vom E-Rezept-Fachdienst aus Gründen der Performance nicht unterstützt. Die Anzahl der zurückgegebenen Einträge ist nach Möglichkeit immer 50.
+- Die Sprache muss in jedem Aufruf mittels "Accept-Language" Heder übergeben werden, um die Protokolleinträge in der bevorzugten Sprache des Versicherten zurückzugeben.

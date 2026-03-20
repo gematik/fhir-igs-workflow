@@ -11,31 +11,31 @@ Usage: #definition
 
 * inputProfile = Canonical(GEM_ERP_PR_PAR_DispenseOperation_Input)
 
-// in
-* parameter[0]
-  * name = #secret
-  * use = #in
-  * min = 1
-  * max = "1"
-  * documentation = "Der secret Parameter, der einer Apotheke den exklusiven Zugriff auf die Aufgabe als Teil der URL ermöglicht. Dieser Parameter muss dem Wert entsprechen, der in Task.identifier:Secret gespeichert ist. Andernfalls wird der Vorgang mit einem Fehler abgebrochen."
-  * type = #string
+// // in
+// * parameter[0]
+//   * name = #secret
+//   * use = #in
+//   * min = 1
+//   * max = "1"
+//   * documentation = "Der secret Parameter, der einer Apotheke den exklusiven Zugriff auf die Aufgabe als Teil der URL ermöglicht. Dieser Parameter muss dem Wert entsprechen, der in Task.identifier:Secret gespeichert ist. Andernfalls wird der Vorgang mit einem Fehler abgebrochen."
+//   * type = #string
 
-// in
-* parameter[+]
-  * name = #rxDispensation
-  * use = #in
-  * min = 1
-  * max = "*"
-  * documentation = "Informationen zu abgegebenen Medikament(en)"
-  * part[+]
-    * name = #medicationDispense
-    * type = #MedicationDispense
-    * use = #in
-    * min = 1
-    * max = "1"
-  * part[+]
-    * name = #medication
-    * type = #Medication
-    * use = #in
-    * min = 1
-    * max = "1"
+// // in
+// * parameter[+]
+//   * name = #rxDispensation
+//   * use = #in
+//   * min = 1
+//   * max = "*"
+//   * documentation = "Informationen zu abgegebenen Medikament(en)"
+//   * part[+]
+//     * name = #medicationDispense
+//     * type = #MedicationDispense
+//     * use = #in
+//     * min = 1
+//     * max = "1"
+//   * part[+]
+//     * name = #medication
+//     * type = #Medication
+//     * use = #in
+//     * min = 1
+//     * max = "1"

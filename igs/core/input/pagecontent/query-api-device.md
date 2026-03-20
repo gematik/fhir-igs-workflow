@@ -30,7 +30,7 @@ Die Device-Query wird über HTTP `GET` auf `/Device` aufgerufen.
   </div>
 </div>
 
-### Hinweis
+### Hinweise
 
 - Die Ressource `Device` dient der statischen Selbstauskunft des E-Rezept-Fachdienstes.
 - Der Endpunkt wird zur Bereitstellung von Produkttypinformationen genutzt.

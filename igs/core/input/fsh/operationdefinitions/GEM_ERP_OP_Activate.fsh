@@ -7,21 +7,21 @@ Usage: #definition
 * inputProfile = Canonical(Parameters)
 * outputProfile = Canonical(GEM_ERP_PR_PAR_ActivateOperation_Output)
 
-// in
-* parameter[+]
-  * name = #ePrescription
-  * use = #in
-  * min = 1
-  * max = "1"
-  * documentation = "Das qualifizierte unterzeichnete Verordnung (QES) zur Aktivierung des E-Rezept-Workflows."
-  * type = #Binary
+// // in
+// * parameter[+]
+//   * name = #ePrescription
+//   * use = #in
+//   * min = 1
+//   * max = "1"
+//   * documentation = "Das qualifizierte unterzeichnete Verordnung (QES) zur Aktivierung des E-Rezept-Workflows."
+//   * type = #Binary
 
-// out
-* parameter[+]
-  * name = #return
-  * use = #out
-  * min = 1
-  * max = "1"
-  * documentation = "Geben Sie die aktualisierte und aktivierte Aufgabe zurück."
-  * type = #Task
+// // out
+// * parameter[+]
+//   * name = #return
+//   * use = #out
+//   * min = 1
+//   * max = "1"
+//   * documentation = "Geben Sie die aktualisierte und aktivierte Aufgabe zurück."
+//   * type = #Task
 

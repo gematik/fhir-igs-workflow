@@ -53,7 +53,7 @@ RuleSet: SystemLevelPostOperation
 * rest.operation[=] insert SuccessfulWithParameters
 * rest.operation[=] insert IDTokenCheck
 
-// Operations on Type and Instance Level ([base]/Medication/$operation or [base]/Medication/[resId]/$operation)
+// Operations on Type and Instance Level ([base]/Task/$operation or [base]/Task/[resId]/$operation)
 
 RuleSet: TypeLevelPostOperation
 * rest.resource[=].operation[=] insert SuccessfulWithParameters

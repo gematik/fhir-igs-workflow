@@ -14,7 +14,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$accept` gesendet.
 Die API-Beschreibung für den Aufruf der Operation findet sich auf:
 - [API-ERP: E-Rezept abrufen](https://github.com/gematik/api-erp/blob/master/docs/erp_abrufen.adoc#e-rezept-abrufen)
 
-### Hinweis
+### Hinweise
 
 - Die Rückgabe kann bei Mehrfachverordnung mit `403` scheitern, wenn die Einlösefrist noch nicht begonnen hat.
 - AccessCode und insbesondere `secret` sind als hochsensible Daten zu behandeln.

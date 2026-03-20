@@ -27,15 +27,16 @@ RuleSet: CapSupportResourceSearchParamNoDefinition (name, type, expectation, doc
   * extension[+].url = $capabilitystatement-expectation
   * extension[=].valueCode = {expectation}
 
-RuleSet: CapSupportResourceOperation(name, operation, expectation)
-* rest.resource[=] insert CapSupportOperation({name}, {operation}, {expectation})
+RuleSet: CapSupportResourceOperation(name, operation, expectation, documentation)
+* rest.resource[=] insert CapSupportOperation({name}, {operation}, {expectation}, {documentation})
 
-RuleSet: CapSupportSystemOperation(name, operation, expectation)
-* rest insert CapSupportOperation({name}, {operation}, {expectation})
+RuleSet: CapSupportSystemOperation(name, operation, expectation, documentation)
+* rest insert CapSupportOperation({name}, {operation}, {expectation}, {documentation})
 
-RuleSet: CapSupportOperation(name, operation, expectation)
+RuleSet: CapSupportOperation(name, operation, expectation, documentation)
 * operation[+]
   * name = "{name}"
   * definition = Canonical({operation})
+  * documentation = {documentation}
   * extension.url = $capabilitystatement-expectation
   * extension.valueCode = {expectation}

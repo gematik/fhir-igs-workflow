@@ -14,7 +14,7 @@ Die Operation $reject wird als HTTP POST auf /Task/&#60;id&#62;/$reject ausgefü
  
 -API BEschreibung aus Cap Statement
  
-### Hinweis
+### Hinweise
 Falls es bei der Verarbeitung einer Zuweisung einer digitalen Gesundheitsanwendung zu
 einem Fehler kommt, bspw. wenn der Nutzer nicht beim Kostenträger versichert ist, muss
 das Clientsystem den Nutzer informieren und das E-Rezept zur weiteren Nutzung

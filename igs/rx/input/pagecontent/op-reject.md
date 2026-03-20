@@ -13,7 +13,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$reject` gesendet.
 Die API-Beschreibung für den Aufruf der Operation findet sich auf:
 - [API-ERP: E-Rezept zurückweisen](https://github.com/gematik/api-erp/blob/master/docs/erp_abrufen.adoc#e-rezept-zur%C3%BCckweisen)
 
-### Hinweis
+### Hinweise
 
 - `reject` und direktes erneutes `accept` sollen nicht als Übergabemechanismus zwischen Apotheken verwendet werden.
 - Diese Folge erzeugt für Versicherte schwer nachvollziehbare Protokollierung/Notifications.

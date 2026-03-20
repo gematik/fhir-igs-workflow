@@ -13,7 +13,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$dispense` gesendet.
 Die API-Beschreibung für den Aufruf der Operation findet sich auf:
 - [API-ERP: E-Rezept Abgabe zeitnah dokumentieren](https://github.com/gematik/api-erp/blob/master/docs/erp_abrufen.adoc#e-rezept-abgabe-vollziehen)
 
-### Hinweis
+### Hinweise
 
 - Wiederholte Aufrufe von `$dispense` überschreiben die bisher gespeicherten Dispensierinformationen.
 - Deshalb muss immer die vollständige, aktuelle MedicationDispense übermittelt werden.

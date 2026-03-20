@@ -14,7 +14,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$close` gesendet.
 Die API-Beschreibung für den Aufruf der Operation findet sich auf:
 - [API-ERP: E-Rezept-Abgabe vollziehen](https://github.com/gematik/api-erp/blob/master/docs/erp_abrufen.adoc#e-rezept-abgabe-vollziehen)
 
-### Hinweis
+### Hinweise
 
 - `$close` beendet den Workflow verbindlich; danach ist keine weitere inhaltliche Änderung der Dispensierdaten möglich.
 - Falls ohne MedicationDispense aufgerufen wird, muss bereits eine gültige `$dispense`-Information gespeichert sein.

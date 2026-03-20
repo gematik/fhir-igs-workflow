@@ -4,6 +4,7 @@ Usage: #definition
 * insert Operation(Abort)
 * description = "Diese Operation bricht den Workflow eines E-Rezepts ab und löscht alle Daten, die mit dieser Aufgabe zusammenhängen."
 * code = #abort
+
 // in
 * parameter[+]
   * name = #ac

@@ -38,11 +38,12 @@ RuleSet: CapSupportSearchParam(name, canonical, type, expectation, documentation
   * extension[+].url = $capabilitystatement-expectation
   * extension[=].valueCode = {expectation}
 
-RuleSet: CapSupportResourceOperation(name, operation, expectation)
-* rest.resource[=] insert CapSupportOperation({name}, {operation}, {expectation})
+RuleSet: CapSupportResourceOperation(name, operation, expectation, documentation)
+* rest.resource[=] insert CapSupportOperation({name}, {operation}, {expectation}, {documentation})
 
-RuleSet: CapSupportOperation(name, operation, expectation)
+RuleSet: CapSupportOperation(name, operation, expectation, documentation)
 * operation[+]
   * name = "{name}"
   * definition = "{operation}"
+  * documentation = {documentation}
   * extension[expectation].valueCode = {expectation}

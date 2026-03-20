@@ -36,6 +36,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$reject` gesendet.
   </div>
 </div>
 
-### Hinweis
+### Hinweise
 
 - `reject` und direktes erneutes `accept` sollen nicht als Übergabemechanismus zwischen Apotheken verwendet werden, da dies für Versicherte schwer nachvollziehbare Protokollierung/Notifications erzeugt.
+- Im Ergebnis der `$reject`-Operation wird der referenzierte Task auf den aktiven Status ready zurückgesetzt und das `secret` gelöscht. Dementsprechend werden keine Daten an den aufrufenden Client zurückgegeben.

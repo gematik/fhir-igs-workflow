@@ -37,7 +37,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$close` gesendet.
   </div>
 </div>
 
-### Hinweis
+### Hinweise
 
 - `$close` beendet den Workflow verbindlich; danach ist keine weitere inhaltliche Änderung der Dispensierdaten möglich.
 - Falls ohne MedicationDispense aufgerufen wird, muss bereits eine gültige `$dispense`-Information gespeichert sein.

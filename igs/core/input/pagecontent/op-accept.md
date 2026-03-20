@@ -40,16 +40,8 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$accept` gesendet.
   </div>
 </div>
 
-### Hinweis
+### Hinweise
 
-- Die Rückgabe kann bei Mehrfachverordnung mit `403` scheitern, wenn die Einlösefrist noch nicht begonnen hat.
-- AccessCode und insbesondere `secret` sind als hochsensible Daten zu behandeln.
-
-### Geschäftslogik
-
-<figure>
-  <div class="gem-ig-img-container" style="--box-width: 900px; margin-bottom: 30px;">
-{% include rx-op-accept-flow.svg %}
-  </div>
-  <figcaption><strong>Abbildung: </strong>Ablauf Operation `$accept`</figcaption>
-</figure>
+- Das generierte `secret` stellt den Zugriffscode der abrufenden Apotheke dar und muss in allen folgenden Workflowschritten in `Task.identifier[GEM_ERP_NS_Secret].value` angegeben werden, damit nicht eine fremde Apotheke den Prozess übernehmen kann.
+- Der `Task.status` ist in Bearbeitung (in-progress).
+- Das Objekt `Binary` enthält den qualifiziert signierten Verordnungsdatensatz als PKCS#7-Datei in Base64-codierter Form. Innerhalb des Signaturobjekts ist das E-Rezept-Bundle enthalten (Enveloping-Signatur) und muss vom Apothekensystem für die Bearbeitung des E-Rezepts verarbeitet werden. Der codierte Base64-String ist hier aus Gründen der Lesbarkeit nicht vollständig dargestellt.

@@ -85,7 +85,7 @@ Bei Nutzung des Subscription Services kann abweichend von der Anforderung "A_215
 
 Die Websocket-Verbindung kann bis zu 12 h bestehen. Danach muss das AVS die Subscription neu registrieren.
 
-#### Hinweis
+#### Hinweise
 
 - Das Signaturzertifikat muss nicht aus der Komponenten-PKI der TI abgeleitet werden.
 - Es wird kein fester Turnus festgelegt, in dem der Schlüssel gewechselt wird. Ein Wechsel kann über betriebliche Prozesse initiiert werden.
