@@ -1,0 +1,206 @@
+# Elektronische Verordnung von DiGAs - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v0.9.0
+
+TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
+
+Version 0.9.0 - ci-build 
+
+* [**Table of Contents**](toc.md)
+* **Elektronische Verordnung von DiGAs**
+
+## Elektronische Verordnung von DiGAs
+
+Das Feature “Elektronische Verordnung von DiGAs” erweitert die bestehenden Workflows um Verordnungen für Digitale Gesundheitsanwendungen (DiGA). DiGAs sind zertifizierte Apps oder Webanwendungen, die Patienten bei der Erkennung, Überwachung und Behandlung von Erkrankungen unterstützen. Das Feature beschreibt die Prozessparameter, Rollen und fachlichen Anforderungen für den Workflow-Fachdienst und beteiligte Clientsysteme.
+
+## Abgrenzungen
+
+Folgende Aspekte sind nicht Gegenstand dieses IG:
+
+* Die Option der Beantragung einer DiGA durch gesetzlich Versicherte direkt bei einer Krankenkasse ohne vorliegende ärztliche oder psychotherapeutische Verordnung.
+* Privatversicherte und Versicherte sonstiger Kostenträger werden nicht betrachtet.
+* Da für die Berufsgenossenschaften und gesetzlichen Unfallkassen noch nicht die Voraussetzungen geschaffen wurden, auf den E-Rezept-Fachdienst in der TI zuzugreifen, können sie an der elektronischen Verordnung von DiGAs noch nicht teilnehmen. Die Einbindung wird für eine Folgestufe angestrebt.
+* Bestehende Schnittstellen zwischen DiGA Herstellern und Krankenkassen zwecks Abrechnung von Freischaltcodes werden nachgenutzt und sind daher unabhängig dieses Dokumentes.
+
+## Epic
+
+Durch das Digitale Versorgungsgesetz wurde ermöglicht, “digitale Gesundheitsanwendungen” (DiGAs) ärztlich zu verordnen.
+
+Beschreibung DiGA: (Quelle: https://www.bundesgesundheitsministerium.de/themen/krankenversicherung/online-ratgeber-krankenversicherung/arznei-heil-und-hilfsmittel/digitale-gesundheitsanwendungen):
+
+**DiGA - auch Apps auf Rezept genannt - sind digitale CE-gekennzeichnete Medizinprodukte niedriger Risikoklassen, die die Versicherten etwa bei der Behandlung von Erkrankungen oder dem Ausgleich von Beeinträchtigungen unterstützen können. Anwendungsfelder wie Diabetologie, Kardiologie, Logopädie, Psychotherapie oder Physiotherapie vermitteln nur einen kleinen Überblick über die Vielzahl der Einsatzgebiete. Eine häufige Form sind Gesundheits-Apps für das Smartphone, aber es gibt auch browserbasierte Webanwendungen oder Software zur Verwendung auf klassischen Desktop-Rechnern. […] Voraussetzung ist, dass die Anwendungen zuvor eine Prüfung auf Anforderungen wie Sicherheit, Funktionstauglichkeit, Datenschutz und Datensicherheit beim BfArM durchlaufen haben. […] Um Leistungserbringende und Versicherte über gute und sichere digitale Gesundheitsinformationen informieren zu können, wurde beim BfArM ein Verzeichnis für DiGA eingerichtet (https://diga.bfarm.de/de). Es enthält neben der Aufzählung erstattungsfähiger DiGA eine Vielzahl weitergehender Informationen für die Versicherten und Leistungserbringenden.**
+
+Beschreibung des Verordnungsvorgangs: (Quelle: https://www.kbv.de/html/diga.php) Ärzte und Psychotherapeuten können bislang ein Rezept auf Muster 16 für eine DiGA ausstellen. Zu jeder gelisteten DiGA stellt das BfArM im Verzeichnis Informationen bereit, die verordnungsrelevant sind. Diese Informationen stehen den Praxisverwaltungssystemen (PVS) bereit:
+
+* Im DiGA-Verzeichnis steht zu jeder DiGA unter “Informationen für Fachkreise” eine eindeutige PZN.
+* Kann eine DiGA für unterschiedliche Indikationen mit jeweils unterschiedlichen Inhalten angewendet werden, ist jeder Indikation eine eigene PZN zugeordnet.
+* Sofern für eine DiGA unterschiedliche Anwendungsdauern hinterlegt sein sollten, würden ebenfalls eigene PZN zugeordnet sein.
+* Die PZN ist auf dem Rezept anzugeben.
+
+Verordnungsdauer und Menge:
+
+* Für jede DiGA ist eine bestimmte, vom Hersteller bereits vorgegebene Anwendungsdauer festgelegt; diese Informationen können im DiGA-Verzeichnis ebenfalls unter “Informationen für Fachkreise” eingesehen werden. Eine Angabe auf der Verordnung ist nicht erforderlich.
+* Eine Folgeverordnung für die gleiche DiGA kann ausgestellt werden, wenn sie aus medizinischer Sicht indiziert ist und das angestrebte Therapieziel damit voraussichtlich erreicht werden kann.
+* Derzeit sind keine DiGA-Höchstverordnungsmengen pro Versicherten festgelegt; das heißt, dass gegebenenfalls mehrere unterschiedliche DiGA für unterschiedliche Indikationen gleichzeitig verordnet werden können.
+* Pro Rezeptblatt darf nur eine DiGA verordnet werden.
+
+Einlösen des Rezeptes:
+
+* Mit dem Rezept wenden sich Versicherte an ihre Krankenkasse.
+* Diese prüft unter anderem den Versichertenstatus und generiert einen Freischaltcode.
+* Danach laden sich Versicherte die DiGA-App im jeweiligen App-Store herunter und geben den Freischaltcode ein.
+* Die Kosten für die DiGA werden dann von der Kasse direkt mit dem Hersteller abgerechnet.
+* Eine Zuzahlungspflicht für Versicherte besteht nicht. Nur wenn der DiGA-Preis über dem Höchstbetrag liegt, müssen Versicherte die Mehrkosten tragen. Kosten optionaler Dienste und Funktionen einer DIGA, die keinen medizinischen Zweck verfolgen, sowie in-App Käufe trägt der Versicherte selbst.
+
+Verweise:
+
+* Anforderungen an Primärsysteme zur Auswahl einer DiGA aus dem Verzeichnis des BfArM ergeben sich aus den Zertifizierungsanforderungen der KBV (siehe https://update.kbv.de/ita-update/Verordnungen/VDGA/)
+* Die FHIR Profile der KBV zur elektronischen Verordnung der DiGA werden hier definiert: https://simplifier.net/evdga
+* Die technische Anlage zur elektronischen Verordnung Digitaler Gesundheitsanwendungen (Muster E16D): https://update.kbv.de/ita-update/DigitaleMuster/eVDGA/KBV_ITA_VGEX_Technische_Anlage_EVDGA.pdf
+* Vereinbarungen zur Abrechnung werden hier definiert: https://www.gkv-spitzenverband.de/krankenversicherung/digitalisierung/kv_diga/diga.jsp
+
+## Elektronische Verordnung von DiGAs
+
+Es besteht der gesetzliche Auftrag, die ärztlichen und psychotherapeutischen Verordnungen von DiGA zukünftig in elektronischer Form zu übermitteln (siehe SGB V § 360 Abs. 4).
+
+**Vorteile der elektronischen Verordnung:**
+
+1. Durch die Umstellung und den Verzicht auf die Nutzung von Muster 16 entfallen Wege zur Krankenkasse zwecks Übermittlung von Antrag und bisherigem Mustervordruck. Dies verringert den Zeit- und Wegeaufwand für Versicherte und lässt sie potentiell früher in die DiGA-Nutzung einsteigen.
+1. Ärzte verordnen bereits verschreibungspflichtige Arzneimittel standardmäßig per E-Rezept und erzeugen nur auf Wunsch von Patienten noch einen Ausdruck. Mit der elektronischen Verordnung für DiGA wird ein weiterer Grund zur Verwendung von Muster 16 eliminiert.
+1. Krankenkassen werden Anfragen nach Freischaltcodes häufiger auf digitalem Weg erhalten. Es entfällt daher die Handhabung des Muster 16.
+
+**Involvierte Akteure:**
+
+* **Ärzte, Zahnärzte und Psychotherapeuten** können DiGA verordnen. Auf Wunsch der Patienten ist ein Ausdruck bereitzustellen (SGB V § 360 Abs. 9).
+* **Patienten** können mit Hilfe einer App mit E-Rezept-Funktionalität nach SGB V § 360 Abs. 10 auf ihre Verordnungen zugreifen und durch aktive Anfrage zu einem einzelnen E-Rezept für DiGA den Freischaltcode erlangen. Sind Patienten nicht Nutzer einer App nach § 360 Abs. 10 SGB V benötigen sie zur Anfrage einen Ausdruck nach § 360 Abs. 9 SGB V. Nach Eingabe oder Übertragung des Freischaltcodes kann die verordnete DiGA verwendet werden.
+* **Gesetzliche Krankenkassen** nehmen Zugriffsinformationen einer elektronischen Verordnung von Versicherten aus einer App nach SGB V § 360 Abs. 10 oder als Ausdruck nach SGB V § 360 Abs. 9 entgegen, laden das E-Rezept vom Fachdienst herunter und stellen nach Prüfung einen Freischaltcode bereit.
+* **DiGA Hersteller** stellen nach Erhalt eines Freischaltcodes den Versicherten die DiGA zur Nutzung bereit und rechnen gegenüber der gesetzlichen Krankenkasse den erhaltenen Freischaltcode ab.
+
+**Wesentliche Rahmenbedingungen:**
+
+* Das Ersatzverfahren für die elektronische Verordnung von DiGA wird im Bundesmantelvertrag vereinbart. Als Ersatzverfahren wird das bisherige Muster 16 genutzt.
+* Für DiGA Verordnungen zu Lasten einer Berufsgenossenschaft oder gesetzlichen Unfallkasse wird wie bisher das Muster 16 verwendet.
+* Krankenkassen greifen nach erfolgter Anfrage eines Versicherten gemäß SGB V § 361b auf den Fachdienst zu, um das E-Rezept herunterzuladen. Der Zugriff auf den Fachdienst sowie die Bereitstellung des Freischaltcodes wird vom Fachdienst als Statusänderung erfasst. Der bereitgestellte Freischaltcode wird als Abgabeinformation im Fachdienst gespeichert.
+* DiGA Hersteller erhalten keinen Zugriff auf den E-Rezept-Fachdienst und somit auch nicht das E-Rezept.
+
+**Prämissen und Anforderungen:**
+
+* Die vom PVS genutzte Verordnungssoftware unterstützt bei der Auswahl der DIGA.
+* Etwaige in der TI detektierte Ausfälle werden im Primärsystem der verordnenden Person erkannt und leiten den Nutzer zur Verwendung des Ersatzverfahrens.
+* Anforderungen und Empfehlungen für eine gute UX werden im Implementierungsleitfaden beschrieben bzw. finden auch für die elektronische Verordnung von DiGA Anwendung.
+* Die Anforderung des Freischaltcodes in einer App gemäß SGB V § 360 Abs. 10 ist eine bewusste vom Versicherten gesteuerte Aktion (Klick in einem E-Rezept-FdV) oder wird durch Bereitstellung des Papierausdrucks (SGB V § 360 Abs. 9) gesteuert.
+* Die Speicherung des Freischaltcodes erfolgt als Abgabeinformation im E-Rezept- Fachdienst. Die digitale Bereitstellung und Anzeige des Freischaltcodes in einer App nach SGB V § 360 Abs. 10 ebenso wie die Anzeige eines Deep-Links,so dass ein einfacher Aufruf der DiGA inkl. Übertragung des Freischaltcodes erfolgen kann.
+* Sollte eine Bereitstellung eines Freischaltcodes nach Herunterladen des E-Rezeptes und Prüfung durch die Krankenkasse nicht erfolgen können, so ist eine Rückmeldung in den Abgabeinformationen anzugeben, damit Versicherte ein Ergebnis des Prozessschrittes nachvollziehen können.
+
+**Wesentliche funktionale Erweiterungen:**
+
+* Für Verordnungen von DiGAs wird ein separater Rezepttyp (Workflow mit Flowtype 162) genutzt.
+* Neben approbierten Ärzten, Zahnärzten dürfen DiGA auch von Psychotherapeuten verschrieben werden.
+* Die Krankenkasse terminiert den Workflow durch Bereitstellung eines Freischaltcodes oder einer Rückmeldung; weshalb dies nicht erfolgen kann. Der Freischaltcode oder die Rückmeldung ist im E-Rezept-Fachdienst von der Krankenkasse zu hinterlegen, damit, gemäß SGB V § 312 Abs. 1 Satz 1 Nr. 3 “Abgabeinformationen zu elektronischen Verordnungen nach den Nummern 7 […] den Versicherten elektronisch verfügbar gemacht werden können”. Dies kann die in SGB V § 360 Abs. 14 vorgesehenen automatisierte Bereitstellung der Verordnungsdaten und Dispensierinformationen auch zur elektronischen Verordnung von DiGA in der elektronischen Patientenakte ermöglichen.
+
+## User Stories
+
+### Versicherte
+
+Als Patient möchte ich
+
+* … DiGA-Verordnungen unmittelbar/sofort elektronisch empfangen können, so dass ich die DiGA, die mir verschrieben wurde, auch medienbruchfrei beziehen kann.
+* … auch ohne Einsatz eines E-Rezept-FdVs (beispielsweise durch Papierausdruck und/oder Einsatz Krankenkassen-App) mit DiGA-Verordnungen umgehen können, so dass ich nicht darauf angewiesen bin, eine NFC-fähige eGK, eine dazu passende PIN, ein NFC-fähiges Gerät haben zu müssen, um DiGAs verwenden zu können.
+* …, dass sich der Prozess des Empfangs der DiGA-Verordnungen möglichst wenig von dem Prozess für Arzneimittelverordnungen unterscheidet, so dass ich mich nicht umgewöhnen muss.
+* …, dass ich über den Erhalt einer DiGA-Verordnung in meinem E-Rezept-FdV benachrichtigt werde, so dass ich reagieren kann und den Erhalt nicht selbst prüfen muss.
+* …, dass meine sensiblen medizinischen Daten nur den Personen oder Institutionen offenbart werden, die sie wirklich brauchen, so dass ich mich sicher fühle.
+* …, dass eine mir verordnete DiGA ganz leicht freigeschaltet werden kann, so dass ich möglichst ohne Hürden in die Nutzung der DiGA einsteigen und damit meine Therapie unterstützen kann.
+* …, dass ich beim Freischaltprozess, so weit es geht, von der Technik unterstützt werde, so dass dieser Vorgang leicht ist und sich für mich “automatisch” anfühlt.
+* …, dass ich die Freischaltcode-Anforderung bei meiner Krankenkasse einfach starten und den Status verfolgen kann. Der Start kann über ein E-Rezept-FdV, die Krankenkassen-App (mindestens per Scan des Tokens), per Post oder im Servicecenter der Krankenkasse erfolgen.
+* …, dass ich den Freischaltcode der DiGA sowohl als Information meiner Krankenkasse (via Krankenkassen-App/Brief) oder direkt im E-Rezept-FdV erhalten kann.
+* …, dass der Abrechnungsprozess ohne mein Mitwirken abläuft, so dass ich wie gewohnt Leistungen meiner Krankenkasse einfach beziehen kann und keinen administrativen Aufwand habe.
+* … installierbare DiGA-Apps direkt aus der Ansicht der Verordnungen im E-Rezept-FdV (alternativ Krankenkassen-App) heraus installieren können, so dass ich nicht manuell im App/Play-Store suchen muss und der Prozess für mich einfach ist.
+* … auf DiGAs, die nicht installiert werden können (Bsp. Web-Apps) direkt aus der Ansicht der Verordnung in der App mit E-Rezept-Funktionalität (alternativ Krankenkassen-App) heraus aufrufen können, so dass ich nicht auf Bookmarks oder andere Quellen angewiesen bin.
+* …, dass ich einfach auf die beim BfArM hinterlegte Informationsseite der DiGA sowie die Gebrauchsanweisung per Link aus dem E-Rezept-FdV zugreifen kann, so dass ich mich schnell informieren kann.
+* …, dass ich einfach die Mindestanforderungen der verordneten DiGA-App aus dem Verzeichnis des BfArM per E-Rezept-FdV finden kann, so dass ich in der Lage bin die Mindestanforderungen an mein Endgerät zu prüfen. Im E-Rezept-FdV wird ein Hinweis ausgespielt (z.B.: “Auf diesem Gerät kann die DiGA ggf. nicht verwendet werden”).
+
+### Verordnende
+
+Als verordnender Arzt möchte ich, …
+
+* … dass der DiGA-Verordnungsprozess nahtlos in meine Prozesse integriert ist, so dass die Prozesskosten/Aufwand beim Verordnen niedrig ist/bleibt.
+* … dass durch den DiGA-Verordnungsprozess keine zusätzlichen Aufwände in der täglichen Arbeit entstehen, so dass ich nicht noch mehr Zeit für Bürokratie aufbringen muss. Es sollen möglichst wenig Papierausdrucke erstellen.
+* … dass durch den DiGA-Verordnungsprozess möglichst gleiche Abläufe wie für sonstige Medikamente nachgenutzt werden, so dass ich dem Patienten nicht viel erklären muss. Über den Freischaltcodeabruf (Anfragen des Freischaltcodes beim Kostenträger) muss aufgeklärt werden.
+* … dass meine Patienten gut darüber informiert sind, was DiGAs sind. Als Arzt möchte ich möglichst wenig Aufklärung über administrative Prozesse der Krankenkasse zum Erhalt des Freischaltcodes übernehmen.
+* … dass ein Ersatzverfahren existiert (vergleichbar heutiger Prozess Muster 16), so dass ich auch bei Internetausfall (de/zentrale Verbindungsprobleme mit/ohne TI) eine DiGA verordnen kann.
+
+### Kostenträger
+
+Als Kostenträger möchte ich …
+
+* …, dass der Abrechnungsprozess einfach ist, so dass die Prozesskosten niedrig sind.
+* …, dass nur die versicherte Person die verordnete Leistung in Anspruch nehmen kann, so dass missbräuchliche Nutzung bestmöglich vermieden wird.
+* …, dass ich alle Informationen erhalte, die ich für den Abrechnungsprozess benötige, so dass ich nicht Rückfragen stellen muss, um die Abrechnung durchzuführen.
+* …, dass alle Prozesse und auch die Prüfbarkeit so gestaltet sind, dass eine einfache maschinelle Verarbeitung möglich ist, so dass ich automatisieren und damit die Prozesskosten niedrig halten kann. -…, dass Versicherte einfach per Krankenkassen-App den E-Rezept Code vom Ausdruck scannen, durch Einsenden per Post, Abgabe im Servicecenter oder aus einem E-Rezept-FdV heraus die Freischaltcode-Anforderung starten können.
+* … nach Übergabe des E-Rezept-Tokens des Versicherten die Verordnungsdaten direkt über den E-Rezept-Fachdienst abholen.
+* … Services im Zusammenhang mit der Verordnung (Empfangen und Weiterleiten von E-Rezept-Token) über die Krankenkassen-Apps bereitstellen.
+* …, dass Verordnungs- und Abrechnungsprozess prüfbar sind, so dass ich jederzeit nachprüfen kann, ob eine Verordnung und die anschließende Nutzung korrekt sind.
+* …, dass der Abrechnungsprozess einfach ist, so dass die Prozesskosten niedrig sind.
+* …, dass der Verordnungs- und Abrechnungsprozess so gestaltet ist, dass Betrug ausgeschlossen oder mindestens erschwert wird, so dass die Versichertengelder für den richtigen Zweck eingesetzt werden. Eine revisionssichere Dokumentation muss möglich sein.
+* …, dass nur die versicherte Person die verordnete Leistung in Anspruch nehmen kann, so dass missbräuchliche Nutzung bestmöglich vermieden wird.
+* …, dass ich alle Informationen erhalte, die ich für den Abrechnungsprozess benötige, so dass ich nicht Rückfragen stellen muss, um die Abrechnung durchzuführen.
+* …, dass alle Prozesse und auch die Prüfbarkeit so gestaltet sind, dass eine einfache maschinelle Verarbeitung möglich ist, so dass ich automatisieren und damit die Prozesskosten niedrig halten kann.
+* … nach Übergabe des E-Rezept-Tokens des Versicherten die elektronischen Verordnungsdaten direkt vom E-Rezept-Fachdienst abholen.
+
+### DiGA Hersteller
+
+DiGA Hersteller sind zunächst nicht in den Verordnungsvorgang und nicht bei Übergabe der elektronischen Verordnung vom Versicherten an die Krankenkasse involviert. Die User Stories aus Sicht der DiGA Hersteller, sollen dennoch als Perspektive zum Verständnis der Rolle der Hersteller und derer Anforderungen hier genannt werden.
+
+Als DiGA Hersteller möchte ich
+
+* …, dass Patienten auch die DiGA erhalten, die sie verordnet bekommen haben.
+* … meinen Patienten einen einfachen Einstieg in meine DiGA bieten.
+* …, dass Nutzer im Standardprozess nicht mit dem Freischaltcode in Berührung kommen oder diesen gar manuell übertragen müssen.
+* …, dass die Übermittlung des Freischaltcodes in den E-Rezept-Fachdienst die Dispensierung darstellt.
+* …, dass mit Einlösung des E-Rezeptes bei der Krankenkasse der Patient über den Freischaltcode informiert wird.
+* …, dass mit Einlösung des E-Rezeptes der Freischaltcode fristgerecht bereitgestellt wird, damit ich nach der Einlösung des Freischaltcodes durch den Versicherten abrechnen kann.
+* …, dass im Verordnungsprozess wie auch bei Bereitstellung der Freischaltcodes hochverfügbare Dienste angeboten werden.
+* …, dass Patienten eine einheitliche Rückmeldung erhalten, warum kein Freischaltcode ausgestellt werden kann.
+
+## Anwendungsfälle
+
+### Verschreiben
+
+Der technische Ablauf zum Verschreiben einer Verordnung für eine DiGA erfolgt analog zu einer Verordnung für apothekenpflichtige Arzneimittel. Verordnungen von DiGAs können Ärzten, Zahnärzten und Psychotherapeuten vornehmen. Der Arzt oder medizinischer Fachangestellter (MFA) erstellt eine elektronische Verordnung für eine DiGA. Für die Auswahl der passenden PZN (inklusive indikations- oder laufzeitbezogener Varianten) werden die Daten aus dem BfArM-DiGA-Verzeichnis genutzt. Über das Primärsystem der LEI wird vom E-Rezept-Fachdienst eine Verordnungs-ID angefragt und im Verordnungsdatensatz ergänzt. Der Arzt prüft die Verordnung und führt eine qualifizierte elektronische Signatur (QES) der Verordnung durch. Anschließend wird die signierte Verordnung an den E-Rezept-Fachdienst übermittelt, wo die formale Korrektheit der Verordnung gemäß dem Datenmodell und die QES validiert werden. Die Verordnung liegt auf dem E-Rezept-Fachdienst zum Abruf durch den Versicherten bereit.
+
+| |
+| :--- |
+| [UC 2.1 - E-Rezepte erzeugen](menu-technische-umsetzung-anwendungsfaelle.md#uc-2-1-e-rezepte-erzeugen) |
+| [E-Rezept qualifiziert signieren](menu-technische-umsetzung-anwendungsfaelle.md#e-rezept-qualifiziert-signieren) |
+| [UC 2.3 - E-Rezept einstellen](menu-technische-umsetzung-anwendungsfaelle.md#uc-2-3-e-rezept-einstellen) |
+| [UC 2.5 - E-Rezept durch Verordnenden löschen](menu-technische-umsetzung-anwendungsfaelle.md#uc-2-5-e-rezept-durch-verordnenden-loeschen) |
+
+**Tabelle:**Technische Anwendungsfälle mit Bezug zum Verschreiben von DiGA-Verordnungen
+### Zuweisen durch den Versicherten
+
+Der Versicherte sieht in seinem E-Rezept-FdV, dass eine Verordnung für eine DiGA erstellt wurde. Diese kann er einsehen und seinem Kostenträger zuweisen, damit er einen Freischaltcode zur Nutzung der DiGA erhält. Das E-Rezept-FdV bietet dem Versicherten dazu die Möglichkeit den E-Rezept-Token der Verordnung an den Kostenträger zu übertragen. Das Ermitteln des Kostenträgers erfolgt möglichst automatisch, kann aber auch manuell erfolgen. Wenn der Versicherte kein E-Rezept-FdV nutzt, hat er die Möglichkeit den Patientenausdruck an seine Krankenkasse zu übermitteln. Dies kann durch Funktionalität in der Krankenkassen-App unterstützt werden.
+
+| |
+| :--- |
+| [UC 3.1 - E-Rezepte durch Versicherten abrufen](menu-technische-umsetzung-anwendungsfaelle.md#uc-3-1-e-rezepte-durch-versicherten-abrufen) |
+| [UC 3.3 - Nachricht durch Versicherten übermitteln](menu-technische-umsetzung-anwendungsfaelle.md#uc-3-3-nachricht-durch-versicherten-uebermitteln) |
+| [UC 4.6 - Nachrichten durch Abgebenden empfangen](menu-technische-umsetzung-anwendungsfaelle.md#uc-4-6-nachrichten-durch-abgebenden-empfangen) |
+
+**Tabelle:**Technische Anwendungsfälle mit Bezug zum Zuweisen von DiGA-Verordnungen
+### Einlösen
+
+Der Kostenträger kann mit den Informationen aus dem E-Rezept-Token die Verordnung vom E-Rezept-Fachdienst herunterladen und den Vorgang prüfen. Nachdem ein Freischaltcode für die DiGA generiert wurde, wird dieser dem Versicherten über Abgabeinformationen der Verordnung bereitgestellt. Dadurch wird der Vorgang der Verordnung abgeschlossen und der Versicherte hat den Freischaltcode für die DiGA in seinem E-Rezept-FdV vorliegen.
+
+Sollte die fachliche Prüfung des Kostenträgers ergeben, dass kein Leistungsanspruch für diese Verordnung besteht, kann der E-Rezept-Workflow auch ohne die Übermittlung eines Freischaltcodes abgeschlossen werden. In diesem Fall enthält die Abgabeinformation einen Hinweis auf die Begründung (versichertenfreundlicher Formulierung mit Verweis auf das Schreiben der Krankenkasse), warum kein Freischaltcode bereitgestellt wurde. Über entsprechende Protokolleinträge ist der Versicherte darüber informiert, dass der Kostenträger den Vorgang bearbeitet.
+
+Der Kostenträger erhält analog zum Abschluss von Arzneimittelverordnungen eine Quittung des E-Rezept-Fachdienstes, was dem Kostenträger quittiert, dass der Vorgang erfolgreich abgeschlossen wurde. Die Quittung wird nicht für Abrechnungszwecke benötigt, da die Abwicklung des Vorgangs direkt mit dem Kostenträger erfolgt.
+
+| |
+| :--- |
+| [UC 4.1 - E-Rezept durch Abgebenden abrufen](menu-technische-umsetzung-anwendungsfaelle.md#uc-4-1-e-rezept-durch-abgebenden-abrufen) |
+| [UC 4.4 - Quittung abrufen](menu-technische-umsetzung-anwendungsfaelle.md#uc-4-4-quittung-abrufen) |
+| [UC 4.2 - E-Rezept durch Abgebenden zurückgeben](menu-technische-umsetzung-anwendungsfaelle.md#uc-4-2-e-rezept-durch-abgebenden-zurueckgeben) |
+| [UC 4.7 - Nachricht durch Abgebenden übermitteln](menu-technische-umsetzung-anwendungsfaelle.md#uc-4-7-nachricht-durch-abgebenden-uebermitteln) |
+| [UC 3.4 - Nachrichten durch Versicherten empfangen](menu-technische-umsetzung-anwendungsfaelle.md#uc-3-4-nachrichten-durch-versicherten-empfangen) |
+| [UC 4.9 - Nachricht durch Abgebenden löschen](menu-technische-umsetzung-anwendungsfaelle.md#uc-4-9-nachricht-durch-abgebenden-loeschen) |
+
+**Tabelle:**Technische Anwendungsfälle mit Bezug zum Einlösen von DiGA-Verordnungen
+
