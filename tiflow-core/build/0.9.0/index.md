@@ -12,7 +12,7 @@ Version 0.9.0 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow/core/ImplementationGuide/de.gematik.tiflow.core | *Version*:0.9.0 |
-| Draft as of 2026-03-18 | *Computable Name*:gemIG_TIFlow_core |
+| Draft as of 2026-03-20 | *Computable Name*:gemIG_TIFlow_core |
 
 Dieser IG beschreibt die zentralen, IG-übergreifenden Anforderungen an den E-Rezept-Fachdienst. Er fasst grundlegende Sicherheits-, Protokollierungs- und Validierungsvorgaben zusammen, die in allen nachgelagerten IGs wiederverwendet werden.
 
@@ -59,7 +59,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
   "name" : "gemIG_TIFlow_core",
   "title" : "TIFlow - Kernfunktionalitäten",
   "status" : "draft",
-  "date" : "2026-03-18T14:02:37+00:00",
+  "date" : "2026-03-20T12:40:03+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

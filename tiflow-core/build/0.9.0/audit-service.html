@@ -313,7 +313,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </ul>
 </requirement>
 
-<!-- A_19284-13 -->
+<!-- A_19284-14 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-25" title="E-Rezept-Fachdienst - Versichertenprotokoll zu Operationen" version="0">
 	<meta lockversion="false" />
 	<actor name="eRp_FD">
@@ -340,7 +340,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </tr>
   <tr>
     <td>http GET /Task</td>
-    <td>Apotheke</td>
+    <td>Apotheke (VSDM)</td>
     <td>
         <ul>
             <li>im Erfolgsfall beim passenden AcceptPN3VSDMxx=false: Apotheke hat mit Ihrer eGK die Liste der offenen E-Rezepte abgerufen.</li>
@@ -349,6 +349,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <li>im sonstigen Fehlerfall: Apotheke konnte aufgrund eines Fehlerfalls nicht die Liste der offenen E-Rezepte mit Ihrer eGK abrufen.</li>
         </ul>
     </td>
+  </tr>
+  <tr>
+    <td>http GET /Task</td>
+    <td>Apotheke (PoPP)</td>
+    <td>Die Apotheke hat die Liste der einlösbaren E-Rezepte abgerufen durch Autorisierung mittels &#60;PoPP-Anwendungsfall&#62;.</td>
   </tr>
   <tr>
     <td>http GET /Task</td>
@@ -504,7 +509,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 &lt;/table&gt;
 <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004 Versichertenprotokoll</figcaption></div>
 
-<!-- A_19284-13 -->
+<table>
+<tr>
+<th>Wert in proofMethod</th>
+<th>Wert für &#60;PoPP-Anwendungsfall&#62;</th>
+</tr>
+<tr>
+<td>ehc-practitioner-*</td>
+<td>eGK in der Apotheke</td>
+</tr>
+</table>
+<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004a Versichertenprotokoll PoPP Anwendungsfall</figcaption></div>
+
+<!-- A_19284-14 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-26" title="E-Rezept-Fachdienst - Versichertenprotokoll zu automatischen Löschen" version="0">
 	<meta lockversion="false" />
 	<actor name="eRp_FD">
@@ -542,7 +559,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </table>
 <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004a Versichertenprotokoll nach automatischen Löschen</figcaption></div>
 
-<!-- A_19284-13 -->
+<!-- A_19284-14 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-27" title="E-Rezept-Fachdienst - Versichertenprotokoll zu Löschen nach Fehlerbehandlung" version="0">
 	<meta lockversion="false" />
 	<actor name="eRp_FD">
@@ -692,7 +709,7 @@ Wenn ein Versicherter dem Einstellen von Verordnungsdaten und Dispensierinformat
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Mar 18, 2026 14:02+0000">2026-03-18</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Mar 20, 2026 12:40+0000">2026-03-20</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

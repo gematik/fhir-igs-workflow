@@ -80,6 +80,22 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
 * Task.ExpiryDate nicht vor dem aktuellen Datum liegt
 * und Task.extension:flowType = 160 oder 166
 filtern und in einem Bundle der gefundenen Tasks (ohne den signierte Anhang QES) zurückgeben, damit eine Apotheke alle zu einem Versicherten gehörenden E-Rezepte mit dem Status "ready" abrufen kann. Der E-Rezept-Fachdienst MUSS für den Response den Returncode 202 verwenden.
+
+Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit HTTP-Header X-PoPP-Token durch eine abgebende LEI, den im HTTP-Header X-PoPP-Token übermittelten Token extrahieren, prüfen und bei Fehlen oder fehlerhafter Prüfung mit dem Fehler 403 abbrechen, damit die Autorisierung zum Zugriff auf die Daten nur erfolgt, wenn ein Anwesenheitsnachweis erfolgreich durchgeführt wurde.
+Die Anforderungen zum Prüfen des PoPP-Token sind im Kapitel “HTTP-Operation GET - Prüfung PoPP-Token” beschrieben.
+
+Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit HTTP-Header X-PoPP-Token durch eine abgebende LEI prüfen, dass die Differenz zwischen Zeitstempel iat im Token und dem aktuellen Zeitpunkt nicht größer als 30 Minuten (konfigurierbar) ist und bei fehlerhafter Prüfung mit dem Fehler 403 abbrechen.
+Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des PoPP-Token erfolgt ausschließlich nach Anpassung von A_23399-* im Rahmen des Änderungsmanagement für Spezifikationen.
+
+Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit HTTP-Header X-PoPP-Token durch eine abgebende LEI mit der Rolle
+* oid_oeffentliche_apotheke
+* oid_krankenhausapotheke
+, die Tasks nach
+* Task.status = "ready",
+* Task.for = KVNR aus dem PoPP-Token (patientId),
+* Task.ExpiryDate nicht vor dem aktuellen Datum liegt
+* und Task.extension:flowType = 160 oder 166
+filtern und in einem Bundle der gefundenen Tasks (ohne den signierte Anhang QES) zurückgeben, damit eine abgebende LEI alle zu einem Versicherten gehörenden einlösbaren E-Rezepte mit dem Status "offen" abrufen kann.
 Diese Operation führt nicht zu einer Statusänderung bei den zurück gelieferten Task Ressourcen.
 
 #### Prüfung VSDM Prüfungsnachweis
@@ -144,6 +160,64 @@ Die Struktur der VSDM Prüfziffer Version 2 ist in [gemSpec_Krypt#A_27278-* VSDM
 Der E-Rezept-Fachdienst MUSS eine Prüfziffer Version 2 gemäß [gemSpec_Krypt#A_27279-*] entschlüsseln und prüfen.
 Hinweis: Der Abgleich der erfolgreich entschlüsselten KVNR mit der vom Client gesendeten KVNR erfolgt in A_27287-*. Der Abgleich des erfolgreich entschlüsselten Hashwert hcv mit der vom Client übermittelten hcv erfolgt in A_27347-*.
 
+#### HTTP-Operation GET - Prüfung PoPP-Token Wenn der E-Rezept-Fachdienst in einem Aufruf einen PoPP-Token empfängt muss geprüft werden, dass der Token vom PoPP-Service ausgestellt wurde. Hierzu wird die Signatur des PoPP-Tokens geprüft.
+
+Der E-Rezept-Fachdienst setzt gemäß [gemSpec_PoPP_Service] in der Rolle PoPP-Verifier folgende Prüfschritte via TI-PKI um (siehe [gemSpec_PoPP_Service#5.1.2 PoPP-Token Prüfung], A_27015):
+
+* Prüfschritt: Beziehen der URL für den PoPP-Service
+  * Anforderung: A_27358
+  * Beschreibung: Die URL des PoPP-Service wird per Konfiguration im E-Rezept-Fachdienst hinterlegt. Deshalb kann auf die Abfrage der URL des PoPP-Service beim Federation Master verzichtet werden.
+* Prüfschritt: Beziehen der Schlüssel für die PoPP-Token Signaturprüfung
+  * Anforderung: A_26449
+  * Beschreibung: Der PoPP-Service veröffentlicht sein EntityStament nach OpenID-Connect Standard. Dort ist die URL hinterlegt, an dem das JWK-Set abgerufen werden kann.
+* Prüfschritt: Prüfung Signatur des JWK-Set
+  * Anforderung: A_26534
+  * Beschreibung: Der E-Rezept-Fachdienst bezieht aus dem Entity Statement des PoPP-Service den öffentlichen Schlüssel zur Prüfung der Signatur des JWK-Set und prüft dieses anschließend.
+* Prüfschritt: Prüfung Signaturzertifikat des JWK via TI-PKI
+  * Anforderung: A_27016
+  * Beschreibung: Der E-Rezept-Fachdienst prüft die Echtheit des Signaturzertifikats aller JWK's im JWKS via TUC-PKI 18. Dies ist die Grundlage für den Vertrauensanker zur Signaturprüfung von PoPP-Token.
+* Prüfschritt: Durchführung der Signaturprüfung von PoPP-Token
+  * Anforderung: A_26450
+  * Beschreibung: Der E-Rezept-Fachdienst führt die Signaturprüfung der PoPP-Token mit validen Signaturzertifikaten durch.
+* Prüfschritt: Inhaltliche Prüfung des PoPP Tokens
+  * Anforderung: A_26452
+  * Beschreibung: Der E-Rezept-Fachdienst validiert, ob der PoPP-Token inhaltlich valide ist.Prüfungen von Claims für den E-Rezept-Fachdienst sind im Kapitel "Ressource Task - HTTP-Operation GET - Prüfung PoPP-Token" beschrieben.
+
+**Tabelle: **TAB_eRPFD_030 Prüfschritte PoPP-Token
+
+Anstelle zur nicht zugewiesenen Anforderung  A_27358 - Beziehen der URL für den PoPP-Service
+
+Der E-Rezept-Fachdienst MUSS einen Konfigurationsparameter PoPP_Service_Domain für die Domain des PoPP-Service verwalten.
+Ergänzung der stündlichen Abfrage des JWKS zu A_26449 - Beziehen der Schlüssel für die PoPP-Token Signaturprüfung :
+
+Der E-Rezept-Fachdienst MUSS stündlich die JWK-Set des PoPP-Service [RFC7517] über dem im Entity Statement metadata.oauth_resource.signed_jwks_uri angegeben URL abrufen und die öffentlichen Schlüssel zur Verifikation der PoPP-Token verwenden.
+Der E-Rezept-Fachdienst prüft zur Umsetzung von A_27016-* das Signaturzertifikat des PoPP-Service wie folgt:
+
+Der E-Rezept-Fachdienst MUSS das Signatur-Zertifikat des PoPP-Service für die Signatur des PoPP-Token gemäß [gemSpec_PKI#TUC_PKI_018] mit folgenden Parametern auf Gültigkeit prüfen:
+
+* Parameter: Zertifikat
+  * : Signaturzertifikat des PoPP-Service
+* Parameter: PolicyList
+  * : oid_zd_sig
+* Parameter: intendedKeyUsage
+  * : nonRepudiation
+* Parameter: intendedExtendedKeyUsage
+  * : (leer)
+* Parameter: OCSP-Graceperiod
+  * : 60 Minuten
+* Parameter: Offline-Modus
+  * : nein
+* Parameter: Prüfmodus
+  * : OCSP
+
+**Tabelle: **TAB_eRPFD_031 Parameter Prüfung Signaturzertifikat PoPP-Service
+Das Signaturzertifikat muss gemäß dem TUC als befunden werden und im Fehlerfall das Signaturzertifikat nicht zur Signaturprüfung der PoPP-Token verwenden, damit sichergestellt wird dass, ausschließlich PoPP-Token von einem vertrauenswürdigen PoPP-Service akzeptiert werden.
+Der TUC gibt neben dem Status der Zertifikatsprüfung auch die im Zertifikat enthaltene Rolle (Admission) zurück. Der E-Rezept-Fachdienst prüft zur Umsetzung von A_27016-* die Rolle. wie folgt:
+
+Der E-Rezept-Fachdienst MUSS prüfen, dass die im Zertifikat enthaltene Rolle (Admission) gleich oid_popp-token ist und im Fehlerfall das Signaturzertifikat nicht zur Signaturprüfung der PoPP-Token verwenden.
+Der E-Rezept-Fachdienst prüft zur Umsetzung von A_26452-* die Telematik-ID aus dem PoPP-Token wie folgt:
+
+Der E-Rezept-Fachdienst MUSS bei der Prüfung des PoPP-Token prüfen, dass die Telematik-ID actor_id aus dem Token mit der Telematik-ID der Leistungserbringerinstitution (idNumber) im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests übereinstimmt und bei fehlerhafter Prüfung mit dem Fehler 403 abbrechen.
 ### GET /Task/ (Einzelne Verordnung)
 
 Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen konkreten über <id> adressierten /Task/<id> (ohne die Referenz einer FHIR-Operation) sicherstellen, dass ausschließlich Clientsysteme in einer der Rollen
