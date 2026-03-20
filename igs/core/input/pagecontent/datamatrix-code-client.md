@@ -67,6 +67,40 @@ Der Datentyp der Task.id erlaubt bis zu 64 Zeichen zur Angabe einer ID des Tasks
     Das E-Rezept-FdV und das PS der verordnenden LEI MÜSSEN die Datenstruktur für 2D-Code-Daten in eine DataMatrix-Darstellung gemäß ISO/IEC 16022:2006 überführen können.
 </requirement>
 
+### 2D-Code anzeigen
+
+Der Nutzer eines E-Rezept-FdV kann die Zugriffs Rezeptinformationen als 2D-Code auf dem Bildschirm seines E-Rezept-FdVs anzeigen lassen, um das/die E-Rezept/E-Rezepte direkt in der Apotheke einlösen zu können.
+
+<!-- A_21401-02 -->
+<requirement conformance="SHALL NOT" key="" title="E-Rezept-FdV: E-Rezept-Token als 2D-Code anzeigen - Flowtype 169 / 209 - Anzeige nicht zulässig" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Das E-Rezept-FdV DARF im Anwendungsfall "E-Rezept-Token als 2D-Code anzeigen" es dem Nutzer NICHT ermöglichen, einen E-Rezept-Token für ein E-Rezept mit dem Flowtype 169 oder 209 zu erstellen und anzuzeigen.
+</requirement>
+
+Ein 2D-Code kann bis zu 3 E-Rezept-Token beinhalten. Sollen mehr E-Rezept-Token übermittelt werden, können bspw. mehrere 2D-Codes erzeugt und angezeigt werden.
+
+<!-- A_24571 -->
+<requirement conformance="SHALL NOT" key="" title="E-Rezept-FdV: E-Rezept-Token als 2D-Code anzeigen - maximal 3 E-Rezept-Token in 2D-Code" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Das E-Rezept-FdV DARF NICHT im Anwendungsfall "E-Rezept-Token als 2D-Code anzeigen" mehr als drei E-Rezept-Token in einem 2D-Code zusammenfassen.
+</requirement>
+
+
+<!-- A_20181-01 -->
+<requirement conformance="SHALL NOT" key="" title="E-Rezept-FdV: E-Rezept-Token als 2D-Code anzeigen - personenbezogene Daten" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FdV">
+        <testProcedure id="Produktgutachten"/>
+    </actor>
+    Das E-Rezept-FdV DARF NICHT im Anwendungsfall "E-Rezept-Token als 2D-Code anzeigen" personenbezogene Daten zusammen mit der Anzeige des 2D-Codes anzeigen.
+</requirement>
+
 ### 2D-Code einscannen
 
 Eine Alternative zur Übermittlung eines E-Rezept-Token oder eines Abrechnungsinformation-Token vom Versicherten mittels E-Rezept-Nachricht ist die persönliche Übergabe in der Apotheke vor Ort. Hierzu übergibt der Kunde (Versicherter oder Vertreter) dem Mitarbeiter der abgebenden LEI einen Patientenausdruck mit 2D-Code oder präsentiert einen 2D-Code auf dem Display seines mobilen Gerätes. Ebenso besteht die Möglichkeit, dass ein Versicherter den Patientenausdruck eines E-Rezept-Tokens an eine Versandapotheke sendet. Der 2D-Code wird eingescannt.
