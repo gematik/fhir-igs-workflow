@@ -51,9 +51,9 @@ ensure_ig_deps() {
   local deps_script="$ROOT_DIR/scripts/collect-sushi-deps.sh"
 
   if [[ -x "$deps_script" ]]; then
-    "$deps_script"
+    INSTALL_SUSHI_DEPS=auto "$deps_script"
   elif [[ -f "$deps_script" ]]; then
-    bash "$deps_script"
+    INSTALL_SUSHI_DEPS=auto bash "$deps_script"
   else
     echo "Warning: collect-sushi-deps.sh not found; skipping dependency check"
   fi
