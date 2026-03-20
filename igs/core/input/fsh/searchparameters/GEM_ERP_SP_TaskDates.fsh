@@ -6,7 +6,7 @@ Usage: #definition
 * id = "task-expiry-date-sp"
 * url = "https://gematik.de/fhir/workflow/core/SearchParameter/task-expiry-date-sp"
 * name = "TaskExpiryDateSP"
-* description = "Search by Task extension expiryDate"
+* description = "Das Ablaufdatum eines E-Rezepzes. Nach ablauf dieses Datums darf ein E-Rezept nicht mehr beliefert werden."
 * status = #active
 * code = #expiry-date
 * base[+] = #Task
@@ -23,7 +23,7 @@ Usage: #definition
 * id = "task-accept-date-sp"
 * url = "https://gematik.de/fhir/workflow/core/SearchParameter/task-accept-date-sp"
 * name = "TaskAcceptDateSP"
-* description = "Search by Task extension acceptDate"
+* description = "Das Einlösedatum eines E-Rezeptes. Nach Ablaufen dieses Datums darf ein E-Rezept nicht mehr zu Lasten des Kostenträgers abgegeben werden."
 * status = #active
 * code = #accept-date
 * base[+] = #Task

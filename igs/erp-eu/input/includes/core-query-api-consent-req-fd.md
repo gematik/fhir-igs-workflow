@@ -1,7 +1,7 @@
 Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für den Consent-Endpunkt.
 
 <!-- A_22153 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-158" title="E-Rezept-Fachdienst - Consent - unzulässige Operationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-182" title="E-Rezept-Fachdienst - Consent - unzulässige Operationen" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>
@@ -22,7 +22,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 
 #### POST /Consent
 <!-- A_22161 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-159" title="E-Rezept-Fachdienst - Consent schreiben - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-183" title="E-Rezept-Fachdienst - Consent schreiben - Rollenprüfung" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produktgutachten"/>
@@ -31,7 +31,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_22289 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-160" title="E-Rezept-Fachdienst - Consent schreiben - Prüfung KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-184" title="E-Rezept-Fachdienst - Consent schreiben - Prüfung KVNR" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>
@@ -40,7 +40,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_22351 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-161" title="E-Rezept-Fachdienst - Consent schreiben - FHIR-Validierung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-185" title="E-Rezept-Fachdienst - Consent schreiben - FHIR-Validierung" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>
@@ -49,7 +49,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_22162-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-162" title="E-Rezept-Fachdienst - Consent schreiben - nur eine Einwilligung pro KVNR und Einwilligungstyp" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-186" title="E-Rezept-Fachdienst - Consent schreiben - nur eine Einwilligung pro KVNR und Einwilligungstyp" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>
@@ -58,7 +58,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_27143 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-163" title="E-Rezept-Fachdienst - Consent schreiben - Zeitstempel setzen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-187" title="E-Rezept-Fachdienst - Consent schreiben - Zeitstempel setzen" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>
@@ -67,7 +67,16 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_22350 -->
-<requirement conformance="SHALL"  title="E-Rezept-Fachdienst - Consent schreiben - Persistieren" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-188" title="E-Rezept-Fachdienst - Consent schreiben – Persistieren" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FD">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+     Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent – falls bei den Prüfungen keine Fehler aufgetreten sind, welche zum Abbruch der Operation führen – die übermittelte Ressource persistieren.
+</requirement>
+
+<!-- A_27143 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-189" title="E-Rezept-Fachdienst - Consent schreiben - Persistieren" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Herstellererklärung"/>
@@ -77,7 +86,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 
 #### GET /Consent
 <!-- A_22159 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-165" title="E-Rezept-Fachdienst - Consent lesen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-190" title="E-Rezept-Fachdienst - Consent lesen - Rollenprüfung" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produktgutachten"/>
@@ -86,7 +95,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_22160 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-166" title="E-Rezept-Fachdienst - Consent lesen - Filter KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-191" title="E-Rezept-Fachdienst - Consent lesen - Filter KVNR" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>
@@ -97,7 +106,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 
 #### DELETE /Consent
 <!-- A_22154 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-167" title="E-Rezept-Fachdienst - Consent löschen - alles Löschen verbieten" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-192" title="E-Rezept-Fachdienst - Consent löschen - alles Löschen verbieten" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>
@@ -106,7 +115,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_22155 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-168" title="E-Rezept-Fachdienst - Consent löschen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-193" title="E-Rezept-Fachdienst - Consent löschen - Rollenprüfung" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produktgutachten"/>
@@ -115,7 +124,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_22874-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-169" title="E-Rezept-Fachdienst - Consent löschen - Prüfung category" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-194" title="E-Rezept-Fachdienst - Consent löschen - Prüfung category" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>
@@ -132,7 +141,7 @@ Es bestehen anwendungsfall-spezifische Anforderungen, welche Inhalte beim Widerr
 <!-- ToDo: A_27131 -> EU IG -->
 
 <!-- A_22158 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-170" title="E-Rezept-Fachdienst - Consent löschen - Ressource löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-195" title="E-Rezept-Fachdienst - Consent löschen - Ressource löschen" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produktgutachten"/>

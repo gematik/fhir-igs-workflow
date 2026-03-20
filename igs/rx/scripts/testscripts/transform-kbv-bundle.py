@@ -47,10 +47,14 @@ def resolve_hapi_jar(explicit: Path | None) -> Path:
 
     candidates.extend(
         [
+            # Prefer a pinned validator first because newer releases regress on
+            # snapshot generation for some DE Basisprofil artifacts.
+            repo_root / "input-cache" / "hapi_validator_6_5_26.jar",
+            ig_root / "input-cache" / "hapi_validator_6_5_26.jar",
+            LEGACY_HAPI_JAR,
             repo_root / "input-cache" / "current_hapi_validator.jar",
             ig_root / "input-cache" / "current_hapi_validator.jar",
             DEFAULT_HAPI_JAR,
-            LEGACY_HAPI_JAR,
         ]
     )
 

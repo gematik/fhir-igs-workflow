@@ -17,3 +17,7 @@ Alias: $op-abort = https://gematik.de/fhir/erp/OperationDefinition/AbortOperatio
 Alias: $prescription-id-ns = https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId
 
 Alias: $cs-pzn = http://fhir.de/CodeSystem/ifa/pzn
+
+// DE-Basisprofile
+Alias: $identifier-kvid-10 = http://fhir.de/sid/gkv/kvid-10
+Alias: $identifier-telematik-id = https://gematik.de/fhir/sid/telematik-id
