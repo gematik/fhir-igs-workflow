@@ -205,7 +205,7 @@ Jede Teilverordnung einer Mehrfachverordnung wird im E-Rezept-Fachdienst mit ein
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- UC 4.15 - Einlösbare E-Rezepte durch Abgebenden abrufen -->
-{% assign use_case = use_cases | where: "id", "UC_4_15_E-Rezepte_durch_Abgebenden_abrufen_PoPP" | first %}
+{% assign use_case = use_cases | where: "id", "UC_4_15_E_Rezepte_durch_Abgebenden_abrufen_PoPP" | first %}
 
 <a id="{{ use_case.anchor }}"></a>
 ##### {{ use_case.title }}

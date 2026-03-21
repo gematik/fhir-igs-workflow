@@ -1,7 +1,6 @@
 @startuml
 title sd E‑Rezepte eines Versicherten durch Abgebenden abrufen (PoPP)
 
-' Teilnehmer/Lifelines
 actor "Versicherter/\nVertreter" as Versicherter
 actor "Mitarbeiter LEI" as MitarbeiterLEI
 participant "Primärsystem\nabgebende LEI" as PS_LEI #pink
@@ -9,7 +8,6 @@ participant "E‑Rezept‑Fachdienst" as FD #lightyellow
 participant "Identity Provider" as IDP #lightgreen
 participant "PoPP-Service" as PoPP_Service #lightgreen
 
-' Grundablauf
 Versicherter -> Versicherter : stellt eGK bereit()
 activate PS_LEI
 MitarbeiterLEI -> PS_LEI: E‑Rezepte von Versicherten abrufen()
