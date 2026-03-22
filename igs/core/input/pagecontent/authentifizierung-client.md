@@ -104,7 +104,7 @@ Bei Aufruf der Funktion "VerifyDocument" an der Außenschnittstelle des Konnekto
 
 Hinweis: Zur Durchführung der Prüfungen gemäß A_20657-* und ähnlicher Anforderungen ist zu verifizieren, ob im Feld certificatePolicies (2.5.29.32) des Zertifikates der richtige Zertifikatstyp FD.SIG (1.2.276.0.76.4.203) gemäß [gemSpec_OID#Tabelle Tab_PKI_405] eingetragen ist und sich in der Admission (1.3.36.8.3.3) des Zertifikats die richtige "oid_idpd" (1.2.276.0.76.4.260) findet.
 
-<!-- A_20658-01 -->
+<!-- A_20658-01, A_19482-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-4" title="CS: Sicheres Löschen der Token" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
@@ -119,13 +119,16 @@ Hinweis: Zur Durchführung der Prüfungen gemäß A_20657-* und ähnlicher Anfor
     <actor name="NCPeH_ePeDA">
         <testProcedure id="Produktgutachten"/>
     </actor>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
     Das Clientsystem MUSS, wenn es kontrolliert beendet wird, vorhandene ACCESS_TOKEN, ID_TOKEN und AUTHORIZATION_CODE-Objekte sicher löschen.
 </requirement>
 
 Darüber hinaus gelten für die Kommunikation mit dem IDP-Dienst die Vorgaben aus 5.1.1 - Kommunikation zu den Diensten der TI.
 
 <!-- A_21337-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-5" title="CS: Löschung von TOKEN bei zeitlichem Ablauf" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-5" title="CS: Sicheres Löschen von TOKEN bei zeitlichem Ablauf" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -138,6 +141,9 @@ Darüber hinaus gelten für die Kommunikation mit dem IDP-Dienst die Vorgaben au
     </actor>
     <actor name="NCPeH_ePeDA">
         <testProcedure id="Produktgutachten"/>
+    </actor>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung"/>
     </actor>
     Das Clientsystem MUSS vorhandene ACCESS_TOKEN, ID_TOKEN und AUTHORIZATION_CODE-Objekte nach Ablauf ihrer Gültigkeit sicher löschen.
 </requirement>

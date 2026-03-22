@@ -26,6 +26,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 #### E-Rezept-FdV 
 
+<!-- A_19443 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-62" title="E-Rezept-FdV: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
