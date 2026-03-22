@@ -148,3 +148,36 @@ Wenn Datamatrix-Codes einer Mehrfachverordnung von einem Ausdruck eingescannt we
 
 Die Apotheke stimmt mit dem Patienten ab, wie mit der Teilverordnung verfahren wird, bspw. telefonische Rücksprache mit dem Patienten, ob das Rezept beliefert werden soll oder automatische Belieferung bei Erreichen der Einlösefrist.
 
+### 2D-Code für Abrechnungsinformation-Token
+
+Um auf Wunsch des Versicherten den PKV-Abgabedatensatz ändern zu können,  muss die Apotheke das Wissen um die Referenz des ChargeItem und den AccessCode zum Nachweis der Berechtigung erlangen. Diese Informationen werden vom Versicherten zur Verfügung gestellt. Die Bereitstellung kann als Nachricht über den E-Rezept-Fachdienst oder durch Abscannen als 2D-Code vom Display der E-Rezept-FdV erfolgen. 
+
+<!-- A_22729 -->
+<requirement conformance="SHALL" key="" title="Datenstruktur Zugriffsinformationen für Abrechnungsinformation" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FdV">
+        <testProcedure id="Produkttest"/>
+    </actor>
+    Das E-Rezept-FdV MUSS zum Erstellen eines Token für die Zugriffsinformationen für eine Abrechnungsinformation die ID auf einen ChargeItem zusammen mit dem AccessCode zum Ändern aus den lokal verfügbaren Informationen einer Abrechnungsinformation als URL in der Form: 2D-Code-Daten = "ChargeItem/" + ChargeItem.id  + "?ac=" + AccessCode zusammenstellen, damit diese Zeichenkette als Referenz in einer E-Rezept-Nachricht oder für die Generierung eines 2D-Codes verwendet werden kann.
+</requirement>
+
+Beispiel für Abrechnungsinformation-Token: <br>
+"ChargeItem/200.100.000.000.004.30?ac=0037c20b8e893b690f07d784fcfcf38c748454c08253a8b2c0499347576ca612"
+
+<!-- A_22730 -->
+<requirement conformance="SHALL" key="" title="Generierung 2D-Code Abrechnungsinformation-Token" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FdV">
+        <testProcedure id="Produkttest"/>
+    </actor>
+    Das E-Rezept-FdV MUSS einen Abrechnungsinformation-Token in JSON-Notation gemäß [JSON] der folgenden Form 
+    <ul>
+    <li>2D-Code-Daten = { "urls": [ "Abrechnungsinformation" ] }</li>
+    </ul>
+    darstellen, um daraus einen 2D-Code generieren zu können.
+</requirement>
+
+Beispiel für die Codierung als 2D-Code:
+{ 
+"urls": [ "ChargeItem/200.100.000.000.004.30?ac=0037c20b8e893b690f07d784fcfcf38c748454c08253a8b2c0499347576ca612" ]
+ }

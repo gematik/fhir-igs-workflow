@@ -213,7 +213,7 @@ Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.
   
 Die Kommunikation zum E-Rezept-Fachdienst wird zusätzlich zu TLS über einen sicheren Kanal (Verschlüsselung auf Http-Ebene) zwischen dem PS und der Vertrauenswürdigen Ausführungsumgebung (VAU) im E-Rezept-Fachdienst gesichert. 
 
-<!-- A_19741-01 -->
+<!-- A_19741-01, A_19740-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-144" title="CS: Umsetzung sicherer Kanal zur VAU des E-Rezept-Fachdienstes" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
@@ -228,10 +228,13 @@ Die Kommunikation zum E-Rezept-Fachdienst wird zusätzlich zu TLS über einen si
     <actor name="Anb_NCPeH_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
+    <actor name="eRp_FD">
+        <testProcedure id="Produkttest"/>
+    </actor>
     Das Clientsystem des E-Rezept-Fachdienstes MUSS für alle Anfragen an den E-Rezept-Fachdienst für
 	<ul>
 	<li>die Abfrage des capability statement</li>
-	<li>den Zugriff auf Task, Communication, Consent, Prescription oder access-permission Ressourcen</li>
+	<li>den Zugriff auf Task, MedicationDispense, Communication, Consent, Prescription, AuditEvent oder access-permission Ressourcen</li>
 	</ul>
 	das Kommunikationsprotokoll zwischen E-Rezept-VAU und E-Rezept-Clients in der Rolle E-Rezept-Client nutzen.
 </requirement>
