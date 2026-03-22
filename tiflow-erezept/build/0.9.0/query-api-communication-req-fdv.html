@@ -513,6 +513,41 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     erstellen.
 </requirement>
 
+<p><b>Apotheke suchen</b></p>
+
+<p>Die Anfrage zur Suche von Apotheken, richtet sich an das FHIR-Directory des Verzeichnisdienstes der TI (FHIR-VZD TI). </p>
+
+<p>Der Ablauf der Authentisierung und Suche ist in [gemSpec_VZD_FHIR_Directory#Versicherter sucht Einträge im FHIR-Directory] beschrieben.</p>
+
+<p>Für weitere Informationen siehe Anwendungsfall “Suche nach Apotheken im FHIR VZD” aus der API-Schnittstelle [E-Rezept API Dokumentation].</p>
+
+<p>Für weitere Informationen siehe “Eine Apotheke aus dem Apotheken-Verzeichnis auswählen” in der API-Schnittstelle [VZD API Dokumentation].</p>
+
+<!-- A_28197 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-216" title="E-Rezept-FdV: Apotheke suchen - Filter Öffentliche Apotheke" version="0">
+    <meta lockversion="false" />
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    Das E-Rezept-FdV MUSS im Anwendungsfall "Apotheke suchen" sicherstellen, dass dem Nutzer nur Einträge aus dem Verzeichnisdienst mit OrganizationProfessionOID = 1.2.276.0.76.4.54 zur Auswahl gestellt werden.
+</requirement>
+
+<p>Das E-Rezept-FdV MUSS im Anwendungsfall “Apotheke suchen” sicherstellen, dass dem Nutzer nur Einträge aus dem Verzeichnisdienst zur Auswahl gestellt werden, welche mindestens eine Belieferungsoption im Feld specialization angegeben haben.</p>
+
+<p>Der Wertebereich für specialization ist in https://simplifier.net/vzd-fhir-directory/pharmacyhealthcarespecialtycs beschrieben. 
+Belieferungsoptionen sind:</p>
+<ul>
+  <li>10 - Handverkauf</li>
+  <li>30 - Botendienst</li>
+  <li>40 - Versand</li>
+</ul>
+
+<p>Das E-Rezept-FdV MUSS es dem Versicherten ermöglichen, sich alle Einträge aus einem Suchergebnis anzeigen zu lassen.</p>
+
+<p>Das E-Rezept-FdV MUSS ein Suchergebnis so darstellen, dass einzelne Apotheken nicht hervorgehoben oder bevorzugt werden.</p>
+
+<p>Das E-Rezept-FdV MUSS die Apothekensuche und die Suchergebnisse so darstellen, dass Belieferungsoptionen nicht hervorgehoben oder bevorzugt werden.</p>
+
 
 
 </div>
@@ -553,7 +588,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Sat, Mar 21, 2026 21:41+0000">2026-03-21</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Sun, Mar 22, 2026 09:18+0000">2026-03-22</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

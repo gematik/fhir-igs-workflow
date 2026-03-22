@@ -97,4 +97,28 @@ Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept einer Apotheke zuweisen" eine 
 * Textnachricht in payload contentString
 * E-Rezept-Token in basedOn reference auf Task inkl. AccessCode als "/Task/<id>/$accept?ac=..." 
 erstellen.
+**Apotheke suchen**
+
+Die Anfrage zur Suche von Apotheken, richtet sich an das FHIR-Directory des Verzeichnisdienstes der TI (FHIR-VZD TI). 
+
+Der Ablauf der Authentisierung und Suche ist in [gemSpec_VZD_FHIR_Directory#Versicherter sucht Einträge im FHIR-Directory] beschrieben.
+
+Für weitere Informationen siehe Anwendungsfall “Suche nach Apotheken im FHIR VZD” aus der API-Schnittstelle [E-Rezept API Dokumentation].
+
+Für weitere Informationen siehe “Eine Apotheke aus dem Apotheken-Verzeichnis auswählen” in der API-Schnittstelle [VZD API Dokumentation].
+
+Das E-Rezept-FdV MUSS im Anwendungsfall "Apotheke suchen" sicherstellen, dass dem Nutzer nur Einträge aus dem Verzeichnisdienst mit OrganizationProfessionOID = 1.2.276.0.76.4.54 zur Auswahl gestellt werden.
+Das E-Rezept-FdV MUSS im Anwendungsfall “Apotheke suchen” sicherstellen, dass dem Nutzer nur Einträge aus dem Verzeichnisdienst zur Auswahl gestellt werden, welche mindestens eine Belieferungsoption im Feld specialization angegeben haben.
+
+Der Wertebereich für specialization ist in https://simplifier.net/vzd-fhir-directory/pharmacyhealthcarespecialtycs beschrieben. Belieferungsoptionen sind:
+
+* 10 - Handverkauf
+* 30 - Botendienst
+* 40 - Versand
+
+Das E-Rezept-FdV MUSS es dem Versicherten ermöglichen, sich alle Einträge aus einem Suchergebnis anzeigen zu lassen.
+
+Das E-Rezept-FdV MUSS ein Suchergebnis so darstellen, dass einzelne Apotheken nicht hervorgehoben oder bevorzugt werden.
+
+Das E-Rezept-FdV MUSS die Apothekensuche und die Suchergebnisse so darstellen, dass Belieferungsoptionen nicht hervorgehoben oder bevorzugt werden.
 

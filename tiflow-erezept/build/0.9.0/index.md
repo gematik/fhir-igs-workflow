@@ -12,7 +12,7 @@ Version 0.9.0 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow/erezept/ImplementationGuide/de.gematik.tiflow.erezept | *Version*:0.9.0 |
-| Draft as of 2026-03-21 | *Computable Name*:gemIG_TIFlow_erezept |
+| Draft as of 2026-03-22 | *Computable Name*:gemIG_TIFlow_erezept |
 
 Dieser Implementation Guide beschreibt die Datenmodelle und Prozesse des E-Rezept-Fachdienstes für den Anwendungsfall von “Arzneimittelverordnung”. Er bildet das Fundament für die fachlichen Szenarien und die technischen Schnittstellen im E-Rezept-Workflow für dieses Szenario.
 
@@ -80,7 +80,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "gemIG_TIFlow_erezept",
   "title" : "TIFlow - Verordnungen für Arzneimittel",
   "status" : "draft",
-  "date" : "2026-03-21T21:41:38+00:00",
+  "date" : "2026-03-22T09:18:36+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
