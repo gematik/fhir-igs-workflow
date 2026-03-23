@@ -1,0 +1,119 @@
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "GET-Prescription-EU",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition GET-Prescription-EU</b></p><a name=\"GET-Prescription-EU\"> </a><a name=\"hcGET-Prescription-EU\"> </a><p>URL: [base]/$get-eu-prescriptions</p><p>Input parameters Profile:<a href=\"StructureDefinition-GEM-ERPEU-PR-PAR-EU-GET-Prescription-Input.html\">GEM ERPEU PR PAR GET Prescription Input</a></p><p>Output parameters Profile:<a href=\"StructureDefinition-gem-erpeu-pr-par-get-prescription-output.html\">GEM ERPEU PR PAR GET Prescription Output</a></p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>requestData</td><td/><td>1..1</td><td/><td/><td><div><p>Additional request information</p>\n</div></td></tr><tr><td>IN</td><td>requestData.requesttype</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Coding\">Coding</a></td><td/><td/></tr><tr><td>IN</td><td>requestData.kvnr</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Identifier\">Identifier</a></td><td/><td/></tr><tr><td>IN</td><td>requestData.accessCode</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Identifier\">Identifier</a></td><td/><td/></tr><tr><td>IN</td><td>requestData.countryCode</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Coding\">Coding</a></td><td/><td/></tr><tr><td>IN</td><td>requestData.prescription-id</td><td/><td>0..*</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Identifier\">Identifier</a></td><td/><td/></tr><tr><td>IN</td><td>requestData.practitionerName</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td/></tr><tr><td>IN</td><td>requestData.practitionerRole</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Coding\">Coding</a></td><td/><td/></tr><tr><td>IN</td><td>requestData.pointOfCare</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td/></tr><tr><td>IN</td><td>requestData.healthcare-facility-type</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Coding\">Coding</a></td><td/><td/></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/bundle.html\">Bundle</a></td><td/><td><div><p>Depending on the requesttype this operation returns a Bundle containing eRezept KBV_PR_ERP_Bundle Prescription-Bundles.</p>\n</div></td></tr></table></div>"
+  },
+  "url" : "https://gematik.de/fhir/erp-eu/OperationDefinition/GET-Prescription-EUOperationDefinition",
+  "version" : "0.9.0",
+  "name" : "GET-Prescription-EU",
+  "status" : "active",
+  "kind" : "operation",
+  "date" : "2026-01-08",
+  "publisher" : "gematik GmbH",
+  "contact" : [{
+    "name" : "gematik GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://gematik.de"
+    },
+    {
+      "system" : "email",
+      "value" : "erp-umsetzung@gematik.de"
+    }]
+  }],
+  "description" : "The Operation gets Presciption Information from the ERP System for usage in the e-prescription workflow for EU countries",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "affectsState" : false,
+  "code" : "get-eu-prescriptions",
+  "system" : true,
+  "type" : false,
+  "instance" : false,
+  "inputProfile" : "https://gematik.de/fhir/tiflow/xborder/StructureDefinition/GEM-ERPEU-PR-PAR-EU-GET-Prescription-Input",
+  "outputProfile" : "https://gematik.de/fhir/tiflow/xborder/StructureDefinition/gem-erpeu-pr-par-get-prescription-output",
+  "parameter" : [{
+    "name" : "requestData",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Additional request information",
+    "part" : [{
+      "name" : "requesttype",
+      "use" : "in",
+      "min" : 1,
+      "max" : "1",
+      "type" : "Coding"
+    },
+    {
+      "name" : "kvnr",
+      "use" : "in",
+      "min" : 1,
+      "max" : "1",
+      "type" : "Identifier"
+    },
+    {
+      "name" : "accessCode",
+      "use" : "in",
+      "min" : 1,
+      "max" : "1",
+      "type" : "Identifier"
+    },
+    {
+      "name" : "countryCode",
+      "use" : "in",
+      "min" : 1,
+      "max" : "1",
+      "type" : "Coding"
+    },
+    {
+      "name" : "prescription-id",
+      "use" : "in",
+      "min" : 0,
+      "max" : "*",
+      "type" : "Identifier"
+    },
+    {
+      "name" : "practitionerName",
+      "use" : "in",
+      "min" : 1,
+      "max" : "1",
+      "type" : "string"
+    },
+    {
+      "name" : "practitionerRole",
+      "use" : "in",
+      "min" : 1,
+      "max" : "1",
+      "type" : "Coding"
+    },
+    {
+      "name" : "pointOfCare",
+      "use" : "in",
+      "min" : 1,
+      "max" : "1",
+      "type" : "string"
+    },
+    {
+      "name" : "healthcare-facility-type",
+      "use" : "in",
+      "min" : 1,
+      "max" : "1",
+      "type" : "Coding"
+    }]
+  },
+  {
+    "name" : "return",
+    "use" : "out",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Depending on the requesttype this operation returns a Bundle containing eRezept KBV_PR_ERP_Bundle Prescription-Bundles.",
+    "type" : "Bundle"
+  }]
+}

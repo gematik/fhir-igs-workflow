@@ -1,0 +1,448 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>Medication Without code or system for Strength - TTL Representation - TIFlow - Grenzüberschreitender Datenaustausch v0.9.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+  	<link rel="stylesheet" href="assets/css/cqf.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+<link rel="stylesheet" href="assets/css/ig.gematik.css"/>
+<script src="assets/js/ig.gematik.min.js" type="text/javascript"> </script>
+<link rel="stylesheet" href="assets/css/edge-dark.min.css"/>
+<script src="assets/js/ig.api.doc.gematik.min.js" type="text/javascript"> </script>
+<link rel="stylesheet" href="assets/css/ig.req.gematik.css"/>
+<script src="assets/js/ig.req.gematik.min.js" type="text/javascript"> </script>
+
+<script src="assets/js/ig.bibliography.gematik.js" type="text/javascript"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        height: 280px;
+        background-color: #2a6496;
+        background: url('./e-rezept-img.png') no-repeat;
+        background-position: 650px -150px;
+        background-size: 45% auto;
+    }
+    .bubble-link {
+        display: none;
+        transition: opacity 0.2s;
+        }
+
+        h1:hover .bubble-link,
+        h2:hover .bubble-link,
+        h3:hover .bubble-link,
+        h4:hover .bubble-link,
+        h5:hover .bubble-link,
+        h6:hover .bubble-link {
+        display: inline;
+        }
+</style>
+
+<script src="assets/js/heading-links.js" type="text/javascript"> </script>
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="fhir-logo" href="assets/ico/icon-fhir-144.png"/>
+    <link sizes="114x114" rel="fhir-logo" href="assets/ico/icon-fhir-114.png"/>
+    <link sizes="72x72" rel="fhir-logo" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+    <style type="text/css">h2{--heading-prefix:"6.42"}
+    h3,h4,h5,h6{--heading-prefix:"6.42"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+
+          <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a no-external="true" id="gem-ig-logo" href="./index.html">
+        <img src="assets/images/gem-logo.png" alt="Home" height="50"/>
+    </a>
+</div>
+
+
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Start</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Fachlichkeit
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-fachlichkeit-szenario-eu.html">Szenario EU</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Technische Umsetzung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-technische-umsetzung-konzept.html">Technisches Konzept</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-anwendungsfaelle.html">Technische Anwendungsfälle</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Schnittstellen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-schnittstellen-query-api.html">Query API</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-operation-api.html">Operation API</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="referenced.html">Referenzen</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="release-notes.html">Release Notes</a>
+      </li>
+      <li><a name="l264">​</a>
+        <a href="spec-sheet.html">Steckbriefe</a>
+      </li>
+      <li>
+        <a href="license.html">Lizenz</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+TIFlow - Grenzüberschreitender Datenaustausch
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 0.9.0 - ci-build
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="artifacts.html"><b>FHIR-Artefakte</b></a></li><li><b>Medication Without code or system for Strength</b></li>
+
+          <span style="float:right;">
+
+            <a href="Medication-Medication-Without-Strength-Numerator.json.html">&lt;vorherige</a> | 
+
+            <a href="#bottom">unten</a>
+
+          | <a href="Medication-SumatripanMedication.html">nächste&gt;</a>
+
+          </span>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<div style="counter-reset: section 9" class="col-12">
+  
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="Medication-Medication-Without-Strength-Numerator.html">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="Medication-Medication-Without-Strength-Numerator.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="Medication-Medication-Without-Strength-Numerator.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li class="active">
+      <a href="#">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+
+<a name="root"> </a>
+
+
+<h2 id="root">: Medication Without code or system for Strength - TTL Representation</h2>
+
+
+<p><a href="Medication-Medication-Without-Strength-Numerator.ttl" no-download="true">Raw ttl</a> | <a download="null" href="Medication-Medication-Without-Strength-Numerator.ttl">Download</a></p>
+
+    <!-- insert intro if present -->
+  
+
+
+
+  <pre style="white-space: pre; overflow: hidden" class="rdf" data-fhir="generated"><code class="language-turtle">
+@prefix fhir: &lt;http://hl7.org/fhir/&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+# - resource -------------------------------------------------------------------
+
+ a fhir:Medication ;
+  <a href="http://hl7.org/fhir/R4/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot ;
+  <a href="http://hl7.org/fhir/R4/resource.html#Medication.id">fhir:id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> "Medication-Without-Strength-Numerator"] ; # 
+  <a href="http://hl7.org/fhir/R4/resource.html#Medication.meta">fhir:meta</a> [
+    ( <a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">fhir:profile</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:v</a> "https://gematik.de/fhir/tiflow/xborder/StructureDefinition/GEM-ERPEU-PR-Medication"^^xsd:anyURI ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:l</a> &lt;https://gematik.de/fhir/tiflow/xborder/StructureDefinition/GEM-ERPEU-PR-Medication&gt;     ] )
+  ] ; # 
+  <a href="http://hl7.org/fhir/R4/domainresource.html#Medication.text">fhir:text</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "generated" ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">fhir:div</a> [ <a href="http://hl7.org/fhir/R4/narrative.html#xhtml">fhir:v</a> "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p class=\"res-header-id\"&gt;&lt;b&gt;Generated Narrative: Medication Medication-Without-Strength-Numerator&lt;/b&gt;&lt;/p&gt;&lt;a name=\"Medication-Without-Strength-Numerator\"&gt; &lt;/a&gt;&lt;a name=\"hcMedication-Without-Strength-Numerator\"&gt; &lt;/a&gt;&lt;div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"&gt;&lt;p style=\"margin-bottom: 0px\"/&gt;&lt;p style=\"margin-bottom: 0px\"&gt;Profile: &lt;a href=\"StructureDefinition-GEM-ERPEU-PR-Medication.html\"&gt;EU-Medication&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=\"Codes:\"&gt;Infusion bestehend aus 85mg Doxorubicin aufgeloest zur Verabreichung in 250ml 5-%iger (50 mg/ml) Glucose-Infusionsloesung&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;form&lt;/b&gt;: &lt;span title=\"Codes:{http://standardterms.edqm.eu 11210000}\"&gt;Solution for infusion&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=\"color: maroon\"&gt;Exception Generating Narrative: Cannot invoke \"String.equals(Object)\" because the return value of \"org.hl7.fhir.r5.renderers.utils.ResourceWrapper.primitiveValue(String)\" is null &lt;/b&gt;&lt;/p&gt;&lt;/div&gt;"^^rdf:XMLLiteral ]
+  ] ; # 
+  <a href="http://hl7.org/fhir/R4/medication.html#Medication.code">fhir:code</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">fhir:text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> "Infusion bestehend aus 85mg Doxorubicin aufgeloest zur Verabreichung in 250ml 5-%iger (50 mg/ml) Glucose-Infusionsloesung" ]
+  ] ; # 
+  <a href="http://hl7.org/fhir/R4/medication.html#Medication.form">fhir:form</a> [
+    ( <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">fhir:coding</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:system</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> "http://standardterms.edqm.eu"^^xsd:anyURI ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:l</a> &lt;http://standardterms.edqm.eu&gt;       ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "11210000" ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> "Solution for infusion" ]     ] )
+  ] ; # 
+  <a href="http://hl7.org/fhir/R4/medication.html#Medication.ingredient">fhir:ingredient</a> ( [
+<a href="http://hl7.org/fhir/R4/medication.html#Medication.ingredient.item_x_">fhir:item</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">a</a> fhir:CodeableConcept ;
+      ( <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">fhir:coding</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:system</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> "http://fhir.de/CodeSystem/bfarm/atc"^^xsd:anyURI ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:l</a> &lt;http://fhir.de/CodeSystem/bfarm/atc&gt;         ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.version">fhir:version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> "2024" ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "L01DB01" ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> "Doxorubicin" ]       ] )     ] ;
+<a href="http://hl7.org/fhir/R4/medication.html#Medication.ingredient.isActive">fhir:isActive</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:v</a> true ] ;
+<a href="http://hl7.org/fhir/R4/medication.html#Medication.ingredient.strength">fhir:strength</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#Ratio#Ratio.numerator">fhir:numerator</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">fhir:value</a> [
+          ( <a href="http://hl7.org/fhir/R4/datatypes.html#Element#decimal.extension">fhir:extension</a> [
+<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:url</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> "http://hl7.org/fhir/StructureDefinition/data-absent-reason"^^xsd:anyURI ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:l</a> &lt;http://hl7.org/fhir/StructureDefinition/data-absent-reason&gt;             ] ;
+<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:value</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#code">a</a> fhir:Code ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "unknown"             ]           ] )         ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.system">fhir:system</a> [
+          ( <a href="http://hl7.org/fhir/R4/datatypes.html#Element#uri.extension">fhir:extension</a> [
+<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:url</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> "http://hl7.org/fhir/StructureDefinition/data-absent-reason"^^xsd:anyURI ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:l</a> &lt;http://hl7.org/fhir/StructureDefinition/data-absent-reason&gt;             ] ;
+<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:value</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#code">a</a> fhir:Code ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "unknown"             ]           ] )         ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.code">fhir:code</a> [
+          ( <a href="http://hl7.org/fhir/R4/datatypes.html#Element#code.extension">fhir:extension</a> [
+<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:url</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> "http://hl7.org/fhir/StructureDefinition/data-absent-reason"^^xsd:anyURI ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:l</a> &lt;http://hl7.org/fhir/StructureDefinition/data-absent-reason&gt;             ] ;
+<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:value</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#code">a</a> fhir:Code ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "unknown"             ]           ] )         ]       ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Ratio#Ratio.denominator">fhir:denominator</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#decimal">fhir:v</a> "1"^^xsd:decimal ]       ]     ]
+  ] ) . # 
+
+</code></pre>
+
+
+
+    <!-- insert notes if present -->
+  
+
+
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+  <script src="assets/js/window-hash.js" type="text/javascript"> </script>
+  <a name="bottom"> </a>
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
+
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&nbsp;
+
+                <a href="Medication-Medication-Without-Strength-Numerator.json.html">&lt;vorherige</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">oben</a>
+              </td>
+              <td style="text-align:right">&nbsp;
+
+                <a href="Medication-SumatripanMedication.html">nächste&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="inner-wrapper">
+        <p>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.xborder#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 11:43+0000">2026-03-23</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>

@@ -1,0 +1,34 @@
+# Operation $activate (Task aktivieren) - TIFlow - Verordnungen für Arzneimittel v0.9.0
+
+TIFlow - Verordnungen für Arzneimittel
+
+Version 0.9.0 - ci-build 
+
+* [**Table of Contents**](toc.md)
+* [**Operation API**](menu-schnittstellen-operation-api.md)
+* **Operation $activate (Task aktivieren)**
+
+## Operation $activate (Task aktivieren)
+
+Diese Operation basiert auf der gleichnamigen Operation in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/1.0.0/op-activate.html).
+
+### Nachricht
+
+Die Nachricht wird als HTTP `POST` an `/Task/{id}/$activate` gesendet.
+
+### Anforderungen an Schnittstelle
+
+* [FD-Anforderungen zu `$activate`](./op-activate-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+* [PVS-Anforderungen zu `$activate`](./op-activate-req-pvs.md): Anforderungen an das PVS zur Nutzung der Schnittstelle.
+
+### API Beschreibung
+
+Die API-Beschreibung für den Aufruf der Operation findet sich auf:
+
+* [API-ERP: E-Rezept vervollständigen und Task aktivieren](https://github.com/gematik/api-erp/blob/master/docs/erp_bereitstellen.adoc#e-rezept-vervollst%C3%A4ndigen-und-task-aktivieren)
+
+### Hinweis
+
+* Bei ausbleibender Antwort soll der Client den Aufruf wiederholen.
+* Wenn ein wiederholter Aufruf mit `403` und “Task not in status draft but in status ready” antwortet, war ein vorheriger Aufruf bereits erfolgreich.
+
