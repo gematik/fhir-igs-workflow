@@ -26,6 +26,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 #### E-Rezept-FdV 
 
+<!-- A_19443 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-62" title="E-Rezept-FdV: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
@@ -53,6 +54,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
     </actor>
     Das PS der abgebenden LEI MUSS für die Umsetzung der Belieferung von E-Rezepten für Arzneimittel die Anwendungsfälle
     <ul>
+        <li>UC 4.15 - Einlösbare E-Rezepte durch Abgebenden abrufen</li>
         <li>UC 4.1 - E-Rezept durch Abgebenden abrufen</li>
         <li>UC 4.2 - E-Rezept durch Abgebenden zurückgeben</li>
         <li>UC 4.3 - E-Rezept durch Abgebenden löschen</li>
@@ -195,6 +197,16 @@ Jede Teilverordnung einer Mehrfachverordnung wird im E-Rezept-Fachdienst mit ein
 
 <!-- UC 4.6 - Nachrichten durch Abgebenden empfangen -->
 {% assign use_case = use_cases | where: "title", "UC 4.6 - Nachrichten durch Abgebenden empfangen" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+##### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
+<!-- UC 4.15 - Einlösbare E-Rezepte durch Abgebenden abrufen -->
+{% assign use_case = use_cases | where: "id", "UC_4_15_E_Rezepte_durch_Abgebenden_abrufen_PoPP" | first %}
 
 <a id="{{ use_case.anchor }}"></a>
 ##### {{ use_case.title }}

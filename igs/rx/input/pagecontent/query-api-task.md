@@ -8,7 +8,8 @@ Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource _Task_ wird ü
 |---|---|---|
 |Versicherter|GET|Liste von Task abrufen|
 |Versicherter|GET /&#60;id&#62;|Spezifischen Task abrufen|
-|Apotheke|GET ?hcv=|E-Rezept von Versicherten abrufen (VSDM)|
+|Apotheke|GET ?hcv=|E-Rezepte von Versicherten abrufen (VSDM)|
+|Apotheke|GET X-PoPP-Token|E-Rezepte von Versicherten abrufen (PoPP)|
 |Apotheke|GET /&#60;id&#62;?ac=|Recovery Secret|
 |Apotheke|GET /&#60;id&#62;?secret=|Quittung erneut abrufen|
 
@@ -43,7 +44,7 @@ Anfragen an die <i>Task</i>-Ressource können über die RESTful API mittels HTTP
 
 ### Instance API
 
-Um spezifische Details zu einem einzelnen _Task_ mittels der RESTful API zu erhalten, wird die _Task Instance API_ verwendet, indem eine HTTP GET-Anfrage an den Endpunkt <i>/Task/[id]</i> gestellt wird.
+Um spezifische Details zu einem einzelnen _Task_ mittels der RESTful API zu erhalten, wird die _Task Instance API_ verwendet, indem eine HTTP GET-Anfrage an den Endpunkt <i>/Task/&lt;id&gt;</i> gestellt wird.
 
 #### API Beschreibung
 

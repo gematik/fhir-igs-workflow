@@ -104,7 +104,7 @@ Bei Aufruf der Funktion "VerifyDocument" an der Außenschnittstelle des Konnekto
 
 Hinweis: Zur Durchführung der Prüfungen gemäß A_20657-* und ähnlicher Anforderungen ist zu verifizieren, ob im Feld certificatePolicies (2.5.29.32) des Zertifikates der richtige Zertifikatstyp FD.SIG (1.2.276.0.76.4.203) gemäß [gemSpec_OID#Tabelle Tab_PKI_405] eingetragen ist und sich in der Admission (1.3.36.8.3.3) des Zertifikats die richtige "oid_idpd" (1.2.276.0.76.4.260) findet.
 
-<!-- A_20658-01 -->
+<!-- A_20658-01, A_19482-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-4" title="CS: Sicheres Löschen der Token" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
@@ -119,13 +119,16 @@ Hinweis: Zur Durchführung der Prüfungen gemäß A_20657-* und ähnlicher Anfor
     <actor name="NCPeH_ePeDA">
         <testProcedure id="Produktgutachten"/>
     </actor>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
     Das Clientsystem MUSS, wenn es kontrolliert beendet wird, vorhandene ACCESS_TOKEN, ID_TOKEN und AUTHORIZATION_CODE-Objekte sicher löschen.
 </requirement>
 
 Darüber hinaus gelten für die Kommunikation mit dem IDP-Dienst die Vorgaben aus 5.1.1 - Kommunikation zu den Diensten der TI.
 
 <!-- A_21337-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-5" title="CS: Löschung von TOKEN bei zeitlichem Ablauf" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-5" title="CS: Sicheres Löschen von TOKEN bei zeitlichem Ablauf" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -138,6 +141,9 @@ Darüber hinaus gelten für die Kommunikation mit dem IDP-Dienst die Vorgaben au
     </actor>
     <actor name="NCPeH_ePeDA">
         <testProcedure id="Produktgutachten"/>
+    </actor>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung"/>
     </actor>
     Das Clientsystem MUSS vorhandene ACCESS_TOKEN, ID_TOKEN und AUTHORIZATION_CODE-Objekte nach Ablauf ihrer Gültigkeit sicher löschen.
 </requirement>
@@ -526,3 +532,64 @@ Für die Prüfung mittels Konnektor siehe [gemSpec_Kon#4.1.9.5.3] bzw. [gemILF_P
 Für die Prüfung mittels Basis-Consumer siehe [gemSpec_Basis_KTR_Consumer#A_17429].
 
 Im weiteren Verlauf kann der "ACCESS_TOKEN" innerhalb seiner Gültigkeitsdauer bei verschiedenen Aufrufen des Fachdienstes eingereicht werden. Der Fachdienst entschlüsselt das "ACCESS_TOKEN" mit seinem privaten Schlüssel, validiert es, zieht die notwendigen Informationen entsprechend seinem Claim heraus und verwendet diese für seine fachlichen Operationen.
+
+
+### Authentifizierung eines Versicherten
+
+Der Nutzer des E-Rezept-FdV muss sich für Zugriffe auf den E-Rezept-Fachdienst gegenüber der TI authentifizieren.
+
+Die Authentisierung kann gegenüber dem IDP-Dienst mittels eGK unter Kenntnis der PIN der eGK oder mit der GesundheitsID, d.h. Nutzerauthentisierung gegenüber dem sektoralen IDP, erfolgen.
+
+<!-- A_25224 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-399" title="E-Rezept-FdV: Authentisierung E-Rezept-Fachdienst" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Das E-Rezept-FdV MUSS mindestens ein Verfahren zur Authentisierung des Nutzers gegenüber dem E-Rezept-Fachdienst unterstützen.
+</requirement>
+
+<!-- A_20167-02 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-400" title="E-Rezept-FdV: Authentisierung E-Rezept-Fachdienst - IDP-Dienst - Rolle Anwendungsfrontend und optional Authenticator-Modul" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FdV">
+        <testProcedure id="Produktgutachten"/>
+    </actor>
+    Das E-Rezept-FdV MUSS, wenn es eine Authentifizierung des Nutzers über den IDP-Dienst, in seiner Rolle als Authorization-Server, unterstützt, entweder als anfragendes Anwendungsfrontend und Authenticator-Modul oder, wenn ein Authenticator-Modul in einer anderen für die TI zugelassene App genutzt wird, als anfragendes Anwendungsfrontend agieren.
+</requirement>
+
+<!-- A_25225 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-401" title="E-Rezept-FdV: Authentisierung E-Rezept-Fachdienst - sektoraler IDP - Rolle Anwendungsfrontend" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Das E-Rezept-FdV MUSS, wenn es eine Authentifizierung des Nutzers über einen sektoralen IDP unterstützt, als anfragendes Anwendungsfrontend agieren.
+</requirement>
+
+Für Informationen zum Ablauf der Authentisierung siehe [gemSpec_IDP_Dienst] und [gemSpec_IDP_Frontend].
+
+Das E-Rezept-FdV erhält bei erfolgreicher Authentisierung einen Authentisierungstoken (ACCESS_TOKEN), welcher an den E-Rezept-Fachdienst weitergeleitet wird.
+
+<!-- A_20117-01 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-402" title="E-Rezept-FdV: Zugriff E-Rezept-Fachdienst - Authentisierung wenn kein gültiger ACCESS_TOKEN" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Das E-Rezept-FdV MUSS, falls für den Aufruf einer Operation am E-Rezept-Fachdienst kein gültiger ACCESS_TOKEN  vorliegt, sich gegenüber dem E-Rezept-Fachdienst authentisieren.
+</requirement>
+
+<b>Gast Login</b>
+
+Das E-Rezept-FdV KANN die Authentisierung am sektoralen IDP mittels eGK und PIN, ohne GesundheitsID, unterstützen.
+
+<!-- A_28409 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-403" title="E-Rezept-FdV: Authentisierung mit eGK und PIN (Gast-Login) - Parameter" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Das E-Rezept-FdV MUSS, wenn es die Authentisierung am sektoralen IDP mittels eGK und PIN ohne GesundheitsID, unterstützt, zur Signalisierung des Gast-Login mit eGK und PIN den Parameter x-authorize-egk im Authorization Request an den E-Rezept-Authorization Server verwenden.
+</requirement>
+
