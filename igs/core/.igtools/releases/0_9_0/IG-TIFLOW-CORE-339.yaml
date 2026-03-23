@@ -1,18 +1,20 @@
 actor:
-- eRp_FD
+- eRp_FdV
 conformance: SHALL
-content_hash: a28c8d4fa820a026ada291d3678c95033a6d8f0f63389a86806633d85b997fa3
-created: '2026-03-17T11:33:06.723014'
-date: '2026-03-17T11:33:06.723016'
+content_hash: 98c78c1ceeff95c7db5a52592a7d650d2da318b19d6aa0090bc616e410044ff6
+created: '2026-03-23T10:39:54.183621'
+date: '2026-03-23T10:39:54.183625'
 key: IG-TIFLOW-CORE-339
-modified: '2026-03-17T11:33:06.723015'
+modified: '2026-03-23T10:39:54.183623'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-epa-ms.md
+source: input/pagecontent/query-api-medicationdispense-req-fdv.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produktgutachten
-text: Der E-Rezept-Fachdienst MUSS für die Authentisierung gegenüber dem ePA-Aktensystem
-  ein JWT Baerer-Token gemäß A_25165-* erstellen.
-title: E-Rezept-Fachdienst - ePA - JWT Bearer-Token Claims
+  eRp_FdV:
+  - Produkttest
+text: "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abgabeinformationen abfragen\" die\
+  \ HTTP-Operation GET /MedicationDispense mit\n    <ul>\n        <li>ACCESS_TOKEN\
+  \ im Authorization-Header</li>\n        <li>optional: Suchparameter gemäß https://www.hl7.org/fhir/medicationdispense.html#search</li>\n\
+  \    </ul>\n    ausführen."
+title: 'E-Rezept-FdV: Abgabeinformationen abfragen - MedicationDispense abrufen'
 version: 0

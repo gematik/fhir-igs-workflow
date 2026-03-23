@@ -1,19 +1,24 @@
 actor:
-- eRp_FdV
+- eRp_FD
 conformance: SHALL
-content_hash: d0ae371fdd4c8145a2534e4ee674700a2784bd312fcfbdd73b92931f7c04c01d
-created: '2026-03-17T11:33:13.255146'
-date: '2026-03-17T11:33:13.255152'
+content_hash: e7124b47cd54438da59faf14fb7437b652b8159dc114eac2816de8805a416e48
+created: '2026-03-23T10:39:55.277626'
+date: '2026-03-23T10:39:55.277628'
 key: IG-TIFLOW-ERP-19
-modified: '2026-03-17T11:33:13.255151'
+modified: '2026-03-23T10:39:55.277627'
 release_status: NEW
-source: input/pagecontent/query-api-communication-req-fdv.md
+source: input/pagecontent/op-close-req-fd.md
 status: ACTIVE
 test_procedures:
-  eRp_FdV:
-  - Herstellererklärung
-text: Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept einer Apotheke zuweisen" prüfen,
-  dass die durch den Nutzer erfasst Textnachricht keinen Internet-Link und keine Non-Printable-Characters
-  enthält und die Textnachricht nur bei erfolgreicher Prüfung weiterverarbeiten.
-title: 'E-Rezept-FdV: E-Rezept zuweisen - Textnachricht ohne Link'
+  eRp_FD:
+  - Produkttest
+text: "Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close\
+  \ erlauben, dass der Aufruf ohne Übergabe einer MedicationDispense im Request Body\
+  \ stattfindet.Der E-Rezept-Fachdienst MUSS in dem Fall sicherstellen, dass eine\
+  \ MedicationDispense für diesen Task existiert. <br>\n    Der E-Rezept-Fachdienst\
+  \ MUSS, falls keine MedicationDispense zum dazugehörigen Task existiert, mit dem\
+  \ Fehler 403 abbrechen. Im Fehlerfall ist die Meldung \"Abschluss des Workflows\
+  \ konnte nicht durchgeführt werden. Dispensierinformationen wurden nicht bereitgestellt.\"\
+  \ im OperationOutcome zu übermitteln."
+title: E-Rezept-Fachdienst - Task schließen - Aufruf ohne MedicationDispense
 version: 0

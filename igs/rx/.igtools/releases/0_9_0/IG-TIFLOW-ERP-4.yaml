@@ -1,23 +1,20 @@
 actor:
-- eRp_FD
+- PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: c561f70a7596b9543efbbec63daaca46d8a503116abaabfd2ad96704b1201c99
-created: '2026-03-17T11:33:13.251461'
-date: '2026-03-17T11:33:13.251464'
+content_hash: e8d192168840be1ef44c6bba27d35dd80bc7defc42a422ef4d4c3c5fe77e5173
+created: '2026-03-23T10:39:55.274789'
+date: '2026-03-23T10:39:55.274792'
 key: IG-TIFLOW-ERP-4
-modified: '2026-03-17T11:33:13.251463'
+modified: '2026-03-23T10:39:55.274791'
 release_status: NEW
-source: input/pagecontent/op-reject-req-fd.md
+source: input/pagecontent/query-api-task-req-avs.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produktgutachten
-text: "Der E-Rezept-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 160,\
-  \ 169, 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject die\
-  \ Rolle \"professionOID\" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"\
-  Authorization\" feststellen und sicherstellen, dass ausschließlich Institutionen\
-  \ in der Rolle\n  <ul>\n    <li>oid_oeffentliche_apotheke</li>\n    <li>oid_krankenhausapotheke</li>\n\
-  \  </ul>\n  die Operation am Fachdienst aufrufen, damit das E-Rezept nicht durch\
-  \ einen Unberechtigten zurückgewiesen werden kann."
-title: E-Rezept-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Rollenprüfung
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten
+  abrufen" die eGK mittels der Konnektor-Operation ReadVSD mit den Parametern PerformOnlineCheck=true
+  und ReadOnlineReceipt=true auslesen.
+title: 'PS abgebende LEI: E-Rezepte von Versicherten abrufen (VSDM) - VSD und PNW
+  von eGK lesen'
 version: 0

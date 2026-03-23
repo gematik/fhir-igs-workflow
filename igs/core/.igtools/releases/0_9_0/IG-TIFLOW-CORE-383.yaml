@@ -1,26 +1,20 @@
 actor:
-- CS_E-Rezept_KTR
-- PS_E-Rezept_abgebend
-- PS_E-Rezept_verordnend
-conformance: SHOULD
-content_hash: 45574502a669f1163118a9ca34c0d154cbda890d73fccdd1d8e3c93644f69b5f
-created: '2026-03-18T14:56:22.585027'
-date: '2026-03-18T14:56:22.585029'
+- eRp_FD
+conformance: SHALL
+content_hash: 230ea168135592f0deb5d6a48a0787d124ca686812591d89c515d22cb6e2da24
+created: '2026-03-23T10:39:54.197802'
+date: '2026-03-23T10:39:54.197805'
 key: IG-TIFLOW-CORE-383
-modified: '2026-03-18T14:56:22.585028'
+modified: '2026-03-23T10:39:54.197804'
 release_status: NEW
-source: input/pagecontent/fehlerbehandlung-client.md
+source: input/pagecontent/menu-technische-umsetzung-epa-ms.md
 status: ACTIVE
 test_procedures:
-  CS_E-Rezept_KTR:
+  eRp_FD:
   - Herstellererklärung
-  PS_E-Rezept_abgebend:
-  - Herstellererklärung
-  PS_E-Rezept_verordnend:
-  - Herstellererklärung
-text: Das Clientsystem des E-Rezept-Fachdienstes SOLL alle in der Kommunikation mit
-  den Diensten der TI auftretenden Fehler und Warnungen in ein dediziertes Fehlerprotokoll
-  schreiben und diese Protokollinformationen für Supportmaßnahmen über eine Zeitraum
-  von mindestens 14 Tagen zur Verfügung halten.
-title: 'CS: Schreiben eines Fehlerprotokolls'
+text: Der E-Rezept-Fachdienst MUSS für das Ermitteln des ePA-Aktensystem bei dem das
+  Aktenkonto zu einer KVNR verwaltet wird, einmal den Endpunkt .../ehr/{insurantid}/consentdecisions
+  des [I_Information_Service] jedes ePA-Aktensystem aufrufen und das Ermitteln abbrechen,
+  wenn die Response den Statuscode 404 erhält.
+title: E-Rezept-Fachdienst - ePA - ePA-Aktensystem für KVNR ermitteln
 version: 0

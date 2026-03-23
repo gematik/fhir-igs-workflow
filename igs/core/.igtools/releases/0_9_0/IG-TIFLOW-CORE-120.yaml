@@ -1,22 +1,19 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: cf84060645723ba6618dc985f3373e957b8992aea6c1950249621c1830d012be
-created: '2026-03-17T11:33:06.665319'
-date: '2026-03-17T11:33:06.665322'
+content_hash: 51b6c6307ff413ebcb197a8cf8433e7aa74e737cee9af27b7420800cd33d61e9
+created: '2026-03-23T10:39:53.923511'
+date: '2026-03-23T10:39:53.923527'
 key: IG-TIFLOW-CORE-120
-modified: '2026-03-17T11:33:06.665321'
+modified: '2026-03-23T10:39:53.923524'
 release_status: NEW
-source: input/pagecontent/query-api-auditevent-req-fd.md
+source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Produktgutachten
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
-  /AuditEvent und auf einen konkreten über &lt;id&gt; adressierten /AuditEvent/&lt;id&gt;
-  sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die
-  Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers
-  im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit Protokolleinträge
-  nicht durch Unberechtigte ausgelesen werden können.
-title: E-Rezept-Fachdienst - AuditEvent lesen - Rollenprüfung
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-Operation PATCH auf den Endpunkt
+  /Task ohne Angabe einer &lt;id&gt; für eine konkrete Ressource mit dem HTTP-Fehlercode
+  405 ablehnen, um das Markieren mehrerer Ressourcen über einen Request zu verhindern.
+title: E-Rezept-Fachdienst – Task markieren - alles Markieren verbieten
 version: 0

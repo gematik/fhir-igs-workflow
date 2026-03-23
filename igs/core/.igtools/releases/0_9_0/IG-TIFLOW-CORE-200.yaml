@@ -1,23 +1,21 @@
 actor:
-- eRp_FD
-conformance: SHALL
-content_hash: e601d3491c2383822508f2127906bbe0de9d144a4b79823f923a9e6c55feb58b
-created: '2026-03-17T11:33:06.682502'
-date: '2026-03-17T11:33:06.682504'
+- eRp_FdV
+conformance: MAY
+content_hash: b6726de6c23d7e62ba0b2a6481cd533aba20f2c2781b8b75931128c170e9ece3
+created: '2026-03-23T10:39:54.119616'
+date: '2026-03-23T10:39:54.119622'
 key: IG-TIFLOW-CORE-200
-modified: '2026-03-17T11:33:06.682503'
+modified: '2026-03-23T10:39:54.119620'
 release_status: NEW
-source: input/pagecontent/op-create-req-fd.md
+source: input/pagecontent/query-api-task-req-fdv.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
+  eRp_FdV:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation
-  den Parameter workflowType (Rezepttyp) aus dem HTTP-Body des POST-Requests entnehmen,
-  als Attribut Task.extension:flowType des zu erstellenden Tasks verwenden und bei
-  Fehlen bzw. Nicht-Konformität des Parameters den Request als unzulässig abweisen,
-  damit auf Basis dieser Parameter ausschließlich gültige Workflows gestartet werden
-  können und dem Versicherten bei Einsicht des Tasks der Weg in entweder eine Apotheke
-  oder ein Sanitätshaus oder eine andere zuständige Einrichtung gewiesen werden kann.
-title: E-Rezept-Fachdienst - Task erzeugen - Parametrierung Task für Workflow-Typ
+text: "Das E-Rezept-FdV KANN im Anwendungsfall \"E-Rezepte abrufen\" zum Herunterladen\
+  \ eines E-Rezepts als Vertreter die HTTP-Operation GET /Task/&lt;id&gt; mit \n \
+  \   <ul>\n        <li>ACCESS_TOKEN im http-Header</li>\n        <li>Task-ID in URL\
+  \ &lt;id&gt; </li>\n        <li>AccessCode im http-Header </li>\n    </ul>\n   \
+  \ ausführen."
+title: 'E-Rezept-FdV: E-Rezepte abrufen - E-Rezept mit AccessCode herunterladen'
 version: 0

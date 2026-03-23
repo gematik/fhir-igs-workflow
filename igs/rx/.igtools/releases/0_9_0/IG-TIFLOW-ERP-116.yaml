@@ -1,18 +1,29 @@
 actor:
 - PS_E-Rezept_abgebend
-conformance: SHOULD
-content_hash: 9be69223c2130aa05c60080a9a7a8002a411b1edb00dd4edd5ad7380f5a5c968
-created: '2026-03-17T11:33:13.283016'
-date: '2026-03-17T11:33:13.283018'
+- PS_E-Rezept_verordnend
+- eRp_FD
+- eRp_FdV
+conformance: SHALL
+content_hash: 18d6a02be2e301cd4acbe6f762f3a84f2c526dca4fc0186fa72a5ed5cd446d63
+created: '2026-03-23T10:39:55.304105'
+date: '2026-03-23T10:39:55.304110'
 key: IG-TIFLOW-ERP-116
-modified: '2026-03-17T11:33:13.283017'
+modified: '2026-03-23T10:39:55.304109'
 release_status: NEW
-source: input/pagecontent/menu-fachlichkeit-ux-abgebend.md
+source: input/pagecontent/index.md
 status: ACTIVE
 test_procedures:
   PS_E-Rezept_abgebend:
   - Herstellererklärung
-text: Das PS der abgebenden LEI SOLL beim Abrufen eines E-Rezeptes die Belieferungsfrist
-  und Einlösefrist eines E-Rezeptes anzeigen.
-title: 'PS abgebende LEI: UX - Fristen eines Rezeptes - Anzeigen'
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+  eRp_FD:
+  - Herstellererklärung
+  eRp_FdV:
+  - Herstellererklärung
+text: Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation
+  Guides "E-Rezept für Arzneimittel" alle Anforderungen und FHIR-Artefakte umsetzen,
+  die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core],
+  die in diesem IG referenziert werden.
+title: 'E-Rezept: Umsetzung des Moduls ''E-Rezept für Arzneimittel'''
 version: 0

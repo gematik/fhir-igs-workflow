@@ -1,21 +1,19 @@
 actor:
-- eRp_FD
+- PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: 308ff376f8782ebeba425d78a84264b27425f733a5e587ecced06c1df0a655d3
-created: '2026-03-17T11:33:06.677090'
-date: '2026-03-17T11:33:06.677092'
+content_hash: 359f6cb32765135dfcd2ab4145da0714b6f630f3c42b45c0dd1fbdaa79f342ca
+created: '2026-03-23T10:39:54.054077'
+date: '2026-03-23T10:39:54.054082'
 key: IG-TIFLOW-CORE-172
-modified: '2026-03-17T11:33:06.677091'
+modified: '2026-03-23T10:39:54.054081'
 release_status: NEW
-source: input/pagecontent/op-activate-req-fd.md
+source: input/pagecontent/op-abort-req-avs.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS für die Überprüfung der ANR/ZANR eine Möglichkeit
-  der Konfiguration vorsehen und bei der Durchführung einer Vergleichsoperation je
-  nach Konfiguration bei Auffälligkeit die Operation mit einer Warnung fortführen
-  oder mit einer Fehlermeldung abbrechen.
-title: E-Rezept-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration
-  bei Auffälligkeiten
+  PS_E-Rezept_abgebend:
+  - Konformitätsbestätigung
+text: Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezept durch Abgebenden
+  löschen" für das zu löschende E-Rezept nach erfolgreichem Aufruf der Operation "Ein
+  E-Rezept löschen" die Daten zum E-Rezept-Token und das Geheimnis im PS löschen.
+title: 'PS abgebende LEI: E-Rezept löschen - E-Rezept-Token löschen'
 version: 0

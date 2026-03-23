@@ -1,22 +1,22 @@
 actor:
 - PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: d66c461de6d00de77a7a0fa1d418ce4f7608b4c6702849dae6c3254f9051f54e
-created: '2026-03-18T14:52:25.334361'
-date: '2026-03-18T14:52:25.334363'
+content_hash: 6307f4735b339d6f8307830797bf04048e40c38258535f9b5ba4449c2fc3611b
+created: '2026-03-23T10:39:55.319964'
+date: '2026-03-23T10:39:55.319967'
 key: IG-TIFLOW-ERP-210
-modified: '2026-03-18T14:52:25.334362'
+modified: '2026-03-23T10:39:55.319966'
 release_status: NEW
-source: input/pagecontent/query-api-task-req-avs.md
+source: input/pagecontent/menu-technische-umsetzung-dispensierinformationen.md
 status: ACTIVE
 test_procedures:
   PS_E-Rezept_abgebend:
-  - Herstellererklärung
-text: "Das PS der abgebenden LEI MUSS im Anwendungsfall \"E-Rezepte von Versicherten\
-  \ abrufen\" die HTTP-Operation GET /Task mit \n    <ul>\n    <li>ACCESS_TOKEN im\
-  \ Authorization-Header</li>\n    <li>base64- und URL-codierter Prüfungsnachweis\
-  \ in URL-Parameter pnw</li>\n    <li>Versicherten-ID in URL-Parameter kvnr</li>\n\
-  \    <li>Base64URLSafe-kodierter Hashwert hcv in URL-Parameter hcv</li>\n    </ul>\n\
-  \    ausführen."
-title: 'PS abgebende LEI: E-Rezepte von Versicherten abrufen (VSDM) - E-Rezepte abrufen'
+  - Produkttest
+text: Das PS der abgebenden LEI MUSS beim Erstellen von Dispensierinformationen mit
+  Flowtype 160, 166, 169, 200 oder 209, wenn mehrere Teilabgaben oder Stückelungen
+  enthalten sind, eine Profilversion zur Erstellung der Parameters Ressource nutzen,
+  die zum Zeitpunkt des neuesten Abgabedatums (MedicationDispense.whenHandedOver)
+  gültig ist.
+title: 'PS abgebende LEI: Dispensierinformationen – Flowtype 160/166/169/200/209 –
+  Profilversion bei mehreren MedicationDispenses'
 version: 0

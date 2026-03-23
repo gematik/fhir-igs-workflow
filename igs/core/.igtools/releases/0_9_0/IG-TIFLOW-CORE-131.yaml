@@ -1,20 +1,22 @@
 actor:
-- PS_E-Rezept_abgebend
+- eRp_FD
 conformance: SHALL
-content_hash: 91a840cf21c3de10951f2de051392478363d762279580378a69a58d42d91a192
-created: '2026-03-17T11:33:06.667578'
-date: '2026-03-17T11:33:06.667581'
+content_hash: 217203f66d5f554c11026d4194d7bed9b478caf2529d7817203d1f6fa865513e
+created: '2026-03-23T10:39:54.000392'
+date: '2026-03-23T10:39:54.000395'
 key: IG-TIFLOW-CORE-131
-modified: '2026-03-17T11:33:06.667580'
+modified: '2026-03-23T10:39:54.000394'
 release_status: NEW
-source: input/pagecontent/query-api-communication-req-avs.md
+source: input/pagecontent/query-api-medicationdispense-req-fd.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_abgebend:
-  - Herstellererklärung
-text: "Das PS der abgebenden LEI MUSS im Anwendungsfall \"Nachricht an Versicherten\
-  \ versenden\" die HTTP-Operation POST /Communication mit\n  <ul>\n    <li>ACCESS_TOKEN\
-  \ im Authorization-Header</li>\n    <li>Communication Ressource im HTTP-Request-Body</li>\n\
-  \  </ul>\n  ausführen."
-title: 'PS abgebende LEI: Nachricht versenden - Nachricht auf Fachdienst einstellen'
+  eRp_FD:
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt\
+  \ /MedicationDispense sicherstellen, dass ausschließlich Nutzer in der Rolle \n\
+  \  <ul>\n    <li>oid_versicherter</li>\n  </ul>\n  die Operation am E-Rezept-Fachdienst\
+  \ aufrufen dürfen und die Rolle \"professionOID\" des Aufrufers im ACCESS_TOKEN\
+  \ im HTTP-RequestHeader \"Authorization\" feststellen, damit Dispensierinformationen\
+  \ nicht durch Unberechtigte ausgelesen werden können."
+title: E-Rezept-Fachdienst - MedicationDispense abrufen - Rollenprüfung
 version: 0

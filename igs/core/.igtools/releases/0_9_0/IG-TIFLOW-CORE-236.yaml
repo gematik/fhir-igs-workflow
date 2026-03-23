@@ -1,21 +1,20 @@
 actor:
-- eRp_FD
-conformance: SHALL
-content_hash: 8edce298d37228e1f02e140a0545325180e80601423535c0a42226efd290636a
-created: '2026-03-17T11:33:06.693256'
-date: '2026-03-17T11:33:06.693258'
+- PS_E-Rezept_abgebend
+conformance: SHALL NOT
+content_hash: 4b641199de19e72d961e50ac5dd5ee9f846280d59518054c7a75922566af969c
+created: '2026-03-23T10:39:54.144040'
+date: '2026-03-23T10:39:54.144043'
 key: IG-TIFLOW-CORE-236
-modified: '2026-03-17T11:33:06.693257'
+modified: '2026-03-23T10:39:54.144042'
 release_status: NEW
-source: input/pagecontent/query-api-pushers-req-fd.md
+source: input/pagecontent/datamatrix-code-client.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produktgutachten
-text: "Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation POST /pushers/set die\
-  \ Rolle \"professionOID\" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"\
-  Authorization\" feststellen und sicherstellen, dass ausschließlich Versicherte in\
-  \ der Rolle \n  <ul>\n    <li>oid_versicherter</li>\n  </ul>\n  die Operation aufrufen,\
-  \ damit die Operation nicht durch unberechtigte Dritte ausgeführt wird."
-title: E-Rezept-Fachdienst - Push Notifications - App-Registrierungen - Rollenprüfung
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: Das PS der abgebenden LEI DARF die E-Rezept-Token von Teilverordnungen einer
+  Mehrfachverordnung, deren Einlösefrist noch nicht begonnen hat, NICHT automatisch
+  speichern.
+title: 'PS abgebende LEI: 2D-Code scannen - Mehrfachverordnung - Teilverordnungen
+  nicht speichern'
 version: 0

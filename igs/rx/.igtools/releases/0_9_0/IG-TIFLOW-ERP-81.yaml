@@ -1,22 +1,22 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 0626b36cbe51c397ed23c4b706930cbb4b22eaed0b480edd7d05bf388be236a7
-created: '2026-03-17T11:33:13.275761'
-date: '2026-03-17T11:33:13.275763'
+content_hash: 4bf8ffa304ec6ee2d77f7ccf7b1bee2364730ce430dac0be1a0adb458391fb05
+created: '2026-03-23T10:39:55.293643'
+date: '2026-03-23T10:39:55.293645'
 key: IG-TIFLOW-ERP-81
-modified: '2026-03-17T11:33:13.275762'
+modified: '2026-03-23T10:39:55.293644'
 release_status: NEW
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
-  über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
-  wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
-  = true) gekennzeichnet und der Flowtype ungleich 160, 169, 200 oder 209 ist, weil
-  Mehrfachverordnungen nur für die Verordnungen von apothekenpflichtigen Arzneimittel
-  (kein BtM, kein T-Rezept) zulässig sind.
-title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - zulässige Flowtype
+text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task des Flowtype Task.extension:flowType
+  = 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen,
+  ob Coverage.type.coding.code mit dem Wert "PKV" belegt ist und im Fehlerfall die
+  Operation mit Http-Fehlercode 400 abbrechen, um sicherzustellen, dass diese Workflows
+  nur für E-Rezepte für PKV-Versicherte genutzt werden.
+title: E-Rezept-Fachdienst - Task aktivieren - Flowtype 200/209 - Prüfung Coverage
+  Type
 version: 0

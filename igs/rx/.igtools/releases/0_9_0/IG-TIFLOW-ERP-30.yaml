@@ -1,22 +1,19 @@
 actor:
-- eRp_FD
+- eRp_FdV
 conformance: SHALL
-content_hash: edb034be0ade35592c405637fa4849eecef8505a772ed8f3aac80465c3dbeb2b
-created: '2026-03-17T11:33:13.257490'
-date: '2026-03-17T11:33:13.257494'
+content_hash: 513ab968204ca00745b0bda06aec9ca461d4133c6e3d2162101d127465e14cd2
+created: '2026-03-23T10:39:55.279160'
+date: '2026-03-23T10:39:55.279162'
 key: IG-TIFLOW-ERP-30
-modified: '2026-03-17T11:33:13.257493'
+modified: '2026-03-23T10:39:55.279161'
 release_status: NEW
-source: input/pagecontent/op-dispense-req-fd.md
+source: input/pagecontent/query-api-communication-req-fdv.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
+  eRp_FdV:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen
-  mittels POST /Task/&lt;id&gt;/$dispense sicherstellen, dass alle vorhandenen MedicationDispenses
-  und ihre referenzierten Medications gelöscht werden, wenn bereits bestehende MedicationDispense(s)
-  zum E-Rezept vorhanden sind, sodass nach Abschluss der Operation nur die neu übermittelten
-  MedicationDispenses gespeichert sind.
-title: E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Überschreiben
-  vorheriger MedicationDispenses
+text: Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept einer Apotheke zuweisen" im
+  Rahmen der Belieferung eines Arzneimittels für den payload_contentstring einen JSON
+  Datensatz mit communicationType = "order" erstellen.
+title: 'E-Rezept-FdV: E-Rezept zuweisen - Zuweisen - Payload'
 version: 0

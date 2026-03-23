@@ -1,22 +1,27 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 47407c22a412eac450c17bed5f77ea84117a0a93958a968f44d794b2b9217a61
-created: '2026-03-17T11:33:06.660659'
-date: '2026-03-17T11:33:06.660662'
+content_hash: 4caa44199fc23c5ea4caea9a94338172b7b24c114116f518d1f336deeef10e12
+created: '2026-03-23T10:39:53.883178'
+date: '2026-03-23T10:39:53.883187'
 key: IG-TIFLOW-CORE-97
-modified: '2026-03-17T11:33:06.660661'
+modified: '2026-03-23T10:39:53.883184'
 release_status: NEW
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
-  /Task/&lt;id&gt; ausschließlich solchen Clients die AccessCode Information (Task.identifier
-  mit system="https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode" ) in
-  den Task-Ressourcen zurückgeben, welche anhand der mitgeteilten, gültigen Produktidentifikation
-  als hierfür zulässige Clients erkannt werden.
-title: E-Rezept-Fachdienst - Task abrufen - Keine Einlöseinformationen in unbekannten
-  Clients
+text: "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit\
+  \ den URL-Parameter pnw=\"...\" durch eine abgebende LEI, falls der passende Status\
+  \ AcceptPN3VSDMxx = true, das Ergebnis im VSDM Prüfungsnachweis gleich 3 ist und\
+  \ URL-Parameter kvnr=\"...\" übermittelt wurde, die Tasks nach \n    <ul>\n    \
+  \    <li>Task.status = \"ready\", </li>\n        <li>Task.for = KVNR aus dem URL-Parameter,</li>\n\
+  \        <li>Task.ExpiryDate nicht vor dem aktuellen Datum liegt</li>\n        <li>und Task.extension:flowType\
+  \ = 160 oder 166</li>\n    </ul>\n    filtern und in einem Bundle der gefundenen\
+  \ Tasks (ohne den signierte Anhang QES) zurückgeben, damit eine Apotheke alle zu\
+  \ einem Versicherten gehörenden E-Rezepte mit dem Status \"ready\" abrufen kann.\
+  \ Der E-Rezept-Fachdienst MUSS für den Response den Returncode 202 verwenden."
+title: E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - AcceptPN3 true
+  - Filter Status, KVNR und Workflowtype
 version: 0

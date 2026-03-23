@@ -1,22 +1,21 @@
 actor:
-- CS_E-Rezept_KTR
-- PS_E-Rezept_abgebend
+- eRp_FD
 conformance: SHALL
-content_hash: 7d4c05faa9754eedcce53dadc7fcf03292f24235f5ade0c51aa100eeee7b247b
-created: '2026-03-17T11:33:06.702260'
-date: '2026-03-17T11:33:06.702262'
+content_hash: cbf28720c3b03c224c24bb4b86bb7b37c10bb63175fd75d7c11bc1418b974619
+created: '2026-03-23T10:39:54.164197'
+date: '2026-03-23T10:39:54.164200'
 key: IG-TIFLOW-CORE-270
-modified: '2026-03-17T11:33:06.702261'
+modified: '2026-03-23T10:39:54.164199'
 release_status: NEW
-source: input/pagecontent/query-api-subscription-req-avs.md
+source: input/pagecontent/query-api-pushers-req-fd.md
 status: ACTIVE
 test_procedures:
-  CS_E-Rezept_KTR:
-  - Herstellererklärung
-  PS_E-Rezept_abgebend:
-  - Herstellererklärung
-text: Das PS der abgebenden LEI MUSS im Anwendungsfall "Subscription für neue Communication"
-  zum Registrieren im E-Rezept-Fachdienst die HTTP-Operation POST /v1/Subscription
-  mit ACCESS_TOKEN im Authorization-Header ausführen.
-title: 'PS abgebende LEI: Subscription für neue Communication - Subscription registrieren'
+  eRp_FD:
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation GET /pushers die Rolle\
+  \ \"professionOID\" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\"\
+  \ feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle \n\
+  \  <ul>\n    <li>oid_versicherter</li>\n  </ul>\n  die Operation aufrufen, damit\
+  \ die Operation nicht durch unberechtigte Dritte ausgeführt wird."
+title: E-Rezept-Fachdienst - Push Notifications - App-Registrierungen abrufen - Rollenprüfung
 version: 0

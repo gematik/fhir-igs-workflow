@@ -1,21 +1,22 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 03974dd427dcbd94f48c30c48ab58d779f79f80708db974d88d45da2b7a70205
-created: '2026-03-17T11:33:06.704731'
-date: '2026-03-17T11:33:06.704734'
+content_hash: 76e20b40f796886467623331aa26315a85b7f4003398b27183ab4c9bc7423e8b
+created: '2026-03-23T10:39:54.168025'
+date: '2026-03-23T10:39:54.168027'
 key: IG-TIFLOW-CORE-281
-modified: '2026-03-17T11:33:06.704733'
+modified: '2026-03-23T10:39:54.168026'
 release_status: NEW
-source: input/pagecontent/query-api-communication-req-fd.md
+source: input/pagecontent/fhir-validate.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Abrufen von Nachrichten über die http-Operation
-  GET auf den Endpunkt /Communication bzw. beim Abruf einer einzelnen Nachricht über
-  /Communication/&lt;id&gt; den Wert des Attributs Communication.received = &lt;aktuelle
-  Systemzeit&gt setzen, wenn dieser Wert zum Zeitpunkt des Abrufs der Nachrichten
-  NULL ist, damit Nutzer eine Filtermöglicheit auf "neue Nachrichten" haben.
-title: E-Rezept-Fachdienst - Nachrichten abrufen - als abgerufen markieren
+text: Der E-Rezept-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen,
+  ob angegebene Referenzen nach [FHIR Spezifikation Auflösen von Referenzen in Bundles]
+  ermittelt werden können und bei Auffälligkeiten mit dem HTTP-Fehlercode 400 abbrechen
+  und die Fehlermeldung "Referenz einer Ressource konnte nicht aufgelöst werden."
+  in Form eines OperationOutcome ausliefern.
+title: E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Auflösbarkeit von
+  Referenzen
 version: 0

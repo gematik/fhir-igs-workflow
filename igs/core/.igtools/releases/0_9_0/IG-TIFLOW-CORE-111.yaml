@@ -1,22 +1,22 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 3b16360f8d9f3bc6686be6022b2815f27e7e79fe5b15966096ba396a1a122531
-created: '2026-03-17T11:33:06.663196'
-date: '2026-03-17T11:33:06.663200'
+content_hash: d56ead607b2fed7f0d52e891b889602c3cb74fb990e177af6edb927fee31e307
+created: '2026-03-23T10:39:53.904780'
+date: '2026-03-23T10:39:53.904797'
 key: IG-TIFLOW-CORE-111
-modified: '2026-03-17T11:33:06.663199'
+modified: '2026-03-23T10:39:53.904794'
 release_status: NEW
-source: input/pagecontent/ttl.md
+source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Produktgutachten
-text: "Der E-Rezept-Fachdienst MUSS ein ChargeItem innerhalb eines Monats nach Ablauf\
-  \ von 10 Jahren nach dem Erstellen der Ressource automatisch löschen und das Löschen\
-  \ in einem AuditEvent für den Versicherten nachvollziehbar protokollieren.<br>\n\
-  \tDer E-Rezept-Fachdienst MUSS bei jedem Löschen eines ChargeItems alle referenzierten\
-  \ Bundles (E-Rezept-Bundle, Quittungs-Bundle, PKV-Abgabedatensatz) ebenfalls löschen,\
-  \ damit die Informationen rund um ein gelöschtes ChargeItem ebenfalls entfernt werden."
-title: E-Rezept-Fachdienst - Löschfrist ChargeItem
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
+  /Task/&lt;id&gt; durch einen Versicherten die einzelne Task-Ressource um das referenzierte,
+  serverseitig signierte E-Rezept-Bundle aus Task.input mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType
+  = 2 als search.include im Ergebnis-Bundle an den Aufrufer zurückgeben, damit der
+  Versicherte eine vollständige Einsicht in den Task und den signierten Verordnungsdatensatz
+  für eigene Dokumentationszwecke erhält.
+title: E-Rezept-Fachdienst - Task abrufen - Versicherter - Rückgabe Task inkl. Bundles
 version: 0

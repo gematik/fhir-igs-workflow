@@ -1,23 +1,31 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 3ee0db505b65a72409ffbb84674068474006e2a50614120cce1f7f73e571552e
-created: '2026-03-17T11:33:06.661945'
-date: '2026-03-17T11:33:06.661948'
+content_hash: 226e5eaa867d698abda157814c370bcc1d4e21306528644eb0623791fd759a89
+created: '2026-03-23T10:39:53.892658'
+date: '2026-03-23T10:39:53.892672'
 key: IG-TIFLOW-CORE-106
-modified: '2026-03-17T11:33:06.661947'
+modified: '2026-03-23T10:39:53.892669'
 release_status: NEW
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete
-  über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten,
-  den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header
-  des HTTP-Requests identifizieren, diese gegen die im gespeicherten Datensatz in
-  Task.for.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei
-  Ungleichheit den Aufruf mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich
-  der begünstigte Versicherte als Berechtigter einen Task ändert.
-title: E-Rezept-Fachdienst -Task markieren -Versicherter - Prüfung KVNR
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS das Signatur-Zertifikat des PoPP-Service für die\
+  \ Signatur des PoPP-Token gemäß [gemSpec_PKI#TUC_PKI_018] mit folgenden Parametern\
+  \ auf Gültigkeit prüfen:\n    <table>\n    <tr>\n    <th>Parameter</th>\n    <th></th>\n\
+  \    </tr>\n    <tr>\n    <td>Zertifikat</td>\n    <td>Signaturzertifikat des PoPP-Service</td>\n\
+  \    </tr>\n    <tr>\n    <td>PolicyList</td>\n    <td>oid_zd_sig</td>\n    </tr>\n\
+  \    <tr>\n    <td>intendedKeyUsage</td>\n    <td>nonRepudiation</td>\n    </tr>\n\
+  \    <tr>\n    <td>intendedExtendedKeyUsage</td>\n    <td>(leer)</td>\n    </tr>\n\
+  \    <tr>\n    <td>OCSP-Graceperiod</td>\n    <td>60 Minuten</td>\n    </tr>\n \
+  \   <tr>\n    <td>Offline-Modus</td>\n    <td>nein</td>\n    </tr>\n    <tr>\n \
+  \   <td>Prüfmodus</td>\n    <td>OCSP</td>\n    </tr>\n    </table>\n    <div><figcaption><strong>Tabelle:\
+  \ </strong>TAB_eRPFD_031 Parameter Prüfung Signaturzertifikat PoPP-Service</figcaption></div>\n\
+  \n    Das Signaturzertifikat muss gemäß dem TUC als befunden werden und im Fehlerfall\
+  \ das Signaturzertifikat nicht zur Signaturprüfung der PoPP-Token verwenden, damit\
+  \ sichergestellt wird dass, ausschließlich PoPP-Token von einem vertrauenswürdigen\
+  \ PoPP-Service akzeptiert werden."
+title: E-Rezept-Fachdienst - Prüfung PoPP-Token - Prüfung Signaturzertifikat PoPP-Service
 version: 0

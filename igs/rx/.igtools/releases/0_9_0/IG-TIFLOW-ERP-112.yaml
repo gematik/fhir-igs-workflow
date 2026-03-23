@@ -1,22 +1,23 @@
 actor:
-- PS_E-Rezept_abgebend
-conformance: SHOULD
-content_hash: f3fb91f35ef66c4f38fc8f95701f5f77321552850a5ab413f7a038bc2b489510
-created: '2026-03-17T11:33:13.282500'
-date: '2026-03-17T11:33:13.282502'
+- PS_E-Rezept_verordnend
+conformance: SHALL
+content_hash: 7657adb0f6d1a8d1c79fc54dec162d746e09f44893079e467d39d2ee39f1ec49
+created: '2026-03-23T10:39:55.303147'
+date: '2026-03-23T10:39:55.303149'
 key: IG-TIFLOW-ERP-112
-modified: '2026-03-17T11:33:13.282501'
+modified: '2026-03-23T10:39:55.303148'
 release_status: NEW
-source: input/pagecontent/menu-fachlichkeit-ux-abgebend.md
+source: input/pagecontent/menu-technische-umsetzung-kim.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_abgebend:
-  - Herstellererklärung
-text: Das PS der abgebenden LEI SOLL es dem Nutzer ermöglichen, eine vorkonfigurierte
-  oder manuell erstellte Nachricht zu erstellen, die den Kunden darüber informiert,
-  dass das Medikament nicht beliefert werden kann. Die Nachricht soll beinhalten,
-  dass das E-Rezept freigegeben wurde und der Versicherte es einer anderen Apotheke
-  zuweisen kann.
-title: 'PS abgebende LEI: UX - Zuweisung  - Nachricht bei Nicht-Verfügbarkeit eines
-  Medikaments'
+  PS_E-Rezept_verordnend:
+  - Produkttest
+text: 'Das PS der verordnenden LEI MUSS bei Versand einer Zuweisungs-Message eine
+  Message mit "Content-Type: multipart/mixed;..." und der folgenden Struktur verwenden.
+  Tabelle # : Struktur der Message mit "Content-Type: multipart/mixed;..." Teil Inhalt
+  optional Freitext Freitextmessage für den Empfänger default: "direkte Zuweisung
+  E-Rezept" nein Einlöseinformation E-Rezept-Token als Link gemäß gemSpec_DM_eRp#A_19554
+  Nach 45 Zeichen MUSS ein Steuerzeichen "CRLF" eingefügt werden nein Therapieplan
+  Therapieplan als Anhang, base64 codiert ja'
+title: E-Rezept - Struktur Zuweisungs-Message
 version: 0

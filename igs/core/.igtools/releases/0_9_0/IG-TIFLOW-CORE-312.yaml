@@ -1,23 +1,19 @@
 actor:
-- eRp_FD
+- PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: 7a55ad4d217e95cd1bfa6b62c28b751d16964c89e50b6b55729a33f9f4fb1892
-created: '2026-03-17T11:33:06.712625'
-date: '2026-03-17T11:33:06.712627'
+content_hash: 1a5d25349717de4329262b420b6c9cb25f09215440b3c96801a2ccba75bcfc64
+created: '2026-03-23T10:39:54.178507'
+date: '2026-03-23T10:39:54.178509'
 key: IG-TIFLOW-CORE-312
-modified: '2026-03-17T11:33:06.712626'
+modified: '2026-03-23T10:39:54.178508'
 release_status: NEW
-source: input/pagecontent/query-api-subscription-req-fd.md
+source: input/pagecontent/op-abort-req-pvs.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription
-  Ressource durch eine abgebende Leistungserbringerinstitution (Apotheke), diese anhand
-  der Telematik-ID aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests
-  identifizieren, diese gegen die in der Ressource im Element criteria Attribut receipient
-  hinterlegte Telematik-ID prüfen und bei Ungleichheit den Aufruf mit dem HTTP-Fehlercode
-  403 abweisen, damit ausschließlich die Apotheke für sich selbst eine Subscription
-  registrieren kann.
-title: E-Rezept-Fachdienst – Subscription registrieren – Prüfung Telematik-ID
+  PS_E-Rezept_verordnend:
+  - Konformitätsbestätigung
+text: Das PS der verordnenden LEI MUSS vom Nutzer eine Bestätigung einholen, dass
+  das ausgewählte E-Rezept gelöscht werden soll und die Möglichkeit geben, das Löschen
+  abzubrechen.
+title: 'PS verordnende LEI: E-Rezept löschen - Bestätigung'
 version: 0

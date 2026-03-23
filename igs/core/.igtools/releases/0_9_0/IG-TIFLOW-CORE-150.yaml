@@ -1,18 +1,22 @@
 actor:
-- PS_E-Rezept_abgebend
+- PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: 888d0f13cb80cca0946c603fc1538a8e39f97f4a5e0bcde1b7c8970b6cc7da49
-created: '2026-03-17T11:33:06.672670'
-date: '2026-03-17T11:33:06.672672'
+content_hash: a185591df29607ca45772f1dbd7a5e3237c05ba84784f183116958e70117d3d9
+created: '2026-03-23T10:39:54.031167'
+date: '2026-03-23T10:39:54.031171'
 key: IG-TIFLOW-CORE-150
-modified: '2026-03-17T11:33:06.672671'
+modified: '2026-03-23T10:39:54.031169'
 release_status: NEW
-source: input/pagecontent/op-abort-req-avs.md
+source: input/pagecontent/op-activate-req-pvs.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_abgebend:
-  - Konformitätsbestätigung
-text: Das PS der abgebenden LEI MUSS es dem Nutzer ermöglichen, ein E-Rezept zum Löschen
-  auf dem Fachdienst auszuwählen.
-title: 'PS abgebende LEI: E-Rezepte löschen - E-Rezept auswählen'
+  PS_E-Rezept_verordnend:
+  - Konformitätserklärung
+text: "Das PS der verordnenden LEI MUSS im Anwendungsfall \"E-Rezept durch Verordnenden\
+  \ einstellen\" für das E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$activate\
+  \ mit\n  <ul>\n    <li>ACCESS_TOKEN im Authorization-Header</li>\n    <li>Task-ID\
+  \ in URL &lt;id&gt; </li>\n    <li>AccessCode in X-AccessCode - Header oder URL-Parameter\
+  \ ?ac=</li>\n    <li>QES signiertes E-Rezept-Bundle im http-Body des Aufrufs als\
+  \ data</li>\n  </ul>\n  ausführen."
+title: 'PS verordnende LEI: E-Rezept einstellen - Task auf Fachdienst aktivieren'
 version: 0

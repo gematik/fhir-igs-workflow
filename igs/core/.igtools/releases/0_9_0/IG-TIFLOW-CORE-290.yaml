@@ -1,23 +1,20 @@
 actor:
-- eRp_FD
+- eRp_FdV
 conformance: SHALL
-content_hash: 4f948124fc1a6a419a2e50da7921b3c4345515d6738adfe641b7f8ba82471870
-created: '2026-03-17T11:33:06.706764'
-date: '2026-03-17T11:33:06.706766'
+content_hash: 5455b7dec625df5a2942992e854d413632cf53822eb90ac51689bd88f793c3fd
+created: '2026-03-23T10:39:54.173527'
+date: '2026-03-23T10:39:54.173530'
 key: IG-TIFLOW-CORE-290
-modified: '2026-03-17T11:33:06.706765'
+modified: '2026-03-23T10:39:54.173529'
 release_status: NEW
-source: input/pagecontent/query-api-communication-req-fd.md
+source: input/pagecontent/query-api-consent-req-fdv.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produktgutachten
-text: "Der E-Rezept-Fachdienst MUSS das Einstellen einer Nachricht über die http-Operation\
-  \ POST auf den Endpunkt /Communication mit dem http-Status-Code 400 abbrechen, wenn\n\
-  \    <ul>\n        <li>der Nachrichteninhalt Communication.payload größer als 10\
-  \ kByte ist oder</li>\n        <li>in von Versicherten eingestellten Nachrichten\
-  \ in Communication.payload eine externe URLs enthält oder</li>\n        <li>ein\
-  \ Attachment mit MimeType \"application/*\" enthält,</li>\n    </ul>\n    damit\
-  \ über den E-Rezept-Fachdienst kein Schadcode verteilt wird."
-title: E-Rezept-Fachdienst - Nachricht einstellen - Schadcodeprüfung
+  eRp_FdV:
+  - Produkttest
+text: "Das E-Rezept-FdV MUSS im Anwendungsfall \"Einwilligung erteilen\" zum Speichern\
+  \ der Information im E-Rezept-Fachdienst die HTTP-Operation POST /Consent mit:\n\
+  \    <ul>\n        <li>ACCESS_TOKEN im Authorization-Header</li>\n    </ul>\n  \
+  \  ausführen."
+title: 'E-Rezept-FdV: Einwilligung erteilen - Speicherrequest'
 version: 0

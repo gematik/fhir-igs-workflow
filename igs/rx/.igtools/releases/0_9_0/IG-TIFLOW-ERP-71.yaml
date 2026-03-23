@@ -1,22 +1,20 @@
 actor:
-- eRp_FD
+- PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: 4bf8ffa304ec6ee2d77f7ccf7b1bee2364730ce430dac0be1a0adb458391fb05
-created: '2026-03-17T11:33:13.271127'
-date: '2026-03-17T11:33:13.271140'
+content_hash: d1529c13f4f3b940efe125043e120823a92cb9a4fbccf4013be766b3db7be784
+created: '2026-03-23T10:39:55.291647'
+date: '2026-03-23T10:39:55.291649'
 key: IG-TIFLOW-ERP-71
-modified: '2026-03-17T11:33:13.271139'
+modified: '2026-03-23T10:39:55.291649'
 release_status: NEW
-source: input/pagecontent/op-activate-req-fd.md
+source: input/pagecontent/menu-technische-umsetzung-anwendungsfaelle.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task des Flowtype Task.extension:flowType
-  = 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen,
-  ob Coverage.type.coding.code mit dem Wert "PKV" belegt ist und im Fehlerfall die
-  Operation mit Http-Fehlercode 400 abbrechen, um sicherzustellen, dass diese Workflows
-  nur für E-Rezepte für PKV-Versicherte genutzt werden.
-title: E-Rezept-Fachdienst - Task aktivieren - Flowtype 200/209 - Prüfung Coverage
-  Type
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: "Das PS der verordnenden LEI MUSS für die Umsetzung der Verordnung von E-Rezepten\
+  \ für Arzneimittel die Anwendungsfälle\n\n    <ul>\n    <li>UC 2.1 - E-Rezepte erzeugen</li>\n\
+  \    <li>E-Rezept qualifiziert signieren</li>\n    <li>UC 2.3 - E-Rezept einstellen</li>\n\
+  \    <li>UC 2.5 - E-Rezept durch Verordnenden löschen</li>\n    </ul>\n\n    umsetzen."
+title: 'PS verordnende LEI: TIFlow-RX - verpflichtende Anwendungsfälle'
 version: 0

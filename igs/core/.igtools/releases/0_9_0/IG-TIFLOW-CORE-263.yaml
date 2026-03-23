@@ -1,20 +1,25 @@
 actor:
+- CS_E-Rezept_KTR
 - PS_E-Rezept_abgebend
+- PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: 1e54eb5edd83b0a4b3aa22f1acb16be01a02fa5f75a8c7bc5d9416f1eadccb8b
-created: '2026-03-17T11:33:06.699799'
-date: '2026-03-17T11:33:06.699801'
+content_hash: 990d8d53d131bc917d5d7aaa45f9dd17dc51ebd8fcee3d3fb2635fae97a42538
+created: '2026-03-23T10:39:54.160886'
+date: '2026-03-23T10:39:54.160889'
 key: IG-TIFLOW-CORE-263
-modified: '2026-03-17T11:33:06.699800'
+modified: '2026-03-23T10:39:54.160888'
 release_status: NEW
-source: input/pagecontent/op-close-req-avs.md
+source: input/pagecontent/fehlerbehandlung-client.md
 status: ACTIVE
 test_procedures:
+  CS_E-Rezept_KTR:
+  - Herstellererklärung
   PS_E-Rezept_abgebend:
   - Herstellererklärung
-text: Das PS der abgebenden LEI MUSS bei Stapelverarbeitung im Anwendungsfall "Quittung
-  abrufen" nach 40 Aufrufen jeweils 1000ms warten, bevor die Stapelverarbeitung fortgeführt
-  wird.
-title: 'PS abgebende LEI:  Quittung abrufen - Stapelverarbeitung - Wartezeit zwischen
-  Aufrufen'
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: Das Clientsystem des E-Rezept-Fachdienstes MUSS im Falle von Fehlern Fehlermeldungen
+  bereitstellen, die es den Mitarbeitern der Leistungserbringerinstitution ermöglichen,
+  die Ursache des Fehlers zu identifizieren und mögliche Gegenmaßnahmen zu ergreifen.
+title: 'CS: Verständliche Fehlermeldung'
 version: 0

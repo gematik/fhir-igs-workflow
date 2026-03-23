@@ -1,19 +1,21 @@
 actor:
-- PS_E-Rezept_verordnend
-conformance: SHOULD
-content_hash: cf19f943736673bbcada69685281684be7860caf5af9f367590ece70d7f7665c
-created: '2026-03-17T11:33:13.288961'
-date: '2026-03-17T11:33:13.288963'
+- PS_E-Rezept_abgebend
+conformance: SHALL NOT
+content_hash: 26a3c00eab4f0f310e7cf60e212a16003588b1a997c783a4b5d159b752ef8e41
+created: '2026-03-23T10:39:55.309311'
+date: '2026-03-23T10:39:55.309313'
 key: IG-TIFLOW-ERP-150
-modified: '2026-03-17T11:33:13.288962'
+modified: '2026-03-23T10:39:55.309312'
 release_status: NEW
-source: input/pagecontent/menu-fachlichkeit-ux-verordnend.md
+source: input/pagecontent/menu-fachlichkeit-ux-abgebend.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_verordnend:
+  PS_E-Rezept_abgebend:
   - Herstellererklärung
-text: Das PS der verordnenden LEI SOLL dem Nutzer nach Auswahl der Option zur Erstellung
-  einer Verordnung die Möglichkeit geben, nach dem gewünschte Präparat aus einer Datenbank
-  zu suchen und die zugehörigen Informationen in die Verordnung übernehmen.
-title: 'PS verordnende LEI: UX - Optimaler Klickpfad - Suche nach gewünschtem Präparat'
+text: Das PS der abgebenden LEI DARF NICHT im Falle der Nicht-Erreichbarkeit der zentralen
+  Dienste der TI das AVS derart blockieren, dass andere Arten der Einlösung, die unabhängig
+  von der Anwendung E-Rezept der Telematikinfrastruktur sind (z.B. Muster-16 Verordnungen),
+  nicht möglich sind.
+title: 'PS abgebende LEI: UX - Hinweis bei Nicht-Erreichbarkeit des E-Rezept-Fachdienstes
+  - Operabilität des AVS'
 version: 0

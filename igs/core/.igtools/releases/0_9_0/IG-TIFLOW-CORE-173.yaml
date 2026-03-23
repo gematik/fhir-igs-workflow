@@ -1,22 +1,24 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 88ec50aefce28992bfef55271e580ad5013e3519682dc8b7b7f13890a630015a
-created: '2026-03-17T11:33:06.677220'
-date: '2026-03-17T11:33:06.677223'
+content_hash: 7102d9543eb67b11e1595dcf64fdf6c227dd8b5203097d2af6199859eab0adcb
+created: '2026-03-23T10:39:54.061361'
+date: '2026-03-23T10:39:54.061367'
 key: IG-TIFLOW-CORE-173
-modified: '2026-03-17T11:33:06.677222'
+modified: '2026-03-23T10:39:54.061366'
 release_status: NEW
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Produkttest
-text: 'Der E-Rezept-Fachdienst MUSS für die Überprüfung der ANR/ZANR, wenn bei der
-  Prüfung eine Auffälligkeit auftritt und die Konfiguration Fehler aktiv ist, mit
-  dem Http-Fehlercode 400 abbrechen und die Fehlermeldung "Ungültige Arztnummer (LANR
-  oder ZANR): Die übergebene Arztnummer entspricht nicht den Prüfziffer-Validierungsregeln."
-  in Form einer OperationOutcome ausliefern.'
-title: E-Rezept-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration
-  Fehler
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks für ein E-Rezept mittels\
+  \ HTTP-POST/$activate-Operation auf den in der URL referenzierten /Task/&#60;id&#62;\
+  \ sicherstellen, dass ausschließlich verordnende Leistungserbringer in der Rolle\n\
+  \  <ul>\n    <li>oid_praxis_arzt</li>\n    <li>oid_zahnarztpraxis</li>\n    <li>oid_praxis_psychotherapeut</li>\n\
+  \    <li>oid_krankenhaus</li>\n    <li>oid_institution-vorsorge-reha</li> \n  </ul>\n\
+  \  die Operation am Fachdienst aufrufen dürfen und die Rolle \"professionOID\" des\
+  \ Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen,\
+  \ damit E-Rezepte nicht durch Unberechtigte eingestellt werden können."
+title: E-Rezept-Fachdienst - Task aktivieren - Rollenprüfung
 version: 0

@@ -1,23 +1,20 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: ff3d7f0738a897f8b0634e836055b9f53f5ee0995b560651ba58756f502b0acc
-created: '2026-03-17T11:33:06.661797'
-date: '2026-03-17T11:33:06.661799'
+content_hash: 0b47aa8017ee76a96eaaacfdc0e7b68c2f9c7c939dfea350e8b3f4b15a53c9f6
+created: '2026-03-23T10:39:53.890072'
+date: '2026-03-23T10:39:53.890080'
 key: IG-TIFLOW-CORE-105
-modified: '2026-03-17T11:33:06.661798'
+modified: '2026-03-23T10:39:53.890077'
 release_status: NEW
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Produktgutachten
-text: "Der E-Rezept-Fachdienst MUSS bei Aufruf der HTTP-PATCH-Operation auf den Endpunkt\
-  \ /Task/&lt;id&gt; sicherstellen, dass ausschließlich Versicherte in der Rolle:\
-  \ \n     <ul>\n        <li>oid_versicherter</li>\n     </ul>\n     , die Operation\
-  \ am E-Rezept-Fachdienst aufrufen dürfen und die Rolle professionOID des Aufrufers\
-  \ im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen, damit E-Rezepte\
-  \ nicht durch Unberechtigte markiert werden können."
-title: E-Rezept-Fachdienst - Task markieren - Versicherter - Rollenprüfung Versicherter
-  markiert Rezepte
+  - Herstellererklärung
+text: Der E-Rezept-Fachdienst MUSS stündlich die JWK-Set des PoPP-Service [RFC7517]
+  über dem im Entity Statement metadata.oauth_resource.signed_jwks_uri angegeben URL
+  abrufen und die öffentlichen Schlüssel zur Verifikation der PoPP-Token verwenden.
+title: E-Rezept-Fachdienst - Prüfung PoPP-Token - Aktualisierung des PoPP-Service
+  JWK-Sets
 version: 0

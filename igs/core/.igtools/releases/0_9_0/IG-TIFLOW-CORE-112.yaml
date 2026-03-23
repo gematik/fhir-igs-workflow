@@ -1,22 +1,21 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 5200eb8eca481819be9a6c34bd45bc047a2f41df81479d2ff86cb98114c497be
-created: '2026-03-17T11:33:06.663498'
-date: '2026-03-17T11:33:06.663500'
+content_hash: 3782ff4eec7e2a50a5eecfd48783497b891fdf5515a5c0bcec211974deee81a8
+created: '2026-03-23T10:39:53.905580'
+date: '2026-03-23T10:39:53.905586'
 key: IG-TIFLOW-CORE-112
-modified: '2026-03-17T11:33:06.663499'
+modified: '2026-03-23T10:39:53.905584'
 release_status: NEW
-source: input/pagecontent/ttl.md
+source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Produktgutachten
-text: "Der E-Rezept-Fachdienst MUSS eine gespeicherte Ressource Communication\n\t\
-  automatisch löschen:\n\t<ul>\n\t\t<li>ohne eine Referenz auf einen Task in Communication.basedOn\
-  \ nach 100 Tagen ab ihrem Sendedatum Communication.sent,</li>\n\t\t<li>mit einer\
-  \ Referenz auf einen Task in Communication.basedOn gemäss der Löschfrist beim Löschen\
-  \ des Tasks,</li>\n\t\t<li>mit einer Referenz auf einen ChargeItem in Communication.basedOn\
-  \ nach 100 Tagen ab ihrem Sendedatum Communication.sent.</li>\n\t</ul>"
-title: E-Rezept-Fachdienst - Löschfrist veraltete Nachrichten
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation GET /Task und GET /Task/&lt;id&gt;
+  durch einen Versicherten oid_versicherter ein optional vorhandenes Task.identifier:Secret
+  als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret aus dem zurückgegebenen
+  Task entfernen, sodass Versicherte nicht in Kenntnis des Secrets gelangen, welches
+  die Prozesshoheit des Apothekers darstellt.
+title: E-Rezept-Fachdienst - Task abrufen - Versicherter - Kein Secret
 version: 0

@@ -1,21 +1,21 @@
 actor:
-- PS_E-Rezept_abgebend
+- eRp_FD
 conformance: SHALL
-content_hash: 27e120aa2e4fa41282d544bcebbc65d76fe2cc9b75ff68df941f3f07115c38c3
-created: '2026-03-17T11:33:06.690557'
-date: '2026-03-17T11:33:06.690559'
+content_hash: 1371ac2a57bc5ba9e6e7f9eff428890b5e95a5672004137c85661df201c27e96
+created: '2026-03-23T10:39:54.130032'
+date: '2026-03-23T10:39:54.130036'
 key: IG-TIFLOW-CORE-224
-modified: '2026-03-17T11:33:06.690558'
+modified: '2026-03-23T10:39:54.130035'
 release_status: NEW
-source: input/pagecontent/op-reject-req-avs.md
+source: input/pagecontent/op-create-req-fd.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_abgebend:
-  - Herstellererklärung
-text: "Das PS der abgebenden LEI MUSS im Anwendungsfall \"E-Rezept durch Abgebenden\
-  \ zurückgeben\" für das zurückzugebende E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$reject\
-  \ mit \n  <ul>\n    <li>ACCESS_TOKEN im Authorization-Header</li>\n    <li>Task-ID\
-  \ in URL &lt;id&gt; </li>\n    <li>Geheimnis in URL-Parameter ?secret=</li>\n  </ul>\n\
-  \  ausführen."
-title: 'PS abgebende LEI: E-Rezept zurückgeben - Statusrequest'
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS die zulässige Anlage eines Tasks mittels HTTP-POST/$create-Operation
+  im Status Task.status = draft vollziehen und beim erfolgreichen Abschluss der Operation
+  die angelegte Ressource Task im HTTP-Body der HTTP-Response zurückgeben, damit die
+  verordnende Leistungserbringerinstitution die generierte Rezept-ID für die QES verwenden
+  kann.
+title: E-Rezept-Fachdienst - Task erzeugen - Status draft
 version: 0

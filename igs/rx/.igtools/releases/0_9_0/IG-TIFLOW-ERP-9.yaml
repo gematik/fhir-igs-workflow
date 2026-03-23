@@ -1,24 +1,22 @@
 actor:
-- eRp_FD
+- PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: 3fdc7fc5bb18b3acf646b733435607c46c2b0f667bf8f0dadb364e21199c6aa0
-created: '2026-03-17T11:33:13.253293'
-date: '2026-03-17T11:33:13.253296'
+content_hash: d66c461de6d00de77a7a0fa1d418ce4f7608b4c6702849dae6c3254f9051f54e
+created: '2026-03-23T10:39:55.275493'
+date: '2026-03-23T10:39:55.275496'
 key: IG-TIFLOW-ERP-9
-modified: '2026-03-17T11:33:13.253295'
+modified: '2026-03-23T10:39:55.275495'
 release_status: NEW
-source: input/pagecontent/op-close-req-fd.md
+source: input/pagecontent/query-api-task-req-avs.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produkttest
-text: 'Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks für ein E-Rezept mittels
-  HTTP-POST/$close-Operation auf den in der URL referenzierten /Task/&lt;id&gt; mit
-  Flowtype 160, 166, 169, 200, oder 209 sicherstellen, dass das in GEM_ERP_PR_PAR_CloseOperation_Input
-  enthaltene MedicationDispense-Objekt dem Profil GEM_ERP_PR_MedicationDispense entspricht.
-  Andernfalls ist die Operation mit einem Fehler abzubrechen, und im OperationOutcome
-  muss der Text "Unzulässige Abgabeinformationen: Für diesen Workflow sind nur Abgabeinformationen
-  für Arzneimittel zulässig." zurückgegeben werden.'
-title: E-Rezept-Fachdienst - Task schließen - Flowtype 160/166/169/200/209 - Profilprüfung
-  MedicationDispense
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: "Das PS der abgebenden LEI MUSS im Anwendungsfall \"E-Rezepte von Versicherten\
+  \ abrufen\" die HTTP-Operation GET /Task mit \n    <ul>\n    <li>ACCESS_TOKEN im\
+  \ Authorization-Header</li>\n    <li>base64- und URL-codierter Prüfungsnachweis\
+  \ in URL-Parameter pnw</li>\n    <li>Versicherten-ID in URL-Parameter kvnr</li>\n\
+  \    <li>Base64URLSafe-kodierter Hashwert hcv in URL-Parameter hcv</li>\n    </ul>\n\
+  \    ausführen."
+title: 'PS abgebende LEI: E-Rezepte von Versicherten abrufen (VSDM) - E-Rezepte abrufen'
 version: 0

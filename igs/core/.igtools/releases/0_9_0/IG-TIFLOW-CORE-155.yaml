@@ -1,24 +1,28 @@
 actor:
-- eRp_FD
+- Anb_NCPeH_FD
+- CS_E-Rezept_KTR
+- PS_E-Rezept_abgebend
+- PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: 7102d9543eb67b11e1595dcf64fdf6c227dd8b5203097d2af6199859eab0adcb
-created: '2026-03-17T11:33:06.673541'
-date: '2026-03-17T11:33:06.673543'
+content_hash: e53fee338e153be502ec392fbab0b3263a6193b4b11da49b018e682110a13be8
+created: '2026-03-23T10:39:54.033809'
+date: '2026-03-23T10:39:54.033813'
 key: IG-TIFLOW-CORE-155
-modified: '2026-03-17T11:33:06.673542'
+modified: '2026-03-23T10:39:54.033812'
 release_status: NEW
-source: input/pagecontent/op-activate-req-fd.md
+source: input/pagecontent/kommunikation-dienste-ti.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produktgutachten
-text: "Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks für ein E-Rezept mittels\
-  \ HTTP-POST/$activate-Operation auf den in der URL referenzierten /Task/&#60;id&#62;\
-  \ sicherstellen, dass ausschließlich verordnende Leistungserbringer in der Rolle\n\
-  \  <ul>\n    <li>oid_praxis_arzt</li>\n    <li>oid_zahnarztpraxis</li>\n    <li>oid_praxis_psychotherapeut</li>\n\
-  \    <li>oid_krankenhaus</li>\n    <li>oid_institution-vorsorge-reha</li> \n  </ul>\n\
-  \  die Operation am Fachdienst aufrufen dürfen und die Rolle \"professionOID\" des\
-  \ Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen,\
-  \ damit E-Rezepte nicht durch Unberechtigte eingestellt werden können."
-title: E-Rezept-Fachdienst - Task aktivieren - Rollenprüfung
+  Anb_NCPeH_FD:
+  - Produkttest
+  CS_E-Rezept_KTR:
+  - Herstellererklärung
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+  PS_E-Rezept_verordnend:
+  - Konformitätsbestätigung
+text: Das Clientsystem des E-Rezept-Fachdienstes MUSS für die Kommunikation mit dem
+  E-Rezept-Fachdienst die Endpunkte der Schnittstellen gemäß [gemSpec_FD_eRP#5.1 Servicelokalisierung]
+  nutzen.
+title: 'CS: Lokalisierung E-Rezept-Fachdienst'
 version: 0

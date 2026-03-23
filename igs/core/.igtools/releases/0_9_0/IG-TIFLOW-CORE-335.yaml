@@ -1,19 +1,22 @@
 actor:
-- eRp_FdV
+- eRp_FD
 conformance: SHALL
-content_hash: 35470165c194a4be57f6a51f9b572ee5b3626f56c1f8b97fadbf91d7035edda2
-created: '2026-03-17T11:33:06.721639'
-date: '2026-03-17T11:33:06.721642'
+content_hash: f0e99eff27a59a7914fac94ac54a543e385d5255cfc6cdf116655919b73fe1d7
+created: '2026-03-23T10:39:54.182912'
+date: '2026-03-23T10:39:54.182914'
 key: IG-TIFLOW-CORE-335
-modified: '2026-03-17T11:33:06.721641'
+modified: '2026-03-23T10:39:54.182913'
 release_status: NEW
-source: input/pagecontent/query-api-pushers-req-fdv.md
+source: input/pagecontent/query-api-communication-req-fd.md
 status: ACTIVE
 test_procedures:
-  eRp_FdV:
+  eRp_FD:
   - Produkttest
-text: Das E-Rezept-FdV MUSS, wenn es den Anwendungsfall "Push Notifications" umsetzt,
-  für die Registrierung und Verwaltung der FdV-Instanzen am E-Rezept-Fachdienst die
-  Operationen gemäß [OpenAPI_FD] verwenden.
-title: 'E-Rezept-FdV: Push Notifications - Instanz registrieren - OpenAPI'
+text: 'Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht des Profils "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq"
+  oder "https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReq"
+  zur Versicherter-zu-Apotheken-Kommunikation über die http-Operation POST auf den
+  Endpunkt /Communication prüfen, ob für die Telematik-ID des Empfängers Subscriptions
+  registriert sind und für Registrierungen über den Subscription Service eine Notification
+  (ping : subscription-id) senden.'
+title: E-Rezept-Fachdienst - Nachricht einstellen - Notification Apotheke
 version: 0

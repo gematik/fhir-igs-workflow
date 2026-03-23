@@ -1,21 +1,24 @@
 actor:
-- eRp_FD
+- eRp_FdV
 conformance: SHALL
-content_hash: 80c9dfb78032133feeea9a849515aaa8d11f1a9d5fefe7d6a0e17f0e36c4be87
-created: '2026-03-17T11:33:13.271381'
-date: '2026-03-17T11:33:13.271387'
+content_hash: 2507c7659c22bd6b59a2509681266ba6c839513809419d05a39379f6a7bf0d77
+created: '2026-03-23T10:39:55.291891'
+date: '2026-03-23T10:39:55.291894'
 key: IG-TIFLOW-ERP-72
-modified: '2026-03-17T11:33:13.271386'
+modified: '2026-03-23T10:39:55.291893'
 release_status: NEW
-source: input/pagecontent/op-activate-req-fd.md
+source: input/pagecontent/menu-technische-umsetzung-anwendungsfaelle.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
+  eRp_FdV:
   - Herstellererklärung
-text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
-  über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 und einem Hinweis
-  auf den Ausschluss von Betäubungsmittel ("BTM nicht zulässig" im OperationOutcome)
-  abbrechen, wenn der übergebene QES-Datensatz als Betäubungsmittel-Verordnung (Bundle.Medication.extension:KBV_EX_ERP_Medication_Category:code
-  gleich "01") gekennzeichnet ist.
-title: E-Rezept-Fachdienst - Task aktivieren - Ausschluss Betäubungsmittel
+text: "Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von E-Rezepten für Arzneimittel\
+  \ die Anwendungsfälle\n    <ul>\n        <li>UC 3.1 – E-Rezepte durch Versicherten\
+  \ abrufen</li>\n        <li>UC 3.6 – E-Rezept durch Vertreter abrufen</li>\n   \
+  \     <li>UC 3.2 – E-Rezept durch Versicherten löschen</li>\n        <li>UC 3.3\
+  \ – Nachricht durch Versicherten übermitteln</li>\n        <li>UC 3.4 – Nachricht\
+  \ durch Versicherten empfangen</li>\n        <li>UC 3.8 – Nachricht durch Versicherten\
+  \ löschen</li>\n        <li>UC 3.5 - Protokolldaten abrufen</li>\n    </ul>\n  \
+  \  umsetzen."
+title: 'E-Rezept-FdV: TIFlow-RX - verpflichtende Anwendungsfälle'
 version: 0

@@ -1,21 +1,24 @@
 actor:
-- eRp_FD
-conformance: SHALL
-content_hash: 8bdf59ac69d457507e2278132fb9416bdb685e8cbab0db1df54513359488c75e
-created: '2026-03-17T11:33:06.695198'
-date: '2026-03-17T11:33:06.695201'
+- CS_E-Rezept_KTR
+- PS_E-Rezept_abgebend
+- PS_E-Rezept_verordnend
+conformance: SHALL NOT
+content_hash: 7e9b392a395787b11bb310697455482dbacbca47b1954dfe42d2437b230daec2
+created: '2026-03-23T10:39:54.147122'
+date: '2026-03-23T10:39:54.147125'
 key: IG-TIFLOW-CORE-241
-modified: '2026-03-17T11:33:06.695200'
+modified: '2026-03-23T10:39:54.147123'
 release_status: NEW
-source: input/pagecontent/fhir-validate.md
+source: input/pagecontent/health-check.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produkttest
-text: Die Produkttypen der Anwendung E-Rezept und die Clientsysteme des E-Rezept-Fachdienstes
-  MÜSSEN bei der Erstellung jeder FHIR-Ressource sicherstellen, dass im Element meta.profile
-  genau ein Eintrag enthalten ist, wenn im Profil das Element meta.profile verpflichtend
-  anzugeben ist; bei Abweichung ist die Ressource als fehlerhaft zu behandeln und
-  darf nicht übermittelt werden.
-title: FHIR-Ressourcen – Eindeutige Angabe meta.profile
+  CS_E-Rezept_KTR:
+  - Herstellererklärung
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: Das Clientsystem des E-Rezept-Fachdienstes DARF NICHT einen Health-Check durchführen,
+  welcher die erwartete Rückgabe eines Fehlercodes vorsieht.
+title: 'CS: Health-Check - keine Health-Checks mit Fehlerrückgabe'
 version: 0

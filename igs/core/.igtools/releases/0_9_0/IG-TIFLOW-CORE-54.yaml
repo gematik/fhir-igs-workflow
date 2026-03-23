@@ -1,25 +1,20 @@
 actor:
-- eRp_FD
+- CS_E-Rezept_KTR
 conformance: SHALL
-content_hash: abea9489bea8b1d89f059a8df62d19340bfa20dc2819517a2ec42483546825a2
-created: '2026-03-17T11:33:06.653176'
-date: '2026-03-17T11:33:06.653179'
+content_hash: 95a07a31adc6d2514c7727e1212794f757ed640ea5edf7498cc6df919e617f08
+created: '2026-03-23T10:39:53.808385'
+date: '2026-03-23T10:39:53.808388'
 key: IG-TIFLOW-CORE-54
-modified: '2026-03-17T11:33:06.653178'
+modified: '2026-03-23T10:39:53.808386'
 release_status: NEW
-source: input/pagecontent/op-close-req-fd.md
+source: input/pagecontent/query-api-communication-req-ktr.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produkttest
-text: "Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close\
-  \ das im HTTP-Body des Requests enthaltene Parameters-Objekt gegen das Profil https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PAR_CloseOperation_Input\
-  \ prüfen, insbesondere bei der darin enthaltenen MedicationDispense:\n    <ul>\n\
-  \        <li>die Korrektheit der Rezept-ID https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId\
-  \ als MedicationDispense.identifier,</li>\n        <li>die KVNR des Versicherten\
-  \ im referenzierten Task (Task.for) gegen KVNR in MedicationDispense.subject:identifier\
-  \ und</li>\n        <li>ob die Telematik-ID der Apotheke gemäß ACCESS_TOKEN mit\
-  \ dem Wert in MedicationDispense.performer.actor:identifier übereinstimmt</li>\n\
-  \    </ul>\n    und im Fehlerfall die Operation mit Http-Fehlercode 400 abbrechen."
-title: E-Rezept-Fachdienst - Task schließen - Schemaprüfung MedicationDispense
+  CS_E-Rezept_KTR:
+  - Herstellererklärung
+text: "Das Clientsystem Kostenträger MUSS im Anwendungsfall \"Nachricht durch Abgebenden\
+  \ löschen\" für die zu löschende Nachricht die HTTP-Operation DELETE /Communication/&lt;id&gt;\
+  \ mit\n  <ul>\n    <li>ACCESS_TOKEN im Authorization-Header</li>\n    <li>Communication-ID\
+  \ in URL &lt;id&gt; </li>\n  </ul>\n  ausführen."
+title: 'CS Kostenträger: Nachricht löschen - Löschrequest'
 version: 0

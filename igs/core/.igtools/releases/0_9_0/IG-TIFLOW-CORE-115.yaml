@@ -1,22 +1,23 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 217203f66d5f554c11026d4194d7bed9b478caf2529d7817203d1f6fa865513e
-created: '2026-03-17T11:33:06.664208'
-date: '2026-03-17T11:33:06.664211'
+content_hash: d84b6fc9b90c39cfe8068e2155803d4283eedf08fae0f2a3cb8a39cfd2793390
+created: '2026-03-23T10:39:53.915080'
+date: '2026-03-23T10:39:53.915099'
 key: IG-TIFLOW-CORE-115
-modified: '2026-03-17T11:33:06.664210'
+modified: '2026-03-23T10:39:53.915095'
 release_status: NEW
-source: input/pagecontent/query-api-medicationdispense-req-fd.md
+source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produktgutachten
-text: "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt\
-  \ /MedicationDispense sicherstellen, dass ausschließlich Nutzer in der Rolle \n\
-  \  <ul>\n    <li>oid_versicherter</li>\n  </ul>\n  die Operation am E-Rezept-Fachdienst\
-  \ aufrufen dürfen und die Rolle \"professionOID\" des Aufrufers im ACCESS_TOKEN\
-  \ im HTTP-RequestHeader \"Authorization\" feststellen, damit Dispensierinformationen\
-  \ nicht durch Unberechtigte ausgelesen werden können."
-title: E-Rezept-Fachdienst - MedicationDispense abrufen - Rollenprüfung
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
+  Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende Institution den im URL-Parameter
+  "?ac=..." übertragenen AccessCode gegen den im referenzierten Task gespeicherten AccessCode Task.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode
+  prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem
+  HTTP-Fehlercode 403 abbrechen, damit Zugriffe auf diesen Datensatz nur durch Berechtigte
+  in Kenntnis des AccessCode erfolgen.
+title: E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen
+  - Prüfung AccessCode
 version: 0

@@ -1,20 +1,22 @@
 actor:
-- PS_E-Rezept_abgebend
-conformance: MAY
-content_hash: ae6e92eb30365f6cbbd54c3708f17d1c3b0747c29deb25f5df341c32eeddff6e
-created: '2026-03-17T11:33:06.699077'
-date: '2026-03-17T11:33:06.699080'
+- PS_E-Rezept_verordnend
+conformance: SHALL
+content_hash: 9666e0e299bdf156ea25b9af4df0b49f2db608934b75ab2cbb83714d77f147d0
+created: '2026-03-23T10:39:54.158949'
+date: '2026-03-23T10:39:54.158952'
 key: IG-TIFLOW-CORE-260
-modified: '2026-03-17T11:33:06.699079'
+modified: '2026-03-23T10:39:54.158951'
 release_status: NEW
-source: input/pagecontent/op-close-req-avs.md
+source: input/pagecontent/op-create-req-pvs.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_abgebend:
-  - Herstellererklärung
-text: "Das PS der abgebenden LEI KANN im Anwendungsfall \"Quittung abrufen\" zum Prüfen\
-  \ der Quittung des E-Rezepts die Operation POST //Konnektorservice mit\n    <ul>\
-  \ \n        <li>Header \"SOAPAction: \\\"http://ws.gematik.de/conn/SignatureService/v7.4#VerifyDocument\\\
-  \"\"</li>\n        <li>PKCS#7-Datei in SignatureObject</li>\n    </ul>\n    ausführen."
-title: 'PS abgebende LEI:  Quittung abrufen - Quittungssignatur prüfen'
+  PS_E-Rezept_verordnend:
+  - Konformitätserklärung
+text: "Das PS der verordnenden LEI MUSS im Anwendungsfall \"E-Rezept durch Verordnenden erstellen\"\
+  \ für das E-Rezept die Signaturoperation des Konnektors mit \n  <ul>\n  <li>der\
+  \ Referenz RFC-5652 für CMS-Signatur (CAdES)</li>\n  <li>Signaturtype für eine enveloping\
+  \ Signature</li>\n  <li>dem base64-codierten E-Rezept-Bundle</li>\n  <li>eingebetteter\
+  \ OCSP-Antwort (IncludeRevocationInfo = true)</li>\n  <li>Angabe des Mimetypes \"\
+  text/plain; charset=utf-8\"</li>\n  </ul>\n  ausführen."
+title: 'PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle QES signieren'
 version: 0

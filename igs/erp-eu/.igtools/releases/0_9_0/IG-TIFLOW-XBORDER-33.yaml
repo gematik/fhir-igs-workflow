@@ -1,20 +1,20 @@
 actor:
-- eRp_FdV
+- eRp_FD
 conformance: SHALL
-content_hash: d08f2c726a9fe87b4271904d08b1047c11b2eebc58c4fab3753abfd541db9612
-created: '2026-03-17T11:33:10.738389'
-date: '2026-03-17T11:33:10.738392'
+content_hash: 8321615c1c515c93ba187c6dc9c6b3918060981633d9cd11b57ff1482d0fbb92
+created: '2026-03-23T10:39:55.084536'
+date: '2026-03-23T10:39:55.084539'
 key: IG-TIFLOW-XBORDER-33
-modified: '2026-03-17T11:33:10.738391'
+modified: '2026-03-23T10:39:55.084538'
 release_status: NEW
-source: input/pagecontent/op-revoke-eu-access-permission-req-fdv.md
+source: input/pagecontent/query-api-consent-req-fd.md
 status: ACTIVE
 test_procedures:
-  eRp_FdV:
+  eRp_FD:
   - Produkttest
-text: "Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung löschen\" zum\
-  \ Löschen der Information auf dem E-Rezept-Fachdienst die HTTP-Operation DELETE\
-  \ /$revoke-eu-access-permission mit:\n    <ul>\n        <li>ACCESS_TOKEN im Authorization-Header</li>\n\
-  \    </ul>\n    ausführen."
-title: 'E-Rezept-FdV: Zugriffsberechtigung löschen - Abfragerequest'
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt
+  `/Consent` mit `?category=EUDISPCONS` alle dem Versicherten zugeordneten Zugriffsberechtigungen
+  anhand der KVNR des Versicherten im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests
+  identifizieren und löschen.
+title: E-Rezept-Fachdienst - Consent löschen - EUDISPCONS - Löschen Zugriffsberechtigung
 version: 0

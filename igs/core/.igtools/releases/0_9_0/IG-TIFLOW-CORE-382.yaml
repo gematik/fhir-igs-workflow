@@ -1,25 +1,18 @@
 actor:
-- CS_E-Rezept_KTR
-- PS_E-Rezept_abgebend
-- PS_E-Rezept_verordnend
-conformance: SHALL
-content_hash: 540198bbc5fdef53389f8757c334dd7fc4febd23a4178a37b1645035b2acde52
-created: '2026-03-18T14:56:22.584824'
-date: '2026-03-18T14:56:22.584827'
+- eRp_FD
+conformance: SHALL NOT
+content_hash: 05edf4b7e568c68079213ce8d212b7abe20076cbc1f46a57dfca1ed0ddf253ca
+created: '2026-03-23T10:39:54.197667'
+date: '2026-03-23T10:39:54.197670'
 key: IG-TIFLOW-CORE-382
-modified: '2026-03-18T14:56:22.584826'
+modified: '2026-03-23T10:39:54.197669'
 release_status: NEW
-source: input/pagecontent/fehlerbehandlung-client.md
+source: input/pagecontent/menu-technische-umsetzung-epa-ms.md
 status: ACTIVE
 test_procedures:
-  CS_E-Rezept_KTR:
+  eRp_FD:
   - Herstellererklärung
-  PS_E-Rezept_abgebend:
-  - Herstellererklärung
-  PS_E-Rezept_verordnend:
-  - Herstellererklärung
-text: Das Clientsystem des E-Rezept-Fachdienstes MUSS im Falle von Fehlern bei einer
-  Anfrage am E-Rezept-Fachdienst einen Retry und/oder Client-Failover nur gemäß der
-  Fehlerbehandlung in [E-Rezept API Dokumentation] durchführen.
-title: 'CS: Fehlerbehandlung - Retry von Anfragen an E-Rezept-Fachdienst'
+text: Der E-Rezept-Fachdienst DARF NICHT Lokalisierungsinformationen zu ePA-Aktensystemen
+  verwenden, welche länger als 24h lokal durch den E-Rezept-Fachdienst gecacht wurden.
+title: E-Rezept-Fachdienst - ePA - Aktualisierung Cache ePA-Aktensysteme
 version: 0

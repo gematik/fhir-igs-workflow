@@ -1,22 +1,27 @@
 actor:
-- eRp_FD
+- Anb_NCPeH_FD
+- CS_E-Rezept_KTR
+- PS_E-Rezept_abgebend
+- PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: eeaf9737cf719d501dafcb7b562b54afc94f27fcbf0c8396d816cf41facb9e80
-created: '2026-03-17T11:33:06.673845'
-date: '2026-03-17T11:33:06.673847'
+content_hash: 78486a7a06547d2fa943f5b248c10be121b142e57d424a926ea7505249573ab8
+created: '2026-03-23T10:39:54.035045'
+date: '2026-03-23T10:39:54.035049'
 key: IG-TIFLOW-CORE-157
-modified: '2026-03-17T11:33:06.673846'
+modified: '2026-03-23T10:39:54.035048'
 release_status: NEW
-source: input/pagecontent/op-activate-req-fd.md
+source: input/pagecontent/kommunikation-dienste-ti.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
+  Anb_NCPeH_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
-  über /Task/&#60;id&#62;/$activate den im Aufrufparameter übergebenen FHIR-Operationsparameter
-  des QES-Datensatzes als PKCS#7-Datei einer Enveloping CAdES-Signatur entgegennehmen
-  und verarbeiten und bei Fehlen oder ungültiger ASN.1 Datenstruktur die Weiterverarbeitung
-  im Fachdienst mit dem http-Status-Code 400 beantworten, damit kein Schadcode und
-  keine "fachfremden" Daten in den E-Rezept-Fachdienst hochgeladen werden.
-title: E-Rezept-Fachdienst - Task aktivieren - Schemavalidierung
+  CS_E-Rezept_KTR:
+  - Herstellererklärung
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+  PS_E-Rezept_verordnend:
+  - Konformitätsbestätigung
+text: Das Clientsystem des E-Rezept-Fachdienstes MUSS für die Anwendungsfälle der
+  Anwendung E-Rezept mit den Diensten der TI ausschließlich über TLS kommunizieren.
+title: 'CS: Kommunikation über TLS-Verbindung'
 version: 0

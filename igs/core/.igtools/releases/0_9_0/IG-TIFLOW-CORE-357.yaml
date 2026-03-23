@@ -1,19 +1,29 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 4b43448c164847113417e6228fc0765c0f636cd829fe3faed7abb76ba61d411e
-created: '2026-03-17T11:33:06.726224'
-date: '2026-03-17T11:33:06.726227'
+content_hash: 37afbaa34d1447055b0a3d1fdb252585f5ee17a68d3952f318f4b3b711276d6f
+created: '2026-03-23T10:39:54.187461'
+date: '2026-03-23T10:39:54.187463'
 key: IG-TIFLOW-CORE-357
-modified: '2026-03-17T11:33:06.726226'
+modified: '2026-03-23T10:39:54.187462'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-epa-ms.md
+source: input/pagecontent/menu-schnittstellen-generelle-prinzipien.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS zur Bereitstellung von Verordnungsdaten an den
-  ePA Medication Service die Operation [base]/$provide-prescription-erp des Medication
-  Service aufrufen.
-title: E-Rezept-Fachdienst - ePA - Übermittlung - Bereitstellung von Verordnungsdaten
+text: "Der E-Rezept-Fachdienst MUSS E-Rezept-IDs erzeugen und verwalten, welche der\
+  \ Syntax \"aaa.bbb.bbb.bbb.bbb.cc\" und der folgenden Semantik genügen \n     \n\
+  \     <table>\n  <thead>\n    <tr>\n      <th></th>\n      <th>Bedeutung</th>\n\
+  \      <th>Datentyp</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>aaa</td>\n\
+  \      <td>E-Rezept-Typ</td>\n      <td>alphanummerisch, mit der Belegung gemäß\
+  \ \"flowType\" in <a href=\"https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType\"\
+  >https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType</a></td>\n    </tr>\n\
+  \    <tr>\n      <td>bbb.bbb.bbb.bbb</td>\n      <td>fortlaufende Rezeptnummer</td>\n\
+  \      <td>nummerisch, 12-stellig</td>\n    </tr>\n    <tr>\n      <td>cc</td>\n\
+  \      <td>Prüfnummer Verfahren gemäß [ISO 7064]</td>\n      <td>nummerisch</td>\n\
+  \    </tr>\n  </tbody>\n</table>\n     \n     damit Tippfehler in der manuellen\
+  \ Erfassung erkannt werden können und die E-Rezept-ID über 11 Jahre eine eineindeutige\
+  \ Zuordnung zwischen allen Datenobjekten im E-Rezept-Workflow erlaubt."
+title: Aufbau E-Rezept-ID
 version: 0

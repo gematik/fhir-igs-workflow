@@ -4,11 +4,11 @@ actor:
 - PS_E-Rezept_abgebend
 - PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: 9f67390e20a1c696d4b28e118094da31deb65f0fe9c0593160a89543caf9c97a
-created: '2026-03-17T11:33:06.642080'
-date: '2026-03-17T11:33:06.642082'
+content_hash: ffc0f4ba505be17051eaa9ce7e95f7a24d4648bdbd98dc89b6cbb482c609762a
+created: '2026-03-23T10:39:53.792760'
+date: '2026-03-23T10:39:53.792763'
 key: IG-TIFLOW-CORE-17
-modified: '2026-03-17T11:33:06.642081'
+modified: '2026-03-23T10:39:53.792762'
 release_status: NEW
 source: input/pagecontent/authentifizierung-client.md
 status: ACTIVE
@@ -21,7 +21,9 @@ test_procedures:
   - Herstellererklärung
   PS_E-Rezept_verordnend:
   - Herstellererklärung
-text: Das Clientsystem MUSS vor dem Abrufen von ID_Token und ACCESS_Token einen zufälligen
-  256bit-AES-Schlüssel ("Token Key") erzeugen.
-title: 'CS: Erzeugung des Token-Key'
+text: Das Clientsystem MUSS den vom Authorization-Endpunkt als Antwort auf die signierte
+  Challenge gesendeten AUTHORIZATION_CODE verarbeiten. Das Clientsystem MUSS das AUTHORIZATION_CODE
+  ablehnen, wenn dieser außerhalb der mit dem Authorization-Endpunkt etablierten TLS-Verbindung
+  übertragen wird.
+title: 'CS: Annahme des AUTHORIZATION_CODE'
 version: 0

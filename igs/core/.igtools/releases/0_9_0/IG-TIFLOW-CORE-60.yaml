@@ -1,35 +1,23 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 9b2380db624fd881a05b50b2c8ee85dcf21b8e31310c11b4f9d2985a19e2e02d
-created: '2026-03-17T11:33:06.654226'
-date: '2026-03-17T11:33:06.654228'
+content_hash: 242dfb2e323d222aea0d7e7794123d8206ee8e50089019bd4e7d1cfa42e4c3e7
+created: '2026-03-23T10:39:53.814217'
+date: '2026-03-23T10:39:53.814229'
 key: IG-TIFLOW-CORE-60
-modified: '2026-03-17T11:33:06.654227'
+modified: '2026-03-23T10:39:53.814226'
 release_status: NEW
 source: input/pagecontent/op-close-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: "Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels /Task/&lt;id&gt;/$close\
-  \ ein Quittungsbundle gemäß des FHIR-Profils https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle\
-  \ mit folgenden Informationen erstellen:\n    <ul>\n        <li>Telematik-ID der\
-  \ aufrufenden Apotheke als Beneficiary in die GEM_ERP_PR_Composition</li>\n    \
-  \    <li>Zeitstempel des Statuswechsel des Tasks \"in-progress\" in event.period.start</li>\n\
-  \        <li>aktueller Zeitstempel in event.period.end</li>\n        <li>Identifier\
-  \ PrescriptionID des Task als identifier des Quittungs-Bundle</li>\n        <li>Device-Ressource\
-  \ mit Fachdienstinformationen als Autor der Signatur</li>\n        <li>Base64Binary-Ressource\
-  \ mit Binary.data = &lt;base64-codierter Hashwert aus der QES Signatur des dem Task\
-  \ zugrunde liegenden Verordnungsdatensatzes&gt; und contentTpe = \"application/octet-stream\"\
-  </li>\n    </ul>\n    und dieses Quittungs-Bundle mit der Signaturidentität des\
-  \ Fachdienstes ID.FD.OSIG gemäß [RFC5652] mit Profil CAdES-BES ([CAdES]) im Enveloping\
-  \ signieren.\n    In die Signatur wird die letzte OCSP-Antwort der regelmäßigen\
-  \ Statusprüfung des Signaturzertifikats C.FD.OSIG eingebettet.\n    Das Signatur-Ergebnis\
-  \ wird als dss:Base64Signature-Objekt in Bundle.signature eingebettet und dieses\
-  \ Quittungs-Bundle mit Referenz in Task.output mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType\
-  \ = 3 gespeichert sowie als Response des http-Requests an den Aufrufer zurückgeben,\
-  \ damit die abgebende LEI einen Nachweis über den ordnungsgemäßen Abschluss des\
-  \ E-Rezept-Workflows als Quittung erhält."
-title: E-Rezept-Fachdienst - Task schließen - Quittung erstellen
+text: Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation
+  über /Task/&lt;id&gt;/$close das im URL-Parameter "?secret=..." übertragene Secret
+  gegen das im referenzierten Task gespeicherte Secret Task.identifier:Secret als
+  https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret prüfen und bei Ungleichheit
+  oder Fehlen des URL-Parameters die Operation mit dem HTTP-Fehlercode 403 abbrechen,
+  damit der Zugriff auf diesen Datensatz nur durch den Berechtigten in Kenntnis des
+  Secrets erfolgt.
+title: E-Rezept-Fachdienst - Task schließen - Prüfung Secret
 version: 0

@@ -1,22 +1,18 @@
 actor:
-- eRp_FD
+- PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: 609999edce9063f57e61132a88d82507b7b8c2df95bf6fe7de718616795c8020
-created: '2026-03-17T11:33:06.709781'
-date: '2026-03-17T11:33:06.709784'
+content_hash: 0a1608e8d9a261e7ac7772fe27a3c13e1f894a5cfb793b882f1960824386d24a
+created: '2026-03-23T10:39:54.175313'
+date: '2026-03-23T10:39:54.175315'
 key: IG-TIFLOW-CORE-299
-modified: '2026-03-17T11:33:06.709783'
+modified: '2026-03-23T10:39:54.175314'
 release_status: NEW
-source: input/pagecontent/query-api-communication-req-fd.md
+source: input/pagecontent/op-close-req-avs.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf /Communication/&lt;id&gt;
-  die über &lt;id&gt; identifizierte Communication-Ressource anhand der KVNR bzw.
-  Telematik-ID des aufrufenden Nutzers im ACCESS_TOKEN im "Authorization"-Header des
-  HTTP-Requests über das Absender-Attribut Communication.sender lokalisieren und löschen,
-  damit Nutzer irrtümlich versendete oder nicht mehr gewünschte Nachrichten vom E-Rezept-Fachdienst
-  entfernen können.
-title: E-Rezept-Fachdienst - Nachricht löschen - Absender-ID
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: Das PS der abgebenden LEI MUSS bei Stapelverarbeitung im Anwendungsfall "Quittung
+  abrufen" den Startzeitpunkt zufällig in einem Zeitraum mehreren Stunden setzen.
+title: 'PS abgebende LEI:  Quittung abrufen - Stapelverarbeitung - Startzeitpunkt'
 version: 0

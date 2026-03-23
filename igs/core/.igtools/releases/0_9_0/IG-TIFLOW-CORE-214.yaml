@@ -1,25 +1,20 @@
 actor:
-- CS_E-Rezept_KTR
-- PS_E-Rezept_abgebend
-- PS_E-Rezept_verordnend
-conformance: SHALL NOT
-content_hash: bc05aec2637b6a8ee2926823f7150662df004fb0e7f0ddbfae0a78ad702a0078
-created: '2026-03-17T11:33:06.688529'
-date: '2026-03-17T11:33:06.688532'
+- eRp_FD
+conformance: SHALL
+content_hash: 2e6ad9db04a3bccfd1848588149f2dbdf83a1eb1f99815fa82e55440800d6fc3
+created: '2026-03-23T10:39:54.125386'
+date: '2026-03-23T10:39:54.125388'
 key: IG-TIFLOW-CORE-214
-modified: '2026-03-17T11:33:06.688531'
+modified: '2026-03-23T10:39:54.125387'
 release_status: NEW
-source: input/pagecontent/health-check.md
+source: input/pagecontent/query-api-consent-req-fd.md
 status: ACTIVE
 test_procedures:
-  CS_E-Rezept_KTR:
-  - Herstellererklärung
-  PS_E-Rezept_abgebend:
-  - Herstellererklärung
-  PS_E-Rezept_verordnend:
-  - Herstellererklärung
-text: Das Clientsystem des E-Rezept-Fachdienstes DARF NICHT einen erweiterten Health-Check
-  durchführen, welcher andere als die jeweils vorgegebenen Endpunkte des E-Rezept-Fachdienstes
-  nutzt.
-title: 'CS: erweiterter Health-Check - keine anderen Endpunkte zulässig'
+  eRp_FD:
+  - Produktgutachten
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt
+  /Consent die Ressource löschen, bei der Consent.patient.identifier der KVNR aus
+  dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests sowie Consent.category.coding.code
+  dem in ?category übermittelten Wert entspricht.
+title: E-Rezept-Fachdienst - Consent löschen - Ressource löschen
 version: 0

@@ -1,20 +1,22 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: d4abdfda1e0c87e4fabbdf41a91ff0a556373a12d458c06d098572454ffb5b0c
-created: '2026-03-17T11:33:13.260053'
-date: '2026-03-17T11:33:13.260055'
+content_hash: c5410c094978cd897d1e0990b58ef059044ebe475158bff7acb72e6e5edea3ef
+created: '2026-03-23T10:39:55.281461'
+date: '2026-03-23T10:39:55.281463'
 key: IG-TIFLOW-ERP-43
-modified: '2026-03-17T11:33:13.260054'
+modified: '2026-03-23T10:39:55.281462'
 release_status: NEW
-source: input/pagecontent/op-abort-req-fd.md
+source: input/pagecontent/op-dispense-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts mittels POST /Task/&lt;id&gt;/$abort
-  durch eine verordnende oder abgebende Leistungserbringerinstitution die Daten für
-  die Löschinformation des Verordnungsdatensatzes in den ePA Medication Service bereitstellen.
-title: E-Rezept-Fachdienst - E-Rezept löschen - Löschinformation ePA Medication Service
-  bereitstellen (Verordnungsdatensatz) - Leistungserbringerinstitution
+text: Der E-Rezept-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen
+  mittels POST /Task/&lt;id&gt;/$dispense , wenn die übermittelten Dispensierinformationen
+  sich von den ggf. bereits zuvor zum Task gespeicherten Dispensierinformationen unterscheiden
+  und die Operation erfolgreich abgeschlossen werden kann, die Daten der Dispensierinformationen
+  mit Status = "in Progress" für die Übermittlung in den ePA Medication Service bereitstellen.
+title: E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Daten Medikationsliste
+  bereitstellen (Dispensierinformationen)
 version: 0

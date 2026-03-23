@@ -1,20 +1,22 @@
 actor:
-- eRp_FD
+- eRp_FdV
 conformance: SHALL
-content_hash: c745127c63cacfe0fa242aa2a23666e4a8cb6f0edc03306e7fe8a7a1fca9357f
-created: '2026-03-17T11:33:06.694795'
-date: '2026-03-17T11:33:06.694799'
+content_hash: 9d389a8f96225426924b60d771fd49b50e202a12c8484cca6d4f180876ff075b
+created: '2026-03-23T10:39:54.144344'
+date: '2026-03-23T10:39:54.144352'
 key: IG-TIFLOW-CORE-238
-modified: '2026-03-17T11:33:06.694798'
+modified: '2026-03-23T10:39:54.144350'
 release_status: NEW
-source: input/pagecontent/fhir-validate.md
+source: input/pagecontent/datamatrix-code-client.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Herstellererklärung
-text: Der E-Rezept-Fachdienst MUSS sicherstellen, dass alle Datums- und Zeitangaben
-  ohne explizite Zeitzoneninformation als deutsche Zeit (CET/CEST) entsprechend der
-  historischen oder aktuellen Regelung interpretiert werden.
-title: E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Datumsangabe ohne
-  Zeitzoneninformation
+  eRp_FdV:
+  - Produkttest
+text: 'Das E-Rezept-FdV MUSS zum Erstellen eines Token für die Zugriffsinformationen
+  für eine Abrechnungsinformation die ID auf einen ChargeItem zusammen mit dem AccessCode
+  zum Ändern aus den lokal verfügbaren Informationen einer Abrechnungsinformation
+  als URL in der Form: 2D-Code-Daten = "ChargeItem/" + ChargeItem.id  + "?ac=" + AccessCode
+  zusammenstellen, damit diese Zeichenkette als Referenz in einer E-Rezept-Nachricht
+  oder für die Generierung eines 2D-Codes verwendet werden kann.'
+title: Datenstruktur Zugriffsinformationen für Abrechnungsinformation
 version: 0

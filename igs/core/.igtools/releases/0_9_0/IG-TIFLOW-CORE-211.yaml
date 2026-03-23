@@ -1,24 +1,19 @@
 actor:
-- CS_E-Rezept_KTR
-- PS_E-Rezept_abgebend
-- PS_E-Rezept_verordnend
-conformance: SHALL NOT
-content_hash: 7e9b392a395787b11bb310697455482dbacbca47b1954dfe42d2437b230daec2
-created: '2026-03-17T11:33:06.687901'
-date: '2026-03-17T11:33:06.687904'
+- eRp_FD
+conformance: SHALL
+content_hash: 6f76efe75e096c5ba45866dcec840462cd5e26985c0a3901c86b3a88fda2bb55
+created: '2026-03-23T10:39:54.124531'
+date: '2026-03-23T10:39:54.124533'
 key: IG-TIFLOW-CORE-211
-modified: '2026-03-17T11:33:06.687903'
+modified: '2026-03-23T10:39:54.124532'
 release_status: NEW
-source: input/pagecontent/health-check.md
+source: input/pagecontent/query-api-consent-req-fd.md
 status: ACTIVE
 test_procedures:
-  CS_E-Rezept_KTR:
-  - Herstellererklärung
-  PS_E-Rezept_abgebend:
-  - Herstellererklärung
-  PS_E-Rezept_verordnend:
-  - Herstellererklärung
-text: Das Clientsystem des E-Rezept-Fachdienstes DARF NICHT einen Health-Check durchführen,
-  welcher die erwartete Rückgabe eines Fehlercodes vorsieht.
-title: 'CS: Health-Check - keine Health-Checks mit Fehlerrückgabe'
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt
+  /Consent ohne Angabe ?category mit dem HTTP-Fehlercode 405 ablehnen, um das Löschen
+  mehrerer Ressourcen über einen Request zu verhindern.
+title: E-Rezept-Fachdienst - Consent löschen - alles Löschen verbieten
 version: 0

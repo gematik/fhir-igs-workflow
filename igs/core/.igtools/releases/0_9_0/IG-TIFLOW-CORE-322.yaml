@@ -1,30 +1,23 @@
 actor:
-- CS_E-Rezept_KTR
-- NCPeH_ePeDA
-- PS_E-Rezept_abgebend
-- PS_E-Rezept_verordnend
-- eRp_FdV
+- eRp_FD
 conformance: SHALL
-content_hash: f015fc1dcbdfafb15a6bcba0304a91c8748f82c9e8cbb81e688c3f8146156bfa
-created: '2026-03-17T11:33:06.715318'
-date: '2026-03-17T11:33:06.715321'
+content_hash: ee6fe7b7e0d371b463379ed6bf844b28bc663ccfad3d4f7b92cb60c2e3794fdb
+created: '2026-03-23T10:39:54.180742'
+date: '2026-03-23T10:39:54.180745'
 key: IG-TIFLOW-CORE-322
-modified: '2026-03-17T11:33:06.715320'
+modified: '2026-03-23T10:39:54.180744'
 release_status: NEW
-source: input/pagecontent/menu-schnittstellen-generelle-prinzipien.md
+source: input/pagecontent/query-api-communication-req-fd.md
 status: ACTIVE
 test_procedures:
-  CS_E-Rezept_KTR:
-  - Konformitätsbestätigung
-  NCPeH_ePeDA:
+  eRp_FD:
   - Produkttest
-  PS_E-Rezept_abgebend:
-  - Konformitätsbestätigung
-  PS_E-Rezept_verordnend:
-  - Konformitätsbestätigung
-  eRp_FdV:
-  - Produkttest
-text: Clientsysteme des E-Rezept-Fachdienstes MÜSSEN für die Kommunikation mit dem
-  E-Rezept-Fachdienst ausschließlich das Character Encoding UTF-8 verwenden.
-title: Character Encoding für E-Rezept-Fachdienst
+text: 'Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation
+  POST auf den Endpunkt /Communication, falls die Ressource dem GEM_ERP_PR_Communication_Reply-Profil
+  entspricht, den Inhalt der contentString-Eigenschaft auf valides JSON sowie gegen
+  die Struktur in "Tabelle: Nachricht als Apotheke an einen Versicherten schicken"
+  überprüfen und bei negativem Prüfergebnis, mit einem Http-Fehler 400 (Bad Request)
+  abbrechen sowie mit einer aussagekräftigen Fehlermeldung in Form einer eingebetteten
+  OperationOutcome-Ressource antworten.'
+title: E-Rezept-Fachdienst - Nachricht einstellen - Validierung Payload  GEM_ERP_PR_Communication_Reply
 version: 0

@@ -1,32 +1,25 @@
 actor:
-- Anb_NCPeH_FD
 - CS_E-Rezept_KTR
 - PS_E-Rezept_abgebend
 - PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: dfa903c8e3fb76fc21d209e78346ceb69227f88856bb26589444e2beea06bd47
-created: '2026-03-17T11:33:06.700555'
-date: '2026-03-17T11:33:06.700561'
+content_hash: 540198bbc5fdef53389f8757c334dd7fc4febd23a4178a37b1645035b2acde52
+created: '2026-03-23T10:39:54.161113'
+date: '2026-03-23T10:39:54.161116'
 key: IG-TIFLOW-CORE-264
-modified: '2026-03-17T11:33:06.700560'
+modified: '2026-03-23T10:39:54.161115'
 release_status: NEW
-source: input/pagecontent/pki-zertifikatspruefung.md
+source: input/pagecontent/fehlerbehandlung-client.md
 status: ACTIVE
 test_procedures:
-  Anb_NCPeH_FD:
-  - Produktgutachten
   CS_E-Rezept_KTR:
   - Herstellererklärung
   PS_E-Rezept_abgebend:
   - Herstellererklärung
   PS_E-Rezept_verordnend:
   - Herstellererklärung
-text: "Das Clientsystem des E-Rezept-Fachdienst MUSS alle Zertifikate, die es aktiv\
-  \ verwendet (bspw. TLS-Verbindungsaufbau), auf Integrität und Authentizität prüfen.\
-  \ Falls die Prüfung kein positives Ergebnis (\"gültig\") liefert, so MUSS es die\
-  \ von dem Zertifikat und den darin enthaltenen Attributen (bspw. öffentliche Schlüssel)\
-  \ abhängenden Arbeitsabläufe ablehnen. <br>\n\tDas Clientsystem des E-Rezept-Fachdienst\
-  \ MUSS alle öffentlichen Schlüssel, die es verwenden will, auf eine positiv verlaufene\
-  \ Zertifikatsprüfung zurückführen können."
-title: 'CS: verpflichtende Zertifikatsprüfung'
+text: Das Clientsystem des E-Rezept-Fachdienstes MUSS im Falle von Fehlern bei einer
+  Anfrage am E-Rezept-Fachdienst einen Retry und/oder Client-Failover nur gemäß der
+  Fehlerbehandlung in [E-Rezept API Dokumentation] durchführen.
+title: 'CS: Fehlerbehandlung - Retry von Anfragen an E-Rezept-Fachdienst'
 version: 0

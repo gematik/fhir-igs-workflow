@@ -1,11 +1,11 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: e3f88f60593b6fd75c96fc7f446b2bbad14df039f574e31954e07df14b59395c
-created: '2026-03-17T11:33:10.746741'
-date: '2026-03-17T11:33:10.746744'
+content_hash: 5456d22c0f8e0b226c9abe8a1752d295f793140c3754e2736ac886b1f0f789ef
+created: '2026-03-23T10:39:55.089235'
+date: '2026-03-23T10:39:55.089237'
 key: IG-TIFLOW-XBORDER-60
-modified: '2026-03-17T11:33:10.746743'
+modified: '2026-03-23T10:39:55.089236'
 release_status: NEW
 source: input/pagecontent/op-grant-eu-access-permission-req-fd.md
 status: ACTIVE
@@ -13,9 +13,8 @@ test_procedures:
   eRp_FD:
   - Produkttest
 text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt
-  /$grant-eu-access-permission mit dem im Request übermittelten KVNR, Zugriffscode
-  und Ländercode eine neue Zugriffsberechtigung speichern und den Wert valid_until
-  auf aktuellen Zeitpunkt + 1h setzen.
-title: E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Neue Zugriffsberechtigung
-  speichern
+  /$grant-eu-access-permission prüfen, ob für die im Request übermittelte KVNR Zugriffsberechtigungen
+  gespeichert sind und falls ja, diese löschen.
+title: E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Löschen bestehender
+  Zugriffsberechtigung
 version: 0

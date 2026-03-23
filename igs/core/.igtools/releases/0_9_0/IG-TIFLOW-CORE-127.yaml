@@ -1,19 +1,22 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 761458e29c2f255e92315874024d034fc236850e8e5c010d823898166c2ba10f
-created: '2026-03-17T11:33:06.666742'
-date: '2026-03-17T11:33:06.666744'
+content_hash: 3b16360f8d9f3bc6686be6022b2815f27e7e79fe5b15966096ba396a1a122531
+created: '2026-03-23T10:39:53.964780'
+date: '2026-03-23T10:39:53.964796'
 key: IG-TIFLOW-CORE-127
-modified: '2026-03-17T11:33:06.666743'
+modified: '2026-03-23T10:39:53.964793'
 release_status: NEW
-source: input/pagecontent/op-abort-req-fd.md
+source: input/pagecontent/ttl.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der
-  &#60;id&#62; adressierten /Task/&#60;id&#62;/$abort den Status des Tasks Task.status
-  auf den Wert "cancelled" setzen, damit der Task nicht weiter bearbeitet werden kann.
-title: E-Rezept-Fachdienst - E-Rezept löschen - Status
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS ein ChargeItem innerhalb eines Monats nach Ablauf\
+  \ von 10 Jahren nach dem Erstellen der Ressource automatisch löschen und das Löschen\
+  \ in einem AuditEvent für den Versicherten nachvollziehbar protokollieren.<br>\n\
+  \tDer E-Rezept-Fachdienst MUSS bei jedem Löschen eines ChargeItems alle referenzierten\
+  \ Bundles (E-Rezept-Bundle, Quittungs-Bundle, PKV-Abgabedatensatz) ebenfalls löschen,\
+  \ damit die Informationen rund um ein gelöschtes ChargeItem ebenfalls entfernt werden."
+title: E-Rezept-Fachdienst - Löschfrist ChargeItem
 version: 0

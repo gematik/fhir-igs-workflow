@@ -1,21 +1,21 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 327371fa1bea6df409ae303e8775fddb7ca8bbbbfa3750cede18a9ac4c02bf02
-created: '2026-03-17T11:33:06.648366'
-date: '2026-03-17T11:33:06.648369'
+content_hash: e8c4a92b2dcf2f7715e355957088c3988978f9cf900891afa2c83a23ddab5cbe
+created: '2026-03-23T10:39:53.800689'
+date: '2026-03-23T10:39:53.800692'
 key: IG-TIFLOW-CORE-34
-modified: '2026-03-17T11:33:06.648368'
+modified: '2026-03-23T10:39:53.800690'
 release_status: NEW
-source: input/pagecontent/op-reject-req-fd.md
+source: input/pagecontent/audit-service.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
-  über /Task/&#60;id&#62;/$reject die externe ID in Task.identifier:Secret als https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Secret
-  löschen und den Status des referenzierten Tasks auf Task.status = ready setzen,
-  damit nachfolgende Zugriffe auf diesen Datensatz durch Berechtigte in Kenntnis des
-  AccessCodes erfolgen können.
-title: E-Rezept-Fachdienst - Task zurückweisen - Secret löschen und Status setzen
+text: Der E-Rezept-Fachdienst MUSS in jedem zu tätigenden Eintrag des Protokolls für
+  Versicherte einen lesbaren Text in einfacher Sprache (deutsch und englisch) erzeugen,
+  der mindestens den Namen des Zugreifenden, die auslösende Operation und das Ergebnis
+  der Operation umfasst, damit Versicherte ohne technisches Vorwissen den Inhalt des
+  Zugriffsprotokolls verstehen können.
+title: E-Rezept-Fachdienst - Protokolleintrag Versichertenprotokoll leicht verständlich
 version: 0

@@ -1,19 +1,21 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 2a0e9c7b606f175b5a0ee388b177995ce7a737f408c4f0f650596460d7d24525
-created: '2026-03-17T11:33:06.653987'
-date: '2026-03-17T11:33:06.653990'
+content_hash: 6ac4ebf83290e0191ee95013810a7c1d87d4cb64fb03d045af84c51aa9350c4d
+created: '2026-03-23T10:39:53.812319'
+date: '2026-03-23T10:39:53.812329'
 key: IG-TIFLOW-CORE-59
-modified: '2026-03-17T11:33:06.653988'
+modified: '2026-03-23T10:39:53.812326'
 release_status: NEW
-source: input/pagecontent/op-close-req-fd.md
+source: input/pagecontent/query-api-channels-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS die zulässige Beendigung eines Tasks mittels /Task/&lt;id&gt;/$close-Operation
-  im StatusTask.status = "completed" vollziehen, damit der Workflow für den Versicherten
-  als beendet und die Verordnung somit als eingelöst dargestellt wird.
-title: E-Rezept-Fachdienst - Task schließen - Status beenden
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation POST /channels/{pushkey}\
+  \ die Rolle \"professionOID\" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader\
+  \ \"Authorization\" feststellen und sicherstellen, dass ausschließlich Versicherte\
+  \ in der Rolle \n  <ul>\n    <li>oid_versicherter</li>\n  </ul>\n  die Operation\
+  \ aufrufen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird."
+title: E-Rezept-Fachdienst - Push Notifications - Channels konfigurieren - Rollenprüfung
 version: 0

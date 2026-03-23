@@ -1,19 +1,22 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 6f76efe75e096c5ba45866dcec840462cd5e26985c0a3901c86b3a88fda2bb55
-created: '2026-03-17T11:33:06.680769'
-date: '2026-03-17T11:33:06.680772'
+content_hash: 88ec50aefce28992bfef55271e580ad5013e3519682dc8b7b7f13890a630015a
+created: '2026-03-23T10:39:54.115693'
+date: '2026-03-23T10:39:54.115696'
 key: IG-TIFLOW-CORE-192
-modified: '2026-03-17T11:33:06.680771'
+modified: '2026-03-23T10:39:54.115695'
 release_status: NEW
-source: input/pagecontent/query-api-consent-req-fd.md
+source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt
-  /Consent ohne Angabe ?category mit dem HTTP-Fehlercode 405 ablehnen, um das Löschen
-  mehrerer Ressourcen über einen Request zu verhindern.
-title: E-Rezept-Fachdienst - Consent löschen - alles Löschen verbieten
+text: 'Der E-Rezept-Fachdienst MUSS für die Überprüfung der ANR/ZANR, wenn bei der
+  Prüfung eine Auffälligkeit auftritt und die Konfiguration Fehler aktiv ist, mit
+  dem Http-Fehlercode 400 abbrechen und die Fehlermeldung "Ungültige Arztnummer (LANR
+  oder ZANR): Die übergebene Arztnummer entspricht nicht den Prüfziffer-Validierungsregeln."
+  in Form einer OperationOutcome ausliefern.'
+title: E-Rezept-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration
+  Fehler
 version: 0

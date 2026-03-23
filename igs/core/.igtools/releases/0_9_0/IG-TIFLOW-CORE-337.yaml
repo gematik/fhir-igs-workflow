@@ -1,134 +1,22 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: ad66911c6c5b9f151b44ba487f9df7db400001eca8845bbd8049fd4ffa50bf9d
-created: '2026-03-17T11:33:06.722575'
-date: '2026-03-17T11:33:06.722578'
+content_hash: 609999edce9063f57e61132a88d82507b7b8c2df95bf6fe7de718616795c8020
+created: '2026-03-23T10:39:54.183172'
+date: '2026-03-23T10:39:54.183174'
 key: IG-TIFLOW-CORE-337
-modified: '2026-03-17T11:33:06.722577'
+modified: '2026-03-23T10:39:54.183173'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-epa-ms.md
+source: input/pagecontent/query-api-communication-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: 'Der E-Rezept-Fachdienst MUSS das Zertifikat des ePA-Aktensystems gemäß den
-  Vorgaben von [gemSpec_PKI] und des TUC_PKI_018 mit den Eingangsdaten gemäß der Tabelle
-  Tab_eRPFD_018 prüfen und im Fehlerfall den Aufbau der HTTPS-Verbindung abbrechen.
-  Tabelle #: Tab_eRPFD_018 – Eingangsdaten für die Prüfung des ePA-Aktensystem Server-Zertifikats
-
-
-  <table>
-
-  <thead>
-
-  <tr>
-
-  <th>TUC_PKI_018 Eingangsdaten</th>
-
-  <th>Zulässiger Wert bzw. Beschreibung</th>
-
-  </tr>
-
-  </thead>
-
-  <tbody>
-
-  <tr>
-
-  <td>TSL</td>
-
-  <td>die entsprechende TSL für Infrastrukturkomponenten</td>
-
-  </tr>
-
-  <tr>
-
-  <td>Zertifikat</td>
-
-  <td>das zu prüfende Zertifikat vom Kommunikationspartner</td>
-
-  </tr>
-
-  <tr>
-
-  <td>Referenzzeitpunkt</td>
-
-  <td>aktuelle Systemzeit</td>
-
-  </tr>
-
-  <tr>
-
-  <td>Prüfmodus</td>
-
-  <td>OCSP</td>
-
-  </tr>
-
-  <tr>
-
-  <td>PolicyList</td>
-
-  <td>oid_fd_tls_s</td>
-
-  </tr>
-
-  <tr>
-
-  <td>Vorgesehene KeyUsage</td>
-
-  <td>digitalSignature</td>
-
-  </tr>
-
-  <tr>
-
-  <td>Vorgesehene ExtendedKeyUsage</td>
-
-  <td>id-kp-serverAuth</td>
-
-  </tr>
-
-  <tr>
-
-  <td>GracePeriod</td>
-
-  <td>der Wert muss konfigurierbar sein</td>
-
-  </tr>
-
-  <tr>
-
-  <td>Offline-Modus</td>
-
-  <td>nein</td>
-
-  </tr>
-
-  <tr>
-
-  <td>Timeout</td>
-
-  <td>Default-Wert (siehe [gemSpec_PKI])</td>
-
-  </tr>
-
-  <tr>
-
-  <td>TOLERATE_OCSP_FAILURE</td>
-
-  <td>Default-Wert (siehe [gemSpec_PKI])</td>
-
-  </tr>
-
-  </tbody>
-
-  </table>
-
-
-  <div><figcaption><strong>Tabelle: </strong>Eingangsdaten für die Prüfung des ePA-Aktensystem
-  Server-Zertifikats</figcaption></div>'
-title: E-Rezept-Fachdienst - ePA - TLS-Server X.509-Zertifikat des ePA-Aktensystems
-  auf Gültigkeit prüfen
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf /Communication/&lt;id&gt;
+  die über &lt;id&gt; identifizierte Communication-Ressource anhand der KVNR bzw.
+  Telematik-ID des aufrufenden Nutzers im ACCESS_TOKEN im "Authorization"-Header des
+  HTTP-Requests über das Absender-Attribut Communication.sender lokalisieren und löschen,
+  damit Nutzer irrtümlich versendete oder nicht mehr gewünschte Nachrichten vom E-Rezept-Fachdienst
+  entfernen können.
+title: E-Rezept-Fachdienst - Nachricht löschen - Absender-ID
 version: 0

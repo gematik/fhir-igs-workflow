@@ -1,30 +1,23 @@
 actor:
-- CS_E-Rezept_KTR
-- NCPeH_ePeDA
-- PS_E-Rezept_abgebend
-- PS_E-Rezept_verordnend
-- eRp_FdV
+- eRp_FD
 conformance: SHALL
-content_hash: 36cb0ac2652f28b67e903dcc71dedebe06439daedaf6de66b93221a707dbb9c6
-created: '2026-03-17T11:33:06.715636'
-date: '2026-03-17T11:33:06.715640'
+content_hash: 31fb4899b998af53ea4470eaca9f3b24a099b5fbb90622c5207bce8b3d371375
+created: '2026-03-23T10:39:54.180884'
+date: '2026-03-23T10:39:54.180887'
 key: IG-TIFLOW-CORE-323
-modified: '2026-03-17T11:33:06.715639'
+modified: '2026-03-23T10:39:54.180886'
 release_status: NEW
-source: input/pagecontent/menu-schnittstellen-generelle-prinzipien.md
+source: input/pagecontent/query-api-communication-req-fd.md
 status: ACTIVE
 test_procedures:
-  CS_E-Rezept_KTR:
-  - Konformitätsbestätigung
-  NCPeH_ePeDA:
+  eRp_FD:
   - Produkttest
-  PS_E-Rezept_abgebend:
-  - Konformitätsbestätigung
-  PS_E-Rezept_verordnend:
-  - Konformitätsbestätigung
-  eRp_FdV:
-  - Produkttest
-text: Clientsysteme des E-Rezept-Fachdienstes DÜRFEN für die Kommunikation mit dem
-  E-Rezept-Fachdienst in Datensätzen ein Byte Order Mark (BOM) NICHT angeben.
-title: Verbot Angabe von BOM für E-Rezept-Fachdienst
+text: Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation
+  POST auf den Endpunkt /Communication die Absenderidentifikation aus dem Attribut
+  idNummer des im HTTP-Header "Authorization" übergebenen ACCESS_TOKEN mit dem entsprechenden
+  System https://gematik.de/fhir/sid/telematik-id für Institutionen der TI bzw. http://fhir.de/sid/gkv/kvid-10
+  für Versicherte übernehmen sowie das Absendedatum Communication.sent auf die aktuelle
+  Systemzeit des E-Rezept-Fachdienstes setzen, damit Absender und Sendezeitpunkt für
+  den Empfänger eindeutig sind.
+title: E-Rezept-Fachdienst - Nachricht einstellen - Absender und Sendedatum
 version: 0

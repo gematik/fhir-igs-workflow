@@ -1,19 +1,19 @@
 actor:
-- eRp_FD
+- eRp_FdV
 conformance: SHALL
-content_hash: d1d3b922bead4a239fac513deaf065cce8e3405e76fc1a106b7f25f68e9338e2
-created: '2026-03-17T11:33:13.257150'
-date: '2026-03-17T11:33:13.257152'
+content_hash: d0ae371fdd4c8145a2534e4ee674700a2784bd312fcfbdd73b92931f7c04c01d
+created: '2026-03-23T10:39:55.278914'
+date: '2026-03-23T10:39:55.278916'
 key: IG-TIFLOW-ERP-28
-modified: '2026-03-17T11:33:13.257151'
+modified: '2026-03-23T10:39:55.278915'
 release_status: NEW
-source: input/pagecontent/op-dispense-req-fd.md
+source: input/pagecontent/query-api-communication-req-fdv.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produktgutachten
-text: Der E-Rezept-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen
-  mittels POST /Task/&lt;id&gt;/$dispense auf Task.status = in-progress prüfen und
-  bei Ungleichheit mit dem HTTP-Fehlercode 403 abbrechen.
-title: E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Prüfung Status
+  eRp_FdV:
+  - Herstellererklärung
+text: Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept einer Apotheke zuweisen" prüfen,
+  dass die durch den Nutzer erfasst Textnachricht keinen Internet-Link und keine Non-Printable-Characters
+  enthält und die Textnachricht nur bei erfolgreicher Prüfung weiterverarbeiten.
+title: 'E-Rezept-FdV: E-Rezept zuweisen - Textnachricht ohne Link'
 version: 0

@@ -1,26 +1,19 @@
 actor:
-- CS_E-Rezept_KTR
-- PS_E-Rezept_abgebend
+- eRp_FD
 conformance: SHALL
-content_hash: 5a65ec04a02598fca0d6ec719ff9e11fa78c9d3fd08756b48be8a68d1c0d8c05
-created: '2026-03-17T11:33:06.701852'
-date: '2026-03-17T11:33:06.701855'
+content_hash: e8ac53f2400598525da16c2a4019fc5450838b53b7f0a32ea32a2cf96b1a09ae
+created: '2026-03-23T10:39:54.163887'
+date: '2026-03-23T10:39:54.163890'
 key: IG-TIFLOW-CORE-268
-modified: '2026-03-17T11:33:06.701854'
+modified: '2026-03-23T10:39:54.163889'
 release_status: NEW
-source: input/pagecontent/query-api-subscription-req-avs.md
+source: input/pagecontent/query-api-pushers-req-fd.md
 status: ACTIVE
 test_procedures:
-  CS_E-Rezept_KTR:
-  - Herstellererklärung
-  PS_E-Rezept_abgebend:
-  - Herstellererklärung
-text: 'Das PS der abgebenden LEI MUSS den Anwendungsfall "Subscription für neue Communication"
-  gemäß TAB_ILFERP_017 umsetzen. Tabelle # : TAB_ILFERP_017 – Subscription für neue
-  Communication Name Subscription für neue Communication Auslöser Periodischer Aufruf,
-  wenn keine Websocket-Verbindung für die Notification besteht Akteur AVS Vorbedingung
-  Die LEI hat sich gegenüber der TI authentisiert. Nachbedingung Es besteht eine Websocket-Verbindung
-  zum Empfang der Notification Standardablauf Subscription Ressource erstellen Subscription
-  registrieren Websocket-Verbindung zu Subscription Service aufbauen Listening'
-title: 'PS abgebende LEI: Subscription für neue Communication'
+  eRp_FD:
+  - Produktgutachten
+text: Der E-Rezept-Fachdienst MUSS alle Zugriffe auf die Ressource Pushers mittels
+  der HTTP-Operationen PUT, PATCH, HEAD und DELETE unterbinden, damit keine unzulässigen
+  Operationen auf den Daten ausgeführt werden können.
+title: E-Rezept-Fachdienst - unzulässige Operationen Pushers
 version: 0

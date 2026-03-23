@@ -1,22 +1,23 @@
 actor:
-- eRp_FD
+- CS_E-Rezept_KTR
+- PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: 2ce435849df29f9d58dca40baf08354f0760a60c49eb06745aff69dd830e0f45
-created: '2026-03-17T11:33:06.711909'
-date: '2026-03-17T11:33:06.711911'
+content_hash: ba89e31ade53b3826ddcf68883c5175881ca99f815f6a0c8aad2fceb43b6984e
+created: '2026-03-23T10:39:54.177522'
+date: '2026-03-23T10:39:54.177525'
 key: IG-TIFLOW-CORE-307
-modified: '2026-03-17T11:33:06.711910'
+modified: '2026-03-23T10:39:54.177524'
 release_status: NEW
-source: input/pagecontent/query-api-subscription-req-fd.md
+source: input/pagecontent/query-api-subscription-req-avs.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produktgutachten
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription
-  Ressource sicherstellen, dass ausschließlich Nutzer in der Rolle oid_oeffentliche_apotheke
-  oid_krankenhausapotheke oid_kostentraeger die Operation am E-Rezept-Fachdienst aufrufen
-  dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader
-  "Authorization" feststellen, damit eine Subscription nicht durch Unberechtigte registriert
-  werden kann.
-title: E-Rezept-Fachdienst – Subscription registrieren – Rollenprüfung
+  CS_E-Rezept_KTR:
+  - Herstellererklärung
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: Das PS der abgebenden LEI MUSS im Anwendungsfall "Subscription für neue Communication"
+  eine Subscription Ressource mit Telematik-ID in Element criteria Attribut receipient
+  erstellen.
+title: 'PS abgebende LEI: Subscription für neue Communication - Subscription Ressource
+  erstellen'
 version: 0

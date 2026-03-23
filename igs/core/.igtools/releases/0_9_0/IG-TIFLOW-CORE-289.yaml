@@ -1,23 +1,20 @@
 actor:
-- eRp_FD
+- eRp_FdV
 conformance: SHALL
-content_hash: 998e7da36dd0f940b84ee6028bf35e356ffd8b98f1ac964bbe2e8a38980e9f9e
-created: '2026-03-17T11:33:06.706565'
-date: '2026-03-17T11:33:06.706568'
+content_hash: c676b0bb115820cf520a619c31ca610018553ab3bf1ed757db8b7b9974530834
+created: '2026-03-23T10:39:54.173339'
+date: '2026-03-23T10:39:54.173341'
 key: IG-TIFLOW-CORE-289
-modified: '2026-03-17T11:33:06.706567'
+modified: '2026-03-23T10:39:54.173340'
 release_status: NEW
-source: input/pagecontent/query-api-communication-req-fd.md
+source: input/pagecontent/query-api-consent-req-fdv.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
+  eRp_FdV:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS das Einstellen einer Nachricht über die http-Operation
-  POST auf den Endpunkt /Communication mit dem http-Status-Code 400 abbrechen, wenn
-  der Empfänger Communication.recipient gleich der Absenderidentifikation im Attribut
-  idNummer des übergebenen ACCESS_TOKEN im HTTP-Header "Authorization" ist, damit
-  irreführende Kommunikationsbeziehungen nicht zu einer vermeidbaren Mehrbelastung
-  des E-Rezept-Fachdienstes führen.
-title: E-Rezept-Fachdienst - Nachricht einstellen - Ausschluss Nachrichten an Empfänger
-  gleich Absender
+text: "Das E-Rezept-FdV MUSS im Anwendungsfall \"Einwilligung erteilen\" eine Consent\
+  \ Ressource mit:\n    <ul>\n        <li>Versicherten-ID in Consent.patient.identifier</li>\n\
+  \        <li>Einwilligungstyp in Consent.category.coding.code</li>\n    </ul>\n\
+  \    erstellen."
+title: 'E-Rezept-FdV: Einwilligung erteilen - Consent Ressource erstellen'
 version: 0

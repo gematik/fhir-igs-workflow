@@ -1,19 +1,20 @@
 actor:
-- eRp_FdV
+- eRp_FD
 conformance: SHALL
-content_hash: 05846032fe000cfadd81cfdeb75453cbcf20fd5fc6448e4fb07099a31647c82b
-created: '2026-03-17T11:33:06.649860'
-date: '2026-03-17T11:33:06.649862'
+content_hash: dcf384ec8b513da01dcc9dad1d72945eda26de2c62eb2732a95fd7715d1e3efb
+created: '2026-03-23T10:39:53.804520'
+date: '2026-03-23T10:39:53.804523'
 key: IG-TIFLOW-CORE-43
-modified: '2026-03-17T11:33:06.649861'
+modified: '2026-03-23T10:39:53.804522'
 release_status: NEW
-source: input/pagecontent/op-abort-req-fdv.md
+source: input/pagecontent/op-reject-req-fd.md
 status: ACTIVE
 test_procedures:
-  eRp_FdV:
+  eRp_FD:
   - Produkttest
-text: Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept löschen" für das zu löschende
-  E-Rezept nach erfolgreichem Aufruf der Operation "Ein E-Rezept löschen" die Daten
-  zum E-Rezept-Token lokal löschen.
-title: 'E-Rezept-FdV: E-Rezept löschen - E-Rezept-Token löschen'
+text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
+  über /Task/&#60;id&#62;/$reject bei erfolgreichem Abschluss der Operation, den Push
+  Notification Prozess für den Trigger mit der ChannelId "erp.task.reject" und den
+  Versicherten mit der KVNR = Task.for initiieren.
+title: E-Rezept-Fachdienst - Task zurückweisen - Push Notification Versicherter
 version: 0

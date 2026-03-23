@@ -1,22 +1,24 @@
 actor:
-- eRp_FD
-conformance: SHALL
-content_hash: 26b22d9c58502063a9248dc62718184117f09b42741ec11a44e5c4ab7a340d74
-created: '2026-03-17T11:33:06.695334'
-date: '2026-03-17T11:33:06.695336'
+- CS_E-Rezept_KTR
+- PS_E-Rezept_abgebend
+- PS_E-Rezept_verordnend
+conformance: MAY
+content_hash: 4f6fc7d21ddc3057a33b31ee7cf5032706dc47ad85f7b4a568316fabf1a33a0f
+created: '2026-03-23T10:39:54.147432'
+date: '2026-03-23T10:39:54.147436'
 key: IG-TIFLOW-CORE-242
-modified: '2026-03-17T11:33:06.695335'
+modified: '2026-03-23T10:39:54.147434'
 release_status: NEW
-source: input/pagecontent/fhir-validate.md
+source: input/pagecontent/health-check.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ
-  Bundle prüfen, ob die ID der Ressource (Bundle.entry.resource.id) und die ID ihrer
-  fullUrl (Bundle.entry.fullurl) übereinstimmen und bei Auffälligkeiten mit dem HTTP-Fehlercode
-  400 abbrechen und die Fehlermeldung "Die ID einer Ressource und die ID der zugehörigen
-  fullUrl stimmen nicht überein." in Form eines OperationOutcome ausliefern.
-title: E-Rezept-Fachdienst - FHIR-Ressource validieren - Pruefung Konsistenz Ressource
-  IDs
+  CS_E-Rezept_KTR:
+  - Herstellererklärung
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: Das Clientsystem des E-Rezept-Fachdienstes KANN einen erweiterten Health-Check
+  auf der Endpunkt ⇒ "POST /VAU [GET /metadata]" durchführen.
+title: 'CS: erweiterter Health-Check'
 version: 0

@@ -1,29 +1,36 @@
 actor:
-- eRp_FD
+- Anb_NCPeH_FD
+- CS_E-Rezept_KTR
+- PS_E-Rezept_abgebend
+- PS_E-Rezept_verordnend
+- eRp_FdV
 conformance: SHALL
-content_hash: 93dff69fc95127b5b08085c2aede1aa054d6e00eaab23c2cacbabbe36c5b2cfc
-created: '2026-03-17T11:33:06.674710'
-date: '2026-03-17T11:33:06.674712'
+content_hash: 634f97bab8d5228bc87887d91be1f8eeec3b5f51ccbcb573baeca90313673a1e
+created: '2026-03-23T10:39:54.036039'
+date: '2026-03-23T10:39:54.036043'
 key: IG-TIFLOW-CORE-159
-modified: '2026-03-17T11:33:06.674711'
+modified: '2026-03-23T10:39:54.036042'
 release_status: NEW
-source: input/pagecontent/op-activate-req-fd.md
+source: input/pagecontent/kommunikation-dienste-ti.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
+  Anb_NCPeH_FD:
   - Produkttest
-text: "Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
-  \ über /Task/&#60;id&#62;/$activate \n    <ul>\n        <li>\n            die qualifizierte\
-  \ Signatur des QES-Datensatzes gemäß [ETSI_QES] prüfen und bei nicht gültiger qualifizierter\
-  \ Signatur die Operation mit Status 400 abbrechen \n        </li>\n        <li>\n\
-  \            bzw. bei gültiger Signatur das innerhalb des PKCS#7-Datensatz enveloping-enthaltene\
-  \ FHIR-Bundle einer umfänglichen FHIR-Validierung gegen die eRezept-Schema-Definition\
-  \ der KBV kbv.ita.erp oder kbv.itv.evdga unterziehen und bei Invalidität die Operation\
-  \ mit Status 400 abbrechen\n        </li>\n        <li>\n            bzw. bei gültiger\
-  \ Signatur und validem FHIR den Datensatz als PKCS#7-Datei sicher speichern und\
-  \ in Task.input mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType\
-  \ = 1 über eine interne, eindeutige UUID referenzieren,\n        </li>\n    </ul>\n\
-  \    damit der nachfolgende Workflow ausschließlich auf Basis medizinisch korrekter\
-  \ und vom Leistungserbringer mittels Signatur freigegebener Daten erfolgt."
-title: E-Rezept-Fachdienst - Task aktivieren - QES prüfen Rezept aktualisieren
+  CS_E-Rezept_KTR:
+  - Herstellererklärung
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+  PS_E-Rezept_verordnend:
+  - Konformitätsbestätigung
+  eRp_FdV:
+  - Produkttest
+text: "Das Clientsystem des E-Rezept-Fachdienstes MUSS in alle HTTP-Requests an den\
+  \ E-Rezept-Fachdienst und IDP-Dienst im äußeren HTTP-Request den HTTP-Header user-agent gemäß\
+  \ [RFC7231] mit &lt;Produktname&gt;/&lt;Produktversion&gt; &lt;Herstellername&gt;/&lt;client_id&gt;\
+  \ mit \n    <ul>\n    <li>&lt;Produktname&gt; gemäß eigener Definition, Länge 1-20\
+  \ Zeichen, Zeichenvorrat [0-9a-zA-Z\\-\\.]</li>\n    <li>&lt;Produktversion&gt;\
+  \ gemäß Produktidentifikation</li>\n    <li>&lt;Herstellername&gt; gemäß eigener\
+  \ Definition, Länge 1-20 Zeichen, Zeichenvorrat [0-9a-zA-Z\\-\\.] </li>\n    <li>&lt;client_id&gt;\
+  \ gemäß Registrierung bei der gematik</li>\n    des Clientsystems befüllen."
+title: 'CS: HTTP-Header user-agent'
 version: 0

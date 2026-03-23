@@ -1,11 +1,11 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 40910f941785bb132547a72c7767b2db6694b64cf787c210d908e91fd946085f
-created: '2026-03-17T11:33:10.741341'
-date: '2026-03-17T11:33:10.741344'
+content_hash: 9e6109e825b6df64f26cdb0cc1fab24d71472baa444a1235d8090000e70a27c5
+created: '2026-03-23T10:39:55.086019'
+date: '2026-03-23T10:39:55.086021'
 key: IG-TIFLOW-XBORDER-42
-modified: '2026-03-17T11:33:10.741343'
+modified: '2026-03-23T10:39:55.086020'
 release_status: NEW
 source: input/pagecontent/op-eu-close-req-fd.md
 status: ACTIVE
@@ -13,8 +13,7 @@ test_procedures:
   eRp_FD:
   - Produkttest
 text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts
-  /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass der Zeitpunkt
-  des Aufrufes in Task.extension:lastMedicationDispense im Format "YYYY-MM-DDThh:mm:ss+zz:zz"
-  (FHIR-instant) angelegt und gespeichert wird.
-title: E-Rezept-Fachdienst - Task schließen - EU - Zeitstempel MedicationDispense
+  /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass Task.status =
+  in-progress ist und bei Ungleichheit mit dem HTTP-Fehlercode 403 abbrechen.
+title: E-Rezept-Fachdienst - Task schließen - EU - Statusprüfung
 version: 0

@@ -1,19 +1,21 @@
 actor:
-- eRp_FdV
+- PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: de2cdbb258a936adeb26557a92946f1d13d578ee66a54037efd25f2d71842039
-created: '2026-03-23T07:25:48.267302'
-date: '2026-03-23T07:25:48.267305'
+content_hash: 7579a5ddac58be855df779aa45deabb592889f981920313081204dc41b58667a
+created: '2026-03-23T10:39:55.320715'
+date: '2026-03-23T10:39:55.320717'
 key: IG-TIFLOW-ERP-216
-modified: '2026-03-23T07:25:48.267304'
+modified: '2026-03-23T10:39:55.320716'
 release_status: NEW
-source: input/pagecontent/query-api-communication-req-fdv.md
+source: input/pagecontent/menu-technische-umsetzung-dispensierinformationen.md
 status: ACTIVE
 test_procedures:
-  eRp_FdV:
-  - Herstellererklärung
-text: Das E-Rezept-FdV MUSS im Anwendungsfall "Apotheke suchen" sicherstellen, dass
-  dem Nutzer nur Einträge aus dem Verzeichnisdienst mit OrganizationProfessionOID
-  = 1.2.276.0.76.4.54 zur Auswahl gestellt werden.
-title: 'E-Rezept-FdV: Apotheke suchen - Filter Öffentliche Apotheke'
+  PS_E-Rezept_abgebend:
+  - Produkttest
+text: Das PS der abgebenden LEI MUSS beim Erstellen von Dispensierinformationen mit
+  Flowtype 160, 166, 169, 200 oder 209 die FHIR-Ressource MedicationDispense in .substitution.wasSubstituted
+  um die Angabe ergänzen, ob eine Substitution erfolgte, sofern eine PZN-Verordnung
+  beliefert wird.
+title: 'PS abgebende LEI: Dispensierinformationen – Flowtype 160/166/169/200/209 -
+  Substitutionskennzeichen'
 version: 0

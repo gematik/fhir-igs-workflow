@@ -1,18 +1,19 @@
 actor:
-- PS_E-Rezept_verordnend
+- PS_E-Rezept_abgebend
 conformance: SHOULD
-content_hash: 00ff7087977e7ba396cfd27113c45697feb18dbf036bba8fc65f159db5bc4ddc
-created: '2026-03-17T11:33:13.287042'
-date: '2026-03-17T11:33:13.287045'
+content_hash: bafa4a61509dcb93f46c6111e6a9f23fbb3fbe8a678c2eac15ea3c6f18a4799d
+created: '2026-03-23T10:39:55.308178'
+date: '2026-03-23T10:39:55.308180'
 key: IG-TIFLOW-ERP-141
-modified: '2026-03-17T11:33:13.287044'
+modified: '2026-03-23T10:39:55.308179'
 release_status: NEW
-source: input/pagecontent/menu-fachlichkeit-ux-verordnend.md
+source: input/pagecontent/menu-fachlichkeit-ux-abgebend.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_verordnend:
+  PS_E-Rezept_abgebend:
   - Herstellererklärung
-text: Das PS der verordnenden LEI SOLL es dem Nutzer ermöglichen, in jedem Verordnungsvorgang
-  für Arzneimittel, in denen ein E-Rezept zulässig ist, ein E-Rezept zu erstellen.
-title: 'PS verordnende LEI: UX - E-Rezept im Verordnungsvorgang erstellen'
+text: Das PS der abgebenden LEI SOLL die Quittung mittels der Operation POST /Task/&lt;id&gt;/$close
+  automatisch abrufen, wenn eine konfigurierbare Frist nach Abgabe des E-Rezept erreicht
+  ist und der Quittungsabruf noch nicht erfolgt ist.
+title: 'PS abgebende LEI: UX – Quittung automatisch abrufen'
 version: 0

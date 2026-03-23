@@ -1,23 +1,23 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: fe8eb629fccc526a6e536cbfc1026b405c8029b67651719fe1fc24f6444eabb0
-created: '2026-03-17T11:33:06.664351'
-date: '2026-03-17T11:33:06.664354'
+content_hash: 921c7f79870f35f04a48e625b4207ced97477e5772f4dcef241134f41c75dae2
+created: '2026-03-23T10:39:53.916948'
+date: '2026-03-23T10:39:53.916964'
 key: IG-TIFLOW-CORE-116
-modified: '2026-03-17T11:33:06.664353'
+modified: '2026-03-23T10:39:53.916961'
 release_status: NEW
-source: input/pagecontent/query-api-medicationdispense-req-fd.md
+source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Produktgutachten
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
-  /MedicationDispense die dem Versicherten zugeordneten MedicationDispense-Ressourcen
-  anhand der KVNR des Versicherten im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests
-  identifizieren, die in MedicationDispense.subject die entsprechende KVNR des begünstigten
-  Patienten referenziert haben, damit ausschließlich Versicherte ihre eigenen Dispensierinformationen
-  einsehen können.
-title: E-Rezept-Fachdienst - MedicationDispense abrufen - Filter MedicationDispense
-  auf KVNR des Versicherten
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
+  Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende Institution den im referenzierten
+  Task gespeicherten Status Task.status prüfen und mit dem Fehler 412 abbrechen, wenn
+  Task.status ungleich "in-progress" und ungleich "completed" ist, damit der Datensatz
+  nur abgerufen werden, kann, wenn sich die Verordnung in Belieferung befindet oder
+  der Workflow abgeschlossen ist.
+title: E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen
+  - Prüfung Status
 version: 0

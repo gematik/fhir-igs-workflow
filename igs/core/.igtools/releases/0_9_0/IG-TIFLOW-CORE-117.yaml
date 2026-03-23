@@ -1,21 +1,22 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 366c3aab053fa47bd854a08b982e784fa9357bb0d8daaac941312c663f82f6fe
-created: '2026-03-17T11:33:06.664589'
-date: '2026-03-17T11:33:06.664598'
+content_hash: 87a24fc424792063c955bc0d02c8cbcb47470c4967a5ed73f98f670c5ba7069a
+created: '2026-03-23T10:39:53.917789'
+date: '2026-03-23T10:39:53.919287'
 key: IG-TIFLOW-CORE-117
-modified: '2026-03-17T11:33:06.664596'
+modified: '2026-03-23T10:39:53.917797'
 release_status: NEW
-source: input/pagecontent/query-api-medicationdispense-req-fd.md
+source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
-  /MedicationDispense sicherstellen, dass alle im zurückgegebenen Search-Bundle enthaltenen
-  Ressourcen mit eindeutig identifizierbaren IDs versehen sind und Referenzen innerhalb
-  des Bundles auf eine Ressource mit einer eindeutigen ID verweisen.
-title: E-Rezept-Fachdienst - MedicationDispense abrufen - Referenzierung MedicationDispense
-  und Medication
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
+  Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende Institution den Task mit dem Geheimnis Task.identifier:Secret sowie im Bundle mit dem in Task.input mit
+  Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType = 1 referenzierten
+  QES-Datensatz als Binary-Ressource https://www.hl7.org/fhir/binary.html an den Aufrufer
+  zurückgeben.
+title: E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen
+  - erneuter Abruf Verordnung
 version: 0

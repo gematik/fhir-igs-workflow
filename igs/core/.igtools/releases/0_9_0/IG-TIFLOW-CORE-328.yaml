@@ -1,27 +1,23 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 4b0048280234abc0a3de38d8fbe561c331b2ea03d8ec7bbe42e7ff27c286cf1d
-created: '2026-03-17T11:33:06.718926'
-date: '2026-03-17T11:33:06.718929'
+content_hash: 4f948124fc1a6a419a2e50da7921b3c4345515d6738adfe641b7f8ba82471870
+created: '2026-03-23T10:39:54.181629'
+date: '2026-03-23T10:39:54.181632'
 key: IG-TIFLOW-CORE-328
-modified: '2026-03-17T11:33:06.718928'
+modified: '2026-03-23T10:39:54.181631'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-paging.md
+source: input/pagecontent/query-api-communication-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Produkttest
-text: "Der E-Rezept-Fachdienst MUSS für die Sortierung bei der Handhabung der Rückgabe\
-  \ von mehreren FHIR-Objekten folgende Ressourcen nach folgenden Kriterien aufsteigend\
-  \ sortieren, wenn der Client keine Sortierung im Request angefragt hat: \n     \n\
-  \     <table>\n<thead>\n<tr>\n<th>Endpunkt</th>\n<th>Default Sortierparameter</th>\n\
-  </tr>\n</thead>\n<tbody>\n<tr>\n<td>GET /Task</td>\n<td>authored-on</td>\n</tr>\n\
-  <tr>\n<td>GET /Communication</td>\n<td>sent</td>\n</tr>\n<tr>\n<td>GET /MedicationDispense</td>\n\
-  <td>whenhandedover</td>\n</tr>\n<tr>\n<td>GET /ChargeItem</td>\n<td>entered-date</td>\n\
-  </tr>\n<tr>\n<td>GET /AuditEvent</td>\n<td>date</td>\n</tr>\n</tbody>\n</table>\n\
-  \n<div><figcaption><strong>Tabelle: </strong>Default Sortierparameter für die Handhabung\
-  \ der Rückgabe von mehreren FHIR-Objekten</figcaption></div>"
-title: E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten -
-  Sortieren von Einträgen
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS das Einstellen einer Nachricht über die http-Operation\
+  \ POST auf den Endpunkt /Communication mit dem http-Status-Code 400 abbrechen, wenn\n\
+  \    <ul>\n        <li>der Nachrichteninhalt Communication.payload größer als 10\
+  \ kByte ist oder</li>\n        <li>in von Versicherten eingestellten Nachrichten\
+  \ in Communication.payload eine externe URLs enthält oder</li>\n        <li>ein\
+  \ Attachment mit MimeType \"application/*\" enthält,</li>\n    </ul>\n    damit\
+  \ über den E-Rezept-Fachdienst kein Schadcode verteilt wird."
+title: E-Rezept-Fachdienst - Nachricht einstellen - Schadcodeprüfung
 version: 0

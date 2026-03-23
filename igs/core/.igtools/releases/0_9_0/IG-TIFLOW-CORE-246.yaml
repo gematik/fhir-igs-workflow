@@ -1,35 +1,24 @@
 actor:
 - CS_E-Rezept_KTR
-- NCPeH_ePeDA
 - PS_E-Rezept_abgebend
 - PS_E-Rezept_verordnend
-- eRp_FD
-- eRp_FdV
-conformance: SHALL
-content_hash: e2776aa87f615edfb21cdb0e1cffc98b4cbe67a1ef9abc1258e26d551ba587ca
-created: '2026-03-17T11:33:06.695997'
-date: '2026-03-17T11:33:06.696000'
+conformance: SHALL NOT
+content_hash: ae1a5b3dc8792856a6808e971ee848332f72a8e6b85ade54d4b7cd91c1d6dad9
+created: '2026-03-23T10:39:54.148431'
+date: '2026-03-23T10:39:54.148434'
 key: IG-TIFLOW-CORE-246
-modified: '2026-03-17T11:33:06.695999'
+modified: '2026-03-23T10:39:54.148433'
 release_status: NEW
-source: input/pagecontent/fhir-validate.md
+source: input/pagecontent/health-check.md
 status: ACTIVE
 test_procedures:
   CS_E-Rezept_KTR:
   - Herstellererklärung
-  NCPeH_ePeDA:
-  - Herstellererklärung
   PS_E-Rezept_abgebend:
-  - Konformitätsbestätigung
-  PS_E-Rezept_verordnend:
-  - Konformitätsbestätigung
-  eRp_FD:
-  - Produkttest
-  eRp_FdV:
   - Herstellererklärung
-text: Die Produkttypen der Anwendung E-Rezept und Clientsysteme des E-Rezept-Fachdienstes
-  MÜSSEN bei der Erstellung einer FHIR-Ressource die ID der fullURL (Bundle.entry.fullurl)
-  der Ressource auf die ID der Ressource (Bundle.entry.resource.id) setzen, sofern
-  das http(s)-Schema verwendet wird.
-title: FHIR-Ressourcen - Ressource-ID in fullUrl
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: Das Clientsystem des E-Rezept-Fachdienstes DARF NICHT einen einfachen Health-Check
+  durchführen, welcher einen anderen Endpunkt als ⇒ ( "GET / [---]" ) abfragt.
+title: 'CS: einfacher Health-Check - keine anderen Endpunkte zulässig'
 version: 0

@@ -1,20 +1,41 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: dcf384ec8b513da01dcc9dad1d72945eda26de2c62eb2732a95fd7715d1e3efb
-created: '2026-03-17T11:33:06.648665'
-date: '2026-03-17T11:33:06.648668'
+content_hash: 870925ff7977a4b6b7462502081eb65050dbae34362acddb8b839393e3264c87
+created: '2026-03-23T10:39:53.801579'
+date: '2026-03-23T10:39:53.801582'
 key: IG-TIFLOW-CORE-36
-modified: '2026-03-17T11:33:06.648667'
+modified: '2026-03-23T10:39:53.801581'
 release_status: NEW
-source: input/pagecontent/op-reject-req-fd.md
+source: input/pagecontent/audit-service.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
-  über /Task/&#60;id&#62;/$reject bei erfolgreichem Abschluss der Operation, den Push
-  Notification Prozess für den Trigger mit der ChannelId "erp.task.reject" und den
-  Versicherten mit der KVNR = Task.for initiieren.
-title: E-Rezept-Fachdienst - Task zurückweisen - Push Notification Versicherter
+text: "Der E-Rezept-Fachdienst MUSS einen Aufruf der folgenden Endpunkte, für jeden\
+  \ betroffene E-Rezept abhängig von Ergebnis des Operationsaufrufes gemäß Tab_eRPFD_020\
+  \ im Zugriffsprotokoll des Versicherten protokollieren:\n  <table>\n    <tr>\n \
+  \     <th>Endpunkt</th>\n      <th>Ergebnis der Operation</th>\n      <th>Beschreibung\
+  \ (ggfs. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache)</th>\n\
+  \    </tr>\n    <tr>\n      <td>/epa/medication/api/{version}/fhir/$provide-prescription-erp</td>\n\
+  \      <td>erfolgreich</td>\n      <td>Die Verordnung wurde in die Patientenakte\
+  \ übertragen.</td>\n    </tr>\n    <tr>\n      <td></td>\n      <td>final nicht\
+  \ übermittelbar</td>\n      <td>Die Verordnung konnte nicht in die Patientenakte\
+  \ übertragen werden.</td>\n    </tr>\n    <tr>\n      <td>/epa/medication/api/{version}/fhir/$provide-dispensation-erp</td>\n\
+  \      <td>erfolgreich</td>\n      <td>Die Medikamentenabgabe wurde in die Patientenakte\
+  \ übertragen.</td>\n    </tr>\n    <tr>\n      <td></td>\n      <td>final nicht\
+  \ übermittelbar</td>\n      <td>Die Medikamentenabgabe konnte nicht in die Patientenakte\
+  \ übertragen werden.</td>\n    </tr>\n    <tr>\n      <td>/epa/medication/api/{version}/fhir/$cancel-prescription-erp</td>\n\
+  \      <td>erfolgreich</td>\n      <td>Die Löschinformation zum E-Rezept wurde in\
+  \ die Patientenakte übermittelt.</td>\n    </tr>\n    <tr>\n      <td></td>\n  \
+  \    <td>final nicht übermittelbar</td>\n      <td>Die Löschinformation zum E-Rezept\
+  \ konnte nicht in die Patientenakte übermittelt werden.</td>\n    </tr>\n    <tr>\n\
+  \      <td>/epa/medication/api/{version}/fhir/$cancel-dispensation-erp</td>\n  \
+  \    <td>erfolgreich</td>\n      <td>Die Löschinformation für die Medikamentenabgabe\
+  \ wurde in die Patientenakte übertragen.</td>\n    </tr>\n    <tr>\n      <td></td>\n\
+  \      <td>final nicht übermittelbar</td>\n      <td>Die Löschinformation für die\
+  \ Medikamentenabgabe konnte nicht in die Patientenakte übertragen werden.</td>\n\
+  \    </tr>\n  </table>\n  <div><figcaption><strong>Tabelle: </strong>Tab_eRPFD_020\
+  \ Versichertenprotokoll für ePA Medication Service</figcaption></div>"
+title: E-Rezept-Fachdienst - ePA - Medication Service - Versichertenprotokoll
 version: 0

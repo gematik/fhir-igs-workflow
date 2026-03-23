@@ -1,140 +1,22 @@
 actor:
 - eRp_FD
-- eRp_FdV
 conformance: SHALL
-content_hash: 77712ecff3e600613215e810a08f8b6c2aef59d5454cbf8f340fd8e824191da5
-created: '2026-03-17T11:33:06.687020'
-date: '2026-03-17T11:33:06.687024'
+content_hash: 7af5942a07be1fc5453d2911b3c815bd239a0f070d31939998fd0a57f3fc7419
+created: '2026-03-23T10:39:54.123898'
+date: '2026-03-23T10:39:54.123902'
 key: IG-TIFLOW-CORE-209
-modified: '2026-03-17T11:33:06.687023'
+modified: '2026-03-23T10:39:54.123901'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-push.md
+source: input/pagecontent/query-api-consent-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Herstellererklärung
-  eRp_FdV:
-  - Herstellererklärung
-text: 'Der E-Rezept-Fachdienst und das E-Rezept-FdV MÜSSEN für den Anwendungsfall
-  "Push Notifications" Nachrichteninhalte mit der folgenden Datenstruktur im JSON
-  Format unterstützen:
-
-
-  <table>
-
-  <thead>
-
-  <tr>
-
-  <th>Attribut</th>
-
-  <th>verpflichtend</th>
-
-  <th>Beschreibung</th>
-
-  <th>zulässige Werte</th>
-
-  <th>Beispiel</th>
-
-  </tr>
-
-  </thead>
-
-  <tbody>
-
-  <tr>
-
-  <td>ChannelId</td>
-
-  <td>ja</td>
-
-  <td>Der Trigger, der die Push Notification initiiert hat.</td>
-
-  <td>bis zu 30 Stellen, UTF-8</td>
-
-  <td>erp.communication.new</td>
-
-  </tr>
-
-  <tr>
-
-  <td>Identifier</td>
-
-  <td>ja</td>
-
-  <td>Ein Identifier, der als Kontext zur Nachricht dient.</td>
-
-  <td>bis zu 50 Stellen, UTF-8</td>
-
-  <td>160.000.000.000.123.76</td>
-
-  </tr>
-
-  <tr>
-
-  <td>IdentifierType</td>
-
-  <td>ja</td>
-
-  <td>Der Art Identifier, der mitgeschickt wird.</td>
-
-  <td>bis zu 20 Stellen, UTF-8</td>
-
-  <td>TaskId</td>
-
-  </tr>
-
-  <tr>
-
-  <td>Product</td>
-
-  <td>ja</td>
-
-  <td>Der Name des verordneten bzw. abgegebenen Produkts (Medikament oder DiGA).</td>
-
-  <td>bis zu 100 Stellen, UTF-8</td>
-
-  <td>Sumatriptan-1a Pharma 100 mg Tabletten</td>
-
-  </tr>
-
-  <tr>
-
-  <td>ActorName</td>
-
-  <td>ja</td>
-
-  <td>Der Name des Akteurs. Das kann zum Beispiel der Name der Apotheke oder des Kostenträgers
-  sein.</td>
-
-  <td>bis zu 100 Stellen, UTF-8</td>
-
-  <td>Meine Apotheke</td>
-
-  </tr>
-
-  <tr>
-
-  <td>Message</td>
-
-  <td>nein</td>
-
-  <td>Die Nachricht, die an den Versicherten verschickt wird.<br>Nachrichten mit mehr
-  als 240 Zeichen müssen nach 237 Zeichen abgeschnitten und mit drei Punkten (…) ergänzt
-  werden.</td>
-
-  <td>bis zu 240 Stellen, UTF-8</td>
-
-  <td>Wir möchten Sie informieren, dass Ihre bestellten Medikamente zur Abholung bereitstehen.</td>
-
-  </tr>
-
-  </tbody>
-
-  </table>
-
-
-  <div><figcaption><strong>Tabelle: </strong>TAB_eRp_DM_004 Push Notification Datenstruktur
-  Nachrichteninhalte</figcaption></div>'
-title: E-Rezept - Push Notifications - Datenstruktur Nachrichteninhalte
+  - Produktgutachten
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
+  /Consent sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter
+  die Operation am E-Rezept-Fachdienst aufrufen dürfen und die Rolle "professionOID"
+  des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen,
+  damit die Information zur Einwilligung nicht durch Unberechtigte ausgelesen werden
+  kann.
+title: E-Rezept-Fachdienst - Consent lesen - Rollenprüfung
 version: 0

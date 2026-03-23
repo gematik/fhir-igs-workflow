@@ -1,22 +1,18 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: d4ad737c1c15c7238642de5968914c162e1c03a3a00db52e7f19e7ba20f14674
-created: '2026-03-17T11:33:06.666283'
-date: '2026-03-18T14:56:22.555404'
+content_hash: 3fd1f6d8b01531212c3189c453facc4bd1ac45fce8bbf66686d3278d1c0eb2e0
+created: '2026-03-23T10:39:53.963732'
+date: '2026-03-23T10:39:53.963736'
 key: IG-TIFLOW-CORE-125
-modified: '2026-03-18T14:56:22.555404'
+modified: '2026-03-23T10:39:53.963734'
 release_status: NEW
-source: input/pagecontent/op-abort-req-fd.md
+source: input/pagecontent/ttl.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der
-  &#60;id&#62; adressierten/Task/&#60;id&#62;/$abort durch verordnende Leistungserbringer
-  den im HTTP-Header "X-AccessCode" gegen den im referenzierten Task enthaltenen AccessCode
-  prüfen und bei Missmatch oder Fehlen im HTTP-Header, den Aufruf mit dem HTTP-Fehlercode
-  403 abweisen, damit ausschließlich die verordnende Leistungserbringerinstitution
-  in Kenntnis des AccessCodes als Berechtigte ein E-Rezept löschen.
-title: E-Rezept-Fachdienst - E-Rezept löschen - Verordnender - Prüfung AccessCode
+text: Der E-Rezept-Fachdienst MUSS bei jedem Löschen eines Tasks alle referenzierten
+  Bundles (QES-Datensatz, Quittungs-Bundle, Dispensierinformationen) ebenfalls löschen.
+title: E-Rezept-Fachdienst - Löschen referenzierter Bundles
 version: 0

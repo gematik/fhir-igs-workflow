@@ -1,24 +1,19 @@
 actor:
-- PS_E-Rezept_abgebend
-conformance: SHALL
-content_hash: 041726af86455ef9c63718b2eb775663f287742e762ce0cc5de37b85fe0a4c89
-created: '2026-03-17T11:33:13.260973'
-date: '2026-03-17T11:33:13.260977'
+- eRp_FD
+conformance: SHALL NOT
+content_hash: 9b4d968cccbf3bcc2cd564fe6793bbd75782709a1e35186de6bb05a9ecece39b
+created: '2026-03-23T10:39:55.282309'
+date: '2026-03-23T10:39:55.282312'
 key: IG-TIFLOW-ERP-47
-modified: '2026-03-17T11:33:13.260976'
+modified: '2026-03-23T10:39:55.282311'
 release_status: NEW
-source: input/pagecontent/query-api-communication-req-avs.md
+source: input/pagecontent/op-dispense-req-fd.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_abgebend:
-  - Herstellererklärung
-text: "Das PS der abgebenden LEI (Apotheke) MUSS im Anwendungsfall \"Nachricht an\
-  \ Versicherten versenden\" bezüglich der Belieferung eines Arzneimittels eine Communication\
-  \ Ressource mit dem Profil GEM_ERP_PR_Communication_Reply mit \n  <ul>\n    <li>Versicherten-ID\
-  \ des Absenders der empfangenen Nachricht in recipient</li>\n    <li>Task-ID des\
-  \ referenzierten E-Rezeptes in basedOn</li>\n    <li>Nachrichten-ID der empfangenen\
-  \ Anfrage in inResponseTo</li>\n    <li>Nachricht in payload contentString</li>\n\
-  \  </ul>\n  erstellen."
-title: 'PS abgebende LEI: Nachricht versenden - Belieferung Arzneimittel - Communication
-  Ressource erstellen'
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst DARF bei der Bereitstellung von Dispensierinformationen
+  mittels POST /Task/&lt;id&gt;/$dispense den Status des Task bei Aufrufen der POST
+  /Task/&lt;id&gt;/$dispense Operation NICHT verändern.
+title: E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Keine Statusänderung
 version: 0

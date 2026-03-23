@@ -1,21 +1,23 @@
 actor:
 - PS_E-Rezept_abgebend
-conformance: SHOULD
-content_hash: b62b6989aff090d89184d532b328ad5ca16375ce1b5c9866025aa090f112531a
-created: '2026-03-17T11:33:13.281834'
-date: '2026-03-17T11:33:13.281837'
+conformance: SHALL
+content_hash: af2bb8bea36675867669935b30104f457a4fdd4ae9965ffb561b8681347b2731
+created: '2026-03-23T10:39:55.302002'
+date: '2026-03-23T10:39:55.302004'
 key: IG-TIFLOW-ERP-107
-modified: '2026-03-17T11:33:13.281836'
+modified: '2026-03-23T10:39:55.302003'
 release_status: NEW
-source: input/pagecontent/menu-fachlichkeit-ux-abgebend.md
+source: input/pagecontent/op-dispense-req-avs.md
 status: ACTIVE
 test_procedures:
   PS_E-Rezept_abgebend:
   - Herstellererklärung
-text: 'Das PS der abgebenden LEI SOLL die Möglichkeit bieten, bestimmte Nachrichten
-  zu konfigurieren, die entweder automatisch versendet oder als Vorlage für den manuellen
-  Versand genutzt werden können. Folgende Nachrichtentypen sind zu berücksichtigen:
-  Empfangsbestätigung nach Zuweisung eines E-Rezepts via KIM oder E-Rezept-FdV Abholbenachrichtigung
-  an einen Kunden (Nicht-)Lieferbarkeit eines Medikament'
-title: 'PS abgebende LEI: UX - Nachrichtenkonfiguration'
+text: "Das PS der abgebenden LEI MUSS im Anwendungsfall \"Dispensierinformationen\
+  \ bereitstellen\" für das abgegebene E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$dispense\
+  \ mit \n    <ul>\n        <li>ACCESS_TOKEN im Authorization-Header </li>\n     \
+  \   <li>Task-ID in URL &lt;id&gt; </li>\n        <li>Geheimnis in URL-Parameter\
+  \ ?secret= </li>\n        <li>MedicationDispense bzw. Bundle Ressource </li>\n \
+  \   </ul>\n    ausführen."
+title: 'PS abgebende LEI: Dispensierinformationen bereitstellen - Dispensierinformation
+  übermitteln'
 version: 0

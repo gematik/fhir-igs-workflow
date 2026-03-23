@@ -1,23 +1,24 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 888e223ea80520287ba29384c394504f8f276579184c2c597509485a74663664
-created: '2026-03-17T11:33:06.681091'
-date: '2026-03-17T11:33:06.681093'
+content_hash: df12e111a1e2a48d67c40ab19e83d5d921c1cdceaf39335a345422ac8227cbfb
+created: '2026-03-23T10:39:54.116591'
+date: '2026-03-23T10:39:54.116606'
 key: IG-TIFLOW-CORE-194
-modified: '2026-03-17T11:33:06.681092'
+modified: '2026-03-23T10:39:54.116603'
 release_status: NEW
-source: input/pagecontent/query-api-consent-req-fd.md
+source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den\
-  \ Endpunkt /Consent prüfen, dass der für ?category angegebene Wert in den CodeSystemen\
-  \ \n  <ul>\n    <li>https://gematik.de/fhir/erpchrg/CodeSystem/GEM_ERPCHRG_CS_ConsentType</li>\n\
-  \    <li>https://gematik.de/fhir/erp-eu/CodeSystem/GEM_ERPEU_CS_ConsentType</li>\n\
-  \  </ul>\n  enthalten ist und bei fehlerhafter Prüfung den Request mit dem Fehler\
-  \ 400 abbrechen, damit nur Löschrequests für definierte Consent Typen ausgeführt\
-  \ werden."
-title: E-Rezept-Fachdienst - Consent löschen - Prüfung category
+text: 'Der E-Rezept-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&#60;id&#62;/$activate
+  den im FHIR Profil KBV_PR_ERP_Medication_PZN gespeicherten Wert für code.coding:pznCode.code
+  gemäß den "Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der
+  PZN, PPN und Basic UDI-DI" beschriebenen Prüfalgorithmus validieren, und bei einer
+  fehlerhaften Prüfung mit einem Http-Fehler 400 (Bad Request) abbrechen sowie die
+  Fehlermeldung "Ungültige PZN: Die übergebene Pharmazentralnummer entspricht nicht
+  den vorgeschriebenen Prüfziffer-Validierungsregeln." in Form einer OperationOutcome
+  ausliefern.'
+title: E-Rezept-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_ERP_Medication_PZN
 version: 0

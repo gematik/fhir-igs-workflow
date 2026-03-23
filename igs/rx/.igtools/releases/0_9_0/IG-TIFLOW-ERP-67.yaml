@@ -1,23 +1,18 @@
 actor:
-- eRp_FD
+- PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: 177cf6acc197ad95158f8027006a730a348588fc3d0d49afe92d217c14f5ed16
-created: '2026-03-17T11:33:13.270464'
-date: '2026-03-17T11:33:13.270466'
+content_hash: e9a1d3ff904078c6c07e329b8f80ce959f2634a47b0a9fffea43a8594689e562
+created: '2026-03-23T10:39:55.287136'
+date: '2026-03-23T10:39:55.287140'
 key: IG-TIFLOW-ERP-67
-modified: '2026-03-17T11:33:13.270465'
+modified: '2026-03-23T10:39:55.287139'
 release_status: NEW
-source: input/pagecontent/op-activate-req-fd.md
+source: input/pagecontent/op-activate-req-pvs.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mit Workflowtypen 160,
-  169, 200 oder 209 mittels $activate prüfen, dass im Bundle eine MedicationRequest-Ressource
-  und eine Medication mit Medication.extension:Arzneimittelkategorie = 00 enthalten
-  ist. Der E-Rezept-Fachdienst MUSS andernfalls mit dem HTTP-Fehlercode 400 abbrechen
-  und in der OperationOutcome den Fehlertext "Für diesen Workflowtypen sind nur Arzneimittelverordnungen
-  zulässig" ausgeben.
-title: E-Rezept-Fachdienst - Task aktivieren - Flowtype 160/169/200/209 - Prüfung
-  Arzneimittelverordnung
+  PS_E-Rezept_verordnend:
+  - Konformitätsbestätigung
+text: Das Primärsystem MUSS für die Übertragung von E-Rezept-Token ein Verfahren nutzen,
+  dass die sehr hohe Vertraulichkeit des E-Rezept-Tokens und seine Integrität schützt.
+title: 'PS: Schutz des E-Rezept-Tokens bei Übertragung'
 version: 0

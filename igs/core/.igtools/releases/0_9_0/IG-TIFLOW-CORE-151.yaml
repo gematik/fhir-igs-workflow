@@ -1,19 +1,20 @@
 actor:
-- PS_E-Rezept_abgebend
-conformance: SHALL
-content_hash: 46d6cb667f649b97041b064ed81328c74730fce07e3a3ee821ea9936b330b4bc
-created: '2026-03-17T11:33:06.672798'
-date: '2026-03-17T11:33:06.672800'
+- PS_E-Rezept_verordnend
+conformance: SHALL NOT
+content_hash: 38e01b1c622296dee88af940fe8ede3b6ee2ced137da54859efbdaca9534bf02
+created: '2026-03-23T10:39:54.031358'
+date: '2026-03-23T10:39:54.031360'
 key: IG-TIFLOW-CORE-151
-modified: '2026-03-17T11:33:06.672799'
+modified: '2026-03-23T10:39:54.031359'
 release_status: NEW
-source: input/pagecontent/op-abort-req-avs.md
+source: input/pagecontent/op-activate-req-pvs.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_abgebend:
-  - Konformitätsbestätigung
-text: Das PS der abgebenden LEI MUSS vom Nutzer eine Bestätigung einholen, dass das
-  ausgewählte E-Rezept gelöscht werden soll, und die Möglichkeit geben, das Löschen
-  abzubrechen.
-title: 'PS abgebende LEI: E-Rezept löschen - Bestätigung'
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: Das PS der verordnenden LEI DARF im Anwendungsfall "E-Rezept durch Verordnenden
+  einstellen" NICHT einen Ausdruck für den Versicherten erstellen, wenn der E-Rezept-Fachdienst
+  im Response der Operation POST /Task/&lt;id&gt;/$activate mit einem Fehler antwortet.
+title: 'PS verordnende LEI: E-Rezept einstellen - kein Patientenausdruck bei Fehler
+  beim Aktivieren'
 version: 0

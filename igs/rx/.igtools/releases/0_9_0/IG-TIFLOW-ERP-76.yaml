@@ -1,31 +1,22 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: f5228782465b38445bce5f199a6abae9719708b1bdb2fb342d3491c2f38f6479
-created: '2026-03-17T11:33:13.273141'
-date: '2026-03-17T11:33:13.273144'
+content_hash: 454e69d016908c1a3af4b0b95d4236a8423fa9c53031004ee4706645e010e785
+created: '2026-03-23T10:39:55.292991'
+date: '2026-03-23T10:39:55.292993'
 key: IG-TIFLOW-ERP-76
-modified: '2026-03-17T11:33:13.273143'
+modified: '2026-03-23T10:39:55.292992'
 release_status: NEW
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: "Der E-Rezept-Fachdienst MUSS bei einem Task mit Task.flowType = 166 die Attribute\
-  \ in Task in Abhängigkeit des in der http-POST-Operation /Task/&#60;id&#62;/$activate\
-  \ übergebenen gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_006 belegen.<br>\n\
-  \n  <table>\n    <tr> \n      <th>Feld in Task</th>\n      <th>Feldbelegung</th>\n\
-  \    </tr>\n    <tr> \n      <td>Task.performerType.coding.system</td>\n      <td>\"\
-  https://gematik.de/fhir/erp/CodeSystemGEM_ERP_CS_OrganizationType\"</td>\n    </tr>\n\
-  \    <tr> \n      <td>Task.performerType.coding.code</td>\n      <td>\"1.2.276.0.76.4.54\"\
-  </td>\n    </tr>\n    <tr> \n      <td>Task.performerType.coding.diplay</td>\n \
-  \     <td>\"Öffentliche Apotheke\"</td>\n    </tr>\n    <tr> \n      <td>Task.PrescriptionType.valueCoding.display</td>\n\
-  \      <td>\"Flowtype für Arzneimittel nach § 3a AMVV\"</td>\n    </tr>\n    <tr>\
-  \ \n      <td>Task.ExpiryDate</td>\n      <td>Task.ExpiryDate = &#60;Datum der QES.Erstellung\
-  \ im Signaturobjekt&#62; + 6 Kalendertage</td>\n    </tr>\n    <tr> \n      <td>Task.AcceptDate</td>\n\
-  \      <td>Task.ExpiryDate = &#60;Datum der QES.Erstellung im Signaturobjekt&#62;\
-  \ + 6 Kalendertage</td>\n    </tr>\n  </table>\n  <div><figcaption><strong>Tabelle:\
-  \ </strong>TAB_eRpDM_006 Prozessparameter Flowtype 166</figcaption></div>"
-title: E-Rezept-Fachdienst - Task aktivieren - Flowtype 166 - Prozessparameter
+text: 'Der E-Rezept-Fachdienst MUSS die Aktivierung eines Tasks mit Flowtype 166 mit
+  dem HTTP-Status-Code 400 abbrechen, wenn die QES gemäß der professionOID des Signaturzertifikats
+  des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die der folgenden
+  professionOID entspricht: oid_arzt damit nur solche Leistungserbringer ein signiertes
+  E-Rezept einstellen, die zur Verordnung von T-Rezepten ermächtigt sind.'
+title: E-Rezept-Fachdienst - Task aktivieren - Flowtype 166 - QES durch berechtigte
+  Berufsgruppe
 version: 0

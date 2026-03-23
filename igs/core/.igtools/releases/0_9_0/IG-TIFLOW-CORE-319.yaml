@@ -1,20 +1,21 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: bf0c249718b62db83dacb50c3a9030b7101e15d4b5e6ec714248731102b42d36
-created: '2026-03-17T11:33:06.714787'
-date: '2026-03-17T11:33:06.714790'
+content_hash: 03974dd427dcbd94f48c30c48ab58d779f79f80708db974d88d45da2b7a70205
+created: '2026-03-23T10:39:54.179742'
+date: '2026-03-23T10:39:54.179745'
 key: IG-TIFLOW-CORE-319
-modified: '2026-03-17T11:33:06.714789'
+modified: '2026-03-23T10:39:54.179744'
 release_status: NEW
-source: input/pagecontent/menu-schnittstellen-generelle-prinzipien.md
+source: input/pagecontent/query-api-communication-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Alle Produkttypen, die eine E-Rezept-ID aus externen Systemen einlesen oder
-  von Benutzern entgegen nehmen, MÜSSEN die E-Rezept-ID gegen ihre Prüfziffer nach
-  dem Modulo-97-Verfahren gemäß [ISO 7064] prüfen und bei Ungültigkeit die Weiterverarbeitung
-  verhindern, damit Benutzerfehleingaben vor der Verarbeitung erkannt werden.
-title: Prüfung E-Rezept-ID
+text: Der E-Rezept-Fachdienst MUSS beim Abrufen von Nachrichten über die http-Operation
+  GET auf den Endpunkt /Communication bzw. beim Abruf einer einzelnen Nachricht über
+  /Communication/&lt;id&gt; den Wert des Attributs Communication.received = &lt;aktuelle
+  Systemzeit&gt setzen, wenn dieser Wert zum Zeitpunkt des Abrufs der Nachrichten
+  NULL ist, damit Nutzer eine Filtermöglicheit auf "neue Nachrichten" haben.
+title: E-Rezept-Fachdienst - Nachrichten abrufen - als abgerufen markieren
 version: 0

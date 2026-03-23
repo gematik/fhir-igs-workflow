@@ -1,19 +1,19 @@
 actor:
-- eRp_FD
+- PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: 7fb59f148776a55234081d6915022b633c868bae890633690bf90cf9a8c42bfc
-created: '2026-03-17T11:33:06.713225'
-date: '2026-03-17T11:33:06.713227'
+content_hash: f9e5f35b451881fbf934b7ef9bdb9206e491a715060abf282ad78dbe3821422b
+created: '2026-03-23T10:39:54.178937'
+date: '2026-03-23T10:39:54.178939'
 key: IG-TIFLOW-CORE-315
-modified: '2026-03-17T11:33:06.713226'
+modified: '2026-03-23T10:39:54.178938'
 release_status: NEW
-source: input/pagecontent/menu-schnittstellen-generelle-prinzipien.md
+source: input/pagecontent/op-abort-req-pvs.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS in seinen Schnittstellen für die Zugriffe durch
-  Versicherte standardmäßig den MimeType application/fhir+json akzeptieren und in
-  Responses verwenden.
-title: E-Rezept-Fachdienst - RESTful API MimeType fhir+json
+  PS_E-Rezept_verordnend:
+  - Konformitätsbestätigung
+text: Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden
+  löschen" für das zu löschende E-Rezept nach erfolgreichem Aufruf der Operation "Ein
+  E-Rezept löschen" die Task-ID und den AccessCode im PS löschen.
+title: 'PS verordnende LEI: E-Rezept löschen - E-Rezept-Token löschen'
 version: 0

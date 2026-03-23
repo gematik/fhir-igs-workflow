@@ -1,19 +1,20 @@
 actor:
-- eRp_FD
+- PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: e16ba3888d9d01958beb35afbc8c62f6420ce4d3c07b8b193b1eb270355cc4ff
-created: '2026-03-17T11:33:06.672400'
-date: '2026-03-17T11:33:06.672402'
+content_hash: 5df61b0b8045c286bf8bd43e49b25000fa2dac2583753d27db683bcd986722b8
+created: '2026-03-23T10:39:54.029137'
+date: '2026-03-23T10:39:54.029140'
 key: IG-TIFLOW-CORE-149
-modified: '2026-03-17T11:33:06.672401'
+modified: '2026-03-23T10:39:54.029139'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-subscription.md
+source: input/pagecontent/query-api-communication-req-avs.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst DARF in der Verbindung zum Subscription Service anfallende
-  Metadaten (Client-IP-Adresse, etc.) NICHT für eine unbefugte Profilbildung der verbundenen
-  Clients verwenden.
-title: E-Rezept-Fachdienst - Subscription Service - Verbot Profilbildung
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: "Das PS der abgebenden LEI MUSS im Anwendungsfall \"Nachricht durch Abgebenden\
+  \ löschen\" für die zu löschende Nachricht die HTTP-Operation DELETE /Communication/&lt;id&gt;\
+  \ mit\n  <ul>\n    <li>ACCESS_TOKEN im Authorization-Header</li>\n    <li>Communication-ID\
+  \ in URL &lt;id&gt; </li>\n  </ul>\n  ausführen."
+title: 'PS abgebende LEI: Nachricht löschen - Löschrequest'
 version: 0

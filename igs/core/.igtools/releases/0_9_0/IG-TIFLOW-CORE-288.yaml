@@ -1,22 +1,18 @@
 actor:
-- eRp_FD
+- eRp_FdV
 conformance: SHALL
-content_hash: 4415d2e14d1f0e79687279c83c476a9b1bcef618cfb6ac3d0c40e6d4cef1ddbb
-created: '2026-03-17T11:33:06.706426'
-date: '2026-03-17T11:33:06.706429'
+content_hash: aa740574eb123d753df23ab3d11c207a6e53f0ec7a00c6e8326023e8d860f11f
+created: '2026-03-23T10:39:54.173154'
+date: '2026-03-23T10:39:54.173157'
 key: IG-TIFLOW-CORE-288
-modified: '2026-03-17T11:33:06.706428'
+modified: '2026-03-23T10:39:54.173156'
 release_status: NEW
-source: input/pagecontent/query-api-communication-req-fd.md
+source: input/pagecontent/query-api-consent-req-fdv.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht des Schemas https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Representative
-  zur Versicherter-zu-Versichertem-Kommunikation über die http-Operation POST auf
-  den Endpunkt /Communication mit dem http-Status-Code 400 abbrechen, wenn der referenzierte
-  Task nicht im Zustand "ready" oder "in-progress" ist, damit die Weitergabe des Zugriffs
-  auf E-Rezepte ausschließlich auf einlösbare bzw. in Arbeit befindliche Verordnungen
-  beschränkt wird.
-title: E-Rezept-Fachdienst - Nachricht einstellen - Einlösbare E-Rezepte für Versicherter-zu-Versichertem-Kommunikation
+  eRp_FdV:
+  - Herstellererklärung
+text: Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung erteilen" es dem Nutzer
+  ermöglichen, die Einwilligung einzugeben.
+title: 'E-Rezept-FdV: Einwilligung erteilen - Einwilligung eingeben'
 version: 0

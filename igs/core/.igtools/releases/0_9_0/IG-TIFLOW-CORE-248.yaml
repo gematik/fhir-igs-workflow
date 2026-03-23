@@ -1,35 +1,23 @@
 actor:
-- CS_E-Rezept_KTR
-- NCPeH_ePeDA
-- PS_E-Rezept_abgebend
-- PS_E-Rezept_verordnend
 - eRp_FD
-- eRp_FdV
 conformance: SHALL
-content_hash: 9b6e047073885f5d5b50c10044f5e3443290dc4a160c0c47e60884bf5447a2e7
-created: '2026-03-17T11:33:06.696702'
-date: '2026-03-17T11:33:06.696705'
+content_hash: 4da24929855220664578e33a101bda7534b2f7ad3c4c1777454316de05a1907e
+created: '2026-03-23T10:39:54.154118'
+date: '2026-03-23T10:39:54.154123'
 key: IG-TIFLOW-CORE-248
-modified: '2026-03-17T11:33:06.696704'
+modified: '2026-03-23T10:39:54.154121'
 release_status: NEW
-source: input/pagecontent/fhir-validate.md
+source: input/pagecontent/op-accept-req-fd.md
 status: ACTIVE
 test_procedures:
-  CS_E-Rezept_KTR:
-  - Herstellererklärung
-  NCPeH_ePeDA:
-  - Herstellererklärung
-  PS_E-Rezept_abgebend:
-  - Konformitätsbestätigung
-  PS_E-Rezept_verordnend:
-  - Konformitätsbestätigung
   eRp_FD:
   - Produkttest
-  eRp_FdV:
-  - Herstellererklärung
-text: Die Produkttypen der Anwendung E-Rezept und Clientsystem des E-Rezept-Fachdienstes
-  MÜSSEN alle generierten FHIR-Ressourcen mit der Versionsnummer gemäß [datatypes.html#canonical](https://www.hl7.org/fhir/datatypes.html#canonical)
-  im Feld Ressource.meta.profile kennzeichnen, zu dessen aktuell gültiger Profilversion
-  sie mutmaßlich validieren.
-title: FHIR-Ressourcen Versionsangabe
+text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
+  über /Task/&lt;id&gt;/$accept den im HTTP-Header "X-AccessCode" oder URL-Parameter
+  "?ac=..." übertragenen AccessCode gegen den im referenzierten Task gespeicherten
+  AccessCodeTask.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode
+  prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem
+  HTTP-Fehlercode 403 abbrechen, damit Zugriffe auf diesen Datensatz nur durch Berechtigte
+  in Kenntnis des AccessCodes erfolgen.
+title: E-Rezept-Fachdienst - Task akzeptieren - Prüfung AccessCode
 version: 0

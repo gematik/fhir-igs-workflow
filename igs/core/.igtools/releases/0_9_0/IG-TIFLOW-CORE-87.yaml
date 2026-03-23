@@ -1,21 +1,20 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 8844a34d186d0e56d9691210ed0fe6f4e4c6007c49b537e1c9507d3464058936
-created: '2026-03-17T11:33:06.658732'
-date: '2026-03-17T11:33:06.658734'
+content_hash: 90ff02d461e6bf5142ddb9343004fc0a5053a9ddc625a9a0e75b1459bdb0dda1
+created: '2026-03-23T10:39:53.869358'
+date: '2026-03-23T10:39:53.869517'
 key: IG-TIFLOW-CORE-87
-modified: '2026-03-17T11:33:06.658733'
+modified: '2026-03-23T10:39:53.869362'
 release_status: NEW
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit
-  den URL-Parameter pnw="..." durch eine abgebende LEI, falls das Ergebnis im VSDM
-  Prüfungsnachweis gleich 3 ist, URL-Parameter kvnr="..." übermittelt wurde und keine
-  E-Rezeptes für den Versicherten im E-Rezept-Fachdienst gespeichert sind, eine leere
-  Liste mit dem Status 202 zurückgeben.
-title: E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - keine E-Rezepte
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
+  /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI prüfen, ob die in
+  der Prüfziffer übermittelte KVNR identisch ist mit dem Wert im URL-Parameter kvnr="..."
+  und bei Ungleichheit mit dem Fehler 456 abbrechen.
+title: E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Vergleich KVNR
 version: 0

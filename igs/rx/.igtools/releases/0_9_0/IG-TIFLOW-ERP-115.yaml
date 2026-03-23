@@ -1,19 +1,29 @@
 actor:
 - PS_E-Rezept_abgebend
-conformance: SHOULD
-content_hash: 24fed8ca30c5f333ba68b69e9348bc2144ea3d75f0ddd3f56f41dd509e5262e4
-created: '2026-03-17T11:33:13.282888'
-date: '2026-03-17T11:33:13.282890'
+- PS_E-Rezept_verordnend
+- eRp_FD
+- eRp_FdV
+conformance: SHALL
+content_hash: 67a86c9f8c596ef8a3ec60f5870ef5b28c0d61e597a8b951d40f986003adb31d
+created: '2026-03-23T10:39:55.303781'
+date: '2026-03-23T10:39:55.303783'
 key: IG-TIFLOW-ERP-115
-modified: '2026-03-17T11:33:13.282889'
+modified: '2026-03-23T10:39:55.303782'
 release_status: NEW
-source: input/pagecontent/menu-fachlichkeit-ux-abgebend.md
+source: input/pagecontent/index.md
 status: ACTIVE
 test_procedures:
   PS_E-Rezept_abgebend:
   - Herstellererklärung
-text: Das PS der abgebenden LEI SOLL die zu einem Vorgang gehörende Kommunikation
-  mit dem Vorgang derart verknüpfen, dass diese im Kontext des Vorgangs dargestellt
-  werden kann.
-title: 'PS abgebende LEI: UX - Zuweisung - Nachrichten eines Vorgangs'
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+  eRp_FD:
+  - Herstellererklärung
+  eRp_FdV:
+  - Herstellererklärung
+text: Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung der Workflows
+  160, 166, 169, 200 und 209 den Implementation Guide "E-Rezept für Arzneimittel"
+  umsetzen.
+title: 'E-Rezept: Anwendung des IG ''E-Rezept für Arzneimittel'' für Workflows 160,
+  166, 169, 200 und 209'
 version: 0

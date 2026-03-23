@@ -1,33 +1,22 @@
 actor:
-- Anb_NCPeH_FD
-- CS_E-Rezept_KTR
-- PS_E-Rezept_abgebend
-- PS_E-Rezept_verordnend
-- eRp_FdV
+- eRp_FD
 conformance: SHALL
-content_hash: 9b8601a06e3362794d399b22ccd292bd643d354a8907d7d4ea0d8054c9714961
-created: '2026-03-17T11:33:06.670945'
-date: '2026-03-17T11:33:06.670947'
+content_hash: 5eb2dc4a235a38d012746d42b2d4a4ec6da3218e0fd6ac269899bddcc361f659
+created: '2026-03-23T10:39:54.025953'
+date: '2026-03-23T10:39:54.025957'
 key: IG-TIFLOW-CORE-142
-modified: '2026-03-17T11:33:06.670946'
+modified: '2026-03-23T10:39:54.025955'
 release_status: NEW
-source: input/pagecontent/kommunikation-dienste-ti.md
+source: input/pagecontent/op-abort-req-fd.md
 status: ACTIVE
 test_procedures:
-  Anb_NCPeH_FD:
+  eRp_FD:
   - Produkttest
-  CS_E-Rezept_KTR:
-  - Herstellererklärung
-  PS_E-Rezept_abgebend:
-  - Herstellererklärung
-  PS_E-Rezept_verordnend:
-  - Konformitätsbestätigung
-  eRp_FdV:
-  - Produkttest
-text: "Das Clientsystem des E-Rezept-Fachdienstes MUSS in alle Anfragen an den E-Rezept-Fachdienst\
-  \ im äußeren HTTP-Request den HTTP-Header \"X-erp-user\" mit dem Wert\n    <ul>\n\
-  \    <li>\"l\" (kleines L) als PS eines Leistungserbringers</li>\n    <li>\"k\"\
-  \ als CS eines Kostenträgers</li>\n    <li>\"v\" als E-Rezept-FdV oder</li>\n  \
-  \  <li>\"n\" als NCPeH-FDeinfügen.</li>\n    </ul>"
-title: 'CS: HTTP-Header X-erp-user'
+text: Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der
+  &#60;id&#62; adressierten/Task/&#60;id&#62;/$abort durch verordnende Leistungserbringer
+  den im referenzierten Task gespeicherten Status Task.status prüfen und mit dem Fehler
+  412 abbrechen, wenn Task.status ungleich "ready" ist, damit die verordnende Leistungserbringerinstitution
+  eine Verordnung nur löschen kann, wenn sie sich noch nicht in Belieferung befindet
+  oder beliefert wurde.
+title: E-Rezept-Fachdienst - E-Rezept löschen - Verordnender - Prüfung Status
 version: 0

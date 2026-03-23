@@ -1,22 +1,18 @@
 actor:
-- eRp_FD
-conformance: SHALL
-content_hash: 9f7a43929c616124fac50d8c50c614ccf78b73ab2c13c041defe2dc3c81848d5
-created: '2026-03-17T11:33:13.270606'
-date: '2026-03-17T11:33:13.270609'
+- PS_E-Rezept_verordnend
+conformance: MAY
+content_hash: 9d4fa8da11cb078cbee2085ebc4d84a4701d331ae77e51318ce501e2fdef1a12
+created: '2026-03-23T10:39:55.287260'
+date: '2026-03-23T10:39:55.287262'
 key: IG-TIFLOW-ERP-68
-modified: '2026-03-17T11:33:13.270608'
+modified: '2026-03-23T10:39:55.287261'
 release_status: NEW
-source: input/pagecontent/op-activate-req-fd.md
+source: input/pagecontent/op-activate-req-pvs.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mit Workflowtyp 166
-  mittels $activate prüfen, dass im Bundle eine MedicationRequest-Ressource und eine
-  Medication mit Medication.extension:Arzneimittelkategorie = 02 enthalten ist. Der
-  E-Rezept-Fachdienst MUSS andernfalls mit dem HTTP-Fehlercode 400 abbrechen und in
-  der OperationOutcome den Fehlertext "Für diesen Workflowtypen sind nur T-Rezept
-  Verordnungen zulässig" ausgeben.
-title: E-Rezept-Fachdienst - Task aktivieren - Flowtype 166 - Prüfung Arzneimittelverordnung
+  PS_E-Rezept_verordnend:
+  - Konformitätsbestätigung
+text: Das PS der verordnenden LEI KANN die Auswahl und Verwaltung von herstellenden
+  Apotheken für die Übermittlung der E-Rezept-Einlöseinformationen ermöglichen.
+title: 'PS verordnende LEI: Herstellende Apotheke für Übermittlungsverfahren'
 version: 0

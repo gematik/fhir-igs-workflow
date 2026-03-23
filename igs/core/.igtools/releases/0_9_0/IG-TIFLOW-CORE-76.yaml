@@ -1,23 +1,22 @@
 actor:
-- eRp_FD
+- eRp_FdV
 conformance: SHALL
-content_hash: 404b100cf7ea8a284cbe29ecb5fd14558c9d99ad820edf0d67abeeb561f50775
-created: '2026-03-17T11:33:06.657200'
-date: '2026-03-17T11:33:06.657203'
+content_hash: 4f3ecca05c202cc1aead2807bb89567e9663aa920f7ad86e1047e07639ca677c
+created: '2026-03-23T10:39:53.846800'
+date: '2026-03-23T10:39:53.846805'
 key: IG-TIFLOW-CORE-76
-modified: '2026-03-17T11:33:06.657202'
+modified: '2026-03-23T10:39:53.846804'
 release_status: NEW
-source: input/pagecontent/query-api-task-req-fd.md
+source: input/pagecontent/query-api-communication-req-fdv.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
+  eRp_FdV:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
-  /Task mit dem URL-Parameter pnw="..." durch eine abgebende LEI die Telematik-ID
-  des Aufrufers im ACCESS_TOKEN im HTTP-Requestheader "Authorization" feststellen
-  und den Aufruf in einer Statistik zur Prüfung des Ratelimits erfassen, wenn der
-  Aufruf mit einem Fehler 456 oder 458 abgebrochen wird. Der E-Rezept-Fachdienst MUSS
-  die Statistik zur Prüfung des Ratelimits alle 24h zurück auf 0 setzen.
-title: E-Rezept-Fachdienst - Rezepte lesen - Apotheke - Ratelimit pro Telematik-ID
-  pro Tag
+text: "Das E-Rezept-FdV MUSS im Anwendungsfall \"Vertreterkommunikation\" eine FHIR\
+  \ Ressource Communication des Profils https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Representative\
+  \ mit\n    <ul>\n        <li>KVNR des Vertreters in recipient</li>\n        <li>optional:\
+  \ Textnachricht in payload contentString</li>\n        <li>E-Rezept-Token in basedOn\
+  \ reference auf Task inkl. AccessCode als \"/Task/&lt;id&gt;?ac=...\"</li>\n   \
+  \ </ul>\n    erstellen."
+title: Nachricht senden - Vertreterkommunikation - Nachricht erstellen
 version: 0

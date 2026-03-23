@@ -1,29 +1,24 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 37afbaa34d1447055b0a3d1fdb252585f5ee17a68d3952f318f4b3b711276d6f
-created: '2026-03-17T11:33:06.714535'
-date: '2026-03-17T11:33:06.714538'
+content_hash: 4e8e9e65e082e86d680dafb7c59f60f60bb3308a2cbc0df8223f41e577f95b64
+created: '2026-03-23T10:39:54.179587'
+date: '2026-03-23T10:39:54.179589'
 key: IG-TIFLOW-CORE-318
-modified: '2026-03-17T11:33:06.714537'
+modified: '2026-03-23T10:39:54.179588'
 release_status: NEW
-source: input/pagecontent/menu-schnittstellen-generelle-prinzipien.md
+source: input/pagecontent/query-api-communication-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Produkttest
-text: "Der E-Rezept-Fachdienst MUSS E-Rezept-IDs erzeugen und verwalten, welche der\
-  \ Syntax \"aaa.bbb.bbb.bbb.bbb.cc\" und der folgenden Semantik genügen \n     \n\
-  \     <table>\n  <thead>\n    <tr>\n      <th></th>\n      <th>Bedeutung</th>\n\
-  \      <th>Datentyp</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>aaa</td>\n\
-  \      <td>E-Rezept-Typ</td>\n      <td>alphanummerisch, mit der Belegung gemäß\
-  \ \"flowType\" in <a href=\"https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType\"\
-  >https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType</a></td>\n    </tr>\n\
-  \    <tr>\n      <td>bbb.bbb.bbb.bbb</td>\n      <td>fortlaufende Rezeptnummer</td>\n\
-  \      <td>nummerisch, 12-stellig</td>\n    </tr>\n    <tr>\n      <td>cc</td>\n\
-  \      <td>Prüfnummer Verfahren gemäß [ISO 7064]</td>\n      <td>nummerisch</td>\n\
-  \    </tr>\n  </tbody>\n</table>\n     \n     damit Tippfehler in der manuellen\
-  \ Erfassung erkannt werden können und die E-Rezept-ID über 11 Jahre eine eineindeutige\
-  \ Zuordnung zwischen allen Datenobjekten im E-Rezept-Workflow erlaubt."
-title: Aufbau E-Rezept-ID
+  - Produktgutachten
+text: Der E-Rezept-Fachdienst MUSS beim Abrufen von Nachrichten über die http-Operation
+  GET auf den Endpunkt /Communication bzw. beim Abruf einer einzelnen Nachricht über
+  /Communication/&lt;id&gt; ausschließlich die Nachrichten an den Aufrufer zurückgeben,
+  die im Attribut Communication.recipient oder Communication.sender mit dem entsprechenden
+  Identifier https://gematik.de/fhir/sid/telematik-id für Apotheken bzw. http://fhir.de/sid/gkv/kvid-10
+  für Versicherte den gleichen Typ und den identischen Wert haben wie im Attribut
+  "idNummer" des übergebenen ACCESS_TOKEN im HTTP-Header "Authorization" für Versicherten-ID
+  bzw. Telematik-ID, damit keine Nachrichten an Dritte unrechtmäßig ausgelesen werden.
+title: E-Rezept-Fachdienst - Nachrichten abrufen - für Empfänger filtern
 version: 0

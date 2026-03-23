@@ -1,29 +1,24 @@
 actor:
 - CS_E-Rezept_KTR
-- NCPeH_ePeDA
 - PS_E-Rezept_abgebend
 - PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: 277dbbfe7fe4b4363c1fb013e666b982981ebf9e30d0b7f9a21cea74f818924f
-created: '2026-03-17T11:33:06.641602'
-date: '2026-03-17T11:33:06.641604'
+content_hash: 6fafd339fc008e0fabde85a0371bef41ef4675deaf21c5ec584c2e64983dde38
+created: '2026-03-23T10:39:53.791494'
+date: '2026-03-23T10:39:53.791498'
 key: IG-TIFLOW-CORE-15
-modified: '2026-03-17T11:33:06.641603'
+modified: '2026-03-23T10:39:53.791497'
 release_status: NEW
 source: input/pagecontent/authentifizierung-client.md
 status: ACTIVE
 test_procedures:
   CS_E-Rezept_KTR:
   - Herstellererklärung
-  NCPeH_ePeDA:
-  - Produkttest
   PS_E-Rezept_abgebend:
   - Herstellererklärung
   PS_E-Rezept_verordnend:
   - Herstellererklärung
-text: Das Clientsystem MUSS das eingereichte CHALLENGE_TOKEN zusammen mit der von
-  der Smartcard signierten Challenge-Signatur "signed_challenge" und dem Authentifizierungszertifikat
-  der Smartcard, mit dem öffentlichen Schlüssel des Authorization-Endpunktes PUK_IDP_ENC
-  verschlüsselt, in Form eines HTTP-POST-Requests senden.
-title: 'CS: Response auf die Challenge des Authorization-Endpunktes'
+text: Das Primärsystem MUSS das Zertifikat C.HCI.AUT der SM-B über die Operation ReadCardCertificate
+  des Konnektors gemäß [gemSpec_Kon#4.1.9.5.2] bzw. [gemILF_PS#4.4.4.2] auslesen.
+title: Auslesen des Authentisierungszertifikates
 version: 0

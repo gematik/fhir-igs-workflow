@@ -1,20 +1,19 @@
 actor:
-- eRp_FD
+- eRp_FdV
 conformance: SHALL
-content_hash: 85444ed4a6ebb217876c3512edef26598f514efc2f0219081fe447c93889b924
-created: '2026-03-17T11:33:06.656492'
-date: '2026-03-17T11:33:06.656495'
+content_hash: dcbc79eb9a2e8285c8666b2fb72d7a2b777ff1fb39348890e5d73b8930418f48
+created: '2026-03-23T10:39:53.841417'
+date: '2026-03-23T10:39:53.841439'
 key: IG-TIFLOW-CORE-71
-modified: '2026-03-17T11:33:06.656494'
+modified: '2026-03-23T10:39:53.841430'
 release_status: NEW
-source: input/pagecontent/query-api-task-req-fd.md
+source: input/pagecontent/query-api-communication-req-fdv.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS alle Zugriffe auf die Ressource Task mittels der
-  HTTP-Operationen PUT, HEAD und DELETE sowie POST ohne die Angabe einer gültigen
-  FHIR-Operation unterbinden, damit keine unzulässigen Operationen auf den Rezeptdaten
-  ausgeführt werden können.
-title: E-Rezept-Fachdienst - unzulässige Operationen Task
+  eRp_FdV:
+  - Herstellererklärung
+text: Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept einer Apotheke zuweisen" den
+  aktuellen Status des E-Rezepts ermitteln, prüfen ob Task.status = ready ist und
+  anderenfalls den Anwendungsfall abbrechen.
+title: Nachricht senden - E-Rezept zuweisen - Status prüfen
 version: 0

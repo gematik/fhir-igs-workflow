@@ -1,23 +1,22 @@
 actor:
-- eRp_FD
+- eRp_FdV
 conformance: SHALL
-content_hash: 7136e3745359c6622405d1b08a5827be39ca59ea3a4980b1ab53331074a97c17
-created: '2026-03-17T11:33:06.644839'
-date: '2026-03-17T11:33:06.644841'
+content_hash: fa79bfead107a5ac521c3239d8b009c06d07713d3af10e3f34d1ddf231e4a9a2
+created: '2026-03-23T10:39:53.795366'
+date: '2026-03-23T10:39:53.795369'
 key: IG-TIFLOW-CORE-26
-modified: '2026-03-17T11:33:06.644840'
+modified: '2026-03-23T10:39:53.795368'
 release_status: NEW
-source: input/pagecontent/audit-service.md
+source: input/pagecontent/authentifizierung-client.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim automatischen Löschen nach Erreichen einer
-  Löschfrist gemäß "TAB_eRPFD_004a Versichertenprotokoll nach automatischen Löschen"
-  protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag
-  AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten
-  in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte
-  die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff
-  ggf. intervenieren.
-title: E-Rezept-Fachdienst - Versichertenprotokoll zu automatischen Löschen
+  eRp_FdV:
+  - Produktgutachten
+text: Das E-Rezept-FdV MUSS, wenn es eine Authentifizierung des Nutzers über den IDP-Dienst,
+  in seiner Rolle als Authorization-Server, unterstützt, entweder als anfragendes
+  Anwendungsfrontend und Authenticator-Modul oder, wenn ein Authenticator-Modul in
+  einer anderen für die TI zugelassene App genutzt wird, als anfragendes Anwendungsfrontend
+  agieren.
+title: 'E-Rezept-FdV: Authentisierung E-Rezept-Fachdienst - IDP-Dienst - Rolle Anwendungsfrontend
+  und optional Authenticator-Modul'
 version: 0

@@ -1,21 +1,20 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 138d58382343bd65fd3368a7b992c6a65474736af4b689a602837084e788c4da
-created: '2026-03-17T11:33:06.679260'
-date: '2026-03-17T11:33:06.679262'
+content_hash: 492087312af1ee70127beb87fa7cff9c342016e7491d3d050ca33b8435a72b76
+created: '2026-03-23T10:39:54.073054'
+date: '2026-03-23T10:39:54.073057'
 key: IG-TIFLOW-CORE-184
-modified: '2026-03-17T11:33:06.679261'
+modified: '2026-03-23T10:39:54.073056'
 release_status: NEW
-source: input/pagecontent/query-api-consent-req-fd.md
+source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt
-  /Consent sicherstellen, dass die KVNR im ACCESS_TOKEN im "Authorization"-Header
-  des HTTP-Requests und die KVNR in Consent.patient.identifier übereinstimmen, damit
-  eine Einwilligung für einen Versicherten nicht durch Dritte erteilt werden kann.
-  Im Fehlerfall muss der Http-Request mit dem Http-Fehlercode 403 abgewiesen werden.
-title: E-Rezept-Fachdienst - Consent schreiben - Prüfung KVNR
+text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
+  über /Task/&#60;id&#62;/$activate bei erfolgreichem Abschluss der Operation, den
+  Push Notification Prozess für den Trigger mit der ChannelId "erp.task.activate"
+  und den Versicherten mit der KVNR = Task.for initiieren.
+title: E-Rezept-Fachdienst - Task aktivieren - Push Notification Versicherter
 version: 0

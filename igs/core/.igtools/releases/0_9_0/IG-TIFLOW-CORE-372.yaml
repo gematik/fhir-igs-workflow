@@ -1,19 +1,28 @@
 actor:
-- PS_E-Rezept_verordnend
+- eRp_FD
 conformance: SHALL
-content_hash: 16dbb12e2af4b90840a99dc0de67cb5dfc3cc58e63331f9db5578cb172216c4c
-created: '2026-03-18T14:56:22.558091'
-date: '2026-03-18T14:56:22.558094'
+content_hash: e747a6b82ff9420e043b742ba4db9bfc8185858ecf0b2c06a0dd4255656efda7
+created: '2026-03-23T10:39:54.194999'
+date: '2026-03-23T10:39:54.195001'
 key: IG-TIFLOW-CORE-372
-modified: '2026-03-18T14:56:22.558093'
+modified: '2026-03-23T10:39:54.195000'
 release_status: NEW
-source: input/pagecontent/op-activate-req-pvs.md
+source: input/pagecontent/menu-technische-umsetzung-paging.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_verordnend:
-  - Herstellererklärung
-text: Das PS der verordnenden LEI MUSS sicherstellen, dass für jeden Flowtype ein
-  separater Patientenausdruck erfolgt, sofern der Nutzer Verordnungen mit unterschiedlichen
-  Flowtypes einstellt und für diese Patientenausdrucke erzeugen möchte.
-title: 'PS verordnende LEI: E-Rezept einstellen - separater Patientenausdruck je Flowtype'
+  eRp_FD:
+  - Produkttest
+text: "Der E-Rezept-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten\
+  \ die Paginierung nach FHIR für folgende Endpunkte mit den jeweiligen Parametern\
+  \ unterstützen \n     \n<table>\n<thead>\n<tr>\n<th>Endpunkt</th>\n<th>Paginierung</th>\n\
+  <th>Total-Count</th>\n<th>Link-Relations</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n\
+  <td>GET /Task</td>\n<td>Ja</td>\n<td>Ja</td>\n<td>self, next, prev, first, last</td>\n\
+  </tr>\n<tr>\n<td>GET /Communication</td>\n<td>Ja</td>\n<td>Ja</td>\n<td>self, next,\
+  \ prev, first, last</td>\n</tr>\n<tr>\n<td>GET /MedicationDispense</td>\n<td>Nein</td>\n\
+  <td>immer \"0\"</td>\n<td>-</td>\n</tr>\n<tr>\n<td>GET /ChargeItem</td>\n<td>Ja</td>\n\
+  <td>Ja</td>\n<td>self, next, prev, first, last</td>\n</tr>\n<tr>\n<td>GET /AuditEvent</td>\n\
+  <td>Ja</td>\n<td>immer \"0\"</td>\n<td>self, next, first</td>\n</tr>\n</tbody>\n\
+  </table>\n\n<div><figcaption><strong>Tabelle: </strong>Endpunkte mit Paginierung</figcaption></div>"
+title: E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten -
+  Paginierung
 version: 0

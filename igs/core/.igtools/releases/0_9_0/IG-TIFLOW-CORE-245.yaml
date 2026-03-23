@@ -1,22 +1,30 @@
 actor:
-- eRp_FD
-conformance: SHALL
-content_hash: 76e20b40f796886467623331aa26315a85b7f4003398b27183ab4c9bc7423e8b
-created: '2026-03-17T11:33:06.695726'
-date: '2026-03-17T11:33:06.695729'
+- CS_E-Rezept_KTR
+- PS_E-Rezept_abgebend
+- PS_E-Rezept_verordnend
+conformance: MAY
+content_hash: 2f852d2cd6dd36d6a1e50185497ecd028139b67b89d971322bdb7268d6f98bab
+created: '2026-03-23T10:39:54.148199'
+date: '2026-03-23T10:39:54.148201'
 key: IG-TIFLOW-CORE-245
-modified: '2026-03-17T11:33:06.695728'
+modified: '2026-03-23T10:39:54.148200'
 release_status: NEW
-source: input/pagecontent/fhir-validate.md
+source: input/pagecontent/health-check.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen,
-  ob angegebene Referenzen nach [FHIR Spezifikation Auflösen von Referenzen in Bundles]
-  ermittelt werden können und bei Auffälligkeiten mit dem HTTP-Fehlercode 400 abbrechen
-  und die Fehlermeldung "Referenz einer Ressource konnte nicht aufgelöst werden."
-  in Form eines OperationOutcome ausliefern.
-title: E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Auflösbarkeit von
-  Referenzen
+  CS_E-Rezept_KTR:
+  - Herstellererklärung
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: "Das Clientsystem des E-Rezept-Fachdienstes KANN einen einfachen Health-Check\
+  \ auf der Endpunkt / (root) mit Abfrage ⇒ ( \"GET / [---]\" ) durchführen, welcher\
+  \ mit Ausnahmen periodisch die Erreichbarkeit des E-Rezept-Fachdienstes feststellt\
+  \ und folgende Kriterien erfüllt: \n    <ol>\n    <li>Die festgelegte Idle-Periode\
+  \ darf 10 Minuten nicht unterschreiten.</li>\n    <li>Der Zeitraum zwischen den\
+  \ Aufrufen (Idle-Periode) muss um eine zufällige Zeitspanne zwischen 0 und 10.000\
+  \ Millisekunden verlängert werden, um eine Gleichverteilung der Anfragen am E-Rezept-Fachdienst\
+  \ über alle Clientsysteme zu erreichen.</li>\n    </ol>"
+title: 'CS: einfacher Health-Check'
 version: 0

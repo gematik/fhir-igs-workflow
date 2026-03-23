@@ -1,29 +1,19 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 3799d46c5da21c0c56d38503873ffcb7d4d628d18cad94080be2e261a9271d15
-created: '2026-03-17T11:33:06.675921'
-date: '2026-03-17T11:33:06.675923'
+content_hash: e16ba3888d9d01958beb35afbc8c62f6420ce4d3c07b8b193b1eb270355cc4ff
+created: '2026-03-23T10:39:54.042442'
+date: '2026-03-23T10:39:54.042445'
 key: IG-TIFLOW-CORE-167
-modified: '2026-03-17T11:33:06.675922'
+modified: '2026-03-23T10:39:54.042443'
 release_status: NEW
-source: input/pagecontent/op-activate-req-fd.md
+source: input/pagecontent/menu-technische-umsetzung-subscription.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: "Der E-Rezept-Fachdienst MUSS das bei der Operation /Task/&#60;id&#62;/$activate\
-  \ im QES-Datensatz enthaltene Verordnung in ein Bundle gleichen Typs in JSON-Repräsentation\
-  \ beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task/&#60;id&#62; zurück\
-  \ liefern.Dies gilt für folgende Bundles: https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundlehttps://fhir.kbv.de/StructureDefinition/KBV_PR_EVDGA_Bundle\
-  \ <br>\n    Der E-Rezept-Fachdienst MUSS für diese Bundles \n    <ul>\n        <li>einen\
-  \ neuen, eindeutigen Identifier für die Bundle.id als UUID generieren,</li>\n  \
-  \      <li>das Bundle entsprechend der Kanonisierungsregeln http://hl7.org/fhir/canonicalization/json#static\
-  \ normalisieren (Bundle.text und Bundle.meta im \"root-Element\" entfernen),</li>\n\
-  \        <li>mit der Signaturidentität des Fachdienstes ID.FD.OSIG gemäß [FHIR-Sig]\
-  \ signieren und</li>\n        <li>das signierte Bundle mit Referenz in Task.input\
-  \ mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType\
-  \ = 2 zurück liefern,</li>\n    </ul>\n    damit der Versicherte einen Nachweis\
-  \ über die Integrität der gespeicherten Daten einsehen kann."
-title: E-Rezept-Fachdienst - Task aktivieren - Serversignatur
+text: Der E-Rezept-Fachdienst DARF in der Verbindung zum Subscription Service anfallende
+  Metadaten (Client-IP-Adresse, etc.) NICHT für eine unbefugte Profilbildung der verbundenen
+  Clients verwenden.
+title: E-Rezept-Fachdienst - Subscription Service - Verbot Profilbildung
 version: 0

@@ -1,24 +1,22 @@
 actor:
-- CS_E-Rezept_KTR
-- PS_E-Rezept_abgebend
-- PS_E-Rezept_verordnend
-conformance: MAY
-content_hash: 4f6fc7d21ddc3057a33b31ee7cf5032706dc47ad85f7b4a568316fabf1a33a0f
-created: '2026-03-17T11:33:06.688114'
-date: '2026-03-17T11:33:06.688116'
+- eRp_FD
+conformance: SHALL
+content_hash: 479c6635574c71d607f8782b8a6ae953bfdc08be0a98ebf115c4489bfdaf6033
+created: '2026-03-23T10:39:54.125020'
+date: '2026-03-23T10:39:54.125023'
 key: IG-TIFLOW-CORE-212
-modified: '2026-03-17T11:33:06.688115'
+modified: '2026-03-23T10:39:54.125022'
 release_status: NEW
-source: input/pagecontent/health-check.md
+source: input/pagecontent/query-api-consent-req-fd.md
 status: ACTIVE
 test_procedures:
-  CS_E-Rezept_KTR:
-  - Herstellererklärung
-  PS_E-Rezept_abgebend:
-  - Herstellererklärung
-  PS_E-Rezept_verordnend:
-  - Herstellererklärung
-text: Das Clientsystem des E-Rezept-Fachdienstes KANN einen erweiterten Health-Check
-  auf der Endpunkt ⇒ "POST /VAU [GET /metadata]" durchführen.
-title: 'CS: erweiterter Health-Check'
+  eRp_FD:
+  - Produktgutachten
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt
+  /Consent die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader
+  "Authorization" feststellen und sicherstellen, dass ausschließlich Versicherte in
+  der Rolle oid_versicherter die Operation am E-Rezept-Fachdienst aufrufen dürfen,
+  damit die Information zur Einwilligung nicht durch Unberechtigte gelöscht werden
+  kann.
+title: E-Rezept-Fachdienst - Consent löschen - Rollenprüfung
 version: 0

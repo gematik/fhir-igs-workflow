@@ -1,23 +1,20 @@
 actor:
-- PS_E-Rezept_abgebend
+- PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: 378cba407ac0f33d9d5df41cb4b4647f05674e2e70f2ad7d67e964dc68f40b0c
-created: '2026-03-17T11:33:06.698879'
-date: '2026-03-17T11:33:06.698881'
+content_hash: 7d16ce408f5b7e3736e3489cf5acf60da68470f69b7a4aafc3615a21b381fd17
+created: '2026-03-23T10:39:54.158636'
+date: '2026-03-23T10:39:54.158642'
 key: IG-TIFLOW-CORE-259
-modified: '2026-03-17T11:33:06.698880'
+modified: '2026-03-23T10:39:54.158641'
 release_status: NEW
-source: input/pagecontent/op-close-req-avs.md
+source: input/pagecontent/op-create-req-pvs.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_abgebend:
-  - Herstellererklärung
-text: "Das PS der abgebenden LEI MUSS im Anwendungsfall \"Quittung abrufen\" für das\
-  \ abgegebene E-Rezept die HTTP-Operation POST /Task/&#60;id&#62;/$close mit\n  \
-  \  <ul> \n        <li>ACCESS_TOKEN im Authorization-Header</li>\n        <li>Task-ID\
-  \ in URL &#60;id&#62;</li>\n        <li>Geheimnis in URL-Parameter ?secret=</li>\n\
-  \        <li>optional, falls nicht zuvor mit Anwendungsfall \"Dispensierinformation\
-  \ bereitstellen\" übermittelt: MedicationDispense bzw. Bundle Ressource</li>\n \
-  \   </ul>\n    ausführen."
-title: 'PS abgebende LEI: Quittung abrufen - Statusrequest'
+  PS_E-Rezept_verordnend:
+  - Konformitätserklärung
+text: "Das PS der verordnenden LEI MUSS im Anwendungsfall \"E-Rezept durch Verordnenden\
+  \ erstellen\" für das E-Rezept die HTTP-Operation POST /Task/$create mit\n  <ul>\n\
+  \    <li>ACCESS_TOKEN im Authorization-Header</li>\n    <li>Rezept-Typ im FlowType\
+  \ als Parameter der FHIR-Operation $create für Task </li>\n  </ul>\n  ausführen."
+title: 'PS verordnende LEI: E-Rezept erstellen - E-Rezept-ID abrufen'
 version: 0

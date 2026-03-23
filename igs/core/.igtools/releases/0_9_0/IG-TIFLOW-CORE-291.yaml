@@ -1,29 +1,20 @@
 actor:
-- eRp_FD
+- eRp_FdV
 conformance: SHALL
-content_hash: dec9afa9a43d967dce5dfd2c1aad056611b45c768deedd94baa03a4861222ad1
-created: '2026-03-17T11:33:06.706984'
-date: '2026-03-17T11:33:06.706987'
+content_hash: 1a450e5e5784788e030f027b2b2946453c2db2accca003967dfc653eb375fb4f
+created: '2026-03-23T10:39:54.173811'
+date: '2026-03-23T10:39:54.173814'
 key: IG-TIFLOW-CORE-291
-modified: '2026-03-17T11:33:06.706986'
+modified: '2026-03-23T10:39:54.173813'
 release_status: NEW
-source: input/pagecontent/query-api-communication-req-fd.md
+source: input/pagecontent/query-api-consent-req-fdv.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
+  eRp_FdV:
   - Produkttest
-text: "Der E-Rezept-Fachdienst MUSS das Einstellen einer Nachricht des Profils \"\
-  https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq\"\
-  \ oder \"https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Representative\"\
-  \ durch einen Versicherten über die http-Operation POST auf den Endpunkt /Communication\
-  \ mit dem http-Status-Code 400 abbrechen, wenn \n    <ul><li>\n        die KVNR\
-  \ des in Communication.basedOn referenzierten Tasks Task.for ungleich der KVNR des\
-  \ Einstellenden in \"idNummer\" des übergebenen ACCESS_TOKEN\n    </li></ul>\n \
-  \   und\n    <ul><li>\n        der http-Header \"X-AccessCode\" fehlt oder der im\
-  \ http-Header \"X-AccessCode\" übergebene AccessCode ungleich dem AccessCode-Identifier\
-  \ des referenzierten Tasks\n    </li></ul>\n    ist, um irreführende Testnachrichten\
-  \ zu unterbinden, die eine vermeidbare Mehrbelastung für den E-Rezept-Fachdienst\
-  \ darstellen."
-title: E-Rezept-Fachdienst - Nachricht einstellen - Prüfung Versichertenbezug und
-  Berechtigung
+text: "Das E-Rezept-FdV MUSS im Anwendungsfall \"Einwilligungsinformation abrufen\"\
+  \ zum Abrufen der Information vom E-Rezept-Fachdienst die HTTP-Operation GET /Consent\
+  \ mit:\n    <ul>\n        <li>ACCESS_TOKEN im Authorization-Header</li>\n    </ul>\n\
+  \    ausführen."
+title: 'E-Rezept-FdV: Einwilligungsinformation abrufen - Abfragerequest'
 version: 0

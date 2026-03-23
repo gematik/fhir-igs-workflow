@@ -1,19 +1,19 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: aa43c0430482a664faaf75f8f8c37f0f8a42df48b506ea2936465f13a3615768
-created: '2026-03-17T11:33:06.682633'
-date: '2026-03-17T11:33:06.682635'
+content_hash: 66882af8838ecc04d2d861f3d41bb46a0365d38216048cba9588e27c9a4c8c8f
+created: '2026-03-23T10:39:54.120724'
+date: '2026-03-23T10:39:54.120727'
 key: IG-TIFLOW-CORE-201
-modified: '2026-03-17T11:33:06.682634'
+modified: '2026-03-23T10:39:54.120726'
 release_status: NEW
-source: input/pagecontent/op-create-req-fd.md
+source: input/pagecontent/query-api-consent-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Erzeugen eines Tasks das Feld Task.performerType
-  aus dem übergebenen, gültigen Parameter Task.extension:flowType gemäß der Prozessparameter
-  [gemSpec_DM_eRp#A_19445-*] übernehmen.
-title: E-Rezept-Fachdienst - Task erzeugen - Ergänzung Performer-Typ für Einlöseinstitutstyp
+text: Der E-Rezept-Fachdienst MUSS alle Zugriffe auf die Ressource Consent mittels
+  der HTTP-Operationen PUT, PATCH, oder HEAD unterbinden, damit keine unzulässigen
+  Operationen auf die Informationen zur Einwilligung ausgeführt werden können.
+title: E-Rezept-Fachdienst - Consent - unzulässige Operationen
 version: 0

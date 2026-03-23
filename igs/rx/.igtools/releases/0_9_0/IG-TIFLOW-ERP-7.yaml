@@ -1,19 +1,19 @@
 actor:
-- eRp_FdV
-conformance: SHALL NOT
-content_hash: 7c74e16a99bb229c0058deac80977e0d735fac4b993e1bfb505fba007173ba62
-created: '2026-03-17T11:33:13.252432'
-date: '2026-03-17T11:33:13.252436'
+- PS_E-Rezept_abgebend
+conformance: SHALL
+content_hash: 386188f0517ff756897ddcfaef7280beaa5af301a0d4ceef2fb453e0ff0c1739
+created: '2026-03-23T10:39:55.275184'
+date: '2026-03-23T10:39:55.275187'
 key: IG-TIFLOW-ERP-7
-modified: '2026-03-17T11:33:13.252435'
+modified: '2026-03-23T10:39:55.275186'
 release_status: NEW
-source: input/pagecontent/op-abort-req-fdv.md
+source: input/pagecontent/query-api-task-req-avs.md
 status: ACTIVE
 test_procedures:
-  eRp_FdV:
+  PS_E-Rezept_abgebend:
   - Herstellererklärung
-text: Das E-Rezept-FdV DARF im Anwendungsfall "E-Rezept löschen" dem Nutzer das Löschen
-  von E-Rezepten mit dem Flowtype 169 oder 209 NICHT ermöglichen, wenn der Task einen
-  Status ungleich "completed" hat.
-title: 'E-Rezept-FdV: E-Rezept löschen - Flowtype 169 / 209 - nur wenn beliefert'
+text: Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten
+  abrufen" den Hashwert hcv erzeugen.
+title: 'PS abgebende LEI: E-Rezepte von Versicherten abrufen (VSDM) - Hashwert hcv
+  erzeugen'
 version: 0

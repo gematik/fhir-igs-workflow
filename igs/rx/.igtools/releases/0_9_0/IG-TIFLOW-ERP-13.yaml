@@ -1,20 +1,23 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 364b0b175c71a104391c379bfdc65829dab695e6954c79c290e89ad7dfaeb13d
-created: '2026-03-17T11:33:13.253970'
-date: '2026-03-17T11:33:13.253972'
+content_hash: c561f70a7596b9543efbbec63daaca46d8a503116abaabfd2ad96704b1201c99
+created: '2026-03-23T10:39:55.276305'
+date: '2026-03-23T10:39:55.276308'
 key: IG-TIFLOW-ERP-13
-modified: '2026-03-17T11:33:13.253971'
+modified: '2026-03-23T10:39:55.276307'
 release_status: NEW
-source: input/pagecontent/op-close-req-fd.md
+source: input/pagecontent/op-reject-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels /Task/&lt;id&gt;/$close,
-  wenn die Operation erfolgreich abgeschlossen werden kann, die Daten der Dispensierinformationen
-  mit Status = "completed" für die Übermittlung in den ePA Medication Service bereitstellen.
-title: E-Rezept-Fachdienst - Task schließen - Daten ePA Medication Service bereitstellen
-  (Dispensierinformationen)
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 160,\
+  \ 169, 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject die\
+  \ Rolle \"professionOID\" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"\
+  Authorization\" feststellen und sicherstellen, dass ausschließlich Institutionen\
+  \ in der Rolle\n  <ul>\n    <li>oid_oeffentliche_apotheke</li>\n    <li>oid_krankenhausapotheke</li>\n\
+  \  </ul>\n  die Operation am Fachdienst aufrufen, damit das E-Rezept nicht durch\
+  \ einen Unberechtigten zurückgewiesen werden kann."
+title: E-Rezept-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Rollenprüfung
 version: 0

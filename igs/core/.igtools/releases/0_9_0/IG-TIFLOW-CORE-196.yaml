@@ -1,20 +1,21 @@
 actor:
-- CS_E-Rezept_KTR
+- eRp_FD
 conformance: SHALL
-content_hash: 00bee373fa16183c3172cfd545072a7dc7b453d25d4148ea248c19424e4982ad
-created: '2026-03-17T11:33:06.681667'
-date: '2026-03-17T11:33:06.681670'
+content_hash: 5c9509997d13a33520bba3210364ac38295981f28f2da990b8a914035088ce69
+created: '2026-03-23T10:39:54.117773'
+date: '2026-03-23T10:39:54.117777'
 key: IG-TIFLOW-CORE-196
-modified: '2026-03-17T11:33:06.681669'
+modified: '2026-03-23T10:39:54.117776'
 release_status: NEW
-source: input/pagecontent/query-api-task-req-ktr.md
+source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
-  CS_E-Rezept_KTR:
-  - Herstellererklärung
-text: "Das Clientsystem Kostenträger MUSS im Anwendungsfall \"Recovery Secret\" für\
-  \ das E-Rezept die HTTP-Operation GET /Task/&lt;id&gt;/ mit \n  <ul>\n    <li>ACCESS_TOKEN\
-  \ im Authorization-Header</li>\n    <li>Task-ID in URL &lt;id&gt; </li>\n    <li>Access_Code\
-  \ in URL-Parameter ?ac=</li>\n  </ul>\n  ausführen."
-title: 'CS Kostenträger: Recovery Secret - Statusrequest'
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
+  über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 und einem Hinweis
+  auf die Längenprüfung der PZN ("Länge PZN unzulässig (muss 8-stellig sein))" im
+  OperationOutcome) abbrechen, wenn die PZN einer übergebenen PZN-Verordnung in KBV_PR_ERP_Medication_PZN.code.coding.code
+  nicht 8-stellig ist.
+title: E-Rezept-Fachdienst - Task aktivieren - Längenprüfung PZN
 version: 0

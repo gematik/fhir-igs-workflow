@@ -1,18 +1,21 @@
 actor:
-- eRp_FdV
+- eRp_FD
 conformance: SHALL
-content_hash: aa740574eb123d753df23ab3d11c207a6e53f0ec7a00c6e8326023e8d860f11f
-created: '2026-03-17T11:33:06.697535'
-date: '2026-03-17T11:33:06.697538'
+content_hash: e25f6d51cf46867914a7e413d3c38b327007edf5eb7bf457d9d965a7f938fa62
+created: '2026-03-23T10:39:54.154822'
+date: '2026-03-23T10:39:54.154825'
 key: IG-TIFLOW-CORE-252
-modified: '2026-03-17T11:33:06.697537'
+modified: '2026-03-23T10:39:54.154824'
 release_status: NEW
-source: input/pagecontent/query-api-consent-req-fdv.md
+source: input/pagecontent/op-accept-req-fd.md
 status: ACTIVE
 test_procedures:
-  eRp_FdV:
-  - Herstellererklärung
-text: Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung erteilen" es dem Nutzer
-  ermöglichen, die Einwilligung einzugeben.
-title: 'E-Rezept-FdV: Einwilligung erteilen - Einwilligung eingeben'
+  eRp_FD:
+  - Produktgutachten
+text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
+  über /Task/&lt;id&gt;/$accept für den referenzierten Task die Telematik-ID aus dem
+  ACCESS_TOKEN in Task.owner speichern, damit sichergestellt werden kann, dass nachfolgende
+  Zugriffe auf diesen Datensatz nur durch Berechtigte erfolgen kann.
+title: E-Rezept-Fachdienst - Task akzeptieren - Telematik-ID der abgebenden Institution
+  speichern
 version: 0

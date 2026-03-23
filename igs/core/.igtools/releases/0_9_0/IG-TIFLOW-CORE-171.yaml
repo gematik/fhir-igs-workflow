@@ -1,31 +1,20 @@
 actor:
-- eRp_FD
+- PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: 0f7e0c806d5f7a0285fba7106fd32f6df70ac45e4cdb9fc30f1d56dfa981330c
-created: '2026-03-17T11:33:06.676912'
-date: '2026-03-17T11:33:06.676914'
+content_hash: b3868bde9184946e2f7092e624c6b80ebf912106ba0a03f1f15d8234fbc18812
+created: '2026-03-23T10:39:54.050674'
+date: '2026-03-23T10:39:54.050681'
 key: IG-TIFLOW-CORE-171
-modified: '2026-03-17T11:33:06.676913'
+modified: '2026-03-23T10:39:54.050680'
 release_status: NEW
-source: input/pagecontent/op-activate-req-fd.md
+source: input/pagecontent/op-abort-req-avs.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produkttest
-text: "Der E-Rezept-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&#60;id&#62;/$activate\
-  \ einen im FHIR Profil KBV_PR_FOR_Practitioner hinterlegten Wert für identifier:ANR.value\
-  \ bzw. identifier:ZANR.value gemäß der Anlage 6 BMV-Ä der \"Technischen Anlage zum\
-  \ Vertrag über den Datenaustausch zwischen dem GKV-Spitzenverband (Spitzenverband\
-  \ Bund der Krankenkassen) und der Kassenärztlichen Bundesvereinigung\" unter \"\
-  Aufbau der lebenslangen Arztnummer – LANR\" beschriebenen Prüfalgorithmus unter\
-  \ Beachtung der folgenden zulässigen Ausnahmen validieren, und bei einer fehlerhaften\
-  \ Prüfung auf diese Auffälligkeit gemäß der Konfiguration reagieren.\n    <table>\n\
-  \        <tr> \n            <th>ANR/ZANR</th>\n            <th>Ursache</th>\n  \
-  \      </tr>\n        <tr> \n            <td>555555 plus Ordnungsnummer für die\
-  \ Reihenfolge in der Anzeige an die ASV-Verzeichnisstelle (KH-Zähler) plus Fachgruppencode</td>\n\
-  \            <td>Verordnungen im Rahmen der Versorgung nach § 116b Abs. 1 SGB</td>\n\
-  \        </tr>\n    </table>\n    <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_016\
-  \ Zulässige Ausnahmen in Form von Pseudoarztnummern</figcaption></div>"
-title: E-Rezept-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR im Profil
-  KBV_PR_FOR_Practitioner
+  PS_E-Rezept_abgebend:
+  - Konformitätsbestätigung
+text: Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezept durch Abgebenden
+  löschen" für das zu löschende E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$abort
+  mit ACCESS_TOKEN im Authorization-Header Task-ID in URL &lt;id&gt; Geheimnis in
+  URL Parameter ?secret= ausführen.
+title: 'PS abgebende LEI: E-Rezept löschen - Löschrequest'
 version: 0

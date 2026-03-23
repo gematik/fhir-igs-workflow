@@ -1,22 +1,23 @@
 actor:
-- eRp_FdV
+- eRp_FD
 conformance: SHALL
-content_hash: 319ab675baf985a207f285fcf465a896c16212cc2288b148428d912b21f6c44c
-created: '2026-03-17T11:33:06.649290'
-date: '2026-03-17T11:33:06.649293'
+content_hash: c8e512de56bf3104aa5b2e1f924d959ee28141d8403fc94ff14715fb0e87e88d
+created: '2026-03-23T10:39:53.803386'
+date: '2026-03-23T10:39:53.803389'
 key: IG-TIFLOW-CORE-39
-modified: '2026-03-17T11:33:06.649292'
+modified: '2026-03-23T10:39:53.803388'
 release_status: NEW
-source: input/pagecontent/op-abort-req-fdv.md
+source: input/pagecontent/op-reject-req-fd.md
 status: ACTIVE
 test_procedures:
-  eRp_FdV:
+  eRp_FD:
   - Produkttest
-text: Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept löschen", falls das E-Rezept-FdV
-  die Funktionalität für Abrechnungsinformationen unterstützt, wenn der Nutzer ein
-  E-Rezept mit Kostenträgertyp (Coverage.type.coding.code) "PKV" zum Löschen ausgewählt
-  hat und für das E-Rezept noch keine Abrechnungsinformationen bereitgestellt wurden,
-  eine Warnung anzeigen, dass ein Bereitstellen der Abrechnungsinformationen zum E-Rezept
-  nach dem Löschen des E-Rezepts nicht mehr möglich ist.
-title: 'E-Rezept-FdV:  E-Rezepte löschen - Coverage PKV - Warnung Abgabeinformationen'
+text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
+  über /Task/&#60;id&#62;/$reject das im URL-Parameter "?secret=..." übertragene Secret
+  gegen das im referenzierten Task gespeicherte Secret Task.identifier:Secret als
+  https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret  prüfen und bei Ungleichheit
+  oder Fehlen des URL-Parameters die Operation mit dem HTTP-Fehlercode 403 abbrechen,
+  damit der Zugriff auf diesen Datensatz nur durch den Berechtigten in Kenntnis des
+  Secrets erfolgt.
+title: E-Rezept-Fachdienst - Task zurückweisen - Prüfung Secret
 version: 0

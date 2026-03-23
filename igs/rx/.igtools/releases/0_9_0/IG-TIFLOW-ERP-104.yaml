@@ -1,29 +1,23 @@
 actor:
-- PS_E-Rezept_abgebend
-- PS_E-Rezept_verordnend
 - eRp_FD
-- eRp_FdV
 conformance: SHALL
-content_hash: 18d6a02be2e301cd4acbe6f762f3a84f2c526dca4fc0186fa72a5ed5cd446d63
-created: '2026-03-17T11:33:13.280228'
-date: '2026-03-17T11:33:13.280230'
+content_hash: 8446d8eca1e8eba85313662757736c633e1c624e759c03067fbb307960b388e9
+created: '2026-03-23T10:39:55.301263'
+date: '2026-03-23T10:39:55.301266'
 key: IG-TIFLOW-ERP-104
-modified: '2026-03-17T11:33:13.280229'
+modified: '2026-03-23T10:39:55.301265'
 release_status: NEW
-source: input/pagecontent/index.md
+source: input/pagecontent/op-accept-req-fd.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_abgebend:
-  - Herstellererklärung
-  PS_E-Rezept_verordnend:
-  - Herstellererklärung
   eRp_FD:
-  - Herstellererklärung
-  eRp_FdV:
-  - Herstellererklärung
-text: Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation
-  Guides "E-Rezept für Arzneimittel" alle Anforderungen und FHIR-Artefakte umsetzen,
-  die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core],
-  die in diesem IG referenziert werden.
-title: 'E-Rezept: Umsetzung des Moduls ''E-Rezept für Arzneimittel'''
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS beim Abrufen eines Tasks mit Flowtype 160, 166,\
+  \ 169, 200 oder 209 mittels HTTP-POST/$accept-Operation auf den in der URL referenzierten\
+  \ /Task/&lt;id&gt; sicherstellen, dass ausschließlich abgebende Institutionen in\
+  \ der Rolle\n    <ul>\n      <li>oid_oeffentliche_apotheke</li> \n      <li>oid_krankenhausapotheke</li>\n\
+  \    </ul>\n    die Operation am Fachdienst aufrufen dürfen und die Rolle \"professionOID\"\
+  \ des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen,\
+  \ damit E-Rezepte nicht durch Unberechtigte abgerufen werden können."
+title: E-Rezept-Fachdienst - Task akzeptieren - Flowtype 160/166/169/200/209 - Rollenprüfung
 version: 0

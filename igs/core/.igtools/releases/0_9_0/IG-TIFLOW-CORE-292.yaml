@@ -1,28 +1,18 @@
 actor:
-- eRp_FD
+- eRp_FdV
 conformance: SHALL
-content_hash: 0aac006bc458b8ed3a00f62d5e3303a9a690baef84506629be64c377cb2251b8
-created: '2026-03-17T11:33:06.707327'
-date: '2026-03-17T11:33:06.707330'
+content_hash: ed7462c8f7a385809464d5847bd6cd0ed99fbb9a4cbaad2afd24ae831099b642
+created: '2026-03-23T10:39:54.173962'
+date: '2026-03-23T10:39:54.173964'
 key: IG-TIFLOW-CORE-292
-modified: '2026-03-17T11:33:06.707329'
+modified: '2026-03-23T10:39:54.173963'
 release_status: NEW
-source: input/pagecontent/query-api-communication-req-fd.md
+source: input/pagecontent/query-api-consent-req-fdv.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produkttest
-text: "Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht des Profils \"\
-  https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq\"\
-  \ durch einen Versicherten über die http-Operation POST auf den Endpunkt /Communication\
-  \ die Zulässigkeit der Übermittlung auf Basis des Flowtypes des referenzierten Tasks\
-  \ (Task.extension:flowType) und dem Empfänger Communication.recipient prüfen und\
-  \ mit dem http-Status-Code 403 abbrechen, wenn der Empfänger laut TAB_eRPFD_028\
-  \ den spezifischen Flowtype nicht empfangen darf.\n    <table>\n    <tr> \n\t\t\
-  <th>Empfänger (Präfix der Telematik-ID)</th>\n\t\t<th>Zulässige Flowtypes</th>\n\
-  \t</tr>\n\t<tr> \n\t\t<td>oid_oeffentliche_apotheke (3-*, 9-*)</td>\n\t\t<td>160,\
-  \ 166, 200</td>\n\t</tr>\n    <tr> \n\t\t<td>oid_kostentraeger (8-*)</td>\n\t\t\
-  <td>162</td>\n\t</tr>\n    </table>\n    <div><figcaption><strong>Tabelle: </strong>Tab_eRPFD_028\
-  \ Zulässige Empfänger Communication_DispReq</figcaption></div>"
-title: E-Rezept-Fachdienst - Nachricht einstellen - Prüfung des Empfängers
+  eRp_FdV:
+  - Herstellererklärung
+text: Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung widerrufen" es dem Nutzer
+  ermöglichen, den Widerruf zu erfassen.
+title: 'E-Rezept-FdV: Einwilligung widerrufen - Widerruf eingeben'
 version: 0

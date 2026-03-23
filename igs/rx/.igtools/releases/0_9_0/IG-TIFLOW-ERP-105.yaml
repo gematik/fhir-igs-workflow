@@ -1,19 +1,28 @@
 actor:
-- PS_E-Rezept_abgebend
-conformance: SHOULD
-content_hash: a50ed83d2e738c17afe9f8dfa9597b4f6a5462b609ac1a155ef2d542d50d5677
-created: '2026-03-17T11:33:13.280933'
-date: '2026-03-17T11:33:13.280938'
+- eRp_FD
+conformance: SHALL
+content_hash: 62410b3871a00d40f4bde4bee3136b20ef69b668d5e2d6b3461056774a6e913e
+created: '2026-03-23T10:39:55.301447'
+date: '2026-03-23T10:39:55.301450'
 key: IG-TIFLOW-ERP-105
-modified: '2026-03-17T11:33:13.280936'
+modified: '2026-03-23T10:39:55.301449'
 release_status: NEW
-source: input/pagecontent/menu-fachlichkeit-ux-abgebend.md
+source: input/pagecontent/op-accept-req-fd.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_abgebend:
-  - Herstellererklärung
-text: Das PS der abgebenden LEI SOLL bei Erhalt einer Zuweisung via KIM oder über
-  das E-Rezept-FdV einen entsprechenden Hinweis an den Arbeitsplätzen in der Apotheke
-  anzeigen, um ein zeitnahes Bearbeiten der Zuweisung zu bewirken.
-title: 'PS abgebende LEI: UX - Zuweisung - Hinweis'
+  eRp_FD:
+  - Produkttest
+text: 'Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
+  über /Task/&lt;id&gt;/$accept die Operation mit dem Fehlercode 403 abbrechen, wenn
+  die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
+  = true) gekennzeichnet ist und und der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start)
+  zu einem späteren Zeitpunkt als das aktuelle Datum liegt, da Teilverordnungen von
+  Mehrfachverordnungen erst ab Beginn der Einlösefrist abgerufen werden dürfen. Im
+  Falle dieses Fehlers ist im OperationOutcome des Response der Beginn der Einlösefrist
+  wie folgt anzugeben: "Teilverordnung zur Mehrfachverordnung &lt;MVO Referenz&gt;
+  ist ab &lt;Datum&gt; einlösbar.", wobei &lt;MVO Referenz&gt; der Wert MedicationRequest.extension:Mehrfachverordnung.extension:ID.value[x]:valueIdentifier.value
+  sowie &lt;Datum&gt; der Wert MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start
+  im Format "dd.mm.yyyy" ist.'
+title: E-Rezept-Fachdienst - Task akzeptieren - Mehrfachverordnung - Beginn Einlösefrist
+  prüfen
 version: 0

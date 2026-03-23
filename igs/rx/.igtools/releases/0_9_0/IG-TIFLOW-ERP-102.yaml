@@ -1,18 +1,21 @@
 actor:
-- PS_E-Rezept_abgebend
+- eRp_FD
 conformance: SHALL
-content_hash: 45cdce40721d018d43f225c8a34a92ae0f50712cd29243c8e576dbd5c27843b4
-created: '2026-03-17T11:33:13.279615'
-date: '2026-03-17T11:33:13.279617'
+content_hash: 8353bebdcf07b3d5324705afb89bcdb95d234213ef56cd91d79d9f9041acd5c8
+created: '2026-03-23T10:39:55.300329'
+date: '2026-03-23T10:39:55.300331'
 key: IG-TIFLOW-ERP-102
-modified: '2026-03-17T11:33:13.279616'
+modified: '2026-03-23T10:39:55.300330'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-kim.md
+source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_abgebend:
+  eRp_FD:
   - Produkttest
-text: 'Das PS der abgebenden und verordnenden LEI MUSS bei Versand einer Kommunikation-Message
-  eine Message mit "Content-Type: text/plain;charset=UTF-8" verwenden.'
-title: E-Rezept - Struktur Kommunikation-Message
+text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
+  über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
+  wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
+  = true) gekennzeichnet ist und der dazugehörige value (MedicationRequest.extension:Mehrfachverordnung.extension:ID.value[x]:valueIdentifier.value)
+  nicht dem Schema aus [KBV_ITA_VGEX_Technische_Anlage_ERP] entspricht.
+title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Schema ID
 version: 0

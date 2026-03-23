@@ -1,28 +1,22 @@
 actor:
-- Anb_NCPeH_FD
-- CS_E-Rezept_KTR
-- PS_E-Rezept_abgebend
-- PS_E-Rezept_verordnend
+- eRp_FD
 conformance: SHALL
-content_hash: e53fee338e153be502ec392fbab0b3263a6193b4b11da49b018e682110a13be8
-created: '2026-03-17T11:33:06.669461'
-date: '2026-03-17T11:33:06.669464'
+content_hash: 9f59e9a6ffba88e4cbfc6bee560158f4e9971a9465961eb84f30b1444f5974cc
+created: '2026-03-23T10:39:54.023817'
+date: '2026-03-23T10:39:54.023823'
 key: IG-TIFLOW-CORE-137
-modified: '2026-03-17T11:33:06.669463'
+modified: '2026-03-23T10:39:54.023822'
 release_status: NEW
-source: input/pagecontent/kommunikation-dienste-ti.md
+source: input/pagecontent/query-api-auditevent-req-fd.md
 status: ACTIVE
 test_procedures:
-  Anb_NCPeH_FD:
-  - Produkttest
-  CS_E-Rezept_KTR:
-  - Herstellererklärung
-  PS_E-Rezept_abgebend:
-  - Herstellererklärung
-  PS_E-Rezept_verordnend:
-  - Konformitätsbestätigung
-text: Das Clientsystem des E-Rezept-Fachdienstes MUSS für die Kommunikation mit dem
-  E-Rezept-Fachdienst die Endpunkte der Schnittstellen gemäß [gemSpec_FD_eRP#5.1 Servicelokalisierung]
-  nutzen.
-title: 'CS: Lokalisierung E-Rezept-Fachdienst'
+  eRp_FD:
+  - Produktgutachten
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
+  /AuditEvent die dem Versicherten zugeordneten AuditEvent-Ressourcen anhand der KVNR
+  des Versicherten im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren,
+  die in AuditEvent.entity.name die entsprechende KVNR des begünstigten Patienten
+  referenziert haben, damit ausschließlich Versicherte ihre eigenen Protokolleinträge
+  einsehen können.
+title: E-Rezept-Fachdienst - AuditEvent lesen - Filter KVNR
 version: 0

@@ -1,18 +1,24 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 3fd1f6d8b01531212c3189c453facc4bd1ac45fce8bbf66686d3278d1c0eb2e0
-created: '2026-03-17T11:33:06.662889'
-date: '2026-03-17T11:33:06.662891'
+content_hash: 17851fe4a97ac3ea47d0cf8b660c9adb0371813b74a835871f270c7733f35aec
+created: '2026-03-23T10:39:53.898725'
+date: '2026-03-23T10:39:53.898762'
 key: IG-TIFLOW-CORE-109
-modified: '2026-03-17T11:33:06.662890'
+modified: '2026-03-23T10:39:53.898758'
 release_status: NEW
-source: input/pagecontent/ttl.md
+source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS bei jedem Löschen eines Tasks alle referenzierten
-  Bundles (QES-Datensatz, Quittungs-Bundle, Dispensierinformationen) ebenfalls löschen.
-title: E-Rezept-Fachdienst - Löschen referenzierter Bundles
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen konkreten\
+  \ über &lt;id&gt; adressierten /Task/&lt;id&gt; (ohne die Referenz einer FHIR-Operation)\
+  \ sicherstellen, dass ausschließlich Clientsysteme in einer der Rollen \n    <ul>\n\
+  \        <li>oid_versicherter</li>\n        <li>oid_oeffentliche_apotheke</li>\n\
+  \        <li>oid_krankenhausapotheke</li>\n        <li>oid_kostentraeger</li> \n\
+  \    </ul>\n    die Operation am Fachdienst aufrufen dürfen und die Rolle \"professionOID\"\
+  \ des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen,\
+  \ damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können."
+title: E-Rezept-Fachdienst - Task abrufen - Rollenprüfung
 version: 0

@@ -1,25 +1,22 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 9c9cd2b3d7c19e502e9bd6c4e195070da20c1071ac93cdf7262646bcceb228a8
-created: '2026-03-17T11:33:06.661356'
-date: '2026-03-17T11:33:06.661358'
+content_hash: 52336c5a103d0e646c8df4ea72b7281f275b5d7434982497b632dbcb86101c4c
+created: '2026-03-23T10:39:53.886615'
+date: '2026-03-23T10:39:53.886629'
 key: IG-TIFLOW-CORE-102
-modified: '2026-03-17T11:33:06.661357'
+modified: '2026-03-23T10:39:53.886626'
 release_status: NEW
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
-  Task mittels "/Task/&lt;id&gt;?secret=..." durch eine abgebende Institution den
-  Task, sofern er den Status "completed" hat, um das referenzierte, serverseitig signierte
-  Quittungs-Bundle aus Task.output mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType =
-  3 als search.include im Ergebnis-Bundle ergänzen und die Ergebnismenge Task + Quittungs-Bundle
-  an den Abgebenden zurückgeben, damit ein Abgebender, der ein konkretes E-Rezept
-  beliefert hat, bei Bedarf genau dieses belieferte E-Rezept inkl. der Quittung erneut
-  abrufen kann.
-title: E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Rückgabe Task
-  inkl. Bundle im Bundle
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS, falls im VSDM Prüfungsnachweis eine Prüfziffer\
+  \ enthalten ist, für den HMAC der Prüfziffer die führenden 23 Byte der Prüfziffer\
+  \ (Felder 1-5) mittels SHA-256 Hashfunktion berechnen und für den nachfolgenden\
+  \ Vergleich die ersten 24 Byte verwenden.<br>\n    Der E-Rezept-Fachdienst MUSS\
+  \ im Fehlerfall die Meldung \"Anwesenheitsnachweis konnte nicht erfolgreich durchgeführt\
+  \ werden (Fehler bei Prüfung der HMAC-Sicherung).\" im OperationOutcome zu übermitteln."
+title: E-Rezept-Fachdienst - Prüfung Prüfziffer - Berechnung HMAC der Prüfziffer
 version: 0

@@ -1,29 +1,24 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 3e2f44f0eeabcfb9a6a25d38c673dc11ab8b53560ac2a5f5a008b860c39c87e2
-created: '2026-03-17T11:33:06.714104'
-date: '2026-03-17T11:33:06.714108'
+content_hash: e89945f25d4919b69d1f4dd9e9fe6878f4fdc8e3c0648856de854e043df3e470
+created: '2026-03-23T10:39:54.179411'
+date: '2026-03-23T10:39:54.179413'
 key: IG-TIFLOW-CORE-317
-modified: '2026-03-17T11:33:06.714106'
+modified: '2026-03-23T10:39:54.179412'
 release_status: NEW
-source: input/pagecontent/menu-schnittstellen-generelle-prinzipien.md
+source: input/pagecontent/query-api-communication-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Produkttest
-text: "Der E-Rezept-Fachdienst MUSS an seinen Schnittstellen eine http-GET-Operation\
-  \ auf den Endpunkt /metadata erlauben, in welcher er ein CapabilityStatement gemäß\
-  \ https://www.hl7.org/fhir/capabilitystatement.html veröffentlicht, welches die\
-  \ vom E-Rezept-Fachdienst verarbeiteten Ressourcen mit den zugehörigen http-Operationen\
-  \ der angebotenen REST-Schnittstelle auflistet: \n    <ul>\n     <li>Task – GET-,\
-  \ POST-Operation, FHIR-Operations für die Workflow-Steuerung und Einsicht durch\
-  \ den Versicherten </li>\n     <li>MedicationDispense – GET-Operation für das Einsehen\
-  \ der Medikamentinformationen durch den Versicherten </li>\n     <li>Communication\
-  \ – GET-, POST, DELETE-Operation für das Senden, Empfangen und Löschen von Nachrichten\
-  \ </li>\n     <li>AuditEvent – GET-Operation für die Einsicht in Protokolleinträge\
-  \ durch den Versicherten </li>\n     <li>Device – GET-Operation mit statischen Informationen\
-  \ zur serverseitigen Signatur damit der Client eine Information über die FHIR-Kompatibilität\
-  \ zum Fachdienst erhält.</li>\n     </ul>"
-title: E-Rezept-Fachdienst - RESTful API CapabilityStatement
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET, DELETE und POST-Operation\
+  \ auf den Endpunkt /Communication bzw. /Communication/&lt;id&gt; sicherstellen,\
+  \ dass ausschließlich Versicherte, Leistungserbingerinstitutionen und Kostenträger\
+  \ in der Rolle\n    <ul>\n        <li>oid_versicherter</li>\n        <li>oid_oeffentliche_apotheke</li>\n\
+  \        <li>oid_krankenhausapotheke</li>\n        <li>oid_kostentraeger</li>\n\
+  \    </ul>\n    die Operation am Fachdienst aufrufen dürfen und die Rolle \"professionOID\"\
+  \ des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen,\
+  \ damit der Nachrichtenaustausch nicht zwischen Unbefugten erfolgt."
+title: E-Rezept-Fachdienst - Communication - Rollenprüfung
 version: 0

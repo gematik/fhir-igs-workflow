@@ -1,23 +1,19 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: a3a1aa430edf5aa58b24fc0010b1ca8a7a4f12e4a60de36c456e4e5fdfb88b9d
-created: '2026-03-17T11:33:06.666135'
-date: '2026-03-17T11:33:06.666137'
+content_hash: f87aa24840aca300160bdb9981af6b357f948afb77c6ca72d4a9c3f70895ccbc
+created: '2026-03-23T10:39:53.963481'
+date: '2026-03-23T10:39:53.963490'
 key: IG-TIFLOW-CORE-124
-modified: '2026-03-17T11:33:06.666136'
+modified: '2026-03-23T10:39:53.963488'
 release_status: NEW
-source: input/pagecontent/op-abort-req-fd.md
+source: input/pagecontent/ttl.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts durch einen Versicherten,
-  wenn der HTTP-Request keinen HTTP-Header "X-AccessCode" oder URL-Parameter "?ac=..."
-  enthält, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header
-  des HTTP-Requests identifizieren, diese gegen die in Task.for hinterlegte KVNR des
-  begünstigten Patienten prüfen und bei Missmatch den Aufruf mit dem HTTP-Fehlercode
-  403 abweisen, damit ausschließlich der begünstigte Versicherte als Berechtigter
-  ohne Kenntnis des AccessCodes ein E-Rezept löscht.
-title: E-Rezept-Fachdienst - E-Rezept löschen - Versicherter - Prüfung KVNR
+text: Der E-Rezept-Fachdienst MUSS beim Löschen eines Task nach Ablauf der Löschfrist,
+  wenn Task.status = "ready" oder Task.status = "in-progress", die Daten für die Löschinformation
+  des Verordnungsdatensatzes in den ePA Medication Service bereitstellen.
+title: E-Rezept-Fachdienst - Löschinformation ePA Medication Service bereitstellen
 version: 0

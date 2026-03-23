@@ -1,22 +1,21 @@
 actor:
 - PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: cfcf16043e55fcd466cc20132f031e7c4684681229f25c23bce11ecbd2476384
-created: '2026-03-18T14:52:25.364564'
-date: '2026-03-18T14:52:25.364569'
+content_hash: 44d057281ce530eaf213bd39468e6e011ac97e28cd119e86db763bd14306b24f
+created: '2026-03-23T10:39:55.320219'
+date: '2026-03-23T10:39:55.320221'
 key: IG-TIFLOW-ERP-212
-modified: '2026-03-18T14:52:25.364568'
+modified: '2026-03-23T10:39:55.320220'
 release_status: NEW
-source: input/pagecontent/op-accept-req-avs.md
+source: input/pagecontent/menu-technische-umsetzung-dispensierinformationen.md
 status: ACTIVE
 test_procedures:
   PS_E-Rezept_abgebend:
-  - Herstellererklärung
-text: Das PS der abgebenden LEI MUSS bei der Übernahme von E-Rezept-Informationen
-  in ein Warenwirtschaftssystem die Integrität und Vertraulichkeit  der personenbezogenen
-  und medizinischen Daten sicherstellen und zusätzlich sicherstellen, dass der Umfang
-  der übertragenen Daten nur auf das unmittelbare für die Einlösung erforderliche
-  Maß beschränkt (Datenminimierung) ist und keine Verwendung der Daten über die unmittelbare
-  Rezepteinlösung hinaus erfolgt (Zweckbindung).
-title: 'PS abgebende LEI: Übernahme Rezeptinformationen in Warenwirtschaftssystem'
+  - Produkttest
+text: Das PS der abgebenden LEI MUSS beim Erstellen einer MedicationDispense eines
+  Fertigarzneimittels für ein E-Rezept des Flowtype 160, 166, 169, 200 oder 209 jede
+  FHIR-Ressource Medication um Wirkstoff, Wirkstärke (inkl. Einheit) und Handelsnamen
+  ergänzen, sofern die Informationen in der verwendeten Arzneimittel-Datenbank vorliegen.
+title: 'PS abgebende LEI: Dispensierinformationen – Flowtype 160/166/169/200/209 –
+  Fertigarzneimittel: Wirkstoff, Wirkstärke und Handelsname'
 version: 0

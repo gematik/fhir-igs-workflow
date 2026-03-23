@@ -1,21 +1,28 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 245958596d72289b0410d8b8a61faecff59ced67b8b84f703f93b42a1bff4036
-created: '2026-03-18T14:56:22.536320'
-date: '2026-03-18T14:56:22.536324'
+content_hash: 71e0725ec41b6484e66c8b4da466806be3c612468ff93780ec74787fc171fea1
+created: '2026-03-23T10:39:54.193251'
+date: '2026-03-23T10:39:54.193253'
 key: IG-TIFLOW-CORE-369
-modified: '2026-03-18T14:56:22.536322'
+modified: '2026-03-23T10:39:54.193252'
 release_status: NEW
-source: input/pagecontent/op-reject-req-fd.md
+source: input/pagecontent/menu-technische-umsetzung-paging.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
-  über /Task/&#60;id&#62;/$reject den im referenzierten Task gespeicherten Status
-  Task.status prüfen und mit dem Fehler 412 abbrechen, wenn Task.status ungleich "in-progress"
-  ist, damit die Verordnung nur zurückgegeben werden kann, wenn sich die Verordnung
-  in Belieferung befindet.
-title: E-Rezept-Fachdienst - Task zurückweisen - Prüfung Status
+text: "Der E-Rezept-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten\
+  \ folgende Filteroperatoren für Suchkriterien anbieten, deren Datentyp \"date\"\
+  \ ist: \n     \n<table>\n<thead>\n<tr>\n<th>Operator</th>\n<th>Übersetzung</th>\n\
+  <th>Bedeutung</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>eq</td>\n<td>equals</td>\n\
+  <td>ist gleich (=)</td>\n</tr>\n<tr>\n<td>ne</td>\n<td>not equals</td>\n<td>ist\
+  \ nicht gleich (!=)</td>\n</tr>\n<tr>\n<td>gt</td>\n<td>greater than</td>\n<td>größer\
+  \ als (&gt;)</td>\n</tr>\n<tr>\n<td>lt</td>\n<td>less than</td>\n<td>kleiner als\
+  \ (&lt;)</td>\n</tr>\n<tr>\n<td>ge</td>\n<td>greater equals</td>\n<td>größer gleich\
+  \ (&gt;=)</td>\n</tr>\n<tr>\n<td>le</td>\n<td>less equals</td>\n<td>kleiner gleich\
+  \ (&lt;=)</td>\n</tr>\n</tbody>\n</table>\n\n<div><figcaption><strong>Tabelle: </strong>Filteroperatoren\
+  \ für Datumsabfragen</figcaption></div>"
+title: E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten -
+  Filteroperatoren für Datumsabfragen
 version: 0

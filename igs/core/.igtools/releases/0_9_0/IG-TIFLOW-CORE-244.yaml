@@ -1,21 +1,25 @@
 actor:
-- eRp_FD
-conformance: SHALL
-content_hash: 6fb2a4b19dd17aab90ca21771fdaa4d5e72b3acc0857605fe4ae960bf9f6d122
-created: '2026-03-17T11:33:06.695595'
-date: '2026-03-17T11:33:06.695597'
+- CS_E-Rezept_KTR
+- PS_E-Rezept_abgebend
+- PS_E-Rezept_verordnend
+conformance: SHALL NOT
+content_hash: bc05aec2637b6a8ee2926823f7150662df004fb0e7f0ddbfae0a78ad702a0078
+created: '2026-03-23T10:39:54.147932'
+date: '2026-03-23T10:39:54.147934'
 key: IG-TIFLOW-CORE-244
-modified: '2026-03-17T11:33:06.695596'
+modified: '2026-03-23T10:39:54.147933'
 release_status: NEW
-source: input/pagecontent/fhir-validate.md
+source: input/pagecontent/health-check.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ
-  Bundle prüfen, ob für jedes entry im Bundle die ID der Ressource (Bundle.entry.resource.id)
-  vorhanden ist und bei Auffälligkeiten mit dem HTTP-Fehlercode 400 abbrechen und
-  die Fehlermeldung "Die ID einer Ressource im Bundle ist nicht vorhanden." in Form
-  eines OperationOutcome ausliefern.
-title: E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Existenz von Ressource.id
+  CS_E-Rezept_KTR:
+  - Herstellererklärung
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: Das Clientsystem des E-Rezept-Fachdienstes DARF NICHT einen erweiterten Health-Check
+  durchführen, welcher andere als die jeweils vorgegebenen Endpunkte des E-Rezept-Fachdienstes
+  nutzt.
+title: 'CS: erweiterter Health-Check - keine anderen Endpunkte zulässig'
 version: 0

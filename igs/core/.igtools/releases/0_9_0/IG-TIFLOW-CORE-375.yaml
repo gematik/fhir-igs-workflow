@@ -1,23 +1,19 @@
 actor:
-- PS_E-Rezept_verordnend
-- eRp_FdV
+- eRp_FD
 conformance: SHALL
-content_hash: 4c5d0d11c76139e963d13eb4f595281d1c2f56c2cf7837297db8484ae613e5d8
-created: '2026-03-18T14:56:22.578212'
-date: '2026-03-18T14:56:22.578214'
+content_hash: f414641a5274c78f3dde9663ade3b4b11f974b9de90f1e8fbb8aa1fc4ded3717
+created: '2026-03-23T10:39:54.195956'
+date: '2026-03-23T10:39:54.195959'
 key: IG-TIFLOW-CORE-375
-modified: '2026-03-18T14:56:22.578213'
+modified: '2026-03-23T10:39:54.195958'
 release_status: NEW
-source: input/pagecontent/datamatrix-code-client.md
+source: input/pagecontent/query-api-device-req-fd.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_verordnend:
-  - Herstellererklärung
-  eRp_FdV:
-  - Herstellererklärung
-text: "Das E-Rezept-FdV MUSS eine Sammlung von einer und bis zu drei E-Rezept-Referenzen\
-  \ als Array in JSON-Notation gemäß [JSON] der folgenden Form  \n    <ul>\n    <li>2D-Code-Daten\
-  \ = { \"urls\": [ \"E-Rezept 1\", \"E-Rezept 2\", \"E-Rezept 3\" ] }</li>\n    </ul>\n\
-  \    zusammenfassen, um daraus einen 2D-Code generieren zu können."
-title: Generierung 2D-Code als Sammlung
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS über die http-Operation GET /Device dem aufrufenden
+  Clientsystem eine statische Auskunft gemäß der Profilierung der Device-Ressource
+  bereitstellen.
+title: E-Rezept-Fachdienst - Selbstauskunft Device-Informationen
 version: 0

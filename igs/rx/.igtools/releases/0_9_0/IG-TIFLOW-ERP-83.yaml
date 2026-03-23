@@ -1,21 +1,20 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 3450d4720be61540be8bbfeaaee7ce4ff91ccdb70f9b599816c18181f8404850
-created: '2026-03-17T11:33:13.276038'
-date: '2026-03-17T11:33:13.276040'
+content_hash: f1fe15514bc91e0de2310bdeed53b0e2cf69e103ea24dbd10f475623aa04420f
+created: '2026-03-23T10:39:55.293999'
+date: '2026-03-23T10:39:55.294003'
 key: IG-TIFLOW-ERP-83
-modified: '2026-03-17T11:33:13.276039'
+modified: '2026-03-23T10:39:55.294002'
 release_status: NEW
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
-  über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
-  wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
-  = true) gekennzeichnet und der Numerator kleiner als 1 ist.
-title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator größer
-  0
+text: "Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks den Wert für Task.extension:eu-isRedeemableByProperties\
+  \ auf \"true\" setzen, wenn: \n    <ul>\n      <li>Task.extension:flowType = 160\
+  \ oder 200 und</li>\n      <li>MedicationRequests.medication vom Typ KBV_PR_ERP_Medication_PZN.</li>\n\
+  \    </ul>\n    Andernfalls ist der Wert der Extension auf \"false\" zu setzen."
+title: E-Rezept-Fachdienst - Task aktivieren - Bestimmung der Einlösbarkeit im EU-Ausland
 version: 0

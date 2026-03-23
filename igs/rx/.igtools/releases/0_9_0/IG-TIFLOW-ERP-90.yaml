@@ -1,22 +1,27 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 9b81efc06bc564423c53fb0733edde1b50e2beac9896bf8895cd57945689662f
-created: '2026-03-17T11:33:13.277003'
-date: '2026-03-17T11:33:13.277005'
+content_hash: 35762da633531806886b9cefba16f03b3ea248eb050838cb994a5af041563b56
+created: '2026-03-23T10:39:55.297832'
+date: '2026-03-23T10:39:55.297835'
 key: IG-TIFLOW-ERP-90
-modified: '2026-03-17T11:33:13.277004'
+modified: '2026-03-23T10:39:55.297834'
 release_status: NEW
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
-  über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
-  wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
-  = true) gekennzeichnet ist und das Startdatum (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start)
-  vor dem Ausstellungsdatum (MedicationRequest.authoredOn) liegt.
-title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Startdatum nicht
-  vor Ausstellungsdatum
+text: "Der E-Rezept-Fachdienst MUSS nach der Feststellung der Prozessparametern die\
+  \ folgenden Parameter mit abweichenden Werten belegen:\n    <ul>\n        <li>Task.AcceptDate\
+  \ = &#60;Datum der QES.ErstellungBundle.signature.when&#62; + 2 Werktage (Montag\
+  \ bis Samstag, ausgenommen bundeseinheitliche Feiertage) (Abweichende Regelungen\
+  \ durch denGemeinsamen Bundesausschuss (G-BA) sind zu beachten.)</li>\n    </ul>\n\
+  \    wenn das in der http-POST-Operation /Task/&#60;id&#62;/$activate übergebene,\
+  \ gültig signierte E-Rezept-Bundle in der Extension https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis\
+  \ in Bundle.Composition den code=\"04\" oder \"14\" des Code-Systems https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_STATUSKENNZEICHEN\
+  \ (\"Entlassmanagement-Kennzeichen\") enthält und die übrigen Prozessparameter unverändert\
+  \ übernehmen, damit der Prozess für das E-Rezept mit den abweichenden Festlegungen\
+  \ für das Entlassrezept gemäß Arzneimittelrichtlinie [AM-RL] umgesetzt wird."
+title: E-Rezept-Fachdienst - Task aktivieren - Entlassparameter - Prozessparameter
 version: 0

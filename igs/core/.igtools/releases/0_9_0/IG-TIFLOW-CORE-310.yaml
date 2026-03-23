@@ -1,18 +1,22 @@
 actor:
-- eRp_FD
-conformance: SHALL
-content_hash: 797d528b1213dfbed238e8e6230037fc266cc42fcce788e29fb51a74effe0e1e
-created: '2026-03-17T11:33:06.712297'
-date: '2026-03-17T11:33:06.712299'
+- CS_E-Rezept_KTR
+- PS_E-Rezept_abgebend
+conformance: MAY
+content_hash: b3f4489f47c46cd15adbe19ba0c99a4560cb2258451156a662144bb9bd186ab7
+created: '2026-03-23T10:39:54.178052'
+date: '2026-03-23T10:39:54.178055'
 key: IG-TIFLOW-CORE-310
-modified: '2026-03-17T11:33:06.712298'
+modified: '2026-03-23T10:39:54.178054'
 release_status: NEW
-source: input/pagecontent/query-api-subscription-req-fd.md
+source: input/pagecontent/query-api-subscription-req-avs.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produktgutachten
-text: Der E-Rezept-Fachdienst MUSS den AES-CMAC-Schlüssel zur Pseudonymgenerierung
-  regelmäßig mindestens alle 3 Monate ändern.
-title: E-Rezept-Fachdienst – Generierungsschlüssel – Pseudonym der Telematik-ID
+  CS_E-Rezept_KTR:
+  - Herstellererklärung
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: Der Primärsystem der abgebenden LEI KANN eine beliebige Wartezeit bis zum Abruf
+  der Nachrichten mit Anwendungsfall „Nachrichten von Versicherten empfangen“ umsetzen,
+  wenn in einem Zeitraum sehr viele ping-Benachrichtigungen empfangen werden.
+title: 'PS abgebende LEI: Subscription für neue Communication - Wartezeit'
 version: 0

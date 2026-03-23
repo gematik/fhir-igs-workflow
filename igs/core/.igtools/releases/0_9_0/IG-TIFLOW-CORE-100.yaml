@@ -1,23 +1,26 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 921c7f79870f35f04a48e625b4207ced97477e5772f4dcef241134f41c75dae2
-created: '2026-03-17T11:33:06.661074'
-date: '2026-03-17T11:33:06.661076'
+content_hash: b50421e760505876f1afae74e8a0f5ea343e7af486a98dfff78feb3a71d2aee8
+created: '2026-03-23T10:39:53.885222'
+date: '2026-03-23T10:39:53.885224'
 key: IG-TIFLOW-CORE-100
-modified: '2026-03-17T11:33:06.661076'
+modified: '2026-03-23T10:39:53.885223'
 release_status: NEW
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
-  Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende Institution den im referenzierten
-  Task gespeicherten Status Task.status prüfen und mit dem Fehler 412 abbrechen, wenn
-  Task.status ungleich "in-progress" und ungleich "completed" ist, damit der Datensatz
-  nur abgerufen werden, kann, wenn sich die Verordnung in Belieferung befindet oder
-  der Workflow abgeschlossen ist.
-title: E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen
-  - Prüfung Status
+text: "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt\
+  \ /Task mit HTTP-Header X-PoPP-Token durch eine abgebende LEI mit der Rolle \n \
+  \   <ul>\n    <li>oid_oeffentliche_apotheke</li>\n    <li>oid_krankenhausapotheke</li>\n\
+  \    </ul>\n    , die Tasks nach  \n    <ul>\n    <li>Task.status = \"ready\",</li>\n\
+  \    <li>Task.for = KVNR aus dem PoPP-Token (patientId),</li>\n    <li>Task.ExpiryDate\
+  \ nicht vor dem aktuellen Datum liegt</li>\n    <li>und Task.extension:flowType\
+  \ = 160 oder 166</li>\n    </ul>\n    filtern und in einem Bundle der gefundenen\
+  \ Tasks (ohne den signierte Anhang QES) zurückgeben, damit eine abgebende LEI alle\
+  \ zu einem Versicherten gehörenden einlösbaren E-Rezepte mit dem Status \"offen\"\
+  \ abrufen kann."
+title: E-Rezept-Fachdienst - Rezepte lesen - Apotheke - PoPP - PoPP - Filter KVNR
 version: 0

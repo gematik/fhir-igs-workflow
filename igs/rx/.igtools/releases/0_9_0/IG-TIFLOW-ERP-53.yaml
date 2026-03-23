@@ -1,19 +1,20 @@
 actor:
-- PS_E-Rezept_verordnend
+- eRp_FD
 conformance: SHALL
-content_hash: bd7ec45ccfcdf175b9705e544066cbb641b8e6796b749f65209857fc1d8e22fd
-created: '2026-03-17T11:33:13.262265'
-date: '2026-03-17T11:33:13.262268'
+content_hash: d4abdfda1e0c87e4fabbdf41a91ff0a556373a12d458c06d098572454ffb5b0c
+created: '2026-03-23T10:39:55.283625'
+date: '2026-03-23T10:39:55.283627'
 key: IG-TIFLOW-ERP-53
-modified: '2026-03-17T11:33:13.262267'
+modified: '2026-03-23T10:39:55.283626'
 release_status: NEW
-source: input/pagecontent/op-activate-req-pvs.md
+source: input/pagecontent/op-abort-req-fd.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_verordnend:
-  - Konformitätsbestätigung
-text: Das PS der verordnenden LEI MUSS im Verordnungsdatensatz für ein E-Rezept des
-  Flowtype 166 sicherstellen, dass die maximale Reichdauer entsprechend den gesetzlichen
-  Vorgaben nicht überschritten wird.
-title: 'PS verordnende LEI: E-Rezept erstellen - Flowtype 166 - Reichdauer nach Vorgaben'
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts mittels POST /Task/&lt;id&gt;/$abort
+  durch eine verordnende oder abgebende Leistungserbringerinstitution die Daten für
+  die Löschinformation des Verordnungsdatensatzes in den ePA Medication Service bereitstellen.
+title: E-Rezept-Fachdienst - E-Rezept löschen - Löschinformation ePA Medication Service
+  bereitstellen (Verordnungsdatensatz) - Leistungserbringerinstitution
 version: 0

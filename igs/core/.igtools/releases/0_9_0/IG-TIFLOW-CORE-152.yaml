@@ -1,26 +1,19 @@
 actor:
-- PS_E-Rezept_abgebend
+- PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: abab1ace20c64a3890df89335303b7e1a6dfc7b0184fce1499acbea87c8e5b24
-created: '2026-03-17T11:33:06.672938'
-date: '2026-03-17T11:33:06.672941'
+content_hash: 16dbb12e2af4b90840a99dc0de67cb5dfc3cc58e63331f9db5578cb172216c4c
+created: '2026-03-23T10:39:54.031502'
+date: '2026-03-23T10:39:54.031505'
 key: IG-TIFLOW-CORE-152
-modified: '2026-03-17T11:33:06.672940'
+modified: '2026-03-23T10:39:54.031504'
 release_status: NEW
-source: input/pagecontent/op-abort-req-avs.md
+source: input/pagecontent/op-activate-req-pvs.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_abgebend:
-  - Konformitätsbestätigung
-text: 'Das PS der abgebenden LEI MUSS den Anwendungsfall "UC 4.3 - E-Rezept durch
-  Abgebenden löschen" aus [gemSysL_eRp] gemäß TAB_ILFERP_009 umsetzen. Tabelle # :
-  TAB_ILFERP_009 – E-Rezept durch Abgebenden löschen Name E-Rezept durch Abgebenden
-  löschen Auslöser Aufruf des Anwendungsfalls in der GUI Akteur Leistungserbringer,
-  Mitarbeiter der abgebenden LEI Vorbedingung Die LEI hat das E-Rezept vom E-Rezept-Fachdienst
-  heruntergeladen. Der Nutzer hat ein E-Rezept zum Löschen markiert und das Löschen
-  bestätigt. Die LEI hat sich gegenüber der TI authentisiert. Nachbedingung Das ausgewählte
-  E-Rezept ist vom E-Rezept-Fachdienst unwiederbringlich gelöscht. Standardablauf
-  Task-ID und Geheimnis des E-Rezepts bestimmen E-Rezept auf Fachdienst löschen E-Rezept-Token
-  in PS löschen'
-title: 'PS abgebende LEI: E-Rezept durch Abgebenden löschen'
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: Das PS der verordnenden LEI MUSS sicherstellen, dass für jeden Flowtype ein
+  separater Patientenausdruck erfolgt, sofern der Nutzer Verordnungen mit unterschiedlichen
+  Flowtypes einstellt und für diese Patientenausdrucke erzeugen möchte.
+title: 'PS verordnende LEI: E-Rezept einstellen - separater Patientenausdruck je Flowtype'
 version: 0

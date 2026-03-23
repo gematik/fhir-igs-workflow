@@ -1,20 +1,22 @@
 actor:
-- eRp_FD
+- CS_E-Rezept_KTR
+- PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: 8e8255bada13a590b682c86ba2a29e10cf3e3153bf42d9d163dcd04bd24875c5
-created: '2026-03-17T11:33:06.712044'
-date: '2026-03-17T11:33:06.712046'
+content_hash: 7d4c05faa9754eedcce53dadc7fcf03292f24235f5ade0c51aa100eeee7b247b
+created: '2026-03-23T10:39:54.177698'
+date: '2026-03-23T10:39:54.177700'
 key: IG-TIFLOW-CORE-308
-modified: '2026-03-17T11:33:06.712045'
+modified: '2026-03-23T10:39:54.177699'
 release_status: NEW
-source: input/pagecontent/query-api-subscription-req-fd.md
+source: input/pagecontent/query-api-subscription-req-avs.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription
-  Ressource mit einem Response antworten, welcher eine Subscription Ressource mit
-  Pseudonym der Telematik-ID in id aktueller Timestamp + 12 h in end Bearer Token
-  in Authorization enthält.
-title: E-Rezept-Fachdienst – Subscription registrieren – Response
+  CS_E-Rezept_KTR:
+  - Herstellererklärung
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: Das PS der abgebenden LEI MUSS im Anwendungsfall "Subscription für neue Communication"
+  zum Registrieren im E-Rezept-Fachdienst die HTTP-Operation POST /v1/Subscription
+  mit ACCESS_TOKEN im Authorization-Header ausführen.
+title: 'PS abgebende LEI: Subscription für neue Communication - Subscription registrieren'
 version: 0

@@ -1,20 +1,22 @@
 actor:
-- PS_E-Rezept_abgebend
+- eRp_FD
 conformance: SHALL
-content_hash: c1a38d60b5fa3d426520a09350001d6585cd8d0cc87cf1b67d24bcceb06424ac
-created: '2026-03-17T11:33:06.647386'
-date: '2026-03-17T11:33:06.647392'
+content_hash: 108f26d73a4f9a6098d2c1c1f5fbb3ee3943dfde6fb0e3353701f1a95b5b6a93
+created: '2026-03-23T10:39:53.799795'
+date: '2026-03-23T10:39:53.799856'
 key: IG-TIFLOW-CORE-31
-modified: '2026-03-17T11:33:06.647390'
+modified: '2026-03-23T10:39:53.799797'
 release_status: NEW
-source: input/pagecontent/query-api-task-req-avs.md
+source: input/pagecontent/audit-service.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_abgebend:
-  - Herstellererklärung
-text: "Das PS der abgebenden LEI MUSS im Anwendungsfall \"Recovery Secret\" für das\
-  \ E-Rezept die HTTP-Operation GET /Task/&lt;id&gt;/ mit \n  <ul>\n    <li>ACCESS_TOKEN\
-  \ im Authorization-Header</li>\n    <li>Task-ID in URL &lt;id&gt; </li>\n    <li>Access_Code\
-  \ in URL-Parameter ?ac=</li>\n  </ul>\n  ausführen."
-title: 'PS abgebende LEI: Recovery Secret - Statusrequest'
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS jeden Aufruf von Operationen gemäß "TAB_eRPFD_004
+  Versichertenprotokoll" protokollieren und die gelesene bzw. geschriebene Ressource
+  im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR
+  des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen
+  kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten
+  Zugriff ggf. intervenieren.
+title: E-Rezept-Fachdienst - Versichertenprotokoll zu Operationen
 version: 0

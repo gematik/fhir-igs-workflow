@@ -1,22 +1,21 @@
 actor:
-- eRp_FD
+- CS_E-Rezept_KTR
 conformance: SHALL
-content_hash: 48cfb826218b604ff1227b2f0844cb0b271d7d704a5008cc11d0b32f5929e9a7
-created: '2026-03-17T11:33:06.652211'
-date: '2026-03-17T11:33:06.652214'
+content_hash: 827b383d05b4dc9fa3ce15d01f5b652a7c0832688ab97dc9f1359d37c600d5ff
+created: '2026-03-23T10:39:53.807593'
+date: '2026-03-23T10:39:53.807597'
 key: IG-TIFLOW-CORE-51
-modified: '2026-03-17T11:33:06.652213'
+modified: '2026-03-23T10:39:53.807596'
 release_status: NEW
-source: input/pagecontent/query-api-channels-req-fd.md
+source: input/pagecontent/query-api-communication-req-ktr.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produktgutachten
-text: "Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation GET /channels/{pushkey}\
-  \ die Rolle \"professionOID\" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader\
-  \ \"Authorization\" feststellen und sicherstellen, dass ausschließlich Versicherte\
-  \ in der Rolle \n  <ul>\n    <li>oid_versicherter</li>\n  </ul>\n  die Operation\
-  \ aufrufen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird."
-title: E-Rezept-Fachdienst - Push Notifications - Channels einer Instanz abrufen -
-  Rollenprüfung
+  CS_E-Rezept_KTR:
+  - Herstellererklärung
+text: Das Clientsystem Kostenträger MUSS im Anwendungsfall "Nachrichten von Versicherten
+  empfangen" zwischen den Aufrufen der Operation GET /Communication mindestens 5 Minuten
+  warten. Der Zeitraum zwischen den Aufrufen muss um eine zufällige Zeitspanne zwischen
+  0 und 10.000 Millisekunden verlängert werden, um eine Gleichverteilung der Anfragen
+  am E-Rezept-Fachdienst über alle Apotheken zu erreichen.
+title: 'CS Kostenträger: Nachrichten abrufen - Häufigkeit'
 version: 0

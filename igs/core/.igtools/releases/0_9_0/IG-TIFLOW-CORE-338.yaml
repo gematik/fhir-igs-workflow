@@ -1,20 +1,22 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 63eed2cb054212633533c20c787401cc91dfe5821d26b6a847ce2f2b9459a393
-created: '2026-03-17T11:33:06.722886'
-date: '2026-03-17T11:33:06.722889'
+content_hash: 0fdc2a8f1dcc16d6971bfbf843d90c9e1f5d9b95cf3452e4d0751f0f5f988155
+created: '2026-03-23T10:39:54.183301'
+date: '2026-03-23T10:39:54.183303'
 key: IG-TIFLOW-CORE-338
-modified: '2026-03-17T11:33:06.722888'
+modified: '2026-03-23T10:39:54.183302'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-epa-ms.md
+source: input/pagecontent/query-api-communication-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS prüfen, dass die im Zertifikat enthaltene Rolle
-  (Admission) gleich oid_epa_dvw ist und im Fehlerfall den Aufbau der HTTPS-Verbindung
-  abbrechen.
-title: E-Rezept-Fachdienst - ePA - TLS-Server X.509-Zertifikat des ePA-Aktensystems
-  Rolle prüfen
+text: 'Der E-Rezept-Fachdienst MUSS beim Löschen einer Communication-Ressource der
+  http-Response das http-Header-Feld "Warning" mit dem Zeitpunkt des Nachrichtenabrufs
+  durch den Empfänger ergänzen (z.B. "Warning: ''Deleted message delivered at 2020-07-01
+  10:30:00''"), wenn die Nachricht bereits durch den Empfänger abgerufen wurde (Communication.received
+  ungleich NULL, bzw. enthält Datum des Abrufs), um dem Absender einen Hinweis anzeigen
+  zu können.'
+title: E-Rezept-Fachdienst - Nachricht löschen - Warning bei Empfänger bereits abgerufen
 version: 0

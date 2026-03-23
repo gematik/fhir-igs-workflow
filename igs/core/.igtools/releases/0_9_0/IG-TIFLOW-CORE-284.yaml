@@ -1,23 +1,35 @@
 actor:
+- CS_E-Rezept_KTR
+- NCPeH_ePeDA
+- PS_E-Rezept_abgebend
+- PS_E-Rezept_verordnend
 - eRp_FD
+- eRp_FdV
 conformance: SHALL
-content_hash: ee6fe7b7e0d371b463379ed6bf844b28bc663ccfad3d4f7b92cb60c2e3794fdb
-created: '2026-03-17T11:33:06.705818'
-date: '2026-03-17T11:33:06.705820'
+content_hash: 9b6e047073885f5d5b50c10044f5e3443290dc4a160c0c47e60884bf5447a2e7
+created: '2026-03-23T10:39:54.168960'
+date: '2026-03-23T10:39:54.168962'
 key: IG-TIFLOW-CORE-284
-modified: '2026-03-17T11:33:06.705819'
+modified: '2026-03-23T10:39:54.168961'
 release_status: NEW
-source: input/pagecontent/query-api-communication-req-fd.md
+source: input/pagecontent/fhir-validate.md
 status: ACTIVE
 test_procedures:
+  CS_E-Rezept_KTR:
+  - Herstellererklärung
+  NCPeH_ePeDA:
+  - Herstellererklärung
+  PS_E-Rezept_abgebend:
+  - Konformitätsbestätigung
+  PS_E-Rezept_verordnend:
+  - Konformitätsbestätigung
   eRp_FD:
   - Produkttest
-text: 'Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation
-  POST auf den Endpunkt /Communication, falls die Ressource dem GEM_ERP_PR_Communication_Reply-Profil
-  entspricht, den Inhalt der contentString-Eigenschaft auf valides JSON sowie gegen
-  die Struktur in "Tabelle: Nachricht als Apotheke an einen Versicherten schicken"
-  überprüfen und bei negativem Prüfergebnis, mit einem Http-Fehler 400 (Bad Request)
-  abbrechen sowie mit einer aussagekräftigen Fehlermeldung in Form einer eingebetteten
-  OperationOutcome-Ressource antworten.'
-title: E-Rezept-Fachdienst - Nachricht einstellen - Validierung Payload  GEM_ERP_PR_Communication_Reply
+  eRp_FdV:
+  - Herstellererklärung
+text: Die Produkttypen der Anwendung E-Rezept und Clientsystem des E-Rezept-Fachdienstes
+  MÜSSEN alle generierten FHIR-Ressourcen mit der Versionsnummer gemäß [datatypes.html#canonical](https://www.hl7.org/fhir/datatypes.html#canonical)
+  im Feld Ressource.meta.profile kennzeichnen, zu dessen aktuell gültiger Profilversion
+  sie mutmaßlich validieren.
+title: FHIR-Ressourcen Versionsangabe
 version: 0

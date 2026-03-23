@@ -1,22 +1,26 @@
 actor:
 - CS_E-Rezept_KTR
 - PS_E-Rezept_abgebend
-conformance: SHALL NOT
-content_hash: 5c3e2dc82cac4dd7132c0138fdd47459ba4d7fc903555c2cc404f71791e95c85
-created: '2026-03-17T11:33:06.701636'
-date: '2026-03-17T11:33:06.701639'
+- PS_E-Rezept_verordnend
+conformance: SHOULD
+content_hash: d497a73730383deebfcc51475641c678ae16880ce532fe20fd4fbf5b1fbed3e3
+created: '2026-03-23T10:39:54.161744'
+date: '2026-03-23T10:39:54.161747'
 key: IG-TIFLOW-CORE-267
-modified: '2026-03-17T11:33:06.701638'
+modified: '2026-03-23T10:39:54.161746'
 release_status: NEW
-source: input/pagecontent/query-api-subscription-req-avs.md
+source: input/pagecontent/fehlerbehandlung-client.md
 status: ACTIVE
 test_procedures:
   CS_E-Rezept_KTR:
   - Herstellererklärung
   PS_E-Rezept_abgebend:
   - Herstellererklärung
-text: Das PS der abgebenden LEI DARF NICHT mehr als eine Subscription pro Telematik-ID
-  registrieren.
-title: 'PS abgebende LEI: Subscription für neue Communication - eine Subscription
-  pro Telematik-ID'
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: Das Clientsystem des E-Rezept-Fachdienstes SOLL bei serverseitigen Fehlermeldungen,
+  die auf eine Überlastung des Zielsystems schließen lassen (z.B. http-status 5xx,
+  429 - too many requests, etc.), erneute Verbindungsversuche nach dem Prinzips des
+  Exponential Backoffs [ExpBack] durchführen.
+title: 'CS: Exponential Backoff bei Verbindungsfehlern'
 version: 0

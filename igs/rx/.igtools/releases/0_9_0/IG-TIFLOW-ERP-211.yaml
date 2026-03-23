@@ -1,21 +1,22 @@
 actor:
 - PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: 7cf269af86ac16faf10ee6e67ee054f699b6d0a83288c312c37d93c8fc20f483
-created: '2026-03-18T14:52:25.334521'
-date: '2026-03-23T07:25:48.262465'
+content_hash: 838b627f1235badea7da4493f32d3a2931c6a8d9a127ce3f145a429883fd23ee
+created: '2026-03-23T10:39:55.320091'
+date: '2026-03-23T10:39:55.320093'
 key: IG-TIFLOW-ERP-211
-modified: '2026-03-23T07:25:48.262465'
+modified: '2026-03-23T10:39:55.320092'
 release_status: NEW
-source: input/pagecontent/query-api-task-req-avs.md
+source: input/pagecontent/menu-technische-umsetzung-dispensierinformationen.md
 status: ACTIVE
 test_procedures:
   PS_E-Rezept_abgebend:
-  - Herstellererklärung
-text: Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten
-  abrufen" den Nutzer geeignet unterstützen, heruntergeladene und damit reservierte
-  E-Rezepte, welche nicht beliefert werden, wieder zurückzugeben, um dem Versicherten
-  zu ermöglichen, diese in einer anderen Apotheke einzulösen.
-title: 'PS abgebende LEI: E-Rezepte von Versicherten abrufen - nicht belieferte E-Rezepte
-  zurückgeben'
+  - Produkttest
+text: Das PS der abgebenden LEI MUSS beim Erstellen von Dispensierinformationen mit
+  Flowtype 160, 166, 169, 200 oder 209 die FHIR-Ressource Medication um Chargeninformation
+  und Verfallsdatum aus dem SecurPharm-Scan [SecurPharm] ergänzen, sofern es sich
+  bei dem abgegebenen Arzneimittel um ein Fertigarzneimittel handelt, das einen Data-Matrix-Code
+  gemäß securPharmSystem besitzt.
+title: 'PS abgebende LEI: Dispensierinformationen – Flowtype 160/166/169/200/209 –
+  Fertigarzneimittel: Chargeninfo'
 version: 0

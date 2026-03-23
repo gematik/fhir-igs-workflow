@@ -1,34 +1,24 @@
 actor:
-- CS_E-Rezept_KTR
-- NCPeH_ePeDA
-- PS_E-Rezept_abgebend
-- PS_E-Rezept_verordnend
 - eRp_FD
-- eRp_FdV
 conformance: SHALL
-content_hash: fa4c5e69bc026f8f28e155c44a59047f06a760453af6b13d438ac2f2b0ca7f96
-created: '2026-03-17T11:33:06.696314'
-date: '2026-03-17T11:33:06.696317'
+content_hash: e871c70fc51f43374a21379917d40260aad1aeb0b48755e9ceb781d56f64333a
+created: '2026-03-23T10:39:54.153614'
+date: '2026-03-23T10:39:54.153622'
 key: IG-TIFLOW-CORE-247
-modified: '2026-03-17T11:33:06.696316'
+modified: '2026-03-23T10:39:54.153620'
 release_status: NEW
-source: input/pagecontent/fhir-validate.md
+source: input/pagecontent/op-accept-req-fd.md
 status: ACTIVE
 test_procedures:
-  CS_E-Rezept_KTR:
-  - Herstellererklärung
-  NCPeH_ePeDA:
-  - Herstellererklärung
-  PS_E-Rezept_abgebend:
-  - Konformitätsbestätigung
-  PS_E-Rezept_verordnend:
-  - Konformitätsbestätigung
   eRp_FD:
   - Produkttest
-  eRp_FdV:
-  - Herstellererklärung
-text: Die Produkttypen der Anwendung E-Rezept und Clientsysteme des E-Rezept-Fachdienstes
-  MÜSSEN bei der Erstellung einer FHIR-Ressource sicherstellen, dass die fullURL (Bundle.entry.fullUrl)
-  entweder im [Format http-Schema] oder im [Format urn:uuid-Schema] vorliegt.
-title: FHIR-Ressourcen - Format fullUrl
+text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
+  über /Task/&lt;id&gt;/$accept die Operation mit dem HTTP-Fehlercode 410 abbrechen,
+  wenn der referenzierte /Task/&lt;id&gt; existiert, jedoch kein AccessCode im Task.identifier:AccessCode
+  als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode vorhanden ist
+  oder der Status Task.status = cancelled ist, damit die abgebende Institution den
+  Versicherten über die zwischenzeitliche Löschung des Datensatzes in Kenntnis setzen
+  kann.
+title: E-Rezept-Fachdienst - Task akzeptieren - Prüfung Datensatz zwischenzeitlich
+  gelöscht
 version: 0

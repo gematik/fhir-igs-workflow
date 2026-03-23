@@ -1,20 +1,21 @@
 actor:
-- eRp_FdV
+- PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: 5455b7dec625df5a2942992e854d413632cf53822eb90ac51689bd88f793c3fd
-created: '2026-03-17T11:33:06.697872'
-date: '2026-03-17T11:33:06.697874'
+content_hash: 27e120aa2e4fa41282d544bcebbc65d76fe2cc9b75ff68df941f3f07115c38c3
+created: '2026-03-23T10:39:54.155569'
+date: '2026-03-23T10:39:54.155571'
 key: IG-TIFLOW-CORE-254
-modified: '2026-03-17T11:33:06.697873'
+modified: '2026-03-23T10:39:54.155570'
 release_status: NEW
-source: input/pagecontent/query-api-consent-req-fdv.md
+source: input/pagecontent/op-reject-req-avs.md
 status: ACTIVE
 test_procedures:
-  eRp_FdV:
-  - Produkttest
-text: "Das E-Rezept-FdV MUSS im Anwendungsfall \"Einwilligung erteilen\" zum Speichern\
-  \ der Information im E-Rezept-Fachdienst die HTTP-Operation POST /Consent mit:\n\
-  \    <ul>\n        <li>ACCESS_TOKEN im Authorization-Header</li>\n    </ul>\n  \
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: "Das PS der abgebenden LEI MUSS im Anwendungsfall \"E-Rezept durch Abgebenden\
+  \ zurückgeben\" für das zurückzugebende E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$reject\
+  \ mit \n  <ul>\n    <li>ACCESS_TOKEN im Authorization-Header</li>\n    <li>Task-ID\
+  \ in URL &lt;id&gt; </li>\n    <li>Geheimnis in URL-Parameter ?secret=</li>\n  </ul>\n\
   \  ausführen."
-title: 'E-Rezept-FdV: Einwilligung erteilen - Speicherrequest'
+title: 'PS abgebende LEI: E-Rezept zurückgeben - Statusrequest'
 version: 0

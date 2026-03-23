@@ -1,20 +1,30 @@
 actor:
-- eRp_FD
+- CS_E-Rezept_KTR
+- NCPeH_ePeDA
+- PS_E-Rezept_abgebend
+- PS_E-Rezept_verordnend
+- eRp_FdV
 conformance: SHALL
-content_hash: b4b7947271e89e1ce79a804993470ea07537105af510c9ec108c5951e1c26072
-created: '2026-03-17T11:33:06.726912'
-date: '2026-03-17T11:33:06.726914'
+content_hash: 36cb0ac2652f28b67e903dcc71dedebe06439daedaf6de66b93221a707dbb9c6
+created: '2026-03-23T10:39:54.188435'
+date: '2026-03-23T10:39:54.188438'
 key: IG-TIFLOW-CORE-362
-modified: '2026-03-17T11:33:06.726914'
+modified: '2026-03-23T10:39:54.188437'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-epa-ms.md
+source: input/pagecontent/menu-schnittstellen-generelle-prinzipien.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Herstellererklärung
-text: Der E-Rezept-Fachdienst MUSS alle Übermittlungsaufträge für eine KVNR für 24
-  Stunden pausieren, wenn das Aktenkonto aufgrund eines Umzugs nicht erreichbar ist
-  und der Medication Service oder der Information Service eine Response mit dem Statuscode
-  409 zurückgibt, und nach dieser Pause einen erneuten Übermittlungsversuch starten.
-title: E-Rezept-Fachdienst - ePA - Fehlerbehandlung - Aktenkonto-Umzug
+  CS_E-Rezept_KTR:
+  - Konformitätsbestätigung
+  NCPeH_ePeDA:
+  - Produkttest
+  PS_E-Rezept_abgebend:
+  - Konformitätsbestätigung
+  PS_E-Rezept_verordnend:
+  - Konformitätsbestätigung
+  eRp_FdV:
+  - Produkttest
+text: Clientsysteme des E-Rezept-Fachdienstes DÜRFEN für die Kommunikation mit dem
+  E-Rezept-Fachdienst in Datensätzen ein Byte Order Mark (BOM) NICHT angeben.
+title: Verbot Angabe von BOM für E-Rezept-Fachdienst
 version: 0

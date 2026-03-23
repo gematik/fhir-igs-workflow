@@ -1,21 +1,20 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 5df212589a24a838f64e26e627dd8147d853a99719ba8a9017ee6455225bf674
-created: '2026-03-17T11:33:06.675432'
-date: '2026-03-17T11:33:06.675434'
+content_hash: 35a745e56c2eae4d2bb8a8ca9952cc72abe12d4ff392433e294b8588331954bf
+created: '2026-03-23T10:39:54.040488'
+date: '2026-03-23T10:39:54.040493'
 key: IG-TIFLOW-CORE-164
-modified: '2026-03-17T11:33:06.675433'
+modified: '2026-03-23T10:39:54.040492'
 release_status: NEW
-source: input/pagecontent/op-activate-req-fd.md
+source: input/pagecontent/menu-technische-umsetzung-subscription.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produktgutachten
-text: Der E-Rezept-Fachdienst MUSS im Zugriff auf einen Task mittels HTTP-POST-Operation
-  über /Task/&#60;id&#62;/$activate die KVNR des Patienten dem Identifier http://fhir.de/sid/gkv/kvid-10
-  der Patient-Ressource im E-Rezept-Bundle entnehmen und diesen als Identifier in
-  Task.for mit system http://fhir.de/sid/gkv/kvid-10 hinzufügen, damit ausschließlich
-  eine gültige, vom Arzt signierte Patientenreferenz im Workflow verwendet wird.
-title: E-Rezept-Fachdienst - Task aktivieren - Übernahme der Versicherten-ID
+text: Der E-Rezept-Fachdienst MUSS an der Webschnittstelle des Subscription Service
+  beim Verbindungsaufbau prüfen, dass der Client einen zeitlich und kryptographisch
+  gültigen Bearer-Token der Schnittstelle GET /Subscription übermittelt und bei nicht-erfolgreicher
+  Prüfung die Verbindung mit dem Fehler 403 ablehnen.
+title: E-Rezept-Fachdienst - Subscription Service - Prüfung Bearer-Token
 version: 0

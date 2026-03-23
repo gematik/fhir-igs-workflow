@@ -1,20 +1,19 @@
 actor:
-- PS_E-Rezept_abgebend
+- PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: b3868bde9184946e2f7092e624c6b80ebf912106ba0a03f1f15d8234fbc18812
-created: '2026-03-17T11:33:06.673075'
-date: '2026-03-17T11:33:06.673078'
+content_hash: c4198365f2b0d57508e519fad30ad6ec73721fc0444afc6aad65d740add2b8ea
+created: '2026-03-23T10:39:54.031637'
+date: '2026-03-23T10:39:54.031639'
 key: IG-TIFLOW-CORE-153
-modified: '2026-03-17T11:33:06.673077'
+modified: '2026-03-23T10:39:54.031638'
 release_status: NEW
-source: input/pagecontent/op-abort-req-avs.md
+source: input/pagecontent/op-activate-req-pvs.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_abgebend:
-  - Konformitätsbestätigung
-text: Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezept durch Abgebenden
-  löschen" für das zu löschende E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$abort
-  mit ACCESS_TOKEN im Authorization-Header Task-ID in URL &lt;id&gt; Geheimnis in
-  URL Parameter ?secret= ausführen.
-title: 'PS abgebende LEI: E-Rezept löschen - Löschrequest'
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden
+  einstellen", wenn ein Patientenausdruck erstellt werden soll, einen E-Rezept-Token
+  erstellen.
+title: 'PS verordnende LEI: E-Rezept einstellen - E-Rezept-Token erstellen'
 version: 0

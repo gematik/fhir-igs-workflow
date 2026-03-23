@@ -1,19 +1,18 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: a2b965adcc6f56ae433c47d4fd3836dca3eb418acb02b4d4958fb5ebea0720fc
-created: '2026-03-17T11:33:06.648518'
-date: '2026-03-17T11:33:06.648521'
+content_hash: 8510d6a412a69ba4440a30186d18d25a697c320b98b483ced0c3bf5d73623f60
+created: '2026-03-23T10:39:53.800868'
+date: '2026-03-23T10:39:53.800871'
 key: IG-TIFLOW-CORE-35
-modified: '2026-03-17T11:33:06.648519'
+modified: '2026-03-23T10:39:53.800870'
 release_status: NEW
-source: input/pagecontent/op-reject-req-fd.md
+source: input/pagecontent/audit-service.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Produktgutachten
-text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
-  über /Task/&#60;id&#62;/$reject die zum referenzierten Task in Task.owner gespeicherte
-  Telematik-ID der abgebenden LEI löschen.
-title: E-Rezept-Fachdienst - Task zurückweisen - Telematik-ID der abgebenden LEI löschen
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS, wenn im ACCESS_TOKEN die Angabe zur "organizationName"
+  mit NULL gefüllt ist, in der Protokollierung als agentname "unbekannt" verwenden.
+title: E-Rezept-Fachdienst - Protokollierung - keine Angabe zu organizationName
 version: 0

@@ -1,25 +1,21 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 05d98bab261a56d545f5427e4d3ae501bfd363ac407496d627c11a393d9fd8c0
-created: '2026-03-17T11:33:13.278413'
-date: '2026-03-17T11:33:13.278415'
+content_hash: ac40cbe534f07081a4832d48b37bd5e81bb157f24b60cf349e8a5e3f4c6102b1
+created: '2026-03-23T10:39:55.298813'
+date: '2026-03-23T10:39:55.298815'
 key: IG-TIFLOW-ERP-96
-modified: '2026-03-17T11:33:13.278414'
+modified: '2026-03-23T10:39:55.298814'
 release_status: NEW
-source: input/pagecontent/op-accept-req-fd.md
+source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
-  über /Task/&lt;id&gt;/$accept, wenn der Verordnungsdatensatz Coverage.type.coding.code
-  = "PKV" enthält und für die KVNR des begünstigten Versicherten (Task.for) eine Consent
-  Ressource mit Consent.patient.identifier = KVNR und Consent.category.coding.code
-  = "CHARGCONS" existiert, das Response Bundle um die Consent Ressource ergänzen,
-  um der abgebenden LEI die Information zu übermitteln, dass der Versicherte eine
-  Einwilligung zum Speichern der Abrechnungsinformationen auf dem E-Rezept-Fachdienst
-  erteilt hat.
-title: E-Rezept-Fachdienst - Task akzeptieren - Coverage PKV - Einwilligung Abrechnungsinformation
-  ermitteln
+text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
+  über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
+  wenn die Verordnung nicht als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
+  = false) gekennzeichnet ist, aber eine Extension Nummerierung oder Zeitraum enthält,
+  weil normale Verordnungen keine MVO-Angaben enthalten dürfen.
+title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Unzulässige Angaben
 version: 0

@@ -1,22 +1,20 @@
 actor:
-- eRp_FD
+- eRp_FdV
 conformance: SHALL
-content_hash: a5efb2d7e343e1b7366072bc882132d244c2af855ba86e542cbdc4bb78ecbe3a
-created: '2026-03-17T11:33:06.657463'
-date: '2026-03-17T11:33:06.657466'
+content_hash: 862106d6ab9a20bc3fd3b5500cee89b539d46fbe7bc4dda4715b06fb45d36928
+created: '2026-03-23T10:39:53.850020'
+date: '2026-03-23T10:39:53.850038'
 key: IG-TIFLOW-CORE-78
-modified: '2026-03-17T11:33:06.657465'
+modified: '2026-03-23T10:39:53.850034'
 release_status: NEW
-source: input/pagecontent/query-api-task-req-fd.md
+source: input/pagecontent/query-api-communication-req-fdv.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
+  eRp_FdV:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
-  /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI,den im Parameter
-  pnw übermittelten Prüfungsnachweis extrahieren, die Version der Prüfziffer bestimmen,
-  den Prüfungsnachweis prüfen und bei Fehlen oder fehlerhafter Prüfung mit dem Fehler
-  403 abbrechen, damit nur Clients die Operation aufrufen können, welche einen Anwesenheitsnachweis
-  erfolgreich durchgeführt haben.
-title: E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Prüfung Prüfungsnachweis
+text: "Das E-Rezept-FdV MUSS im Anwendungsfall \"Nachrichten löschen\" für die zu\
+  \ löschende Nachricht die HTTP-Operation DELETE /Communication/&lt;id&gt; des E-Rezept-Fachdienstes\
+  \ mit\n    <ul>\n        <li>ACCESS_TOKEN im Authorization-Header</li>\n       \
+  \ <li>Communication-ID in URL &lt;id&gt;</li> \n    </ul>\n    ausführen."
+title: 'E-Rezept-FdV: Nachricht löschen - Löschrequest'
 version: 0

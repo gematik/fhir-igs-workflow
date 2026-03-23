@@ -1,22 +1,19 @@
 actor:
-- eRp_FdV
+- eRp_FD
 conformance: SHALL
-content_hash: b7916a427d2b2a11aa8881c912ac1d32a7c6a2c2d7092b2d241507607d90506b
-created: '2026-03-17T11:33:13.255838'
-date: '2026-03-17T11:33:13.255841'
+content_hash: 86484fda68e0796094e5f3118468577a47955ef4150d06bc62273e0850137dda
+created: '2026-03-23T10:39:55.278144'
+date: '2026-03-23T10:39:55.278146'
 key: IG-TIFLOW-ERP-23
-modified: '2026-03-17T11:33:13.255840'
+modified: '2026-03-23T10:39:55.278145'
 release_status: NEW
-source: input/pagecontent/query-api-communication-req-fdv.md
+source: input/pagecontent/op-close-req-fd.md
 status: ACTIVE
 test_procedures:
-  eRp_FdV:
+  eRp_FD:
   - Produkttest
-text: "Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezept einer Apotheke zuweisen\"\
-  \ eine FHIR Ressource Communication des Profils https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq\
-  \ mit  \n    <ul>\n      <li>Telematik-ID der ausgewählten abgebenden LEI in recipient</li>\n\
-  \      <li>Textnachricht in payload contentString</li>\n      <li>E-Rezept-Token\
-  \ in basedOn reference auf Task inkl. AccessCode als \"/Task/&lt;id&gt;/$accept?ac=...\"\
-   </li>\n    </ul>\n    erstellen."
-title: 'E-Rezept-FdV: E-Rezept zuweisen - Nachricht erstellen'
+text: Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels /Task/&lt;id&gt;/$close
+  mit Flowtype 166, wenn die Operation erfolgreich abgeschlossen werden kann, die
+  Daten des digitalen Durchschlags E-T-Rezept dem BfArM Webdienst bereitstellen.
+title: E-Rezept-Fachdienst - Task schließen - T-Rezept Daten an BfArM Webdienst bereitstellen
 version: 0

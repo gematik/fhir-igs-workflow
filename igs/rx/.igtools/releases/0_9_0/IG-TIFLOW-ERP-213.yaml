@@ -1,20 +1,21 @@
 actor:
 - PS_E-Rezept_abgebend
-conformance: MAY
-content_hash: d8a42f5f8853fedb5313335734e2226f71ee2f3ce73e5ad7c9b954c498b8d80c
-created: '2026-03-18T14:52:25.364754'
-date: '2026-03-18T14:52:25.364757'
+conformance: SHALL
+content_hash: 23cacf57564fc8f92c8d616c1aca0bc5bb87da16c22d1f1b744424f62fc7f76a
+created: '2026-03-23T10:39:55.320344'
+date: '2026-03-23T10:39:55.320346'
 key: IG-TIFLOW-ERP-213
-modified: '2026-03-18T14:52:25.364756'
+modified: '2026-03-23T10:39:55.320345'
 release_status: NEW
-source: input/pagecontent/op-accept-req-avs.md
+source: input/pagecontent/menu-technische-umsetzung-dispensierinformationen.md
 status: ACTIVE
 test_procedures:
   PS_E-Rezept_abgebend:
-  - Herstellererklärung
-text: "Das PS der abgebenden LEI KANN im Anwendungsfall \"E-Rezept abrufen\" die QES\
-  \ des E-Rezepts prüfen. Zum Prüfen der QES des E-Rezepts ist die Operation POST\
-  \ //Konnektorservice mit \n    <ul>\n    <li>Header \"SOAPAction: \\\"http://ws.gematik.de/conn/SignatureService/v7.4#VerifyDocument\\\
-  \"\" </li>\n    <li>PKCS#7-Datei in SignatureObject</li>\n    </ul>\n    auszuführen."
-title: 'PS abgebende LEI: E-Rezept abrufen - QES prüfen'
+  - Produkttest
+text: Das PS der abgebenden LEI MUSS beim Erstellen einer MedicationDispense einer
+  Rezeptur für ein E-Rezept des Flowtype 160, 166, 169, 200 oder 209 für jede FHIR-Ressource
+  Medication Wirkstoff und Wirkstärke (inkl. Einheit) strukturiert angeben, wenn diese
+  Information strukturiert im Verordnungsdatensatz vorlag.
+title: 'PS abgebende LEI:  Dispensierinformationen – Flowtype 160/166/169/200/209
+  – Rezeptur: Wirkstoff, Wirkstärke'
 version: 0

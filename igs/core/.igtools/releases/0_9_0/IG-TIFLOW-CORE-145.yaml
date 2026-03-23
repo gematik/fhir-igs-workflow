@@ -1,18 +1,21 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 61bf7c82119e191919bde24cd3c5bd7564639f7cc3395db01691fc9b75a5d8b1
-created: '2026-03-17T11:33:06.671893'
-date: '2026-03-17T11:33:06.671895'
+content_hash: 8da6098b540ee788d9b28a34c1561aa42e8996b04a5c81323c6cc4d287438cd8
+created: '2026-03-23T10:39:54.026622'
+date: '2026-03-23T10:39:54.026626'
 key: IG-TIFLOW-CORE-145
-modified: '2026-03-17T11:33:06.671894'
+modified: '2026-03-23T10:39:54.026625'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-subscription.md
+source: input/pagecontent/op-abort-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Herstellererklärung
-text: Der E-Rezept-Fachdienst MUSS eine Webschnittstelle anbieten, welche Websocket-Verbindungen
-  mit einer Dauer von bis zu 12 h unterstützt.
-title: E-Rezept-Fachdienst - Subscription Service - Webschnittstelle
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
+  über /Task/&#60;id&#62;/$abort bei erfolgreichem Abschluss der Operation, wenn die
+  Rolle des aufrufenden Nutzers ungleich oid_versicherter ist, den Push Notification
+  Prozess für den Trigger mit der ChannelId "erp.task.abort" und den Versicherten
+  mit der KVNR = Task.for initiieren.
+title: E-Rezept-Fachdienst - E-Rezept löschen - Push Notification Versicherter
 version: 0

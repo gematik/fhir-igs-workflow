@@ -1,23 +1,20 @@
 actor:
-- eRp_FD
+- eRp_FdV
 conformance: SHALL
-content_hash: e2a711bca80c5d6684d2b260874f0c463b46d1294f49cbe655bcb15fd6da234f
-created: '2026-03-17T11:33:13.257006'
-date: '2026-03-17T11:33:13.257008'
+content_hash: a8d59215220efff359d5e713525d28e9857bfc075feac433845befa7a9d83a16
+created: '2026-03-23T10:39:55.278787'
+date: '2026-03-23T10:39:55.278790'
 key: IG-TIFLOW-ERP-27
-modified: '2026-03-17T11:33:13.257007'
+modified: '2026-03-23T10:39:55.278789'
 release_status: NEW
-source: input/pagecontent/op-dispense-req-fd.md
+source: input/pagecontent/query-api-communication-req-fdv.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produktgutachten
-text: Der E-Rezept-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen
-  mittels POST /Task/&lt;id&gt;/$dispense das im URL-Parameter "?secret=..." übertragene
-  Secret gegen das im referenzierten Task gespeicherte Secret Task.identifier:Secret
-  als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret prüfen und bei Ungleichheit
-  oder Fehlen des URL- Parameters die Operation mit dem HTTP-Fehlercode 403 abbrechen,
-  damit der Zugriff auf diesen Datensatz nur durch den Berechtigten in Kenntnis des
-  Secrets erfolgt.
-title: E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Prüfung Secret
+  eRp_FdV:
+  - Produkttest
+text: Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept einer Apotheke zuweisen" prüfen,
+  ob bei Teilverordnungen von Mehrfachverordnungen (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
+  = true) der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start)
+  erreicht ist und in diesem Fall den Anwendungsfall abbrechen.
+title: 'E-Rezept-FdV: E-Rezept zuweisen - Beginn Gültigkeit prüfen'
 version: 0

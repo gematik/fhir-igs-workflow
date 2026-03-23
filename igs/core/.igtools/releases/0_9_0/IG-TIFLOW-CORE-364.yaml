@@ -1,21 +1,33 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 088a299282a75c03cb38d9df53cbda1eb8c34acc00c7c0762aae5b7e8915399d
-created: '2026-03-17T11:33:06.727199'
-date: '2026-03-17T11:33:06.727201'
+content_hash: 651c964d19af527c05f099a69a75599711311e148fde8dadc43eafc74bb025e6
+created: '2026-03-23T10:39:54.189600'
+date: '2026-03-23T10:39:54.189604'
 key: IG-TIFLOW-CORE-364
-modified: '2026-03-17T11:33:06.727200'
+modified: '2026-03-23T10:39:54.189603'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-epa-ms.md
+source: input/pagecontent/menu-technische-umsetzung-paging.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS bei einem Statuscode 400 in der Response des Medication
-  Service, der auf operationelle Probleme wie Entschlüsselungsprobleme hindeutet,
-  den Übermittlungsversuch abbrechen, einen neuen VAU-Kanal aufbauen und anschließend
-  einen neuen Übermittlungsversuch starten.
-title: E-Rezept-Fachdienst - ePA - Fehlerbehandlung - Probleme bei der Entschlüsselung
-  durch den Medication Service
+text: "Der E-Rezept-Fachdienst MUSS das Konzept zur Handhabung der Rückgabe von mehreren\
+  \ FHIR-Objekten auf folgende Endpunkte anwenden: Tabelle #: TAB_eRPFD_021 Endpunkte\
+  \ des E-Rezept-Fachdienst, die das Konzept zur Handhabung der Rückgabe von mehreren\
+  \ FHIR-Objekten bereitstellen müssen \n     \n     <table>\n<thead>\n<tr>\n<th>Endpunkt</th>\n\
+  <th>Client</th>\n<th>Inhalt der Response</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n\
+  <td>GET /Task</td>\n<td>Versicherte, Abgebende LEI</td>\n<td>Liste von verfügbaren\
+  \ Tasks im E-Rezept-Fachdienst</td>\n</tr>\n<tr>\n<td>GET /Communication</td>\n\
+  <td>Versicherte, Abgebende LEI</td>\n<td>Liste von verfügbaren Communications</td>\n\
+  </tr>\n<tr>\n<td>GET /MedicationDispense</td>\n<td>Versicherte</td>\n<td>Liste von\
+  \ eingestellten MedicationDispenses von Verordnungen</td>\n</tr>\n<tr>\n<td>GET\
+  \ /ChargeItem</td>\n<td>Versicherte</td>\n<td>Liste von Abrechnungsinformationen\
+  \ von Verordnungen</td>\n</tr>\n<tr>\n<td>GET /AuditEvent</td>\n<td>Versicherte</td>\n\
+  <td>Liste von Protokolleinträgen des Versicherten</td>\n</tr>\n</tbody>\n</table>\n\
+  \n<div><figcaption><strong>Tabelle: </strong>Endpunkte des E-Rezept-Fachdienst,\
+  \ die das Konzept zur Handhabung der Rückgabe von mehreren FHIR-Objekten bereitstellen\
+  \ müssen</figcaption></div>"
+title: E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten -
+  Betroffene Endpunkte
 version: 0

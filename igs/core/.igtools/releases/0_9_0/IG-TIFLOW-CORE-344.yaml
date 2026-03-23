@@ -1,20 +1,21 @@
 actor:
-- eRp_FD
+- CS_E-Rezept_KTR
 conformance: SHALL
-content_hash: 230ea168135592f0deb5d6a48a0787d124ca686812591d89c515d22cb6e2da24
-created: '2026-03-17T11:33:06.723650'
-date: '2026-03-17T11:33:06.723652'
+content_hash: 5aa16ae7c4c788a73b589c489a96e8e95f062347fed42232b303764b69542984
+created: '2026-03-23T10:39:54.185118'
+date: '2026-03-23T10:39:54.185121'
 key: IG-TIFLOW-CORE-344
-modified: '2026-03-17T11:33:06.723651'
+modified: '2026-03-23T10:39:54.185120'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-epa-ms.md
+source: input/pagecontent/op-reject-req-ktr.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
+  CS_E-Rezept_KTR:
   - Herstellererklärung
-text: Der E-Rezept-Fachdienst MUSS für das Ermitteln des ePA-Aktensystem bei dem das
-  Aktenkonto zu einer KVNR verwaltet wird, einmal den Endpunkt .../ehr/{insurantid}/consentdecisions
-  des [I_Information_Service] jedes ePA-Aktensystem aufrufen und das Ermitteln abbrechen,
-  wenn die Response den Statuscode 404 erhält.
-title: E-Rezept-Fachdienst - ePA - ePA-Aktensystem für KVNR ermitteln
+text: "Das Clientsystem Kostenträger MUSS im Anwendungsfall \"Verordnung durch Clientsystem\
+  \ zurückgeben\" für die zurückzugebende Verordnung die HTTP-Operation POST /Task/&lt;id&gt;/$reject\
+  \ mit \n  <ul>\n    <li>ACCESS_TOKEN im Authorization-Header</li>\n    <li>Task-ID\
+  \ in URL &lt;id&gt; </li>\n    <li>Geheimnis in URL-Parameter ?secret=</li>\n  </ul>\n\
+  \  ausführen."
+title: 'CS Kostenträger: Verordnung zurückgeben - Statusrequest'
 version: 0

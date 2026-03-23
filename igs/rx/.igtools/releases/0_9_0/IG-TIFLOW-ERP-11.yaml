@@ -1,21 +1,19 @@
 actor:
-- eRp_FD
+- PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: b14eb33b83813dbb769cd79e4fdf5ac92c4582d03b358fdaf85e857dff0efcca
-created: '2026-03-17T11:33:13.253683'
-date: '2026-03-17T11:33:13.253685'
+content_hash: 0f840c57ced4fedf63cb2e9aeb1f6f1a8a51d9cf8f3a14294cc5d11d899fee1e
+created: '2026-03-23T10:39:55.275797'
+date: '2026-03-23T10:39:55.275799'
 key: IG-TIFLOW-ERP-11
-modified: '2026-03-17T11:33:13.253684'
+modified: '2026-03-23T10:39:55.275798'
 release_status: NEW
-source: input/pagecontent/op-close-req-fd.md
+source: input/pagecontent/query-api-task-req-avs.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels /Task/&lt;id&gt;/$close
-  sicherstellen, dass alle vorhandenen MedicationDispenses und ihre referenzierten
-  Medications gelöscht werden, wenn der Client im Aufruf eine neue MedicationDispense
-  übermittelt, sodass nach Abschluss der Operation nur die neu übermittelten MedicationDispenses
-  gespeichert sind.
-title: E-Rezept-Fachdienst - Task schließen - Überschreiben vorheriger MedicationDispenses
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: "Das PS der abgebenden LEI MUSS im Anwendungsfall \"E-Rezepte von Versicherten\
+  \ abrufen\" die HTTP-Operation GET /Task mit\n  <ul>\n  <li>ACCESS_TOKEN im Authorization-Header</li>\n\
+  \  <li>PoPP-Token in HTTP-Header X-PoPP-Token</li>\n  </ul>\n  ausführen."
+title: 'PS abgebende LEI: E-Rezepte von Versicherten abrufen (PoPP) - E-Rezepte abrufen'
 version: 0

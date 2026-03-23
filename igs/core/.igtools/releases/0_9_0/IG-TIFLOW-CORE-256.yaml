@@ -1,18 +1,21 @@
 actor:
-- eRp_FdV
+- PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: ed7462c8f7a385809464d5847bd6cd0ed99fbb9a4cbaad2afd24ae831099b642
-created: '2026-03-17T11:33:06.698172'
-date: '2026-03-17T11:33:06.698174'
+content_hash: 36918a12ee129162d4f8e20ee398b9164f4708d9cb388c26b3d7569839d62ce7
+created: '2026-03-23T10:39:54.156245'
+date: '2026-03-23T10:39:54.156247'
 key: IG-TIFLOW-CORE-256
-modified: '2026-03-17T11:33:06.698173'
+modified: '2026-03-23T10:39:54.156246'
 release_status: NEW
-source: input/pagecontent/query-api-consent-req-fdv.md
+source: input/pagecontent/op-accept-req-avs.md
 status: ACTIVE
 test_procedures:
-  eRp_FdV:
+  PS_E-Rezept_abgebend:
   - Herstellererklärung
-text: Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung widerrufen" es dem Nutzer
-  ermöglichen, den Widerruf zu erfassen.
-title: 'E-Rezept-FdV: Einwilligung widerrufen - Widerruf eingeben'
+text: "Das PS der abgebenden LEI MUSS im Anwendungsfall \"E-Rezept abrufen\" zum Herunterladen\
+  \ des E-Rezepts die HTTP-Operation POST /Task/&#60;id&#62;/$accept mit\n    <ul>\
+  \ \n        <li>ACCESS_TOKEN im Authorization-Header</li>\n        <li>Task-ID in\
+  \ URL &#60;id&#62;</li>\n        <li>AccessCode im X-AccessCode-Header oder als\
+  \ URL-Parameter ?ac=</li>\n    </ul>\n    ausführen."
+title: 'PS abgebende LEI:  E-Rezept abrufen - Task herunterladen'
 version: 0

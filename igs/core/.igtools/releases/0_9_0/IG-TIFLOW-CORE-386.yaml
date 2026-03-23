@@ -1,19 +1,22 @@
 actor:
-- PS_E-Rezept_abgebend
+- eRp_FD
 conformance: SHALL
-content_hash: 119d221771a6ca1a822758d97793a9a3522de04e46f42a157f01c45149b7a768
-created: '2026-03-18T14:56:22.592446'
-date: '2026-03-18T14:56:22.592449'
+content_hash: 7a0e78d18bb1abdbe2d9579c518eab0bffc981fa86d2aa3b43a31d15bde28f81
+created: '2026-03-23T10:39:54.198201'
+date: '2026-03-23T10:39:54.198203'
 key: IG-TIFLOW-CORE-386
-modified: '2026-03-18T14:56:22.592448'
+modified: '2026-03-23T10:39:54.198202'
 release_status: NEW
-source: input/pagecontent/op-close-req-avs.md
+source: input/pagecontent/menu-technische-umsetzung-epa-ms.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_abgebend:
+  eRp_FD:
   - Herstellererklärung
-text: Das PS der abgebenden LEI MUSS den Anwendungsfall "Quittung abrufen" für Verordnungen,
-  welche abschließend verarbeitet wurden, ausführen, um den Workflow am E-Rezept-Fachdienst
-  abzuschließen.
-title: 'PS abgebende LEI: Quittung abrufen - Abschluss des Workflows durchführen'
+text: Der E-Rezept-Fachdienst MUSS die Aufrufe zum Ermitteln des ePA-Aktensystem für
+  mindestens eine Minute unterbrechen, wenn ein Operationsaufruf im Information Service
+  mit einem Statuscode 500 scheitert, und anschließend für weitere Aufrufe einen exponentiellen
+  Backoff-Mechanismus anwenden, der die Wartezeit zwischen den Versuchen sukzessive
+  verdoppelt, um die Belastung des Zielsystems zu minimieren.
+title: E-Rezept-Fachdienst - ePA - Fehlerbehandlung - Information Service - Fehler
+  im Information Service
 version: 0

@@ -1,24 +1,18 @@
 actor:
-- eRp_FD
+- PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: e7124b47cd54438da59faf14fb7437b652b8159dc114eac2816de8805a416e48
-created: '2026-03-17T11:33:13.253523'
-date: '2026-03-17T11:33:13.253526'
+content_hash: 5ab25f1b605f2523ef96c1d0cdbeb6849cda192bd8d57591b945182196fd3b74
+created: '2026-03-23T10:39:55.275640'
+date: '2026-03-23T10:39:55.275642'
 key: IG-TIFLOW-ERP-10
-modified: '2026-03-17T11:33:13.253525'
+modified: '2026-03-23T10:39:55.275641'
 release_status: NEW
-source: input/pagecontent/op-close-req-fd.md
+source: input/pagecontent/query-api-task-req-avs.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produkttest
-text: "Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close\
-  \ erlauben, dass der Aufruf ohne Übergabe einer MedicationDispense im Request Body\
-  \ stattfindet.Der E-Rezept-Fachdienst MUSS in dem Fall sicherstellen, dass eine\
-  \ MedicationDispense für diesen Task existiert. <br>\n    Der E-Rezept-Fachdienst\
-  \ MUSS, falls keine MedicationDispense zum dazugehörigen Task existiert, mit dem\
-  \ Fehler 403 abbrechen. Im Fehlerfall ist die Meldung \"Abschluss des Workflows\
-  \ konnte nicht durchgeführt werden. Dispensierinformationen wurden nicht bereitgestellt.\"\
-  \ im OperationOutcome zu übermitteln."
-title: E-Rezept-Fachdienst - Task schließen - Aufruf ohne MedicationDispense
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten
+  abrufen" einen PoPP-Token vom PoPP-Service abrufen.
+title: 'PS abgebende LEI: E-Rezepte von Versicherten abrufen (PoPP) - PoPP-Token abrufen'
 version: 0

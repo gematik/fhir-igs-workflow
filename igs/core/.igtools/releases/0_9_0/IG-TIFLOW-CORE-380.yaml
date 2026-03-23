@@ -1,22 +1,19 @@
 actor:
-- PS_E-Rezept_verordnend
+- eRp_FD
 conformance: SHALL
-content_hash: 9666e0e299bdf156ea25b9af4df0b49f2db608934b75ab2cbb83714d77f147d0
-created: '2026-03-18T14:56:22.583909'
-date: '2026-03-18T14:56:22.583911'
+content_hash: 5335a8c708d5adf2e90b5be6407c75a958530fcddd570d49876e91d7c1091470
+created: '2026-03-23T10:39:54.197392'
+date: '2026-03-23T10:39:54.197394'
 key: IG-TIFLOW-CORE-380
-modified: '2026-03-18T14:56:22.583910'
+modified: '2026-03-23T10:39:54.197393'
 release_status: NEW
-source: input/pagecontent/op-create-req-pvs.md
+source: input/pagecontent/menu-technische-umsetzung-epa-ms.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_verordnend:
-  - Konformitätserklärung
-text: "Das PS der verordnenden LEI MUSS im Anwendungsfall \"E-Rezept durch Verordnenden erstellen\"\
-  \ für das E-Rezept die Signaturoperation des Konnektors mit \n  <ul>\n  <li>der\
-  \ Referenz RFC-5652 für CMS-Signatur (CAdES)</li>\n  <li>Signaturtype für eine enveloping\
-  \ Signature</li>\n  <li>dem base64-codierten E-Rezept-Bundle</li>\n  <li>eingebetteter\
-  \ OCSP-Antwort (IncludeRevocationInfo = true)</li>\n  <li>Angabe des Mimetypes \"\
-  text/plain; charset=utf-8\"</li>\n  </ul>\n  ausführen."
-title: 'PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle QES signieren'
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS bei allen Operationsaufrufen am Information Service,
+  Authorization Service oder Medication Service die clientID "ERP-FD" verwenden, um
+  den zu übermittelnden UserAgent zu erzeugen.
+title: E-Rezept-Fachdienst - ePA - Festlegung der ClientID
 version: 0

@@ -1,20 +1,22 @@
 actor:
 - eRp_FdV
 conformance: SHALL
-content_hash: 862106d6ab9a20bc3fd3b5500cee89b539d46fbe7bc4dda4715b06fb45d36928
-created: '2026-03-17T11:33:06.656103'
-date: '2026-03-17T11:33:06.656105'
+content_hash: afcfd12ad0a8c1c9285f20ce9b779db11978872e5297d91e26402810e0fd077c
+created: '2026-03-23T10:39:53.840829'
+date: '2026-03-23T10:39:53.840834'
 key: IG-TIFLOW-CORE-70
-modified: '2026-03-17T11:33:06.656104'
+modified: '2026-03-23T10:39:53.840833'
 release_status: NEW
 source: input/pagecontent/query-api-communication-req-fdv.md
 status: ACTIVE
 test_procedures:
   eRp_FdV:
   - Produkttest
-text: "Das E-Rezept-FdV MUSS im Anwendungsfall \"Nachrichten löschen\" für die zu\
-  \ löschende Nachricht die HTTP-Operation DELETE /Communication/&lt;id&gt; des E-Rezept-Fachdienstes\
-  \ mit\n    <ul>\n        <li>ACCESS_TOKEN im Authorization-Header</li>\n       \
-  \ <li>Communication-ID in URL &lt;id&gt;</li> \n    </ul>\n    ausführen."
-title: 'E-Rezept-FdV: Nachricht löschen - Löschrequest'
+text: "Das E-Rezept-FdV MUSS im Anwendungsfall \"Nachrichten von Apotheken anzeigen\"\
+  \ zum Herunterladen von Nachrichten vom E-Rezept-Fachdienst die HTTP-Operation GET\
+  \ /Communication mit\n    <ul>\n        <li>ACCESS_TOKEN im Authorization-Header</li>\n\
+  \        <li>optional: ?received=null für nur ungelesene Nachrichten</li>\n    \
+  \    <li>optional: ?received=gtYYYY-MM-DD_sort=sent für Nachrichten jünger als Datum\
+  \ DD.MM.YYY</li>\n    </ul>\n    ausführen."
+title: Nachrichten abrufen - Nachrichten von Fachdienst herunterladen
 version: 0

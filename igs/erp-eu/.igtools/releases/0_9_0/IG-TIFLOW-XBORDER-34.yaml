@@ -1,18 +1,20 @@
 actor:
 - eRp_FdV
 conformance: SHALL
-content_hash: 360f206b5dc4451f22f5df36509049f84736b336cabfe79f8481095a4bc2ca83
-created: '2026-03-17T11:33:10.738589'
-date: '2026-03-17T11:33:10.738592'
+content_hash: d08f2c726a9fe87b4271904d08b1047c11b2eebc58c4fab3753abfd541db9612
+created: '2026-03-23T10:39:55.084781'
+date: '2026-03-23T10:39:55.084783'
 key: IG-TIFLOW-XBORDER-34
-modified: '2026-03-17T11:33:10.738591'
+modified: '2026-03-23T10:39:55.084782'
 release_status: NEW
 source: input/pagecontent/op-revoke-eu-access-permission-req-fdv.md
 status: ACTIVE
 test_procedures:
   eRp_FdV:
-  - Herstellererklärung
-text: Das E-Rezept-FdV MUSS im Anwendungsfall "Zugriffsberechtigung löschen" die lokal
-  gespeicherten Informationen zur Zugriffsberechtigung löschen.
-title: 'E-Rezept-FdV: Zugriffsberechtigung löschen - lokale Zugriffsberechtigung löschen'
+  - Produkttest
+text: "Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung löschen\" zum\
+  \ Löschen der Information auf dem E-Rezept-Fachdienst die HTTP-Operation DELETE\
+  \ /$revoke-eu-access-permission mit:\n    <ul>\n        <li>ACCESS_TOKEN im Authorization-Header</li>\n\
+  \    </ul>\n    ausführen."
+title: 'E-Rezept-FdV: Zugriffsberechtigung löschen - Abfragerequest'
 version: 0

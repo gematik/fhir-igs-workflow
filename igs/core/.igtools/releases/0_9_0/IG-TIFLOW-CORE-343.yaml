@@ -1,18 +1,21 @@
 actor:
-- eRp_FD
-conformance: SHALL NOT
-content_hash: 05edf4b7e568c68079213ce8d212b7abe20076cbc1f46a57dfca1ed0ddf253ca
-created: '2026-03-17T11:33:06.723520'
-date: '2026-03-17T11:33:06.723523'
+- CS_E-Rezept_KTR
+conformance: SHALL
+content_hash: 861416bd637e1edbde9b1a88274b3b8d792c1696246e2950a2e41c150594a942
+created: '2026-03-23T10:39:54.184596'
+date: '2026-03-23T10:39:54.184598'
 key: IG-TIFLOW-CORE-343
-modified: '2026-03-17T11:33:06.723522'
+modified: '2026-03-23T10:39:54.184597'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-epa-ms.md
+source: input/pagecontent/op-close-req-ktr.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
+  CS_E-Rezept_KTR:
   - Herstellererklärung
-text: Der E-Rezept-Fachdienst DARF NICHT Lokalisierungsinformationen zu ePA-Aktensystemen
-  verwenden, welche länger als 24h lokal durch den E-Rezept-Fachdienst gecacht wurden.
-title: E-Rezept-Fachdienst - ePA - Aktualisierung Cache ePA-Aktensysteme
+text: "Das Clientsystem Kostenträger MUSS im Anwendungsfall \"Quittung abrufen\" für\
+  \ zum Abschliessen des Workflows für die Verordnung die HTTP-Operation POST /Task/&#60;id&#62;/$close\
+  \ mit\n    <ul> \n        <li>ACCESS_TOKEN im Authorization-Header</li>\n      \
+  \  <li>Task-ID in URL &#60;id&#62;</li>\n        <li>Geheimnis in URL-Parameter\
+  \ ?secret=</li>\n        <li>MedicationDispense</li>\n    </ul>\n    ausführen."
+title: 'CS Kostenträger: Quittung abrufen - Statusrequest'
 version: 0

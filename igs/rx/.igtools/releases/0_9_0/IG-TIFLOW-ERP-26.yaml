@@ -1,25 +1,20 @@
 actor:
-- eRp_FD
-conformance: SHALL
-content_hash: 7e28202676b9db58ee1112718a207a2dae0d61347bafc7b6528eab38f4697bf8
-created: '2026-03-17T11:33:13.256826'
-date: '2026-03-17T11:33:13.256830'
+- eRp_FdV
+conformance: SHALL NOT
+content_hash: 2cff51cc1cfca6e740cbc4978d350ec40e572fe4c3fc2bbf3de7a2eb6c179bac
+created: '2026-03-23T10:39:55.278661'
+date: '2026-03-23T10:39:55.278664'
 key: IG-TIFLOW-ERP-26
-modified: '2026-03-17T11:33:13.256829'
+modified: '2026-03-23T10:39:55.278663'
 release_status: NEW
-source: input/pagecontent/op-dispense-req-fd.md
+source: input/pagecontent/query-api-communication-req-fdv.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produktgutachten
-text: "Der E-Rezept-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen\
-  \ mittels POST /Task/&lt;id&gt;/$dispense auf den in der URL referenzierten /Task/&lt;id&gt;\
-  \ sicherstellen, dass ausschließlich abgebende Leistungserbringer in einer der Rollen\n\
-  \        <ul> \n        <li>oid_oeffentliche_apotheke</li>\n        <li>oid_krankenhausapotheke</li>\n\
-  \        </ul>\n        die Operation am Fachdienst aufrufen dürfen und die Rolle\
-  \ \"professionOID\" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\"\
-  \ feststellen, damit Dispensierinformationen nicht durch einen Unberechtigten eingestellt\
-  \ werden kann."
-title: E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Rollenprüfung
-  Abgebender stellt Dispensierinformationen bereit
+  eRp_FdV:
+  - Produkttest
+text: Das E-Rezept-FdV DARF im Anwendungsfall "E-Rezept einer Apotheke zuweisen" für
+  ein E-Rezept mit dem Flowtype 166 es dem Nutzer NICHT ermöglichen ein E-T-Rezept
+  mit der Belieferungsart "Postversand" an eine Apotheke zuzuweisen.
+title: 'E-Rezept-FdV: E-Rezept zuweisen- Flowtype 166 - Zuweisen als Versand nicht
+  zulässig'
 version: 0

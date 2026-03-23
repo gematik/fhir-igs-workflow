@@ -1,18 +1,22 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 338fee81beaef14e8fc8bc2a4edf6ec7f4c75b7e7e079da3c791906caafcad87
-created: '2026-03-17T11:33:06.663657'
-date: '2026-03-17T11:33:06.663660'
+content_hash: 47407c22a412eac450c17bed5f77ea84117a0a93958a968f44d794b2b9217a61
+created: '2026-03-23T10:39:53.905835'
+date: '2026-03-23T10:39:53.905838'
 key: IG-TIFLOW-CORE-113
-modified: '2026-03-17T11:33:06.663659'
+modified: '2026-03-23T10:39:53.905837'
 release_status: NEW
-source: input/pagecontent/ttl.md
+source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Produktgutachten
-text: Der E-Rezept-Fachdienst MUSS eine gespeicherte Ressource AuditEvent nach 3 Jahren
-  ab dem Erzeugungsdatum AuditEvent.recorded innerhalb von einem Monat löschen.
-title: E-Rezept-Fachdienst - Löschfrist veraltete Protokolleinträge
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
+  /Task/&lt;id&gt; ausschließlich solchen Clients die AccessCode Information (Task.identifier
+  mit system="https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode" ) in
+  den Task-Ressourcen zurückgeben, welche anhand der mitgeteilten, gültigen Produktidentifikation
+  als hierfür zulässige Clients erkannt werden.
+title: E-Rezept-Fachdienst - Task abrufen - Keine Einlöseinformationen in unbekannten
+  Clients
 version: 0

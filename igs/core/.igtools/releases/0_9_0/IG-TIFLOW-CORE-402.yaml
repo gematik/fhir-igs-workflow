@@ -1,19 +1,23 @@
 actor:
-- eRp_FdV
+- eRp_FD
 conformance: SHALL
-content_hash: b31896e60e097d3d1f3c897fd9b500a702f7404da3d1d1b739e0294dba39b3a7
-created: '2026-03-23T07:25:46.237953'
-date: '2026-03-23T07:25:46.237956'
+content_hash: b3be07d0cda4182a200fbdfe4c0a632cf73557a0cc7a1597fe1f04476207c635
+created: '2026-03-23T10:39:54.201202'
+date: '2026-03-23T10:39:54.201205'
 key: IG-TIFLOW-CORE-402
-modified: '2026-03-23T07:25:46.237955'
+modified: '2026-03-23T10:39:54.201204'
 release_status: NEW
-source: input/pagecontent/authentifizierung-client.md
+source: input/pagecontent/menu-technische-umsetzung-epa-ms.md
 status: ACTIVE
 test_procedures:
-  eRp_FdV:
+  eRp_FD:
   - Herstellererklärung
-text: Das E-Rezept-FdV MUSS, falls für den Aufruf einer Operation am E-Rezept-Fachdienst
-  kein gültiger ACCESS_TOKEN  vorliegt, sich gegenüber dem E-Rezept-Fachdienst authentisieren.
-title: 'E-Rezept-FdV: Zugriff E-Rezept-Fachdienst - Authentisierung wenn kein gültiger
-  ACCESS_TOKEN'
+text: Der E-Rezept-Fachdienst MUSS die Datenübermittlung an ein Aktenkonto für mindestens
+  eine Minute unterbrechen, wenn ein Aufruf im Medication Service mit dem Statuscode
+  500 scheitert, anschließend den Endpunkt zum Auffinden des Aktenkonto für diese
+  KVNR bei allen weiteren Information Services abrufen, die Anfrage am gefundenen
+  Medication Service wiederholen und bei anhaltenden Problemen einen exponentiellen
+  Backoff-Mechanismus anwenden, der die Wartezeit zwischen den Versuchen sukzessive
+  verdoppelt, um die Systembelastung zu minimieren.
+title: E-Rezept-Fachdienst - ePA - Fehlerbehandlung - Reaktion auf Scheitern des Operationaufrufs
 version: 0

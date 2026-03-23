@@ -1,28 +1,23 @@
 actor:
-- Anb_NCPeH_FD
-- CS_E-Rezept_KTR
-- PS_E-Rezept_abgebend
-- PS_E-Rezept_verordnend
+- eRp_FD
 conformance: SHALL
-content_hash: 9076efc2b653f4eba0fe6807de698a9726cd8d7557afc1b702073db0fab89895
-created: '2026-03-17T11:33:06.670225'
-date: '2026-03-17T11:33:06.670228'
+content_hash: a3a1aa430edf5aa58b24fc0010b1ca8a7a4f12e4a60de36c456e4e5fdfb88b9d
+created: '2026-03-23T10:39:54.025326'
+date: '2026-03-23T10:39:54.025403'
 key: IG-TIFLOW-CORE-140
-modified: '2026-03-17T11:33:06.670227'
+modified: '2026-03-23T10:39:54.025402'
 release_status: NEW
-source: input/pagecontent/kommunikation-dienste-ti.md
+source: input/pagecontent/op-abort-req-fd.md
 status: ACTIVE
 test_procedures:
-  Anb_NCPeH_FD:
+  eRp_FD:
   - Produkttest
-  CS_E-Rezept_KTR:
-  - Herstellererklärung
-  PS_E-Rezept_abgebend:
-  - Herstellererklärung
-  PS_E-Rezept_verordnend:
-  - Konformitätsbestätigung
-text: Das Clientsystem des E-Rezept-Fachdienst MUSS bei jedem Verbindungsaufbau zum
-  E-Rezept-Fachdienst oder IDP-Dienst diesen anhand seines TLS-Zertifikats authentifizieren
-  und MUSS die Verbindungen ablehnen, falls die Authentifizierung fehlschlägt.
-title: 'CS: Unzulässige TLS-Verbindungen ablehnen'
+text: Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts durch einen Versicherten,
+  wenn der HTTP-Request keinen HTTP-Header "X-AccessCode" oder URL-Parameter "?ac=..."
+  enthält, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header
+  des HTTP-Requests identifizieren, diese gegen die in Task.for hinterlegte KVNR des
+  begünstigten Patienten prüfen und bei Missmatch den Aufruf mit dem HTTP-Fehlercode
+  403 abweisen, damit ausschließlich der begünstigte Versicherte als Berechtigter
+  ohne Kenntnis des AccessCodes ein E-Rezept löscht.
+title: E-Rezept-Fachdienst - E-Rezept löschen - Versicherter - Prüfung KVNR
 version: 0

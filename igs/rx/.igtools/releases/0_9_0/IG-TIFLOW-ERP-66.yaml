@@ -1,22 +1,19 @@
 actor:
-- eRp_FD
+- PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: 454e69d016908c1a3af4b0b95d4236a8423fa9c53031004ee4706645e010e785
-created: '2026-03-17T11:33:13.270301'
-date: '2026-03-17T11:33:13.270307'
+content_hash: 3535ab72fffb49f68973081fe634d4dde3d19720396b846a2a49120a7fdc44f0
+created: '2026-03-23T10:39:55.287011'
+date: '2026-03-23T10:39:55.287013'
 key: IG-TIFLOW-ERP-66
-modified: '2026-03-17T11:33:13.270306'
+modified: '2026-03-23T10:39:55.287012'
 release_status: NEW
-source: input/pagecontent/op-activate-req-fd.md
+source: input/pagecontent/op-activate-req-pvs.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produkttest
-text: 'Der E-Rezept-Fachdienst MUSS die Aktivierung eines Tasks mit Flowtype 166 mit
-  dem HTTP-Status-Code 400 abbrechen, wenn die QES gemäß der professionOID des Signaturzertifikats
-  des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die der folgenden
-  professionOID entspricht: oid_arzt damit nur solche Leistungserbringer ein signiertes
-  E-Rezept einstellen, die zur Verordnung von T-Rezepten ermächtigt sind.'
-title: E-Rezept-Fachdienst - Task aktivieren - Flowtype 166 - QES durch berechtigte
-  Berufsgruppe
+  PS_E-Rezept_verordnend:
+  - Konformitätsbestätigung
+text: Das PS der verordnenden LEI MUSS es dem Nutzer ermöglichen, die Einlöseinformationen
+  (Task.id und AccessCode) als E-Rezept-Token über ein geeignetes Übermittlungsverfahren
+  an eine Apotheke der Wahl zu schicken.
+title: 'PS verordnende LEI: Übergabe E-Rezept-Token an Apotheke'
 version: 0

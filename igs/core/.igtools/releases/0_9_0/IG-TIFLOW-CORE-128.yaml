@@ -1,21 +1,22 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 8da6098b540ee788d9b28a34c1561aa42e8996b04a5c81323c6cc4d287438cd8
-created: '2026-03-17T11:33:06.666882'
-date: '2026-03-17T11:33:06.666884'
+content_hash: 5200eb8eca481819be9a6c34bd45bc047a2f41df81479d2ff86cb98114c497be
+created: '2026-03-23T10:39:53.968912'
+date: '2026-03-23T10:39:53.968927'
 key: IG-TIFLOW-CORE-128
-modified: '2026-03-17T11:33:06.666883'
+modified: '2026-03-23T10:39:53.968924'
 release_status: NEW
-source: input/pagecontent/op-abort-req-fd.md
+source: input/pagecontent/ttl.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
-  über /Task/&#60;id&#62;/$abort bei erfolgreichem Abschluss der Operation, wenn die
-  Rolle des aufrufenden Nutzers ungleich oid_versicherter ist, den Push Notification
-  Prozess für den Trigger mit der ChannelId "erp.task.abort" und den Versicherten
-  mit der KVNR = Task.for initiieren.
-title: E-Rezept-Fachdienst - E-Rezept löschen - Push Notification Versicherter
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS eine gespeicherte Ressource Communication\n\t\
+  automatisch löschen:\n\t<ul>\n\t\t<li>ohne eine Referenz auf einen Task in Communication.basedOn\
+  \ nach 100 Tagen ab ihrem Sendedatum Communication.sent,</li>\n\t\t<li>mit einer\
+  \ Referenz auf einen Task in Communication.basedOn gemäss der Löschfrist beim Löschen\
+  \ des Tasks,</li>\n\t\t<li>mit einer Referenz auf einen ChargeItem in Communication.basedOn\
+  \ nach 100 Tagen ab ihrem Sendedatum Communication.sent.</li>\n\t</ul>"
+title: E-Rezept-Fachdienst - Löschfrist veraltete Nachrichten
 version: 0

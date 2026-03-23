@@ -1,21 +1,23 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 1371ac2a57bc5ba9e6e7f9eff428890b5e95a5672004137c85661df201c27e96
-created: '2026-03-17T11:33:06.683165'
-date: '2026-03-17T11:33:06.683167'
+content_hash: 51b45a31b390f81c8e2e34756fcfa84efb49c45fbc6df101eb3687f5e7e947fa
+created: '2026-03-23T10:39:54.122133'
+date: '2026-03-23T10:39:54.122137'
 key: IG-TIFLOW-CORE-205
-modified: '2026-03-17T11:33:06.683166'
+modified: '2026-03-23T10:39:54.122135'
 release_status: NEW
-source: input/pagecontent/op-create-req-fd.md
+source: input/pagecontent/query-api-consent-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS die zulässige Anlage eines Tasks mittels HTTP-POST/$create-Operation
-  im Status Task.status = draft vollziehen und beim erfolgreichen Abschluss der Operation
-  die angelegte Ressource Task im HTTP-Body der HTTP-Response zurückgeben, damit die
-  verordnende Leistungserbringerinstitution die generierte Rezept-ID für die QES verwenden
-  kann.
-title: E-Rezept-Fachdienst - Task erzeugen - Status draft
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt
+  /Consent sicherstellen, dass noch keine Consent Ressource für die KVNR im ACCESS_TOKEN
+  und Consent.category.coding.code = &lt;Einwilligungstyp&gt; aus URL-Parameter category
+  gespeichert ist, um maximal eine Einwilligung für den Versicherten für jeden Einwilligungstypen
+  zu speichern. Im Fehlerfall muss der HTTP-Request mit dem HTTP-Fehlercode 409 abgewiesen
+  werden.
+title: E-Rezept-Fachdienst - Consent schreiben - nur eine Einwilligung pro KVNR und
+  Einwilligungstyp
 version: 0

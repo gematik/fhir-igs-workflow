@@ -1,23 +1,21 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: fa82c7d079b67e9afec20172e1bcf9e78a6cdec291b9c5b81652627dd8650793
-created: '2026-03-17T11:33:13.259769'
-date: '2026-03-17T11:33:13.259773'
+content_hash: e05370f7653cab76385633dafc4f016e88e16bb0d56475ff0c41a87472256415
+created: '2026-03-23T10:39:55.281027'
+date: '2026-03-23T10:39:55.281030'
 key: IG-TIFLOW-ERP-41
-modified: '2026-03-17T11:33:13.259771'
+modified: '2026-03-23T10:39:55.281029'
 release_status: NEW
-source: input/pagecontent/op-abort-req-fd.md
+source: input/pagecontent/op-dispense-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der
-  &#60;id&#62; adressierten /Task/&#60;id&#62;/$abort durch abgebende Leistungserbringer
-  (Apotheken) das im URL-Parameter "?secret=..." übertragene Geheimnis gegen das im
-  referenzierten Task enthaltene Secret in Task.identifier prüfen und bei Missmatch
-  oder Fehlen des URL-Parameters den Aufruf mit dem HTTP-Fehlercode 403 abweisen,
-  damit ausschließlich Apotheker in Kenntnis des Secret als Berechtigte ein E-Rezept
-  löschen.
-title: E-Rezept-Fachdienst - E-Rezept löschen - Apotheke - Prüfung Secret
+text: Der E-Rezept-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen
+  mittels POST /Task/&lt;id&gt;/$dispense die Referenz auf den aufgerufenen Task /Task/&lt;id&gt;
+  als MedicationDispense.supportingInformation übernehmen und die MedicationDispense,
+  sowie die in MedicationDispense.medication referenzierte Medication, speichern.
+title: E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - MedicationDispense
+  speichern
 version: 0

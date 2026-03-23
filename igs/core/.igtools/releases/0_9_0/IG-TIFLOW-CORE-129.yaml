@@ -1,21 +1,18 @@
 actor:
-- PS_E-Rezept_abgebend
+- eRp_FD
 conformance: SHALL
-content_hash: 0859cbeb5bd5bd9d0a0ad8695a7cf576c0abad36aed6e1109921aa79da812ae5
-created: '2026-03-17T11:33:06.667224'
-date: '2026-03-17T11:33:06.667227'
+content_hash: 338fee81beaef14e8fc8bc2a4edf6ec7f4c75b7e7e079da3c791906caafcad87
+created: '2026-03-23T10:39:53.989639'
+date: '2026-03-23T10:39:53.989791'
 key: IG-TIFLOW-CORE-129
-modified: '2026-03-17T11:33:06.667226'
+modified: '2026-03-23T10:39:53.989645'
 release_status: NEW
-source: input/pagecontent/query-api-communication-req-avs.md
+source: input/pagecontent/ttl.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_abgebend:
-  - Herstellererklärung
-text: Das PS der abgebenden LEI MUSS im Anwendungsfall "Nachrichten von Versicherten
-  empfangen" zwischen den Aufrufen der Operation GET /Communication mindestens 5 Minuten
-  warten. Der Zeitraum zwischen den Aufrufen muss um eine zufällige Zeitspanne zwischen
-  0 und 10.000 Millisekunden verlängert werden, um eine Gleichverteilung der Anfragen
-  am E-Rezept-Fachdienst über alle Apotheken zu erreichen.
-title: 'PS abgebende LEI: Nachrichten abrufen - Häufigkeit'
+  eRp_FD:
+  - Produktgutachten
+text: Der E-Rezept-Fachdienst MUSS eine gespeicherte Ressource AuditEvent nach 3 Jahren
+  ab dem Erzeugungsdatum AuditEvent.recorded innerhalb von einem Monat löschen.
+title: E-Rezept-Fachdienst - Löschfrist veraltete Protokolleinträge
 version: 0

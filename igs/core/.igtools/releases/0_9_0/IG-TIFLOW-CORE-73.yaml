@@ -1,21 +1,19 @@
 actor:
-- eRp_FD
+- eRp_FdV
 conformance: SHALL
-content_hash: 5c8a6c443ed3fe383190d879f9abf48c97fe6186eb163f9b6397dd9a427d7275
-created: '2026-03-17T11:33:06.656817'
-date: '2026-03-17T11:33:06.656819'
+content_hash: 3d2f7f3b11b53c39f0c91e54624aceb209b31d3d0e8b610234732fcc58eff871
+created: '2026-03-23T10:39:53.844328'
+date: '2026-03-23T10:39:53.844347'
 key: IG-TIFLOW-CORE-73
-modified: '2026-03-17T11:33:06.656818'
+modified: '2026-03-23T10:39:53.844343'
 release_status: NEW
-source: input/pagecontent/query-api-task-req-fd.md
+source: input/pagecontent/query-api-communication-req-fdv.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produktgutachten
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
-  /Task die dem Versicherten zugeordneten Task-Ressourcen anhand der KVNR des Versicherten
-  aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren,
-  die in Task.for die entsprechende KVNR des begünstigten Patienten referenziert haben,
-  damit ausschließlich Versicherte ihre eigenen E-Rezepte einsehen können.
-title: E-Rezept-Fachdienst - Liste Task abrufen - Versicherter- Filter auf KVNR
+  eRp_FdV:
+  - Produkttest
+text: Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept einer Apotheke zuweisen" im
+  Rahmen der Belieferung eines Arzneimittels für den payload_contentstring eine TransactionID
+  erzeugen, um Nachrichten zu dem Vorgang zuordnen zu können.
+title: Nachricht senden - E-Rezept zuweisen - Zuweisen - TransactionID
 version: 0

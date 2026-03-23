@@ -1,20 +1,23 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 092618869640bafba1458a4770aeaf8a0556fb0bf5a8ba429dec7281ed8ded0e
-created: '2026-03-17T11:33:06.697063'
-date: '2026-03-17T11:33:06.697065'
+content_hash: f11494b8185d5bc7036a9235b6316483f3c7571983437e49018c992c395c8dbe
+created: '2026-03-23T10:39:54.154516'
+date: '2026-03-23T10:39:54.154518'
 key: IG-TIFLOW-CORE-250
-modified: '2026-03-17T11:33:06.697064'
+modified: '2026-03-23T10:39:54.154517'
 release_status: NEW
-source: input/pagecontent/fhir-validate.md
+source: input/pagecontent/op-accept-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Die Produkttypen der Anwendung E-Rezept und Clientsysteme des E-Rezept-Fachdienstes
-  MÜSSEN sicherstellen, dass bei der Erstellung von Datensätzen Extensions nur an
-  den Stellen verwendet werden, an denen sie im FHIR-Profil ausdrücklich definiert
-  sind.
-title: FHIR Ressourcen - Ausschluss unspezifizierter Extensions
+text: 'Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
+  über /Task/&lt;id&gt;/$accept die Operation mit dem Fehlercode 403 abbrechen, wenn
+  das Ende der Einlösefrist (Task.ExpiryDate) zu einem früherem Zeitpunkt als das
+  aktuelle Datum liegt, da Verordnungen nur bis Ende der Einlösefrist abgerufen werden
+  dürfen. Im Falle dieses Fehlers ist im OperationOutcome des Response das Ende der
+  Einlösefrist wie folgt anzugeben: "Verordnung bis &lt;Datum&gt; einlösbar.", wobei
+  &lt;Datum&gt; der Wert Task.ExpiryDate im Format "dd.mm.yyyy" ist.'
+title: E-Rezept-Fachdienst - Task akzeptieren - Ende Einlösefrist prüfen
 version: 0

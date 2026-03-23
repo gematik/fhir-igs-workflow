@@ -1,25 +1,20 @@
 actor:
-- PS_E-Rezept_verordnend
+- eRp_FD
 conformance: SHALL
-content_hash: cd87a96b55198995a4450765566492c56125a9af4dec696482f2c4d9010f29c4
-created: '2026-03-17T11:33:06.703309'
-date: '2026-03-17T11:33:06.703312'
+content_hash: b6139df7315a826952900439454328ba2330a047f0d315c1e65a9b9cb141b37f
+created: '2026-03-23T10:39:54.167222'
+date: '2026-03-23T10:39:54.167224'
 key: IG-TIFLOW-CORE-275
-modified: '2026-03-17T11:33:06.703311'
+modified: '2026-03-23T10:39:54.167223'
 release_status: NEW
-source: input/pagecontent/op-abort-req-pvs.md
+source: input/pagecontent/fhir-validate.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_verordnend:
-  - Konformitätsbestätigung
-text: 'Das PS der verordnenden LEI MUSS den Anwendungsfall "UC 2.5 - E-Rezept durch
-  Verordnenden löschen" aus [gemSysL_eRp] gemäß TAB_ILFERP_004 umsetzen. Tabelle #
-  : TAB_ILFERP_004 – E-Rezept durch Verordnenden löschen Name E-Rezept durch Verordnenden
-  löschen Auslöser Aufruf des Anwendungsfalls in der GUI Akteur Leistungserbringer,
-  Mitarbeiter verordnende LEI Vorbedingung Der Nutzer hat ein E-Rezept zum Löschen
-  markiert und das Löschen bestätigt. Die LEI hat sich gegenüber der TI authentisiert.
-  Nachbedingung Das ausgewählte E-Rezept ist vom E-Rezept-Fachdienst unwiederbringlich
-  gelöscht. Standardablauf Task-ID und AccessCode des E-Rezepts bestimmen E-Rezept
-  auf E-Rezept-Fachdienst löschen E-Rezept-Token in PS löschen'
-title: 'PS verordnende LEI: E-Rezept durch Verordnenden löschen'
+  eRp_FD:
+  - Produkttest
+text: Die Produkttypen der Anwendung E-Rezept und Clientsysteme des E-Rezept-Fachdienstes
+  MÜSSEN sicherstellen, dass bei der Erstellung von Datensätzen Datums- und Zeitangaben
+  ohne Zeitzoneninformation, die entsprechend dem Datum gültige deutsche Zeitzone
+  (CET/CEST) angewendet wird.
+title: FHIR-Ressourcen - Datumsangabe ohne Zeitzoneninformation
 version: 0

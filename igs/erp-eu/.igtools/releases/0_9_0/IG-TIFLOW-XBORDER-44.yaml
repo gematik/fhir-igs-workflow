@@ -1,11 +1,11 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 37ea4ab0e7d05c6ffb8ec0e2185f3ba07eea91ff20bd91f3b6215b039b5e6528
-created: '2026-03-17T11:33:10.741954'
-date: '2026-03-17T11:33:10.741957'
+content_hash: e65b131539a0a0c3513c2de6339ef4c07b4739ebab9030ed4898f74f3c3e7366
+created: '2026-03-23T10:39:55.086280'
+date: '2026-03-23T10:39:55.086283'
 key: IG-TIFLOW-XBORDER-44
-modified: '2026-03-17T11:33:10.741955'
+modified: '2026-03-23T10:39:55.086282'
 release_status: NEW
 source: input/pagecontent/op-eu-close-req-fd.md
 status: ACTIVE
@@ -13,8 +13,9 @@ test_procedures:
   eRp_FD:
   - Produkttest
 text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts
-  /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD bei erfolgreichem Abschluss der Operation,
-  den Push Notification Prozess für den Trigger mit der ChannelId "erp.eu.prescription.close"
-  und den Versicherten mit der KVNR = Task.for initiieren.
-title: E-Rezept-Fachdienst - Task schließen - EU - Push Notification Versicherter
+  /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass die zulässige
+  Beendigung eines übermittelten Tasks im Status Task.status = completed vollzogen
+  wird, damit der Workflow für den Versicherten als beendet und das E-Rezept somit
+  als eingelöst dargestellt wird.
+title: E-Rezept-Fachdienst - Task schließen - EU - Status beenden
 version: 0

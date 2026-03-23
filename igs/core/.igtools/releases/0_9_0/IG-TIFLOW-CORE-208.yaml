@@ -1,19 +1,19 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 3c33025735a92d26189f251001e606bf030b1fb23fe52f9f5e744ebb463ed8ea
-created: '2026-03-17T11:33:06.686203'
-date: '2026-03-17T11:33:06.686206'
+content_hash: ab5cd0ff1a56176f9566b7093894c89f4d8cb32440f4e4ecf8567d3614557fa4
+created: '2026-03-23T10:39:54.123673'
+date: '2026-03-23T10:39:54.123677'
 key: IG-TIFLOW-CORE-208
-modified: '2026-03-17T11:33:06.686205'
+modified: '2026-03-23T10:39:54.123676'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-push.md
+source: input/pagecontent/query-api-consent-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Erstellen einer Push Notification die Identifier
-  des zugehörigen Protokolleintrags (AuditEvent.id) des Triggers im Identifier-Feld
-  des äußeren Notification-Objekts (notification.identifier) angeben.
-title: E-Rezept-Fachdienst - Push Notification senden - Referenz auf Protokolleintrag
+  - Herstellererklärung
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt
+  /Consent, falls bei den Prüfungen keine Fehler aufgetreten sind, welche zum Abbruch
+  der Operation führen, die übermittelte Ressource persistieren.
+title: E-Rezept-Fachdienst - Consent schreiben - Persistieren
 version: 0

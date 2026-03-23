@@ -1,20 +1,24 @@
 actor:
-- eRp_FdV
+- eRp_FD
 conformance: SHALL
-content_hash: a8d59215220efff359d5e713525d28e9857bfc075feac433845befa7a9d83a16
-created: '2026-03-17T11:33:13.254922'
-date: '2026-03-17T11:33:13.254924'
+content_hash: 3fdc7fc5bb18b3acf646b733435607c46c2b0f667bf8f0dadb364e21199c6aa0
+created: '2026-03-23T10:39:55.277470'
+date: '2026-03-23T10:39:55.277472'
 key: IG-TIFLOW-ERP-18
-modified: '2026-03-17T11:33:13.254923'
+modified: '2026-03-23T10:39:55.277471'
 release_status: NEW
-source: input/pagecontent/query-api-communication-req-fdv.md
+source: input/pagecontent/op-close-req-fd.md
 status: ACTIVE
 test_procedures:
-  eRp_FdV:
+  eRp_FD:
   - Produkttest
-text: Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept einer Apotheke zuweisen" prüfen,
-  ob bei Teilverordnungen von Mehrfachverordnungen (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
-  = true) der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start)
-  erreicht ist und in diesem Fall den Anwendungsfall abbrechen.
-title: 'E-Rezept-FdV: E-Rezept zuweisen - Beginn Gültigkeit prüfen'
+text: 'Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks für ein E-Rezept mittels
+  HTTP-POST/$close-Operation auf den in der URL referenzierten /Task/&lt;id&gt; mit
+  Flowtype 160, 166, 169, 200, oder 209 sicherstellen, dass das in GEM_ERP_PR_PAR_CloseOperation_Input
+  enthaltene MedicationDispense-Objekt dem Profil GEM_ERP_PR_MedicationDispense entspricht.
+  Andernfalls ist die Operation mit einem Fehler abzubrechen, und im OperationOutcome
+  muss der Text "Unzulässige Abgabeinformationen: Für diesen Workflow sind nur Abgabeinformationen
+  für Arzneimittel zulässig." zurückgegeben werden.'
+title: E-Rezept-Fachdienst - Task schließen - Flowtype 160/166/169/200/209 - Profilprüfung
+  MedicationDispense
 version: 0

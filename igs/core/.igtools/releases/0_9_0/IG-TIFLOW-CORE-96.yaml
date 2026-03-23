@@ -1,21 +1,20 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 3782ff4eec7e2a50a5eecfd48783497b891fdf5515a5c0bcec211974deee81a8
-created: '2026-03-17T11:33:06.660523'
-date: '2026-03-17T11:33:06.660526'
+content_hash: 35c54a5e8117709aadba87770f940b653bd1ab34e46f76754496a5192a3ece9b
+created: '2026-03-23T10:39:53.882586'
+date: '2026-03-23T10:39:53.882602'
 key: IG-TIFLOW-CORE-96
-modified: '2026-03-17T11:33:06.660525'
+modified: '2026-03-23T10:39:53.882599'
 release_status: NEW
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation GET /Task und GET /Task/&lt;id&gt;
-  durch einen Versicherten oid_versicherter ein optional vorhandenes Task.identifier:Secret
-  als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret aus dem zurückgegebenen
-  Task entfernen, sodass Versicherte nicht in Kenntnis des Secrets gelangen, welches
-  die Prozesshoheit des Apothekers darstellt.
-title: E-Rezept-Fachdienst - Task abrufen - Versicherter - Kein Secret
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit
+  den URL-Parameter pnw="..." durch eine abgebende LEI, falls im VSDM Prüfungsnachweis
+  keine Prüfziffer enthalten, das Ergebnis im Prüfungsnachweis gleich 3 und der passende
+  Status AcceptPN3VSDMxx = false ist mit dem Fehler 454 abbrechen.
+title: E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - AcceptPN3 false
 version: 0

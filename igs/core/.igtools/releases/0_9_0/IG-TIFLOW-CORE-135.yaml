@@ -1,19 +1,19 @@
 actor:
-- PS_E-Rezept_verordnend
+- eRp_FD
 conformance: SHALL
-content_hash: c4198365f2b0d57508e519fad30ad6ec73721fc0444afc6aad65d740add2b8ea
-created: '2026-03-17T11:33:06.668769'
-date: '2026-03-17T11:33:06.668775'
+content_hash: 8ffad42ded13e727f577d6e768e1960a9deef6210a0fb8b7358f5ced50eefcbd
+created: '2026-03-23T10:39:54.022540'
+date: '2026-03-23T10:39:54.022550'
 key: IG-TIFLOW-CORE-135
-modified: '2026-03-17T11:33:06.668774'
+modified: '2026-03-23T10:39:54.022549'
 release_status: NEW
-source: input/pagecontent/op-activate-req-pvs.md
+source: input/pagecontent/query-api-auditevent-req-fd.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_verordnend:
-  - Herstellererklärung
-text: Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden
-  einstellen", wenn ein Patientenausdruck erstellt werden soll, einen E-Rezept-Token
-  erstellen.
-title: 'PS verordnende LEI: E-Rezept einstellen - E-Rezept-Token erstellen'
+  eRp_FD:
+  - Produktgutachten
+text: Der E-Rezept-Fachdienst MUSS alle Zugriffe auf die Ressource AuditEvent mittels
+  der HTTP-Operationen PUT, PATCH, HEAD, DELETE und POST unterbinden, damit keine
+  unzulässigen Operationen auf den Protokolldaten ausgeführt werden können.
+title: E-Rezept-Fachdienst - unzulässige Operationen AuditEvent
 version: 0

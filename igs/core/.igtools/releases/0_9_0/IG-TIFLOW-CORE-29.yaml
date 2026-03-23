@@ -1,18 +1,20 @@
 actor:
-- eRp_FD
+- eRp_FdV
 conformance: SHALL
-content_hash: 8510d6a412a69ba4440a30186d18d25a697c320b98b483ced0c3bf5d73623f60
-created: '2026-03-17T11:33:06.645241'
-date: '2026-03-17T11:33:06.645244'
+content_hash: a59364f647d50826c15c42cbdebd47b1455baa4d6c11e5d3dacb01f5749cbc16
+created: '2026-03-23T10:39:53.795854'
+date: '2026-03-23T10:39:53.795857'
 key: IG-TIFLOW-CORE-29
-modified: '2026-03-17T11:33:06.645243'
+modified: '2026-03-23T10:39:53.795856'
 release_status: NEW
-source: input/pagecontent/audit-service.md
+source: input/pagecontent/authentifizierung-client.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS, wenn im ACCESS_TOKEN die Angabe zur "organizationName"
-  mit NULL gefüllt ist, in der Protokollierung als agentname "unbekannt" verwenden.
-title: E-Rezept-Fachdienst - Protokollierung - keine Angabe zu organizationName
+  eRp_FdV:
+  - Herstellererklärung
+text: Das E-Rezept-FdV MUSS, wenn es die Authentisierung am sektoralen IDP mittels
+  eGK und PIN ohne GesundheitsID, unterstützt, zur Signalisierung des Gast-Login mit
+  eGK und PIN den Parameter x-authorize-egk im Authorization Request an den E-Rezept-Authorization
+  Server verwenden.
+title: 'E-Rezept-FdV: Authentisierung mit eGK und PIN (Gast-Login) - Parameter'
 version: 0

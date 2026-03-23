@@ -1,19 +1,21 @@
 actor:
-- PS_E-Rezept_abgebend
+- eRp_FD
 conformance: SHALL
-content_hash: ade3ef16d59db8cacbecd9fdba3e12c7b24560309683cfd8f724fa0da1af98f6
-created: '2026-03-17T11:33:13.260533'
-date: '2026-03-17T11:33:13.260535'
+content_hash: f2a1c2d9cb373ccea39b52124d8ad06ef508429e21587bde6c892136a28a8167
+created: '2026-03-23T10:39:55.281918'
+date: '2026-03-23T10:39:55.281921'
 key: IG-TIFLOW-ERP-45
-modified: '2026-03-17T11:33:13.260534'
+modified: '2026-03-23T10:39:55.281920'
 release_status: NEW
-source: input/pagecontent/query-api-communication-req-avs.md
+source: input/pagecontent/op-dispense-req-fd.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_abgebend:
-  - Herstellererklärung
-text: Das PS der abgebenden LEI MUSS sicherstellen, dass die Einbettung einer externen
-  URL ausschließlich für das Einlösen von E-Rezepten in einer externen Bestellplattform
-  genutzt wird.
-title: 'PS abgebende LEI: Nachricht versenden - Externe URL ausschließlich für Einlösung'
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
+  über /Task/&lt;id&gt;/$dispense für den referenzierten Task die Telematik-ID aus
+  dem ACCESS_TOKEN in Task.owner speichern, damit sichergestellt werden kann, dass
+  nachfolgende Zugriffe auf diesen Datensatz nur durch Berechtigte erfolgen können.
+title: E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Telematik-ID
+  der abgebenden LEI speichern
 version: 0

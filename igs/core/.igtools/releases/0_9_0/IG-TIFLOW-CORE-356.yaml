@@ -1,20 +1,29 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: e70a134b68fc3b4423a0a4e6eeef8cb89f6fb17ae34b08a0e60bf917fed6a358
-created: '2026-03-17T11:33:06.726059'
-date: '2026-03-17T11:33:06.726061'
+content_hash: 3e2f44f0eeabcfb9a6a25d38c673dc11ab8b53560ac2a5f5a008b860c39c87e2
+created: '2026-03-23T10:39:54.187080'
+date: '2026-03-23T10:39:54.187082'
 key: IG-TIFLOW-CORE-356
-modified: '2026-03-17T11:33:06.726060'
+modified: '2026-03-23T10:39:54.187081'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-epa-ms.md
+source: input/pagecontent/menu-schnittstellen-generelle-prinzipien.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS vor jedem Übermitteln von Informationen zu Verordnungsdaten
-  oder Dispensierinformationen an den ePA Medication Service den Endpunkt /information/api/v1/ehr/consentdecisions
-  des Information Service aufrufen, prüfen, ob für die Funktion "erp-submission" der
-  Wert "permit" vorliegt und die Übermittlung final abbrechen, wenn die Prüfung fehlschlägt.
-title: E-Rezept-Fachdienst - ePA - Prüfung des Widerspruchs vor Übermittlung
+text: "Der E-Rezept-Fachdienst MUSS an seinen Schnittstellen eine http-GET-Operation\
+  \ auf den Endpunkt /metadata erlauben, in welcher er ein CapabilityStatement gemäß\
+  \ https://www.hl7.org/fhir/capabilitystatement.html veröffentlicht, welches die\
+  \ vom E-Rezept-Fachdienst verarbeiteten Ressourcen mit den zugehörigen http-Operationen\
+  \ der angebotenen REST-Schnittstelle auflistet: \n    <ul>\n     <li>Task – GET-,\
+  \ POST-Operation, FHIR-Operations für die Workflow-Steuerung und Einsicht durch\
+  \ den Versicherten </li>\n     <li>MedicationDispense – GET-Operation für das Einsehen\
+  \ der Medikamentinformationen durch den Versicherten </li>\n     <li>Communication\
+  \ – GET-, POST, DELETE-Operation für das Senden, Empfangen und Löschen von Nachrichten\
+  \ </li>\n     <li>AuditEvent – GET-Operation für die Einsicht in Protokolleinträge\
+  \ durch den Versicherten </li>\n     <li>Device – GET-Operation mit statischen Informationen\
+  \ zur serverseitigen Signatur damit der Client eine Information über die FHIR-Kompatibilität\
+  \ zum Fachdienst erhält.</li>\n     </ul>"
+title: E-Rezept-Fachdienst - RESTful API CapabilityStatement
 version: 0

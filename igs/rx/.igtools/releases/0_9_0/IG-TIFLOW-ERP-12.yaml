@@ -1,19 +1,21 @@
 actor:
-- eRp_FD
+- PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: 6d99cfbf5a5aecd78b4bf40f4983fbdef83a2aede1f33040b4cadc69ca3b12ab
-created: '2026-03-17T11:33:13.253828'
-date: '2026-03-17T11:33:13.253831'
+content_hash: 7cf269af86ac16faf10ee6e67ee054f699b6d0a83288c312c37d93c8fc20f483
+created: '2026-03-23T10:39:55.275938'
+date: '2026-03-23T10:39:55.275940'
 key: IG-TIFLOW-ERP-12
-modified: '2026-03-17T11:33:13.253830'
+modified: '2026-03-23T10:39:55.275939'
 release_status: NEW
-source: input/pagecontent/op-close-req-fd.md
+source: input/pagecontent/query-api-task-req-avs.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels /Task/&lt;id&gt;/$close
-  auch die Übergabe mehrerer MedicationDispense-Objekte in einem validen Standard-FHIR
-  Bundle im http-Body des Requests ermöglichen.
-title: E-Rezept-Fachdienst - Task schließen - Speicherung mehrerer MedicationDispenses
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten
+  abrufen" den Nutzer geeignet unterstützen, heruntergeladene und damit reservierte
+  E-Rezepte, welche nicht beliefert werden, wieder zurückzugeben, um dem Versicherten
+  zu ermöglichen, diese in einer anderen Apotheke einzulösen.
+title: 'PS abgebende LEI: E-Rezepte von Versicherten abrufen - nicht belieferte E-Rezepte
+  zurückgeben'
 version: 0

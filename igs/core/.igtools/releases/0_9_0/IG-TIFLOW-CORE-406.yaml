@@ -1,20 +1,21 @@
 actor:
-- eRp_FdV
+- CS_E-Rezept_KTR
 conformance: SHALL
-content_hash: b013d279b2c8aa9b7ba71d3a0c37ed422f49cbf2a20f6efbff424e4066a27aa7
-created: '2026-03-23T07:25:46.306594'
-date: '2026-03-23T07:25:46.306598'
+content_hash: 6b98e0cb3263d4d2f9e6b08f22da713a516ca5dd31f3d784b1d8e9c05a312c22
+created: '2026-03-23T10:39:54.202002'
+date: '2026-03-23T10:39:54.202004'
 key: IG-TIFLOW-CORE-406
-modified: '2026-03-23T07:25:46.306597'
+modified: '2026-03-23T10:39:54.202003'
 release_status: NEW
-source: input/pagecontent/query-api-auditevent-req-fdv.md
+source: input/pagecontent/op-accept-req-ktr.md
 status: ACTIVE
 test_procedures:
-  eRp_FdV:
-  - Produkttest
-text: "Das E-Rezept-FdV MUSS im Anwendungsfall \"Protokolldaten anzeigen\" zum Abrufen\
-  \ der Protokolleinträge vom E-Rezept-Fachdienst die HTTP-Operation GET /AuditEvent\
-  \ mit\n    <ul>\n    <li>ACCESS_TOKEN im Authorization-Header</li> \n    </ul>\n\
-  \    ausführen."
-title: 'E-Rezept-FdV: Protokolldaten anzeigen - Protokolleinträge abrufen'
+  CS_E-Rezept_KTR:
+  - Herstellererklärung
+text: "Das Clientsystem Kostenträger MUSS im Anwendungsfall \"Verordnung abrufen\"\
+  \ zum Herunterladen des E-Rezepts die HTTP-Operation POST /Task/&#60;id&#62;/$accept\
+  \ mit\n    <ul> \n        <li>ACCESS_TOKEN im Authorization-Header</li>\n      \
+  \  <li>Task-ID in URL &#60;id&#62;</li>\n        <li>AccessCode im X-AccessCode-Header\
+  \ oder als URL-Parameter ?ac=</li>\n    </ul>\n    ausführen."
+title: 'CS Kostenträger:  E-Rezept abrufen - Task herunterladen'
 version: 0

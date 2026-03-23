@@ -1,21 +1,19 @@
 actor:
-- eRp_FD
-conformance: SHALL
-content_hash: a5fcf0757a016ee4b4b6a2eb1098f7e0b286f7da1c636cc9d5134a73e66f61c6
-created: '2026-03-17T11:33:13.256420'
-date: '2026-03-17T11:33:13.256422'
+- eRp_FdV
+conformance: SHALL NOT
+content_hash: 6d485a326615fb6d93ef8a8e2ec1bf876999306f501df51c86a97fcd25ebeafd
+created: '2026-03-23T10:39:55.278537'
+date: '2026-03-23T10:39:55.278539'
 key: IG-TIFLOW-ERP-25
-modified: '2026-03-17T11:33:13.256421'
+modified: '2026-03-23T10:39:55.278538'
 release_status: NEW
-source: input/pagecontent/query-api-task-req-fd.md
+source: input/pagecontent/query-api-communication-req-fdv.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
+  eRp_FdV:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
-  /Task/&lt;id&gt; durch einen Versicherten, wenn Task.extension:flowType = 169 oder
-  209 und die KVNR des Aufrufenden (KVNR des ACCESS_TOKEN im "Authorization"-Header
-  des HTTP-Requests) ungleich der KVNR in Task.for ist, mit dem Fehler 403 abbrechen.
-title: E-Rezept-Fachdienst - Task abrufen - Flowtype 169/209 - Nicht verfügbar bei
-  KVNR-Mismatch
+text: Das E-Rezept-FdV DARF im Anwendungsfall "E-Rezept einer Apotheke zuweisen" es
+  dem Nutzer NICHT ermöglichen, ein E-Rezept mit dem Flowtype 169 oder 209 an eine
+  Apotheke zuzuweisen.
+title: 'E-Rezept-FdV: E-Rezept zuweisen - Flowtype 169 / 209 - Zuweisen nicht zulässig'
 version: 0

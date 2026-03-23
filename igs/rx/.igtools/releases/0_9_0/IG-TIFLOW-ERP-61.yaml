@@ -1,20 +1,20 @@
 actor:
 - PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: d1529c13f4f3b940efe125043e120823a92cb9a4fbccf4013be766b3db7be784
-created: '2026-03-17T11:33:13.268701'
-date: '2026-03-17T11:33:13.268704'
+content_hash: e748a9f2395689d96ef3f911ef9a79a23877039f0a9db1c98956154cd6c6351b
+created: '2026-03-23T10:39:55.285424'
+date: '2026-03-23T10:39:55.285427'
 key: IG-TIFLOW-ERP-61
-modified: '2026-03-17T11:33:13.268703'
+modified: '2026-03-23T10:39:55.285426'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-anwendungsfaelle.md
+source: input/pagecontent/op-activate-req-pvs.md
 status: ACTIVE
 test_procedures:
   PS_E-Rezept_verordnend:
-  - Herstellererklärung
-text: "Das PS der verordnenden LEI MUSS für die Umsetzung der Verordnung von E-Rezepten\
-  \ für Arzneimittel die Anwendungsfälle\n\n    <ul>\n    <li>UC 2.1 - E-Rezepte erzeugen</li>\n\
-  \    <li>E-Rezept qualifiziert signieren</li>\n    <li>UC 2.3 - E-Rezept einstellen</li>\n\
-  \    <li>UC 2.5 - E-Rezept durch Verordnenden löschen</li>\n    </ul>\n\n    umsetzen."
-title: 'PS verordnende LEI: TIFlow-RX - verpflichtende Anwendungsfälle'
+  - Konformitätsbestätigung
+text: Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden
+  erstellen" beim Erstellen des E-Rezept-Bundles für die Teilverordnung einer Mehrfachverordnung
+  den Beginn der Einlösefrist der Teilverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start)
+  angeben.
+title: 'PS verordnende LEI: E-Rezept erstellen - Mehrfachverordnung - Beginn Einlösefrist'
 version: 0

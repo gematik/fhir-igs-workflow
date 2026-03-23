@@ -1,22 +1,21 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: a4aa74d467ac4cb59d3052871cb1bb0c84cf050277f7451c4509a4c5eeaaec38
-created: '2026-03-17T11:33:13.275901'
-date: '2026-03-17T11:33:13.275903'
+content_hash: 80c9dfb78032133feeea9a849515aaa8d11f1a9d5fefe7d6a0e17f0e36c4be87
+created: '2026-03-23T10:39:55.293778'
+date: '2026-03-23T10:39:55.293780'
 key: IG-TIFLOW-ERP-82
-modified: '2026-03-17T11:33:13.275902'
+modified: '2026-03-23T10:39:55.293779'
 release_status: NEW
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
-  - Produkttest
+  - Herstellererklärung
 text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
-  über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
-  wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
-  = true) gekennzeichnet und der Numerator oder Denominator größer als 4 ist, weil
-  eine Mehrfachverordnungen aus maximal 4 Teilverordnungen bestehen darf.
-title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator-Denominator
-  kleiner 5
+  über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 und einem Hinweis
+  auf den Ausschluss von Betäubungsmittel ("BTM nicht zulässig" im OperationOutcome)
+  abbrechen, wenn der übergebene QES-Datensatz als Betäubungsmittel-Verordnung (Bundle.Medication.extension:KBV_EX_ERP_Medication_Category:code
+  gleich "01") gekennzeichnet ist.
+title: E-Rezept-Fachdienst - Task aktivieren - Ausschluss Betäubungsmittel
 version: 0

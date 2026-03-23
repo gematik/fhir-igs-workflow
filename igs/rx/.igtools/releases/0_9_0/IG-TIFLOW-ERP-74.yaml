@@ -1,21 +1,19 @@
 actor:
-- eRp_FD
-conformance: SHALL
-content_hash: 5ddfb9e58190e04d044df55e63a03fbb45e332d9575dbdc2edf1925d7c566765
-created: '2026-03-17T11:33:13.271880'
-date: '2026-03-17T11:33:13.271883'
+- PS_E-Rezept_abgebend
+conformance: SHOULD
+content_hash: 14aaf63fc82da69595c2f286ba25173f2b40ee3474376cdfc38643e016fa04d8
+created: '2026-03-23T10:39:55.292406'
+date: '2026-03-23T10:39:55.292408'
 key: IG-TIFLOW-ERP-74
-modified: '2026-03-17T11:33:13.271882'
+modified: '2026-03-23T10:39:55.292407'
 release_status: NEW
-source: input/pagecontent/op-activate-req-fd.md
+source: input/pagecontent/menu-technische-umsetzung-anwendungsfaelle.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
-  - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation POST /Task/&lt;id&gt;/$activate
-  auf einen Task des Flowtype Task.extension:flowType = 160, 166, 169, 200 oder 209
-  bei erfolgreichem Abschluss der Operation, die Daten des Verordnungsdatensatzes
-  für die Übermittlung in den ePA Medication Service bereitstellen.
-title: E-Rezept-Fachdienst - Task aktivieren - Daten ePA Medication Service bereitstellen
-  (Verordnungsdatensatz)
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: "Das PS der abgebenden LEI SOLL für die Umsetzung der Belieferung von E-Rezepten\
+  \ für Arzneimittel den Anwendungsfall\n    <ul>\n    <li>UC 4.16 - Dispensierinformationen\
+  \ bereitstellen</li>\n    </ul>\n    umsetzen."
+title: 'PS abgebende LEI: TIFlow-RX - empfohlene Anwendungsfälle'
 version: 0

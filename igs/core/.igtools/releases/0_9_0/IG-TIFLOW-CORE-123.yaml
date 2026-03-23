@@ -1,19 +1,25 @@
 actor:
-- eRp_FdV
+- eRp_FD
 conformance: SHALL
-content_hash: 03fe7e611a3008b829440acd553d465edb33f8602fc5ca7bb47c42c2b5f5d4dc
-created: '2026-03-17T11:33:06.665854'
-date: '2026-03-17T11:33:06.665857'
+content_hash: a05993d06127f885537e590ece4efc855e4745a8287b03ab2798b8c614df8b45
+created: '2026-03-23T10:39:53.950544'
+date: '2026-03-23T10:39:53.950551'
 key: IG-TIFLOW-CORE-123
-modified: '2026-03-17T11:33:06.665856'
+modified: '2026-03-23T10:39:53.950550'
 release_status: NEW
-source: input/pagecontent/query-api-channels-req-fdv.md
+source: input/pagecontent/ttl.md
 status: ACTIVE
 test_procedures:
-  eRp_FdV:
-  - Produkttest
-text: Das E-Rezept-FdV MUSS, wenn es den Anwendungsfall "Push Notifications" umsetzt,
-  für die Registrierung und Verwaltung der Channels für die FdV-Instanzen des Versicherten
-  am E-Rezept-Fachdienst die Operationen gemäß [OpenAPI_FD] verwenden.
-title: 'E-Rezept-FdV: Push Notifications - Channelkonfiguration - OpenAPI'
+  eRp_FD:
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS einen Task nach Ablauf der Löschfrist gemäss der\
+  \ folgenden Festlegung automatisch löschen und das Löschen in einem AuditEvent für\
+  \ den Versicherten nachvollziehbar protokollieren.\n\t<table>\n\t\t<tr> \n\t\t<th>Task.status\
+  \ nach Statuswechsel</th>\n\t\t<th>Löschfrist</th>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>draft</td>\n\
+  \t\t<td>10 Tage nach Statuswechsel</td>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>ready</td>\n\
+  \t\t<td>10 Tage nach Datum in Task.expiryDate</td>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>in-progress</td>\n\
+  \t\t<td>100 Tage nach Statuswechsel</td>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>completed</td>\n\
+  \t\t<td>100 Tage nach Statuswechsel</td>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>cancelled</td>\n\
+  \t\t<td>10 Tage nach Statuswechsel</td>\n\t\t</tr>\n\t</table>"
+title: E-Rezept-Fachdienst - Löschfrist abgelaufener Rezepte
 version: 0

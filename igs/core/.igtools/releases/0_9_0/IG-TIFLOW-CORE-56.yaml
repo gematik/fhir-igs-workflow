@@ -1,20 +1,18 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 6a3c35133e654fda54b75f71e83341b911eb6dc780d1c8edc284779195d36b5e
-created: '2026-03-17T11:33:06.653556'
-date: '2026-03-17T11:33:06.653559'
+content_hash: 476c0083f13b89c74a9ab271004ded520755b47d492844d26e4b4d20ec04e934
+created: '2026-03-23T10:39:53.810056'
+date: '2026-03-23T10:39:53.810060'
 key: IG-TIFLOW-CORE-56
-modified: '2026-03-17T11:33:06.653558'
+modified: '2026-03-23T10:39:53.810059'
 release_status: NEW
-source: input/pagecontent/op-close-req-fd.md
+source: input/pagecontent/query-api-channels-req-fd.md
 status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close
-  den Zeitpunkt des Aufrufes in Task.extension:lastMedicationDispense im Format "YYYY-MM-DDThh:mm:ss+zz:zz"
-  (FHIR-instant) anlegen und speichern, wenn ein MedicationDispense Objekt im Aufruf
-  übergeben wird.
-title: E-Rezept-Fachdienst - Task schließen - Zeitstempel MedicationDispense
+text: Der E-Rezept-Fachdienst MUSS die API mit den Endpunkten GET /channels, GET /channels/{pushkey}
+  und POST /channels/{pushkey} gemäß [OpenAPI_FD] bereitstellen.
+title: E-Rezept-Fachdienst - Push Notifications - Channels- OpenApi_Notification_Fachdienst
 version: 0

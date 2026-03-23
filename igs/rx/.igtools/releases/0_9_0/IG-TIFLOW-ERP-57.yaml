@@ -1,18 +1,24 @@
 actor:
-- PS_E-Rezept_verordnend
+- PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: e9a1d3ff904078c6c07e329b8f80ce959f2634a47b0a9fffea43a8594689e562
-created: '2026-03-17T11:33:13.263259'
-date: '2026-03-17T11:33:13.263262'
+content_hash: 041726af86455ef9c63718b2eb775663f287742e762ce0cc5de37b85fe0a4c89
+created: '2026-03-23T10:39:55.284648'
+date: '2026-03-23T10:39:55.284651'
 key: IG-TIFLOW-ERP-57
-modified: '2026-03-17T11:33:13.263261'
+modified: '2026-03-23T10:39:55.284650'
 release_status: NEW
-source: input/pagecontent/op-activate-req-pvs.md
+source: input/pagecontent/query-api-communication-req-avs.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_verordnend:
-  - Konformitätsbestätigung
-text: Das Primärsystem MUSS für die Übertragung von E-Rezept-Token ein Verfahren nutzen,
-  dass die sehr hohe Vertraulichkeit des E-Rezept-Tokens und seine Integrität schützt.
-title: 'PS: Schutz des E-Rezept-Tokens bei Übertragung'
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: "Das PS der abgebenden LEI (Apotheke) MUSS im Anwendungsfall \"Nachricht an\
+  \ Versicherten versenden\" bezüglich der Belieferung eines Arzneimittels eine Communication\
+  \ Ressource mit dem Profil GEM_ERP_PR_Communication_Reply mit \n  <ul>\n    <li>Versicherten-ID\
+  \ des Absenders der empfangenen Nachricht in recipient</li>\n    <li>Task-ID des\
+  \ referenzierten E-Rezeptes in basedOn</li>\n    <li>Nachrichten-ID der empfangenen\
+  \ Anfrage in inResponseTo</li>\n    <li>Nachricht in payload contentString</li>\n\
+  \  </ul>\n  erstellen."
+title: 'PS abgebende LEI: Nachricht versenden - Belieferung Arzneimittel - Communication
+  Ressource erstellen'
 version: 0

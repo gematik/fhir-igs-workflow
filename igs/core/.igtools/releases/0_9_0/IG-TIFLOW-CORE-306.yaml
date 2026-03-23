@@ -1,20 +1,26 @@
 actor:
 - CS_E-Rezept_KTR
+- PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: c5d543cc2dc51ac6c7206d03a85bd5bd433b9cb6b59e507ec0cdf0588e362183
-created: '2026-03-17T11:33:06.711662'
-date: '2026-03-17T11:33:06.711664'
+content_hash: 5a65ec04a02598fca0d6ec719ff9e11fa78c9d3fd08756b48be8a68d1c0d8c05
+created: '2026-03-23T10:39:54.177340'
+date: '2026-03-23T10:39:54.177342'
 key: IG-TIFLOW-CORE-306
-modified: '2026-03-17T11:33:06.711663'
+modified: '2026-03-23T10:39:54.177341'
 release_status: NEW
-source: input/pagecontent/op-reject-req-ktr.md
+source: input/pagecontent/query-api-subscription-req-avs.md
 status: ACTIVE
 test_procedures:
   CS_E-Rezept_KTR:
   - Herstellererklärung
-text: Das Clientsystem Kostenträger MUSS im Anwendungsfall "Verordnung durch Clientsystem
-  zurückgeben" für das zurückzugebende E-Rezept nach erfolgreichem Aufruf der Operation
-  "Eine Verordnung zurückweisen" die Daten zu Verordnung, E-Rezept-Token und das Geheimnis
-  im CS löschen.
-title: 'CS Kostenträger: Verordnung zurückgeben - Verordnung löschen'
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+text: 'Das PS der abgebenden LEI MUSS den Anwendungsfall "Subscription für neue Communication"
+  gemäß TAB_ILFERP_017 umsetzen. Tabelle # : TAB_ILFERP_017 – Subscription für neue
+  Communication Name Subscription für neue Communication Auslöser Periodischer Aufruf,
+  wenn keine Websocket-Verbindung für die Notification besteht Akteur AVS Vorbedingung
+  Die LEI hat sich gegenüber der TI authentisiert. Nachbedingung Es besteht eine Websocket-Verbindung
+  zum Empfang der Notification Standardablauf Subscription Ressource erstellen Subscription
+  registrieren Websocket-Verbindung zu Subscription Service aufbauen Listening'
+title: 'PS abgebende LEI: Subscription für neue Communication'
 version: 0

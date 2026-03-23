@@ -3,12 +3,13 @@ actor:
 - NCPeH_ePeDA
 - PS_E-Rezept_abgebend
 - PS_E-Rezept_verordnend
+- eRp_FdV
 conformance: SHALL
-content_hash: e40712a6a2f417f5b61c3dff16d6324c67b5a07a38babbaa95c768f4534af670
-created: '2026-03-17T11:33:06.639362'
-date: '2026-03-17T11:33:06.639365'
+content_hash: d9da5bbdf78dc851a3b0de78c09a2e8fcf6c800c076df5b7ca764b13a32e038a
+created: '2026-03-23T10:39:53.788267'
+date: '2026-03-23T10:39:53.788346'
 key: IG-TIFLOW-CORE-6
-modified: '2026-03-17T11:33:06.639364'
+modified: '2026-03-23T10:39:53.788320'
 release_status: NEW
 source: input/pagecontent/authentifizierung-client.md
 status: ACTIVE
@@ -21,7 +22,9 @@ test_procedures:
   - Herstellererklärung
   PS_E-Rezept_verordnend:
   - Herstellererklärung
-text: Das Clientsystem MUSS empfangene ACCESS_TOKEN, ID_TOKEN und AUTHORIZATION_CODE-Objekte
-  gegen unberechtigten Zugriff schützen.
-title: 'CS: Sichere Speicherung der Token'
+  eRp_FdV:
+  - Herstellererklärung
+text: Das Clientsystem MUSS vorhandene ACCESS_TOKEN, ID_TOKEN und AUTHORIZATION_CODE-Objekte
+  nach Ablauf ihrer Gültigkeit sicher löschen.
+title: 'CS: Sicheres Löschen von TOKEN bei zeitlichem Ablauf'
 version: 0

@@ -1,20 +1,23 @@
 actor:
-- eRp_FdV
-conformance: SHALL NOT
-content_hash: 2cff51cc1cfca6e740cbc4978d350ec40e572fe4c3fc2bbf3de7a2eb6c179bac
-created: '2026-03-17T11:33:13.254786'
-date: '2026-03-17T11:33:13.254789'
+- eRp_FD
+conformance: SHALL
+content_hash: 916260f68429c2d2179b8f78339e5060bd87522e9edbb967439ffaa1af946199
+created: '2026-03-23T10:39:55.277318'
+date: '2026-03-23T10:39:55.277321'
 key: IG-TIFLOW-ERP-17
-modified: '2026-03-17T11:33:13.254788'
+modified: '2026-03-23T10:39:55.277320'
 release_status: NEW
-source: input/pagecontent/query-api-communication-req-fdv.md
+source: input/pagecontent/op-close-req-fd.md
 status: ACTIVE
 test_procedures:
-  eRp_FdV:
-  - Produkttest
-text: Das E-Rezept-FdV DARF im Anwendungsfall "E-Rezept einer Apotheke zuweisen" für
-  ein E-Rezept mit dem Flowtype 166 es dem Nutzer NICHT ermöglichen ein E-T-Rezept
-  mit der Belieferungsart "Postversand" an eine Apotheke zuzuweisen.
-title: 'E-Rezept-FdV: E-Rezept zuweisen- Flowtype 166 - Zuweisen als Versand nicht
-  zulässig'
+  eRp_FD:
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mit Flowtype 160, 166,\
+  \ 169, 200 oder 209 mittels HTTP-POST/$close-Operation auf den in der URL referenzierten\
+  \ /Task/&lt;id&gt; sicherstellen, dass ausschließlich abgebende Institutionen in\
+  \ der Rolle\n    <ul>\n      <li>oid_oeffentliche_apotheke</li> \n      <li>oid_krankenhausapotheke</li>\n\
+  \    </ul>\n    die Operation am Fachdienst aufrufen dürfen und die Rolle \"professionOID\"\
+  \ des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen,\
+  \ damit der Workflow nicht durch einen Unberechtigten abgeschlossen werden kann."
+title: E-Rezept-Fachdienst - Task schließen - Flowtype 160/166/169/200/209 - Rollenprüfung
 version: 0

@@ -1,23 +1,34 @@
 actor:
+- CS_E-Rezept_KTR
+- NCPeH_ePeDA
+- PS_E-Rezept_abgebend
+- PS_E-Rezept_verordnend
 - eRp_FD
+- eRp_FdV
 conformance: SHALL
-content_hash: cc7105e267b529b19121ea46bb33d31cc7be62ad2ec2c80e89eb4c0404e15c8f
-created: '2026-03-17T11:33:06.705650'
-date: '2026-03-17T11:33:06.705655'
+content_hash: fa4c5e69bc026f8f28e155c44a59047f06a760453af6b13d438ac2f2b0ca7f96
+created: '2026-03-23T10:39:54.168628'
+date: '2026-03-23T10:39:54.168631'
 key: IG-TIFLOW-CORE-283
-modified: '2026-03-17T11:33:06.705654'
+modified: '2026-03-23T10:39:54.168630'
 release_status: NEW
-source: input/pagecontent/query-api-communication-req-fd.md
+source: input/pagecontent/fhir-validate.md
 status: ACTIVE
 test_procedures:
+  CS_E-Rezept_KTR:
+  - Herstellererklärung
+  NCPeH_ePeDA:
+  - Herstellererklärung
+  PS_E-Rezept_abgebend:
+  - Konformitätsbestätigung
+  PS_E-Rezept_verordnend:
+  - Konformitätsbestätigung
   eRp_FD:
   - Produkttest
-text: 'Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation
-  POST auf den Endpunkt /Communication, falls die Ressource dem GEM_ERP_PR_Communication_DispReq-Profil
-  entspricht, den Inhalt der contentString-Eigenschaft auf valides JSON sowie gegen
-  die Struktur in "Tabelle: E-Rezept einer Apotheke zuweisen" überprüfen und bei negativem
-  Prüfergebnis, mit einem Http-Fehler 400 (Bad Request) abbrechen sowie mit einer
-  aussagekräftigen Fehlermeldung in Form einer eingebetteten OperationOutcome-Ressource
-  antworten.'
-title: E-Rezept-Fachdienst - Nachricht einstellen - Validierung Payload  GEM_ERP_PR_Communication_DispReq
+  eRp_FdV:
+  - Herstellererklärung
+text: Die Produkttypen der Anwendung E-Rezept und Clientsysteme des E-Rezept-Fachdienstes
+  MÜSSEN bei der Erstellung einer FHIR-Ressource sicherstellen, dass die fullURL (Bundle.entry.fullUrl)
+  entweder im [Format http-Schema] oder im [Format urn:uuid-Schema] vorliegt.
+title: FHIR-Ressourcen - Format fullUrl
 version: 0

@@ -4,11 +4,11 @@ actor:
 - PS_E-Rezept_abgebend
 - PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: 85401a46f2b413580c873ddbddf601591531f0ccde4978e44be254b4ad661164
-created: '2026-03-17T11:33:06.640199'
-date: '2026-03-17T11:33:06.640201'
+content_hash: d80cf85e901504352cca12dbabbfe395219c0821610df27d8ceecb445e46cbfa
+created: '2026-03-23T10:39:53.789643'
+date: '2026-03-23T10:39:53.789648'
 key: IG-TIFLOW-CORE-9
-modified: '2026-03-17T11:33:06.640200'
+modified: '2026-03-23T10:39:53.789647'
 release_status: NEW
 source: input/pagecontent/authentifizierung-client.md
 status: ACTIVE
@@ -21,12 +21,7 @@ test_procedures:
   - Herstellererklärung
   PS_E-Rezept_verordnend:
   - Herstellererklärung
-text: "Das Clientsystem MUSS den Antrag zum AUTHORIZATION_CODE für ein ACCESS_TOKEN\
-  \ beim Authorization-Endpunkt (URI_AUTH) in Form eines HTTP/1.1 GET Request stellen\
-  \ und dabei die folgenden Attribute anführen:\n    <ul>\n        <li>\"response_type\"\
-  </li>\n        <li>\"scope\"</li>\n        <li>\"client_id\"</li>\n        <li>\"\
-  redirect_uri\"</li>\n        <li>\"code_challenge\" (Hashwert des \"code_verifier\"\
-  ) [RFC7636#section-4.2]</li>\n        <li>\"code_challenge_method\" HASH-Algorithmus\
-  \ (S256) [RFC7636#section-4.3]</li>\n    </ul>"
-title: 'CS: Anfrage des AUTHORIZATION_CODE für ein ACCESS_TOKEN'
+text: "Das Clientsystem MUSS über den CODE_VERIFIER einen SHA256-HASH-Wert, die sogenannte\
+  \ CODE_CHALLENGE, gemäß [RFC7636#section-4.2] bilden.\n\n    code_challenge = BASE64URL-ENCODE(SHA256(ASCII(code_verifier)))"
+title: 'CS: Erzeugen des Hash-Werts des CODE_VERIFIER'
 version: 0

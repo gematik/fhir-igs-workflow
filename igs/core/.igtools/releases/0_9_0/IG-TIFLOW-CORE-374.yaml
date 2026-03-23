@@ -1,26 +1,19 @@
 actor:
-- PS_E-Rezept_verordnend
 - eRp_FdV
 conformance: SHALL
-content_hash: 605fc3211832110e5601889e99f85f6a873c1bd8081cd2c12812d63aae340f9c
-created: '2026-03-18T14:56:22.578013'
-date: '2026-03-18T14:56:22.578016'
+content_hash: 35470165c194a4be57f6a51f9b572ee5b3626f56c1f8b97fadbf91d7035edda2
+created: '2026-03-23T10:39:54.195699'
+date: '2026-03-23T10:39:54.195702'
 key: IG-TIFLOW-CORE-374
-modified: '2026-03-18T14:56:22.578015'
+modified: '2026-03-23T10:39:54.195701'
 release_status: NEW
-source: input/pagecontent/datamatrix-code-client.md
+source: input/pagecontent/query-api-pushers-req-fdv.md
 status: ACTIVE
 test_procedures:
-  PS_E-Rezept_verordnend:
-  - Herstellererklärung
   eRp_FdV:
-  - Herstellererklärung
-text: "Das E-Rezept-FdV und das PS der verordnenden LEI MÜSSEN zum Erstellen eines\
-  \ E-Rezept-Token die ID auf einen Task zusammen mit dem AccessCode des Tasks aus\
-  \ den lokal verfügbaren Informationen einer Verordnung als URL in der Form:\n  \
-  \  <ul>\n    <li>2D-Code-Daten = \"Task/\" + Task.id + \"/$accept?ac=\" + AccessCode</li>\n\
-  \    </ul>\n    zusammenstellen, damit diese Zeichenkette als Referenz in einer\
-  \ E-Rezept-Nachricht oder in einem JSON-Array für die Generierung eines 2D-Codes\
-  \ verwendet werden kann."
-title: Datenstruktur Einlöseinformationen für E-Rezept
+  - Produkttest
+text: Das E-Rezept-FdV MUSS, wenn es den Anwendungsfall "Push Notifications" umsetzt,
+  für die Registrierung und Verwaltung der FdV-Instanzen am E-Rezept-Fachdienst die
+  Operationen gemäß [OpenAPI_FD] verwenden.
+title: 'E-Rezept-FdV: Push Notifications - Instanz registrieren - OpenAPI'
 version: 0

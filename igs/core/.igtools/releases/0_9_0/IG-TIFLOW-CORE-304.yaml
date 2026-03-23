@@ -1,21 +1,34 @@
 actor:
+- Anb_NCPeH_FD
 - CS_E-Rezept_KTR
+- PS_E-Rezept_abgebend
+- PS_E-Rezept_verordnend
 conformance: SHALL
-content_hash: 861416bd637e1edbde9b1a88274b3b8d792c1696246e2950a2e41c150594a942
-created: '2026-03-17T11:33:06.711188'
-date: '2026-03-17T11:33:06.711190'
+content_hash: cd5106b4a3395fac3ff100e31eaa2bd79b559582f457e21aa61e5db8f6c3d80e
+created: '2026-03-23T10:39:54.176784'
+date: '2026-03-23T10:39:54.176787'
 key: IG-TIFLOW-CORE-304
-modified: '2026-03-17T11:33:06.711189'
+modified: '2026-03-23T10:39:54.176786'
 release_status: NEW
-source: input/pagecontent/op-close-req-ktr.md
+source: input/pagecontent/pki-zertifikatspruefung.md
 status: ACTIVE
 test_procedures:
+  Anb_NCPeH_FD:
+  - Produktgutachten
   CS_E-Rezept_KTR:
   - Herstellererklärung
-text: "Das Clientsystem Kostenträger MUSS im Anwendungsfall \"Quittung abrufen\" für\
-  \ zum Abschliessen des Workflows für die Verordnung die HTTP-Operation POST /Task/&#60;id&#62;/$close\
-  \ mit\n    <ul> \n        <li>ACCESS_TOKEN im Authorization-Header</li>\n      \
-  \  <li>Task-ID in URL &#60;id&#62;</li>\n        <li>Geheimnis in URL-Parameter\
-  \ ?secret=</li>\n        <li>MedicationDispense</li>\n    </ul>\n    ausführen."
-title: 'CS Kostenträger: Quittung abrufen - Statusrequest'
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: Das Clientsystem des E-Rezept-Fachdienst MUSS für die Prüfung eines Zertifikats
+  für den TLS-Verbindungsaufbau zum E-Rezept-Fachdienst und IDP das Zertifikat auf
+  ein CA-Zertifikat einer CA, die die "CA/Browser Forum Baseline Requirements for
+  the Issuance and Management of Publicly-Trusted Certificates" [Baseline Requirements
+  for TLS Server Certificates] erfüllt, kryptographisch (Signaturprüfung) zurückführen
+  können. Ansonsten MUSS es das Zertifikat als "ungültig" bewerten.Das Clientsystem
+  des E-Rezept-Fachdienst MUSS die zeitliche Gültigkeit des Zertifikats prüfen. Falls
+  diese Prüfung negativ ausfällt, muss es das Zertifikat als "ungültig" bewerten.
+title: 'CS: Prüfung der Zertifikate für TLS-Verbindung zu E-Rezept-Fachdienst und
+  IDP-Dienst'
 version: 0
