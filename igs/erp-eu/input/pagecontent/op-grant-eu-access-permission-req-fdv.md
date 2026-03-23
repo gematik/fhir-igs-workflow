@@ -7,7 +7,7 @@ dieser Länder aus dem FHIR-VZD. Die Liste kann für 96h gecacht werden.
 
 <!--A_27109 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-49" title="E-Rezept-FdV: Zugriffsberechtigung - Liste zulässiger Länder" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -23,7 +23,7 @@ dieser Länder aus dem FHIR-VZD. Die Liste kann für 96h gecacht werden.
 
 <!--A_27110 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-XBORDER-50" title="E-Rezept-FdV: Zugriffsberechtigung - Caching Liste zulässiger Länder" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -32,7 +32,7 @@ dieser Länder aus dem FHIR-VZD. Die Liste kann für 96h gecacht werden.
 
 <!--A_27111 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-51" title="E-Rezept-FdV: Zugriffsberechtigung - Land auswählen" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -41,7 +41,7 @@ dieser Länder aus dem FHIR-VZD. Die Liste kann für 96h gecacht werden.
 
 <!--A_27113 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-52" title="E-Rezept-FdV: Zugriffsberechtigung - Zugriffscode erzeugen" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produktgutachten"/>
     </actor>
@@ -54,12 +54,12 @@ Für jede weitere Erteilung einer Zugriffsberechtigung für ePrescription/Dispen
 <!-- ToDo: Afo Zugriffscode in IG übernehmen -->
 
 <!--A_27114 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-53" title="E-Rezept-FdV: Zugriffsberechtigung - Zugriffsberechtigung am E-Rezept-Fachdienst speichern" version="0">
-    <meta lockversion="false"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-53" title="E-Rezept-FdV: Zugriffsberechtigung - Zugriffsberechtigung am TI-Flow-Fachdienst speichern" version="0">
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "Zugriffsberechtigung erteilen" zum Speichern der Information am E-Rezept-Fachdienst die HTTP-Operation POST /$grant-eu-access-permission mit:
+    Das E-Rezept-FdV MUSS im Anwendungsfall "Zugriffsberechtigung erteilen" zum Speichern der Information am TI-Flow-Fachdienst die HTTP-Operation POST /$grant-eu-access-permission mit:
     <ul>
         <li>ACCESS_TOKEN im Authorization-Header</li>
         <li>Organization.extension:ncpehCountryEx.valueCodeableConcept.coding.code des vom Nutzer ausgewählten Landes in Parameters.parameter:countryCode</li>
@@ -68,4 +68,4 @@ Für jede weitere Erteilung einer Zugriffsberechtigung für ePrescription/Dispen
     ausführen.
 </requirement>
 
-Im Response übermittelt der E-Rezept-Fachdienst in Parameters.parameter:validUntil die Gültigkeitsdauer der Zugriffsberechtigung.
+Im Response übermittelt der TI-Flow-Fachdienst in Parameters.parameter:validUntil die Gültigkeitsdauer der Zugriffsberechtigung.

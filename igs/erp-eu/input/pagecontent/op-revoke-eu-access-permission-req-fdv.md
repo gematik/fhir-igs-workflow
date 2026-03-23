@@ -4,11 +4,11 @@ Das E-Rezept-FdV MUSS es dem Nutzer im Anwendungsfall "Zugriffsberechtigung lös
 
 <!--A_27125 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-34" title="E-Rezept-FdV: Zugriffsberechtigung löschen - Abfragerequest" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "Zugriffsberechtigung löschen" zum Löschen der Information auf dem E-Rezept-Fachdienst die HTTP-Operation DELETE /$revoke-eu-access-permission mit:
+    Das E-Rezept-FdV MUSS im Anwendungsfall "Zugriffsberechtigung löschen" zum Löschen der Information auf dem TI-Flow-Fachdienst die HTTP-Operation DELETE /$revoke-eu-access-permission mit:
     <ul>
         <li>ACCESS_TOKEN im Authorization-Header</li>
     </ul>
@@ -17,7 +17,7 @@ Das E-Rezept-FdV MUSS es dem Nutzer im Anwendungsfall "Zugriffsberechtigung lös
 
 <!--A_27126 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-35" title="E-Rezept-FdV: Zugriffsberechtigung löschen - lokale Zugriffsberechtigung löschen" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>

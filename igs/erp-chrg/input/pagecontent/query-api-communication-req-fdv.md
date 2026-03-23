@@ -21,7 +21,7 @@ Innerhalb der Textnachricht sind keine Internet-Links und keine Non-Printable-Ch
 
 <!--A_22739-01-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-1" title="E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Nachricht erstellen" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -35,8 +35,8 @@ Innerhalb der Textnachricht sind keine Internet-Links und keine Non-Printable-Ch
 </requirement>
 
 <!--A_22740-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-2" title="E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Nachricht auf E-Rezept-Fachdienst einstellen" version="0">
-    <meta lockversion="false"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-2" title="E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Nachricht auf TI-Flow-Fachdienst einstellen" version="0">
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>

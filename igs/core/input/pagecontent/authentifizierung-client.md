@@ -21,8 +21,8 @@ Für weitere Informationen zum IDP-Dienst und zum Ablauf der Authentisierung sie
 Zur Nutzung des IDP-Dienstes gelten einige grundlegende Voraussetzungen, welche das PS erfüllen muss.
 
 <!-- A_20654-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-1" title="CS: Registrierung des Clientsystems des E-Rezept-Fachdienstes" version="0">
-    <meta lockversion="false"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-1" title="CS: Registrierung des Clientsystems des TI-Flow-Fachdienstes" version="0">
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -35,12 +35,12 @@ Zur Nutzung des IDP-Dienstes gelten einige grundlegende Voraussetzungen, welche 
     <actor name="Anb_NCPeH_FD">
         <testProcedure id="testProcedureAN01"/>
     </actor>
-    Der Hersteller des Clientsystem des E-Rezept-Fachdienstes MUSS sich über einen organisatorischen Prozess beim Anbieter des IDP-Dienstes für die Dienste, für welche Token abgerufen werden sollen, registrieren. Der IDP-Dienst vergibt dabei eine "client_id". Diese "client_id" MUSS vom Clientsystem bei Nutzung des IDP-Dienstes übertragen werden.
+    Der Hersteller des Clientsystem des TI-Flow-Fachdienstes MUSS sich über einen organisatorischen Prozess beim Anbieter des IDP-Dienstes für die Dienste, für welche Token abgerufen werden sollen, registrieren. Der IDP-Dienst vergibt dabei eine "client_id". Diese "client_id" MUSS vom Clientsystem bei Nutzung des IDP-Dienstes übertragen werden.
 </requirement>
 
 <!-- A_20655-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-2" title="CS: Regelmäßiges Einlesen des Discovery Document" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -60,7 +60,7 @@ Zur Nutzung des IDP-Dienstes gelten einige grundlegende Voraussetzungen, welche 
 
 <!-- A_20656-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-3" title="CS: Prüfung der Signatur des Discovery Document" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -86,7 +86,7 @@ Bei Aufruf der Funktion "VerifyDocument" an der Außenschnittstelle des Konnekto
 
 <!-- A_20657-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-4" title="CS: Prüfung Typ und Rolle des Signaturzertifikats des Discovery Document" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -106,7 +106,7 @@ Hinweis: Zur Durchführung der Prüfungen gemäß A_20657-* und ähnlicher Anfor
 
 <!-- A_20658-01, A_19482-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-5" title="CS: Sicheres Löschen der Token" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -129,7 +129,7 @@ Darüber hinaus gelten für die Kommunikation mit dem IDP-Dienst die Vorgaben au
 
 <!-- A_21337-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-6" title="CS: Sicheres Löschen von TOKEN bei zeitlichem Ablauf" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -150,7 +150,7 @@ Darüber hinaus gelten für die Kommunikation mit dem IDP-Dienst die Vorgaben au
 
 <!-- A_21338-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-7" title="CS: Sichere Speicherung der Token" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -174,7 +174,7 @@ Im ersten Schritt erzeugt sich das Primärsystem einen zufälligen "CODE_VERFIER
 
 <!-- A_20659-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-8" title="CS: Erzeugen des CODE_VERIFIER" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -192,7 +192,7 @@ Im ersten Schritt erzeugt sich das Primärsystem einen zufälligen "CODE_VERFIER
 
 <!-- A_20660-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-9" title="CS: Erzeugen des Hash-Werts des CODE_VERIFIER" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -214,7 +214,7 @@ Anschließend werden der gehashte Zufallswert und die notwendigen Angaben als "C
 
 <!-- A_20661-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-10" title="CS: Anfrage des AUTHORIZATION_CODE für ein ACCESS_TOKEN" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -244,7 +244,7 @@ Der Authorization-Endpunkt liefert als Response zur Anfrage des "AUTHORIZATION_C
 
 <!-- A_20662-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-11" title="CS: Annahme des user_consent und des CHALLENGE_TOKEN" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -262,7 +262,7 @@ Der Authorization-Endpunkt liefert als Response zur Anfrage des "AUTHORIZATION_C
 
 <!-- A_20663-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-12" title="CS: Annahme des user_consent und des CHALLENGE_TOKEN" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -282,7 +282,7 @@ Das Clientsystem verwendet nun die AUT-Identität der SM-B der Institution und d
 
 <!-- A_20664 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-13" title="Bestätigung des Consent" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -300,7 +300,7 @@ Hinweis: Die erfolgte Zustimmung des Nutzers darf gespeichert werden und weitere
 
 <!-- A_20665-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-14" title="CS: Signatur der Challenge des IdP-Dienstes" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -324,7 +324,7 @@ Für weitere Informationen siehe Kapitel "Als Nutzer gegenüber der Telematikinf
 
 <!-- A_20666-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-15" title="Auslesen des Authentisierungszertifikates" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -343,7 +343,7 @@ Anschließend werden die signierte "challenge" und das verwendete Authentisierun
 
 <!-- A_20667-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-16" title="CS: Response auf die Challenge des Authorization-Endpunktes" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -369,7 +369,7 @@ Das Clientsystem empfängt nun diesen "AUTHORIZATION_CODE" vom IDP-Dienst und re
 
 <!-- A_20668-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-17" title="CS: Annahme des AUTHORIZATION_CODE" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -387,7 +387,7 @@ Das Clientsystem empfängt nun diesen "AUTHORIZATION_CODE" vom IDP-Dienst und re
 
 <!-- A_21333-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-18" title="CS: Erzeugung des Token-Key" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -405,7 +405,7 @@ Das Clientsystem empfängt nun diesen "AUTHORIZATION_CODE" vom IDP-Dienst und re
 
 <!-- A_21334-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-19" title="CS: Erzeugung des KEY_VERIFIER" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -425,7 +425,7 @@ Hinweis: Der Aufbau des "KEY_VERIFIER" entspricht [gemSpec_IDP_Dienst#Kapitel 7.
 
 <!-- A_20671-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-20" title="CS: Einreichen des AUTHORIZATION_CODE beim Token-Endpunkt" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -451,7 +451,7 @@ Das Primärsystem erhält nun den signierten "ID_TOKEN" und den "ACCESS_TOKEN" v
 
 <!-- A_20672-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-21" title="CS: Annahme des ID_TOKEN" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -471,7 +471,7 @@ Hinweis: Der Aufbau der Antwort und des "ID_TOKEN" entspricht [gemSpec_IDP_Diens
 
 <!-- A_20673-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-22" title="CS: Annahme des ACCESS_TOKEN" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -491,7 +491,7 @@ Hinweis: Der Aufbau der Antwort und des "ACCESS_TOKEN" entspricht [gemSpec_IDP_D
 
 <!-- A_20674-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-23" title="CS: Formale Prüfung der Signatur des ID_TOKEN und des ACCESS_TOKEN" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -511,7 +511,7 @@ Zur Prüfung von Zertifikatstyp- und Rollen-OID siehe Hinweis zu A_20657-*.
 
 <!-- A_20675-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-24" title="CS: Gültigkeitsprüfung des Signaturzertifikats des ACCESS_TOKEN innerhalb der TI" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -536,22 +536,22 @@ Im weiteren Verlauf kann der "ACCESS_TOKEN" innerhalb seiner Gültigkeitsdauer b
 
 ### Authentifizierung eines Versicherten
 
-Der Nutzer des E-Rezept-FdV muss sich für Zugriffe auf den E-Rezept-Fachdienst gegenüber der TI authentifizieren.
+Der Nutzer des E-Rezept-FdV muss sich für Zugriffe auf den TI-Flow-Fachdienst gegenüber der TI authentifizieren.
 
 Die Authentisierung kann gegenüber dem IDP-Dienst mittels eGK unter Kenntnis der PIN der eGK oder mit der GesundheitsID, d.h. Nutzerauthentisierung gegenüber dem sektoralen IDP, erfolgen.
 
 <!-- A_25224 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-25" title="E-Rezept-FdV: Authentisierung E-Rezept-Fachdienst" version="0">
-    <meta lockversion="false"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-25" title="E-Rezept-FdV: Authentisierung TI-Flow-Fachdienst" version="0">
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-    Das E-Rezept-FdV MUSS mindestens ein Verfahren zur Authentisierung des Nutzers gegenüber dem E-Rezept-Fachdienst unterstützen.
+    Das E-Rezept-FdV MUSS mindestens ein Verfahren zur Authentisierung des Nutzers gegenüber dem TI-Flow-Fachdienst unterstützen.
 </requirement>
 
 <!-- A_20167-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-26" title="E-Rezept-FdV: Authentisierung E-Rezept-Fachdienst - IDP-Dienst - Rolle Anwendungsfrontend und optional Authenticator-Modul" version="0">
-    <meta lockversion="false"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-26" title="E-Rezept-FdV: Authentisierung TI-Flow-Fachdienst - IDP-Dienst - Rolle Anwendungsfrontend und optional Authenticator-Modul" version="0">
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produktgutachten"/>
     </actor>
@@ -559,8 +559,8 @@ Die Authentisierung kann gegenüber dem IDP-Dienst mittels eGK unter Kenntnis de
 </requirement>
 
 <!-- A_25225 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-27" title="E-Rezept-FdV: Authentisierung E-Rezept-Fachdienst - sektoraler IDP - Rolle Anwendungsfrontend" version="0">
-    <meta lockversion="false"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-27" title="E-Rezept-FdV: Authentisierung TI-Flow-Fachdienst - sektoraler IDP - Rolle Anwendungsfrontend" version="0">
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -569,15 +569,15 @@ Die Authentisierung kann gegenüber dem IDP-Dienst mittels eGK unter Kenntnis de
 
 Für Informationen zum Ablauf der Authentisierung siehe [gemSpec_IDP_Dienst] und [gemSpec_IDP_Frontend].
 
-Das E-Rezept-FdV erhält bei erfolgreicher Authentisierung einen Authentisierungstoken (ACCESS_TOKEN), welcher an den E-Rezept-Fachdienst weitergeleitet wird.
+Das E-Rezept-FdV erhält bei erfolgreicher Authentisierung einen Authentisierungstoken (ACCESS_TOKEN), welcher an den TI-Flow-Fachdienst weitergeleitet wird.
 
 <!-- A_20117-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-28" title="E-Rezept-FdV: Zugriff E-Rezept-Fachdienst - Authentisierung wenn kein gültiger ACCESS_TOKEN" version="0">
-    <meta lockversion="false"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-28" title="E-Rezept-FdV: Zugriff TI-Flow-Fachdienst - Authentisierung wenn kein gültiger ACCESS_TOKEN" version="0">
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-    Das E-Rezept-FdV MUSS, falls für den Aufruf einer Operation am E-Rezept-Fachdienst kein gültiger ACCESS_TOKEN  vorliegt, sich gegenüber dem E-Rezept-Fachdienst authentisieren.
+    Das E-Rezept-FdV MUSS, falls für den Aufruf einer Operation am TI-Flow-Fachdienst kein gültiger ACCESS_TOKEN  vorliegt, sich gegenüber dem TI-Flow-Fachdienst authentisieren.
 </requirement>
 
 <b>Gast Login</b>
@@ -586,7 +586,7 @@ Das E-Rezept-FdV KANN die Authentisierung am sektoralen IDP mittels eGK und PIN,
 
 <!-- A_28409 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-29" title="E-Rezept-FdV: Authentisierung mit eGK und PIN (Gast-Login) - Parameter" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>

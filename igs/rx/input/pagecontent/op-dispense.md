@@ -5,7 +5,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$dispense` gesendet.
 
 ### Anforderungen an Schnittstelle
 
-- [FD-Anforderungen zu `$dispense`](./op-dispense-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [FD-Anforderungen zu `$dispense`](./op-dispense-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
 - [AVS-Anforderungen zu `$dispense`](./op-dispense-req-avs.html): Anforderungen an das AVS zur Nutzung der Schnittstelle.
 
 ### API Beschreibung

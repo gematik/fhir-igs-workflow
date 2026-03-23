@@ -2,7 +2,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 <!-- A_26082 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-44" title="E-Rezept-FdV: E-Rezept löschen - Hinweis zu Daten in ePA" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -11,7 +11,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 <!-- A_19219-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-45" title="E-Rezept-FdV: E-Rezept löschen - E-Rezept zum Löschen auswählen" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -20,7 +20,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 <!-- A_24023-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-46" title="E-Rezept-FdV:  E-Rezepte löschen - Coverage PKV - Warnung Abgabeinformationen" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -29,7 +29,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 <!-- A_19220-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-47" title="E-Rezept-FdV: E-Rezept löschen - Bestätigung" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -38,25 +38,25 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 <!-- A_19221-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-48" title="E-Rezept-FdV: E-Rezept löschen" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
-     Das E-Rezept-FdV MUSS den Anwendungsfall "UC 3.2 - E-Rezept durch Versicherten löschen" aus [gemSysL_eRp] gemäß TAB_FdVERP_008 umsetzen. Tabelle # : TAB_FdVERP_008 – E-Rezept löschen Name E-Rezept löschen Auslöser Aufruf des Anwendungsfalls in der GUI Akteur Versicherter Vorbedingung Der Nutzer hat ein zum Löschen markiert und das Löschen bestätigt. Der Nutzer hat sich gegenüber der TI authentisiert. Nachbedingung Das ausgewählte E-Rezept ist vom E-Rezept-Fachdienst unwiederbringlich gelöscht. Standardablauf Task-ID und AccessCode des E-Rezepts bestimmen E-Rezept löschen E-Rezept-Token löschen
+     Das E-Rezept-FdV MUSS den Anwendungsfall "UC 3.2 - E-Rezept durch Versicherten löschen" aus [gemSysL_eRp] gemäß TAB_FdVERP_008 umsetzen. Tabelle # : TAB_FdVERP_008 – E-Rezept löschen Name E-Rezept löschen Auslöser Aufruf des Anwendungsfalls in der GUI Akteur Versicherter Vorbedingung Der Nutzer hat ein zum Löschen markiert und das Löschen bestätigt. Der Nutzer hat sich gegenüber der TI authentisiert. Nachbedingung Das ausgewählte E-Rezept ist vom TI-Flow-Fachdienst unwiederbringlich gelöscht. Standardablauf Task-ID und AccessCode des E-Rezepts bestimmen E-Rezept löschen E-Rezept-Token löschen
 </requirement>
 
 <!-- A_19222-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-49" title="E-Rezept-FdV: E-Rezept löschen - Löschrequest" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
-     Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezepte löschen" für das zu löschende E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$abort des E-Rezept-Fachdienstes mit ACCESS_TOKEN im Authorization-Header Task-ID in URL &lt;id&gt; optional: AccessCode im x-AccessCode-Header ausführen.
+     Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezepte löschen" für das zu löschende E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$abort des TI-Flow-Fachdienstes mit ACCESS_TOKEN im Authorization-Header Task-ID in URL &lt;id&gt; optional: AccessCode im x-AccessCode-Header ausführen.
 </requirement>
 
 <!-- A_19223-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-50" title="E-Rezept-FdV: E-Rezept löschen - E-Rezept-Token löschen" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>

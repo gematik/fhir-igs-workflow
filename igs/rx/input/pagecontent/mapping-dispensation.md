@@ -1,6 +1,6 @@
 {% assign transformation-rules = site.data['transformation-rules'] %}
 
-Nach Abschluss eines E-Rezept Workflows durch das Aufrufen der $close-Operation am E-Rezept-Fachdienst wird nachgelagert die Übermittlung der Dispensierinformationen an den ePA Medication Service durchgeführt.
+Nach Abschluss eines E-Rezept Workflows durch das Aufrufen der $close-Operation am TI-Flow-Fachdienst wird nachgelagert die Übermittlung der Dispensierinformationen an den ePA Medication Service durchgeführt.
 
 Die Dispensierinformationen werden als [GEM ERP PR CloseOperation Input](./StructureDefinition-GEM-ERP-PR-PAR-Close-Operation-Input.html) übertragen und enthalten [GEM ERP PR MedicationDispense](./StructureDefinition-GEM-ERP-PR-MedicationDispense.html) und [GEM ERP PR Medication](./StructureDefinition-GEM-ERP-PR-Medication.html) Ressourcen. Diese sind von den Profilen der ePA abgeleitet und sind damit kompatibel.
 

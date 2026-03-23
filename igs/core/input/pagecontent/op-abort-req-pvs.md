@@ -2,7 +2,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 <!-- A_19236 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-311" title="PS verordnende LEI: E-Rezepte löschen - E-Rezept zum Löschen auswählen" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
     </actor>
@@ -11,7 +11,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 <!-- A_19237 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-312" title="PS verordnende LEI: E-Rezept löschen - Bestätigung" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
     </actor>
@@ -20,16 +20,16 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 <!-- A_19238 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-313" title="PS verordnende LEI: E-Rezept durch Verordnenden löschen" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
     </actor>
-     Das PS der verordnenden LEI MUSS den Anwendungsfall "UC 2.5 - E-Rezept durch Verordnenden löschen" aus [gemSysL_eRp] gemäß TAB_ILFERP_004 umsetzen. Tabelle # : TAB_ILFERP_004 – E-Rezept durch Verordnenden löschen Name E-Rezept durch Verordnenden löschen Auslöser Aufruf des Anwendungsfalls in der GUI Akteur Leistungserbringer, Mitarbeiter verordnende LEI Vorbedingung Der Nutzer hat ein E-Rezept zum Löschen markiert und das Löschen bestätigt. Die LEI hat sich gegenüber der TI authentisiert. Nachbedingung Das ausgewählte E-Rezept ist vom E-Rezept-Fachdienst unwiederbringlich gelöscht. Standardablauf Task-ID und AccessCode des E-Rezepts bestimmen E-Rezept auf E-Rezept-Fachdienst löschen E-Rezept-Token in PS löschen
+     Das PS der verordnenden LEI MUSS den Anwendungsfall "UC 2.5 - E-Rezept durch Verordnenden löschen" aus [gemSysL_eRp] gemäß TAB_ILFERP_004 umsetzen. Tabelle # : TAB_ILFERP_004 – E-Rezept durch Verordnenden löschen Name E-Rezept durch Verordnenden löschen Auslöser Aufruf des Anwendungsfalls in der GUI Akteur Leistungserbringer, Mitarbeiter verordnende LEI Vorbedingung Der Nutzer hat ein E-Rezept zum Löschen markiert und das Löschen bestätigt. Die LEI hat sich gegenüber der TI authentisiert. Nachbedingung Das ausgewählte E-Rezept ist vom TI-Flow-Fachdienst unwiederbringlich gelöscht. Standardablauf Task-ID und AccessCode des E-Rezepts bestimmen E-Rezept auf TI-Flow-Fachdienst löschen E-Rezept-Token in PS löschen
 </requirement>
 
 <!-- A_19239-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-314" title="PS verordnende LEI: E-Rezept löschen - Löschrequest" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
     </actor>
@@ -38,7 +38,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 <!-- A_19240 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-315" title="PS verordnende LEI: E-Rezept löschen - E-Rezept-Token löschen" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
     </actor>

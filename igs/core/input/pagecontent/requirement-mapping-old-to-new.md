@@ -34,13 +34,13 @@ Hinweis: Links auf neue Anforderungen verwenden aktuell den Platzhalter `{{NEW_I
 | [A_19329-01](https://gemspec.gematik.de/search/index.html?A_19329-01) | PS abgebende LEI: Nachrichten empfangen - Abfragerequest | IG-TIFLOW-CORE-130<br/>IG-TIFLOW-CORE-45 | core |
 | [A_19333-02](https://gemspec.gematik.de/search/index.html?A_19333-02) | PS abgebende LEI: Nachricht versenden - Communication Ressource erstellen | IG-TIFLOW-ERP-47 | rx |
 | [A_19334](https://gemspec.gematik.de/search/index.html?A_19334) | PS abgebende LEI: Nachricht versenden - Nachricht auf Fachdienst einstellen | IG-TIFLOW-CORE-131<br/>IG-TIFLOW-CORE-46 | core |
-| [A_19451-02](https://gemspec.gematik.de/search/index.html?A_19451-02) | CS: Lokalisierung E-Rezept-Fachdienst | IG-TIFLOW-CORE-137 | core |
+| [A_19451-02](https://gemspec.gematik.de/search/index.html?A_19451-02) | CS: Lokalisierung TI-Flow-Fachdienst | IG-TIFLOW-CORE-137 | core |
 | [A_19558-01](https://gemspec.gematik.de/search/index.html?A_19558-01) | PS abgebende LEI: E-Rezept abrufen - Task herunterladen | IG-TIFLOW-CORE-226<br/>IG-TIFLOW-CORE-367 | core |
-| [A_19741-01](https://gemspec.gematik.de/search/index.html?A_19741-01) | CS: Umsetzung sicherer Kanal zur VAU des E-Rezept-Fachdienstes | IG-TIFLOW-CORE-144 | core |
-| [A_19744-01](https://gemspec.gematik.de/search/index.html?A_19744-01) | CS: Endpunkt Schnittstelle E-Rezept-Fachdienst | IG-TIFLOW-CORE-138 | core |
+| [A_19741-01](https://gemspec.gematik.de/search/index.html?A_19741-01) | CS: Umsetzung sicherer Kanal zur VAU des TI-Flow-Fachdienstes | IG-TIFLOW-CORE-144 | core |
+| [A_19744-01](https://gemspec.gematik.de/search/index.html?A_19744-01) | CS: Endpunkt Schnittstelle TI-Flow-Fachdienst | IG-TIFLOW-CORE-138 | core |
 | [A_20015-02](https://gemspec.gematik.de/search/index.html?A_20015-02) | CS: HTTP-Header user-agent | IG-TIFLOW-CORE-141 | core |
-| [A_20091-01](https://gemspec.gematik.de/search/index.html?A_20091-01) | CS: Prüfung der Zertifikate für TLS-Verbindung zu E-Rezept-Fachdienst und IDP-Dienst | IG-TIFLOW-CORE-266 | core |
-| [A_20654-01](https://gemspec.gematik.de/search/index.html?A_20654-01) | CS: Registrierung des Clientsystems des E-Rezept-Fachdienstes | IG-TIFLOW-CORE-1 | core |
+| [A_20091-01](https://gemspec.gematik.de/search/index.html?A_20091-01) | CS: Prüfung der Zertifikate für TLS-Verbindung zu TI-Flow-Fachdienst und IDP-Dienst | IG-TIFLOW-CORE-266 | core |
+| [A_20654-01](https://gemspec.gematik.de/search/index.html?A_20654-01) | CS: Registrierung des Clientsystems des TI-Flow-Fachdienstes | IG-TIFLOW-CORE-1 | core |
 | [A_20655-01](https://gemspec.gematik.de/search/index.html?A_20655-01) | CS: Regelmäßiges Einlesen des Discovery Document | IG-TIFLOW-CORE-2 | core |
 | [A_20656-02](https://gemspec.gematik.de/search/index.html?A_20656-02) | CS: Prüfung der Signatur des Discovery Document | IG-TIFLOW-CORE-2 | core |
 | [A_20657-01](https://gemspec.gematik.de/search/index.html?A_20657-01) | CS: Prüfung Typ und Rolle des Signaturzertifikats des Discovery Document | IG-TIFLOW-CORE-3 | core |
@@ -189,9 +189,9 @@ Hinweis: Links auf neue Anforderungen verwenden aktuell den Platzhalter `{{NEW_I
 | [A_23811](https://gemspec.gematik.de/search/index.html?A_23811) | PS abgebende LEI: UX - Abrechnungsstatusliste für E-Rezepte | IG-TIFLOW-ERP-133 | rx |
 | [A_23812](https://gemspec.gematik.de/search/index.html?A_23812) | PS abgebende LEI: UX - Abrechnungsstatusliste für E-Rezepte - Hinweisen zu Abrechnungsfehlern | IG-TIFLOW-ERP-134 | rx |
 | [A_23813](https://gemspec.gematik.de/search/index.html?A_23813) | PS abgebende LEI: UX - Abrechnungsstatusliste für E-Rezepte - Verweis zur Korrektur | IG-TIFLOW-ERP-135 | rx |
-| [A_23814](https://gemspec.gematik.de/search/index.html?A_23814) | PS abgebende LEI: UX - Nicht-Erreichbarkeit des E-Rezept-Fachdienstes - Automatische Behebung | IG-TIFLOW-ERP-136 | rx |
-| [A_23815](https://gemspec.gematik.de/search/index.html?A_23815) | PS abgebende LEI: UX - Hinweis bei Nicht-Erreichbarkeit des E-Rezept-Fachdienstes | IG-TIFLOW-ERP-137 | rx |
-| [A_23816](https://gemspec.gematik.de/search/index.html?A_23816) | PS abgebende LEI: UX - Hinweis bei Nicht-Erreichbarkeit des E-Rezept-Fachdienstes - Operabilität des AVS | IG-TIFLOW-ERP-138 | rx |
+| [A_23814](https://gemspec.gematik.de/search/index.html?A_23814) | PS abgebende LEI: UX - Nicht-Erreichbarkeit des TI-Flow-Fachdienstes - Automatische Behebung | IG-TIFLOW-ERP-136 | rx |
+| [A_23815](https://gemspec.gematik.de/search/index.html?A_23815) | PS abgebende LEI: UX - Hinweis bei Nicht-Erreichbarkeit des TI-Flow-Fachdienstes | IG-TIFLOW-ERP-137 | rx |
+| [A_23816](https://gemspec.gematik.de/search/index.html?A_23816) | PS abgebende LEI: UX - Hinweis bei Nicht-Erreichbarkeit des TI-Flow-Fachdienstes - Operabilität des AVS | IG-TIFLOW-ERP-138 | rx |
 | [A_23817](https://gemspec.gematik.de/search/index.html?A_23817) | PS abgebende LEI: UX - Verständliche Fehlermeldungen - technische Fehler | IG-TIFLOW-ERP-139 | rx |
 | [A_23818](https://gemspec.gematik.de/search/index.html?A_23818) | PS abgebende LEI: UX - Verständliche Fehlermeldungen - Handlungsempfehlung | IG-TIFLOW-ERP-140 | rx |
 | [A_24181](https://gemspec.gematik.de/search/index.html?A_24181) | PS abgebende LEI: E-Rezept erneut abrufen - E-Rezept abrufen | IG-TIFLOW-CORE-31 | core |
@@ -269,7 +269,7 @@ Hinweis: Links auf neue Anforderungen verwenden aktuell den Platzhalter `{{NEW_I
 | [A_19217-01](https://gemspec.gematik.de/search/index.html?A_19217-01) | Aufbau E-Rezept-ID | IG-TIFLOW-CORE-318 | core |
 | [A_19218](https://gemspec.gematik.de/search/index.html?A_19218) | Prüfung E-Rezept-ID | IG-TIFLOW-CORE-319 | core |
 | [A_19295-01](https://gemspec.gematik.de/search/index.html?A_19295-01) | FHIR-Ressource Task | IG-TIFLOW-DIGA-24<br/>IG-TIFLOW-ERP-104 | diga<br/>rx |
-| [A_19296-04](https://gemspec.gematik.de/search/index.html?A_19296-04) | E-Rezept-Fachdienst - Inhalt Protokolleintrag | IG-TIFLOW-CORE-24 | core |
+| [A_19296-04](https://gemspec.gematik.de/search/index.html?A_19296-04) | TI-Flow-Fachdienst - Inhalt Protokolleintrag | IG-TIFLOW-CORE-24 | core |
 | [A_19297-01](https://gemspec.gematik.de/search/index.html?A_19297-01) | FHIR-Ressource MedicationDispense | IG-TIFLOW-ERP-104 | rx |
 | [A_19298-01](https://gemspec.gematik.de/search/index.html?A_19298-01) | FHIR-Ressource AuditEvent | IG-TIFLOW-CORE-231 | core |
 | [A_19299-02](https://gemspec.gematik.de/search/index.html?A_19299-02) | FHIR-Ressource Communication | IG-TIFLOW-CORE-231<br/>IG-TIFLOW-ERP-104 | core<br/>rx |
@@ -287,7 +287,7 @@ Hinweis: Links auf neue Anforderungen verwenden aktuell den Platzhalter `{{NEW_I
 | [A_22963](https://gemspec.gematik.de/search/index.html?A_22963) | Version FHIR-Package de.gematik.erezept-patientenrechnung | IG-TIFLOW-CHRG-95 | erp-chrg |
 | [A_23027](https://gemspec.gematik.de/search/index.html?A_23027) | FHIR-Ressource CloseOperationInputBundle | IG-TIFLOW-DIGA-24<br/>IG-TIFLOW-ERP-104 | diga<br/>rx |
 | [A_23028](https://gemspec.gematik.de/search/index.html?A_23028) | FHIR-Ressource Quittung | IG-TIFLOW-ERP-104 | rx |
-| [A_23384-06](https://gemspec.gematik.de/search/index.html?A_23384-06) | E-Rezept-Fachdienst - Prüfung Gültigkeit FHIR Ressourcen | IG-TIFLOW-CORE-237 | core |
+| [A_23384-06](https://gemspec.gematik.de/search/index.html?A_23384-06) | TI-Flow-Fachdienst - Prüfung Gültigkeit FHIR Ressourcen | IG-TIFLOW-CORE-237 | core |
 | [A_23876-01](https://gemspec.gematik.de/search/index.html?A_23876-01) | E-Rezept - Nachrichtenaustausch - E-Rezept einer Apotheke zuweisen - Datenstruktur Nachricht | IG-TIFLOW-ERP-59 | rx |
 | [A_23877-01](https://gemspec.gematik.de/search/index.html?A_23877-01) | E-Rezept - Nachrichtenaustausch - Nachricht durch Abgebenden übermitteln - Datenstruktur Nachricht | IG-TIFLOW-ERP-60 | rx |
 | [A_26060](https://gemspec.gematik.de/search/index.html?A_26060) | FHIR-Ressource Bundle DiGA-Verordnungsdatensatz | IG-TIFLOW-DIGA-24 | diga |
@@ -306,8 +306,8 @@ Hinweis: Links auf neue Anforderungen verwenden aktuell den Platzhalter `{{NEW_I
 | [A_27848](https://gemspec.gematik.de/search/index.html?A_27848) | FHIR FLOWTYPE für Prozessparameter - Flowtype 200 | IG-TIFLOW-ERP-78 | rx |
 | [A_27849](https://gemspec.gematik.de/search/index.html?A_27849) | FHIR FLOWTYPE für Prozessparameter - Flowtype 209 | IG-TIFLOW-ERP-79 | rx |
 | [A_28124](https://gemspec.gematik.de/search/index.html?A_28124) | E-Rezept - Push Notifications - Datenstruktur Nachrichteninhalte | IG-TIFLOW-CORE-209 | core |
-| [A_28429](https://gemspec.gematik.de/search/index.html?A_28429) | E-Rezept: Character Encoding für E-Rezept-Fachdienst | IG-TIFLOW-CORE-322 | core |
-| [A_28430](https://gemspec.gematik.de/search/index.html?A_28430) | E-Rezept: Verbot Angabe von BOM für E-Rezept-Fachdienst | IG-TIFLOW-CORE-323 | core |
+| [A_28429](https://gemspec.gematik.de/search/index.html?A_28429) | E-Rezept: Character Encoding für TI-Flow-Fachdienst | IG-TIFLOW-CORE-322 | core |
+| [A_28430](https://gemspec.gematik.de/search/index.html?A_28430) | E-Rezept: Verbot Angabe von BOM für TI-Flow-Fachdienst | IG-TIFLOW-CORE-323 | core |
 
 #### Nicht übernommene Anforderungen
 
@@ -322,7 +322,7 @@ Hinweis: Links auf neue Anforderungen verwenden aktuell den Platzhalter `{{NEW_I
 | Alte Anforderung | Alter Titel | Neue Anforderungen | IGs |
 |---|---|---|---|
 | [A_19201-01](https://gemspec.gematik.de/search/index.html?A_19201-01) | E-Rezept-FdV: E-Rezept zuweisen - Nachricht erstellen | IG-TIFLOW-DIGA-6<br/>IG-TIFLOW-ERP-23 | diga<br/>rx |
-| [A_19203](https://gemspec.gematik.de/search/index.html?A_19203) | E-Rezept-FdV: E-Rezept zuweisen - Nachricht auf E-Rezept-Fachdienst einstellen | IG-TIFLOW-CORE-67 | core |
+| [A_19203](https://gemspec.gematik.de/search/index.html?A_19203) | E-Rezept-FdV: E-Rezept zuweisen - Nachricht auf TI-Flow-Fachdienst einstellen | IG-TIFLOW-CORE-67 | core |
 | [A_19205](https://gemspec.gematik.de/search/index.html?A_19205) | E-Rezept-FdV: Nachrichten anzeigen - Nachrichten herunterladen | IG-TIFLOW-CORE-62 | core |
 | [A_19219-01](https://gemspec.gematik.de/search/index.html?A_19219-01) | E-Rezept-FdV: E-Rezept löschen - E-Rezept zum Löschen auswählen | IG-TIFLOW-CORE-38 | core |
 | [A_19220-01](https://gemspec.gematik.de/search/index.html?A_19220-01) | E-Rezept-FdV: E-Rezept löschen - Bestätigung | IG-TIFLOW-CORE-40 | core |
@@ -337,7 +337,7 @@ Hinweis: Links auf neue Anforderungen verwenden aktuell den Platzhalter `{{NEW_I
 | [A_20011-01](https://gemspec.gematik.de/search/index.html?A_20011-01) | E-Rezept-FdV: Textnachricht ohne Link | IG-TIFLOW-ERP-19 | rx |
 | [A_20014-04](https://gemspec.gematik.de/search/index.html?A_20014-04) | E-Rezept-FdV: HTTP-Header user-agent | IG-TIFLOW-CORE-141 | core |
 | [A_20237-01](https://gemspec.gematik.de/search/index.html?A_20237-01) | E-Rezept-FdV: Vertreterkommunikation - Nachricht erstellen | IG-TIFLOW-CORE-68 | core |
-| [A_20238-01](https://gemspec.gematik.de/search/index.html?A_20238-01) | E-Rezept-FdV: Vertreterkommunikation - Nachricht auf E-Rezept-Fachdienst einstellen | IG-TIFLOW-CORE-69 | core |
+| [A_20238-01](https://gemspec.gematik.de/search/index.html?A_20238-01) | E-Rezept-FdV: Vertreterkommunikation - Nachricht auf TI-Flow-Fachdienst einstellen | IG-TIFLOW-CORE-69 | core |
 | [A_21361-02](https://gemspec.gematik.de/search/index.html?A_21361-02) | E-Rezept-FdV: Vertreterkommunikation - Flowtype 169 / 209 - Vertreterkommunikation nicht zulässig | IG-TIFLOW-ERP-20 | rx |
 | [A_21362-02](https://gemspec.gematik.de/search/index.html?A_21362-02) | E-Rezept-FdV: E-Rezept löschen - Flowtype 169 / 209 - nur wenn beliefert | IG-TIFLOW-ERP-7 | rx |
 | [A_21402-02](https://gemspec.gematik.de/search/index.html?A_21402-02) | E-Rezept-FdV: Anfrage Belieferung - Flowtype 162 / 169 / 209 - Anfrage nicht zulässig | IG-TIFLOW-ERP-15<br/>IG-TIFLOW-ERP-16 | rx |
@@ -367,7 +367,7 @@ Hinweis: Links auf neue Anforderungen verwenden aktuell den Platzhalter `{{NEW_I
 | [A_22727-01](https://gemspec.gematik.de/search/index.html?A_22727-01) | E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen - Abrechnungsinformation-Token erstellen | IG-TIFLOW-CHRG-5 | erp-chrg |
 | [A_22728-01](https://gemspec.gematik.de/search/index.html?A_22728-01) | E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen | IG-TIFLOW-CHRG-6 | erp-chrg |
 | [A_22739-01](https://gemspec.gematik.de/search/index.html?A_22739-01) | E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Nachricht erstellen | IG-TIFLOW-CHRG-1 | erp-chrg |
-| [A_22740](https://gemspec.gematik.de/search/index.html?A_22740) | E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Nachricht auf E-Rezept-Fachdienst einstellen | IG-TIFLOW-CHRG-2 | erp-chrg |
+| [A_22740](https://gemspec.gematik.de/search/index.html?A_22740) | E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Nachricht auf TI-Flow-Fachdienst einstellen | IG-TIFLOW-CHRG-2 | erp-chrg |
 | [A_24023-03](https://gemspec.gematik.de/search/index.html?A_24023-03) | E-Rezept-FdV:  E-Rezepte löschen - Coverage PKV - Warnung Abgabeinformationen | IG-TIFLOW-CORE-39 | core |
 | [A_24544](https://gemspec.gematik.de/search/index.html?A_24544) | E-Rezept-FdV: optional: Abrechnungsinformation abrufen | IG-TIFLOW-CHRG-12 | erp-chrg |
 | [A_24546](https://gemspec.gematik.de/search/index.html?A_24546) | E-Rezept-FdV: optional: Abrechnungsinformation löschen | IG-TIFLOW-CHRG-17 | erp-chrg |
@@ -390,7 +390,7 @@ Hinweis: Links auf neue Anforderungen verwenden aktuell den Platzhalter `{{NEW_I
 | [A_27110](https://gemspec.gematik.de/search/index.html?A_27110) | E-Rezept-FdV: Zugriffsberechtigung - Caching Liste zulässiger Länder | IG-TIFLOW-XBORDER-49 | erp-eu |
 | [A_27111](https://gemspec.gematik.de/search/index.html?A_27111) | E-Rezept-FdV: Zugriffsberechtigung erteilen - Land auswählen | IG-TIFLOW-XBORDER-50 | erp-eu |
 | [A_27113](https://gemspec.gematik.de/search/index.html?A_27113) | E-Rezept-FdV: Zugriffsberechtigung erteilen - Zugriffscode erzeugen | IG-TIFLOW-XBORDER-51 | erp-eu |
-| [A_27114](https://gemspec.gematik.de/search/index.html?A_27114) | E-Rezept-FdV: Zugriffsberechtigung erteilen - Zugriffsberechtigung am E-Rezept-Fachdienst speichern | IG-TIFLOW-XBORDER-52 | erp-eu |
+| [A_27114](https://gemspec.gematik.de/search/index.html?A_27114) | E-Rezept-FdV: Zugriffsberechtigung erteilen - Zugriffsberechtigung am TI-Flow-Fachdienst speichern | IG-TIFLOW-XBORDER-52 | erp-eu |
 | [A_27121](https://gemspec.gematik.de/search/index.html?A_27121) | E-Rezept-FdV: Zugriffsberechtigung abrufen - Abfragerequest | IG-TIFLOW-XBORDER-45 | erp-eu |
 | [A_27125](https://gemspec.gematik.de/search/index.html?A_27125) | E-Rezept-FdV: Zugriffsberechtigung löschen - Abfragerequest | IG-TIFLOW-XBORDER-33 | erp-eu |
 | [A_27126](https://gemspec.gematik.de/search/index.html?A_27126) | E-Rezept-FdV: Zugriffsberechtigung löschen - lokale Zugriffsberechtigung löschen | IG-TIFLOW-XBORDER-34 | erp-eu |
@@ -412,510 +412,510 @@ Hinweis: Links auf neue Anforderungen verwenden aktuell den Platzhalter `{{NEW_I
 
 | Alte Anforderung | Alter Titel | Neue Anforderungen | IGs |
 |---|---|---|---|
-| [A_19018-01](https://gemspec.gematik.de/search/index.html?A_19018-01) | E-Rezept-Fachdienst - Task erzeugen - Rollenprüfung | IG-TIFLOW-CORE-198 | core |
-| [A_19019-01](https://gemspec.gematik.de/search/index.html?A_19019-01) | E-Rezept-Fachdienst - Task erzeugen - Generierung Rezept-ID | IG-TIFLOW-CORE-202 | core |
-| [A_19020](https://gemspec.gematik.de/search/index.html?A_19020) | E-Rezept-Fachdienst - Schemavalidierung Rezept aktivieren | IG-TIFLOW-CORE-157 | core |
-| [A_19021-02](https://gemspec.gematik.de/search/index.html?A_19021-02) | E-Rezept-Fachdienst - Task erzeugen - Generierung AccessCode | IG-TIFLOW-CORE-204 | core |
-| [A_19022-01](https://gemspec.gematik.de/search/index.html?A_19022-01) | E-Rezept-Fachdienst - Task aktivieren - Rollenprüfung | IG-TIFLOW-CORE-155 | core |
-| [A_19024-03](https://gemspec.gematik.de/search/index.html?A_19024-03) | E-Rezept-Fachdienst - Task aktivieren - Prüfung AccessCode Rezept aktualisieren | IG-TIFLOW-CORE-156 | core |
-| [A_19025-03](https://gemspec.gematik.de/search/index.html?A_19025-03) | E-Rezept-Fachdienst - Task aktivieren - QES prüfen Rezept aktualisieren | IG-TIFLOW-CORE-159 | core |
-| [A_19026-01](https://gemspec.gematik.de/search/index.html?A_19026-01) | E-Rezept-Fachdienst - E-Rezept löschen - Rollenprüfung | IG-TIFLOW-DIGA-7<br/>IG-TIFLOW-ERP-38 | diga<br/>rx |
-| [A_19027-06](https://gemspec.gematik.de/search/index.html?A_19027-06) | E-Rezept-Fachdienst - E-Rezept löschen - Medizinische und personenbezogene Daten löschen | IG-TIFLOW-CORE-126 | core |
-| [A_19029-06](https://gemspec.gematik.de/search/index.html?A_19029-06) | E-Rezept-Fachdienst - Task aktivieren - Serversignatur Rezept aktivieren | IG-TIFLOW-CORE-167 | core |
-| [A_19030](https://gemspec.gematik.de/search/index.html?A_19030) | E-Rezept-Fachdienst - unzulässige Operationen Task | IG-TIFLOW-CORE-71 | core |
-| [A_19112](https://gemspec.gematik.de/search/index.html?A_19112) | E-Rezept-Fachdienst - Parametrierung Task für Workflow-Typ | IG-TIFLOW-CORE-200 | core |
-| [A_19113-02](https://gemspec.gematik.de/search/index.html?A_19113-02) | E-Rezept-Fachdienst - Task abrufen - Rollenprüfung | IG-TIFLOW-CORE-93 | core |
-| [A_19114](https://gemspec.gematik.de/search/index.html?A_19114) | E-Rezept-Fachdienst - Status draft | IG-TIFLOW-CORE-205 | core |
-| [A_19115-01](https://gemspec.gematik.de/search/index.html?A_19115-01) | E-Rezept-Fachdienst - Task abrufen - Filter Tasks auf KVNR des Versicherten | IG-TIFLOW-CORE-73 | core |
-| [A_19116-01](https://gemspec.gematik.de/search/index.html?A_19116-01) | E-Rezept-Fachdienst - Task abrufen - Prüfung AccessCode bei KVNR-Missmatch | IG-TIFLOW-CORE-94 | core |
-| [A_19120-03](https://gemspec.gematik.de/search/index.html?A_19120-03) | E-Rezept-Fachdienst - E-Rezept löschen - Verordnender - Prüfung AccessCode und Status | IG-TIFLOW-CORE-125 | core |
-| [A_19121](https://gemspec.gematik.de/search/index.html?A_19121) | E-Rezept-Fachdienst - Finaler Status cancelled | IG-TIFLOW-CORE-127 | core |
-| [A_19127-03](https://gemspec.gematik.de/search/index.html?A_19127-03) | E-Rezept-Fachdienst - Task aktivieren - Übernahme der KVNR des Patienten | IG-TIFLOW-CORE-164 | core |
-| [A_19128](https://gemspec.gematik.de/search/index.html?A_19128) | E-Rezept-Fachdienst - Status aktivieren | IG-TIFLOW-CORE-166 | core |
-| [A_19129-01](https://gemspec.gematik.de/search/index.html?A_19129-01) | E-Rezept-Fachdienst - Rückgabe Tasks im Bundle Versicherter | IG-TIFLOW-CORE-74 | core |
-| [A_19145-01](https://gemspec.gematik.de/search/index.html?A_19145-01) | E-Rezept-Fachdienst - E-Rezept löschen - Statusprüfung in-progress | IG-TIFLOW-ERP-39 | rx |
-| [A_19146](https://gemspec.gematik.de/search/index.html?A_19146) | E-Rezept-Fachdienst - Statusprüfung Nutzer (außerhalb Apotheke) löscht Rezept | IG-TIFLOW-ERP-40 | rx |
-| [A_19149-02](https://gemspec.gematik.de/search/index.html?A_19149-02) | E-Rezept-Fachdienst - Task akzeptieren - Prüfung Datensatz zwischenzeitlich gelöscht | IG-TIFLOW-CORE-217 | core |
-| [A_19166-02](https://gemspec.gematik.de/search/index.html?A_19166-02) | E-Rezept-Fachdienst - Task akzeptieren - Flowtype 160/166/169/200/209 - Rollenprüfung | IG-TIFLOW-ERP-94 | rx |
-| [A_19167-04](https://gemspec.gematik.de/search/index.html?A_19167-04) | E-Rezept-Fachdienst - Task akzeptieren - Prüfung AccessCode | IG-TIFLOW-CORE-218 | core |
-| [A_19168-01](https://gemspec.gematik.de/search/index.html?A_19168-01) | E-Rezept-Fachdienst - Task akzeptieren - Rezept bereits in Abgabe oder Bearbeitung | IG-TIFLOW-CORE-219 | core |
-| [A_19169-01](https://gemspec.gematik.de/search/index.html?A_19169-01) | E-Rezept-Fachdienst - Task akzeptieren - Generierung Secret, Statuswechsel in Abgabe und Rückgabewert | IG-TIFLOW-CORE-221 | core |
-| [A_19170-02](https://gemspec.gematik.de/search/index.html?A_19170-02) | E-Rezept-Fachdienst - Task zurückweisen - Rollenprüfung | IG-TIFLOW-DIGA-1<br/>IG-TIFLOW-ERP-4 | diga<br/>rx |
-| [A_19171-03](https://gemspec.gematik.de/search/index.html?A_19171-03) | E-Rezept-Fachdienst - Task zurückweisen - Prüfung Secret | IG-TIFLOW-CORE-33 | core |
-| [A_19172-01](https://gemspec.gematik.de/search/index.html?A_19172-01) | E-Rezept-Fachdienst - Task zurückweisen - Secret löschen und Status setzen | IG-TIFLOW-CORE-34 | core |
-| [A_19214](https://gemspec.gematik.de/search/index.html?A_19214) | E-Rezept-Fachdienst - Ergänzung Performer-Typ für Einlöseinstitutstyp | IG-TIFLOW-CORE-201 | core |
-| [A_19224](https://gemspec.gematik.de/search/index.html?A_19224) | E-Rezept-Fachdienst - Prüfung Secret, Apotheker  löscht Rezept | IG-TIFLOW-ERP-41 | rx |
-| [A_19225-02](https://gemspec.gematik.de/search/index.html?A_19225-02) | E-Rezept-Fachdienst - Task aktivieren - Flowtype 160/169/200/209 - QES durch berechtigte Berufsgruppe | IG-TIFLOW-ERP-65 | rx |
-| [A_19226-02](https://gemspec.gematik.de/search/index.html?A_19226-02) | E-Rezept-Fachdienst - Task abrufen - Rückgabe Task inkl. Bundle im Bundle Apotheker | IG-TIFLOW-CORE-102 | core |
-| [A_19230-01](https://gemspec.gematik.de/search/index.html?A_19230-01) | E-Rezept-Fachdienst - Task schließen - Rollenprüfung | IG-TIFLOW-DIGA-3<br/>IG-TIFLOW-ERP-8 | diga<br/>rx |
-| [A_19231-02](https://gemspec.gematik.de/search/index.html?A_19231-02) | E-Rezept-Fachdienst - Task schließen - Prüfung Secret | IG-TIFLOW-CORE-53 | core |
-| [A_19232](https://gemspec.gematik.de/search/index.html?A_19232) | E-Rezept-Fachdienst - Status beenden | IG-TIFLOW-CORE-59 | core |
-| [A_19233-06](https://gemspec.gematik.de/search/index.html?A_19233-06) | E-Rezept-Fachdienst - Task schliessen - Quittung erstellen | IG-TIFLOW-CORE-60 | core |
-| [A_19248-05](https://gemspec.gematik.de/search/index.html?A_19248-05) | E-Rezept-Fachdienst - Task schließen - Schemaprüfung MedicationDispense | IG-TIFLOW-CORE-54 | core |
-| [A_19252-03](https://gemspec.gematik.de/search/index.html?A_19252-03) | E-Rezept-Fachdienst - Löschfrist abgelaufener Rezepte | IG-TIFLOW-CORE-107 | core |
-| [A_19253-01](https://gemspec.gematik.de/search/index.html?A_19253-01) | E-Rezept-Fachdienst - Löschfrist veraltete Nachrichten | IG-TIFLOW-CORE-112 | core |
-| [A_19254-01](https://gemspec.gematik.de/search/index.html?A_19254-01) | E-Rezept-Fachdienst - Löschen referenzierter Bundles | IG-TIFLOW-CORE-109 | core |
-| [A_19255](https://gemspec.gematik.de/search/index.html?A_19255) | E-Rezept-Fachdienst Löschen veralteter MedicationDispense | IG-TIFLOW-CORE-110 | core |
-| [A_19256-01](https://gemspec.gematik.de/search/index.html?A_19256-01) | E-Rezept-Fachdienst - Löschfrist veraltete Protokolleinträge | IG-TIFLOW-CORE-113 | core |
-| [A_19257-01](https://gemspec.gematik.de/search/index.html?A_19257-01) | E-Rezept-Fachdienst - Task erzeugen - Schemavalidierung Rezept anlegen | IG-TIFLOW-CORE-199 | core |
-| [A_19284-13](https://gemspec.gematik.de/search/index.html?A_19284-13) | E-Rezept-Fachdienst - Versichertenprotokoll zu Operationen | IG-TIFLOW-CORE-25<br/>IG-TIFLOW-CORE-26<br/>IG-TIFLOW-CORE-27 | core |
-| [A_19302](https://gemspec.gematik.de/search/index.html?A_19302) | E-Rezept-Fachdienst -Protokolleintrag Versichertenprotokoll leicht verständlich | IG-TIFLOW-CORE-28 | core |
-| [A_19395](https://gemspec.gematik.de/search/index.html?A_19395) | E-Rezept-Fachdienst - Rollenprüfung Versicherter liest AuditEvent | IG-TIFLOW-CORE-120 | core |
-| [A_19396](https://gemspec.gematik.de/search/index.html?A_19396) | E-Rezept-Fachdienst - Filter AuditEvent auf KVNR des Versicherten | IG-TIFLOW-CORE-121 | core |
-| [A_19397](https://gemspec.gematik.de/search/index.html?A_19397) | E-Rezept-Fachdienst - Rückgabe AuditEvents im Bundle | IG-TIFLOW-CORE-122 | core |
-| [A_19400](https://gemspec.gematik.de/search/index.html?A_19400) | E-Rezept-Fachdienst - unzulässige Operationen MedicationDispense | IG-TIFLOW-CORE-114 | core |
-| [A_19401](https://gemspec.gematik.de/search/index.html?A_19401) | E-Rezept-Fachdienst - unzulässige Operationen Communication | IG-TIFLOW-CORE-278 | core |
-| [A_19402](https://gemspec.gematik.de/search/index.html?A_19402) | E-Rezept-Fachdienst - unzulässige Operationen AuditEvent | IG-TIFLOW-CORE-119 | core |
-| [A_19405-02](https://gemspec.gematik.de/search/index.html?A_19405-02) | E-Rezept-Fachdienst - MedicationDispense abrufen - Rollenprüfung | IG-TIFLOW-CORE-115 | core |
-| [A_19406-01](https://gemspec.gematik.de/search/index.html?A_19406-01) | E-Rezept-Fachdienst - MedicationDispense abrufen - Filter MedicationDispense auf KVNR des Versicherten | IG-TIFLOW-CORE-116 | core |
-| [A_19446-02](https://gemspec.gematik.de/search/index.html?A_19446-02) | E-Rezept-Fachdienst - Nachrichten - Rollenprüfung | IG-TIFLOW-CORE-279 | core |
-| [A_19447-06](https://gemspec.gematik.de/search/index.html?A_19447-06) | E-Rezept-Fachdienst - Nachricht einstellen - Schemaprüfung | IG-TIFLOW-CORE-282 | core |
-| [A_19448-04](https://gemspec.gematik.de/search/index.html?A_19448-04) | E-Rezept-Fachdienst - Nachricht einstellen - Absender und Sendedatum | IG-TIFLOW-CORE-285 | core |
-| [A_19450-01](https://gemspec.gematik.de/search/index.html?A_19450-01) | E-Rezept-Fachdienst - Nachricht einstellen Schadcodeprüfung | IG-TIFLOW-CORE-290 | core |
-| [A_19514-03](https://gemspec.gematik.de/search/index.html?A_19514-03) | E-Rezept-Fachdienst - Http-Status-Codes | IG-TIFLOW-CORE-302 | core |
-| [A_19520-02](https://gemspec.gematik.de/search/index.html?A_19520-02) | E-Rezept-Fachdienst - Nachrichten abrufen - für Empfänger filtern | IG-TIFLOW-CORE-280 | core |
-| [A_19521](https://gemspec.gematik.de/search/index.html?A_19521) | E-Rezept-Fachdienst - Nachrichten als abgerufen markieren | IG-TIFLOW-CORE-281 | core |
-| [A_19536](https://gemspec.gematik.de/search/index.html?A_19536) | E-Rezept-Fachdienst - RESTful API | IG-TIFLOW-CORE-313 | core |
-| [A_19537](https://gemspec.gematik.de/search/index.html?A_19537) | E-Rezept-Fachdienst - RESTful API MimeType fhir+xml | IG-TIFLOW-CORE-314 | core |
-| [A_19538](https://gemspec.gematik.de/search/index.html?A_19538) | E-Rezept-Fachdienst - RESTful API MimeType fhir+json | IG-TIFLOW-CORE-315 | core |
-| [A_19539](https://gemspec.gematik.de/search/index.html?A_19539) | E-Rezept-Fachdienst - RESTful API MimeType Aufrufparameter | IG-TIFLOW-CORE-316 | core |
-| [A_19999](https://gemspec.gematik.de/search/index.html?A_19999) | E-Rezept-Fachdienst - Ergänzung PerformerTyp für Einlöseinstitutstyp | IG-TIFLOW-DIGA-20<br/>IG-TIFLOW-ERP-75<br/>IG-TIFLOW-ERP-76<br/>IG-TIFLOW-ERP-77<br/>IG-TIFLOW-ERP-78<br/>IG-TIFLOW-ERP-79 | diga<br/>rx |
-| [A_20159-04](https://gemspec.gematik.de/search/index.html?A_20159-04) | E-Rezept-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA | IG-TIFLOW-CORE-158 | core |
-| [A_20171](https://gemspec.gematik.de/search/index.html?A_20171) | E-Rezept-Fachdienst - RESTful API CapabilityStatement | IG-TIFLOW-CORE-317 | core |
-| [A_20229-01](https://gemspec.gematik.de/search/index.html?A_20229-01) | E-Rezept-Fachdienst - Nachricht einstellen - Nachrichtenzähler bei Versicherter-zu-Versichertem-Kommunikation | IG-TIFLOW-CORE-286 | core |
-| [A_20230-01](https://gemspec.gematik.de/search/index.html?A_20230-01) | E-Rezept-Fachdienst - Nachricht einstellen - Einlösbare E-Rezepte für Versicherter-zu-Versichertem-Kommunikation | IG-TIFLOW-CORE-288 | core |
-| [A_20231-01](https://gemspec.gematik.de/search/index.html?A_20231-01) | E-Rezept-Fachdienst - Nachricht einstellen - Ausschluss Nachrichten an Empfänger gleich Absender | IG-TIFLOW-CORE-289 | core |
-| [A_20258](https://gemspec.gematik.de/search/index.html?A_20258) | E-Rezept-Fachdienst - Communication löschen auf Basis Absender-ID | IG-TIFLOW-CORE-299 | core |
-| [A_20259](https://gemspec.gematik.de/search/index.html?A_20259) | E-Rezept-Fachdienst - Communication löschen mit Warnung wenn vom Empfänger bereits abgerufen | IG-TIFLOW-CORE-300 | core |
-| [A_20511](https://gemspec.gematik.de/search/index.html?A_20511) | E-Rezept-Fachdienst - Nachrichtenzähler zweckgebunden | IG-TIFLOW-CORE-287 | core |
-| [A_20546-03](https://gemspec.gematik.de/search/index.html?A_20546-03) | E-Rezept-Fachdienst - E-Rezept löschen - Prüfung KVNR, Versicherter löscht Rezept | IG-TIFLOW-CORE-124 | core |
-| [A_20702-03](https://gemspec.gematik.de/search/index.html?A_20702-03) | E-Rezept-Fachdienst - Task abrufen - Keine Einlöseinformationen in unbekannten Clients | IG-TIFLOW-CORE-97 | core |
-| [A_20744](https://gemspec.gematik.de/search/index.html?A_20744) | E-Rezept-Fachdienst - Selbstauskunft Device-Informationen | IG-TIFLOW-CORE-336 | core |
-| [A_20885-04](https://gemspec.gematik.de/search/index.html?A_20885-04) | E-Rezept-Fachdienst - Nachricht einstellen - Versicherte - Prüfung Versichertenbezug und Berechtigung | IG-TIFLOW-CORE-291 | core |
-| [A_21360-01](https://gemspec.gematik.de/search/index.html?A_21360-01) | E-Rezept-Fachdienst - Task abrufen - Flowtype 169 / 209 - keine Einlöseinformationen | IG-TIFLOW-ERP-24<br/>IG-TIFLOW-ERP-25 | rx |
-| [A_21370](https://gemspec.gematik.de/search/index.html?A_21370) | E-Rezept-Fachdienst - Prüfung Rezept-ID und Präfix gegen Flowtype | IG-TIFLOW-CORE-161 | core |
-| [A_21371-03](https://gemspec.gematik.de/search/index.html?A_21371-03) | E-Rezept-Fachdienst - Nachricht einstellen - Prüfung Existenz Task | IG-TIFLOW-CORE-293 | core |
-| [A_21375-02](https://gemspec.gematik.de/search/index.html?A_21375-02) | E-Rezept-Fachdienst - Task abrufen - Rückgabe Task inkl. Bundles Versicherter | IG-TIFLOW-CORE-95 | core |
-| [A_21532-02](https://gemspec.gematik.de/search/index.html?A_21532-02) | E-Rezept-Fachdienst - Task abrufen - Kein Secret für Versicherte | IG-TIFLOW-CORE-96 | core |
-| [A_21558-02](https://gemspec.gematik.de/search/index.html?A_21558-02) | E-Rezept-Fachdienst - Task abrufen - Rollenprüfung Versicherter oder Apotheke liest Rezepte | IG-TIFLOW-CORE-72 | core |
-| [A_22069-01](https://gemspec.gematik.de/search/index.html?A_22069-01) | E-Rezept-Fachdienst - Task schließen - Speicherung mehrerer MedicationDispenses | IG-TIFLOW-ERP-12 | rx |
-| [A_22070-03](https://gemspec.gematik.de/search/index.html?A_22070-03) | E-Rezept-Fachdienst - MedicationDispense abrufen - Rückgabe mehrerer MedicationDispenses | IG-TIFLOW-CORE-118 | core |
-| [A_22102-01](https://gemspec.gematik.de/search/index.html?A_22102-01) | E-Rezept-Fachdienst - E-Rezept löschen - Flowtype 169 / 209 - Versicherter - Statusprüfung | IG-TIFLOW-ERP-42 | rx |
-| [A_22103](https://gemspec.gematik.de/search/index.html?A_22103) | E-Rezept-Fachdienst - Fehlerdetails in OperationOutcome | IG-TIFLOW-CORE-303 | core |
-| [A_22109](https://gemspec.gematik.de/search/index.html?A_22109) | E-Rezept-Fachdienst – Löschfrist ChargeItem | IG-TIFLOW-CORE-111 | core |
-| [A_22110-01](https://gemspec.gematik.de/search/index.html?A_22110-01) | E-Rezept-Fachdienst – Task akzeptieren – Coverage PKV - Einwilligung Abrechnungsinformation ermitteln | IG-TIFLOW-ERP-96 | rx |
-| [A_22111](https://gemspec.gematik.de/search/index.html?A_22111) | E-Rezept-Fachdienst – ChargeItem - unzulässige Operationen | IG-TIFLOW-CHRG-44 | erp-chrg |
-| [A_22112](https://gemspec.gematik.de/search/index.html?A_22112) | E-Rezept-Fachdienst – Abrechnungsinformation löschen - alles Löschen verbieten | IG-TIFLOW-CHRG-90 | erp-chrg |
-| [A_22113](https://gemspec.gematik.de/search/index.html?A_22113) | E-Rezept-Fachdienst – Abrechnungsinformation löschen - Rollenprüfung | IG-TIFLOW-CHRG-91 | erp-chrg |
-| [A_22114](https://gemspec.gematik.de/search/index.html?A_22114) | E-Rezept-Fachdienst – Abrechnungsinformation löschen – Prüfung KVNR | IG-TIFLOW-CHRG-92 | erp-chrg |
-| [A_22117-01](https://gemspec.gematik.de/search/index.html?A_22117-01) | E-Rezept-Fachdienst - Abrechnungsinformation löschen - zu löschende Ressourcen | IG-TIFLOW-CHRG-93 | erp-chrg |
-| [A_22118](https://gemspec.gematik.de/search/index.html?A_22118) | E-Rezept-Fachdienst – Abrechnungsinformationen abrufen - Rollenprüfung Versicherter | IG-TIFLOW-CHRG-46 | erp-chrg |
-| [A_22119](https://gemspec.gematik.de/search/index.html?A_22119) | E-Rezept-Fachdienst – Abrechnungsinformationen abrufen – Versicherter – Filter KVNR | IG-TIFLOW-CHRG-47 | erp-chrg |
-| [A_22122](https://gemspec.gematik.de/search/index.html?A_22122) | E-Rezept-Fachdienst – Abrechnungsinformationen abrufen– Response | IG-TIFLOW-CHRG-49 | erp-chrg |
-| [A_22124](https://gemspec.gematik.de/search/index.html?A_22124) | E-Rezept-Fachdienst – Abrechnungsinformation abrufen - Rollenprüfung Versicherter oder Apotheker | IG-TIFLOW-CHRG-50 | erp-chrg |
-| [A_22125](https://gemspec.gematik.de/search/index.html?A_22125) | E-Rezept-Fachdienst – Abrechnungsinformation abrufen – Versicherter – Prüfung KVNR | IG-TIFLOW-CHRG-51 | erp-chrg |
-| [A_22126](https://gemspec.gematik.de/search/index.html?A_22126) | E-Rezept-Fachdienst – Abrechnungsinformation abrufen – Apotheke – Prüfung Telematik-ID | IG-TIFLOW-CHRG-52 | erp-chrg |
-| [A_22127-01](https://gemspec.gematik.de/search/index.html?A_22127-01) | E-Rezept-Fachdienst – Abrechnungsinformation abrufen – Versicherte – Signieren | IG-TIFLOW-CHRG-54 | erp-chrg |
-| [A_22128-01](https://gemspec.gematik.de/search/index.html?A_22128-01) | E-Rezept-Fachdienst – Abrechnungsinformation abrufen – Apotheke – kein AccessCode und Quittung | IG-TIFLOW-CHRG-55 | erp-chrg |
-| [A_22129](https://gemspec.gematik.de/search/index.html?A_22129) | E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen - Rollenprüfung | IG-TIFLOW-CHRG-56 | erp-chrg |
-| [A_22130](https://gemspec.gematik.de/search/index.html?A_22130) | E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen - Prüfung Parameter Task | IG-TIFLOW-CHRG-57 | erp-chrg |
-| [A_22131](https://gemspec.gematik.de/search/index.html?A_22131) | E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen - Prüfung Existenz Task | IG-TIFLOW-CHRG-58 | erp-chrg |
-| [A_22132-02](https://gemspec.gematik.de/search/index.html?A_22132-02) | E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Prüfung Secret Task | IG-TIFLOW-CHRG-59 | erp-chrg |
-| [A_22133](https://gemspec.gematik.de/search/index.html?A_22133) | E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Prüfung Einwilligung | IG-TIFLOW-CHRG-61 | erp-chrg |
-| [A_22134](https://gemspec.gematik.de/search/index.html?A_22134) | E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Verordnungsdatensatz übernehmen | IG-TIFLOW-CHRG-68 | erp-chrg |
-| [A_22135-01](https://gemspec.gematik.de/search/index.html?A_22135-01) | E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Quittung übernehmen | IG-TIFLOW-CHRG-69 | erp-chrg |
-| [A_22136-01](https://gemspec.gematik.de/search/index.html?A_22136-01) | E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – FHIR-Validierung ChargeItem | IG-TIFLOW-CHRG-63 | erp-chrg |
-| [A_22137](https://gemspec.gematik.de/search/index.html?A_22137) | E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – PKV-Abgabedatensatz übernehmen | IG-TIFLOW-CHRG-64 | erp-chrg |
-| [A_22138](https://gemspec.gematik.de/search/index.html?A_22138) | E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – FHIR-Validierung PKV-Abgabedatensatz | IG-TIFLOW-CHRG-65 | erp-chrg |
-| [A_22139](https://gemspec.gematik.de/search/index.html?A_22139) | E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Signaturprüfung PKV-Abgabedatensatz | IG-TIFLOW-CHRG-66 | erp-chrg |
-| [A_22140-01](https://gemspec.gematik.de/search/index.html?A_22140-01) | E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Prüfung Signaturzertifikat PKV-Abgabedatensatz | IG-TIFLOW-CHRG-67 | erp-chrg |
-| [A_22141](https://gemspec.gematik.de/search/index.html?A_22141) | E-Rezept-Fachdienst – Signaturzertifikat SMC-B prüfen | IG-TIFLOW-CHRG-45 | erp-chrg |
-| [A_22143](https://gemspec.gematik.de/search/index.html?A_22143) | E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – ChargeItem befüllen | IG-TIFLOW-CHRG-71 | erp-chrg |
-| [A_22144](https://gemspec.gematik.de/search/index.html?A_22144) | E-Rezept-Fachdienst – Abrechnungsinformation ändern – Rollenprüfung | IG-TIFLOW-CHRG-78 | erp-chrg |
-| [A_22146](https://gemspec.gematik.de/search/index.html?A_22146) | E-Rezept-Fachdienst – Abrechnungsinformation ändern – Apotheke - Prüfung Telematik-ID | IG-TIFLOW-CHRG-80 | erp-chrg |
-| [A_22148](https://gemspec.gematik.de/search/index.html?A_22148) | E-Rezept-Fachdienst – Abrechnungsinformation ändern – Apotheke – PKV-Abgabedatensatz übernehmen | IG-TIFLOW-CHRG-82 | erp-chrg |
-| [A_22149](https://gemspec.gematik.de/search/index.html?A_22149) | E-Rezept-Fachdienst – Abrechnungsinformation ändern – Apotheke – FHIR-Validierung PKV-Abgabedatensatz | IG-TIFLOW-CHRG-83 | erp-chrg |
-| [A_22150](https://gemspec.gematik.de/search/index.html?A_22150) | E-Rezept-Fachdienst – Abrechnungsinformation ändern - Apotheke – Signaturprüfung PKV-Abgabedatensatz | IG-TIFLOW-CHRG-84 | erp-chrg |
-| [A_22151-01](https://gemspec.gematik.de/search/index.html?A_22151-01) | E-Rezept-Fachdienst – Abrechnungsinformation ändern – Apotheke – Prüfung Signaturzertifikat PKV-Abgabedatensatz | IG-TIFLOW-CHRG-85 | erp-chrg |
-| [A_22152](https://gemspec.gematik.de/search/index.html?A_22152) | E-Rezept-Fachdienst - Abrechnungsinformation ändern – FHIR-Validierung ChargeItem | IG-TIFLOW-CHRG-86 | erp-chrg |
-| [A_22153](https://gemspec.gematik.de/search/index.html?A_22153) | E-Rezept-Fachdienst - unzulässige Operationen Consent | IG-TIFLOW-CORE-182 | core |
-| [A_22154](https://gemspec.gematik.de/search/index.html?A_22154) | E-Rezept-Fachdienst – Consent löschen - alles Löschen verbieten | IG-TIFLOW-CORE-192 | core |
-| [A_22155](https://gemspec.gematik.de/search/index.html?A_22155) | E-Rezept-Fachdienst - Consent löschen - Rollenprüfung Versicherter | IG-TIFLOW-CORE-193 | core |
-| [A_22157](https://gemspec.gematik.de/search/index.html?A_22157) | E-Rezept-Fachdienst - Consent löschen - Löschen der bestehenden Abrechnungsinformationen | IG-TIFLOW-CHRG-43 | erp-chrg |
-| [A_22158](https://gemspec.gematik.de/search/index.html?A_22158) | E-Rezept-Fachdienst - Consent löschen - Löschen der Consent | IG-TIFLOW-CORE-195 | core |
-| [A_22159](https://gemspec.gematik.de/search/index.html?A_22159) | E-Rezept-Fachdienst - Consent lesen - Rollenprüfung Versicherter | IG-TIFLOW-CORE-190 | core |
-| [A_22160](https://gemspec.gematik.de/search/index.html?A_22160) | E-Rezept-Fachdienst - Consent lesen - Filter Consent auf KVNR des Versicherten | IG-TIFLOW-CORE-191 | core |
-| [A_22161](https://gemspec.gematik.de/search/index.html?A_22161) | E-Rezept-Fachdienst - Consent schreiben - Rollenprüfung Versicherter | IG-TIFLOW-CORE-183 | core |
-| [A_22162-01](https://gemspec.gematik.de/search/index.html?A_22162-01) | E-Rezept-Fachdienst - Consent schreiben – nur eine Einwilligung pro KVNR und Einwilligungstyp | IG-TIFLOW-CORE-186 | core |
-| [A_22215](https://gemspec.gematik.de/search/index.html?A_22215) | E-Rezept-Fachdienst – Abrechnungsinformation ändern – Prüfung Einwilligung | IG-TIFLOW-CHRG-79 | erp-chrg |
-| [A_22217](https://gemspec.gematik.de/search/index.html?A_22217) | E-Rezept-Fachdienst - Protokollierung - keine Angabe zu organizationName | IG-TIFLOW-CORE-29 | core |
-| [A_22231-01](https://gemspec.gematik.de/search/index.html?A_22231-01) | E-Rezept-Fachdienst - Task aktivieren - Ausschluss Betäubungsmittel | IG-TIFLOW-ERP-72 | rx |
-| [A_22289](https://gemspec.gematik.de/search/index.html?A_22289) | E-Rezept-Fachdienst - Consent schreiben - Prüfung KVNR | IG-TIFLOW-CORE-184 | core |
-| [A_22347-01](https://gemspec.gematik.de/search/index.html?A_22347-01) | E-Rezept-Fachdienst – Task aktivieren – Flowtype 200/209 - Prüfung Coverage Type | IG-TIFLOW-ERP-71 | rx |
-| [A_22350](https://gemspec.gematik.de/search/index.html?A_22350) | E-Rezept-Fachdienst - Consent schreiben – Persistieren | IG-TIFLOW-CORE-188 | core |
-| [A_22351](https://gemspec.gematik.de/search/index.html?A_22351) | E-Rezept-Fachdienst - Consent schreiben - FHIR-Validierung | IG-TIFLOW-CORE-185 | core |
-| [A_22362-01](https://gemspec.gematik.de/search/index.html?A_22362-01) | E-Rezept-Fachdienst – Subscription registrieren – Rollenprüfung | IG-TIFLOW-CORE-307 | core |
-| [A_22363](https://gemspec.gematik.de/search/index.html?A_22363) | E-Rezept-Fachdienst – Subscription registrieren – Prüfung Telematik-ID | IG-TIFLOW-CORE-312 | core |
-| [A_22364](https://gemspec.gematik.de/search/index.html?A_22364) | E-Rezept-Fachdienst – Subscription registrieren – Response | IG-TIFLOW-CORE-308 | core |
-| [A_22365](https://gemspec.gematik.de/search/index.html?A_22365) | E-Rezept-Fachdienst – Subscription registrieren – Pseudonym der Telematik-ID | IG-TIFLOW-CORE-309 | core |
-| [A_22366](https://gemspec.gematik.de/search/index.html?A_22366) | E-Rezept-Fachdienst – Subscription registrieren – Barrier-Token | IG-TIFLOW-CORE-311 | core |
-| [A_22367-03](https://gemspec.gematik.de/search/index.html?A_22367-03) | E-Rezept-Fachdienst - Nachricht einstellen - Notification Apotheke | IG-TIFLOW-CORE-297 | core |
-| [A_22368](https://gemspec.gematik.de/search/index.html?A_22368) | E-Rezept-Fachdienst - Subscription Service - Webschnittstelle | IG-TIFLOW-CORE-145 | core |
-| [A_22369](https://gemspec.gematik.de/search/index.html?A_22369) | E-Rezept-Fachdienst - Subscription Service - Prüfung Bearer-Token | IG-TIFLOW-CORE-146 | core |
-| [A_22370](https://gemspec.gematik.de/search/index.html?A_22370) | E-Rezept-Fachdienst - Subscription Service - Upgrade | IG-TIFLOW-CORE-147 | core |
-| [A_22371](https://gemspec.gematik.de/search/index.html?A_22371) | E-Rezept-Fachdienst - Subscription Service - abgelaufene Verbindungen schließen | IG-TIFLOW-CORE-148 | core |
-| [A_22378](https://gemspec.gematik.de/search/index.html?A_22378) | E-Rezept-Fachdienst - Subscription Service - Verbot Profilbildung | IG-TIFLOW-CORE-149 | core |
-| [A_22383-01](https://gemspec.gematik.de/search/index.html?A_22383-01) | E-Rezept-Fachdienst – Generierungsschlüssel – Pseudonym der Telematik-ID | IG-TIFLOW-CORE-310 | core |
-| [A_22487](https://gemspec.gematik.de/search/index.html?A_22487) | E-Rezept-Fachdienst - Task aktivieren - Prüfregel Ausstellungsdatum | IG-TIFLOW-CORE-163 | core |
-| [A_22611-02](https://gemspec.gematik.de/search/index.html?A_22611-02) | E-Rezept-Fachdienst – Abrechnungsinformation abrufen – Apotheke – Prüfung AccessCode | IG-TIFLOW-CHRG-53 | erp-chrg |
-| [A_22614-02](https://gemspec.gematik.de/search/index.html?A_22614-02) | E-Rezept-Fachdienst - Abrechnungsinformation bereitstellen - Generierung AccessCode | IG-TIFLOW-CHRG-70 | erp-chrg |
-| [A_22615-02](https://gemspec.gematik.de/search/index.html?A_22615-02) | E-Rezept-Fachdienst - Abrechnungsinformation ändern - Apotheke - Generierung AccessCode | IG-TIFLOW-CHRG-87 | erp-chrg |
-| [A_22616-03](https://gemspec.gematik.de/search/index.html?A_22616-03) | E-Rezept-Fachdienst – Abrechnungsinformation ändern – Apotheke – Prüfung AccessCode | IG-TIFLOW-CHRG-81 | erp-chrg |
-| [A_22627-01](https://gemspec.gematik.de/search/index.html?A_22627-01) | E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - zulässige Flowtype | IG-TIFLOW-ERP-81 | rx |
-| [A_22628](https://gemspec.gematik.de/search/index.html?A_22628) | E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator-Denominator kleiner 5 | IG-TIFLOW-ERP-82 | rx |
-| [A_22629](https://gemspec.gematik.de/search/index.html?A_22629) | E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Denominator größer  1 | IG-TIFLOW-ERP-84 | rx |
-| [A_22630](https://gemspec.gematik.de/search/index.html?A_22630) | E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator kleiner / gleich Denominator | IG-TIFLOW-ERP-85 | rx |
-| [A_22631](https://gemspec.gematik.de/search/index.html?A_22631) | E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Unzulässige Angaben | IG-TIFLOW-ERP-86 | rx |
-| [A_22632](https://gemspec.gematik.de/search/index.html?A_22632) | E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - kein Entlassrezept | IG-TIFLOW-ERP-87 | rx |
-| [A_22633](https://gemspec.gematik.de/search/index.html?A_22633) | E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - keine Ersatzverordnung | IG-TIFLOW-ERP-88 | rx |
-| [A_22634](https://gemspec.gematik.de/search/index.html?A_22634) | E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Beginn Einlösefrist-Pflicht | IG-TIFLOW-ERP-89 | rx |
-| [A_22635-02](https://gemspec.gematik.de/search/index.html?A_22635-02) | E-Rezept-Fachdienst - Task akzeptieren - Mehrfachverordnung - Beginn Einlösefrist prüfen | IG-TIFLOW-ERP-95 | rx |
-| [A_22704](https://gemspec.gematik.de/search/index.html?A_22704) | E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator größer 0 | IG-TIFLOW-ERP-83 | rx |
-| [A_22731-01](https://gemspec.gematik.de/search/index.html?A_22731-01) | E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Prüfung Coverage PKV | IG-TIFLOW-CHRG-60 | erp-chrg |
-| [A_22734-01](https://gemspec.gematik.de/search/index.html?A_22734-01) | E-Rezept-Fachdienst - Nachricht einstellen - Prüfung Existenz ChargeItem | IG-TIFLOW-CHRG-96 | erp-chrg |
-| [A_22874-02](https://gemspec.gematik.de/search/index.html?A_22874-02) | E-Rezept-Fachdienst - Consent löschen - Prüfung category | IG-TIFLOW-CORE-194 | core |
-| [A_22875](https://gemspec.gematik.de/search/index.html?A_22875) | E-Rezept-Fachdienst – Abrechnungsinformation ändern (PATCH) – Rollenprüfung | IG-TIFLOW-CHRG-75 | erp-chrg |
-| [A_22877](https://gemspec.gematik.de/search/index.html?A_22877) | E-Rezept-Fachdienst – Abrechnungsinformation ändern (PATCH) – Versicherter - Prüfung KVNR | IG-TIFLOW-CHRG-76 | erp-chrg |
-| [A_22879](https://gemspec.gematik.de/search/index.html?A_22879) | E-Rezept-Fachdienst – Abrechnungsinformation ändern (PATCH) - alles Ändern verbieten | IG-TIFLOW-CHRG-74 | erp-chrg |
-| [A_22919](https://gemspec.gematik.de/search/index.html?A_22919) | E-Rezept-Fachdienst - Task schließen - OCSP-Response nicht älter als 24 h | IG-TIFLOW-CORE-61 | core |
-| [A_22925](https://gemspec.gematik.de/search/index.html?A_22925) | E-Rezept-Fachdienst - Task aktivieren - Längenprüfung PZN | IG-TIFLOW-CORE-177 | core |
-| [A_22927-03](https://gemspec.gematik.de/search/index.html?A_22927-03) | E-Rezept-Fachdienst - FHIR-Ressource validieren - Ausschluss unspezifizierter Extensions | IG-TIFLOW-CORE-249 | core |
-| [A_23164](https://gemspec.gematik.de/search/index.html?A_23164) | E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Endedatum nicht vor Startdatum | IG-TIFLOW-ERP-91 | rx |
-| [A_23172](https://gemspec.gematik.de/search/index.html?A_23172) | E-Rezept-Fachdienst - Task aktivieren - Mimetype Signatur | IG-TIFLOW-CORE-160 | core |
-| [A_23227](https://gemspec.gematik.de/search/index.html?A_23227) | E-Rezept-Fachdienst - Task erzeugen - Task-ID=Rezept-ID | IG-TIFLOW-CORE-203 | core |
-| [A_23443-01](https://gemspec.gematik.de/search/index.html?A_23443-01) | E-Rezept-Fachdienst – Task aktivieren – Flowtype 160/162/169 - Prüfung Coverage Type | IG-TIFLOW-DIGA-18<br/>IG-TIFLOW-ERP-70 | diga<br/>rx |
-| [A_23450-01](https://gemspec.gematik.de/search/index.html?A_23450-01) | E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Prüfung Prüfungsnachweis | IG-TIFLOW-CORE-78 | core |
-| [A_23451-01](https://gemspec.gematik.de/search/index.html?A_23451-01) | E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Zeitraum Akzeptanz Prüfungsnachweis | IG-TIFLOW-CORE-81 | core |
-| [A_23452-04](https://gemspec.gematik.de/search/index.html?A_23452-04) | E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Filter Status, KVNR und Workflowtype | IG-TIFLOW-CORE-82 | core |
-| [A_23454](https://gemspec.gematik.de/search/index.html?A_23454) | E-Rezept-Fachdienst - Prüfung Prüfziffer | IG-TIFLOW-CORE-90 | core |
-| [A_23456-01](https://gemspec.gematik.de/search/index.html?A_23456-01) | E-Rezept-Fachdienst - Prüfung Prüfziffer - Berechnung HMAC der Prüfziffer | IG-TIFLOW-CORE-91 | core |
-| [A_23537](https://gemspec.gematik.de/search/index.html?A_23537) | E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Startdatum nicht vor Ausstellungsdatum | IG-TIFLOW-ERP-90 | rx |
-| [A_23539-01](https://gemspec.gematik.de/search/index.html?A_23539-01) | E-Rezept-Fachdienst - Task akzeptieren - Ende Einlösefrist prüfen | IG-TIFLOW-CORE-220 | core |
-| [A_23624](https://gemspec.gematik.de/search/index.html?A_23624) | E-Rezept-Fachdienst – Abrechnungsinformation ändern – Apotheke – kein AccessCode und Quittung | IG-TIFLOW-CHRG-88 | erp-chrg |
-| [A_23704](https://gemspec.gematik.de/search/index.html?A_23704) | E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – kein AccessCode und Quittung | IG-TIFLOW-CHRG-72 | erp-chrg |
-| [A_23878-02](https://gemspec.gematik.de/search/index.html?A_23878-02) | E-Rezept-Fachdienst - Nachricht einstellen - Validierung des Payload-Inhalt von GEM_ERP_PR_Communication_DispReq | IG-TIFLOW-CORE-283 | core |
-| [A_23879-01](https://gemspec.gematik.de/search/index.html?A_23879-01) | E-Rezept-Fachdienst - Nachricht einstellen - Validierung des Payload-Inhalt von GEM_ERP_PR_Communication_Reply | IG-TIFLOW-CORE-284 | core |
-| [A_23888](https://gemspec.gematik.de/search/index.html?A_23888) | E-Rezept-Fachdienst - Task aktivieren - Überprüfung der IK Nummer im Profil KBV_PR_FOR_Coverage | IG-TIFLOW-CORE-168 | core |
-| [A_23890-01](https://gemspec.gematik.de/search/index.html?A_23890-01) | E-Rezept-Fachdienst - Task aktivieren – Überprüfung KVNR im Profil KBV_PR_FOR_Patient | IG-TIFLOW-CORE-170 | core |
-| [A_23891-01](https://gemspec.gematik.de/search/index.html?A_23891-01) | E-Rezept-Fachdienst - Task aktivieren – Überprüfung der ANR und ZANR im Profil KBV_PR_FOR_Practitioner | IG-TIFLOW-CORE-171 | core |
-| [A_23892](https://gemspec.gematik.de/search/index.html?A_23892) | E-Rezept-Fachdienst - Task aktivieren – Überprüfung der PZN im Profil KBV_PR_ERP_Medication_PZN | IG-TIFLOW-CORE-175 | core |
-| [A_23936-01](https://gemspec.gematik.de/search/index.html?A_23936-01) | E-Rezept-Fachdienst - Task aktivieren - Versicherten-ID als Identifikator von Versicherten | IG-TIFLOW-CORE-162 | core |
-| [A_24030](https://gemspec.gematik.de/search/index.html?A_24030) | E-Rezept-Fachdienst - Task aktivieren – Überprüfung der IK Nummer im Profil KBV_PR_FOR_Coverage | IG-TIFLOW-CORE-169 | core |
-| [A_24031](https://gemspec.gematik.de/search/index.html?A_24031) | E-Rezept-Fachdienst - Task aktivieren – Überprüfung der ANR und ZANR - Konfiguration bei Auffälligkeiten | IG-TIFLOW-CORE-172 | core |
-| [A_24032](https://gemspec.gematik.de/search/index.html?A_24032) | E-Rezept-Fachdienst - Task aktivieren – Überprüfung der ANR und ZANR - Konfiguration Fehler | IG-TIFLOW-CORE-173 | core |
-| [A_24033](https://gemspec.gematik.de/search/index.html?A_24033) | E-Rezept-Fachdienst - Task aktivieren – Überprüfung der ANR und ZANR - Konfiguration Warning | IG-TIFLOW-CORE-174 | core |
-| [A_24034](https://gemspec.gematik.de/search/index.html?A_24034) | E-Rezept-Fachdienst - Task aktivieren – Überprüfung der PZN im Profil KBV_PR_ERP_Medication_Compounding | IG-TIFLOW-CORE-176 | core |
-| [A_24174-01](https://gemspec.gematik.de/search/index.html?A_24174-01) | E-Rezept-Fachdienst - Task akzeptieren - Telematik-ID der abgebenden LEI speichern | IG-TIFLOW-CORE-222 | core |
-| [A_24175](https://gemspec.gematik.de/search/index.html?A_24175) | E-Rezept-Fachdienst - Task zurückweisen - Telematik-ID der abgebenden LEI löschen | IG-TIFLOW-CORE-35 | core |
-| [A_24176-01](https://gemspec.gematik.de/search/index.html?A_24176-01) | E-Rezept-Fachdienst - Task abrufen - Apotheke - Verordnung abrufen - Prüfung Telematik-ID | IG-TIFLOW-CORE-98 | core |
-| [A_24177-01](https://gemspec.gematik.de/search/index.html?A_24177-01) | E-Rezept-Fachdienst - Task abrufen - Apotheke - Verordnung abrufen - Prüfung AccessCode | IG-TIFLOW-CORE-99 | core |
-| [A_24178-02](https://gemspec.gematik.de/search/index.html?A_24178-02) | E-Rezept-Fachdienst - Task abrufen - Apotheke - Verordnung abrufen - Prüfung Status in-progress | IG-TIFLOW-CORE-100 | core |
-| [A_24179-01](https://gemspec.gematik.de/search/index.html?A_24179-01) | E-Rezept-Fachdienst - Task abrufen - Apotheke - Verordnung abrufen - erneuter Abruf Verordnung | IG-TIFLOW-CORE-101 | core |
-| [A_24279](https://gemspec.gematik.de/search/index.html?A_24279) | E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Rollenprüfung Abgebender stellt Dispensierinformationen bereit | IG-TIFLOW-ERP-26 | rx |
-| [A_24280](https://gemspec.gematik.de/search/index.html?A_24280) | E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Prüfung Secret | IG-TIFLOW-ERP-27 | rx |
-| [A_24281-02](https://gemspec.gematik.de/search/index.html?A_24281-02) | E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Schemaprüfung MedicationDispense | IG-TIFLOW-ERP-29 | rx |
-| [A_24283-02](https://gemspec.gematik.de/search/index.html?A_24283-02) | E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Speicherung mehrerer MedicationDispenses | IG-TIFLOW-ERP-32 | rx |
-| [A_24284](https://gemspec.gematik.de/search/index.html?A_24284) | E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Keine Statusänderung | IG-TIFLOW-ERP-37 | rx |
-| [A_24285-01](https://gemspec.gematik.de/search/index.html?A_24285-01) | E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Zeitstempel MedicationDispense | IG-TIFLOW-ERP-34 | rx |
-| [A_24286-02](https://gemspec.gematik.de/search/index.html?A_24286-02) | E-Rezept-Fachdienst - Task zurückweisen - Dispensierinformationen löschen | IG-TIFLOW-ERP-5 | rx |
-| [A_24287-01](https://gemspec.gematik.de/search/index.html?A_24287-01) | E-Rezept-Fachdienst - Task schließen - Aufruf ohne MedicationDispense | IG-TIFLOW-ERP-10 | rx |
-| [A_24298](https://gemspec.gematik.de/search/index.html?A_24298) | E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Prüfung Status | IG-TIFLOW-ERP-28 | rx |
-| [A_24434](https://gemspec.gematik.de/search/index.html?A_24434) | E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Betroffene Endpunkte | IG-TIFLOW-CORE-325 | core |
-| [A_24436-01](https://gemspec.gematik.de/search/index.html?A_24436-01) | E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Filter- und Sortierkriterien | IG-TIFLOW-CORE-326 | core |
-| [A_24437](https://gemspec.gematik.de/search/index.html?A_24437) | E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Sortieren von Einträgen | IG-TIFLOW-CORE-327 | core |
-| [A_24438](https://gemspec.gematik.de/search/index.html?A_24438) | E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Sortieren von Einträgen | IG-TIFLOW-CORE-328 | core |
-| [A_24440](https://gemspec.gematik.de/search/index.html?A_24440) | E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Sortierreihenfolge der Einträge | IG-TIFLOW-CORE-329 | core |
-| [A_24441-01](https://gemspec.gematik.de/search/index.html?A_24441-01) | E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - URL-Parameter für Paginierung | IG-TIFLOW-CORE-331 | core |
-| [A_24442-01](https://gemspec.gematik.de/search/index.html?A_24442-01) | E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Link Relations für Paginierung | IG-TIFLOW-CORE-332 | core |
-| [A_24443-01](https://gemspec.gematik.de/search/index.html?A_24443-01) | E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Paginierung | IG-TIFLOW-CORE-333 | core |
-| [A_24444](https://gemspec.gematik.de/search/index.html?A_24444) | E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Erhalten von URL-Parametern | IG-TIFLOW-CORE-334 | core |
-| [A_24471](https://gemspec.gematik.de/search/index.html?A_24471) | E-Rezept-Fachdienst - Abrechnungsinformation bereitstellen - ChargeItem-ID=Rezept-ID | IG-TIFLOW-CHRG-62 | erp-chrg |
-| [A_24901](https://gemspec.gematik.de/search/index.html?A_24901) | E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Schema ID | IG-TIFLOW-ERP-92 | rx |
-| [A_25206](https://gemspec.gematik.de/search/index.html?A_25206) | E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 | IG-TIFLOW-CORE-83 | core |
-| [A_25207](https://gemspec.gematik.de/search/index.html?A_25207) | E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - AcceptPN3 false | IG-TIFLOW-CORE-88 | core |
-| [A_25208-01](https://gemspec.gematik.de/search/index.html?A_25208-01) | E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - URL kvnr | IG-TIFLOW-CORE-84 | core |
-| [A_25209-02](https://gemspec.gematik.de/search/index.html?A_25209-02) | E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - AcceptPN3 true - Filter Status, KVNR und Workflowtype | IG-TIFLOW-CORE-89 | core |
-| [A_25515](https://gemspec.gematik.de/search/index.html?A_25515) | E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Filteroperatoren für Datumsabfragen | IG-TIFLOW-CORE-330 | core |
-| [A_25642](https://gemspec.gematik.de/search/index.html?A_25642) | E-Rezept-Fachdienst - Task aktivieren - Flowtype 160/169/200/209 - Prüfung Arzneimittelverordnung | IG-TIFLOW-ERP-67 | rx |
-| [A_25925](https://gemspec.gematik.de/search/index.html?A_25925) | E-Rezept-Fachdienst - Task aktivieren - Daten ePA Medication Service bereitstellen (Verordnungsdatensatz) | IG-TIFLOW-ERP-74 | rx |
-| [A_25926](https://gemspec.gematik.de/search/index.html?A_25926) | E-Rezept-Fachdienst - Task zurückweisen - Löschmarkierungen Medikationsliste bereitstellen (Dispensierinformationen) | IG-TIFLOW-ERP-6 | rx |
-| [A_25928-01](https://gemspec.gematik.de/search/index.html?A_25928-01) | E-Rezept-Fachdienst - Task schließen - Daten ePA Medication Service bereitstellen (Dispensierinformationen) | IG-TIFLOW-ERP-13 | rx |
-| [A_25930](https://gemspec.gematik.de/search/index.html?A_25930) | E-Rezept-Fachdienst - E-Rezept löschen - Löschinformation ePA Medication Service bereitstellen (Verordnungsdatensatz) - Leistungserbringerinstitution | IG-TIFLOW-ERP-43 | rx |
-| [A_25931](https://gemspec.gematik.de/search/index.html?A_25931) | E-Rezept-Fachdienst - E-Rezept löschen - Löschinformation ePA Medication Service bereitstellen (Verordnungsdatensatz) - Versicherter | IG-TIFLOW-ERP-44 | rx |
-| [A_25933](https://gemspec.gematik.de/search/index.html?A_25933) | E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Daten Medikationsliste bereitstellen (Dispensierinformationen) | IG-TIFLOW-ERP-33 | rx |
-| [A_25935](https://gemspec.gematik.de/search/index.html?A_25935) | E-Rezept-Fachdienst - ePA - JWT Bearer-Token Signatur | IG-TIFLOW-CORE-340 | core |
-| [A_25936](https://gemspec.gematik.de/search/index.html?A_25936) | E-Rezept-Fachdienst - ePA - Festlegung der ClientID | IG-TIFLOW-CORE-341 | core |
-| [A_25937](https://gemspec.gematik.de/search/index.html?A_25937) | E-Rezept-Fachdienst - ePA - Lokalisierung des ePA-Aktensysteme | IG-TIFLOW-CORE-342 | core |
-| [A_25938](https://gemspec.gematik.de/search/index.html?A_25938) | E-Rezept-Fachdienst - ePA - Aktualisierung Cache ePA-Aktensysteme | IG-TIFLOW-CORE-343 | core |
-| [A_25939](https://gemspec.gematik.de/search/index.html?A_25939) | E-Rezept-Fachdienst - ePA - ePA-Aktensystem für KVNR ermitteln | IG-TIFLOW-CORE-344 | core |
-| [A_25940](https://gemspec.gematik.de/search/index.html?A_25940) | E-Rezept-Fachdienst - ePA - Aktualisierung Cache Zuordnung KVNR zu ePA-Aktensystem | IG-TIFLOW-CORE-345 | core |
-| [A_25941](https://gemspec.gematik.de/search/index.html?A_25941) | E-Rezept-Fachdienst - ePA - Aktualisierung Cache Zuordnung KVNR zu ePA-Aktensystem - Statuscode 404 | IG-TIFLOW-CORE-346 | core |
-| [A_25942](https://gemspec.gematik.de/search/index.html?A_25942) | E-Rezept-Fachdienst - ePA - Fehlerbehandlung - Information Service - Fehler im Information Service | IG-TIFLOW-CORE-347 | core |
-| [A_25943](https://gemspec.gematik.de/search/index.html?A_25943) | E-Rezept-Fachdienst - ePA - Fehlerbehandlung - Information Service - Struktureller Fehler | IG-TIFLOW-CORE-348 | core |
-| [A_25944-01](https://gemspec.gematik.de/search/index.html?A_25944-01) | E-Rezept-Fachdienst - ePA - Flowtype 160/166/169/200/209 | IG-TIFLOW-CORE-349 | core |
-| [A_25945](https://gemspec.gematik.de/search/index.html?A_25945) | E-Rezept-Fachdienst - ePA - asynchrone Bereitstellung und Übermittlung | IG-TIFLOW-CORE-350 | core |
-| [A_25946](https://gemspec.gematik.de/search/index.html?A_25946) | E-Rezept-Fachdienst - ePA - Mapping | IG-TIFLOW-CORE-351 | core |
-| [A_25947](https://gemspec.gematik.de/search/index.html?A_25947) | E-Rezept-Fachdienst - ePA - provide-dispensation-erp - Organisation-Ressource | IG-TIFLOW-CORE-352 | core |
-| [A_25948](https://gemspec.gematik.de/search/index.html?A_25948) | E-Rezept-Fachdienst - ePA - Mapping - Übernahme von Werten zwischen Profilen | IG-TIFLOW-CORE-353 | core |
-| [A_25949](https://gemspec.gematik.de/search/index.html?A_25949) | E-Rezept-Fachdienst - ePA - Mapping - Handhabung von Extensions | IG-TIFLOW-CORE-354 | core |
-| [A_25950](https://gemspec.gematik.de/search/index.html?A_25950) | E-Rezept-Fachdienst - ePA - Fehlerbehandlung - Nichtauffinden in allen ePA-Aktensystemen | IG-TIFLOW-CORE-355 | core |
-| [A_25951-01](https://gemspec.gematik.de/search/index.html?A_25951-01) | E-Rezept-Fachdienst - ePA - Prüfung des Widerspruchs vor Übermittlung | IG-TIFLOW-CORE-356 | core |
-| [A_25952](https://gemspec.gematik.de/search/index.html?A_25952) | E-Rezept-Fachdienst - ePA - Übermittlung - Bereitstellung von Verordnungsdaten | IG-TIFLOW-CORE-357 | core |
-| [A_25953](https://gemspec.gematik.de/search/index.html?A_25953) | E-Rezept-Fachdienst - ePA - Übermittlung - Löschinformation von Verordnungsdaten | IG-TIFLOW-CORE-358 | core |
-| [A_25954-01](https://gemspec.gematik.de/search/index.html?A_25954-01) | E-Rezept-Fachdienst - ePA - Übermittlung - Bereitstellung von Dispensierinformationen | IG-TIFLOW-CORE-359 | core |
-| [A_25955](https://gemspec.gematik.de/search/index.html?A_25955) | E-Rezept-Fachdienst - ePA - Übermittlung - Löschinformation von Dispensierinformationen | IG-TIFLOW-CORE-360 | core |
-| [A_25956](https://gemspec.gematik.de/search/index.html?A_25956) | E-Rezept-Fachdienst - ePA - Übermittlung - Bündelung von Übermittlungsaufträgen nach KVNR | IG-TIFLOW-CORE-361 | core |
-| [A_25957](https://gemspec.gematik.de/search/index.html?A_25957) | E-Rezept-Fachdienst - ePA - Fehlerbehandlung - Aktenkonto-Umzug | IG-TIFLOW-CORE-362 | core |
-| [A_25958](https://gemspec.gematik.de/search/index.html?A_25958) | E-Rezept-Fachdienst - ePA - Fehlerbehandlung - Reaktion auf Scheitern des Operationaufrufs | IG-TIFLOW-CORE-363 | core |
-| [A_25959](https://gemspec.gematik.de/search/index.html?A_25959) | E-Rezept-Fachdienst - ePA - Fehlerbehandlung - Probleme bei der Entschlüsselung durch den Medication Service | IG-TIFLOW-CORE-364 | core |
-| [A_25960](https://gemspec.gematik.de/search/index.html?A_25960) | E-Rezept-Fachdienst - ePA - Fehlerbehandlung - Probleme bei der Entschlüsselung durch den E-Rezept-Fachdienst | IG-TIFLOW-CORE-365 | core |
-| [A_25961](https://gemspec.gematik.de/search/index.html?A_25961) | E-Rezept-Fachdienst - ePA - Fehlerbehandlung - Reaktion auf Nichtverfügbarkeit des Medication Service | IG-TIFLOW-CORE-366 | core |
-| [A_25962](https://gemspec.gematik.de/search/index.html?A_25962) | E-Rezept-Fachdienst - ePA - Medication Service - Versichertenprotokoll | IG-TIFLOW-CORE-30 | core |
-| [A_25971](https://gemspec.gematik.de/search/index.html?A_25971) | E-Rezept-Fachdienst - ePA - TLS-Server X.509-Zertifikat des ePA-Aktensystems auf Gültigkeit prüfen | IG-TIFLOW-CORE-337 | core |
-| [A_25972](https://gemspec.gematik.de/search/index.html?A_25972) | E-Rezept-Fachdienst - ePA - TLS-Server X.509-Zertifikat des ePA-Aktensystems Rolle prüfen | IG-TIFLOW-CORE-338 | core |
-| [A_25990](https://gemspec.gematik.de/search/index.html?A_25990) | E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - QES durch berechtigte Berufsgruppe | IG-TIFLOW-DIGA-15 | diga |
-| [A_25991](https://gemspec.gematik.de/search/index.html?A_25991) | E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Verordnung von DiGAs | IG-TIFLOW-DIGA-16 | diga |
-| [A_25992](https://gemspec.gematik.de/search/index.html?A_25992) | E-Rezept-Fachdienst - Task aktivieren – Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest | IG-TIFLOW-DIGA-17 | diga |
-| [A_25993](https://gemspec.gematik.de/search/index.html?A_25993) | E-Rezept-Fachdienst - Task akzeptieren - Flowtype 162 - Rollenprüfung | IG-TIFLOW-DIGA-21 | diga |
-| [A_25994](https://gemspec.gematik.de/search/index.html?A_25994) | E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - Mappen von IKNR zu VSDM | IG-TIFLOW-CORE-86 | core |
-| [A_25995](https://gemspec.gematik.de/search/index.html?A_25995) | E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - keine E-Rezepte | IG-TIFLOW-CORE-87 | core |
-| [A_26002-02](https://gemspec.gematik.de/search/index.html?A_26002-02) | E-Rezept-Fachdienst - Task schließen - Flowtype 160/166/169/200/209 - Profilprüfung MedicationDispense | IG-TIFLOW-ERP-9 | rx |
-| [A_26003-01](https://gemspec.gematik.de/search/index.html?A_26003-01) | E-Rezept-Fachdienst - Task schließen - Flowtype 162 - Profilprüfung MedicationDispense | IG-TIFLOW-DIGA-4 | diga |
-| [A_26066](https://gemspec.gematik.de/search/index.html?A_26066) | E-Rezept-Fachdienst - ePA - JWT Bearer-Token Claims | IG-TIFLOW-CORE-339 | core |
-| [A_26148](https://gemspec.gematik.de/search/index.html?A_26148) | E-Rezept-Fachdienst - Task abrufen - Flowtype 169/209 - Nicht verfügbar bei KVNR-Mismatch | IG-TIFLOW-ERP-25 | rx |
-| [A_26229-02](https://gemspec.gematik.de/search/index.html?A_26229-02) | E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Konsistenz Ressource IDs | IG-TIFLOW-CORE-242 | core |
-| [A_26233-01](https://gemspec.gematik.de/search/index.html?A_26233-01) | E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Format fullUrl | IG-TIFLOW-CORE-243 | core |
-| [A_26264](https://gemspec.gematik.de/search/index.html?A_26264) | E-Rezept-Fachdienst - Löschfrist - Löschinformation ePA Medication Service bereitstellen (Verordnungsdatensatz) | IG-TIFLOW-CORE-108 | core |
-| [A_26320](https://gemspec.gematik.de/search/index.html?A_26320) | E-Rezept-Fachdienst - Nachricht einstellen - Dispense Request - Prüfung Status Task | IG-TIFLOW-CORE-294 | core |
-| [A_26321](https://gemspec.gematik.de/search/index.html?A_26321) | E-Rezept-Fachdienst - Nachricht einstellen - Dispense Request - Prüfung Ende Gültigkeit Task | IG-TIFLOW-CORE-295 | core |
-| [A_26327](https://gemspec.gematik.de/search/index.html?A_26327) | E-Rezept-Fachdienst - Nachricht einstellen - Dispense Request - Prüfung Beginn Gültigkeit Task | IG-TIFLOW-CORE-296 | core |
-| [A_26337](https://gemspec.gematik.de/search/index.html?A_26337) | E-Rezept-Fachdienst - Task schließen - Zeitstempel MedicationDispense | IG-TIFLOW-CORE-56 | core |
-| [A_26372](https://gemspec.gematik.de/search/index.html?A_26372) | E-Rezept-Fachdienst – Task aktivieren – Flowtype 162 - Prüfung Coverage Alternative IK | IG-TIFLOW-DIGA-19 | diga |
-| [A_26481](https://gemspec.gematik.de/search/index.html?A_26481) | E-Rezept-Fachdienst - Task schließen - Überschreiben vorheriger MedicationDispenses | IG-TIFLOW-ERP-11 | rx |
-| [A_26482](https://gemspec.gematik.de/search/index.html?A_26482) | E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Überschreiben vorheriger MedicationDispenses | IG-TIFLOW-ERP-30 | rx |
-| [A_26527](https://gemspec.gematik.de/search/index.html?A_26527) | E-Rezept-Fachdienst - MedicationDispense abrufen - Referenzierung MedicationDispense und Medication | IG-TIFLOW-CORE-117 | core |
-| [A_27051](https://gemspec.gematik.de/search/index.html?A_27051) | E-Rezept-Fachdienst - Task schließen - MedicationDispense speichern | IG-TIFLOW-CORE-55 | core |
-| [A_27052](https://gemspec.gematik.de/search/index.html?A_27052) | E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - MedicationDispense speichern | IG-TIFLOW-ERP-31 | rx |
-| [A_27059](https://gemspec.gematik.de/search/index.html?A_27059) | E-Rezept-Fachdienst - eu-prescription abfragen - Rollenprüfung | IG-TIFLOW-XBORDER-4 | erp-eu |
-| [A_27060](https://gemspec.gematik.de/search/index.html?A_27060) | E-Rezept-Fachdienst - eu-prescription abfragen - Schemaprüfung | IG-TIFLOW-XBORDER-5 | erp-eu |
-| [A_27061](https://gemspec.gematik.de/search/index.html?A_27061) | E-Rezept-Fachdienst - eu-prescription abfragen - Prüfung Einwilligung für KVNR | IG-TIFLOW-XBORDER-6 | erp-eu |
-| [A_27062](https://gemspec.gematik.de/search/index.html?A_27062) | E-Rezept-Fachdienst - eu-prescription abfragen - Prüfung Zugriffsberechtigung | IG-TIFLOW-XBORDER-7 | erp-eu |
-| [A_27063-01](https://gemspec.gematik.de/search/index.html?A_27063-01) | E-Rezept-Fachdienst - eu-prescription abfragen - Filter einlösbarer E-Rezepte | IG-TIFLOW-XBORDER-8 | erp-eu |
-| [A_27064](https://gemspec.gematik.de/search/index.html?A_27064) | E-Rezept-Fachdienst - eu-prescription abfragen - Schema des Response | IG-TIFLOW-XBORDER-12 | erp-eu |
-| [A_27065](https://gemspec.gematik.de/search/index.html?A_27065) | E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage der aktuellsten Verordnungsinformationen | IG-TIFLOW-XBORDER-13 | erp-eu |
-| [A_27066](https://gemspec.gematik.de/search/index.html?A_27066) | E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage aller einlösbaren Verordnungsinformationen | IG-TIFLOW-XBORDER-14 | erp-eu |
-| [A_27067](https://gemspec.gematik.de/search/index.html?A_27067) | E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids | IG-TIFLOW-XBORDER-15 | erp-eu |
-| [A_27068](https://gemspec.gematik.de/search/index.html?A_27068) | E-Rezept-Fachdienst - Task schließen - EU - Rollenprüfung | IG-TIFLOW-XBORDER-37 | erp-eu |
-| [A_27069](https://gemspec.gematik.de/search/index.html?A_27069) | E-Rezept-Fachdienst - Task schließen - EU - Schemaprüfung | IG-TIFLOW-XBORDER-38 | erp-eu |
-| [A_27070](https://gemspec.gematik.de/search/index.html?A_27070) | E-Rezept-Fachdienst - Task schließen - EU - Prüfung Einwilligung für KVNR | IG-TIFLOW-XBORDER-39 | erp-eu |
-| [A_27071](https://gemspec.gematik.de/search/index.html?A_27071) | E-Rezept-Fachdienst - Task schließen - EU - Prüfung Zugriffsberechtigung | IG-TIFLOW-XBORDER-40 | erp-eu |
-| [A_27072](https://gemspec.gematik.de/search/index.html?A_27072) | E-Rezept-Fachdienst - Task schließen - EU - Statusprüfung | IG-TIFLOW-XBORDER-41 | erp-eu |
-| [A_27074](https://gemspec.gematik.de/search/index.html?A_27074) | E-Rezept-Fachdienst - Task schließen - EU - Zeitstempel MedicationDispense | IG-TIFLOW-XBORDER-42 | erp-eu |
-| [A_27075](https://gemspec.gematik.de/search/index.html?A_27075) | E-Rezept-Fachdienst - Task schließen - EU - Status beenden | IG-TIFLOW-XBORDER-43 | erp-eu |
-| [A_27083](https://gemspec.gematik.de/search/index.html?A_27083) | E-Rezept-Fachdienst - Zugriffsberechtigung - periodische Bereinigung | IG-TIFLOW-XBORDER-62 | erp-eu |
-| [A_27084](https://gemspec.gematik.de/search/index.html?A_27084) | E-Rezept-Fachdienst - Zugriffsberechtigung löschen - Rollenprüfung | IG-TIFLOW-XBORDER-53 | erp-eu |
-| [A_27085](https://gemspec.gematik.de/search/index.html?A_27085) | E-Rezept-Fachdienst - Zugriffsberechtigung löschen - Löschen | IG-TIFLOW-XBORDER-54 | erp-eu |
-| [A_27086](https://gemspec.gematik.de/search/index.html?A_27086) | E-Rezept-Fachdienst - Zugriffsberechtigung lesen - Rollenprüfung | IG-TIFLOW-XBORDER-35 | erp-eu |
-| [A_27087](https://gemspec.gematik.de/search/index.html?A_27087) | E-Rezept-Fachdienst - Zugriffsberechtigung lesen - Response | IG-TIFLOW-XBORDER-36 | erp-eu |
-| [A_27088](https://gemspec.gematik.de/search/index.html?A_27088) | E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Rollenprüfung | IG-TIFLOW-XBORDER-55 | erp-eu |
-| [A_27089](https://gemspec.gematik.de/search/index.html?A_27089) | E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Einwillung für KVNR | IG-TIFLOW-XBORDER-56 | erp-eu |
-| [A_27090](https://gemspec.gematik.de/search/index.html?A_27090) | E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Ländercode | IG-TIFLOW-XBORDER-57 | erp-eu |
-| [A_27091](https://gemspec.gematik.de/search/index.html?A_27091) | E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Zugriffscode | IG-TIFLOW-XBORDER-58 | erp-eu |
-| [A_27092](https://gemspec.gematik.de/search/index.html?A_27092) | E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Löschen bestehender Zugriffsberechtigung | IG-TIFLOW-XBORDER-59 | erp-eu |
-| [A_27093](https://gemspec.gematik.de/search/index.html?A_27093) | E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Neue Zugriffsberechtigung speichern | IG-TIFLOW-XBORDER-60 | erp-eu |
-| [A_27094](https://gemspec.gematik.de/search/index.html?A_27094) | E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Response | IG-TIFLOW-XBORDER-61 | erp-eu |
-| [A_27095](https://gemspec.gematik.de/search/index.html?A_27095) | E-Rezept-Fachdienst - Zugriffsberechtigung - Liste zulässiger Länder | IG-TIFLOW-XBORDER-2 | erp-eu |
-| [A_27096](https://gemspec.gematik.de/search/index.html?A_27096) | E-Rezept-Fachdienst - Zugriffsberechtigung - Caching Liste zulässiger Länder | IG-TIFLOW-XBORDER-3 | erp-eu |
-| [A_27131](https://gemspec.gematik.de/search/index.html?A_27131) | E-Rezept-Fachdienst - Consent löschen - EUDISPCONS - Löschen Zugriffsberechtigung | IG-TIFLOW-CORE-195<br/>IG-TIFLOW-XBORDER-32 | core<br/>erp-eu |
-| [A_27143](https://gemspec.gematik.de/search/index.html?A_27143) | E-Rezept-Fachdienst - Consent schreiben - Zeitstempel setzen | IG-TIFLOW-CORE-187<br/>IG-TIFLOW-CORE-189 | core |
-| [A_27287](https://gemspec.gematik.de/search/index.html?A_27287) | E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Vergleich KVNR | IG-TIFLOW-CORE-79 | core |
-| [A_27301](https://gemspec.gematik.de/search/index.html?A_27301) | E-Rezept-Fachdienst - Prüfung und Entschlüsselung Prüfziffer Version 2 | IG-TIFLOW-CORE-92 | core |
-| [A_27346](https://gemspec.gematik.de/search/index.html?A_27346) | E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - URL hcv | IG-TIFLOW-CORE-85 | core |
-| [A_27347](https://gemspec.gematik.de/search/index.html?A_27347) | E-Rezept-Fachdienst - Rezepte lesen - Apotheke - VSDM - Vergleich hcv | IG-TIFLOW-CORE-80 | core |
-| [A_27444](https://gemspec.gematik.de/search/index.html?A_27444) | E-Rezept-Fachdienst – Rezepte lesen - Konfigurationsparameter RateLimit | IG-TIFLOW-CORE-75 | core |
-| [A_27445](https://gemspec.gematik.de/search/index.html?A_27445) | E-Rezept-Fachdienst - Rezepte lesen - Apotheke - Ratelimit pro Telematik-ID pro Tag | IG-TIFLOW-CORE-76 | core |
-| [A_27446](https://gemspec.gematik.de/search/index.html?A_27446) | E-Rezept-Fachdienst - Rezepte lesen - Apotheke - Ratelimit pro Telematik-ID prüfen | IG-TIFLOW-CORE-77 | core |
-| [A_27548](https://gemspec.gematik.de/search/index.html?A_27548) | E-Rezept-Fachdienst – Task markieren - alles Markieren verbieten | IG-TIFLOW-CORE-104 | core |
-| [A_27549](https://gemspec.gematik.de/search/index.html?A_27549) | E-Rezept-Fachdienst - Task markieren - Versicherter - Rollenprüfung Versicherter markiert Rezepte | IG-TIFLOW-CORE-105 | core |
-| [A_27550](https://gemspec.gematik.de/search/index.html?A_27550) | E-Rezept-Fachdienst -Task markieren -Versicherter - Prüfung KVNR | IG-TIFLOW-CORE-106 | core |
-| [A_27551](https://gemspec.gematik.de/search/index.html?A_27551) | E-Rezept-Fachdienst -Task markieren -Versicherter - FHIR-Validierung Parameters | IG-TIFLOW-XBORDER-21 | erp-eu |
-| [A_27552](https://gemspec.gematik.de/search/index.html?A_27552) | E-Rezept-Fachdienst -Task markieren -Versicherter - Änderung Markierung Task Ressource | IG-TIFLOW-XBORDER-23 | erp-eu |
-| [A_27566](https://gemspec.gematik.de/search/index.html?A_27566) | E-Rezept-Fachdienst - Abrechnungsinformation ändern (PATCH) - FHIR-Validierung Parameters | IG-TIFLOW-CHRG-77 | erp-chrg |
-| [A_27580](https://gemspec.gematik.de/search/index.html?A_27580) | E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Statuswechsel Task | IG-TIFLOW-XBORDER-16 | erp-eu |
-| [A_27581](https://gemspec.gematik.de/search/index.html?A_27581) | E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Secret | IG-TIFLOW-XBORDER-17 | erp-eu |
-| [A_27582](https://gemspec.gematik.de/search/index.html?A_27582) | E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Task Owner | IG-TIFLOW-XBORDER-18 | erp-eu |
-| [A_27587](https://gemspec.gematik.de/search/index.html?A_27587) | E-Rezept-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage der aktuellsten Verordnungsinformationen | IG-TIFLOW-XBORDER-9 | erp-eu |
-| [A_27588](https://gemspec.gematik.de/search/index.html?A_27588) | E-Rezept-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage aller einlösbaren Verordnungsinformationen | IG-TIFLOW-XBORDER-10 | erp-eu |
-| [A_27589](https://gemspec.gematik.de/search/index.html?A_27589) | E-Rezept-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage nach Liste Rezept-Ids | IG-TIFLOW-XBORDER-11 | erp-eu |
-| [A_27648](https://gemspec.gematik.de/search/index.html?A_27648) | E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Existenz von Ressource.id | IG-TIFLOW-CORE-244 | core |
-| [A_27649](https://gemspec.gematik.de/search/index.html?A_27649) | E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Auflösbarkeit von Referenzen | IG-TIFLOW-CORE-245 | core |
-| [A_27658](https://gemspec.gematik.de/search/index.html?A_27658) | E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Datumsangabe ohne Zeitzoneninformation | IG-TIFLOW-CORE-238 | core |
-| [A_27698](https://gemspec.gematik.de/search/index.html?A_27698) | E-Rezept-Fachdienst - FHIR-Ressource validieren - Eindeutige Angabe meta.profile | IG-TIFLOW-CORE-240 | core |
-| [A_27767-01](https://gemspec.gematik.de/search/index.html?A_27767-01) | E-Rezept-Fachdienst - Nachricht einstellen - Prüfung des Empfängers | IG-TIFLOW-CORE-292 | core |
-| [A_27768](https://gemspec.gematik.de/search/index.html?A_27768) | E-Rezept-Fachdienst - Task aktivieren - Bestimmung der Einlösbarkeit im EU-Ausland | IG-TIFLOW-ERP-73 | rx |
-| [A_27812](https://gemspec.gematik.de/search/index.html?A_27812) | E-Rezept-Fachdienst - Task aktivieren - Flowtype 166 - QES durch berechtigte Berufsgruppe | IG-TIFLOW-ERP-66 | rx |
-| [A_27813](https://gemspec.gematik.de/search/index.html?A_27813) | E-Rezept-Fachdienst - Task aktivieren - Flowtype 166 - Prüfung Arzneimittelverordnung | IG-TIFLOW-ERP-68 | rx |
-| [A_27814](https://gemspec.gematik.de/search/index.html?A_27814) | E-Rezept-Fachdienst - Task schließen - T-Rezept Daten an BfArM Webdienst bereitstellen | IG-TIFLOW-ERP-14 | rx |
-| [A_27817](https://gemspec.gematik.de/search/index.html?A_27817) | E-Rezept-Fachdienst - BfArM - Lokalisierung des BfArM Webdienstes | IG-TIFLOW-BFARM-6 | bfarm |
+| [A_19018-01](https://gemspec.gematik.de/search/index.html?A_19018-01) | TI-Flow-Fachdienst - Task erzeugen - Rollenprüfung | IG-TIFLOW-CORE-198 | core |
+| [A_19019-01](https://gemspec.gematik.de/search/index.html?A_19019-01) | TI-Flow-Fachdienst - Task erzeugen - Generierung Rezept-ID | IG-TIFLOW-CORE-202 | core |
+| [A_19020](https://gemspec.gematik.de/search/index.html?A_19020) | TI-Flow-Fachdienst - Schemavalidierung Rezept aktivieren | IG-TIFLOW-CORE-157 | core |
+| [A_19021-02](https://gemspec.gematik.de/search/index.html?A_19021-02) | TI-Flow-Fachdienst - Task erzeugen - Generierung AccessCode | IG-TIFLOW-CORE-204 | core |
+| [A_19022-01](https://gemspec.gematik.de/search/index.html?A_19022-01) | TI-Flow-Fachdienst - Task aktivieren - Rollenprüfung | IG-TIFLOW-CORE-155 | core |
+| [A_19024-03](https://gemspec.gematik.de/search/index.html?A_19024-03) | TI-Flow-Fachdienst - Task aktivieren - Prüfung AccessCode Rezept aktualisieren | IG-TIFLOW-CORE-156 | core |
+| [A_19025-03](https://gemspec.gematik.de/search/index.html?A_19025-03) | TI-Flow-Fachdienst - Task aktivieren - QES prüfen Rezept aktualisieren | IG-TIFLOW-CORE-159 | core |
+| [A_19026-01](https://gemspec.gematik.de/search/index.html?A_19026-01) | TI-Flow-Fachdienst - E-Rezept löschen - Rollenprüfung | IG-TIFLOW-DIGA-7<br/>IG-TIFLOW-ERP-38 | diga<br/>rx |
+| [A_19027-06](https://gemspec.gematik.de/search/index.html?A_19027-06) | TI-Flow-Fachdienst - E-Rezept löschen - Medizinische und personenbezogene Daten löschen | IG-TIFLOW-CORE-126 | core |
+| [A_19029-06](https://gemspec.gematik.de/search/index.html?A_19029-06) | TI-Flow-Fachdienst - Task aktivieren - Serversignatur Rezept aktivieren | IG-TIFLOW-CORE-167 | core |
+| [A_19030](https://gemspec.gematik.de/search/index.html?A_19030) | TI-Flow-Fachdienst - unzulässige Operationen Task | IG-TIFLOW-CORE-71 | core |
+| [A_19112](https://gemspec.gematik.de/search/index.html?A_19112) | TI-Flow-Fachdienst - Parametrierung Task für Workflow-Typ | IG-TIFLOW-CORE-200 | core |
+| [A_19113-02](https://gemspec.gematik.de/search/index.html?A_19113-02) | TI-Flow-Fachdienst - Task abrufen - Rollenprüfung | IG-TIFLOW-CORE-93 | core |
+| [A_19114](https://gemspec.gematik.de/search/index.html?A_19114) | TI-Flow-Fachdienst - Status draft | IG-TIFLOW-CORE-205 | core |
+| [A_19115-01](https://gemspec.gematik.de/search/index.html?A_19115-01) | TI-Flow-Fachdienst - Task abrufen - Filter Tasks auf KVNR des Versicherten | IG-TIFLOW-CORE-73 | core |
+| [A_19116-01](https://gemspec.gematik.de/search/index.html?A_19116-01) | TI-Flow-Fachdienst - Task abrufen - Prüfung AccessCode bei KVNR-Missmatch | IG-TIFLOW-CORE-94 | core |
+| [A_19120-03](https://gemspec.gematik.de/search/index.html?A_19120-03) | TI-Flow-Fachdienst - E-Rezept löschen - Verordnender - Prüfung AccessCode und Status | IG-TIFLOW-CORE-125 | core |
+| [A_19121](https://gemspec.gematik.de/search/index.html?A_19121) | TI-Flow-Fachdienst - Finaler Status cancelled | IG-TIFLOW-CORE-127 | core |
+| [A_19127-03](https://gemspec.gematik.de/search/index.html?A_19127-03) | TI-Flow-Fachdienst - Task aktivieren - Übernahme der KVNR des Patienten | IG-TIFLOW-CORE-164 | core |
+| [A_19128](https://gemspec.gematik.de/search/index.html?A_19128) | TI-Flow-Fachdienst - Status aktivieren | IG-TIFLOW-CORE-166 | core |
+| [A_19129-01](https://gemspec.gematik.de/search/index.html?A_19129-01) | TI-Flow-Fachdienst - Rückgabe Tasks im Bundle Versicherter | IG-TIFLOW-CORE-74 | core |
+| [A_19145-01](https://gemspec.gematik.de/search/index.html?A_19145-01) | TI-Flow-Fachdienst - E-Rezept löschen - Statusprüfung in-progress | IG-TIFLOW-ERP-39 | rx |
+| [A_19146](https://gemspec.gematik.de/search/index.html?A_19146) | TI-Flow-Fachdienst - Statusprüfung Nutzer (außerhalb Apotheke) löscht Rezept | IG-TIFLOW-ERP-40 | rx |
+| [A_19149-02](https://gemspec.gematik.de/search/index.html?A_19149-02) | TI-Flow-Fachdienst - Task akzeptieren - Prüfung Datensatz zwischenzeitlich gelöscht | IG-TIFLOW-CORE-217 | core |
+| [A_19166-02](https://gemspec.gematik.de/search/index.html?A_19166-02) | TI-Flow-Fachdienst - Task akzeptieren - Flowtype 160/166/169/200/209 - Rollenprüfung | IG-TIFLOW-ERP-94 | rx |
+| [A_19167-04](https://gemspec.gematik.de/search/index.html?A_19167-04) | TI-Flow-Fachdienst - Task akzeptieren - Prüfung AccessCode | IG-TIFLOW-CORE-218 | core |
+| [A_19168-01](https://gemspec.gematik.de/search/index.html?A_19168-01) | TI-Flow-Fachdienst - Task akzeptieren - Rezept bereits in Abgabe oder Bearbeitung | IG-TIFLOW-CORE-219 | core |
+| [A_19169-01](https://gemspec.gematik.de/search/index.html?A_19169-01) | TI-Flow-Fachdienst - Task akzeptieren - Generierung Secret, Statuswechsel in Abgabe und Rückgabewert | IG-TIFLOW-CORE-221 | core |
+| [A_19170-02](https://gemspec.gematik.de/search/index.html?A_19170-02) | TI-Flow-Fachdienst - Task zurückweisen - Rollenprüfung | IG-TIFLOW-DIGA-1<br/>IG-TIFLOW-ERP-4 | diga<br/>rx |
+| [A_19171-03](https://gemspec.gematik.de/search/index.html?A_19171-03) | TI-Flow-Fachdienst - Task zurückweisen - Prüfung Secret | IG-TIFLOW-CORE-33 | core |
+| [A_19172-01](https://gemspec.gematik.de/search/index.html?A_19172-01) | TI-Flow-Fachdienst - Task zurückweisen - Secret löschen und Status setzen | IG-TIFLOW-CORE-34 | core |
+| [A_19214](https://gemspec.gematik.de/search/index.html?A_19214) | TI-Flow-Fachdienst - Ergänzung Performer-Typ für Einlöseinstitutstyp | IG-TIFLOW-CORE-201 | core |
+| [A_19224](https://gemspec.gematik.de/search/index.html?A_19224) | TI-Flow-Fachdienst - Prüfung Secret, Apotheker  löscht Rezept | IG-TIFLOW-ERP-41 | rx |
+| [A_19225-02](https://gemspec.gematik.de/search/index.html?A_19225-02) | TI-Flow-Fachdienst - Task aktivieren - Flowtype 160/169/200/209 - QES durch berechtigte Berufsgruppe | IG-TIFLOW-ERP-65 | rx |
+| [A_19226-02](https://gemspec.gematik.de/search/index.html?A_19226-02) | TI-Flow-Fachdienst - Task abrufen - Rückgabe Task inkl. Bundle im Bundle Apotheker | IG-TIFLOW-CORE-102 | core |
+| [A_19230-01](https://gemspec.gematik.de/search/index.html?A_19230-01) | TI-Flow-Fachdienst - Task schließen - Rollenprüfung | IG-TIFLOW-DIGA-3<br/>IG-TIFLOW-ERP-8 | diga<br/>rx |
+| [A_19231-02](https://gemspec.gematik.de/search/index.html?A_19231-02) | TI-Flow-Fachdienst - Task schließen - Prüfung Secret | IG-TIFLOW-CORE-53 | core |
+| [A_19232](https://gemspec.gematik.de/search/index.html?A_19232) | TI-Flow-Fachdienst - Status beenden | IG-TIFLOW-CORE-59 | core |
+| [A_19233-06](https://gemspec.gematik.de/search/index.html?A_19233-06) | TI-Flow-Fachdienst - Task schliessen - Quittung erstellen | IG-TIFLOW-CORE-60 | core |
+| [A_19248-05](https://gemspec.gematik.de/search/index.html?A_19248-05) | TI-Flow-Fachdienst - Task schließen - Schemaprüfung MedicationDispense | IG-TIFLOW-CORE-54 | core |
+| [A_19252-03](https://gemspec.gematik.de/search/index.html?A_19252-03) | TI-Flow-Fachdienst - Löschfrist abgelaufener Rezepte | IG-TIFLOW-CORE-107 | core |
+| [A_19253-01](https://gemspec.gematik.de/search/index.html?A_19253-01) | TI-Flow-Fachdienst - Löschfrist veraltete Nachrichten | IG-TIFLOW-CORE-112 | core |
+| [A_19254-01](https://gemspec.gematik.de/search/index.html?A_19254-01) | TI-Flow-Fachdienst - Löschen referenzierter Bundles | IG-TIFLOW-CORE-109 | core |
+| [A_19255](https://gemspec.gematik.de/search/index.html?A_19255) | TI-Flow-Fachdienst Löschen veralteter MedicationDispense | IG-TIFLOW-CORE-110 | core |
+| [A_19256-01](https://gemspec.gematik.de/search/index.html?A_19256-01) | TI-Flow-Fachdienst - Löschfrist veraltete Protokolleinträge | IG-TIFLOW-CORE-113 | core |
+| [A_19257-01](https://gemspec.gematik.de/search/index.html?A_19257-01) | TI-Flow-Fachdienst - Task erzeugen - Schemavalidierung Rezept anlegen | IG-TIFLOW-CORE-199 | core |
+| [A_19284-13](https://gemspec.gematik.de/search/index.html?A_19284-13) | TI-Flow-Fachdienst - Versichertenprotokoll zu Operationen | IG-TIFLOW-CORE-25<br/>IG-TIFLOW-CORE-26<br/>IG-TIFLOW-CORE-27 | core |
+| [A_19302](https://gemspec.gematik.de/search/index.html?A_19302) | TI-Flow-Fachdienst -Protokolleintrag Versichertenprotokoll leicht verständlich | IG-TIFLOW-CORE-28 | core |
+| [A_19395](https://gemspec.gematik.de/search/index.html?A_19395) | TI-Flow-Fachdienst - Rollenprüfung Versicherter liest AuditEvent | IG-TIFLOW-CORE-120 | core |
+| [A_19396](https://gemspec.gematik.de/search/index.html?A_19396) | TI-Flow-Fachdienst - Filter AuditEvent auf KVNR des Versicherten | IG-TIFLOW-CORE-121 | core |
+| [A_19397](https://gemspec.gematik.de/search/index.html?A_19397) | TI-Flow-Fachdienst - Rückgabe AuditEvents im Bundle | IG-TIFLOW-CORE-122 | core |
+| [A_19400](https://gemspec.gematik.de/search/index.html?A_19400) | TI-Flow-Fachdienst - unzulässige Operationen MedicationDispense | IG-TIFLOW-CORE-114 | core |
+| [A_19401](https://gemspec.gematik.de/search/index.html?A_19401) | TI-Flow-Fachdienst - unzulässige Operationen Communication | IG-TIFLOW-CORE-278 | core |
+| [A_19402](https://gemspec.gematik.de/search/index.html?A_19402) | TI-Flow-Fachdienst - unzulässige Operationen AuditEvent | IG-TIFLOW-CORE-119 | core |
+| [A_19405-02](https://gemspec.gematik.de/search/index.html?A_19405-02) | TI-Flow-Fachdienst - MedicationDispense abrufen - Rollenprüfung | IG-TIFLOW-CORE-115 | core |
+| [A_19406-01](https://gemspec.gematik.de/search/index.html?A_19406-01) | TI-Flow-Fachdienst - MedicationDispense abrufen - Filter MedicationDispense auf KVNR des Versicherten | IG-TIFLOW-CORE-116 | core |
+| [A_19446-02](https://gemspec.gematik.de/search/index.html?A_19446-02) | TI-Flow-Fachdienst - Nachrichten - Rollenprüfung | IG-TIFLOW-CORE-279 | core |
+| [A_19447-06](https://gemspec.gematik.de/search/index.html?A_19447-06) | TI-Flow-Fachdienst - Nachricht einstellen - Schemaprüfung | IG-TIFLOW-CORE-282 | core |
+| [A_19448-04](https://gemspec.gematik.de/search/index.html?A_19448-04) | TI-Flow-Fachdienst - Nachricht einstellen - Absender und Sendedatum | IG-TIFLOW-CORE-285 | core |
+| [A_19450-01](https://gemspec.gematik.de/search/index.html?A_19450-01) | TI-Flow-Fachdienst - Nachricht einstellen Schadcodeprüfung | IG-TIFLOW-CORE-290 | core |
+| [A_19514-03](https://gemspec.gematik.de/search/index.html?A_19514-03) | TI-Flow-Fachdienst - Http-Status-Codes | IG-TIFLOW-CORE-302 | core |
+| [A_19520-02](https://gemspec.gematik.de/search/index.html?A_19520-02) | TI-Flow-Fachdienst - Nachrichten abrufen - für Empfänger filtern | IG-TIFLOW-CORE-280 | core |
+| [A_19521](https://gemspec.gematik.de/search/index.html?A_19521) | TI-Flow-Fachdienst - Nachrichten als abgerufen markieren | IG-TIFLOW-CORE-281 | core |
+| [A_19536](https://gemspec.gematik.de/search/index.html?A_19536) | TI-Flow-Fachdienst - RESTful API | IG-TIFLOW-CORE-313 | core |
+| [A_19537](https://gemspec.gematik.de/search/index.html?A_19537) | TI-Flow-Fachdienst - RESTful API MimeType fhir+xml | IG-TIFLOW-CORE-314 | core |
+| [A_19538](https://gemspec.gematik.de/search/index.html?A_19538) | TI-Flow-Fachdienst - RESTful API MimeType fhir+json | IG-TIFLOW-CORE-315 | core |
+| [A_19539](https://gemspec.gematik.de/search/index.html?A_19539) | TI-Flow-Fachdienst - RESTful API MimeType Aufrufparameter | IG-TIFLOW-CORE-316 | core |
+| [A_19999](https://gemspec.gematik.de/search/index.html?A_19999) | TI-Flow-Fachdienst - Ergänzung PerformerTyp für Einlöseinstitutstyp | IG-TIFLOW-DIGA-20<br/>IG-TIFLOW-ERP-75<br/>IG-TIFLOW-ERP-76<br/>IG-TIFLOW-ERP-77<br/>IG-TIFLOW-ERP-78<br/>IG-TIFLOW-ERP-79 | diga<br/>rx |
+| [A_20159-04](https://gemspec.gematik.de/search/index.html?A_20159-04) | TI-Flow-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA | IG-TIFLOW-CORE-158 | core |
+| [A_20171](https://gemspec.gematik.de/search/index.html?A_20171) | TI-Flow-Fachdienst - RESTful API CapabilityStatement | IG-TIFLOW-CORE-317 | core |
+| [A_20229-01](https://gemspec.gematik.de/search/index.html?A_20229-01) | TI-Flow-Fachdienst - Nachricht einstellen - Nachrichtenzähler bei Versicherter-zu-Versichertem-Kommunikation | IG-TIFLOW-CORE-286 | core |
+| [A_20230-01](https://gemspec.gematik.de/search/index.html?A_20230-01) | TI-Flow-Fachdienst - Nachricht einstellen - Einlösbare E-Rezepte für Versicherter-zu-Versichertem-Kommunikation | IG-TIFLOW-CORE-288 | core |
+| [A_20231-01](https://gemspec.gematik.de/search/index.html?A_20231-01) | TI-Flow-Fachdienst - Nachricht einstellen - Ausschluss Nachrichten an Empfänger gleich Absender | IG-TIFLOW-CORE-289 | core |
+| [A_20258](https://gemspec.gematik.de/search/index.html?A_20258) | TI-Flow-Fachdienst - Communication löschen auf Basis Absender-ID | IG-TIFLOW-CORE-299 | core |
+| [A_20259](https://gemspec.gematik.de/search/index.html?A_20259) | TI-Flow-Fachdienst - Communication löschen mit Warnung wenn vom Empfänger bereits abgerufen | IG-TIFLOW-CORE-300 | core |
+| [A_20511](https://gemspec.gematik.de/search/index.html?A_20511) | TI-Flow-Fachdienst - Nachrichtenzähler zweckgebunden | IG-TIFLOW-CORE-287 | core |
+| [A_20546-03](https://gemspec.gematik.de/search/index.html?A_20546-03) | TI-Flow-Fachdienst - E-Rezept löschen - Prüfung KVNR, Versicherter löscht Rezept | IG-TIFLOW-CORE-124 | core |
+| [A_20702-03](https://gemspec.gematik.de/search/index.html?A_20702-03) | TI-Flow-Fachdienst - Task abrufen - Keine Einlöseinformationen in unbekannten Clients | IG-TIFLOW-CORE-97 | core |
+| [A_20744](https://gemspec.gematik.de/search/index.html?A_20744) | TI-Flow-Fachdienst - Selbstauskunft Device-Informationen | IG-TIFLOW-CORE-336 | core |
+| [A_20885-04](https://gemspec.gematik.de/search/index.html?A_20885-04) | TI-Flow-Fachdienst - Nachricht einstellen - Versicherte - Prüfung Versichertenbezug und Berechtigung | IG-TIFLOW-CORE-291 | core |
+| [A_21360-01](https://gemspec.gematik.de/search/index.html?A_21360-01) | TI-Flow-Fachdienst - Task abrufen - Flowtype 169 / 209 - keine Einlöseinformationen | IG-TIFLOW-ERP-24<br/>IG-TIFLOW-ERP-25 | rx |
+| [A_21370](https://gemspec.gematik.de/search/index.html?A_21370) | TI-Flow-Fachdienst - Prüfung Rezept-ID und Präfix gegen Flowtype | IG-TIFLOW-CORE-161 | core |
+| [A_21371-03](https://gemspec.gematik.de/search/index.html?A_21371-03) | TI-Flow-Fachdienst - Nachricht einstellen - Prüfung Existenz Task | IG-TIFLOW-CORE-293 | core |
+| [A_21375-02](https://gemspec.gematik.de/search/index.html?A_21375-02) | TI-Flow-Fachdienst - Task abrufen - Rückgabe Task inkl. Bundles Versicherter | IG-TIFLOW-CORE-95 | core |
+| [A_21532-02](https://gemspec.gematik.de/search/index.html?A_21532-02) | TI-Flow-Fachdienst - Task abrufen - Kein Secret für Versicherte | IG-TIFLOW-CORE-96 | core |
+| [A_21558-02](https://gemspec.gematik.de/search/index.html?A_21558-02) | TI-Flow-Fachdienst - Task abrufen - Rollenprüfung Versicherter oder Apotheke liest Rezepte | IG-TIFLOW-CORE-72 | core |
+| [A_22069-01](https://gemspec.gematik.de/search/index.html?A_22069-01) | TI-Flow-Fachdienst - Task schließen - Speicherung mehrerer MedicationDispenses | IG-TIFLOW-ERP-12 | rx |
+| [A_22070-03](https://gemspec.gematik.de/search/index.html?A_22070-03) | TI-Flow-Fachdienst - MedicationDispense abrufen - Rückgabe mehrerer MedicationDispenses | IG-TIFLOW-CORE-118 | core |
+| [A_22102-01](https://gemspec.gematik.de/search/index.html?A_22102-01) | TI-Flow-Fachdienst - E-Rezept löschen - Flowtype 169 / 209 - Versicherter - Statusprüfung | IG-TIFLOW-ERP-42 | rx |
+| [A_22103](https://gemspec.gematik.de/search/index.html?A_22103) | TI-Flow-Fachdienst - Fehlerdetails in OperationOutcome | IG-TIFLOW-CORE-303 | core |
+| [A_22109](https://gemspec.gematik.de/search/index.html?A_22109) | TI-Flow-Fachdienst – Löschfrist ChargeItem | IG-TIFLOW-CORE-111 | core |
+| [A_22110-01](https://gemspec.gematik.de/search/index.html?A_22110-01) | TI-Flow-Fachdienst – Task akzeptieren – Coverage PKV - Einwilligung Abrechnungsinformation ermitteln | IG-TIFLOW-ERP-96 | rx |
+| [A_22111](https://gemspec.gematik.de/search/index.html?A_22111) | TI-Flow-Fachdienst – ChargeItem - unzulässige Operationen | IG-TIFLOW-CHRG-44 | erp-chrg |
+| [A_22112](https://gemspec.gematik.de/search/index.html?A_22112) | TI-Flow-Fachdienst – Abrechnungsinformation löschen - alles Löschen verbieten | IG-TIFLOW-CHRG-90 | erp-chrg |
+| [A_22113](https://gemspec.gematik.de/search/index.html?A_22113) | TI-Flow-Fachdienst – Abrechnungsinformation löschen - Rollenprüfung | IG-TIFLOW-CHRG-91 | erp-chrg |
+| [A_22114](https://gemspec.gematik.de/search/index.html?A_22114) | TI-Flow-Fachdienst – Abrechnungsinformation löschen – Prüfung KVNR | IG-TIFLOW-CHRG-92 | erp-chrg |
+| [A_22117-01](https://gemspec.gematik.de/search/index.html?A_22117-01) | TI-Flow-Fachdienst - Abrechnungsinformation löschen - zu löschende Ressourcen | IG-TIFLOW-CHRG-93 | erp-chrg |
+| [A_22118](https://gemspec.gematik.de/search/index.html?A_22118) | TI-Flow-Fachdienst – Abrechnungsinformationen abrufen - Rollenprüfung Versicherter | IG-TIFLOW-CHRG-46 | erp-chrg |
+| [A_22119](https://gemspec.gematik.de/search/index.html?A_22119) | TI-Flow-Fachdienst – Abrechnungsinformationen abrufen – Versicherter – Filter KVNR | IG-TIFLOW-CHRG-47 | erp-chrg |
+| [A_22122](https://gemspec.gematik.de/search/index.html?A_22122) | TI-Flow-Fachdienst – Abrechnungsinformationen abrufen– Response | IG-TIFLOW-CHRG-49 | erp-chrg |
+| [A_22124](https://gemspec.gematik.de/search/index.html?A_22124) | TI-Flow-Fachdienst – Abrechnungsinformation abrufen - Rollenprüfung Versicherter oder Apotheker | IG-TIFLOW-CHRG-50 | erp-chrg |
+| [A_22125](https://gemspec.gematik.de/search/index.html?A_22125) | TI-Flow-Fachdienst – Abrechnungsinformation abrufen – Versicherter – Prüfung KVNR | IG-TIFLOW-CHRG-51 | erp-chrg |
+| [A_22126](https://gemspec.gematik.de/search/index.html?A_22126) | TI-Flow-Fachdienst – Abrechnungsinformation abrufen – Apotheke – Prüfung Telematik-ID | IG-TIFLOW-CHRG-52 | erp-chrg |
+| [A_22127-01](https://gemspec.gematik.de/search/index.html?A_22127-01) | TI-Flow-Fachdienst – Abrechnungsinformation abrufen – Versicherte – Signieren | IG-TIFLOW-CHRG-54 | erp-chrg |
+| [A_22128-01](https://gemspec.gematik.de/search/index.html?A_22128-01) | TI-Flow-Fachdienst – Abrechnungsinformation abrufen – Apotheke – kein AccessCode und Quittung | IG-TIFLOW-CHRG-55 | erp-chrg |
+| [A_22129](https://gemspec.gematik.de/search/index.html?A_22129) | TI-Flow-Fachdienst – Abrechnungsinformation bereitstellen - Rollenprüfung | IG-TIFLOW-CHRG-56 | erp-chrg |
+| [A_22130](https://gemspec.gematik.de/search/index.html?A_22130) | TI-Flow-Fachdienst – Abrechnungsinformation bereitstellen - Prüfung Parameter Task | IG-TIFLOW-CHRG-57 | erp-chrg |
+| [A_22131](https://gemspec.gematik.de/search/index.html?A_22131) | TI-Flow-Fachdienst – Abrechnungsinformation bereitstellen - Prüfung Existenz Task | IG-TIFLOW-CHRG-58 | erp-chrg |
+| [A_22132-02](https://gemspec.gematik.de/search/index.html?A_22132-02) | TI-Flow-Fachdienst – Abrechnungsinformation bereitstellen – Prüfung Secret Task | IG-TIFLOW-CHRG-59 | erp-chrg |
+| [A_22133](https://gemspec.gematik.de/search/index.html?A_22133) | TI-Flow-Fachdienst – Abrechnungsinformation bereitstellen – Prüfung Einwilligung | IG-TIFLOW-CHRG-61 | erp-chrg |
+| [A_22134](https://gemspec.gematik.de/search/index.html?A_22134) | TI-Flow-Fachdienst – Abrechnungsinformation bereitstellen – Verordnungsdatensatz übernehmen | IG-TIFLOW-CHRG-68 | erp-chrg |
+| [A_22135-01](https://gemspec.gematik.de/search/index.html?A_22135-01) | TI-Flow-Fachdienst – Abrechnungsinformation bereitstellen – Quittung übernehmen | IG-TIFLOW-CHRG-69 | erp-chrg |
+| [A_22136-01](https://gemspec.gematik.de/search/index.html?A_22136-01) | TI-Flow-Fachdienst – Abrechnungsinformation bereitstellen – FHIR-Validierung ChargeItem | IG-TIFLOW-CHRG-63 | erp-chrg |
+| [A_22137](https://gemspec.gematik.de/search/index.html?A_22137) | TI-Flow-Fachdienst – Abrechnungsinformation bereitstellen – PKV-Abgabedatensatz übernehmen | IG-TIFLOW-CHRG-64 | erp-chrg |
+| [A_22138](https://gemspec.gematik.de/search/index.html?A_22138) | TI-Flow-Fachdienst – Abrechnungsinformation bereitstellen – FHIR-Validierung PKV-Abgabedatensatz | IG-TIFLOW-CHRG-65 | erp-chrg |
+| [A_22139](https://gemspec.gematik.de/search/index.html?A_22139) | TI-Flow-Fachdienst – Abrechnungsinformation bereitstellen – Signaturprüfung PKV-Abgabedatensatz | IG-TIFLOW-CHRG-66 | erp-chrg |
+| [A_22140-01](https://gemspec.gematik.de/search/index.html?A_22140-01) | TI-Flow-Fachdienst – Abrechnungsinformation bereitstellen – Prüfung Signaturzertifikat PKV-Abgabedatensatz | IG-TIFLOW-CHRG-67 | erp-chrg |
+| [A_22141](https://gemspec.gematik.de/search/index.html?A_22141) | TI-Flow-Fachdienst – Signaturzertifikat SMC-B prüfen | IG-TIFLOW-CHRG-45 | erp-chrg |
+| [A_22143](https://gemspec.gematik.de/search/index.html?A_22143) | TI-Flow-Fachdienst – Abrechnungsinformation bereitstellen – ChargeItem befüllen | IG-TIFLOW-CHRG-71 | erp-chrg |
+| [A_22144](https://gemspec.gematik.de/search/index.html?A_22144) | TI-Flow-Fachdienst – Abrechnungsinformation ändern – Rollenprüfung | IG-TIFLOW-CHRG-78 | erp-chrg |
+| [A_22146](https://gemspec.gematik.de/search/index.html?A_22146) | TI-Flow-Fachdienst – Abrechnungsinformation ändern – Apotheke - Prüfung Telematik-ID | IG-TIFLOW-CHRG-80 | erp-chrg |
+| [A_22148](https://gemspec.gematik.de/search/index.html?A_22148) | TI-Flow-Fachdienst – Abrechnungsinformation ändern – Apotheke – PKV-Abgabedatensatz übernehmen | IG-TIFLOW-CHRG-82 | erp-chrg |
+| [A_22149](https://gemspec.gematik.de/search/index.html?A_22149) | TI-Flow-Fachdienst – Abrechnungsinformation ändern – Apotheke – FHIR-Validierung PKV-Abgabedatensatz | IG-TIFLOW-CHRG-83 | erp-chrg |
+| [A_22150](https://gemspec.gematik.de/search/index.html?A_22150) | TI-Flow-Fachdienst – Abrechnungsinformation ändern - Apotheke – Signaturprüfung PKV-Abgabedatensatz | IG-TIFLOW-CHRG-84 | erp-chrg |
+| [A_22151-01](https://gemspec.gematik.de/search/index.html?A_22151-01) | TI-Flow-Fachdienst – Abrechnungsinformation ändern – Apotheke – Prüfung Signaturzertifikat PKV-Abgabedatensatz | IG-TIFLOW-CHRG-85 | erp-chrg |
+| [A_22152](https://gemspec.gematik.de/search/index.html?A_22152) | TI-Flow-Fachdienst - Abrechnungsinformation ändern – FHIR-Validierung ChargeItem | IG-TIFLOW-CHRG-86 | erp-chrg |
+| [A_22153](https://gemspec.gematik.de/search/index.html?A_22153) | TI-Flow-Fachdienst - unzulässige Operationen Consent | IG-TIFLOW-CORE-182 | core |
+| [A_22154](https://gemspec.gematik.de/search/index.html?A_22154) | TI-Flow-Fachdienst – Consent löschen - alles Löschen verbieten | IG-TIFLOW-CORE-192 | core |
+| [A_22155](https://gemspec.gematik.de/search/index.html?A_22155) | TI-Flow-Fachdienst - Consent löschen - Rollenprüfung Versicherter | IG-TIFLOW-CORE-193 | core |
+| [A_22157](https://gemspec.gematik.de/search/index.html?A_22157) | TI-Flow-Fachdienst - Consent löschen - Löschen der bestehenden Abrechnungsinformationen | IG-TIFLOW-CHRG-43 | erp-chrg |
+| [A_22158](https://gemspec.gematik.de/search/index.html?A_22158) | TI-Flow-Fachdienst - Consent löschen - Löschen der Consent | IG-TIFLOW-CORE-195 | core |
+| [A_22159](https://gemspec.gematik.de/search/index.html?A_22159) | TI-Flow-Fachdienst - Consent lesen - Rollenprüfung Versicherter | IG-TIFLOW-CORE-190 | core |
+| [A_22160](https://gemspec.gematik.de/search/index.html?A_22160) | TI-Flow-Fachdienst - Consent lesen - Filter Consent auf KVNR des Versicherten | IG-TIFLOW-CORE-191 | core |
+| [A_22161](https://gemspec.gematik.de/search/index.html?A_22161) | TI-Flow-Fachdienst - Consent schreiben - Rollenprüfung Versicherter | IG-TIFLOW-CORE-183 | core |
+| [A_22162-01](https://gemspec.gematik.de/search/index.html?A_22162-01) | TI-Flow-Fachdienst - Consent schreiben – nur eine Einwilligung pro KVNR und Einwilligungstyp | IG-TIFLOW-CORE-186 | core |
+| [A_22215](https://gemspec.gematik.de/search/index.html?A_22215) | TI-Flow-Fachdienst – Abrechnungsinformation ändern – Prüfung Einwilligung | IG-TIFLOW-CHRG-79 | erp-chrg |
+| [A_22217](https://gemspec.gematik.de/search/index.html?A_22217) | TI-Flow-Fachdienst - Protokollierung - keine Angabe zu organizationName | IG-TIFLOW-CORE-29 | core |
+| [A_22231-01](https://gemspec.gematik.de/search/index.html?A_22231-01) | TI-Flow-Fachdienst - Task aktivieren - Ausschluss Betäubungsmittel | IG-TIFLOW-ERP-72 | rx |
+| [A_22289](https://gemspec.gematik.de/search/index.html?A_22289) | TI-Flow-Fachdienst - Consent schreiben - Prüfung KVNR | IG-TIFLOW-CORE-184 | core |
+| [A_22347-01](https://gemspec.gematik.de/search/index.html?A_22347-01) | TI-Flow-Fachdienst – Task aktivieren – Flowtype 200/209 - Prüfung Coverage Type | IG-TIFLOW-ERP-71 | rx |
+| [A_22350](https://gemspec.gematik.de/search/index.html?A_22350) | TI-Flow-Fachdienst - Consent schreiben – Persistieren | IG-TIFLOW-CORE-188 | core |
+| [A_22351](https://gemspec.gematik.de/search/index.html?A_22351) | TI-Flow-Fachdienst - Consent schreiben - FHIR-Validierung | IG-TIFLOW-CORE-185 | core |
+| [A_22362-01](https://gemspec.gematik.de/search/index.html?A_22362-01) | TI-Flow-Fachdienst – Subscription registrieren – Rollenprüfung | IG-TIFLOW-CORE-307 | core |
+| [A_22363](https://gemspec.gematik.de/search/index.html?A_22363) | TI-Flow-Fachdienst – Subscription registrieren – Prüfung Telematik-ID | IG-TIFLOW-CORE-312 | core |
+| [A_22364](https://gemspec.gematik.de/search/index.html?A_22364) | TI-Flow-Fachdienst – Subscription registrieren – Response | IG-TIFLOW-CORE-308 | core |
+| [A_22365](https://gemspec.gematik.de/search/index.html?A_22365) | TI-Flow-Fachdienst – Subscription registrieren – Pseudonym der Telematik-ID | IG-TIFLOW-CORE-309 | core |
+| [A_22366](https://gemspec.gematik.de/search/index.html?A_22366) | TI-Flow-Fachdienst – Subscription registrieren – Barrier-Token | IG-TIFLOW-CORE-311 | core |
+| [A_22367-03](https://gemspec.gematik.de/search/index.html?A_22367-03) | TI-Flow-Fachdienst - Nachricht einstellen - Notification Apotheke | IG-TIFLOW-CORE-297 | core |
+| [A_22368](https://gemspec.gematik.de/search/index.html?A_22368) | TI-Flow-Fachdienst - Subscription Service - Webschnittstelle | IG-TIFLOW-CORE-145 | core |
+| [A_22369](https://gemspec.gematik.de/search/index.html?A_22369) | TI-Flow-Fachdienst - Subscription Service - Prüfung Bearer-Token | IG-TIFLOW-CORE-146 | core |
+| [A_22370](https://gemspec.gematik.de/search/index.html?A_22370) | TI-Flow-Fachdienst - Subscription Service - Upgrade | IG-TIFLOW-CORE-147 | core |
+| [A_22371](https://gemspec.gematik.de/search/index.html?A_22371) | TI-Flow-Fachdienst - Subscription Service - abgelaufene Verbindungen schließen | IG-TIFLOW-CORE-148 | core |
+| [A_22378](https://gemspec.gematik.de/search/index.html?A_22378) | TI-Flow-Fachdienst - Subscription Service - Verbot Profilbildung | IG-TIFLOW-CORE-149 | core |
+| [A_22383-01](https://gemspec.gematik.de/search/index.html?A_22383-01) | TI-Flow-Fachdienst – Generierungsschlüssel – Pseudonym der Telematik-ID | IG-TIFLOW-CORE-310 | core |
+| [A_22487](https://gemspec.gematik.de/search/index.html?A_22487) | TI-Flow-Fachdienst - Task aktivieren - Prüfregel Ausstellungsdatum | IG-TIFLOW-CORE-163 | core |
+| [A_22611-02](https://gemspec.gematik.de/search/index.html?A_22611-02) | TI-Flow-Fachdienst – Abrechnungsinformation abrufen – Apotheke – Prüfung AccessCode | IG-TIFLOW-CHRG-53 | erp-chrg |
+| [A_22614-02](https://gemspec.gematik.de/search/index.html?A_22614-02) | TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Generierung AccessCode | IG-TIFLOW-CHRG-70 | erp-chrg |
+| [A_22615-02](https://gemspec.gematik.de/search/index.html?A_22615-02) | TI-Flow-Fachdienst - Abrechnungsinformation ändern - Apotheke - Generierung AccessCode | IG-TIFLOW-CHRG-87 | erp-chrg |
+| [A_22616-03](https://gemspec.gematik.de/search/index.html?A_22616-03) | TI-Flow-Fachdienst – Abrechnungsinformation ändern – Apotheke – Prüfung AccessCode | IG-TIFLOW-CHRG-81 | erp-chrg |
+| [A_22627-01](https://gemspec.gematik.de/search/index.html?A_22627-01) | TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - zulässige Flowtype | IG-TIFLOW-ERP-81 | rx |
+| [A_22628](https://gemspec.gematik.de/search/index.html?A_22628) | TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator-Denominator kleiner 5 | IG-TIFLOW-ERP-82 | rx |
+| [A_22629](https://gemspec.gematik.de/search/index.html?A_22629) | TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Denominator größer  1 | IG-TIFLOW-ERP-84 | rx |
+| [A_22630](https://gemspec.gematik.de/search/index.html?A_22630) | TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator kleiner / gleich Denominator | IG-TIFLOW-ERP-85 | rx |
+| [A_22631](https://gemspec.gematik.de/search/index.html?A_22631) | TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Unzulässige Angaben | IG-TIFLOW-ERP-86 | rx |
+| [A_22632](https://gemspec.gematik.de/search/index.html?A_22632) | TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - kein Entlassrezept | IG-TIFLOW-ERP-87 | rx |
+| [A_22633](https://gemspec.gematik.de/search/index.html?A_22633) | TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - keine Ersatzverordnung | IG-TIFLOW-ERP-88 | rx |
+| [A_22634](https://gemspec.gematik.de/search/index.html?A_22634) | TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Beginn Einlösefrist-Pflicht | IG-TIFLOW-ERP-89 | rx |
+| [A_22635-02](https://gemspec.gematik.de/search/index.html?A_22635-02) | TI-Flow-Fachdienst - Task akzeptieren - Mehrfachverordnung - Beginn Einlösefrist prüfen | IG-TIFLOW-ERP-95 | rx |
+| [A_22704](https://gemspec.gematik.de/search/index.html?A_22704) | TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator größer 0 | IG-TIFLOW-ERP-83 | rx |
+| [A_22731-01](https://gemspec.gematik.de/search/index.html?A_22731-01) | TI-Flow-Fachdienst – Abrechnungsinformation bereitstellen – Prüfung Coverage PKV | IG-TIFLOW-CHRG-60 | erp-chrg |
+| [A_22734-01](https://gemspec.gematik.de/search/index.html?A_22734-01) | TI-Flow-Fachdienst - Nachricht einstellen - Prüfung Existenz ChargeItem | IG-TIFLOW-CHRG-96 | erp-chrg |
+| [A_22874-02](https://gemspec.gematik.de/search/index.html?A_22874-02) | TI-Flow-Fachdienst - Consent löschen - Prüfung category | IG-TIFLOW-CORE-194 | core |
+| [A_22875](https://gemspec.gematik.de/search/index.html?A_22875) | TI-Flow-Fachdienst – Abrechnungsinformation ändern (PATCH) – Rollenprüfung | IG-TIFLOW-CHRG-75 | erp-chrg |
+| [A_22877](https://gemspec.gematik.de/search/index.html?A_22877) | TI-Flow-Fachdienst – Abrechnungsinformation ändern (PATCH) – Versicherter - Prüfung KVNR | IG-TIFLOW-CHRG-76 | erp-chrg |
+| [A_22879](https://gemspec.gematik.de/search/index.html?A_22879) | TI-Flow-Fachdienst – Abrechnungsinformation ändern (PATCH) - alles Ändern verbieten | IG-TIFLOW-CHRG-74 | erp-chrg |
+| [A_22919](https://gemspec.gematik.de/search/index.html?A_22919) | TI-Flow-Fachdienst - Task schließen - OCSP-Response nicht älter als 24 h | IG-TIFLOW-CORE-61 | core |
+| [A_22925](https://gemspec.gematik.de/search/index.html?A_22925) | TI-Flow-Fachdienst - Task aktivieren - Längenprüfung PZN | IG-TIFLOW-CORE-177 | core |
+| [A_22927-03](https://gemspec.gematik.de/search/index.html?A_22927-03) | TI-Flow-Fachdienst - FHIR-Ressource validieren - Ausschluss unspezifizierter Extensions | IG-TIFLOW-CORE-249 | core |
+| [A_23164](https://gemspec.gematik.de/search/index.html?A_23164) | TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Endedatum nicht vor Startdatum | IG-TIFLOW-ERP-91 | rx |
+| [A_23172](https://gemspec.gematik.de/search/index.html?A_23172) | TI-Flow-Fachdienst - Task aktivieren - Mimetype Signatur | IG-TIFLOW-CORE-160 | core |
+| [A_23227](https://gemspec.gematik.de/search/index.html?A_23227) | TI-Flow-Fachdienst - Task erzeugen - Task-ID=Rezept-ID | IG-TIFLOW-CORE-203 | core |
+| [A_23443-01](https://gemspec.gematik.de/search/index.html?A_23443-01) | TI-Flow-Fachdienst – Task aktivieren – Flowtype 160/162/169 - Prüfung Coverage Type | IG-TIFLOW-DIGA-18<br/>IG-TIFLOW-ERP-70 | diga<br/>rx |
+| [A_23450-01](https://gemspec.gematik.de/search/index.html?A_23450-01) | TI-Flow-Fachdienst - Rezepte lesen - Apotheke - VSDM - Prüfung Prüfungsnachweis | IG-TIFLOW-CORE-78 | core |
+| [A_23451-01](https://gemspec.gematik.de/search/index.html?A_23451-01) | TI-Flow-Fachdienst - Rezepte lesen - Apotheke - VSDM - Zeitraum Akzeptanz Prüfungsnachweis | IG-TIFLOW-CORE-81 | core |
+| [A_23452-04](https://gemspec.gematik.de/search/index.html?A_23452-04) | TI-Flow-Fachdienst - Rezepte lesen - Apotheke - VSDM - Filter Status, KVNR und Workflowtype | IG-TIFLOW-CORE-82 | core |
+| [A_23454](https://gemspec.gematik.de/search/index.html?A_23454) | TI-Flow-Fachdienst - Prüfung Prüfziffer | IG-TIFLOW-CORE-90 | core |
+| [A_23456-01](https://gemspec.gematik.de/search/index.html?A_23456-01) | TI-Flow-Fachdienst - Prüfung Prüfziffer - Berechnung HMAC der Prüfziffer | IG-TIFLOW-CORE-91 | core |
+| [A_23537](https://gemspec.gematik.de/search/index.html?A_23537) | TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Startdatum nicht vor Ausstellungsdatum | IG-TIFLOW-ERP-90 | rx |
+| [A_23539-01](https://gemspec.gematik.de/search/index.html?A_23539-01) | TI-Flow-Fachdienst - Task akzeptieren - Ende Einlösefrist prüfen | IG-TIFLOW-CORE-220 | core |
+| [A_23624](https://gemspec.gematik.de/search/index.html?A_23624) | TI-Flow-Fachdienst – Abrechnungsinformation ändern – Apotheke – kein AccessCode und Quittung | IG-TIFLOW-CHRG-88 | erp-chrg |
+| [A_23704](https://gemspec.gematik.de/search/index.html?A_23704) | TI-Flow-Fachdienst – Abrechnungsinformation bereitstellen – kein AccessCode und Quittung | IG-TIFLOW-CHRG-72 | erp-chrg |
+| [A_23878-02](https://gemspec.gematik.de/search/index.html?A_23878-02) | TI-Flow-Fachdienst - Nachricht einstellen - Validierung des Payload-Inhalt von GEM_ERP_PR_Communication_DispReq | IG-TIFLOW-CORE-283 | core |
+| [A_23879-01](https://gemspec.gematik.de/search/index.html?A_23879-01) | TI-Flow-Fachdienst - Nachricht einstellen - Validierung des Payload-Inhalt von GEM_ERP_PR_Communication_Reply | IG-TIFLOW-CORE-284 | core |
+| [A_23888](https://gemspec.gematik.de/search/index.html?A_23888) | TI-Flow-Fachdienst - Task aktivieren - Überprüfung der IK Nummer im Profil KBV_PR_FOR_Coverage | IG-TIFLOW-CORE-168 | core |
+| [A_23890-01](https://gemspec.gematik.de/search/index.html?A_23890-01) | TI-Flow-Fachdienst - Task aktivieren – Überprüfung KVNR im Profil KBV_PR_FOR_Patient | IG-TIFLOW-CORE-170 | core |
+| [A_23891-01](https://gemspec.gematik.de/search/index.html?A_23891-01) | TI-Flow-Fachdienst - Task aktivieren – Überprüfung der ANR und ZANR im Profil KBV_PR_FOR_Practitioner | IG-TIFLOW-CORE-171 | core |
+| [A_23892](https://gemspec.gematik.de/search/index.html?A_23892) | TI-Flow-Fachdienst - Task aktivieren – Überprüfung der PZN im Profil KBV_PR_ERP_Medication_PZN | IG-TIFLOW-CORE-175 | core |
+| [A_23936-01](https://gemspec.gematik.de/search/index.html?A_23936-01) | TI-Flow-Fachdienst - Task aktivieren - Versicherten-ID als Identifikator von Versicherten | IG-TIFLOW-CORE-162 | core |
+| [A_24030](https://gemspec.gematik.de/search/index.html?A_24030) | TI-Flow-Fachdienst - Task aktivieren – Überprüfung der IK Nummer im Profil KBV_PR_FOR_Coverage | IG-TIFLOW-CORE-169 | core |
+| [A_24031](https://gemspec.gematik.de/search/index.html?A_24031) | TI-Flow-Fachdienst - Task aktivieren – Überprüfung der ANR und ZANR - Konfiguration bei Auffälligkeiten | IG-TIFLOW-CORE-172 | core |
+| [A_24032](https://gemspec.gematik.de/search/index.html?A_24032) | TI-Flow-Fachdienst - Task aktivieren – Überprüfung der ANR und ZANR - Konfiguration Fehler | IG-TIFLOW-CORE-173 | core |
+| [A_24033](https://gemspec.gematik.de/search/index.html?A_24033) | TI-Flow-Fachdienst - Task aktivieren – Überprüfung der ANR und ZANR - Konfiguration Warning | IG-TIFLOW-CORE-174 | core |
+| [A_24034](https://gemspec.gematik.de/search/index.html?A_24034) | TI-Flow-Fachdienst - Task aktivieren – Überprüfung der PZN im Profil KBV_PR_ERP_Medication_Compounding | IG-TIFLOW-CORE-176 | core |
+| [A_24174-01](https://gemspec.gematik.de/search/index.html?A_24174-01) | TI-Flow-Fachdienst - Task akzeptieren - Telematik-ID der abgebenden LEI speichern | IG-TIFLOW-CORE-222 | core |
+| [A_24175](https://gemspec.gematik.de/search/index.html?A_24175) | TI-Flow-Fachdienst - Task zurückweisen - Telematik-ID der abgebenden LEI löschen | IG-TIFLOW-CORE-35 | core |
+| [A_24176-01](https://gemspec.gematik.de/search/index.html?A_24176-01) | TI-Flow-Fachdienst - Task abrufen - Apotheke - Verordnung abrufen - Prüfung Telematik-ID | IG-TIFLOW-CORE-98 | core |
+| [A_24177-01](https://gemspec.gematik.de/search/index.html?A_24177-01) | TI-Flow-Fachdienst - Task abrufen - Apotheke - Verordnung abrufen - Prüfung AccessCode | IG-TIFLOW-CORE-99 | core |
+| [A_24178-02](https://gemspec.gematik.de/search/index.html?A_24178-02) | TI-Flow-Fachdienst - Task abrufen - Apotheke - Verordnung abrufen - Prüfung Status in-progress | IG-TIFLOW-CORE-100 | core |
+| [A_24179-01](https://gemspec.gematik.de/search/index.html?A_24179-01) | TI-Flow-Fachdienst - Task abrufen - Apotheke - Verordnung abrufen - erneuter Abruf Verordnung | IG-TIFLOW-CORE-101 | core |
+| [A_24279](https://gemspec.gematik.de/search/index.html?A_24279) | TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Rollenprüfung Abgebender stellt Dispensierinformationen bereit | IG-TIFLOW-ERP-26 | rx |
+| [A_24280](https://gemspec.gematik.de/search/index.html?A_24280) | TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Prüfung Secret | IG-TIFLOW-ERP-27 | rx |
+| [A_24281-02](https://gemspec.gematik.de/search/index.html?A_24281-02) | TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Schemaprüfung MedicationDispense | IG-TIFLOW-ERP-29 | rx |
+| [A_24283-02](https://gemspec.gematik.de/search/index.html?A_24283-02) | TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Speicherung mehrerer MedicationDispenses | IG-TIFLOW-ERP-32 | rx |
+| [A_24284](https://gemspec.gematik.de/search/index.html?A_24284) | TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Keine Statusänderung | IG-TIFLOW-ERP-37 | rx |
+| [A_24285-01](https://gemspec.gematik.de/search/index.html?A_24285-01) | TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Zeitstempel MedicationDispense | IG-TIFLOW-ERP-34 | rx |
+| [A_24286-02](https://gemspec.gematik.de/search/index.html?A_24286-02) | TI-Flow-Fachdienst - Task zurückweisen - Dispensierinformationen löschen | IG-TIFLOW-ERP-5 | rx |
+| [A_24287-01](https://gemspec.gematik.de/search/index.html?A_24287-01) | TI-Flow-Fachdienst - Task schließen - Aufruf ohne MedicationDispense | IG-TIFLOW-ERP-10 | rx |
+| [A_24298](https://gemspec.gematik.de/search/index.html?A_24298) | TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Prüfung Status | IG-TIFLOW-ERP-28 | rx |
+| [A_24434](https://gemspec.gematik.de/search/index.html?A_24434) | TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Betroffene Endpunkte | IG-TIFLOW-CORE-325 | core |
+| [A_24436-01](https://gemspec.gematik.de/search/index.html?A_24436-01) | TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Filter- und Sortierkriterien | IG-TIFLOW-CORE-326 | core |
+| [A_24437](https://gemspec.gematik.de/search/index.html?A_24437) | TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Sortieren von Einträgen | IG-TIFLOW-CORE-327 | core |
+| [A_24438](https://gemspec.gematik.de/search/index.html?A_24438) | TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Sortieren von Einträgen | IG-TIFLOW-CORE-328 | core |
+| [A_24440](https://gemspec.gematik.de/search/index.html?A_24440) | TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Sortierreihenfolge der Einträge | IG-TIFLOW-CORE-329 | core |
+| [A_24441-01](https://gemspec.gematik.de/search/index.html?A_24441-01) | TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - URL-Parameter für Paginierung | IG-TIFLOW-CORE-331 | core |
+| [A_24442-01](https://gemspec.gematik.de/search/index.html?A_24442-01) | TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Link Relations für Paginierung | IG-TIFLOW-CORE-332 | core |
+| [A_24443-01](https://gemspec.gematik.de/search/index.html?A_24443-01) | TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Paginierung | IG-TIFLOW-CORE-333 | core |
+| [A_24444](https://gemspec.gematik.de/search/index.html?A_24444) | TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Erhalten von URL-Parametern | IG-TIFLOW-CORE-334 | core |
+| [A_24471](https://gemspec.gematik.de/search/index.html?A_24471) | TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - ChargeItem-ID=Rezept-ID | IG-TIFLOW-CHRG-62 | erp-chrg |
+| [A_24901](https://gemspec.gematik.de/search/index.html?A_24901) | TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Schema ID | IG-TIFLOW-ERP-92 | rx |
+| [A_25206](https://gemspec.gematik.de/search/index.html?A_25206) | TI-Flow-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 | IG-TIFLOW-CORE-83 | core |
+| [A_25207](https://gemspec.gematik.de/search/index.html?A_25207) | TI-Flow-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - AcceptPN3 false | IG-TIFLOW-CORE-88 | core |
+| [A_25208-01](https://gemspec.gematik.de/search/index.html?A_25208-01) | TI-Flow-Fachdienst - Rezepte lesen - Apotheke - VSDM - URL kvnr | IG-TIFLOW-CORE-84 | core |
+| [A_25209-02](https://gemspec.gematik.de/search/index.html?A_25209-02) | TI-Flow-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - AcceptPN3 true - Filter Status, KVNR und Workflowtype | IG-TIFLOW-CORE-89 | core |
+| [A_25515](https://gemspec.gematik.de/search/index.html?A_25515) | TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Filteroperatoren für Datumsabfragen | IG-TIFLOW-CORE-330 | core |
+| [A_25642](https://gemspec.gematik.de/search/index.html?A_25642) | TI-Flow-Fachdienst - Task aktivieren - Flowtype 160/169/200/209 - Prüfung Arzneimittelverordnung | IG-TIFLOW-ERP-67 | rx |
+| [A_25925](https://gemspec.gematik.de/search/index.html?A_25925) | TI-Flow-Fachdienst - Task aktivieren - Daten ePA Medication Service bereitstellen (Verordnungsdatensatz) | IG-TIFLOW-ERP-74 | rx |
+| [A_25926](https://gemspec.gematik.de/search/index.html?A_25926) | TI-Flow-Fachdienst - Task zurückweisen - Löschmarkierungen Medikationsliste bereitstellen (Dispensierinformationen) | IG-TIFLOW-ERP-6 | rx |
+| [A_25928-01](https://gemspec.gematik.de/search/index.html?A_25928-01) | TI-Flow-Fachdienst - Task schließen - Daten ePA Medication Service bereitstellen (Dispensierinformationen) | IG-TIFLOW-ERP-13 | rx |
+| [A_25930](https://gemspec.gematik.de/search/index.html?A_25930) | TI-Flow-Fachdienst - E-Rezept löschen - Löschinformation ePA Medication Service bereitstellen (Verordnungsdatensatz) - Leistungserbringerinstitution | IG-TIFLOW-ERP-43 | rx |
+| [A_25931](https://gemspec.gematik.de/search/index.html?A_25931) | TI-Flow-Fachdienst - E-Rezept löschen - Löschinformation ePA Medication Service bereitstellen (Verordnungsdatensatz) - Versicherter | IG-TIFLOW-ERP-44 | rx |
+| [A_25933](https://gemspec.gematik.de/search/index.html?A_25933) | TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Daten Medikationsliste bereitstellen (Dispensierinformationen) | IG-TIFLOW-ERP-33 | rx |
+| [A_25935](https://gemspec.gematik.de/search/index.html?A_25935) | TI-Flow-Fachdienst - ePA - JWT Bearer-Token Signatur | IG-TIFLOW-CORE-340 | core |
+| [A_25936](https://gemspec.gematik.de/search/index.html?A_25936) | TI-Flow-Fachdienst - ePA - Festlegung der ClientID | IG-TIFLOW-CORE-341 | core |
+| [A_25937](https://gemspec.gematik.de/search/index.html?A_25937) | TI-Flow-Fachdienst - ePA - Lokalisierung des ePA-Aktensysteme | IG-TIFLOW-CORE-342 | core |
+| [A_25938](https://gemspec.gematik.de/search/index.html?A_25938) | TI-Flow-Fachdienst - ePA - Aktualisierung Cache ePA-Aktensysteme | IG-TIFLOW-CORE-343 | core |
+| [A_25939](https://gemspec.gematik.de/search/index.html?A_25939) | TI-Flow-Fachdienst - ePA - ePA-Aktensystem für KVNR ermitteln | IG-TIFLOW-CORE-344 | core |
+| [A_25940](https://gemspec.gematik.de/search/index.html?A_25940) | TI-Flow-Fachdienst - ePA - Aktualisierung Cache Zuordnung KVNR zu ePA-Aktensystem | IG-TIFLOW-CORE-345 | core |
+| [A_25941](https://gemspec.gematik.de/search/index.html?A_25941) | TI-Flow-Fachdienst - ePA - Aktualisierung Cache Zuordnung KVNR zu ePA-Aktensystem - Statuscode 404 | IG-TIFLOW-CORE-346 | core |
+| [A_25942](https://gemspec.gematik.de/search/index.html?A_25942) | TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Information Service - Fehler im Information Service | IG-TIFLOW-CORE-347 | core |
+| [A_25943](https://gemspec.gematik.de/search/index.html?A_25943) | TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Information Service - Struktureller Fehler | IG-TIFLOW-CORE-348 | core |
+| [A_25944-01](https://gemspec.gematik.de/search/index.html?A_25944-01) | TI-Flow-Fachdienst - ePA - Flowtype 160/166/169/200/209 | IG-TIFLOW-CORE-349 | core |
+| [A_25945](https://gemspec.gematik.de/search/index.html?A_25945) | TI-Flow-Fachdienst - ePA - asynchrone Bereitstellung und Übermittlung | IG-TIFLOW-CORE-350 | core |
+| [A_25946](https://gemspec.gematik.de/search/index.html?A_25946) | TI-Flow-Fachdienst - ePA - Mapping | IG-TIFLOW-CORE-351 | core |
+| [A_25947](https://gemspec.gematik.de/search/index.html?A_25947) | TI-Flow-Fachdienst - ePA - provide-dispensation-erp - Organisation-Ressource | IG-TIFLOW-CORE-352 | core |
+| [A_25948](https://gemspec.gematik.de/search/index.html?A_25948) | TI-Flow-Fachdienst - ePA - Mapping - Übernahme von Werten zwischen Profilen | IG-TIFLOW-CORE-353 | core |
+| [A_25949](https://gemspec.gematik.de/search/index.html?A_25949) | TI-Flow-Fachdienst - ePA - Mapping - Handhabung von Extensions | IG-TIFLOW-CORE-354 | core |
+| [A_25950](https://gemspec.gematik.de/search/index.html?A_25950) | TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Nichtauffinden in allen ePA-Aktensystemen | IG-TIFLOW-CORE-355 | core |
+| [A_25951-01](https://gemspec.gematik.de/search/index.html?A_25951-01) | TI-Flow-Fachdienst - ePA - Prüfung des Widerspruchs vor Übermittlung | IG-TIFLOW-CORE-356 | core |
+| [A_25952](https://gemspec.gematik.de/search/index.html?A_25952) | TI-Flow-Fachdienst - ePA - Übermittlung - Bereitstellung von Verordnungsdaten | IG-TIFLOW-CORE-357 | core |
+| [A_25953](https://gemspec.gematik.de/search/index.html?A_25953) | TI-Flow-Fachdienst - ePA - Übermittlung - Löschinformation von Verordnungsdaten | IG-TIFLOW-CORE-358 | core |
+| [A_25954-01](https://gemspec.gematik.de/search/index.html?A_25954-01) | TI-Flow-Fachdienst - ePA - Übermittlung - Bereitstellung von Dispensierinformationen | IG-TIFLOW-CORE-359 | core |
+| [A_25955](https://gemspec.gematik.de/search/index.html?A_25955) | TI-Flow-Fachdienst - ePA - Übermittlung - Löschinformation von Dispensierinformationen | IG-TIFLOW-CORE-360 | core |
+| [A_25956](https://gemspec.gematik.de/search/index.html?A_25956) | TI-Flow-Fachdienst - ePA - Übermittlung - Bündelung von Übermittlungsaufträgen nach KVNR | IG-TIFLOW-CORE-361 | core |
+| [A_25957](https://gemspec.gematik.de/search/index.html?A_25957) | TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Aktenkonto-Umzug | IG-TIFLOW-CORE-362 | core |
+| [A_25958](https://gemspec.gematik.de/search/index.html?A_25958) | TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Reaktion auf Scheitern des Operationaufrufs | IG-TIFLOW-CORE-363 | core |
+| [A_25959](https://gemspec.gematik.de/search/index.html?A_25959) | TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Probleme bei der Entschlüsselung durch den Medication Service | IG-TIFLOW-CORE-364 | core |
+| [A_25960](https://gemspec.gematik.de/search/index.html?A_25960) | TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Probleme bei der Entschlüsselung durch den TI-Flow-Fachdienst | IG-TIFLOW-CORE-365 | core |
+| [A_25961](https://gemspec.gematik.de/search/index.html?A_25961) | TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Reaktion auf Nichtverfügbarkeit des Medication Service | IG-TIFLOW-CORE-366 | core |
+| [A_25962](https://gemspec.gematik.de/search/index.html?A_25962) | TI-Flow-Fachdienst - ePA - Medication Service - Versichertenprotokoll | IG-TIFLOW-CORE-30 | core |
+| [A_25971](https://gemspec.gematik.de/search/index.html?A_25971) | TI-Flow-Fachdienst - ePA - TLS-Server X.509-Zertifikat des ePA-Aktensystems auf Gültigkeit prüfen | IG-TIFLOW-CORE-337 | core |
+| [A_25972](https://gemspec.gematik.de/search/index.html?A_25972) | TI-Flow-Fachdienst - ePA - TLS-Server X.509-Zertifikat des ePA-Aktensystems Rolle prüfen | IG-TIFLOW-CORE-338 | core |
+| [A_25990](https://gemspec.gematik.de/search/index.html?A_25990) | TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - QES durch berechtigte Berufsgruppe | IG-TIFLOW-DIGA-15 | diga |
+| [A_25991](https://gemspec.gematik.de/search/index.html?A_25991) | TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Verordnung von DiGAs | IG-TIFLOW-DIGA-16 | diga |
+| [A_25992](https://gemspec.gematik.de/search/index.html?A_25992) | TI-Flow-Fachdienst - Task aktivieren – Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest | IG-TIFLOW-DIGA-17 | diga |
+| [A_25993](https://gemspec.gematik.de/search/index.html?A_25993) | TI-Flow-Fachdienst - Task akzeptieren - Flowtype 162 - Rollenprüfung | IG-TIFLOW-DIGA-21 | diga |
+| [A_25994](https://gemspec.gematik.de/search/index.html?A_25994) | TI-Flow-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - Mappen von IKNR zu VSDM | IG-TIFLOW-CORE-86 | core |
+| [A_25995](https://gemspec.gematik.de/search/index.html?A_25995) | TI-Flow-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - keine E-Rezepte | IG-TIFLOW-CORE-87 | core |
+| [A_26002-02](https://gemspec.gematik.de/search/index.html?A_26002-02) | TI-Flow-Fachdienst - Task schließen - Flowtype 160/166/169/200/209 - Profilprüfung MedicationDispense | IG-TIFLOW-ERP-9 | rx |
+| [A_26003-01](https://gemspec.gematik.de/search/index.html?A_26003-01) | TI-Flow-Fachdienst - Task schließen - Flowtype 162 - Profilprüfung MedicationDispense | IG-TIFLOW-DIGA-4 | diga |
+| [A_26066](https://gemspec.gematik.de/search/index.html?A_26066) | TI-Flow-Fachdienst - ePA - JWT Bearer-Token Claims | IG-TIFLOW-CORE-339 | core |
+| [A_26148](https://gemspec.gematik.de/search/index.html?A_26148) | TI-Flow-Fachdienst - Task abrufen - Flowtype 169/209 - Nicht verfügbar bei KVNR-Mismatch | IG-TIFLOW-ERP-25 | rx |
+| [A_26229-02](https://gemspec.gematik.de/search/index.html?A_26229-02) | TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Konsistenz Ressource IDs | IG-TIFLOW-CORE-242 | core |
+| [A_26233-01](https://gemspec.gematik.de/search/index.html?A_26233-01) | TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Format fullUrl | IG-TIFLOW-CORE-243 | core |
+| [A_26264](https://gemspec.gematik.de/search/index.html?A_26264) | TI-Flow-Fachdienst - Löschfrist - Löschinformation ePA Medication Service bereitstellen (Verordnungsdatensatz) | IG-TIFLOW-CORE-108 | core |
+| [A_26320](https://gemspec.gematik.de/search/index.html?A_26320) | TI-Flow-Fachdienst - Nachricht einstellen - Dispense Request - Prüfung Status Task | IG-TIFLOW-CORE-294 | core |
+| [A_26321](https://gemspec.gematik.de/search/index.html?A_26321) | TI-Flow-Fachdienst - Nachricht einstellen - Dispense Request - Prüfung Ende Gültigkeit Task | IG-TIFLOW-CORE-295 | core |
+| [A_26327](https://gemspec.gematik.de/search/index.html?A_26327) | TI-Flow-Fachdienst - Nachricht einstellen - Dispense Request - Prüfung Beginn Gültigkeit Task | IG-TIFLOW-CORE-296 | core |
+| [A_26337](https://gemspec.gematik.de/search/index.html?A_26337) | TI-Flow-Fachdienst - Task schließen - Zeitstempel MedicationDispense | IG-TIFLOW-CORE-56 | core |
+| [A_26372](https://gemspec.gematik.de/search/index.html?A_26372) | TI-Flow-Fachdienst – Task aktivieren – Flowtype 162 - Prüfung Coverage Alternative IK | IG-TIFLOW-DIGA-19 | diga |
+| [A_26481](https://gemspec.gematik.de/search/index.html?A_26481) | TI-Flow-Fachdienst - Task schließen - Überschreiben vorheriger MedicationDispenses | IG-TIFLOW-ERP-11 | rx |
+| [A_26482](https://gemspec.gematik.de/search/index.html?A_26482) | TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Überschreiben vorheriger MedicationDispenses | IG-TIFLOW-ERP-30 | rx |
+| [A_26527](https://gemspec.gematik.de/search/index.html?A_26527) | TI-Flow-Fachdienst - MedicationDispense abrufen - Referenzierung MedicationDispense und Medication | IG-TIFLOW-CORE-117 | core |
+| [A_27051](https://gemspec.gematik.de/search/index.html?A_27051) | TI-Flow-Fachdienst - Task schließen - MedicationDispense speichern | IG-TIFLOW-CORE-55 | core |
+| [A_27052](https://gemspec.gematik.de/search/index.html?A_27052) | TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - MedicationDispense speichern | IG-TIFLOW-ERP-31 | rx |
+| [A_27059](https://gemspec.gematik.de/search/index.html?A_27059) | TI-Flow-Fachdienst - eu-prescription abfragen - Rollenprüfung | IG-TIFLOW-XBORDER-4 | erp-eu |
+| [A_27060](https://gemspec.gematik.de/search/index.html?A_27060) | TI-Flow-Fachdienst - eu-prescription abfragen - Schemaprüfung | IG-TIFLOW-XBORDER-5 | erp-eu |
+| [A_27061](https://gemspec.gematik.de/search/index.html?A_27061) | TI-Flow-Fachdienst - eu-prescription abfragen - Prüfung Einwilligung für KVNR | IG-TIFLOW-XBORDER-6 | erp-eu |
+| [A_27062](https://gemspec.gematik.de/search/index.html?A_27062) | TI-Flow-Fachdienst - eu-prescription abfragen - Prüfung Zugriffsberechtigung | IG-TIFLOW-XBORDER-7 | erp-eu |
+| [A_27063-01](https://gemspec.gematik.de/search/index.html?A_27063-01) | TI-Flow-Fachdienst - eu-prescription abfragen - Filter einlösbarer E-Rezepte | IG-TIFLOW-XBORDER-8 | erp-eu |
+| [A_27064](https://gemspec.gematik.de/search/index.html?A_27064) | TI-Flow-Fachdienst - eu-prescription abfragen - Schema des Response | IG-TIFLOW-XBORDER-12 | erp-eu |
+| [A_27065](https://gemspec.gematik.de/search/index.html?A_27065) | TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage der aktuellsten Verordnungsinformationen | IG-TIFLOW-XBORDER-13 | erp-eu |
+| [A_27066](https://gemspec.gematik.de/search/index.html?A_27066) | TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage aller einlösbaren Verordnungsinformationen | IG-TIFLOW-XBORDER-14 | erp-eu |
+| [A_27067](https://gemspec.gematik.de/search/index.html?A_27067) | TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids | IG-TIFLOW-XBORDER-15 | erp-eu |
+| [A_27068](https://gemspec.gematik.de/search/index.html?A_27068) | TI-Flow-Fachdienst - Task schließen - EU - Rollenprüfung | IG-TIFLOW-XBORDER-37 | erp-eu |
+| [A_27069](https://gemspec.gematik.de/search/index.html?A_27069) | TI-Flow-Fachdienst - Task schließen - EU - Schemaprüfung | IG-TIFLOW-XBORDER-38 | erp-eu |
+| [A_27070](https://gemspec.gematik.de/search/index.html?A_27070) | TI-Flow-Fachdienst - Task schließen - EU - Prüfung Einwilligung für KVNR | IG-TIFLOW-XBORDER-39 | erp-eu |
+| [A_27071](https://gemspec.gematik.de/search/index.html?A_27071) | TI-Flow-Fachdienst - Task schließen - EU - Prüfung Zugriffsberechtigung | IG-TIFLOW-XBORDER-40 | erp-eu |
+| [A_27072](https://gemspec.gematik.de/search/index.html?A_27072) | TI-Flow-Fachdienst - Task schließen - EU - Statusprüfung | IG-TIFLOW-XBORDER-41 | erp-eu |
+| [A_27074](https://gemspec.gematik.de/search/index.html?A_27074) | TI-Flow-Fachdienst - Task schließen - EU - Zeitstempel MedicationDispense | IG-TIFLOW-XBORDER-42 | erp-eu |
+| [A_27075](https://gemspec.gematik.de/search/index.html?A_27075) | TI-Flow-Fachdienst - Task schließen - EU - Status beenden | IG-TIFLOW-XBORDER-43 | erp-eu |
+| [A_27083](https://gemspec.gematik.de/search/index.html?A_27083) | TI-Flow-Fachdienst - Zugriffsberechtigung - periodische Bereinigung | IG-TIFLOW-XBORDER-62 | erp-eu |
+| [A_27084](https://gemspec.gematik.de/search/index.html?A_27084) | TI-Flow-Fachdienst - Zugriffsberechtigung löschen - Rollenprüfung | IG-TIFLOW-XBORDER-53 | erp-eu |
+| [A_27085](https://gemspec.gematik.de/search/index.html?A_27085) | TI-Flow-Fachdienst - Zugriffsberechtigung löschen - Löschen | IG-TIFLOW-XBORDER-54 | erp-eu |
+| [A_27086](https://gemspec.gematik.de/search/index.html?A_27086) | TI-Flow-Fachdienst - Zugriffsberechtigung lesen - Rollenprüfung | IG-TIFLOW-XBORDER-35 | erp-eu |
+| [A_27087](https://gemspec.gematik.de/search/index.html?A_27087) | TI-Flow-Fachdienst - Zugriffsberechtigung lesen - Response | IG-TIFLOW-XBORDER-36 | erp-eu |
+| [A_27088](https://gemspec.gematik.de/search/index.html?A_27088) | TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Rollenprüfung | IG-TIFLOW-XBORDER-55 | erp-eu |
+| [A_27089](https://gemspec.gematik.de/search/index.html?A_27089) | TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Einwillung für KVNR | IG-TIFLOW-XBORDER-56 | erp-eu |
+| [A_27090](https://gemspec.gematik.de/search/index.html?A_27090) | TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Ländercode | IG-TIFLOW-XBORDER-57 | erp-eu |
+| [A_27091](https://gemspec.gematik.de/search/index.html?A_27091) | TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Zugriffscode | IG-TIFLOW-XBORDER-58 | erp-eu |
+| [A_27092](https://gemspec.gematik.de/search/index.html?A_27092) | TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Löschen bestehender Zugriffsberechtigung | IG-TIFLOW-XBORDER-59 | erp-eu |
+| [A_27093](https://gemspec.gematik.de/search/index.html?A_27093) | TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Neue Zugriffsberechtigung speichern | IG-TIFLOW-XBORDER-60 | erp-eu |
+| [A_27094](https://gemspec.gematik.de/search/index.html?A_27094) | TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Response | IG-TIFLOW-XBORDER-61 | erp-eu |
+| [A_27095](https://gemspec.gematik.de/search/index.html?A_27095) | TI-Flow-Fachdienst - Zugriffsberechtigung - Liste zulässiger Länder | IG-TIFLOW-XBORDER-2 | erp-eu |
+| [A_27096](https://gemspec.gematik.de/search/index.html?A_27096) | TI-Flow-Fachdienst - Zugriffsberechtigung - Caching Liste zulässiger Länder | IG-TIFLOW-XBORDER-3 | erp-eu |
+| [A_27131](https://gemspec.gematik.de/search/index.html?A_27131) | TI-Flow-Fachdienst - Consent löschen - EUDISPCONS - Löschen Zugriffsberechtigung | IG-TIFLOW-CORE-195<br/>IG-TIFLOW-XBORDER-32 | core<br/>erp-eu |
+| [A_27143](https://gemspec.gematik.de/search/index.html?A_27143) | TI-Flow-Fachdienst - Consent schreiben - Zeitstempel setzen | IG-TIFLOW-CORE-187<br/>IG-TIFLOW-CORE-189 | core |
+| [A_27287](https://gemspec.gematik.de/search/index.html?A_27287) | TI-Flow-Fachdienst - Rezepte lesen - Apotheke - VSDM - Vergleich KVNR | IG-TIFLOW-CORE-79 | core |
+| [A_27301](https://gemspec.gematik.de/search/index.html?A_27301) | TI-Flow-Fachdienst - Prüfung und Entschlüsselung Prüfziffer Version 2 | IG-TIFLOW-CORE-92 | core |
+| [A_27346](https://gemspec.gematik.de/search/index.html?A_27346) | TI-Flow-Fachdienst - Rezepte lesen - Apotheke - VSDM - URL hcv | IG-TIFLOW-CORE-85 | core |
+| [A_27347](https://gemspec.gematik.de/search/index.html?A_27347) | TI-Flow-Fachdienst - Rezepte lesen - Apotheke - VSDM - Vergleich hcv | IG-TIFLOW-CORE-80 | core |
+| [A_27444](https://gemspec.gematik.de/search/index.html?A_27444) | TI-Flow-Fachdienst – Rezepte lesen - Konfigurationsparameter RateLimit | IG-TIFLOW-CORE-75 | core |
+| [A_27445](https://gemspec.gematik.de/search/index.html?A_27445) | TI-Flow-Fachdienst - Rezepte lesen - Apotheke - Ratelimit pro Telematik-ID pro Tag | IG-TIFLOW-CORE-76 | core |
+| [A_27446](https://gemspec.gematik.de/search/index.html?A_27446) | TI-Flow-Fachdienst - Rezepte lesen - Apotheke - Ratelimit pro Telematik-ID prüfen | IG-TIFLOW-CORE-77 | core |
+| [A_27548](https://gemspec.gematik.de/search/index.html?A_27548) | TI-Flow-Fachdienst – Task markieren - alles Markieren verbieten | IG-TIFLOW-CORE-104 | core |
+| [A_27549](https://gemspec.gematik.de/search/index.html?A_27549) | TI-Flow-Fachdienst - Task markieren - Versicherter - Rollenprüfung Versicherter markiert Rezepte | IG-TIFLOW-CORE-105 | core |
+| [A_27550](https://gemspec.gematik.de/search/index.html?A_27550) | TI-Flow-Fachdienst -Task markieren -Versicherter - Prüfung KVNR | IG-TIFLOW-CORE-106 | core |
+| [A_27551](https://gemspec.gematik.de/search/index.html?A_27551) | TI-Flow-Fachdienst -Task markieren -Versicherter - FHIR-Validierung Parameters | IG-TIFLOW-XBORDER-21 | erp-eu |
+| [A_27552](https://gemspec.gematik.de/search/index.html?A_27552) | TI-Flow-Fachdienst -Task markieren -Versicherter - Änderung Markierung Task Ressource | IG-TIFLOW-XBORDER-23 | erp-eu |
+| [A_27566](https://gemspec.gematik.de/search/index.html?A_27566) | TI-Flow-Fachdienst - Abrechnungsinformation ändern (PATCH) - FHIR-Validierung Parameters | IG-TIFLOW-CHRG-77 | erp-chrg |
+| [A_27580](https://gemspec.gematik.de/search/index.html?A_27580) | TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Statuswechsel Task | IG-TIFLOW-XBORDER-16 | erp-eu |
+| [A_27581](https://gemspec.gematik.de/search/index.html?A_27581) | TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Secret | IG-TIFLOW-XBORDER-17 | erp-eu |
+| [A_27582](https://gemspec.gematik.de/search/index.html?A_27582) | TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Task Owner | IG-TIFLOW-XBORDER-18 | erp-eu |
+| [A_27587](https://gemspec.gematik.de/search/index.html?A_27587) | TI-Flow-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage der aktuellsten Verordnungsinformationen | IG-TIFLOW-XBORDER-9 | erp-eu |
+| [A_27588](https://gemspec.gematik.de/search/index.html?A_27588) | TI-Flow-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage aller einlösbaren Verordnungsinformationen | IG-TIFLOW-XBORDER-10 | erp-eu |
+| [A_27589](https://gemspec.gematik.de/search/index.html?A_27589) | TI-Flow-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage nach Liste Rezept-Ids | IG-TIFLOW-XBORDER-11 | erp-eu |
+| [A_27648](https://gemspec.gematik.de/search/index.html?A_27648) | TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Existenz von Ressource.id | IG-TIFLOW-CORE-244 | core |
+| [A_27649](https://gemspec.gematik.de/search/index.html?A_27649) | TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Auflösbarkeit von Referenzen | IG-TIFLOW-CORE-245 | core |
+| [A_27658](https://gemspec.gematik.de/search/index.html?A_27658) | TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Datumsangabe ohne Zeitzoneninformation | IG-TIFLOW-CORE-238 | core |
+| [A_27698](https://gemspec.gematik.de/search/index.html?A_27698) | TI-Flow-Fachdienst - FHIR-Ressource validieren - Eindeutige Angabe meta.profile | IG-TIFLOW-CORE-240 | core |
+| [A_27767-01](https://gemspec.gematik.de/search/index.html?A_27767-01) | TI-Flow-Fachdienst - Nachricht einstellen - Prüfung des Empfängers | IG-TIFLOW-CORE-292 | core |
+| [A_27768](https://gemspec.gematik.de/search/index.html?A_27768) | TI-Flow-Fachdienst - Task aktivieren - Bestimmung der Einlösbarkeit im EU-Ausland | IG-TIFLOW-ERP-73 | rx |
+| [A_27812](https://gemspec.gematik.de/search/index.html?A_27812) | TI-Flow-Fachdienst - Task aktivieren - Flowtype 166 - QES durch berechtigte Berufsgruppe | IG-TIFLOW-ERP-66 | rx |
+| [A_27813](https://gemspec.gematik.de/search/index.html?A_27813) | TI-Flow-Fachdienst - Task aktivieren - Flowtype 166 - Prüfung Arzneimittelverordnung | IG-TIFLOW-ERP-68 | rx |
+| [A_27814](https://gemspec.gematik.de/search/index.html?A_27814) | TI-Flow-Fachdienst - Task schließen - T-Rezept Daten an BfArM Webdienst bereitstellen | IG-TIFLOW-ERP-14 | rx |
+| [A_27817](https://gemspec.gematik.de/search/index.html?A_27817) | TI-Flow-Fachdienst - BfArM - Lokalisierung des BfArM Webdienstes | IG-TIFLOW-BFARM-6 | bfarm |
 | [A_27819](https://gemspec.gematik.de/search/index.html?A_27819) | Anbieter E-Rezept Fachdienst - BfArM - Registrierung für Client Credentials am BfArM Webdienst | IG-TIFLOW-BFARM-1 | bfarm |
-| [A_27820](https://gemspec.gematik.de/search/index.html?A_27820) | E-Rezept-Fachdienst - BfArM - Prüfung Gültigkeit AccessToken | IG-TIFLOW-BFARM-2 | bfarm |
-| [A_27821](https://gemspec.gematik.de/search/index.html?A_27821) | E-Rezept-Fachdienst - BfArM - Beziehen des AccessTokens | IG-TIFLOW-BFARM-3 | bfarm |
-| [A_27822](https://gemspec.gematik.de/search/index.html?A_27822) | E-Rezept-Fachdienst - BfArM - AccessToken für Zugriff auf den BfArM Webdienst | IG-TIFLOW-BFARM-4 | bfarm |
-| [A_27823](https://gemspec.gematik.de/search/index.html?A_27823) | E-Rezept-Fachdienst - BfArM - Flowtype 166 | IG-TIFLOW-BFARM-7 | bfarm |
-| [A_27824](https://gemspec.gematik.de/search/index.html?A_27824) | E-Rezept-Fachdienst - BfArM - asynchrone Bereitstellung und Übermittlung | IG-TIFLOW-BFARM-8 | bfarm |
-| [A_27825](https://gemspec.gematik.de/search/index.html?A_27825) | E-Rezept-Fachdienst - BfArM - Suche nach Apothekendaten | IG-TIFLOW-BFARM-9 | bfarm |
-| [A_27826-01](https://gemspec.gematik.de/search/index.html?A_27826-01) | E-Rezept-Fachdienst - BfArM - Erzeugen digitaler Durchschlag E-T-Rezept | IG-TIFLOW-BFARM-10 | bfarm |
-| [A_27827](https://gemspec.gematik.de/search/index.html?A_27827) | E-Rezept-Fachdienst - BfArM - Anwendungsfall Übertragen des digitalen Durchschlags | IG-TIFLOW-BFARM-11 | bfarm |
-| [A_27828](https://gemspec.gematik.de/search/index.html?A_27828) | E-Rezept-Fachdienst - BfArM - Übertragen des digitalen Durchschlags | IG-TIFLOW-BFARM-12 | bfarm |
-| [A_27830](https://gemspec.gematik.de/search/index.html?A_27830) | E-Rezept-Fachdienst - BfArM - Fehlerbehandlung - Reaktion auf Scheitern des Operationaufrufs | IG-TIFLOW-BFARM-13 | bfarm |
-| [A_27831](https://gemspec.gematik.de/search/index.html?A_27831) | E-Rezept-Fachdienst - BfArM - Fehlerbehandlung - Protokollierung struktureller Fehler | IG-TIFLOW-BFARM-14 | bfarm |
-| [A_27882](https://gemspec.gematik.de/search/index.html?A_27882) | E-Rezept-Fachdienst - BfArM - Lokalisierung Konfigurationsparameter BfArM_Domain | IG-TIFLOW-BFARM-5 | bfarm |
-| [A_28111](https://gemspec.gematik.de/search/index.html?A_28111) | E-Rezept-Fachdienst - Push Notifications - OpenApi_Notification_Fachdienst | IG-TIFLOW-CORE-233 | core |
-| [A_28112](https://gemspec.gematik.de/search/index.html?A_28112) | E-Rezept-Fachdienst - Push Notifcations - App-Registrierung - Rolle Versicherter | IG-TIFLOW-CORE-236 | core |
-| [A_28113](https://gemspec.gematik.de/search/index.html?A_28113) | E-Rezept-Fachdienst - Push Notifcations - App-Registrierungen abrufen - Rolle Versicherter | IG-TIFLOW-CORE-234 | core |
-| [A_28114](https://gemspec.gematik.de/search/index.html?A_28114) | E-Rezept-Fachdienst - unzulässige Operationen Pushers | IG-TIFLOW-CORE-232 | core |
-| [A_28115](https://gemspec.gematik.de/search/index.html?A_28115) | E-Rezept-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen | IG-TIFLOW-CORE-206 | core |
-| [A_28116](https://gemspec.gematik.de/search/index.html?A_28116) | E-Rezept-Fachdienst - Push Notification senden - verpflichtende Verschlüsselung | IG-TIFLOW-CORE-207 | core |
-| [A_28117](https://gemspec.gematik.de/search/index.html?A_28117) | E-Rezept-Fachdienst - Push Notifications - Channels - OpenApi_Notification_Fachdienst | IG-TIFLOW-CORE-49 | core |
-| [A_28118](https://gemspec.gematik.de/search/index.html?A_28118) | E-Rezept-Fachdienst - Push Notifcations - Channels abrufen - Rolle Versicherter | IG-TIFLOW-CORE-50 | core |
-| [A_28119](https://gemspec.gematik.de/search/index.html?A_28119) | E-Rezept-Fachdienst - Push Notifcations - Channels des Geräts abrufen - Rolle Versicherter | IG-TIFLOW-CORE-51 | core |
-| [A_28120](https://gemspec.gematik.de/search/index.html?A_28120) | E-Rezept-Fachdienst - Push Notifcations - Channels konfigurieren - Rolle Versicherter | IG-TIFLOW-CORE-52 | core |
-| [A_28121](https://gemspec.gematik.de/search/index.html?A_28121) | E-Rezept-Fachdienst - unzulässige Operationen Channels | IG-TIFLOW-CORE-48 | core |
-| [A_28125](https://gemspec.gematik.de/search/index.html?A_28125) | E-Rezept-Fachdienst - Task abrufen - Vertreter - Push Notification Versicherter | IG-TIFLOW-CORE-103 | core |
-| [A_28126](https://gemspec.gematik.de/search/index.html?A_28126) | E-Rezept-Fachdienst - Task aktivieren - Push Notification Versicherter | IG-TIFLOW-CORE-165 | core |
-| [A_28127](https://gemspec.gematik.de/search/index.html?A_28127) | E-Rezept-Fachdienst - Task akzeptieren - Push Notification Versicherter | IG-TIFLOW-CORE-223 | core |
-| [A_28128](https://gemspec.gematik.de/search/index.html?A_28128) | E-Rezept-Fachdienst - Task zurückweisen - Push Notification Versicherter | IG-TIFLOW-CORE-36 | core |
-| [A_28129](https://gemspec.gematik.de/search/index.html?A_28129) | E-Rezept-Fachdienst - Task schließen - Push Notification Versicherter | IG-TIFLOW-CORE-58 | core |
-| [A_28130](https://gemspec.gematik.de/search/index.html?A_28130) | E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Push Notification Versicherter | IG-TIFLOW-ERP-36 | rx |
-| [A_28131](https://gemspec.gematik.de/search/index.html?A_28131) | E-Rezept-Fachdienst - E-Rezept löschen - Push Notification Versicherter | IG-TIFLOW-CORE-128 | core |
-| [A_28132](https://gemspec.gematik.de/search/index.html?A_28132) | E-Rezept-Fachdienst - Nachricht einstellen - Push Notification Versicherter | IG-TIFLOW-CORE-298 | core |
-| [A_28133](https://gemspec.gematik.de/search/index.html?A_28133) | E-Rezept-Fachdienst - Abrechnungsinformation bereitstellen - Push Notification Versicherter | IG-TIFLOW-CHRG-73 | erp-chrg |
-| [A_28134](https://gemspec.gematik.de/search/index.html?A_28134) | E-Rezept-Fachdienst - Abrechnungsinformation ändern - Push Notification Versicherter | IG-TIFLOW-CHRG-89 | erp-chrg |
-| [A_28135](https://gemspec.gematik.de/search/index.html?A_28135) | E-Rezept-Fachdienst - Push Notification senden - Referenz auf Protokolleintrag | IG-TIFLOW-CORE-208 | core |
-| [A_28204](https://gemspec.gematik.de/search/index.html?A_28204) | E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage aller einlösbaren Verordnungsinformationen - Push Notification Versicherter | IG-TIFLOW-XBORDER-19 | erp-eu |
-| [A_28205](https://gemspec.gematik.de/search/index.html?A_28205) | E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Push Notification Versicherter | IG-TIFLOW-XBORDER-20 | erp-eu |
-| [A_28206](https://gemspec.gematik.de/search/index.html?A_28206) | E-Rezept-Fachdienst - Task schließen - EU - Push Notification Versicherter | IG-TIFLOW-XBORDER-44 | erp-eu |
+| [A_27820](https://gemspec.gematik.de/search/index.html?A_27820) | TI-Flow-Fachdienst - BfArM - Prüfung Gültigkeit AccessToken | IG-TIFLOW-BFARM-2 | bfarm |
+| [A_27821](https://gemspec.gematik.de/search/index.html?A_27821) | TI-Flow-Fachdienst - BfArM - Beziehen des AccessTokens | IG-TIFLOW-BFARM-3 | bfarm |
+| [A_27822](https://gemspec.gematik.de/search/index.html?A_27822) | TI-Flow-Fachdienst - BfArM - AccessToken für Zugriff auf den BfArM Webdienst | IG-TIFLOW-BFARM-4 | bfarm |
+| [A_27823](https://gemspec.gematik.de/search/index.html?A_27823) | TI-Flow-Fachdienst - BfArM - Flowtype 166 | IG-TIFLOW-BFARM-7 | bfarm |
+| [A_27824](https://gemspec.gematik.de/search/index.html?A_27824) | TI-Flow-Fachdienst - BfArM - asynchrone Bereitstellung und Übermittlung | IG-TIFLOW-BFARM-8 | bfarm |
+| [A_27825](https://gemspec.gematik.de/search/index.html?A_27825) | TI-Flow-Fachdienst - BfArM - Suche nach Apothekendaten | IG-TIFLOW-BFARM-9 | bfarm |
+| [A_27826-01](https://gemspec.gematik.de/search/index.html?A_27826-01) | TI-Flow-Fachdienst - BfArM - Erzeugen digitaler Durchschlag E-T-Rezept | IG-TIFLOW-BFARM-10 | bfarm |
+| [A_27827](https://gemspec.gematik.de/search/index.html?A_27827) | TI-Flow-Fachdienst - BfArM - Anwendungsfall Übertragen des digitalen Durchschlags | IG-TIFLOW-BFARM-11 | bfarm |
+| [A_27828](https://gemspec.gematik.de/search/index.html?A_27828) | TI-Flow-Fachdienst - BfArM - Übertragen des digitalen Durchschlags | IG-TIFLOW-BFARM-12 | bfarm |
+| [A_27830](https://gemspec.gematik.de/search/index.html?A_27830) | TI-Flow-Fachdienst - BfArM - Fehlerbehandlung - Reaktion auf Scheitern des Operationaufrufs | IG-TIFLOW-BFARM-13 | bfarm |
+| [A_27831](https://gemspec.gematik.de/search/index.html?A_27831) | TI-Flow-Fachdienst - BfArM - Fehlerbehandlung - Protokollierung struktureller Fehler | IG-TIFLOW-BFARM-14 | bfarm |
+| [A_27882](https://gemspec.gematik.de/search/index.html?A_27882) | TI-Flow-Fachdienst - BfArM - Lokalisierung Konfigurationsparameter BfArM_Domain | IG-TIFLOW-BFARM-5 | bfarm |
+| [A_28111](https://gemspec.gematik.de/search/index.html?A_28111) | TI-Flow-Fachdienst - Push Notifications - OpenApi_Notification_Fachdienst | IG-TIFLOW-CORE-233 | core |
+| [A_28112](https://gemspec.gematik.de/search/index.html?A_28112) | TI-Flow-Fachdienst - Push Notifcations - App-Registrierung - Rolle Versicherter | IG-TIFLOW-CORE-236 | core |
+| [A_28113](https://gemspec.gematik.de/search/index.html?A_28113) | TI-Flow-Fachdienst - Push Notifcations - App-Registrierungen abrufen - Rolle Versicherter | IG-TIFLOW-CORE-234 | core |
+| [A_28114](https://gemspec.gematik.de/search/index.html?A_28114) | TI-Flow-Fachdienst - unzulässige Operationen Pushers | IG-TIFLOW-CORE-232 | core |
+| [A_28115](https://gemspec.gematik.de/search/index.html?A_28115) | TI-Flow-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen | IG-TIFLOW-CORE-206 | core |
+| [A_28116](https://gemspec.gematik.de/search/index.html?A_28116) | TI-Flow-Fachdienst - Push Notification senden - verpflichtende Verschlüsselung | IG-TIFLOW-CORE-207 | core |
+| [A_28117](https://gemspec.gematik.de/search/index.html?A_28117) | TI-Flow-Fachdienst - Push Notifications - Channels - OpenApi_Notification_Fachdienst | IG-TIFLOW-CORE-49 | core |
+| [A_28118](https://gemspec.gematik.de/search/index.html?A_28118) | TI-Flow-Fachdienst - Push Notifcations - Channels abrufen - Rolle Versicherter | IG-TIFLOW-CORE-50 | core |
+| [A_28119](https://gemspec.gematik.de/search/index.html?A_28119) | TI-Flow-Fachdienst - Push Notifcations - Channels des Geräts abrufen - Rolle Versicherter | IG-TIFLOW-CORE-51 | core |
+| [A_28120](https://gemspec.gematik.de/search/index.html?A_28120) | TI-Flow-Fachdienst - Push Notifcations - Channels konfigurieren - Rolle Versicherter | IG-TIFLOW-CORE-52 | core |
+| [A_28121](https://gemspec.gematik.de/search/index.html?A_28121) | TI-Flow-Fachdienst - unzulässige Operationen Channels | IG-TIFLOW-CORE-48 | core |
+| [A_28125](https://gemspec.gematik.de/search/index.html?A_28125) | TI-Flow-Fachdienst - Task abrufen - Vertreter - Push Notification Versicherter | IG-TIFLOW-CORE-103 | core |
+| [A_28126](https://gemspec.gematik.de/search/index.html?A_28126) | TI-Flow-Fachdienst - Task aktivieren - Push Notification Versicherter | IG-TIFLOW-CORE-165 | core |
+| [A_28127](https://gemspec.gematik.de/search/index.html?A_28127) | TI-Flow-Fachdienst - Task akzeptieren - Push Notification Versicherter | IG-TIFLOW-CORE-223 | core |
+| [A_28128](https://gemspec.gematik.de/search/index.html?A_28128) | TI-Flow-Fachdienst - Task zurückweisen - Push Notification Versicherter | IG-TIFLOW-CORE-36 | core |
+| [A_28129](https://gemspec.gematik.de/search/index.html?A_28129) | TI-Flow-Fachdienst - Task schließen - Push Notification Versicherter | IG-TIFLOW-CORE-58 | core |
+| [A_28130](https://gemspec.gematik.de/search/index.html?A_28130) | TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Push Notification Versicherter | IG-TIFLOW-ERP-36 | rx |
+| [A_28131](https://gemspec.gematik.de/search/index.html?A_28131) | TI-Flow-Fachdienst - E-Rezept löschen - Push Notification Versicherter | IG-TIFLOW-CORE-128 | core |
+| [A_28132](https://gemspec.gematik.de/search/index.html?A_28132) | TI-Flow-Fachdienst - Nachricht einstellen - Push Notification Versicherter | IG-TIFLOW-CORE-298 | core |
+| [A_28133](https://gemspec.gematik.de/search/index.html?A_28133) | TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Push Notification Versicherter | IG-TIFLOW-CHRG-73 | erp-chrg |
+| [A_28134](https://gemspec.gematik.de/search/index.html?A_28134) | TI-Flow-Fachdienst - Abrechnungsinformation ändern - Push Notification Versicherter | IG-TIFLOW-CHRG-89 | erp-chrg |
+| [A_28135](https://gemspec.gematik.de/search/index.html?A_28135) | TI-Flow-Fachdienst - Push Notification senden - Referenz auf Protokolleintrag | IG-TIFLOW-CORE-208 | core |
+| [A_28204](https://gemspec.gematik.de/search/index.html?A_28204) | TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage aller einlösbaren Verordnungsinformationen - Push Notification Versicherter | IG-TIFLOW-XBORDER-19 | erp-eu |
+| [A_28205](https://gemspec.gematik.de/search/index.html?A_28205) | TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Push Notification Versicherter | IG-TIFLOW-XBORDER-20 | erp-eu |
+| [A_28206](https://gemspec.gematik.de/search/index.html?A_28206) | TI-Flow-Fachdienst - Task schließen - EU - Push Notification Versicherter | IG-TIFLOW-XBORDER-44 | erp-eu |
 
 #### Nicht übernommene Anforderungen
 
 | Alte Anforderung | Alter Titel |
 |---|---|
-| [A_19130](https://gemspec.gematik.de/search/index.html?A_19130) | E-Rezept-Fachdienst - Authentifizierung erforderlich LEI-Endpunkt |
-| [A_19131](https://gemspec.gematik.de/search/index.html?A_19131) | E-Rezept-Fachdienst - Authentifizierung ungültig |
-| [A_19260](https://gemspec.gematik.de/search/index.html?A_19260) | E-Rezept-Fachdienst – Ausschluss unbekannter FdV-Versionsnummern von der Kommunikation |
-| [A_19261-01](https://gemspec.gematik.de/search/index.html?A_19261-01) | E-Rezept-Fachdienst – Ausschluss von Client-Versionen |
-| [A_19262](https://gemspec.gematik.de/search/index.html?A_19262) | E-Rezept-Fachdienst - Transportverschlüsselte Übertragung von Daten mit PVS |
-| [A_19263](https://gemspec.gematik.de/search/index.html?A_19263) | E-Rezept-Fachdienst - Transportverschlüsselte Übertragung von Daten mit AVS |
-| [A_19264](https://gemspec.gematik.de/search/index.html?A_19264) | E-Rezept-Fachdienst - Transportverschlüsselte Übertragung von Daten mit FdV |
-| [A_19265](https://gemspec.gematik.de/search/index.html?A_19265) | E-Rezept-Fachdienst – vertrauliche Kommunikation |
-| [A_19266](https://gemspec.gematik.de/search/index.html?A_19266) | E-Rezept-Fachdienst - Berücksichtigung OWASP-Top-10-Risiken |
-| [A_19267](https://gemspec.gematik.de/search/index.html?A_19267) | E-Rezept-Fachdienst - Authentisierung gegenüber Clients |
-| [A_19282](https://gemspec.gematik.de/search/index.html?A_19282) | E-Rezept-Fachdienst - Systemprotokoll für Betriebszustand |
-| [A_19283](https://gemspec.gematik.de/search/index.html?A_19283) | E-Rezept-Fachdienst - Systemprotokoll ohne personenbezogene und ohne medizinische Daten |
-| [A_19389](https://gemspec.gematik.de/search/index.html?A_19389) | E-Rezept-Fachdienst - Authentifizierung erforderlich Vers-Endpunkt |
-| [A_19390-01](https://gemspec.gematik.de/search/index.html?A_19390-01) | E-Rezept-Fachdienst - Authentifizierung Nutzerrolle |
-| [A_19391-01](https://gemspec.gematik.de/search/index.html?A_19391-01) | E-Rezept-Fachdienst - Authentifizierung Nutzername |
-| [A_19392-01](https://gemspec.gematik.de/search/index.html?A_19392-01) | E-Rezept-Fachdienst - Authentifizierung Nutzerkennung |
-| [A_19412-06](https://gemspec.gematik.de/search/index.html?A_19412-06) | Anbieter E-Rezept-Fachdienst - Schnittstellenadressierung Primärsysteme |
-| [A_19439-04](https://gemspec.gematik.de/search/index.html?A_19439-04) | E-Rezept-Fachdienst - Authentifizierung Authentifizierungsstärke |
-| [A_19586](https://gemspec.gematik.de/search/index.html?A_19586) | Anbieter E-Rezept-Fachdienst Speicherung Schlüsselmaterial in HSM |
-| [A_19678](https://gemspec.gematik.de/search/index.html?A_19678) | E-Rezept-Fachdienst -Systemprotokoll  Verfügbarkeit interner Logdaten |
-| [A_19683](https://gemspec.gematik.de/search/index.html?A_19683) | E-Rezept-Fachdienst – Umsetzung der fachlichen Operationen in einer Vertrauenswürdigen Ausführungsumgebung (VAU) |
-| [A_19684](https://gemspec.gematik.de/search/index.html?A_19684) | E-Rezept-Fachdienst – Verarbeitungskontext der VAU |
-| [A_19688](https://gemspec.gematik.de/search/index.html?A_19688) | E-Rezept-Fachdienst – Verschlüsselung von außerhalb des Verarbeitungskontextes der VAU gespeicherten Daten |
-| [A_19694](https://gemspec.gematik.de/search/index.html?A_19694) | E-Rezept-Fachdienst – Geschützte Weitergabe von Daten an autorisierte Nutzer durch die VAU |
-| [A_19695](https://gemspec.gematik.de/search/index.html?A_19695) | E-Rezept-Fachdienst - Android Digital Asset Link |
-| [A_19699](https://gemspec.gematik.de/search/index.html?A_19699) | E-Rezept-Fachdienst – Ableitung der Persistenzschlüssel durch ein HSM |
-| [A_19700](https://gemspec.gematik.de/search/index.html?A_19700) | E-Rezept-Fachdienst - Ableitung der Persistenzschlüssel aus Merkmal der E-Rezepte |
-| [A_19702](https://gemspec.gematik.de/search/index.html?A_19702) | E-Rezept-Fachdienst – Isolation zwischen Datenverarbeitungsprozessen mehrerer Verarbeitungskontexte der VAU |
-| [A_19704](https://gemspec.gematik.de/search/index.html?A_19704) | E-Rezept-Fachdienst – Isolation der VAU von Datenverarbeitungsprozessen des Anbieters |
-| [A_19706](https://gemspec.gematik.de/search/index.html?A_19706) | vE-Rezept-Fachdienst – Ausschluss von Manipulationen an der Software der VAU |
-| [A_19707](https://gemspec.gematik.de/search/index.html?A_19707) | E-Rezept-Fachdienst – Ausschluss von Manipulationen an der Hardware der VAU |
-| [A_19708](https://gemspec.gematik.de/search/index.html?A_19708) | E-Rezept-Fachdienst – Kontinuierliche Wirksamkeit des Manipulationsschutzes der VAU |
-| [A_19709](https://gemspec.gematik.de/search/index.html?A_19709) | E-Rezept-Fachdienst – Kein physischer Zugang des Anbieters zu Systemen der VAU |
-| [A_19710](https://gemspec.gematik.de/search/index.html?A_19710) | E-Rezept-Fachdienst – Nutzdatenbereinigung vor physischem Zugang zu Systemen der VAU |
-| [A_19711-01](https://gemspec.gematik.de/search/index.html?A_19711-01) | E-Rezept-Fachdienst – Private Schlüssel von Dienstzertifikaten im HSM |
-| [A_19712](https://gemspec.gematik.de/search/index.html?A_19712) | E-Rezept-Fachdienst – Einsatz zertifizierter HSM |
-| [A_19713](https://gemspec.gematik.de/search/index.html?A_19713) | E-Rezept-Fachdienst – HSM-Kryptographieschnittstelle verfügbar nur für Instanzen der VAU |
-| [A_19714](https://gemspec.gematik.de/search/index.html?A_19714) | E-Rezept-Fachdienst – Sicherer Kanal vom Client zum Verarbeitungskontext der VAU |
-| [A_19715](https://gemspec.gematik.de/search/index.html?A_19715) | E-Rezept-Fachdienst – Konsistenter Systemzustand des Verarbeitungskontextes der VAU |
-| [A_19716](https://gemspec.gematik.de/search/index.html?A_19716) | E-Rezept-Fachdienst – Datenschutzkonformes Logging und Monitoring des Verarbeitungskontextes der VAU |
-| [A_19719](https://gemspec.gematik.de/search/index.html?A_19719) | E-Rezept-Fachdienst – Verarbeitungskontexte der VAU über gemeinsame Host-Adressen erreichbar |
-| [A_19720](https://gemspec.gematik.de/search/index.html?A_19720) | E-Rezept-Fachdienst – Verbindungen von Clients zu Verarbeitungskontexten der VAU über den Eingangspunkt |
-| [A_19721](https://gemspec.gematik.de/search/index.html?A_19721) | E-Rezept-Fachdienst – Sicherer Kanal zum Verarbeitungskontext der VAU auf Inhaltsebene |
-| [A_19722](https://gemspec.gematik.de/search/index.html?A_19722) | E-Rezept-Fachdienst – Automatisierter Abbau des sicheren Kanals |
-| [A_19724](https://gemspec.gematik.de/search/index.html?A_19724) | E-Rezept-Fachdienst – Identität des Verarbeitungskontextes für Clients |
-| [A_19726-01](https://gemspec.gematik.de/search/index.html?A_19726-01) | E-Rezept-Fachdienst – Unabhängige Skalierung der Dienst-Ressourcen für verschiedene Anwendergruppen |
-| [A_19813](https://gemspec.gematik.de/search/index.html?A_19813) | E-Rezept-Fachdienst – Sicherung zum Transportnetz Internet durch Paketfilter |
-| [A_19814](https://gemspec.gematik.de/search/index.html?A_19814) | E-Rezept-Fachdienst – Platzierung des Paketfilters Internet |
-| [A_19815-03](https://gemspec.gematik.de/search/index.html?A_19815-03) | E-Rezept-Fachdienst – Richtlinien für den Paketfilter zum Internet |
-| [A_19823](https://gemspec.gematik.de/search/index.html?A_19823) | E-Rezept-Fachdienst – Richtlinien zum TLS-Verbindungsaufbau |
-| [A_19824](https://gemspec.gematik.de/search/index.html?A_19824) | E-Rezept-Fachdienst – Verhalten bei Vollauslastung |
-| [A_19985-03](https://gemspec.gematik.de/search/index.html?A_19985-03) | Anbieter E-Rezept-Fachdienst - Registrierung beim IDP als Relying Party |
-| [A_19986-01](https://gemspec.gematik.de/search/index.html?A_19986-01) | Anbieter E-Rezept-Fachdienst - E-Rezept-Sessiondauer im IDP |
-| [A_19992-01](https://gemspec.gematik.de/search/index.html?A_19992-01) | E-Rezept-Fachdienst - Blocklisting zu häufig verwendeter ACCESS_TOKEN |
-| [A_19993-01](https://gemspec.gematik.de/search/index.html?A_19993-01) | E-Rezept-Fachdienst - Prüfung eingehender ACCESS_TOKEN |
-| [A_20001](https://gemspec.gematik.de/search/index.html?A_20001) | E-Rezept-Fachdienst -Systemprotokoll zu Ergebnis einer aufgerufenen Operation |
-| [A_20013-01](https://gemspec.gematik.de/search/index.html?A_20013-01) | E-Rezept-Fachdienst - Erkennung Clientsystem User-Agent |
-| [A_20022](https://gemspec.gematik.de/search/index.html?A_20022) | E-Rezept-Fachdienst - OCSP-Status für das OCSP-Stapling |
-| [A_20022-01](https://gemspec.gematik.de/search/index.html?A_20022-01) | E-Rezept-Fachdienst - OCSP-Status für das OCSP-Stapling |
-| [A_20023](https://gemspec.gematik.de/search/index.html?A_20023) | E-Rezept-Fachdienst - Bereitstellung TSL |
-| [A_20024-01](https://gemspec.gematik.de/search/index.html?A_20024-01) | E-Rezept-Fachdienst - Bereitstellung OCSP-Forwarder |
-| [A_20025](https://gemspec.gematik.de/search/index.html?A_20025) | E-Rezept-Fachdienst - Caching OCSP-Antworten |
-| [A_20026](https://gemspec.gematik.de/search/index.html?A_20026) | E-Rezept-Fachdienst - OCSP-Stapling |
-| [A_20158-02](https://gemspec.gematik.de/search/index.html?A_20158-02) | E-Rezept-Fachdienst - Prüfung Signaturzertifikat IDP |
-| [A_20703](https://gemspec.gematik.de/search/index.html?A_20703) | E-Rezept-Fachdienst - Drosselung Brute-Force-Anfragen |
-| [A_20704](https://gemspec.gematik.de/search/index.html?A_20704) | E-Rezept-Fachdienst - Drosselung Rezeptfälschungen |
-| [A_20705](https://gemspec.gematik.de/search/index.html?A_20705) | Anbieter E-Rezept-Fachdienst - Konfiguration und Deaktivierung Drosselung |
-| [A_20706-02](https://gemspec.gematik.de/search/index.html?A_20706-02) | Anbieter E-Rezept-Fachdienst - Claims für ID_TOKEN für FdV |
-| [A_20710-01](https://gemspec.gematik.de/search/index.html?A_20710-01) | Anbieter E-Rezept-Fachdienst - E-Rezept-Lebensdauer ACCESS_TOKEN |
-| [A_20751](https://gemspec.gematik.de/search/index.html?A_20751) | E-Rezept-Fachdienst - Erkennen der Prüfidentität |
-| [A_20752](https://gemspec.gematik.de/search/index.html?A_20752) | E-Rezept-Fachdienst - Ausschluss Vertreterkommunikation von bzw. an Prüf-Identität |
-| [A_20753](https://gemspec.gematik.de/search/index.html?A_20753) | E-Rezept-Fachdienst - Ausschluss Vertreterzugriff auf bzw. mittels Prüf-Identität |
-| [A_20765-02](https://gemspec.gematik.de/search/index.html?A_20765-02) | E-Rezept-Fachdienst - Prüfung Signaturzertifikat E-Rezept-Fachdienst |
-| [A_20974-01](https://gemspec.gematik.de/search/index.html?A_20974-01) | E-Rezept-Fachdienst - Prüfungsintervall Signaturzertifikat E-Rezept-Fachdienst |
+| [A_19130](https://gemspec.gematik.de/search/index.html?A_19130) | TI-Flow-Fachdienst - Authentifizierung erforderlich LEI-Endpunkt |
+| [A_19131](https://gemspec.gematik.de/search/index.html?A_19131) | TI-Flow-Fachdienst - Authentifizierung ungültig |
+| [A_19260](https://gemspec.gematik.de/search/index.html?A_19260) | TI-Flow-Fachdienst – Ausschluss unbekannter FdV-Versionsnummern von der Kommunikation |
+| [A_19261-01](https://gemspec.gematik.de/search/index.html?A_19261-01) | TI-Flow-Fachdienst – Ausschluss von Client-Versionen |
+| [A_19262](https://gemspec.gematik.de/search/index.html?A_19262) | TI-Flow-Fachdienst - Transportverschlüsselte Übertragung von Daten mit PVS |
+| [A_19263](https://gemspec.gematik.de/search/index.html?A_19263) | TI-Flow-Fachdienst - Transportverschlüsselte Übertragung von Daten mit AVS |
+| [A_19264](https://gemspec.gematik.de/search/index.html?A_19264) | TI-Flow-Fachdienst - Transportverschlüsselte Übertragung von Daten mit FdV |
+| [A_19265](https://gemspec.gematik.de/search/index.html?A_19265) | TI-Flow-Fachdienst – vertrauliche Kommunikation |
+| [A_19266](https://gemspec.gematik.de/search/index.html?A_19266) | TI-Flow-Fachdienst - Berücksichtigung OWASP-Top-10-Risiken |
+| [A_19267](https://gemspec.gematik.de/search/index.html?A_19267) | TI-Flow-Fachdienst - Authentisierung gegenüber Clients |
+| [A_19282](https://gemspec.gematik.de/search/index.html?A_19282) | TI-Flow-Fachdienst - Systemprotokoll für Betriebszustand |
+| [A_19283](https://gemspec.gematik.de/search/index.html?A_19283) | TI-Flow-Fachdienst - Systemprotokoll ohne personenbezogene und ohne medizinische Daten |
+| [A_19389](https://gemspec.gematik.de/search/index.html?A_19389) | TI-Flow-Fachdienst - Authentifizierung erforderlich Vers-Endpunkt |
+| [A_19390-01](https://gemspec.gematik.de/search/index.html?A_19390-01) | TI-Flow-Fachdienst - Authentifizierung Nutzerrolle |
+| [A_19391-01](https://gemspec.gematik.de/search/index.html?A_19391-01) | TI-Flow-Fachdienst - Authentifizierung Nutzername |
+| [A_19392-01](https://gemspec.gematik.de/search/index.html?A_19392-01) | TI-Flow-Fachdienst - Authentifizierung Nutzerkennung |
+| [A_19412-06](https://gemspec.gematik.de/search/index.html?A_19412-06) | Anbieter TI-Flow-Fachdienst - Schnittstellenadressierung Primärsysteme |
+| [A_19439-04](https://gemspec.gematik.de/search/index.html?A_19439-04) | TI-Flow-Fachdienst - Authentifizierung Authentifizierungsstärke |
+| [A_19586](https://gemspec.gematik.de/search/index.html?A_19586) | Anbieter TI-Flow-Fachdienst Speicherung Schlüsselmaterial in HSM |
+| [A_19678](https://gemspec.gematik.de/search/index.html?A_19678) | TI-Flow-Fachdienst -Systemprotokoll  Verfügbarkeit interner Logdaten |
+| [A_19683](https://gemspec.gematik.de/search/index.html?A_19683) | TI-Flow-Fachdienst – Umsetzung der fachlichen Operationen in einer Vertrauenswürdigen Ausführungsumgebung (VAU) |
+| [A_19684](https://gemspec.gematik.de/search/index.html?A_19684) | TI-Flow-Fachdienst – Verarbeitungskontext der VAU |
+| [A_19688](https://gemspec.gematik.de/search/index.html?A_19688) | TI-Flow-Fachdienst – Verschlüsselung von außerhalb des Verarbeitungskontextes der VAU gespeicherten Daten |
+| [A_19694](https://gemspec.gematik.de/search/index.html?A_19694) | TI-Flow-Fachdienst – Geschützte Weitergabe von Daten an autorisierte Nutzer durch die VAU |
+| [A_19695](https://gemspec.gematik.de/search/index.html?A_19695) | TI-Flow-Fachdienst - Android Digital Asset Link |
+| [A_19699](https://gemspec.gematik.de/search/index.html?A_19699) | TI-Flow-Fachdienst – Ableitung der Persistenzschlüssel durch ein HSM |
+| [A_19700](https://gemspec.gematik.de/search/index.html?A_19700) | TI-Flow-Fachdienst - Ableitung der Persistenzschlüssel aus Merkmal der E-Rezepte |
+| [A_19702](https://gemspec.gematik.de/search/index.html?A_19702) | TI-Flow-Fachdienst – Isolation zwischen Datenverarbeitungsprozessen mehrerer Verarbeitungskontexte der VAU |
+| [A_19704](https://gemspec.gematik.de/search/index.html?A_19704) | TI-Flow-Fachdienst – Isolation der VAU von Datenverarbeitungsprozessen des Anbieters |
+| [A_19706](https://gemspec.gematik.de/search/index.html?A_19706) | vTI-Flow-Fachdienst – Ausschluss von Manipulationen an der Software der VAU |
+| [A_19707](https://gemspec.gematik.de/search/index.html?A_19707) | TI-Flow-Fachdienst – Ausschluss von Manipulationen an der Hardware der VAU |
+| [A_19708](https://gemspec.gematik.de/search/index.html?A_19708) | TI-Flow-Fachdienst – Kontinuierliche Wirksamkeit des Manipulationsschutzes der VAU |
+| [A_19709](https://gemspec.gematik.de/search/index.html?A_19709) | TI-Flow-Fachdienst – Kein physischer Zugang des Anbieters zu Systemen der VAU |
+| [A_19710](https://gemspec.gematik.de/search/index.html?A_19710) | TI-Flow-Fachdienst – Nutzdatenbereinigung vor physischem Zugang zu Systemen der VAU |
+| [A_19711-01](https://gemspec.gematik.de/search/index.html?A_19711-01) | TI-Flow-Fachdienst – Private Schlüssel von Dienstzertifikaten im HSM |
+| [A_19712](https://gemspec.gematik.de/search/index.html?A_19712) | TI-Flow-Fachdienst – Einsatz zertifizierter HSM |
+| [A_19713](https://gemspec.gematik.de/search/index.html?A_19713) | TI-Flow-Fachdienst – HSM-Kryptographieschnittstelle verfügbar nur für Instanzen der VAU |
+| [A_19714](https://gemspec.gematik.de/search/index.html?A_19714) | TI-Flow-Fachdienst – Sicherer Kanal vom Client zum Verarbeitungskontext der VAU |
+| [A_19715](https://gemspec.gematik.de/search/index.html?A_19715) | TI-Flow-Fachdienst – Konsistenter Systemzustand des Verarbeitungskontextes der VAU |
+| [A_19716](https://gemspec.gematik.de/search/index.html?A_19716) | TI-Flow-Fachdienst – Datenschutzkonformes Logging und Monitoring des Verarbeitungskontextes der VAU |
+| [A_19719](https://gemspec.gematik.de/search/index.html?A_19719) | TI-Flow-Fachdienst – Verarbeitungskontexte der VAU über gemeinsame Host-Adressen erreichbar |
+| [A_19720](https://gemspec.gematik.de/search/index.html?A_19720) | TI-Flow-Fachdienst – Verbindungen von Clients zu Verarbeitungskontexten der VAU über den Eingangspunkt |
+| [A_19721](https://gemspec.gematik.de/search/index.html?A_19721) | TI-Flow-Fachdienst – Sicherer Kanal zum Verarbeitungskontext der VAU auf Inhaltsebene |
+| [A_19722](https://gemspec.gematik.de/search/index.html?A_19722) | TI-Flow-Fachdienst – Automatisierter Abbau des sicheren Kanals |
+| [A_19724](https://gemspec.gematik.de/search/index.html?A_19724) | TI-Flow-Fachdienst – Identität des Verarbeitungskontextes für Clients |
+| [A_19726-01](https://gemspec.gematik.de/search/index.html?A_19726-01) | TI-Flow-Fachdienst – Unabhängige Skalierung der Dienst-Ressourcen für verschiedene Anwendergruppen |
+| [A_19813](https://gemspec.gematik.de/search/index.html?A_19813) | TI-Flow-Fachdienst – Sicherung zum Transportnetz Internet durch Paketfilter |
+| [A_19814](https://gemspec.gematik.de/search/index.html?A_19814) | TI-Flow-Fachdienst – Platzierung des Paketfilters Internet |
+| [A_19815-03](https://gemspec.gematik.de/search/index.html?A_19815-03) | TI-Flow-Fachdienst – Richtlinien für den Paketfilter zum Internet |
+| [A_19823](https://gemspec.gematik.de/search/index.html?A_19823) | TI-Flow-Fachdienst – Richtlinien zum TLS-Verbindungsaufbau |
+| [A_19824](https://gemspec.gematik.de/search/index.html?A_19824) | TI-Flow-Fachdienst – Verhalten bei Vollauslastung |
+| [A_19985-03](https://gemspec.gematik.de/search/index.html?A_19985-03) | Anbieter TI-Flow-Fachdienst - Registrierung beim IDP als Relying Party |
+| [A_19986-01](https://gemspec.gematik.de/search/index.html?A_19986-01) | Anbieter TI-Flow-Fachdienst - E-Rezept-Sessiondauer im IDP |
+| [A_19992-01](https://gemspec.gematik.de/search/index.html?A_19992-01) | TI-Flow-Fachdienst - Blocklisting zu häufig verwendeter ACCESS_TOKEN |
+| [A_19993-01](https://gemspec.gematik.de/search/index.html?A_19993-01) | TI-Flow-Fachdienst - Prüfung eingehender ACCESS_TOKEN |
+| [A_20001](https://gemspec.gematik.de/search/index.html?A_20001) | TI-Flow-Fachdienst -Systemprotokoll zu Ergebnis einer aufgerufenen Operation |
+| [A_20013-01](https://gemspec.gematik.de/search/index.html?A_20013-01) | TI-Flow-Fachdienst - Erkennung Clientsystem User-Agent |
+| [A_20022](https://gemspec.gematik.de/search/index.html?A_20022) | TI-Flow-Fachdienst - OCSP-Status für das OCSP-Stapling |
+| [A_20022-01](https://gemspec.gematik.de/search/index.html?A_20022-01) | TI-Flow-Fachdienst - OCSP-Status für das OCSP-Stapling |
+| [A_20023](https://gemspec.gematik.de/search/index.html?A_20023) | TI-Flow-Fachdienst - Bereitstellung TSL |
+| [A_20024-01](https://gemspec.gematik.de/search/index.html?A_20024-01) | TI-Flow-Fachdienst - Bereitstellung OCSP-Forwarder |
+| [A_20025](https://gemspec.gematik.de/search/index.html?A_20025) | TI-Flow-Fachdienst - Caching OCSP-Antworten |
+| [A_20026](https://gemspec.gematik.de/search/index.html?A_20026) | TI-Flow-Fachdienst - OCSP-Stapling |
+| [A_20158-02](https://gemspec.gematik.de/search/index.html?A_20158-02) | TI-Flow-Fachdienst - Prüfung Signaturzertifikat IDP |
+| [A_20703](https://gemspec.gematik.de/search/index.html?A_20703) | TI-Flow-Fachdienst - Drosselung Brute-Force-Anfragen |
+| [A_20704](https://gemspec.gematik.de/search/index.html?A_20704) | TI-Flow-Fachdienst - Drosselung Rezeptfälschungen |
+| [A_20705](https://gemspec.gematik.de/search/index.html?A_20705) | Anbieter TI-Flow-Fachdienst - Konfiguration und Deaktivierung Drosselung |
+| [A_20706-02](https://gemspec.gematik.de/search/index.html?A_20706-02) | Anbieter TI-Flow-Fachdienst - Claims für ID_TOKEN für FdV |
+| [A_20710-01](https://gemspec.gematik.de/search/index.html?A_20710-01) | Anbieter TI-Flow-Fachdienst - E-Rezept-Lebensdauer ACCESS_TOKEN |
+| [A_20751](https://gemspec.gematik.de/search/index.html?A_20751) | TI-Flow-Fachdienst - Erkennen der Prüfidentität |
+| [A_20752](https://gemspec.gematik.de/search/index.html?A_20752) | TI-Flow-Fachdienst - Ausschluss Vertreterkommunikation von bzw. an Prüf-Identität |
+| [A_20753](https://gemspec.gematik.de/search/index.html?A_20753) | TI-Flow-Fachdienst - Ausschluss Vertreterzugriff auf bzw. mittels Prüf-Identität |
+| [A_20765-02](https://gemspec.gematik.de/search/index.html?A_20765-02) | TI-Flow-Fachdienst - Prüfung Signaturzertifikat TI-Flow-Fachdienst |
+| [A_20974-01](https://gemspec.gematik.de/search/index.html?A_20974-01) | TI-Flow-Fachdienst - Prüfungsintervall Signaturzertifikat TI-Flow-Fachdienst |
 | [A_21267-01](https://gemspec.gematik.de/search/index.html?A_21267-01) | Prozessparameter - Berechtigungen für Nutzer |
-| [A_21551](https://gemspec.gematik.de/search/index.html?A_21551) | E-Rezept-Fachdienst - Prozess zur Verwaltung von API-KEYs |
-| [A_21552](https://gemspec.gematik.de/search/index.html?A_21552) | E-Rezept-Fachdienst - Zuordnung Abfrageursprung Client |
-| [A_21571](https://gemspec.gematik.de/search/index.html?A_21571) | E-Rezept-Fachdienst - Routing-Informationen X-erp-resource |
-| [A_21572-01](https://gemspec.gematik.de/search/index.html?A_21572-01) | E-Rezept-Fachdienst - Routing-Informationen X-erp-user |
-| [A_21782-03](https://gemspec.gematik.de/search/index.html?A_21782-03) | Anbieter E-Rezept-Fachdienst - Schnittstellenadressierung Internet |
-| [A_22221](https://gemspec.gematik.de/search/index.html?A_22221) | Anbieter E-Rezept-Fachdienst - Erneuerung Signaturzertifikat |
-| [A_23482](https://gemspec.gematik.de/search/index.html?A_23482) | Anbieter E-Rezept-Fachdienst - Bereitstellung Exportpaket VSDM HMAC-Schlüssel |
-| [A_23483](https://gemspec.gematik.de/search/index.html?A_23483) | Anbieter E-Rezept-Fachdienst - Prüfung Exportpaket VSDM HMAC-Schlüssel |
-| [A_23484](https://gemspec.gematik.de/search/index.html?A_23484) | Anbieter E-Rezept-Fachdienst - Prüfung Exportpaket VSDM HMAC-Schlüssel - Information Fachdienstbetreiber VSDM |
-| [A_23485](https://gemspec.gematik.de/search/index.html?A_23485) | Anbieter E-Rezept-Fachdienst - Löschen VSDM HMAC-Schlüssel |
-| [A_23486](https://gemspec.gematik.de/search/index.html?A_23486) | E-Rezept-Fachdienst - VSDM HMAC-Schlüssel - Ausgabe |
-| [A_23492](https://gemspec.gematik.de/search/index.html?A_23492) | E-Rezept-Fachdienst - VSDM HMAC-Schlüssel - Exportpaket einbringen |
-| [A_23493](https://gemspec.gematik.de/search/index.html?A_23493) | E-Rezept-Fachdienst - VSDM HMAC-Schlüssel - Prüfung |
-| [A_23501](https://gemspec.gematik.de/search/index.html?A_23501) | E-Rezept-Fachdienst – VSDM HMAC-Schlüssel - Verarbeitung in VAU |
-| [A_25200](https://gemspec.gematik.de/search/index.html?A_25200) | E-Rezept-Fachdienst - Status AcceptPN3 |
-| [A_25201](https://gemspec.gematik.de/search/index.html?A_25201) | E-Rezept-Fachdienst - Status AcceptPN3Automatic |
-| [A_25202](https://gemspec.gematik.de/search/index.html?A_25202) | E-Rezept-Fachdienst - Konfigurationsparameter NumberApothekenPN3 |
-| [A_25203](https://gemspec.gematik.de/search/index.html?A_25203) | E-Rezept-Fachdienst - Betrieblicher Prozess Änderung AcceptPN3, AcceptPN3Automatic, NumberApothekenPN3 |
-| [A_25204](https://gemspec.gematik.de/search/index.html?A_25204) | E-Rezept-Fachdienst - AcceptPN3 - automatisch Aktivieren |
-| [A_25205](https://gemspec.gematik.de/search/index.html?A_25205) | E-Rezept-Fachdienst - AcceptPN3 - automatisch Deaktivieren |
-| [A_25371](https://gemspec.gematik.de/search/index.html?A_25371) | E-Rezept-Fachdienst - Konfigurationsparameter AcceptPN3Interval |
-| [A_25372](https://gemspec.gematik.de/search/index.html?A_25372) | E-Rezept-Fachdienst - AcceptPN3 - Anzahl Apotheken mit PN3 |
-| [A_26577](https://gemspec.gematik.de/search/index.html?A_26577) | E-Rezept-Fachdienst - Blocklisting unlauterer Clientsysteme an der Internet-Schnittstelle |
-| [A_26578](https://gemspec.gematik.de/search/index.html?A_26578) | E-Rezept-Fachdienst - Blocklisting unlauterer Clientsysteme an der TI-Schnittstelle |
+| [A_21551](https://gemspec.gematik.de/search/index.html?A_21551) | TI-Flow-Fachdienst - Prozess zur Verwaltung von API-KEYs |
+| [A_21552](https://gemspec.gematik.de/search/index.html?A_21552) | TI-Flow-Fachdienst - Zuordnung Abfrageursprung Client |
+| [A_21571](https://gemspec.gematik.de/search/index.html?A_21571) | TI-Flow-Fachdienst - Routing-Informationen X-erp-resource |
+| [A_21572-01](https://gemspec.gematik.de/search/index.html?A_21572-01) | TI-Flow-Fachdienst - Routing-Informationen X-erp-user |
+| [A_21782-03](https://gemspec.gematik.de/search/index.html?A_21782-03) | Anbieter TI-Flow-Fachdienst - Schnittstellenadressierung Internet |
+| [A_22221](https://gemspec.gematik.de/search/index.html?A_22221) | Anbieter TI-Flow-Fachdienst - Erneuerung Signaturzertifikat |
+| [A_23482](https://gemspec.gematik.de/search/index.html?A_23482) | Anbieter TI-Flow-Fachdienst - Bereitstellung Exportpaket VSDM HMAC-Schlüssel |
+| [A_23483](https://gemspec.gematik.de/search/index.html?A_23483) | Anbieter TI-Flow-Fachdienst - Prüfung Exportpaket VSDM HMAC-Schlüssel |
+| [A_23484](https://gemspec.gematik.de/search/index.html?A_23484) | Anbieter TI-Flow-Fachdienst - Prüfung Exportpaket VSDM HMAC-Schlüssel - Information Fachdienstbetreiber VSDM |
+| [A_23485](https://gemspec.gematik.de/search/index.html?A_23485) | Anbieter TI-Flow-Fachdienst - Löschen VSDM HMAC-Schlüssel |
+| [A_23486](https://gemspec.gematik.de/search/index.html?A_23486) | TI-Flow-Fachdienst - VSDM HMAC-Schlüssel - Ausgabe |
+| [A_23492](https://gemspec.gematik.de/search/index.html?A_23492) | TI-Flow-Fachdienst - VSDM HMAC-Schlüssel - Exportpaket einbringen |
+| [A_23493](https://gemspec.gematik.de/search/index.html?A_23493) | TI-Flow-Fachdienst - VSDM HMAC-Schlüssel - Prüfung |
+| [A_23501](https://gemspec.gematik.de/search/index.html?A_23501) | TI-Flow-Fachdienst – VSDM HMAC-Schlüssel - Verarbeitung in VAU |
+| [A_25200](https://gemspec.gematik.de/search/index.html?A_25200) | TI-Flow-Fachdienst - Status AcceptPN3 |
+| [A_25201](https://gemspec.gematik.de/search/index.html?A_25201) | TI-Flow-Fachdienst - Status AcceptPN3Automatic |
+| [A_25202](https://gemspec.gematik.de/search/index.html?A_25202) | TI-Flow-Fachdienst - Konfigurationsparameter NumberApothekenPN3 |
+| [A_25203](https://gemspec.gematik.de/search/index.html?A_25203) | TI-Flow-Fachdienst - Betrieblicher Prozess Änderung AcceptPN3, AcceptPN3Automatic, NumberApothekenPN3 |
+| [A_25204](https://gemspec.gematik.de/search/index.html?A_25204) | TI-Flow-Fachdienst - AcceptPN3 - automatisch Aktivieren |
+| [A_25205](https://gemspec.gematik.de/search/index.html?A_25205) | TI-Flow-Fachdienst - AcceptPN3 - automatisch Deaktivieren |
+| [A_25371](https://gemspec.gematik.de/search/index.html?A_25371) | TI-Flow-Fachdienst - Konfigurationsparameter AcceptPN3Interval |
+| [A_25372](https://gemspec.gematik.de/search/index.html?A_25372) | TI-Flow-Fachdienst - AcceptPN3 - Anzahl Apotheken mit PN3 |
+| [A_26577](https://gemspec.gematik.de/search/index.html?A_26577) | TI-Flow-Fachdienst - Blocklisting unlauterer Clientsysteme an der Internet-Schnittstelle |
+| [A_26578](https://gemspec.gematik.de/search/index.html?A_26578) | TI-Flow-Fachdienst - Blocklisting unlauterer Clientsysteme an der TI-Schnittstelle |
 | [A_26579](https://gemspec.gematik.de/search/index.html?A_26579) | E-Rezept Fachdienst - Drosselung User Agent Aufrufe |
-| [A_27560](https://gemspec.gematik.de/search/index.html?A_27560) | E-Rezept-Fachdienst - Pseudonymisieren der gematik-Logdaten - Geheimer Schlüssel für  nur in VAU |
-| [A_27561](https://gemspec.gematik.de/search/index.html?A_27561) | E-Rezept-Fachdienst - Pseudonymisieren der gematik-Logdaten - Möglichkeit zum Einbringen des Schlüssels im 4-Augen-Prinzip |
-| [A_27562](https://gemspec.gematik.de/search/index.html?A_27562) | Anbieter E-Rezept-Fachdienst - Pseudonymisieren der gematik-Logdaten - Einbringen des Schlüssels im 4-Augen-Prinzip |
-| [A_27563](https://gemspec.gematik.de/search/index.html?A_27563) | Anbieter E-Rezept-Fachdienst - Pseudonymisieren der gematik-Logdaten - unverzüglicher Schlüsselwechsel |
-| [A_27859](https://gemspec.gematik.de/search/index.html?A_27859) | E-Rezept-Fachdienst - Zugriff auf Webdienste - Deaktivieren von Übertragungen |
-| [A_27860](https://gemspec.gematik.de/search/index.html?A_27860) | Anbieter E-Rezept-Fachdienst - Zugriff auf Webdienste - Betrieblicher Prozess Deaktivieren von Übertragungen |
+| [A_27560](https://gemspec.gematik.de/search/index.html?A_27560) | TI-Flow-Fachdienst - Pseudonymisieren der gematik-Logdaten - Geheimer Schlüssel für  nur in VAU |
+| [A_27561](https://gemspec.gematik.de/search/index.html?A_27561) | TI-Flow-Fachdienst - Pseudonymisieren der gematik-Logdaten - Möglichkeit zum Einbringen des Schlüssels im 4-Augen-Prinzip |
+| [A_27562](https://gemspec.gematik.de/search/index.html?A_27562) | Anbieter TI-Flow-Fachdienst - Pseudonymisieren der gematik-Logdaten - Einbringen des Schlüssels im 4-Augen-Prinzip |
+| [A_27563](https://gemspec.gematik.de/search/index.html?A_27563) | Anbieter TI-Flow-Fachdienst - Pseudonymisieren der gematik-Logdaten - unverzüglicher Schlüsselwechsel |
+| [A_27859](https://gemspec.gematik.de/search/index.html?A_27859) | TI-Flow-Fachdienst - Zugriff auf Webdienste - Deaktivieren von Übertragungen |
+| [A_27860](https://gemspec.gematik.de/search/index.html?A_27860) | Anbieter TI-Flow-Fachdienst - Zugriff auf Webdienste - Betrieblicher Prozess Deaktivieren von Übertragungen |
 
 ### Noch nicht veröffentlichte Anforderungen
 
@@ -946,8 +946,8 @@ Hinweis: Links auf neue Anforderungen verwenden aktuell den Platzhalter `{{NEW_I
 
 | Alte Anforderung | Alter Titel |
 |---|---|
-| [A_28520](https://gemspec.gematik.de/search/index.html?A_28520) | E-Rezept-Fachdienst – Richtlinien für den Paketfilter zum Internet - Protokolle |
-| [A_28521](https://gemspec.gematik.de/search/index.html?A_28521) | E-Rezept-Fachdienst – Richtlinien für den Paketfilter zum Internet - Anfragen im Internet |
+| [A_28520](https://gemspec.gematik.de/search/index.html?A_28520) | TI-Flow-Fachdienst – Richtlinien für den Paketfilter zum Internet - Protokolle |
+| [A_28521](https://gemspec.gematik.de/search/index.html?A_28521) | TI-Flow-Fachdienst – Richtlinien für den Paketfilter zum Internet - Anfragen im Internet |
 
 ### gemF_eRp_PKV
 
@@ -957,7 +957,7 @@ Hinweis: Links auf neue Anforderungen verwenden aktuell den Platzhalter `{{NEW_I
 |---|---|---|---|
 | [A_22207](https://gemspec.gematik.de/search/index.html?A_22207) | Einwilligung in Verarbeitung von Abrechnungsinformationen nur für PKV-Versicherte | IG-TIFLOW-CHRG-35 | erp-chrg |
 | [A_22208](https://gemspec.gematik.de/search/index.html?A_22208) | Verarbeitung von Abrechnungsinformationen nur nach Einwilligung | IG-TIFLOW-CHRG-36 | erp-chrg |
-| [A_22209](https://gemspec.gematik.de/search/index.html?A_22209) | Verarbeitung von Abrechnungsinformationen im E-Rezept-Fachdienst nur nach Einwilligung | IG-TIFLOW-CHRG-37 | erp-chrg |
+| [A_22209](https://gemspec.gematik.de/search/index.html?A_22209) | Verarbeitung von Abrechnungsinformationen im TI-Flow-Fachdienst nur nach Einwilligung | IG-TIFLOW-CHRG-37 | erp-chrg |
 | [A_22210](https://gemspec.gematik.de/search/index.html?A_22210) | Nichtabstreitbarkeit der Einwilligung | IG-TIFLOW-CHRG-38 | erp-chrg |
 | [A_22211](https://gemspec.gematik.de/search/index.html?A_22211) | Löschen von Abrechnungsinformationen nach zehn Jahren | IG-TIFLOW-CHRG-39 | erp-chrg |
 | [A_22212](https://gemspec.gematik.de/search/index.html?A_22212) | Information über Möglichkeit des Speicherns der Abrechnungsinformationen nur für konkretes E-Rezept | IG-TIFLOW-CHRG-40 | erp-chrg |

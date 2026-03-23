@@ -1,50 +1,50 @@
-In diesem Abschnitt werden allgemeingültige Funktionsmerkmale des E-Rezept-Fachdienst und seinen Schnittstellen beschrieben.
+In diesem Abschnitt werden allgemeingültige Funktionsmerkmale des TI-Flow-Fachdienst und seinen Schnittstellen beschrieben.
 
 ### RESTful API
 
 <!-- A_19536 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-352" title="E-Rezept-Fachdienst - RESTful API" version="0">
-    <meta lockversion="false"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-352" title="TI-Flow-Fachdienst - RESTful API" version="0">
+    <meta lockversion="true"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-     Der E-Rezept-Fachdienst MUSS seine Schnittstellen für alle Zugriffe auf alle Datenobjekte und alle Ressourcen in einer RESTful API gemäß der FHIR-Spezifikation in http://hl7.org/fhir/http.html der Version v4.0.1 R4 umsetzen.
+     Der TI-Flow-Fachdienst MUSS seine Schnittstellen für alle Zugriffe auf alle Datenobjekte und alle Ressourcen in einer RESTful API gemäß der FHIR-Spezifikation in http://hl7.org/fhir/http.html der Version v4.0.1 R4 umsetzen.
 </requirement>
 
 <!-- A_19537 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-353" title="E-Rezept-Fachdienst - RESTful API MimeType fhir+xml" version="0">
-    <meta lockversion="false"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-353" title="TI-Flow-Fachdienst - RESTful API MimeType fhir+xml" version="0">
+    <meta lockversion="true"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-     Der E-Rezept-Fachdienst MUSS in seinen Schnittstellen für die Zugriffe durch Leistungserbringer und Leistungserbringerinstitutionen standardmäßig den MimeType application/fhir+xml akzeptieren und in Responses verwenden.
+     Der TI-Flow-Fachdienst MUSS in seinen Schnittstellen für die Zugriffe durch Leistungserbringer und Leistungserbringerinstitutionen standardmäßig den MimeType application/fhir+xml akzeptieren und in Responses verwenden.
 </requirement>
 
 <!-- A_19538 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-354" title="E-Rezept-Fachdienst - RESTful API MimeType fhir+json" version="0">
-    <meta lockversion="false"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-354" title="TI-Flow-Fachdienst - RESTful API MimeType fhir+json" version="0">
+    <meta lockversion="true"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-     Der E-Rezept-Fachdienst MUSS in seinen Schnittstellen für die Zugriffe durch Versicherte standardmäßig den MimeType application/fhir+json akzeptieren und in Responses verwenden.
+     Der TI-Flow-Fachdienst MUSS in seinen Schnittstellen für die Zugriffe durch Versicherte standardmäßig den MimeType application/fhir+json akzeptieren und in Responses verwenden.
 </requirement>
 
 <!-- A_19539 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-355" title="E-Rezept-Fachdienst - RESTful API MimeType Aufrufparameter" version="0">
-    <meta lockversion="false"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-355" title="TI-Flow-Fachdienst - RESTful API MimeType Aufrufparameter" version="0">
+    <meta lockversion="true"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-     Der E-Rezept-Fachdienst MUSS in seinen Schnittstellen einen von der Standardfestlegung abweichenden MimeType umsetzen, wenn der jeweilige Client eine entsprechende Anforderung in der Aufrufschnittstelle über den URL-Parameter _format=fhir+xml bzw. _format=fhir+json gemäß http://hl7.org/fhir/http.html#general oder mittels des Accept-Attributs im HTTP-Request-Header als application/fhir+xml bzw. application/fhir+json anfordert, damit Clientsysteme ein für sie leichter verarbeitbares Format in der Antwort erhalten können.
+     Der TI-Flow-Fachdienst MUSS in seinen Schnittstellen einen von der Standardfestlegung abweichenden MimeType umsetzen, wenn der jeweilige Client eine entsprechende Anforderung in der Aufrufschnittstelle über den URL-Parameter _format=fhir+xml bzw. _format=fhir+json gemäß http://hl7.org/fhir/http.html#general oder mittels des Accept-Attributs im HTTP-Request-Header als application/fhir+xml bzw. application/fhir+json anfordert, damit Clientsysteme ein für sie leichter verarbeitbares Format in der Antwort erhalten können.
 </requirement>
 
 <!-- A_20171 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-356" title="E-Rezept-Fachdienst - RESTful API CapabilityStatement" version="0">
-    <meta lockversion="false"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-356" title="TI-Flow-Fachdienst - RESTful API CapabilityStatement" version="0">
+    <meta lockversion="true"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-     Der E-Rezept-Fachdienst MUSS an seinen Schnittstellen eine http-GET-Operation auf den Endpunkt /metadata erlauben, in welcher er ein CapabilityStatement gemäß https://www.hl7.org/fhir/capabilitystatement.html veröffentlicht, welches die vom E-Rezept-Fachdienst verarbeiteten Ressourcen mit den zugehörigen http-Operationen der angebotenen REST-Schnittstelle auflistet: 
+     Der TI-Flow-Fachdienst MUSS an seinen Schnittstellen eine http-GET-Operation auf den Endpunkt /metadata erlauben, in welcher er ein CapabilityStatement gemäß https://www.hl7.org/fhir/capabilitystatement.html veröffentlicht, welches die vom TI-Flow-Fachdienst verarbeiteten Ressourcen mit den zugehörigen http-Operationen der angebotenen REST-Schnittstelle auflistet: 
     <ul>
      <li>Task – GET-, POST-Operation, FHIR-Operations für die Workflow-Steuerung und Einsicht durch den Versicherten </li>
      <li>MedicationDispense – GET-Operation für das Einsehen der Medikamentinformationen durch den Versicherten </li>
@@ -56,15 +56,15 @@ In diesem Abschnitt werden allgemeingültige Funktionsmerkmale des E-Rezept-Fach
 
 ### E-Rezept ID
 
-Die E-Rezept-ID wird durch den E-Rezept-Fachdienst beim Anlegen eines Tasks für den Workflow des E-Rezepts erstellt.
+Die E-Rezept-ID wird durch den TI-Flow-Fachdienst beim Anlegen eines Tasks für den Workflow des E-Rezepts erstellt.
 
 <!-- A_19217-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-357" title="Aufbau E-Rezept-ID" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-     Der E-Rezept-Fachdienst MUSS E-Rezept-IDs erzeugen und verwalten, welche der Syntax "aaa.bbb.bbb.bbb.bbb.cc" und der folgenden Semantik genügen 
+     Der TI-Flow-Fachdienst MUSS E-Rezept-IDs erzeugen und verwalten, welche der Syntax "aaa.bbb.bbb.bbb.bbb.cc" und der folgenden Semantik genügen 
      
      <table>
   <thead>
@@ -98,7 +98,7 @@ Die E-Rezept-ID wird durch den E-Rezept-Fachdienst beim Anlegen eines Tasks für
 
 <!-- A_19218 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-358" title="Prüfung E-Rezept-ID" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -107,22 +107,22 @@ Die E-Rezept-ID wird durch den E-Rezept-Fachdienst beim Anlegen eines Tasks für
 
 ### Verarbeitung von Datensätzen
 
-Es gelten folgende Anforderungen und Vorgaben zur Verarbeitung und Interpretation von Zeichen- und Datensätzen im E-Rezept-Fachdienst.
+Es gelten folgende Anforderungen und Vorgaben zur Verarbeitung und Interpretation von Zeichen- und Datensätzen im TI-Flow-Fachdienst.
 
 Für die Kommunikation und die Interoperabilität müssen bezüglich Datensätzen einheitliche Vorgaben gelten. Laut FHIR Spezifikation wird für XML und JSON Datensätze das Character Encoding "UTF-8" vorgegeben. Byte Order Marks (BOM) werden nicht angeben.
 
 <!-- A_28428  -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-359" title="E-Rezept-Fachdienst - Verarbeitung von Datensätzen - Deserialisierung von PKCS#7 Enveloping-Daten" version="0">
-    <meta lockversion="false"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-359" title="TI-Flow-Fachdienst - Verarbeitung von Datensätzen - Deserialisierung von PKCS#7 Enveloping-Daten" version="0">
+    <meta lockversion="true"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der E-Rezept-Fachdienst MUSS beim Verarbeiten von PKCS#7 Enveloping-Daten die Anforderungen zur Verarbeitung von Datensätzen im E-Rezept-Fachdienst anwenden.
+    Der TI-Flow-Fachdienst MUSS beim Verarbeiten von PKCS#7 Enveloping-Daten die Anforderungen zur Verarbeitung von Datensätzen im TI-Flow-Fachdienst anwenden.
 </requirement>
 
 <!-- A_28427 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-360" title="E-Rezept-Fachdienst - Verarbeitung von Datensätzen - Forcieren von UTF-8 ohne BOM" version="0">
-    <meta lockversion="false"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-360" title="TI-Flow-Fachdienst - Verarbeitung von Datensätzen - Forcieren von UTF-8 ohne BOM" version="0">
+    <meta lockversion="true"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -130,8 +130,8 @@ Für die Kommunikation und die Interoperabilität müssen bezüglich Datensätze
 </requirement>
 
 <!-- A_28429 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-361" title="Character Encoding für E-Rezept-Fachdienst" version="0">
-    <meta lockversion="false"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-361" title="Character Encoding für TI-Flow-Fachdienst" version="0">
+    <meta lockversion="true"/>
             <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
     </actor>
@@ -147,12 +147,12 @@ Für die Kommunikation und die Interoperabilität müssen bezüglich Datensätze
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
-    Clientsysteme des E-Rezept-Fachdienstes MÜSSEN für die Kommunikation mit dem E-Rezept-Fachdienst ausschließlich das Character Encoding UTF-8 verwenden.
+    Clientsysteme des TI-Flow-Fachdienstes MÜSSEN für die Kommunikation mit dem TI-Flow-Fachdienst ausschließlich das Character Encoding UTF-8 verwenden.
 </requirement>
 
 <!-- A_28430 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-362" title="Verbot Angabe von BOM für E-Rezept-Fachdienst" version="0">
-    <meta lockversion="false"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-362" title="Verbot Angabe von BOM für TI-Flow-Fachdienst" version="0">
+    <meta lockversion="true"/>
         <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
     </actor>
@@ -168,7 +168,7 @@ Für die Kommunikation und die Interoperabilität müssen bezüglich Datensätze
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
-    Clientsysteme des E-Rezept-Fachdienstes DÜRFEN für die Kommunikation mit dem E-Rezept-Fachdienst in Datensätzen ein Byte Order Mark (BOM) NICHT angeben.
+    Clientsysteme des TI-Flow-Fachdienstes DÜRFEN für die Kommunikation mit dem TI-Flow-Fachdienst in Datensätzen ein Byte Order Mark (BOM) NICHT angeben.
 </requirement>
 
 
@@ -182,7 +182,7 @@ Aufgrund der Profilierung einiger Datenfelder kommt es vor, dass keine Zeitzonen
 
 <!-- A_27660 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-363" title="CS: Verarbeitung von Datumsangaben ohne Zeitzoneninformation" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
         <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -198,5 +198,5 @@ Aufgrund der Profilierung einiger Datenfelder kommt es vor, dass keine Zeitzonen
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-    Clientsysteme des E-Rezept-Fachdienstes MÜSSEN bei der Verarbeitung von FHIR-Ressourcen der Anwendung E-Rezept sicherstellen, dass Datumsangaben ohne explizite Zeitzoneninformationen gemäß der zum jeweiligen Datum gültigen deutschen Zeit (CET/CEST) verarbeitet werden.
+    Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Verarbeitung von FHIR-Ressourcen der Anwendung E-Rezept sicherstellen, dass Datumsangaben ohne explizite Zeitzoneninformationen gemäß der zum jeweiligen Datum gültigen deutschen Zeit (CET/CEST) verarbeitet werden.
 </requirement>

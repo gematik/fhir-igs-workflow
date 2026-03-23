@@ -8,7 +8,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 #### PS verordnende LEI
 
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-71" title="PS verordnende LEI: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -28,7 +28,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 <!-- A_19443 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-72" title="E-Rezept-FdV: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -48,7 +48,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 #### PS abgebende LEI
 
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-73" title="PS abgebende LEI: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -70,7 +70,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 </requirement>
 
 <requirement conformance="SHOULD" key="IG-TIFLOW-ERP-74" title="PS abgebende LEI: TIFlow-RX - empfohlene Anwendungsfälle" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -129,7 +129,7 @@ Zusätzlich werden u.a. die Informationen
 - Ende der Gültigkeit (`MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.end`) 
 angegeben.
 
-Jede Teilverordnung einer Mehrfachverordnung wird im E-Rezept-Fachdienst mit einem eigenen Workflow (Task) verwaltet. Dies ermöglicht den Versicherten und den Apotheken eine separate Verarbeitung jedes E-Rezepts einer Mehrfachverordnung.
+Jede Teilverordnung einer Mehrfachverordnung wird im TI-Flow-Fachdienst mit einem eigenen Workflow (Task) verwaltet. Dies ermöglicht den Versicherten und den Apotheken eine separate Verarbeitung jedes E-Rezepts einer Mehrfachverordnung.
 
 <!-- UC 2.5 - E-Rezept durch Verordnenden löschen -->
 {% assign use_case = use_cases | where: "title", "UC 2.5 - E-Rezept durch Verordnenden löschen" | first %}
@@ -227,7 +227,7 @@ Jede Teilverordnung einer Mehrfachverordnung wird im E-Rezept-Fachdienst mit ein
 
 <b>Technische Aspekte für die Mehrfachverordnung (MVO)</b>
 
-Wenn ein AVS eine Teilverordnung abruft, deren Einlösezeitraum noch nicht erreicht ist, dann liefert der E-Rezept-Fachdienst einen Fehler 403. Im OperationOutcome der Fehlermeldung liefert der E-Rezept-Fachdienst das Datum des Beginns der Einlösefrist.
+Wenn ein AVS eine Teilverordnung abruft, deren Einlösezeitraum noch nicht erreicht ist, dann liefert der TI-Flow-Fachdienst einen Fehler 403. Im OperationOutcome der Fehlermeldung liefert der TI-Flow-Fachdienst das Datum des Beginns der Einlösefrist.
 
 Für die QES-Prüfung wird die PKCS#7-Datei verwendet. Die Verordnungsdaten des E-Rezepts sind innerhalb der PKCS#7-Datei enthalten und müssen für die Weiterverarbeitung extrahiert werden.
 

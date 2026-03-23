@@ -5,7 +5,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 <!-- A_19273-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-150" title="PS verordnende LEI: E-Rezept einstellen - Task auf Fachdienst aktivieren" version="0">
-  <meta lockversion="false"/>
+  <meta lockversion="true"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Konformitätsbestätigung"/>
   </actor>
@@ -20,17 +20,17 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 Hinweis: Für den Fall, dass das Clientsystem beim Aufruf der Operation keinen Response erhält, soll der Aufruf wiederholt werden. Wenn im Response des zweiten Aufrufs ein
-Fehler 403 mit dem OperationOutcome "Task not in status draft but in status ready" zurückkommt, wurde der erste Aufruf bereits erfolgreich durch den E-Rezept-Fachdienst verarbeitet. Wenn eine Response mit dem Status 200 zurückkommt, war der zweite Aufruf erfolgreich.
+Fehler 403 mit dem OperationOutcome "Task not in status draft but in status ready" zurückkommt, wurde der erste Aufruf bereits erfolgreich durch den TI-Flow-Fachdienst verarbeitet. Wenn eine Response mit dem Status 200 zurückkommt, war der zweite Aufruf erfolgreich.
 
 ### Patientenausdruck
 
 <!-- A_22503 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-151" title="PS verordnende LEI: E-Rezept einstellen - kein Patientenausdruck bei Fehler beim Aktivieren" version="0">
-  <meta lockversion="false"/>
+  <meta lockversion="true"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Herstellererklärung"/>
   </actor>
-  Das PS der verordnenden LEI DARF im Anwendungsfall "E-Rezept durch Verordnenden einstellen" NICHT einen Ausdruck für den Versicherten erstellen, wenn der E-Rezept-Fachdienst im Response der Operation POST /Task/&lt;id&gt;/$activate mit einem Fehler antwortet.
+  Das PS der verordnenden LEI DARF im Anwendungsfall "E-Rezept durch Verordnenden einstellen" NICHT einen Ausdruck für den Versicherten erstellen, wenn der TI-Flow-Fachdienst im Response der Operation POST /Task/&lt;id&gt;/$activate mit einem Fehler antwortet.
 </requirement>
 
 Für den Patientenausdruck gelten vorrangig die Regelungen zum Ausdruck eines E-Rezepts aus den Bundesmantelverträgen [BMV] und [BMV-Z].
@@ -38,7 +38,7 @@ Für den Patientenausdruck gelten vorrangig die Regelungen zum Ausdruck eines E-
 
 <!-- A_22423 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-152" title="PS verordnende LEI: E-Rezept einstellen - separater Patientenausdruck je Flowtype" version="0">
-  <meta lockversion="false"/>
+  <meta lockversion="true"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Herstellererklärung"/>
   </actor>
@@ -47,7 +47,7 @@ Für den Patientenausdruck gelten vorrangig die Regelungen zum Ausdruck eines E-
 
 <!-- A_19279 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-153" title="PS verordnende LEI: E-Rezept einstellen - E-Rezept-Token erstellen" version="0">
-  <meta lockversion="false"/>
+  <meta lockversion="true"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Herstellererklärung"/>
   </actor>
@@ -59,7 +59,7 @@ Für die Spezifikation des E-Rezept-Token siehe [gemSpec_DM_eRp#2.3].
 
 <!-- A_19280 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-154" title="PS verordnende LEI: E-Rezept einstellen - Datamatrix-Code erstellen" version="0">
-  <meta lockversion="false"/>
+  <meta lockversion="true"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Herstellererklärung"/>
   </actor>

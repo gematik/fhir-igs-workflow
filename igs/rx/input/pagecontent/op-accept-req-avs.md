@@ -5,7 +5,7 @@
 ### Modulspezifische Anforderungen
 
 <b>Hinweis zu Mehrfachverordnung:</b>
-Wenn ein AVS eine Teilverordnung abruft, deren Einlösezeitraum noch nicht erreicht ist, dann liefert der E-Rezept-Fachdienst einen Fehler 403. Im OperationOutcome der Fehlermeldung liefert der E-Rezept-Fachdienst das Datum des Beginns der Einlösefrist.
+Wenn ein AVS eine Teilverordnung abruft, deren Einlösezeitraum noch nicht erreicht ist, dann liefert der TI-Flow-Fachdienst einen Fehler 403. Im OperationOutcome der Fehlermeldung liefert der TI-Flow-Fachdienst das Datum des Beginns der Einlösefrist.
 
 <b>Flowtype 200/209</b>
 Für den Flowtype "200" und "209" wird im Response Bundle eine Consent Ressource mit Consent.category.coding.code = CHARGCONS übermittelt, falls der Versicherte eine Einwilligung zum Speichern von Abrechnungsinformationen erteilt hat. Diese Information kann in der Abstimmung mit dem Versicherten genutzt werden, ob die Abrechnungsinformation digital oder als Papierbeleg bereitgestellt wird.
@@ -14,7 +14,7 @@ Möchte der Versicherte die Möglichkeit einer Online-Rezepteinlösung nutzen, k
 
 <!-- A_21372 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-108" title="PS abgebende LEI: Übernahme Rezeptinformationen in Warenwirtschaftssystem" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -27,7 +27,7 @@ Für die QES-Prüfung wird die PKCS#7-Datei verwendet. Die Verordnungsdaten des 
 
 <!-- A_19745-01 -->
 <requirement conformance="MAY" key="IG-TIFLOW-ERP-109" title="PS abgebende LEI: E-Rezept abrufen - QES prüfen" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
     </actor>

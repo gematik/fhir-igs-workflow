@@ -6,7 +6,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/$eu-close` gesendet.
 
 ### Anforderungen an Schnittstelle
 
-- [Server Anforderungen zu `$eu-close`](op-eu-close-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [Server Anforderungen zu `$eu-close`](op-eu-close-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
 - [NCPeH Anforderungen zu `$eu-close`](./op-eu-close-req-ncpeha.html): Anforderungen an den NCPeH-FD zur Nutzung der Schnittstelle.
 
 ### API Beschreibung

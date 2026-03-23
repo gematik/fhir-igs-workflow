@@ -3,7 +3,7 @@ Diese Seite beschreibt Anforderungen an das Clientsystem Kostenträger zur Nutzu
 ### Recovery Secret
 
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-215" title="CS Kostenträger: Recovery Secret - Statusrequest" version="0">
-  <meta lockversion="false"/>
+  <meta lockversion="true"/>
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>
   </actor>
@@ -18,13 +18,13 @@ Diese Seite beschreibt Anforderungen an das Clientsystem Kostenträger zur Nutzu
 
 ### Quittung erneut abrufen
 
-Mit diesem Anwendungsfall kann eine abgebende LEI die Quittung erneut abrufen, falls bei der Übermittlung vom E-Rezept-Fachdienst ein Fehler aufgetreten ist.
+Mit diesem Anwendungsfall kann eine abgebende LEI die Quittung erneut abrufen, falls bei der Übermittlung vom TI-Flow-Fachdienst ein Fehler aufgetreten ist.
 
 Der Anwendungsfall kann bei Bedarf wiederholt werden.
 
 <!-- A_19292 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-216" title="CS Kostenträger: Quittung erneut abrufen - Statusrequest" version="0">
-  <meta lockversion="false"/>
+  <meta lockversion="true"/>
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>
   </actor>

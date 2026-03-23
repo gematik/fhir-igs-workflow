@@ -1,4 +1,4 @@
-Die folgenden Operation APIs stellt der E-Rezept-Fachdienst dem _E-Rezept-FdV_ sowie dem _NCPeH_ zur Verfügung.
+Die folgenden Operation APIs stellt der TI-Flow-Fachdienst dem _E-Rezept-FdV_ sowie dem _NCPeH_ zur Verfügung.
 
 ### Verwaltung der Zugriffsberechtigung durch den Versicherten
 

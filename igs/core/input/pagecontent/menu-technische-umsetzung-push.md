@@ -1,18 +1,18 @@
 Die Funktionalität zu Push Notification für FdVs ist anwendungsübergreifend in [gemF_PushNotification] beschrieben.
 
-Der E-Rezept-Fachdienst übernimmt die Rolle „Fachdienst“. Er verwaltet FdV-Instanzen, die sich bei ihm für den Empfang von Push Notifications registriert haben, erstellt Push Notifications für vom Nutzer abonnierte Ereignisse und übermittelt diese an das zuständige Push Gateway. Der E-Rezept-Fachdienst bietet Schnittstellen für das E-Rezept-FdV zur Registrierung, Deregistrierung und Konfiguration von Kanälen an.
+Der TI-Flow-Fachdienst übernimmt die Rolle „Fachdienst“. Er verwaltet FdV-Instanzen, die sich bei ihm für den Empfang von Push Notifications registriert haben, erstellt Push Notifications für vom Nutzer abonnierte Ereignisse und übermittelt diese an das zuständige Push Gateway. Der TI-Flow-Fachdienst bietet Schnittstellen für das E-Rezept-FdV zur Registrierung, Deregistrierung und Konfiguration von Kanälen an.
 
 ### Push Notification senden
 
-Der E-Rezept-Fachdienst erstellt ein Notification-Objekt für verschlüsselte Notifications wie in [OpenAPI_PushGateway] beschrieben. Der Nachrichteninhalt, auf den in diesem Kapitel verwiesen wird, ist der Inhalt des Ciphertexts.
+Der TI-Flow-Fachdienst erstellt ein Notification-Objekt für verschlüsselte Notifications wie in [OpenAPI_PushGateway] beschrieben. Der Nachrichteninhalt, auf den in diesem Kapitel verwiesen wird, ist der Inhalt des Ciphertexts.
 
 <!-- A_28115 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-225" title="E-Rezept-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen" version="0">
-    <meta lockversion="false"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-225" title="TI-Flow-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen" version="0">
+    <meta lockversion="true"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-     Der E-Rezept-Fachdienst MUSS den Nachrichteninhalt einer Push Notification gemäß TAB_eRPFD_028 erzeugen.
+     Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification gemäß TAB_eRPFD_028 erzeugen.
 
 <table>
 <thead>
@@ -189,37 +189,37 @@ Ansonsten:<br>
 </requirement>
 
 <!-- A_28116 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-226" title="E-Rezept-Fachdienst - Push Notification senden - verpflichtende Verschlüsselung" version="0">
-    <meta lockversion="false"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-226" title="TI-Flow-Fachdienst - Push Notification senden - verpflichtende Verschlüsselung" version="0">
+    <meta lockversion="true"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-     Der E-Rezept-Fachdienst MUSS den Nachrichteninhalt einer Push Notification verschlüsseln.
+     Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification verschlüsseln.
 </requirement>
 
 Die Vorgaben für die Verschlüsselung sind in `A_27161-* - Fachdienst - Push Notification senden - Nachricht verschlüsseln` beschrieben.
 
 <!-- A_28135 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-227" title="E-Rezept-Fachdienst - Push Notification senden - Referenz auf Protokolleintrag" version="0">
-    <meta lockversion="false"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-227" title="TI-Flow-Fachdienst - Push Notification senden - Referenz auf Protokolleintrag" version="0">
+    <meta lockversion="true"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-     Der E-Rezept-Fachdienst MUSS beim Erstellen einer Push Notification die Identifier des zugehörigen Protokolleintrags (AuditEvent.id) des Triggers im Identifier-Feld des äußeren Notification-Objekts (notification.identifier) angeben.
+     Der TI-Flow-Fachdienst MUSS beim Erstellen einer Push Notification die Identifier des zugehörigen Protokolleintrags (AuditEvent.id) des Triggers im Identifier-Feld des äußeren Notification-Objekts (notification.identifier) angeben.
 </requirement>
 
 ### Push Notification Datenstruktur
 
 <!-- A_28124 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-228" title="E-Rezept - Push Notifications - Datenstruktur Nachrichteninhalte" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-    Der E-Rezept-Fachdienst und das E-Rezept-FdV MÜSSEN für den Anwendungsfall "Push Notifications" Nachrichteninhalte mit der folgenden Datenstruktur im JSON Format unterstützen:
+    Der TI-Flow-Fachdienst und das E-Rezept-FdV MÜSSEN für den Anwendungsfall "Push Notifications" Nachrichteninhalte mit der folgenden Datenstruktur im JSON Format unterstützen:
 
 <table>
 <thead>

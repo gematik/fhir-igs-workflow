@@ -22,7 +22,7 @@ Verordnen bis zum Einlösen.
 ### Anforderungen zur Umsetzung des IGs
 
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-23" title="E-Rezept: Anwendung des IG 'Verordnungen für Digitale Gesundheitsanwendungen (DiGA)' für Workflow 162" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -32,12 +32,12 @@ Verordnen bis zum Einlösen.
     <actor name="CS_E-Rezept_KTR">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-    Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Workflow 162 den Implementation Guide "Verordnungen für Digitale Gesundheitsanwendungen (DiGA)" umsetzen.
+    Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Workflow 162 den Implementation Guide "Verordnungen für Digitale Gesundheitsanwendungen (DiGA)" umsetzen.
 </requirement>
 
 <!-- A_26060, A_23027, A_19295-01, A_22483-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-24" title="E-Rezept: Umsetzung des Moduls 'Verordnungen für Digitale Gesundheitsanwendungen (DiGA)'" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -47,7 +47,7 @@ Verordnen bis zum Einlösen.
     <actor name="CS_E-Rezept_KTR">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-    Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides "Verordnungen für Digitale Gesundheitsanwendungen (DiGA)" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
+    Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides "Verordnungen für Digitale Gesundheitsanwendungen (DiGA)" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
 </requirement>
 
 

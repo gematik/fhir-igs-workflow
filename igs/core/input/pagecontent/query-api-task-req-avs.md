@@ -4,7 +4,7 @@ Diese Seite beschreibt Anforderungen an das AVS zur Nutzung der `Task`-Query-End
 
 <!-- A_24181 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-37" title="PS abgebende LEI: Recovery Secret - Statusrequest" version="0">
-  <meta lockversion="false"/>
+  <meta lockversion="true"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>
   </actor>
@@ -19,13 +19,13 @@ Diese Seite beschreibt Anforderungen an das AVS zur Nutzung der `Task`-Query-End
 
 ### Quittung erneut abrufen
 
-Mit diesem Anwendungsfall kann eine abgebende LEI die Quittung erneut abrufen, falls bei der Übermittlung vom E-Rezept-Fachdienst ein Fehler aufgetreten ist.
+Mit diesem Anwendungsfall kann eine abgebende LEI die Quittung erneut abrufen, falls bei der Übermittlung vom TI-Flow-Fachdienst ein Fehler aufgetreten ist.
 
 Der Anwendungsfall kann bei Bedarf wiederholt werden.
 
 <!-- A_19292 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-38" title="PS abgebende LEI: Quittung erneut abrufen - Statusrequest" version="0">
-  <meta lockversion="false"/>
+  <meta lockversion="true"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>
   </actor>

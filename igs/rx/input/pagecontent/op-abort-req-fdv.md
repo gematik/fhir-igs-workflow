@@ -6,7 +6,7 @@
 
 <!-- A_21362-02 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-ERP-16" title="E-Rezept-FdV: E-Rezept löschen - Flowtype 169 / 209 - nur wenn beliefert" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>

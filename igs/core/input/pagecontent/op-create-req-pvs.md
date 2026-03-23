@@ -2,7 +2,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 <!-- A_19275 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-257" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle erstellen" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
     </actor>
@@ -15,7 +15,7 @@ Das PS der verordnenden LEI darf FHIR-Extensions nicht im Verordnungsdatensatz v
 
 <!-- A_22893 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-258" title="PS verordnende LEI: E-Rezept erstellen - Gleichheit Ausstellungsdatum und QES Erstellung" version="0">
-  <meta lockversion="false"/>
+  <meta lockversion="true"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Herstellererklärung"/>
   </actor>
@@ -26,7 +26,7 @@ Es gelten weitere modulspezifische Anforderungen für den Verordnungsdatensatz.
 
 <!-- A_19276 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-259" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-ID abrufen" version="0">
-  <meta lockversion="false"/>
+  <meta lockversion="true"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Konformitätsbestätigung"/>
   </actor>
@@ -44,7 +44,7 @@ Der Value-Katalog für FlowType ist in [gemSpec_DM_eRp] beschrieben.
 
 Der Response des Fachdienstes liefert
 - die Rezept-ID (Task.Identifier mit "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId"), mit der das E-Rezept-Bundle vervollständigt wird,
-- die Task-ID (Task.id), mit dem der Task bei Aufrufen des E-Rezept-Fachdienstes referenziert wird,
+- die Task-ID (Task.id), mit dem der Task bei Aufrufen des TI-Flow-Fachdienstes referenziert wird,
 - und den AccessCode (Task.Identifier mit "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_AccessCode"), welcher für den Zugriff auf das E-Rezept im Fachdienst berechtigt
 
 Hinweis: Die Task-ID entspricht der Rezept-ID.
@@ -53,7 +53,7 @@ Für die qualifizierte elektronische Signatur des Verordnungsbundels wird der Ko
 
 <!-- A_19281-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-260" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle QES signieren" version="0">
-  <meta lockversion="false"/>
+  <meta lockversion="true"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Konformitätsbestätigung"/>
   </actor>

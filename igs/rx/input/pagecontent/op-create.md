@@ -6,7 +6,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/$create` gesendet.
 
 ### Anforderungen an Schnittstelle
 
-- [FD-Anforderungen zu `$create`](./op-create-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [FD-Anforderungen zu `$create`](./op-create-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
 - [PVS-Anforderungen zu `$create`](./op-create-req-pvs.html): Anforderungen an das PVS zur Nutzung der Schnittstelle.
 
 ### API Beschreibung

@@ -5,11 +5,11 @@ Diese Seite beschreibt Anforderungen ein E-Rezept-FdV zur Nutzung der `Communica
 
 <!-- A_19205 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-70" title="Nachrichten abrufen - Nachrichten von Fachdienst herunterladen" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "Nachrichten von Apotheken anzeigen" zum Herunterladen von Nachrichten vom E-Rezept-Fachdienst die HTTP-Operation GET /Communication mit
+    Das E-Rezept-FdV MUSS im Anwendungsfall "Nachrichten von Apotheken anzeigen" zum Herunterladen von Nachrichten vom TI-Flow-Fachdienst die HTTP-Operation GET /Communication mit
     <ul>
         <li>ACCESS_TOKEN im Authorization-Header</li>
         <li>optional: ?received=null für nur ungelesene Nachrichten</li>
@@ -25,7 +25,7 @@ Diese Seite beschreibt Anforderungen ein E-Rezept-FdV zur Nutzung der `Communica
 
 <!-- A_26318 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-71" title="Nachricht senden - E-Rezept zuweisen - Status prüfen" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -34,7 +34,7 @@ Diese Seite beschreibt Anforderungen ein E-Rezept-FdV zur Nutzung der `Communica
 
 <!-- A_26319 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-72" title="Nachricht senden - E-Rezept zuweisen - Ende Gültigkeit prüfen" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -45,7 +45,7 @@ Die für die Nachricht zu verwendende Communication-Ressource wird modul- und an
 
 <!-- A_28543 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-73" title="Nachricht senden - E-Rezept zuweisen - Zuweisen - TransactionID" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -54,7 +54,7 @@ Die für die Nachricht zu verwendende Communication-Ressource wird modul- und an
 
 <!-- A_28545 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-74" title="Nachricht senden - E-Rezept zuweisen - Auf Nachricht antworten - TransactionID" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -63,11 +63,11 @@ Die für die Nachricht zu verwendende Communication-Ressource wird modul- und an
 
 <!-- A_19203 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-75" title="Nachricht senden - Nachricht auf Fachdienst einstellen" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "Nachricht senden" zum Übermitteln einer Nachricht über den E-Rezept-Fachdienst die HTTP-Operation POST /Communication mit
+    Das E-Rezept-FdV MUSS im Anwendungsfall "Nachricht senden" zum Übermitteln einer Nachricht über den TI-Flow-Fachdienst die HTTP-Operation POST /Communication mit
     <ul>
         <li>ACCESS_TOKEN im Authorization-Header</li>
         <li>Communication Ressource in HTTP-Request-Body</li> 
@@ -85,7 +85,7 @@ Die Textnachricht ist optional. Der Textnachricht muss der Präfix "&lt;Absender
 
 <!-- A_20237-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-76" title="Nachricht senden - Vertreterkommunikation - Nachricht erstellen" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -99,8 +99,8 @@ Die Textnachricht ist optional. Der Textnachricht muss der Präfix "&lt;Absender
 </requirement>
 
 <!-- A_20238-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-77" title="Nachricht senden - Vertreterkommunikation - Nachricht auf E-Rezept-Fachdienst einstellen" version="0">
-    <meta lockversion="false"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-77" title="Nachricht senden - Vertreterkommunikation - Nachricht auf TI-Flow-Fachdienst einstellen" version="0">
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -114,17 +114,17 @@ Die Textnachricht ist optional. Der Textnachricht muss der Präfix "&lt;Absender
 
 ### Nachricht löschen
 
-Das E-Rezept-FdV MUSS im Anwendungsfall "Nachricht löschen" es dem Nutzer ermöglichen, eine Nachricht zum Löschen auf dem E-Rezept-Fachdienst auszuwählen.
+Das E-Rezept-FdV MUSS im Anwendungsfall "Nachricht löschen" es dem Nutzer ermöglichen, eine Nachricht zum Löschen auf dem TI-Flow-Fachdienst auszuwählen.
 
 Das E-Rezept-FdV MUSS im Anwendungsfall "Nachricht löschen" vom Nutzer eine Bestätigung einholen, dass die selektierte Nachricht gelöscht werden sollen und die Möglichkeit geben, das Löschen abzubrechen.
 
 <!-- A_21526-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-78" title="E-Rezept-FdV: Nachricht löschen - Löschrequest" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "Nachrichten löschen" für die zu löschende Nachricht die HTTP-Operation DELETE /Communication/&lt;id&gt; des E-Rezept-Fachdienstes mit
+    Das E-Rezept-FdV MUSS im Anwendungsfall "Nachrichten löschen" für die zu löschende Nachricht die HTTP-Operation DELETE /Communication/&lt;id&gt; des TI-Flow-Fachdienstes mit
     <ul>
         <li>ACCESS_TOKEN im Authorization-Header</li>
         <li>Communication-ID in URL &lt;id&gt;</li> 

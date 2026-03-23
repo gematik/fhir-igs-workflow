@@ -7,7 +7,7 @@ Die Operation $reject wird als HTTP POST auf /Task/&#60;id&#62;/$reject ausgefü
 
 ### Anforderungen an Schnittstelle
 
-- [Server-Anforderungen zu `$reject`](./op-reject-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [Server-Anforderungen zu `$reject`](./op-reject-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
 
 - [Anforderungen für KTR zu `$reject`](./op-reject-req-ktr.html): Anforderungen an das Clientsystem des KTR zur Nutzung der Schnittstelle.
 
@@ -20,7 +20,7 @@ einem Fehler kommt, bspw. wenn der Nutzer nicht beim Kostenträger versichert is
 das Clientsystem den Nutzer informieren und das E-Rezept zur weiteren Nutzung
 zurückgeben.
 
-Hierzu führt der Kostenträger die E-Rezept-Fachdienst Operation "$reject" aus und
+Hierzu führt der Kostenträger die TI-Flow-Fachdienst Operation "$reject" aus und
 übermittelt dem Nutzer eine Communication GEM_ERP_PR_Communication_DiGA in der der Kostenträger
 angeben kann, warum die Verordnung nicht bearbeitet werden kann.
  

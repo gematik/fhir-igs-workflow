@@ -12,7 +12,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Commun
 
 <!-- A_21402-02 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-ERP-24" title="E-Rezept-FdV: Anfrage Belieferung - Flowtype 162 / 169 / 209 - Anfrage nicht zulässig" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -22,7 +22,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Commun
 
 <!-- A_21403-02 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-ERP-25" title="E-Rezept-FdV: E-Rezept zuweisen - Flowtype 169 / 209 - Zuweisen nicht zulässig" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -31,7 +31,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Commun
 
 <!-- A_27833 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-ERP-26" title="E-Rezept-FdV: E-Rezept zuweisen- Flowtype 166 - Zuweisen als Versand nicht zulässig" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -40,7 +40,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Commun
 
 <!-- A_26326 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-27" title="E-Rezept-FdV: E-Rezept zuweisen - Beginn Gültigkeit prüfen" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -49,7 +49,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Commun
 
 <!-- A_20011-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-28" title="E-Rezept-FdV: E-Rezept zuweisen - Textnachricht ohne Link" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -59,7 +59,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Commun
 
 <!-- A_21361-02 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-ERP-29" title="E-Rezept-FdV: Vertreterkommunikation - Flowtype 169 / 209 - Vertreterkommunikation nicht zulässig" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -68,7 +68,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Commun
 
 <!-- A_28542 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-30" title="E-Rezept-FdV: E-Rezept zuweisen - Zuweisen - Payload" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -77,7 +77,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Commun
 
 <!-- A_28544 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-31" title="E-Rezept-FdV: E-Rezept zuweisen - Auf Nachricht antworten - Payload" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -88,7 +88,7 @@ siehe [Datenmodell Payload für Communication-Query](./query-api-communication-r
 
 <!-- A_19201-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-32" title="E-Rezept-FdV: E-Rezept zuweisen - Nachricht erstellen" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -113,7 +113,7 @@ Für weitere Informationen siehe "Eine Apotheke aus dem Apotheken-Verzeichnis au
 
 <!-- A_28197 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-33" title="E-Rezept-FdV: Apotheke suchen - Filter Öffentliche Apotheke" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>

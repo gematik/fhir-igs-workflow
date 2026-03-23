@@ -1,9 +1,9 @@
 actor:
 - eRp_FD
 conformance: SHALL
-content_hash: 4da24929855220664578e33a101bda7534b2f7ad3c4c1777454316de05a1907e
+content_hash: 901b0d7397b395f446f223d616c9185930d295111bed788cacb1c280637aa8bb
 created: '2026-03-23T10:57:48.480307'
-date: '2026-03-23T10:57:48.480310'
+date: '2026-03-23T13:33:32.814540'
 key: IG-TIFLOW-CORE-248
 modified: '2026-03-23T10:57:48.480308'
 release_status: STABLE
@@ -12,12 +12,12 @@ status: ACTIVE
 test_procedures:
   eRp_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
+text: Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
   über /Task/&lt;id&gt;/$accept den im HTTP-Header "X-AccessCode" oder URL-Parameter
   "?ac=..." übertragenen AccessCode gegen den im referenzierten Task gespeicherten
   AccessCodeTask.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode
   prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem
   HTTP-Fehlercode 403 abbrechen, damit Zugriffe auf diesen Datensatz nur durch Berechtigte
   in Kenntnis des AccessCodes erfolgen.
-title: E-Rezept-Fachdienst - Task akzeptieren - Prüfung AccessCode
+title: TI-Flow-Fachdienst - Task akzeptieren - Prüfung AccessCode
 version: 0

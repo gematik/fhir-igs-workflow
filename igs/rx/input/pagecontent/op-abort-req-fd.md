@@ -1,4 +1,4 @@
-Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für die Operation `$abort`.
+Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für die Operation `$abort`.
 
 ### Anforderungen aus der Core Spezifikation
 
@@ -7,12 +7,12 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 ### Modulspezifische Anforderungen
 
 <!-- A_19026-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-48" title="E-Rezept-Fachdienst - E-Rezept löschen - Flowtype 160/166/169/200/209 - Rollenprüfung" version="0">
-  <meta lockversion="false"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-48" title="TI-Flow-Fachdienst - E-Rezept löschen - Flowtype 160/166/169/200/209 - Rollenprüfung" version="0">
+  <meta lockversion="true"/>
   <actor name="eRp_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
-  Der E-Rezept-Fachdienst MUSS beim Löschen eines Tasks für eine Verordnung mit Flowtype 160, 166, 169, 200 oder 209 mittels HTTP-POST/$abort-Operation auf den in der URL referenzierten/Task/&#60;id&#62; die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Institutionen in der Rolle
+  Der TI-Flow-Fachdienst MUSS beim Löschen eines Tasks für eine Verordnung mit Flowtype 160, 166, 169, 200 oder 209 mittels HTTP-POST/$abort-Operation auf den in der URL referenzierten/Task/&#60;id&#62; die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Institutionen in der Rolle
   <ul>
     <li>oid_versicherter</li>
     <li>oid_praxis_arzt</li>
@@ -26,12 +26,12 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_19145-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-49" title="E-Rezept-Fachdienst - E-Rezept löschen - Apotheke - Statusprüfung in-progress" version="0">
-    <meta lockversion="false"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-49" title="TI-Flow-Fachdienst - E-Rezept löschen - Apotheke - Statusprüfung in-progress" version="0">
+    <meta lockversion="true"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der E-Rezept-Fachdienst MUSS das Löschen eines E-Rezepts über den mittels der &lt;id&gt; adressierten /Task/&lt;id&gt;/$abort verhindern und die Operation mit dem HTTP-Fehlercode 403 abweisen, wenn der Status des adressierten Tasks gleich "in-progress" ist und die Rolle des aufrufenden Nutzers nicht einer der folgenden Rollen entspricht:
+    Der TI-Flow-Fachdienst MUSS das Löschen eines E-Rezepts über den mittels der &lt;id&gt; adressierten /Task/&lt;id&gt;/$abort verhindern und die Operation mit dem HTTP-Fehlercode 403 abweisen, wenn der Status des adressierten Tasks gleich "in-progress" ist und die Rolle des aufrufenden Nutzers nicht einer der folgenden Rollen entspricht:
     <ul>
         <li>oid_oeffentliche_apotheke</li>
         <li>oid_krankenhausapotheke</li>
@@ -40,12 +40,12 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_19146 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-50" title="E-Rezept-Fachdienst - E-Rezept löschen - Apotheke - Statusprüfung ungleich in-progress" version="0">
-    <meta lockversion="false"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-50" title="TI-Flow-Fachdienst - E-Rezept löschen - Apotheke - Statusprüfung ungleich in-progress" version="0">
+    <meta lockversion="true"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der E-Rezept-Fachdienst MUSS das Löschen eines E-Rezepts über den mittels der &lt;id&gt; adressierten /Task/&lt;id&gt;/$abort verhindern und die Operation mit dem HTTP-Fehlercode 403 abweisen, wenn der Status des adressierten Tasks ungleich "in-progress" ist und die Rolle des aufrufenden Nutzers einer der folgenden Rollen entspricht: 
+    Der TI-Flow-Fachdienst MUSS das Löschen eines E-Rezepts über den mittels der &lt;id&gt; adressierten /Task/&lt;id&gt;/$abort verhindern und die Operation mit dem HTTP-Fehlercode 403 abweisen, wenn der Status des adressierten Tasks ungleich "in-progress" ist und die Rolle des aufrufenden Nutzers einer der folgenden Rollen entspricht: 
     <ul>
         <li>oid_oeffentliche_apotheke</li>
         <li>oid_krankenhausapotheke</li>
@@ -54,37 +54,37 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_19224 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-51" title="E-Rezept-Fachdienst - E-Rezept löschen - Apotheke - Prüfung Secret" version="0">
-  <meta lockversion="false"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-51" title="TI-Flow-Fachdienst - E-Rezept löschen - Apotheke - Prüfung Secret" version="0">
+  <meta lockversion="true"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>
   </actor>
-  Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &#60;id&#62; adressierten /Task/&#60;id&#62;/$abort durch abgebende Leistungserbringer (Apotheken) das im URL-Parameter "?secret=..." übertragene Geheimnis gegen das im referenzierten Task enthaltene Secret in Task.identifier prüfen und bei Missmatch oder Fehlen des URL-Parameters den Aufruf mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich Apotheker in Kenntnis des Secret als Berechtigte ein E-Rezept löschen.
+  Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &#60;id&#62; adressierten /Task/&#60;id&#62;/$abort durch abgebende Leistungserbringer (Apotheken) das im URL-Parameter "?secret=..." übertragene Geheimnis gegen das im referenzierten Task enthaltene Secret in Task.identifier prüfen und bei Missmatch oder Fehlen des URL-Parameters den Aufruf mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich Apotheker in Kenntnis des Secret als Berechtigte ein E-Rezept löschen.
 </requirement>
 
 <!-- A_22102-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-52" title="E-Rezept-Fachdienst - E-Rezept löschen - Flowtype 169 / 209 - Versicherter - Statusprüfung" version="0">
-    <meta lockversion="false"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-52" title="TI-Flow-Fachdienst - E-Rezept löschen - Flowtype 169 / 209 - Versicherter - Statusprüfung" version="0">
+    <meta lockversion="true"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der E-Rezept-Fachdienst MUSS das Löschen eines E-Rezepts mit dem Flowtype 169 oder 209 über den mittels der &lt;id&gt; adressierten /Task/&lt;id&gt;/$abort verhindern und die Operation mit dem HTTP-Fehlercode 403 abweisen, wenn der Status des adressierten Tasks ungleich "completed" ist und die Rolle des aufrufenden Nutzers der folgenden Rollen entspricht: oid_versicherter damit kein Versicherter ein E-Rezept aus einem Workflow mit Workflowsteuerung durch Leistungserbringer (169, 209) löscht, das nicht bereits beliefert wurde.
+    Der TI-Flow-Fachdienst MUSS das Löschen eines E-Rezepts mit dem Flowtype 169 oder 209 über den mittels der &lt;id&gt; adressierten /Task/&lt;id&gt;/$abort verhindern und die Operation mit dem HTTP-Fehlercode 403 abweisen, wenn der Status des adressierten Tasks ungleich "completed" ist und die Rolle des aufrufenden Nutzers der folgenden Rollen entspricht: oid_versicherter damit kein Versicherter ein E-Rezept aus einem Workflow mit Workflowsteuerung durch Leistungserbringer (169, 209) löscht, das nicht bereits beliefert wurde.
 </requirement>
 
 <!-- A_25930 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-53" title="E-Rezept-Fachdienst - E-Rezept löschen - Löschinformation ePA Medication Service bereitstellen (Verordnungsdatensatz) - Leistungserbringerinstitution" version="0">
-    <meta lockversion="false"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-53" title="TI-Flow-Fachdienst - E-Rezept löschen - Löschinformation ePA Medication Service bereitstellen (Verordnungsdatensatz) - Leistungserbringerinstitution" version="0">
+    <meta lockversion="true"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-        Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts mittels POST /Task/&lt;id&gt;/$abort durch eine verordnende oder abgebende Leistungserbringerinstitution die Daten für die Löschinformation des Verordnungsdatensatzes in den ePA Medication Service bereitstellen.
+        Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts mittels POST /Task/&lt;id&gt;/$abort durch eine verordnende oder abgebende Leistungserbringerinstitution die Daten für die Löschinformation des Verordnungsdatensatzes in den ePA Medication Service bereitstellen.
 </requirement>
 
 <!-- A_25931 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-54" title="E-Rezept-Fachdienst - E-Rezept löschen - Löschinformation ePA Medication Service bereitstellen (Verordnungsdatensatz) - Versicherter" version="0">
-    <meta lockversion="false"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-54" title="TI-Flow-Fachdienst - E-Rezept löschen - Löschinformation ePA Medication Service bereitstellen (Verordnungsdatensatz) - Versicherter" version="0">
+    <meta lockversion="true"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-        Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts mittels POST /Task/$abort durch einen Versicherten, wenn Task.status = ready, die Daten für die Löschinformation des Verordnungsdatensatzes für die Übermittlung in den ePA Medication Service bereitstellen.
+        Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts mittels POST /Task/$abort durch einen Versicherten, wenn Task.status = ready, die Daten für die Löschinformation des Verordnungsdatensatzes für die Übermittlung in den ePA Medication Service bereitstellen.
 </requirement>

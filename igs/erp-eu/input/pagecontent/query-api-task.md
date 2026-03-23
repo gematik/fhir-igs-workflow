@@ -10,8 +10,8 @@ Die Nachricht zur Interaktion mit E-Rezepten als FHIR-Ressource _Task_ wird übe
 
 ### Anforderungen an Schnittstelle
 
-- [Server Anforderungen zur Task-Query](./query-api-task-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
-- [Client-Anforderungen zur Task-Query](./query-api-task-req-fdv.html): Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.
+- [Server Anforderungen zur Task-Query](./query-api-task-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
+- [Client-Anforderungen zur Task-Query](./query-api-task-req-fdv.html): Anforderungen an den Client des TI-Flow-Fachdienstes zur Nutzung der Schnittstelle.
 
 ### Resource API
 

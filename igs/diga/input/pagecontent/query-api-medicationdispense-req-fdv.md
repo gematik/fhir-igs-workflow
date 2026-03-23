@@ -10,7 +10,7 @@ Der Kostenträger stellt die Abgabeinformationen beim Abschluss des Workflows zu
 
 <!-- A_26013 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-25" title="E-Rezept-FdV: Abgabeinformationen abfragen - Flowtyp 162 - Anzeige des Freischaltcodes" version="0">
-  <meta lockversion="false"/>
+  <meta lockversion="true"/>
   <actor name="eRp_FdV">
     <testProcedure id="Herstellererklärung"/>
   </actor>
@@ -19,7 +19,7 @@ Der Kostenträger stellt die Abgabeinformationen beim Abschluss des Workflows zu
 
 <!-- A_26340 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-26" title="E-Rezept-FdV: Abgabeinformationen abfragen - Flowtyp 162 - Supportinformationen für DiGA-App" version="0">
-  <meta lockversion="false"/>
+  <meta lockversion="true"/>
   <actor name="eRp_FdV">
     <testProcedure id="Herstellererklärung"/>
   </actor>

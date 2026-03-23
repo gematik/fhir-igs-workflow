@@ -7,7 +7,7 @@
 
 <!-- A_19443 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-24" title="E-Rezept-FdV: TIFlow-EU - optionale Anwendungsfälle" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -96,7 +96,7 @@
 
 <!--A_27116 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-25" title="E-Rezept-FdV: Zugriffsberechtigung anzeigen" version="0">
-    <meta lockversion="false"/>
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -121,7 +121,7 @@ Das E-Rezept-FdV MUSS, wenn die Gültigkeit der Zugriffsberechtigung zeitlich ab
 
 Hinweis: Es reicht aus, dass die Information über den Ablauf der Zugriffsberechtigung nur angezeigt wird, während der Nutzer auf dem Gerät aktiv ist.
 
-Der zeitliche Ablauf der Zugriffsberechtigung wird nicht durch den E-Rezept-Fachdienst signalisiert.
+Der zeitliche Ablauf der Zugriffsberechtigung wird nicht durch den TI-Flow-Fachdienst signalisiert.
 
 
 ### Use Cases zur Verwaltung der E-Rezepte durch den Versicherten
@@ -180,6 +180,6 @@ Der zeitliche Ablauf der Zugriffsberechtigung wird nicht durch den E-Rezept-Fach
 
 *Hinweis: Für den Anwendungsfall "Abgabe von E-Rezepten im europäischen Ausland" wird angenommen, dass die vollständigen Dispensierinformationen zu einer ePrescription (E-Rezept) in genau einem eDispensation Dokument (CDA) vom LE-EU übermittelt werden.*
 
-Nach der Bereitstellung der Dispensierinformationen im E-Rezept-Fachdienst kann der Versicherte diese mit seinem E-Rezept-FdV herunterladen und anzeigen lassen.
+Nach der Bereitstellung der Dispensierinformationen im TI-Flow-Fachdienst kann der Versicherte diese mit seinem E-Rezept-FdV herunterladen und anzeigen lassen.
 
 Eine Übermittlung der Dispensierinformationen an den ePA Medication Service ist perspektivisch vorgesehen. Die Funktionalität wird ergänzt, sobald die Voraussetzungen in den verwendeten Datenmodellen geschaffen wurden.
