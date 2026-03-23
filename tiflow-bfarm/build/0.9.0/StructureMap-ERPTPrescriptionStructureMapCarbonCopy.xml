@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureMap xmlns="http://hl7.org/fhir">
+  <id value="ERPTPrescriptionStructureMapCarbonCopy"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: StructureMap ERPTPrescriptionStructureMapCarbonCopy</b></p><a name="ERPTPrescriptionStructureMapCarbonCopy"> </a><a name="hcERPTPrescriptionStructureMapCarbonCopy"> </a><pre class="fml">
+<b>map</b><span style="color: navy"> &quot;</span>https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapCarbonCopy<span style="color: navy">&quot; = &quot;</span>ERPTPrescriptionStructureMapCarbonCopy<span style="color: navy">&quot;
+
+</span><span style="color: navy">// </span><span style="color: green">Diese Ressource beschreibt das Mapping und führt die Mappings aller Teilressourcen zusammen. Weitere Informationen und Beschreibungen zum Mapping können auf der Seite [Mapping des digitalen Durchschlag E-T-Rezept](./menu-technische-umsetzung-mapping.html#mapping-des-digitalen-durchschlags-e-t-rezept) eingesehen werden.</span>
+
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/bundle.html" title="Bundle">http://hl7.org/fhir/StructureDefinition/Bundle</a><span style="color: navy">&quot; </span><b>alias </b>bundle <b>as </b><b>source</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="StructureDefinition-erp-tprescription-carbon-copy.html" title="Digitaler Durchschlag T-Rezept">https://gematik.de/fhir/tiflow/bfarm/StructureDefinition/erp-tprescription-carbon-copy</a><span style="color: navy">&quot; </span><b>alias </b>erpTCarbonCopy <b>as </b><b>target</b>
+
+<b>imports</b><span style="color: navy"> &quot;</span><a href="StructureMap-ERPTPrescriptionStructureMapMedicationDispense.html" title="E-T-Rezept Structure Map for MedicationDispense">https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapMedicationDispense</a><span style="color: navy">&quot;
+</span><b>imports</b><span style="color: navy"> &quot;</span><a href="StructureMap-ERPTPrescriptionStructureMapMedicationRequest.html" title="E-T-Rezept Structure Map for MedicationRequest">https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapMedicationRequest</a><span style="color: navy">&quot;
+</span><b>imports</b><span style="color: navy"> &quot;</span><a href="StructureMap-ERPTPrescriptionStructureMapOrganization.html" title="E-T-Rezept Structure Map for Organization">https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapOrganization</a><span style="color: navy">&quot;
+</span><b>imports</b><span style="color: navy"> &quot;</span><a href="StructureMap-ERPTPrescriptionStructureMapTask.html" title="E-T-Rezept Structure Map for Task">https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapTask</a><span style="color: navy">&quot;
+</span><b>imports</b><span style="color: navy"> &quot;</span><a href="StructureMap-ERPTPrescriptionStructureMapMedication.html" title="E-T-Rezept Structure Map for Medication">https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapMedication</a><span style="color: navy">&quot;
+</span>
+<span style="color: navy">// </span><span style="color: green">Mapping des digitalen Durchschlags T-Rezept aus einem E-Rezept Bundle in das BfArM CarbonCopy Format</span>
+<b>group </b>erpTPrescriptionCarbonCopy<span style="color: navy">(</span><b>source</b> <span style="color: maroon">bundle</span><span style="color: navy"> : </span>bundle, <b>target</b> <span style="color: maroon">erpTCarbonCopy</span><span style="color: navy"> : </span>erpTCarbonCopy<span style="color: navy">)</span><span style="color: navy"> {
+</span>  bundle<span style="color: navy"><b> -&gt; </b></span>erpTCarbonCopy.meta<b> as </b><span style="color: maroon">erpTCarbonCopyMeta</span><b> then</b><span style="color: navy"> {
+</span>    bundle<span style="color: navy"><b> -&gt; </b></span>erpTCarbonCopyMeta.profile = <span style="color: blue">'https://gematik.de/fhir/tiflow/bfarm/StructureDefinition/erp-tprescription-carbon-copy|1.1'</span> <i>&quot;tgtMetaProfile&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Setzt das meta.profile des digitalen Durchschlags T-Rezept</span>
+  <span style="color: navy">}</span> <i>&quot;tgtMeta&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Setzt die Metadaten für den digitalen Durchschlag</span>
+  bundle<span style="color: navy"><b> -&gt; </b></span> erpTCarbonCopy.parameter<b> as </b><span style="color: maroon">tgtRxPrescription</span><span style="color: navy">, </span> tgtRxPrescription.part<b> as </b><span style="color: maroon">tgtRxPrescriptionPartId</span><span style="color: navy">, </span> tgtRxPrescription.part<b> as </b><span style="color: maroon">tgtRxPrescriptionPartMR</span><span style="color: navy">, </span> tgtRxPrescription.part<b> as </b><span style="color: maroon">tgtRxPrescriptionPartMed</span><span style="color: navy">, </span> tgtRxPrescription.name = <span style="color: blue">'rxPrescription'</span><b> then</b><span style="color: navy"> {
+</span>    bundle.entry<b> as </b><span style="color: maroon">srcEntryVar</span><b> then</b><span style="color: navy"> {
+</span>      srcEntryVar.resource<b> as </b><span style="color: maroon">srcEntryResourceVar</span><b> then</b><span style="color: navy"> {
+</span>        srcEntryResourceVar<b> as </b><span style="color: maroon">srcEntryTaskVar</span><b> where </b>ofType(Task)<span style="color: navy"><b> -&gt; </b></span> tgtRxPrescriptionPartId.name = <span style="color: blue">'prescriptionId'</span><span style="color: navy">, </span> tgtRxPrescriptionPartId.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Identifier'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">newIdentifier</span><b> then</b><span style="color: navy"> {
+</span>          srcEntryTaskVar<b> then </b>ERPTPrescriptionStructureMapTask<span style="color: navy">(</span><span style="color: maroon">srcEntryTaskVar</span><span style="color: navy">, </span><span style="color: maroon">newIdentifier</span><span style="color: navy">)</span> <i>&quot;parameterrXPrescriptionPartIdentifier&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Mappt Task-Informationen auf Identifier für die Rezept-ID</span>
+        <span style="color: navy">}</span> <i>&quot;parameterrXPrescriptionPart&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Extrahiert die E-Rezept-ID aus dem Task und erstellt den prescriptionId Parameter</span>
+        srcEntryResourceVar<b> as </b><span style="color: maroon">srcEntryBundleMRVar</span><b> where </b>ofType(MedicationRequest)<span style="color: navy"><b> -&gt; </b></span>tgtRxPrescriptionPartMR.name = <span style="color: blue">'medicationRequest'</span><b> then</b><span style="color: navy"> {
+</span>          srcEntryBundleMRVar<span style="color: navy"><b> -&gt; </b></span>tgtRxPrescriptionPartMR.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'MedicationRequest'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">newMedicationRequest</span><b> then</b><span style="color: navy"> {
+</span>            srcEntryBundleMRVar<b> then </b>ERPTPrescriptionStructureMapMedicationRequest<span style="color: navy">(</span><span style="color: maroon">srcEntryBundleMRVar</span><span style="color: navy">, </span><span style="color: maroon">newMedicationRequest</span><span style="color: navy">)</span> <i>&quot;entryMedicationRequestPartResourceSet&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Führt die detaillierte MedicationRequest-Transformation durch</span>
+          <span style="color: navy">}</span> <i>&quot;entryMedicationRequestPart&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Transformiert KBV-MedicationRequest in BfArM MedicationRequest Format</span>
+        <span style="color: navy">}</span> <i>&quot;entryMedicationRequest&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Erstellt den medicationRequest Parameter für Verschreibungsdetails</span>
+        srcEntryVar<b> as </b><span style="color: maroon">srcMedicationRequestId</span><b> where </b>resource.ofType(MedicationRequest)<span style="color: navy"><b> -&gt; </b></span>tgtRxPrescriptionPartMed.name = <span style="color: blue">'medication'</span><b> then</b><span style="color: navy"> {
+</span>          bundle.entry<b> as </b><span style="color: maroon">srcEntryVar2</span><b> then</b><span style="color: navy"> {
+</span>            srcEntryVar2<b> as </b><span style="color: maroon">srcEntryBundleMRMedIdVar</span><b> where </b>resource.ofType(Medication).where(id=%srcMedicationRequestId.resource.medicationReference.reference.replace('urn:uuid:', '').split('/').last())<span style="color: navy"><b> -&gt; </b></span>tgtRxPrescriptionPartMed.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Medication'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">newMedicationPrescriptionMedication</span><b> then</b><span style="color: navy"> {
+</span>              srcEntryBundleMRMedIdVar.resource<b> as </b><span style="color: maroon">srcEntryBundleMRMedIdVarRes</span><b> then </b>ERPTPrescriptionStructureMapMedication<span style="color: navy">(</span><span style="color: maroon">srcEntryBundleMRMedIdVarRes</span><span style="color: navy">, </span><span style="color: maroon">newMedicationPrescriptionMedication</span><span style="color: navy">)</span> <i>&quot;entryMedicationPrescriptionMedicationPartResourceSet&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Führt die detaillierte Medication-Transformation für das verschriebene Arzneimittel durch</span>
+            <span style="color: navy">}</span> <i>&quot;entryMedicationPrescriptionMedicationPart&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Findet die vom MedicationRequest referenzierte Medication und transformiert sie in BfArM Format</span>
+          <span style="color: navy">}</span> <i>&quot;prepMedication&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Bereitet die Suche nach der referenzierten Medication vor</span>
+        <span style="color: navy">}</span> <i>&quot;entryMedicationRequestMedication&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Erstellt den medication Parameter für das verschriebene Arzneimittel</span>
+      <span style="color: navy">}</span> <i>&quot;rxPrescriptionParameter&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Extrahiert relevante Ressourcen für die Verschreibung</span>
+    <span style="color: navy">}</span> <i>&quot;bundleEntries&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Verarbeitet alle Einträge des Quell-Bundles für Verschreibungsinformationen</span>
+  <span style="color: navy">}</span> <i>&quot;rxPrescriptionRule&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Erstellt den rxPrescription Parameter mit allen Verschreibungsinformationen</span>
+  bundle<span style="color: navy"><b> -&gt; </b></span> erpTCarbonCopy.parameter<b> as </b><span style="color: maroon">tgtRxDispensation</span><span style="color: navy">, </span> tgtRxDispensation.part<b> as </b><span style="color: maroon">tgtRxDispensationPartOrg</span><span style="color: navy">, </span> tgtRxDispensation.name = <span style="color: blue">'rxDispensation'</span><b> then</b><span style="color: navy"> {
+</span>    bundle.entry<b> as </b><span style="color: maroon">srcEntryVar</span><b> then</b><span style="color: navy"> {
+</span>      srcEntryVar.resource<b> as </b><span style="color: maroon">srcEntryResourceVar</span><b> then</b><span style="color: navy"> {
+</span>        srcEntryResourceVar<b> as </b><span style="color: maroon">srcEntryBundleOrgVar</span><b> where </b>ofType(Bundle).where(entry.first().fullUrl.contains('fhir-directory'))<span style="color: navy"><b> -&gt; </b></span>tgtRxDispensationPartOrg.name = <span style="color: blue">'dispenseOrganization'</span><b> then</b><span style="color: navy"> {
+</span>          srcEntryBundleOrgVar<span style="color: navy"><b> -&gt; </b></span>tgtRxDispensationPartOrg.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Organization'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">newOrganization</span><b> then</b><span style="color: navy"> {
+</span>            srcEntryBundleOrgVar<b> then </b>ERPTPrescriptionStructureMapOrganization<span style="color: navy">(</span><span style="color: maroon">srcEntryBundleOrgVar</span><span style="color: navy">, </span><span style="color: maroon">newOrganization</span><span style="color: navy">)</span> <i>&quot;entryOrganizationPartResourceSet&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Führt die detaillierte Organization-Transformation durch</span>
+          <span style="color: navy">}</span> <i>&quot;entryOrganizationPart&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Transformiert VZD SearchSet in BfArM Organization Format für die abgebende Apotheke</span>
+        <span style="color: navy">}</span> <i>&quot;entryVZDSearchSet&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Identifiziert VZD SearchSet Bundle für Apothekeninformationen</span>
+        srcEntryResourceVar<b> as </b><span style="color: maroon">srcEntryBundleMDVar</span><b> where </b>ofType(MedicationDispense)<span style="color: navy"><b> -&gt; </b></span>tgtRxDispensation.part<b> as </b><span style="color: maroon">tgtDispenseInformationPart</span><b> then</b><span style="color: navy"> {
+</span>          srcEntryBundleMDVar<span style="color: navy"><b> -&gt; </b></span> tgtDispenseInformationPart.name = <span style="color: blue">'dispenseInformation'</span><span style="color: navy">, </span> tgtDispenseInformationPart.part<b> as </b><span style="color: maroon">tgtDispenseInformationMedDispPart</span><span style="color: navy">, </span> tgtDispenseInformationPart.part<b> as </b><span style="color: maroon">tgtDispenseInformationMedicationPart</span><b> then</b><span style="color: navy"> {
+</span>            srcEntryBundleMDVar<span style="color: navy"><b> -&gt; </b></span> tgtDispenseInformationMedDispPart.name = <span style="color: blue">'medicationDispense'</span><span style="color: navy">, </span> tgtDispenseInformationMedDispPart.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'MedicationDispense'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">newMedicationDispense</span><b> then</b><span style="color: navy"> {
+</span>              srcEntryBundleMDVar<b> then </b>ERPTPrescriptionStructureMapMedicationDispense<span style="color: navy">(</span><span style="color: maroon">srcEntryBundleMDVar</span><span style="color: navy">, </span><span style="color: maroon">newMedicationDispense</span><span style="color: navy">)</span> <i>&quot;entryMedicationDispensePartResourceSet&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Führt die detaillierte MedicationDispense-Transformation durch</span>
+            <span style="color: navy">}</span> <i>&quot;entryDispenseInformationMedicationDispense&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Transformiert gematik MedicationDispense in BfArM MedicationDispense Format</span>
+            srcEntryBundleMDVar<span style="color: navy"><b> -&gt; </b></span>tgtDispenseInformationMedicationPart.name = <span style="color: blue">'medication'</span><b> then</b><span style="color: navy"> {
+</span>              bundle.entry<b> as </b><span style="color: maroon">srcEntryVarDisp</span><b> then</b><span style="color: navy"> {
+</span>                srcEntryVarDisp<b> as </b><span style="color: maroon">srcEntryBundleMDMedIdVar</span><b> where </b>resource.ofType(Medication).where(id=%srcEntryBundleMDVar.medicationReference.reference.replace('urn:uuid:', '').split('/').last())<span style="color: navy"><b> -&gt; </b></span>tgtDispenseInformationMedicationPart.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Medication'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">newMedicationDispensationMedication</span><b> then</b><span style="color: navy"> {
+</span>                  srcEntryBundleMDMedIdVar.resource<b> as </b><span style="color: maroon">srcEntryBundleMDMedIdVarRes</span><b> then </b>ERPTPrescriptionStructureMapMedication<span style="color: navy">(</span><span style="color: maroon">srcEntryBundleMDMedIdVarRes</span><span style="color: navy">, </span><span style="color: maroon">newMedicationDispensationMedication</span><span style="color: navy">)</span> <i>&quot;entryMedicationDispensationMedicationPartResourceSet&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Führt die detaillierte Medication-Transformation für das abgegebene Arzneimittel durch</span>
+                <span style="color: navy">}</span> <i>&quot;entryDispenseMedicationPart&quot;</i><span style="color: navy">;</span>
+              <span style="color: navy">}</span> <i>&quot;prepDispenseMedication&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Bereitet die Suche nach der referenzierten Medication im Bundle vor</span>
+            <span style="color: navy">}</span> <i>&quot;entryDispenseInformationMedication&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Findet die vom MedicationDispense referenzierte Medication und transformiert sie in BfArM Format</span>
+          <span style="color: navy">}</span> <i>&quot;entryDispenseInformation&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Bündelt MedicationDispense und zugehörige Medication unter dispenseInformation</span>
+        <span style="color: navy">}</span> <i>&quot;entryMedicationDispense&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Erstellt eine dispenseInformation Part pro abgegebener MedicationDispense</span>
+      <span style="color: navy">}</span> <i>&quot;rxDispensationParameter&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Extrahiert relevante Ressourcen für die Abgabe</span>
+    <span style="color: navy">}</span> <i>&quot;bundleEntries&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Verarbeitet alle Einträge des Quell-Bundles für Abgabeinformationen</span>
+  <span style="color: navy">}</span> <i>&quot;MedicationDispenseFromBundle&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Erstellt den rxDispensation Parameter mit allen Abgabeinformationen</span>
+<span style="color: navy">}
+
+</span></pre></div>
+  </text>
+  <url value="https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapCarbonCopy"/>
+  <version value="0.9.0"/>
+  <name value="ERPTPrescriptionStructureMapCarbonCopy"/>
+  <title value="E-T-Rezept Structure Map for CarbonCopy"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2025-12-19"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="erp-umsetzung@gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="Diese Ressource beschreibt das Mapping und führt die Mappings aller Teilressourcen zusammen. Weitere Informationen und Beschreibungen zum Mapping können auf der Seite [Mapping des digitalen Durchschlag E-T-Rezept](./menu-technische-umsetzung-mapping.html#mapping-des-digitalen-durchschlags-e-t-rezept) eingesehen werden."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+    <mode value="source"/>
+    <alias value="bundle"/>
+  </structure>
+  <structure>
+    <url value="https://gematik.de/fhir/tiflow/bfarm/StructureDefinition/erp-tprescription-carbon-copy"/>
+    <mode value="target"/>
+    <alias value="erpTCarbonCopy"/>
+  </structure>
+  <import value="https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapMedicationDispense"/>
+  <import value="https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapMedicationRequest"/>
+  <import value="https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapOrganization"/>
+  <import value="https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapTask"/>
+  <import value="https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapMedication"/>
+  <group>
+    <name value="erpTPrescriptionCarbonCopy"/>
+    <typeMode value="none"/>
+    <documentation value="Mapping des digitalen Durchschlags T-Rezept aus einem E-Rezept Bundle in das BfArM CarbonCopy Format"/>
+    <input>
+      <name value="bundle"/>
+      <type value="bundle"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="erpTCarbonCopy"/>
+      <type value="erpTCarbonCopy"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="tgtMeta"/>
+      <source>
+        <context value="bundle"/>
+      </source>
+      <target>
+        <context value="erpTCarbonCopy"/>
+        <contextType value="variable"/>
+        <element value="meta"/>
+        <variable value="erpTCarbonCopyMeta"/>
+      </target>
+      <rule>
+        <name value="tgtMetaProfile"/>
+        <source>
+          <context value="bundle"/>
+        </source>
+        <target>
+          <context value="erpTCarbonCopyMeta"/>
+          <contextType value="variable"/>
+          <element value="profile"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="https://gematik.de/fhir/tiflow/bfarm/StructureDefinition/erp-tprescription-carbon-copy|1.1"/>
+          </parameter>
+        </target>
+        <documentation value="Setzt das meta.profile des digitalen Durchschlags T-Rezept"/>
+      </rule>
+      <documentation value="Setzt die Metadaten für den digitalen Durchschlag"/>
+    </rule>
+    <rule>
+      <name value="rxPrescriptionRule"/>
+      <source>
+        <context value="bundle"/>
+      </source>
+      <target>
+        <context value="erpTCarbonCopy"/>
+        <contextType value="variable"/>
+        <element value="parameter"/>
+        <variable value="tgtRxPrescription"/>
+      </target>
+      <target>
+        <context value="tgtRxPrescription"/>
+        <contextType value="variable"/>
+        <element value="part"/>
+        <variable value="tgtRxPrescriptionPartId"/>
+      </target>
+      <target>
+        <context value="tgtRxPrescription"/>
+        <contextType value="variable"/>
+        <element value="part"/>
+        <variable value="tgtRxPrescriptionPartMR"/>
+      </target>
+      <target>
+        <context value="tgtRxPrescription"/>
+        <contextType value="variable"/>
+        <element value="part"/>
+        <variable value="tgtRxPrescriptionPartMed"/>
+      </target>
+      <target>
+        <context value="tgtRxPrescription"/>
+        <contextType value="variable"/>
+        <element value="name"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="rxPrescription"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="bundleEntries"/>
+        <source>
+          <context value="bundle"/>
+          <element value="entry"/>
+          <variable value="srcEntryVar"/>
+        </source>
+        <rule>
+          <name value="rxPrescriptionParameter"/>
+          <source>
+            <context value="srcEntryVar"/>
+            <element value="resource"/>
+            <variable value="srcEntryResourceVar"/>
+          </source>
+          <rule>
+            <name value="parameterrXPrescriptionPart"/>
+            <source>
+              <context value="srcEntryResourceVar"/>
+              <variable value="srcEntryTaskVar"/>
+              <condition value="ofType(Task)"/>
+            </source>
+            <target>
+              <context value="tgtRxPrescriptionPartId"/>
+              <contextType value="variable"/>
+              <element value="name"/>
+              <transform value="copy"/>
+              <parameter>
+                <valueString value="prescriptionId"/>
+              </parameter>
+            </target>
+            <target>
+              <context value="tgtRxPrescriptionPartId"/>
+              <contextType value="variable"/>
+              <element value="value"/>
+              <variable value="newIdentifier"/>
+              <transform value="create"/>
+              <parameter>
+                <valueString value="Identifier"/>
+              </parameter>
+            </target>
+            <rule>
+              <name value="parameterrXPrescriptionPartIdentifier"/>
+              <source>
+                <context value="srcEntryTaskVar"/>
+              </source>
+              <dependent>
+                <name value="ERPTPrescriptionStructureMapTask"/>
+                <variable value="srcEntryTaskVar"/>
+                <variable value="newIdentifier"/>
+              </dependent>
+              <documentation value="Mappt Task-Informationen auf Identifier für die Rezept-ID"/>
+            </rule>
+            <documentation value="Extrahiert die E-Rezept-ID aus dem Task und erstellt den prescriptionId Parameter"/>
+          </rule>
+          <rule>
+            <name value="entryMedicationRequest"/>
+            <source>
+              <context value="srcEntryResourceVar"/>
+              <variable value="srcEntryBundleMRVar"/>
+              <condition value="ofType(MedicationRequest)"/>
+            </source>
+            <target>
+              <context value="tgtRxPrescriptionPartMR"/>
+              <contextType value="variable"/>
+              <element value="name"/>
+              <transform value="copy"/>
+              <parameter>
+                <valueString value="medicationRequest"/>
+              </parameter>
+            </target>
+            <rule>
+              <name value="entryMedicationRequestPart"/>
+              <source>
+                <context value="srcEntryBundleMRVar"/>
+              </source>
+              <target>
+                <context value="tgtRxPrescriptionPartMR"/>
+                <contextType value="variable"/>
+                <element value="resource"/>
+                <variable value="newMedicationRequest"/>
+                <transform value="create"/>
+                <parameter>
+                  <valueString value="MedicationRequest"/>
+                </parameter>
+              </target>
+              <rule>
+                <name value="entryMedicationRequestPartResourceSet"/>
+                <source>
+                  <context value="srcEntryBundleMRVar"/>
+                </source>
+                <dependent>
+                  <name value="ERPTPrescriptionStructureMapMedicationRequest"/>
+                  <variable value="srcEntryBundleMRVar"/>
+                  <variable value="newMedicationRequest"/>
+                </dependent>
+                <documentation value="Führt die detaillierte MedicationRequest-Transformation durch"/>
+              </rule>
+              <documentation value="Transformiert KBV-MedicationRequest in BfArM MedicationRequest Format"/>
+            </rule>
+            <documentation value="Erstellt den medicationRequest Parameter für Verschreibungsdetails"/>
+          </rule>
+          <rule>
+            <name value="entryMedicationRequestMedication"/>
+            <source>
+              <context value="srcEntryVar"/>
+              <variable value="srcMedicationRequestId"/>
+              <condition value="resource.ofType(MedicationRequest)"/>
+            </source>
+            <target>
+              <context value="tgtRxPrescriptionPartMed"/>
+              <contextType value="variable"/>
+              <element value="name"/>
+              <transform value="copy"/>
+              <parameter>
+                <valueString value="medication"/>
+              </parameter>
+            </target>
+            <rule>
+              <name value="prepMedication"/>
+              <source>
+                <context value="bundle"/>
+                <element value="entry"/>
+                <variable value="srcEntryVar2"/>
+              </source>
+              <rule>
+                <name value="entryMedicationPrescriptionMedicationPart"/>
+                <source>
+                  <context value="srcEntryVar2"/>
+                  <variable value="srcEntryBundleMRMedIdVar"/>
+                  <condition value="resource.ofType(Medication).where(id=%srcMedicationRequestId.resource.medicationReference.reference.replace('urn:uuid:', '').split('/').last())"/>
+                </source>
+                <target>
+                  <context value="tgtRxPrescriptionPartMed"/>
+                  <contextType value="variable"/>
+                  <element value="resource"/>
+                  <variable value="newMedicationPrescriptionMedication"/>
+                  <transform value="create"/>
+                  <parameter>
+                    <valueString value="Medication"/>
+                  </parameter>
+                </target>
+                <rule>
+                  <name value="entryMedicationPrescriptionMedicationPartResourceSet"/>
+                  <source>
+                    <context value="srcEntryBundleMRMedIdVar"/>
+                    <element value="resource"/>
+                    <variable value="srcEntryBundleMRMedIdVarRes"/>
+                  </source>
+                  <dependent>
+                    <name value="ERPTPrescriptionStructureMapMedication"/>
+                    <variable value="srcEntryBundleMRMedIdVarRes"/>
+                    <variable value="newMedicationPrescriptionMedication"/>
+                  </dependent>
+                  <documentation value="Führt die detaillierte Medication-Transformation für das verschriebene Arzneimittel durch"/>
+                </rule>
+                <documentation value="Findet die vom MedicationRequest referenzierte Medication und transformiert sie in BfArM Format"/>
+              </rule>
+              <documentation value="Bereitet die Suche nach der referenzierten Medication vor"/>
+            </rule>
+            <documentation value="Erstellt den medication Parameter für das verschriebene Arzneimittel"/>
+          </rule>
+          <documentation value="Extrahiert relevante Ressourcen für die Verschreibung"/>
+        </rule>
+        <documentation value="Verarbeitet alle Einträge des Quell-Bundles für Verschreibungsinformationen"/>
+      </rule>
+      <documentation value="Erstellt den rxPrescription Parameter mit allen Verschreibungsinformationen"/>
+    </rule>
+    <rule>
+      <name value="MedicationDispenseFromBundle"/>
+      <source>
+        <context value="bundle"/>
+      </source>
+      <target>
+        <context value="erpTCarbonCopy"/>
+        <contextType value="variable"/>
+        <element value="parameter"/>
+        <variable value="tgtRxDispensation"/>
+      </target>
+      <target>
+        <context value="tgtRxDispensation"/>
+        <contextType value="variable"/>
+        <element value="part"/>
+        <variable value="tgtRxDispensationPartOrg"/>
+      </target>
+      <target>
+        <context value="tgtRxDispensation"/>
+        <contextType value="variable"/>
+        <element value="name"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="rxDispensation"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="bundleEntries"/>
+        <source>
+          <context value="bundle"/>
+          <element value="entry"/>
+          <variable value="srcEntryVar"/>
+        </source>
+        <rule>
+          <name value="rxDispensationParameter"/>
+          <source>
+            <context value="srcEntryVar"/>
+            <element value="resource"/>
+            <variable value="srcEntryResourceVar"/>
+          </source>
+          <rule>
+            <name value="entryVZDSearchSet"/>
+            <source>
+              <context value="srcEntryResourceVar"/>
+              <variable value="srcEntryBundleOrgVar"/>
+              <condition value="ofType(Bundle).where(entry.first().fullUrl.contains('fhir-directory'))"/>
+            </source>
+            <target>
+              <context value="tgtRxDispensationPartOrg"/>
+              <contextType value="variable"/>
+              <element value="name"/>
+              <transform value="copy"/>
+              <parameter>
+                <valueString value="dispenseOrganization"/>
+              </parameter>
+            </target>
+            <rule>
+              <name value="entryOrganizationPart"/>
+              <source>
+                <context value="srcEntryBundleOrgVar"/>
+              </source>
+              <target>
+                <context value="tgtRxDispensationPartOrg"/>
+                <contextType value="variable"/>
+                <element value="resource"/>
+                <variable value="newOrganization"/>
+                <transform value="create"/>
+                <parameter>
+                  <valueString value="Organization"/>
+                </parameter>
+              </target>
+              <rule>
+                <name value="entryOrganizationPartResourceSet"/>
+                <source>
+                  <context value="srcEntryBundleOrgVar"/>
+                </source>
+                <dependent>
+                  <name value="ERPTPrescriptionStructureMapOrganization"/>
+                  <variable value="srcEntryBundleOrgVar"/>
+                  <variable value="newOrganization"/>
+                </dependent>
+                <documentation value="Führt die detaillierte Organization-Transformation durch"/>
+              </rule>
+              <documentation value="Transformiert VZD SearchSet in BfArM Organization Format für die abgebende Apotheke"/>
+            </rule>
+            <documentation value="Identifiziert VZD SearchSet Bundle für Apothekeninformationen"/>
+          </rule>
+          <rule>
+            <name value="entryMedicationDispense"/>
+            <source>
+              <context value="srcEntryResourceVar"/>
+              <variable value="srcEntryBundleMDVar"/>
+              <condition value="ofType(MedicationDispense)"/>
+            </source>
+            <target>
+              <context value="tgtRxDispensation"/>
+              <contextType value="variable"/>
+              <element value="part"/>
+              <variable value="tgtDispenseInformationPart"/>
+            </target>
+            <rule>
+              <name value="entryDispenseInformation"/>
+              <source>
+                <context value="srcEntryBundleMDVar"/>
+              </source>
+              <target>
+                <context value="tgtDispenseInformationPart"/>
+                <contextType value="variable"/>
+                <element value="name"/>
+                <transform value="copy"/>
+                <parameter>
+                  <valueString value="dispenseInformation"/>
+                </parameter>
+              </target>
+              <target>
+                <context value="tgtDispenseInformationPart"/>
+                <contextType value="variable"/>
+                <element value="part"/>
+                <variable value="tgtDispenseInformationMedDispPart"/>
+              </target>
+              <target>
+                <context value="tgtDispenseInformationPart"/>
+                <contextType value="variable"/>
+                <element value="part"/>
+                <variable value="tgtDispenseInformationMedicationPart"/>
+              </target>
+              <rule>
+                <name value="entryDispenseInformationMedicationDispense"/>
+                <source>
+                  <context value="srcEntryBundleMDVar"/>
+                </source>
+                <target>
+                  <context value="tgtDispenseInformationMedDispPart"/>
+                  <contextType value="variable"/>
+                  <element value="name"/>
+                  <transform value="copy"/>
+                  <parameter>
+                    <valueString value="medicationDispense"/>
+                  </parameter>
+                </target>
+                <target>
+                  <context value="tgtDispenseInformationMedDispPart"/>
+                  <contextType value="variable"/>
+                  <element value="resource"/>
+                  <variable value="newMedicationDispense"/>
+                  <transform value="create"/>
+                  <parameter>
+                    <valueString value="MedicationDispense"/>
+                  </parameter>
+                </target>
+                <rule>
+                  <name value="entryMedicationDispensePartResourceSet"/>
+                  <source>
+                    <context value="srcEntryBundleMDVar"/>
+                  </source>
+                  <dependent>
+                    <name value="ERPTPrescriptionStructureMapMedicationDispense"/>
+                    <variable value="srcEntryBundleMDVar"/>
+                    <variable value="newMedicationDispense"/>
+                  </dependent>
+                  <documentation value="Führt die detaillierte MedicationDispense-Transformation durch"/>
+                </rule>
+                <documentation value="Transformiert gematik MedicationDispense in BfArM MedicationDispense Format"/>
+              </rule>
+              <rule>
+                <name value="entryDispenseInformationMedication"/>
+                <source>
+                  <context value="srcEntryBundleMDVar"/>
+                </source>
+                <target>
+                  <context value="tgtDispenseInformationMedicationPart"/>
+                  <contextType value="variable"/>
+                  <element value="name"/>
+                  <transform value="copy"/>
+                  <parameter>
+                    <valueString value="medication"/>
+                  </parameter>
+                </target>
+                <rule>
+                  <name value="prepDispenseMedication"/>
+                  <source>
+                    <context value="bundle"/>
+                    <element value="entry"/>
+                    <variable value="srcEntryVarDisp"/>
+                  </source>
+                  <rule>
+                    <name value="entryDispenseMedicationPart"/>
+                    <source>
+                      <context value="srcEntryVarDisp"/>
+                      <variable value="srcEntryBundleMDMedIdVar"/>
+                      <condition value="resource.ofType(Medication).where(id=%srcEntryBundleMDVar.medicationReference.reference.replace('urn:uuid:', '').split('/').last())"/>
+                    </source>
+                    <target>
+                      <context value="tgtDispenseInformationMedicationPart"/>
+                      <contextType value="variable"/>
+                      <element value="resource"/>
+                      <variable value="newMedicationDispensationMedication"/>
+                      <transform value="create"/>
+                      <parameter>
+                        <valueString value="Medication"/>
+                      </parameter>
+                    </target>
+                    <rule>
+                      <name value="entryMedicationDispensationMedicationPartResourceSet"/>
+                      <source>
+                        <context value="srcEntryBundleMDMedIdVar"/>
+                        <element value="resource"/>
+                        <variable value="srcEntryBundleMDMedIdVarRes"/>
+                      </source>
+                      <dependent>
+                        <name value="ERPTPrescriptionStructureMapMedication"/>
+                        <variable value="srcEntryBundleMDMedIdVarRes"/>
+                        <variable value="newMedicationDispensationMedication"/>
+                      </dependent>
+                      <documentation value="Führt die detaillierte Medication-Transformation für das abgegebene Arzneimittel durch"/>
+                    </rule>
+                  </rule>
+                  <documentation value="Bereitet die Suche nach der referenzierten Medication im Bundle vor"/>
+                </rule>
+                <documentation value="Findet die vom MedicationDispense referenzierte Medication und transformiert sie in BfArM Format"/>
+              </rule>
+              <documentation value="Bündelt MedicationDispense und zugehörige Medication unter dispenseInformation"/>
+            </rule>
+            <documentation value="Erstellt eine dispenseInformation Part pro abgegebener MedicationDispense"/>
+          </rule>
+          <documentation value="Extrahiert relevante Ressourcen für die Abgabe"/>
+        </rule>
+        <documentation value="Verarbeitet alle Einträge des Quell-Bundles für Abgabeinformationen"/>
+      </rule>
+      <documentation value="Erstellt den rxDispensation Parameter mit allen Abgabeinformationen"/>
+    </rule>
+  </group>
+</StructureMap>

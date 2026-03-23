@@ -1,0 +1,256 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow/bfarm/StructureMap/ERPTPrescriptionStructureMapOrganization> a fhir:StructureMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ERPTPrescriptionStructureMapOrganization"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap ERPTPrescriptionStructureMapOrganization</b></p><a name=\"ERPTPrescriptionStructureMapOrganization\"> </a><a name=\"hcERPTPrescriptionStructureMapOrganization\"> </a><pre class=\"fml\">#xD;\n<b>map</b><span style=\"color: navy\"> \"</span>https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapOrganization<span style=\"color: navy\">\" = \"</span>ERPTPrescriptionStructureMapOrganization<span style=\"color: navy\">\"#xD;\n#xD;\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">Mapping-Anweisungen zur Erstellung einer BfArM Organization aus dem VZD SearchSet</span>#xD;\n#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span>https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-vzd-searchset<span style=\"color: navy\">\" </span><b>alias </b>vzdSearchSet <b>as </b><b>source</b>#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span>https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-organization<span style=\"color: navy\">\" </span><b>alias </b>bfarmOrganization <b>as </b><b>target</b>#xD;\n#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">Mapping-Anweisungen zur Erstellung einer BfArM Organization aus dem VZD SearchSet</span>#xD;\n<b>group </b>ERPTPrescriptionStructureMapOrganization<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">vzdSearchSet</span><span style=\"color: navy\"> : </span>vzdSearchSet, <b>target</b> <span style=\"color: maroon\">bfarmOrganization</span><span style=\"color: navy\"> : </span>bfarmOrganization<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  vzdSearchSet.entry<b> as </b><span style=\"color: maroon\">srcEntryOrgVar</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    srcEntryOrgVar.resource<b> as </b><span style=\"color: maroon\">srcEntryOrganizationVar</span><b> where </b>ofType(Organization)<b> then</b><span style=\"color: navy\"> {#xD;\n</span>      srcEntryOrganizationVar.name<b> as </b><span style=\"color: maroon\">srcOrgNameVar</span><span style=\"color: navy\"><b> -&gt; </b></span>bfarmOrganization.name = <span style=\"color: maroon\">srcOrgNameVar</span><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Übernimmt den Namen der Organisation aus dem VZD in die BfArM Organization</span>#xD;\n      srcEntryOrganizationVar.identifier<b> as </b><span style=\"color: maroon\">srcOrgIdentifierVar</span><b> where </b>$this.system='https://gematik.de/fhir/sid/telematik-id'<span style=\"color: navy\"><b> -&gt; </b></span>bfarmOrganization.identifier<b> as </b><span style=\"color: maroon\">bfarmOrganizationIdentifierVar</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        srcOrgIdentifierVar.value<b> as </b><span style=\"color: maroon\">srcOrgIdentifierValueVar</span><b> log </b>tgtTidIdentifier<span style=\"color: navy\"><b> -&gt; </b></span> bfarmOrganizationIdentifierVar.system = <span style=\"color: blue\">'https://gematik.de/fhir/sid/telematik-id'</span><span style=\"color: navy\">, </span> bfarmOrganizationIdentifierVar.value = <span style=\"color: maroon\">srcOrgIdentifierValueVar</span><span style=\"color: navy\">, </span> bfarmOrganization.id = <span style=\"color: maroon\">srcOrgIdentifierValueVar</span> <i>\"tidValue\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Kopiert die Telematik-ID mit korrektem System-Identifier in die Ziel-Organisation</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"tid\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Mappt die Telematik-ID der Organisation</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"entry\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Verarbeitet jeden Eintrag im SearchSet</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"mapOrganization\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Mappt Organization-Einträge aus dem VZD SearchSet</span>#xD;\n  vzdSearchSet.entry<b> as </b><span style=\"color: maroon\">srcEntryHCSVar</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    srcEntryHCSVar.resource<b> as </b><span style=\"color: maroon\">srcEntryHealthcareServiceVar</span><b> where </b>ofType(HealthcareService)<b> then</b><span style=\"color: navy\"> {#xD;\n</span>      srcEntryHealthcareServiceVar.telecom<b> as </b><span style=\"color: maroon\">srcHcsTelecomVar</span><span style=\"color: navy\"><b> -&gt; </b></span>bfarmOrganization.telecom = <span style=\"color: maroon\">srcHcsTelecomVar</span><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Übernimmt Kontaktinformationen (Telefon, E-Mail) aus dem HealthcareService in die Organisation</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"entry\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Verarbeitet HealthcareService-Einträge aus dem SearchSet</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"mapHealthcareService\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Mappt HealthcareService-Informationen für Kontaktdaten</span>#xD;\n  vzdSearchSet.entry<b> as </b><span style=\"color: maroon\">srcEntryHCSVar</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    srcEntryHCSVar.resource<b> as </b><span style=\"color: maroon\">srcEntryLocationVar</span><b> where </b>ofType(Location)<b> then</b><span style=\"color: navy\"> {#xD;\n</span>      srcEntryLocationVar.address<b> as </b><span style=\"color: maroon\">srcLocationAddressVar</span><span style=\"color: navy\"><b> -&gt; </b></span>bfarmOrganization.address = <span style=\"color: maroon\">srcLocationAddressVar</span><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Übernimmt die Adressinformationen aus der Location in die Organisation</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"entry\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Verarbeitet Location-Einträge aus dem SearchSet</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"mapLocation\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Mappt Location-Informationen für Adressdaten</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span></pre></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapOrganization"^^xsd:anyURI ;
+     fhir:l <https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapOrganization>
+  ] ; # 
+  fhir:version [ fhir:v "0.9.0"] ; # 
+  fhir:name [ fhir:v "ERPTPrescriptionStructureMapOrganization"] ; # 
+  fhir:title [ fhir:v "E-T-Rezept Structure Map for Organization"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-12-19"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "gematik GmbH"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "gematik GmbH" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://gematik.de" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "erp-umsetzung@gematik.de" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Mapping-Anweisungen zur Erstellung einer BfArM Organization aus dem VZD SearchSet"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "DE" ] ;
+       fhir:display [ fhir:v "Germany" ]
+     ] )
+  ] ) ; # 
+  fhir:structure ( [
+     fhir:url [
+       fhir:v "https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-vzd-searchset"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-vzd-searchset>
+     ] ;
+     fhir:mode [ fhir:v "source" ] ;
+     fhir:alias [ fhir:v "vzdSearchSet" ]
+  ] [
+     fhir:url [
+       fhir:v "https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-organization"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-organization>
+     ] ;
+     fhir:mode [ fhir:v "target" ] ;
+     fhir:alias [ fhir:v "bfarmOrganization" ]
+  ] ) ; # 
+  fhir:group ( [
+     fhir:name [ fhir:v "ERPTPrescriptionStructureMapOrganization" ] ;
+     fhir:typeMode [ fhir:v "none" ] ;
+     fhir:documentation [ fhir:v "Mapping-Anweisungen zur Erstellung einer BfArM Organization aus dem VZD SearchSet" ] ;
+     fhir:input ( [
+       fhir:name [ fhir:v "vzdSearchSet" ] ;
+       fhir:type [ fhir:v "vzdSearchSet" ] ;
+       fhir:mode [ fhir:v "source" ]
+     ] [
+       fhir:name [ fhir:v "bfarmOrganization" ] ;
+       fhir:type [ fhir:v "bfarmOrganization" ] ;
+       fhir:mode [ fhir:v "target" ]
+     ] ) ;
+     fhir:rule ( [
+       fhir:name [ fhir:v "mapOrganization" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "vzdSearchSet" ] ;
+         fhir:element [ fhir:v "entry" ] ;
+         fhir:variable [ fhir:v "srcEntryOrgVar" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "entry" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "srcEntryOrgVar" ] ;
+           fhir:element [ fhir:v "resource" ] ;
+           fhir:variable [ fhir:v "srcEntryOrganizationVar" ] ;
+           fhir:condition [ fhir:v "ofType(Organization)" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "name" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "srcEntryOrganizationVar" ] ;
+             fhir:element [ fhir:v "name" ] ;
+             fhir:variable [ fhir:v "srcOrgNameVar" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "bfarmOrganization" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "name" ] ;
+             fhir:transform [ fhir:v "copy" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:Id ;
+                 fhir:v "srcOrgNameVar"
+               ]
+             ] )
+           ] ) ;
+           fhir:documentation [ fhir:v "Übernimmt den Namen der Organisation aus dem VZD in die BfArM Organization" ]
+         ] [
+           fhir:name [ fhir:v "tid" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "srcEntryOrganizationVar" ] ;
+             fhir:element [ fhir:v "identifier" ] ;
+             fhir:variable [ fhir:v "srcOrgIdentifierVar" ] ;
+             fhir:condition [ fhir:v "$this.system='https://gematik.de/fhir/sid/telematik-id'" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "bfarmOrganization" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "identifier" ] ;
+             fhir:variable [ fhir:v "bfarmOrganizationIdentifierVar" ]
+           ] ) ;
+           fhir:rule ( [
+             fhir:name [ fhir:v "tidValue" ] ;
+             fhir:source ( [
+               fhir:context [ fhir:v "srcOrgIdentifierVar" ] ;
+               fhir:element [ fhir:v "value" ] ;
+               fhir:variable [ fhir:v "srcOrgIdentifierValueVar" ] ;
+               fhir:logMessage [ fhir:v "tgtTidIdentifier" ]
+             ] ) ;
+             fhir:target ( [
+               fhir:context [ fhir:v "bfarmOrganizationIdentifierVar" ] ;
+               fhir:contextType [ fhir:v "variable" ] ;
+               fhir:element [ fhir:v "system" ] ;
+               fhir:transform [ fhir:v "copy" ] ;
+               fhir:parameter ( [
+                 fhir:value [
+                   a fhir:String ;
+                   fhir:v "https://gematik.de/fhir/sid/telematik-id"
+                 ]
+               ] )
+             ] [
+               fhir:context [ fhir:v "bfarmOrganizationIdentifierVar" ] ;
+               fhir:contextType [ fhir:v "variable" ] ;
+               fhir:element [ fhir:v "value" ] ;
+               fhir:transform [ fhir:v "copy" ] ;
+               fhir:parameter ( [
+                 fhir:value [
+                   a fhir:Id ;
+                   fhir:v "srcOrgIdentifierValueVar"
+                 ]
+               ] )
+             ] [
+               fhir:context [ fhir:v "bfarmOrganization" ] ;
+               fhir:contextType [ fhir:v "variable" ] ;
+               fhir:element [ fhir:v "id" ] ;
+               fhir:transform [ fhir:v "copy" ] ;
+               fhir:parameter ( [
+                 fhir:value [
+                   a fhir:Id ;
+                   fhir:v "srcOrgIdentifierValueVar"
+                 ]
+               ] )
+             ] ) ;
+             fhir:documentation [ fhir:v "Kopiert die Telematik-ID mit korrektem System-Identifier in die Ziel-Organisation" ]
+           ] ) ;
+           fhir:documentation [ fhir:v "Mappt die Telematik-ID der Organisation" ]
+         ] ) ;
+         fhir:documentation [ fhir:v "Verarbeitet jeden Eintrag im SearchSet" ]
+       ] ) ;
+       fhir:documentation [ fhir:v "Mappt Organization-Einträge aus dem VZD SearchSet" ]
+     ] [
+       fhir:name [ fhir:v "mapHealthcareService" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "vzdSearchSet" ] ;
+         fhir:element [ fhir:v "entry" ] ;
+         fhir:variable [ fhir:v "srcEntryHCSVar" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "entry" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "srcEntryHCSVar" ] ;
+           fhir:element [ fhir:v "resource" ] ;
+           fhir:variable [ fhir:v "srcEntryHealthcareServiceVar" ] ;
+           fhir:condition [ fhir:v "ofType(HealthcareService)" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "telecom" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "srcEntryHealthcareServiceVar" ] ;
+             fhir:element [ fhir:v "telecom" ] ;
+             fhir:variable [ fhir:v "srcHcsTelecomVar" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "bfarmOrganization" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "telecom" ] ;
+             fhir:transform [ fhir:v "copy" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:Id ;
+                 fhir:v "srcHcsTelecomVar"
+               ]
+             ] )
+           ] ) ;
+           fhir:documentation [ fhir:v "Übernimmt Kontaktinformationen (Telefon, E-Mail) aus dem HealthcareService in die Organisation" ]
+         ] ) ;
+         fhir:documentation [ fhir:v "Verarbeitet HealthcareService-Einträge aus dem SearchSet" ]
+       ] ) ;
+       fhir:documentation [ fhir:v "Mappt HealthcareService-Informationen für Kontaktdaten" ]
+     ] [
+       fhir:name [ fhir:v "mapLocation" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "vzdSearchSet" ] ;
+         fhir:element [ fhir:v "entry" ] ;
+         fhir:variable [ fhir:v "srcEntryHCSVar" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "entry" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "srcEntryHCSVar" ] ;
+           fhir:element [ fhir:v "resource" ] ;
+           fhir:variable [ fhir:v "srcEntryLocationVar" ] ;
+           fhir:condition [ fhir:v "ofType(Location)" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "address" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "srcEntryLocationVar" ] ;
+             fhir:element [ fhir:v "address" ] ;
+             fhir:variable [ fhir:v "srcLocationAddressVar" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "bfarmOrganization" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "address" ] ;
+             fhir:transform [ fhir:v "copy" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:Id ;
+                 fhir:v "srcLocationAddressVar"
+               ]
+             ] )
+           ] ) ;
+           fhir:documentation [ fhir:v "Übernimmt die Adressinformationen aus der Location in die Organisation" ]
+         ] ) ;
+         fhir:documentation [ fhir:v "Verarbeitet Location-Einträge aus dem SearchSet" ]
+       ] ) ;
+       fhir:documentation [ fhir:v "Mappt Location-Informationen für Adressdaten" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

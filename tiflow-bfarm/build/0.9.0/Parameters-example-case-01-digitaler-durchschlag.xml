@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Parameters xmlns="http://hl7.org/fhir">
+  <id value="example-case-01-digitaler-durchschlag"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/tiflow/bfarm/StructureDefinition/erp-tprescription-carbon-copy|1.1"/>
+  </meta>
+  <parameter>
+    <name value="rxPrescription"/>
+    <part>
+      <name value="prescriptionSignatureDate"/>
+      <valueInstant value="2026-04-01T08:23:12Z"/>
+    </part>
+    <part>
+      <name value="prescriptionId"/>
+      <valueIdentifier>
+        <system value="https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"/>
+        <value value="166.100.000.000.001.39"/>
+      </valueIdentifier>
+    </part>
+    <part>
+      <name value="medicationRequest"/>
+      <resource>
+        <MedicationRequest>
+          <extension url="https://gematik.de/fhir/epa-medication/StructureDefinition/teratogenic-extension">
+            <extension url="off-label">
+              <valueBoolean value="true"/>
+            </extension>
+            <extension url="childbearing-potential">
+              <valueBoolean value="false"/>
+            </extension>
+            <extension url="security-compliance">
+              <valueBoolean value="true"/>
+            </extension>
+            <extension url="hand-out-information-material">
+              <valueBoolean value="true"/>
+            </extension>
+            <extension url="declaration-of-expertise">
+              <valueBoolean value="true"/>
+            </extension>
+          </extension>
+          <extension url="http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta">
+            <extension url="algorithmVersion">
+              <valueString value="1.0.0"/>
+            </extension>
+            <extension url="language">
+              <valueCode value="de-DE"/>
+            </extension>
+          </extension>
+          <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction">
+            <valueMarkdown value="0-0-1-0 Stück"/>
+          </extension>
+          <status value="completed"/>
+          <intent value="order"/>
+          <medicationReference>
+            <reference value="urn:uuid:a3ca01a4-92c1-422a-87d9-ef046e94527f"/>
+          </medicationReference>
+          <subject>
+            <identifier>
+              <system>
+                <extension url="http://hl7.org/fhir/StructureDefinition/data-absent-reason">
+                  <valueCode value="not-permitted"/>
+                </extension>
+              </system>
+              <value>
+                <extension url="http://hl7.org/fhir/StructureDefinition/data-absent-reason">
+                  <valueCode value="not-permitted"/>
+                </extension>
+              </value>
+            </identifier>
+          </subject>
+          <authoredOn value="2025-05-20"/>
+          <dosageInstruction>
+            <timing>
+              <repeat>
+                <frequency value="1"/>
+                <period value="1"/>
+                <periodUnit value="d"/>
+                <when value="EVE"/>
+              </repeat>
+            </timing>
+            <doseAndRate>
+              <doseQuantity>
+                <value value="1"/>
+                <unit value="Stück"/>
+                <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BMP_DOSIEREINHEIT"/>
+                <code value="1"/>
+              </doseQuantity>
+            </doseAndRate>
+          </dosageInstruction>
+          <dispenseRequest>
+            <quantity>
+              <value value="1"/>
+              <unit value="Packung"/>
+            </quantity>
+            <expectedSupplyDuration>
+              <value value="3"/>
+              <unit value="Woche(n)"/>
+            </expectedSupplyDuration>
+          </dispenseRequest>
+        </MedicationRequest>
+      </resource>
+    </part>
+    <part>
+      <name value="medication"/>
+      <resource>
+        <Medication>
+          <id value="a3ca01a4-92c1-422a-87d9-ef046e94527f"/>
+          <extension url="http://fhir.de/StructureDefinition/normgroesse">
+            <valueCode value="N1"/>
+          </extension>
+          <code>
+            <coding>
+              <system value="http://fhir.de/CodeSystem/ifa/pzn"/>
+              <code value="19201712"/>
+            </coding>
+            <text value="Pomalidomid Accord 1 mg 21 x 1 Hartkapseln"/>
+          </code>
+          <form>
+            <coding>
+              <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM"/>
+              <code value="HKP"/>
+            </coding>
+          </form>
+          <amount>
+            <numerator>
+              <extension url="https://gematik.de/fhir/epa-medication/StructureDefinition/medication-packaging-size-extension">
+                <valueString value="21"/>
+              </extension>
+              <unit value="Stück"/>
+            </numerator>
+            <denominator>
+              <value value="1"/>
+            </denominator>
+          </amount>
+          <ingredient>
+            <itemCodeableConcept>
+              <text value="Pomalidomid"/>
+            </itemCodeableConcept>
+            <strength>
+              <numerator>
+                <value value="1"/>
+                <unit value="mg"/>
+              </numerator>
+              <denominator>
+                <value value="1"/>
+                <unit value="Stück"/>
+              </denominator>
+            </strength>
+          </ingredient>
+        </Medication>
+      </resource>
+    </part>
+  </parameter>
+  <parameter>
+    <name value="rxDispensation"/>
+    <part>
+      <name value="dispenseOrganization"/>
+      <resource>
+        <Organization>
+          <id value="3-07.2.1234560000.10.789"/>
+          <identifier>
+            <system value="https://gematik.de/fhir/sid/telematik-id"/>
+            <value value="3-07.2.1234560000.10.789"/>
+          </identifier>
+          <name value="Schwarzwald Apotheke"/>
+          <telecom>
+            <system value="phone"/>
+            <value value="1234"/>
+            <use value="work"/>
+          </telecom>
+          <address>
+            <use value="work"/>
+            <type value="postal"/>
+            <text value="Schwarzwaldstr. 18&amp;#13;&amp;#10;63762&amp;#13;&amp;#10;Großostheim&amp;#13;&amp;#10;Bayern&amp;#13;&amp;#10;DE"/>
+            <line value="Schwarzwaldstr. 18"/>
+            <city value="Großostheim"/>
+            <state value="Bayern"/>
+            <postalCode value="63762"/>
+            <country value="DE"/>
+          </address>
+        </Organization>
+      </resource>
+    </part>
+    <part>
+      <name value="dispenseInformation"/>
+      <part>
+        <name value="medicationDispense"/>
+        <resource>
+          <MedicationDispense>
+            <status value="completed"/>
+            <medicationReference>
+              <reference value="urn:uuid:8e2e5e65-4c5d-49f2-8efc-c30e40838273"/>
+            </medicationReference>
+            <performer>
+              <actor>
+                <reference value="Organization/3-07.2.1234560000.10.789"/>
+              </actor>
+            </performer>
+            <quantity>
+              <value value="1"/>
+              <unit value="Packung"/>
+            </quantity>
+            <whenHandedOver value="2025-10-30"/>
+          </MedicationDispense>
+        </resource>
+      </part>
+      <part>
+        <name value="medication"/>
+        <resource>
+          <Medication>
+            <id value="8e2e5e65-4c5d-49f2-8efc-c30e40838273"/>
+            <code>
+              <coding>
+                <system value="http://fhir.de/CodeSystem/ifa/pzn"/>
+                <code value="19201712"/>
+              </coding>
+              <text value="Pomalidomid Accord 1 mg 21 x 1 Hartkapseln"/>
+            </code>
+            <form>
+              <coding>
+                <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM"/>
+                <code value="TAB"/>
+                <display value="Tabletten"/>
+              </coding>
+            </form>
+            <amount>
+              <numerator>
+                <extension url="https://gematik.de/fhir/epa-medication/StructureDefinition/medication-packaging-size-extension">
+                  <valueString value="21"/>
+                </extension>
+                <unit value="St"/>
+              </numerator>
+              <denominator>
+                <value value="1"/>
+              </denominator>
+            </amount>
+            <ingredient>
+              <itemCodeableConcept>
+                <text value="Pomalidomid"/>
+              </itemCodeableConcept>
+              <strength>
+                <numerator>
+                  <value value="1"/>
+                  <unit value="mg"/>
+                </numerator>
+                <denominator>
+                  <value value="1"/>
+                  <unit value="Tbl."/>
+                </denominator>
+              </strength>
+            </ingredient>
+          </Medication>
+        </resource>
+      </part>
+    </part>
+  </parameter>
+</Parameters>
