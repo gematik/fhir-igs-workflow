@@ -1,3 +1,5 @@
+Wenn ein E-Rezept-FdV einem Kostenträger fest zugeordnet ist, dann kann die Telematik-ID für Adressierung von Communications an den Kostenträger fest im Programmcode hinterlegt werden.
+
 Wenn die Telematik-ID des KTR des Versicherten nicht im Programmcode hinterlegt wird,
 muss diese zur Laufzeit bestimmt werden. Hierfür nutzt das E-Rezept-FdV das IKNR des
 KTR, wodurch es dann in der Lage ist nach der Telematik-ID im FHIRVZD zu suchen.

@@ -11,7 +11,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Commun
 ##### Zuweisen
 
 <!-- A_21402-02 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-ERP-15" title="E-Rezept-FdV: Anfrage Belieferung - Flowtype 162 / 169 / 209 - Anfrage nicht zulässig" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-ERP-24" title="E-Rezept-FdV: Anfrage Belieferung - Flowtype 162 / 169 / 209 - Anfrage nicht zulässig" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -21,7 +21,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Commun
 <!-- ToDo: A_21402-02 ist abgekündigt -->
 
 <!-- A_21403-02 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-ERP-16" title="E-Rezept-FdV: E-Rezept zuweisen - Flowtype 169 / 209 - Zuweisen nicht zulässig" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-ERP-25" title="E-Rezept-FdV: E-Rezept zuweisen - Flowtype 169 / 209 - Zuweisen nicht zulässig" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -30,7 +30,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Commun
 </requirement>
 
 <!-- A_27833 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-ERP-17" title="E-Rezept-FdV: E-Rezept zuweisen- Flowtype 166 - Zuweisen als Versand nicht zulässig" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-ERP-26" title="E-Rezept-FdV: E-Rezept zuweisen- Flowtype 166 - Zuweisen als Versand nicht zulässig" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -39,7 +39,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Commun
 </requirement>
 
 <!-- A_26326 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-18" title="E-Rezept-FdV: E-Rezept zuweisen - Beginn Gültigkeit prüfen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-27" title="E-Rezept-FdV: E-Rezept zuweisen - Beginn Gültigkeit prüfen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -48,7 +48,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Commun
 </requirement>
 
 <!-- A_20011-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-19" title="E-Rezept-FdV: E-Rezept zuweisen - Textnachricht ohne Link" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-28" title="E-Rezept-FdV: E-Rezept zuweisen - Textnachricht ohne Link" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
@@ -58,7 +58,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Commun
 
 
 <!-- A_21361-02 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-ERP-20" title="E-Rezept-FdV: Vertreterkommunikation - Flowtype 169 / 209 - Vertreterkommunikation nicht zulässig" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-ERP-29" title="E-Rezept-FdV: Vertreterkommunikation - Flowtype 169 / 209 - Vertreterkommunikation nicht zulässig" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -67,7 +67,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Commun
 </requirement>
 
 <!-- A_28542 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-21" title="E-Rezept-FdV: E-Rezept zuweisen - Zuweisen - Payload" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-30" title="E-Rezept-FdV: E-Rezept zuweisen - Zuweisen - Payload" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -76,7 +76,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Commun
 </requirement>
 
 <!-- A_28544 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-22" title="E-Rezept-FdV: E-Rezept zuweisen - Auf Nachricht antworten - Payload" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-31" title="E-Rezept-FdV: E-Rezept zuweisen - Auf Nachricht antworten - Payload" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -87,7 +87,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Commun
 siehe [Datenmodell Payload für Communication-Query](./query-api-communication-req-data.html)
 
 <!-- A_19201-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-23" title="E-Rezept-FdV: E-Rezept zuweisen - Nachricht erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-32" title="E-Rezept-FdV: E-Rezept zuweisen - Nachricht erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -100,3 +100,36 @@ siehe [Datenmodell Payload für Communication-Query](./query-api-communication-r
     </ul>
     erstellen.
 </requirement>
+
+<b>Apotheke suchen</b>
+
+Die Anfrage zur Suche von Apotheken, richtet sich an das FHIR-Directory des Verzeichnisdienstes der TI (FHIR-VZD TI). 
+
+Der Ablauf der Authentisierung und Suche ist in [gemSpec_VZD_FHIR_Directory#Versicherter sucht Einträge im FHIR-Directory] beschrieben.
+
+Für weitere Informationen siehe Anwendungsfall "Suche nach Apotheken im FHIR VZD" aus der API-Schnittstelle [E-Rezept API Dokumentation].
+
+Für weitere Informationen siehe "Eine Apotheke aus dem Apotheken-Verzeichnis auswählen" in der API-Schnittstelle [VZD API Dokumentation].
+
+<!-- A_28197 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-33" title="E-Rezept-FdV: Apotheke suchen - Filter Öffentliche Apotheke" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Das E-Rezept-FdV MUSS im Anwendungsfall "Apotheke suchen" sicherstellen, dass dem Nutzer nur Einträge aus dem Verzeichnisdienst mit OrganizationProfessionOID = 1.2.276.0.76.4.54 zur Auswahl gestellt werden.
+</requirement>
+
+Das E-Rezept-FdV MUSS im Anwendungsfall "Apotheke suchen" sicherstellen, dass dem Nutzer nur Einträge aus dem Verzeichnisdienst zur Auswahl gestellt werden, welche mindestens eine Belieferungsoption im Feld specialization angegeben haben.
+
+Der Wertebereich für specialization ist in https://simplifier.net/vzd-fhir-directory/pharmacyhealthcarespecialtycs beschrieben. 
+Belieferungsoptionen sind:
+- 10 - Handverkauf
+- 30 - Botendienst
+- 40 - Versand
+
+Das E-Rezept-FdV MUSS es dem Versicherten ermöglichen, sich alle Einträge aus einem Suchergebnis anzeigen zu lassen.
+
+Das E-Rezept-FdV MUSS ein Suchergebnis so darstellen, dass einzelne Apotheken nicht hervorgehoben oder bevorzugt werden.
+
+Das E-Rezept-FdV MUSS die Apothekensuche und die Suchergebnisse so darstellen, dass Belieferungsoptionen nicht hervorgehoben oder bevorzugt werden.

@@ -24,7 +24,7 @@ Die Inhalte basieren auf der Spezifikation "EU Zugriff E-Rezept", Version 1.0.1
 
 ### Anforderungen zur Umsetzung des IGs
 
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-46" title="E-Rezept: Anwendung des IG 'EU Zugriff E-Rezept' für Einlösen von E-Rezepten im EU Ausland" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-47" title="E-Rezept: Anwendung des IG 'EU Zugriff E-Rezept' für Einlösen von E-Rezepten im EU Ausland" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Herstellererklärung"/>
@@ -36,7 +36,7 @@ Die Inhalte basieren auf der Spezifikation "EU Zugriff E-Rezept", Version 1.0.1
 </requirement>
 
 <!-- A_22206-01, A_27189 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-47" title="E-Rezept: Umsetzung des Moduls 'EU Zugriff E-Rezept'" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-48" title="E-Rezept: Umsetzung des Moduls 'EU Zugriff E-Rezept'" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Herstellererklärung"/>

@@ -1,9 +1,18 @@
 Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an Clientsysteme für die Nutzung der Operation `$close`.
 
+<!-- A_27840 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-342" title="CS Kostenträger: Quittung abrufen - Abschluss des Workflows durchführen" version="0">
+    <meta lockversion="false"/>
+    <actor name="CS_E-Rezept_KTR">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Das Clientsystem Kostenträger MUSS den Anwendungsfall "Quittung abrufen" für Verordnungen, welche abschließend verarbeitet wurden, ausführen, um den Workflow am E-Rezept-Fachdienst abzuschließen.
+</requirement>
+
 Die Erstellung der MedicationDispense erfolgt modulspezifisch.
 
 <!-- A_19289-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-304" title="CS Kostenträger: Quittung abrufen - Statusrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-343" title="CS Kostenträger: Quittung abrufen - Statusrequest" version="0">
     <meta lockversion="false"/>
     <actor name="CS_E-Rezept_KTR">
         <testProcedure id="Herstellererklärung"/>

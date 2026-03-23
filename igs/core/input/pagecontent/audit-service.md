@@ -4,7 +4,7 @@
 Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle Zugriffe auf die personenbezogenen und medizinischen Daten eines Versicherten für den Versicherten einsehbar sind. Diese Zugriffsprotokolle sind unabhängig vom Systemprotokoll und stehen ausschließlich dem Versicherten zur Wahrnehmung seiner Betroffenenrechte zur Einsicht zur Verfügung.
 
 <!-- A_19296-04 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-24" title="E-Rezept-Fachdienst - Inhalt Protokolleintrag" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-30" title="E-Rezept-Fachdienst - Inhalt Protokolleintrag" version="0">
 	<meta lockversion="false"/>
 	<actor name="eRp_FD">
     	<testProcedure id="Produkttest"/>
@@ -36,8 +36,8 @@ Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen all
   </ul>
 </requirement>
 
-<!-- A_19284-13 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-25" title="E-Rezept-Fachdienst - Versichertenprotokoll zu Operationen" version="0">
+<!-- A_19284-14 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-31" title="E-Rezept-Fachdienst - Versichertenprotokoll zu Operationen" version="0">
 	<meta lockversion="false"/>
 	<actor name="eRp_FD">
     	<testProcedure id="Produkttest"/>
@@ -63,7 +63,7 @@ Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen all
   </tr>
   <tr>
     <td>http GET /Task</td>
-    <td>Apotheke</td>
+    <td>Apotheke (VSDM)</td>
     <td>
         <ul>
             <li>im Erfolgsfall beim passenden AcceptPN3VSDMxx=false: Apotheke hat mit Ihrer eGK die Liste der offenen E-Rezepte abgerufen.</li>
@@ -72,6 +72,11 @@ Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen all
             <li>im sonstigen Fehlerfall: Apotheke konnte aufgrund eines Fehlerfalls nicht die Liste der offenen E-Rezepte mit Ihrer eGK abrufen.</li>
         </ul>
     </td>
+  </tr>
+  <tr>
+    <td>http GET /Task</td>
+    <td>Apotheke (PoPP)</td>
+    <td>Die Apotheke hat die Liste der einlösbaren E-Rezepte abgerufen durch Autorisierung mittels &#60;PoPP-Anwendungsfall&#62;.</td>
   </tr>
   <tr>
     <td>http GET /Task</td>
@@ -227,8 +232,20 @@ Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen all
 </table>
 <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004 Versichertenprotokoll</figcaption></div>
 
-<!-- A_19284-13 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-26" title="E-Rezept-Fachdienst - Versichertenprotokoll zu automatischen Löschen" version="0">
+<table>
+<tr>
+<th>Wert in proofMethod</th>
+<th>Wert für &#60;PoPP-Anwendungsfall&#62;</th>
+</tr>
+<tr>
+<td>ehc-practitioner-*</td>
+<td>eGK in der Apotheke</td>
+</tr>
+</table>
+<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004a Versichertenprotokoll PoPP Anwendungsfall</figcaption></div>
+
+<!-- A_19284-14 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-32" title="E-Rezept-Fachdienst - Versichertenprotokoll zu automatischen Löschen" version="0">
 	<meta lockversion="false"/>
 	<actor name="eRp_FD">
     	<testProcedure id="Produkttest"/>
@@ -265,8 +282,8 @@ Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen all
 </table>
 <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004a Versichertenprotokoll nach automatischen Löschen</figcaption></div>
 
-<!-- A_19284-13 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-27" title="E-Rezept-Fachdienst - Versichertenprotokoll zu Löschen nach Fehlerbehandlung" version="0">
+<!-- A_19284-14 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-33" title="E-Rezept-Fachdienst - Versichertenprotokoll zu Löschen nach Fehlerbehandlung" version="0">
 	<meta lockversion="false"/>
 	<actor name="eRp_FD">
     <testProcedure id="Produkttest"/>
@@ -289,7 +306,7 @@ Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen all
 <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004b Versichertenprotokoll nach Löschen wegen Fehlerbehandlung</figcaption></div>
 
 <!-- A_19302 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-28" title="E-Rezept-Fachdienst - Protokolleintrag Versichertenprotokoll leicht verständlich" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-34" title="E-Rezept-Fachdienst - Protokolleintrag Versichertenprotokoll leicht verständlich" version="0">
 	<meta lockversion="false"/>
 	<actor name="eRp_FD">
     <testProcedure id="Produkttest"/>
@@ -298,7 +315,7 @@ Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen all
 </requirement>
 
 <!-- A_22217 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-29" title="E-Rezept-Fachdienst - Protokollierung - keine Angabe zu organizationName" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-35" title="E-Rezept-Fachdienst - Protokollierung - keine Angabe zu organizationName" version="0">
 	<meta lockversion="false"/>
 	<actor name="eRp_FD">
     	<testProcedure id="Produkttest"/>
@@ -311,7 +328,7 @@ Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen all
 Der E-Rezept-Fachdienst protokolliert das erfolgreiche Übermitteln von Daten für jedes E-Rezept an den Medication Service im Zugriffsprotokoll des Versicherten. Für Übermittlungsversuche, welche nicht erfolgreich durchgeführt werden konnten und für die die Übermittlung erneut versucht wird, wird kein Eintrag im Zugriffsprotokoll angelegt.
 
 <!-- A_25962 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-30" title="E-Rezept-Fachdienst - ePA - Medication Service - Versichertenprotokoll" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-36" title="E-Rezept-Fachdienst - ePA - Medication Service - Versichertenprotokoll" version="0">
 	<meta lockversion="false"/>
 	<actor name="eRp_FD">
     <testProcedure id="Produkttest"/>

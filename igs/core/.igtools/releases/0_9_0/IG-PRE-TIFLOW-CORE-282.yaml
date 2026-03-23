@@ -1,0 +1,35 @@
+actor:
+- CS_E-Rezept_KTR
+- NCPeH_ePeDA
+- PS_E-Rezept_abgebend
+- PS_E-Rezept_verordnend
+- eRp_FD
+- eRp_FdV
+conformance: SHALL
+content_hash: e2776aa87f615edfb21cdb0e1cffc98b4cbe67a1ef9abc1258e26d551ba587ca
+created: '2026-03-23T10:57:48.487707'
+date: '2026-03-23T10:57:48.487710'
+key: IG-PRE-TIFLOW-CORE-282
+modified: '2026-03-23T10:57:48.487708'
+release_status: NEW
+source: input/pagecontent/fhir-validate.md
+status: ACTIVE
+test_procedures:
+  CS_E-Rezept_KTR:
+  - Herstellererklärung
+  NCPeH_ePeDA:
+  - Herstellererklärung
+  PS_E-Rezept_abgebend:
+  - Konformitätsbestätigung
+  PS_E-Rezept_verordnend:
+  - Konformitätsbestätigung
+  eRp_FD:
+  - Produkttest
+  eRp_FdV:
+  - Herstellererklärung
+text: Die Produkttypen der Anwendung E-Rezept und Clientsysteme des E-Rezept-Fachdienstes
+  MÜSSEN bei der Erstellung einer FHIR-Ressource die ID der fullURL (Bundle.entry.fullurl)
+  der Ressource auf die ID der Ressource (Bundle.entry.resource.id) setzen, sofern
+  das http(s)-Schema verwendet wird.
+title: FHIR-Ressourcen - Ressource-ID in fullUrl
+version: 0

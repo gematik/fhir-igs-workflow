@@ -13,7 +13,7 @@ from pathlib import Path
 from typing import Any, Optional
 
 DEFAULT_HAPI_JAR = Path(os.getenv("HAPI_VALIDATOR_JAR", "/Users/gematik/dev/validators/current_hapi_validator.jar"))
-DEFAULT_PROFILE = "https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-carbon-copy"
+DEFAULT_PROFILE = "https://gematik.de/fhir/tiflow/bfarm/StructureDefinition/erp-tprescription-carbon-copy"
 DEFAULT_FHIR_VERSION = "4.0.1"
 
 # IG dependencies to load into the HAPI validator. Mirrors tests/scripts/transform-bundle.py.

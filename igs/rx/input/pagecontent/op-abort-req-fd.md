@@ -7,7 +7,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 ### Modulspezifische Anforderungen
 
 <!-- A_19026-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-38" title="E-Rezept-Fachdienst - E-Rezept löschen - Flowtype 160/166/169/200/209 - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-48" title="E-Rezept-Fachdienst - E-Rezept löschen - Flowtype 160/166/169/200/209 - Rollenprüfung" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produktgutachten"/>
@@ -26,7 +26,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_19145-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-39" title="E-Rezept-Fachdienst - E-Rezept löschen - Apotheke - Statusprüfung in-progress" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-49" title="E-Rezept-Fachdienst - E-Rezept löschen - Apotheke - Statusprüfung in-progress" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -40,7 +40,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_19146 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-40" title="E-Rezept-Fachdienst - E-Rezept löschen - Apotheke - Statusprüfung ungleich in-progress" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-50" title="E-Rezept-Fachdienst - E-Rezept löschen - Apotheke - Statusprüfung ungleich in-progress" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -54,7 +54,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_19224 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-41" title="E-Rezept-Fachdienst - E-Rezept löschen - Apotheke - Prüfung Secret" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-51" title="E-Rezept-Fachdienst - E-Rezept löschen - Apotheke - Prüfung Secret" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>
@@ -63,7 +63,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_22102-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-42" title="E-Rezept-Fachdienst - E-Rezept löschen - Flowtype 169 / 209 - Versicherter - Statusprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-52" title="E-Rezept-Fachdienst - E-Rezept löschen - Flowtype 169 / 209 - Versicherter - Statusprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -72,7 +72,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_25930 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-43" title="E-Rezept-Fachdienst - E-Rezept löschen - Löschinformation ePA Medication Service bereitstellen (Verordnungsdatensatz) - Leistungserbringerinstitution" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-53" title="E-Rezept-Fachdienst - E-Rezept löschen - Löschinformation ePA Medication Service bereitstellen (Verordnungsdatensatz) - Leistungserbringerinstitution" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -81,7 +81,7 @@ Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst fü
 </requirement>
 
 <!-- A_25931 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-44" title="E-Rezept-Fachdienst - E-Rezept löschen - Löschinformation ePA Medication Service bereitstellen (Verordnungsdatensatz) - Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-54" title="E-Rezept-Fachdienst - E-Rezept löschen - Löschinformation ePA Medication Service bereitstellen (Verordnungsdatensatz) - Versicherter" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>

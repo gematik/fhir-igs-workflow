@@ -1,0 +1,23 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: e2b4b447fa57abce1506322a88343d6c2b5aaa4e65a34f1264084d77428695d9
+created: '2026-03-23T10:57:49.328633'
+date: '2026-03-23T10:57:49.328636'
+key: IG-PRE-TIFLOW-CHRG-78
+modified: '2026-03-23T10:57:49.328635'
+release_status: NEW
+source: input/pagecontent/query-api-chargeitem-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS beim Aufruf der Http-PUT-Operation auf eine konkrete\
+  \ über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource sicherstellen,\
+  \ dass ausschließlich Nutzer in einer der Rollen \n    <ul>\n        <li>oid_oeffentliche_apotheke</li>\n\
+  \        <li>oid_krankenhausapotheke</li>\n    </ul>\n    die Operation am E-Rezept-Fachdienst\
+  \ aufrufen dürfen und die Rolle \"professionOID\" des Aufrufers im ACCESS_TOKEN\
+  \ im HTTP-RequestHeader \"Authorization\" feststellen, damit eine Abrechnungsinformation\
+  \ nicht durch Unberechtigte aktualisiert werden kann."
+title: E-Rezept-Fachdienst – Abrechnungsinformation ändern – Rollenprüfung
+version: 0

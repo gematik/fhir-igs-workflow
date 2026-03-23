@@ -1,0 +1,23 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 69e1dc33a6da6332c9405a84a4b0c7a94d717c8bad79bb75dae8cf44d467b82a
+created: '2026-03-23T10:57:48.461073'
+date: '2026-03-23T10:57:48.461075'
+key: IG-TIFLOW-CORE-174
+modified: '2026-03-23T10:57:48.461074'
+release_status: STABLE
+source: input/pagecontent/op-activate-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
+  über /Task/&#60;id&#62;/$activate den im HTTP-RequestHeader "X-AccessCode" oder
+  URL-Parameter "?ac=..." übertragenen AccessCode gegen den im referenzierten Task
+  gespeicherten AccessCode Task.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode
+  und bei Ungleichheit oder Fehlen des HTTP-Headers die Operation mit dem HTTP-Fehlercode
+  403 abbrechen, damit Zugriffe auf diesen Datensatz nur durch Berechtigte in Kenntnis
+  des AccessCodes erfolgen.
+title: E-Rezept-Fachdienst - Task aktivieren - Prüfung AccessCode
+version: 0

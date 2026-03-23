@@ -1,0 +1,397 @@
+{
+    "document_info": {
+        "id": "gemIG_TIFlow_bfarm",
+        "title": "TIFlow - Datenaustausch BfArM Webdienst",
+        "link": "https://gematik.de/fhir/tiflow/bfarm/0.9.0",
+        "version": "0.9.0",
+        "date": "1774483200",
+        "status": "released",
+        "classification": "public"
+    },
+    "requirements": [
+        {
+            "key": "IG-PRE-TIFLOW-BFARM-5",
+            "title": "E-Rezept-Fachdienst - BfArM - Lokalisierung Konfigurationsparameter BfArM_Domain",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS einen Konfigurationsparameter BfArM_Domain für die Domain des BfArM Webdienstes verwalten.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/bfarm/0.9.0/query-api-t-register-req-fd.html#IG-PRE-TIFLOW-BFARM-5"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-BFARM-12",
+            "title": "E-Rezept-Fachdienst - BfArM - Übertragen des digitalen Durchschlags",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS für das Übertragen eines digitalen Durchschlags den BfArM Webdienst RESTful wie folgt aufrufen: \n     <table>\n      <tr>\n        <th>HTTP-Parameter</th>\n        <th>Wert</th>\n      </tr>\n      <tr>\n        <td>Methode</td>\n        <td>POST</td>\n      </tr>\n      <tr>\n        <td>Endpunkt</td>\n        <td>/ords/rezepte/t-rezept/v1</td>\n      </tr>\n      <tr>\n        <td>Header</td>\n        <td>\n          <ul>\n            <li>Authorization: Bearer &lt;AccessToken&gt;</li>\n            <li>Content-Type: application/fhir+json</li>\n            <li>X-Request-ID: &lt;random-uuid&gt;</li>\n          </ul>\n        </td>\n      </tr>\n      <tr>\n        <td>Body</td>\n        <td>&lt;digitaler Durchschlag E-T-Rezept&gt;</td>\n      </tr>\n    </table>",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/bfarm/0.9.0/query-api-t-register-req-fd.html#IG-PRE-TIFLOW-BFARM-12"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-BFARM-9",
+            "title": "E-Rezept-Fachdienst - BfArM - Suche nach Apothekendaten",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS für das Bereitstellen eines digitalen Durchschlags für ein E-T-Rezept die Daten der abgebenden Apotheke aus dem Verzeichnisdienst ermitteln, indem an den Verzeichnisdienst folgende Abfrage gestellt wird: Abfrage der Ressource \"HealthcareService\", HealthcareServices, deren Organisation aktiv sind, HealthcareServices, deren origin tag = ldap ist, HealthcareServices, deren Organisation als Identifier die Telematik-ID trägt, die im Dispensierdatensatz angegeben wurde, Einbeziehen der Organisation in das Rückgabeergebnis, Einbeziehen der Location in das Rückgabeergebnis",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/bfarm/0.9.0/query-api-t-register-req-fd.html#IG-PRE-TIFLOW-BFARM-9"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-BFARM-8",
+            "title": "E-Rezept-Fachdienst - BfArM - asynchrone Bereitstellung und Übermittlung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS das Übermitteln der Daten an den BfArM Webdienst asynchron zur Bereitstellung der Daten durch die Clientsysteme umsetzen, damit für das bereitstellende Primärsystem der abgebenden Leistungserbringerinstitution keine verlängerte Verarbeitungsdauer der auslösenden Operation auftritt.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/bfarm/0.9.0/query-api-t-register-req-fd.html#IG-PRE-TIFLOW-BFARM-8"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-BFARM-13",
+            "title": "E-Rezept-Fachdienst - BfArM - Fehlerbehandlung - Reaktion auf Scheitern des Operationaufrufs",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS die Datenübermittlung an den BfArM Webdienst für mindestens eine Minute unterbrechen, wenn ein Aufruf mit dem Statuscode 500 oder 429 scheitert. Bei anhaltenden Problemen MUSS der E-Rezept-Fachdienst einen exponentiellen Backoff-Mechanismus anwenden, der die Wartezeit zwischen den Versuchen sukzessive verdoppelt, um die Systembelastung zu minimieren.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/bfarm/0.9.0/query-api-t-register-req-fd.html#IG-PRE-TIFLOW-BFARM-13"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-BFARM-4",
+            "title": "E-Rezept-Fachdienst - BfArM - AccessToken für Zugriff auf den BfArM Webdienst",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS für den Zugriff auf den BfArM Webdienst einen AccessToken für die Authentifizierung im HTTP-Header wie folgt angeben: Authorization: Bearer &lt;AccessToken vom Token Endpunkt&gt;, um auf die Endpunkte des BfArM Webdienstes zugreifen zu können.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/bfarm/0.9.0/query-api-t-register-req-fd.html#IG-PRE-TIFLOW-BFARM-4"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-BFARM-3",
+            "title": "E-Rezept-Fachdienst - BfArM - Beziehen des AccessTokens",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS zum Beziehen eines AccessTokens den Endpunkt /ords/rezepte/oauth/token am BfArM Webdienst mit folgenden Parametern aufrufen: HTTP-Methode POST HTTP-Header Content-Type: application/x-www-form-urlencoded Authorization: Basic &lt;base64(client_id:client_secret)&gt; HTTP-Body Form-Parameter: grant_type=client_credential um einen AccessToken für den Zugriff auf den BfArM Webdienst zu beziehen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/bfarm/0.9.0/query-api-t-register-req-fd.html#IG-PRE-TIFLOW-BFARM-3"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-BFARM-14",
+            "title": "E-Rezept-Fachdienst - BfArM - Fehlerbehandlung - Protokollierung struktureller Fehler",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS den Aufruf am BfArM Webdienst als fehlerhaft kennzeichnen und eine detaillierte Fehlermeldung für interne Analysezwecke protokollieren, wenn der BfArM Webdienst auf einen Operationsaufruf mit einem Statuscode 400 (Bad Request) oder 422 (Unprocessable Entity) reagiert.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/bfarm/0.9.0/query-api-t-register-req-fd.html#IG-PRE-TIFLOW-BFARM-14"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-BFARM-15",
+            "title": "E-Rezept: Anwendung des IG 'Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst' für Übertragung von Daten vom E-Rezept-Fachdienst an den BfArM Webdienst",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS zur Umsetzung der Übertragung von Daten vom E-Rezept-Fachdienst an den BfArM Webdienst den Implementation Guide \"Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst\" umsetzen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/bfarm/0.9.0/index.html#IG-PRE-TIFLOW-BFARM-15"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-BFARM-2",
+            "title": "E-Rezept-Fachdienst - BfArM - Prüfung Gültigkeit AccessToken",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS vor dem Zugriff auf den BfArM Webdienst prüfen, ob der zuletzt bezogene AccessToken noch gültig ist und im Falle der Ungültigkeit einen neuen AccessToken über den /ords/rezepte/oauth/token Endpunkt am BfArM Webdienst beziehen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/bfarm/0.9.0/query-api-t-register-req-fd.html#IG-PRE-TIFLOW-BFARM-2"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-BFARM-16",
+            "title": "E-Rezept: Umsetzung des Moduls 'Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst'",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS zur Umsetzung des Implementation Guides \"Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst\" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/bfarm/0.9.0/index.html#IG-PRE-TIFLOW-BFARM-16"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-BFARM-1",
+            "title": "Anbieter E-Rezept-Fachdienst - BfArM - Registrierung für Client Credentials am BfArM Webdienst",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der Anbieter des E-Rezept-Fachdienst MUSS sich über einen organisatorischen Prozess Client Credentials für den Zugriff auf den BfArM Webdienst beim BfArM registrieren.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/bfarm/0.9.0/query-api-t-register-req-fd.html#IG-PRE-TIFLOW-BFARM-1"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-BFARM-10",
+            "title": "E-Rezept-Fachdienst - BfArM - Erzeugen digitaler Durchschlag E-T-Rezept",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Bereitstellen eines digitalen Durchschlag für ein T-Rezept an den BfArM Webdienst einen Datensatz nach dem Profil ERP_TPrescription_CarbonCopy erzeugen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/bfarm/0.9.0/query-api-t-register-req-fd.html#IG-PRE-TIFLOW-BFARM-10"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-BFARM-7",
+            "title": "E-Rezept-Fachdienst - BfArM - Flowtype 166",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS sicherstellen, dass ausschließlich Daten zu Tasks mit dem Flowtype 166 für den Webdienst des BfArM bereitgestellt werden.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/bfarm/0.9.0/query-api-t-register-req-fd.html#IG-PRE-TIFLOW-BFARM-7"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-BFARM-6",
+            "title": "E-Rezept-Fachdienst - BfArM - Lokalisierung des BfArM Webdienstes",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS zur Lokalisierung des BfArM Webdienstes die im DNS für BfArM_Domain eingestellten Informationen aufrufen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/bfarm/0.9.0/query-api-t-register-req-fd.html#IG-PRE-TIFLOW-BFARM-6"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-BFARM-11",
+            "title": "E-Rezept-Fachdienst - BfArM - Anwendungsfall Übertragen des digitalen Durchschlags",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS den Anwendungsfall \"Übertragen des digitalen Durchschlags\" gemäß Tabelle TAB_eRPFD_029 ausführen. \n    <table>\n    <tr>\n      <th>Name</th>\n      <td>Übertragen des digitalen Durchschlags</td>\n    </tr>\n    <tr>\n      <th>Auslöser</th>\n      <td>Abschluss eines E-Rezept Workflows mit Flowtype 166 via Aufruf der $close-Operation</td>\n    </tr>\n    <tr>\n      <th>Akteur</th>\n      <td>E-Rezept-Fachdienst</td>\n    </tr>\n    <tr>\n      <th>Vorbedingung</th>\n      <td>\n        <ul>\n          <li>Dem E-Rezept-Fachdienst liegen Client Credentials des BfArM zur Authentifizierung vor</li>\n          <li>Verordnungsdaten, Dispensierinformationen und Informationen aus dem FHIR-VZD liegen vor</li>\n          <li>Ein gültiger AccessToken für den Zugriff auf den BfArM Webdienst liegt vor</li>\n        </ul>\n      </td>\n    </tr>\n    <tr>\n      <th>Nachbedingung</th>\n      <td>Am BfArM Webdienst wurde der digitale Durchschlag E-T-Rezept erfolgreich übertragen.</td>\n    </tr>\n    <tr>\n      <th>Standardablauf</th>\n      <td>\n        <ol>\n          <li>Prüfen, ob ein gültiger AccessToken vorliegt.</li>\n          <li>Falls nicht: Client Credentials an den Token-Endpunkt übertragen.</li>\n          <li>AccessToken speichern.</li>\n          <li>Erzeugen des digitalen Durchschlags E-T-Rezept.</li>\n          <li>Auftrag zur Übertragung des digitalen Durchschlags E-T-Rezept in einer Warteschlange einstellen.</li>\n          <li>Aufruf des Endpunktes <code>/ords/rezepte/t-rezept/v1</code>.</li>\n          <li>Nach erfolgreicher Übertragung: Löschen des Auftrags aus der Warteschlange.</li>\n        </ol>\n      </td>\n    </tr>\n  </table>\n  <div><figcaption><strong>Tabelle: </strong>title</figcaption></div>",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/bfarm/0.9.0/query-api-t-register-req-fd.html#IG-PRE-TIFLOW-BFARM-11"
+        }
+    ]
+}

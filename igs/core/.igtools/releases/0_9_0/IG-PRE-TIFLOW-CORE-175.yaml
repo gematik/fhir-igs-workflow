@@ -1,0 +1,20 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: dd43e36f943a05ad5baf228c8fa1a7d880fd5bd11ef1df0d4deac66bcd16a3ea
+created: '2026-03-23T10:57:48.461204'
+date: '2026-03-23T10:57:48.461206'
+key: IG-PRE-TIFLOW-CORE-175
+modified: '2026-03-23T10:57:48.461205'
+release_status: NEW
+source: input/pagecontent/op-activate-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
+  über /Task/&#60;id&#62;/$activate den im referenzierten Task gespeicherten Status
+  Task.status prüfen und mit dem Fehler 412 abbrechen, wenn Task.status ungleich "draft"
+  ist.
+title: E-Rezept-Fachdienst - Task aktivieren - Prüfung Status
+version: 0

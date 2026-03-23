@@ -1,0 +1,23 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: a9d6da5f26f4c499bc4f24c409ca1b294be9a5851d4b0777dc29f4a306c64499
+created: '2026-03-23T10:57:49.324514'
+date: '2026-03-23T10:57:49.324516'
+key: IG-TIFLOW-CHRG-56
+modified: '2026-03-23T10:57:49.324515'
+release_status: STABLE
+source: input/pagecontent/query-api-chargeitem-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt\
+  \ /ChargeItem sicherstellen, dass ausschließlich Nutzer in einer der Rollen \n \
+  \   <ul>\n        <li>oid_oeffentliche_apotheke</li>\n        <li>oid_krankenhausapotheke</li>\n\
+  \    </ul>\n    die Operation am E-Rezept-Fachdienst aufrufen dürfen und die Rolle\
+  \ \"professionOID\" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\"\
+  \ feststellen, damit eine Abrechnungsinformation nicht durch Unberechtigte eingestellt\
+  \ werden kann."
+title: E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Rollenprüfung
+version: 0

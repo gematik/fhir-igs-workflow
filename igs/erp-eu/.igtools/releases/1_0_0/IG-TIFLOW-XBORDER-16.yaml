@@ -1,0 +1,21 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 4cc8dc8115acc767d2b528d48acbfc8702f27ab536cf3211672fc0eb7a895033
+created: '2026-03-23T10:57:49.562955'
+date: '2026-03-23T10:57:49.562958'
+key: IG-TIFLOW-XBORDER-16
+modified: '2026-03-23T10:57:49.562957'
+release_status: STABLE
+source: input/pagecontent/op-get-eu-prescriptions-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts
+  /$get-eu-prescriptions durch den NCPeH-FD, wenn Parameters.parameter:requestData.part:prescription-id
+  nicht leer ist, für alle Tasks deren Task-IDs in Parameters.parameter:requestData.part:prescription-id
+  enthalten sind, den Status auf Task.status = in-progress setzen.
+title: E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids
+  - Statuswechsel Task
+version: 0

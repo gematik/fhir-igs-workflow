@@ -5,6 +5,7 @@
 
 #### E-Rezept-FdV 
 
+<!-- A_19443 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-24" title="E-Rezept-FdV: TIFlow-EU - optionale Anwendungsfälle" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
@@ -19,6 +20,7 @@
     <li>UC 3.16 - Zugriffsberechtigung durch Versicherten erstellen</li>
     <li>UC 3.17 - Zugriffsberechtigung durch Versicherten löschen</li>
     <li>UC 3.18 - Zugriffsberechtigung durch Versicherten einsehen</li>
+    <li>Zugriffsberechtigung anzeigen</li>
     <li>UC 3.19 - E-Rezept durch den Versicherten markieren</li>
     </ul>
 
@@ -88,6 +90,39 @@
 {% include use-case-details-table.html use_case=use_case roles=roles %}
 
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
+### Zugriffsberechtigung anzeigen
+
+
+<!--A_27116 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-25" title="E-Rezept-FdV: Zugriffsberechtigung anzeigen" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Das E-Rezept-FdV MUSS im Anwendungsfall "Zugriffsberechtigung anzeigen" folgende Informationen auf dem Display anzeigen: 
+    <ul>
+    <li>Name des Landes,</li>
+    <li>Gültigkeitsende,</li>
+    <li>Zugriffscode,</li>
+    <li>KVNR des Versicherten.</li>
+    </ul>
+</requirement>
+
+Für die Anzeige der Gültigkeitsdauer ist die Zeitzone zu beachten, in der der Nutzer sich befindet.
+
+Das E-Rezept-FdV MUSS bei der Anzeige des Zugriffscodes die Lesbarkeit der Zeichen des Zugriffscodes sicherstellen.
+
+Hinweis: Mit Lesbarkeit ist das Erkennen und Unterscheiden einzelner Buchstaben und Ziffern gemeint, d.h. die Unterscheidbarkeit von beispielsweise von 0 (Null) und O (Großbuchstabe O), sowie I (Großbuchstabe i) und l (Kleinbuchstabe L) und 1 (Ziffer Eins).
+
+Das E-Rezept-FdV MUSS die Gültigkeitsdauer der Zugriffsberechtigung auf dem Display hervorheben, wenn die Gültigkeitsdauer 10 Minuten unterschreitet.
+
+Das E-Rezept-FdV MUSS, wenn die Gültigkeit der Zugriffsberechtigung zeitlich abgelaufen ist, den Versicherten informieren.
+
+Hinweis: Es reicht aus, dass die Information über den Ablauf der Zugriffsberechtigung nur angezeigt wird, während der Nutzer auf dem Gerät aktiv ist.
+
+Der zeitliche Ablauf der Zugriffsberechtigung wird nicht durch den E-Rezept-Fachdienst signalisiert.
+
 
 ### Use Cases zur Verwaltung der E-Rezepte durch den Versicherten
 

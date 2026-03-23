@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+export PATH="$HOME/.local/bin:$PATH"
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+usage() {
+  echo "Usage: $0 <igtools-subcommand> [args ...]"
+  echo "Example: $0 process"
+  echo "Example: $0 release --freeze"
+  echo ""
+  echo "Automatically prepends 'igtools' to the command if needed."
+  echo "Both '${0##*/} igtools process' and '${0##*/} process' are equivalent."
+}
+
+if [[ $# -eq 0 ]]; then
+  usage >&2
+  exit 1
+fi
+
+# Check if the first argument is available as a command
+if ! command -v "$1" >/dev/null 2>&1; then
+  # If not, try prepending 'igtools'
+  if command -v "igtools" >/dev/null 2>&1; then
+    # Shift arguments and prepend 'igtools' as the command
+    set -- "igtools" "$@"
+  else
+    echo "Error: 'igtools' command not found and '$1' is not a valid command." >&2
+    exit 1
+  fi
+fi
+
+shopt -s nullglob
+ig_configs=("$ROOT_DIR"/igs/*/ig.ini)
+shopt -u nullglob
+
+if [[ ${#ig_configs[@]} -eq 0 ]]; then
+  echo "No IGs found under $ROOT_DIR/igs (expected igs/<name>/ig.ini)." >&2
+  exit 1
+fi
+
+cmd=("$@")
+failures=0
+
+for ig_ini in "${ig_configs[@]}"; do
+  ig_dir="$(dirname "$ig_ini")"
+  ig_name="$(basename "$ig_dir")"
+
+  echo "=== Running '${cmd[*]}' in igs/$ig_name ==="
+  if (cd "$ig_dir" && "${cmd[@]}"); then
+    echo "OK: igs/$ig_name"
+  else
+    echo "FAILED: igs/$ig_name" >&2
+    failures=$((failures + 1))
+  fi
+  echo
+done
+
+if [[ $failures -gt 0 ]]; then
+  echo "Completed with $failures failure(s)." >&2
+  exit 1
+fi
+
+echo "Completed successfully for ${#ig_configs[@]} IG(s)."

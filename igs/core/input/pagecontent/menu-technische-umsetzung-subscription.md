@@ -1,7 +1,7 @@
 Der Subscription Service wird außerhalb der VAU betrieben.
 
 <!-- A_22368 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-145" title="E-Rezept-Fachdienst - Subscription Service - Webschnittstelle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-163" title="E-Rezept-Fachdienst - Subscription Service - Webschnittstelle" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Herstellererklärung"/>
@@ -10,7 +10,7 @@ Der Subscription Service wird außerhalb der VAU betrieben.
 </requirement>
 
 <!-- A_22369 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-146" title="E-Rezept-Fachdienst - Subscription Service - Prüfung Bearer-Token" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-164" title="E-Rezept-Fachdienst - Subscription Service - Prüfung Bearer-Token" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -19,7 +19,7 @@ Der Subscription Service wird außerhalb der VAU betrieben.
 </requirement>
 
 <!-- A_22370 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-147" title="E-Rezept-Fachdienst - Subscription Service - Upgrade" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-165" title="E-Rezept-Fachdienst - Subscription Service - Upgrade" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -28,7 +28,7 @@ Der Subscription Service wird außerhalb der VAU betrieben.
 </requirement>
 
 <!-- A_22371 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-148" title="E-Rezept-Fachdienst - Subscription Service - abgelaufene Verbindungen schließen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-166" title="E-Rezept-Fachdienst - Subscription Service - abgelaufene Verbindungen schließen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -37,7 +37,7 @@ Der Subscription Service wird außerhalb der VAU betrieben.
 </requirement>
 
 <!-- A_22378 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-149" title="E-Rezept-Fachdienst - Subscription Service - Verbot Profilbildung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-167" title="E-Rezept-Fachdienst - Subscription Service - Verbot Profilbildung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>

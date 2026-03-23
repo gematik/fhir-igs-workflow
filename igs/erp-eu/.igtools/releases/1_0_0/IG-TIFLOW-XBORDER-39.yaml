@@ -1,0 +1,20 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: e869c8f1a54d010483f49778aeace3c34f2da61a08a4323ccd9b8e96cf87c227
+created: '2026-03-23T10:57:49.570234'
+date: '2026-03-23T10:57:49.570237'
+key: IG-TIFLOW-XBORDER-39
+modified: '2026-03-23T10:57:49.570236'
+release_status: STABLE
+source: input/pagecontent/op-eu-close-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts
+  /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD das im http-Body des Requests enthaltene
+  Parameter-Objekt gegen das Profil [GEM_ERP_PR_PAR_EU_CloseOperation_Input] prüfen
+  und im Fehlerfall die Operation mit HTTP-Fehlercode 400 abbrechen.
+title: E-Rezept-Fachdienst - Task schließen - EU - Schemaprüfung
+version: 0
