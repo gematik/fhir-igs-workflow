@@ -50,7 +50,7 @@ Einen Zugriffsberechtigung eines Versicherten für das Einlösen von E-Rezepten 
 
 <!-- A_27097 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-1" title="Format Zugriffscode" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -65,7 +65,7 @@ Der Ablauf der Authentisierung und Suche ist in [gemSpec_VZD_FHIR_Directory]#AF_
 
 <!-- A_27095 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-2" title="TI-Flow-Fachdienst - Zugriffsberechtigung - Liste zulässiger Länder" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -74,7 +74,7 @@ Der Ablauf der Authentisierung und Suche ist in [gemSpec_VZD_FHIR_Directory]#AF_
 
 <!-- A_27096 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-XBORDER-3" title="TI-Flow-Fachdienst - Zugriffsberechtigung - Caching Liste zulässiger Länder" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>

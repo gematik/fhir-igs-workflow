@@ -5,7 +5,7 @@ Clientsysteme nutzen TLS-Verbindungen für die Kommunikation zu den Diensten der
 
 <!-- A_19451-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-155" title="CS: Lokalisierung TI-Flow-Fachdienst" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
     </actor>
@@ -27,7 +27,7 @@ Die Abfrage beim Namensdienst der TI erfolgt über einen DNS-Lookup. Hierfür mu
 
 <!-- A_19744-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-156" title="CS: Endpunkt Schnittstelle TI-Flow-Fachdienst" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
     </actor>
@@ -49,7 +49,7 @@ Die URL des Downloadpunktes im zentralen Netz der TI lautet: "https://idp.zentra
 
 <!-- A_19234-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-157" title="CS: Kommunikation über TLS-Verbindung" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
     </actor>
@@ -69,7 +69,7 @@ Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.
 
 <!-- A_19235-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-158" title="CS: Unzulässige TLS-Verbindungen ablehnen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
     </actor>
@@ -87,7 +87,7 @@ Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.
 
 <!-- A_20015-02, A_20014-04 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-159" title="CS: HTTP-Header user-agent" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
     </actor>
@@ -114,7 +114,7 @@ Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.
 
 <!-- A_21568-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-160" title="CS: HTTP-Header X-erp-user" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
     </actor>
@@ -141,7 +141,7 @@ Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.
 
 <!-- A_21569-01, A_21570-01  -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-161" title="CS: HTTP-Header X-erp-resource" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
     </actor>
@@ -215,7 +215,7 @@ Die Kommunikation zum TI-Flow-Fachdienst wird zusätzlich zu TLS über einen sic
 
 <!-- A_19741-01, A_19740-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-162" title="CS: Umsetzung sicherer Kanal zur VAU des TI-Flow-Fachdienstes" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>

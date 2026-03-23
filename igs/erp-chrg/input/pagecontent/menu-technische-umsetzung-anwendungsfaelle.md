@@ -9,7 +9,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios "Abrechnun
 
 <!-- A_19443 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-33" title="E-Rezept-FdV: TIFlow-CHRG - verpflichtende Anwendungsfälle" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -30,7 +30,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios "Abrechnun
 #### PS abgebende LEI
 
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-34" title="PS abgebende LEI: TIFlow-CHRG - verpflichtende Anwendungsfälle" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
     </actor>

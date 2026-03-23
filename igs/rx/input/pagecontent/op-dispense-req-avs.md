@@ -14,7 +14,7 @@ Das PS der abgebenden LEI erzeugt die Dispensierinformationen nach den Vorgaben 
 
 <!-- A_26346 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-107" title="PS abgebende LEI: Dispensierinformationen bereitstellen - Dispensierinformation übermitteln" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
     </actor>

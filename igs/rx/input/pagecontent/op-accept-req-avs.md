@@ -14,7 +14,7 @@ Möchte der Versicherte die Möglichkeit einer Online-Rezepteinlösung nutzen, k
 
 <!-- A_21372 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-108" title="PS abgebende LEI: Übernahme Rezeptinformationen in Warenwirtschaftssystem" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -27,7 +27,7 @@ Für die QES-Prüfung wird die PKCS#7-Datei verwendet. Die Verordnungsdaten des 
 
 <!-- A_19745-01 -->
 <requirement conformance="MAY" key="IG-TIFLOW-ERP-109" title="PS abgebende LEI: E-Rezept abrufen - QES prüfen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
     </actor>

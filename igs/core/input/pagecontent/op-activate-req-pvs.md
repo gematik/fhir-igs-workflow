@@ -5,7 +5,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 <!-- A_19273-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-150" title="PS verordnende LEI: E-Rezept einstellen - Task auf Fachdienst aktivieren" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Konformitätsbestätigung"/>
   </actor>
@@ -26,7 +26,7 @@ Fehler 403 mit dem OperationOutcome "Task not in status draft but in status read
 
 <!-- A_22503 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-151" title="PS verordnende LEI: E-Rezept einstellen - kein Patientenausdruck bei Fehler beim Aktivieren" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Herstellererklärung"/>
   </actor>
@@ -38,7 +38,7 @@ Für den Patientenausdruck gelten vorrangig die Regelungen zum Ausdruck eines E-
 
 <!-- A_22423 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-152" title="PS verordnende LEI: E-Rezept einstellen - separater Patientenausdruck je Flowtype" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Herstellererklärung"/>
   </actor>
@@ -47,7 +47,7 @@ Für den Patientenausdruck gelten vorrangig die Regelungen zum Ausdruck eines E-
 
 <!-- A_19279 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-153" title="PS verordnende LEI: E-Rezept einstellen - E-Rezept-Token erstellen" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Herstellererklärung"/>
   </actor>
@@ -59,7 +59,7 @@ Für die Spezifikation des E-Rezept-Token siehe [gemSpec_DM_eRp#2.3].
 
 <!-- A_19280 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-154" title="PS verordnende LEI: E-Rezept einstellen - Datamatrix-Code erstellen" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Herstellererklärung"/>
   </actor>

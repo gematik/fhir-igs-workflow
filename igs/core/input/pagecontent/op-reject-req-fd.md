@@ -4,7 +4,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_19171-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-39" title="TI-Flow-Fachdienst - Task zurückweisen - Prüfung Secret" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -13,7 +13,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_19171-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-40" title="TI-Flow-Fachdienst - Task zurückweisen - Prüfung Status" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -22,7 +22,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_19172-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-41" title="TI-Flow-Fachdienst - Task zurückweisen - Secret löschen und Status setzen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -31,7 +31,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_24175 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-42" title="TI-Flow-Fachdienst - Task zurückweisen - Telematik-ID der abgebenden LEI löschen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
@@ -40,7 +40,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_28128 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-43" title="TI-Flow-Fachdienst - Task zurückweisen - Push Notification Versicherter" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>

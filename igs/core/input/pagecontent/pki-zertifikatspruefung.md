@@ -52,7 +52,7 @@ Es gelten folgende übergreifende Festlegungen für die Prüfung aktiv durch ein
 
 <!-- A_20769-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-302" title="CS: verpflichtende Zertifikatsprüfung" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -76,7 +76,7 @@ Es gelten folgende übergreifende Festlegungen für die Prüfung aktiv durch ein
 
 <!-- A_20764 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-303" title="CS: Prüfung TI-Zertifikate" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -103,7 +103,7 @@ Folgende Vorgaben gelten für die Prüfung von Internet-Zertifikaten.
 
 <!-- A_20091-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-304" title="CS: Prüfung der Zertifikate für TLS-Verbindung zu TI-Flow-Fachdienst und IDP-Dienst" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>

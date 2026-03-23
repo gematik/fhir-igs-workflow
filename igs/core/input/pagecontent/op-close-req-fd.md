@@ -3,7 +3,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_19231-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-60" title="TI-Flow-Fachdienst - Task schließen - Prüfung Secret" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -12,7 +12,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_19231-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-61" title="TI-Flow-Fachdienst - Task schließen - Prüfung Status" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -21,7 +21,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_19248-05 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-62" title="TI-Flow-Fachdienst - Task schließen - Schemaprüfung MedicationDispense" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -36,7 +36,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_27051 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-63" title="TI-Flow-Fachdienst - Task schließen - MedicationDispense speichern" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -45,7 +45,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_26337 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-64" title="TI-Flow-Fachdienst - Task schließen - Zeitstempel MedicationDispense" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -54,7 +54,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_28411 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-65" title="TI-Flow-Fachdienst - Task schließen - Telematik-ID der abgebenden LEI speichern" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -63,7 +63,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_28129 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-66" title="TI-Flow-Fachdienst - Task schließen - Push Notification Versicherter" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -72,7 +72,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_19232 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-67" title="TI-Flow-Fachdienst - Task schließen - Status beenden" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -81,7 +81,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_19233-06 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-68" title="TI-Flow-Fachdienst - Task schließen - Quittung erstellen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -101,7 +101,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_22919 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-69" title="TI-Flow-Fachdienst - Task schließen - OCSP-Response nicht älter als 24h" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>

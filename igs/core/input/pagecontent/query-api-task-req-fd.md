@@ -2,7 +2,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_19030 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-79" title="TI-Flow-Fachdienst - unzulässige Operationen Task" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -17,7 +17,7 @@ Der Zugriff mittels der HTTP-Operation GET steht ausschließlich für die Einsic
 
 <!-- A_21558-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-80" title="TI-Flow-Fachdienst - Liste Task abrufen - Rollenprüfung" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -32,7 +32,7 @@ Der Zugriff mittels der HTTP-Operation GET steht ausschließlich für die Einsic
 
 <!-- A_19115-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-81" title="TI-Flow-Fachdienst - Liste Task abrufen - Versicherter- Filter auf KVNR" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
@@ -41,7 +41,7 @@ Der Zugriff mittels der HTTP-Operation GET steht ausschließlich für die Einsic
 
 <!-- A_19129-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-82" title="TI-Flow-Fachdienst - Liste Task abrufen - Versicherter - Rückgabe Tasks im Bundle" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -52,7 +52,7 @@ Der Zugriff mittels der HTTP-Operation GET steht ausschließlich für die Einsic
 
 <!-- A_27444 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-83" title="TI-Flow-Fachdienst - Rezepte lesen - Konfigurationsparameter RateLimit" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -63,7 +63,7 @@ Der Defaultwert für RATELIMIT_MAX1d_ERROR_UC4_12 ist 100.
 
 <!-- A_27445 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-84" title="TI-Flow-Fachdienst - Rezepte lesen - Apotheke - Ratelimit pro Telematik-ID pro Tag" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -72,7 +72,7 @@ Der Defaultwert für RATELIMIT_MAX1d_ERROR_UC4_12 ist 100.
 
 <!-- A_27446 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-85" title="TI-Flow-Fachdienst - Rezepte lesen - Apotheke - Ratelimit pro Telematik-ID prüfen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -81,7 +81,7 @@ Der Defaultwert für RATELIMIT_MAX1d_ERROR_UC4_12 ist 100.
 
 <!-- A_23450-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-86" title="TI-Flow-Fachdienst - Rezepte lesen - Apotheke - VSDM - Prüfung Prüfungsnachweis" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -96,7 +96,7 @@ In der Version 2 ist das erste Byte der Prüfziffer > 128. Die Prüfung des Prü
 
 <!-- A_27287 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-87" title="TI-Flow-Fachdienst - Rezepte lesen - Apotheke - VSDM - Vergleich KVNR" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -105,7 +105,7 @@ In der Version 2 ist das erste Byte der Prüfziffer > 128. Die Prüfung des Prü
 
 <!-- A_27347 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-88" title="TI-Flow-Fachdienst - Rezepte lesen - Apotheke - VSDM - Vergleich hcv" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -116,7 +116,7 @@ Die Kodierung und das Format den in der Prüfziffer übermittelten Wert für hcv
 
 <!-- A_23451-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-89" title="TI-Flow-Fachdienst - Rezepte lesen - Apotheke - VSDM - Zeitraum Akzeptanz Prüfungsnachweis" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
@@ -127,7 +127,7 @@ Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des
 
 <!-- A_23452-04 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-90" title="TI-Flow-Fachdienst - Rezepte lesen - Apotheke - VSDM - Filter Status, KVNR und Workflowtype" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -143,7 +143,7 @@ Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des
 
 <!-- A_25206 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-91" title="TI-Flow-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -152,7 +152,7 @@ Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des
 
 <!-- A_25208-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-92" title="TI-Flow-Fachdienst - Rezepte lesen - Apotheke - VSDM - URL kvnr" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -161,7 +161,7 @@ Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des
 
 <!-- A_27346 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-93" title="TI-Flow-Fachdienst - Rezepte lesen - Apotheke - VSDM - URL hcv" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -170,7 +170,7 @@ Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des
 
 <!-- A_25994 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-94" title="TI-Flow-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - Mappen von IKNR zu VSDM" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -183,7 +183,7 @@ Der TI-Flow-Fachdienst kann eine Mapping zwischen den IKNR und dem zugehörigen 
 
 <!-- A_25995 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-95" title="TI-Flow-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - keine E-Rezepte" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -192,7 +192,7 @@ Der TI-Flow-Fachdienst kann eine Mapping zwischen den IKNR und dem zugehörigen 
 
 <!-- A_25207 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-96" title="TI-Flow-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - AcceptPN3 false" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -201,7 +201,7 @@ Der TI-Flow-Fachdienst kann eine Mapping zwischen den IKNR und dem zugehörigen 
 
 <!-- A_25209-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-97" title="TI-Flow-Fachdienst - Rezepte lesen - Apotheke - VSDM - PN3 - AcceptPN3 true - Filter Status, KVNR und Workflowtype" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -217,7 +217,7 @@ Der TI-Flow-Fachdienst kann eine Mapping zwischen den IKNR und dem zugehörigen 
 
 <!-- A_22432-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-98" title="TI-Flow-Fachdienst - Rezepte lesen - Apotheke - Prüfung PoPP-Token" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
@@ -228,7 +228,7 @@ Die Anforderungen zum Prüfen des PoPP-Token sind im Kapitel "HTTP-Operation GET
 
 <!-- A_23399-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-99" title="TI-Flow-Fachdienst - Rezepte lesen - Apotheke - PoPP - Zeitraum Akzeptanz PoPP-Token" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -239,7 +239,7 @@ Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des
 
 <!-- A_22431-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-100" title="TI-Flow-Fachdienst - Rezepte lesen - Apotheke - PoPP - PoPP - Filter KVNR" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -323,7 +323,7 @@ Die Struktur der VSDM Prüfziffer ist in A_23453-* (siehe Änderungseintrag C_11
 
 <!-- A_23454 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-101" title="TI-Flow-Fachdienst - Prüfung Prüfziffer" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -346,7 +346,7 @@ Der TI-Flow-Fachdienst verwaltet HMAC-Schlüssel, welche durch die Betreiber der
 
 <!-- A_23456-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-102" title="TI-Flow-Fachdienst - Prüfung Prüfziffer - Berechnung HMAC der Prüfziffer" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
@@ -366,7 +366,7 @@ Die Struktur der VSDM Prüfziffer Version 2 ist in [gemSpec_Krypt#A_27278-* VSDM
 
 <!-- A_27301 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-103" title="TI-Flow-Fachdienst - Prüfung und Entschlüsselung Prüfziffer Version 2" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
@@ -423,7 +423,7 @@ Anstelle zur nicht zugewiesenen Anforderung  A_27358 - Beziehen der URL für 
 
 <!-- A_28579 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-104" title="TI-Flow-Fachdienst - Prüfung PoPP-Token - Apotheke - PoPP Prüfung - Konfiguration PoPP-Service URL" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -434,7 +434,7 @@ Ergänzung der stündlichen Abfrage des JWKS zu A_26449 - Beziehen der Schlüss
 
 <!-- A_28580 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-105" title="TI-Flow-Fachdienst - Prüfung PoPP-Token - Aktualisierung des PoPP-Service JWK-Sets" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -445,7 +445,7 @@ Der TI-Flow-Fachdienst prüft zur Umsetzung von A_27016-* das Signaturzertifikat
 
 <!-- A_28724 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-106" title="TI-Flow-Fachdienst - Prüfung PoPP-Token - Prüfung Signaturzertifikat PoPP-Service" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
@@ -493,7 +493,7 @@ Der TUC gibt neben dem Status der Zertifikatsprüfung auch die im Zertifikat ent
 
 <!-- A_28731 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-107" title="TI-Flow-Fachdienst - Prüfung PoPP-Token - Prüfung Rolle Signaturzertifikat PoPP-Service" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
@@ -504,7 +504,7 @@ Der TI-Flow-Fachdienst prüft zur Umsetzung von A_26452-* die Telematik-ID aus d
 
 <!-- A_23402-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-108" title="TI-Flow-Fachdienst - Prüfung PoPP-Token - Telematik-ID prüfen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -515,7 +515,7 @@ Der TI-Flow-Fachdienst prüft zur Umsetzung von A_26452-* die Telematik-ID aus d
 
 <!-- A_19113-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-109" title="TI-Flow-Fachdienst - Task abrufen - Rollenprüfung" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
@@ -531,7 +531,7 @@ Der TI-Flow-Fachdienst prüft zur Umsetzung von A_26452-* die Telematik-ID aus d
 
 <!-- A_19116-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-110" title="TI-Flow-Fachdienst - Task abrufen - Versicherter - Prüfung AccessCode bei KVNR-Missmatch" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
@@ -540,7 +540,7 @@ Der TI-Flow-Fachdienst prüft zur Umsetzung von A_26452-* die Telematik-ID aus d
 
 <!-- A_21375-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-111" title="TI-Flow-Fachdienst - Task abrufen - Versicherter - Rückgabe Task inkl. Bundles" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -549,7 +549,7 @@ Der TI-Flow-Fachdienst prüft zur Umsetzung von A_26452-* die Telematik-ID aus d
 
 <!-- A_21532-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-112" title="TI-Flow-Fachdienst - Task abrufen - Versicherter - Kein Secret" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -558,7 +558,7 @@ Der TI-Flow-Fachdienst prüft zur Umsetzung von A_26452-* die Telematik-ID aus d
 
 <!-- A_20702-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-113" title="TI-Flow-Fachdienst - Task abrufen - Keine Einlöseinformationen in unbekannten Clients" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -568,7 +568,7 @@ Der TI-Flow-Fachdienst prüft zur Umsetzung von A_26452-* die Telematik-ID aus d
 
 <!-- A_24176-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-114" title="TI-Flow-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - Prüfung Telematik-ID" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
@@ -577,7 +577,7 @@ Der TI-Flow-Fachdienst prüft zur Umsetzung von A_26452-* die Telematik-ID aus d
 
 <!-- A_24177-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-115" title="TI-Flow-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - Prüfung AccessCode" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
@@ -586,7 +586,7 @@ Der TI-Flow-Fachdienst prüft zur Umsetzung von A_26452-* die Telematik-ID aus d
 
 <!-- A_24178-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-116" title="TI-Flow-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - Prüfung Status" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -595,7 +595,7 @@ Der TI-Flow-Fachdienst prüft zur Umsetzung von A_26452-* die Telematik-ID aus d
 
 <!-- A_24179-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-117" title="TI-Flow-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - erneuter Abruf Verordnung" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -604,7 +604,7 @@ Der TI-Flow-Fachdienst prüft zur Umsetzung von A_26452-* die Telematik-ID aus d
 
 <!-- A_19226-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-118" title="TI-Flow-Fachdienst - Task abrufen - abgebende Institution - Rückgabe Task inkl. Bundle im Bundle" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -615,7 +615,7 @@ Der TI-Flow-Fachdienst prüft zur Umsetzung von A_26452-* die Telematik-ID aus d
 <!-- Push Notification -->
 <!-- A_28125 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-119" title="TI-Flow-Fachdienst - Task abrufen - Vertreter - Push Notification Versicherter" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -628,7 +628,7 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
 
 <!-- A_27548 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-120" title="TI-Flow-Fachdienst – Task markieren - alles Markieren verbieten" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -637,7 +637,7 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
 
 <!-- A_27549 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-121" title="TI-Flow-Fachdienst - Task markieren - Versicherter - Rollenprüfung Versicherter markiert Rezepte" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
@@ -650,7 +650,7 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
 
 <!-- A_27550 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-122" title="TI-Flow-Fachdienst -Task markieren -Versicherter - Prüfung KVNR" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>

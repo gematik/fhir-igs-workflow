@@ -2,7 +2,7 @@
 
 <!-- A_27068 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-38" title="TI-Flow-Fachdienst - Task schließen - EU - Rollenprüfung" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
@@ -11,7 +11,7 @@
 
 <!-- A_27069 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-39" title="TI-Flow-Fachdienst - Task schließen - EU - Schemaprüfung" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -20,7 +20,7 @@
 
 <!-- A_27070 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-40" title="TI-Flow-Fachdienst - Task schließen - EU - Prüfung Einwilligung für KVNR" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -29,7 +29,7 @@
 
 <!-- A_27071 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-41" title="TI-Flow-Fachdienst - Task schließen - EU - Prüfung Zugriffsberechtigung" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -38,7 +38,7 @@
 
 <!-- A_27072 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-42" title="TI-Flow-Fachdienst - Task schließen - EU - Statusprüfung" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -47,7 +47,7 @@
 
 <!-- A_27074 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-43" title="TI-Flow-Fachdienst - Task schließen - EU - Zeitstempel MedicationDispense" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -56,7 +56,7 @@
 
 <!-- A_27075 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-44" title="TI-Flow-Fachdienst - Task schließen - EU - Status beenden" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -65,7 +65,7 @@
 
 <!-- A_28206 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-45" title="TI-Flow-Fachdienst - Task schließen - EU - Push Notification Versicherter" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>

@@ -9,7 +9,7 @@
 
 <!-- A_27551 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-21" title="TI-Flow-Fachdienst -Task markieren -Versicherter - FHIR-Validierung Parameters" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -18,7 +18,7 @@
 
 <!-- A_28500 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-22" title="TI-Flow-Fachdienst -Task markieren -Versicherter - nur einlösbare E-Rezepte" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -27,7 +27,7 @@
 
 <!-- A_27552 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-23" title="TI-Flow-Fachdienst -Task markieren -Versicherter - Änderung Markierung Task Ressource" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>

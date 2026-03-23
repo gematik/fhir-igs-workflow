@@ -22,7 +22,7 @@ Verordnen bis zum Einlösen.
 ### Anforderungen zur Umsetzung des IGs
 
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-23" title="E-Rezept: Anwendung des IG 'Verordnungen für Digitale Gesundheitsanwendungen (DiGA)' für Workflow 162" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -37,7 +37,7 @@ Verordnen bis zum Einlösen.
 
 <!-- A_26060, A_23027, A_19295-01, A_22483-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-24" title="E-Rezept: Umsetzung des Moduls 'Verordnungen für Digitale Gesundheitsanwendungen (DiGA)'" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>

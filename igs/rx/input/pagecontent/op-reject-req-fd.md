@@ -8,7 +8,7 @@ Diese Seite enthält die workflowtyp-spezifischen normativen Anforderungen an de
 
 <!-- A_19170-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-13" title="TI-Flow-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Rollenprüfung" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
@@ -22,7 +22,7 @@ Diese Seite enthält die workflowtyp-spezifischen normativen Anforderungen an de
 
 <!-- A_24286-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-14" title="TI-Flow-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Dispensierinformationen löschen" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
@@ -36,7 +36,7 @@ Diese Seite enthält die workflowtyp-spezifischen normativen Anforderungen an de
 
 <!-- A_25926 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-15" title="TI-Flow-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Löschmarkierungen Medikationsliste bereitstellen (Dispensierinformationen)" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>

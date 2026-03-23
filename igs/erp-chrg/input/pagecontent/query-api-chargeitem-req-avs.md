@@ -3,7 +3,7 @@ Mit diesem Anwendungsfall stellt die abgebende LEI die Abrechnungsinformation zu
 
 <!--A_22708-->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-CHRG-22" title="PS abgebende LEI: Abrechnungsinformation bereitstellen – Einwilligung muss vorliegen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -12,7 +12,7 @@ Mit diesem Anwendungsfall stellt die abgebende LEI die Abrechnungsinformation zu
 
 <!--A_22186-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-23" title="PS abgebende LEI: Abrechnungsinformation bereitstellen – E-Rezept auswählen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -23,7 +23,7 @@ Die Information, dass der Versicherte die Einwilligung zum Speichern der Abrechn
 
 <!--A_22188-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-24" title="PS abgebende LEI: Abrechnungsinformation bereitstellen – PKV-Abgabedatensatz erstellen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>
     </actor>
@@ -36,7 +36,7 @@ Das Signieren des PKV-Abgabedatensatzes erfolgt gemäß [gemILF_PS_eRp] Kap. "Ab
 
 <!--A_22189-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-25" title="PS abgebende LEI: Abrechnungsinformation bereitstellen – ChargeItem erstellen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>
     </actor>
@@ -47,7 +47,7 @@ Für die Spezifikation der Ressource ChargeItem siehe [gemSpec_DM_eRp].
 
 <!--A_22190-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-26" title="PS abgebende LEI: Abrechnungsinformation bereitstellen - Speicherrequest" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>
     </actor>
@@ -70,7 +70,7 @@ Mit diesem Anwendungsfall kann die abgebende LEI den PKV-Abgabedatensatz zu eine
 
 <!--A_22191-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-27" title="PS abgebende LEI: PKV-Abgabedatensatz ändern - PKV-Abgabedatensatz zum Ändern auswählen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -79,7 +79,7 @@ Mit diesem Anwendungsfall kann die abgebende LEI den PKV-Abgabedatensatz zu eine
 
 <!--A_22193-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-28" title="PS abgebende LEI: PKV-Abgabedatensatz ändern – PKV-Abgabedatensatz erstellen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>
     </actor>
@@ -92,7 +92,7 @@ Das Signieren des PKV-Abgabedatensatzes erfolgt gemäß [gemILF_PS_eRp] Kap. "Ab
 
 <!--A_22194 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-29" title="PS abgebende LEI: PKV-Abgabedatensatz ändern – ChargeItem erstellen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>
     </actor>
@@ -103,7 +103,7 @@ Für die Spezifikation der Ressource ChargeItem siehe [gemSpec_DM_eRp].
 
 <!--A_22195-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-30" title="PS abgebende LEI: PKV-Abgabedatensatz ändern - Speicherrequest" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>
     </actor>
@@ -124,7 +124,7 @@ Mit diesem Anwendungsfall kann eine abgebende LEI die Abrechnungsinformation vom
 
 <!--A_22203-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-31" title="PS abgebende LEI: Abrechnungsinformation abrufen - Leserequest" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Produkttest"/>
     </actor>

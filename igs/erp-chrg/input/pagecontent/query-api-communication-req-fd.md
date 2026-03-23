@@ -10,7 +10,7 @@ Diese Seite beschreibt Anforderungen am TI-Flow-Fachdienst zur Nutzung der `Comm
 
 <!--A_22734-01-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-96" title="TI-Flow-Fachdienst – Nachricht einstellen – Prüfung Existenz ChargeItem" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>

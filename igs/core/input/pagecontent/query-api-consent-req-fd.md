@@ -2,7 +2,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_22153 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-201" title="TI-Flow-Fachdienst - Consent - unzulässige Operationen" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -24,7 +24,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_22161 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-202" title="TI-Flow-Fachdienst - Consent schreiben - Rollenprüfung" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
@@ -33,7 +33,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_22289 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-203" title="TI-Flow-Fachdienst - Consent schreiben - Prüfung KVNR" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -42,7 +42,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_22351 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-204" title="TI-Flow-Fachdienst - Consent schreiben - FHIR-Validierung" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -51,7 +51,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_22162-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-205" title="TI-Flow-Fachdienst - Consent schreiben - nur eine Einwilligung pro KVNR und Einwilligungstyp" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -60,7 +60,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_27143 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-206" title="TI-Flow-Fachdienst - Consent schreiben - Zeitstempel setzen" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -69,7 +69,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_22350 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-207" title="TI-Flow-Fachdienst - Consent schreiben – Persistieren" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -78,7 +78,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_27143 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-208" title="TI-Flow-Fachdienst - Consent schreiben - Persistieren" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Herstellererklärung"/>
   </actor>
@@ -89,7 +89,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_22159 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-209" title="TI-Flow-Fachdienst - Consent lesen - Rollenprüfung" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
@@ -98,7 +98,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_22160 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-210" title="TI-Flow-Fachdienst - Consent lesen - Filter KVNR" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -110,7 +110,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_22154 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-211" title="TI-Flow-Fachdienst - Consent löschen - alles Löschen verbieten" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -119,7 +119,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_22155 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-212" title="TI-Flow-Fachdienst - Consent löschen - Rollenprüfung" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
@@ -128,7 +128,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_22874-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-213" title="TI-Flow-Fachdienst - Consent löschen - Prüfung category" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -145,7 +145,7 @@ Es bestehen anwendungsfall-spezifische Anforderungen, welche Inhalte beim Widerr
 
 <!-- A_22158 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-214" title="TI-Flow-Fachdienst - Consent löschen - Ressource löschen" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>

@@ -2,7 +2,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 <!-- A_19236 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-311" title="PS verordnende LEI: E-Rezepte löschen - E-Rezept zum Löschen auswählen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
     </actor>
@@ -11,7 +11,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 <!-- A_19237 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-312" title="PS verordnende LEI: E-Rezept löschen - Bestätigung" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
     </actor>
@@ -20,7 +20,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 <!-- A_19238 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-313" title="PS verordnende LEI: E-Rezept durch Verordnenden löschen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
     </actor>
@@ -29,7 +29,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 <!-- A_19239-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-314" title="PS verordnende LEI: E-Rezept löschen - Löschrequest" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
     </actor>
@@ -38,7 +38,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 <!-- A_19240 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-315" title="PS verordnende LEI: E-Rezept löschen - E-Rezept-Token löschen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
     </actor>

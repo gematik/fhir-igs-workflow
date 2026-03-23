@@ -2,7 +2,7 @@ Der TI-Flow-Fachdienst stellt eine http-Schnittstelle für den Aufruf durch Clie
 
 <!-- A_19514-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-340" title="TI-Flow-Fachdienst - Http-Status-Codes" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -31,7 +31,7 @@ Der TI-Flow-Fachdienst stellt eine http-Schnittstelle für den Aufruf durch Clie
 
 <!-- A_22103 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-341" title="TI-Flow-Fachdienst - Fehlerdetails in OperationOutcome" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>

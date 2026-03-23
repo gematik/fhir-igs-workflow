@@ -3,7 +3,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_19400 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-130" title="TI-Flow-Fachdienst - MedicationDispense - unzulässige Operationen" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
    	<testProcedure id="Produktgutachten"/>
   </actor>
@@ -14,7 +14,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_19405-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-131" title="TI-Flow-Fachdienst - MedicationDispense abrufen - Rollenprüfung" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     	<testProcedure id="Produktgutachten"/>
   </actor>
@@ -27,7 +27,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
  <!-- A_19406-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-132" title="TI-Flow-Fachdienst - MedicationDispense abrufen - Filter MedicationDispense auf KVNR des Versicherten" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
    	<testProcedure id="Produktgutachten"/>
   </actor>
@@ -36,7 +36,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_26527 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-133" title="TI-Flow-Fachdienst - MedicationDispense abrufen - Referenzierung MedicationDispense und Medication" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
    	<testProcedure id="Produkttest"/>
   </actor>
@@ -45,7 +45,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_22070-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-134" title="TI-Flow-Fachdienst - MedicationDispense abrufen - Rückgabe mehrerer MedicationDispenses" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
    	<testProcedure id="Produkttest"/>
   </actor>

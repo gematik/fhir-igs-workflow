@@ -7,7 +7,7 @@ dieser Länder aus dem FHIR-VZD. Die Liste kann für 96h gecacht werden.
 
 <!--A_27109 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-49" title="E-Rezept-FdV: Zugriffsberechtigung - Liste zulässiger Länder" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -23,7 +23,7 @@ dieser Länder aus dem FHIR-VZD. Die Liste kann für 96h gecacht werden.
 
 <!--A_27110 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-XBORDER-50" title="E-Rezept-FdV: Zugriffsberechtigung - Caching Liste zulässiger Länder" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -32,7 +32,7 @@ dieser Länder aus dem FHIR-VZD. Die Liste kann für 96h gecacht werden.
 
 <!--A_27111 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-51" title="E-Rezept-FdV: Zugriffsberechtigung - Land auswählen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -41,7 +41,7 @@ dieser Länder aus dem FHIR-VZD. Die Liste kann für 96h gecacht werden.
 
 <!--A_27113 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-52" title="E-Rezept-FdV: Zugriffsberechtigung - Zugriffscode erzeugen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produktgutachten"/>
     </actor>
@@ -55,7 +55,7 @@ Für jede weitere Erteilung einer Zugriffsberechtigung für ePrescription/Dispen
 
 <!--A_27114 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-53" title="E-Rezept-FdV: Zugriffsberechtigung - Zugriffsberechtigung am TI-Flow-Fachdienst speichern" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>

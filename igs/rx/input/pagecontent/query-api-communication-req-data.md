@@ -4,7 +4,7 @@ Diese Seite beschreibt Anforderungen an das Datenmodell für den payload der `Co
 
 <!-- A_23876-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-69" title="E-Rezept-FdV: Nachrichtenaustausch - E-Rezept einer Apotheke zuweisen - Datenstruktur Nachricht" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -153,7 +153,7 @@ Ein JSON-Schema zur Validierung ist unter [Comm_DispReq_JSON_Schema] zu finden.
 
 <!-- A_23877-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-70" title="PS abgebende LEI: Nachrichtenaustausch - Nachricht durch Abgebenden übermitteln - Datenstruktur Nachricht" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>

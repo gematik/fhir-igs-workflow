@@ -2,7 +2,7 @@ Diese Seite beschreibt Anforderungen ein E-Rezept-FdV zur Nutzung der `Medicatio
 
 <!-- A_19345 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-339" title="E-Rezept-FdV: Abgabeinformationen abfragen - MedicationDispense abrufen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>

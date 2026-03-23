@@ -4,7 +4,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_19149-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-247" title="TI-Flow-Fachdienst - Task akzeptieren - Prüfung Datensatz zwischenzeitlich gelöscht" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -13,7 +13,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_19167-04 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-248" title="TI-Flow-Fachdienst - Task akzeptieren - Prüfung AccessCode" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -24,7 +24,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_19168-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-249" title="TI-Flow-Fachdienst - Task akzeptieren - Rezept bereits in Abgabe oder Bearbeitung" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -36,7 +36,7 @@ Hinweis: Die Informationen in OperationOutcome werden ggf. als mehrere Strings i
 
 <!-- A_23539-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-250" title="TI-Flow-Fachdienst - Task akzeptieren - Ende Einlösefrist prüfen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -45,7 +45,7 @@ Hinweis: Die Informationen in OperationOutcome werden ggf. als mehrere Strings i
 
 <!-- A_19169-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-251" title="TI-Flow-Fachdienst - Task akzeptieren - Generierung Secret, Statuswechsel in Abgabe und Rückgabewert" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
@@ -54,7 +54,7 @@ Hinweis: Die Informationen in OperationOutcome werden ggf. als mehrere Strings i
 
 <!-- A_24174-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-252" title="TI-Flow-Fachdienst - Task akzeptieren - Telematik-ID der abgebenden Institution speichern" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
@@ -67,7 +67,7 @@ Die Telematik-ID ist im Task wie folgt zu hinterlegen:
 
 <!-- A_28127 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-253" title="TI-Flow-Fachdienst - Task akzeptieren - Push Notification Versicherter" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>

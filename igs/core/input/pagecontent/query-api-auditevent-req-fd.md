@@ -4,7 +4,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_19402 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-135" title="TI-Flow-Fachdienst - unzulässige Operationen AuditEvent" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
@@ -15,7 +15,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_19395 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-136" title="TI-Flow-Fachdienst - AuditEvent lesen - Rollenprüfung" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
@@ -24,7 +24,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_19396 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-137" title="TI-Flow-Fachdienst - AuditEvent lesen - Filter KVNR" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
@@ -33,7 +33,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_19397 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-138" title="TI-Flow-Fachdienst - AuditEvent lesen - Rückgabe im Bundle" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>

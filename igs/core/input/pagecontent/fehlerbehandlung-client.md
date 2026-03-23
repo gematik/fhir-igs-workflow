@@ -2,7 +2,7 @@ Tritt ein Fehler bei der Verarbeitung von Operationsaufrufen an einem Dienst der
 
 <!-- A_20152 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-263" title="CS: Verständliche Fehlermeldung" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -19,7 +19,7 @@ Während der Auslösung von Anfragen durch einen Client können diverse Fehler a
 
 <!-- A_25460 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-264" title="CS: Fehlerbehandlung - Retry von Anfragen an TI-Flow-Fachdienst" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -38,7 +38,7 @@ Während der Auslösung von Anfragen durch einen Client können diverse Fehler a
 
 <!-- A_20088 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-CORE-265" title="CS: Schreiben eines Fehlerprotokolls" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -53,7 +53,7 @@ Während der Auslösung von Anfragen durch einen Client können diverse Fehler a
 
 <!-- A_20089 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-CORE-266" title="CS: Anzeige von Meldungen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -65,7 +65,7 @@ Während der Auslösung von Anfragen durch einen Client können diverse Fehler a
 
 <!-- A_20884 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-CORE-267" title="CS: Exponential Backoff bei Verbindungsfehlern" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>

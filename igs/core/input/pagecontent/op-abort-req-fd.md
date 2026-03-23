@@ -4,7 +4,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_20546-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-140" title="TI-Flow-Fachdienst - E-Rezept löschen - Versicherter - Prüfung KVNR" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -13,7 +13,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_19120-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-141" title="TI-Flow-Fachdienst - E-Rezept löschen - Verordnender - Prüfung AccessCode" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -22,7 +22,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_19120-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-142" title="TI-Flow-Fachdienst - E-Rezept löschen - Verordnender - Prüfung Status" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -31,7 +31,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_19027-06 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-143" title="TI-Flow-Fachdienst - E-Rezept löschen - Medizinische und personenbezogene Daten löschen" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
@@ -56,7 +56,7 @@ Bestehende Übermittlungsaufträge in den ePA Medication Service für das zu lö
 
 <!-- A_19121 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-144" title="TI-Flow-Fachdienst - E-Rezept löschen - Status" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -65,7 +65,7 @@ Bestehende Übermittlungsaufträge in den ePA Medication Service für das zu lö
 
 <!-- A_28131 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-145" title="TI-Flow-Fachdienst - E-Rezept löschen - Push Notification Versicherter" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>

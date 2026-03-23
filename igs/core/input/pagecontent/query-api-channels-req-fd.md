@@ -2,7 +2,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_28121 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-55" title="TI-Flow-Fachdienst - unzulässige Operationen Channels" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
@@ -11,7 +11,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_28117 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-56" title="TI-Flow-Fachdienst - Push Notifications - Channels- OpenApi_Notification_Fachdienst" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -25,7 +25,7 @@ Mit der Operation GET /channels können die verfügbaren Channels abgefragt werd
 
 <!-- A_28118 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-57" title="TI-Flow-Fachdienst - Push Notifications - Channels abrufen - Rollenprüfung" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
@@ -40,7 +40,7 @@ Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfigu
 
 <!-- A_28119 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-58" title="TI-Flow-Fachdienst - Push Notifications - Channels einer Instanz abrufen - Rollenprüfung" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
@@ -55,7 +55,7 @@ Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfigu
 
 <!-- A_28120 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-59" title="TI-Flow-Fachdienst - Push Notifications - Channels konfigurieren - Rollenprüfung" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>

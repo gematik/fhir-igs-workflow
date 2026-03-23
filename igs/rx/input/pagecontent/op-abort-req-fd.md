@@ -8,7 +8,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_19026-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-48" title="TI-Flow-Fachdienst - E-Rezept löschen - Flowtype 160/166/169/200/209 - Rollenprüfung" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
@@ -27,7 +27,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_19145-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-49" title="TI-Flow-Fachdienst - E-Rezept löschen - Apotheke - Statusprüfung in-progress" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -41,7 +41,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_19146 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-50" title="TI-Flow-Fachdienst - E-Rezept löschen - Apotheke - Statusprüfung ungleich in-progress" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -55,7 +55,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_19224 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-51" title="TI-Flow-Fachdienst - E-Rezept löschen - Apotheke - Prüfung Secret" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -64,7 +64,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_22102-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-52" title="TI-Flow-Fachdienst - E-Rezept löschen - Flowtype 169 / 209 - Versicherter - Statusprüfung" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -73,7 +73,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_25930 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-53" title="TI-Flow-Fachdienst - E-Rezept löschen - Löschinformation ePA Medication Service bereitstellen (Verordnungsdatensatz) - Leistungserbringerinstitution" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -82,7 +82,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_25931 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-54" title="TI-Flow-Fachdienst - E-Rezept löschen - Löschinformation ePA Medication Service bereitstellen (Verordnungsdatensatz) - Versicherter" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>

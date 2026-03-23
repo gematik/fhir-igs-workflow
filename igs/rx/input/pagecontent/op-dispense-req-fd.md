@@ -8,7 +8,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 
 <!-- A_24279 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-36" title="TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Rollenprüfung Abgebender stellt Dispensierinformationen bereit" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
@@ -22,7 +22,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 
 <!-- A_24280 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-37" title="TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Prüfung Secret" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
@@ -31,7 +31,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 
 <!-- A_24298 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-38" title="TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Prüfung Status" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
@@ -40,7 +40,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 
 <!-- A_24281-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-39" title="TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Schemaprüfung MedicationDispense" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -49,7 +49,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 
 <!-- A_26482 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-40" title="TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Überschreiben vorheriger MedicationDispenses" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -58,7 +58,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 
 <!-- A_27052 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-41" title="TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - MedicationDispense speichern" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -67,7 +67,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 
 <!-- A_24283-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-42" title="TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Speicherung mehrerer MedicationDispenses" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -76,7 +76,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 
 <!-- A_25933 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-43" title="TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Daten Medikationsliste bereitstellen (Dispensierinformationen)" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -85,7 +85,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 
 <!-- A_24285-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-44" title="TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Zeitstempel MedicationDispense" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -94,7 +94,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 
 <!-- A_28410 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-45" title="TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Telematik-ID der abgebenden LEI speichern" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -103,7 +103,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 
 <!-- A_28130 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-46" title="TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Push Notification Versicherter" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -112,7 +112,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 
 <!-- A_24284 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-ERP-47" title="TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Keine Statusänderung" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>

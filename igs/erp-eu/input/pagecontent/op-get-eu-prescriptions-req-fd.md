@@ -2,7 +2,7 @@
 
 <!-- A_27059 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-4" title="TI-Flow-Fachdienst - eu-prescription abfragen - Rollenprüfung" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
@@ -11,7 +11,7 @@
 
 <!-- A_27060 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-5" title="TI-Flow-Fachdienst - eu-prescription abfragen - Schemaprüfung" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -20,7 +20,7 @@
 
 <!-- A_27061 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-6" title="TI-Flow-Fachdienst - eu-prescription abfragen - Prüfung Einwilligung für KVNR" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -29,7 +29,7 @@
 
 <!-- A_27062 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-7" title="TI-Flow-Fachdienst - eu-prescription abfragen - Prüfung Zugriffsberechtigung" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -38,7 +38,7 @@
 
 <!-- A_27063-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-8" title="TI-Flow-Fachdienst - eu-prescription abfragen - Filter einlösbarer E-Rezepte" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -47,7 +47,7 @@
 
 <!-- A_27587 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-9" title="TI-Flow-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage der aktuellsten Verordnungsinformationen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -56,7 +56,7 @@
 
 <!-- A_27588 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-10" title="TI-Flow-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage aller einlösbaren Verordnungsinformationen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -65,7 +65,7 @@
 
 <!-- A_27589 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-11" title="TI-Flow-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage nach Liste Rezept-Ids" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -74,7 +74,7 @@
 
 <!-- A_27064 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-12" title="TI-Flow-Fachdienst - eu-prescription abfragen - Schema des Response" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -83,7 +83,7 @@
 
 <!-- A_27065 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-13" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage der aktuellsten Verordnungsinformationen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -92,7 +92,7 @@
 
 <!-- A_27066 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-14" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage aller einlösbaren Verordnungsinformationen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -101,7 +101,7 @@
 
 <!-- A_27067 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-15" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -110,7 +110,7 @@
 
 <!-- A_27580 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-16" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Statuswechsel Task" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -119,7 +119,7 @@
 
 <!-- A_27581 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-17" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Secret" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
@@ -128,7 +128,7 @@
 
 <!-- A_27582 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-18" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Task Owner" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
@@ -137,7 +137,7 @@
 
 <!-- A_28204 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-19" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage aller einlösbaren Verordnungsinformationen - Push Notification Versicherter" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -146,7 +146,7 @@
 
 <!-- A_28205 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-20" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Push Notification Versicherter" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>

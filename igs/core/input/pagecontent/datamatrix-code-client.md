@@ -5,7 +5,7 @@ Diese beiden Datenfelder, URL des Tasks und AccessCode, werden vom Versicherten 
 
 <!-- A_19554 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-229" title="Datenstruktur Einlöseinformationen für E-Rezept" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -24,7 +24,7 @@ Beispiel für E-Rezept-Einlöseinformationen (z.B. für Nutzung als Referenz in 
 
 <!-- A_19553-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-230" title="Generierung 2D-Code als Sammlung" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -57,7 +57,7 @@ Der Datentyp der Task.id erlaubt bis zu 64 Zeichen zur Angabe einer ID des Tasks
 
 <!-- A_19543 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-231" title="Generierung DataMatrix-Code" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -73,7 +73,7 @@ Der Nutzer eines E-Rezept-FdV kann die Zugriffs Rezeptinformationen als 2D-Code 
 
 <!-- A_21401-02 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-232" title="E-Rezept-FdV: E-Rezept-Token als 2D-Code anzeigen - Flowtype 169 / 209 - Anzeige nicht zulässig" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -84,7 +84,7 @@ Ein 2D-Code kann bis zu 3 E-Rezept-Token beinhalten. Sollen mehr E-Rezept-Token 
 
 <!-- A_24571 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-233" title="E-Rezept-FdV: E-Rezept-Token als 2D-Code anzeigen - maximal 3 E-Rezept-Token in 2D-Code" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -94,7 +94,7 @@ Ein 2D-Code kann bis zu 3 E-Rezept-Token beinhalten. Sollen mehr E-Rezept-Token 
 
 <!-- A_20181-01 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-234" title="E-Rezept-FdV: E-Rezept-Token als 2D-Code anzeigen - personenbezogene Daten" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produktgutachten"/>
     </actor>
@@ -109,7 +109,7 @@ Das PS der abgebenden LEI muss es dem Nutzer ermöglichen, einen 2D-Code für da
 
 <!-- A_22078 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-235" title="CS: 2D-Code scannen - Gescannte Inhalte prüfen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -130,7 +130,7 @@ Wenn Datamatrix-Codes einer Mehrfachverordnung von einem Ausdruck eingescannt we
 
 <!-- A_22637 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-236" title="PS abgebende LEI: 2D-Code scannen - Mehrfachverordnung - Teilverordnungen nicht speichern" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -139,7 +139,7 @@ Wenn Datamatrix-Codes einer Mehrfachverordnung von einem Ausdruck eingescannt we
 
 <!-- A_23779 -->
 <requirement conformance="MAY" key="IG-TIFLOW-CORE-237" title="PS abgebende LEI: 2D-Code scannen - Mehrfachverordnung - Teilverordnungen speichern falls gewünscht" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -154,7 +154,7 @@ Um auf Wunsch des Versicherten den PKV-Abgabedatensatz ändern zu können,  muss
 
 <!-- A_22729 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-238" title="Datenstruktur Zugriffsinformationen für Abrechnungsinformation" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -166,7 +166,7 @@ Beispiel für Abrechnungsinformation-Token: <br>
 
 <!-- A_22730 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-239" title="Generierung 2D-Code Abrechnungsinformation-Token" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>

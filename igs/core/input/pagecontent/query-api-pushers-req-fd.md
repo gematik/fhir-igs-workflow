@@ -2,7 +2,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_28114 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-268" title="TI-Flow-Fachdienst - unzulässige Operationen Pushers" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
@@ -11,7 +11,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_28111 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-269" title="TI-Flow-Fachdienst - Push Notifications - Pushers - OpenApi_Notification_Fachdienst" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -24,7 +24,7 @@ Mit der Operation GET /pushers können alle für den Nutzer registrierten FdV-In
 
 <!-- A_28113 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-270" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierungen abrufen - Rollenprüfung" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
@@ -37,7 +37,7 @@ Mit der Operation GET /pushers können alle für den Nutzer registrierten FdV-In
 
 <!-- A_28530 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-271" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierungen abrufen - Filter auf KVNR des Versicherten" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -48,7 +48,7 @@ Mit der Operation GET /pushers können alle für den Nutzer registrierten FdV-In
 
 <!-- A_28112 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-272" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierungen - Rollenprüfung" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>

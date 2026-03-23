@@ -8,7 +8,7 @@ Der zweite Message-Typ dient der freien Kommunikation zur Belieferung des E-Reze
 
 <!-- A_21870 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-110" title="E-Rezept - X-KIM-Dienstkennung - Zuweisung" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -17,7 +17,7 @@ Der zweite Message-Typ dient der freien Kommunikation zur Belieferung des E-Reze
 
 <!-- A_21871 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-111" title="E-Rezept - X-KIM-Dienstkennung - Kommunikation" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -26,7 +26,7 @@ Der zweite Message-Typ dient der freien Kommunikation zur Belieferung des E-Reze
 
 <!-- A_21873 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-112" title="E-Rezept - Struktur Zuweisungs-Message" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -35,7 +35,7 @@ Der zweite Message-Typ dient der freien Kommunikation zur Belieferung des E-Reze
 
 <!-- A_21874 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-113" title="E-Rezept - Zuweisungs-Message - CRLF" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -44,7 +44,7 @@ Der zweite Message-Typ dient der freien Kommunikation zur Belieferung des E-Reze
 
 <!-- A_21875 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-114" title="E-Rezept - Struktur Kommunikation-Message" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Produkttest"/>
     </actor>

@@ -8,7 +8,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_19230-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-17" title="TI-Flow-Fachdienst - Task schließen - Flowtype 160/166/169/200/209 - Rollenprüfung" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
@@ -23,7 +23,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_26002-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-18" title="TI-Flow-Fachdienst - Task schließen - Flowtype 160/166/169/200/209 - Profilprüfung MedicationDispense" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -32,7 +32,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_24287-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-19" title="TI-Flow-Fachdienst - Task schließen - Aufruf ohne MedicationDispense" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -42,7 +42,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_26481 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-20" title="TI-Flow-Fachdienst - Task schließen - Überschreiben vorheriger MedicationDispenses" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -51,7 +51,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_22069-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-21" title="TI-Flow-Fachdienst - Task schließen - Speicherung mehrerer MedicationDispenses" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -60,7 +60,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_25928-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-22" title="TI-Flow-Fachdienst - Task schließen - Daten ePA Medication Service bereitstellen (Dispensierinformationen)" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -69,7 +69,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_27814 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-23" title="TI-Flow-Fachdienst - Task schließen - T-Rezept Daten an BfArM Webdienst bereitstellen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>

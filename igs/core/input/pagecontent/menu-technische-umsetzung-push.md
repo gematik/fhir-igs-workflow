@@ -8,7 +8,7 @@ Der TI-Flow-Fachdienst erstellt ein Notification-Objekt für verschlüsselte Not
 
 <!-- A_28115 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-225" title="TI-Flow-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -190,7 +190,7 @@ Ansonsten:<br>
 
 <!-- A_28116 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-226" title="TI-Flow-Fachdienst - Push Notification senden - verpflichtende Verschlüsselung" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -201,7 +201,7 @@ Die Vorgaben für die Verschlüsselung sind in `A_27161-* - Fachdienst - Push No
 
 <!-- A_28135 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-227" title="TI-Flow-Fachdienst - Push Notification senden - Referenz auf Protokolleintrag" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -212,7 +212,7 @@ Die Vorgaben für die Verschlüsselung sind in `A_27161-* - Fachdienst - Push No
 
 <!-- A_28124 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-228" title="E-Rezept - Push Notifications - Datenstruktur Nachrichteninhalte" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>

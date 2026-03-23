@@ -9,7 +9,7 @@ Diese Seite beschreibt Anforderungen an ein Clientsystem des Kostenträgers zur 
 
 <!-- A_28540 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-2" title="CS Kostenträger: Nachricht versenden - Flowtype 162 - Communication erstellen" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Konformitätsbestätigung"/>
   </actor>

@@ -3,7 +3,7 @@ Der TI-Flow-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen 
 
 <!-- A_19252-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-123" title="TI-Flow-Fachdienst - Löschfrist abgelaufener Rezepte" version="0">
-	<meta lockversion="true"/>
+	<meta lockversion="false"/>
 	<actor name="TI_Flow_FD">
     	<testProcedure id="Produktgutachten"/>
   	</actor>
@@ -38,7 +38,7 @@ Der TI-Flow-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen 
 
 <!-- A_26264 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-124" title="TI-Flow-Fachdienst - Löschinformation ePA Medication Service bereitstellen" version="0">
-	<meta lockversion="true"/>
+	<meta lockversion="false"/>
 	<actor name="TI_Flow_FD">
     	<testProcedure id="Produkttest"/>
   	</actor>
@@ -47,7 +47,7 @@ Der TI-Flow-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen 
 
 <!-- A_19254-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-125" title="TI-Flow-Fachdienst - Löschen referenzierter Bundles" version="0">
-	<meta lockversion="true"/>
+	<meta lockversion="false"/>
 	<actor name="TI_Flow_FD">
     	<testProcedure id="Produkttest"/>
   	</actor>
@@ -56,7 +56,7 @@ Der TI-Flow-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen 
 
 <!-- A_19255 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-126" title="TI-Flow-Fachdienst - Löschfrist veraltete MedicationDispense" version="0">
-	<meta lockversion="true"/>
+	<meta lockversion="false"/>
 	<actor name="TI_Flow_FD">
     	<testProcedure id="Produktgutachten"/>
   	</actor>
@@ -65,7 +65,7 @@ Der TI-Flow-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen 
 
 <!-- A_22109 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-127" title="TI-Flow-Fachdienst - Löschfrist ChargeItem" version="0">
-	<meta lockversion="true"/>
+	<meta lockversion="false"/>
 	<actor name="TI_Flow_FD">
     	<testProcedure id="Produktgutachten"/>
   	</actor>
@@ -75,7 +75,7 @@ Der TI-Flow-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen 
 
 <!-- A_19253-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-128" title="TI-Flow-Fachdienst - Löschfrist veraltete Nachrichten" version="0">
-	<meta lockversion="true"/>
+	<meta lockversion="false"/>
 	<actor name="TI_Flow_FD">
     	<testProcedure id="Produktgutachten"/>
   	</actor>
@@ -90,7 +90,7 @@ Der TI-Flow-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen 
 
 <!-- A_19256-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-129" title="TI-Flow-Fachdienst - Löschfrist veraltete Protokolleinträge" version="0">
-	<meta lockversion="true"/>
+	<meta lockversion="false"/>
 	<actor name="TI_Flow_FD">
     	<testProcedure id="Produktgutachten"/>
   	</actor>

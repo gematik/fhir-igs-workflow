@@ -2,7 +2,7 @@ Diese Seite beschreibt Anforderungen für das E-Rezept-FdV zur Nutzung des `$rea
 
 <!--A_27121 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-46" title="E-Rezept-FdV: Zugriffsberechtigung abrufen - Abfragerequest" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>

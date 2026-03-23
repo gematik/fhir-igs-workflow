@@ -2,7 +2,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 <!-- A_19250 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-344" title="CS Kostenträger: Verordnung zurückgeben - Statusrequest" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>
   </actor>
@@ -17,7 +17,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 <!-- A_19251 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-345" title="CS Kostenträger: Verordnung zurückgeben - Verordnung löschen" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>
   </actor>

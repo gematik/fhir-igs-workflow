@@ -5,7 +5,7 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
 
 <!-- A_19296-04 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-30" title="TI-Flow-Fachdienst - Inhalt Protokolleintrag" version="0">
-	<meta lockversion="true"/>
+	<meta lockversion="false"/>
 	<actor name="TI_Flow_FD">
     	<testProcedure id="Produkttest"/>
   </actor>
@@ -38,7 +38,7 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
 
 <!-- A_19284-14 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-31" title="TI-Flow-Fachdienst - Versichertenprotokoll zu Operationen" version="0">
-	<meta lockversion="true"/>
+	<meta lockversion="false"/>
 	<actor name="TI_Flow_FD">
     	<testProcedure id="Produkttest"/>
   	</actor>
@@ -246,7 +246,7 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
 
 <!-- A_19284-14 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-32" title="TI-Flow-Fachdienst - Versichertenprotokoll zu automatischen Löschen" version="0">
-	<meta lockversion="true"/>
+	<meta lockversion="false"/>
 	<actor name="TI_Flow_FD">
     	<testProcedure id="Produkttest"/>
   	</actor>
@@ -284,7 +284,7 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
 
 <!-- A_19284-14 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-33" title="TI-Flow-Fachdienst - Versichertenprotokoll zu Löschen nach Fehlerbehandlung" version="0">
-	<meta lockversion="true"/>
+	<meta lockversion="false"/>
 	<actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -307,7 +307,7 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
 
 <!-- A_19302 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-34" title="TI-Flow-Fachdienst - Protokolleintrag Versichertenprotokoll leicht verständlich" version="0">
-	<meta lockversion="true"/>
+	<meta lockversion="false"/>
 	<actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -316,7 +316,7 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
 
 <!-- A_22217 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-35" title="TI-Flow-Fachdienst - Protokollierung - keine Angabe zu organizationName" version="0">
-	<meta lockversion="true"/>
+	<meta lockversion="false"/>
 	<actor name="TI_Flow_FD">
     	<testProcedure id="Produkttest"/>
   	</actor>
@@ -329,7 +329,7 @@ Der TI-Flow-Fachdienst protokolliert das erfolgreiche Übermitteln von Daten fü
 
 <!-- A_25962 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-36" title="TI-Flow-Fachdienst - ePA - Medication Service - Versichertenprotokoll" version="0">
-	<meta lockversion="true"/>
+	<meta lockversion="false"/>
 	<actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>

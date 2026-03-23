@@ -7,7 +7,7 @@
 
 <!-- A_19443 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-24" title="E-Rezept-FdV: TIFlow-EU - optionale Anwendungsfälle" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -96,7 +96,7 @@
 
 <!--A_27116 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-25" title="E-Rezept-FdV: Zugriffsberechtigung anzeigen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>

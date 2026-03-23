@@ -36,7 +36,7 @@ Mit diesem Anwendungsfall kann der Nutzer den AccessCode zum Ändern als 2D-Code
 
 <!--A_24577-->
 <requirement conformance="MAY" key="IG-TIFLOW-CHRG-3" title="E-Rezept-FdV: optional: 2D-Code Abrechnungsinformation anzeigen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -45,7 +45,7 @@ Mit diesem Anwendungsfall kann der Nutzer den AccessCode zum Ändern als 2D-Code
 
 <!--A_22726-01-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-4" title="E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen - E-Rezept auswählen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -54,7 +54,7 @@ Mit diesem Anwendungsfall kann der Nutzer den AccessCode zum Ändern als 2D-Code
 
 <!--A_22727-01-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-5" title="E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen - Abrechnungsinformation-Token erstellen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -65,7 +65,7 @@ Für die Beschreibung der Struktur des Abrechnungsinformation-Token siehe [gemSp
 
 <!--A_22728-01-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-6" title="E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -77,7 +77,7 @@ Mit diesem Anwendungsfall kann der Versicherte die Abrechnungsinformation aus de
 
 <!--A_24555-->
 <requirement conformance="MAY" key="IG-TIFLOW-CHRG-7" title="E-Rezept-FdV: optional: Abrechnungsinformation exportieren" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -86,7 +86,7 @@ Mit diesem Anwendungsfall kann der Versicherte die Abrechnungsinformation aus de
 
 <!--A_22184-02-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-8" title="E-Rezept-FdV: Abrechnungsinformation exportieren - PDF/A erstellen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -102,7 +102,7 @@ Für die Visualisierung der Abrechnungsinformation für PKV-Versicherte ist die 
 
 <!--A_22185-01-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-9" title="E-Rezept-FdV: Abrechnungsinformation exportieren - PDF teilen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>

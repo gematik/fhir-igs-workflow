@@ -12,7 +12,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Task`-
 
 <!-- A_27832 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-103" title="E-Rezept-FdV: Flowtype 166 - Hinweis auf Workflow-Besonderheit" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>

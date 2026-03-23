@@ -6,7 +6,7 @@ Um die Last am TI-Flow-Fachdienst zu kontrollieren, wurde festgelegt, dass ein A
 
 <!-- A_22426 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-305" title="PS abgebende LEI: Subscription für neue Communication - eine Subscription pro Telematik-ID" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -18,7 +18,7 @@ Um die Last am TI-Flow-Fachdienst zu kontrollieren, wurde festgelegt, dass ein A
 
 <!-- A_22372 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-306" title="PS abgebende LEI: Subscription für neue Communication" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -30,7 +30,7 @@ Um die Last am TI-Flow-Fachdienst zu kontrollieren, wurde festgelegt, dass ein A
 
 <!-- A_22373 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-307" title="PS abgebende LEI: Subscription für neue Communication - Subscription Ressource erstellen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -42,7 +42,7 @@ Um die Last am TI-Flow-Fachdienst zu kontrollieren, wurde festgelegt, dass ein A
 
 <!-- A_22374 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-308" title="PS abgebende LEI: Subscription für neue Communication - Subscription registrieren" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -54,7 +54,7 @@ Um die Last am TI-Flow-Fachdienst zu kontrollieren, wurde festgelegt, dass ein A
 
 <!-- A_22375 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-309" title="PS abgebende LEI: Subscription für neue Communication - Subscription" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -66,7 +66,7 @@ Um die Last am TI-Flow-Fachdienst zu kontrollieren, wurde festgelegt, dass ein A
 
 <!-- A_22379 -->
 <requirement conformance="MAY" key="IG-TIFLOW-CORE-310" title="PS abgebende LEI: Subscription für neue Communication - Wartezeit" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
     </actor>

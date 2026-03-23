@@ -2,7 +2,7 @@ Der Subscription Service wird außerhalb der VAU betrieben.
 
 <!-- A_22368 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-163" title="TI-Flow-Fachdienst - Subscription Service - Webschnittstelle" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -11,7 +11,7 @@ Der Subscription Service wird außerhalb der VAU betrieben.
 
 <!-- A_22369 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-164" title="TI-Flow-Fachdienst - Subscription Service - Prüfung Bearer-Token" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
@@ -20,7 +20,7 @@ Der Subscription Service wird außerhalb der VAU betrieben.
 
 <!-- A_22370 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-165" title="TI-Flow-Fachdienst - Subscription Service - Upgrade" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -29,7 +29,7 @@ Der Subscription Service wird außerhalb der VAU betrieben.
 
 <!-- A_22371 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-166" title="TI-Flow-Fachdienst - Subscription Service - abgelaufene Verbindungen schließen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -38,7 +38,7 @@ Der Subscription Service wird außerhalb der VAU betrieben.
 
 <!-- A_22378 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-167" title="TI-Flow-Fachdienst - Subscription Service - Verbot Profilbildung" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>

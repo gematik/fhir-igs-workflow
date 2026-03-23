@@ -2,7 +2,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 <!-- A_19018-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-217" title="TI-Flow-Fachdienst - Task erzeugen - Rollenprüfung" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
@@ -19,7 +19,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 <!-- A_19257-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-218" title="TI-Flow-Fachdienst - Task erzeugen - Schemavalidierung Rezept anlegen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -28,7 +28,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 <!-- A_19112 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-219" title="TI-Flow-Fachdienst - Task erzeugen - Parametrierung Task für Workflow-Typ" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -37,7 +37,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 <!-- A_19214 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-220" title="TI-Flow-Fachdienst - Task erzeugen - Ergänzung Performer-Typ für Einlöseinstitutstyp" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -47,7 +47,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 <!-- A_19019-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-221" title="TI-Flow-Fachdienst - Task erzeugen - Generierung Rezept-ID" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -56,7 +56,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 <!-- A_23227 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-222" title="TI-Flow-Fachdienst - Task erzeugen - Task-ID=Rezept-ID" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -65,7 +65,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 <!-- A_19021-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-223" title="TI-Flow-Fachdienst - Task erzeugen - Generierung AccessCode" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
@@ -74,7 +74,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 <!-- A_19114 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-224" title="TI-Flow-Fachdienst - Task erzeugen - Status draft" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>

@@ -25,7 +25,7 @@ Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt wer
 
 <!-- A_23214 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-240" title="CS: Health-Check - Datensparsamkeit" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -40,7 +40,7 @@ Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt wer
 
 <!-- A_23215 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-241" title="CS: Health-Check - keine Health-Checks mit Fehlerrückgabe" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -55,7 +55,7 @@ Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt wer
 
 <!-- A_23223 -->
 <requirement conformance="MAY" key="IG-TIFLOW-CORE-242" title="CS: erweiterter Health-Check" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -70,7 +70,7 @@ Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt wer
 
 <!-- A_23217 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-243" title="CS: erweiterter Health-Check - keine periodische Durchführung" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -88,7 +88,7 @@ Das Primärsystems <=
 
 <!-- A_23216 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-244" title="CS: erweiterter Health-Check - keine anderen Endpunkte zulässig" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -103,7 +103,7 @@ Das Primärsystems <=
 
 <!-- A_23219 -->
 <requirement conformance="MAY" key="IG-TIFLOW-CORE-245" title="CS: einfacher Health-Check" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -126,7 +126,7 @@ Das Primärsystems <=
 
 <!-- A_23218 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-246" title="CS: einfacher Health-Check - keine anderen Endpunkte zulässig" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>

@@ -4,7 +4,7 @@ Die Funktionalität zu Push Notification für FdVs ist anwendungsübergreifend i
 
 <!-- A_28122 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-374" title="E-Rezept-FdV: Push Notifications - Instanz registrieren - OpenAPI" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>

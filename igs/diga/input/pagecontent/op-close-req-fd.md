@@ -10,7 +10,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 
 <!-- A_19230-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-3" title="TI-Flow-Fachdienst - Task schliessen - Flowtype 162 - Rollenprüfung" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
@@ -25,7 +25,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 
   <!-- A_26003-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-4" title="TI-Flow-Fachdienst - Task schließen - Flowtype 162 - Profilprüfung MedicationDispense" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>

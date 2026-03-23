@@ -16,7 +16,7 @@ TI-Flow-Fachdienstes und beschreibt die relevanten Use Cases.
 ### Anforderungen zur Umsetzung des IGs
 
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-94" title="E-Rezept: Anwendung des IG 'Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte' für die Verwaltung von Abrechnungsinformationen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -31,7 +31,7 @@ TI-Flow-Fachdienstes und beschreibt die relevanten Use Cases.
 
 <!-- A_22206-01, A_22205-0, A_22204, A_22963, A_22205-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-95" title="E-Rezept: Umsetzung des Moduls 'Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte'" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>

@@ -4,7 +4,7 @@ Zu unterscheiden sind drei verschiedene Mechanismen: Sortierung, Filterung und P
 
 <!-- A_24434 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-364" title="TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Betroffene Endpunkte" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -58,7 +58,7 @@ Für jeden dieser Ressourcen gelten dann Kriterien, nach denen sortiert und gefi
 
 <!-- A_24436-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-365" title="TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Filter- und Sortierkriterien" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -196,7 +196,7 @@ Es können mehrere Sortierkriterien angegeben werden. Bei der Sortierung sortier
 
 <!-- A_24437 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-366" title="TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Sortieren von Einträgen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -205,7 +205,7 @@ Es können mehrere Sortierkriterien angegeben werden. Bei der Sortierung sortier
 
 <!-- A_24438 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-367" title="TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Sortieren von Einträgen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -249,7 +249,7 @@ Standardmäßig werden die Einträge aufsteigend sortiert. Wenn diese Reihenfolg
 
 <!-- A_24440 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-368" title="TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Sortierreihenfolge der Einträge" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -262,7 +262,7 @@ Für den Datentyp "date" sollen folgende Filterkriterien als URL-Parameter unter
 
 <!-- A_25515 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-369" title="TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Filteroperatoren für Datumsabfragen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -333,7 +333,7 @@ Neben Angaben zur Paginierung übermittelt der Client auch Angaben zur Filterung
 
 <!-- A_24441-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-370" title="TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - URL-Parameter für Paginierung" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -363,7 +363,7 @@ Neben Angaben zur Paginierung übermittelt der Client auch Angaben zur Filterung
 
 <!-- A_24442-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-371" title="TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Link Relations für Paginierung" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -393,7 +393,7 @@ Neben Angaben zur Paginierung übermittelt der Client auch Angaben zur Filterung
 
 <!-- A_24443-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-372" title="TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Paginierung" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -447,7 +447,7 @@ Neben Angaben zur Paginierung übermittelt der Client auch Angaben zur Filterung
 
 <!-- A_24444 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-373" title="TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Erhalten von URL-Parametern" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>

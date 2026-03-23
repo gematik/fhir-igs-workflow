@@ -6,7 +6,7 @@ Das PS der abgebenden LEI MUSS vom Nutzer eine Bestätigung einholen, dass das a
 
 <!-- A_19250 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-254" title="PS abgebende LEI: E-Rezept zurückgeben - Statusrequest" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>
   </actor>
@@ -21,7 +21,7 @@ Das PS der abgebenden LEI MUSS vom Nutzer eine Bestätigung einholen, dass das a
 
 <!-- A_19251 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-255" title="PS abgebende LEI: E-Rezept zurückgeben - E-Rezept löschen" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>
   </actor>

@@ -2,7 +2,7 @@ Für die Anwendungsfälle "Dispensierinformationen bereitstellen" und "Quittung 
 
 <!-- A_27035-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-207" title="PS abgebende LEI: Dispensierinformationen - Flowtype 160/166/169/200/209 - MedicationDispense erstellen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -11,7 +11,7 @@ Für die Anwendungsfälle "Dispensierinformationen bereitstellen" und "Quittung 
 
 <!-- A_28575 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-208" title="PS abgebende LEI: Dispensierinformationen - Flowtype 160/166/169/200/209 - Bereitstellen von Dosierinformationen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -22,7 +22,7 @@ Für die Anwendungsfälle "Dispensierinformationen bereitstellen" und "Quittung 
 
 <!-- A_22071-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-209" title="PS abgebende LEI: Dispensierinformationen – Flowtype 160/166/169/200/209 – Mehrere MedicationDispense" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -34,7 +34,7 @@ Die Profilversion bei der Abgabe richtet sich nach dem Abgabedatum der Arzneimit
 
 <!-- A_27047-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-210" title="PS abgebende LEI: Dispensierinformationen – Flowtype 160/166/169/200/209 – Profilversion bei mehreren MedicationDispenses" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -47,7 +47,7 @@ Wenn der Secupharm-Code Informationen zu Charge und Haltbarkeitsdatum enthält, 
 
 <!-- A_21105-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-211" title="PS abgebende LEI: Dispensierinformationen – Flowtype 160/166/169/200/209 – Fertigarzneimittel: Chargeninfo" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -56,7 +56,7 @@ Wenn der Secupharm-Code Informationen zu Charge und Haltbarkeitsdatum enthält, 
 
 <!-- A_27033-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-212" title="PS abgebende LEI: Dispensierinformationen – Flowtype 160/166/169/200/209 – Fertigarzneimittel: Wirkstoff, Wirkstärke und Handelsname" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -65,7 +65,7 @@ Wenn der Secupharm-Code Informationen zu Charge und Haltbarkeitsdatum enthält, 
 
 <!-- A_27034-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-213" title="PS abgebende LEI:  Dispensierinformationen – Flowtype 160/166/169/200/209 – Rezeptur: Wirkstoff, Wirkstärke" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -76,7 +76,7 @@ Die Dosieranweisung werden in der MedicationDispense als Freitext angegeben. Die
 
 <!-- A_27036-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-214" title="PS abgebende LEI: Dispensierinformationen – Flowtype 160/166/169/200/209 - Dosieranweisung" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -85,7 +85,7 @@ Die Dosieranweisung werden in der MedicationDispense als Freitext angegeben. Die
 
 <!-- A_27037-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-215" title="PS abgebende LEI: Dispensierinformationen – Flowtype 160/166/169/200/209 - Dosierangaben Freitext" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -94,7 +94,7 @@ Die Dosieranweisung werden in der MedicationDispense als Freitext angegeben. Die
 
 <!-- A_28417 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-216" title="PS abgebende LEI: Dispensierinformationen – Flowtype 160/166/169/200/209 - Substitutionskennzeichen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Produkttest"/>
     </actor>

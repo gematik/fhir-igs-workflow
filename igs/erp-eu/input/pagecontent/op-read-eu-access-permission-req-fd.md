@@ -2,7 +2,7 @@
 
 <!-- A_27086 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-36" title="TI-Flow-Fachdienst - Zugriffsberechtigung lesen - Rollenprüfung" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
@@ -11,7 +11,7 @@
 
 <!-- A_27087 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-37" title="TI-Flow-Fachdienst - Zugriffsberechtigung lesen - Response" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>

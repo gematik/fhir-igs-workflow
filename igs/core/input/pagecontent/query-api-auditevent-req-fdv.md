@@ -2,7 +2,7 @@ Diese Seite beschreibt Anforderungen ein E-Rezept-FdV zur Nutzung der `AuditEven
 
 <!-- A_19210 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-301" title="E-Rezept-FdV: Protokolldaten anzeigen - Protokolleinträge abrufen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>

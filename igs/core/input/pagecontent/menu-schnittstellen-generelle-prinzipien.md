@@ -4,7 +4,7 @@ In diesem Abschnitt werden allgemeingültige Funktionsmerkmale des TI-Flow-Fachd
 
 <!-- A_19536 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-352" title="TI-Flow-Fachdienst - RESTful API" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -13,7 +13,7 @@ In diesem Abschnitt werden allgemeingültige Funktionsmerkmale des TI-Flow-Fachd
 
 <!-- A_19537 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-353" title="TI-Flow-Fachdienst - RESTful API MimeType fhir+xml" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -22,7 +22,7 @@ In diesem Abschnitt werden allgemeingültige Funktionsmerkmale des TI-Flow-Fachd
 
 <!-- A_19538 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-354" title="TI-Flow-Fachdienst - RESTful API MimeType fhir+json" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -31,7 +31,7 @@ In diesem Abschnitt werden allgemeingültige Funktionsmerkmale des TI-Flow-Fachd
 
 <!-- A_19539 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-355" title="TI-Flow-Fachdienst - RESTful API MimeType Aufrufparameter" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -40,7 +40,7 @@ In diesem Abschnitt werden allgemeingültige Funktionsmerkmale des TI-Flow-Fachd
 
 <!-- A_20171 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-356" title="TI-Flow-Fachdienst - RESTful API CapabilityStatement" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -60,7 +60,7 @@ Die E-Rezept-ID wird durch den TI-Flow-Fachdienst beim Anlegen eines Tasks für 
 
 <!-- A_19217-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-357" title="Aufbau E-Rezept-ID" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -98,7 +98,7 @@ Die E-Rezept-ID wird durch den TI-Flow-Fachdienst beim Anlegen eines Tasks für 
 
 <!-- A_19218 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-358" title="Prüfung E-Rezept-ID" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -113,7 +113,7 @@ Für die Kommunikation und die Interoperabilität müssen bezüglich Datensätze
 
 <!-- A_28428  -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-359" title="TI-Flow-Fachdienst - Verarbeitung von Datensätzen - Deserialisierung von PKCS#7 Enveloping-Daten" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -122,7 +122,7 @@ Für die Kommunikation und die Interoperabilität müssen bezüglich Datensätze
 
 <!-- A_28427 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-360" title="TI-Flow-Fachdienst - Verarbeitung von Datensätzen - Forcieren von UTF-8 ohne BOM" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -131,7 +131,7 @@ Für die Kommunikation und die Interoperabilität müssen bezüglich Datensätze
 
 <!-- A_28429 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-361" title="Character Encoding für TI-Flow-Fachdienst" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
             <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
     </actor>
@@ -152,7 +152,7 @@ Für die Kommunikation und die Interoperabilität müssen bezüglich Datensätze
 
 <!-- A_28430 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-362" title="Verbot Angabe von BOM für TI-Flow-Fachdienst" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
         <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
     </actor>
@@ -182,7 +182,7 @@ Aufgrund der Profilierung einiger Datenfelder kommt es vor, dass keine Zeitzonen
 
 <!-- A_27660 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-363" title="CS: Verarbeitung von Datumsangaben ohne Zeitzoneninformation" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
         <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>

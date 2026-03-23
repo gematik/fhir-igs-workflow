@@ -2,7 +2,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Task`-
 
 <!-- A_19347-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-197" title="E-Rezept-FdV: E-Rezepte abrufen - Liste E-Rezepte abrufen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -15,7 +15,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Task`-
 
 <!-- A_19348-01 -->
 <requirement conformance="MAY" key="IG-TIFLOW-CORE-198" title="E-Rezept-FdV: E-Rezept abrufen - E-Rezepte lokal speichern" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -28,7 +28,7 @@ Die Alternative 1 wird genutzt, wenn nur die Informationen zu einem E-Rezept vom
 
 <!-- A_19350-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-199" title="E-Rezept-FdV: E-Rezepte abrufen -Spezifisches E-Rezept herunterladen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -50,7 +50,7 @@ Die Alternative 2 wird genutzt, wenn der Nutzer als Vertreter eines Versicherten
 
 <!-- A_19351-01 -->
 <requirement conformance="MAY" key="IG-TIFLOW-CORE-200" title="E-Rezept-FdV: E-Rezepte abrufen - E-Rezept mit AccessCode herunterladen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>

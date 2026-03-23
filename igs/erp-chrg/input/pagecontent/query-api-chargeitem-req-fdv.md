@@ -6,7 +6,7 @@ Mit diesem Anwendungsfall kann der Nutzer eine Liste aller Abrechnungsinformatio
 
 <!--A_24554-->
 <requirement conformance="MAY" key="IG-TIFLOW-CHRG-10" title="E-Rezept-FdV: optional: Liste Abrechnungsinformationen abrufen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -15,7 +15,7 @@ Mit diesem Anwendungsfall kann der Nutzer eine Liste aller Abrechnungsinformatio
 
 <!--A_22173-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-11" title="E-Rezept-FdV: Liste Abrechnungsinformationen abrufen - Abfragerequest" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -36,7 +36,7 @@ Mit diesem Anwendungsfall kann der Nutzer (Versicherter) die Abrechnungsinformat
 
 <!--A_24544-->
 <requirement conformance="MAY" key="IG-TIFLOW-CHRG-12" title="E-Rezept-FdV: optional: Abrechnungsinformation abrufen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -45,7 +45,7 @@ Mit diesem Anwendungsfall kann der Nutzer (Versicherter) die Abrechnungsinformat
 
 <!--A_22175-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-13" title="E-Rezept-FdV: Abrechnungsinformation abrufen - Abfragerequest einzelner Datensatz" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -64,7 +64,7 @@ Mit diesem Anwendungsfall kann der Nutzer (Versicherter) Markierungen zu seiner 
 
 <!--A_24553-->
 <requirement conformance="MAY" key="IG-TIFLOW-CHRG-14" title="E-Rezept-FdV: optional: Abrechnungsinformation markieren" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -73,7 +73,7 @@ Mit diesem Anwendungsfall kann der Nutzer (Versicherter) Markierungen zu seiner 
 
 <!--A_22176-01-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-15" title="E-Rezept-FdV: Abrechnungsinformation markieren - Markierungen auswählen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -87,7 +87,7 @@ Mit diesem Anwendungsfall kann der Nutzer (Versicherter) Markierungen zu seiner 
 
 <!--A_22179-01-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-16" title="E-Rezept-FdV: Abrechnungsinformation markieren - Speicherrequest" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -108,7 +108,7 @@ Mit diesem Anwendungsfall kann der Nutzer (Versicherter) Markierungen zu seiner 
 ### Abrechnungsinformation löschen (DELETE /ChargeItem/&#60;id&#62;)
 <!--A_24546-->
 <requirement conformance="MAY" key="IG-TIFLOW-CHRG-17" title="E-Rezept-FdV: optional: Abrechnungsinformation löschen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -117,7 +117,7 @@ Mit diesem Anwendungsfall kann der Nutzer (Versicherter) Markierungen zu seiner 
 
 <!--A_22180-01-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-18" title="E-Rezept-FdV: Abrechnungsinformation löschen - Abrechnungsinformationen zum Löschen auswählen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -126,7 +126,7 @@ Mit diesem Anwendungsfall kann der Nutzer (Versicherter) Markierungen zu seiner 
 
 <!--A_22181-01-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-19" title="E-Rezept-FdV: Abrechnungsinformation löschen - Bestätigung" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -139,7 +139,7 @@ Das E-Rezept-FdV kann es dem Nutzer ermöglichen, den Anwendungsfall zum lokalen
 
 <!--A_22183-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-20" title="E-Rezept-FdV: Abrechnungsinformation löschen - Löschrequest" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -153,7 +153,7 @@ Das E-Rezept-FdV kann es dem Nutzer ermöglichen, den Anwendungsfall zum lokalen
 
 <!--A_22707-01-->
 <requirement conformance="MAY" key="IG-TIFLOW-CHRG-21" title="E-Rezept-FdV: Hinweis automatisches Löschen Abrechnungsinformationen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>

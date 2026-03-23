@@ -10,7 +10,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 
 <!-- A_25990 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-15" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - QES durch berechtigte Berufsgruppe" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -29,7 +29,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 
 <!-- A_25991 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-16" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Verordnung von DiGAs" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -40,7 +40,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 
 <!-- A_25992 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-17" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -52,7 +52,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 
 <!-- A_23443-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-18" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Type" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -62,7 +62,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 <br>
 <!-- A_26372 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-19" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Alternative IK" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -73,7 +73,7 @@ Dieser Ausschluss erfolgt temporär. In einer späteren Version können Unfallka
 
 <!-- A_27845, A_19999 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-20" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - Prozessparameter" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>

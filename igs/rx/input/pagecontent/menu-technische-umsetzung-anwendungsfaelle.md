@@ -8,7 +8,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 #### PS verordnende LEI
 
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-71" title="PS verordnende LEI: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -28,7 +28,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 <!-- A_19443 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-72" title="E-Rezept-FdV: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -48,7 +48,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 #### PS abgebende LEI
 
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-73" title="PS abgebende LEI: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -70,7 +70,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 </requirement>
 
 <requirement conformance="SHOULD" key="IG-TIFLOW-ERP-74" title="PS abgebende LEI: TIFlow-RX - empfohlene Anwendungsfälle" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
     </actor>

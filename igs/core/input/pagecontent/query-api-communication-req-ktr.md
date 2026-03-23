@@ -5,7 +5,7 @@ Diese Seite beschreibt Anforderungen ein Clientsystem des Kostenrägers zur Nutz
 
 <!-- A_21556 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-51" title="CS Kostenträger: Nachrichten abrufen - Häufigkeit" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>
   </actor>
@@ -14,7 +14,7 @@ Diese Seite beschreibt Anforderungen ein Clientsystem des Kostenrägers zur Nutz
 
 <!-- A_19329-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-52" title="CS Kostenträger: Nachrichten abrufen - Abfrage" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>
   </actor>
@@ -36,7 +36,7 @@ Die für die Nachricht zu verwendende Communication-Ressource wird modul- und an
 
 <!-- A_19334 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-53" title="CS Kostenträger: Nachricht versenden - Nachricht auf Fachdienst einstellen" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>
   </actor>
@@ -61,7 +61,7 @@ Löschen abzubrechen.
 
 <!-- A_21489 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-54" title="CS Kostenträger: Nachricht löschen - Löschrequest" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>
   </actor>
