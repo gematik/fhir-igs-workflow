@@ -28,7 +28,7 @@ Es gelten weitere modulspezifische Anforderungen für den Verordnungsdatensatz.
 <requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-259" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-ID abrufen" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_verordnend">
-    <testProcedure id="Konformitätserklärung"/>
+    <testProcedure id="Konformitätsbestätigung"/>
   </actor>
   Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" für das E-Rezept die HTTP-Operation POST /Task/$create mit
   <ul>
@@ -55,7 +55,7 @@ Für die qualifizierte elektronische Signatur des Verordnungsbundels wird der Ko
 <requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-260" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle QES signieren" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_verordnend">
-    <testProcedure id="Konformitätserklärung"/>
+    <testProcedure id="Konformitätsbestätigung"/>
   </actor>
   Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" für das E-Rezept die Signaturoperation des Konnektors mit 
   <ul>

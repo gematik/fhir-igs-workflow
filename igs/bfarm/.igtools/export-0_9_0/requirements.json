@@ -1,0 +1,386 @@
+[
+    {
+        "key": "IG-PRE-TIFLOW-BFARM-5",
+        "title": "E-Rezept-Fachdienst - BfArM - Lokalisierung Konfigurationsparameter BfArM_Domain",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-t-register-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS einen Konfigurationsparameter BfArM_Domain für die Domain des BfArM Webdienstes verwalten.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.240632",
+        "modified": "2026-03-23T10:57:48.240634",
+        "date": "2026-03-23T10:57:48.240635",
+        "content_hash": "28f29a20572ad018d7046258097047277591972c2f627bb29e27dbc7c35a1e1a",
+        "path": "query-api-t-register-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-BFARM-12",
+        "title": "E-Rezept-Fachdienst - BfArM - Übertragen des digitalen Durchschlags",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-t-register-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS für das Übertragen eines digitalen Durchschlags den BfArM Webdienst RESTful wie folgt aufrufen: \n     <table>\n      <tr>\n        <th>HTTP-Parameter</th>\n        <th>Wert</th>\n      </tr>\n      <tr>\n        <td>Methode</td>\n        <td>POST</td>\n      </tr>\n      <tr>\n        <td>Endpunkt</td>\n        <td>/ords/rezepte/t-rezept/v1</td>\n      </tr>\n      <tr>\n        <td>Header</td>\n        <td>\n          <ul>\n            <li>Authorization: Bearer &lt;AccessToken&gt;</li>\n            <li>Content-Type: application/fhir+json</li>\n            <li>X-Request-ID: &lt;random-uuid&gt;</li>\n          </ul>\n        </td>\n      </tr>\n      <tr>\n        <td>Body</td>\n        <td>&lt;digitaler Durchschlag E-T-Rezept&gt;</td>\n      </tr>\n    </table>",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.242531",
+        "modified": "2026-03-23T10:57:48.242532",
+        "date": "2026-03-23T10:57:48.242533",
+        "content_hash": "a5c77d716953204e1da16843b3114d996c1c1c32745498a0e3d64f863595a66c",
+        "path": "query-api-t-register-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-BFARM-9",
+        "title": "E-Rezept-Fachdienst - BfArM - Suche nach Apothekendaten",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-t-register-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS für das Bereitstellen eines digitalen Durchschlags für ein E-T-Rezept die Daten der abgebenden Apotheke aus dem Verzeichnisdienst ermitteln, indem an den Verzeichnisdienst folgende Abfrage gestellt wird: Abfrage der Ressource \"HealthcareService\", HealthcareServices, deren Organisation aktiv sind, HealthcareServices, deren origin tag = ldap ist, HealthcareServices, deren Organisation als Identifier die Telematik-ID trägt, die im Dispensierdatensatz angegeben wurde, Einbeziehen der Organisation in das Rückgabeergebnis, Einbeziehen der Location in das Rückgabeergebnis",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.241300",
+        "modified": "2026-03-23T10:57:48.241302",
+        "date": "2026-03-23T10:57:48.241303",
+        "content_hash": "179b6b779cb6c0751851439f8c7770d37bea883348c22af08fee4f59a72e6abd",
+        "path": "query-api-t-register-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-BFARM-8",
+        "title": "E-Rezept-Fachdienst - BfArM - asynchrone Bereitstellung und Übermittlung",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-t-register-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS das Übermitteln der Daten an den BfArM Webdienst asynchron zur Bereitstellung der Daten durch die Clientsysteme umsetzen, damit für das bereitstellende Primärsystem der abgebenden Leistungserbringerinstitution keine verlängerte Verarbeitungsdauer der auslösenden Operation auftritt.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.241148",
+        "modified": "2026-03-23T10:57:48.241150",
+        "date": "2026-03-23T10:57:48.241151",
+        "content_hash": "e05dbba4639e063ed04a0814e39a264824550175dd258f38a484379454400a43",
+        "path": "query-api-t-register-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-BFARM-13",
+        "title": "E-Rezept-Fachdienst - BfArM - Fehlerbehandlung - Reaktion auf Scheitern des Operationaufrufs",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-t-register-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS die Datenübermittlung an den BfArM Webdienst für mindestens eine Minute unterbrechen, wenn ein Aufruf mit dem Statuscode 500 oder 429 scheitert. Bei anhaltenden Problemen MUSS der E-Rezept-Fachdienst einen exponentiellen Backoff-Mechanismus anwenden, der die Wartezeit zwischen den Versuchen sukzessive verdoppelt, um die Systembelastung zu minimieren.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.242759",
+        "modified": "2026-03-23T10:57:48.242760",
+        "date": "2026-03-23T10:57:48.242761",
+        "content_hash": "349177f349ad3a9cf75e1ba2b61525091238d866fb285efa267a900a66b16f21",
+        "path": "query-api-t-register-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-BFARM-4",
+        "title": "E-Rezept-Fachdienst - BfArM - AccessToken für Zugriff auf den BfArM Webdienst",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-t-register-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS für den Zugriff auf den BfArM Webdienst einen AccessToken für die Authentifizierung im HTTP-Header wie folgt angeben: Authorization: Bearer &lt;AccessToken vom Token Endpunkt&gt;, um auf die Endpunkte des BfArM Webdienstes zugreifen zu können.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.240486",
+        "modified": "2026-03-23T10:57:48.240488",
+        "date": "2026-03-23T10:57:48.240489",
+        "content_hash": "77957a179ba300bf211b9ce7a68f0bc3a63dd49cf217fdca36347dea147278c2",
+        "path": "query-api-t-register-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-BFARM-3",
+        "title": "E-Rezept-Fachdienst - BfArM - Beziehen des AccessTokens",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-t-register-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS zum Beziehen eines AccessTokens den Endpunkt /ords/rezepte/oauth/token am BfArM Webdienst mit folgenden Parametern aufrufen: HTTP-Methode POST HTTP-Header Content-Type: application/x-www-form-urlencoded Authorization: Basic &lt;base64(client_id:client_secret)&gt; HTTP-Body Form-Parameter: grant_type=client_credential um einen AccessToken für den Zugriff auf den BfArM Webdienst zu beziehen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.240342",
+        "modified": "2026-03-23T10:57:48.240344",
+        "date": "2026-03-23T10:57:48.240345",
+        "content_hash": "349e18211eabaa3c5a8f0dc4eb9d22a88f74af6adb9f0a72b97dc0d53d04c5d7",
+        "path": "query-api-t-register-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-BFARM-14",
+        "title": "E-Rezept-Fachdienst - BfArM - Fehlerbehandlung - Protokollierung struktureller Fehler",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-t-register-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS den Aufruf am BfArM Webdienst als fehlerhaft kennzeichnen und eine detaillierte Fehlermeldung für interne Analysezwecke protokollieren, wenn der BfArM Webdienst auf einen Operationsaufruf mit einem Statuscode 400 (Bad Request) oder 422 (Unprocessable Entity) reagiert.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.242886",
+        "modified": "2026-03-23T10:57:48.242887",
+        "date": "2026-03-23T10:57:48.242888",
+        "content_hash": "e6504501e71763ee879a92a48fe0bab690be3130c08eb1114512b0aad16e9e35",
+        "path": "query-api-t-register-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-BFARM-15",
+        "title": "E-Rezept: Anwendung des IG 'Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst' für Übertragung von Daten vom E-Rezept-Fachdienst an den BfArM Webdienst",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/index.md",
+        "text": "Der E-Rezept-Fachdienst MUSS zur Umsetzung der Übertragung von Daten vom E-Rezept-Fachdienst an den BfArM Webdienst den Implementation Guide \"Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst\" umsetzen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.243601",
+        "modified": "2026-03-23T10:57:48.243602",
+        "date": "2026-03-23T10:57:48.243603",
+        "content_hash": "4823f50e7e619b6ba2ce4c53c9ca60cbfd86637e43bb3dbdecc08acd5f9de1f4",
+        "path": "index.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-BFARM-2",
+        "title": "E-Rezept-Fachdienst - BfArM - Prüfung Gültigkeit AccessToken",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-t-register-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS vor dem Zugriff auf den BfArM Webdienst prüfen, ob der zuletzt bezogene AccessToken noch gültig ist und im Falle der Ungültigkeit einen neuen AccessToken über den /ords/rezepte/oauth/token Endpunkt am BfArM Webdienst beziehen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.240182",
+        "modified": "2026-03-23T10:57:48.240185",
+        "date": "2026-03-23T10:57:48.240186",
+        "content_hash": "5efe63dd7c702f93dd49191bc12f24d61ee665b195b90b86c92468db6dab597a",
+        "path": "query-api-t-register-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-BFARM-16",
+        "title": "E-Rezept: Umsetzung des Moduls 'Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst'",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/index.md",
+        "text": "Der E-Rezept-Fachdienst MUSS zur Umsetzung des Implementation Guides \"Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst\" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.243735",
+        "modified": "2026-03-23T10:57:48.243736",
+        "date": "2026-03-23T10:57:48.243737",
+        "content_hash": "215fe2d5b49b5bbeb385677a817a806c2ab8edd0b6f50bf35b33acaee7396999",
+        "path": "index.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-BFARM-1",
+        "title": "Anbieter E-Rezept-Fachdienst - BfArM - Registrierung für Client Credentials am BfArM Webdienst",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-t-register-req-fd.md",
+        "text": "Der Anbieter des E-Rezept-Fachdienst MUSS sich über einen organisatorischen Prozess Client Credentials für den Zugriff auf den BfArM Webdienst beim BfArM registrieren.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.239983",
+        "modified": "2026-03-23T10:57:48.239993",
+        "date": "2026-03-23T10:57:48.239995",
+        "content_hash": "e0d89fcc46cf6be8f83b60d5620f3174dc71c51aca5b58376b43895d1c63d5e0",
+        "path": "query-api-t-register-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-BFARM-10",
+        "title": "E-Rezept-Fachdienst - BfArM - Erzeugen digitaler Durchschlag E-T-Rezept",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-t-register-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Bereitstellen eines digitalen Durchschlag für ein T-Rezept an den BfArM Webdienst einen Datensatz nach dem Profil ERP_TPrescription_CarbonCopy erzeugen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.241447",
+        "modified": "2026-03-23T10:57:48.241448",
+        "date": "2026-03-23T10:57:48.241450",
+        "content_hash": "a71ed910881c11e12fa1dce6464a07f421be5dc766089f83d12fe282fa4ac3fb",
+        "path": "query-api-t-register-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-BFARM-7",
+        "title": "E-Rezept-Fachdienst - BfArM - Flowtype 166",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-t-register-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS sicherstellen, dass ausschließlich Daten zu Tasks mit dem Flowtype 166 für den Webdienst des BfArM bereitgestellt werden.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.240978",
+        "modified": "2026-03-23T10:57:48.240985",
+        "date": "2026-03-23T10:57:48.240986",
+        "content_hash": "a5abfe77ee06c5f39896fa94f763f0309e134d2b5b45c4814495f1049fd54e84",
+        "path": "query-api-t-register-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-BFARM-6",
+        "title": "E-Rezept-Fachdienst - BfArM - Lokalisierung des BfArM Webdienstes",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-t-register-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS zur Lokalisierung des BfArM Webdienstes die im DNS für BfArM_Domain eingestellten Informationen aufrufen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.240767",
+        "modified": "2026-03-23T10:57:48.240769",
+        "date": "2026-03-23T10:57:48.240770",
+        "content_hash": "d7475016cfaecac373e4e780f846f727b28f411e4b573e4d7d3bae5b98e0124b",
+        "path": "query-api-t-register-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-BFARM-11",
+        "title": "E-Rezept-Fachdienst - BfArM - Anwendungsfall Übertragen des digitalen Durchschlags",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-t-register-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS den Anwendungsfall \"Übertragen des digitalen Durchschlags\" gemäß Tabelle TAB_eRPFD_029 ausführen. \n    <table>\n    <tr>\n      <th>Name</th>\n      <td>Übertragen des digitalen Durchschlags</td>\n    </tr>\n    <tr>\n      <th>Auslöser</th>\n      <td>Abschluss eines E-Rezept Workflows mit Flowtype 166 via Aufruf der $close-Operation</td>\n    </tr>\n    <tr>\n      <th>Akteur</th>\n      <td>E-Rezept-Fachdienst</td>\n    </tr>\n    <tr>\n      <th>Vorbedingung</th>\n      <td>\n        <ul>\n          <li>Dem E-Rezept-Fachdienst liegen Client Credentials des BfArM zur Authentifizierung vor</li>\n          <li>Verordnungsdaten, Dispensierinformationen und Informationen aus dem FHIR-VZD liegen vor</li>\n          <li>Ein gültiger AccessToken für den Zugriff auf den BfArM Webdienst liegt vor</li>\n        </ul>\n      </td>\n    </tr>\n    <tr>\n      <th>Nachbedingung</th>\n      <td>Am BfArM Webdienst wurde der digitale Durchschlag E-T-Rezept erfolgreich übertragen.</td>\n    </tr>\n    <tr>\n      <th>Standardablauf</th>\n      <td>\n        <ol>\n          <li>Prüfen, ob ein gültiger AccessToken vorliegt.</li>\n          <li>Falls nicht: Client Credentials an den Token-Endpunkt übertragen.</li>\n          <li>AccessToken speichern.</li>\n          <li>Erzeugen des digitalen Durchschlags E-T-Rezept.</li>\n          <li>Auftrag zur Übertragung des digitalen Durchschlags E-T-Rezept in einer Warteschlange einstellen.</li>\n          <li>Aufruf des Endpunktes <code>/ords/rezepte/t-rezept/v1</code>.</li>\n          <li>Nach erfolgreicher Übertragung: Löschen des Auftrags aus der Warteschlange.</li>\n        </ol>\n      </td>\n    </tr>\n  </table>\n  <div><figcaption><strong>Tabelle: </strong>title</figcaption></div>",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.242009",
+        "modified": "2026-03-23T10:57:48.242011",
+        "date": "2026-03-23T10:57:48.242012",
+        "content_hash": "8fbc4edd8ecad313fab9bb8ee7dcbe823a26de71232e71fbe025354cdb8b913b",
+        "path": "query-api-t-register-req-fd.html",
+        "release": "0.9.0"
+    }
+]

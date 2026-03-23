@@ -1,0 +1,1551 @@
+{
+    "document_info": {
+        "id": "gemIG_TIFlow_xborder",
+        "title": "TIFlow - Grenzüberschreitender Datenaustausch",
+        "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0",
+        "version": "0.9.0",
+        "date": "1774483200",
+        "status": "released",
+        "classification": "public"
+    },
+    "requirements": [
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-28",
+            "title": "E-Rezept-FdV: optional: E-Rezept markieren",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV KANN den Anwendungsfall \"E-Rezept markieren\" umsetzen.",
+            "conformance": "MAY",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/query-api-task-req-fdv.html#IG-PRE-TIFLOW-XBORDER-28"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-53",
+            "title": "E-Rezept-FdV: Zugriffsberechtigung - Zugriffsberechtigung am E-Rezept-Fachdienst speichern",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung erteilen\" zum Speichern der Information am E-Rezept-Fachdienst die HTTP-Operation POST /$grant-eu-access-permission mit:\n    <ul>\n        <li>ACCESS_TOKEN im Authorization-Header</li>\n        <li>Organization.extension:ncpehCountryEx.valueCodeableConcept.coding.code des vom Nutzer ausgewählten Landes in Parameters.parameter:countryCode</li>\n        <li>erzeugter Zugriffscode in Parameters.parameter:accessCode</li>\n    </ul>\n    ausführen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-grant-eu-access-permission-req-fdv.html#IG-PRE-TIFLOW-XBORDER-53"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-45",
+            "title": "E-Rezept-Fachdienst - Task schließen - EU - Push Notification Versicherter",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.eu.prescription.close\" und den Versicherten mit der KVNR = Task.for initiieren.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-eu-close-req-fd.html#IG-PRE-TIFLOW-XBORDER-45"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-2",
+            "title": "E-Rezept-Fachdienst - Zugriffsberechtigung - Liste zulässiger Länder",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS die Liste aller zulässigen Länder aus dem Verzeichnisdienst ermitteln, indem an den Verzeichnisdienst folgende Abfrage gestellt wird: Abfrage der Ressource \"HealthcareService\", HealthcareServices, deren Speciality \"57833-6\" aus https://loinc.org enthalten, HealthcareServices, deren Organisation aktiv sind, HealthcareServices, deren Organisation den OrganizationProfessionOIDType \"1.2.276.0.76.4.292\" entspricht, Einbeziehen der Organisation in das Rückgabeergebnis.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/menu-technische-umsetzung-konzept.html#IG-PRE-TIFLOW-XBORDER-2"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-12",
+            "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Schema des Response",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass die FHIR-Ressourcen zu einlösbaren Verordnungen in einem übergreifenden FHIR-Bundle gruppiert werden, absteigend sortiert nach dem medicationrequest.authored-on Datum, wobei das Bundle pro Verordnung ein FHIR-Bundle vom Typ https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle enthält, mit der unter https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId abgelegten Task-ID sowie den im MedicationRequest referenzierten Ressourcen MedicationRequest, Medication, Patient, Practitioner und Coverage.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-get-eu-prescriptions-req-fd.html#IG-PRE-TIFLOW-XBORDER-12"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-32",
+            "title": "E-Rezept-FdV: E-Rezept markieren - Speicherrequest",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezept markieren\" zum Speichern der Information im E-Rezept-Fachdienst die HTTP-Operation PATCH /Task/&lt;id&gt; mit: ACCESS_TOKEN im Authorization-Header, Prescription-ID in URL &lt;id&gt;, FHIR-Ressource im HTTP-Request-Body, ausführen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/query-api-task-req-fdv.html#IG-PRE-TIFLOW-XBORDER-32"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-24",
+            "title": "E-Rezept-FdV: TIFlow-EU - optionale Anwendungsfälle",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV MUSS für die Umsetzung der Bedienung von E-Rezepten im EU Kontext die Anwendungsfälle\n\n    <ul>\n    <li>UC 3.13 - Einwilligung einsehen</li>\n    <li>UC 3.14 - Einwilligung erteilen</li>\n    <li>UC 3.15 - Einwilligung widerrufen</li>\n    <li>UC 3.16 - Zugriffsberechtigung durch Versicherten erstellen</li>\n    <li>UC 3.17 - Zugriffsberechtigung durch Versicherten löschen</li>\n    <li>UC 3.18 - Zugriffsberechtigung durch Versicherten einsehen</li>\n    <li>Zugriffsberechtigung anzeigen</li>\n    <li>UC 3.19 - E-Rezept durch den Versicherten markieren</li>\n    </ul>\n\n    umsetzen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/menu-technische-umsetzung-anwendungsfaelle.html#IG-PRE-TIFLOW-XBORDER-24"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-49",
+            "title": "E-Rezept-FdV: Zugriffsberechtigung - Liste zulässiger Länder",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV MUSS Anwendungsfall \"Zugriffsberechtigung erteilen\" die Liste aller zulässigen Länder aus dem Verzeichnisdienst ermitteln, indem an den Verzeichnisdienst folgende Abfrage gestellt wird:\n    <ul>\n        <li>Abfrage der Ressource \"HealthcareService\"</li>\n        <li>HealthcareServices, deren Speciality \"57833-6\" aus https://loinc.org enthalten</li>\n        <li>HealthcareServices, deren Organisation aktiv sind</li>\n        <li>HealthcareServices, deren Organisation den OrganizationProfessionOIDType \"1.2.276.0.76.4.292\" entspricht</li>\n        <li>Einbeziehen der Organisation in das Rückgabeergebnis</li>\n    </ul>",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-grant-eu-access-permission-req-fdv.html#IG-PRE-TIFLOW-XBORDER-49"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-48",
+            "title": "E-Rezept: Umsetzung des Moduls 'EU Zugriff E-Rezept'",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst und dessen Client MÜSSEN zur Umsetzung des Implementation Guides \"EU Zugriff E-Rezept\" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "NCPeH_ePeDA",
+                        "id": "productType156",
+                        "description": "ePrescription/eDispensation Land-A National Contact Point for eHealth"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/index.html#IG-PRE-TIFLOW-XBORDER-48"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-25",
+            "title": "E-Rezept-FdV: Zugriffsberechtigung anzeigen",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung anzeigen\" folgende Informationen auf dem Display anzeigen: \n    <ul>\n    <li>Name des Landes,</li>\n    <li>Gültigkeitsende,</li>\n    <li>Zugriffscode,</li>\n    <li>KVNR des Versicherten.</li>\n    </ul>",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/menu-technische-umsetzung-anwendungsfaelle.html#IG-PRE-TIFLOW-XBORDER-25"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-33",
+            "title": "E-Rezept-Fachdienst - Consent löschen - EUDISPCONS - Löschen Zugriffsberechtigung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt `/Consent` mit `?category=EUDISPCONS` alle dem Versicherten zugeordneten Zugriffsberechtigungen anhand der KVNR des Versicherten im ACCESS_TOKEN im \"Authorization\"-Header des HTTP-Requests identifizieren und löschen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/query-api-consent-req-fd.html#IG-PRE-TIFLOW-XBORDER-33"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-13",
+            "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage der aktuellsten Verordnungsinformationen",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions?_count=1 durch den NCPeH-FD sicherstellen, dass die Ressourcen der zuletzt ausgestellten einlösbaren Verordnung zurückgegeben werden und falls keine Verordnung vorliegt, mit dem HTTP-Statuscode 404 antworten.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-get-eu-prescriptions-req-fd.html#IG-PRE-TIFLOW-XBORDER-13"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-3",
+            "title": "E-Rezept-Fachdienst - Zugriffsberechtigung - Caching Liste zulässiger Länder",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst DARF NICHT Informationen zur Liste zulässiger Länder verwenden, welche länger als 96h lokal durch den E-Rezept-Fachdienst gecacht wurden.",
+            "conformance": "SHALL NOT",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/menu-technische-umsetzung-konzept.html#IG-PRE-TIFLOW-XBORDER-3"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-44",
+            "title": "E-Rezept-Fachdienst - Task schließen - EU - Status beenden",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass die zulässige Beendigung eines übermittelten Tasks im Status Task.status = completed vollzogen wird, damit der Workflow für den Versicherten als beendet und das E-Rezept somit als eingelöst dargestellt wird.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-eu-close-req-fd.html#IG-PRE-TIFLOW-XBORDER-44"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-52",
+            "title": "E-Rezept-FdV: Zugriffsberechtigung - Zugriffscode erzeugen",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung\" einen eigens generierten Zugriffscode als Zufallswert erzeugen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT27",
+                            "name": "Sich.techn. Eignung: Produktgutachten"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-grant-eu-access-permission-req-fdv.html#IG-PRE-TIFLOW-XBORDER-52"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-29",
+            "title": "E-Rezept-FdV: E-Rezept markieren - E-Rezepte auswählen",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezept markieren\" dem Nutzer ermöglichen, ein oder mehrere E-Rezepte auszuwählen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/query-api-task-req-fdv.html#IG-PRE-TIFLOW-XBORDER-29"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-63",
+            "title": "E-Rezept-Fachdienst - Zugriffsberechtigung - periodische Bereinigung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS periodisch prüfen, dass keine zeitlich ungültigen Zugriffsberechtigungen gespeichert sind.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-grant-eu-access-permission-req-fd.html#IG-PRE-TIFLOW-XBORDER-63"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-34",
+            "title": "E-Rezept-FdV: Zugriffsberechtigung löschen - Abfragerequest",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung löschen\" zum Löschen der Information auf dem E-Rezept-Fachdienst die HTTP-Operation DELETE /$revoke-eu-access-permission mit:\n    <ul>\n        <li>ACCESS_TOKEN im Authorization-Header</li>\n    </ul>\n    ausführen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-revoke-eu-access-permission-req-fdv.html#IG-PRE-TIFLOW-XBORDER-34"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-22",
+            "title": "E-Rezept-Fachdienst -Task markieren -Versicherter - nur einlösbare E-Rezepte",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten prüfen, ob der adressierte Task in Task.extension:eu-isRedeemableByProperties.valueBoolean = true gesetzt ist und anderfalls mit dem HTTP-Fehlercode \"409 - Conflict\" und einer entsprechenden Fehlermeldung im OperationOutcome die Operation abbrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/query-api-task-req-fd.html#IG-PRE-TIFLOW-XBORDER-22"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-59",
+            "title": "E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Zugriffscode",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission prüfen, dass der im Request übermittelte Zugriffscode (Parameters.parameter:accessCode) das korrekte Format hat und bei fehlschlagender Prüfung die Operation mit dem HTTP-Fehlercode 400 und dem OperationOutcome \"Der übermittelte Zugriffscode ist nicht zulässig.\" abbrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-grant-eu-access-permission-req-fd.html#IG-PRE-TIFLOW-XBORDER-59"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-18",
+            "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Task Owner",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD, wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, für alle Tasks deren Task-IDs in Parameters.parameter:requestData.part:prescription-id enthalten sind, die Telematik-ID aus dem ACCESS_TOKEN in Task.owner speichern.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT27",
+                            "name": "Sich.techn. Eignung: Produktgutachten"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-get-eu-prescriptions-req-fd.html#IG-PRE-TIFLOW-XBORDER-18"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-8",
+            "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Filter einlösbarer E-Rezepte",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass nur Ressourcen eines Tasks bereitgestellt werden, die folgende Kriterien erfüllen: Task.for = KVNR für die KVNR aus Parameters.parameter:requestData.part:kvnr Task.ExpiryDate nicht vor dem aktuellen Datum Falls MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true, dann MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start nicht nach dem aktuellen Datum Task.extension:eu-isRedeemableByProperties = true Task.extension:eu-isRedeemableByPatientAuthorization = true damit eine Apotheke im europäischen Ausland nur einlösbare E-Rezepte abrufen kann.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-get-eu-prescriptions-req-fd.html#IG-PRE-TIFLOW-XBORDER-8"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-38",
+            "title": "E-Rezept-Fachdienst - Task schließen - EU - Rollenprüfung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close sicherstellen, dass ausschließlich Nutzer in der Rolle: oid_ncpeh, die Operation am Fachdienst aufrufen dürfen und die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader Authorization feststellen, damit der E-Rezept-Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT27",
+                            "name": "Sich.techn. Eignung: Produktgutachten"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-eu-close-req-fd.html#IG-PRE-TIFLOW-XBORDER-38"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-55",
+            "title": "E-Rezept-Fachdienst - Zugriffsberechtigung löschen - Löschen",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf den Endpunkt /$revoke-eu-access-permission die KVNR des Versicherten im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen und, falls vorhanden, zu dieser KVNR gespeicherte Zugriffsberechtigungen löschen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-revoke-eu-access-permission-req-fd.html#IG-PRE-TIFLOW-XBORDER-55"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-43",
+            "title": "E-Rezept-Fachdienst - Task schließen - EU - Zeitstempel MedicationDispense",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass der Zeitpunkt des Aufrufes in Task.extension:lastMedicationDispense im Format \"YYYY-MM-DDThh:mm:ss+zz:zz\" (FHIR-instant) angelegt und gespeichert wird.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-eu-close-req-fd.html#IG-PRE-TIFLOW-XBORDER-43"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-4",
+            "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Rollenprüfung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions sicherstellen, dass ausschließlich Nutzer in der Rolle: oid_ncpeh, die Operation am Fachdienst aufrufen dürfen und die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader Authorization feststellen, damit E-Rezepte nicht durch Unberechtigte abgerufen werden können.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT27",
+                            "name": "Sich.techn. Eignung: Produktgutachten"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-get-eu-prescriptions-req-fd.html#IG-PRE-TIFLOW-XBORDER-4"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-14",
+            "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage aller einlösbaren Verordnungsinformationen",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass wenn Parameters.parameter:requestData.part:prescription-id leer ist, die Ressourcen aller einlösbaren Verordnung zurückgegeben werden und falls keine Verordnung vorliegt, mit dem HTTP-Statuscode 404 antworten.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-get-eu-prescriptions-req-fd.html#IG-PRE-TIFLOW-XBORDER-14"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-15",
+            "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, die Ressourcen aller einlösbaren Verordnung zurückgegeben werden, deren Task-IDs in Parameters.parameter:requestData.part:prescription-id enthalten sind, und falls keine Verordnung vorliegt, mit dem HTTP-Statuscode 404 antworten.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-get-eu-prescriptions-req-fd.html#IG-PRE-TIFLOW-XBORDER-15"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-5",
+            "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Schemaprüfung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD das im http-Body des Requests enthaltene Parameter-Objekt gegen das Profil [GEM_ERP_PR_PAR_EU_GET_Prescription_EU_Input] prüfen und im Fehlerfall die Operation mit HTTP-Fehlercode 400 abbrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-get-eu-prescriptions-req-fd.html#IG-PRE-TIFLOW-XBORDER-5"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-42",
+            "title": "E-Rezept-Fachdienst - Task schließen - EU - Statusprüfung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass Task.status = in-progress ist und bei Ungleichheit mit dem HTTP-Fehlercode 403 abbrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-eu-close-req-fd.html#IG-PRE-TIFLOW-XBORDER-42"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-54",
+            "title": "E-Rezept-Fachdienst - Zugriffsberechtigung löschen - Rollenprüfung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf den Endpunkt /$revoke-eu-access-permission die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am E-Rezept-Fachdienst aufrufen dürfen, damit die Information zur Zugriffsberechtigung nicht durch Unberechtigte gelöscht werden kann.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT27",
+                            "name": "Sich.techn. Eignung: Produktgutachten"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-revoke-eu-access-permission-req-fd.html#IG-PRE-TIFLOW-XBORDER-54"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-39",
+            "title": "E-Rezept-Fachdienst - Task schließen - EU - Schemaprüfung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD das im http-Body des Requests enthaltene Parameter-Objekt gegen das Profil [GEM_ERP_PR_PAR_EU_CloseOperation_Input] prüfen und im Fehlerfall die Operation mit HTTP-Fehlercode 400 abbrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-eu-close-req-fd.html#IG-PRE-TIFLOW-XBORDER-39"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-9",
+            "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage der aktuellsten Verordnungsinformationen",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions?_count=1 durch den NCPeH-FD sicherstellen, dass nur eine Ressource eines Tasks bereitgestellt wird, die folgendes Kriterium erfüllt: Task.status = ready.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-get-eu-prescriptions-req-fd.html#IG-PRE-TIFLOW-XBORDER-9"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-19",
+            "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage aller einlösbaren Verordnungsinformationen - Push Notification Versicherter",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD bei erfolgreichem Abschluss der Operation, wenn Parameters.parameter:requestData.part:prescription-id leer ist, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.eu.prescription.get\" und den Versicherten mit der KVNR = Task.for für jeden Task initiieren.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-get-eu-prescriptions-req-fd.html#IG-PRE-TIFLOW-XBORDER-19"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-58",
+            "title": "E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Ländercode",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission prüfen, dass der im Request übermittelte Ländercode (Parameters.parameter:countryCode) einem Land entspricht, welches die Anwendung ePrescription/eDispensation Szenario Land A unterstützt und bei fehlschlagender Prüfung die Operation mit dem HTTP-Fehlercode 409 und dem OperationOutcome \"Für das angefragte Land ist Einlösen von E-Rezepten nicht möglich.\" abbrechen, damit der Versicherte nur für zulässige europäische Länder eine Zugriffsberechtigung erteilt.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-grant-eu-access-permission-req-fd.html#IG-PRE-TIFLOW-XBORDER-58"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-23",
+            "title": "E-Rezept-Fachdienst -Task markieren -Versicherter - Änderung Markierung Task Ressource",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten, den im Parameter `eu-isRedeemableByPatientAuthorization` enthaltenen boolschen Wert in `Task.extension:eu-isRedeemableByPatientAuthorization.valueBoolean` setzen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/query-api-task-req-fd.html#IG-PRE-TIFLOW-XBORDER-23"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-35",
+            "title": "E-Rezept-FdV: Zugriffsberechtigung löschen - lokale Zugriffsberechtigung löschen",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung löschen\" die lokal gespeicherten Informationen zur Zugriffsberechtigung löschen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-revoke-eu-access-permission-req-fdv.html#IG-PRE-TIFLOW-XBORDER-35"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-62",
+            "title": "E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Response",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS im Response zu einem Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission eine Ressource des Profils [GEM_ERP_PR_PAR_EU_Access_Authorization_Response] mit den Daten des gespeicherten Datensatz zur Zugriffsberechtigung übermitteln.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-grant-eu-access-permission-req-fd.html#IG-PRE-TIFLOW-XBORDER-62"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-20",
+            "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Push Notification Versicherter",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD bei erfolgreichem Abschluss der Operation, wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.eu.prescription.redeem\" und den Versicherten mit der KVNR = Task.for für jeden Task initiieren.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-get-eu-prescriptions-req-fd.html#IG-PRE-TIFLOW-XBORDER-20"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-36",
+            "title": "E-Rezept-Fachdienst - Zugriffsberechtigung lesen - Rollenprüfung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /$read-eu-access-permission die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am E-Rezept-Fachdienst aufrufen dürfen, damit die Information zur Einwilligung nicht durch Unberechtigte ausgelesen werden kann.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT27",
+                            "name": "Sich.techn. Eignung: Produktgutachten"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-read-eu-access-permission-req-fd.html#IG-PRE-TIFLOW-XBORDER-36"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-61",
+            "title": "E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Neue Zugriffsberechtigung speichern",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission mit dem im Request übermittelten KVNR, Zugriffscode und Ländercode eine neue Zugriffsberechtigung speichern und den Wert valid_until auf aktuellen Zeitpunkt + 1h setzen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-grant-eu-access-permission-req-fd.html#IG-PRE-TIFLOW-XBORDER-61"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-16",
+            "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Statuswechsel Task",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD, wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, für alle Tasks deren Task-IDs in Parameters.parameter:requestData.part:prescription-id enthalten sind, den Status auf Task.status = in-progress setzen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-get-eu-prescriptions-req-fd.html#IG-PRE-TIFLOW-XBORDER-16"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-6",
+            "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Prüfung Einwilligung für KVNR",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass für die in Parameters.parameter:requestData.part:kvnr übermittelte KVNR ein Consent-Datensatz mit Consent.patient.identifier = KVNR und Consent.category.coding.code = EUDISPCONS existiert und bei fehlgeschlagener Prüfung die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit nur Verordnungsdaten für Versicherte übermittelt werden, die eine Einwilligung erteilt haben.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-get-eu-prescriptions-req-fd.html#IG-PRE-TIFLOW-XBORDER-6"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-41",
+            "title": "E-Rezept-Fachdienst - Task schließen - EU - Prüfung Zugriffsberechtigung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass zu dem in Parameters.parameter:requestData.part:kvnr, Parameters.parameter:requestData.part:accessCode und Parameters.parameter:requestData.part:countryCode übermittelte Tripple von KVNR, Zugriffs- und Ländercode eine zeitliche gültige Zugriffsberechtigung im E-Rezept-Fachdienst existiert und bei fehlgeschlagener Prüfung die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit nur Dispensierinformationen übermittelt werden, wenn eine gültige Zugriffsberechtigung vorliegt.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-eu-close-req-fd.html#IG-PRE-TIFLOW-XBORDER-41"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-57",
+            "title": "E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Einwillung für KVNR",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission die KVNR des Versicherten im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen und sicherstellen, dass ein Consent-Datensatz mit Consent.patient.identifier = KVNR und Consent.category.coding.code = EUDISPCONS existiert und bei fehlgeschlagener Prüfung die Operation mit dem HTTP-Fehlercode 403 und dem OperationOutcome \"Das Erstellen einer Zugriffsberechtigung ist erst zulässig, wenn eine Einwilligung durch den Nutzer zum Einlösen von E-Rezepten im europäischen Ausland erteilt wurde.\" abbrechen, damit nur Versicherte eine Zugriffsberechtigung schreiben, die eine Einwilligung erteilt haben.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-grant-eu-access-permission-req-fd.html#IG-PRE-TIFLOW-XBORDER-57"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-56",
+            "title": "E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Rollenprüfung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am E-Rezept-Fachdienst aufrufen dürfen, damit eine Zugriffsberechtigte nicht durch Unberechtigte erteilt werden kann.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT27",
+                            "name": "Sich.techn. Eignung: Produktgutachten"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-grant-eu-access-permission-req-fd.html#IG-PRE-TIFLOW-XBORDER-56"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-40",
+            "title": "E-Rezept-Fachdienst - Task schließen - EU - Prüfung Einwilligung für KVNR",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass für die in Parameters.parameter:requestData.part:kvnr übermittelte KVNR ein Consent-Datensatz mit Consent.patient.identifier = KVNR und Consent.category.coding.code = EUDISPCONS existiert und bei fehlgeschlagener Prüfung die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit nur Dispensierinformationen für Versicherte übermittelt werden, die eine Einwilligung erteilt haben.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-eu-close-req-fd.html#IG-PRE-TIFLOW-XBORDER-40"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-7",
+            "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Prüfung Zugriffsberechtigung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass zu dem in Parameters.parameter:requestData.part:kvnr, Parameters.parameter:requestData.part:accessCode und Parameters.parameter:requestData.part:countryCode übermittelte Tripple von KVNR, Zugriffs- und Ländercode eine zeitliche gültige Zugriffsberechtigung im E-Rezept-Fachdienst existiert und bei fehlgeschlagener Prüfung die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit nur Verordnungsdaten für Versicherte übermittelt werden, wenn eine gültige Zugriffsberechtigung vorliegt.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-get-eu-prescriptions-req-fd.html#IG-PRE-TIFLOW-XBORDER-7"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-17",
+            "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Secret",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD, wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, für alle Tasks deren Task-IDs in Parameters.parameter:requestData.part:prescription-id enthalten sind, eine 256 Bit Zufallszahl mit einer Mindestentropie von 120 Bit erzeugen, hexadezimal kodieren ([0-9a-f]{64}) und diese im zu speichernden Task als externe ID in Task.identifier:Secret als [Identifier Profile for Secret (GEM_ERP_PR_Secret)] hinzufügen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT27",
+                            "name": "Sich.techn. Eignung: Produktgutachten"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-get-eu-prescriptions-req-fd.html#IG-PRE-TIFLOW-XBORDER-17"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-60",
+            "title": "E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Löschen bestehender Zugriffsberechtigung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission prüfen, ob für die im Request übermittelte KVNR Zugriffsberechtigungen gespeichert sind und falls ja, diese löschen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-grant-eu-access-permission-req-fd.html#IG-PRE-TIFLOW-XBORDER-60"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-37",
+            "title": "E-Rezept-Fachdienst - Zugriffsberechtigung lesen - Response",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /$read-eu-access-permission die KVNR des Versicherten im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen und im Response falls vorhanden eine Ressource des Profils [GEM_ERP_PR_PAR_EU_Access_Authorization_Response] mit zur KVNR gespeicherte zeitlich gültige Zugriffsberechtigung übermitteln.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-read-eu-access-permission-req-fd.html#IG-PRE-TIFLOW-XBORDER-37"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-21",
+            "title": "E-Rezept-Fachdienst -Task markieren -Versicherter - FHIR-Validierung Parameters",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten auf die Ressource übertragene Parameters Ressource gegen das FHIR-Profil GEM_ERPEU_PR_PAR_PATCH_Task_Input prüfen und bei Nicht-Konformität den Aufruf mit dem http-Status-Code 400 ablehnen, damit nur FHIR-valide Ressourcen in den E-Rezept-Fachdienst akzeptiert werden.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/query-api-task-req-fd.html#IG-PRE-TIFLOW-XBORDER-21"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-10",
+            "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage aller einlösbaren Verordnungsinformationen",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass wenn Parameters.parameter:requestData.part:prescription-id leer ist, nur Ressourcen eines Tasks bereitgestellt werden, die folgendes Kriterium erfüllen: Task.status = ready.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-get-eu-prescriptions-req-fd.html#IG-PRE-TIFLOW-XBORDER-10"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-47",
+            "title": "E-Rezept: Anwendung des IG 'EU Zugriff E-Rezept' für Einlösen von E-Rezepten im EU Ausland",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst und dessen Client MÜSSEN zur Umsetzung des Einlösens von E-Rezepten im EU Ausland den Implementation Guide \"EU Zugriff E-Rezept\" umsetzen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "NCPeH_ePeDA",
+                        "id": "productType156",
+                        "description": "ePrescription/eDispensation Land-A National Contact Point for eHealth"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/index.html#IG-PRE-TIFLOW-XBORDER-47"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-51",
+            "title": "E-Rezept-FdV: Zugriffsberechtigung - Land auswählen",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung erteilen\" es dem Nutzer ermöglichen, ein Land aus der Liste der zulässigen Länder auszuwählen, für das der Nutzer die Zugriffsberechtigung erteilen möchte.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-grant-eu-access-permission-req-fdv.html#IG-PRE-TIFLOW-XBORDER-51"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-26",
+            "title": "E-Rezept-FdV: E-Rezept zum Einlösen im EU-Ausland markieren",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV KANN es dem Nutzer ermöglichen, die Markierung eines E-Rezeptes zum Einlösen im EU-Ausland zu verwalten.",
+            "conformance": "MAY",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/query-api-task-req-fdv.html#IG-PRE-TIFLOW-XBORDER-26"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-30",
+            "title": "E-Rezept-FdV: E-Rezept markieren",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV MUSS, wenn es den Anwendungsfall umsetzt, den Anwendungsfall \"E-Rezept durch den Versicherten markieren\" gemäß TAB_FdVERP_029 umsetzen. Tabelle #: TAB_FdVERP_029 – E-Rezept markieren Name E-Rezept markieren Auslöser Aufruf des Anwendungsfalls in der Graphical User Interface (GUI) Akteur Versicherter Vorbedingung Der Nutzer hat eine oder mehrere Markierungen aus- oder abgewählt. Der Nutzer hat sich gegenüber der TI authentisiert. Nachbedingung Die Markierungen sind im E-Rezept-Fachdienst gespeichert. Standardablauf Task-ID bestimmen FHIR Ressource erstellen Daten im E-Rezept-Fachdienst speichern",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/query-api-task-req-fdv.html#IG-PRE-TIFLOW-XBORDER-30"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-31",
+            "title": "E-Rezept-FdV: E-Rezept markieren - FHIR Ressource erstellen",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezept markieren\" eine Parameters Ressource des Profils [GEM ERPEU PR PAR PATCH Task Input] erstellen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/query-api-task-req-fdv.html#IG-PRE-TIFLOW-XBORDER-31"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-27",
+            "title": "E-Rezept-FdV: E-Rezept zum Einlösen im EU-Ausland markieren - Hinweis Belieferungsmöglichkeit",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezept markieren\" dem Nutzer vor der Möglichkeit zum Markieren der E-Rezepte zum Einlösen im EU-Ausland einen Hinweis anzeigen, dass die Belieferungsmöglichkeit für die E-Rezepte mit der Apotheke vorab geklärt werden soll.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/query-api-task-req-fdv.html#IG-PRE-TIFLOW-XBORDER-27"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-50",
+            "title": "E-Rezept-FdV: Zugriffsberechtigung - Caching Liste zulässiger Länder",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV DARF NICHT Informationen zur Liste zulässiger Länder verwenden, welche länger als 96h lokal durch das E-Rezept-FdV gecacht wurden.",
+            "conformance": "SHALL NOT",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-grant-eu-access-permission-req-fdv.html#IG-PRE-TIFLOW-XBORDER-50"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-46",
+            "title": "E-Rezept-FdV: Zugriffsberechtigung abrufen - Abfragerequest",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung abrufen\" zum Abrufen der Information vom E-Rezept-Fachdienst die HTTP-Operation GET /$read-eu-access-permission mit: \n    <ul>\n        <li>ACCESS_TOKEN im Authorization-Header</li>\n    </ul>\n    ausführen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-read-eu-access-permission-req-fdv.html#IG-PRE-TIFLOW-XBORDER-46"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-1",
+            "title": "Format Zugriffscode",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Produkttypen der Anwendung E-Rezept MÜSSEN, wenn sie einen Zugriffscode für das Einlösen im europäischen Ausland verarbeiten, folgende Formatvorgaben für den Zugriffscode einhalten: String mit Gesamtlänge von 6 Zeichen, erlaubte Zeichen: a-z, A-Z, 0-9.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/menu-technische-umsetzung-konzept.html#IG-PRE-TIFLOW-XBORDER-1"
+        },
+        {
+            "key": "IG-PRE-TIFLOW-XBORDER-11",
+            "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage nach Liste Rezept-Ids",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, nur Ressourcen eines Tasks bereitgestellt werden, die folgendes Kriterium erfüllen: Task.status = ready ODER (Task.status = in-progress UND Task.owner = Telematik-ID aus dem ACCESS_TOKEN).",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FD",
+                        "id": "productType87",
+                        "description": "E-Rezept-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/xborder/0.9.0/op-get-eu-prescriptions-req-fd.html#IG-PRE-TIFLOW-XBORDER-11"
+        }
+    ]
+}

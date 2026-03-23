@@ -7,7 +7,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 <requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-150" title="PS verordnende LEI: E-Rezept einstellen - Task auf Fachdienst aktivieren" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_verordnend">
-    <testProcedure id="Konformitätserklärung"/>
+    <testProcedure id="Konformitätsbestätigung"/>
   </actor>
   Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden einstellen" für das E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$activate mit
   <ul>
