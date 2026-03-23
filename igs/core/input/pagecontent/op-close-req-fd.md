@@ -47,7 +47,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
         <li>ob die Telematik-ID der Apotheke gemäß ACCESS_TOKEN mit dem Wert in MedicationDispense.performer.actor:identifier übereinstimmt</li>
     </ul>
     und im Fehlerfall die Operation mit dem folgenden Fehler:
-    <table style="border: 1px solid black; border-collapse: collapse;">
+    <table>
         <tr>
             <th>HTTP-Code</th>
             <td>400 - Bad Request</td>
@@ -144,7 +144,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
         <testProcedure id="Produkttest"/>
     </actor>
     Der E-Rezept-Fachdienst MUSS, falls keine OCSP-Response für das Signaturzertifikat der Quittung vorliegt bzw. die letzte vorliegende OCSP-Response älter als 24h ist, die Operation mit dem folgenden Fehler:
-    <table style="border: 1px solid black; border-collapse: collapse;">
+    <table style="border: 2px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
             <td>503 - Service Unavailable</td>
