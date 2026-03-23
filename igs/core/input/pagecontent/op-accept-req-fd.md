@@ -5,7 +5,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 <!-- A_19149-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-247" title="TI-Flow-Fachdienst - Task akzeptieren - Prüfung Datensatz zwischenzeitlich gelöscht" version="0">
     <meta lockversion="true"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept die Operation mit dem HTTP-Fehlercode 410 abbrechen, wenn der referenzierte /Task/&lt;id&gt; existiert, jedoch kein AccessCode im Task.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode vorhanden ist oder der Status Task.status = cancelled ist, damit die abgebende Institution den Versicherten über die zwischenzeitliche Löschung des Datensatzes in Kenntnis setzen kann.
@@ -14,7 +14,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 <!-- A_19167-04 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-248" title="TI-Flow-Fachdienst - Task akzeptieren - Prüfung AccessCode" version="0">
     <meta lockversion="true"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept den im HTTP-Header "X-AccessCode" oder URL-Parameter "?ac=..." übertragenen AccessCode gegen den im referenzierten Task gespeicherten AccessCodeTask.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit Zugriffe auf diesen Datensatz nur durch Berechtigte in Kenntnis des AccessCodes erfolgen.
@@ -25,7 +25,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 <!-- A_19168-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-249" title="TI-Flow-Fachdienst - Task akzeptieren - Rezept bereits in Abgabe oder Bearbeitung" version="0">
     <meta lockversion="true"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept die Operation mit dem HTTP-Fehlercode 409 abbrechen, wenn der StatusTask.status = "completed", Task.status = "in-progress" oder Task.status = "draft" ist, damit ein bereits in Abgabe befindliches oder beliefertes E-Rezept nicht durch eine zweite Apotheke bearbeitet werden kann. Im OperationOutcome werden weitere Informationen gegeben: "Task has invalid status completed", "Task has invalid status in-progress" bzw. "Task has invalid status draft". <br>
@@ -37,7 +37,7 @@ Hinweis: Die Informationen in OperationOutcome werden ggf. als mehrere Strings i
 <!-- A_23539-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-250" title="TI-Flow-Fachdienst - Task akzeptieren - Ende Einlösefrist prüfen" version="0">
     <meta lockversion="true"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept die Operation mit dem Fehlercode 403 abbrechen, wenn das Ende der Einlösefrist (Task.ExpiryDate) zu einem früherem Zeitpunkt als das aktuelle Datum liegt, da Verordnungen nur bis Ende der Einlösefrist abgerufen werden dürfen. Im Falle dieses Fehlers ist im OperationOutcome des Response das Ende der Einlösefrist wie folgt anzugeben: "Verordnung bis &lt;Datum&gt; einlösbar.", wobei &lt;Datum&gt; der Wert Task.ExpiryDate im Format "dd.mm.yyyy" ist.
@@ -46,7 +46,7 @@ Hinweis: Die Informationen in OperationOutcome werden ggf. als mehrere Strings i
 <!-- A_19169-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-251" title="TI-Flow-Fachdienst - Task akzeptieren - Generierung Secret, Statuswechsel in Abgabe und Rückgabewert" version="0">
     <meta lockversion="true"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept den Status des Tasks auf Task.status = "in-progress" setzen, eine 256 Bit Zufallszahl mit einer Mindestentropie von 120 Bit erzeugen, hexadezimal kodieren ([0-9a-f]{64}) und diese im zu speichernden Task als externe ID in Task.identifier:Secret als https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Secret hinzufügen und den Task im Bundle mit dem in Task.input mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType = 1 referenzierten QES-Datensatz als Binary-Ressource https://www.hl7.org/fhir/binary.html an den Aufrufer zurückgeben, damit das E-Rezept für die nachfolgende Bearbeitung durch den abrufenden Apotheker reserviert ist.
@@ -55,7 +55,7 @@ Hinweis: Die Informationen in OperationOutcome werden ggf. als mehrere Strings i
 <!-- A_24174-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-252" title="TI-Flow-Fachdienst - Task akzeptieren - Telematik-ID der abgebenden Institution speichern" version="0">
     <meta lockversion="true"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept für den referenzierten Task die Telematik-ID aus dem ACCESS_TOKEN in Task.owner speichern, damit sichergestellt werden kann, dass nachfolgende Zugriffe auf diesen Datensatz nur durch Berechtigte erfolgen kann.
@@ -68,7 +68,7 @@ Die Telematik-ID ist im Task wie folgt zu hinterlegen:
 <!-- A_28127 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-253" title="TI-Flow-Fachdienst - Task akzeptieren - Push Notification Versicherter" version="0">
     <meta lockversion="true"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept bei erfolgreichem Abschluss der Operation den Push Notification Prozess für den Trigger mit der ChannelId "erp.task.accept" und den Versicherten mit der KVNR = Task.for initiieren.

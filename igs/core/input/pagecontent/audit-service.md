@@ -6,7 +6,7 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
 <!-- A_19296-04 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-30" title="TI-Flow-Fachdienst - Inhalt Protokolleintrag" version="0">
 	<meta lockversion="true"/>
-	<actor name="eRp_FD">
+	<actor name="TI_Flow_FD">
     	<testProcedure id="Produkttest"/>
   </actor>
   Der TI-Flow-Fachdienst MUSS einen Protokolleintrag mit den folgenden Werten befüllen:
@@ -39,7 +39,7 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
 <!-- A_19284-14 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-31" title="TI-Flow-Fachdienst - Versichertenprotokoll zu Operationen" version="0">
 	<meta lockversion="true"/>
-	<actor name="eRp_FD">
+	<actor name="TI_Flow_FD">
     	<testProcedure id="Produkttest"/>
   	</actor>
 	Der TI-Flow-Fachdienst MUSS jeden Aufruf von Operationen gemäß "TAB_eRPFD_004 Versichertenprotokoll" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.
@@ -247,7 +247,7 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
 <!-- A_19284-14 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-32" title="TI-Flow-Fachdienst - Versichertenprotokoll zu automatischen Löschen" version="0">
 	<meta lockversion="true"/>
-	<actor name="eRp_FD">
+	<actor name="TI_Flow_FD">
     	<testProcedure id="Produkttest"/>
   	</actor>
 	Der TI-Flow-Fachdienst MUSS beim automatischen Löschen nach Erreichen einer Löschfrist gemäß "TAB_eRPFD_004a Versichertenprotokoll nach automatischen Löschen" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.
@@ -285,7 +285,7 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
 <!-- A_19284-14 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-33" title="TI-Flow-Fachdienst - Versichertenprotokoll zu Löschen nach Fehlerbehandlung" version="0">
 	<meta lockversion="true"/>
-	<actor name="eRp_FD">
+	<actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
 	Der TI-Flow-Fachdienst MUSS beim automatischen Löschen nach Fehlerbehandlung gemäß "TAB_eRPFD_004b Versichertenprotokoll nach Löschen wegen Fehlerbehandlung" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.
@@ -308,7 +308,7 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
 <!-- A_19302 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-34" title="TI-Flow-Fachdienst - Protokolleintrag Versichertenprotokoll leicht verständlich" version="0">
 	<meta lockversion="true"/>
-	<actor name="eRp_FD">
+	<actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
 	Der TI-Flow-Fachdienst MUSS in jedem zu tätigenden Eintrag des Protokolls für Versicherte einen lesbaren Text in einfacher Sprache (deutsch und englisch) erzeugen, der mindestens den Namen des Zugreifenden, die auslösende Operation und das Ergebnis der Operation umfasst, damit Versicherte ohne technisches Vorwissen den Inhalt des Zugriffsprotokolls verstehen können.
@@ -317,7 +317,7 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
 <!-- A_22217 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-35" title="TI-Flow-Fachdienst - Protokollierung - keine Angabe zu organizationName" version="0">
 	<meta lockversion="true"/>
-	<actor name="eRp_FD">
+	<actor name="TI_Flow_FD">
     	<testProcedure id="Produkttest"/>
   	</actor>
 	Der TI-Flow-Fachdienst MUSS, wenn im ACCESS_TOKEN die Angabe zur "organizationName" mit NULL gefüllt ist, in der Protokollierung als agentname "unbekannt" verwenden.
@@ -330,7 +330,7 @@ Der TI-Flow-Fachdienst protokolliert das erfolgreiche Übermitteln von Daten fü
 <!-- A_25962 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-36" title="TI-Flow-Fachdienst - ePA - Medication Service - Versichertenprotokoll" version="0">
 	<meta lockversion="true"/>
-	<actor name="eRp_FD">
+	<actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
 	Der TI-Flow-Fachdienst MUSS einen Aufruf der folgenden Endpunkte, für jeden betroffene E-Rezept abhängig von Ergebnis des Operationsaufrufes gemäß Tab_eRPFD_020 im Zugriffsprotokoll des Versicherten protokollieren:

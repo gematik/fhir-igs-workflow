@@ -9,7 +9,7 @@ Der TI-Flow-Fachdienst nutzt den OAuth 2.0 Client Credentials Flow nach [OAuth 2
 <!-- A_27819 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-BFARM-1" title="Anbieter TI-Flow-Fachdienst - BfArM - Registrierung für Client Credentials am BfArM Webdienst" version="0">
     <meta lockversion="true"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der Anbieter des TI-Flow-Fachdienst MUSS sich über einen organisatorischen Prozess Client Credentials für den Zugriff auf den BfArM Webdienst beim BfArM registrieren.
@@ -27,7 +27,7 @@ Die technische Authentifizierung erfolgt dann über den `/token` Endpunkt, der d
 <!-- A_27820 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-BFARM-2" title="TI-Flow-Fachdienst - BfArM - Prüfung Gültigkeit AccessToken" version="0">
     <meta lockversion="true"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS vor dem Zugriff auf den BfArM Webdienst prüfen, ob der zuletzt bezogene AccessToken noch gültig ist und im Falle der Ungültigkeit einen neuen AccessToken über den /ords/rezepte/oauth/token Endpunkt am BfArM Webdienst beziehen.
@@ -36,7 +36,7 @@ Die technische Authentifizierung erfolgt dann über den `/token` Endpunkt, der d
 <!-- A_27821 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-BFARM-3" title="TI-Flow-Fachdienst - BfArM - Beziehen des AccessTokens" version="0">
     <meta lockversion="true"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS zum Beziehen eines AccessTokens den Endpunkt /ords/rezepte/oauth/token am BfArM Webdienst mit folgenden Parametern aufrufen: HTTP-Methode POST HTTP-Header Content-Type: application/x-www-form-urlencoded Authorization: Basic &lt;base64(client_id:client_secret)&gt; HTTP-Body Form-Parameter: grant_type=client_credential um einen AccessToken für den Zugriff auf den BfArM Webdienst zu beziehen.
@@ -45,7 +45,7 @@ Die technische Authentifizierung erfolgt dann über den `/token` Endpunkt, der d
 <!-- A_27822 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-BFARM-4" title="TI-Flow-Fachdienst - BfArM - AccessToken für Zugriff auf den BfArM Webdienst" version="0">
     <meta lockversion="true"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS für den Zugriff auf den BfArM Webdienst einen AccessToken für die Authentifizierung im HTTP-Header wie folgt angeben: Authorization: Bearer &lt;AccessToken vom Token Endpunkt&gt;, um auf die Endpunkte des BfArM Webdienstes zugreifen zu können.
@@ -57,7 +57,7 @@ Die technische Authentifizierung erfolgt dann über den `/token` Endpunkt, der d
 <!-- A_27882 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-BFARM-5" title="TI-Flow-Fachdienst - BfArM - Lokalisierung Konfigurationsparameter BfArM_Domain" version="0">
     <meta lockversion="true"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS einen Konfigurationsparameter BfArM_Domain für die Domain des BfArM Webdienstes verwalten.
@@ -68,7 +68,7 @@ Der Defaultwert für den Parameter ist  `https://webapps-public.bfarm.de`.
 <!-- A_27817 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-BFARM-6" title="TI-Flow-Fachdienst - BfArM - Lokalisierung des BfArM Webdienstes" version="0">
     <meta lockversion="true"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS zur Lokalisierung des BfArM Webdienstes die im DNS für BfArM_Domain eingestellten Informationen aufrufen.
@@ -81,7 +81,7 @@ Nach Abschluss eines Workflows 166 durch Aufrufen der $close Operation erstellt 
 <!-- A_27823 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-BFARM-7" title="TI-Flow-Fachdienst - BfArM - Flowtype 166" version="0">
     <meta lockversion="true"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS sicherstellen, dass ausschließlich Daten zu Tasks mit dem Flowtype 166 für den Webdienst des BfArM bereitgestellt werden.
@@ -90,7 +90,7 @@ Nach Abschluss eines Workflows 166 durch Aufrufen der $close Operation erstellt 
 <!-- A_27824 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-BFARM-8" title="TI-Flow-Fachdienst - BfArM - asynchrone Bereitstellung und Übermittlung" version="0">
     <meta lockversion="true"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS das Übermitteln der Daten an den BfArM Webdienst asynchron zur Bereitstellung der Daten durch die Clientsysteme umsetzen, damit für das bereitstellende Primärsystem der abgebenden Leistungserbringerinstitution keine verlängerte Verarbeitungsdauer der auslösenden Operation auftritt.
@@ -103,7 +103,7 @@ Als Datengrundlage für diesen Durchschlag dient der Verordnungsdatensatz samt Q
 <!-- A_27825 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-BFARM-9" title="TI-Flow-Fachdienst - BfArM - Suche nach Apothekendaten" version="0">
     <meta lockversion="true"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS für das Bereitstellen eines digitalen Durchschlags für ein E-T-Rezept die Daten der abgebenden Apotheke aus dem Verzeichnisdienst ermitteln, indem an den Verzeichnisdienst folgende Abfrage gestellt wird: Abfrage der Ressource "HealthcareService", HealthcareServices, deren Organisation aktiv sind, HealthcareServices, deren origin tag = ldap ist, HealthcareServices, deren Organisation als Identifier die Telematik-ID trägt, die im Dispensierdatensatz angegeben wurde, Einbeziehen der Organisation in das Rückgabeergebnis, Einbeziehen der Location in das Rückgabeergebnis
@@ -130,7 +130,7 @@ Für den Austausch der Daten zwischen TI-Flow-Fachdienst und dem BfArM Webdienst
 <!-- A_27826-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-BFARM-10" title="TI-Flow-Fachdienst - BfArM - Erzeugen digitaler Durchschlag E-T-Rezept" version="0">
     <meta lockversion="true"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS beim Bereitstellen eines digitalen Durchschlag für ein T-Rezept an den BfArM Webdienst einen Datensatz nach dem Profil ERP_TPrescription_CarbonCopy erzeugen.
@@ -139,7 +139,7 @@ Für den Austausch der Daten zwischen TI-Flow-Fachdienst und dem BfArM Webdienst
 <!-- A_27827 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-BFARM-11" title="TI-Flow-Fachdienst - BfArM - Anwendungsfall Übertragen des digitalen Durchschlags" version="0">
     <meta lockversion="true"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS den Anwendungsfall "Übertragen des digitalen Durchschlags" gemäß Tabelle TAB_eRPFD_029 ausführen. 
@@ -191,7 +191,7 @@ Für den Austausch der Daten zwischen TI-Flow-Fachdienst und dem BfArM Webdienst
 <!-- A_27828 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-BFARM-12" title="TI-Flow-Fachdienst - BfArM - Übertragen des digitalen Durchschlags" version="0">
     <meta lockversion="true"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS für das Übertragen eines digitalen Durchschlags den BfArM Webdienst RESTful wie folgt aufrufen: 
@@ -239,7 +239,7 @@ Dieses Vorgehen stellt sicher, dass die Übertragung an das T-Register nicht auf
 <!-- A_27830 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-BFARM-13" title="TI-Flow-Fachdienst - BfArM - Fehlerbehandlung - Reaktion auf Scheitern des Operationaufrufs" version="0">
     <meta lockversion="true"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS die Datenübermittlung an den BfArM Webdienst für mindestens eine Minute unterbrechen, wenn ein Aufruf mit dem Statuscode 500 oder 429 scheitert. Bei anhaltenden Problemen MUSS der TI-Flow-Fachdienst einen exponentiellen Backoff-Mechanismus anwenden, der die Wartezeit zwischen den Versuchen sukzessive verdoppelt, um die Systembelastung zu minimieren.
@@ -248,7 +248,7 @@ Dieses Vorgehen stellt sicher, dass die Übertragung an das T-Register nicht auf
 <!-- A_27831 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-BFARM-14" title="TI-Flow-Fachdienst - BfArM - Fehlerbehandlung - Protokollierung struktureller Fehler" version="0">
     <meta lockversion="true"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS den Aufruf am BfArM Webdienst als fehlerhaft kennzeichnen und eine detaillierte Fehlermeldung für interne Analysezwecke protokollieren, wenn der BfArM Webdienst auf einen Operationsaufruf mit einem Statuscode 400 (Bad Request) oder 422 (Unprocessable Entity) reagiert.

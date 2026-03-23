@@ -5,7 +5,7 @@ Zu unterscheiden sind drei verschiedene Mechanismen: Sortierung, Filterung und P
 <!-- A_24434 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-364" title="TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Betroffene Endpunkte" version="0">
     <meta lockversion="true"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS das Konzept zur Handhabung der Rückgabe von mehreren FHIR-Objekten auf folgende Endpunkte anwenden: Tabelle #: TAB_eRPFD_021 Endpunkte des TI-Flow-Fachdienst, die das Konzept zur Handhabung der Rückgabe von mehreren FHIR-Objekten bereitstellen müssen 
@@ -59,7 +59,7 @@ Für jeden dieser Ressourcen gelten dann Kriterien, nach denen sortiert und gefi
 <!-- A_24436-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-365" title="TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Filter- und Sortierkriterien" version="0">
     <meta lockversion="true"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS für die Sortierung bei der Handhabung der Rückgabe von mehreren FHIR-Objekten den FHIR-Suchparameter "_sort" unterstützen und für die folgenden Ressourcen entsprechende Such- und Sortierkriterien bereitstellen:
@@ -197,7 +197,7 @@ Es können mehrere Sortierkriterien angegeben werden. Bei der Sortierung sortier
 <!-- A_24437 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-366" title="TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Sortieren von Einträgen" version="0">
     <meta lockversion="true"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Sortierung nach mehreren Kriterien ermöglichen, indem entsprechend der Reihenfolge der angegebenen Kriterien sortiert wird.
@@ -206,7 +206,7 @@ Es können mehrere Sortierkriterien angegeben werden. Bei der Sortierung sortier
 <!-- A_24438 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-367" title="TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Sortieren von Einträgen" version="0">
     <meta lockversion="true"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS für die Sortierung bei der Handhabung der Rückgabe von mehreren FHIR-Objekten folgende Ressourcen nach folgenden Kriterien aufsteigend sortieren, wenn der Client keine Sortierung im Request angefragt hat: 
@@ -250,7 +250,7 @@ Standardmäßig werden die Einträge aufsteigend sortiert. Wenn diese Reihenfolg
 <!-- A_24440 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-368" title="TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Sortierreihenfolge der Einträge" version="0">
     <meta lockversion="true"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Sortierreihenfolge umkehren, wenn der Client das Präfix "-" am Sortierkriterium angibt.
@@ -263,7 +263,7 @@ Für den Datentyp "date" sollen folgende Filterkriterien als URL-Parameter unter
 <!-- A_25515 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-369" title="TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Filteroperatoren für Datumsabfragen" version="0">
     <meta lockversion="true"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten folgende Filteroperatoren für Suchkriterien anbieten, deren Datentyp "date" ist: 
@@ -334,7 +334,7 @@ Neben Angaben zur Paginierung übermittelt der Client auch Angaben zur Filterung
 <!-- A_24441-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-370" title="TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - URL-Parameter für Paginierung" version="0">
     <meta lockversion="true"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Paginierung nach FHIR ermöglichen und folgende URL-Parameter unterstützen: 
@@ -364,7 +364,7 @@ Neben Angaben zur Paginierung übermittelt der Client auch Angaben zur Filterung
 <!-- A_24442-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-371" title="TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Link Relations für Paginierung" version="0">
     <meta lockversion="true"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten folgende Link Relations unter Bundle.link generieren, sofern diese erzeugt werden können: 
@@ -394,7 +394,7 @@ Neben Angaben zur Paginierung übermittelt der Client auch Angaben zur Filterung
 <!-- A_24443-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-372" title="TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Paginierung" version="0">
     <meta lockversion="true"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Paginierung nach FHIR für folgende Endpunkte mit den jeweiligen Parametern unterstützen 
@@ -448,7 +448,7 @@ Neben Angaben zur Paginierung übermittelt der Client auch Angaben zur Filterung
 <!-- A_24444 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-373" title="TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Erhalten von URL-Parametern" version="0">
     <meta lockversion="true"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten und Generierung von URLs der Link Relations die vom Client angegebenen Filter- und Sortierkriterien verwerten und erhalten.
