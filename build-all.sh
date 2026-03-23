@@ -8,14 +8,21 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$ROOT_DIR/scripts/ig-common.sh"
 
 usage() {
-  echo "Usage: $0 [--ig <name> ...] [--concurrent]"
+  echo "Usage: $0 [--ig <name> ...] [--concurrent] [--from-temp <temp_dir>]"
   echo "Example: $0 --ig rx erp-eu"
   echo "         $0 --concurrent"
-  echo "Note: On macOS, --concurrent opens one Terminal window per IG and returns immediately."
+  echo "         $0 --concurrent --cleanup"
+  echo ""
+  echo "Options:"
+  echo "  --concurrent         Build IGs in parallel (Terminal windows on macOS, background on other OS)"
+  echo "  --cleanup            Remove each temp build directory after its build completes"
+  echo "  --from-temp <dir>    Internal: build from isolated temp copy (called by concurrent mode)"
 }
 
 declare -a IG_FILTER=()
 CONCURRENT=false
+CLEANUP=false
+FROM_TEMP=""
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -33,6 +40,21 @@ while [[ $# -gt 0 ]]; do
       ;;
     --concurrent)
       CONCURRENT=true
+      shift
+      ;;
+    --cleanup)
+      CLEANUP=true
+      shift
+      ;;
+    --from-temp)
+      shift
+      if [[ $# -eq 0 ]]; then
+        echo "Error: --from-temp requires a directory path" >&2
+        usage
+        exit 1
+      fi
+      FROM_TEMP="$1"
+      ROOT_DIR="$FROM_TEMP"
       shift
       ;;
     -h|--help)
@@ -158,18 +180,43 @@ run_igs_parallel() {
 run_igs_macos_terminal() {
   local -a igs=("$@")
   local repo_dir="$ROOT_DIR"
+  local temp_parent="$repo_dir/.tmp-build"
+  local total="${#igs[@]}"
+  local launched=0
 
   if ! command -v osascript >/dev/null 2>&1; then
     echo "Error: osascript not found; cannot open macOS Terminal windows" >&2
     return 1
   fi
 
-  for ig_short in "${igs[@]}"; do
-    osascript -e "tell application \"Terminal\" to do script \"cd '$repo_dir' && ./build-all.sh --ig '$ig_short'\""
-  done
-}
+  # Always start from a clean temp workspace.
+  rm -rf "$temp_parent"
+  mkdir -p "$temp_parent"
+  echo "Creating isolated build directories in $temp_parent..."
 
-ensure_ig_deps
+  if [[ "$total" -eq 0 ]]; then
+    return 0
+  fi
+
+  for ig_short in "${igs[@]}"; do
+    local temp_ig_dir="$temp_parent/$ig_short"
+    local child_cmd="mkdir -p '$temp_ig_dir'"
+    child_cmd+=" && rsync -a --exclude='.git' --exclude='node_modules' --exclude='igs/*/output' --exclude='igs/*/temp' --exclude='igs/*/.tmp-build' '$repo_dir/' '$temp_ig_dir/'"
+    child_cmd+=" && cd '$temp_ig_dir' && ./build-all.sh --ig '$ig_short' --from-temp '$temp_ig_dir'"
+    if [[ "$CLEANUP" == "true" ]]; then
+      child_cmd+=" --cleanup"
+    fi
+
+    # Open Terminal window and build from temp directory.
+    osascript -e "tell application \"Terminal\" to do script \"$child_cmd\""
+
+    launched=$((launched + 1))
+    printf "\rOpening build terminals, %d of %d started." "$launched" "$total"
+  done
+
+  echo
+  echo "Terminal windows opened for parallel builds. Check .tmp-build/ for build artifacts."
+}
 
 if [[ ${#IG_FILTER[@]} -eq 0 ]]; then
   declare -a all_igs=()
@@ -182,9 +229,11 @@ if [[ ${#IG_FILTER[@]} -eq 0 ]]; then
     if [[ "$(uname -s)" == "Darwin" ]]; then
       run_igs_macos_terminal "${all_igs[@]}"
     else
+      ensure_ig_deps
       run_igs_parallel "${all_igs[@]}"
     fi
   else
+    ensure_ig_deps
     for ig_short in "${all_igs[@]}"; do
       run_ig "$ig_short"
     done
@@ -199,14 +248,32 @@ for ig_short in "${IG_FILTER[@]}"; do
   fi
 done
 
+# Build handling
+BUILD_EXIT_CODE=0
+
 if [[ "$CONCURRENT" == "true" ]]; then
   if [[ "$(uname -s)" == "Darwin" ]]; then
     run_igs_macos_terminal "${IG_FILTER[@]}"
   else
+    ensure_ig_deps
     run_igs_parallel "${IG_FILTER[@]}"
   fi
+  BUILD_EXIT_CODE=$?
 else
+  ensure_ig_deps
   for ig_short in "${IG_FILTER[@]}"; do
     run_ig "$ig_short"
+    if [[ $? -ne 0 ]]; then
+      BUILD_EXIT_CODE=1
+    fi
   done
 fi
+
+# Cleanup if requested and building from temp (child process)
+if [[ "$CLEANUP" == "true" && "$FROM_TEMP" != "" ]]; then
+  echo "Cleaning up temporary build directory..."
+  rm -rf "$ROOT_DIR"
+  echo "Cleanup complete."
+fi
+
+exit "$BUILD_EXIT_CODE"

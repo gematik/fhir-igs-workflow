@@ -29,7 +29,7 @@ Durch Angabe des URL-Parameter `?secret=` bei der GET-Operation kann eine abgebe
   data-api-fhir-interaction="search-type">
   <div id="CapabilityStatement">
     <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
+      {% include CapabilityStatement-erp-fachdienst-server-erpeu.json %}
     </pre>
   </div>
   <div id="Response-Examples">
@@ -54,7 +54,7 @@ Um spezifische Details zu einem einzelnen _Task_ mittels der RESTful API zu erha
   data-api-fhir-interaction="read">
   <div id="CapabilityStatement">
     <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
+      {% include CapabilityStatement-erp-fachdienst-server-erpeu.json %}
     </pre>
   </div>
   <div id="Response-Examples">
@@ -75,7 +75,7 @@ Um spezifische Details zu einem einzelnen _Task_ mittels der RESTful API zu erha
   data-api-fhir-interaction="patch">
   <div id="CapabilityStatement">
     <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
+      {% include CapabilityStatement-erp-fachdienst-server-erpeu.json %}
     </pre>
   </div>
   <div id="Response-Examples">

@@ -22,6 +22,18 @@ RuleSet: ReadInteractionStatusCodes
 * rest.resource[=].interaction[=] insert TooManyRequests
 * rest.resource[=].interaction[=] insert InternalServerError
 
+RuleSet: CreateInteractionStatusCodes
+* rest.resource[=].interaction[=] insert SuccessfulCreated
+* rest.resource[=].interaction[=] insert InvalidRequest
+* rest.resource[=].interaction[=] insert UnknownResourceType
+
+RuleSet: DeleteInteractionStatusCodes
+* rest.resource[=].interaction[=] insert SuccessfulNoContent
+* rest.resource[=].interaction[=] insert InvalidRequest
+* rest.resource[=].interaction[=] insert UnknownResourceType
+* rest.resource[=].interaction[=] insert ResourceIsNotKnown
+* rest.resource[=].interaction[=] insert ResourceWasDeleted
+
 RuleSet: SystemLevelOperationStatusCodes
 * rest.operation[=] insert Unauthorized
 * rest.operation[=] insert UnknownSearchParameter

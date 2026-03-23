@@ -29,7 +29,7 @@ Der Aufruf erfolgt als http-`POST`-Operation auf die Ressource /Consent. Im Aufr
   data-api-fhir-interaction="create">
   <div id="CapabilityStatement">
     <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
+      {% include CapabilityStatement-erp-fachdienst-server-erpeu.json %}
     </pre>
   </div>
   <div id="Response-Examples">
@@ -54,7 +54,7 @@ Der Aufruf erfolgt als http-GET-Operation auf die Ressource /Consent. Im Aufruf 
   data-api-fhir-interaction="search-type">
   <div id="CapabilityStatement">
     <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
+      {% include CapabilityStatement-erp-fachdienst-server-erpeu.json %}
     </pre>
   </div>
   <div id="Response-Examples">
@@ -81,7 +81,7 @@ Der Aufruf erfolgt als http-`DELETE`-Operation auf die Ressource /Consent. Im Au
   data-api-fhir-interaction="delete">
   <div id="CapabilityStatement">
     <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
+      {% include CapabilityStatement-erp-fachdienst-server-erpeu.json %}
     </pre>
   </div>
 </div>
