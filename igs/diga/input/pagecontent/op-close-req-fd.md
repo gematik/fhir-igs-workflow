@@ -29,7 +29,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
-  Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks für ein E-Rezept mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/&#60;id&#62; mit Flowtype 162 sicherstellen, dass das in GEM_ERP_PR_PAR_CloseOperation_Input enthaltene MedicationDispense-Objekt dem Profil GEM_ERP_PR_MedicationDispense_DiGA entspricht. Andernfalls ist die Operation mit dem folgenden Fehler:
+  Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks für ein E-Rezept mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/&#60;id&#62; mit Flowtype 162 sicherstellen, dass das in GEM_ERP_PR_PAR_CloseOperation_Input enthaltene MedicationDispense-Objekt dem Profil GEM_ERP_PR_MedicationDispense_DiGA entspricht. Andernfalls ist die Operation mit dem folgenden Fehler:
   <table style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
