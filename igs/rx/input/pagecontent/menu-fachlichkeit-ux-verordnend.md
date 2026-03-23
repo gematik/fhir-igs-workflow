@@ -108,7 +108,7 @@ Das Primärsystem soll für die Einführung des patienten-individuellen Konfigur
   <tr>
     <th>Nachbedingung</th>
     <td>
-      Alle Verordnungen wurden signiert, in den E-Rezept-Fachdienst eingestellt und ggf. der Patientenausdruck gedruckt.
+      Alle Verordnungen wurden signiert, in den TI-Flow-Fachdienst eingestellt und ggf. der Patientenausdruck gedruckt.
     </td>
   </tr>
   <tr>
@@ -125,14 +125,14 @@ Das Primärsystem soll für die Einführung des patienten-individuellen Konfigur
         <li>Optional: Die Schritte 1 bis 3 können bei mehreren auszustellenden Verordnungen wiederholt werden.</li>
         <li>
           Mit dem Start des Prozesses „Jetzt Signieren“ durch den Arzt werden alle zur Signatur freigegebenen Verordnungen in einem 
-          Hintergrundprozess qualifiziert signiert und in den E-Rezept-Fachdienst eingestellt.
+          Hintergrundprozess qualifiziert signiert und in den TI-Flow-Fachdienst eingestellt.
         </li>
         <li>
-          Es wird ein Hinweistext angezeigt, wenn das Signieren und das Einstellen in den E-Rezept-Fachdienst erfolgreich abgeschlossen wurde.
+          Es wird ein Hinweistext angezeigt, wenn das Signieren und das Einstellen in den TI-Flow-Fachdienst erfolgreich abgeschlossen wurde.
         </li>
         <li>
           Ist die Einstellung „Patientenausdruck erstellen“ gewählt, werden nach dem erfolgreichen Einstellen in den 
-          E-Rezept-Fachdienst die Patientenausdrucke automatisch gedruckt.
+          TI-Flow-Fachdienst die Patientenausdrucke automatisch gedruckt.
         </li>
       </ol>
     </td>
@@ -268,7 +268,7 @@ Hinweis: Mit der Umsetzung der Aufgabenliste für das Signieren der Verordnungen
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-     Das PS der verordnenden LEI SOLL dem Nutzer einen Hinweistext anzeigen, wenn das Signieren und das Einstellen im E-Rezept-Fachdienst erfolgreich war. Das Ausblenden des Hinweistextes erfolgt ohne Interaktion des Nutzers.
+     Das PS der verordnenden LEI SOLL dem Nutzer einen Hinweistext anzeigen, wenn das Signieren und das Einstellen im TI-Flow-Fachdienst erfolgreich war. Das Ausblenden des Hinweistextes erfolgt ohne Interaktion des Nutzers.
 </requirement>
 
 <!-- A_23575 -->
@@ -277,7 +277,7 @@ Hinweis: Mit der Umsetzung der Aufgabenliste für das Signieren der Verordnungen
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-     Das PS der verordnenden LEI SOLL nach dem erfolgreichem Einstellen eines E-Rezeptes in den E-Rezept-Fachdienst, wenn die entsprechende Konfigurationseinstellung für den Einlöseweg dies vorsieht, den E-Rezept-Ausdruck automatisch ausdrucken.
+     Das PS der verordnenden LEI SOLL nach dem erfolgreichem Einstellen eines E-Rezeptes in den TI-Flow-Fachdienst, wenn die entsprechende Konfigurationseinstellung für den Einlöseweg dies vorsieht, den E-Rezept-Ausdruck automatisch ausdrucken.
 </requirement>
 
 #### Entscheidungsunterstützung: E-Rezept oder Muster 16
@@ -422,7 +422,7 @@ Der Weiterbildungsassistent signiert mit seinem HBA das E-Rezept. Wenn der Weite
 
 #### Verordnung E-T-Rezept
 
-Für die Verordnungen von E-T-Rezepten sind gesonderte UX-Vorgaben definiert, um den Anwender dabei zu unterstützen, die gesetzlichen Vorgaben einzuhalten und eine Verordnung erfolgreich im E-Rezept-Fachdienst einzustellen.
+Für die Verordnungen von E-T-Rezepten sind gesonderte UX-Vorgaben definiert, um den Anwender dabei zu unterstützen, die gesetzlichen Vorgaben einzuhalten und eine Verordnung erfolgreich im TI-Flow-Fachdienst einzustellen.
 
 <!-- A_27837 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-180" title="PS verordnende LEI: UX - E-T-Rezept – Hinweis T-Rezept" version="0">
@@ -671,7 +671,7 @@ Folgerezeptes In den Fällen, wo der Patient nicht in der Praxis anwesend ist, w
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-     Das PS der verordnenden LEI SOLL es dem Nutzer ermöglichen, nach dem erfolgreichen Einstellen eines E-Rezepts im E-Rezept-Fachdienst eine Benachrichtigung (bspw. per SMS oder E-Mail) an den Patienten zu versenden.
+     Das PS der verordnenden LEI SOLL es dem Nutzer ermöglichen, nach dem erfolgreichen Einstellen eines E-Rezepts im TI-Flow-Fachdienst eine Benachrichtigung (bspw. per SMS oder E-Mail) an den Patienten zu versenden.
 </requirement>
 
 <!-- A_23603 -->
@@ -730,7 +730,7 @@ Die Bereitstellung der Fehlerdetails per Email o.Ä. steht mit diesen Anforderun
 
 Ein Arzt kann ein von ihm ausgestelltes E-Rezept löschen. Wenn das nicht möglich ist, soll der Arzt aus dem PS heraus den Grund erkennen können, um besser darauf reagieren zu können. Wenn versucht wird das Rezept zu löschen, sind folgende Fehlermeldungen auszuwerten:
 - Returncode 403 - Forbidden: Das Rezept ist gesperrt und befindet sich in Bearbeitung bei einer Apotheke. Solange das E-Rezept noch nicht durch die Apotheke beliefert wurde, kann es durch die Apotheke gelöscht werden.
-- Returncode 410 - Gone: Das Rezept wurde bereits gelöscht und ist nicht mehr im E-Rezept-Fachdienst verfügbar
+- Returncode 410 - Gone: Das Rezept wurde bereits gelöscht und ist nicht mehr im TI-Flow-Fachdienst verfügbar
 
 <!-- A_23607-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-206" title="PS verordnende LEI: UX - Fehlerbenachrichtigung bei Löschversuch eines E-Rezepts" version="0">
@@ -738,5 +738,5 @@ Ein Arzt kann ein von ihm ausgestelltes E-Rezept löschen. Wenn das nicht mögli
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-     Das PS der verordnenden LEI MUSS, falls beim Löschen eines E-Rezeptes ein Fehler auftritt, dem Nutzer in einem Hinweis den Grund für den gescheiterten Löschversuch darstellen. Dieser leitet sich aus dem Fehlercode vom E-Rezept-Fachdienst ab.
+     Das PS der verordnenden LEI MUSS, falls beim Löschen eines E-Rezeptes ein Fehler auftritt, dem Nutzer in einem Hinweis den Grund für den gescheiterten Löschversuch darstellen. Dieser leitet sich aus dem Fehlercode vom TI-Flow-Fachdienst ab.
 </requirement>

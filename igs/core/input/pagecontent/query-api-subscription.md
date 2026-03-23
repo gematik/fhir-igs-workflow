@@ -2,19 +2,19 @@ Diese Seite beschreibt den Einstieg in die Subscription-Query-Schnittstelle.
 
 ### Nachricht
 
-Die Nachricht zum Registrierungsanforderungen zur Benachrichtigungen über Communications wird als HTTP GET-Anfrage an den E-Rezept-Fachdienst gesendet.
+Die Nachricht zum Registrierungsanforderungen zur Benachrichtigungen über Communications wird als HTTP GET-Anfrage an den TI-Flow-Fachdienst gesendet.
 
 Die Nachricht zur Interaktion mit Subscription als FHIR-Ressource _Subscription_ wird über die folgenden HTTP-Methoden ermöglicht:
 
 |Akteur|HTTP-Methode|Ergebnis der Anfrage|
 |---|---|---|
-|Apotheke, Kostenträger|POST|Registrierung an der E-Rezept-Fachdienst Webschnittstelle|
+|Apotheke, Kostenträger|POST|Registrierung an der TI-Flow-Fachdienst Webschnittstelle|
 |Apotheke, Kostenträger|GET|Websocket-Verbindung zum NotificationService|
 
 ### Anforderungen an Schnittstelle
 
-- [FD-Anforderungen zur Subscription-Query](./query-api-subscription-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
-- [Client-Anforderungen zur Subscription-Query](./query-api-subscription-req-avs.html): Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.
+- [FD-Anforderungen zur Subscription-Query](./query-api-subscription-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
+- [Client-Anforderungen zur Subscription-Query](./query-api-subscription-req-avs.html): Anforderungen an den Client des TI-Flow-Fachdienstes zur Nutzung der Schnittstelle.
 
 ### Resource API
 
@@ -79,7 +79,7 @@ Der Subscription Service antwortet mit einer "bound" um die Einrichtung der Subs
 
 `bound: <subscription id>`
 
-Wenn eine neue Nachricht für die Telematik-ID der Apotheke eingestellt wird, dann sendet der E-Rezept-Fachdienst eine Nachricht ping: <subscription-id>. Das AVS kann dann diese Nachricht mittels des Anwendungsfalls "Nachrichten von Versicherten empfangen" unter Nutzung des Requests GET /Communication?received=null&recipient=<Telematik-ID> abrufen.
+Wenn eine neue Nachricht für die Telematik-ID der Apotheke eingestellt wird, dann sendet der TI-Flow-Fachdienst eine Nachricht ping: <subscription-id>. Das AVS kann dann diese Nachricht mittels des Anwendungsfalls "Nachrichten von Versicherten empfangen" unter Nutzung des Requests GET /Communication?received=null&recipient=<Telematik-ID> abrufen.
 
 Bei Nutzung des Subscription Services kann abweichend von der Anforderung "A_21556 - PS abgebende LEI: Häufigkeit des Abrufen von Nachrichten" die Operation GET /Communication häufiger als alle 5 Minuten, d.h. nach jeder Notification, mit den obigen Parametern angefragt werden.
 

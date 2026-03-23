@@ -1,23 +1,23 @@
 actor:
-- eRp_FD
+- TI_Flow_FD
 conformance: SHALL
-content_hash: 29820fa1c8b62015cc54b871b212b6511219b844a1a7b950dbcd133c22f77df1
+content_hash: ac495f4e8e52adf798a04bac79a265dd145ff07c962281e75034783586625c29
 created: '2026-03-23T10:57:49.574934'
-date: '2026-03-23T10:57:49.574937'
+date: '2026-03-23T13:47:27.795939'
 key: IG-TIFLOW-XBORDER-58
 modified: '2026-03-23T10:57:49.574935'
 release_status: STABLE
 source: input/pagecontent/op-grant-eu-access-permission-req-fd.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
+  TI_Flow_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt
+text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt
   /$grant-eu-access-permission prüfen, dass der im Request übermittelte Ländercode
   (Parameters.parameter:countryCode) einem Land entspricht, welches die Anwendung
   ePrescription/eDispensation Szenario Land A unterstützt und bei fehlschlagender
   Prüfung die Operation mit dem HTTP-Fehlercode 409 und dem OperationOutcome "Für
   das angefragte Land ist Einlösen von E-Rezepten nicht möglich." abbrechen, damit
   der Versicherte nur für zulässige europäische Länder eine Zugriffsberechtigung erteilt.
-title: E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Ländercode
+title: TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Ländercode
 version: 0

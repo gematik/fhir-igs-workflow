@@ -1,22 +1,22 @@
 actor:
-- eRp_FD
+- TI_Flow_FD
 conformance: SHALL
-content_hash: 8f4cacfb4affafa50b1f5e2cd52cd6788f9f605f8aee5f257d8056df0d07288f
+content_hash: 897060e49316f7239682f3973b0416ed9659c0fa3f2e5053c61f88687add8e3a
 created: '2026-03-23T10:57:49.326659'
-date: '2026-03-23T10:57:49.326662'
+date: '2026-03-23T13:47:27.434934'
 key: IG-TIFLOW-CHRG-70
 modified: '2026-03-23T10:57:49.326661'
 release_status: STABLE
 source: input/pagecontent/query-api-chargeitem-req-fd.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
+  TI_Flow_FD:
   - Produktgutachten
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
+text: Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
   /ChargeItem eine 256-Bit-Zufallszahl mit einer Mindestentropie von 120 Bit erzeugen,
   hexadezimal kodieren ([0-9a-f]{64}) und diese im zu speichernden ChargeItem als
   externe ID in ChargeItem.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode
   hinzufügen, damit nachfolgende Zugriffe auf diesen Datensatz nur durch Berechtigte
   in Kenntnis des AccessCodes erfolgen.
-title: E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Generierung AccessCode
+title: TI-Flow-Fachdienst – Abrechnungsinformation bereitstellen – Generierung AccessCode
 version: 0

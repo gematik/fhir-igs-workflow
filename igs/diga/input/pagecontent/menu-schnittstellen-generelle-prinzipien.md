@@ -1,7 +1,7 @@
 <!-- Generelle Prinzipien -->
 
 ### Authentisierung
-Die Authentisierung am E-Rezept-Fachdienst erfolgt über ACCESS_TOKEN. Für
+Die Authentisierung am TI-Flow-Fachdienst erfolgt über ACCESS_TOKEN. Für
 Kostenträger wird das Token über den zentralen IDP-Dienst ausgestellt. 
 
 ### FHIR-VZD

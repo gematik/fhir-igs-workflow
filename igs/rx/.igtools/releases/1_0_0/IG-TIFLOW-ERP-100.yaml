@@ -1,22 +1,22 @@
 actor:
-- eRp_FD
+- TI_Flow_FD
 conformance: SHALL
-content_hash: 9b81efc06bc564423c53fb0733edde1b50e2beac9896bf8895cd57945689662f
+content_hash: 6e17dbdc2d9f456b7360f8e3cd41f006030e65cd2b309f979584a01329bb319e
 created: '2026-03-23T10:57:49.809659'
-date: '2026-03-23T10:57:49.809661'
+date: '2026-03-23T13:47:28.507604'
 key: IG-TIFLOW-ERP-100
 modified: '2026-03-23T10:57:49.809660'
 release_status: STABLE
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
+  TI_Flow_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
+text: Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
   über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
   wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
   = true) gekennzeichnet ist und das Startdatum (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start)
   vor dem Ausstellungsdatum (MedicationRequest.authoredOn) liegt.
-title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Startdatum nicht
+title: TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Startdatum nicht
   vor Ausstellungsdatum
 version: 0

@@ -1,22 +1,22 @@
 actor:
-- eRp_FD
+- TI_Flow_FD
 conformance: SHALL
-content_hash: 5b0347528abecd629bacaa99c6c957fe4035c9829dd0f836784144da9a9c8598
+content_hash: 6a3313d15282e4b365c80c3891fcea09269819161d54453dc9d6dc9c3a0c901e
 created: '2026-03-23T10:57:49.809512'
-date: '2026-03-23T10:57:49.809514'
+date: '2026-03-23T13:47:28.507400'
 key: IG-TIFLOW-ERP-99
 modified: '2026-03-23T10:57:49.809513'
 release_status: STABLE
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
+  TI_Flow_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
+text: Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
   über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
   wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
   = true) gekennzeichnet ist und der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start)
   nicht angegeben ist, weil die Information des Beginns der Einlösefrist notwendig
   ist, um den Gültigkeitszeitraum zu ermitteln.
-title: E-Rezept-Fachdienst - Task aktivieren - Mehrfachverordnung - Beginn Einlösefrist-Pflicht
+title: TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Beginn Einlösefrist-Pflicht
 version: 0

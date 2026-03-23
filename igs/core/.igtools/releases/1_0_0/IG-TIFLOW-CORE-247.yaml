@@ -1,24 +1,24 @@
 actor:
-- eRp_FD
+- TI_Flow_FD
 conformance: SHALL
-content_hash: e871c70fc51f43374a21379917d40260aad1aeb0b48755e9ceb781d56f64333a
+content_hash: 2a731b909e124e6effd4882eef217c021680c9071597d44efbdffe077db76de1
 created: '2026-03-23T10:57:48.480159'
-date: '2026-03-23T10:57:48.480162'
+date: '2026-03-23T13:47:26.491554'
 key: IG-TIFLOW-CORE-247
 modified: '2026-03-23T10:57:48.480161'
 release_status: STABLE
 source: input/pagecontent/op-accept-req-fd.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
+  TI_Flow_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
+text: Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
   über /Task/&lt;id&gt;/$accept die Operation mit dem HTTP-Fehlercode 410 abbrechen,
   wenn der referenzierte /Task/&lt;id&gt; existiert, jedoch kein AccessCode im Task.identifier:AccessCode
   als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode vorhanden ist
   oder der Status Task.status = cancelled ist, damit die abgebende Institution den
   Versicherten über die zwischenzeitliche Löschung des Datensatzes in Kenntnis setzen
   kann.
-title: E-Rezept-Fachdienst - Task akzeptieren - Prüfung Datensatz zwischenzeitlich
+title: TI-Flow-Fachdienst - Task akzeptieren - Prüfung Datensatz zwischenzeitlich
   gelöscht
 version: 0

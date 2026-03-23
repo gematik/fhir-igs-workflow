@@ -5,7 +5,7 @@ Die Operation $close wird als HTTP POST auf /Task/&#60;id&#62;/$close ausgeführ
 
 ### Anforderungen an Schnittstelle
 
-- [Server-Anforderungen zu `$close`](./op-close-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [Server-Anforderungen zu `$close`](./op-close-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
 
 - [Anforderungen für KTR zu `$close`](./op-close-req-ktr.html): Anforderungen an das Clientsystem des KTR zur Nutzung der Schnittstelle.
 

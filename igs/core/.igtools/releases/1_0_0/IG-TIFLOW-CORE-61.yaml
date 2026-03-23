@@ -1,21 +1,21 @@
 actor:
-- eRp_FD
+- TI_Flow_FD
 conformance: SHALL
-content_hash: 83d91d6160a1cbac0b7c63918d6f1f92bb00babba7c7492c84a6874c172ffe6e
+content_hash: 7c5109e950d9ce54a7da24cbb76d90d9b03d05ff40d6dac429bc3948649ef117
 created: '2026-03-23T10:57:48.438522'
-date: '2026-03-23T10:57:48.438525'
+date: '2026-03-23T13:47:26.445566'
 key: IG-TIFLOW-CORE-61
 modified: '2026-03-23T10:57:48.438524'
 release_status: STABLE
 source: input/pagecontent/op-close-req-fd.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
+  TI_Flow_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation
+text: Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation
   über /Task/&lt;id&gt;/$close den im referenzierten Task gespeicherten Status Task.status
   prüfen und mit dem Fehler 412 abbrechen, wenn Task.status ungleich "in-progress"
   ist, damit der Workflow nur abgeschlossen werden kann, wenn sich die Verordnung
   in Belieferung befindet.
-title: E-Rezept-Fachdienst - Task schließen - Prüfung Status
+title: TI-Flow-Fachdienst - Task schließen - Prüfung Status
 version: 0

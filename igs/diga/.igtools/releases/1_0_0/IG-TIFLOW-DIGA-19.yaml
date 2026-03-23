@@ -1,23 +1,23 @@
 actor:
-- eRp_FD
+- TI_Flow_FD
 conformance: SHALL
-content_hash: 9ee6a60b0ded6a78b64498071f8c30ffd3b95047e486c7c1d2d38897fc56cb5e
+content_hash: 843ff8b06738a4cbc4a4229fcf7f559c18b468afdfd381a867945786de5b89f2
 created: '2026-03-23T10:57:49.157423'
-date: '2026-03-23T10:57:49.157425'
+date: '2026-03-23T13:47:27.054912'
 key: IG-TIFLOW-DIGA-19
 modified: '2026-03-23T10:57:49.157424'
 release_status: STABLE
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
+  TI_Flow_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Task des Flowtype Task.extension:flowType
+text: Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Task des Flowtype Task.extension:flowType
   = 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate prüfen, ob die
   Extension Coverage.payor.identifier.extension:alternativeID vorhanden ist und in
   diesem Fall die Operation mit Http-Fehlercode 400 abbrechen, um sicherzustellen,
   dass dieser Workflow nicht für Verordnungen genutzt wird, die zu Lasten von Unfallkassen
   oder Berufsgenossenschaften gehen.
-title: E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Alternative
+title: TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Alternative
   IK
 version: 0

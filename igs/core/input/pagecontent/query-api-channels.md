@@ -1,5 +1,5 @@
 
-Für den Empfang von Push Notifications in einem FdV kann die App-Instanz eine Konfiguration am E-Rezept-Fachdienst hinterlegen. Für die Konfiguration wird die Ressource channels verwendet.
+Für den Empfang von Push Notifications in einem FdV kann die App-Instanz eine Konfiguration am TI-Flow-Fachdienst hinterlegen. Für die Konfiguration wird die Ressource channels verwendet.
 
 ### Nachricht
 
@@ -13,13 +13,13 @@ Die Nachricht zur Interaktion mit Konfigurationen für Push Notifications als Re
 
 ### Anforderungen an Schnittstelle
 
-- [FD-Anforderungen zur channels-Query](./query-api-channels-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [FD-Anforderungen zur channels-Query](./query-api-channels-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
 - [FdV-Anforderungen zur channels-Query](./query-api-channels-req-fdv.html): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
 
 
 ### Resource API
 
-Der E-Rezept-Fachdienst unterstützt das optionale Feature "Channels". Ruft alle verfügbaren Channels für den authentifizierten Nutzer ab.
+Der TI-Flow-Fachdienst unterstützt das optionale Feature "Channels". Ruft alle verfügbaren Channels für den authentifizierten Nutzer ab.
 
 #### API Beschreibung
 

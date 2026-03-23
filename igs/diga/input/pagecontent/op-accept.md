@@ -5,7 +5,7 @@ Die Operation $accept wird als HTTP POST auf /Task/&#60;id&#62;/$accept ausgefü
 
 ### Anforderungen an Schnittstelle
 
-- [Server-Anforderungen zu `$accept`](./op-accept-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [Server-Anforderungen zu `$accept`](./op-accept-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
 
 - [Anforderungen für KTR zu `$accept`](./op-accept-req-ktr.html): Anforderungen an das Clientsystem des KTR zur Nutzung der Schnittstelle.
 
