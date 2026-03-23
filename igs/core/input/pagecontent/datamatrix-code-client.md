@@ -153,7 +153,7 @@ Die Apotheke stimmt mit dem Patienten ab, wie mit der Teilverordnung verfahren w
 Um auf Wunsch des Versicherten den PKV-Abgabedatensatz ändern zu können,  muss die Apotheke das Wissen um die Referenz des ChargeItem und den AccessCode zum Nachweis der Berechtigung erlangen. Diese Informationen werden vom Versicherten zur Verfügung gestellt. Die Bereitstellung kann als Nachricht über den E-Rezept-Fachdienst oder durch Abscannen als 2D-Code vom Display der E-Rezept-FdV erfolgen. 
 
 <!-- A_22729 -->
-<requirement conformance="SHALL" key="" title="Datenstruktur Zugriffsinformationen für Abrechnungsinformation" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-404" title="Datenstruktur Zugriffsinformationen für Abrechnungsinformation" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -165,7 +165,7 @@ Beispiel für Abrechnungsinformation-Token: <br>
 "ChargeItem/200.100.000.000.004.30?ac=0037c20b8e893b690f07d784fcfcf38c748454c08253a8b2c0499347576ca612"
 
 <!-- A_22730 -->
-<requirement conformance="SHALL" key="" title="Generierung 2D-Code Abrechnungsinformation-Token" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-405" title="Generierung 2D-Code Abrechnungsinformation-Token" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>

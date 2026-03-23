@@ -96,7 +96,7 @@ Bsp.-URL: GET /Task?kvnr=X11058...&hcv=F9Z...I&pnw=H4sIAAAAA...
 Mit diesem Anwendungsfall kann die abgebende LEI die Zugriffsinformationen zu allen einlösbaren E-Rezepten von einem Versicherten, dessen eGK mit einem im Rahmen von PoPP zulässigen Kartenlesegerät eingelesen wurde, vom E-Rezept-Fachdienst abrufen.
 
 <!-- A_22435-02 -->
-<requirement conformance="SHALL" key="" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (PoPP) - PoPP-Token abrufen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-214" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (PoPP) - PoPP-Token abrufen" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>
@@ -110,7 +110,7 @@ Für die Umsetzung siehe [spec-ilf-popp-client].
 Hinweis: Im Response des PoPP-Service erhält das PS den PoPP-Token im JWT Compact Serialization Format (s. gemSpec_PoPP_Service#A_26432). Das PS gibt den PoPP-Token im gleichen Format an den E-Rezept-Fachdienst weiter.
 
 <!-- A_22437-02 -->
-<requirement conformance="SHALL" key="" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (PoPP) - E-Rezepte abrufen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-215" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (PoPP) - E-Rezepte abrufen" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>

@@ -112,7 +112,7 @@ Für weitere Informationen siehe Anwendungsfall "Suche nach Apotheken im FHIR VZ
 Für weitere Informationen siehe "Eine Apotheke aus dem Apotheken-Verzeichnis auswählen" in der API-Schnittstelle [VZD API Dokumentation].
 
 <!-- A_28197 -->
-<requirement conformance="SHALL" key="" title="E-Rezept-FdV: Apotheke suchen - Filter Öffentliche Apotheke" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-216" title="E-Rezept-FdV: Apotheke suchen - Filter Öffentliche Apotheke" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>

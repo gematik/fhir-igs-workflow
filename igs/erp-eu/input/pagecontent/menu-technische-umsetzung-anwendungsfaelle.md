@@ -95,7 +95,7 @@
 
 
 <!--A_27116 -->
-<requirement conformance="SHALL" key="" title="E-Rezept-FdV: Zugriffsberechtigung anzeigen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-63" title="E-Rezept-FdV: Zugriffsberechtigung anzeigen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>

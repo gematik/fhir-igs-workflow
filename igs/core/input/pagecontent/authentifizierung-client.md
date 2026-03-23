@@ -541,7 +541,7 @@ Der Nutzer des E-Rezept-FdV muss sich für Zugriffe auf den E-Rezept-Fachdienst
 Die Authentisierung kann gegenüber dem IDP-Dienst mittels eGK unter Kenntnis der PIN der eGK oder mit der GesundheitsID, d.h. Nutzerauthentisierung gegenüber dem sektoralen IDP, erfolgen.
 
 <!-- A_25224 -->
-<requirement conformance="SHALL" key="" title="E-Rezept-FdV: Authentisierung E-Rezept-Fachdienst" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-399" title="E-Rezept-FdV: Authentisierung E-Rezept-Fachdienst" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
@@ -550,7 +550,7 @@ Die Authentisierung kann gegenüber dem IDP-Dienst mittels eGK unter Kenntnis de
 </requirement>
 
 <!-- A_20167-02 -->
-<requirement conformance="SHALL" key="" title="E-Rezept-FdV: Authentisierung E-Rezept-Fachdienst - IDP-Dienst - Rolle Anwendungsfrontend und optional Authenticator-Modul" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-400" title="E-Rezept-FdV: Authentisierung E-Rezept-Fachdienst - IDP-Dienst - Rolle Anwendungsfrontend und optional Authenticator-Modul" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produktgutachten"/>
@@ -559,7 +559,7 @@ Die Authentisierung kann gegenüber dem IDP-Dienst mittels eGK unter Kenntnis de
 </requirement>
 
 <!-- A_25225 -->
-<requirement conformance="SHALL" key="" title="E-Rezept-FdV: Authentisierung E-Rezept-Fachdienst - sektoraler IDP - Rolle Anwendungsfrontend" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-401" title="E-Rezept-FdV: Authentisierung E-Rezept-Fachdienst - sektoraler IDP - Rolle Anwendungsfrontend" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
@@ -572,7 +572,7 @@ Für Informationen zum Ablauf der Authentisierung siehe [gemSpec_IDP_Dienst] und
 Das E-Rezept-FdV erhält bei erfolgreicher Authentisierung einen Authentisierungstoken (ACCESS_TOKEN), welcher an den E-Rezept-Fachdienst weitergeleitet wird.
 
 <!-- A_20117-01 -->
-<requirement conformance="SHALL" key="" title="E-Rezept-FdV: Zugriff E-Rezept-Fachdienst - Authentisierung wenn kein gültiger ACCESS_TOKEN" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-402" title="E-Rezept-FdV: Zugriff E-Rezept-Fachdienst - Authentisierung wenn kein gültiger ACCESS_TOKEN" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
@@ -585,7 +585,7 @@ Das E-Rezept-FdV erhält bei erfolgreicher Authentisierung einen Authentisierung
 Das E-Rezept-FdV KANN die Authentisierung am sektoralen IDP mittels eGK und PIN, ohne GesundheitsID, unterstützen.
 
 <!-- A_28409 -->
-<requirement conformance="SHALL" key="" title="E-Rezept-FdV: Authentisierung mit eGK und PIN (Gast-Login) - Parameter" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-403" title="E-Rezept-FdV: Authentisierung mit eGK und PIN (Gast-Login) - Parameter" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
