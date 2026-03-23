@@ -1,11 +1,12 @@
-canonical: https://gematik.de/fhir/workflow/core
+canonical: https://gematik.de/fhir/tiflow/core
 fhirVersion: 4.0.1
 applyExtensionMetadataToRoot: false
-id: de.gematik.workflow.core
-name: E-Rezept Workflow Core #TODO Name muss von Team Polarion vorgegeben werden gemIG...
-title: "Implementation Guide E-Rezept-Workflow Core"
+id: de.gematik.tiflow.core
+name: gemIG_TIFlow_core
+title: "TIFlow - Kernfunktionalitäten"
 status: draft # draft | active | retired | unknown
-version: 1.0.0-draft
+version: 0.9.0
+date: 2026-03-26
 
 copyrightYear: 2025+
 releaseLabel: ci-build # ci-build, ballot, release
@@ -25,27 +26,186 @@ dependencies:
 menu:
   Start: index.html
   Grundlagen:
+    Generelle Prinzipien: menu-schnittstellen-generelle-prinzipien.html
     Zugriffsprotokollierung: audit-service.html
-    Datenschutz und Sicherheit: data-security.html
     FHIR-Validierung: fhir-validate.html
-    Loeschfristen: ttl.html
+    Löschfristen: ttl.html
+    Fehlercodes: error-codes.html
+    Kommunikation zu Diensten der TI: kommunikation-dienste-ti.html
+    PKI Zertifikatsprüfung: pki-zertifikatspruefung.html
+    Datamatrix Code: datamatrix-code-client.html
+    Authentifizierung von Clientsystemen: authentifizierung-client.html
+    Health Check: health-check.html
+    Fehlerbehandlung Clientsysteme: fehlerbehandlung-client.html
+  Technische Funktionsmerkmale:
+    ePA Medication Service: menu-technische-umsetzung-epa-ms.html
+    Push Notification: menu-technische-umsetzung-push.html
+    Paginierung: menu-technische-umsetzung-paging.html
+  Schnittstellen:
+    Query API: menu-schnittstellen-query-api.html
+    Operation API: menu-schnittstellen-operation-api.html
   FHIR-Artefakte: artifacts.html
+  Anforderungsmapping: requirement-mapping-old-to-new.html
+
+# TODO Neuausschreibung: Technische Anbindung an externe Systeme, ePA, F-VZD, BfArM beschreiben
+# TODO: menu-technische-umsetzung-systemueberblick einbinden
 
 pages:
   index.md:
     title: "Implementation Guide E-Rezept-Workflow Core"
   audit-service.md:
     title: "Zugriffsprotokollierung"
-  data-security.md:
-    title: "Datenschutz und Sicherheit"
   fhir-validate.md:
     title: "FHIR-Ressource validieren"
   ttl.md:
-    title: "Loeschfristen"
+    title: "Löschfristen"
+  menu-technische-umsetzung-epa-ms.md:
+    title: "ePA MedicationService"
+  menu-technische-umsetzung-push.md:
+    title: "Push Notification senden"
+  error-codes.md:
+    title: "Fehlercodes"
+  kommunikation-dienste-ti.md:
+    title: "Kommunikation zu Diensten der TI"
+  datamatrix-code-client.md:
+    title: "Datamatrix Code"
+  pki-zertifikatspruefung.md:
+    title: "Zertifikatsprüfung"
+  authentifizierung-client.md:
+    title: "Authentifizierung von Clientsystemen"
+  health-check.md:
+    title: "Health Check"
+  fehlerbehandlung-client.md:
+    title: "Fehlerbehandlung Clientsysteme"
+  menu-schnittstellen-datenschutz-und-sicherheit.md:
+    title: "Datenschutz und Sicherheit"
+  menu-schnittstellen-generelle-prinzipien.md:
+    title: "Generelle Prinzipien"
+  menu-technische-umsetzung-systemueberblick.md:
+    title: "Technische Umsetzung - Systemüberblick"
+  menu-technische-umsetzung-paging.md:
+    title: "Handhabung der Rückgabe von mehreren FHIR-Objekten"
+  menu-technische-umsetzung-subscription.md:
+    title: "Notifications für AVS"
+  menu-schnittstellen-operation-api.md:
+    title: "Operation API"
+    op-create.md:
+      title: "Operation $create (Task erzeugen)"
+      op-create-req-fd.md:
+        title: "Server-Anforderungen $create"
+      op-create-req-pvs.md:
+        title: "Client-Anforderungen $create"
+    op-activate.md:
+      title: "Operation $activate (Task aktivieren)"
+      op-activate-req-fd.md:
+        title: "Server-Anforderungen $activate"
+      op-activate-req-pvs.md:
+        title: "Client-Anforderungen $activate"
+    op-accept.md:
+      title: "Operation $accept (Task akzeptieren)"
+      op-accept-req-fd.md:
+        title: "Server-Anforderungen $accept"
+      op-accept-req-avs.md:
+        title: "AVS-Anforderungen $accept"
+      op-accept-req-ktr.md:
+        title: "KTR-Anforderungen $accept"
+    op-reject.md:
+      title: "Operation $reject (Task zurückweisen)"
+      op-reject-req-fd.md:
+        title: "Server-Anforderungen $reject"
+      op-reject-req-avs.md:
+        title: "AVS-Anforderungen $reject"
+      op-reject-req-ktr.md:
+        title: "KTR-Anforderungen $reject"
+    op-close.md:
+      title: "Operation $close (Task schließen)"
+      op-close-req-fd.md:
+        title: "Server-Anforderungen $close"
+      op-close-req-avs.md:
+        title: "AVS-Anforderungen $close"
+      op-close-req-ktr.md:
+        title: "KTR-Anforderungen $close"
+    op-abort.md:
+      title: "Operation $abort (Task abbrechen)"
+      op-abort-req-fd.md:
+        title: "Server-Anforderungen $abort"
+      op-abort-req-pvs.md:
+        title: "PVS-Anforderungen $abort"
+      op-abort-req-avs.md:
+        title: "AVS-Anforderungen $abort"
+      op-abort-req-fdv.md:
+        title: "FdV-Anforderungen $abort"
+  menu-schnittstellen-query-api.md:
+    title: "Query API"
+    query-api-task.md:
+      title: "Query API: Task"
+      query-api-task-req-fd.md:
+        title: "Server-Anforderungen: Task-Query"
+      query-api-task-req-fdv.md:
+        title: "FdV-Anforderungen: Task-Query"
+      query-api-task-req-avs.md:
+        title: "AVS-Anforderungen: Task-Query"
+      query-api-task-req-ktr.md:
+        title: "KTR-Anforderungen: Task-Query"
+    query-api-medicationdispense.md:
+      title: "Query API: MedicationDispense"
+      query-api-medicationdispense-req-fd.md:
+        title: "Server-Anforderungen: MedicationDispense-Query"
+      query-api-medicationdispense-req-fdv.md:
+        title: "FdV-Anforderungen: MedicationDispense-Query"
+    query-api-auditevent.md:
+      title: "Query API: AuditEvent"
+      query-api-auditevent-req-fd.md:
+        title: "Server-Anforderungen: AuditEvent-Query"
+      query-api-auditevent-req-fdv.md:
+        title: "FdV-Anforderungen: AuditEvent-Query"
+    query-api-device.md:
+      title: "Query API: Device"
+      query-api-device-req-fd.md:
+        title: "Server-Anforderungen: Device-Query"
+      query-api-device-req-fdv.md:
+        title: "FdV-Anforderungen: Device-Query"
+    query-api-communication.md:
+      title: "Query API: Communication"
+      query-api-communication-req-fd.md:
+        title: "Server-Anforderungen: Communication-Query"
+      query-api-communication-req-fdv.md:
+        title: "FdV-Anforderungen: Communication-Query"
+      query-api-communication-req-avs.md:
+        title: "AVS-Anforderungen: Communication-Query"
+      query-api-communication-req-ktr.md:
+        title: "KTR-Anforderungen: Communication-Query"
+    query-api-consent.md:
+      title: "Query API: Consent"
+      query-api-consent-req-fd.md:
+        title: "Server-Anforderungen: Consent-Query"
+      query-api-consent-req-fdv.md:
+        title: "Client-Anforderungen: Consent-Query"
+    query-api-channels.md:
+      title: "Query API: Channels"
+      query-api-channels-req-fd.md:
+        title: "Server-Anforderungen: Channels-Query"
+      query-api-channels-req-fdv.md:
+        title: "FdV-Anforderungen: Channels-Query"
+    query-api-pushers.md:
+      title: "Query API: Pushers"
+      query-api-pushers-req-fd.md:
+        title: "Server-Anforderungen: Pushers-Query"
+      query-api-pushers-req-fdv.md:
+        title: "FdV-Anforderungen: Pushers-Query"
+    query-api-subscription.md:
+      title: "Query API: Subscription"
+      query-api-subscription-req-fd.md:
+        title: "Server-Anforderungen: Subscription-Query"
+      query-api-subscription-req-avs.md:
+        title: "AVS-Anforderungen: Subscription-Query"
   artifacts.md:
     title: "FHIR-Artefakte"
+  requirement-mapping-old-to-new.md:
+    title: "Mapping alter Anforderungen auf FHIR-IG Anforderungen"
 
 parameters:
+  shownav: true
   path-pages:
     - input/pagecontent
     - input/content

@@ -1,135 +1,323 @@
-### Technische Anwendungsfälle
+{% assign use_cases = site.data['gen-use-cases'] %}
+{% assign roles = site.data['roles'] %}
 
-Die folgenden technischen Anwendungsfälle ergänzen die fachlichen Anwendungsfälle zur Verordnung und Bereitstellung eines E-Rezepts.
-Sie beschreiben die Interaktion des Primärsystems (PVS/KIS) mit dem E-Rezept-Fachdienst (Workflow-Ressource *Task*), sowie die dabei relevanten Artefakte.
+Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der Verordnung von Arzneimitteln genutzt werden.
 
-Hinweis: Die konkreten Schnittstellenangaben werden im nächsten Schritt ergänzt; vorerst steht dort jeweils **todo**.
+### Umzusetzende Anwendungsfälle von Clients
 
-<a id="lesezugriffe"></a>
-#### Lesezugriffe
+#### PS verordnende LEI
 
-Dieser technische Anwendungsfall beschreibt lesende Zugriffe im Kontext der ärztlichen Verordnung. Dazu zählen insbesondere die Abfrage von Task-Informationen (z.B. Status), sowie der Abruf von in der Primärsystem-Logik benötigten Metadaten.
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-71" title="PS verordnende LEI: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Das PS der verordnenden LEI MUSS für die Umsetzung der Verordnung von E-Rezepten für Arzneimittel die Anwendungsfälle
 
-<em>Schnittstelle:</em> <i>todo</i>
+    <ul>
+    <li>UC 2.1 - E-Rezepte erzeugen</li>
+    <li>E-Rezept qualifiziert signieren</li>
+    <li>UC 2.3 - E-Rezept einstellen</li>
+    <li>UC 2.5 - E-Rezept durch Verordnenden löschen</li>
+    </ul>
 
-Typische Inhalte/Ergebnisse:
+    umsetzen.
+</requirement>
 
-- Abfrage des aktuellen Task-Status zur Einordnung des Workflows (z.B. `draft`, `ready`).
-- Abruf/Anzeige von für den Prozess relevanten Identifikatoren (z.B. Rezept-ID / PrescriptionID).
+#### E-Rezept-FdV 
 
-<a id="e-rezept-erstellen"></a>
-#### E-Rezept erstellen
+<!-- A_19443 -->
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-72" title="E-Rezept-FdV: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von E-Rezepten für Arzneimittel die Anwendungsfälle
+    <ul>
+        <li>UC 3.1 – E-Rezepte durch Versicherten abrufen</li>
+        <li>UC 3.6 – E-Rezept durch Vertreter abrufen</li>
+        <li>UC 3.2 – E-Rezept durch Versicherten löschen</li>
+        <li>UC 3.3 – Nachricht durch Versicherten übermitteln</li>
+        <li>UC 3.4 – Nachricht durch Versicherten empfangen</li>
+        <li>UC 3.8 – Nachricht durch Versicherten löschen</li>
+        <li>UC 3.5 - Protokolldaten abrufen</li>
+    </ul>
+    umsetzen.
+</requirement>
 
-Technische Einordnung des fachlichen Use Cases „E-Rezept erstellen“:
+#### PS abgebende LEI
 
-- Ein Task wird im E-Rezept-Fachdienst angelegt, um eine Rezept-ID (PrescriptionID) zu erhalten.
-- Der E-Rezept-Fachdienst erzeugt zusätzlich einen AccessCode, der für nachfolgende, berechtigte Operationen benötigt wird.
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-73" title="PS abgebende LEI: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Das PS der abgebenden LEI MUSS für die Umsetzung der Belieferung von E-Rezepten für Arzneimittel die Anwendungsfälle
+    <ul>
+        <li>UC 4.15 - Einlösbare E-Rezepte durch Abgebenden abrufen</li>
+        <li>UC 4.1 - E-Rezept durch Abgebenden abrufen</li>
+        <li>UC 4.2 - E-Rezept durch Abgebenden zurückgeben</li>
+        <li>UC 4.3 - E-Rezept durch Abgebenden löschen</li>
+        <li>UC 4.4 - Quittung abrufen</li>
+        <li>UC 4.5 - Abgabedatensatz durch Abgebenden signieren</li>
+        <li>UC 4.17 - Verordnung erneut abrufen</li>
+        <li>UC 4.8 - Quittung erneut abrufen</li>
+        <li>UC 4.6 - Nachrichten durch Abgebenden empfangen</li>
+        <li>UC 4.7 - Nachricht durch Abgebenden übermitteln</li>
+        <li>UC 4.9 - Nachricht durch Abgebenden löschen</li>
+    </ul>
+    umsetzen.
+</requirement>
 
-<em>Schnittstelle:</em> <i>todo</i>
-<em>Schnittstelle:</em> <i><a href="./todo.html">todo</a></i>
-<em>Schnittstelle:</em> <i><a href="./op-create.html">Operation API: E-Rezept erstellen</a></i>
+<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-74" title="PS abgebende LEI: TIFlow-RX - empfohlene Anwendungsfälle" version="0">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Das PS der abgebenden LEI SOLL für die Umsetzung der Belieferung von E-Rezepten für Arzneimittel den Anwendungsfall
+    <ul>
+    <li>UC 4.16 - Dispensierinformationen bereitstellen</li>
+    </ul>
+    umsetzen.
+</requirement>
 
-<a id="e-rezept-qualifiziert-signieren"></a>
-#### E-Rezept qualifiziert signieren
 
-Technische Einordnung des fachlichen Use Cases „E-Rezept qualifiziert signieren“:
+### Technische Use Cases
 
-- Der Verordnungsdatensatz wird im Primärsystem mittels HBA qualifiziert elektronisch signiert (QES).
-- Die QES wird typischerweise über den Konnektor erstellt; die signierten Nutzdaten werden anschließend für die Bereitstellung verwendet.
+#### Verordnende Leistungserbringerinstitution
 
-<em>Schnittstelle:</em> <i>todo</i>
+<!-- UC 2.1 - E-Rezepte erzeugen -->
+{% assign use_case = use_cases | where: "title", "UC 2.1 - E-Rezepte erzeugen" | first %}
 
-<a id="e-rezept-vervollstaendigen-und-task-aktivieren"></a>
-#### E-Rezept vervollständigen und Task aktivieren
+<a id="{{ use_case.anchor }}"></a>
+##### {{ use_case.title }}
 
-Technische Einordnung des fachlichen Use Cases „E-Rezept vervollständigen und Task aktivieren“:
+{% include use-case-details-table.html use_case=use_case roles=roles %}
 
-- Der QES-signierte Verordnungsdatensatz wird am referenzierten Task hinterlegt.
-- Der E-Rezept-Fachdienst validiert Signatur und Schemakonformität und setzt bei Erfolg den Task-Status auf `ready`.
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
-<em>Schnittstelle:</em> <i><a href="./op-activate.html">Operation API: E-Rezept aktivieren</a></i>
+<!-- E-Rezept qualifiziert signieren -->
+{% assign use_case = use_cases | where: "title", "E-Rezept qualifiziert signieren" | first %}
 
-Technischer Ablauf (vereinfachte Sicht):
+<a id="{{ use_case.anchor }}"></a>
+##### {{ use_case.title }}
 
-- Das Primärsystem ruft die Operation zur Aktivierung des referenzierten Tasks auf und übergibt dabei die QES-signierten Verordnungsdaten gemäß Operationsdefinition.
-- Der E-Rezept-Fachdienst prüft u.a. die Berechtigung (z.B. AccessCode am Task), die Integrität der Signatur sowie die Schemakonformität der fachlichen Nutzdaten.
-- Bei erfolgreicher Prüfung hinterlegt der E-Rezept-Fachdienst die Nutzdaten serverseitig und verknüpft sie mit dem Workflow (Task) so, dass die nachfolgende Einlösung/Belieferung möglich ist.
+{% include use-case-details-table.html use_case=use_case roles=roles %}
 
-Relevante Datenmodelle und Relationen (konzeptionell):
+- Die QES-Erstellung erfolgt im Primärsystem (HBA/Konnektor) vor dem Aufruf von `$activate`.
 
-- *Task* (Workflow-Ressource)
-	- Status-Transition: `draft` → `ready`.
-	- Referenzierung der bereitgestellten Verordnungsdaten (z.B. über `Task.input` auf eine serverseitig gespeicherte Ressource).
-- *Binary* (Transport-/Persistenz-Container)
-	- Persistierung der vom Primärsystem übermittelten, signierten Nutzdaten (QES/PKCS#7/CAdES) als serverseitiges Artefakt.
-	- Verknüpfung vom Task auf diese Persistenz (indirekt über Referenzen in `Task.input`/`Task.output`).
-- Verordnungsdaten (fachliche Payload, typischerweise als Bundle gemäß KBV/ERP-Profilen)
-	- Inhaltliche Konsistenzprüfungen (z.B. Identifikatoren, Prüfziffern, flowtype-spezifische Constraints) erfolgen im Rahmen der Aktivierung.
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
-Ergebnis:
+<!-- UC 2.3 - E-Rezept einstellen -->
+{% assign use_case = use_cases | where: "title", "UC 2.3 - E-Rezept einstellen" | first %}
 
-- Bei Erfolg liefert der E-Rezept-Fachdienst den aktualisierten Task zurück (inkl. `ready`), sodass der Einlöse-Workflow starten kann.
-- Bei Fehlern erfolgt eine ablehnende Antwort gemäß Operationsdefinition (z.B. fehlende/ungültige Berechtigung, ungültige Signatur, nicht schemakonforme oder fachlich inkonsistente Daten).
+<a id="{{ use_case.anchor }}"></a>
+##### {{ use_case.title }}
 
-##### Mehrfachverordnung (MVO) – technische Ergänzungen
+{% include use-case-details-table.html use_case=use_case roles=roles %}
 
-Für Mehrfachverordnungen gelten zusätzliche Prüfungen und Datenanforderungen:
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
-- **Kennzeichnung im Verordnungsdatensatz:**
-    - `MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true`
-    - Nummerierung der Teilverordnung in `valueRatio.numerator` (1..4)
-    - Gesamtzahl der Teilverordnungen in `valueRatio.denominator` (2..4)
-    - Gültigkeitszeitraum in `valuePeriod.start` (Pflicht) und optional `valuePeriod.end`
-- **Flowtype-Zulässigkeit:** Nur 160, 169, 200 oder 209.
-- **Ausschlüsse:** Keine Mehrfachverordnung bei Entlassrezepten (Rechtsgrundlage 04/14) oder Ersatzverordnungen (Rechtsgrundlage 10/11/17).
-- **Konsistenzregeln:**
-    - Numerator ≤ Denominator
-    - Numerator ≥ 1
-    - Denominator ≥ 2
-- **Gültigkeit:** Wenn `valuePeriod.end` fehlt, wird die Teilverordnung bis *Ausstellungsdatum + 365 Tage* gültig geführt.
+<b>Technische Aspekte für die Mehrfachverordnung (MVO)</b>
 
-Diese Regeln werden beim `$activate` geprüft; fehlerhafte MVO-Daten führen zu HTTP 400.
+Für jede Teilverordnung einer Mehrfachverordnung wird ein einzelnes E-Rezept erstellt. Im Verordnungsdatensatz wird das E-Rezept als Teil einer Mehrfachverordnung gekennzeichnet (`MedicationRequest: extension:Mehrfachverordnung.extension:Kennzeichen`).
 
-##### MVO-Teilverordnungen abrufen ($accept)
+Zusätzlich werden u.a. die Informationen
+- Nummer des Rezepts der Mehrfachverordnung (`MedicationRequest.extension:Mehrfachverordnung.extension:Nummerierung.value[x]:valueRatio.numerator`)
+- Gesamtzahl der Teilverordnungen in der Mehrfachverordnung (`MedicationRequest: extension Mehrfachverordnung.extension: Nummerierung.value[x]:valueRatio.denominator`)
+- Start der Gültigkeit (`MedicationRequest.extension: Mehrfachverordnung extension: Zeitraum.value[x]:valuePeriod.start`)
+- Ende der Gültigkeit (`MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.end`) 
+angegeben.
 
-Beim Abruf einer Teilverordnung durch Apotheke/AVS MUSS der E-Rezept-Fachdienst den Beginn der Einlösefrist prüfen. Liegt `valuePeriod.start` in der Zukunft, wird der Aufruf mit HTTP 403 abgewiesen und das Datum im `OperationOutcome` ausgegeben ("Teilverordnung ab <Datum> einlösbar").
+Jede Teilverordnung einer Mehrfachverordnung wird im E-Rezept-Fachdienst mit einem eigenen Workflow (Task) verwaltet. Dies ermöglicht den Versicherten und den Apotheken eine separate Verarbeitung jedes E-Rezepts einer Mehrfachverordnung.
 
-<figure>
-    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-        <img src="./t-uc-activate-diagram.png" alt="Anwendungsfall E-Rezept einstellen" style="width: 100%;">
-    </div>
-    <figcaption><strong>Abbildung: </strong>Anwendungsfall E-Rezept einstellen</figcaption>
-</figure>
+<!-- UC 2.5 - E-Rezept durch Verordnenden löschen -->
+{% assign use_case = use_cases | where: "title", "UC 2.5 - E-Rezept durch Verordnenden löschen" | first %}
 
-<br>
+<a id="{{ use_case.anchor }}"></a>
+##### {{ use_case.title }}
 
-Im E-Rezept-Fachdienst Datenraum werden die folgenden Verknüpfungen und Datenmodelle verwendet, um den Anwendungsfall technisch umzusetzen:
+{% include use-case-details-table.html use_case=use_case roles=roles %}
 
-<figure>
-    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-        {% include IG-ERP-DM-TASK-INPUT-REFERENCES.svg %}
-    </div>
-    <figcaption><strong>Abbildung: </strong>todo</figcaption>
-</figure>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
-<br>
+#### Versicherter
 
-<a id="e-rezept-loeschen"></a>
-#### E-Rezept löschen
+<!-- UC 3.1 - E-Rezepte durch Versicherten abrufen -->
+{% assign use_case = use_cases | where: "title", "UC 3.1 - E-Rezepte durch Versicherten abrufen" | first %}
 
-Technische Einordnung des fachlichen Use Cases „E-Rezept löschen“:
+<a id="{{ use_case.anchor }}"></a>
+##### {{ use_case.title }}
 
-- Das E-Rezept wird (solange es nicht in Belieferung ist) über den E-Rezept-Fachdienst widerrufen/gelöscht.
-- Technisch bedeutet dies, dass der referenzierte Task gelöscht wird; Nutzdaten werden dabei nicht mehr bereitgestellt.
+{% include use-case-details-table.html use_case=use_case roles=roles %}
 
-<em>Schnittstelle:</em> <i><a href="./op-abort.html">Operation API: E-Rezept löschen</a></i>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
-<a id="epa-ms"></a>
-#### Übertragen an den ePA MedicationService
+<!-- UC 3.2 - E-Rezept durch Versicherten löschen -->
+{% assign use_case = use_cases | where: "title", "UC 3.2 - E-Rezept durch Versicherten löschen" | first %}
 
-Technische Einordnung des fachlichen Use Cases „E-Rezept löschen“:
+<a id="{{ use_case.anchor }}"></a>
+##### {{ use_case.title }}
 
-- Das E-Rezept wird (solange es nicht in Belieferung ist) über den E-Rezept-Fachdienst widerrufen/gelöscht.
-- Technisch bedeutet dies, dass der referenzierte Task gelöscht wird; Nutzdaten werden dabei nicht mehr bereitgestellt.
+{% include use-case-details-table.html use_case=use_case roles=roles %}
 
-<em>Schnittstelle:</em> <i><a href="./op-abort.html">Operation API: E-Rezept löschen</a></i>
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
+<!-- UC 3.3 - Nachricht durch Versicherten übermitteln -->
+{% assign use_case = use_cases | where: "title", "UC 3.3 - Nachricht durch Versicherten übermitteln" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+##### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
+<!-- UC 3.4 - Nachrichten durch Versicherten empfangen -->
+{% assign use_case = use_cases | where: "title", "UC 3.4 - Nachrichten durch Versicherten empfangen" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+##### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
+<!-- UC 3.8 - Nachricht durch Versicherten löschen -->
+{% assign use_case = use_cases | where: "title", "UC 3.8 - Nachricht durch Versicherten löschen" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+##### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
+#### Apotheke
+
+<!-- UC 4.6 - Nachrichten durch Abgebenden empfangen -->
+{% assign use_case = use_cases | where: "title", "UC 4.6 - Nachrichten durch Abgebenden empfangen" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+##### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
+<!-- UC 4.15 - Einlösbare E-Rezepte durch Abgebenden abrufen -->
+{% assign use_case = use_cases | where: "id", "UC_4_15_E_Rezepte_durch_Abgebenden_abrufen_PoPP" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+##### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
+<!-- UC 4.1 - E-Rezept durch Abgebenden abrufen -->
+{% assign use_case = use_cases | where: "title", "UC 4.1 - E-Rezept durch Abgebenden abrufen" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+##### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
+<b>Technische Aspekte für die Mehrfachverordnung (MVO)</b>
+
+Wenn ein AVS eine Teilverordnung abruft, deren Einlösezeitraum noch nicht erreicht ist, dann liefert der E-Rezept-Fachdienst einen Fehler 403. Im OperationOutcome der Fehlermeldung liefert der E-Rezept-Fachdienst das Datum des Beginns der Einlösefrist.
+
+Für die QES-Prüfung wird die PKCS#7-Datei verwendet. Die Verordnungsdaten des E-Rezepts sind innerhalb der PKCS#7-Datei enthalten und müssen für die Weiterverarbeitung extrahiert werden.
+
+<!-- UC 4.2 - E-Rezept durch Abgebenden zurückgeben -->
+{% assign use_case = use_cases | where: "title", "UC 4.2 - E-Rezept durch Abgebenden zurückgeben" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+##### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
+<!-- UC 4.3 - E-Rezept durch Abgebenden löschen -->
+{% assign use_case = use_cases | where: "title", "UC 4.3 - E-Rezept durch Abgebenden löschen" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+##### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
+<!-- UC 4.16 - Dispensierinformationen bereitstellen -->
+{% assign use_case = use_cases | where: "title", "UC 4.16 - Dispensierinformationen bereitstellen" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+##### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
+<!-- UC 4.4 - Quittung abrufen -->
+{% assign use_case = use_cases | where: "title", "UC 4.4 - Quittung abrufen" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+##### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
+<!-- UC 4.5 - Abgabedatensatz durch Abgebenden signieren -->
+{% assign use_case = use_cases | where: "title", "UC 4.5 - Abgabedatensatz durch Abgebenden signieren" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+##### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
+<!-- UC 4.17 - Verordnung erneut abrufen -->
+{% assign use_case = use_cases | where: "title", "UC 4.17 - Verordnung erneut abrufen" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+##### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
+<!-- UC 4.8 - Quittung erneut abrufen -->
+{% assign use_case = use_cases | where: "title", "UC 4.8 - Quittung erneut abrufen" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+##### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
+<!-- UC 4.7 - Nachricht durch Abgebenden übermitteln -->
+{% assign use_case = use_cases | where: "title", "UC 4.7 - Nachricht durch Abgebenden übermitteln" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+##### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
+<!-- UC 4.9 - Nachricht durch Abgebenden löschen -->
+{% assign use_case = use_cases | where: "title", "UC 4.9 - Nachricht durch Abgebenden löschen" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+##### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+

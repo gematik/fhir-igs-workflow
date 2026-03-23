@@ -1,0 +1,1522 @@
+[
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-28",
+        "title": "E-Rezept-FdV: optional: E-Rezept markieren",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-task-req-fdv.md",
+        "text": "Das E-Rezept-FdV KANN den Anwendungsfall \"E-Rezept markieren\" umsetzen.",
+        "conformance": "MAY",
+        "created": "2026-03-23T10:57:49.566062",
+        "modified": "2026-03-23T10:57:49.566064",
+        "date": "2026-03-23T10:57:49.566065",
+        "content_hash": "27d31a080eee6a33bfd7ef01b674f2f40ed1bfa4847b1174c0a95ed7148e0240",
+        "path": "query-api-task-req-fdv.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-53",
+        "title": "E-Rezept-FdV: Zugriffsberechtigung - Zugriffsberechtigung am E-Rezept-Fachdienst speichern",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-grant-eu-access-permission-req-fdv.md",
+        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung erteilen\" zum Speichern der Information am E-Rezept-Fachdienst die HTTP-Operation POST /$grant-eu-access-permission mit:\n    <ul>\n        <li>ACCESS_TOKEN im Authorization-Header</li>\n        <li>Organization.extension:ncpehCountryEx.valueCodeableConcept.coding.code des vom Nutzer ausgewählten Landes in Parameters.parameter:countryCode</li>\n        <li>erzeugter Zugriffscode in Parameters.parameter:accessCode</li>\n    </ul>\n    ausführen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.573890",
+        "modified": "2026-03-23T10:57:49.573891",
+        "date": "2026-03-23T10:57:49.573892",
+        "content_hash": "65129cdc45a22314ce41437a79f049588c38cb09422aab3ba9545bfa1d5872c6",
+        "path": "op-grant-eu-access-permission-req-fdv.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-45",
+        "title": "E-Rezept-Fachdienst - Task schließen - EU - Push Notification Versicherter",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-eu-close-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.eu.prescription.close\" und den Versicherten mit der KVNR = Task.for initiieren.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.571099",
+        "modified": "2026-03-23T10:57:49.571100",
+        "date": "2026-03-23T10:57:49.571101",
+        "content_hash": "37ea4ab0e7d05c6ffb8ec0e2185f3ba07eea91ff20bd91f3b6215b039b5e6528",
+        "path": "op-eu-close-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-2",
+        "title": "E-Rezept-Fachdienst - Zugriffsberechtigung - Liste zulässiger Länder",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-konzept.md",
+        "text": "Der E-Rezept-Fachdienst MUSS die Liste aller zulässigen Länder aus dem Verzeichnisdienst ermitteln, indem an den Verzeichnisdienst folgende Abfrage gestellt wird: Abfrage der Ressource \"HealthcareService\", HealthcareServices, deren Speciality \"57833-6\" aus https://loinc.org enthalten, HealthcareServices, deren Organisation aktiv sind, HealthcareServices, deren Organisation den OrganizationProfessionOIDType \"1.2.276.0.76.4.292\" entspricht, Einbeziehen der Organisation in das Rückgabeergebnis.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.560583",
+        "modified": "2026-03-23T10:57:49.560586",
+        "date": "2026-03-23T10:57:49.560587",
+        "content_hash": "d209d87420a8621cd3742b41c3daa79bd07b580149e1eb41c50920167e53aabb",
+        "path": "menu-technische-umsetzung-konzept.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-12",
+        "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Schema des Response",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-get-eu-prescriptions-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass die FHIR-Ressourcen zu einlösbaren Verordnungen in einem übergreifenden FHIR-Bundle gruppiert werden, absteigend sortiert nach dem medicationrequest.authored-on Datum, wobei das Bundle pro Verordnung ein FHIR-Bundle vom Typ https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle enthält, mit der unter https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId abgelegten Task-ID sowie den im MedicationRequest referenzierten Ressourcen MedicationRequest, Medication, Patient, Practitioner und Coverage.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.562266",
+        "modified": "2026-03-23T10:57:49.562268",
+        "date": "2026-03-23T10:57:49.562269",
+        "content_hash": "519cfae94e66c315927ad41661c2e5e906db093b4c5b4f0cb9ecb6627156fd85",
+        "path": "op-get-eu-prescriptions-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-32",
+        "title": "E-Rezept-FdV: E-Rezept markieren - Speicherrequest",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-task-req-fdv.md",
+        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezept markieren\" zum Speichern der Information im E-Rezept-Fachdienst die HTTP-Operation PATCH /Task/&lt;id&gt; mit: ACCESS_TOKEN im Authorization-Header, Prescription-ID in URL &lt;id&gt;, FHIR-Ressource im HTTP-Request-Body, ausführen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.566780",
+        "modified": "2026-03-23T10:57:49.566781",
+        "date": "2026-03-23T10:57:49.566782",
+        "content_hash": "147452a44224002d490f5ac1cd03a5e7db6b1aea709df347fb65740e3da7f8d9",
+        "path": "query-api-task-req-fdv.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-24",
+        "title": "E-Rezept-FdV: TIFlow-EU - optionale Anwendungsfälle",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-anwendungsfaelle.md",
+        "text": "Das E-Rezept-FdV MUSS für die Umsetzung der Bedienung von E-Rezepten im EU Kontext die Anwendungsfälle\n\n    <ul>\n    <li>UC 3.13 - Einwilligung einsehen</li>\n    <li>UC 3.14 - Einwilligung erteilen</li>\n    <li>UC 3.15 - Einwilligung widerrufen</li>\n    <li>UC 3.16 - Zugriffsberechtigung durch Versicherten erstellen</li>\n    <li>UC 3.17 - Zugriffsberechtigung durch Versicherten löschen</li>\n    <li>UC 3.18 - Zugriffsberechtigung durch Versicherten einsehen</li>\n    <li>Zugriffsberechtigung anzeigen</li>\n    <li>UC 3.19 - E-Rezept durch den Versicherten markieren</li>\n    </ul>\n\n    umsetzen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.565010",
+        "modified": "2026-03-23T10:57:49.565011",
+        "date": "2026-03-23T10:57:49.565012",
+        "content_hash": "e88088ef68fda3e10bb9f37eb0eb591a8d124e95d95f5ea949b9689feff343f2",
+        "path": "menu-technische-umsetzung-anwendungsfaelle.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-49",
+        "title": "E-Rezept-FdV: Zugriffsberechtigung - Liste zulässiger Länder",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-grant-eu-access-permission-req-fdv.md",
+        "text": "Das E-Rezept-FdV MUSS Anwendungsfall \"Zugriffsberechtigung erteilen\" die Liste aller zulässigen Länder aus dem Verzeichnisdienst ermitteln, indem an den Verzeichnisdienst folgende Abfrage gestellt wird:\n    <ul>\n        <li>Abfrage der Ressource \"HealthcareService\"</li>\n        <li>HealthcareServices, deren Speciality \"57833-6\" aus https://loinc.org enthalten</li>\n        <li>HealthcareServices, deren Organisation aktiv sind</li>\n        <li>HealthcareServices, deren Organisation den OrganizationProfessionOIDType \"1.2.276.0.76.4.292\" entspricht</li>\n        <li>Einbeziehen der Organisation in das Rückgabeergebnis</li>\n    </ul>",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.573247",
+        "modified": "2026-03-23T10:57:49.573249",
+        "date": "2026-03-23T10:57:49.573250",
+        "content_hash": "ee32eb11879fba0fc2ce4cec95626eb11658d7d7013549ebb03d8622f6a24377",
+        "path": "op-grant-eu-access-permission-req-fdv.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-48",
+        "title": "E-Rezept: Umsetzung des Moduls 'EU Zugriff E-Rezept'",
+        "actor": [
+            "NCPeH_ePeDA",
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "NCPeH_ePeDA": [
+                "Herstellererklärung"
+            ],
+            "eRp_FD": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/index.md",
+        "text": "Der E-Rezept-Fachdienst und dessen Client MÜSSEN zur Umsetzung des Implementation Guides \"EU Zugriff E-Rezept\" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.572521",
+        "modified": "2026-03-23T10:57:49.572523",
+        "date": "2026-03-23T10:57:49.572524",
+        "content_hash": "4ddc14f6cb5fce47ef9f893b40dc9b9cd493a74432712421358bf48beb29c25f",
+        "path": "index.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-25",
+        "title": "E-Rezept-FdV: Zugriffsberechtigung anzeigen",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-anwendungsfaelle.md",
+        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung anzeigen\" folgende Informationen auf dem Display anzeigen: \n    <ul>\n    <li>Name des Landes,</li>\n    <li>Gültigkeitsende,</li>\n    <li>Zugriffscode,</li>\n    <li>KVNR des Versicherten.</li>\n    </ul>",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.565258",
+        "modified": "2026-03-23T10:57:49.565260",
+        "date": "2026-03-23T10:57:49.565261",
+        "content_hash": "393d438937a3e09d483894eb5cfde97069529ed04f9bcbe1c5be5fc79ee923ad",
+        "path": "menu-technische-umsetzung-anwendungsfaelle.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-33",
+        "title": "E-Rezept-Fachdienst - Consent löschen - EUDISPCONS - Löschen Zugriffsberechtigung",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-consent-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt `/Consent` mit `?category=EUDISPCONS` alle dem Versicherten zugeordneten Zugriffsberechtigungen anhand der KVNR des Versicherten im ACCESS_TOKEN im \"Authorization\"-Header des HTTP-Requests identifizieren und löschen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.567708",
+        "modified": "2026-03-23T10:57:49.567710",
+        "date": "2026-03-23T10:57:49.567712",
+        "content_hash": "8321615c1c515c93ba187c6dc9c6b3918060981633d9cd11b57ff1482d0fbb92",
+        "path": "query-api-consent-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-13",
+        "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage der aktuellsten Verordnungsinformationen",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-get-eu-prescriptions-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions?_count=1 durch den NCPeH-FD sicherstellen, dass die Ressourcen der zuletzt ausgestellten einlösbaren Verordnung zurückgegeben werden und falls keine Verordnung vorliegt, mit dem HTTP-Statuscode 404 antworten.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.562402",
+        "modified": "2026-03-23T10:57:49.562403",
+        "date": "2026-03-23T10:57:49.562404",
+        "content_hash": "61b939d4986e6a3a4f5d45ffb6f8f4c854605d9f8d6f5f1ee94e88df72fd6e1b",
+        "path": "op-get-eu-prescriptions-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-3",
+        "title": "E-Rezept-Fachdienst - Zugriffsberechtigung - Caching Liste zulässiger Länder",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-konzept.md",
+        "text": "Der E-Rezept-Fachdienst DARF NICHT Informationen zur Liste zulässiger Länder verwenden, welche länger als 96h lokal durch den E-Rezept-Fachdienst gecacht wurden.",
+        "conformance": "SHALL NOT",
+        "created": "2026-03-23T10:57:49.560730",
+        "modified": "2026-03-23T10:57:49.560732",
+        "date": "2026-03-23T10:57:49.560733",
+        "content_hash": "e748ddf49cc18add579848b19f6bcb93d6a01a7e1584a73af9b1755978afaa6b",
+        "path": "menu-technische-umsetzung-konzept.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-44",
+        "title": "E-Rezept-Fachdienst - Task schließen - EU - Status beenden",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-eu-close-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass die zulässige Beendigung eines übermittelten Tasks im Status Task.status = completed vollzogen wird, damit der Workflow für den Versicherten als beendet und das E-Rezept somit als eingelöst dargestellt wird.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.570959",
+        "modified": "2026-03-23T10:57:49.570961",
+        "date": "2026-03-23T10:57:49.570962",
+        "content_hash": "e65b131539a0a0c3513c2de6339ef4c07b4739ebab9030ed4898f74f3c3e7366",
+        "path": "op-eu-close-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-52",
+        "title": "E-Rezept-FdV: Zugriffsberechtigung - Zugriffscode erzeugen",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-grant-eu-access-permission-req-fdv.md",
+        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung\" einen eigens generierten Zugriffscode als Zufallswert erzeugen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.573699",
+        "modified": "2026-03-23T10:57:49.573701",
+        "date": "2026-03-23T10:57:49.573702",
+        "content_hash": "19c4ec10a2c8bb8672b64efd71cbf1317c9edd35ae2c1e928ee6681d61080fcc",
+        "path": "op-grant-eu-access-permission-req-fdv.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-29",
+        "title": "E-Rezept-FdV: E-Rezept markieren - E-Rezepte auswählen",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-task-req-fdv.md",
+        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezept markieren\" dem Nutzer ermöglichen, ein oder mehrere E-Rezepte auszuwählen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.566267",
+        "modified": "2026-03-23T10:57:49.566271",
+        "date": "2026-03-23T10:57:49.566272",
+        "content_hash": "e17985601d02c576af8e51cbbac8ead9e3acd566fffe6fc1be31f54e5e7add6d",
+        "path": "query-api-task-req-fdv.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-63",
+        "title": "E-Rezept-Fachdienst - Zugriffsberechtigung - periodische Bereinigung",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-grant-eu-access-permission-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS periodisch prüfen, dass keine zeitlich ungültigen Zugriffsberechtigungen gespeichert sind.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.575708",
+        "modified": "2026-03-23T10:57:49.575710",
+        "date": "2026-03-23T10:57:49.575711",
+        "content_hash": "e082e7ff520831cd7f15bb40cc9ec41c1a31a98dd4d745d73e6e97b927f51d47",
+        "path": "op-grant-eu-access-permission-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-34",
+        "title": "E-Rezept-FdV: Zugriffsberechtigung löschen - Abfragerequest",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-revoke-eu-access-permission-req-fdv.md",
+        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung löschen\" zum Löschen der Information auf dem E-Rezept-Fachdienst die HTTP-Operation DELETE /$revoke-eu-access-permission mit:\n    <ul>\n        <li>ACCESS_TOKEN im Authorization-Header</li>\n    </ul>\n    ausführen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.568123",
+        "modified": "2026-03-23T10:57:49.568125",
+        "date": "2026-03-23T10:57:49.568126",
+        "content_hash": "d08f2c726a9fe87b4271904d08b1047c11b2eebc58c4fab3753abfd541db9612",
+        "path": "op-revoke-eu-access-permission-req-fdv.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-22",
+        "title": "E-Rezept-Fachdienst -Task markieren -Versicherter - nur einlösbare E-Rezepte",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-task-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten prüfen, ob der adressierte Task in Task.extension:eu-isRedeemableByProperties.valueBoolean = true gesetzt ist und anderfalls mit dem HTTP-Fehlercode \"409 - Conflict\" und einer entsprechenden Fehlermeldung im OperationOutcome die Operation abbrechen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.564361",
+        "modified": "2026-03-23T10:57:49.564363",
+        "date": "2026-03-23T10:57:49.564364",
+        "content_hash": "6a345819da282536a854e466f6a7d6adcd63f0c1e857937ceb3d6173ee9e6e6c",
+        "path": "query-api-task-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-59",
+        "title": "E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Zugriffscode",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-grant-eu-access-permission-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission prüfen, dass der im Request übermittelte Zugriffscode (Parameters.parameter:accessCode) das korrekte Format hat und bei fehlschlagender Prüfung die Operation mit dem HTTP-Fehlercode 400 und dem OperationOutcome \"Der übermittelte Zugriffscode ist nicht zulässig.\" abbrechen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.575068",
+        "modified": "2026-03-23T10:57:49.575070",
+        "date": "2026-03-23T10:57:49.575071",
+        "content_hash": "36d7d0c631f7986e5c2f5a1063322a7260eab322008afab5c9410bfd8ce65d71",
+        "path": "op-grant-eu-access-permission-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-18",
+        "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Task Owner",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-get-eu-prescriptions-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD, wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, für alle Tasks deren Task-IDs in Parameters.parameter:requestData.part:prescription-id enthalten sind, die Telematik-ID aus dem ACCESS_TOKEN in Task.owner speichern.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.563228",
+        "modified": "2026-03-23T10:57:49.563229",
+        "date": "2026-03-23T10:57:49.563230",
+        "content_hash": "c2357f6e2fc4fbf137452e228564155340f9525d9f77a9f6b0078890eb74fc97",
+        "path": "op-get-eu-prescriptions-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-8",
+        "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Filter einlösbarer E-Rezepte",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-get-eu-prescriptions-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass nur Ressourcen eines Tasks bereitgestellt werden, die folgende Kriterien erfüllen: Task.for = KVNR für die KVNR aus Parameters.parameter:requestData.part:kvnr Task.ExpiryDate nicht vor dem aktuellen Datum Falls MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true, dann MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start nicht nach dem aktuellen Datum Task.extension:eu-isRedeemableByProperties = true Task.extension:eu-isRedeemableByPatientAuthorization = true damit eine Apotheke im europäischen Ausland nur einlösbare E-Rezepte abrufen kann.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.561711",
+        "modified": "2026-03-23T10:57:49.561713",
+        "date": "2026-03-23T10:57:49.561714",
+        "content_hash": "75eca0c09a63320c2b1596ec517ac4c09915909f72c42188457c80e68e48100a",
+        "path": "op-get-eu-prescriptions-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-38",
+        "title": "E-Rezept-Fachdienst - Task schließen - EU - Rollenprüfung",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-eu-close-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close sicherstellen, dass ausschließlich Nutzer in der Rolle: oid_ncpeh, die Operation am Fachdienst aufrufen dürfen und die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader Authorization feststellen, damit der E-Rezept-Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.570076",
+        "modified": "2026-03-23T10:57:49.570078",
+        "date": "2026-03-23T10:57:49.570079",
+        "content_hash": "b7314a617ad3458fc7e2c7dbfe55bc0acc943d492ed0e3ce38a480f5887ab040",
+        "path": "op-eu-close-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-55",
+        "title": "E-Rezept-Fachdienst - Zugriffsberechtigung löschen - Löschen",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-revoke-eu-access-permission-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf den Endpunkt /$revoke-eu-access-permission die KVNR des Versicherten im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen und, falls vorhanden, zu dieser KVNR gespeicherte Zugriffsberechtigungen löschen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.574413",
+        "modified": "2026-03-23T10:57:49.574414",
+        "date": "2026-03-23T10:57:49.574415",
+        "content_hash": "e52286175f78120e8d4013e2f107b0e8b2c155db23587216faaa6e0536c2c0e4",
+        "path": "op-revoke-eu-access-permission-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-43",
+        "title": "E-Rezept-Fachdienst - Task schließen - EU - Zeitstempel MedicationDispense",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-eu-close-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass der Zeitpunkt des Aufrufes in Task.extension:lastMedicationDispense im Format \"YYYY-MM-DDThh:mm:ss+zz:zz\" (FHIR-instant) angelegt und gespeichert wird.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.570821",
+        "modified": "2026-03-23T10:57:49.570822",
+        "date": "2026-03-23T10:57:49.570823",
+        "content_hash": "40910f941785bb132547a72c7767b2db6694b64cf787c210d908e91fd946085f",
+        "path": "op-eu-close-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-4",
+        "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Rollenprüfung",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-get-eu-prescriptions-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions sicherstellen, dass ausschließlich Nutzer in der Rolle: oid_ncpeh, die Operation am Fachdienst aufrufen dürfen und die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader Authorization feststellen, damit E-Rezepte nicht durch Unberechtigte abgerufen werden können.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.561141",
+        "modified": "2026-03-23T10:57:49.561143",
+        "date": "2026-03-23T10:57:49.561144",
+        "content_hash": "659bc525f78f453239a67f5428de8b9abe8463bedbdaedff51b47ca1dbd2f87a",
+        "path": "op-get-eu-prescriptions-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-14",
+        "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage aller einlösbaren Verordnungsinformationen",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-get-eu-prescriptions-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass wenn Parameters.parameter:requestData.part:prescription-id leer ist, die Ressourcen aller einlösbaren Verordnung zurückgegeben werden und falls keine Verordnung vorliegt, mit dem HTTP-Statuscode 404 antworten.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.562629",
+        "modified": "2026-03-23T10:57:49.562635",
+        "date": "2026-03-23T10:57:49.562637",
+        "content_hash": "9a7bab196342f91034465bcff497dec775e5f632800703ff740986b933082d2a",
+        "path": "op-get-eu-prescriptions-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-15",
+        "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-get-eu-prescriptions-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, die Ressourcen aller einlösbaren Verordnung zurückgegeben werden, deren Task-IDs in Parameters.parameter:requestData.part:prescription-id enthalten sind, und falls keine Verordnung vorliegt, mit dem HTTP-Statuscode 404 antworten.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.562811",
+        "modified": "2026-03-23T10:57:49.562813",
+        "date": "2026-03-23T10:57:49.562814",
+        "content_hash": "af1fea2baf6c6f3ac2e9a152ab38b95af249716e8d3b3e4f3999d12e7dfc04cf",
+        "path": "op-get-eu-prescriptions-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-5",
+        "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Schemaprüfung",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-get-eu-prescriptions-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD das im http-Body des Requests enthaltene Parameter-Objekt gegen das Profil [GEM_ERP_PR_PAR_EU_GET_Prescription_EU_Input] prüfen und im Fehlerfall die Operation mit HTTP-Fehlercode 400 abbrechen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.561292",
+        "modified": "2026-03-23T10:57:49.561293",
+        "date": "2026-03-23T10:57:49.561294",
+        "content_hash": "9a92badbc04584e30bc7775f78d4c85ddf4f9551ccbdfd93c1312d61376aea35",
+        "path": "op-get-eu-prescriptions-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-42",
+        "title": "E-Rezept-Fachdienst - Task schließen - EU - Statusprüfung",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-eu-close-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass Task.status = in-progress ist und bei Ungleichheit mit dem HTTP-Fehlercode 403 abbrechen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.570679",
+        "modified": "2026-03-23T10:57:49.570680",
+        "date": "2026-03-23T10:57:49.570681",
+        "content_hash": "9e6109e825b6df64f26cdb0cc1fab24d71472baa444a1235d8090000e70a27c5",
+        "path": "op-eu-close-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-54",
+        "title": "E-Rezept-Fachdienst - Zugriffsberechtigung löschen - Rollenprüfung",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-revoke-eu-access-permission-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf den Endpunkt /$revoke-eu-access-permission die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am E-Rezept-Fachdienst aufrufen dürfen, damit die Information zur Zugriffsberechtigung nicht durch Unberechtigte gelöscht werden kann.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.574278",
+        "modified": "2026-03-23T10:57:49.574280",
+        "date": "2026-03-23T10:57:49.574281",
+        "content_hash": "27145c0021a5b8ba21897a0f0e0bd9ae07585cd3b5585944b197ab9e918dceeb",
+        "path": "op-revoke-eu-access-permission-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-39",
+        "title": "E-Rezept-Fachdienst - Task schließen - EU - Schemaprüfung",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-eu-close-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD das im http-Body des Requests enthaltene Parameter-Objekt gegen das Profil [GEM_ERP_PR_PAR_EU_CloseOperation_Input] prüfen und im Fehlerfall die Operation mit HTTP-Fehlercode 400 abbrechen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.570234",
+        "modified": "2026-03-23T10:57:49.570236",
+        "date": "2026-03-23T10:57:49.570237",
+        "content_hash": "e869c8f1a54d010483f49778aeace3c34f2da61a08a4323ccd9b8e96cf87c227",
+        "path": "op-eu-close-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-9",
+        "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage der aktuellsten Verordnungsinformationen",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-get-eu-prescriptions-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions?_count=1 durch den NCPeH-FD sicherstellen, dass nur eine Ressource eines Tasks bereitgestellt wird, die folgendes Kriterium erfüllt: Task.status = ready.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.561848",
+        "modified": "2026-03-23T10:57:49.561849",
+        "date": "2026-03-23T10:57:49.561850",
+        "content_hash": "566fd4111bec566af10c140db716d2d8228c46752fd119b76c19a8cb22dcd24c",
+        "path": "op-get-eu-prescriptions-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-19",
+        "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage aller einlösbaren Verordnungsinformationen - Push Notification Versicherter",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-get-eu-prescriptions-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD bei erfolgreichem Abschluss der Operation, wenn Parameters.parameter:requestData.part:prescription-id leer ist, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.eu.prescription.get\" und den Versicherten mit der KVNR = Task.for für jeden Task initiieren.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.563360",
+        "modified": "2026-03-23T10:57:49.563362",
+        "date": "2026-03-23T10:57:49.563363",
+        "content_hash": "b8956a0b4e26bb95835a1a5a56b1150a9dae932e5d92e849ffd0c00b2412fe75",
+        "path": "op-get-eu-prescriptions-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-58",
+        "title": "E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Ländercode",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-grant-eu-access-permission-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission prüfen, dass der im Request übermittelte Ländercode (Parameters.parameter:countryCode) einem Land entspricht, welches die Anwendung ePrescription/eDispensation Szenario Land A unterstützt und bei fehlschlagender Prüfung die Operation mit dem HTTP-Fehlercode 409 und dem OperationOutcome \"Für das angefragte Land ist Einlösen von E-Rezepten nicht möglich.\" abbrechen, damit der Versicherte nur für zulässige europäische Länder eine Zugriffsberechtigung erteilt.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.574934",
+        "modified": "2026-03-23T10:57:49.574935",
+        "date": "2026-03-23T10:57:49.574937",
+        "content_hash": "29820fa1c8b62015cc54b871b212b6511219b844a1a7b950dbcd133c22f77df1",
+        "path": "op-grant-eu-access-permission-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-23",
+        "title": "E-Rezept-Fachdienst -Task markieren -Versicherter - Änderung Markierung Task Ressource",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-task-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten, den im Parameter `eu-isRedeemableByPatientAuthorization` enthaltenen boolschen Wert in `Task.extension:eu-isRedeemableByPatientAuthorization.valueBoolean` setzen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.564522",
+        "modified": "2026-03-23T10:57:49.564523",
+        "date": "2026-03-23T10:57:49.564524",
+        "content_hash": "1d2e5495b84557854c28676720708c9c729312007a31665c2331ac6c403156e0",
+        "path": "query-api-task-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-35",
+        "title": "E-Rezept-FdV: Zugriffsberechtigung löschen - lokale Zugriffsberechtigung löschen",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-revoke-eu-access-permission-req-fdv.md",
+        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung löschen\" die lokal gespeicherten Informationen zur Zugriffsberechtigung löschen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.568289",
+        "modified": "2026-03-23T10:57:49.568291",
+        "date": "2026-03-23T10:57:49.568292",
+        "content_hash": "360f206b5dc4451f22f5df36509049f84736b336cabfe79f8481095a4bc2ca83",
+        "path": "op-revoke-eu-access-permission-req-fdv.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-62",
+        "title": "E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Response",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-grant-eu-access-permission-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS im Response zu einem Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission eine Ressource des Profils [GEM_ERP_PR_PAR_EU_Access_Authorization_Response] mit den Daten des gespeicherten Datensatz zur Zugriffsberechtigung übermitteln.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.575574",
+        "modified": "2026-03-23T10:57:49.575576",
+        "date": "2026-03-23T10:57:49.575577",
+        "content_hash": "23500e6b9c06e9e22216f7f531b76853afe92dd77b72bf8c0afda70262282764",
+        "path": "op-grant-eu-access-permission-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-20",
+        "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Push Notification Versicherter",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-get-eu-prescriptions-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD bei erfolgreichem Abschluss der Operation, wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.eu.prescription.redeem\" und den Versicherten mit der KVNR = Task.for für jeden Task initiieren.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.563493",
+        "modified": "2026-03-23T10:57:49.563495",
+        "date": "2026-03-23T10:57:49.563496",
+        "content_hash": "c9a7e4a755b64545c0280d73f7d7512d0e37f8b4fc246a938816d69ec0c35a96",
+        "path": "op-get-eu-prescriptions-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-36",
+        "title": "E-Rezept-Fachdienst - Zugriffsberechtigung lesen - Rollenprüfung",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-read-eu-access-permission-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /$read-eu-access-permission die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am E-Rezept-Fachdienst aufrufen dürfen, damit die Information zur Einwilligung nicht durch Unberechtigte ausgelesen werden kann.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.568587",
+        "modified": "2026-03-23T10:57:49.568589",
+        "date": "2026-03-23T10:57:49.568590",
+        "content_hash": "c9b8c9e7ca0d61361b753ce659852d998e0e0b395dda8550504cb04fcbd93f7b",
+        "path": "op-read-eu-access-permission-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-61",
+        "title": "E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Neue Zugriffsberechtigung speichern",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-grant-eu-access-permission-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission mit dem im Request übermittelten KVNR, Zugriffscode und Ländercode eine neue Zugriffsberechtigung speichern und den Wert valid_until auf aktuellen Zeitpunkt + 1h setzen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.575434",
+        "modified": "2026-03-23T10:57:49.575436",
+        "date": "2026-03-23T10:57:49.575437",
+        "content_hash": "e3f88f60593b6fd75c96fc7f446b2bbad14df039f574e31954e07df14b59395c",
+        "path": "op-grant-eu-access-permission-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-16",
+        "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Statuswechsel Task",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-get-eu-prescriptions-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD, wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, für alle Tasks deren Task-IDs in Parameters.parameter:requestData.part:prescription-id enthalten sind, den Status auf Task.status = in-progress setzen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.562955",
+        "modified": "2026-03-23T10:57:49.562957",
+        "date": "2026-03-23T10:57:49.562958",
+        "content_hash": "4cc8dc8115acc767d2b528d48acbfc8702f27ab536cf3211672fc0eb7a895033",
+        "path": "op-get-eu-prescriptions-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-6",
+        "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Prüfung Einwilligung für KVNR",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-get-eu-prescriptions-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass für die in Parameters.parameter:requestData.part:kvnr übermittelte KVNR ein Consent-Datensatz mit Consent.patient.identifier = KVNR und Consent.category.coding.code = EUDISPCONS existiert und bei fehlgeschlagener Prüfung die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit nur Verordnungsdaten für Versicherte übermittelt werden, die eine Einwilligung erteilt haben.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.561431",
+        "modified": "2026-03-23T10:57:49.561433",
+        "date": "2026-03-23T10:57:49.561434",
+        "content_hash": "f56fee8bb805c0a7e6489679e08a5739f5a160386c074875910588d4241f2974",
+        "path": "op-get-eu-prescriptions-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-41",
+        "title": "E-Rezept-Fachdienst - Task schließen - EU - Prüfung Zugriffsberechtigung",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-eu-close-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass zu dem in Parameters.parameter:requestData.part:kvnr, Parameters.parameter:requestData.part:accessCode und Parameters.parameter:requestData.part:countryCode übermittelte Tripple von KVNR, Zugriffs- und Ländercode eine zeitliche gültige Zugriffsberechtigung im E-Rezept-Fachdienst existiert und bei fehlgeschlagener Prüfung die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit nur Dispensierinformationen übermittelt werden, wenn eine gültige Zugriffsberechtigung vorliegt.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.570536",
+        "modified": "2026-03-23T10:57:49.570537",
+        "date": "2026-03-23T10:57:49.570539",
+        "content_hash": "0cdc1f810e2790fe67a616fde07d8974eb6d467fe9e36d5c097b566975c2cb64",
+        "path": "op-eu-close-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-57",
+        "title": "E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Einwillung für KVNR",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-grant-eu-access-permission-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission die KVNR des Versicherten im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen und sicherstellen, dass ein Consent-Datensatz mit Consent.patient.identifier = KVNR und Consent.category.coding.code = EUDISPCONS existiert und bei fehlgeschlagener Prüfung die Operation mit dem HTTP-Fehlercode 403 und dem OperationOutcome \"Das Erstellen einer Zugriffsberechtigung ist erst zulässig, wenn eine Einwilligung durch den Nutzer zum Einlösen von E-Rezepten im europäischen Ausland erteilt wurde.\" abbrechen, damit nur Versicherte eine Zugriffsberechtigung schreiben, die eine Einwilligung erteilt haben.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.574799",
+        "modified": "2026-03-23T10:57:49.574800",
+        "date": "2026-03-23T10:57:49.574801",
+        "content_hash": "12ec8606a5443ee1a710d253479247510a298974b32152f4b4d0a5bbdbdaa465",
+        "path": "op-grant-eu-access-permission-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-56",
+        "title": "E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Rollenprüfung",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-grant-eu-access-permission-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am E-Rezept-Fachdienst aufrufen dürfen, damit eine Zugriffsberechtigte nicht durch Unberechtigte erteilt werden kann.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.574657",
+        "modified": "2026-03-23T10:57:49.574658",
+        "date": "2026-03-23T10:57:49.574659",
+        "content_hash": "d5b892819e9b353c949e096a7ab811989d6f6a5152910bc9b55de670207416b5",
+        "path": "op-grant-eu-access-permission-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-40",
+        "title": "E-Rezept-Fachdienst - Task schließen - EU - Prüfung Einwilligung für KVNR",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-eu-close-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass für die in Parameters.parameter:requestData.part:kvnr übermittelte KVNR ein Consent-Datensatz mit Consent.patient.identifier = KVNR und Consent.category.coding.code = EUDISPCONS existiert und bei fehlgeschlagener Prüfung die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit nur Dispensierinformationen für Versicherte übermittelt werden, die eine Einwilligung erteilt haben.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.570380",
+        "modified": "2026-03-23T10:57:49.570382",
+        "date": "2026-03-23T10:57:49.570383",
+        "content_hash": "a41a75f4cdff2f2561c11cbd71ca5f5166932219e85f4b60dd9bb96876e6c25e",
+        "path": "op-eu-close-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-7",
+        "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Prüfung Zugriffsberechtigung",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-get-eu-prescriptions-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass zu dem in Parameters.parameter:requestData.part:kvnr, Parameters.parameter:requestData.part:accessCode und Parameters.parameter:requestData.part:countryCode übermittelte Tripple von KVNR, Zugriffs- und Ländercode eine zeitliche gültige Zugriffsberechtigung im E-Rezept-Fachdienst existiert und bei fehlgeschlagener Prüfung die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit nur Verordnungsdaten für Versicherte übermittelt werden, wenn eine gültige Zugriffsberechtigung vorliegt.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.561572",
+        "modified": "2026-03-23T10:57:49.561573",
+        "date": "2026-03-23T10:57:49.561574",
+        "content_hash": "76fa6199c6e24a14ecdb38a18efc842562d1020b85acf98d7582ccf42ea18a60",
+        "path": "op-get-eu-prescriptions-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-17",
+        "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Secret",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-get-eu-prescriptions-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD, wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, für alle Tasks deren Task-IDs in Parameters.parameter:requestData.part:prescription-id enthalten sind, eine 256 Bit Zufallszahl mit einer Mindestentropie von 120 Bit erzeugen, hexadezimal kodieren ([0-9a-f]{64}) und diese im zu speichernden Task als externe ID in Task.identifier:Secret als [Identifier Profile for Secret (GEM_ERP_PR_Secret)] hinzufügen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.563095",
+        "modified": "2026-03-23T10:57:49.563097",
+        "date": "2026-03-23T10:57:49.563098",
+        "content_hash": "e07878789bbc040063b8610d7640a5643e359a2b57281649af506bbf01be0d13",
+        "path": "op-get-eu-prescriptions-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-60",
+        "title": "E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Löschen bestehender Zugriffsberechtigung",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-grant-eu-access-permission-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission prüfen, ob für die im Request übermittelte KVNR Zugriffsberechtigungen gespeichert sind und falls ja, diese löschen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.575199",
+        "modified": "2026-03-23T10:57:49.575201",
+        "date": "2026-03-23T10:57:49.575202",
+        "content_hash": "5456d22c0f8e0b226c9abe8a1752d295f793140c3754e2736ac886b1f0f789ef",
+        "path": "op-grant-eu-access-permission-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-37",
+        "title": "E-Rezept-Fachdienst - Zugriffsberechtigung lesen - Response",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-read-eu-access-permission-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /$read-eu-access-permission die KVNR des Versicherten im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen und im Response falls vorhanden eine Ressource des Profils [GEM_ERP_PR_PAR_EU_Access_Authorization_Response] mit zur KVNR gespeicherte zeitlich gültige Zugriffsberechtigung übermitteln.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.569074",
+        "modified": "2026-03-23T10:57:49.569075",
+        "date": "2026-03-23T10:57:49.569077",
+        "content_hash": "dbea770b2334cd942c3efd050e0209364c36d87cdd5f7e2b17c6a6e8b82fde74",
+        "path": "op-read-eu-access-permission-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-21",
+        "title": "E-Rezept-Fachdienst -Task markieren -Versicherter - FHIR-Validierung Parameters",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-task-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten auf die Ressource übertragene Parameters Ressource gegen das FHIR-Profil GEM_ERPEU_PR_PAR_PATCH_Task_Input prüfen und bei Nicht-Konformität den Aufruf mit dem http-Status-Code 400 ablehnen, damit nur FHIR-valide Ressourcen in den E-Rezept-Fachdienst akzeptiert werden.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.564157",
+        "modified": "2026-03-23T10:57:49.564162",
+        "date": "2026-03-23T10:57:49.564163",
+        "content_hash": "c52ab027701fbdaffc31c819e377e744abe4a3dfab346be648b9a2a0edfa5f66",
+        "path": "query-api-task-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-10",
+        "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage aller einlösbaren Verordnungsinformationen",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-get-eu-prescriptions-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass wenn Parameters.parameter:requestData.part:prescription-id leer ist, nur Ressourcen eines Tasks bereitgestellt werden, die folgendes Kriterium erfüllen: Task.status = ready.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.561985",
+        "modified": "2026-03-23T10:57:49.561986",
+        "date": "2026-03-23T10:57:49.561987",
+        "content_hash": "5b928641cf304555d7623187e9a71fffc263bdbf6c0ea9b3522bca8d7b142b8c",
+        "path": "op-get-eu-prescriptions-req-fd.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-47",
+        "title": "E-Rezept: Anwendung des IG 'EU Zugriff E-Rezept' für Einlösen von E-Rezepten im EU Ausland",
+        "actor": [
+            "NCPeH_ePeDA",
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "NCPeH_ePeDA": [
+                "Herstellererklärung"
+            ],
+            "eRp_FD": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/index.md",
+        "text": "Der E-Rezept-Fachdienst und dessen Client MÜSSEN zur Umsetzung des Einlösens von E-Rezepten im EU Ausland den Implementation Guide \"EU Zugriff E-Rezept\" umsetzen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.572255",
+        "modified": "2026-03-23T10:57:49.572258",
+        "date": "2026-03-23T10:57:49.572259",
+        "content_hash": "59591653ee51e009b9f2de298731dfe3991f3237313c8478d976da1a45789fdd",
+        "path": "index.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-51",
+        "title": "E-Rezept-FdV: Zugriffsberechtigung - Land auswählen",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-grant-eu-access-permission-req-fdv.md",
+        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung erteilen\" es dem Nutzer ermöglichen, ein Land aus der Liste der zulässigen Länder auszuwählen, für das der Nutzer die Zugriffsberechtigung erteilen möchte.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.573566",
+        "modified": "2026-03-23T10:57:49.573568",
+        "date": "2026-03-23T10:57:49.573569",
+        "content_hash": "ba8712ebe2c696d96868521e2d62cd28eaf7017e53699c63383508bd3c4ec09c",
+        "path": "op-grant-eu-access-permission-req-fdv.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-26",
+        "title": "E-Rezept-FdV: E-Rezept zum Einlösen im EU-Ausland markieren",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-task-req-fdv.md",
+        "text": "Das E-Rezept-FdV KANN es dem Nutzer ermöglichen, die Markierung eines E-Rezeptes zum Einlösen im EU-Ausland zu verwalten.",
+        "conformance": "MAY",
+        "created": "2026-03-23T10:57:49.565776",
+        "modified": "2026-03-23T10:57:49.565778",
+        "date": "2026-03-23T10:57:49.565779",
+        "content_hash": "a5939c8da07fdb2f111f73d7cf79b34bcc2d95536c3a25fad4e9faad347bef69",
+        "path": "query-api-task-req-fdv.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-30",
+        "title": "E-Rezept-FdV: E-Rezept markieren",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-task-req-fdv.md",
+        "text": "Das E-Rezept-FdV MUSS, wenn es den Anwendungsfall umsetzt, den Anwendungsfall \"E-Rezept durch den Versicherten markieren\" gemäß TAB_FdVERP_029 umsetzen. Tabelle #: TAB_FdVERP_029 – E-Rezept markieren Name E-Rezept markieren Auslöser Aufruf des Anwendungsfalls in der Graphical User Interface (GUI) Akteur Versicherter Vorbedingung Der Nutzer hat eine oder mehrere Markierungen aus- oder abgewählt. Der Nutzer hat sich gegenüber der TI authentisiert. Nachbedingung Die Markierungen sind im E-Rezept-Fachdienst gespeichert. Standardablauf Task-ID bestimmen FHIR Ressource erstellen Daten im E-Rezept-Fachdienst speichern",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.566462",
+        "modified": "2026-03-23T10:57:49.566464",
+        "date": "2026-03-23T10:57:49.566465",
+        "content_hash": "192b5ff257caf646cc5ce9e5326bae61e71001f0ee25c1d04abd6998f1cbc173",
+        "path": "query-api-task-req-fdv.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-31",
+        "title": "E-Rezept-FdV: E-Rezept markieren - FHIR Ressource erstellen",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-task-req-fdv.md",
+        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezept markieren\" eine Parameters Ressource des Profils [GEM ERPEU PR PAR PATCH Task Input] erstellen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.566622",
+        "modified": "2026-03-23T10:57:49.566624",
+        "date": "2026-03-23T10:57:49.566625",
+        "content_hash": "dacc7a6b0b66d8efa2338209d6ea92de6db8f0edf9d37275d90ffd280baf261b",
+        "path": "query-api-task-req-fdv.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-27",
+        "title": "E-Rezept-FdV: E-Rezept zum Einlösen im EU-Ausland markieren - Hinweis Belieferungsmöglichkeit",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-task-req-fdv.md",
+        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezept markieren\" dem Nutzer vor der Möglichkeit zum Markieren der E-Rezepte zum Einlösen im EU-Ausland einen Hinweis anzeigen, dass die Belieferungsmöglichkeit für die E-Rezepte mit der Apotheke vorab geklärt werden soll.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.565920",
+        "modified": "2026-03-23T10:57:49.565921",
+        "date": "2026-03-23T10:57:49.565923",
+        "content_hash": "188cad2be8e243016f5785bb96a74268f2de515cbef2cb9fc34184863940b54f",
+        "path": "query-api-task-req-fdv.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-50",
+        "title": "E-Rezept-FdV: Zugriffsberechtigung - Caching Liste zulässiger Länder",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-grant-eu-access-permission-req-fdv.md",
+        "text": "Das E-Rezept-FdV DARF NICHT Informationen zur Liste zulässiger Länder verwenden, welche länger als 96h lokal durch das E-Rezept-FdV gecacht wurden.",
+        "conformance": "SHALL NOT",
+        "created": "2026-03-23T10:57:49.573428",
+        "modified": "2026-03-23T10:57:49.573429",
+        "date": "2026-03-23T10:57:49.573430",
+        "content_hash": "43dff17c0e7e00bffd7bd918434ff40cd273957af4d1b6ee73094649a3bed5ff",
+        "path": "op-grant-eu-access-permission-req-fdv.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-46",
+        "title": "E-Rezept-FdV: Zugriffsberechtigung abrufen - Abfragerequest",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-read-eu-access-permission-req-fdv.md",
+        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung abrufen\" zum Abrufen der Information vom E-Rezept-Fachdienst die HTTP-Operation GET /$read-eu-access-permission mit: \n    <ul>\n        <li>ACCESS_TOKEN im Authorization-Header</li>\n    </ul>\n    ausführen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.571457",
+        "modified": "2026-03-23T10:57:49.571458",
+        "date": "2026-03-23T10:57:49.571459",
+        "content_hash": "4630c4a3351153335d7ec70020fc83edeb13af4fb47bb22d52ecc59683fede57",
+        "path": "op-read-eu-access-permission-req-fdv.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-1",
+        "title": "Format Zugriffscode",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-konzept.md",
+        "text": "Produkttypen der Anwendung E-Rezept MÜSSEN, wenn sie einen Zugriffscode für das Einlösen im europäischen Ausland verarbeiten, folgende Formatvorgaben für den Zugriffscode einhalten: String mit Gesamtlänge von 6 Zeichen, erlaubte Zeichen: a-z, A-Z, 0-9.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.560380",
+        "modified": "2026-03-23T10:57:49.560393",
+        "date": "2026-03-23T10:57:49.560395",
+        "content_hash": "860c7bececd8c510a8f19bd5a307f34471ffcdab3bbd738404c4cd260c8e4984",
+        "path": "menu-technische-umsetzung-konzept.html",
+        "release": "0.9.0"
+    },
+    {
+        "key": "IG-PRE-TIFLOW-XBORDER-11",
+        "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage nach Liste Rezept-Ids",
+        "actor": [
+            "eRp_FD"
+        ],
+        "test_procedures": {
+            "eRp_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-get-eu-prescriptions-req-fd.md",
+        "text": "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, nur Ressourcen eines Tasks bereitgestellt werden, die folgendes Kriterium erfüllen: Task.status = ready ODER (Task.status = in-progress UND Task.owner = Telematik-ID aus dem ACCESS_TOKEN).",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:49.562120",
+        "modified": "2026-03-23T10:57:49.562121",
+        "date": "2026-03-23T10:57:49.562122",
+        "content_hash": "d3a605894c524fda48fbeedc755f839dde72fc295c253d9a6047e968a819dbdf",
+        "path": "op-get-eu-prescriptions-req-fd.html",
+        "release": "0.9.0"
+    }
+]

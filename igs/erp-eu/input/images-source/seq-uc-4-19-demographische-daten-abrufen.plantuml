@@ -1,0 +1,27 @@
+@startuml
+title UC Demographische Daten eines Versicherten abrufen
+
+autonumber "<b>[0]"
+actor Versicherte
+actor "LE-EU" as LEEU
+participant "eHDSI / NCPeH-FD\nDeutschland" as NCP
+participant "E-Rezept-Fachdienst" as FD
+
+Versicherte -> LEEU : Zugriffscode und KVNR übergeben
+LEEU -> Versicherte : Datenschutzerklärung
+
+LEEU -> NCP : Abfrage demographischer Versichertendaten
+NCP -> NCP : Prüfung Permission bzw. Rolle
+
+NCP -> FD : POST /$get-eu-prescriptions\n{AuthN-Token, KVNR, Zugriffscode,\nlaendercode, practitionerName,\npractitionerRole, pointOfCare,\nhealthcare-facility-type,\nlatest, requesttype}
+
+FD -> FD : Prüfung Einwilligung für KVNR
+FD -> FD : Prüfung Zugriffscode für KVNR\n(KVNR, Zugriffscode, laendercode,\naktueller Zeitpunkt)
+FD -> FD : aktuellsten einlösbaren Task\nfür KVNR bestimmen
+FD -> FD : Zugriff protokollieren\n(KVNR, practitionerName,\npractitionerRole, pointOfCare,\nhealthcare-facility-type,\nrequesttype)
+
+FD --> NCP : Bundle von Verordnungen\n(max. eine Verordnung)
+NCP -> NCP : Transformierung und Transkodierung
+NCP --> LEEU : demographische Daten
+
+@enduml

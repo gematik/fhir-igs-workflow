@@ -1,11 +1,12 @@
-canonical: https://gematik.de/fhir/erp-diga
+canonical: https://gematik.de/fhir/tiflow/diga
 fhirVersion: 4.0.1
 applyExtensionMetadataToRoot: false
-id: de.gematik.eflow-diga
-name: E-Rezept DiGA #TODO Name muss von Team Polarion vorgegeben werden gemIG...
-title: "E-Rezept fuer Digitale Gesundheitsanwendungen (DiGA)"
+id: de.gematik.tiflow.diga
+name: gemIG_TIFlow_diga
+title: "TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)"
 status: draft # draft | active | retired | unknown
-version: "2.0.0-draft"
+version: 0.9.0
+date: 2026-03-26
 copyrightYear: 2026+
 releaseLabel: ci-build # ci-build, ballot, release
 jurisdiction: urn:iso:std:iso:3166#DE "Germany" # https://www.hl7.org/fhir/valueset-jurisdiction.html
@@ -15,28 +16,25 @@ publisher:
   email: erp-umsetzung@gematik.de
 
 dependencies:
-  de.gematik.erezept-workflow.r4: 1.6.1
-  de.basisprofil.r4: 1.5.2
+  de.basisprofil.r4: 1.5.4
   de.gematik.epa.medication: 1.3.0
   de.gematik.ti: 1.2.0
 
 menu:
   Start: index.html
   Fachlichkeit:
-    Ueberblick: menu-fachlichkeit-ueberblick.html
-    Szenarien: menu-fachlichkeit-szenarien.html
-    Anwendungsfaelle: menu-fachlichkeit-anwendungsfaelle.html
+    Digitale Gesundheitsanwendungen: menu-fachlichkeit-diga.html
   Technische Umsetzung:
-    Systemueberblick: menu-technische-umsetzung-systemueberblick.html
-    Technische Anwendungsfaelle: menu-technische-umsetzung-anwendungsfaelle.html
+    Systemüberblick: menu-technische-umsetzung-systemueberblick.html
+    Technische Anwendungsfälle: menu-technische-umsetzung-anwendungsfaelle.html
     Verarbeitungsregeln: menu-technische-umsetzung-verarbeitungsregeln.html
+    Datenschutz und Informationssicherheit: menu-datenschutz-und-sicherheit.html
   Schnittstellen:
     Generelle Prinzipien: menu-schnittstellen-generelle-prinzipien.html
-    Datenschutz und Sicherheit: menu-schnittstellen-datenschutz-und-sicherheit.html
     Query API: query-api.html
     Operation API: operation-api.html
     Additional APIs: menu-schnittstellen-additional-api.html
-  Anhaenge:
+  Anhänge:
     Referenzen: referenced.html
     Downloads: downloads.html
     Release Notes: release-notes.html
@@ -46,59 +44,100 @@ menu:
 
 pages:
   index.md:
-    title: "Implementation Guide E-Rezept-DiGA"
-  menu-fachlichkeit-ueberblick.md:
-    title: "Ueberblick zur Verordnung von DiGAs"
-    menu-fachlichkeit-szenarien.md:
-      title: "Szenarien fuer den DiGA-Workflow"
-      menu-fachlichkeit-szenario-diga.md:
-        title: "Szenario: E-Rezept fuer DiGA"
-    menu-fachlichkeit-anwendungsfaelle.md:
-      title: "Anwendungsfaelle im DiGA-Workflow"
+    title: "Implementation Guide elektronische Verordnung von DiGAs"
+  menu-fachlichkeit-diga.md:
+    title: "Elektronische Verordnung von DiGAs"
   menu-technische-umsetzung-systemueberblick.md:
-    title: "Systemueberblick"
+    title: "Systemüberblick"
     menu-technische-umsetzung-anwendungsfaelle.md:
-      title: "Technische Anwendungsfaelle"
+      title: "Technische Anwendungsfälle"
     menu-technische-umsetzung-verarbeitungsregeln.md:
-      title: "Verarbeitungsregeln fuer den E-Rezept-Fachdienst"
+      title: "Verarbeitungsregeln"
   menu-schnittstellen-generelle-prinzipien.md:
     title: "Generelle Prinzipien"
-  menu-schnittstellen-datenschutz-und-sicherheit.md:
-    title: "Datenschutz und Sicherheit"
+  menu-datenschutz-und-sicherheit.md:
+    title: "Datenschutz und Informationssicherheit"
   query-api.md:
     title: "Query API"
     query-api-task.md:
       title: "Query API: Task"
+      query-api-task-req-fd.md:
+        title: "FD-Anforderungen: Task-Query"
+      query-api-task-req-fdv.md:
+        title: "FdV-Anforderungen: Task-Query"
+      query-api-task-req-ktr.md:
+        title: "KTR-Anforderungen: Task-Query"
     query-api-communication.md:
       title: "Query API: Communication"
+      query-api-communication-req-fd.md:
+        title: "FD-Anforderungen: Communication-Query"
+      query-api-communication-req-fdv.md:
+        title: "FdV-Anforderungen: Communication-Query"
+      query-api-communication-req-ktr.md:
+        title: "KTR-Anforderungen: Communication-Query"
     query-api-medicationdispense.md:
       title: "Query API: MedicationDispense"
+      query-api-medicationdispense-req-fd.md:
+        title: "FD-Anforderungen: MedicationDispense-Query"
+      query-api-medicationdispense-req-fdv.md:
+        title: "FdV-Anforderungen: MedicationDispense-Query"
   operation-api.md:
     title: "Operation API"
+    op-create.md:
+      title: "Operation: $create"
+      op-create-req-fd.md:
+        title: "Anforderungen an den E-Rezept-Fachdienst für die $create-Operation"
+      op-create-req-pvs.md:
+        title: "Anforderungen an den verordnende Primärsystem für die $create-Operation"
     op-activate.md:
       title: "Operation: $activate"
+      op-activate-req-fd.md:
+        title: "Anforderungen an den E-Rezept-Fachdienst für die $activate-Operation"
+      op-activate-req-pvs.md:
+        title: "Anforderungen an den verordnende Primärsystem für die $activate-Operation"
     op-accept.md:
       title: "Operation: $accept"
+      op-accept-req-fd.md:
+        title: "Anforderungen an den E-Rezept-Fachdienst für die $accept-Operation"
+      op-accept-req-ktr.md:
+        title: "Anforderungen an das Clientsystem des Kostenträger für die $accept-Operation"
     op-reject.md:
       title: "Operation: $reject"
+      op-reject-req-fd.md:
+        title: "Anforderungen an den E-Rezept-Fachdienst für die $reject-Operation"
+      op-reject-req-ktr.md:
+        title: "Anforderungen an das Clientsystem des Kostenträger für die $reject-Operation"
     op-close.md:
       title: "Operation: $close"
+      op-close-req-fd.md:
+        title: "Anforderungen an den E-Rezept-Fachdienst für die $close-Operation"
+      op-close-req-ktr.md:
+        title: "Anforderungen an das Clientsystem des Kostenträger für die $close-Operation"
+    op-abort.md:
+      title: "Operation: $abort"
+      op-abort-req-fd.md:
+        title: "Anforderungen an den E-Rezept-Fachdienst für die $abort-Operation"
+      op-abort-req-fdv.md:
+        title: "Anforderungen an das E-Rezept-FdV für die $abort-Operation"
+      op-abort-req-pvs.md:
+        title: "Anforderungen an den verordnende Primärsystem für die $abort-Operation"
   artifacts.md:
     title: "FHIR-Artefakte"
   menu-schnittstellen-additional-api.md:
     title: "Additional APIs"
+    api-add-fhirvzd.md:
+      title: "API FHIR-VZD"
   referenced.md:
     title: "Referenzen"
   downloads.md:
     title: "Downloads"
   release-notes.md:
     title: "Release Notes"
-  spec-sheet.md:
-    title: "Steckbriefe"
   license.md:
     title: "Apache Licence"
 
 parameters:
+  shownav: true
   path-pages:
     - input/pagecontent
     - input/content

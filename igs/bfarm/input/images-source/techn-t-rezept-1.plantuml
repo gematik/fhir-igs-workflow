@@ -1,0 +1,33 @@
+@startuml 
+title Ablaufdiagramm Abgabe T-Rezept
+hide footbox
+autonumber "<b>[0]"
+participant "Apotheke" as AVS
+participant "E-Rezept-Fachdienst" as FD
+participant "BfArM Webdienst" as BT
+
+group Abgabe AVS
+
+activate AVS
+AVS -> FD++: $close(Abgabedaten)
+FD -> FD: setStatus(closed)
+FD -> FD: createReceipt(): receipt
+FD -> AVS: receipt
+deactivate AVS
+
+end
+
+group Übermittlung des digitalen Durchschlags
+FD -> FD: createCarbonCopy(): trxCarbonCopy
+
+FD -> BT++: POST TrxCarbonCopy(trxCarbonCopy)
+BT -> BT: validateCarbonCopy(trxCarbonCopy)
+
+BT --> FD: ok
+
+deactivate FD
+
+BT -> BT--: storeData(trxCarbonCopy)
+end
+
+@enduml 

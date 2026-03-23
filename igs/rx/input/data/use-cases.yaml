@@ -1,175 +1,100 @@
-- id: E_Rezept_erstellen
-  anchor: e-rezept-erstellen
-  link: menu-fachlichkeit-anwendungsfaelle.html#e-rezept-erstellen
-  title: "E-Rezept erstellen"
-  roles: ["(Zahn-)Arzt"]
-  description: |
-    Ein E-Rezept wird im Primärsystem (PVS/KIS) als Verordnungsdatensatz erstellt.
-    Für die Bereitstellung auf dem E-Rezept-Fachdienst wird ein Task angelegt, über den eine Rezept-ID (PrescriptionID)
-    vergeben und ein AccessCode erzeugt wird.
-  preconditions: |
-    - Der Leistungserbringer ist gegenüber der TI authentisiert (Institutionsidentität via SMC-B über IdP/Konnektor).
-    - Der Verordnungsdatensatz liegt lokal als KBV-konformes FHIR-Bundle vor.
-  actions: |
-    - Das Primärsystem legt im E-Rezept-Fachdienst einen Task an.
-    - Der E-Rezept-Fachdienst vergibt eine Rezept-ID (PrescriptionID) und generiert einen AccessCode.
-    - Das Primärsystem übernimmt die Rezept-ID in den lokalen Verordnungsdatensatz.
-  postconditions: |
-    - Task liegt im Status `draft` vor.
-    - Rezept-ID und AccessCode sind im Primärsystem verfügbar.
-  relatedTechnicalUseCases: |
-    - [E-Rezept erstellen](./menu-technische-umsetzung-anwendungsfaelle.html#e-rezept-erstellen)
-     
+# Verordnen
+- id: UC_2_1_E_Rezepte_erzeugen
+  core-uc: UC_2_1_E_Rezepte_erzeugen
 - id: E_Rezept_qualifiziert_signieren
-  anchor: e-rezept-qualifiziert-signieren
-  link: menu-fachlichkeit-anwendungsfaelle.html#e-rezept-qualifiziert-signieren
-  title: "E-Rezept qualifiziert signieren"
-  roles: ["(Zahn-)Arzt"]
-  description: |
-    Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES).
-    Vorbereitende Tätigkeiten im Primärsystem können organisatorisch delegiert werden, die QES selbst jedoch nicht.
-  preconditions: |
-    - Rezept-ID (PrescriptionID) ist im Verordnungsdatensatz enthalten.
-    - Ein freigeschalteter HBA steht zur Verfügung.
-    - Konsistenz: `authoredOn` im Verordnungsdatensatz entspricht dem Datum der QES.
-  actions: |
-    - Das Primärsystem startet die QES-Erstellung über den Konnektor.
-    - Der (Zahn-)Arzt signiert den Verordnungsdatensatz mit dem HBA.
-    - Das Primärsystem erhält den QES-signierten Datensatz zur weiteren Verarbeitung.
-  postconditions: |
-    - QES-signierter Verordnungsdatensatz liegt im Primärsystem vor.
-  relatedTechnicalUseCases: |
-    - [E-Rezept qualifiziert signieren](./menu-technische-umsetzung-anwendungsfaelle.html#e-rezept-qualifiziert-signieren)
+  core-uc: E_Rezept_qualifiziert_signieren
+- id: UC_2_3_E_Rezept_einstellen
+  core-uc: UC_2_3_E_Rezept_einstellen
+- id: UC_2_5_E_Rezept_durch_Verordnenden_loeschen
+  core-uc: UC_2_5_E_Rezept_durch_Verordnenden_loeschen
 
-- id: E_Rezept_vervollstaendigen_und_Task_aktivieren
-  anchor: e-rezept-vervollstaendigen-und-task-aktivieren
-  link: menu-fachlichkeit-anwendungsfaelle.html#e-rezept-vervollstaendigen-und-task-aktivieren
-  title: "E-Rezept vervollständigen und Task aktivieren"
-  roles: ["(Zahn-)Arzt"]
-  description: |
-    Der (Zahn-)Arzt finalisiert eine bereits erstellte Verordnung und stellt sie qualifiziert signiert für den Versicherten bereit.
-    Mit der Bereitstellung startet der Einlöse-Workflow: Die Verordnung wird im E-Rezept-Fachdienst geprüft und anschließend so veröffentlicht,
-    dass sie im vorgesehenen Prozess (z. B. Einlösung in der Apotheke oder Bearbeitung durch den Kostenträger) genutzt werden kann.
-  preconditions: |
-    - Das E-Rezept wurde zuvor erstellt und befindet sich noch in der Vorbereitungsphase.
-    - Der qualifiziert signierte Verordnungsdatensatz (QES) liegt im Primärsystem vor.
-    - Ein Berechtigungsmerkmal zur geschützten Bereitstellung liegt vor (z. B. AccessCode).
-  actions: |
-    - Das Primärsystem stellt den qualifiziert signierten Verordnungsdatensatz beim E-Rezept-Fachdienst bereit.
-    - Der E-Rezept-Fachdienst prüft Berechtigung, Signatur und fachliche Konsistenz der Verordnung.
-    - Bei erfolgreicher Prüfung wird die Verordnung für die weitere Verarbeitung (Einlösung/Bearbeitung) freigeschaltet.
-  postconditions: |
-    - Das E-Rezept ist bereitgestellt und kann im weiteren Prozess eingelöst bzw. bearbeitet werden.
-    - Der Status des Workflows entspricht der bereitgestellten Verordnung.
-  relatedTechnicalUseCases: |
-    - [E-Rezept vervollständigen und Task aktivieren](./menu-technische-umsetzung-anwendungsfaelle.html#e-rezept-vervollständigen-und-task-aktivieren)
+# Versicherteninteraktion
+- id: UC_3_1_E_Rezepte_durch_Versicherten_abrufen
+  core-uc: UC_3_1_E_Rezepte_durch_Versicherten_abrufen
+- id: UC_3_2_E_Rezept_durch_Versicherten_loeschen
+  core-uc: UC_3_2_E_Rezept_durch_Versicherten_loeschen
+- id: UC_3_3_Nachricht_durch_Versicherten_uebermitteln
+  core-uc: UC_3_3_Nachricht_durch_Versicherten_uebermitteln
+- id: UC_3_4_Nachrichten_durch_Versicherten_empfangen
+  core-uc: UC_3_4_Nachrichten_durch_Versicherten_empfangen
+- id: UC_3_8_Nachricht_durch_Versicherten_loeschen
+  core-uc: UC_3_8_Nachricht_durch_Versicherten_loeschen
+- id: UC_3_9_Dispensierinformationen_durch_Versicherten_abrufen
+  core-uc: UC_3_9_Dispensierinformationen_durch_Versicherten_abrufen
+
+# Apotheke - Belieferung
+- id: UC_4_1_E_Rezept_durch_Abgebenden_abrufen
+  core-uc: UC_4_1_E_Rezept_durch_Abgebenden_abrufen
+- id: UC_4_2_E_Rezept_durch_Abgebenden_zurueckgeben
+  core-uc: UC_4_2_E_Rezept_durch_Abgebenden_zurueckgeben
+- id: UC_4_3_E_Rezept_durch_Abgebenden_loeschen
+  core-uc: UC_4_3_E_Rezept_durch_Abgebenden_loeschen
+- id: UC_4_4_Quittung_abrufen
+  core-uc: UC_4_4_Quittung_abrufen
   followup: |
-    - [Mapping von Verordnungsdaten](./mapping-prescription.html)
-    - [Übertragung von Verordnungsdaten an den ePA MedicationService](./menu-technische-umsetzung-anbindung-epa-ms.html)
+    - [Abgabedatensatz signieren](./menu-technische-umsetzung-abgabedatensatz.html)
+- id: UC_4_5_Abgabedatensatz_signieren
+  core-uc: UC_4_5_Abgabedatensatz_signieren
+- id: UC_4_6_Nachrichten_durch_Abgebenden_empfangen
+  core-uc: UC_4_6_Nachrichten_durch_Abgebenden_empfangen
+- id: UC_4_7_Nachricht_durch_Abgebenden_uebermitteln
+  core-uc: UC_4_7_Nachricht_durch_Abgebenden_uebermitteln
+- id: UC_4_9_Nachricht_durch_Abgebenden_loeschen
+  core-uc: UC_4_9_Nachricht_durch_Abgebenden_loeschen
+- id: UC_4_8_Quittung_erneut_abrufen
+  core-uc: UC_4_8_Quittung_erneut_abrufen
+- id: UC_4_15_E_Rezepte_durch_Abgebenden_abrufen_PoPP
+  core-uc: UC_4_15_E_Rezepte_durch_Abgebenden_abrufen_PoPP
+- id: UC_4_16_Dispensierinformationen_bereitstellen
+  core-uc: UC_4_16_Dispensierinformationen_bereitstellen
+- id: UC_4_17_Verordnung_erneut_abrufen
+  core-uc: UC_4_17_Verordnung_erneut_abrufen
 
-- id: E_Rezept_loeschen
-  anchor: e-rezept-loeschen
-  link: menu-fachlichkeit-anwendungsfaelle.html#e-rezept-loeschen
-  title: "E-Rezept löschen"
-  roles: ["(Zahn-)Arzt", "Versicherter"]
-  description: |
-    Ein E-Rezept kann durch den verordnenden Leistungserbringer widerrufen/gelöscht werden,
-    um den Patienten vor dem Bezug und der Einnahme eines fälschlich verordneten Medikaments zu schützen.
-  preconditions: |
-    - AccessCode ist dem Primärsystem bekannt.
-    - Das E-Rezept befindet sich nicht bereits in Belieferung (ansonsten ist das Löschen nicht zulässig).
-  actions: |
-    - Das Primärsystem fordert das Löschen/Widerrufen des E-Rezepts beim E-Rezept-Fachdienst an.
-    - Der E-Rezept-Fachdienst prüft die Berechtigung und löscht den referenzierten Task.
-  postconditions: |
-    - Der referenzierte Task ist gelöscht; es werden keine Nutzdaten zurückgegeben.
-  relatedTechnicalUseCases: |
-    - [E-Rezept löschen](./menu-technische-umsetzung-anwendungsfaelle.html#e-rezept-löschen)
 
-- id: E_Rezept_abrufen_apotheke
-  anchor: e-rezept-abrufen-apotheke
-  link: menu-fachlichkeit-anwendungsfaelle.html#e-rezept-abrufen-apotheke
-  title: "E-Rezept abrufen (Apotheke)"
-  roles: ["Apotheke"]
+# WF-LE
+- id: 169_e_rezept_erzeugen
+  anchor: 169-e-rezept-erzeugen
+  link: menu-technische-umsetzung-anwendungsfaelle.html#169-e-rezept-erzeugen
+  title: E-Rezept für Workflow 169 durch Verordnenden erzeugen
+  roles:
+    - (Zahn-)Arzt
   description: |
-    Nach Übergabe von Task-ID und AccessCode durch den Versicherten ruft das Apothekenverwaltungssystem (AVS)
-    das E-Rezept mittels FHIR-Operation $accept ab. Der E-Rezept-Fachdienst liefert den Task, das
-    QES-signierte Verordnungsbundle und ein Secret zurück, das die Apotheke für weitere Schritte benötigt.
+    Mit diesem Anwendungsfall erstellt ein Leistungserbringer einen Verordnungsdatensatz mit workflowspezifischen Parametern. Der Verordnungsdatensatz erhält von dem E-Rezept-Fachdienst eine Rezept-ID und wird von dem Leistungserbringer qualifiziert signiert. Der Leistungserbringer muss in seinem Primärsystem den workflowspezifischen Parameter für die direkte Zuweisung an eine Apotheke auswählen.
   preconditions: |
-    - Task-ID und AccessCode wurden durch den Versicherten bereitgestellt (z. B. 2D-Code, CardLink, Nachricht).
-    - Das AVS ist gegenüber der TI authentisiert und verfügt über ein gültiges Access Token.
-    - Der referenzierte Task befindet sich in einem abrufbaren Status (ready) und ist noch keiner anderen Apotheke zugeordnet.
+    - Der oder die Versicherten sind der LEI bekannt. 
+    - Der HBA ist für die QES gesteckt und freigeschaltet.  
+    - Die gesetzlichen Grundlagen aus § 11 ApoG sind erfüllt.
   actions: |
-    - Das AVS sendet einen POST-Request auf /Task/{id}/$accept mit dem AccessCode.
-    - Der Fachdienst validiert Berechtigung und liefert Task, Binary (PKCS#7) und das Secret.
-    - Das AVS speichert Task, Secret, Binary und löst optional die lokale QES-Prüfung an.
+    - Der verordnende Leistungserbringer wählt im Primärsystem einen Verordnungsdatensatz zum Signieren aus. 
+    - Der Leistungserbringer wählt das Signaturverfahren aus. 
+    - Der Leistungserbringer wählt im Primärsystem den Rezept-Typ "Workflow-Steuerung durch Leistungserbringer" aus. 
+    - Das Primärsystem ruft für das E-Rezept vom E-Rezept-Fachdienst eine Rezept-ID ab (rote Markierung im Sequenzdiagramm) und ergänzt diese im Verordnungsdatensatz. 
+    - Anschließend wird das E-Rezept mittels Konnektor mit einer QES signiert. 
+    - Es kann die Einzel-, Stapel- oder Komfortsignatur genutzt werden.
   postconditions: |
-    - Das Secret ist bekannt und belegt die Apotheke als aktuelle Bearbeiterin.
-    - Task-Status wechselt auf `in-progress`; Verordnungsdaten liegen im AVS vor.
-    - Falls Flowtype 200/209 mit Consent, liegt zusätzlich ein Consent-Resource vor.
-  relatedTechnicalUseCases: |
-    - [E-Rezept abrufen](./menu-technische-umsetzung-anwendungsfaelle.html#e-rezept-abrufen)
+    - Die erzeugten E-Rezepte beinhalten eine eineindeutige Rezept-ID und haben eine QES. 
+    - Der AccessCode für jedes E-Rezept ist im Primärsystem gespeichert. 
+    - Die E-Rezepte sind im E-Rezept-Fachdienst angelegt und haben den Status "initialisiert".
+  interface: |
+    - [$create-Operation](./op-create.html)
+  diagram: seq-169-e-rezept-erzeugen
 
-- id: E_Rezept_secret_wiederherstellen
-  anchor: e-rezept-secret-wiederherstellen
-  link: menu-fachlichkeit-anwendungsfaelle.html#e-rezept-secret-wiederherstellen
-  title: "E-Rezept erneut abrufen"
-  roles: ["Apotheke"]
+- id: 169_e_rezept_token_uebermitteln
+  anchor: 169-e-rezept-token-uebermitteln
+  link: menu-technische-umsetzung-anwendungsfaelle.html#169-e-rezept-token-uebermitteln
+  title: E-Rezept-Token an Apotheker übermitteln
+  roles:
+    - (Zahn-)Arzt
   description: |
-    Geht das beim ersten Abruf erhaltene Secret verloren, kann die gleiche Apotheke das E-Rezept
-    nochmals abrufen, um das Secret und den Verordnungsdatensatz erneut zu erhalten.
+    In diesem Anwendungsfall übermittelt die verordnende LEI die Einlöseinformationen (Task-ID und AccessCode) eines E-Rezepts direkt an eine Apotheke. Der Abruf des E-Rezepts in der Apotheke unterscheidet sich nicht vom Standard-Workflow und wird hier daher nicht beschrieben.
   preconditions: |
-    - Die Apotheke hat das E-Rezept zuvor erfolgreich abgerufen; der Task ist der Apotheke zugeordnet.
-    - Task-ID und AccessCode liegen weiterhin vor.
-    - Gleiches AVS / gleiche Telematik-ID wie beim Erstabruf (sonst HTTP 412 Precondition Failed).
+    - In der verordnenden LEI wurde der Anwendungsfall "UC 2.3 - E-Rezept einstellen" ausgeführt
   actions: |
-    - Das AVS ruft /Task/{id}?ac=... mit HTTP GET auf.
-    - Der Fachdienst stellt Task, Binary und Secret erneut bereit.
-    - Das AVS ersetzt das verlorene Secret und setzt die Bearbeitung fort.
+    - Die verordnende LEI bestimmt die Adressatinformationen der intendierten Apotheke (z.B. mittels VZD) und wählt das E-Rezept-Token des direkt zuzuweisenden E-Rezepts aus.
+    - Das Primärsystem der verordnenden LEI erstellt eine Nachricht, bettet das E-Rezept-Token in die Nachricht ein (z.B. als URL) und sendet die Nachricht an die abgebende Apotheke.
+    - Das Primärsystem der abgebenden LEI empfängt die Nachricht und extrahiert das E-Rezept-Token.
   postconditions: |
-    - Secret und Verordnungsdaten stehen wieder zur Verfügung.
-    - Task-Status verbleibt bei `in-progress` und bleibt der Apotheke zugeordnet.
-  relatedTechnicalUseCases: |
-    - [E-Rezept erneut abrufen](./menu-technische-umsetzung-anwendungsfaelle.html#e-rezept-erneut-abrufen)
-
-- id: E_Rezept_abgabe_dokumentieren
-  anchor: e-rezept-abgabe-dokumentieren
-  link: menu-fachlichkeit-anwendungsfaelle.html#e-rezept-abgabe-dokumentieren
-  title: "E-Rezept-Abgabe zeitnah dokumentieren"
-  roles: ["Apotheke"]
-  description: |
-    Vor Abschluss des Workflows kann die Apotheke über $dispense Dispensierinformationen einstellen,
-    damit Versicherte und FdV zeitnah über die erfolgte Abgabe informiert werden, ohne eine Quittung auszulösen.
-  preconditions: |
-    - Die Apotheke besitzt das Secret aus dem vorherigen Abruf.
-    - Das Rezept wurde beliefert, aber der Workflow ist noch nicht abgeschlossen.
-    - Dispensierdaten (MedicationDispense + Medication) liegen im AVS vor und bleiben unterhalb der Größenlimits.
-  actions: |
-    - Das AVS ruft /Task/{id}/$dispense?secret=... via POST auf und übermittelt die Abgabeinformationen in einer Parameters-Ressource.
-    - Der Fachdienst plausibilisiert die Daten und speichert sie ohne Statuswechsel des Tasks.
-  postconditions: |
-    - Dispensierinformationen stehen dem Versicherten im E-Rezept-FdV zur Verfügung.
-    - Task behält Status `in-progress`; keine Quittung wurde erzeugt.
-  relatedTechnicalUseCases: |
-    - [$dispense nutzen](./menu-technische-umsetzung-anwendungsfaelle.html#e-rezept-dispense)
-
-- id: E_Rezept_abgabe_abschliessen
-  anchor: e-rezept-abgabe-abschliessen
-  link: menu-fachlichkeit-anwendungsfaelle.html#e-rezept-abgabe-abschliessen
-  title: "E-Rezept-Abgabe vollziehen"
-  roles: ["Apotheke"]
-  description: |
-    Nach erfolgter Belieferung schließt die Apotheke den Workflow mit $close ab, übermittelt die finalen
-    Dispensierinformationen (oder verweist auf zuvor gesendete Daten) und erhält ein serverseitig signiertes Quittungs-Bundle.
-  preconditions: |
-    - Secret liegt vor und die Apotheke ist weiterhin berechtigt.
-    - Vollständige Dispensierinformationen stehen bereit (entweder frisch oder über vorheriges $dispense).
-    - Bei Flowtype 200 muss sichergestellt sein, dass dem Versicherten eine Quittung für private Abrechnung ausgehändigt wird.
-  actions: |
-    - Das AVS ruft /Task/{id}/$close?secret=... via POST auf und sendet die Dispensierinformationen (falls noch nicht vorhanden).
-    - Der Fachdienst validiert die Daten, erstellt das Quittungs-Bundle und setzt den Task auf `completed`.
-  postconditions: |
-    - Der Workflow ist abgeschlossen; Quittung liegt im AVS vor und kann an Rechenzentrum/Kostenträger weitergegeben werden.
-    - Versicherte sehen den Abschluss im FdV; ggf. erfolgt eine Übermittlung an BfArM bzw. ePA gemäß Flowtype.
-  relatedTechnicalUseCases: |
-    - [E-Rezept-Abgabe vollziehen](./menu-technische-umsetzung-anwendungsfaelle.html#e-rezept-close)
+    - Die abgebende LEI ist in der Lage, das E-Rezept einzusehen und zu beliefern
+  interface: |
+    - [E-Rezept-spezifische KIM-Messages](./menu-technische-umsetzung-kim.html)
+  diagram: seq-169_e_rezept_token_uebermitteln

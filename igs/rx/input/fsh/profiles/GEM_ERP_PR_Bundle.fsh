@@ -3,7 +3,7 @@ Parent: Bundle
 Id: GEM-ERP-PR-Bundle
 Title: "GEM ERP PR Bundle"
 Description: "Dokumentenbündel für Quittung"
-* insert Profile(GEM_ERP_PR_Bundle)
+* insert Meta
 * id 1..1
 * identifier 1.. MS
 * identifier only EPrescriptionId

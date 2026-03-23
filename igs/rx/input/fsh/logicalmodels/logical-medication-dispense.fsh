@@ -3,7 +3,7 @@ Parent: Element
 Id: GEM-ERP-LOG-MedicationDispense
 Title: "Logical Medication Dispense"
 Description: "Fachliches Modell zur Beschreibung der Informationen, die bei $close und $dispense in der MedicationDispense-Ressource übermittelt werden."
-* insert Versioning
+* insert Meta
 * prescriptionId 1..1 string "ID des Rezepts"
 * status 1..1 code "Status fixedValue: #completed"
 * medication 1..1 BackboneElement "Medikation"

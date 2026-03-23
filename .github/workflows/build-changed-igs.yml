@@ -1,4 +1,5 @@
-name: Build changed IGs
+name: Build IGs
+run-name: Build IGs - ${{ inputs.ig || github.event.inputs.ig || 'all' }}
 
 on:
   push:
@@ -7,19 +8,18 @@ on:
   workflow_dispatch:
     inputs:
       ig:
-        description: "IG to build (select 'changed' to build only changed IGs)"
+        description: "IG to build (select 'all' to build all IGs in sequence)"
         type: choice
         required: true
-        default: changed
+        default: all
         options:
-          - changed
+          - all
           - core
           - diga
           - erp-chrg
           - erp-eu
           - rx
-          - server
-          - t-register
+          - bfarm
 
 jobs:
   build:
@@ -48,6 +48,11 @@ jobs:
         with:
           node-version: "20"
 
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -61,10 +66,19 @@ jobs:
       - name: Install tooling
         run: |
           sudo apt-get update
-          sudo apt-get install -y zsh
+          sudo apt-get install -y zsh graphviz
           npm install -g fsh-sushi
           sudo wget -q https://github.com/mikefarah/yq/releases/download/v4.44.1/yq_linux_amd64 -O /usr/local/bin/yq
           sudo chmod +x /usr/local/bin/yq
+
+      - name: Verify Graphviz
+        run: |
+          which dot
+          dot -V
+
+      - name: Install Firely Terminal (fhir)
+        run: |
+          dotnet tool install --tool-path /usr/local/bin Firely.Terminal --version 3.4.0
 
       - name: Install Jekyll
         run: |
@@ -74,6 +88,271 @@ jobs:
         run: |
           python -m pip install --upgrade pipx
           python -m pipx install git+https://github.com/onyg/req-tooling.git
+
+      - name: IGTools Vorprüfung ausführen
+        id: igtools_precheck
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          artifact_dir="artifacts"
+          log_file="$artifact_dir/igtools-vorpruefung.log"
+          report_file="$artifact_dir/igtools-vorpruefung.html"
+          mkdir -p "$artifact_dir"
+
+          set +e
+          ./scripts/run-igtools-process-all.sh 2>&1 | tee "$log_file"
+          script_exit=${PIPESTATUS[0]}
+          set -e
+
+          if grep -Eq '(^|[^A-Z])(ERROR|FAILED)([^A-Z]|$)' "$log_file"; then
+            found_error_keywords="true"
+          else
+            found_error_keywords="false"
+          fi
+
+          if git diff --quiet --ignore-submodules -- && \
+             git diff --cached --quiet --ignore-submodules -- && \
+             [[ -z "$(git ls-files --others --exclude-standard)" ]]; then
+            tree_clean="true"
+          else
+            tree_clean="false"
+          fi
+
+          status="ok"
+          message="Vorprüfung erfolgreich: igtools process lief ohne Fehlerhinweise und hat keine Repository-Änderungen verursacht."
+
+          if [[ "$script_exit" -ne 0 || "$found_error_keywords" == "true" ]]; then
+            status="failed"
+            message="Vorprüfung fehlgeschlagen: ./scripts/run-igtools-process-all.sh hat Fehler geliefert (Exit-Code ungleich 0 oder Ausgabe mit ERROR/FAILED)."
+          elif [[ "$tree_clean" != "true" ]]; then
+            status="warning"
+            message="Vorprüfung mit Warnung: ./scripts/run-igtools-process-all.sh lief ohne offensichtliche Fehler, hat aber Dateien im Repository verändert. Bitte die erzeugten Änderungen einchecken oder die Ursache beheben."
+          fi
+
+          export PRECHECK_STATUS="$status"
+          export PRECHECK_MESSAGE="$message"
+          export PRECHECK_SCRIPT_EXIT="$script_exit"
+          export PRECHECK_FOUND_ERROR_KEYWORDS="$found_error_keywords"
+          export PRECHECK_TREE_CLEAN="$tree_clean"
+          export PRECHECK_LOG_FILE="$log_file"
+          export PRECHECK_REPORT_FILE="$report_file"
+
+          python - <<'PY'
+          import html
+          import os
+          import textwrap
+          from pathlib import Path
+
+          status = os.environ["PRECHECK_STATUS"]
+          message = os.environ["PRECHECK_MESSAGE"]
+          script_exit = os.environ["PRECHECK_SCRIPT_EXIT"]
+          found_error_keywords = os.environ["PRECHECK_FOUND_ERROR_KEYWORDS"]
+          tree_clean = os.environ["PRECHECK_TREE_CLEAN"]
+          log_file = Path(os.environ["PRECHECK_LOG_FILE"])
+          report_file = Path(os.environ["PRECHECK_REPORT_FILE"])
+
+          log_text = ""
+          if log_file.exists():
+              log_text = log_file.read_text(encoding="utf-8", errors="replace")
+
+          status_meta = {
+              "ok": {
+                "label": "ERFOLGREICH ✅",
+                "color": "#1b5e20",
+                "bg": "#e8f5e9",
+              },
+              "warning": {
+                "label": "WARNUNG ⚠️",
+                "color": "#8a6d1f",
+                "bg": "#fff8e1",
+              },
+              "failed": {
+                "label": "FEHLER ❌",
+                "color": "#b71c1c",
+                "bg": "#ffebee",
+              },
+            }.get(status, {
+              "label": "UNBEKANNT ❓",
+              "color": "#37474f",
+              "bg": "#eceff1",
+            })
+
+          status_label = status_meta["label"]
+          status_color = status_meta["color"]
+          status_bg = status_meta["bg"]
+
+          igtools_ok = script_exit == "0" and found_error_keywords != "true"
+          igtools_icon = "✅" if igtools_ok else "❌"
+          if igtools_ok:
+              igtools_text = "Pre-Check igtools: IGTools ist ohne Fehler durchgelaufen."
+              igtools_result = "OK"
+          else:
+              igtools_text = (
+                  f"Pre-Check igtools: IGTools hat Fehler gemeldet "
+                  f"(Exit-Code: {script_exit}, ERROR/FAILED in Ausgabe: {found_error_keywords})."
+              )
+              igtools_result = "ERROR"
+
+          git_clean = tree_clean == "true"
+          git_icon = "✅" if git_clean else "⚠️"
+          if git_clean:
+              git_text = "Pre-Check git changes: IGTools hat keine Git-Änderungen erzeugt."
+              git_result = "OK"
+          elif igtools_ok:
+              git_text = "Pre-Check git changes: IGTools hat Änderungen in Git produziert. Anforderungen sind NICHT eingecheckt."
+              git_result = "WARNING"
+          else:
+              git_text = "Pre-Check git changes: Es wurden Git-Änderungen erkannt; zusätzlich sind IGTools-Fehler aufgetreten."
+              git_result = "WARNING"
+
+          html_doc = textwrap.dedent(
+              f"""\
+              <!doctype html>
+              <html lang=\"de\">
+              <head>
+                <meta charset=\"utf-8\" />
+                <title>IGTools Vorprüfung</title>
+                <style>
+                  :root {{
+                    --bg: #f4f7fb;
+                    --card: #ffffff;
+                    --text: #123;
+                    --muted: #4f5b6b;
+                    --line: #d8e0ea;
+                  }}
+                  body {{
+                    margin: 0;
+                    padding: 2rem;
+                    background: radial-gradient(circle at top right, #e8f1ff, var(--bg) 50%);
+                    color: var(--text);
+                    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;
+                  }}
+                  .wrap {{ max-width: 1100px; margin: 0 auto; }}
+                  .card {{
+                    background: var(--card);
+                    border: 1px solid var(--line);
+                    border-radius: 14px;
+                    box-shadow: 0 10px 24px rgba(30, 55, 90, 0.08);
+                    padding: 1.25rem 1.5rem;
+                    margin-bottom: 1rem;
+                  }}
+                  h1 {{ margin: 0 0 0.5rem 0; font-size: 1.6rem; }}
+                  p {{ margin: 0.4rem 0; color: var(--muted); }}
+                  .badge {{
+                    display: inline-block;
+                    font-weight: 700;
+                    padding: 0.35rem 0.7rem;
+                    border-radius: 999px;
+                    color: {status_color};
+                    background: {status_bg};
+                    border: 1px solid {status_color};
+                    margin-top: 0.5rem;
+                  }}
+                  table {{ width: 100%; border-collapse: collapse; margin-top: 0.8rem; }}
+                  th, td {{
+                    border: 1px solid var(--line);
+                    padding: 0.55rem 0.7rem;
+                    text-align: left;
+                    font-size: 0.92rem;
+                  }}
+                  th {{ background: #eef3fa; font-weight: 700; }}
+                  pre {{
+                    background: #0f1722;
+                    color: #dce6f3;
+                    border-radius: 10px;
+                    padding: 1rem;
+                    overflow: auto;
+                    font-size: 0.86rem;
+                    line-height: 1.45;
+                  }}
+                </style>
+              </head>
+              <body>
+                <div class=\"wrap\">
+                  <div class=\"card\">
+                    <h1>IGTools Vorprüfung</h1>
+                    <p>{html.escape(message)}</p>
+                    <div class=\"badge\">Status: {status_label}</div>
+                  </div>
+
+                  <div class=\"card\">
+                    <h2>Prüfkriterien</h2>
+                    <table>
+                      <thead>
+                        <tr><th>Kriterium</th><th>Ergebnis</th></tr>
+                      </thead>
+                      <tbody>
+                        <tr><td>{igtools_icon} {igtools_text}</td><td>{igtools_result}</td></tr>
+                        <tr><td>{git_icon} {git_text}</td><td>{git_result}</td></tr>
+                        <tr><td>Exit-Code von ./scripts/run-igtools-process-all.sh</td><td>{html.escape(script_exit)}</td></tr>
+                        <tr><td>Ausgabe enthält ERROR/FAILED</td><td>{html.escape(found_error_keywords)}</td></tr>
+                        <tr><td>Repository nach Lauf unverändert</td><td>{html.escape(tree_clean)}</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class=\"card\">
+                    <h2>Konsolenausgabe</h2>
+                    <pre>{html.escape(log_text)}</pre>
+                  </div>
+                </div>
+              </body>
+              </html>
+              """
+          )
+
+          report_file.write_text(html_doc, encoding="utf-8")
+          PY
+
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+          echo "message=$message" >> "$GITHUB_OUTPUT"
+          echo "script_exit=$script_exit" >> "$GITHUB_OUTPUT"
+          echo "found_error_keywords=$found_error_keywords" >> "$GITHUB_OUTPUT"
+          echo "tree_clean=$tree_clean" >> "$GITHUB_OUTPUT"
+
+      - name: IGTools Vorprüfung auswerten
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "${{ steps.igtools_precheck.outputs.status }}" == "failed" ]]; then
+            echo "::error title=IGTools Vorprüfung fehlgeschlagen::${{ steps.igtools_precheck.outputs.message }}"
+            exit 1
+          fi
+
+      - name: IGTools Vorprüfung Warnung ausgeben
+        if: steps.igtools_precheck.outputs.status == 'warning'
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "::warning title=IGTools Vorprüfung mit Warnung::${{ steps.igtools_precheck.outputs.message }}"
+
+      - name: IGTools Vorprüfung - Zusammenfassung
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [[ "${{ steps.igtools_precheck.outputs.script_exit }}" == "0" && "${{ steps.igtools_precheck.outputs.found_error_keywords }}" != "true" ]]; then
+            igtools_line="✅ Pre-Check igtools: IGTools ist ohne Fehler durchgelaufen."
+          else
+            igtools_line="❌ Pre-Check igtools: IGTools hat Fehler gemeldet (Exit-Code: ${{ steps.igtools_precheck.outputs.script_exit }}, ERROR/FAILED in Ausgabe: ${{ steps.igtools_precheck.outputs.found_error_keywords }})."
+          fi
+
+          if [[ "${{ steps.igtools_precheck.outputs.tree_clean }}" == "true" ]]; then
+            git_line="✅ Pre-Check git changes: IGTools hat keine Git-Änderungen erzeugt."
+          elif [[ "${{ steps.igtools_precheck.outputs.script_exit }}" == "0" && "${{ steps.igtools_precheck.outputs.found_error_keywords }}" != "true" ]]; then
+            git_line="⚠️ Pre-Check git changes: IGTools hat Änderungen in Git produziert. Anforderungen sind NICHT eingecheckt."
+          else
+            git_line="⚠️ Pre-Check git changes: Es wurden Git-Änderungen erkannt; zusätzlich sind IGTools-Fehler aufgetreten."
+          fi
+
+          echo "## IGTools Vorprüfung" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Status: \`${{ steps.igtools_precheck.outputs.status }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Ergebnis: ${{ steps.igtools_precheck.outputs.message }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- $igtools_line" >> "$GITHUB_STEP_SUMMARY"
+          echo "- $git_line" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Install draw.io (headless)
         if: env.BUILD_GENERATE_DRAWIO_IMAGES == 'true'
@@ -98,45 +377,215 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          manual_ig="${{ github.event.inputs.ig }}"
-          if [[ -n "$manual_ig" && "$manual_ig" != "changed" ]]; then
-            echo "ig_list=$manual_ig" >> "$GITHUB_OUTPUT"
-            exit 0
+          manual_ig="${{ inputs.ig || github.event.inputs.ig || 'all' }}"
+
+          if [[ "$manual_ig" == "all" ]]; then
+            mapfile -t ig_list < <(find igs -mindepth 2 -maxdepth 2 -name ig.ini -print | sed -E 's|^igs/([^/]+)/ig.ini$|\1|' | sort -u)
+            echo "ig_mode=all" >> "$GITHUB_OUTPUT"
+          else
+            ig_list=("$manual_ig")
+            echo "ig_mode=single" >> "$GITHUB_OUTPUT"
           fi
-          base_sha="${{ github.event.before }}"
-          head_sha="${{ github.sha }}"
-
-          if [[ "$base_sha" == "0000000000000000000000000000000000000000" ]]; then
-            base_sha=$(git rev-list --max-parents=0 "$head_sha")
-          fi
-
-          mapfile -t files < <(git diff --name-only "$base_sha" "$head_sha")
-
-          declare -A igs=()
-
-          for f in "${files[@]}"; do
-            if [[ "$f" =~ ^igs/([^/]+)/ ]]; then
-              igs["${BASH_REMATCH[1]}"]=1
-            fi
-          done
-
-          ig_list=("${!igs[@]}")
 
           if [[ ${#ig_list[@]} -eq 0 ]]; then
             echo "ig_list=" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
-          ig_list_sorted=$(printf "%s\n" "${ig_list[@]}" | sort -u | tr '\n' ' ' | xargs)
+          ig_list_sorted=$(printf "%s\n" "${ig_list[@]}" | tr '\n' ' ' | xargs)
           echo "ig_list=$ig_list_sorted" >> "$GITHUB_OUTPUT"
+
+      - name: Install FHIR packages
+        if: steps.igs.outputs.ig_list != ''
+        shell: bash
+        run: |
+          set -euo pipefail
+          cache_dir="${FHIR_PACKAGE_CACHE_DIR:-$HOME/.fhir/packages}"
+          mkdir -p "$cache_dir"
+          for ig in ${{ steps.igs.outputs.ig_list }}; do
+            cfg="igs/$ig/sushi-config.yaml"
+            [[ -f "$cfg" ]] || continue
+            mapfile -t deps < <(yq eval '.dependencies // {} | to_entries | .[] | "\(.key) \(.value)"' "$cfg")
+            for dep in "${deps[@]}"; do
+              pkg="${dep%% *}"
+              ver="${dep#* }"
+              [[ -z "$pkg" || -z "$ver" ]] && continue
+              fhir install "$pkg" "$ver"
+            done
+          done
 
       - name: Download IG Publisher
         if: steps.igs.outputs.ig_list != ''
         run: ./update-publisher.sh -y
 
+      - name: Download HAPI validator for StructureMap transformation
+        if: steps.igs.outputs.ig_list != '' && (contains(steps.igs.outputs.ig_list, 'bfarm') || contains(steps.igs.outputs.ig_list, 'rx'))
+        shell: bash
+        run: |
+          set -euo pipefail
+          validator_version="${HAPI_VALIDATOR_VERSION:-6.5.26}"
+          validator_url="https://github.com/hapifhir/org.hl7.fhir.core/releases/download/${validator_version}/validator_cli.jar"
+          validator_path="$GITHUB_WORKSPACE/input-cache/current_hapi_validator.jar"
+          mkdir -p "$(dirname "$validator_path")"
+          echo "Downloading HAPI validator ${validator_version} from ${validator_url}"
+          curl -sSL "$validator_url" -o "$validator_path"
+          if [[ ! -s "$validator_path" ]]; then
+            echo "Failed to download HAPI validator jar" >&2
+            exit 1
+          fi
+          echo "HAPI_VALIDATOR_JAR=$validator_path" >> "$GITHUB_ENV"
+
       - name: Build IGs
         if: steps.igs.outputs.ig_list != ''
-        run: ./build-all.sh --ig ${{ steps.igs.outputs.ig_list }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "${{ steps.igs.outputs.ig_mode }}" == "all" ]]; then
+            ./build-all.sh
+          else
+            ./build-all.sh --ig ${{ steps.igs.outputs.ig_list }}
+          fi
+
+      - name: IG build summary
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          echo "## FHIR IG build summary" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Trigger: \`${{ github.event_name }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Selected input \`ig\`: \`${{ inputs.ig || github.event.inputs.ig || '' }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Built IGs: \`${{ steps.igs.outputs.ig_list || '' }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+
+          echo "| IG | Version | QA errors | QA warnings | QA info | QA hints | Output |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|---|---:|---:|---:|---:|---:|---|" >> "$GITHUB_STEP_SUMMARY"
+
+          # Parse IG Publisher QA outputs (qa.json / qa.min.html / qa.txt).
+          python - <<'PY'
+          import json, os, glob, re
+
+          ig_list = os.environ.get("IG_LIST","").split()
+          ref_name = os.environ.get("GITHUB_REF_NAME","")
+          summary = os.environ["GITHUB_STEP_SUMMARY"]
+
+          def read_yaml_value(path, key):
+              # ultra-minimal yaml read for your two keys; avoids extra deps
+              import re
+              try:
+                  txt = open(path, "r", encoding="utf-8").read()
+              except FileNotFoundError:
+                  return ""
+              m = re.search(rf"^{re.escape(key)}:\s*['\"]?([^'\"\n]+)", txt, flags=re.M)
+              return m.group(1).strip() if m else ""
+
+          def find_first_existing(paths):
+              for p in paths:
+                  if os.path.isfile(p) and os.path.getsize(p) > 0:
+                      return p
+              return None
+
+          def find_qa_json(ig):
+              candidates = [
+                  f"igs/{ig}/output/qa.json",
+                  f"igs/{ig}/output/qa/qa.json",
+              ]
+              direct_hit = find_first_existing(candidates)
+              if direct_hit:
+                  return direct_hit
+              hits = glob.glob(f"igs/{ig}/output/**/qa.json", recursive=True)
+              return find_first_existing(hits)
+
+          def find_qa_min_html(ig):
+              candidates = [
+                  f"igs/{ig}/output/qa.min.html",
+                  f"igs/{ig}/output/qa/qa.min.html",
+              ]
+              direct_hit = find_first_existing(candidates)
+              if direct_hit:
+                  return direct_hit
+              hits = glob.glob(f"igs/{ig}/output/**/qa.min.html", recursive=True)
+              return find_first_existing(hits)
+
+          def find_qa_txt(ig):
+              candidates = [
+                  f"igs/{ig}/output/qa.txt",
+                  f"igs/{ig}/output/qa/qa.txt",
+              ]
+              direct_hit = find_first_existing(candidates)
+              if direct_hit:
+                  return direct_hit
+              hits = glob.glob(f"igs/{ig}/output/**/qa.txt", recursive=True)
+              return find_first_existing(hits)
+
+          def parse_qa_json(path):
+              data = json.load(open(path, "r", encoding="utf-8"))
+              err = data.get("errs", data.get("errors", data.get("error")))
+              warn = data.get("warnings", data.get("warn", data.get("warning")))
+              info = data.get("info", data.get("information"))
+              hint = data.get("hints", data.get("hint"))
+
+              # Many IG Publisher outputs only provide errs/warnings/hints where
+              # hints corresponds to the "info" line in qa.min.html/qa.txt.
+              if info is None and hint is not None:
+                  info = hint
+                  hint = "—"
+
+              return err, warn, info, hint
+
+          def parse_qa_min_html(path):
+              text = open(path, "r", encoding="utf-8", errors="replace").read()
+              m = re.search(r"errors\s*=\s*(\d+)\s*,\s*warn\s*=\s*(\d+)\s*,\s*info\s*=\s*(\d+)", text, flags=re.I)
+              if not m:
+                  return None
+              err, warn, info = m.groups()
+              return int(err), int(warn), int(info), "—"
+
+          def parse_qa_txt(path):
+              text = open(path, "r", encoding="utf-8", errors="replace").read()
+              m = re.search(r"err\s*=\s*(\d+)\s*,\s*warn\s*=\s*(\d+)\s*,\s*info\s*=\s*(\d+)", text, flags=re.I)
+              if not m:
+                  return None
+              err, warn, info = m.groups()
+              return int(err), int(warn), int(info), "—"
+
+          with open(summary, "a", encoding="utf-8") as f:
+              for ig in ig_list:
+                  cfg = f"igs/{ig}/sushi-config.yaml"
+                  version = read_yaml_value(cfg, "version") or ""
+                  out_dir = f"igs/{ig}/output"
+                  out_link = f"`{out_dir}`" if os.path.isdir(out_dir) else "—"
+
+                  qa_json = find_qa_json(ig)
+                  qa_min_html = find_qa_min_html(ig)
+                  qa_txt = find_qa_txt(ig)
+
+                  if qa_json:
+                      try:
+                          err, warn, info, hint = parse_qa_json(qa_json)
+                      except Exception:
+                          err=warn=info=hint="?"
+                  elif qa_min_html:
+                      parsed = parse_qa_min_html(qa_min_html)
+                      if parsed:
+                          err, warn, info, hint = parsed
+                      else:
+                          err=warn=info=hint="?"
+                  elif qa_txt:
+                      parsed = parse_qa_txt(qa_txt)
+                      if parsed:
+                          err, warn, info, hint = parsed
+                      else:
+                          err=warn=info=hint="?"
+                  else:
+                      err=warn=info=hint="—"
+
+                  f.write(f"| `{ig}` | `{version}` | {err} | {warn} | {info} | {hint} | {out_link} |\n")
+
+          PY
+        env:
+          IG_LIST: ${{ steps.igs.outputs.ig_list }}
 
       - name: Report deploy count
         if: steps.igs.outputs.ig_list != ''
@@ -151,7 +600,6 @@ jobs:
               count=$(find "$out_dir" -type f | wc -l | tr -d ' ')
               total=$((total + count))
             fi
-
             id=$(yq -r '.id // ""' "igs/$ig/sushi-config.yaml")
             version=$(yq -r '.version // ""' "igs/$ig/sushi-config.yaml")
             id=${id#de.gematik.}
@@ -166,6 +614,36 @@ jobs:
             echo "deploy target: gs://gematik_gemspec_fhir_prod-0/$prefix"
           done
           echo "deploying $total files"
+
+      - name: Package IG output folders as ZIP
+        if: steps.igs.outputs.ig_list != ''
+        shell: bash
+        run: |
+          set -euo pipefail
+          for ig in ${{ steps.igs.outputs.ig_list }}; do
+            ig_dir="igs/$ig"
+            out_dir="$ig_dir/output"
+            zip_file="$ig_dir/output.zip"
+
+            if [[ -d "$out_dir" ]]; then
+              rm -f "$zip_file"
+              (
+                cd "$ig_dir"
+                zip -qr "output.zip" "output"
+              )
+              if [[ -s "$zip_file" ]]; then
+                echo "Created $zip_file"
+              fi
+            fi
+          done
+
+      - name: Upload IG outputs
+        if: steps.igs.outputs.ig_list != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: ig-outputs-${{ github.run_number }}
+          path: igs/*/output
+          if-no-files-found: warn
 
       - name: Prepare GitHub Pages content
         if: steps.igs.outputs.ig_list != ''
@@ -193,6 +671,11 @@ jobs:
 
               mkdir -p "$target_dir"
               cp -R "$out_dir"/. "$target_dir"/
+
+              zip_file="igs/$ig/output.zip"
+              if [[ -f "$zip_file" ]]; then
+                cp "$zip_file" "$target_dir/output.zip"
+              fi
             fi
           done
 
@@ -207,4 +690,4 @@ jobs:
 
       - name: No IG changes
         if: steps.igs.outputs.ig_list == ''
-        run: echo "No IG changes detected; skipping build."
+        run: echo "Keine IGs gefunden; Build wird übersprungen."

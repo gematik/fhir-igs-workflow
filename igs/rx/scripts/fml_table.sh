@@ -4,7 +4,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 INPUT_DIR="$SCRIPT_DIR/../input/resources/structuremaps"
-OUTPUT_DIR="$SCRIPT_DIR/../input/pagecontent"
+OUTPUT_DIR="$SCRIPT_DIR/../input/intro-notes"
 PYTHON_SCRIPT="$SCRIPT_DIR/build-sm-table.py"
 
 

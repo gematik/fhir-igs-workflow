@@ -1,0 +1,21 @@
+actor:
+- CS_E-Rezept_KTR
+conformance: SHALL
+content_hash: 861416bd637e1edbde9b1a88274b3b8d792c1696246e2950a2e41c150594a942
+created: '2026-03-23T10:57:48.511086'
+date: '2026-03-23T10:57:48.511089'
+key: IG-PRE-TIFLOW-CORE-343
+modified: '2026-03-23T10:57:48.511087'
+release_status: NEW
+source: input/pagecontent/op-close-req-ktr.md
+status: ACTIVE
+test_procedures:
+  CS_E-Rezept_KTR:
+  - Herstellererklärung
+text: "Das Clientsystem Kostenträger MUSS im Anwendungsfall \"Quittung abrufen\" für\
+  \ zum Abschliessen des Workflows für die Verordnung die HTTP-Operation POST /Task/&#60;id&#62;/$close\
+  \ mit\n    <ul> \n        <li>ACCESS_TOKEN im Authorization-Header</li>\n      \
+  \  <li>Task-ID in URL &#60;id&#62;</li>\n        <li>Geheimnis in URL-Parameter\
+  \ ?secret=</li>\n        <li>MedicationDispense</li>\n    </ul>\n    ausführen."
+title: 'CS Kostenträger: Quittung abrufen - Statusrequest'
+version: 0

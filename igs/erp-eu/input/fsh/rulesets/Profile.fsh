@@ -1,5 +1,5 @@
 RuleSet: Profile(name)
-* insert StructureDefinition({name})
+* insert Versioning
 
 * meta 1..1 MS
 * meta.profile 1..1 MS

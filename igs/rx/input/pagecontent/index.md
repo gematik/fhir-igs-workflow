@@ -1,32 +1,74 @@
 Dieser Implementation Guide beschreibt die Datenmodelle und Prozesse des E-Rezept-Fachdienstes für den Anwendungsfall von "Arzneimittelverordnung". Er bildet das Fundament für die fachlichen Szenarien und die technischen Schnittstellen im E-Rezept-Workflow für dieses Szenario.
 
-## Zweck und Geltungsbereich
+### Zweck und Geltungsbereich
 
-- Grundlegende Workflows für E-Rezepte zur Arzneimittelversorgung (Flowtypes 160/169/200/209)
+- Grundlegende Workflows für E-Rezepte zur Arzneimittelversorgung:
+  - **160, 200** zur Verordnung von Arzneimitteln
+  - **169, 209** zur Verordnung von Arzneimitteln mit Workflowsteuerung durch den Leistungserbringer
+  - **166** zur Verordnung von E-T-Rezepten
 - Profile, Operationen und Validierungsregeln
+- Funktionale Anforderungen
 
-## Nicht im Scope
+### Nicht im Scope
 
-- Modul-spezifische Sonderfälle, die in eigenen IGs beschrieben sind
+- Modul-übergreifende Anwendungsfälle
 - Produkttyp-spezifische Implementierungsdetails außerhalb des Fachdienstes
-- Beschreibung und Definition von Pro
+- Beschreibung und Definition von Prozessen außerhalb des Fachdienstes
 
-## Wie dieser IG zu lesen ist
+### Anforderungen zur Umsetzung des IGs
 
-Die Kapitel folgen der Struktur Fachlichkeit, Technische Umsetzung und
-Schnittstellen. Szenarien und Anwendungsfälle verweisen auf die zugehörigen
-technischen Kapitel und Profile.
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-115" title="E-Rezept: Anwendung des IG 'E-Rezept für Arzneimittel' für Workflows 160, 166, 169, 200 und 209" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FD">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung der Workflows 160, 166, 169, 200 und 209 den Implementation Guide "E-Rezept für Arzneimittel" umsetzen.
+</requirement>
 
-## Abhängigkeiten
+<!-- A_20213-01, A_23027, A_19300-01, A_23028, A_19299-02, A_19297-01, A_19295-01, A_22483-01 -->
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-116" title="E-Rezept: Umsetzung des Moduls 'E-Rezept für Arzneimittel'" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FD">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides "E-Rezept für Arzneimittel" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
+</requirement>
+
+
+### Wie dieser IG zu lesen ist
+
+Dieser Implementation Guide ist "von links nach rechts" zu lesen. Die Menüstruktur beginnt mit fachlichen Inhalten, welche über die technischen Anwendungsfälle dann in den Spezifikationen der Endpunkte und APIs münden. Es wird empfohlen, die Inhalte in der vorgegebenen Reihenfolge zu lesen, um ein umfassendes Verständnis der Anforderungen und Spezifikationen zu erhalten.
+
+Für einen Überblick über die Inhalte und die Struktur dieses Implementation Guides kann die [Inhaltsübersicht](toc.html) konsultiert werden. Dort sind die verschiedenen Kapitel und Abschnitte mit ihren jeweiligen Inhalten und Anforderungen aufgeführt.
+
+### Abhängigkeiten
 
 {% include dependency-table.xhtml %}
 
-## Kontakt und Feedback
+### Kontakt und Feedback
 
 Für Fragen und Feedback wenden Sie sich bitte an
 [erp-umsetzung@gematik.de](mailto:erp-umsetzung@gematik.de).
 
-## Rechtliche Hinweise
+### Rechtliche Hinweise
 
 Copyright ©2026+ gematik GmbH
 

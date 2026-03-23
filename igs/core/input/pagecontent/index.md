@@ -1,6 +1,4 @@
-# Implementation Guide E-Rezept-Workflow Core
-
-Dieser IG beschreibt die zentralen, IG-uebergreifenden Anforderungen an den
+Dieser IG beschreibt die zentralen, IG-übergreifenden Anforderungen an den
 E-Rezept-Fachdienst. Er fasst grundlegende Sicherheits-, Protokollierungs- und
 Validierungsvorgaben zusammen, die in allen nachgelagerten IGs wiederverwendet
 werden.
@@ -12,17 +10,41 @@ Der Core-IG fokussiert auf die technische Basisschicht des Fachdienstes:
 - Zugriffs- und Systemprotokollierung (AuditEvent)
 - Datenschutz und Sicherheit, insbesondere Anforderungen an die VAU
 - Validierung von FHIR-Ressourcen und Bundles
-- Loeschfristen und automatisches Loeschen
+- Löschfristen und automatisches Löschen
+- Modulübergreifende Operationen auf Task ($create, $activate, $abort, ...)
+
+
+### Anforderungen zur Umsetzung des IGs
+
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-261" title="E-Rezept-Fachdienst: Anwendung des IG 'E-Rezept-Workflow Core'" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FD">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Der E-Rezept-Fachdienst MUSS den Implementation Guide "E-Rezept-Workflow Core" umsetzen.
+</requirement>
+
+<!-- A_20745-01, A_19299-02, A_19298-01, A_22483-01, A_19324-01 -->
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-262" title="E-Rezept-Fachdienst: Umsetzung 'Implementation Guide E-Rezept-Workflow Core'" version="0">
+    <meta lockversion="false"/>
+    <actor name="eRp_FD">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Der E-Rezept-Fachdienst MUSS zur Umsetzung des Implementation Guides "E-Rezept-Workflow Core" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind.
+</requirement>
 
 ## Aufbau
 
 - [Zugriffsprotokollierung](./audit-service.html)
 - [Datenschutz und Sicherheit](./data-security.html)
 - [FHIR-Validierung](./fhir-validate.html)
-- [Loeschfristen](./ttl.html)
+- [Löschfristen](./ttl.html)
+- [Verbindungsaufbau Clientsysteme (über IDP-Dienst)](./verbindungsaufbau-client.html)
+- [Query API (modulübergreifend)](./query-api.html)
+- [Operation API (modulübergreifend)](./operation-api.html)
 - [FHIR-Artefakte](./artifacts.html)
 
 ## Bezug zu weiteren IGs
 
-Dieser IG enthaelt nur die gemeinsamen Vorgaben. Fachliche und
+Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und
 prozessspezifische Details werden in den jeweiligen IGs dokumentiert.

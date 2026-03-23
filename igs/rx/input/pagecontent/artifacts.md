@@ -34,7 +34,7 @@ CodeSystem/epa-medicationstatement-processing-event-code,
 
 #### Capability Statements
 
-Das _Capability_ _Statement_ beschreibt die Anforderungen und Fähigkeiten, die ein Server für die konforme Implementierung des E-Rezept-Fachdienst umsetzen muss. Es handelt sich um eine Konformitätserklärung, die spezifiziert, welche Ressourcen, Interaktionen und Suchparameter das ePA-Aktensystem für den E-Rezept-Fachdienst unterstützen muss.
+Das _Capability_ _Statement_ beschreibt die Anforderungen und Fähigkeiten, die ein Server für die konforme Implementierung des E-Rezept-Fachdienst umsetzen muss. Es handelt sich um eine Konformitätsbestätigung, die spezifiziert, welche Ressourcen, Interaktionen und Suchparameter das ePA-Aktensystem für den E-Rezept-Fachdienst unterstützen muss.
 
 {% include artifacts-table-generator.html resourceType="CapabilityStatement" %}
 <div><figcaption><strong>Tabelle:</strong> Capability Statements</figcaption></div>

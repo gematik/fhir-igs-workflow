@@ -1,0 +1,21 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 779bc93c96980ff6f3f1c6dc013bade9cea3eb34e7f99cdda6886d642b52a16a
+created: '2026-03-23T10:57:48.486987'
+date: '2026-03-23T10:57:48.486990'
+key: IG-PRE-TIFLOW-CORE-279
+modified: '2026-03-23T10:57:48.486989'
+release_status: NEW
+source: input/pagecontent/fhir-validate.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ
+  Bundle prüfen, ob der Wert von fullUrls der entries (Bundle.entry.fullUrl) dem [Format
+  http-Schema] oder [Format urn:uuid-Schema] entsprechen und bei Auffälligkeiten mit
+  dem HTTP-Fehlercode 400 abbrechen und die Fehlermeldung "Format der fullUrl ist
+  ungültig." in Form eines OperationOutcome ausliefern.
+title: E-Rezept-Fachdienst - FHIR-Ressource validieren - Prüfung Format fullUrl
+version: 0

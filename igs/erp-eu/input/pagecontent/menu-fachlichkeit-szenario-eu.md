@@ -1,25 +1,82 @@
-# Fachlichkeit – Szenario EU
+{% assign use_cases = site.data['gen-use-cases'] %}
+{% assign roles = site.data['roles'] %}
 
-Die Spezifikation beschreibt das Szenario zur Belieferung von E‑Rezepten im
-europäischen Ausland. Die zugehörigen Sequenzdiagramme sind in der Quelle
-angegeben (Abbildungen 10–13).
+### Epic und User Story
 
-## Ablauf im Szenario EU
+Das fachliche Konzept zum Einlösen von E-Rezepten im europäischen Ausland wurde im Rahmen von "Feature ePrescription/eDispensation Land A" [gemF_ePres-eDisp] abgestimmt.
 
-* Demographische Daten eines Versicherten abrufen
-* Liste der einlösbaren E‑Rezepte eines Versicherten abrufen
-* Liste ausgewählter E‑Rezepte eines Versicherten abrufen
-* Abgabe von E‑Rezepten im europäischen Ausland
+### Fachliches Konzept
 
-## Voraussetzungen
+#### Einlösbare Rezepte
 
-Der Ablauf setzt voraus, dass Versicherte die erforderlichen Einwilligungen
-erteilt und Zugriffsberechtigungen für die Einlösung im europäischen Ausland
-konfiguriert haben. Zusätzlich müssen E‑Rezepte durch Versicherte für die
-Einlösung im EU‑Ausland markiert sein.
+Für das europäische Nutzungsszenario ePrescription/eDispensation dürfen folgende E-Rezepte nicht verarbeitet werden:
 
-## Rollen
+- Betäubungsmittel
+- Arzneimittel, die nach ärztlicher Verschreibung oder nach den Vorschriften eines Arzneibuchs für den Versicherten zubereitet werden (bezeichnet als "formula magistralis" oder "extemporale Zubereitungen").
+- Arzneimittel, die als Humanarzneimittel eingestuft sind, aber nicht durch ein industrielles Verfahren hergestellt oder bei deren Herstellung kein industrielles Verfahren angewandt wurde.
+- Arzneimittel, die nicht als Humanarzneimittel eingestuft sind,
+noch nicht gültige oder abgelaufene E-Rezepte.
+Zusätzlich bestehen Einschränkungen, wenn das Mapping aus den Verordnungsdaten in das geforderte europäische Datenformat nicht möglich ist.
 
-- Versicherter (Einwilligung, Zugriffsberechtigung, Markierung)
-- NCPeH‑FD (Deutschland) als Vermittler zur eHDSI
-- LE‑EU als ausländischer Leistungserbringer
+Der E-Rezept-Fachdienst prüft bei Operationsaufrufen, ob die E-Rezepte die folgenden Kriterien erfüllen:
+
+- Workflow **160** oder **200** (Verordnung für apothekenpflichtige Arzneimittel, keine Workflowsteuerung durch den Leistungserbringer),
+- PZN-Verordnung (KBV_PR_ERP_Medication_PZN) mit strukturierter Angabe der Stückzahl sowie der Packungsgröße, getrennt nach Einheit und numerischem Wert,
+- Gültigkeitszeitraum ist erreicht,
+- Gültigkeitszeitraum ist nicht überschritten,
+- der Workflow zum E-Rezept hat den Status "ready".
+- Ein E-Rezept, welches die obigen Kriterien erfüllt, wird im Kontext dieses Features als einlösbares E-Rezept bezeichnet.
+
+Ein Versicherter kann sich im E-Rezept-FdV anzeigen lassen, welche seiner E-Rezepte im europäischen Ausland einlösbar sind
+
+#### Autorisierung
+
+##### Autorisierung des LE-EU für Zugriff auf die Anwendung E-Rezept 
+
+Die Authentisierung des LE-EU erfolgt im Land B (Ausland). Hierbei wird dem LE-EU eine Rolle zugeordnet. Bei der Übermittlung des Requests aus dem Land B zum NCPeH-FD wird die Rollen-Information und ggf. eine Permission-Information übermittelt. Der NCPeH-FD prüft die Permission für den Zugriff auf die Anwendung E-Rezept. Falls keine Permission übermittelt wurde, führt der NCPeH-FD eine Rollenprüfung durch.
+
+Der E-Rezept-Fachdienst führt keine Permission- oder Rollenprüfung durch.
+
+##### Autorisierung des LE-EU für Zugriff auf Daten eines Versicherten
+
+Ein Versicherter muss den Zugriff eines LE-EU auf seine E-Rezepte autorisieren. Dafür verwendet der Versicherte einen länderspezifischen zufälligen 6-stelligen alpha-nummerischen Zugriffscode (a-z, A-Z, 0-9) und übermittelt diesen zusammen mit seiner Versicherten-ID an den LE-EU.
+
+Versicherten-ID und Zugriffscode bilden zusammen die Information zur Zugriffsberechtigung und dienen der Autorisierung des LE-EU beim Operationsaufruf am E-Rezept-Fachdienst.
+
+Der Zugriffscode wird dezentral im E-Rezept-Frontend des Versicherten (FdV) erzeugt. Das E-Rezept-FdV registriert den Zugriffscode am E-Rezept-Fachdienst. 
+
+Ein Zugriffscode kann nur am E-Rezept-Fachdienst registriert werden, wenn eine "Einwilligung zum Einlösen im EU-Ausland" des Versicherten vorliegt.
+
+Bei der Registrierung des Zugriffscodes am E-Rezept-Fachdienst wird geprüft, ob einlösbare Rezepte im E-Rezept-Fachdienst für die KVNR des Versicherten vorliegen. Falls keine einlösbaren E-Rezepte vorliegen, wird der Zugriffscode nicht registriert und der Versicherte erhält eine entsprechende Meldung in seinem E-Rezept-FdV.
+
+Ein Zugriffscode ist eine Stunde gültig.
+
+Der Versicherte kann einen Zugriffscode vor dem Ende des Gültigkeitszeitraumes löschen und somit die Zugriffsberechtigung widerrufen.
+
+Wenn der Versicherte einen neuen Zugriffscode erstellt, dann wird ein zuvor bestehender Zugriffscode überschrieben und somit nicht mehr für die Autorisierung akzeptiert.
+
+Der registrierte Zugriffscode wird dem Nutzer im E-Rezept-FdV zusammen mit dem Gültigkeitszeitraum angezeigt, damit der Nutzer den Zugriffscode der LEI-EU übermitteln kann.
+
+Nach Ablauf der Gültigkeit löscht der E-Rezept-Fachdienst den Zugriffscode.
+
+Es gibt keine Möglichkeit in der Rolle Vertreter den Zugriff des LE-EU auf die Daten des Versicherten zu autorisieren.
+
+### Technische Anwendungsfälle
+
+#### Versicherteninteraktion
+
+**Beteiligte Systeme:** E-Rezept-Fachdienst, E-Rezept-FdV
+
+{% assign scenario_use_cases = "UC_3_13_Einwilligungen_einsehen,
+UC_3_14_Einwilligung_erteilen, UC_3_15_Einwilligung_widerrufen, UC_3_16_Zugriffsberechtigung_erstellen, UC_3_17_Zugriffsberechtigung_loeschen, UC_3_18_Zugriffsberechtigung_einsehen, UC_3_19_e_rezept_markieren" | split: ", " %}
+
+{% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Technische Anwendungsfälle mit Bezug zur Verwaltung von <i>E-Rezepten im EU Ausland</i>" %}
+
+#### Interaktion NCPeH
+
+**Beteiligte Systeme:** E-Rezept-Fachdienst, NCPeH
+
+{% assign scenario_use_cases = "UC_4_19_Demographische_Daten_abrufen,
+UC_4_20_Liste_Einloesbare_Abrufen, UC_4_21_Liste_Ausgewaehlte_Abrufen, UC_4_22_Abgabe_EU" | split: ", " %}
+
+{% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Technische Anwendungsfälle mit Bezug zum Abrufen von <i>E-Rezepten für die Einlösung im EU Ausland</i>" %}

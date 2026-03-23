@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# Add Python user bin to PATH for igtools
+export PATH="$HOME/.local/bin:$PATH"
+
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$ROOT_DIR/scripts/ig-common.sh"
 
@@ -48,9 +51,9 @@ ensure_ig_deps() {
   local deps_script="$ROOT_DIR/scripts/collect-sushi-deps.sh"
 
   if [[ -x "$deps_script" ]]; then
-    "$deps_script"
+    INSTALL_SUSHI_DEPS=auto "$deps_script"
   elif [[ -f "$deps_script" ]]; then
-    bash "$deps_script"
+    INSTALL_SUSHI_DEPS=auto bash "$deps_script"
   else
     echo "Warning: collect-sushi-deps.sh not found; skipping dependency check"
   fi
@@ -63,6 +66,14 @@ run_ig() {
   local ig_dir="$IG_DIR"
 
   echo "Building $ig_short"
+
+  if [[ -x "$ROOT_DIR/scripts/merge-use-cases.sh" ]]; then
+    "$ROOT_DIR/scripts/merge-use-cases.sh" "$ig_short"
+  fi
+
+  if [[ -x "$ROOT_DIR/scripts/merge-core-includes.sh" ]]; then
+    "$ROOT_DIR/scripts/merge-core-includes.sh" "$ig_short"
+  fi
 
   if command -v sushi >/dev/null 2>&1; then
     (cd "$ig_dir" && sushi .)
@@ -110,7 +121,7 @@ run_ig() {
         cp "$publisher_src" "$publisher_dest_dir/publisher.jar"
       fi
     fi
-    if [[ ${#GENONCE_ARGS[@]:-0} -gt 0 ]]; then
+    if [[ "${GENONCE_ARGS+x}" == "x" && ${#GENONCE_ARGS[@]} -gt 0 ]]; then
       (cd "$ig_dir" && "$ROOT_DIR/_genonce.sh" "${GENONCE_ARGS[@]}")
     else
       (cd "$ig_dir" && "$ROOT_DIR/_genonce.sh")

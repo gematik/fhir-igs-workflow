@@ -3,7 +3,7 @@ Parent: Parameters
 Id: GEM-ERPEU-PR-PAR-EU-GET-Prescription-Input
 Title: "GEM ERPEU PR PAR GET Prescription Input"
 Description: "This profile defines the parameters for receiving dispense information for a prescription that was redeemed in the EU"
-* insert Profile(GEM_ERPEU_PR_PAR_GET_Prescription_Input)
+* insert Versioning
 
 * parameter 1..1 MS
 

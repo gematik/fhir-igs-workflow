@@ -3,7 +3,7 @@ Parent: AuditEvent
 Id: GEM-ERP-PR-AuditEvent
 Title: "GEM ERP PR AuditEvent"
 Description: "AuditEvent für die Protokollierung des Zugriffs auf eRezepte"
-* insert Profile(GEM_ERP_PR_AuditEvent)
+* insert Meta
 
 * type MS
   * system 1..1
@@ -23,7 +23,7 @@ Description: "AuditEvent für die Protokollierung des Zugriffs auf eRezepte"
 
 * source MS
   * site 1..1
-  * site = "E-Rezept Fachdienst" (exactly)
+  * site = "E-Rezept-Fachdienst" (exactly)
   * observer only Reference(Device)
   * observer.reference 1..1
 
