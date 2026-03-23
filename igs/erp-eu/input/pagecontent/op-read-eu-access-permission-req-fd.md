@@ -1,7 +1,7 @@
 ### Anforderungen der Schnittstelle aus diesem Modul
 
 <!-- A_27086 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-36" title="E-Rezept-Fachdienst - Zugriffsberechtigung lesen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-XBORDER-36" title="E-Rezept-Fachdienst - Zugriffsberechtigung lesen - Rollenprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -10,7 +10,7 @@
 </requirement>
 
 <!-- A_27087 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-37" title="E-Rezept-Fachdienst - Zugriffsberechtigung lesen - Response" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-XBORDER-37" title="E-Rezept-Fachdienst - Zugriffsberechtigung lesen - Response" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>

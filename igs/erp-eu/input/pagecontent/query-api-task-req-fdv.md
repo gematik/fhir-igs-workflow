@@ -5,7 +5,7 @@
 Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicherten zur Verfügung. Die PATCH-Operation führt zu keiner Statusänderung des Tasks.
 
 <!-- A_27488 -->
-<requirement conformance="MAY" key="IG-TIFLOW-XBORDER-26" title="E-Rezept-FdV: E-Rezept zum Einlösen im EU-Ausland markieren" version="0">
+<requirement conformance="MAY" key="IG-PRE-TIFLOW-XBORDER-26" title="E-Rezept-FdV: E-Rezept zum Einlösen im EU-Ausland markieren" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
@@ -14,7 +14,7 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
 </requirement>
 
 <!-- A_27617 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-27" title="E-Rezept-FdV: E-Rezept zum Einlösen im EU-Ausland markieren - Hinweis Belieferungsmöglichkeit" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-XBORDER-27" title="E-Rezept-FdV: E-Rezept zum Einlösen im EU-Ausland markieren - Hinweis Belieferungsmöglichkeit" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
@@ -23,7 +23,7 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
 </requirement>
 
 <!-- A_27489 -->
-<requirement conformance="MAY" key="IG-TIFLOW-XBORDER-28" title="E-Rezept-FdV: optional: E-Rezept markieren" version="0">
+<requirement conformance="MAY" key="IG-PRE-TIFLOW-XBORDER-28" title="E-Rezept-FdV: optional: E-Rezept markieren" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
@@ -32,7 +32,7 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
 </requirement>
 
 <!-- A_27618 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-29" title="E-Rezept-FdV: E-Rezept markieren - E-Rezepte auswählen" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-XBORDER-29" title="E-Rezept-FdV: E-Rezept markieren - E-Rezepte auswählen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
@@ -41,7 +41,7 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
 </requirement>
 
 <!-- A_27490 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-30" title="E-Rezept-FdV: E-Rezept markieren" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-XBORDER-30" title="E-Rezept-FdV: E-Rezept markieren" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
@@ -50,7 +50,7 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
 </requirement>
 
 <!-- A_27545 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-31" title="E-Rezept-FdV: E-Rezept markieren - FHIR Ressource erstellen" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-XBORDER-31" title="E-Rezept-FdV: E-Rezept markieren - FHIR Ressource erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
@@ -59,7 +59,7 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
 </requirement>
 
 <!-- A_27491 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-32" title="E-Rezept-FdV: E-Rezept markieren - Speicherrequest" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-XBORDER-32" title="E-Rezept-FdV: E-Rezept markieren - Speicherrequest" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>

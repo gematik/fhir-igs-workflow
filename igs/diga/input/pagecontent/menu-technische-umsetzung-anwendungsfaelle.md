@@ -17,7 +17,7 @@ Die folgenden Abschnitte beschreiben die technischen Anwendungsfälle, die für 
 
 #### PS verordnende LEI
 
-<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-12" title="PS verordnende LEI: TIFlow-DIGA - verpflichtende Anwendungsfälle" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-DIGA-12" title="PS verordnende LEI: TIFlow-DIGA - verpflichtende Anwendungsfälle" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -34,7 +34,7 @@ Die folgenden Abschnitte beschreiben die technischen Anwendungsfälle, die für 
 
 #### E-Rezept-FdV 
 
-<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-13" title="E-Rezept-FdV: TIFlow-DIGA - verpflichtende Anwendungsfälle" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-DIGA-13" title="E-Rezept-FdV: TIFlow-DIGA - verpflichtende Anwendungsfälle" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
@@ -54,7 +54,7 @@ Die folgenden Abschnitte beschreiben die technischen Anwendungsfälle, die für 
 
 #### Clientsystem Kostenträger
 
-<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-14" title="CS Kostenträger: TIFlow-DIGA - verpflichtende Anwendungsfälle" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-DIGA-14" title="CS Kostenträger: TIFlow-DIGA - verpflichtende Anwendungsfälle" version="0">
     <meta lockversion="false"/>
     <actor name="CS_E-Rezept_KTR">
         <testProcedure id="Herstellererklärung"/>

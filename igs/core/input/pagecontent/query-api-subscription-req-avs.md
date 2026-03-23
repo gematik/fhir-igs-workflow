@@ -5,7 +5,7 @@ Um die Last am E-Rezept-Fachdienst zu kontrollieren, wurde festgelegt, dass ein 
 <!-- ToDo: um KTR erweitern -->
 
 <!-- A_22426 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-305" title="PS abgebende LEI: Subscription für neue Communication - eine Subscription pro Telematik-ID" version="0">
+<requirement conformance="SHALL NOT" key="IG-PRE-TIFLOW-CORE-305" title="PS abgebende LEI: Subscription für neue Communication - eine Subscription pro Telematik-ID" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -17,7 +17,7 @@ Um die Last am E-Rezept-Fachdienst zu kontrollieren, wurde festgelegt, dass ein 
 </requirement>
 
 <!-- A_22372 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-306" title="PS abgebende LEI: Subscription für neue Communication" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-306" title="PS abgebende LEI: Subscription für neue Communication" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -29,7 +29,7 @@ Um die Last am E-Rezept-Fachdienst zu kontrollieren, wurde festgelegt, dass ein 
 </requirement>
 
 <!-- A_22373 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-307" title="PS abgebende LEI: Subscription für neue Communication - Subscription Ressource erstellen" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-307" title="PS abgebende LEI: Subscription für neue Communication - Subscription Ressource erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -41,7 +41,7 @@ Um die Last am E-Rezept-Fachdienst zu kontrollieren, wurde festgelegt, dass ein 
 </requirement>
 
 <!-- A_22374 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-308" title="PS abgebende LEI: Subscription für neue Communication - Subscription registrieren" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-308" title="PS abgebende LEI: Subscription für neue Communication - Subscription registrieren" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -53,7 +53,7 @@ Um die Last am E-Rezept-Fachdienst zu kontrollieren, wurde festgelegt, dass ein 
 </requirement>
 
 <!-- A_22375 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-309" title="PS abgebende LEI: Subscription für neue Communication - Subscription" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-309" title="PS abgebende LEI: Subscription für neue Communication - Subscription" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -65,7 +65,7 @@ Um die Last am E-Rezept-Fachdienst zu kontrollieren, wurde festgelegt, dass ein 
 </requirement>
 
 <!-- A_22379 -->
-<requirement conformance="MAY" key="IG-TIFLOW-CORE-310" title="PS abgebende LEI: Subscription für neue Communication - Wartezeit" version="0">
+<requirement conformance="MAY" key="IG-PRE-TIFLOW-CORE-310" title="PS abgebende LEI: Subscription für neue Communication - Wartezeit" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>

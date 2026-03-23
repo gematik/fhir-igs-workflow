@@ -1,0 +1,46 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: a3088a23de9b7021b15cd238ce6357404c0bb1ab3d4785867f8be48b9a4c72a5
+created: '2026-03-23T10:40:57.025204'
+date: '2026-03-23T10:40:57.025225'
+key: IG-PRE-TIFLOW-CORE-365
+modified: '2026-03-23T10:40:57.025221'
+release_status: NEW
+source: input/pagecontent/menu-technische-umsetzung-paging.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: "Der E-Rezept-Fachdienst MUSS für die Sortierung bei der Handhabung der Rückgabe\
+  \ von mehreren FHIR-Objekten den FHIR-Suchparameter \"_sort\" unterstützen und für\
+  \ die folgenden Ressourcen entsprechende Such- und Sortierkriterien bereitstellen:\n\
+  \     \n<table>\n<thead>\n<tr>\n<th>Endpunkt</th>\n<th>Suchkriterien</th>\n<th>Sortierbar</th>\n\
+  <th>Auszuwertendes Feld</th>\n<th>Datentyp</th>\n</tr>\n</thead>\n<tbody>\n\n<tr>\n\
+  <td rowspan=\"5\">GET /Task</td>\n<td>authored-on</td>\n<td>Ja (default)</td>\n\
+  <td>Task.authoredOn</td>\n<td>date</td>\n</tr>\n<tr>\n<td>status</td>\n<td>Nein</td>\n\
+  <td>Task.status</td>\n<td>token</td>\n</tr>\n<tr>\n<td>expiry-date</td>\n<td>Ja</td>\n\
+  <td>Task.extension:expiryDate.valueDate</td>\n<td>date</td>\n</tr>\n<tr>\n<td>accept-date</td>\n\
+  <td>Ja</td>\n<td>Task.extension:acceptDate.valueDate</td>\n<td>date</td>\n</tr>\n\
+  <tr>\n<td>modified</td>\n<td>Ja</td>\n<td>Task.lastModified</td>\n<td>date</td>\n\
+  </tr>\n\n<tr>\n<td rowspan=\"2\">GET /AuditEvent</td>\n<td>date</td>\n<td>Ja (default)</td>\n\
+  <td>AuditEvent.recorded</td>\n<td>date</td>\n</tr>\n<tr>\n<td>entity</td>\n<td>Nein</td>\n\
+  <td>AuditEvent.entity.what.identifier.value</td>\n<td>string</td>\n</tr>\n\n<tr>\n\
+  <td rowspan=\"4\">GET /Communication</td>\n<td>sent</td>\n<td>Ja (default)</td>\n\
+  <td>Communication.sent</td>\n<td>date</td>\n</tr>\n<tr>\n<td>received</td>\n<td>Ja</td>\n\
+  <td>Communication.received</td>\n<td>date</td>\n</tr>\n<tr>\n<td>recipient</td>\n\
+  <td>Nein</td>\n<td>Communication.recipient.identifier.value</td>\n<td>string</td>\n\
+  </tr>\n<tr>\n<td>sender</td>\n<td>Nein</td>\n<td>Communication.sender.identifier.value</td>\n\
+  <td>string</td>\n</tr>\n\n<tr>\n<td rowspan=\"3\">GET /MedicationDispense</td>\n\
+  <td>whenhandedover</td>\n<td>Ja (default)</td>\n<td>MedicationDispense.whenHandedOver</td>\n\
+  <td>date</td>\n</tr>\n<tr>\n<td>whenprepared</td>\n<td>Ja</td>\n<td>MedicationDispense.whenPrepared</td>\n\
+  <td>date</td>\n</tr>\n<tr>\n<td>performer</td>\n<td>Nein</td>\n<td>MedicationDispense.performer.actor.identifier.value</td>\n\
+  <td>string</td>\n</tr>\n\n<tr>\n<td rowspan=\"2\">GET /ChargeItem</td>\n<td>entered-date</td>\n\
+  <td>Ja (default)</td>\n<td>ChargeItem.enteredDate</td>\n<td>date</td>\n</tr>\n<tr>\n\
+  <td>_lastUpdated</td>\n<td></td>\n<td>ChargeItem.meta.lastUpdated</td>\n<td>date</td>\n\
+  </tr>\n\n</tbody>\n</table>\n\n<div><figcaption><strong>Tabelle: </strong>Filter-\
+  \ und Sortierkriterien der Endpunkte für die Handhabung der Rückgabe von mehreren\
+  \ FHIR-Objekten</figcaption></div>"
+title: E-Rezept-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten -
+  Filter- und Sortierkriterien
+version: 0

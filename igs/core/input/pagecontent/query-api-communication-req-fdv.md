@@ -4,7 +4,7 @@ Diese Seite beschreibt Anforderungen ein E-Rezept-FdV zur Nutzung der `Communica
 
 
 <!-- A_19205 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-70" title="Nachrichten abrufen - Nachrichten von Fachdienst herunterladen" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-70" title="Nachrichten abrufen - Nachrichten von Fachdienst herunterladen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -24,7 +24,7 @@ Diese Seite beschreibt Anforderungen ein E-Rezept-FdV zur Nutzung der `Communica
 #### Zuweisen
 
 <!-- A_26318 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-71" title="Nachricht senden - E-Rezept zuweisen - Status prüfen" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-71" title="Nachricht senden - E-Rezept zuweisen - Status prüfen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
@@ -33,7 +33,7 @@ Diese Seite beschreibt Anforderungen ein E-Rezept-FdV zur Nutzung der `Communica
 </requirement>
 
 <!-- A_26319 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-72" title="Nachricht senden - E-Rezept zuweisen - Ende Gültigkeit prüfen" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-72" title="Nachricht senden - E-Rezept zuweisen - Ende Gültigkeit prüfen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
@@ -44,7 +44,7 @@ Diese Seite beschreibt Anforderungen ein E-Rezept-FdV zur Nutzung der `Communica
 Die für die Nachricht zu verwendende Communication-Ressource wird modul- und anwendungsfall-spezifisch festgelegt.
 
 <!-- A_28543 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-73" title="Nachricht senden - E-Rezept zuweisen - Zuweisen - TransactionID" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-73" title="Nachricht senden - E-Rezept zuweisen - Zuweisen - TransactionID" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -53,7 +53,7 @@ Die für die Nachricht zu verwendende Communication-Ressource wird modul- und an
 </requirement>
 
 <!-- A_28545 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-74" title="Nachricht senden - E-Rezept zuweisen - Auf Nachricht antworten - TransactionID" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-74" title="Nachricht senden - E-Rezept zuweisen - Auf Nachricht antworten - TransactionID" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -62,7 +62,7 @@ Die für die Nachricht zu verwendende Communication-Ressource wird modul- und an
 </requirement>
 
 <!-- A_19203 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-75" title="Nachricht senden - Nachricht auf Fachdienst einstellen" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-75" title="Nachricht senden - Nachricht auf Fachdienst einstellen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -84,7 +84,7 @@ Das Erfassen der KVNR eines Vertreters kann über eine Texterkennung durch Absca
 Die Textnachricht ist optional. Der Textnachricht muss der Präfix "&lt;Absendername&gt; schreibt: " vorangestellt werden.
 
 <!-- A_20237-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-76" title="Nachricht senden - Vertreterkommunikation - Nachricht erstellen" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-76" title="Nachricht senden - Vertreterkommunikation - Nachricht erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -99,7 +99,7 @@ Die Textnachricht ist optional. Der Textnachricht muss der Präfix "&lt;Absender
 </requirement>
 
 <!-- A_20238-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-77" title="Nachricht senden - Vertreterkommunikation - Nachricht auf E-Rezept-Fachdienst einstellen" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-77" title="Nachricht senden - Vertreterkommunikation - Nachricht auf E-Rezept-Fachdienst einstellen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -119,7 +119,7 @@ Das E-Rezept-FdV MUSS im Anwendungsfall "Nachricht löschen" es dem Nutzer ermö
 Das E-Rezept-FdV MUSS im Anwendungsfall "Nachricht löschen" vom Nutzer eine Bestätigung einholen, dass die selektierte Nachricht gelöscht werden sollen und die Möglichkeit geben, das Löschen abzubrechen.
 
 <!-- A_21526-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-78" title="E-Rezept-FdV: Nachricht löschen - Löschrequest" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-78" title="E-Rezept-FdV: Nachricht löschen - Löschrequest" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>

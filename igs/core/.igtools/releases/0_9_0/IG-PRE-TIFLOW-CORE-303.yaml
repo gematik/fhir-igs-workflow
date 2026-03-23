@@ -1,0 +1,33 @@
+actor:
+- Anb_NCPeH_FD
+- CS_E-Rezept_KTR
+- PS_E-Rezept_abgebend
+- PS_E-Rezept_verordnend
+conformance: SHALL
+content_hash: a0814de3f81270991c11d96bc3b3dbd74eb8f7443044495c82008ae777e6dfac
+created: '2026-03-23T10:40:57.001494'
+date: '2026-03-23T10:40:57.001497'
+key: IG-PRE-TIFLOW-CORE-303
+modified: '2026-03-23T10:40:57.001496'
+release_status: NEW
+source: input/pagecontent/pki-zertifikatspruefung.md
+status: ACTIVE
+test_procedures:
+  Anb_NCPeH_FD:
+  - Produktgutachten
+  CS_E-Rezept_KTR:
+  - Herstellererklärung
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: "Das Primärsystem MUSS bei der Prüfung von X.509-Zertifikaten der TI den CertificateService des\
+  \ Konnektors mit der Operation VerifyCertificate gemäß [gemSpec_Kon#4.1.9.5.3] verwenden\
+  \ und dabei\n    <ul>\n    <li>das zu prüfende Zertifikat als Parameter X509Certificate\
+  \ verwenden</li>\n    <li>die aktuelle Systemzeit als Parameter VerificationTime\
+  \ verwenden</li>\n    </ul>\n    Das Primärsystem MUSS bei Prüfung eines C.FD.ENC\
+  \ den Rückgabewert in RoleList gegen die erwartete Rollen-OID gemäß TAB_ILFERP_012\
+  \ prüfen und bei Abweichungen die Benutzung des Zertifikats für einen Verbindungsaufbau\
+  \ zur VAU ablehnen."
+title: 'CS: Prüfung TI-Zertifikate'
+version: 0

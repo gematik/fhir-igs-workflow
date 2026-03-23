@@ -1,0 +1,22 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 5eb2dc4a235a38d012746d42b2d4a4ec6da3218e0fd6ac269899bddcc361f659
+created: '2026-03-23T10:40:56.962536'
+date: '2026-03-23T10:40:56.962539'
+key: IG-PRE-TIFLOW-CORE-142
+modified: '2026-03-23T10:40:56.962537'
+release_status: NEW
+source: input/pagecontent/op-abort-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der
+  &#60;id&#62; adressierten/Task/&#60;id&#62;/$abort durch verordnende Leistungserbringer
+  den im referenzierten Task gespeicherten Status Task.status prüfen und mit dem Fehler
+  412 abbrechen, wenn Task.status ungleich "ready" ist, damit die verordnende Leistungserbringerinstitution
+  eine Verordnung nur löschen kann, wenn sie sich noch nicht in Belieferung befindet
+  oder beliefert wurde.
+title: E-Rezept-Fachdienst - E-Rezept löschen - Verordnender - Prüfung Status
+version: 0

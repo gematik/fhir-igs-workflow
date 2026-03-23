@@ -1,7 +1,7 @@
 Diese Seite beschreibt Anforderungen ein E-Rezept-FdV zur Nutzung der `AuditEvent`-Query-Endpunkte.
 
 <!-- A_19210 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-301" title="E-Rezept-FdV: Protokolldaten anzeigen - Protokolleinträge abrufen" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-301" title="E-Rezept-FdV: Protokolldaten anzeigen - Protokolleinträge abrufen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>

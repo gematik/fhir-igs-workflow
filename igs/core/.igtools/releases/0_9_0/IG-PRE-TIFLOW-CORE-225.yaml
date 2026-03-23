@@ -1,0 +1,343 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 140e7a46b5619e2894e6e1fa7b38c9b27ea02ea4349dbd9d14b08b1a5405ff3a
+created: '2026-03-23T10:40:56.981864'
+date: '2026-03-23T10:40:56.981866'
+key: IG-PRE-TIFLOW-CORE-225
+modified: '2026-03-23T10:40:56.981865'
+release_status: NEW
+source: input/pagecontent/menu-technische-umsetzung-push.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: 'Der E-Rezept-Fachdienst MUSS den Nachrichteninhalt einer Push Notification
+  gemäß TAB_eRPFD_028 erzeugen.
+
+
+  <table>
+
+  <thead>
+
+  <tr>
+
+  <th>ChannelId</th>
+
+  <th>Identifier</th>
+
+  <th>IdentifierType</th>
+
+  <th>Product</th>
+
+  <th>ActorName</th>
+
+  <th>Message</th>
+
+  </tr>
+
+  </thead>
+
+  <tbody>
+
+
+  <tr>
+
+  <td>erp.task.activate</td>
+
+  <td>Task.identifier.PrescriptionID</td>
+
+  <td>TaskId</td>
+
+  <td>
+
+  Falls Task.flowType = "160","166","169","200","209": KBV_PR_ERP_Bundle.entry.[medicationName]<br>
+
+  Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
+
+  </td>
+
+  <td>Lesbarer Name aus dem ACCESS_TOKEN des Ausführenden</td>
+
+  <td>POST /Task/&lt;id&gt;/$activate</td>
+
+  </tr>
+
+
+  <tr>
+
+  <td>erp.task.accept</td>
+
+  <td>Task.identifier.PrescriptionID</td>
+
+  <td>TaskId</td>
+
+  <td>
+
+  Falls Task.flowType = "160","166","169","200","209": KBV_PR_ERP_Bundle.entry.[medicationName]<br>
+
+  Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
+
+  </td>
+
+  <td>Lesbarer Name aus dem ACCESS_TOKEN des Ausführenden</td>
+
+  <td>POST /Task/&lt;id&gt;/$accept</td>
+
+  </tr>
+
+
+  <tr>
+
+  <td>erp.task.reject</td>
+
+  <td>Task.identifier.PrescriptionID</td>
+
+  <td>TaskId</td>
+
+  <td>
+
+  Falls Task.flowType = "160","166","169","200","209": KBV_PR_ERP_Bundle.entry.[medicationName]<br>
+
+  Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
+
+  </td>
+
+  <td>Lesbarer Name aus dem ACCESS_TOKEN des Ausführenden</td>
+
+  <td>POST /Task/&lt;id&gt;/$reject</td>
+
+  </tr>
+
+
+  <tr>
+
+  <td>erp.task.close</td>
+
+  <td>Task.identifier.PrescriptionID</td>
+
+  <td>TaskId</td>
+
+  <td>
+
+  Falls Task.flowType = "160","166","169","200","209": GEM_ERP_PR_PAR_CloseOperation_Input.parameter[rxDispensation].part[medication].[medicationName]<br>
+
+  Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
+
+  </td>
+
+  <td>Lesbarer Name aus dem ACCESS_TOKEN des Ausführenden</td>
+
+  <td>POST /Task/&lt;id&gt;/$close</td>
+
+  </tr>
+
+
+  <tr>
+
+  <td>erp.task.dispense</td>
+
+  <td>Task.identifier.PrescriptionID</td>
+
+  <td>TaskId</td>
+
+  <td>
+
+  Falls Task.flowType = "160","166","169","200","209": GEM_ERP_PR_PAR_DispenseOperation_Input.parameter[rxDispensation].part[medication].[medicationName]<br>
+
+  Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
+
+  </td>
+
+  <td>Lesbarer Name aus dem ACCESS_TOKEN des Ausführenden</td>
+
+  <td>POST /Task/&lt;id&gt;/$dispense</td>
+
+  </tr>
+
+
+  <tr>
+
+  <td>erp.task.abort</td>
+
+  <td>Task.identifier.PrescriptionID</td>
+
+  <td>TaskId</td>
+
+  <td>
+
+  Falls Task.flowType = "160","166","169","200","209": KBV_PR_ERP_Bundle.entry.[medicationName]<br>
+
+  Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
+
+  </td>
+
+  <td>Lesbarer Name aus dem ACCESS_TOKEN des Ausführenden</td>
+
+  <td>POST /Task/&lt;id&gt;/$abort</td>
+
+  </tr>
+
+
+  <tr>
+
+  <td>erp.communication.new</td>
+
+  <td>Communication.basedOn.reference</td>
+
+  <td>TaskId</td>
+
+  <td>
+
+  Falls Communication.basedOn.reference.Task.flowType = "160","166","200": KBV_PR_ERP_Bundle.entry.[medicationName]<br>
+
+  Falls Communication.basedOn.reference.Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
+
+  </td>
+
+  <td>Lesbarer Name aus dem ACCESS_TOKEN des Ausführenden</td>
+
+  <td>
+
+  POST /Communication<br>
+
+  Falls Profil GEM_ERP_PR_Communication_Reply: Communication.payload.content.info_text<br>
+
+  Falls Profil GEM_ERP_PR_Communication_DiGA: Communication.payload.content
+
+  </td>
+
+  </tr>
+
+
+  <tr>
+
+  <td>erp.task.vertreter</td>
+
+  <td>Task.identifier.PrescriptionID</td>
+
+  <td>TaskId</td>
+
+  <td>
+
+  Falls Task.flowType = "160","166","200": KBV_PR_ERP_Bundle.entry.[medicationName]<br>
+
+  Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
+
+  </td>
+
+  <td>Lesbarer Name aus dem ACCESS_TOKEN des Ausführenden</td>
+
+  <td>GET /Task/&lt;id&gt;</td>
+
+  </tr>
+
+
+  <tr>
+
+  <td>erp.chargeitem.create</td>
+
+  <td>ChargeItem.identifier.PrescriptionID</td>
+
+  <td>TaskId</td>
+
+  <td>ChargeItem.supportingInformation.KBV_PR_ERP_Bundle.entry.[medicationName]</td>
+
+  <td>Lesbarer Name aus dem ACCESS_TOKEN des Ausführenden</td>
+
+  <td>POST /ChargeItem</td>
+
+  </tr>
+
+
+  <tr>
+
+  <td>erp.chargeitem.update</td>
+
+  <td>ChargeItem.identifier.PrescriptionID</td>
+
+  <td>TaskId</td>
+
+  <td>ChargeItem.supportingInformation.KBV_PR_ERP_Bundle.entry.[medicationName]</td>
+
+  <td>Lesbarer Name aus dem ACCESS_TOKEN des Ausführenden</td>
+
+  <td>PUT /ChargeItem/&lt;id&gt;</td>
+
+  </tr>
+
+
+  <tr>
+
+  <td>erp.eu.prescription.get</td>
+
+  <td>Task.identifier.PrescriptionID</td>
+
+  <td>TaskId</td>
+
+  <td>KBV_PR_ERP_Bundle.entry.[medicationName]</td>
+
+  <td>GEM_ERPEU_PR_PAR_GET_Prescription_Input.parameter.part[practionerName].valueString</td>
+
+  <td>-</td>
+
+  </tr>
+
+
+  <tr>
+
+  <td>erp.eu.prescription.redeem</td>
+
+  <td>Task.identifier.PrescriptionID</td>
+
+  <td>TaskId</td>
+
+  <td>KBV_PR_ERP_Bundle.entry.[medicationName]</td>
+
+  <td>GEM_ERPEU_PR_PAR_GET_Prescription_Input.parameter.part[practionerName].valueString</td>
+
+  <td>-</td>
+
+  </tr>
+
+
+  <tr>
+
+  <td>erp.eu.prescription.close</td>
+
+  <td>Task.identifier.PrescriptionID</td>
+
+  <td>TaskId</td>
+
+  <td>GEM_ERPEU_PR_PAR_CloseOperation_Input.parameter[rxDispensation].[medication].[medicationName]</td>
+
+  <td>GEM_ERPEU_PR_PAR_CloseOperation_Input.parameter.part[practionerData].name.text</td>
+
+  <td>-</td>
+
+  </tr>
+
+
+  </tbody>
+
+  </table>
+
+  <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_028 Nachrichteninhalt Push
+  Notification</figcaption></div>
+
+
+  <p>
+
+  <strong>Definition [medicationName]:</strong><br>
+
+  Falls medication dem Profil "KBV_PR_ERP_Medication_Ingredient" entspricht:<br>
+
+  `Medication.ingredient.item.itemCodeableConcept.text`<br>
+
+  Ansonsten:<br>
+
+  `Medication.code.text`
+
+  </p>'
+title: E-Rezept-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen
+version: 0

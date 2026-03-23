@@ -12,7 +12,7 @@ Dieser Implementation Guide beschreibt Profile und deren Verwendung für den Dat
 
 ### Anforderungen zur Umsetzung des IGs
 
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-15" title="E-Rezept: Anwendung des IG 'Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst' für Übertragung von Daten vom E-Rezept-Fachdienst an den BfArM Webdienst" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-BFARM-15" title="E-Rezept: Anwendung des IG 'Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst' für Übertragung von Daten vom E-Rezept-Fachdienst an den BfArM Webdienst" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Herstellererklärung"/>
@@ -21,7 +21,7 @@ Dieser Implementation Guide beschreibt Profile und deren Verwendung für den Dat
 </requirement>
 
 <!-- A_27843 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-16" title="E-Rezept: Umsetzung des Moduls 'Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst'" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-BFARM-16" title="E-Rezept: Umsetzung des Moduls 'Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst'" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Herstellererklärung"/>

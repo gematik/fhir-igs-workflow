@@ -7,7 +7,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 ### Modulspezifische Anforderungen
 
 <!-- A_19026-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-7" title="E-Rezept-Fachdienst - E-Rezept löschen - Flowtype 162 - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-DIGA-7" title="E-Rezept-Fachdienst - E-Rezept löschen - Flowtype 162 - Rollenprüfung" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produktgutachten"/>

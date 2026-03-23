@@ -7,7 +7,7 @@ Der E-Rezept-Fachdienst übernimmt die Rolle „Fachdienst“. Er verwaltet FdV-
 Der E-Rezept-Fachdienst erstellt ein Notification-Objekt für verschlüsselte Notifications wie in [OpenAPI_PushGateway] beschrieben. Der Nachrichteninhalt, auf den in diesem Kapitel verwiesen wird, ist der Inhalt des Ciphertexts.
 
 <!-- A_28115 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-225" title="E-Rezept-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-225" title="E-Rezept-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -189,7 +189,7 @@ Ansonsten:<br>
 </requirement>
 
 <!-- A_28116 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-226" title="E-Rezept-Fachdienst - Push Notification senden - verpflichtende Verschlüsselung" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-226" title="E-Rezept-Fachdienst - Push Notification senden - verpflichtende Verschlüsselung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -200,7 +200,7 @@ Ansonsten:<br>
 Die Vorgaben für die Verschlüsselung sind in `A_27161-* - Fachdienst - Push Notification senden - Nachricht verschlüsseln` beschrieben.
 
 <!-- A_28135 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-227" title="E-Rezept-Fachdienst - Push Notification senden - Referenz auf Protokolleintrag" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-227" title="E-Rezept-Fachdienst - Push Notification senden - Referenz auf Protokolleintrag" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -211,7 +211,7 @@ Die Vorgaben für die Verschlüsselung sind in `A_27161-* - Fachdienst - Push No
 ### Push Notification Datenstruktur
 
 <!-- A_28124 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-228" title="E-Rezept - Push Notifications - Datenstruktur Nachrichteninhalte" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-228" title="E-Rezept - Push Notifications - Datenstruktur Nachrichteninhalte" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Herstellererklärung"/>

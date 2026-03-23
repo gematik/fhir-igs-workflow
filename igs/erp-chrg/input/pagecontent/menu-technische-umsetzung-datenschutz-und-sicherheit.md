@@ -3,7 +3,7 @@ PKV-Versicherte erhalten Abrechnungsinformationen, die sie bei ihrer privaten Kr
 Um zu vermeiden, dass der Anbieter des E-Rezept-Fachdienstes ein Profil über alle PKV-Versicherten mit Einwilligung erhält, wird die Information über die Einwilligung in der VAU verarbeitet und verschlüsselt gespeichert. Die Nichtabstreitbarkeit der Einwilligung ist technisch sicherzustellen.
 
 <!--A_22207-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-35" title="Einwilligung in Verarbeitung von Abrechnungsinformationen nur für PKV-Versicherte" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-35" title="Einwilligung in Verarbeitung von Abrechnungsinformationen nur für PKV-Versicherte" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -13,7 +13,7 @@ Die Fachanwendung E-Rezept MUSS sicherstellen, dass eine Einwilligung in die Ver
 
 Für den E-Rezept-Fachdienst heißt dies:
 <!--A_22208-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-36" title="Verarbeitung von Abrechnungsinformationen nur nach Einwilligung" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-36" title="Verarbeitung von Abrechnungsinformationen nur nach Einwilligung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -22,7 +22,7 @@ Die Fachanwendung E-Rezept MUSS sicherstellen, dass eine Verarbeitung von Abrech
 </requirement>
 
 <!--A_22209-->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CHRG-37" title="Verarbeitung von Abrechnungsinformationen im E-Rezept-Fachdienst nur nach Einwilligung" version="0">
+<requirement conformance="SHALL NOT" key="IG-PRE-TIFLOW-CHRG-37" title="Verarbeitung von Abrechnungsinformationen im E-Rezept-Fachdienst nur nach Einwilligung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -31,7 +31,7 @@ Der E-Rezept-Fachdienst DARF NICHT Abrechnungsinformationen verarbeiten, wenn ke
 </requirement>
 
 <!--A_22210-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-38" title="Nichtabstreitbarkeit der Einwilligung" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-38" title="Nichtabstreitbarkeit der Einwilligung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -40,7 +40,7 @@ Die Fachanwendung E-Rezept MUSS sicherstellen, dass die technische Umsetzung der
 </requirement>
 
 <!--A_22211-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-39" title="Löschen von Abrechnungsinformationen nach zehn Jahren" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-39" title="Löschen von Abrechnungsinformationen nach zehn Jahren" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -49,7 +49,7 @@ Der E-Rezept-Fachdienst MUSS Abrechnungsinformationen zu einem E-Rezept nach zeh
 </requirement>
 
 <!--A_22212-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-40" title="Information über Möglichkeit des Speicherns der Abrechnungsinformationen nur für konkretes E-Rezept" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-40" title="Information über Möglichkeit des Speicherns der Abrechnungsinformationen nur für konkretes E-Rezept" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -58,7 +58,7 @@ Der E-Rezept-Fachdienst MUSS sicherstellen, dass abgebende Leistungserbringer di
 </requirement>
 
 <!--A_22213-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-41" title="Schutz der Abrechnungsinformationen" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-41" title="Schutz der Abrechnungsinformationen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -67,7 +67,7 @@ Der E-Rezept-Fachdienst MUSS die Abrechnungsinformationen während der Verarbeit
 </requirement>
 
 <!--A_22214-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-42" title="Protokollierung der Einwilligung bzw. des Widerrufs" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-42" title="Protokollierung der Einwilligung bzw. des Widerrufs" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>

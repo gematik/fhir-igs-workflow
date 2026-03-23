@@ -9,7 +9,7 @@ Dieser Abschnitt beschreibt UX-Guidelines für den Fall der Zuweisung eines E-Re
 Wenn ein E-Rezept über das E-Rezept-FdV oder über KIM an eine Apotheke zugewiesen wird, soll der Sender schnellstmöglich über die Annahme und Bearbeitung des E-Rezeptes durch die Apotheke informiert werden. Dabei ist der Hinweis über den Erhalt eines E- Rezeptes via KIM oder E-Rezept-FdV so lange im AVS anzuzeigen, bis der Hinweis verarbeitet wurde. Im Falle der Zuweisung per E-Rezept-FdV soll eine Rückmeldung an den Kunden übermittelt werden. Bei Erhalt eines E-Rezeptes soll potentiell jeder Arbeitsplatz einen Hinweis erhalten. Es soll konfiguriert werden können, an welchen Arbeitsplätzen der Hinweis angezeigt wird.
 
 <!-- A_23786 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-117" title="PS abgebende LEI: UX - Zuweisung - Hinweis" version="0">
+<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-117" title="PS abgebende LEI: UX - Zuweisung - Hinweis" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -22,7 +22,7 @@ Nachdem die Apotheke eine Zuweisung erhalten hat soll das Primärsystem, so weit
 - Communication des E-Rezept-FdV (GEM_ERP_PR_Communication_DispReq)
 
 <!-- A_23787 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-118" title="PS abgebende LEI: UX - Zuweisung - Übernahme E-Rezept aus Nachricht in einen Vorgang" version="0">
+<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-118" title="PS abgebende LEI: UX - Zuweisung - Übernahme E-Rezept aus Nachricht in einen Vorgang" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -35,7 +35,7 @@ Nachdem die Apotheke eine Zuweisung erhalten hat soll das Primärsystem, so weit
 Im Arbeitsablauf der Apotheke ist der Austausch und die Kommunikation mit den Kunden über Verordnungen und Medikamente ein wichtiger Bestandteil. Viele Nachrichten sind dabei zum Großteil identisch. Daher sollen Vorlagen und Nachrichten konfigurierbar sein, die für die Kommunikation bei Zuweisung genutzt werden können.
 
 <!-- A_23788 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-119" title="PS abgebende LEI: UX - Nachrichtenkonfiguration" version="0">
+<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-119" title="PS abgebende LEI: UX - Nachrichtenkonfiguration" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -46,7 +46,7 @@ Im Arbeitsablauf der Apotheke ist der Austausch und die Kommunikation mit den Ku
 Für die individuelle Kommunikation und Benachrichtigung von Kunden sollen die Nachrichten mit möglichst wenig Aufwand erstellt werden können. In Vorlagen für Nachrichten können Platzhalter verwendet werden, die bei Nutzung der Vorlagen automatisch befüllt werden.
 
 <!-- A_23789 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-120" title="PS abgebende LEI: UX - Komposition einer Nachricht an einen Kunden mit Textvorlagen" version="0">
+<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-120" title="PS abgebende LEI: UX - Komposition einer Nachricht an einen Kunden mit Textvorlagen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -55,7 +55,7 @@ Für die individuelle Kommunikation und Benachrichtigung von Kunden sollen die N
 </requirement>
 
 <!-- A_23790 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-121" title="PS abgebende LEI: UX - Nachrichtenkonfiguration - automatischer Versand der Empfangsbestätigung" version="0">
+<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-121" title="PS abgebende LEI: UX - Nachrichtenkonfiguration - automatischer Versand der Empfangsbestätigung" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -68,7 +68,7 @@ Für die individuelle Kommunikation und Benachrichtigung von Kunden sollen die N
 Nach Zuweisung eines E-Rezepts über KIM kann es erforderlich sein, mit dem Verordnenden Arzt in Kontakt zu treten. Wenn ein Versicherter ein E-Rezept über das E-Rezept-FdV einer Apotheke zugewiesen hat, ist es wichtig, dass der Versicherte über den Verlauf des Bearbeitungsvorgangs informiert wird. Aktuell kann der Nutzer des E-Rezept-FdV nicht auf Nachrichten der Apotheke antworten, daher soll die Apotheke den Versicherten mit entsprechenden Informationen über den Bestellvorgang informieren. Rückmeldungen, wie bspw. der Empfang der Zuweisung und das Herunterladen des E- Rezepts, können automatisch erfolgen. Der Nutzer soll die Möglichkeit haben, vorkonfigurierte Nachrichten zu verwenden, die vor dem Versenden editierbar sind, um bspw. zusätzliche Informationen zum Vorgang hinzuzufügen.
 
 <!-- A_23791 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-122" title="PS abgebende LEI: UX - Zuweisung - Empfangsbestätigung" version="0">
+<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-122" title="PS abgebende LEI: UX - Zuweisung - Empfangsbestätigung" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -79,7 +79,7 @@ Nach Zuweisung eines E-Rezepts über KIM kann es erforderlich sein, mit dem Vero
 Sobald der Vorgang seitens der Apotheke bearbeitet wurde, möchte der Nutzer den Kunden darüber informieren, dass die Bestellung abgeholt werden kann. Alle für das Abholen relevanten Informationen (bspw. Abhol-Code, Zeitpubkt der Verfügbarkeit) sollen in der Nachricht übermittelt werden.
 
 <!-- A_23792 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-123" title="PS abgebende LEI: UX - Zuweisung - Abholbenachrichtigung" version="0">
+<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-123" title="PS abgebende LEI: UX - Zuweisung - Abholbenachrichtigung" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -90,7 +90,7 @@ Sobald der Vorgang seitens der Apotheke bearbeitet wurde, möchte der Nutzer den
 Falls ein Medikament in der Apotheke nicht verfügbar ist, ist das dem Kunden mitzuteilen. In diesem Fall ist das E-Rezept am E-Rezept-Fachdienst wieder freizugeben (Operation POST /Task/<id>/$reject). Es empfiehlt sich dem Kunden die klare Handlungsempfehlung mitzugeben, dass eine andere Apotheke zum Einlösen des Rezepts gesucht werden muss.
 
 <!-- A_23793 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-124" title="PS abgebende LEI: UX - Zuweisung  - Nachricht bei Nicht-Verfügbarkeit eines Medikaments" version="0">
+<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-124" title="PS abgebende LEI: UX - Zuweisung  - Nachricht bei Nicht-Verfügbarkeit eines Medikaments" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -101,7 +101,7 @@ Falls ein Medikament in der Apotheke nicht verfügbar ist, ist das dem Kunden mi
 Neben vorher beschriebenen Nachrichten, soll das System ebenfalls ermöglichen, manuell erstellte Nachrichten an den Sender einer Zuweisung zu übermitteln.
 
 <!-- A_23794 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-125" title="PS abgebende LEI: UX - Zuweisung - Nachrichten an Sender" version="0">
+<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-125" title="PS abgebende LEI: UX - Zuweisung - Nachrichten an Sender" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -112,7 +112,7 @@ Neben vorher beschriebenen Nachrichten, soll das System ebenfalls ermöglichen, 
 Das Erstellen und Senden einer Nachricht soll nach Möglichkeit aus dem Arbeitsfluss im AVS möglich sein, ohne dabei ein separates Programm öffnen zu müssen. Weiterhin ist eine fortlaufende Kommunikation mit einem Vorgang zu verknüpfen, sodass der Anwender den Nachrichtenverlauf nachvollziehen kann. Dies bezieht sich sowohl auf die Kommunikation via KIM, als auch via E-Rezept-FdV.
 
 <!-- A_23795 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-126" title="PS abgebende LEI: UX - Zuweisung - Nachrichten an Sender - ohne Medienbruch" version="0">
+<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-126" title="PS abgebende LEI: UX - Zuweisung - Nachrichten an Sender - ohne Medienbruch" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -121,7 +121,7 @@ Das Erstellen und Senden einer Nachricht soll nach Möglichkeit aus dem Arbeitsf
 </requirement>
 
 <!-- A_23796 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-127" title="PS abgebende LEI: UX - Zuweisung - Nachrichten eines Vorgangs" version="0">
+<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-127" title="PS abgebende LEI: UX - Zuweisung - Nachrichten eines Vorgangs" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -153,7 +153,7 @@ Krankenkasse eingelöst werden kann (Frist endet zu Task.extension:acceptDate, b
 Task.extension:expiryDate, bei Kassenrezepten 3 Monate nach Ausstellung). Danach darf ein Rezept nicht mehr von der Apotheke beliefert werden (§2, Abs. 5 AMVV). Bei Mehrfachverordnungen sind Belieferungsfrist und Einlösefrist identisch und können vom Arzt bis zu einem Jahr frei gewählt werden. Das Primärsystem soll dem Nutzer bei Ablaufen der entsprechenden Fristen entsprechende Hinweise darstellen.
 
 <!-- A_23797 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-128" title="PS abgebende LEI: UX - Fristen eines Rezeptes - Anzeigen" version="0">
+<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-128" title="PS abgebende LEI: UX - Fristen eines Rezeptes - Anzeigen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -162,7 +162,7 @@ Task.extension:expiryDate, bei Kassenrezepten 3 Monate nach Ausstellung). Danach
 </requirement>
 
 <!-- A_23798 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-129" title="PS abgebende LEI: UX - Fristen eines Rezeptes - Hinweis bei überschrittener Frist" version="0">
+<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-129" title="PS abgebende LEI: UX - Fristen eines Rezeptes - Hinweis bei überschrittener Frist" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -171,7 +171,7 @@ Task.extension:expiryDate, bei Kassenrezepten 3 Monate nach Ausstellung). Danach
 </requirement>
 
 <!-- A_23799 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-130" title="PS abgebende LEI: UX - Fristen eines Rezeptes - Überschreiten der Belieferungsfrist" version="0">
+<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-130" title="PS abgebende LEI: UX - Fristen eines Rezeptes - Überschreiten der Belieferungsfrist" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -182,7 +182,7 @@ Task.extension:expiryDate, bei Kassenrezepten 3 Monate nach Ausstellung). Danach
 Der E-Rezept-Fachdienst löscht eingestellte Rezepte zehn Tage nach Ablaufen einer der Gültigkeit einer Verordnung (Task.extension:expiryDate). Daher kann das AVS in diesen zehn Tagen ein abgelaufenes Rezept vom E-Rezept-Fachdienst abrufen. Diese Verordnungen dürfen nicht von der Apotheke beliefert werden.
 
 <!-- A_23800 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-ERP-131" title="PS abgebende LEI: UX - Fristen eines Rezeptes - Überschreiten der Einlösefrist" version="0">
+<requirement conformance="SHALL NOT" key="IG-PRE-TIFLOW-ERP-131" title="PS abgebende LEI: UX - Fristen eines Rezeptes - Überschreiten der Einlösefrist" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -195,7 +195,7 @@ Der E-Rezept-Fachdienst löscht eingestellte Rezepte zehn Tage nach Ablaufen ein
 Wenn ein Versicherter das E-Rezept-Token entweder per E-Rezept-FdV übermittelt oder in der Filiale den zugehörigen Datamatrix-Code vorgezeigt hat, dann ruft die Apotheke das E-Rezept vom E-Rezept-Fachdienst ab. Das E-Rezept erhält den Status "in-progress". Ein E-Rezept mit diesem Status kann nicht noch einmal vom E-Rezept- Fachdienst abgerufen  werden. Wenn der Kunde das Medikament dann zu einem späteren Zeitpunkt in der Filiale abholt, soll es möglich sein, den zugehörigen Vorgang im AVS auch per Scan des E-Rezept-Token zu finden. Hinweis: Die Abfrage eines bereits durch die Apotheke heruntergeladenen E-Rezepts am E-Rezept-Fachdienstes liefert einen Fehler. Daher sollte diese Abfrage nicht durchgeführt werden.
 
 <!-- A_23801 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-132" title="PS abgebende LEI: UX - Suche nach Vorgang mittels E-Rezept-Token" version="0">
+<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-132" title="PS abgebende LEI: UX - Suche nach Vorgang mittels E-Rezept-Token" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -213,7 +213,7 @@ Für die Abgabe von Medikamenten, die auf einer Freitextverordnung basieren, sol
 Das System soll den Nutzer dabei unterstützen zu erkennen, ob die Verschreibung für ein E-Rezept zulässig ist. Siehe auch https://github.com/gematik/api-erp#umfang-der- anwendung-e-rezept . Das System soll den Nutzer darin unterstützen, diese Verordnung im Sinne einer Verordnung von Fertigarzneimittel (PZN), Wirkstoff oder einer Rezeptur zu beliefern. Hierzu können beispielsweise Inhalte des Freitextes nach PZN-Pattern untersucht und anschließend in der Arzneimitteldatenbank ermittelt werden. Weiterhin könnte das System anbieten nach einzelnen Bestandteilen einer Freitextverordnung in einer geeigneten Datenbank zu suchen.
 
 <!-- A_23802 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-133" title="PS abgebende LEI: UX - Freitextverordnung - Arzneimittelsuche" version="0">
+<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-133" title="PS abgebende LEI: UX - Freitextverordnung - Arzneimittelsuche" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -222,7 +222,7 @@ Das System soll den Nutzer dabei unterstützen zu erkennen, ob die Verschreibung
 </requirement>
 
 <!-- A_23803 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-134" title="PS abgebende LEI: UX - Freitextverordnung - Hinweis zur manuellen Prüfung" version="0">
+<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-134" title="PS abgebende LEI: UX - Freitextverordnung - Hinweis zur manuellen Prüfung" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -237,7 +237,7 @@ Hierbei ist insbesondere darauf hinzuweisen, dass geprüft werden muss, ob eine 
 Der E-Rezept-Fachdienst überprüft derzeit noch nicht gänzlich die formale Richtigkeit der E-Rezepte. Das AVS soll eine formale Prüfung der Verordnungsdaten vornehmen. Diese Prüfung kann mittels ABDA- bzw. TI-Referenzvalidator vorgenommen werden.
 
 <!-- A_23804 -->
-<requirement conformance="MAY" key="IG-TIFLOW-ERP-135" title="PS abgebende LEI: UX - Prüfung mittels ABDA-Referenzvalidators" version="0">
+<requirement conformance="MAY" key="IG-PRE-TIFLOW-ERP-135" title="PS abgebende LEI: UX - Prüfung mittels ABDA-Referenzvalidators" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -256,7 +256,7 @@ In bestimmten Fällen kann es vorkommen, dass ein Vorgang für eine Verordnung i
 abrechnen zu lassen Es soll die Möglichkeit bestehen, einem Vorgang nachträglich ein E-Rezept zuzuordnen. Somit soll vermieden werden, dass der bestehende Vorgang gelöscht und ein neuer Vorgang angelegt werden muss. Abweichungen zwischen den Informationen im Vorgang und der Verordnung sollen dem Nutzer angezeigt werden.
 
 <!-- A_23805 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-136" title="PS abgebende LEI: UX - Zuordnung eines E-Rezepts zu einem bestehenden Vorgang" version="0">
+<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-136" title="PS abgebende LEI: UX - Zuordnung eines E-Rezepts zu einem bestehenden Vorgang" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -269,7 +269,7 @@ abrechnen zu lassen Es soll die Möglichkeit bestehen, einem Vorgang nachträgli
 Für Apothekenverbünde mit mehreren Filialen besteht die Möglichkeit E-Rezepte für die Belieferung weiterzuleiten. Dies kann von Interesse sein, wenn beispielsweise innerhalb eines Verbundes eine Apotheke sich um Vorbestellungen und Botendienste kümmert.  In dem Fall können die anderen Apotheken des Verbundes die vom E-Rezept-Fachdienst heruntergeladenen E-Rezepte an diese Apotheke weiterleiten. Das Weiterleiten kann auch im Rahmen eines Inhaberwechsels genutzt werden. Hinweis: Beim Abruf der Quittung erfolgt im E-Rezept-Fachdienst keine Prüfung, ob die Telematik-ID der Quittung abrufenden Apotheke mit der Telematik-ID der Apotheke übereinstimmt, welche das E-Rezept heruntergeladen und den Status in "in-progress" geändert hat. Für das Weiterleiten eines E-Rezeptes werden AccessCode, Task-ID, Secret des E- Rezeptes sowie sämtliche Inhalte der E-Rezeptes übermittelt. Die weitere Bearbeitung des E-Rezeptes kann ohne den Umweg über Freigabe des E-Rezeptes von einer Apotheke und erneutes Herunterladen durch eine andere Apotheke erfolgen. Wenn eine Apotheke Zugang zu diesen Informationen erhält, kann diese die Abgabe vollziehen. Hierzu muss die empfangene Apotheke die FHIR-OperationPOST /Task/<id>/$close des Rezeptes beim Fachdienst aufrufen.
 
 <!-- A_23806 -->
-<requirement conformance="MAY" key="IG-TIFLOW-ERP-137" title="PS abgebende LEI: UX - Weiterleitung eines E-Rezepts" version="0">
+<requirement conformance="MAY" key="IG-PRE-TIFLOW-ERP-137" title="PS abgebende LEI: UX - Weiterleitung eines E-Rezepts" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -280,7 +280,7 @@ Für Apothekenverbünde mit mehreren Filialen besteht die Möglichkeit E-Rezepte
 Für die sichere Kommunikation kann KIM verwendet werden.
 
 <!-- A_23807 -->
-<requirement conformance="MAY" key="IG-TIFLOW-ERP-138" title="PS abgebende LEI: UX - Empfang eines weitergeleiteten eines E-Rezepts" version="0">
+<requirement conformance="MAY" key="IG-PRE-TIFLOW-ERP-138" title="PS abgebende LEI: UX - Empfang eines weitergeleiteten eines E-Rezepts" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -295,7 +295,7 @@ Unter der Annahme, dass die Apotheken in einem Apothekenverbund die gleiche Soft
 Für die Bedienung und Belieferung von E-T-Rezepten gelten gesonderte UX-Hinweise.
 
 <!-- A_27841 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-139" title="PS abgebende LEI: UX - Bedienung T-Rezept – Hinweis T-Rezept" version="0">
+<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-139" title="PS abgebende LEI: UX - Bedienung T-Rezept – Hinweis T-Rezept" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -304,7 +304,7 @@ Für die Bedienung und Belieferung von E-T-Rezepten gelten gesonderte UX-Hinweis
 </requirement>
 
 <!-- A_27842 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-140" title="PS abgebende LEI: UX - Bedienung T-Rezept – Hinweis T-Rezept Belieferungsoption" version="0">
+<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-140" title="PS abgebende LEI: UX - Bedienung T-Rezept – Hinweis T-Rezept Belieferungsoption" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -319,7 +319,7 @@ Für die Bedienung und Belieferung von E-T-Rezepten gelten gesonderte UX-Hinweis
 Die Quittung für ein beliefertes E-Rezept muss innerhalb einer vertraglich vereinbarten Frist abgerufen werden. Es sind die Regelungen des Rahmenvertrags nach SGB V §300 zu berücksichtigen. Das AVS soll sicherstellen, dass die Frist nicht überschritten wird und ggf. die Quittung automatisch abrufen. Die gematik empfiehlt die Quittung zeitnah nach der Abgabe an den Kunden abzurufen, denn mit dem Quittungsabruf werden dem Versicherten die Abgabeinformationen zum Abruf mit der App bereitgestellt.
 
 <!-- A_23808 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-141" title="PS abgebende LEI: UX – Quittung automatisch abrufen" version="0">
+<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-141" title="PS abgebende LEI: UX – Quittung automatisch abrufen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -330,7 +330,7 @@ Die Quittung für ein beliefertes E-Rezept muss innerhalb einer vertraglich vere
 Hinweis: Der E-Rezept-Fachdienst bietet mit der Operation GET /Task/<id> die Möglichkeit, die Quittung nach dem erstmaligen Aufruf der Operation POST /Task/<id>/$close noch einmal abzurufen. Dies ist nur möglich, bis das E-Rezept durch den Versicherten oder nach Erreichen der Löschfrist automatisch durch den E-Rezept- Fachdienst gelöscht wird. Der Anwendungsfall "Quittung abrufen" generiert nicht nur die Quittung für die Abrechnung der Apotheke, sondern schließt auch den Workflow im E-Rezept-Fachdienst ab. Der Versicherte hat Einblick in den Statusverlauf und kann ein E-Rezept auch nach Abschluss des Workflows löschen. Das AVS muss bei der Abgabe jeglichen Rezepttyps und unabhängig vom Kostenträger den Workflow über diesen Anwendungsfall abschließen.
 
 <!-- A_25643 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-142" title="PS abgebende LEI: UX – Workflow von E-Rezepten abschließen" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-142" title="PS abgebende LEI: UX – Workflow von E-Rezepten abschließen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -343,7 +343,7 @@ Hinweis: Der E-Rezept-Fachdienst bietet mit der Operation GET /Task/<id> die Mö
 Jeder Abgabedatensatz zu einem E-Rezept muss signiert werden. Für die nicht- qualifizierten Signatur wird die SMC-B der Apotheke verwendet. In vertraglich vereinbarten Fällen ("Rahmenvertrag über die Arzneimittelversorgung nach §129 Absatz 2 SGB V",  https://www.abda.de/fileadmin/user_upload/assets/Vertraege/2021-10- 01_RV_129_redaktionelle_Gesamtfassung_Stand_01102021_barrierefrei.pdf) muss der HBA des Apothekers/-assistents/Pharmazieingenieurs für eine QES verwendet werden. In Fällen, in denen eine nicht-qualifizierte Signatur ausreicht, soll keine QES erzwungen werden. Dies führt zu Zeitersparnis, da unnötige PIN-Eingaben vermieden werden.
 
 <!-- A_23809 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-143" title="PS abgebende LEI: UX - Abgabedatensatz signieren - QES Signatur in notwendigen Fällen" version="0">
+<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-143" title="PS abgebende LEI: UX - Abgabedatensatz signieren - QES Signatur in notwendigen Fällen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -352,7 +352,7 @@ Jeder Abgabedatensatz zu einem E-Rezept muss signiert werden. Für die nicht- qu
 </requirement>
 
 <!-- A_23810 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-144" title="PS abgebende LEI: UX - Abgabedatensatz signieren - QES Signatur" version="0">
+<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-144" title="PS abgebende LEI: UX - Abgabedatensatz signieren - QES Signatur" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -367,7 +367,7 @@ Für Stapel- und Komfortsignatur siehe [gemILF_PS].
 Rechenzentrum In der Nachbereitung bedarf es für den Nutzer des AVS einer Übersicht der Abrechnungsinformationen aus dem Apotheken Rechenzentrum (ARZ). Hierbei ist der Nutzer so zu unterstützen, dass Fehler in der Abrechnung von E-Rezepten schnell sichtbar sind und der Nutzer auch dahin geleitet wird fehlende oder falsche Angaben zu korrigieren.
 
 <!-- A_23811 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-145" title="PS abgebende LEI: UX - Abrechnungsstatusliste für E-Rezepte" version="0">
+<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-145" title="PS abgebende LEI: UX - Abrechnungsstatusliste für E-Rezepte" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -376,7 +376,7 @@ Rechenzentrum In der Nachbereitung bedarf es für den Nutzer des AVS einer Über
 </requirement>
 
 <!-- A_23812 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-146" title="PS abgebende LEI: UX - Abrechnungsstatusliste für E-Rezepte - Hinweisen zu Abrechnungsfehlern" version="0">
+<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-146" title="PS abgebende LEI: UX - Abrechnungsstatusliste für E-Rezepte - Hinweisen zu Abrechnungsfehlern" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -385,7 +385,7 @@ Rechenzentrum In der Nachbereitung bedarf es für den Nutzer des AVS einer Über
 </requirement>
 
 <!-- A_23813 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-147" title="PS abgebende LEI: UX - Abrechnungsstatusliste für E-Rezepte - Verweis zur Korrektur" version="0">
+<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-147" title="PS abgebende LEI: UX - Abrechnungsstatusliste für E-Rezepte - Verweis zur Korrektur" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -404,7 +404,7 @@ Hierbei sollen Fehlermeldungen so aufbereitet werden, sodass der Nutzer versteht
 Solch eine Nicht-Erreichbarkeit kann durch einen Ausfall der TI- Dienste oder der lokalen TI-Komponenten der Apotheken (HBA, SMB-C, Konnektor, etc.) auftreten. In diesem Fall können E-Rezepte nicht vom E-Rezept-Fachdienst abgerufen und eingelöst werden. Diese Information ist präsent darzustellen. Der Arbeitsfluss und insbesondere die Funktionalität für das Einlösen von Muster-16 Verordnungen dürfen in diesem Fall nicht blockiert werden.
 
 <!-- A_23814 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-148" title="PS abgebende LEI: UX - Nicht-Erreichbarkeit des E-Rezept-Fachdienstes - Automatische Behebung" version="0">
+<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-148" title="PS abgebende LEI: UX - Nicht-Erreichbarkeit des E-Rezept-Fachdienstes - Automatische Behebung" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -415,7 +415,7 @@ Solch eine Nicht-Erreichbarkeit kann durch einen Ausfall der TI- Dienste oder de
 Für das Umschwenken auf eine andere Instanz des E-Rezept-Fachdienstes siehe [gemSpec_ILF_PS_eRp#4.2 Namensauflösung].
 
 <!-- A_23815 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-149" title="PS abgebende LEI: UX - Hinweis bei Nicht-Erreichbarkeit des E-Rezept-Fachdienstes" version="0">
+<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-149" title="PS abgebende LEI: UX - Hinweis bei Nicht-Erreichbarkeit des E-Rezept-Fachdienstes" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -424,7 +424,7 @@ Für das Umschwenken auf eine andere Instanz des E-Rezept-Fachdienstes siehe [ge
 </requirement>
 
 <!-- A_23816 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-ERP-150" title="PS abgebende LEI: UX - Hinweis bei Nicht-Erreichbarkeit des E-Rezept-Fachdienstes - Operabilität des AVS" version="0">
+<requirement conformance="SHALL NOT" key="IG-PRE-TIFLOW-ERP-150" title="PS abgebende LEI: UX - Hinweis bei Nicht-Erreichbarkeit des E-Rezept-Fachdienstes - Operabilität des AVS" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -433,7 +433,7 @@ Für das Umschwenken auf eine andere Instanz des E-Rezept-Fachdienstes siehe [ge
 </requirement>
 
 <!-- A_23817 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-151" title="PS abgebende LEI: UX - Verständliche Fehlermeldungen - technische Fehler" version="0">
+<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-151" title="PS abgebende LEI: UX - Verständliche Fehlermeldungen - technische Fehler" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -444,7 +444,7 @@ Für das Umschwenken auf eine andere Instanz des E-Rezept-Fachdienstes siehe [ge
 Wenn das Fehler-meldende System eine technische Fehlermeldung liefert, braucht diese dem Nutzer nicht dargestellt werden.
 
 <!-- A_23818 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-152" title="PS abgebende LEI: UX - Verständliche Fehlermeldungen - Handlungsempfehlung" version="0">
+<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-152" title="PS abgebende LEI: UX - Verständliche Fehlermeldungen - Handlungsempfehlung" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>

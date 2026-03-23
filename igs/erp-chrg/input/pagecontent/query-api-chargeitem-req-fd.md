@@ -2,7 +2,7 @@ Diese Seite beschreibt Anforderungen am E-Rezept-Fachdienst zur Nutzung der `Cha
 
 ### Allgemeine Regeln
 <!--A_22111-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-44" title="E-Rezept-Fachdienst – ChargeItem – unzulässige Operationen" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-44" title="E-Rezept-Fachdienst – ChargeItem – unzulässige Operationen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -11,7 +11,7 @@ Der E-Rezept-Fachdienst MUSS alle Zugriffe auf die Ressource ChargeItem mittels 
 </requirement>
 
 <!-- A_22141 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-45" title="E-Rezept-Fachdienst – Signaturzertifikat SMC-B prüfen" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-45" title="E-Rezept-Fachdienst – Signaturzertifikat SMC-B prüfen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -21,7 +21,7 @@ Der E-Rezept-Fachdienst MUSS alle Zugriffe auf die Ressource ChargeItem mittels 
 
 ### GET /ChargeItem
 <!--A_22118-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-46" title="E-Rezept-Fachdienst – Abrechnungsinformationen abrufen – Rollenprüfung Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-46" title="E-Rezept-Fachdienst – Abrechnungsinformationen abrufen – Rollenprüfung Versicherter" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -30,7 +30,7 @@ Der E-Rezept-Fachdienst MUSS alle Zugriffe auf die Ressource ChargeItem mittels 
 </requirement>
 
 <!--A_22119-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-47" title="E-Rezept-Fachdienst – Abrechnungsinformationen abrufen – Versicherter – Filter KVNR" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-47" title="E-Rezept-Fachdienst – Abrechnungsinformationen abrufen – Versicherter – Filter KVNR" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -39,7 +39,7 @@ Der E-Rezept-Fachdienst MUSS alle Zugriffe auf die Ressource ChargeItem mittels 
 </requirement>
 
 <!--A_22121-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-48" title="E-Rezept-Fachdienst – Abrechnungsinformationen abrufen – Suchkriterien" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-48" title="E-Rezept-Fachdienst – Abrechnungsinformationen abrufen – Suchkriterien" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -48,7 +48,7 @@ Der E-Rezept-Fachdienst MUSS das Eingrenzen einer Suchanfrage auf /ChargeItem ü
 </requirement>
 
 <!--A_22122-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-49" title="E-Rezept-Fachdienst – Abrechnungsinformationen abrufen – Response" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-49" title="E-Rezept-Fachdienst – Abrechnungsinformationen abrufen – Response" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -58,7 +58,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
 
 ### GET /ChargeItem/&#60;id&#62;
 <!--A_22124-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-50" title="E-Rezept-Fachdienst – Abrechnungsinformation abrufen – Rollenprüfung Versicherter oder Apotheker" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-50" title="E-Rezept-Fachdienst – Abrechnungsinformation abrufen – Rollenprüfung Versicherter oder Apotheker" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -73,7 +73,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
 </requirement>
 
 <!--A_22125-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-51" title="E-Rezept-Fachdienst – Abrechnungsinformation abrufen – Versicherter – Prüfung KVNR" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-51" title="E-Rezept-Fachdienst – Abrechnungsinformation abrufen – Versicherter – Prüfung KVNR" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -82,7 +82,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
 </requirement>
 
 <!--A_22126-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-52" title="E-Rezept-Fachdienst – Abrechnungsinformation abrufen – Apotheke – Prüfung Telematik-ID" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-52" title="E-Rezept-Fachdienst – Abrechnungsinformation abrufen – Apotheke – Prüfung Telematik-ID" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -91,7 +91,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
 </requirement>
 
 <!--A_22611-02-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-53" title="E-Rezept-Fachdienst – Abrechnungsinformation abrufen – Apotheke – Prüfung AccessCode" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-53" title="E-Rezept-Fachdienst – Abrechnungsinformation abrufen – Apotheke – Prüfung AccessCode" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -100,7 +100,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf eine konkret
 </requirement>
 
 <!--A_22127-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-54" title="E-Rezept-Fachdienst – Abrechnungsinformation abrufen – Versicherte – Signieren" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-54" title="E-Rezept-Fachdienst – Abrechnungsinformation abrufen – Versicherte – Signieren" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -109,7 +109,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf eine konkret
 </requirement>
 
 <!--A_22128-01-->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CHRG-55" title="E-Rezept-Fachdienst – Abrechnungsinformation abrufen – Apotheke – kein AccessCode und Quittung" version="0">
+<requirement conformance="SHALL NOT" key="IG-PRE-TIFLOW-CHRG-55" title="E-Rezept-Fachdienst – Abrechnungsinformation abrufen – Apotheke – kein AccessCode und Quittung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -119,7 +119,7 @@ Der E-Rezept-Fachdienst DARF beim Aufruf der Operation GET /ChargeItem/&#60;id&#
 
 ### POST /ChargeItem
 <!--A_22129-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-56" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-56" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Rollenprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -133,7 +133,7 @@ Der E-Rezept-Fachdienst DARF beim Aufruf der Operation GET /ChargeItem/&#60;id&#
 </requirement>
 
 <!--A_22130-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-57" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Prüfung Parameter Task" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-57" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Prüfung Parameter Task" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -142,7 +142,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunk
 </requirement>
 
 <!--A_22131-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-58" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Prüfung Existenz Task" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-58" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Prüfung Existenz Task" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -151,7 +151,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunk
 </requirement>
 
 <!--A_22132-02-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-59" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Prüfung Secret Task" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-59" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Prüfung Secret Task" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -160,7 +160,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunk
 </requirement>
 
 <!--A_22731-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-60" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Prüfung Flowtype Task" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-60" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Prüfung Flowtype Task" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -169,7 +169,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunk
 </requirement>
 
 <!--A_22133-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-61" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Prüfung Einwilligung" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-61" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Prüfung Einwilligung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -178,7 +178,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunk
 </requirement>
 
 <!--A_24471-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-62" title="E-Rezept-Fachdienst - Abrechnungsinformation bereitstellen - ChargeItem-ID=Rezept-ID" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-62" title="E-Rezept-Fachdienst - Abrechnungsinformation bereitstellen - ChargeItem-ID=Rezept-ID" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -187,7 +187,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunk
 </requirement>
 
 <!--A_22136-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-63" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – FHIR-Validierung ChargeItem" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-63" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – FHIR-Validierung ChargeItem" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -196,7 +196,7 @@ Der E-Rezept-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource Charge
 </requirement>
 
 <!--A_22137-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-64" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – PKV-Abgabedatensatz übernehmen" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-64" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – PKV-Abgabedatensatz übernehmen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -205,7 +205,7 @@ Der E-Rezept-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource Charge
 </requirement>
 
 <!--A_22138-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-65" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – FHIR-Validierung PKV-Abgabedatensatz" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-65" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – FHIR-Validierung PKV-Abgabedatensatz" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -214,7 +214,7 @@ Der E-Rezept-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource Charge
 </requirement>
 
 <!--A_22139-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-66" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Signaturprüfung PKV-Abgabedatensatz" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-66" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Signaturprüfung PKV-Abgabedatensatz" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -223,7 +223,7 @@ Der E-Rezept-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource Charge
 </requirement>
 
 <!--A_22140-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-67" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Prüfung Signaturzertifikat PKV-Abgabedatensatz" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-67" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Prüfung Signaturzertifikat PKV-Abgabedatensatz" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -233,7 +233,7 @@ Der E-Rezept-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource Charge
 </requirement>
 
 <!--A_22134-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-68" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Verordnungsdatensatz übernehmen" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-68" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Verordnungsdatensatz übernehmen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -242,7 +242,7 @@ Der E-Rezept-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource Charge
 </requirement>
 
 <!--A_22135-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-69" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Quittung übernehmen" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-69" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Quittung übernehmen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -251,7 +251,7 @@ Der E-Rezept-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource Charge
 </requirement>
 
 <!--A_22614-02-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-70" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Generierung AccessCode" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-70" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Generierung AccessCode" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -260,7 +260,7 @@ Der E-Rezept-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource Charge
 </requirement>
 
 <!-- A_22143 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-71" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – ChargeItem befüllen" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-71" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – ChargeItem befüllen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -272,7 +272,7 @@ Der E-Rezept-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource Charge
 </requirement>
 
 <!-- A_23704 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-72" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – kein AccessCode und Quittung" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-72" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – kein AccessCode und Quittung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -281,7 +281,7 @@ Der E-Rezept-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource Charge
 </requirement>
 
 <!-- A_28133 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-73" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Push Notification Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-73" title="E-Rezept-Fachdienst – Abrechnungsinformation bereitstellen – Push Notification Versicherter" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -293,7 +293,7 @@ Der E-Rezept-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource Charge
 ### PATCH /ChargeItem/&#60;id&#62;
 
 <!--A_22879-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-74" title="E-Rezept-Fachdienst – Abrechnungsinformation ändern (PATCH) – alles Ändern verbieten" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-74" title="E-Rezept-Fachdienst – Abrechnungsinformation ändern (PATCH) – alles Ändern verbieten" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -302,7 +302,7 @@ Der E-Rezept-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource Charge
 </requirement>
 
 <!--A_22875-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-75" title="E-Rezept-Fachdienst – Abrechnungsinformation ändern (PATCH) – Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-75" title="E-Rezept-Fachdienst – Abrechnungsinformation ändern (PATCH) – Rollenprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -311,7 +311,7 @@ Der E-Rezept-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource Charge
 </requirement>
 
 <!--A_22877-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-76" title="E-Rezept-Fachdienst – Abrechnungsinformation ändern (PATCH) – Versicherter – Prüfung KVNR" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-76" title="E-Rezept-Fachdienst – Abrechnungsinformation ändern (PATCH) – Versicherter – Prüfung KVNR" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -320,7 +320,7 @@ Der E-Rezept-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource Charge
 </requirement>
 
 <!--A_27566-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-77" title="E-Rezept-Fachdienst - Abrechnungsinformation ändern (PATCH) - FHIR-Validierung Parameters" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-77" title="E-Rezept-Fachdienst - Abrechnungsinformation ändern (PATCH) - FHIR-Validierung Parameters" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -330,7 +330,7 @@ Der E-Rezept-Fachdienst MUSS die in der HTTP-PATCH-Operation auf die Ressource C
 
 ### PUT /ChargeItem/&#60;id&#62;
 <!--A_22144-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-78" title="E-Rezept-Fachdienst – Abrechnungsinformation ändern – Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-78" title="E-Rezept-Fachdienst – Abrechnungsinformation ändern – Rollenprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -344,7 +344,7 @@ Der E-Rezept-Fachdienst MUSS die in der HTTP-PATCH-Operation auf die Ressource C
 </requirement>
 
 <!--A_22215-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-79" title="E-Rezept-Fachdienst – Abrechnungsinformation ändern – Prüfung Einwilligung" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-79" title="E-Rezept-Fachdienst – Abrechnungsinformation ändern – Prüfung Einwilligung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -353,7 +353,7 @@ Der E-Rezept-Fachdienst MUSS die in der HTTP-PATCH-Operation auf die Ressource C
 </requirement>
 
 <!--A_22146-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-80" title="E-Rezept-Fachdienst – Abrechnungsinformation ändern – Apotheke – Prüfung Telematik-ID" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-80" title="E-Rezept-Fachdienst – Abrechnungsinformation ändern – Apotheke – Prüfung Telematik-ID" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -362,7 +362,7 @@ Der E-Rezept-Fachdienst MUSS die in der HTTP-PATCH-Operation auf die Ressource C
 </requirement>
 
 <!--A_22616-03-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-81" title="E-Rezept-Fachdienst – Abrechnungsinformation ändern – Apotheke – Prüfung AccessCode" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-81" title="E-Rezept-Fachdienst – Abrechnungsinformation ändern – Apotheke – Prüfung AccessCode" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -371,7 +371,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkret
 </requirement>
 
 <!--A_22148-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-82" title="E-Rezept-Fachdienst – Abrechnungsinformation ändern – Apotheke – PKV-Abgabedatensatz übernehmen" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-82" title="E-Rezept-Fachdienst – Abrechnungsinformation ändern – Apotheke – PKV-Abgabedatensatz übernehmen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -380,7 +380,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkret
 </requirement>
 
 <!--A_22149-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-83" title="E-Rezept-Fachdienst – Abrechnungsinformation ändern – Apotheke – FHIR-Validierung PKV-Abgabedatensatz" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-83" title="E-Rezept-Fachdienst – Abrechnungsinformation ändern – Apotheke – FHIR-Validierung PKV-Abgabedatensatz" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -389,7 +389,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkret
 </requirement>
 
 <!--A_22150-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-84" title="E-Rezept-Fachdienst – Abrechnungsinformation ändern – Apotheke – Signaturprüfung PKV-Abgabedatensatz" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-84" title="E-Rezept-Fachdienst – Abrechnungsinformation ändern – Apotheke – Signaturprüfung PKV-Abgabedatensatz" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -398,7 +398,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkret
 </requirement>
 
 <!--A_22151-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-85" title="E-Rezept-Fachdienst – Abrechnungsinformation ändern – Apotheke – Prüfung Signaturzertifikat PKV-Abgabedatensatz" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-85" title="E-Rezept-Fachdienst – Abrechnungsinformation ändern – Apotheke – Prüfung Signaturzertifikat PKV-Abgabedatensatz" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -408,7 +408,7 @@ Wenn die Abfrage des OCSP-Response für das Signaturzertifikat fehlschlägt, mus
 </requirement>
 
 <!--A_22152-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-86" title="E-Rezept-Fachdienst – Abrechnungsinformation ändern – FHIR-Validierung ChargeItem" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-86" title="E-Rezept-Fachdienst – Abrechnungsinformation ändern – FHIR-Validierung ChargeItem" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -421,7 +421,7 @@ und bei fehlerhafter Prüfung die Operation mit dem http-Status-Code 400 und ein
 </requirement>
 
 <!--A_22615-02-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-87" title="E-Rezept-Fachdienst – Abrechnungsinformation ändern – Apotheke – Generierung AccessCode" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-87" title="E-Rezept-Fachdienst – Abrechnungsinformation ändern – Apotheke – Generierung AccessCode" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachen"/>
@@ -430,7 +430,7 @@ und bei fehlerhafter Prüfung die Operation mit dem http-Status-Code 400 und ein
 </requirement>
 
 <!--A_23624-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-88" title="E-Rezept-Fachdienst – Abrechnungsinformation ändern – Apotheke – kein AccessCode und Quittung" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-88" title="E-Rezept-Fachdienst – Abrechnungsinformation ändern – Apotheke – kein AccessCode und Quittung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -439,7 +439,7 @@ Der E-Rezept-Fachdienst DARF beim Aufruf der HTTP-PUT-Operation auf eine konkret
 </requirement>
 
 <!--A_28134-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-89" title="E-Rezept-Fachdienst - Abrechnungsinformation ändern - Push Notification Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-89" title="E-Rezept-Fachdienst - Abrechnungsinformation ändern - Push Notification Versicherter" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -449,7 +449,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkret
 
 ### DELETE /ChargeItem/&#60;id&#62;
 <!--A_22112-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-90" title="E-Rezept-Fachdienst – Abrechnungsinformation löschen – alles Löschen verbieten" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-90" title="E-Rezept-Fachdienst – Abrechnungsinformation löschen – alles Löschen verbieten" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -458,7 +458,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkret
 </requirement>
 
 <!--A_22113-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-91" title="E-Rezept-Fachdienst – Abrechnungsinformation löschen – Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-91" title="E-Rezept-Fachdienst – Abrechnungsinformation löschen – Rollenprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -471,7 +471,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkret
 </requirement>
 
 <!--A_22114-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-92" title="E-Rezept-Fachdienst – Abrechnungsinformation löschen – Prüfung KVNR" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-92" title="E-Rezept-Fachdienst – Abrechnungsinformation löschen – Prüfung KVNR" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -480,7 +480,7 @@ Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf eine konk
 </requirement>
 
 <!--A_22117-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-93" title="E-Rezept-Fachdienst – Abrechnungsinformation löschen – zu löschende Ressourcen" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-93" title="E-Rezept-Fachdienst – Abrechnungsinformation löschen – zu löschende Ressourcen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>

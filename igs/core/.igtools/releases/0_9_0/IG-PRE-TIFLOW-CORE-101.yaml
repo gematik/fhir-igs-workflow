@@ -1,0 +1,24 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 381a2e70bcc8be2b8ef7e05137a4a988777fc7f2b8a04e06e95554a51eecbda5
+created: '2026-03-23T10:40:56.954814'
+date: '2026-03-23T10:40:56.954816'
+key: IG-PRE-TIFLOW-CORE-101
+modified: '2026-03-23T10:40:56.954815'
+release_status: NEW
+source: input/pagecontent/query-api-task-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: "Der E-Rezept-Fachdienst MUSS die Prüfung des VSDM Prüfungsnachweises wie folgt\
+  \ umsetzen: \n    <ol type =\"1\">\n        <li>die Prüfziffer aus dem Prüfungsnachweis\
+  \ extrahieren</li>\n        <li>Falls eine Prüfziffer im Prüfungsnachweis enthalten\
+  \ ist:\n        <ol type=\"a\">\n            <li>HMAC-Schlüssel auf Basis Kennung\
+  \ des Betreibers (Feld 4) und Version des Hash-Schlüssels (Feld 5) ermitteln</li>\n\
+  \            <li>HMAC über Felder 1-5 der übermittelten Prüfziffer berechnen</li>\n\
+  \            <li>Berechneten HMAC mit dem in der Prüfziffer übermittelten HMAC auf\
+  \ Gleichheit prüfen</li>\n        </ol>\n        </li>\n    </ol>"
+title: E-Rezept-Fachdienst - Prüfung Prüfziffer
+version: 0

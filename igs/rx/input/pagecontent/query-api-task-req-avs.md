@@ -13,7 +13,7 @@ Diese Seite beschreibt Anforderungen an das AVS zur Nutzung der `Task`-Query-End
 Mit diesem Anwendungsfall kann die abgebende LEI die E-Rezept-Token Information zu allen E-Rezepten mit dem Status "offen" von einem Versicherten, dessen eGK in ein mit dem Konnektor gepairten E-Health-Kartenterminal gesteckt wurde, vom E-Rezept-Fachdienst abrufen.
 
 <!-- A_22435 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-4" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (VSDM) - VSD und PNW von eGK lesen" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-4" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (VSDM) - VSD und PNW von eGK lesen" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>
@@ -28,7 +28,7 @@ Der Response beinhaltet die Elemente PersoenlicheVersichertendaten, AllgemeineVe
 Für weitere Informationen zur Operation ReadVSD siehe [gemILF_PS].
 
 <!-- A_22436 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-5" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (VSDM) - Abbruch bei Fehler ReadVSD" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-5" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (VSDM) - Abbruch bei Fehler ReadVSD" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>
@@ -43,7 +43,7 @@ Die Werte für den Hashwert hcv werden aus UC_PersoenlicheVersichertendatenXML.V
 Die Versicherten-ID kann aus UC_PersoenlicheVersichertendatenXML.Versicherter.Versicherten_ID ermittelt werden.
 
 <!-- A_23182 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-6" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (VSDM) - Prüfungsnachweis URL-kodieren" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-6" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (VSDM) - Prüfungsnachweis URL-kodieren" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>
@@ -52,7 +52,7 @@ Die Versicherten-ID kann aus UC_PersoenlicheVersichertendatenXML.Versicherter.Ve
 </requirement>
 
 <!-- A_27354 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-7" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (VSDM) - Hashwert hcv erzeugen" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-7" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (VSDM) - Hashwert hcv erzeugen" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>
@@ -63,7 +63,7 @@ Die Versicherten-ID kann aus UC_PersoenlicheVersichertendatenXML.Versicherter.Ve
 Die Bildungsvorschrift für den Hashwert hcv ist in [gemSpec_Krypt#A_27352-*] beschrieben.
 
 <!-- A_27355 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-8" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (VSDM) - Hashwert hcv Base64URLSafe kodieren" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-8" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (VSDM) - Hashwert hcv Base64URLSafe kodieren" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>
@@ -74,7 +74,7 @@ Die Bildungsvorschrift für den Hashwert hcv ist in [gemSpec_Krypt#A_27352-*] be
 Die Vorschrift zum Kodieren ist in https://www.educative.io/answers/what-is-base64urlsafeb64encodes-in-python beschrieben.
 
 <!-- A_23449-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-9" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (VSDM) - E-Rezepte abrufen" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-9" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (VSDM) - E-Rezepte abrufen" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>
@@ -96,7 +96,7 @@ Bsp.-URL: GET /Task?kvnr=X11058...&hcv=F9Z...I&pnw=H4sIAAAAA...
 Mit diesem Anwendungsfall kann die abgebende LEI die Zugriffsinformationen zu allen einlösbaren E-Rezepten von einem Versicherten, dessen eGK mit einem im Rahmen von PoPP zulässigen Kartenlesegerät eingelesen wurde, vom E-Rezept-Fachdienst abrufen.
 
 <!-- A_22435-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-10" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (PoPP) - PoPP-Token abrufen" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-10" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (PoPP) - PoPP-Token abrufen" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>
@@ -110,7 +110,7 @@ Für die Umsetzung siehe [spec-ilf-popp-client].
 Hinweis: Im Response des PoPP-Service erhält das PS den PoPP-Token im JWT Compact Serialization Format (s. gemSpec_PoPP_Service#A_26432). Das PS gibt den PoPP-Token im gleichen Format an den E-Rezept-Fachdienst weiter.
 
 <!-- A_22437-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-11" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (PoPP) - E-Rezepte abrufen" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-11" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (PoPP) - E-Rezepte abrufen" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>
@@ -130,7 +130,7 @@ Auf Basis dieser Informationen können die Verordnungsdatensätze zu den E-Rezep
 Abgerufene Rezepte, welche nicht durch die Apotheke beliefert werden, müssen durch die Apotheke zurückgegeben (Anwendungsfall "E-Rezept durch Abgebenden zurückgeben") werden.
 
 <!-- A_23152 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-12" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen - nicht belieferte E-Rezepte zurückgeben" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-12" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen - nicht belieferte E-Rezepte zurückgeben" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>

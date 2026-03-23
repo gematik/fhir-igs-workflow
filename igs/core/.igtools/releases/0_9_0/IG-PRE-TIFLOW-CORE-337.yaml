@@ -1,0 +1,22 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 609999edce9063f57e61132a88d82507b7b8c2df95bf6fe7de718616795c8020
+created: '2026-03-23T10:40:57.013704'
+date: '2026-03-23T10:40:57.013707'
+key: IG-PRE-TIFLOW-CORE-337
+modified: '2026-03-23T10:40:57.013706'
+release_status: NEW
+source: input/pagecontent/query-api-communication-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf /Communication/&lt;id&gt;
+  die über &lt;id&gt; identifizierte Communication-Ressource anhand der KVNR bzw.
+  Telematik-ID des aufrufenden Nutzers im ACCESS_TOKEN im "Authorization"-Header des
+  HTTP-Requests über das Absender-Attribut Communication.sender lokalisieren und löschen,
+  damit Nutzer irrtümlich versendete oder nicht mehr gewünschte Nachrichten vom E-Rezept-Fachdienst
+  entfernen können.
+title: E-Rezept-Fachdienst - Nachricht löschen - Absender-ID
+version: 0

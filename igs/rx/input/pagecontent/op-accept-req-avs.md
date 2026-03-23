@@ -13,7 +13,7 @@ Für den Flowtype "200" und "209" wird im Response Bundle eine Consent Ressource
 Möchte der Versicherte die Möglichkeit einer Online-Rezepteinlösung nutzen, kann die abgebende LEI die Belieferungs- und ggfs. Zuzahlungsmodalitäten über ihr Warenwirtschaftssystem ("Onlineshop") abwickeln. Hierzu ist ggfs. die Übernahme von Rezeptinformationen zur Befüllung eines Warenkorbs erforderlich. 
 
 <!-- A_21372 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-108" title="PS abgebende LEI: Übernahme Rezeptinformationen in Warenwirtschaftssystem" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-108" title="PS abgebende LEI: Übernahme Rezeptinformationen in Warenwirtschaftssystem" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -26,7 +26,7 @@ Möchte der Versicherte die Möglichkeit einer Online-Rezepteinlösung nutzen, k
 Für die QES-Prüfung wird die PKCS#7-Datei verwendet. Die Verordnungsdaten des E-Rezepts sind innerhalb der PKCS#7-Datei enthalten und müssen für die Weiterverarbeitung extrahiert werden.
 
 <!-- A_19745-01 -->
-<requirement conformance="MAY" key="IG-TIFLOW-ERP-109" title="PS abgebende LEI: E-Rezept abrufen - QES prüfen" version="0">
+<requirement conformance="MAY" key="IG-PRE-TIFLOW-ERP-109" title="PS abgebende LEI: E-Rezept abrufen - QES prüfen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>

@@ -1,0 +1,23 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 921c7f79870f35f04a48e625b4207ced97477e5772f4dcef241134f41c75dae2
+created: '2026-03-23T10:40:56.957468'
+date: '2026-03-23T10:40:56.957470'
+key: IG-PRE-TIFLOW-CORE-116
+modified: '2026-03-23T10:40:56.957469'
+release_status: NEW
+source: input/pagecontent/query-api-task-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
+  Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende Institution den im referenzierten
+  Task gespeicherten Status Task.status prüfen und mit dem Fehler 412 abbrechen, wenn
+  Task.status ungleich "in-progress" und ungleich "completed" ist, damit der Datensatz
+  nur abgerufen werden, kann, wenn sich die Verordnung in Belieferung befindet oder
+  der Workflow abgeschlossen ist.
+title: E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen
+  - Prüfung Status
+version: 0

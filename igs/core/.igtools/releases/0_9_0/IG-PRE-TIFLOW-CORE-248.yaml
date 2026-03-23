@@ -1,0 +1,23 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 4da24929855220664578e33a101bda7534b2f7ad3c4c1777454316de05a1907e
+created: '2026-03-23T10:40:56.989224'
+date: '2026-03-23T10:40:56.989226'
+key: IG-PRE-TIFLOW-CORE-248
+modified: '2026-03-23T10:40:56.989225'
+release_status: NEW
+source: input/pagecontent/op-accept-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
+  über /Task/&lt;id&gt;/$accept den im HTTP-Header "X-AccessCode" oder URL-Parameter
+  "?ac=..." übertragenen AccessCode gegen den im referenzierten Task gespeicherten
+  AccessCodeTask.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode
+  prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem
+  HTTP-Fehlercode 403 abbrechen, damit Zugriffe auf diesen Datensatz nur durch Berechtigte
+  in Kenntnis des AccessCodes erfolgen.
+title: E-Rezept-Fachdienst - Task akzeptieren - Prüfung AccessCode
+version: 0

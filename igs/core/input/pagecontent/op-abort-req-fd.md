@@ -3,7 +3,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch. 
 
 <!-- A_20546-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-140" title="E-Rezept-Fachdienst - E-Rezept löschen - Versicherter - Prüfung KVNR" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-140" title="E-Rezept-Fachdienst - E-Rezept löschen - Versicherter - Prüfung KVNR" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>
@@ -12,7 +12,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_19120-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-141" title="E-Rezept-Fachdienst - E-Rezept löschen - Verordnender - Prüfung AccessCode" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-141" title="E-Rezept-Fachdienst - E-Rezept löschen - Verordnender - Prüfung AccessCode" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>
@@ -21,7 +21,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_19120-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-142" title="E-Rezept-Fachdienst - E-Rezept löschen - Verordnender - Prüfung Status" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-142" title="E-Rezept-Fachdienst - E-Rezept löschen - Verordnender - Prüfung Status" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>
@@ -30,7 +30,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_19027-06 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-143" title="E-Rezept-Fachdienst - E-Rezept löschen - Medizinische und personenbezogene Daten löschen" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-143" title="E-Rezept-Fachdienst - E-Rezept löschen - Medizinische und personenbezogene Daten löschen" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produktgutachten"/>
@@ -55,7 +55,7 @@ Hinweis: Die KVNR in Task.for wird nicht gelöscht, damit der Versicherte den St
 Bestehende Übermittlungsaufträge in den ePA Medication Service für das zu löschende E-Rezept werden nicht gelöscht.
 
 <!-- A_19121 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-144" title="E-Rezept-Fachdienst - E-Rezept löschen - Status" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-144" title="E-Rezept-Fachdienst - E-Rezept löschen - Status" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>
@@ -64,7 +64,7 @@ Bestehende Übermittlungsaufträge in den ePA Medication Service für das zu lö
 </requirement>
 
 <!-- A_28131 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-145" title="E-Rezept-Fachdienst - E-Rezept löschen - Push Notification Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-145" title="E-Rezept-Fachdienst - E-Rezept löschen - Push Notification Versicherter" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"/>

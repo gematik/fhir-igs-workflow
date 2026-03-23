@@ -1,0 +1,21 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 83d91d6160a1cbac0b7c63918d6f1f92bb00babba7c7492c84a6874c172ffe6e
+created: '2026-03-23T10:40:56.947688'
+date: '2026-03-23T10:40:56.947690'
+key: IG-PRE-TIFLOW-CORE-61
+modified: '2026-03-23T10:40:56.947689'
+release_status: NEW
+source: input/pagecontent/op-close-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation
+  über /Task/&lt;id&gt;/$close den im referenzierten Task gespeicherten Status Task.status
+  prüfen und mit dem Fehler 412 abbrechen, wenn Task.status ungleich "in-progress"
+  ist, damit der Workflow nur abgeschlossen werden kann, wenn sich die Verordnung
+  in Belieferung befindet.
+title: E-Rezept-Fachdienst - Task schließen - Prüfung Status
+version: 0

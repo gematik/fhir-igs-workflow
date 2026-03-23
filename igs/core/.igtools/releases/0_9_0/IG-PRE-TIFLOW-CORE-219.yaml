@@ -1,0 +1,23 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: e601d3491c2383822508f2127906bbe0de9d144a4b79823f923a9e6c55feb58b
+created: '2026-03-23T10:40:56.979630'
+date: '2026-03-23T10:40:56.979632'
+key: IG-PRE-TIFLOW-CORE-219
+modified: '2026-03-23T10:40:56.979631'
+release_status: NEW
+source: input/pagecontent/op-create-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation
+  den Parameter workflowType (Rezepttyp) aus dem HTTP-Body des POST-Requests entnehmen,
+  als Attribut Task.extension:flowType des zu erstellenden Tasks verwenden und bei
+  Fehlen bzw. Nicht-Konformität des Parameters den Request als unzulässig abweisen,
+  damit auf Basis dieser Parameter ausschließlich gültige Workflows gestartet werden
+  können und dem Versicherten bei Einsicht des Tasks der Weg in entweder eine Apotheke
+  oder ein Sanitätshaus oder eine andere zuständige Einrichtung gewiesen werden kann.
+title: E-Rezept-Fachdienst - Task erzeugen - Parametrierung Task für Workflow-Typ
+version: 0
