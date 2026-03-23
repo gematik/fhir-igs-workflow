@@ -1,0 +1,24 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 52d5356056b7d923c967ef3f58d498cf90453b1aad8ac5c7da45d8131ef65bfe
+created: '2026-03-23T10:57:49.329979'
+date: '2026-03-23T10:57:49.329981'
+key: IG-TIFLOW-CHRG-87
+modified: '2026-03-23T10:57:49.329980'
+release_status: STABLE
+source: input/pagecontent/query-api-chargeitem-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produktgutachten
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete
+  über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende
+  LEI eine 256-Bit-Zufallszahl mit einer Mindestentropie von 120 Bit erzeugen, hexadezimal
+  kodieren ([0-9a-f]{64}) und diese im zu speichernden ChargeItem als externe ID in
+  ChargeItem.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode
+  überschreiben, damit nachfolgende Zugriffe auf diesen Datensatz nur durch Berechtigte
+  in Kenntnis des AccessCodes erfolgen.
+title: E-Rezept-Fachdienst – Abrechnungsinformation ändern – Apotheke – Generierung
+  AccessCode
+version: 0

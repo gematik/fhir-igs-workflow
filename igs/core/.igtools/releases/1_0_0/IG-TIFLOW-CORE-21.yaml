@@ -1,0 +1,30 @@
+actor:
+- CS_E-Rezept_KTR
+- NCPeH_ePeDA
+- PS_E-Rezept_abgebend
+- PS_E-Rezept_verordnend
+conformance: SHALL
+content_hash: f6ec21b4275f465ad9443e173fddcc770722e49d7936ca3e31c668c47e75edab
+created: '2026-03-23T10:57:48.429068'
+date: '2026-03-23T10:57:48.429071'
+key: IG-TIFLOW-CORE-21
+modified: '2026-03-23T10:57:48.429070'
+release_status: STABLE
+source: input/pagecontent/authentifizierung-client.md
+status: ACTIVE
+test_procedures:
+  CS_E-Rezept_KTR:
+  - Herstellererklärung
+  NCPeH_ePeDA:
+  - Produktgutachten
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: Das Clientsystem MUSS das vom Token-Endpunkt ausgegebene ID_TOKEN als HTTP/1.1
+  Statusmeldung 200 verarbeiten und mittels "Token Key" entschlüsseln. Das Clientsystem
+  MUSS das ID_TOKEN ablehnen, wenn dieses außerhalb der mit dem Token-Endpunkt etablierten
+  TLS-Verbindung übertragen wird oder nicht mit dem vorher übermittelten "Token Key"
+  verschlüsselt war.
+title: 'CS: Annahme des ID_TOKEN'
+version: 0

@@ -1,0 +1,45 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 0dd1ebc4cb8bd42297b26d7aca1a40821ed012d8d6d018dfdd4857714fd394d8
+created: '2026-03-23T10:57:48.485827'
+date: '2026-03-23T10:57:48.485829'
+key: IG-TIFLOW-CORE-273
+modified: '2026-03-23T10:57:48.485828'
+release_status: STABLE
+source: input/pagecontent/fhir-validate.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: "Der E-Rezept-Fachdienst MUSS bei der Prüfung der zeitlichen Gültigkeit einer\
+  \ FHIR Ressource den Wert aus dem Element gemäß folgender Tabelle zugrunde legen.\
+  \ \n\n  <table>\n    <thead>\n      <tr>\n        <th>Bezeichnung</th>\n       \
+  \ <th>Package</th>\n        <th>FHIR Profil</th>\n        <th>Element/Zeitpunkt</th>\n\
+  \      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>KBV Verordnungsdatensatz</td>\n\
+  \        <td><code>kbv.ita.erp</code></td>\n        <td><code>KBV_PR_ERP_Prescription</code></td>\n\
+  \        <td><code>MedicationRequest.authoredOn</code></td>\n      </tr>\n     \
+  \ <tr>\n        <td>KBV Verordnungsdatensatz DiGA</td>\n        <td><code>kbv.itv.evdga</code></td>\n\
+  \        <td><code>KBV_PR_EVDGA_HealthAppRequest</code></td>\n        <td><code>DeviceRequest.authoredOn</code></td>\n\
+  \      </tr>\n      <tr>\n        <td>Communication</td>\n        <td><code>de.gematik.erezept-workflow.r4</code></td>\n\
+  \        <td>\n          <code>GEM_ERP_PR_Communication_DispReq</code>\n       \
+  \   <code>GEM_ERP_PR_Communication_Reply</code>\n          <code>GEM_ERP_PR_Communication_DiGA</code>\n\
+  \          <code>GEM_ERP_PR_Communication_Representative</code>\n        </td>\n\
+  \        <td>Zeitpunkt des Aufrufs der Operation am E-Rezept-Fachdienst</td>\n \
+  \     </tr>\n      <tr>\n        <td>MedicationDispense</td>\n        <td><code>de.gematik.erezept-workflow.r4</code></td>\n\
+  \        <td>\n          <code>Gem_erxMedicationDispense</code>\n          <code>GEM_ERP_PR_MedicationDispense</code>\n\
+  \        </td>\n        <td><code>MedicationDispense.whenHandedOver</code></td>\n\
+  \      </tr>\n      <tr>\n        <td>PKV Patientenrechnung</td>\n        <td><code>de.gematik.erezept-patientenrechnung.r4</code></td>\n\
+  \        <td>\n          <code>GEM_ERPCHRG_PR_ChargeItem</code>\n          <code>GEM_ERPCHRG_PR_Consent</code>\n\
+  \        </td>\n        <td>Zeitpunkt des Aufrufs der Operation am E-Rezept-Fachdienst</td>\n\
+  \      </tr>\n      <tr>\n        <td>PKV Patientenrechnung Communication</td>\n\
+  \        <td><code>de.gematik.erezept-patientenrechnung.r4</code></td>\n       \
+  \ <td>\n          <code>GEM_ERPCHRG_PR_Communication_ChargChangeReq</code>\n   \
+  \       <code>GEM_ERPCHRG_PR_Communication_ChargChangeReply</code>\n        </td>\n\
+  \        <td>Zeitpunkt des Aufrufs der Operation am E-Rezept-Fachdienst</td>\n \
+  \     </tr>\n      <tr>\n        <td>PKV Abgabedatensatz</td>\n        <td><code>de.abda.eRezeptAbgabedatenPKV</code></td>\n\
+  \        <td><code>DAV_PKV_PR_ERP_Abgabeinformationen</code></td>\n        <td><code>MedicationDispense.whenHandedOver</code></td>\n\
+  \      </tr>\n    </tbody>\n  </table>\n  <div><figcaption><strong>Tabelle: </strong>TAB_ERP_FD_PruefungGueltigkeit_FHIR_Ressource\
+  \ Werte bei Prüfung der zeitlichen Gültigkeit einer FHIR Ressource</figcaption></div>"
+title: E-Rezept-Fachdienst - Prüfung Gültigkeit FHIR Ressourcen
+version: 0

@@ -1,0 +1,20 @@
+actor:
+- PS_E-Rezept_verordnend
+conformance: SHALL
+content_hash: ede4d830466a283efdb1b6502e56b6ac891dcc98a3de70a639459963726e5c26
+created: '2026-03-23T10:57:48.503290'
+date: '2026-03-23T10:57:48.503293'
+key: IG-TIFLOW-CORE-314
+modified: '2026-03-23T10:57:48.503292'
+release_status: STABLE
+source: input/pagecontent/op-abort-req-pvs.md
+status: ACTIVE
+test_procedures:
+  PS_E-Rezept_verordnend:
+  - Konformitätsbestätigung
+text: Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden
+  löschen" für das zu löschende E-Rezept die HTTP-Operation POST /TASK/&lt;id&gt;/$abort
+  mit ACCESS_TOKEN im Authorization-Header Task-ID in URL &lt;id&gt; AccessCode im
+  X-AccessCode-Header oder als URL-Parameter ?ac= ausführen.
+title: 'PS verordnende LEI: E-Rezept löschen - Löschrequest'
+version: 0

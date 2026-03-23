@@ -1,0 +1,134 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: ad66911c6c5b9f151b44ba487f9df7db400001eca8845bbd8049fd4ffa50bf9d
+created: '2026-03-23T10:57:48.545356'
+date: '2026-03-23T10:57:48.545359'
+key: IG-TIFLOW-CORE-376
+modified: '2026-03-23T10:57:48.545358'
+release_status: STABLE
+source: input/pagecontent/menu-technische-umsetzung-epa-ms.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: 'Der E-Rezept-Fachdienst MUSS das Zertifikat des ePA-Aktensystems gemäß den
+  Vorgaben von [gemSpec_PKI] und des TUC_PKI_018 mit den Eingangsdaten gemäß der Tabelle
+  Tab_eRPFD_018 prüfen und im Fehlerfall den Aufbau der HTTPS-Verbindung abbrechen.
+  Tabelle #: Tab_eRPFD_018 – Eingangsdaten für die Prüfung des ePA-Aktensystem Server-Zertifikats
+
+
+  <table>
+
+  <thead>
+
+  <tr>
+
+  <th>TUC_PKI_018 Eingangsdaten</th>
+
+  <th>Zulässiger Wert bzw. Beschreibung</th>
+
+  </tr>
+
+  </thead>
+
+  <tbody>
+
+  <tr>
+
+  <td>TSL</td>
+
+  <td>die entsprechende TSL für Infrastrukturkomponenten</td>
+
+  </tr>
+
+  <tr>
+
+  <td>Zertifikat</td>
+
+  <td>das zu prüfende Zertifikat vom Kommunikationspartner</td>
+
+  </tr>
+
+  <tr>
+
+  <td>Referenzzeitpunkt</td>
+
+  <td>aktuelle Systemzeit</td>
+
+  </tr>
+
+  <tr>
+
+  <td>Prüfmodus</td>
+
+  <td>OCSP</td>
+
+  </tr>
+
+  <tr>
+
+  <td>PolicyList</td>
+
+  <td>oid_fd_tls_s</td>
+
+  </tr>
+
+  <tr>
+
+  <td>Vorgesehene KeyUsage</td>
+
+  <td>digitalSignature</td>
+
+  </tr>
+
+  <tr>
+
+  <td>Vorgesehene ExtendedKeyUsage</td>
+
+  <td>id-kp-serverAuth</td>
+
+  </tr>
+
+  <tr>
+
+  <td>GracePeriod</td>
+
+  <td>der Wert muss konfigurierbar sein</td>
+
+  </tr>
+
+  <tr>
+
+  <td>Offline-Modus</td>
+
+  <td>nein</td>
+
+  </tr>
+
+  <tr>
+
+  <td>Timeout</td>
+
+  <td>Default-Wert (siehe [gemSpec_PKI])</td>
+
+  </tr>
+
+  <tr>
+
+  <td>TOLERATE_OCSP_FAILURE</td>
+
+  <td>Default-Wert (siehe [gemSpec_PKI])</td>
+
+  </tr>
+
+  </tbody>
+
+  </table>
+
+
+  <div><figcaption><strong>Tabelle: </strong>Eingangsdaten für die Prüfung des ePA-Aktensystem
+  Server-Zertifikats</figcaption></div>'
+title: E-Rezept-Fachdienst - ePA - TLS-Server X.509-Zertifikat des ePA-Aktensystems
+  auf Gültigkeit prüfen
+version: 0

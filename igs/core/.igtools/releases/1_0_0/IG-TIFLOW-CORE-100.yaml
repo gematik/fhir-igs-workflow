@@ -1,0 +1,26 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: b50421e760505876f1afae74e8a0f5ea343e7af486a98dfff78feb3a71d2aee8
+created: '2026-03-23T10:57:48.445942'
+date: '2026-03-23T10:57:48.445945'
+key: IG-TIFLOW-CORE-100
+modified: '2026-03-23T10:57:48.445944'
+release_status: STABLE
+source: input/pagecontent/query-api-task-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: "Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt\
+  \ /Task mit HTTP-Header X-PoPP-Token durch eine abgebende LEI mit der Rolle \n \
+  \   <ul>\n    <li>oid_oeffentliche_apotheke</li>\n    <li>oid_krankenhausapotheke</li>\n\
+  \    </ul>\n    , die Tasks nach  \n    <ul>\n    <li>Task.status = \"ready\",</li>\n\
+  \    <li>Task.for = KVNR aus dem PoPP-Token (patientId),</li>\n    <li>Task.ExpiryDate\
+  \ nicht vor dem aktuellen Datum liegt</li>\n    <li>und Task.extension:flowType\
+  \ = 160 oder 166</li>\n    </ul>\n    filtern und in einem Bundle der gefundenen\
+  \ Tasks (ohne den signierte Anhang QES) zurückgeben, damit eine abgebende LEI alle\
+  \ zu einem Versicherten gehörenden einlösbaren E-Rezepte mit dem Status \"offen\"\
+  \ abrufen kann."
+title: E-Rezept-Fachdienst - Rezepte lesen - Apotheke - PoPP - PoPP - Filter KVNR
+version: 0

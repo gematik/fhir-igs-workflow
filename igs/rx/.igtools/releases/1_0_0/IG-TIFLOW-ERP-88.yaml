@@ -1,0 +1,40 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 2ae7fd66c90a37d42b8f44595b841700148a8135e6ba40b81aed6e318db795b1
+created: '2026-03-23T10:57:49.805867'
+date: '2026-03-23T10:57:49.805870'
+key: IG-TIFLOW-ERP-88
+modified: '2026-03-23T10:57:49.805869'
+release_status: STABLE
+source: input/pagecontent/op-activate-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: "Der E-Rezept-Fachdienst MUSS bei einem Task mit Task.flowType = 200 die Attribute\
+  \ in Task in Abhängigkeit des in der http-POST-Operation /Task/&#60;id&#62;/$activate\
+  \ übergebenen gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_008 belegen.<br>\n\
+  \n  <table>\n    <tr> \n      <th>Feld in Task</th>\n      <th>Feldbelegung</th>\n\
+  \    </tr>\n    <tr> \n      <td>Task.performerType.coding.system</td>\n      <td>\"\
+  https://gematik.de/fhir/erp/CodeSystemGEM_ERP_CS_OrganizationType\"</td>\n    </tr>\n\
+  \    <tr> \n      <td>Task.performerType.coding.code</td>\n      <td>\"1.2.276.0.76.4.54\"\
+  </td>\n    </tr>\n    <tr> \n      <td>Task.performerType.coding.diplay</td>\n \
+  \     <td>\"Öffentliche Apotheke\"</td>\n    </tr>\n    <tr> \n      <td>Task.PrescriptionType.valueCoding.display</td>\n\
+  \      <td>\"Flowtype für Apothekenpflichtige Arzneimittel (PKV)\"</td>\n    </tr>\n\
+  \    <tr> \n      <td>Task.ExpiryDate</td>\n      <td>\n        wenn MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen\
+  \ = false:<br>\n            Task.ExpiryDate = &#60;Datum der QES.Erstellung im Signaturobjekt&#62;\
+  \ + 3 Kalendermonate<br>\n        sonst<br>\n            wenn MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.end\
+  \ angegeben<br>\n                Task.ExpiryDate = MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.end<br>\n\
+  \            sonst<br>\n                Task.ExpiryDate = &#60;Datum der QES.Erstellung\
+  \ im Signaturobjekt&#62; + 365 Kalendertage \n      </td>\n    </tr>\n    <tr> \n\
+  \      <td>Task.AcceptDate</td>\n      <td>\n        wenn MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen\
+  \ = false:<br>\n            Task.AcceptDate = &#62;Datum der QES.Erstellung im Signaturobjekt&#62;\
+  \ + 3 Kalendermonate<br>\n        sonst<br>\n            wenn MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.end\
+  \ angegeben<br>\n                Task.AcceptDate = MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.end<br>\n\
+  \            sonst<br>\n                Task.AcceptDate = &#60;Datum der QES.Erstellung\
+  \ im Signaturobjekt&#62; + 365 Kalendertage\n      </td>\n    </tr>\n  </table>\n\
+  \  <div><figcaption><strong>Tabelle: </strong>TAB_eRpDM_008 Prozessparameter Flowtype\
+  \ 200</figcaption></div>"
+title: E-Rezept-Fachdienst - Task aktivieren - Flowtype 200 - Prozessparameter
+version: 0
