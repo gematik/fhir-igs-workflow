@@ -8,7 +8,7 @@
 #### PATCH /Task
 
 <!-- A_27551 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-XBORDER-21" title="E-Rezept-Fachdienst -Task markieren -Versicherter - FHIR-Validierung Parameters" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-21" title="E-Rezept-Fachdienst -Task markieren -Versicherter - FHIR-Validierung Parameters" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -17,7 +17,7 @@
 </requirement>
 
 <!-- A_28500 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-XBORDER-22" title="E-Rezept-Fachdienst -Task markieren -Versicherter - nur einlösbare E-Rezepte" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-22" title="E-Rezept-Fachdienst -Task markieren -Versicherter - nur einlösbare E-Rezepte" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -26,7 +26,7 @@
 </requirement>
 
 <!-- A_27552 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-XBORDER-23" title="E-Rezept-Fachdienst -Task markieren -Versicherter - Änderung Markierung Task Ressource" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-23" title="E-Rezept-Fachdienst -Task markieren -Versicherter - Änderung Markierung Task Ressource" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>

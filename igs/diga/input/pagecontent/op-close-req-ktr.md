@@ -7,7 +7,7 @@ Diese Seite enthält die normativen Anforderungen an ein Clientsystem des Kosten
 ### Modulspezifische Anforderungen
 
 <!-- A_26004-01 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-DIGA-27" title="CS Kostenträger: Dispensierinformationen - Flowtype 162 - MedicationDispense erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-27" title="CS Kostenträger: Dispensierinformationen - Flowtype 162 - MedicationDispense erstellen" version="0">
   <meta lockversion="false"/>
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Konformitätsbestätigung"/>

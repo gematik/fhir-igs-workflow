@@ -1,7 +1,7 @@
 Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an das E-Rezept-FdV für die Nutzung der Operation `$abort`.
 
 <!-- A_26082 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-44" title="E-Rezept-FdV: E-Rezept löschen - Hinweis zu Daten in ePA" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-44" title="E-Rezept-FdV: E-Rezept löschen - Hinweis zu Daten in ePA" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -10,7 +10,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19219-01 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-45" title="E-Rezept-FdV: E-Rezept löschen - E-Rezept zum Löschen auswählen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-45" title="E-Rezept-FdV: E-Rezept löschen - E-Rezept zum Löschen auswählen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -19,7 +19,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_24023-03 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-46" title="E-Rezept-FdV:  E-Rezepte löschen - Coverage PKV - Warnung Abgabeinformationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-46" title="E-Rezept-FdV:  E-Rezepte löschen - Coverage PKV - Warnung Abgabeinformationen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -28,7 +28,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19220-01 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-47" title="E-Rezept-FdV: E-Rezept löschen - Bestätigung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-47" title="E-Rezept-FdV: E-Rezept löschen - Bestätigung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -37,7 +37,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19221-02 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-48" title="E-Rezept-FdV: E-Rezept löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-48" title="E-Rezept-FdV: E-Rezept löschen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -46,7 +46,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19222-01 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-49" title="E-Rezept-FdV: E-Rezept löschen - Löschrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-49" title="E-Rezept-FdV: E-Rezept löschen - Löschrequest" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -55,7 +55,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19223-01 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-50" title="E-Rezept-FdV: E-Rezept löschen - E-Rezept-Token löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-50" title="E-Rezept-FdV: E-Rezept löschen - E-Rezept-Token löschen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>

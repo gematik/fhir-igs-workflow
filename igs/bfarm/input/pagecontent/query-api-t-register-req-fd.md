@@ -7,7 +7,7 @@ Der E-Rezept-Fachdienst nutzt den OAuth 2.0 Client Credentials Flow nach [OAuth 
 Über einen organisatorischen Prozess müssen Client Credentials beim BfArM angefragt werden, welche zur Authentifizierung des E-Rezept-Fachdienst ggü. dem BfArM Webdienst genutzt werden.
 
 <!-- A_27819 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-BFARM-1" title="Anbieter E-Rezept-Fachdienst - BfArM - Registrierung für Client Credentials am BfArM Webdienst" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-1" title="Anbieter E-Rezept-Fachdienst - BfArM - Registrierung für Client Credentials am BfArM Webdienst" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -25,7 +25,7 @@ Die technische Authentifizierung erfolgt dann über den `/token` Endpunkt, der d
 </figure>
 
 <!-- A_27820 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-BFARM-2" title="E-Rezept-Fachdienst - BfArM - Prüfung Gültigkeit AccessToken" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-2" title="E-Rezept-Fachdienst - BfArM - Prüfung Gültigkeit AccessToken" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Herstellererklärung"/>
@@ -34,7 +34,7 @@ Die technische Authentifizierung erfolgt dann über den `/token` Endpunkt, der d
 </requirement>
 
 <!-- A_27821 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-BFARM-3" title="E-Rezept-Fachdienst - BfArM - Beziehen des AccessTokens" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-3" title="E-Rezept-Fachdienst - BfArM - Beziehen des AccessTokens" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -43,7 +43,7 @@ Die technische Authentifizierung erfolgt dann über den `/token` Endpunkt, der d
 </requirement>
 
 <!-- A_27822 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-BFARM-4" title="E-Rezept-Fachdienst - BfArM - AccessToken für Zugriff auf den BfArM Webdienst" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-4" title="E-Rezept-Fachdienst - BfArM - AccessToken für Zugriff auf den BfArM Webdienst" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -55,7 +55,7 @@ Die technische Authentifizierung erfolgt dann über den `/token` Endpunkt, der d
 ### Lokalisierung
 
 <!-- A_27882 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-BFARM-5" title="E-Rezept-Fachdienst - BfArM - Lokalisierung Konfigurationsparameter BfArM_Domain" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-5" title="E-Rezept-Fachdienst - BfArM - Lokalisierung Konfigurationsparameter BfArM_Domain" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Herstellererklärung"/>
@@ -66,7 +66,7 @@ Die technische Authentifizierung erfolgt dann über den `/token` Endpunkt, der d
 Der Defaultwert für den Parameter ist  `https://webapps-public.bfarm.de`.
 
 <!-- A_27817 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-BFARM-6" title="E-Rezept-Fachdienst - BfArM - Lokalisierung des BfArM Webdienstes" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-6" title="E-Rezept-Fachdienst - BfArM - Lokalisierung des BfArM Webdienstes" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Herstellererklärung"/>
@@ -79,7 +79,7 @@ Der Defaultwert für den Parameter ist  `https://webapps-public.bfarm.de`.
 Nach Abschluss eines Workflows 166 durch Aufrufen der $close Operation erstellt der E-Rezept-Fachdienst den digitalen Durchschlag für den Vorgang des E-T-Rezeptes. Die fachlichen Informationen hierzu sind im Dokument [gemF_eRp_T-Rezept] dokumentiert.
 
 <!-- A_27823 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-BFARM-7" title="E-Rezept-Fachdienst - BfArM - Flowtype 166" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-7" title="E-Rezept-Fachdienst - BfArM - Flowtype 166" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -88,7 +88,7 @@ Nach Abschluss eines Workflows 166 durch Aufrufen der $close Operation erstellt 
 </requirement>
 
 <!-- A_27824 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-BFARM-8" title="E-Rezept-Fachdienst - BfArM - asynchrone Bereitstellung und Übermittlung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-8" title="E-Rezept-Fachdienst - BfArM - asynchrone Bereitstellung und Übermittlung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -101,7 +101,7 @@ Der digitale Durchschlag zum T-Rezept ist ein Artefakt, welches Informationen zu
 Als Datengrundlage für diesen Durchschlag dient der Verordnungsdatensatz samt QES, der Dispensierdatensatz, der Task der Verordnung und Daten der Apotheke aus dem FHIR-VZD. Als Kriterium für die Suche nach Apothekendaten im FHIR-VZD wird die Telematik-ID der Apotheke genutzt.
 
 <!-- A_27825 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-BFARM-9" title="E-Rezept-Fachdienst - BfArM - Suche nach Apothekendaten" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-9" title="E-Rezept-Fachdienst - BfArM - Suche nach Apothekendaten" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -128,7 +128,7 @@ Anschließend erstellt der E-Rezept-Fachdienst den digitalen Durchschlag für de
 Für den Austausch der Daten zwischen E-Rezept-Fachdienst und dem BfArM Webdienst existiert ein FHIR Implementation Guide (IG), der Beschreibungen, OpenAPI Definition, Profile und Mappings enthält.
 
 <!-- A_27826-01 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-BFARM-10" title="E-Rezept-Fachdienst - BfArM - Erzeugen digitaler Durchschlag E-T-Rezept" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-10" title="E-Rezept-Fachdienst - BfArM - Erzeugen digitaler Durchschlag E-T-Rezept" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -137,7 +137,7 @@ Für den Austausch der Daten zwischen E-Rezept-Fachdienst und dem BfArM Webdiens
 </requirement>
 
 <!-- A_27827 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-BFARM-11" title="E-Rezept-Fachdienst - BfArM - Anwendungsfall Übertragen des digitalen Durchschlags" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-11" title="E-Rezept-Fachdienst - BfArM - Anwendungsfall Übertragen des digitalen Durchschlags" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -189,7 +189,7 @@ Für den Austausch der Daten zwischen E-Rezept-Fachdienst und dem BfArM Webdiens
 </requirement>
 
 <!-- A_27828 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-BFARM-12" title="E-Rezept-Fachdienst - BfArM - Übertragen des digitalen Durchschlags" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-12" title="E-Rezept-Fachdienst - BfArM - Übertragen des digitalen Durchschlags" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -237,7 +237,7 @@ Bei der Suche nach Apothekendaten basierend auf der Telematik-lD besteht die Mö
 Dieses Vorgehen stellt sicher, dass die Übertragung an das T-Register nicht aufgrund eines fehlenden FHIR-VZD-Eintrags blockiert wird und gleichzeitig die Nachvollziehbarkeit über die Telematik-ID gewährleistet bleibt.
 
 <!-- A_27830 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-BFARM-13" title="E-Rezept-Fachdienst - BfArM - Fehlerbehandlung - Reaktion auf Scheitern des Operationaufrufs" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-13" title="E-Rezept-Fachdienst - BfArM - Fehlerbehandlung - Reaktion auf Scheitern des Operationaufrufs" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Herstellererklärung"/>
@@ -246,7 +246,7 @@ Dieses Vorgehen stellt sicher, dass die Übertragung an das T-Register nicht auf
 </requirement>
 
 <!-- A_27831 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-BFARM-14" title="E-Rezept-Fachdienst - BfArM - Fehlerbehandlung - Protokollierung struktureller Fehler" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-14" title="E-Rezept-Fachdienst - BfArM - Fehlerbehandlung - Protokollierung struktureller Fehler" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Herstellererklärung"/>

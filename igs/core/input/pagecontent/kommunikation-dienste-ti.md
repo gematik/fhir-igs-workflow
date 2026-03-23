@@ -4,7 +4,7 @@
 Clientsysteme nutzen TLS-Verbindungen für die Kommunikation zu den Diensten der TI. Es verbindet sich mit dem E-Rezept-Fachdienst und einem Identity Provider.
 
 <!-- A_19451-02 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-155" title="CS: Lokalisierung E-Rezept-Fachdienst" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-155" title="CS: Lokalisierung E-Rezept-Fachdienst" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -26,7 +26,7 @@ Clientsysteme nutzen TLS-Verbindungen für die Kommunikation zu den Diensten der
 Die Abfrage beim Namensdienst der TI erfolgt über einen DNS-Lookup. Hierfür muss der Konnektor als DNS-Resolver konfiguriert sein.
 
 <!-- A_19744-01 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-156" title="CS: Endpunkt Schnittstelle E-Rezept-Fachdienst" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-156" title="CS: Endpunkt Schnittstelle E-Rezept-Fachdienst" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -48,7 +48,7 @@ Die Informationen zu den Endpunkten des Identity Providers ermittelt das Primär
 Die URL des Downloadpunktes im zentralen Netz der TI lautet: "https://idp.zentral.idp.splitdns.ti-dienste.de/.well-known/openid-configuration" [gemSpec_IDP_Dienst#A_19874-*].
 
 <!-- A_19234-01 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-157" title="CS: Kommunikation über TLS-Verbindung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-157" title="CS: Kommunikation über TLS-Verbindung" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -68,7 +68,7 @@ Die URL des Downloadpunktes im zentralen Netz der TI lautet: "https://idp.zentra
 Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.
 
 <!-- A_19235-02 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-158" title="CS: Unzulässige TLS-Verbindungen ablehnen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-158" title="CS: Unzulässige TLS-Verbindungen ablehnen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -86,7 +86,7 @@ Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.
 </requirement>
 
 <!-- A_20015-02, A_20014-04 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-159" title="CS: HTTP-Header user-agent" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-159" title="CS: HTTP-Header user-agent" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -113,7 +113,7 @@ Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.
 </requirement>
 
 <!-- A_21568-02 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-160" title="CS: HTTP-Header X-erp-user" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-160" title="CS: HTTP-Header X-erp-user" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -140,7 +140,7 @@ Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.
 </requirement>
 
 <!-- A_21569-01, A_21570-01  -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-161" title="CS: HTTP-Header X-erp-resource" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-161" title="CS: HTTP-Header X-erp-resource" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -214,7 +214,7 @@ Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.
 Die Kommunikation zum E-Rezept-Fachdienst wird zusätzlich zu TLS über einen sicheren Kanal (Verschlüsselung auf Http-Ebene) zwischen dem PS und der Vertrauenswürdigen Ausführungsumgebung (VAU) im E-Rezept-Fachdienst gesichert. 
 
 <!-- A_19741-01, A_19740-01 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-162" title="CS: Umsetzung sicherer Kanal zur VAU des E-Rezept-Fachdienstes" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-162" title="CS: Umsetzung sicherer Kanal zur VAU des E-Rezept-Fachdienstes" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>

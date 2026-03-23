@@ -7,7 +7,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 ### Modulspezifische Anforderungen
 
 <!-- A_19170-02 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-DIGA-1" title="E-Rezept-Fachdienst - Task zurückweisen - Flowtype 162 - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-1" title="E-Rezept-Fachdienst - Task zurückweisen - Flowtype 162 - Rollenprüfung" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produktgutachten"/>

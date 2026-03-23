@@ -7,7 +7,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 ### Modulspezifische Anforderungen
 
 <!-- A_24279 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-36" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Rollenprüfung Abgebender stellt Dispensierinformationen bereit" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-36" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Rollenprüfung Abgebender stellt Dispensierinformationen bereit" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -21,7 +21,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 </requirement>
 
 <!-- A_24280 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-37" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Prüfung Secret" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-37" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Prüfung Secret" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -30,7 +30,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 </requirement>
 
 <!-- A_24298 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-38" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Prüfung Status" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-38" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Prüfung Status" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -39,7 +39,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 </requirement>
 
 <!-- A_24281-02 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-39" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Schemaprüfung MedicationDispense" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-39" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Schemaprüfung MedicationDispense" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -48,7 +48,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 </requirement>
 
 <!-- A_26482 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-40" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Überschreiben vorheriger MedicationDispenses" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-40" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Überschreiben vorheriger MedicationDispenses" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -57,7 +57,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 </requirement>
 
 <!-- A_27052 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-41" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - MedicationDispense speichern" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-41" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - MedicationDispense speichern" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -66,7 +66,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 </requirement>
 
 <!-- A_24283-02 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-42" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Speicherung mehrerer MedicationDispenses" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-42" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Speicherung mehrerer MedicationDispenses" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -75,7 +75,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 </requirement>
 
 <!-- A_25933 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-43" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Daten Medikationsliste bereitstellen (Dispensierinformationen)" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-43" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Daten Medikationsliste bereitstellen (Dispensierinformationen)" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -84,7 +84,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 </requirement>
 
 <!-- A_24285-01 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-44" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Zeitstempel MedicationDispense" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-44" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Zeitstempel MedicationDispense" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -93,7 +93,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 </requirement>
 
 <!-- A_28410 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-45" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Telematik-ID der abgebenden LEI speichern" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-45" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Telematik-ID der abgebenden LEI speichern" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -102,7 +102,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 </requirement>
 
 <!-- A_28130 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-46" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Push Notification Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-46" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Push Notification Versicherter" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -111,7 +111,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 </requirement>
 
 <!-- A_24284 -->
-<requirement conformance="SHALL NOT" key="IG-PRE-TIFLOW-ERP-47" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Keine Statusänderung" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-ERP-47" title="E-Rezept-Fachdienst - Dispensierinformationen bereitstellen - Keine Statusänderung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>

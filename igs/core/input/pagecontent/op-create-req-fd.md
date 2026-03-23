@@ -1,7 +1,7 @@
 Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an den E-Rezept-Fachdienst für die Operation `$create`.
 
 <!-- A_19018-01 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-217" title="E-Rezept-Fachdienst - Task erzeugen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-217" title="E-Rezept-Fachdienst - Task erzeugen - Rollenprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -18,7 +18,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19257-01 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-218" title="E-Rezept-Fachdienst - Task erzeugen - Schemavalidierung Rezept anlegen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-218" title="E-Rezept-Fachdienst - Task erzeugen - Schemavalidierung Rezept anlegen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -27,7 +27,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19112 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-219" title="E-Rezept-Fachdienst - Task erzeugen - Parametrierung Task für Workflow-Typ" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-219" title="E-Rezept-Fachdienst - Task erzeugen - Parametrierung Task für Workflow-Typ" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -36,7 +36,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19214 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-220" title="E-Rezept-Fachdienst - Task erzeugen - Ergänzung Performer-Typ für Einlöseinstitutstyp" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-220" title="E-Rezept-Fachdienst - Task erzeugen - Ergänzung Performer-Typ für Einlöseinstitutstyp" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -46,7 +46,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 <!-- ToDo: Achtung, die Afo wurde zwichenzeitlich aufgeteilt. Muss neu ggf WF-spezifisch formuliert werden. Warum wird diese Eigenschaft nicht beim activate gesetzt?  -->
 
 <!-- A_19019-01 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-221" title="E-Rezept-Fachdienst - Task erzeugen - Generierung Rezept-ID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-221" title="E-Rezept-Fachdienst - Task erzeugen - Generierung Rezept-ID" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -55,7 +55,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_23227 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-222" title="E-Rezept-Fachdienst - Task erzeugen - Task-ID=Rezept-ID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-222" title="E-Rezept-Fachdienst - Task erzeugen - Task-ID=Rezept-ID" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Herstellererklärung"/>
@@ -64,7 +64,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19021-02 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-223" title="E-Rezept-Fachdienst - Task erzeugen - Generierung AccessCode" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-223" title="E-Rezept-Fachdienst - Task erzeugen - Generierung AccessCode" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produktgutachten"/>
@@ -73,7 +73,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19114 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-224" title="E-Rezept-Fachdienst - Task erzeugen - Status draft" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-224" title="E-Rezept-Fachdienst - Task erzeugen - Status draft" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>

@@ -13,7 +13,7 @@ siehe [Datenmodell Payload für Communication-Query](./query-api-communication-r
 #### Nachricht versenden
 
 <!-- A_21373 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-55" title="PS abgebende LEI: Nachricht versenden - Externe URL ausschließlich für Einlösung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-55" title="PS abgebende LEI: Nachricht versenden - Externe URL ausschließlich für Einlösung" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>
@@ -22,7 +22,7 @@ siehe [Datenmodell Payload für Communication-Query](./query-api-communication-r
 </requirement>
 
 <!-- A_28538 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-56" title="PS abgebende LEI: Nachricht versenden - Belieferung Arzneimittel - Nachricht erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-56" title="PS abgebende LEI: Nachricht versenden - Belieferung Arzneimittel - Nachricht erstellen" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>
@@ -42,7 +42,7 @@ Beispiele für diesen Anwendungsfall stehen im GitHub  https://github.com/gema
 Die Erläuterung und das Schema des Payloads sind in [gemSpec_DM_eRp#TAB_eRpDM_003] zu finden.
 
 <!-- A_19333-02 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-57" title="PS abgebende LEI: Nachricht versenden - Belieferung Arzneimittel - Communication Ressource erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-57" title="PS abgebende LEI: Nachricht versenden - Belieferung Arzneimittel - Communication Ressource erstellen" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>
