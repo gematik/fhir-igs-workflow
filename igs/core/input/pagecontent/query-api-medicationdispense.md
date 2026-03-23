@@ -1,6 +1,4 @@
-# Query API: MedicationDispense
-
-Diese Seite beschreibt die moduluebergreifende MedicationDispense-Query-Schnittstelle.
+Diese Seite beschreibt die modulübergreifende MedicationDispense-Query-Schnittstelle.
 
 Dem Versicherten werden über die Ressource MedicationDispense Informationen über ein eingelöstes E-Rezept bereitgestellt. Im MedicationDispense ist dabei die Referenz auf das abgegebene Medikament enthalten. Diese Informationen unterstützen den Versicherten im Versorgungsprozess, indem ihm bspw. mittels dieser Informationen ein digitaler Beipackzettel oder weitere Informationen wie Applikationsanleitungen zur Verfügung gestellt werden können. Der Zugriff auf die Ressource MedicationDispense erfolgt ausschließlich lesend über die http-GET-Operation. Das Löschen erfolgt indirekt über das Löschen des der MedicationDispense zugrunde liegenden Tasks.
 
@@ -19,16 +17,27 @@ Die Nachricht zur Interaktion mit Einlöseinformationen als FHIR-Ressource _Medi
 
 ### Resource API
 
-Anfragen an die <i>MedicationDispense</i>-Ressource können über die RESTful API mittels HTTP GET-Anfragen durchgeführt werden.
+Als Versicherter möchte ich die Abgabeinformationen erhalten, um mir darüber einen digitalen Beipackzettel herunterzuladen und weitere Anwendungshinweise für mein Medikament zu erhalten.
+Die Rückgabe erfolgt als Liste im `Bundle` eines oder mehrerer MedicationDispenses, welche den ggfs. angegebenen Suchparametern entsprechen.
 
-#### API Beschreibung
-
-- [API-ERP: Abgabeinformationen abrufen](https://github.com/gematik/api-erp/blob/master/docs/erp_versicherte.adoc#abgabeinformationen-abrufen)
-- [API-ERP: Abgabeinformationen zu einem E-Rezept abrufen](https://github.com/gematik/api-erp/blob/master/docs/erp_versicherte.adoc#abgabeinformationen-zu-einem-e-rezept-abrufen)
-
-<!-- ### Instance API -->
-
-<!-- TODO: für neuausschreibung einzelne API mit richtiger /<id>? -->
+<div class="gematik-apidoc"
+  data-api-type="FHIRResource"
+  data-api-fhir-resource-type="MedicationDispense"
+  data-api-fhir-interaction="search-type">
+  <div id="CapabilityStatement">
+    <pre>
+      {% include CapabilityStatement-erp-fachdienst-server.json %}
+    </pre>
+  </div>
+  <div id="Response-Examples">
+    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+      {% fragment Bundle/example-searchset-medicationdispense JSON %}
+    </div>
+    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+      {% fragment Bundle/example-searchset-medicationdispense XML %}
+    </div>
+  </div>
+</div>
 
 
 

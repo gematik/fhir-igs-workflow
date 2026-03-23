@@ -11,11 +11,37 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$activate` gesendet.
 
 ### API Beschreibung
 
-Die API-Beschreibung für den Aufruf der Operation findet sich auf:
-- [API-ERP: E-Rezept vervollständigen und Task aktivieren](https://github.com/gematik/api-erp/blob/master/docs/erp_bereitstellen.adoc#e-rezept-vervollst%C3%A4ndigen-und-task-aktivieren)
+<div class="gematik-api"
+	data-api-type="FHIROperation"
+	data-api-fhir-resource-type="Task"
+	data-api-fhir-invoke-level="instance"
+	data-api-operation-id="activateOperation">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-erp-fachdienst-server-rx.json %}
+		</pre>
+	</div>
+	<div id="OperationDefinition">
+		<pre>
+			{% include OperationDefinition-ActivateOperation.json %}
+		</pre>
+	</div>
+	<div id="Request-Examples">
+		<!-- TODO: Replace with operation-specific request examples for $activate. -->
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Parameters/ExampleRxOperationRequestParameters XML %}
+		</div>
+	</div>
+	<div id="Response-Examples">
+		<!-- TODO: Replace with operation-specific response examples for $activate. -->
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleRxOperationOutcomeError XML %}
+		</div>
+	</div>
+</div>
 
 
-### Hinweis
+### Hinweise
 
 - Bei ausbleibender Antwort soll der Client den Aufruf wiederholen.
 - Wenn ein wiederholter Aufruf mit `403` und "Task not in status draft but in status ready" antwortet, war ein vorheriger Aufruf bereits erfolgreich.

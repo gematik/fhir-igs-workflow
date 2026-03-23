@@ -83,7 +83,7 @@ Der TI-Flow-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen 
 	automatisch löschen:
 	<ul>
 		<li>ohne eine Referenz auf einen Task in Communication.basedOn nach 100 Tagen ab ihrem Sendedatum Communication.sent,</li>
-		<li>mit einer Referenz auf einen Task in Communication.basedOn gemäss der Löschfrist beim Löschen des Tasks,</li>
+		<li>mit einer Referenz auf einen Task in Communication.basedOn gemäß der Löschfrist beim Löschen des Tasks,</li>
 		<li>mit einer Referenz auf einen ChargeItem in Communication.basedOn nach 100 Tagen ab ihrem Sendedatum Communication.sent.</li>
 	</ul>
 </requirement>

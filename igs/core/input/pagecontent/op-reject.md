@@ -11,9 +11,32 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$reject` gesendet.
 
 ### API Beschreibung
 
-Die API-Beschreibung für den Aufruf der Operation findet sich auf:
-- [API-ERP: E-Rezept zurückweisen](https://github.com/gematik/api-erp/blob/master/docs/erp_abrufen.adoc#e-rezept-zur%C3%BCckweisen)
+<div class="gematik-api"
+  data-api-type="FHIROperation"
+  data-api-fhir-resource-type="Task"
+  data-api-fhir-invoke-level="instance"
+  data-api-operation-id="rejectOperation">
+  <div id="CapabilityStatement">
+    <pre>
+      {% include CapabilityStatement-erp-fachdienst-server.json %}
+    </pre>
+  </div>
+  <div id="OperationDefinition">
+    <pre>
+      {% include OperationDefinition-RejectOperation.json %}
+    </pre>
+  </div>
+  <div id="Request-Examples">
+    <!-- TODO: Request-Beispiel für $reject ergänzen (kein Body, nur Header mit AccessCode und secret) -->
+  </div>
+  <div id="Response-Examples">
+    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+      {% fragment OperationOutcome/ExampleOperationRejectError XML %}
+    </div>
+  </div>
+</div>
 
-### Hinweis
+### Hinweise
 
 - `reject` und direktes erneutes `accept` sollen nicht als Übergabemechanismus zwischen Apotheken verwendet werden, da dies für Versicherte schwer nachvollziehbare Protokollierung/Notifications erzeugt.
+- Im Ergebnis der `$reject`-Operation wird der referenzierte Task auf den aktiven Status ready zurückgesetzt und das `secret` gelöscht. Dementsprechend werden keine Daten an den aufrufenden Client zurückgegeben.

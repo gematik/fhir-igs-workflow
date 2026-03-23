@@ -1,3 +1,6 @@
+Alias: $erp-base-url = https://tiflow.de
+Alias: $erp-task = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task
+
 Alias: $cs-iso-3166 = urn:iso:std:iso:3166
 Alias: $cs-consent-scope = http://terminology.hl7.org/CodeSystem/consentscope
 Alias: $capabilitystatement-expectation = http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation
