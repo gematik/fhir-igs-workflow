@@ -2,7 +2,7 @@
 Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_19231-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-53" title="E-Rezept-Fachdienst - Task schließen - Prüfung Secret" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-60" title="E-Rezept-Fachdienst - Task schließen - Prüfung Secret" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -11,7 +11,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_19231-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-370" title="E-Rezept-Fachdienst - Task schließen - Prüfung Status" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-61" title="E-Rezept-Fachdienst - Task schließen - Prüfung Status" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -20,7 +20,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_19248-05 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-54" title="E-Rezept-Fachdienst - Task schließen - Schemaprüfung MedicationDispense" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-62" title="E-Rezept-Fachdienst - Task schließen - Schemaprüfung MedicationDispense" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -35,7 +35,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_27051 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-55" title="E-Rezept-Fachdienst - Task schließen - MedicationDispense speichern" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-63" title="E-Rezept-Fachdienst - Task schließen - MedicationDispense speichern" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -44,7 +44,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_26337 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-56" title="E-Rezept-Fachdienst - Task schließen - Zeitstempel MedicationDispense" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-64" title="E-Rezept-Fachdienst - Task schließen - Zeitstempel MedicationDispense" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -53,7 +53,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_28411 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-57" title="E-Rezept-Fachdienst - Task schließen - Telematik-ID der abgebenden LEI speichern" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-65" title="E-Rezept-Fachdienst - Task schließen - Telematik-ID der abgebenden LEI speichern" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -62,7 +62,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_28129 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-58" title="E-Rezept-Fachdienst - Task schließen - Push Notification Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-66" title="E-Rezept-Fachdienst - Task schließen - Push Notification Versicherter" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -71,7 +71,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_19232 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-59" title="E-Rezept-Fachdienst - Task schließen - Status beenden" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-67" title="E-Rezept-Fachdienst - Task schließen - Status beenden" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -80,7 +80,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_19233-06 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-60" title="E-Rezept-Fachdienst - Task schließen - Quittung erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-68" title="E-Rezept-Fachdienst - Task schließen - Quittung erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>
@@ -100,7 +100,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_22919 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-61" title="E-Rezept-Fachdienst - Task schließen - OCSP-Response nicht älter als 24h" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-69" title="E-Rezept-Fachdienst - Task schließen - OCSP-Response nicht älter als 24h" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FD">
         <testProcedure id="Produkttest"/>

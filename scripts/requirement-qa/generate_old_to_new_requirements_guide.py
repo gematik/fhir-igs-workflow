@@ -172,7 +172,7 @@ def is_gemf_source(source: str) -> bool:
 
 def preferred_source(sources: Set[str]) -> str:
     if not sources:
-        return "Unbekannte Quelle"
+        return "Noch nicht veröffentlichte Anforderungen"
 
     sorted_sources = sorted(sources)
 
@@ -237,7 +237,7 @@ def page_url_from_mapping_file(file_path: str, base_url: str) -> str:
     return f"{base_url}/{ig_name}/{page_name}.html"
 
 
-def new_req_links(entry: dict, base_url: str) -> str:
+def new_req_links(entry: dict, base_url: str, no_links: bool = False) -> str:
     occs = entry.get("occurrences") or []
     if isinstance(occs, list) and occs:
         links = []
@@ -253,8 +253,11 @@ def new_req_links(entry: dict, base_url: str) -> str:
             if key in seen:
                 continue
             seen.add(key)
-            url = page_url_from_mapping_file(file_path, base_url)
-            links.append(f"[{new_req}]({url})")
+            if no_links:
+                links.append(new_req)
+            else:
+                url = page_url_from_mapping_file(file_path, base_url)
+                links.append(f"[{new_req}]({url})")
         if links:
             return "<br/>".join(links)
 
@@ -268,6 +271,7 @@ def build_markdown(
     mapping_by_old_req: Dict[str, dict],
     ignored_requirements: Dict[str, str],
     new_req_base_url: str,
+    no_links: bool = False,
 ) -> str:
     meta_by_base = aggregate_metadata_by_base(old_meta)
     ignored_ids = set(ignored_requirements.keys())
@@ -319,7 +323,7 @@ def build_markdown(
             titles = "<br/>".join(sorted(meta.get("titles", set()))) or "-"
 
             # old_req is from mapping_by_old_req, so entry is expected.
-            new_links = new_req_links(entry, new_req_base_url) or "-"
+            new_links = new_req_links(entry, new_req_base_url, no_links=no_links) or "-"
             igs = "<br/>".join(entry.get("igs") or []) or "-"
 
             lines.append(f"| {old_link} | {titles} | {new_links} | {igs} |")
@@ -377,6 +381,11 @@ def main() -> int:
         help="Placeholder base URL for links to new requirements",
     )
     parser.add_argument(
+        "--no-links",
+        action="store_true",
+        help="Disable hyperlinks for new requirements (old requirement links remain enabled)",
+    )
+    parser.add_argument(
         "--req-ignore-csv",
         default="scripts/requirement-qa/config/req-ignore.csv",
         help="CSV with ignored old requirement IDs (default: scripts/requirement-qa/config/req-ignore.csv)",
@@ -403,6 +412,7 @@ def main() -> int:
         mapping_by_old_req,
         ignored_requirements,
         args.new_req_base_url,
+        no_links=args.no_links,
     )
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(markdown, encoding="utf-8")

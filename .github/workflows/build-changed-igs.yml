@@ -101,7 +101,7 @@ jobs:
           mkdir -p "$artifact_dir"
 
           set +e
-          ./scripts/run-igtools-process-all.sh 2>&1 | tee "$log_file"
+          ./igtools-all process 2>&1 | tee "$log_file"
           script_exit=${PIPESTATUS[0]}
           set -e
 
@@ -124,10 +124,10 @@ jobs:
 
           if [[ "$script_exit" -ne 0 || "$found_error_keywords" == "true" ]]; then
             status="failed"
-            message="Vorprüfung fehlgeschlagen: ./scripts/run-igtools-process-all.sh hat Fehler geliefert (Exit-Code ungleich 0 oder Ausgabe mit ERROR/FAILED)."
+            message="Vorprüfung fehlgeschlagen: ./igtools-all process hat Fehler geliefert (Exit-Code ungleich 0 oder Ausgabe mit ERROR/FAILED)."
           elif [[ "$tree_clean" != "true" ]]; then
             status="warning"
-            message="Vorprüfung mit Warnung: ./scripts/run-igtools-process-all.sh lief ohne offensichtliche Fehler, hat aber Dateien im Repository verändert. Bitte die erzeugten Änderungen einchecken oder die Ursache beheben."
+            message="Vorprüfung mit Warnung: ./igtools-all process lief ohne offensichtliche Fehler, hat aber Dateien im Repository verändert. Bitte die erzeugten Änderungen einchecken oder die Ursache beheben."
           fi
 
           export PRECHECK_STATUS="$status"
@@ -285,7 +285,7 @@ jobs:
                       <tbody>
                         <tr><td>{igtools_icon} {igtools_text}</td><td>{igtools_result}</td></tr>
                         <tr><td>{git_icon} {git_text}</td><td>{git_result}</td></tr>
-                        <tr><td>Exit-Code von ./scripts/run-igtools-process-all.sh</td><td>{html.escape(script_exit)}</td></tr>
+                        <tr><td>Exit-Code von ./igtools-all process</td><td>{html.escape(script_exit)}</td></tr>
                         <tr><td>Ausgabe enthält ERROR/FAILED</td><td>{html.escape(found_error_keywords)}</td></tr>
                         <tr><td>Repository nach Lauf unverändert</td><td>{html.escape(tree_clean)}</td></tr>
                       </tbody>

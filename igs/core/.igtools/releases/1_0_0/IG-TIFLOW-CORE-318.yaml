@@ -1,0 +1,24 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 4e8e9e65e082e86d680dafb7c59f60f60bb3308a2cbc0df8223f41e577f95b64
+created: '2026-03-23T10:57:48.504374'
+date: '2026-03-23T10:57:48.504377'
+key: IG-TIFLOW-CORE-318
+modified: '2026-03-23T10:57:48.504376'
+release_status: STABLE
+source: input/pagecontent/query-api-communication-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produktgutachten
+text: Der E-Rezept-Fachdienst MUSS beim Abrufen von Nachrichten über die http-Operation
+  GET auf den Endpunkt /Communication bzw. beim Abruf einer einzelnen Nachricht über
+  /Communication/&lt;id&gt; ausschließlich die Nachrichten an den Aufrufer zurückgeben,
+  die im Attribut Communication.recipient oder Communication.sender mit dem entsprechenden
+  Identifier https://gematik.de/fhir/sid/telematik-id für Apotheken bzw. http://fhir.de/sid/gkv/kvid-10
+  für Versicherte den gleichen Typ und den identischen Wert haben wie im Attribut
+  "idNummer" des übergebenen ACCESS_TOKEN im HTTP-Header "Authorization" für Versicherten-ID
+  bzw. Telematik-ID, damit keine Nachrichten an Dritte unrechtmäßig ausgelesen werden.
+title: E-Rezept-Fachdienst - Nachrichten abrufen - für Empfänger filtern
+version: 0

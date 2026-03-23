@@ -1,7 +1,7 @@
 Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Task`-Query-Endpunkte.
 
 <!-- A_19347-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-178" title="E-Rezept-FdV: E-Rezepte abrufen - Liste E-Rezepte abrufen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-197" title="E-Rezept-FdV: E-Rezepte abrufen - Liste E-Rezepte abrufen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -14,7 +14,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Task`-
 </requirement>
 
 <!-- A_19348-01 -->
-<requirement conformance="MAY" key="IG-TIFLOW-CORE-179" title="E-Rezept-FdV: E-Rezept abrufen - E-Rezepte lokal speichern" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CORE-198" title="E-Rezept-FdV: E-Rezept abrufen - E-Rezepte lokal speichern" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -27,7 +27,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Task`-
 Die Alternative 1 wird genutzt, wenn nur die Informationen zu einem E-Rezept vom E-Rezept-Fachdienst heruntergeladen werden sollen, bspw. um zu prüfen, ob sich der Status geändert hat. Dafür muss die Task-ID dieses Rezepts im E-Rezept-FdV bekannt sein.
 
 <!-- A_19350-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-180" title="E-Rezept-FdV: E-Rezepte abrufen -Spezifisches E-Rezept herunterladen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-199" title="E-Rezept-FdV: E-Rezepte abrufen -Spezifisches E-Rezept herunterladen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -49,7 +49,7 @@ Der Response beinhaltet die Task Ressource des E-Rezepts.
 Die Alternative 2 wird genutzt, wenn der Nutzer als Vertreter eines Versicherten ein E-Rezept vom E-Rezept-Fachdienst herunterladen möchte. Dafür müssen die Task-ID und der AccessCode dieses Rezepts im E-Rezept-FdV bekannt sein. Die Informationen Task-ID und AccessCode werden im E-Rezept-Token übermittelt.
 
 <!-- A_19351-01 -->
-<requirement conformance="MAY" key="IG-TIFLOW-CORE-181" title="E-Rezept-FdV: E-Rezepte abrufen - E-Rezept mit AccessCode herunterladen" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CORE-200" title="E-Rezept-FdV: E-Rezepte abrufen - E-Rezept mit AccessCode herunterladen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>

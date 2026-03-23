@@ -4,10 +4,10 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 
 <!-- A_19273-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-133" title="PS verordnende LEI: E-Rezept einstellen - Task auf Fachdienst aktivieren" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-150" title="PS verordnende LEI: E-Rezept einstellen - Task auf Fachdienst aktivieren" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_verordnend">
-    <testProcedure id="Konformitätserklärung"/>
+    <testProcedure id="Konformitätsbestätigung"/>
   </actor>
   Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden einstellen" für das E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$activate mit
   <ul>
@@ -25,7 +25,7 @@ Fehler 403 mit dem OperationOutcome "Task not in status draft but in status read
 ### Patientenausdruck
 
 <!-- A_22503 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-134" title="PS verordnende LEI: E-Rezept einstellen - kein Patientenausdruck bei Fehler beim Aktivieren" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-151" title="PS verordnende LEI: E-Rezept einstellen - kein Patientenausdruck bei Fehler beim Aktivieren" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Herstellererklärung"/>
@@ -37,7 +37,7 @@ Für den Patientenausdruck gelten vorrangig die Regelungen zum Ausdruck eines E-
 <!-- ToDo: Können in den workflow-spezifischen Modulen weitere Hinweise geben? rx und diga haben unterschiedliche vorgaben durch die KBV -->
 
 <!-- A_22423 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-372" title="PS verordnende LEI: E-Rezept einstellen - separater Patientenausdruck je Flowtype" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-152" title="PS verordnende LEI: E-Rezept einstellen - separater Patientenausdruck je Flowtype" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Herstellererklärung"/>
@@ -46,7 +46,7 @@ Für den Patientenausdruck gelten vorrangig die Regelungen zum Ausdruck eines E-
 </requirement>
 
 <!-- A_19279 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-135" title="PS verordnende LEI: E-Rezept einstellen - E-Rezept-Token erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-153" title="PS verordnende LEI: E-Rezept einstellen - E-Rezept-Token erstellen" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Herstellererklärung"/>
@@ -58,7 +58,7 @@ Für die Spezifikation des E-Rezept-Token siehe [gemSpec_DM_eRp#2.3].
 <!-- ToDo: Referenz korrigieren -->
 
 <!-- A_19280 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-136" title="PS verordnende LEI: E-Rezept einstellen - Datamatrix-Code erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-154" title="PS verordnende LEI: E-Rezept einstellen - Datamatrix-Code erstellen" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Herstellererklärung"/>

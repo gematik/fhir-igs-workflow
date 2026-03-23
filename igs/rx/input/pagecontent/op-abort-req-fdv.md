@@ -5,7 +5,7 @@
 ### Modulspezifische Anforderungen
 
 <!-- A_21362-02 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-ERP-7" title="E-Rezept-FdV: E-Rezept löschen - Flowtype 169 / 209 - nur wenn beliefert" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-ERP-16" title="E-Rezept-FdV: E-Rezept löschen - Flowtype 169 / 209 - nur wenn beliefert" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>

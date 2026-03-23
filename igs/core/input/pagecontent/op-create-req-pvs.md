@@ -1,7 +1,7 @@
 Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an das PVS für die Nutzung der Operation `$create`.
 
 <!-- A_19275 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-227" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-257" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -14,7 +14,7 @@ Dieses Bundle wird in diesem Dokument als E-Rezept-Bundle bezeichnet. Ein E-Reze
 Das PS der verordnenden LEI darf FHIR-Extensions nicht im Verordnungsdatensatz verwenden, die nicht explizit gemäß KBV-Profilversion "kbv.ita.erp" bzw. "kbv.itv.evdga" beschrieben sind.
 
 <!-- A_22893 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-228" title="PS verordnende LEI: E-Rezept erstellen - Gleichheit Ausstellungsdatum und QES Erstellung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-258" title="PS verordnende LEI: E-Rezept erstellen - Gleichheit Ausstellungsdatum und QES Erstellung" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Herstellererklärung"/>
@@ -25,10 +25,10 @@ Das PS der verordnenden LEI darf FHIR-Extensions nicht im Verordnungsdatensatz v
 Es gelten weitere modulspezifische Anforderungen für den Verordnungsdatensatz.
 
 <!-- A_19276 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-229" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-ID abrufen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-259" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-ID abrufen" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_verordnend">
-    <testProcedure id="Konformitätserklärung"/>
+    <testProcedure id="Konformitätsbestätigung"/>
   </actor>
   Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" für das E-Rezept die HTTP-Operation POST /Task/$create mit
   <ul>
@@ -52,10 +52,10 @@ Hinweis: Die Task-ID entspricht der Rezept-ID.
 Für die qualifizierte elektronische Signatur des Verordnungsbundels wird der Konnektor verwendet. Es wird eine CMS-Signatur (CAdES) erstellt. Die Operation für die QES muss durch den Leistungserbringer durchgeführt werden.
 
 <!-- A_19281-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-380" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle QES signieren" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-260" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle QES signieren" version="0">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_verordnend">
-    <testProcedure id="Konformitätserklärung"/>
+    <testProcedure id="Konformitätsbestätigung"/>
   </actor>
   Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" für das E-Rezept die Signaturoperation des Konnektors mit 
   <ul>

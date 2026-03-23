@@ -1,0 +1,20 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 61b939d4986e6a3a4f5d45ffb6f8f4c854605d9f8d6f5f1ee94e88df72fd6e1b
+created: '2026-03-23T10:57:49.562402'
+date: '2026-03-23T10:57:49.562404'
+key: IG-TIFLOW-XBORDER-13
+modified: '2026-03-23T10:57:49.562403'
+release_status: STABLE
+source: input/pagecontent/op-get-eu-prescriptions-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produkttest
+text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts
+  /$get-eu-prescriptions?_count=1 durch den NCPeH-FD sicherstellen, dass die Ressourcen
+  der zuletzt ausgestellten einlösbaren Verordnung zurückgegeben werden und falls
+  keine Verordnung vorliegt, mit dem HTTP-Statuscode 404 antworten.
+title: E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage der aktuellsten Verordnungsinformationen
+version: 0

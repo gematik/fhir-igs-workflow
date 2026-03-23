@@ -1,0 +1,24 @@
+actor:
+- eRp_FD
+conformance: SHALL
+content_hash: 2c6058136682694c3557c504caa0060b10e9b7ca9073bc16aeedfc4d6395cd5c
+created: '2026-03-23T10:57:48.469129'
+date: '2026-03-23T10:57:48.469132'
+key: IG-TIFLOW-CORE-217
+modified: '2026-03-23T10:57:48.469131'
+release_status: STABLE
+source: input/pagecontent/op-create-req-fd.md
+status: ACTIVE
+test_procedures:
+  eRp_FD:
+  - Produktgutachten
+text: "Der E-Rezept-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation\
+  \ die Rolle \"professionOID\" des Aufrufenden im ACCESS_TOKEN im HTTP-RequestHeader\
+  \ \"Authorization\" feststellen und sicherstellen, dass ausschließlich verordnende\
+  \ Leistungserbringer in der Rolle\n    <ul>\n        <li>oid_praxis_arzt</li>\n\
+  \        <li>oid_zahnarztpraxis</li>\n        <li>oid_praxis_psychotherapeut</li>\n\
+  \        <li>oid_krankenhaus</li>\n        <li>oid_institution-vorsorge-reha</li>\n\
+  \    </ul> \n    die Operation im Fachdienst aufrufen dürfen, damit E-Rezepte nicht\
+  \ durch zur Verordnung Unberechtigte eingestellt werden können."
+title: E-Rezept-Fachdienst - Task erzeugen - Rollenprüfung
+version: 0
