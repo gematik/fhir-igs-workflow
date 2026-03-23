@@ -336,6 +336,33 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Hinweis: Die Task-ID entspricht der Rezept-ID.</p>
 
+<p>Für die qualifizierte elektronische Signatur des Verordnungsbundels wird der Konnektor verwendet. Es wird eine CMS-Signatur (CAdES) erstellt.&nbsp;Die Operation für die QES muss durch den Leistungserbringer durchgeführt werden.</p>
+
+  <!-- A_19281-03 -->
+<requirement conformance="SHALL" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle QES signieren" version="0" key="IG-TIFLOW-CORE-380">
+  <meta lockversion="false"/>
+  <actor name="PS_E-Rezept_verordnend">
+    <testProcedure id="Konformitätserklärung"></testProcedure>
+  </actor>
+  Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden&nbsp;erstellen" für das E-Rezept die Signaturoperation des Konnektors mit 
+  <ul>
+  <li>der Referenz RFC-5652 für CMS-Signatur (CAdES)</li>
+  <li>Signaturtype für eine enveloping Signature</li>
+  <li>dem base64-codierten E-Rezept-Bundle</li>
+  <li>eingebetteter OCSP-Antwort (IncludeRevocationInfo = true)</li>
+  <li>Angabe des Mimetypes "text/plain; charset=utf-8"</li>
+  </ul>
+  ausführen.
+</requirement>
+
+<p>Für weitere Informationen siehe Operation “E-Rezept qualifiziert signieren” aus der API-Schnittstelle [E-Rezept API Dokumentation].</p>
+
+<p>Das PS der verordnenden LEI MUSS muss die Erstellung der E-Rezepte mittels Einzelsignatur, Stapelsignatur und Komfortsignatur des Konnektors unterstützen.</p>
+
+<p>Für die Nutzung der Komfortsignatur siehe [gemILF_PS].</p>
+
+<p>Falls keine Komfortsignatur zur Verfügung steht oder die Komfortsignatur deaktiviert ist, soll das PS der verordnenden LEI die Stapelsignatur verwenden ist, falls mehrere E-Rezepte signiert werden sollen.&nbsp;</p>
+
 <h3 id="modulspezifische-anforderungen">Modulspezifische Anforderungen</h3>
 
 <p>Zur Verordnung von DiGAs werden die DiGA-FHIR-Profile der KBV genutzt: https://simplifier.net/evdga.</p>
@@ -396,7 +423,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Mar 20, 2026 14:24+0000">2026-03-20</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 06:27+0000">2026-03-23</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

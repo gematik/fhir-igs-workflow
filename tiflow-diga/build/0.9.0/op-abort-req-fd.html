@@ -297,12 +297,21 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_19120-03 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - E-Rezept löschen - Verordnender - Prüfung AccessCode und Status" version="0" key="IG-TIFLOW-CORE-125">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - E-Rezept löschen - Verordnender - Prüfung AccessCode" version="0" key="IG-TIFLOW-CORE-125">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
-    Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &lt;id&gt; adressierten/Task/&lt;id&gt;/$abort durch verordnende Leistungserbringer den im HTTPHeader "X-AccessCode" gegen den im referenzierten Task enthaltenen AccessCode prüfen und bei Missmatch oder Fehlen im HTTP-Header oder wenn der Task.Status ungleich "ready" ist, den Aufruf mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich die verordnende Leistungserbringerinstitution in Kenntnis des AccessCodes als Berechtigte ein E-Rezept löschen.
+    Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &lt;id&gt; adressierten/Task/&lt;id&gt;/$abort durch verordnende Leistungserbringer den im HTTP-Header "X-AccessCode" gegen den im referenzierten Task enthaltenen AccessCode prüfen und bei Missmatch oder Fehlen im HTTP-Header, den Aufruf mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich die verordnende Leistungserbringerinstitution in Kenntnis des AccessCodes als Berechtigte ein E-Rezept löschen.
+</requirement>
+
+  <!-- A_19120-03 -->
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - E-Rezept löschen - Verordnender - Prüfung Status" version="0" key="IG-TIFLOW-CORE-371">
+  <meta lockversion="false"/>
+  <actor name="eRp_FD">
+    <testProcedure id="Produkttest"></testProcedure>
+  </actor>
+    Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &lt;id&gt; adressierten/Task/&lt;id&gt;/$abort durch verordnende Leistungserbringer den im referenzierten Task gespeicherten Status Task.status prüfen und mit dem Fehler 412 abbrechen, wenn Task.status ungleich "ready" ist, damit die verordnende Leistungserbringerinstitution eine Verordnung nur löschen kann, wenn sie sich noch nicht in Belieferung befindet oder beliefert wurde.
 </requirement>
 
   <!-- A_19027-06 -->
@@ -408,7 +417,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Mar 20, 2026 14:24+0000">2026-03-20</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 06:27+0000">2026-03-23</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

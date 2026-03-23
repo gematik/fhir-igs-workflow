@@ -12,7 +12,7 @@ Version 0.9.0 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow/diga/ImplementationGuide/de.gematik.tiflow.diga | *Version*:0.9.0 |
-| Draft as of 2026-03-20 | *Computable Name*:gemIG_TIFlow_diga |
+| Draft as of 2026-03-23 | *Computable Name*:gemIG_TIFlow_diga |
 
 Dieser Implementation Guide beschreibt das Feature zur elektronischen Verordnung von Digitalen Gesundheitsanwendungen (DiGA). Er beschreibt DiGA-spezifische Anforderungen und Use Cases für Verordnende, Kostenträger und Versicherte.
 
@@ -103,7 +103,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "gemIG_TIFlow_diga",
   "title" : "TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)",
   "status" : "draft",
-  "date" : "2026-03-20T14:24:28+00:00",
+  "date" : "2026-03-23T06:27:14+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

@@ -10,6 +10,8 @@ Version 0.9.0 - ci-build
 
 ## API FHIR-VZD
 
+Wenn ein E-Rezept-FdV einem Kostenträger fest zugeordnet ist, dann kann die Telematik-ID für Adressierung von Communications an den Kostenträger fest im Programmcode hinterlegt werden.
+
 Wenn die Telematik-ID des KTR des Versicherten nicht im Programmcode hinterlegt wird, muss diese zur Laufzeit bestimmt werden. Hierfür nutzt das E-Rezept-FdV das IKNR des KTR, wodurch es dann in der Lage ist nach der Telematik-ID im FHIRVZD zu suchen.
 
 Das E-Rezept-FdV KANN den Anwendungsfall "Kostenträger suchen" umsetzen.

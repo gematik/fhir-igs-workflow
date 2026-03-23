@@ -304,14 +304,22 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_19024-03 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Prüfung AccessCode Prüfung Status" version="0" key="IG-TIFLOW-CORE-156">
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Prüfung AccessCode" version="0" key="IG-TIFLOW-CORE-156">
   <meta lockversion="false"/>
   <actor name="eRp_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
-  Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate den im HTTP-RequestHeader "X-AccessCode" oder URL-Parameter "?ac=..." übertragenen AccessCode gegen den im referenzierten Task gespeicherten AccessCode Task.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode und den Status des Tasks auf Task.status = draft prüfen und bei Ungleichheit oder Fehlen des HTTP-Headers die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit Zugriffe auf diesen Datensatz nur durch Berechtigte in Kenntnis des AccessCodes erfolgen.
+  Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate den im HTTP-RequestHeader "X-AccessCode" oder URL-Parameter "?ac=..." übertragenen AccessCode gegen den im referenzierten Task gespeicherten AccessCode Task.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode und bei Ungleichheit oder Fehlen des HTTP-Headers die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit Zugriffe auf diesen Datensatz nur durch Berechtigte in Kenntnis des AccessCodes erfolgen.
 </requirement>
-  <!-- ToDo: Prüfung in 2 Afos separieren -->
+
+  <!-- A_19024-03 -->
+<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Prüfung Status" version="0" key="IG-TIFLOW-CORE-373">
+  <meta lockversion="false"/>
+  <actor name="eRp_FD">
+    <testProcedure id="Produkttest"></testProcedure>
+  </actor>
+  Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate den im referenzierten Task gespeicherten Status Task.status prüfen und mit dem Fehler 412 abbrechen, wenn Task.status ungleich "draft" ist.
+</requirement>
 
   <!-- A_19020 -->
 <requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task aktivieren - Schemavalidierung" version="0" key="IG-TIFLOW-CORE-157">
@@ -758,7 +766,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Mar 20, 2026 14:24+0000">2026-03-20</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 06:27+0000">2026-03-23</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -304,6 +304,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Hinweis: Für den Fall, dass das Clientsystem beim Aufruf der Operation keinen Response erhält, soll der Aufruf wiederholt werden. Wenn im Response des zweiten Aufrufs ein
 Fehler 403 mit dem OperationOutcome “Task not in status draft but in status ready” zurückkommt, wurde der erste Aufruf bereits erfolgreich durch den E-Rezept-Fachdienst verarbeitet. Wenn eine Response mit dem Status 200 zurückkommt, war der zweite Aufruf erfolgreich.</p>
 
+<h4 id="patientenausdruck">Patientenausdruck</h4>
   <!-- A_22503 -->
 <requirement conformance="SHALL NOT" title="PS verordnende LEI: E-Rezept einstellen - kein Patientenausdruck bei Fehler beim Aktivieren" version="0" key="IG-TIFLOW-CORE-134">
   <meta lockversion="false"/>
@@ -315,6 +316,15 @@ Fehler 403 mit dem OperationOutcome “Task not in status draft but in status re
 
 <p>Für den Patientenausdruck gelten vorrangig die Regelungen zum Ausdruck eines E-Rezepts aus den Bundesmantelverträgen [BMV] und [BMV-Z].
   <!-- ToDo: Können in den workflow-spezifischen Modulen weitere Hinweise geben? rx und diga haben unterschiedliche vorgaben durch die KBV --></p>
+
+  <!-- A_22423 -->
+<requirement conformance="SHALL" title="PS verordnende LEI: E-Rezept einstellen - separater Patientenausdruck je Flowtype" version="0" key="IG-TIFLOW-CORE-372">
+  <meta lockversion="false"/>
+  <actor name="PS_E-Rezept_verordnend">
+    <testProcedure id="Herstellererklärung"></testProcedure>
+  </actor>
+  Das PS der verordnenden LEI MUSS sicherstellen, dass für jeden Flowtype ein separater Patientenausdruck erfolgt, sofern der Nutzer Verordnungen mit unterschiedlichen Flowtypes einstellt und für diese Patientenausdrucke erzeugen möchte.
+</requirement>
 
   <!-- A_19279 -->
 <requirement conformance="SHALL" title="PS verordnende LEI: E-Rezept einstellen - E-Rezept-Token erstellen" version="0" key="IG-TIFLOW-CORE-135">
@@ -384,7 +394,7 @@ Fehler 403 mit dem OperationOutcome “Task not in status draft but in status re
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Mar 20, 2026 14:24+0000">2026-03-20</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 06:27+0000">2026-03-23</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
