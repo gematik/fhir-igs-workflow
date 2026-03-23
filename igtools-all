@@ -6,8 +6,12 @@ export PATH="$HOME/.local/bin:$PATH"
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 usage() {
-  echo "Usage: $0 <command> [args ...]"
-  echo "Example: $0 igtools release --freeze"
+  echo "Usage: $0 <igtools-subcommand> [args ...]"
+  echo "Example: $0 process"
+  echo "Example: $0 release --freeze"
+  echo ""
+  echo "Automatically prepends 'igtools' to the command if needed."
+  echo "Both '${0##*/} igtools process' and '${0##*/} process' are equivalent."
 }
 
 if [[ $# -eq 0 ]]; then
@@ -15,9 +19,16 @@ if [[ $# -eq 0 ]]; then
   exit 1
 fi
 
+# Check if the first argument is available as a command
 if ! command -v "$1" >/dev/null 2>&1; then
-  echo "Error: required command not found: $1" >&2
-  exit 1
+  # If not, try prepending 'igtools'
+  if command -v "igtools" >/dev/null 2>&1; then
+    # Shift arguments and prepend 'igtools' as the command
+    set -- "igtools" "$@"
+  else
+    echo "Error: 'igtools' command not found and '$1' is not a valid command." >&2
+    exit 1
+  fi
 fi
 
 shopt -s nullglob
