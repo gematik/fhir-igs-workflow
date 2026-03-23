@@ -1,0 +1,1328 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>Technische Umsetzung - Technische Anwendungsfälle - TIFlow - Grenzüberschreitender Datenaustausch v0.9.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+  	<link rel="stylesheet" href="assets/css/cqf.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+<link rel="stylesheet" href="assets/css/ig.gematik.css"/>
+<script src="assets/js/ig.gematik.min.js" type="text/javascript"> </script>
+<link rel="stylesheet" href="assets/css/edge-dark.min.css"/>
+<script src="assets/js/ig.api.doc.gematik.min.js" type="text/javascript"> </script>
+<link rel="stylesheet" href="assets/css/ig.req.gematik.css"/>
+<script src="assets/js/ig.req.gematik.min.js" type="text/javascript"> </script>
+
+<script src="assets/js/ig.bibliography.gematik.js" type="text/javascript"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        height: 280px;
+        background-color: #2a6496;
+        background: url('./e-rezept-img.png') no-repeat;
+        background-position: 650px -150px;
+        background-size: 45% auto;
+    }
+    .bubble-link {
+        display: none;
+        transition: opacity 0.2s;
+        }
+
+        h1:hover .bubble-link,
+        h2:hover .bubble-link,
+        h3:hover .bubble-link,
+        h4:hover .bubble-link,
+        h5:hover .bubble-link,
+        h6:hover .bubble-link {
+        display: inline;
+        }
+</style>
+
+<script src="assets/js/heading-links.js" type="text/javascript"> </script>
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="fhir-logo" href="assets/ico/icon-fhir-144.png"/>
+    <link sizes="114x114" rel="fhir-logo" href="assets/ico/icon-fhir-114.png"/>
+    <link sizes="72x72" rel="fhir-logo" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+    <style type="text/css">h2{--heading-prefix:"3.1"}
+    h3,h4,h5,h6{--heading-prefix:"3.1"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+
+          <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a no-external="true" id="gem-ig-logo" href="./index.html">
+        <img src="assets/images/gem-logo.png" alt="Home" height="50"/>
+    </a>
+</div>
+
+
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Start</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Fachlichkeit
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-fachlichkeit-szenario-eu.html">Szenario EU</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Technische Umsetzung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-technische-umsetzung-konzept.html">Technisches Konzept</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-anwendungsfaelle.html">Technische Anwendungsfälle</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Schnittstellen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-schnittstellen-query-api.html">Query API</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-operation-api.html">Operation API</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="referenced.html">Referenzen</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="release-notes.html">Release Notes</a>
+      </li>
+      <li><a name="l264">​</a>
+        <a href="spec-sheet.html">Steckbriefe</a>
+      </li>
+      <li>
+        <a href="license.html">Lizenz</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+TIFlow - Grenzüberschreitender Datenaustausch
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 0.9.0 - ci-build
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="menu-technische-umsetzung-konzept.html"><b>Technisches Konzept</b></a></li><li><b>Technische Umsetzung - Technische Anwendungsfälle</b></li>
+
+          <span style="float:right;">
+
+            <a href="menu-technische-umsetzung-konzept.html">&lt;vorherige</a> | 
+
+            <a href="#bottom">unten</a>
+
+          | <a href="menu-technische-umsetzung-datenschutz-und-sicherheit.html">nächste&gt;</a>
+
+          </span>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Technische Umsetzung - Technische Anwendungsfälle</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#umzusetzende-anwendungsfälle-von-clients" id="markdown-toc-umzusetzende-anwendungsfälle-von-clients">Umzusetzende Anwendungsfälle von Clients</a></li>
+  <li><a href="#use-cases-zur-verwaltung-der-einwilligung-durch-den-versicherten" id="markdown-toc-use-cases-zur-verwaltung-der-einwilligung-durch-den-versicherten">Use Cases zur Verwaltung der Einwilligung durch den Versicherten</a></li>
+  <li><a href="#uc-313---einwilligungen-durch-versicherten-einsehen" id="markdown-toc-uc-313---einwilligungen-durch-versicherten-einsehen">UC 3.13 - Einwilligungen durch Versicherten einsehen</a></li>
+  <li><a href="#uc-314---einwilligung-durch-versicherten-erteilen" id="markdown-toc-uc-314---einwilligung-durch-versicherten-erteilen">UC 3.14 - Einwilligung durch Versicherten erteilen</a></li>
+  <li><a href="#uc-315---einwilligung-durch-versicherten-widerrufen" id="markdown-toc-uc-315---einwilligung-durch-versicherten-widerrufen">UC 3.15 - Einwilligung durch Versicherten widerrufen</a></li>
+  <li><a href="#use-cases-zur-verwaltung-der-zugriffsberechtigung-durch-den-versicherten" id="markdown-toc-use-cases-zur-verwaltung-der-zugriffsberechtigung-durch-den-versicherten">Use Cases zur Verwaltung der Zugriffsberechtigung durch den Versicherten</a></li>
+  <li><a href="#uc-316---zugriffsberechtigung-durch-versicherten-erstellen" id="markdown-toc-uc-316---zugriffsberechtigung-durch-versicherten-erstellen">UC 3.16 - Zugriffsberechtigung durch Versicherten erstellen</a></li>
+  <li><a href="#uc-317---zugriffsberechtigung-durch-versicherten-löschen" id="markdown-toc-uc-317---zugriffsberechtigung-durch-versicherten-löschen">UC 3.17 - Zugriffsberechtigung durch Versicherten löschen</a></li>
+  <li><a href="#uc-318---zugriffsberechtigung-durch-versicherten-einsehen" id="markdown-toc-uc-318---zugriffsberechtigung-durch-versicherten-einsehen">UC 3.18 - Zugriffsberechtigung durch Versicherten einsehen</a></li>
+  <li><a href="#zugriffsberechtigung-anzeigen" id="markdown-toc-zugriffsberechtigung-anzeigen">Zugriffsberechtigung anzeigen</a></li>
+  <li><a href="#use-cases-zur-verwaltung-der-e-rezepte-durch-den-versicherten" id="markdown-toc-use-cases-zur-verwaltung-der-e-rezepte-durch-den-versicherten">Use Cases zur Verwaltung der E-Rezepte durch den Versicherten</a></li>
+  <li><a href="#uc-319---e-rezept-durch-den-versicherten-markieren" id="markdown-toc-uc-319---e-rezept-durch-den-versicherten-markieren">UC 3.19 - E-Rezept durch den Versicherten markieren</a></li>
+  <li><a href="#use-cases-im-rahmen-der-belieferung-durch-eine-apotheke-im-europäischen-ausland" id="markdown-toc-use-cases-im-rahmen-der-belieferung-durch-eine-apotheke-im-europäischen-ausland">Use Cases im Rahmen der Belieferung durch eine Apotheke im europäischen Ausland</a></li>
+  <li><a href="#uc-419---demographische-daten-eines-versicherten-abrufen" id="markdown-toc-uc-419---demographische-daten-eines-versicherten-abrufen">UC 4.19 - Demographische Daten eines Versicherten abrufen</a></li>
+  <li><a href="#uc-420---liste-der-einlösbaren-e-rezepte-eines-versicherten-abrufen" id="markdown-toc-uc-420---liste-der-einlösbaren-e-rezepte-eines-versicherten-abrufen">UC 4.20 - Liste der einlösbaren E-Rezepte eines Versicherten abrufen</a></li>
+  <li><a href="#uc-421---liste-ausgewählter-e-rezepte-eines-versicherten-abrufen" id="markdown-toc-uc-421---liste-ausgewählter-e-rezepte-eines-versicherten-abrufen">UC 4.21 - Liste ausgewählter E-Rezepte eines Versicherten abrufen</a></li>
+  <li><a href="#uc-422---abgabe-eines-e-rezeptes-im-europäischen-ausland" id="markdown-toc-uc-422---abgabe-eines-e-rezeptes-im-europäischen-ausland">UC 4.22 - Abgabe eines E-Rezeptes im europäischen Ausland</a></li>
+</ul>
+
+</div>
+
+<h3 id="umzusetzende-anwendungsfälle-von-clients">Umzusetzende Anwendungsfälle von Clients</h3>
+
+<h4 id="e-rezept-fdv">E-Rezept-FdV</h4>
+
+  <!-- A_19443 -->
+<requirement conformance="SHALL" title="E-Rezept-FdV: TIFlow-EU - optionale Anwendungsfälle" version="0" key="IG-TIFLOW-XBORDER-24">
+    <meta lockversion="false"/>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung"></testProcedure>
+    </actor>
+    Das E-Rezept-FdV MUSS für die Umsetzung der Bedienung von E-Rezepten im EU Kontext die Anwendungsfälle
+
+    <ul>
+    <li>UC 3.13 - Einwilligung einsehen</li>
+    <li>UC 3.14 - Einwilligung erteilen</li>
+    <li>UC 3.15 - Einwilligung widerrufen</li>
+    <li>UC 3.16 - Zugriffsberechtigung durch Versicherten erstellen</li>
+    <li>UC 3.17 - Zugriffsberechtigung durch Versicherten löschen</li>
+    <li>UC 3.18 - Zugriffsberechtigung durch Versicherten einsehen</li>
+    <li>Zugriffsberechtigung anzeigen</li>
+    <li>UC 3.19 - E-Rezept durch den Versicherten markieren</li>
+    </ul>
+
+    umsetzen.
+</requirement>
+
+<h3 id="use-cases-zur-verwaltung-der-einwilligung-durch-den-versicherten">Use Cases zur Verwaltung der Einwilligung durch den Versicherten</h3>
+
+  <!-- UC 3.13 - Einwilligung einsehen -->
+
+<p><a id="uc-3-13-einwilligungen-einsehen"></a></p>
+<h3 id="uc-313---einwilligungen-durch-versicherten-einsehen">UC 3.13 - Einwilligungen durch Versicherten einsehen</h3>
+
+<figure style="width: auto;">
+  <table style="width: auto; border: 1px solid #dcdcdc;">
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Beschreibung</th>
+      <td style="padding: 5px;"><p>Ein Versicherter ermittelt, welche Einwilligungen auf dem E-Rezept-Fachdienst für seine KVNR hinterlegt sind..</p>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>keine</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Das E-Rezept-FdV führt die Operation zur Abfrage der Einwilligungen aus.</li>
+  <li>Der E-Rezept-Fachdienst gibt die Information an das E-Rezept-FdV.</li>
+</ul>
+</td>
+
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Die Information steht zur Anzeige im E-Rezept-FdV bereit.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Schnittstellen</th>
+      <td style="padding: 5px;"><ul>
+  <li><a href="./query-api-consent.html">Query API: Einwilligungen durch Versicherten einsehen</a></li>
+</ul>
+</td>
+    </tr>
+    
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Relevante(r) Sektor(en)</th>
+      <td style="padding: 5px;">
+        
+          
+        
+          
+        
+          
+        
+          
+            <span class="badge gem-ig-badge 
+gem-ig-badge-bg-blue">
+              VERSICHERTER
+            </span>
+          
+        
+          
+        
+      </td>
+    </tr>
+  </table>
+  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall UC 3.13 - Einwilligungen durch Versicherten einsehen</figcaption>
+</figure>
+
+<p><strong>Sequenzdiagramm:</strong></p>
+
+<figure>
+	<div style="--box-width: 600px; margin-bottom: 30px;" class="gem-ig-img-container">
+		  <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 714 411" zoomAndPan="magnify" preserveAspectRatio="none" width="714px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:714px;height:411px;background:#FFFFFF;" version="1.1" height="411px"><defs></defs><g><text font-weight="bold" lengthAdjust="spacing" x="127" font-size="14" textLength="463" y="27.9951" font-family="sans-serif" fill="#000000">UC 3.13 - Einwilligungen durch den Versicherten einsehen</text><rect width="526" x="182" y="164.7266" style="stroke:#000000;stroke-width:1.5;" fill="none" height="61.2344"></rect><line y1="118.5938" x1="47" y2="330.3594" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="47"></line><line y1="118.5938" x1="246" y2="330.3594" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="246"></line><line y1="118.5938" x1="484" y2="330.3594" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="484"></line><line y1="118.5938" x1="636" y2="330.3594" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="636"></line><text lengthAdjust="spacing" x="5" font-size="14" textLength="79" y="115.292" font-family="sans-serif" fill="#000000">Versicherte</text><ellipse cx="47.5" cy="50.7969" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M47.5,58.7969 L47.5,85.7969 M34.5,66.7969 L60.5,66.7969 M47.5,85.7969 L34.5,100.7969 M47.5,85.7969 L60.5,100.7969 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><text lengthAdjust="spacing" x="5" font-size="14" textLength="79" y="342.3545" font-family="sans-serif" fill="#000000">Versicherte</text><ellipse cx="47.5" cy="354.1563" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M47.5,362.1563 L47.5,389.1563 M34.5,370.1563 L60.5,370.1563 M47.5,389.1563 L34.5,404.1563 M47.5,389.1563 L60.5,404.1563 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><rect rx="2.5" ry="2.5" width="109" x="192" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="199" font-size="14" textLength="95" y="107.292" font-family="sans-serif" fill="#000000">E-Rezept-FdV</text><rect rx="2.5" ry="2.5" width="109" x="192" y="329.3594" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="199" font-size="14" textLength="95" y="349.3545" font-family="sans-serif" fill="#000000">E-Rezept-FdV</text><rect rx="2.5" ry="2.5" width="159" x="405" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="412" font-size="14" textLength="145" y="107.292" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><rect rx="2.5" ry="2.5" width="159" x="405" y="329.3594" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="412" font-size="14" textLength="145" y="349.3545" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><rect rx="2.5" ry="2.5" width="124" x="574" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="581" font-size="14" textLength="110" y="107.292" font-family="sans-serif" fill="#000000">Identity Provider</text><rect rx="2.5" ry="2.5" width="124" x="574" y="329.3594" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="581" font-size="14" textLength="110" y="349.3545" font-family="sans-serif" fill="#000000">Identity Provider</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="234.5,145.7266,244.5,149.7266,234.5,153.7266,238.5,149.7266"></polygon><line y1="149.7266" x1="47.5" y2="149.7266" style="stroke:#181818;stroke-width:1.0;" x2="240.5"></line><text font-weight="bold" lengthAdjust="spacing" x="54.5" font-size="13" textLength="21" y="144.6606" font-family="sans-serif" fill="#000000">[1]</text><text lengthAdjust="spacing" x="79.5" font-size="13" textLength="150" y="144.6606" font-family="sans-serif" fill="#000000">Einwilligungen einsehen</text><path d="M182,164.7266 L252,164.7266 L252,171.8594 L242,181.8594 L182,181.8594 L182,164.7266 " style="stroke:#000000;stroke-width:1.5;" fill="#EEEEEE"></path><rect width="526" x="182" y="164.7266" style="stroke:#000000;stroke-width:1.5;" fill="none" height="61.2344"></rect><text font-weight="bold" lengthAdjust="spacing" x="197" font-size="13" textLength="25" y="177.7935" font-family="sans-serif" fill="#000000">opt</text><text font-weight="bold" lengthAdjust="spacing" x="267" font-size="11" textLength="177" y="176.937" font-family="sans-serif" fill="#000000">[kein gültiger AuthN-Token]</text><rect width="512" x="189" y="181.8594" style="stroke:#000000;stroke-width:1.5;" fill="none" height="39.1016"></rect><path d="M189,181.8594 L255,181.8594 L255,188.8594 L245,198.8594 L189,198.8594 L189,181.8594 " style="stroke:#000000;stroke-width:2.0;" fill="#EEEEEE"></path><text font-weight="bold" lengthAdjust="spacing" x="202" font-size="13" textLength="21" y="195.9263" font-family="sans-serif" fill="#000000">ref</text><text lengthAdjust="spacing" x="372" font-size="12" textLength="146" y="213.998" font-family="sans-serif" fill="#000000">AuthN-Token anfordern</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="472.5,250.0938,482.5,254.0938,472.5,258.0938,476.5,254.0938"></polygon><line y1="254.0938" x1="246.5" y2="254.0938" style="stroke:#181818;stroke-width:1.0;" x2="478.5"></line><text font-weight="bold" lengthAdjust="spacing" x="253.5" font-size="13" textLength="21" y="249.0278" font-family="sans-serif" fill="#000000">[2]</text><text lengthAdjust="spacing" x="278.5" font-size="13" textLength="189" y="249.0278" font-family="sans-serif" fill="#000000">GET /Consent/{AuthN-Token}</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="257.5,279.2266,247.5,283.2266,257.5,287.2266,253.5,283.2266"></polygon><line y1="283.2266" x1="251.5" y2="283.2266" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="483.5"></line><text font-weight="bold" lengthAdjust="spacing" x="263.5" font-size="13" textLength="21" y="278.1606" font-family="sans-serif" fill="#000000">[3]</text><text lengthAdjust="spacing" x="288.5" font-size="13" textLength="91" y="278.1606" font-family="sans-serif" fill="#000000">:Consent Liste</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="58.5,308.3594,48.5,312.3594,58.5,316.3594,54.5,312.3594"></polygon><line y1="312.3594" x1="52.5" y2="312.3594" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="245.5"></line><text font-weight="bold" lengthAdjust="spacing" x="64.5" font-size="13" textLength="21" y="307.2935" font-family="sans-serif" fill="#000000">[4]</text><text lengthAdjust="spacing" x="89.5" font-size="13" textLength="51" y="307.2935" font-family="sans-serif" fill="#000000">Anzeige</text></g></svg>
+	</div>
+	<figcaption><strong>Abbildung: </strong>UC 3.13 - Einwilligungen durch Versicherten einsehen</figcaption>
+</figure>
+
+  <!-- UC 3.14 - Einwilligung erteilen -->
+
+<p><a id="uc-3-14-einwilligung-erteilen"></a></p>
+<h3 id="uc-314---einwilligung-durch-versicherten-erteilen">UC 3.14 - Einwilligung durch Versicherten erteilen</h3>
+
+<figure style="width: auto;">
+  <table style="width: auto; border: 1px solid #dcdcdc;">
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Beschreibung</th>
+      <td style="padding: 5px;"><p>Ein Versicherter erteilt die Einwilligung für die Nutzung einer Funktionalität der Anwendung.</p>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Ein Versicherter hat eine Datenverarbeitung ausgewählt, für die er eine Einwilligung erteilen möchte.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Ein Versicherter wählt im E-Rezept-FdV die Operation zum Erteilen der Einwilligung aus.</li>
+  <li>Der E-Rezept-Fachdienst speichert die Einwilligung.</li>
+</ul>
+</td>
+
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Die Einwilligung ist im E-Rezept-Fachdienst gespeichert.</li>
+  <li>Das Erteilen der Einwilligung ist im E-Rezept-Fachdienst protokolliert.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Schnittstellen</th>
+      <td style="padding: 5px;"><ul>
+  <li><a href="./query-api-consent.html">Query API: Einwilligung durch Versicherten erteilen</a></li>
+</ul>
+</td>
+    </tr>
+    
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Relevante(r) Sektor(en)</th>
+      <td style="padding: 5px;">
+        
+          
+        
+          
+        
+          
+        
+          
+            <span class="badge gem-ig-badge 
+gem-ig-badge-bg-blue">
+              VERSICHERTER
+            </span>
+          
+        
+          
+        
+      </td>
+    </tr>
+  </table>
+  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall UC 3.14 - Einwilligung durch Versicherten erteilen</figcaption>
+</figure>
+
+<p><strong>Sequenzdiagramm:</strong></p>
+
+<figure>
+	<div style="--box-width: 600px; margin-bottom: 30px;" class="gem-ig-img-container">
+		  <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 753 495" zoomAndPan="magnify" preserveAspectRatio="none" width="753px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:753px;height:495px;background:#FFFFFF;" version="1.1" height="495px"><defs></defs><g><text font-weight="bold" lengthAdjust="spacing" x="162.75" font-size="14" textLength="431" y="27.9951" font-family="sans-serif" fill="#000000">UC 3.14 - Einwilligung durch den Versicherten erteilen</text><rect width="591.5" x="156" y="164.7266" style="stroke:#000000;stroke-width:1.5;" fill="none" height="61.2344"></rect><line y1="118.5938" x1="47" y2="414.625" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="47"></line><line y1="118.5938" x1="220" y2="414.625" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="220"></line><line y1="118.5938" x1="467" y2="414.625" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="467"></line><line y1="118.5938" x1="675.5" y2="414.625" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="675.5"></line><text lengthAdjust="spacing" x="5" font-size="14" textLength="79" y="115.292" font-family="sans-serif" fill="#000000">Versicherte</text><ellipse cx="47.5" cy="50.7969" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M47.5,58.7969 L47.5,85.7969 M34.5,66.7969 L60.5,66.7969 M47.5,85.7969 L34.5,100.7969 M47.5,85.7969 L60.5,100.7969 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><text lengthAdjust="spacing" x="5" font-size="14" textLength="79" y="426.6201" font-family="sans-serif" fill="#000000">Versicherte</text><ellipse cx="47.5" cy="438.4219" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M47.5,446.4219 L47.5,473.4219 M34.5,454.4219 L60.5,454.4219 M47.5,473.4219 L34.5,488.4219 M47.5,473.4219 L60.5,488.4219 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><rect rx="2.5" ry="2.5" width="109" x="166" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="173" font-size="14" textLength="95" y="107.292" font-family="sans-serif" fill="#000000">E-Rezept-FdV</text><rect rx="2.5" ry="2.5" width="109" x="166" y="413.625" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="173" font-size="14" textLength="95" y="433.6201" font-family="sans-serif" fill="#000000">E-Rezept-FdV</text><rect rx="2.5" ry="2.5" width="159" x="388" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="395" font-size="14" textLength="145" y="107.292" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><rect rx="2.5" ry="2.5" width="159" x="388" y="413.625" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="395" font-size="14" textLength="145" y="433.6201" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><rect rx="2.5" ry="2.5" width="124" x="613.5" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="620.5" font-size="14" textLength="110" y="107.292" font-family="sans-serif" fill="#000000">Identity Provider</text><rect rx="2.5" ry="2.5" width="124" x="613.5" y="413.625" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="620.5" font-size="14" textLength="110" y="433.6201" font-family="sans-serif" fill="#000000">Identity Provider</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="208.5,145.7266,218.5,149.7266,208.5,153.7266,212.5,149.7266"></polygon><line y1="149.7266" x1="47.5" y2="149.7266" style="stroke:#181818;stroke-width:1.0;" x2="214.5"></line><text font-weight="bold" lengthAdjust="spacing" x="54.5" font-size="13" textLength="21" y="144.6606" font-family="sans-serif" fill="#000000">[1]</text><text lengthAdjust="spacing" x="79.5" font-size="13" textLength="124" y="144.6606" font-family="sans-serif" fill="#000000">Einwilligung erteilen</text><path d="M156,164.7266 L226,164.7266 L226,171.8594 L216,181.8594 L156,181.8594 L156,164.7266 " style="stroke:#000000;stroke-width:1.5;" fill="#EEEEEE"></path><rect width="591.5" x="156" y="164.7266" style="stroke:#000000;stroke-width:1.5;" fill="none" height="61.2344"></rect><text font-weight="bold" lengthAdjust="spacing" x="171" font-size="13" textLength="25" y="177.7935" font-family="sans-serif" fill="#000000">opt</text><text font-weight="bold" lengthAdjust="spacing" x="241" font-size="11" textLength="177" y="176.937" font-family="sans-serif" fill="#000000">[kein gültiger AuthN-Token]</text><rect width="577.5" x="163" y="181.8594" style="stroke:#000000;stroke-width:1.5;" fill="none" height="39.1016"></rect><path d="M163,181.8594 L229,181.8594 L229,188.8594 L219,198.8594 L163,198.8594 L163,181.8594 " style="stroke:#000000;stroke-width:2.0;" fill="#EEEEEE"></path><text font-weight="bold" lengthAdjust="spacing" x="176" font-size="13" textLength="21" y="195.9263" font-family="sans-serif" fill="#000000">ref</text><text lengthAdjust="spacing" x="378.75" font-size="12" textLength="146" y="213.998" font-family="sans-serif" fill="#000000">AuthN-Token anfordern</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="455.5,250.0938,465.5,254.0938,455.5,258.0938,459.5,254.0938"></polygon><line y1="254.0938" x1="220.5" y2="254.0938" style="stroke:#181818;stroke-width:1.0;" x2="461.5"></line><text font-weight="bold" lengthAdjust="spacing" x="227.5" font-size="13" textLength="21" y="249.0278" font-family="sans-serif" fill="#000000">[2]</text><text lengthAdjust="spacing" x="252.5" font-size="13" textLength="198" y="249.0278" font-family="sans-serif" fill="#000000">POST /Consent/{AuthN-Token}</text><line y1="283.2266" x1="467.5" y2="283.2266" style="stroke:#181818;stroke-width:1.0;" x2="509.5"></line><line y1="283.2266" x1="509.5" y2="296.2266" style="stroke:#181818;stroke-width:1.0;" x2="509.5"></line><line y1="296.2266" x1="468.5" y2="296.2266" style="stroke:#181818;stroke-width:1.0;" x2="509.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="478.5,292.2266,468.5,296.2266,478.5,300.2266,474.5,296.2266"></polygon><text font-weight="bold" lengthAdjust="spacing" x="474.5" font-size="13" textLength="21" y="278.1606" font-family="sans-serif" fill="#000000">[3]</text><text lengthAdjust="spacing" x="499.5" font-size="13" textLength="138" y="278.1606" font-family="sans-serif" fill="#000000">Einwilligung speichern</text><line y1="325.3594" x1="467.5" y2="325.3594" style="stroke:#181818;stroke-width:1.0;" x2="509.5"></line><line y1="325.3594" x1="509.5" y2="338.3594" style="stroke:#181818;stroke-width:1.0;" x2="509.5"></line><line y1="338.3594" x1="468.5" y2="338.3594" style="stroke:#181818;stroke-width:1.0;" x2="509.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="478.5,334.3594,468.5,338.3594,478.5,342.3594,474.5,338.3594"></polygon><text font-weight="bold" lengthAdjust="spacing" x="474.5" font-size="13" textLength="21" y="320.2935" font-family="sans-serif" fill="#000000">[4]</text><text lengthAdjust="spacing" x="499.5" font-size="13" textLength="169" y="320.2935" font-family="sans-serif" fill="#000000">Datenzugriff protokollieren</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="231.5,363.4922,221.5,367.4922,231.5,371.4922,227.5,367.4922"></polygon><line y1="367.4922" x1="225.5" y2="367.4922" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="466.5"></line><text font-weight="bold" lengthAdjust="spacing" x="237.5" font-size="13" textLength="21" y="362.4263" font-family="sans-serif" fill="#000000">[5]</text><text lengthAdjust="spacing" x="262.5" font-size="13" textLength="57" y="362.4263" font-family="sans-serif" fill="#000000">:Consent</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="58.5,392.625,48.5,396.625,58.5,400.625,54.5,396.625"></polygon><line y1="396.625" x1="52.5" y2="396.625" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="219.5"></line><text font-weight="bold" lengthAdjust="spacing" x="64.5" font-size="13" textLength="21" y="391.5591" font-family="sans-serif" fill="#000000">[6]</text><text lengthAdjust="spacing" x="89.5" font-size="13" textLength="42" y="391.5591" font-family="sans-serif" fill="#000000">Status</text></g></svg>
+	</div>
+	<figcaption><strong>Abbildung: </strong>UC 3.14 - Einwilligung durch Versicherten erteilen</figcaption>
+</figure>
+
+  <!-- UC 3.15 - Einwilligung widerrufen -->
+
+<p><a id="uc-3-15-einwilligung-widerrufen"></a></p>
+<h3 id="uc-315---einwilligung-durch-versicherten-widerrufen">UC 3.15 - Einwilligung durch Versicherten widerrufen</h3>
+
+<figure style="width: auto;">
+  <table style="width: auto; border: 1px solid #dcdcdc;">
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Beschreibung</th>
+      <td style="padding: 5px;"><p>Ein Versicherter widerruft die Einwilligung für die Nutzung einer Funktionalität der Anwendung.</p>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Ein Versicherter hat eine Datenverarbeitung ausgewählt, für die er eine Einwilligung widerrufen möchte.</li>
+  <li>Im E-Rezept-FdV liegt die Information vor, dass die Einwilligung für diese Datenverarbeitung erteilt wurde.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Ein Versicherter wählt über ein E-Rezept-FdV die Operation zum Widerrufen der Einwilligung auf.</li>
+  <li>Der E-Rezept-Fachdienst prüft, ob zuvor die Einwilligung erteilt wurde und löscht diese.</li>
+  <li>Der E-Rezept-Fachdienst löscht für die Einwilligung relevante Daten unwiederbringlich.</li>
+</ul>
+</td>
+
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Das Widerrufen der Einwilligung ist im E-Rezept-Fachdienst protokolliert.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Schnittstellen</th>
+      <td style="padding: 5px;"><ul>
+  <li><a href="./query-api-consent.html">Query API: Einwilligung durch Versicherten widerrufen</a></li>
+</ul>
+</td>
+    </tr>
+    
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Relevante(r) Sektor(en)</th>
+      <td style="padding: 5px;">
+        
+          
+        
+          
+        
+          
+        
+          
+            <span class="badge gem-ig-badge 
+gem-ig-badge-bg-blue">
+              VERSICHERTER
+            </span>
+          
+        
+          
+        
+      </td>
+    </tr>
+  </table>
+  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall UC 3.15 - Einwilligung durch Versicherten widerrufen</figcaption>
+</figure>
+
+<p><strong>Sequenzdiagramm:</strong></p>
+
+<figure>
+	<div style="--box-width: 600px; margin-bottom: 30px;" class="gem-ig-img-container">
+		  <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 903 579" zoomAndPan="magnify" preserveAspectRatio="none" width="903px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:903px;height:579px;background:#FFFFFF;" version="1.1" height="579px"><defs></defs><g><text font-weight="bold" lengthAdjust="spacing" x="226.75" font-size="14" textLength="453" y="27.9951" font-family="sans-serif" fill="#000000">UC 3.15 -Einwilligung durch den Versicherten widerrufen</text><rect width="723.5" x="174" y="164.7266" style="stroke:#000000;stroke-width:1.5;" fill="none" height="61.2344"></rect><line y1="118.5938" x1="47" y2="498.8906" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="47"></line><line y1="118.5938" x1="238" y2="498.8906" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="238"></line><line y1="118.5938" x1="562" y2="498.8906" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="562"></line><line y1="118.5938" x1="825.5" y2="498.8906" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="825.5"></line><text lengthAdjust="spacing" x="5" font-size="14" textLength="79" y="115.292" font-family="sans-serif" fill="#000000">Versicherte</text><ellipse cx="47.5" cy="50.7969" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M47.5,58.7969 L47.5,85.7969 M34.5,66.7969 L60.5,66.7969 M47.5,85.7969 L34.5,100.7969 M47.5,85.7969 L60.5,100.7969 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><text lengthAdjust="spacing" x="5" font-size="14" textLength="79" y="510.8857" font-family="sans-serif" fill="#000000">Versicherte</text><ellipse cx="47.5" cy="522.6875" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M47.5,530.6875 L47.5,557.6875 M34.5,538.6875 L60.5,538.6875 M47.5,557.6875 L34.5,572.6875 M47.5,557.6875 L60.5,572.6875 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><rect rx="2.5" ry="2.5" width="109" x="184" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="191" font-size="14" textLength="95" y="107.292" font-family="sans-serif" fill="#000000">E-Rezept-FdV</text><rect rx="2.5" ry="2.5" width="109" x="184" y="497.8906" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="191" font-size="14" textLength="95" y="517.8857" font-family="sans-serif" fill="#000000">E-Rezept-FdV</text><rect rx="2.5" ry="2.5" width="159" x="483" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="490" font-size="14" textLength="145" y="107.292" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><rect rx="2.5" ry="2.5" width="159" x="483" y="497.8906" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="490" font-size="14" textLength="145" y="517.8857" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><rect rx="2.5" ry="2.5" width="124" x="763.5" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="770.5" font-size="14" textLength="110" y="107.292" font-family="sans-serif" fill="#000000">Identity Provider</text><rect rx="2.5" ry="2.5" width="124" x="763.5" y="497.8906" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="770.5" font-size="14" textLength="110" y="517.8857" font-family="sans-serif" fill="#000000">Identity Provider</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="226.5,145.7266,236.5,149.7266,226.5,153.7266,230.5,149.7266"></polygon><line y1="149.7266" x1="47.5" y2="149.7266" style="stroke:#181818;stroke-width:1.0;" x2="232.5"></line><text font-weight="bold" lengthAdjust="spacing" x="54.5" font-size="13" textLength="21" y="144.6606" font-family="sans-serif" fill="#000000">[1]</text><text lengthAdjust="spacing" x="79.5" font-size="13" textLength="142" y="144.6606" font-family="sans-serif" fill="#000000">Einwilligung widerrufen</text><path d="M174,164.7266 L244,164.7266 L244,171.8594 L234,181.8594 L174,181.8594 L174,164.7266 " style="stroke:#000000;stroke-width:1.5;" fill="#EEEEEE"></path><rect width="723.5" x="174" y="164.7266" style="stroke:#000000;stroke-width:1.5;" fill="none" height="61.2344"></rect><text font-weight="bold" lengthAdjust="spacing" x="189" font-size="13" textLength="25" y="177.7935" font-family="sans-serif" fill="#000000">opt</text><text font-weight="bold" lengthAdjust="spacing" x="259" font-size="11" textLength="177" y="176.937" font-family="sans-serif" fill="#000000">[kein gültiger AuthN-Token]</text><rect width="709.5" x="181" y="181.8594" style="stroke:#000000;stroke-width:1.5;" fill="none" height="39.1016"></rect><path d="M181,181.8594 L247,181.8594 L247,188.8594 L237,198.8594 L181,198.8594 L181,181.8594 " style="stroke:#000000;stroke-width:2.0;" fill="#EEEEEE"></path><text font-weight="bold" lengthAdjust="spacing" x="194" font-size="13" textLength="21" y="195.9263" font-family="sans-serif" fill="#000000">ref</text><text lengthAdjust="spacing" x="462.75" font-size="12" textLength="146" y="213.998" font-family="sans-serif" fill="#000000">AuthN-Token anfordern</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="550.5,250.0938,560.5,254.0938,550.5,258.0938,554.5,254.0938"></polygon><line y1="254.0938" x1="238.5" y2="254.0938" style="stroke:#181818;stroke-width:1.0;" x2="556.5"></line><text font-weight="bold" lengthAdjust="spacing" x="245.5" font-size="13" textLength="21" y="249.0278" font-family="sans-serif" fill="#000000">[2]</text><text lengthAdjust="spacing" x="270.5" font-size="13" textLength="275" y="249.0278" font-family="sans-serif" fill="#000000">DELETE /Consent/?category{AuthN-Token}</text><line y1="283.2266" x1="562.5" y2="283.2266" style="stroke:#181818;stroke-width:1.0;" x2="604.5"></line><line y1="283.2266" x1="604.5" y2="296.2266" style="stroke:#181818;stroke-width:1.0;" x2="604.5"></line><line y1="296.2266" x1="563.5" y2="296.2266" style="stroke:#181818;stroke-width:1.0;" x2="604.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="573.5,292.2266,563.5,296.2266,573.5,300.2266,569.5,296.2266"></polygon><text font-weight="bold" lengthAdjust="spacing" x="569.5" font-size="13" textLength="21" y="278.1606" font-family="sans-serif" fill="#000000">[3]</text><text lengthAdjust="spacing" x="594.5" font-size="13" textLength="117" y="278.1606" font-family="sans-serif" fill="#000000">Einwilligung prüfen</text><line y1="325.3594" x1="562.5" y2="325.3594" style="stroke:#181818;stroke-width:1.0;" x2="604.5"></line><line y1="325.3594" x1="604.5" y2="338.3594" style="stroke:#181818;stroke-width:1.0;" x2="604.5"></line><line y1="338.3594" x1="563.5" y2="338.3594" style="stroke:#181818;stroke-width:1.0;" x2="604.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="573.5,334.3594,563.5,338.3594,573.5,342.3594,569.5,338.3594"></polygon><text font-weight="bold" lengthAdjust="spacing" x="569.5" font-size="13" textLength="21" y="320.2935" font-family="sans-serif" fill="#000000">[4]</text><text lengthAdjust="spacing" x="594.5" font-size="13" textLength="125" y="320.2935" font-family="sans-serif" fill="#000000">Einwilligung löschen</text><line y1="367.4922" x1="562.5" y2="367.4922" style="stroke:#181818;stroke-width:1.0;" x2="604.5"></line><line y1="367.4922" x1="604.5" y2="380.4922" style="stroke:#181818;stroke-width:1.0;" x2="604.5"></line><line y1="380.4922" x1="563.5" y2="380.4922" style="stroke:#181818;stroke-width:1.0;" x2="604.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="573.5,376.4922,563.5,380.4922,573.5,384.4922,569.5,380.4922"></polygon><text font-weight="bold" lengthAdjust="spacing" x="569.5" font-size="13" textLength="21" y="362.4263" font-family="sans-serif" fill="#000000">[5]</text><text lengthAdjust="spacing" x="594.5" font-size="13" textLength="169" y="362.4263" font-family="sans-serif" fill="#000000">Datenzugriff protokollieren</text><line y1="409.625" x1="562.5" y2="409.625" style="stroke:#181818;stroke-width:1.0;" x2="604.5"></line><line y1="409.625" x1="604.5" y2="422.625" style="stroke:#181818;stroke-width:1.0;" x2="604.5"></line><line y1="422.625" x1="563.5" y2="422.625" style="stroke:#181818;stroke-width:1.0;" x2="604.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="573.5,418.625,563.5,422.625,573.5,426.625,569.5,422.625"></polygon><text font-weight="bold" lengthAdjust="spacing" x="569.5" font-size="13" textLength="21" y="404.5591" font-family="sans-serif" fill="#000000">[6]</text><text lengthAdjust="spacing" x="594.5" font-size="13" textLength="224" y="404.5591" font-family="sans-serif" fill="#000000">optional: Löschen relevanter Daten</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="249.5,447.7578,239.5,451.7578,249.5,455.7578,245.5,451.7578"></polygon><line y1="451.7578" x1="243.5" y2="451.7578" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="561.5"></line><text font-weight="bold" lengthAdjust="spacing" x="255.5" font-size="13" textLength="21" y="446.6919" font-family="sans-serif" fill="#000000">[7]</text><text lengthAdjust="spacing" x="280.5" font-size="13" textLength="46" y="446.6919" font-family="sans-serif" fill="#000000">:Status</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="58.5,476.8906,48.5,480.8906,58.5,484.8906,54.5,480.8906"></polygon><line y1="480.8906" x1="52.5" y2="480.8906" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="237.5"></line><text font-weight="bold" lengthAdjust="spacing" x="64.5" font-size="13" textLength="21" y="475.8247" font-family="sans-serif" fill="#000000">[8]</text><text lengthAdjust="spacing" x="89.5" font-size="13" textLength="42" y="475.8247" font-family="sans-serif" fill="#000000">Status</text></g></svg>
+	</div>
+	<figcaption><strong>Abbildung: </strong>UC 3.15 - Einwilligung durch Versicherten widerrufen</figcaption>
+</figure>
+
+<h3 id="use-cases-zur-verwaltung-der-zugriffsberechtigung-durch-den-versicherten">Use Cases zur Verwaltung der Zugriffsberechtigung durch den Versicherten</h3>
+
+  <!-- UC 3.16 - Zugriffsberechtigung durch Versicherten erstellen -->
+
+<p><a id="uc-3-16-zugriffsberechtigung-erstellen"></a></p>
+<h3 id="uc-316---zugriffsberechtigung-durch-versicherten-erstellen">UC 3.16 - Zugriffsberechtigung durch Versicherten erstellen</h3>
+
+<figure style="width: auto;">
+  <table style="width: auto; border: 1px solid #dcdcdc;">
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Beschreibung</th>
+      <td style="padding: 5px;"><p>Der Versicherte erstellt einen Zugriffscode am E-Rezept-Fachdienst, um die Abfrage von E-Rezepten im Ausland zu ermöglichen.</p>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Der Versicherte hat seine “Einwilligung zum Einlösen im EU-Ausland” erteilt.</li>
+  <li>Im E-Rezept-FdV liegt die Information vor, welche europäischen Länder das Einlösen von in Deutschland verordneten E-Rezepten unterstützen.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Der Nutzer wählt im E-Rezept-FdV das Land aus, in dem er seine E-Rezepte einlesen möchte und fordert einen Zugriffscode an.</li>
+  <li>Das E-Rezept-FdV erstellt einen zufälligen Zugriffscode.</li>
+  <li>Das E-Rezept-FdV übermittelt den Zugriffscode und die Länderinformation an den E-Rezept-Fachdienst.</li>
+  <li>Der E-Rezept-Fachdienst prüft die Einwilligung, löscht einen ggf. bestehenden Zugriffscode, hinterlegt den übermittelten Zugriffscode und liefert die Gültigkeitsdauer des Zugriffscodes an das E-Rezept-FdV.</li>
+  <li>Das E-Rezept-FdV zeigt den Zugriffscode und die Gültigkeitsdauer an.</li>
+</ul>
+</td>
+
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Der Zugriffscode ist im E-Rezept-Fachdienst hinterlegt und kann zur Autorisierung des Zugriffs eines LE-EU genutzt werden.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Schnittstellen</th>
+      <td style="padding: 5px;"><ul>
+  <li><a href="./op-grant-eu-access-permission.html">Operation API: Zugriffsberechtigung</a></li>
+</ul>
+</td>
+    </tr>
+    
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Relevante(r) Sektor(en)</th>
+      <td style="padding: 5px;">
+        
+          
+        
+          
+        
+          
+        
+          
+            <span class="badge gem-ig-badge 
+gem-ig-badge-bg-blue">
+              VERSICHERTER
+            </span>
+          
+        
+          
+        
+      </td>
+    </tr>
+  </table>
+  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall UC 3.16 - Zugriffsberechtigung durch Versicherten erstellen</figcaption>
+</figure>
+
+<p><strong>Sequenzdiagramm:</strong></p>
+
+<figure>
+	<div style="--box-width: 600px; margin-bottom: 30px;" class="gem-ig-img-container">
+		  <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 1301 793" zoomAndPan="magnify" preserveAspectRatio="none" width="1301px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:1301px;height:793px;background:#FFFFFF;" version="1.1" height="793px"><defs></defs><g><text font-weight="bold" lengthAdjust="spacing" x="450.5" font-size="14" textLength="403" y="27.9951" font-family="sans-serif" fill="#000000">Zugriffsberechtigung durch Versicherten erstellen</text><rect width="759.5" x="535.5" y="265.125" style="stroke:#000000;stroke-width:1.5;" fill="none" height="61.2344"></rect><line y1="118.5938" x1="28" y2="712.6875" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="28"></line><line y1="118.5938" x1="243.5" y2="712.6875" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="243.5"></line><line y1="118.5938" x1="599.5" y2="712.6875" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="599.5"></line><line y1="118.5938" x1="913.5" y2="712.6875" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="913.5"></line><line y1="118.5938" x1="1223" y2="712.6875" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="1223"></line><text lengthAdjust="spacing" x="5" font-size="14" textLength="40" y="115.292" font-family="sans-serif" fill="#000000">LE-EU</text><ellipse cx="28" cy="50.7969" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M28,58.7969 L28,85.7969 M15,66.7969 L41,66.7969 M28,85.7969 L15,100.7969 M28,85.7969 L41,100.7969 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><text lengthAdjust="spacing" x="5" font-size="14" textLength="40" y="724.6826" font-family="sans-serif" fill="#000000">LE-EU</text><ellipse cx="28" cy="736.4844" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M28,744.4844 L28,771.4844 M15,752.4844 L41,752.4844 M28,771.4844 L15,786.4844 M28,771.4844 L41,786.4844 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><text lengthAdjust="spacing" x="201.5" font-size="14" textLength="79" y="115.292" font-family="sans-serif" fill="#000000">Versicherte</text><ellipse cx="244" cy="50.7969" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M244,58.7969 L244,85.7969 M231,66.7969 L257,66.7969 M244,85.7969 L231,100.7969 M244,85.7969 L257,100.7969 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><text lengthAdjust="spacing" x="201.5" font-size="14" textLength="79" y="724.6826" font-family="sans-serif" fill="#000000">Versicherte</text><ellipse cx="244" cy="736.4844" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M244,744.4844 L244,771.4844 M231,752.4844 L257,752.4844 M244,771.4844 L231,786.4844 M244,771.4844 L257,786.4844 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><rect rx="2.5" ry="2.5" width="109" x="545.5" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="552.5" font-size="14" textLength="95" y="107.292" font-family="sans-serif" fill="#000000">E-Rezept-FdV</text><rect rx="2.5" ry="2.5" width="109" x="545.5" y="711.6875" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="552.5" font-size="14" textLength="95" y="731.6826" font-family="sans-serif" fill="#000000">E-Rezept-FdV</text><rect rx="2.5" ry="2.5" width="159" x="834.5" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="841.5" font-size="14" textLength="145" y="107.292" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><rect rx="2.5" ry="2.5" width="159" x="834.5" y="711.6875" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="841.5" font-size="14" textLength="145" y="731.6826" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><rect rx="2.5" ry="2.5" width="124" x="1161" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="1168" font-size="14" textLength="110" y="107.292" font-family="sans-serif" fill="#000000">Identity Provider</text><rect rx="2.5" ry="2.5" width="124" x="1161" y="711.6875" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="1168" font-size="14" textLength="110" y="731.6826" font-family="sans-serif" fill="#000000">Identity Provider</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="255,145.7266,245,149.7266,255,153.7266,251,149.7266"></polygon><line y1="149.7266" x1="249" y2="149.7266" style="stroke:#181818;stroke-width:1.0;" x2="599"></line><text font-weight="bold" lengthAdjust="spacing" x="261" font-size="13" textLength="21" y="144.6606" font-family="sans-serif" fill="#000000">[1]</text><text lengthAdjust="spacing" x="286" font-size="13" textLength="168" y="144.6606" font-family="sans-serif" fill="#000000">mögliche Länder anzeigen</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="588,174.8594,598,178.8594,588,182.8594,592,178.8594"></polygon><line y1="178.8594" x1="244" y2="178.8594" style="stroke:#181818;stroke-width:1.0;" x2="594"></line><text font-weight="bold" lengthAdjust="spacing" x="251" font-size="13" textLength="21" y="173.7935" font-family="sans-serif" fill="#000000">[2]</text><text lengthAdjust="spacing" x="276" font-size="13" textLength="102" y="173.7935" font-family="sans-serif" fill="#000000">Land auswählen</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="588,203.9922,598,207.9922,588,211.9922,592,207.9922"></polygon><line y1="207.9922" x1="244" y2="207.9922" style="stroke:#181818;stroke-width:1.0;" x2="594"></line><text font-weight="bold" lengthAdjust="spacing" x="251" font-size="13" textLength="21" y="202.9263" font-family="sans-serif" fill="#000000">[3]</text><text lengthAdjust="spacing" x="276" font-size="13" textLength="146" y="202.9263" font-family="sans-serif" fill="#000000">Zugriffscode anfordern</text><line y1="237.125" x1="600" y2="237.125" style="stroke:#181818;stroke-width:1.0;" x2="642"></line><line y1="237.125" x1="642" y2="250.125" style="stroke:#181818;stroke-width:1.0;" x2="642"></line><line y1="250.125" x1="601" y2="250.125" style="stroke:#181818;stroke-width:1.0;" x2="642"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="611,246.125,601,250.125,611,254.125,607,250.125"></polygon><text font-weight="bold" lengthAdjust="spacing" x="607" font-size="13" textLength="21" y="232.0591" font-family="sans-serif" fill="#000000">[4]</text><text lengthAdjust="spacing" x="632" font-size="13" textLength="208" y="232.0591" font-family="sans-serif" fill="#000000">zufälligen Zugriffscode erzeugen</text><path d="M535.5,265.125 L605.5,265.125 L605.5,272.2578 L595.5,282.2578 L535.5,282.2578 L535.5,265.125 " style="stroke:#000000;stroke-width:1.5;" fill="#EEEEEE"></path><rect width="759.5" x="535.5" y="265.125" style="stroke:#000000;stroke-width:1.5;" fill="none" height="61.2344"></rect><text font-weight="bold" lengthAdjust="spacing" x="550.5" font-size="13" textLength="25" y="278.1919" font-family="sans-serif" fill="#000000">opt</text><text font-weight="bold" lengthAdjust="spacing" x="620.5" font-size="11" textLength="177" y="277.3354" font-family="sans-serif" fill="#000000">[kein gültiger AuthN-Token]</text><rect width="745.5" x="542.5" y="282.2578" style="stroke:#000000;stroke-width:1.5;" fill="none" height="39.1016"></rect><path d="M542.5,282.2578 L608.5,282.2578 L608.5,289.2578 L598.5,299.2578 L542.5,299.2578 L542.5,282.2578 " style="stroke:#000000;stroke-width:2.0;" fill="#EEEEEE"></path><text font-weight="bold" lengthAdjust="spacing" x="555.5" font-size="13" textLength="21" y="296.3247" font-family="sans-serif" fill="#000000">ref</text><text lengthAdjust="spacing" x="842.25" font-size="12" textLength="146" y="314.3965" font-family="sans-serif" fill="#000000">AuthN-Token anfordern</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="902,350.4922,912,354.4922,902,358.4922,906,354.4922"></polygon><line y1="354.4922" x1="600" y2="354.4922" style="stroke:#181818;stroke-width:1.0;" x2="908"></line><text font-weight="bold" lengthAdjust="spacing" x="607" font-size="13" textLength="21" y="349.4263" font-family="sans-serif" fill="#000000">[5]</text><text lengthAdjust="spacing" x="632" font-size="13" textLength="265" y="349.4263" font-family="sans-serif" fill="#000000">Zugriffscode und Ländercode übermitteln</text><line y1="383.625" x1="914" y2="383.625" style="stroke:#181818;stroke-width:1.0;" x2="956"></line><line y1="383.625" x1="956" y2="396.625" style="stroke:#181818;stroke-width:1.0;" x2="956"></line><line y1="396.625" x1="915" y2="396.625" style="stroke:#181818;stroke-width:1.0;" x2="956"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="925,392.625,915,396.625,925,400.625,921,396.625"></polygon><text font-weight="bold" lengthAdjust="spacing" x="921" font-size="13" textLength="21" y="378.5591" font-family="sans-serif" fill="#000000">[6]</text><text lengthAdjust="spacing" x="946" font-size="13" textLength="117" y="378.5591" font-family="sans-serif" fill="#000000">Einwilligung prüfen</text><line y1="425.7578" x1="914" y2="425.7578" style="stroke:#181818;stroke-width:1.0;" x2="956"></line><line y1="425.7578" x1="956" y2="438.7578" style="stroke:#181818;stroke-width:1.0;" x2="956"></line><line y1="438.7578" x1="915" y2="438.7578" style="stroke:#181818;stroke-width:1.0;" x2="956"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="925,434.7578,915,438.7578,925,442.7578,921,438.7578"></polygon><text font-weight="bold" lengthAdjust="spacing" x="921" font-size="13" textLength="21" y="420.6919" font-family="sans-serif" fill="#000000">[7]</text><text lengthAdjust="spacing" x="946" font-size="13" textLength="270" y="420.6919" font-family="sans-serif" fill="#000000">Prüfen, ob einlösbare E-Rezepte existieren</text><line y1="467.8906" x1="914" y2="467.8906" style="stroke:#181818;stroke-width:1.0;" x2="956"></line><line y1="467.8906" x1="956" y2="480.8906" style="stroke:#181818;stroke-width:1.0;" x2="956"></line><line y1="480.8906" x1="915" y2="480.8906" style="stroke:#181818;stroke-width:1.0;" x2="956"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="925,476.8906,915,480.8906,925,484.8906,921,480.8906"></polygon><text font-weight="bold" lengthAdjust="spacing" x="921" font-size="13" textLength="21" y="462.8247" font-family="sans-serif" fill="#000000">[8]</text><text lengthAdjust="spacing" x="946" font-size="13" textLength="184" y="462.8247" font-family="sans-serif" fill="#000000">Gültigkeit Ländercode prüfen</text><line y1="510.0234" x1="914" y2="510.0234" style="stroke:#181818;stroke-width:1.0;" x2="956"></line><line y1="510.0234" x1="956" y2="523.0234" style="stroke:#181818;stroke-width:1.0;" x2="956"></line><line y1="523.0234" x1="915" y2="523.0234" style="stroke:#181818;stroke-width:1.0;" x2="956"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="925,519.0234,915,523.0234,925,527.0234,921,523.0234"></polygon><text font-weight="bold" lengthAdjust="spacing" x="921" font-size="13" textLength="21" y="504.9575" font-family="sans-serif" fill="#000000">[9]</text><text lengthAdjust="spacing" x="946" font-size="13" textLength="175" y="504.9575" font-family="sans-serif" fill="#000000">Format Zugriffscode prüfen</text><line y1="552.1563" x1="914" y2="552.1563" style="stroke:#181818;stroke-width:1.0;" x2="956"></line><line y1="552.1563" x1="956" y2="565.1563" style="stroke:#181818;stroke-width:1.0;" x2="956"></line><line y1="565.1563" x1="915" y2="565.1563" style="stroke:#181818;stroke-width:1.0;" x2="956"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="925,561.1563,915,565.1563,925,569.1563,921,565.1563"></polygon><text font-weight="bold" lengthAdjust="spacing" x="921" font-size="13" textLength="30" y="547.0903" font-family="sans-serif" fill="#000000">[10]</text><text lengthAdjust="spacing" x="955" font-size="13" textLength="249" y="547.0903" font-family="sans-serif" fill="#000000">ggf. bestehenden Zugriffscode löschen</text><line y1="594.2891" x1="914" y2="594.2891" style="stroke:#181818;stroke-width:1.0;" x2="956"></line><line y1="594.2891" x1="956" y2="607.2891" style="stroke:#181818;stroke-width:1.0;" x2="956"></line><line y1="607.2891" x1="915" y2="607.2891" style="stroke:#181818;stroke-width:1.0;" x2="956"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="925,603.2891,915,607.2891,925,611.2891,921,607.2891"></polygon><text font-weight="bold" lengthAdjust="spacing" x="921" font-size="13" textLength="30" y="589.2231" font-family="sans-serif" fill="#000000">[11]</text><text lengthAdjust="spacing" x="955" font-size="13" textLength="146" y="589.2231" font-family="sans-serif" fill="#000000">Zugriffscode speichern</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="611,632.4219,601,636.4219,611,640.4219,607,636.4219"></polygon><line y1="636.4219" x1="605" y2="636.4219" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="913"></line><text font-weight="bold" lengthAdjust="spacing" x="617" font-size="13" textLength="30" y="631.356" font-family="sans-serif" fill="#000000">[12]</text><text lengthAdjust="spacing" x="651" font-size="13" textLength="145" y="631.356" font-family="sans-serif" fill="#000000">:Zugriffscode gültig bis</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="255,661.5547,245,665.5547,255,669.5547,251,665.5547"></polygon><line y1="665.5547" x1="249" y2="665.5547" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="599"></line><text font-weight="bold" lengthAdjust="spacing" x="261" font-size="13" textLength="30" y="660.4888" font-family="sans-serif" fill="#000000">[13]</text><text lengthAdjust="spacing" x="295" font-size="13" textLength="298" y="660.4888" font-family="sans-serif" fill="#000000">Zugriffscode und Gültigkeitszeitraum anzeigen</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="39,690.6875,29,694.6875,39,698.6875,35,694.6875"></polygon><line y1="694.6875" x1="33" y2="694.6875" style="stroke:#181818;stroke-width:1.0;" x2="243"></line><text font-weight="bold" lengthAdjust="spacing" x="45" font-size="13" textLength="30" y="689.6216" font-family="sans-serif" fill="#000000">[14]</text><text lengthAdjust="spacing" x="79" font-size="13" textLength="158" y="689.6216" font-family="sans-serif" fill="#000000">Zugriffscode übermitteln</text></g></svg>
+	</div>
+	<figcaption><strong>Abbildung: </strong>UC 3.16 - Zugriffsberechtigung durch Versicherten erstellen</figcaption>
+</figure>
+
+  <!-- UC 3.17 - Zugriffsberechtigung durch Versicherten löschen -->
+
+<p><a id="uc-3-17-zugriffsberechtigung-loeschen"></a></p>
+<h3 id="uc-317---zugriffsberechtigung-durch-versicherten-löschen">UC 3.17 - Zugriffsberechtigung durch Versicherten löschen</h3>
+
+<figure style="width: auto;">
+  <table style="width: auto; border: 1px solid #dcdcdc;">
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Beschreibung</th>
+      <td style="padding: 5px;"><p>Mit diesem Anwendungsfall kann der Versicherte eine zuvor erstellte Zugriffsberechtigung löschen.</p>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>keine</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Der Nutzer wählt im E-Rezept-FdV aus, dass er eine bestehende Zugriffsberechtigung löschen möchte.</li>
+  <li>Das E-Rezept-FdV übermittelt den Löschwunsch an den E-Rezept-Fachdienst.</li>
+  <li>Der E-Rezept-Fachdienst löscht eine ggf. bestehende Zugriffsberechtigung.</li>
+  <li>Das E-Rezept-FdV löscht die Zugriffsberechtigung.</li>
+</ul>
+</td>
+
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Es ist keine Zugriffsberechtigung für den Versicherten im E-Rezept-Fachdienst registriert.</li>
+  <li>Die Zugriffsberechtigung wird im E-Rezept-FdV nicht mehr angezeigt.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Schnittstellen</th>
+      <td style="padding: 5px;"><ul>
+  <li><a href="./op-revoke-eu-access-permission.html">Operation API: Zugriffsberechtigung</a></li>
+</ul>
+</td>
+    </tr>
+    
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Relevante(r) Sektor(en)</th>
+      <td style="padding: 5px;">
+        
+          
+        
+          
+        
+          
+        
+          
+            <span class="badge gem-ig-badge 
+gem-ig-badge-bg-blue">
+              VERSICHERTER
+            </span>
+          
+        
+          
+        
+      </td>
+    </tr>
+  </table>
+  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall UC 3.17 - Zugriffsberechtigung durch Versicherten löschen</figcaption>
+</figure>
+
+<p><strong>Sequenzdiagramm:</strong></p>
+
+<figure>
+	<div style="--box-width: 600px; margin-bottom: 30px;" class="gem-ig-img-container">
+		  <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 783 510" zoomAndPan="magnify" preserveAspectRatio="none" width="783px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:783px;height:510px;background:#FFFFFF;" version="1.1" height="510px"><defs></defs><g><text font-weight="bold" lengthAdjust="spacing" x="195.75" font-size="14" textLength="395" y="27.9951" font-family="sans-serif" fill="#000000">Zugriffsberechtigung durch Versicherten löschen</text><rect width="559.5" x="218" y="164.7266" style="stroke:#000000;stroke-width:1.5;" fill="none" height="61.2344"></rect><line y1="118.5938" x1="47" y2="429.7578" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="47"></line><line y1="118.5938" x1="282" y2="429.7578" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="282"></line><line y1="118.5938" x1="473" y2="429.7578" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="473"></line><line y1="118.5938" x1="705.5" y2="429.7578" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="705.5"></line><text lengthAdjust="spacing" x="5" font-size="14" textLength="79" y="115.292" font-family="sans-serif" fill="#000000">Versicherte</text><ellipse cx="47.5" cy="50.7969" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M47.5,58.7969 L47.5,85.7969 M34.5,66.7969 L60.5,66.7969 M47.5,85.7969 L34.5,100.7969 M47.5,85.7969 L60.5,100.7969 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><text lengthAdjust="spacing" x="5" font-size="14" textLength="79" y="441.7529" font-family="sans-serif" fill="#000000">Versicherte</text><ellipse cx="47.5" cy="453.5547" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M47.5,461.5547 L47.5,488.5547 M34.5,469.5547 L60.5,469.5547 M47.5,488.5547 L34.5,503.5547 M47.5,488.5547 L60.5,503.5547 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><rect rx="2.5" ry="2.5" width="109" x="228" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="235" font-size="14" textLength="95" y="107.292" font-family="sans-serif" fill="#000000">E-Rezept-FdV</text><rect rx="2.5" ry="2.5" width="109" x="228" y="428.7578" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="235" font-size="14" textLength="95" y="448.7529" font-family="sans-serif" fill="#000000">E-Rezept-FdV</text><rect rx="2.5" ry="2.5" width="159" x="394" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="401" font-size="14" textLength="145" y="107.292" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><rect rx="2.5" ry="2.5" width="159" x="394" y="428.7578" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="401" font-size="14" textLength="145" y="448.7529" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><rect rx="2.5" ry="2.5" width="124" x="643.5" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="650.5" font-size="14" textLength="110" y="107.292" font-family="sans-serif" fill="#000000">Identity Provider</text><rect rx="2.5" ry="2.5" width="124" x="643.5" y="428.7578" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="650.5" font-size="14" textLength="110" y="448.7529" font-family="sans-serif" fill="#000000">Identity Provider</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="270.5,145.7266,280.5,149.7266,270.5,153.7266,274.5,149.7266"></polygon><line y1="149.7266" x1="47.5" y2="149.7266" style="stroke:#181818;stroke-width:1.0;" x2="276.5"></line><text font-weight="bold" lengthAdjust="spacing" x="54.5" font-size="13" textLength="21" y="144.6606" font-family="sans-serif" fill="#000000">[1]</text><text lengthAdjust="spacing" x="79.5" font-size="13" textLength="186" y="144.6606" font-family="sans-serif" fill="#000000">Zugriffsberechtigung löschen</text><path d="M218,164.7266 L288,164.7266 L288,171.8594 L278,181.8594 L218,181.8594 L218,164.7266 " style="stroke:#000000;stroke-width:1.5;" fill="#EEEEEE"></path><rect width="559.5" x="218" y="164.7266" style="stroke:#000000;stroke-width:1.5;" fill="none" height="61.2344"></rect><text font-weight="bold" lengthAdjust="spacing" x="233" font-size="13" textLength="25" y="177.7935" font-family="sans-serif" fill="#000000">opt</text><text font-weight="bold" lengthAdjust="spacing" x="303" font-size="11" textLength="177" y="176.937" font-family="sans-serif" fill="#000000">[kein gültiger AuthN-Token]</text><rect width="545.5" x="225" y="181.8594" style="stroke:#000000;stroke-width:1.5;" fill="none" height="39.1016"></rect><path d="M225,181.8594 L291,181.8594 L291,188.8594 L281,198.8594 L225,198.8594 L225,181.8594 " style="stroke:#000000;stroke-width:2.0;" fill="#EEEEEE"></path><text font-weight="bold" lengthAdjust="spacing" x="238" font-size="13" textLength="21" y="195.9263" font-family="sans-serif" fill="#000000">ref</text><text lengthAdjust="spacing" x="424.75" font-size="12" textLength="146" y="213.998" font-family="sans-serif" fill="#000000">AuthN-Token anfordern</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="461.5,265.2266,471.5,269.2266,461.5,273.2266,465.5,269.2266"></polygon><line y1="269.2266" x1="282.5" y2="269.2266" style="stroke:#181818;stroke-width:1.0;" x2="467.5"></line><text font-weight="bold" lengthAdjust="spacing" x="289.5" font-size="13" textLength="21" y="256.5942" font-family="sans-serif" fill="#000000">[2]</text><text lengthAdjust="spacing" x="314.5" font-size="13" textLength="133" y="249.0278" font-family="sans-serif" fill="#000000">Zugriffscode löschen</text><text lengthAdjust="spacing" x="314.5" font-size="13" textLength="142" y="264.1606" font-family="sans-serif" fill="#000000">{AuthN-Token, KVNR}</text><line y1="298.3594" x1="473.5" y2="298.3594" style="stroke:#181818;stroke-width:1.0;" x2="515.5"></line><line y1="298.3594" x1="515.5" y2="311.3594" style="stroke:#181818;stroke-width:1.0;" x2="515.5"></line><line y1="311.3594" x1="474.5" y2="311.3594" style="stroke:#181818;stroke-width:1.0;" x2="515.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="484.5,307.3594,474.5,311.3594,484.5,315.3594,480.5,311.3594"></polygon><text font-weight="bold" lengthAdjust="spacing" x="480.5" font-size="13" textLength="21" y="293.2935" font-family="sans-serif" fill="#000000">[3]</text><text lengthAdjust="spacing" x="505.5" font-size="13" textLength="193" y="293.2935" font-family="sans-serif" fill="#000000">Zugriffscode für KVNR löschen</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="293.5,336.4922,283.5,340.4922,293.5,344.4922,289.5,340.4922"></polygon><line y1="340.4922" x1="287.5" y2="340.4922" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="472.5"></line><text font-weight="bold" lengthAdjust="spacing" x="299.5" font-size="13" textLength="21" y="335.4263" font-family="sans-serif" fill="#000000">[4]</text><text lengthAdjust="spacing" x="324.5" font-size="13" textLength="42" y="335.4263" font-family="sans-serif" fill="#000000">Status</text><line y1="369.625" x1="282.5" y2="369.625" style="stroke:#181818;stroke-width:1.0;" x2="324.5"></line><line y1="369.625" x1="324.5" y2="382.625" style="stroke:#181818;stroke-width:1.0;" x2="324.5"></line><line y1="382.625" x1="283.5" y2="382.625" style="stroke:#181818;stroke-width:1.0;" x2="324.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="293.5,378.625,283.5,382.625,293.5,386.625,289.5,382.625"></polygon><text font-weight="bold" lengthAdjust="spacing" x="289.5" font-size="13" textLength="21" y="364.5591" font-family="sans-serif" fill="#000000">[5]</text><text lengthAdjust="spacing" x="314.5" font-size="13" textLength="133" y="364.5591" font-family="sans-serif" fill="#000000">Zugriffscode löschen</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="58.5,407.7578,48.5,411.7578,58.5,415.7578,54.5,411.7578"></polygon><line y1="411.7578" x1="52.5" y2="411.7578" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="281.5"></line><text font-weight="bold" lengthAdjust="spacing" x="64.5" font-size="13" textLength="21" y="406.6919" font-family="sans-serif" fill="#000000">[6]</text><text lengthAdjust="spacing" x="89.5" font-size="13" textLength="104" y="406.6919" font-family="sans-serif" fill="#000000">Status anzeigen</text></g></svg>
+	</div>
+	<figcaption><strong>Abbildung: </strong>UC 3.17 - Zugriffsberechtigung durch Versicherten löschen</figcaption>
+</figure>
+
+  <!-- UC 3.18 - Zugriffsberechtigung durch Versicherten einsehen -->
+
+<p><a id="uc-3-18-zugriffsberechtigung-einsehen"></a></p>
+<h3 id="uc-318---zugriffsberechtigung-durch-versicherten-einsehen">UC 3.18 - Zugriffsberechtigung durch Versicherten einsehen</h3>
+
+<figure style="width: auto;">
+  <table style="width: auto; border: 1px solid #dcdcdc;">
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Beschreibung</th>
+      <td style="padding: 5px;"><p>Mit diesem Anwendungsfall kann der Versicherte sich eine Zugriffsberechtigung im E-Rezept-FdV anzeigen lassen, wenn die Informationen zur Zugriffsberechtigung nicht lokal im E-Rezept-FdV gespeichert sind.</p>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>keine</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Das E-Rezept-FdV führt die Operation zur Abfrage der Zugriffsberechtigung aus.</li>
+  <li>Der E-Rezept-Fachdienst gibt die Information an das E-Rezept-FdV.</li>
+  <li>Das E-Rezept-FdV zeigt den Zugriffscode und die Gültigkeitsdauer an.</li>
+</ul>
+</td>
+
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>keine</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Schnittstellen</th>
+      <td style="padding: 5px;"><ul>
+  <li><a href="./op-read-eu-access-permission.html">Operation API: Zugriffsberechtigung</a></li>
+</ul>
+</td>
+    </tr>
+    
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Relevante(r) Sektor(en)</th>
+      <td style="padding: 5px;">
+        
+          
+        
+          
+        
+          
+        
+          
+            <span class="badge gem-ig-badge 
+gem-ig-badge-bg-blue">
+              VERSICHERTER
+            </span>
+          
+        
+          
+        
+      </td>
+    </tr>
+  </table>
+  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall UC 3.18 - Zugriffsberechtigung durch Versicherten einsehen</figcaption>
+</figure>
+
+<p><strong>Sequenzdiagramm:</strong></p>
+
+<figure>
+	<div style="--box-width: 600px; margin-bottom: 30px;" class="gem-ig-img-container">
+		  <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 764 456" zoomAndPan="magnify" preserveAspectRatio="none" width="764px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:764px;height:456px;background:#FFFFFF;" version="1.1" height="456px"><defs></defs><g><text font-weight="bold" lengthAdjust="spacing" x="163" font-size="14" textLength="441" y="27.9951" font-family="sans-serif" fill="#000000">Zugriffsberechtigung durch den Versicherten einsehen</text><rect width="531" x="227" y="164.7266" style="stroke:#000000;stroke-width:1.5;" fill="none" height="61.2344"></rect><line y1="118.5938" x1="47" y2="375.7578" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="47"></line><line y1="118.5938" x1="291" y2="375.7578" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="291"></line><line y1="118.5938" x1="534" y2="375.7578" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="534"></line><line y1="118.5938" x1="686" y2="375.7578" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="686"></line><text lengthAdjust="spacing" x="5" font-size="14" textLength="79" y="115.292" font-family="sans-serif" fill="#000000">Versicherte</text><ellipse cx="47.5" cy="50.7969" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M47.5,58.7969 L47.5,85.7969 M34.5,66.7969 L60.5,66.7969 M47.5,85.7969 L34.5,100.7969 M47.5,85.7969 L60.5,100.7969 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><text lengthAdjust="spacing" x="5" font-size="14" textLength="79" y="387.7529" font-family="sans-serif" fill="#000000">Versicherte</text><ellipse cx="47.5" cy="399.5547" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M47.5,407.5547 L47.5,434.5547 M34.5,415.5547 L60.5,415.5547 M47.5,434.5547 L34.5,449.5547 M47.5,434.5547 L60.5,449.5547 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><rect rx="2.5" ry="2.5" width="109" x="237" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="244" font-size="14" textLength="95" y="107.292" font-family="sans-serif" fill="#000000">E-Rezept-FdV</text><rect rx="2.5" ry="2.5" width="109" x="237" y="374.7578" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="244" font-size="14" textLength="95" y="394.7529" font-family="sans-serif" fill="#000000">E-Rezept-FdV</text><rect rx="2.5" ry="2.5" width="159" x="455" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="462" font-size="14" textLength="145" y="107.292" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><rect rx="2.5" ry="2.5" width="159" x="455" y="374.7578" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="462" font-size="14" textLength="145" y="394.7529" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><rect rx="2.5" ry="2.5" width="124" x="624" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="631" font-size="14" textLength="110" y="107.292" font-family="sans-serif" fill="#000000">Identity Provider</text><rect rx="2.5" ry="2.5" width="124" x="624" y="374.7578" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="631" font-size="14" textLength="110" y="394.7529" font-family="sans-serif" fill="#000000">Identity Provider</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="279.5,145.7266,289.5,149.7266,279.5,153.7266,283.5,149.7266"></polygon><line y1="149.7266" x1="47.5" y2="149.7266" style="stroke:#181818;stroke-width:1.0;" x2="285.5"></line><text font-weight="bold" lengthAdjust="spacing" x="54.5" font-size="13" textLength="21" y="144.6606" font-family="sans-serif" fill="#000000">[1]</text><text lengthAdjust="spacing" x="79.5" font-size="13" textLength="195" y="144.6606" font-family="sans-serif" fill="#000000">Zugriffsberechtigung einsehen</text><path d="M227,164.7266 L297,164.7266 L297,171.8594 L287,181.8594 L227,181.8594 L227,164.7266 " style="stroke:#000000;stroke-width:1.5;" fill="#EEEEEE"></path><rect width="531" x="227" y="164.7266" style="stroke:#000000;stroke-width:1.5;" fill="none" height="61.2344"></rect><text font-weight="bold" lengthAdjust="spacing" x="242" font-size="13" textLength="25" y="177.7935" font-family="sans-serif" fill="#000000">opt</text><text font-weight="bold" lengthAdjust="spacing" x="312" font-size="11" textLength="177" y="176.937" font-family="sans-serif" fill="#000000">[kein gültiger AuthN-Token]</text><rect width="517" x="234" y="181.8594" style="stroke:#000000;stroke-width:1.5;" fill="none" height="39.1016"></rect><path d="M234,181.8594 L300,181.8594 L300,188.8594 L290,198.8594 L234,198.8594 L234,181.8594 " style="stroke:#000000;stroke-width:2.0;" fill="#EEEEEE"></path><text font-weight="bold" lengthAdjust="spacing" x="247" font-size="13" textLength="21" y="195.9263" font-family="sans-serif" fill="#000000">ref</text><text lengthAdjust="spacing" x="419.5" font-size="12" textLength="146" y="213.998" font-family="sans-serif" fill="#000000">AuthN-Token anfordern</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="522.5,265.2266,532.5,269.2266,522.5,273.2266,526.5,269.2266"></polygon><line y1="269.2266" x1="291.5" y2="269.2266" style="stroke:#181818;stroke-width:1.0;" x2="528.5"></line><text font-weight="bold" lengthAdjust="spacing" x="298.5" font-size="13" textLength="21" y="256.5942" font-family="sans-serif" fill="#000000">[2]</text><text lengthAdjust="spacing" x="323.5" font-size="13" textLength="194" y="249.0278" font-family="sans-serif" fill="#000000">Zugriffsberechtigung abfragen</text><text lengthAdjust="spacing" x="323.5" font-size="13" textLength="99" y="264.1606" font-family="sans-serif" fill="#000000">{AuthN-Token}</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="302.5,324.625,292.5,328.625,302.5,332.625,298.5,328.625"></polygon><line y1="328.625" x1="296.5" y2="328.625" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="533.5"></line><text font-weight="bold" lengthAdjust="spacing" x="308.5" font-size="13" textLength="21" y="308.4263" font-family="sans-serif" fill="#000000">[3]</text><text lengthAdjust="spacing" x="333.5" font-size="13" textLength="84" y="293.2935" font-family="sans-serif" fill="#000000">Zugriffscode,</text><text lengthAdjust="spacing" x="333.5" font-size="13" textLength="145" y="308.4263" font-family="sans-serif" fill="#000000">Zugriffscode gültig bis,</text><text lengthAdjust="spacing" x="333.5" font-size="13" textLength="75" y="323.5591" font-family="sans-serif" fill="#000000">Ländercode</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="58.5,353.7578,48.5,357.7578,58.5,361.7578,54.5,357.7578"></polygon><line y1="357.7578" x1="52.5" y2="357.7578" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="290.5"></line><text font-weight="bold" lengthAdjust="spacing" x="64.5" font-size="13" textLength="21" y="352.6919" font-family="sans-serif" fill="#000000">[4]</text><text lengthAdjust="spacing" x="89.5" font-size="13" textLength="51" y="352.6919" font-family="sans-serif" fill="#000000">Anzeige</text></g></svg>
+	</div>
+	<figcaption><strong>Abbildung: </strong>UC 3.18 - Zugriffsberechtigung durch Versicherten einsehen</figcaption>
+</figure>
+
+<h3 id="zugriffsberechtigung-anzeigen">Zugriffsberechtigung anzeigen</h3>
+
+  <!-- A_27116 -->
+<requirement conformance="SHALL" title="E-Rezept-FdV: Zugriffsberechtigung anzeigen" version="0" key="IG-TIFLOW-XBORDER-63">
+    <meta lockversion="false"/>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung"></testProcedure>
+    </actor>
+    Das E-Rezept-FdV MUSS im Anwendungsfall "Zugriffsberechtigung anzeigen" folgende Informationen auf dem Display anzeigen: 
+    <ul>
+    <li>Name des Landes,</li>
+    <li>Gültigkeitsende,</li>
+    <li>Zugriffscode,</li>
+    <li>KVNR des Versicherten.</li>
+    </ul>
+</requirement>
+
+<p>Für die Anzeige der Gültigkeitsdauer ist die Zeitzone zu beachten, in der der Nutzer sich befindet.</p>
+
+<p>Das E-Rezept-FdV MUSS bei der Anzeige des Zugriffscodes die Lesbarkeit der Zeichen des Zugriffscodes sicherstellen.</p>
+
+<p>Hinweis: Mit Lesbarkeit ist das Erkennen und Unterscheiden einzelner Buchstaben und Ziffern gemeint, d.h. die Unterscheidbarkeit von beispielsweise von 0 (Null) und O (Großbuchstabe O), sowie I (Großbuchstabe i) und l (Kleinbuchstabe L) und 1 (Ziffer Eins).</p>
+
+<p>Das E-Rezept-FdV MUSS die Gültigkeitsdauer der Zugriffsberechtigung auf dem Display hervorheben, wenn die Gültigkeitsdauer 10&nbsp;Minuten unterschreitet.</p>
+
+<p>Das E-Rezept-FdV MUSS, wenn die Gültigkeit der Zugriffsberechtigung zeitlich abgelaufen ist, den Versicherten informieren.</p>
+
+<p>Hinweis: Es reicht aus, dass die Information über den Ablauf der Zugriffsberechtigung nur angezeigt wird, während der Nutzer auf dem Gerät aktiv ist.</p>
+
+<p>Der zeitliche Ablauf der Zugriffsberechtigung wird nicht durch den E-Rezept-Fachdienst signalisiert.</p>
+
+<h3 id="use-cases-zur-verwaltung-der-e-rezepte-durch-den-versicherten">Use Cases zur Verwaltung der E-Rezepte durch den Versicherten</h3>
+
+  <!-- UC 3.19 - E-Rezept durch den Versicherten markieren -->
+
+<p><a id="uc-3-19-e-rezept-markieren"></a></p>
+<h3 id="uc-319---e-rezept-durch-den-versicherten-markieren">UC 3.19 - E-Rezept durch den Versicherten markieren</h3>
+
+<figure style="width: auto;">
+  <table style="width: auto; border: 1px solid #dcdcdc;">
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Beschreibung</th>
+      <td style="padding: 5px;"><p>Mit diesem Anwendungsfall kann der Versicherte ein E-Rezept für das Einlösen im EU-Ausland markieren. Bei der Abfrage eines LE-EU werden ausschließlich im EU-Ausland einlösbare E-Rezepte ausgeliefert, welche zuvor durch den Versicherten markiert wurden.</p>
+
+<p>Der Anwendungsfall wird ebenfalls dafür genutzt, eine Markierung zu löschen.</p>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>keine</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Der Nutzer wählt im E-Rezept-FdV das zu markierende E-Rezept sowie die Option für die Markierung aus.</li>
+  <li>Das E-Rezept-FdV übermittelt die Information an den E-Rezept-Fachdienst.</li>
+  <li>Der E-Rezept-Fachdienst speichert die Information.</li>
+</ul>
+</td>
+
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Die Information zur Markierung ist im E-Rezept-Fachdienst gespeichert.</li>
+  <li>Der Datenzugriff ist im E-Rezept-Fachdienst protokolliert.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Schnittstellen</th>
+      <td style="padding: 5px;"><ul>
+  <li><a href="./query-api-task.html">Query API: E-Rezept durch den Versicherten markieren</a></li>
+</ul>
+</td>
+    </tr>
+    
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Relevante(r) Sektor(en)</th>
+      <td style="padding: 5px;">
+        
+          
+        
+          
+        
+          
+        
+          
+            <span class="badge gem-ig-badge 
+gem-ig-badge-bg-blue">
+              VERSICHERTER
+            </span>
+          
+        
+          
+        
+      </td>
+    </tr>
+  </table>
+  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall UC 3.19 - E-Rezept durch den Versicherten markieren</figcaption>
+</figure>
+
+<p><strong>Sequenzdiagramm:</strong></p>
+
+<figure>
+	<div style="--box-width: 600px; margin-bottom: 30px;" class="gem-ig-img-container">
+		  <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 980 524" zoomAndPan="magnify" preserveAspectRatio="none" width="980px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:980px;height:524px;background:#FFFFFF;" version="1.1" height="524px"><defs></defs><g><text font-weight="bold" lengthAdjust="spacing" x="314.75" font-size="14" textLength="349" y="27.9951" font-family="sans-serif" fill="#000000">E-Rezept durch den Versicherten markieren</text><rect width="643.5" x="238" y="193.8594" style="stroke:#000000;stroke-width:1.5;" fill="none" height="61.2344"></rect><line y1="118.5938" x1="47" y2="443.7578" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="47"></line><line y1="118.5938" x1="302" y2="443.7578" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="302"></line><line y1="118.5938" x1="601" y2="443.7578" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="601"></line><line y1="118.5938" x1="809.5" y2="443.7578" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="809.5"></line><line y1="118.5938" x1="927.5" y2="443.7578" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="927.5"></line><text lengthAdjust="spacing" x="5" font-size="14" textLength="79" y="115.292" font-family="sans-serif" fill="#000000">Versicherte</text><ellipse cx="47.5" cy="50.7969" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M47.5,58.7969 L47.5,85.7969 M34.5,66.7969 L60.5,66.7969 M47.5,85.7969 L34.5,100.7969 M47.5,85.7969 L60.5,100.7969 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><text lengthAdjust="spacing" x="5" font-size="14" textLength="79" y="455.7529" font-family="sans-serif" fill="#000000">Versicherte</text><ellipse cx="47.5" cy="467.5547" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M47.5,475.5547 L47.5,502.5547 M34.5,483.5547 L60.5,483.5547 M47.5,502.5547 L34.5,517.5547 M47.5,502.5547 L60.5,517.5547 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><rect rx="2.5" ry="2.5" width="109" x="248" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="255" font-size="14" textLength="95" y="107.292" font-family="sans-serif" fill="#000000">E-Rezept-FdV</text><rect rx="2.5" ry="2.5" width="109" x="248" y="442.7578" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="255" font-size="14" textLength="95" y="462.7529" font-family="sans-serif" fill="#000000">E-Rezept-FdV</text><rect rx="2.5" ry="2.5" width="159" x="522" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="529" font-size="14" textLength="145" y="107.292" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><rect rx="2.5" ry="2.5" width="159" x="522" y="442.7578" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="529" font-size="14" textLength="145" y="462.7529" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><rect rx="2.5" ry="2.5" width="124" x="747.5" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="754.5" font-size="14" textLength="110" y="107.292" font-family="sans-serif" fill="#000000">Identity Provider</text><rect rx="2.5" ry="2.5" width="124" x="747.5" y="442.7578" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="754.5" font-size="14" textLength="110" y="462.7529" font-family="sans-serif" fill="#000000">Identity Provider</text><rect rx="2.5" ry="2.5" width="93" x="881.5" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="888.5" font-size="14" textLength="79" y="107.292" font-family="sans-serif" fill="#000000">Versicherte</text><rect rx="2.5" ry="2.5" width="93" x="881.5" y="442.7578" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="888.5" font-size="14" textLength="79" y="462.7529" font-family="sans-serif" fill="#000000">Versicherte</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="290.5,145.7266,300.5,149.7266,290.5,153.7266,294.5,149.7266"></polygon><line y1="149.7266" x1="47.5" y2="149.7266" style="stroke:#181818;stroke-width:1.0;" x2="296.5"></line><text font-weight="bold" lengthAdjust="spacing" x="54.5" font-size="13" textLength="21" y="144.6606" font-family="sans-serif" fill="#000000">[1]</text><text lengthAdjust="spacing" x="79.5" font-size="13" textLength="128" y="144.6606" font-family="sans-serif" fill="#000000">E-Rezept auswählen</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="290.5,174.8594,300.5,178.8594,290.5,182.8594,294.5,178.8594"></polygon><line y1="178.8594" x1="47.5" y2="178.8594" style="stroke:#181818;stroke-width:1.0;" x2="296.5"></line><text font-weight="bold" lengthAdjust="spacing" x="54.5" font-size="13" textLength="21" y="173.7935" font-family="sans-serif" fill="#000000">[2]</text><text lengthAdjust="spacing" x="79.5" font-size="13" textLength="206" y="173.7935" font-family="sans-serif" fill="#000000">Markierung auswählen/abwählen</text><path d="M238,193.8594 L308,193.8594 L308,200.9922 L298,210.9922 L238,210.9922 L238,193.8594 " style="stroke:#000000;stroke-width:1.5;" fill="#EEEEEE"></path><rect width="643.5" x="238" y="193.8594" style="stroke:#000000;stroke-width:1.5;" fill="none" height="61.2344"></rect><text font-weight="bold" lengthAdjust="spacing" x="253" font-size="13" textLength="25" y="206.9263" font-family="sans-serif" fill="#000000">opt</text><text font-weight="bold" lengthAdjust="spacing" x="323" font-size="11" textLength="177" y="206.0698" font-family="sans-serif" fill="#000000">[kein gültiger AuthN-Token]</text><rect width="629.5" x="245" y="210.9922" style="stroke:#000000;stroke-width:1.5;" fill="none" height="39.1016"></rect><path d="M245,210.9922 L311,210.9922 L311,217.9922 L301,227.9922 L245,227.9922 L245,210.9922 " style="stroke:#000000;stroke-width:2.0;" fill="#EEEEEE"></path><text font-weight="bold" lengthAdjust="spacing" x="258" font-size="13" textLength="21" y="225.0591" font-family="sans-serif" fill="#000000">ref</text><text lengthAdjust="spacing" x="486.75" font-size="12" textLength="146" y="243.1309" font-family="sans-serif" fill="#000000">AuthN-Token anfordern</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="589.5,279.2266,599.5,283.2266,589.5,287.2266,593.5,283.2266"></polygon><line y1="283.2266" x1="302.5" y2="283.2266" style="stroke:#181818;stroke-width:1.0;" x2="595.5"></line><text font-weight="bold" lengthAdjust="spacing" x="309.5" font-size="13" textLength="21" y="278.1606" font-family="sans-serif" fill="#000000">[3]</text><text lengthAdjust="spacing" x="334.5" font-size="13" textLength="250" y="278.1606" font-family="sans-serif" fill="#000000">PATCH /Task/{Task-ID} {AuthN-Token}</text><line y1="312.3594" x1="601.5" y2="312.3594" style="stroke:#181818;stroke-width:1.0;" x2="643.5"></line><line y1="312.3594" x1="643.5" y2="325.3594" style="stroke:#181818;stroke-width:1.0;" x2="643.5"></line><line y1="325.3594" x1="602.5" y2="325.3594" style="stroke:#181818;stroke-width:1.0;" x2="643.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="612.5,321.3594,602.5,325.3594,612.5,329.3594,608.5,325.3594"></polygon><text font-weight="bold" lengthAdjust="spacing" x="608.5" font-size="13" textLength="21" y="307.2935" font-family="sans-serif" fill="#000000">[4]</text><text lengthAdjust="spacing" x="633.5" font-size="13" textLength="137" y="307.2935" font-family="sans-serif" fill="#000000">Markierung speichern</text><line y1="354.4922" x1="601.5" y2="354.4922" style="stroke:#181818;stroke-width:1.0;" x2="643.5"></line><line y1="354.4922" x1="643.5" y2="367.4922" style="stroke:#181818;stroke-width:1.0;" x2="643.5"></line><line y1="367.4922" x1="602.5" y2="367.4922" style="stroke:#181818;stroke-width:1.0;" x2="643.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="612.5,363.4922,602.5,367.4922,612.5,371.4922,608.5,367.4922"></polygon><text font-weight="bold" lengthAdjust="spacing" x="608.5" font-size="13" textLength="21" y="349.4263" font-family="sans-serif" fill="#000000">[5]</text><text lengthAdjust="spacing" x="633.5" font-size="13" textLength="169" y="349.4263" font-family="sans-serif" fill="#000000">Datenzugriff protokollieren</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="313.5,392.625,303.5,396.625,313.5,400.625,309.5,396.625"></polygon><line y1="396.625" x1="307.5" y2="396.625" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="600.5"></line><text font-weight="bold" lengthAdjust="spacing" x="319.5" font-size="13" textLength="21" y="391.5591" font-family="sans-serif" fill="#000000">[6]</text><text lengthAdjust="spacing" x="344.5" font-size="13" textLength="42" y="391.5591" font-family="sans-serif" fill="#000000">Status</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="916,421.7578,926,425.7578,916,429.7578,920,425.7578"></polygon><line y1="425.7578" x1="302.5" y2="425.7578" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="922"></line><text font-weight="bold" lengthAdjust="spacing" x="309.5" font-size="13" textLength="21" y="420.6919" font-family="sans-serif" fill="#000000">[7]</text><text lengthAdjust="spacing" x="334.5" font-size="13" textLength="104" y="420.6919" font-family="sans-serif" fill="#000000">Status anzeigen</text></g></svg>
+	</div>
+	<figcaption><strong>Abbildung: </strong>UC 3.19 - E-Rezept durch den Versicherten markieren</figcaption>
+</figure>
+
+<h3 id="use-cases-im-rahmen-der-belieferung-durch-eine-apotheke-im-europäischen-ausland">Use Cases im Rahmen der Belieferung durch eine Apotheke im europäischen Ausland</h3>
+
+  <!-- UC 4.19 - Demographische Daten eines Versicherten abrufen -->
+
+<p><a id="uc-4-19-demographische-daten-abrufen"></a></p>
+<h3 id="uc-419---demographische-daten-eines-versicherten-abrufen">UC 4.19 - Demographische Daten eines Versicherten abrufen</h3>
+
+<figure style="width: auto;">
+  <table style="width: auto; border: 1px solid #dcdcdc;">
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Beschreibung</th>
+      <td style="padding: 5px;"><p>Mit diesem Anwendungsfall werden die demographischen Daten zu einem Versicherten vom E-Rezept-Fachdienst abgerufen.</p>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Der Versicherte hat seine Einwilligung zum Einlösen im EU-Ausland erteilen (Anwendungsfall “Einwilligung durch Versicherten erteilen”).</li>
+  <li>Der Versicherte hat eine Zugriffsberechtigung für Land B erteilt (Anwendungsfall “Zugriffsberechtigung durch Versicherten erstellen”).</li>
+  <li>Der Versicherte hat mindestens ein E-Rezept zum Einlösen im EU-Ausland markiert.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Der Versicherte übermittelt die Informationen zur Zugriffsberechtigung an den LE-EU.</li>
+  <li>Der LE-EU informiert den Versicherten über die Datenschutzrechte. Der Versicherte willigt gegenüber dem LE-EU in die Verarbeitung der Daten ein.</li>
+  <li>Der LE-EU sendet einen Request über den eHDSI an das Land A (Deutschland).</li>
+  <li>Der NCPeH-FD prüft die Permission aus der Anfrage und falls nicht vorhanden die Rolle des anfragenden LE-EU.</li>
+  <li>Der NCPeH-FD sendet einen Request für die Liste einlösbarer E-Rezepte des Versicherten an den E-Rezept-Fachdienst.</li>
+  <li>Der E-Rezept-Fachdienst übermittelt das aktuellste einlösbaren E-Rezept an den NCPeH-FD.</li>
+  <li>Der NCPeH-FD extrahiert die notwendigen Informationen und erstellt den Response für den LE-EU.</li>
+</ul>
+</td>
+
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Der Status der einlösbaren E-Rezepte des Versicherten ist unverändert.</li>
+  <li>Die Abfrage ist im E-Rezept-Fachdienst protokolliert.</li>
+  <li>Der LE-EU stehen die demographischen Daten des Versicherten zur Verfügung.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Schnittstellen</th>
+      <td style="padding: 5px;"><ul>
+  <li><a href="./op-get-eu-prescriptions.html">Operation API: Interaktion NCPeH - Abrufen</a></li>
+</ul>
+</td>
+    </tr>
+    
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Relevante(r) Sektor(en)</th>
+      <td style="padding: 5px;">
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <span class="badge gem-ig-badge 
+gem-ig-badge-bg-red">
+              NCPEH
+            </span>
+          
+        
+      </td>
+    </tr>
+  </table>
+  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall UC 4.19 - Demographische Daten eines Versicherten abrufen</figcaption>
+</figure>
+
+<p><strong>Sequenzdiagramm:</strong></p>
+
+<figure>
+	<div style="--box-width: 600px; margin-bottom: 30px;" class="gem-ig-img-container">
+		  <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 1194 843" zoomAndPan="magnify" preserveAspectRatio="none" width="1194px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:1194px;height:843px;background:#FFFFFF;" version="1.1" height="843px"><defs></defs><g><text font-weight="bold" lengthAdjust="spacing" x="379.75" font-size="14" textLength="434" y="27.9951" font-family="sans-serif" fill="#000000">UC Demographische Daten eines Versicherten abrufen</text><line y1="118.5938" x1="47" y2="762.9141" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="47"></line><line y1="118.5938" x1="316.5" y2="762.9141" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="316.5"></line><line y1="118.5938" x1="653" y2="762.9141" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="653"></line><line y1="118.5938" x1="936" y2="762.9141" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="936"></line><text lengthAdjust="spacing" x="5" font-size="14" textLength="79" y="115.292" font-family="sans-serif" fill="#000000">Versicherte</text><ellipse cx="47.5" cy="50.7969" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M47.5,58.7969 L47.5,85.7969 M34.5,66.7969 L60.5,66.7969 M47.5,85.7969 L34.5,100.7969 M47.5,85.7969 L60.5,100.7969 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><text lengthAdjust="spacing" x="5" font-size="14" textLength="79" y="774.9092" font-family="sans-serif" fill="#000000">Versicherte</text><ellipse cx="47.5" cy="786.7109" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M47.5,794.7109 L47.5,821.7109 M34.5,802.7109 L60.5,802.7109 M47.5,821.7109 L34.5,836.7109 M47.5,821.7109 L60.5,836.7109 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><text lengthAdjust="spacing" x="293.5" font-size="14" textLength="40" y="115.292" font-family="sans-serif" fill="#000000">LE-EU</text><ellipse cx="316.5" cy="50.7969" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M316.5,58.7969 L316.5,85.7969 M303.5,66.7969 L329.5,66.7969 M316.5,85.7969 L303.5,100.7969 M316.5,85.7969 L329.5,100.7969 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><text lengthAdjust="spacing" x="293.5" font-size="14" textLength="40" y="774.9092" font-family="sans-serif" fill="#000000">LE-EU</text><ellipse cx="316.5" cy="786.7109" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M316.5,794.7109 L316.5,821.7109 M303.5,802.7109 L329.5,802.7109 M316.5,821.7109 L303.5,836.7109 M316.5,821.7109 L329.5,836.7109 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><rect rx="2.5" ry="2.5" width="141" x="583" y="71" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="46.5938"></rect><text lengthAdjust="spacing" x="590" font-size="14" textLength="127" y="90.9951" font-family="sans-serif" fill="#000000">eHDSI / NCPeH-FD</text><text lengthAdjust="spacing" x="609.5" font-size="14" textLength="88" y="107.292" font-family="sans-serif" fill="#000000">Deutschland</text><rect rx="2.5" ry="2.5" width="141" x="583" y="761.9141" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="46.5938"></rect><text lengthAdjust="spacing" x="590" font-size="14" textLength="127" y="781.9092" font-family="sans-serif" fill="#000000">eHDSI / NCPeH-FD</text><text lengthAdjust="spacing" x="609.5" font-size="14" textLength="88" y="798.2061" font-family="sans-serif" fill="#000000">Deutschland</text><rect rx="2.5" ry="2.5" width="159" x="857" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="864" font-size="14" textLength="145" y="107.292" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><rect rx="2.5" ry="2.5" width="159" x="857" y="761.9141" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="864" font-size="14" textLength="145" y="781.9092" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="304.5,145.7266,314.5,149.7266,304.5,153.7266,308.5,149.7266"></polygon><line y1="149.7266" x1="47.5" y2="149.7266" style="stroke:#181818;stroke-width:1.0;" x2="310.5"></line><text font-weight="bold" lengthAdjust="spacing" x="54.5" font-size="13" textLength="21" y="144.6606" font-family="sans-serif" fill="#000000">[1]</text><text lengthAdjust="spacing" x="79.5" font-size="13" textLength="220" y="144.6606" font-family="sans-serif" fill="#000000">Zugriffscode und KVNR übergeben</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="58.5,174.8594,48.5,178.8594,58.5,182.8594,54.5,178.8594"></polygon><line y1="178.8594" x1="52.5" y2="178.8594" style="stroke:#181818;stroke-width:1.0;" x2="315.5"></line><text font-weight="bold" lengthAdjust="spacing" x="64.5" font-size="13" textLength="21" y="173.7935" font-family="sans-serif" fill="#000000">[2]</text><text lengthAdjust="spacing" x="89.5" font-size="13" textLength="141" y="173.7935" font-family="sans-serif" fill="#000000">Datenschutzerklärung</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="641.5,203.9922,651.5,207.9922,641.5,211.9922,645.5,207.9922"></polygon><line y1="207.9922" x1="316.5" y2="207.9922" style="stroke:#181818;stroke-width:1.0;" x2="647.5"></line><text font-weight="bold" lengthAdjust="spacing" x="323.5" font-size="13" textLength="21" y="202.9263" font-family="sans-serif" fill="#000000">[3]</text><text lengthAdjust="spacing" x="348.5" font-size="13" textLength="288" y="202.9263" font-family="sans-serif" fill="#000000">Abfrage demographischer Versichertendaten</text><line y1="237.125" x1="653.5" y2="237.125" style="stroke:#181818;stroke-width:1.0;" x2="695.5"></line><line y1="237.125" x1="695.5" y2="250.125" style="stroke:#181818;stroke-width:1.0;" x2="695.5"></line><line y1="250.125" x1="654.5" y2="250.125" style="stroke:#181818;stroke-width:1.0;" x2="695.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="664.5,246.125,654.5,250.125,664.5,254.125,660.5,250.125"></polygon><text font-weight="bold" lengthAdjust="spacing" x="660.5" font-size="13" textLength="21" y="232.0591" font-family="sans-serif" fill="#000000">[4]</text><text lengthAdjust="spacing" x="685.5" font-size="13" textLength="189" y="232.0591" font-family="sans-serif" fill="#000000">Prüfung Permission bzw. Rolle</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="924.5,350.9219,934.5,354.9219,924.5,358.9219,928.5,354.9219"></polygon><line y1="354.9219" x1="653.5" y2="354.9219" style="stroke:#181818;stroke-width:1.0;" x2="930.5"></line><text font-weight="bold" lengthAdjust="spacing" x="660.5" font-size="13" textLength="21" y="312.0239" font-family="sans-serif" fill="#000000">[5]</text><text lengthAdjust="spacing" x="685.5" font-size="13" textLength="179" y="274.1919" font-family="sans-serif" fill="#000000">POST /$get-eu-prescriptions</text><text lengthAdjust="spacing" x="685.5" font-size="13" textLength="226" y="289.3247" font-family="sans-serif" fill="#000000">{AuthN-Token, KVNR, Zugriffscode,</text><text lengthAdjust="spacing" x="685.5" font-size="13" textLength="203" y="304.4575" font-family="sans-serif" fill="#000000">laendercode, practitionerName,</text><text lengthAdjust="spacing" x="685.5" font-size="13" textLength="188" y="319.5903" font-family="sans-serif" fill="#000000">practitionerRole, pointOfCare,</text><text lengthAdjust="spacing" x="685.5" font-size="13" textLength="150" y="334.7231" font-family="sans-serif" fill="#000000">healthcare-facility-type,</text><text lengthAdjust="spacing" x="685.5" font-size="13" textLength="129" y="349.856" font-family="sans-serif" fill="#000000">latest, requesttype}</text><line y1="384.0547" x1="936.5" y2="384.0547" style="stroke:#181818;stroke-width:1.0;" x2="978.5"></line><line y1="384.0547" x1="978.5" y2="397.0547" style="stroke:#181818;stroke-width:1.0;" x2="978.5"></line><line y1="397.0547" x1="937.5" y2="397.0547" style="stroke:#181818;stroke-width:1.0;" x2="978.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="947.5,393.0547,937.5,397.0547,947.5,401.0547,943.5,397.0547"></polygon><text font-weight="bold" lengthAdjust="spacing" x="943.5" font-size="13" textLength="21" y="378.9888" font-family="sans-serif" fill="#000000">[6]</text><text lengthAdjust="spacing" x="968.5" font-size="13" textLength="185" y="378.9888" font-family="sans-serif" fill="#000000">Prüfung Einwilligung für KVNR</text><line y1="456.4531" x1="936.5" y2="456.4531" style="stroke:#181818;stroke-width:1.0;" x2="978.5"></line><line y1="456.4531" x1="978.5" y2="469.4531" style="stroke:#181818;stroke-width:1.0;" x2="978.5"></line><line y1="469.4531" x1="937.5" y2="469.4531" style="stroke:#181818;stroke-width:1.0;" x2="978.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="947.5,465.4531,937.5,469.4531,947.5,473.4531,943.5,469.4531"></polygon><text font-weight="bold" lengthAdjust="spacing" x="943.5" font-size="13" textLength="21" y="436.2544" font-family="sans-serif" fill="#000000">[7]</text><text lengthAdjust="spacing" x="968.5" font-size="13" textLength="193" y="421.1216" font-family="sans-serif" fill="#000000">Prüfung Zugriffscode für KVNR</text><text lengthAdjust="spacing" x="968.5" font-size="13" textLength="219" y="436.2544" font-family="sans-serif" fill="#000000">(KVNR, Zugriffscode, laendercode,</text><text lengthAdjust="spacing" x="968.5" font-size="13" textLength="126" y="451.3872" font-family="sans-serif" fill="#000000">aktueller Zeitpunkt)</text><line y1="513.7188" x1="936.5" y2="513.7188" style="stroke:#181818;stroke-width:1.0;" x2="978.5"></line><line y1="513.7188" x1="978.5" y2="526.7188" style="stroke:#181818;stroke-width:1.0;" x2="978.5"></line><line y1="526.7188" x1="937.5" y2="526.7188" style="stroke:#181818;stroke-width:1.0;" x2="978.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="947.5,522.7188,937.5,526.7188,947.5,530.7188,943.5,526.7188"></polygon><text font-weight="bold" lengthAdjust="spacing" x="943.5" font-size="13" textLength="21" y="501.0864" font-family="sans-serif" fill="#000000">[8]</text><text lengthAdjust="spacing" x="968.5" font-size="13" textLength="181" y="493.52" font-family="sans-serif" fill="#000000">aktuellsten einlösbaren Task</text><text lengthAdjust="spacing" x="968.5" font-size="13" textLength="133" y="508.6528" font-family="sans-serif" fill="#000000">für KVNR bestimmen</text><line y1="616.3828" x1="936.5" y2="616.3828" style="stroke:#181818;stroke-width:1.0;" x2="978.5"></line><line y1="616.3828" x1="978.5" y2="629.3828" style="stroke:#181818;stroke-width:1.0;" x2="978.5"></line><line y1="629.3828" x1="937.5" y2="629.3828" style="stroke:#181818;stroke-width:1.0;" x2="978.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="947.5,625.3828,937.5,629.3828,947.5,633.3828,943.5,629.3828"></polygon><text font-weight="bold" lengthAdjust="spacing" x="943.5" font-size="13" textLength="21" y="581.0513" font-family="sans-serif" fill="#000000">[9]</text><text lengthAdjust="spacing" x="968.5" font-size="13" textLength="133" y="550.7856" font-family="sans-serif" fill="#000000">Zugriff protokollieren</text><text lengthAdjust="spacing" x="968.5" font-size="13" textLength="164" y="565.9185" font-family="sans-serif" fill="#000000">(KVNR, practitionerName,</text><text lengthAdjust="spacing" x="968.5" font-size="13" textLength="188" y="581.0513" font-family="sans-serif" fill="#000000">practitionerRole, pointOfCare,</text><text lengthAdjust="spacing" x="968.5" font-size="13" textLength="150" y="596.1841" font-family="sans-serif" fill="#000000">healthcare-facility-type,</text><text lengthAdjust="spacing" x="968.5" font-size="13" textLength="82" y="611.3169" font-family="sans-serif" fill="#000000">requesttype)</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="664.5,669.6484,654.5,673.6484,664.5,677.6484,660.5,673.6484"></polygon><line y1="673.6484" x1="658.5" y2="673.6484" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="935.5"></line><text font-weight="bold" lengthAdjust="spacing" x="670.5" font-size="13" textLength="30" y="661.0161" font-family="sans-serif" fill="#000000">[10]</text><text lengthAdjust="spacing" x="704.5" font-size="13" textLength="166" y="653.4497" font-family="sans-serif" fill="#000000">Bundle von Verordnungen</text><text lengthAdjust="spacing" x="704.5" font-size="13" textLength="152" y="668.5825" font-family="sans-serif" fill="#000000">(max. eine Verordnung)</text><line y1="702.7813" x1="653.5" y2="702.7813" style="stroke:#181818;stroke-width:1.0;" x2="695.5"></line><line y1="702.7813" x1="695.5" y2="715.7813" style="stroke:#181818;stroke-width:1.0;" x2="695.5"></line><line y1="715.7813" x1="654.5" y2="715.7813" style="stroke:#181818;stroke-width:1.0;" x2="695.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="664.5,711.7813,654.5,715.7813,664.5,719.7813,660.5,715.7813"></polygon><text font-weight="bold" lengthAdjust="spacing" x="660.5" font-size="13" textLength="30" y="697.7153" font-family="sans-serif" fill="#000000">[11]</text><text lengthAdjust="spacing" x="694.5" font-size="13" textLength="235" y="697.7153" font-family="sans-serif" fill="#000000">Transformierung und Transkodierung</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="327.5,740.9141,317.5,744.9141,327.5,748.9141,323.5,744.9141"></polygon><line y1="744.9141" x1="321.5" y2="744.9141" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="652.5"></line><text font-weight="bold" lengthAdjust="spacing" x="333.5" font-size="13" textLength="30" y="739.8481" font-family="sans-serif" fill="#000000">[12]</text><text lengthAdjust="spacing" x="367.5" font-size="13" textLength="150" y="739.8481" font-family="sans-serif" fill="#000000">demographische Daten</text></g></svg>
+	</div>
+	<figcaption><strong>Abbildung: </strong>UC 4.19 - Demographische Daten eines Versicherten abrufen</figcaption>
+</figure>
+
+  <!-- UC 4.20 - Liste der einlösbaren E-Rezepte eines Versicherten abrufen -->
+
+<p><a id="uc-4-20-liste-einloesbare-abrufen"></a></p>
+<h3 id="uc-420---liste-der-einlösbaren-e-rezepte-eines-versicherten-abrufen">UC 4.20 - Liste der einlösbaren E-Rezepte eines Versicherten abrufen</h3>
+
+<figure style="width: auto;">
+  <table style="width: auto; border: 1px solid #dcdcdc;">
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Beschreibung</th>
+      <td style="padding: 5px;"><p>Mit diesem Anwendungsfall werden die im europäischen Ausland einlösbaren E-Rezepte zu einem Versicherten vom E-Rezept-Fachdienst abgerufen.</p>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Der Versicherte hat eine Zugriffsberechtigung für Land B erteilt.</li>
+  <li>Der Versicherte hat die Informationen zur Zugriffsberechtigung an den LE-EU übermittelt. (Anwendungsfall “Demographische Daten eines Versicherten abrufen”)</li>
+  <li>Der Versicherte hat mindestens ein E-Rezept zum Einlösen im EU-Ausland markiert.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Der LE-EU sendet einen Request über den eHDSI an das Land A (Deutschland).</li>
+  <li>Der NCPeH-FD prüft das Vorliegen einer Behandlungsbeziehung zwischen LE-EU und Versicherten.</li>
+  <li>Der NCPeH-FD prüft die Permission aus der Anfrage und falls nicht vorhanden die Rolle des anfragenden LE-EU.</li>
+  <li>Der NCPeH-FD sendet einen Request für die Liste einlösbarer E-Rezepte des Versicherten an den E-Rezept-Fachdienst.</li>
+  <li>Der E-Rezept-Fachdienst übermittelt die Liste der einlösbaren E-Rezepte an den NCPeH-FD.</li>
+  <li>Der NCPeH-FD extrahiert die notwendigen Informationen, transkodiert die Informationen und erstellt den Response für den LE-EU.</li>
+</ul>
+</td>
+
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Der Status der einlösbaren E-Rezepte des Versicherten ist unverändert.</li>
+  <li>Die Abfrage ist im E-Rezept-Fachdienst protokolliert.</li>
+  <li>Der LE-EU stehen die Liste der einlösbaren E-Rezepte des Versicherten zur Verfügung.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Schnittstellen</th>
+      <td style="padding: 5px;"><ul>
+  <li><a href="./op-get-eu-prescriptions.html">Operation API: Interaktion NCPeH - Abrufen</a></li>
+</ul>
+</td>
+    </tr>
+    
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Relevante(r) Sektor(en)</th>
+      <td style="padding: 5px;">
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <span class="badge gem-ig-badge 
+gem-ig-badge-bg-red">
+              NCPEH
+            </span>
+          
+        
+      </td>
+    </tr>
+  </table>
+  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall UC 4.20 - Liste der einlösbaren E-Rezepte eines Versicherten abrufen</figcaption>
+</figure>
+
+<p><strong>Sequenzdiagramm:</strong></p>
+
+<figure>
+	<div style="--box-width: 600px; margin-bottom: 30px;" class="gem-ig-img-container">
+		  <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 836 812" zoomAndPan="magnify" preserveAspectRatio="none" width="836px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:836px;height:812px;background:#FFFFFF;" version="1.1" height="812px"><defs></defs><g><text font-weight="bold" lengthAdjust="spacing" x="166" font-size="14" textLength="503" y="27.9951" font-family="sans-serif" fill="#000000">UC Liste der einlösbaren E-Rezepte eines Versicherten abrufen</text><line y1="118.5938" x1="28" y2="731.6484" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="28"></line><line y1="118.5938" x1="270.5" y2="731.6484" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="270.5"></line><line y1="118.5938" x1="553.5" y2="731.6484" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="553.5"></line><text lengthAdjust="spacing" x="5" font-size="14" textLength="40" y="115.292" font-family="sans-serif" fill="#000000">LE-EU</text><ellipse cx="28" cy="50.7969" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M28,58.7969 L28,85.7969 M15,66.7969 L41,66.7969 M28,85.7969 L15,100.7969 M28,85.7969 L41,100.7969 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><text lengthAdjust="spacing" x="5" font-size="14" textLength="40" y="743.6436" font-family="sans-serif" fill="#000000">LE-EU</text><ellipse cx="28" cy="755.4453" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M28,763.4453 L28,790.4453 M15,771.4453 L41,771.4453 M28,790.4453 L15,805.4453 M28,790.4453 L41,805.4453 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><rect rx="2.5" ry="2.5" width="141" x="200.5" y="71" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="46.5938"></rect><text lengthAdjust="spacing" x="207.5" font-size="14" textLength="127" y="90.9951" font-family="sans-serif" fill="#000000">eHDSI / NCPeH-FD</text><text lengthAdjust="spacing" x="227" font-size="14" textLength="88" y="107.292" font-family="sans-serif" fill="#000000">Deutschland</text><rect rx="2.5" ry="2.5" width="141" x="200.5" y="730.6484" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="46.5938"></rect><text lengthAdjust="spacing" x="207.5" font-size="14" textLength="127" y="750.6436" font-family="sans-serif" fill="#000000">eHDSI / NCPeH-FD</text><text lengthAdjust="spacing" x="227" font-size="14" textLength="88" y="766.9404" font-family="sans-serif" fill="#000000">Deutschland</text><rect rx="2.5" ry="2.5" width="159" x="474.5" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="481.5" font-size="14" textLength="145" y="107.292" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><rect rx="2.5" ry="2.5" width="159" x="474.5" y="730.6484" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="481.5" font-size="14" textLength="145" y="750.6436" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="259,145.7266,269,149.7266,259,153.7266,263,149.7266"></polygon><line y1="149.7266" x1="28" y2="149.7266" style="stroke:#181818;stroke-width:1.0;" x2="265"></line><text font-weight="bold" lengthAdjust="spacing" x="35" font-size="13" textLength="21" y="144.6606" font-family="sans-serif" fill="#000000">[1]</text><text lengthAdjust="spacing" x="60" font-size="13" textLength="194" y="144.6606" font-family="sans-serif" fill="#000000">Abfrage einlösbarer E-Rezepte</text><line y1="193.9922" x1="271" y2="193.9922" style="stroke:#181818;stroke-width:1.0;" x2="313"></line><line y1="193.9922" x1="313" y2="206.9922" style="stroke:#181818;stroke-width:1.0;" x2="313"></line><line y1="206.9922" x1="272" y2="206.9922" style="stroke:#181818;stroke-width:1.0;" x2="313"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="282,202.9922,272,206.9922,282,210.9922,278,206.9922"></polygon><text font-weight="bold" lengthAdjust="spacing" x="278" font-size="13" textLength="21" y="181.3599" font-family="sans-serif" fill="#000000">[2]</text><text lengthAdjust="spacing" x="303" font-size="13" textLength="198" y="173.7935" font-family="sans-serif" fill="#000000">Prüfung Behandlungsverhältnis</text><text lengthAdjust="spacing" x="303" font-size="13" textLength="148" y="188.9263" font-family="sans-serif" fill="#000000">LE-EU und Versicherter</text><line y1="236.125" x1="271" y2="236.125" style="stroke:#181818;stroke-width:1.0;" x2="313"></line><line y1="236.125" x1="313" y2="249.125" style="stroke:#181818;stroke-width:1.0;" x2="313"></line><line y1="249.125" x1="272" y2="249.125" style="stroke:#181818;stroke-width:1.0;" x2="313"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="282,245.125,272,249.125,282,253.125,278,249.125"></polygon><text font-weight="bold" lengthAdjust="spacing" x="278" font-size="13" textLength="21" y="231.0591" font-family="sans-serif" fill="#000000">[3]</text><text lengthAdjust="spacing" x="303" font-size="13" textLength="189" y="231.0591" font-family="sans-serif" fill="#000000">Prüfung Permission bzw. Rolle</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="542,349.9219,552,353.9219,542,357.9219,546,353.9219"></polygon><line y1="353.9219" x1="271" y2="353.9219" style="stroke:#181818;stroke-width:1.0;" x2="548"></line><text font-weight="bold" lengthAdjust="spacing" x="278" font-size="13" textLength="21" y="311.0239" font-family="sans-serif" fill="#000000">[4]</text><text lengthAdjust="spacing" x="303" font-size="13" textLength="179" y="273.1919" font-family="sans-serif" fill="#000000">POST /$get-eu-prescriptions</text><text lengthAdjust="spacing" x="303" font-size="13" textLength="226" y="288.3247" font-family="sans-serif" fill="#000000">{AuthN-Token, KVNR, Zugriffscode,</text><text lengthAdjust="spacing" x="303" font-size="13" textLength="203" y="303.4575" font-family="sans-serif" fill="#000000">laendercode, practitionerName,</text><text lengthAdjust="spacing" x="303" font-size="13" textLength="188" y="318.5903" font-family="sans-serif" fill="#000000">practitionerRole, pointOfCare,</text><text lengthAdjust="spacing" x="303" font-size="13" textLength="150" y="333.7231" font-family="sans-serif" fill="#000000">healthcare-facility-type,</text><text lengthAdjust="spacing" x="303" font-size="13" textLength="85" y="348.856" font-family="sans-serif" fill="#000000">requesttype}</text><line y1="383.0547" x1="554" y2="383.0547" style="stroke:#181818;stroke-width:1.0;" x2="596"></line><line y1="383.0547" x1="596" y2="396.0547" style="stroke:#181818;stroke-width:1.0;" x2="596"></line><line y1="396.0547" x1="555" y2="396.0547" style="stroke:#181818;stroke-width:1.0;" x2="596"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="565,392.0547,555,396.0547,565,400.0547,561,396.0547"></polygon><text font-weight="bold" lengthAdjust="spacing" x="561" font-size="13" textLength="21" y="377.9888" font-family="sans-serif" fill="#000000">[5]</text><text lengthAdjust="spacing" x="586" font-size="13" textLength="177" y="377.9888" font-family="sans-serif" fill="#000000">Einwilligung für KVNR prüfen</text><line y1="455.4531" x1="554" y2="455.4531" style="stroke:#181818;stroke-width:1.0;" x2="596"></line><line y1="455.4531" x1="596" y2="468.4531" style="stroke:#181818;stroke-width:1.0;" x2="596"></line><line y1="468.4531" x1="555" y2="468.4531" style="stroke:#181818;stroke-width:1.0;" x2="596"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="565,464.4531,555,468.4531,565,472.4531,561,468.4531"></polygon><text font-weight="bold" lengthAdjust="spacing" x="561" font-size="13" textLength="21" y="435.2544" font-family="sans-serif" fill="#000000">[6]</text><text lengthAdjust="spacing" x="586" font-size="13" textLength="193" y="420.1216" font-family="sans-serif" fill="#000000">Prüfung Zugriffscode für KVNR</text><text lengthAdjust="spacing" x="586" font-size="13" textLength="219" y="435.2544" font-family="sans-serif" fill="#000000">(KVNR, Zugriffscode, laendercode,</text><text lengthAdjust="spacing" x="586" font-size="13" textLength="126" y="450.3872" font-family="sans-serif" fill="#000000">aktueller Zeitpunkt)</text><line y1="497.5859" x1="554" y2="497.5859" style="stroke:#181818;stroke-width:1.0;" x2="596"></line><line y1="497.5859" x1="596" y2="510.5859" style="stroke:#181818;stroke-width:1.0;" x2="596"></line><line y1="510.5859" x1="555" y2="510.5859" style="stroke:#181818;stroke-width:1.0;" x2="596"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="565,506.5859,555,510.5859,565,514.5859,561,510.5859"></polygon><text font-weight="bold" lengthAdjust="spacing" x="561" font-size="13" textLength="21" y="492.52" font-family="sans-serif" fill="#000000">[7]</text><text lengthAdjust="spacing" x="586" font-size="13" textLength="243" y="492.52" font-family="sans-serif" fill="#000000">Einlösbare Tasks für KVNR bestimmen</text><line y1="600.25" x1="554" y2="600.25" style="stroke:#181818;stroke-width:1.0;" x2="596"></line><line y1="600.25" x1="596" y2="613.25" style="stroke:#181818;stroke-width:1.0;" x2="596"></line><line y1="613.25" x1="555" y2="613.25" style="stroke:#181818;stroke-width:1.0;" x2="596"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="565,609.25,555,613.25,565,617.25,561,613.25"></polygon><text font-weight="bold" lengthAdjust="spacing" x="561" font-size="13" textLength="21" y="564.9185" font-family="sans-serif" fill="#000000">[8]</text><text lengthAdjust="spacing" x="586" font-size="13" textLength="133" y="534.6528" font-family="sans-serif" fill="#000000">Zugriff protokollieren</text><text lengthAdjust="spacing" x="586" font-size="13" textLength="164" y="549.7856" font-family="sans-serif" fill="#000000">(KVNR, practitionerName,</text><text lengthAdjust="spacing" x="586" font-size="13" textLength="188" y="564.9185" font-family="sans-serif" fill="#000000">practitionerRole, pointOfCare,</text><text lengthAdjust="spacing" x="586" font-size="13" textLength="150" y="580.0513" font-family="sans-serif" fill="#000000">healthcare-facility-type,</text><text lengthAdjust="spacing" x="586" font-size="13" textLength="82" y="595.1841" font-family="sans-serif" fill="#000000">requesttype)</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="282,638.3828,272,642.3828,282,646.3828,278,642.3828"></polygon><line y1="642.3828" x1="276" y2="642.3828" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="553"></line><text font-weight="bold" lengthAdjust="spacing" x="288" font-size="13" textLength="21" y="637.3169" font-family="sans-serif" fill="#000000">[9]</text><text lengthAdjust="spacing" x="313" font-size="13" textLength="166" y="637.3169" font-family="sans-serif" fill="#000000">Bundle von Verordnungen</text><line y1="671.5156" x1="271" y2="671.5156" style="stroke:#181818;stroke-width:1.0;" x2="313"></line><line y1="671.5156" x1="313" y2="684.5156" style="stroke:#181818;stroke-width:1.0;" x2="313"></line><line y1="684.5156" x1="272" y2="684.5156" style="stroke:#181818;stroke-width:1.0;" x2="313"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="282,680.5156,272,684.5156,282,688.5156,278,684.5156"></polygon><text font-weight="bold" lengthAdjust="spacing" x="278" font-size="13" textLength="30" y="666.4497" font-family="sans-serif" fill="#000000">[10]</text><text lengthAdjust="spacing" x="312" font-size="13" textLength="235" y="666.4497" font-family="sans-serif" fill="#000000">Transformierung und Transkodierung</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="39,709.6484,29,713.6484,39,717.6484,35,713.6484"></polygon><line y1="713.6484" x1="33" y2="713.6484" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="270"></line><text font-weight="bold" lengthAdjust="spacing" x="45" font-size="13" textLength="30" y="708.5825" font-family="sans-serif" fill="#000000">[11]</text><text lengthAdjust="spacing" x="79" font-size="13" textLength="151" y="708.5825" font-family="sans-serif" fill="#000000">Liste von ePrescriptions</text></g></svg>
+	</div>
+	<figcaption><strong>Abbildung: </strong>UC 4.20 - Liste der einlösbaren E-Rezepte eines Versicherten abrufen</figcaption>
+</figure>
+
+  <!-- UC 4.21 - Liste ausgewählter E-Rezepte eines Versicherten abrufen -->
+
+<p><a id="uc-4-21-liste-ausgewaehlte-abrufen"></a></p>
+<h3 id="uc-421---liste-ausgewählter-e-rezepte-eines-versicherten-abrufen">UC 4.21 - Liste ausgewählter E-Rezepte eines Versicherten abrufen</h3>
+
+<figure style="width: auto;">
+  <table style="width: auto; border: 1px solid #dcdcdc;">
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Beschreibung</th>
+      <td style="padding: 5px;"><p>Mit diesem Anwendungsfall werden die zum Einlösen vorgesehenen E-Rezepte zu einem Versicherten vom E-Rezept-Fachdienst abgerufen.</p>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Der Versicherte hat eine Zugriffsberechtigung für Land B erteilt.</li>
+  <li>Der Versicherte hat die Informationen zur Zugriffsberechtigung an den LE-EU übermittelt. (Anwendungsfall “Demographische Daten eines Versicherten abrufen”)</li>
+  <li>Der LE-EU hat die Liste der einlösbaren E-Rezepte für den Versicherten abgerufen.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Der LE-EU sendet einen Request mit einer Liste von Rezept-ID, über den eHDSI an das Land A (Deutschland).</li>
+  <li>Der NCPeH-FD prüft das Vorliegen einer Behandlungsbeziehung zwischen LE-EU und Versicherten.</li>
+  <li>Der NCPeH-FD prüft die Permission aus der Anfrage und falls nicht vorhanden die Rolle des anfragenden LE-EU.</li>
+  <li>Der NCPeH-FD sendet einen Request mit der Liste von Rezept-IDs des Versicherten an den E-Rezept-Fachdienst.</li>
+  <li>Der E-Rezept-Fachdienst ändert den Status der abgefragten E-Rezepte, falls der Status “ready” ist, in “in-progress”.</li>
+  <li>Der E-Rezept-Fachdienst übermittelt die Liste der E-Rezepte an den NCPeH-FD.</li>
+  <li>Der NCPeH-FD transformiert und transkodiert die E-Rezepte in das entsprechende eHDSI-Dokumentenformat und erstellt den Response für den LE-EU.</li>
+</ul>
+</td>
+
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Der Status der einlösbaren E-Rezepte des Versicherten ist “in-progress”.</li>
+  <li>Die Abfrage ist im E-Rezept-Fachdienst protokolliert.</li>
+  <li>Der LE-EU stehen die Liste der E-Rezepte des Versicherten zur Verfügung.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Schnittstellen</th>
+      <td style="padding: 5px;"><ul>
+  <li><a href="./op-get-eu-prescriptions.html">Operation API: Interaktion NCPeH - Abrufen</a></li>
+</ul>
+</td>
+    </tr>
+    
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Relevante(r) Sektor(en)</th>
+      <td style="padding: 5px;">
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <span class="badge gem-ig-badge 
+gem-ig-badge-bg-red">
+              NCPEH
+            </span>
+          
+        
+      </td>
+    </tr>
+  </table>
+  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall UC 4.21 - Liste ausgewählter E-Rezepte eines Versicherten abrufen</figcaption>
+</figure>
+
+<p><strong>Sequenzdiagramm:</strong></p>
+
+<figure>
+	<div style="--box-width: 600px; margin-bottom: 30px;" class="gem-ig-img-container">
+		  <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 1256 967" zoomAndPan="magnify" preserveAspectRatio="none" width="1256px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:1256px;height:967px;background:#FFFFFF;" version="1.1" height="967px"><defs></defs><g><text font-weight="bold" lengthAdjust="spacing" x="384.75" font-size="14" textLength="486" y="27.9951" font-family="sans-serif" fill="#000000">UC Liste ausgewählter E-Rezepte eines Versicherten abrufen</text><line y1="118.5938" x1="47" y2="887.1797" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="47"></line><line y1="118.5938" x1="370.5" y2="887.1797" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="370.5"></line><line y1="118.5938" x1="661" y2="887.1797" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="661"></line><line y1="118.5938" x1="944" y2="887.1797" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="944"></line><text lengthAdjust="spacing" x="5" font-size="14" textLength="79" y="115.292" font-family="sans-serif" fill="#000000">Versicherte</text><ellipse cx="47.5" cy="50.7969" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M47.5,58.7969 L47.5,85.7969 M34.5,66.7969 L60.5,66.7969 M47.5,85.7969 L34.5,100.7969 M47.5,85.7969 L60.5,100.7969 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><text lengthAdjust="spacing" x="5" font-size="14" textLength="79" y="899.1748" font-family="sans-serif" fill="#000000">Versicherte</text><ellipse cx="47.5" cy="910.9766" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M47.5,918.9766 L47.5,945.9766 M34.5,926.9766 L60.5,926.9766 M47.5,945.9766 L34.5,960.9766 M47.5,945.9766 L60.5,960.9766 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><text lengthAdjust="spacing" x="347.5" font-size="14" textLength="40" y="115.292" font-family="sans-serif" fill="#000000">LE-EU</text><ellipse cx="370.5" cy="50.7969" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M370.5,58.7969 L370.5,85.7969 M357.5,66.7969 L383.5,66.7969 M370.5,85.7969 L357.5,100.7969 M370.5,85.7969 L383.5,100.7969 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><text lengthAdjust="spacing" x="347.5" font-size="14" textLength="40" y="899.1748" font-family="sans-serif" fill="#000000">LE-EU</text><ellipse cx="370.5" cy="910.9766" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M370.5,918.9766 L370.5,945.9766 M357.5,926.9766 L383.5,926.9766 M370.5,945.9766 L357.5,960.9766 M370.5,945.9766 L383.5,960.9766 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><rect rx="2.5" ry="2.5" width="141" x="591" y="71" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="46.5938"></rect><text lengthAdjust="spacing" x="598" font-size="14" textLength="127" y="90.9951" font-family="sans-serif" fill="#000000">eHDSI / NCPeH-FD</text><text lengthAdjust="spacing" x="617.5" font-size="14" textLength="88" y="107.292" font-family="sans-serif" fill="#000000">Deutschland</text><rect rx="2.5" ry="2.5" width="141" x="591" y="886.1797" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="46.5938"></rect><text lengthAdjust="spacing" x="598" font-size="14" textLength="127" y="906.1748" font-family="sans-serif" fill="#000000">eHDSI / NCPeH-FD</text><text lengthAdjust="spacing" x="617.5" font-size="14" textLength="88" y="922.4717" font-family="sans-serif" fill="#000000">Deutschland</text><rect rx="2.5" ry="2.5" width="159" x="865" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="872" font-size="14" textLength="145" y="107.292" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><rect rx="2.5" ry="2.5" width="159" x="865" y="886.1797" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="872" font-size="14" textLength="145" y="906.1748" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="358.5,145.7266,368.5,149.7266,358.5,153.7266,362.5,149.7266"></polygon><line y1="149.7266" x1="47.5" y2="149.7266" style="stroke:#181818;stroke-width:1.0;" x2="364.5"></line><text font-weight="bold" lengthAdjust="spacing" x="54.5" font-size="13" textLength="21" y="144.6606" font-family="sans-serif" fill="#000000">[1]</text><text lengthAdjust="spacing" x="79.5" font-size="13" textLength="274" y="144.6606" font-family="sans-serif" fill="#000000">Abstimmung zu einzulösenden E-Rezepten</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="649.5,174.8594,659.5,178.8594,649.5,182.8594,653.5,178.8594"></polygon><line y1="178.8594" x1="370.5" y2="178.8594" style="stroke:#181818;stroke-width:1.0;" x2="655.5"></line><text font-weight="bold" lengthAdjust="spacing" x="377.5" font-size="13" textLength="21" y="173.7935" font-family="sans-serif" fill="#000000">[2]</text><text lengthAdjust="spacing" x="402.5" font-size="13" textLength="242" y="173.7935" font-family="sans-serif" fill="#000000">Abfrage Liste ausgewählter E-Rezepte</text><line y1="223.125" x1="661.5" y2="223.125" style="stroke:#181818;stroke-width:1.0;" x2="703.5"></line><line y1="223.125" x1="703.5" y2="236.125" style="stroke:#181818;stroke-width:1.0;" x2="703.5"></line><line y1="236.125" x1="662.5" y2="236.125" style="stroke:#181818;stroke-width:1.0;" x2="703.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="672.5,232.125,662.5,236.125,672.5,240.125,668.5,236.125"></polygon><text font-weight="bold" lengthAdjust="spacing" x="668.5" font-size="13" textLength="21" y="210.4927" font-family="sans-serif" fill="#000000">[3]</text><text lengthAdjust="spacing" x="693.5" font-size="13" textLength="198" y="202.9263" font-family="sans-serif" fill="#000000">Prüfung Behandlungsverhältnis</text><text lengthAdjust="spacing" x="693.5" font-size="13" textLength="148" y="218.0591" font-family="sans-serif" fill="#000000">LE-EU und Versicherter</text><line y1="265.2578" x1="661.5" y2="265.2578" style="stroke:#181818;stroke-width:1.0;" x2="703.5"></line><line y1="265.2578" x1="703.5" y2="278.2578" style="stroke:#181818;stroke-width:1.0;" x2="703.5"></line><line y1="278.2578" x1="662.5" y2="278.2578" style="stroke:#181818;stroke-width:1.0;" x2="703.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="672.5,274.2578,662.5,278.2578,672.5,282.2578,668.5,278.2578"></polygon><text font-weight="bold" lengthAdjust="spacing" x="668.5" font-size="13" textLength="21" y="260.1919" font-family="sans-serif" fill="#000000">[4]</text><text lengthAdjust="spacing" x="693.5" font-size="13" textLength="189" y="260.1919" font-family="sans-serif" fill="#000000">Prüfung Permission bzw. Rolle</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="932.5,379.0547,942.5,383.0547,932.5,387.0547,936.5,383.0547"></polygon><line y1="383.0547" x1="661.5" y2="383.0547" style="stroke:#181818;stroke-width:1.0;" x2="938.5"></line><text font-weight="bold" lengthAdjust="spacing" x="668.5" font-size="13" textLength="21" y="340.1567" font-family="sans-serif" fill="#000000">[5]</text><text lengthAdjust="spacing" x="693.5" font-size="13" textLength="179" y="302.3247" font-family="sans-serif" fill="#000000">POST /$get-eu-prescriptions</text><text lengthAdjust="spacing" x="693.5" font-size="13" textLength="226" y="317.4575" font-family="sans-serif" fill="#000000">{AuthN-Token, KVNR, Zugriffscode,</text><text lengthAdjust="spacing" x="693.5" font-size="13" textLength="206" y="332.5903" font-family="sans-serif" fill="#000000">Liste von Task-IDs, laendercode,</text><text lengthAdjust="spacing" x="693.5" font-size="13" textLength="224" y="347.7231" font-family="sans-serif" fill="#000000">practitionerName, practitionerRole,</text><text lengthAdjust="spacing" x="693.5" font-size="13" textLength="234" y="362.856" font-family="sans-serif" fill="#000000">pointOfCare, healthcare-facility-type,</text><text lengthAdjust="spacing" x="693.5" font-size="13" textLength="85" y="377.9888" font-family="sans-serif" fill="#000000">requesttype}</text><line y1="412.1875" x1="944.5" y2="412.1875" style="stroke:#181818;stroke-width:1.0;" x2="986.5"></line><line y1="412.1875" x1="986.5" y2="425.1875" style="stroke:#181818;stroke-width:1.0;" x2="986.5"></line><line y1="425.1875" x1="945.5" y2="425.1875" style="stroke:#181818;stroke-width:1.0;" x2="986.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="955.5,421.1875,945.5,425.1875,955.5,429.1875,951.5,425.1875"></polygon><text font-weight="bold" lengthAdjust="spacing" x="951.5" font-size="13" textLength="21" y="407.1216" font-family="sans-serif" fill="#000000">[6]</text><text lengthAdjust="spacing" x="976.5" font-size="13" textLength="185" y="407.1216" font-family="sans-serif" fill="#000000">Prüfung Einwilligung für KVNR</text><line y1="484.5859" x1="944.5" y2="484.5859" style="stroke:#181818;stroke-width:1.0;" x2="986.5"></line><line y1="484.5859" x1="986.5" y2="497.5859" style="stroke:#181818;stroke-width:1.0;" x2="986.5"></line><line y1="497.5859" x1="945.5" y2="497.5859" style="stroke:#181818;stroke-width:1.0;" x2="986.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="955.5,493.5859,945.5,497.5859,955.5,501.5859,951.5,497.5859"></polygon><text font-weight="bold" lengthAdjust="spacing" x="951.5" font-size="13" textLength="21" y="464.3872" font-family="sans-serif" fill="#000000">[7]</text><text lengthAdjust="spacing" x="976.5" font-size="13" textLength="193" y="449.2544" font-family="sans-serif" fill="#000000">Prüfung Zugriffscode für KVNR</text><text lengthAdjust="spacing" x="976.5" font-size="13" textLength="219" y="464.3872" font-family="sans-serif" fill="#000000">(KVNR, Zugriffscode, laendercode,</text><text lengthAdjust="spacing" x="976.5" font-size="13" textLength="126" y="479.52" font-family="sans-serif" fill="#000000">aktueller Zeitpunkt)</text><line y1="526.7188" x1="944.5" y2="526.7188" style="stroke:#181818;stroke-width:1.0;" x2="986.5"></line><line y1="526.7188" x1="986.5" y2="539.7188" style="stroke:#181818;stroke-width:1.0;" x2="986.5"></line><line y1="539.7188" x1="945.5" y2="539.7188" style="stroke:#181818;stroke-width:1.0;" x2="986.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="955.5,535.7188,945.5,539.7188,955.5,543.7188,951.5,539.7188"></polygon><text font-weight="bold" lengthAdjust="spacing" x="951.5" font-size="13" textLength="21" y="521.6528" font-family="sans-serif" fill="#000000">[8]</text><text lengthAdjust="spacing" x="976.5" font-size="13" textLength="251" y="521.6528" font-family="sans-serif" fill="#000000">Tasks zu Liste von Task-IDs bestimmen</text><line y1="568.8516" x1="944.5" y2="568.8516" style="stroke:#181818;stroke-width:1.0;" x2="986.5"></line><line y1="568.8516" x1="986.5" y2="581.8516" style="stroke:#181818;stroke-width:1.0;" x2="986.5"></line><line y1="581.8516" x1="945.5" y2="581.8516" style="stroke:#181818;stroke-width:1.0;" x2="986.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="955.5,577.8516,945.5,581.8516,955.5,585.8516,951.5,581.8516"></polygon><text font-weight="bold" lengthAdjust="spacing" x="951.5" font-size="13" textLength="21" y="563.7856" font-family="sans-serif" fill="#000000">[9]</text><text lengthAdjust="spacing" x="976.5" font-size="13" textLength="233" y="563.7856" font-family="sans-serif" fill="#000000">Zuordnung zu Tasks zu KVNR prüfen</text><line y1="610.9844" x1="944.5" y2="610.9844" style="stroke:#181818;stroke-width:1.0;" x2="986.5"></line><line y1="610.9844" x1="986.5" y2="623.9844" style="stroke:#181818;stroke-width:1.0;" x2="986.5"></line><line y1="623.9844" x1="945.5" y2="623.9844" style="stroke:#181818;stroke-width:1.0;" x2="986.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="955.5,619.9844,945.5,623.9844,955.5,627.9844,951.5,623.9844"></polygon><text font-weight="bold" lengthAdjust="spacing" x="951.5" font-size="13" textLength="30" y="605.9185" font-family="sans-serif" fill="#000000">[10]</text><text lengthAdjust="spacing" x="985.5" font-size="13" textLength="191" y="605.9185" font-family="sans-serif" fill="#000000">Einlösbarkeit der Tasks prüfen</text><line y1="653.1172" x1="944.5" y2="653.1172" style="stroke:#181818;stroke-width:1.0;" x2="986.5"></line><line y1="653.1172" x1="986.5" y2="666.1172" style="stroke:#181818;stroke-width:1.0;" x2="986.5"></line><line y1="666.1172" x1="945.5" y2="666.1172" style="stroke:#181818;stroke-width:1.0;" x2="986.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="955.5,662.1172,945.5,666.1172,955.5,670.1172,951.5,666.1172"></polygon><text font-weight="bold" lengthAdjust="spacing" x="951.5" font-size="13" textLength="30" y="648.0513" font-family="sans-serif" fill="#000000">[11]</text><text lengthAdjust="spacing" x="985.5" font-size="13" textLength="264" y="648.0513" font-family="sans-serif" fill="#000000">ggf. E-Rezept-Status "in progress" setzen</text><line y1="755.7813" x1="944.5" y2="755.7813" style="stroke:#181818;stroke-width:1.0;" x2="986.5"></line><line y1="755.7813" x1="986.5" y2="768.7813" style="stroke:#181818;stroke-width:1.0;" x2="986.5"></line><line y1="768.7813" x1="945.5" y2="768.7813" style="stroke:#181818;stroke-width:1.0;" x2="986.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="955.5,764.7813,945.5,768.7813,955.5,772.7813,951.5,768.7813"></polygon><text font-weight="bold" lengthAdjust="spacing" x="951.5" font-size="13" textLength="30" y="720.4497" font-family="sans-serif" fill="#000000">[12]</text><text lengthAdjust="spacing" x="985.5" font-size="13" textLength="133" y="690.1841" font-family="sans-serif" fill="#000000">Zugriff protokollieren</text><text lengthAdjust="spacing" x="985.5" font-size="13" textLength="164" y="705.3169" font-family="sans-serif" fill="#000000">(KVNR, practitionerName,</text><text lengthAdjust="spacing" x="985.5" font-size="13" textLength="188" y="720.4497" font-family="sans-serif" fill="#000000">practitionerRole, pointOfCare,</text><text lengthAdjust="spacing" x="985.5" font-size="13" textLength="150" y="735.5825" font-family="sans-serif" fill="#000000">healthcare-facility-type,</text><text lengthAdjust="spacing" x="985.5" font-size="13" textLength="82" y="750.7153" font-family="sans-serif" fill="#000000">requesttype)</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="672.5,793.9141,662.5,797.9141,672.5,801.9141,668.5,797.9141"></polygon><line y1="797.9141" x1="666.5" y2="797.9141" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="943.5"></line><text font-weight="bold" lengthAdjust="spacing" x="678.5" font-size="13" textLength="30" y="792.8481" font-family="sans-serif" fill="#000000">[13]</text><text lengthAdjust="spacing" x="712.5" font-size="13" textLength="166" y="792.8481" font-family="sans-serif" fill="#000000">Bundle von Verordnungen</text><line y1="827.0469" x1="661.5" y2="827.0469" style="stroke:#181818;stroke-width:1.0;" x2="703.5"></line><line y1="827.0469" x1="703.5" y2="840.0469" style="stroke:#181818;stroke-width:1.0;" x2="703.5"></line><line y1="840.0469" x1="662.5" y2="840.0469" style="stroke:#181818;stroke-width:1.0;" x2="703.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="672.5,836.0469,662.5,840.0469,672.5,844.0469,668.5,840.0469"></polygon><text font-weight="bold" lengthAdjust="spacing" x="668.5" font-size="13" textLength="30" y="821.981" font-family="sans-serif" fill="#000000">[14]</text><text lengthAdjust="spacing" x="702.5" font-size="13" textLength="235" y="821.981" font-family="sans-serif" fill="#000000">Transformierung und Transkodierung</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="381.5,865.1797,371.5,869.1797,381.5,873.1797,377.5,869.1797"></polygon><line y1="869.1797" x1="375.5" y2="869.1797" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="660.5"></line><text font-weight="bold" lengthAdjust="spacing" x="387.5" font-size="13" textLength="30" y="864.1138" font-family="sans-serif" fill="#000000">[15]</text><text lengthAdjust="spacing" x="421.5" font-size="13" textLength="151" y="864.1138" font-family="sans-serif" fill="#000000">Liste von ePrescriptions</text></g></svg>
+	</div>
+	<figcaption><strong>Abbildung: </strong>UC 4.21 - Liste ausgewählter E-Rezepte eines Versicherten abrufen</figcaption>
+</figure>
+
+  <!-- UC 4.22 - Abgabe eines E-Rezeptes im europäischen Ausland -->
+
+<p><a id="uc-4-22-abgabe-eu"></a></p>
+<h3 id="uc-422---abgabe-eines-e-rezeptes-im-europäischen-ausland">UC 4.22 - Abgabe eines E-Rezeptes im europäischen Ausland</h3>
+
+<figure style="width: auto;">
+  <table style="width: auto; border: 1px solid #dcdcdc;">
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Beschreibung</th>
+      <td style="padding: 5px;"><p>Mit diesem Anwendungsfall werden die Dispensierinformationen zu einem eingelösten E-Rezept an den E-Rezept-Fachdienst übermittelt.</p>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Vorbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Der Versicherte hat eine Zugriffsberechtigung für Land B erteilt.</li>
+  <li>Der Versicherte hat die Informationen zur Zugriffsberechtigung an den LE-EU übermittelt. (Anwendungsfall “Demographische Daten eines Versicherten abrufen”)</li>
+  <li>Der LE-EU hat ausgewählte E-Rezepte des Versicherten abgerufen.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Durchzuführende Aktionen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Der Versicherte übermittelt, falls der zuvor übermittelte Zugriffscode zeitlich nicht mehr gültig ist, einen neuen Zugriffscode an den LE-EU.</li>
+  <li>Der LE-EU sendet einen eDispensation Request für ein E-Rezept über den eHDSI an Land A (Deutschland).</li>
+  <li>Der NCPeH-FD prüft das Vorliegen einer Behandlungsbeziehung zwischen LE-EU und Versicherten.</li>
+  <li>Der NCPeH-FD prüft die Permission und falls nicht vorhanden die Rolle des anfragenden LE-EU.</li>
+  <li>Der NCPeH-FD transformiert und transkodiert die Information zu jedem eDispensation Document in einen Dispensierinformationsdatensatz für das E-Rezept.</li>
+  <li>Der NCPeH-FD sendet für jedes übermittelte eDispensation Document (CDA) einen Request mit den Dispensierinformationsdatensatz für das E-Rezept an den E-Rezept-Fachdienst.</li>
+  <li>Der E-Rezept-Fachdienst speichert die Dispensierinformationen und ändert den Status des Task zu “completed”.</li>
+  <li>Der E-Rezept-Fachdienst übermittelt den Status der Operation an den NCPeH-FD. Der NCPeH-FD übermittelt den Status an den LE-EU.</li>
+</ul>
+</td>
+
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Nachbedingungen</th>
+      <td style="padding: 5px;"><ul>
+  <li>Der Status der eingelösten E-Rezepte ist “completed”.</li>
+  <li>Der Datenzugriff ist im E-Rezept-Fachdienst für jedes E-Rezept protokolliert.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Schnittstellen</th>
+      <td style="padding: 5px;"><ul>
+  <li><a href="./op-eu-close.html">Operation API: Interaktion NCPeH - Abgeben</a></li>
+</ul>
+</td>
+    </tr>
+    
+    <tr>
+      <th style="padding: 5px; width: 23rem;">Relevante(r) Sektor(en)</th>
+      <td style="padding: 5px;">
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <span class="badge gem-ig-badge 
+gem-ig-badge-bg-red">
+              NCPEH
+            </span>
+          
+        
+      </td>
+    </tr>
+  </table>
+  <figcaption><strong>Tabelle:</strong> Fachlicher Anwendungsfall UC 4.22 - Abgabe eines E-Rezeptes im europäischen Ausland</figcaption>
+</figure>
+
+<p><strong>Sequenzdiagramm:</strong></p>
+
+<figure>
+	<div style="--box-width: 600px; margin-bottom: 30px;" class="gem-ig-img-container">
+		  <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 1237 999" zoomAndPan="magnify" preserveAspectRatio="none" width="1237px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:1237px;height:999px;background:#FFFFFF;" version="1.1" height="999px"><defs></defs><g><text font-weight="bold" lengthAdjust="spacing" x="410.25" font-size="14" textLength="420" y="27.9951" font-family="sans-serif" fill="#000000">UC Abgabe von E-Rezepten im europäischen Ausland</text><rect width="331.5" x="10" y="135.5938" style="stroke:#000000;stroke-width:1.5;" fill="none" height="46.2656"></rect><rect width="686.5" x="545" y="408.6563" style="stroke:#000000;stroke-width:1.5;" fill="none" height="464.3906"></rect><line y1="118.5938" x1="62" y2="919.1797" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="62"></line><line y1="118.5938" x1="308.5" y2="919.1797" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="308.5"></line><line y1="118.5938" x1="625" y2="919.1797" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="625"></line><line y1="118.5938" x1="912" y2="919.1797" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="912"></line><text lengthAdjust="spacing" x="20" font-size="14" textLength="79" y="115.292" font-family="sans-serif" fill="#000000">Versicherte</text><ellipse cx="62.5" cy="50.7969" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M62.5,58.7969 L62.5,85.7969 M49.5,66.7969 L75.5,66.7969 M62.5,85.7969 L49.5,100.7969 M62.5,85.7969 L75.5,100.7969 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><text lengthAdjust="spacing" x="20" font-size="14" textLength="79" y="931.1748" font-family="sans-serif" fill="#000000">Versicherte</text><ellipse cx="62.5" cy="942.9766" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M62.5,950.9766 L62.5,977.9766 M49.5,958.9766 L75.5,958.9766 M62.5,977.9766 L49.5,992.9766 M62.5,977.9766 L75.5,992.9766 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><text lengthAdjust="spacing" x="285.5" font-size="14" textLength="40" y="115.292" font-family="sans-serif" fill="#000000">LE-EU</text><ellipse cx="308.5" cy="50.7969" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M308.5,58.7969 L308.5,85.7969 M295.5,66.7969 L321.5,66.7969 M308.5,85.7969 L295.5,100.7969 M308.5,85.7969 L321.5,100.7969 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><text lengthAdjust="spacing" x="285.5" font-size="14" textLength="40" y="931.1748" font-family="sans-serif" fill="#000000">LE-EU</text><ellipse cx="308.5" cy="942.9766" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M308.5,950.9766 L308.5,977.9766 M295.5,958.9766 L321.5,958.9766 M308.5,977.9766 L295.5,992.9766 M308.5,977.9766 L321.5,992.9766 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><rect rx="2.5" ry="2.5" width="141" x="555" y="71" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="46.5938"></rect><text lengthAdjust="spacing" x="562" font-size="14" textLength="127" y="90.9951" font-family="sans-serif" fill="#000000">eHDSI / NCPeH-FD</text><text lengthAdjust="spacing" x="581.5" font-size="14" textLength="88" y="107.292" font-family="sans-serif" fill="#000000">Deutschland</text><rect rx="2.5" ry="2.5" width="141" x="555" y="918.1797" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="46.5938"></rect><text lengthAdjust="spacing" x="562" font-size="14" textLength="127" y="938.1748" font-family="sans-serif" fill="#000000">eHDSI / NCPeH-FD</text><text lengthAdjust="spacing" x="581.5" font-size="14" textLength="88" y="954.4717" font-family="sans-serif" fill="#000000">Deutschland</text><rect rx="2.5" ry="2.5" width="159" x="833" y="87.2969" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="840" font-size="14" textLength="145" y="107.292" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><rect rx="2.5" ry="2.5" width="159" x="833" y="918.1797" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="840" font-size="14" textLength="145" y="938.1748" font-family="sans-serif" fill="#000000">E-Rezept-Fachdienst</text><path d="M10,135.5938 L80,135.5938 L80,142.7266 L70,152.7266 L10,152.7266 L10,135.5938 " style="stroke:#000000;stroke-width:1.5;" fill="#EEEEEE"></path><rect width="331.5" x="10" y="135.5938" style="stroke:#000000;stroke-width:1.5;" fill="none" height="46.2656"></rect><text font-weight="bold" lengthAdjust="spacing" x="25" font-size="13" textLength="25" y="148.6606" font-family="sans-serif" fill="#000000">opt</text><text font-weight="bold" lengthAdjust="spacing" x="95" font-size="11" textLength="211" y="147.8042" font-family="sans-serif" fill="#000000">["Zugriffscode zeitlich ungültig"]</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="296.5,169.8594,306.5,173.8594,296.5,177.8594,300.5,173.8594"></polygon><line y1="173.8594" x1="62.5" y2="173.8594" style="stroke:#181818;stroke-width:1.0;" x2="302.5"></line><text font-weight="bold" lengthAdjust="spacing" x="69.5" font-size="13" textLength="21" y="168.7935" font-family="sans-serif" fill="#000000">[1]</text><text lengthAdjust="spacing" x="94.5" font-size="13" textLength="197" y="168.7935" font-family="sans-serif" fill="#000000">neuen Zugriffscode übergeben</text><line y1="209.9922" x1="308.5" y2="209.9922" style="stroke:#181818;stroke-width:1.0;" x2="350.5"></line><line y1="209.9922" x1="350.5" y2="222.9922" style="stroke:#181818;stroke-width:1.0;" x2="350.5"></line><line y1="222.9922" x1="309.5" y2="222.9922" style="stroke:#181818;stroke-width:1.0;" x2="350.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="319.5,218.9922,309.5,222.9922,319.5,226.9922,315.5,222.9922"></polygon><text font-weight="bold" lengthAdjust="spacing" x="315.5" font-size="13" textLength="21" y="204.9263" font-family="sans-serif" fill="#000000">[2]</text><text lengthAdjust="spacing" x="340.5" font-size="13" textLength="278" y="204.9263" font-family="sans-serif" fill="#000000">eDispensation Dokumente (CDAs) erstellen</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="613.5,248.125,623.5,252.125,613.5,256.125,617.5,252.125"></polygon><line y1="252.125" x1="308.5" y2="252.125" style="stroke:#181818;stroke-width:1.0;" x2="619.5"></line><text font-weight="bold" lengthAdjust="spacing" x="315.5" font-size="13" textLength="21" y="247.0591" font-family="sans-serif" fill="#000000">[3]</text><text lengthAdjust="spacing" x="340.5" font-size="13" textLength="169" y="247.0591" font-family="sans-serif" fill="#000000">eDispensation übermitteln</text><line y1="296.3906" x1="625.5" y2="296.3906" style="stroke:#181818;stroke-width:1.0;" x2="667.5"></line><line y1="296.3906" x1="667.5" y2="309.3906" style="stroke:#181818;stroke-width:1.0;" x2="667.5"></line><line y1="309.3906" x1="626.5" y2="309.3906" style="stroke:#181818;stroke-width:1.0;" x2="667.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="636.5,305.3906,626.5,309.3906,636.5,313.3906,632.5,309.3906"></polygon><text font-weight="bold" lengthAdjust="spacing" x="632.5" font-size="13" textLength="21" y="283.7583" font-family="sans-serif" fill="#000000">[4]</text><text lengthAdjust="spacing" x="657.5" font-size="13" textLength="198" y="276.1919" font-family="sans-serif" fill="#000000">Prüfung Behandlungsverhältnis</text><text lengthAdjust="spacing" x="657.5" font-size="13" textLength="148" y="291.3247" font-family="sans-serif" fill="#000000">LE-EU und Versicherter</text><line y1="338.5234" x1="625.5" y2="338.5234" style="stroke:#181818;stroke-width:1.0;" x2="667.5"></line><line y1="338.5234" x1="667.5" y2="351.5234" style="stroke:#181818;stroke-width:1.0;" x2="667.5"></line><line y1="351.5234" x1="626.5" y2="351.5234" style="stroke:#181818;stroke-width:1.0;" x2="667.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="636.5,347.5234,626.5,351.5234,636.5,355.5234,632.5,351.5234"></polygon><text font-weight="bold" lengthAdjust="spacing" x="632.5" font-size="13" textLength="21" y="333.4575" font-family="sans-serif" fill="#000000">[5]</text><text lengthAdjust="spacing" x="657.5" font-size="13" textLength="189" y="333.4575" font-family="sans-serif" fill="#000000">Prüfung Permission bzw. Rolle</text><line y1="380.6563" x1="625.5" y2="380.6563" style="stroke:#181818;stroke-width:1.0;" x2="667.5"></line><line y1="380.6563" x1="667.5" y2="393.6563" style="stroke:#181818;stroke-width:1.0;" x2="667.5"></line><line y1="393.6563" x1="626.5" y2="393.6563" style="stroke:#181818;stroke-width:1.0;" x2="667.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="636.5,389.6563,626.5,393.6563,636.5,397.6563,632.5,393.6563"></polygon><text font-weight="bold" lengthAdjust="spacing" x="632.5" font-size="13" textLength="21" y="375.5903" font-family="sans-serif" fill="#000000">[6]</text><text lengthAdjust="spacing" x="657.5" font-size="13" textLength="235" y="375.5903" font-family="sans-serif" fill="#000000">Transformierung und Transkodierung</text><path d="M545,408.6563 L622,408.6563 L622,415.7891 L612,425.7891 L545,425.7891 L545,408.6563 " style="stroke:#000000;stroke-width:1.5;" fill="#EEEEEE"></path><rect width="686.5" x="545" y="408.6563" style="stroke:#000000;stroke-width:1.5;" fill="none" height="464.3906"></rect><text font-weight="bold" lengthAdjust="spacing" x="560" font-size="13" textLength="32" y="421.7231" font-family="sans-serif" fill="#000000">loop</text><text font-weight="bold" lengthAdjust="spacing" x="637" font-size="11" textLength="272" y="420.8667" font-family="sans-serif" fill="#000000">[für jeden eDispensation Dokument (CDA)]</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="900.5,503.4531,910.5,507.4531,900.5,511.4531,904.5,507.4531"></polygon><line y1="507.4531" x1="625.5" y2="507.4531" style="stroke:#181818;stroke-width:1.0;" x2="906.5"></line><text font-weight="bold" lengthAdjust="spacing" x="632.5" font-size="13" textLength="21" y="472.1216" font-family="sans-serif" fill="#000000">[7]</text><text lengthAdjust="spacing" x="657.5" font-size="13" textLength="211" y="441.856" font-family="sans-serif" fill="#000000">POST /Task/Rezepte-ID/$eu-close</text><text lengthAdjust="spacing" x="657.5" font-size="13" textLength="226" y="456.9888" font-family="sans-serif" fill="#000000">{AuthN-Token, KVNR, Zugriffscode,</text><text lengthAdjust="spacing" x="657.5" font-size="13" textLength="219" y="472.1216" font-family="sans-serif" fill="#000000">MedicationDispense, laendercode,</text><text lengthAdjust="spacing" x="657.5" font-size="13" textLength="224" y="487.2544" font-family="sans-serif" fill="#000000">practitionerName, practitionerRole,</text><text lengthAdjust="spacing" x="657.5" font-size="13" textLength="238" y="502.3872" font-family="sans-serif" fill="#000000">pointOfCare, healthcare-facility-type}</text><line y1="536.5859" x1="912.5" y2="536.5859" style="stroke:#181818;stroke-width:1.0;" x2="954.5"></line><line y1="536.5859" x1="954.5" y2="549.5859" style="stroke:#181818;stroke-width:1.0;" x2="954.5"></line><line y1="549.5859" x1="913.5" y2="549.5859" style="stroke:#181818;stroke-width:1.0;" x2="954.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="923.5,545.5859,913.5,549.5859,923.5,553.5859,919.5,549.5859"></polygon><text font-weight="bold" lengthAdjust="spacing" x="919.5" font-size="13" textLength="21" y="531.52" font-family="sans-serif" fill="#000000">[8]</text><text lengthAdjust="spacing" x="944.5" font-size="13" textLength="185" y="531.52" font-family="sans-serif" fill="#000000">Prüfung Einwilligung für KVNR</text><line y1="608.9844" x1="912.5" y2="608.9844" style="stroke:#181818;stroke-width:1.0;" x2="954.5"></line><line y1="608.9844" x1="954.5" y2="621.9844" style="stroke:#181818;stroke-width:1.0;" x2="954.5"></line><line y1="621.9844" x1="913.5" y2="621.9844" style="stroke:#181818;stroke-width:1.0;" x2="954.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="923.5,617.9844,913.5,621.9844,923.5,625.9844,919.5,621.9844"></polygon><text font-weight="bold" lengthAdjust="spacing" x="919.5" font-size="13" textLength="21" y="588.7856" font-family="sans-serif" fill="#000000">[9]</text><text lengthAdjust="spacing" x="944.5" font-size="13" textLength="193" y="573.6528" font-family="sans-serif" fill="#000000">Prüfung Zugriffscode für KVNR</text><text lengthAdjust="spacing" x="944.5" font-size="13" textLength="219" y="588.7856" font-family="sans-serif" fill="#000000">(KVNR, Zugriffscode, laendercode,</text><text lengthAdjust="spacing" x="944.5" font-size="13" textLength="126" y="603.9185" font-family="sans-serif" fill="#000000">aktueller Zeitpunkt)</text><line y1="651.1172" x1="912.5" y2="651.1172" style="stroke:#181818;stroke-width:1.0;" x2="954.5"></line><line y1="651.1172" x1="954.5" y2="664.1172" style="stroke:#181818;stroke-width:1.0;" x2="954.5"></line><line y1="664.1172" x1="913.5" y2="664.1172" style="stroke:#181818;stroke-width:1.0;" x2="954.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="923.5,660.1172,913.5,664.1172,923.5,668.1172,919.5,664.1172"></polygon><text font-weight="bold" lengthAdjust="spacing" x="919.5" font-size="13" textLength="30" y="646.0513" font-family="sans-serif" fill="#000000">[10]</text><text lengthAdjust="spacing" x="953.5" font-size="13" textLength="141" y="646.0513" font-family="sans-serif" fill="#000000">Status für Task prüfen</text><line y1="693.25" x1="912.5" y2="693.25" style="stroke:#181818;stroke-width:1.0;" x2="954.5"></line><line y1="693.25" x1="954.5" y2="706.25" style="stroke:#181818;stroke-width:1.0;" x2="954.5"></line><line y1="706.25" x1="913.5" y2="706.25" style="stroke:#181818;stroke-width:1.0;" x2="954.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="923.5,702.25,913.5,706.25,923.5,710.25,919.5,706.25"></polygon><text font-weight="bold" lengthAdjust="spacing" x="919.5" font-size="13" textLength="30" y="688.1841" font-family="sans-serif" fill="#000000">[11]</text><text lengthAdjust="spacing" x="953.5" font-size="13" textLength="266" y="688.1841" font-family="sans-serif" fill="#000000">FHIR Schemaprüfung MedicationDispense</text><line y1="735.3828" x1="912.5" y2="735.3828" style="stroke:#181818;stroke-width:1.0;" x2="954.5"></line><line y1="735.3828" x1="954.5" y2="748.3828" style="stroke:#181818;stroke-width:1.0;" x2="954.5"></line><line y1="748.3828" x1="913.5" y2="748.3828" style="stroke:#181818;stroke-width:1.0;" x2="954.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="923.5,744.3828,913.5,748.3828,923.5,752.3828,919.5,748.3828"></polygon><text font-weight="bold" lengthAdjust="spacing" x="919.5" font-size="13" textLength="30" y="730.3169" font-family="sans-serif" fill="#000000">[12]</text><text lengthAdjust="spacing" x="953.5" font-size="13" textLength="233" y="730.3169" font-family="sans-serif" fill="#000000">E-Rezept-Status "completed" setzen</text><line y1="822.9141" x1="912.5" y2="822.9141" style="stroke:#181818;stroke-width:1.0;" x2="954.5"></line><line y1="822.9141" x1="954.5" y2="835.9141" style="stroke:#181818;stroke-width:1.0;" x2="954.5"></line><line y1="835.9141" x1="913.5" y2="835.9141" style="stroke:#181818;stroke-width:1.0;" x2="954.5"></line><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="923.5,831.9141,913.5,835.9141,923.5,839.9141,919.5,835.9141"></polygon><text font-weight="bold" lengthAdjust="spacing" x="919.5" font-size="13" textLength="30" y="795.1489" font-family="sans-serif" fill="#000000">[13]</text><text lengthAdjust="spacing" x="953.5" font-size="13" textLength="133" y="772.4497" font-family="sans-serif" fill="#000000">Zugriff protokollieren</text><text lengthAdjust="spacing" x="953.5" font-size="13" textLength="164" y="787.5825" font-family="sans-serif" fill="#000000">(KVNR, practitionerName,</text><text lengthAdjust="spacing" x="953.5" font-size="13" textLength="188" y="802.7153" font-family="sans-serif" fill="#000000">practitionerRole, pointOfCare,</text><text lengthAdjust="spacing" x="953.5" font-size="13" textLength="151" y="817.8481" font-family="sans-serif" fill="#000000">healthcare-facility-type)</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="636.5,861.0469,626.5,865.0469,636.5,869.0469,632.5,865.0469"></polygon><line y1="865.0469" x1="630.5" y2="865.0469" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="911.5"></line><text font-weight="bold" lengthAdjust="spacing" x="642.5" font-size="13" textLength="30" y="859.981" font-family="sans-serif" fill="#000000">[14]</text><text lengthAdjust="spacing" x="676.5" font-size="13" textLength="42" y="859.981" font-family="sans-serif" fill="#000000">Status</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="319.5,897.1797,309.5,901.1797,319.5,905.1797,315.5,901.1797"></polygon><line y1="901.1797" x1="313.5" y2="901.1797" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="624.5"></line><text font-weight="bold" lengthAdjust="spacing" x="325.5" font-size="13" textLength="30" y="896.1138" font-family="sans-serif" fill="#000000">[15]</text><text lengthAdjust="spacing" x="359.5" font-size="13" textLength="42" y="896.1138" font-family="sans-serif" fill="#000000">Status</text></g></svg>
+	</div>
+	<figcaption><strong>Abbildung: </strong>UC 4.22 - Abgabe eines E-Rezeptes im europäischen Ausland</figcaption>
+</figure>
+
+<p><em>Hinweis: Für den Anwendungsfall “Abgabe von E-Rezepten im europäischen Ausland” wird angenommen, dass die vollständigen Dispensierinformationen zu einer ePrescription (E-Rezept) in genau einem eDispensation Dokument (CDA) vom LE-EU übermittelt werden.</em></p>
+
+<p>Nach der Bereitstellung der Dispensierinformationen im E-Rezept-Fachdienst kann der Versicherte diese mit seinem E-Rezept-FdV herunterladen und anzeigen lassen.</p>
+
+<p>Eine Übermittlung der Dispensierinformationen an den ePA Medication Service ist perspektivisch vorgesehen. Die Funktionalität wird ergänzt, sobald die Voraussetzungen in den verwendeten Datenmodellen geschaffen wurden.</p>
+
+
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+  <script src="assets/js/window-hash.js" type="text/javascript"> </script>
+  <a name="bottom"> </a>
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
+
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&nbsp;
+
+                <a href="menu-technische-umsetzung-konzept.html">&lt;vorherige</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">oben</a>
+              </td>
+              <td style="text-align:right">&nbsp;
+
+                <a href="menu-technische-umsetzung-datenschutz-und-sicherheit.html">nächste&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="inner-wrapper">
+        <p>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.xborder#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 06:49+0000">2026-03-23</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>

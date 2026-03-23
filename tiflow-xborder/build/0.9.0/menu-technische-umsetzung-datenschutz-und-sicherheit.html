@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>Schnittstellen - Datenschutz und Sicherheit - TIFlow - Grenzüberschreitender Datenaustausch v0.9.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+  	<link rel="stylesheet" href="assets/css/cqf.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+<link rel="stylesheet" href="assets/css/ig.gematik.css"/>
+<script src="assets/js/ig.gematik.min.js" type="text/javascript"> </script>
+<link rel="stylesheet" href="assets/css/edge-dark.min.css"/>
+<script src="assets/js/ig.api.doc.gematik.min.js" type="text/javascript"> </script>
+<link rel="stylesheet" href="assets/css/ig.req.gematik.css"/>
+<script src="assets/js/ig.req.gematik.min.js" type="text/javascript"> </script>
+
+<script src="assets/js/ig.bibliography.gematik.js" type="text/javascript"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        height: 280px;
+        background-color: #2a6496;
+        background: url('./e-rezept-img.png') no-repeat;
+        background-position: 650px -150px;
+        background-size: 45% auto;
+    }
+    .bubble-link {
+        display: none;
+        transition: opacity 0.2s;
+        }
+
+        h1:hover .bubble-link,
+        h2:hover .bubble-link,
+        h3:hover .bubble-link,
+        h4:hover .bubble-link,
+        h5:hover .bubble-link,
+        h6:hover .bubble-link {
+        display: inline;
+        }
+</style>
+
+<script src="assets/js/heading-links.js" type="text/javascript"> </script>
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="fhir-logo" href="assets/ico/icon-fhir-144.png"/>
+    <link sizes="114x114" rel="fhir-logo" href="assets/ico/icon-fhir-114.png"/>
+    <link sizes="72x72" rel="fhir-logo" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+    <style type="text/css">h2{--heading-prefix:"3.2"}
+    h3,h4,h5,h6{--heading-prefix:"3.2"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+
+          <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a no-external="true" id="gem-ig-logo" href="./index.html">
+        <img src="assets/images/gem-logo.png" alt="Home" height="50"/>
+    </a>
+</div>
+
+
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Start</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Fachlichkeit
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-fachlichkeit-szenario-eu.html">Szenario EU</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Technische Umsetzung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-technische-umsetzung-konzept.html">Technisches Konzept</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-anwendungsfaelle.html">Technische Anwendungsfälle</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Schnittstellen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-schnittstellen-query-api.html">Query API</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-operation-api.html">Operation API</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="referenced.html">Referenzen</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="release-notes.html">Release Notes</a>
+      </li>
+      <li><a name="l264">​</a>
+        <a href="spec-sheet.html">Steckbriefe</a>
+      </li>
+      <li>
+        <a href="license.html">Lizenz</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+TIFlow - Grenzüberschreitender Datenaustausch
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 0.9.0 - ci-build
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="menu-technische-umsetzung-konzept.html"><b>Technisches Konzept</b></a></li><li><b>Schnittstellen - Datenschutz und Sicherheit</b></li>
+
+          <span style="float:right;">
+
+            <a href="menu-technische-umsetzung-anwendungsfaelle.html">&lt;vorherige</a> | 
+
+            <a href="#bottom">unten</a>
+
+          | <a href="menu-schnittstellen-query-api.html">nächste&gt;</a>
+
+          </span>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Schnittstellen - Datenschutz und Sicherheit</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#anwendungsfälle" id="markdown-toc-anwendungsfälle">Anwendungsfälle</a></li>
+  <li><a href="#informationsobjekte" id="markdown-toc-informationsobjekte">Informationsobjekte</a></li>
+  <li><a href="#authentifizierung-und-autorisierung" id="markdown-toc-authentifizierung-und-autorisierung">Authentifizierung und Autorisierung</a></li>
+  <li><a href="#protokollierung" id="markdown-toc-protokollierung">Protokollierung</a></li>
+  <li><a href="#robustheit" id="markdown-toc-robustheit">Robustheit</a></li>
+  <li><a href="#grenzen-der-sicherheitsleistung" id="markdown-toc-grenzen-der-sicherheitsleistung">Grenzen der Sicherheitsleistung</a></li>
+</ul>
+
+</div>
+<p>Die gesetzlichen Grundlagen zu diesem Feature sind insbesondere in &sect; 361 Abs. 5 SGB V festgelegt. Danach muss der Versicherte vor einem Zugriff von Leistungserbringern aus dem EU-Ausland über den NCPeH-FD grundsätzlich in die Übermittlung eingewilligt haben. Zudem muss der Versicherte jeden konkreten Zugriff durch einen Leistungserbringer aus dem EU-Ausland (LE-EU) in diesem Rahmen technisch freigeben. Die Einwilligung wird durch den Versicherten mittels eines FdV mit E-Rezept-Funktionalität gegeben (bzw. widerrufen) und im E-Rezept-Fachdienst gespeichert (bzw. gelöscht). Sie ist länderunspezifisch, d.h. sie gilt für alle teilnehmenden Länder in der EU. In der Umsetzung kann die Einwilligung in das Verfahren in Verbindung mit der ersten Freigabe eines Zugriffs für einen LE-EU erfolgen.</p>
+
+<p>Die technische Freigabe für einen Leistungserbringer im EU-Ausland erteilt der Versicherte durch einen sechsstelligen alphanumerischen Zugriffscode, den er im FdV angezeigt bekommt und die er dem Leistungserbringer mitteilt (z.B. durch Vorzeigen des im FdV angezeigten Zugriffscodes). Der Zugriffscode ist nach der Erzeugung einen begrenzten Zeitraum (höchstens eine Stunde) gültig. Nach Ablauf dieses Zeitraums muss ein neuer Zugriffscode erzeugt werden. Der Versicherte kann auch vor Ablauf des Zeitraums einen neuen Zugriffscode erzeugen, wobei der vorherige Zugriffscode damit ungültig wird. Der E-Rezept-Fachdienst erhält den jeweils gültigen Zugriffscode vom FdV und lehnt Anfragen mit einem ungültigen Zugriffscode ab. Neben dem Zugriffscode erhält der E-Rezept-Fachdienst vom FdV die Information, in welchem Land der aktuelle Zugriffscode Verwendung finden soll. Die Information, in welchem Land sich der LE-EU befindet, erhält der E-Rezept-Fachdienst vom deutschen NCPeH-FD. Stimmen die beiden Informationen nicht überein, lehnt der E-Rezept-Fachdienst die Anfrage ebenfalls ab.</p>
+
+<h3 id="anwendungsfälle">Anwendungsfälle</h3>
+
+<p>Aus diesem Feature ergeben sich für den E-Rezept-Fachdienst ein neuer direkter Akteur, der NCPeH-FD in Deutschland, der zur Ausführung folgender Anwendungsfälle mit seiner eigenen kryptografischen Identität auf den E-Rezept-Fachdienst zugreift:</p>
+
+<p>Demographische Daten eines Versicherten abrufen
+Damit berechtigte LE-EU die E-Rezepte des Versicherten abrufen können, ist es notwendig, die demografischen Daten des Versicherten zuvor in Deutschland ermitteln zu lassen. Ein LE-EU kann die ermittelten demografischen Versichertendaten mit den auf der eGK oder einem Ausweisdokument abgebildeten Daten vergleichen und so auf Richtigkeit prüfen. Die Ermittlung dieser Daten erfolgt aus einem E-Rezept des Versicherten im E-Rezept-Fachdienst – sofern mindestens eines vorhanden ist.</p>
+
+<p>Liste der einlösbaren E-Rezepte eines Versicherten abrufen
+Mittels KVNR und Zugriffscode ruft der LE-EU die Liste aller einlösbaren E-Rezepte vom E-Rezept-Fachdienst ab. Dabei liefert der E-Rezept-Fachdienst alle Informationen aus den E-Rezepten an den NCPeH-FD, der zur Erstellung der Liste nur bestimmte Informationen verwendet (mindestens die obligatorischen Angaben gemäß den europäischen Vorgaben). Der E-Rezept-Fachdienst liefert keine Informationen zu E-Rezepten, die in den europäischen Vorgaben ausgeschlossen sind, z.B. Betäubungsmittel und Arzneimittel, die nach ärztlicher Verschreibung oder nach den Vorschriften eines Arzneibuchs für den Versicherten zubereitet werden.</p>
+
+<p>Liste ausgewählter E-Rezepte eines Versicherten abrufen
+Ausgehend von der Liste der einlösbaren E-Rezepte für einen Versicherten, kann der LE-EU eine Liste der zur Einlösung ausgewählten E-Rezepte abrufen (transkodiert und im Original).</p>
+
+<p>Abgabe von E-Rezepten im europäischen Ausland
+Beim Einlösen von E-Rezepten erfolgt die Übermittlung der Datensätze über die an den Versicherten abgegebenen Arzneimittel mittels des NCPeH-FD an den E-Rezept-Fachdienst.</p>
+
+<p>Daneben gibt es die Anwendungsfälle für die Versicherten zur Erteilung, zur Einsicht und zum Widerruf der Einwilligung.</p>
+
+<p>Aufgrund der starken Abhängigkeit von Systemen außerhalb der TI werden keine Aussagen zur Verfügbarkeit dieser Anwendungsfälle getroffen. Die Verfügbarkeit der Komponenten bzw. Dienste der TI ist hierfür in jedem Fall ausreichend.</p>
+
+<h3 id="informationsobjekte">Informationsobjekte</h3>
+
+<p>Durch dieses Feature werden die folgenden wesentlichen Informationsobjekte eingeführt:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Informationsobjekt</th>
+      <th>Beschreibung</th>
+      <th>Personenbezug</th>
+      <th>Vertraulichkeit</th>
+      <th>Integrität</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Zugriffscode</td>
+      <td>Sechsstelliger alphanumerischer Zugriffscode zur Autorisierung eines LE-EU zum Abruf und zur Einlösung von E-Rezepten eines Versicherten.</td>
+      <td>nein</td>
+      <td>hoch</td>
+      <td>hoch</td>
+    </tr>
+    <tr>
+      <td>Zugriffscode – Schutzbedarf Vertraulichkeit</td>
+      <td>Der Schutzbedarf für die Vertraulichkeit des Freischaltcodes wird mit „hoch“ bewertet, da die Kenntnis des Zugriffscodes allein nicht für das Einlösen eines E-Rezepts ausreicht.</td>
+      <td>nein</td>
+      <td>hoch</td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>Zugriffscode – Schutzbedarf Integrität</td>
+      <td>Eine Verletzung der Integrität verhindert den Zugriff auf E-Rezepte.</td>
+      <td>nein</td>
+      <td>–</td>
+      <td>hoch</td>
+    </tr>
+  </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle: </strong>Neue Informationsobjekte im Kontext E-Rezept-Fachdienst im EU Kontext</figcaption></div>
+
+<h3 id="authentifizierung-und-autorisierung">Authentifizierung und Autorisierung</h3>
+
+<p>Der NCPeH-FD in Deutschland ist ein neuer (VAU-) Client im E-Rezept-System. Die Authentifizierung des NCPeH-FD in Deutschland findet durch den Authorization Server des E-Rezept-Fachdienstes statt, der einen ACCESS_TOKEN ausstellt, der im E-Rezept-Fachdienst validiert wird. Dabei findet ein länderspezifisches Zertifikat Verwendung – also nicht das Zertifikat des NCPeH-FD in Deutschland, sondern ein Zertifikat, dass den NCPeH-FD im jeweiligen anfragenden EU-Ausland repräsentiert.</p>
+
+<p>Indirekt wirkende Akteure sind Leistungserbringer im EU-Ausland, die über den NCPeH-FD in ihrem Land und den NCPeH-FD in Deutschland Daten aus dem E-Rezept-Fachdienst abrufen können. Die Authentisierung der Leistungserbringer im EU-Ausland erfolgt durch den NCPeH-FD in ihrem Land (vgl. unten Grenzen der Sicherheitsleistung).</p>
+
+<p>Die Kommunikation zwischen dem NCPeH-FD und dem E-Rezept-Fachdienst erfolgt zum einen über TLS mit serverseitiger Authentifizierung des E-Rezept-Fachdienstes und zum anderen mittels VAU-Verschlüsselung zwischen der VAU im NCPeH-FD und VAU im E-Rezept-Fachdienst. Hierbei prüft der E-Rezept-Fachdienst das VAU-Zertifikat der VAU im NCPeH-FD. Hierdurch wird eine beidseitige Authentifizierung der Systeme erreicht.</p>
+
+<p>Der Zugriffscode dient – in Kombination mit der KVNR - der Autorisierung eines LE-EU zum Abruf der E-Rezepte eines Versicherten.</p>
+
+<h3 id="protokollierung">Protokollierung</h3>
+
+<p>Die Protokollierung im E-Rezept-Fachdienst erfolgt für alle o.g. Anwendungsfälle und umfasst jeweils folgende Informationen:</p>
+
+<ul>
+  <li>das Land, aus dem der Zugriff erfolgte,</li>
+  <li>die Leistungserbringerinstitution, aus der der Zugriff erfolgte,</li>
+  <li>der Leistungserbringer-EU, der zugegriffen hat,</li>
+  <li>der ausgeführte Anwendungsfall,</li>
+  <li>falls ein E-Rezept eingelöst wurde: die Rezept-ID,</li>
+  <li>der Zeitpunkt des Zugriffs,</li>
+  <li>ob der Zugriff erfolgreich war bzw. warum ein Zugriff abgelehnt wurde (in für den Versicherten verständlicher Sprache).</li>
+</ul>
+
+<p>Abgelehnte Zugriffsversuche werden nur protokolliert, wenn die KVNR in Verbindung mit dem Zugriffscode passen, damit der Versicherte erkennen kann, ob er alle Voraussetzungen geschaffen hat, um es dem LE-EU zu ermöglichen, seine E-Rezepte abzurufen. Gründe für eine Ablehnung können sein:</p>
+
+<ul>
+  <li>Die Einwilligung wurde zwischenzeitlich entzogen.</li>
+  <li>Es liegen keine einlösbaren E-Rezept vor, aus denen die Daten extrahierbar wären.</li>
+</ul>
+
+<p>Falls die Kombination von KVNR und Zugriffscode nicht korrekt war, wird kein Protokolleintrag erzeugt, da eine Ablehnung auch an einer falschen KVNR liegen kann. In diesem Fall würde der Versicherte mit der übertragenden KVNR einen Protokolleintrag über einen abgelehnten Zugriff sehen, obwohl er keine Einlösung im Ausland ausgelöst hat. Da es sich aber nicht um einen Angriff handelt, könnte der Versicherte aus einem Protokolleintrag keine sinnvolle Handlung ableiten.</p>
+
+<p>Angriffe mittels Durchprobieren von KVNR- und Zugriffscode-Kombinationen müssen durch die NCPeH-FD mitigiert werden. In Verdachtsfällen, müssen die Protokolle in den NCPeH-FD ausgewertet werden.</p>
+
+<h3 id="robustheit">Robustheit</h3>
+
+<p>Der NCPeH-FD in Deutschland prüft bei Anfragen an den E-Rezept-Fachdienst, ob die mitgegebene KVNR syntaktisch korrekt ist und dass der Zugriffscode sechsstellig ist. Damit werden syntaktisch unkorrekte Anfragen bereits im NCPeH-FD abgeblockt. Generell muss der Anbieter des NCPeH-FDs Maßnahmen zur Erkennung und Verhinderung von dem Erraten eines Zugriffscodes umsetzen.</p>
+
+<h3 id="grenzen-der-sicherheitsleistung">Grenzen der Sicherheitsleistung</h3>
+
+<p>Der E-Rezept-Fachdienst muss von integren und korrekt arbeitenden NCPeHs ausgehen.</p>
+
+<p>In der Realisierung der o.g. Anwendungsfälle übernehmen die NCPeH im EU-Ausland die Authentisierung der Leistungserbringer im jeweiligen Land. Anfragen von nicht-authentisierten Leistungserbringern werden nicht an den NCPeH-FD in Deutschland weitergeleitet und damit auch nicht an den E-Rezept-Fachdienst. Dies gilt auch für Anfragen aus EU-Ländern, die nicht in der Liste der teilnehmenden Länder stehen.</p>
+
+<p>Der NCPeH-FD in Deutschland protokolliert jegliche Transaktion, in der er involviert ist. Wie ein Betroffener diese Protokolldaten einsehen kann, wird durch den Betreiber des NCPeH-FD geregelt.</p>
+
+<p>Der NCPeH-FD in Deutschland muss grundlegende Denial-of-Service-Abwehrmechanismen implementieren. Diese sind nicht näher spezifiziert und deshalb kann hier auch keine Annahme über deren Wirksamkeit getroffen werden. Zumindest werden nur Anfragen mit syntaktisch korrekten KVNRs und ausschließlich sechsstelligen Zugriffscodes weitergereicht.</p>
+
+<p>Über die Sicherheit der Systeme der LE-EU kann keine Aussage getroffen werden. Ggf. ist die Situation in den verschiedenen EU-Ländern unterschiedlich.</p>
+
+<p>Aufgrund der Vorgaben der EU können Situationen entstehen, in denen eine Mehrfacheinlösung von E-Rezepten durch den E-Rezept-Fachdienst nicht verhindert werden kann. Dies betrifft insbesondere Situationen in grenznahen Gebieten, in denen ein Versicherter erst eine Einlösung im Ausland initiiert, aber das Medikament noch nicht erhält, er dann das E-Rezept in Deutschland regulär einlöst, um dann zurück in der EU-Apotheke das Medikament nochmals zu erhalten – sofern die EU-Apotheke das Medikament ausgibt, obwohl der E-Rezept-Fachdienst einen Fehler meldet (z.B. um den Umsatz dennoch zu machen). Ein finanzieller Schaden für Apotheken im Ausland würde hierbei nicht entstehen, da Versicherte die im Ausland erhaltenen Medikamente zunächst selbst bezahlen. Kostenträger können einen finanziellen Schaden abwenden, wenn sie durch geeignete Prüfungen eine oben geschilderte mehrfache Einlösung eines E-Rezepts feststellen. Für Apotheker in Deutschland könnte ein finanzieller Schaden entstehen, falls der Kostenträger einem Versicherten die Rechnung für ein im Ausland erhaltenes Medikament erstattet, bevor die Abrechnung des E-Rezepts durch die Apotheke in Deutschland erfolgt – unter der Annahme, dass der Kostenträger in diesem Fall das E-Rezept nicht noch einmal abrechnen wird. Solche Schadensszenarien können nicht durch die Komponenten und Dienste der TI abgewendet werden.</p>
+
+
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+  <script src="assets/js/window-hash.js" type="text/javascript"> </script>
+  <a name="bottom"> </a>
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
+
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&nbsp;
+
+                <a href="menu-technische-umsetzung-anwendungsfaelle.html">&lt;vorherige</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">oben</a>
+              </td>
+              <td style="text-align:right">&nbsp;
+
+                <a href="menu-schnittstellen-query-api.html">nächste&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="inner-wrapper">
+        <p>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.xborder#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 06:49+0000">2026-03-23</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
