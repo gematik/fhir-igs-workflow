@@ -137,3 +137,25 @@ Für die Prüfung mittels Basis-Consumer siehe [gemSpec_Basis_KTR_Consumer#A_174
 
 Im weiteren Verlauf kann der “ACCESS_TOKEN” innerhalb seiner Gültigkeitsdauer bei verschiedenen Aufrufen des Fachdienstes eingereicht werden. Der Fachdienst entschlüsselt das “ACCESS_TOKEN” mit seinem privaten Schlüssel, validiert es, zieht die notwendigen Informationen entsprechend seinem Claim heraus und verwendet diese für seine fachlichen Operationen.
 
+### Authentifizierung eines Versicherten
+
+Der Nutzer des E-Rezept-FdV muss sich für Zugriffe auf den E-Rezept-Fachdienst gegenüber der TI authentifizieren.
+
+Die Authentisierung kann gegenüber dem IDP-Dienst mittels eGK unter Kenntnis der PIN der eGK oder mit der GesundheitsID, d.h. Nutzerauthentisierung gegenüber dem sektoralen IDP, erfolgen.
+
+Das E-Rezept-FdV MUSS mindestens ein Verfahren zur Authentisierung des Nutzers gegenüber dem E-Rezept-Fachdienst unterstützen.
+
+Das E-Rezept-FdV MUSS, wenn es eine Authentifizierung des Nutzers über den IDP-Dienst, in seiner Rolle als Authorization-Server, unterstützt, entweder als anfragendes Anwendungsfrontend und Authenticator-Modul oder, wenn ein Authenticator-Modul in einer anderen für die TI zugelassene App genutzt wird, als anfragendes Anwendungsfrontend agieren.
+
+Das E-Rezept-FdV MUSS, wenn es eine Authentifizierung des Nutzers über einen sektoralen IDP unterstützt, als anfragendes Anwendungsfrontend agieren.
+Für Informationen zum Ablauf der Authentisierung siehe [gemSpec_IDP_Dienst] und [gemSpec_IDP_Frontend].
+
+Das E-Rezept-FdV erhält bei erfolgreicher Authentisierung einen Authentisierungstoken (ACCESS_TOKEN), welcher an den E-Rezept-Fachdienst weitergeleitet wird.
+
+Das E-Rezept-FdV MUSS, falls für den Aufruf einer Operation am E-Rezept-Fachdienst kein gültiger ACCESS_TOKEN  vorliegt, sich gegenüber dem E-Rezept-Fachdienst authentisieren.
+**Gast Login**
+
+Das E-Rezept-FdV KANN die Authentisierung am sektoralen IDP mittels eGK und PIN, ohne GesundheitsID, unterstützen.
+
+Das E-Rezept-FdV MUSS, wenn es die Authentisierung am sektoralen IDP mittels eGK und PIN ohne GesundheitsID, unterstützt, zur Signalisierung des Gast-Login mit eGK und PIN den Parameter x-authorize-egk im Authorization Request an den E-Rezept-Authorization Server verwenden.
+

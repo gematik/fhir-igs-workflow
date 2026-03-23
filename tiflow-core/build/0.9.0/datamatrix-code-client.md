@@ -65,3 +65,16 @@ Das PS der abgebenden LEI DARF die E-Rezept-Token von Teilverordnungen einer Meh
 Das PS der abgebenden LEI KANN die E-Rezept-Token von Teilverordnungen einer Mehrfachverordnung, deren Einlösefrist noch nicht begonnen hat, speichern, wenn der Versicherte es wünscht.
 Die Apotheke stimmt mit dem Patienten ab, wie mit der Teilverordnung verfahren wird, bspw. telefonische Rücksprache mit dem Patienten, ob das Rezept beliefert werden soll oder automatische Belieferung bei Erreichen der Einlösefrist.
 
+### 2D-Code für Abrechnungsinformation-Token
+
+Um auf Wunsch des Versicherten den PKV-Abgabedatensatz ändern zu können, muss die Apotheke das Wissen um die Referenz des ChargeItem und den AccessCode zum Nachweis der Berechtigung erlangen. Diese Informationen werden vom Versicherten zur Verfügung gestellt. Die Bereitstellung kann als Nachricht über den E-Rezept-Fachdienst oder durch Abscannen als 2D-Code vom Display der E-Rezept-FdV erfolgen. 
+
+Das E-Rezept-FdV MUSS zum Erstellen eines Token für die Zugriffsinformationen für eine Abrechnungsinformation die ID auf einen ChargeItem zusammen mit dem AccessCode zum Ändern aus den lokal verfügbaren Informationen einer Abrechnungsinformation als URL in der Form: 2D-Code-Daten = "ChargeItem/" + ChargeItem.id  + "?ac=" + AccessCode zusammenstellen, damit diese Zeichenkette als Referenz in einer E-Rezept-Nachricht oder für die Generierung eines 2D-Codes verwendet werden kann.
+Beispiel für Abrechnungsinformation-Token: 
+ “ChargeItem/200.100.000.000.004.30?ac=0037c20b8e893b690f07d784fcfcf38c748454c08253a8b2c0499347576ca612”
+
+Das E-Rezept-FdV MUSS einen Abrechnungsinformation-Token in JSON-Notation gemäß [JSON] der folgenden Form
+* 2D-Code-Daten = { "urls": [ "Abrechnungsinformation" ] }
+darstellen, um daraus einen 2D-Code generieren zu können.
+Beispiel für die Codierung als 2D-Code: { “urls”: [ “ChargeItem/200.100.000.000.004.30?ac=0037c20b8e893b690f07d784fcfcf38c748454c08253a8b2c0499347576ca612” ] }
+

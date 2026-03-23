@@ -272,8 +272,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#authentifizierung-einer-leistungserbringerinstitution--kostenträger" id="markdown-toc-authentifizierung-einer-leistungserbringerinstitution--kostenträger">Authentifizierung einer Leistungserbringerinstitution / Kostenträger</a></li>
+  <li><a href="#authentifizierung-eines-versicherten" id="markdown-toc-authentifizierung-eines-versicherten">Authentifizierung eines Versicherten</a></li>
+</ul>
+
 </div>
 
 <h3 id="authentifizierung-einer-leistungserbringerinstitution--kostenträger">Authentifizierung einer Leistungserbringerinstitution / Kostenträger</h3>
@@ -383,7 +389,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Hinweis: Zur Durchführung der Prüfungen gemäß A_20657-* und ähnlicher Anforderungen ist zu verifizieren, ob im Feld certificatePolicies (2.5.29.32) des Zertifikates der richtige Zertifikatstyp FD.SIG (1.2.276.0.76.4.203) gemäß [gemSpec_OID#Tabelle Tab_PKI_405] eingetragen ist und sich in der Admission (1.3.36.8.3.3) des Zertifikats die richtige “oid_idpd” (1.2.276.0.76.4.260) findet.</p>
 
-<!-- A_20658-01 -->
+<!-- A_20658-01, A_19482-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-4" title="CS: Sicheres Löschen der Token" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
@@ -398,13 +404,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="NCPeH_ePeDA">
         <testProcedure id="Produktgutachten" />
     </actor>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
     Das Clientsystem MUSS, wenn es kontrolliert beendet wird, vorhandene ACCESS_TOKEN, ID_TOKEN und AUTHORIZATION_CODE-Objekte sicher löschen.
 </requirement>
 
 <p>Darüber hinaus gelten für die Kommunikation mit dem IDP-Dienst die Vorgaben aus 5.1.1 - Kommunikation zu den Diensten der TI.</p>
 
 <!-- A_21337-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-5" title="CS: Löschung von TOKEN bei zeitlichem Ablauf" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-5" title="CS: Sicheres Löschen von TOKEN bei zeitlichem Ablauf" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung" />
@@ -417,6 +426,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </actor>
     <actor name="NCPeH_ePeDA">
         <testProcedure id="Produktgutachten" />
+    </actor>
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung" />
     </actor>
     Das Clientsystem MUSS vorhandene ACCESS_TOKEN, ID_TOKEN und AUTHORIZATION_CODE-Objekte nach Ablauf ihrer Gültigkeit sicher löschen.
 </requirement>
@@ -806,6 +818,65 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Im weiteren Verlauf kann der “ACCESS_TOKEN” innerhalb seiner Gültigkeitsdauer bei verschiedenen Aufrufen des Fachdienstes eingereicht werden. Der Fachdienst entschlüsselt das “ACCESS_TOKEN” mit seinem privaten Schlüssel, validiert es, zieht die notwendigen Informationen entsprechend seinem Claim heraus und verwendet diese für seine fachlichen Operationen.</p>
 
+<h3 id="authentifizierung-eines-versicherten">Authentifizierung eines Versicherten</h3>
+
+<p>Der Nutzer des E-Rezept-FdV muss sich für Zugriffe auf den E-Rezept-Fachdienst gegenüber der TI authentifizieren.</p>
+
+<p>Die Authentisierung kann gegenüber dem IDP-Dienst mittels eGK unter Kenntnis der PIN der eGK oder mit der GesundheitsID, d.h. Nutzerauthentisierung gegenüber dem sektoralen IDP, erfolgen.</p>
+
+<!-- A_25224 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-402" title="E-Rezept-FdV: Authentisierung E-Rezept-Fachdienst" version="0">
+    <meta lockversion="false" />
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    Das E-Rezept-FdV MUSS mindestens ein Verfahren zur Authentisierung des Nutzers gegenüber dem E-Rezept-Fachdienst unterstützen.
+</requirement>
+
+<!-- A_20167-02 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-403" title="E-Rezept-FdV: Authentisierung E-Rezept-Fachdienst - IDP-Dienst - Rolle Anwendungsfrontend und optional Authenticator-Modul" version="0">
+    <meta lockversion="false" />
+    <actor name="eRp_FdV">
+        <testProcedure id="Produktgutachten" />
+    </actor>
+    Das E-Rezept-FdV MUSS, wenn es eine Authentifizierung des Nutzers über den IDP-Dienst, in seiner Rolle als Authorization-Server, unterstützt, entweder als anfragendes Anwendungsfrontend und Authenticator-Modul oder, wenn ein Authenticator-Modul in einer anderen für die TI zugelassene App genutzt wird, als anfragendes Anwendungsfrontend agieren.
+</requirement>
+
+<!-- A_25225 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-404" title="E-Rezept-FdV: Authentisierung E-Rezept-Fachdienst - sektoraler IDP - Rolle Anwendungsfrontend" version="0">
+    <meta lockversion="false" />
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    Das E-Rezept-FdV MUSS, wenn es eine Authentifizierung des Nutzers über einen sektoralen IDP unterstützt, als anfragendes Anwendungsfrontend agieren.
+</requirement>
+
+<p>Für Informationen zum Ablauf der Authentisierung siehe [gemSpec_IDP_Dienst] und [gemSpec_IDP_Frontend].</p>
+
+<p>Das E-Rezept-FdV erhält bei erfolgreicher Authentisierung einen Authentisierungstoken (ACCESS_TOKEN), welcher an den E-Rezept-Fachdienst weitergeleitet wird.</p>
+
+<!-- A_20117-01 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-405" title="E-Rezept-FdV: Zugriff E-Rezept-Fachdienst - Authentisierung wenn kein gültiger ACCESS_TOKEN" version="0">
+    <meta lockversion="false" />
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    Das E-Rezept-FdV MUSS, falls für den Aufruf einer Operation am E-Rezept-Fachdienst kein gültiger ACCESS_TOKEN  vorliegt, sich gegenüber dem E-Rezept-Fachdienst authentisieren.
+</requirement>
+
+<p><b>Gast Login</b></p>
+
+<p>Das E-Rezept-FdV KANN die Authentisierung am sektoralen IDP mittels eGK und PIN, ohne GesundheitsID, unterstützen.</p>
+
+<!-- A_28409 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-406" title="E-Rezept-FdV: Authentisierung mit eGK und PIN (Gast-Login) - Parameter" version="0">
+    <meta lockversion="false" />
+    <actor name="eRp_FdV">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    Das E-Rezept-FdV MUSS, wenn es die Authentisierung am sektoralen IDP mittels eGK und PIN ohne GesundheitsID, unterstützt, zur Signalisierung des Gast-Login mit eGK und PIN den Parameter x-authorize-egk im Authorization Request an den E-Rezept-Authorization Server verwenden.
+</requirement>
+
 
 
 
@@ -847,7 +918,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Sat, Mar 21, 2026 20:06+0000">2026-03-21</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 06:04+0000">2026-03-23</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
