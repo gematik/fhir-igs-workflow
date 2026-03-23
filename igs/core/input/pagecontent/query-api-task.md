@@ -14,7 +14,7 @@ Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource _Task_ wird ü
 
 ### Anforderungen an Schnittstelle
 
-- [FD-Anforderungen zur Task-Query](./query-api-task-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [FD-Anforderungen zur Task-Query](./query-api-task-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
 - [FdV-Anforderungen zur Task-Query](./query-api-task-req-fdv.html): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
 - [AVS-Anforderungen zur Task-Query](./query-api-task-req-avs.html): Anforderungen an das AVS zur Nutzung der Schnittstelle.
 - [KTR-Anforderungen zur Task-Query](./query-api-task-req-ktr.html): Anforderungen an das AVS zur Nutzung der Schnittstelle.
@@ -30,15 +30,68 @@ Durch Angabe des URL-Parameter `?secret=` bei der GET-Operation kann eine abgebe
 
 #### API Beschreibung
 
-- [API-ERP: Alle E-Rezepte ansehen (FdV)](https://github.com/gematik/api-erp/blob/master/docs/erp_versicherte.adoc#alle-e-rezepte-ansehen)
+<div class="gematik-apidoc"
+  data-api-type="FHIRResource"
+  data-api-fhir-resource-type="Task"
+  data-api-fhir-interaction="search-type">
+  <div id="CapabilityStatement">
+    <pre>
+      {% include CapabilityStatement-erp-fachdienst-server.json %}
+    </pre>
+  </div>
+  <div id="Response-Examples">
+    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+      {% fragment Bundle/example-searchset-task JSON %}
+    </div>
+    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+      {% fragment Bundle/example-searchset-task XML %}
+    </div>
+  </div>
+</div>
 
 ### Instance API
 
 Um spezifische Details zu einem einzelnen _Task_ mittels der RESTful API zu erhalten, wird die _Task Instance API_ verwendet, indem eine HTTP GET-Anfrage an den Endpunkt <i>/Task/[id]</i> gestellt wird.
 
-#### API Beschreibung
+#### Task abrufen
 
-- [API-ERP: E-Rezept abrufen (FdV)](https://github.com/gematik/api-erp/blob/master/docs/erp_versicherte.adoc#ein-einzelnes-e-rezept-abrufen-und-in-der-apotheke-einl%C3%B6sen)
-- [API-ERP: E-Rezept erneut abrufen (PS abgebend)](https://github.com/gematik/api-erp/blob/master/docs/erp_abrufen.adoc#e-rezept-erneut-abrufen)
-- [API-ERP: Quittung erneut abrufen (PS abgebend)](https://github.com/gematik/api-erp/blob/master/docs/erp_abrufen.adoc#quittung-erneut-abrufen)
+<div class="gematik-apidoc"
+  data-api-type="FHIRResource"
+  data-api-fhir-resource-type="Task"
+  data-api-fhir-interaction="read">
+  <div id="CapabilityStatement">
+    <pre>
+      {% include CapabilityStatement-erp-fachdienst-server.json %}
+    </pre>
+  </div>
+  <div id="Response-Examples">
+    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+      {% fragment Task/TaskInReadyState JSON %}
+    </div>
+    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+      {% fragment Task/TaskInReadyState XML %}
+    </div>
+  </div>
+</div>
+
+#### Task markieren
+
+<div class="gematik-apidoc"
+  data-api-type="FHIRResource"
+  data-api-fhir-resource-type="Task"
+  data-api-fhir-interaction="patch">
+  <div id="CapabilityStatement">
+    <pre>
+      {% include CapabilityStatement-erp-fachdienst-server.json %}
+    </pre>
+  </div>
+  <div id="Response-Examples">
+    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+      {% fragment Task/TaskInReadyState JSON %}
+    </div>
+    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+      {% fragment Task/TaskInReadyState XML %}
+    </div>
+  </div>
+</div>
 

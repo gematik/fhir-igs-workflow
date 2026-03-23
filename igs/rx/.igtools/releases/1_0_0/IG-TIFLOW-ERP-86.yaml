@@ -1,31 +1,30 @@
 actor:
-- eRp_FD
+- TI_Flow_FD
 conformance: SHALL
-content_hash: f5228782465b38445bce5f199a6abae9719708b1bdb2fb342d3491c2f38f6479
+content_hash: e9568df3d4d04cbdbb109e51f3032dcebae2283674d13d89184894c51e7c4d56
 created: '2026-03-23T10:57:49.804338'
-date: '2026-03-23T10:57:49.804341'
+date: '2026-03-23T13:47:28.501136'
 key: IG-TIFLOW-ERP-86
 modified: '2026-03-23T10:57:49.804340'
 release_status: STABLE
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
+  TI_Flow_FD:
   - Produkttest
-text: "Der E-Rezept-Fachdienst MUSS bei einem Task mit Task.flowType = 166 die Attribute\
+text: "Der TI-Flow-Fachdienst MUSS bei einem Task mit Task.flowType = 166 die Attribute\
   \ in Task in Abhängigkeit des in der http-POST-Operation /Task/&#60;id&#62;/$activate\
   \ übergebenen gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_006 belegen.<br>\n\
-  \n  <table>\n    <tr> \n      <th>Feld in Task</th>\n      <th>Feldbelegung</th>\n\
-  \    </tr>\n    <tr> \n      <td>Task.performerType.coding.system</td>\n      <td>\"\
-  https://gematik.de/fhir/erp/CodeSystemGEM_ERP_CS_OrganizationType\"</td>\n    </tr>\n\
-  \    <tr> \n      <td>Task.performerType.coding.code</td>\n      <td>\"1.2.276.0.76.4.54\"\
-  </td>\n    </tr>\n    <tr> \n      <td>Task.performerType.coding.diplay</td>\n \
-  \     <td>\"Öffentliche Apotheke\"</td>\n    </tr>\n    <tr> \n      <td>Task.PrescriptionType.valueCoding.display</td>\n\
-  \      <td>\"Flowtype für Arzneimittel nach § 3a AMVV\"</td>\n    </tr>\n    <tr>\
-  \ \n      <td>Task.ExpiryDate</td>\n      <td>Task.ExpiryDate = &#60;Datum der QES.Erstellung\
-  \ im Signaturobjekt&#62; + 6 Kalendertage</td>\n    </tr>\n    <tr> \n      <td>Task.AcceptDate</td>\n\
-  \      <td>Task.ExpiryDate = &#60;Datum der QES.Erstellung im Signaturobjekt&#62;\
-  \ + 6 Kalendertage</td>\n    </tr>\n  </table>\n  <div><figcaption><strong>Tabelle:\
-  \ </strong>TAB_eRpDM_006 Prozessparameter Flowtype 166</figcaption></div>"
-title: E-Rezept-Fachdienst - Task aktivieren - Flowtype 166 - Prozessparameter
+  \n <table>\n <tr> \n <th>Feld in Task</th>\n <th>Feldbelegung</th>\n </tr>\n <tr>\
+  \ \n <td>Task.performerType.coding.system</td>\n <td>\"https://gematik.de/fhir/erp/CodeSystemGEM_ERP_CS_OrganizationType\"\
+  </td>\n </tr>\n <tr> \n <td>Task.performerType.coding.code</td>\n <td>\"1.2.276.0.76.4.54\"\
+  </td>\n </tr>\n <tr> \n <td>Task.performerType.coding.diplay</td>\n <td>\"Öffentliche\
+  \ Apotheke\"</td>\n </tr>\n <tr> \n <td>Task.PrescriptionType.valueCoding.display</td>\n\
+  \ <td>\"Flowtype für Arzneimittel nach § 3a AMVV\"</td>\n </tr>\n <tr> \n <td>Task.ExpiryDate</td>\n\
+  \ <td>Task.ExpiryDate = &#60;Datum der QES.Erstellung im Signaturobjekt&#62; + 6\
+  \ Kalendertage</td>\n </tr>\n <tr> \n <td>Task.AcceptDate</td>\n <td>Task.ExpiryDate\
+  \ = &#60;Datum der QES.Erstellung im Signaturobjekt&#62; + 6 Kalendertage</td>\n\
+  \ </tr>\n </table>\n <div><figcaption><strong>Tabelle: </strong>TAB_eRpDM_006 Prozessparameter\
+  \ Flowtype 166</figcaption></div>"
+title: TI-Flow-Fachdienst - Task aktivieren - Flowtype 166 - Prozessparameter
 version: 0

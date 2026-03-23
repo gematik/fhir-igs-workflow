@@ -1,23 +1,23 @@
 actor:
-- eRp_FD
+- TI_Flow_FD
 conformance: SHALL
-content_hash: 242dfb2e323d222aea0d7e7794123d8206ee8e50089019bd4e7d1cfa42e4c3e7
+content_hash: f216a845581e2b4573a3d2cedfa98544cbb4c9123c6797e5f2719f91a767ee72
 created: '2026-03-23T10:57:48.438368'
-date: '2026-03-23T10:57:48.438371'
+date: '2026-03-23T13:47:26.445374'
 key: IG-TIFLOW-CORE-60
 modified: '2026-03-23T10:57:48.438370'
 release_status: STABLE
 source: input/pagecontent/op-close-req-fd.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
+  TI_Flow_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation
+text: Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation
   über /Task/&lt;id&gt;/$close das im URL-Parameter "?secret=..." übertragene Secret
   gegen das im referenzierten Task gespeicherte Secret Task.identifier:Secret als
   https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret prüfen und bei Ungleichheit
   oder Fehlen des URL-Parameters die Operation mit dem HTTP-Fehlercode 403 abbrechen,
   damit der Zugriff auf diesen Datensatz nur durch den Berechtigten in Kenntnis des
   Secrets erfolgt.
-title: E-Rezept-Fachdienst - Task schließen - Prüfung Secret
+title: TI-Flow-Fachdienst - Task schließen - Prüfung Secret
 version: 0

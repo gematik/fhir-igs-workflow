@@ -1,24 +1,24 @@
 actor:
-- eRp_FD
+- TI_Flow_FD
 conformance: SHALL
-content_hash: 83a9ec43c8c1faa800f51b5d182bb835255c0ac936e89e1e3bea6a85fb1f6b8f
+content_hash: 61dd57d33e944ec4a17bd074ffa921e1f9e227d22062319d4a474ff69fd6ace1
 created: '2026-03-23T10:57:48.508644'
-date: '2026-03-23T10:57:48.508647'
+date: '2026-03-23T13:47:26.513241'
 key: IG-TIFLOW-CORE-333
 modified: '2026-03-23T10:57:48.508646'
 release_status: STABLE
 source: input/pagecontent/query-api-communication-req-fd.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
+  TI_Flow_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation
+text: Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation
   POST auf den Endpunkt /Communication mit GEM_ERP_PR_Communication_DispReq-Ressource
   für den in Communication.basedOn referenzierten Task prüfen, dass Task.ExpiryDate
   nicht zu einem früheren Zeitpunkt als dem aktuellem Datum liegt und anderenfalls
   mit dem Http-Fehler 400 und dem OperationOutcome "Task has expired." abbrechen,
   damit ausschließlich E-Rezepte zugewiesen werden, welche deren Einlösefrist noch
   nicht erreicht ist.
-title: E-Rezept-Fachdienst - Nachricht einstellen - Dispense Request - Prüfung Ende
+title: TI-Flow-Fachdienst - Nachricht einstellen - Dispense Request - Prüfung Ende
   Gültigkeit Task
 version: 0

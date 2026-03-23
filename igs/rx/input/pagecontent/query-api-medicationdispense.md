@@ -6,7 +6,7 @@ Die Nachricht zum Abruf von Dipensierdaten wird als HTTP GET-Anfrage an den  ges
 
 ### Anforderungen an Schnittstelle
 
-- [FD-Anforderungen zur MedicationDispense-Query](./query-api-medicationdispense-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [FD-Anforderungen zur MedicationDispense-Query](./query-api-medicationdispense-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
 - [FdV-Anforderungen für MedicationDispense-Query](./query-api-medicationdispense-req-fdv.html): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
 
 ### Resource API
@@ -17,7 +17,22 @@ Anfragen an die <i>MedicationDispense</i>-Ressource können über die RESTful AP
 
 #### API Beschreibung
 
-- [API-ERP: Abgabeinformationen abrufen](https://github.com/gematik/api-erp/blob/master/docs/erp_versicherte.adoc#abgabeinformationen-abrufen)
+<div class="gematik-api"
+	data-api-type="FHIRResource"
+	data-api-fhir-resource-type="MedicationDispense"
+	data-api-fhir-interaction="search-type">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-erp-fachdienst-server-rx.json %}
+		</pre>
+	</div>
+	<div id="Response-Examples">
+		<!-- TODO: Replace placeholder searchset with a representative MedicationDispense query example. -->
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Bundle/ExampleRxMedicationDispenseSearchset XML %}
+		</div>
+	</div>
+</div>
 
 
 ### Instance API
@@ -26,7 +41,22 @@ Um spezifische Details zu einem einzelnen _MedicationDispense_ mittels der RESTf
 
 #### API Beschreibung
 
-- [API-ERP: Abgabeinformationen zu einem E-Rezept abrufen](https://github.com/gematik/api-erp/blob/master/docs/erp_versicherte.adoc#abgabeinformationen-zu-einem-e-rezept-abrufen)
+<div class="gematik-api"
+	data-api-type="FHIRResource"
+	data-api-fhir-resource-type="MedicationDispense"
+	data-api-fhir-interaction="read">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-erp-fachdienst-server-rx.json %}
+		</pre>
+	</div>
+	<div id="Response-Examples">
+		<!-- TODO: Add a dedicated MedicationDispense read example for RX. -->
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Bundle/ExampleRxMedicationDispenseSearchset XML %}
+		</div>
+	</div>
+</div>
 
 #### Hinweise
 

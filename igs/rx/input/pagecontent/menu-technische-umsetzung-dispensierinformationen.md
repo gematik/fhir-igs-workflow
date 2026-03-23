@@ -1,4 +1,4 @@
-Für die Anwendungsfälle "Dispensierinformationen bereitstellen" und "Quittung abrufen" muss das PS der abgebenden LEI Dispensierinformationen an den E-Rezept-Fachdienst übermitteln. Dieses Kapitel beschreibt, wie ein entsprechendes PS den Datensatz zu den Dispensierinformationen zu befüllen hat. Für die Spezifikation der Ressource MedicationDispense siehe [gemSpec_DM_eRp].
+Für die Anwendungsfälle "Dispensierinformationen bereitstellen" und "Quittung abrufen" muss das PS der abgebenden LEI Dispensierinformationen an den TI-Flow-Fachdienst übermitteln. Dieses Kapitel beschreibt, wie ein entsprechendes PS den Datensatz zu den Dispensierinformationen zu befüllen hat. Für die Spezifikation der Ressource MedicationDispense siehe [gemSpec_DM_eRp].
 
 <!-- A_27035-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-207" title="PS abgebende LEI: Dispensierinformationen - Flowtype 160/166/169/200/209 - MedicationDispense erstellen" version="0">

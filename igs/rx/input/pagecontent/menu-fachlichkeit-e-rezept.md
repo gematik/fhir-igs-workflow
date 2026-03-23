@@ -16,19 +16,19 @@ Die Fachanwendung E-Rezept ermöglicht eine Übermittlung von ärztlichen und za
     <figcaption><strong>Abbildung: </strong>Übersicht E-Rezept</figcaption>
 </figure>
 
-Der verordnende Leistungserbringer erstellt für einen Versicherten ein E-Rezept, welches auf dem zentralen E-Rezept-Fachdienst abgelegt wird. Der Standardfall sieht vor, dass der Versicherte seine E-Rezepte mit dem E-Rezept-Frontend des Versicherten auf seinem technischen Gerät verwaltet. Mit dem E-Rezept-Frontend des Versicherten kann der Versicherte einen E-Rezept-Token generieren, der eine Apotheke für den Zugriff auf ein konkretes E-Rezept im E-Rezept-Fachdienst berechtigt. Der Versicherte übermittelt den E-Rezept-Token elektronisch an eine Apotheke oder legt ihn in Form eines 2D-Codes in einer Apotheke vor. Die elektronische Übertragung des E-Rezept-Tokens an eine Apotheke erfolgt über den E-Rezept-Fachdienst.
+Der verordnende Leistungserbringer erstellt für einen Versicherten ein E-Rezept, welches auf dem zentralen TI-Flow-Fachdienst abgelegt wird. Der Standardfall sieht vor, dass der Versicherte seine E-Rezepte mit dem E-Rezept-Frontend des Versicherten auf seinem technischen Gerät verwaltet. Mit dem E-Rezept-Frontend des Versicherten kann der Versicherte einen E-Rezept-Token generieren, der eine Apotheke für den Zugriff auf ein konkretes E-Rezept im TI-Flow-Fachdienst berechtigt. Der Versicherte übermittelt den E-Rezept-Token elektronisch an eine Apotheke oder legt ihn in Form eines 2D-Codes in einer Apotheke vor. Die elektronische Übertragung des E-Rezept-Tokens an eine Apotheke erfolgt über den TI-Flow-Fachdienst.
 
 Für Versicherte, welche kein E-Rezept-Frontend des Versicherten nutzen, erstellt der verordnende Leistungserbringer den E-Rezept-Token und übergibt ihn in Form eines 2D-Code auf einem Ausdruck dem Versicherten. Der Ausdruck kann in einer Apotheke vorgelegt werden.
 
 Durch die Übergabe eines E-Rezept-Token an eine andere Person kann diese als Vertreter das E-Rezept in einer Apotheke einlösen.
 
-Der Versicherte hat die Hoheit über das E-Rezept, da jeglicher Zugriff auf ein konkretes Rezept im E-Rezept-Fachdienst entweder nur dem Versicherten, dem das E-Rezept verordnet wurde, oder einer Apotheke oder einem Vertreter nach Vorlage eines im E-Rezept-Token enthaltenen AccessCodes gestattet ist. Der E-Rezept-Token realisiert ein Besitzmodell, d.h. wer im Besitz des E-Rezept-Tokens und damit des AccessCodes ist, kann damit die Dispensierung in einer Apotheke veranlassen.
+Der Versicherte hat die Hoheit über das E-Rezept, da jeglicher Zugriff auf ein konkretes Rezept im TI-Flow-Fachdienst entweder nur dem Versicherten, dem das E-Rezept verordnet wurde, oder einer Apotheke oder einem Vertreter nach Vorlage eines im E-Rezept-Token enthaltenen AccessCodes gestattet ist. Der E-Rezept-Token realisiert ein Besitzmodell, d.h. wer im Besitz des E-Rezept-Tokens und damit des AccessCodes ist, kann damit die Dispensierung in einer Apotheke veranlassen.
 
-Mit der Übergabe bzw. dem Einlesen des E-Rezept-Tokens an einen/durch einen Apotheker erfolgt die Aufforderung zur Dispensierung. Der Apotheker lädt das E-Rezept vom zentralen E-Rezept-Fachdienst und verarbeitet es. Zugriffe auf den E-Rezept-Fachdienst werden im E-Rezept-Fachdienst protokolliert und sind durch den jeweils betroffenen Versicherten einsehbar.
+Mit der Übergabe bzw. dem Einlesen des E-Rezept-Tokens an einen/durch einen Apotheker erfolgt die Aufforderung zur Dispensierung. Der Apotheker lädt das E-Rezept vom zentralen TI-Flow-Fachdienst und verarbeitet es. Zugriffe auf den TI-Flow-Fachdienst werden im TI-Flow-Fachdienst protokolliert und sind durch den jeweils betroffenen Versicherten einsehbar.
 
 Die dezentrale E-Rezept-Fachlogik wird im Primärsystem der verordnenden und abgebenden Leistungserbringerinstitutionen, sowie im E-Rezept-Frontend des Versicherten (E-Rezept-FdV) umgesetzt. Alle Client-Systeme nutzen Dienste der zentralen TI-Plattform, wobei die Primärsysteme der Leistungserbringer zusätzlich auf Funktionalitäten des Konnektors zurückgreifen.
 
-In der TI gibt es genau einen Anbieter für den E-Rezept-Fachdienst und einen Anbieter für das E-Rezept-Frontend des Versicherten.
+In der TI gibt es genau einen Anbieter für den TI-Flow-Fachdienst und einen Anbieter für das E-Rezept-Frontend des Versicherten.
 
 Das E-Rezept-Frontend des Versicherten muss diskriminierungsfrei, werbefrei und unabhängig sein.
 
@@ -65,7 +65,7 @@ Mit diesem Anwendungsfall kann der Nutzer die lokal in seinem E-Rezept-FdV gespe
 
 ### Verordnung apothekenpflichtiger Arzneimittel (GKV/PKV)
 
-Ein verordnender Leistungserbringer erstellt im Primärsystem (PVS/KIS) den Verordnungsdatensatz, signiert diesen qualifiziert und stellt das E-Rezept im E-Rezept-Fachdienst bereit.
+Ein verordnender Leistungserbringer erstellt im Primärsystem (PVS/KIS) den Verordnungsdatensatz, signiert diesen qualifiziert und stellt das E-Rezept im TI-Flow-Fachdienst bereit.
 
 #### Fachlicher Ablauf
 
@@ -79,7 +79,7 @@ Ein verordnender Leistungserbringer erstellt im Primärsystem (PVS/KIS) den Vero
 - Für PKV-Versicherte können zusätzliche Schritte zur Bereitstellung PKV-relevanter Versichertendaten erforderlich sein (z. B. Online Check-in).
 - Beide Gruppen durchlaufen für apothekenpflichtige Arzneimittel den regulären Einlöseprozess in der öffentlichen Apotheke.
 
-**Beteiligte Systeme:** PVS/KIS, E-Rezept-Fachdienst
+**Beteiligte Systeme:** PVS/KIS, TI-Flow-Fachdienst
 
 **Technische Anwendungsfälle**
 
@@ -105,7 +105,7 @@ Nach Übergabe von Task-ID und AccessCode (z. B. 2D-Code oder Nachricht) ruft di
 
 ### Anwendungsfälle
 
-**Beteiligte Systeme:** AVS, E-Rezept-Fachdienst
+**Beteiligte Systeme:** AVS, TI-Flow-Fachdienst
 
 **Technische Anwendungsfälle**
 
@@ -126,7 +126,7 @@ Versicherte verwalten ihre E-Rezepte in der E-Rezept-App, sehen Zugriffsprotokol
 
 ### Anwendungsfälle
 
-**Beteiligte Systeme:** PVS/KIS, AVS, E-Rezept-FdV , E-Rezept-Fachdienst
+**Beteiligte Systeme:** PVS/KIS, AVS, E-Rezept-FdV , TI-Flow-Fachdienst
 
 #### Technische Anwendungsfälle der Verordnung
 

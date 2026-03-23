@@ -8,12 +8,13 @@ Checks:
   - SOLL -> SHOULD
     - KANN -> MAY
 - actor name against beginning of requirement text:
-    - Der E-Rezept-Fachdienst -> eRp_FD
   - Das E-Rezept-FdV -> eRp_FdV
+    - Der TI-Flow-Fachdienst -> TI_Flow_FD
+    - TI-Flow-Fachdienst -> TI_Flow_FD
+    - Anbieter TI-Flow-Fachdienst -> Anb_TI_Flow_FD
   - Das PS der abgebenden LEI -> PS_E-Rezept_abgebend
   - Das PS der verordnenden LEI -> PS_E-Rezept_verordnend
   - Das Clientsystem Kostenträger -> CS_E-Rezept_KTR
-  - Anbieter E-Rezept-Fachdienst -> Anb_eRp_FD
 - reports unknown actor names
 - canonicalizes alias subject phrase:
     - Das CS Kostenträger -> Das Clientsystem Kostenträger
@@ -52,21 +53,23 @@ GENERIC_LEADING_SUBJECTS: Set[str] = {
 
 
 KNOWN_ACTORS: Set[str] = {
-    "eRp_FD",
     "eRp_FdV",
+    "TI_Flow_FD",
     "NCPeH_ePeDA",
     "Anb_NCPeH_FD",
     "PS_E-Rezept_abgebend",
     "PS_E-Rezept_verordnend",
     "CS_E-Rezept_KTR",
-    "Anb_eRp_FD",
+    "Anb_TI_Flow_FD",
 }
 
 
 # Ordered by priority and specificity.
 SUBJECT_RULES: List[Tuple[str, str, str]] = [
-    ("Der E-Rezept-Fachdienst", "eRp_FD", "Der E-Rezept-Fachdienst"),
     ("Das E-Rezept-FdV", "eRp_FdV", "Das E-Rezept-FdV"),
+    ("Der TI-Flow-Fachdienst", "TI_Flow_FD", "Der TI-Flow-Fachdienst"),
+    ("TI-Flow-Fachdienst", "TI_Flow_FD", "Der TI-Flow-Fachdienst"),
+    ("Anbieter TI-Flow-Fachdienst", "Anb_TI_Flow_FD", "Anbieter TI-Flow-Fachdienst"),
     ("Der NCPeH-FD", "NCPeH_ePeDA", "Der NCPeH-FD"),
     ("Anbieter des NCPeH-FD", "Anb_NCPeH_FD", "Anbieter des NCPeH-FD"),
     ("Das PS der abgebenden LEI", "PS_E-Rezept_abgebend", "Das PS der abgebenden LEI"),
@@ -75,18 +78,17 @@ SUBJECT_RULES: List[Tuple[str, str, str]] = [
     ("Das Clientsystem Kostentraeger", "CS_E-Rezept_KTR", "Das Clientsystem Kostenträger"),
     ("Das CS Kostenträger", "CS_E-Rezept_KTR", "Das Clientsystem Kostenträger"),
     ("Das CS Kostentraeger", "CS_E-Rezept_KTR", "Das Clientsystem Kostenträger"),
-    ("Anbieter E-Rezept-Fachdienst", "Anb_eRp_FD", "Anbieter E-Rezept-Fachdienst"),
 ]
 
 ACTOR_CANONICAL_SUBJECT: Dict[str, str] = {
-    "eRp_FD": "Der E-Rezept-Fachdienst",
     "eRp_FdV": "Das E-Rezept-FdV",
+    "TI_Flow_FD": "Der TI-Flow-Fachdienst",
     "NCPeH_ePeDA": "Der NCPeH-FD",
     "Anb_NCPeH_FD": "Anbieter des NCPeH-FD",
     "PS_E-Rezept_abgebend": "Das PS der abgebenden LEI",
     "PS_E-Rezept_verordnend": "Das PS der verordnenden LEI",
     "CS_E-Rezept_KTR": "Das Clientsystem Kostenträger",
-    "Anb_eRp_FD": "Anbieter E-Rezept-Fachdienst",
+    "Anb_TI_Flow_FD": "Anbieter TI-Flow-Fachdienst",
 }
 
 

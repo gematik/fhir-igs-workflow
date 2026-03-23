@@ -15,7 +15,7 @@ Die Interaktion mit Nachrichten als FHIR-Ressource _Communication_ wird über di
 
 ### Anforderungen an die Schnittstelle
 
-- [FD-Anforderungen zu Communications](./query-api-communication-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [FD-Anforderungen zu Communications](./query-api-communication-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
 - [FdV-Anforderungen zu Communications](./query-api-communication-req-fdv.html): Anforderungen an ein E-Rezept-FdV zur Nutzung der Schnittstelle.
 - [AVS-Anforderungen zu Communications](./query-api-communication-req-avs.html): Anforderungen an ein Apothekenverwaltungssystem zur Nutzung der Schnittstelle.
 
@@ -23,11 +23,26 @@ Die Interaktion mit Nachrichten als FHIR-Ressource _Communication_ wird über di
 
 Anfragen an die <i>Communication</i>-Ressource können über die RESTful API mittels HTTP GET-Anfragen durchgeführt werden. Dabei können spezifische Suchparameter genutzt werden, um die Anfragen zu verfeinern. Zum Beispiel:
 
-- Für den Versicherten noch nicht vom E-Rezept-Fachdienst abgerufene Communications: `?recipient=<kvnr>&received=NULL`
+- Für den Versicherten noch nicht vom TI-Flow-Fachdienst abgerufene Communications: `?recipient=<kvnr>&received=NULL`
 
 #### API Beschreibung
 
-- [API-ERP: Communications](https://github.com/gematik/api-erp/blob/master/docs/erp_communication.adoc)
+<div class="gematik-api"
+	data-api-type="FHIRResource"
+	data-api-fhir-resource-type="Communication"
+	data-api-fhir-interaction="search-type">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-erp-fachdienst-server-erpchrg.json %}
+		</pre>
+	</div>
+	<div id="Response-Examples">
+		<!-- TODO: Replace placeholder searchset with a representative Communication query example for ERP-CHRG. -->
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Bundle/ExampleERPCHRGCommunicationSearchset XML %}
+		</div>
+	</div>
+</div>
 
 ## Sicherheitsanforderungen
 Generelle Sicherheitsanforderungen werden [hier](./menu-technische-umsetzung-datenschutz-und-sicherheit.html) festgehalten.

@@ -46,7 +46,7 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-     Das E-Rezept-FdV MUSS, wenn es den Anwendungsfall umsetzt, den Anwendungsfall "E-Rezept durch den Versicherten markieren" gemäß TAB_FdVERP_029 umsetzen. Tabelle #: TAB_FdVERP_029 – E-Rezept markieren Name E-Rezept markieren Auslöser Aufruf des Anwendungsfalls in der Graphical User Interface (GUI) Akteur Versicherter Vorbedingung Der Nutzer hat eine oder mehrere Markierungen aus- oder abgewählt. Der Nutzer hat sich gegenüber der TI authentisiert. Nachbedingung Die Markierungen sind im E-Rezept-Fachdienst gespeichert. Standardablauf Task-ID bestimmen FHIR Ressource erstellen Daten im E-Rezept-Fachdienst speichern
+     Das E-Rezept-FdV MUSS, wenn es den Anwendungsfall umsetzt, den Anwendungsfall "E-Rezept durch den Versicherten markieren" gemäß TAB_FdVERP_029 umsetzen. Tabelle #: TAB_FdVERP_029 – E-Rezept markieren Name E-Rezept markieren Auslöser Aufruf des Anwendungsfalls in der Graphical User Interface (GUI) Akteur Versicherter Vorbedingung Der Nutzer hat eine oder mehrere Markierungen aus- oder abgewählt. Der Nutzer hat sich gegenüber der TI authentisiert. Nachbedingung Die Markierungen sind im TI-Flow-Fachdienst gespeichert. Standardablauf Task-ID bestimmen FHIR Ressource erstellen Daten im TI-Flow-Fachdienst speichern
 </requirement>
 
 <!-- A_27545 -->
@@ -64,5 +64,5 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-     Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept markieren" zum Speichern der Information im E-Rezept-Fachdienst die HTTP-Operation PATCH /Task/&lt;id&gt; mit: ACCESS_TOKEN im Authorization-Header, Prescription-ID in URL &lt;id&gt;, FHIR-Ressource im HTTP-Request-Body, ausführen.
+     Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept markieren" zum Speichern der Information im TI-Flow-Fachdienst die HTTP-Operation PATCH /Task/&lt;id&gt; mit: ACCESS_TOKEN im Authorization-Header, Prescription-ID in URL &lt;id&gt;, FHIR-Ressource im HTTP-Request-Body, ausführen.
 </requirement>

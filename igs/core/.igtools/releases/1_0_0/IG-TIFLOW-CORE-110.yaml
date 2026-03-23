@@ -1,23 +1,22 @@
 actor:
-- eRp_FD
+- TI_Flow_FD
 conformance: SHALL
-content_hash: 2621c9f7310ac4ad5f48cb79cd0cfe2aa417092c196eba6ce54f546fbd8ba229
+content_hash: 731e053f0ff59c9a94a6ee9979b6e9fc4f83c1692ea4b60192de0b5a25e90954
 created: '2026-03-23T10:57:48.447932'
-date: '2026-03-23T10:57:48.447934'
+date: '2026-03-23T13:47:26.456449'
 key: IG-TIFLOW-CORE-110
 modified: '2026-03-23T10:57:48.447933'
 release_status: STABLE
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
+  TI_Flow_FD:
   - Produktgutachten
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
+text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
   /Task/&lt;id&gt; durch einen Versicherten bei Ungleichheit der KVNR des Aufrufenden
   (KVNR des ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests UNGLEICH KVNR
   in Task.for ) prüfen, ob der im HTTP-Request-Header "X-AccessCode" oder URL-Parameter
   "?ac=..." übergebene AccessCode gleich dem AccessCode in Task.identifier ist, damit
   auch Vertreter in Kenntnis des AccessCodes ein einzelnes E-Rezept einsehen können.
-title: E-Rezept-Fachdienst - Task abrufen - Versicherter - Prüfung AccessCode bei
-  KVNR-Missmatch
+title: TI-Flow-Fachdienst - Task abrufen - Versicherter - Prüfung AccessCode bei KVNR-Missmatch
 version: 0

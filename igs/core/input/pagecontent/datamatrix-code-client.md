@@ -1,7 +1,7 @@
 ### 2D-Code für E-Rezept-Token
 
 Um ein E-Rezept beliefern zu können, muss die Apotheke das Wissen um die Referenz des steuernden Tasks und den AccessCode zum Nachweis der Berechtigung erlangen.
-Diese beiden Datenfelder, URL des Tasks und AccessCode, werden vom Versicherten zur Verfügung gestellt. Die Bereitstellung kann als E-Rezept-Nachricht über den E-Rezept-Fachdienst oder als 2D-Code erfolgen. Die Bereitstellung als 2D-Code erfolgt entweder über das Abscannen des Codes von einem Patientenausdruck oder vom Display des E-Rezept-FdV, welches den Code auf dem Display des Geräts des Versicherten anzeigt.
+Diese beiden Datenfelder, URL des Tasks und AccessCode, werden vom Versicherten zur Verfügung gestellt. Die Bereitstellung kann als E-Rezept-Nachricht über den TI-Flow-Fachdienst oder als 2D-Code erfolgen. Die Bereitstellung als 2D-Code erfolgt entweder über das Abscannen des Codes von einem Patientenausdruck oder vom Display des E-Rezept-FdV, welches den Code auf dem Display des Geräts des Versicherten anzeigt.
 
 <!-- A_19554 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-229" title="Datenstruktur Einlöseinformationen für E-Rezept" version="0">
@@ -123,7 +123,7 @@ Der 2D-Code für E-Rezept-Token enthält mindestens einen Token für ein E-Rezep
 
 Der 2D-Code für Abrechnungsinformation-Token enthält genau einen Token.
 
-Für den Aufbau des 2D-Codes und Struktur des E-Rezept-Token bzw. Abrechnungsinformation-Token siehe [gemSpec_DM_eRp].Mit den Informationen aus einem E-Rezept-Token kann das E-Rezept vom E-Rezept-Fachdienst heruntergeladen werden.Mit der Information aus dem Abrechnungsinformation-Token kann die Abrechnungsinformation vom E-Rezept-Fachdienst heruntergeladen und der PKV-Abgabedatensatz einmalig auf dem E-Rezept-Fachdienst aktualisiert werden.
+Für den Aufbau des 2D-Codes und Struktur des E-Rezept-Token bzw. Abrechnungsinformation-Token siehe [gemSpec_DM_eRp].Mit den Informationen aus einem E-Rezept-Token kann das E-Rezept vom TI-Flow-Fachdienst heruntergeladen werden.Mit der Information aus dem Abrechnungsinformation-Token kann die Abrechnungsinformation vom TI-Flow-Fachdienst heruntergeladen und der PKV-Abgabedatensatz einmalig auf dem TI-Flow-Fachdienst aktualisiert werden.
 
 <b>Hinweis zu Mehrfachverordnung:</b>
 Wenn Datamatrix-Codes einer Mehrfachverordnung von einem Ausdruck eingescannt werden, dann dürfen die E-Rezept-Token der Teilverordnungen, welche noch nicht ihren Gültigkeitszeitraum erreicht haben, nicht automatisch im AVS gespeichert werden, da der Versicherte das Recht hat, für diese ggf. eine andere Apotheke für das Einlösen auszuwählen.
@@ -150,7 +150,7 @@ Die Apotheke stimmt mit dem Patienten ab, wie mit der Teilverordnung verfahren w
 
 ### 2D-Code für Abrechnungsinformation-Token
 
-Um auf Wunsch des Versicherten den PKV-Abgabedatensatz ändern zu können,  muss die Apotheke das Wissen um die Referenz des ChargeItem und den AccessCode zum Nachweis der Berechtigung erlangen. Diese Informationen werden vom Versicherten zur Verfügung gestellt. Die Bereitstellung kann als Nachricht über den E-Rezept-Fachdienst oder durch Abscannen als 2D-Code vom Display der E-Rezept-FdV erfolgen. 
+Um auf Wunsch des Versicherten den PKV-Abgabedatensatz ändern zu können,  muss die Apotheke das Wissen um die Referenz des ChargeItem und den AccessCode zum Nachweis der Berechtigung erlangen. Diese Informationen werden vom Versicherten zur Verfügung gestellt. Die Bereitstellung kann als Nachricht über den TI-Flow-Fachdienst oder durch Abscannen als 2D-Code vom Display der E-Rezept-FdV erfolgen. 
 
 <!-- A_22729 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-238" title="Datenstruktur Zugriffsinformationen für Abrechnungsinformation" version="0">

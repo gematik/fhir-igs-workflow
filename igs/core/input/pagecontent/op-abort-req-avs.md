@@ -24,7 +24,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>
     </actor>
-     Das PS der abgebenden LEI MUSS den Anwendungsfall "UC 4.3 - E-Rezept durch Abgebenden löschen" aus [gemSysL_eRp] gemäß TAB_ILFERP_009 umsetzen. Tabelle # : TAB_ILFERP_009 – E-Rezept durch Abgebenden löschen Name E-Rezept durch Abgebenden löschen Auslöser Aufruf des Anwendungsfalls in der GUI Akteur Leistungserbringer, Mitarbeiter der abgebenden LEI Vorbedingung Die LEI hat das E-Rezept vom E-Rezept-Fachdienst heruntergeladen. Der Nutzer hat ein E-Rezept zum Löschen markiert und das Löschen bestätigt. Die LEI hat sich gegenüber der TI authentisiert. Nachbedingung Das ausgewählte E-Rezept ist vom E-Rezept-Fachdienst unwiederbringlich gelöscht. Standardablauf Task-ID und Geheimnis des E-Rezepts bestimmen E-Rezept auf Fachdienst löschen E-Rezept-Token in PS löschen
+     Das PS der abgebenden LEI MUSS den Anwendungsfall "UC 4.3 - E-Rezept durch Abgebenden löschen" aus [gemSysL_eRp] gemäß TAB_ILFERP_009 umsetzen. Tabelle # : TAB_ILFERP_009 – E-Rezept durch Abgebenden löschen Name E-Rezept durch Abgebenden löschen Auslöser Aufruf des Anwendungsfalls in der GUI Akteur Leistungserbringer, Mitarbeiter der abgebenden LEI Vorbedingung Die LEI hat das E-Rezept vom TI-Flow-Fachdienst heruntergeladen. Der Nutzer hat ein E-Rezept zum Löschen markiert und das Löschen bestätigt. Die LEI hat sich gegenüber der TI authentisiert. Nachbedingung Das ausgewählte E-Rezept ist vom TI-Flow-Fachdienst unwiederbringlich gelöscht. Standardablauf Task-ID und Geheimnis des E-Rezepts bestimmen E-Rezept auf Fachdienst löschen E-Rezept-Token in PS löschen
 </requirement>
 
 <!-- A_19244 -->

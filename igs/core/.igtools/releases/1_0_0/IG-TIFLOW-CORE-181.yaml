@@ -1,22 +1,22 @@
 actor:
-- eRp_FD
+- TI_Flow_FD
 conformance: SHALL
-content_hash: eccf5bf4b52027caec83b78f21d771564df44f6eb7aa696b853ad1483fa2352b
+content_hash: 9e76f9a61ba2c7d1d5bfe7422271c5bb8459793a2c18c20cb106ee30a2e4d6ed
 created: '2026-03-23T10:57:48.462396'
-date: '2026-03-23T10:57:48.462398'
+date: '2026-03-23T13:47:26.473056'
 key: IG-TIFLOW-CORE-181
 modified: '2026-03-23T10:57:48.462397'
 release_status: STABLE
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
+  TI_Flow_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
+text: Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
   über /Task/&#60;id&#62;/$activate prüfen, dass Patient.identifier.system gleich
   "http://fhir.de/sid/gkv/kvid-10" ist und andernfalls die Operation mit dem http-Fehlercode
   400 und dem Hinweis im OperationOutcome "Als Identifier für den Patienten muss eine
   VersichertenID (KVNR) angegeben werden." abbrechen.
-title: E-Rezept-Fachdienst - Task aktivieren - Versicherten-ID als Identifikator von
+title: TI-Flow-Fachdienst - Task aktivieren - Versicherten-ID als Identifikator von
   Versicherten
 version: 0

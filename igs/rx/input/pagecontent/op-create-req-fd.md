@@ -1,4 +1,4 @@
-Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für die Operation `$create`.
+Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für die Operation `$create`.
 
 ### Anforderungen aus der Core Spezifikation
 

@@ -1,21 +1,21 @@
 actor:
-- eRp_FD
+- TI_Flow_FD
 conformance: SHALL
-content_hash: b736baba09a38251255c6669d9e2d70aa8891ccd13256947023071082e4b6233
+content_hash: 9330370b13a887152f3e770d1f910ceccde1e3710c17cfafc6191fe0adb748b3
 created: '2026-03-23T10:57:49.157285'
-date: '2026-03-23T10:57:49.157287'
+date: '2026-03-23T13:47:27.054732'
 key: IG-TIFLOW-DIGA-18
 modified: '2026-03-23T10:57:49.157286'
 release_status: STABLE
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
+  TI_Flow_FD:
   - Produkttest
-text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Task des Flowtype Task.extension:flowType
+text: Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Task des Flowtype Task.extension:flowType
   = 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate prüfen, obCoverage.type.coding.code
   nicht mit dem Wert "PKV" belegt ist und im Fehlerfall die Operation mit Http-Fehlercode
   400 abbrechen, um sicherzustellen, dass diese Workflows nicht für E-Rezepte für
   PKV-Versicherte genutzt werden.
-title: E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Type
+title: TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Type
 version: 0
