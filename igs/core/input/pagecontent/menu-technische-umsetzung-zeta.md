@@ -13,7 +13,7 @@ Die hier beschriebene Richtlinie funktioniert nach einem einfachen Prinzip: Ein 
 
 Im Folgenden werden die Prüfungen beschrieben, die ein anfragendes System erfolgreich durchlaufen muss.
 
-#### 1. Prüfung des Berufs oder der Einrichtungsart
+#### Prüfung des Berufs oder der Einrichtungsart
 
 Diese Regel stellt sicher, dass nur bestimmte Berufsgruppen oder Arten von Einrichtungen auf das System zugreifen dürfen. Technisch wird dies über eine sogenannte OID (Object Identifier) geprüft, eine eindeutige Kennung für jeden Beruf oder jede Einrichtung.
 
@@ -30,9 +30,9 @@ Folgende Berufe und Einrichtungsarten sind zugelassen:
 * **1.2.276.0.76.4.54:** Öffentliche Apotheke
 * **1.2.276.0.76.4.55:** Krankenhausapotheke
 * **1.2.276.0.76.4.59:** Betriebsstätte Kostenträger
-* **1.2.276.0.76.4.292:** NcPeH (LE-EU verwendet HCPI + Permission + Zugriffscode (6-stellig alphanumerisch) für Requests)
+* **1.2.276.0.76.4.292:** NCPeH (LE-EU verwendet HCPI + Permission + Zugriffscode (6-stellig alphanumerisch) für Requests)
 
-#### 2. Prüfung der Client-Anwendung
+#### Prüfung der Client-Anwendung
 
 Diese Regel verifiziert, dass die verwendete Software (der "Client") und deren Version für den Zugriff bei der gematik registriert sind. Jede Software, die auf das System zugreifen möchte, identifiziert sich mit einer Produktkennung und einer Versionsnummer.
 
@@ -48,7 +48,7 @@ Es wird geprüft, ob die Kombination aus Produkt und Version in einer Liste der 
 
 Eine Anfrage von Produkt A in Version 1.2 wäre erfolgreich, eine Anfrage in Version 1.1 würde jedoch scheitern.
 
-#### 3. Prüfung der angeforderten Berechtigungen (Scopes)
+#### Prüfung der angeforderten Berechtigungen (Scopes)
 
 Diese Regel stellt sicher, dass die anfragende Anwendung nur die Berechtigungen anfordert, die ihr auch gewährt werden dürfen. Anwendungen können bestimmte "Scopes" anfordern, die ihnen Lese- oder Schreibzugriff auf bestimmte Datenbereiche gewähren.
 
@@ -57,11 +57,158 @@ Es wird die Liste der von der Anwendung angeforderten Berechtigungen mit der Lis
 
 **Beispiel:**
 
-* Erlaubte Berechtigungen sind: `/vau`
-* Anwendung fordert an: `/vau` -> **Erfolg**
+* Erlaubte Berechtigungen sind: `task:read`
+* Anwendung fordert an: `task:read` -> **Erfolg**
 * Anwendung fordert an: `/erezept` -> **Fehler** (da `/erezept` nicht erlaubt ist)
 
-#### 4. Prüfung der Ziel-Ressource (Audience)
+#### Definierte Scopes für das E-Rezept
+Die Menge an möglichen Zugriffen bildet sich über die Use Cases des E-Rezepts. Jeder Use Case soll über die Zeta Policy steuerbar sein.
+Die Scopes leiten sich daraus ab. 
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+    {% include zeta-oid-to-use-case.svg %}
+    </div>
+    <figcaption><strong>Abbildung: </strong>Allowed Profession OID's to Use Cases</figcaption>
+</figure>
+
+##### Use Case abgeleitete Scopes
+
+```
+policies:
+
+  - name: task_create
+    description: "POST /Task/$create – Rezept erstellen"
+    scopes:
+      - "task:create"
+    allowed_professions:
+      - "1.2.276.0.76.4.50"   # oid_praxis_arzt
+      - "1.2.276.0.76.4.51"   # oid_zahnarztpraxis
+      - "1.2.276.0.76.4.52"   # oid_praxis_psychotherapeut
+      - "1.2.276.0.76.4.53"   # oid_krankenhaus
+
+  - name: task_activate
+    description: "POST /Task/<id>/$activate – Rezept aktivieren"
+    scopes:
+      - "task:activate"
+    allowed_professions:
+      - "1.2.276.0.76.4.50"   # oid_praxis_arzt
+      - "1.2.276.0.76.4.51"   # oid_zahnarztpraxis
+      - "1.2.276.0.76.4.52"   # oid_praxis_psychotherapeut
+      - "1.2.276.0.76.4.53"   # oid_krankenhaus
+
+  - name: task_get_list
+    description: "GET /Task – Aufgaben abrufen"
+    scopes:
+      - "task:read"
+    allowed_professions:
+      - "1.2.276.0.76.4.49"   # oid_versicherter
+
+  - name: task_get_single
+    description: "GET /Task/<id> – Einzelaufgabe abrufen"
+    scopes:
+      - "task:read:single"
+    allowed_professions:
+      - "1.2.276.0.76.4.49"   # oid_versicherter
+      - "1.2.276.0.76.4.50"   # oid_praxis_arzt
+      - "1.2.276.0.76.4.51"   # oid_zahnarztpraxis
+      - "1.2.276.0.76.4.52"   # oid_praxis_psychotherapeut
+      - "1.2.276.0.76.4.53"   # oid_krankenhaus
+      - "1.2.276.0.76.4.54"   # oid_oeffentliche_apotheke
+      - "1.2.276.0.76.4.55"   # oid_krankenhausapotheke
+
+  - name: task_accept
+    description: "POST /Task/<id>/$accept – Rezept annehmen"
+    scopes:
+      - "task:accept"
+    allowed_professions:
+      - "1.2.276.0.76.4.54"   # oid_oeffentliche_apotheke
+      - "1.2.276.0.76.4.55"   # oid_krankenhausapotheke
+
+  - name: task_reject
+    description: "POST /Task/<id>/$reject – Rezept ablehnen"
+    scopes:
+      - "task:reject"
+    allowed_professions:
+      - "1.2.276.0.76.4.54"   # oid_oeffentliche_apotheke
+      - "1.2.276.0.76.4.55"   # oid_krankenhausapotheke
+
+  - name: task_close
+    description: "POST /Task/<id>/$close – Rezept einlösen"
+    scopes:
+      - "task:close"
+    allowed_professions:
+      - "1.2.276.0.76.4.54"   # oid_oeffentliche_apotheke
+      - "1.2.276.0.76.4.55"   # oid_krankenhausapotheke
+
+  - name: task_abort
+    description: "POST /Task/<id>/$abort – Rezept abbrechen"
+    scopes:
+      - "task:abort"
+    allowed_professions:
+      - "1.2.276.0.76.4.49"   # oid_versicherter
+      - "1.2.276.0.76.4.50"   # oid_praxis_arzt
+      - "1.2.276.0.76.4.51"   # oid_zahnarztpraxis
+      - "1.2.276.0.76.4.52"   # oid_praxis_psychotherapeut
+      - "1.2.276.0.76.4.53"   # oid_krankenhaus
+      - "1.2.276.0.76.4.54"   # oid_oeffentliche_apotheke
+      - "1.2.276.0.76.4.55"   # oid_krankenhausapotheke
+
+  - name: task_delete
+    description: "DELETE /Task/<id> – Aufgabe löschen"
+    scopes:
+      - "task:delete"
+    allowed_professions:
+      - "1.2.276.0.76.4.49"   # oid_versicherter
+
+  - name: medication_dispense_read
+    description: "GET /MedicationDispense – Abgabedaten abrufen"
+    scopes:
+      - "medicationdispense:read"
+    allowed_professions:
+      - "1.2.276.0.76.4.49"   # oid_versicherter
+
+  - name: communication_read
+    description: "GET /Communication – Nachrichten abrufen"
+    scopes:
+      - "communication:read"
+    allowed_professions:
+      - "1.2.276.0.76.4.49"   # oid_versicherter
+      - "1.2.276.0.76.4.54"   # oid_oeffentliche_apotheke
+      - "1.2.276.0.76.4.55"   # oid_krankenhausapotheke
+
+  - name: communication_read_freischaltcode
+    description: "GET /Communication – Nachrichten abrufen die Freischaltcode enthalten"
+    scopes:
+      - "communication:read:freischaltcode"
+    allowed_professions:
+      - "1.2.276.0.76.4.59"   # oid_kostentraeger
+
+  - name: communication_send
+    description: "POST /Communication – Nachricht senden"
+    scopes:
+      - "communication:write"
+    allowed_professions:
+      - "1.2.276.0.76.4.49"   # oid_versicherter
+      - "1.2.276.0.76.4.54"   # oid_oeffentliche_apotheke
+      - "1.2.276.0.76.4.55"   # oid_krankenhausapotheke
+
+  - name: auditevent_read
+    description: "GET /AuditEvent – Protokoll abrufen"
+    scopes:
+      - "auditevent:read"
+    allowed_professions:
+      - "1.2.276.0.76.4.49"   # oid_versicherter
+
+  - name: bundle_get_eu
+    description: "GET /Bundle/<id> – EU-Zugriff"
+    scopes:
+      - "bundle:read:eu"
+    allowed_professions:
+      - "1.2.276.0.76.4.292"  # oid_ncpeh
+ ```
+
+#### Prüfung der Ziel-Ressource (Audience)
 
 Diese Regel kontrolliert, auf welche Zielsysteme oder Datenbereiche ("Audiences") zugegriffen werden darf. Dies ist eine zusätzliche Sicherheitsebene, um sicherzustellen, dass ein Zugriffstoken nur für den vorgesehenen Zweck verwendet wird.
 
@@ -77,7 +224,7 @@ Es wird abgeglichen, ob die von der Anwendung angefragten Ziel-Ressourcen in der
 * Anwendung fordert Zugriff auf: `unknown-url` -> **Fehler** (da `unknown-url` nicht erlaubt ist)
 
 
-## Gültigkeitsdauer der Zugriffstoken (TTL)
+#### Gültigkeitsdauer der Zugriffstoken (TTL)
 
 Wenn alle Prüfungen erfolgreich sind, erhält die Anwendung zeitlich begrenzte "Token" für den Zugriff. Die Gültigkeitsdauer (Time-To-Live, TTL) ist aus Sicherheitsgründen bewusst kurz gewählt.
 
@@ -88,12 +235,14 @@ Es gibt zwei Arten von Token:
 * **Refresh Token:** Wenn das Access Token abgelaufen ist, kann die Anwendung dieses zweite Token verwenden, um ein neues Access Token zu erhalten, ohne dass sich der Benutzer erneut anmelden muss. Es hat eine deutlich längere Lebensdauer.
   * **Gültigkeit:** 43200 Sekunden (12 Stunden)
 
-## Ergebnis der Prüfung
+#### Ergebnis der Prüfung
 
 * **Erfolgsfall:** Wenn **alle vier Prüfungen** erfolgreich sind, wird der Zugriff gestattet. Die Anwendung erhält ein zeitlich begrenztes Zugriffstoken.
 * **Fehlerfall:** Wenn **mindestens eine Prüfung scheitert**, wird der Zugriff verweigert. Die genauen Gründe für die Ablehnung (z.B. "User profession is not allowed", "One or more requested scopes are not allowed") werden zurückgemeldet.
   
-## Referenzen
+#### Referenzen
+
+<!-- TODO: sind diese Referenzen noch nötig -->
 
 ### zeta-authz.rego
 
