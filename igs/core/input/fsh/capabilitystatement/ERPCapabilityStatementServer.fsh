@@ -18,6 +18,14 @@ Usage: #definition
 * format[+] = #application/fhir+xml
 * rest.mode = #server
 * extension[baseUrl].valueString = "http://tiflow"
+
+//Header
+* insert X-erp-user(true)
+* insert X-erp-resource(true)
+* insert Content-Type(true)
+* insert Authorization(true)
+
+//Ressourcen
 * insert TaskInteraction(#SHALL)
 * insert ChargeItemInteraction(#SHALL)
 * insert ConsentInteraction(#SHALL)
@@ -164,48 +172,3 @@ RuleSet: SubscriptionInteraction(expectation)
 * insert SearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#create, {expectation})
 * insert CreateInteractionStatusCodes
-
-RuleSet: TaskPostOperationStatusCodes //TODO: Alle Fehlercodes überarbeiten
-* rest.resource[=].operation[=] insert Successful
-* rest.resource[=].operation[=] insert InvalidRequest
-* rest.resource[=].operation[=] insert ResourceIsNotKnown
-* rest.resource[=].operation[=] insert ResourceWasDeleted
-
-RuleSet: TaskCreateOperationStatusCodes
-* rest.resource[=].operation[=] insert SuccessfulCreated
-* rest.resource[=].operation[=] insert InvalidRequest
-* rest.resource[=].operation[=] insert ResourceIsNotKnown
-* rest.resource[=].operation[=] insert ResourceWasDeleted
-
-RuleSet: TaskNoContentOperationStatusCodes
-* rest.resource[=].operation[=] insert SuccessfulNoContent
-* rest.resource[=].operation[=] insert InvalidRequest
-* rest.resource[=].operation[=] insert ResourceIsNotKnown
-* rest.resource[=].operation[=] insert ResourceWasDeleted
-
-RuleSet: CreateInteractionStatusCodes
-* rest.resource[=].interaction[=] insert SuccessfulCreated
-* rest.resource[=].interaction[=] insert InvalidRequest
-* rest.resource[=].interaction[=] insert UnknownResourceType
-
-RuleSet: DeleteInteractionStatusCodes
-* rest.resource[=].interaction[=] insert SuccessfulNoContent
-* rest.resource[=].interaction[=] insert InvalidRequest
-* rest.resource[=].interaction[=] insert UnknownResourceType
-* rest.resource[=].interaction[=] insert ResourceIsNotKnown
-* rest.resource[=].interaction[=] insert ResourceWasDeleted
-
-RuleSet: UpdateInteractionStatusCodes
-* rest.resource[=].interaction[=] insert Successful
-* rest.resource[=].interaction[=] insert InvalidRequest
-* rest.resource[=].interaction[=] insert UnknownResourceType
-* rest.resource[=].interaction[=] insert ResourceIsNotKnown
-* rest.resource[=].interaction[=] insert ResourceWasDeleted
-
-RuleSet: PatchInteractionStatusCodes
-* rest.resource[=].interaction[=] insert Successful
-* rest.resource[=].interaction[=] insert InvalidRequest
-* rest.resource[=].interaction[=] insert UnknownResourceType
-* rest.resource[=].interaction[=] insert ResourceIsNotKnown
-* rest.resource[=].interaction[=] insert ResourceWasDeleted
-
