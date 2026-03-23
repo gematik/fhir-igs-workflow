@@ -9,6 +9,7 @@ Checks:
     - KANN -> MAY
 - actor name against beginning of requirement text:
   - Das E-Rezept-FdV -> eRp_FdV
+    - Der TI-Flow-Fachdienst -> TI_Flow_FD
     - TI-Flow-Fachdienst -> TI_Flow_FD
     - Anbieter TI-Flow-Fachdienst -> Anb_TI_Flow_FD
   - Das PS der abgebenden LEI -> PS_E-Rezept_abgebend
@@ -66,7 +67,8 @@ KNOWN_ACTORS: Set[str] = {
 # Ordered by priority and specificity.
 SUBJECT_RULES: List[Tuple[str, str, str]] = [
     ("Das E-Rezept-FdV", "eRp_FdV", "Das E-Rezept-FdV"),
-    ("TI-Flow-Fachdienst", "TI_Flow_FD", "TI-Flow-Fachdienst"),
+    ("Der TI-Flow-Fachdienst", "TI_Flow_FD", "Der TI-Flow-Fachdienst"),
+    ("TI-Flow-Fachdienst", "TI_Flow_FD", "Der TI-Flow-Fachdienst"),
     ("Anbieter TI-Flow-Fachdienst", "Anb_TI_Flow_FD", "Anbieter TI-Flow-Fachdienst"),
     ("Der NCPeH-FD", "NCPeH_ePeDA", "Der NCPeH-FD"),
     ("Anbieter des NCPeH-FD", "Anb_NCPeH_FD", "Anbieter des NCPeH-FD"),
@@ -80,7 +82,7 @@ SUBJECT_RULES: List[Tuple[str, str, str]] = [
 
 ACTOR_CANONICAL_SUBJECT: Dict[str, str] = {
     "eRp_FdV": "Das E-Rezept-FdV",
-    "TI_Flow_FD": "TI-Flow-Fachdienst",
+    "TI_Flow_FD": "Der TI-Flow-Fachdienst",
     "NCPeH_ePeDA": "Der NCPeH-FD",
     "Anb_NCPeH_FD": "Anbieter des NCPeH-FD",
     "PS_E-Rezept_abgebend": "Das PS der abgebenden LEI",
