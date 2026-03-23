@@ -6,12 +6,12 @@ Die Nachricht wird als HTTP `POST` an `/$get-eu-prescriptions` gesendet.
 
 ### Anforderungen an Schnittstelle
 
-- [Server Anforderungen zu `$get-eu-prescriptions`](./op-get-eu-prescriptions-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [Server Anforderungen zu `$get-eu-prescriptions`](./op-get-eu-prescriptions-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
 - [NCPeH Anforderungen zu `$get-eu-prescriptions`](./op-get-eu-prescriptions-req-ncpeha.html): Anforderungen an den NCPeH-FD zur Nutzung der Schnittstelle.
 
 ### API Beschreibung
 
 Die API-Beschreibung für den Aufruf der Operation findet sich auf:
-- [API-ERP: Abfragen von E-Rezepten des E-Rezept-Fachdienst](https://github.com/gematik/api-erp/blob/master/docs/erp_eprescription.adoc#abfragen-von-e-rezepten-des-e-rezept-fachdienst)
+- [API-ERP: Abfragen von E-Rezepten des TI-Flow-Fachdienst](https://github.com/gematik/api-erp/blob/master/docs/erp_eprescription.adoc#abfragen-von-e-rezepten-des-TI-Flow-Fachdienst)
 
 

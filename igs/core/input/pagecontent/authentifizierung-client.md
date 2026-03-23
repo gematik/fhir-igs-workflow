@@ -21,7 +21,7 @@ Für weitere Informationen zum IDP-Dienst und zum Ablauf der Authentisierung sie
 Zur Nutzung des IDP-Dienstes gelten einige grundlegende Voraussetzungen, welche das PS erfüllen muss.
 
 <!-- A_20654-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-1" title="CS: Registrierung des Clientsystems des E-Rezept-Fachdienstes" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-1" title="CS: Registrierung des Clientsystems des TI-Flow-Fachdienstes" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -35,7 +35,7 @@ Zur Nutzung des IDP-Dienstes gelten einige grundlegende Voraussetzungen, welche 
     <actor name="Anb_NCPeH_FD">
         <testProcedure id="testProcedureAN01"/>
     </actor>
-    Der Hersteller des Clientsystem des E-Rezept-Fachdienstes MUSS sich über einen organisatorischen Prozess beim Anbieter des IDP-Dienstes für die Dienste, für welche Token abgerufen werden sollen, registrieren. Der IDP-Dienst vergibt dabei eine "client_id". Diese "client_id" MUSS vom Clientsystem bei Nutzung des IDP-Dienstes übertragen werden.
+    Der Hersteller des Clientsystem des TI-Flow-Fachdienstes MUSS sich über einen organisatorischen Prozess beim Anbieter des IDP-Dienstes für die Dienste, für welche Token abgerufen werden sollen, registrieren. Der IDP-Dienst vergibt dabei eine "client_id". Diese "client_id" MUSS vom Clientsystem bei Nutzung des IDP-Dienstes übertragen werden.
 </requirement>
 
 <!-- A_20655-01 -->
@@ -536,21 +536,21 @@ Im weiteren Verlauf kann der "ACCESS_TOKEN" innerhalb seiner Gültigkeitsdauer b
 
 ### Authentifizierung eines Versicherten
 
-Der Nutzer des E-Rezept-FdV muss sich für Zugriffe auf den E-Rezept-Fachdienst gegenüber der TI authentifizieren.
+Der Nutzer des E-Rezept-FdV muss sich für Zugriffe auf den TI-Flow-Fachdienst gegenüber der TI authentifizieren.
 
 Die Authentisierung kann gegenüber dem IDP-Dienst mittels eGK unter Kenntnis der PIN der eGK oder mit der GesundheitsID, d.h. Nutzerauthentisierung gegenüber dem sektoralen IDP, erfolgen.
 
 <!-- A_25224 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-25" title="E-Rezept-FdV: Authentisierung E-Rezept-Fachdienst" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-25" title="E-Rezept-FdV: Authentisierung TI-Flow-Fachdienst" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-    Das E-Rezept-FdV MUSS mindestens ein Verfahren zur Authentisierung des Nutzers gegenüber dem E-Rezept-Fachdienst unterstützen.
+    Das E-Rezept-FdV MUSS mindestens ein Verfahren zur Authentisierung des Nutzers gegenüber dem TI-Flow-Fachdienst unterstützen.
 </requirement>
 
 <!-- A_20167-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-26" title="E-Rezept-FdV: Authentisierung E-Rezept-Fachdienst - IDP-Dienst - Rolle Anwendungsfrontend und optional Authenticator-Modul" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-26" title="E-Rezept-FdV: Authentisierung TI-Flow-Fachdienst - IDP-Dienst - Rolle Anwendungsfrontend und optional Authenticator-Modul" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produktgutachten"/>
@@ -559,7 +559,7 @@ Die Authentisierung kann gegenüber dem IDP-Dienst mittels eGK unter Kenntnis de
 </requirement>
 
 <!-- A_25225 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-27" title="E-Rezept-FdV: Authentisierung E-Rezept-Fachdienst - sektoraler IDP - Rolle Anwendungsfrontend" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-27" title="E-Rezept-FdV: Authentisierung TI-Flow-Fachdienst - sektoraler IDP - Rolle Anwendungsfrontend" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
@@ -569,15 +569,15 @@ Die Authentisierung kann gegenüber dem IDP-Dienst mittels eGK unter Kenntnis de
 
 Für Informationen zum Ablauf der Authentisierung siehe [gemSpec_IDP_Dienst] und [gemSpec_IDP_Frontend].
 
-Das E-Rezept-FdV erhält bei erfolgreicher Authentisierung einen Authentisierungstoken (ACCESS_TOKEN), welcher an den E-Rezept-Fachdienst weitergeleitet wird.
+Das E-Rezept-FdV erhält bei erfolgreicher Authentisierung einen Authentisierungstoken (ACCESS_TOKEN), welcher an den TI-Flow-Fachdienst weitergeleitet wird.
 
 <!-- A_20117-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-28" title="E-Rezept-FdV: Zugriff E-Rezept-Fachdienst - Authentisierung wenn kein gültiger ACCESS_TOKEN" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-28" title="E-Rezept-FdV: Zugriff TI-Flow-Fachdienst - Authentisierung wenn kein gültiger ACCESS_TOKEN" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-    Das E-Rezept-FdV MUSS, falls für den Aufruf einer Operation am E-Rezept-Fachdienst kein gültiger ACCESS_TOKEN  vorliegt, sich gegenüber dem E-Rezept-Fachdienst authentisieren.
+    Das E-Rezept-FdV MUSS, falls für den Aufruf einer Operation am TI-Flow-Fachdienst kein gültiger ACCESS_TOKEN  vorliegt, sich gegenüber dem TI-Flow-Fachdienst authentisieren.
 </requirement>
 
 <b>Gast Login</b>

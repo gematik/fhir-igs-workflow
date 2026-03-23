@@ -1,23 +1,23 @@
 actor:
-- eRp_FD
+- TI_Flow_FD
 conformance: SHALL
-content_hash: d84b6fc9b90c39cfe8068e2155803d4283eedf08fae0f2a3cb8a39cfd2793390
+content_hash: 4879161a14d222e504eb35c730e34104fc898949d2c3dd64162fee5fb286122e
 created: '2026-03-23T10:57:48.448587'
-date: '2026-03-23T10:57:48.448589'
+date: '2026-03-23T13:47:26.457935'
 key: IG-TIFLOW-CORE-115
 modified: '2026-03-23T10:57:48.448588'
 release_status: STABLE
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
+  TI_Flow_FD:
   - Produktgutachten
-text: Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
+text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
   Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende Institution den im URL-Parameter
   "?ac=..." übertragenen AccessCode gegen den im referenzierten Task gespeicherten AccessCode Task.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode
   prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem
   HTTP-Fehlercode 403 abbrechen, damit Zugriffe auf diesen Datensatz nur durch Berechtigte
   in Kenntnis des AccessCode erfolgen.
-title: E-Rezept-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen
+title: TI-Flow-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen
   - Prüfung AccessCode
 version: 0

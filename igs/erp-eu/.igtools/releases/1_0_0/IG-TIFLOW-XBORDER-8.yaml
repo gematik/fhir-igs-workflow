@@ -1,18 +1,18 @@
 actor:
-- eRp_FD
+- TI_Flow_FD
 conformance: SHALL
-content_hash: 75eca0c09a63320c2b1596ec517ac4c09915909f72c42188457c80e68e48100a
+content_hash: c31f3013beac0a6e6741d24ce42c2ca61e073dd1e7e98965fc41c8b52369597c
 created: '2026-03-23T10:57:49.561711'
-date: '2026-03-23T10:57:49.561714'
+date: '2026-03-23T13:47:27.785721'
 key: IG-TIFLOW-XBORDER-8
 modified: '2026-03-23T10:57:49.561713'
 release_status: STABLE
 source: input/pagecontent/op-get-eu-prescriptions-req-fd.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
+  TI_Flow_FD:
   - Produkttest
-text: 'Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts
+text: 'Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts
   /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass nur Ressourcen eines
   Tasks bereitgestellt werden, die folgende Kriterien erfüllen: Task.for = KVNR für
   die KVNR aus Parameters.parameter:requestData.part:kvnr Task.ExpiryDate nicht vor
@@ -21,5 +21,5 @@ text: 'Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endp
   nicht nach dem aktuellen Datum Task.extension:eu-isRedeemableByProperties = true
   Task.extension:eu-isRedeemableByPatientAuthorization = true damit eine Apotheke
   im europäischen Ausland nur einlösbare E-Rezepte abrufen kann.'
-title: E-Rezept-Fachdienst - eu-prescription abfragen - Filter einlösbarer E-Rezepte
+title: TI-Flow-Fachdienst - eu-prescription abfragen - Filter einlösbarer E-Rezepte
 version: 0

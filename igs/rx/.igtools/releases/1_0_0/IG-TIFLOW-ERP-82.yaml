@@ -1,21 +1,21 @@
 actor:
-- eRp_FD
+- TI_Flow_FD
 conformance: SHALL
-content_hash: 80c9dfb78032133feeea9a849515aaa8d11f1a9d5fefe7d6a0e17f0e36c4be87
+content_hash: d6b1bd95af392df5a1b175b30411c83c1a849f1e58fb954898b281f3078f83aa
 created: '2026-03-23T10:57:49.802692'
-date: '2026-03-23T10:57:49.802696'
+date: '2026-03-23T13:47:28.499363'
 key: IG-TIFLOW-ERP-82
 modified: '2026-03-23T10:57:49.802695'
 release_status: STABLE
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
-  eRp_FD:
+  TI_Flow_FD:
   - Herstellererklärung
-text: Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
+text: Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
   über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 und einem Hinweis
   auf den Ausschluss von Betäubungsmittel ("BTM nicht zulässig" im OperationOutcome)
   abbrechen, wenn der übergebene QES-Datensatz als Betäubungsmittel-Verordnung (Bundle.Medication.extension:KBV_EX_ERP_Medication_Category:code
   gleich "01") gekennzeichnet ist.
-title: E-Rezept-Fachdienst - Task aktivieren - Ausschluss Betäubungsmittel
+title: TI-Flow-Fachdienst - Task aktivieren - Ausschluss Betäubungsmittel
 version: 0

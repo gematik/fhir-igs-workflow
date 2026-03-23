@@ -42,7 +42,7 @@ Voraussetzung jeder nachfolgenden User Story ist, dass die gesetzlichen Grundlag
 
 ### Anwendungsfälle
 
-**Beteiligte Systeme:** PVS/KIS, AVS, E-Rezept-Fachdienst
+**Beteiligte Systeme:** PVS/KIS, AVS, TI-Flow-Fachdienst
 
 #### Technische Anwendungsfälle der Verordnung
 

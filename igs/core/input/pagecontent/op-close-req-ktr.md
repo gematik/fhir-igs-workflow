@@ -6,7 +6,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
     <actor name="CS_E-Rezept_KTR">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-    Das Clientsystem Kostenträger MUSS den Anwendungsfall "Quittung abrufen" für Verordnungen, welche abschließend verarbeitet wurden, ausführen, um den Workflow am E-Rezept-Fachdienst abzuschließen.
+    Das Clientsystem Kostenträger MUSS den Anwendungsfall "Quittung abrufen" für Verordnungen, welche abschließend verarbeitet wurden, ausführen, um den Workflow am TI-Flow-Fachdienst abzuschließen.
 </requirement>
 
 Die Erstellung der MedicationDispense erfolgt modulspezifisch.

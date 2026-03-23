@@ -1,5 +1,5 @@
 
-Für den Empfang von Push Notifications in einem FdV muss sich die App-Instanz am E-Rezept-Fachdienst registrieren. Für die Registrierung wird die Ressource pusher verwendet.
+Für den Empfang von Push Notifications in einem FdV muss sich die App-Instanz am TI-Flow-Fachdienst registrieren. Für die Registrierung wird die Ressource pusher verwendet.
 
 ### Nachricht
 
@@ -10,7 +10,7 @@ Für den Empfang von Push Notifications in einem FdV muss sich die App-Instanz a
 
 ### Anforderungen an Schnittstelle
 
-- [FD-Anforderungen zur Pushers-Query](./query-api-pushers-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [FD-Anforderungen zur Pushers-Query](./query-api-pushers-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
 - [FdV-Anforderungen zur Pushers-Query](./query-api-pushers-req-fdv.html): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
 
 

@@ -7,7 +7,7 @@ Die Operation $activate wird als HTTP POST auf /Task/&#60;id&#62;/$activate ausg
 
 ### Anforderungen an Schnittstelle
 
-- [Server-Anforderungen zu `$activate`](./op-activate-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [Server-Anforderungen zu `$activate`](./op-activate-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
 
 - [Anforderungen für PVS zu `$activate`](./op-activate-req-pvs.html): Anforderungen an das PVS zur Nutzung der Schnittstelle.
 
