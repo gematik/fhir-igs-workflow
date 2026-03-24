@@ -426,7 +426,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22629 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-94" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Denominator größer  1" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-94" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Denominator größer 1" version="0">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>

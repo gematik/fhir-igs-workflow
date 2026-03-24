@@ -56,16 +56,6 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Commun
     Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept einer Apotheke zuweisen" prüfen, dass die durch den Nutzer erfasst Textnachricht keinen Internet-Link und keine Non-Printable-Characters enthält und die Textnachricht nur bei erfolgreicher Prüfung weiterverarbeiten.
 </requirement>
 
-
-<!-- A_21361-02 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-ERP-29" title="E-Rezept-FdV: Vertreterkommunikation - Flowtype 169 / 209 - Vertreterkommunikation nicht zulässig" version="0">
-    <meta lockversion="false"/>
-    <actor name="eRp_FdV">
-        <testProcedure id="Produkttest"/>
-    </actor>
-     Das E-Rezept-FdV DARF NICHT im Anwendungsfall "Vertreterkommunikation" es dem Nutzer ermöglichen, bezüglich einem E-Rezept mit dem Flowtype 169 oder 209 mit einem Vertreter zu kommunizieren.
-</requirement>
-
 <!-- A_28542 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-30" title="E-Rezept-FdV: E-Rezept zuweisen - Zuweisen - Payload" version="0">
     <meta lockversion="false"/>

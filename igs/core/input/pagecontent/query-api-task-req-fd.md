@@ -13,7 +13,7 @@ Der Zugriff mittels POST und Angabe einer gültigen FHIR-Operation ist unter [Op
 
 ### GET /Task (Liste)
 
-Der Zugriff mittels der HTTP-Operation GET steht ausschließlich für die Einsichtnahme in E-Rezepte durch den Versicherten bzw. einen Vertreter mit Wissen um den AccessCode bzw. einer abgebenden Institution mit Wissen um das Secret zur Verfügung. Die GET-Operation ohne Referenz einer FHIR-Operation führt zu keiner Statusänderung.
+Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in Verordnungen steht ausschließlich dem Versicherten bzw. einer abgebenden Institution mit Nachweis eines Behandlungskontextes zur Verfügung. Die GET-Operation ohne Referenz einer FHIR-Operation führt zu keiner Statusänderung.
 
 <!-- A_21558-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-80" title="TI-Flow-Fachdienst - Liste Task abrufen - Rollenprüfung" version="0">
@@ -513,6 +513,8 @@ Der TI-Flow-Fachdienst prüft zur Umsetzung von A_26452-* die Telematik-ID aus d
 
 ### GET /Task/<id> (Einzelne Verordnung)
 
+Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in eine spezifische Verordnung steht ausschließlich dem Versicherten bzw. einer abgebenden Institution mit Wissen um das Secret zur Verfügung. Die GET-Operation ohne Referenz einer FHIR-Operation führt zu keiner Statusänderung.
+
 <!-- A_19113-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-109" title="TI-Flow-Fachdienst - Task abrufen - Rollenprüfung" version="0">
     <meta lockversion="false"/>
@@ -529,13 +531,12 @@ Der TI-Flow-Fachdienst prüft zur Umsetzung von A_26452-* die Telematik-ID aus d
     die Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.
 </requirement>
 
-<!-- A_19116-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-110" title="TI-Flow-Fachdienst - Task abrufen - Versicherter - Prüfung AccessCode bei KVNR-Missmatch" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-407" title="TI-Flow-Fachdienst - Task abrufen - Versicherter - Prüfung KVNR" version="0">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
-        <testProcedure id="Produktgutachten"/>
+        <testProcedure id="Produkttest"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen /Task/&lt;id&gt; durch einen Versicherten bei Ungleichheit der KVNR des Aufrufenden (KVNR des ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests UNGLEICH KVNR in Task.for ) prüfen, ob der im HTTP-Request-Header "X-AccessCode" oder URL-Parameter "?ac=..." übergebene AccessCode gleich dem AccessCode in Task.identifier ist, damit auch Vertreter in Kenntnis des AccessCodes ein einzelnes E-Rezept einsehen können.
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen /Task/&lt;id&gt; durch einen Versicherten, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die im gespeicherten Datensatz in Task.for.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit den Aufruf mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich der begünstigte Versicherte den Task abrufen kann.
 </requirement>
 
 <!-- A_21375-02 -->
@@ -553,7 +554,7 @@ Der TI-Flow-Fachdienst prüft zur Umsetzung von A_26452-* die Telematik-ID aus d
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation GET /Task und GET /Task/&lt;id&gt; durch einen Versicherten oid_versicherter ein optional vorhandenes Task.identifier:Secret als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret aus dem zurückgegebenen Task entfernen, sodass Versicherte nicht in Kenntnis des Secrets gelangen, welches die Prozesshoheit des Apothekers darstellt.
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation GET /Task und GET /Task/&lt;id&gt; durch einen Versicherten oid_versicherter ein optional vorhandenes Task.identifier:Secret als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret aus dem zurückgegebenen Task entfernen, sodass Versicherte nicht in Kenntnis des Secrets gelangen, welches die Prozesshoheit der abgebenden Institution darstellt.
 </requirement>
 
 <!-- A_20702-03 -->
@@ -599,7 +600,7 @@ Der TI-Flow-Fachdienst prüft zur Umsetzung von A_26452-* die Telematik-ID aus d
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende Institution den Task mit dem Geheimnis Task.identifier:Secret sowie im Bundle mit dem in Task.input mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType = 1 referenzierten QES-Datensatz als Binary-Ressource https://www.hl7.org/fhir/binary.html an den Aufrufer zurückgeben.
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende Institution den Task mit dem Geheimnis Task.identifier:Secret sowie im Bundle mit dem in Task.input mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType = 1 referenzierten QES-Datensatz als Binary-Ressource https://www.hl7.org/fhir/binary.html an den Aufrufer zurückgeben.
 </requirement>
 
 <!-- A_19226-02 -->
@@ -611,16 +612,6 @@ Der TI-Flow-Fachdienst prüft zur Umsetzung von A_26452-* die Telematik-ID aus d
     Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen Task mittels "/Task/&lt;id&gt;?secret=..." durch eine abgebende Institution den Task, sofern er den Status "completed" hat, um das referenzierte, serverseitig signierte Quittungs-Bundle aus Task.output mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType = 3 als search.include im Ergebnis-Bundle ergänzen und die Ergebnismenge Task + Quittungs-Bundle an den Abgebenden zurückgeben, damit ein Abgebender, der ein konkretes E-Rezept beliefert hat, bei Bedarf genau dieses belieferte E-Rezept inkl. der Quittung erneut abrufen kann.
 </requirement>
 
-
-<!-- Push Notification -->
-<!-- A_28125 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-119" title="TI-Flow-Fachdienst - Task abrufen - Vertreter - Push Notification Versicherter" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
-        <testProcedure id="Produkttest"/>
-    </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation GET /Task/&lt;id&gt; durch einen Versicherten mit der Rolle oid_versicherter, sofern die KVNR des Aufrufenden ungleich der KVNR in Task.for ist, den Push Notification Prozess für den Trigger mit der ChannelId "erp.task.vertreter" und den Versicherten mit der KVNR = Task.for initiieren.
-</requirement>
 
 ### PATCH /Task
 
@@ -636,7 +627,7 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
 </requirement>
 
 <!-- A_27549 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-121" title="TI-Flow-Fachdienst - Task markieren - Versicherter - Rollenprüfung Versicherter markiert Rezepte" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-121" title="TI-Flow-Fachdienst - Task markieren - Versicherter - Rollenprüfung Versicherter markiert Rezepte" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -645,11 +636,11 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
      <ul>
         <li>oid_versicherter</li>
      </ul>
-     , die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit E-Rezepte nicht durch Unberechtigte markiert werden können.
+     die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit E-Rezepte nicht durch Unberechtigte markiert werden können.
 </requirement>
 
 <!-- A_27550 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-122" title="TI-Flow-Fachdienst -Task markieren -Versicherter - Prüfung KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-122" title="TI-Flow-Fachdienst -Task markieren - Versicherter - Prüfung KVNR" version="0">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>

@@ -75,43 +75,6 @@ Die für die Nachricht zu verwendende Communication-Ressource wird modul- und an
     ausführen.
 </requirement>
 
-#### Vertreterkommunikation
-
-Das E-Rezept-FdV MUSS im Anwendungsfall "Vertreterkommunikation" es dem Nutzer ermöglichen, die KVNR des Empfängers der Nachricht zu erfassen.
-
-Das Erfassen der KVNR eines Vertreters kann über eine Texterkennung durch Abscannen dessen eGK, manuelle Eingabe, durch Übernahme aus einer lokalen Vertreterliste oder auch durch die Übernahme aus einer vorherigen Kommunikation erfolgen.
-
-Die Textnachricht ist optional. Der Textnachricht muss der Präfix "&lt;Absendername&gt; schreibt: " vorangestellt werden.
-
-<!-- A_20237-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-76" title="Nachricht senden - Vertreterkommunikation - Nachricht erstellen" version="0">
-    <meta lockversion="false"/>
-    <actor name="eRp_FdV">
-        <testProcedure id="Produkttest"/>
-    </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "Vertreterkommunikation" eine FHIR Ressource Communication des Profils https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Representative mit
-    <ul>
-        <li>KVNR des Vertreters in recipient</li>
-        <li>optional: Textnachricht in payload contentString</li>
-        <li>E-Rezept-Token in basedOn reference auf Task inkl. AccessCode als "/Task/&lt;id&gt;?ac=..."</li>
-    </ul>
-    erstellen.
-</requirement>
-
-<!-- A_20238-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-77" title="Nachricht senden - Vertreterkommunikation - Nachricht auf TI-Flow-Fachdienst einstellen" version="0">
-    <meta lockversion="false"/>
-    <actor name="eRp_FdV">
-        <testProcedure id="Produkttest"/>
-    </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "Vertreterkommunikation" zur Übergabe des Tokens an den Vertreter die HTTP-Operation POST /Communication mit
-    <ul>
-        <li>ACCESS_TOKEN im Authorization-Header</li>
-        <li>Communication Ressource in HTTP-Request-Body</li>
-    </ul>
-    ausführen.
-</requirement>
-
 ### Nachricht löschen
 
 Das E-Rezept-FdV MUSS im Anwendungsfall "Nachricht löschen" es dem Nutzer ermöglichen, eine Nachricht zum Löschen auf dem TI-Flow-Fachdienst auszuwählen.
