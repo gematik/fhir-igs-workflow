@@ -83,7 +83,7 @@ Als Apotheke oder Kostenträger möchten wir alle Nachrichten des Monats April 2
 ##### Hinweise
 
 - Der Aufruf ist aus Performance Gründen nicht für die regelmäßige Abfrage von Nachrichten vorgesehen. Es soll nur nach neuen Nachrichten geprüft werden, wenn der Nutzer aktiv eine Aktion ausführt, die eine solche Prüfung erfordert oder in der App ein "refresh" der Daten durchgeführt wird.
-- Die abgerufene Nachricht enthält kein Element received, da die Nachricht erstmalig vom E-Rezept-Fachdienst abgerufen wurde. Dieses Attribut received wurde beim Abruf durch den Fachdienst auf dessen aktuelle Systemzeit in `"sent": "2020-03-12T18:01:10+00:00"` aktualisiert, sodass ein erneuter Aufruf mit dem Filter `?received=NULL` kein Ergebnis liefert, da keine neuen bzw. ungelesenen Nachrichten vorhanden sind.
+- Die abgerufene Nachricht enthält kein Element received, da die Nachricht erstmalig vom TI-Flow-Fachdienst abgerufen wurde. Dieses Attribut received wurde beim Abruf durch den Fachdienst auf dessen aktuelle Systemzeit in `"sent": "2020-03-12T18:01:10+00:00"` aktualisiert, sodass ein erneuter Aufruf mit dem Filter `?received=NULL` kein Ergebnis liefert, da keine neuen bzw. ungelesenen Nachrichten vorhanden sind.
 - In `Communication.sender.value` ist die Empfänger-ID (in diesem Fall Versicherten-ID) des Adressaten angegeben, über die die Nachrichten beim Abruf gemäß der Nutzerkennung im übergebenen ACCESS_TOKEN gefiltert werden.
 - Dies sei die Antwort der Apotheke auf eine verbindliche Zuweisung, dann erhält die E-Rezept-App vom Warenwirtschaftssystem der Apotheke ebenfalls einen strukturierten Text im "`contentString`". In diesem sind u.a. Details für die Abholung in der Filiale wie z.B. der Abholcode `pickUpCodeHR` angegeben.
 

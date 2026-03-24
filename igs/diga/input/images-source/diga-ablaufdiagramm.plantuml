@@ -4,7 +4,7 @@ hide footbox
 autonumber "<b>[0]"
 actor "PVS" as PVS
 participant "E-Rezept-FdV" as FDV
-participant "E-Rezept-Fachdienst" as FD
+participant "TI-Flow-Fachdienst" as FD
 database "FHIR Verzeichnisdienst" as VZD
 participant "Kostenträger" as AVS
 participant "IDP-Dienst" as IDP
@@ -43,7 +43,7 @@ alt Erfolgreiche Bearbeitung des E-Rezepts
     AVS -> AVS: die weitere Verarbeitung\ninklusiver Abrechnung\nerfolgt in Kassenhoheit\nmit den DiGA-Anbietern
 else E-Rezept wird zurückgegeben
     AVS -> AVS: Prüfung ergibt Rückgabe des E-Rezeptes
-    AVS -> FD: $reject (Rückgabe der Verordnung an den E-Rezept-Fachdienst)
+    AVS -> FD: $reject (Rückgabe der Verordnung an den TI-Flow-Fachdienst)
 	
 	AVS -> FD: POST /Communication mit Rückgabegrund als Freitext
     FDV -> FDV: Darstellung des Rückgabegrundes an den Versicherten
