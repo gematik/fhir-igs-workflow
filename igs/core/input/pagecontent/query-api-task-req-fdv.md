@@ -30,7 +30,7 @@ Der Aufruf wird genutzt, wenn die Informationen zu einer spezifischen Verordnung
 
 <!-- A_19350-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-199" title="E-Rezept-FdV: E-Rezepte abrufen - Spezifisches E-Rezept herunterladen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>

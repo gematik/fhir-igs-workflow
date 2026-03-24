@@ -96,7 +96,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_23878-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-321" title="TI-Flow-Fachdienst - Nachricht einstellen - Validierung Payload GEM_ERP_PR_Communication_DispReq" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -147,7 +147,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_20885-04 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-329" title="TI-Flow-Fachdienst - Nachricht einstellen - Prüfung Versichertenbezug" version="1">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>

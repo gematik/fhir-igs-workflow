@@ -3,7 +3,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 <!-- A_19558-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-256" title="PS abgebende LEI: E-Rezept abrufen - Task herunterladen" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
     </actor>

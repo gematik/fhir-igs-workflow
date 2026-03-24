@@ -4,7 +4,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_19171-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-39" title="TI-Flow-Fachdienst - Task zurückweisen - Prüfung Secret" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>

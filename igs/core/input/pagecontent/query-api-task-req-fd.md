@@ -550,7 +550,7 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in eine spezif
 
 <!-- A_21532-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-112" title="TI-Flow-Fachdienst - Task abrufen - Versicherter - Kein Secret" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -596,7 +596,7 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in eine spezif
 
 <!-- A_24179-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-117" title="TI-Flow-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - erneuter Abruf Verordnung" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
@@ -641,7 +641,7 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
 
 <!-- A_27550 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-122" title="TI-Flow-Fachdienst -Task markieren - Versicherter - Prüfung KVNR" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
