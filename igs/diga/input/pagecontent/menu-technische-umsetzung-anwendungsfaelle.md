@@ -172,8 +172,7 @@ Sobald dem E-Rezept-FdV das IK vorliegt, sucht es im FHIR-VZD nach der Telematik
 des Kostenträgers mithilfe des IK.
 
 Dieser Fall ist für die E-Rezept-FdVs der Krankenkassen nicht relevant, da diese die
-korrekte Telematik-ID in ihren Apps vorab festlegen können. Sollte jedoch eine
-Vertreterfunktion implementiert werden, wird dieser Fall auch für sie relevant.
+korrekte Telematik-ID in ihren Apps vorab festlegen können. 
 
 ##### Fallback bei Fehlern und fehlenden Informationen 
 

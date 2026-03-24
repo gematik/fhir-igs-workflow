@@ -4,7 +4,7 @@ In diesem Abschnitt wird das Feature fachlich motiviert und der Mehrwert für Nu
 
 ### Epic Direkte Zuweisung des E-Rezepts durch den Verordnenden
 
-Dieses Epic beschreibt besondere Versorgungssituationen, in denen, abweichend vom Regelprozess des E-Rezepts mit Verordnung erstellen → QES → Übergabe an Versicherten → Zuweisung an Apotheke → Dispensierung an Versicherten /Vertreter, ein E-Rezept direkt vom verordnenden Leistungserbringer an die abgebende Apotheke zugewiesen und übermittelt wird. Grundlage für die Anwendung dieses Workflows sind die Regelungen für anwendungsfertige Zytostatikazubereitungen in § 11 Absatz 2 Apothekengesetz (ApoG) und für die Arzneimittelversorgung durch krankenhausversorgende Apotheken und Krankenhausapotheken im Rahmen von § 14 Absätze 7 und 8 des Apothekengesetzes (ApoG).
+Dieses Epic beschreibt besondere Versorgungssituationen, in denen, abweichend vom Regelprozess des E-Rezepts mit Verordnung erstellen → QES → Übergabe an Versicherten → Zuweisung an Apotheke → Dispensierung an Versicherten, ein E-Rezept direkt vom verordnenden Leistungserbringer an die abgebende Apotheke zugewiesen und übermittelt wird. Grundlage für die Anwendung dieses Workflows sind die Regelungen für anwendungsfertige Zytostatikazubereitungen in § 11 Absatz 2 Apothekengesetz (ApoG) und für die Arzneimittelversorgung durch krankenhausversorgende Apotheken und Krankenhausapotheken im Rahmen von § 14 Absätze 7 und 8 des Apothekengesetzes (ApoG).
 
 Für die hier dargestellten Verordnungen existiert ein direkter Patientenbezug, sie sind daher abzugrenzen von Verordnungen für Sprechstundenbedarf.
 

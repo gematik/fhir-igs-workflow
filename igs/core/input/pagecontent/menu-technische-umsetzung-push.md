@@ -116,18 +116,6 @@ Falls Profil GEM_ERP_PR_Communication_DiGA: Communication.payload.content
 </tr>
 
 <tr>
-<td>erp.task.vertreter</td>
-<td>Task.identifier.PrescriptionID</td>
-<td>TaskId</td>
-<td>
-Falls Task.flowType = "160","166","200": KBV_PR_ERP_Bundle.entry.[medicationName]<br>
-Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
-</td>
-<td>Lesbarer Name aus dem ACCESS_TOKEN des Ausführenden</td>
-<td>GET /Task/&lt;id&gt;</td>
-</tr>
-
-<tr>
 <td>erp.chargeitem.create</td>
 <td>ChargeItem.identifier.PrescriptionID</td>
 <td>TaskId</td>

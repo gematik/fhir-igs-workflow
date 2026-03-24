@@ -35,7 +35,6 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
     Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von E-Rezepten für Arzneimittel die Anwendungsfälle
     <ul>
         <li>UC 3.1 – E-Rezepte durch Versicherten abrufen</li>
-        <li>UC 3.6 – E-Rezept durch Vertreter abrufen</li>
         <li>UC 3.2 – E-Rezept durch Versicherten löschen</li>
         <li>UC 3.3 – Nachricht durch Versicherten übermitteln</li>
         <li>UC 3.4 – Nachricht durch Versicherten empfangen</li>

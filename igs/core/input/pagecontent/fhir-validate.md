@@ -37,7 +37,6 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
           <code>GEM_ERP_PR_Communication_DispReq</code>
           <code>GEM_ERP_PR_Communication_Reply</code>
           <code>GEM_ERP_PR_Communication_DiGA</code>
-          <code>GEM_ERP_PR_Communication_Representative</code>
         </td>
         <td>Zeitpunkt des Aufrufs der Operation am TI-Flow-Fachdienst</td>
       </tr>

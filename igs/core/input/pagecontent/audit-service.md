@@ -53,8 +53,8 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
   </tr>
   <tr>
     <td>http GET /Task/&#60;id&#62;</td>
-    <td>Versicherter/Vertreter</td>
-    <td>Versicherter/Vertreter hat das E-Rezept heruntergeladen</td>
+    <td>Versicherter</td>
+    <td>Versicherter hat das E-Rezept heruntergeladen</td>
   </tr>
   <tr>
     <td>http GET /Task/&#60;id&#62;?secret</td>
@@ -125,8 +125,8 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
   </tr>
   <tr>
     <td>http POST /Task/&#60;id&#62;/$abort</td>
-    <td>Versicherter/Vertreter</td>
-    <td>Versicherter/Vertreter hat das E-Rezept gelöscht.</td>
+    <td>Versicherter</td>
+    <td>Versicherter hat das E-Rezept gelöscht.</td>
   </tr>
   <tr>
     <td>http POST /Task/&#60;id&#62;/$abort</td>
@@ -150,8 +150,8 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
   </tr>
   <tr>
     <td>http GET /MedicationDispense</td>
-    <td>Versicherter/Vertreter</td>
-    <td>Versicherter/Vertreter hat Medikament-Informationen heruntergeladen.</td>
+    <td>Versicherter</td>
+    <td>Versicherter hat Medikament-Informationen heruntergeladen.</td>
   </tr>
   <tr>
     <td>http DELETE /ChargeItem/&#60;id&#62;</td>

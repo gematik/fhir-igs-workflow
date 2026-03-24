@@ -1,5 +1,7 @@
 Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Task`-Query-Endpunkte.
 
+### Liste der Verordnungen des Nutzers abrufen
+
 <!-- A_19347-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-197" title="E-Rezept-FdV: E-Rezepte abrufen - Liste E-Rezepte abrufen" version="0">
     <meta lockversion="false"/>
@@ -22,43 +24,20 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Task`-
      Das E-Rezept-FdV KANN es dem Versicherten ermöglichen, die vom TI-Flow-Fachdienst heruntergeladenen E-Rezepte im lokalen Speicher persistent abzulegen.
 </requirement>
 
-### Alternativer Ablauf 1: Ein spezifisches E-Rezept durch Nutzer abrufen
+### Eine spezifische Verordnung durch Nutzer abrufen
 
-Die Alternative 1 wird genutzt, wenn nur die Informationen zu einem E-Rezept vom TI-Flow-Fachdienst heruntergeladen werden sollen, bspw. um zu prüfen, ob sich der Status geändert hat. Dafür muss die Task-ID dieses Rezepts im E-Rezept-FdV bekannt sein.
+Der Aufruf wird genutzt, wenn die Informationen zu einer spezifischen Verordnung vom TI-Flow-Fachdienst heruntergeladen werden sollen, bspw. um zu prüfen, ob sich der Status geändert hat. Dafür muss die Task-ID dieser Verordnung im E-Rezept-FdV bekannt sein.
 
 <!-- A_19350-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-199" title="E-Rezept-FdV: E-Rezepte abrufen -Spezifisches E-Rezept herunterladen" version="0">
-    <meta lockversion="false"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-199" title="E-Rezept-FdV: E-Rezepte abrufen - Spezifisches E-Rezept herunterladen" version="0">
+    <meta lockversion="true"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezepte abrufen" zum Herunterladen eines spezifischen E-Rezepts des Nutzers die HTTP-Operation GET /Task/&lt;id&gt; mit 
+    Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezepte abrufen" zum Herunterladen einer spezifischen Verordnung des Nutzers die HTTP-Operation GET /Task/&lt;id&gt; mit 
     <ul>
-    <li>ACCESS_TOKEN im Authorization-Header</li>
-    <li>Task-ID in URL &lt;id&gt; </li>
-    </ul>
-    ausführen.
-</requirement>
-
-Für weitere Informationen siehe Operation "Ein einzelnes E-Rezept abrufen" aus der API-Schnittstelle [E-Rezept API Dokumentation].
-
-Der Response beinhaltet die Task Ressource des E-Rezepts.
-
-### Alternativer Ablauf 2: Ein spezifisches E-Rezept mit AccessCode abrufen
-
-Die Alternative 2 wird genutzt, wenn der Nutzer als Vertreter eines Versicherten ein E-Rezept vom TI-Flow-Fachdienst herunterladen möchte. Dafür müssen die Task-ID und der AccessCode dieses Rezepts im E-Rezept-FdV bekannt sein. Die Informationen Task-ID und AccessCode werden im E-Rezept-Token übermittelt.
-
-<!-- A_19351-01 -->
-<requirement conformance="MAY" key="IG-TIFLOW-CORE-200" title="E-Rezept-FdV: E-Rezepte abrufen - E-Rezept mit AccessCode herunterladen" version="0">
-    <meta lockversion="false"/>
-    <actor name="eRp_FdV">
-        <testProcedure id="Produkttest"/>
-    </actor>
-    Das E-Rezept-FdV KANN im Anwendungsfall "E-Rezepte abrufen" zum Herunterladen eines E-Rezepts als Vertreter die HTTP-Operation GET /Task/&lt;id&gt; mit 
-    <ul>
-        <li>ACCESS_TOKEN im http-Header</li>
+        <li>ACCESS_TOKEN im Authorization-Header</li>
         <li>Task-ID in URL &lt;id&gt; </li>
-        <li>AccessCode im http-Header </li>
     </ul>
     ausführen.
 </requirement>

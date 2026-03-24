@@ -14,3 +14,5 @@ Description: "Kommunikation zwischen Patient und Vertreter"
 
 * payload 1..1
 * payload.content[x] only string
+
+// ToDo: Profil wird nicht mehr benötigt
