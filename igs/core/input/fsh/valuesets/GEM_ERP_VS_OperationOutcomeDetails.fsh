@@ -12,3 +12,4 @@ Description: "Fachliche Fehlercodes des E-Rezept-Fachdienst"
 
 //TODO: Includes from TI OperationOutcome
 * include $ti-oo#SVC_INACTIVE_CODE "Use of inactive code not permitted"
+* include $ti-oo#SVC_VALIDATION_FAILED "TODO: description for SVC_VALIDATION_FAILED"

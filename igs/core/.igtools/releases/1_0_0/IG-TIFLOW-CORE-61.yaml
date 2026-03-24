@@ -1,21 +1,26 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 7c5109e950d9ce54a7da24cbb76d90d9b03d05ff40d6dac429bc3948649ef117
+content_hash: 7a934431f2d482dff15528613948919b1104fda3451c48510657c989c0a2bd88
 created: '2026-03-23T10:57:48.438522'
-date: '2026-03-23T13:47:26.445566'
+date: '2026-03-24T08:30:54.209195'
 key: IG-TIFLOW-CORE-61
-modified: '2026-03-23T10:57:48.438524'
-release_status: STABLE
+modified: '2026-03-24T08:30:54.209195'
+release_status: MODIFIED
 source: input/pagecontent/op-close-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation
-  über /Task/&lt;id&gt;/$close den im referenzierten Task gespeicherten Status Task.status
-  prüfen und mit dem Fehler 412 abbrechen, wenn Task.status ungleich "in-progress"
-  ist, damit der Workflow nur abgeschlossen werden kann, wenn sich die Verordnung
-  in Belieferung befindet.
+text: "Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation\
+  \ über /Task/&lt;id&gt;/$close den im referenzierten Task gespeicherten Status Task.status\
+  \ prüfen und mit dem folgenden Fehler:\n <table id=\"error-output\" style=\"border:\
+  \ 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403\
+  \ - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n\
+  \ <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_INVALID_TASK_STATUS</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n\
+  \ </tr>\n </table>\n abbrechen, wenn Task.status ungleich \"in-progress\" ist, damit\
+  \ der Workflow nur abgeschlossen werden kann, wenn sich die Verordnung in Belieferung\
+  \ befindet."
 title: TI-Flow-Fachdienst - Task schließen - Prüfung Status
-version: 0
+version: 1

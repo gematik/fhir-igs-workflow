@@ -3,7 +3,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch. 
 
 <!-- A_19171-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-39" title="TI-Flow-Fachdienst - Task zurückweisen - Prüfung Secret" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-39" title="TI-Flow-Fachdienst - Task zurückweisen - Prüfung Secret" version="1">
   <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
@@ -35,7 +35,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_19171-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-40" title="TI-Flow-Fachdienst - Task zurückweisen - Prüfung Status" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-40" title="TI-Flow-Fachdienst - Task zurückweisen - Prüfung Status" version="1">
   <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>

@@ -89,3 +89,45 @@ RuleSet: ResourceWasDeleted
   * extension[description].valueString = "Resource was deleted"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_DELETED"
+
+RuleSet: TiflowInvalidTaskStatus
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "412 - Precondition Failed"
+  * extension[description].valueString = "TODO: description for TIFLOW_INVALID_TASK_STATUS"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_INVALID_TASK_STATUS"
+
+RuleSet: TiflowSecretMismatch
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "403 - Forbidden"
+  * extension[description].valueString = "TODO: description for TIFLOW_SECRET_MISMATCH"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_SECRET_MISMATCH"
+
+RuleSet: SvcValidationFailed
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "400 - Bad Request"
+  * extension[description].valueString = "TODO: description for SVC_VALIDATION_FAILED"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "SVC_VALIDATION_FAILED"
+
+RuleSet: TiflowInvalidMedicationDispense
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "400 - Bad Request"
+  * extension[description].valueString = "TODO: description for TIFLOW_INVALID_MEDICATION_DISPENSE"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_INVALID_MEDICATION_DISPENSE"
+
+RuleSet: TiflowMedicationDispenseMissing
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "403 - Forbidden"
+  * extension[description].valueString = "TODO: description for TIFLOW_MEDICATION_DISPENSE_MISSING"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_MEDICATION_DISPENSE_MISSING"
+
+RuleSet: TiflowSignatureNoOcspResponse
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "503 - Service Unavailable"
+  * extension[description].valueString = "TODO: description for TIFLOW_SIGNATURE_NO_OCSP_RESPONSE"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_SIGNATURE_NO_OCSP_RESPONSE"

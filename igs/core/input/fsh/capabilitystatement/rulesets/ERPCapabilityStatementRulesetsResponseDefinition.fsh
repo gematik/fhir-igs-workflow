@@ -124,9 +124,15 @@ RuleSet: TaskAcceptOperationStatusCodes
 
 RuleSet: TaskRejectOperationStatusCodes
 * insert TaskNoContentOperationStatusCodes
+* insert TiflowInvalidTaskStatus
+* insert TiflowSecretMismatch
 
 RuleSet: TaskCloseOperationStatusCodes
 * insert TaskPostOperationStatusCodes
+* insert SvcValidationFailed
+* insert TiflowInvalidTaskStatus
+* insert TiflowSecretMismatch
+* insert TiflowSignatureNoOcspResponse
 
 RuleSet: TaskAbortOperationStatusCodes
 * insert TaskNoContentOperationStatusCodes

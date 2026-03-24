@@ -77,9 +77,17 @@ RuleSet: TaskAcceptOperationStatusCodes
 
 RuleSet: TaskRejectOperationStatusCodes
 * insert TaskNoContentOperationStatusCodes
+* insert TiflowInvalidTaskStatus
+* insert TiflowSecretMismatch
 
 RuleSet: TaskCloseOperationStatusCodes
 * insert TaskPostOperationStatusCodes
+* insert SvcValidationFailed
+* insert TiflowInvalidMedicationDispense
+* insert TiflowInvalidTaskStatus
+* insert TiflowMedicationDispenseMissing
+* insert TiflowSecretMismatch
+* insert TiflowSignatureNoOcspResponse
 
 RuleSet: TaskAbortOperationStatusCodes
 * insert TaskNoContentOperationStatusCodes

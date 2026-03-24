@@ -1,21 +1,26 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 37e91065590849486b18fe44f002edc9307a815df2d0d88420b8f3fe04b637b6
+content_hash: 718941a8e14672ad467c6bb086081ef2454d9625cf3cf01126a94826fbb450bb
 created: '2026-03-23T10:57:48.433681'
-date: '2026-03-23T13:47:26.440833'
+date: '2026-03-24T08:30:54.204335'
 key: IG-TIFLOW-CORE-40
-modified: '2026-03-23T10:57:48.433683'
-release_status: STABLE
+modified: '2026-03-24T08:30:54.204335'
+release_status: MODIFIED
 source: input/pagecontent/op-reject-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
-  über /Task/&#60;id&#62;/$reject den im referenzierten Task gespeicherten Status
-  Task.status prüfen und mit dem Fehler 412 abbrechen, wenn Task.status ungleich "in-progress"
-  ist, damit die Verordnung nur zurückgegeben werden kann, wenn sich die Verordnung
-  in Belieferung befindet.
+text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
+  \ über /Task/&#60;id&#62;/$reject den im referenzierten Task gespeicherten Status\
+  \ Task.status prüfen und mit dem folgenden Fehler:\n <table id=\"error-output\"\
+  \ style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>412 - Precondition Failed</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_INVALID_TASK_STATUS</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td></td>\n\
+  \ </tr>\n </table>\n abbrechen, wenn Task.status ungleich \"in-progress\" ist, damit\
+  \ die Verordnung nur zurückgegeben werden kann, wenn sich die Verordnung in Belieferung\
+  \ befindet."
 title: TI-Flow-Fachdienst - Task zurückweisen - Prüfung Status
-version: 0
+version: 1

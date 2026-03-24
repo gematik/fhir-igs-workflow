@@ -43,9 +43,14 @@ def main() -> None:
         help="Path to quality CSV report (default: qa/requirement-quality-report.csv)",
     )
     parser.add_argument(
+        "--fix",
+        action="store_true",
+        help="Apply automatic fixes for all issues (implies --quality-fix and fixes error codes/CapabilityStatement)",
+    )
+    parser.add_argument(
         "--quality-fix",
         action="store_true",
-        help="Apply automatic safe fixes during quality checks",
+        help="Apply automatic safe fixes during quality checks only",
     )
     parser.add_argument(
         "--strict-quality",
@@ -83,7 +88,7 @@ def main() -> None:
         "--output-csv",
         args.quality_output_csv,
     ]
-    if args.quality_fix:
+    if args.quality_fix or args.fix:
         quality_cmd.append("--fix")
 
     quality_rc = run_step(
@@ -101,7 +106,8 @@ def main() -> None:
             "--output-csv",
             args.error_code_output_csv,
         ]
-        
+        if args.fix:
+            error_code_cmd.append("--fix")
         error_code_rc = run_step(
             "Check error code consistency",
             error_code_cmd,

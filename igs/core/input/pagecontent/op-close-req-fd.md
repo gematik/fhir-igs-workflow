@@ -2,7 +2,7 @@
 Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_19231-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-60" title="TI-Flow-Fachdienst - Task schließen - Prüfung Secret" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-60" title="TI-Flow-Fachdienst - Task schließen - Prüfung Secret" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -34,7 +34,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_19231-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-61" title="TI-Flow-Fachdienst - Task schließen - Prüfung Status" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-61" title="TI-Flow-Fachdienst - Task schließen - Prüfung Status" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -66,7 +66,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_19248-05 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-62" title="TI-Flow-Fachdienst - Task schließen - Schemaprüfung MedicationDispense" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-62" title="TI-Flow-Fachdienst - Task schließen - Schemaprüfung MedicationDispense" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -113,12 +113,12 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_26337 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-64" title="TI-Flow-Fachdienst - Task schließen - Zeitstempel MedicationDispense" version="0">
-    <meta lockversion="false"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-64" title="TI-Flow-Fachdienst - Task schließen - Zeitstempel MedicationDispense" version="1">
+    <meta lockversion="true"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close den Zeitpunkt des Aufrufes in Task.extension:lastMedicationDispense im Format "YYYY-MM-DDThh:mm:ss+zz:zz" (FHIR-instant) anlegen und speichern, wenn ein MedicationDispense Objekt im Aufruf übergeben wird.
+    Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks, mittels POST /Task/&lt;id&gt;/$close den Zeitpunkt des Aufrufes in Task.extension:lastMedicationDispense im Format "YYYY-MM-DDThh:mm:ss+zz:zz" (FHIR-instant) anlegen und speichern, wenn ein MedicationDispense Objekt im Aufruf übergeben wird.
 </requirement>
 
 <!-- A_28411 -->
@@ -169,7 +169,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_22919 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-69" title="TI-Flow-Fachdienst - Task schließen - OCSP-Response nicht älter als 24h" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-69" title="TI-Flow-Fachdienst - Task schließen - OCSP-Response nicht älter als 24h" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
