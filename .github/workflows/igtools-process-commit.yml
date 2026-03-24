@@ -35,36 +35,16 @@ jobs:
           distribution: temurin
           java-version: "17"
 
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-
-      - name: Set up .NET
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: "8.0.x"
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: "3.2"
-
       - name: Install tooling
         shell: bash
         run: |
           set -euo pipefail
-          sudo apt-get update
-          sudo apt-get install -y graphviz
-          npm install -g fsh-sushi
-          dotnet tool install --tool-path /usr/local/bin Firely.Terminal --version 3.4.0
-          gem install jekyll bundler
-          python -m pip install --upgrade pipx
+          python -m pip install --upgrade pip pipx
           python -m pipx install git+https://github.com/onyg/req-tooling.git
 
       - name: Run igtools process
@@ -76,6 +56,8 @@ jobs:
           artifact_dir="${RUNNER_TEMP}/igtools-process-report"
           log_file="$artifact_dir/igtools-process.log"
           report_file="$artifact_dir/igtools-process.html"
+          metadata_file="$artifact_dir/metadata.json"
+          afo_summary_file="$artifact_dir/afo-summary.txt"
           mkdir -p "$artifact_dir"
 
           set +e
@@ -116,10 +98,15 @@ jobs:
           export PROCESS_HAS_CHANGES="$has_changes"
           export PROCESS_LOG_FILE="$log_file"
           export PROCESS_REPORT_FILE="$report_file"
+          export PROCESS_METADATA_FILE="$metadata_file"
+          export PROCESS_AFO_SUMMARY_FILE="$afo_summary_file"
 
           python - <<'PY'
           import html
+          import json
           import os
+          import re
+          import subprocess
           import textwrap
           from pathlib import Path
 
@@ -130,6 +117,48 @@ jobs:
           has_changes = os.environ["PROCESS_HAS_CHANGES"]
           log_file = Path(os.environ["PROCESS_LOG_FILE"])
           report_file = Path(os.environ["PROCESS_REPORT_FILE"])
+          metadata_file = Path(os.environ["PROCESS_METADATA_FILE"])
+          afo_summary_file = Path(os.environ["PROCESS_AFO_SUMMARY_FILE"])
+
+          key_pattern = re.compile(r"\bIG-[A-Z0-9-]+\b")
+
+          def run_git(*args: str) -> str:
+              result = subprocess.run(
+                  ["git", *args],
+                  check=False,
+                  capture_output=True,
+                  text=True,
+                  encoding="utf-8",
+                  errors="replace",
+              )
+              return result.stdout
+
+          changed_files = []
+          for line in run_git("status", "--porcelain").splitlines():
+              if not line:
+                  continue
+              path = line[3:]
+              if " -> " in path:
+                  path = path.split(" -> ", 1)[1]
+              if path:
+                  changed_files.append(path)
+
+          afo_keys = set()
+          for file_path in changed_files:
+              afo_keys.update(key_pattern.findall(run_git("diff", "--unified=0", "--no-color", "--", file_path)))
+              file_on_disk = Path(file_path)
+              if file_on_disk.is_file():
+                  try:
+                      afo_keys.update(key_pattern.findall(file_on_disk.read_text(encoding="utf-8", errors="replace")))
+                  except OSError:
+                      pass
+
+          afo_keys = sorted(afo_keys)
+          afo_status = "changed" if afo_keys else "unchanged"
+          if afo_keys:
+              afo_summary = "Geänderte AFOs:\n" + "\n".join(f"- {key}" for key in afo_keys)
+          else:
+              afo_summary = "Keine Änderungen an AFOs"
 
           log_text = ""
           if log_file.exists():
@@ -158,7 +187,7 @@ jobs:
           html_doc = textwrap.dedent(
               f"""\
               <!doctype html>
-              <html lang=\"en\">
+              <html lang=\"de\">
               <head>
                 <meta charset=\"utf-8\" />
                 <title>IGTools Process Report</title>
@@ -234,8 +263,13 @@ jobs:
                         <tr><td>Exit code</td><td>{html.escape(script_exit)}</td></tr>
                         <tr><td>Output contains ERROR or FAILED</td><td>{html.escape(found_error_keywords)}</td></tr>
                         <tr><td>Repository changes detected</td><td>{html.escape(has_changes)}</td></tr>
+                        <tr><td>AFO changes detected</td><td>{html.escape(afo_status)}</td></tr>
                       </tbody>
                     </table>
+                  </div>
+                  <div class=\"card\">
+                    <h2>AFO Summary</h2>
+                    <pre>{html.escape(afo_summary)}</pre>
                   </div>
                   <div class=\"card\">
                     <h2>Console Output</h2>
@@ -248,7 +282,30 @@ jobs:
           )
 
           report_file.write_text(html_doc, encoding="utf-8")
+          afo_summary_file.write_text(afo_summary, encoding="utf-8")
+          metadata_file.write_text(
+              json.dumps(
+                  {
+                      "afo_status": afo_status,
+                      "afo_keys": afo_keys,
+                      "changed_files": changed_files,
+                  },
+                  ensure_ascii=True,
+                  indent=2,
+              ),
+              encoding="utf-8",
+          )
           PY
+
+          afo_status="$(python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          metadata = json.loads(Path(os.environ["PROCESS_METADATA_FILE"]).read_text(encoding="utf-8"))
+          print(metadata["afo_status"])
+          PY
+          )"
 
           echo "status=$status" >> "$GITHUB_OUTPUT"
           echo "message=$message" >> "$GITHUB_OUTPUT"
@@ -256,6 +313,12 @@ jobs:
           echo "found_error_keywords=$found_error_keywords" >> "$GITHUB_OUTPUT"
           echo "has_changes=$has_changes" >> "$GITHUB_OUTPUT"
           echo "artifact_dir=$artifact_dir" >> "$GITHUB_OUTPUT"
+          echo "afo_status=$afo_status" >> "$GITHUB_OUTPUT"
+          {
+            echo "afo_summary<<__AFO_SUMMARY__"
+            cat "$afo_summary_file"
+            echo "__AFO_SUMMARY__"
+          } >> "$GITHUB_OUTPUT"
 
       - name: Upload igtools report
         if: always()
@@ -278,7 +341,11 @@ jobs:
           echo "- Exit code: \`${{ steps.igtools_process.outputs.script_exit }}\`" >> "$GITHUB_STEP_SUMMARY"
           echo "- Output contains ERROR/FAILED: \`${{ steps.igtools_process.outputs.found_error_keywords }}\`" >> "$GITHUB_STEP_SUMMARY"
           echo "- Changes detected: \`${{ steps.igtools_process.outputs.has_changes }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- AFO changes detected: \`${{ steps.igtools_process.outputs.afo_status }}\`" >> "$GITHUB_STEP_SUMMARY"
           echo "- HTML report: uploaded as workflow artifact \`igtools-process-report-${{ github.run_number }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "### AFOs" >> "$GITHUB_STEP_SUMMARY"
+          printf '%s\n' '${{ steps.igtools_process.outputs.afo_summary }}' >> "$GITHUB_STEP_SUMMARY"
 
       - name: Fail on igtools errors
         if: steps.igtools_process.outputs.status == 'failed'
