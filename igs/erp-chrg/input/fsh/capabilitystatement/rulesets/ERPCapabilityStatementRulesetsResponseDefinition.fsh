@@ -75,3 +75,27 @@ RuleSet: TypeLevelPostOperation
 * rest.resource[=].operation[=] insert SuccessfulWithParameters
 * rest.resource[=].operation[=] insert IDTokenCheck
 * rest.resource[=].operation[=] insert OrgHeaderProfileMismatch
+
+RuleSet: TaskSearchTypeInteractionStatusCodes
+* insert SearchTypeInteractionStatusCodes
+
+RuleSet: TaskReadInteractionStatusCodes
+* insert ReadInteractionStatusCodes
+
+RuleSet: ChargeItemSearchTypeInteractionStatusCodes
+* insert SearchTypeInteractionStatusCodes
+
+RuleSet: ChargeItemReadInteractionStatusCodes
+* insert ReadInteractionStatusCodes
+
+RuleSet: CommunicationSearchTypeInteractionStatusCodes
+* insert SearchTypeInteractionStatusCodes
+
+RuleSet: CommunicationReadInteractionStatusCodes
+* insert ReadInteractionStatusCodes
+
+RuleSet: ConsentSearchTypeInteractionStatusCodes
+* insert SearchTypeInteractionStatusCodes
+
+RuleSet: ConsentReadInteractionStatusCodes
+* insert ReadInteractionStatusCodes

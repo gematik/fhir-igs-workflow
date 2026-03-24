@@ -2,6 +2,7 @@
 """Run requirement QA pipeline:
 
 1. Check requirement quality.
+2. Check error code consistency.
 """
 
 import argparse
@@ -51,10 +52,26 @@ def main() -> None:
         action="store_true",
         help="Fail the pipeline when quality check reports issues",
     )
+    parser.add_argument(
+        "--error-code-output-csv",
+        default="qa/error-code-consistency-report.csv",
+        help="Path to error code consistency CSV report (default: qa/error-code-consistency-report.csv)",
+    )
+    parser.add_argument(
+        "--skip-error-codes",
+        action="store_true",
+        help="Skip error code consistency checks",
+    )
+    parser.add_argument(
+        "--strict-error-codes",
+        action="store_true",
+        help="Fail the pipeline when error code check reports issues",
+    )
     args = parser.parse_args()
 
     scripts_dir = Path(__file__).resolve().parent / "requirement-qa"
     quality_script = scripts_dir / "check_requirement_quality.py"
+    error_code_script = scripts_dir / "check_error_code_consistency.py"
 
     print("Running requirements QA pipeline")
     print(f"- Root: {args.root}")
@@ -75,10 +92,29 @@ def main() -> None:
         strict=args.strict_quality,
     )
 
+    error_code_rc = 0
+    if not args.skip_error_codes:
+        error_code_cmd = [
+            sys.executable,
+            str(error_code_script),
+            args.root,
+            "--output-csv",
+            args.error_code_output_csv,
+        ]
+        
+        error_code_rc = run_step(
+            "Check error code consistency",
+            error_code_cmd,
+            strict=args.strict_error_codes,
+        )
+
     print("\nPipeline summary")
     print(f"- Quality CSV: {args.quality_output_csv}")
+    print(f"- Error Code CSV: {args.error_code_output_csv}")
     if quality_rc != 0 and not args.strict_quality:
-        print("- Quality issues were found (non-strict mode, pipeline continued).")
+        print("- Quality issues were found (non-strict mode, pipeline continued)")
+    if error_code_rc != 0 and not args.strict_error_codes:
+        print("- Error code consistency issues were found (non-strict mode, pipeline continued).")
 
 
 if __name__ == "__main__":

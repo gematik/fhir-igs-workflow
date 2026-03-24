@@ -30,11 +30,11 @@ RuleSet: TaskInteraction(expectation)
 * insert CapSupportProfileUrl(https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task, #SHALL)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
-* insert SearchTypeInteractionStatusCodes
+* insert TaskSearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#read, #SHALL)
-* insert ReadInteractionStatusCodes
+* insert TaskReadInteractionStatusCodes
 * insert CapResourceInteraction(#patch, #SHALL)
-* insert PatchInteractionStatusCodes
+* insert TaskPatchInteractionStatusCodes
 
 * insert CapSupportResourceSearchParam(authored-on, http://hl7.org/fhir/SearchParameter/Task-authored-on, #date, {expectation}, "Task.authoredOn - Unterstützt die Suche nach dem Erstellungsdatum; default sort if _sort is not provided")
 * insert CapSupportResourceSearchParam(status, http://hl7.org/fhir/SearchParameter/Task-status, #token, {expectation}, "Task.status - Unterstützt die Suche nach dem Status einer Task")
@@ -46,28 +46,28 @@ RuleSet: TaskInteraction(expectation)
 * insert CapSupportResourceOperation(create, $op-create, {expectation}, "Creates a Task for a specific flow type")
 * insert TaskCreateOperationStatusCodes
 * insert CapSupportResourceOperation(activate, $op-activate, {expectation}, "Activates the created Task using the signed ePrescription bundle")
-* insert TaskPostOperationStatusCodes
+* insert TaskActivateOperationStatusCodes
 * insert CapSupportResourceOperation(accept, $op-accept, {expectation}, "Pharmacy claims an ePrescription and sets Task status to in-progress")
-* insert TaskPostOperationStatusCodes
+* insert TaskAcceptOperationStatusCodes
 * insert CapSupportResourceOperation(reject, $op-reject, {expectation}, "Rejects dispensing and resets Task status to active")
-* insert TaskNoContentOperationStatusCodes
+* insert TaskRejectOperationStatusCodes
 * insert CapSupportResourceOperation(close, $op-close, {expectation}, "Finishes the ePrescription workflow and sets Task status to completed")
-* insert TaskPostOperationStatusCodes
+* insert TaskCloseOperationStatusCodes
 * insert CapSupportResourceOperation(abort, $op-abort, {expectation}, "Aborts the ePrescription workflow and deletes Task related data")
-* insert TaskNoContentOperationStatusCodes
+* insert TaskAbortOperationStatusCodes
 
 RuleSet: CommunicationInteraction(expectation)
 * insert CapSupportResource(Communication, #SHALL)
 * insert CapSupportProfileUrl(GEM_ERP_PR_Communication_DiGA, #SHALL)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
-* insert SearchTypeInteractionStatusCodes
+* insert CommunicationSearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#read, #SHALL)
-* insert ReadInteractionStatusCodes
+* insert CommunicationReadInteractionStatusCodes
 * insert CapResourceInteraction(#create, #SHALL)
-* insert CreateInteractionStatusCodes
+* insert CommunicationCreateInteractionStatusCodes
 * insert CapResourceInteraction(#delete, #SHALL)
-* insert DeleteInteractionStatusCodes
+* insert CommunicationDeleteInteractionStatusCodes
 
 * insert CapSupportResourceSearchParam(sent, http://hl7.org/fhir/SearchParameter/Communication-sent, #date, {expectation}, "Communication.sent - Unterstützt die Suche nach dem Sendedatum; default sort if _sort is not provided")
 * insert CapSupportResourceSearchParam(received, http://hl7.org/fhir/SearchParameter/Communication-received, #date, {expectation}, "Communication.received - Unterstützt die Suche nach dem Empfangsdatum")
@@ -82,9 +82,9 @@ RuleSet: MedicationDispenseInteraction(expectation)
 * insert CapSupportProfileUrl(https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA, #SHALL)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
-* insert SearchTypeInteractionStatusCodes
+* insert MedicationDispenseSearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#read, #SHALL)
-* insert ReadInteractionStatusCodes
+* insert MedicationDispenseReadInteractionStatusCodes
 
 * insert CapSupportResourceSearchParam(whenhandedover, http://hl7.org/fhir/SearchParameter/MedicationDispense-whenhandedover, #date, {expectation}, "MedicationDispense.whenHandedOver - Unterstützt die Suche nach dem Abgabedatum; default sort if _sort is not provided")
 * insert CapSupportResourceSearchParam(whenprepared, http://hl7.org/fhir/SearchParameter/MedicationDispense-whenprepared, #date, {expectation}, "MedicationDispense.whenPrepared - Unterstützt die Suche nach dem Herstellungsdatum")

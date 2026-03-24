@@ -104,3 +104,90 @@ RuleSet: PatchInteractionStatusCodes
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
 * rest.resource[=].interaction[=] insert ResourceWasDeleted
 
+// Resource-specific wrappers for interaction-level status codes.
+// These wrappers make it easy to add endpoint-specific codes without changing shared baselines.
+
+RuleSet: TaskSearchTypeInteractionStatusCodes
+* insert SearchTypeInteractionStatusCodes
+
+RuleSet: TaskReadInteractionStatusCodes
+* insert ReadInteractionStatusCodes
+
+RuleSet: TaskPatchInteractionStatusCodes
+* insert PatchInteractionStatusCodes
+
+RuleSet: TaskActivateOperationStatusCodes
+* insert TaskPostOperationStatusCodes
+
+RuleSet: TaskAcceptOperationStatusCodes
+* insert TaskPostOperationStatusCodes
+
+RuleSet: TaskRejectOperationStatusCodes
+* insert TaskNoContentOperationStatusCodes
+
+RuleSet: TaskCloseOperationStatusCodes
+* insert TaskPostOperationStatusCodes
+
+RuleSet: TaskAbortOperationStatusCodes
+* insert TaskNoContentOperationStatusCodes
+
+RuleSet: TaskDispenseOperationStatusCodes
+* insert TaskPostOperationStatusCodes
+
+RuleSet: ChargeItemSearchTypeInteractionStatusCodes
+* insert SearchTypeInteractionStatusCodes
+
+RuleSet: ChargeItemReadInteractionStatusCodes
+* insert ReadInteractionStatusCodes
+
+RuleSet: ChargeItemCreateInteractionStatusCodes
+* insert CreateInteractionStatusCodes
+
+RuleSet: ChargeItemUpdateInteractionStatusCodes
+* insert UpdateInteractionStatusCodes
+
+RuleSet: ChargeItemPatchInteractionStatusCodes
+* insert PatchInteractionStatusCodes
+
+RuleSet: ChargeItemDeleteInteractionStatusCodes
+* insert DeleteInteractionStatusCodes
+
+RuleSet: ConsentSearchTypeInteractionStatusCodes
+* insert SearchTypeInteractionStatusCodes
+
+RuleSet: ConsentCreateInteractionStatusCodes
+* insert CreateInteractionStatusCodes
+
+RuleSet: ConsentDeleteInteractionStatusCodes
+* insert DeleteInteractionStatusCodes
+
+RuleSet: CommunicationSearchTypeInteractionStatusCodes
+* insert SearchTypeInteractionStatusCodes
+
+RuleSet: CommunicationReadInteractionStatusCodes
+* insert ReadInteractionStatusCodes
+
+RuleSet: CommunicationCreateInteractionStatusCodes
+* insert CreateInteractionStatusCodes
+
+RuleSet: CommunicationDeleteInteractionStatusCodes
+* insert DeleteInteractionStatusCodes
+
+RuleSet: AuditEventSearchTypeInteractionStatusCodes
+* insert SearchTypeInteractionStatusCodes
+
+RuleSet: AuditEventReadInteractionStatusCodes
+* insert ReadInteractionStatusCodes
+
+RuleSet: MedicationDispenseSearchTypeInteractionStatusCodes
+* insert SearchTypeInteractionStatusCodes
+
+RuleSet: DeviceSearchTypeInteractionStatusCodes
+* insert SearchTypeInteractionStatusCodes
+
+RuleSet: SubscriptionSearchTypeInteractionStatusCodes
+* insert SearchTypeInteractionStatusCodes
+
+RuleSet: SubscriptionCreateInteractionStatusCodes
+* insert CreateInteractionStatusCodes
+

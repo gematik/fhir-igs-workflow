@@ -51,3 +51,30 @@ RuleSet: SystemLevelOperationStatusCodesWithParameters
 RuleSet: SystemLevelQueryOperationStatusCodesWithNormalSuccess
 * rest.operation[=] insert Successful
 * insert SystemLevelOperationStatusCodes
+
+RuleSet: TaskSearchTypeInteractionStatusCodes
+* insert SearchTypeInteractionStatusCodes
+
+RuleSet: TaskReadInteractionStatusCodes
+* insert ReadInteractionStatusCodes
+
+RuleSet: ConsentSearchTypeInteractionStatusCodes
+* insert SearchTypeInteractionStatusCodes
+
+RuleSet: ConsentCreateInteractionStatusCodes
+* insert CreateInteractionStatusCodes
+
+RuleSet: ConsentDeleteInteractionStatusCodes
+* insert DeleteInteractionStatusCodes
+
+RuleSet: GrantEUAccessPermissionOperationStatusCodes
+* insert SystemLevelOperationStatusCodesWithParameters
+
+RuleSet: ReadEUAccessPermissionOperationStatusCodes
+* insert SystemLevelOperationStatusCodesWithParameters
+
+RuleSet: RevokeEUAccessPermissionOperationStatusCodes
+* insert SystemLevelQueryOperationStatusCodesWithNormalSuccess
+
+RuleSet: GetEUPrescriptionsOperationStatusCodes
+* insert SystemLevelOperationStatusCodesWithParameters

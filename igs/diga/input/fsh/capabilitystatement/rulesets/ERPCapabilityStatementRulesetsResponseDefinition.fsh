@@ -62,3 +62,45 @@ RuleSet: TaskNoContentOperationStatusCodes
 * rest.resource[=].operation[=] insert InvalidRequest
 * rest.resource[=].operation[=] insert ResourceIsNotKnown
 * rest.resource[=].operation[=] insert ResourceWasDeleted
+
+RuleSet: TaskSearchTypeInteractionStatusCodes
+* insert SearchTypeInteractionStatusCodes
+
+RuleSet: TaskReadInteractionStatusCodes
+* insert ReadInteractionStatusCodes
+
+RuleSet: TaskPatchInteractionStatusCodes
+* insert PatchInteractionStatusCodes
+
+RuleSet: TaskActivateOperationStatusCodes
+* insert TaskPostOperationStatusCodes
+
+RuleSet: TaskAcceptOperationStatusCodes
+* insert TaskPostOperationStatusCodes
+
+RuleSet: TaskRejectOperationStatusCodes
+* insert TaskNoContentOperationStatusCodes
+
+RuleSet: TaskCloseOperationStatusCodes
+* insert TaskPostOperationStatusCodes
+
+RuleSet: TaskAbortOperationStatusCodes
+* insert TaskNoContentOperationStatusCodes
+
+RuleSet: CommunicationSearchTypeInteractionStatusCodes
+* insert SearchTypeInteractionStatusCodes
+
+RuleSet: CommunicationReadInteractionStatusCodes
+* insert ReadInteractionStatusCodes
+
+RuleSet: CommunicationCreateInteractionStatusCodes
+* insert CreateInteractionStatusCodes
+
+RuleSet: CommunicationDeleteInteractionStatusCodes
+* insert DeleteInteractionStatusCodes
+
+RuleSet: MedicationDispenseSearchTypeInteractionStatusCodes
+* insert SearchTypeInteractionStatusCodes
+
+RuleSet: MedicationDispenseReadInteractionStatusCodes
+* insert ReadInteractionStatusCodes

@@ -41,11 +41,11 @@ RuleSet: TaskInteraction(expectation)
 * insert CapSupportProfile(GEM_ERP_PR_Task, #SHALL)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
-* insert SearchTypeInteractionStatusCodes
+* insert TaskSearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#read, #SHALL)
-* insert ReadInteractionStatusCodes
+* insert TaskReadInteractionStatusCodes
 * insert CapResourceInteraction(#patch, #SHALL)
-* insert PatchInteractionStatusCodes
+* insert TaskPatchInteractionStatusCodes
 
 * insert CapSupportResourceSearchParam(authored-on, http://hl7.org/fhir/SearchParameter/Task-authored-on, #date, {expectation}, "Task.authoredOn - Unterstützt die Suche nach dem Erstellungsdatum; default sort if _sort is not provided")
 * insert CapSupportResourceSearchParam(status, http://hl7.org/fhir/SearchParameter/Task-status, #token, {expectation}, "Task.status - Unterstützt die Suche nach dem Status einer Task")
@@ -59,33 +59,33 @@ RuleSet: TaskInteraction(expectation)
 * insert CapSupportResourceOperation(create, CreateOperation, {expectation}, "Creates a Task for a specific flow type")
 * insert TaskCreateOperationStatusCodes
 * insert CapSupportResourceOperation(activate, ActivateOperation, {expectation}, "Activates the created Task using the signed ePrescription bundle")
-* insert TaskPostOperationStatusCodes
+* insert TaskActivateOperationStatusCodes
 * insert CapSupportResourceOperation(accept, AcceptOperation, {expectation}, "Pharmacy claims an ePrescription and sets Task status to in-progress")
-* insert TaskPostOperationStatusCodes
+* insert TaskAcceptOperationStatusCodes
 * insert CapSupportResourceOperation(reject, RejectOperation, {expectation}, "Rejects dispensing and resets Task status to active")
-* insert TaskNoContentOperationStatusCodes
+* insert TaskRejectOperationStatusCodes
 * insert CapSupportResourceOperation(close, CloseOperation, {expectation}, "Finishes the ePrescription workflow and sets Task status to completed")
-* insert TaskPostOperationStatusCodes
+* insert TaskCloseOperationStatusCodes
 * insert CapSupportResourceOperation(abort, AbortOperation, {expectation}, "Aborts the ePrescription workflow and deletes Task related data")
-* insert TaskNoContentOperationStatusCodes
+* insert TaskAbortOperationStatusCodes
 * insert CapSupportResourceOperation(dispense, DispenseOperation, {expectation}, "Documents medication dispensation without changing Task status")
-* insert TaskPostOperationStatusCodes
+* insert TaskDispenseOperationStatusCodes
 
 RuleSet: ChargeItemInteraction(expectation)
 * insert CapSupportResource(ChargeItem, {expectation})
 
 * insert CapResourceInteraction(#search-type, #SHALL)
-* insert SearchTypeInteractionStatusCodes
+* insert ChargeItemSearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#read, #SHALL)
-* insert ReadInteractionStatusCodes
+* insert ChargeItemReadInteractionStatusCodes
 * insert CapResourceInteraction(#create, #SHALL)
-* insert CreateInteractionStatusCodes
+* insert ChargeItemCreateInteractionStatusCodes
 * insert CapResourceInteraction(#update, #SHALL)
-* insert UpdateInteractionStatusCodes
+* insert ChargeItemUpdateInteractionStatusCodes
 * insert CapResourceInteraction(#patch, #SHALL)
-* insert PatchInteractionStatusCodes
+* insert ChargeItemPatchInteractionStatusCodes
 * insert CapResourceInteraction(#delete, #SHALL)
-* insert DeleteInteractionStatusCodes
+* insert ChargeItemDeleteInteractionStatusCodes
 
 * insert CapSupportResourceSearchParam(entered-date, http://hl7.org/fhir/SearchParameter/ChargeItem-entered-date, #date, {expectation}, "ChargeItem.enteredDate - Unterstützt die Suche nach dem Eingangsdatum; default sort if _sort is not provided")
 * insert CapSupportResourceSearchParam(_lastUpdated, http://hl7.org/fhir/SearchParameter/Resource-lastUpdated, #date, {expectation}, "ChargeItem.meta.lastUpdated - Unterstützt die Suche nach dem zuletzt aktualisierten Datum")
@@ -97,11 +97,11 @@ RuleSet: ConsentInteraction(expectation)
 * insert CapSupportResource(Consent, {expectation})
 
 * insert CapResourceInteraction(#search-type, #SHALL)
-* insert SearchTypeInteractionStatusCodes
+* insert ConsentSearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#create, #SHALL)
-* insert CreateInteractionStatusCodes
+* insert ConsentCreateInteractionStatusCodes
 * insert CapResourceInteraction(#delete, #SHALL)
-* insert DeleteInteractionStatusCodes
+* insert ConsentDeleteInteractionStatusCodes
 
 * insert CapSupportResourceSearchParam(category, http://hl7.org/fhir/SearchParameter/Consent-category, #token, {expectation}, "Consent.category - Unterstützt die Suche nach der Art der Einwilligung")
 
@@ -113,13 +113,13 @@ RuleSet: CommunicationInteraction(expectation)
 * insert CapSupportProfile(GEM_ERP_PR_Communication_Representative, #SHALL)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
-* insert SearchTypeInteractionStatusCodes
+* insert CommunicationSearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#read, #SHALL)
-* insert ReadInteractionStatusCodes
+* insert CommunicationReadInteractionStatusCodes
 * insert CapResourceInteraction(#create, #SHALL)
-* insert CreateInteractionStatusCodes
+* insert CommunicationCreateInteractionStatusCodes
 * insert CapResourceInteraction(#delete, #SHALL)
-* insert DeleteInteractionStatusCodes
+* insert CommunicationDeleteInteractionStatusCodes
 
 * insert CapSupportResourceSearchParam(sent, http://hl7.org/fhir/SearchParameter/Communication-sent, #date, {expectation}, "Communication.sent - Unterstützt die Suche nach dem Sendedatum; default sort if _sort is not provided")
 * insert CapSupportResourceSearchParam(received, http://hl7.org/fhir/SearchParameter/Communication-received, #date, {expectation}, "Communication.received - Unterstützt die Suche nach dem Empfangsdatum")
@@ -134,9 +134,9 @@ RuleSet: AuditEventInteraction(expectation)
 * insert CapSupportProfile(GEM_ERP_PR_AuditEvent, #SHALL)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
-* insert SearchTypeInteractionStatusCodes
+* insert AuditEventSearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#read, #SHALL)
-* insert ReadInteractionStatusCodes
+* insert AuditEventReadInteractionStatusCodes
 
 * insert CapSupportResourceSearchParam(date, http://hl7.org/fhir/SearchParameter/AuditEvent-date, #date, {expectation}, "AuditEvent.recorded - Unterstützt die Suche nach dem Aufzeichnungsdatum; default sort if _sort is not provided")
 * insert CapSupportResourceSearchParam(entity, http://hl7.org/fhir/SearchParameter/AuditEvent-entity, #string, {expectation}, "AuditEvent.entity.what.identifier.value - Unterstützt die Suche nach betroffenen Entitäten")
@@ -148,7 +148,7 @@ RuleSet: MedicationDispenseInteraction(expectation)
 * insert CapSupportResource(MedicationDispense, #SHALL)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
-* insert SearchTypeInteractionStatusCodes
+* insert MedicationDispenseSearchTypeInteractionStatusCodes
 
 * insert CapSupportResourceSearchParam(whenhandedover, http://hl7.org/fhir/SearchParameter/MedicationDispense-whenhandedover, #date, {expectation}, "MedicationDispense.whenHandedOver - Unterstützt die Suche nach dem Abgabedatum")
 * insert CapSupportResourceSearchParam(whenprepared, http://hl7.org/fhir/SearchParameter/MedicationDispense-whenprepared, #date, {expectation}, "MedicationDispense.whenPrepared - Unterstützt die Suche nach dem Herstellungsdatum")
@@ -163,12 +163,12 @@ RuleSet: DeviceInteraction(expectation)
 * insert CapSupportProfile(GEM_ERP_PR_Device, {expectation})
 
 * insert CapResourceInteraction(#search-type, {expectation})
-* insert SearchTypeInteractionStatusCodes
+* insert DeviceSearchTypeInteractionStatusCodes
 
 RuleSet: SubscriptionInteraction(expectation)
 * insert CapSupportResource(Subscription, {expectation})
 
 * insert CapResourceInteraction(#search-type, {expectation})
-* insert SearchTypeInteractionStatusCodes
+* insert SubscriptionSearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#create, {expectation})
-* insert CreateInteractionStatusCodes
+* insert SubscriptionCreateInteractionStatusCodes
