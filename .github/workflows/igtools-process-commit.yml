@@ -1,0 +1,319 @@
+name: IGTools Process Commit
+run-name: IGTools Process Commit - ${{ github.ref_name }}
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: igtools-process-commit-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  process-and-commit:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ensure branch trigger
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "${GITHUB_REF_TYPE}" != "branch" ]]; then
+            echo "This workflow must be run against a branch." >&2
+            exit 1
+          fi
+
+      - name: Checkout selected branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.ref_name }}
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+
+      - name: Install tooling
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y graphviz
+          npm install -g fsh-sushi
+          dotnet tool install --tool-path /usr/local/bin Firely.Terminal --version 3.4.0
+          gem install jekyll bundler
+          python -m pip install --upgrade pipx
+          python -m pipx install git+https://github.com/onyg/req-tooling.git
+
+      - name: Run igtools process
+        id: igtools_process
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          artifact_dir="${RUNNER_TEMP}/igtools-process-report"
+          log_file="$artifact_dir/igtools-process.log"
+          report_file="$artifact_dir/igtools-process.html"
+          mkdir -p "$artifact_dir"
+
+          set +e
+          ./igtools-all process 2>&1 | tee "$log_file"
+          script_exit=${PIPESTATUS[0]}
+          set -e
+
+          if grep -Eq '(^|[^A-Z])(ERROR|FAILED)([^A-Z]|$)' "$log_file"; then
+            found_error_keywords="true"
+          else
+            found_error_keywords="false"
+          fi
+
+          if git diff --quiet --ignore-submodules -- && \
+             git diff --cached --quiet --ignore-submodules -- && \
+             [[ -z "$(git ls-files --others --exclude-standard)" ]]; then
+            has_changes="false"
+          else
+            has_changes="true"
+          fi
+
+          status="ok"
+          message="./igtools-all process completed successfully."
+
+          if [[ "$script_exit" -ne 0 || "$found_error_keywords" == "true" ]]; then
+            status="failed"
+            message="./igtools-all process failed. See HTML report artifact for details."
+          elif [[ "$has_changes" == "true" ]]; then
+            message="./igtools-all process completed successfully and produced repository changes."
+          else
+            message="./igtools-all process completed successfully and produced no repository changes."
+          fi
+
+          export PROCESS_STATUS="$status"
+          export PROCESS_MESSAGE="$message"
+          export PROCESS_SCRIPT_EXIT="$script_exit"
+          export PROCESS_FOUND_ERROR_KEYWORDS="$found_error_keywords"
+          export PROCESS_HAS_CHANGES="$has_changes"
+          export PROCESS_LOG_FILE="$log_file"
+          export PROCESS_REPORT_FILE="$report_file"
+
+          python - <<'PY'
+          import html
+          import os
+          import textwrap
+          from pathlib import Path
+
+          status = os.environ["PROCESS_STATUS"]
+          message = os.environ["PROCESS_MESSAGE"]
+          script_exit = os.environ["PROCESS_SCRIPT_EXIT"]
+          found_error_keywords = os.environ["PROCESS_FOUND_ERROR_KEYWORDS"]
+          has_changes = os.environ["PROCESS_HAS_CHANGES"]
+          log_file = Path(os.environ["PROCESS_LOG_FILE"])
+          report_file = Path(os.environ["PROCESS_REPORT_FILE"])
+
+          log_text = ""
+          if log_file.exists():
+              log_text = log_file.read_text(encoding="utf-8", errors="replace")
+
+          status_meta = {
+              "ok": {
+                  "label": "SUCCESS",
+                  "color": "#1b5e20",
+                  "bg": "#e8f5e9",
+              },
+              "failed": {
+                  "label": "FAILED",
+                  "color": "#b71c1c",
+                  "bg": "#ffebee",
+              },
+          }.get(
+              status,
+              {
+                  "label": "UNKNOWN",
+                  "color": "#37474f",
+                  "bg": "#eceff1",
+              },
+          )
+
+          html_doc = textwrap.dedent(
+              f"""\
+              <!doctype html>
+              <html lang=\"en\">
+              <head>
+                <meta charset=\"utf-8\" />
+                <title>IGTools Process Report</title>
+                <style>
+                  :root {{
+                    --bg: #f4f7fb;
+                    --card: #ffffff;
+                    --text: #123;
+                    --muted: #4f5b6b;
+                    --line: #d8e0ea;
+                  }}
+                  body {{
+                    margin: 0;
+                    padding: 2rem;
+                    background: radial-gradient(circle at top right, #e8f1ff, var(--bg) 50%);
+                    color: var(--text);
+                    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;
+                  }}
+                  .wrap {{ max-width: 1100px; margin: 0 auto; }}
+                  .card {{
+                    background: var(--card);
+                    border: 1px solid var(--line);
+                    border-radius: 14px;
+                    box-shadow: 0 10px 24px rgba(30, 55, 90, 0.08);
+                    padding: 1.25rem 1.5rem;
+                    margin-bottom: 1rem;
+                  }}
+                  h1 {{ margin: 0 0 0.5rem 0; font-size: 1.6rem; }}
+                  p {{ margin: 0.4rem 0; color: var(--muted); }}
+                  .badge {{
+                    display: inline-block;
+                    font-weight: 700;
+                    padding: 0.35rem 0.7rem;
+                    border-radius: 999px;
+                    color: {status_meta['color']};
+                    background: {status_meta['bg']};
+                    border: 1px solid {status_meta['color']};
+                    margin-top: 0.5rem;
+                  }}
+                  table {{ width: 100%; border-collapse: collapse; margin-top: 0.8rem; }}
+                  th, td {{
+                    border: 1px solid var(--line);
+                    padding: 0.55rem 0.7rem;
+                    text-align: left;
+                    font-size: 0.92rem;
+                  }}
+                  th {{ background: #eef3fa; font-weight: 700; }}
+                  pre {{
+                    background: #0f1722;
+                    color: #dce6f3;
+                    border-radius: 10px;
+                    padding: 1rem;
+                    overflow: auto;
+                    font-size: 0.86rem;
+                    line-height: 1.45;
+                  }}
+                </style>
+              </head>
+              <body>
+                <div class=\"wrap\">
+                  <div class=\"card\">
+                    <h1>IGTools Process Report</h1>
+                    <p>{html.escape(message)}</p>
+                    <div class=\"badge\">Status: {status_meta['label']}</div>
+                  </div>
+                  <div class=\"card\">
+                    <h2>Execution Details</h2>
+                    <table>
+                      <thead>
+                        <tr><th>Check</th><th>Value</th></tr>
+                      </thead>
+                      <tbody>
+                        <tr><td>Exit code</td><td>{html.escape(script_exit)}</td></tr>
+                        <tr><td>Output contains ERROR or FAILED</td><td>{html.escape(found_error_keywords)}</td></tr>
+                        <tr><td>Repository changes detected</td><td>{html.escape(has_changes)}</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class=\"card\">
+                    <h2>Console Output</h2>
+                    <pre>{html.escape(log_text)}</pre>
+                  </div>
+                </div>
+              </body>
+              </html>
+              """
+          )
+
+          report_file.write_text(html_doc, encoding="utf-8")
+          PY
+
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+          echo "message=$message" >> "$GITHUB_OUTPUT"
+          echo "script_exit=$script_exit" >> "$GITHUB_OUTPUT"
+          echo "found_error_keywords=$found_error_keywords" >> "$GITHUB_OUTPUT"
+          echo "has_changes=$has_changes" >> "$GITHUB_OUTPUT"
+          echo "artifact_dir=$artifact_dir" >> "$GITHUB_OUTPUT"
+
+      - name: Upload igtools report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: igtools-process-report-${{ github.run_number }}
+          path: ${{ steps.igtools_process.outputs.artifact_dir }}/
+          if-no-files-found: error
+
+      - name: Publish workflow summary
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "## IGTools process" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Branch: \`${{ github.ref_name }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Status: \`${{ steps.igtools_process.outputs.status }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Result: ${{ steps.igtools_process.outputs.message }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Exit code: \`${{ steps.igtools_process.outputs.script_exit }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Output contains ERROR/FAILED: \`${{ steps.igtools_process.outputs.found_error_keywords }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Changes detected: \`${{ steps.igtools_process.outputs.has_changes }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- HTML report: uploaded as workflow artifact \`igtools-process-report-${{ github.run_number }}\`" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Fail on igtools errors
+        if: steps.igtools_process.outputs.status == 'failed'
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "::error title=IGTools process failed::${{ steps.igtools_process.outputs.message }}"
+          exit 1
+
+      - name: Configure git author
+        if: steps.igtools_process.outputs.status == 'ok' && steps.igtools_process.outputs.has_changes == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit generated changes
+        if: steps.igtools_process.outputs.status == 'ok' && steps.igtools_process.outputs.has_changes == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add -A
+          git commit -m "Run igtools process"
+
+      - name: Push generated changes
+        if: steps.igtools_process.outputs.status == 'ok' && steps.igtools_process.outputs.has_changes == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git push origin "HEAD:${{ github.ref_name }}"
+
+      - name: No changes to commit
+        if: steps.igtools_process.outputs.status == 'ok' && steps.igtools_process.outputs.has_changes != 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "No repository changes produced by ./igtools-all process."
