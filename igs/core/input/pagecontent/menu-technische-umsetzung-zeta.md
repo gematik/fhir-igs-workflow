@@ -113,7 +113,11 @@ Es gibt zwei Arten von Token:
 
 * **Erfolgsfall:** Wenn **alle vier Prüfungen** erfolgreich sind, wird der Zugriff gestattet. Die Anwendung erhält ein zeitlich begrenztes Zugriffstoken.
 * **Fehlerfall:** Wenn **mindestens eine Prüfung scheitert**, wird der Zugriff verweigert. Die genauen Gründe für die Ablehnung (z.B. "User profession is not allowed", "One or more requested scopes are not allowed") werden zurückgemeldet.
-  
+
+#### Anforderungen zur Nutzung der ZETA Funktionalität
+
+[Nutzung ZETA-Client durch Clientsystme](./zeta-client.html)
+
 #### Referenzen
 
 ### Vollständige Policy-Definition
