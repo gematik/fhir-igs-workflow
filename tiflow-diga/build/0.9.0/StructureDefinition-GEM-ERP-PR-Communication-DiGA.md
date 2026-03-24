@@ -12,8 +12,8 @@ Version 0.9.0 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM-ERP-PR-Communication-DiGA | *Version*:0.9.0 |
-| Draft as of 2026-02-06 | *Computable Name*:GEM_ERP_PR_Communication_DiGA |
+| *Official URL*:https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM_ERP_PR_Communication_DiGA | *Version*:0.9.0 |
+| Draft as of 2025-09-25 | *Computable Name*:GEM_ERP_PR_Communication_DiGA |
 
  
 Antwort des Leistungserbringers an den Patienten 
@@ -40,12 +40,12 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Communica
 {
   "resourceType" : "StructureDefinition",
   "id" : "GEM-ERP-PR-Communication-DiGA",
-  "url" : "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM-ERP-PR-Communication-DiGA",
+  "url" : "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM_ERP_PR_Communication_DiGA",
   "version" : "0.9.0",
   "name" : "GEM_ERP_PR_Communication_DiGA",
   "title" : "GEM ERP PR Communication DiGA",
   "status" : "draft",
-  "date" : "2026-02-06",
+  "date" : "2025-09-25",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -93,6 +93,16 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Communica
       "path" : "Communication"
     },
     {
+      "id" : "Communication.instantiatesCanonical",
+      "path" : "Communication.instantiatesCanonical",
+      "max" : "0"
+    },
+    {
+      "id" : "Communication.instantiatesUri",
+      "path" : "Communication.instantiatesUri",
+      "max" : "0"
+    },
+    {
       "id" : "Communication.basedOn",
       "path" : "Communication.basedOn",
       "short" : "Gibt das E-Rezept-Token gemäß gemSpec_DM_eRp an.",
@@ -115,11 +125,61 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Communica
       "mustSupport" : true
     },
     {
+      "id" : "Communication.partOf",
+      "path" : "Communication.partOf",
+      "max" : "0"
+    },
+    {
+      "id" : "Communication.inResponseTo",
+      "path" : "Communication.inResponseTo",
+      "max" : "0"
+    },
+    {
       "id" : "Communication.status",
       "path" : "Communication.status",
       "comment" : "Muss standardmäßig laut FHIR Core Specification angegeben werden, wird jedoch während des Lebenszyklus der Ressource nicht verändert.",
       "fixedCode" : "unknown",
       "mustSupport" : true
+    },
+    {
+      "id" : "Communication.statusReason",
+      "path" : "Communication.statusReason",
+      "max" : "0"
+    },
+    {
+      "id" : "Communication.category",
+      "path" : "Communication.category",
+      "max" : "0"
+    },
+    {
+      "id" : "Communication.priority",
+      "path" : "Communication.priority",
+      "max" : "0"
+    },
+    {
+      "id" : "Communication.medium",
+      "path" : "Communication.medium",
+      "max" : "0"
+    },
+    {
+      "id" : "Communication.subject",
+      "path" : "Communication.subject",
+      "max" : "0"
+    },
+    {
+      "id" : "Communication.topic",
+      "path" : "Communication.topic",
+      "max" : "0"
+    },
+    {
+      "id" : "Communication.about",
+      "path" : "Communication.about",
+      "max" : "0"
+    },
+    {
+      "id" : "Communication.encounter",
+      "path" : "Communication.encounter",
+      "max" : "0"
     },
     {
       "id" : "Communication.sent",
@@ -151,7 +211,8 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Communica
       "type" : [{
         "code" : "Identifier",
         "profile" : ["http://fhir.de/StructureDefinition/identifier-kvid-10"]
-      }]
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "Communication.sender",
@@ -171,6 +232,16 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Communica
       }]
     },
     {
+      "id" : "Communication.reasonCode",
+      "path" : "Communication.reasonCode",
+      "max" : "0"
+    },
+    {
+      "id" : "Communication.reasonReference",
+      "path" : "Communication.reasonReference",
+      "max" : "0"
+    },
+    {
       "id" : "Communication.payload",
       "path" : "Communication.payload",
       "min" : 1,
@@ -186,6 +257,11 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Communica
         "code" : "string"
       }],
       "mustSupport" : true
+    },
+    {
+      "id" : "Communication.note",
+      "path" : "Communication.note",
+      "max" : "0"
     }]
   }
 }

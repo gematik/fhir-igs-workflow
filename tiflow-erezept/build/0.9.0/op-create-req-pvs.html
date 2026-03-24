@@ -292,7 +292,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an das PVS für die Nutzung der Operation <code class="language-plaintext highlighter-rouge">$create</code>.</p>
 
 <!-- A_19275 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-227" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-257" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle erstellen" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung" />
@@ -305,7 +305,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Das PS der verordnenden LEI darf FHIR-Extensions nicht im Verordnungsdatensatz verwenden, die nicht explizit gemäß KBV-Profilversion “kbv.ita.erp” bzw. “kbv.itv.evdga” beschrieben sind.</p>
 
 <!-- A_22893 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-228" title="PS verordnende LEI: E-Rezept erstellen - Gleichheit Ausstellungsdatum und QES Erstellung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-258" title="PS verordnende LEI: E-Rezept erstellen - Gleichheit Ausstellungsdatum und QES Erstellung" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Herstellererklärung" />
@@ -316,10 +316,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Es gelten weitere modulspezifische Anforderungen für den Verordnungsdatensatz.</p>
 
 <!-- A_19276 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-229" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-ID abrufen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-259" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-ID abrufen" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_verordnend">
-    <testProcedure id="Konformitätserklärung" />
+    <testProcedure id="Konformitätsbestätigung" />
   </actor>
   Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" für das E-Rezept die HTTP-Operation POST /Task/$create mit
   <ul>
@@ -336,7 +336,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Der Response des Fachdienstes liefert</p>
 <ul>
   <li>die Rezept-ID (Task.Identifier mit “https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId”), mit der das E-Rezept-Bundle vervollständigt wird,</li>
-  <li>die Task-ID (Task.id), mit dem der Task bei Aufrufen des E-Rezept-Fachdienstes referenziert wird,</li>
+  <li>die Task-ID (Task.id), mit dem der Task bei Aufrufen des TI-Flow-Fachdienstes referenziert wird,</li>
   <li>und den AccessCode (Task.Identifier mit “https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_AccessCode”), welcher für den Zugriff auf das E-Rezept im Fachdienst berechtigt</li>
 </ul>
 
@@ -345,10 +345,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Für die qualifizierte elektronische Signatur des Verordnungsbundels wird der Konnektor verwendet. Es wird eine CMS-Signatur (CAdES) erstellt. Die Operation für die QES muss durch den Leistungserbringer durchgeführt werden.</p>
 
 <!-- A_19281-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-380" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle QES signieren" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-260" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle QES signieren" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_verordnend">
-    <testProcedure id="Konformitätserklärung" />
+    <testProcedure id="Konformitätsbestätigung" />
   </actor>
   Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" für das E-Rezept die Signaturoperation des Konnektors mit 
   <ul>
@@ -414,7 +414,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 07:25+0000">2026-03-23</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 24, 2026 17:34+0000">2026-03-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

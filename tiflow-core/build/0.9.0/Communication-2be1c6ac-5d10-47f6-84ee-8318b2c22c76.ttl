@@ -1,0 +1,64 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow/core/Communication/2be1c6ac-5d10-47f6-84ee-8318b2c22c76> a fhir:Communication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "2be1c6ac-5d10-47f6-84ee-8318b2c22c76"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq|1.6"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq?version=1.6>
+     ] ) ;
+     fhir:tag ( [
+       fhir:display [ fhir:v "Dispense Request from Patient to Health Care Provider" ]
+     ] [
+       fhir:display [ fhir:v "Communication message sent by patient to Health Care Provider to request the redeemCode for a DiGA" ]
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_PrescriptionType"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_PrescriptionType>
+     ] ;
+     fhir:value [
+       a fhir:Coding ;
+       fhir:system [
+         fhir:v "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType>
+       ] ;
+       fhir:code [ fhir:v "162" ] ;
+       fhir:display [ fhir:v "Flowtype für Digitale Gesundheitsanwendungen" ]
+     ]
+  ] ) ; # 
+  fhir:basedOn ( [
+     fhir:l <https://gematik.de/fhir/tiflow/core/Task/162.000.033.491.280.78/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea> ;
+     fhir:reference [ fhir:v "Task/162.000.033.491.280.78/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "unknown"] ; # 
+  fhir:sent [ fhir:v "2026-07-01T15:29:00.434+00:00"^^xsd:dateTime] ; # 
+  fhir:recipient ( [
+     fhir:identifier [
+       fhir:system [
+         fhir:v "https://gematik.de/fhir/sid/telematik-id"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/sid/telematik-id>
+       ] ;
+       fhir:value [ fhir:v "8-SMC-B-Testkarte-883110000123465" ]
+     ]
+  ] ) ; # 
+  fhir:sender [
+     fhir:identifier [
+       fhir:system [
+         fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/sid/gkv/kvid-10>
+       ] ;
+       fhir:value [ fhir:v "X234567890" ]
+     ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

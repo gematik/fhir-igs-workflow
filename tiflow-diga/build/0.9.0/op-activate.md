@@ -20,6 +20,39 @@ Die Operation $activate wird als HTTP POST auf /Task/<id>/$activate ausgeführt.
 
 ### Anforderungen an Schnittstelle
 
-* [Server-Anforderungen zu `$activate`](./op-activate-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+* [Server-Anforderungen zu `$activate`](./op-activate-req-fd.md): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
 * [Anforderungen für PVS zu `$activate`](./op-activate-req-pvs.md): Anforderungen an das PVS zur Nutzung der Schnittstelle.
+
+### API Beschreibung
+
+```
+server
+```
+
+```
+
+			{
+  "resourceType": "OperationDefinition",
+  "id": "ActivateOperation",
+  "url": "https://gematik.de/fhir/erp/OperationDefinition/ActivateOperationDefinition",
+  "status": "draft",
+  "version": "1.6.1",
+  "date": "2025-09-25",
+  "name": "Activate",
+  "kind": "operation",
+  "affectsState": true,
+  "resource": [
+    "Task"
+  ],
+  "system": false,
+  "type": false,
+  "instance": true,
+  "description": "Diese Operation aktiviert die erstellte Aufgabe für das Rezept. Der Eingabeparameter muss das qualifizierte signierte Bundle des Rezepts enthalten. Der E-Rezept-Fachdienst validiert das Rezept, aktualisiert die Task-ressource und startet den Workflow.",
+  "code": "activate",
+  "inputProfile": "http://hl7.org/fhir/StructureDefinition/Parameters",
+  "outputProfile": "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PAR_ActivateOperation_Output"
+}
+
+		
+```
 

@@ -5,14 +5,14 @@
   "jurisdiction": "DE",
   "extensions": [
     {
-      "url": "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_EX_DeepLink",
+      "url": "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM_ERP_EX_DeepLink",
       "title": "GEM ERP EX DeepLink",
       "types": [
         "url"
       ]
     },
     {
-      "url": "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_EX_RedeemCode",
+      "url": "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM_ERP_EX_RedeemCode",
       "title": "GEM ERP EX RedeemCode",
       "types": [
         "string"
@@ -22,26 +22,28 @@
   "profiles": {
     "Communication": [
       {
-        "url": "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM-ERP-PR-Communication-DiGA",
+        "url": "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM_ERP_PR_Communication_DiGA",
         "title": "GEM ERP PR Communication DiGA"
       }
     ],
     "MedicationDispense": [
       {
-        "url": "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM-ERP-PR-MedicationDispense-DiGA",
+        "url": "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA",
         "title": "GEM ERP PR MedicationDispense DiGA"
-      }
-    ],
-    "Parameters": [
-      {
-        "url": "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM-ERP-PR-PAR-CloseOperation-Input",
-        "title": "GEM ERP PR CloseOperation Input"
       }
     ]
   },
   "usage": {
     "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.renderedDosageInstruction": [
       "MedicationDispense"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation": [
+      "CapabilityStatement.imports",
+      "CapabilityStatement.rest.resource",
+      "CapabilityStatement.rest.resource.interaction",
+      "CapabilityStatement.rest.resource.operation",
+      "CapabilityStatement.rest.resource.searchParam",
+      "CapabilityStatement.rest.resource.supportedProfile"
     ],
     "http://hl7.org/fhir/StructureDefinition/data-absent-reason": [
       "MedicationDispense.medicationReference",
@@ -64,12 +66,6 @@
     ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
       "StructureDefinition.snapshot.element.type"
-    ],
-    "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version": [
-      "StructureDefinition.snapshot.element"
-    ],
-    "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status": [
-      "StructureDefinition.snapshot.element"
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency": [
       "ImplementationGuide.definition"
@@ -98,15 +94,20 @@
     "https://gematik.de/fhir/epa-medication/StructureDefinition/rx-prescription-process-identifier-extension": [
       "MedicationDispense"
     ],
-    "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_EX_DeepLink": [
+    "https://gematik.de/fhir/ti/StructureDefinition/extension-base-url": [
+      "CapabilityStatement"
+    ],
+    "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info": [
+      "CapabilityStatement.rest.resource.interaction",
+      "CapabilityStatement.rest.resource.operation"
+    ],
+    "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM_ERP_EX_DeepLink": [
       "MedicationDispense"
     ],
-    "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_EX_RedeemCode": [
+    "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM_ERP_EX_RedeemCode": [
+      "Bundle.entry.resource",
       "MedicationDispense",
       "Parameters.parameter.part.resource"
-    ],
-    "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_PrescriptionType": [
-      "Communication"
     ]
   }
 }

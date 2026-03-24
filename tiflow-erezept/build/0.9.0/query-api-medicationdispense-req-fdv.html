@@ -292,7 +292,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Diese Seite beschreibt Anforderungen ein E-Rezept-FdV zur Nutzung der <code class="language-plaintext highlighter-rouge">MedicationDispense</code>-Query-Endpunkte.</p>
 
 <!-- A_19345 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-301" title="E-Rezept-FdV: Abgabeinformationen abfragen - MedicationDispense abrufen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-339" title="E-Rezept-FdV: Abgabeinformationen abfragen - MedicationDispense abrufen" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest" />
@@ -307,7 +307,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="modulspezifische-anforderungen">Modulspezifische Anforderungen</h3>
 
-<p>Wenn die abgebende LEI ein E-Rezept beliefert, dann stellt sie dem Versicherten Informationen zur Abgabe auf dem E-Rezept-Fachdienst ein. Das ist insbesondere relevant, wenn ein Arzneimittel substituiert wird.</p>
+<p>Wenn die abgebende LEI ein E-Rezept beliefert, dann stellt sie dem Versicherten Informationen zur Abgabe auf dem TI-Flow-Fachdienst ein. Das ist insbesondere relevant, wenn ein Arzneimittel substituiert wird.</p>
 
 <p>Die abgebende LEI stellt die Abgabeinformationen entweder vor dem Abschluss oder beim Abschluss des Workflows zum E-Rezept ein.</p>
 
@@ -317,7 +317,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Hinweis: Die Information, dass eine Abgabeinformation eingestellt wurde (Task.status = “in-progress” und Task.extension:lastMedicationDispense existiert) kann dafür genutzt werden den Status des E-Rezepts als Abgegeben darzustellen.</p>
 
-<p>Falls auf dem E-Rezept-Fachdienst Informationen zur Abgabe durch die abgebende LEI hinterlegt wurden, liefert der Response ein MedicationDispense Ressource. Zur Spezifikation der MedicationDispense Ressource siehe [gemSpec_DM_eRp]. Diese beinhaltet u.a. die folgenden fachlichen Informationen zum abgegebenen Arzneimittel:</p>
+<p>Falls auf dem TI-Flow-Fachdienst Informationen zur Abgabe durch die abgebende LEI hinterlegt wurden, liefert der Response ein MedicationDispense Ressource. Zur Spezifikation der MedicationDispense Ressource siehe [gemSpec_DM_eRp]. Diese beinhaltet u.a. die folgenden fachlichen Informationen zum abgegebenen Arzneimittel:</p>
 <ul>
   <li>Pharmazentralnummer</li>
   <li>Beschreibung des Arzneimittels
@@ -364,7 +364,7 @@ Der Abruf aller MedicationDispense-Objekte zu einer Verordnung erfolgt über die
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 07:25+0000">2026-03-23</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 24, 2026 17:34+0000">2026-03-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

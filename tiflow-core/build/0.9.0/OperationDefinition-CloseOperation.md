@@ -1,0 +1,65 @@
+# CloseOperation - TIFlow - Kernfunktionalitäten v0.9.0
+
+TIFlow - Kernfunktionalitäten
+
+Version 0.9.0 - ci-build 
+
+* [**Table of Contents**](toc.md)
+* [**FHIR-Artefakte**](artifacts.md)
+* **CloseOperation**
+
+## OperationDefinition: CloseOperation 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://gematik.de/fhir/erp/OperationDefinition/CloseOperationDefinition | *Version*:0.9.0 |
+| Draft as of 2025-09-25 | *Computable Name*:Close |
+
+ 
+Die $close-Operation beendet den E-Rezept-Workflow und erstellt eine Quittung. Das Ergebnis dieses Vorgangs ist ein signiertes Bundle, das für weitere finanzielle Verarbeitung verwendet wird. Der Status der Aufgabe ändert sich anschließend in #completed. 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "CloseOperation",
+  "url" : "https://gematik.de/fhir/erp/OperationDefinition/CloseOperationDefinition",
+  "version" : "0.9.0",
+  "name" : "Close",
+  "status" : "draft",
+  "kind" : "operation",
+  "date" : "2025-09-25",
+  "publisher" : "gematik GmbH",
+  "contact" : [{
+    "name" : "gematik GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://gematik.de"
+    },
+    {
+      "system" : "email",
+      "value" : "erp-umsetzung@gematik.de"
+    }]
+  }],
+  "description" : "Die $close-Operation beendet den E-Rezept-Workflow und erstellt eine Quittung. Das Ergebnis dieses Vorgangs ist ein signiertes Bundle, das für weitere finanzielle Verarbeitung verwendet wird. Der Status der Aufgabe ändert sich anschließend in #completed.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "affectsState" : true,
+  "code" : "close",
+  "resource" : ["Task"],
+  "system" : false,
+  "type" : false,
+  "instance" : true,
+  "inputProfile" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PAR_CloseOperation_Input",
+  "outputProfile" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PAR_CloseOperation_Output"
+}
+
+```

@@ -31,7 +31,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
   },
   "extension" : [{
     "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-base-url",
-    "valueString" : "erp.zentral.erp.splitdns.ti-dienste.de"
+    "valueString" : "https://tiflow.de"
   }],
   "url" : "https://gematik.de/fhir/erpchrg/OperationDefinition/ERPFachdienstServerChrgOperationDefinition",
   "version" : "0.9.0",
@@ -100,6 +100,25 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
         {
           "extension" : [{
             "url" : "statusCode",
+            "valueString" : "401"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Authentication is required and has failed or has not yet been provided"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_AUTH_REQUIRED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
             "valueString" : "400"
           },
           {
@@ -132,6 +151,82 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
           {
             "url" : "errorCode",
             "valueString" : "MSG_BAD_SYNTAX"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "405"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Method not allowed for this endpoint"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_OP_NOT_ALLOWED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "408"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Request timeout"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_TIMEOUT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "429"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Too many requests"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_RATE_LIMIT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "500"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Internal server error"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -172,6 +267,25 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
         {
           "extension" : [{
             "url" : "statusCode",
+            "valueString" : "401"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Authentication is required and has failed or has not yet been provided"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_AUTH_REQUIRED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
             "valueString" : "400"
           },
           {
@@ -185,6 +299,44 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
           {
             "url" : "errorCode",
             "valueString" : "MSG_BAD_FORMAT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "405"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Method not allowed for this endpoint"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_OP_NOT_ALLOWED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "408"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Request timeout"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_TIMEOUT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -242,6 +394,44 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
           {
             "url" : "errorCode",
             "valueString" : "MSG_DELETED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "429"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Too many requests"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_RATE_LIMIT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "500"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Internal server error"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         }],
@@ -279,6 +469,25 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
         {
           "extension" : [{
             "url" : "statusCode",
+            "valueString" : "401"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Authentication is required and has failed or has not yet been provided"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_AUTH_REQUIRED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
             "valueString" : "400"
           },
           {
@@ -311,6 +520,82 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
           {
             "url" : "errorCode",
             "valueString" : "MSG_BAD_SYNTAX"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "405"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Method not allowed for this endpoint"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_OP_NOT_ALLOWED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "408"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Request timeout"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_TIMEOUT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "429"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Too many requests"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_RATE_LIMIT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "500"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Internal server error"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -351,6 +636,25 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
         {
           "extension" : [{
             "url" : "statusCode",
+            "valueString" : "401"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Authentication is required and has failed or has not yet been provided"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_AUTH_REQUIRED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
             "valueString" : "400"
           },
           {
@@ -364,6 +668,44 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
           {
             "url" : "errorCode",
             "valueString" : "MSG_BAD_FORMAT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "405"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Method not allowed for this endpoint"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_OP_NOT_ALLOWED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "408"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Request timeout"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_TIMEOUT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -423,6 +765,44 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
             "valueString" : "MSG_DELETED"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "429"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Too many requests"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_RATE_LIMIT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "500"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Internal server error"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_INTERNAL_ERROR"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         }],
         "code" : "read"
       }],
@@ -436,17 +816,44 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
         "name" : "_lastUpdated",
         "definition" : "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated",
         "type" : "date",
-        "documentation" : "Resource.meta.lastUpdated"
+        "documentation" : "Resource.meta.lastUpdated - Unterstützt die Suche nach dem zuletzt aktualisierten Datum"
       },
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
           "valueCode" : "SHALL"
         }],
-        "name" : "identifier",
-        "definition" : "http://hl7.org/fhir/SearchParameter/ChargeItem-enteredDate",
-        "type" : "token",
-        "documentation" : "ChargeItem.identifier"
+        "name" : "entered-date",
+        "definition" : "http://hl7.org/fhir/SearchParameter/ChargeItem-entered-date",
+        "type" : "date",
+        "documentation" : "ChargeItem.enteredDate - Unterstützt die Suche nach dem Eingangsdatum; default sort if _sort is not provided"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "_sort",
+        "type" : "string",
+        "documentation" : "Unterstützt das Sortieren nach unterstützten ChargeItem-Suchkriterien"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "_count",
+        "type" : "number",
+        "documentation" : "Maximale Anzahl zurückgegebener Einträge pro Seite; maximum value is 50"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "__offset",
+        "type" : "number",
+        "documentation" : "Nullbasierter Offset des ersten zurückgegebenen Eintrags; default is 0"
       }]
     },
     {
@@ -478,6 +885,25 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
         {
           "extension" : [{
             "url" : "statusCode",
+            "valueString" : "401"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Authentication is required and has failed or has not yet been provided"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_AUTH_REQUIRED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
             "valueString" : "400"
           },
           {
@@ -510,6 +936,82 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
           {
             "url" : "errorCode",
             "valueString" : "MSG_BAD_SYNTAX"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "405"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Method not allowed for this endpoint"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_OP_NOT_ALLOWED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "408"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Request timeout"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_TIMEOUT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "429"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Too many requests"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_RATE_LIMIT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "500"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Internal server error"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -550,6 +1052,25 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
         {
           "extension" : [{
             "url" : "statusCode",
+            "valueString" : "401"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Authentication is required and has failed or has not yet been provided"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_AUTH_REQUIRED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
             "valueString" : "400"
           },
           {
@@ -563,6 +1084,44 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
           {
             "url" : "errorCode",
             "valueString" : "MSG_BAD_FORMAT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "405"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Method not allowed for this endpoint"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_OP_NOT_ALLOWED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "408"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Request timeout"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_TIMEOUT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -622,11 +1181,59 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
             "valueString" : "MSG_DELETED"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "429"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Too many requests"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_RATE_LIMIT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "500"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Internal server error"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_INTERNAL_ERROR"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         }],
         "code" : "read"
       }],
       "versioning" : "versioned-update",
-      "readHistory" : true
+      "readHistory" : true,
+      "searchParam" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "category",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Consent-category",
+        "type" : "token",
+        "documentation" : "Consent.category - Unterstützt die Suche nach der Art der Einwilligung"
+      }]
     },
     {
       "extension" : [{
@@ -664,6 +1271,25 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
         {
           "extension" : [{
             "url" : "statusCode",
+            "valueString" : "401"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Authentication is required and has failed or has not yet been provided"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_AUTH_REQUIRED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
             "valueString" : "400"
           },
           {
@@ -696,6 +1322,82 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
           {
             "url" : "errorCode",
             "valueString" : "MSG_BAD_SYNTAX"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "405"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Method not allowed for this endpoint"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_OP_NOT_ALLOWED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "408"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Request timeout"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_TIMEOUT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "429"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Too many requests"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_RATE_LIMIT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "500"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Internal server error"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -736,6 +1438,25 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
         {
           "extension" : [{
             "url" : "statusCode",
+            "valueString" : "401"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Authentication is required and has failed or has not yet been provided"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_AUTH_REQUIRED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
             "valueString" : "400"
           },
           {
@@ -749,6 +1470,44 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
           {
             "url" : "errorCode",
             "valueString" : "MSG_BAD_FORMAT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "405"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Method not allowed for this endpoint"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_OP_NOT_ALLOWED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "408"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Request timeout"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_TIMEOUT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -806,6 +1565,44 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
           {
             "url" : "errorCode",
             "valueString" : "MSG_DELETED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "429"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Too many requests"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_RATE_LIMIT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "500"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Internal server error"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         }],

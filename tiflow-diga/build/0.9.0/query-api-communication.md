@@ -26,7 +26,7 @@ Die Interaktion mit Nachrichten als FHIR-Ressource **Communication** wird über 
 
 ### Anforderungen an Schnittstelle
 
-* [FD-Anforderungen zu Communications](./query-api-communication-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+* [FD-Anforderungen zu Communications](./query-api-communication-req-fd.md): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
 * [FdV-Anforderungen zu Communications](./query-api-communication-req-fdv.md): Anforderungen an ein E-Rezept-FdV zur Nutzung der Schnittstelle.
 * [KTR-Anforderungen zu Communications](./query-api-communication-req-ktr.md): Anforderungen an ein CS Kostenträger zur Nutzung der Schnittstelle.
 
@@ -35,12 +35,16 @@ Die Interaktion mit Nachrichten als FHIR-Ressource **Communication** wird über 
 * Zuweisung einer Verordnung durch den Versicherten an den Kostenträger. Der Payload ist hierbei optional (Kardinalität 0..1)
 * Übermittlung einer Nachricht durch den Kostenträger an den Versicherten.
 
--API Beschreibung aus Cap Statement
+```
+server
+```
 
 ### GET /Communication
 
 * Kostenträger: Abruf von Zuweisungen von Versicherten
 * Versicherter: Abruf der Rückmeldungen des Kostenträgers
 
--API Beschreibung aus Cap Statement
+```
+server
+```
 

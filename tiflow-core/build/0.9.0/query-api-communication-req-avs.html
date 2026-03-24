@@ -287,16 +287,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="nachrichten-abrufen">Nachrichten abrufen</h3>
 
 <!-- A_21556 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-129" title="PS abgebende LEI: Nachrichten abrufen - Häufigkeit" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-146" title="PS abgebende LEI: Nachrichten abrufen - Häufigkeit" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung" />
   </actor>
-  Das PS der abgebenden LEI MUSS im Anwendungsfall "Nachrichten von Versicherten empfangen" zwischen den Aufrufen der Operation GET /Communication mindestens 5 Minuten warten. Der Zeitraum zwischen den Aufrufen muss um eine zufällige Zeitspanne zwischen 0 und 10.000 Millisekunden verlängert werden, um eine Gleichverteilung der Anfragen am E-Rezept-Fachdienst über alle Apotheken zu erreichen.
+  Das PS der abgebenden LEI MUSS im Anwendungsfall "Nachrichten von Versicherten empfangen" zwischen den Aufrufen der Operation GET /Communication mindestens 5 Minuten warten. Der Zeitraum zwischen den Aufrufen muss um eine zufällige Zeitspanne zwischen 0 und 10.000 Millisekunden verlängert werden, um eine Gleichverteilung der Anfragen am TI-Flow-Fachdienst über alle Apotheken zu erreichen.
 </requirement>
 
 <!-- A_19329-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-130" title="PS abgebende LEI: Nachrichten abrufen - Abfrage" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-147" title="PS abgebende LEI: Nachrichten abrufen - Abfrage" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung" />
@@ -310,14 +310,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   ausführen.
 </requirement>
 
-<p>Falls eine oder mehrere E-Rezept-Nachrichten für die abgebende LEI auf dem E-Rezept-Fachdienst bereitstehen, übermittelt der E-Rezept-Fachdienst ein Bundle von Communication Ressourcen. </p>
+<p>Falls eine oder mehrere E-Rezept-Nachrichten für die abgebende LEI auf dem TI-Flow-Fachdienst bereitstehen, übermittelt der TI-Flow-Fachdienst ein Bundle von Communication Ressourcen. </p>
 
 <h3 id="nachricht-versenden">Nachricht versenden</h3>
 
 <p>Die für die Nachricht zu verwendende Communication-Ressource wird modul- und anwendungsfall-spezifisch festgelegt.</p>
 
 <!-- A_19334 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-131" title="PS abgebende LEI: Nachricht versenden - Nachricht auf Fachdienst einstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-148" title="PS abgebende LEI: Nachricht versenden - Nachricht auf Fachdienst einstellen" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung" />
@@ -342,7 +342,7 @@ ausgewählte Nachricht gelöscht werden soll, und die Möglichkeit geben, das
 Löschen abzubrechen.</p>
 
 <!-- A_21489 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-132" title="PS abgebende LEI: Nachricht löschen - Löschrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-149" title="PS abgebende LEI: Nachricht löschen - Löschrequest" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung" />
@@ -402,7 +402,7 @@ löschen” dem Nutzer ermöglichen, die Nachricht auch lokal im PS zu löschen.
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 06:04+0000">2026-03-23</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 24, 2026 17:20+0000">2026-03-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

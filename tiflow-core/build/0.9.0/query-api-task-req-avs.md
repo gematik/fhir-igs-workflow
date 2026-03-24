@@ -22,7 +22,7 @@ Das PS der abgebenden LEI MUSS im Anwendungsfall "Recovery Secret" für das E-Re
 ausführen.
 ### Quittung erneut abrufen
 
-Mit diesem Anwendungsfall kann eine abgebende LEI die Quittung erneut abrufen, falls bei der Übermittlung vom E-Rezept-Fachdienst ein Fehler aufgetreten ist.
+Mit diesem Anwendungsfall kann eine abgebende LEI die Quittung erneut abrufen, falls bei der Übermittlung vom TI-Flow-Fachdienst ein Fehler aufgetreten ist.
 
 Der Anwendungsfall kann bei Bedarf wiederholt werden.
 

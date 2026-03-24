@@ -8,17 +8,17 @@
 * [FdV-Anforderungen: MedicationDispense-Query](query-api-medicationdispense-req-fdv.md)
 * [Operation API](operation-api.md)
 * [KTR-Anforderungen: Communication-Query](query-api-communication-req-ktr.md)
-* [Anforderungen an den E-Rezept-Fachdienst für die $close-Operation](op-close-req-fd.md)
-* [Anforderungen an den E-Rezept-Fachdienst für die $accept-Operation](op-accept-req-fd.md)
+* [Anforderungen an den TI-Flow-Fachdienst für die $close-Operation](op-close-req-fd.md)
+* [Anforderungen an den TI-Flow-Fachdienst für die $accept-Operation](op-accept-req-fd.md)
 * [Generelle Prinzipien](menu-schnittstellen-generelle-prinzipien.md)
 * [KTR-Anforderungen: Task-Query](query-api-task-req-ktr.md)
 * [Operation: $abort](op-abort.md)
 * [FD-Anforderungen: Task-Query](query-api-task-req-fd.md)
 * [Query API: MedicationDispense](query-api-medicationdispense.md)
 * [Operation: $accept](op-accept.md)
-* [Anforderungen an den E-Rezept-Fachdienst für die $activate-Operation](op-activate-req-fd.md)
-* [Anforderungen an den E-Rezept-Fachdienst für die $create-Operation](op-create-req-fd.md)
-* [Anforderungen an den E-Rezept-Fachdienst für die $reject-Operation](op-reject-req-fd.md)
+* [Anforderungen an den TI-Flow-Fachdienst für die $activate-Operation](op-activate-req-fd.md)
+* [Anforderungen an den TI-Flow-Fachdienst für die $create-Operation](op-create-req-fd.md)
+* [Anforderungen an den TI-Flow-Fachdienst für die $reject-Operation](op-reject-req-fd.md)
 * [Anforderungen an das E-Rezept-FdV für die $abort-Operation](op-abort-req-fdv.md)
 * [Release Notes](release-notes.md)
 * [Referenzen](referenced.md)
@@ -47,7 +47,7 @@
 * [Anforderungen an den verordnende Primärsystem für die $create-Operation](op-create-req-pvs.md)
 * [Query API: Task](query-api-task.md)
 * [Datenschutz und Informationssicherheit](menu-datenschutz-und-sicherheit.md)
-* [Anforderungen an den E-Rezept-Fachdienst für die $abort-Operation](op-abort-req-fd.md)
+* [Anforderungen an den TI-Flow-Fachdienst für die $abort-Operation](op-abort-req-fd.md)
 
 ## Resources
 
@@ -59,12 +59,15 @@
 
 * [GEM ERP PR Communication DiGA](StructureDefinition-GEM-ERP-PR-Communication-DiGA.md)
 * [GEM ERP PR MedicationDispense DiGA](StructureDefinition-GEM-ERP-PR-MedicationDispense-DiGA.md)
-* [GEM ERP PR CloseOperation Input](StructureDefinition-GEM-ERP-PR-PAR-CloseOperation-Input.md)
 
 ### Extensions
 
 * [GEM ERP EX DeepLink](StructureDefinition-GEM-ERP-EX-DeepLink.md)
 * [GEM ERP EX RedeemCode](StructureDefinition-GEM-ERP-EX-RedeemCode.md)
+
+### CapabilityStatements
+
+* [ERP DiGA CapabilityStatement für den E-Rezept-Fachdienst](CapabilityStatement-erp-fachdienst-server-diga.md)
 
 ### ImplementationGuides
 
@@ -72,9 +75,14 @@
 
 ### Examples
 
+* [ExampleDiGACommunicationSearchset (Bundle)](Bundle-ExampleDiGACommunicationSearchset.md)
+* [ExampleDiGAMedicationDispenseSearchset (Bundle)](Bundle-ExampleDiGAMedicationDispenseSearchset.md)
+* [ExampleDiGATaskSearchset (Bundle)](Bundle-ExampleDiGATaskSearchset.md)
 * [140f716f-f649-44fe-9a4e-157eb3c8adf3 (Communication)](Communication-140f716f-f649-44fe-9a4e-157eb3c8adf3.md)
-* [2be1c6ac-5d10-47f6-84ee-8318b2c22c76 (Communication)](Communication-2be1c6ac-5d10-47f6-84ee-8318b2c22c76.md)
 * [Example-MedicationDispense-DiGA-DeepLink (MedicationDispense)](MedicationDispense-Example-MedicationDispense-DiGA-DeepLink.md)
 * [Example-MedicationDispense-DiGA-Name-And-PZN (MedicationDispense)](MedicationDispense-Example-MedicationDispense-DiGA-Name-And-PZN.md)
 * [Example-MedicationDispense-DiGA-NoRedeemCode (MedicationDispense)](MedicationDispense-Example-MedicationDispense-DiGA-NoRedeemCode.md)
+* [ExampleDiGAOperationOutcomeError (OperationOutcome)](OperationOutcome-ExampleDiGAOperationOutcomeError.md)
 * [ExampleCloseInputParametersDiGA (Parameters)](Parameters-ExampleCloseInputParametersDiGA.md)
+* [ExampleDiGAOperationRequestParameters (Parameters)](Parameters-ExampleDiGAOperationRequestParameters.md)
+* [ExampleDiGATaskInReadyState (Task)](Task-ExampleDiGATaskInReadyState.md)

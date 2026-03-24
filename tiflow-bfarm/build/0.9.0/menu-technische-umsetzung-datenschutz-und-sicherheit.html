@@ -274,11 +274,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </ul>
 
 </div>
-<p>Die Verarbeitung von E-T-Rezepten bedingt im E-Rezept-Fachdienst nicht nur einen neuen Workflow (166), sondern auch eine Kommunikationsverbindung zu einem neuen Akteur – dem BfArM – verbunden mit einem neuen Anwendungsfall.</p>
+<p>Die Verarbeitung von E-T-Rezepten bedingt im TI-Flow-Fachdienst nicht nur einen neuen Workflow (166), sondern auch eine Kommunikationsverbindung zu einem neuen Akteur – dem BfArM – verbunden mit einem neuen Anwendungsfall.</p>
 
 <h3 id="prüfungen-beim-einstellen-eines-e-t-rezepts">Prüfungen beim Einstellen eines E-T-Rezepts</h3>
 
-<p>Der E-Rezept-Fachdienst prüft beim Einstellen des E-T-Rezeptes die Angaben im Verordnungsdatensatz gemäß dem FHIR-Profil:</p>
+<p>Der TI-Flow-Fachdienst prüft beim Einstellen des E-T-Rezeptes die Angaben im Verordnungsdatensatz gemäß dem FHIR-Profil:</p>
 
 <p>Die Bestätigung des Arztes, dass die Sicherheitsmaßnahmen gemäß der aktuellen Fachinformation eines entsprechenden Fertigarzneimittels eingehalten werden, insbesondere, dass erforderlichenfalls ein Schwangerschafts-Präventionsprogramm durchgeführt wird, muss vorhanden sein.
 Die Bestätigung des Arztes, dass der Patientin oder dem Patienten vor Beginn der medikamentösen Behandlung geeignete medizinische Informationsmaterialien ausgehändigt wurden, muss vorhanden sein.
@@ -286,7 +286,7 @@ Die Bestätigung des Arztes, dass er über ausreichende Sachkenntnisse zur Versc
 Die Angabe der Reichdauer muss vorhanden sein.
 Datenübertragung zum BfArM</p>
 
-<p>Die Übertragung der Daten an das BfArM erfolgt durch den E-Rezept-Fachdienst automatisiert über das Internet unverzüglich nach dem Abschluss des Workflow durch eine Apotheke.</p>
+<p>Die Übertragung der Daten an das BfArM erfolgt durch den TI-Flow-Fachdienst automatisiert über das Internet unverzüglich nach dem Abschluss des Workflow durch eine Apotheke.</p>
 
 <p>Der Umfang der Daten, der an das BfArM übertragen wird, ergibt sich einerseits aus gesetzlichen Vorgaben und andererseits aus dem Bedarf des BfArM zur Umsetzung seiner gesetzlichen Pflichten.</p>
 
@@ -299,13 +299,13 @@ keine Angaben zum ausstellenden Leistungserbringer (inkl. Signatur, da vom BfArM
 
 <p>Vor dem Hintergrund einer zu verhindernden Profilbildung über die abgebenden Apotheken, wird die Vertraulichkeit dieser Information mit „hoch“ innerhalb des Verantwortungsbereichs der TI bzw. der gematik bewertet. Dies gilt auch für die Bewertung der Integrität (“hoch”).</p>
 
-<p>Dieser Schutzbedarf wird berücksichtigt, in dem der verbindungsaufbauende Endpunkt einer TLS-gesicherten Verbindung zum T-Register beim BfArM innerhalb der VAU des E-Rezept-Fachdienstes liegt, der Betreiber des E-Rezept-Fachdienstes also nicht sieht, welche Daten übertragen werden. Im Rahmen der Nutzung von TLS findet eine Authentifizierung des T-Registers des BfArM durch den E-Rezept-Fachdienst (Anforderung der gematik) und eine Authentifizierung des E-Rezept-Fachdienstes durch das T-Register des BfArM (Anforderung des BfArM) statt.</p>
+<p>Dieser Schutzbedarf wird berücksichtigt, in dem der verbindungsaufbauende Endpunkt einer TLS-gesicherten Verbindung zum T-Register beim BfArM innerhalb der VAU des TI-Flow-Fachdienstes liegt, der Betreiber des TI-Flow-Fachdienstes also nicht sieht, welche Daten übertragen werden. Im Rahmen der Nutzung von TLS findet eine Authentifizierung des T-Registers des BfArM durch den TI-Flow-Fachdienst (Anforderung der gematik) und eine Authentifizierung des TI-Flow-Fachdienstes durch das T-Register des BfArM (Anforderung des BfArM) statt.</p>
 
-<p>Der E-Rezept-Fachdienst überträgt die Daten unmittelbar - also ohne Beteiligung eines Dritten - unverzüglich nach Abruf der Quittung an das T-Register - sofern dieses System erreicht werden kann. Im Falle einer temporären Nichtverfügbarkeit des T-Register werden die zu übertragenen Daten in einer Warteschlange gespeichert und übertragen, sobald das T-Register wieder erreicht werden kann.</p>
+<p>Der TI-Flow-Fachdienst überträgt die Daten unmittelbar - also ohne Beteiligung eines Dritten - unverzüglich nach Abruf der Quittung an das T-Register - sofern dieses System erreicht werden kann. Im Falle einer temporären Nichtverfügbarkeit des T-Register werden die zu übertragenen Daten in einer Warteschlange gespeichert und übertragen, sobald das T-Register wieder erreicht werden kann.</p>
 
-<p>Nach der Übertragung der Daten in das T-Register befinden sich die Daten im Verantwortungsbereich des BfArM (Grenze der Sicherheitsleistung der TI). Dies betrifft insbesondere die weitere Verarbeitung der Daten durch das BfArM und die sich anschließenden Verarbeitungsvorgänge. Eine ggf. notwendige Kommunikation vom BfArM mit abgebenden Apotheken oder eine Übermittlung von Daten vom BfArM an den E-Rezept-Fachdienst ist durch dieses Feature nicht vorgesehen.</p>
+<p>Nach der Übertragung der Daten in das T-Register befinden sich die Daten im Verantwortungsbereich des BfArM (Grenze der Sicherheitsleistung der TI). Dies betrifft insbesondere die weitere Verarbeitung der Daten durch das BfArM und die sich anschließenden Verarbeitungsvorgänge. Eine ggf. notwendige Kommunikation vom BfArM mit abgebenden Apotheken oder eine Übermittlung von Daten vom BfArM an den TI-Flow-Fachdienst ist durch dieses Feature nicht vorgesehen.</p>
 
-<p>Die Nutzung des FHIR-VZD durch den E-Rezept-Fachdienst erfolgt im Rahmen einer Anwendung der TI (E-Rezept) gemäß § 313 Abs. 3 SGB V. Dabei werden der Name, die Anschrift und – sofern eingetragen – die Telefonnummer der abgebenden Apotheke abgefragt und an das BfArM übermittelt.</p>
+<p>Die Nutzung des FHIR-VZD durch den TI-Flow-Fachdienst erfolgt im Rahmen einer Anwendung der TI (E-Rezept) gemäß § 313 Abs. 3 SGB V. Dabei werden der Name, die Anschrift und – sofern eingetragen – die Telefonnummer der abgebenden Apotheke abgefragt und an das BfArM übermittelt.</p>
 
 <h3 id="neuer-anwendungsfall">Neuer Anwendungsfall</h3>
 
@@ -313,7 +313,7 @@ keine Angaben zum ausstellenden Leistungserbringer (inkl. Signatur, da vom BfArM
 
 <h3 id="protokollierung">Protokollierung</h3>
 
-<p>Die Protokolleinträge für den Versicherten bei Verarbeitung von E-T-Rezepten im E-Rezept-Fachdienst folgen dem Muster für Verordnungen von apothekenpflichtigen Arzneimitteln. Demnach wird für den Versicherten das Einstellen und das Einlösen von E-T-Rezepten protokolliert, nicht aber die Übertragung von Daten an das BfArM, da hierbei keine Informationen über den Versicherten an das BfArM übermittelt werden.</p>
+<p>Die Protokolleinträge für den Versicherten bei Verarbeitung von E-T-Rezepten im TI-Flow-Fachdienst folgen dem Muster für Verordnungen von apothekenpflichtigen Arzneimitteln. Demnach wird für den Versicherten das Einstellen und das Einlösen von E-T-Rezepten protokolliert, nicht aber die Übertragung von Daten an das BfArM, da hierbei keine Informationen über den Versicherten an das BfArM übermittelt werden.</p>
 
 <p>Die Protokollierung in den Apotheken oder beim BfArM wird nicht durch die gematik geregelt (Grenze der Sicherheitsleistung der TI).</p>
 
@@ -357,7 +357,7 @@ keine Angaben zum ausstellenden Leistungserbringer (inkl. Signatur, da vom BfArM
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.bfarm#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 08:45+0000">2026-03-23</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.bfarm#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 24, 2026 17:17+0000">2026-03-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

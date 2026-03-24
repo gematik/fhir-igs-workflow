@@ -9,7 +9,7 @@ Version 0.9.0 - ci-build
 
 ## Operation API
 
-Diese Seite bietet einen Einstieg in die Operationen des DiGA-Workflows. Die Operationen entsprechen dem Basis-Workflow des E-Rezept-Fachdienstes.
+Diese Seite bietet einen Einstieg in die Operationen des DiGA-Workflows. Die Operationen entsprechen dem Basis-Workflow des TI-Flow-Fachdienstes.
 
 ### Operationen
 

@@ -1,4 +1,4 @@
-# Verarbeitungsregeln für den E-Rezept-Fachdienst - TIFlow - Abrechnungsinformationen v0.9.0
+# Verarbeitungsregeln für den TI-Flow-Fachdienst - TIFlow - Abrechnungsinformationen v0.9.0
 
 TIFlow - Abrechnungsinformationen
 
@@ -6,11 +6,11 @@ Version 0.9.0 - ci-build
 
 * [**Table of Contents**](toc.md)
 * [**Systemüberblick**](menu-technische-umsetzung-systemueberblick.md)
-* **Verarbeitungsregeln für den E-Rezept-Fachdienst**
+* **Verarbeitungsregeln für den TI-Flow-Fachdienst**
 
-## Verarbeitungsregeln für den E-Rezept-Fachdienst
+## Verarbeitungsregeln für den TI-Flow-Fachdienst
 
-Diese Seite beschreibt gesonderte Verarbeitungsregeln und technische Aspekte für den E-Rezept-Fachdienst und dessen Clients im Kontext der Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte.
+Diese Seite beschreibt gesonderte Verarbeitungsregeln und technische Aspekte für den TI-Flow-Fachdienst und dessen Clients im Kontext der Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte.
 
 ### Allgemeine Verarbeitungsregeln
 
@@ -24,9 +24,9 @@ Der Ablauf im Workflow-Typ “200” ist identisch zum Workflow-Typ “160”. D
 
 Der Workflow-Typ “200” und der Workflow-Typ “209” verwenden dasselbe Statusmodell, wie der Workflow-Typ “160”. Siehe [gemSysL_eRp#2.4.6 Konzept Status E-Rezept].
 
-Für E-Rezepte der Workflow-Types “200” und “209” können die Abrechnungsinformationen über den E-Rezept-Fachdienst an den Versicherten übermittelt werden.
+Für E-Rezepte der Workflow-Types “200” und “209” können die Abrechnungsinformationen über den TI-Flow-Fachdienst an den Versicherten übermittelt werden.
 
-### Verarbeitungsregeln für den E-Rezept-Fachdienst
+### Verarbeitungsregeln für den TI-Flow-Fachdienst
 
 #### Löschfristen
 
@@ -36,7 +36,7 @@ Der Fachdienst löscht Abrechnungsinformationen automatisch 10 Jahre nach der er
 
 Die Zuordnung eines E-Rezeptes zu einem Versicherten erfolgt auf Basis der Versicherten-ID (10-stelliger unveränderlicher Teil der Krankenversichertennummer (KVNR)). D.h. teilnehmende PKV-Versicherte benötigen eine KVNR, welche ihnen über ihre Krankenversicherung zugeordnet wird. An der Versicherten-ID kann nicht erkannt werden, ob der Versicherte bei einer PKV versichert ist.
 
-Die Authentisierung des Nutzers am E-Rezept-Fachdienst erfolgt mittels eines ACCESS_TOKEN. Diese werden durch Identity Provider (IdP) ausgestellt, welche die Identität des Nutzers attestieren. Es werden ACCESS_TOKEN von IdPs akzeptiert, bei denen der E-Rezept-Fachdienst sich registriert hat.
+Die Authentisierung des Nutzers am TI-Flow-Fachdienst erfolgt mittels eines ACCESS_TOKEN. Diese werden durch Identity Provider (IdP) ausgestellt, welche die Identität des Nutzers attestieren. Es werden ACCESS_TOKEN von IdPs akzeptiert, bei denen der TI-Flow-Fachdienst sich registriert hat.
 
 Mit dem Start der Anwendung E-Rezept kann der IdP der gematik genutzt werden. Für die Authentisierung eines Versicherten am IdP der gematik mittels E-Rezept-FdV wird eine eGK mit NFC-Schnittstelle verwendet.
 
@@ -46,7 +46,7 @@ Mit der Entwicklung von digitalen Identitäten, bspw. föderierter IdPs, werden 
 
 #### Abrechnungsinformation-Token als 2D-Code anzeigen
 
-Mit diesem Anwendungsfall kann der Nutzer den AccessCode zum Ändern als 2D-Code auf dem Bildschirm seines E-Rezept-FdVs anzeigen lassen, um es direkt in der Apotheke vorzuzeigen und die Apotheke damit zu berechtigen, die Abrechnungsinformation vom E-Rezept-Fachdienst abzurufen und den PKV-Abgabedatensatz einmalig zu ändern.
+Mit diesem Anwendungsfall kann der Nutzer den AccessCode zum Ändern als 2D-Code auf dem Bildschirm seines E-Rezept-FdVs anzeigen lassen, um es direkt in der Apotheke vorzuzeigen und die Apotheke damit zu berechtigen, die Abrechnungsinformation vom TI-Flow-Fachdienst abzurufen und den PKV-Abgabedatensatz einmalig zu ändern.
 
 Das E-Rezept-FdV KANN den Anwendungsfall "2D-Code Abrechnungsinformation anzeigen" umsetzen.
 
@@ -62,7 +62,7 @@ Mit diesem Anwendungsfall kann der Versicherte die Abrechnungsinformation aus de
 
 Das E-Rezept-FdV KANN den Anwendungsfall "Abrechnungsinformation exportieren" umsetzen.
 
-Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation exportieren" auf Basis der vom E-Rezept-Fachdienst zu einer Prescription-ID heruntergeladenen ChargeItem, Verordnungsdatensatz, PKV-Abgabedatensatz und Quittung Ressourcen
+Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation exportieren" auf Basis der vom TI-Flow-Fachdienst zu einer Prescription-ID heruntergeladenen ChargeItem, Verordnungsdatensatz, PKV-Abgabedatensatz und Quittung Ressourcen
 * einen Ausdruck erstellen,
 * für den Ausdruck ein PDF gemäß PDF/A-3-Standard (ISO 19005-3) erstellen,
 * in das Dokument den signierten Verordnungsdatensatz (<Prescription-ID>_verordnung.p7s), den signierten PKV-Abgabedatensatz (<Prescription-ID>_abgabedaten.p7s) und den signierten Quittung Datensatz (<Prescription-ID>_quittung.p7s) gemäß PDF/A-3 einbetten.

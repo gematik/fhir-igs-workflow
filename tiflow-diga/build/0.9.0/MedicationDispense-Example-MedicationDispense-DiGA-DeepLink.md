@@ -31,7 +31,7 @@ Profile: [GEM ERP PR MedicationDispense DiGA](StructureDefinition-GEM-ERP-PR-Med
 | - | **Actor** |
 | * | Identifier:`https://gematik.de/fhir/sid/telematik-id`/8-SMC-B-Testkarte-883110000095957 |
 
-**whenHandedOver**: 2026-02-06
+**whenHandedOver**: 2026-07-01
 
 
 
@@ -42,14 +42,14 @@ Profile: [GEM ERP PR MedicationDispense DiGA](StructureDefinition-GEM-ERP-PR-Med
   "resourceType" : "MedicationDispense",
   "id" : "Example-MedicationDispense-DiGA-DeepLink",
   "meta" : {
-    "profile" : ["https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM-ERP-PR-MedicationDispense-DiGA"]
+    "profile" : ["https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA"]
   },
   "extension" : [{
-    "url" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_EX_RedeemCode",
+    "url" : "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM_ERP_EX_RedeemCode",
     "valueString" : "DE12345678901234"
   },
   {
-    "url" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_EX_DeepLink",
+    "url" : "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM_ERP_EX_DeepLink",
     "valueUrl" : "https://gematico.de?redeemCode=DE12345678901234"
   }],
   "identifier" : [{
@@ -78,7 +78,7 @@ Profile: [GEM ERP PR MedicationDispense DiGA](StructureDefinition-GEM-ERP-PR-Med
       }
     }
   }],
-  "whenHandedOver" : "2026-02-06"
+  "whenHandedOver" : "2026-07-01"
 }
 
 ```

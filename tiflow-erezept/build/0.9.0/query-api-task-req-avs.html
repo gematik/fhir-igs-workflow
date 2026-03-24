@@ -293,7 +293,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="recovery-secret">Recovery Secret</h4>
 <!-- A_24181 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-31" title="PS abgebende LEI: Recovery Secret - Statusrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-37" title="PS abgebende LEI: Recovery Secret - Statusrequest" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung" />
@@ -308,12 +308,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <h4 id="quittung-erneut-abrufen">Quittung erneut abrufen</h4>
-<p>Mit diesem Anwendungsfall kann eine abgebende LEI die Quittung erneut abrufen, falls bei der Übermittlung vom E-Rezept-Fachdienst ein Fehler aufgetreten ist.</p>
+<p>Mit diesem Anwendungsfall kann eine abgebende LEI die Quittung erneut abrufen, falls bei der Übermittlung vom TI-Flow-Fachdienst ein Fehler aufgetreten ist.</p>
 
 <p>Der Anwendungsfall kann bei Bedarf wiederholt werden.</p>
 
 <!-- A_19292 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-32" title="PS abgebende LEI: Quittung erneut abrufen - Statusrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-38" title="PS abgebende LEI: Quittung erneut abrufen - Statusrequest" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung" />
@@ -331,10 +331,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="e-rezepte-von-versicherten-abrufen-vsdm">E-Rezepte von Versicherten abrufen (VSDM)</h4>
 
-<p>Mit diesem Anwendungsfall kann die abgebende LEI die E-Rezept-Token Information zu allen E-Rezepten mit dem Status “offen” von einem Versicherten, dessen eGK in ein mit dem Konnektor gepairten E-Health-Kartenterminal gesteckt wurde, vom E-Rezept-Fachdienst abrufen.</p>
+<p>Mit diesem Anwendungsfall kann die abgebende LEI die E-Rezept-Token Information zu allen E-Rezepten mit dem Status “offen” von einem Versicherten, dessen eGK in ein mit dem Konnektor gepairten E-Health-Kartenterminal gesteckt wurde, vom TI-Flow-Fachdienst abrufen.</p>
 
 <!-- A_22435 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-205" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (VSDM) - VSD und PNW von eGK lesen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-4" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (VSDM) - VSD und PNW von eGK lesen" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung" />
@@ -349,7 +349,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Für weitere Informationen zur Operation ReadVSD siehe [gemILF_PS].</p>
 
 <!-- A_22436 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-206" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (VSDM) - Abbruch bei Fehler ReadVSD" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-5" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (VSDM) - Abbruch bei Fehler ReadVSD" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung" />
@@ -357,23 +357,23 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten abrufen" den Anwendungsfall abbrechen, wenn die Operation ReadVSD mit einem Fehler antwortet oder im Response kein Prüfungsnachweis enthalten ist, um den Anwendungsfall nur fortzuführen, wenn der Operationsaufruf ReadVSD mit der Option "Onlineprüfung durchführen" erfolgreich durchgeführt werden konnte.
 </requirement>
 
-<p>Der Prüfungsnachweis wird aus dem ReadVSD Response entnommen, URL-kodiert und in den Aufruf des E-Rezept-Fachdienstes übernommen. </p>
+<p>Der Prüfungsnachweis wird aus dem ReadVSD Response entnommen, URL-kodiert und in den Aufruf des TI-Flow-Fachdienstes übernommen. </p>
 
-<p>Die Werte für den Hashwert hcv werden aus UC_PersoenlicheVersichertendatenXML.Versicherter.Person.StrassenAdresse.Strasse und UC_AllgemeineVersicherungsdatenXML.Versicherter.Versicherungsschutz.Beginn entnommen. Der Hashwert hcv wird Base64URLSafe-kodiert und in den Aufruf des E-Rezept-Fachdienstes übernommen. </p>
+<p>Die Werte für den Hashwert hcv werden aus UC_PersoenlicheVersichertendatenXML.Versicherter.Person.StrassenAdresse.Strasse und UC_AllgemeineVersicherungsdatenXML.Versicherter.Versicherungsschutz.Beginn entnommen. Der Hashwert hcv wird Base64URLSafe-kodiert und in den Aufruf des TI-Flow-Fachdienstes übernommen. </p>
 
 <p>Die Versicherten-ID kann aus UC_PersoenlicheVersichertendatenXML.Versicherter.Versicherten_ID ermittelt werden.</p>
 
 <!-- A_23182 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-207" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (VSDM) - Prüfungsnachweis URL-kodieren" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-6" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (VSDM) - Prüfungsnachweis URL-kodieren" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung" />
   </actor>
-  Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten abrufen" den im Aufruf der Operation ReadVSD erhaltenen Prüfungsnachweis URL-kodieren, um ihn als Parameter im Request an den E-Rezept-Fachdienst zu übermitteln.
+  Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten abrufen" den im Aufruf der Operation ReadVSD erhaltenen Prüfungsnachweis URL-kodieren, um ihn als Parameter im Request an den TI-Flow-Fachdienst zu übermitteln.
 </requirement>
 
 <!-- A_27354 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-208" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (VSDM) - Hashwert hcv erzeugen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-7" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (VSDM) - Hashwert hcv erzeugen" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung" />
@@ -384,7 +384,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Die Bildungsvorschrift für den Hashwert hcv ist in [gemSpec_Krypt#A_27352-*] beschrieben.</p>
 
 <!-- A_27355 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-209" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (VSDM) - Hashwert hcv Base64URLSafe kodieren" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-8" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (VSDM) - Hashwert hcv Base64URLSafe kodieren" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung" />
@@ -395,7 +395,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Die Vorschrift zum Kodieren ist in https://www.educative.io/answers/what-is-base64urlsafeb64encodes-in-python beschrieben.</p>
 
 <!-- A_23449-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-210" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (VSDM) - E-Rezepte abrufen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-9" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (VSDM) - E-Rezepte abrufen" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung" />
@@ -414,10 +414,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="e-rezepte-von-versicherten-abrufen-popp">E-Rezepte von Versicherten abrufen (PoPP)</h4>
 
-<p>Mit diesem Anwendungsfall kann die abgebende LEI die Zugriffsinformationen zu allen einlösbaren E-Rezepten von einem Versicherten, dessen eGK mit einem im Rahmen von PoPP zulässigen Kartenlesegerät eingelesen wurde, vom E-Rezept-Fachdienst abrufen.</p>
+<p>Mit diesem Anwendungsfall kann die abgebende LEI die Zugriffsinformationen zu allen einlösbaren E-Rezepten von einem Versicherten, dessen eGK mit einem im Rahmen von PoPP zulässigen Kartenlesegerät eingelesen wurde, vom TI-Flow-Fachdienst abrufen.</p>
 
 <!-- A_22435-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-214" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (PoPP) - PoPP-Token abrufen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-10" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (PoPP) - PoPP-Token abrufen" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung" />
@@ -428,10 +428,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Für die Umsetzung siehe [spec-ilf-popp-client].
 <!-- ToDo: Link auflösen --></p>
 
-<p>Hinweis: Im Response des PoPP-Service erhält das PS den PoPP-Token im JWT Compact Serialization Format (s. gemSpec_PoPP_Service#A_26432). Das PS gibt den PoPP-Token im gleichen Format an den E-Rezept-Fachdienst weiter.</p>
+<p>Hinweis: Im Response des PoPP-Service erhält das PS den PoPP-Token im JWT Compact Serialization Format (s. gemSpec_PoPP_Service#A_26432). Das PS gibt den PoPP-Token im gleichen Format an den TI-Flow-Fachdienst weiter.</p>
 
 <!-- A_22437-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-215" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (PoPP) - E-Rezepte abrufen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-11" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (PoPP) - E-Rezepte abrufen" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung" />
@@ -446,12 +446,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Im Response ist eine Liste von Tasks enthalten. Für jeden Task sind u.a. folgende Informationen enthalten: Task-ID und AccessCode.</p>
 
-<p>Auf Basis dieser Informationen können die Verordnungsdatensätze zu den E-Rezepten vom E-Rezept-Fachdienst abgerufen werden. Erst dann sind die Inhalte der Verordnungen im AVS bekannt und können mit dem Versicherten abgestimmt werden.</p>
+<p>Auf Basis dieser Informationen können die Verordnungsdatensätze zu den E-Rezepten vom TI-Flow-Fachdienst abgerufen werden. Erst dann sind die Inhalte der Verordnungen im AVS bekannt und können mit dem Versicherten abgestimmt werden.</p>
 
 <p>Abgerufene Rezepte, welche nicht durch die Apotheke beliefert werden, müssen durch die Apotheke zurückgegeben (Anwendungsfall “E-Rezept durch Abgebenden zurückgeben”) werden.</p>
 
 <!-- A_23152 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-211" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen - nicht belieferte E-Rezepte zurückgeben" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-12" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen - nicht belieferte E-Rezepte zurückgeben" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung" />
@@ -500,7 +500,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 07:25+0000">2026-03-23</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 24, 2026 17:34+0000">2026-03-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

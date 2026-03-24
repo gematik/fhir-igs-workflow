@@ -13,10 +13,10 @@ Version 0.9.0 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM-ERP-LOG-MedicationDispense-DiGA | *Version*:0.9.0 |
-| Draft as of 2026-02-06 | *Computable Name*:GEM_ERP_LOG_MedicationDispense_DiGA |
+| Draft as of 2025-09-25 | *Computable Name*:GEM_ERP_LOG_MedicationDispense_DiGA |
 
  
-Fachliches Modell zur Beschreibung der Informationen, die bei $close und $dispense in der MedicationDispense-Ressource fuer DiGAs uebermittelt werden. 
+Fachliches Modell zur Beschreibung der Informationen, die bei $close und $dispense in der MedicationDispense-Ressource für DiGAs übermittelt werden. 
 
 **Usages:**
 
@@ -45,7 +45,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-LOG-Medicati
   "name" : "GEM_ERP_LOG_MedicationDispense_DiGA",
   "title" : "Logical DiGA Medication Dispense",
   "status" : "draft",
-  "date" : "2026-02-06",
+  "date" : "2025-09-25",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -58,7 +58,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-LOG-Medicati
       "value" : "erp-umsetzung@gematik.de"
     }]
   }],
-  "description" : "Fachliches Modell zur Beschreibung der Informationen, die bei $close und $dispense in der MedicationDispense-Ressource fuer DiGAs uebermittelt werden.",
+  "description" : "Fachliches Modell zur Beschreibung der Informationen, die bei $close und $dispense in der MedicationDispense-Ressource für DiGAs übermittelt werden.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -70,7 +70,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-LOG-Medicati
   "mapping" : [{
     "identity" : "GEM-ERP-MAP-MedicationDispense-DiGA",
     "uri" : "GEM_ERP_PR_MedicationDispense_DiGA",
-    "name" : "Mapping fuer MedicationDispense DiGA",
+    "name" : "Mapping für MedicationDispense DiGA",
     "comment" : "This mapping maps the logical units of the DiGA MedicationDispense to the profile"
   },
   {
@@ -88,7 +88,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-LOG-Medicati
       "id" : "GEM-ERP-LOG-MedicationDispense-DiGA",
       "path" : "GEM-ERP-LOG-MedicationDispense-DiGA",
       "short" : "Logical DiGA Medication Dispense",
-      "definition" : "Fachliches Modell zur Beschreibung der Informationen, die bei $close und $dispense in der MedicationDispense-Ressource fuer DiGAs uebermittelt werden.",
+      "definition" : "Fachliches Modell zur Beschreibung der Informationen, die bei $close und $dispense in der MedicationDispense-Ressource für DiGAs übermittelt werden.",
       "mapping" : [{
         "identity" : "GEM-ERP-MAP-MedicationDispense-DiGA",
         "map" : "GEM_ERP_PR_MedicationDispense_DiGA"
@@ -157,7 +157,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-LOG-Medicati
     {
       "id" : "GEM-ERP-LOG-MedicationDispense-DiGA.freischaltCode",
       "path" : "GEM-ERP-LOG-MedicationDispense-DiGA.freischaltCode",
-      "short" : "Freischaltcode fuer die DiGA",
+      "short" : "Freischaltcode für die DiGA",
       "definition" : "Optional, da die Kasse die Bereitstellung eines Freischaltcodes ablehnen kann.",
       "min" : 0,
       "max" : "1",

@@ -10,14 +10,14 @@ Version 0.9.0 - ci-build
 
 ## Vorgaben zum Mapping von FHIR-Instanzen
 
-Aufgabe des E-Rezept-Fachdienst ist es Verordnungs- und Dispensierungsdaten von Arzneimitteln an die ePA zu übermitteln.
+Aufgabe des TI-Flow-Fachdienst ist es Verordnungs- und Dispensierungsdaten von Arzneimitteln an die ePA zu übermitteln.
 
-Der E-Rezept-Fachdienst muss daher in der Lage sein, die von den verordnenden Systemen (z.B. Praxis- oder Krankenhausinformationssysteme) gelieferten Daten in die von der ePA geforderten Formate zu überführen und an den ePA Medication Service zu übertragen.
+Der TI-Flow-Fachdienst muss daher in der Lage sein, die von den verordnenden Systemen (z.B. Praxis- oder Krankenhausinformationssysteme) gelieferten Daten in die von der ePA geforderten Formate zu überführen und an den ePA Medication Service zu übertragen.
 
-**Abbildung: **Mapping des E-Rezept-Fachdienstes
+**Abbildung: **Mapping des TI-Flow-Fachdienstes
 
 
-Dabei führt der E-Rezept-Fachdienst keine Interpretation oder Anreicherung von medizinischen Daten durch und führt daher rein technische Mappings aus. Die Mappings werden einer Anwendung der gematik definiert und in diesem Projekt als StructureMaps angegeben und mit Transformationsregeln ergänzt.
+Dabei führt der TI-Flow-Fachdienst keine Interpretation oder Anreicherung von medizinischen Daten durch und führt daher rein technische Mappings aus. Die Mappings werden einer Anwendung der gematik definiert und in diesem Projekt als StructureMaps angegeben und mit Transformationsregeln ergänzt.
 
 ## Regeln für das Mapping von FHIR-Instanzen
 
@@ -27,15 +27,15 @@ Zusätzlich zu den StructureMaps, die Regeln zum Mapping definieren, gibt es Tra
 
 ## Übertragen von Verordnungsdaten an den ePA Medication Service
 
-Der E-Rezept-Fachdienst empfängt die Verordnungsdaten durch Aufruf der [$activate-Operation](./op-activate.md) durch ein verordnendes System. Die empfangenen Daten entsprechen den Profilen und Vorgaben des E-Rezepts.
+Der TI-Flow-Fachdienst empfängt die Verordnungsdaten durch Aufruf der [$activate-Operation](./op-activate.md) durch ein verordnendes System. Die empfangenen Daten entsprechen den Profilen und Vorgaben des E-Rezepts.
 
-Die Verordnungsdaten werden vom E-Rezept-Fachdienst an den ePA Medication Service via ([ePA Operation API: Verordnung einstellen](https://gemspec.gematik.de/ig/fhir/epa-medication/1.3.0/op-provide-prescription-erp.html)).
+Die Verordnungsdaten werden vom TI-Flow-Fachdienst an den ePA Medication Service via ([ePA Operation API: Verordnung einstellen](https://gemspec.gematik.de/ig/fhir/epa-medication/1.3.0/op-provide-prescription-erp.html)).
 
 Für technische Details zum Mapping von Verordnungsdaten und den dazugehörigen Transformationsregeln siehe: [Mapping von Verordnungsdaten](./mapping-prescription.md).
 
 ## Übertragen von Dispensierinformationen an den ePA Medication Service
 
-Der E-Rezept-Fachdienst empfängt die Dispensierinformationen durch Abschluss eines Workflows mittels der [$dispense-Operation](./op-dispense.md) und/oder [$close-Operation](./op-close.md) durch ein abgebendes System. Die empfangenen Daten entsprechen den Profilen und Vorgaben der Dispensierinformationen. Die Übertragung der Dispensierinformationen an den ePA Medication Service via ([ePA Operation API: Dispensierinformationen einstellen](https://gemspec.gematik.de/ig/fhir/epa-medication/1.3.0/op-provide-dispensation-erp.html)) erfolgt erst nach Abschluss des Workflows indem die $close-Operation aufgerufen wird.
+Der TI-Flow-Fachdienst empfängt die Dispensierinformationen durch Abschluss eines Workflows mittels der [$dispense-Operation](./op-dispense.md) und/oder [$close-Operation](./op-close.md) durch ein abgebendes System. Die empfangenen Daten entsprechen den Profilen und Vorgaben der Dispensierinformationen. Die Übertragung der Dispensierinformationen an den ePA Medication Service via ([ePA Operation API: Dispensierinformationen einstellen](https://gemspec.gematik.de/ig/fhir/epa-medication/1.3.0/op-provide-dispensation-erp.html)) erfolgt erst nach Abschluss des Workflows indem die $close-Operation aufgerufen wird.
 
 Für technische Details zum Mapping von Dispensierinformationen und den dazugehörigen Transformationsregeln siehe: [Mapping von Dispensierinformationen](./mapping-dispensation.md).
 

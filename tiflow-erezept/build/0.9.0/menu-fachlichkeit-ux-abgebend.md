@@ -16,7 +16,7 @@ Version 0.9.0 - ci-build
 
 Dieser Abschnitt beschreibt UX-Guidelines für den Fall der Zuweisung eines E-Rezeptes an eine Apotheke via E-Rezept-FdV oder via KIM (KIM-Dienstkennung: “eRezept;Zuweisung;V1.0”). Im folgenden werden diese beiden Fälle als “Zuweisung” bezeichnet.
 
-#### Hinweis bei zugewiesenen E-Rezepten
+#### Hinweise bei zugewiesenen E-Rezepten
 
 Wenn ein E-Rezept über das E-Rezept-FdV oder über KIM an eine Apotheke zugewiesen wird, soll der Sender schnellstmöglich über die Annahme und Bearbeitung des E-Rezeptes durch die Apotheke informiert werden. Dabei ist der Hinweis über den Erhalt eines E- Rezeptes via KIM oder E-Rezept-FdV so lange im AVS anzuzeigen, bis der Hinweis verarbeitet wurde. Im Falle der Zuweisung per E-Rezept-FdV soll eine Rückmeldung an den Kunden übermittelt werden. Bei Erhalt eines E-Rezeptes soll potentiell jeder Arbeitsplatz einen Hinweis erhalten. Es soll konfiguriert werden können, an welchen Arbeitsplätzen der Hinweis angezeigt wird.
 
@@ -45,7 +45,7 @@ Das PS der abgebenden LEI SOLL es dem Nutzer ermöglichen, eine vorkonfigurierte
 Sobald der Vorgang seitens der Apotheke bearbeitet wurde, möchte der Nutzer den Kunden darüber informieren, dass die Bestellung abgeholt werden kann. Alle für das Abholen relevanten Informationen (bspw. Abhol-Code, Zeitpubkt der Verfügbarkeit) sollen in der Nachricht übermittelt werden.
 
 Das PS der abgebenden LEI SOLL es Nutzer ermöglichen, eine vorkonfigurierte oder manuell erstellte Abholbenachrichtigung an den Sender einer Zuweisung zu übermitteln. Die Abholinformationen sind entsprechend einzubetten.
-Falls ein Medikament in der Apotheke nicht verfügbar ist, ist das dem Kunden mitzuteilen. In diesem Fall ist das E-Rezept am E-Rezept-Fachdienst wieder freizugeben (Operation POST /Task//$reject). Es empfiehlt sich dem Kunden die klare Handlungsempfehlung mitzugeben, dass eine andere Apotheke zum Einlösen des Rezepts gesucht werden muss.
+Falls ein Medikament in der Apotheke nicht verfügbar ist, ist das dem Kunden mitzuteilen. In diesem Fall ist das E-Rezept am TI-Flow-Fachdienst wieder freizugeben (Operation POST /Task//$reject). Es empfiehlt sich dem Kunden die klare Handlungsempfehlung mitzugeben, dass eine andere Apotheke zum Einlösen des Rezepts gesucht werden muss.
 
 Das PS der abgebenden LEI SOLL es dem Nutzer ermöglichen, eine vorkonfigurierte oder manuell erstellte Nachricht zu erstellen, die den Kunden darüber informiert, dass das Medikament nicht beliefert werden kann. Die Nachricht soll beinhalten, dass das E-Rezept freigegeben wurde und der Versicherte es einer anderen Apotheke zuweisen kann.
 Neben vorher beschriebenen Nachrichten, soll das System ebenfalls ermöglichen, manuell erstellte Nachrichten an den Sender einer Zuweisung zu übermitteln.
@@ -63,7 +63,7 @@ Exemplarisch eine Beispielnachricht, wie sie der Kunde im Frontend des Versicher
 
 ### Bedienen eines Rezepts
 
-Dieser Abschnitt beschreibt UX-Guidelines für den Prozess der Bedienung eines E- Rezeptes. Hinweis: Für die Bedienung von E-Rezepten ist es es wichtig, alle Informationen zum Datenaustausch mit dem E-Rezept-Fachdienst zu sichern. Insbesondere bei Verlust des Secrets nach dem Herunterladen des E-Rezepts (Operation POST /Task//$accept) ist die Weiterverarbeitung des E-Rezepts nicht mehr möglich.
+Dieser Abschnitt beschreibt UX-Guidelines für den Prozess der Bedienung eines E- Rezeptes. Hinweis: Für die Bedienung von E-Rezepten ist es es wichtig, alle Informationen zum Datenaustausch mit dem TI-Flow-Fachdienst zu sichern. Insbesondere bei Verlust des Secrets nach dem Herunterladen des E-Rezepts (Operation POST /Task//$accept) ist die Weiterverarbeitung des E-Rezepts nicht mehr möglich.
 
 #### Bedienen von E-Rezepten nach Ablauf von Fristen
 
@@ -77,12 +77,12 @@ Das PS der abgebenden LEI SOLL beim Abrufen eines E-Rezeptes die Belieferungsfri
 Das PS der abgebenden LEI SOLL für den Fall, dass eine Frist überschritten wurde dem Anwender einen entsprechenden Hinweis darstellen.
 
 Das PS der abgebenden LEI SOLL bei Überschreiten der Belieferungsfrist dem Anwender die Möglichkeit geben, das Präparat als Privatrezept zu beliefern.
-Der E-Rezept-Fachdienst löscht eingestellte Rezepte zehn Tage nach Ablaufen einer der Gültigkeit einer Verordnung (Task.extension:expiryDate). Daher kann das AVS in diesen zehn Tagen ein abgelaufenes Rezept vom E-Rezept-Fachdienst abrufen. Diese Verordnungen dürfen nicht von der Apotheke beliefert werden.
+Der TI-Flow-Fachdienst löscht eingestellte Rezepte zehn Tage nach Ablaufen einer der Gültigkeit einer Verordnung (Task.extension:expiryDate). Daher kann das AVS in diesen zehn Tagen ein abgelaufenes Rezept vom TI-Flow-Fachdienst abrufen. Diese Verordnungen dürfen nicht von der Apotheke beliefert werden.
 
 Das PS der abgebenden LEI DARF bei Überschreiten der Einlösefrist dem Anwender NICHT die Möglichkeit geben, das Rezept zu beliefern.
 #### Finden von vorhandenen Vorgängen per Scan des E-Rezept-Tokens nach Zuweisung
 
-Wenn ein Versicherter das E-Rezept-Token entweder per E-Rezept-FdV übermittelt oder in der Filiale den zugehörigen Datamatrix-Code vorgezeigt hat, dann ruft die Apotheke das E-Rezept vom E-Rezept-Fachdienst ab. Das E-Rezept erhält den Status “in-progress”. Ein E-Rezept mit diesem Status kann nicht noch einmal vom E-Rezept- Fachdienst abgerufen  werden. Wenn der Kunde das Medikament dann zu einem späteren Zeitpunkt in der Filiale abholt, soll es möglich sein, den zugehörigen Vorgang im AVS auch per Scan des E-Rezept-Token zu finden. Hinweis: Die Abfrage eines bereits durch die Apotheke heruntergeladenen E-Rezepts am E-Rezept-Fachdienstes liefert einen Fehler. Daher sollte diese Abfrage nicht durchgeführt werden.
+Wenn ein Versicherter das E-Rezept-Token entweder per E-Rezept-FdV übermittelt oder in der Filiale den zugehörigen Datamatrix-Code vorgezeigt hat, dann ruft die Apotheke das E-Rezept vom TI-Flow-Fachdienst ab. Das E-Rezept erhält den Status “in-progress”. Ein E-Rezept mit diesem Status kann nicht noch einmal vom E-Rezept- Fachdienst abgerufen  werden. Wenn der Kunde das Medikament dann zu einem späteren Zeitpunkt in der Filiale abholt, soll es möglich sein, den zugehörigen Vorgang im AVS auch per Scan des E-Rezept-Token zu finden. Hinweis: Die Abfrage eines bereits durch die Apotheke heruntergeladenen E-Rezepts am TI-Flow-Fachdienstes liefert einen Fehler. Daher sollte diese Abfrage nicht durchgeführt werden.
 
 Das PS der abgebenden LEI SOLL dem Anwender ermöglichen, einen bestehenden Vorgang zum Einlösen eines E-Rezepts mittels E-Rezept-Token zu suchen und nach Fund dem Anwender anzuzeigen.
 Ist der Vorgang zum gescannten E-Rezept-Token bereits abgeschlossen, dann soll der Vorgang angezeigt, aber nicht wieder geöffnet werden.
@@ -101,7 +101,7 @@ Hierbei ist insbesondere darauf hinzuweisen, dass geprüft werden muss, ob eine 
 
 #### Prüfung von E-Rezepten
 
-Der E-Rezept-Fachdienst überprüft derzeit noch nicht gänzlich die formale Richtigkeit der E-Rezepte. Das AVS soll eine formale Prüfung der Verordnungsdaten vornehmen. Diese Prüfung kann mittels ABDA- bzw. TI-Referenzvalidator vorgenommen werden.
+Der TI-Flow-Fachdienst überprüft derzeit noch nicht gänzlich die formale Richtigkeit der E-Rezepte. Das AVS soll eine formale Prüfung der Verordnungsdaten vornehmen. Diese Prüfung kann mittels ABDA- bzw. TI-Referenzvalidator vorgenommen werden.
 
 Das PS der abgebenden LEI KANN für die Prüfung von E-Rezepten die aktuelle Version des ABDA-Referenzvalidators einsetzen.
 Siehe auch https://github.com/DAV-ABDA/eRezept-Referenzvalidator/releases.
@@ -117,7 +117,7 @@ In bestimmten Fällen kann es vorkommen, dass ein Vorgang für eine Verordnung i
 Das PS der abgebenden LEI SOLL dem Nutzer ermöglichen, ein E-Rezept einem im System bestehenden Vorgang zuzuordnen.
 #### Weiterleiten von E-Rezepten an eine andere Apotheke
 
-Für Apothekenverbünde mit mehreren Filialen besteht die Möglichkeit E-Rezepte für die Belieferung weiterzuleiten. Dies kann von Interesse sein, wenn beispielsweise innerhalb eines Verbundes eine Apotheke sich um Vorbestellungen und Botendienste kümmert.  In dem Fall können die anderen Apotheken des Verbundes die vom E-Rezept-Fachdienst heruntergeladenen E-Rezepte an diese Apotheke weiterleiten. Das Weiterleiten kann auch im Rahmen eines Inhaberwechsels genutzt werden. Hinweis: Beim Abruf der Quittung erfolgt im E-Rezept-Fachdienst keine Prüfung, ob die Telematik-ID der Quittung abrufenden Apotheke mit der Telematik-ID der Apotheke übereinstimmt, welche das E-Rezept heruntergeladen und den Status in “in-progress” geändert hat. Für das Weiterleiten eines E-Rezeptes werden AccessCode, Task-ID, Secret des E- Rezeptes sowie sämtliche Inhalte der E-Rezeptes übermittelt. Die weitere Bearbeitung des E-Rezeptes kann ohne den Umweg über Freigabe des E-Rezeptes von einer Apotheke und erneutes Herunterladen durch eine andere Apotheke erfolgen. Wenn eine Apotheke Zugang zu diesen Informationen erhält, kann diese die Abgabe vollziehen. Hierzu muss die empfangene Apotheke die FHIR-OperationPOST /Task//$close des Rezeptes beim Fachdienst aufrufen.
+Für Apothekenverbünde mit mehreren Filialen besteht die Möglichkeit E-Rezepte für die Belieferung weiterzuleiten. Dies kann von Interesse sein, wenn beispielsweise innerhalb eines Verbundes eine Apotheke sich um Vorbestellungen und Botendienste kümmert.  In dem Fall können die anderen Apotheken des Verbundes die vom TI-Flow-Fachdienst heruntergeladenen E-Rezepte an diese Apotheke weiterleiten. Das Weiterleiten kann auch im Rahmen eines Inhaberwechsels genutzt werden. Hinweis: Beim Abruf der Quittung erfolgt im TI-Flow-Fachdienst keine Prüfung, ob die Telematik-ID der Quittung abrufenden Apotheke mit der Telematik-ID der Apotheke übereinstimmt, welche das E-Rezept heruntergeladen und den Status in “in-progress” geändert hat. Für das Weiterleiten eines E-Rezeptes werden AccessCode, Task-ID, Secret des E- Rezeptes sowie sämtliche Inhalte der E-Rezeptes übermittelt. Die weitere Bearbeitung des E-Rezeptes kann ohne den Umweg über Freigabe des E-Rezeptes von einer Apotheke und erneutes Herunterladen durch eine andere Apotheke erfolgen. Wenn eine Apotheke Zugang zu diesen Informationen erhält, kann diese die Abgabe vollziehen. Hierzu muss die empfangene Apotheke die FHIR-OperationPOST /Task//$close des Rezeptes beim Fachdienst aufrufen.
 
 Das PS der abgebenden LEI KANN eine Möglichkeit bieten, folgende Informationen an eine andere Filial-Apotheke über einen sicheren Kommunikationskanal zu übermitteln: Verordnungsdatensatz inklusive QES Task-ID des E-Rezepts AccessCode des E-Rezepts Secret des E-Rezepts. Der Kommunikationskanal muss so gewählt werden, dass die sehr hohe Vertraulichkeit des Informationen und deren Integrität geschützt wird.
 Für die sichere Kommunikation kann KIM verwendet werden.
@@ -139,9 +139,9 @@ Das PS der abgebenden LEI SOLL dem Nutzer bei der Bedienung eines E-T-Rezeptes s
 Die Quittung für ein beliefertes E-Rezept muss innerhalb einer vertraglich vereinbarten Frist abgerufen werden. Es sind die Regelungen des Rahmenvertrags nach SGB V §300 zu berücksichtigen. Das AVS soll sicherstellen, dass die Frist nicht überschritten wird und ggf. die Quittung automatisch abrufen. Die gematik empfiehlt die Quittung zeitnah nach der Abgabe an den Kunden abzurufen, denn mit dem Quittungsabruf werden dem Versicherten die Abgabeinformationen zum Abruf mit der App bereitgestellt.
 
 Das PS der abgebenden LEI SOLL die Quittung mittels der Operation POST /Task/<id>/$close automatisch abrufen, wenn eine konfigurierbare Frist nach Abgabe des E-Rezept erreicht ist und der Quittungsabruf noch nicht erfolgt ist.
-Hinweis: Der E-Rezept-Fachdienst bietet mit der Operation GET /Task/ die Möglichkeit, die Quittung nach dem erstmaligen Aufruf der Operation POST /Task//$close noch einmal abzurufen. Dies ist nur möglich, bis das E-Rezept durch den Versicherten oder nach Erreichen der Löschfrist automatisch durch den E-Rezept- Fachdienst gelöscht wird. Der Anwendungsfall "Quittung abrufen" generiert nicht nur die Quittung für die Abrechnung der Apotheke, sondern schließt auch den Workflow im E-Rezept-Fachdienst ab. Der Versicherte hat Einblick in den Statusverlauf und kann ein E-Rezept auch nach Abschluss des Workflows löschen. Das AVS muss bei der Abgabe jeglichen Rezepttyps und unabhängig vom Kostenträger den Workflow über diesen Anwendungsfall abschließen.
+Hinweis: Der TI-Flow-Fachdienst bietet mit der Operation GET /Task/ die Möglichkeit, die Quittung nach dem erstmaligen Aufruf der Operation POST /Task//$close noch einmal abzurufen. Dies ist nur möglich, bis das E-Rezept durch den Versicherten oder nach Erreichen der Löschfrist automatisch durch den E-Rezept- Fachdienst gelöscht wird. Der Anwendungsfall "Quittung abrufen" generiert nicht nur die Quittung für die Abrechnung der Apotheke, sondern schließt auch den Workflow im TI-Flow-Fachdienst ab. Der Versicherte hat Einblick in den Statusverlauf und kann ein E-Rezept auch nach Abschluss des Workflows löschen. Das AVS muss bei der Abgabe jeglichen Rezepttyps und unabhängig vom Kostenträger den Workflow über diesen Anwendungsfall abschließen.
 
-Das PS der abgebenden LEI MUSS die Quittung mittels der Operation POST /Task/<id>/$close für jedes E-Rezept, was beliefert wurde, abrufen, um den Workflow im E-Rezept-Fachdienst abzuschließen.
+Das PS der abgebenden LEI MUSS die Quittung mittels der Operation POST /Task/<id>/$close für jedes E-Rezept, was beliefert wurde, abrufen, um den Workflow im TI-Flow-Fachdienst abzuschließen.
 #### QES durch den Apotheker
 
 Jeder Abgabedatensatz zu einem E-Rezept muss signiert werden. Für die nicht- qualifizierten Signatur wird die SMC-B der Apotheke verwendet. In vertraglich vereinbarten Fällen (“Rahmenvertrag über die Arzneimittelversorgung nach §129 Absatz 2 SGB V”,  https://www.abda.de/fileadmin/user_upload/assets/Vertraege/2021-10- 01_RV_129_redaktionelle_Gesamtfassung_Stand_01102021_barrierefrei.pdf) muss der HBA des Apothekers/-assistents/Pharmazieingenieurs für eine QES verwendet werden. In Fällen, in denen eine nicht-qualifizierte Signatur ausreicht, soll keine QES erzwungen werden. Dies führt zu Zeitersparnis, da unnötige PIN-Eingaben vermieden werden.
@@ -166,12 +166,12 @@ Das PS der abgebenden LEI SOLL im Falle unzureichender Dokumentation der Abgabe 
 
 Im Arbeitsablauf des Nutzers können Fehler in der Erstellung und Verarbeitung eines E- Rezeptes auftreten. Da vom Nutzer kein technisches Vorwissen erwartet werden darf, sind Fehlermeldungen so anzugeben, dass dieser nach Möglichkeit darauf reagieren kann.
 
-Hierbei sollen Fehlermeldungen so aufbereitet werden, sodass der Nutzer versteht, welches System im Prozess den Fehler verursacht hat. Außerdem sollen bei technischen Fehlern diese sprachlich aufbereitet werden, so dass der Nutzer den Inhalt des Fehlers verstehen kann. Für den Fall, dass die zentralen Dienste der TI (insbesondere der E-Rezept-Fachdienst) nicht erreichbar sind, ist es für die Mitarbeiter einer Apotheke hilfreich darüber benachrichtigt zu werden.
+Hierbei sollen Fehlermeldungen so aufbereitet werden, sodass der Nutzer versteht, welches System im Prozess den Fehler verursacht hat. Außerdem sollen bei technischen Fehlern diese sprachlich aufbereitet werden, so dass der Nutzer den Inhalt des Fehlers verstehen kann. Für den Fall, dass die zentralen Dienste der TI (insbesondere der TI-Flow-Fachdienst) nicht erreichbar sind, ist es für die Mitarbeiter einer Apotheke hilfreich darüber benachrichtigt zu werden.
 
-Solch eine Nicht-Erreichbarkeit kann durch einen Ausfall der TI- Dienste oder der lokalen TI-Komponenten der Apotheken (HBA, SMB-C, Konnektor, etc.) auftreten. In diesem Fall können E-Rezepte nicht vom E-Rezept-Fachdienst abgerufen und eingelöst werden. Diese Information ist präsent darzustellen. Der Arbeitsfluss und insbesondere die Funktionalität für das Einlösen von Muster-16 Verordnungen dürfen in diesem Fall nicht blockiert werden.
+Solch eine Nicht-Erreichbarkeit kann durch einen Ausfall der TI- Dienste oder der lokalen TI-Komponenten der Apotheken (HBA, SMB-C, Konnektor, etc.) auftreten. In diesem Fall können E-Rezepte nicht vom TI-Flow-Fachdienst abgerufen und eingelöst werden. Diese Information ist präsent darzustellen. Der Arbeitsfluss und insbesondere die Funktionalität für das Einlösen von Muster-16 Verordnungen dürfen in diesem Fall nicht blockiert werden.
 
 Das PS der abgebenden LEI SOLL im Falle der Nicht-Erreichbarkeit von zentralen Diensten der TI automatisch versuchen eine Fehlerbehebung durchzuführen.
-Für das Umschwenken auf eine andere Instanz des E-Rezept-Fachdienstes siehe [gemSpec_ILF_PS_eRp#4.2 Namensauflösung].
+Für das Umschwenken auf eine andere Instanz des TI-Flow-Fachdienstes siehe [gemSpec_ILF_PS_eRp#4.2 Namensauflösung].
 
 Das PS der abgebenden LEI SOLL in dem Fall, dass die für die Anwendung E-Rezept notwendigen zentralen Dienste der TI nicht erreichbar sind, den Nutzer darüber benachrichtigen.
 

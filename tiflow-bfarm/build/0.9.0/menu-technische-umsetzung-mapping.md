@@ -12,15 +12,15 @@ Version 0.9.0 - ci-build
 
 Nach geltenden gesetzlichen Regelungen ist dem BfArM nach Abgabe einer Verordnung eines Arzneimittels nach §3a Abs. 1 Satz 1 AMVV, also die teratogenen Wirkstoffe Lenalidomid, Pomalidomid oder Thalidomid, ein digitaler Durchschlag des E-T-Rezepts zu übermitteln.
 
-Nach erfolgreichem Abschluss eines E-T-Rezept-Workflows – konkret durch den Aufruf der FHIR-Operation `$close` am E-Rezept-Fachdienst durch die Apotheke – erstellt der E-Rezept-Fachdienst für das betroffene E-T-Rezept ein Dokument gemäß dem Profil [digitaler Durchschlag T-Rezept](./StructureDefinition-erp-tprescription-carbon-copy.md) und überträgt dieses automatisiert und asynchron an den Webdienst des BfArM. Bei einer temporären Nicht-Erreichbarkeit des BfArM wird die zuverlässige Übertragung durch Backoff-Retry-Mechanismen sichergestellt.
+Nach erfolgreichem Abschluss eines E-T-Rezept-Workflows – konkret durch den Aufruf der FHIR-Operation `$close` am TI-Flow-Fachdienst durch die Apotheke – erstellt der TI-Flow-Fachdienst für das betroffene E-T-Rezept ein Dokument gemäß dem Profil [digitaler Durchschlag T-Rezept](./StructureDefinition-erp-tprescription-carbon-copy.md) und überträgt dieses automatisiert und asynchron an den Webdienst des BfArM. Bei einer temporären Nicht-Erreichbarkeit des BfArM wird die zuverlässige Übertragung durch Backoff-Retry-Mechanismen sichergestellt.
 
 Hintergründe zum Datenmodell und zu den Designentscheidungen finden sich unter [Informationen zum Datenmodell](./menu-technische-umsetzung-t-register.md#fachliche-informationseinheiten-des-digitalen-durchschlags).
 
 ### Erstellen des digitalen Durchschlags
 
-Der E-Rezept-Fachdienst erstellt ein Artefakt mit dem Profil „digitaler Durchschlag T-Rezept“. Dabei werden Informationen aus der Verordnung, der Dispensierung (Abgabe) und dem FHIR-VZD (Verzeichnisdienst) genutzt. Die fachlichen Inhalte, die hierbei übertragen werden, sind im [Logisches Modell digitaler Durchschlag E-T-Rezept](./StructureDefinition-erp-tprescription-carbon-copy-logical.md) abgebildet.
+Der TI-Flow-Fachdienst erstellt ein Artefakt mit dem Profil „digitaler Durchschlag T-Rezept“. Dabei werden Informationen aus der Verordnung, der Dispensierung (Abgabe) und dem FHIR-VZD (Verzeichnisdienst) genutzt. Die fachlichen Inhalte, die hierbei übertragen werden, sind im [Logisches Modell digitaler Durchschlag E-T-Rezept](./StructureDefinition-erp-tprescription-carbon-copy-logical.md) abgebildet.
 
-Der E-Rezept-Fachdienst erzeugt diesen Datensatz aus den Eingangsdaten, die nach abschliessender Bereitstellung der Dispensierinformation im E-Rezept-Workflows zur Verfügung stehen. Der relevante Workflow-Typ ist der [Flowtype 166](https://simplifier.net/erezept-workflow/gem-erp-cs-flowtype) („Flowtype für Arzneimittel nach § 3a AMVV“), der speziell für diesen Anwendungsfall eingeführt wurde.
+Der TI-Flow-Fachdienst erzeugt diesen Datensatz aus den Eingangsdaten, die nach abschliessender Bereitstellung der Dispensierinformation im E-Rezept-Workflows zur Verfügung stehen. Der relevante Workflow-Typ ist der [Flowtype 166](https://simplifier.net/erezept-workflow/gem-erp-cs-flowtype) („Flowtype für Arzneimittel nach § 3a AMVV“), der speziell für diesen Anwendungsfall eingeführt wurde.
 
 ### Mapping des digitalen Durchschlags E-T-Rezept
 
@@ -52,7 +52,7 @@ Die StructureMap [ERP-TPrescription-StructureMap-CarbonCopy](./StructureMap-ERPT
 
 Das Mapping sieht im Wesentlichen die folgende Übertragung vor:
 
-Der Signaturzeitpunkt als Quelle ist in den Mappingartefakten nicht enthalten, da dieser nicht aus einer FHIR-Struktur hervorgeht, sondern aus der QES am Element `1.2.840.113549.1.9.5 signingTime` extrahiert werden muss. Der E-Rezept-Fachdienst transformiert diesen Wert in den FHIR-Datentyp `instant` mit maximaler Sekundengenauigkeit (Format: YYYY-MM-DDThh:mm:ss+zz:zz, z.B. 2026-01-01T00:00:00Z).
+Der Signaturzeitpunkt als Quelle ist in den Mappingartefakten nicht enthalten, da dieser nicht aus einer FHIR-Struktur hervorgeht, sondern aus der QES am Element `1.2.840.113549.1.9.5 signingTime` extrahiert werden muss. Der TI-Flow-Fachdienst transformiert diesen Wert in den FHIR-Datentyp `instant` mit maximaler Sekundengenauigkeit (Format: YYYY-MM-DDThh:mm:ss+zz:zz, z.B. 2026-01-01T00:00:00Z).
 
 Die StructureMap überführt das Mapping-Bundle in den digitalen Durchschlag und ruft dabei selbst weitere StructureMaps auf, die die jeweiligen Unterprofile mappen. Diese können auch entwicklungsunterstützend genutzt werden:
 
@@ -100,7 +100,7 @@ Die folgenden Beispiele können als Referenz herangezogen werden:
 
 Nachdem der digitale Durchschlag E-T-Rezept erzeugt wurde, wird dieser RESTful über das Internet an den BfArM Webdienst übertragen.
 
-Vorgaben zur Authentifizierung des E-Rezept-Fachdienstes gegenüber dem Webdienst sind in der [Spezifikation des E-Rezept-Fachdienst](https://gemspec.gematik.de/docs/gemSpec/gemSpec_FD_eRp/latest/) beschrieben.
+Vorgaben zur Authentifizierung des TI-Flow-Fachdienstes gegenüber dem Webdienst sind in der [Spezifikation des TI-Flow-Fachdienst](https://gemspec.gematik.de/docs/gemSpec/gemSpec_FD_eRp/latest/) beschrieben.
 
 Die API für den Endpunkt am BfArM Webdienst ist in [E-Rezept API Dokumentation zum Datenaustausch mit dem BfArM](https://github.com/gematik/api-erp/blob/master/docs/erp_bfarm.adoc) dokumentiert.
 

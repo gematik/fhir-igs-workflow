@@ -24,6 +24,12 @@ Die Interaktion mit Nachrichten als FHIR-Ressource **MedicationDispense** wird Ã
 
 ### Anforderungen an Schnittstelle
 
-* [FD-Anforderungen zu MedicationDispense](./query-api-medicationdispense-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+* [FD-Anforderungen zu MedicationDispense](./query-api-medicationdispense-req-fd.md): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
 * [FdV-Anforderungen zu MedicationDispense](./query-api-medicationdispense-req-fdv.md): Anforderungen an ein E-Rezept-FdV zur Nutzung der Schnittstelle.
+
+### Resource API
+
+```
+server
+```
 

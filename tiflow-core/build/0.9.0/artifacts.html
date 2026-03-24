@@ -79,7 +79,7 @@
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
     <style type="text/css">h2{--heading-prefix:"21"}
-    h3,h4,h5,h6{--heading-prefix:"21"}</style>
+    h3,h4,h5,h6{--heading-prefix:"21.0"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -235,7 +235,7 @@ TIFlow - Kernfunktionalitäten
 
             <a href="#bottom">unten</a>
 
-          | <a href="requirement-mapping-old-to-new.html">nächste&gt;</a>
+          | <a href="CapabilityStatement-erp-fachdienst-server.html">nächste&gt;</a>
 
           </span>
 
@@ -272,12 +272,2189 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
-</div>
-<h1 id="fhir-artefakte">FHIR-Artefakte</h1>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
 
-<p>Diese Seite listet die generierten FHIR-Artefakte des Core-IG.</p>
+<ul id="markdown-toc">
+  <li><a href="#terminologien-value-sets" id="markdown-toc-terminologien-value-sets">Terminologien: Value Sets</a></li>
+  <li><a href="#terminologien-code-systems" id="markdown-toc-terminologien-code-systems">Terminologien: Code Systems</a></li>
+  <li><a href="#systemverhalten" id="markdown-toc-systemverhalten">Systemverhalten</a></li>
+  <li><a href="#parameterprofile-für-operationen" id="markdown-toc-parameterprofile-für-operationen">Parameterprofile für Operationen</a></li>
+  <li><a href="#erweiterungen-extension-definitions" id="markdown-toc-erweiterungen-extension-definitions">Erweiterungen (Extension) Definitions</a></li>
+  <li><a href="#beispielinstanzen" id="markdown-toc-beispielinstanzen">Beispielinstanzen</a></li>
+</ul>
+
+</div>
+<p>Diese Seite enthält eine Übersicht aller FHIR-Artefakte, die im Rahmen dieses Implementation Guide definiert werden. Sie bilden die Grundlage für die strukturierte Abbildung und Verarbeitung von Daten. Dazu gehören Profile zur Spezifizierung von Ressourcen, ein <em>Capability Statement</em> zur Beschreibung der unterstützten Funktionen sowie <em>Operation Definitions</em>, die spezielle FHIR-Operationen für den Abruf und die Verwaltung der Daten festlegen.</p>
+
+<h3 id="terminologien-value-sets">Terminologien: Value Sets</h3>
+
+<p>Die folgenden Value Sets sind für die FHIR-Data-Service-Funktionalitäten festgelegt.</p>
+
+<h3 id="terminologien-code-systems">Terminologien: Code Systems</h3>
+
+<h3 id="systemverhalten">Systemverhalten</h3>
+
+<h4 id="capability-statements">Capability Statements</h4>
+
+<p>Das <em>Capability</em> <em>Statement</em> beschreibt die Anforderungen und Fähigkeiten, die ein Server für die konforme Implementierung des TIFlow Fachdienstes umsetzen muss. Es handelt sich um eine Konformitätserklärung, die spezifiziert, welche Ressourcen, Interaktionen und Suchparameter das der TIFlow Fachdienste unterstützen muss.</p>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="CapabilityStatement-erp-fachdienst-server.html" title="CapabilityStatement/erp-fachdienst-server">
+                
+                    ERP CapabilityStatement für den E-Rezept-Fachdienst
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>ERP CapabilityStatement für den E-Rezept-Fachdienst</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="CapabilityStatement-example-capabilitystatement-server-pu.html" title="CapabilityStatement/example-capabilitystatement-server-pu">
+                
+                    ExampleCapabilityStatementServerPU
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>-</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="CapabilityStatement-example-capabilitystatement-server-ru.html" title="CapabilityStatement/example-capabilitystatement-server-ru">
+                
+                    ExampleCapabilityStatementServerRU
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>-</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="CapabilityStatement-example-capabilitystatement-server-tu.html" title="CapabilityStatement/example-capabilitystatement-server-tu">
+                
+                    ExampleCapabilityStatementServerTU
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>-</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="CodeSystem-GEM-ERP-CS-CapabilityStatement-Environment.html" title="CodeSystem/GEM-ERP-CS-CapabilityStatement-Environment">
+                
+                    ERP CapabilityStatement Environment CodeSystem
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses CodeSystem definiert standardisierte Umgebungskennzeichen für CapabilityStatements des E-Rezept-Fachdienstes. Es erlaubt die eindeutige Kennzeichnung, ob die beschriebene Fähigkeit für Produktions-, Referenz-, Test- oder Entwicklungsumgebung gilt.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-GEM-ERP-EX-CapabilityStatement-Environment.html" title="StructureDefinition/GEM-ERP-EX-CapabilityStatement-Environment">
+                
+                    GEM ERP EX CapabilityStatement Environment
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Diese Extension kennzeichnet die Zielumgebung eines konkreten CapabilityStatements (z. B. Produktiv-, Referenz-, Test- oder Entwicklungsumgebung). Die Information hilft Clients, deklarierte Fähigkeiten im richtigen betrieblichen Kontext zu interpretieren.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-GEM-ERP-EX-CapabilityStatement-FDConfiguration.html" title="StructureDefinition/GEM-ERP-EX-CapabilityStatement-FDConfiguration">
+                
+                    GEM ERP EX CapabilityStatement FDConfiguration
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Diese Extension deklariert eine konkrete Konfigurationsausprägung des E-Rezept-Fachdienstes auf CapabilityStatement-Ebene. Die Konfiguration wird als Code transportiert und bevorzugt gegen GEM_ERP_VS_FDConfiguration geprüft.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-GEM-ERP-EX-CapabilityStatement-Feature.html" title="StructureDefinition/GEM-ERP-EX-CapabilityStatement-Feature">
+                
+                    GEM ERP EX CapabilityStatement Feature
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Diese Compound-Extension deklariert ein einzelnes Feature eines konkreten Fachdienst-Deployments. Das Teilfeld definition verweist per Canonical auf den fachlichen Feature-Bezeichner (Workflow-Typ oder sonstiges Feature), während value den aktuellen Aktivierungszustand dieses Features am betrachteten Endpoint beschreibt.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-GEM-ERP-PR-CapabilityStatement.html" title="StructureDefinition/GEM-ERP-PR-CapabilityStatement">
+                
+                    GEM ERP PR CapabilityStatement
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses Profil beschreibt die Fähigkeiten des E-Rezept-Fachdienstes und definiert die verwendeten CapabilityStatement-Erweiterungen inklusive benannter Slices für Basis-URL, Header, Response-Informationen sowie ERP-spezifische Feature- und Konfigurationskennzeichen.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-GEM-ERP-VS-CapabilityStatement-Environment.html" title="ValueSet/GEM-ERP-VS-CapabilityStatement-Environment">
+                
+                    ERP CapabilityStatement Environment ValueSet
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses ValueSet enthält alle zulässigen Umgebungskennzeichen für CapabilityStatements des E-Rezept-Fachdienstes und wird für die verpflichtende Kennzeichnung der Zielumgebung verwendet.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-GEM-ERP-VS-CapabilityStatement-Feature.html" title="ValueSet/GEM-ERP-VS-CapabilityStatement-Feature">
+                
+                    ERP CapabilityStatement Feature ValueSet
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Dieses ValueSet kombiniert Workflow-Typ-Codes aus GEM_ERP_CS_FlowType und nicht-workflowbezogene Feature-Codes aus GEM_ERP_CS_Features. Damit bildet es die vollständige Menge deklarierbarer Feature-Flags für CapabilityStatements des E-Rezept-Fachdienstes ab.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Capability Statements</figcaption></div>
+
+<h4 id="operation-definitions">Operation Definitions</h4>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="OperationDefinition-AbortOperation.html" title="OperationDefinition/AbortOperation">
+                
+                    Abort
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Diese Operation bricht den Workflow eines E-Rezepts ab und löscht alle Daten, die mit dieser Aufgabe zusammenhängen.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="OperationDefinition-AcceptOperation.html" title="OperationDefinition/AcceptOperation">
+                
+                    Accept
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Mit der $accept-Operation beansprucht eine Apotheke ein E-Rezept. Der Status der referenzierten Aufgabe ändert sich in 'in-progress'.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="OperationDefinition-ActivateOperation.html" title="OperationDefinition/ActivateOperation">
+                
+                    Activate
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Diese Operation aktiviert die erstellte Aufgabe für das Rezept. Der Eingabeparameter muss das qualifizierte signierte Bundle des Rezepts enthalten. Der E-Rezept-Fachdienst validiert das Rezept, aktualisiert die Task-ressource und startet den Workflow.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="OperationDefinition-CloseOperation.html" title="OperationDefinition/CloseOperation">
+                
+                    Close
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Die $close-Operation beendet den E-Rezept-Workflow und erstellt eine Quittung. Das Ergebnis dieses Vorgangs ist ein signiertes Bundle, das für weitere finanzielle Verarbeitung verwendet wird. Der Status der Aufgabe ändert sich anschließend in #completed.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="OperationDefinition-CreateOperation.html" title="OperationDefinition/CreateOperation">
+                
+                    Create
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Diese Operation erstellt eine Aufgabe für die Verschreibung eines bestimmten Flowtypes.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="OperationDefinition-DispenseOperation.html" title="OperationDefinition/DispenseOperation">
+                
+                    Dispense
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Die Operation $dispense ermöglicht es der Apotheke, eine Ausgabe für ein Medikament durchzuführen, ohne den Status der Aufgabe zu ändern. Diese Aktion erlaubt es einem Frontend anzuzeigen, dass ein Medikament ausgegeben wurde, bevor es von der Apotheke abgeschlossen wird.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="OperationDefinition-RejectOperation.html" title="OperationDefinition/RejectOperation">
+                
+                    Reject
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Lehnt die Ausgabe eines E-Rezepts ab. Die Aufgabe wird in einen aktiven Zustand zurückgesetzt, das secret wird gelöscht, und der Task wird für jeden anderen Apotheker zugänglich oder kann vom Patienten gelöscht werden.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Operation Definitions</figcaption></div>
+
+<h3 id="parameterprofile-für-operationen">Parameterprofile für Operationen</h3>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-GEM-ERP-PR-PAR-Accept-Operation-Output.html" title="GEM-ERP-PR-PAR-Accept-Operation-Output">
+                
+                    GEM ERP PR AcceptOperation Output
+                
+                </a>
+            </td>
+            <td>
+                <p>Dieses Profil definiert die Parameter für die Annahme eines Medikaments von AVS zum E-Rezept-Fachdienst. Dies kann für die $accept-Operation verwendet werden.</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-GEM-ERP-PR-PAR-Activate-Operation-Output.html" title="GEM-ERP-PR-PAR-Activate-Operation-Output">
+                
+                    GEM ERP PR ActivateOperation Output
+                
+                </a>
+            </td>
+            <td>
+                <p>Dieses Profil definiert die Parameter für die Aktivierung einer Aufgabe von PVS zum E-Rezept-Fachdienst. Dies kann für die $activate-Operation verwendet werden.</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-GEM-ERP-PR-PAR-Close-Operation-Input.html" title="GEM-ERP-PR-PAR-Close-Operation-Input">
+                
+                    GEM ERP PR CloseOperation Input
+                
+                </a>
+            </td>
+            <td>
+                <p>Dieses Profil definiert die Parameter für das Schließen eines Workflows für ein Rezept vom AVS zum E-Rezept-Fachdienst. Dies kann für die Operationen $close und $dispense verwendet werden.</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-GEM-ERP-PR-PAR-Close-Operation-Output.html" title="GEM-ERP-PR-PAR-Close-Operation-Output">
+                
+                    GEM ERP PR CloseOperation Output
+                
+                </a>
+            </td>
+            <td>
+                <p>Dieses Profil definiert die Parameter für die Ausgabe eines Medikaments von AVS an den E-Rezept-Fachdienst. Dies kann für die $close-Operation verwendet werden.</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-GEM-ERP-PR-PAR-Create-Operation-Output.html" title="GEM-ERP-PR-PAR-Create-Operation-Output">
+                
+                    GEM ERP PR CreateOperation Output
+                
+                </a>
+            </td>
+            <td>
+                <p>Dieses Profil definiert die Parameter für die Erstellung einer Aufgabe von PVS zum E-Rezept-Fachdienst. Dies kann für die $create-Operation verwendet werden.</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-GEM-ERP-PR-PAR-Dispense-Operation-Input.html" title="GEM-ERP-PR-PAR-Dispense-Operation-Input">
+                
+                    GEM ERP PR DispenseOperation Input
+                
+                </a>
+            </td>
+            <td>
+                <p>Dieses Profil definiert die Parameter für die Abgabe eines Medikaments von AVS an den E-Rezept-Fachdienst. Dies kann für die $dispense-Operation verwendet werden.</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Parameterprofile</figcaption></div>
+
+<h3 id="erweiterungen-extension-definitions">Erweiterungen (Extension) Definitions</h3>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-GEM-ERP-EX-AcceptDate.html" title="GEM-ERP-EX-AcceptDate">
+                
+                    GEM ERP EX AcceptDate
+                
+                </a>
+            </td>
+            <td>
+                <p>Diese Extension sollte in der Task-Ressource verwendet werden. Sie speichert das Datum, bis zu dem eine Krankenkasse die Verschreibung akzeptiert und bezahlt.</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-GEM-ERP-EX-AvailabilityState.html" title="GEM-ERP-EX-AvailabilityState">
+                
+                    GEM ERP EX AvailabilityState
+                
+                </a>
+            </td>
+            <td>
+                <p>Extension zur Angabe von Typ des Verfügbarkeitsstatus für die Anfrage zur Medikamentenverfügbarkeit.</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-GEM-ERP-EX-Beneficiary.html" title="GEM-ERP-EX-Beneficiary">
+                
+                    GEM ERP EX Beneficiary
+                
+                </a>
+            </td>
+            <td>
+                <p>Der Begünstigte (z. B. Apotheke) des E-Rezept-Beleg, der erstellt wird, wenn der E-Rezept-Workflow abgeschlossen ist.</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-GEM-ERP-EX-CapabilityStatement-Environment.html" title="GEM-ERP-EX-CapabilityStatement-Environment">
+                
+                    GEM ERP EX CapabilityStatement Environment
+                
+                </a>
+            </td>
+            <td>
+                <p>Diese Extension kennzeichnet die Zielumgebung eines konkreten CapabilityStatements (z. B. Produktiv-, Referenz-, Test- oder Entwicklungsumgebung). Die Information hilft Clients, deklarierte Fähigkeiten im richtigen betrieblichen Kontext zu interpretieren.</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-GEM-ERP-EX-CapabilityStatement-FDConfiguration.html" title="GEM-ERP-EX-CapabilityStatement-FDConfiguration">
+                
+                    GEM ERP EX CapabilityStatement FDConfiguration
+                
+                </a>
+            </td>
+            <td>
+                <p>Diese Extension deklariert eine konkrete Konfigurationsausprägung des E-Rezept-Fachdienstes auf CapabilityStatement-Ebene. Die Konfiguration wird als Code transportiert und bevorzugt gegen GEM_ERP_VS_FDConfiguration geprüft.</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-GEM-ERP-EX-CapabilityStatement-Feature.html" title="GEM-ERP-EX-CapabilityStatement-Feature">
+                
+                    GEM ERP EX CapabilityStatement Feature
+                
+                </a>
+            </td>
+            <td>
+                <p>Diese Compound-Extension deklariert ein einzelnes Feature eines konkreten Fachdienst-Deployments. Das Teilfeld definition verweist per Canonical auf den fachlichen Feature-Bezeichner (Workflow-Typ oder sonstiges Feature), während value den aktuellen Aktivierungszustand dieses Features am betrachteten Endpoint beschreibt.</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-GEM-ERP-EX-EU-IS-REDEEMABLE-BY-PATIENT-AUTHORIZATION.html" title="GEM-ERP-EX-EU-IS-REDEEMABLE-BY-PATIENT-AUTHORIZATION">
+                
+                    GEM ERP EX EU IS REDEEMABLE BY PATIENT AUTHORIZATION
+                
+                </a>
+            </td>
+            <td>
+                <p>Extension zur Angabe des Nutzers, ob das E-Rezept in der EU zur Einlösung verfügbar sein soll oder nicht.</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-GEM-ERP-EX-EU-IS-REDEEMABLE-BY-PROPERTIES.html" title="GEM-ERP-EX-EU-IS-REDEEMABLE-BY-PROPERTIES">
+                
+                    GEM ERP EX EU IS REDEEMABLE BY PROPERTIES
+                
+                </a>
+            </td>
+            <td>
+                <p>Extension zur vom E-Rezept-Fachdienst ermittelten Angabe, ob das E-Rezept in der EU zur Einlösung verfügbar sein soll oder nicht.</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-GEM-ERP-EX-ExpiryDate.html" title="GEM-ERP-EX-ExpiryDate">
+                
+                    GEM ERP EX ExpiryDate
+                
+                </a>
+            </td>
+            <td>
+                <p>Diese Erweiterung sollte in der Task-Ressource verwendet werden. Sie zeigt das Ablaufdatum des Rezepts an.</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-GEM-ERP-EX-InsuranceProvider.html" title="GEM-ERP-EX-InsuranceProvider">
+                
+                    GEM ERP EX InsuranceProvider
+                
+                </a>
+            </td>
+            <td>
+                <p>IK-Nummer (Institutionskennzeichen) des Versicherungsträgers, der das angeforderte Medikament abdeckt</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-GEM-ERP-EX-LastMedicationDispense.html" title="GEM-ERP-EX-LastMedicationDispense">
+                
+                    GEM ERP EX LastMedicationDispense
+                
+                </a>
+            </td>
+            <td>
+                <p>Diese Erweiterung sollte in der Task-Ressource verwendet werden. Sie zeigt den Zeitstempel der letzten Ausgabe an.</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-GEM-ERP-EX-PrescriptionType.html" title="GEM-ERP-EX-PrescriptionType">
+                
+                    GEM ERP EX PrescriptionType
+                
+                </a>
+            </td>
+            <td>
+                <p>Definiert den Typ eines Rezepts.</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="StructureDefinition-GEM-ERP-EX-SupplyOptionsType.html" title="GEM-ERP-EX-SupplyOptionsType">
+                
+                    GEM ERP EX SupplyOptionsType
+                
+                </a>
+            </td>
+            <td>
+                <p>Extension zur Angabe des bevorzugten Versorgungskanals</p>
+            </td>
+         </tr>
+         
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Extension Definitions</figcaption></div>
+
+<h3 id="beispielinstanzen">Beispielinstanzen</h3>
+
+<p><b>AuditEvent</b></p>
+
+<ul>
+          <li><a href="AuditEvent-9361863d-fec0-4ba9-8776-7905cf1b0cfa.html">AuditEvent-Eintrag vom E-Rezept-Fachdienst</a></li>
+      </ul>
+
+<p><b>Bundle</b></p>
+
+<ul>
+          <li><a href="Bundle-Bundle-AcceptOperation.html">Beispiel Accept-Bundle</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Bundle-ExampleAcceptResponseBundle.html">Beispielantwort fuer die $accept-Operation</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Bundle-dffbfd6a-5712-4798-bdc8-07201eb77ab8.html">Quittungs-Bundle für abgeschlossene Rezeptabgabe</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Bundle-example-searchset-auditevent.html">Antwortbundle fuer GET /AuditEvent</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Bundle-example-searchset-communication.html">Antwortbundle fuer GET /Communication</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Bundle-example-searchset-consent.html">Antwortbundle fuer GET /Consent</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Bundle-example-searchset-medicationdispense.html">Antwortbundle fuer GET /MedicationDispense</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Bundle-example-searchset-task.html">Antwortbundle fuer GET /Task</a></li>
+      </ul>
+
+<p><b>CapabilityStatement</b></p>
+
+<ul>
+          <li><a href="CapabilityStatement-example-capabilitystatement-server-pu.html">Example CapabilityStatement Server PU</a></li>
+      </ul>
+
+<ul>
+          <li><a href="CapabilityStatement-example-capabilitystatement-server-ru.html">Example CapabilityStatement Server RU</a></li>
+      </ul>
+
+<ul>
+          <li><a href="CapabilityStatement-example-capabilitystatement-server-tu.html">Example CapabilityStatement Server TU</a></li>
+      </ul>
+
+<p><b>Communication</b></p>
+
+<ul>
+          <li><a href="Communication-2be1c6ac-5d10-47f6-84ee-8318b2c22c76.html">DiGA-Zuweisung des Patienten an die Krankenkasse</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Communication-7977a4ab-97a9-4d95-afb3-6c4c1e2ac596.html">Antwort-Nachricht der Apotheke an den Patienten</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Communication-a218a36e-f2fd-4603-ba67-c827acfef01b.html">Zuweisung des Patienten an die Apotheke</a></li>
+      </ul>
+
+<p><b>Consent</b></p>
+
+<ul>
+          <li><a href="Consent-QueryConsentCHARGCONS.html">Einwilligung fuer den Use Case CHARGCONS</a></li>
+      </ul>
+
+<p><b>Device</b></p>
+
+<ul>
+          <li><a href="Device-ReceiptBundleDevice.html">Gerät für Quittungs-Bundle</a></li>
+      </ul>
+
+<p><b>Medication</b></p>
+
+<ul>
+          <li><a href="Medication-ExampleUnitMedication.html">Beispiel-Medikament mit Einheiten</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Medication-Medication-Kombipackung.html">Medikament-Kombipackung</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Medication-Medication-Rezeptur-FD.html">Medication-Rezeptur-FD</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Medication-Medication-Rezeptur.html">Medikament-Rezeptur</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Medication-Medication-Without-Strength-Code.html">Medikament ohne Stärke-Code</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Medication-Medication-Without-Strength-Numerator.html">Medikament ohne Stärke-Numerator</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Medication-SimpleMedication.html">Einfaches Beispiel-Medikament</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Medication-SumatripanMedication.html">Beispiel-Medikament Sumatriptan</a></li>
+      </ul>
+
+<p><b>MedicationDispense</b></p>
+
+<ul>
+          <li><a href="MedicationDispense-Example-MedicationDispense-2.html">Zweites Beispiel Medikamentenabgabe</a></li>
+      </ul>
+
+<ul>
+          <li><a href="MedicationDispense-Example-MedicationDispense-Dosage-comb-dayofweek.html">Beispiel Medikamentenabgabe mit Dosierung nach Kombination des Wochentags</a></li>
+      </ul>
+
+<ul>
+          <li><a href="MedicationDispense-Example-MedicationDispense-Dosage-comb-interval.html">Beispiel Medikamentenabgabe mit Dosierung nach Kombination des Intervals</a></li>
+      </ul>
+
+<ul>
+          <li><a href="MedicationDispense-Example-MedicationDispense-Dosage-interval.html">Beispiel Medikamentenabgabe mit Dosierung nach Interval</a></li>
+      </ul>
+
+<ul>
+          <li><a href="MedicationDispense-Example-MedicationDispense-Dosage-tageszeit.html">Beispiel Medikamentenabgabe mit Dosierung nach 4er Schema</a></li>
+      </ul>
+
+<ul>
+          <li><a href="MedicationDispense-Example-MedicationDispense-Dosage-uhrzeit.html">Beispiel Medikamentenabgabe mit Dosierung nach Uhrzeitbezug</a></li>
+      </ul>
+
+<ul>
+          <li><a href="MedicationDispense-Example-MedicationDispense-Dosage-weekday.html">Beispiel Medikamentenabgabe mit Dosierung nach Wochentagsbezug</a></li>
+      </ul>
+
+<ul>
+          <li><a href="MedicationDispense-Example-MedicationDispense-Kombipackung.html">Beispiel Kombipackung Medikamentenabgabe</a></li>
+      </ul>
+
+<ul>
+          <li><a href="MedicationDispense-Example-MedicationDispense-Rezeptur.html">Example Rezeptur Medication Dispense</a></li>
+      </ul>
+
+<ul>
+          <li><a href="MedicationDispense-Example-MedicationDispense-Without-Medication.html">Beispiel Medikamentenabgabe ohne Medikament</a></li>
+      </ul>
+
+<ul>
+          <li><a href="MedicationDispense-Example-MedicationDispense.html">Beispiel Medikamentenabgabe</a></li>
+      </ul>
+
+<p><b>OperationOutcome</b></p>
+
+<ul>
+          <li><a href="OperationOutcome-ExampleOperationAbortErrorAVS.html">Beispiel für Abort-Operation Fehlerantwort (AVS)</a></li>
+      </ul>
+
+<ul>
+          <li><a href="OperationOutcome-ExampleOperationAbortErrorPVS.html">Beispiel für Abort-Operation Fehlerantwort (PVS)</a></li>
+      </ul>
+
+<ul>
+          <li><a href="OperationOutcome-ExampleOperationAcceptError.html">Beispiel für Accept-Operation Fehlerantwort</a></li>
+      </ul>
+
+<ul>
+          <li><a href="OperationOutcome-ExampleOperationActivateError.html">Example Activate operation error response</a></li>
+      </ul>
+
+<ul>
+          <li><a href="OperationOutcome-ExampleOperationCloseError.html">Beispiel für Close-Operation Fehlerantwort</a></li>
+      </ul>
+
+<ul>
+          <li><a href="OperationOutcome-ExampleOperationCreateError.html">Beispiel für Create-Operation Fehlerantwort</a></li>
+      </ul>
+
+<ul>
+          <li><a href="OperationOutcome-ExampleOperationRejectError.html">Beispiel für Reject-Operation Fehlerantwort</a></li>
+      </ul>
+
+<p><b>Parameters</b></p>
+
+<ul>
+          <li><a href="Parameters-ExampleCloseInputParameters.html">Beispiel Close-Parameter</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Parameters-ExampleCloseInputParametersKombipackung.html">Beispiel Close-Parameter für Kombipackung</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Parameters-ExampleCloseInputParametersMultipleMedicationDispenses.html">Beispiel Close-Parameter mit mehreren MedicationDispenses</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Parameters-ExampleCloseInputParametersRezeptur.html">Example Close Parameters</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Parameters-ExampleDispenseInputParameters.html">Example Dispense Parameters</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Parameters-ExampleDispenseInputParametersKombipackung.html">Example Dispense Parameters</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Parameters-ExampleDispenseInputParametersMultipleMedicationDispenses.html">Example Dispense Parameters</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Parameters-ExampleOperationActivateParametersInput.html">Example Activate operation input parameters</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Parameters-OperationCreateParametersInputExample.html">Beispiel für $create Operation Parameter</a></li>
+      </ul>
+
+<p><b>Subscription</b></p>
+
+<ul>
+          <li><a href="Subscription-example-create-subscription-request.html">Anfrage fuer POST /Subscription</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Subscription-example-create-subscription-response.html">Antwort fuer POST /Subscription</a></li>
+      </ul>
+
+<p><b>Task</b></p>
+
+<ul>
+          <li><a href="Task-9b48f82c-9c11-4a57-aa72-a805f9537a82.html">Task angenommen und abgegeben via $dispense Operation</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Task-TaskInClosedState.html">Task abgeschlossen durch Apotheke via $close Operation</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Task-TaskInReadyState.html">Task aktiviert durch (Z)PVS/KIS via $activate Operation</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Task-b12eb5f7-91ce-4887-93c7-800454601377.html">Task erstellt durch Fachdienst via $create Operation</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Task-d70932d1-9e1c-483c-b2d4-b7dced09b35e.html">Task angenommen durch Apotheke via $accept Operation</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Task-f5c21409-b84b-4125-8649-5630a00906b1.html">Task mit mehreren MedicationDispenses</a></li>
+      </ul>
 
 
 
@@ -310,7 +2487,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="requirement-mapping-old-to-new.html">nächste&gt;</a>
+                <a href="CapabilityStatement-erp-fachdienst-server.html">nächste&gt;</a>
 
               </td>
             </tr>
@@ -320,7 +2497,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 06:04+0000">2026-03-23</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 24, 2026 17:20+0000">2026-03-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

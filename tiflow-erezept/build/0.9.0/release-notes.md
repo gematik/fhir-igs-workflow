@@ -11,7 +11,7 @@ Version 0.9.0 - ci-build
 
 ### Release Notes
 
-Für diese Entwurfsfassung sind noch keine versionierten Release-Notes-Eintraege hinterlegt.
+Für diese Entwurfsfassung sind noch keine versionierten Release-Notes-Einträge hinterlegt.
 
-Sobald versionierte Aenderungen freigegeben sind, werden sie in diesem Kapitel inklusive Requirement-Bezug dokumentiert.
+Sobald versionierte Änderungen freigegeben sind, werden sie in diesem Kapitel inklusive Requirement-Bezug dokumentiert.
 

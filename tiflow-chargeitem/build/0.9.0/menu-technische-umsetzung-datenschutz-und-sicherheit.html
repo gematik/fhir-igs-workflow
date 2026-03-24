@@ -266,79 +266,79 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </div>
 <p>PKV-Versicherte erhalten Abrechnungsinformationen, die sie bei ihrer privaten Krankenversicherung zur Kostenerstattung einreichen. Der PKV-Abgabedatensatz wird nur gespeichert, wenn eine einmalige Einwilligung des Versicherten vorliegt. Die Abrechnungsinformationen werden bis zu 10 Jahre gespeichert und können anschließend durch den Versicherten abgerufen, weitergeleitet oder ausgedruckt werden.</p>
 
-<p>Um zu vermeiden, dass der Anbieter des E-Rezept-Fachdienstes ein Profil über alle PKV-Versicherten mit Einwilligung erhält, wird die Information über die Einwilligung in der VAU verarbeitet und verschlüsselt gespeichert. Die Nichtabstreitbarkeit der Einwilligung ist technisch sicherzustellen.</p>
+<p>Um zu vermeiden, dass der Anbieter des TI-Flow-Fachdienstes ein Profil über alle PKV-Versicherten mit Einwilligung erhält, wird die Information über die Einwilligung in der VAU verarbeitet und verschlüsselt gespeichert. Die Nichtabstreitbarkeit der Einwilligung ist technisch sicherzustellen.</p>
 
   <!-- A_22207 -->
 <requirement conformance="SHALL" title="Einwilligung in Verarbeitung von Abrechnungsinformationen nur für PKV-Versicherte" version="0" key="IG-TIFLOW-CHRG-35">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
 Die Fachanwendung E-Rezept MUSS sicherstellen, dass eine Einwilligung in die Verarbeitung von Abrechnungsinformationen nur für PKV-Versicherte möglich ist.
 </requirement>
 
-<p>Für den E-Rezept-Fachdienst heißt dies:
+<p>Für den TI-Flow-Fachdienst heißt dies:
   <!-- A_22208 --></p>
 <requirement conformance="SHALL" title="Verarbeitung von Abrechnungsinformationen nur nach Einwilligung" version="0" key="IG-TIFLOW-CHRG-36">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
 Die Fachanwendung E-Rezept MUSS sicherstellen, dass eine Verarbeitung von Abrechnungsinformationen nur für PKV-Versicherte erfolgt, die hierfür eingewilligt haben.
 </requirement>
 
   <!-- A_22209 -->
-<requirement conformance="SHALL NOT" title="Verarbeitung von Abrechnungsinformationen im E-Rezept-Fachdienst nur nach Einwilligung" version="0" key="IG-TIFLOW-CHRG-37">
+<requirement conformance="SHALL NOT" title="Verarbeitung von Abrechnungsinformationen im TI-Flow-Fachdienst nur nach Einwilligung" version="0" key="IG-TIFLOW-CHRG-37">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-Der E-Rezept-Fachdienst DARF NICHT Abrechnungsinformationen verarbeiten, wenn keine Einwilligung des PKV-Versicherten erfolgt ist.
+Der TI-Flow-Fachdienst DARF NICHT Abrechnungsinformationen verarbeiten, wenn keine Einwilligung des PKV-Versicherten erfolgt ist.
 </requirement>
 
   <!-- A_22210 -->
 <requirement conformance="SHALL" title="Nichtabstreitbarkeit der Einwilligung" version="0" key="IG-TIFLOW-CHRG-38">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-Die Fachanwendung E-Rezept MUSS sicherstellen, dass die technische Umsetzung der Einwilligung im E-Rezept-FdV und des Vermerkens dieser im E-Rezept-Fachdienst so zuverlässig ist, dass der Vermerk im E-Rezept-Fachdienst als nicht abstreitbar angesehen werden kann.
+Die Fachanwendung E-Rezept MUSS sicherstellen, dass die technische Umsetzung der Einwilligung im E-Rezept-FdV und des Vermerkens dieser im TI-Flow-Fachdienst so zuverlässig ist, dass der Vermerk im TI-Flow-Fachdienst als nicht abstreitbar angesehen werden kann.
 </requirement>
 
   <!-- A_22211 -->
 <requirement conformance="SHALL" title="Löschen von Abrechnungsinformationen nach zehn Jahren" version="0" key="IG-TIFLOW-CHRG-39">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-Der E-Rezept-Fachdienst MUSS Abrechnungsinformationen zu einem E-Rezept nach zehn Jahren löschen.
+Der TI-Flow-Fachdienst MUSS Abrechnungsinformationen zu einem E-Rezept nach zehn Jahren löschen.
 </requirement>
 
   <!-- A_22212 -->
 <requirement conformance="SHALL" title="Information über Möglichkeit des Speicherns der Abrechnungsinformationen nur für konkretes E-Rezept" version="0" key="IG-TIFLOW-CHRG-40">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-Der E-Rezept-Fachdienst MUSS sicherstellen, dass abgebende Leistungserbringer die Information über die Möglichkeit des Speicherns der Abrechnungsinformationen im E-Rezept-Fachdienst nur im Kontext eines konkreten E-Rezepts erhalten.
+Der TI-Flow-Fachdienst MUSS sicherstellen, dass abgebende Leistungserbringer die Information über die Möglichkeit des Speicherns der Abrechnungsinformationen im TI-Flow-Fachdienst nur im Kontext eines konkreten E-Rezepts erhalten.
 </requirement>
 
   <!-- A_22213 -->
 <requirement conformance="SHALL" title="Schutz der Abrechnungsinformationen" version="0" key="IG-TIFLOW-CHRG-41">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-Der E-Rezept-Fachdienst MUSS die Abrechnungsinformationen während der Verarbeitung (inkl. Transport und Speichern) vor unberechtigter Einsichtnahme oder Manipulation schützen.
+Der TI-Flow-Fachdienst MUSS die Abrechnungsinformationen während der Verarbeitung (inkl. Transport und Speichern) vor unberechtigter Einsichtnahme oder Manipulation schützen.
 </requirement>
 
   <!-- A_22214 -->
 <requirement conformance="SHALL" title="Protokollierung der Einwilligung bzw. des Widerrufs" version="0" key="IG-TIFLOW-CHRG-42">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-Der E-Rezept-Fachdienst MUSS die Einwilligung in das Speichern der Abrechnungsinformationen und deren Widerruf – inkl. Zeitpunkt der Aktion – für den Versicherten protokollieren.
+Der TI-Flow-Fachdienst MUSS die Einwilligung in das Speichern der Abrechnungsinformationen und deren Widerruf – inkl. Zeitpunkt der Aktion – für den Versicherten protokollieren.
 </requirement>
 
 
@@ -382,7 +382,7 @@ Der E-Rezept-Fachdienst MUSS die Einwilligung in das Speichern der Abrechnungsin
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 06:25+0000">2026-03-23</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 24, 2026 17:25+0000">2026-03-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -27,13 +27,13 @@ Profile: [GEM ERP PR MedicationDispense DiGA](StructureDefinition-GEM-ERP-PR-Med
 | - | **Actor** |
 | * | Identifier:`https://gematik.de/fhir/sid/telematik-id`/8-SMC-B-Testkarte-883110000095957 |
 
-**whenHandedOver**: 2026-02-06
+**whenHandedOver**: 2026-07-01
 
 **note**: 
 
 > 
 
-Freischaltcode fuer DiGA konnte nicht erstellt werden
+Freischaltcode für DiGA konnte nicht erstellt werden
 
 
 
@@ -45,7 +45,7 @@ Freischaltcode fuer DiGA konnte nicht erstellt werden
   "resourceType" : "MedicationDispense",
   "id" : "Example-MedicationDispense-DiGA-NoRedeemCode",
   "meta" : {
-    "profile" : ["https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM-ERP-PR-MedicationDispense-DiGA"]
+    "profile" : ["https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA"]
   },
   "identifier" : [{
     "system" : "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
@@ -72,9 +72,9 @@ Freischaltcode fuer DiGA konnte nicht erstellt werden
       }
     }
   }],
-  "whenHandedOver" : "2026-02-06",
+  "whenHandedOver" : "2026-07-01",
   "note" : [{
-    "text" : "Freischaltcode fuer DiGA konnte nicht erstellt werden"
+    "text" : "Freischaltcode für DiGA konnte nicht erstellt werden"
   }]
 }
 

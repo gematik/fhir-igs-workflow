@@ -11,13 +11,13 @@ Version 0.9.0 - ci-build
 
 Die Funktionalität zu Push Notification für FdVs ist anwendungsübergreifend in [gemF_PushNotification] beschrieben.
 
-Der E-Rezept-Fachdienst übernimmt die Rolle „Fachdienst“. Er verwaltet FdV-Instanzen, die sich bei ihm für den Empfang von Push Notifications registriert haben, erstellt Push Notifications für vom Nutzer abonnierte Ereignisse und übermittelt diese an das zuständige Push Gateway. Der E-Rezept-Fachdienst bietet Schnittstellen für das E-Rezept-FdV zur Registrierung, Deregistrierung und Konfiguration von Kanälen an.
+Der TI-Flow-Fachdienst übernimmt die Rolle „Fachdienst“. Er verwaltet FdV-Instanzen, die sich bei ihm für den Empfang von Push Notifications registriert haben, erstellt Push Notifications für vom Nutzer abonnierte Ereignisse und übermittelt diese an das zuständige Push Gateway. Der TI-Flow-Fachdienst bietet Schnittstellen für das E-Rezept-FdV zur Registrierung, Deregistrierung und Konfiguration von Kanälen an.
 
 ### Push Notification senden
 
-Der E-Rezept-Fachdienst erstellt ein Notification-Objekt für verschlüsselte Notifications wie in [OpenAPI_PushGateway] beschrieben. Der Nachrichteninhalt, auf den in diesem Kapitel verwiesen wird, ist der Inhalt des Ciphertexts.
+Der TI-Flow-Fachdienst erstellt ein Notification-Objekt für verschlüsselte Notifications wie in [OpenAPI_PushGateway] beschrieben. Der Nachrichteninhalt, auf den in diesem Kapitel verwiesen wird, ist der Inhalt des Ciphertexts.
 
-Der E-Rezept-Fachdienst MUSS den Nachrichteninhalt einer Push Notification gemäß TAB_eRPFD_028 erzeugen.
+Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification gemäß TAB_eRPFD_028 erzeugen.
 
 | | | | | | |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -28,7 +28,6 @@ Der E-Rezept-Fachdienst MUSS den Nachrichteninhalt einer Push Notification gemä
 | erp.task.dispense | Task.identifier.PrescriptionID | TaskId | Falls Task.flowType = "160","166","169","200","209": GEM_ERP_PR_PAR_DispenseOperation_Input.parameter[rxDispensation].part[medication].[medicationName]Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text | Lesbarer Name aus dem ACCESS_TOKEN des Ausführenden | POST /Task/<id>/$dispense |
 | erp.task.abort | Task.identifier.PrescriptionID | TaskId | Falls Task.flowType = "160","166","169","200","209": KBV_PR_ERP_Bundle.entry.[medicationName]Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text | Lesbarer Name aus dem ACCESS_TOKEN des Ausführenden | POST /Task/<id>/$abort |
 | erp.communication.new | Communication.basedOn.reference | TaskId | Falls Communication.basedOn.reference.Task.flowType = "160","166","200": KBV_PR_ERP_Bundle.entry.[medicationName]Falls Communication.basedOn.reference.Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text | Lesbarer Name aus dem ACCESS_TOKEN des Ausführenden | POST /CommunicationFalls Profil GEM_ERP_PR_Communication_Reply: Communication.payload.content.info_textFalls Profil GEM_ERP_PR_Communication_DiGA: Communication.payload.content |
-| erp.task.vertreter | Task.identifier.PrescriptionID | TaskId | Falls Task.flowType = "160","166","200": KBV_PR_ERP_Bundle.entry.[medicationName]Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text | Lesbarer Name aus dem ACCESS_TOKEN des Ausführenden | GET /Task/<id> |
 | erp.chargeitem.create | ChargeItem.identifier.PrescriptionID | TaskId | ChargeItem.supportingInformation.KBV_PR_ERP_Bundle.entry.[medicationName] | Lesbarer Name aus dem ACCESS_TOKEN des Ausführenden | POST /ChargeItem |
 | erp.chargeitem.update | ChargeItem.identifier.PrescriptionID | TaskId | ChargeItem.supportingInformation.KBV_PR_ERP_Bundle.entry.[medicationName] | Lesbarer Name aus dem ACCESS_TOKEN des Ausführenden | PUT /ChargeItem/<id> |
 | erp.eu.prescription.get | Task.identifier.PrescriptionID | TaskId | KBV_PR_ERP_Bundle.entry.[medicationName] | GEM_ERPEU_PR_PAR_GET_Prescription_Input.parameter.part[practionerName].valueString | - |
@@ -43,13 +42,13 @@ Der E-Rezept-Fachdienst MUSS den Nachrichteninhalt einer Push Notification gemä
  Ansonsten:
  `Medication.code.text` 
 
-Der E-Rezept-Fachdienst MUSS den Nachrichteninhalt einer Push Notification verschlüsseln.
+Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification verschlüsseln.
 Die Vorgaben für die Verschlüsselung sind in `A_27161-* - Fachdienst - Push Notification senden - Nachricht verschlüsseln` beschrieben.
 
-Der E-Rezept-Fachdienst MUSS beim Erstellen einer Push Notification die Identifier des zugehörigen Protokolleintrags (AuditEvent.id) des Triggers im Identifier-Feld des äußeren Notification-Objekts (notification.identifier) angeben.
+Der TI-Flow-Fachdienst MUSS beim Erstellen einer Push Notification die Identifier des zugehörigen Protokolleintrags (AuditEvent.id) des Triggers im Identifier-Feld des äußeren Notification-Objekts (notification.identifier) angeben.
 ### Push Notification Datenstruktur
 
-Der E-Rezept-Fachdienst und das E-Rezept-FdV MÜSSEN für den Anwendungsfall "Push Notifications" Nachrichteninhalte mit der folgenden Datenstruktur im JSON Format unterstützen:
+Der TI-Flow-Fachdienst und das E-Rezept-FdV MÜSSEN für den Anwendungsfall "Push Notifications" Nachrichteninhalte mit der folgenden Datenstruktur im JSON Format unterstützen:
 
 | | | | | |
 | :--- | :--- | :--- | :--- | :--- |

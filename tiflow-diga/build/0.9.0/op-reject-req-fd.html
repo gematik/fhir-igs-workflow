@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Anforderungen an den E-Rezept-Fachdienst für die $reject-Operation - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v0.9.0</title>
+    <title>Anforderungen an den TI-Flow-Fachdienst für die $reject-Operation - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v0.9.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -225,7 +225,7 @@ TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
     <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
       <div class="container">    <!-- container -->
         <ul class="breadcrumb">
-          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="operation-api.html"><b>Operation API</b></a></li><li><a href="op-reject.html"><b>Operation: $reject</b></a></li><li><b>Anforderungen an den E-Rezept-Fachdienst für die $reject-Operation</b></li>
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="operation-api.html"><b>Operation API</b></a></li><li><a href="op-reject.html"><b>Operation: $reject</b></a></li><li><b>Anforderungen an den TI-Flow-Fachdienst für die $reject-Operation</b></li>
 
           <span style="float:right;">
 
@@ -255,7 +255,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   
-  <h2>Anforderungen an den E-Rezept-Fachdienst für die $reject-Operation</h2>
+  <h2>Anforderungen an den TI-Flow-Fachdienst für die $reject-Operation</h2>
   
 
 
@@ -283,64 +283,64 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="anforderungen-aus-der-core-spezifikation">Anforderungen aus der Core Spezifikation</h3>
 
-<p>Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an den E-Rezept-Fachdienst für die Operation <code class="language-plaintext highlighter-rouge">$reject</code>.</p>
+<p>Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an den TI-Flow-Fachdienst für die Operation <code class="language-plaintext highlighter-rouge">$reject</code>.</p>
 
 <p>Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.</p>
 
   <!-- A_19171-03 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task zurückweisen - Prüfung Secret" version="0" key="IG-TIFLOW-CORE-33">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task zurückweisen - Prüfung Secret" version="0" key="IG-TIFLOW-CORE-39">
   <meta lockversion="false"/>
-  <actor name="eRp_FD">
+  <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
-    Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject das im URL-Parameter "?secret=..." übertragene Secret gegen das im referenzierten Task gespeicherte Secret Task.identifier:Secret als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret  prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit der Zugriff auf diesen Datensatz nur durch den Berechtigten in Kenntnis des Secrets erfolgt.
+    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject das im URL-Parameter "?secret=..." übertragene Secret gegen das im referenzierten Task gespeicherte Secret Task.identifier:Secret als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit der Zugriff auf diesen Datensatz nur durch den Berechtigten in Kenntnis des Secrets erfolgt.
 </requirement>
 
   <!-- A_19171-03 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task zurückweisen - Prüfung Status" version="0" key="IG-TIFLOW-CORE-369">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task zurückweisen - Prüfung Status" version="0" key="IG-TIFLOW-CORE-40">
   <meta lockversion="false"/>
-  <actor name="eRp_FD">
+  <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
-    Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject den im referenzierten Task gespeicherten Status Task.status prüfen und mit dem Fehler 412 abbrechen, wenn Task.status ungleich "in-progress" ist, damit die Verordnung nur zurückgegeben werden kann, wenn sich die Verordnung in Belieferung befindet.
+    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject den im referenzierten Task gespeicherten Status Task.status prüfen und mit dem Fehler 412 abbrechen, wenn Task.status ungleich "in-progress" ist, damit die Verordnung nur zurückgegeben werden kann, wenn sich die Verordnung in Belieferung befindet.
 </requirement>
 
   <!-- A_19172-01 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task zurückweisen - Secret löschen und Status setzen" version="0" key="IG-TIFLOW-CORE-34">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task zurückweisen - Secret löschen und Status setzen" version="0" key="IG-TIFLOW-CORE-41">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-    Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject die externe ID in Task.identifier:Secret als https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Secret löschen und den Status des referenzierten Tasks auf Task.status = ready setzen, damit nachfolgende Zugriffe auf diesen Datensatz durch Berechtigte in Kenntnis des AccessCodes erfolgen können.
+    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject die externe ID in Task.identifier:Secret als https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Secret löschen und den Status des referenzierten Tasks auf Task.status = ready setzen, damit nachfolgende Zugriffe auf diesen Datensatz durch Berechtigte in Kenntnis des AccessCodes erfolgen können.
 </requirement>
 
   <!-- A_24175 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task zurückweisen - Telematik-ID der abgebenden LEI löschen" version="0" key="IG-TIFLOW-CORE-35">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task zurückweisen - Telematik-ID der abgebenden LEI löschen" version="0" key="IG-TIFLOW-CORE-42">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"></testProcedure>
     </actor>
-    Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject die zum referenzierten Task in Task.owner gespeicherte Telematik-ID der abgebenden LEI löschen.
+    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject die zum referenzierten Task in Task.owner gespeicherte Telematik-ID der abgebenden LEI löschen.
 </requirement>
 
   <!-- A_28128 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task zurückweisen - Push Notification Versicherter" version="0" key="IG-TIFLOW-CORE-36">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task zurückweisen - Push Notification Versicherter" version="0" key="IG-TIFLOW-CORE-43">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-    Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId "erp.task.reject" und den Versicherten mit der KVNR = Task.for initiieren.
+    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId "erp.task.reject" und den Versicherten mit der KVNR = Task.for initiieren.
 </requirement>
 
 <h3 id="modulspezifische-anforderungen">Modulspezifische Anforderungen</h3>
 
   <!-- A_19170-02 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - Task zurückweisen - Flowtype 162 - Rollenprüfung" version="0" key="IG-TIFLOW-DIGA-1">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task zurückweisen - Flowtype 162 - Rollenprüfung" version="0" key="IG-TIFLOW-DIGA-1">
   <meta lockversion="false"/>
-  <actor name="eRp_FD">
+  <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"></testProcedure>
   </actor>
-  Der E-Rezept-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 162 HTTP-POST-Operation über /Task/&lt;id&gt;/$reject die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Institutionen in der Rolle
+  Der TI-Flow-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 162 HTTP-POST-Operation über /Task/&lt;id&gt;/$reject die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Institutionen in der Rolle
   <ul>
     <li>oid_kostentraeger</li>
   </ul>
@@ -387,7 +387,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 06:27+0000">2026-03-23</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 24, 2026 17:23+0000">2026-03-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

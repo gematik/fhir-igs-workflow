@@ -10,25 +10,25 @@ Version 0.9.0 - ci-build
 
 ## Query API: Device
 
-# Query API: Device
-
-Diese Seite beschreibt die moduluebergreifende Device-Query-Schnittstelle.
+Diese Seite beschreibt die modulübergreifende Device-Query-Schnittstelle.
 
 ### Nachricht
 
-Die Device-Query wird ueber HTTP `GET` auf `/Device` aufgerufen.
+Die Device-Query wird über HTTP `GET` auf `/Device` aufgerufen.
 
 ### Anforderungen an Schnittstelle
 
-* [Server Anforderungen zur Device-Query](./query-api-device-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
-* [Client-Anforderungen zur Device-Query](./query-api-device-client-requirements.md): Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.
+* [Server Anforderungen zur Device-Query](./query-api-device-req-fd.md): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
+* [Client-Anforderungen zur Device-Query](./query-api-device-client-requirements.md): Anforderungen an den Client des TI-Flow-Fachdienstes zur Nutzung der Schnittstelle.
 
 ### API Beschreibung
 
-* [Erweiterter Health-Check](https://github.com/gematik/api-erp/blob/master/docs/erp_ps_probing.adoc#erweiterter-health-check)
+```
+server
+```
 
-### Hinweis
+### Hinweise
 
-* Die Ressource `Device` dient der statischen Selbstauskunft des E-Rezept-Fachdienstes.
+* Die Ressource `Device` dient der statischen Selbstauskunft des TI-Flow-Fachdienstes.
 * Der Endpunkt wird zur Bereitstellung von Produkttypinformationen genutzt.
 

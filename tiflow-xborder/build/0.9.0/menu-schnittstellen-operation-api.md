@@ -9,7 +9,7 @@ Version 0.9.0 - ci-build
 
 ## Schnittstellen - Operation API
 
-Die folgenden Operation APIs stellt der E-Rezept-Fachdienst dem **E-Rezept-FdV** sowie dem **NCPeH** zur Verfügung.
+Die folgenden Operation APIs stellt der TI-Flow-Fachdienst dem **E-Rezept-FdV** sowie dem **NCPeH** zur Verfügung.
 
 ### Verwaltung der Zugriffsberechtigung durch den Versicherten
 

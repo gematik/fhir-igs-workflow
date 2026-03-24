@@ -330,7 +330,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="anforderungen-an-schnittstelle">Anforderungen an Schnittstelle</h3>
 
 <ul>
-  <li><a href="./query-api-chargeitem-req-fd.html">Server-Anforderungen zu ChargeItem</a>: Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.</li>
+  <li><a href="./query-api-chargeitem-req-fd.html">Server-Anforderungen zu ChargeItem</a>: Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.</li>
   <li><a href="./query-api-chargeitem-req-fdv.html">FdV-Anforderungen zu ChargeItem</a>: Anforderungen an ein E-Rezept-FdV zur Nutzung der Schnittstelle.</li>
   <li><a href="./query-api-chargeitem-req-avs.html">AVS-Anforderungen zu ChargeItem</a>: Anforderungen an ein AVS zur Nutzung der Schnittstelle.</li>
 </ul>
@@ -340,9 +340,309 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="api-beschreibung">API Beschreibung</h3>
 
-<ul>
-  <li><a href="https://github.com/gematik/api-erp/blob/master/docs/erp_chargeItem.adoc">API-ERP: PKV-Abrechnungsinformationen</a></li>
-</ul>
+<div data-api-type="FHIRResource" data-api-fhir-interaction="search-type" data-api-fhir-resource-type="ChargeItem" class="gematik-api">
+	<div id="CapabilityStatement">
+		<pre>
+			{
+  "resourceType": "CapabilityStatement",
+  "id": "erp-fachdienst-server-erpchrg",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"
+    ]
+  },
+  "url": "https://gematik.de/fhir/erpchrg/OperationDefinition/ERPFachdienstServerChrgOperationDefinition",
+  "extension": [
+    {
+      "url": "https://gematik.de/fhir/ti/StructureDefinition/extension-base-url",
+      "valueString": "https://gematik.de/fhir/erpchrg"
+    }
+  ],
+  "name": "ERPFachdienstServerChrg",
+  "status": "draft",
+  "version": "1.1.0",
+  "date": "2025-04-10",
+  "title": "ERPCHRG CapabilityStatement für den E-Rezept-Fachdienst",
+  "description": "CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.gematik.de"
+        }
+      ]
+    }
+  ],
+  "kind": "requirements",
+  "fhirVersion": "4.0.1",
+  "format": [
+    "application/fhir+json",
+    "application/fhir+xml"
+  ],
+  "rest": [
+    {
+      "mode": "server",
+      "resource": [
+        {
+          "type": "Task",
+          "versioning": "versioned-update",
+          "readHistory": true,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "SHALL"
+            }
+          ],
+          "interaction": [
+            {
+              "code": "read",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "search-type",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ChargeItem",
+          "versioning": "versioned-update",
+          "readHistory": true,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "SHALL"
+            }
+          ],
+          "interaction": [
+            {
+              "code": "read",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "search-type",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "create",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "update",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "patch",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "delete",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Consent",
+          "versioning": "versioned-update",
+          "readHistory": true,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "SHALL"
+            }
+          ],
+          "interaction": [
+            {
+              "code": "read",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "create",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "delete",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Communication",
+          "versioning": "versioned-update",
+          "readHistory": true,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "SHALL"
+            }
+          ],
+          "interaction": [
+            {
+              "code": "create",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+		</pre>
+	</div>
+	<div id="Response-Examples">
+		  <!-- TODO: Replace placeholder searchset with a representative ChargeItem query example. -->
+		<div data-render="ig-Fragment" data-type="XML" data-name="application/fhir+xml">
+			<pre style="white-space: pre; text-wrap: nowrap; width: auto;" class="xml" data-fhir="generated"><code style="white-space: pre; text-wrap: nowrap;" class="language-xml">
+&lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle">Bundle</a> xmlns="http://hl7.org/fhir"&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/resource.html#Bundle.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="ExampleERPCHRGChargeItemSearchset"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="searchset"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.total">total</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="1"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.link">link</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.link.relation">relation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="self"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.link.url">url</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="https://erp-ref.example.org/ChargeItem?_count=1"/&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.link">link</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry">entry</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="https://erp-ref.example.org/ChargeItem/ChargeItem-GET-Completed"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/chargeitem.html#ChargeItem">resource</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/chargeitem.html#ChargeItem">ChargeItem</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/resource.html#ChargeItem.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>="ChargeItem-GET-Completed"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/resource.html#ChargeItem.meta">meta</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>="https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_ChargeItem|1.1"/&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/resource.html#ChargeItem.meta">meta</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#ChargeItem.extension">extension</a>
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>="https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_EX_MarkingFlag"&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>="insuranceProvider"&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueBoolean</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>="false"/&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>="subsidy"&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueBoolean</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>="false"/&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>="taxOffice"&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueBoolean</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>="false"/&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#ChargeItem.extension">extension</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/chargeitem.html#ChargeItem.identifier">identifier</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="200.000.000.000.000.01"/&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/chargeitem.html#ChargeItem.identifier">identifier</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/chargeitem.html#ChargeItem.identifier">identifier</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode"/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"/&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/chargeitem.html#ChargeItem.identifier">identifier</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/chargeitem.html#ChargeItem.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="billable"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/chargeitem.html#ChargeItem.code">code</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+                    <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="http://terminology.hl7.org/CodeSystem/data-absent-reason"/&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="not-applicable"/&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/chargeitem.html#ChargeItem.code">code</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/chargeitem.html#ChargeItem.subject">subject</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="http://fhir.de/sid/gkv/kvid-10"/&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="P987654321"/&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/chargeitem.html#ChargeItem.subject">subject</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/chargeitem.html#ChargeItem.enterer">enterer</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="https://gematik.de/fhir/sid/telematik-id"/&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="3-2-APO-XanthippeVeilchenblau01"/&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/chargeitem.html#ChargeItem.enterer">enterer</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/chargeitem.html#ChargeItem.enteredDate">enteredDate</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>="2025-10-01T15:29:00.434+00:00"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/chargeitem.html#ChargeItem.supportingInformation">supportingInformation</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="Bundle/72bd741c-7ad8-41d8-97c3-9aabbdd0f5b4"/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="http://fhir.abda.de/eRezeptAbgabedaten/StructureDefinition/DAV-PKV-PR-ERP-AbgabedatenBundle"/&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/chargeitem.html#ChargeItem.supportingInformation">supportingInformation</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/chargeitem.html#ChargeItem.supportingInformation">supportingInformation</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="Bundle/200.000.000.000.000.01"/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle"/&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/chargeitem.html#ChargeItem.supportingInformation">supportingInformation</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/chargeitem.html#ChargeItem.supportingInformation">supportingInformation</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="Bundle/0428d416-149e-48a4-977c-394887b3d85c"/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle"/&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/chargeitem.html#ChargeItem.supportingInformation">supportingInformation</a>&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/chargeitem.html#ChargeItem">ChargeItem</a>&gt;
+    &lt;/resource&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.search">search</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.search.mode">mode</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="match"/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.search">search</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry">entry</a>&gt;
+&lt;/<a href="http://hl7.org/fhir/R4/bundle.html#Bundle">Bundle</a>&gt;</code></pre>
+
+		</div>
+	</div>
+</div>
 
 
 
@@ -385,7 +685,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 06:25+0000">2026-03-23</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 24, 2026 17:25+0000">2026-03-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

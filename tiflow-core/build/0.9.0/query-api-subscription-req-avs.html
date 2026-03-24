@@ -277,12 +277,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </div>
 <p>Diese Seite beschreibt Anforderungen an Clients zur Nutzung der <code class="language-plaintext highlighter-rouge">Subscription</code>-Query-Endpunkte.</p>
 
-<p>Um die Last am E-Rezept-Fachdienst zu kontrollieren, wurde festgelegt, dass ein AVS nicht öfter als alle 5 min nach neuen Nachrichten anfragen darf (A_21556). Die dadurch bis zu 5 min entstehende Verzögerung verlängert die Zeit, bis eine Apotheke auf die Nachricht des Versicherten reagieren kann. Aus dem Grund wird eine Funktionalität eingeführt, mit der AVS eine Notification erhalten, dass eine neue Nachricht für eine Telematik-ID vorliegt. Nach Erhalt einer Notification darf das AVS die neue Nachricht sofort abrufen.</p>
+<p>Um die Last am TI-Flow-Fachdienst zu kontrollieren, wurde festgelegt, dass ein AVS nicht öfter als alle 5 min nach neuen Nachrichten anfragen darf (A_21556). Die dadurch bis zu 5 min entstehende Verzögerung verlängert die Zeit, bis eine Apotheke auf die Nachricht des Versicherten reagieren kann. Aus dem Grund wird eine Funktionalität eingeführt, mit der AVS eine Notification erhalten, dass eine neue Nachricht für eine Telematik-ID vorliegt. Nach Erhalt einer Notification darf das AVS die neue Nachricht sofort abrufen.</p>
 
 <!-- ToDo: um KTR erweitern -->
 
 <!-- A_22426 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-267" title="PS abgebende LEI: Subscription für neue Communication - eine Subscription pro Telematik-ID" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-305" title="PS abgebende LEI: Subscription für neue Communication - eine Subscription pro Telematik-ID" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung" />
@@ -294,7 +294,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22372 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-268" title="PS abgebende LEI: Subscription für neue Communication" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-306" title="PS abgebende LEI: Subscription für neue Communication" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung" />
@@ -306,7 +306,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22373 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-269" title="PS abgebende LEI: Subscription für neue Communication - Subscription Ressource erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-307" title="PS abgebende LEI: Subscription für neue Communication - Subscription Ressource erstellen" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung" />
@@ -318,7 +318,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22374 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-270" title="PS abgebende LEI: Subscription für neue Communication - Subscription registrieren" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-308" title="PS abgebende LEI: Subscription für neue Communication - Subscription registrieren" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung" />
@@ -326,11 +326,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="CS_E-Rezept_KTR">
         <testProcedure id="Herstellererklärung" />
     </actor>
-     Das PS der abgebenden LEI MUSS im Anwendungsfall "Subscription für neue Communication" zum Registrieren im E-Rezept-Fachdienst die HTTP-Operation POST /v1/Subscription mit ACCESS_TOKEN im Authorization-Header ausführen.
+     Das PS der abgebenden LEI MUSS im Anwendungsfall "Subscription für neue Communication" zum Registrieren im TI-Flow-Fachdienst die HTTP-Operation POST /v1/Subscription mit ACCESS_TOKEN im Authorization-Header ausführen.
 </requirement>
 
 <!-- A_22375 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-271" title="PS abgebende LEI: Subscription für neue Communication - Subscription" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-309" title="PS abgebende LEI: Subscription für neue Communication - Subscription" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung" />
@@ -342,7 +342,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22379 -->
-<requirement conformance="MAY" key="IG-TIFLOW-CORE-272" title="PS abgebende LEI: Subscription für neue Communication - Wartezeit" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CORE-310" title="PS abgebende LEI: Subscription für neue Communication - Wartezeit" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung" />
@@ -394,7 +394,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 06:04+0000">2026-03-23</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 24, 2026 17:20+0000">2026-03-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

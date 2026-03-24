@@ -23,5 +23,5 @@ Das PS der abgebenden LEI MUSS beim Signieren des Abgabedatensatzes mit einer QE
 Das PS der abgebenden LEI MUSS die Signatur des Abgabedatensatzes mittels Einzelsignatur, Stapelsignatur und Komfortsignatur unterstützen.
 
 Das PS der abgebenden LEI MUSS beim Signieren eines Abgabedatensatzes mit einer non-QES vor dem Signieren prüfen, dass die für die nonQES verwendet SMC-B gültig ist.
-Hinweis: Die SMC-B ist gültig, wenn ein gültiger ACCESS_TOKEN des IDP-Dienstes für den Zugriff auf den E-Rezept-Fachdienst auf Basis dieser SMC-B vorliegt.
+Hinweis: Die SMC-B ist gültig, wenn ein gültiger ACCESS_TOKEN des IDP-Dienstes für den Zugriff auf den TI-Flow-Fachdienst auf Basis dieser SMC-B vorliegt.
 

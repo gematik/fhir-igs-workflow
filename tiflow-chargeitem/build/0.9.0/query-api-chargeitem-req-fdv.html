@@ -275,7 +275,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="abrechnungsinformationen-abrufen">Abrechnungsinformationen abrufen</h3>
 <h4 id="liste-von-abrechnungsinformationen-abrufen-get-chargeitem">Liste von Abrechnungsinformationen abrufen (GET /ChargeItem)</h4>
-<p>Mit diesem Anwendungsfall kann der Nutzer eine Liste aller Abrechnungsinformationen vom E-Rezept-Fachdienst abrufen, welche für den Versicherten bereitgestellt wurden.</p>
+<p>Mit diesem Anwendungsfall kann der Nutzer eine Liste aller Abrechnungsinformationen vom TI-Flow-Fachdienst abrufen, welche für den Versicherten bereitgestellt wurden.</p>
 
   <!-- A_24554 -->
 <requirement conformance="MAY" title="E-Rezept-FdV: optional: Liste Abrechnungsinformationen abrufen" version="0" key="IG-TIFLOW-CHRG-10">
@@ -292,7 +292,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-      Das E-Rezept-FdV MUSS im Anwendungsfall "Liste Abrechnungsinformationen abfragen" zum Abrufen der Information vom E-Rezept-Fachdienst die HTTP-Operation GET /ChargeItem mit 
+      Das E-Rezept-FdV MUSS im Anwendungsfall "Liste Abrechnungsinformationen abfragen" zum Abrufen der Information vom TI-Flow-Fachdienst die HTTP-Operation GET /ChargeItem mit 
       <ul>
         <li>ACCESS_TOKEN im Authorization-Header</li>
       </ul>
@@ -305,7 +305,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </ul>
 
 <h4 id="abrechnungsinformation-abrufen-get-chargeitemid">Abrechnungsinformation abrufen (GET /ChargeItem/&lt;id&gt;)</h4>
-<p>Mit diesem Anwendungsfall kann der Nutzer (Versicherter) die Abrechnungsinformation zu einem E-Rezept vom E-Rezept-Fachdienst herunterladen.</p>
+<p>Mit diesem Anwendungsfall kann der Nutzer (Versicherter) die Abrechnungsinformation zu einem E-Rezept vom TI-Flow-Fachdienst herunterladen.</p>
 
   <!-- A_24544 -->
 <requirement conformance="MAY" title="E-Rezept-FdV: optional: Abrechnungsinformation abrufen" version="0" key="IG-TIFLOW-CHRG-12">
@@ -322,7 +322,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-      Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation abfragen" zum Abrufen der Information zu einem einzelnen Datensatz vom E-Rezept-Fachdienst die HTTP-Operation GET /ChargeItem/&lt;id&gt;/ mit 
+      Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation abfragen" zum Abrufen der Information zu einem einzelnen Datensatz vom TI-Flow-Fachdienst die HTTP-Operation GET /ChargeItem/&lt;id&gt;/ mit 
       <ul>
         <li>ACCESS_TOKEN im Authorization-Header</li>
         <li>Prescription-ID in URL &lt;id&gt;</li>
@@ -333,7 +333,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>In der Response ist die ChargeItem Ressource und die zugehörigen Detaildatensätze Verordnungsdatensatz, PKV-Abgabedatensatz, Quittung und der AccessCode zum Ändern des PKV-Abgabedatensatzes enthalten.</p>
 
 <h3 id="abrechnungsinformation-markieren-patch-chargeid">Abrechnungsinformation markieren (PATCH /Charge/&lt;id&gt;)</h3>
-<p>Mit diesem Anwendungsfall kann der Nutzer (Versicherter) Markierungen zu seiner Abrechnungsinformation setzen. Diese werden auf dem E-Rezept-Fachdienst gespeichert.</p>
+<p>Mit diesem Anwendungsfall kann der Nutzer (Versicherter) Markierungen zu seiner Abrechnungsinformation setzen. Diese werden auf dem TI-Flow-Fachdienst gespeichert.</p>
 
   <!-- A_24553 -->
 <requirement conformance="MAY" title="E-Rezept-FdV: optional: Abrechnungsinformation markieren" version="0" key="IG-TIFLOW-CHRG-14">
@@ -364,7 +364,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-      Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation markieren" zum Speichern der Information im E-Rezept-Fachdienst die HTTP-Operation PATCH /ChargeItem/&lt;id&gt; mit 
+      Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation markieren" zum Speichern der Information im TI-Flow-Fachdienst die HTTP-Operation PATCH /ChargeItem/&lt;id&gt; mit 
         <ul>
             <li>ACCESS_TOKEN im Authorization-Header</li>
             <li>Prescription-ID in URL &lt;id&gt;</li>
@@ -408,7 +408,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Das E-Rezept-FdV muss im Rahmen der Bestätigung darauf hinweisen, dass mit dem Löschen der Abrechnungsinformation die Daten des Verordnungsdatensatzes, des PKV-Abgabedatensatzes und der Quittung gelöscht werden und somit ein Neueinstellen der Abrechnungsinformation durch die Apotheke ggf. nicht mehr möglich ist.</p>
 
-<p>Das E-Rezept-FdV kann es dem Nutzer ermöglichen, den Anwendungsfall zum lokalen Löschen für die zu löschende Abrechnungsinformation zusammen mit dem Löschen auf dem E-Rezept-Fachdienst auszuführen.</p>
+<p>Das E-Rezept-FdV kann es dem Nutzer ermöglichen, den Anwendungsfall zum lokalen Löschen für die zu löschende Abrechnungsinformation zusammen mit dem Löschen auf dem TI-Flow-Fachdienst auszuführen.</p>
 
   <!-- A_22183 -->
 <requirement conformance="SHALL" title="E-Rezept-FdV: Abrechnungsinformation löschen - Löschrequest" version="0" key="IG-TIFLOW-CHRG-20">
@@ -416,7 +416,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-      Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation löschen" die HTTP-Operation DELETE /ChargeItem/&lt;id&gt; des E-Rezept-Fachdienstes mit
+      Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation löschen" die HTTP-Operation DELETE /ChargeItem/&lt;id&gt; des TI-Flow-Fachdienstes mit
       <ul>
         <li>ACCESS_TOKEN im Authorization-Header</li>
         <li>Prescription-ID in URL &lt;id&gt;</li>
@@ -473,7 +473,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 06:25+0000">2026-03-23</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 24, 2026 17:25+0000">2026-03-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -56,7 +56,7 @@ Das Ausstellen von E-T-Rezepten für Stations- oder Praxisbedarf ist nicht zulä
 
 Versicherte können E-T-Rezepte über dieselben Wege wie E-Rezepte für andere apothekenpflichtige Arzneimittel einlösen (jedoch nicht im EU-Ausland und via Versand).
 
-E-T-Rezepte dürfen nur 6 Kalendertage nach dem Ausstellungstag beliefert werden (§ 3a Abs. 4 AMVV). Der E-Rezept-Fachdienst stellt sicher, dass die Rezepte nur innerhalb dieser Frist eingelöst werden. Die fristgerechte Abgabe des Arzneimittels ist durch die Apotheke sicherzustellen. Die Einhaltung der Gültigkeit wird durch den E-Rezept-Fachdienst sichergestellt. E-T-Rezepte mit dem Kennzeichen “Entlassrezept” dürfen (analog zu “normalen” Arzneimittel Rezepten und der AM-RL im Rahmen des Entlassmangements) nur 3 Werktage zulasten der GKV abgerechnet werden, danach aber bis zum Ende der Gültigkeit als Selbstzahlerrezept eingelöst werden.
+E-T-Rezepte dürfen nur 6 Kalendertage nach dem Ausstellungstag beliefert werden (§ 3a Abs. 4 AMVV). Der TI-Flow-Fachdienst stellt sicher, dass die Rezepte nur innerhalb dieser Frist eingelöst werden. Die fristgerechte Abgabe des Arzneimittels ist durch die Apotheke sicherzustellen. Die Einhaltung der Gültigkeit wird durch den TI-Flow-Fachdienst sichergestellt. E-T-Rezepte mit dem Kennzeichen “Entlassrezept” dürfen (analog zu “normalen” Arzneimittel Rezepten und der AM-RL im Rahmen des Entlassmangements) nur 3 Werktage zulasten der GKV abgerechnet werden, danach aber bis zum Ende der Gültigkeit als Selbstzahlerrezept eingelöst werden.
 
 Eine Belieferung von E-T-Rezepten via Versand ist ausgeschlossen (§17 Abs. 2b ApBetrO).
 
@@ -141,17 +141,17 @@ Der technische Ablauf zum Verschreiben eines Arzneimittels nach §3a AMVV auf ei
 
 Verordnungen von T-Rezepten können ausschließlich approbierte Ärzte mit einem gültigen elektronischen Heilberufsausweis vornehmen.
 
-Der Arzt oder medizinischer Fachangestellte (MFA) erstellt eine elektronische Verordnung für ein Arzneimittel nach §3a AMVV. Das Primärsystem der LEI reichert den Datensatz um die vom E-Rezept-Fachdienst abgerufene Rezept-ID an. Der Arzt prüft die Verordnung und führt eine qualifizierte elektronische Signatur (QES) der Verordnung durch.
+Der Arzt oder medizinischer Fachangestellte (MFA) erstellt eine elektronische Verordnung für ein Arzneimittel nach §3a AMVV. Das Primärsystem der LEI reichert den Datensatz um die vom TI-Flow-Fachdienst abgerufene Rezept-ID an. Der Arzt prüft die Verordnung und führt eine qualifizierte elektronische Signatur (QES) der Verordnung durch.
 
-Anschließend wird die signierte Verordnung (E-T-Rezept) an den E-Rezept-Fachdienst übermittelt, wo die formale Korrektheit der Verordnung gemäß dem Datenmodell und die QES validiert werden.
+Anschließend wird die signierte Verordnung (E-T-Rezept) an den TI-Flow-Fachdienst übermittelt, wo die formale Korrektheit der Verordnung gemäß dem Datenmodell und die QES validiert werden.
 
-Es wird ein neuer Flowtype eingeführt: 166. Dieser Workflow wird unabhängig vom Versicherungsverhältnis des Patienten genutzt. Der E-Rezept-Fachdienst stellt sicher, dass die mit diesem Flowtype erstellten Verordnungen den E-Rezept-Verordnungsprofilen, die Vorgaben für das T-Rezept enthalten, entsprechen.
+Es wird ein neuer Flowtype eingeführt: 166. Dieser Workflow wird unabhängig vom Versicherungsverhältnis des Patienten genutzt. Der TI-Flow-Fachdienst stellt sicher, dass die mit diesem Flowtype erstellten Verordnungen den E-Rezept-Verordnungsprofilen, die Vorgaben für das T-Rezept enthalten, entsprechen.
 
-Das E-T-Rezept liegt auf dem E-Rezept-Fachdienst zum Abruf durch den Versicherten und für durch den Versicherten autorisierte Apotheken bereit.
+Das E-T-Rezept liegt auf dem TI-Flow-Fachdienst zum Abruf durch den Versicherten und für durch den Versicherten autorisierte Apotheken bereit.
 
 ##### Technische Anwendungsfälle
 
-**Beteiligte Systeme:** PVS/KIS , E-Rezept-Fachdienst
+**Beteiligte Systeme:** PVS/KIS , TI-Flow-Fachdienst
 
 | |
 | :--- |
@@ -170,7 +170,7 @@ Eine Apotheke schließt den Vorgang zu einem E-T-Rezept analog zu E-Rezepten fü
 
 ##### Technische Anwendungsfälle
 
-**Beteiligte Systeme:** AVS, E-Rezept-Fachdienst
+**Beteiligte Systeme:** AVS, TI-Flow-Fachdienst
 
 | |
 | :--- |
@@ -188,5 +188,5 @@ Eine Apotheke schließt den Vorgang zu einem E-T-Rezept analog zu E-Rezepten fü
 
 Die Abrechnung der E-T-Rezepte erfolgt analog zu den E-Rezepten für Arzneimittel.
 
-Für Versicherte privater Krankenversicherungen besteht wie für Arzneimittel E-Rezepte die Möglichkeit, dass die Apotheke die Abrechnungsdaten digital über den E-Rezept-Fachdienst bereitstellen kann oder einen Ausdruck zur Einreichung beim Kostenträger erstellt.
+Für Versicherte privater Krankenversicherungen besteht wie für Arzneimittel E-Rezepte die Möglichkeit, dass die Apotheke die Abrechnungsdaten digital über den TI-Flow-Fachdienst bereitstellen kann oder einen Ausdruck zur Einreichung beim Kostenträger erstellt.
 

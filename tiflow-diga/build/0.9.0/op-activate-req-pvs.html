@@ -286,10 +286,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an Clientsysteme für die Nutzung der Operation <code class="language-plaintext highlighter-rouge">$activate</code>.</p>
 
   <!-- A_19273-01 -->
-<requirement conformance="SHALL" title="PS verordnende LEI: E-Rezept einstellen - Task auf Fachdienst aktivieren" version="0" key="IG-TIFLOW-CORE-133">
+<requirement conformance="SHALL" title="PS verordnende LEI: E-Rezept einstellen - Task auf Fachdienst aktivieren" version="0" key="IG-TIFLOW-CORE-150">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_verordnend">
-    <testProcedure id="Konformitätserklärung"></testProcedure>
+    <testProcedure id="Konformitätsbestätigung"></testProcedure>
   </actor>
   Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden einstellen" für das E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$activate mit
   <ul>
@@ -302,23 +302,23 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <p>Hinweis: Für den Fall, dass das Clientsystem beim Aufruf der Operation keinen Response erhält, soll der Aufruf wiederholt werden. Wenn im Response des zweiten Aufrufs ein
-Fehler 403 mit dem OperationOutcome “Task not in status draft but in status ready” zurückkommt, wurde der erste Aufruf bereits erfolgreich durch den E-Rezept-Fachdienst verarbeitet. Wenn eine Response mit dem Status 200 zurückkommt, war der zweite Aufruf erfolgreich.</p>
+Fehler 403 mit dem OperationOutcome “Task not in status draft but in status ready” zurückkommt, wurde der erste Aufruf bereits erfolgreich durch den TI-Flow-Fachdienst verarbeitet. Wenn eine Response mit dem Status 200 zurückkommt, war der zweite Aufruf erfolgreich.</p>
 
 <h4 id="patientenausdruck">Patientenausdruck</h4>
   <!-- A_22503 -->
-<requirement conformance="SHALL NOT" title="PS verordnende LEI: E-Rezept einstellen - kein Patientenausdruck bei Fehler beim Aktivieren" version="0" key="IG-TIFLOW-CORE-134">
+<requirement conformance="SHALL NOT" title="PS verordnende LEI: E-Rezept einstellen - kein Patientenausdruck bei Fehler beim Aktivieren" version="0" key="IG-TIFLOW-CORE-151">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Herstellererklärung"></testProcedure>
   </actor>
-  Das PS der verordnenden LEI DARF im Anwendungsfall "E-Rezept durch Verordnenden einstellen" NICHT einen Ausdruck für den Versicherten erstellen, wenn der E-Rezept-Fachdienst im Response der Operation POST /Task/&lt;id&gt;/$activate mit einem Fehler antwortet.
+  Das PS der verordnenden LEI DARF im Anwendungsfall "E-Rezept durch Verordnenden einstellen" NICHT einen Ausdruck für den Versicherten erstellen, wenn der TI-Flow-Fachdienst im Response der Operation POST /Task/&lt;id&gt;/$activate mit einem Fehler antwortet.
 </requirement>
 
 <p>Für den Patientenausdruck gelten vorrangig die Regelungen zum Ausdruck eines E-Rezepts aus den Bundesmantelverträgen [BMV] und [BMV-Z].
   <!-- ToDo: Können in den workflow-spezifischen Modulen weitere Hinweise geben? rx und diga haben unterschiedliche vorgaben durch die KBV --></p>
 
   <!-- A_22423 -->
-<requirement conformance="SHALL" title="PS verordnende LEI: E-Rezept einstellen - separater Patientenausdruck je Flowtype" version="0" key="IG-TIFLOW-CORE-372">
+<requirement conformance="SHALL" title="PS verordnende LEI: E-Rezept einstellen - separater Patientenausdruck je Flowtype" version="0" key="IG-TIFLOW-CORE-152">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Herstellererklärung"></testProcedure>
@@ -327,7 +327,7 @@ Fehler 403 mit dem OperationOutcome “Task not in status draft but in status re
 </requirement>
 
   <!-- A_19279 -->
-<requirement conformance="SHALL" title="PS verordnende LEI: E-Rezept einstellen - E-Rezept-Token erstellen" version="0" key="IG-TIFLOW-CORE-135">
+<requirement conformance="SHALL" title="PS verordnende LEI: E-Rezept einstellen - E-Rezept-Token erstellen" version="0" key="IG-TIFLOW-CORE-153">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Herstellererklärung"></testProcedure>
@@ -339,7 +339,7 @@ Fehler 403 mit dem OperationOutcome “Task not in status draft but in status re
   <!-- ToDo: Referenz korrigieren --></p>
 
   <!-- A_19280 -->
-<requirement conformance="SHALL" title="PS verordnende LEI: E-Rezept einstellen - Datamatrix-Code erstellen" version="0" key="IG-TIFLOW-CORE-136">
+<requirement conformance="SHALL" title="PS verordnende LEI: E-Rezept einstellen - Datamatrix-Code erstellen" version="0" key="IG-TIFLOW-CORE-154">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Herstellererklärung"></testProcedure>
@@ -394,7 +394,7 @@ Fehler 403 mit dem OperationOutcome “Task not in status draft but in status re
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 06:27+0000">2026-03-23</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 24, 2026 17:23+0000">2026-03-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

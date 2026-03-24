@@ -275,18 +275,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div>
 <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
-<p>Der E-Rezept-Fachdienst stellt eine http-Schnittstelle für den Aufruf durch Clientsysteme bereit. Das Ergebnis der Operation wird in der Verwendung von Http-Status-Codes [HTTP-STATUS-CODES] mitgeteilt. Die folgende Tabelle listet die vom E-Rezept-Fachdienst genutzten Http-Status-Codes auf.</p>
+<p>Der TI-Flow-Fachdienst stellt eine http-Schnittstelle für den Aufruf durch Clientsysteme bereit. Das Ergebnis der Operation wird in der Verwendung von Http-Status-Codes [HTTP-STATUS-CODES] mitgeteilt. Die folgende Tabelle listet die vom TI-Flow-Fachdienst genutzten Http-Status-Codes auf.</p>
 
 <!-- A_19514-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-302" title="E-Rezept-Fachdienst - Http-Status-Codes" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-340" title="TI-Flow-Fachdienst - Http-Status-Codes" version="0">
     <meta lockversion="false" />
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Herstellererklärung" />
     </actor>
-     Der E-Rezept-Fachdienst MUSS beim Aufruf einer Operation im Http-Response-Header einen HTTP-Status-Codes gemäß [RFC7231] zurückgeben.
+     Der TI-Flow-Fachdienst MUSS beim Aufruf einer Operation im Http-Response-Header einen HTTP-Status-Codes gemäß [RFC7231] zurückgeben.
 </requirement>
 
-<h1 id="http-status-codes--e-rezept-fachdienst">HTTP Status Codes – E-Rezept-Fachdienst</h1>
+<h1 id="http-status-codes--ti-flow-fachdienst">HTTP Status Codes – TI-Flow-Fachdienst</h1>
 
 <table>
   <thead>
@@ -308,7 +308,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td>201</td>
       <td>Neues Objekt wurde erfolgreich angelegt, in der Rückgabe ist das Objekt enthalten</td>
       <td><code class="language-plaintext highlighter-rouge">POST /Task/$create</code> <code class="language-plaintext highlighter-rouge">POST /Task/&lt;id&gt;/$dispense</code> <code class="language-plaintext highlighter-rouge">POST /$grant-eu-access-permission</code> <code class="language-plaintext highlighter-rouge">POST /Communication</code></td>
-      <td>Der E-Rezept-Fachdienst hat die Ressource in der angeforderten Operation erzeugt.</td>
+      <td>Der TI-Flow-Fachdienst hat die Ressource in der angeforderten Operation erzeugt.</td>
     </tr>
     <tr>
       <td>204</td>
@@ -320,7 +320,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td>400</td>
       <td>Bad Request, der Operationsaufruf enthält ungültige Daten</td>
       <td><code class="language-plaintext highlighter-rouge">POST /Task/$create</code> <code class="language-plaintext highlighter-rouge">POST /Task/&lt;id&gt;/$activate</code> <code class="language-plaintext highlighter-rouge">POST /Task/&lt;id&gt;/$accept</code> <code class="language-plaintext highlighter-rouge">POST /Task/&lt;id&gt;/$dispense</code> <code class="language-plaintext highlighter-rouge">POST /Task/&lt;id&gt;/$reject</code> <code class="language-plaintext highlighter-rouge">POST /Task/&lt;id&gt;/$close</code> <code class="language-plaintext highlighter-rouge">POST /Task/&lt;id&gt;/$abort</code> <code class="language-plaintext highlighter-rouge">POST /Task/&lt;id&gt;/$eu-close</code> <code class="language-plaintext highlighter-rouge">POST /$get-eu-prescriptions</code> <code class="language-plaintext highlighter-rouge">POST /$grant-eu-access-permission</code> <code class="language-plaintext highlighter-rouge">DELETE /$revoke-eu-access-permission</code> <code class="language-plaintext highlighter-rouge">GET /$read-eu-access-permission</code> <code class="language-plaintext highlighter-rouge">PATCH /Task/&lt;id&gt;</code> <code class="language-plaintext highlighter-rouge">POST /Communication</code> <code class="language-plaintext highlighter-rouge">GET /notifications/opt-in</code> <code class="language-plaintext highlighter-rouge">GET /pushers</code> <code class="language-plaintext highlighter-rouge">POST /pushers/set</code> <code class="language-plaintext highlighter-rouge">GET /channels</code> <code class="language-plaintext highlighter-rouge">GET /channels/{pushkey}</code> <code class="language-plaintext highlighter-rouge">POST /channels/{pushkey}</code> GET, POST, etc. für alle übrigen Operationen</td>
-      <td>In der aufgerufenen Operation werden vom Client Daten für die Verarbeitung erwartet. Entsprechen sie nicht dem erwarteten FHIR-Profil oder sind sie ungültig (bspw. Signatur), werden sie vom E-Rezept-Fachdienst zurückgewiesen.</td>
+      <td>In der aufgerufenen Operation werden vom Client Daten für die Verarbeitung erwartet. Entsprechen sie nicht dem erwarteten FHIR-Profil oder sind sie ungültig (bspw. Signatur), werden sie vom TI-Flow-Fachdienst zurückgewiesen.</td>
     </tr>
     <tr>
       <td>401</td>
@@ -350,7 +350,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td>408</td>
       <td>Request Timeout – die Anfrage konnte innerhalb der erwarteten Zeit nicht beantwortet werden</td>
       <td><code class="language-plaintext highlighter-rouge">GET /Task</code> <code class="language-plaintext highlighter-rouge">GET /Task/&lt;id&gt;</code> <code class="language-plaintext highlighter-rouge">GET /AuditEvent/</code> <code class="language-plaintext highlighter-rouge">GET /Communication</code> <code class="language-plaintext highlighter-rouge">GET /MedicationDispense</code> <code class="language-plaintext highlighter-rouge">POST /Task/$create</code> <code class="language-plaintext highlighter-rouge">POST /Task/&lt;id&gt;/$activate</code> <code class="language-plaintext highlighter-rouge">POST /Task/&lt;id&gt;/$accept</code> <code class="language-plaintext highlighter-rouge">POST /Task/&lt;id&gt;/$dispense</code> <code class="language-plaintext highlighter-rouge">POST /Task/&lt;id&gt;/$reject</code> <code class="language-plaintext highlighter-rouge">POST /Task/&lt;id&gt;/$close</code> <code class="language-plaintext highlighter-rouge">POST /Task/&lt;id&gt;/$abort</code> <code class="language-plaintext highlighter-rouge">POST /Task/&lt;id&gt;/$eu-close</code> <code class="language-plaintext highlighter-rouge">POST /$get-eu-prescriptions</code> <code class="language-plaintext highlighter-rouge">POST /$grant-eu-access-permission</code> <code class="language-plaintext highlighter-rouge">DELETE /$revoke-eu-access-permission</code> <code class="language-plaintext highlighter-rouge">GET /$read-eu-access-permission</code> <code class="language-plaintext highlighter-rouge">PATCH /Task/&lt;id&gt;</code> <code class="language-plaintext highlighter-rouge">POST /Communication</code> <code class="language-plaintext highlighter-rouge">GET /pushers</code> <code class="language-plaintext highlighter-rouge">POST /pushers/set</code> <code class="language-plaintext highlighter-rouge">GET /channels</code> <code class="language-plaintext highlighter-rouge">GET /channels/{pushkey}</code> <code class="language-plaintext highlighter-rouge">POST /channels/{pushkey}</code></td>
-      <td>Der E-Rezept-Fachdienst ist überlastet und kann die Anfrage innerhalb der Wartezeit des Clients (PVS, AVS, FdV) nicht beantworten.</td>
+      <td>Der TI-Flow-Fachdienst ist überlastet und kann die Anfrage innerhalb der Wartezeit des Clients (PVS, AVS, FdV) nicht beantworten.</td>
     </tr>
     <tr>
       <td>409</td>
@@ -379,15 +379,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </tbody>
 </table>
 
-<div><figcaption><strong>Tabelle: </strong>Übersicht HTTP-Statuscodes E-Rezept-Fachdienst</figcaption></div>
+<div><figcaption><strong>Tabelle: </strong>Übersicht HTTP-Statuscodes TI-Flow-Fachdienst</figcaption></div>
 
 <!-- A_22103 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-303" title="E-Rezept-Fachdienst - Fehlerdetails in OperationOutcome" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-341" title="TI-Flow-Fachdienst - Fehlerdetails in OperationOutcome" version="0">
     <meta lockversion="false" />
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten" />
     </actor>
-     Der E-Rezept-Fachdienst MUSS im Fehlerfall (http-Statuscodes &gt;= 400) Hinweise zur Fehlerursache 
+     Der TI-Flow-Fachdienst MUSS im Fehlerfall (http-Statuscodes &gt;= 400) Hinweise zur Fehlerursache 
      
      <ul>
         <li>im der inneren http-Response-Body als FHIR-Ressource OperationOutcome</li>
@@ -442,7 +442,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 06:04+0000">2026-03-23</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 24, 2026 17:20+0000">2026-03-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

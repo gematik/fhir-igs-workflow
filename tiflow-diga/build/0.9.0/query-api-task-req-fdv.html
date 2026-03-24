@@ -285,8 +285,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der <code class="language-plaintext highlighter-rouge">Task</code>-Query-Endpunkte.</p>
 
+<h4 id="liste-der-verordnungen-des-nutzers-abrufen">Liste der Verordnungen des Nutzers abrufen</h4>
   <!-- A_19347-01 -->
-<requirement conformance="SHALL" title="E-Rezept-FdV: E-Rezepte abrufen - Liste E-Rezepte abrufen" version="0" key="IG-TIFLOW-CORE-178">
+<requirement conformance="SHALL" title="E-Rezept-FdV: E-Rezepte abrufen - Liste E-Rezepte abrufen" version="0" key="IG-TIFLOW-CORE-197">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"></testProcedure>
@@ -299,49 +300,27 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_19348-01 -->
-<requirement conformance="MAY" title="E-Rezept-FdV: E-Rezept abrufen - E-Rezepte lokal speichern" version="0" key="IG-TIFLOW-CORE-179">
+<requirement conformance="MAY" title="E-Rezept-FdV: E-Rezept abrufen - E-Rezepte lokal speichern" version="0" key="IG-TIFLOW-CORE-198">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-     Das E-Rezept-FdV KANN es dem Versicherten ermöglichen, die vom E-Rezept-Fachdienst heruntergeladenen E-Rezepte im lokalen Speicher persistent abzulegen.
+     Das E-Rezept-FdV KANN es dem Versicherten ermöglichen, die vom TI-Flow-Fachdienst heruntergeladenen E-Rezepte im lokalen Speicher persistent abzulegen.
 </requirement>
 
-<h4 id="alternativer-ablauf-1-ein-spezifisches-e-rezept-durch-nutzer-abrufen">Alternativer Ablauf 1: Ein spezifisches E-Rezept durch Nutzer abrufen</h4>
-<p>Die Alternative 1 wird genutzt, wenn nur die Informationen zu einem E-Rezept vom E-Rezept-Fachdienst heruntergeladen werden sollen, bspw. um zu prüfen, ob sich der Status geändert hat. Dafür muss die Task-ID dieses Rezepts im E-Rezept-FdV bekannt sein.</p>
+<h4 id="eine-spezifische-verordnung-durch-nutzer-abrufen">Eine spezifische Verordnung durch Nutzer abrufen</h4>
+<p>Der Aufruf wird genutzt, wenn die Informationen zu einer spezifischen Verordnung vom TI-Flow-Fachdienst heruntergeladen werden sollen, bspw. um zu prüfen, ob sich der Status geändert hat. Dafür muss die Task-ID dieser Verordnung im E-Rezept-FdV bekannt sein.</p>
 
   <!-- A_19350-01 -->
-<requirement conformance="SHALL" title="E-Rezept-FdV: E-Rezepte abrufen -Spezifisches E-Rezept herunterladen" version="0" key="IG-TIFLOW-CORE-180">
+<requirement conformance="SHALL" title="E-Rezept-FdV: E-Rezepte abrufen - Spezifisches E-Rezept herunterladen" version="0" key="IG-TIFLOW-CORE-199">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezepte abrufen" zum Herunterladen eines spezifischen E-Rezepts des Nutzers die HTTP-Operation GET /Task/&lt;id&gt; mit 
+    Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezepte abrufen" zum Herunterladen einer spezifischen Verordnung des Nutzers die HTTP-Operation GET /Task/&lt;id&gt; mit 
     <ul>
-    <li>ACCESS_TOKEN im Authorization-Header</li>
-    <li>Task-ID in URL &lt;id&gt; </li>
-    </ul>
-    ausführen.
-</requirement>
-
-<p>Für weitere Informationen siehe Operation “Ein einzelnes E-Rezept abrufen” aus der API-Schnittstelle [E-Rezept API Dokumentation].</p>
-
-<p>Der Response beinhaltet die Task Ressource des E-Rezepts.</p>
-
-<h4 id="alternativer-ablauf-2-ein-spezifisches-e-rezept-mit-accesscode-abrufen">Alternativer Ablauf 2: Ein spezifisches E-Rezept mit AccessCode abrufen</h4>
-<p>Die Alternative 2 wird genutzt, wenn der Nutzer als Vertreter eines Versicherten ein E-Rezept vom E-Rezept-Fachdienst herunterladen möchte. Dafür müssen die Task-ID und der AccessCode dieses Rezepts im E-Rezept-FdV bekannt sein. Die Informationen Task-ID und AccessCode werden im E-Rezept-Token übermittelt.</p>
-
-  <!-- A_19351-01 -->
-<requirement conformance="MAY" title="E-Rezept-FdV: E-Rezepte abrufen - E-Rezept mit AccessCode herunterladen" version="0" key="IG-TIFLOW-CORE-181">
-    <meta lockversion="false"/>
-    <actor name="eRp_FdV">
-        <testProcedure id="Produkttest"></testProcedure>
-    </actor>
-    Das E-Rezept-FdV KANN im Anwendungsfall "E-Rezepte abrufen" zum Herunterladen eines E-Rezepts als Vertreter die HTTP-Operation GET /Task/&lt;id&gt; mit 
-    <ul>
-        <li>ACCESS_TOKEN im http-Header</li>
+        <li>ACCESS_TOKEN im Authorization-Header</li>
         <li>Task-ID in URL &lt;id&gt; </li>
-        <li>AccessCode im http-Header </li>
     </ul>
     ausführen.
 </requirement>
@@ -393,7 +372,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 06:27+0000">2026-03-23</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 24, 2026 17:23+0000">2026-03-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -16,7 +16,7 @@ Profile: [GEM ERP PR Communication DiGA](StructureDefinition-GEM-ERP-PR-Communic
 
 **status**: Unknown
 
-**sent**: 2026-02-06 15:29:00+0000
+**sent**: 2026-07-01 15:29:00+0000
 
 **recipient**: Identifier: NamingSystemKVID/X234567890
 
@@ -38,13 +38,13 @@ Profile: [GEM ERP PR Communication DiGA](StructureDefinition-GEM-ERP-PR-Communic
   "resourceType" : "Communication",
   "id" : "140f716f-f649-44fe-9a4e-157eb3c8adf3",
   "meta" : {
-    "profile" : ["https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM-ERP-PR-Communication-DiGA"]
+    "profile" : ["https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM_ERP_PR_Communication_DiGA"]
   },
   "basedOn" : [{
     "reference" : "Task/162.000.000.000.000.01"
   }],
   "status" : "unknown",
-  "sent" : "2026-02-06T15:29:00.434+00:00",
+  "sent" : "2026-07-01T15:29:00.434+00:00",
   "recipient" : [{
     "identifier" : {
       "system" : "http://fhir.de/sid/gkv/kvid-10",

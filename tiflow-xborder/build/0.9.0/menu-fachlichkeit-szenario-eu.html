@@ -291,7 +291,7 @@ noch nicht gültige oder abgelaufene E-Rezepte.
 Zusätzlich bestehen Einschränkungen, wenn das Mapping aus den Verordnungsdaten in das geforderte europäische Datenformat nicht möglich ist.</li>
 </ul>
 
-<p>Der E-Rezept-Fachdienst prüft bei Operationsaufrufen, ob die E-Rezepte die folgenden Kriterien erfüllen:</p>
+<p>Der TI-Flow-Fachdienst prüft bei Operationsaufrufen, ob die E-Rezepte die folgenden Kriterien erfüllen:</p>
 
 <ul>
   <li>Workflow <strong>160</strong> oder <strong>200</strong> (Verordnung für apothekenpflichtige Arzneimittel, keine Workflowsteuerung durch den Leistungserbringer),</li>
@@ -310,19 +310,19 @@ Zusätzlich bestehen Einschränkungen, wenn das Mapping aus den Verordnungsdaten
 
 <p>Die Authentisierung des LE-EU erfolgt im Land B (Ausland). Hierbei wird dem LE-EU eine Rolle zugeordnet. Bei der Übermittlung des Requests aus dem Land B zum NCPeH-FD wird die Rollen-Information und ggf. eine Permission-Information übermittelt. Der NCPeH-FD prüft die Permission für den Zugriff auf die Anwendung E-Rezept. Falls keine Permission übermittelt wurde, führt der NCPeH-FD eine Rollenprüfung durch.</p>
 
-<p>Der E-Rezept-Fachdienst führt keine Permission- oder Rollenprüfung durch.</p>
+<p>Der TI-Flow-Fachdienst führt keine Permission- oder Rollenprüfung durch.</p>
 
 <h5 id="autorisierung-des-le-eu-für-zugriff-auf-daten-eines-versicherten">Autorisierung des LE-EU für Zugriff auf Daten eines Versicherten</h5>
 
 <p>Ein Versicherter muss den Zugriff eines LE-EU auf seine E-Rezepte autorisieren. Dafür verwendet der Versicherte einen länderspezifischen zufälligen 6-stelligen alpha-nummerischen Zugriffscode (a-z, A-Z, 0-9) und übermittelt diesen zusammen mit seiner Versicherten-ID an den LE-EU.</p>
 
-<p>Versicherten-ID und Zugriffscode bilden zusammen die Information zur Zugriffsberechtigung und dienen der Autorisierung des LE-EU beim Operationsaufruf am E-Rezept-Fachdienst.</p>
+<p>Versicherten-ID und Zugriffscode bilden zusammen die Information zur Zugriffsberechtigung und dienen der Autorisierung des LE-EU beim Operationsaufruf am TI-Flow-Fachdienst.</p>
 
-<p>Der Zugriffscode wird dezentral im E-Rezept-Frontend des Versicherten (FdV) erzeugt. Das E-Rezept-FdV registriert den Zugriffscode am E-Rezept-Fachdienst.</p>
+<p>Der Zugriffscode wird dezentral im E-Rezept-Frontend des Versicherten (FdV) erzeugt. Das E-Rezept-FdV registriert den Zugriffscode am TI-Flow-Fachdienst.</p>
 
-<p>Ein Zugriffscode kann nur am E-Rezept-Fachdienst registriert werden, wenn eine “Einwilligung zum Einlösen im EU-Ausland” des Versicherten vorliegt.</p>
+<p>Ein Zugriffscode kann nur am TI-Flow-Fachdienst registriert werden, wenn eine “Einwilligung zum Einlösen im EU-Ausland” des Versicherten vorliegt.</p>
 
-<p>Bei der Registrierung des Zugriffscodes am E-Rezept-Fachdienst wird geprüft, ob einlösbare Rezepte im E-Rezept-Fachdienst für die KVNR des Versicherten vorliegen. Falls keine einlösbaren E-Rezepte vorliegen, wird der Zugriffscode nicht registriert und der Versicherte erhält eine entsprechende Meldung in seinem E-Rezept-FdV.</p>
+<p>Bei der Registrierung des Zugriffscodes am TI-Flow-Fachdienst wird geprüft, ob einlösbare Rezepte im TI-Flow-Fachdienst für die KVNR des Versicherten vorliegen. Falls keine einlösbaren E-Rezepte vorliegen, wird der Zugriffscode nicht registriert und der Versicherte erhält eine entsprechende Meldung in seinem E-Rezept-FdV.</p>
 
 <p>Ein Zugriffscode ist eine Stunde gültig.</p>
 
@@ -332,7 +332,7 @@ Zusätzlich bestehen Einschränkungen, wenn das Mapping aus den Verordnungsdaten
 
 <p>Der registrierte Zugriffscode wird dem Nutzer im E-Rezept-FdV zusammen mit dem Gültigkeitszeitraum angezeigt, damit der Nutzer den Zugriffscode der LEI-EU übermitteln kann.</p>
 
-<p>Nach Ablauf der Gültigkeit löscht der E-Rezept-Fachdienst den Zugriffscode.</p>
+<p>Nach Ablauf der Gültigkeit löscht der TI-Flow-Fachdienst den Zugriffscode.</p>
 
 <p>Es gibt keine Möglichkeit in der Rolle Vertreter den Zugriff des LE-EU auf die Daten des Versicherten zu autorisieren.</p>
 
@@ -340,7 +340,7 @@ Zusätzlich bestehen Einschränkungen, wenn das Mapping aus den Verordnungsdaten
 
 <h4 id="versicherteninteraktion">Versicherteninteraktion</h4>
 
-<p><strong>Beteiligte Systeme:</strong> E-Rezept-Fachdienst, E-Rezept-FdV</p>
+<p><strong>Beteiligte Systeme:</strong> TI-Flow-Fachdienst, E-Rezept-FdV</p>
 
 <figure style="width: 45em;">
   <table>
@@ -388,7 +388,7 @@ Zusätzlich bestehen Einschränkungen, wenn das Mapping aus den Verordnungsdaten
 
 <h4 id="interaktion-ncpeh">Interaktion NCPeH</h4>
 
-<p><strong>Beteiligte Systeme:</strong> E-Rezept-Fachdienst, NCPeH</p>
+<p><strong>Beteiligte Systeme:</strong> TI-Flow-Fachdienst, NCPeH</p>
 
 <figure style="width: 45em;">
   <table>
@@ -460,7 +460,7 @@ Zusätzlich bestehen Einschränkungen, wenn das Mapping aus den Verordnungsdaten
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.xborder#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 06:49+0000">2026-03-23</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.xborder#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 24, 2026 17:27+0000">2026-03-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

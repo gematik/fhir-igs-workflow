@@ -16,21 +16,25 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$abort` gesendet.
 
 ### Anforderungen an Schnittstelle
 
-* [Server-Anforderungen zu `$abort`](./op-abort-fd-requirements.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+* [Server-Anforderungen zu `$abort`](./op-abort-fd-requirements.md): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
 * [PVS-Anforderungen zu `$abort`](./op-abort-req-pvs.md): Anforderungen an ein Praxisverwaltungssystem zur Nutzung der Schnittstelle.
 * [AVS-Anforderungen zu `$abort`](./op-abort-req-avs.md): Anforderungen an ein Praxisverwaltungssystem zur Nutzung der Schnittstelle.
 * [FdV-Anforderungen zu `$abort`](./op-abort-req-avs.md): Anforderungen an ein E-Rezept-FdV zur Nutzung der Schnittstelle.
 
 ### API Beschreibung
 
-Die API-Beschreibung für den Aufruf der Operation findet sich auf:
+```
+server
+```
 
-* [API-ERP: E-Rezept löschen verordnend](https://github.com/gematik/api-erp/blob/master/docs/erp_bereitstellen.adoc#ein-e-rezept-l%C3%B6schen)
-* [API-ERP: E-Rezept löschen abgebend](https://github.com/gematik/api-erp/blob/master/docs/erp_abrufen.adoc#e-rezept-l%C3%B6schen)
-* [API-ERP: E-Rezept löschen Versicherter](https://github.com/gematik/api-erp/blob/master/docs/erp_versicherte.adoc#ein-e-rezept-l%C3%B6schen)
+```
 
-### Hinweis
+      {"resourceType":"OperationDefinition","id":"AbortOperation","url":"https://gematik.de/fhir/erp/OperationDefinition/AbortOperationDefinition","version":"0.9.0","name":"Abort","status":"draft","kind":"operation","date":"2025-09-25","publisher":"gematik GmbH","contact":[{"name":"gematik GmbH","telecom":[{"system":"url","value":"https://gematik.de"},{"system":"email","value":"erp-umsetzung@gematik.de"}]}],"description":"Diese Operation bricht den Workflow eines E-Rezepts ab und löscht alle Daten, die mit dieser Aufgabe zusammenhängen.","jurisdiction":[{"coding":[{"system":"urn:iso:std:iso:3166","code":"DE","display":"Germany"}]}],"affectsState":true,"code":"abort","resource":["Task"],"system":false,"type":false,"instance":true,"parameter":[{"name":"ac","use":"in","min":0,"max":"1","documentation":"[Nur von Patienten und Anbietern (Ärzten/Zahnärzten) zu verwenden] Der secret Parameter, der es Benutzern ermöglicht, exklusiv über die URL und den Parameter ?ac auf die Aufgabe zuzugreifen.","type":"string"},{"name":"secret","use":"in","min":0,"max":"1","documentation":"[Nur von der Apotheke zu verwenden] Der secret Parameter, der es einer Apotheke ermöglicht, exklusiv über die URL und den Parameter ?secret auf die Aufgabe zuzugreifen.","type":"string"}]}
+    
+```
+
+### Hinweise
 
 * Nach erfolgreichem `$abort` sind lokale Einlöseinformationen (`secret`, Token-Bezug) im Client zu bereinigen.
-* Fehlercodes und OperationOutcome-Hinweise sollen dem Nutzer mit klarem Bezug zum Task-Status angezeigt werden.
+* Im Ergebnis der `$abort`-Operation wird der referenzierte Task gelöscht. Dementsprechend werden keine Daten an den aufrufenden Client zurückgegeben.
 

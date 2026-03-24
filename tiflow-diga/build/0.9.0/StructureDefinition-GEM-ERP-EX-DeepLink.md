@@ -12,8 +12,8 @@ Version 0.9.0 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_EX_DeepLink | *Version*:0.9.0 |
-| Draft as of 2026-02-06 | *Computable Name*:GEM_ERP_EX_DeepLink |
+| *Official URL*:https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM_ERP_EX_DeepLink | *Version*:0.9.0 |
+| Draft as of 2025-09-25 | *Computable Name*:GEM_ERP_EX_DeepLink |
 
 Enthält Informationen zum Deep Link für eine DiGA.
 
@@ -50,12 +50,12 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-EX-DeepLink.
 {
   "resourceType" : "StructureDefinition",
   "id" : "GEM-ERP-EX-DeepLink",
-  "url" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_EX_DeepLink",
+  "url" : "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM_ERP_EX_DeepLink",
   "version" : "0.9.0",
   "name" : "GEM_ERP_EX_DeepLink",
   "title" : "GEM ERP EX DeepLink",
   "status" : "draft",
-  "date" : "2026-02-06",
+  "date" : "2025-09-25",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -105,7 +105,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-EX-DeepLink.
     {
       "id" : "Extension.url",
       "path" : "Extension.url",
-      "fixedUri" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_EX_DeepLink"
+      "fixedUri" : "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM_ERP_EX_DeepLink"
     },
     {
       "id" : "Extension.value[x]",

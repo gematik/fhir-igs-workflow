@@ -29,10 +29,10 @@ Das E-Rezept-FdV MUSS im Anwendungsfall "Zugriffsberechtigung erteilen" es dem N
 Das E-Rezept-FdV MUSS im Anwendungsfall "Zugriffsberechtigung" einen eigens generierten Zugriffscode als Zufallswert erzeugen.
 Das Format für den Zugriffscode ist in [gemSpec_DM_eRp#A_27097-*] beschrieben. Für jede weitere Erteilung einer Zugriffsberechtigung für ePrescription/Dispensation Szenario Land A muss ein neuer Zugriffscode erzeugt werden.
 
-Das E-Rezept-FdV MUSS im Anwendungsfall "Zugriffsberechtigung erteilen" zum Speichern der Information am E-Rezept-Fachdienst die HTTP-Operation POST /$grant-eu-access-permission mit:
+Das E-Rezept-FdV MUSS im Anwendungsfall "Zugriffsberechtigung erteilen" zum Speichern der Information am TI-Flow-Fachdienst die HTTP-Operation POST /$grant-eu-access-permission mit:
 * ACCESS_TOKEN im Authorization-Header
 * Organization.extension:ncpehCountryEx.valueCodeableConcept.coding.code des vom Nutzer ausgewählten Landes in Parameters.parameter:countryCode
 * erzeugter Zugriffscode in Parameters.parameter:accessCode
 ausführen.
-Im Response übermittelt der E-Rezept-Fachdienst in Parameters.parameter:validUntil die Gültigkeitsdauer der Zugriffsberechtigung.
+Im Response übermittelt der TI-Flow-Fachdienst in Parameters.parameter:validUntil die Gültigkeitsdauer der Zugriffsberechtigung.
 

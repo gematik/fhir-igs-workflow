@@ -12,17 +12,17 @@ Version 0.9.0 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow/xborder/ImplementationGuide/de.gematik.tiflow.xborder | *Version*:0.9.0 |
-| Draft as of 2026-03-23 | *Computable Name*:gemIG_TIFlow_xborder |
+| Draft as of 2026-03-26 | *Computable Name*:gemIG_TIFlow_xborder |
 
 ### EU Zugriff E-Rezept
 
-Dieser Implementation Guide beschreibt das Feature zur Übermittlung von Verordnungen für die Einlösung im EU-Ausland. Im Fokus stehen die Prozessparameter und Ergänzungen an den Schnittstellen des E-Rezept-Fachdienstes sowie die Use Cases für Versicherte zur Verwaltung von Einwilligung und Zugriff.
+Dieser Implementation Guide beschreibt das Feature zur Übermittlung von Verordnungen für die Einlösung im EU-Ausland. Im Fokus stehen die Prozessparameter und Ergänzungen an den Schnittstellen des TI-Flow-Fachdienstes sowie die Use Cases für Versicherte zur Verwaltung von Einwilligung und Zugriff.
 
 Die Inhalte basieren auf der Spezifikation “EU Zugriff E-Rezept”, Version 1.0.1 (Stand: 10.04.2025). [gemspec eRp EU 1.0.1](https://gemspec.gematik.de/docs/gemF/gemF_eRp_EU/gemF_eRp_EU_V1.0.1/)
 
 ### Zweck und Geltungsbereich
 
-* Ergänzungen zu den Schnittstellen des E-Rezept-Fachdienstes
+* Ergänzungen zu den Schnittstellen des TI-Flow-Fachdienstes
 * Beschreibung der fachlichen und technischen Use Cases
 * Anforderungen für die beteiligten Produkttypen
 
@@ -35,9 +35,9 @@ Die Inhalte basieren auf der Spezifikation “EU Zugriff E-Rezept”, Version 1.
 
 ### Anforderungen zur Umsetzung des IGs
 
-Der E-Rezept-Fachdienst und dessen Client MÜSSEN zur Umsetzung des Einlösens von E-Rezepten im EU Ausland den Implementation Guide "EU Zugriff E-Rezept" umsetzen.
+Der TI-Flow-Fachdienst und dessen Client MÜSSEN zur Umsetzung des Einlösens von E-Rezepten im EU Ausland den Implementation Guide "EU Zugriff E-Rezept" umsetzen.
 
-Der E-Rezept-Fachdienst und dessen Client MÜSSEN zur Umsetzung des Implementation Guides "EU Zugriff E-Rezept" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
+Der TI-Flow-Fachdienst und dessen Client MÜSSEN zur Umsetzung des Implementation Guides "EU Zugriff E-Rezept" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
 ### Wie dieser IG zu lesen ist
 
 Die Kapitel folgen der Struktur Fachlichkeit, Technische Umsetzung und Schnittstellen. Szenarien und Anwendungsfälle verweisen auf die zugehörigen technischen Kapitel.
@@ -78,7 +78,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "gemIG_TIFlow_xborder",
   "title" : "TIFlow - Grenzüberschreitender Datenaustausch",
   "status" : "draft",
-  "date" : "2026-03-23T06:49:02+00:00",
+  "date" : "2026-03-26",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -160,7 +160,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       },
       {
         "url" : "value",
-        "valueString" : "2025+"
+        "valueString" : "2026+"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -450,7 +450,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       },
       {
         "url" : "value",
-        "valueString" : "2025+"
+        "valueString" : "2026+"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -792,6 +792,18 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/erp-fachdienst-server-erpeu"
+      },
+      "name" : "ERPEU CapabilityStatement fuer den E-Rezept-Fachdienst",
+      "description" : "CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
@@ -812,6 +824,18 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "name" : "EUCloseOperation",
       "description" : "The operation $close finishes the e-prescription workflow and creates a receipt. The Output of this operation is a signed Bundle, to be used for further financial processing. The status of the Task then changes into #completed",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationOutcome"
+      }],
+      "reference" : {
+        "reference" : "OperationOutcome/ExampleERPEUOperationOutcomeError"
+      },
+      "name" : "Example error response for ERP-EU operations",
+      "description" : "Representative validation error for EU access operation input",
+      "exampleBoolean" : true
     },
     {
       "extension" : [{

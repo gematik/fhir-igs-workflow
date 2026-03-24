@@ -12,8 +12,8 @@ Version 0.9.0 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_EX_RedeemCode | *Version*:0.9.0 |
-| Draft as of 2026-02-06 | *Computable Name*:GEM_ERP_EX_RedeemCode |
+| *Official URL*:https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM_ERP_EX_RedeemCode | *Version*:0.9.0 |
+| Draft as of 2025-09-25 | *Computable Name*:GEM_ERP_EX_RedeemCode |
 
 Gibt den Einlösecode für eine DiGA an.
 
@@ -28,7 +28,7 @@ This extension may be used on the following element(s):
 **Usages:**
 
 * Use this Extension: [GEM ERP PR MedicationDispense DiGA](StructureDefinition-GEM-ERP-PR-MedicationDispense-DiGA.md)
-* Examples for this Extension: [MedicationDispense/Example-MedicationDispense-DiGA-DeepLink](MedicationDispense-Example-MedicationDispense-DiGA-DeepLink.md), [MedicationDispense/Example-MedicationDispense-DiGA-Name-And-PZN](MedicationDispense-Example-MedicationDispense-DiGA-Name-And-PZN.md) and [Parameters/ExampleCloseInputParametersDiGA](Parameters-ExampleCloseInputParametersDiGA.md)
+* Examples for this Extension: [Bundle/ExampleDiGAMedicationDispenseSearchset](Bundle-ExampleDiGAMedicationDispenseSearchset.md), [MedicationDispense/Example-MedicationDispense-DiGA-DeepLink](MedicationDispense-Example-MedicationDispense-DiGA-DeepLink.md), [MedicationDispense/Example-MedicationDispense-DiGA-Name-And-PZN](MedicationDispense-Example-MedicationDispense-DiGA-Name-And-PZN.md) and [Parameters/ExampleCloseInputParametersDiGA](Parameters-ExampleCloseInputParametersDiGA.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow.diga|current/StructureDefinition/GEM-ERP-EX-RedeemCode)
 
@@ -50,12 +50,12 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-EX-RedeemCod
 {
   "resourceType" : "StructureDefinition",
   "id" : "GEM-ERP-EX-RedeemCode",
-  "url" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_EX_RedeemCode",
+  "url" : "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM_ERP_EX_RedeemCode",
   "version" : "0.9.0",
   "name" : "GEM_ERP_EX_RedeemCode",
   "title" : "GEM ERP EX RedeemCode",
   "status" : "draft",
-  "date" : "2026-02-06",
+  "date" : "2025-09-25",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -104,7 +104,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-EX-RedeemCod
     {
       "id" : "Extension.url",
       "path" : "Extension.url",
-      "fixedUri" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_EX_RedeemCode"
+      "fixedUri" : "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM_ERP_EX_RedeemCode"
     },
     {
       "id" : "Extension.value[x]",

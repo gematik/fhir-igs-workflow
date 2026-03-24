@@ -10,7 +10,7 @@
   "name" : "gemIG_TIFlow_xborder",
   "title" : "TIFlow - Grenzüberschreitender Datenaustausch",
   "status" : "draft",
-  "date" : "2026-03-23T06:49:02+00:00",
+  "date" : "2026-03-26",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -92,7 +92,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "2025+"
+        "valueString" : "2026+"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -382,7 +382,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "2025+"
+        "valueString" : "2026+"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -724,6 +724,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/erp-fachdienst-server-erpeu"
+      },
+      "name" : "ERPEU CapabilityStatement fuer den E-Rezept-Fachdienst",
+      "description" : "CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
@@ -744,6 +756,18 @@
       "name" : "EUCloseOperation",
       "description" : "The operation $close finishes the e-prescription workflow and creates a receipt. The Output of this operation is a signed Bundle, to be used for further financial processing. The status of the Task then changes into #completed",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationOutcome"
+      }],
+      "reference" : {
+        "reference" : "OperationOutcome/ExampleERPEUOperationOutcomeError"
+      },
+      "name" : "Example error response for ERP-EU operations",
+      "description" : "Representative validation error for EU access operation input",
+      "exampleBoolean" : true
     },
     {
       "extension" : [{

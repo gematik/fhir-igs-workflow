@@ -9,7 +9,7 @@ Version 0.9.0 - ci-build
 
 ## Operation API
 
-Die folgenden Operation APIs stellt der E-Rezept-Fachdienst zur verfügung
+Die folgenden Operation APIs stellt der TI-Flow-Fachdienst zur verfügung
 
 * Primärsystem: [Operation API: E-Rezept erstellen](./op-create.md)
 * Primärsystem: [Operation API: E-Rezept aktivieren](./op-activate.md)

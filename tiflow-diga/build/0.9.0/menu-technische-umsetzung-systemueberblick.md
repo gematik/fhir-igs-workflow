@@ -15,7 +15,7 @@ Die Verordnung von DiGAs setzt auf der bestehenden E-Rezept-Infrastruktur auf.
 
 Psychotherapeuten sind eine neue Benutzergruppe. Ihr Primarsystem nutzt die bestehende Anbindung an das zentrale Netz der TI.
 
-Gesetzliche Krankenkassen sind eine neue Benutzergruppe und greifen über einen Basis-Consumer auf den IDP-Dienst und den E-Rezept-Fachdienst zu.
+Gesetzliche Krankenkassen sind eine neue Benutzergruppe und greifen über einen Basis-Consumer auf den IDP-Dienst und den TI-Flow-Fachdienst zu.
 
 **Abbildung: **Systemüberblick
 

@@ -13,14 +13,14 @@ Version 0.9.0 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow/bfarm/StructureDefinition/erp-tprescription-carbon-copy-logical | *Version*:0.9.0 |
-| Draft as of 2026-03-23 | *Computable Name*:ERP_TPrescription_CarbonCopy_Logical |
+| Draft as of 2026-03-24 | *Computable Name*:ERP_TPrescription_CarbonCopy_Logical |
 
  
 Logical Model zur Abbildung der im digitalen Durchschlag E-T-Rezept erforderlichen fachlichen Informationen. 
 
 # Logisches Fachmodell
 
-Diese Ressource bildet die fachlichen Informationen ab, die vom E-Rezept-Fachdienst an das BfArM T-Register übertragen werden.
+Diese Ressource bildet die fachlichen Informationen ab, die vom TI-Flow-Fachdienst an das BfArM T-Register übertragen werden.
 
 Diese Informationen sind auch im Feature Dokument der gemF_eRp_eThalidomid#5.7.2 abgebildet.
 
@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-erp-tprescription-ca
   "name" : "ERP_TPrescription_CarbonCopy_Logical",
   "title" : "Logisches Modell digitaler Durchschlag E-T-Rezept",
   "status" : "draft",
-  "date" : "2026-03-23T08:45:49+00:00",
+  "date" : "2026-03-24T17:17:16+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

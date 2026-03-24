@@ -370,7 +370,7 @@
       </base>
       <type>
         <code value="canonical"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/StructureDefinition"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/StructureDefinition|4.0.1"/>
       </type>
       <constraint>
         <key value="ele-1"/>
@@ -415,7 +415,7 @@
         </extension>
         <strength value="extensible"/>
         <description value="Security Labels from the Healthcare Privacy and Security Classification System."/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/security-labels"/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/security-labels|4.0.1"/>
       </binding>
       <mapping>
         <identity value="rim"/>
@@ -466,7 +466,7 @@
         </extension>
         <strength value="example"/>
         <description value="Codes that represent various types of tags, commonly workflow-related; e.g. &quot;Needs review by Dr. Jones&quot;."/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/common-tags"/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/common-tags|4.0.1"/>
       </binding>
       <mapping>
         <identity value="rim"/>
@@ -546,7 +546,7 @@
         </extension>
         <strength value="preferred"/>
         <description value="A human language."/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/languages"/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/languages|4.0.1"/>
       </binding>
     </element>
     <element id="Organization.text">
@@ -661,9 +661,6 @@
       <sliceName value="ncpehCountryEx"/>
       <short value="National Contact Point of Health (NCPeH) Country Extension"/>
       <definition value="The country extension for  National Contact Point of Health (NCPeH) Organizations, representing the country in which the NCPeH is located."/>
-      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
-      <alias value="extensions"/>
-      <alias value="user content"/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -675,7 +672,6 @@
         <code value="Extension"/>
         <profile value="https://gematik.de/fhir/ti/StructureDefinition/ncpeh-country-extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -689,20 +685,12 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <mustSupport value="true"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
     </element>
     <element id="Organization.modifierExtension">
       <path value="Organization.modifierExtension"/>
@@ -956,7 +944,6 @@
       <type>
         <code value="CodeableConcept"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -975,22 +962,6 @@
         <description value="A coded type for an identifier that can be used to determine which identifier to use for a specific purpose."/>
         <valueSet value="http://hl7.org/fhir/ValueSet/identifier-type|4.0.1"/>
       </binding>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="v2"/>
-        <map value="CE/CNE/CWE"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="CD"/>
-      </mapping>
-      <mapping>
-        <identity value="orim"/>
-        <map value="fhir:CodeableConcept rdfs:subClassOf dt:CD"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="CX.5"/>
@@ -1091,7 +1062,6 @@
       <path value="Organization.identifier.period"/>
       <short value="Time period when id is/was valid for use"/>
       <definition value="Time period during which identifier is/was valid for use."/>
-      <comment value="A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. &quot;the patient was an inpatient of the hospital for this time range&quot;) or one value from the range applies (e.g. &quot;give to the patient between these two times&quot;).&#xA;&#xA;Period is not used for a duration (a measure of elapsed time). See [Duration](http://hl7.org/fhir/R4/datatypes.html#Duration)."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -1102,7 +1072,6 @@
       <type>
         <code value="Period"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1111,28 +1080,8 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <constraint>
-        <key value="per-1"/>
-        <severity value="error"/>
-        <human value="If present, start SHALL have a lower value than end"/>
-        <expression value="start.hasValue().not() or end.hasValue().not() or (start &lt;= end)"/>
-        <xpath value="not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) &lt;= xs:dateTime(f:end/@value))"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Period"/>
-      </constraint>
       <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="v2"/>
-        <map value="DR"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="IVL&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;] or URG&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;]"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="CX.7 + CX.8"/>
@@ -1162,7 +1111,6 @@
         <code value="Reference"/>
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1171,24 +1119,8 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <constraint>
-        <key value="ref-1"/>
-        <severity value="error"/>
-        <human value="SHALL have a contained resource if a local reference is provided"/>
-        <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))"/>
-        <xpath value="not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Reference"/>
-      </constraint>
       <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="The target of a resource reference is a RIM entry point (Act, Role, or Entity)"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="CX.4 / (CX.4,CX.9,CX.10)"/>
@@ -1205,8 +1137,8 @@
     <element id="Organization.identifier:TelematikID">
       <path value="Organization.identifier"/>
       <sliceName value="TelematikID"/>
-      <short value="An identifier intended for computation"/>
-      <definition value="An identifier - identifies some entity uniquely and unambiguously. Typically this is used for business identifiers."/>
+      <short value="Identifies this organization  across multiple systems"/>
+      <definition value="Identifier for the organization that is used to identify the organization across multiple disparate systems."/>
       <requirements value="Organizations are known by a variety of ids. Some institutions maintain several, and most collect identifiers for exchange with other organizations concerning the organization."/>
       <min value="0"/>
       <max value="1"/>
@@ -1268,8 +1200,8 @@
     <element id="Organization.identifier:BSNR">
       <path value="Organization.identifier"/>
       <sliceName value="BSNR"/>
-      <short value="An identifier intended for computation"/>
-      <definition value="An identifier - identifies some entity uniquely and unambiguously. Typically this is used for business identifiers."/>
+      <short value="Identifies this organization  across multiple systems"/>
+      <definition value="Identifier for the organization that is used to identify the organization across multiple disparate systems."/>
       <requirements value="Organizations are known by a variety of ids. Some institutions maintain several, and most collect identifiers for exchange with other organizations concerning the organization."/>
       <min value="0"/>
       <max value="1"/>
@@ -1331,8 +1263,8 @@
     <element id="Organization.identifier:KZVA">
       <path value="Organization.identifier"/>
       <sliceName value="KZVA"/>
-      <short value="An identifier intended for computation"/>
-      <definition value="An identifier - identifies some entity uniquely and unambiguously. Typically this is used for business identifiers."/>
+      <short value="Identifies this organization  across multiple systems"/>
+      <definition value="Identifier for the organization that is used to identify the organization across multiple disparate systems."/>
       <requirements value="Organizations are known by a variety of ids. Some institutions maintain several, and most collect identifiers for exchange with other organizations concerning the organization."/>
       <min value="0"/>
       <max value="1"/>
@@ -1394,8 +1326,8 @@
     <element id="Organization.identifier:IKNR">
       <path value="Organization.identifier"/>
       <sliceName value="IKNR"/>
-      <short value="An identifier intended for computation"/>
-      <definition value="An identifier - identifies some entity uniquely and unambiguously. Typically this is used for business identifiers."/>
+      <short value="Identifies this organization  across multiple systems"/>
+      <definition value="Identifier for the organization that is used to identify the organization across multiple disparate systems."/>
       <requirements value="Organizations are known by a variety of ids. Some institutions maintain several, and most collect identifiers for exchange with other organizations concerning the organization."/>
       <min value="0"/>
       <max value="*"/>
@@ -1541,7 +1473,7 @@
         </extension>
         <strength value="example"/>
         <description value="Used to categorize the organization."/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/organization-type"/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/organization-type|4.0.1"/>
       </binding>
       <mapping>
         <identity value="rim"/>
@@ -1606,11 +1538,7 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <binding>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-          <valueString value="OrganizationType"/>
-        </extension>
         <strength value="required"/>
-        <description value="Used to categorize the organization."/>
         <valueSet value="https://gematik.de/fhir/directory/ValueSet/OrganizationTypeVS"/>
       </binding>
       <mapping>
@@ -1676,11 +1604,7 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <binding>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-          <valueString value="OrganizationType"/>
-        </extension>
         <strength value="required"/>
-        <description value="Used to categorize the organization."/>
         <valueSet value="https://gematik.de/fhir/directory/ValueSet/OrganizationProfessionOIDTypeVS"/>
       </binding>
       <mapping>
@@ -2498,8 +2422,11 @@
         <max value="1"/>
       </base>
       <type>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy">
+          <valueBoolean value="true"/>
+        </extension>
         <code value="Reference"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"/>
       </type>
       <condition value="ele-1"/>
       <constraint>
@@ -2726,7 +2653,7 @@
         </extension>
         <strength value="extensible"/>
         <description value="The purpose for which you would contact a contact party."/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/contactentity-type"/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/contactentity-type|4.0.1"/>
       </binding>
       <mapping>
         <identity value="rim"/>
@@ -2924,7 +2851,7 @@
       </base>
       <type>
         <code value="Reference"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Endpoint"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Endpoint|4.0.1"/>
       </type>
       <condition value="ele-1"/>
       <constraint>

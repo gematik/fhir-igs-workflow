@@ -18,9 +18,6 @@ Version 0.9.0 - ci-build
 {
   "resourceType" : "Parameters",
   "id" : "ExampleCloseInputParametersDiGA",
-  "meta" : {
-    "profile" : ["https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM-ERP-PR-PAR-CloseOperation-Input"]
-  },
   "parameter" : [{
     "name" : "rxDispensation",
     "part" : [{
@@ -29,10 +26,10 @@ Version 0.9.0 - ci-build
         "resourceType" : "MedicationDispense",
         "id" : "Example-MedicationDispense-DiGA-Name-And-PZN",
         "meta" : {
-          "profile" : ["https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM-ERP-PR-MedicationDispense-DiGA"]
+          "profile" : ["https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA"]
         },
         "extension" : [{
-          "url" : "https://gematik.de/fhir/erp-diga/StructureDefinition/GEM_ERP_EX_RedeemCode",
+          "url" : "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM_ERP_EX_RedeemCode",
           "valueString" : "DE12345678901234"
         }],
         "identifier" : [{
@@ -61,7 +58,7 @@ Version 0.9.0 - ci-build
             }
           }
         }],
-        "whenHandedOver" : "2026-02-06"
+        "whenHandedOver" : "2026-07-01"
       }
     }]
   }]

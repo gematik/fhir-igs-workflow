@@ -274,25 +274,25 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </ul>
 
 </div>
-<p>Die gesetzlichen Grundlagen zu diesem Feature sind insbesondere in &sect; 361 Abs. 5 SGB V festgelegt. Danach muss der Versicherte vor einem Zugriff von Leistungserbringern aus dem EU-Ausland über den NCPeH-FD grundsätzlich in die Übermittlung eingewilligt haben. Zudem muss der Versicherte jeden konkreten Zugriff durch einen Leistungserbringer aus dem EU-Ausland (LE-EU) in diesem Rahmen technisch freigeben. Die Einwilligung wird durch den Versicherten mittels eines FdV mit E-Rezept-Funktionalität gegeben (bzw. widerrufen) und im E-Rezept-Fachdienst gespeichert (bzw. gelöscht). Sie ist länderunspezifisch, d.h. sie gilt für alle teilnehmenden Länder in der EU. In der Umsetzung kann die Einwilligung in das Verfahren in Verbindung mit der ersten Freigabe eines Zugriffs für einen LE-EU erfolgen.</p>
+<p>Die gesetzlichen Grundlagen zu diesem Feature sind insbesondere in &sect; 361 Abs. 5 SGB V festgelegt. Danach muss der Versicherte vor einem Zugriff von Leistungserbringern aus dem EU-Ausland über den NCPeH-FD grundsätzlich in die Übermittlung eingewilligt haben. Zudem muss der Versicherte jeden konkreten Zugriff durch einen Leistungserbringer aus dem EU-Ausland (LE-EU) in diesem Rahmen technisch freigeben. Die Einwilligung wird durch den Versicherten mittels eines FdV mit E-Rezept-Funktionalität gegeben (bzw. widerrufen) und im TI-Flow-Fachdienst gespeichert (bzw. gelöscht). Sie ist länderunspezifisch, d.h. sie gilt für alle teilnehmenden Länder in der EU. In der Umsetzung kann die Einwilligung in das Verfahren in Verbindung mit der ersten Freigabe eines Zugriffs für einen LE-EU erfolgen.</p>
 
-<p>Die technische Freigabe für einen Leistungserbringer im EU-Ausland erteilt der Versicherte durch einen sechsstelligen alphanumerischen Zugriffscode, den er im FdV angezeigt bekommt und die er dem Leistungserbringer mitteilt (z.B. durch Vorzeigen des im FdV angezeigten Zugriffscodes). Der Zugriffscode ist nach der Erzeugung einen begrenzten Zeitraum (höchstens eine Stunde) gültig. Nach Ablauf dieses Zeitraums muss ein neuer Zugriffscode erzeugt werden. Der Versicherte kann auch vor Ablauf des Zeitraums einen neuen Zugriffscode erzeugen, wobei der vorherige Zugriffscode damit ungültig wird. Der E-Rezept-Fachdienst erhält den jeweils gültigen Zugriffscode vom FdV und lehnt Anfragen mit einem ungültigen Zugriffscode ab. Neben dem Zugriffscode erhält der E-Rezept-Fachdienst vom FdV die Information, in welchem Land der aktuelle Zugriffscode Verwendung finden soll. Die Information, in welchem Land sich der LE-EU befindet, erhält der E-Rezept-Fachdienst vom deutschen NCPeH-FD. Stimmen die beiden Informationen nicht überein, lehnt der E-Rezept-Fachdienst die Anfrage ebenfalls ab.</p>
+<p>Die technische Freigabe für einen Leistungserbringer im EU-Ausland erteilt der Versicherte durch einen sechsstelligen alphanumerischen Zugriffscode, den er im FdV angezeigt bekommt und die er dem Leistungserbringer mitteilt (z.B. durch Vorzeigen des im FdV angezeigten Zugriffscodes). Der Zugriffscode ist nach der Erzeugung einen begrenzten Zeitraum (höchstens eine Stunde) gültig. Nach Ablauf dieses Zeitraums muss ein neuer Zugriffscode erzeugt werden. Der Versicherte kann auch vor Ablauf des Zeitraums einen neuen Zugriffscode erzeugen, wobei der vorherige Zugriffscode damit ungültig wird. Der TI-Flow-Fachdienst erhält den jeweils gültigen Zugriffscode vom FdV und lehnt Anfragen mit einem ungültigen Zugriffscode ab. Neben dem Zugriffscode erhält der TI-Flow-Fachdienst vom FdV die Information, in welchem Land der aktuelle Zugriffscode Verwendung finden soll. Die Information, in welchem Land sich der LE-EU befindet, erhält der TI-Flow-Fachdienst vom deutschen NCPeH-FD. Stimmen die beiden Informationen nicht überein, lehnt der TI-Flow-Fachdienst die Anfrage ebenfalls ab.</p>
 
 <h3 id="anwendungsfälle">Anwendungsfälle</h3>
 
-<p>Aus diesem Feature ergeben sich für den E-Rezept-Fachdienst ein neuer direkter Akteur, der NCPeH-FD in Deutschland, der zur Ausführung folgender Anwendungsfälle mit seiner eigenen kryptografischen Identität auf den E-Rezept-Fachdienst zugreift:</p>
+<p>Aus diesem Feature ergeben sich für den TI-Flow-Fachdienst ein neuer direkter Akteur, der NCPeH-FD in Deutschland, der zur Ausführung folgender Anwendungsfälle mit seiner eigenen kryptografischen Identität auf den TI-Flow-Fachdienst zugreift:</p>
 
 <p>Demographische Daten eines Versicherten abrufen
-Damit berechtigte LE-EU die E-Rezepte des Versicherten abrufen können, ist es notwendig, die demografischen Daten des Versicherten zuvor in Deutschland ermitteln zu lassen. Ein LE-EU kann die ermittelten demografischen Versichertendaten mit den auf der eGK oder einem Ausweisdokument abgebildeten Daten vergleichen und so auf Richtigkeit prüfen. Die Ermittlung dieser Daten erfolgt aus einem E-Rezept des Versicherten im E-Rezept-Fachdienst – sofern mindestens eines vorhanden ist.</p>
+Damit berechtigte LE-EU die E-Rezepte des Versicherten abrufen können, ist es notwendig, die demografischen Daten des Versicherten zuvor in Deutschland ermitteln zu lassen. Ein LE-EU kann die ermittelten demografischen Versichertendaten mit den auf der eGK oder einem Ausweisdokument abgebildeten Daten vergleichen und so auf Richtigkeit prüfen. Die Ermittlung dieser Daten erfolgt aus einem E-Rezept des Versicherten im TI-Flow-Fachdienst – sofern mindestens eines vorhanden ist.</p>
 
 <p>Liste der einlösbaren E-Rezepte eines Versicherten abrufen
-Mittels KVNR und Zugriffscode ruft der LE-EU die Liste aller einlösbaren E-Rezepte vom E-Rezept-Fachdienst ab. Dabei liefert der E-Rezept-Fachdienst alle Informationen aus den E-Rezepten an den NCPeH-FD, der zur Erstellung der Liste nur bestimmte Informationen verwendet (mindestens die obligatorischen Angaben gemäß den europäischen Vorgaben). Der E-Rezept-Fachdienst liefert keine Informationen zu E-Rezepten, die in den europäischen Vorgaben ausgeschlossen sind, z.B. Betäubungsmittel und Arzneimittel, die nach ärztlicher Verschreibung oder nach den Vorschriften eines Arzneibuchs für den Versicherten zubereitet werden.</p>
+Mittels KVNR und Zugriffscode ruft der LE-EU die Liste aller einlösbaren E-Rezepte vom TI-Flow-Fachdienst ab. Dabei liefert der TI-Flow-Fachdienst alle Informationen aus den E-Rezepten an den NCPeH-FD, der zur Erstellung der Liste nur bestimmte Informationen verwendet (mindestens die obligatorischen Angaben gemäß den europäischen Vorgaben). Der TI-Flow-Fachdienst liefert keine Informationen zu E-Rezepten, die in den europäischen Vorgaben ausgeschlossen sind, z.B. Betäubungsmittel und Arzneimittel, die nach ärztlicher Verschreibung oder nach den Vorschriften eines Arzneibuchs für den Versicherten zubereitet werden.</p>
 
 <p>Liste ausgewählter E-Rezepte eines Versicherten abrufen
 Ausgehend von der Liste der einlösbaren E-Rezepte für einen Versicherten, kann der LE-EU eine Liste der zur Einlösung ausgewählten E-Rezepte abrufen (transkodiert und im Original).</p>
 
 <p>Abgabe von E-Rezepten im europäischen Ausland
-Beim Einlösen von E-Rezepten erfolgt die Übermittlung der Datensätze über die an den Versicherten abgegebenen Arzneimittel mittels des NCPeH-FD an den E-Rezept-Fachdienst.</p>
+Beim Einlösen von E-Rezepten erfolgt die Übermittlung der Datensätze über die an den Versicherten abgegebenen Arzneimittel mittels des NCPeH-FD an den TI-Flow-Fachdienst.</p>
 
 <p>Daneben gibt es die Anwendungsfälle für die Versicherten zur Erteilung, zur Einsicht und zum Widerruf der Einwilligung.</p>
 
@@ -337,21 +337,21 @@ Beim Einlösen von E-Rezepten erfolgt die Übermittlung der Datensätze über di
   </tbody>
 </table>
 
-<div><figcaption><strong>Tabelle: </strong>Neue Informationsobjekte im Kontext E-Rezept-Fachdienst im EU Kontext</figcaption></div>
+<div><figcaption><strong>Tabelle: </strong>Neue Informationsobjekte im Kontext TI-Flow-Fachdienst im EU Kontext</figcaption></div>
 
 <h3 id="authentifizierung-und-autorisierung">Authentifizierung und Autorisierung</h3>
 
-<p>Der NCPeH-FD in Deutschland ist ein neuer (VAU-) Client im E-Rezept-System. Die Authentifizierung des NCPeH-FD in Deutschland findet durch den Authorization Server des E-Rezept-Fachdienstes statt, der einen ACCESS_TOKEN ausstellt, der im E-Rezept-Fachdienst validiert wird. Dabei findet ein länderspezifisches Zertifikat Verwendung – also nicht das Zertifikat des NCPeH-FD in Deutschland, sondern ein Zertifikat, dass den NCPeH-FD im jeweiligen anfragenden EU-Ausland repräsentiert.</p>
+<p>Der NCPeH-FD in Deutschland ist ein neuer (VAU-) Client im E-Rezept-System. Die Authentifizierung des NCPeH-FD in Deutschland findet durch den Authorization Server des TI-Flow-Fachdienstes statt, der einen ACCESS_TOKEN ausstellt, der im TI-Flow-Fachdienst validiert wird. Dabei findet ein länderspezifisches Zertifikat Verwendung – also nicht das Zertifikat des NCPeH-FD in Deutschland, sondern ein Zertifikat, dass den NCPeH-FD im jeweiligen anfragenden EU-Ausland repräsentiert.</p>
 
-<p>Indirekt wirkende Akteure sind Leistungserbringer im EU-Ausland, die über den NCPeH-FD in ihrem Land und den NCPeH-FD in Deutschland Daten aus dem E-Rezept-Fachdienst abrufen können. Die Authentisierung der Leistungserbringer im EU-Ausland erfolgt durch den NCPeH-FD in ihrem Land (vgl. unten Grenzen der Sicherheitsleistung).</p>
+<p>Indirekt wirkende Akteure sind Leistungserbringer im EU-Ausland, die über den NCPeH-FD in ihrem Land und den NCPeH-FD in Deutschland Daten aus dem TI-Flow-Fachdienst abrufen können. Die Authentisierung der Leistungserbringer im EU-Ausland erfolgt durch den NCPeH-FD in ihrem Land (vgl. unten Grenzen der Sicherheitsleistung).</p>
 
-<p>Die Kommunikation zwischen dem NCPeH-FD und dem E-Rezept-Fachdienst erfolgt zum einen über TLS mit serverseitiger Authentifizierung des E-Rezept-Fachdienstes und zum anderen mittels VAU-Verschlüsselung zwischen der VAU im NCPeH-FD und VAU im E-Rezept-Fachdienst. Hierbei prüft der E-Rezept-Fachdienst das VAU-Zertifikat der VAU im NCPeH-FD. Hierdurch wird eine beidseitige Authentifizierung der Systeme erreicht.</p>
+<p>Die Kommunikation zwischen dem NCPeH-FD und dem TI-Flow-Fachdienst erfolgt zum einen über TLS mit serverseitiger Authentifizierung des TI-Flow-Fachdienstes und zum anderen mittels VAU-Verschlüsselung zwischen der VAU im NCPeH-FD und VAU im TI-Flow-Fachdienst. Hierbei prüft der TI-Flow-Fachdienst das VAU-Zertifikat der VAU im NCPeH-FD. Hierdurch wird eine beidseitige Authentifizierung der Systeme erreicht.</p>
 
 <p>Der Zugriffscode dient – in Kombination mit der KVNR - der Autorisierung eines LE-EU zum Abruf der E-Rezepte eines Versicherten.</p>
 
 <h3 id="protokollierung">Protokollierung</h3>
 
-<p>Die Protokollierung im E-Rezept-Fachdienst erfolgt für alle o.g. Anwendungsfälle und umfasst jeweils folgende Informationen:</p>
+<p>Die Protokollierung im TI-Flow-Fachdienst erfolgt für alle o.g. Anwendungsfälle und umfasst jeweils folgende Informationen:</p>
 
 <ul>
   <li>das Land, aus dem der Zugriff erfolgte,</li>
@@ -376,13 +376,13 @@ Beim Einlösen von E-Rezepten erfolgt die Übermittlung der Datensätze über di
 
 <h3 id="robustheit">Robustheit</h3>
 
-<p>Der NCPeH-FD in Deutschland prüft bei Anfragen an den E-Rezept-Fachdienst, ob die mitgegebene KVNR syntaktisch korrekt ist und dass der Zugriffscode sechsstellig ist. Damit werden syntaktisch unkorrekte Anfragen bereits im NCPeH-FD abgeblockt. Generell muss der Anbieter des NCPeH-FDs Maßnahmen zur Erkennung und Verhinderung von dem Erraten eines Zugriffscodes umsetzen.</p>
+<p>Der NCPeH-FD in Deutschland prüft bei Anfragen an den TI-Flow-Fachdienst, ob die mitgegebene KVNR syntaktisch korrekt ist und dass der Zugriffscode sechsstellig ist. Damit werden syntaktisch unkorrekte Anfragen bereits im NCPeH-FD abgeblockt. Generell muss der Anbieter des NCPeH-FDs Maßnahmen zur Erkennung und Verhinderung von dem Erraten eines Zugriffscodes umsetzen.</p>
 
 <h3 id="grenzen-der-sicherheitsleistung">Grenzen der Sicherheitsleistung</h3>
 
-<p>Der E-Rezept-Fachdienst muss von integren und korrekt arbeitenden NCPeHs ausgehen.</p>
+<p>Der TI-Flow-Fachdienst muss von integren und korrekt arbeitenden NCPeHs ausgehen.</p>
 
-<p>In der Realisierung der o.g. Anwendungsfälle übernehmen die NCPeH im EU-Ausland die Authentisierung der Leistungserbringer im jeweiligen Land. Anfragen von nicht-authentisierten Leistungserbringern werden nicht an den NCPeH-FD in Deutschland weitergeleitet und damit auch nicht an den E-Rezept-Fachdienst. Dies gilt auch für Anfragen aus EU-Ländern, die nicht in der Liste der teilnehmenden Länder stehen.</p>
+<p>In der Realisierung der o.g. Anwendungsfälle übernehmen die NCPeH im EU-Ausland die Authentisierung der Leistungserbringer im jeweiligen Land. Anfragen von nicht-authentisierten Leistungserbringern werden nicht an den NCPeH-FD in Deutschland weitergeleitet und damit auch nicht an den TI-Flow-Fachdienst. Dies gilt auch für Anfragen aus EU-Ländern, die nicht in der Liste der teilnehmenden Länder stehen.</p>
 
 <p>Der NCPeH-FD in Deutschland protokolliert jegliche Transaktion, in der er involviert ist. Wie ein Betroffener diese Protokolldaten einsehen kann, wird durch den Betreiber des NCPeH-FD geregelt.</p>
 
@@ -390,7 +390,7 @@ Beim Einlösen von E-Rezepten erfolgt die Übermittlung der Datensätze über di
 
 <p>Über die Sicherheit der Systeme der LE-EU kann keine Aussage getroffen werden. Ggf. ist die Situation in den verschiedenen EU-Ländern unterschiedlich.</p>
 
-<p>Aufgrund der Vorgaben der EU können Situationen entstehen, in denen eine Mehrfacheinlösung von E-Rezepten durch den E-Rezept-Fachdienst nicht verhindert werden kann. Dies betrifft insbesondere Situationen in grenznahen Gebieten, in denen ein Versicherter erst eine Einlösung im Ausland initiiert, aber das Medikament noch nicht erhält, er dann das E-Rezept in Deutschland regulär einlöst, um dann zurück in der EU-Apotheke das Medikament nochmals zu erhalten – sofern die EU-Apotheke das Medikament ausgibt, obwohl der E-Rezept-Fachdienst einen Fehler meldet (z.B. um den Umsatz dennoch zu machen). Ein finanzieller Schaden für Apotheken im Ausland würde hierbei nicht entstehen, da Versicherte die im Ausland erhaltenen Medikamente zunächst selbst bezahlen. Kostenträger können einen finanziellen Schaden abwenden, wenn sie durch geeignete Prüfungen eine oben geschilderte mehrfache Einlösung eines E-Rezepts feststellen. Für Apotheker in Deutschland könnte ein finanzieller Schaden entstehen, falls der Kostenträger einem Versicherten die Rechnung für ein im Ausland erhaltenes Medikament erstattet, bevor die Abrechnung des E-Rezepts durch die Apotheke in Deutschland erfolgt – unter der Annahme, dass der Kostenträger in diesem Fall das E-Rezept nicht noch einmal abrechnen wird. Solche Schadensszenarien können nicht durch die Komponenten und Dienste der TI abgewendet werden.</p>
+<p>Aufgrund der Vorgaben der EU können Situationen entstehen, in denen eine Mehrfacheinlösung von E-Rezepten durch den TI-Flow-Fachdienst nicht verhindert werden kann. Dies betrifft insbesondere Situationen in grenznahen Gebieten, in denen ein Versicherter erst eine Einlösung im Ausland initiiert, aber das Medikament noch nicht erhält, er dann das E-Rezept in Deutschland regulär einlöst, um dann zurück in der EU-Apotheke das Medikament nochmals zu erhalten – sofern die EU-Apotheke das Medikament ausgibt, obwohl der TI-Flow-Fachdienst einen Fehler meldet (z.B. um den Umsatz dennoch zu machen). Ein finanzieller Schaden für Apotheken im Ausland würde hierbei nicht entstehen, da Versicherte die im Ausland erhaltenen Medikamente zunächst selbst bezahlen. Kostenträger können einen finanziellen Schaden abwenden, wenn sie durch geeignete Prüfungen eine oben geschilderte mehrfache Einlösung eines E-Rezepts feststellen. Für Apotheker in Deutschland könnte ein finanzieller Schaden entstehen, falls der Kostenträger einem Versicherten die Rechnung für ein im Ausland erhaltenes Medikament erstattet, bevor die Abrechnung des E-Rezepts durch die Apotheke in Deutschland erfolgt – unter der Annahme, dass der Kostenträger in diesem Fall das E-Rezept nicht noch einmal abrechnen wird. Solche Schadensszenarien können nicht durch die Komponenten und Dienste der TI abgewendet werden.</p>
 
 
 
@@ -432,7 +432,7 @@ Beim Einlösen von E-Rezepten erfolgt die Übermittlung der Datensätze über di
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.xborder#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 06:49+0000">2026-03-23</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.xborder#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 24, 2026 17:27+0000">2026-03-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

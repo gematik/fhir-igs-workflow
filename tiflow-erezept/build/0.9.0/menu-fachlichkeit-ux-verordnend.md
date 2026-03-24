@@ -54,16 +54,16 @@ Das PS der abgebenden LEI SOLL zum Erstellen von neuen E-Rezepten folgenden Klic
 * Name: Vorbedingung
   * E-Rezept erstellen - Optimaler Klickpfad: Der Nutzer befindet sich in einer der Medikation des Patienten bezogenen Ansicht, z.B. der Patientenakte des Primärsystems, einer Übersicht der bisher verordneten Medikationen, einer Ansicht des eMP/BMP.
 * Name: Nachbedingung
-  * E-Rezept erstellen - Optimaler Klickpfad: Alle Verordnungen wurden signiert, in den E-Rezept-Fachdienst eingestellt und ggf. der Patientenausdruck gedruckt.
+  * E-Rezept erstellen - Optimaler Klickpfad: Alle Verordnungen wurden signiert, in den TI-Flow-Fachdienst eingestellt und ggf. der Patientenausdruck gedruckt.
 * Name: Ablauf
   * E-Rezept erstellen - Optimaler Klickpfad: 1. Der Arzt oder MFA startet den Prozess zur Erzeugen einer neuen Verordnung.
 1. Suchmöglichkeiten zur Auswahl des Präparates werden angezeigt.
 1. a) Arzt: Detaillierter Verordnungsinhalt (als E-Rezept dargestellt) wird ausgewählt und die Verordnung zur Signatur freigegeben.
 b) MFA: Detaillierter Verordnungsinhalt (als E-Rezept dargestellt) wird ausgewählt und die Verordnung in der Aufgabenliste gespeichert (und zur späteren Signatur dem Arzt vorgelegt).
 1. Optional: Die Schritte 1 bis 3 können bei mehreren auszustellenden Verordnungen wiederholt werden.
-1. Mit dem Start des Prozesses „Jetzt Signieren“ durch den Arzt werden alle zur Signatur freigegebenen Verordnungen in einem Hintergrundprozess qualifiziert signiert und in den E-Rezept-Fachdienst eingestellt.
-1. Es wird ein Hinweistext angezeigt, wenn das Signieren und das Einstellen in den E-Rezept-Fachdienst erfolgreich abgeschlossen wurde.
-1. Ist die Einstellung „Patientenausdruck erstellen“ gewählt, werden nach dem erfolgreichen Einstellen in den E-Rezept-Fachdienst die Patientenausdrucke automatisch gedruckt.
+1. Mit dem Start des Prozesses „Jetzt Signieren“ durch den Arzt werden alle zur Signatur freigegebenen Verordnungen in einem Hintergrundprozess qualifiziert signiert und in den TI-Flow-Fachdienst eingestellt.
+1. Es wird ein Hinweistext angezeigt, wenn das Signieren und das Einstellen in den TI-Flow-Fachdienst erfolgreich abgeschlossen wurde.
+1. Ist die Einstellung „Patientenausdruck erstellen“ gewählt, werden nach dem erfolgreichen Einstellen in den TI-Flow-Fachdienst die Patientenausdrucke automatisch gedruckt.
 
 * Name: Alternative
   * E-Rezept erstellen - Optimaler Klickpfad: Alternativ zu Schritt 1 und 2 kann der Prozess zum Erzeugen einer wiederholten Verordnung aus einer Patientenhistorie, Verordnungen aus einer Hausapotheke und aus einem Medikationsplan nach § 31a SGB V gestartet werden. Die Regelungen aus Anlage 23 BMV-Ä sind zu beachten.
@@ -103,9 +103,9 @@ Hinweis: Mit der Umsetzung der Aufgabenliste für das Signieren der Verordnungen
 
 Das PS der verordnenden LEI SOLL sicherstellen, dass der Signaturvorgang im Hintergrund läuft und eine weitere vollumfängliche Nutzung des PS möglich bleibt. Falls es zu Fehlern beim Signaturvorgang kommt, MUSS das PS dem Nutzer diese anzeigen.
 
-Das PS der verordnenden LEI SOLL dem Nutzer einen Hinweistext anzeigen, wenn das Signieren und das Einstellen im E-Rezept-Fachdienst erfolgreich war. Das Ausblenden des Hinweistextes erfolgt ohne Interaktion des Nutzers.
+Das PS der verordnenden LEI SOLL dem Nutzer einen Hinweistext anzeigen, wenn das Signieren und das Einstellen im TI-Flow-Fachdienst erfolgreich war. Das Ausblenden des Hinweistextes erfolgt ohne Interaktion des Nutzers.
 
-Das PS der verordnenden LEI SOLL nach dem erfolgreichem Einstellen eines E-Rezeptes in den E-Rezept-Fachdienst, wenn die entsprechende Konfigurationseinstellung für den Einlöseweg dies vorsieht, den E-Rezept-Ausdruck automatisch ausdrucken.
+Das PS der verordnenden LEI SOLL nach dem erfolgreichem Einstellen eines E-Rezeptes in den TI-Flow-Fachdienst, wenn die entsprechende Konfigurationseinstellung für den Einlöseweg dies vorsieht, den E-Rezept-Ausdruck automatisch ausdrucken.
 #### Entscheidungsunterstützung: E-Rezept oder Muster 16
 
 Derzeit können nicht alle Verordnungsinhalte, die per Muster 16 zu verschreiben sind, als E-Rezept abgebildet werden. Der Nutzer soll hier nicht überlegen müssen, was er per E- Rezept verschreiben kann und was nicht. In der Benutzerführung soll der Nutzer informiert werden, ob eine Verordnung als E-Rezept erstellt werden kann oder nicht. Um zu vermeiden, dass der Nutzer etwas über die Freitextverordnung verschreibt, was derzeit nicht als E-Rezept zulässig ist, soll der Nutzer bei einer Freitextverordnung darüber in Kenntnis gesetzt werden, was derzeit als E-Rezept verordnet werden darf. Ein aktueller Stand der verfügbaren Features (Umfang der Anwendung E-Rezept) ist auf der gematik/api-erp Seite auf GitHub zu finden.
@@ -160,7 +160,7 @@ Der Weiterbildungsassistent signiert mit seinem HBA das E-Rezept. Wenn der Weite
 
 #### Verordnung E-T-Rezept
 
-Für die Verordnungen von E-T-Rezepten sind gesonderte UX-Vorgaben definiert, um den Anwender dabei zu unterstützen, die gesetzlichen Vorgaben einzuhalten und eine Verordnung erfolgreich im E-Rezept-Fachdienst einzustellen.
+Für die Verordnungen von E-T-Rezepten sind gesonderte UX-Vorgaben definiert, um den Anwender dabei zu unterstützen, die gesetzlichen Vorgaben einzuhalten und eine Verordnung erfolgreich im TI-Flow-Fachdienst einzustellen.
 
 Das PS der verordnenden LEI MUSS beim Erstellen von Verordnungen für Arzneimittel nach §3a AMVV sicherstellen, dass das Kennzeichen "T-Rezept" dem Nutzer gut sichtbar angezeigt wird.
 
@@ -236,7 +236,7 @@ Mit der Auswahl bestätigt der Nutzer, dass die Verordnung erfolgen soll und das
 
 Folgerezeptes In den Fällen, wo der Patient nicht in der Praxis anwesend ist, wenn der Arzt ein E-Rezept ausstellt (z.B. Folgerezepte oder Rezepte, die telefonisch bestellt wurden), möchte der Arzt den Patienten automatisch darüber in Kenntnis setzen, dass ein E-Rezept ausgestellt wurde und damit zum Einlösen in der Apotheke bereit steht. Somit kann der Patient dann das E-Rezept mit der App oder der eGK einlösen.
 
-Das PS der verordnenden LEI SOLL es dem Nutzer ermöglichen, nach dem erfolgreichen Einstellen eines E-Rezepts im E-Rezept-Fachdienst eine Benachrichtigung (bspw. per SMS oder E-Mail) an den Patienten zu versenden.
+Das PS der verordnenden LEI SOLL es dem Nutzer ermöglichen, nach dem erfolgreichen Einstellen eines E-Rezepts im TI-Flow-Fachdienst eine Benachrichtigung (bspw. per SMS oder E-Mail) an den Patienten zu versenden.
 
 Das PS der verordnenden LEI DARF in der Nachricht, die den Patienten darüber informiert, dass ein E-Rezept ausgestellt wurde, NICHT medizinische oder personenbezogene Informationen einfügen.
 Beispiel für eine Nachricht: “Ihr E-Rezept wurde soeben von Ihrem Arzt unterschrieben und kann nun mit der Gesundheitskarte oder der E-Rezept App in der Apotheke eingelöst werden. Um das Rezept anzusehen und vorab an Ihre Apotheke zu senden, empfehlen wir die Nutzung der E-Rezept App der gematik.”
@@ -264,7 +264,7 @@ Die Bereitstellung der Fehlerdetails per Email o.Ä. steht mit diesen Anforderun
 Ein Arzt kann ein von ihm ausgestelltes E-Rezept löschen. Wenn das nicht möglich ist, soll der Arzt aus dem PS heraus den Grund erkennen können, um besser darauf reagieren zu können. Wenn versucht wird das Rezept zu löschen, sind folgende Fehlermeldungen auszuwerten:
 
 * Returncode 403 - Forbidden: Das Rezept ist gesperrt und befindet sich in Bearbeitung bei einer Apotheke. Solange das E-Rezept noch nicht durch die Apotheke beliefert wurde, kann es durch die Apotheke gelöscht werden.
-* Returncode 410 - Gone: Das Rezept wurde bereits gelöscht und ist nicht mehr im E-Rezept-Fachdienst verfügbar
+* Returncode 410 - Gone: Das Rezept wurde bereits gelöscht und ist nicht mehr im TI-Flow-Fachdienst verfügbar
 
-Das PS der verordnenden LEI MUSS, falls beim Löschen eines E-Rezeptes ein Fehler auftritt, dem Nutzer in einem Hinweis den Grund für den gescheiterten Löschversuch darstellen. Dieser leitet sich aus dem Fehlercode vom E-Rezept-Fachdienst ab.
+Das PS der verordnenden LEI MUSS, falls beim Löschen eines E-Rezeptes ein Fehler auftritt, dem Nutzer in einem Hinweis den Grund für den gescheiterten Löschversuch darstellen. Dieser leitet sich aus dem Fehlercode vom TI-Flow-Fachdienst ab.
 

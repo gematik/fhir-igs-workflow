@@ -279,63 +279,63 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </ul>
 
 </div>
-<p>Diese Seite beschreibt Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der <code class="language-plaintext highlighter-rouge">MedicationDispense</code>-Query-Endpunkte.</p>
+<p>Diese Seite beschreibt Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der <code class="language-plaintext highlighter-rouge">MedicationDispense</code>-Query-Endpunkte.</p>
 
 <h3 id="anforderungen-aus-der-core-spezifikation">Anforderungen aus der Core Spezifikation</h3>
 
-<p>Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für den Device-Query-Endpunkt.</p>
+<p>Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für den Device-Query-Endpunkt.</p>
 
   <!-- A_19400 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - MedicationDispense - unzulässige Operationen" version="0" key="IG-TIFLOW-CORE-114">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - MedicationDispense - unzulässige Operationen" version="0" key="IG-TIFLOW-CORE-130">
   <meta lockversion="false"/>
-  <actor name="eRp_FD">
+  <actor name="TI_Flow_FD">
    	<testProcedure id="Produktgutachten"></testProcedure>
   </actor>
-  Der E-Rezept-Fachdienst MUSS alle Zugriffe auf die Ressource MedicationDispense mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE sowie POST unterbinden, damit keine unzulässigen Operationen auf den Rezeptdaten ausgeführt werden können.
+  Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource MedicationDispense mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE sowie POST unterbinden, damit keine unzulässigen Operationen auf den Rezeptdaten ausgeführt werden können.
 </requirement>
 
 <h4 id="get-medicationdispense">GET /MedicationDispense</h4>
   <!-- A_19405-02 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - MedicationDispense abrufen - Rollenprüfung" version="0" key="IG-TIFLOW-CORE-115">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - MedicationDispense abrufen - Rollenprüfung" version="0" key="IG-TIFLOW-CORE-131">
   <meta lockversion="false"/>
-  <actor name="eRp_FD">
+  <actor name="TI_Flow_FD">
     	<testProcedure id="Produktgutachten"></testProcedure>
   </actor>
-  Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /MedicationDispense sicherstellen, dass ausschließlich Nutzer in der Rolle 
+  Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /MedicationDispense sicherstellen, dass ausschließlich Nutzer in der Rolle 
   <ul>
     <li>oid_versicherter</li>
   </ul>
-  die Operation am E-Rezept-Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im&nbsp;ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit Dispensierinformationen nicht durch Unberechtigte ausgelesen werden können.
+  die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im&nbsp;ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit Dispensierinformationen nicht durch Unberechtigte ausgelesen werden können.
 </requirement>
 
 <p>  <!-- A_19406-01 --></p>
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - MedicationDispense abrufen - Filter MedicationDispense auf KVNR des Versicherten" version="0" key="IG-TIFLOW-CORE-116">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - MedicationDispense abrufen - Filter MedicationDispense auf KVNR des Versicherten" version="0" key="IG-TIFLOW-CORE-132">
   <meta lockversion="false"/>
-  <actor name="eRp_FD">
+  <actor name="TI_Flow_FD">
    	<testProcedure id="Produktgutachten"></testProcedure>
   </actor>
-  Der E-Rezept-Fachdienst MUSS beim Aufruf&nbsp;der HTTP-GET-Operation auf den Endpunkt /MedicationDispense&nbsp;die dem Versicherten zugeordneten MedicationDispense-Ressourcen anhand der KVNR des Versicherten im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, die in MedicationDispense.subject&nbsp;die entsprechende KVNR des begünstigten Patienten referenziert haben, damit ausschließlich Versicherte ihre eigenen Dispensierinformationen einsehen können.
+  Der TI-Flow-Fachdienst MUSS beim Aufruf&nbsp;der HTTP-GET-Operation auf den Endpunkt /MedicationDispense&nbsp;die dem Versicherten zugeordneten MedicationDispense-Ressourcen anhand der KVNR des Versicherten im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, die in MedicationDispense.subject&nbsp;die entsprechende KVNR des begünstigten Patienten referenziert haben, damit ausschließlich Versicherte ihre eigenen Dispensierinformationen einsehen können.
 </requirement>
 
   <!-- A_26527 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - MedicationDispense abrufen - Referenzierung MedicationDispense und Medication" version="0" key="IG-TIFLOW-CORE-117">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - MedicationDispense abrufen - Referenzierung MedicationDispense und Medication" version="0" key="IG-TIFLOW-CORE-133">
   <meta lockversion="false"/>
-  <actor name="eRp_FD">
+  <actor name="TI_Flow_FD">
    	<testProcedure id="Produkttest"></testProcedure>
   </actor>
-  Der E-Rezept-Fachdienst MUSS beim Aufruf&nbsp;der HTTP-GET-Operation auf den Endpunkt /MedicationDispense&nbsp;sicherstellen, dass alle im zurückgegebenen Search-Bundle enthaltenen Ressourcen mit eindeutig identifizierbaren IDs versehen sind und Referenzen innerhalb des Bundles auf eine Ressource mit einer eindeutigen ID verweisen.
+  Der TI-Flow-Fachdienst MUSS beim Aufruf&nbsp;der HTTP-GET-Operation auf den Endpunkt /MedicationDispense&nbsp;sicherstellen, dass alle im zurückgegebenen Search-Bundle enthaltenen Ressourcen mit eindeutig identifizierbaren IDs versehen sind und Referenzen innerhalb des Bundles auf eine Ressource mit einer eindeutigen ID verweisen.
 </requirement>
 
   <!-- A_22070-03 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - MedicationDispense abrufen - Rückgabe mehrerer MedicationDispenses" version="0" key="IG-TIFLOW-CORE-118">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - MedicationDispense abrufen - Rückgabe mehrerer MedicationDispenses" version="0" key="IG-TIFLOW-CORE-134">
   <meta lockversion="false"/>
-  <actor name="eRp_FD">
+  <actor name="TI_Flow_FD">
    	<testProcedure id="Produkttest"></testProcedure>
   </actor>
-  Der E-Rezept-Fachdienst MUSS im Anwendungsfall "Abgabeinformationen abrufen" die Suche aller Abgabeinformationen zu einer Verordnung mit dem Aufruf GET /MedicationDispense?identifier=https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId|&lt;PrescriptionID&gt; unterstützten und dabei eines oder mehrere MedicationDispense-Objekte in einem Bundle an den Aufrufenden zurückgeben.
+  Der TI-Flow-Fachdienst MUSS im Anwendungsfall "Abgabeinformationen abrufen" die Suche aller Abgabeinformationen zu einer Verordnung mit dem Aufruf GET /MedicationDispense?identifier=https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId|&lt;PrescriptionID&gt; unterstützten und dabei eines oder mehrere MedicationDispense-Objekte in einem Bundle an den Aufrufenden zurückgeben.
 </requirement>
 
-<p>Der E-Rezept-Fachdienst soll eine mögliche Konstellation von Bundles im Ergebnis-Bundle auflösen, sodass das Ergebnis-Bundle ausschließlich MedicationDispense-Objekte enthält, unabhängig davon, ob ein oder mehrere dieser Objekte zu je einem Task gehören.</p>
+<p>Der TI-Flow-Fachdienst soll eine mögliche Konstellation von Bundles im Ergebnis-Bundle auflösen, sodass das Ergebnis-Bundle ausschließlich MedicationDispense-Objekte enthält, unabhängig davon, ob ein oder mehrere dieser Objekte zu je einem Task gehören.</p>
 
 <h3 id="modulspezifische-anforderungen">Modulspezifische Anforderungen</h3>
 
@@ -380,7 +380,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 06:27+0000">2026-03-23</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 24, 2026 17:23+0000">2026-03-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

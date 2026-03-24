@@ -13,17 +13,17 @@ Für Endpunkte, die eine Menge an FHIR-Objekten abfragen gelten einheitliche Vor
 
 Zu unterscheiden sind drei verschiedene Mechanismen: Sortierung, Filterung und Pagination. Die angefragten Funktionen sind jeweils auf einen Konkreten Endpunkt anzuwenden. Es ist möglich diese Funktionen miteinander zu kombinieren, sodass z.B. eine Anfrage sortiert und gefiltert wird.
 
-Der E-Rezept-Fachdienst MUSS das Konzept zur Handhabung der Rückgabe von mehreren FHIR-Objekten auf folgende Endpunkte anwenden: Tabelle #: TAB_eRPFD_021 Endpunkte des E-Rezept-Fachdienst, die das Konzept zur Handhabung der Rückgabe von mehreren FHIR-Objekten bereitstellen müssen
+Der TI-Flow-Fachdienst MUSS das Konzept zur Handhabung der Rückgabe von mehreren FHIR-Objekten auf folgende Endpunkte anwenden: Tabelle #: TAB_eRPFD_021 Endpunkte des TI-Flow-Fachdienst, die das Konzept zur Handhabung der Rückgabe von mehreren FHIR-Objekten bereitstellen müssen
 
 | | | |
 | :--- | :--- | :--- |
-| GET /Task | Versicherte, Abgebende LEI | Liste von verfügbaren Tasks im E-Rezept-Fachdienst |
+| GET /Task | Versicherte, Abgebende LEI | Liste von verfügbaren Tasks im TI-Flow-Fachdienst |
 | GET /Communication | Versicherte, Abgebende LEI | Liste von verfügbaren Communications |
 | GET /MedicationDispense | Versicherte | Liste von eingestellten MedicationDispenses von Verordnungen |
 | GET /ChargeItem | Versicherte | Liste von Abrechnungsinformationen von Verordnungen |
 | GET /AuditEvent | Versicherte | Liste von Protokolleinträgen des Versicherten |
 
-**Tabelle: **Endpunkte des E-Rezept-Fachdienst, die das Konzept zur Handhabung der Rückgabe von mehreren FHIR-Objekten bereitstellen müssen
+**Tabelle: **Endpunkte des TI-Flow-Fachdienst, die das Konzept zur Handhabung der Rückgabe von mehreren FHIR-Objekten bereitstellen müssen
 
 ### Sortieren und Filtern von FHIR-Objekten
 
@@ -31,7 +31,7 @@ Clients erhalten die Möglichkeit die Rückgabe der Elemente im FHIR-Bundle zu s
 
 Für jeden dieser Ressourcen gelten dann Kriterien, nach denen sortiert und gefiltert werden kann.
 
-Der E-Rezept-Fachdienst MUSS für die Sortierung bei der Handhabung der Rückgabe von mehreren FHIR-Objekten den FHIR-Suchparameter "_sort" unterstützen und für die folgenden Ressourcen entsprechende Such- und Sortierkriterien bereitstellen:
+Der TI-Flow-Fachdienst MUSS für die Sortierung bei der Handhabung der Rückgabe von mehreren FHIR-Objekten den FHIR-Suchparameter "_sort" unterstützen und für die folgenden Ressourcen entsprechende Such- und Sortierkriterien bereitstellen:
 
 | | | | | |
 | :--- | :--- | :--- | :--- | :--- |
@@ -58,11 +58,11 @@ Hinweis: für die Handhabung mit den FHIR-Datentypen zu Suche und Sortierung sie
 
 Hinweis: Standard Such- und Sortierparametern in FHIR ist ein “_” vorangestellt werden. Der Aufruf sieht dann bspw. so aus: GET `[base]/ChargeItem?_lastUpdated=le2023-10-01&_sort=-_lastUpdated`
 
-Es können mehrere Sortierkriterien angegeben werden. Bei der Sortierung sortiert der E-Rezept-Fachdienst dann zuerst nach dem ersten, dann zweiten, usw. Kriterium.
+Es können mehrere Sortierkriterien angegeben werden. Bei der Sortierung sortiert der TI-Flow-Fachdienst dann zuerst nach dem ersten, dann zweiten, usw. Kriterium.
 
-Der E-Rezept-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Sortierung nach mehreren Kriterien ermöglichen, indem entsprechend der Reihenfolge der angegebenen Kriterien sortiert wird.
+Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Sortierung nach mehreren Kriterien ermöglichen, indem entsprechend der Reihenfolge der angegebenen Kriterien sortiert wird.
 
-Der E-Rezept-Fachdienst MUSS für die Sortierung bei der Handhabung der Rückgabe von mehreren FHIR-Objekten folgende Ressourcen nach folgenden Kriterien aufsteigend sortieren, wenn der Client keine Sortierung im Request angefragt hat:
+Der TI-Flow-Fachdienst MUSS für die Sortierung bei der Handhabung der Rückgabe von mehreren FHIR-Objekten folgende Ressourcen nach folgenden Kriterien aufsteigend sortieren, wenn der Client keine Sortierung im Request angefragt hat:
 
 | | |
 | :--- | :--- |
@@ -76,12 +76,12 @@ Der E-Rezept-Fachdienst MUSS für die Sortierung bei der Handhabung der Rückgab
 
 Standardmäßig werden die Einträge aufsteigend sortiert. Wenn diese Reihenfolge umgekehrt werden soll, kann ein “-“ vor das Sortierkriterium gestellt werden.
 
-Der E-Rezept-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Sortierreihenfolge umkehren, wenn der Client das Präfix "-" am Sortierkriterium angibt.
-Clients können am E-Rezept-Fachdienst Anfragen stellen, dessen Ergebnismenge nach bestimmten Kriterien reduziert (gefiltert) werden soll.
+Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Sortierreihenfolge umkehren, wenn der Client das Präfix "-" am Sortierkriterium angibt.
+Clients können am TI-Flow-Fachdienst Anfragen stellen, dessen Ergebnismenge nach bestimmten Kriterien reduziert (gefiltert) werden soll.
 
 Für den Datentyp “date” sollen folgende Filterkriterien als URL-Parameter unterstützt werden:
 
-Der E-Rezept-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten folgende Filteroperatoren für Suchkriterien anbieten, deren Datentyp "date" ist:
+Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten folgende Filteroperatoren für Suchkriterien anbieten, deren Datentyp "date" ist:
 
 | | | |
 | :--- | :--- | :--- |
@@ -100,19 +100,19 @@ Ziel der Paginierung ist es, eine Ausgabe von mehreren Instanzen in Seiten zu un
 
 Der Client kann unter Angabe der Einträge je Seite und dem Index des Elements an dem die Anzeige zu beginnenden soll steuern, welche ‘Seite’ dem Client zu übermitteln ist.
 
-Mit “_count” kann der Client angeben, wie viele Elemente maximal auf einer “Seite” der Antwort enthalten sein sollen. D.h. der E-Rezept-Fachdienst beschränkt die Ergebnismenge auf diese maximal angegebene Anzahl.
+Mit “_count” kann der Client angeben, wie viele Elemente maximal auf einer “Seite” der Antwort enthalten sein sollen. D.h. der TI-Flow-Fachdienst beschränkt die Ergebnismenge auf diese maximal angegebene Anzahl.
 
 Der URL-Parameter “__offset” gibt den nullbasierten Versatz des ersten zurückgegebenen Elements in der Sammlung an.
 
-Der E-Rezept-Fachdienst gibt immer die Gesamtanzahl der Suchtreffer zurück. Diese Information wird im Feld “Bundle.total” des FHIR-Bundles angegeben.
+Der TI-Flow-Fachdienst gibt immer die Gesamtanzahl der Suchtreffer zurück. Diese Information wird im Feld “Bundle.total” des FHIR-Bundles angegeben.
 
-Zusätzlich zur Rückgabe der Elemente bietet der E-Rezept-Fachdienst dem Client Link-Relations nach http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1 an, damit der Client einfacher durch die Ergebnismenge navigieren kann.
+Zusätzlich zur Rückgabe der Elemente bietet der TI-Flow-Fachdienst dem Client Link-Relations nach http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1 an, damit der Client einfacher durch die Ergebnismenge navigieren kann.
 
 Falls die Link Relations nicht zu plausiblen Ergebnissen führen (z.B. wenn es keine vorherige Seite gibt, kann keine “prev” Seite angegeben werden), dann darf diese Link Relation nicht übermittelt werden.
 
 Neben Angaben zur Paginierung übermittelt der Client auch Angaben zur Filterung und Sortierung, diese müssen bei der Erzeugung der Link Relations erhalten bleiben.
 
-Der E-Rezept-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Paginierung nach FHIR ermöglichen und folgende URL-Parameter unterstützen:
+Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Paginierung nach FHIR ermöglichen und folgende URL-Parameter unterstützen:
 
 | | |
 | :--- | :--- |
@@ -121,7 +121,7 @@ Der E-Rezept-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-
 
 **Tabelle: **Paginierungsparameter für die Handhabung der Rückgabe von mehreren FHIR-Objekten
 
-Der E-Rezept-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten folgende Link Relations unter Bundle.link generieren, sofern diese erzeugt werden können:
+Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten folgende Link Relations unter Bundle.link generieren, sofern diese erzeugt werden können:
 
 | | |
 | :--- | :--- |
@@ -130,7 +130,7 @@ Der E-Rezept-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-
 
 **Tabelle: **Link Relations für die Handhabung der Rückgabe von mehreren FHIR-Objekten
 
-Der E-Rezept-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Paginierung nach FHIR für folgende Endpunkte mit den jeweiligen Parametern unterstützen
+Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Paginierung nach FHIR für folgende Endpunkte mit den jeweiligen Parametern unterstützen
 
 | | | | |
 | :--- | :--- | :--- | :--- |
@@ -142,5 +142,5 @@ Der E-Rezept-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-
 
 **Tabelle: **Endpunkte mit Paginierung
 
-Der E-Rezept-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten und Generierung von URLs der Link Relations die vom Client angegebenen Filter- und Sortierkriterien verwerten und erhalten.
+Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten und Generierung von URLs der Link Relations die vom Client angegebenen Filter- und Sortierkriterien verwerten und erhalten.
 

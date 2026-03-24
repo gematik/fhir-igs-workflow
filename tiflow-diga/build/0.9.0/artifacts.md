@@ -9,17 +9,17 @@ Version 0.9.0 - ci-build
 
 ## FHIR-Artefakte
 
-# FHIR-Artefakte
-
 Diese Seite enthält eine Übersicht aller FHIR-Artefakte, die im Rahmen des DiGA-Implementation Guides definiert werden.
 
-### Parameterprofile fuer Operationen
+#### Capability Statements
+
+Das **Capability** **Statement** beschreibt die Anforderungen und Fähigkeiten, die ein Server für die konforme Implementierung des TIFlow Fachdienstes umsetzen muss. Es handelt sich um eine Konformitätserklärung, die spezifiziert, welche Ressourcen, Interaktionen und Suchparameter das der TIFlow Fachdienste unterstützen muss.
 
 | | |
 | :--- | :--- |
-| [ GEM ERP PR CloseOperation Input ](StructureDefinition-GEM-ERP-PR-PAR-CloseOperation-Input.md) | Dieses Profil definiert die Parameter fuer das Schliessen eines Workflows fuer ein Rezept vom AVS zum E-Rezept-Fachdienst. Dies kann fuer die Operationen $close und $dispense verwendet werden. |
+| [ ERP DiGA CapabilityStatement für den E-Rezept-Fachdienst ](CapabilityStatement-erp-fachdienst-server-diga.md) | CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendungen) |
 
-**Tabelle:**Parameterprofile
+**Tabelle:**Capability Statements
 
 ### Ressourcenprofile
 
@@ -34,7 +34,7 @@ Diese Seite enthält eine Übersicht aller FHIR-Artefakte, die im Rahmen des DiG
 
 | | |
 | :--- | :--- |
-| [ Logical DiGA Medication Dispense ](StructureDefinition-GEM-ERP-LOG-MedicationDispense-DiGA.md) | Fachliches Modell zur Beschreibung der Informationen, die bei $close und $dispense in der MedicationDispense-Ressource fuer DiGAs uebermittelt werden. |
+| [ Logical DiGA Medication Dispense ](StructureDefinition-GEM-ERP-LOG-MedicationDispense-DiGA.md) | Fachliches Modell zur Beschreibung der Informationen, die bei $close und $dispense in der MedicationDispense-Ressource für DiGAs übermittelt werden. |
 
 **Tabelle:**Logische Modelle
 
@@ -56,11 +56,17 @@ Diese Seite enthält eine Übersicht aller FHIR-Artefakte, die im Rahmen des DiG
 
 ### Beispielinstanzen
 
+**Bundle**
+
+* [Communication searchset response for DiGA](Bundle-ExampleDiGACommunicationSearchset.md)
+
+* [MedicationDispense searchset response for DiGA](Bundle-ExampleDiGAMedicationDispenseSearchset.md)
+
+* [Task searchset response for DiGA](Bundle-ExampleDiGATaskSearchset.md)
+
 **Communication**
 
 * [DiGA-Nachricht eines Kostenträgers an den Patienten](Communication-140f716f-f649-44fe-9a4e-157eb3c8adf3.md)
-
-* [DiGA-Zuweisung des Patienten an die Krankenkasse](Communication-2be1c6ac-5d10-47f6-84ee-8318b2c22c76.md)
 
 **MedicationDispense**
 
@@ -70,7 +76,17 @@ Diese Seite enthält eine Übersicht aller FHIR-Artefakte, die im Rahmen des DiG
 
 * [Medication Dispense DiGA without a redeem code](MedicationDispense-Example-MedicationDispense-DiGA-NoRedeemCode.md)
 
+**OperationOutcome**
+
+* [Example error response for DiGA operations](OperationOutcome-ExampleDiGAOperationOutcomeError.md)
+
 **Parameters**
 
 * [Example Close Parameters](Parameters-ExampleCloseInputParametersDiGA.md)
+
+* [Example request parameters for DiGA operations](Parameters-ExampleDiGAOperationRequestParameters.md)
+
+**Task**
+
+* [DiGA Task in ready state](Task-ExampleDiGATaskInReadyState.md)
 

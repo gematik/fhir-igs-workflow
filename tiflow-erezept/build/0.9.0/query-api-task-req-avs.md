@@ -26,7 +26,7 @@ Das PS der abgebenden LEI MUSS im Anwendungsfall "Recovery Secret" für das E-Re
 ausführen.
 #### Quittung erneut abrufen
 
-Mit diesem Anwendungsfall kann eine abgebende LEI die Quittung erneut abrufen, falls bei der Übermittlung vom E-Rezept-Fachdienst ein Fehler aufgetreten ist.
+Mit diesem Anwendungsfall kann eine abgebende LEI die Quittung erneut abrufen, falls bei der Übermittlung vom TI-Flow-Fachdienst ein Fehler aufgetreten ist.
 
 Der Anwendungsfall kann bei Bedarf wiederholt werden.
 
@@ -39,7 +39,7 @@ ausführen.
 
 #### E-Rezepte von Versicherten abrufen (VSDM)
 
-Mit diesem Anwendungsfall kann die abgebende LEI die E-Rezept-Token Information zu allen E-Rezepten mit dem Status “offen” von einem Versicherten, dessen eGK in ein mit dem Konnektor gepairten E-Health-Kartenterminal gesteckt wurde, vom E-Rezept-Fachdienst abrufen.
+Mit diesem Anwendungsfall kann die abgebende LEI die E-Rezept-Token Information zu allen E-Rezepten mit dem Status “offen” von einem Versicherten, dessen eGK in ein mit dem Konnektor gepairten E-Health-Kartenterminal gesteckt wurde, vom TI-Flow-Fachdienst abrufen.
 
 Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten abrufen" die eGK mittels der Konnektor-Operation ReadVSD mit den Parametern PerformOnlineCheck=true und ReadOnlineReceipt=true auslesen.
 Der Parameter PerformOnlineCheck gibt an, dass eine Onlineprüfung und -aktualisierung durchgeführt werden soll. Der Parameter ReadOnlineReceipt gibt an, dass ein Prüfungsnachweis erstellt und an den aufrufenden Client übermittelt werden soll.
@@ -49,13 +49,13 @@ Der Response beinhaltet die Elemente PersoenlicheVersichertendaten, AllgemeineVe
 Für weitere Informationen zur Operation ReadVSD siehe [gemILF_PS].
 
 Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten abrufen" den Anwendungsfall abbrechen, wenn die Operation ReadVSD mit einem Fehler antwortet oder im Response kein Prüfungsnachweis enthalten ist, um den Anwendungsfall nur fortzuführen, wenn der Operationsaufruf ReadVSD mit der Option "Onlineprüfung durchführen" erfolgreich durchgeführt werden konnte.
-Der Prüfungsnachweis wird aus dem ReadVSD Response entnommen, URL-kodiert und in den Aufruf des E-Rezept-Fachdienstes übernommen. 
+Der Prüfungsnachweis wird aus dem ReadVSD Response entnommen, URL-kodiert und in den Aufruf des TI-Flow-Fachdienstes übernommen. 
 
-Die Werte für den Hashwert hcv werden aus UC_PersoenlicheVersichertendatenXML.Versicherter.Person.StrassenAdresse.Strasse und UC_AllgemeineVersicherungsdatenXML.Versicherter.Versicherungsschutz.Beginn entnommen. Der Hashwert hcv wird Base64URLSafe-kodiert und in den Aufruf des E-Rezept-Fachdienstes übernommen. 
+Die Werte für den Hashwert hcv werden aus UC_PersoenlicheVersichertendatenXML.Versicherter.Person.StrassenAdresse.Strasse und UC_AllgemeineVersicherungsdatenXML.Versicherter.Versicherungsschutz.Beginn entnommen. Der Hashwert hcv wird Base64URLSafe-kodiert und in den Aufruf des TI-Flow-Fachdienstes übernommen. 
 
 Die Versicherten-ID kann aus UC_PersoenlicheVersichertendatenXML.Versicherter.Versicherten_ID ermittelt werden.
 
-Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten abrufen" den im Aufruf der Operation ReadVSD erhaltenen Prüfungsnachweis URL-kodieren, um ihn als Parameter im Request an den E-Rezept-Fachdienst zu übermitteln.
+Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten abrufen" den im Aufruf der Operation ReadVSD erhaltenen Prüfungsnachweis URL-kodieren, um ihn als Parameter im Request an den TI-Flow-Fachdienst zu übermitteln.
 
 Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten abrufen" den Hashwert hcv erzeugen.
 Die Bildungsvorschrift für den Hashwert hcv ist in [gemSpec_Krypt#A_27352-*] beschrieben.
@@ -73,12 +73,12 @@ Bsp.-URL: GET /Task?kvnr=X11058…&hcv=F9Z…I&pnw=H4sIAAAAA…
 
 #### E-Rezepte von Versicherten abrufen (PoPP)
 
-Mit diesem Anwendungsfall kann die abgebende LEI die Zugriffsinformationen zu allen einlösbaren E-Rezepten von einem Versicherten, dessen eGK mit einem im Rahmen von PoPP zulässigen Kartenlesegerät eingelesen wurde, vom E-Rezept-Fachdienst abrufen.
+Mit diesem Anwendungsfall kann die abgebende LEI die Zugriffsinformationen zu allen einlösbaren E-Rezepten von einem Versicherten, dessen eGK mit einem im Rahmen von PoPP zulässigen Kartenlesegerät eingelesen wurde, vom TI-Flow-Fachdienst abrufen.
 
 Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten abrufen" einen PoPP-Token vom PoPP-Service abrufen.
 Für die Umsetzung siehe [spec-ilf-popp-client]. 
 
-Hinweis: Im Response des PoPP-Service erhält das PS den PoPP-Token im JWT Compact Serialization Format (s. gemSpec_PoPP_Service#A_26432). Das PS gibt den PoPP-Token im gleichen Format an den E-Rezept-Fachdienst weiter.
+Hinweis: Im Response des PoPP-Service erhält das PS den PoPP-Token im JWT Compact Serialization Format (s. gemSpec_PoPP_Service#A_26432). Das PS gibt den PoPP-Token im gleichen Format an den TI-Flow-Fachdienst weiter.
 
 Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten abrufen" die HTTP-Operation GET /Task mit
 * ACCESS_TOKEN im Authorization-Header
@@ -86,7 +86,7 @@ Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten abr
 ausführen.
 Im Response ist eine Liste von Tasks enthalten. Für jeden Task sind u.a. folgende Informationen enthalten: Task-ID und AccessCode.
 
-Auf Basis dieser Informationen können die Verordnungsdatensätze zu den E-Rezepten vom E-Rezept-Fachdienst abgerufen werden. Erst dann sind die Inhalte der Verordnungen im AVS bekannt und können mit dem Versicherten abgestimmt werden.
+Auf Basis dieser Informationen können die Verordnungsdatensätze zu den E-Rezepten vom TI-Flow-Fachdienst abgerufen werden. Erst dann sind die Inhalte der Verordnungen im AVS bekannt und können mit dem Versicherten abgestimmt werden.
 
 Abgerufene Rezepte, welche nicht durch die Apotheke beliefert werden, müssen durch die Apotheke zurückgegeben (Anwendungsfall “E-Rezept durch Abgebenden zurückgeben”) werden.
 

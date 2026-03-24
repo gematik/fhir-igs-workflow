@@ -10,7 +10,7 @@ Version 0.9.0 - ci-build
 
 ## Erstellen von Dispensierinformationen
 
-Für die Anwendungsfälle “Dispensierinformationen bereitstellen” und “Quittung abrufen” muss das PS der abgebenden LEI Dispensierinformationen an den E-Rezept-Fachdienst übermitteln. Dieses Kapitel beschreibt, wie ein entsprechendes PS den Datensatz zu den Dispensierinformationen zu befüllen hat. Für die Spezifikation der Ressource MedicationDispense siehe [gemSpec_DM_eRp].
+Für die Anwendungsfälle “Dispensierinformationen bereitstellen” und “Quittung abrufen” muss das PS der abgebenden LEI Dispensierinformationen an den TI-Flow-Fachdienst übermitteln. Dieses Kapitel beschreibt, wie ein entsprechendes PS den Datensatz zu den Dispensierinformationen zu befüllen hat. Für die Spezifikation der Ressource MedicationDispense siehe [gemSpec_DM_eRp].
 
 Das PS der abgebenden LEI MUSS beim Erstellen von Dispensierinformationen mit Flowtype 160, 166, 169, 200 oder 209 eine FHIR-Ressource mit dem Profil GEM_ERP_PR_MedicationDispense erstellen.
 

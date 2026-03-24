@@ -102,7 +102,7 @@ Unabhängig vom Flowtype bleibt die fachliche Regel gleich: jede Teilverordnung 
 
 ### Anwendungsfälle
 
-**Beteiligte Systeme:** PVS/KIS, AVS, E-Rezept-Fachdienst, E-Rezept-FdV
+**Beteiligte Systeme:** PVS/KIS, AVS, TI-Flow-Fachdienst, E-Rezept-FdV
 
 #### Technische Anwendungsfälle der Verordnung
 

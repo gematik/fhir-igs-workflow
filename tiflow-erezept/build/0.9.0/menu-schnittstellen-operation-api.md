@@ -9,7 +9,7 @@ Version 0.9.0 - ci-build
 
 ## Operation API
 
-Die folgenden Operation APIs stellt der E-Rezept-Fachdienst dem **Primärsystem eRP** sowie dem **E-Rezept-Fachdienst** zur Verfügung.
+Die folgenden Operation APIs stellt der TI-Flow-Fachdienst dem **Primärsystem eRP** sowie dem **TI-Flow-Fachdienst** zur Verfügung.
 
 ### E-Rezepte bereitstellen
 

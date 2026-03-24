@@ -134,7 +134,6 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERPCHRG-PR-Charg
           "type" : "value",
           "path" : "url"
         }],
-        "description" : "Extensions are always sliced by (at least) url",
         "rules" : "closed"
       }
     },

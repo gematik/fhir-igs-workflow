@@ -28,7 +28,7 @@ Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung erteilen" eine Consent Res
 * Einwilligungstyp in Consent.category.coding.code
 erstellen.
 
-Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung erteilen" zum Speichern der Information im E-Rezept-Fachdienst die HTTP-Operation POST /Consent mit:
+Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung erteilen" zum Speichern der Information im TI-Flow-Fachdienst die HTTP-Operation POST /Consent mit:
 * ACCESS_TOKEN im Authorization-Header
 ausführen.
 ### Einwilligungen einsehen
@@ -37,7 +37,7 @@ ausführen.
 
 **Abbildung: **UC 3.13 - Einwilligungen durch Versicherten einsehen
 
-Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligungsinformation abrufen" zum Abrufen der Information vom E-Rezept-Fachdienst die HTTP-Operation GET /Consent mit:
+Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligungsinformation abrufen" zum Abrufen der Information vom TI-Flow-Fachdienst die HTTP-Operation GET /Consent mit:
 * ACCESS_TOKEN im Authorization-Header
 ausführen.
 In der Response können mehrere Consent Ressourcen enthalten sein. Der Einwilligungstyp des Consent ist in Consent.category.coding.code angegeben. Die Werte können sich auf folgende Codesysteme beziehen: [GEM_ERPCHRG_CS_ConsentType], [GEM_ERPEU_CS_ConsentType].
@@ -52,7 +52,7 @@ Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung widerrufen" es dem Nutzer 
 
 Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung widerrufen" vom Nutzer eine Bestätigung einholen, dass die Einwilligung widerrufen werden soll, somit ggf. korrespondierende Daten gelöscht werden und die Möglichkeit geben, das Widerrufen abzubrechen.
 
-Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung widerrufen" zum Löschen der Information im E-Rezept-Fachdienst die HTTP-Operation DELETE /Consent/?category=<Einwilligungstyp> mit:
+Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung widerrufen" zum Löschen der Information im TI-Flow-Fachdienst die HTTP-Operation DELETE /Consent/?category=<Einwilligungstyp> mit:
 * ACCESS_TOKEN im Authorization-Header
 * Einwilligungstyp in ?category
 ausführen.

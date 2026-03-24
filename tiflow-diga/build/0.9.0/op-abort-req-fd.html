@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Anforderungen an den E-Rezept-Fachdienst für die $abort-Operation - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v0.9.0</title>
+    <title>Anforderungen an den TI-Flow-Fachdienst für die $abort-Operation - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v0.9.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -225,7 +225,7 @@ TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
     <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
       <div class="container">    <!-- container -->
         <ul class="breadcrumb">
-          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="operation-api.html"><b>Operation API</b></a></li><li><a href="op-abort.html"><b>Operation: $abort</b></a></li><li><b>Anforderungen an den E-Rezept-Fachdienst für die $abort-Operation</b></li>
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="operation-api.html"><b>Operation API</b></a></li><li><a href="op-abort.html"><b>Operation: $abort</b></a></li><li><b>Anforderungen an den TI-Flow-Fachdienst für die $abort-Operation</b></li>
 
           <span style="float:right;">
 
@@ -255,7 +255,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   
-  <h2>Anforderungen an den E-Rezept-Fachdienst für die $abort-Operation</h2>
+  <h2>Anforderungen an den TI-Flow-Fachdienst für die $abort-Operation</h2>
   
 
 
@@ -283,44 +283,44 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="anforderungen-aus-der-core-spezifikation">Anforderungen aus der Core Spezifikation</h3>
 
-<p>Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an den E-Rezept-Fachdienst für die Operation <code class="language-plaintext highlighter-rouge">$abort</code>.</p>
+<p>Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an den TI-Flow-Fachdienst für die Operation <code class="language-plaintext highlighter-rouge">$abort</code>.</p>
 
 <p>Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.</p>
 
   <!-- A_20546-03 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - E-Rezept löschen - Versicherter - Prüfung KVNR" version="0" key="IG-TIFLOW-CORE-124">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - E-Rezept löschen - Versicherter - Prüfung KVNR" version="0" key="IG-TIFLOW-CORE-140">
   <meta lockversion="false"/>
-  <actor name="eRp_FD">
+  <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
-    Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts durch einen Versicherten, wenn der HTTP-Request keinen HTTP-Header "X-AccessCode" oder URL-Parameter "?ac=..." enthält, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die in Task.for hinterlegte KVNR des begünstigten Patienten prüfen und bei Missmatch den Aufruf mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich der begünstigte Versicherte als Berechtigter ohne Kenntnis des AccessCodes ein E-Rezept löscht.
+    Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts durch einen Versicherten, wenn der HTTP-Request keinen HTTP-Header "X-AccessCode" oder URL-Parameter "?ac=..." enthält, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die in Task.for hinterlegte KVNR des begünstigten Patienten prüfen und bei Missmatch den Aufruf mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich der begünstigte Versicherte als Berechtigter ohne Kenntnis des AccessCodes ein E-Rezept löscht.
 </requirement>
 
   <!-- A_19120-03 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - E-Rezept löschen - Verordnender - Prüfung AccessCode" version="0" key="IG-TIFLOW-CORE-125">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - E-Rezept löschen - Verordnender - Prüfung AccessCode" version="0" key="IG-TIFLOW-CORE-141">
   <meta lockversion="false"/>
-  <actor name="eRp_FD">
+  <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
-    Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &lt;id&gt; adressierten/Task/&lt;id&gt;/$abort durch verordnende Leistungserbringer den im HTTP-Header "X-AccessCode" gegen den im referenzierten Task enthaltenen AccessCode prüfen und bei Missmatch oder Fehlen im HTTP-Header, den Aufruf mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich die verordnende Leistungserbringerinstitution in Kenntnis des AccessCodes als Berechtigte ein E-Rezept löschen.
+    Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &lt;id&gt; adressierten/Task/&lt;id&gt;/$abort durch verordnende Leistungserbringer den im HTTP-Header "X-AccessCode" gegen den im referenzierten Task enthaltenen AccessCode prüfen und bei Missmatch oder Fehlen im HTTP-Header, den Aufruf mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich die verordnende Leistungserbringerinstitution in Kenntnis des AccessCodes als Berechtigte ein E-Rezept löschen.
 </requirement>
 
   <!-- A_19120-03 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - E-Rezept löschen - Verordnender - Prüfung Status" version="0" key="IG-TIFLOW-CORE-371">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - E-Rezept löschen - Verordnender - Prüfung Status" version="0" key="IG-TIFLOW-CORE-142">
   <meta lockversion="false"/>
-  <actor name="eRp_FD">
+  <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
-    Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &lt;id&gt; adressierten/Task/&lt;id&gt;/$abort durch verordnende Leistungserbringer den im referenzierten Task gespeicherten Status Task.status prüfen und mit dem Fehler 412 abbrechen, wenn Task.status ungleich "ready" ist, damit die verordnende Leistungserbringerinstitution eine Verordnung nur löschen kann, wenn sie sich noch nicht in Belieferung befindet oder beliefert wurde.
+    Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &lt;id&gt; adressierten/Task/&lt;id&gt;/$abort durch verordnende Leistungserbringer den im referenzierten Task gespeicherten Status Task.status prüfen und mit dem Fehler 412 abbrechen, wenn Task.status ungleich "ready" ist, damit die verordnende Leistungserbringerinstitution eine Verordnung nur löschen kann, wenn sie sich noch nicht in Belieferung befindet oder beliefert wurde.
 </requirement>
 
   <!-- A_19027-06 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - E-Rezept löschen - Medizinische und personenbezogene Daten löschen" version="0" key="IG-TIFLOW-CORE-126">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - E-Rezept löschen - Medizinische und personenbezogene Daten löschen" version="0" key="IG-TIFLOW-CORE-143">
   <meta lockversion="false"/>
-  <actor name="eRp_FD">
+  <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"></testProcedure>
   </actor>
-  Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts über&nbsp;den mittels der &lt;id&gt; adressierten /Task/&lt;id&gt;/$abort alle personenbezogenen medizinischen Daten, außer der KVNR in Task.for, aus dem referenzierten Task entfernen. Dies gilt insbesondere für:
+  Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über&nbsp;den mittels der &lt;id&gt; adressierten /Task/&lt;id&gt;/$abort alle personenbezogenen medizinischen Daten, außer der KVNR in Task.for, aus dem referenzierten Task entfernen. Dies gilt insbesondere für:
   <ul>
     <li>Task.input --&gt; löschen (inkl. aller referenzierten Elemente)</li>
     <li>Task.output --&gt; löschen (inkl. aller referenzierten Elemente)</li>
@@ -340,32 +340,32 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Bestehende Übermittlungsaufträge in den ePA Medication Service für das zu löschende E-Rezept werden nicht gelöscht.</p>
 
   <!-- A_19121 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - E-Rezept löschen - Status" version="0" key="IG-TIFLOW-CORE-127">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - E-Rezept löschen - Status" version="0" key="IG-TIFLOW-CORE-144">
   <meta lockversion="false"/>
-  <actor name="eRp_FD">
+  <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
-  Der E-Rezept-Fachdienst MUSS beim Löschen eines E-Rezepts über&nbsp;den mittels der &lt;id&gt; adressierten /Task/&lt;id&gt;/$abort den Status des Tasks Task.status auf den Wert "cancelled" setzen, damit der Task nicht weiter bearbeitet werden kann.
+  Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über&nbsp;den mittels der &lt;id&gt; adressierten /Task/&lt;id&gt;/$abort den Status des Tasks Task.status auf den Wert "cancelled" setzen, damit der Task nicht weiter bearbeitet werden kann.
 </requirement>
 
   <!-- A_28131 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - E-Rezept löschen - Push Notification Versicherter" version="0" key="IG-TIFLOW-CORE-128">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - E-Rezept löschen - Push Notification Versicherter" version="0" key="IG-TIFLOW-CORE-145">
   <meta lockversion="false"/>
-  <actor name="eRp_FD">
+  <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
-  Der E-Rezept-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$abort bei erfolgreichem Abschluss der Operation, wenn die Rolle des aufrufenden Nutzers ungleich oid_versicherter ist, den Push Notification Prozess für den Trigger mit der ChannelId "erp.task.abort" und den Versicherten mit der KVNR = Task.for initiieren.
+  Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$abort bei erfolgreichem Abschluss der Operation, wenn die Rolle des aufrufenden Nutzers ungleich oid_versicherter ist, den Push Notification Prozess für den Trigger mit der ChannelId "erp.task.abort" und den Versicherten mit der KVNR = Task.for initiieren.
 </requirement>
 
 <h3 id="modulspezifische-anforderungen">Modulspezifische Anforderungen</h3>
 
   <!-- A_19026-01 -->
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst - E-Rezept löschen - Flowtype 162 - Rollenprüfung" version="0" key="IG-TIFLOW-DIGA-7">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - E-Rezept löschen - Flowtype 162 - Rollenprüfung" version="0" key="IG-TIFLOW-DIGA-7">
   <meta lockversion="false"/>
-  <actor name="eRp_FD">
+  <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"></testProcedure>
   </actor>
-  Der E-Rezept-Fachdienst MUSS beim Löschen eines Tasks für eine Verordnung mit Flowtype 162 mittels HTTP-POST/$abort-Operation auf den in der URL referenzierten/Task/&lt;id&gt; die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Institutionen in der Rolle
+  Der TI-Flow-Fachdienst MUSS beim Löschen eines Tasks für eine Verordnung mit Flowtype 162 mittels HTTP-POST/$abort-Operation auf den in der URL referenzierten/Task/&lt;id&gt; die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Institutionen in der Rolle
   <ul>
     <li>oid_versicherter</li>
     <li>oid_praxis_arzt</li>
@@ -417,7 +417,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 06:27+0000">2026-03-23</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 24, 2026 17:23+0000">2026-03-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

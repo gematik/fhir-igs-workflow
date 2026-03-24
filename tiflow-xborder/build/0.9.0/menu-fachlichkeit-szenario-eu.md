@@ -24,7 +24,7 @@ Für das europäische Nutzungsszenario ePrescription/eDispensation dürfen folge
 * Arzneimittel, die als Humanarzneimittel eingestuft sind, aber nicht durch ein industrielles Verfahren hergestellt oder bei deren Herstellung kein industrielles Verfahren angewandt wurde.
 * Arzneimittel, die nicht als Humanarzneimittel eingestuft sind, noch nicht gültige oder abgelaufene E-Rezepte. Zusätzlich bestehen Einschränkungen, wenn das Mapping aus den Verordnungsdaten in das geforderte europäische Datenformat nicht möglich ist.
 
-Der E-Rezept-Fachdienst prüft bei Operationsaufrufen, ob die E-Rezepte die folgenden Kriterien erfüllen:
+Der TI-Flow-Fachdienst prüft bei Operationsaufrufen, ob die E-Rezepte die folgenden Kriterien erfüllen:
 
 * Workflow **160** oder **200** (Verordnung für apothekenpflichtige Arzneimittel, keine Workflowsteuerung durch den Leistungserbringer),
 * PZN-Verordnung (KBV_PR_ERP_Medication_PZN) mit strukturierter Angabe der Stückzahl sowie der Packungsgröße, getrennt nach Einheit und numerischem Wert,
@@ -41,19 +41,19 @@ Ein Versicherter kann sich im E-Rezept-FdV anzeigen lassen, welche seiner E-Reze
 
 Die Authentisierung des LE-EU erfolgt im Land B (Ausland). Hierbei wird dem LE-EU eine Rolle zugeordnet. Bei der Übermittlung des Requests aus dem Land B zum NCPeH-FD wird die Rollen-Information und ggf. eine Permission-Information übermittelt. Der NCPeH-FD prüft die Permission für den Zugriff auf die Anwendung E-Rezept. Falls keine Permission übermittelt wurde, führt der NCPeH-FD eine Rollenprüfung durch.
 
-Der E-Rezept-Fachdienst führt keine Permission- oder Rollenprüfung durch.
+Der TI-Flow-Fachdienst führt keine Permission- oder Rollenprüfung durch.
 
 ##### Autorisierung des LE-EU für Zugriff auf Daten eines Versicherten
 
 Ein Versicherter muss den Zugriff eines LE-EU auf seine E-Rezepte autorisieren. Dafür verwendet der Versicherte einen länderspezifischen zufälligen 6-stelligen alpha-nummerischen Zugriffscode (a-z, A-Z, 0-9) und übermittelt diesen zusammen mit seiner Versicherten-ID an den LE-EU.
 
-Versicherten-ID und Zugriffscode bilden zusammen die Information zur Zugriffsberechtigung und dienen der Autorisierung des LE-EU beim Operationsaufruf am E-Rezept-Fachdienst.
+Versicherten-ID und Zugriffscode bilden zusammen die Information zur Zugriffsberechtigung und dienen der Autorisierung des LE-EU beim Operationsaufruf am TI-Flow-Fachdienst.
 
-Der Zugriffscode wird dezentral im E-Rezept-Frontend des Versicherten (FdV) erzeugt. Das E-Rezept-FdV registriert den Zugriffscode am E-Rezept-Fachdienst.
+Der Zugriffscode wird dezentral im E-Rezept-Frontend des Versicherten (FdV) erzeugt. Das E-Rezept-FdV registriert den Zugriffscode am TI-Flow-Fachdienst.
 
-Ein Zugriffscode kann nur am E-Rezept-Fachdienst registriert werden, wenn eine “Einwilligung zum Einlösen im EU-Ausland” des Versicherten vorliegt.
+Ein Zugriffscode kann nur am TI-Flow-Fachdienst registriert werden, wenn eine “Einwilligung zum Einlösen im EU-Ausland” des Versicherten vorliegt.
 
-Bei der Registrierung des Zugriffscodes am E-Rezept-Fachdienst wird geprüft, ob einlösbare Rezepte im E-Rezept-Fachdienst für die KVNR des Versicherten vorliegen. Falls keine einlösbaren E-Rezepte vorliegen, wird der Zugriffscode nicht registriert und der Versicherte erhält eine entsprechende Meldung in seinem E-Rezept-FdV.
+Bei der Registrierung des Zugriffscodes am TI-Flow-Fachdienst wird geprüft, ob einlösbare Rezepte im TI-Flow-Fachdienst für die KVNR des Versicherten vorliegen. Falls keine einlösbaren E-Rezepte vorliegen, wird der Zugriffscode nicht registriert und der Versicherte erhält eine entsprechende Meldung in seinem E-Rezept-FdV.
 
 Ein Zugriffscode ist eine Stunde gültig.
 
@@ -63,7 +63,7 @@ Wenn der Versicherte einen neuen Zugriffscode erstellt, dann wird ein zuvor best
 
 Der registrierte Zugriffscode wird dem Nutzer im E-Rezept-FdV zusammen mit dem Gültigkeitszeitraum angezeigt, damit der Nutzer den Zugriffscode der LEI-EU übermitteln kann.
 
-Nach Ablauf der Gültigkeit löscht der E-Rezept-Fachdienst den Zugriffscode.
+Nach Ablauf der Gültigkeit löscht der TI-Flow-Fachdienst den Zugriffscode.
 
 Es gibt keine Möglichkeit in der Rolle Vertreter den Zugriff des LE-EU auf die Daten des Versicherten zu autorisieren.
 
@@ -71,7 +71,7 @@ Es gibt keine Möglichkeit in der Rolle Vertreter den Zugriff des LE-EU auf die 
 
 #### Versicherteninteraktion
 
-**Beteiligte Systeme:** E-Rezept-Fachdienst, E-Rezept-FdV
+**Beteiligte Systeme:** TI-Flow-Fachdienst, E-Rezept-FdV
 
 | |
 | :--- |
@@ -86,7 +86,7 @@ Es gibt keine Möglichkeit in der Rolle Vertreter den Zugriff des LE-EU auf die 
 *E-Rezepten im EU Ausland*
 #### Interaktion NCPeH
 
-**Beteiligte Systeme:** E-Rezept-Fachdienst, NCPeH
+**Beteiligte Systeme:** TI-Flow-Fachdienst, NCPeH
 
 | |
 | :--- |

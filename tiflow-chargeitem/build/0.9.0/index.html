@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Implementation Guide E-Rezept-Fachdienst - TIFlow - Abrechnungsinformationen v0.9.0</title>
+    <title>Implementation Guide TI-Flow-Fachdienst - TIFlow - Abrechnungsinformationen v0.9.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -216,7 +216,7 @@ TIFlow - Abrechnungsinformationen
     <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
       <div class="container">    <!-- container -->
         <ul class="breadcrumb">
-          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>Implementation Guide E-Rezept-Fachdienst</b></li>
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>Implementation Guide TI-Flow-Fachdienst</b></li>
 
           <span style="float:right;">
 
@@ -246,7 +246,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   
-  <h2>Implementation Guide E-Rezept-Fachdienst</h2>
+  <h2>Implementation Guide TI-Flow-Fachdienst</h2>
   
 
 
@@ -276,7 +276,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         
           Draft
           
-            as of 2026-03-23
+            as of 2026-03-26
           
         
       </td>
@@ -316,7 +316,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </div>
 <p>Dieser Implementation Guide beschreibt die Bereitstellung der Abrechnungsinformationen für den
 Kostenträger. Er ergänzt die workflowspezifischen Anforderungen des
-E-Rezept-Fachdienstes und beschreibt die relevanten Use Cases.</p>
+TI-Flow-Fachdienstes und beschreibt die relevanten Use Cases.</p>
 
 <h3 id="zweck-und-geltungsbereich">Zweck und Geltungsbereich</h3>
 
@@ -330,14 +330,14 @@ E-Rezept-Fachdienstes und beschreibt die relevanten Use Cases.</p>
 <ul>
   <li>Arzneimittelspezifische Workflows zur Belieferung von E-Rezepten</li>
   <li>Nicht apothekenpflichtige Verordnungen</li>
-  <li>Abrechnung ausserhalb des E-Rezept-Fachdienstes</li>
+  <li>Abrechnung ausserhalb des TI-Flow-Fachdienstes</li>
 </ul>
 
 <h3 id="anforderungen-zur-umsetzung-des-igs">Anforderungen zur Umsetzung des IGs</h3>
 
 <requirement conformance="SHALL" title="E-Rezept: Anwendung des IG 'Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte' für die Verwaltung von Abrechnungsinformationen" version="0" key="IG-TIFLOW-CHRG-94">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Herstellererklärung"></testProcedure>
     </actor>
     <actor name="eRp_FdV">
@@ -346,13 +346,13 @@ E-Rezept-Fachdienstes und beschreibt die relevanten Use Cases.</p>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"></testProcedure>
     </actor>
-    Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung der Verwaltung von Abrechnungsinformationen zu Arzneimitteln den Implementation Guide "Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte" umsetzen.
+    Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung der Verwaltung von Abrechnungsinformationen zu Arzneimitteln den Implementation Guide "Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte" umsetzen.
 </requirement>
 
   <!-- A_22206-01, A_22205-0, A_22204, A_22963, A_22205-01 -->
 <requirement conformance="SHALL" title="E-Rezept: Umsetzung des Moduls 'Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte'" version="0" key="IG-TIFLOW-CHRG-95">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Herstellererklärung"></testProcedure>
     </actor>
     <actor name="eRp_FdV">
@@ -361,7 +361,7 @@ E-Rezept-Fachdienstes und beschreibt die relevanten Use Cases.</p>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"></testProcedure>
     </actor>
-    Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides "Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
+    Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides "Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
 </requirement>
 
 <h3 id="wie-dieser-ig-zu-lesen-ist">Wie dieser IG zu lesen ist</h3>
@@ -456,7 +456,7 @@ Health Level Seven International.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 06:25+0000">2026-03-23</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 24, 2026 17:25+0000">2026-03-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

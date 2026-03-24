@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Verarbeitungsregeln für den E-Rezept-Fachdienst - TIFlow - Abrechnungsinformationen v0.9.0</title>
+    <title>Verarbeitungsregeln für den TI-Flow-Fachdienst - TIFlow - Abrechnungsinformationen v0.9.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -216,7 +216,7 @@ TIFlow - Abrechnungsinformationen
     <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
       <div class="container">    <!-- container -->
         <ul class="breadcrumb">
-          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="menu-technische-umsetzung-systemueberblick.html"><b>Systemüberblick</b></a></li><li><b>Verarbeitungsregeln für den E-Rezept-Fachdienst</b></li>
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="menu-technische-umsetzung-systemueberblick.html"><b>Systemüberblick</b></a></li><li><b>Verarbeitungsregeln für den TI-Flow-Fachdienst</b></li>
 
           <span style="float:right;">
 
@@ -246,7 +246,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   
-  <h2>Verarbeitungsregeln für den E-Rezept-Fachdienst</h2>
+  <h2>Verarbeitungsregeln für den TI-Flow-Fachdienst</h2>
   
 
 
@@ -266,12 +266,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul id="markdown-toc">
   <li><a href="#allgemeine-verarbeitungsregeln" id="markdown-toc-allgemeine-verarbeitungsregeln">Allgemeine Verarbeitungsregeln</a></li>
-  <li><a href="#verarbeitungsregeln-für-den-e-rezept-fachdienst" id="markdown-toc-verarbeitungsregeln-für-den-e-rezept-fachdienst">Verarbeitungsregeln für den E-Rezept-Fachdienst</a></li>
+  <li><a href="#verarbeitungsregeln-für-den-ti-flow-fachdienst" id="markdown-toc-verarbeitungsregeln-für-den-ti-flow-fachdienst">Verarbeitungsregeln für den TI-Flow-Fachdienst</a></li>
   <li><a href="#verarbeitungsregeln-für-das-e-rezept-fdv" id="markdown-toc-verarbeitungsregeln-für-das-e-rezept-fdv">Verarbeitungsregeln für das E-Rezept-FdV</a></li>
 </ul>
 
 </div>
-<p>Diese Seite beschreibt gesonderte Verarbeitungsregeln und technische Aspekte für den E-Rezept-Fachdienst und dessen Clients im Kontext der Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte.</p>
+<p>Diese Seite beschreibt gesonderte Verarbeitungsregeln und technische Aspekte für den TI-Flow-Fachdienst und dessen Clients im Kontext der Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte.</p>
 
 <h3 id="allgemeine-verarbeitungsregeln">Allgemeine Verarbeitungsregeln</h3>
 
@@ -286,9 +286,9 @@ Hinweis: In MedicationRequest.insurance.Coverage.type mit dem Codesystem Coverag
 
 <p>Der Workflow-Typ “200” und der Workflow-Typ “209” verwenden dasselbe Statusmodell, wie der Workflow-Typ “160”. Siehe [gemSysL_eRp#2.4.6 Konzept Status E-Rezept].</p>
 
-<p>Für E-Rezepte der Workflow-Types “200” und “209” können die Abrechnungsinformationen über den E-Rezept-Fachdienst an den Versicherten übermittelt werden.</p>
+<p>Für E-Rezepte der Workflow-Types “200” und “209” können die Abrechnungsinformationen über den TI-Flow-Fachdienst an den Versicherten übermittelt werden.</p>
 
-<h3 id="verarbeitungsregeln-für-den-e-rezept-fachdienst">Verarbeitungsregeln für den E-Rezept-Fachdienst</h3>
+<h3 id="verarbeitungsregeln-für-den-ti-flow-fachdienst">Verarbeitungsregeln für den TI-Flow-Fachdienst</h3>
 
 <h4 id="löschfristen">Löschfristen</h4>
 <p>Der Fachdienst löscht Abrechnungsinformationen automatisch 10 Jahre nach der erstmaligen Bereitstellung, wenn der Versicherte diese nicht vorab schon gelöscht hat.</p>
@@ -296,7 +296,7 @@ Hinweis: In MedicationRequest.insurance.Coverage.type mit dem Codesystem Coverag
 <h4 id="identifikation-von-pkv-versicherten">Identifikation von PKV-Versicherten</h4>
 <p>Die Zuordnung eines E-Rezeptes zu einem Versicherten erfolgt auf Basis der Versicherten-ID (10-stelliger unveränderlicher Teil der Krankenversichertennummer (KVNR)). D.h. teilnehmende PKV-Versicherte benötigen eine KVNR, welche ihnen über ihre Krankenversicherung zugeordnet wird. An der Versicherten-ID kann nicht erkannt werden, ob der Versicherte bei einer PKV versichert ist.</p>
 
-<p>Die Authentisierung des Nutzers am E-Rezept-Fachdienst erfolgt mittels eines ACCESS_TOKEN. Diese werden durch Identity Provider (IdP) ausgestellt, welche die Identität des Nutzers attestieren. Es werden ACCESS_TOKEN von IdPs akzeptiert, bei denen der E-Rezept-Fachdienst sich registriert hat.</p>
+<p>Die Authentisierung des Nutzers am TI-Flow-Fachdienst erfolgt mittels eines ACCESS_TOKEN. Diese werden durch Identity Provider (IdP) ausgestellt, welche die Identität des Nutzers attestieren. Es werden ACCESS_TOKEN von IdPs akzeptiert, bei denen der TI-Flow-Fachdienst sich registriert hat.</p>
 
 <p>Mit dem Start der Anwendung E-Rezept kann der IdP der gematik genutzt werden. Für die Authentisierung eines Versicherten am IdP der gematik mittels E-Rezept-FdV wird eine eGK mit NFC-Schnittstelle verwendet.</p>
 
@@ -305,7 +305,7 @@ Hinweis: In MedicationRequest.insurance.Coverage.type mit dem Codesystem Coverag
 <h3 id="verarbeitungsregeln-für-das-e-rezept-fdv">Verarbeitungsregeln für das E-Rezept-FdV</h3>
 
 <h4 id="abrechnungsinformation-token-als-2d-code-anzeigen">Abrechnungsinformation-Token als 2D-Code anzeigen</h4>
-<p>Mit diesem Anwendungsfall kann der Nutzer den AccessCode zum Ändern als 2D-Code auf dem Bildschirm seines E-Rezept-FdVs anzeigen lassen, um es direkt in der Apotheke vorzuzeigen und die Apotheke damit zu berechtigen, die Abrechnungsinformation vom E-Rezept-Fachdienst abzurufen und den PKV-Abgabedatensatz einmalig zu ändern.</p>
+<p>Mit diesem Anwendungsfall kann der Nutzer den AccessCode zum Ändern als 2D-Code auf dem Bildschirm seines E-Rezept-FdVs anzeigen lassen, um es direkt in der Apotheke vorzuzeigen und die Apotheke damit zu berechtigen, die Abrechnungsinformation vom TI-Flow-Fachdienst abzurufen und den PKV-Abgabedatensatz einmalig zu ändern.</p>
 
   <!-- A_24577 -->
 <requirement conformance="MAY" title="E-Rezept-FdV: optional: 2D-Code Abrechnungsinformation anzeigen" version="0" key="IG-TIFLOW-CHRG-3">
@@ -363,7 +363,7 @@ Hinweis: In MedicationRequest.insurance.Coverage.type mit dem Codesystem Coverag
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-      Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation exportieren" auf Basis der vom E-Rezept-Fachdienst zu einer Prescription-ID heruntergeladenen ChargeItem, Verordnungsdatensatz, PKV-Abgabedatensatz und Quittung Ressourcen
+      Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation exportieren" auf Basis der vom TI-Flow-Fachdienst zu einer Prescription-ID heruntergeladenen ChargeItem, Verordnungsdatensatz, PKV-Abgabedatensatz und Quittung Ressourcen
       <ul>
         <li>einen Ausdruck erstellen,</li>
         <li>für den Ausdruck ein PDF gemäß PDF/A-3-Standard (ISO 19005-3) erstellen,</li>
@@ -424,7 +424,7 @@ Hinweis: In MedicationRequest.insurance.Coverage.type mit dem Codesystem Coverag
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 06:25+0000">2026-03-23</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 24, 2026 17:25+0000">2026-03-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

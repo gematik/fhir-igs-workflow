@@ -1,20 +1,20 @@
-# Implementation Guide E-Rezept-Fachdienst - TIFlow - Abrechnungsinformationen v0.9.0
+# Implementation Guide TI-Flow-Fachdienst - TIFlow - Abrechnungsinformationen v0.9.0
 
 TIFlow - Abrechnungsinformationen
 
 Version 0.9.0 - ci-build 
 
 * [**Table of Contents**](toc.md)
-* **Implementation Guide E-Rezept-Fachdienst**
+* **Implementation Guide TI-Flow-Fachdienst**
 
-## Implementation Guide E-Rezept-Fachdienst
+## Implementation Guide TI-Flow-Fachdienst
 
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow/chargeitem/ImplementationGuide/de.gematik.tiflow.chargeitem | *Version*:0.9.0 |
-| Draft as of 2026-03-23 | *Computable Name*:gemIG_TIFlow_chargeitem |
+| Draft as of 2026-03-26 | *Computable Name*:gemIG_TIFlow_chargeitem |
 
-Dieser Implementation Guide beschreibt die Bereitstellung der Abrechnungsinformationen für den Kostenträger. Er ergänzt die workflowspezifischen Anforderungen des E-Rezept-Fachdienstes und beschreibt die relevanten Use Cases.
+Dieser Implementation Guide beschreibt die Bereitstellung der Abrechnungsinformationen für den Kostenträger. Er ergänzt die workflowspezifischen Anforderungen des TI-Flow-Fachdienstes und beschreibt die relevanten Use Cases.
 
 ### Zweck und Geltungsbereich
 
@@ -25,13 +25,13 @@ Dieser Implementation Guide beschreibt die Bereitstellung der Abrechnungsinforma
 
 * Arzneimittelspezifische Workflows zur Belieferung von E-Rezepten
 * Nicht apothekenpflichtige Verordnungen
-* Abrechnung ausserhalb des E-Rezept-Fachdienstes
+* Abrechnung ausserhalb des TI-Flow-Fachdienstes
 
 ### Anforderungen zur Umsetzung des IGs
 
-Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung der Verwaltung von Abrechnungsinformationen zu Arzneimitteln den Implementation Guide "Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte" umsetzen.
+Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung der Verwaltung von Abrechnungsinformationen zu Arzneimitteln den Implementation Guide "Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte" umsetzen.
 
-Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides "Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
+Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides "Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
 ### Wie dieser IG zu lesen ist
 
 Die Kapitel folgen der Struktur Fachlichkeit, Technische Umsetzung und Schnittstellen. Szenarien und Anwendungsfälle verweisen auf die zugehörigen technischen Kapitel und Profile.
@@ -67,7 +67,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "gemIG_TIFlow_chargeitem",
   "title" : "TIFlow - Abrechnungsinformationen",
   "status" : "draft",
-  "date" : "2026-03-23T06:25:52+00:00",
+  "date" : "2026-03-26",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -900,6 +900,18 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
     "resource" : [{
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/ExampleERPCHRGChargeItemSearchset"
+      },
+      "name" : "ChargeItem searchset response for ERP-CHRG",
+      "description" : "Example response for GET /ChargeItem",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ChargeItem"
       }],
       "reference" : {
@@ -956,13 +968,26 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Consent"
+        "valueString" : "Bundle"
       }],
       "reference" : {
-        "reference" : "Consent/ChargeItemConsent-Request"
+        "reference" : "Bundle/ExampleERPCHRGCommunicationSearchset"
       },
-      "name" : "Consent to store digital ChargeItem",
-      "exampleCanonical" : "https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Consent"
+      "name" : "Communication searchset response for ERP-CHRG",
+      "description" : "Example response for GET /Communication",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/ExampleERPCHRGConsentSearchset"
+      },
+      "name" : "Consent searchset response for ERP-CHRG",
+      "description" : "Example response for GET /Consent",
+      "exampleBoolean" : true
     },
     {
       "extension" : [{
@@ -978,14 +1003,13 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CapabilityStatement"
+        "valueString" : "Consent"
       }],
       "reference" : {
-        "reference" : "CapabilityStatement/erp-fachdienst-client"
+        "reference" : "Consent/ChargeItemConsent-Request"
       },
-      "name" : "ERPCHRG CapabilityStatement für Clients des E-Rezept-Fachdienst",
-      "description" : "Dieses CapabilityStatement legt die Anforderungen an Clients des E-Rezept-Fachdienst für PKV-Abrechnungsinformationen fest.",
-      "exampleBoolean" : false
+      "name" : "Consent to store digital ChargeItem",
+      "exampleCanonical" : "https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Consent"
     },
     {
       "extension" : [{
@@ -1116,7 +1140,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
           "valueUrl" : "index.html"
         }],
         "nameUrl" : "index.html",
-        "title" : "Implementation Guide E-Rezept-Fachdienst",
+        "title" : "Implementation Guide TI-Flow-Fachdienst",
         "generation" : "markdown"
       },
       {
@@ -1151,7 +1175,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
             "valueUrl" : "menu-technische-umsetzung-verarbeitungsregeln.html"
           }],
           "nameUrl" : "menu-technische-umsetzung-verarbeitungsregeln.html",
-          "title" : "Verarbeitungsregeln für den E-Rezept-Fachdienst",
+          "title" : "Verarbeitungsregeln für den TI-Flow-Fachdienst",
           "generation" : "markdown"
         },
         {

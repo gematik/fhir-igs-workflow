@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "gemIG_TIFlow_xborder"] ; # 
   fhir:title [ fhir:v "TIFlow - Grenzüberschreitender Datenaustausch"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-03-23T06:49:02+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-03-26"^^xsd:date] ; # 
   fhir:publisher [ fhir:v "gematik GmbH"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "gematik GmbH" ] ;
@@ -142,7 +142,7 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "2025+"
+           fhir:v "2026+"
          ]
        ] ) ;
        fhir:url [
@@ -775,7 +775,7 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "2025+"
+           fhir:v "2026+"
          ]
        ] ) ;
        fhir:url [
@@ -1496,6 +1496,27 @@
          ] ;
          fhir:value [
            a fhir:String ;
+           fhir:v "CapabilityStatement"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://gematik.de/fhir/tiflow/xborder/CapabilityStatement/erp-fachdienst-server-erpeu> ;
+         fhir:reference [ fhir:v "CapabilityStatement/erp-fachdienst-server-erpeu" ]
+       ] ;
+       fhir:name [ fhir:v "ERPEU CapabilityStatement fuer den E-Rezept-Fachdienst" ] ;
+       fhir:description [ fhir:v "CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)" ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
            fhir:v "StructureDefinition:resource"
          ]
        ] ) ;
@@ -1529,6 +1550,27 @@
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "OperationOutcome"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://gematik.de/fhir/tiflow/xborder/OperationOutcome/ExampleERPEUOperationOutcomeError> ;
+         fhir:reference [ fhir:v "OperationOutcome/ExampleERPEUOperationOutcomeError" ]
+       ] ;
+       fhir:name [ fhir:v "Example error response for ERP-EU operations" ] ;
+       fhir:description [ fhir:v "Representative validation error for EU access operation input" ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v true
        ]
      ] [
        fhir:extension ( [

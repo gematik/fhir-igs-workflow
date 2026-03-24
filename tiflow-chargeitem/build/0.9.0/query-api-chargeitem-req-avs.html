@@ -272,7 +272,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 </div>
 <h3 id="abrechnungsinformation-bereitstellen-post-chargeitem">Abrechnungsinformation bereitstellen (POST /ChargeItem)</h3>
-<p>Mit diesem Anwendungsfall stellt die abgebende LEI die Abrechnungsinformation zu einem E-Rezept auf dem E-Rezept-Fachdienst ein.</p>
+<p>Mit diesem Anwendungsfall stellt die abgebende LEI die Abrechnungsinformation zu einem E-Rezept auf dem TI-Flow-Fachdienst ein.</p>
 
   <!-- A_22708 -->
 <requirement conformance="SHALL NOT" title="PS abgebende LEI: Abrechnungsinformation bereitstellen – Einwilligung muss vorliegen" version="0" key="IG-TIFLOW-CHRG-22">
@@ -280,7 +280,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"></testProcedure>
     </actor>
-      Das PS der abgebenden LEI DARF NICHT Abrechnungsinformation auf dem E-Rezept-Fachdienst bereitstellen, wenn ihm nicht zuvor die Information über die Einwilligung des Versicherten vom E-Rezept-Fachdienst übertragen wurde.
+      Das PS der abgebenden LEI DARF NICHT Abrechnungsinformation auf dem TI-Flow-Fachdienst bereitstellen, wenn ihm nicht zuvor die Information über die Einwilligung des Versicherten vom TI-Flow-Fachdienst übertragen wurde.
 </requirement>
 
   <!-- A_22186 -->
@@ -289,10 +289,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"></testProcedure>
     </actor>
-      Das PS der abgebenden LEI MUSS es dem Nutzer ermöglichen, ein E-Rezept auszuwählen, zu dem die Abrechnungsinformation auf dem E-Rezept-Fachdienst bereitgestellt werden soll.
+      Das PS der abgebenden LEI MUSS es dem Nutzer ermöglichen, ein E-Rezept auszuwählen, zu dem die Abrechnungsinformation auf dem TI-Flow-Fachdienst bereitgestellt werden soll.
 </requirement>
 
-<p>Die Information, dass der Versicherte die Einwilligung zum Speichern der Abrechnungsinformationen auf dem E-Rezept-Fachdienst erteilt hat, wird im Anwendungsfall “E-Rezept abrufen” übermittelt.</p>
+<p>Die Information, dass der Versicherte die Einwilligung zum Speichern der Abrechnungsinformationen auf dem TI-Flow-Fachdienst erteilt hat, wird im Anwendungsfall “E-Rezept abrufen” übermittelt.</p>
 
   <!-- A_22188 -->
 <requirement conformance="SHALL" title="PS abgebende LEI: Abrechnungsinformation bereitstellen – PKV-Abgabedatensatz erstellen" version="0" key="IG-TIFLOW-CHRG-24">
@@ -324,7 +324,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"></testProcedure>
     </actor>
-      Das PS der abgebenden LEI MUSS im Anwendungsfall "Abrechnungsinformation bereitstellen" die HTTP-Operation POST /ChargeItem/ des E-Rezept-Fachdienstes mit
+      Das PS der abgebenden LEI MUSS im Anwendungsfall "Abrechnungsinformation bereitstellen" die HTTP-Operation POST /ChargeItem/ des TI-Flow-Fachdienstes mit
       <ul>
         <li>ACCESS_TOKEN im Authorization-Header</li>
         <li>Task-ID als URL-Parameter ?task=</li>
@@ -334,12 +334,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       ausführen.
 </requirement>
 
-<p>Wenn das E-Rezept bereits vom E-Rezept-Fachdienst gelöscht wurde, dann enthält der Response den Fehlercode 405. Das Bereitstellen der Abrechnungsinformation zu einem E-Rezept ist nur möglich bevor das E-Rezept gelöscht wurde.</p>
+<p>Wenn das E-Rezept bereits vom TI-Flow-Fachdienst gelöscht wurde, dann enthält der Response den Fehlercode 405. Das Bereitstellen der Abrechnungsinformation zu einem E-Rezept ist nur möglich bevor das E-Rezept gelöscht wurde.</p>
 
-<p>Wenn der Versicherte zwischenzeitlich die Einwilligung zum Speichern von Abrechnungsinformationen im E-Rezept-Fachdienst widerrufen hat, dann enthält der Response den Fehlercode 403.</p>
+<p>Wenn der Versicherte zwischenzeitlich die Einwilligung zum Speichern von Abrechnungsinformationen im TI-Flow-Fachdienst widerrufen hat, dann enthält der Response den Fehlercode 403.</p>
 
 <h3 id="pkv-abgabedatensatz-ändern-put-chargeitemid">PKV-Abgabedatensatz ändern (PUT /ChargeItem/&lt;id&gt;)</h3>
-<p>Mit diesem Anwendungsfall kann die abgebende LEI den PKV-Abgabedatensatz zu einem E-Rezept, welche die abgebende LEI zuvor auf dem E-Rezept-Fachdienst bereitgestellt hat, ändern. Als Voraussetzung muss der Versicherte der abgebenden LEI einen AccessCode übermitteln, um die abgebende LEI zu berechtigen.</p>
+<p>Mit diesem Anwendungsfall kann die abgebende LEI den PKV-Abgabedatensatz zu einem E-Rezept, welche die abgebende LEI zuvor auf dem TI-Flow-Fachdienst bereitgestellt hat, ändern. Als Voraussetzung muss der Versicherte der abgebenden LEI einen AccessCode übermitteln, um die abgebende LEI zu berechtigen.</p>
 
   <!-- A_22191 -->
 <requirement conformance="SHALL" title="PS abgebende LEI: PKV-Abgabedatensatz ändern - PKV-Abgabedatensatz zum Ändern auswählen" version="0" key="IG-TIFLOW-CHRG-27">
@@ -347,7 +347,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"></testProcedure>
     </actor>
-      Das PS der abgebenden LEI MUSS es dem Nutzer ermöglichen, die Abrechnungsinformation zu einem E-Rezept zum Ändern auf dem E-Rezept-Fachdienst auszuwählen.
+      Das PS der abgebenden LEI MUSS es dem Nutzer ermöglichen, die Abrechnungsinformation zu einem E-Rezept zum Ändern auf dem TI-Flow-Fachdienst auszuwählen.
 </requirement>
 
   <!-- A_22193 -->
@@ -380,7 +380,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"></testProcedure>
     </actor>
-      Das PS abgebende LEI MUSS im Anwendungsfall "PKV-Abgabedatensatz ändern" die HTTP-Operation PUT /ChargeItem/&lt;id&gt;/ des E-Rezept-Fachdienstes mit
+      Das PS abgebende LEI MUSS im Anwendungsfall "PKV-Abgabedatensatz ändern" die HTTP-Operation PUT /ChargeItem/&lt;id&gt;/ des TI-Flow-Fachdienstes mit
       <ul>
         <li>ACCESS_TOKEN im Authorization-Header</li>
         <li>Prescription-ID in URL &lt;id&gt;</li>
@@ -390,10 +390,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       ausführen.
 </requirement>
 
-<p>Wenn der Versicherte zwischenzeitlich die Einwilligung zum Speichern von Abrechnungsinformationen im E-Rezept-Fachdienst widerrufen hat, dann enthält der Response den Fehlercode 403.</p>
+<p>Wenn der Versicherte zwischenzeitlich die Einwilligung zum Speichern von Abrechnungsinformationen im TI-Flow-Fachdienst widerrufen hat, dann enthält der Response den Fehlercode 403.</p>
 
 <h3 id="abrechnungsinformation-abrufen-get-chargeitemid">Abrechnungsinformation abrufen (GET /ChargeItem/&lt;id&gt;)</h3>
-<p>Mit diesem Anwendungsfall kann eine abgebende LEI die Abrechnungsinformation vom E-Rezept-Fachdienst abrufen, welche durch sie zuvor bereitgestellt und noch nicht gelöscht wurde. Als Voraussetzung muss der Versicherte der abgebenden LEI einen AccessCode übermitteln, um die abgebende LEI zu berechtigen.</p>
+<p>Mit diesem Anwendungsfall kann eine abgebende LEI die Abrechnungsinformation vom TI-Flow-Fachdienst abrufen, welche durch sie zuvor bereitgestellt und noch nicht gelöscht wurde. Als Voraussetzung muss der Versicherte der abgebenden LEI einen AccessCode übermitteln, um die abgebende LEI zu berechtigen.</p>
 
   <!-- A_22203 -->
 <requirement conformance="SHALL" title="PS abgebende LEI: Abrechnungsinformation abrufen - Leserequest" version="0" key="IG-TIFLOW-CHRG-31">
@@ -401,7 +401,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-      Das PS abgebende LEI MUSS im Anwendungsfall "Abrechnungsinformation abrufen" die HTTP-Operation GET /ChargeItem/&lt;id&gt; des E-Rezept-Fachdienstes mit
+      Das PS abgebende LEI MUSS im Anwendungsfall "Abrechnungsinformation abrufen" die HTTP-Operation GET /ChargeItem/&lt;id&gt; des TI-Flow-Fachdienstes mit
       <ul>
         <li>ACCESS_TOKEN im Authorization-Header</li>
         <li>Prescription-ID in URL &lt;id&gt;</li>
@@ -452,7 +452,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 06:25+0000">2026-03-23</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 24, 2026 17:25+0000">2026-03-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

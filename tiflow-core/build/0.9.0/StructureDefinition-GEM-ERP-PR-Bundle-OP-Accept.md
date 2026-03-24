@@ -1,0 +1,153 @@
+# GEM ERP PR Bundle OP Accept - TIFlow - Kernfunktionalitäten v0.9.0
+
+TIFlow - Kernfunktionalitäten
+
+Version 0.9.0 - ci-build 
+
+* [**Table of Contents**](toc.md)
+* [**FHIR-Artefakte**](artifacts.md)
+* **GEM ERP PR Bundle OP Accept**
+
+## Resource Profile: GEM ERP PR Bundle OP Accept 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle_OP_Accept | *Version*:0.9.0 |
+| Draft as of 2025-09-25 | *Computable Name*:GEM_ERP_PR_Bundle_OP_Accept |
+
+ 
+Antwort des E-Rezept-Fachdienst auf die $accept-Operation 
+
+**Usages:**
+
+* Use this Profile: [GEM ERP PR AcceptOperation Output](StructureDefinition-GEM-ERP-PR-PAR-Accept-Operation-Output.md)
+* Examples for this Profile: [Bundle/Bundle-AcceptOperation](Bundle-Bundle-AcceptOperation.md) and [Bundle/ExampleAcceptResponseBundle](Bundle-ExampleAcceptResponseBundle.md)
+
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow.core|current/StructureDefinition/GEM-ERP-PR-Bundle-OP-Accept)
+
+### Formal Views of Profile Content
+
+ [Description of Profiles, Differentials, Snapshots and how the different presentations work](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
+
+ 
+
+Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Bundle-OP-Accept.csv), [Excel](StructureDefinition-GEM-ERP-PR-Bundle-OP-Accept.xlsx), [Schematron](StructureDefinition-GEM-ERP-PR-Bundle-OP-Accept.sch) 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "GEM-ERP-PR-Bundle-OP-Accept",
+  "url" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle_OP_Accept",
+  "version" : "0.9.0",
+  "name" : "GEM_ERP_PR_Bundle_OP_Accept",
+  "title" : "GEM ERP PR Bundle OP Accept",
+  "status" : "draft",
+  "date" : "2025-09-25",
+  "publisher" : "gematik GmbH",
+  "contact" : [{
+    "name" : "gematik GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://gematik.de"
+    },
+    {
+      "system" : "email",
+      "value" : "erp-umsetzung@gematik.de"
+    }]
+  }],
+  "description" : "Antwort des E-Rezept-Fachdienst auf die $accept-Operation",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "fhirVersion" : "4.0.1",
+  "mapping" : [{
+    "identity" : "v2",
+    "uri" : "http://hl7.org/v2",
+    "name" : "HL7 v2 Mapping"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "cda",
+    "uri" : "http://hl7.org/v3/cda",
+    "name" : "CDA (R2)"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  }],
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "Bundle",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Bundle",
+  "derivation" : "constraint",
+  "differential" : {
+    "element" : [{
+      "id" : "Bundle",
+      "path" : "Bundle"
+    },
+    {
+      "id" : "Bundle.type",
+      "path" : "Bundle.type",
+      "fixedCode" : "collection"
+    },
+    {
+      "id" : "Bundle.entry",
+      "path" : "Bundle.entry",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "type",
+          "path" : "resource"
+        }],
+        "description" : "Die Aufgabe und das QES signierte Bundle.",
+        "rules" : "closed"
+      },
+      "min" : 2,
+      "max" : "2"
+    },
+    {
+      "id" : "Bundle.entry:erxTask",
+      "path" : "Bundle.entry",
+      "sliceName" : "erxTask",
+      "min" : 1,
+      "max" : "1"
+    },
+    {
+      "id" : "Bundle.entry:erxTask.resource",
+      "path" : "Bundle.entry.resource",
+      "type" : [{
+        "code" : "Task",
+        "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task"]
+      }]
+    },
+    {
+      "id" : "Bundle.entry:erxBinary",
+      "path" : "Bundle.entry",
+      "sliceName" : "erxBinary",
+      "min" : 1,
+      "max" : "1"
+    },
+    {
+      "id" : "Bundle.entry:erxBinary.resource",
+      "path" : "Bundle.entry.resource",
+      "type" : [{
+        "code" : "Binary",
+        "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Binary"]
+      }]
+    }]
+  }
+}
+
+```

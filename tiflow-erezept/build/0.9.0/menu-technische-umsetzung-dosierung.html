@@ -281,16 +281,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul id="markdown-toc">
   <li><a href="#umsetzung-für-clients" id="markdown-toc-umsetzung-für-clients">Umsetzung für Clients</a></li>
-  <li><a href="#umsetzung-für-den-e-rezept-fachdienst" id="markdown-toc-umsetzung-für-den-e-rezept-fachdienst">Umsetzung für den E-Rezept-Fachdienst</a></li>
+  <li><a href="#umsetzung-für-den-ti-flow-fachdienst" id="markdown-toc-umsetzung-für-den-ti-flow-fachdienst">Umsetzung für den TI-Flow-Fachdienst</a></li>
   <li><a href="#validierung-von-strukturierten-dosierungen" id="markdown-toc-validierung-von-strukturierten-dosierungen">Validierung von strukturierten Dosierungen</a></li>
 </ul>
 
 </div>
 <p>Der [Medication IG DE] der HL7 DE definiert als ersten Anwendungsfall für die deutschlandweite Nutzung von Profilen für den Arzneimittelbereich die Angabe strukturierter Dosierinformationen.</p>
 
-<p>In diesem IG wurden Festlegungen getroffen wie diese Dosierungen anzugeben und im dgMP-Kontext zu validieren sind. Neben der FHIR-Struktur, die durch die Profildefinitionen vorgegeben ist, muss der E-Rezept-Fachdienst auch außerhalb der FHIR-Validierung die textuelle Repräsentation der Dosierung prüfen.</p>
+<p>In diesem IG wurden Festlegungen getroffen wie diese Dosierungen anzugeben und im dgMP-Kontext zu validieren sind. Neben der FHIR-Struktur, die durch die Profildefinitionen vorgegeben ist, muss der TI-Flow-Fachdienst auch außerhalb der FHIR-Validierung die textuelle Repräsentation der Dosierung prüfen.</p>
 
-<p>Client Systeme, die Dosierinformationen an den E-Rezept-Fachdienst übertragen, können diese strukturiert oder als Freitext angeben. Für diese Fälle muss in einer dafür vorgesehenen Extension eine textuelle Repräsentation der Dosierung generiert werden, die dann vom E-Rezept-Fachdienst nach den Vorgaben des Algorithmus, der im [dgMP-DosageTextgenerierung-Skript] definiert ist, geprüft wird.</p>
+<p>Client Systeme, die Dosierinformationen an den TI-Flow-Fachdienst übertragen, können diese strukturiert oder als Freitext angeben. Für diese Fälle muss in einer dafür vorgesehenen Extension eine textuelle Repräsentation der Dosierung generiert werden, die dann vom TI-Flow-Fachdienst nach den Vorgaben des Algorithmus, der im [dgMP-DosageTextgenerierung-Skript] definiert ist, geprüft wird.</p>
 
 <h3 id="umsetzung-für-clients">Umsetzung für Clients</h3>
 <p>Client Systeme, die strukturierte Dosierinformationen schreiben, müssen neben dieser eine textuelle Repräsentation erzeugen und in der Instanz angeben. Fehlende Angaben der textuellen Repräsentation, sowie dessen Metadaten, werden vom E-RezeptFachdienst als invalide abgewiesen.</p>
@@ -301,26 +301,26 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Hierzu muss u.a. für jede Angabe der Dosierung eine gerenderte textuelle Darstellung nach [dgMP-DosageTextgenerierungSkript] erzeugt und im Datensatz angegeben werden.</p>
 
-<h3 id="umsetzung-für-den-e-rezept-fachdienst">Umsetzung für den E-Rezept-Fachdienst</h3>
-<p>Der E-Rezept-Fachdienst muss eingehende Instanzen zunächst FHIR-validieren und nachfolgend überprüfen, ob die textuelle Repräsentation der Dosierung dem Output des Algorithmus, der im [dgMP-DosageTextgenerierung-Skript] definiert ist, entspricht. Falls der Client keinen korrekten String übermittelt hat, wird die Instanz mit entsprechendem Fehler abgewiesen.</p>
+<h3 id="umsetzung-für-den-ti-flow-fachdienst">Umsetzung für den TI-Flow-Fachdienst</h3>
+<p>Der TI-Flow-Fachdienst muss eingehende Instanzen zunächst FHIR-validieren und nachfolgend überprüfen, ob die textuelle Repräsentation der Dosierung dem Output des Algorithmus, der im [dgMP-DosageTextgenerierung-Skript] definiert ist, entspricht. Falls der Client keinen korrekten String übermittelt hat, wird die Instanz mit entsprechendem Fehler abgewiesen.</p>
 
-<p>Der E-Rezept-Fachdienst prüft dies bei</p>
+<p>Der TI-Flow-Fachdienst prüft dies bei</p>
 <ul>
   <li>Einstellen der Verordnung (<a href="./op-activate.html">$activate</a>)</li>
   <li>vorläufiger Abgabe von Arzneimitteln (<a href="./op-dispense.html">$dispense</a>)</li>
   <li>und Abgabe von Arzneimitteln (<a href="./op-close.html">$close</a>), falls eine MedicationDispense angegeben ist</li>
 </ul>
 
-<p>Im Fehlerfall gibt der E-Rezept-Fachdienst eine entsprechende Fehlermeldung an den Client zurück und überträgt auch die erwartete textuelle Repräsentation der Dosierung.
+<p>Im Fehlerfall gibt der TI-Flow-Fachdienst eine entsprechende Fehlermeldung an den Client zurück und überträgt auch die erwartete textuelle Repräsentation der Dosierung.
 Eine Auflistung an Beispielen ist hier zu finden: <a href="https://ig.fhir.de/igs/medication/1.0.3/dosierung-beispiele.html">Medication IG - Beispiele</a>.</p>
 
 <h3 id="validierung-von-strukturierten-dosierungen">Validierung von strukturierten Dosierungen</h3>
 
 <p>In FHIR-Ressourcen ist es möglich, strukturierte Dosierinformationen anzugeben. Diese Angaben sind im komplexen FHIRDatentyp “Dosage” definiert. Beispielsweise bieten die FHIR-Ressourcen MedicationRequest und MedicationDispense die Möglichkeit, diese Angaben unter dosagelnstruction zu vermerken. Der [Medication IG] der HL7 Deutschland legt für den dgMP fest, dass diese strukturierten Dosierinformationen zusätzlich als textuelle Repräsentation von erzeugenden Systemen bereitgestellt und von entgegennehmenden zentralen Diensten validiert werden müssen.</p>
 
-<p>Der E-Rezept-Fachdienst ist daher verpflichtet, über die strukturelle FHIR-Validierung hinaus sicherzustellen, dass die textuelle Repräsentation mit den strukturierten Dosierinformationen übereinstimmt.</p>
+<p>Der TI-Flow-Fachdienst ist daher verpflichtet, über die strukturelle FHIR-Validierung hinaus sicherzustellen, dass die textuelle Repräsentation mit den strukturierten Dosierinformationen übereinstimmt.</p>
 
-<p>Zu diesem Zweck stellt HL7 Deutschland das [dgMPDosageTextgenerierung-Skript] zur Verfügung. Dieses Skript implementiert einen Algorithmus, der die FHIR-Ressourcen MedicationRequest, -Dispense und -Statement mit Dosierinformationen in einen String umwandelt. Der E-Rezept-Fachdienst muss in der Lage sein, zu überprüfen, ob die angegebene textuelle Repräsentation dem Output des im Referenzskript implementierten Algorithmus entspricht.</p>
+<p>Zu diesem Zweck stellt HL7 Deutschland das [dgMPDosageTextgenerierung-Skript] zur Verfügung. Dieses Skript implementiert einen Algorithmus, der die FHIR-Ressourcen MedicationRequest, -Dispense und -Statement mit Dosierinformationen in einen String umwandelt. Der TI-Flow-Fachdienst muss in der Lage sein, zu überprüfen, ob die angegebene textuelle Repräsentation dem Output des im Referenzskript implementierten Algorithmus entspricht.</p>
 
 <p>Das Referenzskript enthält eine Versionsnummer und eine Information zur Sprache, die in FHIR-Ressourcen unter <code class="language-plaintext highlighter-rouge">extension: generatedDosageInstructionsMeta</code></p>
 
@@ -331,7 +331,7 @@ Eine Auflistung an Beispielen ist hier zu finden: <a href="https://ig.fhir.de/ig
 
 <p>angegeben sind.</p>
 
-<p>Diese Werte werden bei der Validierung berücksichtigt, sodass nur Repräsentationen entsprechend einer gültigen Version und Sprache im E-Rezept-Fachdienst eingestellt werden können.</p>
+<p>Diese Werte werden bei der Validierung berücksichtigt, sodass nur Repräsentationen entsprechend einer gültigen Version und Sprache im TI-Flow-Fachdienst eingestellt werden können.</p>
 
 <p>Die Validierung von Dosierungen gilt jeweils für freitextliche Dosierinformationen (<code class="language-plaintext highlighter-rouge">.dosagelnstruction.text</code>), sowie für strukturierte Dosierinformationen (<code class="language-plaintext highlighter-rouge">.dosagelnstruction.timing</code> und <code class="language-plaintext highlighter-rouge">.dosagelnstruction.doseAndRate</code>). Eine unstrukturierte Freitextangabe der Dosierung ist weiterhin möglich. Hierzu ist unter <code class="language-plaintext highlighter-rouge">extension[renderedDosagelnstruction]</code> der identische Text, wie in <code class="language-plaintext highlighter-rouge">.dosagelnstruction.text</code> anzugeben.</p>
 
@@ -375,7 +375,7 @@ Eine Auflistung an Beispielen ist hier zu finden: <a href="https://ig.fhir.de/ig
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 07:25+0000">2026-03-23</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 24, 2026 17:34+0000">2026-03-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

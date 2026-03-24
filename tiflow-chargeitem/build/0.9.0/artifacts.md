@@ -9,9 +9,17 @@ Version 0.9.0 - ci-build
 
 ## FHIR-Artefakte
 
-Diese Seite enthält eine Übersicht aller FHIR-Artefakte, die im Rahmen dieses Implementation Guide für die Patientenrechnung im E-Rezept-Fachdienst definiert werden.
+Diese Seite enthält eine Übersicht aller FHIR-Artefakte, die im Rahmen dieses Implementation Guide für die Patientenrechnung im TI-Flow-Fachdienst definiert werden.
 
 ### Beispielinstanzen
+
+**Bundle**
+
+* [ChargeItem searchset response for ERP-CHRG](Bundle-ExampleERPCHRGChargeItemSearchset.md)
+
+* [Communication searchset response for ERP-CHRG](Bundle-ExampleERPCHRGCommunicationSearchset.md)
+
+* [Consent searchset response for ERP-CHRG](Bundle-ExampleERPCHRGConsentSearchset.md)
 
 **ChargeItem**
 

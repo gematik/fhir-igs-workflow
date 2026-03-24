@@ -279,20 +279,20 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div>
 <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
-<p>Aufgabe des E-Rezept-Fachdienst ist es Verordnungs- und Dispensierungsdaten von Arzneimitteln an die ePA zu übermitteln.</p>
+<p>Aufgabe des TI-Flow-Fachdienst ist es Verordnungs- und Dispensierungsdaten von Arzneimitteln an die ePA zu übermitteln.</p>
 
-<p>Der E-Rezept-Fachdienst muss daher in der Lage sein, die von den verordnenden Systemen (z.B. Praxis- oder Krankenhausinformationssysteme) gelieferten Daten in die von der ePA geforderten Formate zu überführen und an den ePA Medication Service zu übertragen.</p>
+<p>Der TI-Flow-Fachdienst muss daher in der Lage sein, die von den verordnenden Systemen (z.B. Praxis- oder Krankenhausinformationssysteme) gelieferten Daten in die von der ePA geforderten Formate zu überführen und an den ePA Medication Service zu übertragen.</p>
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 600px; margin-bottom: 30px;">
-        <img src="./mapping-fachdienst.png" alt="Mapping des E-Rezept-Fachdienstes" style="width: 100%;" />
+        <img src="./mapping-fachdienst.png" alt="Mapping des TI-Flow-Fachdienstes" style="width: 100%;" />
     </div>
-    <figcaption><strong>Abbildung: </strong>Mapping des E-Rezept-Fachdienstes</figcaption>
+    <figcaption><strong>Abbildung: </strong>Mapping des TI-Flow-Fachdienstes</figcaption>
 </figure>
 
 <p><br /></p>
 
-<p>Dabei führt der E-Rezept-Fachdienst keine Interpretation oder Anreicherung von medizinischen Daten durch und führt daher rein technische Mappings aus. Die Mappings werden einer Anwendung der gematik definiert und in diesem Projekt als StructureMaps angegeben und mit Transformationsregeln ergänzt.</p>
+<p>Dabei führt der TI-Flow-Fachdienst keine Interpretation oder Anreicherung von medizinischen Daten durch und führt daher rein technische Mappings aus. Die Mappings werden einer Anwendung der gematik definiert und in diesem Projekt als StructureMaps angegeben und mit Transformationsregeln ergänzt.</p>
 
 <h2 id="regeln-für-das-mapping-von-fhir-instanzen">Regeln für das Mapping von FHIR-Instanzen</h2>
 
@@ -302,15 +302,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h2 id="übertragen-von-verordnungsdaten-an-den-epa-medication-service">Übertragen von <em>Verordnungsdaten</em> an den ePA Medication Service</h2>
 
-<p>Der E-Rezept-Fachdienst empfängt die Verordnungsdaten durch Aufruf der <a href="./op-activate.html">$activate-Operation</a> durch ein verordnendes System. Die empfangenen Daten entsprechen den Profilen und Vorgaben des E-Rezepts.</p>
+<p>Der TI-Flow-Fachdienst empfängt die Verordnungsdaten durch Aufruf der <a href="./op-activate.html">$activate-Operation</a> durch ein verordnendes System. Die empfangenen Daten entsprechen den Profilen und Vorgaben des E-Rezepts.</p>
 
-<p>Die Verordnungsdaten werden vom E-Rezept-Fachdienst an den ePA Medication Service via (<a href="https://gemspec.gematik.de/ig/fhir/epa-medication/1.3.0/op-provide-prescription-erp.html">ePA Operation API: Verordnung einstellen</a>).</p>
+<p>Die Verordnungsdaten werden vom TI-Flow-Fachdienst an den ePA Medication Service via (<a href="https://gemspec.gematik.de/ig/fhir/epa-medication/1.3.0/op-provide-prescription-erp.html">ePA Operation API: Verordnung einstellen</a>).</p>
 
 <p>Für technische Details zum Mapping von Verordnungsdaten und den dazugehörigen Transformationsregeln siehe: <a href="./mapping-prescription.html">Mapping von Verordnungsdaten</a>.</p>
 
 <h2 id="übertragen-von-dispensierinformationen-an-den-epa-medication-service">Übertragen von <em>Dispensierinformationen</em> an den ePA Medication Service</h2>
 
-<p>Der E-Rezept-Fachdienst empfängt die Dispensierinformationen durch Abschluss eines Workflows mittels der <a href="./op-dispense.html">$dispense-Operation</a> und/oder <a href="./op-close.html">$close-Operation</a> durch ein abgebendes System. Die empfangenen Daten entsprechen den Profilen und Vorgaben der Dispensierinformationen.
+<p>Der TI-Flow-Fachdienst empfängt die Dispensierinformationen durch Abschluss eines Workflows mittels der <a href="./op-dispense.html">$dispense-Operation</a> und/oder <a href="./op-close.html">$close-Operation</a> durch ein abgebendes System. Die empfangenen Daten entsprechen den Profilen und Vorgaben der Dispensierinformationen.
 Die Übertragung der Dispensierinformationen an den ePA Medication Service via (<a href="https://gemspec.gematik.de/ig/fhir/epa-medication/1.3.0/op-provide-dispensation-erp.html">ePA Operation API: Dispensierinformationen einstellen</a>) erfolgt erst nach Abschluss des Workflows indem die $close-Operation aufgerufen wird.</p>
 
 <p>Für technische Details zum Mapping von Dispensierinformationen und den dazugehörigen Transformationsregeln siehe: <a href="./mapping-dispensation.html">Mapping von Dispensierinformationen</a>.</p>
@@ -367,7 +367,7 @@ Die Übertragung der Dispensierinformationen an den ePA Medication Service via (
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 07:25+0000">2026-03-23</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 24, 2026 17:34+0000">2026-03-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

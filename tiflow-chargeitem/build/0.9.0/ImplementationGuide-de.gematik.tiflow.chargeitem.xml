@@ -10,7 +10,7 @@
   <name value="gemIG_TIFlow_chargeitem"/>
   <title value="TIFlow - Abrechnungsinformationen"/>
   <status value="draft"/>
-  <date value="2026-03-23T06:25:52+00:00"/>
+  <date value="2026-03-26"/>
   <publisher value="gematik GmbH"/>
   <contact>
     <name value="gematik GmbH"/>
@@ -625,6 +625,17 @@
     </extension>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/ExampleERPCHRGChargeItemSearchset"/>
+      </reference>
+      <name value="ChargeItem searchset response for ERP-CHRG"/>
+      <description value="Example response for GET /ChargeItem"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ChargeItem"/>
       </extension>
       <reference>
@@ -676,13 +687,25 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Consent"/>
+        <valueString value="Bundle"/>
       </extension>
       <reference>
-        <reference value="Consent/ChargeItemConsent-Request"/>
+        <reference value="Bundle/ExampleERPCHRGCommunicationSearchset"/>
       </reference>
-      <name value="Consent to store digital ChargeItem"/>
-      <exampleCanonical value="https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Consent"/>
+      <name value="Communication searchset response for ERP-CHRG"/>
+      <description value="Example response for GET /Communication"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/ExampleERPCHRGConsentSearchset"/>
+      </reference>
+      <name value="Consent searchset response for ERP-CHRG"/>
+      <description value="Example response for GET /Consent"/>
+      <exampleBoolean value="true"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -696,14 +719,13 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CapabilityStatement"/>
+        <valueString value="Consent"/>
       </extension>
       <reference>
-        <reference value="CapabilityStatement/erp-fachdienst-client"/>
+        <reference value="Consent/ChargeItemConsent-Request"/>
       </reference>
-      <name value="ERPCHRG CapabilityStatement für Clients des E-Rezept-Fachdienst"/>
-      <description value="Dieses CapabilityStatement legt die Anforderungen an Clients des E-Rezept-Fachdienst für PKV-Abrechnungsinformationen fest."/>
-      <exampleBoolean value="false"/>
+      <name value="Consent to store digital ChargeItem"/>
+      <exampleCanonical value="https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Consent"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -822,7 +844,7 @@
           <valueUrl value="index.html"/>
         </extension>
         <nameUrl value="index.html"/>
-        <title value="Implementation Guide E-Rezept-Fachdienst"/>
+        <title value="Implementation Guide TI-Flow-Fachdienst"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -853,7 +875,7 @@
             <valueUrl value="menu-technische-umsetzung-verarbeitungsregeln.html"/>
           </extension>
           <nameUrl value="menu-technische-umsetzung-verarbeitungsregeln.html"/>
-          <title value="Verarbeitungsregeln für den E-Rezept-Fachdienst"/>
+          <title value="Verarbeitungsregeln für den TI-Flow-Fachdienst"/>
           <generation value="markdown"/>
         </page>
         <page>

@@ -12,9 +12,9 @@ Version 0.9.0 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow/bfarm/ImplementationGuide/de.gematik.tiflow.bfarm | *Version*:0.9.0 |
-| Draft as of 2026-03-23 | *Computable Name*:gemIG_TIFlow_bfarm |
+| Draft as of 2026-03-26 | *Computable Name*:gemIG_TIFlow_bfarm |
 
-Dieser Implementation Guide beschreibt Profile und deren Verwendung für den Datenaustausch zwischen dem E-Rezept-Fachdienst und dem BfArM Webdienst.
+Dieser Implementation Guide beschreibt Profile und deren Verwendung für den Datenaustausch zwischen dem TI-Flow-Fachdienst und dem BfArM Webdienst.
 
 ### Zweck und Geltungsbereich
 
@@ -28,9 +28,9 @@ Dieser Implementation Guide beschreibt Profile und deren Verwendung für den Dat
 
 ### Anforderungen zur Umsetzung des IGs
 
-Der E-Rezept-Fachdienst MUSS zur Umsetzung der Übertragung von Daten vom E-Rezept-Fachdienst an den BfArM Webdienst den Implementation Guide "Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst" umsetzen.
+Der TI-Flow-Fachdienst MUSS zur Umsetzung der Übertragung von Daten vom TI-Flow-Fachdienst an den BfArM Webdienst den Implementation Guide "Datenaustausch TI-Flow-Fachdienst und BfArM Webdienst" umsetzen.
 
-Der E-Rezept-Fachdienst MUSS zur Umsetzung des Implementation Guides "Datenaustausch E-Rezept-Fachdienst und BfArM Webdienst" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
+Der TI-Flow-Fachdienst MUSS zur Umsetzung des Implementation Guides "Datenaustausch TI-Flow-Fachdienst und BfArM Webdienst" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
 ### Wie dieser IG zu lesen ist
 
 Dieser Implementation Guide ist “von links nach rechts” zu lesen. Die Menüstruktur beginnt mit fachlichen Inhalten, welche über die technischen Anwendungsfälle dann in den Spezifikationen der Endpunkte und APIs münden. Es wird empfohlen, die Inhalte in der vorgegebenen Reihenfolge zu lesen, um ein umfassendes Verständnis der Anforderungen und Spezifikationen zu erhalten.
@@ -74,7 +74,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "gemIG_TIFlow_bfarm",
   "title" : "TIFlow - Datenaustausch BfArM Webdienst",
   "status" : "draft",
-  "date" : "2026-03-23T08:45:49+00:00",
+  "date" : "2026-03-26",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -87,7 +87,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "value" : "erp-umsetzung@gematik.de"
     }]
   }],
-  "description" : "Dieser IG Beschreibt Schnittstellen und Profile für den Datenaustauch zwischen E-Rezept-Fachdienst und BfArM Webdienst",
+  "description" : "Dieser IG Beschreibt Schnittstellen und Profile für den Datenaustauch zwischen TI-Flow-Fachdienst und BfArM Webdienst",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",

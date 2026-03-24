@@ -20,17 +20,56 @@ Die Operation $abort wird als HTTP POST auf /Task//$abort ausgeführt.
 
 ### Anforderungen an Schnittstelle
 
-* [Server-Anforderungen zu `$abort`](./op-abort-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+* [Server-Anforderungen zu `$abort`](./op-abort-req-fd.md): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
 * [Anforderungen für PVS zu `$abort`](./op-abort-req-pvs.md): Anforderungen an das PVS zur Nutzung der Schnittstelle.
 * [Anforderungen für FdV zu `$abort`](./op-abort-req-fdv.md): Anforderungen an das FdV zur Nutzung der Schnittstelle.
 
--API BEschreibung aus Cap Statement
+### API Beschreibung
 
-### Hinweis
+```
+server
+```
 
-keine
+```
 
-### Geschäftslogik
+      {
+  "resourceType": "OperationDefinition",
+  "id": "AbortOperation",
+  "url": "https://gematik.de/fhir/erp/OperationDefinition/AbortOperationDefinition",
+  "status": "draft",
+  "version": "1.6.1",
+  "date": "2025-09-25",
+  "name": "Abort",
+  "kind": "operation",
+  "affectsState": true,
+  "resource": [
+    "Task"
+  ],
+  "system": false,
+  "type": false,
+  "instance": true,
+  "description": "Diese Operation bricht den Workflow eines E-Rezepts ab und löscht alle Daten, die mit dieser Aufgabe zusammenhängen.",
+  "code": "abort",
+  "parameter": [
+    {
+      "name": "ac",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "documentation": "[Nur von Patienten und Anbietern (Ärzten/Zahnärzten) zu verwenden] Der secret Parameter, der es Benutzern ermöglicht, exklusiv über die URL und den Parameter ?ac auf die Aufgabe zuzugreifen.",
+      "type": "string"
+    },
+    {
+      "name": "secret",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "documentation": "[Nur von der Apotheke zu verwenden] Der secret Parameter, der es einer Apotheke ermöglicht, exklusiv über die URL und den Parameter ?secret auf die Aufgabe zuzugreifen.",
+      "type": "string"
+    }
+  ]
+}
 
-ToDo: Diagram zum Ablauf
+    
+```
 

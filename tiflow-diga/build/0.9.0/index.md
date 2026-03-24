@@ -12,7 +12,7 @@ Version 0.9.0 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow/diga/ImplementationGuide/de.gematik.tiflow.diga | *Version*:0.9.0 |
-| Draft as of 2026-03-23 | *Computable Name*:gemIG_TIFlow_diga |
+| Draft as of 2026-03-26 | *Computable Name*:gemIG_TIFlow_diga |
 
 Dieser Implementation Guide beschreibt das Feature zur elektronischen Verordnung von Digitalen Gesundheitsanwendungen (DiGA). Er beschreibt DiGA-spezifische Anforderungen und Use Cases für Verordnende, Kostenträger und Versicherte.
 
@@ -32,9 +32,9 @@ Die Inhalte sind in Fachlichkeit, Technische Umsetzung und Schnittstellen strukt
 
 ### Anforderungen zur Umsetzung des IGs
 
-Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Workflow 162 den Implementation Guide "Verordnungen für Digitale Gesundheitsanwendungen (DiGA)" umsetzen.
+Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Workflow 162 den Implementation Guide "Verordnungen für Digitale Gesundheitsanwendungen (DiGA)" umsetzen.
 
-Der E-Rezept-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides "Verordnungen für Digitale Gesundheitsanwendungen (DiGA)" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
+Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides "Verordnungen für Digitale Gesundheitsanwendungen (DiGA)" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
 ### Methodik
 
 #### Apps
@@ -65,7 +65,7 @@ Im Kontext der Verordnung einer DiGA wird unter Dispensieren die Bereitstellung 
 
 #### Anforderungen / Anwendungsfälle
 
-Anforderungen und Anwendungsfälle werden durch eine eindeutige ID sowie die Schlüsselworte MUSS, DARF NICHT, SOLL, SOLL NICHT, KANN gemäss RFC 2119 gekennzeichnet.
+Anforderungen und Anwendungsfälle werden durch eine eindeutige ID sowie die Schlüsselworte MUSS, DARF NICHT, SOLL, SOLL NICHT, KANN gemäß RFC 2119 gekennzeichnet.
 
 ### Abhängigkeiten
 
@@ -103,7 +103,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "gemIG_TIFlow_diga",
   "title" : "TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)",
   "status" : "draft",
-  "date" : "2026-03-23T06:27:14+00:00",
+  "date" : "2026-03-26",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -744,14 +744,25 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
     "resource" : [{
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Communication"
+        "valueString" : "Bundle"
       }],
       "reference" : {
-        "reference" : "Communication/140f716f-f649-44fe-9a4e-157eb3c8adf3"
+        "reference" : "Bundle/ExampleDiGACommunicationSearchset"
       },
-      "name" : "DiGA-Nachricht eines Kostenträgers an den Patienten",
-      "description" : "Beispiel für eine DiGA-bezogene Nachricht, die vom Kostenträger an den Patienten gesendet wird",
-      "exampleCanonical" : "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM-ERP-PR-Communication-DiGA"
+      "name" : "Communication searchset response for DiGA",
+      "description" : "Example response for GET /Communication in DiGA workflow",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      }],
+      "reference" : {
+        "reference" : "Task/ExampleDiGATaskInReadyState"
+      },
+      "name" : "DiGA Task in ready state",
+      "exampleBoolean" : true
     },
     {
       "extension" : [{
@@ -759,11 +770,23 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
         "valueString" : "Communication"
       }],
       "reference" : {
-        "reference" : "Communication/2be1c6ac-5d10-47f6-84ee-8318b2c22c76"
+        "reference" : "Communication/140f716f-f649-44fe-9a4e-157eb3c8adf3"
       },
-      "name" : "DiGA-Zuweisung des Patienten an die Krankenkasse",
-      "description" : "Beispiel für eine Nachricht des Patienten an die Krankenkasse zur Anfrage der DiGA-Abgabe mit AccessCode",
-      "exampleBoolean" : true
+      "name" : "DiGA-Nachricht eines Kostenträgers an den Patienten",
+      "description" : "Beispiel für eine DiGA-bezogene Nachricht, die vom Kostenträgers an den Patienten gesendet wird",
+      "exampleCanonical" : "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM_ERP_PR_Communication_DiGA"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/erp-fachdienst-server-diga"
+      },
+      "name" : "ERP DiGA CapabilityStatement für den E-Rezept-Fachdienst",
+      "description" : "CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendungen)",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{
@@ -774,7 +797,31 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
         "reference" : "Parameters/ExampleCloseInputParametersDiGA"
       },
       "name" : "Example Close Parameters",
-      "exampleCanonical" : "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM-ERP-PR-PAR-CloseOperation-Input"
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationOutcome"
+      }],
+      "reference" : {
+        "reference" : "OperationOutcome/ExampleDiGAOperationOutcomeError"
+      },
+      "name" : "Example error response for DiGA operations",
+      "description" : "Representative business error for DiGA operation calls",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      }],
+      "reference" : {
+        "reference" : "Parameters/ExampleDiGAOperationRequestParameters"
+      },
+      "name" : "Example request parameters for DiGA operations",
+      "description" : "Reusable operation request payload for DiGA API documentation",
+      "exampleBoolean" : true
     },
     {
       "extension" : [{
@@ -798,18 +845,6 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       },
       "name" : "GEM ERP EX RedeemCode",
       "description" : "Gibt den Einlösecode für eine DiGA an.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/GEM-ERP-PR-PAR-CloseOperation-Input"
-      },
-      "name" : "GEM ERP PR CloseOperation Input",
-      "description" : "Dieses Profil definiert die Parameter fuer das Schliessen eines Workflows fuer ein Rezept vom AVS zum E-Rezept-Fachdienst. Dies kann fuer die Operationen $close und $dispense verwendet werden.",
       "exampleBoolean" : false
     },
     {
@@ -845,7 +880,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
         "reference" : "StructureDefinition/GEM-ERP-LOG-MedicationDispense-DiGA"
       },
       "name" : "Logical DiGA Medication Dispense",
-      "description" : "Fachliches Modell zur Beschreibung der Informationen, die bei $close und $dispense in der MedicationDispense-Ressource fuer DiGAs uebermittelt werden.",
+      "description" : "Fachliches Modell zur Beschreibung der Informationen, die bei $close und $dispense in der MedicationDispense-Ressource für DiGAs übermittelt werden.",
       "exampleBoolean" : false
     },
     {
@@ -858,7 +893,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       },
       "name" : "Medication Dispense DiGA with a deep link.",
       "description" : "Example of a Medication Dispense for DiGAs which states a deep link.",
-      "exampleCanonical" : "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM-ERP-PR-MedicationDispense-DiGA"
+      "exampleCanonical" : "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA"
     },
     {
       "extension" : [{
@@ -870,7 +905,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       },
       "name" : "Medication Dispense DiGA without a redeem code",
       "description" : "Example of a Medication Dispense for DiGAs which has no redeem code.",
-      "exampleCanonical" : "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM-ERP-PR-MedicationDispense-DiGA"
+      "exampleCanonical" : "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA"
     },
     {
       "extension" : [{
@@ -882,7 +917,31 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       },
       "name" : "Medication Dispense DiGA, Name and PZN",
       "description" : "Example of a Medication Dispense for DiGAs only stating the name of the DiGA.",
-      "exampleCanonical" : "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM-ERP-PR-MedicationDispense-DiGA"
+      "exampleCanonical" : "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/ExampleDiGAMedicationDispenseSearchset"
+      },
+      "name" : "MedicationDispense searchset response for DiGA",
+      "description" : "Example response for GET /MedicationDispense in DiGA workflow",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/ExampleDiGATaskSearchset"
+      },
+      "name" : "Task searchset response for DiGA",
+      "description" : "Example response for GET /Task in DiGA workflow",
+      "exampleBoolean" : true
     }],
     "page" : {
       "extension" : [{
@@ -1085,7 +1144,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
               "valueUrl" : "op-create-req-fd.html"
             }],
             "nameUrl" : "op-create-req-fd.html",
-            "title" : "Anforderungen an den E-Rezept-Fachdienst für die $create-Operation",
+            "title" : "Anforderungen an den TI-Flow-Fachdienst für die $create-Operation",
             "generation" : "markdown"
           },
           {
@@ -1112,7 +1171,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
               "valueUrl" : "op-activate-req-fd.html"
             }],
             "nameUrl" : "op-activate-req-fd.html",
-            "title" : "Anforderungen an den E-Rezept-Fachdienst für die $activate-Operation",
+            "title" : "Anforderungen an den TI-Flow-Fachdienst für die $activate-Operation",
             "generation" : "markdown"
           },
           {
@@ -1139,7 +1198,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
               "valueUrl" : "op-accept-req-fd.html"
             }],
             "nameUrl" : "op-accept-req-fd.html",
-            "title" : "Anforderungen an den E-Rezept-Fachdienst für die $accept-Operation",
+            "title" : "Anforderungen an den TI-Flow-Fachdienst für die $accept-Operation",
             "generation" : "markdown"
           },
           {
@@ -1166,7 +1225,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
               "valueUrl" : "op-reject-req-fd.html"
             }],
             "nameUrl" : "op-reject-req-fd.html",
-            "title" : "Anforderungen an den E-Rezept-Fachdienst für die $reject-Operation",
+            "title" : "Anforderungen an den TI-Flow-Fachdienst für die $reject-Operation",
             "generation" : "markdown"
           },
           {
@@ -1193,7 +1252,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
               "valueUrl" : "op-close-req-fd.html"
             }],
             "nameUrl" : "op-close-req-fd.html",
-            "title" : "Anforderungen an den E-Rezept-Fachdienst für die $close-Operation",
+            "title" : "Anforderungen an den TI-Flow-Fachdienst für die $close-Operation",
             "generation" : "markdown"
           },
           {
@@ -1220,7 +1279,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
               "valueUrl" : "op-abort-req-fd.html"
             }],
             "nameUrl" : "op-abort-req-fd.html",
-            "title" : "Anforderungen an den E-Rezept-Fachdienst für die $abort-Operation",
+            "title" : "Anforderungen an den TI-Flow-Fachdienst für die $abort-Operation",
             "generation" : "markdown"
           },
           {

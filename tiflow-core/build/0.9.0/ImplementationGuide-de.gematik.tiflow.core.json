@@ -10,7 +10,7 @@
   "name" : "gemIG_TIFlow_core",
   "title" : "TIFlow - Kernfunktionalitäten",
   "status" : "draft",
-  "date" : "2026-03-23T06:04:45+00:00",
+  "date" : "2026-03-26",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -54,16 +54,10 @@
     "version" : "5.2.0"
   },
   {
-    "id" : "de_gematik_ti",
-    "uri" : "https://gematik.de/fhir/ti/ImplementationGuide/de.gematik.ti",
-    "packageId" : "de.gematik.ti",
-    "version" : "1.2.0"
-  },
-  {
-    "id" : "de_gematik_erezept_workflow_r4",
-    "uri" : "http://fhir.org/packages/de.gematik.erezept-workflow.r4/ImplementationGuide/de.gematik.erezept-workflow.r4",
-    "packageId" : "de.gematik.erezept-workflow.r4",
-    "version" : "1.6.1"
+    "id" : "de_basisprofil_r4",
+    "uri" : "http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4",
+    "packageId" : "de.basisprofil.r4",
+    "version" : "1.5.4"
   },
   {
     "id" : "de_gematik_epa_medication",
@@ -72,16 +66,22 @@
     "version" : "1.3.0"
   },
   {
-    "id" : "de_basisprofil_r4",
-    "uri" : "http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4",
-    "packageId" : "de.basisprofil.r4",
-    "version" : "1.5.4"
-  },
-  {
     "id" : "de_gematik_terminology",
     "uri" : "https://gematik.de/fhir/terminology/ImplementationGuide/de.gematik.terminology",
     "packageId" : "de.gematik.terminology",
     "version" : "1.0.8"
+  },
+  {
+    "id" : "de_gematik_ti",
+    "uri" : "https://gematik.de/fhir/ti/ImplementationGuide/de.gematik.ti",
+    "packageId" : "de.gematik.ti",
+    "version" : "1.2.0"
+  },
+  {
+    "id" : "hl7_fhir_uv_xver_r5_r4",
+    "uri" : "http://hl7.org/fhir/5.0/ImplementationGuide/hl7.fhir.uv.xver-r5.r4",
+    "packageId" : "hl7.fhir.uv.xver-r5.r4",
+    "version" : "0.0.1-snapshot-2"
   }],
   "definition" : {
     "extension" : [{
@@ -114,6 +114,204 @@
       {
         "url" : "value",
         "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Medication/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Communication/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "MedicationDispense/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "OperationDefinition/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "OperationOutcome/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Parameters/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "StructureDefinition/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Task/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Medication/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Communication/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "MedicationDispense/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "OperationDefinition/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "OperationOutcome/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Parameters/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "StructureDefinition/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Task/*"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -410,6 +608,204 @@
     {
       "extension" : [{
         "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Medication/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Communication/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "MedicationDispense/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "OperationDefinition/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "OperationOutcome/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Parameters/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "StructureDefinition/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Task/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Medication/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Communication/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "MedicationDispense/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "OperationDefinition/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "OperationOutcome/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Parameters/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "StructureDefinition/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Task/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
         "valueCode" : "autoload-resources"
       },
       {
@@ -659,6 +1055,1499 @@
         "valueString" : "true"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    }],
+    "resource" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/AbortOperation"
+      },
+      "name" : "AbortOperation",
+      "description" : "Diese Operation bricht den Workflow eines E-Rezepts ab und löscht alle Daten, die mit dieser Aufgabe zusammenhängen.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/AcceptOperation"
+      },
+      "name" : "AcceptOperation",
+      "description" : "Mit der $accept-Operation beansprucht eine Apotheke ein E-Rezept. Der Status der referenzierten Aufgabe ändert sich in 'in-progress'.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/ActivateOperation"
+      },
+      "name" : "ActivateOperation",
+      "description" : "Diese Operation aktiviert die erstellte Aufgabe für das Rezept. Der Eingabeparameter muss das qualifizierte signierte Bundle des Rezepts enthalten. Der E-Rezept-Fachdienst validiert das Rezept, aktualisiert die Task-ressource und startet den Workflow.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Subscription"
+      }],
+      "reference" : {
+        "reference" : "Subscription/example-create-subscription-request"
+      },
+      "name" : "Anfrage fuer POST /Subscription",
+      "description" : "Beispiel fuer eine Subscription-Anlage",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Subscription"
+      }],
+      "reference" : {
+        "reference" : "Subscription/example-create-subscription-response"
+      },
+      "name" : "Antwort fuer POST /Subscription",
+      "description" : "Beispiel fuer eine erfolgreiche Subscription-Anlage",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Communication"
+      }],
+      "reference" : {
+        "reference" : "Communication/7977a4ab-97a9-4d95-afb3-6c4c1e2ac596"
+      },
+      "name" : "Antwort-Nachricht der Apotheke an den Patienten",
+      "description" : "Beispiel für eine Antwort-Nachricht, die von der Apotheke an den Patienten als Antwort auf eine vorherige Task-bezogene Nachricht gesendet wird",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Reply"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/example-searchset-auditevent"
+      },
+      "name" : "Antwortbundle fuer GET /AuditEvent",
+      "description" : "Beispiel fuer eine AuditEvent-Suchantwort",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/example-searchset-communication"
+      },
+      "name" : "Antwortbundle fuer GET /Communication",
+      "description" : "Beispiel fuer eine Communication-Suchantwort",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/example-searchset-consent"
+      },
+      "name" : "Antwortbundle fuer GET /Consent",
+      "description" : "Beispiel fuer eine Consent-Suchantwort",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/example-searchset-medicationdispense"
+      },
+      "name" : "Antwortbundle fuer GET /MedicationDispense",
+      "description" : "Beispiel fuer eine MedicationDispense-Suchantwort",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/example-searchset-task"
+      },
+      "name" : "Antwortbundle fuer GET /Task",
+      "description" : "Beispiel fuer eine Task-Suchantwort mit zwei Treffern",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "AuditEvent"
+      }],
+      "reference" : {
+        "reference" : "AuditEvent/9361863d-fec0-4ba9-8776-7905cf1b0cfa"
+      },
+      "name" : "AuditEvent-Eintrag vom E-Rezept-Fachdienst",
+      "description" : "Beispiel für einen AuditEvent-Eintrag, der vom E-Rezept-Fachdienst beim Zugriff auf Patientendaten generiert wird",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_AuditEvent"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/Bundle-AcceptOperation"
+      },
+      "name" : "Beispiel Accept-Bundle",
+      "description" : "Dieses Bundle enthält den Task und das qualifiziert signierte E-Rezept für die Accept-Operation",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle_OP_Accept"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      }],
+      "reference" : {
+        "reference" : "Parameters/ExampleCloseInputParameters"
+      },
+      "name" : "Beispiel Close-Parameter",
+      "description" : "Beispiel für Eingabeparameter der Close-Operation mit einfacher Medikamentenabgabe",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PAR_CloseOperation_Input"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      }],
+      "reference" : {
+        "reference" : "Parameters/ExampleCloseInputParametersKombipackung"
+      },
+      "name" : "Beispiel Close-Parameter für Kombipackung",
+      "description" : "Beispiel für Eingabeparameter der Close-Operation für eine Kombipackung",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PAR_CloseOperation_Input"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      }],
+      "reference" : {
+        "reference" : "Parameters/ExampleCloseInputParametersMultipleMedicationDispenses"
+      },
+      "name" : "Beispiel Close-Parameter mit mehreren MedicationDispenses",
+      "description" : "Beispiel für Eingabeparameter der Close-Operation mit mehreren Medikamentenabgaben",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PAR_CloseOperation_Input"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      }],
+      "reference" : {
+        "reference" : "Parameters/OperationCreateParametersInputExample"
+      },
+      "name" : "Beispiel für $create Operation Parameter",
+      "description" : "Beispiel für Eingabeparameter der $create Operation zur Erstellung einer neuen Aufgabe",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationOutcome"
+      }],
+      "reference" : {
+        "reference" : "OperationOutcome/ExampleOperationAbortErrorAVS"
+      },
+      "name" : "Beispiel für Abort-Operation Fehlerantwort (AVS)",
+      "description" : "Beispiel für eine Fehlerantwort bei der Abort-Operation aus Sicht des AVS",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationOutcome"
+      }],
+      "reference" : {
+        "reference" : "OperationOutcome/ExampleOperationAbortErrorPVS"
+      },
+      "name" : "Beispiel für Abort-Operation Fehlerantwort (PVS)",
+      "description" : "Beispiel für eine Fehlerantwort bei der Abort-Operation aus Sicht des PVS",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationOutcome"
+      }],
+      "reference" : {
+        "reference" : "OperationOutcome/ExampleOperationAcceptError"
+      },
+      "name" : "Beispiel für Accept-Operation Fehlerantwort",
+      "description" : "Beispiel für eine Fehlerantwort bei der Accept-Operation eines E-Rezepts",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationOutcome"
+      }],
+      "reference" : {
+        "reference" : "OperationOutcome/ExampleOperationCloseError"
+      },
+      "name" : "Beispiel für Close-Operation Fehlerantwort",
+      "description" : "Beispiel für eine Fehlerantwort bei der Close-Operation mit FHIR-Validierungsfehlern",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationOutcome"
+      }],
+      "reference" : {
+        "reference" : "OperationOutcome/ExampleOperationCreateError"
+      },
+      "name" : "Beispiel für Create-Operation Fehlerantwort",
+      "description" : "Beispiel für eine Fehlerantwort bei der Create-Operation mit FHIR-Validierungsfehlern",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationOutcome"
+      }],
+      "reference" : {
+        "reference" : "OperationOutcome/ExampleOperationRejectError"
+      },
+      "name" : "Beispiel für Reject-Operation Fehlerantwort",
+      "description" : "Beispiel für eine Fehlerantwort bei der Reject-Operation wegen falschen Task-Status",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationDispense"
+      }],
+      "reference" : {
+        "reference" : "MedicationDispense/Example-MedicationDispense-Kombipackung"
+      },
+      "name" : "Beispiel Kombipackung Medikamentenabgabe",
+      "description" : "Beispiel für eine Medikamentenabgabe einer Kombipackung",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationDispense"
+      }],
+      "reference" : {
+        "reference" : "MedicationDispense/Example-MedicationDispense"
+      },
+      "name" : "Beispiel Medikamentenabgabe",
+      "description" : "Beispiel für eine Medikamentenabgabe mit vollständigen Angaben",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationDispense"
+      }],
+      "reference" : {
+        "reference" : "MedicationDispense/Example-MedicationDispense-Dosage-tageszeit"
+      },
+      "name" : "Beispiel Medikamentenabgabe mit Dosierung nach 4er Schema",
+      "description" : "Beispiel für eine Medikamentenabgabe mit vollständigen Angaben und Dosierung nach 4er Schema",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationDispense"
+      }],
+      "reference" : {
+        "reference" : "MedicationDispense/Example-MedicationDispense-Dosage-interval"
+      },
+      "name" : "Beispiel Medikamentenabgabe mit Dosierung nach Interval",
+      "description" : "Beispiel für eine Medikamentenabgabe mit vollständigen Angaben und Dosierung nach Interval",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationDispense"
+      }],
+      "reference" : {
+        "reference" : "MedicationDispense/Example-MedicationDispense-Dosage-comb-interval"
+      },
+      "name" : "Beispiel Medikamentenabgabe mit Dosierung nach Kombination des Intervals",
+      "description" : "Beispiel für eine Medikamentenabgabe mit vollständigen Angaben und Dosierung nach Kombination des Intervals",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationDispense"
+      }],
+      "reference" : {
+        "reference" : "MedicationDispense/Example-MedicationDispense-Dosage-comb-dayofweek"
+      },
+      "name" : "Beispiel Medikamentenabgabe mit Dosierung nach Kombination des Wochentags",
+      "description" : "Beispiel für eine Medikamentenabgabe mit vollständigen Angaben und Dosierung nach Kombination des Wochentags",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationDispense"
+      }],
+      "reference" : {
+        "reference" : "MedicationDispense/Example-MedicationDispense-Dosage-uhrzeit"
+      },
+      "name" : "Beispiel Medikamentenabgabe mit Dosierung nach Uhrzeitbezug",
+      "description" : "Beispiel für eine Medikamentenabgabe mit vollständigen Angaben und Dosierung nach Uhrzeitbezug",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationDispense"
+      }],
+      "reference" : {
+        "reference" : "MedicationDispense/Example-MedicationDispense-Dosage-weekday"
+      },
+      "name" : "Beispiel Medikamentenabgabe mit Dosierung nach Wochentagsbezug",
+      "description" : "Beispiel für eine Medikamentenabgabe mit vollständigen Angaben und Dosierung nach Wochentagsbezug",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationDispense"
+      }],
+      "reference" : {
+        "reference" : "MedicationDispense/Example-MedicationDispense-Without-Medication"
+      },
+      "name" : "Beispiel Medikamentenabgabe ohne Medikament",
+      "description" : "Beispiel für eine Medikamentenabgabe ohne Medikamentenreferenz",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Medication"
+      }],
+      "reference" : {
+        "reference" : "Medication/ExampleUnitMedication"
+      },
+      "name" : "Beispiel-Medikament mit Einheiten",
+      "description" : "Beispiel für ein Medikament mit spezifischen Maßeinheiten und Wirkstoffangaben",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Medication"
+      }],
+      "reference" : {
+        "reference" : "Medication/SumatripanMedication"
+      },
+      "name" : "Beispiel-Medikament Sumatriptan",
+      "description" : "Beispiel für ein Sumatriptan-Medikament mit vollständigen Eigenschaften",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/ExampleAcceptResponseBundle"
+      },
+      "name" : "Beispielantwort fuer die $accept-Operation",
+      "description" : "Bundle-Antwort der $accept-Operation mit Task und qualifiziert signiertem E-Rezept",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle_OP_Accept"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/CloseOperation"
+      },
+      "name" : "CloseOperation",
+      "description" : "Die $close-Operation beendet den E-Rezept-Workflow und erstellt eine Quittung. Das Ergebnis dieses Vorgangs ist ein signiertes Bundle, das für weitere finanzielle Verarbeitung verwendet wird. Der Status der Aufgabe ändert sich anschließend in #completed.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/GEM-ERP-CS-DocumentType"
+      },
+      "name" : "CodeSystem der Dokumententypen",
+      "description" : "Dokumententyp abhängig vom Empfänger des Bundles.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/GEM-ERP-CS-FlowType"
+      },
+      "name" : "CodeSystem der Flowtypen",
+      "description" : "Zeigt die verschiedenen Typen des E-Rezept Workflows entsprechend der Verordnungsformulare.\n\nWICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheken wie z.B. Pharmazeutische Dienstleistungen!",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/GEM-ERP-CS-OrganizationType"
+      },
+      "name" : "CodeSystem der Organisationstyp-Codes",
+      "description" : "Typ der Organisation, bei der E-Rezepte eingelöst werden können.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/GEM-ERP-CS-AvailabilityStatus"
+      },
+      "name" : "CodeSystem des Verfügbarkeitsstatus",
+      "description" : "Typ des Verfügbarkeitsstatus für die Anfrage zur Medikamentenverfügbarkeit.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/CreateOperation"
+      },
+      "name" : "CreateOperation",
+      "description" : "Diese Operation erstellt eine Aufgabe für die Verschreibung eines bestimmten Flowtypes.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Communication"
+      }],
+      "reference" : {
+        "reference" : "Communication/2be1c6ac-5d10-47f6-84ee-8318b2c22c76"
+      },
+      "name" : "DiGA-Zuweisung des Patienten an die Krankenkasse",
+      "description" : "Beispiel für eine Nachricht des Patienten an die Krankenkasse zur Anfrage der DiGA-Abgabe mit AccessCode",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/DispenseOperation"
+      },
+      "name" : "DispenseOperation",
+      "description" : "Die Operation $dispense ermöglicht es der Apotheke, eine Ausgabe für ein Medikament durchzuführen, ohne den Status der Aufgabe zu ändern. Diese Aktion erlaubt es einem Frontend anzuzeigen, dass ein Medikament ausgegeben wurde, bevor es von der Apotheke abgeschlossen wird.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Medication"
+      }],
+      "reference" : {
+        "reference" : "Medication/SimpleMedication"
+      },
+      "name" : "Einfaches Beispiel-Medikament",
+      "description" : "Beispiel für ein einfaches Medikament mit minimalen Eigenschaften",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Consent"
+      }],
+      "reference" : {
+        "reference" : "Consent/QueryConsentCHARGCONS"
+      },
+      "name" : "Einwilligung fuer den Use Case CHARGCONS",
+      "description" : "Beispiel einer Consent-Ressource fuer die Consent-Query",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/GEM-ERP-CS-CapabilityStatement-Environment"
+      },
+      "name" : "ERP CapabilityStatement Environment CodeSystem",
+      "description" : "Dieses CodeSystem definiert standardisierte Umgebungskennzeichen für CapabilityStatements des E-Rezept-Fachdienstes. Es erlaubt die eindeutige Kennzeichnung, ob die beschriebene Fähigkeit für Produktions-, Referenz-, Test- oder Entwicklungsumgebung gilt.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/GEM-ERP-VS-CapabilityStatement-Environment"
+      },
+      "name" : "ERP CapabilityStatement Environment ValueSet",
+      "description" : "Dieses ValueSet enthält alle zulässigen Umgebungskennzeichen für CapabilityStatements des E-Rezept-Fachdienstes und wird für die verpflichtende Kennzeichnung der Zielumgebung verwendet.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/GEM-ERP-VS-CapabilityStatement-Feature"
+      },
+      "name" : "ERP CapabilityStatement Feature ValueSet",
+      "description" : "Dieses ValueSet kombiniert Workflow-Typ-Codes aus GEM_ERP_CS_FlowType und nicht-workflowbezogene Feature-Codes aus GEM_ERP_CS_Features. Damit bildet es die vollständige Menge deklarierbarer Feature-Flags für CapabilityStatements des E-Rezept-Fachdienstes ab.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/erp-fachdienst-server"
+      },
+      "name" : "ERP CapabilityStatement für den E-Rezept-Fachdienst",
+      "description" : "ERP CapabilityStatement für den E-Rezept-Fachdienst",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/GEM-ERP-CS-FDConfiguration"
+      },
+      "name" : "ERP FDConfiguration CodeSystem",
+      "description" : "Dieses CodeSystem beschreibt Konfigurationskennzeichen des E-Rezept-Fachdienstes, deren Konzepte nicht in diesem IG-Paket gepflegt werden. Die konkrete Konzeptliste wird extern im gematik-Releaseprozess als Release-Artefakt verwaltet und versioniert; dieses IG referenziert diese Konzepte nur über das Canonical.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/GEM-ERP-VS-FDConfiguration"
+      },
+      "name" : "ERP FDConfiguration ValueSet",
+      "description" : "Dieses ValueSet bildet den zulässigen Wertebereich für Konfigurationskennzeichen des E-Rezept-Fachdienstes ab und inkludiert alle Codes aus GEM_ERP_CS_FDConfiguration.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/GEM-ERP-CS-Features"
+      },
+      "name" : "ERP Feature CodeSystem",
+      "description" : "Dieses CodeSystem beschreibt serverseitige Feature-Flags des E-Rezept-Fachdienstes, die keine Workflow-Typen sind. Workflow-Typ-Codes werden weiterhin in GEM_ERP_CS_FlowType gepflegt; dieses CodeSystem ergänzt diese um weitere funktionale Fahigkeiten und Betriebsmerkmale, die in CapabilityStatements als deklarierbare Features verwendet werden.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationOutcome"
+      }],
+      "reference" : {
+        "reference" : "OperationOutcome/ExampleOperationActivateError"
+      },
+      "name" : "Example Activate operation error response",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      }],
+      "reference" : {
+        "reference" : "Parameters/ExampleOperationActivateParametersInput"
+      },
+      "name" : "Example Activate operation input parameters",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/example-capabilitystatement-server-pu"
+      },
+      "name" : "Example CapabilityStatement Server PU",
+      "description" : "Example capability statement for productive environment with common ERP features enabled.",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_CapabilityStatement"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/example-capabilitystatement-server-ru"
+      },
+      "name" : "Example CapabilityStatement Server RU",
+      "description" : "Example capability statement for reference environment with selected features enabled.",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_CapabilityStatement"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/example-capabilitystatement-server-tu"
+      },
+      "name" : "Example CapabilityStatement Server TU",
+      "description" : "Example capability statement for test environment with experimental feature toggles.",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_CapabilityStatement"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      }],
+      "reference" : {
+        "reference" : "Parameters/ExampleCloseInputParametersRezeptur"
+      },
+      "name" : "Example Close Parameters",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PAR_CloseOperation_Input"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      }],
+      "reference" : {
+        "reference" : "Parameters/ExampleDispenseInputParameters"
+      },
+      "name" : "Example Dispense Parameters",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PAR_DispenseOperation_Input"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      }],
+      "reference" : {
+        "reference" : "Parameters/ExampleDispenseInputParametersMultipleMedicationDispenses"
+      },
+      "name" : "Example Dispense Parameters",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PAR_DispenseOperation_Input"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      }],
+      "reference" : {
+        "reference" : "Parameters/ExampleDispenseInputParametersKombipackung"
+      },
+      "name" : "Example Dispense Parameters",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PAR_DispenseOperation_Input"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationDispense"
+      }],
+      "reference" : {
+        "reference" : "MedicationDispense/Example-MedicationDispense-Rezeptur"
+      },
+      "name" : "Example Rezeptur Medication Dispense",
+      "description" : "Example of a Rezeptur Medication Dispense.",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/GEM-ERP-CS-OperationOutcomeDetails"
+      },
+      "name" : "GEM ERP CS OperationOutcomeDetails",
+      "description" : "Fachliche Fehlercodes des E-Rezept-Fachdienst",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-EX-AcceptDate"
+      },
+      "name" : "GEM ERP EX AcceptDate",
+      "description" : "Diese Extension sollte in der Task-Ressource verwendet werden. Sie speichert das Datum, bis zu dem eine Krankenkasse die Verschreibung akzeptiert und bezahlt.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-EX-AvailabilityState"
+      },
+      "name" : "GEM ERP EX AvailabilityState",
+      "description" : "Extension zur Angabe von Typ des Verfügbarkeitsstatus für die Anfrage zur Medikamentenverfügbarkeit.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-EX-Beneficiary"
+      },
+      "name" : "GEM ERP EX Beneficiary",
+      "description" : "Der Begünstigte (z. B. Apotheke) des E-Rezept-Beleg, der erstellt wird, wenn der E-Rezept-Workflow abgeschlossen ist.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-EX-CapabilityStatement-Environment"
+      },
+      "name" : "GEM ERP EX CapabilityStatement Environment",
+      "description" : "Diese Extension kennzeichnet die Zielumgebung eines konkreten CapabilityStatements (z. B. Produktiv-, Referenz-, Test- oder Entwicklungsumgebung). Die Information hilft Clients, deklarierte Fähigkeiten im richtigen betrieblichen Kontext zu interpretieren.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-EX-CapabilityStatement-FDConfiguration"
+      },
+      "name" : "GEM ERP EX CapabilityStatement FDConfiguration",
+      "description" : "Diese Extension deklariert eine konkrete Konfigurationsausprägung des E-Rezept-Fachdienstes auf CapabilityStatement-Ebene. Die Konfiguration wird als Code transportiert und bevorzugt gegen GEM_ERP_VS_FDConfiguration geprüft.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-EX-CapabilityStatement-Feature"
+      },
+      "name" : "GEM ERP EX CapabilityStatement Feature",
+      "description" : "Diese Compound-Extension deklariert ein einzelnes Feature eines konkreten Fachdienst-Deployments. Das Teilfeld definition verweist per Canonical auf den fachlichen Feature-Bezeichner (Workflow-Typ oder sonstiges Feature), während value den aktuellen Aktivierungszustand dieses Features am betrachteten Endpoint beschreibt.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-EX-EU-IS-REDEEMABLE-BY-PATIENT-AUTHORIZATION"
+      },
+      "name" : "GEM ERP EX EU IS REDEEMABLE BY PATIENT AUTHORIZATION",
+      "description" : "Extension zur Angabe des Nutzers, ob das E-Rezept in der EU zur Einlösung verfügbar sein soll oder nicht.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-EX-EU-IS-REDEEMABLE-BY-PROPERTIES"
+      },
+      "name" : "GEM ERP EX EU IS REDEEMABLE BY PROPERTIES",
+      "description" : "Extension zur vom E-Rezept-Fachdienst ermittelten Angabe, ob das E-Rezept in der EU zur Einlösung verfügbar sein soll oder nicht.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-EX-ExpiryDate"
+      },
+      "name" : "GEM ERP EX ExpiryDate",
+      "description" : "Diese Erweiterung sollte in der Task-Ressource verwendet werden. Sie zeigt das Ablaufdatum des Rezepts an.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-EX-InsuranceProvider"
+      },
+      "name" : "GEM ERP EX InsuranceProvider",
+      "description" : "IK-Nummer (Institutionskennzeichen) des Versicherungsträgers, der das angeforderte Medikament abdeckt",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-EX-LastMedicationDispense"
+      },
+      "name" : "GEM ERP EX LastMedicationDispense",
+      "description" : "Diese Erweiterung sollte in der Task-Ressource verwendet werden. Sie zeigt den Zeitstempel der letzten Ausgabe an.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-EX-PrescriptionType"
+      },
+      "name" : "GEM ERP EX PrescriptionType",
+      "description" : "Definiert den Typ eines Rezepts.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-EX-SupplyOptionsType"
+      },
+      "name" : "GEM ERP EX SupplyOptionsType",
+      "description" : "Extension zur Angabe des bevorzugten Versorgungskanals",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-PR-PAR-Accept-Operation-Output"
+      },
+      "name" : "GEM ERP PR AcceptOperation Output",
+      "description" : "Dieses Profil definiert die Parameter für die Annahme eines Medikaments von AVS zum E-Rezept-Fachdienst. Dies kann für die $accept-Operation verwendet werden.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:complex-type"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-PR-AccessCode"
+      },
+      "name" : "GEM ERP PR AccessCode",
+      "description" : "Der AccessCode ist ein generiertes Geheimnis, das Zugriff auf eine E-Rezept-Ressource gewährt, z. B. Task.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-PR-PAR-Activate-Operation-Output"
+      },
+      "name" : "GEM ERP PR ActivateOperation Output",
+      "description" : "Dieses Profil definiert die Parameter für die Aktivierung einer Aufgabe von PVS zum E-Rezept-Fachdienst. Dies kann für die $activate-Operation verwendet werden.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-PR-AuditEvent"
+      },
+      "name" : "GEM ERP PR AuditEvent",
+      "description" : "AuditEvent für die Protokollierung des Zugriffs auf eRezepte",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-PR-Binary"
+      },
+      "name" : "GEM ERP PR Binary",
+      "description" : "PKCS7 signiertes Bundle im enveloping style",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-PR-Bundle"
+      },
+      "name" : "GEM ERP PR Bundle",
+      "description" : "Dokumentenbündel für Quittung",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-PR-Bundle-OP-Accept"
+      },
+      "name" : "GEM ERP PR Bundle OP Accept",
+      "description" : "Antwort des E-Rezept-Fachdienst auf die $accept-Operation",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-PR-CapabilityStatement"
+      },
+      "name" : "GEM ERP PR CapabilityStatement",
+      "description" : "Dieses Profil beschreibt die Fähigkeiten des E-Rezept-Fachdienstes und definiert die verwendeten CapabilityStatement-Erweiterungen inklusive benannter Slices für Basis-URL, Header, Response-Informationen sowie ERP-spezifische Feature- und Konfigurationskennzeichen.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-PR-PAR-Close-Operation-Input"
+      },
+      "name" : "GEM ERP PR CloseOperation Input",
+      "description" : "Dieses Profil definiert die Parameter für das Schließen eines Workflows für ein Rezept vom AVS zum E-Rezept-Fachdienst. Dies kann für die Operationen $close und $dispense verwendet werden.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-PR-PAR-Close-Operation-Output"
+      },
+      "name" : "GEM ERP PR CloseOperation Output",
+      "description" : "Dieses Profil definiert die Parameter für die Ausgabe eines Medikaments von AVS an den E-Rezept-Fachdienst. Dies kann für die $close-Operation verwendet werden.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource:abstract"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-PR-Communication"
+      },
+      "name" : "GEM ERP PR Communication",
+      "description" : "Generische Workflow-Communication",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-PR-Communication-DispReq"
+      },
+      "name" : "GEM ERP PR Communication DispReq",
+      "description" : "Anfrage zur Einlösung des E-Rezepts",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-PR-Communication-Reply"
+      },
+      "name" : "GEM ERP PR Communication Reply",
+      "description" : "Antwort vom Leistungserbringer an den Patienten",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-PR-Communication-Representative"
+      },
+      "name" : "GEM ERP PR Communication Representative",
+      "description" : "Kommunikation zwischen Patient und Vertreter",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-PR-Composition"
+      },
+      "name" : "GEM ERP PR Composition",
+      "description" : "Quittung für die Einlösung eines E-Rezepts",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-PR-PAR-Create-Operation-Output"
+      },
+      "name" : "GEM ERP PR CreateOperation Output",
+      "description" : "Dieses Profil definiert die Parameter für die Erstellung einer Aufgabe von PVS zum E-Rezept-Fachdienst. Dies kann für die $create-Operation verwendet werden.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-PR-Device"
+      },
+      "name" : "GEM ERP PR Device",
+      "description" : "Statische Informationen auf dem E-Rezept-Fachdienst",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-PR-Digest"
+      },
+      "name" : "GEM ERP PR Digest",
+      "description" : "QES-Digest in Binary",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-PR-PAR-Dispense-Operation-Input"
+      },
+      "name" : "GEM ERP PR DispenseOperation Input",
+      "description" : "Dieses Profil definiert die Parameter für die Abgabe eines Medikaments von AVS an den E-Rezept-Fachdienst. Dies kann für die $dispense-Operation verwendet werden.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-PR-Medication"
+      },
+      "name" : "GEM ERP PR Medication",
+      "description" : "Medikament zur Ausgabe des Rezepts",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-PR-MedicationDispense"
+      },
+      "name" : "GEM ERP PR MedicationDispense",
+      "description" : "Dispensierung eines E-Rezepts",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-PR-OperationOutcome"
+      },
+      "name" : "GEM ERP PR OperationOutcome",
+      "description" : "OperationOutcome für Angabe von Fehlermeldungen vom E-Rezept-Fachdienst",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:complex-type"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-PR-Secret"
+      },
+      "name" : "GEM ERP PR Secret",
+      "description" : "Das Secret ist ein generiertes Geheimnis, das Zugriff auf eine E-Rezept-Ressource gewährt, z. B. Task.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-PR-Task"
+      },
+      "name" : "GEM ERP PR Task",
+      "description" : "Task für die Verwaltung des E-Rezept-Workflows",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/GEM-ERP-VS-OperationOutcomeDetails"
+      },
+      "name" : "GEM ERP VS OperationOutcomeDetails",
+      "description" : "Fachliche Fehlercodes des E-Rezept-Fachdienst",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:complex-type"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-PR-Signature"
+      },
+      "name" : "GEM_ERP_PR_Signature",
+      "description" : "Profil für die Signatur von Bundles im E-Rezept-Kontext",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Device"
+      }],
+      "reference" : {
+        "reference" : "Device/ReceiptBundleDevice"
+      },
+      "name" : "Gerät für Quittungs-Bundle",
+      "description" : "Beispiel für ein Gerät, das für die Erstellung von E-Rezept-Quittungen verwendet wird",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Device"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERP-LOG-MedicationDispense"
+      },
+      "name" : "Logical Medication Dispense",
+      "description" : "Fachliches Modell zur Beschreibung der Informationen, die bei $close und $dispense in der MedicationDispense-Ressource übermittelt werden.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Medication"
+      }],
+      "reference" : {
+        "reference" : "Medication/Medication-Rezeptur-FD"
+      },
+      "name" : "Medication-Rezeptur-FD",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Medication"
+      }],
+      "reference" : {
+        "reference" : "Medication/Medication-Without-Strength-Code"
+      },
+      "name" : "Medikament ohne Stärke-Code",
+      "description" : "Beispiel für ein Medikament ohne System und Code für die Wirkstoffstärke",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Medication"
+      }],
+      "reference" : {
+        "reference" : "Medication/Medication-Without-Strength-Numerator"
+      },
+      "name" : "Medikament ohne Stärke-Numerator",
+      "description" : "Beispiel für ein Medikament ohne Code oder System für die Stärkenangabe im Numerator",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Medication"
+      }],
+      "reference" : {
+        "reference" : "Medication/Medication-Kombipackung"
+      },
+      "name" : "Medikament-Kombipackung",
+      "description" : "Beispiel für eine Kombipackung mit mehreren Einzelpräparaten",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Medication"
+      }],
+      "reference" : {
+        "reference" : "Medication/Medication-Rezeptur"
+      },
+      "name" : "Medikament-Rezeptur",
+      "description" : "Beispiel für eine Rezeptur mit mehreren Wirkstoffen als zusammengesetztes Medikament",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/dffbfd6a-5712-4798-bdc8-07201eb77ab8"
+      },
+      "name" : "Quittungs-Bundle für abgeschlossene Rezeptabgabe",
+      "description" : "Beispiel für ein Quittungs-Bundle nach erfolgter Abgabe eines E-Rezepts",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/RejectOperation"
+      },
+      "name" : "RejectOperation",
+      "description" : "Lehnt die Ausgabe eines E-Rezepts ab. Die Aufgabe wird in einen aktiven Zustand zurückgesetzt, das secret wird gelöscht, und der Task wird für jeden anderen Apotheker zugänglich oder kann vom Patienten gelöscht werden.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      }],
+      "reference" : {
+        "reference" : "Task/TaskInClosedState"
+      },
+      "name" : "Task abgeschlossen durch Apotheke via $close Operation",
+      "description" : "Beispiel für einen Task, der von einer Apotheke über die $close Operation abgeschlossen wurde",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      }],
+      "reference" : {
+        "reference" : "Task/TaskInReadyState"
+      },
+      "name" : "Task aktiviert durch (Z)PVS/KIS via $activate Operation",
+      "description" : "Beispiel für einen Task, der durch (Z)PVS/KIS über die $activate Operation aktiviert wurde und ein einlösbares E-Rezept trägt",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      }],
+      "reference" : {
+        "reference" : "Task/d70932d1-9e1c-483c-b2d4-b7dced09b35e"
+      },
+      "name" : "Task angenommen durch Apotheke via $accept Operation",
+      "description" : "Beispiel für einen Task, der von einer Apotheke über die $accept Operation angenommen wurde",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      }],
+      "reference" : {
+        "reference" : "Task/9b48f82c-9c11-4a57-aa72-a805f9537a82"
+      },
+      "name" : "Task angenommen und abgegeben via $dispense Operation",
+      "description" : "Beispiel für einen Task, der von einer Apotheke angenommen und dann über die $dispense Operation abgegeben wurde",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      }],
+      "reference" : {
+        "reference" : "Task/b12eb5f7-91ce-4887-93c7-800454601377"
+      },
+      "name" : "Task erstellt durch Fachdienst via $create Operation",
+      "description" : "Beispiel für einen Task, der vom Fachdienst über die $create Operation erstellt wurde",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      }],
+      "reference" : {
+        "reference" : "Task/f5c21409-b84b-4125-8649-5630a00906b1"
+      },
+      "name" : "Task mit mehreren MedicationDispenses",
+      "description" : "Beispiel für einen Task, der von einer Apotheke angenommen und dann über die $dispense Operation mit mehreren MedicationDispenses abgegeben wurde",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/task-accept-date-sp"
+      },
+      "name" : "TaskAcceptDateSP",
+      "description" : "Das Einlösedatum eines E-Rezeptes. Nach Ablaufen dieses Datums darf ein E-Rezept nicht mehr zu Lasten des Kostenträgers abgegeben werden.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/task-expiry-date-sp"
+      },
+      "name" : "TaskExpiryDateSP",
+      "description" : "Das Ablaufdatum eines E-Rezepzes. Nach ablauf dieses Datums darf ein E-Rezept nicht mehr beliefert werden.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/GEM-ERP-VS-DocumentType"
+      },
+      "name" : "ValueSet der Dokumenttyp-Codes",
+      "description" : "Art der Dokumente je nach Empfänger.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/GEM-ERP-VS-FlowType"
+      },
+      "name" : "ValueSet der FlowType-Codes",
+      "description" : "Zeigt die verschiedenen Arten des E-Rezepts entsprechend den Verschreibungsformularen.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/GEM-ERP-VS-OrganizationType"
+      },
+      "name" : "ValueSet der Organisationstyp-Codes",
+      "description" : "Art der Organisation",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/GEM-ERP-VS-AvailabilityStatus"
+      },
+      "name" : "ValueSet der Verfügbarkeitsstatus-Codes",
+      "description" : "Art des Verfügbarkeitsstatus für die Verfügbarkeitsanfrage von Medikamenten",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Communication"
+      }],
+      "reference" : {
+        "reference" : "Communication/a218a36e-f2fd-4603-ba67-c827acfef01b"
+      },
+      "name" : "Zuweisung des Patienten an die Apotheke",
+      "description" : "Beispiel für eine Nachricht des Patienten an die Apotheke zur Anfrage der Medikamentenabgabe mit AccessCode",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationDispense"
+      }],
+      "reference" : {
+        "reference" : "MedicationDispense/Example-MedicationDispense-2"
+      },
+      "name" : "Zweites Beispiel Medikamentenabgabe",
+      "description" : "Zweites Beispiel für eine Medikamentenabgabe mit anderen Eigenschaften",
+      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"
     }],
     "page" : {
       "extension" : [{
@@ -1360,6 +3249,10 @@
     {
       "code" : "path-pages",
       "value" : "input/content"
+    },
+    {
+      "code" : "path-pages",
+      "value" : "input/intro-notes"
     },
     {
       "code" : "path-resource",

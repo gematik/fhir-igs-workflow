@@ -10,7 +10,7 @@
   "name" : "gemIG_TIFlow_diga",
   "title" : "TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)",
   "status" : "draft",
-  "date" : "2026-03-23T06:27:14+00:00",
+  "date" : "2026-03-26",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -651,14 +651,25 @@
     "resource" : [{
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Communication"
+        "valueString" : "Bundle"
       }],
       "reference" : {
-        "reference" : "Communication/140f716f-f649-44fe-9a4e-157eb3c8adf3"
+        "reference" : "Bundle/ExampleDiGACommunicationSearchset"
       },
-      "name" : "DiGA-Nachricht eines Kostenträgers an den Patienten",
-      "description" : "Beispiel für eine DiGA-bezogene Nachricht, die vom Kostenträger an den Patienten gesendet wird",
-      "exampleCanonical" : "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM-ERP-PR-Communication-DiGA"
+      "name" : "Communication searchset response for DiGA",
+      "description" : "Example response for GET /Communication in DiGA workflow",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      }],
+      "reference" : {
+        "reference" : "Task/ExampleDiGATaskInReadyState"
+      },
+      "name" : "DiGA Task in ready state",
+      "exampleBoolean" : true
     },
     {
       "extension" : [{
@@ -666,11 +677,23 @@
         "valueString" : "Communication"
       }],
       "reference" : {
-        "reference" : "Communication/2be1c6ac-5d10-47f6-84ee-8318b2c22c76"
+        "reference" : "Communication/140f716f-f649-44fe-9a4e-157eb3c8adf3"
       },
-      "name" : "DiGA-Zuweisung des Patienten an die Krankenkasse",
-      "description" : "Beispiel für eine Nachricht des Patienten an die Krankenkasse zur Anfrage der DiGA-Abgabe mit AccessCode",
-      "exampleBoolean" : true
+      "name" : "DiGA-Nachricht eines Kostenträgers an den Patienten",
+      "description" : "Beispiel für eine DiGA-bezogene Nachricht, die vom Kostenträgers an den Patienten gesendet wird",
+      "exampleCanonical" : "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM_ERP_PR_Communication_DiGA"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/erp-fachdienst-server-diga"
+      },
+      "name" : "ERP DiGA CapabilityStatement für den E-Rezept-Fachdienst",
+      "description" : "CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendungen)",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{
@@ -681,7 +704,31 @@
         "reference" : "Parameters/ExampleCloseInputParametersDiGA"
       },
       "name" : "Example Close Parameters",
-      "exampleCanonical" : "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM-ERP-PR-PAR-CloseOperation-Input"
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationOutcome"
+      }],
+      "reference" : {
+        "reference" : "OperationOutcome/ExampleDiGAOperationOutcomeError"
+      },
+      "name" : "Example error response for DiGA operations",
+      "description" : "Representative business error for DiGA operation calls",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      }],
+      "reference" : {
+        "reference" : "Parameters/ExampleDiGAOperationRequestParameters"
+      },
+      "name" : "Example request parameters for DiGA operations",
+      "description" : "Reusable operation request payload for DiGA API documentation",
+      "exampleBoolean" : true
     },
     {
       "extension" : [{
@@ -705,18 +752,6 @@
       },
       "name" : "GEM ERP EX RedeemCode",
       "description" : "Gibt den Einlösecode für eine DiGA an.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/GEM-ERP-PR-PAR-CloseOperation-Input"
-      },
-      "name" : "GEM ERP PR CloseOperation Input",
-      "description" : "Dieses Profil definiert die Parameter fuer das Schliessen eines Workflows fuer ein Rezept vom AVS zum E-Rezept-Fachdienst. Dies kann fuer die Operationen $close und $dispense verwendet werden.",
       "exampleBoolean" : false
     },
     {
@@ -752,7 +787,7 @@
         "reference" : "StructureDefinition/GEM-ERP-LOG-MedicationDispense-DiGA"
       },
       "name" : "Logical DiGA Medication Dispense",
-      "description" : "Fachliches Modell zur Beschreibung der Informationen, die bei $close und $dispense in der MedicationDispense-Ressource fuer DiGAs uebermittelt werden.",
+      "description" : "Fachliches Modell zur Beschreibung der Informationen, die bei $close und $dispense in der MedicationDispense-Ressource für DiGAs übermittelt werden.",
       "exampleBoolean" : false
     },
     {
@@ -765,7 +800,7 @@
       },
       "name" : "Medication Dispense DiGA with a deep link.",
       "description" : "Example of a Medication Dispense for DiGAs which states a deep link.",
-      "exampleCanonical" : "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM-ERP-PR-MedicationDispense-DiGA"
+      "exampleCanonical" : "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA"
     },
     {
       "extension" : [{
@@ -777,7 +812,7 @@
       },
       "name" : "Medication Dispense DiGA without a redeem code",
       "description" : "Example of a Medication Dispense for DiGAs which has no redeem code.",
-      "exampleCanonical" : "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM-ERP-PR-MedicationDispense-DiGA"
+      "exampleCanonical" : "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA"
     },
     {
       "extension" : [{
@@ -789,7 +824,31 @@
       },
       "name" : "Medication Dispense DiGA, Name and PZN",
       "description" : "Example of a Medication Dispense for DiGAs only stating the name of the DiGA.",
-      "exampleCanonical" : "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM-ERP-PR-MedicationDispense-DiGA"
+      "exampleCanonical" : "https://gematik.de/fhir/tiflow/diga/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/ExampleDiGAMedicationDispenseSearchset"
+      },
+      "name" : "MedicationDispense searchset response for DiGA",
+      "description" : "Example response for GET /MedicationDispense in DiGA workflow",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/ExampleDiGATaskSearchset"
+      },
+      "name" : "Task searchset response for DiGA",
+      "description" : "Example response for GET /Task in DiGA workflow",
+      "exampleBoolean" : true
     }],
     "page" : {
       "extension" : [{
@@ -992,7 +1051,7 @@
               "valueUrl" : "op-create-req-fd.html"
             }],
             "nameUrl" : "op-create-req-fd.html",
-            "title" : "Anforderungen an den E-Rezept-Fachdienst für die $create-Operation",
+            "title" : "Anforderungen an den TI-Flow-Fachdienst für die $create-Operation",
             "generation" : "markdown"
           },
           {
@@ -1019,7 +1078,7 @@
               "valueUrl" : "op-activate-req-fd.html"
             }],
             "nameUrl" : "op-activate-req-fd.html",
-            "title" : "Anforderungen an den E-Rezept-Fachdienst für die $activate-Operation",
+            "title" : "Anforderungen an den TI-Flow-Fachdienst für die $activate-Operation",
             "generation" : "markdown"
           },
           {
@@ -1046,7 +1105,7 @@
               "valueUrl" : "op-accept-req-fd.html"
             }],
             "nameUrl" : "op-accept-req-fd.html",
-            "title" : "Anforderungen an den E-Rezept-Fachdienst für die $accept-Operation",
+            "title" : "Anforderungen an den TI-Flow-Fachdienst für die $accept-Operation",
             "generation" : "markdown"
           },
           {
@@ -1073,7 +1132,7 @@
               "valueUrl" : "op-reject-req-fd.html"
             }],
             "nameUrl" : "op-reject-req-fd.html",
-            "title" : "Anforderungen an den E-Rezept-Fachdienst für die $reject-Operation",
+            "title" : "Anforderungen an den TI-Flow-Fachdienst für die $reject-Operation",
             "generation" : "markdown"
           },
           {
@@ -1100,7 +1159,7 @@
               "valueUrl" : "op-close-req-fd.html"
             }],
             "nameUrl" : "op-close-req-fd.html",
-            "title" : "Anforderungen an den E-Rezept-Fachdienst für die $close-Operation",
+            "title" : "Anforderungen an den TI-Flow-Fachdienst für die $close-Operation",
             "generation" : "markdown"
           },
           {
@@ -1127,7 +1186,7 @@
               "valueUrl" : "op-abort-req-fd.html"
             }],
             "nameUrl" : "op-abort-req-fd.html",
-            "title" : "Anforderungen an den E-Rezept-Fachdienst für die $abort-Operation",
+            "title" : "Anforderungen an den TI-Flow-Fachdienst für die $abort-Operation",
             "generation" : "markdown"
           },
           {

@@ -36,7 +36,7 @@ Der Value-Katalog für FlowType ist in [gemSpec_DM_eRp] beschrieben.
 Der Response des Fachdienstes liefert
 
 * die Rezept-ID (Task.Identifier mit “https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId”), mit der das E-Rezept-Bundle vervollständigt wird,
-* die Task-ID (Task.id), mit dem der Task bei Aufrufen des E-Rezept-Fachdienstes referenziert wird,
+* die Task-ID (Task.id), mit dem der Task bei Aufrufen des TI-Flow-Fachdienstes referenziert wird,
 * und den AccessCode (Task.Identifier mit “https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_AccessCode”), welcher für den Zugriff auf das E-Rezept im Fachdienst berechtigt
 
 Hinweis: Die Task-ID entspricht der Rezept-ID.

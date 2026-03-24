@@ -11,7 +11,7 @@ Version 0.9.0 - ci-build
 
 ### Authentisierung
 
-Die Authentisierung am E-Rezept-Fachdienst erfolgt über ACCESS_TOKEN. Für Kostenträger wird das Token über den zentralen IDP-Dienst ausgestellt.
+Die Authentisierung am TI-Flow-Fachdienst erfolgt über ACCESS_TOKEN. Für Kostenträger wird das Token über den zentralen IDP-Dienst ausgestellt.
 
 ### FHIR-VZD
 

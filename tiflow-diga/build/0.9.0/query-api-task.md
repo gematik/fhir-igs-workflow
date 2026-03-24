@@ -26,12 +26,17 @@ Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource **Task** wird 
 
 ### Anforderungen an Schnittstelle
 
-* [FD-Anforderungen zur Task-Query](./query-api-task-req-fd.md): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+* [FD-Anforderungen zur Task-Query](./query-api-task-req-fd.md): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
 * [FdV-Anforderungen für Task-Query](./query-api-task-req-fdv.md): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
 * [KTR-Anforderungen für Task-Query](./query-api-task-req-ktr.md): Anforderungen an das Clientsystem Kostenträger zur Nutzung der Schnittstelle.
 
 #### API Beschreibung
 
-* [API-ERP: Abruf der DiGA-Verordnung durch den Versicherten](https://github.com/gematik/api-erp/blob/master/docs/erp_diga.adoc#abrufen-der-diga-verordnung)
-* [API-ERP: E-Rezept erneut abrufen durch den Kostenträger](https://github.com/gematik/api-erp/blob/master/docs/erp_abrufen.adoc#e-rezept-erneut-abrufen)
+```
+server
+```
+
+```
+server
+```
 

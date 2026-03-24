@@ -274,7 +274,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 </div>
 
-<p>Gemäß §3a Abs. 7 AMVV übernimmt der E-Rezept-Fachdienst die Aufgabe die vom BfArM benötigten Informationen aus den E-T-Rezepten über den BfArM Webdienst an das BfArM T-Register zu übermitteln. Die Übermittlung der strukturierten Daten, im Folgenden “digitaler Durchschlag E-T-Rezept” genannt, findet statt, unverzüglich nachdem die Quittung für das E-T-Rezept durch die abgebende Apotheke abgerufen wurde. Im BfArM können die Daten dann zur Erfüllung gesetzlich zugewiesener Aufgaben in geeigneter Form dargestellt und archiviert werden.</p>
+<p>Gemäß §3a Abs. 7 AMVV übernimmt der TI-Flow-Fachdienst die Aufgabe die vom BfArM benötigten Informationen aus den E-T-Rezepten über den BfArM Webdienst an das BfArM T-Register zu übermitteln. Die Übermittlung der strukturierten Daten, im Folgenden “digitaler Durchschlag E-T-Rezept” genannt, findet statt, unverzüglich nachdem die Quittung für das E-T-Rezept durch die abgebende Apotheke abgerufen wurde. Im BfArM können die Daten dann zur Erfüllung gesetzlich zugewiesener Aufgaben in geeigneter Form dargestellt und archiviert werden.</p>
 
 <p>Disclaimer: aktuell wird mit dem BMG und dem BfArM abgestimmt, wie der “digitale Durchschlag E-T-Rezept” in der AMVV noch passender definiert werden kann.</p>
 
@@ -291,15 +291,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="übermittlung-digitaler-durchschlag-e-t-rezept">Übermittlung digitaler Durchschlag E-T-Rezept</h3>
 
-<p>Unverzüglich nachdem die Apotheke die Quittung erhalten hat, wird der digitaler Durchschlag E-T-Rezept im E-Rezept-Fachdienst erstellt und an den BfArM Webdienst übertragen.</p>
+<p>Unverzüglich nachdem die Apotheke die Quittung erhalten hat, wird der digitaler Durchschlag E-T-Rezept im TI-Flow-Fachdienst erstellt und an den BfArM Webdienst übertragen.</p>
 
-<p>Die Daten werden asynchron zum Abschluss des Workflows in einer Warteschlange übermittelt, sodass die Apotheke den Vorgang abschließen kann, selbst wenn der BfArM Webdienst nicht erreichbar ist. In diesem Fall nutzt der E-Rezept-Fachdienst ein exponentielles Backoff-Retry, bis die Übertragung zum BfArM Webdienst erfolgreich durchgeführt werden konnte.</p>
+<p>Die Daten werden asynchron zum Abschluss des Workflows in einer Warteschlange übermittelt, sodass die Apotheke den Vorgang abschließen kann, selbst wenn der BfArM Webdienst nicht erreichbar ist. In diesem Fall nutzt der TI-Flow-Fachdienst ein exponentielles Backoff-Retry, bis die Übertragung zum BfArM Webdienst erfolgreich durchgeführt werden konnte.</p>
 
 <p>Das technische Konzept zur Übermittlung ist auf <a href="./menu-technische-umsetzung-t-register.html">Technisches Konzept T-Register</a> bereitgestellt.</p>
 
 <h4 id="technische-anwendungsfälle">Technische Anwendungsfälle</h4>
 
-<p><strong>Beteiligte Systeme:</strong> E-Rezept-Fachdienst, BfArM Webdienst: T-Register</p>
+<p><strong>Beteiligte Systeme:</strong> TI-Flow-Fachdienst, BfArM Webdienst: T-Register</p>
 
 <figure style="width: 45em;">
   <table>
@@ -361,7 +361,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.bfarm#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 08:45+0000">2026-03-23</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.bfarm#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 24, 2026 17:17+0000">2026-03-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

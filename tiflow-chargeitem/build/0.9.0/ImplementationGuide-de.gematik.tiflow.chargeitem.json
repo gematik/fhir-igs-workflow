@@ -10,7 +10,7 @@
   "name" : "gemIG_TIFlow_chargeitem",
   "title" : "TIFlow - Abrechnungsinformationen",
   "status" : "draft",
-  "date" : "2026-03-23T06:25:52+00:00",
+  "date" : "2026-03-26",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -843,6 +843,18 @@
     "resource" : [{
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/ExampleERPCHRGChargeItemSearchset"
+      },
+      "name" : "ChargeItem searchset response for ERP-CHRG",
+      "description" : "Example response for GET /ChargeItem",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ChargeItem"
       }],
       "reference" : {
@@ -899,13 +911,26 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Consent"
+        "valueString" : "Bundle"
       }],
       "reference" : {
-        "reference" : "Consent/ChargeItemConsent-Request"
+        "reference" : "Bundle/ExampleERPCHRGCommunicationSearchset"
       },
-      "name" : "Consent to store digital ChargeItem",
-      "exampleCanonical" : "https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Consent"
+      "name" : "Communication searchset response for ERP-CHRG",
+      "description" : "Example response for GET /Communication",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/ExampleERPCHRGConsentSearchset"
+      },
+      "name" : "Consent searchset response for ERP-CHRG",
+      "description" : "Example response for GET /Consent",
+      "exampleBoolean" : true
     },
     {
       "extension" : [{
@@ -921,14 +946,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CapabilityStatement"
+        "valueString" : "Consent"
       }],
       "reference" : {
-        "reference" : "CapabilityStatement/erp-fachdienst-client"
+        "reference" : "Consent/ChargeItemConsent-Request"
       },
-      "name" : "ERPCHRG CapabilityStatement für Clients des E-Rezept-Fachdienst",
-      "description" : "Dieses CapabilityStatement legt die Anforderungen an Clients des E-Rezept-Fachdienst für PKV-Abrechnungsinformationen fest.",
-      "exampleBoolean" : false
+      "name" : "Consent to store digital ChargeItem",
+      "exampleCanonical" : "https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Consent"
     },
     {
       "extension" : [{
@@ -1059,7 +1083,7 @@
           "valueUrl" : "index.html"
         }],
         "nameUrl" : "index.html",
-        "title" : "Implementation Guide E-Rezept-Fachdienst",
+        "title" : "Implementation Guide TI-Flow-Fachdienst",
         "generation" : "markdown"
       },
       {
@@ -1094,7 +1118,7 @@
             "valueUrl" : "menu-technische-umsetzung-verarbeitungsregeln.html"
           }],
           "nameUrl" : "menu-technische-umsetzung-verarbeitungsregeln.html",
-          "title" : "Verarbeitungsregeln für den E-Rezept-Fachdienst",
+          "title" : "Verarbeitungsregeln für den TI-Flow-Fachdienst",
           "generation" : "markdown"
         },
         {

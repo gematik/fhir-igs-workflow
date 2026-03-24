@@ -336,7 +336,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Versicherte können E-T-Rezepte über dieselben Wege wie E-Rezepte für andere apothekenpflichtige Arzneimittel einlösen (jedoch nicht im EU-Ausland und via Versand).</p>
 
-<p>E-T-Rezepte dürfen nur 6 Kalendertage nach dem Ausstellungstag beliefert werden (&sect; 3a Abs. 4 AMVV). Der E-Rezept-Fachdienst stellt sicher, dass die Rezepte nur innerhalb dieser Frist eingelöst werden. Die fristgerechte Abgabe des Arzneimittels ist durch die Apotheke sicherzustellen. Die Einhaltung der Gültigkeit wird durch den E-Rezept-Fachdienst sichergestellt. E-T-Rezepte mit dem Kennzeichen “Entlassrezept” dürfen (analog zu “normalen” Arzneimittel Rezepten und der AM-RL im Rahmen des Entlassmangements) nur 3 Werktage zulasten der GKV abgerechnet werden, danach aber bis zum Ende der Gültigkeit als Selbstzahlerrezept eingelöst werden.</p>
+<p>E-T-Rezepte dürfen nur 6 Kalendertage nach dem Ausstellungstag beliefert werden (&sect; 3a Abs. 4 AMVV). Der TI-Flow-Fachdienst stellt sicher, dass die Rezepte nur innerhalb dieser Frist eingelöst werden. Die fristgerechte Abgabe des Arzneimittels ist durch die Apotheke sicherzustellen. Die Einhaltung der Gültigkeit wird durch den TI-Flow-Fachdienst sichergestellt. E-T-Rezepte mit dem Kennzeichen “Entlassrezept” dürfen (analog zu “normalen” Arzneimittel Rezepten und der AM-RL im Rahmen des Entlassmangements) nur 3 Werktage zulasten der GKV abgerechnet werden, danach aber bis zum Ende der Gültigkeit als Selbstzahlerrezept eingelöst werden.</p>
 
 <p>Eine Belieferung von E-T-Rezepten via Versand ist ausgeschlossen (&sect;17 Abs. 2b ApBetrO).</p>
 
@@ -465,17 +465,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Verordnungen von T-Rezepten können ausschließlich approbierte Ärzte mit einem gültigen elektronischen Heilberufsausweis vornehmen.</p>
 
-<p>Der Arzt oder medizinischer Fachangestellte (MFA) erstellt eine elektronische Verordnung für ein Arzneimittel nach &sect;3a AMVV. Das Primärsystem der LEI reichert den Datensatz um die vom E-Rezept-Fachdienst abgerufene Rezept-ID an. Der Arzt prüft die Verordnung und führt eine qualifizierte elektronische Signatur (QES) der Verordnung durch.</p>
+<p>Der Arzt oder medizinischer Fachangestellte (MFA) erstellt eine elektronische Verordnung für ein Arzneimittel nach &sect;3a AMVV. Das Primärsystem der LEI reichert den Datensatz um die vom TI-Flow-Fachdienst abgerufene Rezept-ID an. Der Arzt prüft die Verordnung und führt eine qualifizierte elektronische Signatur (QES) der Verordnung durch.</p>
 
-<p>Anschließend wird die signierte Verordnung (E-T-Rezept) an den E-Rezept-Fachdienst übermittelt, wo die formale Korrektheit der Verordnung gemäß dem Datenmodell und die QES validiert werden.</p>
+<p>Anschließend wird die signierte Verordnung (E-T-Rezept) an den TI-Flow-Fachdienst übermittelt, wo die formale Korrektheit der Verordnung gemäß dem Datenmodell und die QES validiert werden.</p>
 
-<p>Es wird ein neuer Flowtype eingeführt: 166. Dieser Workflow wird unabhängig vom Versicherungsverhältnis des Patienten genutzt. Der E-Rezept-Fachdienst stellt sicher, dass die mit diesem Flowtype erstellten Verordnungen den E-Rezept-Verordnungsprofilen, die Vorgaben für das T-Rezept enthalten, entsprechen.</p>
+<p>Es wird ein neuer Flowtype eingeführt: 166. Dieser Workflow wird unabhängig vom Versicherungsverhältnis des Patienten genutzt. Der TI-Flow-Fachdienst stellt sicher, dass die mit diesem Flowtype erstellten Verordnungen den E-Rezept-Verordnungsprofilen, die Vorgaben für das T-Rezept enthalten, entsprechen.</p>
 
-<p>Das E-T-Rezept liegt auf dem E-Rezept-Fachdienst zum Abruf durch den Versicherten und für durch den Versicherten autorisierte Apotheken bereit.</p>
+<p>Das E-T-Rezept liegt auf dem TI-Flow-Fachdienst zum Abruf durch den Versicherten und für durch den Versicherten autorisierte Apotheken bereit.</p>
 
 <h5 id="technische-anwendungsfälle">Technische Anwendungsfälle</h5>
 
-<p><strong>Beteiligte Systeme:</strong> PVS/KIS , E-Rezept-Fachdienst</p>
+<p><strong>Beteiligte Systeme:</strong> PVS/KIS , TI-Flow-Fachdienst</p>
 
 <figure style="width: 45em;">
   <table>
@@ -519,7 +519,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h5 id="technische-anwendungsfälle-1">Technische Anwendungsfälle</h5>
 
-<p><strong>Beteiligte Systeme:</strong> AVS, E-Rezept-Fachdienst</p>
+<p><strong>Beteiligte Systeme:</strong> AVS, TI-Flow-Fachdienst</p>
 
 <figure style="width: 45em;">
   <table>
@@ -574,7 +574,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Die Abrechnung der E-T-Rezepte erfolgt analog zu den E-Rezepten für Arzneimittel.</p>
 
-<p>Für Versicherte privater Krankenversicherungen besteht wie für Arzneimittel E-Rezepte die Möglichkeit, dass die Apotheke die Abrechnungsdaten digital über den E-Rezept-Fachdienst bereitstellen kann oder einen Ausdruck zur Einreichung beim Kostenträger erstellt.</p>
+<p>Für Versicherte privater Krankenversicherungen besteht wie für Arzneimittel E-Rezepte die Möglichkeit, dass die Apotheke die Abrechnungsdaten digital über den TI-Flow-Fachdienst bereitstellen kann oder einen Ausdruck zur Einreichung beim Kostenträger erstellt.</p>
 
 
 
@@ -616,7 +616,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 23, 2026 07:25+0000">2026-03-23</span>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#0.9.0 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Mar 24, 2026 17:34+0000">2026-03-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
