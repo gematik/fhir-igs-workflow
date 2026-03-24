@@ -10,11 +10,11 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 
 <!-- A_19230-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-3" title="TI-Flow-Fachdienst - Task schliessen - Flowtype 162 - Rollenprüfung" version="0">
-  <meta lockversion="false"/>
+  <meta lockversion="true"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
-  Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks für eine Verordnung mit Flowtype 162 mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/&#60;id&#60;  die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Institutionen in der Rolle
+  Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks für eine Verordnung mit Flowtype 162 mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/&#60;id&#60; die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Institutionen in der Rolle
   <ul>
     <li>oid_kostentraeger</li>
   </ul>
