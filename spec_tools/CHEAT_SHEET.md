@@ -1,8 +1,8 @@
 ## Anforderung definieren
 
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst – title">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst – title">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
       text

@@ -4,16 +4,16 @@
   link: menu-technische-umsetzung-anwendungsfaelle.html#166-uebertrag-t-register
   title: "UC 5.8 - Durchschlag E-T-Rezept beim BfArM einstellen"
   description: |
-    Mit diesem Anwendungsfall erstellt ein Leistungserbringer einen Verordnungsdatensatz mit workflowspezifischen Parametern. Der Verordnungsdatensatz erhält von dem E-Rezept-Fachdienst eine Rezept-ID und wird von dem Leistungserbringer qualifiziert signiert. Der Leistungserbringer muss in seinem Primärsystem den workflowspezifischen Parameter für die direkte Zuweisung an eine Apotheke auswählen.
+    Mit diesem Anwendungsfall erstellt ein Leistungserbringer einen Verordnungsdatensatz mit workflowspezifischen Parametern. Der Verordnungsdatensatz erhält von dem TI-Flow-Fachdienst eine Rezept-ID und wird von dem Leistungserbringer qualifiziert signiert. Der Leistungserbringer muss in seinem Primärsystem den workflowspezifischen Parameter für die direkte Zuweisung an eine Apotheke auswählen.
   preconditions: |
     - Der Anwendungsfall "UC 4.4 - Quittung abrufen" wird ausgeführt.
   actions: |
-    - Das PS einer abgebenden LEI ruft die Operation am E-Rezept-Fachdienst auf und übermittelt die Dispensierinformationen.
-    - Der E-Rezept-Fachdienst führt die Prüfungen der Operation aus.
-    - Der E-Rezept-Fachdienst erstellt, wenn die Prüfung erfolgreich abgeschlossen wurde, einen Datenübermittlungsauftrag inklusive des digitalen Durchschlags E-T-Rezept.
-    - Der E-Rezept-Fachdienst überträgt den digitalen Durchschlag E-T-Rezept an den BfArM Webdienst.
+    - Das PS einer abgebenden LEI ruft die Operation am TI-Flow-Fachdienst auf und übermittelt die Dispensierinformationen.
+    - Der TI-Flow-Fachdienst führt die Prüfungen der Operation aus.
+    - Der TI-Flow-Fachdienst erstellt, wenn die Prüfung erfolgreich abgeschlossen wurde, einen Datenübermittlungsauftrag inklusive des digitalen Durchschlags E-T-Rezept.
+    - Der TI-Flow-Fachdienst überträgt den digitalen Durchschlag E-T-Rezept an den BfArM Webdienst.
     - Der BfArM Webdienst verarbeitet und persistiert die übermittelten Daten.
-    - Der E-Rezept-Fachdienst löscht den Datenübermittlungsauftrag aus der Warteschlange, wenn der BfArM Webdienst die Daten erfolgreich verarbeiten konnte.
+    - Der TI-Flow-Fachdienst löscht den Datenübermittlungsauftrag aus der Warteschlange, wenn der BfArM Webdienst die Daten erfolgreich verarbeiten konnte.
   postconditions: |
     - Die Daten des "digitalen Durchschlag E-T-Rezept" sind, sofern die Verarbeitung im BfArM Webdienst erfolgreich abgeschlossen werden konnten, im BfArM Webdienst gespeichert.
   interface: |
