@@ -133,7 +133,7 @@ jobs:
               )
               return result.stdout
 
-            changed_files = []
+          changed_files = []
           for line in run_git("status", "--porcelain").splitlines():
               if not line:
                   continue
@@ -142,11 +142,11 @@ jobs:
               if " -> " in path:
                   path = path.split(" -> ", 1)[1]
               if path:
-                changed_files.append((status_code, path))
+                  changed_files.append((status_code, path))
 
           afo_keys = set()
-            changed_file_paths = [path for _, path in changed_files]
-            for status_code, file_path in changed_files:
+          changed_file_paths = [path for _, path in changed_files]
+          for status_code, file_path in changed_files:
               afo_keys.update(key_pattern.findall(run_git("diff", "--unified=0", "--no-color", "--", file_path)))
               file_on_disk = Path(file_path)
               if ("A" in status_code or "?" in status_code) and file_on_disk.is_file():
@@ -327,8 +327,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: igtools-process-report-${{ github.run_number }}
-          path: ${{ steps.igtools_process.outputs.artifact_dir }}/
-          if-no-files-found: error
+          path: ${{ runner.temp }}/igtools-process-report/
+          if-no-files-found: warn
 
       - name: Publish workflow summary
         if: always()
