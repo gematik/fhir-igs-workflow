@@ -4,7 +4,7 @@
 
 Dieser Abschnitt beschreibt UX-Guidelines für den Fall der Zuweisung eines E-Rezeptes an eine Apotheke via E-Rezept-FdV oder via KIM (KIM-Dienstkennung: "eRezept;Zuweisung;V1.0"). Im folgenden werden diese beiden Fälle als "Zuweisung" bezeichnet.
 
-#### Hinweis bei zugewiesenen E-Rezepten
+#### Hinweise bei zugewiesenen E-Rezepten
 
 Wenn ein E-Rezept über das E-Rezept-FdV oder über KIM an eine Apotheke zugewiesen wird, soll der Sender schnellstmöglich über die Annahme und Bearbeitung des E-Rezeptes durch die Apotheke informiert werden. Dabei ist der Hinweis über den Erhalt eines E- Rezeptes via KIM oder E-Rezept-FdV so lange im AVS anzuzeigen, bis der Hinweis verarbeitet wurde. Im Falle der Zuweisung per E-Rezept-FdV soll eine Rückmeldung an den Kunden übermittelt werden. Bei Erhalt eines E-Rezeptes soll potentiell jeder Arbeitsplatz einen Hinweis erhalten. Es soll konfiguriert werden können, an welchen Arbeitsplätzen der Hinweis angezeigt wird.
 

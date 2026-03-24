@@ -22,7 +22,32 @@ Anfragen an die <i>Subscription</i>-Ressource können über die RESTful API mitt
 
 #### API Beschreibung
 
-- [API-ERP: Benachrichtigungen für Apotheken](https://github.com/gematik/api-erp/blob/master/docs/erp_notification_avs.adoc)
+<div class="gematik-apidoc"
+  data-api-type="FHIRResource"
+  data-api-fhir-resource-type="Subscription"
+  data-api-fhir-interaction="create">
+  <div id="CapabilityStatement">
+    <pre>
+      {% include CapabilityStatement-erp-fachdienst-server.json %}
+    </pre>
+  </div>
+  <div id="Request-Examples">
+    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+      {% fragment Subscription/example-create-subscription-request JSON %}
+    </div>
+    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+      {% fragment Subscription/example-create-subscription-request XML %}
+    </div>
+  </div>
+  <div id="Response-Examples">
+    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+      {% fragment Subscription/example-create-subscription-response JSON %}
+    </div>
+    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+      {% fragment Subscription/example-create-subscription-response XML %}
+    </div>
+  </div>
+</div>
 
 #### Beispielhafter Ablauf
 
@@ -60,7 +85,7 @@ Bei Nutzung des Subscription Services kann abweichend von der Anforderung "A_215
 
 Die Websocket-Verbindung kann bis zu 12 h bestehen. Danach muss das AVS die Subscription neu registrieren.
 
-#### Hinweis
+#### Hinweise
 
 - Das Signaturzertifikat muss nicht aus der Komponenten-PKI der TI abgeleitet werden.
 - Es wird kein fester Turnus festgelegt, in dem der Schlüssel gewechselt wird. Ein Wechsel kann über betriebliche Prozesse initiiert werden.

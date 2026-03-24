@@ -11,7 +11,32 @@ Die Nachricht wird als HTTP `POST` an `/$get-eu-prescriptions` gesendet.
 
 ### API Beschreibung
 
-Die API-Beschreibung für den Aufruf der Operation findet sich auf:
-- [API-ERP: Abfragen von E-Rezepten des TI-Flow-Fachdienst](https://github.com/gematik/api-erp/blob/master/docs/erp_eprescription.adoc#abfragen-von-e-rezepten-des-TI-Flow-Fachdienst)
+<div class="gematik-api"
+	data-api-type="FHIROperation"
+	data-api-fhir-resource-type="Task"
+	data-api-fhir-invoke-level="system"
+	data-api-operation-id="getEUPrescriptionsOperation">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-erp-fachdienst-server-erpeu.json %}
+		</pre>
+	</div>
+	<div id="OperationDefinition">
+		<pre>
+			{% include OperationDefinition-GET-Prescription-EU.json %}
+		</pre>
+	</div>
+	<div id="Request-Examples">
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Parameters/ExampleEUGETPrescriptionE-PRESCRIPTIONS-RETRIEVAL XML %}
+		</div>
+	</div>
+	<div id="Response-Examples">
+		<!-- TODO: Add operation-specific success response for $get-eu-prescriptions. -->
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleERPEUOperationOutcomeError XML %}
+		</div>
+	</div>
+</div>
 
 

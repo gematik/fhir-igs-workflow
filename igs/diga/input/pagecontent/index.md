@@ -82,7 +82,7 @@ den Grund dafür übermittelt.
 
 #### Anforderungen / Anwendungsfälle
 Anforderungen und Anwendungsfälle werden durch eine eindeutige ID sowie die
-Schlüsselworte MUSS, DARF NICHT, SOLL, SOLL NICHT, KANN gemäss RFC 2119
+Schlüsselworte MUSS, DARF NICHT, SOLL, SOLL NICHT, KANN gemäß RFC 2119
 gekennzeichnet.
 
 ### Abhängigkeiten

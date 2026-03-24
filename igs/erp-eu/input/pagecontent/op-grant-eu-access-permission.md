@@ -11,8 +11,35 @@ Die Nachricht wird als HTTP `POST` an `/$grant-eu-access-permission` gesendet.
 
 ### API Beschreibung
 
-Die API-Beschreibung für den Aufruf der Operation findet sich auf:
-- [API-ERP: Erstellen des Zugriffscodes im TI-Flow-Fachdienst](https://github.com/gematik/api-erp/blob/master/docs/erp_eprescription.adoc#erstellen-des-zugriffscodes-im-TI-Flow-Fachdienst)
+<div class="gematik-api"
+	data-api-type="FHIROperation"
+	data-api-fhir-resource-type="Task"
+	data-api-fhir-invoke-level="system"
+	data-api-operation-id="grantEUAccessPermissionOperation">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-erp-fachdienst-server-erpeu.json %}
+		</pre>
+	</div>
+	<div id="OperationDefinition">
+		<pre>
+			{% include OperationDefinition-Grant-EU-Access-Permission.json %}
+		</pre>
+	</div>
+	<div id="Request-Examples">
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Parameters/Example-EU-PermissionRequest XML %}
+		</div>
+	</div>
+	<div id="Response-Examples">
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Parameters/Example-EU-PermissionResponse XML %}
+		</div>
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleERPEUOperationOutcomeError XML %}
+		</div>
+	</div>
+</div>
 
 
 

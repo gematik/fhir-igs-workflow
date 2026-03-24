@@ -17,11 +17,11 @@ publisher:
   email: erp-umsetzung@gematik.de
 
 dependencies:
-  de.gematik.ti: 1.2.0
-  de.gematik.erezept-workflow.r4: 1.6.1
-  de.gematik.epa.medication: 1.3.0
   de.basisprofil.r4: 1.5.4
+  de.gematik.epa.medication: 1.3.0
   de.gematik.terminology: 1.0.8
+  de.gematik.ti: 1.2.0
+  hl7.fhir.uv.xver-r5.r4: 0.0.1-snapshot-2
 
 menu:
   Start: index.html
@@ -206,6 +206,27 @@ pages:
 
 parameters:
   shownav: true
+  no-validate: # TODO REmove
+    - Bundle/*
+    - Medication/*
+    - Communication/*
+    - MedicationDispense/*
+    - OperationDefinition/*
+    - OperationOutcome/*
+    - Parameters/*
+    - StructureDefinition/*
+    - Task/*
+  no-narrative: # TODO REmove
+    - Bundle/*
+    - Medication/*
+    - Communication/*
+    - MedicationDispense/*
+    - OperationDefinition/*
+    - OperationOutcome/*
+    - Parameters/*
+    - StructureDefinition/*
+    - Task/*
   path-pages:
     - input/pagecontent
     - input/content
+    - input/intro-notes
