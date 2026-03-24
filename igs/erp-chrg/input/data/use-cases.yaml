@@ -6,24 +6,24 @@
   roles: ["Apotheker"]
   description: |
     Mit der Belieferung des E-Rezepts übermittelt die abgebende LEI den PKV-Abgabedatensatz
-    an den E-Rezept-Fachdienst und stellt damit die Abrechnungsinformation digital bereit.
+    an den TI-Flow-Fachdienst und stellt damit die Abrechnungsinformation digital bereit.
     Voraussetzung ist die Einwilligung des Versicherten zum Speichern der Abrechnungsinformationen.
   preconditions: |
     - Ein Mitarbeiter der abgebenden LEI hat den Anwendungsfall "UC 4.4 - Quittung abrufen" durchgeführt.
     - Die Task-ID und das Geheimnis zur Statusänderung "in-progress" des E-Rezepts sind im PS bekannt.
-    - Das E-Rezept im E-Rezept-Fachdienst hat den Status "quittiert".
-    - Der Versicherte hat im E-Rezept-FdV eine Einwilligung zum Speichern der Abrechnungsinformationen auf dem E-Rezept-Fachdienst erteilt. Diese Information liegt im PS vor.
+    - Das E-Rezept im TI-Flow-Fachdienst hat den Status "quittiert".
+    - Der Versicherte hat im E-Rezept-FdV eine Einwilligung zum Speichern der Abrechnungsinformationen auf dem TI-Flow-Fachdienst erteilt. Diese Information liegt im PS vor.
   actions: |
     - Ein Mitarbeiter der abgebenden LEI hat mit dem Versicherten abgestimmt, dass die Abrechnungsinformation digital zur Verfügung gestellt werden soll.
     - Das PS erstellt den PKV-Abgabedatensatz und signiert diesen mit dem Konnektor.
-    - Das PS erstellt eine ChargeItem-Ressource mit einem Identifier aus der PrescriptionID und den übrigen Pflichtfeldern gemäß FHIR-Profil und übermittelt diese an den E-Rezept-Fachdienstes zusammen mit dem generierten Geheimnis des belieferten Tasks zum Zeitpunkt des Statuswechsels "in-progress" und den signierten Abgabedaten.
-    - Der E-Rezept-Fachdienst prüft, ob eine Einwilligung zum Speichern der Abrechnungsinformationen vorliegt.  Falls die Einwilligung vorliegt, übernimmt der E-Rezept-Fachdienst  den Verordnungsdatensatz und die Quittung aus dem E-Rezept-Workflow und speichert diese als Teil der Abrechnungsinformation zusammen mit dem "ChargeItem". Identifier der ChargeItem-Ressource ist die Rezept-ID. 
-    - Der E-Rezept-Fachdienst prüft die Signatur und die FHIR-Validität des PKV-Abgabedatensatzes.
-    - Der E-Rezept-Fachdienst erzeugt einen AccessCode zum Ändern des PKV-Abgabedatensatzes.
+    - Das PS erstellt eine ChargeItem-Ressource mit einem Identifier aus der PrescriptionID und den übrigen Pflichtfeldern gemäß FHIR-Profil und übermittelt diese an den TI-Flow-Fachdienstes zusammen mit dem generierten Geheimnis des belieferten Tasks zum Zeitpunkt des Statuswechsels "in-progress" und den signierten Abgabedaten.
+    - Der TI-Flow-Fachdienst prüft, ob eine Einwilligung zum Speichern der Abrechnungsinformationen vorliegt.  Falls die Einwilligung vorliegt, übernimmt der TI-Flow-Fachdienst  den Verordnungsdatensatz und die Quittung aus dem E-Rezept-Workflow und speichert diese als Teil der Abrechnungsinformation zusammen mit dem "ChargeItem". Identifier der ChargeItem-Ressource ist die Rezept-ID. 
+    - Der TI-Flow-Fachdienst prüft die Signatur und die FHIR-Validität des PKV-Abgabedatensatzes.
+    - Der TI-Flow-Fachdienst erzeugt einen AccessCode zum Ändern des PKV-Abgabedatensatzes.
     - Der Status des E-Rezept Workflows ändert sich nicht.
   postconditions: |
-    - Die Abrechnungsinformation ist im E-Rezept-Fachdienst gespeichert.
-    - Das Einstellen der Abrechnungsinformation ist im E-Rezept-Fachdienst protokolliert. 
+    - Die Abrechnungsinformation ist im TI-Flow-Fachdienst gespeichert.
+    - Das Einstellen der Abrechnungsinformation ist im TI-Flow-Fachdienst protokolliert. 
   interface: |
     - [Abrechnungsinformation bereitstellen](./query-api-chargeitem.html#post-chargeitem-bereitstellen)
   diagram: seq-uc-4-11-abrechungsinformation-durch-abgebenden-bereitstellen
@@ -39,13 +39,13 @@
   preconditions: |
     - Rezept-ID und AccessCode zum Ändern sind bekannt.
   actions: |
-    - Das PS übermittelt beim Aufruf an den E-Rezept-Fachdienst die Rezept-ID und den AccessCode zum Ändern.
-    - Der E-Rezept-Fachdienst prüft den AccessCode zum Ändern.
-    - Der E-Rezept-Fachdienst prüft, ob die Abrechnungsinformation initial durch die LEI eingestellt wurde.
-    - Der E-Rezept-Fachdienst übermittelt den PKV-Abgabedatensatz und den Verordnungsdatensatz an die Apotheke.
+    - Das PS übermittelt beim Aufruf an den TI-Flow-Fachdienst die Rezept-ID und den AccessCode zum Ändern.
+    - Der TI-Flow-Fachdienst prüft den AccessCode zum Ändern.
+    - Der TI-Flow-Fachdienst prüft, ob die Abrechnungsinformation initial durch die LEI eingestellt wurde.
+    - Der TI-Flow-Fachdienst übermittelt den PKV-Abgabedatensatz und den Verordnungsdatensatz an die Apotheke.
   postconditions: |
     - Der PKV-Abgabedatensatz und der Verordnungsdatensatz liegen im PS vor, um Änderungen am PKV-Abgabedatensatz zu ermöglichen.
-    - Der Datenzugriff ist im E-Rezept-Fachdienst protokolliert.
+    - Der Datenzugriff ist im TI-Flow-Fachdienst protokolliert.
   interface: |
     - [Abrechnungsinformation abrufen](./query-api-chargeitem.html#get-chargeitemid-details)
   diagram: seq-uc-4-10-abrechungsinformationen-durch-abgebenden-abrufen
@@ -63,14 +63,14 @@
     - Die Rezept-ID der Abrechnungsinformation und der AccessCode zum Ändern sind im PS bekannt.
   actions: |
     - Ein Mitarbeiter der abgebenden LEI erstellt mit dem Primärsystem einen neuen PKV-Abgabedatensatz.
-    - Das PS übermittelt beim Aufruf des E-Rezept-Fachdienstes die Rezept-ID, den AccessCode zum Ändern und den PKV-Abgabedatensatz.
-    - Der E-Rezept-Fachdienst prüft den AccessCode zum Ändern.
-    - Der E-Rezept-Fachdienst prüft, dass die Abgabeinformation initial durch die LEI eingestellt wurde.
-    - Der E-Rezept-Fachdienst prüft die Signatur und die FHIR-Validität des PKV-Abgabedatensatzes.
-    - Der E-Rezept-Fachdienst überschreibt den PKV-Abgabedatensatz. 
-    - Der E-Rezept-Fachdienst erzeugt einen neuen AccessCode zum Ändern und überschreibt den alten AccessCode zum Ändern.
+    - Das PS übermittelt beim Aufruf des TI-Flow-Fachdienstes die Rezept-ID, den AccessCode zum Ändern und den PKV-Abgabedatensatz.
+    - Der TI-Flow-Fachdienst prüft den AccessCode zum Ändern.
+    - Der TI-Flow-Fachdienst prüft, dass die Abgabeinformation initial durch die LEI eingestellt wurde.
+    - Der TI-Flow-Fachdienst prüft die Signatur und die FHIR-Validität des PKV-Abgabedatensatzes.
+    - Der TI-Flow-Fachdienst überschreibt den PKV-Abgabedatensatz. 
+    - Der TI-Flow-Fachdienst erzeugt einen neuen AccessCode zum Ändern und überschreibt den alten AccessCode zum Ändern.
   postconditions: |
-    - Das Ändern des PKV-Abgabedatensatzes ist im E-Rezept-Fachdienst protokolliert.
+    - Das Ändern des PKV-Abgabedatensatzes ist im TI-Flow-Fachdienst protokolliert.
   interface: |
     - [Abrechnungsinformation abrufen](./query-api-chargeitem.html)
   diagram: seq-uc-4-13-abgabedatensatz-durch-abgebenden-aktualisieren
@@ -90,7 +90,7 @@
   title: "UC 3.10 - Abrechnungsinformationen durch Versicherten abrufen"
   roles: ["Versicherter"]
   description: |
-    Der Versicherte ruft die Abrechnungsinformationen aus dem E-Rezept-Fachdienst ab
+    Der Versicherte ruft die Abrechnungsinformationen aus dem TI-Flow-Fachdienst ab
     und kann sie anzeigen, exportieren oder weiterleiten.
   preconditions: |
     - Einwilligung liegt vor.
@@ -114,7 +114,7 @@
     Der Versicherte gibt die Abrechnungsinformation aus dem E-Rezept-FdV heraus an eine 
     Ziel-App weiter (z. B. Service-App der Krankenversicherung, Service-App der Beihilfe) oder exportiert sie als PDF/A.
   preconditions: |
-    - Der Versicherte hat über das E-Rezept-FdV die Abrechnungsinformation vom E-Rezept-Fachdienst abgerufen.
+    - Der Versicherte hat über das E-Rezept-FdV die Abrechnungsinformation vom TI-Flow-Fachdienst abgerufen.
   actions: |
     - Das FdV erstellt eine PDF/A-Datei mit der eingebetteten Abrechnungsinformation.
     - Das FdV übergibt die PDF/A-Datei an die Ziel-App oder bietet sie zum Download an.
@@ -130,15 +130,15 @@
   title: "UC 3.12 - Abrechnungsinformationen durch den Versicherten markieren"
   roles: ["Versicherter"]
   description: |
-    Der Versicherte markiert die Abrechnungsinformation im E-Rezept-FdV, um sie für bestimmte Aktionen zu kennzeichnen. Der E-Rezept-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.
+    Der Versicherte markiert die Abrechnungsinformation im E-Rezept-FdV, um sie für bestimmte Aktionen zu kennzeichnen. Der TI-Flow-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.
   preconditions: |
-    - Eine LEI hat den Anwendungsfall "Abrechnungsinformation durch Abgebenden bereitstellen" für das E-Rezept durchgeführt. Die Abrechnungsinformation ist auf dem E-Rezept-Fachdienst gespeichert.
+    - Eine LEI hat den Anwendungsfall "Abrechnungsinformation durch Abgebenden bereitstellen" für das E-Rezept durchgeführt. Die Abrechnungsinformation ist auf dem TI-Flow-Fachdienst gespeichert.
     - Der Versicherte hat sich über den Anwendungsfall "Abrufen der Abrechnungsinformation durch den Versicherten" die zu markierende Abrechnungsinformation herausgesucht.
   actions: |
     - Ein Versicherter wählt im E-Rezept-FdV die zu markierende Abrechnungsinformation sowie die zu Optionen für die Markierung aus.
-    - Der E-Rezept-Fachdienst speichert die Information.
+    - Der TI-Flow-Fachdienst speichert die Information.
   postconditions: |
-    - Die Information zur Markierung ist im E-Rezept-Fachdienst gespeichert. Der Datenzugriff ist im E-Rezept-Fachdienst protokolliert.
+    - Die Information zur Markierung ist im TI-Flow-Fachdienst gespeichert. Der Datenzugriff ist im TI-Flow-Fachdienst protokolliert.
   interface: |
     - [Abrechnungsinformation markieren](./menu-technische-umsetzung-verarbeitungsregeln.html#abrechnungsinformationen-markieren)
   diagram: seq-uc-3-12-abrechungsinformation-durch-versicherten-markieren
@@ -149,16 +149,16 @@
   title: "UC 3.11 - Abrechnungsinformationen durch den Versicherten löschen"
   roles: ["Versicherter"]
   description: |
-    Ein Versicherter wählt im E-Rezept-FdV die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der E-Rezept-Fachdienst löscht die Abrechnungsinformation
+    Ein Versicherter wählt im E-Rezept-FdV die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der TI-Flow-Fachdienst löscht die Abrechnungsinformation
   preconditions: |
     - Eine LEI hat den Anwendungsfall "Abrechnungsinformation durch Abgebenden bereitstellen" für das E-Rezept durchgeführt.
     - Der Versicherte hat sich über den Anwendungsfall "Abrufen der Abrechnungsinformation durch den Versicherten" die Abrechnungsinformation auf sein FdV heruntergeladen.
   actions: |
     - Ein Versicherter wählt im E-Rezept-FdV die zu löschende Abrechnungsinformation aus und bestätigt das Löschen.
     - Das E-Rezept-FdV überträgt den Löschrequest
-    - Der E-Rezept-Fachdienst löscht die Abrechnungsinformation.
+    - Der TI-Flow-Fachdienst löscht die Abrechnungsinformation.
   postconditions: |
-    - Die Abrechnungsinformation sind auf dem E-Rezept-Fachdienst gelöscht. Das Löschen ist im E-Rezept-Fachdienst protokolliert.
+    - Die Abrechnungsinformation sind auf dem TI-Flow-Fachdienst gelöscht. Das Löschen ist im TI-Flow-Fachdienst protokolliert.
   interface: |
     - [Abrechnungsinformation löschen](./menu-technische-umsetzung-verarbeitungsregeln.html#abrechnungsinformationen-löschen)
   diagram: seq-uc-3-11-abrechungsinformation-durch-versicherten-loeschen
