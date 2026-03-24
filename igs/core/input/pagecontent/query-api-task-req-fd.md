@@ -531,7 +531,7 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in eine spezif
     die Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.
 </requirement>
 
-<requirement conformance="SHALL" key="" title="TI-Flow-Fachdienst - Task abrufen - Versicherter - Prüfung KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-407" title="TI-Flow-Fachdienst - Task abrufen - Versicherter - Prüfung KVNR" version="0">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -627,7 +627,7 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
 </requirement>
 
 <!-- A_27549 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-121" title="TI-Flow-Fachdienst - Task markieren - Versicherter - Rollenprüfung Versicherter markiert Rezepte" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-121" title="TI-Flow-Fachdienst - Task markieren - Versicherter - Rollenprüfung Versicherter markiert Rezepte" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>

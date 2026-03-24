@@ -7,7 +7,7 @@ Der TI-Flow-Fachdienst übernimmt die Rolle „Fachdienst“. Er verwaltet FdV-I
 Der TI-Flow-Fachdienst erstellt ein Notification-Objekt für verschlüsselte Notifications wie in [OpenAPI_PushGateway] beschrieben. Der Nachrichteninhalt, auf den in diesem Kapitel verwiesen wird, ist der Inhalt des Ciphertexts.
 
 <!-- A_28115 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-225" title="TI-Flow-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-225" title="TI-Flow-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>

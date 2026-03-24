@@ -50,7 +50,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 ### POST /Communication
 
 <!-- A_19447-06 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-320" title="TI-Flow-Fachdienst - Nachricht einstellen - Schemaprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-320" title="TI-Flow-Fachdienst - Nachricht einstellen - Schemaprüfung" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -146,7 +146,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_20885-04 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-329" title="TI-Flow-Fachdienst - Nachricht einstellen - Prüfung Versichertenbezug" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-329" title="TI-Flow-Fachdienst - Nachricht einstellen - Prüfung Versichertenbezug" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -179,7 +179,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_21371-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-331" title="TI-Flow-Fachdienst - Nachricht einstellen - Prüfung Existenz Task" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-331" title="TI-Flow-Fachdienst - Nachricht einstellen - Prüfung Existenz Task" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
