@@ -53,12 +53,10 @@ jobs:
         run: |
           set -euo pipefail
 
-          artifact_dir="${RUNNER_TEMP}/igtools-process-report"
-          log_file="$artifact_dir/igtools-process.log"
-          report_file="$artifact_dir/igtools-process.html"
-          metadata_file="$artifact_dir/metadata.json"
-          afo_summary_file="$artifact_dir/afo-summary.txt"
-          mkdir -p "$artifact_dir"
+          state_dir="${RUNNER_TEMP}/igtools-process-state"
+          log_file="$state_dir/igtools-process.log"
+          afo_summary_file="$state_dir/afo-summary.txt"
+          mkdir -p "$state_dir"
 
           set +e
           ./igtools-all process 2>&1 | tee "$log_file"
@@ -84,7 +82,7 @@ jobs:
 
           if [[ "$script_exit" -ne 0 || "$found_error_keywords" == "true" ]]; then
             status="failed"
-            message="./igtools-all process failed. See HTML report artifact for details."
+            message="./igtools-all process failed. See workflow log for details."
           elif [[ "$has_changes" == "true" ]]; then
             message="./igtools-all process completed successfully and produced repository changes."
           else
@@ -97,27 +95,14 @@ jobs:
           export PROCESS_FOUND_ERROR_KEYWORDS="$found_error_keywords"
           export PROCESS_HAS_CHANGES="$has_changes"
           export PROCESS_LOG_FILE="$log_file"
-          export PROCESS_REPORT_FILE="$report_file"
-          export PROCESS_METADATA_FILE="$metadata_file"
           export PROCESS_AFO_SUMMARY_FILE="$afo_summary_file"
 
           python - <<'PY'
-          import html
-          import json
           import os
           import re
           import subprocess
-          import textwrap
           from pathlib import Path
 
-          status = os.environ["PROCESS_STATUS"]
-          message = os.environ["PROCESS_MESSAGE"]
-          script_exit = os.environ["PROCESS_SCRIPT_EXIT"]
-          found_error_keywords = os.environ["PROCESS_FOUND_ERROR_KEYWORDS"]
-          has_changes = os.environ["PROCESS_HAS_CHANGES"]
-          log_file = Path(os.environ["PROCESS_LOG_FILE"])
-          report_file = Path(os.environ["PROCESS_REPORT_FILE"])
-          metadata_file = Path(os.environ["PROCESS_METADATA_FILE"])
           afo_summary_file = Path(os.environ["PROCESS_AFO_SUMMARY_FILE"])
 
           key_pattern = re.compile(r"\bIG-[A-Z0-9-]+\b")
@@ -145,7 +130,6 @@ jobs:
                   changed_files.append((status_code, path))
 
           afo_keys = set()
-          changed_file_paths = [path for _, path in changed_files]
           for status_code, file_path in changed_files:
               afo_keys.update(key_pattern.findall(run_git("diff", "--unified=0", "--no-color", "--", file_path)))
               file_on_disk = Path(file_path)
@@ -162,173 +146,21 @@ jobs:
           else:
               afo_summary = "Keine Änderungen an AFOs"
 
-          log_text = ""
-          if log_file.exists():
-              log_text = log_file.read_text(encoding="utf-8", errors="replace")
-
-          status_meta = {
-              "ok": {
-                  "label": "SUCCESS",
-                  "color": "#1b5e20",
-                  "bg": "#e8f5e9",
-              },
-              "failed": {
-                  "label": "FAILED",
-                  "color": "#b71c1c",
-                  "bg": "#ffebee",
-              },
-          }.get(
-              status,
-              {
-                  "label": "UNKNOWN",
-                  "color": "#37474f",
-                  "bg": "#eceff1",
-              },
-          )
-
-          html_doc = textwrap.dedent(
-              f"""\
-              <!doctype html>
-              <html lang=\"de\">
-              <head>
-                <meta charset=\"utf-8\" />
-                <title>IGTools Process Report</title>
-                <style>
-                  :root {{
-                    --bg: #f4f7fb;
-                    --card: #ffffff;
-                    --text: #123;
-                    --muted: #4f5b6b;
-                    --line: #d8e0ea;
-                  }}
-                  body {{
-                    margin: 0;
-                    padding: 2rem;
-                    background: radial-gradient(circle at top right, #e8f1ff, var(--bg) 50%);
-                    color: var(--text);
-                    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;
-                  }}
-                  .wrap {{ max-width: 1100px; margin: 0 auto; }}
-                  .card {{
-                    background: var(--card);
-                    border: 1px solid var(--line);
-                    border-radius: 14px;
-                    box-shadow: 0 10px 24px rgba(30, 55, 90, 0.08);
-                    padding: 1.25rem 1.5rem;
-                    margin-bottom: 1rem;
-                  }}
-                  h1 {{ margin: 0 0 0.5rem 0; font-size: 1.6rem; }}
-                  p {{ margin: 0.4rem 0; color: var(--muted); }}
-                  .badge {{
-                    display: inline-block;
-                    font-weight: 700;
-                    padding: 0.35rem 0.7rem;
-                    border-radius: 999px;
-                    color: {status_meta['color']};
-                    background: {status_meta['bg']};
-                    border: 1px solid {status_meta['color']};
-                    margin-top: 0.5rem;
-                  }}
-                  table {{ width: 100%; border-collapse: collapse; margin-top: 0.8rem; }}
-                  th, td {{
-                    border: 1px solid var(--line);
-                    padding: 0.55rem 0.7rem;
-                    text-align: left;
-                    font-size: 0.92rem;
-                  }}
-                  th {{ background: #eef3fa; font-weight: 700; }}
-                  pre {{
-                    background: #0f1722;
-                    color: #dce6f3;
-                    border-radius: 10px;
-                    padding: 1rem;
-                    overflow: auto;
-                    font-size: 0.86rem;
-                    line-height: 1.45;
-                  }}
-                </style>
-              </head>
-              <body>
-                <div class=\"wrap\">
-                  <div class=\"card\">
-                    <h1>IGTools Process Report</h1>
-                    <p>{html.escape(message)}</p>
-                    <div class=\"badge\">Status: {status_meta['label']}</div>
-                  </div>
-                  <div class=\"card\">
-                    <h2>Execution Details</h2>
-                    <table>
-                      <thead>
-                        <tr><th>Check</th><th>Value</th></tr>
-                      </thead>
-                      <tbody>
-                        <tr><td>Exit code</td><td>{html.escape(script_exit)}</td></tr>
-                        <tr><td>Output contains ERROR or FAILED</td><td>{html.escape(found_error_keywords)}</td></tr>
-                        <tr><td>Repository changes detected</td><td>{html.escape(has_changes)}</td></tr>
-                        <tr><td>AFO changes detected</td><td>{html.escape(afo_status)}</td></tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <div class=\"card\">
-                    <h2>AFO Summary</h2>
-                    <pre>{html.escape(afo_summary)}</pre>
-                  </div>
-                  <div class=\"card\">
-                    <h2>Console Output</h2>
-                    <pre>{html.escape(log_text)}</pre>
-                  </div>
-                </div>
-              </body>
-              </html>
-              """
-          )
-
-          report_file.write_text(html_doc, encoding="utf-8")
           afo_summary_file.write_text(afo_summary, encoding="utf-8")
-          metadata_file.write_text(
-              json.dumps(
-                  {
-                      "afo_status": afo_status,
-                      "afo_keys": afo_keys,
-                      "changed_files": changed_file_paths,
-                  },
-                  ensure_ascii=True,
-                  indent=2,
-              ),
-              encoding="utf-8",
-          )
           PY
 
-          afo_status="$(python - <<'PY'
-          import json
-          import os
-          from pathlib import Path
-
-          metadata = json.loads(Path(os.environ["PROCESS_METADATA_FILE"]).read_text(encoding="utf-8"))
-          print(metadata["afo_status"])
-          PY
-          )"
+          if [[ -s "$afo_summary_file" ]] && ! grep -qx 'Keine Änderungen an AFOs' "$afo_summary_file"; then
+            afo_status="changed"
+          else
+            afo_status="unchanged"
+          fi
 
           echo "status=$status" >> "$GITHUB_OUTPUT"
           echo "message=$message" >> "$GITHUB_OUTPUT"
           echo "script_exit=$script_exit" >> "$GITHUB_OUTPUT"
           echo "found_error_keywords=$found_error_keywords" >> "$GITHUB_OUTPUT"
           echo "has_changes=$has_changes" >> "$GITHUB_OUTPUT"
-          echo "artifact_dir=$artifact_dir" >> "$GITHUB_OUTPUT"
           echo "afo_status=$afo_status" >> "$GITHUB_OUTPUT"
-          {
-            echo "afo_summary<<__AFO_SUMMARY__"
-            cat "$afo_summary_file"
-            echo "__AFO_SUMMARY__"
-          } >> "$GITHUB_OUTPUT"
-
-      - name: Upload igtools report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: igtools-process-report-${{ github.run_number }}
-          path: ${{ runner.temp }}/igtools-process-report/
-          if-no-files-found: warn
 
       - name: Publish workflow summary
         if: always()
@@ -344,10 +176,13 @@ jobs:
           echo "- Output contains ERROR/FAILED: \`${{ steps.igtools_process.outputs.found_error_keywords }}\`" >> "$GITHUB_STEP_SUMMARY"
           echo "- Changes detected: \`${{ steps.igtools_process.outputs.has_changes }}\`" >> "$GITHUB_STEP_SUMMARY"
           echo "- AFO changes detected: \`${{ steps.igtools_process.outputs.afo_status }}\`" >> "$GITHUB_STEP_SUMMARY"
-          echo "- HTML report: uploaded as workflow artifact \`igtools-process-report-${{ github.run_number }}\`" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
           echo "### AFOs" >> "$GITHUB_STEP_SUMMARY"
-          printf '%s\n' '${{ steps.igtools_process.outputs.afo_summary }}' >> "$GITHUB_STEP_SUMMARY"
+          if [[ -f "${RUNNER_TEMP}/igtools-process-state/afo-summary.txt" ]]; then
+            cat "${RUNNER_TEMP}/igtools-process-state/afo-summary.txt" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Keine Änderungen an AFOs" >> "$GITHUB_STEP_SUMMARY"
+          fi
 
       - name: Fail on igtools errors
         if: steps.igtools_process.outputs.status == 'failed'
