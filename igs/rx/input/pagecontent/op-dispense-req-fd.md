@@ -78,7 +78,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>-</td>
+            <td>Task has invalid status.</td>
         </tr>
     </table> 
     abbrechen.

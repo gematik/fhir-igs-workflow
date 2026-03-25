@@ -60,7 +60,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>-</td>
+            <td>Task has invalid status.</td>
         </tr>
     </table> 
     abweisen, damit ausschließlich die verordnende Leistungserbringerinstitution in Kenntnis des AccessCodes als Berechtigte ein E-Rezept löschen.

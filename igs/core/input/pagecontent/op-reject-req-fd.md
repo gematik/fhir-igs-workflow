@@ -60,7 +60,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
         </tr>
         <tr>
             <th>Details Text</th>
-            <td></td>
+            <td>Task has invalid status.</td>
         </tr>
     </table>
     abbrechen, wenn Task.status ungleich "in-progress" ist, damit die Verordnung nur zurückgegeben werden kann, wenn sich die Verordnung in Belieferung befindet.
