@@ -17,9 +17,9 @@ Für Tags in Anforderungen muss die folgende Syntax verwendet werden:
 
 ### Fehlercodes in Anforderungen
 
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst – title">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst – title">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
       ... mit dem folgenden Fehler:
@@ -44,8 +44,8 @@ Für Tags in Anforderungen muss die folgende Syntax verwendet werden:
             <th>Details Text</th>
             <td>Todo</td>
         </tr>
-    </table>
-    ...
+      </table>
+      ...
 </requirement>
 
 ## Bild einfügen
