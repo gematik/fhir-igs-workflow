@@ -56,7 +56,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_INVALID_TASK_STATUS</td>
+            <td>TIFLOW_TASK_STATUS_MISMATCH</td>
         </tr>
         <tr>
             <th>Details Text</th>

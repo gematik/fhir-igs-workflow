@@ -45,7 +45,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_INVALID_MEDICATION_DISPENSE</td>
+            <td>TIFLOW_MEDICATION_DISPENSE_INVALID</td>
         </tr>
         <tr>
             <th>Details Text</th>
