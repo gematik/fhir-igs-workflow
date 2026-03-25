@@ -35,7 +35,7 @@
     - Psychotherapeut
   description: |
     Der verordnende Leistungserbringer erzeugt eine Verordnung im Primaersystem.
-    Für die Verordnung wird eine Rezept-ID aus dem E-Rezept-Fachdienst bezogen und der Verordnungsdatensatz
+    Für die Verordnung wird eine Rezept-ID aus dem TI-Flow-Fachdienst bezogen und der Verordnungsdatensatz
     anschließend qualifiziert elektronisch signiert (QES).
   preconditions: |
     - Der Versicherte ist der LEI bekannt.
@@ -43,13 +43,13 @@
     - HBA ist gesteckt und für die QES freigeschaltet.
   actions: |
     - Der Leistungserbringer wählt den Verordnungsdatensatz und ein Signaturverfahren aus.
-    - Das Primärsystem ruft eine Rezept-ID beim E-Rezept-Fachdienst ab und ergänzt sie im Verordnungsdatensatz.
+    - Das Primärsystem ruft eine Rezept-ID beim TI-Flow-Fachdienst ab und ergänzt sie im Verordnungsdatensatz.
     - Der AccessCode wird im Primärsystem gespeichert.
     - Der Verordnungsdatensatz wird über den Konnektor mit QES signiert (Einzel-, Stapel- oder Komfortsignatur).
   postconditions: |
     - E-Rezept enthält Rezept-ID und QES.
     - AccessCode des E-Rezepts ist im Primärsystem gespeichert.
-    - Workflow zum E-Rezept ist im E-Rezept-Fachdienst im Status "initialisiert" angelegt.
+    - Workflow zum E-Rezept ist im TI-Flow-Fachdienst im Status "initialisiert" angelegt.
   interface: |
     - [Operation API: Verordnung erstellen](./op-create.html)
     - QES im Primärsystem (Konnektor)
@@ -62,19 +62,19 @@
     - (Zahn-)Arzt
     - Psychotherapeut
   description: |
-    Ein E-Rezept wird vom Primärsystem beim E-Rezept-Fachdienst eingestellt und ein E-Rezept-Token erzeugt.
+    Ein E-Rezept wird vom Primärsystem beim TI-Flow-Fachdienst eingestellt und ein E-Rezept-Token erzeugt.
   preconditions: |
     - UC 2.1 wurde ausgeführt; E-Rezept und Signatur liegen im Primärsystem vor.
     - Rezept-ID und AccessCode sind bekannt.
-    - Status im E-Rezept-Fachdienst ist "initialisiert".
+    - Status im TI-Flow-Fachdienst ist "initialisiert".
   actions: |
     - Der Leistungserbringer wählt ein E-Rezept zum Einstellen aus.
-    - Das Primärsystem lädt das E-Rezept in den Workflow im E-Rezept-Fachdienst.
+    - Das Primärsystem lädt das E-Rezept in den Workflow im TI-Flow-Fachdienst.
     - Das Primärsystem erstellt einen E-Rezept-Token und speichert ihn.
   postconditions: |
-    - Das E-Rezept ist im E-Rezept-Fachdienst gespeichert.
+    - Das E-Rezept ist im TI-Flow-Fachdienst gespeichert.
     - Der Workflow hat den Status "ready".
-    - Das Einstellen ist im E-Rezept-Fachdienst für den Versicherten protokolliert.
+    - Das Einstellen ist im TI-Flow-Fachdienst für den Versicherten protokolliert.
   interface: |
     - [Operation API: E-Rezept aktivieren](./op-activate.html)
   diagram: seq-uc-2-3-e-rezept-einstellen
@@ -86,20 +86,20 @@
     - (Zahn-)Arzt
     - Psychotherapeut
   description: |
-    Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im E-Rezept-Fachdienst auf "cancelled" gesetzt.
+    Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im TI-Flow-Fachdienst auf "cancelled" gesetzt.
   preconditions: |
     - UC 2.3 wurde ausgeführt.
     - Rezept-ID und AccessCode sind bekannt.
-    - Status im E-Rezept-Fachdienst ist "ready".
+    - Status im TI-Flow-Fachdienst ist "ready".
   actions: |
     - Ein Mitarbeiter der verordnenden LEI markiert das E-Rezept zum Löschen und bestätigt den Vorgang.
-    - Das Primärsystem ruft den E-Rezept-Fachdienst mit Rezept-ID und AccessCode auf.
+    - Das Primärsystem ruft den TI-Flow-Fachdienst mit Rezept-ID und AccessCode auf.
     - Der Status wird auf "cancelled" gesetzt und medizinische Daten werden gelöscht.
     - Der AccessCode wird im Primärsystem gelöscht.
   postconditions: |
     - Der Workflow hat den Status "cancelled".
     - Die personenbezogene und medizinische Daten (ausser Versicherten-ID) sind aus dem Workflow entfernt.
-    - Das Löschen ist im E-Rezept-Fachdienst für den Versicherten protokolliert.
+    - Das Löschen ist im TI-Flow-Fachdienst für den Versicherten protokolliert.
   interface: |
     - [Operation API: E-Rezept löschen](./op-abort.html)
   diagram: seq-uc-2-5-e-rezept-durch-verordnenden-loeschen
@@ -110,13 +110,13 @@
   roles:
     - Versicherter
   description: |
-    Ein Versicherter ruft im E-Rezept-FdV alle seine im E-Rezept-Fachdienst eingestellten E-Rezepte ab.
+    Ein Versicherter ruft im E-Rezept-FdV alle seine im TI-Flow-Fachdienst eingestellten E-Rezepte ab.
   preconditions: |
     - Keine.
   actions: |
-    - Das FdV fordert E-Rezepte beim E-Rezept-Fachdienst an.
-    - Der E-Rezept-Fachdienst identifiziert E-Rezepte über die Versicherten-ID.
-    - Der E-Rezept-Fachdienst liefert E-Rezepte, Status und Statuszeitpunkte.
+    - Das FdV fordert E-Rezepte beim TI-Flow-Fachdienst an.
+    - Der TI-Flow-Fachdienst identifiziert E-Rezepte über die Versicherten-ID.
+    - Der TI-Flow-Fachdienst liefert E-Rezepte, Status und Statuszeitpunkte.
   postconditions: |
     - E-Rezepte stehen im E-REzept-FdV zur Anzeige bereit; Daten für E-Rezept-Token sind verfügbar.
     - Der Abruf ist protokolliert.
@@ -130,19 +130,19 @@
   roles:
     - Versicherter
   description: |
-    Der Versicherte setzt den Status eines E-Rezepts auf "cancelled" und löscht es im E-Rezept-Fachdienst.
+    Der Versicherte setzt den Status eines E-Rezepts auf "cancelled" und löscht es im TI-Flow-Fachdienst.
   preconditions: |
     - UC 3.1 wurde ausgeführt.
     - Status des E-Rezepts ist ungleich "in-progress".
   actions: |
     - Versicherter wählt ein E-Rezept im E-Rezept-FdV und bestätigt das Löschen.
-    - Das E-Rezept-FdV überträgt die Löschanforderung an den E-Rezept-Fachdienst.
+    - Das E-Rezept-FdV überträgt die Löschanforderung an den TI-Flow-Fachdienst.
     - Der Status wird geändert; Daten im E-Rezept werden gelöscht.
     - Der E-Rezept-Token wird im E-Rezept-FdV gelöscht.
   postconditions: |
     - Der Workflow hat den Status "cancelled".
     - Die personenbezogene und medizinische Daten (ausser Versicherten-ID) sind aus dem Workflow entfernt.
-    - Das Löschen ist im E-Rezept-Fachdienst für den Versicherten protokolliert.
+    - Das Löschen ist im TI-Flow-Fachdienst für den Versicherten protokolliert.
   interface: |
     - [Operation API: E-Rezept löschen](./op-abort.html)
   diagram: seq-uc-3-2-e-rezept-durch-versicherten-loeschen
@@ -162,10 +162,10 @@
   actions: |
     - Auswahl eines E-Rezept-Tokens und Versandart (TI oder 2D-Code).
     - Bei Versand über TI: Apotheke im Verzeichnisdienst wählen oder KVNR2 eingeben.
-    - Das FdV stellt die Nachricht mit Token und/oder Text im E-Rezept-Fachdienst ein.
+    - Das FdV stellt die Nachricht mit Token und/oder Text im TI-Flow-Fachdienst ein.
     - Bei 2D-Code: Token wird als 2D-Code angezeigt oder ausgedruckt.
   postconditions: |
-    - Nachricht liegt im E-Rezept-Fachdienst und kann vom Empfänger abgerufen werden.
+    - Nachricht liegt im TI-Flow-Fachdienst und kann vom Empfänger abgerufen werden.
     - Bei 2D-Code ist der Token für den Empfänger verfügbar.
   interface: |
     - [Query API: Nachricht einstellen](./query-api-communication.html)
@@ -178,12 +178,12 @@
     - Versicherter
     - Vertreter
   description: |
-    Ein Versicherter oder Vertreter empfängt Nachrichten von abgebenden LEI über den E-Rezept-Fachdienst.
+    Ein Versicherter oder Vertreter empfängt Nachrichten von abgebenden LEI über den TI-Flow-Fachdienst.
   preconditions: |
     - UC 4.7 wurde ausgeführt.
     - UC 3.3 wurde ausgeführt.
   actions: |
-    - Das FdV fragt beim E-Rezept-Fachdienst nach neuen Nachrichten.
+    - Das FdV fragt beim TI-Flow-Fachdienst nach neuen Nachrichten.
     - Nachrichten werden heruntergeladen.
   postconditions: |
     - Nachrichten liegen im FdV zur Anzeige bereit.
@@ -202,11 +202,11 @@
     - UC 3.3 wurde ausgeführt.
   actions: |
     - Der Versicherte wählt Nachrichten zum Löschen aus und bestätigt den Vorgang.
-    - Das FdV überträgt die Löschanforderung je Nachricht an den E-Rezept-Fachdienst.
-    - Der E-Rezept-Fachdienst löscht die Nachrichten und liefert ggf. eine Warnung, wenn bereits abgerufen.
+    - Das FdV überträgt die Löschanforderung je Nachricht an den TI-Flow-Fachdienst.
+    - Der TI-Flow-Fachdienst löscht die Nachrichten und liefert ggf. eine Warnung, wenn bereits abgerufen.
     - Die Nachrichten werden im FdV gelöscht.
   postconditions: |
-    - Nachrichten sind im E-Rezept-Fachdienst und im FdV gelöscht.
+    - Nachrichten sind im TI-Flow-Fachdienst und im FdV gelöscht.
   interface: |
     - [Query API: Nachricht löschen](./query-api-communication.html)
   diagram: seq-uc-3-8-nachricht-durch-versicherten-loeschen
@@ -217,16 +217,16 @@
   roles:
     - Kostenträger
   description: |
-    Eine abgebende LEI ruft ein E-Rezept auf Basis eines E-Rezept-Tokens aus dem E-Rezept-Fachdienst ab.
+    Eine abgebende LEI ruft ein E-Rezept auf Basis eines E-Rezept-Tokens aus dem TI-Flow-Fachdienst ab.
   preconditions: |
     - Ein E-Rezept-Token wurde übermittelt.
     - UC 4.6 wurde ausgeführt.
     - Token liegt im Primärsystem vor; Status des E-Rezepts ist "ready".
   actions: |
     - Primärsystem ermittelt Rezept-ID und AccessCode aus dem Token.
-    - Primärsystem ruft das E-Rezept beim E-Rezept-Fachdienst ab.
+    - Primärsystem ruft das E-Rezept beim TI-Flow-Fachdienst ab.
     - Status wechselt auf "in-progress".
-    - E-Rezept-Fachdienst erzeugt ein Geheimnis zur Statusänderung und übermittelt es.
+    - TI-Flow-Fachdienst erzeugt ein Geheimnis zur Statusänderung und übermittelt es.
     - optional: Primärsystem prüft die QES über den Konnektor.
   postconditions: |
     - Status ist "in-progress" und protokolliert.
@@ -241,14 +241,14 @@
   roles:
     - Kostenträger
   description: |
-    Ein abgerufenes E-Rezept wird an den E-Rezept-Fachdienst zurückgegeben.
+    Ein abgerufenes E-Rezept wird an den TI-Flow-Fachdienst zurückgegeben.
   preconditions: |
     - UC 4.1 wurde ausgeführt.
     - Rezept-ID, AccessCode und Geheimnis sind bekannt.
     - Status ist "in-progress".
   actions: |
     - Abgebender markiert das E-Rezept zum Zurückgeben und bestätigt.
-    - Primärsystem ruft den E-Rezept-Fachdienst mit Rezept-ID und Geheimnis auf.
+    - Primärsystem ruft den TI-Flow-Fachdienst mit Rezept-ID und Geheimnis auf.
     - Status wird auf "ready" geändert.
   postconditions: |
     - Status ist "ready" und protokolliert.
@@ -263,14 +263,14 @@
   roles:
     - Kostenträger
   description: |
-    Nach der Abgabe wird das E-Rezept quittiert und eine Quittung vom E-Rezept-Fachdienst abgerufen.
+    Nach der Abgabe wird das E-Rezept quittiert und eine Quittung vom TI-Flow-Fachdienst abgerufen.
   preconditions: |
     - UC 4.1 wurde ausgeführt.
     - QES des E-Rezepts ist gültig geprüft.
     - Rezept-ID, AccessCode und Geheimnis sind bekannt; Status ist "in-progress".
   actions: |
     - Abgebender markiert das E-Rezept als abgegeben.
-    - Primärsystem übermittelt Rezept-ID, Geheimnis und Abgabeinformationen an den E-Rezept-Fachdienst.
+    - Primärsystem übermittelt Rezept-ID, Geheimnis und Abgabeinformationen an den TI-Flow-Fachdienst.
     - Status wechselt zu "quittiert"; Quittung wird erstellt und zurückgegeben.
   postconditions: |
     - Status ist "quittiert"; Abgabeinformationen sind gespeichert.
@@ -291,7 +291,7 @@
     - Status des E-Rezepts ist "quittiert".
   actions: |
     - Abgebender wählt das E-Rezept und ruft die Quittung erneut ab.
-    - Primärsystem übermittelt Rezept-ID und Geheimnis; der E-Rezept-Fachdienst liefert die Quittung erneut aus.
+    - Primärsystem übermittelt Rezept-ID und Geheimnis; der TI-Flow-Fachdienst liefert die Quittung erneut aus.
   postconditions: |
     - Quittung liegt im Primärsystem vor.
   interface: |
@@ -310,7 +310,7 @@
     - Status des E-Rezepts ist "in-progress".
   actions: |
     - Abgebender wählt die Zugriffsinformation für die Verordnung (E-Rezept-Token) aus und ruft die Verordnung erneut ab.
-    - Primärsystem übermittelt Rezept-ID und Access_Code; der E-Rezept-Fachdienst liefert die Verordnung und das Secret erneut aus.
+    - Primärsystem übermittelt Rezept-ID und Access_Code; der TI-Flow-Fachdienst liefert die Verordnung und das Secret erneut aus.
   postconditions: |
     - Verordnung liegt im Primärsystem vor.
   interface: |
@@ -328,7 +328,7 @@
     - UC 3.3 wurde ausgeführt oder der 2D-Code wurde präsentiert.
   actions: |
     - Das Primärsystem wählt den Empfangsweg (TI oder 2D-Code).
-    - Bei TI: Primärsystem fragt beim E-Rezept-Fachdienst neue Nachrichten für die Telematik-ID ab und lädt sie herunter.
+    - Bei TI: Primärsystem fragt beim TI-Flow-Fachdienst neue Nachrichten für die Telematik-ID ab und lädt sie herunter.
     - Bei 2D-Code: Primärsystem wandelt den Code in die Token-Textform um.
   postconditions: |
     - E-Rezept-Token liegt im Primärsystem vor.
@@ -348,9 +348,9 @@
     - UC 4.6 wurde ausgeführt.
   actions: |
     - Ein Mitarbeiter wählt die Nachricht zu einem E-Rezept und erstellt eine Antwort.
-    - Das Primärsystem stellt die Antwortnachricht im E-Rezept-Fachdienst ein.
+    - Das Primärsystem stellt die Antwortnachricht im TI-Flow-Fachdienst ein.
   postconditions: |
-    - Nachricht liegt im E-Rezept-Fachdienst und kann asynchron empfangen werden.
+    - Nachricht liegt im TI-Flow-Fachdienst und kann asynchron empfangen werden.
   interface: |
     - [Query API: Nachricht einstellen](./query-api-communication.html)
   diagram: seq-uc-4-7-nachricht-durch-abgebenden-uebermitteln
@@ -366,11 +366,11 @@
     - UC 4.7 wurde ausgeführt.
   actions: |
     - Der Abgebende wählt Nachrichten zum Löschen aus und bestätigt.
-    - Das Primärsystem überträgt Löschanforderungen an den E-Rezept-Fachdienst.
-    - Der E-Rezept-Fachdienst löscht Nachrichten und liefert ggf. Warnung bei bereits erfolgtem Abruf.
+    - Das Primärsystem überträgt Löschanforderungen an den TI-Flow-Fachdienst.
+    - Der TI-Flow-Fachdienst löscht Nachrichten und liefert ggf. Warnung bei bereits erfolgtem Abruf.
     - Nachrichten werden im Primärsystem gelöscht.
   postconditions: |
-    - Nachrichten sind im E-Rezept-Fachdienst und im Primärsystem gelöscht.
+    - Nachrichten sind im TI-Flow-Fachdienst und im Primärsystem gelöscht.
   interface: |
     - [Query API: Nachricht löschen](./query-api-communication.html)
   diagram: seq-uc-4-9-nachricht-durch-abgebenden-loeschen

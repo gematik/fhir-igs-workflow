@@ -7,7 +7,7 @@ Der TI-Flow-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen 
 	<actor name="TI_Flow_FD">
     	<testProcedure id="Produktgutachten"/>
   	</actor>
-	Der TI-Flow-Fachdienst MUSS einen Task nach Ablauf der Löschfrist gemäss der folgenden Festlegung automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren.
+	Der TI-Flow-Fachdienst MUSS einen Task nach Ablauf der Löschfrist gemäß der folgenden Festlegung automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren.
 	<table>
 		<tr> 
 		<th>Task.status nach Statuswechsel</th>

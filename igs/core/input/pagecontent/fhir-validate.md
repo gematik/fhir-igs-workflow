@@ -1,7 +1,7 @@
 Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelte FHIR-Ressourcen. Die folgenden Anforderungen beschreiben Mindestprüfungen.
 
 <!-- A_23384-06 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-273" title="TI-Flow-Fachdienst - Prüfung Gültigkeit FHIR Ressourcen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-273" title="TI-Flow-Fachdienst - Prüfung Gültigkeit FHIR Ressourcen" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -37,7 +37,6 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
           <code>GEM_ERP_PR_Communication_DispReq</code>
           <code>GEM_ERP_PR_Communication_Reply</code>
           <code>GEM_ERP_PR_Communication_DiGA</code>
-          <code>GEM_ERP_PR_Communication_Representative</code>
         </td>
         <td>Zeitpunkt des Aufrufs der Operation am TI-Flow-Fachdienst</td>
       </tr>

@@ -1,0 +1,23 @@
+actor:
+- TI_Flow_FD
+conformance: SHALL
+content_hash: 5dbdd6cadee72742d151668bffdf65dd8535f5b837e763e475005077bd32148a
+created: '2026-03-24T15:22:24.201567'
+date: '2026-03-24T15:22:24.201575'
+key: IG-TIFLOW-CORE-407
+modified: '2026-03-24T15:22:24.201574'
+release_status: NEW
+source: input/pagecontent/query-api-task-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI_Flow_FD:
+  - Produkttest
+text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
+  /Task/&lt;id&gt; durch einen Versicherten, den Versicherten anhand der KVNR aus
+  dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese
+  gegen die im gespeicherten Datensatz in Task.for.identifier hinterlegte KVNR des
+  begünstigten Versicherten prüfen und bei Ungleichheit den Aufruf mit dem HTTP-Fehlercode
+  403 abweisen, damit ausschließlich der begünstigte Versicherte den Task abrufen
+  kann.
+title: TI-Flow-Fachdienst - Task abrufen - Versicherter - Prüfung KVNR
+version: 0

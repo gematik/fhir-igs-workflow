@@ -1,0 +1,223 @@
+name: IGTools Process Commit
+run-name: IGTools Process Commit - ${{ github.ref_name }}
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: igtools-process-commit-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  process-and-commit:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ensure branch trigger
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "${GITHUB_REF_TYPE}" != "branch" ]]; then
+            echo "This workflow must be run against a branch." >&2
+            exit 1
+          fi
+
+      - name: Checkout selected branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.ref_name }}
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install tooling
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip pipx
+          python -m pipx install git+https://github.com/onyg/req-tooling.git
+
+      - name: Run igtools process
+        id: igtools_process
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          state_dir="${RUNNER_TEMP}/igtools-process-state"
+          log_file="$state_dir/igtools-process.log"
+          afo_summary_file="$state_dir/afo-summary.txt"
+          mkdir -p "$state_dir"
+
+          set +e
+          ./igtools-all process 2>&1 | tee "$log_file"
+          script_exit=${PIPESTATUS[0]}
+          set -e
+
+          if grep -Eq '(^|[^A-Z])(ERROR|FAILED)([^A-Z]|$)' "$log_file"; then
+            found_error_keywords="true"
+          else
+            found_error_keywords="false"
+          fi
+
+          if git diff --quiet --ignore-submodules -- && \
+             git diff --cached --quiet --ignore-submodules -- && \
+             [[ -z "$(git ls-files --others --exclude-standard)" ]]; then
+            has_changes="false"
+          else
+            has_changes="true"
+          fi
+
+          status="ok"
+          message="./igtools-all process completed successfully."
+
+          if [[ "$script_exit" -ne 0 || "$found_error_keywords" == "true" ]]; then
+            status="failed"
+            message="./igtools-all process failed. See workflow log for details."
+          elif [[ "$has_changes" == "true" ]]; then
+            message="./igtools-all process completed successfully and produced repository changes."
+          else
+            message="./igtools-all process completed successfully and produced no repository changes."
+          fi
+
+          export PROCESS_STATUS="$status"
+          export PROCESS_MESSAGE="$message"
+          export PROCESS_SCRIPT_EXIT="$script_exit"
+          export PROCESS_FOUND_ERROR_KEYWORDS="$found_error_keywords"
+          export PROCESS_HAS_CHANGES="$has_changes"
+          export PROCESS_LOG_FILE="$log_file"
+          export PROCESS_AFO_SUMMARY_FILE="$afo_summary_file"
+
+          python - <<'PY'
+          import os
+          import re
+          import subprocess
+          from pathlib import Path
+
+          afo_summary_file = Path(os.environ["PROCESS_AFO_SUMMARY_FILE"])
+
+          key_pattern = re.compile(r"\bIG-[A-Z0-9-]+\b")
+
+          def run_git(*args: str) -> str:
+              result = subprocess.run(
+                  ["git", *args],
+                  check=False,
+                  capture_output=True,
+                  text=True,
+                  encoding="utf-8",
+                  errors="replace",
+              )
+              return result.stdout
+
+          changed_files = []
+          for line in run_git("status", "--porcelain").splitlines():
+              if not line:
+                  continue
+              status_code = line[:2]
+              path = line[3:]
+              if " -> " in path:
+                  path = path.split(" -> ", 1)[1]
+              if path:
+                  changed_files.append((status_code, path))
+
+          afo_keys = set()
+          for status_code, file_path in changed_files:
+              afo_keys.update(key_pattern.findall(run_git("diff", "--unified=0", "--no-color", "--", file_path)))
+              file_on_disk = Path(file_path)
+              if ("A" in status_code or "?" in status_code) and file_on_disk.is_file():
+                  try:
+                      afo_keys.update(key_pattern.findall(file_on_disk.read_text(encoding="utf-8", errors="replace")))
+                  except OSError:
+                      pass
+
+          afo_keys = sorted(afo_keys)
+          afo_status = "changed" if afo_keys else "unchanged"
+          if afo_keys:
+              afo_summary = "Geänderte AFOs:\n" + "\n".join(f"- {key}" for key in afo_keys)
+          else:
+              afo_summary = "Keine Änderungen an AFOs"
+
+          afo_summary_file.write_text(afo_summary, encoding="utf-8")
+          PY
+
+          if [[ -s "$afo_summary_file" ]] && ! grep -qx 'Keine Änderungen an AFOs' "$afo_summary_file"; then
+            afo_status="changed"
+          else
+            afo_status="unchanged"
+          fi
+
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+          echo "message=$message" >> "$GITHUB_OUTPUT"
+          echo "script_exit=$script_exit" >> "$GITHUB_OUTPUT"
+          echo "found_error_keywords=$found_error_keywords" >> "$GITHUB_OUTPUT"
+          echo "has_changes=$has_changes" >> "$GITHUB_OUTPUT"
+          echo "afo_status=$afo_status" >> "$GITHUB_OUTPUT"
+
+      - name: Publish workflow summary
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "## IGTools process" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Branch: \`${{ github.ref_name }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Status: \`${{ steps.igtools_process.outputs.status }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Result: ${{ steps.igtools_process.outputs.message }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Exit code: \`${{ steps.igtools_process.outputs.script_exit }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Output contains ERROR/FAILED: \`${{ steps.igtools_process.outputs.found_error_keywords }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Changes detected: \`${{ steps.igtools_process.outputs.has_changes }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- AFO changes detected: \`${{ steps.igtools_process.outputs.afo_status }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "### AFOs" >> "$GITHUB_STEP_SUMMARY"
+          if [[ -f "${RUNNER_TEMP}/igtools-process-state/afo-summary.txt" ]]; then
+            cat "${RUNNER_TEMP}/igtools-process-state/afo-summary.txt" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Keine Änderungen an AFOs" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Fail on igtools errors
+        if: steps.igtools_process.outputs.status == 'failed'
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "::error title=IGTools process failed::${{ steps.igtools_process.outputs.message }}"
+          exit 1
+
+      - name: Configure git author
+        if: steps.igtools_process.outputs.status == 'ok' && steps.igtools_process.outputs.has_changes == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit generated changes
+        if: steps.igtools_process.outputs.status == 'ok' && steps.igtools_process.outputs.has_changes == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add -A
+          git commit -m "Run igtools process"
+
+      - name: Push generated changes
+        if: steps.igtools_process.outputs.status == 'ok' && steps.igtools_process.outputs.has_changes == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git push origin "HEAD:${{ github.ref_name }}"
+
+      - name: No changes to commit
+        if: steps.igtools_process.outputs.status == 'ok' && steps.igtools_process.outputs.has_changes != 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "No repository changes produced by ./igtools-all process."

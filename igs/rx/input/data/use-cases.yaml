@@ -59,7 +59,7 @@
   roles:
     - (Zahn-)Arzt
   description: |
-    Mit diesem Anwendungsfall erstellt ein Leistungserbringer einen Verordnungsdatensatz mit workflowspezifischen Parametern. Der Verordnungsdatensatz erhält von dem E-Rezept-Fachdienst eine Rezept-ID und wird von dem Leistungserbringer qualifiziert signiert. Der Leistungserbringer muss in seinem Primärsystem den workflowspezifischen Parameter für die direkte Zuweisung an eine Apotheke auswählen.
+    Mit diesem Anwendungsfall erstellt ein Leistungserbringer einen Verordnungsdatensatz mit workflowspezifischen Parametern. Der Verordnungsdatensatz erhält von dem TI-Flow-Fachdienst eine Rezept-ID und wird von dem Leistungserbringer qualifiziert signiert. Der Leistungserbringer muss in seinem Primärsystem den workflowspezifischen Parameter für die direkte Zuweisung an eine Apotheke auswählen.
   preconditions: |
     - Der oder die Versicherten sind der LEI bekannt. 
     - Der HBA ist für die QES gesteckt und freigeschaltet.  
@@ -68,13 +68,13 @@
     - Der verordnende Leistungserbringer wählt im Primärsystem einen Verordnungsdatensatz zum Signieren aus. 
     - Der Leistungserbringer wählt das Signaturverfahren aus. 
     - Der Leistungserbringer wählt im Primärsystem den Rezept-Typ "Workflow-Steuerung durch Leistungserbringer" aus. 
-    - Das Primärsystem ruft für das E-Rezept vom E-Rezept-Fachdienst eine Rezept-ID ab (rote Markierung im Sequenzdiagramm) und ergänzt diese im Verordnungsdatensatz. 
+    - Das Primärsystem ruft für das E-Rezept vom TI-Flow-Fachdienst eine Rezept-ID ab (rote Markierung im Sequenzdiagramm) und ergänzt diese im Verordnungsdatensatz. 
     - Anschließend wird das E-Rezept mittels Konnektor mit einer QES signiert. 
     - Es kann die Einzel-, Stapel- oder Komfortsignatur genutzt werden.
   postconditions: |
     - Die erzeugten E-Rezepte beinhalten eine eineindeutige Rezept-ID und haben eine QES. 
     - Der AccessCode für jedes E-Rezept ist im Primärsystem gespeichert. 
-    - Die E-Rezepte sind im E-Rezept-Fachdienst angelegt und haben den Status "initialisiert".
+    - Die E-Rezepte sind im TI-Flow-Fachdienst angelegt und haben den Status "initialisiert".
   interface: |
     - [$create-Operation](./op-create.html)
   diagram: seq-169-e-rezept-erzeugen

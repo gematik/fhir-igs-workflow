@@ -7,7 +7,7 @@ Der TI-Flow-Fachdienst übernimmt die Rolle „Fachdienst“. Er verwaltet FdV-I
 Der TI-Flow-Fachdienst erstellt ein Notification-Objekt für verschlüsselte Notifications wie in [OpenAPI_PushGateway] beschrieben. Der Nachrichteninhalt, auf den in diesem Kapitel verwiesen wird, ist der Inhalt des Ciphertexts.
 
 <!-- A_28115 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-225" title="TI-Flow-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-225" title="TI-Flow-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -113,18 +113,6 @@ POST /Communication<br>
 Falls Profil GEM_ERP_PR_Communication_Reply: Communication.payload.content.info_text<br>
 Falls Profil GEM_ERP_PR_Communication_DiGA: Communication.payload.content
 </td>
-</tr>
-
-<tr>
-<td>erp.task.vertreter</td>
-<td>Task.identifier.PrescriptionID</td>
-<td>TaskId</td>
-<td>
-Falls Task.flowType = "160","166","200": KBV_PR_ERP_Bundle.entry.[medicationName]<br>
-Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
-</td>
-<td>Lesbarer Name aus dem ACCESS_TOKEN des Ausführenden</td>
-<td>GET /Task/&lt;id&gt;</td>
 </tr>
 
 <tr>
