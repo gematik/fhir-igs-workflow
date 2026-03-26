@@ -8,37 +8,37 @@ This page contains built FHIR Implementation Guides (IGs) from the [gematik/fhir
 
 | Version | Branch | Link |
 |---------|--------|------|
-| `0.9.0` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-bfarm/develop/0.9.0) |
+| `1.0.0-draft` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-bfarm/develop/1.0.0-draft) |
 
 ### TIFlow - Abrechnungsinformationen
 
 | Version | Branch | Link |
 |---------|--------|------|
-| `0.9.0` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-chargeitem/develop/0.9.0) |
+| `1.0.0-draft` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-chargeitem/develop/1.0.0-draft) |
 
 ### TIFlow - Kernfunktionalitäten
 
 | Version | Branch | Link |
 |---------|--------|------|
-| `0.9.0` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-core/develop/0.9.0) |
+| `1.0.0-draft` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-core/develop/1.0.0-draft) |
 
 ### TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
 | Version | Branch | Link |
 |---------|--------|------|
-| `0.9.0` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-diga/develop/0.9.0) |
+| `1.0.0-draft` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-diga/develop/1.0.0-draft) |
 
 ### TIFlow - Verordnungen für Arzneimittel
 
 | Version | Branch | Link |
 |---------|--------|------|
-| `0.9.0` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-erezept/develop/0.9.0) |
+| `1.0.0-draft` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-erezept/develop/1.0.0-draft) |
 
 ### TIFlow - Grenzüberschreitender Datenaustausch
 
 | Version | Branch | Link |
 |---------|--------|------|
-| `0.9.0` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-xborder/develop/0.9.0) |
+| `1.0.0-draft` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-xborder/develop/1.0.0-draft) |
 
 ## About
 

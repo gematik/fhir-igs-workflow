@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Zugriffsprotokollierung - TIFlow - Kernfunktionalitäten v1.0.0-draft</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        height: 280px;
+        background-color: #2a6496;
+        background: url('./e-rezept-img.png') no-repeat;
+        background-position: 650px -150px;
+        background-size: 45% auto;
+    }
+    .bubble-link {
+        display: none;
+        transition: opacity 0.2s;
+        }
+
+        h1:hover .bubble-link,
+        h2:hover .bubble-link,
+        h3:hover .bubble-link,
+        h4:hover .bubble-link,
+        h5:hover .bubble-link,
+        h6:hover .bubble-link {
+        display: inline;
+        }
+</style>
+
+<script type="text/javascript" src="assets/js/heading-links.js"> </script>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"2"}
+    h3,h4,h5,h6{--heading-prefix:"2"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Start</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Grundlagen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
+      </li>
+      <li>
+        <a href="audit-service.html">Zugriffsprotokollierung</a>
+      </li>
+      <li>
+        <a href="fhir-validate.html">FHIR-Validierung</a>
+      </li>
+      <li>
+        <a href="ttl.html">Löschfristen</a>
+      </li>
+      <li>
+        <a href="error-codes.html">Fehlercodes</a>
+      </li>
+      <li>
+        <a href="kommunikation-dienste-ti.html">Kommunikation zu Diensten der TI</a>
+      </li>
+      <li>
+        <a href="pki-zertifikatspruefung.html">PKI Zertifikatsprüfung</a>
+      </li>
+      <li>
+        <a href="datamatrix-code-client.html">Datamatrix Code</a>
+      </li>
+      <li>
+        <a href="authentifizierung-client.html">Authentifizierung von Clientsystemen</a>
+      </li>
+      <li>
+        <a href="health-check.html">Health Check</a>
+      </li>
+      <li>
+        <a href="fehlerbehandlung-client.html">Fehlerbehandlung Clientsysteme</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Technische Funktionsmerkmale
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-technische-umsetzung-epa-ms.html">ePA Medication Service</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-push.html">Push Notification</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-paging.html">Paginierung</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Schnittstellen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-schnittstellen-query-api.html">Query API</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-operation-api.html">Operation API</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+  <li>
+    <a href="requirement-mapping-old-to-new.html">Anforderungsmapping</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+TIFlow - Kernfunktionalitäten
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 1.0.0-draft - ci-build
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Zugriffsprotokollierung</b></li>
+
+          <span style="float:right;">
+
+            <a href="index.html">&lt;vorherige</a> | 
+
+            <a href="#bottom">unten</a>
+
+          | <a href="fhir-validate.html">nächste&gt;</a>
+
+          </span>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Zugriffsprotokollierung</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+
+<h3 id="zugriffsprotokoll-für-den-versicherten">Zugriffsprotokoll für den Versicherten</h3>
+
+<p>Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle Zugriffe auf die personenbezogenen und medizinischen Daten eines Versicherten für den Versicherten einsehbar sind. Diese Zugriffsprotokolle sind unabhängig vom Systemprotokoll und stehen ausschließlich dem Versicherten zur Wahrnehmung seiner Betroffenenrechte zur Einsicht zur Verfügung.</p>
+
+<!-- A_19296-04 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-30" title="TI-Flow-Fachdienst - Inhalt Protokolleintrag" version="0">
+	<meta lockversion="false" />
+	<actor name="TI_Flow_FD">
+    	<testProcedure id="Produkttest" />
+  </actor>
+  Der TI-Flow-Fachdienst MUSS einen Protokolleintrag mit den folgenden Werten befüllen:
+	<ul>
+    <li>AuditEvent.text: Generierung eines HTML-&lt;div&gt;-Elements mit lesbarer Beschreibung in einfacher Sprache</li>
+    <li>AuditEvent.type: Fester Wertrest gemäß [CodeSystem: Audit Event ID]</li>
+    <li>AuditEvent.subtype: aus dem ValueSet [ValueSet http://hl7.org/fhir/ValueSet/auditevent-sub-type] gemäß [CodeSystem http://hl7.org/fhir/restful-interaction]:
+    <ul>
+      <li>create beim Hinzufügen/Speichern/Anlegen eines Datenobjekts mit Versichertenbezug (mit Ausnahme von AuditEvent- und Communication-Ressource)</li>
+      <li>read beim lesenden Zugriff auf ein Datenobjekt mit Versichertenbezug</li>
+      <li>update, wenn das Datenobjekt mit Versichertenbezug geändert/aktualisiert wird</li>
+      <li>delete, wenn das Datenobjekt mit Versichertenbezug manuell oder automatisch gelöscht wird</li>
+    </ul>
+    </li>
+    <li>AuditEvent.action: analog AuditEvent.subType (C, R, U, D) gemäß [ValueSet http://hl7.org/fhir/ValueSet/audit-event-action]</li>
+    <li>AuditEvent.recorded: aktuelle Systemzeit des TI-Flow-Fachdienstes</li>
+    <li>AuditEvent.outcome: Ergebnis der aufgerufenen Operation gemäß [ValueSet http://hl7.org/fhir/ValueSet/audit-event-outcome] (0 = Erfolg, 4 = Fehler auf Clientseite, 8 = Serverfehler)</li>
+    <li>AuditEvent.agent.type: Fester Werthumanuser bzw. bei Übermittlung an ePA oder NCPeH-FDdataprocessor aus [CodeSystem: Security Role Type (Experimental)]</li>
+    <li>AuditEvent.agent.name:Lesbarer Name aus ID_TOKEN des Zugreifenden, der die zu protokollierende Aktion getriggert hat, z.B. "Praxis Dr. Müller, Bahnhofstr. 78" oder Versicherter z.B. "Max Mustermann" bzw. bei Übermittlung an ePA "TI-Flow-Fachdienst"</li>
+    <li>AuditEvent.agent.who: KVNR bzw. Telematik-ID des zugreifenden Nutzers aus ID_TOKEN, der diesen Protokolleintrag ausgelöst hat</li>
+    <li>AuditEvent.agent.requestor: Fester Wert false, da keine Protokolleinträge von außen erzeugt werden</li>
+    <li>AuditEvent.soure.site: Fester Wert TI-Flow-Fachdienst</li>
+    <li>AuditEvent.soure.observer: Device-Informationen des TI-Flow-Fachdienstes (status, serialnumber=gemäß Release)</li>
+    <li>AuditEvent.entity.what: Referenz auf das durch den Abruf betroffene Datenobjekt Task, ChargeItem, MedicationDispense, Consent oder Objekt der Zugriffsberechtigung</li>
+    <li>AuditEvent.entity.name: Eintrag der KVNR des betroffenen Versicherten aus dem Identifier des protokollierten Datenobjekts (String)</li>
+    <li>AuditEvent.entity.description: Rezept-ID als Identifier, wird übernommen aus MedicationDispense, ChargeItem oder Task bzw. Consent.category.coding.code bei Anlegen oder Löschen eines Consent bzw. countryCode bei Anlegen oder Löschen einer Zugriffsberechtigung</li>
+  </ul>
+</requirement>
+
+<!-- A_19284-14 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-31" title="TI-Flow-Fachdienst - Versichertenprotokoll zu Operationen" version="0">
+	<meta lockversion="false" />
+	<actor name="TI_Flow_FD">
+    	<testProcedure id="Produkttest" />
+  	</actor>
+	Der TI-Flow-Fachdienst MUSS jeden Aufruf von Operationen gemäß "TAB_eRPFD_004 Versichertenprotokoll" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.
+</requirement>
+
+<table>
+  <tr>
+    <th>Operation</th>
+    <th>Rolle des zugreifenden Nutzers</th>
+    <th>Beschreibung (ggf. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache)</th>
+  </tr>
+  <tr>
+    <td>http GET /Task/&#60;id&#62;</td>
+    <td>Versicherter</td>
+    <td>Versicherter hat das E-Rezept heruntergeladen</td>
+  </tr>
+  <tr>
+    <td>http GET /Task/&#60;id&#62;?secret</td>
+    <td>Apotheke/Kostenträger</td>
+    <td>Apotheke/Kostenträger hat die E-Rezept-Quittung heruntergeladen</td>
+  </tr>
+  <tr>
+    <td>http GET /Task</td>
+    <td>Apotheke (VSDM)</td>
+    <td>
+        <ul>
+            <li>im Erfolgsfall beim passenden AcceptPN3VSDMxx=false: Apotheke hat mit Ihrer eGK die Liste der offenen E-Rezepte abgerufen.</li>
+            <li>im Erfolgsfall bei PN3 und passende AcceptPN3VSDMxx=true: Apotheke hat mit Ihrer eGK die Liste der offenen E-Rezepte abgerufen. (Offline-Check wurde akzeptiert)</li>
+            <li>im Fehlerfall PN3 und passende AcceptPN3VSDMxx=false:  Apotheke konnte aufgrund eines Fehlerfalls nicht die Liste der offenen E-Rezepte mit Ihrer eGK abgerufen. (Offline-Check wurde nicht akzeptiert)</li>
+            <li>im sonstigen Fehlerfall: Apotheke konnte aufgrund eines Fehlerfalls nicht die Liste der offenen E-Rezepte mit Ihrer eGK abrufen.</li>
+        </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>http GET /Task</td>
+    <td>Apotheke (PoPP)</td>
+    <td>Die Apotheke hat die Liste der einlösbaren E-Rezepte abgerufen durch Autorisierung mittels &#60;PoPP-Anwendungsfall&#62;.</td>
+  </tr>
+  <tr>
+    <td>http GET /Task</td>
+    <td>Kostenträger</td>
+    <td>Krankenkasse hat die Liste der einlösbaren Verordnungen (DiGA-Verordnungen) abgerufen.</td>
+  </tr>
+  <tr>
+    <td>http POST /Task/&#60;id&#62;/$activate</td>
+    <td>Arztpraxis/Zahnarztpraxis/Krankenhaus/Psychotherapeut</td>
+    <td>Arztpraxis/Zahnarztpraxis/Krankenhaus/Psychotherapeut hat das E-Rezept bereitgestellt.</td>
+  </tr>
+  <tr>
+    <td>http POST /Task/&#60;id&#62;/$accept</td>
+    <td>Apotheke</td>
+    <td>Apotheke hat das E-Rezept heruntergeladen</td>
+  </tr>
+  <tr>
+    <td>http POST /Task/&#60;id&#62;/$accept</td>
+    <td>Kostenträger</td>
+    <td>Krankenkasse hat die Verordnung heruntergeladen</td>
+  </tr>
+  <tr>
+    <td>http POST /Task/&#60;id&#62;/$reject</td>
+    <td>Apotheke</td>
+    <td>Apotheke hat das E-Rezept zurückgegeben.</td>
+  </tr>
+  <tr>
+    <td>http POST /Task/&#60;id&#62;/$reject</td>
+    <td>Kostenträger</td>
+    <td>Krankenkasse hat die Verordnung zurückgegeben.</td>
+  </tr>
+  <tr>
+    <td>http POST /Task/&#60;id&#62;/$dispense</td>
+    <td>Apotheke</td>
+    <td>Apotheke hat das E-Rezept beliefert.</td>
+  </tr>
+  <tr>
+    <td>http POST /Task/&#60;id&#62;/$close</td>
+    <td>Apotheke</td>
+    <td>Apotheke hat das E-Rezept abgeschlossen.</td>
+  </tr>
+  <tr>
+    <td>http POST /Task/&#60;id&#62;/$close</td>
+    <td>Kostenträger</td>
+    <td>Krankenkasse hat die Verordnung abgeschlossen.</td>
+  </tr>
+  <tr>
+    <td>http POST /Task/&#60;id&#62;/$abort</td>
+    <td>Versicherter</td>
+    <td>Versicherter hat das E-Rezept gelöscht.</td>
+  </tr>
+  <tr>
+    <td>http POST /Task/&#60;id&#62;/$abort</td>
+    <td>Arztpraxis/Zahnarztpraxis/Krankenhaus/Psychotherapeut</td>
+    <td>Arztpraxis/Zahnarztpraxis/Krankenhaus/Psychotherapeut hat das E-Rezept gelöscht.</td>
+  </tr>
+  <tr>
+    <td>http POST /Task/&#60;id&#62;/$abort</td>
+    <td>Apotheke</td>
+    <td>Apotheke hat das E-Rezept gelöscht.</td>
+  </tr>
+  <tr>
+    <td>http POST /Task/&#60;id&#62;/$eu-close</td>
+    <td>NCPeH-FD</td>
+    <td>Der Parameters.parameter:requestData.part:practitionerRole Parameters.parameter:requestData.part:practitionerName hat in Parameters.parameter:requestData.part:healthcare-facility-type Parameters.parameter:requestData.part:pointOfCare in Land B (Klartext aus: Parameters.parameter:requestData.part:countryCode) Ihr E-Rezept eingelöst.</td>
+  </tr>
+  <tr>
+    <td>http PATCH /Task/&#60;id&#62;</td>
+    <td>Versicherter</td>
+    <td>Versicherter hat Markierung zu Einlösung im EU Ausland gespeichert</td>
+  </tr>
+  <tr>
+    <td>http GET /MedicationDispense</td>
+    <td>Versicherter</td>
+    <td>Versicherter hat Medikament-Informationen heruntergeladen.</td>
+  </tr>
+  <tr>
+    <td>http DELETE /ChargeItem/&#60;id&#62;</td>
+    <td>Versicherter</td>
+    <td>Versicherter hat Abrechnungsinformation gelöscht</td>
+  </tr>
+  <tr>
+    <td>http GET /ChargeItem/&#60;id&#62;</td>
+    <td>Versicherter</td>
+    <td>Versicherter hat Abrechnungsinformation gelesen</td>
+  </tr>
+  <tr>
+    <td>http GET /ChargeItem/&#60;id&#62;</td>
+    <td>Apotheke</td>
+    <td>Apotheke hat Abrechnungsinformation gelesen</td>
+  </tr>
+  <tr>
+    <td>http POST /ChargeItem</td>
+    <td>Apotheke</td>
+    <td>Apotheke hat Abrechnungsinformation bereitgestellt</td>
+  </tr>
+  <tr>
+    <td>http PATCH /ChargeItem/&#60;id&#62;</td>
+    <td>Versicherter</td>
+    <td>Versicherter hat Markierung zu Abrechnungsinformation gespeichert</td>
+  </tr>
+  <tr>
+    <td>http PUT /ChargeItem/&#60;id&#62;</td>
+    <td>Apotheke</td>
+    <td>Apotheke hat Abrechnungsinformation geändert</td>
+  </tr>
+  <tr>
+    <td>http POST /Consent</td>
+    <td>Versicherter</td>
+    <td>Versicherter hat Einwilligung für "Beschreibung für Consent.category.coding.code" erteilt.</td>
+  </tr>
+  <tr>
+    <td>http DELETE /Consent</td>
+    <td>Versicherter</td>
+    <td>Versicherter hat Einwilligung für "Beschreibung für Consent.category.coding.code" widerrufen.</td>
+  </tr>
+  <tr>
+    <td>http POST /$grant-eu-access-permission</td>
+    <td>Versicherter</td>
+    <td>Versicherter hat eine Zugriffsberechtigung zum Einlösen von E-Rezepten für das Land "Land B" erteilt.</td>
+  </tr>
+  <tr>
+    <td>http DELETE /$revoke-eu-access-permission</td>
+    <td>Versicherter</td>
+    <td>Versicherter hat die Zugriffsberechtigung zum Einlösen von E-Rezepten für das Land "Land B" widerrufen.</td>
+  </tr>
+  <tr>
+    <td>POST /$get-eu-prescriptions<br />Parameters.parameter:requestData.part:requesttype = demographics</td>
+    <td>NCPeH-FD</td>
+    <td>Der Parameters.parameter:requestData.part:practitionerRole Parameters.parameter:requestData.part:practitionerName hat in Parameters.parameter:requestData.part:healthcare-facility-type Parameters.parameter:requestData.part:pointOfCare in Land B (Klartext aus: Parameters.parameter:requestData.part:countryCode) Ihre Patientendaten abgerufen.</td>
+  </tr>
+  <tr>
+    <td>POST /$get-eu-prescriptions<br />Parameters.parameter:requestData.part:requesttype = e-prescriptions-list</td>
+    <td>NCPeH-FD</td>
+    <td>Der Parameters.parameter:requestData.part:practitionerRole Parameters.parameter:requestData.part:practitionerName hat in Parameters.parameter:requestData.part:healthcare-facility-type Parameters.parameter:requestData.part:pointOfCare in Land B (Klartext aus: Parameters.parameter:requestData.part:countryCode) Ihre ausgwählten und einlösbaren E-Rezepte abgerufen.</td>
+  </tr>
+  <tr>
+    <td>POST /$get-eu-prescriptions<br />Parameters.parameter:requestData.part:requesttype = e-prescriptions-retrieval</td>
+    <td>NCPeH-FD</td>
+    <td>Der Parameters.parameter:requestData.part:practitionerRole Parameters.parameter:requestData.part:practitionerName hat in Parameters.parameter:requestData.part:healthcare-facility-type Parameters.parameter:requestData.part:pointOfCare in Land B (Klartext aus: Parameters.parameter:requestData.part:countryCode) Ihre einzulösenden E-Rezepte abgerufen.</td>
+  </tr>
+  <tr>
+    <td>http POST /pushers/set</td>
+    <td>Versicherter</td>
+    <td>
+        <ul>
+            <li>Falls kind=null:Versicherter hat das Gerät "device_display_name" für Push-Nachrichten deregistriert.</li>
+            <li>Falls kind=http:Versicherter hat das Gerät "device_display_name" für Push-Nachrichten registriert.</li>
+        </ul>
+    </td>
+  </tr>
+  <tr>
+&lt;/table&gt;
+<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004 Versichertenprotokoll</figcaption></div>
+
+<table>
+<tr>
+<th>Wert in proofMethod</th>
+<th>Wert für &#60;PoPP-Anwendungsfall&#62;</th>
+</tr>
+<tr>
+<td>ehc-practitioner-*</td>
+<td>eGK in der Apotheke</td>
+</tr>
+</table>
+<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004a Versichertenprotokoll PoPP Anwendungsfall</figcaption></div>
+
+<!-- A_19284-14 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-32" title="TI-Flow-Fachdienst - Versichertenprotokoll zu automatischen Löschen" version="0">
+	<meta lockversion="false" />
+	<actor name="TI_Flow_FD">
+    	<testProcedure id="Produkttest" />
+  	</actor>
+	Der TI-Flow-Fachdienst MUSS beim automatischen Löschen nach Erreichen einer Löschfrist gemäß "TAB_eRPFD_004a Versichertenprotokoll nach automatischen Löschen" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.
+</requirement>
+
+<table>
+  <tr>
+    <th>Ressource</th>
+    <th>Akteur</th>
+    <th>Beschreibung (ggf. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache)</th>
+  </tr>
+  <tr>
+    <td>Ressource Task</td>
+    <td>TI-Flow-Fachdienst</td>
+    <td>Veraltete E-Rezepte vom Fachdienst automatisch gelöscht.</td>
+  </tr>
+  <tr>
+    <td>Ressource MedicationDispense</td>
+    <td>TI-Flow-Fachdienst</td>
+    <td>Veraltete Medikament-Informationen vom Fachdienst automatisch gelöscht.</td>
+  </tr>
+  <tr>
+    <td>Ressource Communication</td>
+    <td>TI-Flow-Fachdienst</td>
+    <td>Veraltete Nachricht vom Fachdienst automatisch gelöscht.</td>
+  </tr>
+  <tr>
+    <td>Ressource ChargeItem</td>
+    <td>TI-Flow-Fachdienst</td>
+    <td>Veraltete Abrechnungsinformation vom Fachdienst automatisch gelöscht.</td>
+  </tr>
+</table>
+<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004a Versichertenprotokoll nach automatischen Löschen</figcaption></div>
+
+<!-- A_19284-14 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-33" title="TI-Flow-Fachdienst - Versichertenprotokoll zu Löschen nach Fehlerbehandlung" version="0">
+	<meta lockversion="false" />
+	<actor name="TI_Flow_FD">
+    <testProcedure id="Produkttest" />
+  </actor>
+	Der TI-Flow-Fachdienst MUSS beim automatischen Löschen nach Fehlerbehandlung gemäß "TAB_eRPFD_004b Versichertenprotokoll nach Löschen wegen Fehlerbehandlung" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.
+</requirement>
+
+<table>
+  <tr>
+    <th>Ressource</th>
+    <th>Akteur</th>
+    <th>Beschreibung (ggf. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache)</th>
+  </tr>
+  <tr>
+    <td>Ressource Pusher</td>
+    <td>TI-Flow-Fachdienst</td>
+    <td>Fachdienst hat das Gerät "device_display_name" für Push-Nachrichten deregistriert.</td>
+  </tr>
+</table>
+<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004b Versichertenprotokoll nach Löschen wegen Fehlerbehandlung</figcaption></div>
+
+<!-- A_19302 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-34" title="TI-Flow-Fachdienst - Protokolleintrag Versichertenprotokoll leicht verständlich" version="0">
+	<meta lockversion="false" />
+	<actor name="TI_Flow_FD">
+    <testProcedure id="Produkttest" />
+  </actor>
+	Der TI-Flow-Fachdienst MUSS in jedem zu tätigenden Eintrag des Protokolls für Versicherte einen lesbaren Text in einfacher Sprache (deutsch und englisch) erzeugen, der mindestens den Namen des Zugreifenden, die auslösende Operation und das Ergebnis der Operation umfasst, damit Versicherte ohne technisches Vorwissen den Inhalt des Zugriffsprotokolls verstehen können.
+</requirement>
+
+<!-- A_22217 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-35" title="TI-Flow-Fachdienst - Protokollierung - keine Angabe zu organizationName" version="0">
+	<meta lockversion="false" />
+	<actor name="TI_Flow_FD">
+    	<testProcedure id="Produkttest" />
+  	</actor>
+	Der TI-Flow-Fachdienst MUSS, wenn im ACCESS_TOKEN die Angabe zur "organizationName" mit NULL gefüllt ist, in der Protokollierung als agentname "unbekannt" verwenden.
+</requirement>
+
+#### Zugriffsprotokollierung für Übermittlung für ePA Medication Service
+
+Der TI-Flow-Fachdienst protokolliert das erfolgreiche Übermitteln von Daten für jedes E-Rezept an den Medication Service im Zugriffsprotokoll des Versicherten. Für Übermittlungsversuche, welche nicht erfolgreich durchgeführt werden konnten und für die die Übermittlung erneut versucht wird, wird kein Eintrag im Zugriffsprotokoll angelegt.
+
+<!-- A_25962 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-36" title="TI-Flow-Fachdienst - ePA - Medication Service - Versichertenprotokoll" version="0">
+	<meta lockversion="false" />
+	<actor name="TI_Flow_FD">
+    <testProcedure id="Produkttest" />
+  </actor>
+	Der TI-Flow-Fachdienst MUSS einen Aufruf der folgenden Endpunkte, für jeden betroffene E-Rezept abhängig von Ergebnis des Operationsaufrufes gemäß Tab_eRPFD_020 im Zugriffsprotokoll des Versicherten protokollieren:
+  <table>
+    <tr>
+      <th>Endpunkt</th>
+      <th>Ergebnis der Operation</th>
+      <th>Beschreibung (ggfs. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache)</th>
+    </tr>
+    <tr>
+      <td>/epa/medication/api/{version}/fhir/$provide-prescription-erp</td>
+      <td>erfolgreich</td>
+      <td>Die Verordnung wurde in die Patientenakte übertragen.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>final nicht übermittelbar</td>
+      <td>Die Verordnung konnte nicht in die Patientenakte übertragen werden.</td>
+    </tr>
+    <tr>
+      <td>/epa/medication/api/{version}/fhir/$provide-dispensation-erp</td>
+      <td>erfolgreich</td>
+      <td>Die Medikamentenabgabe wurde in die Patientenakte übertragen.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>final nicht übermittelbar</td>
+      <td>Die Medikamentenabgabe konnte nicht in die Patientenakte übertragen werden.</td>
+    </tr>
+    <tr>
+      <td>/epa/medication/api/{version}/fhir/$cancel-prescription-erp</td>
+      <td>erfolgreich</td>
+      <td>Die Löschinformation zum E-Rezept wurde in die Patientenakte übermittelt.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>final nicht übermittelbar</td>
+      <td>Die Löschinformation zum E-Rezept konnte nicht in die Patientenakte übermittelt werden.</td>
+    </tr>
+    <tr>
+      <td>/epa/medication/api/{version}/fhir/$cancel-dispensation-erp</td>
+      <td>erfolgreich</td>
+      <td>Die Löschinformation für die Medikamentenabgabe wurde in die Patientenakte übertragen.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>final nicht übermittelbar</td>
+      <td>Die Löschinformation für die Medikamentenabgabe konnte nicht in die Patientenakte übertragen werden.</td>
+    </tr>
+  </table>
+  <div><figcaption><strong>Tabelle: </strong>Tab_eRPFD_020 Versichertenprotokoll für ePA Medication Service</figcaption></div>
+
+</requirement>
+
+Das Ergebnis "final nicht übermittelbar" bedeutet, dass die Übermittlung auch nach den definierten Wiederholversuchen nicht erfolgreich durchgeführt werden konnte.
+
+Für Übermittlungsversuche, welche nicht erfolgreich durchgeführt werden konnten und für die die Übermittlung erneut versucht werden soll, wird kein Eintrag im Zugriffsprotokoll angelegt.
+
+Wenn ein Versicherter dem Einstellen von Verordnungsdaten und Dispensierinformationen durch den TI-Flow-Fachdienst widersprochen hat, wird keine Übermittlung von Daten gestartet (siehe A_25951-*). In dem Fall wird kein Eintrag im Zugriffsprotokoll angelegt.
+</tr></table>
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="index.html">&lt;vorherige</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">oben</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="fhir-validate.html">nächste&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Mar 26, 2026 08:57+0000">2026-03-26</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+
