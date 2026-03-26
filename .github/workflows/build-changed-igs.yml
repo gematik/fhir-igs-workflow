@@ -697,11 +697,8 @@ jobs:
             echo "This page contains built FHIR Implementation Guides (IGs) from the [$repository](${repo_url}) repository."
             echo ""
             
-            # Scan pages_dir to discover all IGs, branches, and versions
-            # Structure: pages/<ig-id>/<branch>/<version>/
-            
             declare -A ig_titles
-            declare -A ig_versions
+            declare -A ig_entries
             
             # First pass: collect metadata from source configs
             for cfg in igs/*/sushi-config.yaml; do
@@ -717,42 +714,82 @@ jobs:
               fi
             done
             
-            # Second pass: scan pages directory and group by IG
-            declare -A ig_entries
+            # Second pass: scan pages directory for all IGs (both built and existing ones)
             if [[ -d "$pages_dir" ]]; then
               for ig_path in "$pages_dir"/*; do
-                if [[ -d "$ig_path" ]]; then
+                if [[ -d "$ig_path" && "$(basename "$ig_path")" != "README.md" ]]; then
                   ig_id=$(basename "$ig_path")
-                  # Collect all branch/version combinations for this IG
-                  for branch_path in "$ig_path"/*; do
-                    if [[ -d "$branch_path" ]]; then
-                      branch=$(basename "$branch_path")
-                      for version_path in "$branch_path"/*; do
-                        if [[ -d "$version_path" ]]; then
-                          version=$(basename "$version_path")
-                          key="${ig_id}:${version}:${branch}"
-                          ig_entries["$key"]="$ig_id|$version|$branch"
+                  
+                  # Check if this IG has branch subdirectories or direct version directories
+                  has_branches=false
+                  
+                  # Look for directories that could be branches (containing version subdirs)
+                  for potential_branch in "$ig_path"/*; do
+                    if [[ -d "$potential_branch" ]]; then
+                      potential_branch_name=$(basename "$potential_branch")
+                      # Check if this looks like a branch (has version subdirs) or a version dir itself
+                      has_version_subdir=false
+                      for potential_version in "$potential_branch"/*; do
+                        if [[ -d "$potential_version" ]]; then
+                          # Check if this looks like a version directory (has index.html or other IG content)
+                          if [[ -f "$potential_version/index.html" ]]; then
+                            has_version_subdir=true
+                            has_branches=true
+                            break
+                          fi
                         fi
                       done
+                      
+                      # If no version subdirs found, this might be a version directory itself
+                      if [[ "$has_version_subdir" == false && -f "$potential_branch/index.html" ]]; then
+                        # This is a direct version directory (legacy/release structure)
+                        version=$(basename "$potential_branch")
+                        key="${ig_id}:${version}:release"
+                        ig_entries["$key"]="$ig_id|$version|release"
+                      fi
                     fi
                   done
+                  
+                  # If branches were found, process them properly
+                  if [[ "$has_branches" == true ]]; then
+                    for branch_path in "$ig_path"/*; do
+                      if [[ -d "$branch_path" ]]; then
+                        branch=$(basename "$branch_path")
+                        for version_path in "$branch_path"/*; do
+                          if [[ -d "$version_path" && -f "$version_path/index.html" ]]; then
+                            version=$(basename "$version_path")
+                            key="${ig_id}:${version}:${branch}"
+                            ig_entries["$key"]="$ig_id|$version|$branch"
+                          fi
+                        done
+                      fi
+                    done
+                  fi
                 fi
               done
             fi
             
-            # Sort and process entries
+            # Process and display entries
             if [[ ${#ig_entries[@]} -gt 0 ]]; then
               echo "## Available IGs"
               echo ""
               
               # Get unique IG IDs and sort them
+              declare -a unique_ig_ids
               declare -A seen_igs
               for key in "${!ig_entries[@]}"; do
                 ig_id=$(echo "$key" | cut -d':' -f1)
-                seen_igs["$ig_id"]=1
+                if [[ -z "${seen_igs[$ig_id]}" ]]; then
+                  unique_ig_ids+=("$ig_id")
+                  seen_igs["$ig_id"]=1
+                fi
               done
               
-              for ig_id in $(echo "${!seen_igs[@]}" | tr ' ' '\n' | sort); do
+              # Sort IG IDs
+              IFS=$'\n' sorted_ig_ids=($(sort <<<"${unique_ig_ids[*]}"))
+              unset IFS
+              
+              for ig_id in "${sorted_ig_ids[@]}"; do
                 # Get title from config or use IG ID
                 title="${ig_titles[$ig_id]:-$ig_id}"
                 echo "### $title"
@@ -760,47 +797,23 @@ jobs:
                 echo "| Version | Branch | Link |"
                 echo "|---------|--------|------|"
                 
-                # Collect all versions for this IG, sorted
-                declare -a versions_for_ig
+                # Collect all entries for this IG
+                declare -a entries_for_ig
                 for key in "${!ig_entries[@]}"; do
                   entry_ig=$(echo "$key" | cut -d':' -f1)
                   if [[ "$entry_ig" == "$ig_id" ]]; then
-                    entry_version=$(echo "$key" | cut -d':' -f2)
-                    versions_for_ig+=("$entry_version")
+                    entries_for_ig+=("$key")
                   fi
                 done
                 
-                # Sort versions uniquely
-                mapfile -t sorted_versions < <(printf '%s\n' "${versions_for_ig[@]}" | sort -u)
+                # Sort entries by version (descending) then branch
+                IFS=$'\n' sorted_entries=($(sort -t':' -k2,2Vr -k3,3 <<<"${entries_for_ig[*]}"))
+                unset IFS
                 
-                # For each version, show all branches
-                for version in "${sorted_versions[@]}"; do
-                  declare -a branches_for_version
-                  for key in "${!ig_entries[@]}"; do
-                    entry_ig=$(echo "$key" | cut -d':' -f1)
-                    entry_version=$(echo "$key" | cut -d':' -f2)
-                    if [[ "$entry_ig" == "$ig_id" && "$entry_version" == "$version" ]]; then
-                      entry_branch=$(echo "$key" | cut -d':' -f3)
-                      branches_for_version+=("$entry_branch")
-                    fi
-                  done
-                  
-                  # Sort branches
-                  mapfile -t sorted_branches < <(printf '%s\n' "${branches_for_version[@]}" | sort -u)
-                  
-                  # Print first branch in this row
-                  if [[ ${#sorted_branches[@]} -gt 0 ]]; then
-                    branch="${sorted_branches[0]}"
-                    ig_url="${pages_base_url}/${ig_id}/${branch}/${version}"
-                    echo "| \`$version\` | \`$branch\` | [View IG]($ig_url) |"
-                    
-                    # Print additional branches on separate rows
-                    for ((i=1; i<${#sorted_branches[@]}; i++)); do
-                      branch="${sorted_branches[$i]}"
-                      ig_url="${pages_base_url}/${ig_id}/${branch}/${version}"
-                      echo "| | \`$branch\` | [View IG]($ig_url) |"
-                    done
-                  fi
+                for entry_key in "${sorted_entries[@]}"; do
+                  IFS='|' read -r ig_id version branch <<< "${ig_entries[$entry_key]}"
+                  ig_url="${pages_base_url}/${ig_id}/${branch}/${version}"
+                  echo "| \`$version\` | \`$branch\` | [View IG]($ig_url) |"
                 done
                 
                 echo ""
@@ -813,7 +826,7 @@ jobs:
             echo "## About"
             echo ""
             echo "These IGs are automatically built and deployed on every push to their respective branches."
-            echo "The structure follows the pattern: \`<ig-name>/<branch-name>/<version>/\`"
+            echo "The structure follows the pattern: \`<ig-name>/<branch-name>/<version>/\` or \`<ig-name>/<version>/\` for release versions."
             
           } > "$readme_file"
           
