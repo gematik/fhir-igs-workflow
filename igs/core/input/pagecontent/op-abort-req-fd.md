@@ -56,11 +56,11 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_TASK_STATUS_MISMATCH</td>
+            <td>TIFLOW_ACCESSCODE_MISMATCH</td>
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Task has invalid status.</td>
+            <td>-</td>
         </tr>
     </table> 
     abweisen, damit ausschließlich die verordnende Leistungserbringerinstitution in Kenntnis des AccessCodes als Berechtigte ein E-Rezept löschen.
@@ -88,11 +88,11 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_ACCESSCODE_MISMATCH</td>
+            <td>TIFLOW_TASK_STATUS_MISMATCH</td>
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>-</td>
+            <td>Task has invalid status.</td>
         </tr>
     </table> 
     abbrechen, wenn Task.status ungleich "ready" ist, damit die verordnende Leistungserbringerinstitution eine Verordnung nur löschen kann, wenn sie sich noch nicht in Belieferung befindet oder beliefert wurde.

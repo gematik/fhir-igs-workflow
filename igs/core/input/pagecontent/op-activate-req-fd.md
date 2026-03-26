@@ -61,7 +61,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
-            <td>412 - Bad Request</td>
+            <td>412 - Precondition Failed</td>
         </tr>
         <tr>
             <th>Severity</th>
