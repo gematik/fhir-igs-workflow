@@ -1,0 +1,145 @@
+name: Generate GitHub Pages README
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - gh-pages
+
+jobs:
+  generate-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          fetch-depth: 0
+
+      - name: Generate README from published IGs
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          repository="${GITHUB_REPOSITORY}"
+          repo_url="https://github.com/${repository}"
+          owner=$(echo "$repository" | cut -d'/' -f1)
+          repo=$(echo "$repository" | cut -d'/' -f2)
+          pages_base_url="https://${owner}.github.io/${repo}"
+          readme_file="README.md"
+
+          {
+            echo "# FHIR Implementation Guides"
+            echo ""
+            echo "This page contains built FHIR Implementation Guides (IGs) from the [${repository}](${repo_url}) repository."
+            echo ""
+            echo "## Available IGs"
+            echo ""
+
+            declare -A ig_entries
+
+            for ig_path in *; do
+              [[ -d "$ig_path" ]] || continue
+              ig_id="$ig_path"
+              has_branch_layout=false
+
+              for level1 in "$ig_path"/*; do
+                [[ -d "$level1" ]] || continue
+                level1_name=$(basename "$level1")
+
+                found_version_under_branch=false
+                for level2 in "$level1"/*; do
+                  if [[ -d "$level2" && -f "$level2/index.html" ]]; then
+                    version=$(basename "$level2")
+                    branch="$level1_name"
+                    key="${ig_id}|${version}|${branch}"
+                    ig_entries["$key"]="1"
+                    found_version_under_branch=true
+                    has_branch_layout=true
+                  fi
+                done
+
+                if [[ "$found_version_under_branch" == false && -f "$level1/index.html" ]]; then
+                  version="$level1_name"
+                  branch="release"
+                  key="${ig_id}|${version}|${branch}"
+                  ig_entries["$key"]="1"
+                fi
+              done
+            done
+
+            if [[ ${#ig_entries[@]} -eq 0 ]]; then
+              echo "No IGs found in GitHub Pages."
+              echo ""
+            else
+              declare -A seen_igs
+              declare -a ig_ids
+
+              for key in "${!ig_entries[@]}"; do
+                ig_id="${key%%|*}"
+                if [[ -z "${seen_igs[$ig_id]:-}" ]]; then
+                  seen_igs["$ig_id"]="1"
+                  ig_ids+=("$ig_id")
+                fi
+              done
+
+              mapfile -t sorted_ig_ids < <(printf '%s\n' "${ig_ids[@]}" | sort)
+
+              for ig_id in "${sorted_ig_ids[@]}"; do
+                echo "### ${ig_id}"
+                echo ""
+                echo "| Version | Branch | Link |"
+                echo "|---------|--------|------|"
+
+                declare -a rows
+                for key in "${!ig_entries[@]}"; do
+                  entry_ig="${key%%|*}"
+                  [[ "$entry_ig" == "$ig_id" ]] || continue
+
+                  rest="${key#*|}"
+                  version="${rest%%|*}"
+                  branch="${rest##*|}"
+
+                  if [[ "$branch" == "release" ]]; then
+                    ig_url="${pages_base_url}/${ig_id}/${version}"
+                  else
+                    ig_url="${pages_base_url}/${ig_id}/${branch}/${version}"
+                  fi
+
+                  rows+=("${version}|${branch}|${ig_url}")
+                done
+
+                mapfile -t sorted_rows < <(printf '%s\n' "${rows[@]}" | sort -t'|' -k1,1Vr -k2,2)
+                for row in "${sorted_rows[@]}"; do
+                  version="${row%%|*}"
+                  rest="${row#*|}"
+                  branch="${rest%%|*}"
+                  ig_url="${rest#*|}"
+                  echo "| \`${version}\` | \`${branch}\` | [View IG](${ig_url}) |"
+                done
+                echo ""
+              done
+            fi
+
+            echo "## About"
+            echo ""
+            echo "These IGs are automatically built and deployed on every push to their respective branches."
+            echo "The structure follows the pattern: \`<ig-name>/<branch-name>/<version>/\` or \`<ig-name>/<version>/\` for release versions."
+          } > "$readme_file"
+
+      - name: Commit README changes
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- README.md; then
+            echo "README.md unchanged"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "docs: regenerate gh-pages README"
+          git push origin gh-pages
