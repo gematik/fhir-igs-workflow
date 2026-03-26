@@ -1,5 +1,8 @@
 ### Nutzung ZETA durch Clientsystme 
 
+Zur Umsetzung der ZETA Architektur müssen Clientsysteme folgende Anforderungen erfüllen.
+
+<!-- ToDo: ZETA Stufe 2 wird zusätzlich FdV betrachten. Hier sind nach Finalisierung der Stufe 2 entsprechend zu reviewn und zu ergänzen. -->
 
 <requirement conformance="SHALL" key="" title="CS: ZETA Client" version="0">
     <meta lockversion="false"/>
@@ -18,7 +21,7 @@
     Das Clientsystem des TI-Flow-Fachdienstes MUSS die ZETA Client Funktionen gemäß [gemSST_PS_ZETA] umsetzen.
 </requirement>
 
-<!-- ToDo: link auflösen -->
+<!-- ToDo: link auflösen, Dokument ist noch nicht veröffentlicht -->
 
 <requirement conformance="SHALL" key="" title="CS: ZETA Client - Kommunikation mit Fachdienst" version="0">
     <meta lockversion="false"/>

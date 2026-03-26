@@ -1,9 +1,9 @@
-Zero Trust (ZETA) die Funktionalität ist anwendungsübergreifend in [gemSpec_ZETA] beschrieben.
+Der TI-Flow-Fachdienst wird dezentral im Internet angeboten. Zum Schutz vor unberechtigtem Zugriff wird nach dem Zero Trust-Paradigma durch einen Policy Enforcement Point und einen Policy Decision Point durchgesetzt. Diese Zero Trust (ZETA) Funktionalität wird anwendungsübergreifend in [gemSpec_ZETA] beschrieben.
 
 
 ### ZETA Guard Policy Engine - Zugriffsregeln
 
-Dieses Dokument dient als Grundlage für die Abstimmung über eine technische Zugriffsrichtlinie. Ziel ist es, in verständlicher Sprache zu erläutern, welche Prüfungen durchgeführt werden, bevor ein Zugriff auf den E-Rezept Fachdienst gewährt wird.
+Dieses Dokument dient als Grundlage für die Abstimmung über eine technische Zugriffsrichtlinie. Ziel ist es, in verständlicher Sprache zu erläutern, welche Prüfungen durchgeführt werden, bevor ein Zugriff auf den TI-Flow-Fachdienst gewährt wird.
 
 #### Grundprinzip der Richtlinie
 
@@ -67,8 +67,8 @@ Es wird die Liste der von der Anwendung angeforderten Berechtigungen mit der Lis
 * Anwendung fordert an: `task:read` -> **Erfolg**
 * Anwendung fordert an: `/erezept` -> **Fehler** (da `/erezept` nicht erlaubt ist)
 
-#### Akteure und Ressourcen des E-Rezepts
-Die Menge an möglichen Zugriffen bildet sich über die Use Cases des E-Rezepts. Jeder Use Case soll über die Zeta Policy steuerbar sein.
+#### Akteure und Ressourcen der Anwendung TI-Flow
+Die Menge an möglichen Zugriffen bildet sich über die Use Cases der Anwendung TI-Flow. Jeder Use Case soll über die Zeta Policy steuerbar sein.
 Die Scopes leiten sich daraus ab. 
 
 <figure>
@@ -104,7 +104,7 @@ Wenn alle Prüfungen erfolgreich sind, erhält die Anwendung zeitlich begrenzte 
 
 Es gibt zwei Arten von Token:
 
-* **Access Token:** Dies ist der eigentliche "Schlüssel" für den direkten Zugriff auf Daten. Er hat eine sehr kurze Lebensdauer.
+* **Access Token:** Dies ist der eigentliche "Schlüssel" für den direkten Zugriff auf Daten. Er hat eine kurze Lebensdauer.
   * **Gültigkeit:** 300 Sekunden (5 Minuten)
 * **Refresh Token:** Wenn das Access Token abgelaufen ist, kann die Anwendung dieses zweite Token verwenden, um ein neues Access Token zu erhalten, ohne dass sich der Benutzer erneut anmelden muss. Es hat eine deutlich längere Lebensdauer.
   * **Gültigkeit:** 43200 Sekunden (12 Stunden)
