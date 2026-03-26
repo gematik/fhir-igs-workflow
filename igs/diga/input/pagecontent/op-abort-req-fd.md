@@ -21,5 +21,28 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
     <li>oid_praxis_psychotherapeut</li>
     <li>oid_institution-vorsorge-reha</li>
   </ul>
-  die Operation am Fachdienst aufrufen, damit die Verordnung nicht durch einen Unberechtigten gelöscht werden kann.
+  die Operation am Fachdienst aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+        </tr>
+    </table> 
+    abrechen, damit die Verordnung nicht durch einen Unberechtigten gelöscht werden kann.
 </requirement>
