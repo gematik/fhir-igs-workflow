@@ -1,0 +1,26 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow/erezept/Communication/ExampleRxCommunicationDispReq> a fhir:Communication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ExampleRxCommunicationDispReq"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Communication ExampleRxCommunicationDispReq</b></p><a name=\"ExampleRxCommunicationDispReq\"> </a><a name=\"hcExampleRxCommunicationDispReq\"> </a><p><b>status</b>: Unknown</p><p><b>sent</b>: 2026-03-20 10:15:00+0100</p><h3>Payloads</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Content[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>Bitte Rezept in Filiale bereitstellen</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "unknown"] ; # 
+  fhir:sent [ fhir:v "2026-03-20T10:15:00+01:00"^^xsd:dateTime] ; # 
+  fhir:payload ( [
+     fhir:content [
+       a fhir:String ;
+       fhir:v "Bitte Rezept in Filiale bereitstellen"
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

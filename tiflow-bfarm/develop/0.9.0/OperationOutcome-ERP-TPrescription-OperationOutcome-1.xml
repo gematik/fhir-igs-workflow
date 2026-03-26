@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationOutcome xmlns="http://hl7.org/fhir">
+  <id value="ERP-TPrescription-OperationOutcome-1"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationOutcome ERP-TPrescription-OperationOutcome-1</b></p><a name="ERP-TPrescription-OperationOutcome-1"> </a><a name="hcERP-TPrescription-OperationOutcome-1"> </a><blockquote><p><b>issue</b></p><p><b>severity</b>: Error</p><p><b>code</b>: Invalid Content</p><p><b>details</b>: <span title="Codes:">Invalid request payload</span></p><p><b>diagnostics</b>: This field is required</p><p><b>expression</b>: parameter[rxPrescription].part[prescriptionId].value</p></blockquote><blockquote><p><b>issue</b></p><p><b>severity</b>: Error</p><p><b>code</b>: Element value invalid</p><p><b>details</b>: <span title="Codes:">Invalid format for field</span></p><p><b>diagnostics</b>: Value must be a date</p><p><b>expression</b>: parameter[rxPrescription].part[medicationRequest].resource.authoredOn</p></blockquote></div>
+  </text>
+  <issue>
+    <severity value="error"/>
+    <code value="invalid"/>
+    <details>
+      <text value="Invalid request payload"/>
+    </details>
+    <diagnostics value="This field is required"/>
+    <expression value="parameter[rxPrescription].part[prescriptionId].value"/>
+  </issue>
+  <issue>
+    <severity value="error"/>
+    <code value="value"/>
+    <details>
+      <text value="Invalid format for field"/>
+    </details>
+    <diagnostics value="Value must be a date"/>
+    <expression value="parameter[rxPrescription].part[medicationRequest].resource.authoredOn"/>
+  </issue>
+</OperationOutcome>

@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureMap xmlns="http://hl7.org/fhir">
+  <id value="ERPTPrescriptionStructureMapMedicationDispense"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: StructureMap ERPTPrescriptionStructureMapMedicationDispense</b></p><a name="ERPTPrescriptionStructureMapMedicationDispense"> </a><a name="hcERPTPrescriptionStructureMapMedicationDispense"> </a><pre class="fml">
+<b>map</b><span style="color: navy"> &quot;</span>https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapMedicationDispense<span style="color: navy">&quot; = &quot;</span>ERPTPrescriptionStructureMapMedicationDispense<span style="color: navy">&quot;
+
+</span><span style="color: navy">// </span><span style="color: green">Mapping-Anweisungen zur Transformation von gematik ERP MedicationDispense zu BfArM T-Prescription MedicationDispense</span>
+
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/medicationdispense.html" title="MedicationDispense">http://hl7.org/fhir/StructureDefinition/MedicationDispense</a><span style="color: navy">&quot; </span><b>alias </b>gematikMedicationDispense <b>as </b><b>source</b>
+<b>uses</b><span style="color: navy"> &quot;</span>https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-medication-dispense<span style="color: navy">&quot; </span><b>alias </b>bfarmMedicationDispense <b>as </b><b>target</b>
+
+<span style="color: navy">// </span><span style="color: green">Mapping-Anweisungen zur Transformation von gematik ERP MedicationDispense zu BfArM T-Prescription MedicationDispense</span>
+<b>group </b>ERPTPrescriptionStructureMapMedicationDispense<span style="color: navy">(</span><b>source</b> <span style="color: maroon">gematikMedicationDispense</span><span style="color: navy"> : </span>gematikMedicationDispense, <b>target</b> <span style="color: maroon">bfarmMedicationDispense</span><span style="color: navy"> : </span>bfarmMedicationDispense<span style="color: navy">)</span><span style="color: navy"> {
+</span>  gematikMedicationDispense.extension<b> as </b><span style="color: maroon">extDosageMetaVar</span><b> where </b>url='http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta'<span style="color: navy"><b> -&gt; </b></span>bfarmMedicationDispense.extension = <span style="color: maroon">extDosageMetaVar</span> <i>&quot;medicationDispenseExt&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Kopiert Dosage Metadata Extension</span>
+  gematikMedicationDispense.extension<b> as </b><span style="color: maroon">extDosageRenderedVar</span><b> where </b>url='http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.renderedDosageInstruction'<span style="color: navy"><b> -&gt; </b></span>bfarmMedicationDispense.extension = <span style="color: maroon">extDosageRenderedVar</span> <i>&quot;medicationDispenseExt&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Kopiert RenderedDosageText</span>
+  gematikMedicationDispense.dosageInstruction<b> as </b><span style="color: maroon">dosageInstructionVar</span><span style="color: navy"><b> -&gt; </b></span>bfarmMedicationDispense.dosageInstruction = <span style="color: maroon">dosageInstructionVar</span> <i>&quot;medicationDispenseDosageInstruction&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Übernimmt die Dosierungsanweisungen aus der ursprünglichen Abgabe für den digitalen Durchschlag</span>
+  gematikMedicationDispense.whenHandedOver<b> as </b><span style="color: maroon">whenHandedOverVar</span><span style="color: navy"><b> -&gt; </b></span>bfarmMedicationDispense.whenHandedOver = <span style="color: maroon">whenHandedOverVar</span> <i>&quot;medicationDispenseWhenHandedOver&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Kopiert das Abgabedatum zur Dokumentation des Zeitpunkts der Medikamentenausgabe</span>
+  gematikMedicationDispense.medication<b> as </b><span style="color: maroon">medicationVar</span><span style="color: navy"><b> -&gt; </b></span>bfarmMedicationDispense.medication = <span style="color: maroon">medicationVar</span> <i>&quot;medicationReference&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Kopiert die Medikamentenreferenz - das referenzierte Medication wird separat gemappt</span>
+  gematikMedicationDispense.status<b> as </b><span style="color: maroon">gematikMedicationDispenseStatus</span><span style="color: navy"><b> -&gt; </b></span>bfarmMedicationDispense.status = <span style="color: blue">'completed'</span> <i>&quot;medicationDispenseStatus&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Setzt den Status auf 'completed' da die Abgabe bereits erfolgt ist (digitaler Durchschlag)</span>
+  gematikMedicationDispense.quantity<b> as </b><span style="color: maroon">quantityVar</span><span style="color: navy"><b> -&gt; </b></span>bfarmMedicationDispense.quantity = <span style="color: maroon">quantityVar</span> <i>&quot;medicationDispenseQuantity&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Übernimmt die abgegebene Menge zur Dokumentation der tatsächlich ausgehändigten Medikamentenmenge</span>
+  gematikMedicationDispense.performer<b> as </b><span style="color: maroon">srcPerformerVar</span><span style="color: navy"><b> -&gt; </b></span>bfarmMedicationDispense.performer<b> as </b><span style="color: maroon">tgtPerformerVar</span><b> then</b><span style="color: navy"> {
+</span>    srcPerformerVar.actor<b> as </b><span style="color: maroon">srcPerformerActorVar</span><span style="color: navy"><b> -&gt; </b></span>tgtPerformerVar.actor<b> as </b><span style="color: maroon">tgtPerformerActorVar</span><b> then</b><span style="color: navy"> {
+</span>      srcPerformerActorVar.identifier<b> as </b><span style="color: maroon">srcPerformerActorIdentifierVar</span><b> then</b><span style="color: navy"> {
+</span>        srcPerformerActorIdentifierVar.value<b> as </b><span style="color: maroon">srcPerformerActorIdentifierValueVar</span><span style="color: navy"><b> -&gt; </b></span>tgtPerformerActorVar.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'Organization/'</span><span style="color: navy">, </span><span style="color: maroon">srcPerformerActorIdentifierValueVar</span><span style="color: navy">)</span> <i>&quot;medicationDispensePerformerActorIdentifierValue&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Wandelt Apotheken-Identifier in Organization-Referenz um (Organization/&lt;telematik-id&gt;)</span>
+      <span style="color: navy">}</span> <i>&quot;medicationDispensePerformerActorIdentifier&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Extrahiert den Identifier der abgebenden Apotheke</span>
+    <span style="color: navy">}</span> <i>&quot;medicationDispensePerformerActor&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Verarbeitet den Actor (abgebende Apotheke) des Performers</span>
+  <span style="color: navy">}</span> <i>&quot;medicationDispensePerformer&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Transformiert Apotheken-Identifier zu Organization-Referenz für eindeutige Zuordnung der abgebenden Apotheke</span>
+<span style="color: navy">}
+
+</span></pre></div>
+  </text>
+  <url value="https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapMedicationDispense"/>
+  <version value="0.9.0"/>
+  <name value="ERPTPrescriptionStructureMapMedicationDispense"/>
+  <title value="E-T-Rezept Structure Map for MedicationDispense"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2025-12-19"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="erp-umsetzung@gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="Mapping-Anweisungen zur Transformation von gematik ERP MedicationDispense zu BfArM T-Prescription MedicationDispense"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/MedicationDispense"/>
+    <mode value="source"/>
+    <alias value="gematikMedicationDispense"/>
+  </structure>
+  <structure>
+    <url value="https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-medication-dispense"/>
+    <mode value="target"/>
+    <alias value="bfarmMedicationDispense"/>
+  </structure>
+  <group>
+    <name value="ERPTPrescriptionStructureMapMedicationDispense"/>
+    <typeMode value="none"/>
+    <documentation value="Mapping-Anweisungen zur Transformation von gematik ERP MedicationDispense zu BfArM T-Prescription MedicationDispense"/>
+    <input>
+      <name value="gematikMedicationDispense"/>
+      <type value="gematikMedicationDispense"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="bfarmMedicationDispense"/>
+      <type value="bfarmMedicationDispense"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="medicationDispenseExt"/>
+      <source>
+        <context value="gematikMedicationDispense"/>
+        <element value="extension"/>
+        <variable value="extDosageMetaVar"/>
+        <condition value="url='http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta'"/>
+      </source>
+      <target>
+        <context value="bfarmMedicationDispense"/>
+        <contextType value="variable"/>
+        <element value="extension"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="extDosageMetaVar"/>
+        </parameter>
+      </target>
+      <documentation value="Kopiert Dosage Metadata Extension"/>
+    </rule>
+    <rule>
+      <name value="medicationDispenseExt"/>
+      <source>
+        <context value="gematikMedicationDispense"/>
+        <element value="extension"/>
+        <variable value="extDosageRenderedVar"/>
+        <condition value="url='http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.renderedDosageInstruction'"/>
+      </source>
+      <target>
+        <context value="bfarmMedicationDispense"/>
+        <contextType value="variable"/>
+        <element value="extension"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="extDosageRenderedVar"/>
+        </parameter>
+      </target>
+      <documentation value="Kopiert RenderedDosageText"/>
+    </rule>
+    <rule>
+      <name value="medicationDispenseDosageInstruction"/>
+      <source>
+        <context value="gematikMedicationDispense"/>
+        <element value="dosageInstruction"/>
+        <variable value="dosageInstructionVar"/>
+      </source>
+      <target>
+        <context value="bfarmMedicationDispense"/>
+        <contextType value="variable"/>
+        <element value="dosageInstruction"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="dosageInstructionVar"/>
+        </parameter>
+      </target>
+      <documentation value="Übernimmt die Dosierungsanweisungen aus der ursprünglichen Abgabe für den digitalen Durchschlag"/>
+    </rule>
+    <rule>
+      <name value="medicationDispenseWhenHandedOver"/>
+      <source>
+        <context value="gematikMedicationDispense"/>
+        <element value="whenHandedOver"/>
+        <variable value="whenHandedOverVar"/>
+      </source>
+      <target>
+        <context value="bfarmMedicationDispense"/>
+        <contextType value="variable"/>
+        <element value="whenHandedOver"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="whenHandedOverVar"/>
+        </parameter>
+      </target>
+      <documentation value="Kopiert das Abgabedatum zur Dokumentation des Zeitpunkts der Medikamentenausgabe"/>
+    </rule>
+    <rule>
+      <name value="medicationReference"/>
+      <source>
+        <context value="gematikMedicationDispense"/>
+        <element value="medication"/>
+        <variable value="medicationVar"/>
+      </source>
+      <target>
+        <context value="bfarmMedicationDispense"/>
+        <contextType value="variable"/>
+        <element value="medication"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="medicationVar"/>
+        </parameter>
+      </target>
+      <documentation value="Kopiert die Medikamentenreferenz - das referenzierte Medication wird separat gemappt"/>
+    </rule>
+    <rule>
+      <name value="medicationDispenseStatus"/>
+      <source>
+        <context value="gematikMedicationDispense"/>
+        <element value="status"/>
+        <variable value="gematikMedicationDispenseStatus"/>
+      </source>
+      <target>
+        <context value="bfarmMedicationDispense"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="completed"/>
+        </parameter>
+      </target>
+      <documentation value="Setzt den Status auf 'completed' da die Abgabe bereits erfolgt ist (digitaler Durchschlag)"/>
+    </rule>
+    <rule>
+      <name value="medicationDispenseQuantity"/>
+      <source>
+        <context value="gematikMedicationDispense"/>
+        <element value="quantity"/>
+        <variable value="quantityVar"/>
+      </source>
+      <target>
+        <context value="bfarmMedicationDispense"/>
+        <contextType value="variable"/>
+        <element value="quantity"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="quantityVar"/>
+        </parameter>
+      </target>
+      <documentation value="Übernimmt die abgegebene Menge zur Dokumentation der tatsächlich ausgehändigten Medikamentenmenge"/>
+    </rule>
+    <rule>
+      <name value="medicationDispensePerformer"/>
+      <source>
+        <context value="gematikMedicationDispense"/>
+        <element value="performer"/>
+        <variable value="srcPerformerVar"/>
+      </source>
+      <target>
+        <context value="bfarmMedicationDispense"/>
+        <contextType value="variable"/>
+        <element value="performer"/>
+        <variable value="tgtPerformerVar"/>
+      </target>
+      <rule>
+        <name value="medicationDispensePerformerActor"/>
+        <source>
+          <context value="srcPerformerVar"/>
+          <element value="actor"/>
+          <variable value="srcPerformerActorVar"/>
+        </source>
+        <target>
+          <context value="tgtPerformerVar"/>
+          <contextType value="variable"/>
+          <element value="actor"/>
+          <variable value="tgtPerformerActorVar"/>
+        </target>
+        <rule>
+          <name value="medicationDispensePerformerActorIdentifier"/>
+          <source>
+            <context value="srcPerformerActorVar"/>
+            <element value="identifier"/>
+            <variable value="srcPerformerActorIdentifierVar"/>
+          </source>
+          <rule>
+            <name value="medicationDispensePerformerActorIdentifierValue"/>
+            <source>
+              <context value="srcPerformerActorIdentifierVar"/>
+              <element value="value"/>
+              <variable value="srcPerformerActorIdentifierValueVar"/>
+            </source>
+            <target>
+              <context value="tgtPerformerActorVar"/>
+              <contextType value="variable"/>
+              <element value="reference"/>
+              <transform value="append"/>
+              <parameter>
+                <valueString value="Organization/"/>
+              </parameter>
+              <parameter>
+                <valueId value="srcPerformerActorIdentifierValueVar"/>
+              </parameter>
+            </target>
+            <documentation value="Wandelt Apotheken-Identifier in Organization-Referenz um (Organization/&lt;telematik-id&gt;)"/>
+          </rule>
+          <documentation value="Extrahiert den Identifier der abgebenden Apotheke"/>
+        </rule>
+        <documentation value="Verarbeitet den Actor (abgebende Apotheke) des Performers"/>
+      </rule>
+      <documentation value="Transformiert Apotheken-Identifier zu Organization-Referenz für eindeutige Zuordnung der abgebenden Apotheke"/>
+    </rule>
+  </group>
+</StructureMap>

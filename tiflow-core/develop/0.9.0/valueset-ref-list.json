@@ -1,0 +1,116 @@
+{
+  "codeSystems" : [{
+    "url" : "http://hl7.org/fhir/ValueSet/signature-type",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SignatureTypeCodes",
+    "title" : "Signature Type Codes",
+    "description" : "The Digital Signature Purposes, an indication of the reason an entity signs a document. This is included in the signed information and can be used when determining accountability for various actions concerning the document. Examples include: author, transcriptionist/recorder, and witness.",
+    "systems" : ["urn:iso-astm:E1762-95:2013"],
+    "oids" : ["1.2.840.10065.1.12"],
+    "sources" : ["1.2.840.10065.1.12"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERP-PR-Signature.html" : "GEM_ERP_PR_Signature"
+  },
+  {
+    "url" : "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_VS_DocumentType",
+    "version" : "0.9.0",
+    "status" : "draft",
+    "name" : "GEM_ERP_VS_DocumentType",
+    "title" : "ValueSet der Dokumenttyp-Codes",
+    "description" : "Art der Dokumente je nach Empfänger.",
+    "systems" : ["https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERP-PR-Composition.html" : "GEM ERP PR Composition",
+    "StructureDefinition-GEM-ERP-PR-Task.html" : "GEM ERP PR Task"
+  },
+  {
+    "url" : "https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_AvailabilityStatus",
+    "version" : "0.9.0",
+    "status" : "draft",
+    "name" : "GEM_ERP_VS_AvailabilityStatus",
+    "title" : "ValueSet der Verfügbarkeitsstatus-Codes",
+    "description" : "Art des Verfügbarkeitsstatus für die Verfügbarkeitsanfrage von Medikamenten",
+    "systems" : ["https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_AvailabilityStatus"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERP-EX-AvailabilityState.html" : "GEM ERP EX AvailabilityState"
+  },
+  {
+    "url" : "https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_CapabilityStatement_Environment",
+    "version" : "0.9.0",
+    "status" : "draft",
+    "name" : "GEM_ERP_VS_CapabilityStatement_Environment",
+    "title" : "ERP CapabilityStatement Environment ValueSet",
+    "description" : "Dieses ValueSet enthält alle zulässigen Umgebungskennzeichen für CapabilityStatements des E-Rezept-Fachdienstes und wird für die verpflichtende Kennzeichnung der Zielumgebung verwendet.",
+    "systems" : ["https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_CapabilityStatement_Environment"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERP-EX-CapabilityStatement-Environment.html" : "GEM ERP EX CapabilityStatement Environment"
+  },
+  {
+    "url" : "https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_CapabilityStatement_Feature",
+    "version" : "0.9.0",
+    "status" : "draft",
+    "name" : "GEM_ERP_VS_CapabilityStatement_Feature",
+    "title" : "ERP CapabilityStatement Feature ValueSet",
+    "description" : "Dieses ValueSet kombiniert Workflow-Typ-Codes aus GEM_ERP_CS_FlowType und nicht-workflowbezogene Feature-Codes aus GEM_ERP_CS_Features. Damit bildet es die vollständige Menge deklarierbarer Feature-Flags für CapabilityStatements des E-Rezept-Fachdienstes ab.",
+    "systems" : ["https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_Features",
+    "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERP-EX-CapabilityStatement-Feature.html" : "GEM ERP EX CapabilityStatement Feature"
+  },
+  {
+    "url" : "https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_FDConfiguration",
+    "version" : "0.9.0",
+    "status" : "draft",
+    "name" : "GEM_ERP_VS_FDConfiguration",
+    "title" : "ERP FDConfiguration ValueSet",
+    "description" : "Dieses ValueSet bildet den zulässigen Wertebereich für Konfigurationskennzeichen des E-Rezept-Fachdienstes ab und inkludiert alle Codes aus GEM_ERP_CS_FDConfiguration.",
+    "systems" : ["https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FDConfiguration"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERP-EX-CapabilityStatement-FDConfiguration.html" : "GEM ERP EX CapabilityStatement FDConfiguration"
+  },
+  {
+    "url" : "https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_FlowType",
+    "version" : "0.9.0",
+    "status" : "draft",
+    "name" : "GEM_ERP_VS_FlowType",
+    "title" : "ValueSet der FlowType-Codes",
+    "description" : "Zeigt die verschiedenen Arten des E-Rezepts entsprechend den Verschreibungsformularen.",
+    "systems" : ["https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERP-EX-PrescriptionType.html" : "GEM ERP EX PrescriptionType"
+  },
+  {
+    "url" : "https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_OperationOutcomeDetails",
+    "version" : "0.9.0",
+    "status" : "draft",
+    "name" : "GEM_ERP_VS_OperationOutcomeDetails",
+    "title" : "GEM ERP VS OperationOutcomeDetails",
+    "description" : "Fachliche Fehlercodes des E-Rezept-Fachdienst",
+    "systems" : ["https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_OperationOutcomeDetails",
+    "http://terminology.hl7.org/CodeSystem/operation-outcome",
+    "https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERP-PR-OperationOutcome.html" : "GEM ERP PR OperationOutcome"
+  },
+  {
+    "url" : "https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_OrganizationType",
+    "version" : "0.9.0",
+    "status" : "draft",
+    "name" : "GEM_ERP_VS_OrganizationType",
+    "title" : "ValueSet der Organisationstyp-Codes",
+    "description" : "Art der Organisation",
+    "systems" : ["https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_OrganizationType"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERP-PR-Task.html" : "GEM ERP PR Task"
+  }]
+}

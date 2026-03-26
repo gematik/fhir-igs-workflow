@@ -1,0 +1,44 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow/erezept/Bundle/ExampleRxCommunicationSearchset> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ExampleRxCommunicationSearchset"] ; # 
+  fhir:type [ fhir:v "searchset"] ; # 
+  fhir:total [ fhir:v "1"^^xsd:nonNegativeInteger] ; # 
+  fhir:link ( [
+     fhir:relation [ fhir:v "self" ] ;
+     fhir:url [
+       fhir:v "https://erp-ref.example.org/Communication?received=NULL"^^xsd:anyURI ;
+       fhir:l <https://erp-ref.example.org/Communication?received=NULL>
+     ]
+  ] ) ; # 
+  fhir:entry ( [
+     fhir:fullUrl [
+       fhir:v "https://erp-ref.example.org/Communication/ExampleRxCommunicationDispReq"^^xsd:anyURI ;
+       fhir:l <https://erp-ref.example.org/Communication/ExampleRxCommunicationDispReq>
+     ] ;
+     fhir:resource ( <https://erp-ref.example.org/Communication/ExampleRxCommunicationDispReq> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "match" ]
+     ]
+  ] ) . # 
+
+<https://erp-ref.example.org/Communication/ExampleRxCommunicationDispReq> a fhir:Communication ;
+  fhir:id [ fhir:v "ExampleRxCommunicationDispReq"] ; # 
+  fhir:status [ fhir:v "unknown"] ; # 
+  fhir:sent [ fhir:v "2026-03-20T10:15:00+01:00"^^xsd:dateTime] ; # 
+  fhir:payload ( [
+     fhir:content [
+       a fhir:String ;
+       fhir:v "Bitte Rezept in Filiale bereitstellen"
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
