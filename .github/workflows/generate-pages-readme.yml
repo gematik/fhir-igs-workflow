@@ -93,7 +93,7 @@ jobs:
                 echo "| Version | Branch | Link |"
                 echo "|---------|--------|------|"
 
-                declare -a rows
+                rows=()
                 for key in "${!ig_entries[@]}"; do
                   entry_ig="${key%%|*}"
                   [[ "$entry_ig" == "$ig_id" ]] || continue
@@ -111,14 +111,17 @@ jobs:
                   rows+=("${version}|${branch}|${ig_url}")
                 done
 
-                mapfile -t sorted_rows < <(printf '%s\n' "${rows[@]}" | sort -t'|' -k1,1Vr -k2,2)
-                for row in "${sorted_rows[@]}"; do
-                  version="${row%%|*}"
-                  rest="${row#*|}"
-                  branch="${rest%%|*}"
-                  ig_url="${rest#*|}"
-                  echo "| \`${version}\` | \`${branch}\` | [View IG](${ig_url}) |"
-                done
+                if [[ ${#rows[@]} -gt 0 ]]; then
+                  sorted_rows=()
+                  mapfile -t sorted_rows < <(printf '%s\n' "${rows[@]}" | sort -t'|' -k1,1Vr -k2,2)
+                  for row in "${sorted_rows[@]}"; do
+                    version="${row%%|*}"
+                    rest="${row#*|}"
+                    branch="${rest%%|*}"
+                    ig_url="${rest#*|}"
+                    echo "| \`${version}\` | \`${branch}\` | [View IG](${ig_url}) |"
+                  done
+                fi
                 echo ""
               done
             fi
