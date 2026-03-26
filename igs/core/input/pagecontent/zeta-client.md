@@ -18,10 +18,10 @@ Zur Umsetzung der ZETA Architektur müssen Clientsysteme folgende Anforderungen 
     <actor name="NCPeH_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Das Clientsystem des TI-Flow-Fachdienstes MUSS die ZETA Client Funktionen gemäß [gemSST_PS_ZETA] umsetzen.
+    Das Clientsystem des TI-Flow-Fachdienstes MUSS die ZETA Client Funktionen gemäß [gemSST_PS_ZETA_V] umsetzen.
 </requirement>
 
-<!-- ToDo: link auflösen, Dokument ist noch nicht veröffentlicht -->
+<!-- ToDo: link auflösen, Dokument ist noch nicht veröffentlicht. ZETA plant , es später bereitzustellen. -->
 
 <requirement conformance="SHALL" key="" title="CS: ZETA Client - Kommunikation mit Fachdienst" version="0">
     <meta lockversion="false"/>
