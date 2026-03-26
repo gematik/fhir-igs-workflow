@@ -779,7 +779,7 @@ jobs:
               declare -A seen_igs
               for key in "${!ig_entries[@]}"; do
                 ig_id=$(echo "$key" | cut -d':' -f1)
-                if [[ -z "${seen_igs[$ig_id]}" ]]; then
+                if [[ -z "${seen_igs[$ig_id]:-}" ]]; then
                   unique_ig_ids+=("$ig_id")
                   seen_igs["$ig_id"]=1
                 fi
@@ -791,7 +791,7 @@ jobs:
               
               for ig_id in "${sorted_ig_ids[@]}"; do
                 # Get title from config or use IG ID
-                title="${ig_titles[$ig_id]:-$ig_id}"
+                title="${ig_titles[$ig_id]-$ig_id}"
                 echo "### $title"
                 echo ""
                 echo "| Version | Branch | Link |"
