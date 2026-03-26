@@ -186,18 +186,85 @@ Als DiGA Hersteller möchte ich
 - ..., dass im Verordnungsprozess wie auch bei Bereitstellung der Freischaltcodes hochverfügbare Dienste angeboten werden.
 - ..., dass Patienten eine einheitliche Rückmeldung erhalten, warum kein Freischaltcode ausgestellt werden kann.
 
+## Workflow Status und Statusübergänge
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="./statusmodel-diga.png" alt="Statusmodell" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung: </strong>Workflow Status und Statusübergänge - Flowtyp 162</figcaption>
+</figure>
+
+<br>
+
+<table>
+    <tr>
+        <th>Status des Workflows</th>
+        <th>Beschreibung und mögliche Statusübergänge</th>
+    </tr>
+    <tr>
+        <td>draft</td>
+        <td>
+            <ul>
+            <li>Mit dem Abruf einer Verordnungs-ID durch eine verordnende LEI wird ein Workflow im Fachdienst (Task Ressource) mit dem Status "draft" erstellt.</li>
+            <li>Wenn die verordnende LEI die Verordnung in den erstellten Workflow hinzufügt, dann wechselt der Workflow in den Status "ready".</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>ready</td>
+        <td>
+            <ul>
+            <li>Die Verordnung wurde von der verordnenden LEI in den Fachdienst eingestellt.</li>
+            <li>Die Verordnung kann vom Versicherten abgerufen werden</li>
+            <li>Der Versicherte oder die verordnende LEI können die Verordnung als gelöscht markieren. Der Workflow wechselt in den Status "cancelled".</li>
+            <li>Der Abruf der Verordnung durch einen Kostenträger ändert den Status des Workflows auf "in-progress". In diesem Status ist der Zugriff durch andere Kostenträger gesperrt.</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>in-progress</td>
+        <td>
+            <ul>
+            <li>Die Verordnung wurde von einem Kostenträger abgerufen.</li>
+            <li>Der Zugriff durch andere Kostenträger oder die verordnende LEI ist gesperrt. Ebenso darf der Versicherte die Verordnung in diesem Status nicht löschen.</li>
+            <li>Die Verordnung kann durch den Kostenträger zurückgewiesen werden. Der Workflows wechselt zurück in den Status "ready".</li>
+            <li>Der Kostenträger kann den Freischaltcode an den Fachdienst übermitteln. Der Workflows wechselt zurück in den Status "completed"</li>
+            <li>Die Verordnung kann vom Versicherten abgerufen werden.</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>completed</td>
+        <td>
+            <ul>
+            <li>Der Workflow wurde vom Kostenträger abgeschlosen.</li>
+            <li>Ein bereitgestellter Freischaltcode kann vom Versicherten abgerufen werden.</li>
+            <li>Der Versicherte kann die Verordnung als gelöscht markieren. Der Workflow wechselt in den Status "cancelled".</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>cancelled</td>
+        <td>
+            <ul>
+            <li>Die personenbezogenen und medizinischen Daten wurden aus dem Task gelöscht.</li>
+            <li>Die Akteure können nicht auf den Task zugreifen.</li>
+            <li>Hinweis: Das eigentliche physische Löschen des Datensatzes erfolgt automatisch durch den E-Rezept-Fachdienst nach einer Löschfrist.</li>
+            </ul>
+        </td>
+    </tr>
+</table>
+<div><figcaption><strong>Tabelle: </strong>Workflow Status und Statusübergänge - Flowtyp 162</figcaption></div>
+
 ## Anwendungsfälle
 
 ### Verschreiben
-Der technische Ablauf zum Verschreiben einer Verordnung für eine DiGA erfolgt analog zu
-einer Verordnung für apothekenpflichtige Arzneimittel.
+Der technische Ablauf zum Verschreiben einer Verordnung für eine DiGA erfolgt analog zu einer Verordnung für apothekenpflichtige Arzneimittel.
 Verordnungen von DiGAs können Ärzten, Zahnärzten und Psychotherapeuten vornehmen.
 Der Arzt oder medizinischer Fachangestellter (MFA) erstellt eine elektronische Verordnung für eine DiGA. Für die Auswahl der passenden PZN (inklusive indikations- oder laufzeitbezogener Varianten) werden die Daten aus dem BfArM-DiGA-Verzeichnis genutzt. Über das Primärsystem der LEI wird vom TI-Flow-Fachdienst eine Verordnungs-ID angefragt und im Verordnungsdatensatz ergänzt. Der Arzt prüft die Verordnung und führt eine qualifizierte elektronische Signatur (QES) der Verordnung durch.
-Anschließend wird die signierte Verordnung an den TI-Flow-Fachdienst
-übermittelt, wo die formale Korrektheit der Verordnung gemäß dem Datenmodell und die
-QES validiert werden.
-Die Verordnung liegt auf dem TI-Flow-Fachdienst zum Abruf durch den Versicherten
-bereit.
+Anschließend wird die signierte Verordnung an den TI-Flow-Fachdienst übermittelt, wo die formale Korrektheit der Verordnung gemäß dem Datenmodell und die QES validiert werden.
+Die Verordnung liegt auf dem TI-Flow-Fachdienst zum Abruf durch den Versicherten bereit.
 
 {% assign scenario_use_cases = "UC_2_1_E_Rezepte_erzeugen, E_Rezept_qualifiziert_signieren, UC_2_3_E_Rezept_einstellen, UC_2_5_E_Rezept_durch_Verordnenden_loeschen" | split: ", " %}
 
