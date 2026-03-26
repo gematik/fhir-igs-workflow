@@ -663,11 +663,7 @@ jobs:
               id=${id#de.gematik.}
               id=${id//./-}
 
-              if [[ "$ref_name" == "main" ]]; then
-                target_dir="$pages_dir/$id/$version"
-              else
-                target_dir="$pages_dir/$id/build/$version"
-              fi
+              target_dir="$pages_dir/$id/$ref_name/$version"
 
               mkdir -p "$target_dir"
               cp -R "$out_dir"/. "$target_dir"/
@@ -678,6 +674,150 @@ jobs:
               fi
             fi
           done
+
+      - name: Generate GitHub Pages README
+        if: steps.igs.outputs.ig_list != ''
+        shell: bash
+        run: |
+          set -euo pipefail
+          pages_dir="pages"
+          repository="${GITHUB_REPOSITORY}"
+          repo_url="https://github.com/${repository}"
+          
+          # Extract the base URL for GitHub Pages
+          owner=$(echo "$repository" | cut -d'/' -f1)
+          repo=$(echo "$repository" | cut -d'/' -f2)
+          pages_base_url="https://${owner}.github.io/${repo}"
+
+          # Create the README.md file
+          readme_file="$pages_dir/README.md"
+          {
+            echo "# FHIR Implementation Guides"
+            echo ""
+            echo "This page contains built FHIR Implementation Guides (IGs) from the [$repository](${repo_url}) repository."
+            echo ""
+            
+            # Scan pages_dir to discover all IGs, branches, and versions
+            # Structure: pages/<ig-id>/<branch>/<version>/
+            
+            declare -A ig_titles
+            declare -A ig_versions
+            
+            # First pass: collect metadata from source configs
+            for cfg in igs/*/sushi-config.yaml; do
+              ig_dir=$(dirname "$cfg")
+              ig_name=$(basename "$ig_dir")
+              id=$(yq -r '.id // ""' "$cfg" 2>/dev/null || echo "")
+              title=$(yq -r '.title // ""' "$cfg" 2>/dev/null || echo "")
+              
+              if [[ -n "$id" ]]; then
+                id_clean=${id#de.gematik.}
+                id_clean=${id_clean//./-}
+                ig_titles["$id_clean"]="$title"
+              fi
+            done
+            
+            # Second pass: scan pages directory and group by IG
+            declare -A ig_entries
+            if [[ -d "$pages_dir" ]]; then
+              for ig_path in "$pages_dir"/*; do
+                if [[ -d "$ig_path" ]]; then
+                  ig_id=$(basename "$ig_path")
+                  # Collect all branch/version combinations for this IG
+                  for branch_path in "$ig_path"/*; do
+                    if [[ -d "$branch_path" ]]; then
+                      branch=$(basename "$branch_path")
+                      for version_path in "$branch_path"/*; do
+                        if [[ -d "$version_path" ]]; then
+                          version=$(basename "$version_path")
+                          key="${ig_id}:${version}:${branch}"
+                          ig_entries["$key"]="$ig_id|$version|$branch"
+                        fi
+                      done
+                    fi
+                  done
+                fi
+              done
+            fi
+            
+            # Sort and process entries
+            if [[ ${#ig_entries[@]} -gt 0 ]]; then
+              echo "## Available IGs"
+              echo ""
+              
+              # Get unique IG IDs and sort them
+              declare -A seen_igs
+              for key in "${!ig_entries[@]}"; do
+                ig_id=$(echo "$key" | cut -d':' -f1)
+                seen_igs["$ig_id"]=1
+              done
+              
+              for ig_id in $(echo "${!seen_igs[@]}" | tr ' ' '\n' | sort); do
+                # Get title from config or use IG ID
+                title="${ig_titles[$ig_id]:-$ig_id}"
+                echo "### $title"
+                echo ""
+                echo "| Version | Branch | Link |"
+                echo "|---------|--------|------|"
+                
+                # Collect all versions for this IG, sorted
+                declare -a versions_for_ig
+                for key in "${!ig_entries[@]}"; do
+                  entry_ig=$(echo "$key" | cut -d':' -f1)
+                  if [[ "$entry_ig" == "$ig_id" ]]; then
+                    entry_version=$(echo "$key" | cut -d':' -f2)
+                    versions_for_ig+=("$entry_version")
+                  fi
+                done
+                
+                # Sort versions uniquely
+                mapfile -t sorted_versions < <(printf '%s\n' "${versions_for_ig[@]}" | sort -u)
+                
+                # For each version, show all branches
+                for version in "${sorted_versions[@]}"; do
+                  declare -a branches_for_version
+                  for key in "${!ig_entries[@]}"; do
+                    entry_ig=$(echo "$key" | cut -d':' -f1)
+                    entry_version=$(echo "$key" | cut -d':' -f2)
+                    if [[ "$entry_ig" == "$ig_id" && "$entry_version" == "$version" ]]; then
+                      entry_branch=$(echo "$key" | cut -d':' -f3)
+                      branches_for_version+=("$entry_branch")
+                    fi
+                  done
+                  
+                  # Sort branches
+                  mapfile -t sorted_branches < <(printf '%s\n' "${branches_for_version[@]}" | sort -u)
+                  
+                  # Print first branch in this row
+                  if [[ ${#sorted_branches[@]} -gt 0 ]]; then
+                    branch="${sorted_branches[0]}"
+                    ig_url="${pages_base_url}/${ig_id}/${branch}/${version}"
+                    echo "| \`$version\` | \`$branch\` | [View IG]($ig_url) |"
+                    
+                    # Print additional branches on separate rows
+                    for ((i=1; i<${#sorted_branches[@]}; i++)); do
+                      branch="${sorted_branches[$i]}"
+                      ig_url="${pages_base_url}/${ig_id}/${branch}/${version}"
+                      echo "| | \`$branch\` | [View IG]($ig_url) |"
+                    done
+                  fi
+                done
+                
+                echo ""
+              done
+            else
+              echo "No IGs found in GitHub Pages."
+              echo ""
+            fi
+            
+            echo "## About"
+            echo ""
+            echo "These IGs are automatically built and deployed on every push to their respective branches."
+            echo "The structure follows the pattern: \`<ig-name>/<branch-name>/<version>/\`"
+            
+          } > "$readme_file"
+          
+          echo "Generated $readme_file"
 
       - name: Publish to GitHub Pages
         if: steps.igs.outputs.ig_list != ''
