@@ -9,7 +9,6 @@ This page contains built FHIR Implementation Guides (IGs) from the [gematik/fhir
 | Version | Branch | Link |
 |---------|--------|------|
 | `1.0.0-draft` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-bfarm/develop/1.0.0-draft) |
-| `0.9.0` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-bfarm/develop/0.9.0) |
 | `0.9.0` | `release` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-bfarm/0.9.0) |
 
 ### tiflow-chargeitem
@@ -17,7 +16,6 @@ This page contains built FHIR Implementation Guides (IGs) from the [gematik/fhir
 | Version | Branch | Link |
 |---------|--------|------|
 | `1.0.0-draft` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-chargeitem/develop/1.0.0-draft) |
-| `0.9.0` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-chargeitem/develop/0.9.0) |
 | `0.9.0` | `release` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-chargeitem/0.9.0) |
 
 ### tiflow-core
@@ -25,7 +23,6 @@ This page contains built FHIR Implementation Guides (IGs) from the [gematik/fhir
 | Version | Branch | Link |
 |---------|--------|------|
 | `1.0.0-draft` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-core/develop/1.0.0-draft) |
-| `0.9.0` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-core/develop/0.9.0) |
 | `0.9.0` | `release` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-core/0.9.0) |
 
 ### tiflow-diga
@@ -33,7 +30,6 @@ This page contains built FHIR Implementation Guides (IGs) from the [gematik/fhir
 | Version | Branch | Link |
 |---------|--------|------|
 | `1.0.0-draft` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-diga/develop/1.0.0-draft) |
-| `0.9.0` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-diga/develop/0.9.0) |
 | `0.9.0` | `release` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-diga/0.9.0) |
 
 ### tiflow-erezept
@@ -41,7 +37,6 @@ This page contains built FHIR Implementation Guides (IGs) from the [gematik/fhir
 | Version | Branch | Link |
 |---------|--------|------|
 | `1.0.0-draft` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-erezept/develop/1.0.0-draft) |
-| `0.9.0` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-erezept/develop/0.9.0) |
 | `0.9.0` | `release` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-erezept/0.9.0) |
 
 ### tiflow-xborder
@@ -49,7 +44,6 @@ This page contains built FHIR Implementation Guides (IGs) from the [gematik/fhir
 | Version | Branch | Link |
 |---------|--------|------|
 | `1.0.0-draft` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-xborder/develop/1.0.0-draft) |
-| `0.9.0` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-xborder/develop/0.9.0) |
 | `0.9.0` | `release` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-xborder/0.9.0) |
 
 ## About
