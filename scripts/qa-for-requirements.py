@@ -86,7 +86,26 @@ def main() -> None:
     print("Running requirements QA pipeline")
     print(f"- Root: {args.root}")
 
-    run_step(
+    step_results: list[tuple[str, str]] = []
+
+    def run_and_record(
+        summary_title: str,
+        command_title: str,
+        command: list[str],
+        *,
+        strict: bool,
+        cwd: Path | None = None,
+    ) -> int:
+        try:
+            rc = run_step(command_title, command, strict=strict, cwd=cwd)
+        except subprocess.CalledProcessError:
+            step_results.append(("FAIL", summary_title))
+            raise
+        step_results.append(("OK" if rc == 0 else "WARN", summary_title))
+        return rc
+
+    run_and_record(
+        "Run IG Tools",
         "Run igtools process for all IGs",
         ["./all", "igtools", "process"],
         strict=True,
@@ -103,7 +122,8 @@ def main() -> None:
     if args.quality_fix or args.fix:
         quality_cmd.append("--fix")
 
-    quality_rc = run_step(
+    quality_rc = run_and_record(
+        "Check requirement quality",
         "Check requirement quality",
         quality_cmd,
         strict=args.strict_quality,
@@ -120,13 +140,18 @@ def main() -> None:
         ]
         if args.fix:
             error_code_cmd.append("--fix")
-        error_code_rc = run_step(
+        error_code_rc = run_and_record(
+            "Check error code consistency",
             "Check error code consistency",
             error_code_cmd,
             strict=args.strict_error_codes,
         )
+    else:
+        step_results.append(("SKIP", "Check error code consistency"))
 
     print("\nPipeline summary")
+    for status, title in step_results:
+        print(f"[{status}] {title}")
     print(f"- Quality CSV: {args.quality_output_csv}")
     print(f"- Error Code CSV: {args.error_code_output_csv}")
     if quality_rc != 0 and not args.strict_quality:
