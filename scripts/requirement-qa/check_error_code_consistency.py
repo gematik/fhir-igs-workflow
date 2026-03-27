@@ -32,7 +32,10 @@ ERROR_CODE_LIKE_RE = re.compile(r'^[A-Z0-9][A-Z0-9_\-]*$')
 
 FSH_CODE_DEF_RE = re.compile(r'^\s*\*\s+#([a-zA-Z0-9_\-]+)\s+"([^"]*)"', re.MULTILINE)
 FSH_INCLUDE_CODES_RE = re.compile(r'^\s*\*\s+include\s+codes\s+from\s+system\s+(\S+)', re.MULTILINE)
-FSH_INCLUDE_EXTERNAL_RE = re.compile(r'^\s*\*\s+include\s+(\$[\w\-]+)#(\w+)\s+"([^"]*)"', re.MULTILINE)
+FSH_INCLUDE_EXTERNAL_RE = re.compile(
+    r'^\s*\*\s+include\s+(\$[\w\-]+)#([A-Za-z0-9_\-]+)(?:\s+"([^"]*)")?',
+    re.MULTILINE,
+)
 
 RULESET_START_RE = re.compile(r'^\s*RuleSet:\s*([A-Za-z0-9_\-]+)', re.MULTILINE)
 RULESET_INSERT_RE = re.compile(r'^\s*\*\s*(?:rest\.[^\s]+\s+)?insert\s+([A-Za-z0-9_\-]+)\s*$', re.MULTILINE)
@@ -135,6 +138,27 @@ def classify_error_code(code: str) -> Tuple[str, Optional[str], Optional[str], b
     if code.startswith("TIFLOW"):
         return "core", "TIFLOW_CS_OperationOutcomeDetails", "TIFLOW_VS_OperationOutcomeDetails", False
     return "unknown", None, None, True
+
+
+def module_outcome_valueset_name(module: str) -> Optional[str]:
+    mapping = {
+        "core": "TIFLOW_VS_OperationOutcomeDetails",
+        "rx": "TIFLOW_EREZEPT_VS_OperationOutcomeDetails",
+        "diga": "TIFLOW_DIGA_VS_OperationOutcomeDetails",
+        "erp-chrg": "TIFLOW_CHARGEITEM_VS_OperationOutcomeDetails",
+        "erp-eu": "TIFLOW_XBORDER_VS_OperationOutcomeDetails",
+    }
+    return mapping.get(module)
+
+
+def expected_import_alias(code: str, code_owner_module: str, requirement_module: str) -> Optional[str]:
+    if code.startswith("SVC_"):
+        return "$ti-oo"
+    if code.startswith("MSG_"):
+        return "$hl7-oo"
+    if code_owner_module == "core" and requirement_module != "core" and code.startswith("TIFLOW_"):
+        return "$tiflow-core-oo-cs"
+    return None
 
 
 def parse_tables_from_content(content: str, file_path: Path, module: str, endpoint: str) -> List[ErrorCode]:
@@ -356,7 +380,35 @@ def check_cs_vs_consistency(error_codes: List[ErrorCode], ig_roots: Dict[str, Pa
 
     for err in error_codes:
         module, cs_file, _vs_file, is_external = classify_error_code(err.code)
+
+        # In module IGs, codes from core/ti-common/hl7 must be listed as explicit single imports
+        # in that module's OperationOutcomeDetails ValueSet.
+        target_vs_name = module_outcome_valueset_name(err.module)
+        alias = expected_import_alias(err.code, module, err.module)
+        if target_vs_name and alias:
+            target_vs = all_vs.get(target_vs_name)
+            expected_include = f"{alias}#{err.code}"
+            if not target_vs:
+                # Some modules may not yet maintain a dedicated OperationOutcomeDetails ValueSet.
+                # In that case, skip this consistency rule.
+                pass
+            elif expected_include not in target_vs.includes:
+                findings.append(
+                    Finding(
+                        type="MISSING_IMPORT",
+                        ig_module=err.module,
+                        file_path=err.file_path,
+                        line=err.line,
+                        code=err.code,
+                        requirement_key=err.requirement_key,
+                        message=(
+                            f"Code '{err.code}' not imported in {target_vs_name}; expected include {expected_include}"
+                        ),
+                    )
+                )
+
         if is_external:
+            # Module-specific checks above handle module usage. Keep a fallback for non-module/global usage.
             found = any(any(err.code in inc for inc in vs.includes) for vs in all_vs.values())
             if not found:
                 findings.append(
@@ -1132,68 +1184,50 @@ def fix_cs_vs(findings: List[Finding], ig_roots: Dict[str, Path], error_codes: L
             if f"#{finding.code}" in content:
                 continue
 
+            # FSH requires space indentation here; use exactly two spaces (never tabs).
+            designation_indent = "  "
             # Keep newly added CS codes in a consistent 4-line structure with de-DE designation.
             new_block = (
                 f'* #{finding.code} "TODO: short" "TODO: description"\n'
-                "  * ^designation.language = #de-DE\n"
-                "  * ^designation.value = \"TODO: german\"\n"
+                f"{designation_indent}* ^designation.language = #de-DE\n"
+                f"{designation_indent}* ^designation.value = \"TODO: german\"\n"
             )
             cs_file.write_text(content.rstrip("\n") + "\n" + new_block, encoding="utf-8")
             print(f"  [FIX] Added #{finding.code} to {cs_file}")
             fixes_applied += 1
 
         elif finding.type == "MISSING_IMPORT":
-            # External codes (MSG_xxx, SVC_xxx) should be included in core's main OutcomeDetails VS.
-            ig_root = ig_roots.get("core")
-            if not ig_root:
-                print(f"  [SKIP] Core IG root not found for external code '{finding.code}'")
+            target_module = finding.ig_module if finding.ig_module in ig_roots else "core"
+            ig_root = ig_roots.get(target_module)
+            target_vs_name = module_outcome_valueset_name(target_module)
+            if not ig_root or not target_vs_name:
+                print(f"  [SKIP] Cannot resolve target module/ValueSet for import of '{finding.code}'")
                 continue
 
-            valuesets_dir = ig_root / "input" / "fsh" / "valuesets"
-            if not valuesets_dir.exists():
-                print(f"  [SKIP] Valuesets dir not found: {valuesets_dir}")
+            target_vs = ig_root / "input" / "fsh" / "valuesets" / f"{target_vs_name}.fsh"
+            if not target_vs.exists():
+                print(f"  [SKIP] Target ValueSet not found: {target_vs}")
                 continue
 
-            # Prefer the VS specifically for OperationOutcome error codes
-            target_vs: Optional[Path] = None
-            outcome_keywords = ("operationoutcomedetails", "operationoutcome", "errorcodes", "errorcode")
-            for vs_file in sorted(valuesets_dir.glob("*.fsh")):
-                if any(kw in vs_file.stem.lower() for kw in outcome_keywords):
-                    vs_content = vs_file.read_text(encoding="utf-8")
-                    if FSH_INCLUDE_EXTERNAL_RE.search(vs_content):
-                        target_vs = vs_file
-                        break
-            # Fall back to any VS with existing external includes
-            if target_vs is None:
-                for vs_file in sorted(valuesets_dir.glob("*.fsh")):
-                    vs_content_check = vs_file.read_text(encoding="utf-8")
-                    if FSH_INCLUDE_EXTERNAL_RE.search(vs_content_check):
-                        if not any(kw in vs_file.stem.lower() for kw in ("availability", "type", "feature", "environment", "flow", "document")):
-                            target_vs = vs_file
-                            break
-
-            if target_vs is None:
-                candidates = sorted(valuesets_dir.glob("*.fsh"))
-                if not candidates:
-                    print(f"  [SKIP] No ValueSet files in {valuesets_dir}")
-                    continue
-                target_vs = candidates[0]
+            code_owner_module, _cs_id, _vs_id, _is_external = classify_error_code(finding.code)
+            alias = expected_import_alias(finding.code, code_owner_module, target_module)
+            if not alias:
+                print(f"  [SKIP] No canonical import alias for code '{finding.code}'")
+                continue
 
             vs_content = target_vs.read_text(encoding="utf-8")
-            if finding.code in vs_content:
+            include_token = f"{alias}#{finding.code}"
+            include_pattern = re.compile(
+                rf'^\s*\*\s+include\s+{re.escape(alias)}#{re.escape(finding.code)}(?:\s|$)',
+                re.MULTILINE,
+            )
+            if include_pattern.search(vs_content):
                 continue
 
-            # Use correct alias: MSG_ → $hl7-oo, SVC_ → $ti-oo
-            if finding.code.startswith("MSG_"):
-                alias = "$hl7-oo"
-            elif finding.code.startswith("SVC_"):
-                alias = "$ti-oo"
-            else:
-                alias = "$ExternalCS"
-
-            new_line = f'* include {alias}#{finding.code} "TODO: description for {finding.code}"\n'
+            # Enforce single import line style in module ValueSets.
+            new_line = f"* include {include_token}\n"
             target_vs.write_text(vs_content.rstrip("\n") + "\n" + new_line, encoding="utf-8")
-            print(f"  [FIX] Added include {alias}#{finding.code} to {target_vs}")
+            print(f"  [FIX] Added include {include_token} to {target_vs}")
             fixes_applied += 1
 
     return fixes_applied
