@@ -2,12 +2,23 @@ name: Generate GitHub Pages README
 
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows:
+      - Build IGs
+    types:
+      - completed
   push:
     branches:
       - gh-pages
 
 jobs:
   generate-readme:
+    if: >
+      github.event_name != 'workflow_run' ||
+      (
+        github.event.workflow_run.conclusion == 'success' &&
+        github.event.workflow_run.head_branch == 'develop'
+      )
     runs-on: ubuntu-latest
     permissions:
       contents: write
