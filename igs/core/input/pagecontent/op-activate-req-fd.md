@@ -712,7 +712,7 @@ Hinweis: Im Rahmen der ambulanten spezialfachÃ¤rztlichen Versorgung (ASV) nach Â
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_RX_PZN_INVALID</td>
+            <td>TIFLOW_EREZEPT_PZN_INVALID</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -745,7 +745,7 @@ Hinweis: Im Rahmen der ambulanten spezialfachÃ¤rztlichen Versorgung (ASV) nach Â
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_RX_PZN_INVALID</td>
+            <td>TIFLOW_EREZEPT_PZN_INVALID</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -778,7 +778,7 @@ Hinweis: Im Rahmen der ambulanten spezialfachÃ¤rztlichen Versorgung (ASV) nach Â
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_RX_PZN_INVALID</td>
+            <td>TIFLOW_EREZEPT_PZN_INVALID</td>
         </tr>
         <tr>
             <th>Details Text</th>

@@ -107,7 +107,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_RX_PZN_INVALID</td>
+            <td>TIFLOW_EREZEPT_PZN_INVALID</td>
         </tr>
         <tr>
             <th>Details Text</th>

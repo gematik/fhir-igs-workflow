@@ -65,7 +65,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_RX_MVO_NOT_VALID</td>
+            <td>TIFLOW_EREZEPT_MVO_NOT_VALID</td>
         </tr>
         <tr>
             <th>Details Text</th>

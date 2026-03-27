@@ -237,7 +237,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_RX_DRUG_CATEGORY_FORBIDDEN</td>
+            <td>TIFLOW_EREZEPT_DRUG_CATEGORY_FORBIDDEN</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -581,7 +581,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_RX_MVO_FLOWTYPE_INVALID</td>
+            <td>TIFLOW_EREZEPT_MVO_FLOWTYPE_INVALID</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -613,7 +613,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_RX_MVO_INVALID</td>
+            <td>TIFLOW_EREZEPT_MVO_INVALID</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -645,7 +645,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_RX_MVO_INVALID</td>
+            <td>TIFLOW_EREZEPT_MVO_INVALID</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -677,7 +677,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_RX_MVO_INVALID</td>
+            <td>TIFLOW_EREZEPT_MVO_INVALID</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -709,7 +709,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_RX_MVO_INVALID</td>
+            <td>TIFLOW_EREZEPT_MVO_INVALID</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -741,7 +741,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_RX_MVO_INVALID</td>
+            <td>TIFLOW_EREZEPT_MVO_INVALID</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -773,7 +773,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_RX_MVO_INVALID</td>
+            <td>TIFLOW_EREZEPT_MVO_INVALID</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -805,7 +805,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_RX_MVO_INVALID</td>
+            <td>TIFLOW_EREZEPT_MVO_INVALID</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -837,7 +837,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_RX_MVO_STARTDATE_INVALID</td>
+            <td>TIFLOW_EREZEPT_MVO_STARTDATE_INVALID</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -869,7 +869,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_RX_MVO_STARTDATE_INVALID</td>
+            <td>TIFLOW_EREZEPT_MVO_STARTDATE_INVALID</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -901,7 +901,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_RX_MVO_ENDDATE_INVALID</td>
+            <td>TIFLOW_EREZEPT_MVO_ENDDATE_INVALID</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -933,7 +933,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_RX_MVO_ID_INVALID</td>
+            <td>TIFLOW_EREZEPT_MVO_ID_INVALID</td>
         </tr>
         <tr>
             <th>Details Text</th>
