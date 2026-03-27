@@ -24,6 +24,9 @@ from typing import Dict, Iterable, List, Optional, Set, Tuple
 ERROR_TABLE_RE = re.compile(r'<table[^>]*id="error-code"[^>]*>.*?</table>', re.DOTALL)
 DETAILS_CODE_RE = re.compile(r'<th>Details Code</th>\s*<td>([^<]+)</td>', re.DOTALL)
 REQUIREMENT_KEY_RE = re.compile(r'<requirement[^>]*\bkey="([^"]+)"[^>]*>')
+REQUIREMENT_TAG_RE = re.compile(r'<requirement\b[^>]*>', re.IGNORECASE)
+REQUIREMENT_KEY_ATTR_RE = re.compile(r'\bkey="([^"]+)"')
+REQUIREMENT_TITLE_ATTR_RE = re.compile(r'\btitle="([^"]*)"')
 INCLUDE_CORE_RE = re.compile(r'{%\s*include\s+core\.([^\s%]+)\s*%}')
 ERROR_CODE_LIKE_RE = re.compile(r'^[A-Z0-9][A-Z0-9_\-]*$')
 
@@ -539,6 +542,38 @@ def iter_requirement_files(targets: Iterable[str]) -> Iterable[Path]:
                 continue
 
             yield from yield_pagecontent_md(path, seen)
+
+
+def check_requirements_missing_keys(req_files: List[Path]) -> List[Finding]:
+    """Validate that every <requirement ...> tag contains a key attribute."""
+    findings: List[Finding] = []
+
+    for file_path in req_files:
+        content = file_path.read_text(encoding="utf-8")
+        module = module_from_path(file_path)
+
+        for match in REQUIREMENT_TAG_RE.finditer(content):
+            tag = match.group(0)
+            if REQUIREMENT_KEY_ATTR_RE.search(tag):
+                continue
+
+            title_match = REQUIREMENT_TITLE_ATTR_RE.search(tag)
+            title = title_match.group(1).strip() if title_match else "(no title)"
+            line_num = content[: match.start()].count("\n") + 1
+
+            findings.append(
+                Finding(
+                    type="REQUIREMENT_MISSING_KEY",
+                    ig_module=module,
+                    file_path=file_path,
+                    line=line_num,
+                    code="",
+                    requirement_key="",
+                    message=f"Requirement is missing key attribute (title: '{title}')",
+                )
+            )
+
+    return findings
 
 
 def find_ig_roots(root_dir: Path = Path("igs")) -> Dict[str, Path]:
@@ -1097,9 +1132,13 @@ def fix_cs_vs(findings: List[Finding], ig_roots: Dict[str, Path], error_codes: L
             if f"#{finding.code}" in content:
                 continue
 
-            description = f"TODO: add description for {finding.code}"
-            new_line = f'* #{finding.code} "{description}"\n'
-            cs_file.write_text(content.rstrip("\n") + "\n" + new_line, encoding="utf-8")
+            # Keep newly added CS codes in a consistent 4-line structure with de-DE designation.
+            new_block = (
+                f'* #{finding.code} "TODO: short" "TODO: description"\n'
+                "  * ^designation.language = #de-DE\n"
+                "  * ^designation.value = \"TODO: german\"\n"
+            )
+            cs_file.write_text(content.rstrip("\n") + "\n" + new_block, encoding="utf-8")
             print(f"  [FIX] Added #{finding.code} to {cs_file}")
             fixes_applied += 1
 
@@ -1299,6 +1338,37 @@ def main() -> int:
     req_files = list(iter_requirement_files(args.targets))
     if not req_files:
         print("No requirement files found for the given targets.")
+        return 1
+
+    missing_key_findings = check_requirements_missing_keys(req_files)
+    if missing_key_findings:
+        csv_path = Path(args.output_csv)
+        csv_path.parent.mkdir(parents=True, exist_ok=True)
+        with csv_path.open("w", encoding="utf-8", newline="") as fp:
+            writer = csv.writer(fp)
+            writer.writerow(["type", "ig_module", "file", "line", "code", "requirement_key", "message"])
+            for f in missing_key_findings:
+                writer.writerow([f.type, f.ig_module, str(f.file_path), f.line, f.code, f.requirement_key, f.message])
+            writer.writerow(
+                [
+                    "SUMMARY",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    f"Scanned {len(req_files)} requirement file(s), found {len(missing_key_findings)} missing requirement key(s). Aborted before consistency checks.",
+                ]
+            )
+
+        print("\n==> Requirement Validation")
+        print(f"Scanned: {len(req_files)} requirement file(s)")
+        print(f"Errors: {len(missing_key_findings)}")
+        print("\nRequirements missing keys:")
+        for f in missing_key_findings:
+            print(f"  [{f.type}] {f.file_path}:{f.line} - {f.message}")
+        print(f"\nCSV report written to: {csv_path}")
+        print("\nAborting before consistency checks due to missing requirement keys.")
         return 1
 
     error_codes = extract_error_codes_from_requirements(req_files)
