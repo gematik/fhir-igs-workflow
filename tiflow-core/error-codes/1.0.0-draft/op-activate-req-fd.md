@@ -301,7 +301,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/<id>/$acti
 * HTTP-Code: Code
   * 400 - Bad Request: invalid
 * HTTP-Code: Details Code
-  * 400 - Bad Request: TIFLOW_RX_PZN_INVALID
+  * 400 - Bad Request: TIFLOW_EREZEPT_PZN_INVALID
 * HTTP-Code: Details Text
   * 400 - Bad Request: Ungültige PZN: Die übergebene Pharmazentralnummer entspricht nicht den vorgeschriebenen Prüfziffer-Validierungsregeln.
 
@@ -314,7 +314,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/<id>/$acti
 * HTTP-Code: Code
   * 400 - Bad Request: invalid
 * HTTP-Code: Details Code
-  * 400 - Bad Request: TIFLOW_RX_PZN_INVALID
+  * 400 - Bad Request: TIFLOW_EREZEPT_PZN_INVALID
 * HTTP-Code: Details Text
   * 400 - Bad Request: Ungültige PZN: Die übergebene Pharmazentralnummer entspricht nicht den vorgeschriebenen Prüfziffer-Validierungsregeln.
 
@@ -327,7 +327,7 @@ Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operat
 * HTTP-Code: Code
   * 400 - Bad Request: invalid
 * HTTP-Code: Details Code
-  * 400 - Bad Request: TIFLOW_RX_PZN_INVALID
+  * 400 - Bad Request: TIFLOW_EREZEPT_PZN_INVALID
 * HTTP-Code: Details Text
   * 400 - Bad Request: Länge PZN unzulässig (muss 8-stellig sein)
 

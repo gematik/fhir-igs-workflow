@@ -49,7 +49,10 @@ Die Details des OperationOutcomes werden in den Anforderungen mit einer Tabelle 
 * HTTP-Code: Details Text
   * HTTP-Status-Code: OperationOutcome.issue.details.coding.display / OperationOutcome.issue.details.text
 
-Bei nicht FHIR-Fehlern werden ein HTTP Status Code und ein Fehlercode im Media Type *application/json* nach folgendem Schema zurückgegeben: { “errorCode”: “beispielFehlerCode” } Die Details werden in den Anforderungen mit einer Tabelle wie unten beschrieben dargestellt:
+Bei nicht FHIR-Fehlern werden ein HTTP Status Code und ein Fehlercode im Media Type *application/json* nach folgendem Schema zurückgegeben:
+
+{ "errorCode": "beispielFehlerCode" }
+Die Details werden in den Anforderungen mit einer Tabelle wie unten beschrieben dargestellt:
 
 * HTTP-Code: Error Code
   * HTTP-Status-Code: beispielFehlerCode
