@@ -118,7 +118,7 @@
     - Der TI-Flow-Fachdienst identifiziert E-Rezepte über die Versicherten-ID.
     - Der TI-Flow-Fachdienst liefert E-Rezepte, Status und Statuszeitpunkte.
   postconditions: |
-    - E-Rezepte stehen im E-REzept-FdV zur Anzeige bereit; Daten für E-Rezept-Token sind verfügbar.
+    - E-Rezepte stehen im E-Rezept-FdV zur Anzeige bereit; Daten für E-Rezept-Token sind verfügbar.
     - Der Abruf ist protokolliert.
   interface: |
     - [Query API: Task](./query-api-task.html)
@@ -152,17 +152,15 @@
   title: UC 3.3 - Nachricht durch Versicherten übermitteln
   roles:
     - Versicherter
-    - Vertreter
   description: |
-    Ein Versicherter oder Vertreter übermittelt einen E-Rezept-Token und/oder eine Nachricht an eine Apotheke
-    oder einen Vertreter, wahlweise über die TI oder als 2D-Code.
+    Ein Versicherter übermittelt einen E-Rezept-Token und/oder eine Nachricht an eine abgebende Institution
+    , wahlweise über die TI oder als 2D-Code.
   preconditions: |
     - UC 3.1 wurde ausgeführt und ein E-Rezept-Token erstellt.
-    - Alternativ liegt ein E-Rezept-Token beim Vertreter vor.
   actions: |
     - Auswahl eines E-Rezept-Tokens und Versandart (TI oder 2D-Code).
-    - Bei Versand über TI: Apotheke im Verzeichnisdienst wählen oder KVNR2 eingeben.
-    - Das FdV stellt die Nachricht mit Token und/oder Text im TI-Flow-Fachdienst ein.
+    - Bei Versand über TI: Empfängerinstitution (bspw. Apotheke) im Verzeichnisdienst suchen und auswählen.
+    - Das FdV stellt die Nachricht mit Token und/oder Text im E-Rezept-Fachdienst ein.
     - Bei 2D-Code: Token wird als 2D-Code angezeigt oder ausgedruckt.
   postconditions: |
     - Nachricht liegt im TI-Flow-Fachdienst und kann vom Empfänger abgerufen werden.
@@ -176,9 +174,8 @@
   title: UC 3.4 - Nachrichten durch Versicherten empfangen
   roles:
     - Versicherter
-    - Vertreter
   description: |
-    Ein Versicherter oder Vertreter empfängt Nachrichten von abgebenden LEI über den TI-Flow-Fachdienst.
+    Ein Versicherter empfängt Nachrichten von abgebenden Institution über den E-Rezept-Fachdienst.
   preconditions: |
     - UC 4.7 wurde ausgeführt.
     - UC 3.3 wurde ausgeführt.
@@ -342,13 +339,13 @@
   roles:
     - Kostenträger
   description: |
-    Die abgebende LEI antwortet auf eine Nachricht eines Versicherten oder Vertreters.
+    Die abgebende LEI antwortet auf eine Nachricht eines Versicherten.
   preconditions: |
     - UC 3.3 wurde ausgeführt.
     - UC 4.6 wurde ausgeführt.
   actions: |
-    - Ein Mitarbeiter wählt die Nachricht zu einem E-Rezept und erstellt eine Antwort.
-    - Das Primärsystem stellt die Antwortnachricht im TI-Flow-Fachdienst ein.
+    - Ein Mitarbeiter wählt die Nachricht zu einer Verordnung und erstellt eine Antwort.
+    - Das Primärsystem stellt die Antwortnachricht im E-Rezept-Fachdienst ein.
   postconditions: |
     - Nachricht liegt im TI-Flow-Fachdienst und kann asynchron empfangen werden.
   interface: |
