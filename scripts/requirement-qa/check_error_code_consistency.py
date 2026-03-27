@@ -95,15 +95,14 @@ class CodeDescription:
 
 
 CODE_CLASSIFICATIONS = {
+    # Order matters: longer prefixes must come before shorter ones for correct matching
+    "TIFLOW_CHARGEITEM_": ("erp-chrg", "TIFLOW_CHARGEITEM_CS_OperationOutcomeDetails", "TIFLOW_CHARGEITEM_VS_OperationOutcomeDetails", False),
+    "TIFLOW_EREZEPT_": ("rx", "TIFLOW_EREZEPT_CS_OperationOutcomeDetails", "TIFLOW_EREZEPT_VS_OperationOutcomeDetails", False),
+    "TIFLOW_XBORDER_": ("erp-eu", "TIFLOW_XBORDER_CS_OperationOutcomeDetails", "TIFLOW_XBORDER_VS_OperationOutcomeDetails", False),
+    "TIFLOW_DIGA_": ("diga", "TIFLOW_DIGA_CS_OperationOutcomeDetails", "TIFLOW_DIGA_VS_OperationOutcomeDetails", False),
     "TIFLOW_": ("core", "TIFLOW_CS_OperationOutcomeDetails", "TIFLOW_VS_OperationOutcomeDetails", False),
     "MSG_": ("varies", None, None, True),
     "SVC_": ("varies", None, None, True),
-    "TIFLOW_RX_": ("rx", "TIFLOW_RX_CS_OperationOutcomeDetails", "TIFLOW_RX_VS_OperationOutcomeDetails", False),
-    "TIFLOW_DIGA_": ("diga", "TIFLOW_DIGA_CS_OperationOutcomeDetails", "TIFLOW_DIGA_VS_OperationOutcomeDetails", False),
-    "TIFLOW_ERPCHRG_": ("erp-chrg", "TIFLOW_ERPCHRG_CS_OperationOutcomeDetails", "TIFLOW_ERPCHRG_VS_OperationOutcomeDetails", False),
-    "TIFLOW_ERPEU_": ("erp-eu", "TIFLOW_ERPEU_CS_OperationOutcomeDetails", "TIFLOW_ERPEU_VS_OperationOutcomeDetails", False),
-    "GEM_ERP": ("core", "GEM_ERP_CS_OperationOutcomeDetails", "GEM_ERP_VS_OperationOutcomeDetails", False),
-    "ERPFD_": ("core", "GEM_ERP_CS_OperationOutcomeDetails", "GEM_ERP_VS_OperationOutcomeDetails", False),
 }
 
 
@@ -554,7 +553,8 @@ def find_ig_roots(root_dir: Path = Path("igs")) -> Dict[str, Path]:
 
 
 def extract_code_descriptions(cs_file: Path) -> Dict[str, CodeDescription]:
-    """Extract code -> description mappings from a CodeSystem FSH file."""
+    """Extract code -> description mappings from a CodeSystem FSH file.
+    Uses the display name (first string) as the description for consistency."""
     if not cs_file.exists():
         return {}
 
@@ -568,8 +568,8 @@ def extract_code_descriptions(cs_file: Path) -> Dict[str, CodeDescription]:
             code = m.group(1)
             display = m.group(2)
             description_long = m.group(3) or ""
-            # Use the long description if available, otherwise use display
-            final_desc = description_long if description_long else display
+            # Use display name (first string) as the canonical description
+            final_desc = display
             descriptions[code] = CodeDescription(
                 code=code,
                 display=display,
@@ -669,6 +669,67 @@ def check_description_consistency(
     return findings
 
 
+def check_module_codesystem_placement(ig_roots: Dict[str, Path]) -> List[Finding]:
+    """Check that module-specific codes are in the correct module CodeSystems, not in core.
+    
+    Example: TIFLOW_RX_* codes should be in TIFLOW_RX_CS_OperationOutcomeDetails (rx module),
+             not in TIFLOW_CS_OperationOutcomeDetails (core module).
+    """
+    findings: List[Finding] = []
+
+    # Map of code prefix -> (expected_module, expected_cs_name)
+    module_code_prefixes = {
+        "TIFLOW_RX_": ("rx", "TIFLOW_RX_CS_OperationOutcomeDetails"),
+        "TIFLOW_DIGA_": ("diga", "TIFLOW_DIGA_CS_OperationOutcomeDetails"),
+        "TIFLOW_ERPCHRG_": ("erp-chrg", "TIFLOW_ERPCHRG_CS_OperationOutcomeDetails"),
+        "TIFLOW_ERPEU_": ("erp-eu", "TIFLOW_ERPEU_CS_OperationOutcomeDetails"),
+    }
+
+    # Check each CodeSystem for misplaced codes
+    for module, ig_root in ig_roots.items():
+        cs_defs = find_codesystem_files(ig_root)
+        for cs_name, cs_def in cs_defs.items():
+            content = cs_def.file_path.read_text(encoding="utf-8")
+            
+            for prefix, (expected_module, expected_cs) in module_code_prefixes.items():
+                # Find codes with this prefix in the current CS
+                for match in re.finditer(rf'^\s*\*\s+#({re.escape(prefix)}[A-Za-z0-9_\-]+)\s+', content, re.MULTILINE):
+                    code = match.group(1)
+                    line_num = content[:match.start()].count("\n") + 1
+                    
+                    # If this code is in core module's CS, it should be moved to the module's CS
+                    if module == "core" and expected_module != "core":
+                        module_ig_root = ig_roots.get(expected_module)
+                        module_cs_file = module_ig_root / "input" / "fsh" / "codesystems" / f"{expected_cs}.fsh" if module_ig_root else None
+                        
+                        if not module_cs_file or not module_cs_file.exists():
+                            findings.append(
+                                Finding(
+                                    type="MISSING_MODULE_CODESYSTEM",
+                                    ig_module=expected_module,
+                                    file_path=cs_def.file_path,
+                                    line=line_num,
+                                    code=code,
+                                    requirement_key="",
+                                    message=f"Code '{code}' is in core's {cs_name} but should be in module {expected_module}; create {expected_cs}.fsh if missing",
+                                )
+                            )
+                        else:
+                            findings.append(
+                                Finding(
+                                    type="WRONG_MODULE_CODESYSTEM",
+                                    ig_module=module,
+                                    file_path=cs_def.file_path,
+                                    line=line_num,
+                                    code=code,
+                                    requirement_key="",
+                                    message=f"Code '{code}' should be in module {expected_module}'s {expected_cs}, not in core's {cs_name}",
+                                )
+                            )
+
+    return findings
+
+
 def fix_description_mismatches(findings: List[Finding], ig_roots: Dict[str, Path]) -> int:
     """Fix description mismatches by updating RuleSet descriptions from CodeSystem."""
     fixes_applied = 0
@@ -734,6 +795,48 @@ def fix_description_mismatches(findings: List[Finding], ig_roots: Dict[str, Path
         if modified:
             file_path.write_text("".join(lines), encoding="utf-8")
             fixes_applied += 1
+
+    return fixes_applied
+
+
+def fix_module_codesystem_placement(findings: List[Finding], ig_roots: Dict[str, Path]) -> int:
+    """Remove module-specific codes from core CodeSystem."""
+    fixes_applied = 0
+
+    # Collect codes to remove by file
+    codes_to_remove_by_file: Dict[Path, List[str]] = {}
+    for finding in findings:
+        if finding.type not in ("MISSING_MODULE_CODESYSTEM", "WRONG_MODULE_CODESYSTEM"):
+            continue
+        if finding.file_path not in codes_to_remove_by_file:
+            codes_to_remove_by_file[finding.file_path] = []
+        codes_to_remove_by_file[finding.file_path].append(finding.code)
+
+    for file_path, codes_to_remove in codes_to_remove_by_file.items():
+        if not file_path.exists():
+            continue
+
+        content = file_path.read_text(encoding="utf-8")
+        lines = content.splitlines(keepends=True)
+        original_line_count = len(lines)
+
+        # Remove lines containing these codes
+        filtered_lines = []
+        for line in lines:
+            # Check if this line defines any of the codes to remove
+            should_remove = False
+            for code in codes_to_remove:
+                if re.match(rf'^\s*\*\s+#{re.escape(code)}\s+', line):
+                    should_remove = True
+                    print(f"  [FIX] Removed {code} from {file_path.name}")
+                    fixes_applied += 1
+                    break
+            
+            if not should_remove:
+                filtered_lines.append(line)
+
+        if len(filtered_lines) != original_line_count:
+            file_path.write_text("".join(filtered_lines), encoding="utf-8")
 
     return fixes_applied
 
@@ -829,6 +932,11 @@ def fix_cs_vs(findings: List[Finding], ig_roots: Dict[str, Path], error_codes: L
                 continue
             cs_file = ig_root / "input" / "fsh" / "codesystems" / f"{cs_id}.fsh"
             if not cs_file.exists():
+                # Module-specific codes should not be added to core if their module CS doesn't exist yet.
+                # Let fix_module_codesystem_placement() handle removal from core.
+                if any(finding.code.startswith(prefix) for prefix in ["TIFLOW_RX_", "TIFLOW_DIGA_", "TIFLOW_ERPCHRG_", "TIFLOW_ERPEU_"]):
+                    print(f"  [SKIP] Module-specific code '{finding.code}' - target CS not found: {cs_file}")
+                    continue
                 print(f"  [SKIP] CS file not found: {cs_file}")
                 continue
 
@@ -1022,7 +1130,7 @@ def main() -> int:
     parser.add_argument(
         "--fix",
         action="store_true",
-        help="Auto-fix MISSING_IN_CS, MISSING_IMPORT, CAPSTAT_ENDPOINT_NOT_MAPPED, CAPSTAT_MISSING_CODE, and DESCRIPTION_MISMATCH findings",
+        help="Auto-fix MISSING_IN_CS, MISSING_IMPORT, CAPSTAT_ENDPOINT_NOT_MAPPED, CAPSTAT_MISSING_CODE, DESCRIPTION_MISMATCH, and misplaced module codes",
     )
     parser.add_argument(
         "--report-capstat-extra",
@@ -1055,6 +1163,7 @@ def main() -> int:
     findings.extend(check_cs_vs_consistency(error_codes, ig_roots))
     findings.extend(check_capabilitystatement_consistency(error_codes, ig_roots, include_extra=args.report_capstat_extra))
     findings.extend(check_description_consistency(ig_roots))
+    findings.extend(check_module_codesystem_placement(ig_roots))
 
     if args.fix and findings:
         print("\n==> Applying auto-fixes...")
@@ -1063,6 +1172,7 @@ def main() -> int:
             applied += fix_cs_vs(findings, ig_roots, error_codes)
             applied += fix_capstat(findings, ig_roots, error_codes)
             applied += fix_description_mismatches(findings, ig_roots)
+            applied += fix_module_codesystem_placement(findings, ig_roots)
 
             print("\nRe-running checks after fixes...")
             findings = []
@@ -1071,6 +1181,7 @@ def main() -> int:
                 check_capabilitystatement_consistency(error_codes, ig_roots, include_extra=args.report_capstat_extra)
             )
             findings.extend(check_description_consistency(ig_roots))
+            findings.extend(check_module_codesystem_placement(ig_roots))
 
             if not findings:
                 break
