@@ -21,7 +21,7 @@ from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Set, Tuple
 
 
-ERROR_TABLE_RE = re.compile(r'<table[^>]*id="error-output"[^>]*>.*?</table>', re.DOTALL)
+ERROR_TABLE_RE = re.compile(r'<table[^>]*id="error-code"[^>]*>.*?</table>', re.DOTALL)
 DETAILS_CODE_RE = re.compile(r'<th>Details Code</th>\s*<td>([^<]+)</td>', re.DOTALL)
 REQUIREMENT_KEY_RE = re.compile(r'<requirement[^>]*\bkey="([^"]+)"[^>]*>')
 INCLUDE_CORE_RE = re.compile(r'{%\s*include\s+core\.([^\s%]+)\s*%}')
