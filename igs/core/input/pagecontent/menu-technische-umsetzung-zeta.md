@@ -350,7 +350,7 @@ policies:
 
   # ── AuditEvent (Protokoll) ────────────────────────────────────────────────────
 
-  - name: auditevent_read
+  - name: audit_event_read
     description: "GET /AuditEvent – Zugriffsprotokoll abrufen"
     scopes:
       - "auditevent.read"
