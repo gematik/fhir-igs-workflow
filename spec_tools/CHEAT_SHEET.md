@@ -17,6 +17,7 @@ Für Tags in Anforderungen muss die folgende Syntax verwendet werden:
 
 ### Fehlercodes in Anforderungen
 
+#### OperationOutcomes
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst – title">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
@@ -48,6 +49,25 @@ Für Tags in Anforderungen muss die folgende Syntax verwendet werden:
       ...
 </requirement>
 
+#### Nicht FHIR
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst – title">
+    <meta lockversion="false"/>
+    <actor name="TI_Flow_FD">
+        <testProcedure id="Produkttest"/>
+    </actor>
+      ... mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Error Code</th>
+            <td>invalidOid</td>
+        </tr>
+    </table>
+      ...
+</requirement>
 ## Bild einfügen
 
 1. Bild in den Ordner input/images legen

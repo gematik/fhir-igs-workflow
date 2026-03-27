@@ -71,4 +71,20 @@ Die Details des OperationOutcomes werden in den Anforderungen mit einer Tabelle 
     </tr>
 </table>
 
+Bei nicht FHIR-Fehlern werden ein HTTP Status Code und ein Fehlercode im Media Type <i>application/json</i> nach folgendem Schema zurückgegeben:
+{
+    "errorCode": "beispielFehlerCode"
+}
+Die Details werden in den Anforderungen mit einer Tabelle wie unten beschrieben dargestellt:
+<table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+    <tr>
+        <th>HTTP-Code</th>
+        <td>HTTP-Status-Code</td>
+    </tr>
+    <tr>
+        <th>Error Code</th>
+        <td>beispielFehlerCode</td>
+    </tr>
+</table>
+
 Treten Fehler beim VAU-Transport (bspw. innerer http-Request kann nicht entschlüsselt werden) auf, beinhaltet die Fehlermeldung keinen inneren http-Response.

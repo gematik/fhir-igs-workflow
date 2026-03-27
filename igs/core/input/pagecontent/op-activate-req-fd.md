@@ -179,8 +179,62 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
     und darf die OCSP-Response für die Abfrage des Zertifikatsstatus für 12 Stunden zwischenspeichern.
     Ist keine OCSP-Response eingebettet oder die eingebettete OCSP Response nicht gültig, MUSS der TI-Flow-Fachdienst die gecachte OCSP-Response verwenden oder eine OCSP-Response beim benannten TSP anfragen und die genutzte OCSP-Response nachträglich in den QES-Datensatz einbetten.
-    Das Signaturzertifikat muss anhand der Zertifikatsprüfung für [mathematisch gültig UND zeitlich gültig UND online gültig ] befunden werden und der HTTP-Request andernfalls mit dem HTTP-Status-Code 400 abgelehnt werden, damit sichergestellt wird, dass ausschließlich E-Rezepte verwaltet werden, die von einer gültigen, nicht gesperrten Heilberufsidentität eines HBA signiert wurden.
-    Wenn die Abfrage des OCSP-Response für das Signaturzertifikat fehlschlägt, muss der HTTP-Request mit dem HTTP-Status-Code 512 abgelehnt werden.
+    Das Signaturzertifikat muss anhand der Zertifikatsprüfung für [mathematisch gültig UND zeitlich gültig UND online gültig ] befunden werden und der HTTP-Request andernfalls mit dem folgenden Fehler:
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_CERTIFICATE_INVALID</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table>
+    HTTP-Status-Code 400 abgelehnt werden, damit sichergestellt wird, dass ausschließlich E-Rezepte verwaltet werden, die von einer gültigen, nicht gesperrten Heilberufsidentität eines HBA signiert wurden.
+</requirement>
+<!-- ToDo: können HBA-Vorläuferkarten entfernt werden? ME ja -->
+
+<!-- A_20159-04 -->
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA" version="0">
+  <meta lockversion="false"/>
+  <actor name="TI_Flow_FD">
+    <testProcedure id="Produktgutachten"/>
+  </actor>
+    Der TI-Flow-Fachdienst MUSS das QES-Signaturzertifikat C.HP.QES in der Signatur des übergebenen QES-Datensatzes gemäß [gemSpec_PKI#TUC_PKI_030] auf Gültigkeit prüfen. Wenn die Abfrage des OCSP-Response für das Signaturzertifikat fehlschlägt, muss der HTTP-Request mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>512 - OCSP Backend Error</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_OCSP_BACKEND_ERROR</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>OCSP Backend Error</td>
+        </tr>
+    </table> HTTP-Status-Code 512 abgelehnt werden.
 </requirement>
 <!-- ToDo: können HBA-Vorläuferkarten entfernt werden? ME ja -->
 
@@ -658,7 +712,7 @@ Hinweis: Im Rahmen der ambulanten spezialfachärztlichen Versorgung (ASV) nach �
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_RX_PZN_INVALID</td>
+            <td>TIFLOW_EREZEPT_PZN_INVALID</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -691,7 +745,7 @@ Hinweis: Im Rahmen der ambulanten spezialfachärztlichen Versorgung (ASV) nach �
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_RX_PZN_INVALID</td>
+            <td>TIFLOW_EREZEPT_PZN_INVALID</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -724,7 +778,7 @@ Hinweis: Im Rahmen der ambulanten spezialfachärztlichen Versorgung (ASV) nach �
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_RX_PZN_INVALID</td>
+            <td>TIFLOW_EREZEPT_PZN_INVALID</td>
         </tr>
         <tr>
             <th>Details Text</th>

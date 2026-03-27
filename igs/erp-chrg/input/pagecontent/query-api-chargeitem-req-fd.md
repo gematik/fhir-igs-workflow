@@ -388,7 +388,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_CHRG_COVERAGE_NOT_PKV</td>
+            <td>TIFLOW_CHARGEITEM_COVERAGE_NOT_PKV</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -534,7 +534,7 @@ Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource ChargeI
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_CHRG_DISPENSE_SIGNATURE_INVALID</td>
+            <td>TIFLOW_CHARGEITEM_DISPENSE_SIGNATURE_INVALID</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -566,7 +566,7 @@ Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource ChargeI
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_CHRG_DISPENSE_CERTIFICATE_INVALID</td>
+            <td>TIFLOW_CHARGEITEM_DISPENSE_CERTIFICATE_INVALID</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -690,7 +690,7 @@ Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource ChargeI
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_CHRG_ID_REQUIRED</td>
+            <td>TIFLOW_CHARGEITEM_ID_REQUIRED</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -993,7 +993,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_CHRG_DISPENSE_SIGNATURE_INVALID</td>
+            <td>TIFLOW_CHARGEITEM_DISPENSE_SIGNATURE_INVALID</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -1025,7 +1025,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_CHRG_DISPENSE_CERTIFICATE_INVALID</td>
+            <td>TIFLOW_CHARGEITEM_DISPENSE_CERTIFICATE_INVALID</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -1153,7 +1153,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_CHRG_ID_REQUIRED</td>
+            <td>TIFLOW_CHARGEITEM_ID_REQUIRED</td>
         </tr>
         <tr>
             <th>Details Text</th>

@@ -63,7 +63,7 @@
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_EU_COUNTRY_CODE_INVALID</td>
+            <td>TIFLOW_XBORDER_COUNTRY_CODE_INVALID</td>
         </tr>
         <tr>
             <th>Details Text</th>

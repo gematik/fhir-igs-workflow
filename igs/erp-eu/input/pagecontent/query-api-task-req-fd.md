@@ -61,7 +61,7 @@
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_EU_NOT_ACTIVATED</td>
+            <td>TIFLOW_XBORDER_NOT_ACTIVATED</td>
         </tr>
         <tr>
             <th>Details Text</th>

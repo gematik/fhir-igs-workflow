@@ -195,7 +195,7 @@
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_EU_NO_PRESCRIPTIONS_FOUND</td>
+            <td>TIFLOW_XBORDER_NO_PRESCRIPTIONS_FOUND</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -227,7 +227,7 @@
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_EU_NO_PRESCRIPTIONS_FOUND</td>
+            <td>TIFLOW_XBORDER_NO_PRESCRIPTIONS_FOUND</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -259,7 +259,7 @@
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_EU_NO_PRESCRIPTIONS_FOUND</td>
+            <td>TIFLOW_XBORDER_NO_PRESCRIPTIONS_FOUND</td>
         </tr>
         <tr>
             <th>Details Text</th>
