@@ -1,0 +1,62 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow/core/CodeSystem/GEM-ERP-CS-Features> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "GEM-ERP-CS-Features"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem GEM-ERP-CS-Features</b></p><a name=\"GEM-ERP-CS-Features\"> </a><a name=\"hcGEM-ERP-CS-Features\"> </a><p>This case-sensitive code system <code>https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_Features</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">eu-prescription<a name=\"GEM-ERP-CS-Features-eu-prescription\"> </a></td><td>EU-Feature</td><td>Unterstützung grenzüberschreitender E-Rezept-Prozesse.</td></tr><tr><td style=\"white-space:nowrap\">t-prescription-transfer<a name=\"GEM-ERP-CS-Features-t-prescription-transfer\"> </a></td><td>Übertragung digitaler Durchschlag</td><td>Unterstüztung der Übertragung von digitalen Durchschlägen an den BfArM Webdienst</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_Features"^^xsd:anyURI ;
+     fhir:l <https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_Features>
+  ] ; # 
+  fhir:version [ fhir:v "1.0.0-draft"] ; # 
+  fhir:name [ fhir:v "GEM_ERP_CS_Features"] ; # 
+  fhir:title [ fhir:v "ERP Feature CodeSystem"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2025-09-25"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "gematik GmbH"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "gematik GmbH" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://gematik.de" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "erp-umsetzung@gematik.de" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Dieses CodeSystem beschreibt serverseitige Feature-Flags des E-Rezept-Fachdienstes, die keine Workflow-Typen sind. Workflow-Typ-Codes werden weiterhin in GEM_ERP_CS_FlowType gepflegt; dieses CodeSystem ergänzt diese um weitere funktionale Fahigkeiten und Betriebsmerkmale, die in CapabilityStatements als deklarierbare Features verwendet werden."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "DE" ] ;
+       fhir:display [ fhir:v "Germany" ]
+     ] )
+  ] ) ; # 
+  fhir:copyright [ fhir:v "gematik GmbH"] ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "2"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "eu-prescription" ] ;
+     fhir:display [ fhir:v "EU-Feature" ] ;
+     fhir:definition [ fhir:v "Unterstützung grenzüberschreitender E-Rezept-Prozesse." ]
+  ] [
+     fhir:code [ fhir:v "t-prescription-transfer" ] ;
+     fhir:display [ fhir:v "Übertragung digitaler Durchschlag" ] ;
+     fhir:definition [ fhir:v "Unterstüztung der Übertragung von digitalen Durchschlägen an den BfArM Webdienst" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,29 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow/core/Subscription/example-create-subscription-request> a fhir:Subscription ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "example-create-subscription-request"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Subscription example-create-subscription-request</b></p><a name=\"example-create-subscription-request\"> </a><a name=\"hcexample-create-subscription-request\"> </a><p><b>status</b>: Requested</p><p><b>reason</b>: Benachrichtigung ueber neue Communication-Ressourcen</p><p><b>criteria</b>: Communication?received=NULL&amp;recipient=1-2-3-4-5</p><h3>Channels</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Type</b></td><td><b>Endpoint</b></td><td><b>Payload</b></td></tr><tr><td style=\"display: none\">*</td><td>Rest Hook</td><td><a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=https://apotheke.example.org/erp/notification\">https://apotheke.example.org/erp/notification</a></td><td>application/fhir+json</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "requested"] ; # 
+  fhir:reason [ fhir:v "Benachrichtigung ueber neue Communication-Ressourcen"] ; # 
+  fhir:criteria [ fhir:v "Communication?received=NULL&recipient=1-2-3-4-5"] ; # 
+  fhir:channel [
+     fhir:type [ fhir:v "rest-hook" ] ;
+     fhir:endpoint [
+       fhir:v "https://apotheke.example.org/erp/notification"^^xsd:anyURI ;
+       fhir:l <https://apotheke.example.org/erp/notification>
+     ] ;
+     fhir:payload [ fhir:v "application/fhir+json" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
