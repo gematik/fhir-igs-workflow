@@ -2,6 +2,7 @@ CodeSystem: TIFLOWEREZEPTOperationOutcomeDetailsCS
 Id: tiflow-erezept-operation-outcome-details-cs
 Title: "TIFLOW EREZEPT Operation Outcome Details CS"
 Description: "E-Rezept-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können"
+* insert CodeSystem(tiflow-erezept-operation-outcome-details-cs)
 * #TIFLOW_EREZEPT_PZN_INVALID "PZN invalid" "The provided PZN is invalid or not permitted in the current processing context"
   * ^designation.language = #de-DE
   * ^designation.value = "PZN ungültig"

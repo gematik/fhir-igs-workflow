@@ -22,3 +22,7 @@ Alias: $sid-identifier-rx-originator-process = https://gematik.de/fhir/epa-medic
 Alias: $sid-identifier-dispensation = https://gematik.de/fhir/epa-medication/sid/dispensation-identifier
 Alias: $cs-drug-category = https://gematik.de/fhir/epa-medication/CodeSystem/epa-drug-category-cs
 Alias: $cs-oid-practitioner-role = urn:oid:2.16.840.1.113883.2.9.6.2.7
+
+Alias: $tiflow-core-oo-cs = https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs
+Alias: $ti-oo = https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes
+Alias: $hl7-oo = http://terminology.hl7.org/CodeSystem/operation-outcome
