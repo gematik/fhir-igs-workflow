@@ -69,6 +69,9 @@ RuleSet: ConsentDeleteInteractionStatusCodes
 
 RuleSet: GrantEUAccessPermissionOperationStatusCodes
 * insert SystemLevelOperationStatusCodesWithParameters
+* insert TiflowAccessCodeInvalid
+* insert TiflowConsentRequired
+* insert TiflowEuCountryCodeInvalid
 
 RuleSet: ReadEUAccessPermissionOperationStatusCodes
 * insert SystemLevelOperationStatusCodesWithParameters
@@ -78,3 +81,15 @@ RuleSet: RevokeEUAccessPermissionOperationStatusCodes
 
 RuleSet: GetEUPrescriptionsOperationStatusCodes
 * insert SystemLevelOperationStatusCodesWithParameters
+* insert SvcValidationFailed
+* insert TiflowAccessPermissionInvalid
+* insert TiflowAuthRoleNotAllowed
+* insert TiflowConsentRequired
+* insert TiflowEuNoPrescriptionsFound
+
+RuleSet: EuCloseOperationStatusCodes
+* insert SvcValidationFailed
+* insert TiflowAccessPermissionInvalid
+* insert TiflowAuthRoleNotAllowed
+* insert TiflowConsentMissing
+* insert TiflowTaskStatusMismatch

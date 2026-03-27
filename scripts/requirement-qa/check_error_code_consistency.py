@@ -25,6 +25,7 @@ ERROR_TABLE_RE = re.compile(r'<table[^>]*id="error-code"[^>]*>.*?</table>', re.D
 DETAILS_CODE_RE = re.compile(r'<th>Details Code</th>\s*<td>([^<]+)</td>', re.DOTALL)
 REQUIREMENT_KEY_RE = re.compile(r'<requirement[^>]*\bkey="([^"]+)"[^>]*>')
 INCLUDE_CORE_RE = re.compile(r'{%\s*include\s+core\.([^\s%]+)\s*%}')
+ERROR_CODE_LIKE_RE = re.compile(r'^[A-Z0-9][A-Z0-9_\-]*$')
 
 FSH_CODE_DEF_RE = re.compile(r'^\s*\*\s+#([a-zA-Z0-9_\-]+)\s+"([^"]*)"', re.MULTILINE)
 FSH_INCLUDE_CODES_RE = re.compile(r'^\s*\*\s+include\s+codes\s+from\s+system\s+(\S+)', re.MULTILINE)
@@ -35,8 +36,14 @@ RULESET_INSERT_RE = re.compile(r'^\s*\*\s*(?:rest\.[^\s]+\s+)?insert\s+([A-Za-z0
 RULESET_ERROR_CODE_RE = re.compile(r'extension\[errorCode\]\.valueString\s*=\s*"([^"]+)"')
 
 CAP_RESOURCE_INTERACTION_RE = re.compile(r'^\s*\*\s*insert\s+CapResourceInteraction\(#([a-z\-]+),', re.MULTILINE)
-CAP_RESOURCE_OPERATION_RE = re.compile(r'^\s*\*\s*insert\s+CapSupportResourceOperation\(([a-z0-9\-]+),', re.MULTILINE)
-CAP_SYSTEM_OPERATION_RE = re.compile(r'^\s*\*\s*insert\s+CapSupportSystemOperation\(([a-z0-9\-]+),', re.MULTILINE)
+CAP_RESOURCE_OPERATION_RE = re.compile(
+    r'^\s*\*\s*insert\s+CapSupportResourceOperation\(([a-z0-9\-]+),\s*([^,]+),',
+    re.MULTILINE,
+)
+CAP_SYSTEM_OPERATION_RE = re.compile(
+    r'^\s*\*\s*insert\s+CapSupportSystemOperation\(([a-z0-9\-]+),\s*([^,]+),',
+    re.MULTILINE,
+)
 RULESET_HEADER_RE = re.compile(r'^\s*RuleSet:\s*([A-Za-z0-9_\-]+)Interaction\(expectation\)', re.MULTILINE)
 
 
@@ -76,6 +83,15 @@ class Finding:
     code: str
     requirement_key: str
     message: str
+
+
+@dataclass
+class CodeDescription:
+    code: str
+    display: str
+    description: str
+    file_path: Path
+    line: int
 
 
 CODE_CLASSIFICATIONS = {
@@ -136,6 +152,9 @@ def parse_tables_from_content(content: str, file_path: Path, module: str, endpoi
             if not code_match:
                 continue
             error_code = code_match.group(1).strip()
+            # Requirement text sometimes contains element paths in this field; only keep code-like tokens.
+            if not ERROR_CODE_LIKE_RE.match(error_code):
+                continue
             line_num = content[: req_start + table_match.start()].count("\n") + 1
 
             http_match = re.search(r"<th>HTTP-Code</th>\s*<td>([^<]+)</td>", table_text)
@@ -305,7 +324,7 @@ def parse_capability_endpoint_rulesets(cap_file: Path) -> Dict[str, str]:
             sysop = m_sys.group(1)
             next_rule = _next_insert_ruleset(lines, i + 1)
             if next_rule:
-                endpoint_to_ruleset[f"sysop:{sysop}"] = next_rule
+                endpoint_to_ruleset[f"op:{sysop}"] = next_rule
             continue
 
     return endpoint_to_ruleset
@@ -316,7 +335,7 @@ def _next_insert_ruleset(lines: List[str], start_idx: int) -> Optional[str]:
         s = lines[j].strip()
         if not s:
             continue
-        m = re.match(r'^\*\s*insert\s+([A-Za-z0-9_\-]+)\s*$', s)
+        m = re.match(r'^\*\s*(?:rest\.[^\s]+\s+)?insert\s+([A-Za-z0-9_\-]+)\s*$', s)
         if m:
             return m.group(1)
         if s.startswith("* insert Cap"):
@@ -380,7 +399,11 @@ def check_cs_vs_consistency(error_codes: List[ErrorCode], ig_roots: Dict[str, Pa
     return findings
 
 
-def check_capabilitystatement_consistency(error_codes: List[ErrorCode], ig_roots: Dict[str, Path]) -> List[Finding]:
+def check_capabilitystatement_consistency(
+    error_codes: List[ErrorCode],
+    ig_roots: Dict[str, Path],
+    include_extra: bool = False,
+) -> List[Finding]:
     findings: List[Finding] = []
 
     # group requirement codes by (module, endpoint)
@@ -439,31 +462,32 @@ def check_capabilitystatement_consistency(error_codes: List[ErrorCode], ig_roots
                 )
             )
 
-        # Detect endpoint-specific extras in CapabilityStatement that are not in requirements.
-        # To avoid noise from broad/common defaults, treat the first insert in the wrapper as baseline.
-        direct_refs = refs.get(endpoint_rule, [])
-        baseline_codes: Set[str] = set()
-        if direct_refs:
-            baseline_codes = resolve_ruleset_codes(direct_refs[0], refs, base_codes)
+        if include_extra:
+            # Detect endpoint-specific extras in CapabilityStatement that are not in requirements.
+            # To avoid noise from broad/common defaults, treat the first insert in the wrapper as baseline.
+            direct_refs = refs.get(endpoint_rule, [])
+            baseline_codes: Set[str] = set()
+            if direct_refs:
+                baseline_codes = resolve_ruleset_codes(direct_refs[0], refs, base_codes)
 
-        extra_codes = sorted((cap_codes - required_codes) - baseline_codes)
-        if extra_codes:
-            exemplar = errs[0]
-            for extra in extra_codes:
-                findings.append(
-                    Finding(
-                        type="CAPSTAT_EXTRA_CODE",
-                        ig_module=module,
-                        file_path=exemplar.file_path,
-                        line=exemplar.line,
-                        code=extra,
-                        requirement_key=exemplar.requirement_key,
-                        message=(
-                            f"Endpoint '{endpoint}' exposes error code '{extra}' in RuleSet '{endpoint_rule}' "
-                            "but no matching requirement code was found"
-                        ),
+            extra_codes = sorted((cap_codes - required_codes) - baseline_codes)
+            if extra_codes:
+                exemplar = errs[0]
+                for extra in extra_codes:
+                    findings.append(
+                        Finding(
+                            type="CAPSTAT_EXTRA_CODE",
+                            ig_module=module,
+                            file_path=exemplar.file_path,
+                            line=exemplar.line,
+                            code=extra,
+                            requirement_key=exemplar.requirement_key,
+                            message=(
+                                f"Endpoint '{endpoint}' exposes error code '{extra}' in RuleSet '{endpoint_rule}' "
+                                "but no matching requirement code was found"
+                            ),
+                        )
                     )
-                )
 
     return findings
 
@@ -529,10 +553,262 @@ def find_ig_roots(root_dir: Path = Path("igs")) -> Dict[str, Path]:
     return ig_roots
 
 
+def extract_code_descriptions(cs_file: Path) -> Dict[str, CodeDescription]:
+    """Extract code -> description mappings from a CodeSystem FSH file."""
+    if not cs_file.exists():
+        return {}
+
+    content = cs_file.read_text(encoding="utf-8")
+    descriptions: Dict[str, CodeDescription] = {}
+
+    lines = content.splitlines()
+    for line_no, line in enumerate(lines, 1):
+        m = re.match(r"^\s*\*\s+#([a-zA-Z0-9_\-]+)\s+\"([^\"]*)\"\s*(?:\"([^\"]*)\")?\s*$", line)
+        if m:
+            code = m.group(1)
+            display = m.group(2)
+            description_long = m.group(3) or ""
+            # Use the long description if available, otherwise use display
+            final_desc = description_long if description_long else display
+            descriptions[code] = CodeDescription(
+                code=code,
+                display=display,
+                description=final_desc,
+                file_path=cs_file,
+                line=line_no,
+            )
+
+    return descriptions
+
+
+def extract_ruleset_descriptions(ruleset_file: Path) -> Dict[str, Dict[str, str]]:
+    """Extract ruleset -> code -> description mappings from a RuleSet FSH file.
+    Returns: {ruleset_name: {error_code: description}}
+    """
+    if not ruleset_file.exists():
+        return {}
+
+    content = ruleset_file.read_text(encoding="utf-8")
+    result: Dict[str, Dict[str, str]] = {}
+
+    # Find all RuleSets
+    starts = list(RULESET_START_RE.finditer(content))
+    for i, st in enumerate(starts):
+        name = st.group(1)
+        section_start = st.end()
+        section_end = starts[i + 1].start() if i + 1 < len(starts) else len(content)
+        section = content[section_start:section_end]
+
+        # Find errorCode -> description pairs in this ruleset
+        codes_in_ruleset: Dict[str, str] = {}
+        for code_match in RULESET_ERROR_CODE_RE.finditer(section):
+            code = code_match.group(1)
+            # Find the description line before this errorCode
+            desc_match = re.search(
+                r'extension\[description\]\.valueString\s*=\s*"([^"]*)"',
+                section[: code_match.start()],
+            )
+            if desc_match:
+                desc = desc_match.group(1)
+                codes_in_ruleset[code] = desc
+
+        if codes_in_ruleset:
+            result[name] = codes_in_ruleset
+
+    return result
+
+
+def check_description_consistency(
+    ig_roots: Dict[str, Path],
+) -> List[Finding]:
+    """Check that code descriptions in RuleSets match CodeSystem definitions."""
+    findings: List[Finding] = []
+
+    # Build a map of module -> code -> description from CodeSystems
+    cs_descriptions: Dict[str, Dict[str, CodeDescription]] = {}
+    for module, ig_root in ig_roots.items():
+        cs_defs = find_codesystem_files(ig_root)
+        for cs_name, cs_def in cs_defs.items():
+            descs = extract_code_descriptions(cs_def.file_path)
+            if cs_name not in cs_descriptions:
+                cs_descriptions[cs_name] = {}
+            cs_descriptions[cs_name].update(descs)
+
+    # Check each CapabilityStatement RuleSet file
+    for module, ig_root in ig_roots.items():
+        ruleset_file = ig_root / "input" / "fsh" / "capabilitystatement" / "rulesets" / "ERPCapabilityStatementRulesetsResponse.fsh"
+        ruleset_descs = extract_ruleset_descriptions(ruleset_file)
+
+        for ruleset_name, codes_and_descs in ruleset_descs.items():
+            for error_code, ruleset_desc in codes_and_descs.items():
+                # Find which CS this code should come from
+                module_for_code, cs_name, _vs_name, _is_external = classify_error_code(error_code)
+                if not cs_name or cs_name not in cs_descriptions:
+                    continue
+
+                cs_desc_map = cs_descriptions[cs_name]
+                if error_code not in cs_desc_map:
+                    continue
+
+                cs_desc_obj = cs_desc_map[error_code]
+                cs_desc = cs_desc_obj.description
+
+                if ruleset_desc != cs_desc:
+                    findings.append(
+                        Finding(
+                            type="DESCRIPTION_MISMATCH",
+                            ig_module=module,
+                            file_path=ruleset_file,
+                            line=0,  # Could find exact line but not critical
+                            code=error_code,
+                            requirement_key=f"RuleSet:{ruleset_name}",
+                            message=f"RuleSet '{ruleset_name}' has description '{ruleset_desc}' but CodeSystem has '{cs_desc}'",
+                        )
+                    )
+
+    return findings
+
+
+def fix_description_mismatches(findings: List[Finding], ig_roots: Dict[str, Path]) -> int:
+    """Fix description mismatches by updating RuleSet descriptions from CodeSystem."""
+    fixes_applied = 0
+
+    # Build code -> description map from CodeSystems
+    cs_descriptions: Dict[str, CodeDescription] = {}
+    for module, ig_root in ig_roots.items():
+        cs_defs = find_codesystem_files(ig_root)
+        for cs_def in cs_defs.values():
+            descs = extract_code_descriptions(cs_def.file_path)
+            cs_descriptions.update(descs)
+
+    # Group findings by file
+    findings_by_file: Dict[Path, List[Finding]] = {}
+    for finding in findings:
+        if finding.type != "DESCRIPTION_MISMATCH":
+            continue
+        if finding.file_path not in findings_by_file:
+            findings_by_file[finding.file_path] = []
+        findings_by_file[finding.file_path].append(finding)
+
+    for file_path, file_findings in findings_by_file.items():
+        if not file_path.exists():
+            continue
+
+        content = file_path.read_text(encoding="utf-8")
+        lines = content.splitlines(keepends=True)
+        modified = False
+
+        # Process findings in reverse order to maintain line numbers
+        for finding in sorted(file_findings, key=lambda f: -1):
+            code = finding.code
+            if code not in cs_descriptions:
+                continue
+
+            cs_desc = cs_descriptions[code].description
+            ruleset_name = finding.requirement_key.split(":", 1)[1]
+
+            # Find the ruleset and its errorCode line
+            for i, line in enumerate(lines):
+                if f"RuleSet: {ruleset_name}" in line:
+                    # Found the ruleset, now look for the errorCode
+                    for j in range(i + 1, min(i + 20, len(lines))):
+                        if f'extension[errorCode].valueString = "{code}"' in lines[j]:
+                            # Found the error code, now find and replace the description before it
+                            for k in range(j - 1, max(i, j - 10), -1):
+                                if "extension[description].valueString" in lines[k]:
+                                    # Replace this line's description
+                                    old_line = lines[k]
+                                    new_line = re.sub(
+                                        r'(extension\[description\]\.valueString\s*=\s*)"[^"]*"',
+                                        rf'\1"{cs_desc}"',
+                                        old_line,
+                                    )
+                                    if new_line != old_line:
+                                        lines[k] = new_line
+                                        modified = True
+                                        print(f"  [FIX] Updated description for {code} in {ruleset_name}")
+                                    break
+                            break
+                    break
+
+        if modified:
+            file_path.write_text("".join(lines), encoding="utf-8")
+            fixes_applied += 1
+
+    return fixes_applied
+
+
 def _to_ruleset_name(code: str) -> str:
     """Convert an error code string like TIFLOW_SECRET_MISMATCH to TIFLOWSecretMismatch."""
     parts = code.split("_")
     return "".join(p.capitalize() for p in parts)
+
+
+def _endpoint_to_default_ruleset(endpoint: str) -> Optional[str]:
+    if not endpoint.startswith("op:"):
+        return None
+    op_name = endpoint.split(":", 1)[1]
+    return "Task" + "".join(part.capitalize() for part in op_name.split("-")) + "OperationStatusCodes"
+
+
+def _extract_endpoint_from_message(message: str) -> Optional[str]:
+    m = re.search(r"Endpoint '([^']+)'", message)
+    return m.group(1) if m else None
+
+
+def _ensure_capability_endpoint_mapping(cap_file: Path, endpoint: str, endpoint_rule: str) -> bool:
+    if not cap_file.exists() or not endpoint.startswith("op:"):
+        return False
+
+    op_name = endpoint.split(":", 1)[1]
+    lines = cap_file.read_text(encoding="utf-8").splitlines()
+
+    op_line_re = re.compile(r'^\s*\*\s*insert\s+CapSupport(?:Resource|System)Operation\(' + re.escape(op_name) + r',')
+    insert_re = re.compile(r'^\s*\*\s*(?:rest\.[^\s]+\s+)?insert\s+([A-Za-z0-9_\-]+)\s*$')
+
+    for i, line in enumerate(lines):
+        if not op_line_re.match(line):
+            continue
+
+        # If already mapped nearby, nothing to do.
+        for j in range(i + 1, min(i + 8, len(lines))):
+            nxt = lines[j].strip()
+            if not nxt:
+                continue
+            m_insert = insert_re.match(nxt)
+            if m_insert:
+                return True
+            if nxt.startswith("* insert Cap") or nxt.startswith("RuleSet:"):
+                break
+
+        indent = line[: len(line) - len(line.lstrip())]
+        lines.insert(i + 1, f"{indent}* insert {endpoint_rule}")
+        cap_file.write_text("\n".join(lines) + "\n", encoding="utf-8")
+        return True
+
+    return False
+
+
+def _wrapper_insert_line(resp_def_content: str, endpoint_rule: str, rs_name: str) -> Optional[str]:
+    wrapper_header = f"RuleSet: {endpoint_rule}"
+    if wrapper_header not in resp_def_content:
+        return None
+
+    wrapper_start = resp_def_content.index(wrapper_header)
+    next_ruleset = resp_def_content.find("\nRuleSet:", wrapper_start + len(wrapper_header))
+    wrapper_section = resp_def_content[wrapper_start: next_ruleset if next_ruleset != -1 else len(resp_def_content)]
+
+    already_re = re.compile(r'^\s*\*\s*(?:rest\.[^\s]+\s+)?insert\s+' + re.escape(rs_name) + r'\s*$', re.MULTILINE)
+    if already_re.search(wrapper_section):
+        return None
+
+    prefix = ""
+    for line in wrapper_section.splitlines():
+        m = re.match(r'^\s*\*\s*(rest\.[^\s]+\s+)insert\s+[A-Za-z0-9_\-]+\s*$', line)
+        if m:
+            prefix = m.group(1)
+            break
+    return f"* {prefix}insert {rs_name}\n"
 
 
 def fix_cs_vs(findings: List[Finding], ig_roots: Dict[str, Path], error_codes: List[ErrorCode]) -> int:
@@ -625,7 +901,7 @@ def fix_cs_vs(findings: List[Finding], ig_roots: Dict[str, Path], error_codes: L
 
 
 def fix_capstat(findings: List[Finding], ig_roots: Dict[str, Path], error_codes: List[ErrorCode]) -> int:
-    """Auto-fix CAPSTAT_MISSING_CODE findings. Returns number of fixes applied."""
+    """Auto-fix CAPSTAT_ENDPOINT_NOT_MAPPED and CAPSTAT_MISSING_CODE findings. Returns number of fixes applied."""
     fixes_applied = 0
 
     # Build code -> ErrorCode info lookup
@@ -634,15 +910,36 @@ def fix_capstat(findings: List[Finding], ig_roots: Dict[str, Path], error_codes:
         if ec.code not in code_info:
             code_info[ec.code] = ec
 
+    # First, ensure endpoint mappings exist for CAPSTAT_ENDPOINT_NOT_MAPPED findings.
+    for finding in findings:
+        if finding.type != "CAPSTAT_ENDPOINT_NOT_MAPPED":
+            continue
+        endpoint = _extract_endpoint_from_message(finding.message)
+        if not endpoint:
+            continue
+        endpoint_rule = _endpoint_to_default_ruleset(endpoint)
+        if not endpoint_rule:
+            continue
+
+        ig_root = ig_roots.get(finding.ig_module)
+        if not ig_root:
+            continue
+
+        cap_file = ig_root / "input" / "fsh" / "capabilitystatement" / "ERPCapabilityStatementServer.fsh"
+        resp_def_file = ig_root / "input" / "fsh" / "capabilitystatement" / "rulesets" / "ERPCapabilityStatementRulesetsResponseDefinition.fsh"
+
+        if _ensure_capability_endpoint_mapping(cap_file, endpoint, endpoint_rule):
+            print(f"  [FIX] Mapped endpoint '{endpoint}' to '{endpoint_rule}' in {cap_file.name}")
+            fixes_applied += 1
+
     # Group all CAPSTAT_MISSING_CODE findings by (module, endpoint)
     missing_by_endpoint: Dict[Tuple[str, str], List[Finding]] = {}
-    _endpoint_from_msg = re.compile(r"Endpoint '([^']+)'")
     for finding in findings:
         if finding.type == "CAPSTAT_MISSING_CODE":
-            m = _endpoint_from_msg.search(finding.message)
-            if not m:
+            endpoint = _extract_endpoint_from_message(finding.message)
+            if not endpoint:
                 continue
-            key = (finding.ig_module, m.group(1))
+            key = (finding.ig_module, endpoint)
             missing_by_endpoint.setdefault(key, []).append(finding)
 
     for (module, endpoint), endpoint_findings in missing_by_endpoint.items():
@@ -687,32 +984,27 @@ def fix_capstat(findings: List[Finding], ig_roots: Dict[str, Path], error_codes:
                 print(f"  [FIX] Added RuleSet {rs_name} to {resp_file.name}")
                 fixes_applied += 1
 
-            # 2. Insert `* insert <RuleSetName>` into the wrapper RuleSet in resp_def_file
-            # Find the wrapper RuleSet section and append the insert line
+            # 2. Insert `* insert <RuleSetName>` into the wrapper RuleSet in resp_def_file.
             wrapper_header = f"RuleSet: {endpoint_rule}"
             if wrapper_header not in resp_def_content:
                 print(f"  [SKIP] Wrapper RuleSet '{endpoint_rule}' not found in {resp_def_file}")
                 continue
 
-            # Check if already inserted
-            insert_stmt = f"* insert {rs_name}"
-            # Check within the specific wrapper section
-            wrapper_start = resp_def_content.index(wrapper_header)
-            next_ruleset = resp_def_content.find("\nRuleSet:", wrapper_start + len(wrapper_header))
-            wrapper_section = resp_def_content[wrapper_start: next_ruleset if next_ruleset != -1 else len(resp_def_content)]
-            if insert_stmt in wrapper_section:
+            insert_line = _wrapper_insert_line(resp_def_content, endpoint_rule, rs_name)
+            if insert_line is None:
                 continue
 
-            # Insert the new `* insert <RuleSetName>` line at end of this wrapper RuleSet section
+            wrapper_start = resp_def_content.index(wrapper_header)
+            next_ruleset = resp_def_content.find("\nRuleSet:", wrapper_start + len(wrapper_header))
             if next_ruleset != -1:
                 insert_pos = next_ruleset
                 new_def_content = (
                     resp_def_content[:insert_pos]
-                    + f"* insert {rs_name}\n"
+                    + insert_line
                     + resp_def_content[insert_pos:]
                 )
             else:
-                new_def_content = resp_def_content.rstrip("\n") + f"\n* insert {rs_name}\n"
+                new_def_content = resp_def_content.rstrip("\n") + "\n" + insert_line
 
             resp_def_file.write_text(new_def_content, encoding="utf-8")
             resp_def_content = resp_def_file.read_text(encoding="utf-8")
@@ -730,7 +1022,12 @@ def main() -> int:
     parser.add_argument(
         "--fix",
         action="store_true",
-        help="Auto-fix MISSING_IN_CS, MISSING_IMPORT, and CAPSTAT_MISSING_CODE findings",
+        help="Auto-fix MISSING_IN_CS, MISSING_IMPORT, CAPSTAT_ENDPOINT_NOT_MAPPED, CAPSTAT_MISSING_CODE, and DESCRIPTION_MISMATCH findings",
+    )
+    parser.add_argument(
+        "--report-capstat-extra",
+        action="store_true",
+        help="Also report CAPSTAT_EXTRA_CODE findings (off by default to avoid baseline-noise)",
     )
     parser.add_argument(
         "--output-csv",
@@ -756,16 +1053,29 @@ def main() -> int:
 
     findings = []
     findings.extend(check_cs_vs_consistency(error_codes, ig_roots))
-    findings.extend(check_capabilitystatement_consistency(error_codes, ig_roots))
+    findings.extend(check_capabilitystatement_consistency(error_codes, ig_roots, include_extra=args.report_capstat_extra))
+    findings.extend(check_description_consistency(ig_roots))
 
     if args.fix and findings:
         print("\n==> Applying auto-fixes...")
-        fix_cs_vs(findings, ig_roots, error_codes)
-        fix_capstat(findings, ig_roots, error_codes)
-        print("\nRe-running checks after fixes...")
-        findings = []
-        findings.extend(check_cs_vs_consistency(error_codes, ig_roots))
-        findings.extend(check_capabilitystatement_consistency(error_codes, ig_roots))
+        for _pass in range(3):
+            applied = 0
+            applied += fix_cs_vs(findings, ig_roots, error_codes)
+            applied += fix_capstat(findings, ig_roots, error_codes)
+            applied += fix_description_mismatches(findings, ig_roots)
+
+            print("\nRe-running checks after fixes...")
+            findings = []
+            findings.extend(check_cs_vs_consistency(error_codes, ig_roots))
+            findings.extend(
+                check_capabilitystatement_consistency(error_codes, ig_roots, include_extra=args.report_capstat_extra)
+            )
+            findings.extend(check_description_consistency(ig_roots))
+
+            if not findings:
+                break
+            if applied == 0:
+                break
 
     csv_path = Path(args.output_csv)
     csv_path.parent.mkdir(parents=True, exist_ok=True)

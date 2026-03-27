@@ -71,6 +71,7 @@ RuleSet: TaskCreateOperationStatusCodes
 * rest.resource[=].operation[=] insert InvalidRequest
 * rest.resource[=].operation[=] insert ResourceIsNotKnown
 * rest.resource[=].operation[=] insert ResourceWasDeleted
+* rest.resource[=].operation[=] insert SvcValidationFailed
 
 RuleSet: TaskNoContentOperationStatusCodes
 * rest.resource[=].operation[=] insert SuccessfulNoContent
@@ -118,14 +119,30 @@ RuleSet: TaskPatchInteractionStatusCodes
 
 RuleSet: TaskActivateOperationStatusCodes
 * insert TaskPostOperationStatusCodes
+* insert SvcValidationFailed
+* insert TiflowAccesscodeMismatch
+* insert TiflowAuthRoleNotAllowed
+* insert TiflowFlowtypeMismatch
+* insert TiflowIknrInvalid
+* insert TiflowKvnrInvalid
+* insert TiflowLanrZanrInvalid
+* insert TiflowRxPznInvalid
+* insert TiflowSignatureAuthoredonMismatch
+* insert TiflowSignatureInvalid
+* insert TiflowTaskStatusMismatch
 
 RuleSet: TaskAcceptOperationStatusCodes
 * insert TaskPostOperationStatusCodes
+* insert TiflowAccesscodeMismatch
+* insert TiflowTaskDeleted
+* insert TiflowTaskExpired
+* insert TiflowTaskStatusMismatch
 
 RuleSet: TaskRejectOperationStatusCodes
 * insert TaskNoContentOperationStatusCodes
 * insert TiflowInvalidTaskStatus
 * insert TiflowSecretMismatch
+* insert TiflowTaskStatusMismatch
 
 RuleSet: TaskCloseOperationStatusCodes
 * insert TaskPostOperationStatusCodes
@@ -133,9 +150,13 @@ RuleSet: TaskCloseOperationStatusCodes
 * insert TiflowInvalidTaskStatus
 * insert TiflowSecretMismatch
 * insert TiflowSignatureNoOcspResponse
+* insert TiflowTaskStatusMismatch
 
 RuleSet: TaskAbortOperationStatusCodes
 * insert TaskNoContentOperationStatusCodes
+* insert SvcIdentityMismatch
+* insert TiflowAccesscodeMismatch
+* insert TiflowTaskStatusMismatch
 
 RuleSet: TaskDispenseOperationStatusCodes
 * insert TaskPostOperationStatusCodes

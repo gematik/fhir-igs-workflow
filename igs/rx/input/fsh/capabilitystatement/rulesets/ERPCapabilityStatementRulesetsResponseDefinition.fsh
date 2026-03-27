@@ -56,6 +56,7 @@ RuleSet: TaskCreateOperationStatusCodes
 * rest.resource[=].operation[=] insert InvalidRequest
 * rest.resource[=].operation[=] insert ResourceIsNotKnown
 * rest.resource[=].operation[=] insert ResourceWasDeleted
+* rest.resource[=].operation[=] insert SvcValidationFailed
 
 RuleSet: TaskNoContentOperationStatusCodes
 * rest.resource[=].operation[=] insert SuccessfulNoContent
@@ -71,14 +72,41 @@ RuleSet: TaskReadInteractionStatusCodes
 
 RuleSet: TaskActivateOperationStatusCodes
 * insert TaskPostOperationStatusCodes
+* insert SvcValidationFailed
+* insert TiflowAccesscodeMismatch
+* insert TiflowAuthRoleNotAllowed
+* insert TiflowCoverageTypeMismatch
+* insert TiflowFlowtypeMismatch
+* insert TiflowIknrInvalid
+* insert TiflowKvnrInvalid
+* insert TiflowLanrZanrInvalid
+* insert TiflowRxDrugCategoryForbidden
+* insert TiflowRxMvoEnddateInvalid
+* insert TiflowRxMvoFlowtypeInvalid
+* insert TiflowRxMvoIdInvalid
+* insert TiflowRxMvoInvalid
+* insert TiflowRxMvoStartdateInvalid
+* insert TiflowRxPznInvalid
+* insert TiflowSignatureAuthoredonMismatch
+* insert TiflowSignatureInvalid
+* insert TiflowSignatureInvalidIssuingRole
+* insert TiflowTaskStatusMismatch
 
 RuleSet: TaskAcceptOperationStatusCodes
 * insert TaskPostOperationStatusCodes
+* insert TiflowAccesscodeMismatch
+* insert TiflowAuthRoleNotAllowed
+* insert TiflowRxMvoNotValid
+* insert TiflowTaskDeleted
+* insert TiflowTaskExpired
+* insert TiflowTaskStatusMismatch
 
 RuleSet: TaskRejectOperationStatusCodes
 * insert TaskNoContentOperationStatusCodes
 * insert TiflowInvalidTaskStatus
 * insert TiflowSecretMismatch
+* insert TiflowAuthRoleNotAllowed
+* insert TiflowTaskStatusMismatch
 
 RuleSet: TaskCloseOperationStatusCodes
 * insert TaskPostOperationStatusCodes
@@ -88,12 +116,23 @@ RuleSet: TaskCloseOperationStatusCodes
 * insert TiflowMedicationDispenseMissing
 * insert TiflowSecretMismatch
 * insert TiflowSignatureNoOcspResponse
+* insert TiflowMedicationDispenseInvalid
+* insert TiflowTaskStatusMismatch
 
 RuleSet: TaskAbortOperationStatusCodes
 * insert TaskNoContentOperationStatusCodes
+* insert SvcIdentityMismatch
+* insert TiflowAccesscodeMismatch
+* insert TiflowAuthRoleNotAllowed
+* insert TiflowSecretMismatch
+* insert TiflowTaskStatusMismatch
 
 RuleSet: TaskDispenseOperationStatusCodes
 * insert TaskPostOperationStatusCodes
+* insert SvcValidationFailed
+* insert TiflowAuthRoleNotAllowed
+* insert TiflowSecretMismatch
+* insert TiflowTaskStatusMismatch
 
 RuleSet: CommunicationSearchTypeInteractionStatusCodes
 * insert SearchTypeInteractionStatusCodes
@@ -112,3 +151,4 @@ RuleSet: MedicationDispenseSearchTypeInteractionStatusCodes
 
 RuleSet: MedicationDispenseReadInteractionStatusCodes
 * insert ReadInteractionStatusCodes
+

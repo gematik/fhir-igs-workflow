@@ -56,6 +56,7 @@ RuleSet: TaskCreateOperationStatusCodes
 * rest.resource[=].operation[=] insert InvalidRequest
 * rest.resource[=].operation[=] insert ResourceIsNotKnown
 * rest.resource[=].operation[=] insert ResourceWasDeleted
+* rest.resource[=].operation[=] insert SvcValidationFailed
 
 RuleSet: TaskNoContentOperationStatusCodes
 * rest.resource[=].operation[=] insert SuccessfulNoContent
@@ -74,14 +75,35 @@ RuleSet: TaskPatchInteractionStatusCodes
 
 RuleSet: TaskActivateOperationStatusCodes
 * insert TaskPostOperationStatusCodes
+* insert SvcValidationFailed
+* insert TiflowAccesscodeMismatch
+* insert TiflowAlternativeIkForbidden
+* insert TiflowAuthRoleNotAllowed
+* insert TiflowCoverageTypeMismatch
+* insert TiflowFlowtypeMismatch
+* insert TiflowIknrInvalid
+* insert TiflowKvnrInvalid
+* insert TiflowLanrZanrInvalid
+* insert TiflowRxPznInvalid
+* insert TiflowSignatureAuthoredonMismatch
+* insert TiflowSignatureInvalid
+* insert TiflowSignatureInvalidIssuingRole
+* insert TiflowTaskStatusMismatch
 
 RuleSet: TaskAcceptOperationStatusCodes
 * insert TaskPostOperationStatusCodes
+* insert TiflowAccesscodeMismatch
+* insert TiflowAuthRoleNotAllowed
+* insert TiflowTaskDeleted
+* insert TiflowTaskExpired
+* insert TiflowTaskStatusMismatch
 
 RuleSet: TaskRejectOperationStatusCodes
 * insert TaskNoContentOperationStatusCodes
 * insert TiflowInvalidTaskStatus
 * insert TiflowSecretMismatch
+* insert TiflowAuthRoleNotAllowed
+* insert TiflowTaskStatusMismatch
 
 RuleSet: TaskCloseOperationStatusCodes
 * insert TaskPostOperationStatusCodes
@@ -90,9 +112,16 @@ RuleSet: TaskCloseOperationStatusCodes
 * insert TiflowInvalidTaskStatus
 * insert TiflowSecretMismatch
 * insert TiflowSignatureNoOcspResponse
+* insert TiflowAuthRoleNotAllowed
+* insert TiflowMedicationDispenseInvalid
+* insert TiflowTaskStatusMismatch
 
 RuleSet: TaskAbortOperationStatusCodes
 * insert TaskNoContentOperationStatusCodes
+* insert SvcIdentityMismatch
+* insert TiflowAccesscodeMismatch
+* insert TiflowAuthRoleNotAllowed
+* insert TiflowTaskStatusMismatch
 
 RuleSet: CommunicationSearchTypeInteractionStatusCodes
 * insert SearchTypeInteractionStatusCodes
@@ -111,3 +140,4 @@ RuleSet: MedicationDispenseSearchTypeInteractionStatusCodes
 
 RuleSet: MedicationDispenseReadInteractionStatusCodes
 * insert ReadInteractionStatusCodes
+

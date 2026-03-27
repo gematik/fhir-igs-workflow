@@ -48,6 +48,7 @@ RuleSet: TaskInteraction(expectation)
 * insert CapSupportResourceSearchParamNoDefinition(__offset, #number, {expectation}, "Nullbasierter Offset des ersten zurückgegebenen Eintrags; default is 0")
 
 * insert CapSupportResourceOperation(eu-close, EUCloseOperation, {expectation}, "Finishes the EU ePrescription workflow and creates a signed receipt bundle")
+* insert EuCloseOperationStatusCodes
 
 RuleSet: ConsentInteraction(expectation)
 * insert CapSupportResource(Consent, {expectation})
