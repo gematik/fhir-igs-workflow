@@ -13,7 +13,7 @@ Die hier beschriebene Richtlinie funktioniert nach einem einfachen Prinzip: Ein 
 
 Im Folgenden werden die Prüfungen beschrieben, die ein anfragendes System erfolgreich durchlaufen muss.
 
-#### Prüfung des Berufs oder der Einrichtungsart
+##### Prüfung des Berufs oder der Einrichtungsart
 
 Diese Regel stellt sicher, dass nur bestimmte Berufsgruppen oder Arten von Einrichtungen auf das System zugreifen dürfen. Technisch wird dies über eine sogenannte OID (Object Identifier) geprüft, eine eindeutige Kennung für jeden Beruf oder jede Einrichtung.
 
@@ -23,7 +23,7 @@ Es wird die Berufs- bzw. Einrichtungs-OID des anfragenden Nutzers bzw. der anfra
 **Wer darf zugreifen?**
 Folgende Berufe und Einrichtungsarten sind zugelassen:
 
-#### Akteure & OIDs
+##### Akteure & OIDs
 
 | Akteur | OID(s) | Kurzname |
 |---|---|---|
@@ -38,7 +38,7 @@ Folgende Berufe und Einrichtungsarten sind zugelassen:
 | Kostenträger | `1.2.276.0.76.4.59` | `KT` |
 | NCPeH-FD / EU | `1.2.276.0.76.4.292` | `NCPEH` |
 
-#### Prüfung der Client-Anwendung
+##### Prüfung der Client-Anwendung
 
 Diese Regel verifiziert, dass die verwendete Software (der "Client") und deren Version für den Zugriff bei der gematik registriert sind. Jede Software, die auf das System zugreifen möchte, identifiziert sich mit einer Produktkennung und einer Versionsnummer.
 
@@ -54,7 +54,7 @@ Es wird geprüft, ob die Kombination aus Produkt und Version in einer Liste der 
 
 Eine Anfrage von Produkt A in Version 1.2 wäre erfolgreich, eine Anfrage in Version 1.1 würde jedoch scheitern.
 
-#### Prüfung der angeforderten Berechtigungen (Scopes)
+##### Prüfung der angeforderten Berechtigungen (Scopes)
 
 Diese Regel stellt sicher, dass die anfragende Anwendung nur die Berechtigungen anfordert, die ihr auch gewährt werden dürfen. Anwendungen können bestimmte "Scopes" anfordern, die ihnen Lese- oder Schreibzugriff auf bestimmte Datenbereiche gewähren.
 
@@ -63,8 +63,8 @@ Es wird die Liste der von der Anwendung angeforderten Berechtigungen mit der Lis
 
 **Beispiel:**
 
-* Erlaubte Berechtigungen sind: `task:read`
-* Anwendung fordert an: `task:read` -> **Erfolg**
+* Erlaubte Berechtigungen sind: `task.read`
+* Anwendung fordert an: `task.read` -> **Erfolg**
 * Anwendung fordert an: `/erezept` -> **Fehler** (da `/erezept` nicht erlaubt ist)
 
 #### Akteure und Ressourcen der Anwendung TI-Flow
@@ -82,7 +82,7 @@ Die Scopes leiten sich daraus ab.
 
 Die Verbindungen von Akteuren und Use Cases erzeugen die folgende Scope Definition. Sie ist unter Referenzen aufgeführt.
 
-#### Prüfung der Ziel-Ressource (Audience)
+##### Prüfung der Ziel-Ressource (Audience)
 
 Diese Regel kontrolliert, auf welche Zielsysteme oder Datenbereiche ("Audiences") zugegriffen werden darf. Dies ist eine zusätzliche Sicherheitsebene, um sicherzustellen, dass ein Zugriffstoken nur für den vorgesehenen Zweck verwendet wird.
 
@@ -120,7 +120,7 @@ Es gibt zwei Arten von Token:
 
 #### Referenzen
 
-### Vollständige Policy-Definition
+##### Vollständige Policy-Definition
 
 ```yaml
 
@@ -131,7 +131,7 @@ policies:
   - name: task_create
     description: "POST /Task/$create – Rezept anlegen"
     scopes:
-      - "task:create"
+      - "task.create"
     allowed_professions:
       - "1.2.276.0.76.4.50"   # oid_praxis_arzt
       - "1.2.276.0.76.4.51"   # oid_zahnarztpraxis
@@ -142,7 +142,7 @@ policies:
   - name: task_activate
     description: "POST /Task/<id>/$activate – Rezept aktivieren"
     scopes:
-      - "task:activate"
+      - "task.activate"
     allowed_professions:
       - "1.2.276.0.76.4.50"   # oid_praxis_arzt
       - "1.2.276.0.76.4.51"   # oid_zahnarztpraxis
@@ -153,7 +153,7 @@ policies:
   - name: task_get_list
     description: "GET /Task – Rezeptliste abrufen"
     scopes:
-      - "task:read"
+      - "task.read"
     allowed_professions:
       - "1.2.276.0.76.4.49"   # oid_versicherter
       - "1.2.276.0.76.4.54"   # oid_oeffentliche_apotheke
@@ -162,7 +162,7 @@ policies:
   - name: task_get_single
     description: "GET /Task/<id> – Einzelrezept abrufen"
     scopes:
-      - "task:read:single"
+      - "task.read.single"
     allowed_professions:
       - "1.2.276.0.76.4.49"   # oid_versicherter
       - "1.2.276.0.76.4.54"   # oid_oeffentliche_apotheke
@@ -172,7 +172,7 @@ policies:
   - name: task_accept
     description: "POST /Task/<id>/$accept – Rezept annehmen"
     scopes:
-      - "task:accept"
+      - "task.accept"
     allowed_professions:
       - "1.2.276.0.76.4.54"   # oid_oeffentliche_apotheke
       - "1.2.276.0.76.4.55"   # oid_krankenhausapotheke
@@ -181,7 +181,7 @@ policies:
   - name: task_reject
     description: "POST /Task/<id>/$reject – Rezept zurückweisen"
     scopes:
-      - "task:reject"
+      - "task.reject"
     allowed_professions:
       - "1.2.276.0.76.4.54"   # oid_oeffentliche_apotheke
       - "1.2.276.0.76.4.55"   # oid_krankenhausapotheke
@@ -190,7 +190,7 @@ policies:
   - name: task_dispense
     description: "POST /Task/<id>/$dispense – Dispensierinfo bereitstellen"
     scopes:
-      - "task:dispense"
+      - "task.dispense"
     allowed_professions:
       - "1.2.276.0.76.4.54"   # oid_oeffentliche_apotheke
       - "1.2.276.0.76.4.55"   # oid_krankenhausapotheke
@@ -198,7 +198,7 @@ policies:
   - name: task_close
     description: "POST /Task/<id>/$close – Rezept abschließen"
     scopes:
-      - "task:close"
+      - "task.close"
     allowed_professions:
       - "1.2.276.0.76.4.54"   # oid_oeffentliche_apotheke
       - "1.2.276.0.76.4.55"   # oid_krankenhausapotheke
@@ -207,7 +207,7 @@ policies:
   - name: task_abort
     description: "POST /Task/<id>/$abort – Rezept löschen"
     scopes:
-      - "task:abort"
+      - "task.abort"
     allowed_professions:
       - "1.2.276.0.76.4.49"   # oid_versicherter
       - "1.2.276.0.76.4.50"   # oid_praxis_arzt
@@ -221,14 +221,14 @@ policies:
   - name: task_patch
     description: "PATCH /Task/<id> – EU-Markierung setzen"
     scopes:
-      - "task:patch"
+      - "task.patch"
     allowed_professions:
       - "1.2.276.0.76.4.49"   # oid_versicherter
 
   - name: task_eu_close
     description: "POST /Task/<id>/$eu-close – EU-Rezept abschließen"
     scopes:
-      - "task:eu-close"
+      - "task.eu-close"
     allowed_professions:
       - "1.2.276.0.76.4.292"  # oid_ncpeh
 
@@ -237,7 +237,7 @@ policies:
   - name: medicationdispense_read
     description: "GET /MedicationDispense – Abgabeinfo abrufen"
     scopes:
-      - "medicationdispense:read"
+      - "medicationdispense.read"
     allowed_professions:
       - "1.2.276.0.76.4.49"   # oid_versicherter
 
@@ -246,14 +246,14 @@ policies:
   - name: chargeitem_list
     description: "GET /ChargeItem – Abrechnungsliste abrufen"
     scopes:
-      - "chargeitem:read"
+      - "chargeitem.read"
     allowed_professions:
       - "1.2.276.0.76.4.49"   # oid_versicherter
 
   - name: chargeitem_get
     description: "GET /ChargeItem/<id> – Abrechnungsdetail abrufen"
     scopes:
-      - "chargeitem:read:single"
+      - "chargeitem.read.single"
     allowed_professions:
       - "1.2.276.0.76.4.49"   # oid_versicherter
       - "1.2.276.0.76.4.54"   # oid_oeffentliche_apotheke
@@ -262,7 +262,7 @@ policies:
   - name: chargeitem_post
     description: "POST /ChargeItem – Abrechnung bereitstellen"
     scopes:
-      - "chargeitem:write"
+      - "chargeitem.write"
     allowed_professions:
       - "1.2.276.0.76.4.54"   # oid_oeffentliche_apotheke
       - "1.2.276.0.76.4.55"   # oid_krankenhausapotheke
@@ -270,7 +270,7 @@ policies:
   - name: chargeitem_put
     description: "PUT /ChargeItem/<id> – Abrechnung aktualisieren"
     scopes:
-      - "chargeitem:update"
+      - "chargeitem.update"
     allowed_professions:
       - "1.2.276.0.76.4.54"   # oid_oeffentliche_apotheke
       - "1.2.276.0.76.4.55"   # oid_krankenhausapotheke
@@ -278,14 +278,14 @@ policies:
   - name: chargeitem_patch
     description: "PATCH /ChargeItem/<id> – Markierung setzen"
     scopes:
-      - "chargeitem:patch"
+      - "chargeitem.patch"
     allowed_professions:
       - "1.2.276.0.76.4.49"   # oid_versicherter
 
   - name: chargeitem_delete
     description: "DELETE /ChargeItem/<id> – Abrechnung löschen"
     scopes:
-      - "chargeitem:delete"
+      - "chargeitem.delete"
     allowed_professions:
       - "1.2.276.0.76.4.49"   # oid_versicherter
 
@@ -294,21 +294,21 @@ policies:
   - name: consent_read
     description: "GET /Consent – Einwilligung lesen"
     scopes:
-      - "consent:read"
+      - "consent.read"
     allowed_professions:
       - "1.2.276.0.76.4.49"   # oid_versicherter
 
   - name: consent_write
     description: "POST /Consent – Einwilligung erteilen"
     scopes:
-      - "consent:write"
+      - "consent.write"
     allowed_professions:
       - "1.2.276.0.76.4.49"   # oid_versicherter
 
   - name: consent_delete
     description: "DELETE /Consent – Einwilligung widerrufen"
     scopes:
-      - "consent:delete"
+      - "consent.delete"
     allowed_professions:
       - "1.2.276.0.76.4.49"   # oid_versicherter
 
@@ -317,7 +317,7 @@ policies:
   - name: communication_read
     description: "GET /Communication – Nachrichten abrufen"
     scopes:
-      - "communication:read"
+      - "communication.read"
     allowed_professions:
       - "1.2.276.0.76.4.49"   # oid_versicherter
       - "1.2.276.0.76.4.54"   # oid_oeffentliche_apotheke
@@ -326,14 +326,14 @@ policies:
   - name: communication_read_diga
     description: "GET /Communication – Nachrichten abrufen die DiGA-Aktivierungscode enthalten"
     scopes:
-      - "communication:read:freischaltcode"
+      - "communication.read.freischaltcode"
     allowed_professions:
       - "1.2.276.0.76.4.59"   # oid_kostentraeger
 
   - name: communication_write
     description: "POST /Communication – Nachricht senden"
     scopes:
-      - "communication:write"
+      - "communication.write"
     allowed_professions:
       - "1.2.276.0.76.4.49"   # oid_versicherter
       - "1.2.276.0.76.4.54"   # oid_oeffentliche_apotheke
@@ -342,7 +342,7 @@ policies:
   - name: communication_delete
     description: "DELETE /Communication/<id> – Nachricht löschen"
     scopes:
-      - "communication:delete"
+      - "communication.delete"
     allowed_professions:
       - "1.2.276.0.76.4.49"   # oid_versicherter
       - "1.2.276.0.76.4.54"   # oid_oeffentliche_apotheke
@@ -353,7 +353,7 @@ policies:
   - name: auditevent_read
     description: "GET /AuditEvent – Zugriffsprotokoll abrufen"
     scopes:
-      - "auditevent:read"
+      - "auditevent.read"
     allowed_professions:
       - "1.2.276.0.76.4.49"   # oid_versicherter
 
@@ -362,28 +362,28 @@ policies:
   - name: eu_access_grant
     description: "POST /$grant-eu-access-permission – EU-Berechtigung erteilen"
     scopes:
-      - "eu:access:grant"
+      - "eu.access.grant"
     allowed_professions:
       - "1.2.276.0.76.4.49"   # oid_versicherter
 
   - name: eu_access_revoke
     description: "DELETE /$revoke-eu-access-permission – EU-Berechtigung löschen"
     scopes:
-      - "eu:access:revoke"
+      - "eu.access.revoke"
     allowed_professions:
       - "1.2.276.0.76.4.49"   # oid_versicherter
 
   - name: eu_access_read
     description: "GET /$read-eu-access-permission – EU-Berechtigung lesen"
     scopes:
-      - "eu:access:read"
+      - "eu.access.read"
     allowed_professions:
       - "1.2.276.0.76.4.49"   # oid_versicherter
 
   - name: eu_get_prescriptions
     description: "POST /$get-eu-prescriptions – EU-Verordnungen abrufen"
     scopes:
-      - "eu:prescriptions:get"
+      - "eu.prescriptions.get"
     allowed_professions:
       - "1.2.276.0.76.4.292"  # oid_ncpeh
 
@@ -392,7 +392,7 @@ policies:
   - name: subscription_write
     description: "POST /Subscription – Benachrichtigung registrieren"
     scopes:
-      - "subscription:write"
+      - "subscription.write"
     allowed_professions:
       - "1.2.276.0.76.4.54"   # oid_oeffentliche_apotheke
       - "1.2.276.0.76.4.55"   # oid_krankenhausapotheke
@@ -401,28 +401,28 @@ policies:
   - name: pushers_read
     description: "GET /pushers – Registrierungen abrufen"
     scopes:
-      - "pushers:read"
+      - "pushers.read"
     allowed_professions:
       - "1.2.276.0.76.4.49"   # oid_versicherter
 
   - name: pushers_write
     description: "POST /pushers/set – App registrieren"
     scopes:
-      - "pushers:write"
+      - "pushers.write"
     allowed_professions:
       - "1.2.276.0.76.4.49"   # oid_versicherter
 
   - name: channels_read
     description: "GET /channels – Kanäle lesen"
     scopes:
-      - "channels:read"
+      - "channels.read"
     allowed_professions:
       - "1.2.276.0.76.4.49"   # oid_versicherter
 
   - name: channels_write
     description: "POST /channels – Kanäle konfigurieren"
     scopes:
-      - "channels:write"
+      - "channels.write"
     allowed_professions:
       - "1.2.276.0.76.4.49"   # oid_versicherter
 ```
@@ -436,41 +436,41 @@ policies:
   "access_token_ttl": 300,
   "refresh_token_ttl": 43200,
   "allowed_scopes": [
-    "task:create",
-    "task:activate",
-    "task:read",
-    "task:read:single",
-    "task:accept",
-    "task:reject",
-    "task:dispense",
-    "task:close",
-    "task:abort",
-    "task:patch",
-    "task:eu-close",
-    "medicationdispense:read",
-    "chargeitem:read",
-    "chargeitem:read:single",
-    "chargeitem:write",
-    "chargeitem:update",
-    "chargeitem:patch",
-    "chargeitem:delete",
-    "consent:read",
-    "consent:write",
-    "consent:delete",
-    "communication:read",
-    "communication:read:freischaltcode",
-    "communication:write",
-    "communication:delete",
-    "auditevent:read",
-    "eu:access:grant",
-    "eu:access:revoke",
-    "eu:access:read",
-    "eu:prescriptions:get",
-    "subscription:write",
-    "pushers:read",
-    "pushers:write",
-    "channels:read",
-    "channels:write"
+    "task.create",
+    "task.activate",
+    "task.read",
+    "task.read.single",
+    "task.accept",
+    "task.reject",
+    "task.dispense",
+    "task.close",
+    "task.abort",
+    "task.patch",
+    "task.eu-close",
+    "medicationdispense.read",
+    "chargeitem.read",
+    "chargeitem.read.single",
+    "chargeitem.write",
+    "chargeitem.update",
+    "chargeitem.patch",
+    "chargeitem.delete",
+    "consent.read",
+    "consent.write",
+    "consent.delete",
+    "communication.read",
+    "communication.read.freischaltcode",
+    "communication.write",
+    "communication.delete",
+    "auditevent.read",
+    "eu.access.grant",
+    "eu.access.revoke",
+    "eu.access.read",
+    "eu.prescriptions.get",
+    "subscription.write",
+    "pushers.read",
+    "pushers.write",
+    "channels.read",
+    "channels.write"
   ]
 }
 ```
@@ -481,41 +481,41 @@ policies:
 
 | Use Case | Endpoint | Scope | VERS | VERO | APO | KT | NCPEH |
 |---|---|---|:---:|:---:|:---:|:---:|:---:|
-| Rezept anlegen | `POST /Task/$create` | `task:create` | | ✔ | | | |
-| Rezept aktivieren | `POST /Task/<id>/$activate` | `task:activate` | | ✔ | | | |
-| Rezeptliste abrufen | `GET /Task` | `task:read` | ✔ | | ✔ | | |
-| Einzelrezept abrufen | `GET /Task/<id>` | `task:read:single` | ✔ | | ✔ | ✔ | |
-| Rezept annehmen | `POST /Task/<id>/$accept` | `task:accept` | | | ✔ | ✔ | |
-| Rezept zurückweisen | `POST /Task/<id>/$reject` | `task:reject` | | | ✔ | ✔ | |
-| Dispensierinfo bereitstellen | `POST /Task/<id>/$dispense` | `task:dispense` | | | ✔ | | |
-| Rezept abschließen | `POST /Task/<id>/$close` | `task:close` | | | ✔ | ✔ | |
-| Rezept löschen | `POST /Task/<id>/$abort` | `task:abort` | ✔ | ✔ | ✔ | | |
-| EU-Markierung setzen | `PATCH /Task/<id>` | `task:patch` | ✔ | | | | |
-| EU-Rezept abschließen | `POST /Task/<id>/$eu-close` | `task:eu-close` | | | | | ✔ |
-| Abgabeinfo abrufen | `GET /MedicationDispense` | `medicationdispense:read` | ✔ | | | | |
-| Abrechnungsliste abrufen | `GET /ChargeItem` | `chargeitem:read` | ✔ | | | | |
-| Abrechnungsdetail abrufen | `GET /ChargeItem/<id>` | `chargeitem:read:single` | ✔ | | ✔ | | |
-| Abrechnung bereitstellen | `POST /ChargeItem` | `chargeitem:write` | | | ✔ | | |
-| Abrechnung aktualisieren | `PUT /ChargeItem/<id>` | `chargeitem:update` | | | ✔ | | |
-| Markierung setzen | `PATCH /ChargeItem/<id>` | `chargeitem:patch` | ✔ | | | | |
-| Abrechnung löschen | `DELETE /ChargeItem/<id>` | `chargeitem:delete` | ✔ | | | | |
-| Einwilligung lesen | `GET /Consent` | `consent:read` | ✔ | | | | |
-| Einwilligung erteilen | `POST /Consent` | `consent:write` | ✔ | | | | |
-| Einwilligung widerrufen | `DELETE /Consent` | `consent:delete` | ✔ | | | | |
-| Nachrichten abrufen | `GET /Communication` | `communication:read` | ✔ | | ✔ | | |
-| DiGA-Aktivierungscode abrufen | `GET /Communication` | `communication:read:freischaltcode` | | | | ✔ | |
-| Nachricht senden | `POST /Communication` | `communication:write` | ✔ | | ✔ | | |
-| Nachricht löschen | `DELETE /Communication/<id>` | `communication:delete` | ✔ | | ✔ | | |
-| Zugriffsprotokoll abrufen | `GET /AuditEvent` | `auditevent:read` | ✔ | | | | |
-| EU-Berechtigung erteilen | `POST /$grant-eu-access-permission` | `eu:access:grant` | ✔ | | | | |
-| EU-Berechtigung löschen | `DELETE /$revoke-eu-access-permission` | `eu:access:revoke` | ✔ | | | | |
-| EU-Berechtigung lesen | `GET /$read-eu-access-permission` | `eu:access:read` | ✔ | | | | |
-| EU-Verordnungen abrufen | `POST /$get-eu-prescriptions` | `eu:prescriptions:get` | | | | | ✔ |
-| Benachrichtigung registrieren | `POST /Subscription` | `subscription:write` | | | ✔ | ✔ | |
-| Registrierungen abrufen | `GET /pushers` | `pushers:read` | ✔ | | | | |
-| App registrieren | `POST /pushers/set` | `pushers:write` | ✔ | | | | |
-| Kanäle lesen | `GET /channels` | `channels:read` | ✔ | | | | |
-| Kanäle konfigurieren | `POST /channels` | `channels:write` | ✔ | | | | |
+| Rezept anlegen | `POST /Task/$create` | `task.create` | | ✔ | | | |
+| Rezept aktivieren | `POST /Task/<id>/$activate` | `task.activate` | | ✔ | | | |
+| Rezeptliste abrufen | `GET /Task` | `task.read` | ✔ | | ✔ | | |
+| Einzelrezept abrufen | `GET /Task/<id>` | `task.read.single` | ✔ | | ✔ | ✔ | |
+| Rezept annehmen | `POST /Task/<id>/$accept` | `task.accept` | | | ✔ | ✔ | |
+| Rezept zurückweisen | `POST /Task/<id>/$reject` | `task.reject` | | | ✔ | ✔ | |
+| Dispensierinfo bereitstellen | `POST /Task/<id>/$dispense` | `task.dispense` | | | ✔ | | |
+| Rezept abschließen | `POST /Task/<id>/$close` | `task.close` | | | ✔ | ✔ | |
+| Rezept löschen | `POST /Task/<id>/$abort` | `task.abort` | ✔ | ✔ | ✔ | | |
+| EU-Markierung setzen | `PATCH /Task/<id>` | `task.patch` | ✔ | | | | |
+| EU-Rezept abschließen | `POST /Task/<id>/$eu-close` | `task.eu-close` | | | | | ✔ |
+| Abgabeinfo abrufen | `GET /MedicationDispense` | `medicationdispense.read` | ✔ | | | | |
+| Abrechnungsliste abrufen | `GET /ChargeItem` | `chargeitem.read` | ✔ | | | | |
+| Abrechnungsdetail abrufen | `GET /ChargeItem/<id>` | `chargeitem.read.single` | ✔ | | ✔ | | |
+| Abrechnung bereitstellen | `POST /ChargeItem` | `chargeitem.write` | | | ✔ | | |
+| Abrechnung aktualisieren | `PUT /ChargeItem/<id>` | `chargeitem.update` | | | ✔ | | |
+| Markierung setzen | `PATCH /ChargeItem/<id>` | `chargeitem.patch` | ✔ | | | | |
+| Abrechnung löschen | `DELETE /ChargeItem/<id>` | `chargeitem.delete` | ✔ | | | | |
+| Einwilligung lesen | `GET /Consent` | `consent.read` | ✔ | | | | |
+| Einwilligung erteilen | `POST /Consent` | `consent.write` | ✔ | | | | |
+| Einwilligung widerrufen | `DELETE /Consent` | `consent.delete` | ✔ | | | | |
+| Nachrichten abrufen | `GET /Communication` | `communication.read` | ✔ | | ✔ | | |
+| DiGA-Aktivierungscode abrufen | `GET /Communication` | `communication.read.freischaltcode` | | | | ✔ | |
+| Nachricht senden | `POST /Communication` | `communication.write` | ✔ | | ✔ | | |
+| Nachricht löschen | `DELETE /Communication/<id>` | `communication.delete` | ✔ | | ✔ | | |
+| Zugriffsprotokoll abrufen | `GET /AuditEvent` | `auditevent.read` | ✔ | | | | |
+| EU-Berechtigung erteilen | `POST /$grant-eu-access-permission` | `eu.access.grant` | ✔ | | | | |
+| EU-Berechtigung löschen | `DELETE /$revoke-eu-access-permission` | `eu.access.revoke` | ✔ | | | | |
+| EU-Berechtigung lesen | `GET /$read-eu-access-permission` | `eu.access.read` | ✔ | | | | |
+| EU-Verordnungen abrufen | `POST /$get-eu-prescriptions` | `eu.prescriptions.get` | | | | | ✔ |
+| Benachrichtigung registrieren | `POST /Subscription` | `subscription.write` | | | ✔ | ✔ | |
+| Registrierungen abrufen | `GET /pushers` | `pushers.read` | ✔ | | | | |
+| App registrieren | `POST /pushers/set` | `pushers.write` | ✔ | | | | |
+| Kanäle lesen | `GET /channels` | `channels.read` | ✔ | | | | |
+| Kanäle konfigurieren | `POST /channels` | `channels.write` | ✔ | | | | |
 
-> **Legende:** VERS = oid_versicherter · VERO = Verordnende LEI (Arzt, Zahnarzt, Psychotherapeut, Krankenhaus, Vorsorge/Reha) · APO = Abgebende LEI (öffentl. Apotheke, Krankenhausapotheke) · KT = oid_kostentraeger · NCPEH = oid_ncpeh
+> **Legende:** VERS = oid_versicherter · VERO = Verordnende LEI (Arzt, Zahnarzt, Psychotherapeut, Krankenhaus, Vorsorge/Reha) · APO = Abgebende LEI (öffentl. Apotheke, Krankenhausapotheke) · KT = Kostenträger · NCPEH = National Contact Point for eHealth / EU
 
