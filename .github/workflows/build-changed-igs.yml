@@ -4,7 +4,7 @@ run-name: Build IGs - ${{ inputs.ig || github.event.inputs.ig || 'all' }}
 on:
   push:
     branches:
-      - main
+      - develop
   workflow_dispatch:
     inputs:
       ig:
@@ -36,6 +36,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: develop
 
       - name: Set up Java
         uses: actions/setup-java@v4
@@ -593,7 +594,7 @@ jobs:
         run: |
           set -euo pipefail
           total=0
-          ref_name="${GITHUB_REF_NAME}"
+          ref_name="develop"
           for ig in ${{ steps.igs.outputs.ig_list }}; do
             out_dir="igs/$ig/output"
             if [[ -d "$out_dir" ]]; then
@@ -651,7 +652,7 @@ jobs:
         run: |
           set -euo pipefail
           pages_dir="pages"
-          ref_name="${GITHUB_REF_NAME}"
+          ref_name="develop"
           rm -rf "$pages_dir"
           mkdir -p "$pages_dir"
 
