@@ -72,11 +72,11 @@ Die Details des OperationOutcomes werden in den Anforderungen mit einer Tabelle 
 </table>
 
 Bei nicht FHIR-Fehlern werden ein HTTP Status Code und ein Fehlercode im Media Type <i>application/json</i> nach folgendem Schema zurückgegeben:
-<blockcode>
+<pre><code>
 {
     "errorCode": "beispielFehlerCode"
 }
-</blockcode>
+</code></pre>
 Die Details werden in den Anforderungen mit einer Tabelle wie unten beschrieben dargestellt:
 <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
     <tr>
