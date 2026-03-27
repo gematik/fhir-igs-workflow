@@ -30,7 +30,7 @@ Diese Seite beschreibt Anforderungen am TI-Flow-Fachdienst zur Nutzung der `Comm
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_CHARGE_ITEM_NOT_FOUND</td>
+            <td>TIFLOW_CHARGEITEM_NOT_FOUND</td>
         </tr>
         <tr>
             <th>Details Text</th>
