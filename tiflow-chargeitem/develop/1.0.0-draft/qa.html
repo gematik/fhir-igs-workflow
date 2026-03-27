@@ -47,9 +47,9 @@
 </head>
 <body style="margin: 20px; background-color: #ffffff">
  <h1>Validation Results for gemIG_TIFlow_chargeitem</h1>
- <p>Generated Thu Mar 26 09:05:16 UTC 2026, FHIR version 4.0.1 for de.gematik.tiflow.chargeitem#1.0.0-draft (canonical = <a href="https://gematik.de/fhir/tiflow/chargeitem">https://gematik.de/fhir/tiflow/chargeitem</a> (<a href="https://gematik.de/fhir/tiflow/chargeitem/history.html">history</a>)). See <a href="qa.min.html">Errors Only</a> &amp; <a href="qa-ipreview.html">IP</a></p>
+ <p>Generated Fri Mar 27 13:55:21 UTC 2026, FHIR version 4.0.1 for de.gematik.tiflow.chargeitem#1.0.0-draft (canonical = <a href="https://gematik.de/fhir/tiflow/chargeitem">https://gematik.de/fhir/tiflow/chargeitem</a> (<a href="https://gematik.de/fhir/tiflow/chargeitem/history.html">history</a>)). See <a href="qa.min.html">Errors Only</a> &amp; <a href="qa-ipreview.html">IP</a></p>
 <table class="grid"> <tr><td colspan=2><b>Quality Checks</b></td></tr>
- <tr><td>Publisher Version:</td><td><span>IG Publisher Version: v2.2.3</span></td></tr>
+ <tr><td>Publisher Version:</td><td><span>IG Publisher Version: v2.2.4</span></td></tr>
  <tr><td>Publication Code:</td><td>n/a<span style="color: maroon; font-weight: bold"> </span>. PackageId = de.gematik.tiflow.chargeitem, Canonical = https://gematik.de/fhir/tiflow/chargeitem</td></tr>
  <tr><td>Realm Check for n/a:</td><td><span style="color: maroon; font-weight: bold"></span><ul><li>n/a</li></ul></td></tr>
  <tr><td>Language Info:</td><td>This IG has no language information</td></tr>
@@ -1124,7 +1124,7 @@ hl7.fhir.r4.core#4.0.1:     <a href="http://hl7.org/fhir/R4/codesystem-guide-par
      <td><b>CapabilityStatement&#8203;.where(url = 'https:&#8203;/&#8203;/gematik&#8203;.de&#8203;/fhir&#8203;/erpchrg&#8203;/OperationDefinition&#8203;/ERPFachdienstServerChrgOperationDefinition')</b></td><td><b>error</b></td><td><b>Conformance resource /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/erp-chrg/fsh-generated/resources/CapabilityStatement-erp-fachdienst-server-erpchrg.json - the canonical URL (https://gematik.de/fhir/tiflow/chargeitem/CapabilityStatement/erp-fachdienst-server-erpchrg) does not match the URL (https://gematik.de/fhir/erpchrg/OperationDefinition/ERPFachdienstServerChrgOperationDefinition). Use the special-url parameter if you really mean for it not to match</b> <span class="code-value code-hidden" style="font-size: 8px; color: navy">RESOURCE_CANONICAL_MISMATCH</span></td><td>--</td>
    </tr>
    <tr style="background-color: #ffffe6">
-     <td><b>CapabilityStatement&#8203;.jurisdiction[0] (l1&#8203;/c921)</b></td><td><b>information</b></td><td><b>Reference to draft CodeSystem urn:iso:std:iso:3166|20210120</b> <span class="code-value code-hidden" style="font-size: 8px; color: navy">MSG_DRAFT</span></td><td><a href="https://simplifier.net/resolve?scope=de.gematik.ti@1.2.0&canonical=https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement">Capability Statement Profil für TI FHIR Data Service</a></td>
+     <td><b>CapabilityStatement&#8203;.jurisdiction[0]&#8203;.coding[0]&#8203;.display (l1&#8203;/c921)</b></td><td><b>information</b></td><td><b>There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is the default language display</b> (from <a href="qa-txservers.html#https://tx.fhir.org/r4">https://tx.fhir.org/r4</a>) <span class="code-value code-hidden" style="font-size: 8px; color: navy">NO_VALID_DISPLAY_FOUND_NONE_FOR_LANG_OK</span></td><td><a href="https://simplifier.net/resolve?scope=de.gematik.ti@1.2.0&canonical=https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement">Capability Statement Profil für TI FHIR Data Service</a></td>
    </tr>
    <tr style="background-color: #ffebcc">
      <td><b>CapabilityStatement&#8203;.imports[0] (l1&#8203;/c1037)</b></td><td><b>warning</b></td><td><b>Canonical URL 'https://gematik.de/fhir/workflow/core/CapabilityStatement/erp-fachdienst-server' kann nicht aufgelöst werden</b> <span class="code-value code-hidden" style="font-size: 8px; color: navy">TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE</span></td><td><a href="https://simplifier.net/resolve?scope=de.gematik.ti@1.2.0&canonical=https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement">Capability Statement Profil für TI FHIR Data Service</a></td>
@@ -1301,7 +1301,7 @@ hl7.fhir.r4.core#4.0.1:     <a href="http://hl7.org/fhir/R4/codesystem-guide-par
      <td><b>CodeSystem&#8203;.where(url = 'https:&#8203;/&#8203;/gematik&#8203;.de&#8203;/fhir&#8203;/erpchrg&#8203;/CodeSystem&#8203;/GEM_ERPCHRG_CS_ConsentType')</b></td><td><b>error</b></td><td><b>Conformance resource /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/erp-chrg/fsh-generated/resources/CodeSystem-GEM-ERPCHRG-CS-ConsentType.json - the canonical URL (https://gematik.de/fhir/tiflow/chargeitem/CodeSystem/GEM-ERPCHRG-CS-ConsentType) does not match the URL (https://gematik.de/fhir/erpchrg/CodeSystem/GEM_ERPCHRG_CS_ConsentType). Use the special-url parameter if you really mean for it not to match</b> <span class="code-value code-hidden" style="font-size: 8px; color: navy">RESOURCE_CANONICAL_MISMATCH</span></td><td>--</td>
    </tr>
    <tr style="background-color: #ffffe6">
-     <td><b>CodeSystem.jurisdiction[0] (l1/c1289)</b></td><td><b>information</b></td><td><b>Reference to draft CodeSystem urn:iso:std:iso:3166|20210120</b> <span class="code-value code-hidden" style="font-size: 8px; color: navy">MSG_DRAFT</span></td><td><a href="http://hl7.org/fhir/R4/codesystem.html">CodeSystem</a></td>
+     <td><b>CodeSystem&#8203;.jurisdiction[0]&#8203;.coding[0]&#8203;.display (l1&#8203;/c1289)</b></td><td><b>information</b></td><td><b>There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is the default language display</b> (from <a href="qa-txservers.html#https://tx.fhir.org/r4">https://tx.fhir.org/r4</a>) <span class="code-value code-hidden" style="font-size: 8px; color: navy">NO_VALID_DISPLAY_FOUND_NONE_FOR_LANG_OK</span></td><td><a href="http://hl7.org/fhir/R4/codesystem.html">CodeSystem</a></td>
    </tr>
    <tr style="background-color: #ffebcc">
      <td><b>CodeSystem (l1/c1457)</b></td><td><b>warning</b></td><td><b>Das ShareableCodeSystem-Profil sagt, dass das experimental-Element obligatorisch ist, aber es ist nicht vorhanden. Veröffentlichte Codesysteme SOLLTEN mit dem ShareableCodeSystem-Profil übereinstimmen</b> <span class="code-value code-hidden" style="font-size: 8px; color: navy">CODESYSTEM_SHAREABLE_MISSING</span></td><td>--</td>
@@ -1390,7 +1390,7 @@ hl7.fhir.r4.core#4.0.1:     <a href="http://hl7.org/fhir/R4/codesystem-guide-par
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td><td><b>Validating</b></td>
    </tr>
    <tr style="background-color: #ffffe6">
-     <td><b>ImplementationGuide&#8203;.jurisdiction[0] (l1&#8203;/c1062)</b></td><td><b>information</b></td><td><b>Reference to draft CodeSystem urn:iso:std:iso:3166|20210120</b> <span class="code-value code-hidden" style="font-size: 8px; color: navy">MSG_DRAFT</span></td><td><a href="http://hl7.org/fhir/R4/implementationguide.html">ImplementationGuide</a></td>
+     <td><b>ImplementationGuide&#8203;.jurisdiction[0]&#8203;.coding[0]&#8203;.display (l1&#8203;/c1062)</b></td><td><b>information</b></td><td><b>There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is the default language display</b> (from <a href="qa-txservers.html#https://tx.fhir.org/r4">https://tx.fhir.org/r4</a>) <span class="code-value code-hidden" style="font-size: 8px; color: navy">NO_VALID_DISPLAY_FOUND_NONE_FOR_LANG_OK</span></td><td><a href="http://hl7.org/fhir/R4/implementationguide.html">ImplementationGuide</a></td>
    </tr>
    <tr style="background-color: #ffebcc">
      <td><b>ImplementationGuide&#8203;.dependsOn[2]&#8203;.uri (l1&#8203;/c1976)</b></td><td><b>warning</b></td><td><b>Canonical URL 'http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4' kann nicht aufgelöst werden</b> <span class="code-value code-hidden" style="font-size: 8px; color: navy">TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE</span></td><td><a href="http://hl7.org/fhir/R4/implementationguide.html">ImplementationGuide</a></td>
@@ -1441,7 +1441,7 @@ hl7.fhir.r4.core#4.0.1:     <a href="http://hl7.org/fhir/R4/codesystem-guide-par
      <td><b>StructureDefinition&#8203;.where(url = 'https:&#8203;/&#8203;/gematik&#8203;.de&#8203;/fhir&#8203;/erpchrg&#8203;/StructureDefinition&#8203;/GEM_ERPCHRG_EX_MarkingFlag')</b></td><td><b>error</b></td><td><b>Conformance resource /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/erp-chrg/fsh-generated/resources/StructureDefinition-GEM-ERPCHRG-EX-MarkingFlag.json - the canonical URL (https://gematik.de/fhir/tiflow/chargeitem/StructureDefinition/GEM-ERPCHRG-EX-MarkingFlag) does not match the URL (https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_EX_MarkingFlag). Use the special-url parameter if you really mean for it not to match</b> <span class="code-value code-hidden" style="font-size: 8px; color: navy">RESOURCE_CANONICAL_MISMATCH</span></td><td>--</td>
    </tr>
    <tr style="background-color: #ffffe6">
-     <td><b>StructureDefinition&#8203;.jurisdiction[0] (l1&#8203;/c547)</b></td><td><b>information</b></td><td><b>Reference to draft CodeSystem urn:iso:std:iso:3166|20210120</b> <span class="code-value code-hidden" style="font-size: 8px; color: navy">MSG_DRAFT</span></td><td><a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></td>
+     <td><b>StructureDefinition&#8203;.jurisdiction[0]&#8203;.coding[0]&#8203;.display (l1&#8203;/c547)</b></td><td><b>information</b></td><td><b>There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is the default language display</b> (from <a href="qa-txservers.html#https://tx.fhir.org/r4">https://tx.fhir.org/r4</a>) <span class="code-value code-hidden" style="font-size: 8px; color: navy">NO_VALID_DISPLAY_FOUND_NONE_FOR_LANG_OK</span></td><td><a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></td>
    </tr>
    <tr style="background-color: #ffebcc">
      <td><b>StructureDefinition (l1/c20558)</b></td><td><b>warning</b></td><td><b>Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)</b> <span class="code-value code-hidden" style="font-size: 8px; color: navy">http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6</span></td><td><a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></td>
@@ -1463,7 +1463,7 @@ hl7.fhir.r4.core#4.0.1:     <a href="http://hl7.org/fhir/R4/codesystem-guide-par
      <td><b>StructureDefinition&#8203;.where(url = 'https:&#8203;/&#8203;/gematik&#8203;.de&#8203;/fhir&#8203;/erpchrg&#8203;/StructureDefinition&#8203;/GEM_ERPCHRG_PR_ChargeItem')</b></td><td><b>error</b></td><td><b>Conformance resource /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/erp-chrg/fsh-generated/resources/StructureDefinition-GEM-ERPCHRG-PR-ChargeItem.json - the canonical URL (https://gematik.de/fhir/tiflow/chargeitem/StructureDefinition/GEM-ERPCHRG-PR-ChargeItem) does not match the URL (https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_ChargeItem). Use the special-url parameter if you really mean for it not to match</b> <span class="code-value code-hidden" style="font-size: 8px; color: navy">RESOURCE_CANONICAL_MISMATCH</span></td><td>--</td>
    </tr>
    <tr style="background-color: #ffffe6">
-     <td><b>StructureDefinition&#8203;.jurisdiction[0] (l1&#8203;/c544)</b></td><td><b>information</b></td><td><b>Reference to draft CodeSystem urn:iso:std:iso:3166|20210120</b> <span class="code-value code-hidden" style="font-size: 8px; color: navy">MSG_DRAFT</span></td><td><a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></td>
+     <td><b>StructureDefinition&#8203;.jurisdiction[0]&#8203;.coding[0]&#8203;.display (l1&#8203;/c544)</b></td><td><b>information</b></td><td><b>There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is the default language display</b> (from <a href="qa-txservers.html#https://tx.fhir.org/r4">https://tx.fhir.org/r4</a>) <span class="code-value code-hidden" style="font-size: 8px; color: navy">NO_VALID_DISPLAY_FOUND_NONE_FOR_LANG_OK</span></td><td><a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></td>
    </tr>
    <tr style="background-color: #ffffe6">
      <td><b>StructureDefinition&#8203;.snapshot&#8203;.element[13]&#8203;.binding&#8203;.extension[0] (l1&#8203;/c19449)</b></td><td><b>information</b></td><td><b>The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated</b> <span class="code-value code-hidden" style="font-size: 8px; color: navy">MSG_DEPENDS_ON_DEPRECATED</span></td><td><a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></td>
@@ -1500,7 +1500,7 @@ hl7.fhir.r4.core#4.0.1:     <a href="http://hl7.org/fhir/R4/codesystem-guide-par
      <td><b>StructureDefinition&#8203;.where(url = 'https:&#8203;/&#8203;/gematik&#8203;.de&#8203;/fhir&#8203;/erpchrg&#8203;/StructureDefinition&#8203;/GEM_ERPCHRG_PR_Communication_ChargChangeReply')</b></td><td><b>error</b></td><td><b>Conformance resource /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/erp-chrg/fsh-generated/resources/StructureDefinition-GEM-ERPCHRG-PR-Communication-ChargChangeReply.json - the canonical URL (https://gematik.de/fhir/tiflow/chargeitem/StructureDefinition/GEM-ERPCHRG-PR-Communication-ChargChangeReply) does not match the URL (https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReply). Use the special-url parameter if you really mean for it not to match</b> <span class="code-value code-hidden" style="font-size: 8px; color: navy">RESOURCE_CANONICAL_MISMATCH</span></td><td>--</td>
    </tr>
    <tr style="background-color: #ffffe6">
-     <td><b>StructureDefinition&#8203;.jurisdiction[0] (l1&#8203;/c775)</b></td><td><b>information</b></td><td><b>Reference to draft CodeSystem urn:iso:std:iso:3166|20210120</b> <span class="code-value code-hidden" style="font-size: 8px; color: navy">MSG_DRAFT</span></td><td><a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></td>
+     <td><b>StructureDefinition&#8203;.jurisdiction[0]&#8203;.coding[0]&#8203;.display (l1&#8203;/c775)</b></td><td><b>information</b></td><td><b>There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is the default language display</b> (from <a href="qa-txservers.html#https://tx.fhir.org/r4">https://tx.fhir.org/r4</a>) <span class="code-value code-hidden" style="font-size: 8px; color: navy">NO_VALID_DISPLAY_FOUND_NONE_FOR_LANG_OK</span></td><td><a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></td>
    </tr>
    <tr style="background-color: #ffebcc">
      <td><b>StructureDefinition (l1/c86126)</b></td><td><b>warning</b></td><td><b>Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)</b> <span class="code-value code-hidden" style="font-size: 8px; color: navy">http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6</span></td><td><a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></td>
@@ -1522,7 +1522,7 @@ hl7.fhir.r4.core#4.0.1:     <a href="http://hl7.org/fhir/R4/codesystem-guide-par
      <td><b>StructureDefinition&#8203;.where(url = 'https:&#8203;/&#8203;/gematik&#8203;.de&#8203;/fhir&#8203;/erpchrg&#8203;/StructureDefinition&#8203;/GEM_ERPCHRG_PR_Communication_ChargChangeReq')</b></td><td><b>error</b></td><td><b>Conformance resource /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/erp-chrg/fsh-generated/resources/StructureDefinition-GEM-ERPCHRG-PR-Communication-ChargChangeReq.json - the canonical URL (https://gematik.de/fhir/tiflow/chargeitem/StructureDefinition/GEM-ERPCHRG-PR-Communication-ChargChangeReq) does not match the URL (https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReq). Use the special-url parameter if you really mean for it not to match</b> <span class="code-value code-hidden" style="font-size: 8px; color: navy">RESOURCE_CANONICAL_MISMATCH</span></td><td>--</td>
    </tr>
    <tr style="background-color: #ffffe6">
-     <td><b>StructureDefinition&#8203;.jurisdiction[0] (l1&#8203;/c773)</b></td><td><b>information</b></td><td><b>Reference to draft CodeSystem urn:iso:std:iso:3166|20210120</b> <span class="code-value code-hidden" style="font-size: 8px; color: navy">MSG_DRAFT</span></td><td><a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></td>
+     <td><b>StructureDefinition&#8203;.jurisdiction[0]&#8203;.coding[0]&#8203;.display (l1&#8203;/c773)</b></td><td><b>information</b></td><td><b>There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is the default language display</b> (from <a href="qa-txservers.html#https://tx.fhir.org/r4">https://tx.fhir.org/r4</a>) <span class="code-value code-hidden" style="font-size: 8px; color: navy">NO_VALID_DISPLAY_FOUND_NONE_FOR_LANG_OK</span></td><td><a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></td>
    </tr>
    <tr style="background-color: #ffebcc">
      <td><b>StructureDefinition (l1/c86150)</b></td><td><b>warning</b></td><td><b>Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)</b> <span class="code-value code-hidden" style="font-size: 8px; color: navy">http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6</span></td><td><a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></td>
@@ -1544,7 +1544,7 @@ hl7.fhir.r4.core#4.0.1:     <a href="http://hl7.org/fhir/R4/codesystem-guide-par
      <td><b>StructureDefinition&#8203;.where(url = 'https:&#8203;/&#8203;/gematik&#8203;.de&#8203;/fhir&#8203;/erpchrg&#8203;/StructureDefinition&#8203;/GEM_ERPCHRG_PR_Consent')</b></td><td><b>error</b></td><td><b>Conformance resource /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/erp-chrg/fsh-generated/resources/StructureDefinition-GEM-ERPCHRG-PR-Consent.json - the canonical URL (https://gematik.de/fhir/tiflow/chargeitem/StructureDefinition/GEM-ERPCHRG-PR-Consent) does not match the URL (https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Consent). Use the special-url parameter if you really mean for it not to match</b> <span class="code-value code-hidden" style="font-size: 8px; color: navy">RESOURCE_CANONICAL_MISMATCH</span></td><td>--</td>
    </tr>
    <tr style="background-color: #ffffe6">
-     <td><b>StructureDefinition&#8203;.jurisdiction[0] (l1&#8203;/c535)</b></td><td><b>information</b></td><td><b>Reference to draft CodeSystem urn:iso:std:iso:3166|20210120</b> <span class="code-value code-hidden" style="font-size: 8px; color: navy">MSG_DRAFT</span></td><td><a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></td>
+     <td><b>StructureDefinition&#8203;.jurisdiction[0]&#8203;.coding[0]&#8203;.display (l1&#8203;/c535)</b></td><td><b>information</b></td><td><b>There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is the default language display</b> (from <a href="qa-txservers.html#https://tx.fhir.org/r4">https://tx.fhir.org/r4</a>) <span class="code-value code-hidden" style="font-size: 8px; color: navy">NO_VALID_DISPLAY_FOUND_NONE_FOR_LANG_OK</span></td><td><a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></td>
    </tr>
    <tr style="background-color: #ffebcc">
      <td><b>StructureDefinition (l1/c129358)</b></td><td><b>warning</b></td><td><b>Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)</b> <span class="code-value code-hidden" style="font-size: 8px; color: navy">http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6</span></td><td><a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></td>
@@ -1566,7 +1566,7 @@ hl7.fhir.r4.core#4.0.1:     <a href="http://hl7.org/fhir/R4/codesystem-guide-par
      <td><b>StructureDefinition&#8203;.where(url = 'https:&#8203;/&#8203;/gematik&#8203;.de&#8203;/fhir&#8203;/erpchrg&#8203;/StructureDefinition&#8203;/GEM_ERPCHRG_PR_PAR_Patch_ChargeItem_Input')</b></td><td><b>error</b></td><td><b>Conformance resource /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/erp-chrg/fsh-generated/resources/StructureDefinition-GEM-ERPCHRG-PR-PAR-Patch-ChargeItem-Input.json - the canonical URL (https://gematik.de/fhir/tiflow/chargeitem/StructureDefinition/GEM-ERPCHRG-PR-PAR-Patch-ChargeItem-Input) does not match the URL (https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_PAR_Patch_ChargeItem_Input). Use the special-url parameter if you really mean for it not to match</b> <span class="code-value code-hidden" style="font-size: 8px; color: navy">RESOURCE_CANONICAL_MISMATCH</span></td><td>--</td>
    </tr>
    <tr style="background-color: #ffffe6">
-     <td><b>StructureDefinition&#8203;.jurisdiction[0] (l1&#8203;/c751)</b></td><td><b>information</b></td><td><b>Reference to draft CodeSystem urn:iso:std:iso:3166|20210120</b> <span class="code-value code-hidden" style="font-size: 8px; color: navy">MSG_DRAFT</span></td><td><a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></td>
+     <td><b>StructureDefinition&#8203;.jurisdiction[0]&#8203;.coding[0]&#8203;.display (l1&#8203;/c751)</b></td><td><b>information</b></td><td><b>There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is the default language display</b> (from <a href="qa-txservers.html#https://tx.fhir.org/r4">https://tx.fhir.org/r4</a>) <span class="code-value code-hidden" style="font-size: 8px; color: navy">NO_VALID_DISPLAY_FOUND_NONE_FOR_LANG_OK</span></td><td><a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></td>
    </tr>
    <tr style="background-color: #ffebcc">
      <td><b>StructureDefinition (l1/c73857)</b></td><td><b>warning</b></td><td><b>Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)</b> <span class="code-value code-hidden" style="font-size: 8px; color: navy">http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6</span></td><td><a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></td>
@@ -1618,7 +1618,7 @@ hl7.fhir.r4.core#4.0.1:     <a href="http://hl7.org/fhir/R4/codesystem-guide-par
      <td><b>ValueSet&#8203;.where(url = 'https:&#8203;/&#8203;/gematik&#8203;.de&#8203;/fhir&#8203;/erpchrg&#8203;/ValueSet&#8203;/GEM_ERPCHRG_VS_ConsentType')</b></td><td><b>error</b></td><td><b>Conformance resource /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/erp-chrg/fsh-generated/resources/ValueSet-GEM-ERPCHRG-VS-ConsentType.json - the canonical URL (https://gematik.de/fhir/tiflow/chargeitem/ValueSet/GEM-ERPCHRG-VS-ConsentType) does not match the URL (https://gematik.de/fhir/erpchrg/ValueSet/GEM_ERPCHRG_VS_ConsentType). Use the special-url parameter if you really mean for it not to match</b> <span class="code-value code-hidden" style="font-size: 8px; color: navy">RESOURCE_CANONICAL_MISMATCH</span></td><td>--</td>
    </tr>
    <tr style="background-color: #ffffe6">
-     <td><b>ValueSet.jurisdiction[0] (l1/c1213)</b></td><td><b>information</b></td><td><b>Reference to draft CodeSystem urn:iso:std:iso:3166|20210120</b> <span class="code-value code-hidden" style="font-size: 8px; color: navy">MSG_DRAFT</span></td><td><a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></td>
+     <td><b>ValueSet&#8203;.jurisdiction[0]&#8203;.coding[0]&#8203;.display (l1&#8203;/c1213)</b></td><td><b>information</b></td><td><b>There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is the default language display</b> (from <a href="qa-txservers.html#https://tx.fhir.org/r4">https://tx.fhir.org/r4</a>) <span class="code-value code-hidden" style="font-size: 8px; color: navy">NO_VALID_DISPLAY_FOUND_NONE_FOR_LANG_OK</span></td><td><a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></td>
    </tr>
    <tr style="background-color: #ffebcc">
      <td><b>ValueSet (l1/c1322)</b></td><td><b>warning</b></td><td><b>Das ShareableValueSet-Profil sagt, dass das experimental-Element obligatorisch ist, aber es ist nicht vorhanden. Veröffentlichte ValueSets SOLLTEN mit dem ShareableValueSet-Profil übereinstimmen</b> <span class="code-value code-hidden" style="font-size: 8px; color: navy"></span></td><td>--</td>
@@ -2374,41 +2374,6 @@ hl7.fhir.r4.core#4.0.1:     <a href="http://hl7.org/fhir/R4/codesystem-guide-par
    </tr>
 </table>
 <hr/>
-<a name="MSG_DRAFT"> </a>
-<h2>MSG_DRAFT</h2>
- <table class="grid">
-   <tr style="background-color: #fffff2">
-     <td><a href="CapabilityStatement-erp-fachdienst-server-erpchrg.html">fsh-generated/resources/CapabilityStatement-erp-fachdienst-server-erpchrg.json</a></td><td><b>Reference to draft CodeSystem urn:iso:std:iso:3166|20210120</b></td><td><a href="https://simplifier.net/resolve?scope=de.gematik.ti@1.2.0&canonical=https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement">Capability Statement Profil für TI FHIR Data Service</a></td>
-   </tr>
-   <tr style="background-color: #fffff2">
-     <td><a href="CodeSystem-GEM-ERPCHRG-CS-ConsentType.html">fsh-generated/resources/CodeSystem-GEM-ERPCHRG-CS-ConsentType.json</a></td><td><b>Reference to draft CodeSystem urn:iso:std:iso:3166|20210120</b></td><td><a href="http://hl7.org/fhir/R4/codesystem.html">CodeSystem</a></td>
-   </tr>
-   <tr style="background-color: #fffff2">
-     <td><a href="index.html">fsh-generated/resources/ImplementationGuide-de.gematik.tiflow.chargeitem.json</a></td><td><b>Reference to draft CodeSystem urn:iso:std:iso:3166|20210120</b></td><td><a href="http://hl7.org/fhir/R4/implementationguide.html">ImplementationGuide</a></td>
-   </tr>
-   <tr style="background-color: #fffff2">
-     <td><a href="StructureDefinition-GEM-ERPCHRG-EX-MarkingFlag.html">fsh-generated/resources/StructureDefinition-GEM-ERPCHRG-EX-MarkingFlag.json</a></td><td><b>Reference to draft CodeSystem urn:iso:std:iso:3166|20210120</b></td><td><a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></td>
-   </tr>
-   <tr style="background-color: #fffff2">
-     <td><a href="StructureDefinition-GEM-ERPCHRG-PR-ChargeItem.html">fsh-generated/resources/StructureDefinition-GEM-ERPCHRG-PR-ChargeItem.json</a></td><td><b>Reference to draft CodeSystem urn:iso:std:iso:3166|20210120</b></td><td><a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></td>
-   </tr>
-   <tr style="background-color: #fffff2">
-     <td><a href="StructureDefinition-GEM-ERPCHRG-PR-Communication-ChargChangeReply.html">fsh-generated/resources/StructureDefinition-GEM-ERPCHRG-PR-Communication-ChargChangeReply.json</a></td><td><b>Reference to draft CodeSystem urn:iso:std:iso:3166|20210120</b></td><td><a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></td>
-   </tr>
-   <tr style="background-color: #fffff2">
-     <td><a href="StructureDefinition-GEM-ERPCHRG-PR-Communication-ChargChangeReq.html">fsh-generated/resources/StructureDefinition-GEM-ERPCHRG-PR-Communication-ChargChangeReq.json</a></td><td><b>Reference to draft CodeSystem urn:iso:std:iso:3166|20210120</b></td><td><a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></td>
-   </tr>
-   <tr style="background-color: #fffff2">
-     <td><a href="StructureDefinition-GEM-ERPCHRG-PR-Consent.html">fsh-generated/resources/StructureDefinition-GEM-ERPCHRG-PR-Consent.json</a></td><td><b>Reference to draft CodeSystem urn:iso:std:iso:3166|20210120</b></td><td><a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></td>
-   </tr>
-   <tr style="background-color: #fffff2">
-     <td><a href="StructureDefinition-GEM-ERPCHRG-PR-PAR-Patch-ChargeItem-Input.html">fsh-generated/resources/StructureDefinition-GEM-ERPCHRG-PR-PAR-Patch-ChargeItem-Input.json</a></td><td><b>Reference to draft CodeSystem urn:iso:std:iso:3166|20210120</b></td><td><a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></td>
-   </tr>
-   <tr style="background-color: #fffff2">
-     <td><a href="ValueSet-GEM-ERPCHRG-VS-ConsentType.html">fsh-generated/resources/ValueSet-GEM-ERPCHRG-VS-ConsentType.json</a></td><td><b>Reference to draft CodeSystem urn:iso:std:iso:3166|20210120</b></td><td><a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></td>
-   </tr>
-</table>
-<hr/>
 <a name="NO_VALID_DISPLAY_FOUND_NONE_FOR_LANG_OK"> </a>
 <h2>NO_VALID_DISPLAY_FOUND_NONE_FOR_LANG_OK</h2>
  <table class="grid">
@@ -2416,10 +2381,40 @@ hl7.fhir.r4.core#4.0.1:     <a href="http://hl7.org/fhir/R4/codesystem-guide-par
      <td><a href="Bundle-ExampleERPCHRGConsentSearchset.html">fsh-generated/resources/Bundle-ExampleERPCHRGConsentSearchset.json</a></td><td><b>There are no valid display names found for the code http://terminology.hl7.org/CodeSystem/consentscope#patient-privacy for language(s) 'de-DE'. The display is 'Privacy Consent' which is the default language display</b></td><td><a href="http://hl7.org/fhir/R4/consent.html">Consent</a></td>
    </tr>
    <tr style="background-color: #fffff2">
+     <td><a href="CapabilityStatement-erp-fachdienst-server-erpchrg.html">fsh-generated/resources/CapabilityStatement-erp-fachdienst-server-erpchrg.json</a></td><td><b>There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is the default language display</b></td><td><a href="https://simplifier.net/resolve?scope=de.gematik.ti@1.2.0&canonical=https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement">Capability Statement Profil für TI FHIR Data Service</a></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="CodeSystem-GEM-ERPCHRG-CS-ConsentType.html">fsh-generated/resources/CodeSystem-GEM-ERPCHRG-CS-ConsentType.json</a></td><td><b>There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is the default language display</b></td><td><a href="http://hl7.org/fhir/R4/codesystem.html">CodeSystem</a></td>
+   </tr>
+   <tr style="background-color: #fffff2">
      <td><a href="Consent-0dcc5d4c-bf24-4c06-b02e-be5bc24587e2.html">fsh-generated/resources/Consent-0dcc5d4c-bf24-4c06-b02e-be5bc24587e2.json</a></td><td><b>There are no valid display names found for the code http://terminology.hl7.org/CodeSystem/consentscope#patient-privacy for language(s) 'de-DE'. The display is 'Privacy Consent' which is the default language display</b></td><td><a href="StructureDefinition-GEM-ERPCHRG-PR-Consent.html">GEM_ERPCHRG_PR_Consent</a></td>
    </tr>
    <tr style="background-color: #fffff2">
      <td><a href="Consent-ChargeItemConsent-Request.html">fsh-generated/resources/Consent-ChargeItemConsent-Request.json</a></td><td><b>There are no valid display names found for the code http://terminology.hl7.org/CodeSystem/consentscope#patient-privacy for language(s) 'de-DE'. The display is 'Privacy Consent' which is the default language display</b></td><td><a href="StructureDefinition-GEM-ERPCHRG-PR-Consent.html">GEM_ERPCHRG_PR_Consent</a></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="index.html">fsh-generated/resources/ImplementationGuide-de.gematik.tiflow.chargeitem.json</a></td><td><b>There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is the default language display</b></td><td><a href="http://hl7.org/fhir/R4/implementationguide.html">ImplementationGuide</a></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="StructureDefinition-GEM-ERPCHRG-EX-MarkingFlag.html">fsh-generated/resources/StructureDefinition-GEM-ERPCHRG-EX-MarkingFlag.json</a></td><td><b>There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is the default language display</b></td><td><a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="StructureDefinition-GEM-ERPCHRG-PR-ChargeItem.html">fsh-generated/resources/StructureDefinition-GEM-ERPCHRG-PR-ChargeItem.json</a></td><td><b>There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is the default language display</b></td><td><a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="StructureDefinition-GEM-ERPCHRG-PR-Communication-ChargChangeReply.html">fsh-generated/resources/StructureDefinition-GEM-ERPCHRG-PR-Communication-ChargChangeReply.json</a></td><td><b>There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is the default language display</b></td><td><a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="StructureDefinition-GEM-ERPCHRG-PR-Communication-ChargChangeReq.html">fsh-generated/resources/StructureDefinition-GEM-ERPCHRG-PR-Communication-ChargChangeReq.json</a></td><td><b>There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is the default language display</b></td><td><a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="StructureDefinition-GEM-ERPCHRG-PR-Consent.html">fsh-generated/resources/StructureDefinition-GEM-ERPCHRG-PR-Consent.json</a></td><td><b>There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is the default language display</b></td><td><a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="StructureDefinition-GEM-ERPCHRG-PR-PAR-Patch-ChargeItem-Input.html">fsh-generated/resources/StructureDefinition-GEM-ERPCHRG-PR-PAR-Patch-ChargeItem-Input.json</a></td><td><b>There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is the default language display</b></td><td><a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="ValueSet-GEM-ERPCHRG-VS-ConsentType.html">fsh-generated/resources/ValueSet-GEM-ERPCHRG-VS-ConsentType.json</a></td><td><b>There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is the default language display</b></td><td><a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></td>
    </tr>
 </table>
 <hr/>

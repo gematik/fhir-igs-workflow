@@ -473,7 +473,6 @@
       <type>
         <code value="Coding"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -492,22 +491,6 @@
         <description value="Security Labels from the Healthcare Privacy and Security Classification System."/>
         <valueSet value="http://hl7.org/fhir/ValueSet/security-labels|4.0.1"/>
       </binding>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="v2"/>
-        <map value="CE/CNE/CWE subset one of the sets of component 1-3 or 4-6"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="CV"/>
-      </mapping>
-      <mapping>
-        <identity value="orim"/>
-        <map value="fhir:Coding rdfs:subClassOf dt:CDCoding"/>
-      </mapping>
     </element>
     <element id="CapabilityStatement.meta.tag">
       <path value="CapabilityStatement.meta.tag"/>
@@ -524,7 +507,6 @@
       <type>
         <code value="Coding"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -543,22 +525,6 @@
         <description value="Codes that represent various types of tags, commonly workflow-related; e.g. &quot;Needs review by Dr. Jones&quot;."/>
         <valueSet value="http://hl7.org/fhir/ValueSet/common-tags|4.0.1"/>
       </binding>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="v2"/>
-        <map value="CE/CNE/CWE subset one of the sets of component 1-3 or 4-6"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="CV"/>
-      </mapping>
-      <mapping>
-        <identity value="orim"/>
-        <map value="fhir:Coding rdfs:subClassOf dt:CDCoding"/>
-      </mapping>
     </element>
     <element id="CapabilityStatement.implicitRules">
       <path value="CapabilityStatement.implicitRules"/>
@@ -621,7 +587,7 @@
         </extension>
         <strength value="preferred"/>
         <description value="A human language."/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/languages"/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/languages|4.0.1"/>
       </binding>
     </element>
     <element id="CapabilityStatement.text">
@@ -736,9 +702,6 @@
       <sliceName value="baseUrl"/>
       <short value="Base URL der FHIR-API"/>
       <definition value="Gibt die Basis-URL des FHIR-Servers als Zeichenkette an. Beispiel: http://epa4all/epa/medication/api/v1/fhir"/>
-      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
-      <alias value="extensions"/>
-      <alias value="user content"/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -750,7 +713,6 @@
         <code value="Extension"/>
         <profile value="https://gematik.de/fhir/ti/StructureDefinition/extension-base-url"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -764,28 +726,17 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <isModifier value="false"/>
       <isSummary value="false"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
     </element>
     <element id="CapabilityStatement.extension:header">
       <path value="CapabilityStatement.extension"/>
       <sliceName value="header"/>
       <short value="HTTP Header"/>
       <definition value="Ermöglicht die Angabe global oder spezifisch geforderter HTTP Header in einem CapabilityStatement oder einer Resource-Interaktion."/>
-      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
-      <alias value="extensions"/>
-      <alias value="user content"/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -797,7 +748,6 @@
         <code value="Extension"/>
         <profile value="https://gematik.de/fhir/ti/StructureDefinition/extension-http-header"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -811,28 +761,17 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <isModifier value="false"/>
       <isSummary value="false"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
     </element>
     <element id="CapabilityStatement.extension:responseInfo">
       <path value="CapabilityStatement.extension"/>
       <sliceName value="responseInfo"/>
       <short value="HTTP-Antwortinformationen"/>
       <definition value="Definiert Informationen zu HTTP-Antworten für FHIR-Interaktionen, inklusive Statuscode, Beschreibung, Beispiel und Response-Schema."/>
-      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
-      <alias value="extensions"/>
-      <alias value="user content"/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -844,7 +783,6 @@
         <code value="Extension"/>
         <profile value="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -858,19 +796,11 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <isModifier value="false"/>
       <isSummary value="false"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
     </element>
     <element id="CapabilityStatement.extension:environment">
       <path value="CapabilityStatement.extension"/>
@@ -1439,7 +1369,7 @@
         </extension>
         <strength value="extensible"/>
         <description value="Countries and regions within which this artifact is targeted for use."/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/jurisdiction"/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/jurisdiction|4.0.1"/>
       </binding>
       <mapping>
         <identity value="rim"/>
@@ -1586,7 +1516,7 @@
       </base>
       <type>
         <code value="canonical"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/CapabilityStatement"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/CapabilityStatement|4.0.1"/>
       </type>
       <constraint>
         <key value="ele-1"/>
@@ -1613,7 +1543,7 @@
       </base>
       <type>
         <code value="canonical"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/CapabilityStatement"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/CapabilityStatement|4.0.1"/>
       </type>
       <constraint>
         <key value="ele-1"/>
@@ -2063,7 +1993,7 @@
       </base>
       <type>
         <code value="Reference"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"/>
       </type>
       <condition value="ele-1"/>
       <constraint>
@@ -2209,7 +2139,7 @@
       </base>
       <type>
         <code value="canonical"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/ImplementationGuide"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/ImplementationGuide|4.0.1"/>
       </type>
       <constraint>
         <key value="ele-1"/>
@@ -2641,7 +2571,7 @@
         </extension>
         <strength value="extensible"/>
         <description value="Types of security services used with FHIR."/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/restful-security-service"/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/restful-security-service|4.0.1"/>
       </binding>
       <mapping>
         <identity value="rim"/>
@@ -2888,7 +2818,7 @@
       </base>
       <type>
         <code value="canonical"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/StructureDefinition"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/StructureDefinition|4.0.1"/>
       </type>
       <constraint>
         <key value="ele-1"/>
@@ -2915,7 +2845,7 @@
       </base>
       <type>
         <code value="canonical"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/StructureDefinition"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/StructureDefinition|4.0.1"/>
       </type>
       <constraint>
         <key value="ele-1"/>
@@ -3062,9 +2992,6 @@
       <sliceName value="header"/>
       <short value="HTTP Header"/>
       <definition value="Ermöglicht die Angabe global oder spezifisch geforderter HTTP Header in einem CapabilityStatement oder einer Resource-Interaktion."/>
-      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
-      <alias value="extensions"/>
-      <alias value="user content"/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -3076,7 +3003,6 @@
         <code value="Extension"/>
         <profile value="https://gematik.de/fhir/ti/StructureDefinition/extension-http-header"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -3090,28 +3016,17 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <isModifier value="false"/>
       <isSummary value="false"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
-      </mapping>
     </element>
     <element id="CapabilityStatement.rest.resource.interaction.extension:responseInfo">
       <path value="CapabilityStatement.rest.resource.interaction.extension"/>
       <sliceName value="responseInfo"/>
       <short value="HTTP-Antwortinformationen"/>
       <definition value="Definiert Informationen zu HTTP-Antworten für FHIR-Interaktionen, inklusive Statuscode, Beschreibung, Beispiel und Response-Schema."/>
-      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
-      <alias value="extensions"/>
-      <alias value="user content"/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -3123,7 +3038,6 @@
         <code value="Extension"/>
         <profile value="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -3137,19 +3051,11 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <isModifier value="false"/>
       <isSummary value="false"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
-      </mapping>
     </element>
     <element id="CapabilityStatement.rest.resource.interaction.extension:expectation">
       <path value="CapabilityStatement.rest.resource.interaction.extension"/>
@@ -3157,8 +3063,6 @@
       <short value="SHALL | SHOULD | MAY |SHOULD-NOT"/>
       <definition value="Defines the level of expectation associated with a given system capability."/>
       <comment value="If &quot;SHALL NOT&quot; is desired, use the &quot;prohibited&quot; modifier extension.  This extension should only be used with CapabilityStatements documenting requirements, not those documenting actual system capabilities."/>
-      <alias value="extensions"/>
-      <alias value="user content"/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -3170,7 +3074,6 @@
         <code value="Extension"/>
         <profile value="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation|4.0.1"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -3184,7 +3087,7 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <isModifier value="false"/>
@@ -3782,7 +3685,7 @@
       </base>
       <type>
         <code value="canonical"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/SearchParameter"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/SearchParameter|4.0.1"/>
       </type>
       <constraint>
         <key value="ele-1"/>
@@ -3964,9 +3867,6 @@
       <sliceName value="header"/>
       <short value="HTTP Header"/>
       <definition value="Ermöglicht die Angabe global oder spezifisch geforderter HTTP Header in einem CapabilityStatement oder einer Resource-Interaktion."/>
-      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
-      <alias value="extensions"/>
-      <alias value="user content"/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -3978,7 +3878,6 @@
         <code value="Extension"/>
         <profile value="https://gematik.de/fhir/ti/StructureDefinition/extension-http-header"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -3992,28 +3891,17 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <isModifier value="false"/>
       <isSummary value="false"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
-      </mapping>
     </element>
     <element id="CapabilityStatement.rest.resource.operation.extension:responseInfo">
       <path value="CapabilityStatement.rest.resource.operation.extension"/>
       <sliceName value="responseInfo"/>
       <short value="HTTP-Antwortinformationen"/>
       <definition value="Definiert Informationen zu HTTP-Antworten für FHIR-Interaktionen, inklusive Statuscode, Beschreibung, Beispiel und Response-Schema."/>
-      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
-      <alias value="extensions"/>
-      <alias value="user content"/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -4025,7 +3913,6 @@
         <code value="Extension"/>
         <profile value="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -4039,28 +3926,17 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <isModifier value="false"/>
       <isSummary value="false"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
-      </mapping>
     </element>
     <element id="CapabilityStatement.rest.resource.operation.extension:method">
       <path value="CapabilityStatement.rest.resource.operation.extension"/>
       <sliceName value="method"/>
       <short value="HTTP Method for FHIR Operation"/>
       <definition value="Gibt an, ob eine FHIR Operation mit GET, POST oder beidem verwendet werden darf."/>
-      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
-      <alias value="extensions"/>
-      <alias value="user content"/>
       <min value="0"/>
       <max value="2"/>
       <base>
@@ -4072,7 +3948,6 @@
         <code value="Extension"/>
         <profile value="https://gematik.de/fhir/ti/StructureDefinition/extension-http-method"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -4086,15 +3961,11 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <isModifier value="false"/>
       <isSummary value="false"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
     </element>
     <element id="CapabilityStatement.rest.resource.operation.extension:expectation">
       <path value="CapabilityStatement.rest.resource.operation.extension"/>
@@ -4102,8 +3973,6 @@
       <short value="SHALL | SHOULD | MAY |SHOULD-NOT"/>
       <definition value="Defines the level of expectation associated with a given system capability."/>
       <comment value="If &quot;SHALL NOT&quot; is desired, use the &quot;prohibited&quot; modifier extension.  This extension should only be used with CapabilityStatements documenting requirements, not those documenting actual system capabilities."/>
-      <alias value="extensions"/>
-      <alias value="user content"/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -4115,7 +3984,6 @@
         <code value="Extension"/>
         <profile value="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation|4.0.1"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -4129,7 +3997,7 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <isModifier value="false"/>
@@ -4230,7 +4098,7 @@
       </base>
       <type>
         <code value="canonical"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/OperationDefinition"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/OperationDefinition|4.0.1"/>
       </type>
       <constraint>
         <key value="ele-1"/>
@@ -4499,7 +4367,6 @@
         <min value="0"/>
         <max value="*"/>
       </base>
-      <contentReference value="http://hl7.org/fhir/StructureDefinition/CapabilityStatement#CapabilityStatement.rest.resource.operation"/>
       <type>
         <code value="BackboneElement"/>
       </type>
@@ -4583,9 +4450,6 @@
       <sliceName value="header"/>
       <short value="HTTP Header"/>
       <definition value="Ermöglicht die Angabe global oder spezifisch geforderter HTTP Header in einem CapabilityStatement oder einer Resource-Interaktion."/>
-      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
-      <alias value="extensions"/>
-      <alias value="user content"/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -4597,7 +4461,6 @@
         <code value="Extension"/>
         <profile value="https://gematik.de/fhir/ti/StructureDefinition/extension-http-header"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -4611,28 +4474,17 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <isModifier value="false"/>
       <isSummary value="false"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
-      </mapping>
     </element>
     <element id="CapabilityStatement.rest.operation.extension:responseInfo">
       <path value="CapabilityStatement.rest.operation.extension"/>
       <sliceName value="responseInfo"/>
       <short value="HTTP-Antwortinformationen"/>
       <definition value="Definiert Informationen zu HTTP-Antworten für FHIR-Interaktionen, inklusive Statuscode, Beschreibung, Beispiel und Response-Schema."/>
-      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
-      <alias value="extensions"/>
-      <alias value="user content"/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -4644,7 +4496,6 @@
         <code value="Extension"/>
         <profile value="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -4658,28 +4509,17 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <isModifier value="false"/>
       <isSummary value="false"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
-      </mapping>
     </element>
     <element id="CapabilityStatement.rest.operation.extension:method">
       <path value="CapabilityStatement.rest.operation.extension"/>
       <sliceName value="method"/>
       <short value="HTTP Method for FHIR Operation"/>
       <definition value="Gibt an, ob eine FHIR Operation mit GET, POST oder beidem verwendet werden darf."/>
-      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
-      <alias value="extensions"/>
-      <alias value="user content"/>
       <min value="0"/>
       <max value="2"/>
       <base>
@@ -4691,7 +4531,6 @@
         <code value="Extension"/>
         <profile value="https://gematik.de/fhir/ti/StructureDefinition/extension-http-method"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -4705,15 +4544,11 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <isModifier value="false"/>
       <isSummary value="false"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
     </element>
     <element id="CapabilityStatement.rest.operation.extension:expectation">
       <path value="CapabilityStatement.rest.operation.extension"/>
@@ -4721,8 +4556,6 @@
       <short value="SHALL | SHOULD | MAY |SHOULD-NOT"/>
       <definition value="Defines the level of expectation associated with a given system capability."/>
       <comment value="If &quot;SHALL NOT&quot; is desired, use the &quot;prohibited&quot; modifier extension.  This extension should only be used with CapabilityStatements documenting requirements, not those documenting actual system capabilities."/>
-      <alias value="extensions"/>
-      <alias value="user content"/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -4734,7 +4567,6 @@
         <code value="Extension"/>
         <profile value="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation|4.0.1"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -4748,7 +4580,7 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <isModifier value="false"/>
@@ -4849,7 +4681,7 @@
       </base>
       <type>
         <code value="canonical"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/OperationDefinition"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/OperationDefinition|4.0.1"/>
       </type>
       <constraint>
         <key value="ele-1"/>
@@ -4902,7 +4734,7 @@
       </base>
       <type>
         <code value="canonical"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/CompartmentDefinition"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/CompartmentDefinition|4.0.1"/>
       </type>
       <constraint>
         <key value="ele-1"/>
@@ -5240,7 +5072,7 @@
         </extension>
         <strength value="extensible"/>
         <description value="The protocol used for message transport."/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/message-transport"/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/message-transport|4.0.1"/>
       </binding>
       <mapping>
         <identity value="rim"/>
@@ -5530,7 +5362,7 @@
       </base>
       <type>
         <code value="canonical"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/MessageDefinition"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/MessageDefinition|4.0.1"/>
       </type>
       <constraint>
         <key value="ele-1"/>
@@ -5763,7 +5595,7 @@
       </base>
       <type>
         <code value="canonical"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/StructureDefinition"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/StructureDefinition|4.0.1"/>
       </type>
       <constraint>
         <key value="ele-1"/>

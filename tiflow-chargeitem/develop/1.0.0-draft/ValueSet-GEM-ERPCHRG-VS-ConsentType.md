@@ -21,7 +21,6 @@ Type of Consents for the ePrescription.
  **References** 
 
 * [GEM_ERPCHRG_PR_Consent](StructureDefinition-GEM-ERPCHRG-PR-Consent.md)
-* [GEM_ERPCHRG_PR_Consent](StructureDefinition-GEM-ERPCHRG-PR-Consent.md)
 
 ### Logical Definition (CLD)
 

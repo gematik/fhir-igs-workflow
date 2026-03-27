@@ -21,7 +21,6 @@ Type of Request from NCPeH
  **References** 
 
 * [GEM ERPEU PR PAR GET Prescription Input](StructureDefinition-GEM-ERPEU-PR-PAR-EU-GET-Prescription-Input.md)
-* [GEM ERPEU PR PAR GET Prescription Input](StructureDefinition-GEM-ERPEU-PR-PAR-EU-GET-Prescription-Input.md)
 
 ### Logical Definition (CLD)
 

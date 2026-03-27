@@ -355,7 +355,6 @@
       <type>
         <code value="Coding"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -374,22 +373,6 @@
         <description value="Security Labels from the Healthcare Privacy and Security Classification System."/>
         <valueSet value="http://hl7.org/fhir/ValueSet/security-labels|4.0.1"/>
       </binding>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="v2"/>
-        <map value="CE/CNE/CWE subset one of the sets of component 1-3 or 4-6"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="CV"/>
-      </mapping>
-      <mapping>
-        <identity value="orim"/>
-        <map value="fhir:Coding rdfs:subClassOf dt:CDCoding"/>
-      </mapping>
     </element>
     <element id="Parameters.meta.tag">
       <path value="Parameters.meta.tag"/>
@@ -406,7 +389,6 @@
       <type>
         <code value="Coding"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -425,22 +407,6 @@
         <description value="Codes that represent various types of tags, commonly workflow-related; e.g. &quot;Needs review by Dr. Jones&quot;."/>
         <valueSet value="http://hl7.org/fhir/ValueSet/common-tags|4.0.1"/>
       </binding>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="v2"/>
-        <map value="CE/CNE/CWE subset one of the sets of component 1-3 or 4-6"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="CV"/>
-      </mapping>
-      <mapping>
-        <identity value="orim"/>
-        <map value="fhir:Coding rdfs:subClassOf dt:CDCoding"/>
-      </mapping>
     </element>
     <element id="Parameters.implicitRules">
       <path value="Parameters.implicitRules"/>
@@ -527,7 +493,6 @@
       <type>
         <code value="BackboneElement"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -546,10 +511,6 @@
       </constraint>
       <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
     </element>
     <element id="Parameters.parameter.id">
       <path value="Parameters.parameter.id"/>
@@ -578,14 +539,6 @@
     </element>
     <element id="Parameters.parameter.extension">
       <path value="Parameters.parameter.extension"/>
-      <slicing>
-        <discriminator>
-          <type value="value"/>
-          <path value="url"/>
-        </discriminator>
-        <description value="Extensions are always sliced by (at least) url"/>
-        <rules value="open"/>
-      </slicing>
       <short value="Additional content defined by implementations"/>
       <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
@@ -671,7 +624,6 @@
       <path value="Parameters.parameter.name"/>
       <short value="Name from the definition"/>
       <definition value="The name of the parameter (reference to the operation definition)."/>
-      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size"/>
       <min value="1"/>
       <max value="1"/>
       <base>
@@ -854,7 +806,6 @@
       <type>
         <code value="Meta"/>
       </type>
-      <condition value="ele-1"/>
       <condition value="inv-1"/>
       <constraint>
         <key value="ele-1"/>
@@ -866,10 +817,6 @@
       </constraint>
       <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
     </element>
     <element id="Parameters.parameter.resource">
       <path value="Parameters.parameter.resource"/>
@@ -889,10 +836,6 @@
       <condition value="inv-1"/>
       <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="Entity. Role, or Act"/>
-      </mapping>
     </element>
     <element id="Parameters.parameter.part">
       <path value="Parameters.parameter.part"/>
@@ -907,6 +850,15 @@
         <max value="*"/>
       </base>
       <contentReference value="http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter"/>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
     </element>
     <element id="Parameters.parameter:rxDispensation">
@@ -924,7 +876,6 @@
       <type>
         <code value="BackboneElement"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -957,10 +908,6 @@
       </constraint>
       <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
     </element>
     <element id="Parameters.parameter:rxDispensation.id">
       <path value="Parameters.parameter.id"/>
@@ -989,14 +936,6 @@
     </element>
     <element id="Parameters.parameter:rxDispensation.extension">
       <path value="Parameters.parameter.extension"/>
-      <slicing>
-        <discriminator>
-          <type value="value"/>
-          <path value="url"/>
-        </discriminator>
-        <description value="Extensions are always sliced by (at least) url"/>
-        <rules value="open"/>
-      </slicing>
       <short value="Additional content defined by implementations"/>
       <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
@@ -1082,7 +1021,6 @@
       <path value="Parameters.parameter.name"/>
       <short value="Name from the definition"/>
       <definition value="The name of the parameter (reference to the operation definition)."/>
-      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size"/>
       <min value="1"/>
       <max value="1"/>
       <base>
@@ -1267,7 +1205,6 @@
       <type>
         <code value="Meta"/>
       </type>
-      <condition value="ele-1"/>
       <condition value="inv-1"/>
       <constraint>
         <key value="ele-1"/>
@@ -1279,10 +1216,6 @@
       </constraint>
       <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
     </element>
     <element id="Parameters.parameter:rxDispensation.resource">
       <path value="Parameters.parameter.resource"/>
@@ -1302,10 +1235,6 @@
       <condition value="inv-1"/>
       <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="Entity. Role, or Act"/>
-      </mapping>
     </element>
     <element id="Parameters.parameter:rxDispensation.part">
       <path value="Parameters.parameter.part"/>
@@ -1327,7 +1256,16 @@
         <max value="*"/>
       </base>
       <contentReference value="http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter"/>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
       <mustSupport value="true"/>
+      <isModifier value="false"/>
       <isSummary value="true"/>
     </element>
     <element id="Parameters.parameter:rxDispensation.part.id">
@@ -1357,14 +1295,6 @@
     </element>
     <element id="Parameters.parameter:rxDispensation.part.extension">
       <path value="Parameters.parameter.part.extension"/>
-      <slicing>
-        <discriminator>
-          <type value="value"/>
-          <path value="url"/>
-        </discriminator>
-        <description value="Extensions are always sliced by (at least) url"/>
-        <rules value="open"/>
-      </slicing>
       <short value="Additional content defined by implementations"/>
       <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
@@ -1450,7 +1380,6 @@
       <path value="Parameters.parameter.part.name"/>
       <short value="Name from the definition"/>
       <definition value="The name of the parameter (reference to the operation definition)."/>
-      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size"/>
       <min value="1"/>
       <max value="1"/>
       <base>
@@ -1473,12 +1402,6 @@
       <isSummary value="true"/>
     </element>
     <element id="Parameters.parameter:rxDispensation.part.value[x]">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Parameters.parameter.part.value[x]"/>
       <short value="If parameter is a data type"/>
       <definition value="If the parameter is a data type."/>
@@ -1639,7 +1562,6 @@
       <type>
         <code value="Meta"/>
       </type>
-      <condition value="ele-1"/>
       <condition value="inv-1"/>
       <constraint>
         <key value="ele-1"/>
@@ -1651,10 +1573,6 @@
       </constraint>
       <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
     </element>
     <element id="Parameters.parameter:rxDispensation.part.resource">
       <path value="Parameters.parameter.part.resource"/>
@@ -1674,10 +1592,6 @@
       <condition value="inv-1"/>
       <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="Entity. Role, or Act"/>
-      </mapping>
     </element>
     <element id="Parameters.parameter:rxDispensation.part.part">
       <path value="Parameters.parameter.part.part"/>
@@ -1692,6 +1606,15 @@
         <max value="*"/>
       </base>
       <contentReference value="http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter"/>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
     </element>
     <element id="Parameters.parameter:rxDispensation.part:medicationDispense">
@@ -1710,6 +1633,15 @@
       <type>
         <code value="BackboneElement"/>
       </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
     </element>
     <element id="Parameters.parameter:rxDispensation.part:medicationDispense.id">
@@ -1739,14 +1671,6 @@
     </element>
     <element id="Parameters.parameter:rxDispensation.part:medicationDispense.extension">
       <path value="Parameters.parameter.part.extension"/>
-      <slicing>
-        <discriminator>
-          <type value="value"/>
-          <path value="url"/>
-        </discriminator>
-        <description value="Extensions are always sliced by (at least) url"/>
-        <rules value="open"/>
-      </slicing>
       <short value="Additional content defined by implementations"/>
       <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
@@ -1832,7 +1756,6 @@
       <path value="Parameters.parameter.part.name"/>
       <short value="Name from the definition"/>
       <definition value="The name of the parameter (reference to the operation definition)."/>
-      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size"/>
       <min value="1"/>
       <max value="1"/>
       <base>
@@ -2017,7 +1940,6 @@
       <type>
         <code value="Meta"/>
       </type>
-      <condition value="ele-1"/>
       <condition value="inv-1"/>
       <constraint>
         <key value="ele-1"/>
@@ -2029,10 +1951,6 @@
       </constraint>
       <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
     </element>
     <element id="Parameters.parameter:rxDispensation.part:medicationDispense.resource">
       <path value="Parameters.parameter.part.resource"/>
@@ -2052,10 +1970,6 @@
       <condition value="inv-1"/>
       <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="Entity. Role, or Act"/>
-      </mapping>
     </element>
     <element id="Parameters.parameter:rxDispensation.part:medicationDispense.part">
       <path value="Parameters.parameter.part.part"/>
@@ -2070,6 +1984,15 @@
         <max value="*"/>
       </base>
       <contentReference value="http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter"/>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
     </element>
     <element id="Parameters.parameter:rxDispensation.part:medication">
@@ -2088,6 +2011,15 @@
       <type>
         <code value="BackboneElement"/>
       </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
     </element>
     <element id="Parameters.parameter:rxDispensation.part:medication.id">
@@ -2117,14 +2049,6 @@
     </element>
     <element id="Parameters.parameter:rxDispensation.part:medication.extension">
       <path value="Parameters.parameter.part.extension"/>
-      <slicing>
-        <discriminator>
-          <type value="value"/>
-          <path value="url"/>
-        </discriminator>
-        <description value="Extensions are always sliced by (at least) url"/>
-        <rules value="open"/>
-      </slicing>
       <short value="Additional content defined by implementations"/>
       <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
@@ -2210,7 +2134,6 @@
       <path value="Parameters.parameter.part.name"/>
       <short value="Name from the definition"/>
       <definition value="The name of the parameter (reference to the operation definition)."/>
-      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size"/>
       <min value="1"/>
       <max value="1"/>
       <base>
@@ -2395,7 +2318,6 @@
       <type>
         <code value="Meta"/>
       </type>
-      <condition value="ele-1"/>
       <condition value="inv-1"/>
       <constraint>
         <key value="ele-1"/>
@@ -2407,10 +2329,6 @@
       </constraint>
       <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
     </element>
     <element id="Parameters.parameter:rxDispensation.part:medication.resource">
       <path value="Parameters.parameter.part.resource"/>
@@ -2456,6 +2374,15 @@
         <max value="*"/>
       </base>
       <contentReference value="http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter"/>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
     </element>
   </snapshot>
