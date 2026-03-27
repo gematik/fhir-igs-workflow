@@ -10,7 +10,7 @@
 </requirement>
 
 <!-- A_27089 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-57" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Einwillung für KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-57" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Einwillung für KVNR" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -42,7 +42,7 @@
 </requirement>
 
 <!-- A_27090 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-58" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Ländercode" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-58" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Ländercode" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -74,7 +74,7 @@
 </requirement>
 
 <!-- A_27091 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-59" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Zugriffscode" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-59" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Zugriffscode" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>

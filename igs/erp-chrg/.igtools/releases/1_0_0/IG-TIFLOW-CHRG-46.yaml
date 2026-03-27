@@ -1,21 +1,28 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: ad7b7f2575e88dcd79eea28299facef56eec80614fa77d6c9f6fb422cdbe08a3
+content_hash: cd3213ba4f3ca054e678457350019d434301083fe495d3e9b73eb9b3f6e2f9d7
 created: '2026-03-23T10:57:49.322632'
-date: '2026-03-23T13:47:27.430261'
+date: '2026-03-27T14:32:27.589064'
 key: IG-TIFLOW-CHRG-46
-modified: '2026-03-23T10:57:49.322633'
-release_status: STABLE
+modified: '2026-03-27T14:32:27.589064'
+release_status: MODIFIED
 source: input/pagecontent/query-api-chargeitem-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produktgutachten
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
-  /ChargeItem sicherstellen, dass ausschließlich Nutzer in der Rolle oid_versicherter
-  die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle "professionOID"
-  des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen,
-  damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt\
+  \ /ChargeItem sicherstellen, dass ausschließlich Nutzer in der Rolle oid_versicherter\
+  \ die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle \"professionOID\"\
+  \ des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen,\
+  \ und bei Abweichungen mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"\
+  border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n\
+  \ </tr>\n </table> \n abrechen, damit E-Rezepte nicht durch Unberechtigte ausgelesen\
+  \ werden können."
 title: TI-Flow-Fachdienst – Abrechnungsinformationen abrufen – Rollenprüfung Versicherter
-version: 0
+version: 1

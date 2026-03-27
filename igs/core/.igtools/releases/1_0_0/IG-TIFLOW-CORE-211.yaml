@@ -1,19 +1,24 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 62d9ed3fe862616e9c3bfebc2fe0d76c3d6e03d31cb40a596eb72ca4d85ef1ed
+content_hash: f4c123334dbc2d1d0159db01eec4b4e972234f9c916a55ccb4e0df377849aa52
 created: '2026-03-23T10:57:48.467434'
-date: '2026-03-23T13:47:26.480221'
+date: '2026-03-27T14:32:26.209047'
 key: IG-TIFLOW-CORE-211
-modified: '2026-03-23T10:57:48.467436'
-release_status: STABLE
+modified: '2026-03-27T14:32:26.209047'
+release_status: MODIFIED
 source: input/pagecontent/query-api-consent-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt
-  /Consent ohne Angabe ?category mit dem HTTP-Fehlercode 405 ablehnen, um das Löschen
-  mehrerer Ressourcen über einen Request zu verhindern.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt\
+  \ /Consent ohne Angabe ?category mit dem folgenden Fehler:\n <table id=\"error-code\"\
+  \ style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>405 - Method Not Allowed</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_CONSENT_CATEGORY_REQUIRED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>-</td>\n </tr>\n </table> \n ablehnen, um das Löschen mehrerer Ressourcen\
+  \ über einen Request zu verhindern."
 title: TI-Flow-Fachdienst - Consent löschen - alles Löschen verbieten
-version: 0
+version: 1

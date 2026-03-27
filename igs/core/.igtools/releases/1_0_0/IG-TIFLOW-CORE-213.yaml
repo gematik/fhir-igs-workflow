@@ -1,12 +1,12 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 2f705f22ed904672c9dcdd9fcdaaa2093433b290c3bf737f39e0e611503196ad
+content_hash: 47e925d442ab57a14578a76584d289c26cb8e5722d2cb3cb3810a1905e915982
 created: '2026-03-23T10:57:48.467743'
-date: '2026-03-23T13:47:26.480590'
+date: '2026-03-27T14:32:26.210044'
 key: IG-TIFLOW-CORE-213
-modified: '2026-03-23T10:57:48.467745'
-release_status: STABLE
+modified: '2026-03-27T14:32:26.210044'
+release_status: MODIFIED
 source: input/pagecontent/query-api-consent-req-fd.md
 status: ACTIVE
 test_procedures:
@@ -16,8 +16,12 @@ text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den
   \ /Consent prüfen, dass der für ?category angegebene Wert in den CodeSystemen \n\
   \ <ul>\n <li>https://gematik.de/fhir/erpchrg/CodeSystem/GEM_ERPCHRG_CS_ConsentType</li>\n\
   \ <li>https://gematik.de/fhir/erp-eu/CodeSystem/GEM_ERPEU_CS_ConsentType</li>\n\
-  \ </ul>\n enthalten ist und bei fehlerhafter Prüfung den Request mit dem Fehler\
-  \ 400 abbrechen, damit nur Löschrequests für definierte Consent Typen ausgeführt\
-  \ werden."
+  \ </ul>\n enthalten ist und bei fehlerhafter Prüfung den Request mit dem folgenden\
+  \ Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
+  \ collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n\
+  \ <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n\
+  \ </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_CONSENT_CATEGORY_INVALID</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen,\
+  \ damit nur Löschrequests für definierte Consent Typen ausgeführt werden."
 title: TI-Flow-Fachdienst - Consent löschen - Prüfung category
-version: 0
+version: 1

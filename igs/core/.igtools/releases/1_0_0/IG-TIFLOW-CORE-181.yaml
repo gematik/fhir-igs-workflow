@@ -1,22 +1,26 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 9e76f9a61ba2c7d1d5bfe7422271c5bb8459793a2c18c20cb106ee30a2e4d6ed
+content_hash: 20c207b58474fcebce7fe236f23270c92c8cbe855d26037a6acd4e3d89e31fe4
 created: '2026-03-23T10:57:48.462396'
-date: '2026-03-23T13:47:26.473056'
+date: '2026-03-27T14:32:26.198503'
 key: IG-TIFLOW-CORE-181
-modified: '2026-03-23T10:57:48.462397'
-release_status: STABLE
+modified: '2026-03-27T14:32:26.198503'
+release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
-  über /Task/&#60;id&#62;/$activate prüfen, dass Patient.identifier.system gleich
-  "http://fhir.de/sid/gkv/kvid-10" ist und andernfalls die Operation mit dem http-Fehlercode
-  400 und dem Hinweis im OperationOutcome "Als Identifier für den Patienten muss eine
-  VersichertenID (KVNR) angegeben werden." abbrechen.
+text: "Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation\
+  \ über /Task/&#60;id&#62;/$activate prüfen, dass Patient.identifier.system gleich\
+  \ \"http://fhir.de/sid/gkv/kvid-10\" ist und andernfalls die Operation mit dem folgenden\
+  \ Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
+  \ collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n\
+  \ <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n\
+  \ </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_KVNR_INVALID</td>\n </tr>\n\
+  \ <tr>\n <th>Details Text</th>\n <td>Als Identifier für den Patienten muss eine\
+  \ VersichertenID (KVNR) angegeben werden.</td>\n </tr>\n </table> \n abbrechen."
 title: TI-Flow-Fachdienst - Task aktivieren - Versicherten-ID als Identifikator von
   Versicherten
-version: 0
+version: 1

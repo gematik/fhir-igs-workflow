@@ -1,21 +1,26 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 38097074c2e2a50a2bedf62bd977e118a8e142ce3c555e78a909e374bdc0ec8e
+content_hash: 14fc6fb08e127b17978976a78191d9c148033d7117bd3e97e418c24971fefcbd
 created: '2026-03-23T10:57:48.469297'
-date: '2026-03-23T13:47:26.482049'
+date: '2026-03-27T14:32:26.211704'
 key: IG-TIFLOW-CORE-218
-modified: '2026-03-23T10:57:48.469299'
-release_status: STABLE
+modified: '2026-03-27T14:32:26.211704'
+release_status: MODIFIED
 source: input/pagecontent/op-create-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS die im Body der HTTP-POST-Operation auf die Ressource
-  Task übertragenen Parameter gegen das Schema http://gematik.de/fhir/erp/OperationDefinition/CreateOperationDefinition
-  prüfen und bei Nicht-Konformität das Anlegen der Ressource im Fachdienst mit dem
-  http-Status-Code 400 beantworten, damit kein Schadcode und keine "fachfremden" Daten
-  in den TI-Flow-Fachdienst hochgeladen werden.
+text: "Der TI-Flow-Fachdienst MUSS die im Body der HTTP-POST-Operation auf die Ressource\
+  \ Task übertragenen Parameter gegen das Schema http://gematik.de/fhir/erp/OperationDefinition/CreateOperationDefinition\
+  \ prüfen und bei Nicht-Konformität das Anlegen der Ressource im Fachdienst mit dem\
+  \ folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black;\
+  \ border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n\
+  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
+  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR Profile Validation Failed</td>\n\
+  \ </tr>\n </table> \n beantworten, damit kein Schadcode und keine \"fachfremden\"\
+  \ Daten in den TI-Flow-Fachdienst hochgeladen werden."
 title: TI-Flow-Fachdienst - Task erzeugen - Schemavalidierung Rezept anlegen
-version: 0
+version: 1

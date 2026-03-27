@@ -1,23 +1,29 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: d2361075c5f9a6f6cdc1b4519900c6b3dd247ffcbb70b93ccb0647483e79341c
+content_hash: dbafec9eec91e0df36335cc962703606781031d48614602d8b39829b5210917e
 created: '2026-03-23T10:57:48.453409'
-date: '2026-03-23T13:47:26.462898'
+date: '2026-03-27T14:32:26.183301'
 key: IG-TIFLOW-CORE-140
-modified: '2026-03-23T10:57:48.453410'
-release_status: STABLE
+modified: '2026-03-27T14:32:26.183301'
+release_status: MODIFIED
 source: input/pagecontent/op-abort-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts durch einen Versicherten,
-  wenn der HTTP-Request keinen HTTP-Header "X-AccessCode" oder URL-Parameter "?ac=..."
-  enthält, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header
-  des HTTP-Requests identifizieren, diese gegen die in Task.for hinterlegte KVNR des
-  begünstigten Patienten prüfen und bei Missmatch den Aufruf mit dem HTTP-Fehlercode
-  403 abweisen, damit ausschließlich der begünstigte Versicherte als Berechtigter
-  ohne Kenntnis des AccessCodes ein E-Rezept löscht.
+text: "Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts durch einen Versicherten,\
+  \ wenn der HTTP-Request keinen HTTP-Header \"X-AccessCode\" oder URL-Parameter \"\
+  ?ac=...\" enthält, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im \"Authorization\"\
+  -Header des HTTP-Requests identifizieren, diese gegen die in Task.for hinterlegte\
+  \ KVNR des begünstigten Patienten prüfen und bei Missmatch den Aufruf mit dem folgenden\
+  \ Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
+  \ collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n\
+  \ <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n\
+  \ </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_IDENTITY_MISMATCH</td>\n </tr>\n\
+  \ <tr>\n <th>Details Text</th>\n <td>Identity mismatch: Access token or x-insurantid\
+  \ header does not match FHIR data (Telematik-ID / KVNR)</td>\n </tr>\n </table>\
+  \ \n abweisen, damit ausschließlich der begünstigte Versicherte als Berechtigter\
+  \ ohne Kenntnis des AccessCodes ein E-Rezept löscht."
 title: TI-Flow-Fachdienst - E-Rezept löschen - Versicherter - Prüfung KVNR
-version: 0
+version: 1

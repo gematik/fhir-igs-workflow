@@ -7,7 +7,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 ### Modulspezifische Anforderungen
 
 <!-- A_24279 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-36" title="TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Rollenprüfung Abgebender stellt Dispensierinformationen bereit" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-36" title="TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Rollenprüfung Abgebender stellt Dispensierinformationen bereit" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -44,7 +44,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 </requirement>
 
 <!-- A_24280 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-37" title="TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Prüfung Secret" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-37" title="TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Prüfung Secret" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -76,7 +76,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 </requirement>
 
 <!-- A_24298 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-38" title="TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Prüfung Status" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-38" title="TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Prüfung Status" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -108,7 +108,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 </requirement>
 
 <!-- A_24281-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-39" title="TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Schemaprüfung MedicationDispense" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-39" title="TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Schemaprüfung MedicationDispense" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>

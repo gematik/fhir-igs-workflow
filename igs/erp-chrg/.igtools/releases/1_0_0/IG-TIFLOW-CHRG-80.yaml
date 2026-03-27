@@ -1,24 +1,30 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 0fe52ca039acb2431fa93f8136bbcfea9b15ca21a35875c537f2eb673a0b2828
+content_hash: 49154c92c15fed7fa225c49e1c4d659a4f1a9ddecef3f1c421c7febac2db15a2
 created: '2026-03-23T10:57:49.328953'
-date: '2026-03-23T13:47:27.436938'
+date: '2026-03-27T14:32:27.603040'
 key: IG-TIFLOW-CHRG-80
-modified: '2026-03-23T10:57:49.328954'
-release_status: STABLE
+modified: '2026-03-27T14:32:27.603040'
+release_status: MODIFIED
 source: input/pagecontent/query-api-chargeitem-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produktgutachten
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete
-  über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende
-  Leistungserbringerinstitution (Apotheke), diese anhand der Telematik-ID aus dem
-  ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen
-  die im gespeicherten Datensatz in ChargeItem.enterer.identifier hinterlegte Telematik-ID
-  prüfen und bei Ungleichheit den Aufruf mit dem HTTP-Fehlercode 403 abweisen, damit
-  ausschließlich die Apotheke, welche die Abrechnungsinformation bereitgestellt hat,
-  diese ändert.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete\
+  \ über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende\
+  \ Leistungserbringerinstitution (Apotheke), diese anhand der Telematik-ID aus dem\
+  \ ACCESS_TOKEN im \"Authorization\"-Header des HTTP-Requests identifizieren, diese\
+  \ gegen die im gespeicherten Datensatz in ChargeItem.enterer.identifier hinterlegte\
+  \ Telematik-ID prüfen und bei Ungleichheit den Aufruf mit dem folgenden Fehler:\n\
+  \ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>SVC_IDENTITY_MISMATCH</td>\n </tr>\n <tr>\n <th>Details\
+  \ Text</th>\n <td>Identity mismatch: Access token or x-insurantid header does not\
+  \ match FHIR data (Telematik-ID / KVNR)</td>\n </tr>\n </table> \n abweisen, damit\
+  \ ausschließlich die Apotheke, welche die Abrechnungsinformation bereitgestellt\
+  \ hat, diese ändert."
 title: TI-Flow-Fachdienst – Abrechnungsinformation ändern – Apotheke – Prüfung Telematik-ID
-version: 0
+version: 1

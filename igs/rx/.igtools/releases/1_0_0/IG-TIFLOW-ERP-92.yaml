@@ -1,22 +1,27 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 6c66d42caa15b460a48d7cd6d16e509e72f7639ee8373dcdf488aa4f80105c4b
+content_hash: 7be2a0d3bd6dcd901938be53eb9f473f8fcab4857f3ea8129722f6142140612c
 created: '2026-03-23T10:57:49.807282'
-date: '2026-03-23T13:47:28.506062'
+date: '2026-03-27T14:32:28.752846'
 key: IG-TIFLOW-ERP-92
-modified: '2026-03-23T10:57:49.807284'
-release_status: STABLE
+modified: '2026-03-27T14:32:28.752846'
+release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
-  über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
-  wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
-  = true) gekennzeichnet und der Numerator oder Denominator größer als 4 ist, weil
-  eine Mehrfachverordnungen aus maximal 4 Teilverordnungen bestehen darf.
+text: "Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation\
+  \ über /Task/&lt;id&gt;/$activate die Operation mit dem folgenden Fehler:\n <table\
+  \ id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>TIFLOW_EREZEPT_MVO_INVALID</td>\n </tr>\n <tr>\n <th>Details\
+  \ Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, wenn die Verordnung als\
+  \ Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen\
+  \ = true) gekennzeichnet und der Numerator oder Denominator größer als 4 ist, weil\
+  \ eine Mehrfachverordnungen aus maximal 4 Teilverordnungen bestehen darf."
 title: TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator-Denominator
   kleiner 5
-version: 0
+version: 1

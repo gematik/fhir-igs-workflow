@@ -1,27 +1,32 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 479f3715d7541e53b257987b1daaad4e99f08e5caf033a6b8dd45fe57cc5167a
+content_hash: ad80209b02880d8491afee19aacd7dfc801356dca1aab43985a9f5256507d787
 created: '2026-03-23T10:57:48.480460'
-date: '2026-03-23T13:47:26.491965'
+date: '2026-03-27T14:32:26.222026'
 key: IG-TIFLOW-CORE-249
-modified: '2026-03-23T10:57:48.480462'
-release_status: STABLE
+modified: '2026-03-27T14:32:26.222026'
+release_status: MODIFIED
 source: input/pagecontent/op-accept-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
 text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
-  \ über /Task/&lt;id&gt;/$accept die Operation mit dem HTTP-Fehlercode 409 abbrechen,\
-  \ wenn der StatusTask.status = \"completed\", Task.status = \"in-progress\" oder\
-  \ Task.status = \"draft\" ist, damit ein bereits in Abgabe befindliches oder beliefertes\
-  \ E-Rezept nicht durch eine zweite Apotheke bearbeitet werden kann. Im OperationOutcome\
-  \ werden weitere Informationen gegeben: \"Task has invalid status completed\", \"\
-  Task has invalid status in-progress\" bzw. \"Task has invalid status draft\". <br>\n\
-  \ Der TI-Flow-Fachdienst MUSS in OperationOutcome zusätzlich die Information \"\
-  Task is processed by requesting institution\" ergänzen, wenn Task.status = \"in-progress\"\
+  \ über /Task/&lt;id&gt;/$accept die Operation mit dem folgenden Fehler:\n <table\
+  \ id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>409 - Conflict</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n </tr>\n <tr>\n\
+  \ <th>Details Text</th>\n <td>%1</td>\n </tr>\n </table> \n abbrechen, wenn der\
+  \ StatusTask.status = \"completed\", Task.status = \"in-progress\" oder Task.status\
+  \ = \"draft\" ist, damit ein bereits in Abgabe befindliches oder beliefertes E-Rezept\
+  \ nicht durch eine zweite Apotheke bearbeitet werden kann. Im OperationOutcome werden\
+  \ weitere Informationen gegeben: \"Task has invalid status completed\", \"Task has\
+  \ invalid status in-progress\" bzw. \"Task has invalid status draft\". <br>\n Der\
+  \ TI-Flow-Fachdienst MUSS in OperationOutcome zusätzlich die Information \"Task\
+  \ is processed by requesting institution\" ergänzen, wenn Task.status = \"in-progress\"\
   \ und die zum referenzierten Task in Task.owner gespeicherte Telematik-ID der abgebenden\
   \ LEI mit der Telematik-ID aus dem ACCESS_TOKEN übereinstimmt."
 title: TI-Flow-Fachdienst - Task akzeptieren - Rezept bereits in Abgabe oder Bearbeitung
-version: 0
+version: 1

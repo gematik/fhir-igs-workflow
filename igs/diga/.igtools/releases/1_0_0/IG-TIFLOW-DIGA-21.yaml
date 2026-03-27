@@ -1,12 +1,12 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 4d6a2f2fa4efdfc001a0860c38f3f9c9b2c12063222057a7f2f8417d0ed971d8
+content_hash: 1c16f4ae3d754a447b1fdfd8a79dedc4c1ba70ec86d9fb5db7d7826301af7998
 created: '2026-03-23T10:57:49.158453'
-date: '2026-03-23T13:47:27.056007'
+date: '2026-03-27T14:32:26.788480'
 key: IG-TIFLOW-DIGA-21
-modified: '2026-03-23T10:57:49.158455'
-release_status: STABLE
+modified: '2026-03-27T14:32:26.788480'
+release_status: MODIFIED
 source: input/pagecontent/op-accept-req-fd.md
 status: ACTIVE
 test_procedures:
@@ -17,7 +17,13 @@ text: "Der TI-Flow-Fachdienst MUSS beim Abrufen eines Tasks für eine Verordnung
   \ die Rolle \"professionOID\" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader\
   \ \"Authorization\" feststellen und sicherstellen, dass ausschließlich Institutionen\
   \ in der Rolle\n <ul>\n <li>oid_kostentraeger</li>\n </ul>\n die Operation am Fachdienst\
-  \ aufrufen, damit die Verordnung nicht durch einen Unberechtigten abgerufen werden\
-  \ kann."
+  \ aufrufen, und bei Abweichungen mit dem folgenden Fehler:\n <table id=\"error-code\"\
+  \ style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n\
+  \ </tr>\n </table> \n abrechen, damit die Verordnung nicht durch einen Unberechtigten\
+  \ abgerufen werden kann."
 title: TI-Flow-Fachdienst - Task akzeptieren - Flowtype 162 - Rollenprüfung
-version: 0
+version: 1

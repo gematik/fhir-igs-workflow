@@ -1,21 +1,25 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 5f180694a69c4f2eccdda8e7d64c0665c482a9c48a42e5a500c79f466ccdfdb7
+content_hash: fab07d5bc5f5bcd8448ffe83bd7c0aaab22f3179a085230067121f8d22d2f961
 created: '2026-03-23T10:57:48.521936'
-date: '2026-03-23T13:47:26.519230'
+date: '2026-03-27T14:32:26.255957'
 key: IG-TIFLOW-CORE-360
-modified: '2026-03-23T10:57:48.521938'
-release_status: STABLE
+modified: '2026-03-27T14:32:26.255957'
+release_status: MODIFIED
 source: input/pagecontent/menu-schnittstellen-generelle-prinzipien.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der E‑Rezept‑Fachdienst MUSS eingehende Datensätze strikt als UTF‑8 ohne Byte
-  Order Mark (BOM) decodieren und bei fehlgeschlagener Decodierung oder beim Vorhandensein
-  eines BOM die Verarbeitung mit einer HTTP‑Antwort 400 (Bad Request) und geeigneter
-  Fehlermeldung abbrechen.
+text: "Der E‑Rezept‑Fachdienst MUSS eingehende Datensätze strikt als UTF‑8 ohne Byte\
+  \ Order Mark (BOM) decodieren und bei fehlgeschlagener Decodierung oder beim Vorhandensein\
+  \ eines BOM die Verarbeitung mit dem folgenden Fehler:\n <table id=\"error-code\"\
+  \ style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_BOM_DETECTED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n\
+  \ </tr>\n </table> \n abbrechen."
 title: TI-Flow-Fachdienst - Verarbeitung von Datensätzen - Forcieren von UTF-8 ohne
   BOM
-version: 0
+version: 1

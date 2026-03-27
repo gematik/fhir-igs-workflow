@@ -1,29 +1,26 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 133a5a7048a28e2c6452781af18e99f0a58253616cbc4862a1c3691308b73774
+content_hash: bf0f277e0dfc770ef4f4c4433025702a589aa114666a5b216f7fc9a6406f316a
 created: '2026-03-23T10:57:48.462027'
-date: '2026-03-23T13:47:26.472506'
+date: '2026-03-27T14:32:26.196513'
 key: IG-TIFLOW-CORE-178
-modified: '2026-03-23T10:57:48.462028'
-release_status: STABLE
+modified: '2026-03-27T14:32:26.196513'
+release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
 text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
-  \ über /Task/&#60;id&#62;/$activate \n <ul>\n <li>\n die qualifizierte Signatur\
-  \ des QES-Datensatzes gemäß [ETSI_QES] prüfen und bei nicht gültiger qualifizierter\
-  \ Signatur die Operation mit Status 400 abbrechen \n </li>\n <li>\n bzw. bei gültiger\
-  \ Signatur das innerhalb des PKCS#7-Datensatz enveloping-enthaltene FHIR-Bundle\
-  \ einer umfänglichen FHIR-Validierung gegen die eRezept-Schema-Definition der KBV\
-  \ kbv.ita.erp oder kbv.itv.evdga unterziehen und bei Invalidität die Operation mit\
-  \ Status 400 abbrechen\n </li>\n <li>\n bzw. bei gültiger Signatur und validem FHIR\
-  \ den Datensatz als PKCS#7-Datei sicher speichern und in Task.input mit Codingsystem\
-  \ https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType = 1 über eine interne,\
-  \ eindeutige UUID referenzieren,\n </li>\n </ul>\n damit der nachfolgende Workflow\
-  \ ausschließlich auf Basis medizinisch korrekter und vom Leistungserbringer mittels\
-  \ Signatur freigegebener Daten erfolgt."
+  \ über /Task/&#60;id&#62;/$activate die qualifizierte Signatur des QES-Datensatzes\
+  \ gemäß [ETSI_QES] prüfen und bei nicht gültiger qualifizierter Signatur die Operation\
+  \ mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid\
+  \ black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad\
+  \ Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n\
+  \ <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_SIGNATURE_INVALID</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table>\n abbrechen\
+  \ damit der nachfolgende Workflow ausschließlich auf Basis medizinisch korrekter\
+  \ und vom Leistungserbringer mittels Signatur freigegebener Daten erfolgt."
 title: TI-Flow-Fachdienst - Task aktivieren - QES prüfen Rezept aktualisieren
-version: 0
+version: 1

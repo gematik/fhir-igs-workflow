@@ -1,7 +1,7 @@
 ### Anforderungen der Schnittstelle aus diesem Modul
 
 <!-- A_27059 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-4" title="TI-Flow-Fachdienst - eu-prescription abfragen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-4" title="TI-Flow-Fachdienst - eu-prescription abfragen - Rollenprüfung" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -33,7 +33,7 @@
 </requirement>
 
 <!-- A_27060 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-5" title="TI-Flow-Fachdienst - eu-prescription abfragen - Schemaprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-5" title="TI-Flow-Fachdienst - eu-prescription abfragen - Schemaprüfung" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -65,7 +65,7 @@
 </requirement>
 
 <!-- A_27061 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-6" title="TI-Flow-Fachdienst - eu-prescription abfragen - Prüfung Einwilligung für KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-6" title="TI-Flow-Fachdienst - eu-prescription abfragen - Prüfung Einwilligung für KVNR" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -97,7 +97,7 @@
 </requirement>
 
 <!-- A_27062 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-7" title="TI-Flow-Fachdienst - eu-prescription abfragen - Prüfung Zugriffsberechtigung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-7" title="TI-Flow-Fachdienst - eu-prescription abfragen - Prüfung Zugriffsberechtigung" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -174,7 +174,7 @@
 </requirement>
 
 <!-- A_27065 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-13" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage der aktuellsten Verordnungsinformationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-13" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage der aktuellsten Verordnungsinformationen" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -206,7 +206,7 @@
 </requirement>
 
 <!-- A_27066 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-14" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage aller einlösbaren Verordnungsinformationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-14" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage aller einlösbaren Verordnungsinformationen" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -238,7 +238,7 @@
 </requirement>
 
 <!-- A_27067 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-15" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-15" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>

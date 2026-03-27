@@ -1,12 +1,12 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 024ae0d1fbe54c4e3a6057fda9b0fc300a598966172bc90a8ddb2e1509f3c081
+content_hash: 79e2c07621eba7a69b7352704274f9b8ea9d73e2deeeff016c478e92f96a29a6
 created: '2026-03-23T10:57:49.788591'
-date: '2026-03-23T13:47:28.487710'
+date: '2026-03-27T14:32:28.731853'
 key: IG-TIFLOW-ERP-50
-modified: '2026-03-23T10:57:49.788593'
-release_status: STABLE
+modified: '2026-03-27T14:32:28.731853'
+release_status: MODIFIED
 source: input/pagecontent/op-abort-req-fd.md
 status: ACTIVE
 test_procedures:
@@ -14,10 +14,15 @@ test_procedures:
   - Produkttest
 text: "Der TI-Flow-Fachdienst MUSS das Löschen eines E-Rezepts über den mittels der\
   \ &lt;id&gt; adressierten /Task/&lt;id&gt;/$abort verhindern und die Operation mit\
-  \ dem HTTP-Fehlercode 403 abweisen, wenn der Status des adressierten Tasks ungleich\
-  \ \"in-progress\" ist und die Rolle des aufrufenden Nutzers einer der folgenden\
-  \ Rollen entspricht: \n <ul>\n <li>oid_oeffentliche_apotheke</li>\n <li>oid_krankenhausapotheke</li>\n\
+  \ dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black;\
+  \ border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n\
+  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
+  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>Task has invalid status.</td>\n </tr>\n\
+  \ </table> \n abweisen, wenn der Status des adressierten Tasks ungleich \"in-progress\"\
+  \ ist und die Rolle des aufrufenden Nutzers einer der folgenden Rollen entspricht:\
+  \ \n <ul>\n <li>oid_oeffentliche_apotheke</li>\n <li>oid_krankenhausapotheke</li>\n\
   \ </ul>\n damit kein Apotheker ein Rezept löscht, das ihm nicht ausdrücklich zugewiesen\
   \ wurde."
 title: TI-Flow-Fachdienst - E-Rezept löschen - Apotheke - Statusprüfung ungleich in-progress
-version: 0
+version: 1

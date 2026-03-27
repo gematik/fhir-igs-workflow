@@ -1,24 +1,29 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 349d021b2dce0f19449100cd0edf83a7b1ad242cbc259b57b879c9cc7c5f3165
+content_hash: 194f0e43860d6bbd92cc12b85a773d2aca0e461a52f34cca1c020ef4b6a62f6c
 created: '2026-03-23T10:57:49.782195'
-date: '2026-03-23T13:47:28.480631'
+date: '2026-03-27T14:32:28.720744'
 key: IG-TIFLOW-ERP-18
-modified: '2026-03-23T10:57:49.782197'
-release_status: STABLE
+modified: '2026-03-27T14:32:28.720744'
+release_status: MODIFIED
 source: input/pagecontent/op-close-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: 'Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks für ein E-Rezept mittels
-  HTTP-POST/$close-Operation auf den in der URL referenzierten /Task/&lt;id&gt; mit
-  Flowtype 160, 166, 169, 200, oder 209 sicherstellen, dass das in GEM_ERP_PR_PAR_CloseOperation_Input
-  enthaltene MedicationDispense-Objekt dem Profil GEM_ERP_PR_MedicationDispense entspricht.
-  Andernfalls ist die Operation mit einem Fehler abzubrechen, und im OperationOutcome
-  muss der Text "Unzulässige Abgabeinformationen: Für diesen Workflow sind nur Abgabeinformationen
-  für Arzneimittel zulässig." zurückgegeben werden.'
+text: "Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks für ein E-Rezept mittels\
+  \ HTTP-POST/$close-Operation auf den in der URL referenzierten /Task/&lt;id&gt;\
+  \ mit Flowtype 160, 166, 169, 200, oder 209 sicherstellen, dass das in GEM_ERP_PR_PAR_CloseOperation_Input\
+  \ enthaltene MedicationDispense-Objekt dem Profil GEM_ERP_PR_MedicationDispense\
+  \ entspricht. Andernfalls ist die Operation mit dem folgenden Fehler:\n <table id=\"\
+  error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n\
+  \ <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>TIFLOW_MEDICATION_DISPENSE_INVALID</td>\n </tr>\n\
+  \ <tr>\n <th>Details Text</th>\n <td>Unzulässige Abgabeinformationen: Für diesen\
+  \ Workflow sind nur Abgabeinformationen für Arzneimittel zulässig</td>\n </tr>\n\
+  \ </table>\n abzubrechen."
 title: TI-Flow-Fachdienst - Task schließen - Flowtype 160/166/169/200/209 - Profilprüfung
   MedicationDispense
-version: 0
+version: 1

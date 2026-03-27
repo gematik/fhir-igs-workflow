@@ -1,23 +1,28 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 6369afe1cfa23771a9a5b241143e8ef8c115a39615bf9a5a659c5848ce9027ed
+content_hash: e6cf0c8d96f8822637f6339493ff4ad91ff27c6e418d026f8307aa06768c09ae
 created: '2026-03-23T10:57:49.570536'
-date: '2026-03-23T13:47:27.792428'
+date: '2026-03-27T14:32:27.977756'
 key: IG-TIFLOW-XBORDER-41
-modified: '2026-03-23T10:57:49.570537'
-release_status: STABLE
+modified: '2026-03-27T14:32:27.977756'
+release_status: MODIFIED
 source: input/pagecontent/op-eu-close-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts
-  /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass zu dem in Parameters.parameter:requestData.part:kvnr,
-  Parameters.parameter:requestData.part:accessCode und Parameters.parameter:requestData.part:countryCode
-  übermittelte Tripple von KVNR, Zugriffs- und Ländercode eine zeitliche gültige Zugriffsberechtigung
-  im TI-Flow-Fachdienst existiert und bei fehlgeschlagener Prüfung die Operation mit
-  dem HTTP-Fehlercode 403 abbrechen, damit nur Dispensierinformationen übermittelt
-  werden, wenn eine gültige Zugriffsberechtigung vorliegt.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts\
+  \ /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass zu dem in Parameters.parameter:requestData.part:kvnr,\
+  \ Parameters.parameter:requestData.part:accessCode und Parameters.parameter:requestData.part:countryCode\
+  \ übermittelte Tripple von KVNR, Zugriffs- und Ländercode eine zeitliche gültige\
+  \ Zugriffsberechtigung im TI-Flow-Fachdienst existiert und bei fehlgeschlagener\
+  \ Prüfung die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"\
+  border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_ACCESS_PERMISSION_INVALID</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>-</td>\n </tr>\n </table> \n abbrechen, damit nur Dispensierinformationen\
+  \ übermittelt werden, wenn eine gültige Zugriffsberechtigung vorliegt."
 title: TI-Flow-Fachdienst - Task schließen - EU - Prüfung Zugriffsberechtigung
-version: 0
+version: 1

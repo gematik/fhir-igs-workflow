@@ -1,21 +1,26 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: d6b1bd95af392df5a1b175b30411c83c1a849f1e58fb954898b281f3078f83aa
+content_hash: e087a91463bcf1b2af56a5af599ba036560360a9d228f769813a8d70c54211e1
 created: '2026-03-23T10:57:49.802692'
-date: '2026-03-23T13:47:28.499363'
+date: '2026-03-27T14:32:28.746519'
 key: IG-TIFLOW-ERP-82
-modified: '2026-03-23T10:57:49.802695'
-release_status: STABLE
+modified: '2026-03-27T14:32:28.746519'
+release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Herstellererklärung
-text: Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
-  über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 und einem Hinweis
-  auf den Ausschluss von Betäubungsmittel ("BTM nicht zulässig" im OperationOutcome)
-  abbrechen, wenn der übergebene QES-Datensatz als Betäubungsmittel-Verordnung (Bundle.Medication.extension:KBV_EX_ERP_Medication_Category:code
-  gleich "01") gekennzeichnet ist.
+text: "Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation\
+  \ über /Task/&lt;id&gt;/$activate die Operation mit dem folgenden Fehler:\n <table\
+  \ id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>TIFLOW_EREZEPT_DRUG_CATEGORY_FORBIDDEN</td>\n </tr>\n\
+  \ <tr>\n <th>Details Text</th>\n <td>BTM nicht zulässig</td>\n </tr>\n </table>\
+  \ \n abbrechen, wenn der übergebene QES-Datensatz als Betäubungsmittel-Verordnung\
+  \ (Bundle.Medication.extension:KBV_EX_ERP_Medication_Category:code gleich \"01\"\
+  ) gekennzeichnet ist."
 title: TI-Flow-Fachdienst - Task aktivieren - Ausschluss Betäubungsmittel
-version: 0
+version: 1

@@ -1,7 +1,7 @@
 ### Anforderungen der Schnittstelle aus diesem Modul
 
 <!-- A_27068 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-38" title="TI-Flow-Fachdienst - Task schließen - EU - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-38" title="TI-Flow-Fachdienst - Task schließen - EU - Rollenprüfung" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -33,7 +33,7 @@
 </requirement>
 
 <!-- A_27069 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-39" title="TI-Flow-Fachdienst - Task schließen - EU - Schemaprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-39" title="TI-Flow-Fachdienst - Task schließen - EU - Schemaprüfung" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -65,7 +65,7 @@
 </requirement>
 
 <!-- A_27070 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-40" title="TI-Flow-Fachdienst - Task schließen - EU - Prüfung Einwilligung für KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-40" title="TI-Flow-Fachdienst - Task schließen - EU - Prüfung Einwilligung für KVNR" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -97,7 +97,7 @@
 </requirement>
 
 <!-- A_27071 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-41" title="TI-Flow-Fachdienst - Task schließen - EU - Prüfung Zugriffsberechtigung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-41" title="TI-Flow-Fachdienst - Task schließen - EU - Prüfung Zugriffsberechtigung" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -129,7 +129,7 @@
 </requirement>
 
 <!-- A_27072 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-42" title="TI-Flow-Fachdienst - Task schließen - EU - Statusprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-42" title="TI-Flow-Fachdienst - Task schließen - EU - Statusprüfung" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>

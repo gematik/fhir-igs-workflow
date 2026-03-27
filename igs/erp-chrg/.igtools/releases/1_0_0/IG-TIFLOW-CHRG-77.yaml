@@ -1,21 +1,26 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: c45024fe800731583c09301522294c9329c137c7cb19bfd4fc5a6362bf7fe21a
+content_hash: 51a0f51663ad44e308ff92dd79b943757677b17544666bee2f49b50c9492189a
 created: '2026-03-23T10:57:49.328441'
-date: '2026-03-23T13:47:27.436266'
+date: '2026-03-27T14:32:27.601480'
 key: IG-TIFLOW-CHRG-77
-modified: '2026-03-23T10:57:49.328443'
-release_status: STABLE
+modified: '2026-03-27T14:32:27.601480'
+release_status: MODIFIED
 source: input/pagecontent/query-api-chargeitem-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS die in der HTTP-PATCH-Operation auf die Ressource
-  Chargeltem übertragene Parameters Ressource gegen das FHIR-Profil GEM_ERPCHRG_PR_PAR_Patch_ChargeItem_Input
-  prüfen und bei Nicht-Konformität das Verarbeiten der Ressource im TI-Flow-Fachdienst
-  mit dem http-Status-Code 400 ablehnen.
+text: "Der TI-Flow-Fachdienst MUSS die in der HTTP-PATCH-Operation auf die Ressource\
+  \ Chargeltem übertragene Parameters Ressource gegen das FHIR-Profil GEM_ERPCHRG_PR_PAR_Patch_ChargeItem_Input\
+  \ prüfen und bei Nicht-Konformität das Verarbeiten der Ressource im TI-Flow-Fachdienst\
+  \ mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid\
+  \ black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad\
+  \ Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n\
+  \ <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR Profile Validation Failed</td>\n\
+  \ </tr>\n </table> \n ablehnen."
 title: TI-Flow-Fachdienst - Abrechnungsinformation ändern (PATCH) - FHIR-Validierung
   Parameters
-version: 0
+version: 1

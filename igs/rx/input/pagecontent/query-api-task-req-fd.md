@@ -26,7 +26,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 ##### Workflowspezifische Anforderungen
 
 <!-- A_26148 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-35" title="TI-Flow-Fachdienst - Task abrufen - Flowtype 169/209 - Nicht verfügbar bei KVNR-Mismatch" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-35" title="TI-Flow-Fachdienst - Task abrufen - Flowtype 169/209 - Nicht verfügbar bei KVNR-Mismatch" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>

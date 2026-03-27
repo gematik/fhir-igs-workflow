@@ -1,23 +1,28 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: dff3183c2ad270b8c1801474f078ed8b6caa0bd4ca24ed52b6292f1f39ee75e3
+content_hash: 7b6caecab5e8d8eadc62cb8eb3fe4829ff0dcd90a7191c2913e447a20f1fe709
 created: '2026-03-23T10:57:48.505888'
-date: '2026-03-23T13:47:26.510852'
+date: '2026-03-27T14:32:26.244042'
 key: IG-TIFLOW-CORE-322
-modified: '2026-03-23T10:57:48.505890'
-release_status: STABLE
+modified: '2026-03-27T14:32:26.244042'
+release_status: MODIFIED
 source: input/pagecontent/query-api-communication-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: 'Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation
-  POST auf den Endpunkt /Communication, falls die Ressource dem GEM_ERP_PR_Communication_Reply-Profil
-  entspricht, den Inhalt der contentString-Eigenschaft auf valides JSON sowie gegen
-  die Struktur in "Tabelle: Nachricht als Apotheke an einen Versicherten schicken"
-  überprüfen und bei negativem Prüfergebnis, mit einem Http-Fehler 400 (Bad Request)
-  abbrechen sowie mit einer aussagekräftigen Fehlermeldung in Form einer eingebetteten
-  OperationOutcome-Ressource antworten.'
+text: "Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation\
+  \ POST auf den Endpunkt /Communication, falls die Ressource dem GEM_ERP_PR_Communication_Reply-Profil\
+  \ entspricht, den Inhalt der contentString-Eigenschaft auf valides JSON sowie gegen\
+  \ die Struktur in \"Tabelle: Nachricht als Apotheke an einen Versicherten schicken\"\
+  \ überprüfen und bei negativem Prüfergebnis, mit dem folgenden Fehler:\n <table\
+  \ id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details\
+  \ Text</th>\n <td>FHIR Profile Validation Failed</td>\n </tr>\n </table> \n abbrechen\
+  \ sowie mit einer aussagekräftigen Fehlermeldung in Form einer eingebetteten OperationOutcome-Ressource\
+  \ antworten."
 title: TI-Flow-Fachdienst - Nachricht einstellen - Validierung Payload  GEM_ERP_PR_Communication_Reply
-version: 0
+version: 1

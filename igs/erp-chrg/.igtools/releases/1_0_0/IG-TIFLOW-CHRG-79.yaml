@@ -1,23 +1,27 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: f4feb500e9f59a52396e462400133eb20b448086a1bafc0a010c147746449ef4
+content_hash: f98024e428549213a11bf2ba5b5fedcc179c55673eb6c4b4e331b14beb596096
 created: '2026-03-23T10:57:49.328801'
-date: '2026-03-23T13:47:27.436725'
+date: '2026-03-27T14:32:27.602535'
 key: IG-TIFLOW-CHRG-79
-modified: '2026-03-23T10:57:49.328803'
-release_status: STABLE
+modified: '2026-03-27T14:32:27.602535'
+release_status: MODIFIED
 source: input/pagecontent/query-api-chargeitem-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produktgutachten
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete
-  über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource sicherstellen,
-  dass zu der in ChargeItem.subject.identifier übermittelten KVNR ein Consent-Datensatz
-  mit Consent.patient.identifier = KVNR und Consent.category.coding.code = CHARGCONS
-  existiert und bei fehlgeschlagener Prüfung die Operation mit dem HTTP-Fehlercode
-  403 abbrechen, damit nur eine Abrechnungsinformation für Versicherte gespeichert
-  wird, die eine Einwilligung erteilt haben.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete\
+  \ über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource sicherstellen,\
+  \ dass zu der in ChargeItem.subject.identifier übermittelten KVNR ein Consent-Datensatz\
+  \ mit Consent.patient.identifier = KVNR und Consent.category.coding.code = CHARGCONS\
+  \ existiert und bei fehlgeschlagener Prüfung die Operation mit dem folgenden Fehler:\n\
+  \ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>TIFLOW_CONSENT_REQUIRED</td>\n </tr>\n <tr>\n <th>Details\
+  \ Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit nur eine Abrechnungsinformation\
+  \ für Versicherte gespeichert wird, die eine Einwilligung erteilt haben."
 title: TI-Flow-Fachdienst – Abrechnungsinformation ändern – Prüfung Einwilligung
-version: 0
+version: 1

@@ -1,24 +1,29 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: aa6884ea1c6b7a00b83136535acc3dc2bc0130f7e2e8c6be7fc01ae45c70a8fa
+content_hash: 55fe5e7cf906414edb87bb5189862bdf08a978275e29e97b0a236c12a3595fd6
 created: '2026-03-23T10:57:49.788896'
-date: '2026-03-23T13:47:28.488121'
+date: '2026-03-27T14:32:28.732844'
 key: IG-TIFLOW-ERP-52
-modified: '2026-03-23T10:57:49.788898'
-release_status: STABLE
+modified: '2026-03-27T14:32:28.732844'
+release_status: MODIFIED
 source: input/pagecontent/op-abort-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: 'Der TI-Flow-Fachdienst MUSS das Löschen eines E-Rezepts mit dem Flowtype 169
-  oder 209 über den mittels der &lt;id&gt; adressierten /Task/&lt;id&gt;/$abort verhindern
-  und die Operation mit dem HTTP-Fehlercode 403 abweisen, wenn der Status des adressierten
-  Tasks ungleich "completed" ist und die Rolle des aufrufenden Nutzers der folgenden
-  Rollen entspricht: oid_versicherter damit kein Versicherter ein E-Rezept aus einem
-  Workflow mit Workflowsteuerung durch Leistungserbringer (169, 209) löscht, das nicht
-  bereits beliefert wurde.'
+text: "Der TI-Flow-Fachdienst MUSS das Löschen eines E-Rezepts mit dem Flowtype 169\
+  \ oder 209 über den mittels der &lt;id&gt; adressierten /Task/&lt;id&gt;/$abort\
+  \ verhindern und die Operation mit dem folgenden Fehler:\n <table id=\"error-code\"\
+  \ style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>Task has invalid status.</td>\n </tr>\n </table> \n abweisen, wenn der Status\
+  \ des adressierten Tasks ungleich \"completed\" ist und die Rolle des aufrufenden\
+  \ Nutzers der folgenden Rollen entspricht: oid_versicherter damit kein Versicherter\
+  \ ein E-Rezept aus einem Workflow mit Workflowsteuerung durch Leistungserbringer\
+  \ (169, 209) löscht, das nicht bereits beliefert wurde."
 title: TI-Flow-Fachdienst - E-Rezept löschen - Flowtype 169 / 209 - Versicherter -
   Statusprüfung
-version: 0
+version: 1

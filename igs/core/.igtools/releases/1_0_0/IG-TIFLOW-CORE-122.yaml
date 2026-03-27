@@ -1,23 +1,28 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: ce998ae660a616aa882b8766ce4b24a9eb05e658ce931e5cacb77ad70f2171e1
+content_hash: 938f1eeac38cbe7d4d17f69dcf75ea03d581f8dd1c8ed487bbd55011a017a30c
 created: '2026-03-23T10:57:48.449543'
-date: '2026-03-24T15:22:24.206021'
+date: '2026-03-27T14:32:26.177712'
 key: IG-TIFLOW-CORE-122
-modified: '2026-03-23T10:57:48.449544'
-release_status: STABLE
+modified: '2026-03-27T14:32:26.177712'
+release_status: MODIFIED
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete
-  über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten,
-  den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header
-  des HTTP-Requests identifizieren, diese gegen die im gespeicherten Datensatz in
-  Task.for.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei
-  Ungleichheit den Aufruf mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich
-  der begünstigte Versicherte als Berechtigter einen Task ändert.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete\
+  \ über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten,\
+  \ den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im \"Authorization\"-Header\
+  \ des HTTP-Requests identifizieren, diese gegen die im gespeicherten Datensatz in\
+  \ Task.for.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und\
+  \ bei Ungleichheit den Aufruf mit dem folgenden Fehler:\n <table id=\"error-code\"\
+  \ style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_KVNR_MISMATCH</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n\
+  \ </tr>\n </table> \n abweisen, damit ausschließlich der begünstigte Versicherte\
+  \ als Berechtigter einen Task ändert."
 title: TI-Flow-Fachdienst -Task markieren - Versicherter - Prüfung KVNR
-version: 0
+version: 1

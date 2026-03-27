@@ -1,21 +1,26 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: e0cdf3895e83a0f9a8fdccba1d6cf47000b1d07681782bd0f51aac800f83c847
+content_hash: 6bfb36e14635293b09b1d2a74e38bda7496f1b3b5f611495393fcc623bf401ea
 created: '2026-03-23T10:57:49.331913'
-date: '2026-03-23T13:47:27.441509'
+date: '2026-03-27T14:32:27.611191'
 key: IG-TIFLOW-CHRG-96
-modified: '2026-03-23T10:57:49.331915'
-release_status: STABLE
+modified: '2026-03-27T14:32:27.611191'
+release_status: MODIFIED
 source: input/pagecontent/query-api-communication-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht der Profile GEM_ERPCHRG_PR_Communication_ChargChangeReq
-  oder GEM_ERPCHRG_PR_Communication_ChargChangeReply über die HTTP-Operation POST
-  auf den Endpunkt /Communication mit dem http-Status-Code 400 abbrechen, wenn das
-  Pflichtfeld Communication.basedOn einen ChargeItem referenziert, der nicht existiert,
-  um Spam und nicht-rezeptbezogene Kommunikation zu verhindern.
+text: "Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht der Profile GEM_ERPCHRG_PR_Communication_ChargChangeReq\
+  \ oder GEM_ERPCHRG_PR_Communication_ChargChangeReply über die HTTP-Operation POST\
+  \ auf den Endpunkt /Communication mit dem folgenden Fehler:\n <table id=\"error-code\"\
+  \ style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_CHARGEITEM_NOT_FOUND</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>-</td>\n </tr>\n </table> \n abbrechen, wenn das Pflichtfeld Communication.basedOn\
+  \ einen ChargeItem referenziert, der nicht existiert, um Spam und nicht-rezeptbezogene\
+  \ Kommunikation zu verhindern."
 title: TI-Flow-Fachdienst – Nachricht einstellen – Prüfung Existenz ChargeItem
-version: 0
+version: 1

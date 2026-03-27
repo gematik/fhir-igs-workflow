@@ -1,22 +1,27 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: b6f664de3df20e612bd5316138e86c084009fa8e9b08816c91308b305dcd3c2a
+content_hash: 2bf39900cf6918ecf314f577cbbf5f0d222bd42e8255aaa0f2f2b160c27e766e
 created: '2026-03-23T10:57:48.453548'
-date: '2026-03-23T13:47:26.463104'
+date: '2026-03-27T14:32:26.183841'
 key: IG-TIFLOW-CORE-141
-modified: '2026-03-23T10:57:48.453550'
-release_status: STABLE
+modified: '2026-03-27T14:32:26.183841'
+release_status: MODIFIED
 source: input/pagecontent/op-abort-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der
-  &#60;id&#62; adressierten/Task/&#60;id&#62;/$abort durch verordnende Leistungserbringer
-  den im HTTP-Header "X-AccessCode" gegen den im referenzierten Task enthaltenen AccessCode
-  prüfen und bei Missmatch oder Fehlen im HTTP-Header, den Aufruf mit dem HTTP-Fehlercode
-  403 abweisen, damit ausschließlich die verordnende Leistungserbringerinstitution
-  in Kenntnis des AccessCodes als Berechtigte ein E-Rezept löschen.
+text: "Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der\
+  \ &#60;id&#62; adressierten/Task/&#60;id&#62;/$abort durch verordnende Leistungserbringer\
+  \ den im HTTP-Header \"X-AccessCode\" gegen den im referenzierten Task enthaltenen\
+  \ AccessCode prüfen und bei Missmatch oder Fehlen im HTTP-Header, den Aufruf mit\
+  \ dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black;\
+  \ border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n\
+  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
+  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_ACCESSCODE_MISMATCH</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abweisen,\
+  \ damit ausschließlich die verordnende Leistungserbringerinstitution in Kenntnis\
+  \ des AccessCodes als Berechtigte ein E-Rezept löschen."
 title: TI-Flow-Fachdienst - E-Rezept löschen - Verordnender - Prüfung AccessCode
-version: 0
+version: 1

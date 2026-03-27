@@ -1,23 +1,28 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: dcafa05228b3374d0f453b0494590efca8797b665d6166808fa52a79d29e3e67
+content_hash: 48e57f365619daa99ba88ff5b6e4ef4cc9e2b0837057a7177cd43e5df1518ddc
 created: '2026-03-23T10:57:49.561572'
-date: '2026-03-23T13:47:27.785512'
+date: '2026-03-27T14:32:27.967238'
 key: IG-TIFLOW-XBORDER-7
-modified: '2026-03-23T10:57:49.561573'
-release_status: STABLE
+modified: '2026-03-27T14:32:27.967238'
+release_status: MODIFIED
 source: input/pagecontent/op-get-eu-prescriptions-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts
-  /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass zu dem in Parameters.parameter:requestData.part:kvnr,
-  Parameters.parameter:requestData.part:accessCode und Parameters.parameter:requestData.part:countryCode
-  übermittelte Tripple von KVNR, Zugriffs- und Ländercode eine zeitliche gültige Zugriffsberechtigung
-  im TI-Flow-Fachdienst existiert und bei fehlgeschlagener Prüfung die Operation mit
-  dem HTTP-Fehlercode 403 abbrechen, damit nur Verordnungsdaten für Versicherte übermittelt
-  werden, wenn eine gültige Zugriffsberechtigung vorliegt.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts\
+  \ /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass zu dem in Parameters.parameter:requestData.part:kvnr,\
+  \ Parameters.parameter:requestData.part:accessCode und Parameters.parameter:requestData.part:countryCode\
+  \ übermittelte Tripple von KVNR, Zugriffs- und Ländercode eine zeitliche gültige\
+  \ Zugriffsberechtigung im TI-Flow-Fachdienst existiert und bei fehlgeschlagener\
+  \ Prüfung die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"\
+  border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_ACCESS_PERMISSION_INVALID</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>-</td>\n </tr>\n </table> \n abbrechen, damit nur Verordnungsdaten für Versicherte\
+  \ übermittelt werden, wenn eine gültige Zugriffsberechtigung vorliegt."
 title: TI-Flow-Fachdienst - eu-prescription abfragen - Prüfung Zugriffsberechtigung
-version: 0
+version: 1

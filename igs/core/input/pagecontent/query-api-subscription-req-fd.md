@@ -1,7 +1,7 @@
 Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für den Subscription-Query-Endpunkt.
 
 <!-- A_22362-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-346" title="TI-Flow-Fachdienst – Subscription registrieren – Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-346" title="TI-Flow-Fachdienst – Subscription registrieren – Rollenprüfung" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -75,7 +75,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22363 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-351" title="TI-Flow-Fachdienst – Subscription registrieren – Prüfung Telematik-ID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-351" title="TI-Flow-Fachdienst – Subscription registrieren – Prüfung Telematik-ID" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>

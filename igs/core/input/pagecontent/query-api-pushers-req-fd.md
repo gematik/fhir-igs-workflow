@@ -23,7 +23,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 Mit der Operation GET /pushers können alle für den Nutzer registrierten FdV-Instanzen abgefragt werden.
 
 <!-- A_28113 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-270" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierungen abrufen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-270" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierungen abrufen - Rollenprüfung" version="1">
   <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>

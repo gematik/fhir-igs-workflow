@@ -1,12 +1,12 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 29c49ed67163f721789ab90bbabe5459b3c569a5f587b6cc0098f8b6c9e6c616
+content_hash: 9ae3928558fee85439d5fbb7183b028886997ef3829c0e8097e5246140ecbb83
 created: '2026-03-23T10:57:49.785906'
-date: '2026-03-23T13:47:28.484032'
+date: '2026-03-27T14:32:28.725299'
 key: IG-TIFLOW-ERP-36
-modified: '2026-03-23T10:57:49.785913'
-release_status: STABLE
+modified: '2026-03-27T14:32:28.725299'
+release_status: MODIFIED
 source: input/pagecontent/op-dispense-req-fd.md
 status: ACTIVE
 test_procedures:
@@ -18,8 +18,14 @@ text: "Der TI-Flow-Fachdienst MUSS bei der Bereitstellung von Dispensierinformat
   \ <ul> \n <li>oid_oeffentliche_apotheke</li>\n <li>oid_krankenhausapotheke</li>\n\
   \ </ul>\n die Operation am Fachdienst aufrufen dürfen und die Rolle \"professionOID\"\
   \ des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen,\
-  \ damit Dispensierinformationen nicht durch einen Unberechtigten eingestellt werden\
-  \ kann."
+  \ und bei Abweichungen mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"\
+  border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n\
+  \ </tr>\n </table> \n abrechen, damit Dispensierinformationen nicht durch einen\
+  \ Unberechtigten eingestellt werden kann."
 title: TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Rollenprüfung
   Abgebender stellt Dispensierinformationen bereit
-version: 0
+version: 1

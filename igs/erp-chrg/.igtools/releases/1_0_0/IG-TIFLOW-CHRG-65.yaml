@@ -1,22 +1,27 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: e6d38361beb7497489e7bf29d8f3eb87505c65cfe16a90f13cc38cfbade18a3b
+content_hash: bc4e4efc23f64152fe9d0ae1e093ff63c80c720483efb00e4dc347ddfccf6d2c
 created: '2026-03-23T10:57:49.325772'
-date: '2026-03-23T13:47:27.434027'
+date: '2026-03-27T14:32:27.596972'
 key: IG-TIFLOW-CHRG-65
-modified: '2026-03-23T10:57:49.325777'
-release_status: STABLE
+modified: '2026-03-27T14:32:27.596972'
+release_status: MODIFIED
 source: input/pagecontent/query-api-chargeitem-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource ChargeItem
-  übertragene PKV-Abgabedatensatz-Ressource gegen das FHIR-Profil DAV-PKV-PR-ERP-AbgabedatenBundle
-  prüfen und bei Nicht-Konformität das Anlegen der Ressource im TI-Flow-Fachdienst
-  mit dem http-Status-Code 400 ablehnen, damit nur FHIR-valide Ressourcen in den TI-Flow-Fachdienst
-  hochgeladen werden.
+text: "Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource ChargeItem\
+  \ übertragene PKV-Abgabedatensatz-Ressource gegen das FHIR-Profil DAV-PKV-PR-ERP-AbgabedatenBundle\
+  \ prüfen und bei Nicht-Konformität das Anlegen der Ressource im TI-Flow-Fachdienst\
+  \ mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid\
+  \ black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad\
+  \ Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n\
+  \ <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR Profile Validation Failed</td>\n\
+  \ </tr>\n </table> \n ablehnen, damit nur FHIR-valide Ressourcen in den TI-Flow-Fachdienst\
+  \ hochgeladen werden."
 title: TI-Flow-Fachdienst – Abrechnungsinformation bereitstellen – FHIR-Validierung
   PKV-Abgabedatensatz
-version: 0
+version: 1

@@ -14,7 +14,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 ### GET /AuditEvent
 
 <!-- A_19395 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-136" title="TI-Flow-Fachdienst - AuditEvent lesen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-136" title="TI-Flow-Fachdienst - AuditEvent lesen - Rollenprüfung" version="1">
   <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>

@@ -1,11 +1,11 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: b525598fd82f7db990ca8bf159f3bb3c34ee10897c9099d4c0e0bf6c1c1eadd6
+content_hash: d3ec7126035c5a78ace48e2f42de78717c505accceccb837dee3be3c860ce51d
 created: '2026-03-23T10:57:48.505127'
-date: '2026-03-24T15:22:24.148155'
+date: '2026-03-27T14:32:26.242898'
 key: IG-TIFLOW-CORE-320
-modified: '2026-03-24T15:22:24.148155'
+modified: '2026-03-27T14:32:26.242898'
 release_status: MODIFIED
 source: input/pagecontent/query-api-communication-req-fd.md
 status: ACTIVE
@@ -15,7 +15,12 @@ test_procedures:
 text: "Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation\
   \ POST auf den Endpunkt /Communication die im http-Request-Body übergebene Communications-Ressource\
   \ gegen das aus der Kommunikationsbeziehung ableitbare, zulässige Schema gemäß TAB_eRPFD_008\
-  \ prüfen und den Aufruf bei Nicht-Konformität mit dem http-Status-Code 400 ablehnen,\
+  \ prüfen und den Aufruf bei Nicht-Konformität mit dem folgenden Fehler:\n <table\
+  \ id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details\
+  \ Text</th>\n <td>FHIR Profile Validation Failed</td>\n </tr>\n </table> \n ablehnen,\
   \ damit ausschließlich konforme E-Rezept-Nachrichten ausgetauscht werden.\n <table>\n\
   \ <tr> \n\t\t<th>sender</th>\n\t\t<th>recipient</th>\n <th>zusätzliche Bedingung</th>\n\
   \ <th>Schema</th>\n\t</tr>\n\t<tr> \n\t\t<td>KVNR</td>\n\t\t<td>Telematik-ID</td>\n\

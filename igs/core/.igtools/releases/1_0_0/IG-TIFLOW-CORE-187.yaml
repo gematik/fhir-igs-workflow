@@ -1,25 +1,29 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: f0fe94b5d00f9a24950c08ec8d6c5da13b7ce8690c3ce9b1699ca5028f98c138
+content_hash: 17a938077486d81ce83ba81350a9652cabfb65265ace30191a397eb876dca1c8
 created: '2026-03-23T10:57:48.463289'
-date: '2026-03-23T13:47:26.474458'
+date: '2026-03-27T14:32:26.200305'
 key: IG-TIFLOW-CORE-187
-modified: '2026-03-23T10:57:48.463291'
-release_status: STABLE
+modified: '2026-03-27T14:32:26.200305'
+release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: 'Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&#60;id&#62;/$activate
-  einen im FHIR Profil KBV_PR_FOR_Coverage gespeicherten Wert für payor.identifier.value
-  gemäß dem im "Gemeinsames Rundschreiben Institutionskennzeichen (IK)" vom 01.06.2020
-  unter Kapitel 1.2.5 "Prüfziffer" beschriebenen Prüfalgorithmus validieren, und bei
-  einer fehlerhaften Prüfung den Prozess mit einem Http-Fehler 400 (Bad Request) abbrechen
-  sowie die Fehlermeldung "Ungültiges Institutionskennzeichen (IKNR): Das übergebene
-  Institutionskennzeichen im Versicherungsstatus entspricht nicht den Prüfziffer-Validierungsregeln."
-  in Form einer OperationOutcome ausliefern.'
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&#60;id&#62;/$activate\
+  \ einen im FHIR Profil KBV_PR_FOR_Coverage gespeicherten Wert für payor.identifier.value\
+  \ gemäß dem im \"Gemeinsames Rundschreiben Institutionskennzeichen (IK)\" vom 01.06.2020\
+  \ unter Kapitel 1.2.5 \"Prüfziffer\" beschriebenen Prüfalgorithmus validieren, und\
+  \ bei einer fehlerhaften Prüfung den Prozess mit dem folgenden Fehler:\n <table\
+  \ id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>TIFLOW_IKNR_INVALID</td>\n </tr>\n <tr>\n <th>Details\
+  \ Text</th>\n <td>Ungültiges Institutionskennzeichen (IKNR): Das übergebene Institutionskennzeichen\
+  \ im Versicherungsstatus entspricht nicht den Prüfziffer-Validierungsregeln.</td>\n\
+  \ </tr>\n </table> \n abbrechen."
 title: TI-Flow-Fachdienst - Task aktivieren - Überprüfung der IK Nummer im Profil
   KBV_PR_FOR_Coverage
-version: 0
+version: 1

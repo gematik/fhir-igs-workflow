@@ -1,22 +1,27 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: f9f3bd2f4a110e09f75b55779795f8d338903287aaf718f2455559326ebaa181
+content_hash: 12406c01c460db56ac5163fd3bee6a4ab0dab88455d251137b3f4e3f9c0ed2a0
 created: '2026-03-23T10:57:49.808015'
-date: '2026-03-23T13:47:28.507002'
+date: '2026-03-27T14:32:28.755342'
 key: IG-TIFLOW-ERP-97
-modified: '2026-03-23T10:57:49.808016'
-release_status: STABLE
+modified: '2026-03-27T14:32:28.755342'
+release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
-  über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
-  wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
-  = true) und als Entlassrezept ( code="04" oder "14" in Extension https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis
-  in Bundle.Composition.extention:rechtsgrundlage) gekennzeichnet ist, weil für Entlassrezepte
-  keine Mehrfachverordnungen zulässig sind.
+text: "Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation\
+  \ über /Task/&lt;id&gt;/$activate die Operation mit dem folgenden Fehler:\n <table\
+  \ id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>TIFLOW_EREZEPT_MVO_INVALID</td>\n </tr>\n <tr>\n <th>Details\
+  \ Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, wenn die Verordnung als\
+  \ Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen\
+  \ = true) und als Entlassrezept ( code=\"04\" oder \"14\" in Extension https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis\
+  \ in Bundle.Composition.extention:rechtsgrundlage) gekennzeichnet ist, weil für\
+  \ Entlassrezepte keine Mehrfachverordnungen zulässig sind."
 title: TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - kein Entlassrezept
-version: 0
+version: 1

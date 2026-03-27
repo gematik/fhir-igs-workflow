@@ -1,20 +1,25 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: e32ab9b8fb99edaa321a08befc844bb97b59a869c7cea6372f7c449188eaad6c
+content_hash: eef2c15cdfa52a1e932cd65f16c75e824bdcec1f63c56068bf0a3610fb1e8944
 created: '2026-03-23T10:57:48.458692'
-date: '2026-03-23T13:47:26.469412'
+date: '2026-03-27T14:32:26.190610'
 key: IG-TIFLOW-CORE-164
-modified: '2026-03-23T10:57:48.458693'
-release_status: STABLE
+modified: '2026-03-27T14:32:26.190610'
+release_status: MODIFIED
 source: input/pagecontent/menu-technische-umsetzung-subscription.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produktgutachten
-text: Der TI-Flow-Fachdienst MUSS an der Webschnittstelle des Subscription Service
-  beim Verbindungsaufbau prüfen, dass der Client einen zeitlich und kryptographisch
-  gültigen Bearer-Token der Schnittstelle GET /Subscription übermittelt und bei nicht-erfolgreicher
-  Prüfung die Verbindung mit dem Fehler 403 ablehnen.
+text: "Der TI-Flow-Fachdienst MUSS an der Webschnittstelle des Subscription Service\
+  \ beim Verbindungsaufbau prüfen, dass der Client einen zeitlich und kryptographisch\
+  \ gültigen Bearer-Token der Schnittstelle GET /Subscription übermittelt und bei\
+  \ nicht-erfolgreicher Prüfung die Verbindung mit dem folgenden Fehler:\n <table\
+  \ id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>SVC_INVALID_ACCESS_TOKEN</td>\n </tr>\n <tr>\n <th>Details\
+  \ Text</th>\n <td>Invalid access token provided</td>\n </tr>\n </table>\n ablehnen."
 title: TI-Flow-Fachdienst - Subscription Service - Prüfung Bearer-Token
-version: 0
+version: 1

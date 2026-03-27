@@ -10,7 +10,7 @@ Der Subscription Service wird außerhalb der VAU betrieben.
 </requirement>
 
 <!-- A_22369 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-164" title="TI-Flow-Fachdienst - Subscription Service - Prüfung Bearer-Token" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-164" title="TI-Flow-Fachdienst - Subscription Service - Prüfung Bearer-Token" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>

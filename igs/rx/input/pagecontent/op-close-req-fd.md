@@ -22,7 +22,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 
 <!-- A_26002-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-18" title="TI-Flow-Fachdienst - Task schließen - Flowtype 160/166/169/200/209 - Profilprüfung MedicationDispense" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-18" title="TI-Flow-Fachdienst - Task schließen - Flowtype 160/166/169/200/209 - Profilprüfung MedicationDispense" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -54,7 +54,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_24287-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-19" title="TI-Flow-Fachdienst - Task schließen - Aufruf ohne MedicationDispense" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-19" title="TI-Flow-Fachdienst - Task schließen - Aufruf ohne MedicationDispense" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>

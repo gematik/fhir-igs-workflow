@@ -1,22 +1,26 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 905aeaeb528305a16b60c3845d5bca70f6a7769463c3bf8eee2008abd04210ea
+content_hash: 69133b70f753421f550f9d5df8774fcb825ee709894820f94ec3378ba87d7fcd
 created: '2026-03-23T10:57:49.801758'
-date: '2026-03-23T13:47:28.498488'
+date: '2026-03-27T14:32:28.744417'
 key: IG-TIFLOW-ERP-77
-modified: '2026-03-23T10:57:49.801761'
-release_status: STABLE
+modified: '2026-03-27T14:32:28.744417'
+release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mit Workflowtypen 160,
-  169, 200 oder 209 mittels $activate prüfen, dass im Bundle eine MedicationRequest-Ressource
-  und eine Medication mit Medication.extension:Arzneimittelkategorie = 00 enthalten
-  ist. Der TI-Flow-Fachdienst MUSS andernfalls mit dem HTTP-Fehlercode 400 abbrechen
-  und in der OperationOutcome den Fehlertext "Für diesen Workflowtypen sind nur Arzneimittelverordnungen
-  zulässig" ausgeben.
+text: "Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mit Workflowtypen 160,\
+  \ 169, 200 oder 209 mittels $activate prüfen, dass im Bundle eine MedicationRequest-Ressource\
+  \ und eine Medication mit Medication.extension:Arzneimittelkategorie = 00 enthalten\
+  \ ist. Der TI-Flow-Fachdienst MUSS andernfalls mit dem folgenden Fehler:\n <table\
+  \ id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>TIFLOW_FLOWTYPE_MISMATCH</td>\n </tr>\n <tr>\n <th>Details\
+  \ Text</th>\n <td>Für diesen Workflowtypen sind nur Arzneimittelverordnungen zulässig</td>\n\
+  \ </tr>\n </table> \n abbrechen."
 title: TI-Flow-Fachdienst - Task aktivieren - Flowtype 160/169/200/209 - Prüfung Arzneimittelverordnung
-version: 0
+version: 1

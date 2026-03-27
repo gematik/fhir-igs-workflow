@@ -1,21 +1,26 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 62d13dc7c81f908a3099e89792a5947a44f60f984c69d5f2ef237ffac574bb65
+content_hash: 185e1cde77e23999804eacad419aa3eeed38c4ffff33614fc178723f8b90ccdb
 created: '2026-03-23T10:57:49.807726'
-date: '2026-03-23T13:47:28.506640'
+date: '2026-03-27T14:32:28.754252'
 key: IG-TIFLOW-ERP-95
-modified: '2026-03-23T10:57:49.807727'
-release_status: STABLE
+modified: '2026-03-27T14:32:28.754252'
+release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
-  über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
-  wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
-  = true) gekennzeichnet und der Numerator größer als der Denominator ist.
+text: "Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation\
+  \ über /Task/&lt;id&gt;/$activate die Operation mit dem folgenden Fehler:\n <table\
+  \ id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>TIFLOW_EREZEPT_MVO_INVALID</td>\n </tr>\n <tr>\n <th>Details\
+  \ Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, wenn die Verordnung als\
+  \ Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen\
+  \ = true) gekennzeichnet und der Numerator größer als der Denominator ist."
 title: TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator kleiner
   / gleich Denominator
-version: 0
+version: 1

@@ -1,11 +1,11 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 11fcf09ff6e25960cd0b78541b870456ede2619bf60850888699498c86b47d2f
+content_hash: ed32a6bd80573d6b37bb652947e5112f4f410244059c4596e8a00dddc8857e2f
 created: '2026-03-23T10:57:48.449398'
-date: '2026-03-24T15:22:24.205577'
+date: '2026-03-27T14:32:26.177203'
 key: IG-TIFLOW-CORE-121
-modified: '2026-03-24T15:22:24.205577'
+modified: '2026-03-27T14:32:26.177203'
 release_status: MODIFIED
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
@@ -16,8 +16,14 @@ text: "Der TI-Flow-Fachdienst MUSS bei Aufruf der HTTP-PATCH-Operation auf den E
   \ /Task/&lt;id&gt; sicherstellen, dass ausschließlich Versicherte in der Rolle:\
   \ \n <ul>\n <li>oid_versicherter</li>\n </ul>\n die Operation am TI-Flow-Fachdienst\
   \ aufrufen dürfen und die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader\
-  \ \"Authorization\" feststellen, damit E-Rezepte nicht durch Unberechtigte markiert\
-  \ werden können."
+  \ \"Authorization\" feststellen, und bei Abweichungen mit dem folgenden Fehler:\n\
+  \ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n </tr>\n <tr>\n\
+  \ <th>Details Text</th>\n <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation\
+  \ anzufordern</td>\n </tr>\n </table> \n abrechen, damit E-Rezepte nicht durch Unberechtigte\
+  \ markiert werden können."
 title: TI-Flow-Fachdienst - Task markieren - Versicherter - Rollenprüfung Versicherter
   markiert Rezepte
 version: 1

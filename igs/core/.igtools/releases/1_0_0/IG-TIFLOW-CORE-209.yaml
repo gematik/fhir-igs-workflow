@@ -1,22 +1,28 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 9195c7ec11eae909dc9788853ed0b0fa525bca64828776d64caee3f848f4d959
+content_hash: 305c0590da99b2c62ed35373bd8b3e88e91d811be3998255fa2409378101ed92
 created: '2026-03-23T10:57:48.467164'
-date: '2026-03-23T13:47:26.479850'
+date: '2026-03-27T14:32:26.208369'
 key: IG-TIFLOW-CORE-209
-modified: '2026-03-23T10:57:48.467166'
-release_status: STABLE
+modified: '2026-03-27T14:32:26.208369'
+release_status: MODIFIED
 source: input/pagecontent/query-api-consent-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produktgutachten
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
-  /Consent sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter
-  die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle "professionOID"
-  des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen,
-  damit die Information zur Einwilligung nicht durch Unberechtigte ausgelesen werden
-  kann.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt\
+  \ /Consent sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter\
+  \ die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle \"professionOID\"\
+  \ des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen,\
+  \ und bei Abweichungen mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"\
+  border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n\
+  \ </tr>\n </table> \n abrechen, damit die Information zur Einwilligung nicht durch\
+  \ Unberechtigte ausgelesen werden kann."
 title: TI-Flow-Fachdienst - Consent lesen - Rollenprüfung
-version: 0
+version: 1

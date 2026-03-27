@@ -1,20 +1,24 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 965c5bffe796db9d758144c1e0afa36b124421bfda92d7f33c39f8b7b3d55088
+content_hash: f489d1cc771e2ca8932369b7ca2a1d2ce89f29bb4c19cfad9b48e5a877f23ac5
 created: '2026-03-23T10:57:49.330392'
-date: '2026-03-23T13:47:27.439925'
+date: '2026-03-27T14:32:27.607809'
 key: IG-TIFLOW-CHRG-90
-modified: '2026-03-23T10:57:49.330394'
-release_status: STABLE
+modified: '2026-03-27T14:32:27.607809'
+release_status: MODIFIED
 source: input/pagecontent/query-api-chargeitem-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS den Aufruf der Operation DELETE /ChargeItem ohne
-  Angabe einer konkreten über &#60;id&#62; adressierte ChargeItem Ressource mit dem
-  HTTP-Fehlercode 405 ablehnen, um das Löschen mehrerer Ressourcen über einen Request
-  zu verhindern.
+text: "Der TI-Flow-Fachdienst MUSS den Aufruf der Operation DELETE /ChargeItem ohne\
+  \ Angabe einer konkreten über &#60;id&#62; adressierte ChargeItem Ressource mit\
+  \ dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black;\
+  \ border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>405 - Method Not\
+  \ Allowed</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n\
+  \ <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_CHARGEITEM_ID_REQUIRED</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n ablehnen,\
+  \ um das Löschen mehrerer Ressourcen über einen Request zu verhindern."
 title: TI-Flow-Fachdienst – Abrechnungsinformation löschen – alles Löschen verbieten
-version: 0
+version: 1

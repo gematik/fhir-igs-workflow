@@ -1,12 +1,12 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 30a32c3d09c6c9ee65a4f59dbb44d7926d72f538aad80a1cd4e44d26f3bd2293
+content_hash: defaa4ac77380db9117150f1b808ba64ce4c9ffa23aa92d580d103a7db6429a5
 created: '2026-03-23T10:57:48.484484'
-date: '2026-03-23T13:47:26.497827'
+date: '2026-03-27T14:32:26.227775'
 key: IG-TIFLOW-CORE-270
-modified: '2026-03-23T10:57:48.484485'
-release_status: STABLE
+modified: '2026-03-27T14:32:26.227775'
+release_status: MODIFIED
 source: input/pagecontent/query-api-pushers-req-fd.md
 status: ACTIVE
 test_procedures:
@@ -15,7 +15,10 @@ test_procedures:
 text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation GET /pushers die Rolle\
   \ \"professionOID\" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\"\
   \ feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle \n\
-  \ <ul>\n <li>oid_versicherter</li>\n </ul>\n die Operation aufrufen, damit die Operation\
-  \ nicht durch unberechtigte Dritte ausgeführt wird."
+  \ <ul>\n <li>oid_versicherter</li>\n </ul>\n die Operation aufrufen, und bei Abweichungen\
+  \ mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid\
+  \ black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n\
+  \ </tr>\n <tr>\n <th>Error Code</th>\n <td>invalidOid</td>\n </tr>\n </table> \n\
+  \ abrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird."
 title: TI-Flow-Fachdienst - Push Notifications - App-Registrierungen abrufen - Rollenprüfung
-version: 0
+version: 1

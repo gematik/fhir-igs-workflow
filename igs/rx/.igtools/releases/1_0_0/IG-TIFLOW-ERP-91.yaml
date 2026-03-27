@@ -1,22 +1,27 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: cd351342d416086bbf60a7ae0674f582546f8d7376e7f0031573d26ea968f315
+content_hash: d60401228c65a8fe0fcc925978e3f3ed5971ae48d5749c39be02f0cd6e995632
 created: '2026-03-23T10:57:49.807135'
-date: '2026-03-23T13:47:28.505859'
+date: '2026-03-27T14:32:28.752365'
 key: IG-TIFLOW-ERP-91
-modified: '2026-03-23T10:57:49.807136'
-release_status: STABLE
+modified: '2026-03-27T14:32:28.752365'
+release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
-  über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
-  wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
-  = true) gekennzeichnet und der Flowtype ungleich 160, 169, 200 oder 209 ist, weil
-  Mehrfachverordnungen nur für die Verordnungen von apothekenpflichtigen Arzneimittel
-  (kein BtM, kein T-Rezept) zulässig sind.
+text: "Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation\
+  \ über /Task/&lt;id&gt;/$activate die Operation mit dem folgenden Fehler:\n <table\
+  \ id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>TIFLOW_EREZEPT_MVO_FLOWTYPE_INVALID</td>\n </tr>\n\
+  \ <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, wenn\
+  \ die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen\
+  \ = true) gekennzeichnet und der Flowtype ungleich 160, 169, 200 oder 209 ist, weil\
+  \ Mehrfachverordnungen nur für die Verordnungen von apothekenpflichtigen Arzneimittel\
+  \ (kein BtM, kein T-Rezept) zulässig sind."
 title: TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - zulässige Flowtype
-version: 0
+version: 1

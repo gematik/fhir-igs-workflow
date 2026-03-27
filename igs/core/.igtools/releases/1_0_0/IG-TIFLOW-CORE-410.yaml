@@ -1,0 +1,22 @@
+actor:
+- TI_Flow_FD
+conformance: SHALL
+content_hash: a29c64d626435e2d94df12671e3c14e6837e68492cd4513081bf3a3ee7dac31e
+created: '2026-03-27T14:32:26.197297'
+date: '2026-03-27T14:32:26.197300'
+key: IG-TIFLOW-CORE-410
+modified: '2026-03-27T14:32:26.197299'
+release_status: NEW
+source: input/pagecontent/op-activate-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI_Flow_FD:
+  - Produkttest
+text: Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
+  über /Task/&#60;id&#62;/$activate bei gültiger Signatur und validem FHIR den Datensatz
+  als PKCS#7-Datei sicher speichern und in Task.input mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType
+  = 1 über eine interne, eindeutige UUID referenzieren, damit der nachfolgende Workflow
+  ausschließlich auf Basis medizinisch korrekter und vom Leistungserbringer mittels
+  Signatur freigegebener Daten erfolgt.
+title: TI-Flow-Fachdienst - Task aktivieren - QES prüfen Rezept aktualisieren
+version: 0

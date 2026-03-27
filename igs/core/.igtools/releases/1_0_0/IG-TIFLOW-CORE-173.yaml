@@ -1,12 +1,12 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 07329a2c148a1cf35161030013db5887340ab6cad52aca09473d1d3cb9046132
+content_hash: f912375ad828fd1e979bbee26ebce345adad8660e0d790750d939b0aa97a8b30
 created: '2026-03-23T10:57:48.460907'
-date: '2026-03-23T13:47:26.471015'
+date: '2026-03-27T14:32:26.192680'
 key: IG-TIFLOW-CORE-173
-modified: '2026-03-23T10:57:48.460909'
-release_status: STABLE
+modified: '2026-03-27T14:32:26.192680'
+release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
@@ -18,7 +18,13 @@ text: "Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks für ein E-Rezept
   \ <ul>\n <li>oid_praxis_arzt</li>\n <li>oid_zahnarztpraxis</li>\n <li>oid_praxis_psychotherapeut</li>\n\
   \ <li>oid_krankenhaus</li>\n <li>oid_institution-vorsorge-reha</li> \n </ul>\n die\
   \ Operation am Fachdienst aufrufen dürfen und die Rolle \"professionOID\" des Aufrufers\
-  \ im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen, damit E-Rezepte\
+  \ im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen, und bei Abweichungen\
+  \ mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid\
+  \ black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n\
+  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
+  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>Der Nutzer ist nicht berechtigt, die\
+  \ aufgerufene Operation anzufordern</td>\n </tr>\n </table> \n abrechen, damit E-Rezepte\
   \ nicht durch Unberechtigte eingestellt werden können."
 title: TI-Flow-Fachdienst - Task aktivieren - Rollenprüfung
-version: 0
+version: 1

@@ -1,22 +1,27 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: ea470af7446fa4dbed4499eef7c5f6f9eebbe63738983b6461e400f54da38411
+content_hash: 96bec3ac4e3d18c2c36f03dc712349ffe95562164ddcd8f62f14fc5cdfa803be
 created: '2026-03-23T10:57:49.802490'
-date: '2026-03-23T13:47:28.499186'
+date: '2026-03-27T14:32:28.746033'
 key: IG-TIFLOW-ERP-81
-modified: '2026-03-23T10:57:49.802492'
-release_status: STABLE
+modified: '2026-03-27T14:32:28.746033'
+release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task des Flowtype Task.extension:flowType
-  = 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen,
-  ob Coverage.type.coding.code mit dem Wert "PKV" belegt ist und im Fehlerfall die
-  Operation mit Http-Fehlercode 400 abbrechen, um sicherzustellen, dass diese Workflows
-  nur für E-Rezepte für PKV-Versicherte genutzt werden.
+text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task des Flowtype Task.extension:flowType\
+  \ = 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen,\
+  \ ob Coverage.type.coding.code mit dem Wert \"PKV\" belegt ist und im Fehlerfall\
+  \ die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border:\
+  \ 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400\
+  \ - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n\
+  \ <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_COVERAGE_TYPE_MISMATCH</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>-</td>\n </tr>\n </table> \n abbrechen, um sicherzustellen, dass diese Workflows\
+  \ nur für E-Rezepte für PKV-Versicherte genutzt werden."
 title: TI-Flow-Fachdienst - Task aktivieren - Flowtype 200/209 - Prüfung Coverage
   Type
-version: 0
+version: 1

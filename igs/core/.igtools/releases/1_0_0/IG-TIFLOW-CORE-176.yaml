@@ -1,22 +1,27 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 55a552bf9547e7e171d3097788e9b91dd25fb3d7a7dc3a3f2363813749998aec
+content_hash: 6ed816ee3617b4a0aef98e3f1eb9d34fdfaaa077c4e8621f947d42b77d81d1e9
 created: '2026-03-23T10:57:48.461346'
-date: '2026-03-23T13:47:26.471609'
+date: '2026-03-27T14:32:26.194453'
 key: IG-TIFLOW-CORE-176
-modified: '2026-03-23T10:57:48.461348'
-release_status: STABLE
+modified: '2026-03-27T14:32:26.194453'
+release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
-  über /Task/&#60;id&#62;/$activate den im Aufrufparameter übergebenen FHIR-Operationsparameter
-  des QES-Datensatzes als PKCS#7-Datei einer Enveloping CAdES-Signatur entgegennehmen
-  und verarbeiten und bei Fehlen oder ungültiger ASN.1 Datenstruktur die Weiterverarbeitung
-  im Fachdienst mit dem http-Status-Code 400 beantworten, damit kein Schadcode und
-  keine "fachfremden" Daten in den TI-Flow-Fachdienst hochgeladen werden.
+text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
+  \ über /Task/&#60;id&#62;/$activate den im Aufrufparameter übergebenen FHIR-Operationsparameter\
+  \ des QES-Datensatzes als PKCS#7-Datei einer Enveloping CAdES-Signatur entgegennehmen\
+  \ und verarbeiten und bei Fehlen oder ungültiger ASN.1 Datenstruktur die Weiterverarbeitung\
+  \ im Fachdienst mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border:\
+  \ 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400\
+  \ - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n\
+  \ <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR\
+  \ Profile Validation Failed</td>\n </tr>\n </table> \n beantworten, damit kein Schadcode\
+  \ und keine \"fachfremden\" Daten in den TI-Flow-Fachdienst hochgeladen werden."
 title: TI-Flow-Fachdienst - Task aktivieren - Schemavalidierung
-version: 0
+version: 1

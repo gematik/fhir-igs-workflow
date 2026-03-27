@@ -1,23 +1,28 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: ac495f4e8e52adf798a04bac79a265dd145ff07c962281e75034783586625c29
+content_hash: bebff4d652a53db31f8dcd889eaa28a391f0906055f5b60dbb12a4a4260a3bbd
 created: '2026-03-23T10:57:49.574934'
-date: '2026-03-23T13:47:27.795939'
+date: '2026-03-27T14:32:27.982888'
 key: IG-TIFLOW-XBORDER-58
-modified: '2026-03-23T10:57:49.574935'
-release_status: STABLE
+modified: '2026-03-27T14:32:27.982888'
+release_status: MODIFIED
 source: input/pagecontent/op-grant-eu-access-permission-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt
-  /$grant-eu-access-permission prüfen, dass der im Request übermittelte Ländercode
-  (Parameters.parameter:countryCode) einem Land entspricht, welches die Anwendung
-  ePrescription/eDispensation Szenario Land A unterstützt und bei fehlschlagender
-  Prüfung die Operation mit dem HTTP-Fehlercode 409 und dem OperationOutcome "Für
-  das angefragte Land ist Einlösen von E-Rezepten nicht möglich." abbrechen, damit
-  der Versicherte nur für zulässige europäische Länder eine Zugriffsberechtigung erteilt.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt\
+  \ /$grant-eu-access-permission prüfen, dass der im Request übermittelte Ländercode\
+  \ (Parameters.parameter:countryCode) einem Land entspricht, welches die Anwendung\
+  \ ePrescription/eDispensation Szenario Land A unterstützt und bei fehlschlagender\
+  \ Prüfung die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"\
+  border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>409 - Conflict</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_XBORDER_COUNTRY_CODE_INVALID</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>Für das angefragte Land ist Einlösen von E-Rezepten nicht möglich.</td>\n\
+  \ </tr>\n </table> \n abbrechen, damit der Versicherte nur für zulässige europäische\
+  \ Länder eine Zugriffsberechtigung erteilt."
 title: TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Ländercode
-version: 0
+version: 1

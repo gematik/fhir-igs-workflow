@@ -1,12 +1,12 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 7893b63383e223052330e8512c6d6610ad5c13224bcb69d8fa0c7b041eaed9c3
+content_hash: 33450c9384ea927be3921e6ec15aa7916bad39c0c07eba69e363c000bad6141c
 created: '2026-03-23T10:57:49.330555'
-date: '2026-03-23T13:47:27.440125'
+date: '2026-03-27T14:32:27.609008'
 key: IG-TIFLOW-CHRG-91
-modified: '2026-03-23T10:57:49.330556'
-release_status: STABLE
+modified: '2026-03-27T14:32:27.609008'
+release_status: MODIFIED
 source: input/pagecontent/query-api-chargeitem-req-fd.md
 status: ACTIVE
 test_procedures:
@@ -17,6 +17,13 @@ text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf ein
   \ dass ausschließlich Nutzer in der Rolle \n <ul>\n <li>oid_versicherter</li>\n\
   \ </ul>\n die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle \"professionOID\"\
   \ des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen,\
-  \ damit eine Abrechnungsinformation nicht durch Unberechtigte gelöscht werden kann."
+  \ und bei Abweichungen mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"\
+  border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n\
+  \ </tr>\n </table> \n abrechen, damit eine Abrechnungsinformation nicht durch Unberechtigte\
+  \ gelöscht werden kann."
 title: TI-Flow-Fachdienst – Abrechnungsinformation löschen – Rollenprüfung
-version: 0
+version: 1

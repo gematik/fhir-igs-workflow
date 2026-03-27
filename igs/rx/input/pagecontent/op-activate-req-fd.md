@@ -7,7 +7,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 ### Modulspezifische Anforderungen
 
 <!-- A_19225-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-75" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 160/169/200/209 - QES durch berechtigte Berufsgruppe" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-75" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 160/169/200/209 - QES durch berechtigte Berufsgruppe" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -44,7 +44,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_27812 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-76" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 166 - QES durch berechtigte Berufsgruppe" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-76" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 166 - QES durch berechtigte Berufsgruppe" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -76,7 +76,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_25642 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-77" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 160/169/200/209 - Prüfung Arzneimittelverordnung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-77" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 160/169/200/209 - Prüfung Arzneimittelverordnung" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -108,7 +108,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_27813 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-78" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 166 - Prüfung Arzneimittelverordnung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-78" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 166 - Prüfung Arzneimittelverordnung" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -152,7 +152,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_23443-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-80" title="TI-Flow-Fachdienst – Task aktivieren – Flowtype 160/169 - Prüfung Coverage Type" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-80" title="TI-Flow-Fachdienst – Task aktivieren – Flowtype 160/169 - Prüfung Coverage Type" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -184,7 +184,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22347-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-81" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 200/209 - Prüfung Coverage Type" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-81" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 200/209 - Prüfung Coverage Type" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -216,7 +216,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22231-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-82" title="TI-Flow-Fachdienst - Task aktivieren - Ausschluss Betäubungsmittel" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-82" title="TI-Flow-Fachdienst - Task aktivieren - Ausschluss Betäubungsmittel" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Herstellererklärung"/>
@@ -560,7 +560,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 ### Prüfung von Mehrfachverordnungen
 
 <!-- A_22627-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-91" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - zulässige Flowtype" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-91" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - zulässige Flowtype" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -592,7 +592,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22628 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-92" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator-Denominator kleiner 5" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-92" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator-Denominator kleiner 5" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -624,7 +624,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22704 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-93" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator größer 0" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-93" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator größer 0" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -656,7 +656,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22629 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-94" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Denominator größer 1" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-94" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Denominator größer 1" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -688,7 +688,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22630 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-95" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator kleiner / gleich Denominator" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-95" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator kleiner / gleich Denominator" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -720,7 +720,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22631 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-96" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Unzulässige Angaben" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-96" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Unzulässige Angaben" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -752,7 +752,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22632 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-97" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - kein Entlassrezept" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-97" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - kein Entlassrezept" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -784,7 +784,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22633 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-98" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - keine Ersatzverordnung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-98" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - keine Ersatzverordnung" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -816,7 +816,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22634 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-99" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Beginn Einlösefrist-Pflicht" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-99" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Beginn Einlösefrist-Pflicht" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -848,7 +848,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_23537 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-100" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Startdatum nicht vor Ausstellungsdatum" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-100" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Startdatum nicht vor Ausstellungsdatum" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -880,7 +880,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_23164 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-101" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Endedatum nicht vor Startdatum" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-101" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Endedatum nicht vor Startdatum" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -912,7 +912,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_24901 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-102" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Schema ID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-102" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Schema ID" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>

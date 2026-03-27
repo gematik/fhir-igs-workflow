@@ -1,12 +1,12 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 322ae29413d6999539a9d17f012b2702ecd11cbf688add671b1a7a2c4ef6cf8c
+content_hash: 63208fd65239a64a4cc96b04a80ed27908a2a24ac9967c04df8186ee455ea71e
 created: '2026-03-23T10:57:49.326089'
-date: '2026-03-23T13:47:27.434364'
+date: '2026-03-27T14:32:27.597912'
 key: IG-TIFLOW-CHRG-67
-modified: '2026-03-23T10:57:49.326090'
-release_status: STABLE
+modified: '2026-03-27T14:32:27.597912'
+release_status: MODIFIED
 source: input/pagecontent/query-api-chargeitem-req-fd.md
 status: ACTIVE
 test_procedures:
@@ -15,10 +15,13 @@ test_procedures:
 text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt\
   \ /ChargeItem das Signaturzertifikats des PKV-Abgabedatensatzes prüfen. Das Signaturzertifikat\
   \ muss anhand der Zertifikatsprüfung für [mathematisch gültig UND zeitlich gültig\
-  \ UND online gültig] befunden werden und der Aufruf anderenfalls mit Status 400\
-  \ abgebrochen werden, um ausschließlich authentische Daten zu verwalten.<br>\n Wenn\
-  \ die Abfrage des OCSP-Response für das Signaturzertifikat fehlschlägt, muss der\
-  \ HTTP-Request mit dem HTTP-Status-Code 512 abgelehnt werden."
+  \ UND online gültig] befunden werden und der Aufruf anderenfalls mit dem folgenden\
+  \ Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
+  \ collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n\
+  \ <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n\
+  \ </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_CHARGEITEM_DISPENSE_CERTIFICATE_INVALID</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table>\n abgebrochen\
+  \ werden, um ausschließlich authentische Daten zu verwalten."
 title: TI-Flow-Fachdienst – Abrechnungsinformation bereitstellen – Prüfung Signaturzertifikat
   PKV-Abgabedatensatz
-version: 0
+version: 1

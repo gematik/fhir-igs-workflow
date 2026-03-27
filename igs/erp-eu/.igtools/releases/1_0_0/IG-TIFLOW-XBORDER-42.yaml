@@ -1,19 +1,25 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 28d5e22fa6f5f9c4670b3018c5828d144cbb2bbbd0647e53be2f44a02c0aac31
+content_hash: 6511f24d97ed3906168ee689f10ddb92ae4e9909ced838f561e006ddb08321cc
 created: '2026-03-23T10:57:49.570679'
-date: '2026-03-23T13:47:27.792617'
+date: '2026-03-27T14:32:27.978234'
 key: IG-TIFLOW-XBORDER-42
-modified: '2026-03-23T10:57:49.570680'
-release_status: STABLE
+modified: '2026-03-27T14:32:27.978234'
+release_status: MODIFIED
 source: input/pagecontent/op-eu-close-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts
-  /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass Task.status =
-  in-progress ist und bei Ungleichheit mit dem HTTP-Fehlercode 403 abbrechen.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts\
+  \ /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass Task.status\
+  \ = in-progress ist und bei Ungleichheit mit dem folgenden Fehler:\n <table id=\"\
+  error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n\
+  \ <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n </tr>\n <tr>\n\
+  \ <th>Details Text</th>\n <td>Task has invalid status.</td>\n </tr>\n </table> \n\
+  \ abbrechen."
 title: TI-Flow-Fachdienst - Task schließen - EU - Statusprüfung
-version: 0
+version: 1
