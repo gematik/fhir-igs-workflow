@@ -1,0 +1,12 @@
+CodeSystem: TIFLOWEREZEPTOperationOutcomeDetailsCS
+Id: tiflow-erezept-operation-outcome-details-cs
+Title: "TIFLOW EREZEPT Operation Outcome Details CS"
+Description: "E-Rezept-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können"
+* #TIFLOW_EREZEPT_PZN_INVALID "TODO: add description for TIFLOW_EREZEPT_PZN_INVALID"
+* #TIFLOW_EREZEPT_DRUG_CATEGORY_FORBIDDEN "TODO: add description for TIFLOW_EREZEPT_DRUG_CATEGORY_FORBIDDEN"
+* #TIFLOW_EREZEPT_MVO_FLOWTYPE_INVALID "TODO: add description for TIFLOW_EREZEPT_MVO_FLOWTYPE_INVALID"
+* #TIFLOW_EREZEPT_MVO_INVALID "TODO: add description for TIFLOW_EREZEPT_MVO_INVALID"
+* #TIFLOW_EREZEPT_MVO_STARTDATE_INVALID "TODO: add description for TIFLOW_EREZEPT_MVO_STARTDATE_INVALID"
+* #TIFLOW_EREZEPT_MVO_ENDDATE_INVALID "TODO: add description for TIFLOW_EREZEPT_MVO_ENDDATE_INVALID"
+* #TIFLOW_EREZEPT_MVO_ID_INVALID "TODO: add description for TIFLOW_EREZEPT_MVO_ID_INVALID"
+* #TIFLOW_EREZEPT_MVO_NOT_VALID "TODO: add description for TIFLOW_EREZEPT_MVO_NOT_VALID"

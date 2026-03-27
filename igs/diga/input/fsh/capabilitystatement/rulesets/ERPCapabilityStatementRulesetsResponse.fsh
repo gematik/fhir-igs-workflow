@@ -154,7 +154,7 @@ RuleSet: SvcValidationFailed
 RuleSet: TiflowInvalidMedicationDispense
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "400 - Bad Request"
-  * extension[description].valueString = "Für einen Workflow sind konkrete Angaben von Dispensierinformationen notwendig, die nicht angegeben wurden."
+  * extension[description].valueString = "Unzulässige Dispensierinformationen"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_INVALID_MEDICATION_DISPENSE"
 

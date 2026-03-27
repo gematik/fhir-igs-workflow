@@ -672,17 +672,17 @@ def check_description_consistency(
 def check_module_codesystem_placement(ig_roots: Dict[str, Path]) -> List[Finding]:
     """Check that module-specific codes are in the correct module CodeSystems, not in core.
     
-    Example: TIFLOW_RX_* codes should be in TIFLOW_RX_CS_OperationOutcomeDetails (rx module),
+    Example: TIFLOW_EREZEPT_* codes should be in TIFLOW_EREZEPT_CS_OperationOutcomeDetails (rx module),
              not in TIFLOW_CS_OperationOutcomeDetails (core module).
     """
     findings: List[Finding] = []
 
     # Map of code prefix -> (expected_module, expected_cs_name)
     module_code_prefixes = {
-        "TIFLOW_RX_": ("rx", "TIFLOW_RX_CS_OperationOutcomeDetails"),
+        "TIFLOW_EREZEPT_": ("rx", "TIFLOW_EREZEPT_CS_OperationOutcomeDetails"),
         "TIFLOW_DIGA_": ("diga", "TIFLOW_DIGA_CS_OperationOutcomeDetails"),
-        "TIFLOW_ERPCHRG_": ("erp-chrg", "TIFLOW_ERPCHRG_CS_OperationOutcomeDetails"),
-        "TIFLOW_ERPEU_": ("erp-eu", "TIFLOW_ERPEU_CS_OperationOutcomeDetails"),
+        "TIFLOW_CHARGEITEM_": ("erp-chrg", "TIFLOW_CHARGEITEM_CS_OperationOutcomeDetails"),
+        "TIFLOW_XBORDER_": ("erp-eu", "TIFLOW_XBORDER_CS_OperationOutcomeDetails"),
     }
 
     # Check each CodeSystem for misplaced codes
@@ -934,7 +934,7 @@ def fix_cs_vs(findings: List[Finding], ig_roots: Dict[str, Path], error_codes: L
             if not cs_file.exists():
                 # Module-specific codes should not be added to core if their module CS doesn't exist yet.
                 # Let fix_module_codesystem_placement() handle removal from core.
-                if any(finding.code.startswith(prefix) for prefix in ["TIFLOW_RX_", "TIFLOW_DIGA_", "TIFLOW_ERPCHRG_", "TIFLOW_ERPEU_"]):
+                if any(finding.code.startswith(prefix) for prefix in ["TIFLOW_EREZEPT_", "TIFLOW_DIGA_", "TIFLOW_CHARGEITEM_", "TIFLOW_XBORDER_"]):
                     print(f"  [SKIP] Module-specific code '{finding.code}' - target CS not found: {cs_file}")
                     continue
                 print(f"  [SKIP] CS file not found: {cs_file}")
