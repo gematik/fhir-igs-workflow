@@ -472,26 +472,37 @@ def iter_requirement_files(targets: Iterable[str]) -> Iterable[Path]:
     if not targets:
         targets = ["igs/*/input/pagecontent"]
 
+    def is_pagecontent_md(path: Path) -> bool:
+        if not path.is_file() or path.suffix.lower() != ".md":
+            return False
+        parts = path.as_posix().split("/")
+        return len(parts) >= 4 and parts[-2] == "pagecontent" and parts[-3] == "input" and parts[0] == "igs"
+
+    def yield_pagecontent_md(scan_dir: Path, seen: Set[Path]) -> Iterable[Path]:
+        for md_file in scan_dir.rglob("*.md"):
+            if not is_pagecontent_md(md_file):
+                continue
+            resolved = md_file.resolve()
+            if resolved not in seen:
+                seen.add(resolved)
+                yield md_file
+
     seen: Set[Path] = set()
     for target in targets:
         path = Path(target)
 
         if any(ch in target for ch in "*?[]"):
             for matched in Path(".").glob(target):
-                if matched.is_file() and matched.suffix.lower() == ".md":
+                if is_pagecontent_md(matched):
                     resolved = matched.resolve()
                     if resolved not in seen:
                         seen.add(resolved)
                         yield matched
                 elif matched.is_dir():
-                    for md_file in matched.rglob("*.md"):
-                        resolved = md_file.resolve()
-                        if resolved not in seen:
-                            seen.add(resolved)
-                            yield md_file
+                    yield from yield_pagecontent_md(matched, seen)
             continue
 
-        if path.is_file() and path.suffix.lower() == ".md":
+        if is_pagecontent_md(path):
             resolved = path.resolve()
             if resolved not in seen:
                 seen.add(resolved)
@@ -501,18 +512,10 @@ def iter_requirement_files(targets: Iterable[str]) -> Iterable[Path]:
         if path.is_dir():
             if (path / "input" / "pagecontent").is_dir():
                 scan_dir = path / "input" / "pagecontent"
-                for md_file in scan_dir.rglob("*.md"):
-                    resolved = md_file.resolve()
-                    if resolved not in seen:
-                        seen.add(resolved)
-                        yield md_file
+                yield from yield_pagecontent_md(scan_dir, seen)
                 continue
 
-            for md_file in path.rglob("*.md"):
-                resolved = md_file.resolve()
-                if resolved not in seen:
-                    seen.add(resolved)
-                    yield md_file
+            yield from yield_pagecontent_md(path, seen)
 
 
 def find_ig_roots(root_dir: Path = Path("igs")) -> Dict[str, Path]:
