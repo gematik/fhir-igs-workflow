@@ -27,13 +27,13 @@ Der Ablauf für die Übermittlung von ärztlichen und zahnärztlichen Verordnung
 - Als PKV-Versicherter möchte ich, dass mein Apotheker erkennt, dass ich in der E-Rezept-App dem Speichern von digitalen Abrechnungsinformationen zugestimmt habe.
 - Als PKV-Versicherter möchte ich wählen können, ob der Apotheker mir die Abrechnungsinformation für ein E-Rezept analog (Papierbeleg) oder digital zur Verfügung stellt.
 - Als PKV-Versicherter möchte ich nach Abgabe in der Apotheke alle Belege in der E-Rezept-App aufrufen und nutzen können.
-- Als PKV-Versicherter möchte ich die Verordnungs- und Abgabedaten sowie Dispensierinformationen zusammenhängend in der App angezeigt bekommen, sodass ich nachvollziehen kann, was mir vom Arzt verordnet, was mir in der Apotheke mitgegeben  wurde und was ich gegenüber meiner Kasse abrechnen kann .
+- Als PKV-Versicherter möchte ich die Verordnungs- und Abgabedaten sowie Dispensierinformationen zusammenhängend in der App angezeigt bekommen, sodass ich nachvollziehen kann, was mir vom Arzt verordnet, was mir in der Apotheke mitgegeben wurde und was ich gegenüber meiner Kasse abrechnen kann .
 - Als PKV-Versicherte möchte ich die digitalen Abrechnungsinformationen aus der E-Rezept-App als PDF-Dokument an einen anderen digitalen Speicherort exportieren und ausdrucken können, um meine Abrechnungen auch an einer anderen Stelle dokumentieren zu können. 
 - Als PKV-Versicherter möchte ich aus der E-Rezept-App heraus alle abrechnungsrelevanten Informationen als PDF-Dokument digital an meinen Kostenträger übermitteln können, um eine Erstattung beantragen zu können (Eine Übermittlung erfolgt nicht automatisch).
 - Als PKV-Versicherter möchte ich meine eingereichten Abrechnungen im TI-Flow-Fachdienst markieren können.
 - Als PKV-Versicherter möchte ich, dass mein Apotheker die Abrechnungsinformationen ändern kann, wenn mir bei der Abrechnung ein Fehler auffällt. Dazu möchte ich den Apotheker in der App berechtigen können.
 - Als PKV-Versicherter möchte ich in der E-Rezept-App darauf hingewiesen werden, wenn die Abrechnungsinformationen nachträglich geändert wurden.
-- Als  Versicherter möchte ich immer nur die neuste Version der Abrechnungsinformation an meinen Kostenträger weiterleiten können, damit ich nicht mit den Versionen durcheinanderkomme.
+- Als Versicherter möchte ich immer nur die neuste Version der Abrechnungsinformation an meinen Kostenträger weiterleiten können, damit ich nicht mit den Versionen durcheinanderkomme.
 - Als PKV-Versicherter möchte ich in der E-Rezept-App einen Hinweis angezeigt bekommen, bevor mein PKV-Rezept nach Ablauf von 10 Jahren automatisch gelöscht wird.
 
 #### Apotheker
@@ -106,5 +106,3 @@ Die Löschfristen für das E-Rezept mit den in Beziehung stehenden Daten, wie Di
 
 {% assign scenario_use_cases = "UC_3_12_Abrechungsinformationen_durch_Versicherten_abrufen, Abrechungsinformationen_durch_Versicherten_weitergeben, UC_3_12_Abrechungsinformation_durch_Versicherten_markieren, UC_3_11_Abrechungsinformation_durch_Versicherten_löschen" | split: ", " %}
 {% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Technische Anwendungsfälle mit Bezug zu Szenario <i>Abrechnung durch den Versicherten</i>" %}
-
-

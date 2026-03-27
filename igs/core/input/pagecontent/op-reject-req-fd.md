@@ -9,7 +9,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
     <testProcedure id="Produkttest"/>
   </actor>
     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$reject das im URL-Parameter "?secret=..." übertragene Secret gegen das im referenzierten Task gespeicherte Secret Task.identifier:Secret als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem folgenden Fehler:
-      <table id="error-output" style="border: 1px solid black; border-collapse: collapse;">
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
             <td>403 - Forbidden</td>
@@ -41,7 +41,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
     <testProcedure id="Produkttest"/>
   </actor>
     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$reject den im referenzierten Task gespeicherten Status Task.status prüfen und mit dem folgenden Fehler:
-    <table id="error-output" style="border: 1px solid black; border-collapse: collapse;">
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
             <td>412 - Precondition Failed</td>
@@ -56,11 +56,11 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_INVALID_TASK_STATUS</td>
+            <td>TIFLOW_TASK_STATUS_MISMATCH</td>
         </tr>
         <tr>
             <th>Details Text</th>
-            <td></td>
+            <td>Task has invalid status.</td>
         </tr>
     </table>
     abbrechen, wenn Task.status ungleich "in-progress" ist, damit die Verordnung nur zurückgegeben werden kann, wenn sich die Verordnung in Belieferung befindet.

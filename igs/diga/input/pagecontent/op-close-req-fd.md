@@ -14,11 +14,34 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
-  Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks für eine Verordnung mit Flowtype 162 mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/&#60;id&#60;  die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Institutionen in der Rolle
+  Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks für eine Verordnung mit Flowtype 162 mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/&#60;id&#60; die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Institutionen in der Rolle
   <ul>
     <li>oid_kostentraeger</li>
   </ul>
-  die Operation am Fachdienst aufrufen, damit der Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.
+  die Operation am Fachdienst aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+        </tr>
+    </table> 
+    abrechen, damit der Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.
 </requirement>
 
 </br>
@@ -30,7 +53,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
     <testProcedure id="Produkttest"/>
   </actor>
   Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks für ein E-Rezept mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/&#60;id&#62; mit Flowtype 162 sicherstellen, dass das in GEM_ERP_PR_PAR_CloseOperation_Input enthaltene MedicationDispense-Objekt dem Profil GEM_ERP_PR_MedicationDispense_DiGA entspricht. Andernfalls ist die Operation mit dem folgenden Fehler:
-  <table id="error-output" style="border: 1px solid black; border-collapse: collapse;">
+  <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
             <td>400 - Bad Request</td>
@@ -45,7 +68,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_INVALID_MEDICATION_DISPENSE</td>
+            <td>TIFLOW_MEDICATION_DISPENSE_INVALID</td>
         </tr>
         <tr>
             <th>Details Text</th>

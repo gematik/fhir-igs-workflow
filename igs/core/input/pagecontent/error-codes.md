@@ -47,4 +47,28 @@ Der TI-Flow-Fachdienst stellt eine http-Schnittstelle für den Aufruf durch Clie
 
 Die Fehlermeldung beinhaltet bei fachlichen Fehlern einen VAU-verschlüsselten inneren http-Response. In diesem inneren Response werden ggf. ausschliesslich personenbezogene oder medizinische Daten an den aufrufenden Client übermittelt, welche bereits im VAU-verschlüsselten inneren http-Request, welcher zum Fehler führte, enthalten waren. Das kann bspw. bei Fehlern bei der Prüfung der FHIR Konformität von Datensätzen auftreten.
 
+Die Details des OperationOutcomes werden in den Anforderungen mit einer Tabelle wie unten beschrieben:
+<table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+    <tr>
+        <th>HTTP-Code</th>
+        <td>HTTP-Status-Code</td>
+    </tr>
+    <tr>
+        <th>Severity</th>
+        <td>OperationOutcome.issue.severity</td>
+    </tr>
+    <tr>
+        <th>Code</th>
+        <td>OperationOutcome.issue.code</td>
+    </tr>
+    <tr>
+        <th>Details Code</th>
+        <td>OperationOutcome.issue.details.coding.code</td>
+    </tr>
+    <tr>
+        <th>Details Text</th>
+        <td>OperationOutcome.issue.details.coding.display / OperationOutcome.issue.details.text</td>
+    </tr>
+</table>
+
 Treten Fehler beim VAU-Transport (bspw. innerer http-Request kann nicht entschlüsselt werden) auf, beinhaltet die Fehlermeldung keinen inneren http-Response.

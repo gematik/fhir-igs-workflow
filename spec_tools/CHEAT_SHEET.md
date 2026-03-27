@@ -1,8 +1,8 @@
 ## Anforderung definieren
 
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst – title">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst – title">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
       text
@@ -17,13 +17,13 @@ Für Tags in Anforderungen muss die folgende Syntax verwendet werden:
 
 ### Fehlercodes in Anforderungen
 
-<requirement conformance="SHALL" title="E-Rezept-Fachdienst – title">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst – title">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
+    <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
       ... mit dem folgenden Fehler:
-      <table style="border: 1px solid black; border-collapse: collapse;">
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
             <td>400 - Bad Request</td>
@@ -44,8 +44,8 @@ Für Tags in Anforderungen muss die folgende Syntax verwendet werden:
             <th>Details Text</th>
             <td>Todo</td>
         </tr>
-    </table>
-    ...
+      </table>
+      ...
 </requirement>
 
 ## Bild einfügen
