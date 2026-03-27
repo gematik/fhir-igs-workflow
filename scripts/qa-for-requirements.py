@@ -15,10 +15,14 @@ def run_step(
     title: str,
     command: list[str],
     strict: bool = True,
+    cwd: Path | None = None,
 ) -> int:
     print(f"\n==> {title}")
-    print("$ " + " ".join(command))
-    result = subprocess.run(command, check=False)
+    if cwd is not None:
+        print(f"$ (cd {cwd} && {' '.join(command)})")
+    else:
+        print("$ " + " ".join(command))
+    result = subprocess.run(command, check=False, cwd=cwd)
     if strict and result.returncode != 0:
         raise subprocess.CalledProcessError(result.returncode, command)
     if result.returncode == 0:
@@ -75,11 +79,19 @@ def main() -> None:
     args = parser.parse_args()
 
     scripts_dir = Path(__file__).resolve().parent / "requirement-qa"
+    repo_root = Path(__file__).resolve().parent.parent
     quality_script = scripts_dir / "check_requirement_quality.py"
     error_code_script = scripts_dir / "check_error_code_consistency.py"
 
     print("Running requirements QA pipeline")
     print(f"- Root: {args.root}")
+
+    run_step(
+        "Run igtools process for all IGs",
+        ["./all", "igtools", "process"],
+        strict=True,
+        cwd=repo_root,
+    )
 
     quality_cmd = [
         sys.executable,
