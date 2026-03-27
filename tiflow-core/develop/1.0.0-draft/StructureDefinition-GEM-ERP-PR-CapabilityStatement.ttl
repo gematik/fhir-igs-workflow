@@ -625,6 +625,7 @@
            fhir:l fhir:Coding
          ]
        ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -655,7 +656,20 @@
            fhir:v "http://hl7.org/fhir/ValueSet/security-labels|4.0.1"^^xsd:anyURI ;
            fhir:l <http://hl7.org/fhir/ValueSet/security-labels?version=4.0.1>
          ]
-       ]
+       ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] [
+         fhir:identity [ fhir:v "v2" ] ;
+         fhir:map [ fhir:v "CE/CNE/CWE subset one of the sets of component 1-3 or 4-6" ]
+       ] [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "CV" ]
+       ] [
+         fhir:identity [ fhir:v "orim" ] ;
+         fhir:map [ fhir:v "fhir:Coding rdfs:subClassOf dt:CDCoding" ]
+       ] )
      ] [
        fhir:id [ fhir:v "CapabilityStatement.meta.tag" ] ;
        fhir:path [ fhir:v "CapabilityStatement.meta.tag" ] ;
@@ -675,6 +689,7 @@
            fhir:l fhir:Coding
          ]
        ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -705,7 +720,20 @@
            fhir:v "http://hl7.org/fhir/ValueSet/common-tags|4.0.1"^^xsd:anyURI ;
            fhir:l <http://hl7.org/fhir/ValueSet/common-tags?version=4.0.1>
          ]
-       ]
+       ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] [
+         fhir:identity [ fhir:v "v2" ] ;
+         fhir:map [ fhir:v "CE/CNE/CWE subset one of the sets of component 1-3 or 4-6" ]
+       ] [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "CV" ]
+       ] [
+         fhir:identity [ fhir:v "orim" ] ;
+         fhir:map [ fhir:v "fhir:Coding rdfs:subClassOf dt:CDCoding" ]
+       ] )
      ] [
        fhir:id [ fhir:v "CapabilityStatement.implicitRules" ] ;
        fhir:path [ fhir:v "CapabilityStatement.implicitRules" ] ;
@@ -795,8 +823,8 @@
          fhir:strength [ fhir:v "preferred" ] ;
          fhir:description [ fhir:v "A human language." ] ;
          fhir:valueSet [
-           fhir:v "http://hl7.org/fhir/ValueSet/languages|4.0.1"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/ValueSet/languages?version=4.0.1>
+           fhir:v "http://hl7.org/fhir/ValueSet/languages"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/ValueSet/languages>
          ]
        ]
      ] [
@@ -923,6 +951,8 @@
        fhir:sliceName [ fhir:v "baseUrl" ] ;
        fhir:short [ fhir:v "Base URL der FHIR-API" ] ;
        fhir:definition [ fhir:v "Gibt die Basis-URL des FHIR-Servers als Zeichenkette an. Beispiel: http://epa4all/epa/medication/api/v1/fhir" ] ;
+       fhir:comment [ fhir:v "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." ] ;
+       fhir:alias ( [ fhir:v "extensions" ] [ fhir:v "user content" ] ) ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -940,6 +970,7 @@
            fhir:l <https://gematik.de/fhir/ti/StructureDefinition/extension-base-url>
          ] )
        ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -955,20 +986,29 @@
          fhir:severity [ fhir:v "error" ] ;
          fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
          fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
-         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
          fhir:source [
            fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
            fhir:l <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
        ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v false ]
+       fhir:isSummary [ fhir:v false ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "N/A" ]
+       ] [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] )
      ] [
        fhir:id [ fhir:v "CapabilityStatement.extension:header" ] ;
        fhir:path [ fhir:v "CapabilityStatement.extension" ] ;
        fhir:sliceName [ fhir:v "header" ] ;
        fhir:short [ fhir:v "HTTP Header" ] ;
        fhir:definition [ fhir:v "Ermöglicht die Angabe global oder spezifisch geforderter HTTP Header in einem CapabilityStatement oder einer Resource-Interaktion." ] ;
+       fhir:comment [ fhir:v "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." ] ;
+       fhir:alias ( [ fhir:v "extensions" ] [ fhir:v "user content" ] ) ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "*" ] ;
        fhir:base [
@@ -986,6 +1026,7 @@
            fhir:l <https://gematik.de/fhir/ti/StructureDefinition/extension-http-header>
          ] )
        ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -1001,20 +1042,29 @@
          fhir:severity [ fhir:v "error" ] ;
          fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
          fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
-         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
          fhir:source [
            fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
            fhir:l <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
        ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v false ]
+       fhir:isSummary [ fhir:v false ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "N/A" ]
+       ] [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] )
      ] [
        fhir:id [ fhir:v "CapabilityStatement.extension:responseInfo" ] ;
        fhir:path [ fhir:v "CapabilityStatement.extension" ] ;
        fhir:sliceName [ fhir:v "responseInfo" ] ;
        fhir:short [ fhir:v "HTTP-Antwortinformationen" ] ;
        fhir:definition [ fhir:v "Definiert Informationen zu HTTP-Antworten für FHIR-Interaktionen, inklusive Statuscode, Beschreibung, Beispiel und Response-Schema." ] ;
+       fhir:comment [ fhir:v "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." ] ;
+       fhir:alias ( [ fhir:v "extensions" ] [ fhir:v "user content" ] ) ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "*" ] ;
        fhir:base [
@@ -1032,6 +1082,7 @@
            fhir:l <https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info>
          ] )
        ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -1047,14 +1098,21 @@
          fhir:severity [ fhir:v "error" ] ;
          fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
          fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
-         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
          fhir:source [
            fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
            fhir:l <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
        ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v false ]
+       fhir:isSummary [ fhir:v false ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "N/A" ]
+       ] [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] )
      ] [
        fhir:id [ fhir:v "CapabilityStatement.extension:environment" ] ;
        fhir:path [ fhir:v "CapabilityStatement.extension" ] ;
@@ -1745,8 +1803,8 @@
          fhir:strength [ fhir:v "extensible" ] ;
          fhir:description [ fhir:v "Countries and regions within which this artifact is targeted for use." ] ;
          fhir:valueSet [
-           fhir:v "http://hl7.org/fhir/ValueSet/jurisdiction|4.0.1"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/ValueSet/jurisdiction?version=4.0.1>
+           fhir:v "http://hl7.org/fhir/ValueSet/jurisdiction"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/ValueSet/jurisdiction>
          ]
        ] ;
        fhir:mapping ( [
@@ -1918,8 +1976,8 @@
            fhir:l fhir:canonical
          ] ;
          fhir:targetProfile ( [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/CapabilityStatement|4.0.1"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/CapabilityStatement?version=4.0.1>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/CapabilityStatement"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/CapabilityStatement>
          ] )
        ] ) ;
        fhir:constraint ( [
@@ -1954,8 +2012,8 @@
            fhir:l fhir:canonical
          ] ;
          fhir:targetProfile ( [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/CapabilityStatement|4.0.1"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/CapabilityStatement?version=4.0.1>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/CapabilityStatement"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/CapabilityStatement>
          ] )
        ] ) ;
        fhir:constraint ( [
@@ -2500,8 +2558,8 @@
            fhir:l fhir:Reference
          ] ;
          fhir:targetProfile ( [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/Organization?version=4.0.1>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Organization"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/Organization>
          ] )
        ] ) ;
        fhir:condition ( [ fhir:v "ele-1" ] ) ;
@@ -2704,8 +2762,8 @@
            fhir:l fhir:canonical
          ] ;
          fhir:targetProfile ( [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/ImplementationGuide|4.0.1"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/ImplementationGuide?version=4.0.1>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/ImplementationGuide"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/ImplementationGuide>
          ] )
        ] ) ;
        fhir:constraint ( [
@@ -3244,8 +3302,8 @@
          fhir:strength [ fhir:v "extensible" ] ;
          fhir:description [ fhir:v "Types of security services used with FHIR." ] ;
          fhir:valueSet [
-           fhir:v "http://hl7.org/fhir/ValueSet/restful-security-service|4.0.1"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/ValueSet/restful-security-service?version=4.0.1>
+           fhir:v "http://hl7.org/fhir/ValueSet/restful-security-service"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/ValueSet/restful-security-service>
          ]
        ] ;
        fhir:mapping ( [
@@ -3548,8 +3606,8 @@
            fhir:l fhir:canonical
          ] ;
          fhir:targetProfile ( [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/StructureDefinition|4.0.1"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/StructureDefinition?version=4.0.1>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/StructureDefinition"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/StructureDefinition>
          ] )
        ] ) ;
        fhir:constraint ( [
@@ -3584,8 +3642,8 @@
            fhir:l fhir:canonical
          ] ;
          fhir:targetProfile ( [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/StructureDefinition|4.0.1"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/StructureDefinition?version=4.0.1>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/StructureDefinition"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/StructureDefinition>
          ] )
        ] ) ;
        fhir:constraint ( [
@@ -3766,6 +3824,8 @@
        fhir:sliceName [ fhir:v "header" ] ;
        fhir:short [ fhir:v "HTTP Header" ] ;
        fhir:definition [ fhir:v "Ermöglicht die Angabe global oder spezifisch geforderter HTTP Header in einem CapabilityStatement oder einer Resource-Interaktion." ] ;
+       fhir:comment [ fhir:v "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." ] ;
+       fhir:alias ( [ fhir:v "extensions" ] [ fhir:v "user content" ] ) ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "*" ] ;
        fhir:base [
@@ -3783,6 +3843,7 @@
            fhir:l <https://gematik.de/fhir/ti/StructureDefinition/extension-http-header>
          ] )
        ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -3798,20 +3859,29 @@
          fhir:severity [ fhir:v "error" ] ;
          fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
          fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
-         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
          fhir:source [
            fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
            fhir:l <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
        ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v false ]
+       fhir:isSummary [ fhir:v false ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "N/A" ]
+       ] )
      ] [
        fhir:id [ fhir:v "CapabilityStatement.rest.resource.interaction.extension:responseInfo" ] ;
        fhir:path [ fhir:v "CapabilityStatement.rest.resource.interaction.extension" ] ;
        fhir:sliceName [ fhir:v "responseInfo" ] ;
        fhir:short [ fhir:v "HTTP-Antwortinformationen" ] ;
        fhir:definition [ fhir:v "Definiert Informationen zu HTTP-Antworten für FHIR-Interaktionen, inklusive Statuscode, Beschreibung, Beispiel und Response-Schema." ] ;
+       fhir:comment [ fhir:v "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." ] ;
+       fhir:alias ( [ fhir:v "extensions" ] [ fhir:v "user content" ] ) ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "*" ] ;
        fhir:base [
@@ -3829,6 +3899,7 @@
            fhir:l <https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info>
          ] )
        ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -3844,14 +3915,21 @@
          fhir:severity [ fhir:v "error" ] ;
          fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
          fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
-         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
          fhir:source [
            fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
            fhir:l <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
        ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v false ]
+       fhir:isSummary [ fhir:v false ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "N/A" ]
+       ] )
      ] [
        fhir:id [ fhir:v "CapabilityStatement.rest.resource.interaction.extension:expectation" ] ;
        fhir:path [ fhir:v "CapabilityStatement.rest.resource.interaction.extension" ] ;
@@ -3859,6 +3937,7 @@
        fhir:short [ fhir:v "SHALL | SHOULD | MAY |SHOULD-NOT" ] ;
        fhir:definition [ fhir:v "Defines the level of expectation associated with a given system capability." ] ;
        fhir:comment [ fhir:v "If \"SHALL NOT\" is desired, use the \"prohibited\" modifier extension.  This extension should only be used with CapabilityStatements documenting requirements, not those documenting actual system capabilities." ] ;
+       fhir:alias ( [ fhir:v "extensions" ] [ fhir:v "user content" ] ) ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -3876,6 +3955,7 @@
            fhir:l <http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation?version=4.0.1>
          ] )
        ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -3891,7 +3971,7 @@
          fhir:severity [ fhir:v "error" ] ;
          fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
          fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
-         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
          fhir:source [
            fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
            fhir:l <http://hl7.org/fhir/StructureDefinition/Extension>
@@ -4658,8 +4738,8 @@
            fhir:l fhir:canonical
          ] ;
          fhir:targetProfile ( [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/SearchParameter|4.0.1"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/SearchParameter?version=4.0.1>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/SearchParameter"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/SearchParameter>
          ] )
        ] ) ;
        fhir:constraint ( [
@@ -4891,6 +4971,8 @@
        fhir:sliceName [ fhir:v "header" ] ;
        fhir:short [ fhir:v "HTTP Header" ] ;
        fhir:definition [ fhir:v "Ermöglicht die Angabe global oder spezifisch geforderter HTTP Header in einem CapabilityStatement oder einer Resource-Interaktion." ] ;
+       fhir:comment [ fhir:v "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." ] ;
+       fhir:alias ( [ fhir:v "extensions" ] [ fhir:v "user content" ] ) ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "*" ] ;
        fhir:base [
@@ -4908,6 +4990,7 @@
            fhir:l <https://gematik.de/fhir/ti/StructureDefinition/extension-http-header>
          ] )
        ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -4923,20 +5006,29 @@
          fhir:severity [ fhir:v "error" ] ;
          fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
          fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
-         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
          fhir:source [
            fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
            fhir:l <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
        ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v false ]
+       fhir:isSummary [ fhir:v false ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "N/A" ]
+       ] )
      ] [
        fhir:id [ fhir:v "CapabilityStatement.rest.resource.operation.extension:responseInfo" ] ;
        fhir:path [ fhir:v "CapabilityStatement.rest.resource.operation.extension" ] ;
        fhir:sliceName [ fhir:v "responseInfo" ] ;
        fhir:short [ fhir:v "HTTP-Antwortinformationen" ] ;
        fhir:definition [ fhir:v "Definiert Informationen zu HTTP-Antworten für FHIR-Interaktionen, inklusive Statuscode, Beschreibung, Beispiel und Response-Schema." ] ;
+       fhir:comment [ fhir:v "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." ] ;
+       fhir:alias ( [ fhir:v "extensions" ] [ fhir:v "user content" ] ) ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "*" ] ;
        fhir:base [
@@ -4954,6 +5046,7 @@
            fhir:l <https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info>
          ] )
        ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -4969,20 +5062,29 @@
          fhir:severity [ fhir:v "error" ] ;
          fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
          fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
-         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
          fhir:source [
            fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
            fhir:l <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
        ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v false ]
+       fhir:isSummary [ fhir:v false ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "N/A" ]
+       ] )
      ] [
        fhir:id [ fhir:v "CapabilityStatement.rest.resource.operation.extension:method" ] ;
        fhir:path [ fhir:v "CapabilityStatement.rest.resource.operation.extension" ] ;
        fhir:sliceName [ fhir:v "method" ] ;
        fhir:short [ fhir:v "HTTP Method for FHIR Operation" ] ;
        fhir:definition [ fhir:v "Gibt an, ob eine FHIR Operation mit GET, POST oder beidem verwendet werden darf." ] ;
+       fhir:comment [ fhir:v "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." ] ;
+       fhir:alias ( [ fhir:v "extensions" ] [ fhir:v "user content" ] ) ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "2" ] ;
        fhir:base [
@@ -5000,6 +5102,7 @@
            fhir:l <https://gematik.de/fhir/ti/StructureDefinition/extension-http-method>
          ] )
        ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -5015,14 +5118,18 @@
          fhir:severity [ fhir:v "error" ] ;
          fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
          fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
-         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
          fhir:source [
            fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
            fhir:l <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
        ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v false ]
+       fhir:isSummary [ fhir:v false ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] )
      ] [
        fhir:id [ fhir:v "CapabilityStatement.rest.resource.operation.extension:expectation" ] ;
        fhir:path [ fhir:v "CapabilityStatement.rest.resource.operation.extension" ] ;
@@ -5030,6 +5137,7 @@
        fhir:short [ fhir:v "SHALL | SHOULD | MAY |SHOULD-NOT" ] ;
        fhir:definition [ fhir:v "Defines the level of expectation associated with a given system capability." ] ;
        fhir:comment [ fhir:v "If \"SHALL NOT\" is desired, use the \"prohibited\" modifier extension.  This extension should only be used with CapabilityStatements documenting requirements, not those documenting actual system capabilities." ] ;
+       fhir:alias ( [ fhir:v "extensions" ] [ fhir:v "user content" ] ) ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -5047,6 +5155,7 @@
            fhir:l <http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation?version=4.0.1>
          ] )
        ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -5062,7 +5171,7 @@
          fhir:severity [ fhir:v "error" ] ;
          fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
          fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
-         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
          fhir:source [
            fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
            fhir:l <http://hl7.org/fhir/StructureDefinition/Extension>
@@ -5180,8 +5289,8 @@
            fhir:l fhir:canonical
          ] ;
          fhir:targetProfile ( [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/OperationDefinition|4.0.1"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/OperationDefinition?version=4.0.1>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/OperationDefinition"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/OperationDefinition>
          ] )
        ] ) ;
        fhir:constraint ( [
@@ -5515,6 +5624,10 @@
          fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
          fhir:max [ fhir:v "*" ]
        ] ;
+       fhir:contentReference [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/CapabilityStatement#CapabilityStatement.rest.resource.operation"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/StructureDefinition/CapabilityStatement#CapabilityStatement.rest.resource.operation>
+       ] ;
        fhir:type ( [
          fhir:code [
            fhir:v "BackboneElement"^^xsd:anyURI ;
@@ -5619,6 +5732,8 @@
        fhir:sliceName [ fhir:v "header" ] ;
        fhir:short [ fhir:v "HTTP Header" ] ;
        fhir:definition [ fhir:v "Ermöglicht die Angabe global oder spezifisch geforderter HTTP Header in einem CapabilityStatement oder einer Resource-Interaktion." ] ;
+       fhir:comment [ fhir:v "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." ] ;
+       fhir:alias ( [ fhir:v "extensions" ] [ fhir:v "user content" ] ) ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "*" ] ;
        fhir:base [
@@ -5636,6 +5751,7 @@
            fhir:l <https://gematik.de/fhir/ti/StructureDefinition/extension-http-header>
          ] )
        ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -5651,20 +5767,29 @@
          fhir:severity [ fhir:v "error" ] ;
          fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
          fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
-         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
          fhir:source [
            fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
            fhir:l <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
        ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v false ]
+       fhir:isSummary [ fhir:v false ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "N/A" ]
+       ] )
      ] [
        fhir:id [ fhir:v "CapabilityStatement.rest.operation.extension:responseInfo" ] ;
        fhir:path [ fhir:v "CapabilityStatement.rest.operation.extension" ] ;
        fhir:sliceName [ fhir:v "responseInfo" ] ;
        fhir:short [ fhir:v "HTTP-Antwortinformationen" ] ;
        fhir:definition [ fhir:v "Definiert Informationen zu HTTP-Antworten für FHIR-Interaktionen, inklusive Statuscode, Beschreibung, Beispiel und Response-Schema." ] ;
+       fhir:comment [ fhir:v "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." ] ;
+       fhir:alias ( [ fhir:v "extensions" ] [ fhir:v "user content" ] ) ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "*" ] ;
        fhir:base [
@@ -5682,6 +5807,7 @@
            fhir:l <https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info>
          ] )
        ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -5697,20 +5823,29 @@
          fhir:severity [ fhir:v "error" ] ;
          fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
          fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
-         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
          fhir:source [
            fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
            fhir:l <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
        ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v false ]
+       fhir:isSummary [ fhir:v false ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "N/A" ]
+       ] )
      ] [
        fhir:id [ fhir:v "CapabilityStatement.rest.operation.extension:method" ] ;
        fhir:path [ fhir:v "CapabilityStatement.rest.operation.extension" ] ;
        fhir:sliceName [ fhir:v "method" ] ;
        fhir:short [ fhir:v "HTTP Method for FHIR Operation" ] ;
        fhir:definition [ fhir:v "Gibt an, ob eine FHIR Operation mit GET, POST oder beidem verwendet werden darf." ] ;
+       fhir:comment [ fhir:v "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." ] ;
+       fhir:alias ( [ fhir:v "extensions" ] [ fhir:v "user content" ] ) ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "2" ] ;
        fhir:base [
@@ -5728,6 +5863,7 @@
            fhir:l <https://gematik.de/fhir/ti/StructureDefinition/extension-http-method>
          ] )
        ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -5743,14 +5879,18 @@
          fhir:severity [ fhir:v "error" ] ;
          fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
          fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
-         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
          fhir:source [
            fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
            fhir:l <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
        ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v false ]
+       fhir:isSummary [ fhir:v false ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] )
      ] [
        fhir:id [ fhir:v "CapabilityStatement.rest.operation.extension:expectation" ] ;
        fhir:path [ fhir:v "CapabilityStatement.rest.operation.extension" ] ;
@@ -5758,6 +5898,7 @@
        fhir:short [ fhir:v "SHALL | SHOULD | MAY |SHOULD-NOT" ] ;
        fhir:definition [ fhir:v "Defines the level of expectation associated with a given system capability." ] ;
        fhir:comment [ fhir:v "If \"SHALL NOT\" is desired, use the \"prohibited\" modifier extension.  This extension should only be used with CapabilityStatements documenting requirements, not those documenting actual system capabilities." ] ;
+       fhir:alias ( [ fhir:v "extensions" ] [ fhir:v "user content" ] ) ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -5775,6 +5916,7 @@
            fhir:l <http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation?version=4.0.1>
          ] )
        ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -5790,7 +5932,7 @@
          fhir:severity [ fhir:v "error" ] ;
          fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
          fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
-         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
          fhir:source [
            fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
            fhir:l <http://hl7.org/fhir/StructureDefinition/Extension>
@@ -5908,8 +6050,8 @@
            fhir:l fhir:canonical
          ] ;
          fhir:targetProfile ( [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/OperationDefinition|4.0.1"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/OperationDefinition?version=4.0.1>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/OperationDefinition"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/OperationDefinition>
          ] )
        ] ) ;
        fhir:constraint ( [
@@ -5976,8 +6118,8 @@
            fhir:l fhir:canonical
          ] ;
          fhir:targetProfile ( [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/CompartmentDefinition|4.0.1"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/CompartmentDefinition?version=4.0.1>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/CompartmentDefinition"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/CompartmentDefinition>
          ] )
        ] ) ;
        fhir:constraint ( [
@@ -6392,8 +6534,8 @@
          fhir:strength [ fhir:v "extensible" ] ;
          fhir:description [ fhir:v "The protocol used for message transport." ] ;
          fhir:valueSet [
-           fhir:v "http://hl7.org/fhir/ValueSet/message-transport|4.0.1"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/ValueSet/message-transport?version=4.0.1>
+           fhir:v "http://hl7.org/fhir/ValueSet/message-transport"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/ValueSet/message-transport>
          ]
        ] ;
        fhir:mapping ( [
@@ -6749,8 +6891,8 @@
            fhir:l fhir:canonical
          ] ;
          fhir:targetProfile ( [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/MessageDefinition|4.0.1"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/MessageDefinition?version=4.0.1>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/MessageDefinition"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/MessageDefinition>
          ] )
        ] ) ;
        fhir:constraint ( [
@@ -7042,8 +7184,8 @@
            fhir:l fhir:canonical
          ] ;
          fhir:targetProfile ( [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/StructureDefinition|4.0.1"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/StructureDefinition?version=4.0.1>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/StructureDefinition"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/StructureDefinition>
          ] )
        ] ) ;
        fhir:constraint ( [

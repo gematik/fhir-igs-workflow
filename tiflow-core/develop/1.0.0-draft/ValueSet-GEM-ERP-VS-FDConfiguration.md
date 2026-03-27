@@ -21,7 +21,6 @@ Dieses ValueSet bildet den zulässigen Wertebereich für Konfigurationskennzeich
  **References** 
 
 * [GEM ERP EX CapabilityStatement FDConfiguration](StructureDefinition-GEM-ERP-EX-CapabilityStatement-FDConfiguration.md)
-* [GEM ERP EX CapabilityStatement FDConfiguration](StructureDefinition-GEM-ERP-EX-CapabilityStatement-FDConfiguration.md)
 
 ### Logical Definition (CLD)
 

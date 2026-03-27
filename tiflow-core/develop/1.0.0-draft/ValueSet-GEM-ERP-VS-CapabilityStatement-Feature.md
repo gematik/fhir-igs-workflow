@@ -21,7 +21,6 @@ Dieses ValueSet kombiniert Workflow-Typ-Codes aus GEM_ERP_CS_FlowType und nicht-
  **References** 
 
 * [GEM ERP EX CapabilityStatement Feature](StructureDefinition-GEM-ERP-EX-CapabilityStatement-Feature.md)
-* [GEM ERP EX CapabilityStatement Feature](StructureDefinition-GEM-ERP-EX-CapabilityStatement-Feature.md)
 
 ### Logical Definition (CLD)
 

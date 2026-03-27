@@ -21,7 +21,6 @@ Dieses ValueSet enthält alle zulässigen Umgebungskennzeichen für CapabilitySt
  **References** 
 
 * [GEM ERP EX CapabilityStatement Environment](StructureDefinition-GEM-ERP-EX-CapabilityStatement-Environment.md)
-* [GEM ERP EX CapabilityStatement Environment](StructureDefinition-GEM-ERP-EX-CapabilityStatement-Environment.md)
 
 ### Logical Definition (CLD)
 

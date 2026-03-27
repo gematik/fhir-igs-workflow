@@ -21,7 +21,6 @@ Art des Verfügbarkeitsstatus für die Verfügbarkeitsanfrage von Medikamenten
  **References** 
 
 * [GEM ERP EX AvailabilityState](StructureDefinition-GEM-ERP-EX-AvailabilityState.md)
-* [GEM ERP EX AvailabilityState](StructureDefinition-GEM-ERP-EX-AvailabilityState.md)
 
 ### Logical Definition (CLD)
 

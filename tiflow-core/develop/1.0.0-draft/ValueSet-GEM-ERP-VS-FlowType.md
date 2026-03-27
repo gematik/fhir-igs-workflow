@@ -21,7 +21,6 @@ Zeigt die verschiedenen Arten des E-Rezepts entsprechend den Verschreibungsformu
  **References** 
 
 * [GEM ERP EX PrescriptionType](StructureDefinition-GEM-ERP-EX-PrescriptionType.md)
-* [GEM ERP EX PrescriptionType](StructureDefinition-GEM-ERP-EX-PrescriptionType.md)
 
 ### Logical Definition (CLD)
 

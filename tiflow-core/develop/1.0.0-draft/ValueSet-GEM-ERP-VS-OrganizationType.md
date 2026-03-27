@@ -21,7 +21,6 @@ Art der Organisation
  **References** 
 
 * [GEM ERP PR Task](StructureDefinition-GEM-ERP-PR-Task.md)
-* [GEM ERP PR Task](StructureDefinition-GEM-ERP-PR-Task.md)
 
 ### Logical Definition (CLD)
 

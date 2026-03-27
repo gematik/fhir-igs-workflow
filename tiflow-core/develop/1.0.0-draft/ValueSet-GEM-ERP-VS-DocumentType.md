@@ -21,8 +21,6 @@ Art der Dokumente je nach Empfänger.
  **References** 
 
 * [GEM ERP PR Composition](StructureDefinition-GEM-ERP-PR-Composition.md)
-* [GEM ERP PR Composition](StructureDefinition-GEM-ERP-PR-Composition.md)
-* [GEM ERP PR Task](StructureDefinition-GEM-ERP-PR-Task.md)
 * [GEM ERP PR Task](StructureDefinition-GEM-ERP-PR-Task.md)
 
 ### Logical Definition (CLD)

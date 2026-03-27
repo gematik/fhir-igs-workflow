@@ -21,7 +21,6 @@ Fachliche Fehlercodes des E-Rezept-Fachdienst
  **References** 
 
 * [GEM ERP PR OperationOutcome](StructureDefinition-GEM-ERP-PR-OperationOutcome.md)
-* [GEM ERP PR OperationOutcome](StructureDefinition-GEM-ERP-PR-OperationOutcome.md)
 
 ### Logical Definition (CLD)
 
