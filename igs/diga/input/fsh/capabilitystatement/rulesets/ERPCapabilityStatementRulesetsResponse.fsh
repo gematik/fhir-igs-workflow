@@ -297,3 +297,10 @@ RuleSet: TiflowErezeptPznInvalid
   * extension[description].valueString = "PZN invalid"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_EREZEPT_PZN_INVALID"
+
+RuleSet: TiflowOcspBackendError
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "512 - OCSP Backend Error"
+  * extension[description].valueString = "Invalid OCSP response"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_OCSP_BACKEND_ERROR"

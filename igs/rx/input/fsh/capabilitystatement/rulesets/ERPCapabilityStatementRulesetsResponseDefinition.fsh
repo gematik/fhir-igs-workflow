@@ -99,6 +99,7 @@ RuleSet: TaskActivateOperationStatusCodes
 * insert TiflowErezeptMvoInvalid
 * insert TiflowErezeptMvoStartdateInvalid
 * insert TiflowErezeptPznInvalid
+* insert TiflowOcspBackendError
 
 RuleSet: TaskAcceptOperationStatusCodes
 * insert TaskPostOperationStatusCodes

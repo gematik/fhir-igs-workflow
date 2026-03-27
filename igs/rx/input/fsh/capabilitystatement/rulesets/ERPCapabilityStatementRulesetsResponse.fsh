@@ -355,3 +355,10 @@ RuleSet: TiflowErezeptMvoNotValid
   * extension[description].valueString = "MVO not valid yet"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_EREZEPT_MVO_NOT_VALID"
+
+RuleSet: TiflowOcspBackendError
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "512 - OCSP Backend Error"
+  * extension[description].valueString = "Invalid OCSP response"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_OCSP_BACKEND_ERROR"

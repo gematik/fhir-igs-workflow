@@ -119,3 +119,6 @@ Description: "Codes, die im Rahmen des TIFlow in den OperationOutcomes.details a
 * #TIFLOW_META_PROFILE_INVALID "Meta profile invalid" "The resource meta.profile entry is missing, invalid, or not supported"
 	* ^designation.language = #de-DE
 	* ^designation.value = "Meta-Profil ungültig"
+* #TIFLOW_OCSP_BACKEND_ERROR "Invalid OCSP response" "Failed to retrieve the OCSP response for the certificate of the signature"
+  * ^designation.language = #de-DE
+  * ^designation.value = "OCSP Abfrage fehlgeschlagen"

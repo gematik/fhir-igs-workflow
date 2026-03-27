@@ -91,6 +91,7 @@ RuleSet: TaskActivateOperationStatusCodes
 * insert TiflowTaskStatusMismatch
 * insert TiflowCertificateInvalid
 * insert TiflowErezeptPznInvalid
+* insert TiflowOcspBackendError
 
 RuleSet: TaskAcceptOperationStatusCodes
 * insert TaskPostOperationStatusCodes
