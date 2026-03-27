@@ -283,3 +283,17 @@ RuleSet: TiflowTaskExpired
   * extension[description].valueString = "TODO: add description for TIFLOW_TASK_EXPIRED"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_TASK_EXPIRED"
+
+RuleSet: TiflowCertificateInvalid
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "400 - Bad Request"
+  * extension[description].valueString = "TODO: add description for TIFLOW_CERTIFICATE_INVALID"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_CERTIFICATE_INVALID"
+
+RuleSet: TiflowErezeptPznInvalid
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "400 - Bad Request"
+  * extension[description].valueString = "TODO: add description for TIFLOW_EREZEPT_PZN_INVALID"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_EREZEPT_PZN_INVALID"

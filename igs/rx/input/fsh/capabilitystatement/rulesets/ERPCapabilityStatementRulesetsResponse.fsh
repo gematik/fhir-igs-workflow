@@ -292,3 +292,66 @@ RuleSet: TiflowTaskExpired
   * extension[description].valueString = "TODO: add description for TIFLOW_TASK_EXPIRED"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_TASK_EXPIRED"
+
+RuleSet: TiflowCertificateInvalid
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "400 - Bad Request"
+  * extension[description].valueString = "TODO: add description for TIFLOW_CERTIFICATE_INVALID"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_CERTIFICATE_INVALID"
+
+RuleSet: TiflowErezeptDrugCategoryForbidden
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "400 - Bad Request"
+  * extension[description].valueString = "TODO: add description for TIFLOW_EREZEPT_DRUG_CATEGORY_FORBIDDEN"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_EREZEPT_DRUG_CATEGORY_FORBIDDEN"
+
+RuleSet: TiflowErezeptMvoEnddateInvalid
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "400 - Bad Request"
+  * extension[description].valueString = "TODO: add description for TIFLOW_EREZEPT_MVO_ENDDATE_INVALID"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_EREZEPT_MVO_ENDDATE_INVALID"
+
+RuleSet: TiflowErezeptMvoFlowtypeInvalid
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "400 - Bad Request"
+  * extension[description].valueString = "TODO: add description for TIFLOW_EREZEPT_MVO_FLOWTYPE_INVALID"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_EREZEPT_MVO_FLOWTYPE_INVALID"
+
+RuleSet: TiflowErezeptMvoIdInvalid
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "400 - Bad Request"
+  * extension[description].valueString = "TODO: add description for TIFLOW_EREZEPT_MVO_ID_INVALID"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_EREZEPT_MVO_ID_INVALID"
+
+RuleSet: TiflowErezeptMvoInvalid
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "400 - Bad Request"
+  * extension[description].valueString = "TODO: add description for TIFLOW_EREZEPT_MVO_INVALID"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_EREZEPT_MVO_INVALID"
+
+RuleSet: TiflowErezeptMvoStartdateInvalid
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "400 - Bad Request"
+  * extension[description].valueString = "TODO: add description for TIFLOW_EREZEPT_MVO_STARTDATE_INVALID"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_EREZEPT_MVO_STARTDATE_INVALID"
+
+RuleSet: TiflowErezeptPznInvalid
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "400 - Bad Request"
+  * extension[description].valueString = "TODO: add description for TIFLOW_EREZEPT_PZN_INVALID"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_EREZEPT_PZN_INVALID"
+
+RuleSet: TiflowErezeptMvoNotValid
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "403 - Forbidden"
+  * extension[description].valueString = "TODO: add description for TIFLOW_EREZEPT_MVO_NOT_VALID"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_EREZEPT_MVO_NOT_VALID"

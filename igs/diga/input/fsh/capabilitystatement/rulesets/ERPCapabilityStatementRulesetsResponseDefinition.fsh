@@ -89,6 +89,8 @@ RuleSet: TaskActivateOperationStatusCodes
 * insert TiflowSignatureInvalid
 * insert TiflowSignatureInvalidIssuingRole
 * insert TiflowTaskStatusMismatch
+* insert TiflowCertificateInvalid
+* insert TiflowErezeptPznInvalid
 
 RuleSet: TaskAcceptOperationStatusCodes
 * insert TaskPostOperationStatusCodes

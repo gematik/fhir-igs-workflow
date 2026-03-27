@@ -730,6 +730,45 @@ def check_module_codesystem_placement(ig_roots: Dict[str, Path]) -> List[Finding
     return findings
 
 
+def check_orphaned_codes(error_codes: List[ErrorCode], ig_roots: Dict[str, Path]) -> List[Finding]:
+    """Find codes defined in OperationOutcomeDetails CodeSystems that are not used in any requirements.
+    These are orphaned codes that should be removed."""
+    findings: List[Finding] = []
+    
+    # Collect all codes from requirements
+    required_codes: Set[str] = {err.code for err in error_codes}
+    
+    # Check each CodeSystem for codes not in requirements
+    for module, ig_root in ig_roots.items():
+        cs_defs = find_codesystem_files(ig_root)
+        for cs_name, cs_def in cs_defs.items():
+            # Only check OperationOutcomeDetails CodeSystems
+            if "OperationOutcomeDetails" not in cs_name:
+                continue
+            
+            content = cs_def.file_path.read_text(encoding="utf-8")
+            
+            for match in FSH_CODE_DEF_RE.finditer(content):
+                code = match.group(1)
+                line_num = content[:match.start()].count("\n") + 1
+                
+                # Check if this code is used in any requirement
+                if code not in required_codes:
+                    findings.append(
+                        Finding(
+                            type="ORPHANED_CODE",
+                            ig_module=module,
+                            file_path=cs_def.file_path,
+                            line=line_num,
+                            code=code,
+                            requirement_key="",
+                            message=f"Code '{code}' is defined in {cs_name} but not used in any requirement",
+                        )
+                    )
+    
+    return findings
+
+
 def fix_description_mismatches(findings: List[Finding], ig_roots: Dict[str, Path]) -> int:
     """Fix description mismatches by updating RuleSet descriptions from CodeSystem."""
     fixes_applied = 0
@@ -912,6 +951,119 @@ def _wrapper_insert_line(resp_def_content: str, endpoint_rule: str, rs_name: str
             prefix = m.group(1)
             break
     return f"* {prefix}insert {rs_name}\n"
+
+
+def fix_orphaned_codes(findings: List[Finding], ig_roots: Dict[str, Path]) -> int:
+    """Remove orphaned codes from OperationOutcomeDetails CodeSystems, ValueSets, and CapabilityStatements."""
+    fixes_applied = 0
+    
+    # Group orphaned codes by file
+    orphaned_by_file: Dict[Path, Set[str]] = {}
+    for finding in findings:
+        if finding.type != "ORPHANED_CODE":
+            continue
+        # Only process OperationOutcomeDetails files
+        if "OperationOutcomeDetails" not in str(finding.file_path):
+            continue
+        if finding.file_path not in orphaned_by_file:
+            orphaned_by_file[finding.file_path] = set()
+        orphaned_by_file[finding.file_path].add(finding.code)
+    
+    # Remove from OperationOutcomeDetails CodeSystems
+    for cs_file, codes_to_remove in orphaned_by_file.items():
+        if not cs_file.exists():
+            continue
+        
+        content = cs_file.read_text(encoding="utf-8")
+        lines = content.splitlines(keepends=True)
+        new_lines = []
+        modified = False
+        
+        for line in lines:
+            code_match = re.match(r'^\s*\*\s+#([a-zA-Z0-9_\-]+)\s+', line)
+            if code_match and code_match.group(1) in codes_to_remove:
+                modified = True
+                print(f"  [FIX] Removed {code_match.group(1)} from {cs_file.name}")
+                fixes_applied += 1
+                continue
+            new_lines.append(line)
+        
+        if modified:
+            cs_file.write_text("".join(new_lines), encoding="utf-8")
+    
+    # Remove from OperationOutcomeDetails ValueSets (includes)
+    for module, ig_root in ig_roots.items():
+        vs_dir = ig_root / "input" / "fsh" / "valuesets"
+        if not vs_dir.exists():
+            continue
+        
+        for vs_file in vs_dir.glob("*.fsh"):
+            # Only process OperationOutcomeDetails ValueSets
+            if "OperationOutcomeDetails" not in vs_file.name:
+                continue
+            
+            content = vs_file.read_text(encoding="utf-8")
+            lines = content.splitlines(keepends=True)
+            new_lines = []
+            modified = False
+            
+            for line in lines:
+                # Look for lines that include codes from CodeSystems
+                for prefix, codes in orphaned_by_file.items():
+                    for code in codes:
+                        if f"#{code}" in line and ("include" in line or "codes from system" in line):
+                            modified = True
+                            print(f"  [FIX] Removed {code} from {vs_file.name}")
+                            fixes_applied += 1
+                            continue
+                new_lines.append(line)
+            
+            if modified:
+                vs_file.write_text("".join(new_lines), encoding="utf-8")
+    
+    # Remove from CapabilityStatement RuleSets (only OperationOutcomeDetails-related)
+    for module, ig_root in ig_roots.items():
+        ruleset_files = [
+            ig_root / "input" / "fsh" / "capabilitystatement" / "rulesets" / "ERPCapabilityStatementRulesetsResponse.fsh",
+            ig_root / "input" / "fsh" / "capabilitystatement" / "rulesets" / "ERPCapabilityStatementRulesetsResponseDefinition.fsh",
+        ]
+        
+        for ruleset_file in ruleset_files:
+            if not ruleset_file.exists():
+                continue
+            
+            content = ruleset_file.read_text(encoding="utf-8")
+            lines = content.splitlines(keepends=True)
+            new_lines = []
+            modified = False
+            skip_next_desc = False
+            
+            for i, line in enumerate(lines):
+                # Check if this line contains an errorCode from orphaned codes
+                code_match = RULESET_ERROR_CODE_RE.search(line)
+                if code_match:
+                    code = code_match.group(1)
+                    if any(code in codes for codes in orphaned_by_file.values()):
+                        modified = True
+                        skip_next_desc = True
+                        print(f"  [FIX] Removed {code} from {ruleset_file.name}")
+                        fixes_applied += 1
+                        # Skip the description line if it immediately follows
+                        if i + 1 < len(lines) and 'extension[description]' in lines[i + 1]:
+                            continue
+                        continue
+                
+                # Skip description lines for orphaned codes
+                if skip_next_desc and 'extension[description]' in line:
+                    skip_next_desc = False
+                    continue
+                
+                new_lines.append(line)
+            
+            if modified:
+                ruleset_file.write_text("".join(new_lines), encoding="utf-8")
+    
+    return fixes_applied
 
 
 def fix_cs_vs(findings: List[Finding], ig_roots: Dict[str, Path], error_codes: List[ErrorCode]) -> int:
@@ -1164,6 +1316,7 @@ def main() -> int:
     findings.extend(check_capabilitystatement_consistency(error_codes, ig_roots, include_extra=args.report_capstat_extra))
     findings.extend(check_description_consistency(ig_roots))
     findings.extend(check_module_codesystem_placement(ig_roots))
+    findings.extend(check_orphaned_codes(error_codes, ig_roots))
 
     if args.fix and findings:
         print("\n==> Applying auto-fixes...")
@@ -1173,6 +1326,7 @@ def main() -> int:
             applied += fix_capstat(findings, ig_roots, error_codes)
             applied += fix_description_mismatches(findings, ig_roots)
             applied += fix_module_codesystem_placement(findings, ig_roots)
+            applied += fix_orphaned_codes(findings, ig_roots)
 
             print("\nRe-running checks after fixes...")
             findings = []
@@ -1182,6 +1336,7 @@ def main() -> int:
             )
             findings.extend(check_description_consistency(ig_roots))
             findings.extend(check_module_codesystem_placement(ig_roots))
+            findings.extend(check_orphaned_codes(error_codes, ig_roots))
 
             if not findings:
                 break

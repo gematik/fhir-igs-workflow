@@ -131,12 +131,27 @@ RuleSet: TiflowConsentRequired
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_CONSENT_REQUIRED"
 
-RuleSet: TiflowEuNoPrescriptionsFound
+
+RuleSet: TiflowTaskStatusMismatch
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "400 - Bad Request"
+  * extension[description].valueString = "TODO: add description for TIFLOW_TASK_STATUS_MISMATCH"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_TASK_STATUS_MISMATCH"
+
+RuleSet: TiflowXborderNoPrescriptionsFound
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "404 - Not Found"
-  * extension[description].valueString = "TODO: add description for TIFLOW_EU_NO_PRESCRIPTIONS_FOUND"
+  * extension[description].valueString = "TODO: add description for TIFLOW_XBORDER_NO_PRESCRIPTIONS_FOUND"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "TIFLOW_EU_NO_PRESCRIPTIONS_FOUND"
+  * extension[errorCode].valueString = "TIFLOW_XBORDER_NO_PRESCRIPTIONS_FOUND"
+
+RuleSet: TiflowXborderCountryCodeInvalid
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "409 - Conflict"
+  * extension[description].valueString = "TODO: add description for TIFLOW_XBORDER_COUNTRY_CODE_INVALID"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_XBORDER_COUNTRY_CODE_INVALID"
 
 RuleSet: TiflowAccessCodeInvalid
 * extension[responseInfo][+]
@@ -145,23 +160,9 @@ RuleSet: TiflowAccessCodeInvalid
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_ACCESS_CODE_INVALID"
 
-RuleSet: TiflowEuCountryCodeInvalid
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "409 - Conflict"
-  * extension[description].valueString = "TODO: add description for TIFLOW_EU_COUNTRY_CODE_INVALID"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "TIFLOW_EU_COUNTRY_CODE_INVALID"
-
 RuleSet: TiflowConsentMissing
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "403 - Forbidden"
   * extension[description].valueString = "TODO: add description for TIFLOW_CONSENT_MISSING"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_CONSENT_MISSING"
-
-RuleSet: TiflowTaskStatusMismatch
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "400 - Bad Request"
-  * extension[description].valueString = "TODO: add description for TIFLOW_TASK_STATUS_MISMATCH"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "TIFLOW_TASK_STATUS_MISMATCH"

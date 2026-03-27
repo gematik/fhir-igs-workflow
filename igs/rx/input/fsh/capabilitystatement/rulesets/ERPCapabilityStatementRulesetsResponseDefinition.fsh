@@ -91,6 +91,14 @@ RuleSet: TaskActivateOperationStatusCodes
 * insert TiflowSignatureInvalid
 * insert TiflowSignatureInvalidIssuingRole
 * insert TiflowTaskStatusMismatch
+* insert TiflowCertificateInvalid
+* insert TiflowErezeptDrugCategoryForbidden
+* insert TiflowErezeptMvoEnddateInvalid
+* insert TiflowErezeptMvoFlowtypeInvalid
+* insert TiflowErezeptMvoIdInvalid
+* insert TiflowErezeptMvoInvalid
+* insert TiflowErezeptMvoStartdateInvalid
+* insert TiflowErezeptPznInvalid
 
 RuleSet: TaskAcceptOperationStatusCodes
 * insert TaskPostOperationStatusCodes
@@ -100,6 +108,7 @@ RuleSet: TaskAcceptOperationStatusCodes
 * insert TiflowTaskDeleted
 * insert TiflowTaskExpired
 * insert TiflowTaskStatusMismatch
+* insert TiflowErezeptMvoNotValid
 
 RuleSet: TaskRejectOperationStatusCodes
 * insert TaskNoContentOperationStatusCodes

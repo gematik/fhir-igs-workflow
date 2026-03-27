@@ -72,6 +72,7 @@ RuleSet: GrantEUAccessPermissionOperationStatusCodes
 * insert TiflowAccessCodeInvalid
 * insert TiflowConsentRequired
 * insert TiflowEuCountryCodeInvalid
+* insert TiflowXborderCountryCodeInvalid
 
 RuleSet: ReadEUAccessPermissionOperationStatusCodes
 * insert SystemLevelOperationStatusCodesWithParameters
@@ -86,6 +87,7 @@ RuleSet: GetEUPrescriptionsOperationStatusCodes
 * insert TiflowAuthRoleNotAllowed
 * insert TiflowConsentRequired
 * insert TiflowEuNoPrescriptionsFound
+* insert TiflowXborderNoPrescriptionsFound
 
 RuleSet: EuCloseOperationStatusCodes
 * insert SvcValidationFailed
