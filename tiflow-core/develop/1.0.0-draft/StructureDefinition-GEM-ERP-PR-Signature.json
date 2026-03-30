@@ -174,6 +174,7 @@
       "type" : [{
         "code" : "Coding"
       }],
+      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -193,7 +194,23 @@
         "strength" : "required",
         "description" : "An indication of the reason that an entity signed the object.",
         "valueSet" : "http://hl7.org/fhir/ValueSet/signature-type"
-      }
+      },
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      },
+      {
+        "identity" : "v2",
+        "map" : "CE/CNE/CWE subset one of the sets of component 1-3 or 4-6"
+      },
+      {
+        "identity" : "rim",
+        "map" : "CV"
+      },
+      {
+        "identity" : "orim",
+        "map" : "fhir:Coding rdfs:subClassOf dt:CDCoding"
+      }]
     },
     {
       "id" : "Signature.type:AuthorsSignature",
@@ -212,6 +229,7 @@
       "type" : [{
         "code" : "Coding"
       }],
+      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -230,7 +248,23 @@
         "strength" : "preferred",
         "description" : "An indication of the reason that an entity signed the object.",
         "valueSet" : "http://hl7.org/fhir/ValueSet/signature-type|4.0.1"
-      }
+      },
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      },
+      {
+        "identity" : "v2",
+        "map" : "CE/CNE/CWE subset one of the sets of component 1-3 or 4-6"
+      },
+      {
+        "identity" : "rim",
+        "map" : "CV"
+      },
+      {
+        "identity" : "orim",
+        "map" : "fhir:Coding rdfs:subClassOf dt:CDCoding"
+      }]
     },
     {
       "id" : "Signature.type:AuthorsSignature.id",
@@ -437,6 +471,7 @@
       "path" : "Signature.type.display",
       "short" : "Representation defined by the system",
       "definition" : "A representation of the meaning of the code in the system, following the rules of the system.",
+      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "requirements" : "Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.",
       "min" : 0,
       "max" : "1",
@@ -528,6 +563,7 @@
       "type" : [{
         "code" : "Coding"
       }],
+      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -546,7 +582,23 @@
         "strength" : "preferred",
         "description" : "An indication of the reason that an entity signed the object.",
         "valueSet" : "http://hl7.org/fhir/ValueSet/signature-type|4.0.1"
-      }
+      },
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      },
+      {
+        "identity" : "v2",
+        "map" : "CE/CNE/CWE subset one of the sets of component 1-3 or 4-6"
+      },
+      {
+        "identity" : "rim",
+        "map" : "CV"
+      },
+      {
+        "identity" : "orim",
+        "map" : "fhir:Coding rdfs:subClassOf dt:CDCoding"
+      }]
     },
     {
       "id" : "Signature.type:VerificationSignature.id",
@@ -753,6 +805,7 @@
       "path" : "Signature.type.display",
       "short" : "Representation defined by the system",
       "definition" : "A representation of the meaning of the code in the system, following the rules of the system.",
+      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "requirements" : "Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.",
       "min" : 0,
       "max" : "1",
@@ -872,6 +925,7 @@
         "code" : "Reference",
         "targetProfile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Device"]
       }],
+      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -879,10 +933,26 @@
         "expression" : "hasValue() or (children().count() > id.count())",
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ref-1",
+        "severity" : "error",
+        "human" : "SHALL have a contained resource if a local reference is provided",
+        "expression" : "reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))",
+        "xpath" : "not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Reference"
       }],
       "mustSupport" : true,
       "isModifier" : false,
-      "isSummary" : true
+      "isSummary" : true,
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      },
+      {
+        "identity" : "rim",
+        "map" : "The target of a resource reference is a RIM entry point (Act, Role, or Entity)"
+      }]
     },
     {
       "id" : "Signature.who.id",
@@ -1049,6 +1119,7 @@
       "type" : [{
         "code" : "Identifier"
       }],
+      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1060,6 +1131,22 @@
       "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      },
+      {
+        "identity" : "v2",
+        "map" : "CX / EI (occasionally, more often EI maps to a resource id or a URL)"
+      },
+      {
+        "identity" : "rim",
+        "map" : "II - The Identifier class is a little looser than the v3 type II because it allows URIs as well as registered OIDs or GUIDs.  Also maps to Role[classCode=IDENT]"
+      },
+      {
+        "identity" : "servd",
+        "map" : "Identifier"
+      },
+      {
         "identity" : "rim",
         "map" : ".identifier"
       }]
@@ -1122,6 +1209,7 @@
         "http://hl7.org/fhir/StructureDefinition/Device|4.0.1",
         "http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"]
       }],
+      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1129,9 +1217,25 @@
         "expression" : "hasValue() or (children().count() > id.count())",
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ref-1",
+        "severity" : "error",
+        "human" : "SHALL have a contained resource if a local reference is provided",
+        "expression" : "reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))",
+        "xpath" : "not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Reference"
       }],
       "isModifier" : false,
-      "isSummary" : true
+      "isSummary" : true,
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      },
+      {
+        "identity" : "rim",
+        "map" : "The target of a resource reference is a RIM entry point (Act, Role, or Entity)"
+      }]
     },
     {
       "id" : "Signature.targetFormat",

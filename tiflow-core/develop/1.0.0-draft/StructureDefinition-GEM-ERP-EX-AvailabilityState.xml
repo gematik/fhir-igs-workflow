@@ -163,8 +163,6 @@
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_AvailabilityState"/>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -184,6 +182,7 @@
       <type>
         <code value="Coding"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -193,12 +192,15 @@
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
       <isModifier value="false"/>
-      <isSummary value="false"/>
       <binding>
         <strength value="required"/>
         <description value="Availability of medication"/>
         <valueSet value="https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_AvailabilityStatus"/>
       </binding>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -399,6 +401,7 @@
       <path value="Extension.value[x].display"/>
       <short value="Representation defined by the system"/>
       <definition value="A representation of the meaning of the code in the system, following the rules of the system."/>
+      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size"/>
       <requirements value="Need to be able to carry a human-readable meaning of the code for readers that do not know  the system."/>
       <min value="0"/>
       <max value="1"/>
