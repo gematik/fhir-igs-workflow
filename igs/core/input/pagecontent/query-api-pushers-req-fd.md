@@ -42,6 +42,10 @@ Mit der Operation GET /pushers können alle für den Nutzer registrierten FdV-In
             <th>Error Code</th>
             <td>invalidOid</td>
         </tr>
+        <tr>
+            <th>Error Details</th>
+            <td>-</td>
+        </tr>
     </table> 
     abrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 </requirement>
@@ -76,6 +80,10 @@ Mit der Operation GET /pushers können alle für den Nutzer registrierten FdV-In
         <tr>
             <th>Error Code</th>
             <td>invalidOid</td>
+        </tr>
+        <tr>
+            <th>Error Details</th>
+            <td>-</td>
         </tr>
     </table> 
     abrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.

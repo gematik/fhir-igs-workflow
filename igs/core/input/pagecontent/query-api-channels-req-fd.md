@@ -43,6 +43,10 @@ Mit der Operation GET /channels können die verfügbaren Channels abgefragt werd
             <th>Error Code</th>
             <td>invalidOid</td>
         </tr>
+        <tr>
+            <th>Error Details</th>
+            <td>-</td>
+        </tr>
     </table> 
     abrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 </requirement>
@@ -69,6 +73,10 @@ Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfigu
             <th>Error Code</th>
             <td>invalidOid</td>
         </tr>
+        <tr>
+            <th>Error Details</th>
+            <td>-</td>
+        </tr>
     </table> 
     abrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 </requirement>
@@ -94,6 +102,10 @@ Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfigu
         <tr>
             <th>Error Code</th>
             <td>invalidOid</td>
+        </tr>
+        <tr>
+            <th>Error Details</th>
+            <td>-</td>
         </tr>
     </table> 
     abrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.

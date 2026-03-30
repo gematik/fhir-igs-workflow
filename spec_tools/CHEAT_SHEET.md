@@ -65,6 +65,10 @@ Für Tags in Anforderungen muss die folgende Syntax verwendet werden:
             <th>Error Code</th>
             <td>invalidOid</td>
         </tr>
+        <tr>
+            <th>Error Details</th>
+            <td>-</td>
+        </tr>
     </table>
       ...
 </requirement>
