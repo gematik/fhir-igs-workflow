@@ -75,7 +75,7 @@
         <human value="If the resource is contained in another resource, it SHALL NOT contain nested Resources"/>
         <expression value="contained.contained.empty()"/>
         <xpath value="not(parent::f:contained and f:contained)"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Medication"/>
+        <source value="https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication"/>
       </constraint>
       <constraint>
         <key value="dom-3"/>
@@ -83,7 +83,7 @@
         <human value="If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource"/>
         <expression value="contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()"/>
         <xpath value="not(exists(for $id in f:contained/*/f:id/@value return $contained[not(parent::*/descendant::f:reference/@value=concat('#', $contained/*/id/@value) or descendant::f:reference[@value='#'])]))"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Medication"/>
+        <source value="https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication"/>
       </constraint>
       <constraint>
         <key value="dom-4"/>
@@ -91,7 +91,7 @@
         <human value="If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated"/>
         <expression value="contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()"/>
         <xpath value="not(exists(f:contained/*/f:meta/f:versionId)) and not(exists(f:contained/*/f:meta/f:lastUpdated))"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Medication"/>
+        <source value="https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication"/>
       </constraint>
       <constraint>
         <key value="dom-5"/>
@@ -99,7 +99,7 @@
         <human value="If a resource is contained in another resource, it SHALL NOT have a security label"/>
         <expression value="contained.meta.security.empty()"/>
         <xpath value="not(exists(f:contained/*/f:meta/f:security))"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Medication"/>
+        <source value="https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication"/>
       </constraint>
       <constraint>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice">
@@ -113,7 +113,7 @@
         <human value="A resource should have narrative for robust management"/>
         <expression value="text.`div`.exists()"/>
         <xpath value="exists(f:text/h:div)"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Medication"/>
+        <source value="https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication"/>
       </constraint>
       <constraint>
         <key value="epa-med-1"/>
@@ -360,7 +360,7 @@
       </base>
       <type>
         <code value="canonical"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/StructureDefinition|4.0.1"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/StructureDefinition"/>
       </type>
       <constraint>
         <key value="ele-1"/>
@@ -389,7 +389,7 @@
       </base>
       <type>
         <code value="canonical"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/StructureDefinition|4.0.1"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/StructureDefinition"/>
       </type>
       <fixedCanonical value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication|1.6"/>
       <constraint>
@@ -436,7 +436,7 @@
         </extension>
         <strength value="extensible"/>
         <description value="Security Labels from the Healthcare Privacy and Security Classification System."/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/security-labels|4.0.1"/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/security-labels"/>
       </binding>
       <mapping>
         <identity value="rim"/>
@@ -487,7 +487,7 @@
         </extension>
         <strength value="example"/>
         <description value="Codes that represent various types of tags, commonly workflow-related; e.g. &quot;Needs review by Dr. Jones&quot;."/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/common-tags|4.0.1"/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/common-tags"/>
       </binding>
       <mapping>
         <identity value="rim"/>
@@ -567,7 +567,7 @@
         </extension>
         <strength value="preferred"/>
         <description value="A human language."/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/languages|4.0.1"/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/languages"/>
       </binding>
     </element>
     <element id="Medication.text">
@@ -609,6 +609,9 @@
       <short value="Enthaltene Medications"/>
       <definition value="Dieses Feld kann weitere Medication Ressourcen enthalten, die hier gelistet werden. Dies tritt z.B. bei Rezepturen auf."/>
       <comment value="This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again. Contained resources may have profiles and tags In their meta elements, but SHALL NOT have security labels."/>
+      <alias value="inline resources"/>
+      <alias value="anonymous resources"/>
+      <alias value="contained resources"/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -626,15 +629,7 @@
       <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
-        <map value="Entity. Role, or Act"/>
-      </mapping>
-      <mapping>
-        <identity value="script10.6"/>
-        <map value="NewRx/MedicationPrescribed&#xD;-or-&#xD;RxFill/MedicationDispensed&#xD;-or-&#xD;RxHistoryResponse/MedicationDispensed&#xD;-or-&#xD;RxHistoryResponse/MedicationPrescribed"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode=ADMM]"/>
+        <map value="N/A"/>
       </mapping>
     </element>
     <element id="Medication.extension">
@@ -690,6 +685,9 @@
       <sliceName value="rxPrescriptionProcessIdentifier"/>
       <short value="Extension"/>
       <definition value="This extension is used to track medication prescription transactions between the E-Rezept-Fachdienst and the ePA. The RxPrescriptionProcessIdentifier is generated by the ePA Medication Service and consists of the PrescriptionId and the authoredOn date of the operation parameters request. It ensures consistent referencing and management of medication-related resources across different systems."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -701,6 +699,7 @@
         <code value="Extension"/>
         <profile value="https://gematik.de/fhir/epa-medication/StructureDefinition/rx-prescription-process-identifier-extension"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -714,16 +713,20 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <isModifier value="false"/>
       <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
     </element>
     <element id="Medication.extension:isVaccine">
       <path value="Medication.extension"/>
       <sliceName value="isVaccine"/>
-      <short value="Extension"/>
+      <short value="Optional Extensions Element"/>
       <definition value="Indicator of whether this is a vaccine."/>
       <min value="0"/>
       <max value="1"/>
@@ -736,6 +739,7 @@
         <code value="Extension"/>
         <profile value="https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -749,12 +753,20 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <mustSupport value="true"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
     </element>
     <element id="Medication.extension:isVaccine.id">
       <path value="Medication.extension.id"/>
@@ -884,7 +896,7 @@
     <element id="Medication.extension:drugCategory">
       <path value="Medication.extension"/>
       <sliceName value="drugCategory"/>
-      <short value="Extension"/>
+      <short value="Optional Extensions Element"/>
       <definition value="Extension for indicating the medication category."/>
       <min value="0"/>
       <max value="1"/>
@@ -897,6 +909,7 @@
         <code value="Extension"/>
         <profile value="https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -910,12 +923,20 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <mustSupport value="true"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
     </element>
     <element id="Medication.extension:drugCategory.id">
       <path value="Medication.extension.id"/>
@@ -1333,6 +1354,7 @@
         <code value="Extension"/>
         <profile value="http://fhir.de/StructureDefinition/normgroesse"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1346,7 +1368,7 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <mustSupport value="true"/>
@@ -1500,7 +1522,7 @@
     <element id="Medication.extension:packaging">
       <path value="Medication.extension"/>
       <sliceName value="packaging"/>
-      <short value="Extension"/>
+      <short value="Optional Extensions Element"/>
       <definition value="Information on the packaging of a formulation."/>
       <min value="0"/>
       <max value="1"/>
@@ -1513,6 +1535,7 @@
         <code value="Extension"/>
         <profile value="https://gematik.de/fhir/epa-medication/StructureDefinition/medication-formulation-packaging-extension"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1526,12 +1549,20 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <mustSupport value="true"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
     </element>
     <element id="Medication.extension:packaging.id">
       <path value="Medication.extension.id"/>
@@ -1662,7 +1693,7 @@
     <element id="Medication.extension:manufacturingInstructions">
       <path value="Medication.extension"/>
       <sliceName value="manufacturingInstructions"/>
-      <short value="Extension"/>
+      <short value="Optional Extensions Element"/>
       <definition value="Manufacturing instructions regarding the preparation of a formulation (Subscriptio)."/>
       <min value="0"/>
       <max value="1"/>
@@ -1675,6 +1706,7 @@
         <code value="Extension"/>
         <profile value="https://gematik.de/fhir/epa-medication/StructureDefinition/medication-manufacturing-instructions-extension"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1688,12 +1720,20 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <mustSupport value="true"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
     </element>
     <element id="Medication.extension:manufacturingInstructions.id">
       <path value="Medication.extension.id"/>
@@ -1826,6 +1866,9 @@
       <sliceName value="type"/>
       <short value="Medication Type"/>
       <definition value="Extension for EPAMedication types"/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -1837,6 +1880,7 @@
         <code value="Extension"/>
         <profile value="https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-type-extension"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1850,12 +1894,16 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <mustSupport value="true"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
     </element>
     <element id="Medication.modifierExtension">
       <path value="Medication.modifierExtension"/>
@@ -1968,8 +2016,8 @@
     <element id="Medication.identifier:EPAMedicationUniqueIdentifier">
       <path value="Medication.identifier"/>
       <sliceName value="EPAMedicationUniqueIdentifier"/>
-      <short value="Business identifier for this medication"/>
-      <definition value="Business identifier for this medication."/>
+      <short value="An identifier intended for computation"/>
+      <definition value="An identifier - identifies some entity uniquely and unambiguously. Typically this is used for business identifiers."/>
       <comment value="The serial number could be included as an identifier."/>
       <min value="0"/>
       <max value="1"/>
@@ -2024,8 +2072,8 @@
     <element id="Medication.identifier:RxOriginatorProcessIdentifier">
       <path value="Medication.identifier"/>
       <sliceName value="RxOriginatorProcessIdentifier"/>
-      <short value="Business identifier for this medication"/>
-      <definition value="Business identifier for this medication."/>
+      <short value="An identifier intended for computation"/>
+      <definition value="An identifier - identifies some entity uniquely and unambiguously. Typically this is used for business identifiers."/>
       <comment value="The serial number could be included as an identifier."/>
       <min value="0"/>
       <max value="1"/>
@@ -2110,7 +2158,7 @@
         </extension>
         <strength value="example"/>
         <description value="A coded concept that defines the type of a medication."/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/medication-codes|4.0.1"/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/medication-codes"/>
       </binding>
       <mapping>
         <identity value="rim"/>
@@ -3378,7 +3426,7 @@
       </base>
       <type>
         <code value="Reference"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization"/>
       </type>
       <condition value="ele-1"/>
       <constraint>
@@ -3560,7 +3608,7 @@
         </extension>
         <strength value="extensible"/>
         <description value="Aa resource (or, for logical models, the URI of the logical model)."/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/resource-types|4.0.1"/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/resource-types"/>
       </binding>
       <mapping>
         <identity value="rim"/>
@@ -3680,7 +3728,7 @@
         </extension>
         <strength value="example"/>
         <description value="A coded concept defining the form of a medication."/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/medication-form-codes|4.0.1"/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/medication-form-codes"/>
       </binding>
       <mapping>
         <identity value="rim"/>
@@ -4484,7 +4532,7 @@
     <element id="Medication.amount.numerator.extension:packagingSize">
       <path value="Medication.amount.numerator.extension"/>
       <sliceName value="packagingSize"/>
-      <short value="Extension"/>
+      <short value="Optional Extensions Element"/>
       <definition value="Specification of the package size according to divided quantity (e.g., 100, 2x25), only appears in conjunction with &quot;unit&quot; (e.g., 100 Stück)."/>
       <min value="0"/>
       <max value="1"/>
@@ -4497,6 +4545,7 @@
         <code value="Extension"/>
         <profile value="https://gematik.de/fhir/epa-medication/StructureDefinition/medication-packaging-size-extension"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -4510,12 +4559,20 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <mustSupport value="true"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
     </element>
     <element id="Medication.amount.numerator.extension:packagingSize.id">
       <path value="Medication.amount.numerator.extension.id"/>
@@ -4646,7 +4703,7 @@
     <element id="Medication.amount.numerator.extension:totalQuantity">
       <path value="Medication.amount.numerator.extension"/>
       <sliceName value="totalQuantity"/>
-      <short value="Extension"/>
+      <short value="Optional Extensions Element"/>
       <definition value="Total quantity of the formulation (without the unit)."/>
       <min value="0"/>
       <max value="1"/>
@@ -4659,6 +4716,7 @@
         <code value="Extension"/>
         <profile value="https://gematik.de/fhir/epa-medication/StructureDefinition/medication-total-quantity-formulation-extension"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -4672,12 +4730,20 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <mustSupport value="true"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
     </element>
     <element id="Medication.amount.numerator.extension:totalQuantity.id">
       <path value="Medication.amount.numerator.extension.id"/>
@@ -4821,6 +4887,7 @@
       <type>
         <code value="decimal"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -4832,6 +4899,10 @@
       <mustSupport value="true"/>
       <isModifier value="false"/>
       <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="SN.2  / CQ - N/A"/>
@@ -5142,6 +5213,7 @@
       <type>
         <code value="decimal"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -5153,6 +5225,10 @@
       <mustSupport value="true"/>
       <isModifier value="false"/>
       <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="SN.2  / CQ - N/A"/>
@@ -5442,6 +5518,7 @@
         <code value="Extension"/>
         <profile value="https://gematik.de/fhir/epa-medication/StructureDefinition/medication-ingredient-darreichungsform-extension"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -5455,12 +5532,20 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <mustSupport value="true"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
     </element>
     <element id="Medication.ingredient.modifierExtension">
       <path value="Medication.ingredient.modifierExtension"/>
@@ -5530,8 +5615,8 @@
       </type>
       <type>
         <code value="Reference"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Substance|4.0.1"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Medication|4.0.1"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Substance"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Medication"/>
       </type>
       <condition value="ele-1"/>
       <constraint>
@@ -7010,6 +7095,7 @@
         <code value="Extension"/>
         <profile value="https://gematik.de/fhir/epa-medication/StructureDefinition/medication-ingredient-amount-extension"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -7023,12 +7109,20 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <mustSupport value="true"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
     </element>
     <element id="Medication.ingredient.strength.extension:amountText.id">
       <path value="Medication.ingredient.strength.extension.id"/>
@@ -7301,6 +7395,7 @@
       <type>
         <code value="decimal"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -7312,6 +7407,10 @@
       <mustSupport value="true"/>
       <isModifier value="false"/>
       <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="SN.2  / CQ - N/A"/>
@@ -7622,6 +7721,7 @@
       <type>
         <code value="decimal"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -7633,6 +7733,10 @@
       <mustSupport value="true"/>
       <isModifier value="false"/>
       <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="SN.2  / CQ - N/A"/>

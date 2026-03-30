@@ -231,8 +231,6 @@
          fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_Beneficiary"^^xsd:anyURI ;
          fhir:l <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_Beneficiary>
        ] ;
-       fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v false ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "N/A" ]
@@ -259,6 +257,7 @@
            fhir:l <http://fhir.de/StructureDefinition/identifier-telematik-id>
          ] )
        ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -271,8 +270,10 @@
          ]
        ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v false ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "N/A" ]
        ] )
