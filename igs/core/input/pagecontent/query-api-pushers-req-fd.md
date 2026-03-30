@@ -58,7 +58,7 @@ Mit der Operation GET /pushers können alle für den Nutzer registrierten FdV-In
 ### POST /pushers/set
 
 <!-- A_28112 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-272" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierungen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-272" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierungen - Rollenprüfung" version="1">
   <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>

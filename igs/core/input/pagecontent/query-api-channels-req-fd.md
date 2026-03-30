@@ -24,7 +24,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 Mit der Operation GET /channels können die verfügbaren Channels abgefragt werden.
 
 <!-- A_28118 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-57" title="TI-Flow-Fachdienst - Push Notifications - Channels abrufen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-57" title="TI-Flow-Fachdienst - Push Notifications - Channels abrufen - Rollenprüfung" version="1">
   <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
@@ -50,7 +50,7 @@ Mit der Operation GET /channels können die verfügbaren Channels abgefragt werd
 Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfiguration für eine spezifische FdV-Instanz abgefragt werden.
 
 <!-- A_28119 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-58" title="TI-Flow-Fachdienst - Push Notifications - Channels einer Instanz abrufen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-58" title="TI-Flow-Fachdienst - Push Notifications - Channels einer Instanz abrufen - Rollenprüfung" version="1">
   <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
@@ -76,7 +76,7 @@ Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfigu
 ### POST /channels
 
 <!-- A_28120 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-59" title="TI-Flow-Fachdienst - Push Notifications - Channels konfigurieren - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-59" title="TI-Flow-Fachdienst - Push Notifications - Channels konfigurieren - Rollenprüfung" version="1">
   <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
