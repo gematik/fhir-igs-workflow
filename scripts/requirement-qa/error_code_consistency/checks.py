@@ -177,6 +177,10 @@ def _import_description_sources(ig_roots: Dict[str, Path]) -> Dict[str, str]:
     return source_descriptions
 
 
+def _ruleset_name_for_code(code: str) -> str:
+    return "".join(part.capitalize() for part in code.split("_"))
+
+
 def check_valueset_import_descriptions(ig_roots: Dict[str, Path]) -> List[Finding]:
     """Check that imported external codes in module ValueSets carry the short description from core."""
     findings: List[Finding] = []
@@ -313,6 +317,7 @@ def check_capabilitystatement_consistency(
 def check_description_consistency(ig_roots: Dict[str, Path]) -> List[Finding]:
     """Check that RuleSet descriptions in CapabilityStatement match CodeSystem definitions."""
     findings: List[Finding] = []
+    import_descriptions = _import_description_sources(ig_roots)
 
     # Build module → CS-name → code → CodeDescription
     cs_descriptions: Dict[str, Dict[str, CodeDescription]] = {}
@@ -327,15 +332,21 @@ def check_description_consistency(ig_roots: Dict[str, Path]) -> List[Finding]:
 
         for ruleset_name, codes_and_descs in ruleset_descs.items():
             for error_code, ruleset_desc in codes_and_descs.items():
-                _mod, cs_name, _vs_name, _is_external = classify_error_code(error_code)
-                if not cs_name or cs_name not in cs_descriptions:
+                code_owner_module, cs_name, _vs_name, _is_external = classify_error_code(error_code)
+                cs_desc: str | None = None
+
+                if cs_name and cs_name in cs_descriptions and error_code in cs_descriptions[cs_name]:
+                    cs_desc = cs_descriptions[cs_name][error_code].description
+                elif ruleset_name == _ruleset_name_for_code(error_code):
+                    import_system = expected_import_system(error_code, code_owner_module, module)
+                    if import_system:
+                        cs_desc = import_descriptions.get(
+                            normalize_include_token(f"{import_system}#{error_code}")
+                        )
+
+                if not cs_desc:
                     continue
 
-                cs_desc_map = cs_descriptions[cs_name]
-                if error_code not in cs_desc_map:
-                    continue
-
-                cs_desc = cs_desc_map[error_code].description
                 if ruleset_desc != cs_desc:
                     findings.append(
                         Finding(

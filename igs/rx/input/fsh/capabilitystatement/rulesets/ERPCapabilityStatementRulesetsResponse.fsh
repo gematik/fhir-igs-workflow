@@ -107,7 +107,7 @@ RuleSet: TiflowSecretMismatch
 RuleSet: SvcValidationFailed
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "400 - Bad Request"
-  * extension[description].valueString = "TODO: description for SVC_VALIDATION_FAILED"
+  * extension[description].valueString = "FHIR Profile Validation Failed"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "SVC_VALIDATION_FAILED"
 
@@ -156,7 +156,7 @@ RuleSet: TiflowMedicationDispenseInvalid
 RuleSet: SvcIdentityMismatch
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "403 - Forbidden"
-  * extension[description].valueString = "TODO: description for SVC_IDENTITY_MISMATCH"
+  * extension[description].valueString = "Identity mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID / KVNR)"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "SVC_IDENTITY_MISMATCH"
 

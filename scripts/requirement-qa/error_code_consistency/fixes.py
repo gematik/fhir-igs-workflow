@@ -131,6 +131,10 @@ def _valueset_import_description_sources(ig_roots: Dict[str, Path]) -> Dict[str,
     return source_descriptions
 
 
+def _ruleset_name_for_code(code: str) -> str:
+    return "".join(part.capitalize() for part in code.split("_"))
+
+
 # ── CapabilityStatement patching helpers ──────────────────────────────────────
 
 
@@ -275,10 +279,12 @@ def fix_description_mismatches(findings: List[Finding], ig_roots: Dict[str, Path
     fixes_applied = 0
 
     # Build code → description from CodeSystems
-    cs_descriptions: Dict[str, "CodeDescription"] = {}
+    cs_descriptions: Dict[str, CodeDescription] = {}
     for ig_root in ig_roots.values():
         for cs_def in find_codesystem_files(ig_root).values():
             cs_descriptions.update(extract_code_descriptions(cs_def.file_path))
+
+    import_descriptions = _valueset_import_description_sources(ig_roots)
 
     # Group DESCRIPTION_MISMATCH findings by file
     findings_by_file: Dict[Path, List[Finding]] = {}
@@ -297,11 +303,19 @@ def fix_description_mismatches(findings: List[Finding], ig_roots: Dict[str, Path
         # Process in reverse line order so earlier indices stay stable
         for finding in sorted(file_findings, key=lambda f: -f.line):
             code = finding.code
-            if code not in cs_descriptions:
-                continue
-
-            cs_desc = cs_descriptions[code].description
             ruleset_name = finding.requirement_key.split(":", 1)[1]
+            if code in cs_descriptions:
+                cs_desc = cs_descriptions[code].description
+            elif ruleset_name == _ruleset_name_for_code(code):
+                code_owner_module, _cs_id, _vs_id, _is_external = classify_error_code(code)
+                import_system = expected_import_system(code, code_owner_module, finding.ig_module)
+                if not import_system:
+                    continue
+                cs_desc = import_descriptions.get(normalize_include_token(f"{import_system}#{code}"))
+                if not cs_desc:
+                    continue
+            else:
+                continue
 
             for i, line in enumerate(lines):
                 if f"RuleSet: {ruleset_name}" not in line:

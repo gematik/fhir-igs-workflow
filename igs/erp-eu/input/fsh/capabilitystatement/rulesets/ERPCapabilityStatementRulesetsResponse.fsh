@@ -106,7 +106,7 @@ RuleSet: InternalServerError
 RuleSet: SvcValidationFailed
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "400 - Bad Request"
-  * extension[description].valueString = "TODO: description for SVC_VALIDATION_FAILED"
+  * extension[description].valueString = "FHIR Profile Validation Failed"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "SVC_VALIDATION_FAILED"
 
