@@ -25,11 +25,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$reject` gesendet.
 			{% include OperationDefinition-RejectOperation.json %}
 		</pre>
 	</div>
-	<div id="Request-Examples">
-		<!-- TODO: Request example for $reject (no body; accessCode and secret via headers) -->
-	</div>
 	<div id="Response-Examples">
-		<!-- TODO: Replace with operation-specific response examples for $reject. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment OperationOutcome/ExampleRxOperationOutcomeError XML %}
 		</div>

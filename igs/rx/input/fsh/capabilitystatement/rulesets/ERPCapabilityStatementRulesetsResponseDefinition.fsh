@@ -72,77 +72,77 @@ RuleSet: TaskReadInteractionStatusCodes
 
 RuleSet: TaskActivateOperationStatusCodes
 * insert TaskPostOperationStatusCodes
-* insert SvcValidationFailed
-* insert TiflowAccesscodeMismatch
-* insert TiflowAuthRoleNotAllowed
-* insert TiflowCoverageTypeMismatch
-* insert TiflowFlowtypeMismatch
-* insert TiflowIknrInvalid
-* insert TiflowKvnrInvalid
-* insert TiflowLanrZanrInvalid
-* insert TiflowRxDrugCategoryForbidden
-* insert TiflowRxMvoEnddateInvalid
-* insert TiflowRxMvoFlowtypeInvalid
-* insert TiflowRxMvoIdInvalid
-* insert TiflowRxMvoInvalid
-* insert TiflowRxMvoStartdateInvalid
-* insert TiflowRxPznInvalid
-* insert TiflowSignatureAuthoredonMismatch
-* insert TiflowSignatureInvalid
-* insert TiflowSignatureInvalidIssuingRole
-* insert TiflowTaskStatusMismatch
-* insert TiflowCertificateInvalid
-* insert TiflowErezeptDrugCategoryForbidden
-* insert TiflowErezeptMvoEnddateInvalid
-* insert TiflowErezeptMvoFlowtypeInvalid
-* insert TiflowErezeptMvoIdInvalid
-* insert TiflowErezeptMvoInvalid
-* insert TiflowErezeptMvoStartdateInvalid
-* insert TiflowErezeptPznInvalid
-* insert TiflowOcspBackendError
+* rest.resource[=].operation[=] insert SvcValidationFailed
+* rest.resource[=].operation[=] insert TiflowAccesscodeMismatch
+* rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
+* rest.resource[=].operation[=] insert TiflowCoverageTypeMismatch
+* rest.resource[=].operation[=] insert TiflowFlowtypeMismatch
+* rest.resource[=].operation[=] insert TiflowIknrInvalid
+* rest.resource[=].operation[=] insert TiflowKvnrInvalid
+* rest.resource[=].operation[=] insert TiflowLanrZanrInvalid
+* rest.resource[=].operation[=] insert TiflowRxDrugCategoryForbidden
+* rest.resource[=].operation[=] insert TiflowRxMvoEnddateInvalid
+* rest.resource[=].operation[=] insert TiflowRxMvoFlowtypeInvalid
+* rest.resource[=].operation[=] insert TiflowRxMvoIdInvalid
+* rest.resource[=].operation[=] insert TiflowRxMvoInvalid
+* rest.resource[=].operation[=] insert TiflowRxMvoStartdateInvalid
+* rest.resource[=].operation[=] insert TiflowRxPznInvalid
+* rest.resource[=].operation[=] insert TiflowSignatureAuthoredonMismatch
+* rest.resource[=].operation[=] insert TiflowSignatureInvalid
+* rest.resource[=].operation[=] insert TiflowSignatureInvalidIssuingRole
+* rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
+* rest.resource[=].operation[=] insert TiflowCertificateInvalid
+* rest.resource[=].operation[=] insert TiflowErezeptDrugCategoryForbidden
+* rest.resource[=].operation[=] insert TiflowErezeptMvoEnddateInvalid
+* rest.resource[=].operation[=] insert TiflowErezeptMvoFlowtypeInvalid
+* rest.resource[=].operation[=] insert TiflowErezeptMvoIdInvalid
+* rest.resource[=].operation[=] insert TiflowErezeptMvoInvalid
+* rest.resource[=].operation[=] insert TiflowErezeptMvoStartdateInvalid
+* rest.resource[=].operation[=] insert TiflowErezeptPznInvalid
+* rest.resource[=].operation[=] insert TiflowOcspBackendError
 
 RuleSet: TaskAcceptOperationStatusCodes
 * insert TaskPostOperationStatusCodes
-* insert TiflowAccesscodeMismatch
-* insert TiflowAuthRoleNotAllowed
-* insert TiflowRxMvoNotValid
-* insert TiflowTaskDeleted
-* insert TiflowTaskExpired
-* insert TiflowTaskStatusMismatch
-* insert TiflowErezeptMvoNotValid
+* rest.resource[=].operation[=] insert TiflowAccesscodeMismatch
+* rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
+* rest.resource[=].operation[=] insert TiflowRxMvoNotValid
+* rest.resource[=].operation[=] insert TiflowTaskDeleted
+* rest.resource[=].operation[=] insert TiflowTaskExpired
+* rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
+* rest.resource[=].operation[=] insert TiflowErezeptMvoNotValid
 
 RuleSet: TaskRejectOperationStatusCodes
 * insert TaskNoContentOperationStatusCodes
-* insert TiflowInvalidTaskStatus
-* insert TiflowSecretMismatch
-* insert TiflowAuthRoleNotAllowed
-* insert TiflowTaskStatusMismatch
+* rest.resource[=].operation[=] insert TiflowInvalidTaskStatus
+* rest.resource[=].operation[=] insert TiflowSecretMismatch
+* rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
+* rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
 
 RuleSet: TaskCloseOperationStatusCodes
 * insert TaskPostOperationStatusCodes
-* insert SvcValidationFailed
-* insert TiflowInvalidMedicationDispense
-* insert TiflowInvalidTaskStatus
-* insert TiflowMedicationDispenseMissing
-* insert TiflowSecretMismatch
-* insert TiflowSignatureNoOcspResponse
-* insert TiflowMedicationDispenseInvalid
-* insert TiflowTaskStatusMismatch
+* rest.resource[=].operation[=] insert SvcValidationFailed
+* rest.resource[=].operation[=] insert TiflowInvalidMedicationDispense
+* rest.resource[=].operation[=] insert TiflowInvalidTaskStatus
+* rest.resource[=].operation[=] insert TiflowMedicationDispenseMissing
+* rest.resource[=].operation[=] insert TiflowSecretMismatch
+* rest.resource[=].operation[=] insert TiflowSignatureNoOcspResponse
+* rest.resource[=].operation[=] insert TiflowMedicationDispenseInvalid
+* rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
 
 RuleSet: TaskAbortOperationStatusCodes
 * insert TaskNoContentOperationStatusCodes
-* insert SvcIdentityMismatch
-* insert TiflowAccesscodeMismatch
-* insert TiflowAuthRoleNotAllowed
-* insert TiflowSecretMismatch
-* insert TiflowTaskStatusMismatch
+* rest.resource[=].operation[=] insert SvcIdentityMismatch
+* rest.resource[=].operation[=] insert TiflowAccesscodeMismatch
+* rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
+* rest.resource[=].operation[=] insert TiflowSecretMismatch
+* rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
 
 RuleSet: TaskDispenseOperationStatusCodes
 * insert TaskPostOperationStatusCodes
-* insert SvcValidationFailed
-* insert TiflowAuthRoleNotAllowed
-* insert TiflowSecretMismatch
-* insert TiflowTaskStatusMismatch
+* rest.resource[=].operation[=] insert SvcValidationFailed
+* rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
+* rest.resource[=].operation[=] insert TiflowSecretMismatch
+* rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
 
 RuleSet: CommunicationSearchTypeInteractionStatusCodes
 * insert SearchTypeInteractionStatusCodes

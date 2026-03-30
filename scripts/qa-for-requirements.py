@@ -76,12 +76,30 @@ def main() -> None:
         action="store_true",
         help="Fail the pipeline when error code check reports issues",
     )
+    parser.add_argument(
+        "--errors",
+        action="store_true",
+        help="Run only the error code consistency routine (skip IG tools and quality checks)",
+    )
+    parser.add_argument(
+        "--errors-fix",
+        action="store_true",
+        help="Run only the error code consistency routine with --fix (implies --errors)",
+    )
     args = parser.parse_args()
+
+    if args.errors_fix:
+        args.errors = True
+    if args.errors and args.skip_error_codes:
+        parser.error("--errors cannot be combined with --skip-error-codes")
 
     scripts_dir = Path(__file__).resolve().parent / "requirement-qa"
     repo_root = Path(__file__).resolve().parent.parent
     quality_script = scripts_dir / "check_requirement_quality.py"
-    error_code_script = scripts_dir / "check_error_code_consistency.py"
+
+    root_arg = Path(args.root)
+    error_root = str(root_arg if root_arg.is_absolute() else (repo_root / root_arg).resolve())
+    error_csv = str((repo_root / args.error_code_output_csv).resolve())
 
     print("Running requirements QA pipeline")
     print(f"- Root: {args.root}")
@@ -104,56 +122,79 @@ def main() -> None:
         step_results.append(("OK" if rc == 0 else "WARN", summary_title))
         return rc
 
-    run_and_record(
-        "Run IG Tools",
-        "Run igtools process for all IGs",
-        ["./all", "igtools", "process"],
-        strict=True,
-        cwd=repo_root,
-    )
-
-    quality_cmd = [
-        sys.executable,
-        str(quality_script),
-        args.root,
-        "--output-csv",
-        args.quality_output_csv,
-    ]
-    if args.quality_fix or args.fix:
-        quality_cmd.append("--fix")
-
-    quality_rc = run_and_record(
-        "Check requirement quality",
-        "Check requirement quality",
-        quality_cmd,
-        strict=args.strict_quality,
-    )
-
+    quality_rc = 0
     error_code_rc = 0
-    if not args.skip_error_codes:
+
+    if args.errors:
         error_code_cmd = [
             sys.executable,
-            str(error_code_script),
-            args.root,
+            "-m",
+            "error_code_consistency",
+            error_root,
             "--output-csv",
-            args.error_code_output_csv,
+            error_csv,
         ]
-        if args.fix:
+        if args.errors_fix or args.fix:
             error_code_cmd.append("--fix")
         error_code_rc = run_and_record(
             "Check error code consistency",
             "Check error code consistency",
             error_code_cmd,
             strict=args.strict_error_codes,
+            cwd=scripts_dir,
         )
     else:
-        step_results.append(("SKIP", "Check error code consistency"))
+        run_and_record(
+            "Run IG Tools",
+            "Run igtools process for all IGs",
+            ["./all", "igtools", "process"],
+            strict=True,
+            cwd=repo_root,
+        )
+
+        quality_cmd = [
+            sys.executable,
+            str(quality_script),
+            args.root,
+            "--output-csv",
+            args.quality_output_csv,
+        ]
+        if args.quality_fix or args.fix:
+            quality_cmd.append("--fix")
+
+        quality_rc = run_and_record(
+            "Check requirement quality",
+            "Check requirement quality",
+            quality_cmd,
+            strict=args.strict_quality,
+        )
+
+        if not args.skip_error_codes:
+            error_code_cmd = [
+                sys.executable,
+                "-m",
+                "error_code_consistency",
+                error_root,
+                "--output-csv",
+                error_csv,
+            ]
+            if args.fix:
+                error_code_cmd.append("--fix")
+            error_code_rc = run_and_record(
+                "Check error code consistency",
+                "Check error code consistency",
+                error_code_cmd,
+                strict=args.strict_error_codes,
+                cwd=scripts_dir,
+            )
+        else:
+            step_results.append(("SKIP", "Check error code consistency"))
 
     print("\nPipeline summary")
     for status, title in step_results:
         print(f"[{status}] {title}")
     print(f"- Quality CSV: {args.quality_output_csv}")
-    print(f"- Error Code CSV: {args.error_code_output_csv}")
+    print(f"- Error Code CSV: {error_csv}")
     if quality_rc != 0 and not args.strict_quality:
         print("- Quality issues were found (non-strict mode, pipeline continued)")
     if error_code_rc != 0 and not args.strict_error_codes:
