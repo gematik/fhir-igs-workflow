@@ -381,6 +381,14 @@ jobs:
 
           if [[ "$manual_ig" == "all" ]]; then
             mapfile -t ig_list < <(find igs -mindepth 2 -maxdepth 2 -name ig.ini -print | sed -E 's|^igs/([^/]+)/ig.ini$|\1|' | sort -u)
+            if printf '%s\n' "${ig_list[@]}" | grep -qx 'core'; then
+              mapfile -t ig_list < <(
+                {
+                  printf 'core\n'
+                  printf '%s\n' "${ig_list[@]}" | grep -vx 'core'
+                } | awk 'NF && !seen[$0]++'
+              )
+            fi
             echo "ig_mode=all" >> "$GITHUB_OUTPUT"
           else
             ig_list=("$manual_ig")
@@ -410,6 +418,10 @@ jobs:
               pkg="${dep%% *}"
               ver="${dep#* }"
               [[ -z "$pkg" || -z "$ver" ]] && continue
+              if [[ "$ver" == "dev" || "$ver" == "current" ]]; then
+                echo "Skipping local dependency ${pkg}#${ver}; it must be provided by an earlier build in this job."
+                continue
+              fi
               fhir install "$pkg" "$ver"
             done
           done

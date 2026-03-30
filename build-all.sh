@@ -81,6 +81,30 @@ ensure_ig_deps() {
   fi
 }
 
+list_all_igs() {
+  local -a igs=()
+  local ig_dir
+
+  for ig_dir in "$ROOT_DIR"/igs/*; do
+    if [[ -d "$ig_dir" && -f "$ig_dir/ig.ini" ]]; then
+      igs+=("$(basename "$ig_dir")")
+    fi
+  done
+
+  if [[ ${#igs[@]} -eq 0 ]]; then
+    return 0
+  fi
+
+  mapfile -t igs < <(printf '%s\n' "${igs[@]}" | sort -u)
+
+  if printf '%s\n' "${igs[@]}" | grep -qx 'core'; then
+    printf 'core\n'
+    printf '%s\n' "${igs[@]}" | grep -vx 'core'
+  else
+    printf '%s\n' "${igs[@]}"
+  fi
+}
+
 run_ig() {
   local ig_short="$1"
 
@@ -220,11 +244,7 @@ run_igs_macos_terminal() {
 
 if [[ ${#IG_FILTER[@]} -eq 0 ]]; then
   declare -a all_igs=()
-  for ig_dir in "$ROOT_DIR"/igs/*; do
-    if [[ -d "$ig_dir" && -f "$ig_dir/ig.ini" ]]; then
-      all_igs+=("$(basename "$ig_dir")")
-    fi
-  done
+  mapfile -t all_igs < <(list_all_igs)
   if [[ "$CONCURRENT" == "true" ]]; then
     if [[ "$(uname -s)" == "Darwin" ]]; then
       run_igs_macos_terminal "${all_igs[@]}"
