@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Kommunikation zu Diensten der TI - TIFlow - Kernfunktionalitäten v1.0.0-draft</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        height: 280px;
+        background-color: #2a6496;
+        background: url('./e-rezept-img.png') no-repeat;
+        background-position: 650px -150px;
+        background-size: 45% auto;
+    }
+    .bubble-link {
+        display: none;
+        transition: opacity 0.2s;
+        }
+
+        h1:hover .bubble-link,
+        h2:hover .bubble-link,
+        h3:hover .bubble-link,
+        h4:hover .bubble-link,
+        h5:hover .bubble-link,
+        h6:hover .bubble-link {
+        display: inline;
+        }
+</style>
+
+<script type="text/javascript" src="assets/js/heading-links.js"> </script>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"8"}
+    h3,h4,h5,h6{--heading-prefix:"8"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Start</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Grundlagen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
+      </li>
+      <li>
+        <a href="audit-service.html">Zugriffsprotokollierung</a>
+      </li>
+      <li>
+        <a href="fhir-validate.html">FHIR-Validierung</a>
+      </li>
+      <li>
+        <a href="ttl.html">Löschfristen</a>
+      </li>
+      <li>
+        <a href="error-codes.html">Fehlercodes</a>
+      </li>
+      <li>
+        <a href="kommunikation-dienste-ti.html">Kommunikation zu Diensten der TI</a>
+      </li>
+      <li>
+        <a href="pki-zertifikatspruefung.html">PKI Zertifikatsprüfung</a>
+      </li>
+      <li>
+        <a href="datamatrix-code-client.html">Datamatrix Code</a>
+      </li>
+      <li>
+        <a href="authentifizierung-client.html">Authentifizierung von Clientsystemen</a>
+      </li>
+      <li>
+        <a href="health-check.html">Health Check</a>
+      </li>
+      <li>
+        <a href="fehlerbehandlung-client.html">Fehlerbehandlung Clientsysteme</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Technische Funktionsmerkmale
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-technische-umsetzung-epa-ms.html">ePA Medication Service</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-push.html">Push Notification</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-paging.html">Paginierung</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Schnittstellen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-schnittstellen-query-api.html">Query API</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-operation-api.html">Operation API</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+  <li>
+    <a href="requirement-mapping-old-to-new.html">Anforderungsmapping</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+TIFlow - Kernfunktionalitäten
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 1.0.0-draft - ci-build
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Kommunikation zu Diensten der TI</b></li>
+
+          <span style="float:right;">
+
+            <a href="error-codes.html">&lt;vorherige</a> | 
+
+            <a href="#bottom">unten</a>
+
+          | <a href="datamatrix-code-client.html">nächste&gt;</a>
+
+          </span>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Kommunikation zu Diensten der TI</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#kommunikation-zu-den-diensten-der-ti" id="markdown-toc-kommunikation-zu-den-diensten-der-ti">Kommunikation zu den Diensten der TI</a></li>
+</ul>
+
+</div>
+
+<h3 id="kommunikation-zu-den-diensten-der-ti">Kommunikation zu den Diensten der TI</h3>
+
+<p>Clientsysteme nutzen TLS-Verbindungen für die Kommunikation zu den Diensten der TI. Es verbindet sich mit dem TI-Flow-Fachdienst und einem Identity Provider.</p>
+
+<!-- A_19451-02 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-155" title="CS: Lokalisierung TI-Flow-Fachdienst" version="0">
+    <meta lockversion="false" />
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Konformitätsbestätigung" />
+    </actor>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="CS_E-Rezept_KTR">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="Anb_NCPeH_FD">
+        <testProcedure id="Produkttest" />
+    </actor>
+    Das Clientsystem des TI-Flow-Fachdienstes MUSS für die Kommunikation mit dem TI-Flow-Fachdienst die Endpunkte der Schnittstellen gemäß [gemSpec_FD_eRP#5.1 Servicelokalisierung] nutzen.
+</requirement>
+
+<!-- ToDo: Link auflösen -->
+
+<p>Die Abfrage beim Namensdienst der TI erfolgt über einen DNS-Lookup. Hierfür muss der Konnektor als DNS-Resolver konfiguriert sein.</p>
+
+<!-- A_19744-01 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-156" title="CS: Endpunkt Schnittstelle TI-Flow-Fachdienst" version="0">
+    <meta lockversion="false" />
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Konformitätsbestätigung" />
+    </actor>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="CS_E-Rezept_KTR">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="Anb_NCPeH_FD">
+        <testProcedure id="Produkttest" />
+    </actor>
+    Das Clientsystem des TI-Flow-Fachdienstes MUSS für die Kommunikation mit dem TI-Flow-Fachdienst die URL mit dem Port 443 bilden.
+</requirement>
+
+<p>Die Informationen zu den Endpunkten des Identity Providers ermittelt das Primärsystem aus dem Discovery Document. Für Informationen zum Discovery Document siehe auch [gemSpec_IDP_Dienst#Authorization Server Metadata (Discovery Document)]. Das Discovery Document ist vom IDP-Dienst unter der URL /.well-known/openid-configuration abrufbar. </p>
+
+<p>Die URL des Downloadpunktes im zentralen Netz der TI lautet: “https://idp.zentral.idp.splitdns.ti-dienste.de/.well-known/openid-configuration” [gemSpec_IDP_Dienst#A_19874-*].</p>
+
+<!-- A_19234-01 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-157" title="CS: Kommunikation über TLS-Verbindung" version="0">
+    <meta lockversion="false" />
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Konformitätsbestätigung" />
+    </actor>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="CS_E-Rezept_KTR">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="Anb_NCPeH_FD">
+        <testProcedure id="Produkttest" />
+    </actor>
+    Das Clientsystem des TI-Flow-Fachdienstes MUSS für die Anwendungsfälle der Anwendung E-Rezept mit den Diensten der TI ausschließlich über TLS kommunizieren.
+</requirement>
+
+<p>Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.</p>
+
+<!-- A_19235-02 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-158" title="CS: Unzulässige TLS-Verbindungen ablehnen" version="0">
+    <meta lockversion="false" />
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Konformitätsbestätigung" />
+    </actor>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="CS_E-Rezept_KTR">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="Anb_NCPeH_FD">
+        <testProcedure id="Produkttest" />
+    </actor>
+    Das Clientsystem des TI-Flow-Fachdienst MUSS bei jedem Verbindungsaufbau zum TI-Flow-Fachdienst oder IDP-Dienst diesen anhand seines TLS-Zertifikats authentifizieren und MUSS die Verbindungen ablehnen, falls die Authentifizierung fehlschlägt.
+</requirement>
+
+<!-- A_20015-02, A_20014-04 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-159" title="CS: HTTP-Header user-agent" version="0">
+    <meta lockversion="false" />
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Konformitätsbestätigung" />
+    </actor>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="CS_E-Rezept_KTR">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="Anb_NCPeH_FD">
+        <testProcedure id="Produkttest" />
+    </actor>
+    <actor name="eRp_FdV">
+        <testProcedure id="Produkttest" />
+    </actor>
+    Das Clientsystem des TI-Flow-Fachdienstes MUSS in alle HTTP-Requests an den TI-Flow-Fachdienst und IDP-Dienst im äußeren HTTP-Request den HTTP-Header user-agent gemäß [RFC7231] mit &lt;Produktname&gt;/&lt;Produktversion&gt; &lt;Herstellername&gt;/&lt;client_id&gt; mit 
+    <ul>
+    <li>&lt;Produktname&gt; gemäß eigener Definition, Länge 1-20 Zeichen, Zeichenvorrat [0-9a-zA-Z\-\.]</li>
+    <li>&lt;Produktversion&gt; gemäß Produktidentifikation</li>
+    <li>&lt;Herstellername&gt; gemäß eigener Definition, Länge 1-20 Zeichen, Zeichenvorrat [0-9a-zA-Z\-\.] </li>
+    <li>&lt;client_id&gt; gemäß Registrierung bei der gematik</li>
+    des Clientsystems befüllen.
+&lt;/requirement&gt;
+
+<!-- A_21568-02 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-160" title="CS: HTTP-Header X-erp-user" version="0">
+    <meta lockversion="false" />
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Konformitätsbestätigung" />
+    </actor>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="CS_E-Rezept_KTR">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="Anb_NCPeH_FD">
+        <testProcedure id="Produkttest" />
+    </actor>
+    <actor name="eRp_FdV">
+        <testProcedure id="Produkttest" />
+    </actor>
+    Das Clientsystem des TI-Flow-Fachdienstes MUSS in alle Anfragen an den TI-Flow-Fachdienst im äußeren HTTP-Request den HTTP-Header "X-erp-user" mit dem Wert
+    <ul>
+    <li>"l" (kleines L) als PS eines Leistungserbringers</li>
+    <li>"k" als CS eines Kostenträgers</li>
+    <li>"v" als E-Rezept-FdV oder</li>
+    <li>"n" als NCPeH-FDeinfügen.</li>
+    </ul>
+</requirement>
+
+<!-- A_21569-01, A_21570-01  -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-161" title="CS: HTTP-Header X-erp-resource" version="0">
+    <meta lockversion="false" />
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Konformitätsbestätigung" />
+    </actor>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="CS_E-Rezept_KTR">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="Anb_NCPeH_FD">
+        <testProcedure id="Produkttest" />
+    </actor>
+    <actor name="eRp_FdV">
+        <testProcedure id="Produkttest" />
+    </actor>
+    Das Clientsystem des TI-Flow-Fachdienstes MUSS in alle Anfragen an den TI-Flow-Fachdienst im äußeren HTTP-Request den HTTP-Header "X-erp-resource" mit dem Wert gemäß der angefragten Ressource im FHIR-Request einfügen.
+</requirement>
+
+<table>
+<tr>
+<th>API / Operation</th>
+<th>X-erp-resource</th>
+</tr>
+<tr>
+<td>Query API: AuditEvent</td>
+<td>AuditEvent</td>
+</tr>
+<tr>
+<td>Query API: ChargeItem</td>
+<td>ChargeItem</td>
+</tr>
+<tr>
+<td>Query API: Consent</td>
+<td>Consent</td>
+</tr>
+<tr>
+<td>Query API: Communication</td>
+<td>Communication</td>
+</tr>
+<tr>
+<td>GET /Device</td>
+<td>Device</td>
+</tr>
+<tr>
+<td>GET /metadata</td>
+<td>metadata</td>
+</tr>
+<tr>
+<td>POST /Subscription</td>
+<td>Subscription</td>
+</tr>
+<tr>
+<td>Query API: Task<br />POST /Task *</td>
+<td>Task</td>
+</tr>
+<tr>
+<td>POST /$get-eu-prescriptions</td>
+<td>Prescription</td>
+</tr>
+<tr>
+<td>GET /$read-eu-access-permission<br />POST /$grant-eu-access-permission<br />DELETE /$revoke-eu-access-permission</td>
+<td>access-permission</td>
+</tr>
+</table>
+<div><figcaption><strong>Tabelle: </strong>HTTP-Header "X-erp-resource"</figcaption></div>
+
+
+### Verschlüsselte Kommunikation zur VAU des TI-Flow-Fachdienstes  
+  
+Die Kommunikation zum TI-Flow-Fachdienst wird zusätzlich zu TLS über einen sicheren Kanal (Verschlüsselung auf Http-Ebene) zwischen dem PS und der Vertrauenswürdigen Ausführungsumgebung (VAU) im TI-Flow-Fachdienst gesichert. 
+
+<!-- A_19741-01, A_19740-01 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-162" title="CS: Umsetzung sicherer Kanal zur VAU des TI-Flow-Fachdienstes" version="0">
+    <meta lockversion="false" />
+    <actor name="PS_E-Rezept_verordnend">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="PS_E-Rezept_abgebend">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="CS_E-Rezept_KTR">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    <actor name="Anb_NCPeH_FD">
+        <testProcedure id="Produktgutachten" />
+    </actor>
+    <actor name="TI_Flow_FD">
+        <testProcedure id="Produkttest" />
+    </actor>
+    Das Clientsystem des TI-Flow-Fachdienstes MUSS für alle Anfragen an den TI-Flow-Fachdienst für
+	<ul>
+	<li>die Abfrage des capability statement</li>
+	<li>den Zugriff auf Task, MedicationDispense, Communication, Consent, Prescription, AuditEvent oder access-permission Ressourcen</li>
+	</ul>
+	das Kommunikationsprotokoll zwischen E-Rezept-VAU und E-Rezept-Clients in der Rolle E-Rezept-Client nutzen.
+</requirement>
+
+Für Informationen zum Kommunikationsprotokoll zwischen E-Rezept-FdV und der VAU des TI-Flow-Fachdienstes siehe [gemSpec_Krypt#E-Rezept-spezifische Vorgaben] und [gemSpec_Krypt#VAU-Protokoll für E-Rezept].
+
+Alternativ zur Umsetzung des TUC_PKI_018 gemäß [gemSpec_Krypt#A_21216] soll das Primärsystem für die Prüfung des VAU-Zertifikates die VerifyCertificate Operation des Konnektors/Basis Consumers nutzen.
+
+Folgendes kann umgesetzt werden:
+<ol>
+<li>Beziehen des VAU-Zertifikat von /VAUCertificate</li>
+<li>Lokales Speichern der aktuellen Zeit mit dem VAU-Zertifikat als Tupel</li>
+<li>Prüfen des VAU-Zertifikates mittels der Konnektor-Operation VerifyCertificate</li>
+<li>Abbrechen falls INVALID</li>
+<li>
+(5) if (get_current_time() &lt; gespeicherte Zeit + 12h) { VAU-Zertifikat wird als gültig angesehen, Nutzen des VAU-Zertifikat } <br />
+if (get_current_time() &gt;= gespeicherte Zeit + 12h) { VAU-Zertifikat neu beziehen, siehe (1)}
+</li>
+</ol>
+
+Hinweis zum Fehlerhandling: Nur wenn der äußere Response der TI-Flow-Fachdienstes den Response-Code 200 liefert, enthält der payload eine mittels VAU-Protokoll verschlüsselte Response. Liefert der äußere Response eine Code &gt;= 400, ist im VAUProtokoll ein Fehler aufgetreten. Das PS muss nicht versuchen, den payload zu entschlüsseln.
+
+</ul></requirement>
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="error-codes.html">&lt;vorherige</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">oben</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="datamatrix-code-client.html">nächste&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 30, 2026 06:38+0000">2026-03-30</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

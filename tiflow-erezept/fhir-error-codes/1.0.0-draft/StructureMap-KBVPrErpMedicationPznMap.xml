@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureMap xmlns="http://hl7.org/fhir">
+  <id value="KBVPrErpMedicationPznMap"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: StructureMap KBVPrErpMedicationPznMap</b></p><a name="KBVPrErpMedicationPznMap"> </a><a name="hcKBVPrErpMedicationPznMap"> </a><pre class="fml">
+<b>map</b><span style="color: navy"> &quot;</span>https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationPznMap<span style="color: navy">&quot; = &quot;</span>KBVPrErpMedicationPznMap<span style="color: navy">&quot;
+
+</span><span style="color: navy">// </span><span style="color: green">Auto-generated StructureMap for KBV_PR_ERP_Medication_PZN|1.4.0 -&gt; EPAMedication|1.3.0</span>
+
+<b>uses</b><span style="color: navy"> &quot;</span>https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN<span style="color: navy">&quot; </span><b>alias </b>KBVPRERPMedicationPZN <b>as </b><b>source</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="https://simplifier.net/resolve?scope=de.gematik.epa.medication@1.3.0&amp;canonical=https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication" title="EPA Medication">https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication</a><span style="color: navy">&quot; </span><b>alias </b>EPAMedication <b>as </b><b>target</b>
+
+<span style="color: navy">// </span><span style="color: green">Mapping generated for KBV_PR_ERP_Medication_PZN|1.4.0 -&gt; EPAMedication|1.3.0</span>
+<b>group </b>KBVPrErpMedicationPznMap<span style="color: navy">(</span><b>source</b> <span style="color: maroon">KBVPRERPMedicationPZN</span><span style="color: navy"> : </span>KBVPRERPMedicationPZN, <b>target</b> <span style="color: maroon">EPAMedication</span><span style="color: navy"> : </span>EPAMedication<span style="color: navy">)</span><b> &lt;&lt;types&gt;&gt;</b><span style="color: navy"> {
+</span>  KBVPRERPMedicationPZN.amount<b> as </b><span style="color: maroon">srcKBVPRERPMedicationPZNAmount1bc52eb6</span><span style="color: navy"><b> -&gt; </b></span>EPAMedication.amount = <span style="color: maroon">srcKBVPRERPMedicationPZNAmount1bc52eb6</span><b> as </b><span style="color: maroon">tgtEPAMedicationAmount30d45c22</span> <i>&quot;MedicationAmountac45bfbc&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Automatic copy</span>
+  KBVPRERPMedicationPZN.batch<b> as </b><span style="color: maroon">srcKBVPRERPMedicationPZNBatche87a138e</span><span style="color: navy"><b> -&gt; </b></span>EPAMedication.batch = <span style="color: maroon">srcKBVPRERPMedicationPZNBatche87a138e</span><b> as </b><span style="color: maroon">tgtEPAMedicationBatch90ce2ac1</span> <i>&quot;MedicationBatch235a7d75&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Copied to 'Medication.batch'</span>
+  KBVPRERPMedicationPZN.code<b> as </b><span style="color: maroon">srcKBVPRERPMedicationPZNCodeaa13053d</span><span style="color: navy"><b> -&gt; </b></span>EPAMedication.code = <span style="color: maroon">srcKBVPRERPMedicationPZNCodeaa13053d</span><b> as </b><span style="color: maroon">tgtEPAMedicationCodea6251800</span> <i>&quot;MedicationCoded98e85bf&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Automatic copy</span>
+  KBVPRERPMedicationPZN.extension<b> as </b><span style="color: maroon">srcKBVPRERPMedicationPZNExtension84c1ba51</span><b> where </b>url != 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Category' and url != 'normSizeCode' and url != 'http://fhir.de/StructureDefinition/normgroesse' and url != 'Impfstoff' and url != 'https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type' and url != 'valueCode' and url != 'valueBoolean' and url != 'valueCodeableConcept' and url != 'packaging' and url != 'valueCoding' and url != 'type' and url != 'Normgroesse' and url != 'https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension' and url != 'manufacturingInstructions' and url != 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine' and url != 'Kategorie' and url != 'https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension' and url != 'drugCategory' and url != 'rxPrescriptionProcessIdentifier' and url != 'Arzneimittelkategorie' and url != 'isVaccine'<span style="color: navy"><b> -&gt; </b></span>EPAMedication.extension = <span style="color: maroon">srcKBVPRERPMedicationPZNExtension84c1ba51</span><b> as </b><span style="color: maroon">tgtEPAMedicationExtension59cd7688</span> <i>&quot;MedicationExtension9f8d5121&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Automatic copy</span>
+  KBVPRERPMedicationPZN.extension<b> where </b>url = 'https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type'<span style="color: navy"><b> -&gt; </b></span>EPAMedication.extension <i>&quot;MedicationExtensionKategorie86255b0b&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Quelle: Medication.extension:Kategorie</span>
+  KBVPRERPMedicationPZN.extension<b> as </b><span style="color: maroon">srcKBVPRERPMedicationPZNExtensionArzneimittelkategorie53fe9037</span><b> where </b>url = 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Category' and url = 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Category'<span style="color: navy"><b> -&gt; </b></span> EPAMedication.extension = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Extension'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">tgtEPAMedicationExtensionDrugcategory059b5c6b</span><span style="color: navy">, </span> tgtEPAMedicationExtensionDrugcategory059b5c6b.url = <span style="color: blue">'https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension'</span><b> then</b><span style="color: navy"> {
+</span>    srcKBVPRERPMedicationPZNExtensionArzneimittelkategorie53fe9037.value<b> as </b><span style="color: maroon">srcMedicationExtensionDrugcategoryValueXbd04993e</span><span style="color: navy"><b> -&gt; </b></span>tgtEPAMedicationExtensionDrugcategory059b5c6b.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Coding'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">tgtMedicationExtensionDrugcategoryValueXbd04993e</span><b> then</b><span style="color: navy"> {
+</span>      srcMedicationExtensionDrugcategoryValueXbd04993e<b> as </b><span style="color: maroon">srcMedicationExtensionDrugcategoryValueXSystem2cf01aef</span><span style="color: navy"><b> -&gt; </b></span>tgtMedicationExtensionDrugcategoryValueXbd04993e.system = <span style="color: blue">'https://gematik.de/fhir/epa-medication/CodeSystem/epa-drug-category-cs'</span><b> as </b><span style="color: maroon">tgtMedicationExtensionDrugcategoryValueXSystem2cf01aef</span> <i>&quot;MedicationExtensionDrugcategoryValueXSystem2cf01aef&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Fixed value 'https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension'</span>
+      srcMedicationExtensionDrugcategoryValueXbd04993e.code<b> as </b><span style="color: maroon">srcMedicationExtensionDrugcategoryValueXCodec72163f2</span><span style="color: navy"><b> -&gt; </b></span>tgtMedicationExtensionDrugcategoryValueXbd04993e.code = <span style="color: maroon">srcMedicationExtensionDrugcategoryValueXCodec72163f2</span><b> as </b><span style="color: maroon">tgtMedicationExtensionDrugcategoryValueXCodec72163f2</span> <i>&quot;MedicationExtensionDrugcategoryValueXCodec72163f2&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Copied drugCategory code</span>
+    <span style="color: navy">}</span> <i>&quot;MedicationExtensionDrugcategoryValueXbd04993e&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Copied from 'Medication.extension:Arzneimittelkategorie.value[x]'</span>
+  <span style="color: navy">}</span> <i>&quot;MedicationExtensionDrugcategorye963e601&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Copied from 'Medication.extension:Arzneimittelkategorie'</span>
+  KBVPRERPMedicationPZN.extension<b> as </b><span style="color: maroon">srcKBVPRERPMedicationPZNExtensionImpfstoff35b2c2a5</span><b> where </b>url = 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine' and url = 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine'<span style="color: navy"><b> -&gt; </b></span> EPAMedication.extension = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Extension'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">tgtEPAMedicationExtensionIsvaccinea7742b5a</span><span style="color: navy">, </span> tgtEPAMedicationExtensionIsvaccinea7742b5a.url = <span style="color: blue">'https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension'</span><b> then</b><span style="color: navy"> {
+</span>    srcKBVPRERPMedicationPZNExtensionImpfstoff35b2c2a5.value<b> as </b><span style="color: maroon">srcMedicationExtensionIsvaccineValueXac9b8b1e</span><span style="color: navy"><b> -&gt; </b></span>tgtEPAMedicationExtensionIsvaccinea7742b5a.value = <span style="color: maroon">srcMedicationExtensionIsvaccineValueXac9b8b1e</span><b> as </b><span style="color: maroon">tgtMedicationExtensionIsvaccineValueXac9b8b1e</span> <i>&quot;MedicationExtensionIsvaccineValueXac9b8b1e&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Copied from 'Medication.extension:Impfstoff.value[x]'</span>
+  <span style="color: navy">}</span> <i>&quot;MedicationExtensionIsvaccine98c25b06&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Copied from 'Medication.extension:Impfstoff'</span>
+  KBVPRERPMedicationPZN.extension<b> as </b><span style="color: maroon">srcKBVPRERPMedicationPZNExtensionNormgroesse9fd0c9a5</span><b> where </b>url = 'http://fhir.de/StructureDefinition/normgroesse' and url = 'http://fhir.de/StructureDefinition/normgroesse'<span style="color: navy"><b> -&gt; </b></span> EPAMedication.extension = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Extension'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">tgtEPAMedicationExtensionNormsizecode7bd0a39d</span><span style="color: navy">, </span> tgtEPAMedicationExtensionNormsizecode7bd0a39d.url = <span style="color: blue">'http://fhir.de/StructureDefinition/normgroesse'</span><b> then</b><span style="color: navy"> {
+</span>    srcKBVPRERPMedicationPZNExtensionNormgroesse9fd0c9a5.value<b> as </b><span style="color: maroon">srcMedicationExtensionNormsizecodeValueX145c1bd0</span><span style="color: navy"><b> -&gt; </b></span>tgtEPAMedicationExtensionNormsizecode7bd0a39d.value = <span style="color: maroon">srcMedicationExtensionNormsizecodeValueX145c1bd0</span><b> as </b><span style="color: maroon">tgtMedicationExtensionNormsizecodeValueX145c1bd0</span> <i>&quot;MedicationExtensionNormsizecodeValueX145c1bd0&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Copied from 'Medication.extension:Normgroesse.value[x]'</span>
+  <span style="color: navy">}</span> <i>&quot;MedicationExtensionNormsizecode34ece564&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Copied from 'Medication.extension:Normgroesse'</span>
+  KBVPRERPMedicationPZN<b> as </b><span style="color: maroon">manualsrcMedicationExtensionType61374588</span><span style="color: navy"><b> -&gt; </b></span>EPAMedication.extension<b> as </b><span style="color: maroon">tgtEPAMedicationExtensionType1a2ef415</span> <i>&quot;MedicationExtensionType61374588&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Manual action required | Fester Wert: 781405001, Medicinal product package (product) | Quelle: Medication.extension:type</span>
+  KBVPRERPMedicationPZN.form<b> as </b><span style="color: maroon">srcKBVPRERPMedicationPZNForme6d03882</span><span style="color: navy"><b> -&gt; </b></span>EPAMedication.form = <span style="color: maroon">srcKBVPRERPMedicationPZNForme6d03882</span><b> as </b><span style="color: maroon">tgtEPAMedicationForm691ed321</span> <i>&quot;MedicationForm5a0bbd5f&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Automatic copy</span>
+  KBVPRERPMedicationPZN.ingredient<b> as </b><span style="color: maroon">srcKBVPRERPMedicationPZNIngredient546feb94</span><span style="color: navy"><b> -&gt; </b></span>EPAMedication.ingredient = <b>create</b><span style="color: navy">(</span><span style="color: blue">'BackboneElement'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">tgtEPAMedicationIngredient78db398c</span> <i>&quot;MedicationIngredient801affef&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Automatic copy</span>
+<span style="color: navy">}
+
+</span></pre></div>
+  </text>
+  <url value="https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationPznMap"/>
+  <version value="1.0.0-draft"/>
+  <name value="KBVPrErpMedicationPznMap"/>
+  <status value="active"/>
+  <date value="2026-02-02"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="erp-umsetzung@gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="Auto-generated StructureMap for KBV_PR_ERP_Medication_PZN|1.4.0 -&gt; EPAMedication|1.3.0"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <structure>
+    <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN"/>
+    <mode value="source"/>
+    <alias value="KBVPRERPMedicationPZN"/>
+  </structure>
+  <structure>
+    <url value="https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication"/>
+    <mode value="target"/>
+    <alias value="EPAMedication"/>
+  </structure>
+  <group>
+    <name value="KBVPrErpMedicationPznMap"/>
+    <typeMode value="types"/>
+    <documentation value="Mapping generated for KBV_PR_ERP_Medication_PZN|1.4.0 -&gt; EPAMedication|1.3.0"/>
+    <input>
+      <name value="KBVPRERPMedicationPZN"/>
+      <type value="KBVPRERPMedicationPZN"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="EPAMedication"/>
+      <type value="EPAMedication"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="MedicationAmountac45bfbc"/>
+      <source>
+        <context value="KBVPRERPMedicationPZN"/>
+        <element value="amount"/>
+        <variable value="srcKBVPRERPMedicationPZNAmount1bc52eb6"/>
+      </source>
+      <target>
+        <context value="EPAMedication"/>
+        <contextType value="variable"/>
+        <element value="amount"/>
+        <variable value="tgtEPAMedicationAmount30d45c22"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="srcKBVPRERPMedicationPZNAmount1bc52eb6"/>
+        </parameter>
+      </target>
+      <documentation value="Automatic copy"/>
+    </rule>
+    <rule>
+      <name value="MedicationBatch235a7d75"/>
+      <source>
+        <context value="KBVPRERPMedicationPZN"/>
+        <element value="batch"/>
+        <variable value="srcKBVPRERPMedicationPZNBatche87a138e"/>
+      </source>
+      <target>
+        <context value="EPAMedication"/>
+        <contextType value="variable"/>
+        <element value="batch"/>
+        <variable value="tgtEPAMedicationBatch90ce2ac1"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="srcKBVPRERPMedicationPZNBatche87a138e"/>
+        </parameter>
+      </target>
+      <documentation value="Copied to 'Medication.batch'"/>
+    </rule>
+    <rule>
+      <name value="MedicationCoded98e85bf"/>
+      <source>
+        <context value="KBVPRERPMedicationPZN"/>
+        <element value="code"/>
+        <variable value="srcKBVPRERPMedicationPZNCodeaa13053d"/>
+      </source>
+      <target>
+        <context value="EPAMedication"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <variable value="tgtEPAMedicationCodea6251800"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="srcKBVPRERPMedicationPZNCodeaa13053d"/>
+        </parameter>
+      </target>
+      <documentation value="Automatic copy"/>
+    </rule>
+    <rule>
+      <name value="MedicationExtension9f8d5121"/>
+      <source>
+        <context value="KBVPRERPMedicationPZN"/>
+        <element value="extension"/>
+        <variable value="srcKBVPRERPMedicationPZNExtension84c1ba51"/>
+        <condition value="url != 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Category' and url != 'normSizeCode' and url != 'http://fhir.de/StructureDefinition/normgroesse' and url != 'Impfstoff' and url != 'https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type' and url != 'valueCode' and url != 'valueBoolean' and url != 'valueCodeableConcept' and url != 'packaging' and url != 'valueCoding' and url != 'type' and url != 'Normgroesse' and url != 'https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension' and url != 'manufacturingInstructions' and url != 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine' and url != 'Kategorie' and url != 'https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension' and url != 'drugCategory' and url != 'rxPrescriptionProcessIdentifier' and url != 'Arzneimittelkategorie' and url != 'isVaccine'"/>
+      </source>
+      <target>
+        <context value="EPAMedication"/>
+        <contextType value="variable"/>
+        <element value="extension"/>
+        <variable value="tgtEPAMedicationExtension59cd7688"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="srcKBVPRERPMedicationPZNExtension84c1ba51"/>
+        </parameter>
+      </target>
+      <documentation value="Automatic copy"/>
+    </rule>
+    <rule>
+      <name value="MedicationExtensionKategorie86255b0b"/>
+      <source>
+        <context value="KBVPRERPMedicationPZN"/>
+        <element value="extension"/>
+        <variable value="srcKBVPRERPMedicationPZNExtensionKategorie29dcfef2"/>
+        <condition value="url = 'https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type'"/>
+      </source>
+      <target>
+        <context value="EPAMedication"/>
+        <contextType value="variable"/>
+        <element value="extension"/>
+        <variable value="tgtEPAMedicationExtensionKategorie8e51c40c"/>
+      </target>
+      <documentation value="Feld wird nicht gemappt | Quelle: Medication.extension:Kategorie"/>
+    </rule>
+    <rule>
+      <name value="MedicationExtensionDrugcategorye963e601"/>
+      <source>
+        <context value="KBVPRERPMedicationPZN"/>
+        <element value="extension"/>
+        <variable value="srcKBVPRERPMedicationPZNExtensionArzneimittelkategorie53fe9037"/>
+        <condition value="url = 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Category' and url = 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Category'"/>
+      </source>
+      <target>
+        <context value="EPAMedication"/>
+        <contextType value="variable"/>
+        <element value="extension"/>
+        <variable value="tgtEPAMedicationExtensionDrugcategory059b5c6b"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Extension"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="tgtEPAMedicationExtensionDrugcategory059b5c6b"/>
+        <contextType value="variable"/>
+        <element value="url"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="MedicationExtensionDrugcategoryValueXbd04993e"/>
+        <source>
+          <context value="srcKBVPRERPMedicationPZNExtensionArzneimittelkategorie53fe9037"/>
+          <element value="value"/>
+          <variable value="srcMedicationExtensionDrugcategoryValueXbd04993e"/>
+        </source>
+        <target>
+          <context value="tgtEPAMedicationExtensionDrugcategory059b5c6b"/>
+          <contextType value="variable"/>
+          <element value="value"/>
+          <variable value="tgtMedicationExtensionDrugcategoryValueXbd04993e"/>
+          <transform value="create"/>
+          <parameter>
+            <valueString value="Coding"/>
+          </parameter>
+        </target>
+        <rule>
+          <name value="MedicationExtensionDrugcategoryValueXSystem2cf01aef"/>
+          <source>
+            <context value="srcMedicationExtensionDrugcategoryValueXbd04993e"/>
+            <variable value="srcMedicationExtensionDrugcategoryValueXSystem2cf01aef"/>
+          </source>
+          <target>
+            <context value="tgtMedicationExtensionDrugcategoryValueXbd04993e"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <variable value="tgtMedicationExtensionDrugcategoryValueXSystem2cf01aef"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="https://gematik.de/fhir/epa-medication/CodeSystem/epa-drug-category-cs"/>
+            </parameter>
+          </target>
+          <documentation value="Fixed value 'https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension'"/>
+        </rule>
+        <rule>
+          <name value="MedicationExtensionDrugcategoryValueXCodec72163f2"/>
+          <source>
+            <context value="srcMedicationExtensionDrugcategoryValueXbd04993e"/>
+            <element value="code"/>
+            <variable value="srcMedicationExtensionDrugcategoryValueXCodec72163f2"/>
+          </source>
+          <target>
+            <context value="tgtMedicationExtensionDrugcategoryValueXbd04993e"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <variable value="tgtMedicationExtensionDrugcategoryValueXCodec72163f2"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueId value="srcMedicationExtensionDrugcategoryValueXCodec72163f2"/>
+            </parameter>
+          </target>
+          <documentation value="Copied drugCategory code"/>
+        </rule>
+        <documentation value="Copied from 'Medication.extension:Arzneimittelkategorie.value[x]'"/>
+      </rule>
+      <documentation value="Copied from 'Medication.extension:Arzneimittelkategorie'"/>
+    </rule>
+    <rule>
+      <name value="MedicationExtensionIsvaccine98c25b06"/>
+      <source>
+        <context value="KBVPRERPMedicationPZN"/>
+        <element value="extension"/>
+        <variable value="srcKBVPRERPMedicationPZNExtensionImpfstoff35b2c2a5"/>
+        <condition value="url = 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine' and url = 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine'"/>
+      </source>
+      <target>
+        <context value="EPAMedication"/>
+        <contextType value="variable"/>
+        <element value="extension"/>
+        <variable value="tgtEPAMedicationExtensionIsvaccinea7742b5a"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Extension"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="tgtEPAMedicationExtensionIsvaccinea7742b5a"/>
+        <contextType value="variable"/>
+        <element value="url"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="MedicationExtensionIsvaccineValueXac9b8b1e"/>
+        <source>
+          <context value="srcKBVPRERPMedicationPZNExtensionImpfstoff35b2c2a5"/>
+          <element value="value"/>
+          <variable value="srcMedicationExtensionIsvaccineValueXac9b8b1e"/>
+        </source>
+        <target>
+          <context value="tgtEPAMedicationExtensionIsvaccinea7742b5a"/>
+          <contextType value="variable"/>
+          <element value="value"/>
+          <variable value="tgtMedicationExtensionIsvaccineValueXac9b8b1e"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueId value="srcMedicationExtensionIsvaccineValueXac9b8b1e"/>
+          </parameter>
+        </target>
+        <documentation value="Copied from 'Medication.extension:Impfstoff.value[x]'"/>
+      </rule>
+      <documentation value="Copied from 'Medication.extension:Impfstoff'"/>
+    </rule>
+    <rule>
+      <name value="MedicationExtensionNormsizecode34ece564"/>
+      <source>
+        <context value="KBVPRERPMedicationPZN"/>
+        <element value="extension"/>
+        <variable value="srcKBVPRERPMedicationPZNExtensionNormgroesse9fd0c9a5"/>
+        <condition value="url = 'http://fhir.de/StructureDefinition/normgroesse' and url = 'http://fhir.de/StructureDefinition/normgroesse'"/>
+      </source>
+      <target>
+        <context value="EPAMedication"/>
+        <contextType value="variable"/>
+        <element value="extension"/>
+        <variable value="tgtEPAMedicationExtensionNormsizecode7bd0a39d"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Extension"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="tgtEPAMedicationExtensionNormsizecode7bd0a39d"/>
+        <contextType value="variable"/>
+        <element value="url"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="http://fhir.de/StructureDefinition/normgroesse"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="MedicationExtensionNormsizecodeValueX145c1bd0"/>
+        <source>
+          <context value="srcKBVPRERPMedicationPZNExtensionNormgroesse9fd0c9a5"/>
+          <element value="value"/>
+          <variable value="srcMedicationExtensionNormsizecodeValueX145c1bd0"/>
+        </source>
+        <target>
+          <context value="tgtEPAMedicationExtensionNormsizecode7bd0a39d"/>
+          <contextType value="variable"/>
+          <element value="value"/>
+          <variable value="tgtMedicationExtensionNormsizecodeValueX145c1bd0"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueId value="srcMedicationExtensionNormsizecodeValueX145c1bd0"/>
+          </parameter>
+        </target>
+        <documentation value="Copied from 'Medication.extension:Normgroesse.value[x]'"/>
+      </rule>
+      <documentation value="Copied from 'Medication.extension:Normgroesse'"/>
+    </rule>
+    <rule>
+      <name value="MedicationExtensionType61374588"/>
+      <source>
+        <context value="KBVPRERPMedicationPZN"/>
+        <variable value="manualsrcMedicationExtensionType61374588"/>
+      </source>
+      <target>
+        <context value="EPAMedication"/>
+        <contextType value="variable"/>
+        <element value="extension"/>
+        <variable value="tgtEPAMedicationExtensionType1a2ef415"/>
+      </target>
+      <documentation value="Manual action required | Fester Wert: 781405001, Medicinal product package (product) | Quelle: Medication.extension:type"/>
+    </rule>
+    <rule>
+      <name value="MedicationForm5a0bbd5f"/>
+      <source>
+        <context value="KBVPRERPMedicationPZN"/>
+        <element value="form"/>
+        <variable value="srcKBVPRERPMedicationPZNForme6d03882"/>
+      </source>
+      <target>
+        <context value="EPAMedication"/>
+        <contextType value="variable"/>
+        <element value="form"/>
+        <variable value="tgtEPAMedicationForm691ed321"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="srcKBVPRERPMedicationPZNForme6d03882"/>
+        </parameter>
+      </target>
+      <documentation value="Automatic copy"/>
+    </rule>
+    <rule>
+      <name value="MedicationIngredient801affef"/>
+      <source>
+        <context value="KBVPRERPMedicationPZN"/>
+        <element value="ingredient"/>
+        <variable value="srcKBVPRERPMedicationPZNIngredient546feb94"/>
+      </source>
+      <target>
+        <context value="EPAMedication"/>
+        <contextType value="variable"/>
+        <element value="ingredient"/>
+        <variable value="tgtEPAMedicationIngredient78db398c"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="BackboneElement"/>
+        </parameter>
+      </target>
+      <documentation value="Automatic copy"/>
+    </rule>
+  </group>
+</StructureMap>

@@ -1,0 +1,396 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "tiflow-operation-outcome-details-cs",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem tiflow-operation-outcome-details-cs</b></p><a name=\"tiflow-operation-outcome-details-cs\"> </a><a name=\"hctiflow-operation-outcome-details-cs\"> </a><p>This  code system <code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (Deutschland) (German (Germany), de)</b></td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_SECRET_MISMATCH<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_SECRET_MISMATCH\"> </a></td><td>Task secret mismatch</td><td>The provided task secret does not match the secret stored for the task</td><td>Task-Secret stimmt nicht überein</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_MEDICATION_DISPENSE_MISSING<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_MEDICATION_DISPENSE_MISSING\"> </a></td><td>MedicationDispense missing</td><td>A required MedicationDispense resource is missing for this operation</td><td>MedicationDispense fehlt</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_SIGNATURE_NO_OCSP_RESPONSE<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_SIGNATURE_NO_OCSP_RESPONSE\"> </a></td><td>No OCSP response for signature</td><td>Certificate revocation status could not be determined because no OCSP response was available</td><td>Keine OCSP-Antwort zur Signatur</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_AUTH_ROLE_NOT_ALLOWED<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_AUTH_ROLE_NOT_ALLOWED\"> </a></td><td>Access role not allowed</td><td>The authenticated actor role is not permitted to execute this operation</td><td>Zugriffsrolle nicht zulässig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_CONSENT_ALREADY_EXISTS<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_CONSENT_ALREADY_EXISTS\"> </a></td><td>Consent already exists</td><td>A consent for the same scope already exists and cannot be created again</td><td>Einwilligung existiert bereits</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_CONSENT_CATEGORY_REQUIRED<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_CONSENT_CATEGORY_REQUIRED\"> </a></td><td>Consent category required</td><td>The consent category is mandatory and was not provided</td><td>Einwilligungskategorie erforderlich</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_CONSENT_CATEGORY_INVALID<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_CONSENT_CATEGORY_INVALID\"> </a></td><td>Consent category invalid</td><td>The provided consent category is unknown or not allowed</td><td>Einwilligungskategorie ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_ACCESSCODE_MISMATCH<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_ACCESSCODE_MISMATCH\"> </a></td><td>Access code mismatch</td><td>The provided access code does not match the access code assigned to the task</td><td>AccessCode stimmt nicht überein</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_TASK_REQUIRED<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_TASK_REQUIRED\"> </a></td><td>Task required</td><td>A task reference is required for this operation but was not provided</td><td>Task-Angabe erforderlich</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_TASK_NOT_FOUND<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_TASK_NOT_FOUND\"> </a></td><td>Task not found</td><td>The referenced task does not exist</td><td>Task nicht gefunden</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_CONSENT_REQUIRED<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_CONSENT_REQUIRED\"> </a></td><td>Consent required</td><td>A valid consent is required to execute this operation</td><td>Einwilligung erforderlich</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_MESSAGE_TO_SELF<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_MESSAGE_TO_SELF\"> </a></td><td>Message to self not allowed</td><td>A communication message addressed to the sender itself is not permitted</td><td>Nachricht an sich selbst nicht zulässig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_COMMUNICATION_PAYLOAD_INVALID<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_COMMUNICATION_PAYLOAD_INVALID\"> </a></td><td>Communication payload invalid</td><td>The communication payload is syntactically or semantically invalid</td><td>Kommunikationsinhalt ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_INSURANT_NOT_ELIGIBLE<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_INSURANT_NOT_ELIGIBLE\"> </a></td><td>Insurant not eligible</td><td>The insurant does not meet the eligibility constraints for this communication flow</td><td>Versicherter nicht berechtigt</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_RECIPIENT_INVALID<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_RECIPIENT_INVALID\"> </a></td><td>Recipient invalid</td><td>The specified recipient is invalid for the requested communication</td><td>Empfänger ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_TASK_STATUS_MISMATCH<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_TASK_STATUS_MISMATCH\"> </a></td><td>Task status mismatch</td><td>The task is in a status that does not allow execution of this operation</td><td>Task-Status passt nicht</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_TASK_EXPIRED<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_TASK_EXPIRED\"> </a></td><td>Task expired</td><td>The task cannot be processed because its redemption period has expired</td><td>Task ist abgelaufen</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_MVO_NOT_VALID_YET<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_MVO_NOT_VALID_YET\"> </a></td><td>MVO not valid yet</td><td>The multi-prescription is not yet valid at the current point in time</td><td>MVO noch nicht gültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_AUTH_NOT_OWNER<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_AUTH_NOT_OWNER\"> </a></td><td>Authenticated actor is not owner</td><td>The authenticated actor is not the owner of the addressed task</td><td>Authentifizierter Akteur ist nicht Eigentümer</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_TASK_ID_REQUIRED<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_TASK_ID_REQUIRED\"> </a></td><td>Task id required</td><td>The operation requires a task id in the request</td><td>Task-ID erforderlich</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_KVNR_MISMATCH<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_KVNR_MISMATCH\"> </a></td><td>KVNR mismatch</td><td>The KVNR in the request does not match the KVNR assigned to the task context</td><td>KVNR stimmt nicht überein</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_SIGNATURE_INVALID<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_SIGNATURE_INVALID\"> </a></td><td>Signature invalid</td><td>The digital signature is invalid or cannot be verified</td><td>Signatur ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_FLOWTYPE_MISMATCH<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_FLOWTYPE_MISMATCH\"> </a></td><td>Flow type mismatch</td><td>The task flow type does not match the expected flow for this operation</td><td>Flowtyp passt nicht</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_KVNR_INVALID<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_KVNR_INVALID\"> </a></td><td>KVNR invalid</td><td>The provided KVNR is invalid or does not conform to the expected format</td><td>KVNR ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_SIGNATURE_AUTHOREDON_MISMATCH<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_SIGNATURE_AUTHOREDON_MISMATCH\"> </a></td><td>Signature authoredOn mismatch</td><td>The authoredOn timestamp does not match the signed content</td><td>Signaturzeitpunkt passt nicht</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_IKNR_INVALID<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_IKNR_INVALID\"> </a></td><td>IKNR invalid</td><td>The provided IKNR is invalid or not accepted in this context</td><td>IKNR ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_LANR_ZANR_INVALID<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_LANR_ZANR_INVALID\"> </a></td><td>LANR or ZANR invalid</td><td>The provided LANR or ZANR is invalid or not accepted for this operation</td><td>LANR oder ZANR ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_TASK_DELETED<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_TASK_DELETED\"> </a></td><td>Task deleted</td><td>The task was already cancelled or deleted and can no longer be processed</td><td>Task wurde gelöscht</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_RESOURCE_FULLURL_INVALID<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_RESOURCE_FULLURL_INVALID\"> </a></td><td>Bundle fullUrl invalid</td><td>A resource fullUrl in the bundle is invalid or does not match the bundle rules</td><td>Bundle-fullUrl ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_BOM_DETECTED<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_BOM_DETECTED\"> </a></td><td>Byte order mark detected</td><td>A UTF byte order mark was detected where it is not permitted</td><td>Byte-Order-Mark erkannt</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_MEDICATION_DISPENSE_INVALID<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_MEDICATION_DISPENSE_INVALID\"> </a></td><td>MedicationDispense invalid</td><td>The provided MedicationDispense resource is invalid for this operation</td><td>MedicationDispense ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE\"> </a></td><td>Signature issuing role invalid</td><td>The signature was created by an actor role that is not allowed for the signed artifact</td><td>Signaturrolle ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_COVERAGE_TYPE_MISMATCH<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_COVERAGE_TYPE_MISMATCH\"> </a></td><td>Coverage type mismatch</td><td>The coverage type does not match the expected coverage context</td><td>Coverage-Typ passt nicht</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_ALTERNATIVE_IK_FORBIDDEN<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_ALTERNATIVE_IK_FORBIDDEN\"> </a></td><td>Alternative IK forbidden</td><td>Use of an alternative IK is not permitted in this context</td><td>Alternatives IK nicht erlaubt</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_ACCESS_PERMISSION_INVALID<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_ACCESS_PERMISSION_INVALID\"> </a></td><td>Access permission invalid</td><td>The requested access permission is invalid or not sufficient</td><td>Zugriffsberechtigung ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_CONSENT_MISSING<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_CONSENT_MISSING\"> </a></td><td>Consent missing</td><td>No required consent was found for this operation</td><td>Einwilligung fehlt</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_ACCESS_CODE_INVALID<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_ACCESS_CODE_INVALID\"> </a></td><td>Access code invalid</td><td>The provided access code is syntactically invalid</td><td>AccessCode ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_CERTIFICATE_INVALID<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_CERTIFICATE_INVALID\"> </a></td><td>Certificate invalid</td><td>The certificate used for authentication or signature validation is invalid</td><td>Zertifikat ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_META_PROFILE_INVALID<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_META_PROFILE_INVALID\"> </a></td><td>Meta profile invalid</td><td>The resource meta.profile entry is missing, invalid, or not supported</td><td>Meta-Profil ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_OCSP_BACKEND_ERROR<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_OCSP_BACKEND_ERROR\"> </a></td><td>Invalid OCSP response</td><td>Failed to retrieve the OCSP response for the certificate of the signature</td><td>OCSP Abfrage fehlgeschlagen</td></tr></table></div>"
+  },
+  "url" : "https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs",
+  "version" : "1.0.0-draft",
+  "name" : "TIFLOWOperationOutcomeDetailsCS",
+  "title" : "TIFLOW Operation Outcome Details CS",
+  "status" : "draft",
+  "date" : "2026-03-30T06:38:46+00:00",
+  "publisher" : "gematik GmbH",
+  "contact" : [{
+    "name" : "gematik GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://gematik.de"
+    },
+    {
+      "system" : "email",
+      "value" : "erp-umsetzung@gematik.de"
+    }]
+  }],
+  "description" : "Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "content" : "complete",
+  "count" : 40,
+  "concept" : [{
+    "code" : "TIFLOW_SECRET_MISMATCH",
+    "display" : "Task secret mismatch",
+    "definition" : "The provided task secret does not match the secret stored for the task",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Task-Secret stimmt nicht überein"
+    }]
+  },
+  {
+    "code" : "TIFLOW_MEDICATION_DISPENSE_MISSING",
+    "display" : "MedicationDispense missing",
+    "definition" : "A required MedicationDispense resource is missing for this operation",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "MedicationDispense fehlt"
+    }]
+  },
+  {
+    "code" : "TIFLOW_SIGNATURE_NO_OCSP_RESPONSE",
+    "display" : "No OCSP response for signature",
+    "definition" : "Certificate revocation status could not be determined because no OCSP response was available",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Keine OCSP-Antwort zur Signatur"
+    }]
+  },
+  {
+    "code" : "TIFLOW_AUTH_ROLE_NOT_ALLOWED",
+    "display" : "Access role not allowed",
+    "definition" : "The authenticated actor role is not permitted to execute this operation",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Zugriffsrolle nicht zulässig"
+    }]
+  },
+  {
+    "code" : "TIFLOW_CONSENT_ALREADY_EXISTS",
+    "display" : "Consent already exists",
+    "definition" : "A consent for the same scope already exists and cannot be created again",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Einwilligung existiert bereits"
+    }]
+  },
+  {
+    "code" : "TIFLOW_CONSENT_CATEGORY_REQUIRED",
+    "display" : "Consent category required",
+    "definition" : "The consent category is mandatory and was not provided",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Einwilligungskategorie erforderlich"
+    }]
+  },
+  {
+    "code" : "TIFLOW_CONSENT_CATEGORY_INVALID",
+    "display" : "Consent category invalid",
+    "definition" : "The provided consent category is unknown or not allowed",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Einwilligungskategorie ungültig"
+    }]
+  },
+  {
+    "code" : "TIFLOW_ACCESSCODE_MISMATCH",
+    "display" : "Access code mismatch",
+    "definition" : "The provided access code does not match the access code assigned to the task",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "AccessCode stimmt nicht überein"
+    }]
+  },
+  {
+    "code" : "TIFLOW_TASK_REQUIRED",
+    "display" : "Task required",
+    "definition" : "A task reference is required for this operation but was not provided",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Task-Angabe erforderlich"
+    }]
+  },
+  {
+    "code" : "TIFLOW_TASK_NOT_FOUND",
+    "display" : "Task not found",
+    "definition" : "The referenced task does not exist",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Task nicht gefunden"
+    }]
+  },
+  {
+    "code" : "TIFLOW_CONSENT_REQUIRED",
+    "display" : "Consent required",
+    "definition" : "A valid consent is required to execute this operation",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Einwilligung erforderlich"
+    }]
+  },
+  {
+    "code" : "TIFLOW_MESSAGE_TO_SELF",
+    "display" : "Message to self not allowed",
+    "definition" : "A communication message addressed to the sender itself is not permitted",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Nachricht an sich selbst nicht zulässig"
+    }]
+  },
+  {
+    "code" : "TIFLOW_COMMUNICATION_PAYLOAD_INVALID",
+    "display" : "Communication payload invalid",
+    "definition" : "The communication payload is syntactically or semantically invalid",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Kommunikationsinhalt ungültig"
+    }]
+  },
+  {
+    "code" : "TIFLOW_INSURANT_NOT_ELIGIBLE",
+    "display" : "Insurant not eligible",
+    "definition" : "The insurant does not meet the eligibility constraints for this communication flow",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Versicherter nicht berechtigt"
+    }]
+  },
+  {
+    "code" : "TIFLOW_RECIPIENT_INVALID",
+    "display" : "Recipient invalid",
+    "definition" : "The specified recipient is invalid for the requested communication",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Empfänger ungültig"
+    }]
+  },
+  {
+    "code" : "TIFLOW_TASK_STATUS_MISMATCH",
+    "display" : "Task status mismatch",
+    "definition" : "The task is in a status that does not allow execution of this operation",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Task-Status passt nicht"
+    }]
+  },
+  {
+    "code" : "TIFLOW_TASK_EXPIRED",
+    "display" : "Task expired",
+    "definition" : "The task cannot be processed because its redemption period has expired",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Task ist abgelaufen"
+    }]
+  },
+  {
+    "code" : "TIFLOW_MVO_NOT_VALID_YET",
+    "display" : "MVO not valid yet",
+    "definition" : "The multi-prescription is not yet valid at the current point in time",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "MVO noch nicht gültig"
+    }]
+  },
+  {
+    "code" : "TIFLOW_AUTH_NOT_OWNER",
+    "display" : "Authenticated actor is not owner",
+    "definition" : "The authenticated actor is not the owner of the addressed task",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Authentifizierter Akteur ist nicht Eigentümer"
+    }]
+  },
+  {
+    "code" : "TIFLOW_TASK_ID_REQUIRED",
+    "display" : "Task id required",
+    "definition" : "The operation requires a task id in the request",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Task-ID erforderlich"
+    }]
+  },
+  {
+    "code" : "TIFLOW_KVNR_MISMATCH",
+    "display" : "KVNR mismatch",
+    "definition" : "The KVNR in the request does not match the KVNR assigned to the task context",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "KVNR stimmt nicht überein"
+    }]
+  },
+  {
+    "code" : "TIFLOW_SIGNATURE_INVALID",
+    "display" : "Signature invalid",
+    "definition" : "The digital signature is invalid or cannot be verified",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Signatur ungültig"
+    }]
+  },
+  {
+    "code" : "TIFLOW_FLOWTYPE_MISMATCH",
+    "display" : "Flow type mismatch",
+    "definition" : "The task flow type does not match the expected flow for this operation",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Flowtyp passt nicht"
+    }]
+  },
+  {
+    "code" : "TIFLOW_KVNR_INVALID",
+    "display" : "KVNR invalid",
+    "definition" : "The provided KVNR is invalid or does not conform to the expected format",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "KVNR ungültig"
+    }]
+  },
+  {
+    "code" : "TIFLOW_SIGNATURE_AUTHOREDON_MISMATCH",
+    "display" : "Signature authoredOn mismatch",
+    "definition" : "The authoredOn timestamp does not match the signed content",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Signaturzeitpunkt passt nicht"
+    }]
+  },
+  {
+    "code" : "TIFLOW_IKNR_INVALID",
+    "display" : "IKNR invalid",
+    "definition" : "The provided IKNR is invalid or not accepted in this context",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "IKNR ungültig"
+    }]
+  },
+  {
+    "code" : "TIFLOW_LANR_ZANR_INVALID",
+    "display" : "LANR or ZANR invalid",
+    "definition" : "The provided LANR or ZANR is invalid or not accepted for this operation",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "LANR oder ZANR ungültig"
+    }]
+  },
+  {
+    "code" : "TIFLOW_TASK_DELETED",
+    "display" : "Task deleted",
+    "definition" : "The task was already cancelled or deleted and can no longer be processed",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Task wurde gelöscht"
+    }]
+  },
+  {
+    "code" : "TIFLOW_RESOURCE_FULLURL_INVALID",
+    "display" : "Bundle fullUrl invalid",
+    "definition" : "A resource fullUrl in the bundle is invalid or does not match the bundle rules",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Bundle-fullUrl ungültig"
+    }]
+  },
+  {
+    "code" : "TIFLOW_BOM_DETECTED",
+    "display" : "Byte order mark detected",
+    "definition" : "A UTF byte order mark was detected where it is not permitted",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Byte-Order-Mark erkannt"
+    }]
+  },
+  {
+    "code" : "TIFLOW_MEDICATION_DISPENSE_INVALID",
+    "display" : "MedicationDispense invalid",
+    "definition" : "The provided MedicationDispense resource is invalid for this operation",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "MedicationDispense ungültig"
+    }]
+  },
+  {
+    "code" : "TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE",
+    "display" : "Signature issuing role invalid",
+    "definition" : "The signature was created by an actor role that is not allowed for the signed artifact",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Signaturrolle ungültig"
+    }]
+  },
+  {
+    "code" : "TIFLOW_COVERAGE_TYPE_MISMATCH",
+    "display" : "Coverage type mismatch",
+    "definition" : "The coverage type does not match the expected coverage context",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Coverage-Typ passt nicht"
+    }]
+  },
+  {
+    "code" : "TIFLOW_ALTERNATIVE_IK_FORBIDDEN",
+    "display" : "Alternative IK forbidden",
+    "definition" : "Use of an alternative IK is not permitted in this context",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Alternatives IK nicht erlaubt"
+    }]
+  },
+  {
+    "code" : "TIFLOW_ACCESS_PERMISSION_INVALID",
+    "display" : "Access permission invalid",
+    "definition" : "The requested access permission is invalid or not sufficient",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Zugriffsberechtigung ungültig"
+    }]
+  },
+  {
+    "code" : "TIFLOW_CONSENT_MISSING",
+    "display" : "Consent missing",
+    "definition" : "No required consent was found for this operation",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Einwilligung fehlt"
+    }]
+  },
+  {
+    "code" : "TIFLOW_ACCESS_CODE_INVALID",
+    "display" : "Access code invalid",
+    "definition" : "The provided access code is syntactically invalid",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "AccessCode ungültig"
+    }]
+  },
+  {
+    "code" : "TIFLOW_CERTIFICATE_INVALID",
+    "display" : "Certificate invalid",
+    "definition" : "The certificate used for authentication or signature validation is invalid",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Zertifikat ungültig"
+    }]
+  },
+  {
+    "code" : "TIFLOW_META_PROFILE_INVALID",
+    "display" : "Meta profile invalid",
+    "definition" : "The resource meta.profile entry is missing, invalid, or not supported",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Meta-Profil ungültig"
+    }]
+  },
+  {
+    "code" : "TIFLOW_OCSP_BACKEND_ERROR",
+    "display" : "Invalid OCSP response",
+    "definition" : "Failed to retrieve the OCSP response for the certificate of the signature",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "OCSP Abfrage fehlgeschlagen"
+    }]
+  }]
+}

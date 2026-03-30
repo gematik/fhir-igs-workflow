@@ -1,0 +1,102 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "tiflow-chargeitem-operation-outcome-details-vs",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet tiflow-chargeitem-operation-outcome-details-vs</b></p><a name=\"tiflow-chargeitem-operation-outcome-details-vs\"> </a><a name=\"hctiflow-chargeitem-operation-outcome-details-vs\"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include all codes defined in <a href=\"CodeSystem-tiflow-chargeitem-operation-outcome-details-cs.html\"><code>https://gematik.de/fhir/tiflow/chargeitem/CodeSystem/tiflow-chargeitem-operation-outcome-details-cs</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version &#x1F4E6;1.0.0-draft</span></li><li>Include these codes as defined in <code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td><td/></tr><tr><td>TIFLOW_CONSENT_ALREADY_EXISTS</td><td/></tr><tr><td>TIFLOW_CONSENT_CATEGORY_REQUIRED</td><td/></tr><tr><td>TIFLOW_CONSENT_CATEGORY_INVALID</td><td/></tr><tr><td>TIFLOW_ACCESSCODE_MISMATCH</td><td/></tr><tr><td>TIFLOW_TASK_REQUIRED</td><td/></tr><tr><td>TIFLOW_TASK_NOT_FOUND</td><td/></tr><tr><td>TIFLOW_SECRET_MISMATCH</td><td/></tr><tr><td>TIFLOW_CONSENT_REQUIRED</td><td/></tr><tr><td>TIFLOW_OCSP_BACKEND_ERROR</td><td/></tr><tr><td>TIFLOW_MESSAGE_TO_SELF</td><td/></tr><tr><td>TIFLOW_COMMUNICATION_PAYLOAD_INVALID</td><td/></tr><tr><td>TIFLOW_INSURANT_NOT_ELIGIBLE</td><td/></tr><tr><td>TIFLOW_RECIPIENT_INVALID</td><td/></tr><tr><td>TIFLOW_TASK_STATUS_MISMATCH</td><td/></tr><tr><td>TIFLOW_TASK_EXPIRED</td><td/></tr><tr><td>TIFLOW_MVO_NOT_VALID_YET</td><td/></tr></table></li><li>Include these codes as defined in <a href=\"https://simplifier.net/resolve?scope=de.gematik.ti@1.2.0&amp;canonical=https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes\"><code>https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes</code></a><span title=\"Version is not explicitly stated, which means it is fixed to 1.1.1, the version found through the package references\"> version &#x1F4E6;1.1.1</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"https://simplifier.net/resolve?scope=de.gematik.ti@1.2.0&amp;canonical=https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes#operation-outcome-details-codes-SVC_IDENTITY_MISMATCH\">SVC_IDENTITY_MISMATCH</a></td><td style=\"color: #cccccc\">Telematik-ID inside ID-Token or KVNR in x-insurantid HTTP header does not match FHIR data</td></tr><tr><td><a href=\"https://simplifier.net/resolve?scope=de.gematik.ti@1.2.0&amp;canonical=https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes#operation-outcome-details-codes-SVC_VALIDATION_FAILED\">SVC_VALIDATION_FAILED</a></td><td/></tr></table></li></ul></div>"
+  },
+  "url" : "https://gematik.de/fhir/erpchrg/ValueSet/tiflow-chargeitem-operation-outcome-details-vs",
+  "version" : "1.0.0-draft",
+  "name" : "TIFLOWChargeItemOperationOutcomeDetailsVS",
+  "title" : "TIFLOW ChargeItem Operation Outcome Details VS",
+  "status" : "draft",
+  "date" : "2025-04-10",
+  "publisher" : "gematik GmbH",
+  "contact" : [{
+    "name" : "gematik GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://gematik.de"
+    },
+    {
+      "system" : "email",
+      "value" : "erp-umsetzung@gematik.de"
+    }]
+  }],
+  "description" : "Abrechnungsinformationen-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "https://gematik.de/fhir/tiflow/chargeitem/CodeSystem/tiflow-chargeitem-operation-outcome-details-cs"
+    },
+    {
+      "system" : "https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs",
+      "concept" : [{
+        "code" : "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
+      },
+      {
+        "code" : "TIFLOW_CONSENT_ALREADY_EXISTS"
+      },
+      {
+        "code" : "TIFLOW_CONSENT_CATEGORY_REQUIRED"
+      },
+      {
+        "code" : "TIFLOW_CONSENT_CATEGORY_INVALID"
+      },
+      {
+        "code" : "TIFLOW_ACCESSCODE_MISMATCH"
+      },
+      {
+        "code" : "TIFLOW_TASK_REQUIRED"
+      },
+      {
+        "code" : "TIFLOW_TASK_NOT_FOUND"
+      },
+      {
+        "code" : "TIFLOW_SECRET_MISMATCH"
+      },
+      {
+        "code" : "TIFLOW_CONSENT_REQUIRED"
+      },
+      {
+        "code" : "TIFLOW_OCSP_BACKEND_ERROR"
+      },
+      {
+        "code" : "TIFLOW_MESSAGE_TO_SELF"
+      },
+      {
+        "code" : "TIFLOW_COMMUNICATION_PAYLOAD_INVALID"
+      },
+      {
+        "code" : "TIFLOW_INSURANT_NOT_ELIGIBLE"
+      },
+      {
+        "code" : "TIFLOW_RECIPIENT_INVALID"
+      },
+      {
+        "code" : "TIFLOW_TASK_STATUS_MISMATCH"
+      },
+      {
+        "code" : "TIFLOW_TASK_EXPIRED"
+      },
+      {
+        "code" : "TIFLOW_MVO_NOT_VALID_YET"
+      }]
+    },
+    {
+      "system" : "https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes",
+      "concept" : [{
+        "code" : "SVC_IDENTITY_MISMATCH"
+      },
+      {
+        "code" : "SVC_VALIDATION_FAILED"
+      }]
+    }]
+  }
+}

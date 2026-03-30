@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="example-searchset-consent"/>
+  <type value="searchset"/>
+  <total value="1"/>
+  <link>
+    <relation value="self"/>
+    <url value="https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Consent?category=CHARGCONS"/>
+  </link>
+  <entry>
+    <fullUrl value="https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Consent/QueryConsentCHARGCONS"/>
+    <resource>
+      <Consent>
+        <id value="QueryConsentCHARGCONS"/>
+        <status value="active"/>
+        <scope>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/consentscope"/>
+            <code value="patient-privacy"/>
+            <display value="Privacy Consent"/>
+          </coding>
+        </scope>
+        <category>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="59284-0"/>
+            <display value="Consent Document"/>
+          </coding>
+        </category>
+        <patient>
+          <identifier>
+            <system value="http://fhir.de/sid/gkv/kvid-10"/>
+            <value value="X123456789"/>
+          </identifier>
+        </patient>
+        <dateTime value="2025-01-15T10:15:00+01:00"/>
+        <policyRule>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+            <code value="OPTIN"/>
+          </coding>
+        </policyRule>
+      </Consent>
+    </resource>
+  </entry>
+</Bundle>

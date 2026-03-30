@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="tiflow-chargeitem-operation-outcome-details-cs"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem tiflow-chargeitem-operation-outcome-details-cs</b></p><a name="tiflow-chargeitem-operation-outcome-details-cs"> </a><a name="hctiflow-chargeitem-operation-outcome-details-cs"> </a><p>This  code system <code>https://gematik.de/fhir/tiflow/chargeitem/CodeSystem/tiflow-chargeitem-operation-outcome-details-cs</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (Deutschland) (German (Germany), de)</b></td></tr><tr><td style="white-space:nowrap">TIFLOW_CHARGEITEM_COVERAGE_NOT_PKV<a name="tiflow-chargeitem-operation-outcome-details-cs-TIFLOW_CHARGEITEM_COVERAGE_NOT_PKV"> </a></td><td>Coverage not PKV</td><td>The referenced prescription coverage type is not PKV and therefore not valid for ChargeItem processing</td><td>Kostenträgertyp nicht PKV</td></tr><tr><td style="white-space:nowrap">TIFLOW_CHARGEITEM_DISPENSE_SIGNATURE_INVALID<a name="tiflow-chargeitem-operation-outcome-details-cs-TIFLOW_CHARGEITEM_DISPENSE_SIGNATURE_INVALID"> </a></td><td>Dispense signature invalid</td><td>The PKV dispense dataset is missing a valid signature or contains an invalid signature</td><td>Signatur des PKV-Abgabedatensatzes ungültig</td></tr><tr><td style="white-space:nowrap">TIFLOW_CHARGEITEM_DISPENSE_CERTIFICATE_INVALID<a name="tiflow-chargeitem-operation-outcome-details-cs-TIFLOW_CHARGEITEM_DISPENSE_CERTIFICATE_INVALID"> </a></td><td>Dispense certificate invalid</td><td>The certificate used for the signature of the PKV dispense dataset is invalid, expired, or revoked</td><td>Zertifikat des PKV-Abgabedatensatzes ungültig</td></tr><tr><td style="white-space:nowrap">TIFLOW_CHARGEITEM_ID_REQUIRED<a name="tiflow-chargeitem-operation-outcome-details-cs-TIFLOW_CHARGEITEM_ID_REQUIRED"> </a></td><td>ChargeItem id required</td><td>The operation requires a concrete ChargeItem id in the request path</td><td>ChargeItem-ID erforderlich</td></tr><tr><td style="white-space:nowrap">TIFLOW_CHARGEITEM_NOT_FOUND<a name="tiflow-chargeitem-operation-outcome-details-cs-TIFLOW_CHARGEITEM_NOT_FOUND"> </a></td><td>ChargeItem not found</td><td>The referenced ChargeItem resource does not exist</td><td>ChargeItem nicht gefunden</td></tr></table></div>
+  </text>
+  <url value="https://gematik.de/fhir/tiflow/chargeitem/CodeSystem/tiflow-chargeitem-operation-outcome-details-cs"/>
+  <version value="1.0.0-draft"/>
+  <name value="TIFLOWChargeItemOperationOutcomeDetailsCS"/>
+  <title value="TIFLOW ChargeItem Operation Outcome Details CS"/>
+  <status value="draft"/>
+  <date value="2026-03-30T06:44:55+00:00"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="erp-umsetzung@gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="Abrechnungsinformationen-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <content value="complete"/>
+  <count value="5"/>
+  <concept>
+    <code value="TIFLOW_CHARGEITEM_COVERAGE_NOT_PKV"/>
+    <display value="Coverage not PKV"/>
+    <definition value="The referenced prescription coverage type is not PKV and therefore not valid for ChargeItem processing"/>
+    <designation>
+      <language value="de-DE"/>
+      <value value="Kostenträgertyp nicht PKV"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="TIFLOW_CHARGEITEM_DISPENSE_SIGNATURE_INVALID"/>
+    <display value="Dispense signature invalid"/>
+    <definition value="The PKV dispense dataset is missing a valid signature or contains an invalid signature"/>
+    <designation>
+      <language value="de-DE"/>
+      <value value="Signatur des PKV-Abgabedatensatzes ungültig"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="TIFLOW_CHARGEITEM_DISPENSE_CERTIFICATE_INVALID"/>
+    <display value="Dispense certificate invalid"/>
+    <definition value="The certificate used for the signature of the PKV dispense dataset is invalid, expired, or revoked"/>
+    <designation>
+      <language value="de-DE"/>
+      <value value="Zertifikat des PKV-Abgabedatensatzes ungültig"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="TIFLOW_CHARGEITEM_ID_REQUIRED"/>
+    <display value="ChargeItem id required"/>
+    <definition value="The operation requires a concrete ChargeItem id in the request path"/>
+    <designation>
+      <language value="de-DE"/>
+      <value value="ChargeItem-ID erforderlich"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="TIFLOW_CHARGEITEM_NOT_FOUND"/>
+    <display value="ChargeItem not found"/>
+    <definition value="The referenced ChargeItem resource does not exist"/>
+    <designation>
+      <language value="de-DE"/>
+      <value value="ChargeItem nicht gefunden"/>
+    </designation>
+  </concept>
+</CodeSystem>

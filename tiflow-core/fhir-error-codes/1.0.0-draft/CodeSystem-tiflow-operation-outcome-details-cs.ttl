@@ -1,0 +1,372 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "tiflow-operation-outcome-details-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem tiflow-operation-outcome-details-cs</b></p><a name=\"tiflow-operation-outcome-details-cs\"> </a><a name=\"hctiflow-operation-outcome-details-cs\"> </a><p>This  code system <code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (Deutschland) (German (Germany), de)</b></td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_SECRET_MISMATCH<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_SECRET_MISMATCH\"> </a></td><td>Task secret mismatch</td><td>The provided task secret does not match the secret stored for the task</td><td>Task-Secret stimmt nicht überein</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_MEDICATION_DISPENSE_MISSING<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_MEDICATION_DISPENSE_MISSING\"> </a></td><td>MedicationDispense missing</td><td>A required MedicationDispense resource is missing for this operation</td><td>MedicationDispense fehlt</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_SIGNATURE_NO_OCSP_RESPONSE<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_SIGNATURE_NO_OCSP_RESPONSE\"> </a></td><td>No OCSP response for signature</td><td>Certificate revocation status could not be determined because no OCSP response was available</td><td>Keine OCSP-Antwort zur Signatur</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_AUTH_ROLE_NOT_ALLOWED<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_AUTH_ROLE_NOT_ALLOWED\"> </a></td><td>Access role not allowed</td><td>The authenticated actor role is not permitted to execute this operation</td><td>Zugriffsrolle nicht zulässig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_CONSENT_ALREADY_EXISTS<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_CONSENT_ALREADY_EXISTS\"> </a></td><td>Consent already exists</td><td>A consent for the same scope already exists and cannot be created again</td><td>Einwilligung existiert bereits</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_CONSENT_CATEGORY_REQUIRED<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_CONSENT_CATEGORY_REQUIRED\"> </a></td><td>Consent category required</td><td>The consent category is mandatory and was not provided</td><td>Einwilligungskategorie erforderlich</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_CONSENT_CATEGORY_INVALID<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_CONSENT_CATEGORY_INVALID\"> </a></td><td>Consent category invalid</td><td>The provided consent category is unknown or not allowed</td><td>Einwilligungskategorie ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_ACCESSCODE_MISMATCH<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_ACCESSCODE_MISMATCH\"> </a></td><td>Access code mismatch</td><td>The provided access code does not match the access code assigned to the task</td><td>AccessCode stimmt nicht überein</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_TASK_REQUIRED<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_TASK_REQUIRED\"> </a></td><td>Task required</td><td>A task reference is required for this operation but was not provided</td><td>Task-Angabe erforderlich</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_TASK_NOT_FOUND<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_TASK_NOT_FOUND\"> </a></td><td>Task not found</td><td>The referenced task does not exist</td><td>Task nicht gefunden</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_CONSENT_REQUIRED<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_CONSENT_REQUIRED\"> </a></td><td>Consent required</td><td>A valid consent is required to execute this operation</td><td>Einwilligung erforderlich</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_MESSAGE_TO_SELF<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_MESSAGE_TO_SELF\"> </a></td><td>Message to self not allowed</td><td>A communication message addressed to the sender itself is not permitted</td><td>Nachricht an sich selbst nicht zulässig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_COMMUNICATION_PAYLOAD_INVALID<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_COMMUNICATION_PAYLOAD_INVALID\"> </a></td><td>Communication payload invalid</td><td>The communication payload is syntactically or semantically invalid</td><td>Kommunikationsinhalt ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_INSURANT_NOT_ELIGIBLE<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_INSURANT_NOT_ELIGIBLE\"> </a></td><td>Insurant not eligible</td><td>The insurant does not meet the eligibility constraints for this communication flow</td><td>Versicherter nicht berechtigt</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_RECIPIENT_INVALID<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_RECIPIENT_INVALID\"> </a></td><td>Recipient invalid</td><td>The specified recipient is invalid for the requested communication</td><td>Empfänger ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_TASK_STATUS_MISMATCH<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_TASK_STATUS_MISMATCH\"> </a></td><td>Task status mismatch</td><td>The task is in a status that does not allow execution of this operation</td><td>Task-Status passt nicht</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_TASK_EXPIRED<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_TASK_EXPIRED\"> </a></td><td>Task expired</td><td>The task cannot be processed because its redemption period has expired</td><td>Task ist abgelaufen</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_MVO_NOT_VALID_YET<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_MVO_NOT_VALID_YET\"> </a></td><td>MVO not valid yet</td><td>The multi-prescription is not yet valid at the current point in time</td><td>MVO noch nicht gültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_AUTH_NOT_OWNER<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_AUTH_NOT_OWNER\"> </a></td><td>Authenticated actor is not owner</td><td>The authenticated actor is not the owner of the addressed task</td><td>Authentifizierter Akteur ist nicht Eigentümer</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_TASK_ID_REQUIRED<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_TASK_ID_REQUIRED\"> </a></td><td>Task id required</td><td>The operation requires a task id in the request</td><td>Task-ID erforderlich</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_KVNR_MISMATCH<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_KVNR_MISMATCH\"> </a></td><td>KVNR mismatch</td><td>The KVNR in the request does not match the KVNR assigned to the task context</td><td>KVNR stimmt nicht überein</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_SIGNATURE_INVALID<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_SIGNATURE_INVALID\"> </a></td><td>Signature invalid</td><td>The digital signature is invalid or cannot be verified</td><td>Signatur ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_FLOWTYPE_MISMATCH<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_FLOWTYPE_MISMATCH\"> </a></td><td>Flow type mismatch</td><td>The task flow type does not match the expected flow for this operation</td><td>Flowtyp passt nicht</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_KVNR_INVALID<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_KVNR_INVALID\"> </a></td><td>KVNR invalid</td><td>The provided KVNR is invalid or does not conform to the expected format</td><td>KVNR ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_SIGNATURE_AUTHOREDON_MISMATCH<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_SIGNATURE_AUTHOREDON_MISMATCH\"> </a></td><td>Signature authoredOn mismatch</td><td>The authoredOn timestamp does not match the signed content</td><td>Signaturzeitpunkt passt nicht</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_IKNR_INVALID<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_IKNR_INVALID\"> </a></td><td>IKNR invalid</td><td>The provided IKNR is invalid or not accepted in this context</td><td>IKNR ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_LANR_ZANR_INVALID<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_LANR_ZANR_INVALID\"> </a></td><td>LANR or ZANR invalid</td><td>The provided LANR or ZANR is invalid or not accepted for this operation</td><td>LANR oder ZANR ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_TASK_DELETED<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_TASK_DELETED\"> </a></td><td>Task deleted</td><td>The task was already cancelled or deleted and can no longer be processed</td><td>Task wurde gelöscht</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_RESOURCE_FULLURL_INVALID<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_RESOURCE_FULLURL_INVALID\"> </a></td><td>Bundle fullUrl invalid</td><td>A resource fullUrl in the bundle is invalid or does not match the bundle rules</td><td>Bundle-fullUrl ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_BOM_DETECTED<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_BOM_DETECTED\"> </a></td><td>Byte order mark detected</td><td>A UTF byte order mark was detected where it is not permitted</td><td>Byte-Order-Mark erkannt</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_MEDICATION_DISPENSE_INVALID<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_MEDICATION_DISPENSE_INVALID\"> </a></td><td>MedicationDispense invalid</td><td>The provided MedicationDispense resource is invalid for this operation</td><td>MedicationDispense ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE\"> </a></td><td>Signature issuing role invalid</td><td>The signature was created by an actor role that is not allowed for the signed artifact</td><td>Signaturrolle ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_COVERAGE_TYPE_MISMATCH<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_COVERAGE_TYPE_MISMATCH\"> </a></td><td>Coverage type mismatch</td><td>The coverage type does not match the expected coverage context</td><td>Coverage-Typ passt nicht</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_ALTERNATIVE_IK_FORBIDDEN<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_ALTERNATIVE_IK_FORBIDDEN\"> </a></td><td>Alternative IK forbidden</td><td>Use of an alternative IK is not permitted in this context</td><td>Alternatives IK nicht erlaubt</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_ACCESS_PERMISSION_INVALID<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_ACCESS_PERMISSION_INVALID\"> </a></td><td>Access permission invalid</td><td>The requested access permission is invalid or not sufficient</td><td>Zugriffsberechtigung ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_CONSENT_MISSING<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_CONSENT_MISSING\"> </a></td><td>Consent missing</td><td>No required consent was found for this operation</td><td>Einwilligung fehlt</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_ACCESS_CODE_INVALID<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_ACCESS_CODE_INVALID\"> </a></td><td>Access code invalid</td><td>The provided access code is syntactically invalid</td><td>AccessCode ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_CERTIFICATE_INVALID<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_CERTIFICATE_INVALID\"> </a></td><td>Certificate invalid</td><td>The certificate used for authentication or signature validation is invalid</td><td>Zertifikat ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_META_PROFILE_INVALID<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_META_PROFILE_INVALID\"> </a></td><td>Meta profile invalid</td><td>The resource meta.profile entry is missing, invalid, or not supported</td><td>Meta-Profil ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_OCSP_BACKEND_ERROR<a name=\"tiflow-operation-outcome-details-cs-TIFLOW_OCSP_BACKEND_ERROR\"> </a></td><td>Invalid OCSP response</td><td>Failed to retrieve the OCSP response for the certificate of the signature</td><td>OCSP Abfrage fehlgeschlagen</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs"^^xsd:anyURI ;
+     fhir:l <https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs>
+  ] ; # 
+  fhir:version [ fhir:v "1.0.0-draft"] ; # 
+  fhir:name [ fhir:v "TIFLOWOperationOutcomeDetailsCS"] ; # 
+  fhir:title [ fhir:v "TIFLOW Operation Outcome Details CS"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2026-03-30T06:38:46+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "gematik GmbH"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "gematik GmbH" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://gematik.de" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "erp-umsetzung@gematik.de" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "DE" ] ;
+       fhir:display [ fhir:v "Germany" ]
+     ] )
+  ] ) ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "40"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "TIFLOW_SECRET_MISMATCH" ] ;
+     fhir:display [ fhir:v "Task secret mismatch" ] ;
+     fhir:definition [ fhir:v "The provided task secret does not match the secret stored for the task" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Task-Secret stimmt nicht überein" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_MEDICATION_DISPENSE_MISSING" ] ;
+     fhir:display [ fhir:v "MedicationDispense missing" ] ;
+     fhir:definition [ fhir:v "A required MedicationDispense resource is missing for this operation" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "MedicationDispense fehlt" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_SIGNATURE_NO_OCSP_RESPONSE" ] ;
+     fhir:display [ fhir:v "No OCSP response for signature" ] ;
+     fhir:definition [ fhir:v "Certificate revocation status could not be determined because no OCSP response was available" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Keine OCSP-Antwort zur Signatur" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_AUTH_ROLE_NOT_ALLOWED" ] ;
+     fhir:display [ fhir:v "Access role not allowed" ] ;
+     fhir:definition [ fhir:v "The authenticated actor role is not permitted to execute this operation" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Zugriffsrolle nicht zulässig" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_CONSENT_ALREADY_EXISTS" ] ;
+     fhir:display [ fhir:v "Consent already exists" ] ;
+     fhir:definition [ fhir:v "A consent for the same scope already exists and cannot be created again" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Einwilligung existiert bereits" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_CONSENT_CATEGORY_REQUIRED" ] ;
+     fhir:display [ fhir:v "Consent category required" ] ;
+     fhir:definition [ fhir:v "The consent category is mandatory and was not provided" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Einwilligungskategorie erforderlich" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_CONSENT_CATEGORY_INVALID" ] ;
+     fhir:display [ fhir:v "Consent category invalid" ] ;
+     fhir:definition [ fhir:v "The provided consent category is unknown or not allowed" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Einwilligungskategorie ungültig" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_ACCESSCODE_MISMATCH" ] ;
+     fhir:display [ fhir:v "Access code mismatch" ] ;
+     fhir:definition [ fhir:v "The provided access code does not match the access code assigned to the task" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "AccessCode stimmt nicht überein" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_TASK_REQUIRED" ] ;
+     fhir:display [ fhir:v "Task required" ] ;
+     fhir:definition [ fhir:v "A task reference is required for this operation but was not provided" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Task-Angabe erforderlich" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_TASK_NOT_FOUND" ] ;
+     fhir:display [ fhir:v "Task not found" ] ;
+     fhir:definition [ fhir:v "The referenced task does not exist" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Task nicht gefunden" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_CONSENT_REQUIRED" ] ;
+     fhir:display [ fhir:v "Consent required" ] ;
+     fhir:definition [ fhir:v "A valid consent is required to execute this operation" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Einwilligung erforderlich" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_MESSAGE_TO_SELF" ] ;
+     fhir:display [ fhir:v "Message to self not allowed" ] ;
+     fhir:definition [ fhir:v "A communication message addressed to the sender itself is not permitted" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Nachricht an sich selbst nicht zulässig" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_COMMUNICATION_PAYLOAD_INVALID" ] ;
+     fhir:display [ fhir:v "Communication payload invalid" ] ;
+     fhir:definition [ fhir:v "The communication payload is syntactically or semantically invalid" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Kommunikationsinhalt ungültig" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_INSURANT_NOT_ELIGIBLE" ] ;
+     fhir:display [ fhir:v "Insurant not eligible" ] ;
+     fhir:definition [ fhir:v "The insurant does not meet the eligibility constraints for this communication flow" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Versicherter nicht berechtigt" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_RECIPIENT_INVALID" ] ;
+     fhir:display [ fhir:v "Recipient invalid" ] ;
+     fhir:definition [ fhir:v "The specified recipient is invalid for the requested communication" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Empfänger ungültig" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_TASK_STATUS_MISMATCH" ] ;
+     fhir:display [ fhir:v "Task status mismatch" ] ;
+     fhir:definition [ fhir:v "The task is in a status that does not allow execution of this operation" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Task-Status passt nicht" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_TASK_EXPIRED" ] ;
+     fhir:display [ fhir:v "Task expired" ] ;
+     fhir:definition [ fhir:v "The task cannot be processed because its redemption period has expired" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Task ist abgelaufen" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_MVO_NOT_VALID_YET" ] ;
+     fhir:display [ fhir:v "MVO not valid yet" ] ;
+     fhir:definition [ fhir:v "The multi-prescription is not yet valid at the current point in time" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "MVO noch nicht gültig" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_AUTH_NOT_OWNER" ] ;
+     fhir:display [ fhir:v "Authenticated actor is not owner" ] ;
+     fhir:definition [ fhir:v "The authenticated actor is not the owner of the addressed task" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Authentifizierter Akteur ist nicht Eigentümer" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_TASK_ID_REQUIRED" ] ;
+     fhir:display [ fhir:v "Task id required" ] ;
+     fhir:definition [ fhir:v "The operation requires a task id in the request" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Task-ID erforderlich" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_KVNR_MISMATCH" ] ;
+     fhir:display [ fhir:v "KVNR mismatch" ] ;
+     fhir:definition [ fhir:v "The KVNR in the request does not match the KVNR assigned to the task context" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "KVNR stimmt nicht überein" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_SIGNATURE_INVALID" ] ;
+     fhir:display [ fhir:v "Signature invalid" ] ;
+     fhir:definition [ fhir:v "The digital signature is invalid or cannot be verified" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Signatur ungültig" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_FLOWTYPE_MISMATCH" ] ;
+     fhir:display [ fhir:v "Flow type mismatch" ] ;
+     fhir:definition [ fhir:v "The task flow type does not match the expected flow for this operation" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Flowtyp passt nicht" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_KVNR_INVALID" ] ;
+     fhir:display [ fhir:v "KVNR invalid" ] ;
+     fhir:definition [ fhir:v "The provided KVNR is invalid or does not conform to the expected format" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "KVNR ungültig" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_SIGNATURE_AUTHOREDON_MISMATCH" ] ;
+     fhir:display [ fhir:v "Signature authoredOn mismatch" ] ;
+     fhir:definition [ fhir:v "The authoredOn timestamp does not match the signed content" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Signaturzeitpunkt passt nicht" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_IKNR_INVALID" ] ;
+     fhir:display [ fhir:v "IKNR invalid" ] ;
+     fhir:definition [ fhir:v "The provided IKNR is invalid or not accepted in this context" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "IKNR ungültig" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_LANR_ZANR_INVALID" ] ;
+     fhir:display [ fhir:v "LANR or ZANR invalid" ] ;
+     fhir:definition [ fhir:v "The provided LANR or ZANR is invalid or not accepted for this operation" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "LANR oder ZANR ungültig" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_TASK_DELETED" ] ;
+     fhir:display [ fhir:v "Task deleted" ] ;
+     fhir:definition [ fhir:v "The task was already cancelled or deleted and can no longer be processed" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Task wurde gelöscht" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_RESOURCE_FULLURL_INVALID" ] ;
+     fhir:display [ fhir:v "Bundle fullUrl invalid" ] ;
+     fhir:definition [ fhir:v "A resource fullUrl in the bundle is invalid or does not match the bundle rules" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Bundle-fullUrl ungültig" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_BOM_DETECTED" ] ;
+     fhir:display [ fhir:v "Byte order mark detected" ] ;
+     fhir:definition [ fhir:v "A UTF byte order mark was detected where it is not permitted" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Byte-Order-Mark erkannt" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_MEDICATION_DISPENSE_INVALID" ] ;
+     fhir:display [ fhir:v "MedicationDispense invalid" ] ;
+     fhir:definition [ fhir:v "The provided MedicationDispense resource is invalid for this operation" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "MedicationDispense ungültig" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE" ] ;
+     fhir:display [ fhir:v "Signature issuing role invalid" ] ;
+     fhir:definition [ fhir:v "The signature was created by an actor role that is not allowed for the signed artifact" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Signaturrolle ungültig" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_COVERAGE_TYPE_MISMATCH" ] ;
+     fhir:display [ fhir:v "Coverage type mismatch" ] ;
+     fhir:definition [ fhir:v "The coverage type does not match the expected coverage context" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Coverage-Typ passt nicht" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_ALTERNATIVE_IK_FORBIDDEN" ] ;
+     fhir:display [ fhir:v "Alternative IK forbidden" ] ;
+     fhir:definition [ fhir:v "Use of an alternative IK is not permitted in this context" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Alternatives IK nicht erlaubt" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_ACCESS_PERMISSION_INVALID" ] ;
+     fhir:display [ fhir:v "Access permission invalid" ] ;
+     fhir:definition [ fhir:v "The requested access permission is invalid or not sufficient" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Zugriffsberechtigung ungültig" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_CONSENT_MISSING" ] ;
+     fhir:display [ fhir:v "Consent missing" ] ;
+     fhir:definition [ fhir:v "No required consent was found for this operation" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Einwilligung fehlt" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_ACCESS_CODE_INVALID" ] ;
+     fhir:display [ fhir:v "Access code invalid" ] ;
+     fhir:definition [ fhir:v "The provided access code is syntactically invalid" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "AccessCode ungültig" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_CERTIFICATE_INVALID" ] ;
+     fhir:display [ fhir:v "Certificate invalid" ] ;
+     fhir:definition [ fhir:v "The certificate used for authentication or signature validation is invalid" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Zertifikat ungültig" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_META_PROFILE_INVALID" ] ;
+     fhir:display [ fhir:v "Meta profile invalid" ] ;
+     fhir:definition [ fhir:v "The resource meta.profile entry is missing, invalid, or not supported" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Meta-Profil ungültig" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_OCSP_BACKEND_ERROR" ] ;
+     fhir:display [ fhir:v "Invalid OCSP response" ] ;
+     fhir:definition [ fhir:v "Failed to retrieve the OCSP response for the certificate of the signature" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "OCSP Abfrage fehlgeschlagen" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

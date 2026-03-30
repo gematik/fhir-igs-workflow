@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="Read-EU-Access-Permission"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition Read-EU-Access-Permission</b></p><a name="Read-EU-Access-Permission"> </a><a name="hcRead-EU-Access-Permission"> </a><p>URL: [base]/$read-eu-access-permission</p><p>Output parameters Profile:<a href="StructureDefinition-GEM-ERPEU-PR-PAR-AccessAuthorization-Response.html">GEM ERPEU PR PAR Access Authorization Response</a></p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>OUT</td><td>countryCode</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a></td><td/><td><div><p>The country for which the patient wants to grant access.</p>
+</div></td></tr><tr><td>OUT</td><td>accessCode</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#Identifier">Identifier</a></td><td/><td><div><p>The access code for that country.</p>
+</div></td></tr><tr><td>OUT</td><td>validUntil</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#instant">instant</a></td><td/><td><div><p>The instant until the access code is valid.</p>
+</div></td></tr><tr><td>OUT</td><td>createdAt</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#instant">instant</a></td><td/><td><div><p>The instant when the record was created in the E-Rezept-Fachdienst.</p>
+</div></td></tr></table></div>
+  </text>
+  <url value="https://gematik.de/fhir/erp-eu/OperationDefinition/Read_Access_PermissionOperationDefinition"/>
+  <version value="1.0.0-draft"/>
+  <name value="Read_Access_Permission"/>
+  <status value="active"/>
+  <kind value="operation"/>
+  <date value="2026-01-08"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="erp-umsetzung@gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="This operation reads the currenty in the E-Rezept-Fachdienst registered Access Code for redeeming ePrescriptions in an EU country."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <affectsState value="false"/>
+  <code value="read-eu-access-permission"/>
+  <system value="true"/>
+  <type value="false"/>
+  <instance value="false"/>
+  <outputProfile value="https://gematik.de/fhir/tiflow/xborder/StructureDefinition/GEM-ERPEU-PR-PAR-AccessAuthorization-Response"/>
+  <parameter>
+    <name value="countryCode"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="The country for which the patient wants to grant access."/>
+    <type value="Coding"/>
+  </parameter>
+  <parameter>
+    <name value="accessCode"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="The access code for that country."/>
+    <type value="Identifier"/>
+  </parameter>
+  <parameter>
+    <name value="validUntil"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="The instant until the access code is valid."/>
+    <type value="instant"/>
+  </parameter>
+  <parameter>
+    <name value="createdAt"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="The instant when the record was created in the E-Rezept-Fachdienst."/>
+    <type value="instant"/>
+  </parameter>
+</OperationDefinition>

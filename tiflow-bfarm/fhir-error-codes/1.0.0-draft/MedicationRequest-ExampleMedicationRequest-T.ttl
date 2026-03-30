@@ -1,0 +1,109 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow/bfarm/MedicationRequest/ExampleMedicationRequest-T> a fhir:MedicationRequest ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ExampleMedicationRequest-T"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/tiflow/bfarm/StructureDefinition/erp-tprescription-medication-request"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/tiflow/bfarm/StructureDefinition/erp-tprescription-medication-request>
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "off-label"^^xsd:anyURI ;
+         fhir:l fhir:off-label
+       ] ;
+       fhir:value [
+         a fhir:Boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:url [
+         fhir:v "childbearing-potential"^^xsd:anyURI ;
+         fhir:l fhir:childbearing-potential
+       ] ;
+       fhir:value [
+         a fhir:Boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:url [
+         fhir:v "security-compliance"^^xsd:anyURI ;
+         fhir:l fhir:security-compliance
+       ] ;
+       fhir:value [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [
+         fhir:v "hand-out-information-material"^^xsd:anyURI ;
+         fhir:l fhir:hand-out-information-material
+       ] ;
+       fhir:value [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [
+         fhir:v "declaration-of-expertise"^^xsd:anyURI ;
+         fhir:l fhir:declaration-of-expertise
+       ] ;
+       fhir:value [
+         a fhir:Boolean ;
+         fhir:v true
+       ]
+     ] ) ;
+     fhir:url [
+       fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/teratogenic-extension"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/teratogenic-extension>
+     ]
+  ] ) ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:intent [ fhir:v "order"] ; # 
+  fhir:medication [
+     a fhir:Reference ;
+     fhir:l <https://gematik.de/fhir/tiflow/bfarm/Medication/ExampleMedication1-Pomalidomid-T> ;
+     fhir:reference [ fhir:v "Medication/ExampleMedication1-Pomalidomid-T" ]
+  ] ; # 
+  fhir:subject [
+     fhir:identifier [
+       fhir:system [
+         fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/sid/gkv/kvid-10>
+       ] ;
+       fhir:value [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/data-absent-reason"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/data-absent-reason>
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "not-permitted"
+           ]
+         ] )
+       ]
+     ]
+  ] ; # 
+  fhir:authoredOn [ fhir:v "2026-04-01"^^xsd:date] ; # 
+  fhir:dosageInstruction ( [
+     fhir:text [ fhir:v "1-1-1-1" ]
+  ] ) ; # 
+  fhir:dispenseRequest [
+     fhir:quantity [
+       fhir:value [ fhir:v "10"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "Tablette" ]
+     ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
