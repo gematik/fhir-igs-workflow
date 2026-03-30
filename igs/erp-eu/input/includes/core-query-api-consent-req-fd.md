@@ -2,7 +2,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_22153 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-201" title="TI-Flow-Fachdienst - Consent - unzulässige Operationen" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -22,17 +22,40 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 #### POST /Consent
 <!-- A_22161 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-202" title="TI-Flow-Fachdienst - Consent schreiben - Rollenprüfung" version="0">
-  <meta lockversion="true"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-202" title="TI-Flow-Fachdienst - Consent schreiben - Rollenprüfung" version="1">
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
-  Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit eine Einwilligung nicht durch Unberechtigte erteilt werden kann.
+  Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+        </tr>
+    </table> 
+    abrechen, damit eine Einwilligung nicht durch Unberechtigte erteilt werden kann.
 </requirement>
 
 <!-- A_22289 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-203" title="TI-Flow-Fachdienst - Consent schreiben - Prüfung KVNR" version="0">
-  <meta lockversion="true"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-203" title="TI-Flow-Fachdienst - Consent schreiben - Prüfung KVNR" version="1">
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -63,8 +86,8 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22351 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-204" title="TI-Flow-Fachdienst - Consent schreiben - FHIR-Validierung" version="0">
-  <meta lockversion="true"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-204" title="TI-Flow-Fachdienst - Consent schreiben - FHIR-Validierung" version="1">
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -95,8 +118,8 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22162-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-205" title="TI-Flow-Fachdienst - Consent schreiben - nur eine Einwilligung pro KVNR und Einwilligungstyp" version="0">
-  <meta lockversion="true"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-205" title="TI-Flow-Fachdienst - Consent schreiben - nur eine Einwilligung pro KVNR und Einwilligungstyp" version="1">
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -128,7 +151,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_27143 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-206" title="TI-Flow-Fachdienst - Consent schreiben - Zeitstempel setzen" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -137,7 +160,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_22350 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-207" title="TI-Flow-Fachdienst - Consent schreiben – Persistieren" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>
@@ -146,7 +169,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 <!-- A_27143 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-208" title="TI-Flow-Fachdienst - Consent schreiben - Persistieren" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Herstellererklärung"/>
   </actor>
@@ -155,17 +178,40 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 #### GET /Consent
 <!-- A_22159 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-209" title="TI-Flow-Fachdienst - Consent lesen - Rollenprüfung" version="0">
-  <meta lockversion="true"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-209" title="TI-Flow-Fachdienst - Consent lesen - Rollenprüfung" version="1">
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
-  Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Consent sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit die Information zur Einwilligung nicht durch Unberechtigte ausgelesen werden kann.
+  Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Consent sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+        </tr>
+    </table> 
+    abrechen, damit die Information zur Einwilligung nicht durch Unberechtigte ausgelesen werden kann.
 </requirement>
 
 <!-- A_22160 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-210" title="TI-Flow-Fachdienst - Consent lesen - Filter KVNR" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -175,8 +221,8 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 #### DELETE /Consent
 <!-- A_22154 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-211" title="TI-Flow-Fachdienst - Consent löschen - alles Löschen verbieten" version="0">
-  <meta lockversion="true"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-211" title="TI-Flow-Fachdienst - Consent löschen - alles Löschen verbieten" version="1">
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -207,17 +253,40 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22155 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-212" title="TI-Flow-Fachdienst - Consent löschen - Rollenprüfung" version="0">
-  <meta lockversion="true"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-212" title="TI-Flow-Fachdienst - Consent löschen - Rollenprüfung" version="1">
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
-  Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt /Consent die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am TI-Flow-Fachdienst aufrufen dürfen, damit die Information zur Einwilligung nicht durch Unberechtigte gelöscht werden kann.
+  Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt /Consent die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am TI-Flow-Fachdienst aufrufen dürfen, und bei Abweichungen mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+        </tr>
+    </table> 
+    abrechen, damit die Information zur Einwilligung nicht durch Unberechtigte gelöscht werden kann.
 </requirement>
 
 <!-- A_22874-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-213" title="TI-Flow-Fachdienst - Consent löschen - Prüfung category" version="0">
-  <meta lockversion="true"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-213" title="TI-Flow-Fachdienst - Consent löschen - Prüfung category" version="1">
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
@@ -257,7 +326,7 @@ Es bestehen anwendungsfall-spezifische Anforderungen, welche Inhalte beim Widerr
 
 <!-- A_22158 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-214" title="TI-Flow-Fachdienst - Consent löschen - Ressource löschen" version="0">
-  <meta lockversion="true"/>
+  <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>

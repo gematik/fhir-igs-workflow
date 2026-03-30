@@ -111,6 +111,47 @@ def _normalize_capability_operation_canonicals(cap_file: Path, ig_root: Path) ->
     return updated
 
 
+def _normalize_operation_wrapper_scoping(resp_def_file: Path) -> int:
+    """Scope Task*OperationStatusCodes wrapper inserts to rest.resource[=].operation[=]."""
+    if not resp_def_file.exists():
+        return 0
+
+    lines = resp_def_file.read_text(encoding="utf-8").splitlines()
+    updated = 0
+    current_ruleset: Optional[str] = None
+
+    ruleset_re = re.compile(r"^\s*RuleSet:\s*([A-Za-z0-9_\-]+)\s*$")
+    unscoped_insert_re = re.compile(r"^(\s*\*)\s+insert\s+([A-Za-z0-9_\-]+)\s*$")
+    scoped_insert_re = re.compile(r"^\s*\*\s+rest\.resource\[=\]\.operation\[=\]\s+insert\s+")
+    op_wrapper_re = re.compile(r"^Task[A-Za-z0-9]*OperationStatusCodes$")
+
+    for idx, line in enumerate(lines):
+        header_match = ruleset_re.match(line)
+        if header_match:
+            current_ruleset = header_match.group(1)
+            continue
+
+        if not current_ruleset or not op_wrapper_re.match(current_ruleset):
+            continue
+        if scoped_insert_re.match(line):
+            continue
+
+        insert_match = unscoped_insert_re.match(line)
+        if not insert_match:
+            continue
+
+        prefix, inserted_ruleset = insert_match.groups()
+        if inserted_ruleset.endswith("OperationStatusCodes"):
+            # Nested status-code wrappers already define their own rest.* scope.
+            continue
+        lines[idx] = f"{prefix} rest.resource[=].operation[=] insert {inserted_ruleset}"
+        updated += 1
+
+    if updated:
+        resp_def_file.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return updated
+
+
 def _valueset_import_description_sources(ig_roots: Dict[str, Path]) -> Dict[str, str]:
     """Build import-token → short-description lookup from core ValueSet and CodeSystem."""
     core_root = ig_roots.get("core")
@@ -578,13 +619,20 @@ def fix_capstat(
         if not ig_root:
             normalized_modules.add(module)
             return
-        cap_file, _resp_def, _resp = _cap_files(ig_root)
+        cap_file, resp_def_file, _resp = _cap_files(ig_root)
         normalized = _normalize_capability_operation_canonicals(cap_file, ig_root)
         if normalized:
             print(
                 f"  [FIX] Normalized {normalized} CapabilityStatement operation canonicals in {cap_file.name}"
             )
             fixes_applied += normalized
+
+        scoped = _normalize_operation_wrapper_scoping(resp_def_file)
+        if scoped:
+            print(
+                f"  [FIX] Scoped {scoped} operation wrapper insert(s) in {resp_def_file.name}"
+            )
+            fixes_applied += scoped
         normalized_modules.add(module)
 
     for module in ig_roots:

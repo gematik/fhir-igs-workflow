@@ -152,7 +152,7 @@ Für Tags in Anforderungen muss die folgende Syntax verwendet werden:
 
 ## Suchen aller afo keys
 
-]*"
+key="[^"]*"
 
 ## Quellen und Referenzen
 

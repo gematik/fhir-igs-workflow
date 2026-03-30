@@ -123,13 +123,6 @@ RuleSet: EmptyList
   * extension[errorCode].valueString = "MSG_NO_MATCH"
 
 // TIFlow Related Errors
-RuleSet: DosageInvalid
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "400"
-  * extension[description].valueString = "Invalid dosage structure or content"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "TIFLOW_DOSAGE_INVALID" //TODO: TI Common
-
 RuleSet: OpNotAllowed
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "405"
