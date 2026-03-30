@@ -33,7 +33,18 @@ Mit der Operation GET /channels können die verfügbaren Channels abgefragt werd
   <ul>
     <li>oid_versicherter</li>
   </ul>
-  die Operation aufrufen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
+  die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Error Code</th>
+            <td>invalidOid</td>
+        </tr>
+    </table> 
+    abrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 </requirement>
 
 Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfiguration für eine spezifische FdV-Instanz abgefragt werden.
@@ -48,7 +59,18 @@ Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfigu
   <ul>
     <li>oid_versicherter</li>
   </ul>
-  die Operation aufrufen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
+  die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Error Code</th>
+            <td>invalidOid</td>
+        </tr>
+    </table> 
+    abrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 </requirement>
 
 ### POST /channels
@@ -63,5 +85,16 @@ Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfigu
   <ul>
     <li>oid_versicherter</li>
   </ul>
-  die Operation aufrufen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
+  die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Error Code</th>
+            <td>invalidOid</td>
+        </tr>
+    </table> 
+    abrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 </requirement>
