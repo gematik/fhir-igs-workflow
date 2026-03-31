@@ -281,6 +281,10 @@ Die Details werden in den Anforderungen mit einer Tabelle wie unten beschrieben 
         <th>Error Code</th>
         <td>beispielFehlerCode</td>
     </tr>
+    <tr>
+        <th>Error Details</th>
+        <td>Beispiel Fehler</td>
+    </tr>
 </table>
 
 Treten Fehler beim VAU-Transport (bspw. innerer http-Request kann nicht entschlüsselt werden) auf, beinhaltet die Fehlermeldung keinen inneren http-Response.
