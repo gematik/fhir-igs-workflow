@@ -53,7 +53,18 @@ def _to_ruleset_name(code: str) -> str:
 def _endpoint_to_default_ruleset(endpoint: str) -> Optional[str]:
     if not endpoint.startswith("op:"):
         return None
+
     op_name = endpoint.split(":", 1)[1]
+    explicit_mapping = {
+        "grant-eu-access-permission": "GrantEUAccessPermissionOperationStatusCodes",
+        "read-eu-access-permission": "ReadEUAccessPermissionOperationStatusCodes",
+        "revoke-eu-access-permission": "RevokeEUAccessPermissionOperationStatusCodes",
+        "get-eu-prescriptions": "GetEUPrescriptionsOperationStatusCodes",
+        "eu-close": "EuCloseOperationStatusCodes",
+    }
+    if op_name in explicit_mapping:
+        return explicit_mapping[op_name]
+
     return "Task" + "".join(part.capitalize() for part in op_name.split("-")) + "OperationStatusCodes"
 
 
@@ -112,7 +123,7 @@ def _normalize_capability_operation_canonicals(cap_file: Path, ig_root: Path) ->
 
 
 def _normalize_operation_wrapper_scoping(resp_def_file: Path) -> int:
-    """Scope Task*OperationStatusCodes wrapper inserts to rest.resource[=].operation[=]."""
+    """Scope unscoped inserts in *OperationStatusCodes wrappers to the correct operation path."""
     if not resp_def_file.exists():
         return 0
 
@@ -122,8 +133,8 @@ def _normalize_operation_wrapper_scoping(resp_def_file: Path) -> int:
 
     ruleset_re = re.compile(r"^\s*RuleSet:\s*([A-Za-z0-9_\-]+)\s*$")
     unscoped_insert_re = re.compile(r"^(\s*\*)\s+insert\s+([A-Za-z0-9_\-]+)\s*$")
-    scoped_insert_re = re.compile(r"^\s*\*\s+rest\.resource\[=\]\.operation\[=\]\s+insert\s+")
-    op_wrapper_re = re.compile(r"^Task[A-Za-z0-9]*OperationStatusCodes$")
+    scoped_insert_re = re.compile(r"^\s*\*\s+rest\.[^\s]+\s+insert\s+")
+    op_wrapper_re = re.compile(r"^[A-Za-z0-9_\-]*OperationStatusCodes$")
 
     for idx, line in enumerate(lines):
         header_match = ruleset_re.match(line)
@@ -144,7 +155,14 @@ def _normalize_operation_wrapper_scoping(resp_def_file: Path) -> int:
         if inserted_ruleset.endswith("OperationStatusCodes"):
             # Nested status-code wrappers already define their own rest.* scope.
             continue
-        lines[idx] = f"{prefix} rest.resource[=].operation[=] insert {inserted_ruleset}"
+
+        # System-level wrappers use rest.operation; resource wrappers use rest.resource.operation.
+        if current_ruleset.startswith("System") or "EUAccessPermission" in current_ruleset:
+            path_prefix = "rest.operation[=]"
+        else:
+            path_prefix = "rest.resource[=].operation[=]"
+
+        lines[idx] = f"{prefix} {path_prefix} insert {inserted_ruleset}"
         updated += 1
 
     if updated:

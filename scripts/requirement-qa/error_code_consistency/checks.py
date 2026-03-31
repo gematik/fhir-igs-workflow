@@ -288,10 +288,13 @@ def check_capabilitystatement_consistency(
             )
 
         if include_extra:
+            # Baseline wrappers can now appear in any position (e.g. "* insert InstanceOperationStatusCodes").
+            # Collect all direct wrapper refs instead of assuming the first ref is the baseline.
             direct_refs = refs.get(endpoint_rule, [])
             baseline_codes: Set[str] = set()
-            if direct_refs:
-                baseline_codes = resolve_ruleset_codes(direct_refs[0], refs, base_codes)
+            for ref in direct_refs:
+                if ref.endswith("StatusCodes"):
+                    baseline_codes.update(resolve_ruleset_codes(ref, refs, base_codes))
 
             extra_codes = sorted((cap_codes - required_codes) - baseline_codes)
             for extra in extra_codes:
