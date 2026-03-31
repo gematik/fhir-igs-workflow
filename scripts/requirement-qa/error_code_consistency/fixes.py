@@ -152,6 +152,37 @@ def _normalize_operation_wrapper_scoping(resp_def_file: Path) -> int:
     return updated
 
 
+def _to_numeric_status_code(status_code: str) -> str:
+    """Normalize status code strings like '412 - Precondition Failed' to '412'."""
+    match = re.search(r"\b(\d{3})\b", status_code or "")
+    return match.group(1) if match else (status_code or "400")
+
+
+def _normalize_status_code_values(resp_file: Path) -> int:
+    """Normalize CapabilityStatement response statusCode values to numeric-only strings."""
+    if not resp_file.exists():
+        return 0
+
+    lines = resp_file.read_text(encoding="utf-8").splitlines()
+    updated = 0
+    status_re = re.compile(r'^(\s*\*\s+extension\[statusCode\]\.valueString\s*=\s*")(.*?)("\s*)$')
+
+    for idx, line in enumerate(lines):
+        match = status_re.match(line)
+        if not match:
+            continue
+        prefix, raw_value, suffix = match.groups()
+        normalized = _to_numeric_status_code(raw_value)
+        if normalized == raw_value:
+            continue
+        lines[idx] = f"{prefix}{normalized}{suffix}"
+        updated += 1
+
+    if updated:
+        resp_file.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return updated
+
+
 def _valueset_import_description_sources(ig_roots: Dict[str, Path]) -> Dict[str, str]:
     """Build import-token → short-description lookup from core ValueSet and CodeSystem."""
     core_root = ig_roots.get("core")
@@ -516,6 +547,80 @@ def fix_orphaned_codes(findings: List[Finding], ig_roots: Dict[str, Path]) -> in
     return fixes_applied
 
 
+# ── Undefined code RuleSet removal ───────────────────────────────────────────
+
+
+def _remove_ruleset_blocks(resp_file: Path, ruleset_names: Set[str]) -> int:
+    """Remove complete RuleSet: Name blocks from a FSH response file."""
+    if not resp_file.exists() or not ruleset_names:
+        return 0
+    content = resp_file.read_text(encoding="utf-8")
+    starts = list(RULESET_START_RE.finditer(content))
+    if not starts:
+        return 0
+    removed = 0
+    kept_parts: List[str] = []
+    for i, m in enumerate(starts):
+        name = m.group(1)
+        block_start = m.start()
+        block_end = starts[i + 1].start() if i + 1 < len(starts) else len(content)
+        if name in ruleset_names:
+            print(f"  [FIX] Removed undefined RuleSet '{name}' from {resp_file.name}")
+            removed += 1
+        else:
+            kept_parts.append(content[block_start:block_end])
+    if removed:
+        resp_file.write_text("".join(kept_parts), encoding="utf-8")
+    return removed
+
+
+def _remove_insert_references(resp_def_file: Path, ruleset_names: Set[str]) -> int:
+    """Remove `insert <RuleSetName>` lines from a FSH ResponseDefinition file."""
+    if not resp_def_file.exists() or not ruleset_names:
+        return 0
+    insert_re = re.compile(r'\binsert\s+(\w+)\b')
+    lines = resp_def_file.read_text(encoding="utf-8").splitlines(keepends=True)
+    new_lines: List[str] = []
+    removed = 0
+    for line in lines:
+        m = insert_re.search(line)
+        if m and m.group(1) in ruleset_names:
+            print(f"  [FIX] Removed 'insert {m.group(1)}' from {resp_def_file.name}")
+            removed += 1
+            continue
+        new_lines.append(line)
+    if removed:
+        resp_def_file.write_text("".join(new_lines), encoding="utf-8")
+    return removed
+
+
+def remove_undefined_code_rulesets(findings: List[Finding], ig_roots: Dict[str, Path]) -> int:
+    """Remove RuleSet blocks and insert references for error codes not defined in any CodeSystem."""
+    fixes_applied = 0
+
+    undefined_by_module: Dict[str, Set[str]] = {}
+    for finding in findings:
+        if finding.type != "UNDEFINED_CODE_RULESET":
+            continue
+        ruleset_name = (
+            finding.requirement_key.split(":", 1)[1]
+            if ":" in finding.requirement_key
+            else ""
+        )
+        if ruleset_name:
+            undefined_by_module.setdefault(finding.ig_module, set()).add(ruleset_name)
+
+    for module, ruleset_names in undefined_by_module.items():
+        ig_root = ig_roots.get(module)
+        if not ig_root:
+            continue
+        _, resp_def_file, resp_file = _cap_files(ig_root)
+        fixes_applied += _remove_ruleset_blocks(resp_file, ruleset_names)
+        fixes_applied += _remove_insert_references(resp_def_file, ruleset_names)
+
+    return fixes_applied
+
+
 def fix_cs_vs(
     findings: List[Finding], ig_roots: Dict[str, Path], error_codes: List[ErrorCode]
 ) -> int:
@@ -619,7 +724,7 @@ def fix_capstat(
         if not ig_root:
             normalized_modules.add(module)
             return
-        cap_file, resp_def_file, _resp = _cap_files(ig_root)
+        cap_file, resp_def_file, resp_file = _cap_files(ig_root)
         normalized = _normalize_capability_operation_canonicals(cap_file, ig_root)
         if normalized:
             print(
@@ -633,6 +738,13 @@ def fix_capstat(
                 f"  [FIX] Scoped {scoped} operation wrapper insert(s) in {resp_def_file.name}"
             )
             fixes_applied += scoped
+
+        normalized_status = _normalize_status_code_values(resp_file)
+        if normalized_status:
+            print(
+                f"  [FIX] Normalized {normalized_status} status code value(s) in {resp_file.name}"
+            )
+            fixes_applied += normalized_status
         normalized_modules.add(module)
 
     for module in ig_roots:
@@ -692,7 +804,7 @@ def fix_capstat(
             # 1. Add base RuleSet to resp_file if not already present
             if f"RuleSet: {rs_name}" not in resp_content:
                 ec = code_info.get(code)
-                http_code = ec.http_code if ec else "400"
+                http_code = _to_numeric_status_code(ec.http_code if ec else "400")
                 description = f"TODO: description for {code}"
 
                 new_ruleset = (

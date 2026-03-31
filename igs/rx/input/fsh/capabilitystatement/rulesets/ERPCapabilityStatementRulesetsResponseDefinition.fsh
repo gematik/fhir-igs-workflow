@@ -80,13 +80,6 @@ RuleSet: TaskActivateOperationStatusCodes
 * rest.resource[=].operation[=] insert TiflowIknrInvalid
 * rest.resource[=].operation[=] insert TiflowKvnrInvalid
 * rest.resource[=].operation[=] insert TiflowLanrZanrInvalid
-* rest.resource[=].operation[=] insert TiflowRxDrugCategoryForbidden
-* rest.resource[=].operation[=] insert TiflowRxMvoEnddateInvalid
-* rest.resource[=].operation[=] insert TiflowRxMvoFlowtypeInvalid
-* rest.resource[=].operation[=] insert TiflowRxMvoIdInvalid
-* rest.resource[=].operation[=] insert TiflowRxMvoInvalid
-* rest.resource[=].operation[=] insert TiflowRxMvoStartdateInvalid
-* rest.resource[=].operation[=] insert TiflowRxPznInvalid
 * rest.resource[=].operation[=] insert TiflowSignatureAuthoredonMismatch
 * rest.resource[=].operation[=] insert TiflowSignatureInvalid
 * rest.resource[=].operation[=] insert TiflowSignatureInvalidIssuingRole
@@ -105,7 +98,6 @@ RuleSet: TaskAcceptOperationStatusCodes
 * insert TaskPostOperationStatusCodes
 * rest.resource[=].operation[=] insert TiflowAccesscodeMismatch
 * rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
-* rest.resource[=].operation[=] insert TiflowRxMvoNotValid
 * rest.resource[=].operation[=] insert TiflowTaskDeleted
 * rest.resource[=].operation[=] insert TiflowTaskExpired
 * rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
@@ -113,7 +105,6 @@ RuleSet: TaskAcceptOperationStatusCodes
 
 RuleSet: TaskRejectOperationStatusCodes
 * insert TaskNoContentOperationStatusCodes
-* rest.resource[=].operation[=] insert TiflowInvalidTaskStatus
 * rest.resource[=].operation[=] insert TiflowSecretMismatch
 * rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
 * rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
@@ -121,8 +112,6 @@ RuleSet: TaskRejectOperationStatusCodes
 RuleSet: TaskCloseOperationStatusCodes
 * insert TaskPostOperationStatusCodes
 * rest.resource[=].operation[=] insert SvcValidationFailed
-* rest.resource[=].operation[=] insert TiflowInvalidMedicationDispense
-* rest.resource[=].operation[=] insert TiflowInvalidTaskStatus
 * rest.resource[=].operation[=] insert TiflowMedicationDispenseMissing
 * rest.resource[=].operation[=] insert TiflowSecretMismatch
 * rest.resource[=].operation[=] insert TiflowSignatureNoOcspResponse

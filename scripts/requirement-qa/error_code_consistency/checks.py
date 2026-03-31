@@ -434,6 +434,55 @@ def check_module_codesystem_placement(ig_roots: Dict[str, Path]) -> List[Finding
     return findings
 
 
+def check_undefined_code_rulesets(ig_roots: Dict[str, Path]) -> List[Finding]:
+    """Find RuleSet blocks in response files that use error codes not defined in any CodeSystem.
+
+    External codes (MSG_*, SVC_*) are always considered valid as they come from external systems.
+    """
+    findings: List[Finding] = []
+
+    # Collect all codes defined across all local CodeSystems
+    all_known_codes: Set[str] = set()
+    for ig_root in ig_roots.values():
+        for cs_def in find_codesystem_files(ig_root).values():
+            all_known_codes.update(cs_def.codes)
+
+    for module, ig_root in ig_roots.items():
+        _, _, resp_file = _cap_files(ig_root)
+        if not resp_file.exists():
+            continue
+
+        content = resp_file.read_text(encoding="utf-8")
+        lines = content.splitlines()
+        for ruleset_name, codes in parse_response_error_codes(resp_file).items():
+            for code in codes:
+                _owner, _cs_id, _vs_id, is_external = classify_error_code(code)
+                if is_external:
+                    continue  # MSG_*, SVC_* come from external systems
+                if code not in all_known_codes:
+                    line_num = next(
+                        (i + 1 for i, ln in enumerate(lines)
+                         if f'extension[errorCode].valueString = "{code}"' in ln),
+                        1,
+                    )
+                    findings.append(
+                        Finding(
+                            type="UNDEFINED_CODE_RULESET",
+                            ig_module=module,
+                            file_path=resp_file,
+                            line=line_num,
+                            code=code,
+                            requirement_key=f"RuleSet:{ruleset_name}",
+                            message=(
+                                f"RuleSet '{ruleset_name}' uses error code '{code}' "
+                                "which is not defined in any CodeSystem"
+                            ),
+                        )
+                    )
+
+    return findings
+
+
 def check_orphaned_codes(
     error_codes: List[ErrorCode], ig_roots: Dict[str, Path]
 ) -> List[Finding]:

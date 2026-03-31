@@ -116,13 +116,6 @@ RuleSet: EmptyList
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_NO_MATCH"
 
-RuleSet: DosageInvalid
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "400"
-  * extension[description].valueString = "Invalid dosage structure or content"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "TIFLOW_DOSAGE_INVALID"
-
 RuleSet: OpNotAllowed
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "405"
@@ -130,177 +123,156 @@ RuleSet: OpNotAllowed
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_OP_NOT_ALLOWED"
 
-RuleSet: TiflowInvalidTaskStatus
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "412 - Precondition Failed"
-  * extension[description].valueString = "TODO: add description for TIFLOW_INVALID_TASK_STATUS"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "TIFLOW_INVALID_TASK_STATUS"
-
 RuleSet: TiflowSecretMismatch
 * extension[responseInfo][+]
-  * extension[statusCode].valueString = "403 - Forbidden"
+  * extension[statusCode].valueString = "403"
   * extension[description].valueString = "Task secret mismatch"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_SECRET_MISMATCH"
 
 RuleSet: SvcValidationFailed
 * extension[responseInfo][+]
-  * extension[statusCode].valueString = "400 - Bad Request"
+  * extension[statusCode].valueString = "400"
   * extension[description].valueString = "FHIR Profile Validation Failed"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "SVC_VALIDATION_FAILED"
 
-RuleSet: TiflowInvalidMedicationDispense
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "400 - Bad Request"
-  * extension[description].valueString = "Unzulässige Dispensierinformationen"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "TIFLOW_INVALID_MEDICATION_DISPENSE"
-
 RuleSet: TiflowSignatureNoOcspResponse
 * extension[responseInfo][+]
-  * extension[statusCode].valueString = "503 - Service Unavailable"
+  * extension[statusCode].valueString = "503"
   * extension[description].valueString = "No OCSP response for signature"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_SIGNATURE_NO_OCSP_RESPONSE"
 
 RuleSet: TiflowAuthRoleNotAllowed
 * extension[responseInfo][+]
-  * extension[statusCode].valueString = "403 - Forbidden"
+  * extension[statusCode].valueString = "403"
   * extension[description].valueString = "Access role not allowed"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
 
 RuleSet: TiflowTaskStatusMismatch
 * extension[responseInfo][+]
-  * extension[statusCode].valueString = "400 - Bad Request"
+  * extension[statusCode].valueString = "400"
   * extension[description].valueString = "Task status mismatch"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_TASK_STATUS_MISMATCH"
 
 RuleSet: TiflowMedicationDispenseInvalid
 * extension[responseInfo][+]
-  * extension[statusCode].valueString = "400 - Bad Request"
+  * extension[statusCode].valueString = "400"
   * extension[description].valueString = "MedicationDispense invalid"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_MEDICATION_DISPENSE_INVALID"
 
 RuleSet: SvcIdentityMismatch
 * extension[responseInfo][+]
-  * extension[statusCode].valueString = "403 - Forbidden"
+  * extension[statusCode].valueString = "403"
   * extension[description].valueString = "Identity mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID / KVNR)"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "SVC_IDENTITY_MISMATCH"
 
 RuleSet: TiflowAccesscodeMismatch
 * extension[responseInfo][+]
-  * extension[statusCode].valueString = "403 - Forbidden"
+  * extension[statusCode].valueString = "403"
   * extension[description].valueString = "Access code mismatch"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_ACCESSCODE_MISMATCH"
 
 RuleSet: TiflowAlternativeIkForbidden
 * extension[responseInfo][+]
-  * extension[statusCode].valueString = "400 - Bad Request"
+  * extension[statusCode].valueString = "400"
   * extension[description].valueString = "Alternative IK forbidden"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_ALTERNATIVE_IK_FORBIDDEN"
 
 RuleSet: TiflowCoverageTypeMismatch
 * extension[responseInfo][+]
-  * extension[statusCode].valueString = "400 - Bad Request"
+  * extension[statusCode].valueString = "400"
   * extension[description].valueString = "Coverage type mismatch"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_COVERAGE_TYPE_MISMATCH"
 
 RuleSet: TiflowFlowtypeMismatch
 * extension[responseInfo][+]
-  * extension[statusCode].valueString = "400 - Bad Request"
+  * extension[statusCode].valueString = "400"
   * extension[description].valueString = "Flow type mismatch"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_FLOWTYPE_MISMATCH"
 
 RuleSet: TiflowIknrInvalid
 * extension[responseInfo][+]
-  * extension[statusCode].valueString = "400 - Bad Request"
+  * extension[statusCode].valueString = "400"
   * extension[description].valueString = "IKNR invalid"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_IKNR_INVALID"
 
 RuleSet: TiflowKvnrInvalid
 * extension[responseInfo][+]
-  * extension[statusCode].valueString = "400 - Bad Request"
+  * extension[statusCode].valueString = "400"
   * extension[description].valueString = "KVNR invalid"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_KVNR_INVALID"
 
 RuleSet: TiflowLanrZanrInvalid
 * extension[responseInfo][+]
-  * extension[statusCode].valueString = "400 - Bad Request"
+  * extension[statusCode].valueString = "400"
   * extension[description].valueString = "LANR or ZANR invalid"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_LANR_ZANR_INVALID"
 
-RuleSet: TiflowRxPznInvalid
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "400 - Bad Request"
-  * extension[description].valueString = "TODO: add description for TIFLOW_RX_PZN_INVALID"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "TIFLOW_RX_PZN_INVALID"
-
 RuleSet: TiflowSignatureAuthoredonMismatch
 * extension[responseInfo][+]
-  * extension[statusCode].valueString = "400 - Bad Request"
+  * extension[statusCode].valueString = "400"
   * extension[description].valueString = "Signature authoredOn mismatch"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_SIGNATURE_AUTHOREDON_MISMATCH"
 
 RuleSet: TiflowSignatureInvalid
 * extension[responseInfo][+]
-  * extension[statusCode].valueString = "400 - Bad Request"
+  * extension[statusCode].valueString = "400"
   * extension[description].valueString = "Signature invalid"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_SIGNATURE_INVALID"
 
 RuleSet: TiflowSignatureInvalidIssuingRole
 * extension[responseInfo][+]
-  * extension[statusCode].valueString = "400 - Bad Request"
+  * extension[statusCode].valueString = "400"
   * extension[description].valueString = "Signature issuing role invalid"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE"
 
 RuleSet: TiflowTaskDeleted
 * extension[responseInfo][+]
-  * extension[statusCode].valueString = "410 - Gone"
+  * extension[statusCode].valueString = "410"
   * extension[description].valueString = "Task deleted"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_TASK_DELETED"
 
 RuleSet: TiflowTaskExpired
 * extension[responseInfo][+]
-  * extension[statusCode].valueString = "400 - Bad Request"
+  * extension[statusCode].valueString = "400"
   * extension[description].valueString = "Task expired"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_TASK_EXPIRED"
 
 RuleSet: TiflowCertificateInvalid
 * extension[responseInfo][+]
-  * extension[statusCode].valueString = "400 - Bad Request"
+  * extension[statusCode].valueString = "400"
   * extension[description].valueString = "Certificate invalid"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_CERTIFICATE_INVALID"
 
 RuleSet: TiflowErezeptPznInvalid
 * extension[responseInfo][+]
-  * extension[statusCode].valueString = "400 - Bad Request"
+  * extension[statusCode].valueString = "400"
   * extension[description].valueString = "PZN invalid"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_EREZEPT_PZN_INVALID"
 
 RuleSet: TiflowOcspBackendError
 * extension[responseInfo][+]
-  * extension[statusCode].valueString = "512 - OCSP Backend Error"
+  * extension[statusCode].valueString = "512"
   * extension[description].valueString = "Invalid OCSP response"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_OCSP_BACKEND_ERROR"

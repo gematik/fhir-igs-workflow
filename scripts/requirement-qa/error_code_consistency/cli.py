@@ -15,6 +15,7 @@ from .checks import (
     check_module_codesystem_placement,
     check_orphaned_codes,
     check_requirements_missing_keys,
+    check_undefined_code_rulesets,
     check_valueset_import_descriptions,
 )
 from .fixes import (
@@ -24,6 +25,7 @@ from .fixes import (
     fix_module_codesystem_placement,
     fix_orphaned_codes,
     fix_valueset_import_descriptions,
+    remove_undefined_code_rulesets,
 )
 from .models import Finding
 from .parsing import extract_error_codes_from_requirements
@@ -150,6 +152,7 @@ def _run_all_checks(error_codes, ig_roots, include_extra: bool) -> list:
     findings.extend(check_valueset_import_descriptions(ig_roots))
     findings.extend(check_module_codesystem_placement(ig_roots))
     findings.extend(check_orphaned_codes(error_codes, ig_roots))
+    findings.extend(check_undefined_code_rulesets(ig_roots))
     return findings
 
 
@@ -246,6 +249,7 @@ def main() -> int:
             applied += fix_valueset_import_descriptions(findings, ig_roots)
             applied += fix_module_codesystem_placement(findings, ig_roots)
             applied += fix_orphaned_codes(findings, ig_roots)
+            applied += remove_undefined_code_rulesets(findings, ig_roots)
 
             print("\nRe-running checks after fixes...")
             findings = _run_all_checks(error_codes, ig_roots, args.report_capstat_extra)
