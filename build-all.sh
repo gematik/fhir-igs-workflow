@@ -157,8 +157,8 @@ run_ig() {
     fi
   fi
 
-  # Sync OperationDefinition includes from core into this IG
-  if [[ -f "$ROOT_DIR/scripts/sync_operation_definitions_from_core.py" ]]; then
+  # Sync OperationDefinition includes from core into this IG (skip for core itself)
+  if [[ "$ig_short" != "core" && -f "$ROOT_DIR/scripts/sync_operation_definitions_from_core.py" ]]; then
     python3 "$ROOT_DIR/scripts/sync_operation_definitions_from_core.py" --igs "$ig_short"
   fi
 
