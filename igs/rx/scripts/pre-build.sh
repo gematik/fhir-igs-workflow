@@ -8,9 +8,6 @@ cd "$PROJECT_ROOT"
 
 # IG-specific extra steps only
 
-# Sync OperationDefinition includes referenced by module pages.
-python3 "$ROOT_DIR/scripts/sync_operation_definitions_from_core.py" --igs rx
-
 # Generate Transformed Artifacts by StructureMaps
 # if [ -n "$(ls -A input/resources/transformed-kbv-bundles/ 2>/dev/null)" ]; then
 #   rm input/resources/transformed-kbv-bundles/*

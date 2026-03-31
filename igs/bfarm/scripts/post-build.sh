@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "$SCRIPT_DIR/../../.." && pwd)"
 
@@ -47,11 +50,6 @@ resolve_mapping_bundle_source() {
 
 	return 1
 }
-
-# IG-specific extra steps only
-
-# Sync OperationDefinition includes referenced by module pages.
-python3 "$ROOT_DIR/scripts/sync_operation_definitions_from_core.py" --igs bfarm
 
 # Run scripts that need artifacts from IG Publisher
 ./tests/run-all-tests.sh

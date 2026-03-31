@@ -154,31 +154,51 @@ run_ig() {
     fi
   fi
 
-  if [[ -f "$ig_dir/scripts/build-ig.sh" ]]; then
-    if [[ -x "$ig_dir/scripts/build-ig.sh" ]]; then
-      (cd "$ig_dir" && "$ig_dir/scripts/build-ig.sh")
+  # Sync OperationDefinition includes from core into this IG
+  if [[ -f "$ROOT_DIR/scripts/sync_operation_definitions_from_core.py" ]]; then
+    python3 "$ROOT_DIR/scripts/sync_operation_definitions_from_core.py" --igs "$ig_short"
+  fi
+
+  # pre-build
+  if [[ -f "$ig_dir/scripts/pre-build.sh" ]]; then
+    if [[ -x "$ig_dir/scripts/pre-build.sh" ]]; then
+      (cd "$ig_dir" && "$ig_dir/scripts/pre-build.sh")
     else
-      (cd "$ig_dir" && bash "$ig_dir/scripts/build-ig.sh")
+      (cd "$ig_dir" && bash "$ig_dir/scripts/pre-build.sh")
     fi
   fi
 
-  if [[ -x "$ROOT_DIR/_genonce.sh" ]]; then
-    local publisher_src="$ROOT_DIR/input-cache/publisher.jar"
-    local publisher_dest_dir="$ig_dir/input-cache"
-    if [[ -f "$publisher_src" ]]; then
-      mkdir -p "$publisher_dest_dir"
-      if [[ ! -f "$publisher_dest_dir/publisher.jar" ]]; then
-        cp "$publisher_src" "$publisher_dest_dir/publisher.jar"
-      fi
-    fi
-    if [[ "${GENONCE_ARGS+x}" == "x" && ${#GENONCE_ARGS[@]} -gt 0 ]]; then
-      (cd "$ig_dir" && "$ROOT_DIR/_genonce.sh" "${GENONCE_ARGS[@]}")
-    else
-      (cd "$ig_dir" && "$ROOT_DIR/_genonce.sh")
-    fi
-  else
-    echo "Error: _genonce.sh not found" >&2
+  # IG Publisher
+  local publisher_jar="$ROOT_DIR/input-cache/publisher.jar"
+  if [[ ! -f "$publisher_jar" ]]; then
+    echo "Error: publisher.jar not found at $publisher_jar. Run update-publisher.sh first." >&2
     exit 1
+  fi
+
+  echo "Checking internet connection..."
+  local txoption=""
+  if curl -sSf tx.fhir.org > /dev/null 2>&1; then
+    echo "Online"
+  else
+    echo "Offline"
+    txoption="-tx n/a"
+  fi
+
+  export JAVA_TOOL_OPTIONS="${JAVA_TOOL_OPTIONS} -Dfile.encoding=UTF-8"
+
+  if [[ "${GENONCE_ARGS+x}" == "x" && ${#GENONCE_ARGS[@]} -gt 0 ]]; then
+    (cd "$ig_dir" && java -jar "$publisher_jar" -ig . ${txoption:+"$txoption"} "${GENONCE_ARGS[@]}")
+  else
+    (cd "$ig_dir" && java -jar "$publisher_jar" -ig . ${txoption:+"$txoption"})
+  fi
+
+  # post-build
+  if [[ -f "$ig_dir/scripts/post-build.sh" ]]; then
+    if [[ -x "$ig_dir/scripts/post-build.sh" ]]; then
+      (cd "$ig_dir" && "$ig_dir/scripts/post-build.sh")
+    else
+      (cd "$ig_dir" && bash "$ig_dir/scripts/post-build.sh")
+    fi
   fi
 }
 
