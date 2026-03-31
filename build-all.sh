@@ -195,6 +195,13 @@ run_ig() {
     (cd "$ig_dir" && java -jar "$publisher_jar" -ig . ${txoption:+"$txoption"})
   fi
 
+  # IG Publisher v2.2.x may emit this derived artifact in the IG root.
+  # Keep working trees clean by removing it after each build.
+  local req_from_narrative="$ig_dir/Requirements-fromNarrative.json"
+  if [[ -f "$req_from_narrative" ]]; then
+    rm -f "$req_from_narrative"
+  fi
+
   # post-build
   if [[ -f "$ig_dir/scripts/post-build.sh" ]]; then
     if [[ -x "$ig_dir/scripts/post-build.sh" ]]; then
@@ -265,9 +272,38 @@ run_igs_macos_terminal() {
   echo "Terminal windows opened for parallel builds. Check .tmp-build/ for build artifacts."
 }
 
+# Requirements QA gate — abort before any build work if checks fail
+run_requirements_qa() {
+  local qa_script="$ROOT_DIR/scripts/qa-for-requirements.py"
+  if [[ ! -f "$qa_script" ]]; then
+    echo "Warning: qa-for-requirements.py not found; skipping QA check"
+    return 0
+  fi
+
+  echo "Running requirements QA checks..."
+  local qa_output
+  if ! qa_output=$(python3 "$qa_script" --strict-quality --strict-error-codes 2>&1); then
+    echo ""
+    echo "========================================" >&2
+    echo "ERROR: Requirements QA checks failed." >&2
+    echo "Fix the issues below before building." >&2
+    echo "========================================" >&2
+    echo "$qa_output" >&2
+    echo "" >&2
+    echo "Tip: run 'python scripts/qa-for-requirements.py' for details," >&2
+    echo "     or 'python scripts/qa-for-requirements.py --fix' to auto-fix." >&2
+    return 1
+  fi
+  echo "$qa_output"
+  echo "Requirements QA passed."
+}
+
 if [[ ${#IG_FILTER[@]} -eq 0 ]]; then
   declare -a all_igs=()
   while IFS= read -r line; do all_igs+=("$line"); done < <(list_all_igs)
+  if [[ "$FROM_TEMP" == "" ]]; then
+    run_requirements_qa || exit 1
+  fi
   if [[ "$CONCURRENT" == "true" ]]; then
     if [[ "$(uname -s)" == "Darwin" ]]; then
       run_igs_macos_terminal "${all_igs[@]}"
