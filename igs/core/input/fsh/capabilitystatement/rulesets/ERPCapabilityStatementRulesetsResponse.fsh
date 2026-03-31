@@ -56,13 +56,6 @@ RuleSet: UnknownResourceType
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_UNKNOWN_TYPE"
 
-RuleSet: IDTokenCheck //TODO: Check
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "403"
-  * extension[description].valueString = "ID-Token or Insurant-ID mismatch"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "SVC_IDENTITY_MISMATCH"
-
 RuleSet: Unauthorized
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "401"
@@ -129,6 +122,13 @@ RuleSet: OpNotAllowed
   * extension[description].valueString = "Operation %s not allowed for resource %s"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_OP_NOT_ALLOWED"
+
+RuleSet: OpUnknown
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "405"
+  * extension[description].valueString = "unknown FHIR http operation"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "MSG_UNKNOWN_OPERATION"
 
 RuleSet: TiflowSecretMismatch
 * extension[responseInfo][+]

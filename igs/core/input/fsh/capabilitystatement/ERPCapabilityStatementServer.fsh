@@ -68,8 +68,6 @@ RuleSet: TaskInteraction(expectation)
 * insert TaskCloseOperationStatusCodes
 * insert CapSupportResourceOperation(abort, AbortOperation, {expectation}, "Aborts the ePrescription workflow and deletes Task related data")
 * insert TaskAbortOperationStatusCodes
-* insert CapSupportResourceOperation(dispense, DispenseOperation, {expectation}, "Documents medication dispensation without changing Task status")
-* insert TaskDispenseOperationStatusCodes
 
 RuleSet: ChargeItemInteraction(expectation)
 * insert CapSupportResource(ChargeItem, {expectation})
