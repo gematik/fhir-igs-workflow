@@ -95,7 +95,10 @@ list_all_igs() {
     return 0
   fi
 
-  mapfile -t igs < <(printf '%s\n' "${igs[@]}" | sort -u)
+  local sorted
+  sorted=$(printf '%s\n' "${igs[@]}" | sort -u)
+  igs=()
+  while IFS= read -r line; do igs+=("$line"); done <<< "$sorted"
 
   if printf '%s\n' "${igs[@]}" | grep -qx 'core'; then
     printf 'core\n'
@@ -264,7 +267,7 @@ run_igs_macos_terminal() {
 
 if [[ ${#IG_FILTER[@]} -eq 0 ]]; then
   declare -a all_igs=()
-  mapfile -t all_igs < <(list_all_igs)
+  while IFS= read -r line; do all_igs+=("$line"); done < <(list_all_igs)
   if [[ "$CONCURRENT" == "true" ]]; then
     if [[ "$(uname -s)" == "Darwin" ]]; then
       run_igs_macos_terminal "${all_igs[@]}"
