@@ -31,7 +31,7 @@ jobs:
       BUILD_GENERATE_DRAWIO_IMAGES: "false"
       INSTALL_SUSHI_DEPS: "skip"
       DRAWIO_APP: "/usr/local/bin/drawio"
-      FHIR_PACKAGE_CACHE_DIR: ~/.fhir/packages
+      FHIR_PACKAGE_CACHE_DIR: /home/runner/.fhir/packages
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -418,7 +418,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          cache_dir="${FHIR_PACKAGE_CACHE_DIR:-$HOME/.fhir/packages}"
+          cache_dir="${FHIR_PACKAGE_CACHE_DIR:-/home/runner/.fhir/packages}"
           mkdir -p "$cache_dir"
 
           declare -A dep_map=()
@@ -490,14 +490,31 @@ jobs:
           set -euo pipefail
           successful_igs=()
           failed_igs=()
+          core_dev_cache_dir="${FHIR_PACKAGE_CACHE_DIR:-/home/runner/.fhir/packages}/de.gematik.tiflow.core#dev"
+          core_failed=0
 
           if [[ "${{ steps.igs.outputs.ig_mode }}" == "all" ]]; then
             for ig in ${{ steps.igs.outputs.ig_list }}; do
+              if [[ "$core_failed" -eq 1 ]]; then
+                echo "Skipping $ig because core build failed and de.gematik.tiflow.core#dev is unavailable."
+                failed_igs+=("$ig")
+                continue
+              fi
+
               echo "::group::Build $ig"
               if ./build-all.sh --ig "$ig"; then
-                successful_igs+=("$ig")
+                if [[ "$ig" == "core" && ! -d "$core_dev_cache_dir" ]]; then
+                  echo "::error title=Missing local core dev package::core built but de.gematik.tiflow.core#dev was not found in $core_dev_cache_dir"
+                  failed_igs+=("core")
+                  core_failed=1
+                else
+                  successful_igs+=("$ig")
+                fi
               else
                 failed_igs+=("$ig")
+                if [[ "$ig" == "core" ]]; then
+                  core_failed=1
+                fi
               fi
               echo "::endgroup::"
             done
