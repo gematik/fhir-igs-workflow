@@ -30,20 +30,7 @@ Die Fehlermeldung beinhaltet bei fachlichen Fehlern einen VAU-verschlüsselten i
       an den Client zurückgeben, ohne Implementierungsdetails (z.B. kein Stacktrace) preiszugeben und dabei sicherstellen, dass personenbezogene oder medizinische Daten, falls für die qualifizierte Fehlerbeschreibung notwendig, ausschließlich in der VAU-verschlüsselten inneren http-Response übertragen werden.
 </requirement>
 
-#### Fehlerstruktur bei non FHIR-Schnittstellen
-
-Der TI-Flow-Fachdienst bietet Schnittstellen, deren Austauschformat nicht nach FHIR modelliert wurde. Bspw. [Push-API: Pusher](./query-api-pushers.md). 
-
-Diese Schnittstellen haben eine eigens definierte JSON Struktur von Fehlern, die in der jeweils referenzierten OpenAPI dokumentiert ist. Im folgenden ein Beispiel:
-
-```json
-{
-  "errorCode": "RESOURCE_NOT_FOUND",
-  "errorDetail": "The requested pusher could not be found"
-}
-```
-
-#### Fehlerstruktur bei FHIR-Schnittstellen
+### Fehlerstruktur bei FHIR-Schnittstellen
 
 Da der TI-Flow-Fachdienst FHIR als grundlegenedes Austauschformat für den überwiegenden Teil der API verwendet, werden alle FHIR-Schnittstellen im Fehlerfall mit einer [TIFlow-OperationOutcome](./StructureDefinition-tiflow-operation-outcome.html) quittiert:
 
@@ -226,19 +213,19 @@ Für die Ressourcen-Endpunkte in FHIR gelten die folgenden übergreifenden Fehle
     </tbody>
 </table>
 
-<div><figcaption><strong>Tabelle: </strong>Fehlercodes für Query-API</figcaption></div>
+<div><figcaption><strong>Tabelle: </strong>Fehlercodes für Query-API</figcaption></div><br>
 
- ##### Operation-API
- 
- FHIR definiert drei Ebenen auf denen Operationen ausgeführt werden können:
+##### Operation-API
 
- |Ebene|Beispiel|
- |---|---|
- |System Level|[baseUrl]/$operation|
- |Type Level|[baseUrl]/Task/$operation|
- |Instance Level|[baseUrl]/Task/<id>/$operation|
+FHIR definiert drei Ebenen auf denen Operationen ausgeführt werden können:
 
- <div><figcaption><strong>Tabelle: </strong>Ebenen von FHIR Operationen</figcaption></div>
+|Ebene|Beispiel|
+|---|---|
+|System Level|[baseUrl]/$operation|
+|Type Level|[baseUrl]/Task/$operation|
+|Instance Level|[baseUrl]/Task/<id>/$operation|
+
+<div><figcaption><strong>Tabelle: </strong>Ebenen von FHIR Operationen</figcaption></div><br>
 
 Hierfür gelten für die TIFlow-Anwendungen die folgenden Fehlercodes für Operationen:
 
@@ -263,7 +250,7 @@ Hierfür gelten für die TIFlow-Anwendungen die folgenden Fehlercodes für Opera
             <td>
                 <ul>
                     <li>MSG_UNKNOWN_OPERATION - unknown FHIR http operation</li>
-                    <li>MSG_OP_NOT_ALLOWED - Operation not allowed for resource</li>#
+                    <li>MSG_OP_NOT_ALLOWED - Operation not allowed for resource</li>
                     <li>MSG_UNKNOWN_TYPE - Unknown resource type</li>
                 </ul>
             </td>
@@ -282,27 +269,18 @@ Hierfür gelten für die TIFlow-Anwendungen die folgenden Fehlercodes für Opera
 
 ### Struktur von Fehlern bei Nicht-FHIR APIs
 
-Schnittstellen, die FHIR nicht als Austauschformat nutzen (bspw. Push API) wird ein HTTP Status Code und ein Fehlercode im Media Type <i>application/json</i> nach folgendem Schema zurückgegeben:
+Der TI-Flow-Fachdienst bietet Schnittstellen, deren Austauschformat nicht nach FHIR modelliert wurde. Bspw. [Push-API: Pusher](./query-api-pushers.md). 
 
-<pre><code>
+Diese Schnittstellen haben eine eigens definierte JSON Struktur von Fehlern, die in der jeweils referenzierten OpenAPI dokumentiert ist. Im Fehlerfall erhalten Clients eine HTTP Antwort mit HTTP Status Code und einem Response Body im Media Type <i>application/json</i>.
+
+Im Folgenden, ein Beispiel:
+
+```json
 {
-    "errorCode": "beispielFehlerCode"
+  "errorCode": "RESOURCE_NOT_FOUND",
+  "errorDetail": "The requested pusher could not be found"
 }
-</code></pre>
-Die Details werden in den Anforderungen mit einer Tabelle wie unten beschrieben dargestellt:
-<table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
-    <tr>
-        <th>HTTP-Code</th>
-        <td>HTTP-Status-Code</td>
-    </tr>
-    <tr>
-        <th>Error Code</th>
-        <td>beispielFehlerCode</td>
-    </tr>
-    <tr>
-        <th>Error Details</th>
-        <td>Beispiel Fehler</td>
-    </tr>
-</table>
+```
+<br>
 
 Treten Fehler beim VAU-Transport (bspw. innerer http-Request kann nicht entschlüsselt werden) auf, beinhaltet die Fehlermeldung keinen inneren http-Response.
