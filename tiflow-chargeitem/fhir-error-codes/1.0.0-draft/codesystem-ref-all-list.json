@@ -1,12 +1,11 @@
 {
   "codeSystems" : [{
     "url" : "http://dicom.nema.org/resources/ontology/DCM",
-    "version" : "01",
+    "version" : "3.0.1",
     "status" : "active",
-    "name" : "DICOM Controlled Terminology Definitions",
-    "title" : null,
-    "description" : "DICOM Code Definitions (Coding Scheme Designator \"DCM\" Coding Scheme Version \"01\")",
-    "oids" : ["1.2.840.10008.2.16.4"],
+    "name" : "DCM",
+    "title" : "DICOM Controlled Terminology",
+    "description" : "Coded concepts defined in PS 3.16 Digital Imaging and Communications in Medicine (DICOM): Part 16: Content Mapping Resource, Annex D: DICOM Controlled Terminology Definition",
     "uses" : {
     },
     "http://hl7.org/fhir/R4/valueset-security-role-type.html" : "SecurityRoleType"
@@ -24,84 +23,77 @@
   },
   {
     "url" : "http://hl7.org/fhir/chargeitem-status",
-    "version" : "4.0.1",
-    "status" : "draft",
+    "version" : "5.0.0",
+    "status" : "active",
     "name" : "ChargeItemStatus",
-    "title" : "ChargeItemStatus",
+    "title" : "Charge Item Status",
     "description" : "Codes identifying the lifecycle stage of a ChargeItem.",
-    "oids" : ["2.16.840.1.113883.4.642.4.847"],
     "uses" : {
     },
     "http://hl7.org/fhir/R4/valueset-chargeitem-status.html" : "ChargeItemStatus"
   },
   {
     "url" : "http://hl7.org/fhir/consent-data-meaning",
-    "version" : "4.0.1",
-    "status" : "draft",
+    "version" : "5.0.0",
+    "status" : "active",
     "name" : "ConsentDataMeaning",
-    "title" : "ConsentDataMeaning",
+    "title" : "Consent Data Meaning",
     "description" : "How a resource reference is interpreted when testing consent restrictions.",
-    "oids" : ["2.16.840.1.113883.4.642.4.760"],
     "uses" : {
     },
     "http://hl7.org/fhir/R4/valueset-consent-data-meaning.html" : "ConsentDataMeaning"
   },
   {
     "url" : "http://hl7.org/fhir/consent-provision-type",
-    "version" : "4.0.1",
-    "status" : "draft",
+    "version" : "5.0.0",
+    "status" : "active",
     "name" : "ConsentProvisionType",
-    "title" : "ConsentProvisionType",
+    "title" : "Consent Provision Type",
     "description" : "How a rule statement is applied, such as adding additional consent or removing consent.",
-    "oids" : ["2.16.840.1.113883.4.642.4.758"],
     "uses" : {
     },
     "http://hl7.org/fhir/R4/valueset-consent-provision-type.html" : "ConsentProvisionType"
   },
   {
     "url" : "http://hl7.org/fhir/consent-state-codes",
-    "version" : "4.0.1",
-    "status" : "draft",
+    "version" : "5.0.0",
+    "status" : "active",
     "name" : "ConsentState",
-    "title" : "ConsentState",
+    "title" : "Consent State",
     "description" : "Indicates the state of the consent.",
-    "oids" : ["2.16.840.1.113883.4.642.4.756"],
     "uses" : {
     },
     "http://hl7.org/fhir/R4/valueset-consent-state-codes.html" : "ConsentState"
   },
   {
     "url" : "http://hl7.org/fhir/event-status",
-    "version" : "4.0.1",
+    "version" : "5.0.0",
     "status" : "draft",
     "name" : "EventStatus",
     "title" : "EventStatus",
     "description" : "Codes identifying the lifecycle stage of an event.",
-    "oids" : ["2.16.840.1.113883.4.642.4.110"],
     "uses" : {
     },
     "http://hl7.org/fhir/R4/valueset-event-status.html" : "EventStatus"
   },
   {
     "url" : "http://hl7.org/fhir/identifier-use",
-    "version" : "4.0.1",
+    "version" : "5.0.0",
     "status" : "active",
     "name" : "IdentifierUse",
     "title" : "IdentifierUse",
     "description" : "Identifies the purpose for this identifier, if known .",
-    "oids" : ["2.16.840.1.113883.4.642.4.58"],
     "uses" : {
     },
     "http://hl7.org/fhir/R4/valueset-identifier-use.html" : "IdentifierUse"
   },
   {
     "url" : "http://hl7.org/fhir/request-priority",
-    "version" : "4.0.1",
+    "version" : "5.0.0",
     "status" : "draft",
     "name" : "RequestPriority",
     "title" : "RequestPriority",
     "description" : "Identifies the level of importance to be assigned to actioning the request.",
-    "oids" : ["2.16.840.1.113883.4.642.4.116"],
     "uses" : {
     },
     "http://hl7.org/fhir/R4/valueset-request-priority.html" : "Request priority"
@@ -115,8 +107,32 @@
     "description" : "One of the resource types defined as part of this version of FHIR.",
     "uses" : {
     },
-    "http://hl7.org/fhir/R4/valueset-resource-types.html" : "ResourceType",
-    "http://hl7.org/fhir/R4/valueset-consent-content-class.html" : "Consent Content Class"
+    "http://hl7.org/fhir/R4/valueset-consent-content-class.html" : "Consent Content Class",
+    "http://hl7.org/fhir/R4/valueset-resource-types.html" : "ResourceType"
+  },
+  {
+    "url" : "http://hl7.org/fhir/sid/icd-10",
+    "version" : "2.1.1",
+    "status" : "retired",
+    "name" : "Icd10",
+    "title" : "ICD-10",
+    "description" : "International Classification of Diseases revision 10 (ICD 10)",
+    "oids" : ["2.16.840.1.113883.6.3"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-icd-10.html" : "ICD-10 Codes"
+  },
+  {
+    "url" : "http://loinc.org",
+    "version" : "3.1.0",
+    "status" : "active",
+    "name" : "LOINC",
+    "title" : "Logical Observation Identifiers, Names and Codes (LOINC)",
+    "description" : "LOINC provides a set of universal names and ID codes for identifying laboratory and clinical test results.1,2 LOINC facilitates the exchange and pooling of results, such as blood hemoglobin, serum potassium, or vital signs, for clinical care, outcomes management, and research. LOINC's universal identifiers (names and codes) can be used in the context of order and observation exchanges between information systems that use syntax standards such as HL73, CEN TC251, ISO TC215, ASTM4, and DICOM. Specifically, the identifier can be used as the coded value for an observation in any other standard that uses the observation/observation value paradigm, whether messages, documents, application programming interface (API), etc. For example, LOINC codes are used widely in the OBX segment Observation Identifier field (OBX-3) of an ORU HL7 (HL7 version 2.x or ASTM 1238-9410) message that may be sent between a Clinical Laboratory Information Management Systems (LIMS) and Electronic Health Record Systems (EHR).5, 6 In this way, LOINC codes provide universal identifiers that allow the exchange of clinical data between heterogeneous computing environments.",
+    "oids" : ["2.16.840.1.113883.6.1"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-consent-content-code.html" : "Consent Content Codes"
   },
   {
     "url" : "http://snomed.info/sct",
@@ -128,10 +144,10 @@
     "oids" : ["2.16.840.1.113883.6.96"],
     "uses" : {
     },
-    "http://hl7.org/fhir/R4/valueset-clinical-findings.html" : "SNOMED CT Clinical Findings",
     "http://hl7.org/fhir/R4/valueset-body-site.html" : "SNOMED CT Body Structures",
-    "http://hl7.org/fhir/R4/valueset-device-kind.html" : "FHIR Device Types",
-    "http://hl7.org/fhir/R4/valueset-performer-role.html" : "Procedure Performer Role Codes"
+    "http://hl7.org/fhir/R4/valueset-clinical-findings.html" : "SNOMED CT Clinical Findings",
+    "http://hl7.org/fhir/R4/valueset-performer-role.html" : "Procedure Performer Role Codes",
+    "http://hl7.org/fhir/R4/valueset-device-kind.html" : "FHIR Device Types"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/chargeitem-billingcodes",
@@ -250,8 +266,8 @@
     "oids" : ["2.16.840.1.113883.18.108"],
     "uses" : {
     },
-    "https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/ValueSet/identifier-type-de-basis" : "Identifier Type DeBasis ValueSet",
-    "http://hl7.org/fhir/R4/valueset-identifier-type.html" : "IdentifierType"
+    "http://hl7.org/fhir/R4/valueset-identifier-type.html" : "IdentifierType",
+    "https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/ValueSet/identifier-type-de-basis" : "Identifier Type DeBasis ValueSet"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
@@ -369,5 +385,27 @@
     "uses" : {
     },
     "ValueSet-tiflow-chargeitem-operation-outcome-details-vs.html" : "TIFLOW ChargeItem Operation Outcome Details VS"
+  },
+  {
+    "url" : "https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs",
+    "version" : "1.0.0-draft",
+    "status" : "draft",
+    "name" : "TIFLOWOperationOutcomeDetailsCS",
+    "title" : "TIFLOW Operation Outcome Details CS",
+    "description" : "Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können",
+    "uses" : {
+    },
+    "ValueSet-tiflow-chargeitem-operation-outcome-details-vs.html" : "TIFLOW ChargeItem Operation Outcome Details VS"
+  },
+  {
+    "url" : "urn:ietf:bcp:47",
+    "version" : "2.0.1",
+    "status" : "active",
+    "name" : "Ietf3066",
+    "title" : "Tags for the Identification of Languages",
+    "description" : "Older value from OID registry.  Superceded; see recommendations in BCP-47.",
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-languages.html" : "Common Languages"
   }]
 }

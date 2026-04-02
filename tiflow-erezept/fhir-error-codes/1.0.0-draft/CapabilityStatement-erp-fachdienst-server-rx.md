@@ -32,1070 +32,6 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
   "extension" : [{
     "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-base-url",
     "valueString" : "https://tiflow.de"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "TODO: description for SVC_VALIDATION_FAILED"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "SVC_VALIDATION_FAILED"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "403 - Forbidden"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Access code mismatch"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_ACCESSCODE_MISMATCH"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "403 - Forbidden"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Access role not allowed"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Coverage type mismatch"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_COVERAGE_TYPE_MISMATCH"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Flow type mismatch"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_FLOWTYPE_MISMATCH"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "IKNR invalid"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_IKNR_INVALID"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "KVNR invalid"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_KVNR_INVALID"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "LANR or ZANR invalid"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_LANR_ZANR_INVALID"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "TODO: add description for TIFLOW_RX_DRUG_CATEGORY_FORBIDDEN"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_RX_DRUG_CATEGORY_FORBIDDEN"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "TODO: add description for TIFLOW_RX_MVO_ENDDATE_INVALID"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_RX_MVO_ENDDATE_INVALID"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "TODO: add description for TIFLOW_RX_MVO_FLOWTYPE_INVALID"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_RX_MVO_FLOWTYPE_INVALID"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "TODO: add description for TIFLOW_RX_MVO_ID_INVALID"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_RX_MVO_ID_INVALID"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "TODO: add description for TIFLOW_RX_MVO_INVALID"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_RX_MVO_INVALID"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "TODO: add description for TIFLOW_RX_MVO_STARTDATE_INVALID"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_RX_MVO_STARTDATE_INVALID"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "TODO: add description for TIFLOW_RX_PZN_INVALID"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_RX_PZN_INVALID"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Signature authoredOn mismatch"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_SIGNATURE_AUTHOREDON_MISMATCH"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Signature invalid"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_SIGNATURE_INVALID"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Signature issuing role invalid"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Task status mismatch"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_TASK_STATUS_MISMATCH"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Certificate invalid"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_CERTIFICATE_INVALID"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Drug category forbidden"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_EREZEPT_DRUG_CATEGORY_FORBIDDEN"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "MVO end date invalid"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_EREZEPT_MVO_ENDDATE_INVALID"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "MVO flow type invalid"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_EREZEPT_MVO_FLOWTYPE_INVALID"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "MVO id invalid"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_EREZEPT_MVO_ID_INVALID"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "MVO invalid"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_EREZEPT_MVO_INVALID"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "MVO start date invalid"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_EREZEPT_MVO_STARTDATE_INVALID"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "PZN invalid"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_EREZEPT_PZN_INVALID"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "512 - OCSP Backend Error"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Invalid OCSP response"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_OCSP_BACKEND_ERROR"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "403 - Forbidden"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Access code mismatch"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_ACCESSCODE_MISMATCH"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "403 - Forbidden"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Access role not allowed"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "403 - Forbidden"
-    },
-    {
-      "url" : "description",
-      "valueString" : "TODO: add description for TIFLOW_RX_MVO_NOT_VALID"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_RX_MVO_NOT_VALID"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "410 - Gone"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Task deleted"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_TASK_DELETED"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Task expired"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_TASK_EXPIRED"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Task status mismatch"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_TASK_STATUS_MISMATCH"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "403 - Forbidden"
-    },
-    {
-      "url" : "description",
-      "valueString" : "MVO not valid yet"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_EREZEPT_MVO_NOT_VALID"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "412 - Precondition Failed"
-    },
-    {
-      "url" : "description",
-      "valueString" : "TODO: add description for TIFLOW_INVALID_TASK_STATUS"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_INVALID_TASK_STATUS"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "403 - Forbidden"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Task secret mismatch"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_SECRET_MISMATCH"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "403 - Forbidden"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Access role not allowed"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Task status mismatch"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_TASK_STATUS_MISMATCH"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "TODO: description for SVC_VALIDATION_FAILED"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "SVC_VALIDATION_FAILED"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Unzulässige Dispensierinformationen"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_INVALID_MEDICATION_DISPENSE"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "412 - Precondition Failed"
-    },
-    {
-      "url" : "description",
-      "valueString" : "TODO: add description for TIFLOW_INVALID_TASK_STATUS"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_INVALID_TASK_STATUS"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "403 - Forbidden"
-    },
-    {
-      "url" : "description",
-      "valueString" : "MedicationDispense missing"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_MEDICATION_DISPENSE_MISSING"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "403 - Forbidden"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Task secret mismatch"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_SECRET_MISMATCH"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "503 - Service Unavailable"
-    },
-    {
-      "url" : "description",
-      "valueString" : "No OCSP response for signature"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_SIGNATURE_NO_OCSP_RESPONSE"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "MedicationDispense invalid"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_MEDICATION_DISPENSE_INVALID"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Task status mismatch"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_TASK_STATUS_MISMATCH"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "403 - Forbidden"
-    },
-    {
-      "url" : "description",
-      "valueString" : "TODO: description for SVC_IDENTITY_MISMATCH"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "SVC_IDENTITY_MISMATCH"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "403 - Forbidden"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Access code mismatch"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_ACCESSCODE_MISMATCH"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "403 - Forbidden"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Access role not allowed"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "403 - Forbidden"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Task secret mismatch"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_SECRET_MISMATCH"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Task status mismatch"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_TASK_STATUS_MISMATCH"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "TODO: description for SVC_VALIDATION_FAILED"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "SVC_VALIDATION_FAILED"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "403 - Forbidden"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Access role not allowed"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "403 - Forbidden"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Task secret mismatch"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_SECRET_MISMATCH"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Task status mismatch"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_TASK_STATUS_MISMATCH"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
   }],
   "url" : "https://gematik.de/fhir/tiflow/erezept/CapabilityStatement/erp-fachdienst-server-rx",
   "version" : "1.0.0-draft",
@@ -1144,187 +80,6 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
           "valueCode" : "SHALL"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "200"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Successful operation"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "401"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Authentication is required and has failed or has not yet been provided"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_AUTH_REQUIRED"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "400"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Unknown search parameter"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_PARAM_UNKNOWN"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "400"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Invalid query parameter(s)"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_BAD_SYNTAX"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "405"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Method not allowed for this endpoint"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_OP_NOT_ALLOWED"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "408"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Request timeout"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "429"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Too many requests"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_RATE_LIMIT"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "500"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Internal server error"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "404"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Unknown resource type"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_UNKNOWN_TYPE"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        }],
-        "code" : "search-type"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "200"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Successful operation"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
@@ -1405,6 +160,244 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
         {
           "extension" : [{
             "url" : "statusCode",
+            "valueString" : "429"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Too many requests"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_RATE_LIMIT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "500"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Internal server error"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_INTERNAL_ERROR"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "200"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Successful operation"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Unknown search parameter"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_PARAM_UNKNOWN"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Invalid query parameter(s)"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_BAD_SYNTAX"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "404"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Unknown resource type"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_UNKNOWN_TYPE"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        }],
+        "code" : "search-type"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "401"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Authentication is required and has failed or has not yet been provided"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_AUTH_REQUIRED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Invalid request"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_BAD_FORMAT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "405"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Method not allowed for this endpoint"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_OP_NOT_ALLOWED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "408"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Request timeout"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_TIMEOUT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "429"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Too many requests"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_RATE_LIMIT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "500"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Internal server error"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_INTERNAL_ERROR"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "200"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Successful operation"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
             "valueString" : "404"
           },
           {
@@ -1456,44 +449,6 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           {
             "url" : "errorCode",
             "valueString" : "MSG_DELETED"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "429"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Too many requests"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_RATE_LIMIT"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "500"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Internal server error"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         }],
@@ -1599,6 +554,82 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "description",
+            "valueString" : "FHIR Profile Validation Failed"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "SVC_VALIDATION_FAILED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "405"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Method not allowed for this endpoint"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_OP_NOT_ALLOWED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "404"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Unknown resource type"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_UNKNOWN_TYPE"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "401"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Authentication is required and has failed or has not yet been provided"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_AUTH_REQUIRED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
             "valueString" : "Invalid request"
           },
           {
@@ -1614,11 +645,11 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "404"
+            "valueString" : "405"
           },
           {
             "url" : "description",
-            "valueString" : "Resource is not known"
+            "valueString" : "Method not allowed for this endpoint"
           },
           {
             "url" : "responseType",
@@ -1626,18 +657,18 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_RESOURCE_ID_FAIL"
+            "valueString" : "MSG_OP_NOT_ALLOWED"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "410"
+            "valueString" : "408"
           },
           {
             "url" : "description",
-            "valueString" : "Resource was deleted"
+            "valueString" : "Request timeout"
           },
           {
             "url" : "responseType",
@@ -1645,18 +676,18 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_DELETED"
+            "valueString" : "MSG_TIMEOUT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "400 - Bad Request"
+            "valueString" : "429"
           },
           {
             "url" : "description",
-            "valueString" : "TODO: description for SVC_VALIDATION_FAILED"
+            "valueString" : "Too many requests"
           },
           {
             "url" : "responseType",
@@ -1664,12 +695,31 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "SVC_VALIDATION_FAILED"
+            "valueString" : "MSG_RATE_LIMIT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "500"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Internal server error"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         }],
         "name" : "create",
-        "definition" : "$op-create",
+        "definition" : "https://gematik.de/fhir/erp/OperationDefinition/CreateOperationDefinition",
         "documentation" : "Creates a Task for a specific flow type"
       },
       {
@@ -1695,7 +745,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "description",
-            "valueString" : "Invalid request"
+            "valueString" : "FHIR Profile Validation Failed"
           },
           {
             "url" : "responseType",
@@ -1703,7 +753,387 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_BAD_FORMAT"
+            "valueString" : "SVC_VALIDATION_FAILED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "403"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Access code mismatch"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_ACCESSCODE_MISMATCH"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "403"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Access role not allowed"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Coverage type mismatch"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_COVERAGE_TYPE_MISMATCH"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Flow type mismatch"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_FLOWTYPE_MISMATCH"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "IKNR invalid"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_IKNR_INVALID"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "KVNR invalid"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_KVNR_INVALID"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "LANR or ZANR invalid"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_LANR_ZANR_INVALID"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Signature authoredOn mismatch"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_SIGNATURE_AUTHOREDON_MISMATCH"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Signature invalid"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_SIGNATURE_INVALID"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Signature issuing role invalid"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Task status mismatch"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_TASK_STATUS_MISMATCH"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Certificate invalid"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_CERTIFICATE_INVALID"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Drug category forbidden"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_EREZEPT_DRUG_CATEGORY_FORBIDDEN"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "MVO end date invalid"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_EREZEPT_MVO_ENDDATE_INVALID"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "MVO flow type invalid"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_EREZEPT_MVO_FLOWTYPE_INVALID"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "MVO id invalid"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_EREZEPT_MVO_ID_INVALID"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "MVO invalid"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_EREZEPT_MVO_INVALID"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "MVO start date invalid"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_EREZEPT_MVO_STARTDATE_INVALID"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "PZN invalid"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_EREZEPT_PZN_INVALID"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "512"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Invalid OCSP response"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_OCSP_BACKEND_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -1744,9 +1174,123 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
             "valueString" : "MSG_DELETED"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "401"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Authentication is required and has failed or has not yet been provided"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_AUTH_REQUIRED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Invalid request"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_BAD_FORMAT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "405"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Method not allowed for this endpoint"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_OP_NOT_ALLOWED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "408"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Request timeout"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_TIMEOUT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "429"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Too many requests"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_RATE_LIMIT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "500"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Internal server error"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_INTERNAL_ERROR"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         }],
         "name" : "activate",
-        "definition" : "$op-activate",
+        "definition" : "https://gematik.de/fhir/erp/OperationDefinition/ActivateOperationDefinition",
         "documentation" : "Activates the created Task using the signed ePrescription bundle"
       },
       {
@@ -1768,11 +1312,11 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "400"
+            "valueString" : "403"
           },
           {
             "url" : "description",
-            "valueString" : "Invalid request"
+            "valueString" : "Access code mismatch"
           },
           {
             "url" : "responseType",
@@ -1780,7 +1324,102 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_BAD_FORMAT"
+            "valueString" : "TIFLOW_ACCESSCODE_MISMATCH"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "403"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Access role not allowed"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "410"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Task deleted"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_TASK_DELETED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Task expired"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_TASK_EXPIRED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Task status mismatch"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_TASK_STATUS_MISMATCH"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "403"
+          },
+          {
+            "url" : "description",
+            "valueString" : "MVO not valid yet"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_EREZEPT_MVO_NOT_VALID"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -1821,9 +1460,123 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
             "valueString" : "MSG_DELETED"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "401"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Authentication is required and has failed or has not yet been provided"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_AUTH_REQUIRED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Invalid request"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_BAD_FORMAT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "405"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Method not allowed for this endpoint"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_OP_NOT_ALLOWED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "408"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Request timeout"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_TIMEOUT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "429"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Too many requests"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_RATE_LIMIT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "500"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Internal server error"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_INTERNAL_ERROR"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         }],
         "name" : "accept",
-        "definition" : "$op-accept",
+        "definition" : "https://gematik.de/fhir/erp/OperationDefinition/AcceptOperationDefinition",
         "documentation" : "Pharmacy claims an ePrescription and sets Task status to in-progress"
       },
       {
@@ -1845,11 +1598,11 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "400"
+            "valueString" : "403"
           },
           {
             "url" : "description",
-            "valueString" : "Invalid request"
+            "valueString" : "Task secret mismatch"
           },
           {
             "url" : "responseType",
@@ -1857,7 +1610,45 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_BAD_FORMAT"
+            "valueString" : "TIFLOW_SECRET_MISMATCH"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "403"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Access role not allowed"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Task status mismatch"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_TASK_STATUS_MISMATCH"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -1898,9 +1689,123 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
             "valueString" : "MSG_DELETED"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "401"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Authentication is required and has failed or has not yet been provided"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_AUTH_REQUIRED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Invalid request"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_BAD_FORMAT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "405"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Method not allowed for this endpoint"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_OP_NOT_ALLOWED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "408"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Request timeout"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_TIMEOUT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "429"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Too many requests"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_RATE_LIMIT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "500"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Internal server error"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_INTERNAL_ERROR"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         }],
         "name" : "reject",
-        "definition" : "$op-reject",
+        "definition" : "https://gematik.de/fhir/erp/OperationDefinition/RejectOperationDefinition",
         "documentation" : "Rejects dispensing and resets Task status to active"
       },
       {
@@ -1926,7 +1831,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "description",
-            "valueString" : "Invalid request"
+            "valueString" : "FHIR Profile Validation Failed"
           },
           {
             "url" : "responseType",
@@ -1934,7 +1839,102 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_BAD_FORMAT"
+            "valueString" : "SVC_VALIDATION_FAILED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "403"
+          },
+          {
+            "url" : "description",
+            "valueString" : "MedicationDispense missing"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_MEDICATION_DISPENSE_MISSING"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "403"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Task secret mismatch"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_SECRET_MISMATCH"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "503"
+          },
+          {
+            "url" : "description",
+            "valueString" : "No OCSP response for signature"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_SIGNATURE_NO_OCSP_RESPONSE"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "MedicationDispense invalid"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_MEDICATION_DISPENSE_INVALID"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Task status mismatch"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_TASK_STATUS_MISMATCH"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -1975,24 +1975,23 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
             "valueString" : "MSG_DELETED"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        }],
-        "name" : "close",
-        "definition" : "$op-close",
-        "documentation" : "Finishes the ePrescription workflow and sets Task status to completed"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
         },
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "204"
+            "valueString" : "401"
           },
           {
             "url" : "description",
-            "valueString" : "Successful operation without response body"
+            "valueString" : "Authentication is required and has failed or has not yet been provided"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_AUTH_REQUIRED"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -2018,6 +2017,197 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
         {
           "extension" : [{
             "url" : "statusCode",
+            "valueString" : "405"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Method not allowed for this endpoint"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_OP_NOT_ALLOWED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "408"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Request timeout"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_TIMEOUT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "429"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Too many requests"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_RATE_LIMIT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "500"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Internal server error"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_INTERNAL_ERROR"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        }],
+        "name" : "close",
+        "definition" : "https://gematik.de/fhir/erp/OperationDefinition/CloseOperationDefinition",
+        "documentation" : "Finishes the ePrescription workflow and sets Task status to completed"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "204"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Successful operation without response body"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "403"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Identity mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID / KVNR)"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "SVC_IDENTITY_MISMATCH"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "403"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Access code mismatch"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_ACCESSCODE_MISMATCH"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "403"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Access role not allowed"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "403"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Task secret mismatch"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_SECRET_MISMATCH"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Task status mismatch"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_TASK_STATUS_MISMATCH"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
             "valueString" : "404"
           },
           {
@@ -2052,9 +2242,123 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
             "valueString" : "MSG_DELETED"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "401"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Authentication is required and has failed or has not yet been provided"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_AUTH_REQUIRED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Invalid request"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_BAD_FORMAT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "405"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Method not allowed for this endpoint"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_OP_NOT_ALLOWED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "408"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Request timeout"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_TIMEOUT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "429"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Too many requests"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_RATE_LIMIT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "500"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Internal server error"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_INTERNAL_ERROR"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         }],
         "name" : "abort",
-        "definition" : "$op-abort",
+        "definition" : "https://gematik.de/fhir/erp/OperationDefinition/AbortOperationDefinition",
         "documentation" : "Aborts the ePrescription workflow and deletes Task related data"
       },
       {
@@ -2080,7 +2384,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "description",
-            "valueString" : "Invalid request"
+            "valueString" : "FHIR Profile Validation Failed"
           },
           {
             "url" : "responseType",
@@ -2088,7 +2392,64 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_BAD_FORMAT"
+            "valueString" : "SVC_VALIDATION_FAILED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "403"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Access role not allowed"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "403"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Task secret mismatch"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_SECRET_MISMATCH"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Task status mismatch"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_TASK_STATUS_MISMATCH"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -2129,9 +2490,123 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
             "valueString" : "MSG_DELETED"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "401"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Authentication is required and has failed or has not yet been provided"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_AUTH_REQUIRED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Invalid request"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_BAD_FORMAT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "405"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Method not allowed for this endpoint"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_OP_NOT_ALLOWED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "408"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Request timeout"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_TIMEOUT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "429"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Too many requests"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_RATE_LIMIT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "500"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Internal server error"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_INTERNAL_ERROR"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         }],
         "name" : "dispense",
-        "definition" : "$op-dispense",
+        "definition" : "https://gematik.de/fhir/erp/OperationDefinition/DispenseOperationDefinition",
         "documentation" : "Documents medication dispensation without changing Task status"
       }]
     },
@@ -2177,17 +2652,6 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "200"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Successful operation"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
             "valueString" : "401"
           },
           {
@@ -2211,7 +2675,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "description",
-            "valueString" : "Unknown search parameter"
+            "valueString" : "Invalid request"
           },
           {
             "url" : "responseType",
@@ -2219,26 +2683,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_PARAM_UNKNOWN"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "400"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Invalid query parameter(s)"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_BAD_SYNTAX"
+            "valueString" : "MSG_BAD_FORMAT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -2321,6 +2766,55 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
         {
           "extension" : [{
             "url" : "statusCode",
+            "valueString" : "200"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Successful operation"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Unknown search parameter"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_PARAM_UNKNOWN"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Invalid query parameter(s)"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_BAD_SYNTAX"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
             "valueString" : "404"
           },
           {
@@ -2343,17 +2837,6 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
           "valueCode" : "SHALL"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "200"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Successful operation"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
@@ -2428,6 +2911,55 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           {
             "url" : "errorCode",
             "valueString" : "MSG_TIMEOUT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "429"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Too many requests"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_RATE_LIMIT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "500"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Internal server error"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_INTERNAL_ERROR"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "200"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Successful operation"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -2487,6 +3019,89 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
             "valueString" : "MSG_DELETED"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        }],
+        "code" : "read"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "401"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Authentication is required and has failed or has not yet been provided"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_AUTH_REQUIRED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Invalid request"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_BAD_FORMAT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "405"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Method not allowed for this endpoint"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_OP_NOT_ALLOWED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "408"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Request timeout"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_TIMEOUT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
@@ -2525,13 +3140,6 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
             "valueString" : "MSG_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        }],
-        "code" : "read"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
         },
         {
           "extension" : [{
@@ -2541,25 +3149,6 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           {
             "url" : "description",
             "valueString" : "Resource created"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "400"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Invalid request"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_BAD_FORMAT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -2592,11 +3181,19 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "204"
+            "valueString" : "401"
           },
           {
             "url" : "description",
-            "valueString" : "Successful operation without response body"
+            "valueString" : "Authentication is required and has failed or has not yet been provided"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_AUTH_REQUIRED"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -2616,6 +3213,93 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           {
             "url" : "errorCode",
             "valueString" : "MSG_BAD_FORMAT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "405"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Method not allowed for this endpoint"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_OP_NOT_ALLOWED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "408"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Request timeout"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_TIMEOUT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "429"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Too many requests"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_RATE_LIMIT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "500"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Internal server error"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_INTERNAL_ERROR"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "204"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Successful operation without response body"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -2769,17 +3453,6 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "200"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Successful operation"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
             "valueString" : "401"
           },
           {
@@ -2803,7 +3476,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "description",
-            "valueString" : "Unknown search parameter"
+            "valueString" : "Invalid request"
           },
           {
             "url" : "responseType",
@@ -2811,26 +3484,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_PARAM_UNKNOWN"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "400"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Invalid query parameter(s)"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_BAD_SYNTAX"
+            "valueString" : "MSG_BAD_FORMAT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -2913,6 +3567,55 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
         {
           "extension" : [{
             "url" : "statusCode",
+            "valueString" : "200"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Successful operation"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Unknown search parameter"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_PARAM_UNKNOWN"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Invalid query parameter(s)"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_BAD_SYNTAX"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
             "valueString" : "404"
           },
           {
@@ -2935,17 +3638,6 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
           "valueCode" : "SHALL"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "200"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Successful operation"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
@@ -3026,6 +3718,55 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
         {
           "extension" : [{
             "url" : "statusCode",
+            "valueString" : "429"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Too many requests"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_RATE_LIMIT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "500"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Internal server error"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_INTERNAL_ERROR"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "200"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Successful operation"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
             "valueString" : "404"
           },
           {
@@ -3077,44 +3818,6 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           {
             "url" : "errorCode",
             "valueString" : "MSG_DELETED"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "429"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Too many requests"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_RATE_LIMIT"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "500"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Internal server error"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         }],

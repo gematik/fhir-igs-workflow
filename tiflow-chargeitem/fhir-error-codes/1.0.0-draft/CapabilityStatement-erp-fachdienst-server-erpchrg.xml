@@ -58,160 +58,28 @@
       <interaction>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
           <extension url="statusCode">
-            <valueString value="200"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Successful operation"/>
-          </extension>
-          <valueCode value="SHALL"/>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
             <valueString value="401"/>
           </extension>
           <extension url="description">
             <valueString value="Authentication is required and has failed or has not yet been provided"/>
           </extension>
           <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
+            <valueString value="TIFlowOperationOutcome"/>
           </extension>
           <extension url="errorCode">
             <valueString value="MSG_AUTH_REQUIRED"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="400"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Unknown search parameter"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_PARAM_UNKNOWN"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="400"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Invalid query parameter(s)"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_BAD_SYNTAX"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="405"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Method not allowed for this endpoint"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_OP_NOT_ALLOWED"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="408"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Request timeout"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_TIMEOUT"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="429"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Too many requests"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_RATE_LIMIT"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="500"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Internal server error"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_INTERNAL_ERROR"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="404"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Unknown resource type"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_UNKNOWN_TYPE"/>
-          </extension>
-        </extension>
-        <code value="search-type"/>
-      </interaction>
-      <interaction>
-        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-          <extension url="statusCode">
-            <valueString value="200"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Successful operation"/>
           </extension>
           <valueCode value="SHALL"/>
         </extension>
         <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
           <extension url="statusCode">
-            <valueString value="401"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Authentication is required and has failed or has not yet been provided"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_AUTH_REQUIRED"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
             <valueString value="400"/>
           </extension>
           <extension url="description">
-            <valueString value="Invalid request"/>
+            <valueString value="Invalid request format"/>
           </extension>
           <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
+            <valueString value="TIFlowOperationOutcome"/>
           </extension>
           <extension url="errorCode">
             <valueString value="MSG_BAD_FORMAT"/>
@@ -225,7 +93,7 @@
             <valueString value="Method not allowed for this endpoint"/>
           </extension>
           <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
+            <valueString value="TIFlowOperationOutcome"/>
           </extension>
           <extension url="errorCode">
             <valueString value="MSG_OP_NOT_ALLOWED"/>
@@ -239,52 +107,10 @@
             <valueString value="Request timeout"/>
           </extension>
           <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
+            <valueString value="TIFlowOperationOutcome"/>
           </extension>
           <extension url="errorCode">
             <valueString value="MSG_TIMEOUT"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="404"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Unknown resource type"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_UNKNOWN_TYPE"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="404"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Resource is not known"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_RESOURCE_ID_FAIL"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="410"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Resource was deleted"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_DELETED"/>
           </extension>
         </extension>
         <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
@@ -295,7 +121,7 @@
             <valueString value="Too many requests"/>
           </extension>
           <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
+            <valueString value="TIFlowOperationOutcome"/>
           </extension>
           <extension url="errorCode">
             <valueString value="MSG_RATE_LIMIT"/>
@@ -309,10 +135,198 @@
             <valueString value="Internal server error"/>
           </extension>
           <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
+            <valueString value="TIFlowOperationOutcome"/>
           </extension>
           <extension url="errorCode">
             <valueString value="MSG_INTERNAL_ERROR"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="200"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Successful operation"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown search parameter"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_PARAM_UNKNOWN"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Invalid query parameter(s)"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_BAD_SYNTAX"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown resource type"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_UNKNOWN_TYPE"/>
+          </extension>
+        </extension>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <extension url="statusCode">
+            <valueString value="401"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Authentication is required and has failed or has not yet been provided"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_AUTH_REQUIRED"/>
+          </extension>
+          <valueCode value="SHALL"/>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Invalid request format"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_BAD_FORMAT"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="405"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Method not allowed for this endpoint"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_OP_NOT_ALLOWED"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="408"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Request timeout"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_TIMEOUT"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="429"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Too many requests"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_RATE_LIMIT"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="500"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Internal server error"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_INTERNAL_ERROR"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="200"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Successful operation"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown resource type"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_UNKNOWN_TYPE"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Resource is not known"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_RESOURCE_ID_FAIL"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="410"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Resource was deleted"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_DELETED"/>
           </extension>
         </extension>
         <code value="read"/>
@@ -333,160 +347,28 @@
       <interaction>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
           <extension url="statusCode">
-            <valueString value="200"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Successful operation"/>
-          </extension>
-          <valueCode value="SHALL"/>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
             <valueString value="401"/>
           </extension>
           <extension url="description">
             <valueString value="Authentication is required and has failed or has not yet been provided"/>
           </extension>
           <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
+            <valueString value="TIFlowOperationOutcome"/>
           </extension>
           <extension url="errorCode">
             <valueString value="MSG_AUTH_REQUIRED"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="400"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Unknown search parameter"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_PARAM_UNKNOWN"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="400"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Invalid query parameter(s)"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_BAD_SYNTAX"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="405"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Method not allowed for this endpoint"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_OP_NOT_ALLOWED"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="408"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Request timeout"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_TIMEOUT"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="429"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Too many requests"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_RATE_LIMIT"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="500"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Internal server error"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_INTERNAL_ERROR"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="404"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Unknown resource type"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_UNKNOWN_TYPE"/>
-          </extension>
-        </extension>
-        <code value="search-type"/>
-      </interaction>
-      <interaction>
-        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-          <extension url="statusCode">
-            <valueString value="200"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Successful operation"/>
           </extension>
           <valueCode value="SHALL"/>
         </extension>
         <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
           <extension url="statusCode">
-            <valueString value="401"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Authentication is required and has failed or has not yet been provided"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_AUTH_REQUIRED"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
             <valueString value="400"/>
           </extension>
           <extension url="description">
-            <valueString value="Invalid request"/>
+            <valueString value="Invalid request format"/>
           </extension>
           <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
+            <valueString value="TIFlowOperationOutcome"/>
           </extension>
           <extension url="errorCode">
             <valueString value="MSG_BAD_FORMAT"/>
@@ -500,7 +382,7 @@
             <valueString value="Method not allowed for this endpoint"/>
           </extension>
           <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
+            <valueString value="TIFlowOperationOutcome"/>
           </extension>
           <extension url="errorCode">
             <valueString value="MSG_OP_NOT_ALLOWED"/>
@@ -514,52 +396,10 @@
             <valueString value="Request timeout"/>
           </extension>
           <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
+            <valueString value="TIFlowOperationOutcome"/>
           </extension>
           <extension url="errorCode">
             <valueString value="MSG_TIMEOUT"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="404"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Unknown resource type"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_UNKNOWN_TYPE"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="404"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Resource is not known"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_RESOURCE_ID_FAIL"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="410"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Resource was deleted"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_DELETED"/>
           </extension>
         </extension>
         <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
@@ -570,7 +410,7 @@
             <valueString value="Too many requests"/>
           </extension>
           <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
+            <valueString value="TIFlowOperationOutcome"/>
           </extension>
           <extension url="errorCode">
             <valueString value="MSG_RATE_LIMIT"/>
@@ -584,10 +424,198 @@
             <valueString value="Internal server error"/>
           </extension>
           <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
+            <valueString value="TIFlowOperationOutcome"/>
           </extension>
           <extension url="errorCode">
             <valueString value="MSG_INTERNAL_ERROR"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="200"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Successful operation"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown search parameter"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_PARAM_UNKNOWN"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Invalid query parameter(s)"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_BAD_SYNTAX"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown resource type"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_UNKNOWN_TYPE"/>
+          </extension>
+        </extension>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <extension url="statusCode">
+            <valueString value="401"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Authentication is required and has failed or has not yet been provided"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_AUTH_REQUIRED"/>
+          </extension>
+          <valueCode value="SHALL"/>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Invalid request format"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_BAD_FORMAT"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="405"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Method not allowed for this endpoint"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_OP_NOT_ALLOWED"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="408"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Request timeout"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_TIMEOUT"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="429"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Too many requests"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_RATE_LIMIT"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="500"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Internal server error"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_INTERNAL_ERROR"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="200"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Successful operation"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown resource type"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_UNKNOWN_TYPE"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Resource is not known"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_RESOURCE_ID_FAIL"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="410"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Resource was deleted"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_DELETED"/>
           </extension>
         </extension>
         <code value="read"/>
@@ -650,160 +678,28 @@
       <interaction>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
           <extension url="statusCode">
-            <valueString value="200"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Successful operation"/>
-          </extension>
-          <valueCode value="SHALL"/>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
             <valueString value="401"/>
           </extension>
           <extension url="description">
             <valueString value="Authentication is required and has failed or has not yet been provided"/>
           </extension>
           <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
+            <valueString value="TIFlowOperationOutcome"/>
           </extension>
           <extension url="errorCode">
             <valueString value="MSG_AUTH_REQUIRED"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="400"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Unknown search parameter"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_PARAM_UNKNOWN"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="400"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Invalid query parameter(s)"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_BAD_SYNTAX"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="405"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Method not allowed for this endpoint"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_OP_NOT_ALLOWED"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="408"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Request timeout"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_TIMEOUT"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="429"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Too many requests"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_RATE_LIMIT"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="500"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Internal server error"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_INTERNAL_ERROR"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="404"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Unknown resource type"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_UNKNOWN_TYPE"/>
-          </extension>
-        </extension>
-        <code value="search-type"/>
-      </interaction>
-      <interaction>
-        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-          <extension url="statusCode">
-            <valueString value="200"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Successful operation"/>
           </extension>
           <valueCode value="SHALL"/>
         </extension>
         <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
           <extension url="statusCode">
-            <valueString value="401"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Authentication is required and has failed or has not yet been provided"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_AUTH_REQUIRED"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
             <valueString value="400"/>
           </extension>
           <extension url="description">
-            <valueString value="Invalid request"/>
+            <valueString value="Invalid request format"/>
           </extension>
           <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
+            <valueString value="TIFlowOperationOutcome"/>
           </extension>
           <extension url="errorCode">
             <valueString value="MSG_BAD_FORMAT"/>
@@ -817,7 +713,7 @@
             <valueString value="Method not allowed for this endpoint"/>
           </extension>
           <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
+            <valueString value="TIFlowOperationOutcome"/>
           </extension>
           <extension url="errorCode">
             <valueString value="MSG_OP_NOT_ALLOWED"/>
@@ -831,52 +727,10 @@
             <valueString value="Request timeout"/>
           </extension>
           <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
+            <valueString value="TIFlowOperationOutcome"/>
           </extension>
           <extension url="errorCode">
             <valueString value="MSG_TIMEOUT"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="404"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Unknown resource type"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_UNKNOWN_TYPE"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="404"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Resource is not known"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_RESOURCE_ID_FAIL"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="410"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Resource was deleted"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_DELETED"/>
           </extension>
         </extension>
         <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
@@ -887,7 +741,7 @@
             <valueString value="Too many requests"/>
           </extension>
           <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
+            <valueString value="TIFlowOperationOutcome"/>
           </extension>
           <extension url="errorCode">
             <valueString value="MSG_RATE_LIMIT"/>
@@ -901,10 +755,198 @@
             <valueString value="Internal server error"/>
           </extension>
           <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
+            <valueString value="TIFlowOperationOutcome"/>
           </extension>
           <extension url="errorCode">
             <valueString value="MSG_INTERNAL_ERROR"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="200"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Successful operation"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown search parameter"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_PARAM_UNKNOWN"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Invalid query parameter(s)"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_BAD_SYNTAX"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown resource type"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_UNKNOWN_TYPE"/>
+          </extension>
+        </extension>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <extension url="statusCode">
+            <valueString value="401"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Authentication is required and has failed or has not yet been provided"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_AUTH_REQUIRED"/>
+          </extension>
+          <valueCode value="SHALL"/>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Invalid request format"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_BAD_FORMAT"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="405"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Method not allowed for this endpoint"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_OP_NOT_ALLOWED"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="408"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Request timeout"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_TIMEOUT"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="429"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Too many requests"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_RATE_LIMIT"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="500"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Internal server error"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_INTERNAL_ERROR"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="200"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Successful operation"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown resource type"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_UNKNOWN_TYPE"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Resource is not known"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_RESOURCE_ID_FAIL"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="410"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Resource was deleted"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_DELETED"/>
           </extension>
         </extension>
         <code value="read"/>
@@ -939,160 +981,28 @@
       <interaction>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
           <extension url="statusCode">
-            <valueString value="200"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Successful operation"/>
-          </extension>
-          <valueCode value="SHALL"/>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
             <valueString value="401"/>
           </extension>
           <extension url="description">
             <valueString value="Authentication is required and has failed or has not yet been provided"/>
           </extension>
           <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
+            <valueString value="TIFlowOperationOutcome"/>
           </extension>
           <extension url="errorCode">
             <valueString value="MSG_AUTH_REQUIRED"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="400"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Unknown search parameter"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_PARAM_UNKNOWN"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="400"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Invalid query parameter(s)"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_BAD_SYNTAX"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="405"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Method not allowed for this endpoint"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_OP_NOT_ALLOWED"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="408"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Request timeout"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_TIMEOUT"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="429"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Too many requests"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_RATE_LIMIT"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="500"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Internal server error"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_INTERNAL_ERROR"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="404"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Unknown resource type"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_UNKNOWN_TYPE"/>
-          </extension>
-        </extension>
-        <code value="search-type"/>
-      </interaction>
-      <interaction>
-        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-          <extension url="statusCode">
-            <valueString value="200"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Successful operation"/>
           </extension>
           <valueCode value="SHALL"/>
         </extension>
         <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
           <extension url="statusCode">
-            <valueString value="401"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Authentication is required and has failed or has not yet been provided"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_AUTH_REQUIRED"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
             <valueString value="400"/>
           </extension>
           <extension url="description">
-            <valueString value="Invalid request"/>
+            <valueString value="Invalid request format"/>
           </extension>
           <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
+            <valueString value="TIFlowOperationOutcome"/>
           </extension>
           <extension url="errorCode">
             <valueString value="MSG_BAD_FORMAT"/>
@@ -1106,7 +1016,7 @@
             <valueString value="Method not allowed for this endpoint"/>
           </extension>
           <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
+            <valueString value="TIFlowOperationOutcome"/>
           </extension>
           <extension url="errorCode">
             <valueString value="MSG_OP_NOT_ALLOWED"/>
@@ -1120,52 +1030,10 @@
             <valueString value="Request timeout"/>
           </extension>
           <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
+            <valueString value="TIFlowOperationOutcome"/>
           </extension>
           <extension url="errorCode">
             <valueString value="MSG_TIMEOUT"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="404"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Unknown resource type"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_UNKNOWN_TYPE"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="404"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Resource is not known"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_RESOURCE_ID_FAIL"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="410"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Resource was deleted"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_DELETED"/>
           </extension>
         </extension>
         <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
@@ -1176,7 +1044,7 @@
             <valueString value="Too many requests"/>
           </extension>
           <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
+            <valueString value="TIFlowOperationOutcome"/>
           </extension>
           <extension url="errorCode">
             <valueString value="MSG_RATE_LIMIT"/>
@@ -1190,10 +1058,198 @@
             <valueString value="Internal server error"/>
           </extension>
           <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
+            <valueString value="TIFlowOperationOutcome"/>
           </extension>
           <extension url="errorCode">
             <valueString value="MSG_INTERNAL_ERROR"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="200"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Successful operation"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown search parameter"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_PARAM_UNKNOWN"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Invalid query parameter(s)"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_BAD_SYNTAX"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown resource type"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_UNKNOWN_TYPE"/>
+          </extension>
+        </extension>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <extension url="statusCode">
+            <valueString value="401"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Authentication is required and has failed or has not yet been provided"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_AUTH_REQUIRED"/>
+          </extension>
+          <valueCode value="SHALL"/>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Invalid request format"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_BAD_FORMAT"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="405"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Method not allowed for this endpoint"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_OP_NOT_ALLOWED"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="408"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Request timeout"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_TIMEOUT"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="429"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Too many requests"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_RATE_LIMIT"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="500"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Internal server error"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_INTERNAL_ERROR"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="200"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Successful operation"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown resource type"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_UNKNOWN_TYPE"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Resource is not known"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_RESOURCE_ID_FAIL"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="410"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Resource was deleted"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_DELETED"/>
           </extension>
         </extension>
         <code value="read"/>

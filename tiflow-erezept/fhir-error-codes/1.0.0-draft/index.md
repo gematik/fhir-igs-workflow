@@ -148,6 +148,12 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
     "version" : "1.2.0"
   },
   {
+    "id" : "de_gematik_tiflow_core",
+    "uri" : "https://gematik.de/fhir/tiflow/core/ImplementationGuide/de.gematik.tiflow.core",
+    "packageId" : "de.gematik.tiflow.core",
+    "version" : "dev"
+  },
+  {
     "id" : "hl7_fhir_uv_xver_r5_r4",
     "uri" : "http://hl7.org/fhir/5.0/ImplementationGuide/hl7.fhir.uv.xver-r5.r4",
     "packageId" : "hl7.fhir.uv.xver-r5.r4",

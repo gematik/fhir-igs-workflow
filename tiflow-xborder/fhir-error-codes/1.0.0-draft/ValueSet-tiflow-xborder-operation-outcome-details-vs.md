@@ -28,8 +28,6 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
 
 ### Expansion
 
-No Expansion for this valueset (Unknown Code System)
-
 -------
 
  Explanation of the columns that may appear on this page: 
@@ -84,43 +82,55 @@ No Expansion for this valueset (Unknown Code System)
     {
       "system" : "https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs",
       "concept" : [{
-        "code" : "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
+        "code" : "TIFLOW_AUTH_ROLE_NOT_ALLOWED",
+        "display" : "Access role not allowed"
       },
       {
-        "code" : "TIFLOW_CONSENT_REQUIRED"
+        "code" : "TIFLOW_CONSENT_REQUIRED",
+        "display" : "Consent required"
       },
       {
-        "code" : "TIFLOW_ACCESS_PERMISSION_INVALID"
+        "code" : "TIFLOW_ACCESS_PERMISSION_INVALID",
+        "display" : "Access permission invalid"
       },
       {
-        "code" : "TIFLOW_AUTH_NOT_OWNER"
+        "code" : "TIFLOW_AUTH_NOT_OWNER",
+        "display" : "Authenticated actor is not owner"
       },
       {
-        "code" : "TIFLOW_ACCESSCODE_MISMATCH"
+        "code" : "TIFLOW_ACCESSCODE_MISMATCH",
+        "display" : "Access code mismatch"
       },
       {
-        "code" : "TIFLOW_TASK_STATUS_MISMATCH"
+        "code" : "TIFLOW_TASK_STATUS_MISMATCH",
+        "display" : "Task status mismatch"
       },
       {
-        "code" : "TIFLOW_TASK_ID_REQUIRED"
+        "code" : "TIFLOW_TASK_ID_REQUIRED",
+        "display" : "Task id required"
       },
       {
-        "code" : "TIFLOW_KVNR_MISMATCH"
+        "code" : "TIFLOW_KVNR_MISMATCH",
+        "display" : "KVNR mismatch"
       },
       {
-        "code" : "TIFLOW_CONSENT_MISSING"
+        "code" : "TIFLOW_CONSENT_MISSING",
+        "display" : "Consent missing"
       },
       {
-        "code" : "TIFLOW_ACCESS_CODE_INVALID"
+        "code" : "TIFLOW_ACCESS_CODE_INVALID",
+        "display" : "Access code invalid"
       }]
     },
     {
       "system" : "https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes",
       "concept" : [{
-        "code" : "SVC_VALIDATION_FAILED"
+        "code" : "SVC_VALIDATION_FAILED",
+        "display" : "FHIR Profile Validation Failed"
       },
       {
-        "code" : "SVC_TELEMATIKID_TEMPORARILY_BLOCKED"
+        "code" : "SVC_TELEMATIKID_TEMPORARILY_BLOCKED",
+        "display" : "The specified Telematik-ID is temporarily blocked"
       }]
     }]
   }

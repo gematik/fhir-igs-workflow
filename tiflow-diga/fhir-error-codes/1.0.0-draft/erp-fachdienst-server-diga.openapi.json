@@ -791,7 +791,7 @@
       "description": "Operation $create on type Task",
       "post": {
         "summary": "$create on type Task",
-        "description": "Creates a Task for a specific flow type",
+        "description": "Diese Operation erstellt eine Aufgabe für die Verschreibung eines bestimmten Flowtypes.",
         "operationId": "op-create-Task",
         "requestBody": {
           "description": "Operation parameters",
@@ -843,13 +843,18 @@
         }
       }
     },
-    "/Task/$activate": {
-      "summary": "Operation $activate on type Task",
-      "description": "Operation $activate on type Task",
+    "/Task/{rid}/$activate": {
+      "summary": "Operation $activate on instance of Task",
+      "description": "Operation $activate on an instance of Task",
       "post": {
-        "summary": "$activate on type Task",
-        "description": "Activates the created Task using the signed ePrescription bundle",
-        "operationId": "op-activate-Task",
+        "summary": "$activate on Task instance",
+        "description": "Diese Operation aktiviert die erstellte Aufgabe für das Rezept. Der Eingabeparameter muss das qualifizierte signierte Bundle des Rezepts enthalten. Der E-Rezept-Fachdienst validiert das Rezept, aktualisiert die Task-ressource und startet den Workflow.",
+        "operationId": "op-activate-Task-instance",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/rid"
+          }
+        ],
         "requestBody": {
           "description": "Operation parameters",
           "required": false,
@@ -900,13 +905,18 @@
         }
       }
     },
-    "/Task/$accept": {
-      "summary": "Operation $accept on type Task",
-      "description": "Operation $accept on type Task",
+    "/Task/{rid}/$accept": {
+      "summary": "Operation $accept on instance of Task",
+      "description": "Operation $accept on an instance of Task",
       "post": {
-        "summary": "$accept on type Task",
-        "description": "Pharmacy claims an ePrescription and sets Task status to in-progress",
-        "operationId": "op-accept-Task",
+        "summary": "$accept on Task instance",
+        "description": "Mit der $accept-Operation beansprucht eine Apotheke ein E-Rezept. Der Status der referenzierten Aufgabe ändert sich in \u0027in-progress\u0027.",
+        "operationId": "op-accept-Task-instance",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/rid"
+          }
+        ],
         "requestBody": {
           "description": "Operation parameters",
           "required": false,
@@ -957,13 +967,18 @@
         }
       }
     },
-    "/Task/$reject": {
-      "summary": "Operation $reject on type Task",
-      "description": "Operation $reject on type Task",
+    "/Task/{rid}/$reject": {
+      "summary": "Operation $reject on instance of Task",
+      "description": "Operation $reject on an instance of Task",
       "post": {
-        "summary": "$reject on type Task",
-        "description": "Rejects dispensing and resets Task status to active",
-        "operationId": "op-reject-Task",
+        "summary": "$reject on Task instance",
+        "description": "Lehnt die Ausgabe eines E-Rezepts ab. Die Aufgabe wird in einen aktiven Zustand zurückgesetzt, das secret wird gelöscht, und der Task wird für jeden anderen Apotheker zugänglich oder kann vom Patienten gelöscht werden.",
+        "operationId": "op-reject-Task-instance",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/rid"
+          }
+        ],
         "requestBody": {
           "description": "Operation parameters",
           "required": false,
@@ -1014,13 +1029,18 @@
         }
       }
     },
-    "/Task/$close": {
-      "summary": "Operation $close on type Task",
-      "description": "Operation $close on type Task",
+    "/Task/{rid}/$close": {
+      "summary": "Operation $close on instance of Task",
+      "description": "Operation $close on an instance of Task",
       "post": {
-        "summary": "$close on type Task",
-        "description": "Finishes the ePrescription workflow and sets Task status to completed",
-        "operationId": "op-close-Task",
+        "summary": "$close on Task instance",
+        "description": "Die $close-Operation beendet den E-Rezept-Workflow und erstellt eine Quittung. Das Ergebnis dieses Vorgangs ist ein signiertes Bundle, das für weitere finanzielle Verarbeitung verwendet wird. Der Status der Aufgabe ändert sich anschließend in #completed.",
+        "operationId": "op-close-Task-instance",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/rid"
+          }
+        ],
         "requestBody": {
           "description": "Operation parameters",
           "required": false,
@@ -1071,13 +1091,18 @@
         }
       }
     },
-    "/Task/$abort": {
-      "summary": "Operation $abort on type Task",
-      "description": "Operation $abort on type Task",
+    "/Task/{rid}/$abort": {
+      "summary": "Operation $abort on instance of Task",
+      "description": "Operation $abort on an instance of Task",
       "post": {
-        "summary": "$abort on type Task",
-        "description": "Aborts the ePrescription workflow and deletes Task related data",
-        "operationId": "op-abort-Task",
+        "summary": "$abort on Task instance",
+        "description": "Diese Operation bricht den Workflow eines E-Rezepts ab und löscht alle Daten, die mit dieser Aufgabe zusammenhängen.",
+        "operationId": "op-abort-Task-instance",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/rid"
+          }
+        ],
         "requestBody": {
           "description": "Operation parameters",
           "required": false,

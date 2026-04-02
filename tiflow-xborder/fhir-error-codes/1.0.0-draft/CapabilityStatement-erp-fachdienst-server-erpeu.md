@@ -32,253 +32,6 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
   "extension" : [{
     "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-base-url",
     "valueString" : "https://tiflow.de"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "TODO: description for SVC_VALIDATION_FAILED"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "SVC_VALIDATION_FAILED"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "403 - Forbidden"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Access permission invalid"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_ACCESS_PERMISSION_INVALID"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "403 - Forbidden"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Access role not allowed"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "403 - Forbidden"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Consent missing"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_CONSENT_MISSING"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Task status mismatch"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_TASK_STATUS_MISMATCH"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Access code invalid"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_ACCESS_CODE_INVALID"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "403 - Forbidden"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Consent required"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_CONSENT_REQUIRED"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "409 - Conflict"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Country code invalid"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_XBORDER_COUNTRY_CODE_INVALID"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "400 - Bad Request"
-    },
-    {
-      "url" : "description",
-      "valueString" : "TODO: description for SVC_VALIDATION_FAILED"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "SVC_VALIDATION_FAILED"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "403 - Forbidden"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Access permission invalid"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_ACCESS_PERMISSION_INVALID"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "403 - Forbidden"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Access role not allowed"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "403 - Forbidden"
-    },
-    {
-      "url" : "description",
-      "valueString" : "Consent required"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_CONSENT_REQUIRED"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-  },
-  {
-    "extension" : [{
-      "url" : "statusCode",
-      "valueString" : "404 - Not Found"
-    },
-    {
-      "url" : "description",
-      "valueString" : "No prescriptions found"
-    },
-    {
-      "url" : "responseType",
-      "valueString" : "TIFlowOperationOutcome"
-    },
-    {
-      "url" : "errorCode",
-      "valueString" : "TIFLOW_XBORDER_NO_PRESCRIPTIONS_FOUND"
-    }],
-    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
   }],
   "url" : "https://gematik.de/fhir/tiflow/xborder/CapabilityStatement/erp-fachdienst-server-erpeu",
   "version" : "1.0.0-draft",
@@ -327,18 +80,6 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
         "extension" : [{
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "200"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Successful operation"
-          }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
             "valueString" : "401"
           },
           {
@@ -353,174 +94,8 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
             "url" : "errorCode",
             "valueString" : "MSG_AUTH_REQUIRED"
           }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "400"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Unknown search parameter"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "EPAMSOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_PARAM_UNKNOWN"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "400"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Invalid query parameter(s)"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "EPAMSOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_BAD_SYNTAX"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "405"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Method not allowed for this endpoint"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "EPAMSOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_OP_NOT_ALLOWED"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "408"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Request timeout"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "EPAMSOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "429"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Too many requests"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "EPAMSOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_RATE_LIMIT"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "500"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Internal server error"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "EPAMSOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "404"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Unknown resource type"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "EPAMSOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_UNKNOWN_TYPE"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        }],
-        "code" : "search-type"
-      },
-      {
-        "extension" : [{
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "200"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Successful operation"
-          }],
           "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
           "valueCode" : "SHALL"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "401"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Authentication is required and has failed or has not yet been provided"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "EPAMSOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_AUTH_REQUIRED"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
@@ -582,6 +157,241 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
         {
           "extension" : [{
             "url" : "statusCode",
+            "valueString" : "429"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Too many requests"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_RATE_LIMIT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "500"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Internal server error"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_INTERNAL_ERROR"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "200"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Successful operation"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Unknown search parameter"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_PARAM_UNKNOWN"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Invalid query parameter(s)"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_BAD_SYNTAX"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "404"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Unknown resource type"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_UNKNOWN_TYPE"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        }],
+        "code" : "search-type"
+      },
+      {
+        "extension" : [{
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "401"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Authentication is required and has failed or has not yet been provided"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_AUTH_REQUIRED"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Invalid request"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_BAD_FORMAT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "405"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Method not allowed for this endpoint"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_OP_NOT_ALLOWED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "408"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Request timeout"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_TIMEOUT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "429"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Too many requests"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_RATE_LIMIT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "500"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Internal server error"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_INTERNAL_ERROR"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "200"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Successful operation"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
             "valueString" : "404"
           },
           {
@@ -633,44 +443,6 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
           {
             "url" : "errorCode",
             "valueString" : "MSG_DELETED"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "429"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Too many requests"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "EPAMSOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_RATE_LIMIT"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "500"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Internal server error"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "EPAMSOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         }],
@@ -789,32 +561,138 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
       }],
       "operation" : [{
         "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
-        }],
-        "name" : "eu-close",
-        "definition" : "https://gematik.de/fhir/erp-eu/OperationDefinition/EUCloseOperationDefinition",
-        "documentation" : "Finishes the EU ePrescription workflow and creates a signed receipt bundle"
-      }]
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-        "valueCode" : "SHALL"
-      }],
-      "type" : "Consent",
-      "interaction" : [{
-        "extension" : [{
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "200"
+            "valueString" : "400"
           },
           {
             "url" : "description",
-            "valueString" : "Successful operation"
+            "valueString" : "FHIR Profile Validation Failed"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "SVC_VALIDATION_FAILED"
           }],
           "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
           "valueCode" : "SHALL"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "403"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Access permission invalid"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_ACCESS_PERMISSION_INVALID"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "403"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Access role not allowed"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "403"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Consent missing"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_CONSENT_MISSING"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Task status mismatch"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_TASK_STATUS_MISMATCH"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "404"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Resource is not known"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_RESOURCE_ID_FAIL"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "410"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Resource was deleted"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_DELETED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
@@ -842,7 +720,7 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
           },
           {
             "url" : "description",
-            "valueString" : "Unknown search parameter"
+            "valueString" : "Invalid request"
           },
           {
             "url" : "responseType",
@@ -850,9 +728,117 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_PARAM_UNKNOWN"
+            "valueString" : "MSG_BAD_FORMAT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "405"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Method not allowed for this endpoint"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_OP_NOT_ALLOWED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "408"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Request timeout"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_TIMEOUT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "429"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Too many requests"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_RATE_LIMIT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "500"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Internal server error"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_INTERNAL_ERROR"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        }],
+        "name" : "eu-close",
+        "definition" : "https://gematik.de/fhir/erp-eu/OperationDefinition/EUCloseOperationDefinition",
+        "documentation" : "Finishes the EU ePrescription workflow and creates a signed receipt bundle"
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      }],
+      "type" : "Consent",
+      "interaction" : [{
+        "extension" : [{
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "401"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Authentication is required and has failed or has not yet been provided"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_AUTH_REQUIRED"
+          }],
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
         },
         {
           "extension" : [{
@@ -861,7 +847,7 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
           },
           {
             "url" : "description",
-            "valueString" : "Invalid query parameter(s)"
+            "valueString" : "Invalid request"
           },
           {
             "url" : "responseType",
@@ -869,7 +855,7 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_BAD_SYNTAX"
+            "valueString" : "MSG_BAD_FORMAT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -952,6 +938,55 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
         {
           "extension" : [{
             "url" : "statusCode",
+            "valueString" : "200"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Successful operation"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Unknown search parameter"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_PARAM_UNKNOWN"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "400"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Invalid query parameter(s)"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_BAD_SYNTAX"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
             "valueString" : "404"
           },
           {
@@ -974,11 +1009,19 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
         "extension" : [{
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "201"
+            "valueString" : "401"
           },
           {
             "url" : "description",
-            "valueString" : "Resource created"
+            "valueString" : "Authentication is required and has failed or has not yet been provided"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_AUTH_REQUIRED"
           }],
           "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
           "valueCode" : "SHALL"
@@ -999,6 +1042,93 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
           {
             "url" : "errorCode",
             "valueString" : "MSG_BAD_FORMAT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "405"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Method not allowed for this endpoint"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_OP_NOT_ALLOWED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "408"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Request timeout"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_TIMEOUT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "429"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Too many requests"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_RATE_LIMIT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "500"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Internal server error"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_INTERNAL_ERROR"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "201"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Resource created"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -1027,11 +1157,19 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
         "extension" : [{
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "204"
+            "valueString" : "401"
           },
           {
             "url" : "description",
-            "valueString" : "Successful operation without response body"
+            "valueString" : "Authentication is required and has failed or has not yet been provided"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_AUTH_REQUIRED"
           }],
           "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
           "valueCode" : "SHALL"
@@ -1052,6 +1190,93 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
           {
             "url" : "errorCode",
             "valueString" : "MSG_BAD_FORMAT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "405"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Method not allowed for this endpoint"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_OP_NOT_ALLOWED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "408"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Request timeout"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_TIMEOUT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "429"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Too many requests"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_RATE_LIMIT"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "500"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Internal server error"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "EPAMSOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_INTERNAL_ERROR"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "204"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Successful operation without response body"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -1170,44 +1395,6 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
         },
         {
           "url" : "description",
-          "valueString" : "Unknown search parameter"
-        },
-        {
-          "url" : "responseType",
-          "valueString" : "EPAMSOperationOutcome"
-        },
-        {
-          "url" : "errorCode",
-          "valueString" : "MSG_PARAM_UNKNOWN"
-        }],
-        "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-      },
-      {
-        "extension" : [{
-          "url" : "statusCode",
-          "valueString" : "400"
-        },
-        {
-          "url" : "description",
-          "valueString" : "Invalid query parameter(s)"
-        },
-        {
-          "url" : "responseType",
-          "valueString" : "EPAMSOperationOutcome"
-        },
-        {
-          "url" : "errorCode",
-          "valueString" : "MSG_BAD_SYNTAX"
-        }],
-        "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-      },
-      {
-        "extension" : [{
-          "url" : "statusCode",
-          "valueString" : "400"
-        },
-        {
-          "url" : "description",
           "valueString" : "Invalid request"
         },
         {
@@ -1295,6 +1482,63 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
           "valueString" : "MSG_INTERNAL_ERROR"
         }],
         "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+      },
+      {
+        "extension" : [{
+          "url" : "statusCode",
+          "valueString" : "400"
+        },
+        {
+          "url" : "description",
+          "valueString" : "Access code invalid"
+        },
+        {
+          "url" : "responseType",
+          "valueString" : "TIFlowOperationOutcome"
+        },
+        {
+          "url" : "errorCode",
+          "valueString" : "TIFLOW_ACCESS_CODE_INVALID"
+        }],
+        "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+      },
+      {
+        "extension" : [{
+          "url" : "statusCode",
+          "valueString" : "403"
+        },
+        {
+          "url" : "description",
+          "valueString" : "Consent required"
+        },
+        {
+          "url" : "responseType",
+          "valueString" : "TIFlowOperationOutcome"
+        },
+        {
+          "url" : "errorCode",
+          "valueString" : "TIFLOW_CONSENT_REQUIRED"
+        }],
+        "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+      },
+      {
+        "extension" : [{
+          "url" : "statusCode",
+          "valueString" : "409"
+        },
+        {
+          "url" : "description",
+          "valueString" : "Country code invalid"
+        },
+        {
+          "url" : "responseType",
+          "valueString" : "TIFlowOperationOutcome"
+        },
+        {
+          "url" : "errorCode",
+          "valueString" : "TIFLOW_XBORDER_COUNTRY_CODE_INVALID"
+        }],
+        "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
       }],
       "name" : "grant-eu-access-permission",
       "definition" : "https://gematik.de/fhir/erp-eu/OperationDefinition/Grant_Access_PermissionOperationDefinition",
@@ -1333,44 +1577,6 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
         {
           "url" : "errorCode",
           "valueString" : "MSG_AUTH_REQUIRED"
-        }],
-        "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-      },
-      {
-        "extension" : [{
-          "url" : "statusCode",
-          "valueString" : "400"
-        },
-        {
-          "url" : "description",
-          "valueString" : "Unknown search parameter"
-        },
-        {
-          "url" : "responseType",
-          "valueString" : "EPAMSOperationOutcome"
-        },
-        {
-          "url" : "errorCode",
-          "valueString" : "MSG_PARAM_UNKNOWN"
-        }],
-        "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-      },
-      {
-        "extension" : [{
-          "url" : "statusCode",
-          "valueString" : "400"
-        },
-        {
-          "url" : "description",
-          "valueString" : "Invalid query parameter(s)"
-        },
-        {
-          "url" : "responseType",
-          "valueString" : "EPAMSOperationOutcome"
-        },
-        {
-          "url" : "errorCode",
-          "valueString" : "MSG_BAD_SYNTAX"
         }],
         "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
       },
@@ -1502,44 +1708,6 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
         {
           "url" : "errorCode",
           "valueString" : "MSG_AUTH_REQUIRED"
-        }],
-        "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-      },
-      {
-        "extension" : [{
-          "url" : "statusCode",
-          "valueString" : "400"
-        },
-        {
-          "url" : "description",
-          "valueString" : "Unknown search parameter"
-        },
-        {
-          "url" : "responseType",
-          "valueString" : "EPAMSOperationOutcome"
-        },
-        {
-          "url" : "errorCode",
-          "valueString" : "MSG_PARAM_UNKNOWN"
-        }],
-        "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-      },
-      {
-        "extension" : [{
-          "url" : "statusCode",
-          "valueString" : "400"
-        },
-        {
-          "url" : "description",
-          "valueString" : "Invalid query parameter(s)"
-        },
-        {
-          "url" : "responseType",
-          "valueString" : "EPAMSOperationOutcome"
-        },
-        {
-          "url" : "errorCode",
-          "valueString" : "MSG_BAD_SYNTAX"
         }],
         "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
       },
@@ -1685,44 +1853,6 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
         },
         {
           "url" : "description",
-          "valueString" : "Unknown search parameter"
-        },
-        {
-          "url" : "responseType",
-          "valueString" : "EPAMSOperationOutcome"
-        },
-        {
-          "url" : "errorCode",
-          "valueString" : "MSG_PARAM_UNKNOWN"
-        }],
-        "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-      },
-      {
-        "extension" : [{
-          "url" : "statusCode",
-          "valueString" : "400"
-        },
-        {
-          "url" : "description",
-          "valueString" : "Invalid query parameter(s)"
-        },
-        {
-          "url" : "responseType",
-          "valueString" : "EPAMSOperationOutcome"
-        },
-        {
-          "url" : "errorCode",
-          "valueString" : "MSG_BAD_SYNTAX"
-        }],
-        "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-      },
-      {
-        "extension" : [{
-          "url" : "statusCode",
-          "valueString" : "400"
-        },
-        {
-          "url" : "description",
           "valueString" : "Invalid request"
         },
         {
@@ -1808,6 +1938,101 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
         {
           "url" : "errorCode",
           "valueString" : "MSG_INTERNAL_ERROR"
+        }],
+        "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+      },
+      {
+        "extension" : [{
+          "url" : "statusCode",
+          "valueString" : "400"
+        },
+        {
+          "url" : "description",
+          "valueString" : "FHIR Profile Validation Failed"
+        },
+        {
+          "url" : "responseType",
+          "valueString" : "TIFlowOperationOutcome"
+        },
+        {
+          "url" : "errorCode",
+          "valueString" : "SVC_VALIDATION_FAILED"
+        }],
+        "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+      },
+      {
+        "extension" : [{
+          "url" : "statusCode",
+          "valueString" : "403"
+        },
+        {
+          "url" : "description",
+          "valueString" : "Access permission invalid"
+        },
+        {
+          "url" : "responseType",
+          "valueString" : "TIFlowOperationOutcome"
+        },
+        {
+          "url" : "errorCode",
+          "valueString" : "TIFLOW_ACCESS_PERMISSION_INVALID"
+        }],
+        "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+      },
+      {
+        "extension" : [{
+          "url" : "statusCode",
+          "valueString" : "403"
+        },
+        {
+          "url" : "description",
+          "valueString" : "Access role not allowed"
+        },
+        {
+          "url" : "responseType",
+          "valueString" : "TIFlowOperationOutcome"
+        },
+        {
+          "url" : "errorCode",
+          "valueString" : "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
+        }],
+        "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+      },
+      {
+        "extension" : [{
+          "url" : "statusCode",
+          "valueString" : "403"
+        },
+        {
+          "url" : "description",
+          "valueString" : "Consent required"
+        },
+        {
+          "url" : "responseType",
+          "valueString" : "TIFlowOperationOutcome"
+        },
+        {
+          "url" : "errorCode",
+          "valueString" : "TIFLOW_CONSENT_REQUIRED"
+        }],
+        "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+      },
+      {
+        "extension" : [{
+          "url" : "statusCode",
+          "valueString" : "404"
+        },
+        {
+          "url" : "description",
+          "valueString" : "No prescriptions found"
+        },
+        {
+          "url" : "responseType",
+          "valueString" : "TIFlowOperationOutcome"
+        },
+        {
+          "url" : "errorCode",
+          "valueString" : "TIFLOW_XBORDER_NO_PRESCRIPTIONS_FOUND"
         }],
         "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
       }],

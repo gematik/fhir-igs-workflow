@@ -28,8 +28,6 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
 
 ### Expansion
 
-No Expansion for this valueset (Unknown Code System)
-
 -------
 
  Explanation of the columns that may appear on this page: 
@@ -84,64 +82,83 @@ No Expansion for this valueset (Unknown Code System)
     {
       "system" : "https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs",
       "concept" : [{
-        "code" : "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
+        "code" : "TIFLOW_AUTH_ROLE_NOT_ALLOWED",
+        "display" : "Access role not allowed"
       },
       {
-        "code" : "TIFLOW_CONSENT_ALREADY_EXISTS"
+        "code" : "TIFLOW_CONSENT_ALREADY_EXISTS",
+        "display" : "Consent already exists"
       },
       {
-        "code" : "TIFLOW_CONSENT_CATEGORY_REQUIRED"
+        "code" : "TIFLOW_CONSENT_CATEGORY_REQUIRED",
+        "display" : "Consent category required"
       },
       {
-        "code" : "TIFLOW_CONSENT_CATEGORY_INVALID"
+        "code" : "TIFLOW_CONSENT_CATEGORY_INVALID",
+        "display" : "Consent category invalid"
       },
       {
-        "code" : "TIFLOW_ACCESSCODE_MISMATCH"
+        "code" : "TIFLOW_ACCESSCODE_MISMATCH",
+        "display" : "Access code mismatch"
       },
       {
-        "code" : "TIFLOW_TASK_REQUIRED"
+        "code" : "TIFLOW_TASK_REQUIRED",
+        "display" : "Task required"
       },
       {
-        "code" : "TIFLOW_TASK_NOT_FOUND"
+        "code" : "TIFLOW_TASK_NOT_FOUND",
+        "display" : "Task not found"
       },
       {
-        "code" : "TIFLOW_SECRET_MISMATCH"
+        "code" : "TIFLOW_SECRET_MISMATCH",
+        "display" : "Task secret mismatch"
       },
       {
-        "code" : "TIFLOW_CONSENT_REQUIRED"
+        "code" : "TIFLOW_CONSENT_REQUIRED",
+        "display" : "Consent required"
       },
       {
-        "code" : "TIFLOW_OCSP_BACKEND_ERROR"
+        "code" : "TIFLOW_OCSP_BACKEND_ERROR",
+        "display" : "Invalid OCSP response"
       },
       {
-        "code" : "TIFLOW_MESSAGE_TO_SELF"
+        "code" : "TIFLOW_MESSAGE_TO_SELF",
+        "display" : "Message to self not allowed"
       },
       {
-        "code" : "TIFLOW_COMMUNICATION_PAYLOAD_INVALID"
+        "code" : "TIFLOW_COMMUNICATION_PAYLOAD_INVALID",
+        "display" : "Communication payload invalid"
       },
       {
-        "code" : "TIFLOW_INSURANT_NOT_ELIGIBLE"
+        "code" : "TIFLOW_INSURANT_NOT_ELIGIBLE",
+        "display" : "Insurant not eligible"
       },
       {
-        "code" : "TIFLOW_RECIPIENT_INVALID"
+        "code" : "TIFLOW_RECIPIENT_INVALID",
+        "display" : "Recipient invalid"
       },
       {
-        "code" : "TIFLOW_TASK_STATUS_MISMATCH"
+        "code" : "TIFLOW_TASK_STATUS_MISMATCH",
+        "display" : "Task status mismatch"
       },
       {
-        "code" : "TIFLOW_TASK_EXPIRED"
+        "code" : "TIFLOW_TASK_EXPIRED",
+        "display" : "Task expired"
       },
       {
-        "code" : "TIFLOW_MVO_NOT_VALID_YET"
+        "code" : "TIFLOW_MVO_NOT_VALID_YET",
+        "display" : "MVO not valid yet"
       }]
     },
     {
       "system" : "https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes",
       "concept" : [{
-        "code" : "SVC_IDENTITY_MISMATCH"
+        "code" : "SVC_IDENTITY_MISMATCH",
+        "display" : "Identity mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID / KVNR)"
       },
       {
-        "code" : "SVC_VALIDATION_FAILED"
+        "code" : "SVC_VALIDATION_FAILED",
+        "display" : "FHIR Profile Validation Failed"
       }]
     }]
   }

@@ -28,8 +28,6 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
 
 ### Expansion
 
-No Expansion for this valueset (Unknown Code System)
-
 -------
 
  Explanation of the columns that may appear on this page: 
@@ -84,100 +82,131 @@ No Expansion for this valueset (Unknown Code System)
     {
       "system" : "https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs",
       "concept" : [{
-        "code" : "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
+        "code" : "TIFLOW_AUTH_ROLE_NOT_ALLOWED",
+        "display" : "Access role not allowed"
       },
       {
-        "code" : "TIFLOW_SECRET_MISMATCH"
+        "code" : "TIFLOW_SECRET_MISMATCH",
+        "display" : "Task secret mismatch"
       },
       {
-        "code" : "TIFLOW_TASK_STATUS_MISMATCH"
+        "code" : "TIFLOW_TASK_STATUS_MISMATCH",
+        "display" : "Task status mismatch"
       },
       {
-        "code" : "TIFLOW_MEDICATION_DISPENSE_INVALID"
+        "code" : "TIFLOW_MEDICATION_DISPENSE_INVALID",
+        "display" : "MedicationDispense invalid"
       },
       {
-        "code" : "TIFLOW_MEDICATION_DISPENSE_MISSING"
+        "code" : "TIFLOW_MEDICATION_DISPENSE_MISSING",
+        "display" : "MedicationDispense missing"
       },
       {
-        "code" : "TIFLOW_SIGNATURE_NO_OCSP_RESPONSE"
+        "code" : "TIFLOW_SIGNATURE_NO_OCSP_RESPONSE",
+        "display" : "No OCSP response for signature"
       },
       {
-        "code" : "TIFLOW_AUTH_NOT_OWNER"
+        "code" : "TIFLOW_AUTH_NOT_OWNER",
+        "display" : "Authenticated actor is not owner"
       },
       {
-        "code" : "TIFLOW_ACCESSCODE_MISMATCH"
+        "code" : "TIFLOW_ACCESSCODE_MISMATCH",
+        "display" : "Access code mismatch"
       },
       {
-        "code" : "TIFLOW_TASK_ID_REQUIRED"
+        "code" : "TIFLOW_TASK_ID_REQUIRED",
+        "display" : "Task id required"
       },
       {
-        "code" : "TIFLOW_KVNR_MISMATCH"
+        "code" : "TIFLOW_KVNR_MISMATCH",
+        "display" : "KVNR mismatch"
       },
       {
-        "code" : "TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE"
+        "code" : "TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE",
+        "display" : "Signature issuing role invalid"
       },
       {
-        "code" : "TIFLOW_FLOWTYPE_MISMATCH"
+        "code" : "TIFLOW_FLOWTYPE_MISMATCH",
+        "display" : "Flow type mismatch"
       },
       {
-        "code" : "TIFLOW_COVERAGE_TYPE_MISMATCH"
+        "code" : "TIFLOW_COVERAGE_TYPE_MISMATCH",
+        "display" : "Coverage type mismatch"
       },
       {
-        "code" : "TIFLOW_CERTIFICATE_INVALID"
+        "code" : "TIFLOW_CERTIFICATE_INVALID",
+        "display" : "Certificate invalid"
       },
       {
-        "code" : "TIFLOW_OCSP_BACKEND_ERROR"
+        "code" : "TIFLOW_OCSP_BACKEND_ERROR",
+        "display" : "Invalid OCSP response"
       },
       {
-        "code" : "TIFLOW_SIGNATURE_INVALID"
+        "code" : "TIFLOW_SIGNATURE_INVALID",
+        "display" : "Signature invalid"
       },
       {
-        "code" : "TIFLOW_KVNR_INVALID"
+        "code" : "TIFLOW_KVNR_INVALID",
+        "display" : "KVNR invalid"
       },
       {
-        "code" : "TIFLOW_SIGNATURE_AUTHOREDON_MISMATCH"
+        "code" : "TIFLOW_SIGNATURE_AUTHOREDON_MISMATCH",
+        "display" : "Signature authoredOn mismatch"
       },
       {
-        "code" : "TIFLOW_IKNR_INVALID"
+        "code" : "TIFLOW_IKNR_INVALID",
+        "display" : "IKNR invalid"
       },
       {
-        "code" : "TIFLOW_LANR_ZANR_INVALID"
+        "code" : "TIFLOW_LANR_ZANR_INVALID",
+        "display" : "LANR or ZANR invalid"
       },
       {
-        "code" : "TIFLOW_TASK_DELETED"
+        "code" : "TIFLOW_TASK_DELETED",
+        "display" : "Task deleted"
       },
       {
-        "code" : "TIFLOW_TASK_EXPIRED"
+        "code" : "TIFLOW_TASK_EXPIRED",
+        "display" : "Task expired"
       },
       {
-        "code" : "TIFLOW_MESSAGE_TO_SELF"
+        "code" : "TIFLOW_MESSAGE_TO_SELF",
+        "display" : "Message to self not allowed"
       },
       {
-        "code" : "TIFLOW_COMMUNICATION_PAYLOAD_INVALID"
+        "code" : "TIFLOW_COMMUNICATION_PAYLOAD_INVALID",
+        "display" : "Communication payload invalid"
       },
       {
-        "code" : "TIFLOW_INSURANT_NOT_ELIGIBLE"
+        "code" : "TIFLOW_INSURANT_NOT_ELIGIBLE",
+        "display" : "Insurant not eligible"
       },
       {
-        "code" : "TIFLOW_RECIPIENT_INVALID"
+        "code" : "TIFLOW_RECIPIENT_INVALID",
+        "display" : "Recipient invalid"
       },
       {
-        "code" : "TIFLOW_TASK_NOT_FOUND"
+        "code" : "TIFLOW_TASK_NOT_FOUND",
+        "display" : "Task not found"
       },
       {
-        "code" : "TIFLOW_MVO_NOT_VALID_YET"
+        "code" : "TIFLOW_MVO_NOT_VALID_YET",
+        "display" : "MVO not valid yet"
       }]
     },
     {
       "system" : "https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes",
       "concept" : [{
-        "code" : "SVC_VALIDATION_FAILED"
+        "code" : "SVC_VALIDATION_FAILED",
+        "display" : "FHIR Profile Validation Failed"
       },
       {
-        "code" : "SVC_IDENTITY_MISMATCH"
+        "code" : "SVC_IDENTITY_MISMATCH",
+        "display" : "Identity mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID / KVNR)"
       },
       {
-        "code" : "SVC_TELEMATIKID_TEMPORARILY_BLOCKED"
+        "code" : "SVC_TELEMATIKID_TEMPORARILY_BLOCKED",
+        "display" : "The specified Telematik-ID is temporarily blocked"
       }]
     }]
   }
