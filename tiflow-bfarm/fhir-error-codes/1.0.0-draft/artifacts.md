@@ -85,11 +85,3 @@ StructureMaps sind strukturierte Dokumente, die maschinenlesbare Möglichkeit bi
 
 * [Beispiel digitaler Durchschlag E-T-Rezept](Parameters-TRP-Carbon-Copy.md)
 
-* [Example Parameters - example-case-01-digitaler-durchschlag](Parameters-example-case-01-digitaler-durchschlag.md)
-
-* [Example Parameters - example-case-02-digitaler-durchschlag](Parameters-example-case-02-digitaler-durchschlag.md)
-
-* [Example Parameters - example-case-03-digitaler-durchschlag](Parameters-example-case-03-digitaler-durchschlag.md)
-
-* [Example Parameters - example-case-04-digitaler-durchschlag](Parameters-example-case-04-digitaler-durchschlag.md)
-

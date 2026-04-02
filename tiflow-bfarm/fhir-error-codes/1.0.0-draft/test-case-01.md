@@ -26,9 +26,9 @@ Dieses Beispiel demonstriert das Mapping einer E-T-Rezept PZN-Verordnung mit all
 **Beispiel-Artefakte:**
 
 * **Quell-Dateien:** 
-* [`example-case-01-Task.xml`](test-examples/example-case-01-Task.xml)
-* [`example-case-01-MedicationDispense_Parameters.xml`](test-examples/example-case-01-MedicationDispense_Parameters.xml)
 * [`example-case-01-KBV_Bundle.xml`](test-examples/example-case-01-KBV_Bundle.xml)
+* [`example-case-01-MedicationDispense_Parameters.xml`](test-examples/example-case-01-MedicationDispense_Parameters.xml)
+* [`example-case-01-Task.xml`](test-examples/example-case-01-Task.xml)
 * [`example-case-01-VZDSearchSet.xml`](test-examples/example-case-01-VZDSearchSet.xml)
  
 * **Mapping Bundle (generiert):** [`example-case-01-mapping-bundle.json`](test-examples/example-case-01-mapping-bundle.json)
