@@ -5,7 +5,7 @@ TIFlow - Kernfunktionalitäten
 Version 1.0.0-draft - ci-build 
 
 * [**Table of Contents**](toc.md)
-* [**Query API**](menu-schnittstellen-query-api.md)
+* [**Additional API**](menu-schnittstellen-additional-api.md)
 * [**Query API: Pushers**](query-api-pushers.md)
 * **Server-Anforderungen: Pushers-Query**
 
@@ -26,6 +26,8 @@ die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:
 
 * HTTP-Code: Error Code
   * 403 - Forbidden: invalidOid
+* HTTP-Code: Error Details
+  * 403 - Forbidden: -
 
 abrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 
@@ -34,5 +36,12 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation GET /pushers die dem Ver
 
 Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation POST /pushers/set die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle
 * oid_versicherter
-die Operation aufrufen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
+die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+
+* HTTP-Code: Error Code
+  * 403 - Forbidden: invalidOid
+* HTTP-Code: Error Details
+  * 403 - Forbidden: -
+
+abrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 

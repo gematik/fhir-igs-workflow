@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"20.7.1"}
-    h3,h4,h5,h6{--heading-prefix:"20.7.1"}</style>
+    <style type="text/css">h2{--heading-prefix:"21.1.1"}
+    h3,h4,h5,h6{--heading-prefix:"21.1.1"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -183,6 +183,9 @@
       <li>
         <a href="menu-schnittstellen-operation-api.html">Operation API</a>
       </li>
+      <li>
+        <a href="menu-schnittstellen-additional-api.html">Additional API</a>
+      </li>
     </ul>
   </li>
   <li>
@@ -227,7 +230,7 @@ TIFlow - Kernfunktionalitäten
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-query-api.html'><b>Query API</b></a></li><li><a href='query-api-channels.html'><b>Query API: Channels</b></a></li><li><b>Server-Anforderungen: Channels-Query</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-additional-api.html'><b>Additional API</b></a></li><li><a href='query-api-channels.html'><b>Query API: Channels</b></a></li><li><b>Server-Anforderungen: Channels-Query</b></li>
 
           <span style="float:right;">
 
@@ -307,7 +310,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Mit der Operation GET /channels können die verfügbaren Channels abgefragt werden.</p>
 
 <!-- A_28118 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-57" title="TI-Flow-Fachdienst - Push Notifications - Channels abrufen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-57" title="TI-Flow-Fachdienst - Push Notifications - Channels abrufen - Rollenprüfung" version="1">
   <meta lockversion="false" />
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten" />
@@ -316,13 +319,28 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <ul>
     <li>oid_versicherter</li>
   </ul>
-  die Operation aufrufen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
+  die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Error Code</th>
+            <td>invalidOid</td>
+        </tr>
+        <tr>
+            <th>Error Details</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 </requirement>
 
 <p>Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfiguration für eine spezifische FdV-Instanz abgefragt werden.</p>
 
 <!-- A_28119 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-58" title="TI-Flow-Fachdienst - Push Notifications - Channels einer Instanz abrufen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-58" title="TI-Flow-Fachdienst - Push Notifications - Channels einer Instanz abrufen - Rollenprüfung" version="1">
   <meta lockversion="false" />
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten" />
@@ -331,13 +349,28 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <ul>
     <li>oid_versicherter</li>
   </ul>
-  die Operation aufrufen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
+  die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Error Code</th>
+            <td>invalidOid</td>
+        </tr>
+        <tr>
+            <th>Error Details</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 </requirement>
 
 <h3 id="post-channels">POST /channels</h3>
 
 <!-- A_28120 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-59" title="TI-Flow-Fachdienst - Push Notifications - Channels konfigurieren - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-59" title="TI-Flow-Fachdienst - Push Notifications - Channels konfigurieren - Rollenprüfung" version="1">
   <meta lockversion="false" />
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten" />
@@ -346,7 +379,22 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <ul>
     <li>oid_versicherter</li>
   </ul>
-  die Operation aufrufen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
+  die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Error Code</th>
+            <td>invalidOid</td>
+        </tr>
+        <tr>
+            <th>Error Details</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 </requirement>
 
 
@@ -390,7 +438,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Mar 30, 2026 12:35+0000">2026-03-30</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Apr 2, 2026 07:51+0000">2026-04-02</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

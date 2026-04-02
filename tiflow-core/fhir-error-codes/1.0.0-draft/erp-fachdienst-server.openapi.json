@@ -2068,68 +2068,6 @@
           }
         }
       }
-    },
-    "/Task/{rid}/$dispense": {
-      "summary": "Operation $dispense on instance of Task",
-      "description": "Operation $dispense on an instance of Task",
-      "post": {
-        "summary": "$dispense on Task instance",
-        "description": "Die Operation $dispense ermöglicht es der Apotheke, eine Ausgabe für ein Medikament durchzuführen, ohne den Status der Aufgabe zu ändern. Diese Aktion erlaubt es einem Frontend anzuzeigen, dass ein Medikament ausgegeben wurde, bevor es von der Apotheke abgeschlossen wird.",
-        "operationId": "op-dispense-Task-instance",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/rid"
-          }
-        ],
-        "requestBody": {
-          "description": "Operation parameters",
-          "required": false,
-          "content": {
-            "application/fhir+json": {
-              "schema": {
-                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
-              }
-            },
-            "application/fhir+xml": {
-              "schema": {
-                "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
-              }
-            }
-          }
-        },
-        "responses": {
-          "default": {
-            "description": "Error, with details",
-            "content": {
-              "application/fhir+json": {
-                "schema": {
-                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
-                }
-              },
-              "application/fhir+xml": {
-                "schema": {
-                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
-                }
-              }
-            }
-          },
-          "200": {
-            "description": "Operation response",
-            "content": {
-              "application/fhir+json": {
-                "schema": {
-                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
-                }
-              },
-              "application/fhir+xml": {
-                "schema": {
-                  "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
-                }
-              }
-            }
-          }
-        }
-      }
     }
   },
   "components": {

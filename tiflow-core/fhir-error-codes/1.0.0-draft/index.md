@@ -3193,6 +3193,42 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
         {
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "query-api-subscription.html"
+          }],
+          "nameUrl" : "query-api-subscription.html",
+          "title" : "Query API: Subscription",
+          "generation" : "markdown",
+          "page" : [{
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-subscription-req-fd.html"
+            }],
+            "nameUrl" : "query-api-subscription-req-fd.html",
+            "title" : "Server-Anforderungen: Subscription-Query",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-subscription-req-avs.html"
+            }],
+            "nameUrl" : "query-api-subscription-req-avs.html",
+            "title" : "AVS-Anforderungen: Subscription-Query",
+            "generation" : "markdown"
+          }]
+        }]
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "menu-schnittstellen-additional-api.html"
+        }],
+        "nameUrl" : "menu-schnittstellen-additional-api.html",
+        "title" : "Additional API",
+        "generation" : "markdown",
+        "page" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
             "valueUrl" : "query-api-channels.html"
           }],
           "nameUrl" : "query-api-channels.html",
@@ -3241,33 +3277,6 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
             }],
             "nameUrl" : "query-api-pushers-req-fdv.html",
             "title" : "FdV-Anforderungen: Pushers-Query",
-            "generation" : "markdown"
-          }]
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "query-api-subscription.html"
-          }],
-          "nameUrl" : "query-api-subscription.html",
-          "title" : "Query API: Subscription",
-          "generation" : "markdown",
-          "page" : [{
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "query-api-subscription-req-fd.html"
-            }],
-            "nameUrl" : "query-api-subscription-req-fd.html",
-            "title" : "Server-Anforderungen: Subscription-Query",
-            "generation" : "markdown"
-          },
-          {
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "query-api-subscription-req-avs.html"
-            }],
-            "nameUrl" : "query-api-subscription-req-avs.html",
-            "title" : "AVS-Anforderungen: Subscription-Query",
             "generation" : "markdown"
           }]
         }]

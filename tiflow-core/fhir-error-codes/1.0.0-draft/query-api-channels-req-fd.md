@@ -5,7 +5,7 @@ TIFlow - Kernfunktionalitäten
 Version 1.0.0-draft - ci-build 
 
 * [**Table of Contents**](toc.md)
-* [**Query API**](menu-schnittstellen-query-api.md)
+* [**Additional API**](menu-schnittstellen-additional-api.md)
 * [**Query API: Channels**](query-api-channels.md)
 * **Server-Anforderungen: Channels-Query**
 
@@ -22,15 +22,36 @@ Mit der Operation GET /channels können die verfügbaren Channels abgefragt werd
 
 Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation GET /channels die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle
 * oid_versicherter
-die Operation aufrufen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
+die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+
+* HTTP-Code: Error Code
+  * 403 - Forbidden: invalidOid
+* HTTP-Code: Error Details
+  * 403 - Forbidden: -
+
+abrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfiguration für eine spezifische FdV-Instanz abgefragt werden.
 
 Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation GET /channels/{pushkey} die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle
 * oid_versicherter
-die Operation aufrufen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
+die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+
+* HTTP-Code: Error Code
+  * 403 - Forbidden: invalidOid
+* HTTP-Code: Error Details
+  * 403 - Forbidden: -
+
+abrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 ### POST /channels
 
 Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation POST /channels/{pushkey} die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle
 * oid_versicherter
-die Operation aufrufen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
+die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+
+* HTTP-Code: Error Code
+  * 403 - Forbidden: invalidOid
+* HTTP-Code: Error Details
+  * 403 - Forbidden: -
+
+abrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 
