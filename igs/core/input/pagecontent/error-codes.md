@@ -13,10 +13,8 @@ Der TI-Flow-Fachdienst stellt eine http-Schnittstelle für den Aufruf durch Clie
 
 Die Fehlermeldung beinhaltet bei fachlichen Fehlern einen VAU-verschlüsselten inneren http-Response. In diesem inneren Response werden ggf. ausschliesslich personenbezogene oder medizinische Daten an den aufrufenden Client übermittelt, welche bereits im VAU-verschlüsselten inneren http-Request, welcher zum Fehler führte, enthalten waren. Das kann bspw. bei Fehlern bei der Prüfung der FHIR Konformität von Datensätzen auftreten.
 
-Da der TI-Flow-Fachdienst FHIR als grundlegenedes Austauschformat verwendet, werden alle FHIR-Schnittstellen im Fehlerfall mit einer [TIFlow-OperationOutcome](./StructureDefinition-tiflow-operation-outcome.html) quittiert. 
-
 <!-- A_22103 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-341" title="TI-Flow-Fachdienst - Fehlerdetails in OperationOutcome" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-341" title="TI-Flow-Fachdienst - Fehlerdetails in OperationOutcome" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -24,12 +22,32 @@ Da der TI-Flow-Fachdienst FHIR als grundlegenedes Austauschformat verwendet, wer
      Der TI-Flow-Fachdienst MUSS im Fehlerfall (http-Statuscodes &gt;= 400) Hinweise zur Fehlerursache 
      
      <ul>
-        <li>im der inneren http-Response-Body als FHIR-Ressource OperationOutcome</li>
-        <li>falls keine innere VAU-Response existiert, in einem "äußeren" http-Response-Body in einer JSON-Struktur mit `"x-request-id", (http-)"status", "error"-Text, "message"-Details`</li>
+        <li>im der inneren http-Response-Body als FHIR-Ressource OperationOutcome bei FHIR-Schnittstellen</li>
+        <li>im der inneren http-Response-Body in einer JSON-Struktur mit den Feldern `errorCode` und `errorDetail` bei non FHIR-Schnittstellen</li>
+        <li>falls keine innere VAU-Response existiert, in einem "äußeren" http-Response-Body in einer JSON-Struktur mit den Feldern `errorCode` und `errorDetail`</li>
      </ul>
       
       an den Client zurückgeben, ohne Implementierungsdetails (z.B. kein Stacktrace) preiszugeben und dabei sicherstellen, dass personenbezogene oder medizinische Daten, falls für die qualifizierte Fehlerbeschreibung notwendig, ausschließlich in der VAU-verschlüsselten inneren http-Response übertragen werden.
 </requirement>
+
+#### Fehlerstruktur bei non FHIR-Schnittstellen
+
+Der TI-Flow-Fachdienst bietet Schnittstellen, deren Austauschformat nicht nach FHIR modelliert wurde. Bspw. [Push-API: Pusher](./query-api-pushers.md). 
+
+Diese Schnittstellen haben eine eigens definierte JSON Struktur von Fehlern, die in der jeweils referenzierten OpenAPI dokumentiert ist. Im folgenden ein Beispiel:
+
+```json
+{
+  "errorCode": "RESOURCE_NOT_FOUND",
+  "errorDetail": "The requested pusher could not be found"
+}
+```
+
+#### Fehlerstruktur bei FHIR-Schnittstellen
+
+Da der TI-Flow-Fachdienst FHIR als grundlegenedes Austauschformat für den überwiegenden Teil der API verwendet, werden alle FHIR-Schnittstellen im Fehlerfall mit einer [TIFlow-OperationOutcome](./StructureDefinition-tiflow-operation-outcome.html) quittiert:
+
+{% include StructureDefinition-tiflow-operation-outcome-snapshot-by-mustsupport.xhtml %}
 
 Folgende Felder der OperationOutcome sind für den Client bei der Auswertung relevant:
 

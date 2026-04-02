@@ -187,7 +187,7 @@ run_ig() {
     txoption="-tx n/a"
   fi
 
-  export JAVA_TOOL_OPTIONS="${JAVA_TOOL_OPTIONS} -Dfile.encoding=UTF-8"
+  export JAVA_TOOL_OPTIONS="${JAVA_TOOL_OPTIONS:-} -Dfile.encoding=UTF-8"
 
   if [[ "${GENONCE_ARGS+x}" == "x" && ${#GENONCE_ARGS[@]} -gt 0 ]]; then
     (cd "$ig_dir" && java -jar "$publisher_jar" -ig . ${txoption:+"$txoption"} "${GENONCE_ARGS[@]}")
