@@ -81,6 +81,80 @@ ensure_ig_deps() {
   fi
 }
 
+ensure_core_dev_available() {
+  local ig_short="$1"
+
+  # core itself does not need a pre-build dependency check.
+  if [[ "$ig_short" == "core" ]]; then
+    return 0
+  fi
+
+  local ig_cfg="$ROOT_DIR/igs/$ig_short/sushi-config.yaml"
+  [[ -f "$ig_cfg" ]] || return 0
+
+  local core_dep
+  core_dep="$(yq -r '.dependencies."de.gematik.tiflow.core" // ""' "$ig_cfg")"
+  if [[ "$core_dep" != "dev" && "$core_dep" != "current" ]]; then
+    return 0
+  fi
+
+  local pkg_cache_dir="${FHIR_PACKAGE_CACHE_DIR:-$HOME/.fhir/packages}"
+  if [[ -d "$pkg_cache_dir/de.gematik.tiflow.core#dev" ]]; then
+    return 0
+  fi
+
+  if [[ "${CORE_BOOTSTRAP_DONE:-0}" == "1" ]]; then
+    return 0
+  fi
+
+  echo "Missing local dependency de.gematik.tiflow.core#dev for $ig_short. Building core first..."
+  CORE_BOOTSTRAP_DONE=1
+  run_ig "core"
+}
+
+# After the IG Publisher runs, explicitly seed the FHIR package cache with the
+# built package so dependent IGs can find it via sushi without relying on the
+# publisher's own cache-population step (which can be skipped or fail silently).
+register_built_package() {
+  local ig_dir="$1"
+  local pkg_tgz="$ig_dir/output/package.tgz"
+  [[ -f "$pkg_tgz" ]] || return 0
+
+  # SUSHI_ID and LABEL are set by load_ig_config earlier in run_ig.
+  [[ -n "${SUSHI_ID:-}" ]] || return 0
+
+  local cache_ver
+  if [[ "${LABEL:-}" == "ci-build" ]]; then
+    cache_ver="dev"
+  else
+    cache_ver="${TARGET:-}"
+  fi
+  [[ -n "$cache_ver" ]] || return 0
+
+  local pkg_cache_dir="${FHIR_PACKAGE_CACHE_DIR:-$HOME/.fhir/packages}"
+  local cache_entry="$pkg_cache_dir/${SUSHI_ID}#${cache_ver}"
+  mkdir -p "$cache_entry"
+  tar -xzf "$pkg_tgz" -C "$cache_entry"
+
+  # output/package.tgz carries the semver (e.g. 1.0.0-draft) from sushi-config.
+  # The FHIR cache key is #dev for ci-build, so patch package.json accordingly.
+  local pkg_json="$cache_entry/package/package.json"
+  if [[ -f "$pkg_json" ]]; then
+    python3 - "$pkg_json" "$cache_ver" <<'PY'
+import sys, json
+path, ver = sys.argv[1], sys.argv[2]
+with open(path, encoding="utf-8") as f:
+    d = json.load(f)
+if d.get("version") != ver:
+    d["version"] = ver
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(d, f, indent=2, ensure_ascii=False)
+PY
+  fi
+
+  echo "Registered ${SUSHI_ID}#${cache_ver} in local FHIR package cache."
+}
+
 list_all_igs() {
   local -a igs=()
   local ig_dir
@@ -110,6 +184,8 @@ list_all_igs() {
 
 run_ig() {
   local ig_short="$1"
+
+  ensure_core_dev_available "$ig_short"
 
   load_ig_config "$ig_short"
   local ig_dir="$IG_DIR"
@@ -210,6 +286,10 @@ run_ig() {
       (cd "$ig_dir" && bash "$ig_dir/scripts/post-build.sh")
     fi
   fi
+
+  # Explicitly seed the FHIR package cache so subsequent sushi runs in
+  # the same build session can resolve this IG as a local #dev dependency.
+  register_built_package "$ig_dir"
 }
 
 run_igs_parallel() {
