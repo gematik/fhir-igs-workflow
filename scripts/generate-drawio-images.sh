@@ -37,6 +37,6 @@ fi
 for src in "${drawio_files[@]}"; do
   base_name="${src##*/}"
   base_name="${base_name%.drawio}"
-  "$DRAWIO_APP" --export --format png --output "$DRAWIO_OUTPUT_DIR/$base_name.png" "$src"
+  "$DRAWIO_APP" --export --format png --scale 3 --output "$DRAWIO_OUTPUT_DIR/$base_name.png" "$src"
   echo "Exported $base_name.png"
 done
