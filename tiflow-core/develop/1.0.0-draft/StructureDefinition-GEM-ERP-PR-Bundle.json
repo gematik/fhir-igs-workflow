@@ -71,19 +71,19 @@
         "max" : "*"
       },
       "constraint" : [{
-        "key" : "bdl-7",
+        "key" : "bdl-1",
         "severity" : "error",
-        "human" : "FullUrl must be unique in a bundle, or else entries with the same fullUrl must have different meta.versionId (except in history bundles)",
-        "expression" : "(type = 'history') or entry.where(fullUrl.exists()).select(fullUrl&resource.meta.versionId).isDistinct()",
-        "xpath" : "(f:type/@value = 'history') or (count(for $entry in f:entry[f:resource] return $entry[count(parent::f:Bundle/f:entry[f:fullUrl/@value=$entry/f:fullUrl/@value and ((not(f:resource/*/f:meta/f:versionId/@value) and not($entry/f:resource/*/f:meta/f:versionId/@value)) or f:resource/*/f:meta/f:versionId/@value=$entry/f:resource/*/f:meta/f:versionId/@value)])!=1])=0)",
+        "human" : "total only when a search or history",
+        "expression" : "total.empty() or (type = 'searchset') or (type = 'history')",
+        "xpath" : "not(f:total) or (f:type/@value = 'searchset') or (f:type/@value = 'history')",
         "source" : "http://hl7.org/fhir/StructureDefinition/Bundle"
       },
       {
-        "key" : "bdl-9",
+        "key" : "bdl-2",
         "severity" : "error",
-        "human" : "A document must have an identifier with a system and a value",
-        "expression" : "type = 'document' implies (identifier.system.exists() and identifier.value.exists())",
-        "xpath" : "not(f:type/@value = 'document') or exists(f:identifier/f:system) or exists(f:identifier/f:value)",
+        "human" : "entry.search only when a search",
+        "expression" : "entry.search.empty() or (type = 'searchset')",
+        "xpath" : "not(f:entry/f:search) or (f:type/@value = 'searchset')",
         "source" : "http://hl7.org/fhir/StructureDefinition/Bundle"
       },
       {
@@ -103,27 +103,27 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Bundle"
       },
       {
-        "key" : "bdl-12",
+        "key" : "bdl-7",
         "severity" : "error",
-        "human" : "A message must have a MessageHeader as the first resource",
-        "expression" : "type = 'message' implies entry.first().resource.is(MessageHeader)",
-        "xpath" : "not(f:type/@value='message') or f:entry[1]/f:resource/f:MessageHeader",
+        "human" : "FullUrl must be unique in a bundle, or else entries with the same fullUrl must have different meta.versionId (except in history bundles)",
+        "expression" : "(type = 'history') or entry.where(fullUrl.exists()).select(fullUrl&resource.meta.versionId).isDistinct()",
+        "xpath" : "(f:type/@value = 'history') or (count(for $entry in f:entry[f:resource] return $entry[count(parent::f:Bundle/f:entry[f:fullUrl/@value=$entry/f:fullUrl/@value and ((not(f:resource/*/f:meta/f:versionId/@value) and not($entry/f:resource/*/f:meta/f:versionId/@value)) or f:resource/*/f:meta/f:versionId/@value=$entry/f:resource/*/f:meta/f:versionId/@value)])!=1])=0)",
         "source" : "http://hl7.org/fhir/StructureDefinition/Bundle"
       },
       {
-        "key" : "bdl-1",
+        "key" : "bdl-9",
         "severity" : "error",
-        "human" : "total only when a search or history",
-        "expression" : "total.empty() or (type = 'searchset') or (type = 'history')",
-        "xpath" : "not(f:total) or (f:type/@value = 'searchset') or (f:type/@value = 'history')",
+        "human" : "A document must have an identifier with a system and a value",
+        "expression" : "type = 'document' implies (identifier.system.exists() and identifier.value.exists())",
+        "xpath" : "not(f:type/@value = 'document') or exists(f:identifier/f:system) or exists(f:identifier/f:value)",
         "source" : "http://hl7.org/fhir/StructureDefinition/Bundle"
       },
       {
-        "key" : "bdl-2",
+        "key" : "bdl-10",
         "severity" : "error",
-        "human" : "entry.search only when a search",
-        "expression" : "entry.search.empty() or (type = 'searchset')",
-        "xpath" : "not(f:entry/f:search) or (f:type/@value = 'searchset')",
+        "human" : "A document must have a date",
+        "expression" : "type = 'document' implies (timestamp.hasValue())",
+        "xpath" : "not(f:type/@value = 'document') or exists(f:timestamp/@value)",
         "source" : "http://hl7.org/fhir/StructureDefinition/Bundle"
       },
       {
@@ -135,11 +135,11 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Bundle"
       },
       {
-        "key" : "bdl-10",
+        "key" : "bdl-12",
         "severity" : "error",
-        "human" : "A document must have a date",
-        "expression" : "type = 'document' implies (timestamp.hasValue())",
-        "xpath" : "not(f:type/@value = 'document') or exists(f:timestamp/@value)",
+        "human" : "A message must have a MessageHeader as the first resource",
+        "expression" : "type = 'message' implies entry.first().resource.is(MessageHeader)",
+        "xpath" : "not(f:type/@value='message') or f:entry[1]/f:resource/f:MessageHeader",
         "source" : "http://hl7.org/fhir/StructureDefinition/Bundle"
       }],
       "isModifier" : false,
@@ -453,7 +453,6 @@
       "type" : [{
         "code" : "Coding"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -472,23 +471,7 @@
         "strength" : "extensible",
         "description" : "Security Labels from the Healthcare Privacy and Security Classification System.",
         "valueSet" : "http://hl7.org/fhir/ValueSet/security-labels|4.0.1"
-      },
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "v2",
-        "map" : "CE/CNE/CWE subset one of the sets of component 1-3 or 4-6"
-      },
-      {
-        "identity" : "rim",
-        "map" : "CV"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:Coding rdfs:subClassOf dt:CDCoding"
-      }]
+      }
     },
     {
       "id" : "Bundle.meta.tag",
@@ -506,7 +489,6 @@
       "type" : [{
         "code" : "Coding"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -525,23 +507,7 @@
         "strength" : "example",
         "description" : "Codes that represent various types of tags, commonly workflow-related; e.g. \"Needs review by Dr. Jones\".",
         "valueSet" : "http://hl7.org/fhir/ValueSet/common-tags|4.0.1"
-      },
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "v2",
-        "map" : "CE/CNE/CWE subset one of the sets of component 1-3 or 4-6"
-      },
-      {
-        "identity" : "rim",
-        "map" : "CV"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:Coding rdfs:subClassOf dt:CDCoding"
-      }]
+      }
     },
     {
       "id" : "Bundle.implicitRules",
@@ -628,7 +594,6 @@
         "code" : "Identifier",
         "profile" : ["https://gematik.de/fhir/ti/StructureDefinition/e-prescription-id"]
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -641,22 +606,6 @@
       "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "v2",
-        "map" : "CX / EI (occasionally, more often EI maps to a resource id or a URL)"
-      },
-      {
-        "identity" : "rim",
-        "map" : "II - The Identifier class is a little looser than the v3 type II because it allows URIs as well as registered OIDs or GUIDs.  Also maps to Role[classCode=IDENT]"
-      },
-      {
-        "identity" : "servd",
-        "map" : "Identifier"
-      },
-      {
         "identity" : "w5",
         "map" : "FiveWs.identifier"
       },
@@ -786,7 +735,6 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -796,11 +744,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Bundle.link.id",
@@ -832,14 +776,6 @@
     {
       "id" : "Bundle.link.extension",
       "path" : "Bundle.link.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -927,7 +863,6 @@
       "path" : "Bundle.link.relation",
       "short" : "See http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1",
       "definition" : "A name which details the functional use for this link - see [http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1](http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1).",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -954,7 +889,6 @@
       "path" : "Bundle.link.url",
       "short" : "Reference details for the link",
       "definition" : "The reference details for the link.",
-      "comment" : "see http://en.wikipedia.org/wiki/Uniform_resource_identifier",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -999,14 +933,13 @@
         "code" : "BackboneElement"
       }],
       "orderMeaning" : "For bundles of type 'document' and 'message', the first resource is special (must be Composition or MessageHeader respectively). For all bundles, the meaning of the order of entries depends on the bundle type",
-      "condition" : ["ele-1"],
       "constraint" : [{
-        "key" : "ele-1",
+        "key" : "bdl-5",
         "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+        "human" : "must be a resource unless there's a request or response",
+        "expression" : "resource.exists() or request.exists() or response.exists()",
+        "xpath" : "exists(f:resource) or exists(f:request) or exists(f:response)",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Bundle"
       },
       {
         "key" : "bdl-8",
@@ -1017,19 +950,15 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Bundle"
       },
       {
-        "key" : "bdl-5",
+        "key" : "ele-1",
         "severity" : "error",
-        "human" : "must be a resource unless there's a request or response",
-        "expression" : "resource.exists() or request.exists() or response.exists()",
-        "xpath" : "exists(f:resource) or exists(f:request) or exists(f:response)",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Bundle"
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Bundle.entry.id",
@@ -1061,14 +990,6 @@
     {
       "id" : "Bundle.entry.extension",
       "path" : "Bundle.entry.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -1164,6 +1085,15 @@
         "max" : "*"
       },
       "contentReference" : "http://hl7.org/fhir/StructureDefinition/Bundle#Bundle.link",
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
       "isSummary" : true
     },
     {
@@ -1209,11 +1139,7 @@
         "code" : "Resource"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "Entity. Role, or Act"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Bundle.entry.search",
@@ -1230,8 +1156,7 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1",
-      "bdl-2"],
+      "condition" : ["bdl-2"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1241,11 +1166,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Bundle.entry.search.id",
@@ -1277,14 +1198,6 @@
     {
       "id" : "Bundle.entry.search.extension",
       "path" : "Bundle.entry.search.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -1419,7 +1332,6 @@
       "type" : [{
         "code" : "decimal"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1429,11 +1341,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Bundle.entry.request",
@@ -1450,8 +1358,7 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1",
-      "bdl-3"],
+      "condition" : ["bdl-3"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1461,11 +1368,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Bundle.entry.request.id",
@@ -1497,14 +1400,6 @@
     {
       "id" : "Bundle.entry.request.extension",
       "path" : "Bundle.entry.request.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -1654,7 +1549,6 @@
       "path" : "Bundle.entry.request.ifNoneMatch",
       "short" : "For managing cache currency",
       "definition" : "If the ETag values match, return a 304 Not Modified status. See the API documentation for [\"Conditional Read\"](http://hl7.org/fhir/R4/http.html#cread).",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -1681,7 +1575,6 @@
       "path" : "Bundle.entry.request.ifModifiedSince",
       "short" : "For managing cache currency",
       "definition" : "Only perform the operation if the last updated date matches. See the API documentation for [\"Conditional Read\"](http://hl7.org/fhir/R4/http.html#cread).",
-      "comment" : "Note: This is intended for where precisely observed times are required, typically system logs etc., and not human-reported times - for them, see date and dateTime (which can be as precise as instant, but is not required to be) below. Time zone is always required",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -1708,7 +1601,6 @@
       "path" : "Bundle.entry.request.ifMatch",
       "short" : "For managing update contention",
       "definition" : "Only perform the operation if the Etag value matches. For more information, see the API section [\"Managing Resource Contention\"](http://hl7.org/fhir/R4/http.html#concurrency).",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -1735,7 +1627,6 @@
       "path" : "Bundle.entry.request.ifNoneExist",
       "short" : "For conditional creates",
       "definition" : "Instruct the server not to perform the create if a specified resource already exists. For further information, see the API documentation for [\"Conditional Create\"](http://hl7.org/fhir/R4/http.html#ccreate). This is just the query portion of the URL - what follows the \"?\" (not including the \"?\").",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -1772,8 +1663,7 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1",
-      "bdl-4"],
+      "condition" : ["bdl-4"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1783,11 +1673,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Bundle.entry.response.id",
@@ -1819,14 +1705,6 @@
     {
       "id" : "Bundle.entry.response.extension",
       "path" : "Bundle.entry.response.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -1914,7 +1792,6 @@
       "path" : "Bundle.entry.response.status",
       "short" : "Status response code (text optional)",
       "definition" : "The status code returned by processing this entry. The status SHALL start with a 3 digit HTTP code (e.g. 404) and may contain the standard HTTP description associated with the status code.",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -1941,7 +1818,6 @@
       "path" : "Bundle.entry.response.location",
       "short" : "The location (if the operation returns a location)",
       "definition" : "The location header created by processing this operation, populated if the operation returns a location.",
-      "comment" : "see http://en.wikipedia.org/wiki/Uniform_resource_identifier",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -2034,11 +1910,7 @@
         "code" : "Resource"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "Entity. Role, or Act"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Bundle.entry:DocumentInformation",
@@ -2057,14 +1929,13 @@
         "code" : "BackboneElement"
       }],
       "orderMeaning" : "For bundles of type 'document' and 'message', the first resource is special (must be Composition or MessageHeader respectively). For all bundles, the meaning of the order of entries depends on the bundle type",
-      "condition" : ["ele-1"],
       "constraint" : [{
-        "key" : "ele-1",
+        "key" : "bdl-5",
         "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+        "human" : "must be a resource unless there's a request or response",
+        "expression" : "resource.exists() or request.exists() or response.exists()",
+        "xpath" : "exists(f:resource) or exists(f:request) or exists(f:response)",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Bundle"
       },
       {
         "key" : "bdl-8",
@@ -2075,20 +1946,16 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Bundle"
       },
       {
-        "key" : "bdl-5",
+        "key" : "ele-1",
         "severity" : "error",
-        "human" : "must be a resource unless there's a request or response",
-        "expression" : "resource.exists() or request.exists() or response.exists()",
-        "xpath" : "exists(f:resource) or exists(f:request) or exists(f:response)",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Bundle"
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "mustSupport" : true,
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Bundle.entry:DocumentInformation.id",
@@ -2120,14 +1987,6 @@
     {
       "id" : "Bundle.entry:DocumentInformation.extension",
       "path" : "Bundle.entry.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -2223,6 +2082,15 @@
         "max" : "*"
       },
       "contentReference" : "http://hl7.org/fhir/StructureDefinition/Bundle#Bundle.link",
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
       "isSummary" : true
     },
     {
@@ -2307,8 +2175,7 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1",
-      "bdl-2"],
+      "condition" : ["bdl-2"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -2318,11 +2185,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Bundle.entry:DocumentInformation.search.id",
@@ -2354,14 +2217,6 @@
     {
       "id" : "Bundle.entry:DocumentInformation.search.extension",
       "path" : "Bundle.entry.search.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -2496,7 +2351,6 @@
       "type" : [{
         "code" : "decimal"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -2506,11 +2360,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Bundle.entry:DocumentInformation.request",
@@ -2527,8 +2377,7 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1",
-      "bdl-3"],
+      "condition" : ["bdl-3"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -2538,11 +2387,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Bundle.entry:DocumentInformation.request.id",
@@ -2574,14 +2419,6 @@
     {
       "id" : "Bundle.entry:DocumentInformation.request.extension",
       "path" : "Bundle.entry.request.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -2731,7 +2568,6 @@
       "path" : "Bundle.entry.request.ifNoneMatch",
       "short" : "For managing cache currency",
       "definition" : "If the ETag values match, return a 304 Not Modified status. See the API documentation for [\"Conditional Read\"](http://hl7.org/fhir/R4/http.html#cread).",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -2758,7 +2594,6 @@
       "path" : "Bundle.entry.request.ifModifiedSince",
       "short" : "For managing cache currency",
       "definition" : "Only perform the operation if the last updated date matches. See the API documentation for [\"Conditional Read\"](http://hl7.org/fhir/R4/http.html#cread).",
-      "comment" : "Note: This is intended for where precisely observed times are required, typically system logs etc., and not human-reported times - for them, see date and dateTime (which can be as precise as instant, but is not required to be) below. Time zone is always required",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -2785,7 +2620,6 @@
       "path" : "Bundle.entry.request.ifMatch",
       "short" : "For managing update contention",
       "definition" : "Only perform the operation if the Etag value matches. For more information, see the API section [\"Managing Resource Contention\"](http://hl7.org/fhir/R4/http.html#concurrency).",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -2812,7 +2646,6 @@
       "path" : "Bundle.entry.request.ifNoneExist",
       "short" : "For conditional creates",
       "definition" : "Instruct the server not to perform the create if a specified resource already exists. For further information, see the API documentation for [\"Conditional Create\"](http://hl7.org/fhir/R4/http.html#ccreate). This is just the query portion of the URL - what follows the \"?\" (not including the \"?\").",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -2849,8 +2682,7 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1",
-      "bdl-4"],
+      "condition" : ["bdl-4"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -2860,11 +2692,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Bundle.entry:DocumentInformation.response.id",
@@ -2896,14 +2724,6 @@
     {
       "id" : "Bundle.entry:DocumentInformation.response.extension",
       "path" : "Bundle.entry.response.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -2991,7 +2811,6 @@
       "path" : "Bundle.entry.response.status",
       "short" : "Status response code (text optional)",
       "definition" : "The status code returned by processing this entry. The status SHALL start with a 3 digit HTTP code (e.g. 404) and may contain the standard HTTP description associated with the status code.",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -3018,7 +2837,6 @@
       "path" : "Bundle.entry.response.location",
       "short" : "The location (if the operation returns a location)",
       "definition" : "The location header created by processing this operation, populated if the operation returns a location.",
-      "comment" : "see http://en.wikipedia.org/wiki/Uniform_resource_identifier",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -3111,11 +2929,7 @@
         "code" : "Resource"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "Entity. Role, or Act"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Bundle.entry:SigningDevice",
@@ -3134,14 +2948,13 @@
         "code" : "BackboneElement"
       }],
       "orderMeaning" : "For bundles of type 'document' and 'message', the first resource is special (must be Composition or MessageHeader respectively). For all bundles, the meaning of the order of entries depends on the bundle type",
-      "condition" : ["ele-1"],
       "constraint" : [{
-        "key" : "ele-1",
+        "key" : "bdl-5",
         "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+        "human" : "must be a resource unless there's a request or response",
+        "expression" : "resource.exists() or request.exists() or response.exists()",
+        "xpath" : "exists(f:resource) or exists(f:request) or exists(f:response)",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Bundle"
       },
       {
         "key" : "bdl-8",
@@ -3152,20 +2965,16 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Bundle"
       },
       {
-        "key" : "bdl-5",
+        "key" : "ele-1",
         "severity" : "error",
-        "human" : "must be a resource unless there's a request or response",
-        "expression" : "resource.exists() or request.exists() or response.exists()",
-        "xpath" : "exists(f:resource) or exists(f:request) or exists(f:response)",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Bundle"
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "mustSupport" : true,
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Bundle.entry:SigningDevice.id",
@@ -3197,14 +3006,6 @@
     {
       "id" : "Bundle.entry:SigningDevice.extension",
       "path" : "Bundle.entry.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -3300,6 +3101,15 @@
         "max" : "*"
       },
       "contentReference" : "http://hl7.org/fhir/StructureDefinition/Bundle#Bundle.link",
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
       "isSummary" : true
     },
     {
@@ -3371,8 +3181,7 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1",
-      "bdl-2"],
+      "condition" : ["bdl-2"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -3382,11 +3191,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Bundle.entry:SigningDevice.search.id",
@@ -3418,14 +3223,6 @@
     {
       "id" : "Bundle.entry:SigningDevice.search.extension",
       "path" : "Bundle.entry.search.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -3560,7 +3357,6 @@
       "type" : [{
         "code" : "decimal"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -3570,11 +3366,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Bundle.entry:SigningDevice.request",
@@ -3591,8 +3383,7 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1",
-      "bdl-3"],
+      "condition" : ["bdl-3"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -3602,11 +3393,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Bundle.entry:SigningDevice.request.id",
@@ -3638,14 +3425,6 @@
     {
       "id" : "Bundle.entry:SigningDevice.request.extension",
       "path" : "Bundle.entry.request.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -3795,7 +3574,6 @@
       "path" : "Bundle.entry.request.ifNoneMatch",
       "short" : "For managing cache currency",
       "definition" : "If the ETag values match, return a 304 Not Modified status. See the API documentation for [\"Conditional Read\"](http://hl7.org/fhir/R4/http.html#cread).",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -3822,7 +3600,6 @@
       "path" : "Bundle.entry.request.ifModifiedSince",
       "short" : "For managing cache currency",
       "definition" : "Only perform the operation if the last updated date matches. See the API documentation for [\"Conditional Read\"](http://hl7.org/fhir/R4/http.html#cread).",
-      "comment" : "Note: This is intended for where precisely observed times are required, typically system logs etc., and not human-reported times - for them, see date and dateTime (which can be as precise as instant, but is not required to be) below. Time zone is always required",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -3849,7 +3626,6 @@
       "path" : "Bundle.entry.request.ifMatch",
       "short" : "For managing update contention",
       "definition" : "Only perform the operation if the Etag value matches. For more information, see the API section [\"Managing Resource Contention\"](http://hl7.org/fhir/R4/http.html#concurrency).",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -3876,7 +3652,6 @@
       "path" : "Bundle.entry.request.ifNoneExist",
       "short" : "For conditional creates",
       "definition" : "Instruct the server not to perform the create if a specified resource already exists. For further information, see the API documentation for [\"Conditional Create\"](http://hl7.org/fhir/R4/http.html#ccreate). This is just the query portion of the URL - what follows the \"?\" (not including the \"?\").",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -3913,8 +3688,7 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1",
-      "bdl-4"],
+      "condition" : ["bdl-4"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -3924,11 +3698,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Bundle.entry:SigningDevice.response.id",
@@ -3960,14 +3730,6 @@
     {
       "id" : "Bundle.entry:SigningDevice.response.extension",
       "path" : "Bundle.entry.response.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -4055,7 +3817,6 @@
       "path" : "Bundle.entry.response.status",
       "short" : "Status response code (text optional)",
       "definition" : "The status code returned by processing this entry. The status SHALL start with a 3 digit HTTP code (e.g. 404) and may contain the standard HTTP description associated with the status code.",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -4082,7 +3843,6 @@
       "path" : "Bundle.entry.response.location",
       "short" : "The location (if the operation returns a location)",
       "definition" : "The location header created by processing this operation, populated if the operation returns a location.",
-      "comment" : "see http://en.wikipedia.org/wiki/Uniform_resource_identifier",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -4175,11 +3935,7 @@
         "code" : "Resource"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "Entity. Role, or Act"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Bundle.entry:PrescriptionDigest",
@@ -4198,14 +3954,13 @@
         "code" : "BackboneElement"
       }],
       "orderMeaning" : "For bundles of type 'document' and 'message', the first resource is special (must be Composition or MessageHeader respectively). For all bundles, the meaning of the order of entries depends on the bundle type",
-      "condition" : ["ele-1"],
       "constraint" : [{
-        "key" : "ele-1",
+        "key" : "bdl-5",
         "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+        "human" : "must be a resource unless there's a request or response",
+        "expression" : "resource.exists() or request.exists() or response.exists()",
+        "xpath" : "exists(f:resource) or exists(f:request) or exists(f:response)",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Bundle"
       },
       {
         "key" : "bdl-8",
@@ -4216,20 +3971,16 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Bundle"
       },
       {
-        "key" : "bdl-5",
+        "key" : "ele-1",
         "severity" : "error",
-        "human" : "must be a resource unless there's a request or response",
-        "expression" : "resource.exists() or request.exists() or response.exists()",
-        "xpath" : "exists(f:resource) or exists(f:request) or exists(f:response)",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Bundle"
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "mustSupport" : true,
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Bundle.entry:PrescriptionDigest.id",
@@ -4261,14 +4012,6 @@
     {
       "id" : "Bundle.entry:PrescriptionDigest.extension",
       "path" : "Bundle.entry.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -4364,6 +4107,15 @@
         "max" : "*"
       },
       "contentReference" : "http://hl7.org/fhir/StructureDefinition/Bundle#Bundle.link",
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
       "isSummary" : true
     },
     {
@@ -4436,8 +4188,7 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1",
-      "bdl-2"],
+      "condition" : ["bdl-2"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -4447,11 +4198,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Bundle.entry:PrescriptionDigest.search.id",
@@ -4483,14 +4230,6 @@
     {
       "id" : "Bundle.entry:PrescriptionDigest.search.extension",
       "path" : "Bundle.entry.search.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -4625,7 +4364,6 @@
       "type" : [{
         "code" : "decimal"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -4635,11 +4373,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Bundle.entry:PrescriptionDigest.request",
@@ -4656,8 +4390,7 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1",
-      "bdl-3"],
+      "condition" : ["bdl-3"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -4667,11 +4400,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Bundle.entry:PrescriptionDigest.request.id",
@@ -4703,14 +4432,6 @@
     {
       "id" : "Bundle.entry:PrescriptionDigest.request.extension",
       "path" : "Bundle.entry.request.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -4860,7 +4581,6 @@
       "path" : "Bundle.entry.request.ifNoneMatch",
       "short" : "For managing cache currency",
       "definition" : "If the ETag values match, return a 304 Not Modified status. See the API documentation for [\"Conditional Read\"](http://hl7.org/fhir/R4/http.html#cread).",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -4887,7 +4607,6 @@
       "path" : "Bundle.entry.request.ifModifiedSince",
       "short" : "For managing cache currency",
       "definition" : "Only perform the operation if the last updated date matches. See the API documentation for [\"Conditional Read\"](http://hl7.org/fhir/R4/http.html#cread).",
-      "comment" : "Note: This is intended for where precisely observed times are required, typically system logs etc., and not human-reported times - for them, see date and dateTime (which can be as precise as instant, but is not required to be) below. Time zone is always required",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -4914,7 +4633,6 @@
       "path" : "Bundle.entry.request.ifMatch",
       "short" : "For managing update contention",
       "definition" : "Only perform the operation if the Etag value matches. For more information, see the API section [\"Managing Resource Contention\"](http://hl7.org/fhir/R4/http.html#concurrency).",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -4941,7 +4659,6 @@
       "path" : "Bundle.entry.request.ifNoneExist",
       "short" : "For conditional creates",
       "definition" : "Instruct the server not to perform the create if a specified resource already exists. For further information, see the API documentation for [\"Conditional Create\"](http://hl7.org/fhir/R4/http.html#ccreate). This is just the query portion of the URL - what follows the \"?\" (not including the \"?\").",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -4978,8 +4695,7 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1",
-      "bdl-4"],
+      "condition" : ["bdl-4"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -4989,11 +4705,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Bundle.entry:PrescriptionDigest.response.id",
@@ -5025,14 +4737,6 @@
     {
       "id" : "Bundle.entry:PrescriptionDigest.response.extension",
       "path" : "Bundle.entry.response.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -5120,7 +4824,6 @@
       "path" : "Bundle.entry.response.status",
       "short" : "Status response code (text optional)",
       "definition" : "The status code returned by processing this entry. The status SHALL start with a 3 digit HTTP code (e.g. 404) and may contain the standard HTTP description associated with the status code.",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -5147,7 +4850,6 @@
       "path" : "Bundle.entry.response.location",
       "short" : "The location (if the operation returns a location)",
       "definition" : "The location header created by processing this operation, populated if the operation returns a location.",
-      "comment" : "see http://en.wikipedia.org/wiki/Uniform_resource_identifier",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -5240,11 +4942,7 @@
         "code" : "Resource"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "Entity. Role, or Act"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Bundle.signature",
@@ -5264,7 +4962,6 @@
         "code" : "Signature",
         "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Signature"]
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -5275,15 +4972,7 @@
       }],
       "mustSupport" : true,
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "rim",
-        "map" : "N/A"
-      }]
+      "isSummary" : true
     }]
   },
   "differential" : {

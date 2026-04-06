@@ -42,12 +42,12 @@ Verordnungsdauer und Menge:
 * Derzeit sind keine DiGA-Höchstverordnungsmengen pro Versicherten festgelegt; das heißt, dass gegebenenfalls mehrere unterschiedliche DiGA für unterschiedliche Indikationen gleichzeitig verordnet werden können.
 * Pro Rezeptblatt darf nur eine DiGA verordnet werden.
 
-Einlösen des Rezeptes:
+Einlösen der Verordnung:
 
-* Mit dem Rezept wenden sich Versicherte an ihre Krankenkasse.
+* Mit der Verordnung wenden sich Versicherte an ihre Krankenkasse.
 * Diese prüft unter anderem den Versichertenstatus und generiert einen Freischaltcode.
 * Danach laden sich Versicherte die DiGA-App im jeweiligen App-Store herunter und geben den Freischaltcode ein.
-* Die Kosten für die DiGA werden dann von der Kasse direkt mit dem Hersteller abgerechnet.
+* Die Kosten für die DiGA werden dann von der Krankenkasse direkt mit dem Hersteller abgerechnet.
 * Eine Zuzahlungspflicht für Versicherte besteht nicht. Nur wenn der DiGA-Preis über dem Höchstbetrag liegt, müssen Versicherte die Mehrkosten tragen. Kosten optionaler Dienste und Funktionen einer DIGA, die keinen medizinischen Zweck verfolgen, sowie in-App Käufe trägt der Versicherte selbst.
 
 Verweise:
@@ -64,13 +64,13 @@ Es besteht der gesetzliche Auftrag, die ärztlichen und psychotherapeutischen Ve
 **Vorteile der elektronischen Verordnung:**
 
 1. Durch die Umstellung und den Verzicht auf die Nutzung von Muster 16 entfallen Wege zur Krankenkasse zwecks Übermittlung von Antrag und bisherigem Mustervordruck. Dies verringert den Zeit- und Wegeaufwand für Versicherte und lässt sie potentiell früher in die DiGA-Nutzung einsteigen.
-1. Ärzte verordnen bereits verschreibungspflichtige Arzneimittel standardmäßig per E-Rezept und erzeugen nur auf Wunsch von Patienten noch einen Ausdruck. Mit der elektronischen Verordnung für DiGA wird ein weiterer Grund zur Verwendung von Muster 16 eliminiert.
+1. Ärzte verordnen bereits verschreibungspflichtige Arzneimittel standardmäßig per E-Rezept und erzeugen nur auf Wunsch von Patienten noch einen Patientenausdruck. Mit der elektronischen Verordnung für DiGA wird ein weiterer Grund zur Verwendung von Muster 16 eliminiert.
 1. Krankenkassen werden Anfragen nach Freischaltcodes häufiger auf digitalem Weg erhalten. Es entfällt daher die Handhabung des Muster 16.
 
 **Involvierte Akteure:**
 
-* **Ärzte, Zahnärzte und Psychotherapeuten** können DiGA verordnen. Auf Wunsch der Patienten ist ein Ausdruck bereitzustellen (SGB V § 360 Abs. 9).
-* **Patienten** können mit Hilfe einer App mit E-Rezept-Funktionalität nach SGB V § 360 Abs. 10 auf ihre Verordnungen zugreifen und durch aktive Anfrage zu einem einzelnen E-Rezept für DiGA den Freischaltcode erlangen. Sind Patienten nicht Nutzer einer App nach § 360 Abs. 10 SGB V benötigen sie zur Anfrage einen Ausdruck nach § 360 Abs. 9 SGB V. Nach Eingabe oder Übertragung des Freischaltcodes kann die verordnete DiGA verwendet werden.
+* **Ärzte, Zahnärzte und Psychotherapeuten** können DiGA verordnen. Auf Wunsch der Patienten ist ein Patientenausdruck bereitzustellen (SGB V § 360 Abs. 9).
+* **Patienten** können mit Hilfe einer App mit E-Rezept-Funktionalität nach SGB V § 360 Abs. 10 auf ihre Verordnungen zugreifen und durch aktive Anfrage zu einer einzelnen DiGA-Verordnung den Freischaltcode erhalten. Sind Patienten nicht Nutzer einer App nach § 360 Abs. 10 SGB V benötigen sie zur Anfrage einen Patientenausdruck nach § 360 Abs. 9 SGB V. Nach Eingabe oder Übertragung des Freischaltcodes kann die verordnete DiGA verwendet werden.
 * **Gesetzliche Krankenkassen** nehmen Zugriffsinformationen einer elektronischen Verordnung von Versicherten aus einer App nach SGB V § 360 Abs. 10 oder als Ausdruck nach SGB V § 360 Abs. 9 entgegen, laden das E-Rezept vom Fachdienst herunter und stellen nach Prüfung einen Freischaltcode bereit.
 * **DiGA Hersteller** stellen nach Erhalt eines Freischaltcodes den Versicherten die DiGA zur Nutzung bereit und rechnen gegenüber der gesetzlichen Krankenkasse den erhaltenen Freischaltcode ab.
 
@@ -78,8 +78,8 @@ Es besteht der gesetzliche Auftrag, die ärztlichen und psychotherapeutischen Ve
 
 * Das Ersatzverfahren für die elektronische Verordnung von DiGA wird im Bundesmantelvertrag vereinbart. Als Ersatzverfahren wird das bisherige Muster 16 genutzt.
 * Für DiGA Verordnungen zu Lasten einer Berufsgenossenschaft oder gesetzlichen Unfallkasse wird wie bisher das Muster 16 verwendet.
-* Krankenkassen greifen nach erfolgter Anfrage eines Versicherten gemäß SGB V § 361b auf den Fachdienst zu, um das E-Rezept herunterzuladen. Der Zugriff auf den Fachdienst sowie die Bereitstellung des Freischaltcodes wird vom Fachdienst als Statusänderung erfasst. Der bereitgestellte Freischaltcode wird als Abgabeinformation im Fachdienst gespeichert.
-* DiGA Hersteller erhalten keinen Zugriff auf den TI-Flow-Fachdienst und somit auch nicht das E-Rezept.
+* Krankenkassen greifen nach erfolgter Anfrage eines Versicherten gemäß SGB V § 361b auf den Fachdienst zu, um die Verordnung herunterzuladen. Der Zugriff auf den Fachdienst sowie die Bereitstellung des Freischaltcodes wird vom Fachdienst als Statusänderung erfasst. Der bereitgestellte Freischaltcode wird als bgabeinformation im Fachdienst gespeichert.
+* DiGA Hersteller erhalten keinen Zugriff auf den TI-Flow-Fachdienst und somit auch nicht auf die Verordnung.
 
 **Prämissen und Anforderungen:**
 
@@ -87,8 +87,8 @@ Es besteht der gesetzliche Auftrag, die ärztlichen und psychotherapeutischen Ve
 * Etwaige in der TI detektierte Ausfälle werden im Primärsystem der verordnenden Person erkannt und leiten den Nutzer zur Verwendung des Ersatzverfahrens.
 * Anforderungen und Empfehlungen für eine gute UX werden im Implementierungsleitfaden beschrieben bzw. finden auch für die elektronische Verordnung von DiGA Anwendung.
 * Die Anforderung des Freischaltcodes in einer App gemäß SGB V § 360 Abs. 10 ist eine bewusste vom Versicherten gesteuerte Aktion (Klick in einem E-Rezept-FdV) oder wird durch Bereitstellung des Papierausdrucks (SGB V § 360 Abs. 9) gesteuert.
-* Die Speicherung des Freischaltcodes erfolgt als Abgabeinformation im E-Rezept- Fachdienst. Die digitale Bereitstellung und Anzeige des Freischaltcodes in einer App nach SGB V § 360 Abs. 10 ebenso wie die Anzeige eines Deep-Links,so dass ein einfacher Aufruf der DiGA inkl. Übertragung des Freischaltcodes erfolgen kann.
-* Sollte eine Bereitstellung eines Freischaltcodes nach Herunterladen des E-Rezeptes und Prüfung durch die Krankenkasse nicht erfolgen können, so ist eine Rückmeldung in den Abgabeinformationen anzugeben, damit Versicherte ein Ergebnis des Prozessschrittes nachvollziehen können.
+* Die Speicherung des Freischaltcodes erfolgt als Abgabeinformation im Fachdienst. Die digitale Bereitstellung und Anzeige des Freischaltcodes in einer App nach SGB V § 360 Abs. 10 ebenso wie die Anzeige eines Deep-Links, so dass ein einfacher Aufruf der DiGA inkl. Übertragung des Freischaltcodes erfolgen kann.
+* Sollte eine Bereitstellung eines Freischaltcodes nach Herunterladen der Verordnung und Prüfung durch die Krankenkasse nicht erfolgen können, so ist eine Rückmeldung in den Abgabeinformationen anzugeben, damit Versicherte ein Ergebnis des Prozessschrittes nachvollziehen können.
 
 **Wesentliche funktionale Erweiterungen:**
 
@@ -159,6 +159,41 @@ Als DiGA Hersteller möchte ich
 * …, dass mit Einlösung des E-Rezeptes der Freischaltcode fristgerecht bereitgestellt wird, damit ich nach der Einlösung des Freischaltcodes durch den Versicherten abrechnen kann.
 * …, dass im Verordnungsprozess wie auch bei Bereitstellung der Freischaltcodes hochverfügbare Dienste angeboten werden.
 * …, dass Patienten eine einheitliche Rückmeldung erhalten, warum kein Freischaltcode ausgestellt werden kann.
+
+## Workflow Status und Statusübergänge
+
+**Abbildung: **Workflow Status und Statusübergänge - Flowtyp 162
+
+
+* Status des Workflows: draft
+  * Beschreibung und mögliche Statusübergänge: * Mit dem Abruf einer Verordnungs-ID durch eine verordnende LEI wird ein Workflow im Fachdienst (Task Ressource) mit dem Status "draft" erstellt.
+* Wenn die verordnende LEI die Verordnung in den erstellten Workflow hinzufügt, dann wechselt der Workflow in den Status "ready".
+
+* Status des Workflows: ready
+  * Beschreibung und mögliche Statusübergänge: * Die Verordnung wurde von der verordnenden LEI in den Fachdienst eingestellt.
+* Die Verordnung kann vom Versicherten abgerufen werden
+* Der Versicherte oder die verordnende LEI können die Verordnung als gelöscht markieren. Der Workflow wechselt in den Status "cancelled".
+* Der Abruf der Verordnung durch einen Kostenträger ändert den Status des Workflows auf "in-progress". In diesem Status ist der Zugriff durch andere Kostenträger gesperrt.
+
+* Status des Workflows: in-progress
+  * Beschreibung und mögliche Statusübergänge: * Die Verordnung wurde von einem Kostenträger abgerufen.
+* Der Zugriff durch andere Kostenträger oder die verordnende LEI ist gesperrt. Ebenso darf der Versicherte die Verordnung in diesem Status nicht löschen.
+* Die Verordnung kann durch den Kostenträger zurückgewiesen werden. Der Workflows wechselt zurück in den Status "ready".
+* Der Kostenträger kann den Freischaltcode an den Fachdienst übermitteln. Der Workflows wechselt zurück in den Status "completed"
+* Die Verordnung kann vom Versicherten abgerufen werden.
+
+* Status des Workflows: completed
+  * Beschreibung und mögliche Statusübergänge: * Der Workflow wurde vom Kostenträger abgeschlosen.
+* Ein bereitgestellter Freischaltcode kann vom Versicherten abgerufen werden.
+* Der Versicherte kann die Verordnung als gelöscht markieren. Der Workflow wechselt in den Status "cancelled".
+
+* Status des Workflows: cancelled
+  * Beschreibung und mögliche Statusübergänge: * Die personenbezogenen und medizinischen Daten wurden aus dem Task gelöscht.
+* Die Akteure können nicht auf den Task zugreifen.
+* Hinweis: Das eigentliche physische Löschen des Datensatzes erfolgt automatisch durch den E-Rezept-Fachdienst nach einer Löschfrist.
+
+
+**Tabelle: **Workflow Status und Statusübergänge - Flowtyp 162
 
 ## Anwendungsfälle
 

@@ -36,10 +36,6 @@ Für die Authentisierung nutzt der Kostenträger seine SM-B KTR mit der Rolle oi
 
 Für Übermittlungen von DiGA Verordnungen wird der **Flowtype 162** verwendet.
 
-Der Workflow mit Flowtype 162 verwendet dasselbe Statusmodell wie der Workflow mit Flowtype 160.
-
-Der Statusübergang von “in-progress” zu “cancelled” durch den Kostenträger über “UC 4.3 - E-Rezept durch Abgebenden löschen” ist für DiGA Verordnungen nicht vorgesehen.
-
 ### Löschfristen
 
 Die Löschfristen für Workflows mit Flowtype 162 entsprechen denen des Workflows mit Flowtype 160.
