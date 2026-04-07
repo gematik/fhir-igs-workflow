@@ -71,7 +71,7 @@ umsetzen.
 * Beschreibung: Nachbedingungen
   * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primaersystem. Für die Verordnung wird eine Rezept-ID aus dem TI-Flow-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).: * E-Rezept enthält Rezept-ID und QES.
 * AccessCode des E-Rezepts ist im Primärsystem gespeichert.
-* Workflow zum E-Rezept ist im TI-Flow-Fachdienst im Status “initialisiert” angelegt.
+* Workflow zum E-Rezept ist im TI-Flow-Fachdienst im Status “draft” angelegt.
 
 * Beschreibung: Schnittstellen
   * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primaersystem. Für die Verordnung wird eine Rezept-ID aus dem TI-Flow-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).: * [Operation API: E-Rezept erstellen](./op-create.md)
@@ -118,7 +118,7 @@ umsetzen.
 * Beschreibung: Vorbedingungen
   * Ein E-Rezept wird vom Primärsystem beim TI-Flow-Fachdienst eingestellt und ein E-Rezept-Token erzeugt.: * UC 2.1 wurde ausgeführt; E-Rezept und Signatur liegen im Primärsystem vor.
 * Rezept-ID und AccessCode sind bekannt.
-* Status im TI-Flow-Fachdienst ist “initialisiert”.
+* Status im TI-Flow-Fachdienst ist “draft”.
 
 * Beschreibung: Durchzuführende Aktionen
   * Ein E-Rezept wird vom Primärsystem beim TI-Flow-Fachdienst eingestellt und ein E-Rezept-Token erzeugt.: * Der Leistungserbringer wählt ein E-Rezept zum Einstellen aus.

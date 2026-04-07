@@ -68,7 +68,7 @@ Mit diesem Anwendungsfall kann der Nutzer die lokal in seinem E-Rezept-FdV gespe
 
 ### Verordnung apothekenpflichtiger Arzneimittel (GKV/PKV)
 
-Ein verordnender Leistungserbringer erstellt im Primärsystem (PVS/KIS) den Verordnungsdatensatz, signiert diesen qualifiziert und stellt das E-Rezept im TI-Flow-Fachdienst bereit.
+Ein verordnender Leistungserbringer erstellt im Primärsystem (PVS/ZPVS/KIS) den Verordnungsdatensatz, signiert diesen qualifiziert und stellt das E-Rezept im TI-Flow-Fachdienst bereit.
 
 #### Fachlicher Ablauf
 
@@ -82,7 +82,7 @@ Ein verordnender Leistungserbringer erstellt im Primärsystem (PVS/KIS) den Vero
 * Für PKV-Versicherte können zusätzliche Schritte zur Bereitstellung PKV-relevanter Versichertendaten erforderlich sein (z. B. Online Check-in).
 * Beide Gruppen durchlaufen für apothekenpflichtige Arzneimittel den regulären Einlöseprozess in der öffentlichen Apotheke.
 
-**Beteiligte Systeme:** PVS/KIS, TI-Flow-Fachdienst
+**Beteiligte Systeme:** PVS/ZPVS/KIS, TI-Flow-Fachdienst
 
 **Technische Anwendungsfälle**
 
@@ -94,7 +94,7 @@ Ein verordnender Leistungserbringer erstellt im Primärsystem (PVS/KIS) den Vero
 | [UC 2.5 - E-Rezept durch Verordnenden löschen](menu-technische-umsetzung-anwendungsfaelle.md#uc-2-5-e-rezept-durch-verordnenden-loeschen) |
 
 **Tabelle:**Technische Anwendungsfälle mit Bezug zu Anwendungsfall
-*Verordnung apothekenpflichtiger Arzneimittel (160/200)*
+*Verordnung apothekenpflichtiger Arzneimittel*
 ### Belieferung in der Apotheke (GKV/PKV)
 
 Nach Übergabe von Task-ID und AccessCode (z. B. 2D-Code oder Nachricht) ruft die Apotheke das E-Rezept im Fachdienst ab, beliefert den Versicherten und schließt den Workflow ab.
@@ -128,7 +128,7 @@ Nach Übergabe von Task-ID und AccessCode (z. B. 2D-Code oder Nachricht) ruft di
 | [UC 4.16 - Dispensierinformationen bereitstellen](menu-technische-umsetzung-anwendungsfaelle.md#uc-4-16-dispensierinformationen-bereitstellen) |
 
 **Tabelle:**Technische Anwendungsfälle mit Bezug zu Anwendungsfall
-*Belieferung apothekenpflichtiger Arzneimittel (160/200)*
+*Belieferung apothekenpflichtiger Arzneimittel*
 ### Verwalten von E-Rezepten durch Versicherten
 
 Versicherte verwalten ihre E-Rezepte in der E-Rezept-App, sehen Zugriffsprotokolle ein und laden bei Bedarf zusätzliche Informationen zum ausgegebenen Medikament herunter. Wird auf einen Papierausdruck verzichtet, erfolgt die Einlösung über die App: Aus den heruntergeladenen Daten wird ein 2D-Code (DataMatrix) erzeugt, der in der Apotheke gescannt wird und damit die Adresse sowie Zugriffsberechtigung zum E-Rezept bereitstellt.
@@ -142,7 +142,7 @@ Versicherte verwalten ihre E-Rezepte in der E-Rezept-App, sehen Zugriffsprotokol
 
 ### Anwendungsfälle
 
-**Beteiligte Systeme:** PVS/KIS, AVS, E-Rezept-FdV , TI-Flow-Fachdienst
+**Beteiligte Systeme:** PVS/ZPVS/KIS, AVS, E-Rezept-FdV , TI-Flow-Fachdienst
 
 #### Technische Anwendungsfälle der Verordnung
 

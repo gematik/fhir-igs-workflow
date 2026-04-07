@@ -29,10 +29,10 @@ Für die im Rahmen des Einlösens im europäischen Ausland vorgegebenen Prozesss
 
 | | | | |
 | :--- | :--- | :--- | :--- |
-| Identifizierung des Versicherten im Abgabeland | UC Demographische Daten eines Versicherten abrufen | offen (ready) | offen (ready) |
-| Auflistung von E-Rezepten des Versicherten | UC Liste der einlösbaren E-Rezepte eines Versicherten abrufen | offen (ready) | offen (ready) |
-| Abruf der abzugebenden E-Rezepte als Original | UC Liste ausgewählter E-Rezepte eines Versicherten abrufen | offen (ready) | in Abgabe (gesperrt) (in-progress) |
-| Abgabe von Arzneimitteln im Abgabeland | UC Abgabe von E-Rezepten im europäischen Ausland | in Abgabe (gesperrt) (in-progress) | quittiert (completed) |
+| Identifizierung des Versicherten im Abgabeland | UC Demographische Daten eines Versicherten abrufen | ready | ready |
+| Auflistung von E-Rezepten des Versicherten | UC Liste der einlösbaren E-Rezepte eines Versicherten abrufen | ready | ready |
+| Abruf der abzugebenden E-Rezepte als Original | UC Liste ausgewählter E-Rezepte eines Versicherten abrufen | ready | in-progress |
+| Abgabe von Arzneimitteln im Abgabeland | UC Abgabe von E-Rezepten im europäischen Ausland | in-progress | completed |
 
 **Tabelle: **Statusübergänge EU Mapping
 
