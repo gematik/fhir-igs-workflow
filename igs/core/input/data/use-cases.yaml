@@ -64,7 +64,7 @@
   postconditions: |
     - E-Rezept enthält Rezept-ID und QES.
     - AccessCode des E-Rezepts ist im Primärsystem gespeichert.
-    - Workflow zum E-Rezept ist im TI-Flow-Fachdienst im Status "initialisiert" angelegt.
+    - Workflow zum E-Rezept ist im TI-Flow-Fachdienst im Status "draft" angelegt.
   interface: |
     - [Operation API: E-Rezept erstellen](./op-create.html)
     - QES im Primärsystem (Konnektor)
@@ -80,7 +80,7 @@
   preconditions: |
     - UC 2.1 wurde ausgeführt; E-Rezept und Signatur liegen im Primärsystem vor.
     - Rezept-ID und AccessCode sind bekannt.
-    - Status im TI-Flow-Fachdienst ist "initialisiert".
+    - Status im TI-Flow-Fachdienst ist "draft".
   actions: |
     - Der Leistungserbringer wählt ein E-Rezept zum Einstellen aus.
     - Das Primärsystem lädt das E-Rezept in den Workflow im TI-Flow-Fachdienst.
