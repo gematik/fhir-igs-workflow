@@ -6,7 +6,8 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$close` gesendet.
 ### Anforderungen an Schnittstelle
 
 - [Server-Anforderungen zu `$close`](./op-close-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
-- [Client-Anforderungen zu `$close`](./op-close-req-avs.html): Anforderungen an den Client des TI-Flow-Fachdienstes zur Nutzung der Schnittstelle.
+- [AVS-Anforderungen zu `$close`](./op-close-req-avs.html): Anforderungen an das Apothekenverwaltungssystem zur Nutzung der Schnittstelle.
+- [KTR-Anforderungen zu `$close`](./op-close-req-ktr.html): Anforderungen an das Clientsystem des Kostenträgers zur Nutzung der Schnittstelle.
 
 ### API Beschreibung
 
