@@ -11,7 +11,7 @@ Version 1.0.0-draft - ci-build
 
 Das Feature “Elektronische Verordnung von DiGAs” erweitert die bestehenden Workflows um Verordnungen für Digitale Gesundheitsanwendungen (DiGA). DiGAs sind zertifizierte Apps oder Webanwendungen, die Patienten bei der Erkennung, Überwachung und Behandlung von Erkrankungen unterstützen. Das Feature beschreibt die Prozessparameter, Rollen und fachlichen Anforderungen für den Workflow-Fachdienst und beteiligte Clientsysteme.
 
-## Abgrenzungen
+### Abgrenzungen
 
 Folgende Aspekte sind nicht Gegenstand dieses IG:
 
@@ -20,7 +20,7 @@ Folgende Aspekte sind nicht Gegenstand dieses IG:
 * Da für die Berufsgenossenschaften und gesetzlichen Unfallkassen noch nicht die Voraussetzungen geschaffen wurden, auf den TI-Flow-Fachdienst in der TI zuzugreifen, können sie an der elektronischen Verordnung von DiGAs noch nicht teilnehmen. Die Einbindung wird für eine Folgestufe angestrebt.
 * Bestehende Schnittstellen zwischen DiGA Herstellern und Krankenkassen zwecks Abrechnung von Freischaltcodes werden nachgenutzt und sind daher unabhängig dieses Dokumentes.
 
-## Epic
+### Epic
 
 Durch das Digitale Versorgungsgesetz wurde ermöglicht, “digitale Gesundheitsanwendungen” (DiGAs) ärztlich zu verordnen.
 
@@ -57,7 +57,7 @@ Verweise:
 * Die technische Anlage zur elektronischen Verordnung Digitaler Gesundheitsanwendungen (Muster E16D): https://update.kbv.de/ita-update/DigitaleMuster/eVDGA/KBV_ITA_VGEX_Technische_Anlage_EVDGA.pdf
 * Vereinbarungen zur Abrechnung werden hier definiert: https://www.gkv-spitzenverband.de/krankenversicherung/digitalisierung/kv_diga/diga.jsp
 
-## Elektronische Verordnung von DiGAs
+### Elektronische Verordnung von DiGAs
 
 Es besteht der gesetzliche Auftrag, die ärztlichen und psychotherapeutischen Verordnungen von DiGA zukünftig in elektronischer Form zu übermitteln (siehe SGB V § 360 Abs. 4).
 
@@ -96,9 +96,9 @@ Es besteht der gesetzliche Auftrag, die ärztlichen und psychotherapeutischen Ve
 * Neben approbierten Ärzten, Zahnärzten dürfen DiGA auch von Psychotherapeuten verschrieben werden.
 * Die Krankenkasse terminiert den Workflow durch Bereitstellung eines Freischaltcodes oder einer Rückmeldung; weshalb dies nicht erfolgen kann. Der Freischaltcode oder die Rückmeldung ist im TI-Flow-Fachdienst von der Krankenkasse zu hinterlegen, damit, gemäß SGB V § 312 Abs. 1 Satz 1 Nr. 3 “Abgabeinformationen zu elektronischen Verordnungen nach den Nummern 7 […] den Versicherten elektronisch verfügbar gemacht werden können”. Dies kann die in SGB V § 360 Abs. 14 vorgesehenen automatisierte Bereitstellung der Verordnungsdaten und Dispensierinformationen auch zur elektronischen Verordnung von DiGA in der elektronischen Patientenakte ermöglichen.
 
-## User Stories
+### User Stories
 
-### Versicherte
+#### Versicherte
 
 Als Patient möchte ich
 
@@ -117,7 +117,7 @@ Als Patient möchte ich
 * …, dass ich einfach auf die beim BfArM hinterlegte Informationsseite der DiGA sowie die Gebrauchsanweisung per Link aus dem E-Rezept-FdV zugreifen kann, so dass ich mich schnell informieren kann.
 * …, dass ich einfach die Mindestanforderungen der verordneten DiGA-App aus dem Verzeichnis des BfArM per E-Rezept-FdV finden kann, so dass ich in der Lage bin die Mindestanforderungen an mein Endgerät zu prüfen. Im E-Rezept-FdV wird ein Hinweis ausgespielt (z.B.: “Auf diesem Gerät kann die DiGA ggf. nicht verwendet werden”).
 
-### Verordnende
+#### Verordnende
 
 Als verordnender Arzt möchte ich, …
 
@@ -127,7 +127,7 @@ Als verordnender Arzt möchte ich, …
 * … dass meine Patienten gut darüber informiert sind, was DiGAs sind. Als Arzt möchte ich möglichst wenig Aufklärung über administrative Prozesse der Krankenkasse zum Erhalt des Freischaltcodes übernehmen.
 * … dass ein Ersatzverfahren existiert (vergleichbar heutiger Prozess Muster 16), so dass ich auch bei Internetausfall (de/zentrale Verbindungsprobleme mit/ohne TI) eine DiGA verordnen kann.
 
-### Kostenträger
+#### Kostenträger
 
 Als Kostenträger möchte ich …
 
@@ -145,7 +145,7 @@ Als Kostenträger möchte ich …
 * …, dass alle Prozesse und auch die Prüfbarkeit so gestaltet sind, dass eine einfache maschinelle Verarbeitung möglich ist, so dass ich automatisieren und damit die Prozesskosten niedrig halten kann.
 * … nach Übergabe des E-Rezept-Tokens des Versicherten die elektronischen Verordnungsdaten direkt vom TI-Flow-Fachdienst abholen.
 
-### DiGA Hersteller
+#### DiGA Hersteller
 
 DiGA Hersteller sind zunächst nicht in den Verordnungsvorgang und nicht bei Übergabe der elektronischen Verordnung vom Versicherten an die Krankenkasse involviert. Die User Stories aus Sicht der DiGA Hersteller, sollen dennoch als Perspektive zum Verständnis der Rolle der Hersteller und derer Anforderungen hier genannt werden.
 
@@ -160,7 +160,52 @@ Als DiGA Hersteller möchte ich
 * …, dass im Verordnungsprozess wie auch bei Bereitstellung der Freischaltcodes hochverfügbare Dienste angeboten werden.
 * …, dass Patienten eine einheitliche Rückmeldung erhalten, warum kein Freischaltcode ausgestellt werden kann.
 
-## Workflow Status und Statusübergänge
+### Anwendungsfälle
+
+#### Verschreiben
+
+Der technische Ablauf zum Verschreiben einer Verordnung für eine DiGA erfolgt analog zu einer Verordnung für apothekenpflichtige Arzneimittel. Verordnungen von DiGAs können Ärzten, Zahnärzten und Psychotherapeuten vornehmen. Der Arzt oder medizinischer Fachangestellter (MFA) erstellt eine elektronische Verordnung für eine DiGA. Für die Auswahl der passenden PZN (inklusive indikations- oder laufzeitbezogener Varianten) werden die Daten aus dem BfArM-DiGA-Verzeichnis genutzt. Über das Primärsystem der LEI wird vom TI-Flow-Fachdienst eine Verordnungs-ID angefragt und im Verordnungsdatensatz ergänzt. Der Arzt prüft die Verordnung und führt eine qualifizierte elektronische Signatur (QES) der Verordnung durch. Anschließend wird die signierte Verordnung an den TI-Flow-Fachdienst übermittelt, wo die formale Korrektheit der Verordnung gemäß dem Datenmodell und die QES validiert werden. Die Verordnung liegt auf dem TI-Flow-Fachdienst zum Abruf durch den Versicherten bereit.
+
+| |
+| :--- |
+| [UC 2.1 - E-Rezepte erzeugen](menu-technische-umsetzung-anwendungsfaelle.md#uc-2-1-e-rezepte-erzeugen) |
+| [E-Rezept qualifiziert signieren](menu-technische-umsetzung-anwendungsfaelle.md#e-rezept-qualifiziert-signieren) |
+| [UC 2.3 - E-Rezept einstellen](menu-technische-umsetzung-anwendungsfaelle.md#uc-2-3-e-rezept-einstellen) |
+| [UC 2.5 - E-Rezept durch Verordnenden löschen](menu-technische-umsetzung-anwendungsfaelle.md#uc-2-5-e-rezept-durch-verordnenden-loeschen) |
+
+**Tabelle:**Technische Anwendungsfälle mit Bezug zum Verschreiben von DiGA-Verordnungen
+#### Zuweisen durch den Versicherten
+
+Der Versicherte sieht in seinem E-Rezept-FdV, dass eine Verordnung für eine DiGA erstellt wurde. Diese kann er einsehen und seinem Kostenträger zuweisen, damit er einen Freischaltcode zur Nutzung der DiGA erhält. Das E-Rezept-FdV bietet dem Versicherten dazu die Möglichkeit den E-Rezept-Token der Verordnung an den Kostenträger zu übertragen. Das Ermitteln des Kostenträgers erfolgt möglichst automatisch, kann aber auch manuell erfolgen. Wenn der Versicherte kein E-Rezept-FdV nutzt, hat er die Möglichkeit den Patientenausdruck an seine Krankenkasse zu übermitteln. Dies kann durch Funktionalität in der Krankenkassen-App unterstützt werden.
+
+| |
+| :--- |
+| [UC 3.1 - E-Rezepte durch Versicherten abrufen](menu-technische-umsetzung-anwendungsfaelle.md#uc-3-1-e-rezepte-durch-versicherten-abrufen) |
+| [UC 3.3 - Nachricht durch Versicherten übermitteln](menu-technische-umsetzung-anwendungsfaelle.md#uc-3-3-nachricht-durch-versicherten-uebermitteln) |
+| [UC 4.6 - Nachrichten durch Abgebenden empfangen](menu-technische-umsetzung-anwendungsfaelle.md#uc-4-6-nachrichten-durch-abgebenden-empfangen) |
+
+**Tabelle:**Technische Anwendungsfälle mit Bezug zum Zuweisen von DiGA-Verordnungen
+#### Einlösen
+
+Der Kostenträger kann mit den Informationen aus dem E-Rezept-Token die Verordnung vom TI-Flow-Fachdienst herunterladen und den Vorgang prüfen. Nachdem ein Freischaltcode für die DiGA generiert wurde, wird dieser dem Versicherten über Abgabeinformationen der Verordnung bereitgestellt. Dadurch wird der Vorgang der Verordnung abgeschlossen und der Versicherte hat den Freischaltcode für die DiGA in seinem E-Rezept-FdV vorliegen.
+
+Sollte die fachliche Prüfung des Kostenträgers ergeben, dass kein Leistungsanspruch für diese Verordnung besteht, kann der E-Rezept-Workflow auch ohne die Übermittlung eines Freischaltcodes abgeschlossen werden. In diesem Fall enthält die Abgabeinformation einen Hinweis auf die Begründung (versichertenfreundlicher Formulierung mit Verweis auf das Schreiben der Krankenkasse), warum kein Freischaltcode bereitgestellt wurde. Über entsprechende Protokolleinträge ist der Versicherte darüber informiert, dass der Kostenträger den Vorgang bearbeitet.
+
+Der Kostenträger erhält analog zum Abschluss von Arzneimittelverordnungen eine Quittung des TI-Flow-Fachdienstes, was dem Kostenträger quittiert, dass der Vorgang erfolgreich abgeschlossen wurde. Die Quittung wird nicht für Abrechnungszwecke benötigt, da die Abwicklung des Vorgangs direkt mit dem Kostenträger erfolgt.
+
+| |
+| :--- |
+| [UC 4.1 - E-Rezept durch Abgebenden abrufen](menu-technische-umsetzung-anwendungsfaelle.md#uc-4-1-e-rezept-durch-abgebenden-abrufen) |
+| [UC 4.4 - Quittung abrufen](menu-technische-umsetzung-anwendungsfaelle.md#uc-4-4-quittung-abrufen) |
+| [UC 4.2 - E-Rezept durch Abgebenden zurückgeben](menu-technische-umsetzung-anwendungsfaelle.md#uc-4-2-e-rezept-durch-abgebenden-zurueckgeben) |
+| [UC 4.7 - Nachricht durch Abgebenden übermitteln](menu-technische-umsetzung-anwendungsfaelle.md#uc-4-7-nachricht-durch-abgebenden-uebermitteln) |
+| [UC 3.4 - Nachrichten durch Versicherten empfangen](menu-technische-umsetzung-anwendungsfaelle.md#uc-3-4-nachrichten-durch-versicherten-empfangen) |
+| [UC 4.9 - Nachricht durch Abgebenden löschen](menu-technische-umsetzung-anwendungsfaelle.md#uc-4-9-nachricht-durch-abgebenden-loeschen) |
+
+**Tabelle:**Technische Anwendungsfälle mit Bezug zum Einlösen von DiGA-Verordnungen
+### Workflow Status und Statusübergänge
+
+In diesem Abschnitt werden die möglichen Status eines Workflows zur Verordnung von Digitale Gesundheitsanwendungen und die zulässigen Statuswechsel beschrieben.
 
 **Abbildung: **Workflow Status und Statusübergänge - Flowtyp 162
 
@@ -190,52 +235,8 @@ Als DiGA Hersteller möchte ich
 * Status des Workflows: cancelled
   * Beschreibung und mögliche Statusübergänge: * Die personenbezogenen und medizinischen Daten wurden aus dem Task gelöscht.
 * Die Akteure können nicht auf den Task zugreifen.
-* Hinweis: Das eigentliche physische Löschen des Datensatzes erfolgt automatisch durch den E-Rezept-Fachdienst nach einer Löschfrist.
+* Hinweis: Das eigentliche physische Löschen des Datensatzes erfolgt automatisch durch den Fachdienst nach einer Löschfrist.
 
 
 **Tabelle: **Workflow Status und Statusübergänge - Flowtyp 162
-
-## Anwendungsfälle
-
-### Verschreiben
-
-Der technische Ablauf zum Verschreiben einer Verordnung für eine DiGA erfolgt analog zu einer Verordnung für apothekenpflichtige Arzneimittel. Verordnungen von DiGAs können Ärzten, Zahnärzten und Psychotherapeuten vornehmen. Der Arzt oder medizinischer Fachangestellter (MFA) erstellt eine elektronische Verordnung für eine DiGA. Für die Auswahl der passenden PZN (inklusive indikations- oder laufzeitbezogener Varianten) werden die Daten aus dem BfArM-DiGA-Verzeichnis genutzt. Über das Primärsystem der LEI wird vom TI-Flow-Fachdienst eine Verordnungs-ID angefragt und im Verordnungsdatensatz ergänzt. Der Arzt prüft die Verordnung und führt eine qualifizierte elektronische Signatur (QES) der Verordnung durch. Anschließend wird die signierte Verordnung an den TI-Flow-Fachdienst übermittelt, wo die formale Korrektheit der Verordnung gemäß dem Datenmodell und die QES validiert werden. Die Verordnung liegt auf dem TI-Flow-Fachdienst zum Abruf durch den Versicherten bereit.
-
-| |
-| :--- |
-| [UC 2.1 - E-Rezepte erzeugen](menu-technische-umsetzung-anwendungsfaelle.md#uc-2-1-e-rezepte-erzeugen) |
-| [E-Rezept qualifiziert signieren](menu-technische-umsetzung-anwendungsfaelle.md#e-rezept-qualifiziert-signieren) |
-| [UC 2.3 - E-Rezept einstellen](menu-technische-umsetzung-anwendungsfaelle.md#uc-2-3-e-rezept-einstellen) |
-| [UC 2.5 - E-Rezept durch Verordnenden löschen](menu-technische-umsetzung-anwendungsfaelle.md#uc-2-5-e-rezept-durch-verordnenden-loeschen) |
-
-**Tabelle:**Technische Anwendungsfälle mit Bezug zum Verschreiben von DiGA-Verordnungen
-### Zuweisen durch den Versicherten
-
-Der Versicherte sieht in seinem E-Rezept-FdV, dass eine Verordnung für eine DiGA erstellt wurde. Diese kann er einsehen und seinem Kostenträger zuweisen, damit er einen Freischaltcode zur Nutzung der DiGA erhält. Das E-Rezept-FdV bietet dem Versicherten dazu die Möglichkeit den E-Rezept-Token der Verordnung an den Kostenträger zu übertragen. Das Ermitteln des Kostenträgers erfolgt möglichst automatisch, kann aber auch manuell erfolgen. Wenn der Versicherte kein E-Rezept-FdV nutzt, hat er die Möglichkeit den Patientenausdruck an seine Krankenkasse zu übermitteln. Dies kann durch Funktionalität in der Krankenkassen-App unterstützt werden.
-
-| |
-| :--- |
-| [UC 3.1 - E-Rezepte durch Versicherten abrufen](menu-technische-umsetzung-anwendungsfaelle.md#uc-3-1-e-rezepte-durch-versicherten-abrufen) |
-| [UC 3.3 - Nachricht durch Versicherten übermitteln](menu-technische-umsetzung-anwendungsfaelle.md#uc-3-3-nachricht-durch-versicherten-uebermitteln) |
-| [UC 4.6 - Nachrichten durch Abgebenden empfangen](menu-technische-umsetzung-anwendungsfaelle.md#uc-4-6-nachrichten-durch-abgebenden-empfangen) |
-
-**Tabelle:**Technische Anwendungsfälle mit Bezug zum Zuweisen von DiGA-Verordnungen
-### Einlösen
-
-Der Kostenträger kann mit den Informationen aus dem E-Rezept-Token die Verordnung vom TI-Flow-Fachdienst herunterladen und den Vorgang prüfen. Nachdem ein Freischaltcode für die DiGA generiert wurde, wird dieser dem Versicherten über Abgabeinformationen der Verordnung bereitgestellt. Dadurch wird der Vorgang der Verordnung abgeschlossen und der Versicherte hat den Freischaltcode für die DiGA in seinem E-Rezept-FdV vorliegen.
-
-Sollte die fachliche Prüfung des Kostenträgers ergeben, dass kein Leistungsanspruch für diese Verordnung besteht, kann der E-Rezept-Workflow auch ohne die Übermittlung eines Freischaltcodes abgeschlossen werden. In diesem Fall enthält die Abgabeinformation einen Hinweis auf die Begründung (versichertenfreundlicher Formulierung mit Verweis auf das Schreiben der Krankenkasse), warum kein Freischaltcode bereitgestellt wurde. Über entsprechende Protokolleinträge ist der Versicherte darüber informiert, dass der Kostenträger den Vorgang bearbeitet.
-
-Der Kostenträger erhält analog zum Abschluss von Arzneimittelverordnungen eine Quittung des TI-Flow-Fachdienstes, was dem Kostenträger quittiert, dass der Vorgang erfolgreich abgeschlossen wurde. Die Quittung wird nicht für Abrechnungszwecke benötigt, da die Abwicklung des Vorgangs direkt mit dem Kostenträger erfolgt.
-
-| |
-| :--- |
-| [UC 4.1 - E-Rezept durch Abgebenden abrufen](menu-technische-umsetzung-anwendungsfaelle.md#uc-4-1-e-rezept-durch-abgebenden-abrufen) |
-| [UC 4.4 - Quittung abrufen](menu-technische-umsetzung-anwendungsfaelle.md#uc-4-4-quittung-abrufen) |
-| [UC 4.2 - E-Rezept durch Abgebenden zurückgeben](menu-technische-umsetzung-anwendungsfaelle.md#uc-4-2-e-rezept-durch-abgebenden-zurueckgeben) |
-| [UC 4.7 - Nachricht durch Abgebenden übermitteln](menu-technische-umsetzung-anwendungsfaelle.md#uc-4-7-nachricht-durch-abgebenden-uebermitteln) |
-| [UC 3.4 - Nachrichten durch Versicherten empfangen](menu-technische-umsetzung-anwendungsfaelle.md#uc-3-4-nachrichten-durch-versicherten-empfangen) |
-| [UC 4.9 - Nachricht durch Abgebenden löschen](menu-technische-umsetzung-anwendungsfaelle.md#uc-4-9-nachricht-durch-abgebenden-loeschen) |
-
-**Tabelle:**Technische Anwendungsfälle mit Bezug zum Einlösen von DiGA-Verordnungen
 

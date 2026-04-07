@@ -154,4 +154,41 @@ Versicherte verwalten ihre E-Rezepte in der E-Rezept-App, sehen Zugriffsprotokol
 
 **Tabelle:**Technische Anwendungsfälle mit Bezug zu Anwendungsfall
 *Verwalten von E-Rezepten durch Versicherten*
+### Workflow Status und Statusübergänge
+
+In diesem Abschnitt werden die möglichen Status eines Workflows für E-Rezepte und die zulässigen Statuswechsel beschrieben.
+
+**Abbildung: **Workflow Status und Statusübergänge - Flowtyps für Arzneimittel
+
+
+* Status des Workflows: draft
+  * Beschreibung und mögliche Statusübergänge: * Mit dem Abruf einer Rezept-ID durch eine verordnende LEI wird ein Workflow im Fachdienst (Task Ressource) mit dem Status "draft" erstellt.
+* Wenn die verordnende LEI die Verordnung in den erstellten Workflow hinzufügt, dann wechselt der Workflow in den Status "ready".
+
+* Status des Workflows: ready
+  * Beschreibung und mögliche Statusübergänge: * Das E-Rezept wurde von der verordnenden LEI in den Fachdienst eingestellt.
+* Das E-Rezept kann vom Versicherten abgerufen werden
+* Der Versicherte oder die verordnende LEI können das E-Rezept als gelöscht markieren. Der Workflow wechselt in den Status "cancelled".
+* Der Abruf des E-Rezepts durch eine Apotheke ändert den Status des Workflows auf "in-progress". In diesem Status ist der Zugriff durch andere Apotheken gesperrt.
+
+* Status des Workflows: in-progress
+  * Beschreibung und mögliche Statusübergänge: * Das E-Rezept wurde von einer Apotheke abgerufen.
+* Der Zugriff auf das E-Rezept durch andere Apotheken oder die verordnende LEI ist gesperrt. Ebenso darf der Versicherte das E-Rezept in diesem Status nicht löschen.
+* Das E-Rezept kann durch die Apotheke zurückgewiesen werden. Der Workflows wechselt zurück in den Status "ready".
+* Das E-Rezept kann durch die Apotheke gelöscht werden. Der Workflows wechselt zurück in den Status "cancelled".
+* Der Apotheke kann nach der Belieferung des E-Rezepts die Informationen zur Dispensierung an den Fachdienst übermitteln. Der Workflows wechselt zurück in den Status "completed"
+* Das E-Rezept kann vom Versicherten abgerufen werden.
+
+* Status des Workflows: completed
+  * Beschreibung und mögliche Statusübergänge: * Der Workflow wurde von der Apotheke abgeschlosen.
+* Die bereitgestellten Diespensierinformationen können vom Versicherten abgerufen werden.
+* Der Versicherte kann das E-Rezept als gelöscht markieren. Der Workflow wechselt in den Status "cancelled".
+
+* Status des Workflows: cancelled
+  * Beschreibung und mögliche Statusübergänge: * Die personenbezogenen und medizinischen Daten wurden aus dem Task gelöscht.
+* Die Akteure können nicht auf den Task zugreifen.
+* Hinweis: Das eigentliche physische Löschen des Datensatzes erfolgt automatisch durch den Fachdienst nach einer Löschfrist.
+
+
+**Tabelle: **Workflow Status und Statusübergänge - Flowtyps für Arzneimittel
 

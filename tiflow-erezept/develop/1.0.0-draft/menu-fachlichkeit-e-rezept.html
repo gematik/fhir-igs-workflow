@@ -287,6 +287,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="#anwendungsfälle" id="markdown-toc-anwendungsfälle">Anwendungsfälle</a></li>
   <li><a href="#verwalten-von-e-rezepten-durch-versicherten" id="markdown-toc-verwalten-von-e-rezepten-durch-versicherten">Verwalten von E-Rezepten durch Versicherten</a></li>
   <li><a href="#anwendungsfälle-1" id="markdown-toc-anwendungsfälle-1">Anwendungsfälle</a></li>
+  <li><a href="#workflow-status-und-statusübergänge" id="markdown-toc-workflow-status-und-statusübergänge">Workflow Status und Statusübergänge</a></li>
 </ul>
 
 </div>
@@ -301,7 +302,7 @@ Im Fokus stehen die Handlungen der Beteiligten (Arzt, Versicherter, Apotheke) so
 <p>Die Fachanwendung E-Rezept ermöglicht eine Übermittlung von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel in elektronischer Form. Sie&nbsp;setzt sich aus den folgenden dargestellten Bestandteilen zusammen:</p>
 
 <figure>
-    <div style="--box-width: 754px; margin-bottom: 30px;" class="gem-ig-img-container"><a name="l467">​</a>
+    <div style="--box-width: 754px; margin-bottom: 30px;" class="gem-ig-img-container"><a name="l471">​</a>
         <img src="./uebersicht_architekur_erp_eu.jpeg" alt="Übersicht E-Rezept" style="width: 100%;"/>
     </div>
     <figcaption><strong>Abbildung: </strong>Übersicht E-Rezept</figcaption>
@@ -532,13 +533,86 @@ Im Fokus stehen die Handlungen der Beteiligten (Arzt, Versicherter, Apotheke) so
       
         
         <tr>
-          <td><a name="l863">​</a><a href="menu-technische-umsetzung-anwendungsfaelle.html#uc-3-9-dispensierinformationen-durch-versicherten-abrufen">UC 3.9 - Dispensierinformationen durch Versicherten abrufen</a></td>
+          <td><a name="l867">​</a><a href="menu-technische-umsetzung-anwendungsfaelle.html#uc-3-9-dispensierinformationen-durch-versicherten-abrufen">UC 3.9 - Dispensierinformationen durch Versicherten abrufen</a></td>
         </tr>
       
     </tbody>
   </table>
   <figcaption><strong>Tabelle:</strong> Technische Anwendungsfälle mit Bezug zu Anwendungsfall <i>Verwalten von E-Rezepten durch Versicherten</i></figcaption>
 </figure>
+
+<h3 id="workflow-status-und-statusübergänge">Workflow Status und Statusübergänge</h3>
+<p>In diesem Abschnitt werden die möglichen Status eines Workflows für E-Rezepte und die zulässigen Statuswechsel beschrieben.</p>
+
+<figure>
+    <div style="--box-width: 700px; margin-bottom: 30px;" class="gem-ig-img-container">
+        <img src="./arzneimittelverordnung-statusmodell.png" alt="Statusmodell" style="width: 100%;"/>
+    </div>
+    <figcaption><strong>Abbildung: </strong>Workflow Status und Statusübergänge - Flowtyps für Arzneimittel</figcaption>
+</figure>
+
+<p><br/></p>
+
+<table>
+    <tr>
+        <th>Status des Workflows</th>
+        <th>Beschreibung und mögliche Statusübergänge</th>
+    </tr>
+    <tr>
+        <td>draft</td>
+        <td>
+            <ul>
+            <li>Mit dem Abruf einer Rezept-ID durch eine verordnende LEI wird ein Workflow im Fachdienst (Task Ressource) mit dem Status "draft" erstellt.</li>
+            <li>Wenn die verordnende LEI die Verordnung in den erstellten Workflow hinzufügt, dann wechselt der Workflow in den Status "ready".</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>ready</td>
+        <td>
+            <ul>
+            <li>Das E-Rezept wurde von der verordnenden LEI in den Fachdienst eingestellt.</li>
+            <li>Das E-Rezept kann vom Versicherten abgerufen werden</li>
+            <li>Der Versicherte oder die verordnende LEI können das E-Rezept als gelöscht markieren. Der Workflow wechselt in den Status "cancelled".</li>
+            <li>Der Abruf des E-Rezepts durch eine Apotheke ändert den Status des Workflows auf "in-progress". In diesem Status ist der Zugriff durch andere Apotheken gesperrt.</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>in-progress</td>
+        <td>
+            <ul>
+            <li>Das E-Rezept wurde von einer Apotheke abgerufen.</li>
+            <li>Der Zugriff auf das E-Rezept durch andere Apotheken oder die verordnende LEI ist gesperrt. Ebenso darf der Versicherte das E-Rezept in diesem Status nicht löschen.</li>
+            <li>Das E-Rezept kann durch die Apotheke zurückgewiesen werden. Der Workflows wechselt zurück in den Status "ready".</li>
+            <li>Das E-Rezept kann durch die Apotheke gelöscht werden. Der Workflows wechselt zurück in den Status "cancelled".</li>
+            <li>Der Apotheke kann nach der Belieferung des E-Rezepts die Informationen zur Dispensierung an den Fachdienst übermitteln. Der Workflows wechselt zurück in den Status "completed"</li>
+            <li>Das E-Rezept kann vom Versicherten abgerufen werden.</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>completed</td>
+        <td>
+            <ul>
+            <li>Der Workflow wurde von der Apotheke abgeschlosen.</li>
+            <li>Die bereitgestellten Diespensierinformationen können vom Versicherten abgerufen werden.</li>
+            <li>Der Versicherte kann das E-Rezept als gelöscht markieren. Der Workflow wechselt in den Status "cancelled".</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>cancelled</td>
+        <td>
+            <ul>
+            <li>Die personenbezogenen und medizinischen Daten wurden aus dem Task gelöscht.</li>
+            <li>Die Akteure können nicht auf den Task zugreifen.</li>
+            <li>Hinweis: Das eigentliche physische Löschen des Datensatzes erfolgt automatisch durch den Fachdienst nach einer Löschfrist.</li>
+            </ul>
+        </td>
+    </tr>
+</table>
+<div><figcaption><strong>Tabelle: </strong>Workflow Status und Statusübergänge - Flowtyps für Arzneimittel</figcaption></div>
 
 
 
@@ -581,7 +655,7 @@ Im Fokus stehen die Handlungen der Beteiligten (Arzt, Versicherter, Apotheke) so
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Apr 7, 2026 07:44+0000">2026-04-07</span>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Apr 7, 2026 10:15+0000">2026-04-07</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

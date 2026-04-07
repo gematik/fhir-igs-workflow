@@ -190,3 +190,7 @@ Die Abrechnung der E-T-Rezepte erfolgt analog zu den E-Rezepten für Arzneimitte
 
 Für Versicherte privater Krankenversicherungen besteht wie für Arzneimittel E-Rezepte die Möglichkeit, dass die Apotheke die Abrechnungsdaten digital über den TI-Flow-Fachdienst bereitstellen kann oder einen Ausdruck zur Einreichung beim Kostenträger erstellt.
 
+### Workflow Status und Statusübergänge
+
+Die möglichen Status eines Workflows für E-T-Rezepte und die zulässigen Statuswechsel entsprechen dem [Statusmodell für Arzneimittel](./menu-fachlichkeit-e-rezept.md).
+
