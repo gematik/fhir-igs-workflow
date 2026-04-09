@@ -63,18 +63,6 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
   </tr>
   <tr>
     <td>http GET /Task</td>
-    <td>Apotheke (VSDM)</td>
-    <td>
-        <ul>
-            <li>im Erfolgsfall beim passenden AcceptPN3VSDMxx=false: Apotheke hat mit Ihrer eGK die Liste der offenen E-Rezepte abgerufen.</li>
-            <li>im Erfolgsfall bei PN3 und passende AcceptPN3VSDMxx=true: Apotheke hat mit Ihrer eGK die Liste der offenen E-Rezepte abgerufen. (Offline-Check wurde akzeptiert)</li>
-            <li>im Fehlerfall PN3 und passende AcceptPN3VSDMxx=false:  Apotheke konnte aufgrund eines Fehlerfalls nicht die Liste der offenen E-Rezepte mit Ihrer eGK abgerufen. (Offline-Check wurde nicht akzeptiert)</li>
-            <li>im sonstigen Fehlerfall: Apotheke konnte aufgrund eines Fehlerfalls nicht die Liste der offenen E-Rezepte mit Ihrer eGK abrufen.</li>
-        </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>http GET /Task</td>
     <td>Apotheke (PoPP)</td>
     <td>Die Apotheke hat die Liste der einlösbaren E-Rezepte abgerufen durch Autorisierung mittels &#60;PoPP-Anwendungsfall&#62;.</td>
   </tr>
