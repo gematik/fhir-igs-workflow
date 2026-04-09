@@ -45,8 +45,8 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
      Der TI-Flow-Fachdienst MUSS für die Registrierung der Subscription einen Bearer-Token mit den Claims 
      <ul>
      <li>subscriptionid: Pseudonym der Telematik-ID</li>
-     <li>iAt: Timestamp wann Subscription erstellt wurde 
-     <li>exp: Timestamp Ablauf der Subscription 
+     <li>iAt: Timestamp wann Subscription erstellt wurde</li>
+     <li>exp: Timestamp Ablauf der Subscription</li>
      </ul>
      erstellen und mit einer Identität des TI-Flow-Fachdienstes signieren (Signature Algortihm: ES256).
 </requirement>
