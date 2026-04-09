@@ -6,7 +6,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation die Rolle "professionOID" des Aufrufenden im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich verordnende Leistungserbringer in der Rolle
+    Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation die Rolle "professionOID" des Aufrufenden im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich verordnende Leistungserbringerinstitutionen in der Rolle
     <ul>
         <li>oid_praxis_arzt</li>
         <li>oid_zahnarztpraxis</li>
@@ -14,7 +14,30 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
         <li>oid_krankenhaus</li>
         <li>oid_institution-vorsorge-reha</li>
     </ul> 
-    die Operation im Fachdienst aufrufen dürfen, damit E-Rezepte nicht durch zur Verordnung Unberechtigte eingestellt werden können.
+    die Operation im Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+        </tr>
+    </table> 
+    abbrechen, damit Workflows nicht durch zur Verordnung Unberechtigte erstellt werden können.
 </requirement>
 
 <!-- A_19257-01 -->
@@ -23,7 +46,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS die im Body der HTTP-POST-Operation auf die Ressource Task übertragenen Parameter gegen das Schema http://gematik.de/fhir/erp/OperationDefinition/CreateOperationDefinition prüfen und bei Nicht-Konformität das Anlegen der Ressource im Fachdienst mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation die im Body der HTTP-POST-Operation auf die Ressource Task übertragenen Parameter gegen das Schema http://gematik.de/fhir/erp/OperationDefinition/CreateOperationDefinition prüfen und bei Nicht-Konformität die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -46,7 +69,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
             <td>FHIR Profile Validation Failed</td>
         </tr>
     </table> 
-    beantworten, damit kein Schadcode und keine "fachfremden" Daten in den TI-Flow-Fachdienst hochgeladen werden.
+    abbrechen, damit kein Schadcode und keine "fachfremden" Daten in den TI-Flow-Fachdienst hochgeladen werden.
 </requirement>
 
 <!-- A_19112 -->
@@ -57,6 +80,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation den Parameter workflowType (Rezepttyp) aus dem HTTP-Body des POST-Requests entnehmen, als Attribut Task.extension:flowType des zu erstellenden Tasks verwenden und bei Fehlen bzw. Nicht-Konformität des Parameters den Request als unzulässig abweisen, damit auf Basis dieser Parameter ausschließlich gültige Workflows gestartet werden können und dem Versicherten bei Einsicht des Tasks der Weg in entweder eine Apotheke oder ein Sanitätshaus oder eine andere zuständige Einrichtung gewiesen werden kann.
 </requirement>
+<!-- ToDo : Fehler ergänzen -->
 
 <!-- A_19214 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-220" title="TI-Flow-Fachdienst - Task erzeugen - Ergänzung Performer-Typ für Einlöseinstitutstyp" version="0">

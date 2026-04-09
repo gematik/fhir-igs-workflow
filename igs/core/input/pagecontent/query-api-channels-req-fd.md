@@ -6,8 +6,32 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
-  Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Channels mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE unterbinden, damit keine unzulässigen Operationen auf den Daten ausgeführt werden können.
+  Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Channels mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE unterbinden und mit dem folgenden Fehler:
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>405 - Method Not Allowed</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>SVC_METHOD_NOT_ALLOWED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+  abbrechen, damit keine unzulässigen Operationen auf den Daten ausgeführt werden können.
 </requirement>
+<!-- ToDo Hendre: Fehlercode (Detailed code) einfügen Http Fehler 405 -->
 
 <!-- A_28117 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-56" title="TI-Flow-Fachdienst - Push Notifications - Channels- OpenApi_Notification_Fachdienst" version="0">
@@ -33,7 +57,7 @@ Mit der Operation GET /channels können die verfügbaren Channels abgefragt werd
   <ul>
     <li>oid_versicherter</li>
   </ul>
-  die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+  die Operation aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -48,7 +72,7 @@ Mit der Operation GET /channels können die verfügbaren Channels abgefragt werd
             <td>-</td>
         </tr>
     </table> 
-    abrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
+    abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 </requirement>
 
 Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfiguration für eine spezifische FdV-Instanz abgefragt werden.
@@ -63,7 +87,7 @@ Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfigu
   <ul>
     <li>oid_versicherter</li>
   </ul>
-  die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+  die Operation aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -78,8 +102,10 @@ Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfigu
             <td>-</td>
         </tr>
     </table> 
-    abrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
+    abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 </requirement>
+<!-- ToDo Hendre: Warum lautet der FehlerCode bei vergleichbaren Afos TIFLOW_AUTH_ROLE_NOT_ALLOWED? -->
+
 
 ### POST /channels
 
@@ -93,7 +119,7 @@ Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfigu
   <ul>
     <li>oid_versicherter</li>
   </ul>
-  die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+  die Operation aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -108,5 +134,6 @@ Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfigu
             <td>-</td>
         </tr>
     </table> 
-    abrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
+    abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 </requirement>
+<!-- ToDo Hendre: Warum lautet der FehlerCode bei vergleichbaren Afos TIFLOW_AUTH_ROLE_NOT_ALLOWED? -->

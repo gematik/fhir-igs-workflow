@@ -72,30 +72,30 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
-    Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &#60;id&#62; adressierten/Task/&#60;id&#62;/$abort durch verordnende Leistungserbringer den im referenzierten Task gespeicherten Status Task.status prüfen und mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
-        <tr>
-            <th>HTTP-Code</th>
-            <td>412 - Precondition Failed</td>
-        </tr>
-        <tr>
-            <th>Severity</th>
-            <td>error</td>
-        </tr>
-        <tr>
-            <th>Code</th>
-            <td>invalid</td>
-        </tr>
-        <tr>
-            <th>Details Code</th>
-            <td>TIFLOW_TASK_STATUS_MISMATCH</td>
-        </tr>
-        <tr>
-            <th>Details Text</th>
-            <td>Task has invalid status.</td>
-        </tr>
-    </table> 
-    abbrechen, wenn Task.status ungleich "ready" ist, damit die verordnende Leistungserbringerinstitution eine Verordnung nur löschen kann, wenn sie sich noch nicht in Belieferung befindet oder beliefert wurde.
+  Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &#60;id&#62; adressierten/Task/&#60;id&#62;/$abort durch verordnende Leistungserbringer den im referenzierten Task gespeicherten Status Task.status prüfen und, wenn Task.status ungleich "ready" ist, mit dem folgenden Fehler:
+  <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+    <tr>
+        <th>HTTP-Code</th>
+        <td>412 - Precondition Failed</td>
+    </tr>
+    <tr>
+        <th>Severity</th>
+        <td>error</td>
+    </tr>
+    <tr>
+        <th>Code</th>
+        <td>invalid</td>
+    </tr>
+    <tr>
+        <th>Details Code</th>
+        <td>TIFLOW_TASK_STATUS_MISMATCH</td>
+    </tr>
+    <tr>
+        <th>Details Text</th>
+        <td>Task has invalid status.</td>
+    </tr>
+  </table> 
+  abbrechen, damit die verordnende Leistungserbringerinstitution eine Verordnung nur löschen kann, wenn sie sich noch nicht in Belieferung befindet oder beliefert wurde.
 </requirement>
 
 <!-- A_19027-06 -->

@@ -17,7 +17,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
         <li>oid_oeffentliche_apotheke</li>
         <li>oid_krankenhausapotheke</li>
         </ul>
-        die Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen mit dem folgenden Fehler:
+        die Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -40,7 +40,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
             <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
-    abrechen, damit Dispensierinformationen nicht durch einen Unberechtigten eingestellt werden kann.
+    abbrechen, damit Dispensierinformationen nicht durch einen Unberechtigten eingestellt werden kann.
 </requirement>
 
 <!-- A_24280 -->
@@ -81,7 +81,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen mittels POST /Task/&lt;id&gt;/$dispense auf Task.status = in-progress prüfen und bei Ungleichheit mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen mittels POST /Task/&lt;id&gt;/$dispense auf Task.status = in-progress prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>

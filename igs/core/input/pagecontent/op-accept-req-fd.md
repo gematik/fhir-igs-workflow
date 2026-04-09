@@ -8,8 +8,8 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept die Operation mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept, wenn der referenzierte /Task/&lt;id&gt; existiert, jedoch kein AccessCode im Task.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode vorhanden ist oder der Status Task.status = cancelled ist, die Operation mit dem folgenden Fehler:
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
             <td>410 - Gone</td>
@@ -31,7 +31,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
             <td>-</td>
         </tr>
     </table> 
-    abbrechen, wenn der referenzierte /Task/&lt;id&gt; existiert, jedoch kein AccessCode im Task.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode vorhanden ist oder der Status Task.status = cancelled ist, damit die abgebende Institution den Versicherten über die zwischenzeitliche Löschung des Datensatzes in Kenntnis setzen kann.
+    abbrechen, damit die abgebende Institution den Versicherten über die zwischenzeitliche Löschung des Datensatzes in Kenntnis setzen kann.
 </requirement>
 
 <!-- A_19167-04 -->
@@ -74,8 +74,8 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept die Operation mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept, wenn der StatusTask.status = "completed", Task.status = "in-progress" oder Task.status = "draft" ist, die Operation mit dem folgenden Fehler:
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
             <td>409 - Conflict</td>
@@ -97,9 +97,12 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
             <td>%1</td>
         </tr>
     </table> 
-    abbrechen, wenn der StatusTask.status = "completed", Task.status = "in-progress" oder Task.status = "draft" ist, damit ein bereits in Abgabe befindliches oder beliefertes E-Rezept nicht durch eine zweite Apotheke bearbeitet werden kann. Im OperationOutcome werden weitere Informationen gegeben: "Task has invalid status completed", "Task has invalid status in-progress" bzw. "Task has invalid status draft". <br>
+    abbrechen, damit ein bereits in Abgabe befindliches oder beliefertes E-Rezept nicht durch eine zweite Apotheke bearbeitet werden kann. <br>
+    Der TI-Flow-Fachdienst MUSS in OperationOutcome die Information zum Status angeben: "Task has invalid status completed", "Task has invalid status in-progress" bzw. "Task has invalid status draft". <br>
     Der TI-Flow-Fachdienst MUSS in OperationOutcome zusätzlich die Information "Task is processed by requesting institution" ergänzen, wenn Task.status = "in-progress" und die zum referenzierten Task in Task.owner gespeicherte Telematik-ID der abgebenden LEI mit der Telematik-ID aus dem ACCESS_TOKEN übereinstimmt.
 </requirement>
+
+<!-- ToDo: Was bedeutet %1 in der obigen Tabelle -->
 
 Hinweis: Die Informationen in OperationOutcome werden ggf. als mehrere Strings in einem Array übermittelt.
 
@@ -109,8 +112,8 @@ Hinweis: Die Informationen in OperationOutcome werden ggf. als mehrere Strings i
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept die Operation mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept, wenn das Ende der Einlösefrist (Task.ExpiryDate) zu einem früherem Zeitpunkt als das aktuelle Datum liegt, die Operation mit dem folgenden Fehler:
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
             <td>403 - Forbidden</td>
@@ -132,7 +135,8 @@ Hinweis: Die Informationen in OperationOutcome werden ggf. als mehrere Strings i
             <td>Verordnung bis %d einlösbar.</td>
         </tr>
     </table> 
-    abbrechen, wenn das Ende der Einlösefrist (Task.ExpiryDate) zu einem früherem Zeitpunkt als das aktuelle Datum liegt, da Verordnungen nur bis Ende der Einlösefrist abgerufen werden dürfen. Im Falle dieses Fehlers ist im OperationOutcome des Response das Ende der Einlösefrist wie folgt anzugeben: "Verordnung bis &lt;Datum&gt; einlösbar.", wobei &lt;Datum&gt; der Wert Task.ExpiryDate im Format "dd.mm.yyyy" ist.
+    abbrechen, da Verordnungen nur bis Ende der Einlösefrist abgerufen werden dürfen. <br>
+    Der TI-Flow-Fachdienst MUSS im Falle dieses Fehlers im OperationOutcome des Response das Ende der Einlösefrist wie folgt anzugeben: "Verordnung bis &lt;Datum&gt; einlösbar.", wobei &lt;Datum&gt; der Wert Task.ExpiryDate im Format "dd.mm.yyyy" ist.
 </requirement>
 
 <!-- A_19169-01 -->

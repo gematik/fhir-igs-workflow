@@ -6,7 +6,13 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-     Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription Ressource sicherstellen, dass ausschließlich Nutzer in der Rolle oid_oeffentliche_apotheke oid_krankenhausapotheke oid_kostentraeger die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen mit dem folgenden Fehler:
+     Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription Ressource die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Nutzer in der Rolle 
+     <ul>
+     <li>oid_oeffentliche_apotheke</li> 
+     <li>oid_krankenhausapotheke</li>
+     <li>oid_kostentraeger</li>
+     </ul>
+     die Operation am TI-Flow-Fachdienst aufrufen dürfen, und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -29,7 +35,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
             <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
-    abrechen, damit eine Subscription nicht durch Unberechtigte registriert werden kann.
+    abbrechen, damit eine Subscription nicht durch Unberechtigte registriert werden kann.
 </requirement>
 
 <!-- A_22364 -->
@@ -80,7 +86,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-     Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription Ressource durch eine abgebende Leistungserbringerinstitution (Apotheke), diese anhand der Telematik-ID aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die in der Ressource im Element criteria Attribut receipient hinterlegte Telematik-ID prüfen und bei Ungleichheit den Aufruf mit dem folgenden Fehler:
+     Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription Ressource durch eine abgebende Institution, diese anhand der Telematik-ID aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die in der Ressource im Element criteria Attribut receipient hinterlegte Telematik-ID prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:
     <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -100,8 +106,8 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Identity mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID / KVNR)</td>
+            <td>Identity mismatch: Access token does not match FHIR data (Telematik-ID)</td>
         </tr>
     </table> 
-    abweisen, damit ausschließlich die Apotheke für sich selbst eine Subscription registrieren kann.
+    abbrechen, damit eine abgebende Institution ausschließlich für sich selbst eine Subscription registrieren kann.
 </requirement>

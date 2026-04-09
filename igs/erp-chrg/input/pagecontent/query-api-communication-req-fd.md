@@ -14,7 +14,7 @@ Diese Seite beschreibt Anforderungen am TI-Flow-Fachdienst zur Nutzung der `Comm
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht der Profile GEM_ERPCHRG_PR_Communication_ChargChangeReq oder GEM_ERPCHRG_PR_Communication_ChargChangeReply über die HTTP-Operation POST auf den Endpunkt /Communication mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht der Profile GEM_ERPCHRG_PR_Communication_ChargChangeReq oder GEM_ERPCHRG_PR_Communication_ChargChangeReply über die HTTP-Operation POST auf den Endpunkt /Communication prüfen und, wenn Communication.basedOn eine nicht existierende ChargeItem Ressource referenziert, mit dem folgenden Fehler:
     <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -37,5 +37,5 @@ Diese Seite beschreibt Anforderungen am TI-Flow-Fachdienst zur Nutzung der `Comm
             <td>-</td>
         </tr>
     </table> 
-    abbrechen, wenn das Pflichtfeld Communication.basedOn einen ChargeItem referenziert, der nicht existiert, um Spam und nicht-rezeptbezogene Kommunikation zu verhindern.
+    abbrechen, um Spam und nicht-rezeptbezogene Kommunikation zu verhindern.
 </requirement>

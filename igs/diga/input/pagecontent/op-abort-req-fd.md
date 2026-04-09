@@ -21,7 +21,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
     <li>oid_praxis_psychotherapeut</li>
     <li>oid_institution-vorsorge-reha</li>
   </ul>
-  die Operation am Fachdienst aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+  die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -44,5 +44,5 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
             <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
-    abrechen, damit die Verordnung nicht durch einen Unberechtigten gelöscht werden kann.
+    abbrechen, damit die Verordnung nicht durch einen Unberechtigten gelöscht werden kann.
 </requirement>

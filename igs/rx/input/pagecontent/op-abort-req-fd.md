@@ -22,7 +22,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
     <li>oid_oeffentliche_apotheke</li>
     <li>oid_krankenhausapotheke</li>
   </ul>
-  die Operation am Fachdienst aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+  die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -45,7 +45,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
             <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
-    abrechen, damit die Verordnung nicht durch einen Unberechtigten gelöscht werden kann.
+    abbrechen, damit die Verordnung nicht durch einen Unberechtigten gelöscht werden kann.
 </requirement>
 
 <!-- A_19145-01 -->
@@ -91,7 +91,12 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS das Löschen eines E-Rezepts über den mittels der &lt;id&gt; adressierten /Task/&lt;id&gt;/$abort verhindern und die Operation mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS das Löschen eines E-Rezepts über den mittels der &lt;id&gt; adressierten /Task/&lt;id&gt;/$abort verhindern, wenn der Status des adressierten Tasks ungleich "in-progress" ist und die Rolle des aufrufenden Nutzers einer der folgenden Rollen entspricht: 
+    <ul>
+        <li>oid_oeffentliche_apotheke</li>
+        <li>oid_krankenhausapotheke</li>
+    </ul>
+    , und die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -114,12 +119,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
             <td>Task has invalid status.</td>
         </tr>
     </table> 
-    abweisen, wenn der Status des adressierten Tasks ungleich "in-progress" ist und die Rolle des aufrufenden Nutzers einer der folgenden Rollen entspricht: 
-    <ul>
-        <li>oid_oeffentliche_apotheke</li>
-        <li>oid_krankenhausapotheke</li>
-    </ul>
-    damit kein Apotheker ein Rezept löscht, das ihm nicht ausdrücklich zugewiesen wurde.
+    abbrechen, damit kein Apotheker ein Rezept löscht, das ihm nicht ausdrücklich zugewiesen wurde.
 </requirement>
 
 <!-- A_19224 -->
@@ -128,7 +128,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
-  Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &#60;id&#62; adressierten /Task/&#60;id&#62;/$abort durch abgebende Leistungserbringer (Apotheken) das im URL-Parameter "?secret=..." übertragene Geheimnis gegen das im referenzierten Task enthaltene Secret in Task.identifier prüfen und bei Missmatch oder Fehlen des URL-Parameters den Aufruf mit dem folgenden Fehler:
+  Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &#60;id&#62; adressierten /Task/&#60;id&#62;/$abort durch abgebende Leistungserbringer (Apotheken) das im URL-Parameter "?secret=..." übertragene Geheimnis gegen das im referenzierten Task enthaltene Secret in Task.identifier prüfen und bei Missmatch oder Fehlen des URL-Parameters die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -151,7 +151,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
             <td>-</td>
         </tr>
     </table> 
-    abweisen, damit ausschließlich Apotheker in Kenntnis des Secret als Berechtigte ein E-Rezept löschen.
+    abbrechen, damit ausschließlich Apotheker in Kenntnis des Secret als Berechtigte ein E-Rezept löschen.
 </requirement>
 
 <!-- A_22102-01 -->
@@ -160,7 +160,11 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS das Löschen eines E-Rezepts mit dem Flowtype 169 oder 209 über den mittels der &lt;id&gt; adressierten /Task/&lt;id&gt;/$abort verhindern und die Operation mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS das Löschen eines E-Rezepts mit dem Flowtype 169 oder 209 über den mittels der &lt;id&gt; adressierten /Task/&lt;id&gt;/$abort verhindern, wenn der Status des adressierten Tasks ungleich "completed" ist und die Rolle des aufrufenden Nutzers der folgenden Rolle entspricht: 
+    <ul>
+    <li>oid_versicherter</li>
+    </ul>
+    , und die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -183,7 +187,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
             <td>Task has invalid status.</td>
         </tr>
     </table> 
-    abweisen, wenn der Status des adressierten Tasks ungleich "completed" ist und die Rolle des aufrufenden Nutzers der folgenden Rollen entspricht: oid_versicherter damit kein Versicherter ein E-Rezept aus einem Workflow mit Workflowsteuerung durch Leistungserbringer (169, 209) löscht, das nicht bereits beliefert wurde.
+    abweisen, damit kein Versicherter ein E-Rezept aus einem Workflow mit Workflowsteuerung durch Leistungserbringer (169, 209) löscht, das nicht bereits beliefert wurde.
 </requirement>
 
 <!-- A_25930 -->

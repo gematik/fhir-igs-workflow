@@ -18,7 +18,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
   <ul>
     <li>oid_kostentraeger</li>
   </ul>
-  die Operation am Fachdienst aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+  die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -41,7 +41,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
             <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
-    abrechen, damit der Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.
+    abbrechen, damit der Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.
 </requirement>
 
 </br>
@@ -52,7 +52,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
-  Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks für ein E-Rezept mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/&#60;id&#62; mit Flowtype 162 sicherstellen, dass das in GEM_ERP_PR_PAR_CloseOperation_Input enthaltene MedicationDispense-Objekt dem Profil GEM_ERP_PR_MedicationDispense_DiGA entspricht. Andernfalls ist die Operation mit dem folgenden Fehler:
+  Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks für ein E-Rezept mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/&#60;id&#62; mit Flowtype 162 sicherstellen, dass das in GEM_ERP_PR_PAR_CloseOperation_Input enthaltene MedicationDispense-Objekt dem Profil GEM_ERP_PR_MedicationDispense_DiGA entspricht und anderenfalls die Operation mit dem folgenden Fehler:
   <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -75,5 +75,5 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
             <td>Unzulässige Abgabeinformationen: Für diesen Workflow sind nur Abgabeinformationen für digitale Gesundheitsanwendungen zulässig.</td>
         </tr>
     </table>
-  abzubrechen.
+    abbrechen.
 </requirement>

@@ -50,7 +50,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
             <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
-    abrechen, damit eine Einwilligung nicht durch Unberechtigte erteilt werden kann.
+    abbrechen, damit eine Einwilligung nicht durch Unberechtigte erteilt werden kann.
 </requirement>
 
 <!-- A_22289 -->
@@ -91,7 +91,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
-  Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource Consent übertragene Consent Ressource gegen das FHIR-Profil Consent prüfen und bei Nicht-Konformität das Anlegen der Ressource im TI-Flow-Fachdienst mit dem folgenden Fehler:
+  Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource Consent übertragene Consent Ressource gegen das FHIR-Profil Consent prüfen und bei Nicht-Konformität die Operation mit dem folgenden Fehler:
   <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
     <tr>
         <th>HTTP-Code</th>
@@ -114,7 +114,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
         <td>FHIR Profile Validation Failed</td>
     </tr>
   </table> 
-  ablehnen, damit nur FHIR-valide Ressourcen in den TI-Flow-Fachdienst hochgeladen werden.
+  abbrechen, damit nur FHIR-valide Ressourcen in den TI-Flow-Fachdienst hochgeladen werden.
 </requirement>
 
 <!-- A_22162-01 -->
@@ -206,7 +206,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
             <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
-    abrechen, damit die Information zur Einwilligung nicht durch Unberechtigte ausgelesen werden kann.
+    abbrechen, damit die Information zur Einwilligung nicht durch Unberechtigte ausgelesen werden kann.
 </requirement>
 
 <!-- A_22160 -->
@@ -226,7 +226,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
-  Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt /Consent ohne Angabe ?category mit dem folgenden Fehler:
+  Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt /Consent prüfen, dass der URL-Parameter ?category angegeben ist und bei Abweichung die Operation mit dem folgenden Fehler:
     <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
       <tr>
           <th>HTTP-Code</th>
@@ -249,7 +249,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
           <td>-</td>
       </tr>
     </table> 
-  ablehnen, um das Löschen mehrerer Ressourcen über einen Request zu verhindern.
+  abbrechen, um das Löschen mehrerer Ressourcen über einen Request zu verhindern.
 </requirement>
 
 <!-- A_22155 -->
@@ -258,7 +258,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
-  Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt /Consent die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am TI-Flow-Fachdienst aufrufen dürfen, und bei Abweichungen mit dem folgenden Fehler:
+  Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt /Consent die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am TI-Flow-Fachdienst aufrufen dürfen, und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -281,7 +281,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
             <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
-    abrechen, damit die Information zur Einwilligung nicht durch Unberechtigte gelöscht werden kann.
+    abbrechen, damit die Information zur Einwilligung nicht durch Unberechtigte gelöscht werden kann.
 </requirement>
 
 <!-- A_22874-02 -->
@@ -295,7 +295,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
     <li>https://gematik.de/fhir/erpchrg/CodeSystem/GEM_ERPCHRG_CS_ConsentType</li>
     <li>https://gematik.de/fhir/erp-eu/CodeSystem/GEM_ERPEU_CS_ConsentType</li>
   </ul>
-  enthalten ist und bei fehlerhafter Prüfung den Request mit dem folgenden Fehler:
+  enthalten ist und bei fehlerhafter Prüfung die Operation mit dem folgenden Fehler:
   <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
     <tr>
         <th>HTTP-Code</th>

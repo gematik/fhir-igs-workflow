@@ -14,7 +14,15 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
-  Der TI-Flow-Fachdienst MUSS die Aktivierung eines Tasks mit Flowtype 162 mit dem folgenden Fehler:
+  Der TI-Flow-Fachdienst MUSS die Aktivierung eines Tasks mit Flowtype 162 , wenn die QES gemäß der professionOID des Signaturzertifikats des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die der folgenden professionOID entspricht:
+  <ul>
+    <li>oid_arzt</li>
+    <li>oid_zahnarzt</li>
+    <li>oid_psychotherapeut</li>
+    <li>oid_ps_psychotherapeut</li>
+    <li>oid_kuj_psychotherapeut</li>
+  </ul>
+  die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -37,15 +45,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
             <td>-</td>
         </tr>
     </table> 
-    abbrechen, wenn die QES gemäß der professionOID des Signaturzertifikats des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die der folgenden professionOID entspricht:
-  <ul>
-    <li>oid_arzt</li>
-    <li>oid_zahnarzt</li>
-    <li>oid_psychotherapeut</li>
-    <li>oid_ps_psychotherapeut</li>
-    <li>oid_kuj_psychotherapeut</li>
-  </ul>
-   damit nur solche Leistungserbringer ein signiertes E-Rezept einstellen, die zur Verordnung von DiGAs ermächtigt sind.
+    abbrechen, damit nur solche Leistungserbringer ein signiertes E-Rezept einstellen, die zur Verordnung von DiGAs ermächtigt sind.
 </requirement>
 
 <br>
@@ -90,8 +90,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
-  Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&#60;id&#62;/$activate den im FHIR Profil KBV_PR_EVDGA_HealthAppRequest gespeicherten Wert für .code[x]:codeCodeableConcept.coding.code gemäß den "Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI" beschriebenen Prüfalgorithmus validieren.<br>
-  Der TI-Flow-Fachdienst MUSS bei einer fehlerhaften Prüfung mit dem folgenden Fehler:
+  Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&#60;id&#62;/$activate den im FHIR Profil KBV_PR_EVDGA_HealthAppRequest gespeicherten Wert für .code[x]:codeCodeableConcept.coding.code gemäß den "Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI" beschriebenen Prüfalgorithmus validieren und bei einer fehlerhaften Prüfung die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -125,7 +124,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
-  Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Task des Flowtype Task.extension:flowType = 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate prüfen, obCoverage.type.coding.code nicht mit dem Wert "PKV" belegt ist und im Fehlerfall die Operation mit dem folgenden Fehler:
+  Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Task des Flowtype Task.extension:flowType = 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate prüfen, dass Coverage.type.coding.code nicht mit dem Wert "PKV" belegt ist und im Fehlerfall die Operation mit dem folgenden Fehler:
     <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>

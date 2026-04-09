@@ -6,7 +6,30 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Task mittels der HTTP-Operationen PUT, HEAD und DELETE sowie POST ohne die Angabe einer gültigen FHIR-Operation unterbinden, damit keine unzulässigen Operationen auf den Rezeptdaten ausgeführt werden können.
+    Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Task mittels der HTTP-Operationen PUT, HEAD und DELETE sowie POST ohne die Angabe einer gültigen FHIR-Operation unterbinden und mit mit dem folgenden Fehler:
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>405 - Method Not Allowed</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>SVC_METHOD_NOT_ALLOWED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+  abbrechen, damit keine unzulässigen Operationen auf den Rezeptdaten ausgeführt werden können.
 </requirement>
 
 Der Zugriff mittels POST und Angabe einer gültigen FHIR-Operation ist unter [Operations](./menu-schnittstellen-operation-api.html) beschrieben.
@@ -27,7 +50,7 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in Verordnunge
         <li>oid_oeffentliche_apotheke</li>
         <li>oid_krankenhausapotheke</li> 
     </ul>
-    die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen mit dem folgenden Fehler:
+    die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -50,7 +73,7 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in Verordnunge
             <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
-    abrechen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.
+    abbrechen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.
 </requirement>
 
 <!-- A_19115-01 -->
@@ -574,7 +597,7 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in eine spezif
         <li>oid_krankenhausapotheke</li>
         <li>oid_kostentraeger</li> 
     </ul>
-    die Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen mit dem folgenden Fehler:
+    die Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -597,7 +620,7 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in eine spezif
             <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
-    abrechen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.
+    abbrechen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.
 </requirement>
 
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-407" title="TI-Flow-Fachdienst - Task abrufen - Versicherter - Prüfung KVNR" version="0">
@@ -605,8 +628,32 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in eine spezif
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen /Task/&lt;id&gt; durch einen Versicherten, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die im gespeicherten Datensatz in Task.for.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit den Aufruf mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich der begünstigte Versicherte den Task abrufen kann.
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen /Task/&lt;id&gt; durch einen Versicherten, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die im gespeicherten Datensatz in Task.for.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>???</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>???</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>???</td>
+        </tr>
+    </table> 
+  abbrechen, damit ausschließlich der begünstigte Versicherte den Task abrufen kann.
 </requirement>
+<!-- ToDo Hendre: Fehler ergänzrn -->
 
 <!-- A_21375-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-111" title="TI-Flow-Fachdienst - Task abrufen - Versicherter - Rückgabe Task inkl. Bundles" version="0">
@@ -706,7 +753,7 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in eine spezif
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende Institution den im referenzierten Task gespeicherten Status Task.status prüfen und mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende Institution den im referenzierten Task gespeicherten Status Task.status prüfen und, wenn Task.status ungleich "in-progress" und ungleich "completed" ist, die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -729,7 +776,7 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in eine spezif
             <td>-</td>
         </tr>
     </table> 
-    abbrechen, wenn Task.status ungleich "in-progress" und ungleich "completed" ist, damit der Datensatz nur abgerufen werden, kann, wenn sich die Verordnung in Belieferung befindet oder der Workflow abgeschlossen ist.
+    abbrechen, damit der Datensatz nur abgerufen werden, kann, wenn sich die Verordnung in Belieferung befindet oder der Workflow abgeschlossen ist.
 </requirement>
 
 <!-- A_24179-01 -->
@@ -784,7 +831,7 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
             <td>-</td>
         </tr>
     </table> 
-    ablehnen, um das Markieren mehrerer Ressourcen über einen Request zu verhindern.
+    abbrechen, um das Markieren mehrerer Ressourcen über einen Request zu verhindern.
 </requirement>
 
 <!-- A_27549 -->
@@ -797,7 +844,7 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
      <ul>
         <li>oid_versicherter</li>
      </ul>
-     die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen mit dem folgenden Fehler:
+     die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -820,7 +867,7 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
             <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
-    abrechen, damit E-Rezepte nicht durch Unberechtigte markiert werden können.
+    abbrechen, damit E-Rezepte nicht durch Unberechtigte markiert werden können.
 </requirement>
 
 <!-- A_27550 -->
@@ -829,7 +876,7 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-     Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die im gespeicherten Datensatz in Task.for.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit den Aufruf mit dem folgenden Fehler:
+     Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die im gespeicherten Datensatz in Task.for.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -852,5 +899,5 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
             <td>-</td>
         </tr>
     </table> 
-    abweisen, damit ausschließlich der begünstigte Versicherte als Berechtigter einen Task ändert.
+    abbrechen, damit ausschließlich der begünstigte Versicherte als Berechtigter einen Task ändert.
 </requirement>

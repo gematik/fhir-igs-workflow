@@ -49,7 +49,7 @@ Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource ChargeItem mittels d
             <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
-    abrechen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.
+    abbrechen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.
 </requirement>
 
 <!--A_22119-->
@@ -115,7 +115,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt 
             <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
-    abrechen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.
+    abbrechen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.
 </requirement>
 
 <!--A_22125-->
@@ -267,7 +267,7 @@ Der TI-Flow-Fachdienst DARF beim Aufruf der Operation GET /ChargeItem/&#60;id&#6
             <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
-    abrechen, damit eine Abrechnungsinformation nicht durch Unberechtigte eingestellt werden kann.
+    abbrechen, damit eine Abrechnungsinformation nicht durch Unberechtigte eingestellt werden kann.
 </requirement>
 
 <!--A_22130-->
@@ -445,7 +445,13 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource ChargeItem übertragene ChargeItem-Ressource gegen das FHIR-Profil ChargeItem prüfen und die Korrektheit der Rezept-ID (GEM_ERP_PR_PrescriptionId) im referenzierten Task als ChargeItem.identifier, die Korrektheit der Versicherten-ID des Versicherten im referenzierten Task (Task.for) gegen ChargeItem.subject.identifier sowie die Korrektheit der Telematik-ID der Apotheke gemäß ACCESS_TOKEN mit dem Wert in ChargeItem.enterer.identifier prüfen und bei Nicht-Konformität das Anlegen der Ressource im TI-Flow-Fachdienst mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource ChargeItem übertragene ChargeItem-Ressource gegen das FHIR-Profil ChargeItem prüfen und 
+    <ul>
+    <li>die Korrektheit der Rezept-ID (GEM_ERP_PR_PrescriptionId) im referenzierten Task als ChargeItem.identifier, </li>
+    <li>die Korrektheit der Versicherten-ID des Versicherten im referenzierten Task (Task.for) gegen ChargeItem.subject.identifier </li>
+    <li>und die Korrektheit der Telematik-ID der Apotheke gemäß ACCESS_TOKEN mit dem Wert in ChargeItem.enterer.identifier</li>
+    </ul>
+    prüfen und bei Nicht-Konformität die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -468,7 +474,7 @@ Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource ChargeI
             <td>FHIR Profile Validation Failed</td>
         </tr>
     </table> 
-    ablehnen, damit nur FHIR-valide Ressourcen in den TI-Flow-Fachdienst hochgeladen werden.
+    abbrechen, damit nur FHIR-valide Ressourcen in den TI-Flow-Fachdienst hochgeladen werden.
 </requirement>
 
 <!--A_22137-->
@@ -486,7 +492,7 @@ Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource ChargeI
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource ChargeItem übertragene PKV-Abgabedatensatz-Ressource gegen das FHIR-Profil DAV-PKV-PR-ERP-AbgabedatenBundle prüfen und bei Nicht-Konformität das Anlegen der Ressource im TI-Flow-Fachdienst mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource ChargeItem übertragene PKV-Abgabedatensatz-Ressource gegen das FHIR-Profil DAV-PKV-PR-ERP-AbgabedatenBundle prüfen und bei Nicht-Konformität die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -509,7 +515,7 @@ Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource ChargeI
             <td>FHIR Profile Validation Failed</td>
         </tr>
     </table> 
-    ablehnen, damit nur FHIR-valide Ressourcen in den TI-Flow-Fachdienst hochgeladen werden.
+    abbrechen, damit nur FHIR-valide Ressourcen in den TI-Flow-Fachdienst hochgeladen werden.
 </requirement>
 
 <!--A_22139-->
@@ -518,7 +524,7 @@ Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource ChargeI
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt /ChargeItem die Signatur des PKV-Abgabedatensatzes gemäß ETSI_QES prüfen und bei fehlender oder nicht gültiger Signatur mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt /ChargeItem die Signatur des PKV-Abgabedatensatzes gemäß ETSI_QES prüfen und bei fehlender oder nicht gültiger Signatur die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -550,7 +556,7 @@ Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource ChargeI
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt /ChargeItem das Signaturzertifikats des PKV-Abgabedatensatzes prüfen. Das Signaturzertifikat muss anhand der Zertifikatsprüfung für [mathematisch gültig UND zeitlich gültig UND online gültig] befunden werden und der Aufruf anderenfalls mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt /ChargeItem das Signaturzertifikats des PKV-Abgabedatensatzes prüfen. Das Signaturzertifikat muss anhand der Zertifikatsprüfung für [mathematisch gültig UND zeitlich gültig UND online gültig] befunden werden und bei fehlerhafter Prüfung die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -573,7 +579,7 @@ Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource ChargeI
             <td>-</td>
         </tr>
     </table>
-    abgebrochen werden, um ausschließlich authentische Daten zu verwalten.
+    abbrechen, um ausschließlich authentische Daten zu verwalten.
 </requirement>
 
 <!--A_22140-01-->
@@ -582,7 +588,7 @@ Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource ChargeI
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt /ChargeItem das Signaturzertifikats des PKV-Abgabedatensatzes prüfen. Wenn die Abfrage des OCSP-Response für das Signaturzertifikat fehlschlägt, muss der HTTP-Request mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt /ChargeItem das Signaturzertifikats des PKV-Abgabedatensatzes prüfen und, wenn die Abfrage des OCSP-Response für das Signaturzertifikat fehlschlägt, die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -605,7 +611,7 @@ Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource ChargeI
             <td>-</td>
         </tr>
     </table> 
-    abgelehnt werden.
+    abbrechen.
 </requirement>
 
 <!--A_22134-->
@@ -674,7 +680,7 @@ Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource ChargeI
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation PATCH auf den Endpunkt /ChargeItem ohne Angabe einer &#60;id&#62; für eine konkrete Ressource mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation PATCH auf den Endpunkt /ChargeItem ohne Angabe einer &#60;id&#62; für eine konkrete Ressource die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -697,7 +703,7 @@ Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource ChargeI
             <td>-</td>
         </tr>
     </table> 
-    ablehnen, um das Ändern mehrerer Ressourcen über einen Request zu verhindern.
+    abbrechen, um das Ändern mehrerer Ressourcen über einen Request zu verhindern.
 </requirement>
 
 <!--A_22875-->
@@ -706,7 +712,7 @@ Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource ChargeI
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-PATCH-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource sicherstellen, dass ausschließlich Nutzer in der Rolle oid_versicherter die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-PATCH-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Nutzer in der Rolle oid_versicherter die Operation am TI-Flow-Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -729,7 +735,7 @@ Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource ChargeI
             <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
-    abrechen, damit eine Abrechnungsinformation nicht durch Unberechtigte aktualisiert werden kann.
+    abbrechen, damit eine Abrechnungsinformation nicht durch Unberechtigte aktualisiert werden kann.
 </requirement>
 
 <!--A_22877-->
@@ -738,7 +744,7 @@ Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource ChargeI
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch einen Versicherten, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die im gespeicherten Datensatz in ChargeItem.subject.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit den Aufruf mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch einen Versicherten, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die im gespeicherten Datensatz in ChargeItem.subject.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -761,7 +767,7 @@ Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource ChargeI
             <td>Identity mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID / KVNR)</td>
         </tr>
     </table> 
-    abweisen, damit ausschließlich der begünstigte Versicherte eine Abrechnungsinformation ändert.
+    abbrechen, damit ausschließlich der begünstigte Versicherte eine Abrechnungsinformation ändert.
 </requirement>
 
 <!--A_27566-->
@@ -770,7 +776,7 @@ Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource ChargeI
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-Der TI-Flow-Fachdienst MUSS die in der HTTP-PATCH-Operation auf die Ressource Chargeltem übertragene Parameters Ressource gegen das FHIR-Profil GEM_ERPCHRG_PR_PAR_Patch_ChargeItem_Input prüfen und bei Nicht-Konformität das Verarbeiten der Ressource im TI-Flow-Fachdienst mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS die in der HTTP-PATCH-Operation auf die Ressource Chargeltem übertragene Parameters Ressource gegen das FHIR-Profil GEM_ERPCHRG_PR_PAR_Patch_ChargeItem_Input prüfen und bei Nicht-Konformität die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -793,7 +799,7 @@ Der TI-Flow-Fachdienst MUSS die in der HTTP-PATCH-Operation auf die Ressource Ch
             <td>FHIR Profile Validation Failed</td>
         </tr>
     </table> 
-    ablehnen.
+    abbrechen.
 </requirement>
 
 ### PUT /ChargeItem/&#60;id&#62;
@@ -803,12 +809,12 @@ Der TI-Flow-Fachdienst MUSS die in der HTTP-PATCH-Operation auf die Ressource Ch
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource sicherstellen, dass ausschließlich Nutzer in einer der Rollen 
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Nutzer in einer der Rollen 
     <ul>
         <li>oid_oeffentliche_apotheke</li>
         <li>oid_krankenhausapotheke</li>
     </ul>
-    die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen mit dem folgenden Fehler:
+    die Operation am TI-Flow-Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -831,7 +837,7 @@ Der TI-Flow-Fachdienst MUSS die in der HTTP-PATCH-Operation auf die Ressource Ch
             <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
-    abrechen, damit eine Abrechnungsinformation nicht durch Unberechtigte aktualisiert werden kann.
+    abbrechen, damit eine Abrechnungsinformation nicht durch Unberechtigte aktualisiert werden kann.
 </requirement>
 
 <!--A_22215-->
@@ -872,7 +878,7 @@ Der TI-Flow-Fachdienst MUSS die in der HTTP-PATCH-Operation auf die Ressource Ch
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende Leistungserbringerinstitution (Apotheke), diese anhand der Telematik-ID aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die im gespeicherten Datensatz in ChargeItem.enterer.identifier hinterlegte Telematik-ID prüfen und bei Ungleichheit den Aufruf mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende Leistungserbringerinstitution (Apotheke), diese anhand der Telematik-ID aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die im gespeicherten Datensatz in ChargeItem.enterer.identifier hinterlegte Telematik-ID prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -895,7 +901,7 @@ Der TI-Flow-Fachdienst MUSS die in der HTTP-PATCH-Operation auf die Ressource Ch
             <td>Identity mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID / KVNR)</td>
         </tr>
     </table> 
-    abweisen, damit ausschließlich die Apotheke, welche die Abrechnungsinformation bereitgestellt hat, diese ändert.
+    abbrechen, damit ausschließlich die Apotheke, welche die Abrechnungsinformation bereitgestellt hat, diese ändert.
 </requirement>
 
 <!--A_22616-03-->
@@ -945,7 +951,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende LEI die im HTTP-PUT-Operation auf die Ressource ChargeItem übertragene PKV-Abgabedatensatz-Ressource gegen das FHIR-Profil PKV-Abgabedatensatz prüfen und bei Nicht-Konformität das Anlegen der Ressource im TI-Flow-Fachdienst mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende LEI die im HTTP-PUT-Operation auf die Ressource ChargeItem übertragene PKV-Abgabedatensatz-Ressource gegen das FHIR-Profil PKV-Abgabedatensatz prüfen und bei Nicht-Konformität die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -968,7 +974,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete
             <td>FHIR Profile Validation Failed</td>
         </tr>
     </table> 
-    ablehnen, damit nur FHIR-valide Ressourcen in den TI-Flow-Fachdienst hochgeladen werden.
+    abbrechen, damit nur FHIR-valide Ressourcen in den TI-Flow-Fachdienst hochgeladen werden.
 </requirement>
 
 <!--A_22150-->
@@ -977,7 +983,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende LEI die Signatur des PKV-Abgabedatensatzes gemäß ETSI_QES prüfen und bei fehlender oder nicht gültiger Signatur mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende LEI die Signatur des PKV-Abgabedatensatzes gemäß ETSI_QES prüfen und bei fehlender oder nicht gültiger Signatur die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -1009,7 +1015,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende LEI, das Signaturzertifikats des PKV-Abgabedatensatzes prüfen. Das Signaturzertifikat muss anhand der Zertifikatsprüfung für [mathematisch gültig UND zeitlich gültig UND online gültig] befunden werden und der Aufruf anderenfalls mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende LEI, das Signaturzertifikats des PKV-Abgabedatensatzes prüfen, das Signaturzertifikat anhand der Zertifikatsprüfung für [mathematisch gültig UND zeitlich gültig UND online gültig] befinden und anderenfalls die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -1032,7 +1038,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete
             <td>Das Signaturzertifikat ist abgelaufen bzw. gesperrt.</td>
         </tr>
     </table>
-    abgebrochen werden, um ausschließlich authentische Daten zu verwalten.
+    abbrechen, um ausschließlich authentische Daten zu verwalten.
 </requirement>
 
 <!--A_22151-01-->
@@ -1041,7 +1047,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende LEI, das Signaturzertifikats des PKV-Abgabedatensatzes prüfen. Wenn die Abfrage des OCSP-Response für das Signaturzertifikat fehlschlägt, muss der HTTP-Request mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende LEI, das Signaturzertifikats des PKV-Abgabedatensatzes prüfen und, wenn die Abfrage des OCSP-Response für das Signaturzertifikat fehlschlägt, die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -1064,7 +1070,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete
             <td>-</td>
         </tr>
     </table> 
-    abgelehnt werden.
+    abbrechen.
 </requirement>
 
 <!--A_22152-->
@@ -1137,7 +1143,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS den Aufruf der Operation DELETE /ChargeItem ohne Angabe einer konkreten über &#60;id&#62; adressierte ChargeItem Ressource mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS den Aufruf der Operation DELETE /ChargeItem ohne Angabe einer konkreten über &#60;id&#62; adressierte ChargeItem Ressource die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -1160,7 +1166,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete
             <td>-</td>
         </tr>
     </table> 
-    ablehnen, um das Löschen mehrerer Ressourcen über einen Request zu verhindern.
+    abbrechen, um das Löschen mehrerer Ressourcen über einen Request zu verhindern.
 </requirement>
 
 <!--A_22113-->
@@ -1169,11 +1175,11 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource sicherstellen, dass ausschließlich Nutzer in der Rolle 
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Nutzer in der Rolle 
     <ul>
         <li>oid_versicherter</li>
     </ul>
-    die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen mit dem folgenden Fehler:
+    die Operation am TI-Flow-Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -1196,7 +1202,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete
             <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
-    abrechen, damit eine Abrechnungsinformation nicht durch Unberechtigte gelöscht werden kann.
+    abbrechen, damit eine Abrechnungsinformation nicht durch Unberechtigte gelöscht werden kann.
 </requirement>
 
 <!--A_22114-->
@@ -1205,7 +1211,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch einen Versicherten, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die in ChargeItem.subject.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit den Aufruf mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch einen Versicherten, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die in ChargeItem.subject.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -1228,7 +1234,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf eine konkr
             <td>Identity mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID / KVNR)</td>
         </tr>
     </table> 
-    abweisen, damit ausschließlich der begünstigte Versicherte eine Abrechnungsinformation löscht.
+    abbrechen, damit ausschließlich der begünstigte Versicherte eine Abrechnungsinformation löscht.
 </requirement>
 
 <!--A_22117-01-->

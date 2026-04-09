@@ -17,7 +17,7 @@ Diese Seite enthält die workflowtyp-spezifischen normativen Anforderungen an de
     <li>oid_oeffentliche_apotheke</li>
     <li>oid_krankenhausapotheke</li>
   </ul>
-  die Operation am Fachdienst aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+  die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -40,7 +40,7 @@ Diese Seite enthält die workflowtyp-spezifischen normativen Anforderungen an de
             <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
-    abrechen, damit das E-Rezept nicht durch einen Unberechtigten zurückgewiesen werden kann.
+    abbrechen, damit das E-Rezept nicht durch einen Unberechtigten zurückgewiesen werden kann.
 </requirement>
 
 <!-- A_24286-02 -->
