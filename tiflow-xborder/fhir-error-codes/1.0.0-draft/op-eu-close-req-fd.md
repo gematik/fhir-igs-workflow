@@ -13,7 +13,7 @@ Version 1.0.0-draft - ci-build
 
 ### Anforderungen der Schnittstelle aus diesem Modul
 
-Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/<id>/$eu-close sicherstellen, dass ausschließlich Nutzer in der Rolle: oid_ncpeh, die Operation am Fachdienst aufrufen dürfen und die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader Authorization feststellen, und bei Abweichungen mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/<id>/$eu-close sicherstellen, dass ausschließlich Nutzer in der Rolle: oid_ncpeh, die Operation am Fachdienst aufrufen dürfen und die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader Authorization feststellen, und bei Abweichungen die Operationmit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 403 - Forbidden: error
@@ -24,7 +24,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /T
 * HTTP-Code: Details Text
   * 403 - Forbidden: Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern
 
-abrechen, damit der E-Rezept-Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.
+abbrechen, damit der E-Rezept-Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.
 
 Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/<id>/$eu-close durch den NCPeH-FD das im http-Body des Requests enthaltene Parameter-Objekt gegen das Profil [GEM_ERP_PR_PAR_EU_CloseOperation_Input] prüfen und im Fehlerfall die Operation mit dem folgenden Fehler:
 
@@ -65,7 +65,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /T
 
 abbrechen, damit nur Dispensierinformationen übermittelt werden, wenn eine gültige Zugriffsberechtigung vorliegt.
 
-Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/<id>/$eu-close durch den NCPeH-FD sicherstellen, dass Task.status = in-progress ist und bei Ungleichheit mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/<id>/$eu-close durch den NCPeH-FD sicherstellen, dass Task.status = in-progress ist und bei Ungleichheit die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 403 - Forbidden: error

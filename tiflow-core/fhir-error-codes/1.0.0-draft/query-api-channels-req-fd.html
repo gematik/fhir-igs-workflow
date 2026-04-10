@@ -287,13 +287,37 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für den channels-Endpunkt.</p>
 
 <!-- A_28121 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-55" title="TI-Flow-Fachdienst - unzulässige Operationen Channels" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-55" title="TI-Flow-Fachdienst - unzulässige Operationen Channels" version="1">
   <meta lockversion="false" />
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten" />
   </actor>
-  Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Channels mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE unterbinden, damit keine unzulässigen Operationen auf den Daten ausgeführt werden können.
+  Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Channels mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE unterbinden und mit dem folgenden Fehler:
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>405 - Method Not Allowed</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>SVC_METHOD_NOT_ALLOWED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+  abbrechen, damit keine unzulässigen Operationen auf den Daten ausgeführt werden können.
 </requirement>
+<!-- ToDo Hendre: Fehlercode (Detailed code) einfügen Http Fehler 405 -->
 
 <!-- A_28117 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-56" title="TI-Flow-Fachdienst - Push Notifications - Channels- OpenApi_Notification_Fachdienst" version="0">
@@ -319,7 +343,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <ul>
     <li>oid_versicherter</li>
   </ul>
-  die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+  die Operation aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -334,7 +358,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <td>-</td>
         </tr>
     </table> 
-    abrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
+    abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 </requirement>
 
 <p>Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfiguration für eine spezifische FdV-Instanz abgefragt werden.</p>
@@ -349,7 +373,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <ul>
     <li>oid_versicherter</li>
   </ul>
-  die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+  die Operation aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -364,8 +388,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <td>-</td>
         </tr>
     </table> 
-    abrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
+    abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 </requirement>
+<!-- ToDo Hendre: Warum lautet der FehlerCode bei vergleichbaren Afos TIFLOW_AUTH_ROLE_NOT_ALLOWED? -->
 
 <h3 id="post-channels">POST /channels</h3>
 
@@ -379,7 +404,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <ul>
     <li>oid_versicherter</li>
   </ul>
-  die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+  die Operation aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -394,9 +419,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <td>-</td>
         </tr>
     </table> 
-    abrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
+    abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 </requirement>
-
+<!-- ToDo Hendre: Warum lautet der FehlerCode bei vergleichbaren Afos TIFLOW_AUTH_ROLE_NOT_ALLOWED? -->
 
 
 
@@ -438,7 +463,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Apr 2, 2026 12:29+0000">2026-04-02</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Apr 10, 2026 08:03+0000">2026-04-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

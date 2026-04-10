@@ -282,12 +282,35 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für den Device-Query-Endpunkt.</p>
 
 <!-- A_19400 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-130" title="TI-Flow-Fachdienst - MedicationDispense - unzulässige Operationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-130" title="TI-Flow-Fachdienst - MedicationDispense - unzulässige Operationen" version="1">
   <meta lockversion="false" />
   <actor name="TI_Flow_FD">
    	<testProcedure id="Produktgutachten" />
   </actor>
-  Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource MedicationDispense mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE sowie POST unterbinden, damit keine unzulässigen Operationen auf den Rezeptdaten ausgeführt werden können.
+  Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource MedicationDispense mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE sowie POST unterbinden und mit mit dem folgenden Fehler:
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>405 - Method Not Allowed</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>SVC_METHOD_NOT_ALLOWED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+  abbrechen, damit keine unzulässigen Operationen auf den Rezeptdaten ausgeführt werden können.
 </requirement>
 
 <h3 id="get-medicationdispense">GET /MedicationDispense</h3>
@@ -325,7 +348,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
-    abrechen, damit Dispensierinformationen nicht durch Unberechtigte ausgelesen werden können.
+    abbrechen, damit Dispensierinformationen nicht durch Unberechtigte ausgelesen werden können.
 </requirement>
 
 <p><!-- A_19406-01 --></p>
@@ -397,7 +420,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Apr 2, 2026 12:29+0000">2026-04-02</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Apr 10, 2026 08:03+0000">2026-04-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -45,7 +45,7 @@ Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der 
 
 abweisen, damit ausschließlich die verordnende Leistungserbringerinstitution in Kenntnis des AccessCodes als Berechtigte ein E-Rezept löschen.
 
-Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der <id> adressierten/Task/<id>/$abort durch verordnende Leistungserbringer den im referenzierten Task gespeicherten Status Task.status prüfen und mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der <id> adressierten/Task/<id>/$abort durch verordnende Leistungserbringer den im referenzierten Task gespeicherten Status Task.status prüfen und, wenn Task.status ungleich "ready" ist, mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 412 - Precondition Failed: error
@@ -56,7 +56,7 @@ Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der 
 * HTTP-Code: Details Text
   * 412 - Precondition Failed: Task has invalid status.
 
-abbrechen, wenn Task.status ungleich "ready" ist, damit die verordnende Leistungserbringerinstitution eine Verordnung nur löschen kann, wenn sie sich noch nicht in Belieferung befindet oder beliefert wurde.
+abbrechen, damit die verordnende Leistungserbringerinstitution eine Verordnung nur löschen kann, wenn sie sich noch nicht in Belieferung befindet oder beliefert wurde.
 
 Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der <id> adressierten /Task/<id>/$abort alle personenbezogenen medizinischen Daten, außer der KVNR in Task.for, aus dem referenzierten Task entfernen. Dies gilt insbesondere für:
 * Task.input --> löschen (inkl. aller referenzierten Elemente)
@@ -86,7 +86,7 @@ Der TI-Flow-Fachdienst MUSS beim Löschen eines Tasks für eine Verordnung mit F
 * oid_institution-vorsorge-reha
 * oid_oeffentliche_apotheke
 * oid_krankenhausapotheke
-die Operation am Fachdienst aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 403 - Forbidden: error
@@ -97,7 +97,7 @@ die Operation am Fachdienst aufrufen, und bei Abweichungen mit dem folgenden Feh
 * HTTP-Code: Details Text
   * 403 - Forbidden: Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern
 
-abrechen, damit die Verordnung nicht durch einen Unberechtigten gelöscht werden kann.
+abbrechen, damit die Verordnung nicht durch einen Unberechtigten gelöscht werden kann.
 
 Der TI-Flow-Fachdienst MUSS das Löschen eines E-Rezepts über den mittels der <id> adressierten /Task/<id>/$abort verhindern und die Operation mit dem folgenden Fehler:
 
@@ -115,7 +115,10 @@ abweisen, wenn der Status des adressierten Tasks gleich "in-progress" ist und di
 * oid_krankenhausapotheke
 damit Nutzer außerhalb der Apotheke keine Rezepte löschen, die sich aktuell in Belieferung befinden.
 
-Der TI-Flow-Fachdienst MUSS das Löschen eines E-Rezepts über den mittels der <id> adressierten /Task/<id>/$abort verhindern und die Operation mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS das Löschen eines E-Rezepts über den mittels der <id> adressierten /Task/<id>/$abort verhindern, wenn der Status des adressierten Tasks ungleich "in-progress" ist und die Rolle des aufrufenden Nutzers einer der folgenden Rollen entspricht:
+* oid_oeffentliche_apotheke
+* oid_krankenhausapotheke
+, und die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 403 - Forbidden: error
@@ -126,12 +129,9 @@ Der TI-Flow-Fachdienst MUSS das Löschen eines E-Rezepts über den mittels der 
 * HTTP-Code: Details Text
   * 403 - Forbidden: Task has invalid status.
 
-abweisen, wenn der Status des adressierten Tasks ungleich "in-progress" ist und die Rolle des aufrufenden Nutzers einer der folgenden Rollen entspricht:
-* oid_oeffentliche_apotheke
-* oid_krankenhausapotheke
-damit kein Apotheker ein Rezept löscht, das ihm nicht ausdrücklich zugewiesen wurde.
+abbrechen, damit kein Apotheker ein Rezept löscht, das ihm nicht ausdrücklich zugewiesen wurde.
 
-Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der <id> adressierten /Task/<id>/$abort durch abgebende Leistungserbringer (Apotheken) das im URL-Parameter "?secret=..." übertragene Geheimnis gegen das im referenzierten Task enthaltene Secret in Task.identifier prüfen und bei Missmatch oder Fehlen des URL-Parameters den Aufruf mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der <id> adressierten /Task/<id>/$abort durch abgebende Leistungserbringer (Apotheken) das im URL-Parameter "?secret=..." übertragene Geheimnis gegen das im referenzierten Task enthaltene Secret in Task.identifier prüfen und bei Missmatch oder Fehlen des URL-Parameters die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 403 - Forbidden: error
@@ -142,9 +142,11 @@ Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der
 * HTTP-Code: Details Text
   * 403 - Forbidden: -
 
-abweisen, damit ausschließlich Apotheker in Kenntnis des Secret als Berechtigte ein E-Rezept löschen.
+abbrechen, damit ausschließlich Apotheker in Kenntnis des Secret als Berechtigte ein E-Rezept löschen.
 
-Der TI-Flow-Fachdienst MUSS das Löschen eines E-Rezepts mit dem Flowtype 169 oder 209 über den mittels der <id> adressierten /Task/<id>/$abort verhindern und die Operation mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS das Löschen eines E-Rezepts mit dem Flowtype 169 oder 209 über den mittels der <id> adressierten /Task/<id>/$abort verhindern, wenn der Status des adressierten Tasks ungleich "completed" ist und die Rolle des aufrufenden Nutzers der folgenden Rolle entspricht:
+* oid_versicherter
+, und die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 403 - Forbidden: error
@@ -155,7 +157,7 @@ Der TI-Flow-Fachdienst MUSS das Löschen eines E-Rezepts mit dem Flowtype 169 od
 * HTTP-Code: Details Text
   * 403 - Forbidden: Task has invalid status.
 
-abweisen, wenn der Status des adressierten Tasks ungleich "completed" ist und die Rolle des aufrufenden Nutzers der folgenden Rollen entspricht: oid_versicherter damit kein Versicherter ein E-Rezept aus einem Workflow mit Workflowsteuerung durch Leistungserbringer (169, 209) löscht, das nicht bereits beliefert wurde.
+abweisen, damit kein Versicherter ein E-Rezept aus einem Workflow mit Workflowsteuerung durch Leistungserbringer (169, 209) löscht, das nicht bereits beliefert wurde.
 
 Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts mittels POST /Task/<id>/$abort durch eine verordnende oder abgebende Leistungserbringerinstitution die Daten für die Löschinformation des Verordnungsdatensatzes in den ePA Medication Service bereitstellen.
 

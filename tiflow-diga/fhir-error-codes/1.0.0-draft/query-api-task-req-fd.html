@@ -286,15 +286,38 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für den Task-Endpunkt.</p>
 
   <!-- A_19030 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - unzulässige Operationen Task" version="0" key="IG-TIFLOW-CORE-79">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - unzulässige Operationen Task" version="1" key="IG-TIFLOW-CORE-79">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Task mittels der HTTP-Operationen PUT, HEAD und DELETE sowie POST ohne die Angabe einer gültigen FHIR-Operation unterbinden, damit keine unzulässigen Operationen auf den Rezeptdaten ausgeführt werden können.
+    Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Task mittels der HTTP-Operationen PUT, HEAD und DELETE sowie POST ohne die Angabe einer gültigen FHIR-Operation unterbinden und mit mit dem folgenden Fehler:
+    <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>405 - Method Not Allowed</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>SVC_METHOD_NOT_ALLOWED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+  abbrechen, damit keine unzulässigen Operationen auf den Rezeptdaten ausgeführt werden können.
 </requirement>
 
-<p><a name="l449">​</a>Der Zugriff mittels POST und Angabe einer gültigen FHIR-Operation ist unter <a href="./menu-schnittstellen-operation-api.html">Operations</a> beschrieben.</p>
+<p><a name="l497">​</a>Der Zugriff mittels POST und Angabe einer gültigen FHIR-Operation ist unter <a href="./menu-schnittstellen-operation-api.html">Operations</a> beschrieben.</p>
 
 <h4 id="get-task-liste">GET /Task (Liste)</h4>
 <p>Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in Verordnungen steht ausschließlich dem Versicherten bzw. einer abgebenden Institution mit Nachweis eines Behandlungskontextes zur Verfügung. Die GET-Operation ohne Referenz einer FHIR-Operation führt zu keiner Statusänderung.</p>
@@ -311,7 +334,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         <li>oid_oeffentliche_apotheke</li>
         <li>oid_krankenhausapotheke</li> 
     </ul>
-    die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen mit dem folgenden Fehler:
+    die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
         <tr>
             <th>HTTP-Code</th>
@@ -334,7 +357,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <td>Der Nutzer ist&nbsp;nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
-    abrechen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.
+    abbrechen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.
 </requirement>
 
   <!-- A_19115-01 -->
@@ -854,7 +877,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         <li>oid_krankenhausapotheke</li>
         <li>oid_kostentraeger</li> 
     </ul>
-    die Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen mit dem folgenden Fehler:
+    die Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
         <tr>
             <th>HTTP-Code</th>
@@ -877,7 +900,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <td>Der Nutzer ist&nbsp;nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
-    abrechen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.
+    abbrechen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.
 </requirement>
 
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task abrufen - Versicherter - Prüfung KVNR" version="0" key="IG-TIFLOW-CORE-407">
@@ -885,8 +908,32 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen /Task/&lt;id&gt; durch einen Versicherten, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die im gespeicherten Datensatz in Task.for.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit den Aufruf mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich der begünstigte Versicherte den Task abrufen kann.
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen /Task/&lt;id&gt; durch einen Versicherten, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die im gespeicherten Datensatz in Task.for.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:
+    <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>???</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>???</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>???</td>
+        </tr>
+    </table> 
+  abbrechen, damit ausschließlich der begünstigte Versicherte den Task abrufen kann.
 </requirement>
+  <!-- ToDo Hendre: Fehler ergänzrn -->
 
   <!-- A_21375-02 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task abrufen - Versicherter - Rückgabe Task inkl. Bundles" version="0" key="IG-TIFLOW-CORE-111">
@@ -985,7 +1032,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende Institution den im referenzierten Task gespeicherten Status Task.status prüfen und mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende Institution den im referenzierten Task gespeicherten Status Task.status prüfen und, wenn Task.status ungleich "in-progress" und ungleich "completed" ist, die Operation mit dem folgenden Fehler:
       <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
         <tr>
             <th>HTTP-Code</th>
@@ -1008,7 +1055,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <td>-</td>
         </tr>
     </table> 
-    abbrechen, wenn Task.status ungleich "in-progress" und ungleich "completed" ist, damit der Datensatz nur abgerufen werden, kann, wenn sich die Verordnung in Belieferung befindet oder der Workflow abgeschlossen ist.
+    abbrechen, damit der Datensatz nur abgerufen werden, kann, wenn sich die Verordnung in Belieferung befindet oder der Workflow abgeschlossen ist.
 </requirement>
 
   <!-- A_24179-01 -->
@@ -1061,7 +1108,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <td>-</td>
         </tr>
     </table> 
-    ablehnen, um das Markieren mehrerer Ressourcen über einen Request zu verhindern.
+    abbrechen, um das Markieren mehrerer Ressourcen über einen Request zu verhindern.
 </requirement>
 
   <!-- A_27549 -->
@@ -1074,7 +1121,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
      <ul>
         <li>oid_versicherter</li>
      </ul>
-     die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen mit dem folgenden Fehler:
+     die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
         <tr>
             <th>HTTP-Code</th>
@@ -1097,7 +1144,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <td>Der Nutzer ist&nbsp;nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
-    abrechen, damit E-Rezepte nicht durch Unberechtigte markiert werden können.
+    abbrechen, damit E-Rezepte nicht durch Unberechtigte markiert werden können.
 </requirement>
 
   <!-- A_27550 -->
@@ -1106,7 +1153,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-     Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die im gespeicherten Datensatz in Task.for.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit den Aufruf mit dem folgenden Fehler:
+     Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die im gespeicherten Datensatz in Task.for.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:
       <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
         <tr>
             <th>HTTP-Code</th>
@@ -1129,7 +1176,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <td>-</td>
         </tr>
     </table> 
-    abweisen, damit ausschließlich der begünstigte Versicherte als Berechtigter einen Task ändert.
+    abbrechen, damit ausschließlich der begünstigte Versicherte als Berechtigter einen Task ändert.
 </requirement>
 
 <h3 id="modulspezifische-anforderungen">Modulspezifische Anforderungen</h3>
@@ -1175,7 +1222,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Apr 2, 2026 12:34+0000">2026-04-02</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Apr 10, 2026 08:08+0000">2026-04-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

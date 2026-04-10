@@ -292,13 +292,37 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für den Communication-Endpunkt.</p>
 
 <!-- A_19401 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-316" title="TI-Flow-Fachdienst - Communication - unzulässige Operationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-316" title="TI-Flow-Fachdienst - Communication - unzulässige Operationen" version="1">
   <meta lockversion="false" />
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten" />
   </actor>
-  Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Communication mittels der HTTP-Operationen PUT, PATCH und HEAD unterbinden, damit keine unzulässigen Operationen auf den Kommunikationsnachrichten ausgeführt werden können.
+  Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Communication mittels der HTTP-Operationen PUT, PATCH und HEAD unterbinden und mit mit dem folgenden Fehler:
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>405 - Method Not Allowed</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>SVC_METHOD_NOT_ALLOWED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+  abbrechen, damit keine unzulässigen Operationen auf den Kommunikationsnachrichten ausgeführt werden können.
 </requirement>
+<!-- ToDo Hendre: Fehlercode (Detailed code) einfügen Http Fehler 405 -->
 
 <!-- A_19446-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-317" title="TI-Flow-Fachdienst - Communication - Rollenprüfung" version="1">
@@ -313,7 +337,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         <li>oid_krankenhausapotheke</li>
         <li>oid_kostentraeger</li>
     </ul>
-    die Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen mit dem folgenden Fehler:
+    die Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -336,7 +360,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
-    abrechen, damit der Nachrichtenaustausch nicht zwischen Unbefugten erfolgt.
+    abbrechen, damit der Nachrichtenaustausch nicht zwischen Unbefugten erfolgt.
 </requirement>
 <!-- ToDo: Fehlt hier die Angabe des Fehlercodes? Siehe auch entsprechende Afos in allen anderen SST. -->
 
@@ -367,7 +391,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest" />
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication die im http-Request-Body übergebene Communications-Ressource gegen das aus der Kommunikationsbeziehung ableitbare, zulässige Schema gemäß TAB_eRPFD_008 prüfen und den Aufruf bei Nicht-Konformität mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication die im http-Request-Body übergebene Communications-Ressource gegen das aus der Kommunikationsbeziehung ableitbare, zulässige Schema gemäß TAB_eRPFD_008 prüfen und den Aufruf bei Nicht-Konformität die Operation mit dem folgenden Fehler:
     <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
     <tr>
         <th>HTTP-Code</th>
@@ -390,7 +414,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         <td>FHIR Profile Validation Failed</td>
     </tr>
     </table> 
-    ablehnen, damit ausschließlich konforme E-Rezept-Nachrichten ausgetauscht werden.
+    abbrechen, damit ausschließlich konforme E-Rezept-Nachrichten ausgetauscht werden.
     <table>
     <tr> 
 		<th>sender</th>
@@ -435,7 +459,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest" />
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication, falls die Ressource dem GEM_ERP_PR_Communication_DispReq-Profil entspricht, den Inhalt der contentString-Eigenschaft auf valides JSON sowie gegen die Struktur in "Tabelle: E-Rezept einer Apotheke zuweisen" überprüfen und bei negativem Prüfergebnis, mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication, falls die Ressource dem GEM_ERP_PR_Communication_DispReq-Profil entspricht, den Inhalt der contentString-Eigenschaft auf valides JSON sowie gegen die Struktur in "Tabelle: E-Rezept einer Apotheke zuweisen" überprüfen und bei negativem Prüfergebnis, die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -460,6 +484,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </table> 
     abbrechen sowie mit einer aussagekräftigen Fehlermeldung in Form einer eingebetteten OperationOutcome-Ressource antworten.
 </requirement>
+<!-- ToDo Hendre: sieht unser Konzept diese aussagekräftige Fehlermeldung vor? Warum entspricht diese nicht dem Details Text ? -->
 
 <!-- A_23879-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-322" title="TI-Flow-Fachdienst - Nachricht einstellen - Validierung Payload  GEM_ERP_PR_Communication_Reply" version="1">
@@ -467,7 +492,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest" />
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication, falls die Ressource dem GEM_ERP_PR_Communication_Reply-Profil entspricht, den Inhalt der contentString-Eigenschaft auf valides JSON sowie gegen die Struktur in "Tabelle: Nachricht als Apotheke an einen Versicherten schicken" überprüfen und bei negativem Prüfergebnis, mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication, falls die Ressource dem GEM_ERP_PR_Communication_Reply-Profil entspricht, den Inhalt der contentString-Eigenschaft auf valides JSON sowie gegen die Struktur in "Tabelle: Nachricht als Apotheke an einen Versicherten schicken" überprüfen und bei negativem Prüfergebnis, die Operation mit dem folgenden Fehler:
     <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
     <tr>
         <th>HTTP-Code</th>
@@ -508,7 +533,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest" />
     </actor>
-    Der TI-Flow-Fachdienst MUSS das Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication den Empfänger prüfen und, wenn der Empfänger Communication.recipient gleich der Absenderidentifikation im Attribut idNummer des übergebenen ACCESS_TOKEN im HTTP-Header "Authorization" ist, die Operation mit dem folgenden Fehler:
     <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -531,7 +556,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <td>-</td>
         </tr>
     </table> 
-    abbrechen, wenn der Empfänger Communication.recipient gleich der Absenderidentifikation im Attribut idNummer des übergebenen ACCESS_TOKEN im HTTP-Header "Authorization" ist, damit irreführende Kommunikationsbeziehungen nicht zu einer vermeidbaren Mehrbelastung des TI-Flow-Fachdienstes führen.
+    abbrechen, damit irreführende Kommunikationsbeziehungen nicht zu einer vermeidbaren Mehrbelastung des TI-Flow-Fachdienstes führen.
 </requirement>
 
 <!-- A_19450-01 -->
@@ -540,7 +565,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten" />
     </actor>
-    Der TI-Flow-Fachdienst MUSS das Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication die Nachricht prüfen und, wenn
+    <ul>
+        <li>der Nachrichteninhalt Communication.payload größer als 10 kByte ist oder</li>
+        <li>in von Versicherten eingestellten Nachrichten in Communication.payload eine externe URLs enthält oder</li>
+        <li>ein Attachment mit MimeType "application/*" enthält,</li>
+    </ul>
+    , die Operation mit dem folgenden Fehler:
     <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -563,13 +594,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <td>-</td>
         </tr>
     </table> 
-    abbrechen, wenn
-    <ul>
-        <li>der Nachrichteninhalt Communication.payload größer als 10 kByte ist oder</li>
-        <li>in von Versicherten eingestellten Nachrichten in Communication.payload eine externe URLs enthält oder</li>
-        <li>ein Attachment mit MimeType "application/*" enthält,</li>
-    </ul>
-    damit über den TI-Flow-Fachdienst kein Schadcode verteilt wird.
+    abbrechen, damit über den TI-Flow-Fachdienst kein Schadcode verteilt wird.
 </requirement>
 
 <!-- A_20885-04 -->
@@ -578,7 +603,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest" />
     </actor>
-    Der TI-Flow-Fachdienst MUSS das Einstellen einer Nachricht des Profils "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq" durch einen Versicherten über die http-Operation POST auf den Endpunkt /Communication mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS das Einstellen einer Nachricht des Profils "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq" durch einen Versicherten über die http-Operation POST auf den Endpunkt /Communication den Versichertenbezug prüfen und, wenn die KVNR des in Communication.basedOn referenzierten Tasks Task.for ungleich der KVNR des Einstellenden in "idNummer" des übergebenen ACCESS_TOKEN ist, die Operation mit dem folgenden Fehler:
     <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -601,7 +626,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <td>-</td>
         </tr>
     </table> 
-    abbrechen, wenn die KVNR des in Communication.basedOn referenzierten Tasks Task.for ungleich der KVNR des Einstellenden in "idNummer" des übergebenen ACCESS_TOKEN ist, um irreführende Testnachrichten zu unterbinden, die eine vermeidbare Mehrbelastung für den TI-Flow-Fachdienst darstellen.
+    abbrechen, um irreführende Testnachrichten zu unterbinden, die eine vermeidbare Mehrbelastung für den TI-Flow-Fachdienst darstellen.
 </requirement>
 
 <!-- A_27767-01 -->
@@ -610,7 +635,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest" />
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht des Profils "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq" durch einen Versicherten über die http-Operation POST auf den Endpunkt /Communication die Zulässigkeit der Übermittlung auf Basis des Flowtypes des referenzierten Tasks (Task.extension:flowType) und dem Empfänger Communication.recipient prüfen und mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht des Profils "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq" durch einen Versicherten über die http-Operation POST auf den Endpunkt /Communication die Zulässigkeit der Übermittlung auf Basis des Flowtypes des referenzierten Tasks (Task.extension:flowType) und dem Empfänger Communication.recipient prüfen und, wenn der Empfänger laut TAB_eRPFD_028 den spezifischen Flowtype nicht empfangen darf, die Operation mit dem folgenden Fehler:
     <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -633,7 +658,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <td>-</td>
         </tr>
     </table> 
-    abbrechen, wenn der Empfänger laut TAB_eRPFD_028 den spezifischen Flowtype nicht empfangen darf.
+    abbrechen.
+    <br />
     <table>
     <tr> 
 		<th>Empfänger (Präfix der Telematik-ID)</th>
@@ -657,7 +683,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest" />
     </actor>
-    Der Fachdienst E-Rezept MUSS beim Einstellen einer Nachricht des Profils "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq", "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Reply" oder "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DiGA" über die http-Operation POST auf den Endpunkt /Communication mit dem folgenden Fehler:
+    Der Fachdienst E-Rezept MUSS beim Einstellen einer Nachricht des Profils "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq", "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Reply" oder "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DiGA" über die http-Operation POST auf den Endpunkt /Communication prüfen und, wenn das Pflichtfeld Communication.basedOn einen Task referenziert, der nicht existiert, die Operation mit dem folgenden Fehler:
     <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -680,7 +706,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <td>-</td>
         </tr>
     </table> 
-    abbrechen, wenn das Pflichtfeld Communication.basedOn einen Task referenziert, der nicht existiert, um Spam und nicht-verordnungsbezogene Kommunikation zu verhindern.
+    abbrechen, um Spam und nicht-verordnungsbezogene Kommunikation zu verhindern.
 </requirement>
 
 <!-- A_26320 -->
@@ -689,7 +715,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest" />
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication mit GEM_ERP_PR_Communication_DispReq-Ressource für den in Communication.basedOn referenzierten Task prüfen, dass Task.status = ready und bei Ungleichheit mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication mit GEM_ERP_PR_Communication_DispReq-Ressource für den in Communication.basedOn referenzierten Task prüfen und, wenn Task.status ungleich ready ist, die Operation mit dem folgenden Fehler:
     <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -721,7 +747,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest" />
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication mit GEM_ERP_PR_Communication_DispReq-Ressource für den in Communication.basedOn referenzierten Task prüfen, dass Task.ExpiryDate nicht zu einem früheren Zeitpunkt als dem aktuellem Datum liegt und anderenfalls mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication mit GEM_ERP_PR_Communication_DispReq-Ressource für den in Communication.basedOn referenzierten Task prüfen, dass Task.ExpiryDate nicht zu einem früheren Zeitpunkt als dem aktuellem Datum liegt und anderenfalls die Operation mit dem folgenden Fehler:
     <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -753,7 +779,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest" />
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication mit GEM_ERP_PR_Communication_DispReq-Ressource für den in Communication.basedOn referenzierten Task prüfen, falls die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet ist, ob der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start) zum aktuellen oder einem früheren Zeitpunkt als das aktuelle Datum liegt und anderenfalls mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication mit GEM_ERP_PR_Communication_DispReq-Ressource für den in Communication.basedOn referenzierten Task prüfen, falls die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet ist, ob der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start) zum aktuellen oder einem früheren Zeitpunkt als das aktuelle Datum liegt und anderenfalls die Operation mit dem folgenden Fehler:
     <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -856,7 +882,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Apr 2, 2026 12:41+0000">2026-04-02</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Apr 10, 2026 08:15+0000">2026-04-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

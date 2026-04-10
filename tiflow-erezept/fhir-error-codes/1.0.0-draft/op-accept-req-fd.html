@@ -299,8 +299,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest" />
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept die Operation mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept, wenn der referenzierte /Task/&lt;id&gt; existiert, jedoch kein AccessCode im Task.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode vorhanden ist oder der Status Task.status = cancelled ist, die Operation mit dem folgenden Fehler:
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
             <td>410 - Gone</td>
@@ -322,7 +322,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <td>-</td>
         </tr>
     </table> 
-    abbrechen, wenn der referenzierte /Task/&lt;id&gt; existiert, jedoch kein AccessCode im Task.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode vorhanden ist oder der Status Task.status = cancelled ist, damit die abgebende Institution den Versicherten über die zwischenzeitliche Löschung des Datensatzes in Kenntnis setzen kann.
+    abbrechen, damit die abgebende Institution den Versicherten über die zwischenzeitliche Löschung des Datensatzes in Kenntnis setzen kann.
 </requirement>
 
 <!-- A_19167-04 -->
@@ -365,8 +365,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest" />
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept die Operation mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept, wenn der StatusTask.status = "completed", Task.status = "in-progress" oder Task.status = "draft" ist, die Operation mit dem folgenden Fehler:
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
             <td>409 - Conflict</td>
@@ -388,9 +388,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <td>%1</td>
         </tr>
     </table> 
-    abbrechen, wenn der StatusTask.status = "completed", Task.status = "in-progress" oder Task.status = "draft" ist, damit ein bereits in Abgabe befindliches oder beliefertes E-Rezept nicht durch eine zweite Apotheke bearbeitet werden kann. Im OperationOutcome werden weitere Informationen gegeben: "Task has invalid status completed", "Task has invalid status in-progress" bzw. "Task has invalid status draft". <br />
+    abbrechen, damit ein bereits in Abgabe befindliches oder beliefertes E-Rezept nicht durch eine zweite Apotheke bearbeitet werden kann. <br />
+    Der TI-Flow-Fachdienst MUSS in OperationOutcome die Information zum Status angeben: "Task has invalid status completed", "Task has invalid status in-progress" bzw. "Task has invalid status draft". <br />
     Der TI-Flow-Fachdienst MUSS in OperationOutcome zusätzlich die Information "Task is processed by requesting institution" ergänzen, wenn Task.status = "in-progress" und die zum referenzierten Task in Task.owner gespeicherte Telematik-ID der abgebenden LEI mit der Telematik-ID aus dem ACCESS_TOKEN übereinstimmt.
 </requirement>
+
+<!-- ToDo: Was bedeutet %1 in der obigen Tabelle -->
 
 <p>Hinweis: Die Informationen in OperationOutcome werden ggf. als mehrere Strings in einem Array übermittelt.</p>
 
@@ -400,8 +403,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest" />
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept die Operation mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept, wenn das Ende der Einlösefrist (Task.ExpiryDate) zu einem früherem Zeitpunkt als das aktuelle Datum liegt, die Operation mit dem folgenden Fehler:
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
             <td>403 - Forbidden</td>
@@ -423,7 +426,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <td>Verordnung bis %d einlösbar.</td>
         </tr>
     </table> 
-    abbrechen, wenn das Ende der Einlösefrist (Task.ExpiryDate) zu einem früherem Zeitpunkt als das aktuelle Datum liegt, da Verordnungen nur bis Ende der Einlösefrist abgerufen werden dürfen. Im Falle dieses Fehlers ist im OperationOutcome des Response das Ende der Einlösefrist wie folgt anzugeben: "Verordnung bis &lt;Datum&gt; einlösbar.", wobei &lt;Datum&gt; der Wert Task.ExpiryDate im Format "dd.mm.yyyy" ist.
+    abbrechen, da Verordnungen nur bis Ende der Einlösefrist abgerufen werden dürfen. <br />
+    Der TI-Flow-Fachdienst MUSS im Falle dieses Fehlers im OperationOutcome des Response das Ende der Einlösefrist wie folgt anzugeben: "Verordnung bis &lt;Datum&gt; einlösbar.", wobei &lt;Datum&gt; der Wert Task.ExpiryDate im Format "dd.mm.yyyy" ist.
 </requirement>
 
 <!-- A_19169-01 -->
@@ -472,7 +476,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <li>oid_oeffentliche_apotheke</li> 
       <li>oid_krankenhausapotheke</li>
     </ul>
-    die Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen mit dem folgenden Fehler:
+    die Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -495,7 +499,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
-    abrechen, damit E-Rezepte nicht durch Unberechtigte abgerufen werden können.
+    abbrechen, damit E-Rezepte nicht durch Unberechtigte abgerufen werden können.
 </requirement>
 
 <!-- A_22635-02 -->
@@ -504,7 +508,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest" />
     </actor>
-        Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept die Operation mit dem folgenden Fehler:
+        Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept prüfen und, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet ist und und der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start) zu einem späteren Zeitpunkt als das aktuelle Datum liegt, die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -527,7 +531,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <td>Teilverordnung zur Mehrfachverordnung %1 ist ab %2 einlösbar.</td>
         </tr>
     </table> 
-    abbrechen, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet ist und und der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start) zu einem späteren Zeitpunkt als das aktuelle Datum liegt, da Teilverordnungen von Mehrfachverordnungen erst ab Beginn der Einlösefrist abgerufen werden dürfen. Im Falle dieses Fehlers ist im OperationOutcome des Response der Beginn der Einlösefrist wie folgt anzugeben: "Teilverordnung zur Mehrfachverordnung &lt;MVO Referenz&gt; ist ab &lt;Datum&gt; einlösbar.", wobei &lt;MVO Referenz&gt; der Wert MedicationRequest.extension:Mehrfachverordnung.extension:ID.value[x]:valueIdentifier.value sowie &lt;Datum&gt; der Wert MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start im Format "dd.mm.yyyy" ist.
+    abbrechen, da Teilverordnungen von Mehrfachverordnungen erst ab Beginn der Einlösefrist abgerufen werden dürfen. 
+    Im Falle dieses Fehlers ist im OperationOutcome des Response der Beginn der Einlösefrist wie folgt anzugeben: "Teilverordnung zur Mehrfachverordnung &lt;MVO Referenz&gt; ist ab &lt;Datum&gt; einlösbar.", wobei &lt;MVO Referenz&gt; der Wert MedicationRequest.extension:Mehrfachverordnung.extension:ID.value[x]:valueIdentifier.value sowie &lt;Datum&gt; der Wert MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start im Format "dd.mm.yyyy" ist.
 </requirement>
 
 <!-- A_22110-01 -->
@@ -579,7 +584,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Apr 2, 2026 12:41+0000">2026-04-02</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Apr 10, 2026 08:15+0000">2026-04-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

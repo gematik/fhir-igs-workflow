@@ -13,7 +13,18 @@ Version 1.0.0-draft - ci-build
 
 Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für den channels-Endpunkt.
 
-Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Channels mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE unterbinden, damit keine unzulässigen Operationen auf den Daten ausgeführt werden können.
+Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Channels mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE unterbinden und mit dem folgenden Fehler:
+
+* HTTP-Code: Severity
+  * 405 - Method Not Allowed: error
+* HTTP-Code: Code
+  * 405 - Method Not Allowed: invalid
+* HTTP-Code: Details Code
+  * 405 - Method Not Allowed: SVC_METHOD_NOT_ALLOWED
+* HTTP-Code: Details Text
+  * 405 - Method Not Allowed: -
+
+abbrechen, damit keine unzulässigen Operationen auf den Daten ausgeführt werden können.
 
 Der TI-Flow-Fachdienst MUSS die API mit den Endpunkten GET /channels, GET /channels/{pushkey} und POST /channels/{pushkey} gemäß [OpenAPI_FD] bereitstellen.
 ### GET /channels
@@ -22,36 +33,36 @@ Mit der Operation GET /channels können die verfügbaren Channels abgefragt werd
 
 Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation GET /channels die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle
 * oid_versicherter
-die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+die Operation aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Error Code
   * 403 - Forbidden: invalidOid
 * HTTP-Code: Error Details
   * 403 - Forbidden: -
 
-abrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
+abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfiguration für eine spezifische FdV-Instanz abgefragt werden.
 
 Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation GET /channels/{pushkey} die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle
 * oid_versicherter
-die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+die Operation aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Error Code
   * 403 - Forbidden: invalidOid
 * HTTP-Code: Error Details
   * 403 - Forbidden: -
 
-abrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
+abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 ### POST /channels
 
 Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation POST /channels/{pushkey} die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle
 * oid_versicherter
-die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+die Operation aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Error Code
   * 403 - Forbidden: invalidOid
 * HTTP-Code: Error Details
   * 403 - Forbidden: -
 
-abrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
+abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 

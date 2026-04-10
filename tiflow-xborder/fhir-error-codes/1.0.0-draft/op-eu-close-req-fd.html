@@ -272,7 +272,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"></testProcedure>
     </actor>
-     Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close sicherstellen, dass ausschließlich Nutzer in der Rolle: oid_ncpeh, die Operation am Fachdienst aufrufen dürfen und die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader Authorization feststellen, und bei Abweichungen mit dem folgenden Fehler:
+     Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close sicherstellen, dass ausschließlich Nutzer in der Rolle: oid_ncpeh, die Operation am Fachdienst aufrufen dürfen und die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader Authorization feststellen, und bei Abweichungen die Operationmit dem folgenden Fehler:
       <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
         <tr>
             <th>HTTP-Code</th>
@@ -295,7 +295,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <td>Der Nutzer ist&nbsp;nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
-    abrechen, damit der E-Rezept-Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.
+    abbrechen, damit der E-Rezept-Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.
 </requirement>
 
   <!-- A_27069 -->
@@ -400,7 +400,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-     Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass Task.status = in-progress ist und bei Ungleichheit mit dem folgenden Fehler:
+     Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass Task.status = in-progress ist und bei Ungleichheit die Operation mit dem folgenden Fehler:
       <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
         <tr>
             <th>HTTP-Code</th>
@@ -493,7 +493,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.xborder#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Apr 2, 2026 12:38+0000">2026-04-02</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.xborder#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Apr 10, 2026 08:13+0000">2026-04-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

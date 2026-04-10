@@ -22,7 +22,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 Der TI-Flow-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen mittels POST /Task/<id>/$dispense auf den in der URL referenzierten /Task/<id> sicherstellen, dass ausschließlich abgebende Leistungserbringer in einer der Rollen
 * oid_oeffentliche_apotheke
 * oid_krankenhausapotheke
-die Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen mit dem folgenden Fehler:
+die Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 403 - Forbidden: error
@@ -33,7 +33,7 @@ die Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des 
 * HTTP-Code: Details Text
   * 403 - Forbidden: Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern
 
-abrechen, damit Dispensierinformationen nicht durch einen Unberechtigten eingestellt werden kann.
+abbrechen, damit Dispensierinformationen nicht durch einen Unberechtigten eingestellt werden kann.
 
 Der TI-Flow-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen mittels POST /Task/<id>/$dispense das im URL-Parameter "?secret=..." übertragene Secret gegen das im referenzierten Task gespeicherte Secret Task.identifier:Secret als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret prüfen und bei Ungleichheit oder Fehlen des URL- Parameters die Operation mit dem folgenden Fehler:
 
@@ -48,7 +48,7 @@ Der TI-Flow-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen m
 
 abbrechen, damit der Zugriff auf diesen Datensatz nur durch den Berechtigten in Kenntnis des Secrets erfolgt.
 
-Der TI-Flow-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen mittels POST /Task/<id>/$dispense auf Task.status = in-progress prüfen und bei Ungleichheit mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen mittels POST /Task/<id>/$dispense auf Task.status = in-progress prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 403 - Forbidden: error

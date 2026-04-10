@@ -331,7 +331,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest" />
   </actor>
-    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$reject den im referenzierten Task gespeicherten Status Task.status prüfen und mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$reject den im referenzierten Task gespeicherten Status Task.status prüfen und, wenn Task.status ungleich "in-progress" ist, die Operation mit dem folgenden Fehler:
     <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -354,7 +354,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <td>Task has invalid status.</td>
         </tr>
     </table>
-    abbrechen, wenn Task.status ungleich "in-progress" ist, damit die Verordnung nur zurückgegeben werden kann, wenn sich die Verordnung in Belieferung befindet.
+    abbrechen, damit die Verordnung nur zurückgegeben werden kann, wenn sich die Verordnung in Belieferung befindet.
 </requirement>
 
 <!-- A_19172-01 -->
@@ -397,7 +397,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <li>oid_oeffentliche_apotheke</li>
     <li>oid_krankenhausapotheke</li>
   </ul>
-  die Operation am Fachdienst aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+  die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -420,7 +420,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
-    abrechen, damit das E-Rezept nicht durch einen Unberechtigten zurückgewiesen werden kann.
+    abbrechen, damit das E-Rezept nicht durch einen Unberechtigten zurückgewiesen werden kann.
 </requirement>
 
 <!-- A_24286-02 -->
@@ -487,7 +487,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Apr 2, 2026 12:41+0000">2026-04-02</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Apr 10, 2026 08:15+0000">2026-04-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

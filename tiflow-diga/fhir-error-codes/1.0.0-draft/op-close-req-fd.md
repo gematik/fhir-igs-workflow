@@ -30,7 +30,7 @@ Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation
 
 abbrechen, damit der Zugriff auf diesen Datensatz nur durch den Berechtigten in Kenntnis des Secrets erfolgt.
 
-Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation über /Task/<id>/$close den im referenzierten Task gespeicherten Status Task.status prüfen und mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation über /Task/<id>/$close den im referenzierten Task gespeicherten Status Task.status prüfen und, wenn Task.status ungleich "in-progress" ist, die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 403 - Forbidden: error
@@ -41,7 +41,7 @@ Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation
 * HTTP-Code: Details Text
   * 403 - Forbidden: Task has invalid status.
 
-abbrechen, wenn Task.status ungleich "in-progress" ist, damit der Workflow nur abgeschlossen werden kann, wenn sich die Verordnung in Belieferung befindet.
+abbrechen, damit der Workflow nur abgeschlossen werden kann, wenn sich die Verordnung in Belieferung befindet.
 
 Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/<id>/$close das im HTTP-Body des Requests enthaltene Parameters-Objekt gegen das Profil https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PAR_CloseOperation_Input prüfen, insbesondere bei der darin enthaltenen MedicationDispense:
 * die Korrektheit der Rezept-ID https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId als MedicationDispense.identifier,
@@ -62,7 +62,7 @@ abbrechen.
 
 Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/<id>/$close die Referenz auf den aufgerufenen Task Task/<id> als MedicationDispense.supportingInformation übernehmen und die MedicationDispense, sowie die in MedicationDispense.medication referenzierte Medication, speichern.
 
-Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks, mittels POST /Task/<id>/$close den Zeitpunkt des Aufrufes in Task.extension:lastMedicationDispense im Format "YYYY-MM-DDThh:mm:ss+zz:zz" (FHIR-instant) anlegen und speichern, wenn ein MedicationDispense Objekt im Aufruf übergeben wird.
+Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/<id>/$close den Zeitpunkt des Aufrufes in Task.extension:lastMedicationDispense im Format "YYYY-MM-DDThh:mm:ss+zz:zz" (FHIR-instant) anlegen und speichern, wenn ein MedicationDispense Objekt im Aufruf übergeben wird.
 
 Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/<id>/$close für den referenzierten Task die Telematik-ID aus dem ACCESS_TOKEN in Task.owner speichern, damit sichergestellt werden kann, dass nachfolgende Zugriffe auf diesen Datensatz nur durch Berechtigte erfolgen können.
 
@@ -95,7 +95,7 @@ abbrechen.
 
 Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks für eine Verordnung mit Flowtype 162 mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/<id< die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Institutionen in der Rolle
 * oid_kostentraeger
-die Operation am Fachdienst aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 403 - Forbidden: error
@@ -106,10 +106,10 @@ die Operation am Fachdienst aufrufen, und bei Abweichungen mit dem folgenden Feh
 * HTTP-Code: Details Text
   * 403 - Forbidden: Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern
 
-abrechen, damit der Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.
+abbrechen, damit der Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.
 </br>
 
-Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks für ein E-Rezept mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/<id> mit Flowtype 162 sicherstellen, dass das in GEM_ERP_PR_PAR_CloseOperation_Input enthaltene MedicationDispense-Objekt dem Profil GEM_ERP_PR_MedicationDispense_DiGA entspricht. Andernfalls ist die Operation mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks für ein E-Rezept mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/<id> mit Flowtype 162 sicherstellen, dass das in GEM_ERP_PR_PAR_CloseOperation_Input enthaltene MedicationDispense-Objekt dem Profil GEM_ERP_PR_MedicationDispense_DiGA entspricht und anderenfalls die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 400 - Bad Request: error
@@ -120,5 +120,5 @@ Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks für ein E-Rezept mittels H
 * HTTP-Code: Details Text
   * 400 - Bad Request: Unzulässige Abgabeinformationen: Für diesen Workflow sind nur Abgabeinformationen für digitale Gesundheitsanwendungen zulässig.
 
-abzubrechen.
+abbrechen.
 

@@ -45,7 +45,7 @@ Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der 
 
 abweisen, damit ausschließlich die verordnende Leistungserbringerinstitution in Kenntnis des AccessCodes als Berechtigte ein E-Rezept löschen.
 
-Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der <id> adressierten/Task/<id>/$abort durch verordnende Leistungserbringer den im referenzierten Task gespeicherten Status Task.status prüfen und mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der <id> adressierten/Task/<id>/$abort durch verordnende Leistungserbringer den im referenzierten Task gespeicherten Status Task.status prüfen und, wenn Task.status ungleich "ready" ist, mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 412 - Precondition Failed: error
@@ -56,7 +56,7 @@ Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der 
 * HTTP-Code: Details Text
   * 412 - Precondition Failed: Task has invalid status.
 
-abbrechen, wenn Task.status ungleich "ready" ist, damit die verordnende Leistungserbringerinstitution eine Verordnung nur löschen kann, wenn sie sich noch nicht in Belieferung befindet oder beliefert wurde.
+abbrechen, damit die verordnende Leistungserbringerinstitution eine Verordnung nur löschen kann, wenn sie sich noch nicht in Belieferung befindet oder beliefert wurde.
 
 Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der <id> adressierten /Task/<id>/$abort alle personenbezogenen medizinischen Daten, außer der KVNR in Task.for, aus dem referenzierten Task entfernen. Dies gilt insbesondere für:
 * Task.input --> löschen (inkl. aller referenzierten Elemente)
@@ -85,7 +85,7 @@ Der TI-Flow-Fachdienst MUSS beim Löschen eines Tasks für eine Verordnung mit F
 * oid_krankenhaus
 * oid_praxis_psychotherapeut
 * oid_institution-vorsorge-reha
-die Operation am Fachdienst aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 403 - Forbidden: error
@@ -96,5 +96,5 @@ die Operation am Fachdienst aufrufen, und bei Abweichungen mit dem folgenden Feh
 * HTTP-Code: Details Text
   * 403 - Forbidden: Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern
 
-abrechen, damit die Verordnung nicht durch einen Unberechtigten gelöscht werden kann.
+abbrechen, damit die Verordnung nicht durch einen Unberechtigten gelöscht werden kann.
 

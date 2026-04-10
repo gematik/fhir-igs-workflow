@@ -400,49 +400,6 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
     </element>
-    <element id="GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.modifierExtension">
-      <path value="GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.modifierExtension"/>
-      <short value="Extensions that cannot be ignored even if unrecognized"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
-      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
-      <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](http://hl7.org/fhir/R4/extensibility.html#modifierExtension)."/>
-      <alias value="extensions"/>
-      <alias value="user content"/>
-      <alias value="modifiers"/>
-      <min value="0"/>
-      <max value="*"/>
-      <base>
-        <path value="BackboneElement.modifierExtension"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <type>
-        <code value="Extension"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <constraint>
-        <key value="ext-1"/>
-        <severity value="error"/>
-        <human value="Must have either extensions or value[x], not both"/>
-        <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
-      </constraint>
-      <isModifier value="true"/>
-      <isModifierReason value="Modifier extensions are expected to modify the meaning or interpretation of the element that contains them"/>
-      <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
-      </mapping>
-    </element>
     <element id="GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.extension.impfung">
       <path value="GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.extension.impfung"/>
       <short value="Angabe ob Impfstoff nach KBV_EX_ERP_Medication_Vaccine"/>
@@ -536,6 +493,49 @@
       <type>
         <code value="string"/>
       </type>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.modifierExtension">
+      <path value="GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.modifierExtension"/>
+      <short value="Extensions that cannot be ignored even if unrecognized"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](http://hl7.org/fhir/R4/extensibility.html#modifierExtension)."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
+      <alias value="modifiers"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="BackboneElement.modifierExtension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="true"/>
+      <isModifierReason value="Modifier extensions are expected to modify the meaning or interpretation of the element that contains them"/>
+      <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
     </element>
     <element id="GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.code">
       <path value="GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.code"/>
@@ -3362,6 +3362,21 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
     </element>
+    <element id="GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.inhaltsstoffe.extension.darreichungsform">
+      <path value="GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.inhaltsstoffe.extension.darreichungsform"/>
+      <short value="Darreichungsform"/>
+      <definition value="Darreichungsform"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.inhaltsstoffe.extension.darreichungsform"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Coding"/>
+      </type>
+    </element>
     <element id="GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.inhaltsstoffe.modifierExtension">
       <path value="GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.inhaltsstoffe.modifierExtension"/>
       <short value="Extensions that cannot be ignored even if unrecognized"/>
@@ -3404,21 +3419,6 @@
         <identity value="rim"/>
         <map value="N/A"/>
       </mapping>
-    </element>
-    <element id="GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.inhaltsstoffe.extension.darreichungsform">
-      <path value="GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.inhaltsstoffe.extension.darreichungsform"/>
-      <short value="Darreichungsform"/>
-      <definition value="Darreichungsform"/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.inhaltsstoffe.extension.darreichungsform"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="Coding"/>
-      </type>
     </element>
     <element id="GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.inhaltsstoffe.inhaltsstoff">
       <path value="GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.inhaltsstoffe.inhaltsstoff"/>

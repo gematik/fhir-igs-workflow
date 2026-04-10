@@ -41,7 +41,7 @@ Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der 
 
 abweisen, damit ausschließlich die verordnende Leistungserbringerinstitution in Kenntnis des AccessCodes als Berechtigte ein E-Rezept löschen.
 
-Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der <id> adressierten/Task/<id>/$abort durch verordnende Leistungserbringer den im referenzierten Task gespeicherten Status Task.status prüfen und mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der <id> adressierten/Task/<id>/$abort durch verordnende Leistungserbringer den im referenzierten Task gespeicherten Status Task.status prüfen und, wenn Task.status ungleich "ready" ist, mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 412 - Precondition Failed: error
@@ -52,7 +52,7 @@ Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der 
 * HTTP-Code: Details Text
   * 412 - Precondition Failed: Task has invalid status.
 
-abbrechen, wenn Task.status ungleich "ready" ist, damit die verordnende Leistungserbringerinstitution eine Verordnung nur löschen kann, wenn sie sich noch nicht in Belieferung befindet oder beliefert wurde.
+abbrechen, damit die verordnende Leistungserbringerinstitution eine Verordnung nur löschen kann, wenn sie sich noch nicht in Belieferung befindet oder beliefert wurde.
 
 Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der <id> adressierten /Task/<id>/$abort alle personenbezogenen medizinischen Daten, außer der KVNR in Task.for, aus dem referenzierten Task entfernen. Dies gilt insbesondere für:
 * Task.input --> löschen (inkl. aller referenzierten Elemente)

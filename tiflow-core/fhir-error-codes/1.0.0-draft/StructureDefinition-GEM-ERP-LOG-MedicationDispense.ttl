@@ -511,55 +511,6 @@
        fhir:isModifier [ fhir:v false ] ;
        fhir:isSummary [ fhir:v false ]
      ] [
-       fhir:id [ fhir:v "GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.modifierExtension" ] ;
-       fhir:path [ fhir:v "GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.modifierExtension" ] ;
-       fhir:short [ fhir:v "Extensions that cannot be ignored even if unrecognized" ] ;
-       fhir:definition [ fhir:v "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)." ] ;
-       fhir:comment [ fhir:v "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." ] ;
-       fhir:requirements [ fhir:v "Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](http://hl7.org/fhir/R4/extensibility.html#modifierExtension)." ] ;
-       fhir:alias ( [ fhir:v "extensions" ] [ fhir:v "user content" ] [ fhir:v "modifiers" ] ) ;
-       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
-       fhir:max [ fhir:v "*" ] ;
-       fhir:base [
-         fhir:path [ fhir:v "BackboneElement.modifierExtension" ] ;
-         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
-         fhir:max [ fhir:v "*" ]
-       ] ;
-       fhir:type ( [
-         fhir:code [
-           fhir:v "Extension"^^xsd:anyURI ;
-           fhir:l fhir:Extension
-         ]
-       ] ) ;
-       fhir:constraint ( [
-         fhir:key [ fhir:v "ele-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
-         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
-         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/Element>
-         ]
-       ] [
-         fhir:key [ fhir:v "ext-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
-         fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
-         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/Extension>
-         ]
-       ] ) ;
-       fhir:isModifier [ fhir:v true ] ;
-       fhir:isModifierReason [ fhir:v "Modifier extensions are expected to modify the meaning or interpretation of the element that contains them" ] ;
-       fhir:isSummary [ fhir:v true ] ;
-       fhir:mapping ( [
-         fhir:identity [ fhir:v "rim" ] ;
-         fhir:map [ fhir:v "N/A" ]
-       ] )
-     ] [
        fhir:id [ fhir:v "GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.extension.impfung" ] ;
        fhir:path [ fhir:v "GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.extension.impfung" ] ;
        fhir:short [ fhir:v "Angabe ob Impfstoff nach KBV_EX_ERP_Medication_Vaccine" ] ;
@@ -670,6 +621,55 @@
            fhir:v "string"^^xsd:anyURI ;
            fhir:l fhir:string
          ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.modifierExtension" ] ;
+       fhir:path [ fhir:v "GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.modifierExtension" ] ;
+       fhir:short [ fhir:v "Extensions that cannot be ignored even if unrecognized" ] ;
+       fhir:definition [ fhir:v "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)." ] ;
+       fhir:comment [ fhir:v "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." ] ;
+       fhir:requirements [ fhir:v "Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](http://hl7.org/fhir/R4/extensibility.html#modifierExtension)." ] ;
+       fhir:alias ( [ fhir:v "extensions" ] [ fhir:v "user content" ] [ fhir:v "modifiers" ] ) ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "BackboneElement.modifierExtension" ] ;
+         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "*" ]
+       ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "Extension"^^xsd:anyURI ;
+           fhir:l fhir:Extension
+         ]
+       ] ) ;
+       fhir:constraint ( [
+         fhir:key [ fhir:v "ele-1" ] ;
+         fhir:severity [ fhir:v "error" ] ;
+         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
+         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
+         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
+         fhir:source [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/Element>
+         ]
+       ] [
+         fhir:key [ fhir:v "ext-1" ] ;
+         fhir:severity [ fhir:v "error" ] ;
+         fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
+         fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
+         fhir:source [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/Extension>
+         ]
+       ] ) ;
+       fhir:isModifier [ fhir:v true ] ;
+       fhir:isModifierReason [ fhir:v "Modifier extensions are expected to modify the meaning or interpretation of the element that contains them" ] ;
+       fhir:isSummary [ fhir:v true ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "N/A" ]
        ] )
      ] [
        fhir:id [ fhir:v "GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.code" ] ;
@@ -4017,6 +4017,24 @@
        fhir:isModifier [ fhir:v false ] ;
        fhir:isSummary [ fhir:v false ]
      ] [
+       fhir:id [ fhir:v "GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.inhaltsstoffe.extension.darreichungsform" ] ;
+       fhir:path [ fhir:v "GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.inhaltsstoffe.extension.darreichungsform" ] ;
+       fhir:short [ fhir:v "Darreichungsform" ] ;
+       fhir:definition [ fhir:v "Darreichungsform" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.inhaltsstoffe.extension.darreichungsform" ] ;
+         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "1" ]
+       ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "Coding"^^xsd:anyURI ;
+           fhir:l fhir:Coding
+         ]
+       ] )
+     ] [
        fhir:id [ fhir:v "GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.inhaltsstoffe.modifierExtension" ] ;
        fhir:path [ fhir:v "GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.inhaltsstoffe.modifierExtension" ] ;
        fhir:short [ fhir:v "Extensions that cannot be ignored even if unrecognized" ] ;
@@ -4064,24 +4082,6 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "N/A" ]
-       ] )
-     ] [
-       fhir:id [ fhir:v "GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.inhaltsstoffe.extension.darreichungsform" ] ;
-       fhir:path [ fhir:v "GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.inhaltsstoffe.extension.darreichungsform" ] ;
-       fhir:short [ fhir:v "Darreichungsform" ] ;
-       fhir:definition [ fhir:v "Darreichungsform" ] ;
-       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
-       fhir:max [ fhir:v "1" ] ;
-       fhir:base [
-         fhir:path [ fhir:v "GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.inhaltsstoffe.extension.darreichungsform" ] ;
-         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
-         fhir:max [ fhir:v "1" ]
-       ] ;
-       fhir:type ( [
-         fhir:code [
-           fhir:v "Coding"^^xsd:anyURI ;
-           fhir:l fhir:Coding
-         ]
        ] )
      ] [
        fhir:id [ fhir:v "GEM-ERP-LOG-MedicationDispense.medication.medicationArzneimittel.inhaltsstoffe.inhaltsstoff" ] ;

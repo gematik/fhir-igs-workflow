@@ -352,30 +352,30 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest" />
   </actor>
-    Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &#60;id&#62; adressierten/Task/&#60;id&#62;/$abort durch verordnende Leistungserbringer den im referenzierten Task gespeicherten Status Task.status prüfen und mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
-        <tr>
-            <th>HTTP-Code</th>
-            <td>412 - Precondition Failed</td>
-        </tr>
-        <tr>
-            <th>Severity</th>
-            <td>error</td>
-        </tr>
-        <tr>
-            <th>Code</th>
-            <td>invalid</td>
-        </tr>
-        <tr>
-            <th>Details Code</th>
-            <td>TIFLOW_TASK_STATUS_MISMATCH</td>
-        </tr>
-        <tr>
-            <th>Details Text</th>
-            <td>Task has invalid status.</td>
-        </tr>
-    </table> 
-    abbrechen, wenn Task.status ungleich "ready" ist, damit die verordnende Leistungserbringerinstitution eine Verordnung nur löschen kann, wenn sie sich noch nicht in Belieferung befindet oder beliefert wurde.
+  Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &#60;id&#62; adressierten/Task/&#60;id&#62;/$abort durch verordnende Leistungserbringer den im referenzierten Task gespeicherten Status Task.status prüfen und, wenn Task.status ungleich "ready" ist, mit dem folgenden Fehler:
+  <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+    <tr>
+        <th>HTTP-Code</th>
+        <td>412 - Precondition Failed</td>
+    </tr>
+    <tr>
+        <th>Severity</th>
+        <td>error</td>
+    </tr>
+    <tr>
+        <th>Code</th>
+        <td>invalid</td>
+    </tr>
+    <tr>
+        <th>Details Code</th>
+        <td>TIFLOW_TASK_STATUS_MISMATCH</td>
+    </tr>
+    <tr>
+        <th>Details Text</th>
+        <td>Task has invalid status.</td>
+    </tr>
+  </table> 
+  abbrechen, damit die verordnende Leistungserbringerinstitution eine Verordnung nur löschen kann, wenn sie sich noch nicht in Belieferung befindet oder beliefert wurde.
 </requirement>
 
 <!-- A_19027-06 -->
@@ -461,7 +461,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Apr 2, 2026 12:29+0000">2026-04-02</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Apr 10, 2026 08:03+0000">2026-04-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

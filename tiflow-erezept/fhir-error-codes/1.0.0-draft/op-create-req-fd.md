@@ -17,15 +17,26 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an den TI-Flow-Fachdienst für die Operation `$create`.
 
-Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation die Rolle "professionOID" des Aufrufenden im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich verordnende Leistungserbringer in der Rolle
+Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation die Rolle "professionOID" des Aufrufenden im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich verordnende Leistungserbringerinstitutionen in der Rolle
 * oid_praxis_arzt
 * oid_zahnarztpraxis
 * oid_praxis_psychotherapeut
 * oid_krankenhaus
 * oid_institution-vorsorge-reha
-die Operation im Fachdienst aufrufen dürfen, damit E-Rezepte nicht durch zur Verordnung Unberechtigte eingestellt werden können.
+die Operation im Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:
 
-Der TI-Flow-Fachdienst MUSS die im Body der HTTP-POST-Operation auf die Ressource Task übertragenen Parameter gegen das Schema http://gematik.de/fhir/erp/OperationDefinition/CreateOperationDefinition prüfen und bei Nicht-Konformität das Anlegen der Ressource im Fachdienst mit dem folgenden Fehler:
+* HTTP-Code: Severity
+  * 403 - Forbidden: error
+* HTTP-Code: Code
+  * 403 - Forbidden: invalid
+* HTTP-Code: Details Code
+  * 403 - Forbidden: TIFLOW_AUTH_ROLE_NOT_ALLOWED
+* HTTP-Code: Details Text
+  * 403 - Forbidden: Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern
+
+abbrechen, damit Workflows nicht durch zur Verordnung Unberechtigte erstellt werden können.
+
+Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation die im Body der HTTP-POST-Operation auf die Ressource Task übertragenen Parameter gegen das Schema http://gematik.de/fhir/erp/OperationDefinition/CreateOperationDefinition prüfen und bei Nicht-Konformität die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 400 - Bad Request: error
@@ -36,7 +47,7 @@ Der TI-Flow-Fachdienst MUSS die im Body der HTTP-POST-Operation auf die Ressourc
 * HTTP-Code: Details Text
   * 400 - Bad Request: FHIR Profile Validation Failed
 
-beantworten, damit kein Schadcode und keine "fachfremden" Daten in den TI-Flow-Fachdienst hochgeladen werden.
+abbrechen, damit kein Schadcode und keine "fachfremden" Daten in den TI-Flow-Fachdienst hochgeladen werden.
 
 Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation den Parameter workflowType (Rezepttyp) aus dem HTTP-Body des POST-Requests entnehmen, als Attribut Task.extension:flowType des zu erstellenden Tasks verwenden und bei Fehlen bzw. Nicht-Konformität des Parameters den Request als unzulässig abweisen, damit auf Basis dieser Parameter ausschließlich gültige Workflows gestartet werden können und dem Versicherten bei Einsicht des Tasks der Weg in entweder eine Apotheke oder ein Sanitätshaus oder eine andere zuständige Einrichtung gewiesen werden kann.
 

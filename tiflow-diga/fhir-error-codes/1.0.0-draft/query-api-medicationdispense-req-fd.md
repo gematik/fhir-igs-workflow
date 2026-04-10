@@ -17,7 +17,18 @@ Diese Seite beschreibt Anforderungen an den TI-Flow-Fachdienst zur Bereitstellun
 
 Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für den Device-Query-Endpunkt.
 
-Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource MedicationDispense mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE sowie POST unterbinden, damit keine unzulässigen Operationen auf den Rezeptdaten ausgeführt werden können.
+Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource MedicationDispense mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE sowie POST unterbinden und mit mit dem folgenden Fehler:
+
+* HTTP-Code: Severity
+  * 405 - Method Not Allowed: error
+* HTTP-Code: Code
+  * 405 - Method Not Allowed: invalid
+* HTTP-Code: Details Code
+  * 405 - Method Not Allowed: SVC_METHOD_NOT_ALLOWED
+* HTTP-Code: Details Text
+  * 405 - Method Not Allowed: -
+
+abbrechen, damit keine unzulässigen Operationen auf den Rezeptdaten ausgeführt werden können.
 #### GET /MedicationDispense
 
 Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /MedicationDispense sicherstellen, dass ausschließlich Nutzer in der Rolle
@@ -33,7 +44,7 @@ die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle "professionOI
 * HTTP-Code: Details Text
   * 403 - Forbidden: Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern
 
-abrechen, damit Dispensierinformationen nicht durch Unberechtigte ausgelesen werden können.
+abbrechen, damit Dispensierinformationen nicht durch Unberechtigte ausgelesen werden können.
 
 Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /MedicationDispense die dem Versicherten zugeordneten MedicationDispense-Ressourcen anhand der KVNR des Versicherten im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, die in MedicationDispense.subject die entsprechende KVNR des begünstigten Patienten referenziert haben, damit ausschließlich Versicherte ihre eigenen Dispensierinformationen einsehen können.
 

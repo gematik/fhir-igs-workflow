@@ -13,13 +13,13 @@ Version 1.0.0-draft - ci-build
 
 Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an den TI-Flow-Fachdienst für die Operation `$activate`.
 
-Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks für ein E-Rezept mittels HTTP-POST/$activate-Operation auf den in der URL referenzierten /Task/<id> sicherstellen, dass ausschließlich verordnende Leistungserbringer in der Rolle
+Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks für ein E-Rezept mittels HTTP-POST/$activate-Operation auf den in der URL referenzierten /Task/<id> die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Leistungserbringerinstitutionen in der Rolle
 * oid_praxis_arzt
 * oid_zahnarztpraxis
 * oid_praxis_psychotherapeut
 * oid_krankenhaus
 * oid_institution-vorsorge-reha
-die Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen mit dem folgenden Fehler:
+die Operation am Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 403 - Forbidden: error
@@ -30,9 +30,9 @@ die Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des A
 * HTTP-Code: Details Text
   * 403 - Forbidden: Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern
 
-abrechen, damit E-Rezepte nicht durch Unberechtigte eingestellt werden können.
+abbrechen, damit E-Rezepte nicht durch Unberechtigte eingestellt werden können.
 
-Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/<id>/$activate den im HTTP-RequestHeader "X-AccessCode" oder URL-Parameter "?ac=..." übertragenen AccessCode gegen den im referenzierten Task gespeicherten AccessCode Task.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode und bei Ungleichheit oder Fehlen des HTTP-Headers die Operation mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/<id>/$activate den im HTTP-RequestHeader "X-AccessCode" oder URL-Parameter "?ac=..." übertragenen AccessCode gegen den im referenzierten Task gespeicherten AccessCode Task.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode prüfen und bei Ungleichheit oder Fehlen des AccessCodes die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 403 - Forbidden: error
@@ -45,7 +45,7 @@ Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operat
 
 abbrechen, damit Zugriffe auf diesen Datensatz nur durch Berechtigte in Kenntnis des AccessCodes erfolgen.
 
-Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/<id>/$activate den im referenzierten Task gespeicherten Status Task.status prüfen und mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/<id>/$activate den im referenzierten Task gespeicherten Status Task.status prüfen und, wenn Task.status ungleich "draft" ist, die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 412 - Precondition Failed: error
@@ -56,9 +56,9 @@ Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operat
 * HTTP-Code: Details Text
   * 412 - Precondition Failed: Task has invalid status.
 
-abbrechen, wenn Task.status ungleich "draft" ist.
+abbrechen.
 
-Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/<id>/$activate den im Aufrufparameter übergebenen FHIR-Operationsparameter des QES-Datensatzes als PKCS#7-Datei einer Enveloping CAdES-Signatur entgegennehmen und verarbeiten und bei Fehlen oder ungültiger ASN.1 Datenstruktur die Weiterverarbeitung im Fachdienst mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/<id>/$activate den im Aufrufparameter übergebenen FHIR-Operationsparameter des QES-Datensatzes als PKCS#7-Datei einer Enveloping CAdES-Signatur entgegennehmen und verarbeiten und bei Fehlen oder ungültiger ASN.1 Datenstruktur die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 400 - Bad Request: error
@@ -67,15 +67,14 @@ Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operat
 * HTTP-Code: Details Code
   * 400 - Bad Request: SVC_VALIDATION_FAILED
 * HTTP-Code: Details Text
-  * 400 - Bad Request: FHIR Profile Validation Failed
+  * 400 - Bad Request: FHIR Profile validation failed.
 
-beantworten, damit kein Schadcode und keine "fachfremden" Daten in den TI-Flow-Fachdienst hochgeladen werden.
+abbrechen, damit kein Schadcode und keine "fachfremden" Daten in den TI-Flow-Fachdienst hochgeladen werden.
 
 Der TI-Flow-Fachdienst MUSS das QES-Signaturzertifikat C.HP.QES in der Signatur des übergebenen QES-Datensatzes gemäß [gemSpec_PKI#TUC_PKI_030] mit folgenden Parametern auf Gültigkeit prüfen:
 
 * Parameter: Zertifikat
   * Wert: Signaturzertifikat des HBA (eingebettet in Signatur-Objekt des QES-Datensatzes):* C.HP.QES (oid_hba_qes = 1.2.276.0.76.4.72 gemäß gemSpec_OID)
-* bzw. für HBA-Vorläuferkarten C.HP.ENC (oid_vk_eaa_enc = 1.3.6.1.4.1.24796.1.10 gemäß gemSpec_OID) Hinweis: die OID dieses Profil wird für Ärzte- und Zahnärzteschaft gleichermaßen genutzt
 
 * Parameter: Referenzzeitpunkt
   * Wert: Zeitpunkt der QES-Erstellung gemäß signingTime im QES-Datensatz
@@ -85,7 +84,10 @@ Der TI-Flow-Fachdienst MUSS das QES-Signaturzertifikat C.HP.QES in der Signatur 
   * Wert: eingebettet in QES-Datensatz
 
 **Tabelle: **TAB_eRPFD_006 Parameter Prüfung Signaturzertifikat QES des HBA
-und darf die OCSP-Response für die Abfrage des Zertifikatsstatus für 12 Stunden zwischenspeichern. Ist keine OCSP-Response eingebettet oder die eingebettete OCSP Response nicht gültig, MUSS der TI-Flow-Fachdienst die gecachte OCSP-Response verwenden oder eine OCSP-Response beim benannten TSP anfragen und die genutzte OCSP-Response nachträglich in den QES-Datensatz einbetten. Das Signaturzertifikat muss anhand der Zertifikatsprüfung für [mathematisch gültig UND zeitlich gültig UND online gültig ] befunden werden und der HTTP-Request andernfalls mit dem folgenden Fehler:
+
+Der TI-Flow-Fachdienst MUSS, wenn keine OCSP-Response eingebettet oder die eingebettete OCSP Response nicht gültig ist, eine gecachte OCSP-Response verwenden, wenn die gecachte OCSP-Response nach den Signaturzeitpunkt erstellt wurde, oder eine OCSP-Response beim zugehörigen TSP anfragen.
+
+Der TI-Flow-Fachdienst MUSS das Signaturzertifikat prüfen, für [mathematisch gültig UND zeitlich gültig UND online gültig ] befinden und andernfalls die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 400 - Bad Request: error
@@ -96,9 +98,9 @@ und darf die OCSP-Response für die Abfrage des Zertifikatsstatus für 12 Stunde
 * HTTP-Code: Details Text
   * 400 - Bad Request: -
 
-HTTP-Status-Code 400 abgelehnt werden, damit sichergestellt wird, dass ausschließlich E-Rezepte verwaltet werden, die von einer gültigen, nicht gesperrten Heilberufsidentität eines HBA signiert wurden.
+abbrechen, damit sichergestellt wird, dass ausschließlich Verordnungen verwaltet werden, die von einer gültigen, nicht gesperrten Heilberufsidentität eines HBA signiert wurden.
 
-Der TI-Flow-Fachdienst MUSS das QES-Signaturzertifikat C.HP.QES in der Signatur des übergebenen QES-Datensatzes gemäß [gemSpec_PKI#TUC_PKI_030] auf Gültigkeit prüfen. Wenn die Abfrage des OCSP-Response für das Signaturzertifikat fehlschlägt, muss der HTTP-Request mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS, wenn im Rahmen der Prüfung der Gültigkeit eines QES-Signuturzertifikates C.HP.QES die Abfrage des OCSP-Response für das Signaturzertifikat fehlschlägt, die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 512 - OCSP Backend Error: error
@@ -109,7 +111,9 @@ Der TI-Flow-Fachdienst MUSS das QES-Signaturzertifikat C.HP.QES in der Signatur 
 * HTTP-Code: Details Text
   * 512 - OCSP Backend Error: OCSP Backend Error
 
-HTTP-Status-Code 512 abgelehnt werden.
+abgelehnt werden.
+
+Der TI-Flow-Fachdienst MUSS, wenn im Rahmen der Prüfung der Gültigkeit eines QES-Signuturzertifikates C.HP.QES keine OCSP-Response eingebettet oder die eingebettete OCSP Response nicht gültig ist, die die Prüfung genutzte OCSP-Response in den QES-Datensatz einbetten.
 
 Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/<id>/$activate die qualifizierte Signatur des QES-Datensatzes gemäß [ETSI_QES] prüfen und bei nicht gültiger qualifizierter Signatur die Operation mit dem folgenden Fehler:
 
@@ -122,9 +126,9 @@ Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operat
 * HTTP-Code: Details Text
   * 400 - Bad Request: -
 
-abbrechen damit der nachfolgende Workflow ausschließlich auf Basis medizinisch korrekter und vom Leistungserbringer mittels Signatur freigegebener Daten erfolgt.
+abbrechen, damit der nachfolgende Workflow ausschließlich auf Basis vom Leistungserbringer mittels Signatur freigegebener Daten erfolgt.
 
-Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/<id>/$activate bei gültiger Signatur das innerhalb des PKCS#7-Datensatz enveloping-enthaltene FHIR-Bundle einer umfänglichen FHIR-Validierung gegen die eRezept-Schema-Definition der KBV kbv.ita.erp oder kbv.itv.evdga unterziehen und bei Invalidität die Operation mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/<id>/$activate das innerhalb des PKCS#7-Datensatz enveloping-enthaltene FHIR-Bundle einer FHIR-Validierung gegen die eRezept-Schema-Definition der KBV kbv.ita.erp oder kbv.itv.evdga unterziehen und bei Invalidität die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 400 - Bad Request: error
@@ -135,11 +139,11 @@ Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operat
 * HTTP-Code: Details Text
   * 400 - Bad Request: FHIR Profile Validation Failed
 
-abbrechen damit der nachfolgende Workflow ausschließlich auf Basis medizinisch korrekter und vom Leistungserbringer mittels Signatur freigegebener Daten erfolgt.
+abbrechen.
 
-Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/<id>/$activate bei gültiger Signatur und validem FHIR den Datensatz als PKCS#7-Datei sicher speichern und in Task.input mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType = 1 über eine interne, eindeutige UUID referenzieren, damit der nachfolgende Workflow ausschließlich auf Basis medizinisch korrekter und vom Leistungserbringer mittels Signatur freigegebener Daten erfolgt.
+Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/<id>/$activate den Datensatz als PKCS#7-Datei speichern und in Task.input mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType = 1 über eine interne, eindeutige UUID referenzieren, damit der nachfolgende Workflow auf Basis vom Leistungserbringer mittels Signatur freigegebener Daten erfolgt.
 
-Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/<id>/$activate die Angabe zum Mimetype des signierten Dokumentes prüfen und mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/<id>/$activate die Angabe zum Mimetype des signierten Dokumentes prüfen und, wenn dieser ungleich "text/plain; charset=utf-8" ist, die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 400 - Bad Request: error
@@ -150,9 +154,9 @@ Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operat
 * HTTP-Code: Details Text
   * 400 - Bad Request: -
 
-abbrechen, wenn dieser ungleich "text/plain; charset=utf-8" ist.
+abbrechen.
 
-Der TI-Flow-Fachdienst MUSS beim berechtigten Aufruf der Operation POST /Task/<id>/$activate prüfen, dass die PrescriptionID des Tasks mit der PrescriptionID im übergebenen QES-Datensatz übereinstimmt und der Präfix der PrescriptionID gleich dem Flowtype des zu aktivierenden Tasks ist und andernfalls die Operation mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/<id>/$activate prüfen, dass die PrescriptionID des Tasks mit der PrescriptionID im übergebenen QES-Datensatz übereinstimmt und andernfalls die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 400 - Bad Request: error
@@ -165,7 +169,20 @@ Der TI-Flow-Fachdienst MUSS beim berechtigten Aufruf der Operation POST /Task/<i
 
 abbrechen.
 
-Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/<id>/$activate prüfen, dass Patient.identifier.system gleich "http://fhir.de/sid/gkv/kvid-10" ist und andernfalls die Operation mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/<id>/$activate prüfen, dass der Präfix der PrescriptionID gleich dem Flowtype des zu aktivierenden Tasks ist und andernfalls die Operation mit dem folgenden Fehler:
+
+* HTTP-Code: Severity
+  * 400 - Bad Request: error
+* HTTP-Code: Code
+  * 400 - Bad Request: invalid
+* HTTP-Code: Details Code
+  * 400 - Bad Request: TIFLOW_FLOWTYPE_MISMATCH
+* HTTP-Code: Details Text
+  * 400 - Bad Request: -
+
+abbrechen.
+
+Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/<id>/$activate prüfen, dass Patient.identifier.system gleich "http://fhir.de/sid/gkv/kvid-10" ist und andernfalls die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 400 - Bad Request: error
@@ -178,7 +195,7 @@ Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operat
 
 abbrechen.
 
-Der TI-Flow-Fachdienst MUSS den Aufruf der http-POST-Operation /Task/<id>/$activate mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/<id>/$activate, wenn das Datum authoredOn zur Gültigkeitsberechnung der Verordnung nicht dem Datum in QES.Erstellung im Signaturobjekt entspricht, die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 400 - Bad Request: error
@@ -189,15 +206,15 @@ Der TI-Flow-Fachdienst MUSS den Aufruf der http-POST-Operation /Task/<id>/$activ
 * HTTP-Code: Details Text
   * 400 - Bad Request: Ausstellungsdatum und Signaturzeitpunkt weichen voneinander ab, müssen aber taggleich sein
 
-abweisen, wenn das Datum authoredOn zur Gültigkeitsberechnung des E-Rezepts nicht dem Datum in QES.Erstellung im Signaturobjekt entspricht.
+abbrechen.
 
-Der TI-Flow-Fachdienst MUSS im Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/<id>/$activate die KVNR des Patienten dem Identifier http://fhir.de/sid/gkv/kvid-10 der Patient-Ressource im E-Rezept-Bundle entnehmen und diesen als Identifier in Task.for mit system http://fhir.de/sid/gkv/kvid-10 hinzufügen, damit ausschließlich eine gültige, vom Arzt signierte Patientenreferenz im Workflow verwendet wird.
+Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/<id>/$activate die KVNR des Patienten dem Identifier http://fhir.de/sid/gkv/kvid-10 der Patient-Ressource im E-Rezept-Bundle entnehmen und diesen als Identifier in Task.for mit system http://fhir.de/sid/gkv/kvid-10 hinzufügen, damit ausschließlich eine gültige, vom Arzt signierte Patientenreferenz im Workflow verwendet wird.
 
 Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/<id>/$activate bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId "erp.task.activate" und den Versicherten mit der KVNR = Task.for initiieren.
 
 Der TI-Flow-Fachdienst MUSS die zulässige Aktivierung eines Tasks mittels /Task/<id>/$activate-Operation im Status Task.status = ready vollziehen und bei erfolgreichem Abschluss der Operation die Ressource Task im HTTP-Body der HTTP-Response zurückgeben, damit die verordnende Leistungserbringerinstitution über den erfolgreichen Abschluss der Operation in Kenntnis gesetzt wird.
 
-Der TI-Flow-Fachdienst MUSS das bei der Operation /Task/<id>/$activate im QES-Datensatz enthaltene Verordnung in ein Bundle gleichen Typs in JSON-Repräsentation beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task/<id> zurück liefern.Dies gilt für folgende Bundles: https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundlehttps://fhir.kbv.de/StructureDefinition/KBV_PR_EVDGA_Bundle
+Der TI-Flow-Fachdienst MUSS das bei der Operation /Task/<id>/$activate im QES-Datensatz enthaltene Verordnung in ein Bundle gleichen Typs in JSON-Repräsentation beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task/<id> zurück liefern. Dies gilt für folgende Bundles: https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundlehttps://fhir.kbv.de/StructureDefinition/KBV_PR_EVDGA_Bundle
 
 Der TI-Flow-Fachdienst MUSS für diese Bundles
 * einen neuen, eindeutigen Identifier für die Bundle.id als UUID generieren,
@@ -210,7 +227,7 @@ Die Festlegungen in [FHIR-Sig] sind in Teilen unspezifisch, konkrete Beispiele f
 
 ### Verifizieren von Prüfziffern
 
-Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/<id>/$activate einen im FHIR Profil KBV_PR_FOR_Coverage gespeicherten Wert für payor.identifier.value gemäß dem im "Gemeinsames Rundschreiben Institutionskennzeichen (IK)" vom 01.06.2020 unter Kapitel 1.2.5 "Prüfziffer" beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung den Prozess mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/<id>/$activate einen im FHIR Profil KBV_PR_FOR_Coverage gespeicherten Wert für payor.identifier.value gemäß dem im "Gemeinsames Rundschreiben Institutionskennzeichen (IK)" vom 01.06.2020 unter Kapitel 1.2.5 "Prüfziffer" beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 400 - Bad Request: error
@@ -223,7 +240,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/<id>/$acti
 
 abbrechen.
 
-Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/<id>/$activate die im FHIR Profil KBV_PR_FOR_Coverage gespeicherten Werte für payor.identifier.extension:alternativeID.value[x]:valueIdentifier gemäß dem "Gemeinsames Rundschreiben Institutionskennzeichen (IK)" vom 01.06.2020 unter Kapitel 1.2.5 "Prüfziffer" beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/<id>/$activate die im FHIR Profil KBV_PR_FOR_Coverage gespeicherten Werte für payor.identifier.extension:alternativeID.value[x]:valueIdentifier gemäß dem "Gemeinsames Rundschreiben Institutionskennzeichen (IK)" vom 01.06.2020 unter Kapitel 1.2.5 "Prüfziffer" beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 400 - Bad Request: error
@@ -236,7 +253,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/<id>/$acti
 
 abbrechen.
 
-Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/<id>/$activate einen im FHIR Profil KBV_PR_FOR_Patient gespeicherten Wert für Patient.identifier:versichertenId.value gemäß der Anlage 1 der "Prüfziffernberechnung für die Krankenversichertennummer nach § 290 SGB V" vom 26.02.2019 beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/<id>/$activate einen im FHIR Profil KBV_PR_FOR_Patient gespeicherten Wert für Patient.identifier:versichertenId.value gemäß der Anlage 1 der "Prüfziffernberechnung für die Krankenversichertennummer nach § 290 SGB V" vom 26.02.2019 beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 400 - Bad Request: error
@@ -275,7 +292,7 @@ Hinweis: Im Rahmen der ambulanten spezialfachärztlichen Versorgung (ASV) nach �
 
 Der TI-Flow-Fachdienst MUSS für die Überprüfung der ANR/ZANR eine Möglichkeit der Konfiguration vorsehen und bei der Durchführung einer Vergleichsoperation je nach Konfiguration bei Auffälligkeit die Operation mit einer Warnung fortführen oder mit einer Fehlermeldung abbrechen.
 
-Der TI-Flow-Fachdienst MUSS für die Überprüfung der ANR/ZANR, wenn bei der Prüfung eine Auffälligkeit auftritt und die Konfiguration Fehler aktiv ist, mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS für die Überprüfung der ANR/ZANR, wenn bei der Prüfung eine Auffälligkeit auftritt und die Konfiguration Fehler aktiv ist, die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 400 - Bad Request: error
@@ -294,7 +311,7 @@ Der TI-Flow-Fachdienst MUSS für die Überprüfung der ANR/ZANR, wenn bei der Pr
 * warning-text: "Ungültige Arztnummer (LANR oder ZANR): Die übergebene Arztnummer entspricht nicht den Prüfziffer-Validierungsregeln."
 erweitern.
 
-Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/<id>/$activate den im FHIR Profil KBV_PR_ERP_Medication_PZN gespeicherten Wert für code.coding:pznCode.code gemäß den "Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI" beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/<id>/$activate den im FHIR Profil KBV_PR_ERP_Medication_PZN gespeicherten Wert für code.coding:pznCode.code gemäß den "Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI" beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 400 - Bad Request: error
@@ -307,7 +324,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/<id>/$acti
 
 abbrechen.
 
-Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/<id>/$activate den im FHIR Profil KBV_PR_ERP_Medication_Compounding gespeicherten Wert für ingredient.item[x]:itemCodeableConcept.coding:pznCode.code gemäß den "Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI" beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/<id>/$activate den im FHIR Profil KBV_PR_ERP_Medication_Compounding gespeicherten Wert für ingredient.item[x]:itemCodeableConcept.coding:pznCode.code gemäß den "Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI" beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 400 - Bad Request: error
@@ -320,7 +337,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/<id>/$acti
 
 abbrechen.
 
-Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/<id>/$activate die Operation mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/<id>/$activate, wenn die PZN einer übergebenen PZN-Verordnung in KBV_PR_ERP_Medication_PZN.code.coding.code nicht 8-stellig ist, die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 400 - Bad Request: error
@@ -331,5 +348,5 @@ Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operat
 * HTTP-Code: Details Text
   * 400 - Bad Request: Länge PZN unzulässig (muss 8-stellig sein)
 
-abbrechen, wenn die PZN einer übergebenen PZN-Verordnung in KBV_PR_ERP_Medication_PZN.code.coding.code nicht 8-stellig ist.
+abbrechen.
 

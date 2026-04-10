@@ -32,7 +32,7 @@ Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operat
 
 abbrechen, damit der Zugriff auf diesen Datensatz nur durch den Berechtigten in Kenntnis des Secrets erfolgt.
 
-Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/<id>/$reject den im referenzierten Task gespeicherten Status Task.status prüfen und mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/<id>/$reject den im referenzierten Task gespeicherten Status Task.status prüfen und, wenn Task.status ungleich "in-progress" ist, die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 412 - Precondition Failed: error
@@ -43,7 +43,7 @@ Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operat
 * HTTP-Code: Details Text
   * 412 - Precondition Failed: Task has invalid status.
 
-abbrechen, wenn Task.status ungleich "in-progress" ist, damit die Verordnung nur zurückgegeben werden kann, wenn sich die Verordnung in Belieferung befindet.
+abbrechen, damit die Verordnung nur zurückgegeben werden kann, wenn sich die Verordnung in Belieferung befindet.
 
 Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/<id>/$reject die externe ID in Task.identifier:Secret als https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Secret löschen und den Status des referenzierten Tasks auf Task.status = ready setzen, damit nachfolgende Zugriffe auf diesen Datensatz durch Berechtigte in Kenntnis des AccessCodes erfolgen können.
 
@@ -55,7 +55,7 @@ Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operat
 Der TI-Flow-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 160, 169, 200 oder 209 mittels HTTP-POST-Operation über /Task/<id>/$reject die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Institutionen in der Rolle
 * oid_oeffentliche_apotheke
 * oid_krankenhausapotheke
-die Operation am Fachdienst aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 403 - Forbidden: error
@@ -66,7 +66,7 @@ die Operation am Fachdienst aufrufen, und bei Abweichungen mit dem folgenden Feh
 * HTTP-Code: Details Text
   * 403 - Forbidden: Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern
 
-abrechen, damit das E-Rezept nicht durch einen Unberechtigten zurückgewiesen werden kann.
+abbrechen, damit das E-Rezept nicht durch einen Unberechtigten zurückgewiesen werden kann.
 
 Der TI-Flow-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 160, 169, 200 oder 209 mittels HTTP-POST-Operation über /Task/<id>/$reject die Dispensierinformationen, falls welche vorhanden sind, löschen:
 * Medication, die aus der MedicationDispense referenziert wird --> löschen
