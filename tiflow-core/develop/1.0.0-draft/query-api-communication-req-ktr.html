@@ -170,6 +170,9 @@
       <li>
         <a href="menu-technische-umsetzung-paging.html">Paginierung</a>
       </li>
+      <li>
+        <a href="menu-technische-umsetzung-subscription.html">Subscrition</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -287,12 +290,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="nachrichten-abrufen">Nachrichten abrufen</h3>
 
 <!-- A_21556 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-51" title="CS Kostenträger: Nachrichten abrufen - Häufigkeit" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-51" title="CS Kostenträger: Nachrichten abrufen - Häufigkeit" version="1">
   <meta lockversion="false" />
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung" />
   </actor>
-  Das Clientsystem Kostenträger MUSS im Anwendungsfall "Nachrichten von Versicherten empfangen" zwischen den Aufrufen der Operation GET /Communication mindestens 5 Minuten warten. Der Zeitraum zwischen den Aufrufen muss um eine zufällige Zeitspanne zwischen 0 und 10.000 Millisekunden verlängert werden, um eine Gleichverteilung der Anfragen am TI-Flow-Fachdienst über alle Apotheken zu erreichen.
+  Das Clientsystem Kostenträger MUSS im Anwendungsfall "Nachrichten von Versicherten empfangen" zwischen den Aufrufen der Operation GET /Communication mindestens 5 Minuten warten. Der Zeitraum zwischen den Aufrufen muss um eine zufällige Zeitspanne zwischen 0 und 10.000 Millisekunden verlängert werden, um eine Gleichverteilung der Anfragen am TI-Flow-Fachdienst über alle Clientsysteme zu erreichen.
 </requirement>
 
 <!-- A_19329-01 -->
@@ -310,7 +313,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   ausführen.
 </requirement>
 
-<p>Falls eine oder mehrere E-Rezept-Nachrichten für die abgebende LEI auf dem TI-Flow-Fachdienst bereitstehen, übermittelt der TI-Flow-Fachdienst ein Bundle von Communication Ressourcen. </p>
+<p>Falls eine oder mehrere E-Rezept-Nachrichten für den Kostenträger auf dem TI-Flow-Fachdienst bereitstehen, übermittelt der TI-Flow-Fachdienst ein Bundle von Communication Ressourcen. </p>
 
 <h3 id="nachricht-versenden">Nachricht versenden</h3>
 
@@ -332,7 +335,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="nachricht-löschen">Nachricht löschen</h3>
 
-<p>Mit diesem Anwendungsfall kann die abgebende LEI von ihr versendete Nachrichten an einen Versicherten auf dem Fachdienst löschen.</p>
+<p>Mit diesem Anwendungsfall kann ein Kostenträger von ihm versendete Nachrichten an einen Versicherten auf dem Fachdienst löschen.</p>
 
 <p>Das CS Kostenträger MUSS es dem Nutzer ermöglichen, eine Nachricht zum
 Löschen auf dem Fachdienst auszuwählen.</p>
@@ -355,7 +358,7 @@ Löschen abzubrechen.</p>
   ausführen.
 </requirement>
 
-<p>Der Fachdienst prüft anhand der Telematik-ID im ACCESS_TOKEN, ob die LEI der Absender der zu löschenden Nachricht ist.</p>
+<p>Der Fachdienst prüft anhand der Telematik-ID im ACCESS_TOKEN, ob der Kostenträger der Absender der zu löschenden Nachricht ist.</p>
 
 <p>Das CS Kostenträger KANN im Anwendungsfall “Nachricht durch Abgebenden
 löschen” dem Nutzer ermöglichen, die Nachricht auch lokal im PS zu löschen.</p>
@@ -402,7 +405,7 @@ löschen” dem Nutzer ermöglichen, die Nachricht auch lokal im PS zu löschen.
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Apr 9, 2026 11:24+0000">2026-04-09</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Sun, Apr 12, 2026 21:20+0000">2026-04-12</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

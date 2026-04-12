@@ -26,9 +26,9 @@ Dieses Beispiel demonstriert das Mapping einer E-T-Rezept Freitext-Verordnung mi
 **Beispiel-Artefakte:**
 
 * **Quell-Dateien:** 
+* [`example-case-03-KBV_Bundle.xml`](test-examples/example-case-03-KBV_Bundle.xml)
 * [`example-case-03-Task.xml`](test-examples/example-case-03-Task.xml)
 * [`example-case-03-MedicationDispense_Parameters.xml`](test-examples/example-case-03-MedicationDispense_Parameters.xml)
-* [`example-case-03-KBV_Bundle.xml`](test-examples/example-case-03-KBV_Bundle.xml)
 * [`example-case-03-VZDSearchSet.xml`](test-examples/example-case-03-VZDSearchSet.xml)
  
 * **Mapping Bundle (generiert):** [`example-case-03-mapping-bundle.json`](test-examples/example-case-03-mapping-bundle.json)

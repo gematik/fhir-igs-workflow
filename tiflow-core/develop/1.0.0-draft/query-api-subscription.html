@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Query API: Subscription - TIFlow - Kernfunktionalitäten v1.0.0-draft</title>
+    <title>Additional API: Subscription - TIFlow - Kernfunktionalitäten v1.0.0-draft</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -170,6 +170,9 @@
       <li>
         <a href="menu-technische-umsetzung-paging.html">Paginierung</a>
       </li>
+      <li>
+        <a href="menu-technische-umsetzung-subscription.html">Subscrition</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -227,7 +230,7 @@ TIFlow - Kernfunktionalitäten
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-query-api.html'><b>Query API</b></a></li><li><b>Query API: Subscription</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-query-api.html'><b>Query API</b></a></li><li><b>Additional API: Subscription</b></li>
 
           <span style="float:right;">
 
@@ -257,7 +260,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   
-  <h2>Query API: Subscription</h2>
+  <h2>Additional API: Subscription</h2>
   
 
 
@@ -316,7 +319,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul>
   <li><a href="./query-api-subscription-req-fd.html">FD-Anforderungen zur Subscription-Query</a>: Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.</li>
-  <li><a href="./query-api-subscription-req-avs.html">Client-Anforderungen zur Subscription-Query</a>: Anforderungen an den Client des TI-Flow-Fachdienstes zur Nutzung der Schnittstelle.</li>
+  <li><a href="./query-api-subscription-req-avs.html">AVS-Anforderungen zur Subscription-Query</a>: Anforderungen an AVS zur Nutzung der Schnittstelle.</li>
+  <li><a href="./query-api-subscription-req-ktr.html">KTR-Anforderungen zur Subscription-Query</a>: Anforderungen an Clientsysteme der Kostenträger zur Nutzung der Schnittstelle.</li>
 </ul>
 
 <h3 id="resource-api">Resource API</h3>
@@ -441,11 +445,11 @@ Sec-WebSocket-Key: q4xkcO32u266gldTuKaSOw==
 
 <p><code class="language-plaintext highlighter-rouge">bound: &lt;subscription id&gt;</code></p>
 
-<p>Wenn eine neue Nachricht für die Telematik-ID der Apotheke eingestellt wird, dann sendet der TI-Flow-Fachdienst eine Nachricht ping: <subscription-id>. Das AVS kann dann diese Nachricht mittels des Anwendungsfalls "Nachrichten von Versicherten empfangen" unter Nutzung des Requests GET /Communication?received=null&amp;recipient=<Telematik-ID> abrufen.</Telematik-ID></subscription-id></p>
+<p>Wenn eine neue Nachricht für die Telematik-ID der Apotheke eingestellt wird, dann sendet der TI-Flow-Fachdienst eine Nachricht ping: &lt;subscription-id&gt;. Das AVS kann dann diese Nachricht mittels des Anwendungsfalls “Nachrichten von Versicherten empfangen” unter Nutzung des Requests GET /Communication?received=null&amp;recipient=&lt;Telematik-ID&gt; abrufen.</p>
 
 <p>Bei Nutzung des Subscription Services kann abweichend von der Anforderung “A_21556 - PS abgebende LEI: Häufigkeit des Abrufen von Nachrichten” die Operation GET /Communication häufiger als alle 5 Minuten, d.h. nach jeder Notification, mit den obigen Parametern angefragt werden.</p>
 
-<p>Die Websocket-Verbindung kann bis zu 12 h bestehen. Danach muss das AVS die Subscription neu registrieren.</p>
+<p>Die Websocket-Verbindung kann bis zu 12 h bestehen. Danach muss das Clientsystem die Subscription neu registrieren.</p>
 
 <h4 id="hinweise">Hinweise</h4>
 
@@ -496,7 +500,7 @@ Sec-WebSocket-Key: q4xkcO32u266gldTuKaSOw==
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Apr 9, 2026 11:24+0000">2026-04-09</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Sun, Apr 12, 2026 21:20+0000">2026-04-12</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

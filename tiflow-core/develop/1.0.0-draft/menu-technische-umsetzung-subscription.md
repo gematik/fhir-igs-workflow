@@ -1,13 +1,13 @@
-# Notifications für AVS - TIFlow - Kernfunktionalitäten v1.0.0-draft
+# Notifications für Clientsysteme - TIFlow - Kernfunktionalitäten v1.0.0-draft
 
 TIFlow - Kernfunktionalitäten
 
 Version 1.0.0-draft - ci-build 
 
 * [**Table of Contents**](toc.md)
-* **Notifications für AVS**
+* **Notifications für Clientsysteme**
 
-## Notifications für AVS
+## Notifications für Clientsysteme
 
 Der Subscription Service wird außerhalb der VAU betrieben.
 

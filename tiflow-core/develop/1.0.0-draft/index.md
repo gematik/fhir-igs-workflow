@@ -2765,7 +2765,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
           "valueUrl" : "menu-technische-umsetzung-subscription.html"
         }],
         "nameUrl" : "menu-technische-umsetzung-subscription.html",
-        "title" : "Notifications für AVS",
+        "title" : "Notifications für Clientsysteme",
         "generation" : "markdown"
       },
       {
@@ -3250,7 +3250,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
             "valueUrl" : "query-api-subscription.html"
           }],
           "nameUrl" : "query-api-subscription.html",
-          "title" : "Query API: Subscription",
+          "title" : "Additional API: Subscription",
           "generation" : "markdown",
           "page" : [{
             "extension" : [{
@@ -3258,7 +3258,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
               "valueUrl" : "query-api-subscription-req-fd.html"
             }],
             "nameUrl" : "query-api-subscription-req-fd.html",
-            "title" : "Server-Anforderungen: Subscription-Query",
+            "title" : "Server-Anforderungen: Subscription",
             "generation" : "markdown"
           },
           {
@@ -3267,7 +3267,16 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
               "valueUrl" : "query-api-subscription-req-avs.html"
             }],
             "nameUrl" : "query-api-subscription-req-avs.html",
-            "title" : "AVS-Anforderungen: Subscription-Query",
+            "title" : "AVS-Anforderungen: Subscription",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-subscription-req-ktr.html"
+            }],
+            "nameUrl" : "query-api-subscription-req-ktr.html",
+            "title" : "KTR-Anforderungen: Subscription",
             "generation" : "markdown"
           }]
         }]

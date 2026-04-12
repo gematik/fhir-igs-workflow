@@ -1,0 +1,39 @@
+# KTR-Anforderungen: Subscription - TIFlow - Kernfunktionalitäten v1.0.0-draft
+
+TIFlow - Kernfunktionalitäten
+
+Version 1.0.0-draft - ci-build 
+
+* [**Table of Contents**](toc.md)
+* [**Query API**](menu-schnittstellen-query-api.md)
+* [**Additional API: Subscription**](query-api-subscription.md)
+* **KTR-Anforderungen: Subscription**
+
+## KTR-Anforderungen: Subscription
+
+Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Subscription`-Query-Endpunkte.
+
+Um die Last am TI-Flow-Fachdienst zu kontrollieren, wurde festgelegt, dass ein Clientsystem des Kostenträgers nicht öfter als alle 5 min nach neuen Nachrichten anfragen darf (A_21556). Die dadurch bis zu 5 min entstehende Verzögerung verlängert die Zeit, bis ein Kostenträger auf die Nachricht des Versicherten reagieren kann. Aus dem Grund wird eine Funktionalität eingeführt, mit der ein Clientsystem des Kostenträgers eine Notification erhält, dass eine neue Nachricht für eine Telematik-ID vorliegt. Nach Erhalt einer Notification darf das Clientsystem des Kostenträgers die neue Nachricht sofort abrufen.
+
+Das Clientsystem Kostenträger DARF NICHT mehr als eine Subscription pro Telematik-ID registrieren.
+
+Das Clientsystem Kostenträger MUSS im Anwendungsfall "Subscription für neue Communication" eine Subscription Ressource mit Telematik-ID in Element criteria Attribut receipient erstellen.
+
+Das Clientsystem Kostenträger MUSS im Anwendungsfall "Subscription für neue Communication" zum Registrieren im TI-Flow-Fachdienst die HTTP-Operation POST /v1/Subscription mit ACCESS_TOKEN im Authorization-Header ausführen.
+
+Das Clientsystem Kostenträger MUSS im Anwendungsfall "Subscription für neue Communication" nach der Registrierung eine Web Socket Verbindung zum Subscription Service mit Authorization Header aufbauen und ein Upgrade durchführen.
+Beispiel: GET https://subscription.zentral.erp.splitdns.ti-dienste.de/subscription Authorization: Bearer secret-token-abc-123 Connection: Upgrade Pragma: no-cache Cache-Control: no-cache Upgrade: websocket Sec-WebSocket-Version: 13 Sec-WebSocket-Key: q4xkcO32u266gldTuKaSOw==
+
+Der Subscription Service antwortet mit dem Upgrade HTTP/1.1 101 Switching Protocols Upgrade: websocket Connection: Upgrade Sec-WebSocket-Accept: fA9dggdnMPU79lJgAE3W4TRnyDM=
+
+Das Upgrade erfolgt mit einer “bind” Text-Nachricht über die Web Socket-Verbindung an den Server. bind: <subscription id>
+
+Der Subscription Service antwortet mit einer “bound” um die Einrichtung der Subscription zu bestätigen. bound: <subscription id>
+
+Wenn eine neue Nachricht für die Telematik-ID des Clients eingestellt wird, dann sendet der TI-Flow-Fachdienst eine Nachricht ping: <subscription-id>. Das Clientsystem kann dann diese Nachricht mittels des Anwendungsfalls “Nachrichten von Versicherten empfangen” unter Nutzung des Requests GET /Communication?received=null&recipient=<Telematik-ID> abrufen.
+
+Bei Nutzung des Subscription Services kann abweichend von der Anforderung “A_21556 - PS abgebende LEI: Häufigkeit des Abrufen von Nachrichten” die Operation GET /Communication häufiger als alle 5 Minuten, d.h. nach jeder Notification, mit den obigen Parametern angefragt werden.
+
+Das Clientsystem Kostenträger KANN eine beliebige Wartezeit bis zum Abruf der Nachrichten mit Anwendungsfall „Nachrichten von Versicherten empfangen“ umsetzen, wenn in einem Zeitraum sehr viele ping-Benachrichtigungen empfangen werden.
+Hinweis: Jede eingestellte Nachricht führt zu einem Ping, ggfs. im Millisekundenbereich, wenn viele Nachrichten an einen Empfänger gerichtet werden. In Abhängigkeit von der Implementierung kann dieses Verhalten zu einer Überlastung des Clientsystems führen, wenn bspw. jedes einzelne Ping den Anwendungsfall „Nachrichten von Versicherten empfangen“ triggert.
+
