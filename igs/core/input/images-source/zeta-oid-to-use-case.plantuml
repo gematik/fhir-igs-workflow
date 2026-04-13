@@ -1,0 +1,190 @@
+@startuml
+
+title E-Rezept Fachdienst – OIDs als Akteure & Use Cases\ngemSpec_FD_eRp v2.5.0 | §5.7 & Kap. 6
+
+left to right direction
+
+skinparam linetype ortho
+skinparam ArrowThickness 1
+skinparam nodesep 40
+skinparam ranksep 80
+
+skinparam usecase {
+  BackgroundColor #EEF4FB
+  BorderColor #2C5F8A
+  FontSize 11
+}
+skinparam actor {
+  FontStyle bold
+  FontSize 11
+}
+skinparam note {
+  BackgroundColor #FFFDE7
+  BorderColor #F9A825
+  FontSize 9
+}
+skinparam packageStyle rectangle
+
+' ============================================================
+' LINKE Akteure
+' ============================================================
+
+  actor "oid_oeffentliche_apotheke\noid_krankenhausapotheke\n(Abgebende LEI)" as APO #FFE0C2
+  actor "oid_praxis_arzt\noid_zahnarztpraxis\noid_praxis_psychotherapeut\noid_krankenhaus\noid_institution-vorsorge-reha\n(Verordnende LEI)" as VERO #D0EDD4
+  actor "oid_kostentraeger\n(Kostenträger)" as KT #E8D5F5
+
+
+' ============================================================
+' System-Boundary mit Use Cases (Mitte)
+' ============================================================
+rectangle "E-Rezept Fachdienst" {
+
+  package "Task-Workflow" {
+    usecase "POST /Task/\$create\n[Rezept anlegen]" as UC_CREATE
+    usecase "POST /Task/<id>/\$activate\n[Rezept aktivieren]" as UC_ACTIVATE
+    usecase "GET /Task\n[Rezeptliste abrufen]" as UC_GETTASKS
+    usecase "GET /Task/<id>\n[Einzelrezept abrufen]" as UC_GETTASK
+    usecase "POST /Task/<id>/\$accept\n[Rezept annehmen]" as UC_ACCEPT
+    usecase "POST /Task/<id>/\$reject\n[Rezept zurückweisen]" as UC_REJECT
+    usecase "POST /Task/<id>/\$dispense\n[Dispensierinfo bereitstellen]" as UC_DISPENSE
+    usecase "POST /Task/<id>/\$close\n[Rezept abschließen]" as UC_CLOSE
+    usecase "POST /Task/<id>/\$abort\n[Rezept löschen]" as UC_ABORT
+    usecase "PATCH /Task/<id>\n[EU-Markierung setzen]" as UC_PATCH_TASK
+    usecase "POST /Task/<id>/\$eu-close\n[EU-Rezept abschließen]" as UC_EU_CLOSE
+  }
+
+  package "MedicationDispense" {
+    usecase "GET /MedicationDispense\n[Abgabeinfo abrufen]" as UC_MEDDISP
+  }
+
+  package "ChargeItem (PKV)" {
+    usecase "GET /ChargeItem\n[Abrechnungsliste abrufen]" as UC_CI_LIST
+    usecase "GET /ChargeItem/<id>\n[Abrechnungsdetail abrufen]" as UC_CI_GET
+    usecase "POST /ChargeItem\n[Abrechnung bereitstellen]" as UC_CI_POST
+    usecase "PUT /ChargeItem/<id>\n[Abrechnung aktualisieren]" as UC_CI_PUT
+    usecase "PATCH /ChargeItem/<id>\n[Markierung setzen]" as UC_CI_PATCH
+    usecase "DELETE /ChargeItem/<id>\n[Abrechnung löschen]" as UC_CI_DELETE
+  }
+
+  package "Consent (Einwilligung)" {
+    usecase "GET /Consent\n[Einwilligung lesen]" as UC_CONSENT_GET
+    usecase "POST /Consent\n[Einwilligung erteilen]" as UC_CONSENT_POST
+    usecase "DELETE /Consent\n[Einwilligung widerrufen]" as UC_CONSENT_DELETE
+  }
+
+  package "Communication (Nachrichten)" {
+    usecase "GET /Communication\n[Nachrichten abrufen]" as UC_COMM_GET
+    usecase "GET /Communication\n[Nachrichten abrufen die \nDIGA Aktivierungscode \nenthalten]" as UC_COMM_GET_DIGA_CODE
+    usecase "POST /Communication\n[Nachricht senden]" as UC_COMM_POST
+    usecase "DELETE /Communication/<id>\n[Nachricht löschen]" as UC_COMM_DELETE
+  }
+
+  package "AuditEvent (Protokoll)" {
+    usecase "GET /AuditEvent\n[Zugriffsprotokoll abrufen]" as UC_AUDIT
+  }
+
+  package "EU-Zugriffsberechtigung" {
+    usecase "POST /\$grant-eu-access-permission\n[EU-Berechtigung erteilen]" as UC_EU_GRANT
+    usecase "DELETE /\$revoke-eu-access-permission\n[EU-Berechtigung löschen]" as UC_EU_REVOKE
+    usecase "GET /\$read-eu-access-permission\n[EU-Berechtigung lesen]" as UC_EU_READ
+    usecase "POST /\$get-eu-prescriptions\n[EU-Verordnungen abrufen]" as UC_EU_GET_RX
+  }
+
+  package "Subscription & Push Notification" {
+    usecase "POST /Subscription\n[Benachrichtigung registrieren]" as UC_SUB
+    usecase "GET /pushers\n[Registrierungen abrufen]" as UC_PUSHERS_GET
+    usecase "POST /pushers/set\n[App registrieren]" as UC_PUSHERS_SET
+    usecase "GET/POST /channels\n[Kanäle konfigurieren]" as UC_CHANNELS
+  }
+}
+
+' ============================================================
+' RECHTE Akteure
+' ============================================================
+together {
+  actor "oid_versicherter\n(Versicherter)" as VERS #D0E4F7
+}
+
+actor "oid_ncpeh\n(NCPeH-FD / EU)" as NCPEH #FFCDD2
+UC_EU_GET_RX -[hidden]- NCPEH
+
+' ============================================================
+' Pfeile: APO – Orange (#E65100)
+' ============================================================
+APO -[#E65100]-> UC_GETTASKS
+APO -[#E65100]-> UC_GETTASK
+APO -[#E65100]-> UC_ACCEPT
+APO -[#E65100]-> UC_REJECT
+APO -[#E65100]-> UC_DISPENSE
+APO -[#E65100]-> UC_CLOSE
+APO -[#E65100]-> UC_ABORT
+APO -[#E65100]-> UC_CI_GET
+APO -[#E65100]-> UC_CI_POST
+APO -[#E65100]-> UC_CI_PUT
+APO -[#E65100]-> UC_COMM_GET
+APO -[#E65100]-> UC_COMM_POST
+APO -[#E65100]-> UC_COMM_DELETE
+APO -[#E65100]-> UC_SUB
+
+' ============================================================
+' Pfeile: VERO – Grün (#2E7D32)
+' ============================================================
+VERO -[#2E7D32]-> UC_CREATE
+VERO -[#2E7D32]-> UC_ACTIVATE
+VERO -[#2E7D32]-> UC_ABORT
+
+' ============================================================
+' Pfeile: KT – Lila (#6A1B9A)
+' ============================================================
+KT -[#6A1B9A]-> UC_GETTASK
+KT -[#6A1B9A]-> UC_ACCEPT
+KT -[#6A1B9A]-> UC_REJECT
+KT -[#6A1B9A]-> UC_CLOSE
+KT -[#6A1B9A]-> UC_SUB
+KT -[#6A1B9A]-> UC_COMM_GET_DIGA_CODE
+
+' ============================================================
+' Pfeile: VERS – Blau (#1565C0) — von rechts
+' ============================================================
+UC_GETTASKS <-[#1565C0]- VERS
+UC_GETTASK <-[#1565C0]- VERS
+UC_ABORT <-[#1565C0]- VERS
+UC_PATCH_TASK <-[#1565C0]- VERS
+UC_MEDDISP <-[#1565C0]- VERS
+UC_CI_LIST <-[#1565C0]- VERS
+UC_CI_GET <-[#1565C0]- VERS
+UC_CI_PATCH <-[#1565C0]- VERS
+UC_CI_DELETE <-[#1565C0]- VERS
+UC_CONSENT_GET <-[#1565C0]- VERS
+UC_CONSENT_POST <-[#1565C0]- VERS
+UC_CONSENT_DELETE <-[#1565C0]- VERS
+UC_COMM_GET <-[#1565C0]- VERS
+UC_COMM_POST <-[#1565C0]- VERS
+UC_COMM_DELETE <-[#1565C0]- VERS
+UC_AUDIT <-[#1565C0]- VERS
+UC_EU_GRANT <-[#1565C0]- VERS
+UC_EU_REVOKE <-[#1565C0]- VERS
+UC_EU_READ <-[#1565C0]- VERS
+UC_PUSHERS_GET <-[#1565C0]- VERS
+UC_PUSHERS_SET <-[#1565C0]- VERS
+UC_CHANNELS <-[#1565C0]- VERS
+
+' ============================================================
+' Pfeile: NCPEH – Rot (#B71C1C) — von rechts
+' ============================================================
+UC_EU_GET_RX <-[#B71C1C]- NCPEH
+UC_EU_CLOSE <-[#B71C1C]- NCPEH
+
+' ============================================================
+' Legende
+' ============================================================
+/'legend right
+  |= Akteur |= Seite |= Verbindungen |= Farbe |
+  | lor:#E65100>Abgebende LEI / Apotheke</color> | links | 14 | lor:#E65100>■ Orange</color> |
+  | lor:#2E7D32>Verordnende LEI</color> | links | 3 | lor:#2E7D32>■ Grün</color> |
+  | lor:#6A1B9A>oid_kostentraeger</color> | links | 6 | lor:#6A1B9A>■ Lila</color> |
+  | lor:#1565C0>oid_versicherter</color> | rechts | 23 | lor:#1565C0>■ Blau</color> |
+  | lor:#B71C1C>oid_ncpeh</color> | rechts | 2 | lor:#B71C1C>■ Rot</color> |
+endlegend'/
+
+@enduml

@@ -32,6 +32,9 @@ Für Tags in Anforderungen muss die folgende Syntax verwendet werden:
 
 1. PlantUML Code in die `.plantuml` Datei im Ordner `input/images-source` einfügen
 2. In der Markdowndatei mit folgendem Code auf die `.svg` Datei verlinken:
+3. ACHTUNG: im plantuml File darf nach @startuml nichts stehen, 
+da sonst Dateiname und später erstelltes svg anders heißen können
+ 
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
