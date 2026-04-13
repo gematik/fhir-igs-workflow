@@ -1,25 +1,25 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 5ff81b81013fc99e803371f9afd3fd22df4f840369a1835b8da1e5eef0c0b9e6
+content_hash: 75ff48c269d5f5db8ac831de7a863d8b804eff3f9a699bcc621728296beb6699
 created: '2026-03-23T10:57:48.462266'
-date: '2026-03-27T14:32:26.198041'
+date: '2026-04-13T10:29:56.381438'
 key: IG-TIFLOW-CORE-180
-modified: '2026-03-27T14:32:26.198041'
+modified: '2026-04-13T10:29:56.381438'
 release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produktgutachten
-text: "Der TI-Flow-Fachdienst MUSS beim berechtigten Aufruf der Operation POST /Task/&#60;id&#62;/$activate\
-  \ prüfen, dass die PrescriptionID des Tasks mit der PrescriptionID im übergebenen\
-  \ QES-Datensatz übereinstimmt und der Präfix der PrescriptionID gleich dem Flowtype\
-  \ des zu aktivierenden Tasks ist und andernfalls die Operation mit dem folgenden\
-  \ Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
-  \ collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n\
-  \ <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n\
-  \ </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_FLOWTYPE_MISMATCH</td>\n </tr>\n\
-  \ <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen."
-title: TI-Flow-Fachdienst - Task aktivieren - Prüfung Rezept-ID und Präfix gegen Flowtype
+text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
+  \ über /Task/&#60;id&#62;/$activate prüfen, dass die PrescriptionID des Tasks mit\
+  \ der PrescriptionID im übergebenen QES-Datensatz übereinstimmt und andernfalls\
+  \ die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border:\
+  \ 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400\
+  \ - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n\
+  \ <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_FLOWTYPE_MISMATCH</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n\
+  \ </tr>\n </table> \n abbrechen."
+title: TI-Flow-Fachdienst - Task aktivieren - Prüfung Rezept-ID in Task gegen Verordnungsdatensatz
 version: 1

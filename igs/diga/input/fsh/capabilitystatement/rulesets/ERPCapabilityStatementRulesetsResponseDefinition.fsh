@@ -56,12 +56,12 @@ RuleSet: GlobalOperationErrorCodes
 RuleSet: TypeOperationStatusCodes
 * rest.resource[=].operation[=] insert OpNotAllowed
 * rest.resource[=].operation[=] insert UnknownResourceType
-* insert GlobalOperationErrorCodes
+* rest.resource[=].operation[=] insert GlobalOperationErrorCodes
 
 RuleSet: InstanceOperationStatusCodes
 * rest.resource[=].operation[=] insert ResourceIsNotKnown
 * rest.resource[=].operation[=] insert ResourceWasDeleted
-* insert GlobalOperationErrorCodes
+* rest.resource[=].operation[=] insert GlobalOperationErrorCodes
 
 // Konkrete Operationen
 

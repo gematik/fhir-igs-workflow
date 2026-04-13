@@ -1,11 +1,11 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: ebf128dfb9fea40c1d4e9374491c3350992524a7066961a0a88aedddf246eec6
+content_hash: 06283c024604347a2d37b64d4d684d8202a2a3f0bd431daef9777be46fd8f39b
 created: '2026-03-23T10:57:48.448718'
-date: '2026-03-27T14:32:26.175794'
+date: '2026-04-13T10:29:56.359206'
 key: IG-TIFLOW-CORE-116
-modified: '2026-03-27T14:32:26.175794'
+modified: '2026-04-13T10:29:56.359206'
 release_status: MODIFIED
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
@@ -14,14 +14,14 @@ test_procedures:
   - Produkttest
 text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen\
   \ Task mittels \"/Task/&lt;id&gt;?ac=...\" durch eine abgebende Institution den\
-  \ im referenzierten Task gespeicherten Status Task.status prüfen und mit dem folgenden\
-  \ Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
-  \ collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>412 - Precondition Failed</td>\n\
-  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
-  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n\
+  \ im referenzierten Task gespeicherten Status Task.status prüfen und, wenn Task.status\
+  \ ungleich \"in-progress\" und ungleich \"completed\" ist, die Operation mit dem\
+  \ folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black;\
+  \ border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>412 - Precondition\
+  \ Failed</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n\
+  \ <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n\
   \ </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen,\
-  \ wenn Task.status ungleich \"in-progress\" und ungleich \"completed\" ist, damit\
-  \ der Datensatz nur abgerufen werden, kann, wenn sich die Verordnung in Belieferung\
+  \ damit der Datensatz nur abgerufen werden, kann, wenn sich die Verordnung in Belieferung\
   \ befindet oder der Workflow abgeschlossen ist."
 title: TI-Flow-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen
   - Prüfung Status

@@ -1,11 +1,11 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: d2319c780d5e59e1f978aad9091efe03f1f803010db763b0cef80973e5ea8e43
+content_hash: 585cf774abb57d686bfe7ba82a75333ba65d090c1c217d9092986308e452b18b
 created: '2026-03-23T10:57:49.327471'
-date: '2026-03-27T14:32:27.599884'
+date: '2026-04-13T10:29:57.472497'
 key: IG-TIFLOW-CHRG-74
-modified: '2026-03-27T14:32:27.599884'
+modified: '2026-04-13T10:29:57.472497'
 release_status: MODIFIED
 source: input/pagecontent/query-api-chargeitem-req-fd.md
 status: ACTIVE
@@ -13,12 +13,13 @@ test_procedures:
   TI_Flow_FD:
   - Produkttest
 text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation PATCH auf den Endpunkt\
-  \ /ChargeItem ohne Angabe einer &#60;id&#62; für eine konkrete Ressource mit dem\
-  \ folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black;\
-  \ border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>405 - Method Not\
-  \ Allowed</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n\
-  \ <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_CHARGEITEM_ID_REQUIRED</td>\n\
-  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n ablehnen,\
-  \ um das Ändern mehrerer Ressourcen über einen Request zu verhindern."
+  \ /ChargeItem ohne Angabe einer &#60;id&#62; für eine konkrete Ressource die Operation\
+  \ mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid\
+  \ black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>405 - Method\
+  \ Not Allowed</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n\
+  \ <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_CHARGEITEM_ID_REQUIRED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>-</td>\n </tr>\n </table> \n abbrechen, um das Ändern mehrerer Ressourcen\
+  \ über einen Request zu verhindern."
 title: TI-Flow-Fachdienst – Abrechnungsinformation ändern (PATCH) – alles Ändern verbieten
 version: 1

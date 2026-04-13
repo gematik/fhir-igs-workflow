@@ -1,11 +1,11 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 36bab5f68bb1bb32d690db38e9efc52af5ee2f46da64b8057b94b1390ab265e5
+content_hash: 3bfce9d2d6ca9221c63a535fcd28559120ac1f50a10203e6cac8110974e4c29f
 created: '2026-03-23T10:57:49.809659'
-date: '2026-03-27T14:32:28.757030'
+date: '2026-04-13T10:29:58.852536'
 key: IG-TIFLOW-ERP-100
-modified: '2026-03-27T14:32:28.757030'
+modified: '2026-04-13T10:29:58.852536'
 release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
@@ -13,15 +13,15 @@ test_procedures:
   TI_Flow_FD:
   - Produkttest
 text: "Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation\
-  \ über /Task/&lt;id&gt;/$activate die Operation mit dem folgenden Fehler:\n <table\
-  \ id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
-  >\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
-  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
-  \ <th>Details Code</th>\n <td>TIFLOW_EREZEPT_MVO_STARTDATE_INVALID</td>\n </tr>\n\
-  \ <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, wenn\
-  \ die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen\
-  \ = true) gekennzeichnet ist und das Startdatum (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start)\
-  \ vor dem Ausstellungsdatum (MedicationRequest.authoredOn) liegt."
+  \ über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung\
+  \ (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true)\
+  \ gekennzeichnet ist und das Startdatum (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start)\
+  \ vor dem Ausstellungsdatum (MedicationRequest.authoredOn) liegt, die Operation\
+  \ mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid\
+  \ black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad\
+  \ Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n\
+  \ <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_EREZEPT_MVO_STARTDATE_INVALID</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen."
 title: TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Startdatum nicht
   vor Ausstellungsdatum
 version: 1

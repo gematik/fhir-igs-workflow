@@ -1,11 +1,11 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 5481c7ecb19f52ae29789ebe896ffb1305bb9e1b177a65dc2c2407e25d22f23e
+content_hash: 7759731d2862c4924b15795974d8dc9995f344219548007ab1a37d131d0fec3f
 created: '2026-03-23T10:57:48.453683'
-date: '2026-03-27T14:32:26.184379'
+date: '2026-04-13T10:29:56.368187'
 key: IG-TIFLOW-CORE-142
-modified: '2026-03-27T14:32:26.184379'
+modified: '2026-04-13T10:29:56.368187'
 release_status: MODIFIED
 source: input/pagecontent/op-abort-req-fd.md
 status: ACTIVE
@@ -14,13 +14,13 @@ test_procedures:
   - Produkttest
 text: "Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der\
   \ &#60;id&#62; adressierten/Task/&#60;id&#62;/$abort durch verordnende Leistungserbringer\
-  \ den im referenzierten Task gespeicherten Status Task.status prüfen und mit dem\
-  \ folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black;\
-  \ border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>412 - Precondition\
-  \ Failed</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n\
-  \ <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n\
-  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>Task has invalid status.</td>\n </tr>\n\
-  \ </table> \n abbrechen, wenn Task.status ungleich \"ready\" ist, damit die verordnende\
+  \ den im referenzierten Task gespeicherten Status Task.status prüfen und, wenn Task.status\
+  \ ungleich \"ready\" ist, mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"\
+  border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>412 - Precondition Failed</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>Task has invalid status.</td>\n </tr>\n </table> \n abbrechen, damit die verordnende\
   \ Leistungserbringerinstitution eine Verordnung nur löschen kann, wenn sie sich\
   \ noch nicht in Belieferung befindet oder beliefert wurde."
 title: TI-Flow-Fachdienst - E-Rezept löschen - Verordnender - Prüfung Status

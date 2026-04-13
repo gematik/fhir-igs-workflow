@@ -1,7 +1,7 @@
 Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für den Communication-Endpunkt.
 
 <!-- A_19401 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-316" title="TI-Flow-Fachdienst - Communication - unzulässige Operationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-316" title="TI-Flow-Fachdienst - Communication - unzulässige Operationen" version="1">
   <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>

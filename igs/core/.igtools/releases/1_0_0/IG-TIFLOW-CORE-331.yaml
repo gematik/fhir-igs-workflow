@@ -1,11 +1,11 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: f9d5dfdd41f462d7ff34a5ee2d715e30ecf2b776f515e3399f13c64018d67ebb
+content_hash: 605701f025c787a4b465e39010e2fff7be22c573bd9187ca1c77a0b15fde0f89
 created: '2026-03-23T10:57:48.508330'
-date: '2026-03-27T14:32:26.246987'
+date: '2026-04-13T10:29:56.431413'
 key: IG-TIFLOW-CORE-331
-modified: '2026-03-27T14:32:26.246987'
+modified: '2026-04-13T10:29:56.431413'
 release_status: MODIFIED
 source: input/pagecontent/query-api-communication-req-fd.md
 status: ACTIVE
@@ -16,13 +16,14 @@ text: "Der Fachdienst E-Rezept MUSS beim Einstellen einer Nachricht des Profils 
   https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq\"\
   , \"https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Reply\"\
   \ oder \"https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DiGA\"\
-  \ über die http-Operation POST auf den Endpunkt /Communication mit dem folgenden\
-  \ Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
-  \ collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n\
-  \ <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n\
-  \ </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_TASK_NOT_FOUND</td>\n </tr>\n\
-  \ <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, wenn\
+  \ über die http-Operation POST auf den Endpunkt /Communication prüfen und, wenn\
   \ das Pflichtfeld Communication.basedOn einen Task referenziert, der nicht existiert,\
-  \ um Spam und nicht-verordnungsbezogene Kommunikation zu verhindern."
+  \ die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border:\
+  \ 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400\
+  \ - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n\
+  \ <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_TASK_NOT_FOUND</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n\
+  \ </tr>\n </table> \n abbrechen, um Spam und nicht-verordnungsbezogene Kommunikation\
+  \ zu verhindern."
 title: TI-Flow-Fachdienst - Nachricht einstellen - Prüfung Existenz Task
 version: 1

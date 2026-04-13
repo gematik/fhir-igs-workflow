@@ -1,28 +1,28 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 7e2c2b638eba8404ba77f567a1560e5fb753d95c300ec79890dc42f10d3ec55d
+content_hash: 980542f529cb3ca13c7e4cfb2f615d1369da6dc271cccc6834b9f22080ab4822
 created: '2026-03-23T10:57:48.507451'
-date: '2026-03-27T14:32:26.245251'
+date: '2026-04-13T10:29:56.429737'
 key: IG-TIFLOW-CORE-328
-modified: '2026-03-27T14:32:26.245251'
+modified: '2026-04-13T10:29:56.429737'
 release_status: MODIFIED
 source: input/pagecontent/query-api-communication-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produktgutachten
-text: "Der TI-Flow-Fachdienst MUSS das Einstellen einer Nachricht über die http-Operation\
-  \ POST auf den Endpunkt /Communication mit dem folgenden Fehler:\n <table id=\"\
-  error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n\
-  \ <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
-  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
-  \ <th>Details Code</th>\n <td>TIFLOW_COMMUNICATION_PAYLOAD_INVALID</td>\n </tr>\n\
-  \ <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, wenn\n\
-  \ <ul>\n <li>der Nachrichteninhalt Communication.payload größer als 10 kByte ist\
-  \ oder</li>\n <li>in von Versicherten eingestellten Nachrichten in Communication.payload\
-  \ eine externe URLs enthält oder</li>\n <li>ein Attachment mit MimeType \"application/*\"\
-  \ enthält,</li>\n </ul>\n damit über den TI-Flow-Fachdienst kein Schadcode verteilt\
-  \ wird."
+text: "Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation\
+  \ POST auf den Endpunkt /Communication die Nachricht prüfen und, wenn\n <ul>\n <li>der\
+  \ Nachrichteninhalt Communication.payload größer als 10 kByte ist oder</li>\n <li>in\
+  \ von Versicherten eingestellten Nachrichten in Communication.payload eine externe\
+  \ URLs enthält oder</li>\n <li>ein Attachment mit MimeType \"application/*\" enthält,</li>\n\
+  \ </ul>\n , die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"\
+  border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_COMMUNICATION_PAYLOAD_INVALID</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>-</td>\n </tr>\n </table> \n abbrechen, damit über den TI-Flow-Fachdienst\
+  \ kein Schadcode verteilt wird."
 title: TI-Flow-Fachdienst - Nachricht einstellen - Schadcodeprüfung
 version: 1

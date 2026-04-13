@@ -56,12 +56,12 @@ RuleSet: GlobalOperationErrorCodes
 RuleSet: TypeOperationStatusCodes
 * rest.resource[=].operation[=] insert MethodNotAllowed
 * rest.resource[=].operation[=] insert UnknownResourceType
-* insert GlobalOperationErrorCodes
+* rest.resource[=].operation[=] insert GlobalOperationErrorCodes
 
 RuleSet: InstanceOperationStatusCodes
 * rest.resource[=].operation[=] insert ResourceIsNotKnown
 * rest.resource[=].operation[=] insert ResourceWasDeleted
-* insert GlobalOperationErrorCodes
+* rest.resource[=].operation[=] insert GlobalOperationErrorCodes
 
 // Konkrete Operationen
 
@@ -128,6 +128,7 @@ RuleSet: TaskCloseOperationStatusCodes
 * rest.resource[=].operation[=] insert TiflowMedicationDispenseInvalid
 * rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
 * insert InstanceOperationStatusCodes
+* rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
 
 RuleSet: TaskAbortOperationStatusCodes
 * rest.resource[=].operation[=] insert SuccessfulNoContent

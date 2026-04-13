@@ -1,11 +1,11 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 72d91a5f9ec4d69d5dfd4b6ee5a36d2bb8475efe89810816918a9a36d25a6d86
+content_hash: ae3bc773ff149ccf5894b50390af0aeae479f395f4fa1eeb4c541f6025939f17
 created: '2026-03-23T10:57:48.514748'
-date: '2026-03-27T14:32:26.253250'
+date: '2026-04-13T10:29:56.437792'
 key: IG-TIFLOW-CORE-351
-modified: '2026-03-27T14:32:26.253250'
+modified: '2026-04-13T10:29:56.437792'
 release_status: MODIFIED
 source: input/pagecontent/query-api-subscription-req-fd.md
 status: ACTIVE
@@ -13,17 +13,16 @@ test_procedures:
   TI_Flow_FD:
   - Produkttest
 text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription\
-  \ Ressource durch eine abgebende Leistungserbringerinstitution (Apotheke), diese\
-  \ anhand der Telematik-ID aus dem ACCESS_TOKEN im \"Authorization\"-Header des HTTP-Requests\
-  \ identifizieren, diese gegen die in der Ressource im Element criteria Attribut\
-  \ receipient hinterlegte Telematik-ID prüfen und bei Ungleichheit den Aufruf mit\
-  \ dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black;\
-  \ border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n\
-  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
-  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_IDENTITY_MISMATCH</td>\n\
-  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>Identity mismatch: Access token or\
-  \ x-insurantid header does not match FHIR data (Telematik-ID / KVNR)</td>\n </tr>\n\
-  \ </table> \n abweisen, damit ausschließlich die Apotheke für sich selbst eine Subscription\
-  \ registrieren kann."
+  \ Ressource durch eine abgebende Institution, diese anhand der Telematik-ID aus\
+  \ dem ACCESS_TOKEN im \"Authorization\"-Header des HTTP-Requests identifizieren,\
+  \ diese gegen die in der Ressource im Element criteria Attribut receipient hinterlegte\
+  \ Telematik-ID prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:\n\
+  \ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>SVC_IDENTITY_MISMATCH</td>\n </tr>\n <tr>\n <th>Details\
+  \ Text</th>\n <td>Identity mismatch: Access token does not match FHIR data (Telematik-ID)</td>\n\
+  \ </tr>\n </table> \n abbrechen, damit eine abgebende Institution ausschließlich\
+  \ für sich selbst eine Subscription registrieren kann."
 title: TI-Flow-Fachdienst – Subscription registrieren – Prüfung Telematik-ID
 version: 1

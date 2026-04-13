@@ -7,7 +7,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 ### Modulspezifische Anforderungen
 
 <!-- A_19230-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-17" title="TI-Flow-Fachdienst - Task schließen - Flowtype 160/166/169/200/209 - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-17" title="TI-Flow-Fachdienst - Task schließen - Flowtype 160/166/169/200/209 - Rollenprüfung" version="1">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"/>

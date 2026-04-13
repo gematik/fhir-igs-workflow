@@ -1,11 +1,11 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: e407dad620ff5cb61164477b520859fbf697dc8aa0aa751d286abef29f206d4d
+content_hash: dd784c5faf5f1256e9ce4e2b455a29478684a834bbae2a0da24735018f15413b
 created: '2026-03-23T10:57:48.461748'
-date: '2026-03-27T14:32:26.195247'
+date: '2026-04-13T10:29:56.378270'
 key: IG-TIFLOW-CORE-177
-modified: '2026-03-27T14:32:26.195247'
+modified: '2026-04-13T10:29:56.378270'
 release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
@@ -17,27 +17,23 @@ text: "Der TI-Flow-Fachdienst MUSS das QES-Signaturzertifikat C.HP.QES in der Si
   \ Parametern auf Gültigkeit prüfen:\n <table>\n <tr>\n <th>Parameter</th>\n <th>Wert</th>\n\
   \ </tr>\n <tr>\n <td>Zertifikat</td>\n <td>\n Signaturzertifikat des HBA (eingebettet\
   \ in Signatur-Objekt des QES-Datensatzes):\n <ul>\n <li>C.HP.QES (oid_hba_qes =\
-  \ 1.2.276.0.76.4.72 gemäß gemSpec_OID)</li>\n <li>bzw. für HBA-Vorläuferkarten C.HP.ENC\
-  \ (oid_vk_eaa_enc = 1.3.6.1.4.1.24796.1.10 gemäß gemSpec_OID) \n Hinweis: die OID\
-  \ dieses Profil wird für Ärzte- und Zahnärzteschaft gleichermaßen genutzt</li>\n\
-  \ </ul>\n </td>\n </tr>\n <tr>\n <td>Referenzzeitpunkt</td>\n <td>Zeitpunkt der\
-  \ QES-Erstellung gemäß signingTime im QES-Datensatz</td>\n </tr>\n <tr>\n <td>Offline-Modus</td>\n\
-  \ <td>nein</td>\n </tr>\n <tr>\n <td>OCSP-Response</td>\n <td>eingebettet in QES-Datensatz</td>\n\
-  \ </tr>\n </table>\n <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_006 Parameter\
-  \ Prüfung Signaturzertifikat QES des HBA</figcaption></div>\n\n und darf die OCSP-Response\
-  \ für die Abfrage des Zertifikatsstatus für 12 Stunden zwischenspeichern.\n Ist\
-  \ keine OCSP-Response eingebettet oder die eingebettete OCSP Response nicht gültig,\
-  \ MUSS der TI-Flow-Fachdienst die gecachte OCSP-Response verwenden oder eine OCSP-Response\
-  \ beim benannten TSP anfragen und die genutzte OCSP-Response nachträglich in den\
-  \ QES-Datensatz einbetten.\n Das Signaturzertifikat muss anhand der Zertifikatsprüfung\
-  \ für [mathematisch gültig UND zeitlich gültig UND online gültig ] befunden werden\
-  \ und der HTTP-Request andernfalls mit dem folgenden Fehler:\n <table id=\"error-code\"\
-  \ style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
-  \ <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
-  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
-  \ <td>TIFLOW_CERTIFICATE_INVALID</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n\
-  \ </tr>\n </table>\n HTTP-Status-Code 400 abgelehnt werden, damit sichergestellt\
-  \ wird, dass ausschließlich E-Rezepte verwaltet werden, die von einer gültigen,\
-  \ nicht gesperrten Heilberufsidentität eines HBA signiert wurden."
+  \ 1.2.276.0.76.4.72 gemäß gemSpec_OID)</li>\n </ul>\n </td>\n </tr>\n <tr>\n <td>Referenzzeitpunkt</td>\n\
+  \ <td>Zeitpunkt der QES-Erstellung gemäß signingTime im QES-Datensatz</td>\n </tr>\n\
+  \ <tr>\n <td>Offline-Modus</td>\n <td>nein</td>\n </tr>\n <tr>\n <td>OCSP-Response</td>\n\
+  \ <td>eingebettet in QES-Datensatz</td>\n </tr>\n </table>\n <div><figcaption><strong>Tabelle:\
+  \ </strong>TAB_eRPFD_006 Parameter Prüfung Signaturzertifikat QES des HBA</figcaption></div>\n\
+  \n <br>\n \n Der TI-Flow-Fachdienst MUSS, wenn keine OCSP-Response eingebettet oder\
+  \ die eingebettete OCSP Response nicht gültig ist, eine gecachte OCSP-Response verwenden,\
+  \ wenn die gecachte OCSP-Response nach den Signaturzeitpunkt erstellt wurde, oder\
+  \ eine OCSP-Response beim zugehörigen TSP anfragen.\n\n <br>\n\n Der TI-Flow-Fachdienst\
+  \ MUSS das Signaturzertifikat prüfen, für [mathematisch gültig UND zeitlich gültig\
+  \ UND online gültig ] befinden und andernfalls die Operation mit dem folgenden Fehler:\n\
+  \ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>TIFLOW_CERTIFICATE_INVALID</td>\n </tr>\n <tr>\n <th>Details\
+  \ Text</th>\n <td>-</td>\n </tr>\n </table>\n abbrechen, damit sichergestellt wird,\
+  \ dass ausschließlich Verordnungen verwaltet werden, die von einer gültigen, nicht\
+  \ gesperrten Heilberufsidentität eines HBA signiert wurden."
 title: TI-Flow-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA
 version: 1

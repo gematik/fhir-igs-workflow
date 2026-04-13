@@ -1,12 +1,12 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 99a8d16b81e4c6939a86a038a8a1a178cd7a1dcb7b73775246423c049ef31b70
+content_hash: 16ee6cfef6c10ebc6e371c254f1c66c338e9da785b7a75fdb6a31c45ca43674a
 created: '2026-03-23T10:57:48.469129'
-date: '2026-03-23T13:47:26.481813'
+date: '2026-04-13T10:29:56.396038'
 key: IG-TIFLOW-CORE-217
-modified: '2026-03-23T10:57:48.469131'
-release_status: STABLE
+modified: '2026-04-13T10:29:56.396038'
+release_status: MODIFIED
 source: input/pagecontent/op-create-req-fd.md
 status: ACTIVE
 test_procedures:
@@ -15,9 +15,16 @@ test_procedures:
 text: "Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation\
   \ die Rolle \"professionOID\" des Aufrufenden im ACCESS_TOKEN im HTTP-RequestHeader\
   \ \"Authorization\" feststellen und sicherstellen, dass ausschließlich verordnende\
-  \ Leistungserbringer in der Rolle\n <ul>\n <li>oid_praxis_arzt</li>\n <li>oid_zahnarztpraxis</li>\n\
-  \ <li>oid_praxis_psychotherapeut</li>\n <li>oid_krankenhaus</li>\n <li>oid_institution-vorsorge-reha</li>\n\
-  \ </ul> \n die Operation im Fachdienst aufrufen dürfen, damit E-Rezepte nicht durch\
-  \ zur Verordnung Unberechtigte eingestellt werden können."
+  \ Leistungserbringerinstitutionen in der Rolle\n <ul>\n <li>oid_praxis_arzt</li>\n\
+  \ <li>oid_zahnarztpraxis</li>\n <li>oid_praxis_psychotherapeut</li>\n <li>oid_krankenhaus</li>\n\
+  \ <li>oid_institution-vorsorge-reha</li>\n </ul> \n die Operation im Fachdienst\
+  \ aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table\
+  \ id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n </tr>\n <tr>\n\
+  \ <th>Details Text</th>\n <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation\
+  \ anzufordern</td>\n </tr>\n </table> \n abbrechen, damit Workflows nicht durch\
+  \ zur Verordnung Unberechtigte erstellt werden können."
 title: TI-Flow-Fachdienst - Task erzeugen - Rollenprüfung
-version: 0
+version: 1

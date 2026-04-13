@@ -1,28 +1,25 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 93bda97457f5970b6703023878a159345145063008744d24b5fe317aa6b081de
+content_hash: 26438b5606b6d09eac3104ff8d63870133f88a0f67d493ccab6cd340c9e0b5f3
 created: '2026-03-27T14:32:26.196031'
-date: '2026-03-27T14:32:26.196035'
+date: '2026-04-13T10:29:56.379068'
 key: IG-TIFLOW-CORE-408
-modified: '2026-03-27T14:32:26.196034'
+modified: '2026-04-13T10:29:56.379068'
 release_status: NEW
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produktgutachten
-text: "Der TI-Flow-Fachdienst MUSS das QES-Signaturzertifikat C.HP.QES in der Signatur\
-  \ des übergebenen QES-Datensatzes gemäß [gemSpec_PKI#TUC_PKI_030] auf Gültigkeit\
-  \ prüfen. Wenn die Abfrage des OCSP-Response für das Signaturzertifikat fehlschlägt,\
-  \ muss der HTTP-Request mit dem folgenden Fehler:\n      <table id=\"error-code\"\
-  \ style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n\
-  \            <th>HTTP-Code</th>\n            <td>512 - OCSP Backend Error</td>\n\
-  \        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n\
-  \        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n\
-  \        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_OCSP_BACKEND_ERROR</td>\n\
-  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>OCSP\
-  \ Backend Error</td>\n        </tr>\n    </table> HTTP-Status-Code 512 abgelehnt\
-  \ werden."
+text: "Der TI-Flow-Fachdienst MUSS, wenn im Rahmen der Prüfung der Gültigkeit eines\
+  \ QES-Signuturzertifikates C.HP.QES die Abfrage des OCSP-Response für das Signaturzertifikat\
+  \ fehlschlägt, die Operation mit dem folgenden Fehler:\n <table id=\"error-code\"\
+  \ style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>512 - OCSP Backend Error</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_OCSP_BACKEND_ERROR</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>OCSP\
+  \ Backend Error</td>\n </tr>\n </table>\n abgelehnt werden."
 title: TI-Flow-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA
+  - fehlender OCSP-Response
 version: 0

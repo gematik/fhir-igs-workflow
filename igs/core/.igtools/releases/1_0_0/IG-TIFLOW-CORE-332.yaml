@@ -1,11 +1,11 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 49695572ec6238e1c796b8d6bc7930394d3c16412b168e27721a04561ef9fb4a
+content_hash: 32ec8c98dc6f251868fff3cf87e921bff98e67ef523167e296671bc8f3112223
 created: '2026-03-23T10:57:48.508484'
-date: '2026-03-27T14:32:26.247460'
+date: '2026-04-13T10:29:56.431885'
 key: IG-TIFLOW-CORE-332
-modified: '2026-03-27T14:32:26.247460'
+modified: '2026-04-13T10:29:56.431885'
 release_status: MODIFIED
 source: input/pagecontent/query-api-communication-req-fd.md
 status: ACTIVE
@@ -14,8 +14,8 @@ test_procedures:
   - Produkttest
 text: "Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation\
   \ POST auf den Endpunkt /Communication mit GEM_ERP_PR_Communication_DispReq-Ressource\
-  \ für den in Communication.basedOn referenzierten Task prüfen, dass Task.status\
-  \ = ready und bei Ungleichheit mit dem folgenden Fehler:\n <table id=\"error-code\"\
+  \ für den in Communication.basedOn referenzierten Task prüfen und, wenn Task.status\
+  \ ungleich ready ist, die Operation mit dem folgenden Fehler:\n <table id=\"error-code\"\
   \ style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
   \ <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
   \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\

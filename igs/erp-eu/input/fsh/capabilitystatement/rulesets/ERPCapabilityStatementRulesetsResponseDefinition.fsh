@@ -66,7 +66,7 @@ RuleSet: GlobalOperationErrorCodes
 RuleSet: InstanceOperationStatusCodes
 * rest.resource[=].operation[=] insert ResourceIsNotKnown
 * rest.resource[=].operation[=] insert ResourceWasDeleted
-* insert GlobalOperationErrorCodes
+* rest.resource[=].operation[=] insert GlobalOperationErrorCodes
 
 RuleSet: TaskSearchTypeInteractionStatusCodes
 * insert SearchTypeInteractionStatusCodes
@@ -84,19 +84,19 @@ RuleSet: ConsentDeleteInteractionStatusCodes
 * insert DeleteInteractionStatusCodes
 
 RuleSet: GrantEUAccessPermissionOperationStatusCodes
-* insert SystemOperationStatusCodesWithParameters
+* rest.operation[=] insert SystemOperationStatusCodesWithParameters
 * rest.operation[=] insert TiflowAccessCodeInvalid
 * rest.operation[=] insert TiflowConsentRequired
 * rest.operation[=] insert TiflowXborderCountryCodeInvalid
 
 RuleSet: ReadEUAccessPermissionOperationStatusCodes
-* insert SystemOperationStatusCodesWithParameters
+* rest.operation[=] insert SystemOperationStatusCodesWithParameters
 
 RuleSet: RevokeEUAccessPermissionOperationStatusCodes
-* insert SystemQueryOperationStatusCodesWithNormalSuccess
+* rest.operation[=] insert SystemQueryOperationStatusCodesWithNormalSuccess
 
 RuleSet: GetEUPrescriptionsOperationStatusCodes
-* insert SystemOperationStatusCodesWithParameters
+* rest.resource[=].operation[=] insert SystemOperationStatusCodesWithParameters
 * rest.operation[=] insert SvcValidationFailed
 * rest.operation[=] insert TiflowAccessPermissionInvalid
 * rest.operation[=] insert TiflowAuthRoleNotAllowed

@@ -1,11 +1,11 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 46e77694966bc4654f68181ce3a0cf495bccd7e82a81c81b664d21416d54d56a
+content_hash: 03e914f614c830851191934138b77d02455c8289a02d838299c7961ec4c228f6
 created: '2026-03-23T10:57:49.329668'
-date: '2026-03-27T14:32:27.605604'
+date: '2026-04-13T10:29:57.477871'
 key: IG-TIFLOW-CHRG-85
-modified: '2026-03-27T14:32:27.605604'
+modified: '2026-04-13T10:29:57.477871'
 release_status: MODIFIED
 source: input/pagecontent/query-api-chargeitem-req-fd.md
 status: ACTIVE
@@ -14,16 +14,16 @@ test_procedures:
   - Produktgutachten
 text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete\
   \ über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende\
-  \ LEI, das Signaturzertifikats des PKV-Abgabedatensatzes prüfen. Das Signaturzertifikat\
-  \ muss anhand der Zertifikatsprüfung für [mathematisch gültig UND zeitlich gültig\
-  \ UND online gültig] befunden werden und der Aufruf anderenfalls mit dem folgenden\
-  \ Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
-  \ collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n\
-  \ <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n\
-  \ </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_CHARGEITEM_DISPENSE_CERTIFICATE_INVALID</td>\n\
+  \ LEI, das Signaturzertifikats des PKV-Abgabedatensatzes prüfen, das Signaturzertifikat\
+  \ anhand der Zertifikatsprüfung für [mathematisch gültig UND zeitlich gültig UND\
+  \ online gültig] befinden und anderenfalls die Operation mit dem folgenden Fehler:\n\
+  \ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>TIFLOW_CHARGEITEM_DISPENSE_CERTIFICATE_INVALID</td>\n\
   \ </tr>\n <tr>\n <th>Details Text</th>\n <td>Das Signaturzertifikat ist abgelaufen\
-  \ bzw. gesperrt.</td>\n </tr>\n </table>\n abgebrochen werden, um ausschließlich\
-  \ authentische Daten zu verwalten."
+  \ bzw. gesperrt.</td>\n </tr>\n </table>\n abbrechen, um ausschließlich authentische\
+  \ Daten zu verwalten."
 title: TI-Flow-Fachdienst – Abrechnungsinformation ändern – Apotheke – Prüfung Signaturzertifikat
   PKV-Abgabedatensatz
 version: 1

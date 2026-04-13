@@ -1,26 +1,27 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 14fc6fb08e127b17978976a78191d9c148033d7117bd3e97e418c24971fefcbd
+content_hash: 5f5c87e625be8b8ebc00b583b2c516bfb5452fc3df010330000a07bbc1b7f394
 created: '2026-03-23T10:57:48.469297'
-date: '2026-03-27T14:32:26.211704'
+date: '2026-04-13T10:29:56.396592'
 key: IG-TIFLOW-CORE-218
-modified: '2026-03-27T14:32:26.211704'
+modified: '2026-04-13T10:29:56.396592'
 release_status: MODIFIED
 source: input/pagecontent/op-create-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: "Der TI-Flow-Fachdienst MUSS die im Body der HTTP-POST-Operation auf die Ressource\
-  \ Task übertragenen Parameter gegen das Schema http://gematik.de/fhir/erp/OperationDefinition/CreateOperationDefinition\
-  \ prüfen und bei Nicht-Konformität das Anlegen der Ressource im Fachdienst mit dem\
-  \ folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black;\
-  \ border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n\
-  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
-  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n\
-  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR Profile Validation Failed</td>\n\
-  \ </tr>\n </table> \n beantworten, damit kein Schadcode und keine \"fachfremden\"\
-  \ Daten in den TI-Flow-Fachdienst hochgeladen werden."
+text: "Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation\
+  \ die im Body der HTTP-POST-Operation auf die Ressource Task übertragenen Parameter\
+  \ gegen das Schema http://gematik.de/fhir/erp/OperationDefinition/CreateOperationDefinition\
+  \ prüfen und bei Nicht-Konformität die Operation mit dem folgenden Fehler:\n <table\
+  \ id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details\
+  \ Text</th>\n <td>FHIR Profile Validation Failed</td>\n </tr>\n </table> \n abbrechen,\
+  \ damit kein Schadcode und keine \"fachfremden\" Daten in den TI-Flow-Fachdienst\
+  \ hochgeladen werden."
 title: TI-Flow-Fachdienst - Task erzeugen - Schemavalidierung Rezept anlegen
 version: 1

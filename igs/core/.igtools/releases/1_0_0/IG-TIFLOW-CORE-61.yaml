@@ -1,11 +1,11 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: b77ffd21053abde5b68851eefa9862c6da12095a417221ff307d848d3ef084be
+content_hash: 302e1bc36588fbedc8e3d252969f9d9c80f4ad8c69714fa31903c4afeae87320
 created: '2026-03-23T10:57:48.438522'
-date: '2026-03-27T14:32:26.161780'
+date: '2026-04-13T10:29:56.344989'
 key: IG-TIFLOW-CORE-61
-modified: '2026-03-27T14:32:26.161780'
+modified: '2026-04-13T10:29:56.344989'
 release_status: MODIFIED
 source: input/pagecontent/op-close-req-fd.md
 status: ACTIVE
@@ -14,13 +14,13 @@ test_procedures:
   - Produkttest
 text: "Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation\
   \ über /Task/&lt;id&gt;/$close den im referenzierten Task gespeicherten Status Task.status\
-  \ prüfen und mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border:\
-  \ 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403\
-  \ - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n\
-  \ <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
-  \ <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
-  \ <td>Task has invalid status.</td>\n </tr>\n </table>\n abbrechen, wenn Task.status\
-  \ ungleich \"in-progress\" ist, damit der Workflow nur abgeschlossen werden kann,\
-  \ wenn sich die Verordnung in Belieferung befindet."
+  \ prüfen und, wenn Task.status ungleich \"in-progress\" ist, die Operation mit dem\
+  \ folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black;\
+  \ border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n\
+  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
+  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>Task has invalid status.</td>\n </tr>\n\
+  \ </table>\n abbrechen, damit der Workflow nur abgeschlossen werden kann, wenn sich\
+  \ die Verordnung in Belieferung befindet."
 title: TI-Flow-Fachdienst - Task schließen - Prüfung Status
 version: 1

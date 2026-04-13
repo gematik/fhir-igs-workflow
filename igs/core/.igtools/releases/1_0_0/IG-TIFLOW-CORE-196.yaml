@@ -1,25 +1,24 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: a873b0f59f841634d0c197474068bc6f4c506a9ae29737d1a27fc977f10eff85
+content_hash: da513a17f8a9ee46fc30eee409c2ff5951cbdf048ac5c0579e8fe8b5daa2d6b3
 created: '2026-03-23T10:57:48.464717'
-date: '2026-03-27T14:32:26.204303'
+date: '2026-04-13T10:29:56.388084'
 key: IG-TIFLOW-CORE-196
-modified: '2026-03-27T14:32:26.204303'
+modified: '2026-04-13T10:29:56.388084'
 release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: "Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation\
-  \ über /Task/&lt;id&gt;/$activate die Operation mit dem folgenden Fehler:\n <table\
-  \ id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
-  >\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
-  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
-  \ <th>Details Code</th>\n <td>TIFLOW_EREZEPT_PZN_INVALID</td>\n </tr>\n <tr>\n <th>Details\
-  \ Text</th>\n <td>Länge PZN unzulässig (muss 8-stellig sein)</td>\n </tr>\n </table>\
-  \ \n abbrechen, wenn die PZN einer übergebenen PZN-Verordnung in KBV_PR_ERP_Medication_PZN.code.coding.code\
-  \ nicht 8-stellig ist."
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&#60;id&#62;/$activate,\
+  \ wenn die PZN einer übergebenen PZN-Verordnung in KBV_PR_ERP_Medication_PZN.code.coding.code\
+  \ nicht 8-stellig ist, die Operation mit dem folgenden Fehler:\n <table id=\"error-code\"\
+  \ style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_EREZEPT_PZN_INVALID</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Länge\
+  \ PZN unzulässig (muss 8-stellig sein)</td>\n </tr>\n </table> \n abbrechen."
 title: TI-Flow-Fachdienst - Task aktivieren - Längenprüfung PZN
 version: 1

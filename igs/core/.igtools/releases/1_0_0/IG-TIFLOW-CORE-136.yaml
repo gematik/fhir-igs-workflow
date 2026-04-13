@@ -1,11 +1,11 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: c6862f974a78c91a861fadeea17c9d20293c7460c90a8026a7267c67298a0c48
+content_hash: 30cec94018da8f6f2319dc918d302944ee1051cb4cee7b00dbbe806ef95e61d2
 created: '2026-03-23T10:57:48.452698'
-date: '2026-03-27T14:32:26.181830'
+date: '2026-04-13T10:29:56.365981'
 key: IG-TIFLOW-CORE-136
-modified: '2026-03-27T14:32:26.181830'
+modified: '2026-04-13T10:29:56.365981'
 release_status: MODIFIED
 source: input/pagecontent/query-api-auditevent-req-fd.md
 status: ACTIVE
@@ -17,12 +17,13 @@ text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den En
   \ sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die\
   \ Operation am Fachdienst aufrufen dürfen und die Rolle \"professionOID\" des Aufrufers\
   \ im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen, und bei Abweichungen\
-  \ mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid\
-  \ black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n\
-  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
-  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n\
-  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>Der Nutzer ist nicht berechtigt, die\
-  \ aufgerufene Operation anzufordern</td>\n </tr>\n </table> \n abrechen, damit Protokolleinträge\
-  \ nicht durch Unberechtigte ausgelesen werden können."
+  \ die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border:\
+  \ 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403\
+  \ - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n\
+  \ <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n\
+  \ </tr>\n </table> \n abbrechen, damit Protokolleinträge nicht durch Unberechtigte\
+  \ ausgelesen werden können."
 title: TI-Flow-Fachdienst - AuditEvent lesen - Rollenprüfung
 version: 1

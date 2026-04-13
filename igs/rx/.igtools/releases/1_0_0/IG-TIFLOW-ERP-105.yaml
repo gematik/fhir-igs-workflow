@@ -1,11 +1,11 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 73e592dda3575ed46bcd95e1e4ded20c83b57a83d79a73c657a7af6da4955d92
+content_hash: ce6a7fea40f1c983972dc468e320323ec7ea2e04b6250b2b759600536b271e98
 created: '2026-03-23T10:57:49.812482'
-date: '2026-03-27T14:32:28.759906'
+date: '2026-04-13T10:29:58.855905'
 key: IG-TIFLOW-ERP-105
-modified: '2026-03-27T14:32:28.759906'
+modified: '2026-04-13T10:29:58.855905'
 release_status: MODIFIED
 source: input/pagecontent/op-accept-req-fd.md
 status: ACTIVE
@@ -13,19 +13,21 @@ test_procedures:
   TI_Flow_FD:
   - Produkttest
 text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
-  \ über /Task/&lt;id&gt;/$accept die Operation mit dem folgenden Fehler:\n <table\
-  \ id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
-  >\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
-  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
-  \ <th>Details Code</th>\n <td>TIFLOW_EREZEPT_MVO_NOT_VALID</td>\n </tr>\n <tr>\n\
-  \ <th>Details Text</th>\n <td>Teilverordnung zur Mehrfachverordnung %1 ist ab %2 einlösbar.</td>\n\
-  \ </tr>\n </table> \n abbrechen, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen\
-  \ = true) gekennzeichnet ist und und der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start)\
-  \ zu einem späteren Zeitpunkt als das aktuelle Datum liegt, da Teilverordnungen\
+  \ über /Task/&lt;id&gt;/$accept prüfen und, wenn die Verordnung als Mehrfachverordnung\
+  \ (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true)\
+  \ gekennzeichnet ist und und der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start)\
+  \ zu einem späteren Zeitpunkt als das aktuelle Datum liegt, die Operation mit dem\
+  \ folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black;\
+  \ border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n\
+  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
+  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_EREZEPT_MVO_NOT_VALID</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>Teilverordnung zur Mehrfachverordnung\
+  \ %1 ist ab %2 einlösbar.</td>\n </tr>\n </table> \n abbrechen, da Teilverordnungen\
   \ von Mehrfachverordnungen erst ab Beginn der Einlösefrist abgerufen werden dürfen.\
-  \ Im Falle dieses Fehlers ist im OperationOutcome des Response der Beginn der Einlösefrist\
-  \ wie folgt anzugeben: \"Teilverordnung zur Mehrfachverordnung &lt;MVO Referenz&gt;\
-  \ ist ab &lt;Datum&gt; einlösbar.\", wobei &lt;MVO Referenz&gt; der Wert MedicationRequest.extension:Mehrfachverordnung.extension:ID.value[x]:valueIdentifier.value\
+  \ \n Im Falle dieses Fehlers ist im OperationOutcome des Response der Beginn der\
+  \ Einlösefrist wie folgt anzugeben: \"Teilverordnung zur Mehrfachverordnung &lt;MVO\
+  \ Referenz&gt; ist ab &lt;Datum&gt; einlösbar.\", wobei &lt;MVO Referenz&gt; der\
+  \ Wert MedicationRequest.extension:Mehrfachverordnung.extension:ID.value[x]:valueIdentifier.value\
   \ sowie &lt;Datum&gt; der Wert MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start\
   \ im Format \"dd.mm.yyyy\" ist."
 title: TI-Flow-Fachdienst - Task akzeptieren - Mehrfachverordnung - Beginn Einlösefrist

@@ -3,7 +3,7 @@
 Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für die AuditEvent-Query-Endpunkte.
 
 <!-- A_19402 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-135" title="TI-Flow-Fachdienst - unzulässige Operationen AuditEvent" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-135" title="TI-Flow-Fachdienst - unzulässige Operationen AuditEvent" version="1">
   <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>

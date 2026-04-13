@@ -1,11 +1,11 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 51a0f51663ad44e308ff92dd79b943757677b17544666bee2f49b50c9492189a
+content_hash: a8eb6fe9623fe3ada49ec74e0acb3ff2136833b85d155e8d38de8e5108ffbf09
 created: '2026-03-23T10:57:49.328441'
-date: '2026-03-27T14:32:27.601480'
+date: '2026-04-13T10:29:57.473945'
 key: IG-TIFLOW-CHRG-77
-modified: '2026-03-27T14:32:27.601480'
+modified: '2026-04-13T10:29:57.473945'
 release_status: MODIFIED
 source: input/pagecontent/query-api-chargeitem-req-fd.md
 status: ACTIVE
@@ -14,13 +14,12 @@ test_procedures:
   - Produkttest
 text: "Der TI-Flow-Fachdienst MUSS die in der HTTP-PATCH-Operation auf die Ressource\
   \ Chargeltem übertragene Parameters Ressource gegen das FHIR-Profil GEM_ERPCHRG_PR_PAR_Patch_ChargeItem_Input\
-  \ prüfen und bei Nicht-Konformität das Verarbeiten der Ressource im TI-Flow-Fachdienst\
-  \ mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid\
-  \ black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad\
-  \ Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n\
-  \ <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n\
-  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR Profile Validation Failed</td>\n\
-  \ </tr>\n </table> \n ablehnen."
+  \ prüfen und bei Nicht-Konformität die Operation mit dem folgenden Fehler:\n <table\
+  \ id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details\
+  \ Text</th>\n <td>FHIR Profile Validation Failed</td>\n </tr>\n </table> \n abbrechen."
 title: TI-Flow-Fachdienst - Abrechnungsinformation ändern (PATCH) - FHIR-Validierung
   Parameters
 version: 1

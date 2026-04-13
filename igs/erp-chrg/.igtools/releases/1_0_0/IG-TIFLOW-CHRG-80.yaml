@@ -1,11 +1,11 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 49154c92c15fed7fa225c49e1c4d659a4f1a9ddecef3f1c421c7febac2db15a2
+content_hash: b942bb05fef8d980d11a6a82a435b7f51223d6cb0d134f939a074b38aa90e9c4
 created: '2026-03-23T10:57:49.328953'
-date: '2026-03-27T14:32:27.603040'
+date: '2026-04-13T10:29:57.475439'
 key: IG-TIFLOW-CHRG-80
-modified: '2026-03-27T14:32:27.603040'
+modified: '2026-04-13T10:29:57.475439'
 release_status: MODIFIED
 source: input/pagecontent/query-api-chargeitem-req-fd.md
 status: ACTIVE
@@ -17,13 +17,13 @@ text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine k
   \ Leistungserbringerinstitution (Apotheke), diese anhand der Telematik-ID aus dem\
   \ ACCESS_TOKEN im \"Authorization\"-Header des HTTP-Requests identifizieren, diese\
   \ gegen die im gespeicherten Datensatz in ChargeItem.enterer.identifier hinterlegte\
-  \ Telematik-ID prüfen und bei Ungleichheit den Aufruf mit dem folgenden Fehler:\n\
+  \ Telematik-ID prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:\n\
   \ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
   >\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
   \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
   \ <th>Details Code</th>\n <td>SVC_IDENTITY_MISMATCH</td>\n </tr>\n <tr>\n <th>Details\
   \ Text</th>\n <td>Identity mismatch: Access token or x-insurantid header does not\
-  \ match FHIR data (Telematik-ID / KVNR)</td>\n </tr>\n </table> \n abweisen, damit\
+  \ match FHIR data (Telematik-ID / KVNR)</td>\n </tr>\n </table> \n abbrechen, damit\
   \ ausschließlich die Apotheke, welche die Abrechnungsinformation bereitgestellt\
   \ hat, diese ändert."
 title: TI-Flow-Fachdienst – Abrechnungsinformation ändern – Apotheke – Prüfung Telematik-ID

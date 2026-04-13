@@ -1,11 +1,11 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 2c5133654864eaa81a132bb42887abb2dab7ec18f9d64eb22cb72f3543bb7c40
+content_hash: d5c74331c0f5725accf82fcbff5fac26d6fe8b1af24a031b5ad84c60bb037740
 created: '2026-03-23T10:57:48.433681'
-date: '2026-03-27T14:32:26.156374'
+date: '2026-04-13T10:29:56.338781'
 key: IG-TIFLOW-CORE-40
-modified: '2026-03-27T14:32:26.156374'
+modified: '2026-04-13T10:29:56.338781'
 release_status: MODIFIED
 source: input/pagecontent/op-reject-req-fd.md
 status: ACTIVE
@@ -14,13 +14,13 @@ test_procedures:
   - Produkttest
 text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
   \ über /Task/&#60;id&#62;/$reject den im referenzierten Task gespeicherten Status\
-  \ Task.status prüfen und mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"\
-  border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
-  \ <td>412 - Precondition Failed</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
-  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
-  \ <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
-  \ <td>Task has invalid status.</td>\n </tr>\n </table>\n abbrechen, wenn Task.status\
-  \ ungleich \"in-progress\" ist, damit die Verordnung nur zurückgegeben werden kann,\
-  \ wenn sich die Verordnung in Belieferung befindet."
+  \ Task.status prüfen und, wenn Task.status ungleich \"in-progress\" ist, die Operation\
+  \ mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid\
+  \ black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>412 - Precondition\
+  \ Failed</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n\
+  \ <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>Task has invalid status.</td>\n </tr>\n\
+  \ </table>\n abbrechen, damit die Verordnung nur zurückgegeben werden kann, wenn\
+  \ sich die Verordnung in Belieferung befindet."
 title: TI-Flow-Fachdienst - Task zurückweisen - Prüfung Status
 version: 1

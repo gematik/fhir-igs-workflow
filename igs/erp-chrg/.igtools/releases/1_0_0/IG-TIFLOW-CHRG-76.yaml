@@ -1,11 +1,11 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: ee83055dd39168f44568e0b44538623073df9ac44a3893fc73666b5f502e38ea
+content_hash: ceb4e36fd2c31a5ea9b3d71d29f8d2b04355cefa4057e52b84b70bda7131b76c
 created: '2026-03-23T10:57:49.328283'
-date: '2026-03-27T14:32:27.600958'
+date: '2026-04-13T10:29:57.473457'
 key: IG-TIFLOW-CHRG-76
-modified: '2026-03-27T14:32:27.600958'
+modified: '2026-04-13T10:29:57.473457'
 release_status: MODIFIED
 source: input/pagecontent/query-api-chargeitem-req-fd.md
 status: ACTIVE
@@ -17,13 +17,13 @@ text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine
   \ den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im \"Authorization\"-Header\
   \ des HTTP-Requests identifizieren, diese gegen die im gespeicherten Datensatz in\
   \ ChargeItem.subject.identifier hinterlegte KVNR des begünstigten Versicherten prüfen\
-  \ und bei Ungleichheit den Aufruf mit dem folgenden Fehler:\n <table id=\"error-code\"\
+  \ und bei Ungleichheit die Operation mit dem folgenden Fehler:\n <table id=\"error-code\"\
   \ style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
   \ <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
   \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
   \ <td>SVC_IDENTITY_MISMATCH</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Identity\
   \ mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID\
-  \ / KVNR)</td>\n </tr>\n </table> \n abweisen, damit ausschließlich der begünstigte\
+  \ / KVNR)</td>\n </tr>\n </table> \n abbrechen, damit ausschließlich der begünstigte\
   \ Versicherte eine Abrechnungsinformation ändert."
 title: TI-Flow-Fachdienst – Abrechnungsinformation ändern (PATCH) – Versicherter –
   Prüfung KVNR

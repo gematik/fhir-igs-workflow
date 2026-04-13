@@ -1,21 +1,21 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: b47ef27cae393695d32fcdf56e1b3ee0c6bfcec300f6d9bae113dcefd2267e89
+content_hash: f0cf9f9370a649e21ea785f0fee5c559036c4c858fe885d84fbfbb7855dd867b
 created: '2026-03-23T10:57:48.462656'
-date: '2026-03-23T13:47:26.473407'
+date: '2026-04-13T10:29:56.383087'
 key: IG-TIFLOW-CORE-183
-modified: '2026-03-23T10:57:48.462658'
-release_status: STABLE
+modified: '2026-04-13T10:29:56.383087'
+release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produktgutachten
-text: Der TI-Flow-Fachdienst MUSS im Zugriff auf einen Task mittels HTTP-POST-Operation
+text: Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
   über /Task/&#60;id&#62;/$activate die KVNR des Patienten dem Identifier http://fhir.de/sid/gkv/kvid-10
   der Patient-Ressource im E-Rezept-Bundle entnehmen und diesen als Identifier in
   Task.for mit system http://fhir.de/sid/gkv/kvid-10 hinzufügen, damit ausschließlich
   eine gültige, vom Arzt signierte Patientenreferenz im Workflow verwendet wird.
 title: TI-Flow-Fachdienst - Task aktivieren - Übernahme der Versicherten-ID
-version: 0
+version: 1

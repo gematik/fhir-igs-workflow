@@ -1,11 +1,11 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: fe7af8b73c5065fd4770acb3f1e0c8f921dbc4ca1760522faa600fbb9b968791
+content_hash: f11cea4c7a5a3265c7e9d029c41418b0d293f5eb04fcea30b7bb80ee2d1ab237
 created: '2026-03-23T10:57:49.785381'
-date: '2026-03-27T14:32:28.724551'
+date: '2026-04-13T10:29:58.822182'
 key: IG-TIFLOW-ERP-35
-modified: '2026-03-27T14:32:28.724551'
+modified: '2026-04-13T10:29:58.822182'
 release_status: MODIFIED
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
@@ -15,14 +15,14 @@ test_procedures:
 text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen\
   \ /Task/&lt;id&gt; durch einen Versicherten, wenn Task.extension:flowType = 169\
   \ oder 209 und die KVNR des Aufrufenden (KVNR des ACCESS_TOKEN im \"Authorization\"\
-  -Header des HTTP-Requests) ungleich der KVNR in Task.for ist, mit dem folgenden\
-  \ Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
-  \ collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n\
-  \ <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n\
-  \ </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_IDENTITY_MISMATCH</td>\n </tr>\n\
-  \ <tr>\n <th>Details Text</th>\n <td>Identity mismatch: Access token or x-insurantid\
-  \ header does not match FHIR data (Telematik-ID / KVNR)</td>\n </tr>\n </table>\
-  \ \n abbrechen."
+  -Header des HTTP-Requests) ungleich der KVNR in Task.for ist, die Operation mit\
+  \ dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black;\
+  \ border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n\
+  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
+  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_IDENTITY_MISMATCH</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>Identity mismatch: Access token or\
+  \ x-insurantid header does not match FHIR data (Telematik-ID / KVNR)</td>\n </tr>\n\
+  \ </table> \n abbrechen."
 title: TI-Flow-Fachdienst - Task abrufen - Flowtype 169/209 - Nicht verfügbar bei
   KVNR-Mismatch
 version: 1

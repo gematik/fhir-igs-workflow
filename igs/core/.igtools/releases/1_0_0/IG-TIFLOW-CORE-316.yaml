@@ -1,19 +1,25 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: d72be1790acc7a654725dff0c48a9d4ac15452ed9b6d2ff583ad122e240f4b38
+content_hash: 59cd1e4a767ed21a68ebc3798eda882bbf57ee680f11b51e5e0ee7fd05b3ac09
 created: '2026-03-23T10:57:48.503969'
-date: '2026-03-23T13:47:26.509020'
+date: '2026-04-13T10:29:56.425546'
 key: IG-TIFLOW-CORE-316
-modified: '2026-03-23T10:57:48.503971'
-release_status: STABLE
+modified: '2026-04-13T10:29:56.425546'
+release_status: MODIFIED
 source: input/pagecontent/query-api-communication-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produktgutachten
-text: Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Communication mittels
-  der HTTP-Operationen PUT, PATCH und HEAD unterbinden, damit keine unzulässigen Operationen
-  auf den Kommunikationsnachrichten ausgeführt werden können.
+text: "Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Communication mittels\
+  \ der HTTP-Operationen PUT, PATCH und HEAD unterbinden und mit mit dem folgenden\
+  \ Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
+  \ collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>405 - Method Not Allowed</td>\n\
+  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
+  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_METHOD_NOT_ALLOWED</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen,\
+  \ damit keine unzulässigen Operationen auf den Kommunikationsnachrichten ausgeführt\
+  \ werden können."
 title: TI-Flow-Fachdienst - Communication - unzulässige Operationen
-version: 0
+version: 1

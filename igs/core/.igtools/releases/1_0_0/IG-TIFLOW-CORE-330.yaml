@@ -1,11 +1,11 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: d094628eb02c9702c791249b332a046e32547dbef9f8e78cd4da1d61551fc79f
+content_hash: 0367088845419674ddcfbc37fc5e38c297820f79a13d9a2f97d98ad42195285b
 created: '2026-03-23T10:57:48.508087'
-date: '2026-03-27T14:32:26.246421'
+date: '2026-04-13T10:29:56.430852'
 key: IG-TIFLOW-CORE-330
-modified: '2026-03-27T14:32:26.246421'
+modified: '2026-04-13T10:29:56.430852'
 release_status: MODIFIED
 source: input/pagecontent/query-api-communication-req-fd.md
 status: ACTIVE
@@ -16,17 +16,18 @@ text: "Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht des Profils \
   https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq\"\
   \ durch einen Versicherten über die http-Operation POST auf den Endpunkt /Communication\
   \ die Zulässigkeit der Übermittlung auf Basis des Flowtypes des referenzierten Tasks\
-  \ (Task.extension:flowType) und dem Empfänger Communication.recipient prüfen und\
-  \ mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid\
-  \ black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n\
-  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
-  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_RECIPIENT_INVALID</td>\n\
-  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen,\
+  \ (Task.extension:flowType) und dem Empfänger Communication.recipient prüfen und,\
   \ wenn der Empfänger laut TAB_eRPFD_028 den spezifischen Flowtype nicht empfangen\
-  \ darf.\n <table>\n <tr> \n\t\t<th>Empfänger (Präfix der Telematik-ID)</th>\n\t\t\
-  <th>Zulässige Flowtypes</th>\n\t</tr>\n\t<tr> \n\t\t<td>oid_oeffentliche_apotheke\
-  \ (3-*, 9-*)</td>\n\t\t<td>160, 166, 200</td>\n\t</tr>\n <tr> \n\t\t<td>oid_kostentraeger\
-  \ (8-*)</td>\n\t\t<td>162</td>\n\t</tr>\n </table>\n <div><figcaption><strong>Tabelle:\
-  \ </strong>Tab_eRPFD_028 Zulässige Empfänger Communication_DispReq</figcaption></div>"
+  \ darf, die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"\
+  border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_RECIPIENT_INVALID</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n\
+  \ </tr>\n </table> \n abbrechen.\n <br>\n <table>\n <tr> \n\t\t<th>Empfänger (Präfix\
+  \ der Telematik-ID)</th>\n\t\t<th>Zulässige Flowtypes</th>\n\t</tr>\n\t<tr> \n\t\
+  \t<td>oid_oeffentliche_apotheke (3-*, 9-*)</td>\n\t\t<td>160, 166, 200</td>\n\t\
+  </tr>\n <tr> \n\t\t<td>oid_kostentraeger (8-*)</td>\n\t\t<td>162</td>\n\t</tr>\n\
+  \ </table>\n <div><figcaption><strong>Tabelle: </strong>Tab_eRPFD_028 Zulässige\
+  \ Empfänger Communication_DispReq</figcaption></div>"
 title: TI-Flow-Fachdienst - Nachricht einstellen - Prüfung des Empfängers
 version: 1

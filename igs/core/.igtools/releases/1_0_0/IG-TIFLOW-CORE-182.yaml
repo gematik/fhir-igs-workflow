@@ -1,25 +1,26 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 86d877bf8dc237ff208b3a0fabd4479df6b92a9e726d97db4875e310d5c645d6
+content_hash: d4b7b9d05f5cd7c4c371942c3f24ef00678677d43b4650aa43f81a020b5a73bb
 created: '2026-03-23T10:57:48.462526'
-date: '2026-03-27T14:32:26.198988'
+date: '2026-04-13T10:29:56.382800'
 key: IG-TIFLOW-CORE-182
-modified: '2026-03-27T14:32:26.198988'
+modified: '2026-04-13T10:29:56.382800'
 release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: "Der TI-Flow-Fachdienst MUSS den Aufruf der http-POST-Operation /Task/&#60;id&#62;/$activate\
-  \ mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid\
-  \ black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad\
-  \ Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n\
-  \ <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_SIGNATURE_AUTHOREDON_MISMATCH</td>\n\
-  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>Ausstellungsdatum und Signaturzeitpunkt\
-  \ weichen voneinander ab, müssen aber taggleich sein</td>\n </tr>\n </table> \n\
-  \ abweisen, wenn das Datum authoredOn zur Gültigkeitsberechnung des E-Rezepts nicht\
-  \ dem Datum in QES.Erstellung im Signaturobjekt entspricht."
+text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
+  \ über /Task/&#60;id&#62;/$activate, wenn das Datum authoredOn zur Gültigkeitsberechnung\
+  \ der Verordnung nicht dem Datum in QES.Erstellung im Signaturobjekt entspricht,\
+  \ die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border:\
+  \ 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400\
+  \ - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n\
+  \ <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_SIGNATURE_AUTHOREDON_MISMATCH</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>Ausstellungsdatum und Signaturzeitpunkt weichen voneinander ab, müssen aber\
+  \ taggleich sein</td>\n </tr>\n </table> \n abbrechen."
 title: TI-Flow-Fachdienst - Task aktivieren - Prüfregel Ausstellungsdatum
 version: 1

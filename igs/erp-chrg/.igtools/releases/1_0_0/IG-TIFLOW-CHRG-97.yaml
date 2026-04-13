@@ -1,11 +1,11 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 9d823bdb1dd811fd169e5c8250c625964d3cc9e7d9ffc5ffc5187f400cea933a
+content_hash: 1cd5c5aed20e8f5ccc849ac8549de4387af861bc214de3473c5078d215d994ab
 created: '2026-03-27T14:32:27.598395'
-date: '2026-03-27T14:32:27.598398'
+date: '2026-04-13T10:29:57.471005'
 key: IG-TIFLOW-CHRG-97
-modified: '2026-03-27T14:32:27.598397'
+modified: '2026-04-13T10:29:57.471005'
 release_status: NEW
 source: input/pagecontent/query-api-chargeitem-req-fd.md
 status: ACTIVE
@@ -13,16 +13,14 @@ test_procedures:
   TI_Flow_FD:
   - Produktgutachten
 text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt\
-  \ /ChargeItem das Signaturzertifikats des PKV-Abgabedatensatzes prüfen. Wenn die\
-  \ Abfrage des OCSP-Response für das Signaturzertifikat fehlschlägt, muss der HTTP-Request\
-  \ mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px\
-  \ solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n\
-  \            <td>512 - OCSP Backend Error</td>\n        </tr>\n        <tr>\n  \
-  \          <th>Severity</th>\n            <td>error</td>\n        </tr>\n      \
-  \  <tr>\n            <th>Code</th>\n            <td>transient</td>\n        </tr>\n\
-  \        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_OCSP_BACKEND_ERROR</td>\n\
-  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n\
-  \        </tr>\n    </table> \n    abgelehnt werden."
+  \ /ChargeItem das Signaturzertifikats des PKV-Abgabedatensatzes prüfen und, wenn\
+  \ die Abfrage des OCSP-Response für das Signaturzertifikat fehlschlägt, die Operation\
+  \ mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid\
+  \ black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>512 - OCSP\
+  \ Backend Error</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n\
+  \ <tr>\n <th>Code</th>\n <td>transient</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_OCSP_BACKEND_ERROR</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n\
+  \ </tr>\n </table> \n abbrechen."
 title: TI-Flow-Fachdienst – Abrechnungsinformation bereitstellen – Prüfung Signaturzertifikat
   PKV-Abgabedatensatz
 version: 0

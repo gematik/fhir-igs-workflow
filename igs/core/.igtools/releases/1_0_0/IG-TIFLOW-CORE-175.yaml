@@ -1,11 +1,11 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 0f728af6911885fecd3e54a5b584b65e14b2eaf7a739d9fa1df88401675664fd
+content_hash: 7001b39c6092b8372d8116d00622e4b1b3e3a516e9c761566bbfda4d2092edec
 created: '2026-03-23T10:57:48.461204'
-date: '2026-03-27T14:32:26.193929'
+date: '2026-04-13T10:29:56.377061'
 key: IG-TIFLOW-CORE-175
-modified: '2026-03-27T14:32:26.193929'
+modified: '2026-04-13T10:29:56.377061'
 release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
@@ -14,12 +14,12 @@ test_procedures:
   - Produkttest
 text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
   \ über /Task/&#60;id&#62;/$activate den im referenzierten Task gespeicherten Status\
-  \ Task.status prüfen und mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"\
-  border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
-  \ <td>412 - Precondition Failed</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
-  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
-  \ <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
-  \ <td>Task has invalid status.</td>\n </tr>\n </table> \n abbrechen, wenn Task.status\
-  \ ungleich \"draft\" ist."
+  \ Task.status prüfen und, wenn Task.status ungleich \"draft\" ist, die Operation\
+  \ mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid\
+  \ black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>412 - Precondition\
+  \ Failed</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n\
+  \ <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>Task has invalid status.</td>\n </tr>\n\
+  \ </table> \n abbrechen."
 title: TI-Flow-Fachdienst - Task aktivieren - Prüfung Status
 version: 1

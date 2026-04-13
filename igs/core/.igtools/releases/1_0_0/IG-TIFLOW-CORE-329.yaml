@@ -1,11 +1,11 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: a649cab8e531f50c90a2a6855a934185bcdd57dffb5280e2c35d7bf8f6ebecbb
+content_hash: 46f51a806a4e8ec8d4ce750a003d2c7060ed0c8a032a0fe9f66541d2a8cd5e78
 created: '2026-03-23T10:57:48.507722'
-date: '2026-03-27T14:32:26.245782'
+date: '2026-04-13T10:29:56.430231'
 key: IG-TIFLOW-CORE-329
-modified: '2026-03-27T14:32:26.245782'
+modified: '2026-04-13T10:29:56.430231'
 release_status: MODIFIED
 source: input/pagecontent/query-api-communication-req-fd.md
 status: ACTIVE
@@ -14,14 +14,14 @@ test_procedures:
   - Produkttest
 text: "Der TI-Flow-Fachdienst MUSS das Einstellen einer Nachricht des Profils \"https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq\"\
   \ durch einen Versicherten über die http-Operation POST auf den Endpunkt /Communication\
-  \ mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid\
-  \ black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad\
-  \ Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n\
-  \ <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_INSURANT_NOT_ELIGIBLE</td>\n\
-  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen,\
-  \ wenn die KVNR des in Communication.basedOn referenzierten Tasks Task.for ungleich\
-  \ der KVNR des Einstellenden in \"idNummer\" des übergebenen ACCESS_TOKEN ist, um\
-  \ irreführende Testnachrichten zu unterbinden, die eine vermeidbare Mehrbelastung\
-  \ für den TI-Flow-Fachdienst darstellen."
+  \ den Versichertenbezug prüfen und, wenn die KVNR des in Communication.basedOn referenzierten\
+  \ Tasks Task.for ungleich der KVNR des Einstellenden in \"idNummer\" des übergebenen\
+  \ ACCESS_TOKEN ist, die Operation mit dem folgenden Fehler:\n <table id=\"error-code\"\
+  \ style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_INSURANT_NOT_ELIGIBLE</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>-</td>\n </tr>\n </table> \n abbrechen, um irreführende Testnachrichten zu\
+  \ unterbinden, die eine vermeidbare Mehrbelastung für den TI-Flow-Fachdienst darstellen."
 title: TI-Flow-Fachdienst - Nachricht einstellen - Prüfung Versichertenbezug
 version: 1

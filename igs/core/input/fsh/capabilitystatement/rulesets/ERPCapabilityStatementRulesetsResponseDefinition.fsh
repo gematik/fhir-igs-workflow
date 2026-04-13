@@ -130,18 +130,18 @@ RuleSet: GlobalOperationErrorCodes
 // Type and Instancelevel Operations ([base]/Task/$operation or [base]/Task/<id>/$operation)
 RuleSet: SystemOperationStatusCodes
 * rest.resource[=].operation[=] insert OpUnknown
-* insert GlobalOperationErrorCodes
+* rest.operation[=] insert GlobalOperationErrorCodes
 
 RuleSet: TypeOperationStatusCodes
 * rest.resource[=].operation[=] insert OpUnknown
 * rest.resource[=].operation[=] insert OpNotAllowed
 * rest.resource[=].operation[=] insert UnknownResourceType
-* insert GlobalOperationErrorCodes
+* rest.resource[=].operation[=] insert GlobalOperationErrorCodes
 
 RuleSet: InstanceOperationStatusCodes
 * rest.resource[=].operation[=] insert ResourceIsNotKnown
 * rest.resource[=].operation[=] insert ResourceWasDeleted
-* insert GlobalOperationErrorCodes
+* rest.resource[=].operation[=] insert GlobalOperationErrorCodes
 
 //Konkrete Operationen
 
@@ -151,7 +151,9 @@ RuleSet: TaskCreateOperationStatusCodes
 * rest.resource[=].operation[=] insert SvcValidationFailed
 * insert TypeOperationStatusCodes
 
-// Task/<id>/$activate
+// Task/<id>/$activate* rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
+* rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
+
 RuleSet: TaskActivateOperationStatusCodes
 * rest.resource[=].operation[=] insert SuccessfulWithParameters
 * rest.resource[=].operation[=] insert SvcValidationFailed

@@ -1,19 +1,25 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 7abb127afc0a6a352f48bd2bc85b7e5ac0822013aea05147a49ca96f3fa52aa3
+content_hash: 3d562a68cf81111fc92f266b77f85e5b98ac398e234175e3660cac22bd84e4e7
 created: '2026-03-23T10:57:48.451804'
-date: '2026-03-23T13:47:26.461072'
+date: '2026-04-13T10:29:56.363849'
 key: IG-TIFLOW-CORE-130
-modified: '2026-03-23T10:57:48.451805'
-release_status: STABLE
+modified: '2026-04-13T10:29:56.363849'
+release_status: MODIFIED
 source: input/pagecontent/query-api-medicationdispense-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produktgutachten
-text: Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource MedicationDispense
-  mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE sowie POST unterbinden,
-  damit keine unzulässigen Operationen auf den Rezeptdaten ausgeführt werden können.
+text: "Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource MedicationDispense\
+  \ mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE sowie POST unterbinden\
+  \ und mit mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px\
+  \ solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>405\
+  \ - Method Not Allowed</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>SVC_METHOD_NOT_ALLOWED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n\
+  \ </tr>\n </table> \n abbrechen, damit keine unzulässigen Operationen auf den Rezeptdaten\
+  \ ausgeführt werden können."
 title: TI-Flow-Fachdienst - MedicationDispense - unzulässige Operationen
-version: 0
+version: 1

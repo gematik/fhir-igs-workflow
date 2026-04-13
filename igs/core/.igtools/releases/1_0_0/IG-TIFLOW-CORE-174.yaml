@@ -1,11 +1,11 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 85002ac34d6462c6630a99d84c48c887ac9fcace5755d90e8e8ea33fd2110822
+content_hash: d0b84b8c48339d7f297372fd2c9d7ce5152cd46911105914b9c2d07949b5a2c0
 created: '2026-03-23T10:57:48.461073'
-date: '2026-03-27T14:32:26.193355'
+date: '2026-04-13T10:29:56.376565'
 key: IG-TIFLOW-CORE-174
-modified: '2026-03-27T14:32:26.193355'
+modified: '2026-04-13T10:29:56.376565'
 release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
@@ -16,13 +16,13 @@ text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST
   \ über /Task/&#60;id&#62;/$activate den im HTTP-RequestHeader \"X-AccessCode\" oder\
   \ URL-Parameter \"?ac=...\" übertragenen AccessCode gegen den im referenzierten\
   \ Task gespeicherten AccessCode Task.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode\
-  \ und bei Ungleichheit oder Fehlen des HTTP-Headers die Operation mit dem folgenden\
-  \ Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
-  \ collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n\
-  \ <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n\
-  \ </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_ACCESSCODE_MISMATCH</td>\n </tr>\n\
-  \ <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit\
-  \ Zugriffe auf diesen Datensatz nur durch Berechtigte in Kenntnis des AccessCodes\
+  \ prüfen und bei Ungleichheit oder Fehlen des AccessCodes die Operation mit dem\
+  \ folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black;\
+  \ border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n\
+  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
+  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_ACCESSCODE_MISMATCH</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen,\
+  \ damit Zugriffe auf diesen Datensatz nur durch Berechtigte in Kenntnis des AccessCodes\
   \ erfolgen."
 title: TI-Flow-Fachdienst - Task aktivieren - Prüfung AccessCode
 version: 1
