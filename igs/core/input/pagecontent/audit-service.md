@@ -216,19 +216,18 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
         </ul>
     </td>
   </tr>
-  <tr>
 </table>
 <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004 Versichertenprotokoll</figcaption></div>
 
 <table>
-<tr>
-<th>Wert in proofMethod</th>
-<th>Wert für &#60;PoPP-Anwendungsfall&#62;</th>
-</tr>
-<tr>
-<td>ehc-practitioner-*</td>
-<td>eGK in der Apotheke</td>
-</tr>
+  <tr>
+    <th>Wert in proofMethod</th>
+    <th>Wert für &#60;PoPP-Anwendungsfall&#62;</th>
+  </tr>
+  <tr>
+    <td>ehc-practitioner-*</td>
+    <td>eGK in der Apotheke</td>
+  </tr>
 </table>
 <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004c Versichertenprotokoll PoPP Anwendungsfall</figcaption></div>
 
