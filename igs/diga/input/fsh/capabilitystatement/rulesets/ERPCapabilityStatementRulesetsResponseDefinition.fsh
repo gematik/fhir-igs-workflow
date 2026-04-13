@@ -43,25 +43,23 @@ RuleSet: SearchTypeInteractionStatusCodes
 
 // Operation-API Error-Constellations
 
-// Errors for all Operations
 RuleSet: GlobalOperationErrorCodes
-* rest.resource[=].operation[=] insert Unauthorized
-* rest.resource[=].operation[=] insert InvalidRequest
-* rest.resource[=].operation[=] insert MethodNotAllowed
-* rest.resource[=].operation[=] insert RequestTimeout
-* rest.resource[=].operation[=] insert TooManyRequests
-* rest.resource[=].operation[=] insert InternalServerError
-
-// Type and Instancelevel Operations ([base]/Task/$operation or [base]/Task/<id>/$operation)
-RuleSet: TypeOperationStatusCodes
-* rest.resource[=].operation[=] insert OpNotAllowed
-* rest.resource[=].operation[=] insert UnknownResourceType
-* rest.resource[=].operation[=] insert GlobalOperationErrorCodes
+* insert Unauthorized
+* insert InvalidRequest
+* insert MethodNotAllowed
+* insert RequestTimeout
+* insert TooManyRequests
+* insert InternalServerError
 
 RuleSet: InstanceOperationStatusCodes
-* rest.resource[=].operation[=] insert ResourceIsNotKnown
-* rest.resource[=].operation[=] insert ResourceWasDeleted
-* rest.resource[=].operation[=] insert GlobalOperationErrorCodes
+* insert ResourceIsNotKnown
+* insert ResourceWasDeleted
+* insert GlobalOperationErrorCodes
+
+RuleSet: TypeOperationStatusCodes
+* insert OpNotAllowed
+* insert UnknownResourceType
+* insert GlobalOperationErrorCodes
 
 // Konkrete Operationen
 
@@ -69,7 +67,8 @@ RuleSet: InstanceOperationStatusCodes
 RuleSet: TaskCreateOperationStatusCodes
 * rest.resource[=].operation[=] insert SuccessfulCreated
 * rest.resource[=].operation[=] insert SvcValidationFailed
-* insert TypeOperationStatusCodes
+* rest.resource[=].operation[=] insert TypeOperationStatusCodes
+* rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
 
 RuleSet: TaskSearchTypeInteractionStatusCodes
 * insert SearchTypeInteractionStatusCodes
@@ -98,7 +97,7 @@ RuleSet: TaskActivateOperationStatusCodes
 * rest.resource[=].operation[=] insert TiflowCertificateInvalid
 * rest.resource[=].operation[=] insert TiflowErezeptPznInvalid
 * rest.resource[=].operation[=] insert TiflowOcspBackendError
-* insert InstanceOperationStatusCodes
+* rest.resource[=].operation[=] insert InstanceOperationStatusCodes
 
 RuleSet: TaskAcceptOperationStatusCodes
 * rest.resource[=].operation[=] insert Successful
@@ -107,14 +106,14 @@ RuleSet: TaskAcceptOperationStatusCodes
 * rest.resource[=].operation[=] insert TiflowTaskDeleted
 * rest.resource[=].operation[=] insert TiflowTaskExpired
 * rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
-* insert InstanceOperationStatusCodes
+* rest.resource[=].operation[=] insert InstanceOperationStatusCodes
 
 RuleSet: TaskRejectOperationStatusCodes
 * rest.resource[=].operation[=] insert SuccessfulNoContent
 * rest.resource[=].operation[=] insert TiflowSecretMismatch
 * rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
 * rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
-* insert InstanceOperationStatusCodes
+* rest.resource[=].operation[=] insert InstanceOperationStatusCodes
 
 RuleSet: TaskCloseOperationStatusCodes
 * rest.resource[=].operation[=] insert Successful
@@ -124,7 +123,7 @@ RuleSet: TaskCloseOperationStatusCodes
 * rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
 * rest.resource[=].operation[=] insert TiflowMedicationDispenseInvalid
 * rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
-* insert InstanceOperationStatusCodes
+* rest.resource[=].operation[=] insert InstanceOperationStatusCodes
 
 RuleSet: TaskAbortOperationStatusCodes
 * rest.resource[=].operation[=] insert SuccessfulNoContent
@@ -132,7 +131,7 @@ RuleSet: TaskAbortOperationStatusCodes
 * rest.resource[=].operation[=] insert TiflowAccesscodeMismatch
 * rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
 * rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
-* insert InstanceOperationStatusCodes
+* rest.resource[=].operation[=] insert InstanceOperationStatusCodes
 
 RuleSet: CommunicationSearchTypeInteractionStatusCodes
 * insert SearchTypeInteractionStatusCodes

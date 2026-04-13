@@ -118,42 +118,33 @@ RuleSet: SubscriptionCreateInteractionStatusCodes
 
 // Operation-API Error-Constellations
 
-// Errors for all Operations
 RuleSet: GlobalOperationErrorCodes
-* rest.resource[=].operation[=] insert Unauthorized
-* rest.resource[=].operation[=] insert InvalidRequest
-* rest.resource[=].operation[=] insert MethodNotAllowed
-* rest.resource[=].operation[=] insert RequestTimeout
-* rest.resource[=].operation[=] insert TooManyRequests
-* rest.resource[=].operation[=] insert InternalServerError
-
-// Type and Instancelevel Operations ([base]/Task/$operation or [base]/Task/<id>/$operation)
-RuleSet: SystemOperationStatusCodes
-* rest.resource[=].operation[=] insert OpUnknown
-* rest.operation[=] insert GlobalOperationErrorCodes
-
-RuleSet: TypeOperationStatusCodes
-* rest.resource[=].operation[=] insert OpUnknown
-* rest.resource[=].operation[=] insert OpNotAllowed
-* rest.resource[=].operation[=] insert UnknownResourceType
-* rest.resource[=].operation[=] insert GlobalOperationErrorCodes
+* insert Unauthorized
+* insert InvalidRequest
+* insert MethodNotAllowed
+* insert RequestTimeout
+* insert TooManyRequests
+* insert InternalServerError
 
 RuleSet: InstanceOperationStatusCodes
-* rest.resource[=].operation[=] insert ResourceIsNotKnown
-* rest.resource[=].operation[=] insert ResourceWasDeleted
-* rest.resource[=].operation[=] insert GlobalOperationErrorCodes
+* insert ResourceIsNotKnown
+* insert ResourceWasDeleted
+* insert GlobalOperationErrorCodes
 
-//Konkrete Operationen
+RuleSet: TypeOperationStatusCodes
+* insert OpUnknown
+* insert OpNotAllowed
+* insert UnknownResourceType
+* insert GlobalOperationErrorCodes
 
-// Task/$create
+// Concrete Operations
 RuleSet: TaskCreateOperationStatusCodes
 * rest.resource[=].operation[=] insert SuccessfulCreated
 * rest.resource[=].operation[=] insert SvcValidationFailed
-* insert TypeOperationStatusCodes
-
-// Task/<id>/$activate* rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
+* rest.resource[=].operation[=] insert TypeOperationStatusCodes
 * rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
 
+// Task/<id>/$activate
 RuleSet: TaskActivateOperationStatusCodes
 * rest.resource[=].operation[=] insert SuccessfulWithParameters
 * rest.resource[=].operation[=] insert SvcValidationFailed
@@ -169,7 +160,7 @@ RuleSet: TaskActivateOperationStatusCodes
 * rest.resource[=].operation[=] insert TiflowCertificateInvalid
 * rest.resource[=].operation[=] insert TiflowErezeptPznInvalid
 * rest.resource[=].operation[=] insert TiflowOcspBackendError
-* insert InstanceOperationStatusCodes
+* rest.resource[=].operation[=] insert InstanceOperationStatusCodes
 
 // Task/<id>/$accept
 RuleSet: TaskAcceptOperationStatusCodes
@@ -178,14 +169,14 @@ RuleSet: TaskAcceptOperationStatusCodes
 * rest.resource[=].operation[=] insert TiflowTaskDeleted
 * rest.resource[=].operation[=] insert TiflowTaskExpired
 * rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
-* insert InstanceOperationStatusCodes
+* rest.resource[=].operation[=] insert InstanceOperationStatusCodes
 
 // Task/<id>/$reject
 RuleSet: TaskRejectOperationStatusCodes
 * rest.resource[=].operation[=] insert SuccessfulNoContent
 * rest.resource[=].operation[=] insert TiflowSecretMismatch
 * rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
-* insert InstanceOperationStatusCodes
+* rest.resource[=].operation[=] insert InstanceOperationStatusCodes
 
 // Task/<id>/$close
 RuleSet: TaskCloseOperationStatusCodes
@@ -194,7 +185,7 @@ RuleSet: TaskCloseOperationStatusCodes
 * rest.resource[=].operation[=] insert TiflowSecretMismatch
 * rest.resource[=].operation[=] insert TiflowSignatureNoOcspResponse
 * rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
-* insert InstanceOperationStatusCodes
+* rest.resource[=].operation[=] insert InstanceOperationStatusCodes
 
 // Task/<id>/$abort
 RuleSet: TaskAbortOperationStatusCodes
@@ -202,4 +193,4 @@ RuleSet: TaskAbortOperationStatusCodes
 * rest.resource[=].operation[=] insert SvcIdentityMismatch
 * rest.resource[=].operation[=] insert TiflowAccesscodeMismatch
 * rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
-* insert InstanceOperationStatusCodes
+* rest.resource[=].operation[=] insert InstanceOperationStatusCodes
