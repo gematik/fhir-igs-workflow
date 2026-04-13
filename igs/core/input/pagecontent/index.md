@@ -1,17 +1,15 @@
-Dieser IG beschreibt die zentralen, IG-übergreifenden Anforderungen an den
-TI-Flow-Fachdienst. Er fasst grundlegende Sicherheits-, Protokollierungs- und
-Validierungsvorgaben zusammen, die in allen nachgelagerten IGs wiederverwendet
-werden.
+Dieser IG beschreibt die zentralen, IG-übergreifenden Anforderungen an den TI-Flow-Fachdienst. Er fasst grundlegende Sicherheits-, Protokollierungs- und Validierungsvorgaben zusammen, die in allen nachgelagerten IGs wiederverwendet werden.
 
 ## Zweck und Geltungsbereich
 
 Der Core-IG fokussiert auf die technische Basisschicht des Fachdienstes:
 
-- Zugriffs- und Systemprotokollierung (AuditEvent)
-- Datenschutz und Sicherheit, insbesondere Anforderungen an die VAU
+- Verbindungsaufbau der Clientsysteme zum TI-Flow-Fachdienst
 - Validierung von FHIR-Ressourcen und Bundles
-- Löschfristen und automatisches Löschen
 - Modulübergreifende Operationen auf Task ($create, $activate, $abort, ...)
+- Zugriffs- und Systemprotokollierung (AuditEvent)
+- Löschfristen und automatisches Löschen
+
 
 
 ### Anforderungen zur Umsetzung des IGs
@@ -35,16 +33,14 @@ Der Core-IG fokussiert auf die technische Basisschicht des Fachdienstes:
 
 ## Aufbau
 
-- [Zugriffsprotokollierung](./audit-service.html)
-- [Datenschutz und Sicherheit](./data-security.html)
-- [FHIR-Validierung](./fhir-validate.html)
-- [Löschfristen](./ttl.html)
 - [Verbindungsaufbau Clientsysteme (über IDP-Dienst)](./verbindungsaufbau-client.html)
+- [FHIR-Artefakte](./artifacts.html)
+- [FHIR-Validierung](./fhir-validate.html)
 - [Query API (modulübergreifend)](./query-api.html)
 - [Operation API (modulübergreifend)](./operation-api.html)
-- [FHIR-Artefakte](./artifacts.html)
+- [Zugriffsprotokollierung](./audit-service.html)
+- [Löschfristen](./ttl.html)
 
 ## Bezug zu weiteren IGs
 
-Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und
-prozessspezifische Details werden in den jeweiligen IGs dokumentiert.
+Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifische Details werden in den jeweiligen IGs dokumentiert.
