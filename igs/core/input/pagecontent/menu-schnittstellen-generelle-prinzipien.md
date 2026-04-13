@@ -4,7 +4,7 @@ In diesem Abschnitt werden allgemeingültige Funktionsmerkmale des TI-Flow-Fachd
 
 Im Rahmen von Operationaufrufen von Clientsystemen führt der TI-Flow-Fachdienst verschiedene Prüfungen durch, bevor der Zugriff auf die Daten erfolgt.
 
-<requirement conformance="SHALL" key="" title="TI-Flow-Fachdienst - Reihenfolge Eingansprüfungen für Operationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-408" title="TI-Flow-Fachdienst - Reihenfolge Eingansprüfungen für Operationen" version="0">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Herstellererklärung"/>
