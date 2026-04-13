@@ -10,13 +10,13 @@ Im Rahmen von Operationaufrufen von Clientsystemen führt der TI-Flow-Fachdienst
         <testProcedure id="Herstellererklärung"/>
     </actor>
     Der TI-Flow-Fachdienst MUSS die Prüfungen in der folgenden Reihenfolge durchführen:
-    <ul>
+    <ol>
     <li>Prüfung zur Autorisierung</li>
     <li>Prüfung Pre-condition</li>
     <li>falls Eingangsparameter mit FHIR-Artefakten: FHIR-Validität prüfen</li>
     <li>falls Eingangsartefakt signiert: Signaturprüfung</li>
     <li>Prüfung von Business-Rules</li>
-    </ul>
+    </ol>
 </requirement>
 
 <table>
@@ -24,31 +24,31 @@ Im Rahmen von Operationaufrufen von Clientsystemen führt der TI-Flow-Fachdienst
         <th>Prüfung</th>
         <th>Beispiele</th>
     </tr>
-    <td>
-        <th>Prüfung zur Autorisierung</th>
-        <th>Rollenprüfung, Prüfung accesscode/secret</th>
-    </td>
-    <td>
-        <th>Prüfung Pre-condition</th>
-        <th>Status des Task</th>
-    </td>
-    <td>
-        <th>FHIR-Validität prüfen</th>
-        <th></th>
-    </td>
-    <td>
-        <th>FHIR-Validität prüfen</th>
-        <th></th>
-    </td>
-    <td>
-        <th>Signaturprüfung</th>
-        <th></th>
-    </td>
-    <td>
-        <th>Prüfung von Business-Rules</th>
-        <th>MVO Parameter, PZN Format</th>
-    </td>
+    <tr>
+        <td>Prüfung zur Autorisierung</td>
+        <td>Rollenprüfung, Prüfung accesscode/secret</td>
+    </tr>
+    <tr>
+        <td>Prüfung Pre-condition</td>
+        <td>Status des Task</td>
+    </tr>
+    <tr>
+        <td>FHIR-Validität prüfen</td>
+        <td>Prüfen des Datensatzes gegen das Profil "GEM_ERP_PR_MedicationDispense</td>
+    </tr>
+    <tr>
+        <td>Signaturprüfung</td>
+        <td>QES Prüfung bei Einstellen einer Verordnung</td>
+    </tr>
+    <tr>
+        <td>Prüfung von Business-Rules</td>
+        <td>MVO Parameter, PZN Format</td>
+    </tr>
 </table>
+
+<div><figcaption><strong>Tabelle: </strong>Beispiele für Prüfungen am TI-Flow-Fachdienst</figcaption></div>
+
+<br>
 
 Die konkret durchzuführenden Prüfungen sind als Anforderung für jede Operation spezifiziert. 
 
