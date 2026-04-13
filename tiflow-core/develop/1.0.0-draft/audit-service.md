@@ -136,3 +136,77 @@ Der TI-Flow-Fachdienst MUSS jeden Aufruf von Operationen gemäß "TAB_eRPFD_004 
 * Falls kind=http:Versicherter hat das Gerät "device_display_name" für Push-Nachrichten registriert.
 
 
+**Tabelle: **TAB_eRPFD_004 Versichertenprotokoll
+
+* Wert in proofMethod: ehc-practitioner-*
+  * Wert für <PoPP-Anwendungsfall>: eGK in der Apotheke
+
+**Tabelle: **TAB_eRPFD_004c Versichertenprotokoll PoPP Anwendungsfall
+
+Der TI-Flow-Fachdienst MUSS beim automatischen Löschen nach Erreichen einer Löschfrist gemäß "TAB_eRPFD_004a Versichertenprotokoll nach automatischen Löschen" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.
+
+* Ressource: Ressource Task
+  * Akteur: TI-Flow-Fachdienst
+  * Beschreibung (ggf. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache): Veraltete E-Rezepte vom Fachdienst automatisch gelöscht.
+* Ressource: Ressource MedicationDispense
+  * Akteur: TI-Flow-Fachdienst
+  * Beschreibung (ggf. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache): Veraltete Medikament-Informationen vom Fachdienst automatisch gelöscht.
+* Ressource: Ressource Communication
+  * Akteur: TI-Flow-Fachdienst
+  * Beschreibung (ggf. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache): Veraltete Nachricht vom Fachdienst automatisch gelöscht.
+* Ressource: Ressource ChargeItem
+  * Akteur: TI-Flow-Fachdienst
+  * Beschreibung (ggf. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache): Veraltete Abrechnungsinformation vom Fachdienst automatisch gelöscht.
+
+**Tabelle: **TAB_eRPFD_004a Versichertenprotokoll nach automatischen Löschen
+
+Der TI-Flow-Fachdienst MUSS beim automatischen Löschen nach Fehlerbehandlung gemäß "TAB_eRPFD_004b Versichertenprotokoll nach Löschen wegen Fehlerbehandlung" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.
+
+* Ressource: Ressource Pusher
+  * Akteur: TI-Flow-Fachdienst
+  * Beschreibung (ggf. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache): Fachdienst hat das Gerät "device_display_name" für Push-Nachrichten deregistriert.
+
+**Tabelle: **TAB_eRPFD_004b Versichertenprotokoll nach Löschen wegen Fehlerbehandlung
+
+Der TI-Flow-Fachdienst MUSS in jedem zu tätigenden Eintrag des Protokolls für Versicherte einen lesbaren Text in einfacher Sprache (deutsch und englisch) erzeugen, der mindestens den Namen des Zugreifenden, die auslösende Operation und das Ergebnis der Operation umfasst, damit Versicherte ohne technisches Vorwissen den Inhalt des Zugriffsprotokolls verstehen können.
+
+Der TI-Flow-Fachdienst MUSS, wenn im ACCESS_TOKEN die Angabe zur "organizationName" mit NULL gefüllt ist, in der Protokollierung als agentname "unbekannt" verwenden.
+#### Zugriffsprotokollierung für Übermittlung für ePA Medication Service
+
+Der TI-Flow-Fachdienst protokolliert das erfolgreiche Übermitteln von Daten für jedes E-Rezept an den Medication Service im Zugriffsprotokoll des Versicherten. Für Übermittlungsversuche, welche nicht erfolgreich durchgeführt werden konnten und für die die Übermittlung erneut versucht wird, wird kein Eintrag im Zugriffsprotokoll angelegt.
+
+Der TI-Flow-Fachdienst MUSS einen Aufruf der folgenden Endpunkte, für jeden betroffene E-Rezept abhängig von Ergebnis des Operationsaufrufes gemäß Tab_eRPFD_020 im Zugriffsprotokoll des Versicherten protokollieren:
+
+* Endpunkt: /epa/medication/api/{version}/fhir/$provide-prescription-erp
+  * Ergebnis der Operation: erfolgreich
+  * Beschreibung (ggfs. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache): Die Verordnung wurde in die Patientenakte übertragen.
+* Endpunkt: 
+  * Ergebnis der Operation: final nicht übermittelbar
+  * Beschreibung (ggfs. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache): Die Verordnung konnte nicht in die Patientenakte übertragen werden.
+* Endpunkt: /epa/medication/api/{version}/fhir/$provide-dispensation-erp
+  * Ergebnis der Operation: erfolgreich
+  * Beschreibung (ggfs. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache): Die Medikamentenabgabe wurde in die Patientenakte übertragen.
+* Endpunkt: 
+  * Ergebnis der Operation: final nicht übermittelbar
+  * Beschreibung (ggfs. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache): Die Medikamentenabgabe konnte nicht in die Patientenakte übertragen werden.
+* Endpunkt: /epa/medication/api/{version}/fhir/$cancel-prescription-erp
+  * Ergebnis der Operation: erfolgreich
+  * Beschreibung (ggfs. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache): Die Löschinformation zum E-Rezept wurde in die Patientenakte übermittelt.
+* Endpunkt: 
+  * Ergebnis der Operation: final nicht übermittelbar
+  * Beschreibung (ggfs. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache): Die Löschinformation zum E-Rezept konnte nicht in die Patientenakte übermittelt werden.
+* Endpunkt: /epa/medication/api/{version}/fhir/$cancel-dispensation-erp
+  * Ergebnis der Operation: erfolgreich
+  * Beschreibung (ggfs. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache): Die Löschinformation für die Medikamentenabgabe wurde in die Patientenakte übertragen.
+* Endpunkt: 
+  * Ergebnis der Operation: final nicht übermittelbar
+  * Beschreibung (ggfs. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache): Die Löschinformation für die Medikamentenabgabe konnte nicht in die Patientenakte übertragen werden.
+
+**Tabelle: **Tab_eRPFD_020 Versichertenprotokoll für ePA Medication Service
+
+Das Ergebnis “final nicht übermittelbar” bedeutet, dass die Übermittlung auch nach den definierten Wiederholversuchen nicht erfolgreich durchgeführt werden konnte.
+
+Für Übermittlungsversuche, welche nicht erfolgreich durchgeführt werden konnten und für die die Übermittlung erneut versucht werden soll, wird kein Eintrag im Zugriffsprotokoll angelegt.
+
+Wenn ein Versicherter dem Einstellen von Verordnungsdaten und Dispensierinformationen durch den TI-Flow-Fachdienst widersprochen hat, wird keine Übermittlung von Daten gestartet (siehe A_25951-*). In dem Fall wird kein Eintrag im Zugriffsprotokoll angelegt.
+
