@@ -6,5 +6,6 @@ Die folgenden Query APIs stellt der TI-Flow-Fachdienst den Clientsystemen zur Ve
 - [Query API: MedicationDispense](./query-api-medicationdispense.html)
 - [Query API: Communication](./query-api-communication.html)
 - [Query API: Consent](./query-api-consent.html)
+- [Query API: Subscription](./query-api-subscription.html)
 - [Query API: Push Notification - pushers](./query-api-pushers.html)
 - [Query API: Push Notification - channels](./query-api-channels.html)
