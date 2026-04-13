@@ -4,7 +4,7 @@ Diese Seite beschreibt Anforderungen ein Clientsystem des Kostenrägers zur Nutz
 ### Nachrichten abrufen
 
 <!-- A_21556 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-51" title="CS Kostenträger: Nachrichten abrufen - Häufigkeit" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-51" title="CS Kostenträger: Nachrichten abrufen - Häufigkeit" version="1">
   <meta lockversion="false"/>
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>

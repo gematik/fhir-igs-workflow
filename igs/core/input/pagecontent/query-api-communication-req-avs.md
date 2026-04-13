@@ -3,7 +3,7 @@ Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Communication`-
 ### Nachrichten abrufen
 
 <!-- A_21556 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-146" title="PS abgebende LEI: Nachrichten abrufen - Häufigkeit" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-146" title="PS abgebende LEI: Nachrichten abrufen - Häufigkeit" version="1">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>

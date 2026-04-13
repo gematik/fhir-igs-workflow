@@ -16,7 +16,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19251 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-345" title="CS Kostenträger: Verordnung zurückgeben - Verordnung löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-345" title="CS Kostenträger: Verordnung zurückgeben - Verordnung löschen" version="1">
   <meta lockversion="false"/>
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>
