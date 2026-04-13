@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Implementation Guide E-Rezept-Workflow Core - TIFlow - Kernfunktionalitäten v1.0.0-draft</title>
+    <title>Implementation Guide TI-Flow Core - TIFlow - Kernfunktionalitäten v1.0.0-draft</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -230,7 +230,7 @@ TIFlow - Kernfunktionalitäten
     <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
       <div class="container">    <!-- container -->
         <ul class="breadcrumb">
-          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>Implementation Guide E-Rezept-Workflow Core</b></li>
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>Implementation Guide TI-Flow Core</b></li>
 
           <span style="float:right;">
 
@@ -260,7 +260,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   
-  <h2>Implementation Guide E-Rezept-Workflow Core</h2>
+  <h2>Implementation Guide TI-Flow Core</h2>
   
 
 
@@ -317,21 +317,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div>
   <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown. -->
 </div>
-<p>Dieser IG beschreibt die zentralen, IG-übergreifenden Anforderungen an den
-TI-Flow-Fachdienst. Er fasst grundlegende Sicherheits-, Protokollierungs- und
-Validierungsvorgaben zusammen, die in allen nachgelagerten IGs wiederverwendet
-werden.</p>
+<p>Dieser IG beschreibt die zentralen, IG-übergreifenden Anforderungen an den TI-Flow-Fachdienst. Er fasst grundlegende Sicherheits-, Protokollierungs- und Validierungsvorgaben zusammen, die in allen nachgelagerten IGs wiederverwendet werden.</p>
 
 <h2 id="zweck-und-geltungsbereich">Zweck und Geltungsbereich</h2>
 
 <p>Der Core-IG fokussiert auf die technische Basisschicht des Fachdienstes:</p>
 
 <ul>
-  <li>Zugriffs- und Systemprotokollierung (AuditEvent)</li>
-  <li>Datenschutz und Sicherheit, insbesondere Anforderungen an die VAU</li>
+  <li>Verbindungsaufbau der Clientsysteme zum TI-Flow-Fachdienst</li>
   <li>Validierung von FHIR-Ressourcen und Bundles</li>
-  <li>Löschfristen und automatisches Löschen</li>
   <li>Modulübergreifende Operationen auf Task ($create, $activate, $abort, …)</li>
+  <li>Zugriffs- und Systemprotokollierung (AuditEvent)</li>
+  <li>Löschfristen und automatisches Löschen</li>
 </ul>
 
 <h3 id="anforderungen-zur-umsetzung-des-igs">Anforderungen zur Umsetzung des IGs</h3>
@@ -356,20 +353,18 @@ werden.</p>
 <h2 id="aufbau">Aufbau</h2>
 
 <ul>
-  <li><a href="./audit-service.html">Zugriffsprotokollierung</a></li>
-  <li><a name="l516">​</a><a href="./data-security.html">Datenschutz und Sicherheit</a></li>
-  <li><a href="./fhir-validate.html">FHIR-Validierung</a></li>
-  <li><a href="./ttl.html">Löschfristen</a></li>
-  <li><a name="l528">​</a><a href="./verbindungsaufbau-client.html">Verbindungsaufbau Clientsysteme (über IDP-Dienst)</a></li>
-  <li><a name="l532">​</a><a href="./query-api.html">Query API (modulübergreifend)</a></li>
-  <li><a name="l536">​</a><a href="./operation-api.html">Operation API (modulübergreifend)</a></li>
+  <li><a name="l512">​</a><a href="./verbindungsaufbau-client.html">Verbindungsaufbau Clientsysteme (über IDP-Dienst)</a></li>
   <li><a href="./artifacts.html">FHIR-Artefakte</a></li>
+  <li><a href="./fhir-validate.html">FHIR-Validierung</a></li>
+  <li><a name="l524">​</a><a href="./query-api.html">Query API (modulübergreifend)</a></li>
+  <li><a name="l528">​</a><a href="./operation-api.html">Operation API (modulübergreifend)</a></li>
+  <li><a href="./audit-service.html">Zugriffsprotokollierung</a></li>
+  <li><a href="./ttl.html">Löschfristen</a></li>
 </ul>
 
 <h2 id="bezug-zu-weiteren-igs">Bezug zu weiteren IGs</h2>
 
-<p>Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und
-prozessspezifische Details werden in den jeweiligen IGs dokumentiert.</p>
+<p>Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifische Details werden in den jeweiligen IGs dokumentiert.</p>
 
 
 
@@ -412,7 +407,7 @@ prozessspezifische Details werden in den jeweiligen IGs dokumentiert.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Apr 13, 2026 07:17+0000">2026-04-13</span>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Apr 13, 2026 09:35+0000">2026-04-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
