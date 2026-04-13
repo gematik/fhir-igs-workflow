@@ -7,7 +7,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 ### Modulspezifische Anforderungen
 
 <!-- A_19214 -->
-<requirement conformance="SHALL" key="" title="TI-Flow-Fachdienst - Task erzeugen - Flowtype 162 - Ergänzung Performer-Typ für Einlöseinstitutstyp" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-28" title="TI-Flow-Fachdienst - Task erzeugen - Flowtype 162 - Ergänzung Performer-Typ für Einlöseinstitutstyp" version="0">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
