@@ -1,5 +1,57 @@
 In diesem Abschnitt werden allgemeingültige Funktionsmerkmale des TI-Flow-Fachdienst und seinen Schnittstellen beschrieben.
 
+### Implementierung der Eingansprüfungen für Operationen
+
+Im Rahmen von Operationaufrufen von Clientsystemen führt der TI-Flow-Fachdienst verschiedene Prüfungen durch, bevor der Zugriff auf die Daten erfolgt.
+
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-408" title="TI-Flow-Fachdienst - Reihenfolge Eingansprüfungen für Operationen" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI_Flow_FD">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS die Prüfungen in der folgenden Reihenfolge durchführen:
+    <ol>
+    <li>Prüfung zur Autorisierung</li>
+    <li>Prüfung Pre-condition</li>
+    <li>falls Eingangsparameter mit FHIR-Artefakten: FHIR-Validität prüfen</li>
+    <li>falls Eingangsartefakt signiert: Signaturprüfung</li>
+    <li>Prüfung von Business-Rules</li>
+    </ol>
+</requirement>
+
+<table>
+    <tr>
+        <th>Prüfung</th>
+        <th>Beispiele</th>
+    </tr>
+    <tr>
+        <td>Prüfung zur Autorisierung</td>
+        <td>Rollenprüfung, Prüfung accesscode/secret</td>
+    </tr>
+    <tr>
+        <td>Prüfung Pre-condition</td>
+        <td>Status des Task</td>
+    </tr>
+    <tr>
+        <td>FHIR-Validität prüfen</td>
+        <td>Prüfen des Datensatzes gegen das Profil "GEM_ERP_PR_MedicationDispense</td>
+    </tr>
+    <tr>
+        <td>Signaturprüfung</td>
+        <td>QES Prüfung bei Einstellen einer Verordnung</td>
+    </tr>
+    <tr>
+        <td>Prüfung von Business-Rules</td>
+        <td>MVO Parameter, PZN Format</td>
+    </tr>
+</table>
+
+<div><figcaption><strong>Tabelle: </strong>Beispiele für Prüfungen am TI-Flow-Fachdienst</figcaption></div>
+
+<br>
+
+Die konkret durchzuführenden Prüfungen sind als Anforderung für jede Operation spezifiziert. 
+
 ### RESTful API
 
 <!-- A_19536 -->

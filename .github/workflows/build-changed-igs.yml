@@ -485,6 +485,8 @@ jobs:
         if: steps.igs.outputs.ig_list != ''
         id: build_igs
         continue-on-error: true
+        id: build_igs
+        continue-on-error: true
         shell: bash
         run: |
           set -euo pipefail
@@ -559,6 +561,9 @@ jobs:
           echo "" >> "$GITHUB_STEP_SUMMARY"
           echo "- Trigger: \`${{ github.event_name }}\`" >> "$GITHUB_STEP_SUMMARY"
           echo "- Selected input \`ig\`: \`${{ inputs.ig || github.event.inputs.ig || '' }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Requested IGs: \`${{ steps.igs.outputs.ig_list || '' }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Successfully built IGs: \`${{ steps.build_igs.outputs.successful_igs || '' }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Failed IGs: \`${{ steps.build_igs.outputs.failed_igs || '' }}\`" >> "$GITHUB_STEP_SUMMARY"
           echo "- Requested IGs: \`${{ steps.igs.outputs.ig_list || '' }}\`" >> "$GITHUB_STEP_SUMMARY"
           echo "- Successfully built IGs: \`${{ steps.build_igs.outputs.successful_igs || '' }}\`" >> "$GITHUB_STEP_SUMMARY"
           echo "- Failed IGs: \`${{ steps.build_igs.outputs.failed_igs || '' }}\`" >> "$GITHUB_STEP_SUMMARY"
@@ -691,13 +696,17 @@ jobs:
           PY
         env:
           IG_LIST: ${{ steps.build_igs.outputs.successful_igs }}
+          IG_LIST: ${{ steps.build_igs.outputs.successful_igs }}
 
       - name: Report deploy count
+        if: steps.build_igs.outputs.successful_igs != ''
         if: steps.build_igs.outputs.successful_igs != ''
         shell: bash
         run: |
           set -euo pipefail
           total=0
+          ref_name="${GITHUB_REF_NAME}"
+          for ig in ${{ steps.build_igs.outputs.successful_igs }}; do
           ref_name="${GITHUB_REF_NAME}"
           for ig in ${{ steps.build_igs.outputs.successful_igs }}; do
             out_dir="igs/$ig/output"
@@ -722,9 +731,11 @@ jobs:
 
       - name: Package IG output folders as ZIP
         if: steps.build_igs.outputs.successful_igs != ''
+        if: steps.build_igs.outputs.successful_igs != ''
         shell: bash
         run: |
           set -euo pipefail
+          for ig in ${{ steps.build_igs.outputs.successful_igs }}; do
           for ig in ${{ steps.build_igs.outputs.successful_igs }}; do
             ig_dir="igs/$ig"
             out_dir="$ig_dir/output"
@@ -744,6 +755,7 @@ jobs:
 
       - name: Upload IG outputs
         if: steps.build_igs.outputs.successful_igs != ''
+        if: steps.build_igs.outputs.successful_igs != ''
         uses: actions/upload-artifact@v4
         with:
           name: ig-outputs-${{ github.run_number }}
@@ -752,14 +764,17 @@ jobs:
 
       - name: Prepare GitHub Pages content
         if: steps.build_igs.outputs.successful_igs != ''
+        if: steps.build_igs.outputs.successful_igs != ''
         shell: bash
         run: |
           set -euo pipefail
           pages_dir="pages"
           ref_name="${GITHUB_REF_NAME}"
+          ref_name="${GITHUB_REF_NAME}"
           rm -rf "$pages_dir"
           mkdir -p "$pages_dir"
 
+          for ig in ${{ steps.build_igs.outputs.successful_igs }}; do
           for ig in ${{ steps.build_igs.outputs.successful_igs }}; do
             out_dir="igs/$ig/output"
             if [[ -d "$out_dir" ]]; then
@@ -782,12 +797,21 @@ jobs:
 
       - name: Publish to GitHub Pages
         if: steps.build_igs.outputs.successful_igs != ''
+        if: steps.build_igs.outputs.successful_igs != ''
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./pages
           publish_branch: gh-pages
           keep_files: true
+
+      - name: Fail workflow if any IG failed
+        if: steps.build_igs.outputs.failed_igs != ''
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "::error title=Some IG builds failed::Failed IGs: ${{ steps.build_igs.outputs.failed_igs }}"
+          exit 1
 
       - name: Fail workflow if any IG failed
         if: steps.build_igs.outputs.failed_igs != ''

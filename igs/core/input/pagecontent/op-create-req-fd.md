@@ -82,15 +82,6 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 <!-- ToDo : Fehler ergänzen -->
 
-<!-- A_19214 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-220" title="TI-Flow-Fachdienst - Task erzeugen - Ergänzung Performer-Typ für Einlöseinstitutstyp" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
-        <testProcedure id="Produkttest"/>
-    </actor>
-    Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks das Feld Task.performerType aus dem übergebenen, gültigen Parameter Task.extension:flowType gemäß der Prozessparameter [gemSpec_DM_eRp#A_19445-*] übernehmen.
-</requirement>
-<!-- ToDo: Achtung, die Afo wurde zwichenzeitlich aufgeteilt. Muss neu ggf WF-spezifisch formuliert werden. Warum wird diese Eigenschaft nicht beim activate gesetzt?  -->
 
 <!-- A_19019-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-221" title="TI-Flow-Fachdienst - Task erzeugen - Generierung Rezept-ID" version="0">

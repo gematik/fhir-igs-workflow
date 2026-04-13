@@ -50,40 +50,6 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 
 <br>
 
-<!-- A_25991 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-16" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Verordnung von DiGAs" version="1">
-  <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
-    <testProcedure id="Produkttest"/>
-  </actor>
-  Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mit Flowtype 162 mittels $activate prüfen, dass im Bundle eine <i>DeviceRequest</i>-Ressource und in der <i>Composition.type.coding.code=e16D</i> enthalten ist. Der TI-Flow-Fachdienst MUSS andernfalls mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
-        <tr>
-            <th>HTTP-Code</th>
-            <td>400 - Bad Request</td>
-        </tr>
-        <tr>
-            <th>Severity</th>
-            <td>error</td>
-        </tr>
-        <tr>
-            <th>Code</th>
-            <td>invalid</td>
-        </tr>
-        <tr>
-            <th>Details Code</th>
-            <td>TIFLOW_FLOWTYPE_MISMATCH</td>
-        </tr>
-        <tr>
-            <th>Details Text</th>
-            <td>Für diesen Workflowtypen sind nur Verordnungen für Digitale Gesundheitsanwendungen zulässig</td>
-        </tr>
-    </table> 
-    abbrechen.
-</requirement>
-
-<br>
-
 <!-- A_25992 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-17" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest" version="1">
   <meta lockversion="false"/>

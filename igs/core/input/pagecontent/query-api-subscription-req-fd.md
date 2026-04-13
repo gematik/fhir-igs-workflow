@@ -44,7 +44,13 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-     Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription Ressource mit einem Response antworten, welcher eine Subscription Ressource mit Pseudonym der Telematik-ID in id aktueller Timestamp + 12 h in end Bearer Token in Authorization enthält.
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription Ressource mit einem Response antworten, welcher eine Subscription Ressource mit 
+    <ul>
+    <li>Pseudonym der Telematik-ID in id</li>
+    <li>aktueller Timestamp + 12 h in end</li> 
+    <li>Bearer Token in Authorization</li>
+    </ul>
+    enthält.
 </requirement>
 
 <!-- A_22365 -->
@@ -74,8 +80,8 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
      Der TI-Flow-Fachdienst MUSS für die Registrierung der Subscription einen Bearer-Token mit den Claims 
      <ul>
      <li>subscriptionid: Pseudonym der Telematik-ID</li>
-     <li>iAt: Timestamp wann Subscription erstellt wurde 
-     <li>exp: Timestamp Ablauf der Subscription 
+     <li>iAt: Timestamp wann Subscription erstellt wurde</li>
+     <li>exp: Timestamp Ablauf der Subscription</li>
      </ul>
      erstellen und mit einer Identität des TI-Flow-Fachdienstes signieren (Signature Algortihm: ES256).
 </requirement>

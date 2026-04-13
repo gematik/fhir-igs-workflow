@@ -65,7 +65,7 @@ Mit diesem Anwendungsfall kann der Nutzer die lokal in seinem E-Rezept-FdV gespe
 
 ### Verordnung apothekenpflichtiger Arzneimittel (GKV/PKV)
 
-Ein verordnender Leistungserbringer erstellt im Primärsystem (PVS/KIS) den Verordnungsdatensatz, signiert diesen qualifiziert und stellt das E-Rezept im TI-Flow-Fachdienst bereit.
+Ein verordnender Leistungserbringer erstellt im Primärsystem (PVS/ZPVS/KIS) den Verordnungsdatensatz, signiert diesen qualifiziert und stellt das E-Rezept im TI-Flow-Fachdienst bereit.
 
 #### Fachlicher Ablauf
 
@@ -79,13 +79,13 @@ Ein verordnender Leistungserbringer erstellt im Primärsystem (PVS/KIS) den Vero
 - Für PKV-Versicherte können zusätzliche Schritte zur Bereitstellung PKV-relevanter Versichertendaten erforderlich sein (z. B. Online Check-in).
 - Beide Gruppen durchlaufen für apothekenpflichtige Arzneimittel den regulären Einlöseprozess in der öffentlichen Apotheke.
 
-**Beteiligte Systeme:** PVS/KIS, TI-Flow-Fachdienst
+**Beteiligte Systeme:** PVS/ZPVS/KIS, TI-Flow-Fachdienst
 
 **Technische Anwendungsfälle**
 
 {% assign scenario_use_cases = "UC_2_1_E_Rezepte_erzeugen, E_Rezept_qualifiziert_signieren, UC_2_3_E_Rezept_einstellen, UC_2_5_E_Rezept_durch_Verordnenden_loeschen" | split: ", " %}
 
-{% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Technische Anwendungsfälle mit Bezug zu Anwendungsfall <i>Verordnung apothekenpflichtiger Arzneimittel (160/200)</i>" %}
+{% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Technische Anwendungsfälle mit Bezug zu Anwendungsfall <i>Verordnung apothekenpflichtiger Arzneimittel</i>" %}
 
 ### Belieferung in der Apotheke (GKV/PKV)
 
@@ -111,7 +111,7 @@ Nach Übergabe von Task-ID und AccessCode (z. B. 2D-Code oder Nachricht) ruft di
 
 {% assign scenario_use_cases = "UC_4_1_E_Rezept_durch_Abgebenden_abrufen, UC_4_2_E_Rezept_durch_Abgebenden_zurueckgeben, UC_4_3_E_Rezept_durch_Abgebenden_loeschen, UC_4_4_Quittung_abrufen, UC_4_5_Abgabedatensatz_signieren, UC_4_8_Quittung_erneut_abrufen, UC_4_16_Dispensierinformationen_bereitstellen" | split: ", " %}
 
-{% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Technische Anwendungsfälle mit Bezug zu Anwendungsfall <i>Belieferung apothekenpflichtiger Arzneimittel (160/200)</i>" %}
+{% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Technische Anwendungsfälle mit Bezug zu Anwendungsfall <i>Belieferung apothekenpflichtiger Arzneimittel</i>" %}
 
 ### Verwalten von E-Rezepten durch Versicherten
 
@@ -126,10 +126,83 @@ Versicherte verwalten ihre E-Rezepte in der E-Rezept-App, sehen Zugriffsprotokol
 
 ### Anwendungsfälle
 
-**Beteiligte Systeme:** PVS/KIS, AVS, E-Rezept-FdV , TI-Flow-Fachdienst
+**Beteiligte Systeme:** PVS/ZPVS/KIS, AVS, E-Rezept-FdV , TI-Flow-Fachdienst
 
 #### Technische Anwendungsfälle der Verordnung
 
 {% assign scenario_use_cases = "UC_3_1_E_Rezepte_durch_Versicherten_abrufen, UC_3_2_E_Rezept_durch_Versicherten_loeschen, UC_3_9_Dispensierinformationen_durch_Versicherten_abrufen" | split: ", " %}
 
 {% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Technische Anwendungsfälle mit Bezug zu Anwendungsfall <i>Verwalten von E-Rezepten durch Versicherten</i>" %}
+
+### Workflow Status und Statusübergänge
+In diesem Abschnitt werden die möglichen Status eines Workflows für E-Rezepte und die zulässigen Statuswechsel beschrieben.
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="./arzneimittelverordnung-statusmodell.png" alt="Statusmodell" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung: </strong>Workflow Status und Statusübergänge - Flowtyps für Arzneimittel</figcaption>
+</figure>
+
+<br>
+
+<table>
+    <tr>
+        <th>Status des Workflows</th>
+        <th>Beschreibung und mögliche Statusübergänge</th>
+    </tr>
+    <tr>
+        <td>draft</td>
+        <td>
+            <ul>
+            <li>Mit dem Abruf einer Rezept-ID durch eine verordnende LEI wird ein Workflow im Fachdienst (Task Ressource) mit dem Status "draft" erstellt.</li>
+            <li>Wenn die verordnende LEI die Verordnung in den erstellten Workflow hinzufügt, dann wechselt der Workflow in den Status "ready".</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>ready</td>
+        <td>
+            <ul>
+            <li>Das E-Rezept wurde von der verordnenden LEI in den Fachdienst eingestellt.</li>
+            <li>Das E-Rezept kann vom Versicherten abgerufen werden</li>
+            <li>Der Versicherte oder die verordnende LEI können das E-Rezept als gelöscht markieren. Der Workflow wechselt in den Status "cancelled".</li>
+            <li>Der Abruf des E-Rezepts durch eine Apotheke ändert den Status des Workflows auf "in-progress". In diesem Status ist der Zugriff durch andere Apotheken gesperrt.</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>in-progress</td>
+        <td>
+            <ul>
+            <li>Das E-Rezept wurde von einer Apotheke abgerufen.</li>
+            <li>Der Zugriff auf das E-Rezept durch andere Apotheken oder die verordnende LEI ist gesperrt. Ebenso darf der Versicherte das E-Rezept in diesem Status nicht löschen.</li>
+            <li>Das E-Rezept kann durch die Apotheke zurückgewiesen werden. Der Workflows wechselt zurück in den Status "ready".</li>
+            <li>Das E-Rezept kann durch die Apotheke gelöscht werden. Der Workflows wechselt zurück in den Status "cancelled".</li>
+            <li>Der Apotheke kann nach der Belieferung des E-Rezepts die Informationen zur Dispensierung an den Fachdienst übermitteln. Der Workflows wechselt zurück in den Status "completed"</li>
+            <li>Das E-Rezept kann vom Versicherten abgerufen werden.</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>completed</td>
+        <td>
+            <ul>
+            <li>Der Workflow wurde von der Apotheke abgeschlosen.</li>
+            <li>Die bereitgestellten Diespensierinformationen können vom Versicherten abgerufen werden.</li>
+            <li>Der Versicherte kann das E-Rezept als gelöscht markieren. Der Workflow wechselt in den Status "cancelled".</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>cancelled</td>
+        <td>
+            <ul>
+            <li>Die personenbezogenen und medizinischen Daten wurden aus dem Task gelöscht.</li>
+            <li>Die Akteure können nicht auf den Task zugreifen.</li>
+            <li>Hinweis: Das eigentliche physische Löschen des Datensatzes erfolgt automatisch durch den Fachdienst nach einer Löschfrist.</li>
+            </ul>
+        </td>
+    </tr>
+</table>
+<div><figcaption><strong>Tabelle: </strong>Workflow Status und Statusübergänge - Flowtyps für Arzneimittel</figcaption></div>

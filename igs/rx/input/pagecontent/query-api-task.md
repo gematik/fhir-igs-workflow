@@ -8,7 +8,6 @@ Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource _Task_ wird ü
 |---|---|---|
 |Versicherter|GET|Liste von Task abrufen|
 |Versicherter|GET /&#60;id&#62;|Spezifischen Task abrufen|
-|Apotheke|GET ?hcv=|E-Rezepte von Versicherten abrufen (VSDM)|
 |Apotheke|GET X-PoPP-Token|E-Rezepte von Versicherten abrufen (PoPP)|
 |Apotheke|GET /&#60;id&#62;?ac=|Recovery Secret|
 |Apotheke|GET /&#60;id&#62;?secret=|Quittung erneut abrufen|
