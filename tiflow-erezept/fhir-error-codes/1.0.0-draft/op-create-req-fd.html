@@ -373,16 +373,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 <!-- ToDo : Fehler ergänzen -->
 
-<!-- A_19214 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-220" title="TI-Flow-Fachdienst - Task erzeugen - Ergänzung Performer-Typ für Einlöseinstitutstyp" version="0">
-    <meta lockversion="false" />
-    <actor name="TI_Flow_FD">
-        <testProcedure id="Produkttest" />
-    </actor>
-    Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks das Feld Task.performerType aus dem übergebenen, gültigen Parameter Task.extension:flowType gemäß der Prozessparameter [gemSpec_DM_eRp#A_19445-*] übernehmen.
-</requirement>
-<!-- ToDo: Achtung, die Afo wurde zwichenzeitlich aufgeteilt. Muss neu ggf WF-spezifisch formuliert werden. Warum wird diese Eigenschaft nicht beim activate gesetzt?  -->
-
 <!-- A_19019-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-221" title="TI-Flow-Fachdienst - Task erzeugen - Generierung Rezept-ID" version="0">
     <meta lockversion="false" />
@@ -420,6 +410,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <h3 id="modulspezifische-anforderungen">Modulspezifische Anforderungen</h3>
+
+<!-- A_19214 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-217" title="TI-Flow-Fachdienst - Task erzeugen - Flowtype 160/166/169/200/209 - Ergänzung Performer-Typ für Einlöseinstitutstyp" version="0">
+    <meta lockversion="false" />
+    <actor name="TI_Flow_FD">
+        <testProcedure id="Produkttest" />
+    </actor>
+    Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks die Felder Task.performerType und Task.PrescriptionType.valueCoding.display entsprechend dem übergebenen, gültigen Parameter Task.extension:flowType belegen.
+</requirement>
+
+<p>Die Belegung ergibt sich workflow-typ abhängig aus den <a href="./op-activate-req-fd.html">Prozessparametern</a>.</p>
 
 
 
@@ -462,7 +463,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Apr 10, 2026 08:15+0000">2026-04-10</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Apr 13, 2026 14:34+0000">2026-04-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

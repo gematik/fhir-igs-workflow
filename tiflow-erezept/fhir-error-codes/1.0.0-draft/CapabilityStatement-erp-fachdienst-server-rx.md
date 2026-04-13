@@ -569,11 +569,11 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "405"
+            "valueString" : "403"
           },
           {
             "url" : "description",
-            "valueString" : "Method not allowed for this endpoint"
+            "valueString" : "Access role not allowed"
           },
           {
             "url" : "responseType",
@@ -581,7 +581,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_OP_NOT_ALLOWED"
+            "valueString" : "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -592,7 +592,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "description",
-            "valueString" : "Unknown resource type"
+            "valueString" : "Resource is not known"
           },
           {
             "url" : "responseType",
@@ -600,7 +600,26 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_UNKNOWN_TYPE"
+            "valueString" : "MSG_RESOURCE_ID_FAIL"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "410"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Resource was deleted"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "MSG_DELETED"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -1935,6 +1954,25 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           {
             "url" : "errorCode",
             "valueString" : "TIFLOW_TASK_STATUS_MISMATCH"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "403"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Access role not allowed"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },

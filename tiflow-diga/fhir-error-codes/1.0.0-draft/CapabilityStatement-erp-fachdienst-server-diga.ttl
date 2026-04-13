@@ -1838,6 +1838,48 @@
              fhir:v "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"^^xsd:anyURI ;
              fhir:l <https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info>
            ]
+         ] [
+           fhir:extension ( [
+             fhir:url [
+               fhir:v "statusCode"^^xsd:anyURI ;
+               fhir:l fhir:statusCode
+             ] ;
+             fhir:value [
+               a fhir:String ;
+               fhir:v "403"
+             ]
+           ] [
+             fhir:url [
+               fhir:v "description"^^xsd:anyURI ;
+               fhir:l fhir:description
+             ] ;
+             fhir:value [
+               a fhir:String ;
+               fhir:v "Access role not allowed"
+             ]
+           ] [
+             fhir:url [
+               fhir:v "responseType"^^xsd:anyURI ;
+               fhir:l fhir:responseType
+             ] ;
+             fhir:value [
+               a fhir:String ;
+               fhir:v "TIFlowOperationOutcome"
+             ]
+           ] [
+             fhir:url [
+               fhir:v "errorCode"^^xsd:anyURI ;
+               fhir:l fhir:errorCode
+             ] ;
+             fhir:value [
+               a fhir:String ;
+               fhir:v "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
+             ]
+           ] ) ;
+           fhir:url [
+             fhir:v "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"^^xsd:anyURI ;
+             fhir:l <https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info>
+           ]
          ] ) ;
          fhir:name [ fhir:v "create" ] ;
          fhir:definition [

@@ -1,14 +1,14 @@
-# Query API: Subscription - TIFlow - Kernfunktionalitäten v1.0.0-draft
+# Additional API: Subscription - TIFlow - Kernfunktionalitäten v1.0.0-draft
 
 TIFlow - Kernfunktionalitäten
 
 Version 1.0.0-draft - ci-build 
 
 * [**Table of Contents**](toc.md)
-* [**Query API**](menu-schnittstellen-query-api.md)
-* **Query API: Subscription**
+* [**Additional API**](menu-schnittstellen-additional-api.md)
+* **Additional API: Subscription**
 
-## Query API: Subscription
+## Additional API: Subscription
 
 Diese Seite beschreibt den Einstieg in die Subscription-Query-Schnittstelle.
 
@@ -26,7 +26,8 @@ Die Nachricht zur Interaktion mit Subscription als FHIR-Ressource **Subscription
 ### Anforderungen an Schnittstelle
 
 * [FD-Anforderungen zur Subscription-Query](./query-api-subscription-req-fd.md): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
-* [Client-Anforderungen zur Subscription-Query](./query-api-subscription-req-avs.md): Anforderungen an den Client des TI-Flow-Fachdienstes zur Nutzung der Schnittstelle.
+* [AVS-Anforderungen zur Subscription-Query](./query-api-subscription-req-avs.md): Anforderungen an AVS zur Nutzung der Schnittstelle.
+* [KTR-Anforderungen zur Subscription-Query](./query-api-subscription-req-ktr.md): Anforderungen an Clientsysteme der Kostenträger zur Nutzung der Schnittstelle.
 
 ### Resource API
 
@@ -70,11 +71,11 @@ Der Subscription Service antwortet mit einer “bound” um die Einrichtung der 
 
 `bound: <subscription id>`
 
-Wenn eine neue Nachricht für die Telematik-ID der Apotheke eingestellt wird, dann sendet der TI-Flow-Fachdienst eine Nachricht ping: . Das AVS kann dann diese Nachricht mittels des Anwendungsfalls "Nachrichten von Versicherten empfangen" unter Nutzung des Requests GET /Communication?received=null&recipient= abrufen.
+Wenn eine neue Nachricht für die Telematik-ID der Apotheke eingestellt wird, dann sendet der TI-Flow-Fachdienst eine Nachricht ping: <subscription-id>. Das AVS kann dann diese Nachricht mittels des Anwendungsfalls “Nachrichten von Versicherten empfangen” unter Nutzung des Requests GET /Communication?received=null&recipient=<Telematik-ID> abrufen.
 
 Bei Nutzung des Subscription Services kann abweichend von der Anforderung “A_21556 - PS abgebende LEI: Häufigkeit des Abrufen von Nachrichten” die Operation GET /Communication häufiger als alle 5 Minuten, d.h. nach jeder Notification, mit den obigen Parametern angefragt werden.
 
-Die Websocket-Verbindung kann bis zu 12 h bestehen. Danach muss das AVS die Subscription neu registrieren.
+Die Websocket-Verbindung kann bis zu 12 h bestehen. Danach muss das Clientsystem die Subscription neu registrieren.
 
 #### Hinweise
 

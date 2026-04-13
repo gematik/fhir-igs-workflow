@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>AVS-Anforderungen: Subscription-Query - TIFlow - Kernfunktionalitäten v1.0.0-draft</title>
+    <title>AVS-Anforderungen: Subscription - TIFlow - Kernfunktionalitäten v1.0.0-draft</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"20.7.2"}
-    h3,h4,h5,h6{--heading-prefix:"20.7.2"}</style>
+    <style type="text/css">h2{--heading-prefix:"21.3.2"}
+    h3,h4,h5,h6{--heading-prefix:"21.3.2"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -170,6 +170,9 @@
       <li>
         <a href="menu-technische-umsetzung-paging.html">Paginierung</a>
       </li>
+      <li>
+        <a href="menu-technische-umsetzung-subscription.html">Subscrition</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -230,7 +233,7 @@ TIFlow - Kernfunktionalitäten
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-query-api.html'><b>Query API</b></a></li><li><a href='query-api-subscription.html'><b>Query API: Subscription</b></a></li><li><b>AVS-Anforderungen: Subscription-Query</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-additional-api.html'><b>Additional API</b></a></li><li><a href='query-api-subscription.html'><b>Additional API: Subscription</b></a></li><li><b>AVS-Anforderungen: Subscription</b></li>
 
           <span style="float:right;">
 
@@ -238,7 +241,7 @@ TIFlow - Kernfunktionalitäten
 
             <a href="#bottom">unten</a>
 
-          | <a href="menu-schnittstellen-additional-api.html">nächste&gt;</a>
+          | <a href="query-api-subscription-req-ktr.html">nächste&gt;</a>
 
           </span>
 
@@ -260,7 +263,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   
-  <h2>AVS-Anforderungen: Subscription-Query</h2>
+  <h2>AVS-Anforderungen: Subscription</h2>
   
 
 
@@ -282,30 +285,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Um die Last am TI-Flow-Fachdienst zu kontrollieren, wurde festgelegt, dass ein AVS nicht öfter als alle 5 min nach neuen Nachrichten anfragen darf (A_21556). Die dadurch bis zu 5 min entstehende Verzögerung verlängert die Zeit, bis eine Apotheke auf die Nachricht des Versicherten reagieren kann. Aus dem Grund wird eine Funktionalität eingeführt, mit der AVS eine Notification erhalten, dass eine neue Nachricht für eine Telematik-ID vorliegt. Nach Erhalt einer Notification darf das AVS die neue Nachricht sofort abrufen.</p>
 
-<!-- ToDo: um KTR erweitern -->
-
 <!-- A_22426 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-305" title="PS abgebende LEI: Subscription für neue Communication - eine Subscription pro Telematik-ID" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung" />
     </actor>
-    <actor name="CS_E-Rezept_KTR">
-        <testProcedure id="Herstellererklärung" />
-    </actor>
      Das PS der abgebenden LEI DARF NICHT mehr als eine Subscription pro Telematik-ID registrieren.
-</requirement>
-
-<!-- A_22372 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-306" title="PS abgebende LEI: Subscription für neue Communication" version="0">
-    <meta lockversion="false" />
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Herstellererklärung" />
-    </actor>
-    <actor name="CS_E-Rezept_KTR">
-        <testProcedure id="Herstellererklärung" />
-    </actor>
-     Das PS der abgebenden LEI MUSS den Anwendungsfall "Subscription für neue Communication" gemäß TAB_ILFERP_017 umsetzen. Tabelle # : TAB_ILFERP_017 – Subscription für neue Communication Name Subscription für neue Communication Auslöser Periodischer Aufruf, wenn keine Websocket-Verbindung für die Notification besteht Akteur AVS Vorbedingung Die LEI hat sich gegenüber der TI authentisiert. Nachbedingung Es besteht eine Websocket-Verbindung zum Empfang der Notification Standardablauf Subscription Ressource erstellen Subscription registrieren Websocket-Verbindung zu Subscription Service aufbauen Listening
 </requirement>
 
 <!-- A_22373 -->
@@ -314,10 +300,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung" />
     </actor>
-    <actor name="CS_E-Rezept_KTR">
-        <testProcedure id="Herstellererklärung" />
-    </actor>
-     Das PS der abgebenden LEI MUSS im Anwendungsfall "Subscription für neue Communication" eine Subscription Ressource mit Telematik-ID in Element criteria Attribut receipient erstellen.
+    Das PS der abgebenden LEI MUSS im Anwendungsfall "Subscription für neue Communication" eine Subscription Ressource mit Telematik-ID in Element criteria Attribut receipient erstellen.
 </requirement>
 
 <!-- A_22374 -->
@@ -326,10 +309,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung" />
     </actor>
-    <actor name="CS_E-Rezept_KTR">
-        <testProcedure id="Herstellererklärung" />
-    </actor>
-     Das PS der abgebenden LEI MUSS im Anwendungsfall "Subscription für neue Communication" zum Registrieren im TI-Flow-Fachdienst die HTTP-Operation POST /v1/Subscription mit ACCESS_TOKEN im Authorization-Header ausführen.
+    Das PS der abgebenden LEI MUSS im Anwendungsfall "Subscription für neue Communication" zum Registrieren im TI-Flow-Fachdienst die HTTP-Operation POST /v1/Subscription mit ACCESS_TOKEN im Authorization-Header ausführen.
 </requirement>
 
 <!-- A_22375 -->
@@ -338,23 +318,47 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung" />
     </actor>
-    <actor name="CS_E-Rezept_KTR">
-        <testProcedure id="Herstellererklärung" />
-    </actor>
-     Das PS der abgebenden LEI MUSS im Anwendungsfall "Subscription für neue Communication" nach der Registrierung eine Web Socket Verbindung zum Subscription Service mit Authorization Header aufbauen und ein Upgrade durchführen.
+    Das PS der abgebenden LEI MUSS im Anwendungsfall "Subscription für neue Communication" nach der Registrierung eine Web Socket Verbindung zum Subscription Service mit Authorization Header aufbauen und ein Upgrade durchführen.
 </requirement>
 
+<p>Beispiel:
+GET https://subscription.zentral.erp.splitdns.ti-dienste.de/subscription
+Authorization: Bearer secret-token-abc-123
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+Upgrade: websocket
+Sec-WebSocket-Version: 13
+Sec-WebSocket-Key: q4xkcO32u266gldTuKaSOw==</p>
+
+<p>Der Subscription Service antwortet mit dem Upgrade
+HTTP/1.1 101 Switching Protocols
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Accept: fA9dggdnMPU79lJgAE3W4TRnyDM=</p>
+
+<p>Das Upgrade erfolgt mit einer “bind” Text-Nachricht über die Web Socket-Verbindung an den Server.
+bind: &lt;subscription id&gt;</p>
+
+<p>Der Subscription Service antwortet mit einer “bound” um die Einrichtung der Subscription zu bestätigen.
+bound: &lt;subscription id&gt;</p>
+
+<p>Wenn eine neue Nachricht für die Telematik-ID des Clients eingestellt wird, dann sendet der TI-Flow-Fachdienst eine Nachricht ping: &lt;subscription-id&gt;. Das Clientsystem kann dann diese Nachricht mittels des Anwendungsfalls “Nachrichten von Versicherten empfangen” unter Nutzung des Requests 
+GET /Communication?received=null&amp;recipient=&lt;Telematik-ID&gt; 
+abrufen.</p>
+
+<p>Bei Nutzung des Subscription Services kann abweichend von der Anforderung “A_21556 - PS abgebende LEI: Häufigkeit des Abrufen von Nachrichten” die Operation GET /Communication häufiger als alle 5 Minuten, d.h. nach jeder Notification, mit den obigen Parametern angefragt werden.</p>
+
 <!-- A_22379 -->
-<requirement conformance="MAY" key="IG-TIFLOW-CORE-310" title="PS abgebende LEI: Subscription für neue Communication - Wartezeit" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CORE-310" title="PS abgebende LEI: Subscription für neue Communication - Wartezeit" version="1">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung" />
     </actor>
-    <actor name="CS_E-Rezept_KTR">
-        <testProcedure id="Herstellererklärung" />
-    </actor>
-     Der Primärsystem der abgebenden LEI KANN eine beliebige Wartezeit bis zum Abruf der Nachrichten mit Anwendungsfall „Nachrichten von Versicherten empfangen“ umsetzen, wenn in einem Zeitraum sehr viele ping-Benachrichtigungen empfangen werden.
+    Das PS der abgebenden LEI KANN eine beliebige Wartezeit bis zum Abruf der Nachrichten mit Anwendungsfall „Nachrichten von Versicherten empfangen“ umsetzen, wenn in einem Zeitraum sehr viele ping-Benachrichtigungen empfangen werden.
 </requirement>
+
+<p>Hinweis: Jede eingestellte Nachricht führt zu einem Ping, ggfs. im Millisekundenbereich, wenn viele Nachrichten an einen Empfänger gerichtet werden. In Abhängigkeit von der Implementierung kann dieses Verhalten zu einer Überlastung des Clientsystems führen, wenn bspw. jedes einzelne Ping den Anwendungsfall „Nachrichten von Versicherten empfangen“ triggert.</p>
 
 
 
@@ -387,7 +391,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="menu-schnittstellen-additional-api.html">nächste&gt;</a>
+                <a href="query-api-subscription-req-ktr.html">nächste&gt;</a>
 
               </td>
             </tr>
@@ -397,7 +401,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Apr 10, 2026 08:03+0000">2026-04-10</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Apr 13, 2026 14:24+0000">2026-04-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

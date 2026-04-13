@@ -23,7 +23,7 @@ Das Clientsystem Kostenträger MUSS im Anwendungsfall "Verordnung durch Clientsy
 * Geheimnis in URL-Parameter ?secret=
 ausführen.
 
-Das Clientsystem Kostenträger MUSS im Anwendungsfall "Verordnung durch Clientsystem zurückgeben" für das zurückzugebende E-Rezept nach erfolgreichem Aufruf der Operation "Eine Verordnung zurückweisen" die Daten zu Verordnung, E-Rezept-Token und das Geheimnis im CS löschen.
+Das Clientsystem Kostenträger MUSS im Anwendungsfall "Verordnung durch Clientsystem zurückgeben" für die zurückzugebende Verornung nach erfolgreichem Aufruf der Operation "Eine Verordnung zurückweisen" die Daten zu Verordnung, E-Rezept-Token und das Geheimnis im CS löschen.
 ### Modulspezifische Anforderungen
 
 Es gibt keine modulspezifischen Anforderungen.

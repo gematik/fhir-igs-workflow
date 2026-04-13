@@ -1004,6 +1004,25 @@ ERP CapabilityStatement für den E-Rezept-Fachdienst
             "valueString" : "MSG_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+        },
+        {
+          "extension" : [{
+            "url" : "statusCode",
+            "valueString" : "403"
+          },
+          {
+            "url" : "description",
+            "valueString" : "Access role not allowed"
+          },
+          {
+            "url" : "responseType",
+            "valueString" : "TIFlowOperationOutcome"
+          },
+          {
+            "url" : "errorCode",
+            "valueString" : "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
+          }],
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         }],
         "name" : "create",
         "definition" : "https://gematik.de/fhir/erp/OperationDefinition/CreateOperationDefinition",

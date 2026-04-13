@@ -1,15 +1,15 @@
-# Server-Anforderungen: Subscription-Query - TIFlow - Kernfunktionalitäten v1.0.0-draft
+# Server-Anforderungen: Subscription - TIFlow - Kernfunktionalitäten v1.0.0-draft
 
 TIFlow - Kernfunktionalitäten
 
 Version 1.0.0-draft - ci-build 
 
 * [**Table of Contents**](toc.md)
-* [**Query API**](menu-schnittstellen-query-api.md)
-* [**Query API: Subscription**](query-api-subscription.md)
-* **Server-Anforderungen: Subscription-Query**
+* [**Additional API**](menu-schnittstellen-additional-api.md)
+* [**Additional API: Subscription**](query-api-subscription.md)
+* **Server-Anforderungen: Subscription**
 
-## Server-Anforderungen: Subscription-Query
+## Server-Anforderungen: Subscription
 
 Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für den Subscription-Query-Endpunkt.
 
@@ -30,7 +30,11 @@ die Operation am TI-Flow-Fachdienst aufrufen dürfen, und bei Abweichungen die O
 
 abbrechen, damit eine Subscription nicht durch Unberechtigte registriert werden kann.
 
-Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription Ressource mit einem Response antworten, welcher eine Subscription Ressource mit Pseudonym der Telematik-ID in id aktueller Timestamp + 12 h in end Bearer Token in Authorization enthält.
+Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription Ressource mit einem Response antworten, welcher eine Subscription Ressource mit
+* Pseudonym der Telematik-ID in id
+* aktueller Timestamp + 12 h in end
+* Bearer Token in Authorization
+enthält.
 
 Der TI-Flow-Fachdienst MUSS das Pseudonym innerhalb der VAU mittels eines 128-Bit-AES-CMAC-Schlüssels erstellen und hexadezimal kodieren (32 Byte lang) (vgl gemSpec_Krypt#A_20163).
 
@@ -38,8 +42,11 @@ Der TI-Flow-Fachdienst MUSS den AES-CMAC-Schlüssel zur Pseudonymgenerierung reg
 
 Der TI-Flow-Fachdienst MUSS für die Registrierung der Subscription einen Bearer-Token mit den Claims
 * subscriptionid: Pseudonym der Telematik-ID
-* iAt: Timestamp wann Subscription erstellt wurde 
-* exp: Timestamp Ablauf der Subscription </ul> erstellen und mit einer Identität des TI-Flow-Fachdienstes signieren (Signature Algortihm: ES256). </requirement>       Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription Ressource durch eine abgebende Institution, diese anhand der Telematik-ID aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die in der Ressource im Element criteria Attribut receipient hinterlegte Telematik-ID prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler: 
+* iAt: Timestamp wann Subscription erstellt wurde
+* exp: Timestamp Ablauf der Subscription
+erstellen und mit einer Identität des TI-Flow-Fachdienstes signieren (Signature Algortihm: ES256).
+
+Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription Ressource durch eine abgebende Institution, diese anhand der Telematik-ID aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die in der Ressource im Element criteria Attribut receipient hinterlegte Telematik-ID prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 403 - Forbidden: error
@@ -50,5 +57,5 @@ Der TI-Flow-Fachdienst MUSS für die Registrierung der Subscription einen Bearer
 * HTTP-Code: Details Text
   * 403 - Forbidden: Identity mismatch: Access token does not match FHIR data (Telematik-ID)
 
- abbrechen, damit eine abgebende Institution ausschließlich für sich selbst eine Subscription registrieren kann.  
+abbrechen, damit eine abgebende Institution ausschließlich für sich selbst eine Subscription registrieren kann.
 

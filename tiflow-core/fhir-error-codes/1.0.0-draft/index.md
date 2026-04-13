@@ -1,13 +1,13 @@
-# Implementation Guide E-Rezept-Workflow Core - TIFlow - Kernfunktionalitäten v1.0.0-draft
+# Implementation Guide TI-Flow Core - TIFlow - Kernfunktionalitäten v1.0.0-draft
 
 TIFlow - Kernfunktionalitäten
 
 Version 1.0.0-draft - ci-build 
 
 * [**Table of Contents**](toc.md)
-* **Implementation Guide E-Rezept-Workflow Core**
+* **Implementation Guide TI-Flow Core**
 
-## Implementation Guide E-Rezept-Workflow Core
+## Implementation Guide TI-Flow Core
 
 | | |
 | :--- | :--- |
@@ -20,11 +20,11 @@ Dieser IG beschreibt die zentralen, IG-übergreifenden Anforderungen an den TI-F
 
 Der Core-IG fokussiert auf die technische Basisschicht des Fachdienstes:
 
-* Zugriffs- und Systemprotokollierung (AuditEvent)
-* Datenschutz und Sicherheit, insbesondere Anforderungen an die VAU
+* Verbindungsaufbau der Clientsysteme zum TI-Flow-Fachdienst
 * Validierung von FHIR-Ressourcen und Bundles
-* Löschfristen und automatisches Löschen
 * Modulübergreifende Operationen auf Task ($create, $activate, $abort, …)
+* Zugriffs- und Systemprotokollierung (AuditEvent)
+* Löschfristen und automatisches Löschen
 
 ### Anforderungen zur Umsetzung des IGs
 
@@ -33,14 +33,13 @@ Der TI-Flow-Fachdienst MUSS den Implementation Guide "E-Rezept-Workflow Core" um
 Der TI-Flow-Fachdienst MUSS zur Umsetzung des Implementation Guides "E-Rezept-Workflow Core" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind.
 ## Aufbau
 
-* [Zugriffsprotokollierung](./audit-service.md)
-* [Datenschutz und Sicherheit](./data-security.md)
-* [FHIR-Validierung](./fhir-validate.md)
-* [Löschfristen](./ttl.md)
 * [Verbindungsaufbau Clientsysteme (über IDP-Dienst)](./verbindungsaufbau-client.md)
+* [FHIR-Artefakte](./artifacts.md)
+* [FHIR-Validierung](./fhir-validate.md)
 * [Query API (modulübergreifend)](./query-api.md)
 * [Operation API (modulübergreifend)](./operation-api.md)
-* [FHIR-Artefakte](./artifacts.md)
+* [Zugriffsprotokollierung](./audit-service.md)
+* [Löschfristen](./ttl.md)
 
 ## Bezug zu weiteren IGs
 
@@ -2612,7 +2611,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
           "valueUrl" : "index.html"
         }],
         "nameUrl" : "index.html",
-        "title" : "Implementation Guide E-Rezept-Workflow Core",
+        "title" : "Implementation Guide TI-Flow Core",
         "generation" : "markdown"
       },
       {
@@ -2765,7 +2764,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
           "valueUrl" : "menu-technische-umsetzung-subscription.html"
         }],
         "nameUrl" : "menu-technische-umsetzung-subscription.html",
-        "title" : "Notifications für AVS",
+        "title" : "Notifications für Clientsysteme",
         "generation" : "markdown"
       },
       {
@@ -3189,33 +3188,6 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
             "title" : "Client-Anforderungen: Consent-Query",
             "generation" : "markdown"
           }]
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "query-api-subscription.html"
-          }],
-          "nameUrl" : "query-api-subscription.html",
-          "title" : "Query API: Subscription",
-          "generation" : "markdown",
-          "page" : [{
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "query-api-subscription-req-fd.html"
-            }],
-            "nameUrl" : "query-api-subscription-req-fd.html",
-            "title" : "Server-Anforderungen: Subscription-Query",
-            "generation" : "markdown"
-          },
-          {
-            "extension" : [{
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "query-api-subscription-req-avs.html"
-            }],
-            "nameUrl" : "query-api-subscription-req-avs.html",
-            "title" : "AVS-Anforderungen: Subscription-Query",
-            "generation" : "markdown"
-          }]
         }]
       },
       {
@@ -3277,6 +3249,42 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
             }],
             "nameUrl" : "query-api-pushers-req-fdv.html",
             "title" : "FdV-Anforderungen: Pushers-Query",
+            "generation" : "markdown"
+          }]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "query-api-subscription.html"
+          }],
+          "nameUrl" : "query-api-subscription.html",
+          "title" : "Additional API: Subscription",
+          "generation" : "markdown",
+          "page" : [{
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-subscription-req-fd.html"
+            }],
+            "nameUrl" : "query-api-subscription-req-fd.html",
+            "title" : "Server-Anforderungen: Subscription",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-subscription-req-avs.html"
+            }],
+            "nameUrl" : "query-api-subscription-req-avs.html",
+            "title" : "AVS-Anforderungen: Subscription",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-subscription-req-ktr.html"
+            }],
+            "nameUrl" : "query-api-subscription-req-ktr.html",
+            "title" : "KTR-Anforderungen: Subscription",
             "generation" : "markdown"
           }]
         }]

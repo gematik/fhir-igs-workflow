@@ -19,14 +19,14 @@ Diese Seite beschreibt Anforderungen ein Clientsystem des Kostenrägers zur Nutz
 
 #### Nachrichten abrufen
 
-Das Clientsystem Kostenträger MUSS im Anwendungsfall "Nachrichten von Versicherten empfangen" zwischen den Aufrufen der Operation GET /Communication mindestens 5 Minuten warten. Der Zeitraum zwischen den Aufrufen muss um eine zufällige Zeitspanne zwischen 0 und 10.000 Millisekunden verlängert werden, um eine Gleichverteilung der Anfragen am TI-Flow-Fachdienst über alle Apotheken zu erreichen.
+Das Clientsystem Kostenträger MUSS im Anwendungsfall "Nachrichten von Versicherten empfangen" zwischen den Aufrufen der Operation GET /Communication mindestens 5 Minuten warten. Der Zeitraum zwischen den Aufrufen muss um eine zufällige Zeitspanne zwischen 0 und 10.000 Millisekunden verlängert werden, um eine Gleichverteilung der Anfragen am TI-Flow-Fachdienst über alle Clientsysteme zu erreichen.
 
 Das Clientsystem Kostenträger MUSS im Anwendungsfall "Nachrichten von Versicherten empfangen" die HTTP-Operation GET /Communication mit
 * ACCESS_TOKEN im Authorization-Header
 * optional: ?received=null für nur ungelesene Nachrichten
 * optional: ?received=gtYYYY-MM-DD für Nachrichten nach Datum DD.MM.YYYY
 ausführen.
-Falls eine oder mehrere E-Rezept-Nachrichten für die abgebende LEI auf dem TI-Flow-Fachdienst bereitstehen, übermittelt der TI-Flow-Fachdienst ein Bundle von Communication Ressourcen. 
+Falls eine oder mehrere E-Rezept-Nachrichten für den Kostenträger auf dem TI-Flow-Fachdienst bereitstehen, übermittelt der TI-Flow-Fachdienst ein Bundle von Communication Ressourcen. 
 
 #### Nachricht versenden
 
@@ -38,7 +38,7 @@ Das Clientsystem Kostenträger MUSS im Anwendungsfall "Nachricht an Versicherten
 ausführen.
 #### Nachricht löschen
 
-Mit diesem Anwendungsfall kann die abgebende LEI von ihr versendete Nachrichten an einen Versicherten auf dem Fachdienst löschen.
+Mit diesem Anwendungsfall kann ein Kostenträger von ihm versendete Nachrichten an einen Versicherten auf dem Fachdienst löschen.
 
 Das CS Kostenträger MUSS es dem Nutzer ermöglichen, eine Nachricht zum Löschen auf dem Fachdienst auszuwählen.
 
@@ -48,7 +48,7 @@ Das Clientsystem Kostenträger MUSS im Anwendungsfall "Nachricht durch Abgebende
 * ACCESS_TOKEN im Authorization-Header
 * Communication-ID in URL <id> 
 ausführen.
-Der Fachdienst prüft anhand der Telematik-ID im ACCESS_TOKEN, ob die LEI der Absender der zu löschenden Nachricht ist.
+Der Fachdienst prüft anhand der Telematik-ID im ACCESS_TOKEN, ob der Kostenträger der Absender der zu löschenden Nachricht ist.
 
 Das CS Kostenträger KANN im Anwendungsfall “Nachricht durch Abgebenden löschen” dem Nutzer ermöglichen, die Nachricht auch lokal im PS zu löschen.
 

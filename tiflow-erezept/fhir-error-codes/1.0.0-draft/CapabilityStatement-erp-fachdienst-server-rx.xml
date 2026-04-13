@@ -426,16 +426,16 @@
         </extension>
         <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
           <extension url="statusCode">
-            <valueString value="405"/>
+            <valueString value="403"/>
           </extension>
           <extension url="description">
-            <valueString value="Method not allowed for this endpoint"/>
+            <valueString value="Access role not allowed"/>
           </extension>
           <extension url="responseType">
             <valueString value="TIFlowOperationOutcome"/>
           </extension>
           <extension url="errorCode">
-            <valueString value="MSG_OP_NOT_ALLOWED"/>
+            <valueString value="TIFLOW_AUTH_ROLE_NOT_ALLOWED"/>
           </extension>
         </extension>
         <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
@@ -443,13 +443,27 @@
             <valueString value="404"/>
           </extension>
           <extension url="description">
-            <valueString value="Unknown resource type"/>
+            <valueString value="Resource is not known"/>
           </extension>
           <extension url="responseType">
             <valueString value="TIFlowOperationOutcome"/>
           </extension>
           <extension url="errorCode">
-            <valueString value="MSG_UNKNOWN_TYPE"/>
+            <valueString value="MSG_RESOURCE_ID_FAIL"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="410"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Resource was deleted"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_DELETED"/>
           </extension>
         </extension>
         <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
@@ -1438,6 +1452,20 @@
           </extension>
           <extension url="errorCode">
             <valueString value="TIFLOW_TASK_STATUS_MISMATCH"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="403"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Access role not allowed"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="TIFLOW_AUTH_ROLE_NOT_ALLOWED"/>
           </extension>
         </extension>
         <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">

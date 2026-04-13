@@ -13,18 +13,7 @@ Version 1.0.0-draft - ci-build
 
 Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für den pusher-Endpunkt.
 
-Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Pushers mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE unterbinden und mit mit dem folgenden Fehler:
-
-* HTTP-Code: Severity
-  * 405 - Method Not Allowed: error
-* HTTP-Code: Code
-  * 405 - Method Not Allowed: invalid
-* HTTP-Code: Details Code
-  * 405 - Method Not Allowed: SVC_METHOD_NOT_ALLOWED
-* HTTP-Code: Details Text
-  * 405 - Method Not Allowed: -
-
-abbrechen, damit keine unzulässigen Operationen auf den Daten ausgeführt werden können.
+Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Pushers mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE unterbinden und mit mit dem HTTP-Code "405 - Method Not Allowed" abbrechen, damit keine unzulässigen Operationen ausgeführt werden können.
 
 Der TI-Flow-Fachdienst MUSS die API mit den Endpunkten GET /pushers und POST /pushers/set gemäß [OpenAPI_FD] bereitstellen.
 ### GET /pushers

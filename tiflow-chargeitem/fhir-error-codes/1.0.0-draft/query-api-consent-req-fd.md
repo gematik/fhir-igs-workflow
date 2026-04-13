@@ -17,18 +17,7 @@ Diese Seite beschreibt Anforderungen am TI-Flow-Fachdienst zur Nutzung der `Cons
 
 Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für den Consent-Endpunkt.
 
-Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Consent mittels der HTTP-Operationen PUT, PATCH, oder HEAD unterbinden und mit mit dem folgenden Fehler:
-
-* HTTP-Code: Severity
-  * 405 - Method Not Allowed: error
-* HTTP-Code: Code
-  * 405 - Method Not Allowed: invalid
-* HTTP-Code: Details Code
-  * 405 - Method Not Allowed: SVC_METHOD_NOT_ALLOWED
-* HTTP-Code: Details Text
-  * 405 - Method Not Allowed: -
-
-abbrechen, damit keine unzulässigen Operationen auf die Informationen zur Einwilligung ausgeführt werden können.
+Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Consent mittels der HTTP-Operationen PUT, PATCH, oder HEAD unterbinden und mit mit dem HTTP-Code "405 - Method Not Allowed" abbrechen, damit keine unzulässigen Operationen ausgeführt werden können.
 #### POST /Consent
 
 Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am TI-Flow-Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:

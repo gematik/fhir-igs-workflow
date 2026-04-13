@@ -11,6 +11,32 @@ Version 1.0.0-draft - ci-build
 
 In diesem Abschnitt werden allgemeingültige Funktionsmerkmale des TI-Flow-Fachdienst und seinen Schnittstellen beschrieben.
 
+### Implementierung der Eingansprüfungen für Operationen
+
+Im Rahmen von Operationaufrufen von Clientsystemen führt der TI-Flow-Fachdienst verschiedene Prüfungen durch, bevor der Zugriff auf die Daten erfolgt.
+
+Der TI-Flow-Fachdienst MUSS die Prüfungen in der folgenden Reihenfolge durchführen:
+1. Prüfung zur Autorisierung
+1. Prüfung Pre-condition
+1. falls Eingangsparameter mit FHIR-Artefakten: FHIR-Validität prüfen
+1. falls Eingangsartefakt signiert: Signaturprüfung
+1. Prüfung von Business-Rules
+
+* Prüfung: Prüfung zur Autorisierung
+  * Beispiele: Rollenprüfung, Prüfung accesscode/secret
+* Prüfung: Prüfung Pre-condition
+  * Beispiele: Status des Task
+* Prüfung: FHIR-Validität prüfen
+  * Beispiele: Prüfen des Datensatzes gegen das Profil "GEM_ERP_PR_MedicationDispense
+* Prüfung: Signaturprüfung
+  * Beispiele: QES Prüfung bei Einstellen einer Verordnung
+* Prüfung: Prüfung von Business-Rules
+  * Beispiele: MVO Parameter, PZN Format
+
+**Tabelle: **Beispiele für Prüfungen am TI-Flow-Fachdienst
+
+Die konkret durchzuführenden Prüfungen sind als Anforderung für jede Operation spezifiziert.
+
 ### RESTful API
 
 Der TI-Flow-Fachdienst MUSS seine Schnittstellen für alle Zugriffe auf alle Datenobjekte und alle Ressourcen in einer RESTful API gemäß der FHIR-Spezifikation in http://hl7.org/fhir/http.html der Version v4.0.1 R4 umsetzen.

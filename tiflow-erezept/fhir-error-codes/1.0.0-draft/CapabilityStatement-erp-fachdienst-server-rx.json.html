@@ -968,11 +968,11 @@ TIFlow - Verordnungen für Arzneimittel
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>" : [
                     {
                       "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "statusCode",
-                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "405"
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "403"
                     },
                     {
                       "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "description",
-                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "Method not allowed for this endpoint"
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "Access role not allowed"
                     },
                     {
                       "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "responseType",
@@ -980,7 +980,7 @@ TIFlow - Verordnungen für Arzneimittel
                     },
                     {
                       "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "errorCode",
-                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "MSG_OP_NOT_ALLOWED"
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
                     }
                   ],
                   "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
@@ -993,7 +993,7 @@ TIFlow - Verordnungen für Arzneimittel
                     },
                     {
                       "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "description",
-                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "Unknown resource type"
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "Resource is not known"
                     },
                     {
                       "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "responseType",
@@ -1001,7 +1001,28 @@ TIFlow - Verordnungen für Arzneimittel
                     },
                     {
                       "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "errorCode",
-                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "MSG_UNKNOWN_TYPE"
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "MSG_RESOURCE_ID_FAIL"
+                    }
+                  ],
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "statusCode",
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "410"
+                    },
+                    {
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "description",
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "Resource was deleted"
+                    },
+                    {
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "responseType",
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "TIFlowOperationOutcome"
+                    },
+                    {
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "errorCode",
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "MSG_DELETED"
                     }
                   ],
                   "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
@@ -2484,6 +2505,27 @@ TIFlow - Verordnungen für Arzneimittel
                     {
                       "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "errorCode",
                       "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "TIFLOW_TASK_STATUS_MISMATCH"
+                    }
+                  ],
+                  "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
+                },
+                {
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "statusCode",
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "403"
+                    },
+                    {
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "description",
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "Access role not allowed"
+                    },
+                    {
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "responseType",
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "TIFlowOperationOutcome"
+                    },
+                    {
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "errorCode",
+                      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
                     }
                   ],
                   "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
@@ -4742,7 +4784,7 @@ TIFlow - Verordnungen für Arzneimittel
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Apr 10, 2026 08:15+0000">2026-04-10</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Apr 13, 2026 14:34+0000">2026-04-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -1126,7 +1126,7 @@
              ] ;
              fhir:value [
                a fhir:String ;
-               fhir:v "405"
+               fhir:v "403"
              ]
            ] [
              fhir:url [
@@ -1135,7 +1135,7 @@
              ] ;
              fhir:value [
                a fhir:String ;
-               fhir:v "Method not allowed for this endpoint"
+               fhir:v "Access role not allowed"
              ]
            ] [
              fhir:url [
@@ -1153,7 +1153,7 @@
              ] ;
              fhir:value [
                a fhir:String ;
-               fhir:v "MSG_OP_NOT_ALLOWED"
+               fhir:v "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
              ]
            ] ) ;
            fhir:url [
@@ -1177,7 +1177,7 @@
              ] ;
              fhir:value [
                a fhir:String ;
-               fhir:v "Unknown resource type"
+               fhir:v "Resource is not known"
              ]
            ] [
              fhir:url [
@@ -1195,7 +1195,49 @@
              ] ;
              fhir:value [
                a fhir:String ;
-               fhir:v "MSG_UNKNOWN_TYPE"
+               fhir:v "MSG_RESOURCE_ID_FAIL"
+             ]
+           ] ) ;
+           fhir:url [
+             fhir:v "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"^^xsd:anyURI ;
+             fhir:l <https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info>
+           ]
+         ] [
+           fhir:extension ( [
+             fhir:url [
+               fhir:v "statusCode"^^xsd:anyURI ;
+               fhir:l fhir:statusCode
+             ] ;
+             fhir:value [
+               a fhir:String ;
+               fhir:v "410"
+             ]
+           ] [
+             fhir:url [
+               fhir:v "description"^^xsd:anyURI ;
+               fhir:l fhir:description
+             ] ;
+             fhir:value [
+               a fhir:String ;
+               fhir:v "Resource was deleted"
+             ]
+           ] [
+             fhir:url [
+               fhir:v "responseType"^^xsd:anyURI ;
+               fhir:l fhir:responseType
+             ] ;
+             fhir:value [
+               a fhir:String ;
+               fhir:v "TIFlowOperationOutcome"
+             ]
+           ] [
+             fhir:url [
+               fhir:v "errorCode"^^xsd:anyURI ;
+               fhir:l fhir:errorCode
+             ] ;
+             fhir:value [
+               a fhir:String ;
+               fhir:v "MSG_DELETED"
              ]
            ] ) ;
            fhir:url [
@@ -4132,6 +4174,48 @@
              fhir:value [
                a fhir:String ;
                fhir:v "TIFLOW_TASK_STATUS_MISMATCH"
+             ]
+           ] ) ;
+           fhir:url [
+             fhir:v "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"^^xsd:anyURI ;
+             fhir:l <https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info>
+           ]
+         ] [
+           fhir:extension ( [
+             fhir:url [
+               fhir:v "statusCode"^^xsd:anyURI ;
+               fhir:l fhir:statusCode
+             ] ;
+             fhir:value [
+               a fhir:String ;
+               fhir:v "403"
+             ]
+           ] [
+             fhir:url [
+               fhir:v "description"^^xsd:anyURI ;
+               fhir:l fhir:description
+             ] ;
+             fhir:value [
+               a fhir:String ;
+               fhir:v "Access role not allowed"
+             ]
+           ] [
+             fhir:url [
+               fhir:v "responseType"^^xsd:anyURI ;
+               fhir:l fhir:responseType
+             ] ;
+             fhir:value [
+               a fhir:String ;
+               fhir:v "TIFlowOperationOutcome"
+             ]
+           ] [
+             fhir:url [
+               fhir:v "errorCode"^^xsd:anyURI ;
+               fhir:l fhir:errorCode
+             ] ;
+             fhir:value [
+               a fhir:String ;
+               fhir:v "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
              ]
            ] ) ;
            fhir:url [

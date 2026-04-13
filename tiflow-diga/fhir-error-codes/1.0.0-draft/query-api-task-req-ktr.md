@@ -26,7 +26,7 @@ Das Clientsystem Kostenträger MUSS im Anwendungsfall "Recovery Secret" für das
 ausführen.
 #### Quittung erneut abrufen
 
-Mit diesem Anwendungsfall kann eine abgebende LEI die Quittung erneut abrufen, falls bei der Übermittlung vom TI-Flow-Fachdienst ein Fehler aufgetreten ist.
+Mit diesem Anwendungsfall kann ein Clientsystem eines Kostenträgers die Quittung erneut abrufen, falls bei der Übermittlung vom TI-Flow-Fachdienst ein Fehler aufgetreten ist.
 
 Der Anwendungsfall kann bei Bedarf wiederholt werden.
 

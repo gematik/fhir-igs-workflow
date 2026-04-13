@@ -37,40 +37,6 @@ Das PS der abgebenden LEI MUSS im Anwendungsfall "Quittung erneut abrufen" für 
 ausführen.
 ### Modulspezifische Anforderungen
 
-#### E-Rezepte von Versicherten abrufen (VSDM)
-
-Mit diesem Anwendungsfall kann die abgebende LEI die E-Rezept-Token Information zu allen E-Rezepten mit dem Status “offen” von einem Versicherten, dessen eGK in ein mit dem Konnektor gepairten E-Health-Kartenterminal gesteckt wurde, vom TI-Flow-Fachdienst abrufen.
-
-Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten abrufen" die eGK mittels der Konnektor-Operation ReadVSD mit den Parametern PerformOnlineCheck=true und ReadOnlineReceipt=true auslesen.
-Der Parameter PerformOnlineCheck gibt an, dass eine Onlineprüfung und -aktualisierung durchgeführt werden soll. Der Parameter ReadOnlineReceipt gibt an, dass ein Prüfungsnachweis erstellt und an den aufrufenden Client übermittelt werden soll.
-
-Der Response beinhaltet die Elemente PersoenlicheVersichertendaten, AllgemeineVersicherungsdaten, GeschuetzteVersichertendaten und Pruefungsnachweis. Deren Inhalte sind komprimiert sowie base64-kodiert und müssen vor dem Parsen entsprechend dekodiert werden.
-
-Für weitere Informationen zur Operation ReadVSD siehe [gemILF_PS].
-
-Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten abrufen" den Anwendungsfall abbrechen, wenn die Operation ReadVSD mit einem Fehler antwortet oder im Response kein Prüfungsnachweis enthalten ist, um den Anwendungsfall nur fortzuführen, wenn der Operationsaufruf ReadVSD mit der Option "Onlineprüfung durchführen" erfolgreich durchgeführt werden konnte.
-Der Prüfungsnachweis wird aus dem ReadVSD Response entnommen, URL-kodiert und in den Aufruf des TI-Flow-Fachdienstes übernommen. 
-
-Die Werte für den Hashwert hcv werden aus UC_PersoenlicheVersichertendatenXML.Versicherter.Person.StrassenAdresse.Strasse und UC_AllgemeineVersicherungsdatenXML.Versicherter.Versicherungsschutz.Beginn entnommen. Der Hashwert hcv wird Base64URLSafe-kodiert und in den Aufruf des TI-Flow-Fachdienstes übernommen. 
-
-Die Versicherten-ID kann aus UC_PersoenlicheVersichertendatenXML.Versicherter.Versicherten_ID ermittelt werden.
-
-Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten abrufen" den im Aufruf der Operation ReadVSD erhaltenen Prüfungsnachweis URL-kodieren, um ihn als Parameter im Request an den TI-Flow-Fachdienst zu übermitteln.
-
-Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten abrufen" den Hashwert hcv erzeugen.
-Die Bildungsvorschrift für den Hashwert hcv ist in [gemSpec_Krypt#A_27352-*] beschrieben.
-
-Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten abrufen" den Hashwert hcv Base64URLSafe kodieren.
-Die Vorschrift zum Kodieren ist in https://www.educative.io/answers/what-is-base64urlsafeb64encodes-in-python beschrieben.
-
-Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten abrufen" die HTTP-Operation GET /Task mit
-* ACCESS_TOKEN im Authorization-Header
-* base64- und URL-codierter Prüfungsnachweis in URL-Parameter pnw
-* Versicherten-ID in URL-Parameter kvnr
-* Base64URLSafe-kodierter Hashwert hcv in URL-Parameter hcv
-ausführen.
-Bsp.-URL: GET /Task?kvnr=X11058…&hcv=F9Z…I&pnw=H4sIAAAAA…
-
 #### E-Rezepte von Versicherten abrufen (PoPP)
 
 Mit diesem Anwendungsfall kann die abgebende LEI die Zugriffsinformationen zu allen einlösbaren E-Rezepten von einem Versicherten, dessen eGK mit einem im Rahmen von PoPP zulässigen Kartenlesegerät eingelesen wurde, vom TI-Flow-Fachdienst abrufen.

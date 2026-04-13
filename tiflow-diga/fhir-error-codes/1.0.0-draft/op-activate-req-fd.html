@@ -1160,40 +1160,6 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 
 <p><br/></p>
 
-  <!-- A_25991 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Verordnung von DiGAs" version="1" key="IG-TIFLOW-DIGA-16">
-  <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
-    <testProcedure id="Produkttest"></testProcedure>
-  </actor>
-  Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mit Flowtype 162 mittels $activate prüfen, dass im Bundle eine <i>DeviceRequest</i>-Ressource und in der <i>Composition.type.coding.code=e16D</i> enthalten ist. Der TI-Flow-Fachdienst MUSS andernfalls mit dem folgenden Fehler:
-      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
-        <tr>
-            <th>HTTP-Code</th>
-            <td>400 - Bad Request</td>
-        </tr>
-        <tr>
-            <th>Severity</th>
-            <td>error</td>
-        </tr>
-        <tr>
-            <th>Code</th>
-            <td>invalid</td>
-        </tr>
-        <tr>
-            <th>Details Code</th>
-            <td>TIFLOW_FLOWTYPE_MISMATCH</td>
-        </tr>
-        <tr>
-            <th>Details Text</th>
-            <td>Für diesen Workflowtypen sind nur Verordnungen für Digitale Gesundheitsanwendungen zulässig</td>
-        </tr>
-    </table> 
-    abbrechen.
-</requirement>
-
-<p><br/></p>
-
   <!-- A_25992 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest" version="1" key="IG-TIFLOW-DIGA-17">
   <meta lockversion="false"/>
@@ -1376,7 +1342,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Apr 10, 2026 08:08+0000">2026-04-10</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Apr 13, 2026 14:29+0000">2026-04-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

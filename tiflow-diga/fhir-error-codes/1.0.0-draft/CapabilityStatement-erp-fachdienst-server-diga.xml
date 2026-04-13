@@ -685,6 +685,20 @@
             <valueString value="MSG_INTERNAL_ERROR"/>
           </extension>
         </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="403"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Access role not allowed"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="TIFLOW_AUTH_ROLE_NOT_ALLOWED"/>
+          </extension>
+        </extension>
         <name value="create"/>
         <definition value="https://gematik.de/fhir/erp/OperationDefinition/CreateOperationDefinition"/>
         <documentation value="Creates a Task for a specific flow type"/>

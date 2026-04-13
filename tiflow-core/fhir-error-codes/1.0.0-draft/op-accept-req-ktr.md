@@ -13,7 +13,7 @@ Version 1.0.0-draft - ci-build
 
 Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an Clientsysteme für die Nutzung der Operation `$activate`.
 
-Das Clientsystem Kostenträger MUSS im Anwendungsfall "Verordnung abrufen" zum Herunterladen des E-Rezepts die HTTP-Operation POST /Task/<id>/$accept mit
+Das Clientsystem Kostenträger MUSS im Anwendungsfall "Verordnung abrufen" zum Herunterladen der Verordnung die HTTP-Operation POST /Task/<id>/$accept mit
 * ACCESS_TOKEN im Authorization-Header
 * Task-ID in URL <id>
 * AccessCode im X-AccessCode-Header oder als URL-Parameter ?ac=

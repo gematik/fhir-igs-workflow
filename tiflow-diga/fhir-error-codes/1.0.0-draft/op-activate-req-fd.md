@@ -375,22 +375,6 @@ die Operation mit dem folgenden Fehler:
 abbrechen, damit nur solche Leistungserbringer ein signiertes E-Rezept einstellen, die zur Verordnung von DiGAs ermächtigt sind.
 
 
-Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mit Flowtype 162 mittels $activate prüfen, dass im Bundle eine
-*DeviceRequest*-Ressource und in der
-*Composition.type.coding.code=e16D*enthalten ist. Der TI-Flow-Fachdienst MUSS andernfalls mit dem folgenden Fehler:
-
-* HTTP-Code: Severity
-  * 400 - Bad Request: error
-* HTTP-Code: Code
-  * 400 - Bad Request: invalid
-* HTTP-Code: Details Code
-  * 400 - Bad Request: TIFLOW_FLOWTYPE_MISMATCH
-* HTTP-Code: Details Text
-  * 400 - Bad Request: Für diesen Workflowtypen sind nur Verordnungen für Digitale Gesundheitsanwendungen zulässig
-
-abbrechen.
-
-
 Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/<id>/$activate den im FHIR Profil KBV_PR_EVDGA_HealthAppRequest gespeicherten Wert für .code[x]:codeCodeableConcept.coding.code gemäß den "Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI" beschriebenen Prüfalgorithmus validieren und bei einer fehlerhaften Prüfung die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity

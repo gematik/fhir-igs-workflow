@@ -44,13 +44,6 @@ Der TI-Flow-Fachdienst MUSS jeden Aufruf von Operationen gemäß "TAB_eRPFD_004 
   * Rolle des zugreifenden Nutzers: Apotheke/Kostenträger
   * Beschreibung (ggf. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache): Apotheke/Kostenträger hat die E-Rezept-Quittung heruntergeladen
 * Operation: http GET /Task
-  * Rolle des zugreifenden Nutzers: Apotheke (VSDM)
-  * Beschreibung (ggf. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache): * im Erfolgsfall beim passenden AcceptPN3VSDMxx=false: Apotheke hat mit Ihrer eGK die Liste der offenen E-Rezepte abgerufen.
-* im Erfolgsfall bei PN3 und passende AcceptPN3VSDMxx=true: Apotheke hat mit Ihrer eGK die Liste der offenen E-Rezepte abgerufen. (Offline-Check wurde akzeptiert)
-* im Fehlerfall PN3 und passende AcceptPN3VSDMxx=false: Apotheke konnte aufgrund eines Fehlerfalls nicht die Liste der offenen E-Rezepte mit Ihrer eGK abgerufen. (Offline-Check wurde nicht akzeptiert)
-* im sonstigen Fehlerfall: Apotheke konnte aufgrund eines Fehlerfalls nicht die Liste der offenen E-Rezepte mit Ihrer eGK abrufen.
-
-* Operation: http GET /Task
   * Rolle des zugreifenden Nutzers: Apotheke (PoPP)
   * Beschreibung (ggf. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache): Die Apotheke hat die Liste der einlösbaren E-Rezepte abgerufen durch Autorisierung mittels <PoPP-Anwendungsfall>.
 * Operation: http GET /Task
