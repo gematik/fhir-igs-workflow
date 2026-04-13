@@ -279,6 +279,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <p>Seiteninhalt:</p>
 
 <ul id="markdown-toc">
+  <li><a href="#implementierung-der-eingansprüfungen-für-operationen" id="markdown-toc-implementierung-der-eingansprüfungen-für-operationen">Implementierung der Eingansprüfungen für Operationen</a></li>
   <li><a href="#restful-api" id="markdown-toc-restful-api">RESTful API</a></li>
   <li><a href="#e-rezept-id" id="markdown-toc-e-rezept-id">E-Rezept ID</a></li>
   <li><a href="#verarbeitung-von-datensätzen" id="markdown-toc-verarbeitung-von-datensätzen">Verarbeitung von Datensätzen</a></li>
@@ -287,6 +288,58 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 </div>
 <p>In diesem Abschnitt werden allgemeingültige Funktionsmerkmale des TI-Flow-Fachdienst und seinen Schnittstellen beschrieben.</p>
+
+<h3 id="implementierung-der-eingansprüfungen-für-operationen">Implementierung der Eingansprüfungen für Operationen</h3>
+
+<p>Im Rahmen von Operationaufrufen von Clientsystemen führt der TI-Flow-Fachdienst verschiedene Prüfungen durch, bevor der Zugriff auf die Daten erfolgt.</p>
+
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-408" title="TI-Flow-Fachdienst - Reihenfolge Eingansprüfungen für Operationen" version="0">
+    <meta lockversion="false" />
+    <actor name="TI_Flow_FD">
+        <testProcedure id="Herstellererklärung" />
+    </actor>
+    Der TI-Flow-Fachdienst MUSS die Prüfungen in der folgenden Reihenfolge durchführen:
+    <ol>
+    <li>Prüfung zur Autorisierung</li>
+    <li>Prüfung Pre-condition</li>
+    <li>falls Eingangsparameter mit FHIR-Artefakten: FHIR-Validität prüfen</li>
+    <li>falls Eingangsartefakt signiert: Signaturprüfung</li>
+    <li>Prüfung von Business-Rules</li>
+    </ol>
+</requirement>
+
+<table>
+    <tr>
+        <th>Prüfung</th>
+        <th>Beispiele</th>
+    </tr>
+    <tr>
+        <td>Prüfung zur Autorisierung</td>
+        <td>Rollenprüfung, Prüfung accesscode/secret</td>
+    </tr>
+    <tr>
+        <td>Prüfung Pre-condition</td>
+        <td>Status des Task</td>
+    </tr>
+    <tr>
+        <td>FHIR-Validität prüfen</td>
+        <td>Prüfen des Datensatzes gegen das Profil "GEM_ERP_PR_MedicationDispense</td>
+    </tr>
+    <tr>
+        <td>Signaturprüfung</td>
+        <td>QES Prüfung bei Einstellen einer Verordnung</td>
+    </tr>
+    <tr>
+        <td>Prüfung von Business-Rules</td>
+        <td>MVO Parameter, PZN Format</td>
+    </tr>
+</table>
+
+<div><figcaption><strong>Tabelle: </strong>Beispiele für Prüfungen am TI-Flow-Fachdienst</figcaption></div>
+
+<p><br /></p>
+
+<p>Die konkret durchzuführenden Prüfungen sind als Anforderung für jede Operation spezifiziert.</p>
 
 <h3 id="restful-api">RESTful API</h3>
 
@@ -528,7 +581,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Sun, Apr 12, 2026 21:20+0000">2026-04-12</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Apr 13, 2026 07:17+0000">2026-04-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
