@@ -11,4 +11,3 @@ Description: "Codes, die im Rahmen des TIFlow in den OperationOutcomes.details a
 * include $hl7-oo#MSG_RESOURCE_ID_MISMATCH "Resource Id Mismatch"
 * include $hl7-oo#MSG_RESOURCE_ID_MISSING "Resource Id Missing"
 * include $hl7-oo#MSG_RESOURCE_ID_FAIL "unable to allocate resource id"
-* include TIOperationOutcomeDetailsCS#SVC_METHOD_NOT_ALLOWED

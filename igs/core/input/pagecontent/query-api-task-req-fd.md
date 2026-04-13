@@ -6,30 +6,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Task mittels der HTTP-Operationen PUT, HEAD und DELETE sowie POST ohne die Angabe einer gültigen FHIR-Operation unterbinden und mit mit dem folgenden Fehler:
-    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
-        <tr>
-            <th>HTTP-Code</th>
-            <td>405 - Method Not Allowed</td>
-        </tr>
-        <tr>
-            <th>Severity</th>
-            <td>error</td>
-        </tr>
-        <tr>
-            <th>Code</th>
-            <td>invalid</td>
-        </tr>
-        <tr>
-            <th>Details Code</th>
-            <td>SVC_METHOD_NOT_ALLOWED</td>
-        </tr>
-        <tr>
-            <th>Details Text</th>
-            <td>-</td>
-        </tr>
-    </table> 
-  abbrechen, damit keine unzulässigen Operationen auf den Rezeptdaten ausgeführt werden können.
+    Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Task mittels der HTTP-Operationen PUT, HEAD und DELETE sowie POST ohne die Angabe einer gültigen FHIR-Operation unterbinden und mit mit dem HTTP-Code "405 - Method Not Allowed" abbrechen, damit keine unzulässigen Operationen ausgeführt werden können.
 </requirement>
 
 Der Zugriff mittels POST und Angabe einer gültigen FHIR-Operation ist unter [Operations](./menu-schnittstellen-operation-api.html) beschrieben.

@@ -1,24 +1,20 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 94e405f14af999a6c3f7a5ac2b4a130c28242a01afa5065068d4b3361c3b0a73
+content_hash: 7dd416d3b36f69aab62e1ed4924faf1c998749aac87cb162eac482d323410e85
 created: '2026-03-23T10:57:48.437181'
-date: '2026-04-13T10:29:56.341973'
+date: '2026-04-13T14:33:11.783717'
 key: IG-TIFLOW-CORE-55
-modified: '2026-04-13T10:29:56.341973'
+modified: '2026-04-13T14:33:11.783717'
 release_status: MODIFIED
 source: input/pagecontent/query-api-channels-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produktgutachten
-text: "Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Channels mittels\
-  \ der HTTP-Operationen PUT, PATCH, HEAD und DELETE unterbinden und mit dem folgenden\
-  \ Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
-  \ collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>405 - Method Not Allowed</td>\n\
-  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
-  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_METHOD_NOT_ALLOWED</td>\n\
-  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen,\
-  \ damit keine unzulässigen Operationen auf den Daten ausgeführt werden können."
+text: Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Channels mittels
+  der HTTP-Operationen PUT, PATCH, HEAD und DELETE unterbinden und mit dem HTTP-Code
+  "405 - Method Not Allowed" abbrechen, damit keine unzulässigen Operationen ausgeführt
+  werden können.
 title: TI-Flow-Fachdienst - unzulässige Operationen Channels
 version: 1

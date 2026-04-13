@@ -1,25 +1,20 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 59cb03131aea473e655ce41bad03f8b046b40815a7c1ae1b0ebfe4359bb314da
+content_hash: aef7e9ba843051d8cbe12b817ecfbd5e64e2b73efa97158b02f31d0d9896597c
 created: '2026-03-23T10:57:48.465814'
-date: '2026-04-13T10:29:56.389705'
+date: '2026-04-13T14:33:11.825777'
 key: IG-TIFLOW-CORE-201
-modified: '2026-04-13T10:29:56.389705'
+modified: '2026-04-13T14:33:11.825777'
 release_status: MODIFIED
 source: input/pagecontent/query-api-consent-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: "Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Consent mittels\
-  \ der HTTP-Operationen PUT, PATCH, oder HEAD unterbinden und mit mit dem folgenden\
-  \ Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
-  \ collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>405 - Method Not Allowed</td>\n\
-  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
-  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_METHOD_NOT_ALLOWED</td>\n\
-  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen,\
-  \ damit keine unzulässigen Operationen auf die Informationen zur Einwilligung ausgeführt\
-  \ werden können."
+text: Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Consent mittels
+  der HTTP-Operationen PUT, PATCH, oder HEAD unterbinden und mit mit dem HTTP-Code
+  "405 - Method Not Allowed" abbrechen, damit keine unzulässigen Operationen ausgeführt
+  werden können.
 title: TI-Flow-Fachdienst - Consent - unzulässige Operationen
 version: 1

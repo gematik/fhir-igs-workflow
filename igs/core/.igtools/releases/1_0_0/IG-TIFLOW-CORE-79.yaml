@@ -1,25 +1,20 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: abb72c69c99e53205d7124690f776883559949efa06a53ed08fe7147d3b68cb4
+content_hash: 3c777b4bd58e644fdb65bd940c9d87b21c004ac2509606f2a93a1c2ff8285038
 created: '2026-03-23T10:57:48.441999'
-date: '2026-04-13T10:29:56.349394'
+date: '2026-04-13T14:33:11.790490'
 key: IG-TIFLOW-CORE-79
-modified: '2026-04-13T10:29:56.349394'
+modified: '2026-04-13T14:33:11.790490'
 release_status: MODIFIED
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: "Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Task mittels der\
-  \ HTTP-Operationen PUT, HEAD und DELETE sowie POST ohne die Angabe einer gültigen\
-  \ FHIR-Operation unterbinden und mit mit dem folgenden Fehler:\n <table id=\"error-code\"\
-  \ style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
-  \ <td>405 - Method Not Allowed</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
-  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
-  \ <td>SVC_METHOD_NOT_ALLOWED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n\
-  \ </tr>\n </table> \n abbrechen, damit keine unzulässigen Operationen auf den Rezeptdaten\
-  \ ausgeführt werden können."
+text: Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Task mittels der
+  HTTP-Operationen PUT, HEAD und DELETE sowie POST ohne die Angabe einer gültigen
+  FHIR-Operation unterbinden und mit mit dem HTTP-Code "405 - Method Not Allowed"
+  abbrechen, damit keine unzulässigen Operationen ausgeführt werden können.
 title: TI-Flow-Fachdienst - unzulässige Operationen Task
 version: 1

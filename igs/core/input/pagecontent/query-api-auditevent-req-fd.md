@@ -8,30 +8,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
-  Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource AuditEvent mittels der HTTP-Operationen PUT, PATCH, HEAD, DELETE und POST unterbinden und mit mit dem folgenden Fehler:
-    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
-        <tr>
-            <th>HTTP-Code</th>
-            <td>405 - Method Not Allowed</td>
-        </tr>
-        <tr>
-            <th>Severity</th>
-            <td>error</td>
-        </tr>
-        <tr>
-            <th>Code</th>
-            <td>invalid</td>
-        </tr>
-        <tr>
-            <th>Details Code</th>
-            <td>SVC_METHOD_NOT_ALLOWED</td>
-        </tr>
-        <tr>
-            <th>Details Text</th>
-            <td>-</td>
-        </tr>
-    </table> 
-  abbrechen, damit keine unzulässigen Operationen auf den Protokolldaten ausgeführt werden können.
+  Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource AuditEvent mittels der HTTP-Operationen PUT, PATCH, HEAD, DELETE und POST unterbinden und mit mit dem HTTP-Code "405 - Method Not Allowed" abbrechen, damit keine unzulässigen Operationen werden können.
 </requirement>
 <!-- ToDo Hendre: Fehlercode einfügen -->
 
