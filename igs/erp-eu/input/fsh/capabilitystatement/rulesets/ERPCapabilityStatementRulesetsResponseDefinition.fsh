@@ -39,34 +39,34 @@ RuleSet: SearchTypeInteractionStatusCodes
 
 // Errors for all System Operations
 RuleSet: GlobalSystemOperationErrorCodes
-* rest.operation[=] insert Unauthorized
-* rest.operation[=] insert InvalidRequest
-* rest.operation[=] insert MethodNotAllowed
-* rest.operation[=] insert RequestTimeout
-* rest.operation[=] insert TooManyRequests
-* rest.operation[=] insert InternalServerError
+* insert Unauthorized
+* insert InvalidRequest
+* insert MethodNotAllowed
+* insert RequestTimeout
+* insert TooManyRequests
+* insert InternalServerError
 
 RuleSet: SystemOperationStatusCodesWithParameters
-* rest.operation[=] insert SuccessfulWithParameters
+* insert SuccessfulWithParameters
 * insert GlobalSystemOperationErrorCodes
 
 RuleSet: SystemQueryOperationStatusCodesWithNormalSuccess
-* rest.operation[=] insert Successful
+* insert Successful
 * insert GlobalSystemOperationErrorCodes
 
 // Errors for all Resource Operations
 RuleSet: GlobalOperationErrorCodes
-* rest.resource[=].operation[=] insert Unauthorized
-* rest.resource[=].operation[=] insert InvalidRequest
-* rest.resource[=].operation[=] insert MethodNotAllowed
-* rest.resource[=].operation[=] insert RequestTimeout
-* rest.resource[=].operation[=] insert TooManyRequests
-* rest.resource[=].operation[=] insert InternalServerError
+* insert Unauthorized
+* insert InvalidRequest
+* insert MethodNotAllowed
+* insert RequestTimeout
+* insert TooManyRequests
+* insert InternalServerError
 
 RuleSet: InstanceOperationStatusCodes
-* rest.resource[=].operation[=] insert ResourceIsNotKnown
-* rest.resource[=].operation[=] insert ResourceWasDeleted
-* rest.resource[=].operation[=] insert GlobalOperationErrorCodes
+* insert ResourceIsNotKnown
+* insert ResourceWasDeleted
+* insert GlobalOperationErrorCodes
 
 RuleSet: TaskSearchTypeInteractionStatusCodes
 * insert SearchTypeInteractionStatusCodes
@@ -96,7 +96,7 @@ RuleSet: RevokeEUAccessPermissionOperationStatusCodes
 * rest.operation[=] insert SystemQueryOperationStatusCodesWithNormalSuccess
 
 RuleSet: GetEUPrescriptionsOperationStatusCodes
-* rest.resource[=].operation[=] insert SystemOperationStatusCodesWithParameters
+* rest.operation[=] insert SystemOperationStatusCodesWithParameters
 * rest.operation[=] insert SvcValidationFailed
 * rest.operation[=] insert TiflowAccessPermissionInvalid
 * rest.operation[=] insert TiflowAuthRoleNotAllowed
@@ -109,4 +109,4 @@ RuleSet: EuCloseOperationStatusCodes
 * rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
 * rest.resource[=].operation[=] insert TiflowConsentMissing
 * rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
-* insert InstanceOperationStatusCodes
+* rest.resource[=].operation[=] insert InstanceOperationStatusCodes

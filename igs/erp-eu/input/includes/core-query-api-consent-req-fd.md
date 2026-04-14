@@ -1,12 +1,12 @@
 Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für den Consent-Endpunkt.
 
 <!-- A_22153 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-201" title="TI-Flow-Fachdienst - Consent - unzulässige Operationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-201" title="TI-Flow-Fachdienst - Consent - unzulässige Operationen" version="1">
   <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
-  Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Consent mittels der HTTP-Operationen PUT, PATCH, oder HEAD unterbinden, damit keine unzulässigen Operationen auf die Informationen zur Einwilligung ausgeführt werden können.
+  Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Consent mittels der HTTP-Operationen PUT, PATCH, oder HEAD unterbinden und mit mit dem HTTP-Code "405 - Method Not Allowed" abbrechen, damit keine unzulässigen Operationen ausgeführt werden können.
 </requirement>
 
 <!-- ToDo: Neue Anforderung aller zu verwaltenden Einwilligungen? (Oder wird das durch die Profilierung der Ressource festgelegt)  -->
@@ -27,7 +27,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
-  Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen mit dem folgenden Fehler:
+  Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am TI-Flow-Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -59,7 +59,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
-  Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent sicherstellen, dass die KVNR im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests und die KVNR in Consent.patient.identifier übereinstimmen, damit eine Einwilligung für einen Versicherten nicht durch Dritte erteilt werden kann. Im Fehlerfall muss der Http-Request mit dem folgenden Fehler:
+  Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent sicherstellen, dass die KVNR im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests und die KVNR in Consent.patient.identifier übereinstimmen und im Fehlerfall die Operation mit dem folgenden Fehler:
   <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
     <tr>
         <th>HTTP-Code</th>
@@ -82,7 +82,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
         <td>FHIR Profile Validation Failed</td>
     </tr>
   </table> 
-  abgewiesen werden.
+  abbrechen, damit eine Einwilligung für einen Versicherten nicht durch Dritte erteilt werden kann.
 </requirement>
 
 <!-- A_22351 -->
@@ -123,7 +123,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
-  Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent sicherstellen, dass noch keine Consent Ressource für die KVNR im ACCESS_TOKEN und Consent.category.coding.code = &lt;Einwilligungstyp&gt; aus URL-Parameter category gespeichert ist, um maximal eine Einwilligung für den Versicherten für jeden Einwilligungstypen zu speichern. Im Fehlerfall muss der HTTP-Request mit dem folgenden Fehler:
+  Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent sicherstellen, dass noch keine Consent Ressource für die KVNR im ACCESS_TOKEN und Consent.category.coding.code = &lt;Einwilligungstyp&gt; aus URL-Parameter category gespeichert ist und im Fehlerfall die Operation mit dem folgenden Fehler:
   <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
     <tr>
         <th>HTTP-Code</th>
@@ -146,7 +146,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
         <td>-</td>
     </tr>
   </table> 
-  abgewiesen werden.
+  abbrechen, um maximal eine Einwilligung für den Versicherten für jeden Einwilligungstypen zu speichern.
 </requirement>
 
 <!-- A_27143 -->
@@ -183,7 +183,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
-  Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Consent sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen mit dem folgenden Fehler:
+  Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Consent die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am TI-Flow-Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
